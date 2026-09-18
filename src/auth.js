@@ -6,36 +6,36 @@
 // MSAL configuration parameters placeholder
 const msalConfig = {
   auth: {
-    clientId: "00000000-0000-0000-0000-000000000000", // Replace with client application ID from Azure Portal
-    authority: "https://login.microsoftonline.com/your-school-tenant-id", // Replace with tenant ID or 'common'
+    clientId: '00000000-0000-0000-0000-000000000000', // Replace with client application ID from Azure Portal
+    authority: 'https://login.microsoftonline.com/your-school-tenant-id', // Replace with tenant ID or 'common'
     redirectUri: window.location.origin,
-    postLogoutRedirectUri: window.location.origin
+    postLogoutRedirectUri: window.location.origin,
   },
   cache: {
-    cacheLocation: "localStorage",
-    storeAuthStateInCookie: true
-  }
+    cacheLocation: 'localStorage',
+    storeAuthStateInCookie: true,
+  },
 };
 
 let msalInstance = null;
 
 // Stub MSAL instantiation (can be loaded from NPM/CDN)
 export function initAuth() {
-  console.log("Initializing Microsoft SSO configuration with tenant...", msalConfig.auth.authority);
+  console.log('Initializing Microsoft SSO configuration with tenant...', msalConfig.auth.authority);
   // Prepare localStorage default session for developer mode / classroom testing
   const existingProfile = localStorage.getItem('user_profile');
-  if (!existingProfile || existingProfile.includes('Meoncross')) {
+  if (!existingProfile || existingProfile.includes('The History Portal')) {
     // Default mock user
-    setMockUser("Admin");
+    setMockUser('Admin');
   }
 }
 
 export function setMockUser(yearGroup) {
   const mockUser = {
-    username: "student@history-app.local",
-    name: "Student",
+    username: 'student@history-app.local',
+    name: 'Student',
     yearGroup: yearGroup, // 'Year 7', 'Year 8', 'Year 9', 'GCSE'
-    tenant: "history-app.local"
+    tenant: 'history-app.local',
   };
   localStorage.setItem('user_profile', JSON.stringify(mockUser));
   return mockUser;

@@ -499,7 +499,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
     <div style="margin-bottom: 10px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
         <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 700;">
-          Meoncross School &bull; Department of History
+          The History Portal &bull; Department of History
         </span>
         <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 600;">
           Year 9 History &bull; KS3 Core
@@ -992,7 +992,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
 
       <!-- Left Page Footer -->
       <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-        <span>Meoncross History &bull; KS3 The Great War (1914–1919)</span>
+        <span>The History Portal &bull; KS3 The Great War (1914–1919)</span>
         <span>Page ${leftPageNum} (Facing Spread Left)</span>
       </div>
     </div>
@@ -1067,7 +1067,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
 
         <!-- Right Page Footer -->
         <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px;">
-          <span>Extended Writing Assessment &bull; Meoncross History</span>
+          <span>Extended Writing Assessment &bull; The History Portal</span>
           <span>Page ${rightPageNum} (Facing Spread Right)</span>
         </div>
       </div>
@@ -1236,7 +1236,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             Departmental Marking Policy &amp; Code
           </h2>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #64748b; margin-top: 2px;">
-            Meoncross School History Department Standard
+            The History Department Standard
           </div>
         </div>
         <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Policy</span>
@@ -1311,7 +1311,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       <!-- Digital Revision Hub Quick-Link (Vector QR Code) -->
       <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 12px; background: #f0f9ff; margin-bottom: 10px; display: flex; align-items: center; gap: 14px;">
         <div style="width: 78px; height: 78px; flex-shrink: 0; background: #ffffff; padding: 3px; border: 1.2px solid #bae6fd; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
-          ${generateQrSvg('https://meoncross-history.netlify.app/?view=interactive&unit=great_war_part2')}
+          ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2')}
         </div>
         <div style="flex: 1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
@@ -1328,7 +1328,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             <span>&bull; <strong>Quiz Bank:</strong> 140 self-marking recall questions</span>
           </div>
           <div style="font-family: monospace; font-size: 6.8pt; color: #0284c7; margin-top: 2px;">
-            https://meoncross-history.netlify.app/?view=interactive&amp;unit=great_war_part2
+            https://the-history-revision-hub.netlify.app/?view=interactive&amp;unit=great_war_part2
           </div>
         </div>
       </div>
@@ -1336,7 +1336,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       <!-- Institutional Colophon -->
       <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 6px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1px;">
-          Meoncross School &bull; Department of History
+          The History Portal &bull; Department of History
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">
           Stubbington, Fareham, Hampshire &bull; Academic Year 2025–2026

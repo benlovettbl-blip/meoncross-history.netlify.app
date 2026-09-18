@@ -33,7 +33,7 @@ const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meoncross School History Department - Marking & Feedback Policy (Version 2: Core + Visual Appendix)</title>
+  <title>The History Department - Marking & Feedback Policy (Version 2: Core + Visual Appendix)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
     
@@ -234,11 +234,11 @@ const htmlContent = `<!DOCTYPE html>
 
   <!-- ==================== PAGE 1: COVER PAGE ==================== -->
   <div class="cover-page">
-    <div style="font-family: 'Outfit', sans-serif; font-size: 14pt; letter-spacing: 3px; text-transform: uppercase; color: #64748b; margin-bottom: 12px; font-weight: 700;">Meoncross School • Faculty of Humanities</div>
+    <div style="font-family: 'Outfit', sans-serif; font-size: 14pt; letter-spacing: 3px; text-transform: uppercase; color: #64748b; margin-bottom: 12px; font-weight: 700;">Faculty of Humanities</div>
     <div class="cover-title">History Department</div>
     <div class="cover-subtitle">Marking & Feedback Policy</div>
     <div style="margin-top: 40px; font-size: 13pt; color: #475569; font-weight: 500;">Approved for Academic Year 2026–2027</div>
-    <div style="margin-top: 20px; font-size: 10pt; color: #94a3b8;">Head of History: Mr. B. Lovett</div>
+    <div style="margin-top: 20px; font-size: 10pt; color: #94a3b8;">Head of History: Department Lead</div>
   </div>
 
   <!-- ==================== PAGE 2: PART 1 - RATIONALE, FREQUENCY & TYPES ==================== -->
@@ -507,7 +507,7 @@ const htmlContent = `<!DOCTYPE html>
     headerTemplate: '<div></div>',
     footerTemplate: `
       <div style="font-size: 8pt; width: 100%; padding: 0 15mm; display: flex; justify-content: space-between; font-family: 'Outfit', sans-serif; color: #64748b;">
-        <span>Meoncross School History Department • Marking & Feedback Policy (2026–2027)</span>
+        <span>The History Department • Marking & Feedback Policy (2026–2027)</span>
         <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
       </div>
     `,

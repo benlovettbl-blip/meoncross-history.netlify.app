@@ -411,7 +411,7 @@ export function renderCompetitionsView() {
       <!-- Academic Masthead -->
       <div class="prospectus-masthead">
         <div class="prospectus-masthead-overline">
-          Meoncross School &middot; Co-Curricular &amp; Academic Scholarship
+          The History Portal &middot; Co-Curricular &amp; Academic Scholarship
         </div>
         <h1 class="prospectus-masthead-title">
           The Young Historians Prospectus

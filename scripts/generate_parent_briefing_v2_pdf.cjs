@@ -28,7 +28,7 @@ function getHtmlContent() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ypres 1914–1918: Parent Information Pack (Version 2) · Meoncross School</title>
+  <title>Ypres 1914–1918: Parent Information Pack (Version 2) · The History Portal</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
@@ -433,12 +433,12 @@ function getHtmlContent() {
       <!-- Header -->
       <div class="header-bar">
         <div>
-          <div class="school-title">Meoncross School History Department</div>
+          <div class="school-title">The History Department</div>
           <div class="school-sub">Parental Information Pack · Briefing &amp; Logistics</div>
         </div>
         <div class="partner-pill">
           <div class="brand">The History Boys</div>
-          <div class="lead">Mr B. Lovett &amp; Mr J. Garrett · Accompanied by 2 Staff</div>
+          <div class="lead">Department Lead &amp; Mr J. Garrett · Accompanied by 2 Staff</div>
         </div>
       </div>
 
@@ -466,7 +466,7 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Departure, North Salient &amp; Mine Warfare</div>
             <ul class="day-schedule">
-              <li><strong>06:15 Meet at Meoncross:</strong> 06:30 coach departure; Eurotunnel Le Shuttle crossing to Calais.</li>
+              <li><strong>06:15 Meet at The History Portal:</strong> 06:30 coach departure; Eurotunnel Le Shuttle crossing to Calais.</li>
               <li><strong>14:30 Essex Farm ADS:</strong> John McCrae dugout ('In Flanders Fields') &amp; 15-year-old Pte Strudwick.</li>
               <li><strong>15:15 Langemarck Cemetery:</strong> The somber <em>Studentenfriedhof</em> &amp; German commemoration.</li>
               <li><strong>16:00 Hooge Crater Museum:</strong> Preserved frontline trenches, deep mine craters &amp; archaeology.</li>
@@ -524,14 +524,14 @@ function getHtmlContent() {
           <div class="app-desc">
             Explore the full itinerary, interactive maps, cemetery coordinates, local hero dossiers, and the complete 16-poem anthology from any smartphone or tablet.
           </div>
-          <div class="app-url">🌐 meoncross-history.netlify.app (Select 'History Battlefield Tour')</div>
+          <div class="app-url">🌐 the-history-revision-hub.netlify.app (Select 'History Battlefield Tour')</div>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="footer-bar">
-      <span>Meoncross School History Department · In Partnership with The History Boys</span>
+      <span>The History Department · In Partnership with The History Boys</span>
       <span>Page 1 of 2 (Please Turn Over for Kit List &amp; Logistics)</span>
     </div>
   </div>
@@ -543,7 +543,7 @@ function getHtmlContent() {
       <!-- Header -->
       <div class="header-bar">
         <div>
-          <div class="school-title">Meoncross School History Department · Ypres 2026</div>
+          <div class="school-title">The History Department · Ypres 2026</div>
           <div class="school-sub">Essential Logistics, Kit List, Rooming &amp; Parental Checklist</div>
         </div>
         <div class="partner-pill">
@@ -587,7 +587,7 @@ function getHtmlContent() {
       <div class="notice-box" style="margin-bottom: 5px; padding: 4px 8px; border-left: 4px solid #1e3a8a; background: #f8fafc; border-radius: 5px;">
         <h4 style="font-size: 9.6pt; font-weight: 800; color: #1e3a8a; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">Accommodation &amp; Rooming Allocations</h4>
         <p style="font-size: 8.6pt; line-height: 1.25; margin: 0; color: #334155;">
-          <strong>Expedition Base:</strong> Peace Village Hostel, Mesen, Belgium (+32 57 226 040 · <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be</a>). Secure rural educational centre with keycard access, ensuite studios (4–7 bunks), and staff on same corridors with active evening checks. <strong>Rooming Allocations:</strong> Rooming allocations are currently being completed in school. If your child has any questions or concerns, please reassure them that they can come and speak to Mr Lovett directly.
+          <strong>Expedition Base:</strong> Peace Village Hostel, Mesen, Belgium (+32 57 226 040 · <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be</a>). Secure rural educational centre with keycard access, ensuite studios (4–7 bunks), and staff on same corridors with active evening checks. <strong>Rooming Allocations:</strong> Rooming allocations are currently being completed in school. If your child has any questions or concerns, please reassure them that they can come and speak to Department Lead directly.
         </p>
       </div>
 
@@ -639,7 +639,7 @@ function getHtmlContent() {
           </tr>
           <tr>
             <td><strong>Rooming Allocations</strong></td>
-            <td>Allocations currently being finalised; pupils can see Mr Lovett with any queries.</td>
+            <td>Allocations currently being finalised; pupils can see Department Lead with any queries.</td>
             <td><span class="badge-info">In Progress</span></td>
           </tr>
           <tr>
@@ -681,7 +681,7 @@ function getHtmlContent() {
 
     <!-- Footer -->
     <div class="footer-bar">
-      <span>Meoncross School History Department · In Partnership with The History Boys</span>
+      <span>The History Department · In Partnership with The History Boys</span>
       <span>Page 2 of 2 · Information Accurate for 1st–3rd October 2026 Tour</span>
     </div>
   </div>

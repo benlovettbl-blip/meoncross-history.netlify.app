@@ -4,7 +4,7 @@ export default class AppEngine {
     this.unitData = null;
 
     if (!this.unitId) {
-      document.getElementById('engine-unit-title').innerText = "Error: No unit specified.";
+      document.getElementById('engine-unit-title').innerText = 'Error: No unit specified.';
       document.getElementById('engine-workbook-container').innerHTML = '';
       return;
     }
@@ -16,19 +16,20 @@ export default class AppEngine {
     try {
       // Load Metadata
       const response = await fetch(`/units/${this.unitId}/data.json`);
-      if (!response.ok) throw new Error("Unit not found");
+      if (!response.ok) throw new Error('Unit not found');
       this.unitData = await response.json();
 
       // Render Header
       document.getElementById('engine-unit-title').innerText = this.unitData.title;
-      document.getElementById('engine-unit-enquiry').innerText = "Unit Enquiry: " + this.unitData.enquiry;
+      document.getElementById('engine-unit-enquiry').innerText =
+        'Unit Enquiry: ' + this.unitData.enquiry;
       if (this.unitData.badge) {
         const badgeEl = document.getElementById('engine-unit-badge');
         badgeEl.innerText = this.unitData.badge;
         badgeEl.style.display = 'inline-block';
       }
-      
-      document.title = `Mr Lovett's History Hub - ${this.unitData.title}`;
+
+      document.title = `The History Revision Hub - ${this.unitData.title}`;
 
       // Render Tabs
       const tabsContainer = document.getElementById('engine-tabs-container');
@@ -51,13 +52,12 @@ export default class AppEngine {
       styleLink.rel = 'stylesheet';
       styleLink.href = `/units/${this.unitId}/styles.css`;
       document.head.appendChild(styleLink);
-
     } catch (err) {
       console.error(err);
-      document.getElementById('engine-unit-title').innerText = "Failed to load unit.";
-      document.getElementById('engine-workbook-container').innerHTML = `<p style="color:red; text-align:center;">${err.message}</p>`;
+      document.getElementById('engine-unit-title').innerText = 'Failed to load unit.';
     }
   }
+}
 
 // Bootstrap
 window.engine = new AppEngine();

@@ -87,7 +87,7 @@ function fetchJson(url) {
         url,
         {
           headers: {
-            'User-Agent': 'MeoncrossHistoryHub/1.0 (educational; history@meoncross.co.uk)',
+            'User-Agent': 'GCSE History Hub/1.0 (educational; contact@historyhub.local)',
           },
         },
         (res) => {
@@ -115,7 +115,7 @@ function downloadFile(url, dest) {
         url,
         {
           headers: {
-            'User-Agent': 'MeoncrossHistoryHub/1.0 (educational; history@meoncross.co.uk)',
+            'User-Agent': 'GCSE History Hub/1.0 (educational; contact@historyhub.local)',
           },
         },
         (res) => {

@@ -10,8 +10,8 @@ const outputPath = path.join(outputDir, 'ypres_2026_parent_briefing.pptx');
 
 const pptx = new pptxgen();
 pptx.layout = 'LAYOUT_16x9'; // 10 x 5.625 inches
-pptx.author = 'Mr Ben Lovett & Mr James Garrett';
-pptx.company = 'Meoncross School and The History Boys';
+pptx.author = 'Department Lead & Mr James Garrett';
+pptx.company = 'The History Portal and The History Boys';
 pptx.title = 'Ypres 1914-1918 Battlefield Expedition - Parental Briefing';
 
 const QR_PATH = path.join(__dirname, '../public/images/tour_app_qr.png');
@@ -46,7 +46,7 @@ s1.addText('YPRES 1914–1918: REMEMBRANCE, SACRIFICE & LOCAL HERITAGE', {
 });
 
 s1.addText(
-  'Meoncross School History Department & The History Boys · Mr B. Lovett & Mr J. Garrett (Leaders) · Accompanied by Two Meoncross Staff',
+  'The History Department & The History Boys · Department Lead & Mr J. Garrett (Leaders) · Accompanied by Fieldwork Staff',
   {
     x: 0.5,
     y: 0.47,
@@ -107,7 +107,7 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• 06:15 departure from Meoncross School (Jet Connect).\n• 11:20 Eurotunnel; 14:30 Essex Farm ADS (Valentine Strudwick).\n• 15:15 Langemarck & 16:00 Hooge Crater Museum.\n• 17:45 Peace Village, 18:15 dinner & 19:15 classroom debrief.\n\n',
+      text: '• 06:15 departure from The History Portal (Jet Connect).\n• 11:20 Eurotunnel; 14:30 Essex Farm ADS (Valentine Strudwick).\n• 15:15 Langemarck & 16:00 Hooge Crater Museum.\n• 17:45 Peace Village, 18:15 dinner & 19:15 classroom debrief.\n\n',
       options: { color: '334155', fontSize: 8.2 },
     },
     {
@@ -271,10 +271,11 @@ s1.addShape(pptx.ShapeType.rect, {
 });
 
 if (fs.existsSync(QR_PATH)) {
-  s1.addImage({ path: QR_PATH, x: 0.5, y: 5.12, w: 0.48, h: 0.48 });
+  const qrBase64 = 'data:image/png;base64,' + fs.readFileSync(QR_PATH).toString('base64');
+  s1.addImage({ data: qrBase64, x: 0.5, y: 5.12, w: 0.48, h: 0.48 });
 }
 
-s1.addText('INTERACTIVE DIGITAL FIELD GUIDE:  meoncross-history.netlify.app', {
+s1.addText('INTERACTIVE DIGITAL FIELD GUIDE:  the-history-revision-hub.netlify.app', {
   x: 1.1,
   y: 5.15,
   w: 5.2,
@@ -295,7 +296,7 @@ s1.addText('Scan QR or visit URL · 24/7 Trip Mobile: 07825 297749 (Emergency & 
   color: '94A3B8',
 });
 
-s1.addText('🚨 24/7 Mobile: 07825 297749\nSchool Base: 01329 662182', {
+s1.addText('🚨 24/7 Mobile: 07825 297749\nFieldwork Support: 07825 297749', {
   x: 6.4,
   y: 5.14,
   w: 3.4,
@@ -331,7 +332,7 @@ s2.addText('DETAILED PACKING LIST & PRACTICAL CHECKLIST', {
   bold: true,
 });
 s2.addText(
-  'Preparation advice for autumn weather in the Flanders Salient · Meoncross History Department',
+  'Preparation advice for autumn weather in the Flanders Salient · The History Department',
   {
     x: 0.6,
     y: 0.5,
@@ -461,7 +462,7 @@ s2.addText('📄 DOCUMENTS, HEALTH & ELECTRONICS', {
 s2.addText(
   [
     { text: '• Valid UK Passport & GHIC/EHIC: ', options: { bold: true } },
-    { text: 'Collected in advance tonight at briefing by Mr Lovett!\n' },
+    { text: 'Collected in advance tonight at briefing by Department Lead!\n' },
     { text: '• Medication Forms & Rules: ', options: { bold: true } },
     {
       text: "Forms distributed tonight. All meds in original packaging; prescribed items must show child's name.\n",
@@ -672,7 +673,7 @@ s3.addText(
     { text: 'Pte Charles Warland (son of Lee-on-the-Solent Golf Club secretary).\n\n' },
     { text: 'Interactive Digital Tour Companion:\n', options: { bold: true, color: '1E3A8A' } },
     {
-      text: 'meoncross-history.netlify.app\nFeaturing 16 battlefield poems, soldier dossiers, historical context & cemetery maps.',
+      text: 'the-history-revision-hub.netlify.app\nFeaturing 16 battlefield poems, soldier dossiers, historical context & cemetery maps.',
     },
   ],
   {

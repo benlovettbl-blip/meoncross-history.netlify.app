@@ -270,7 +270,7 @@ const unitCurriculumOutlines = {
 const commonHead = `
     <head>
         <meta charset="UTF-8">
-        <title>Meoncross School History Department</title>
+        <title>The History Department</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
             body { font-family: 'Outfit', sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 8.5pt; line-height: 1.35; }
@@ -593,7 +593,7 @@ function generateOverviewHTML(db) {
 
   html += `
         <div class="cover-page">
-            <div class="cover-title">Meoncross School History Department</div>
+            <div class="cover-title">The History Department</div>
             <div class="cover-subtitle">5-Year Curriculum Overview (2026-2027)</div>
             <div style="margin-top: 30px; font-size: 12pt; color: #475569;">Key Stages 3 &amp; 4 (Years 7 – 11)</div>
         </div>
@@ -644,7 +644,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
 
   html += `
         <div class="cover-page">
-            <div class="cover-title">Meoncross School History Department</div>
+            <div class="cover-title">The History Department</div>
             <div class="cover-subtitle">${yearGroup} Scheme of Work (2026-2027)</div>
             <div style="margin-top: 30px; font-size: 12pt; color: #475569;">Curriculum Planning &amp; Lesson Companion</div>
         </div>
@@ -664,7 +664,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             <div style="margin-bottom: 16px;">
                 <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">1. Curriculum Rationale &amp; Local Maritime Heritage</h2>
                 <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                    Our Key Stage 3 history curriculum is intentionally constructed to link national and global historical narratives with the distinctive maritime geography and lived environment of Meoncross pupils. From the industrial revolution of the Fareham ironmaster (Henry Cort at Funtley) to the strategic supremacy of Portsmouth Royal Dockyard and the profound sacrifices recorded on the Stubbington village war memorials, history is made tangible, relevant, and deeply rooted in our coastal community.
+                    Our Key Stage 3 history curriculum is intentionally constructed to link national and global historical narratives with the distinctive maritime geography and lived environment of The History Portal pupils. From the industrial revolution of the Fareham ironmaster (Henry Cort at Funtley) to the strategic supremacy of Portsmouth Royal Dockyard and the profound sacrifices recorded on the Stubbington village war memorials, history is made tangible, relevant, and deeply rooted in our coastal community.
                 </p>
             </div>
 
@@ -701,7 +701,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             <div style="margin-bottom: 14px;">
                 <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 4px; font-size: 12pt;">Pearson Edexcel GCSE (9–1) History Specification (1HI0)</h2>
                 <p style="margin-top: 0; font-size: 8pt; color: #475569; line-height: 1.35;">
-                    Meoncross School delivers a balanced 4-unit curriculum covering thematic development, British depth, period conflict, and modern world history:
+                    The History Portal delivers a balanced 4-unit curriculum covering thematic development, British depth, period conflict, and modern world history:
                 </p>
                 <table style="font-size: 7.8pt; margin-bottom: 10px;">
                     <thead>
@@ -1034,7 +1034,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
     displayHeaderFooter: true,
     headerTemplate: '<div></div>',
     footerTemplate:
-      '<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+      '<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">The History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
     margin: { top: '8mm', right: '10mm', bottom: '12mm', left: '10mm' },
   });
   console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
@@ -1057,7 +1057,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         printBackground: true,
         displayHeaderFooter: true,
         headerTemplate: '<div></div>',
-        footerTemplate: `<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
+        footerTemplate: `<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">The History Department - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
         margin: { top: '8mm', right: '10mm', bottom: '12mm', left: '10mm' },
       });
       console.log(`✅ Success! ${yearGroup} Scheme of Work PDF saved to: ` + pdfPath);

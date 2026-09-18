@@ -4159,7 +4159,7 @@ export const unitData = {
       },
       teacher_notes: {
         primer:
-          'This lesson grounds the vast global catastrophe of the First World War in the immediate, local micro-history of Stubbington and Hill Head (the immediate community of Meoncross School). Guide pupils to interrogate the 67 names on the village green shelter, investigate the profound tragedy of the Lowry brothers of Manor Way Grange, and explore the concept of the "Lost Generation" through the cultural historiography of Professor Jay Winter.',
+          'This lesson grounds the vast global catastrophe of the First World War in the immediate, local micro-history of Stubbington and Hill Head (the local community). Guide pupils to interrogate the 67 names on the village green shelter, investigate the profound tragedy of the Lowry brothers of Manor Way Grange, and explore the concept of the "Lost Generation" through the cultural historiography of Professor Jay Winter.',
         objectives: [
           {
             objective:

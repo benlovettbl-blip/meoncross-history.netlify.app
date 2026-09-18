@@ -8,7 +8,7 @@ async function generatePoster() {
 
   // Generate QR Codes as base64 Data URLs
   const portalUrl =
-    'https://meoncross-history.netlify.app/?view=lessons&unit=industrialisation_and_empire&lesson=0';
+    'https://the-history-revision-hub.netlify.app/?view=lessons&unit=industrialisation_and_empire&lesson=0';
   const archivesUrl = 'https://www.hampshirearchivestrust.co.uk/education/';
 
   const qrPortalDataUrl = await QRCode.toDataURL(portalUrl, {
@@ -201,7 +201,7 @@ async function generatePoster() {
       margin: 0;
     }
 
-    /* Local Sparks / Meoncross Connections */
+    /* Local Sparks / The History Portal Connections */
     .sparks-section {
       margin: 1.5mm 0;
     }
@@ -379,7 +379,7 @@ async function generatePoster() {
       <div class="prize-box" style="border-color: #f59e0b; background: rgba(245, 158, 11, 0.15);">
         <div class="prize-label" style="color: #fde68a;">School / Group Winner</div>
         <div class="prize-val" style="color: #fef08a;">£300 + TROPHY</div>
-        <div class="prize-sub">Department grant &amp; Winner’s Trophy displayed at Meoncross</div>
+        <div class="prize-sub">Department grant &amp; Winner’s Trophy displayed at The History Portal</div>
       </div>
       <div class="prize-box">
         <div class="prize-label">Runners-Up &amp; Ceremony</div>
@@ -398,10 +398,10 @@ async function generatePoster() {
       </p>
     </div>
 
-    <!-- Meoncross Curriculum Links & Inspiration -->
+    <!-- The History Portal Curriculum Links & Inspiration -->
     <div class="sparks-section">
       <div class="section-heading">
-        <span><i class="fa-solid fa-lightbulb" style="color: #d97706;"></i> Meoncross Hampshire Research Sparks</span>
+        <span><i class="fa-solid fa-lightbulb" style="color: #d97706;"></i> The History Portal Hampshire Research Sparks</span>
         <span style="font-size: 7.2pt; font-family: 'Inter', sans-serif; font-weight: 600; color: #64748b;">Direct Links to our History Portal Lessons</span>
       </div>
       <div class="sparks-grid">
@@ -482,8 +482,8 @@ async function generatePoster() {
       </div>
       
       <div class="contact-info">
-        <div><strong>How to Enter:</strong> Individual or Group submissions via Meoncross School. Free entry.</div>
-        <div>Speak to <strong>Mr Lovett (Head of History)</strong> to register your topic and get archival support.</div>
+        <div><strong>How to Enter:</strong> Individual or Group submissions via The History Portal. Free entry.</div>
+        <div>Speak to <strong>Department Lead</strong> to register your topic and get archival support.</div>
         <div style="margin-top: 1mm; color: #38bdf8;">
           <i class="fa-solid fa-mobile-screen"></i> Scan the QR codes on your phone to open our lesson portal &amp; archive guidelines!
         </div>

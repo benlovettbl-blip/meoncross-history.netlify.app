@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const publicDir = 'c:/Projects/meoncross-history.netlify.app/public';
+const publicDir = 'c:/Projects/the-history-revision-hub.netlify.app/public';
 const dbPath = path.join(publicDir, 'database.json');
 
 const data = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
@@ -50,7 +50,7 @@ Array.from(allImages).forEach(img => {
         valid++;
     } else {
         // sometimes assets are in the root assets folder instead of public
-        const rootPath = path.join('c:/Projects/meoncross-history.netlify.app', localPath);
+        const rootPath = path.join('c:/Projects/the-history-revision-hub.netlify.app', localPath);
         const assetPath = path.join(publicDir, 'assets', path.basename(localPath));
         if (fs.existsSync(rootPath)) {
             valid++;

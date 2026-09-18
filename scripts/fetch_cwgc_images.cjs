@@ -8,7 +8,7 @@ function fetchWikiThumbnail(title, destFilename) {
     https
       .get(
         url,
-        { headers: { 'User-Agent': 'MeoncrossHistoryApp/1.0 (ben@meoncross.school)' } },
+        { headers: { 'User-Agent': 'The History PortalApp/1.0 (ben@history.school)' } },
         (res) => {
           let data = '';
           res.on('data', (chunk) => (data += chunk));
@@ -30,7 +30,7 @@ function fetchWikiThumbnail(title, destFilename) {
               https
                 .get(
                   thumbUrl,
-                  { headers: { 'User-Agent': 'MeoncrossHistoryApp/1.0 (ben@meoncross.school)' } },
+                  { headers: { 'User-Agent': 'The History PortalApp/1.0 (ben@history.school)' } },
                   (imgRes) => {
                     if (imgRes.statusCode === 200) {
                       imgRes.pipe(file);

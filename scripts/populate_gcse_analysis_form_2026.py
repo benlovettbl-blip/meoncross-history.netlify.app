@@ -122,17 +122,17 @@ def populate_form():
     r0_c0 = [c for c in rows[0] if c.tag == f"{{{W_NS}}}tc"][0]
     set_cell_simple(r0_c0, [("Subject area: History", True, False, "20")])
     
-    # R0 C1: Subject teachers: Benjamin Lovett
+    # R0 C1: Subject teachers: Department Lead
     r0_c1 = [c for c in rows[0] if c.tag == f"{{{W_NS}}}tc"][1]
-    set_cell_simple(r0_c1, [("Subject teachers: Benjamin Lovett", True, False, "20")])
+    set_cell_simple(r0_c1, [("Subject teachers: Department Lead", True, False, "20")])
     
     # R1 C0: Qualification(s) and course codes: Edexcel GCSE History (1HI0 HW)
     r1_c0 = [c for c in rows[1] if c.tag == f"{{{W_NS}}}tc"][0]
     set_cell_simple(r1_c0, [("Qualification(s) and course codes: Edexcel GCSE History (1HI0 HW)", False, False, "20")])
     
-    # R1 C1: Form completed by: Benjamin Lovett
+    # R1 C1: Form completed by: Department Lead
     r1_c1 = [c for c in rows[1] if c.tag == f"{{{W_NS}}}tc"][1]
-    set_cell_simple(r1_c1, [("Form completed by: Benjamin Lovett", False, False, "20")])
+    set_cell_simple(r1_c1, [("Form completed by: Department Lead", False, False, "20")])
     
     # R2 C0: Date of completion: September 2026
     r2_c0 = [c for c in rows[2] if c.tag == f"{{{W_NS}}}tc"][0]
@@ -317,7 +317,7 @@ def populate_form():
     # -------------------------------------------------------------
     r19_cells = [c for c in rows[19] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r19_cells[0], [("Date: September 2026", True, False, "20")])
-    set_cell_simple(r19_cells[1], [("In attendance: Benjamin Lovett (Head of History), SLT Line Manager", True, False, "20")])
+    set_cell_simple(r19_cells[1], [("In attendance: Department Lead (Head of History), SLT Line Manager", True, False, "20")])
     
     # -------------------------------------------------------------
     # ROW 21: MEETING NOTES & ACTIONS

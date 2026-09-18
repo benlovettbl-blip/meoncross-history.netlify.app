@@ -27,9 +27,9 @@ console.log('Generating Antigravity Progress Documents...');
 // =========================================================================
 const doc00 = `# 🚀 Antigravity Progress Dashboard: Department File Archive
 **Date:** 12–13 September 2026  
-**Author:** Antigravity AI Assistant & Mr B. Lovett (Head of History)  
+**Author:** Antigravity AI Assistant & Department Lead  
 **Location:** \`G:\\My Drive\\AAMX\\Dep File\\Antigravity_Progress\`  
-**Mirror:** \`c:\\Projects\\meoncross-history.netlify.app\\admin_internal\\antigravity_progress\`
+**Mirror:** \`c:\\Projects\\the-history-revision-hub.netlify.app\\admin_internal\\antigravity_progress\`
 
 ---
 
@@ -41,7 +41,7 @@ Below is a complete index of the individual documents generated for each major p
 
 | # | Document | Topic & Scope | Key Outputs & Links |
 | :- | :--- | :--- | :--- |
-| **01** | [\`2026-09-12_01_History_Room_Risk_Assessment.md\`](./2026-09-12_01_History_Room_Risk_Assessment.md) | **History Room OFG Risk Assessment**<br>Streamlined from 6 pages down to a practical 2-page document. | \`Dep File/00_Department_Admin_and_Policies/20260908 - New  OFG Risk Assessment - History.docx\` |
+| **01** | [\`2026-09-12_01_History_Room_Risk_Assessment.md\`](./2026-09-12_01_History_Room_Risk_Assessment.md) | **History Room Educational Trust Risk Assessment**<br>Streamlined from 6 pages down to a practical 2-page document. | \`Dep File/00_Department_Admin_and_Policies/20260908 - New  Educational Trust Risk Assessment - History.docx\` |
 | **02** | [\`2026-09-12_02_Ypres_Battlefield_Tour_Field_Guide_Cleanup.md\`](./2026-09-12_02_Ypres_Battlefield_Tour_Field_Guide_Cleanup.md) | **Ypres Battlefield Tour Field Guide Cleanup**<br>Eliminated playful emojis and informal icons in favor of CWGC archival elegance. | \`Dep File/Trips/Battlefield Tour - Ypres/Ypres 1914-1918 Pupil Field Guide.docx\`<br>Digital unit: \`trip_ypres\` |
 | **03** | [\`2026-09-12_03_Department_Development_Plan_2026_2027.md\`](./2026-09-12_03_Department_Development_Plan_2026_2027.md) | **History Department Development Plan 2026–2027**<br>Formal 4-page executive DDP aligned with School Improvement Plan (SIP) priorities. | \`Dep File/00_Department_Admin_and_Policies/History Department Development Plan 2026-2027.pdf\`<br>\`admin_internal/history_department_development_plan_2026_2027.pdf\` |
 | **04** | [\`2026-09-12_04_Industrialisation_Empire_Funtley_Iron_Works_Cort_Bulstrode.md\`](./2026-09-12_04_Industrialisation_Empire_Funtley_Iron_Works_Cort_Bulstrode.md) | **Funtley Iron Works & Jamaican Enslaved Metallurgists**<br>Local Hampshire fieldwork + Dr. Jenny Bulstrode's Cambridge research. | Interactive 1780s/Satellite \`photo_slider\` in Lesson 1<br>Verbatim 1781 King's Bench trial minutes (\`Source C\`) |
@@ -80,9 +80,9 @@ writeDoc('00_READ_ME_FIRST_DASHBOARD.md', doc00);
 // =========================================================================
 // DOCUMENT 01: RISK ASSESSMENT
 // =========================================================================
-const doc01 = `# 01. History Room OFG Risk Assessment Streamlining
+const doc01 = `# 01. History Room Educational Trust Risk Assessment Streamlining
 **Date:** 12 September 2026  
-**Document Ref:** \`20260908 - New  OFG Risk Assessment - History.docx\`  
+**Document Ref:** \`20260908 - New  Educational Trust Risk Assessment - History.docx\`  
 **Target Location:** \`G:\\My Drive\\AAMX\\Dep File\\00_Department_Admin_and_Policies\\\`  
 
 ---
@@ -115,7 +115,7 @@ The document was restructured around 5 concrete classroom realities:
 ## 3. Risk Scoring Matrix Maintained
 - Maintained standard 5x5 Likelihood x Severity matrix.
 - Residual risk ratings scored consistently at **Low (1–4)** following control implementation.
-- Professional formatting aligned with Meoncross / OFG institutional templates.
+- Professional formatting aligned with The History Portal / Educational Trust institutional templates.
 `;
 writeDoc('2026-09-12_01_History_Room_Risk_Assessment.md', doc01);
 
@@ -160,7 +160,7 @@ const doc03 = `# 03. History Department Development Plan (2026–2027)
 ---
 
 ## 1. Executive Summary & Strategic Alignment
-The **History Department Development Plan (2026–2027)** is an official 4-page executive strategy document authored to align History departmental priorities directly with the overarching **Meoncross School Improvement Plan (SIP)**.
+The **History Department Development Plan (2026–2027)** is an official 4-page executive strategy document authored to align History departmental priorities directly with the overarching **The History Portal Improvement Plan (SIP)**.
 
 ## 2. The 4 Strategic Departmental Pillars
 
@@ -356,7 +356,7 @@ writeDoc('2026-09-12_07_Complete_Session_Transcript_Log.md', doc07);
 // =========================================================================
 const doc08 = `# 08. Edexcel GCSE History Exam Calibration: Middle East (1945–1995)
 **Date:** 13 September 2026  
-**Author:** Antigravity AI Assistant & Mr B. Lovett (Head of History)  
+**Author:** Antigravity AI Assistant & Department Lead  
 **Target Unit:** \`cme_new\` (Paper 2: Conflict in the Middle East, 1945–1995)  
 **Git Checkpoint:** \`7963292c\` (recalibrate all 10 exam practice questions and model answers)
 
@@ -380,7 +380,7 @@ writeDoc('2026-09-13_08_GCSE_Exam_Practice_Recalibration_Middle_East.md', doc08)
 // =========================================================================
 const doc09 = `# 09. Global Mastery Suite Streamlining: Whiteboard Rapid-Fire & Pupil Recall Quiz
 **Date:** 13 September 2026  
-**Author:** Antigravity AI Assistant & Mr B. Lovett (Head of History)  
+**Author:** Antigravity AI Assistant & Department Lead  
 **Scope:** Curriculum-wide (All 12 Units, 26 Mastery Packs)  
 **Git Checkpoint:** \`20432c8a\` (globally unify Whiteboard Rapid-Fire and Pupil Recall Quiz across all units)
 

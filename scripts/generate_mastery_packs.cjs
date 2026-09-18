@@ -233,7 +233,7 @@ const units = fs
           enquiryText = unit.enquiry;
         }
 
-        const vaultUrl = `https://meoncross-history.netlify.app/units/${unitId}/mastery_pack_${wb.id}.html#practice-mode`;
+        const vaultUrl = `https://the-history-revision-hub.netlify.app/units/${unitId}/mastery_pack_${wb.id}.html#practice-mode`;
         const qrDataUrl = await QRCode.toDataURL(vaultUrl, {
           margin: 1,
           width: 280,

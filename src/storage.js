@@ -1,5 +1,5 @@
 /**
- * Storage & Progress Management for Mr Lovett's History Hub Mega App
+ * Storage & Progress Management for GCSE History Study & Revision Portal
  */
 
 import { state } from './state.js';
@@ -11,7 +11,7 @@ export function initData() {
     if (storedMastery) {
       state.mastery = JSON.parse(storedMastery);
     }
-    
+
     const storedBookmarks = localStorage.getItem('history_bookmarks');
     if (storedBookmarks) {
       state.bookmarks = JSON.parse(storedBookmarks);
@@ -51,7 +51,7 @@ export function getMasteryStatus(questionId) {
 
 export function updateLeitnerBox(questionId, isCorrect) {
   if (!state.mastery) state.mastery = {};
-  
+
   let entry = state.mastery[questionId];
   const now = Date.now();
 
@@ -60,14 +60,14 @@ export function updateLeitnerBox(questionId, isCorrect) {
       status: 'new',
       timestamp: now,
       leitnerBox: 1,
-      nextReview: 0
+      nextReview: 0,
     };
   }
 
   if (isCorrect) {
     const currentBox = entry.leitnerBox || 1;
     const newBox = Math.min(5, currentBox + 1);
-    
+
     // Spaced repetition review intervals:
     // Box 1: 4h, Box 2: 24h, Box 3: 3d, Box 4: 7d, Box 5: 14d
     const intervals = {
@@ -75,14 +75,14 @@ export function updateLeitnerBox(questionId, isCorrect) {
       2: 24 * 60 * 60 * 1000,
       3: 3 * 24 * 60 * 60 * 1000,
       4: 7 * 24 * 60 * 60 * 1000,
-      5: 14 * 24 * 60 * 60 * 1000
+      5: 14 * 24 * 60 * 60 * 1000,
     };
 
     entry.leitnerBox = newBox;
     entry.nextReview = now + intervals[newBox];
     entry.status = newBox === 5 ? 'mastered' : 'secured';
     entry.timestamp = now;
-    
+
     // Add XP
     state.dailyXp += 10;
   } else {

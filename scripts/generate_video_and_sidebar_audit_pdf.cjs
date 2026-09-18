@@ -357,7 +357,7 @@ const htmlContent = `
   <!-- PAGE 1: COVER & EXECUTIVE SUMMARY -->
   <div class="cover-card">
     <div class="cover-meta">
-      <span class="dept-badge">Meoncross School · History Department Curriculum Review</span>
+      <span class="dept-badge">The History Portal · History Department Curriculum Review</span>
       <span class="date-badge">September 2026</span>
     </div>
     <h1>Curriculum Architecture & Media Audit Review</h1>
@@ -1062,7 +1062,7 @@ async function main() {
     margin: { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' },
     printBackground: true,
     displayHeaderFooter: true,
-    headerTemplate: `<div style="font-family: 'Outfit', sans-serif; font-size: 7.5pt; color: #94a3b8; width: 100%; text-align: right; padding-right: 15mm;">Meoncross School History Department · Curriculum Architecture Review</div>`,
+    headerTemplate: `<div style="font-family: 'Outfit', sans-serif; font-size: 7.5pt; color: #94a3b8; width: 100%; text-align: right; padding-right: 15mm;">The History Department · Curriculum Architecture Review</div>`,
     footerTemplate: `<div style="font-family: 'Outfit', sans-serif; font-size: 7.5pt; color: #94a3b8; width: 100%; display: flex; justify-content: space-between; padding: 0 15mm;"><span>Pedagogical Video Integration &amp; 16-Scheme Media Audit</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
   });
 

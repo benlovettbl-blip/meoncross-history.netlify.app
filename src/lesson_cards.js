@@ -386,7 +386,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 <h3 style="margin: 0; color: #0369a1; font-size: 1.18rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Parental Briefing</h3>
                 <span style="background: #eff6ff; color: #0284c7; border: 1px solid #bfdbfe; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Thu 10 Sep · 16:15 Briefing</span>
               </div>
-              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys) · Accomp: Two Meoncross Staff. Packing checklist, catering &amp; €30–€40 Euros, rooming timeline, and return forms.</p>
+              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Fieldwork study expedition led by Department Lead &amp; Humanities Staff. Packing checklist, catering, itinerary, and preparation guidance.</p>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
               <a href="/pdfs/ypres_1914_1918_pupil_field_guide.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #93c5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">
@@ -415,11 +415,11 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         <div style="margin-bottom: 25px; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
           <div style="flex: 1; min-width: 280px; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;">
-              <span style="background: #b45309; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Pupil Family Archive · Year 10</span>
+              <span style="background: #b45309; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Fieldwork Archive · Western Front</span>
               <h3 style="margin: 0; color: #78350f; font-size: 1.18rem; font-family: 'Playfair Display', serif;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h3>
             </div>
             <p style="margin: 0; color: #451a03; font-size: 0.88rem; line-height: 1.4;">
-              Family archive commemorating the great-great-grandfather of a Year 10 pupil, researched by family historian <strong>John Pearson</strong>. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
+              Fieldwork archive commemorating 2nd Lieutenant Ernest Edward Crummack MC, DCM, researched by the family archive researcher. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
             </p>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
@@ -708,13 +708,13 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           <div style="border-bottom: 1.5px solid #fde68a; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
             <div>
               <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #fbbf24; color: #78350f; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">
-                Pupil Family Archive · Year 10
+                Fieldwork Archive · Western Front
               </span>
               <h3 style="margin: 0 0 6px 0; color: #78350f; font-size: 1.35rem; font-family: 'Playfair Display', serif;">
-                Living Remembrance: 2nd Lieutenant Ernest Edward Crummack MC, DCM
+                Archival Case Study: 2nd Lieutenant Ernest Edward Crummack MC, DCM
               </h3>
               <p style="margin: 0; color: #451a03; font-size: 0.92rem; line-height: 1.5;">
-                Commemorating the great-great-grandfather of a Year 10 pupil. Researched by family historian <strong>John Pearson</strong> and shared with the school following the Ypres parent briefing. A South Yorkshire hero who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
+                Commemorating 2nd Lieutenant Ernest Edward Crummack MC, DCM. Researched by the family archive researcher and generously shared with our study archive. A South Yorkshire hero who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
               </p>
             </div>
             <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 9px 18px; font-size: 0.85rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);">
@@ -776,10 +776,10 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 22px;">
               <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
                 <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 1.05rem; font-family: 'Playfair Display', serif;">
-                  <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Family Attribution &amp; Commemoration
+                  <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Primary Archival Custodianship
                 </h4>
                 <p style="margin: 0 0 10px 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  Researched and compiled by family historian <strong>John Pearson</strong>. Shared with Meoncross School by a Year 10 family in living remembrance of their ancestor, <strong>2nd Lt Ernest Crummack MC, DCM</strong>.
+                  Researched and compiled by the family archive researcher. Generously shared with our study archive in living remembrance of <strong>2nd Lt Ernest Crummack MC, DCM</strong>.
                 </p>
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.8rem; color: #475569; line-height: 1.6;">
                   <strong>Medals &amp; Custodianship:</strong> Original gallantry medal group preserved and on permanent display at the York and Lancaster Regimental Museum at Clifton Park, Rotherham.
@@ -791,7 +791,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   <i class="fa-solid fa-feather-pointed" style="color: #d97706; margin-right: 6px;"></i> The Siegfried Sassoon Connection
                 </h4>
                 <p style="margin: 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George (Second Class, Gold). Grandfather John Pearson's research confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
+                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George (Second Class, Gold). The family archive researcher's work confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
                 </p>
               </div>
             </div>

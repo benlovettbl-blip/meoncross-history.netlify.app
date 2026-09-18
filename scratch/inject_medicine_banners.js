@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 async function injectMedicineBanners() {
-    const dataPath = 'c:/Projects/meoncross-history.netlify.app/edexcel_medicine/data.js';
+    const dataPath = 'c:/Projects/the-history-revision-hub.netlify.app/edexcel_medicine/data.js';
     const mod = await import('file://' + dataPath + '?update=' + Date.now());
     const data = mod.unitData;
 

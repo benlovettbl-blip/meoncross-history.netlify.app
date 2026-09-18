@@ -5,20 +5,24 @@ async function fetchWikimediaImageBySearch(name) {
   try {
     // Search for the page first
     const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(name)}&utf8=&format=json`;
-    const searchRes = await fetch(searchUrl, { headers: { 'User-Agent': 'MeoncrossHistoryBot/1.0 (info@meoncross.example)' } });
+    const searchRes = await fetch(searchUrl, {
+      headers: { 'User-Agent': 'The History PortalBot/1.0 (info@history.example)' },
+    });
     const searchData = await searchRes.json();
-    
+
     if (searchData.query && searchData.query.search.length > 0) {
       const bestMatchTitle = searchData.query.search[0].title;
       console.log(`Found page "${bestMatchTitle}" for search "${name}"`);
-      
+
       const thumbUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(bestMatchTitle)}&prop=pageimages&format=json&pithumbsize=500`;
-      const thumbRes = await fetch(thumbUrl, { headers: { 'User-Agent': 'MeoncrossHistoryBot/1.0 (info@meoncross.example)' } });
+      const thumbRes = await fetch(thumbUrl, {
+        headers: { 'User-Agent': 'The History PortalBot/1.0 (info@history.example)' },
+      });
       const thumbData = await thumbRes.json();
-      
+
       const pages = thumbData.query.pages;
       const pageId = Object.keys(pages)[0];
-      if (pageId !== "-1" && pages[pageId].thumbnail) {
+      if (pageId !== '-1' && pages[pageId].thumbnail) {
         return pages[pageId].thumbnail.source;
       } else {
         console.log(`No thumbnail found for page "${bestMatchTitle}"`);
@@ -35,7 +39,9 @@ async function fetchWikimediaImageBySearch(name) {
 async function downloadImage(url, filename) {
   const filepath = path.join('public/images/weimar_individuals', filename);
   try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'MeoncrossHistoryBot/1.0 (info@meoncross.example)' } });
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'The History PortalBot/1.0 (info@history.example)' },
+    });
     const buffer = await res.arrayBuffer();
     fs.writeFileSync(filepath, Buffer.from(buffer));
     console.log(`Downloaded ${filename}`);
@@ -51,31 +57,35 @@ async function run() {
   let content = fs.readFileSync(dataPath, 'utf8');
   let dataObj;
   try {
-    dataObj = eval('(function(){ ' + content.replace(/export\s+const\s+unitData\s*=\s*/, 'return ') + '})()');
+    dataObj = eval(
+      '(function(){ ' + content.replace(/export\s+const\s+unitData\s*=\s*/, 'return ') + '})()',
+    );
   } catch (e) {
-    console.error("Failed to parse data.js", e);
+    console.error('Failed to parse data.js', e);
     process.exit(1);
   }
 
   let keyIndividuals = dataObj.key_individuals;
-  
+
   // Step 1: Split Rosa Luxemburg and Karl Liebknecht
-  const splitIndex = keyIndividuals.findIndex(p => p.name === 'Rosa Luxemburg & Karl Liebknecht');
+  const splitIndex = keyIndividuals.findIndex((p) => p.name === 'Rosa Luxemburg & Karl Liebknecht');
   if (splitIndex !== -1) {
     const original = keyIndividuals[splitIndex];
-    keyIndividuals.splice(splitIndex, 1, 
+    keyIndividuals.splice(
+      splitIndex,
+      1,
       {
         group: original.group,
-        name: "Rosa Luxemburg",
+        name: 'Rosa Luxemburg',
         bio: original.bio,
-        image: "" // will fetch
+        image: '', // will fetch
       },
       {
         group: original.group,
-        name: "Karl Liebknecht",
+        name: 'Karl Liebknecht',
         bio: original.bio,
-        image: "" // will fetch
-      }
+        image: '', // will fetch
+      },
     );
   }
 
@@ -100,7 +110,10 @@ async function run() {
 
   const stringifiedKeyIndividuals = JSON.stringify(keyIndividuals, null, 8);
   const regex = /"key_individuals":\s*\[[\s\S]*?\n    \]/m;
-  const newContent = content.replace(regex, `"key_individuals": ${stringifiedKeyIndividuals.replace(/\n/g, '\n    ')}`);
+  const newContent = content.replace(
+    regex,
+    `"key_individuals": ${stringifiedKeyIndividuals.replace(/\n/g, '\n    ')}`,
+  );
   fs.writeFileSync(dataPath, newContent, 'utf8');
   console.log('Fixed missing images and separated Rosa and Karl.');
 }

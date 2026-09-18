@@ -3,7 +3,7 @@
  *
  * Automatically organizes and syncs all master textbooks, pupil workbooks,
  * mastery packs, schemes of work, and department policies from `public/pdfs/`
- * into clean, categorized Year Group and Department folders in Mr Lovett's
+ * into clean, categorized Year Group and Department folders in Department Lead's
  * Google Drive Department File (`G:\My Drive\AAMX\Dep File\`).
  */
 
@@ -700,8 +700,8 @@ const PDF_MAPPINGS = [
   // Chess Club
   {
     folder: 'Chess Club',
-    src: 'meoncross_chess_board_qr_stands.pdf',
-    dest: 'Meoncross Chess Board QR Table Stands.pdf',
+    src: 'chess_board_qr_stands.pdf',
+    dest: 'The History Portal Chess Board QR Table Stands.pdf',
     category: 'Chess Club',
   },
 ];

@@ -19,7 +19,7 @@ async function generatePdf(htmlContent, outputPath, title) {
     margin: { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' },
     printBackground: true,
     displayHeaderFooter: true,
-    headerTemplate: `<div style="font-family: 'Outfit', sans-serif; font-size: 8pt; color: #94a3b8; width: 100%; text-align: right; padding-right: 15mm;">Meoncross History Department · ${title}</div>`,
+    headerTemplate: `<div style="font-family: 'Outfit', sans-serif; font-size: 8pt; color: #94a3b8; width: 100%; text-align: right; padding-right: 15mm;">The History Department · ${title}</div>`,
     footerTemplate: `<div style="font-family: 'Outfit', sans-serif; font-size: 8pt; color: #94a3b8; width: 100%; display: flex; justify-content: space-between; padding: 0 15mm;"><span>Pearson Edexcel GCSE (9–1) History</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
   });
   await browser.close();

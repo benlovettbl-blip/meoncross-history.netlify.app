@@ -1,5 +1,5 @@
 /**
- * Navigation & Routing Controller for Mr Lovett's History Hub Mega App
+ * Navigation & Routing Controller for GCSE History Study & Revision Portal
  */
 
 import { appStore } from './engine/store.js';
@@ -38,7 +38,7 @@ export function initNavigationUI() {
     const headerRight = document.querySelector('.header-right');
     if (headerRight) {
       if (viewName !== 'dashboard') {
-        headerRight.innerHTML = `<span class="school-tag"><i class="fa-solid fa-award"></i> Mr Lovett's History Hub</span>`;
+        headerRight.innerHTML = `<span class="school-tag"><i class="fa-solid fa-award"></i> The History Revision Hub</span>`;
         headerRight.style.flex = '';
         headerRight.style.display = '';
         headerRight.style.justifyContent = '';
@@ -217,7 +217,7 @@ export function updateBreadcrumbs(customTrail = null) {
     else if (viewName === 'profile') currentSectionLabel = 'Student Profile';
     else if (viewName === 'curriculum') currentSectionLabel = 'Curriculum Map';
     else if (viewName === 'competitions') currentSectionLabel = 'Competitions & Awards';
-    else if (viewName === 'chess') currentSectionLabel = 'Meoncross Chess Club';
+    else if (viewName === 'chess') currentSectionLabel = 'Chess Club';
     else if (viewName === 'decisions') currentSectionLabel = 'Decisions Game';
     else if (viewName === 'taboo') currentSectionLabel = 'Taboo Recall';
     else if (viewName === 'individuals') currentSectionLabel = 'Key Individuals';

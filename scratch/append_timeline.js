@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 async function appendTimeline() {
-    const medPath = 'c:/Projects/meoncross-history.netlify.app/edexcel_medicine/data.js';
+    const medPath = 'c:/Projects/the-history-revision-hub.netlify.app/edexcel_medicine/data.js';
     const medMod = await import('file://' + medPath);
     const data = medMod.unitData;
 

@@ -1,5 +1,5 @@
 # History Department Master Plan & Curriculum Tracker
-**Meoncross School History Department — Curriculum Architecture & Workbook Standard**
+**The History Department — Curriculum Architecture & Workbook Standard**
 *Last Updated: 13 September 2026*
 
 ---

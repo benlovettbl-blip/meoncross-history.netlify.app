@@ -1,5 +1,5 @@
 /**
- * Meoncross School Chess Club & House League Zone
+ * The History Portal Chess Club & House League Zone
  * Interactive module for Period 6 Thursdays
  */
 
@@ -24,21 +24,21 @@ import {
 } from './chess_realtime.js';
 import QRCode from 'qrcode';
 
-const STORAGE_KEY = 'meoncross_chess_club_v5';
-const ARCHIVE_KEY = 'meoncross_chess_master_archive';
-const BACKUP_KEY = 'meoncross_chess_backup_snapshot';
+const STORAGE_KEY = 'history_chess_club_v5';
+const ARCHIVE_KEY = 'history_chess_master_archive';
+const BACKUP_KEY = 'history_chess_backup_snapshot';
 const LEGACY_STORAGE_KEYS = [
-  'meoncross_chess_club_v5',
-  'meoncross_chess_master_archive',
-  'meoncross_chess_backup_snapshot',
-  'meoncross_chess_club_v4',
-  'meoncross_chess_club_v3',
-  'meoncross_chess_club_v2',
-  'meoncross_chess_club_v1',
+  'history_chess_club_v5',
+  'history_chess_master_archive',
+  'history_chess_backup_snapshot',
+  'chess_club_v4',
+  'chess_club_v3',
+  'chess_club_v2',
+  'chess_club_v1',
 ];
 
 // IndexedDB Multi-Layer Vault for Persistent Browser Storage
-const IDB_NAME = 'MeoncrossChessDB';
+const IDB_NAME = 'HistoryChessDB';
 const IDB_VERSION = 1;
 const IDB_STORE = 'club_vault';
 
@@ -166,15 +166,15 @@ function getInitialRole() {
       validPasskeys.includes(teacherParam) ||
       validPasskeys.includes(passkeyParam)
     ) {
-      localStorage.setItem('meoncross_chess_teacher_auth', 'true');
+      localStorage.setItem('history_chess_teacher_auth', 'true');
       return 'teacher';
     }
-    if (localStorage.getItem('meoncross_chess_teacher_auth') === 'true') {
+    if (localStorage.getItem('history_chess_teacher_auth') === 'true') {
       return 'teacher';
     }
     // Auto-authenticate teacher when developing locally
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      localStorage.setItem('meoncross_chess_teacher_auth', 'true');
+      localStorage.setItem('history_chess_teacher_auth', 'true');
       return 'teacher';
     }
   } catch (e) {}
@@ -278,8 +278,8 @@ export function showChessToast(message, type = 'success') {
 window.showChessToast = showChessToast;
 
 // Global Session Clock & Auto-Ticker for Period 6
-if (typeof window !== 'undefined' && !window.__meoncrossSessionInterval) {
-  window.__meoncrossSessionInterval = setInterval(() => {
+if (typeof window !== 'undefined' && !window.__historySessionInterval) {
+  window.__historySessionInterval = setInterval(() => {
     if (
       chessState &&
       chessState.sessionActive &&
@@ -347,8 +347,8 @@ window.cycleAssemblyQuote = function () {
 window.cycleHistoricalQuote = window.cycleAssemblyQuote;
 
 // Global Keyboard Shortcut for Whiteboard Mode ('W' or 'Esc')
-if (typeof window !== 'undefined' && !window.__meoncrossKeydownBound) {
-  window.__meoncrossKeydownBound = true;
+if (typeof window !== 'undefined' && !window.__historyKeydownBound) {
+  window.__historyKeydownBound = true;
   window.addEventListener('keydown', (e) => {
     const tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : '';
     if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
@@ -395,7 +395,8 @@ function initChessState(forceClean = false) {
       const syncParam = urlParams.get('chess_sync');
       if (syncParam) {
         let b64 = syncParam.trim();
-        if (b64.startsWith('MEONCROSS-CHESS:')) b64 = b64.replace('MEONCROSS-CHESS:', '');
+        if (b64.startsWith('HISTORY-CHESS:')) b64 = b64.replace('HISTORY-CHESS:', '');
+        if (b64.startsWith('CHESS-SYNC:')) b64 = b64.replace('CHESS-SYNC:', '');
         const jsonStr = decodeURIComponent(atob(b64));
         const syncData = JSON.parse(jsonStr);
         if (Array.isArray(syncData.players) && syncData.players.length > 0) {
@@ -754,7 +755,7 @@ export function renderChessHubView() {
               Period VI Thursdays · Senior Block History Room
             </div>
             <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2.15rem; margin: 0 0 6px 0; color: #fafaf9; font-weight: 700; letter-spacing: 0.02em; line-height: 1.15;">
-              Meoncross Chess Club &amp; House League
+              The History Portal Chess Club &amp; House League
             </h1>
             <p style="margin: 0; font-size: 0.9rem; color: #d6d3d1; line-height: 1.55; font-family: 'Outfit', sans-serif;">
               Autumn Term tournament ledger and master ladder. Every completed game scores points toward the annual House Championship for <strong>Victory</strong>, <strong>Warrior</strong>, <strong>Dreadnought</strong>, and <strong>Invincible</strong>.
@@ -1181,7 +1182,7 @@ function renderLadderTab(players) {
               The Championship Podium
             </h2>
             <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">
-              Current top 3 contenders leading the Meoncross School Chess Ladder.
+              Current top 3 contenders leading the The History Portal Chess Ladder.
             </p>
           </div>
 
@@ -2400,7 +2401,7 @@ function renderBeginnersTab() {
             </div>
 
             <div style="background: #422006; color: #fef08a; border-radius: 6px; padding: 10px 14px; font-size: 0.8rem; font-weight: 700; text-align: center; font-family: monospace;">
-              "Center, Knights, Castle — that is how Meoncross champions start!"
+              "Center, Knights, Castle — that is how History Hub champions start!"
             </div>
           </div>
 
@@ -3996,7 +3997,7 @@ window.promptTeacherUnlock = function () {
   const clean = passkey.trim().toLowerCase();
   const validPasskeys = ['drake.30!', 'drake.30'];
   if (validPasskeys.includes(clean)) {
-    localStorage.setItem('meoncross_chess_teacher_auth', 'true');
+    localStorage.setItem('history_chess_teacher_auth', 'true');
     chessState.userRole = 'teacher';
     chessState.isPupilPreview = false;
     showChessToast('🔓 Teacher Mode Unlocked!', 'success');
@@ -4025,7 +4026,7 @@ window.exitPupilPreview = function () {
 };
 
 window.lockTeacherMode = function () {
-  localStorage.removeItem('meoncross_chess_teacher_auth');
+  localStorage.removeItem('history_chess_teacher_auth');
   chessState.isPupilPreview = false;
   chessState.userRole = 'pupil';
   if (chessState.activeTab === 'signin') {
@@ -5792,7 +5793,7 @@ export function renderWhiteboardModeView(sortedHouses) {
               <span style="color: #64748b; font-size: 0.72rem; font-family: monospace;">PERIOD 6</span>
             </div>
             <h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: #ffffff; font-weight: 800; letter-spacing: -0.01em;">
-              Meoncross Chess Club
+              The History Portal Chess Club
             </h1>
           </div>
         </div>
@@ -6705,7 +6706,7 @@ window.openAssemblySlideModal = function () {
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
             <div>
               <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; color: #93c5fd; text-transform: uppercase; font-family: monospace;">
-                MEONCROSS SCHOOL · PERIOD 6 CHESS CLUB
+                The History Portal · PERIOD 6 CHESS CLUB
               </div>
               <h1 style="font-family: 'Playfair Display', serif; font-size: 1.65rem; margin: 3px 0 0 0; color: #ffffff; font-weight: 900; letter-spacing: -0.01em;">
                 Weekly House Championship & Grandmaster Honors
@@ -6747,7 +6748,7 @@ window.openAssemblySlideModal = function () {
                   </span>
                 </div>
                 <div style="font-size: 0.7rem; color: #e2e8f0; margin-top: 1px; font-style: italic;">
-                  "Champion of the Board — Master tactician holding the #1 spot on the Meoncross Ladder!"
+                  "Champion of the Board — Master tactician holding the #1 spot on the The History Portal Ladder!"
                 </div>
               </div>
             </div>
@@ -6850,11 +6851,11 @@ window.copyAssemblyNoticeText = function () {
     ? Math.max(0, (champ.games || 0) - (champ.won || 0) - (champ.drawn || 0))
     : 0;
 
-  const text = `👑 MEONCROSS CHESS CLUB — WEEKLY ASSEMBLY HONORS (Period 6 Thursdays)
+  const text = `👑 HISTORY REVISION HUB CHESS CLUB — WEEKLY ASSEMBLY HONORS (Period 6 Thursdays)
 
 ⭐ INDIVIDUAL SCHOOL GRANDMASTER OF THE WEEK:
 🥇 Huge congratulations to ${champ ? champ.name : 'our club champion'} (${champHouseName})!
-${champ ? champ.name : 'They'} currently sit at RANK #1 on the Meoncross Master Ladder with ${champPts} points (${champ ? champ.won : 0} Wins, ${champ ? champ.drawn : 0} Draws, ${champLosses} Losses, Elo ${champ ? champ.rating : 1000})! An outstanding display of tactical mastery and sportsmanship on the boards!
+${champ ? champ.name : 'They'} currently sit at RANK #1 on the The History Portal Master Ladder with ${champPts} points (${champ ? champ.won : 0} Wins, ${champ ? champ.drawn : 0} Draws, ${champLosses} Losses, Elo ${champ ? champ.rating : 1000})! An outstanding display of tactical mastery and sportsmanship on the boards!
 
 🏰 WEEKLY HOUSE CHAMPIONSHIP STANDINGS:
 1st Place: ${HOUSES[sorted[0].id].name} — ${sorted[0].points} pts (${sorted[0].wins}W, ${sorted[0].draws}D, ${sorted[0].losses}L)
@@ -6926,7 +6927,7 @@ window.downloadAssemblySlidePNG = function () {
   // Header Subtitle & Title
   ctx.fillStyle = '#93c5fd';
   ctx.font = 'bold 34px sans-serif';
-  ctx.fillText('MEONCROSS SCHOOL · PERIOD 6 CHESS CLUB', 80, 105);
+  ctx.fillText('The History Portal · PERIOD 6 CHESS CLUB', 80, 105);
 
   ctx.fillStyle = '#ffffff';
   ctx.font = 'bold 64px Georgia, serif';
@@ -6984,7 +6985,7 @@ window.downloadAssemblySlidePNG = function () {
   ctx.fillStyle = '#e2e8f0';
   ctx.font = 'italic 26px sans-serif';
   ctx.fillText(
-    '"Champion of the Board — Master tactician holding the #1 spot on the Meoncross Ladder!"',
+    '"Champion of the Board — Master tactician holding the #1 spot on the The History Portal Ladder!"',
     cX + 150,
     cY + 185,
   );
@@ -7094,11 +7095,11 @@ window.downloadAssemblySlidePNG = function () {
   ctx.textAlign = 'right';
   ctx.fillStyle = '#94a3b8';
   ctx.font = 'bold 20px sans-serif';
-  ctx.fillText('Thursdays Period 6 · Meoncross History Hub', 1815, 986);
+  ctx.fillText('Thursdays Period 6 · GCSE History Hub', 1815, 986);
 
   // Download Trigger
   const link = document.createElement('a');
-  link.download = 'meoncross_chess_assembly_championship.png';
+  link.download = 'history_chess_assembly_championship.png';
   link.href = canvas.toDataURL('image/png');
   link.click();
 };
@@ -7127,7 +7128,7 @@ window.generateFridayBulletinText = function () {
     ? `${HOUSES[sortedHouses[3].id]?.name || 'Invincible'} (${sortedHouses[3].points} pts)`
     : 'Invincible (0 pts)';
 
-  return `♟️ MEONCROSS CHESS CLUB & HOUSE LEAGUE — FRIDAY BULLETIN ♟️\n🏆 House Championship Standings:\n   1st: ${h1}  ·  2nd: ${h2}  ·  3rd: ${h3}  ·  4th: ${h4}\n👑 Master Ladder Leader: ${leader ? `${leader.name} (${leaderHouseName} · Rating ${leader.rating || 1000})` : 'Autumn Season Underway'}\n⚔ Total Games Completed: ${chessState.matches.length} tournament matches logged this term\n📅 Next Club: Thursday Period 6 in the Senior Block History Room!`;
+  return `♟️ HISTORY REVISION HUB CHESS CLUB & HOUSE LEAGUE — FRIDAY BULLETIN ♟️\n🏆 House Championship Standings:\n   1st: ${h1}  ·  2nd: ${h2}  ·  3rd: ${h3}  ·  4th: ${h4}\n👑 Master Ladder Leader: ${leader ? `${leader.name} (${leaderHouseName} · Rating ${leader.rating || 1000})` : 'Autumn Season Underway'}\n⚔ Total Games Completed: ${chessState.matches.length} tournament matches logged this term\n📅 Next Club: Thursday Period 6 in the Senior Block History Room!`;
 };
 
 window.copyFridayBulletinNotice = function () {
@@ -7210,7 +7211,7 @@ window.openSnapshotExportModal = function () {
   const b64 = btoa(encodeURIComponent(jsonStr));
   const syncUrl = `${origin}${pathname}?view=chess&chess_sync=${b64}#chess-club`;
 
-  const codeSnippet = `// Meoncross Chess Club Official Snapshot (Updated ${new Date().toLocaleDateString('en-GB')})\nexport const INITIAL_PLAYERS = ${JSON.stringify(chessState.players, null, 2)};\n\nexport const INITIAL_MATCHES = ${JSON.stringify(chessState.matches, null, 2)};`;
+  const codeSnippet = `// The History Portal Chess Club Official Snapshot (Updated ${new Date().toLocaleDateString('en-GB')})\nexport const INITIAL_PLAYERS = ${JSON.stringify(chessState.players, null, 2)};\n\nexport const INITIAL_MATCHES = ${JSON.stringify(chessState.matches, null, 2)};`;
 
   modalCont.innerHTML = `
     <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
@@ -7343,7 +7344,7 @@ window.openDataVaultModal = function () {
           </div>
 
           <div style="display: flex; gap: 8px; margin-top: 8px;">
-            <input type="text" id="vault-sync-key-input" placeholder="Paste Sync Key here on this device (e.g. MEONCROSS-CHESS:...)" style="flex: 1; padding: 8px 10px; border-radius: 4px; border: 1px solid #d6d3d1; font-family: monospace; font-size: 0.78rem; background: #ffffff;">
+            <input type="text" id="vault-sync-key-input" placeholder="Paste Sync Key here on this device (e.g. HISTORY-CHESS:...)" style="flex: 1; padding: 8px 10px; border-radius: 4px; border: 1px solid #d6d3d1; font-family: monospace; font-size: 0.78rem; background: #ffffff;">
             <button type="button" onclick="window.applySyncKey()" style="background: #292524; color: #d4af37; border: 1px solid #44403c; padding: 8px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; font-family: monospace; cursor: pointer;">
               ⚡ SYNC NOW
             </button>
@@ -7438,7 +7439,7 @@ window.copySyncKey = function () {
   try {
     const jsonStr = JSON.stringify(exportPayload);
     const b64 = btoa(encodeURIComponent(jsonStr));
-    const syncKey = `MEONCROSS-CHESS:${b64}`;
+    const syncKey = `HISTORY-CHESS:${b64}`;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
@@ -7505,9 +7506,7 @@ window.applySyncKey = function () {
     return;
   }
   let raw = input.value.trim();
-  if (raw.startsWith('MEONCROSS-CHESS:')) {
-    raw = raw.replace('MEONCROSS-CHESS:', '');
-  }
+  raw = raw.replace(/^[^:]+:/, '');
   try {
     const jsonStr = decodeURIComponent(atob(raw));
     const syncData = JSON.parse(jsonStr);
@@ -7539,7 +7538,7 @@ window.applySyncKey = function () {
 
 window.downloadChessBackupJSON = function () {
   const backup = {
-    app: 'Meoncross Chess Club',
+    app: 'The History Portal Chess Club',
     exportedAt: new Date().toISOString(),
     playerCount: chessState.players.length,
     matchCount: chessState.matches.length,
@@ -7556,7 +7555,7 @@ window.downloadChessBackupJSON = function () {
   const d = new Date();
   const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   a.href = url;
-  a.download = `meoncross_chess_backup_${dateStr}.json`;
+  a.download = `history_chess_backup_${dateStr}.json`;
   a.click();
   URL.revokeObjectURL(url);
   showChessToast('💾 Backup file downloaded successfully!', 'success');
@@ -7669,7 +7668,7 @@ window.printWeeklyChessSheet = function () {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Meoncross Chess Club - Period 6 Roster (${dateFormatted})</title>
+      <title>The History Portal Chess Club - Period 6 Roster (${dateFormatted})</title>
       <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; padding: 24px; color: #1e293b; }
         h1 { margin: 0 0 4px 0; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -7687,7 +7686,7 @@ window.printWeeklyChessSheet = function () {
     </head>
     <body>
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1>Meoncross School · Period 6 Chess Club</h1>
+        <h1>The History Portal · Period 6 Chess Club</h1>
         <button onclick="window.print()" style="padding: 6px 14px; background: #2563eb; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Print Sheet</button>
       </div>
       <div class="meta">
@@ -7870,7 +7869,7 @@ window.printFidePairingSheet = function () {
     <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <title>Meoncross Chess Club - FIDE Round Pairing Sheet (${dateFormatted})</title>
+      <title>The History Portal Chess Club - FIDE Round Pairing Sheet (${dateFormatted})</title>
       <style>
         @page {
           size: A4 portrait;
@@ -7990,7 +7989,7 @@ window.printFidePairingSheet = function () {
 
       <div class="header">
         <div>
-          <h1>Meoncross School Chess Club</h1>
+          <h1>The History Portal Chess Club</h1>
           <div class="subtitle">Official FIDE-Style Round Pairing &amp; Results Sheet</div>
         </div>
         <div style="text-align: right; font-size: 11px; font-weight: 700; color: #334155;">

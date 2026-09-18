@@ -28,7 +28,7 @@ export const competitionsData = [
         tier: 'School / Group Winner',
         reward: '£300 Department Grant + Trophy',
         icon: 'fa-trophy',
-        desc: '£300 towards History Department books and learning resources, plus the prestigious Annual Winner’s Trophy to keep at Meoncross for the academic year.',
+        desc: '£300 towards History Department books and learning resources, plus the prestigious Annual Winner’s Trophy to keep at The History Portal for the academic year.',
       },
       {
         tier: 'Runners-Up',
@@ -101,7 +101,7 @@ export const competitionsData = [
       'Select an aspect of Hampshire history that fascinates you—school, village, family, or local event.',
       'Explore primary archives (visit the Hampshire Record Office in Winchester or use online digital record repositories).',
       'Select your medium (essay, film, podcast, website, or poster).',
-      'Submit through Mr Lovett (Head of History) before Friday 19th March 2027. Multiple entries per year group are welcome and free of charge.',
+      'Submit through Department Lead before Friday 19th March 2027. Multiple entries per year group are welcome and free of charge.',
     ],
     links: [
       {
@@ -121,7 +121,8 @@ export const competitionsData = [
         icon: 'fa-building-columns',
       },
     ],
-    contact: 'Dr Alistair Dougall (Trustee, Hampshire Archives Trust) · Co-ordinated by Mr Lovett',
+    contact:
+      'Dr Alistair Dougall (Trustee, Hampshire Archives Trust) · Co-ordinated by Department Lead',
   },
 
   {
@@ -202,7 +203,7 @@ export const competitionsData = [
     howToEnter: [
       'Select an eligible category: Spirit of Normandy (WW2), First World War, Local History, or GCSE Modern World.',
       'Produce an extended analytical essay or enquiry project (incorporating primary evidence and historical interpretations).',
-      'Submit your draft to Mr Lovett for review and department endorsement during the Spring / Summer Term.',
+      'Submit your draft to Department Lead for review and department endorsement during the Spring / Summer Term.',
       'Official submission is made through the school prior to the June 2027 deadline.',
     ],
     links: [
@@ -217,7 +218,7 @@ export const competitionsData = [
         icon: 'fa-shield-halved',
       },
     ],
-    contact: 'Co-ordinated by Mr Lovett (Head of History)',
+    contact: 'Co-ordinated by Department Lead',
   },
 
   {
@@ -306,6 +307,6 @@ export const competitionsData = [
         icon: 'fa-arrow-up-right-from-square',
       },
     ],
-    contact: 'St Hugh’s College Admissions · Mentored by Mr Lovett',
+    contact: 'St Hugh’s College Admissions · Mentored by Department Lead',
   },
 ];

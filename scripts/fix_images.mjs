@@ -8,11 +8,13 @@ async function fetchWikimediaImage(name) {
       queryName = name.split('&')[0].trim();
     }
     const url = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(queryName)}&prop=pageimages&format=json&pithumbsize=500`;
-    const res = await fetch(url, { headers: { 'User-Agent': 'MeoncrossHistoryBot/1.0 (info@meoncross.example)' } });
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'The History PortalBot/1.0 (info@history.example)' },
+    });
     const data = await res.json();
     const pages = data.query.pages;
     const pageId = Object.keys(pages)[0];
-    if (pageId !== "-1" && pages[pageId].thumbnail) {
+    if (pageId !== '-1' && pages[pageId].thumbnail) {
       return pages[pageId].thumbnail.source;
     }
   } catch (e) {
@@ -27,7 +29,9 @@ async function downloadImage(url, filename) {
     return `/images/weimar_individuals/${filename}`;
   }
   try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'MeoncrossHistoryBot/1.0 (info@meoncross.example)' } });
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'The History PortalBot/1.0 (info@history.example)' },
+    });
     const buffer = await res.arrayBuffer();
     fs.writeFileSync(filepath, Buffer.from(buffer));
     console.log(`Downloaded ${filename}`);
@@ -43,9 +47,11 @@ async function run() {
   let content = fs.readFileSync(dataPath, 'utf8');
   let dataObj;
   try {
-    dataObj = eval('(function(){ ' + content.replace(/export\s+const\s+unitData\s*=\s*/, 'return ') + '})()');
+    dataObj = eval(
+      '(function(){ ' + content.replace(/export\s+const\s+unitData\s*=\s*/, 'return ') + '})()',
+    );
   } catch (e) {
-    console.error("Failed to parse data.js", e);
+    console.error('Failed to parse data.js', e);
     process.exit(1);
   }
 
@@ -70,7 +76,10 @@ async function run() {
   if (modified) {
     const stringifiedKeyIndividuals = JSON.stringify(dataObj.key_individuals, null, 8);
     const regex = /"key_individuals":\s*\[[\s\S]*?\n    \]/m;
-    const newContent = content.replace(regex, `"key_individuals": ${stringifiedKeyIndividuals.replace(/\n/g, '\n    ')}`);
+    const newContent = content.replace(
+      regex,
+      `"key_individuals": ${stringifiedKeyIndividuals.replace(/\n/g, '\n    ')}`,
+    );
     fs.writeFileSync(dataPath, newContent, 'utf8');
     console.log('Fixed missing images.');
   } else {

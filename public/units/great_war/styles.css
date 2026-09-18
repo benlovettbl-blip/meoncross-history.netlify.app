@@ -1,10 +1,9 @@
-/* --- Mr Lovett's History Hub KS3 History Workbook Design System --- */
+/* --- The History Revision Hub KS3 History Workbook Design System --- */
 
 :root {
-
   --font-title: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
-  
+
   /* Neutral Light Theme Colors */
   --bg-main: #f8fafc;
   --bg-surface: #ffffff;
@@ -13,7 +12,7 @@
   --border-color: rgba(15, 23, 42, 0.08);
   --text-main: #0f172a;
   --text-muted: #475569;
-  
+
   /* Flashcard Colors */
   --card-bg-front: linear-gradient(135deg, #ffffff, #f8fafc);
   --card-bg-back: linear-gradient(135deg, #ffffff, #f1f5f9);
@@ -26,7 +25,7 @@
   --text-gold: #b45309; /* Theme-aware gold text */
   --accent-green: #059669; /* Success Green */
   --accent-indigo: #4f46e5; /* Protestant/Puritan Indigo */
-  
+
   /* Shared values */
   --radius-lg: 16px;
   --radius-md: 10px;
@@ -43,7 +42,7 @@
   --border-color: #cbd5e1;
   --bg-app: #0f172a; /* dark preview background */
   --bg-page: #ffffff;
-  
+
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -427,7 +426,13 @@ h3.section-subtitle {
   flex-grow: 1;
   min-height: 24mm; /* Give it some minimum height on screen */
   border-top: 1.2px solid #555555;
-  background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent calc(8mm - 1.2px), #555555 calc(8mm - 1.2px), #555555 8mm);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent calc(8mm - 1.2px),
+    #555555 calc(8mm - 1.2px),
+    #555555 8mm
+  );
   background-size: 100% 8mm;
 }
 
@@ -435,7 +440,13 @@ h3.section-subtitle {
   width: 100%;
   box-sizing: border-box;
   border-top: 1.2px solid #555555;
-  background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent calc(8mm - 1.2px), #555555 calc(8mm - 1.2px), #555555 8mm);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent calc(8mm - 1.2px),
+    #555555 calc(8mm - 1.2px),
+    #555555 8mm
+  );
   background-size: 100% 8mm;
 }
 
@@ -577,7 +588,8 @@ h3.section-subtitle {
   margin-top: 5px;
 }
 
-.feedback-table th, .feedback-table td {
+.feedback-table th,
+.feedback-table td {
   border: 1.2px solid #000000;
   padding: 6px 10px;
   font-size: 10pt;
@@ -764,7 +776,8 @@ h3.section-subtitle {
   margin-top: 8px;
 }
 
-.glossary-table th, .glossary-table td {
+.glossary-table th,
+.glossary-table td {
   border: 1.2px solid #000000;
   padding: 6px 10px;
   font-size: 10pt;
@@ -817,10 +830,22 @@ h3.section-subtitle {
   border-radius: 2px;
 }
 
-.tier-free { background-color: #f1f5f9; color: #475569; }
-.tier-common { background-color: #e0f2fe; color: #0369a1; }
-.tier-rare { background-color: #dbeafe; color: #1d4ed8; }
-.tier-epic { background-color: #fef3c7; color: #b45309; }
+.tier-free {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+.tier-common {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+.tier-rare {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.tier-epic {
+  background-color: #fef3c7;
+  color: #b45309;
+}
 
 .curator-item-list {
   list-style: none;
@@ -923,7 +948,13 @@ h3.section-subtitle {
 
 .placard-lines {
   flex-grow: 1;
-  background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent 15px, var(--charcoal) 15px, var(--charcoal) 16.2px);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 15px,
+    var(--charcoal) 15px,
+    var(--charcoal) 16.2px
+  );
   background-size: 100% 16.2px;
   border-top: 1.2px solid var(--charcoal);
   min-height: 81px; /* Exactly 5 lines of 16.2px */
@@ -945,7 +976,13 @@ h3.section-subtitle {
     padding: 0 !important;
   }
 
-  .no-print-header, .no-print, .sen-support-toolbar, header, footer, iframe, .web-only-nav {
+  .no-print-header,
+  .no-print,
+  .sen-support-toolbar,
+  header,
+  footer,
+  iframe,
+  .web-only-nav {
     display: none !important;
   }
 
@@ -961,7 +998,7 @@ h3.section-subtitle {
     margin: 0 !important;
     border: none !important;
     /* Top 8mm, Right 15mm, Bottom 14mm, Left 15mm to avoid browser footers */
-    padding: 8mm 15mm 14mm 15mm !important; 
+    padding: 8mm 15mm 14mm 15mm !important;
     width: 210mm !important;
     height: 297mm !important;
     page-break-after: always !important;
@@ -978,12 +1015,19 @@ h3.section-subtitle {
   }
 
   /* Pure CSS Dynamic Writing Lines */
-  .dynamic-writing-lines-zone, .writing-lines-box-dynamic {
+  .dynamic-writing-lines-zone,
+  .writing-lines-box-dynamic {
     flex-grow: 1;
     width: 100%;
     min-height: 0; /* Let it shrink to 0 if there's no space, preventing overlaps */
     border-top: 1.2px solid #555555;
-    background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent calc(8mm - 1.2px), #555555 calc(8mm - 1.2px), #555555 8mm);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent calc(8mm - 1.2px),
+      #555555 calc(8mm - 1.2px),
+      #555555 8mm
+    );
     background-size: 100% 8mm;
   }
 
@@ -994,7 +1038,7 @@ h3.section-subtitle {
     flex-shrink: 0; /* Footer should never shrink */
     position: static !important; /* Remove absolute positioning to prevent overlaps! */
   }
-  
+
   .page-landscape {
     display: block !important;
     box-shadow: none !important;
@@ -1012,7 +1056,7 @@ h3.section-subtitle {
   }
 
   .landscape-rotate-wrapper {
-    width: 270mm !important; 
+    width: 270mm !important;
     height: 180mm !important;
     transform: rotate(90deg) translate(0px, -180mm) !important;
     transform-origin: top left;
@@ -1025,16 +1069,39 @@ h3.section-subtitle {
     justify-content: space-between;
   }
 
-  h1, h2, h3, h4, h5, p, .task-question, .narrative-col,
-  .do-now-grid, .do-now-cell, .image-plate-box, .map-container, 
-  .vocab-container, .task-annotation-box, .curator-tier, 
-  .writing-lines-box, .student-info-box, tr, 
-  .sentence-starter-inline, .model-answer-inline, .timeline-node {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  .task-question,
+  .narrative-col,
+  .do-now-grid,
+  .do-now-cell,
+  .image-plate-box,
+  .map-container,
+  .vocab-container,
+  .task-annotation-box,
+  .curator-tier,
+  .writing-lines-box,
+  .student-info-box,
+  tr,
+  .sentence-starter-inline,
+  .model-answer-inline,
+  .timeline-node {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
 
-  h1, h2, h3, h4, h5, .lesson-title, .section-subtitle, .task-heading {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .lesson-title,
+  .section-subtitle,
+  .task-heading {
     page-break-after: avoid !important;
     break-after: avoid !important;
   }
@@ -1045,7 +1112,7 @@ h3.section-subtitle {
     padding-top: 10px !important;
     text-align: center;
   }
-  
+
   .page-landscape .page-footer {
     position: absolute !important;
     left: 15mm !important;
@@ -1504,7 +1571,7 @@ body.teacher-mode .teacher-board-container {
   gap: 6px;
   transition: all 0.2s ease;
   font-family: var(--font-heading);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .page-support-btn:hover {
@@ -1545,7 +1612,9 @@ body.teacher-mode .teacher-board-container {
 }
 
 /* --- Global Print and Spillage Constraints --- */
-img, .map-container img, .image-plate-img {
+img,
+.map-container img,
+.image-plate-img {
   max-height: 110mm !important;
 }
 
@@ -1565,7 +1634,7 @@ img, .map-container img, .image-plate-img {
   padding: 18px;
   margin-bottom: 22px;
   border-left: 5px solid var(--navy);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .game-section h4 {
   font-family: var(--font-heading);
@@ -1657,13 +1726,14 @@ img, .map-container img, .image-plate-img {
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
 }
 .trading-card-3d.flipped .trading-card-inner {
   transform: rotateY(180deg);
 }
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1739,7 +1809,6 @@ img, .map-container img, .image-plate-img {
 .card-back li {
   margin-bottom: 4px;
 }
-
 
 /* Added for print audit */
 .keep-together {

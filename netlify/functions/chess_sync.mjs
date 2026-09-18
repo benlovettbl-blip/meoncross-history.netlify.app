@@ -23,7 +23,7 @@ async function handleRequest(method, headers, body) {
   let store = null;
   try {
     const { getStore } = await import('@netlify/blobs');
-    store = getStore('meoncross_chess');
+    store = getStore('history_chess');
   } catch (e) {
     // Netlify Blobs not available or not configured; memory fallback will be used
   }

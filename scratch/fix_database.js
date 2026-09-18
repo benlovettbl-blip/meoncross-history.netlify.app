@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const dbPath = 'c:/Projects/meoncross-history.netlify.app/public/database.json';
+const dbPath = 'c:/Projects/the-history-revision-hub.netlify.app/public/database.json';
 const data = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
 // 1. Standardise Middle East unit

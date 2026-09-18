@@ -67,7 +67,7 @@
   --border-radius-sm: 8px;
 }
 
-/* Sidebar overrides for Mr Lovett's History Hub theme to handle dark sidebar + light main area */
+/* Sidebar overrides for History Revision Hub theme to handle dark sidebar + light main area */
 [data-theme='primary'] .app-sidebar {
   background-color: var(--bg-sidebar);
   color: #f8fafc;
@@ -526,7 +526,7 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Custom Mr Lovett's History Hub theme hero enhancements */
+/* Custom History Revision Hub theme hero enhancements */
 [data-theme='primary'] .dashboard-hero {
   background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%);
   border: 2px solid #d4af37;
@@ -717,7 +717,7 @@ html {
   }
 }
 
-/* Premium style enhancements for Mr Lovett's History Hub Theme */
+/* Premium style enhancements for History Revision Hub theme */
 [data-theme='primary'] .module-card {
   border: 1px solid rgba(12, 35, 64, 0.08);
   border-top: 4px solid var(--primary);

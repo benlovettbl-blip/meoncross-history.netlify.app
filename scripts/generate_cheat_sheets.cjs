@@ -191,7 +191,7 @@ units.forEach((unitId) => {
 <body>
 
   <h1>${title}</h1>
-  <div class="subtitle">High-Yield Departmental Revision Cheat Sheet &bull; Meoncross School History</div>
+  <div class="subtitle">High-Yield Departmental Revision Cheat Sheet &bull; The History Portal History</div>
 
   ${
     enquiry

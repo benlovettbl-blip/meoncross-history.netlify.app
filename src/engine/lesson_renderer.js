@@ -4756,7 +4756,7 @@ export function renderLesson(lesson) {
   if (lesson.quiz && lesson.quiz.length > 0 && appStore.state.activeUnitData.type !== 'trip') {
     let savedScoreBadge = '';
     try {
-      const savedRaw = localStorage.getItem('meoncross_quiz_' + lesson.id);
+      const savedRaw = localStorage.getItem('history_quiz_' + lesson.id);
       if (savedRaw) {
         const s = JSON.parse(savedRaw);
         savedScoreBadge = `
@@ -4922,7 +4922,7 @@ export function renderLesson(lesson) {
   const activeUnitEdition = (activeUnit && activeUnit.edition) || '2026.1';
   html += `
     <div class="lesson-footer-meta" style="text-align: center; margin-top: 50px; padding: 16px; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid #e2e8f0; font-family: 'Inter', sans-serif;">
-      Meoncross History Hub &bull; Unit: ${unitId} &bull; Edition ${activeUnitEdition}
+      GCSE History Hub &bull; Unit: ${unitId} &bull; Edition ${activeUnitEdition}
     </div>
   `;
 

@@ -308,7 +308,7 @@ function getHtmlContent() {
     <div>
       <div style="border-bottom: 2px solid #cbd5e1; padding-bottom: 11px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
         <div style="text-align: left;">
-          <span style="font-size: 12pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.08em; display: block;">Meoncross School</span>
+          <span style="font-size: 12pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.08em; display: block;">The History Portal</span>
           <span style="font-size: 8.4pt; color: #64748b; font-weight: 600;">Department of History · Ypres Salient Expedition 2026</span>
         </div>
         <div style="text-align: right;">
@@ -334,8 +334,8 @@ function getHtmlContent() {
           Tour Leadership Directorate &amp; Operational Logistics
         </div>
         <div style="font-size: 8.5pt; line-height: 1.46; color: #1e293b;">
-          <strong>Tour Leaders:</strong> Mr Ben Lovett (Head of History) &amp; Mr James Garrett (The History Boys)<br>
-          <strong>Accompanying Staff:</strong> Two Meoncross Staff (Pastoral Care &amp; First Aid Leads)<br>
+          <strong>Tour Leaders:</strong> Department Lead &amp; Mr James Garrett (The History Boys)<br>
+          <strong>Accompanying Staff:</strong> Fieldwork Staff (Pastoral Care &amp; First Aid Leads)<br>
           <strong>Expedition Dates:</strong> Thursday 1st – Saturday 3rd October 2026<br>
           <strong>Base Camp:</strong> Peace Village Hostel, Nieuwkerkestraat 9, 8957 Mesen, Belgium (+32 57 22 60 40)<br>
           <strong>Transport:</strong> Jet Connect 53-Seat Executive Coach · Driver Rest Regulations strictly observed
@@ -369,11 +369,11 @@ function getHtmlContent() {
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
           <div>
             <span style="font-size: 7.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Tour Leaders:</span>
-            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">Mr Ben Lovett &amp; Mr James Garrett</span>
+            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">Department Lead &amp; Mr James Garrett</span>
           </div>
           <div>
             <span style="font-size: 7.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Accompanying Staff:</span>
-            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">Two Meoncross Staff</span>
+            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">Fieldwork Staff</span>
           </div>
           <div>
             <span style="font-size: 7.8pt; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.05em; display: block;">School Base 24/7 Emergency:</span>
@@ -388,13 +388,13 @@ function getHtmlContent() {
      Peace Village Base Camp Protocol (Mesen)
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.42;">
-          Nightly academic debriefs held in Seminar Room A (19:15–20:30). Staff room allocations, emergency first-aid post, and evening student curfew (22:00) managed on-site by accompanying Meoncross staff.
+          Nightly academic debriefs held in Seminar Room A (19:15–20:30). Staff room allocations, emergency first-aid post, and evening student curfew (22:00) managed on-site by accompanying The History Portal staff.
         </div>
       </div>
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 1 of 12</span>
     </div>
   </div>
@@ -432,7 +432,7 @@ function getHtmlContent() {
           <tbody>
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 1 · 06:15</strong></td>
-              <td style="padding: 2.2px 7px;">Depart Meoncross School · Folkestone Le Shuttle</td>
+              <td style="padding: 2.2px 7px;">Depart The History Portal · Folkestone Le Shuttle</td>
               <td style="padding: 2.2px 7px;">Jet Connect coach departs; collect passports; 11:20 Eurotunnel; arrival in France/Belgium.</td>
             </tr>
             <tr>
@@ -488,7 +488,7 @@ function getHtmlContent() {
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 2 · 19:20</strong></td>
               <td style="padding: 2.2px 7px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
-              <td style="padding: 2.2px 7px;">Arrive early for prime position; brief two Meoncross wreath bearers; Pte. Franklin &amp; Pte. Ayling on Panel 35.</td>
+              <td style="padding: 2.2px 7px;">Arrive early for prime position; brief two The History Portal wreath bearers; Pte. Franklin &amp; Pte. Ayling on Panel 35.</td>
             </tr>
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 3 · 09:15</strong></td>
@@ -529,7 +529,7 @@ function getHtmlContent() {
      <div class="box-header">Staff Supervisory Protocol</div>
           <div style="font-size: 7.8pt; color: #334155; line-height: 1.4;">
             • Strict headcounts at every coach departure &amp; cemetery gate.<br>
-            • Accompanying Meoncross staff manage the rear sweep.<br>
+            • Accompanying The History Portal staff manage the rear sweep.<br>
             • Designated pupil assembly point is the coach bay.<br>
             • Pupils must remain in assigned buddy pairs at all times.
           </div>
@@ -558,7 +558,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 2 of 12</span>
     </div>
   </div>
@@ -673,7 +673,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 3 of 12</span>
     </div>
   </div>
@@ -798,7 +798,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 4 of 12</span>
     </div>
   </div>
@@ -901,7 +901,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 5 of 12</span>
     </div>
   </div>
@@ -1006,7 +1006,7 @@ We shall not sleep, though poppies grow
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 6 of 12</span>
     </div>
   </div>
@@ -1109,7 +1109,7 @@ Great death has made all his for evermore.
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 7 of 12</span>
     </div>
   </div>
@@ -1214,7 +1214,7 @@ Hurled through still heavens?
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 8 of 12</span>
     </div>
   </div>
@@ -1279,7 +1279,7 @@ They sleep beyond England's foam.
           <div>
             <h4 style="font-size: 9.2pt; color: #0f172a; margin-bottom: 4px;">Staff Coordination: Parish Fallen</h4>
             <p style="font-size: 8.2pt; color: #475569; line-height: 1.44; margin: 0 0 6px 0;">
-              Following the recitation of Binyon's <em>For the Fallen</em> at the Cross of Sacrifice, lead pupils along the rear Memorial Wall to locate our parish fallen (including L/Cpl Arthur Newman, Royal Engineers). Lay the Meoncross remembrance cross.
+              Following the recitation of Binyon's <em>For the Fallen</em> at the Cross of Sacrifice, lead pupils along the rear Memorial Wall to locate our parish fallen (including L/Cpl Arthur Newman, Royal Engineers). Lay the The History Portal remembrance cross.
             </p>
           </div>
           <div style="background: #fef3c7; padding: 7px 10px; border-radius: 4px; font-size: 7.7pt; color: #92400e; font-weight: 700;">
@@ -1319,7 +1319,7 @@ They sleep beyond England's foam.
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 9 of 12</span>
     </div>
   </div>
@@ -1384,12 +1384,12 @@ Rise and deride this sepulchre of crime.
             <h4 style="font-size: 9.2pt; color: #0f172a; margin-bottom: 4px;">Staff Wreath-Laying Protocol</h4>
             <p style="font-size: 8.2pt; color: #475569; line-height: 1.44; margin: 0 0 5px 0;">
               19:20: Secure prime standing position on northern walkway under the arch.<br>
-              19:45: Designated Meoncross pupil wreath bearers escorted by Mr Lovett to ceremonial marshalling area.<br>
+              19:45: Designated pupil wreath bearers escorted by Department Lead to ceremonial marshalling area.<br>
               20:00: Buglers sound Last Post; two-minute silence; official wreath laying.
             </p>
           </div>
           <div style="background: #eff6ff; padding: 7px 10px; border-radius: 4px; font-size: 7.6pt; color: #1e3a8a; font-weight: 700;">
-            Staff Lead: Mr Ben Lovett &amp; Mr James Garrett
+            Staff Lead: Department Lead &amp; Mr James Garrett
           </div>
         </div>
       </div>
@@ -1425,7 +1425,7 @@ Rise and deride this sepulchre of crime.
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 10 of 12</span>
     </div>
   </div>
@@ -1532,7 +1532,7 @@ And laughter, learnt of friends; and gentleness,
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 11 of 12</span>
     </div>
   </div>
@@ -1659,10 +1659,10 @@ And laughter, learnt of friends; and gentleness,
      Tour Leader Equipment Checklist &amp; On-Site Kit
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.44;">
-          • <strong>School First Aid Kits:</strong> Carried by accompanying Meoncross staff at all times (including travel sickness meds).<br>
+          • <strong>School First Aid Kits:</strong> Carried by accompanying The History Portal staff at all times (including travel sickness meds).<br>
           • <strong>Pupil Medication Roster:</strong> Asthma inhalers &amp; EpiPens inspected prior to coach boarding.<br>
           • <strong>Emergency Whistle &amp; Hi-Vis Vests:</strong> Worn by staff leads during urban transit in Ypres and Poperinge.<br>
-          • <strong>Meoncross Poppy Wreaths:</strong> Safely stowed in coach forward locker for the Menin Gate ceremony.
+          • <strong>The History Portal Poppy Wreaths:</strong> Safely stowed in coach forward locker for the Menin Gate ceremony.
         </div>
       </div>
 
@@ -1674,14 +1674,14 @@ And laughter, learnt of friends; and gentleness,
           1. <strong>Quiet Respect:</strong> Cemeteries are active places of mourning. Walk strictly on grass paths; do not sit on headstones or climb on memorial panels.<br>
           2. <strong>Mobile Phone Protocol:</strong> Phones may be used for photographs during the day. Collected each evening in dedicated staff bags at curfew.<br>
           3. <strong>Hostel Downtime:</strong> Quiet hours from 22:00 in Peace Village corridors. Respect international guests and staff sleep cycles.<br>
-          4. <strong>The Mission:</strong> Always remember that we represent Meoncross School and our village parish of Holy Rood before the people of Belgium.
+          4. <strong>The Mission:</strong> Always remember that we represent The History Portal and our village parish of Holy Rood before the people of Belgium.
         </div>
       </div>
 
       <div style="background: #0f172a; color: #ffffff; padding: 9px 15px; border-radius: 7px; display: flex; justify-content: space-between; align-items: center; font-size: 8pt;">
         <div>
           <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
-          Mr Ben Lovett &amp; Mr James Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff
+          Department Lead &amp; Mr James Garrett (Tour Leaders) · Accompanied by Fieldwork Staff
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
@@ -1691,7 +1691,7 @@ And laughter, learnt of friends; and gentleness,
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross History Department · Ypres 1914–1918 Tour Leader Companion</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion</span>
       <span class="page-number">Page 12 of 12</span>
     </div>
   </div>

@@ -1,5 +1,5 @@
 /**
- * Views Renderer for Mr Lovett's History Hub Mega App
+ * Views Renderer for GCSE History Study & Revision Portal
  * Handles rendering the Dashboard, Interactive Quizzes, Timelines, Printable Booklets, and Student Profiles.
  */
 
@@ -58,10 +58,10 @@ export function renderDashboard() {
     headerRight.innerHTML = `
       <div style="font-size: 1.35rem; font-family: 'Playfair Display', serif; font-weight: 800; color: #1e3a8a; display: flex; align-items: center; gap: 12px; margin-left: 20px;">
         <i class="fa-solid fa-graduation-cap" style="color: #3b82f6;"></i>
-        Mr Lovett's History Hub
+        The History Revision Hub
       </div>
       <div style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; flex-wrap: wrap; justify-content: flex-end;">
-        <span style="font-weight: 600; color: #334155; margin-right: 5px;">Welcome back, ${profile ? profile.name : 'Student'}</span>
+        <span style="font-weight: 600; color: #334155; margin-right: 5px;">Welcome back to The History Revision Hub</span>
         <span style="background: #fef3c7; color: #d97706; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #fde68a;"><i class="fa-solid fa-fire"></i> ${state.dailyXp} XP</span>
         <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #bbf7d0;"><i class="fa-solid fa-graduation-cap"></i> ${masteredCount} Mastered</span>
         <span style="background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #bae6fd;"><i class="fa-solid fa-shield-halved"></i> ${securedCount} Secured</span>
@@ -141,10 +141,10 @@ export function renderDashboard() {
           <div>
             <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
               <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #d97706; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Enrichment</span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #92400e;">Hampshire History Awards</span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #92400e;">History Awards &amp; Essay Competitions</span>
             </div>
             <div style="font-size: 0.92rem; font-weight: 700; color: #78350f;">
-              Win £100 cash &amp; £300 for Department
+              Explore Opportunities
             </div>
           </div>
         </div>
@@ -163,10 +163,10 @@ export function renderDashboard() {
           <div>
             <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
               <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #7c3aed; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Thursdays P6</span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9;">Meoncross Chess Club</span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9;">Chess Club</span>
             </div>
             <div style="font-size: 0.92rem; font-weight: 700; color: #4c1d95;">
-              House League · Every Game Earns Points
+              Strategy League · Every Game Earns Points
             </div>
           </div>
         </div>
@@ -329,7 +329,7 @@ export function renderDashboard() {
           <div style="flex: 3; min-width: 260px; padding: 22px 32px; display: flex; flex-direction: column; justify-content: center;">
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
               <span style="background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; white-space:nowrap; border: 1px solid #fde68a;"><i class="fa-solid fa-graduation-cap"></i> GCSE Years 10–11</span>
-              <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> 1st–3rd Oct 2026 (3 Days)</span>
+              <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> Autumn Term GCSE Fieldwork Study</span>
               <span style="background: #ede9fe; color: #6d28d9; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-notes-medical"></i> Paper 1: Western Front Historic Environment</span>
             </div>
             <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary, #1e3a8a); margin: 0 0 6px 0; line-height: 1.2;">${title}</h2>

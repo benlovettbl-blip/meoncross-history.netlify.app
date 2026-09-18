@@ -20,17 +20,13 @@ function purgeGDPRHistoricalCache() {
         caches.keys().then((keys) => keys.forEach((k) => caches.delete(k)));
       }
       const keysToRemove = [
-        'meoncross_chess_club_v5',
-        'meoncross_chess_master_archive',
-        'meoncross_chess_backup_snapshot',
-        'meoncross_chess_club_v4',
-        'meoncross_chess_club_v3',
-        'meoncross_chess_club_v2',
-        'meoncross_chess_club_v1',
-        'meoncross_chess_active_session',
-        'meoncross_chess_export_history',
-        'meoncross_chess_teacher_auth',
-        'meoncross_chess_active_players',
+        'history_chess_club_v5',
+        'history_chess_master_archive',
+        'history_chess_backup_snapshot',
+        'history_chess_active_session',
+        'history_chess_export_history',
+        'history_chess_teacher_auth',
+        'history_chess_active_players',
       ];
       keysToRemove.forEach((k) => {
         try {
@@ -52,7 +48,7 @@ function purgeGDPRHistoricalCache() {
       }
       if (typeof indexedDB !== 'undefined' && indexedDB.deleteDatabase) {
         try {
-          indexedDB.deleteDatabase('MeoncrossChessDB');
+          indexedDB.deleteDatabase('HistoryChessDB');
         } catch (e) {}
       }
       if ('serviceWorker' in navigator && navigator.serviceWorker.getRegistrations) {

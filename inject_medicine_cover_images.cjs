@@ -32,7 +32,7 @@ const makeImageBlock = (imgFilename) => `
 
 // The anchor point to inject before: the dark footer bar on the cover (inline style version)
 const INJECT_BEFORE = `      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
-        Meoncross School | History Department
+        The History Portal | History Department
       </div>`;
 
 Object.entries(imageMap).forEach(([period, imgFile]) => {

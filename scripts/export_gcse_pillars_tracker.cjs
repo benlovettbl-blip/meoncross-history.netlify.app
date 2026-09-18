@@ -228,7 +228,7 @@ const htmlContent = `<!DOCTYPE html>
     <div>
       <div class="header-bar">
         <div class="header-left">
-          <h1>Meoncross School &bull; History Department</h1>
+          <h1>The History Portal &bull; History Department</h1>
           <p>GCSE Curriculum Audit: Three Strategic Pillars Conversion Ledger &amp; Production Roadmap (2026 Edition)</p>
         </div>
         <div style="text-align: right;">
@@ -526,7 +526,7 @@ const htmlContent = `<!DOCTYPE html>
 
     <!-- Footer Strip -->
     <div class="footer-bar">
-      <span>Meoncross School History Department &bull; Head of Department: Ben Lovett &bull; GCSE Specification 1HI0 (Pearson Edexcel 9–1)</span>
+      <span>The History Department &bull; Head of Department: Department Lead &bull; GCSE Specification 1HI0 (Pearson Edexcel 9–1)</span>
       <span>Three Pillars Curriculum Standard &bull; Production Ready: 3/5 Units &bull; Next Unit Target: Early Elizabethan England</span>
     </div>
   </div>

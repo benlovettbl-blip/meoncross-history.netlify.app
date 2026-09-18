@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Mr Lovett's History Hub Mega App</title>
+    <title>GCSE History Study & Revision Portal</title>
     <!-- Strict GDPR Anti-Indexing & Edge Cache Invalidation Meta Tags -->
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
@@ -26,17 +26,13 @@
             }
             // b) Clear localStorage and sessionStorage keys containing historical leaderboard or pupil data
             var keysToRemove = [
-              'meoncross_chess_club_v5',
-              'meoncross_chess_master_archive',
-              'meoncross_chess_backup_snapshot',
-              'meoncross_chess_club_v4',
-              'meoncross_chess_club_v3',
-              'meoncross_chess_club_v2',
-              'meoncross_chess_club_v1',
-              'meoncross_chess_active_session',
-              'meoncross_chess_export_history',
-              'meoncross_chess_teacher_auth',
-              'meoncross_chess_active_players',
+              'history_chess_club_v5',
+              'history_chess_master_archive',
+              'history_chess_backup_snapshot',
+              'history_chess_active_session',
+              'history_chess_export_history',
+              'history_chess_teacher_auth',
+              'history_chess_active_players',
             ];
             keysToRemove.forEach(function (k) {
               try {
@@ -59,7 +55,7 @@
             // Clear IndexedDB multi-layer vault
             if (typeof indexedDB !== 'undefined' && indexedDB.deleteDatabase) {
               try {
-                indexedDB.deleteDatabase('MeoncrossChessDB');
+                indexedDB.deleteDatabase('HistoryChessDB');
               } catch (e) {}
             }
             // c) Unregister and update existing Service Workers
@@ -147,7 +143,7 @@
         <div class="sidebar-logo" id="sidebar-logo" style="cursor: pointer">
           <i class="fa-solid fa-graduation-cap logo-icon"></i>
           <div>
-            <h2>Mr Lovett's History Hub</h2>
+            <h2>The History Revision Hub</h2>
             <span>History Portal</span>
           </div>
         </div>
@@ -511,7 +507,7 @@
           </div>
           <div class="header-right">
             <span class="school-tag"
-              ><i class="fa-solid fa-award"></i> Mr Lovett's History Hub</span
+              ><i class="fa-solid fa-award"></i> The History Revision Hub</span
             >
           </div>
         </header>

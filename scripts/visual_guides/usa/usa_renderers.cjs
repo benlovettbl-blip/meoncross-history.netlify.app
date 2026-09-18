@@ -184,7 +184,7 @@ function renderPage1(customGetImage) {
           </div>
           <div style="display: flex; gap: 14px; font-size: 8.5pt; color: #000000; white-space: nowrap;">
             <span><strong>Class:</strong> Year 10 / 11</span>
-            <span><strong>Teacher:</strong> Mr Lovett</span>
+            <span><strong>Teacher:</strong> Department Lead</span>
             <span><strong>Target:</strong> Grade 7–9</span>
           </div>
         </div>
@@ -532,7 +532,7 @@ function renderPage1(customGetImage) {
 
         <!-- 5. FOOTER STRIP -->
         <div style="border-top: 1.5px solid #000000; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; color: #000000;">
-          <span><strong>Meoncross History Department</strong> &bull; GCSE Revision Series</span>
+          <span><strong>The History Department</strong> &bull; GCSE Revision Series</span>
           <span style="font-weight: 800; text-transform: uppercase;">Option 33: The USA, 1954–75: conflict at home and abroad &bull; 36-Page Master Volume</span>
         </div>
 

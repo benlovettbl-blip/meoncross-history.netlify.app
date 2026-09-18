@@ -361,13 +361,13 @@ function generateTabularHTML(curriculumMeta) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Meoncross School - Whole School History Curriculum Overview</title>
+    <title>The History Portal - Whole School History Curriculum Overview</title>
     <style>${css}</style>
   </head>
   <body>
     <div class="cover-page">
       <div class="cover-badge">Academic Curriculum Framework</div>
-      <div class="cover-title">Meoncross School<br />History Department</div>
+      <div class="cover-title">The History Portal<br />History Department</div>
       <div class="cover-subtitle">Whole School Curriculum Overview</div>
       <div class="cover-divider"></div>
       <div class="cover-info">
@@ -376,7 +376,7 @@ function generateTabularHTML(curriculumMeta) {
       <div class="cover-meta">
         <div class="cover-meta-item">
           <span class="cover-meta-label">Head of History</span>
-          <span class="cover-meta-val">B. Lovett</span>
+          <span class="cover-meta-val">Department Lead</span>
         </div>
         <div class="cover-meta-item">
           <span class="cover-meta-label">Exam Specification</span>
@@ -388,7 +388,7 @@ function generateTabularHTML(curriculumMeta) {
         </div>
         <div class="cover-meta-item">
           <span class="cover-meta-label">Quality Assurance</span>
-          <span class="cover-meta-val">Cognita Curriculum Standard</span>
+          <span class="cover-meta-val">Educational Trust Curriculum Standard</span>
         </div>
       </div>
     </div>
@@ -481,7 +481,7 @@ function generateTabularHTML(curriculumMeta) {
         </table>
       </div>
       <div class="page-footer">
-        <span class="page-footer-brand">Meoncross School History Department &bull; Whole School Curriculum Map 2026–2027</span>
+        <span class="page-footer-brand">The History Department &bull; Whole School Curriculum Map 2026–2027</span>
         <span>${yg.year} &bull; ${yg.ks} &bull; Page ${idx + 2} of 6</span>
       </div>
     </div>

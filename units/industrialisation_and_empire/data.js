@@ -2986,7 +2986,7 @@ export const unitData = {
                 'Historical Audit: Why was the tactical split between Moral Force and Physical Force fatal to the Chartist movement in the short term?',
               starter: 'The tactical split was fatal in the short term because...',
               model_answer:
-                "The tactical split was fatal to Chartism in the short term because it alienated moderate middle-class sympathizers while providing the government with the legal and military justification to crush the movement [3.3]. Violent rhetoric and armed uprisings like the Newport Rising terrified the ruling class, enabling the state to arrest leaders like Lovett and O'Connor, ban rallies, and mobilize the army, while dismissing peaceful petitions containing millions of signatures as revolutionary front organizations.",
+                "The tactical split was fatal to Chartism in the short term because it alienated moderate middle-class sympathizers while providing the government with the legal and military justification to crush the movement [3.3]. Violent rhetoric and armed uprisings like the Newport Rising terrified the ruling class, enabling the state to arrest leaders like William Lovett and Feargus O'Connor, ban rallies, and mobilize the army, while dismissing peaceful petitions containing millions of signatures as revolutionary front organizations.",
             },
           ],
         },

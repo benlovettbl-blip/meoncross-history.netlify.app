@@ -11,7 +11,7 @@ Following your instructions:
 ## 1. Year 9 The Great War (Part 2): 4-Act Architecture & Curriculum Refactor
 
 ### A. 4-Act Dramatic Lesson Structure
-All 7 lessons in [`units/great_war_part2/data.js`](file:///c:/Projects/meoncross-history.netlify.app/units/great_war_part2/data.js) are now structured into the departmental 4-Act model:
+All 7 lessons in [`units/great_war_part2/data.js`](file:///c:/Projects/the-history-revision-hub.netlify.app/units/great_war_part2/data.js) are now structured into the departmental 4-Act model:
 - **Act 1: Context & Catalyst** — Baseline reality and military/civilian mobilization (`Source A`).
 - **Act 2: Escalation & Conflict** — Core tactical deadlock, technological innovation, or home front clash (`Source B`).
 - **Act 3: Primary Sources & Forensic Evidence** — Immersive primary dispatches, trench diaries, intercepted letters, or gazettes (`Source C` & `Source D`).
@@ -32,7 +32,7 @@ All 7 lessons in [`units/great_war_part2/data.js`](file:///c:/Projects/meoncross
 
 ## 2. Bespoke 20-Page Double-Page Spread Pupil Workbook (`great_war_part2`)
 
-Authored [`scripts/render_great_war_part2_twopage_workbook.cjs`](file:///c:/Projects/meoncross-history.netlify.app/scripts/render_great_war_part2_twopage_workbook.cjs), producing an exact **20-page double-page spread workbook** (5 A3 sheets saddle-stitched):
+Authored [`scripts/render_great_war_part2_twopage_workbook.cjs`](file:///c:/Projects/the-history-revision-hub.netlify.app/scripts/render_great_war_part2_twopage_workbook.cjs), producing an exact **20-page double-page spread workbook** (5 A3 sheets saddle-stitched):
 
 | Page | Content | Spread Position |
 | :--- | :--- | :--- |
@@ -48,7 +48,7 @@ Authored [`scripts/render_great_war_part2_twopage_workbook.cjs`](file:///c:/Proj
 
 ## 3. Comprehensive Audit: Zero "Undefined" Verified
 
-Ran the automated audit script ([`scripts/audit_undefined.cjs`](file:///c:/Projects/meoncross-history.netlify.app/scripts/audit_undefined.cjs)) across all curriculum data, HTML books, workbooks, cheat sheets, quiz packs, and databases for both units:
+Ran the automated audit script ([`scripts/audit_undefined.cjs`](file:///c:/Projects/the-history-revision-hub.netlify.app/scripts/audit_undefined.cjs)) across all curriculum data, HTML books, workbooks, cheat sheets, quiz packs, and databases for both units:
 
 ```
 ====================================================

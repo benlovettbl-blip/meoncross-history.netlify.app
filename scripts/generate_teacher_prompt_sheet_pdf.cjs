@@ -239,7 +239,7 @@ function getHtml() {
   <div class="header">
     <div>
       <div class="title">YPRES 2026: PARENT BRIEFING MEETING · TEACHER RUNNING SHEET</div>
-      <div class="subtitle">Mr Ben Lovett (Head of History) · Meeting Duration: ~30 mins + Q&amp;A</div>
+      <div class="subtitle">Department Lead · Meeting Duration: ~30 mins + Q&amp;A</div>
     </div>
     <div class="badge-bar">
       Tour Dates: 1–3 Oct 2026 · Handout Follow-Along Order
@@ -290,11 +290,11 @@ function getHtml() {
       <span class="time-tag">05:00 – 12:00</span>
     </div>
     <ul class="prompt-list">
-      <li><strong>Joint Venture &amp; Care:</strong> Led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys) + 2 Meoncross staff. High <strong>1:8 staff ratio</strong>, private executive coach throughout.</li>
-      <li><strong>Day 1 (Thu 1 Oct):</strong> Meet <strong>06:15</strong> at Meoncross (<strong>06:30 sharp</strong> departure). Eurotunnel Le Shuttle. Afternoon: Essex Farm ADS (John McCrae 'In Flanders Fields' &amp; 15-yr-old Pte Strudwick), Langemarck German Cemetery (somber contrast), Hooge Crater trenches. Check-in Peace Village Hostel; 18:15 dinner &amp; debrief.</li>
-      <li><strong>Day 2 (Fri 2 Oct):</strong> Vancouver Corner (gas attacks); Sanctuary Wood (Hill 62 preserved deep trenches); supervised supermarket lunch at Aldi in Ypres; Tyne Cot (locating village fallen); Lijssenthoek CCS (Nurse Nellie Spindler); Passchendaele 1917 Museum (20ft underground dugout); <strong>20:00 Menin Gate Last Post Ceremony</strong> (Meoncross wreath laying &amp; Panel 35 tribute).</li>
-      <li><strong>Day 3 (Sat 3 Oct):</strong> Daylight Menin Gate &amp; Ramparts; De Groote artisan chocolate shop in Ypres; Talbot House in Poperinge ('Every Man's Club'); Town Hall death cells; 14:30 departure; ~20:00 arrival back at Meoncross.</li>
-      <li><strong>Digital App Callout:</strong> Direct parents to the QR code on the handout: live updates, itinerary, poems, and maps at <span style="color:#2563eb; font-weight:700;">meoncross-history.netlify.app</span>.</li>
+      <li><strong>Joint Venture &amp; Care:</strong> Led by Department Lead &amp; Mr James Garrett (The History Boys) + 2 The History Portal staff. High <strong>1:8 staff ratio</strong>, private executive coach throughout.</li>
+      <li><strong>Day 1 (Thu 1 Oct):</strong> Meet <strong>06:15</strong> at The History Portal (<strong>06:30 sharp</strong> departure). Eurotunnel Le Shuttle. Afternoon: Essex Farm ADS (John McCrae 'In Flanders Fields' &amp; 15-yr-old Pte Strudwick), Langemarck German Cemetery (somber contrast), Hooge Crater trenches. Check-in Peace Village Hostel; 18:15 dinner &amp; debrief.</li>
+      <li><strong>Day 2 (Fri 2 Oct):</strong> Vancouver Corner (gas attacks); Sanctuary Wood (Hill 62 preserved deep trenches); supervised supermarket lunch at Aldi in Ypres; Tyne Cot (locating village fallen); Lijssenthoek CCS (Nurse Nellie Spindler); Passchendaele 1917 Museum (20ft underground dugout); <strong>20:00 Menin Gate Last Post Ceremony</strong> (The History Portal wreath laying &amp; Panel 35 tribute).</li>
+      <li><strong>Day 3 (Sat 3 Oct):</strong> Daylight Menin Gate &amp; Ramparts; De Groote artisan chocolate shop in Ypres; Talbot House in Poperinge ('Every Man's Club'); Town Hall death cells; 14:30 departure; ~20:00 arrival back at The History Portal.</li>
+      <li><strong>Digital App Callout:</strong> Direct parents to the QR code on the handout: live updates, itinerary, poems, and maps at <span style="color:#2563eb; font-weight:700;">the-history-revision-hub.netlify.app</span>.</li>
     </ul>
   </div>
 
@@ -340,7 +340,7 @@ function getHtml() {
     </div>
     <div style="display: flex; justify-content: space-between; gap: 10px; font-size: 7.2pt;">
       <div><strong>1. Code of Conduct:</strong> Signed agreement by pupil &amp; parent returned by <strong>Fri 25 Sept</strong>.</div>
-      <div><strong>2. Passports &amp; GHIC:</strong> Hand in to Mr Lovett tonight (or School Office this week).</div>
+      <div><strong>2. Passports &amp; GHIC:</strong> Hand in to Department Lead tonight (or School Office this week).</div>
       <div><strong>3. Emergency Contact:</strong> 24/7 School Base <strong>+44 (0)1329 662182</strong>.</div>
     </div>
   </div>
@@ -351,7 +351,7 @@ function getHtml() {
       5. Concluding Words to Parents &amp; Open Q&amp;A (25:00 – 30:00)
     </div>
     <div class="closing-quote">
-      "When your sons and daughters return to Meoncross on Saturday evening, they will be tired, and their boots will have the Flanders mud on them. But they will also return with an enduring sense of perspective, having stood where our village boys stood and carried their memory forward. Thank you for entrusting them to us."
+      "When your sons and daughters return to The History Portal on Saturday evening, they will be tired, and their boots will have the Flanders mud on them. But they will also return with an enduring sense of perspective, having stood where our village boys stood and carried their memory forward. Thank you for entrusting them to us."
     </div>
     <div style="font-size: 7.2pt; color: #1e3a8a; font-weight: 700;">
       👉 <em>"I'd now be delighted to open the floor to any questions you or your children may have."</em>
@@ -360,7 +360,7 @@ function getHtml() {
 
   <!-- Footer -->
   <div class="footer">
-    <span>Meoncross School History Department · Ypres 1914–1918 Study Tour</span>
+    <span>The History Department · Ypres 1914–1918 Study Tour</span>
     <span>Single-Sheet Teacher Briefing Card · Accurate for Parental Briefing Meeting</span>
   </div>
 </div>

@@ -1627,7 +1627,7 @@ window.finishQuizModal = function () {
 
   try {
     localStorage.setItem(
-      'meoncross_quiz_' + lessonId,
+      'history_quiz_' + lessonId,
       JSON.stringify({ score, total, pct, date: Date.now() }),
     );
   } catch (e) {}
@@ -2282,7 +2282,7 @@ window.openTeacherGuideModal = function () {
           <i class="fa-solid fa-chalkboard-user"></i> Teacher & Tour Guide Instructions
         </h2>
         
-        <p style="font-size: 1.1rem; line-height: 1.6;">Welcome to the Meoncross Battlefield Tour App! This app is designed with a "Dual Interface" to keep pupils engaged while giving you, the teacher, all the information you need.</p>
+        <p style="font-size: 1.1rem; line-height: 1.6;">Welcome to the GCSE Battlefield Tour App! This app is designed with a "Dual Interface" to keep pupils engaged while giving you, the teacher, all the information you need.</p>
         
         <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-mobile-screen"></i> 1. The Pupil View vs. Teacher View</h3>
         <p style="font-size: 1.05rem; line-height: 1.6;">By default, the app is in <strong>Pupil Mode</strong>. They will see the timeline, photos, and interactive maps. However, they do NOT see the historical script or the answers to questions.</p>
@@ -2329,7 +2329,7 @@ window.openParentBriefingModal = function () {
               YPRES 1914–1918: REMEMBRANCE, SACRIFICE &amp; LOCAL HERITAGE
             </h2>
             <div style="font-size: 0.9rem; color: #cbd5e1; margin-top: 4px;">
-              Meoncross School History Department &amp; The History Boys · Led jointly by <strong>Mr Ben Lovett</strong> &amp; <strong>Mr James Garrett</strong> · Accompanied by <strong>Two Meoncross Staff</strong>
+              The History Department &amp; The History Boys · Led jointly by <strong>Department Lead</strong> &amp; <strong>Mr James Garrett</strong> · Accompanied by <strong>Fieldwork Staff</strong>
             </div>
           </div>
 
@@ -2368,7 +2368,7 @@ window.openParentBriefingModal = function () {
 
             <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #0f766e;">
               <strong style="color: #0f172a; font-size: 0.85rem;">Day 3 (Sat 3 Oct): Ypres Town &amp; Journey Home</strong>
-              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">In Flanders Fields Museum (Cloth Hall), Ypres Ramparts walk, supermarket lunch stop, Talbot House (Poperinge). Return to Meoncross approx. 20:30.</p>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">In Flanders Fields Museum (Cloth Hall), Ypres Ramparts walk, supermarket lunch stop, Talbot House (Poperinge). Return to school approx. 20:30.</p>
             </div>
 
             <div style="background: #fefce8; border: 1px solid #fef08a; padding: 10px 12px; border-radius: 6px;">
@@ -2448,7 +2448,7 @@ window.openParentBriefingModal = function () {
         <!-- Footer Bar -->
         <div style="background: #0f172a; color: #ffffff; padding: 12px 24px; border-radius: 0 0 11px 11px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.82rem;">
           <div>
-            <span style="color: #38bdf8; font-weight: 700;">🌐 Web App:</span> meoncross-history.netlify.app &nbsp;|&nbsp;
+            <span style="color: #38bdf8; font-weight: 700;">🌐 Web App:</span> the-history-revision-hub.netlify.app &nbsp;|&nbsp;
             <span style="color: #fbbf24; font-weight: 700;">24/7 School Base:</span> +44 (0)1329 662182
           </div>
           <div style="color: #94a3b8; font-size: 0.78rem;">
@@ -3067,8 +3067,8 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     const l1 = lessons[lesson1Idx] || { id: 'lesson_1', title: 'Lesson 1' };
     const l2 = lessons[lesson2Idx] || { id: 'lesson_2', title: 'Lesson 2' };
 
-    const l1Url = `https://meoncross-history.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l1.id || 'lesson_' + (lesson1Idx + 1)}`;
-    const l2Url = `https://meoncross-history.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l2.id || 'lesson_' + (lesson2Idx + 1)}`;
+    const l1Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l1.id || 'lesson_' + (lesson1Idx + 1)}`;
+    const l2Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l2.id || 'lesson_' + (lesson2Idx + 1)}`;
 
     const l1Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l1Url)}`;
     const l2Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l2Url)}`;
@@ -3082,7 +3082,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       <div style="border-bottom: 2px solid #881337; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
         <div style="flex: 1;">
           <span style="display: inline-block; background: #881337; color: white; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 7px; border-radius: 4px; margin-bottom: 2px;">
-            Mr Lovett's History Hub • ${unitMeta.spec} (${unitMeta.year})
+            The History Revision Hub • ${unitMeta.spec} (${unitMeta.year})
           </span>
           <h1 style="font-size: 13pt; margin: 0 0 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
             ${uData.title || unitMeta.name}
@@ -3185,7 +3185,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       </div>
 
       <div style="margin-top: 8px; padding-top: 3px; border-top: 1px solid #e2e8f0; font-size: 6.8pt; color: #64748b; display: flex; justify-content: space-between;">
-        <span>Meoncross History • Mr Lovett</span>
+        <span>The History Portal • Department Lead</span>
         <span>${periodType === 'double' ? 'Period 1 Complete — See Next Page for Period 2' : 'Ensure all work is kept safe for review next lesson.'}</span>
       </div>
     `;
@@ -3198,7 +3198,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         <div style="border-bottom: 2px solid #881337; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
           <div style="flex: 1;">
             <span style="display: inline-block; background: #881337; color: white; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 7px; border-radius: 4px; margin-bottom: 2px;">
-              Mr Lovett's History Hub • ${unitMeta.spec} (${unitMeta.year})
+              The History Revision Hub • ${unitMeta.spec} (${unitMeta.year})
             </span>
             <h1 style="font-size: 13pt; margin: 0 0 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
               ${uData.title || unitMeta.name}
@@ -3296,7 +3296,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         </div>
 
         <div style="margin-top: 8px; padding-top: 3px; border-top: 1px solid #e2e8f0; font-size: 6.8pt; color: #64748b; display: flex; justify-content: space-between;">
-          <span>Meoncross School • Department of History • Mr Lovett</span>
+          <span>The History Portal • Department of History • Department Lead</span>
           <span>Ensure workbooks / paper sheets are handed in or stored safely in student folders.</span>
         </div>
       `;

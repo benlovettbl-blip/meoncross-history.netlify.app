@@ -289,7 +289,7 @@ export const BATTLEFIELD_DAYS = [
         shortTitle: 'Leadership',
         time: 'Staff',
         icon: 'fa-user-tie',
-        highlight: 'Mr Ben Lovett, Mr James Garrett (The History Boys), & Two Meoncross Staff',
+        highlight: 'Department Lead, Mr James Garrett (The History Boys), & Fieldwork Staff',
       },
       {
         id: 'prep_mission',

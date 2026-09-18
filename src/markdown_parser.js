@@ -1,23 +1,23 @@
 /**
- * Markdown Parser for Mr Lovett's History Hub Mega App
+ * Markdown Parser for GCSE History Study & Revision Portal
  * Parses topic markdown files dynamically into curriculum objects and quiz databases.
  */
 
 export function parseMarkdown(mdText, unitId) {
   const sections = mdText.split(/\n## /);
-  
+
   // Extract Frontmatter
   const frontmatterMatch = sections[0].match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
   let metadata = {
     id: unitId,
     title: 'Unknown Unit',
     year_group: 'KS3',
-    unlocked_for: []
+    unlocked_for: [],
   };
 
   if (frontmatterMatch) {
     const lines = frontmatterMatch[1].split('\n');
-    lines.forEach(line => {
+    lines.forEach((line) => {
       const parts = line.split(':');
       if (parts.length >= 2) {
         const key = parts[0].trim();
@@ -26,7 +26,7 @@ export function parseMarkdown(mdText, unitId) {
           try {
             metadata[key] = JSON.parse(value);
           } catch (e) {
-            metadata[key] = value.split(',').map(s => s.trim());
+            metadata[key] = value.split(',').map((s) => s.trim());
           }
         } else {
           metadata[key] = value.replace(/^['"]|['"]$/g, '');
@@ -47,10 +47,10 @@ export function parseMarkdown(mdText, unitId) {
     const lines = section.split('\n');
     const title = lines[0].trim();
     const contentLines = [];
-    
+
     let subtopicId = `${unitId}_sub_${i}`;
     let parsingMode = 'content'; // 'content' | 'fitb' | 'vocab' | 'tf' | 'retrieval'
-    
+
     let part1 = { text: '', words: [] };
     let part2 = [];
     let part3 = [];
@@ -83,7 +83,10 @@ export function parseMarkdown(mdText, unitId) {
         if (line.startsWith('Text:')) {
           part1.text = line.substring(5).trim();
         } else if (line.startsWith('Words:')) {
-          part1.words = line.substring(6).split(',').map(w => w.trim());
+          part1.words = line
+            .substring(6)
+            .split(',')
+            .map((w) => w.trim());
         }
       } else if (parsingMode === 'vocab') {
         // Format: - **Term**: definition
@@ -105,7 +108,7 @@ export function parseMarkdown(mdText, unitId) {
             question: line.substring(15).trim(),
             answer: '',
             explanation: '',
-            distractors: []
+            distractors: [],
           };
         } else if (currentQuestion && line.startsWith('- **Answer**:')) {
           currentQuestion.answer = line.substring(13).trim();
@@ -121,7 +124,7 @@ export function parseMarkdown(mdText, unitId) {
           timelineEvents.push({
             year: match[1].trim(),
             text: match[2].trim(),
-            subtopicId: subtopicId
+            subtopicId: subtopicId,
           });
         }
       }
@@ -137,7 +140,7 @@ export function parseMarkdown(mdText, unitId) {
       content: contentLines.join('\n'),
       part1,
       part2,
-      part3
+      part3,
     });
   }
 
@@ -145,6 +148,6 @@ export function parseMarkdown(mdText, unitId) {
     metadata,
     subtopics,
     timelineEvents,
-    quizData
+    quizData,
   };
 }

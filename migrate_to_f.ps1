@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
-$projectDir = "C:\Projects\meoncross-history.netlify.app"
-$fDriveRoot = "F:\meoncross_project_data"
+$projectDir = "C:\Projects\the-history-revision-hub.netlify.app"
+$fDriveRoot = "F:\history_project_data"
 
 if (!(Test-Path $fDriveRoot)) {
     Write-Host "Creating $fDriveRoot..."

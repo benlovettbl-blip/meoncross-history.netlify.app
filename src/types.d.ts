@@ -1,5 +1,5 @@
 /**
- * TypeScript Schema Definitions for Mr Lovett's History Hub
+ * TypeScript Schema Definitions for The History Revision Hub
  * 
  * These types validate the JSON structure of the units to prevent runtime errors.
  */

@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 async function processUnit(unitId) {
-    const dataPath = `c:/Projects/meoncross-history.netlify.app/${unitId === 'cme_new' ? 'public/units/cme_new' : unitId}/data.js`;
+    const dataPath = `c:/Projects/the-history-revision-hub.netlify.app/${unitId === 'cme_new' ? 'public/units/cme_new' : unitId}/data.js`;
     if (!fs.existsSync(dataPath)) {
         console.log(`Path not found: ${dataPath}`);
         return;

@@ -3,7 +3,7 @@ import urllib.parse
 import json
 import time
 
-headers = {'User-Agent': 'MeoncrossHistoryHub/1.0 (educational; history@meoncross.co.uk)'}
+headers = {'User-Agent': 'GCSE History Hub/1.0 (educational; contact@historyhub.local)'}
 
 searches = [
     ('hotel_dieu_hospital.jpg', 'Salle des malades de l\'Hotel-Dieu de Paris'),

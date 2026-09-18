@@ -1,5 +1,5 @@
 /**
- * Layout and Event Binding Controller for Mr Lovett's History Hub Mega App
+ * Layout and Event Binding Controller for GCSE History Study & Revision Portal
  */
 
 import { getUnits } from './views.js';

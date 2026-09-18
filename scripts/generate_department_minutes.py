@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 DRIVE_MINUTES_DIR = r"G:\My Drive\AAMX\Dep File\Department Meeting Minutes"
-LOCAL_MINUTES_DIR = r"c:\Projects\meoncross-history.netlify.app\admin_internal\department_files\Department Meeting Minutes"
+LOCAL_MINUTES_DIR = r"c:\Projects\the-history-revision-hub.netlify.app\admin_internal\department_files\Department Meeting Minutes"
 TEMPLATE_PATH = r"G:\My Drive\AAMX\Dep File\Department Meeting Minutes\Departmental Mtg Minutes template Sep 2026.docx"
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
@@ -127,7 +127,7 @@ def populate_minutes(date_str, items, aob_text="None.", filename_title="Autumn 1
     # Row 1: Attendees
     c_att = r0[1].findall(f'{{{W_NS}}}tc')[1]
     for p in list(c_att.findall(f'{{{W_NS}}}p')): c_att.remove(p)
-    c_att.append(make_para("Ben Lovett (Head of History / Solo Department)", bold=False, size="22"))
+    c_att.append(make_para("Department Lead (Head of History / Solo Department)", bold=False, size="22"))
     
     # Row 2: Date
     c_date = r0[2].findall(f'{{{W_NS}}}tc')[1]
@@ -220,7 +220,7 @@ def generate_preset_meetings():
         {
             "point": "4. Classroom Environment & Health & Safety",
             "commentary": [
-                "• Completed annual History room risk assessment in accordance with OFG format.",
+                "• Completed annual History room risk assessment in accordance with Educational Trust format.",
                 "• Requested floor-mounted acoustic release door retainer from Andy (Site Team) to reduce corridor congestion at lesson changeover."
             ],
             "resp": "BL",

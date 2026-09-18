@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 EMAILS_DIR = r"G:\My Drive\AAMX\Dep File\Emails"
-LOCAL_EMAILS_DIR = r"c:\Projects\meoncross-history.netlify.app\admin_internal\department_files\Emails"
+LOCAL_EMAILS_DIR = r"c:\Projects\the-history-revision-hub.netlify.app\admin_internal\department_files\Emails"
 TEMPLATE_DOCX = r"G:\My Drive\AAMX\Dep File\00_Department_Admin_and_Policies\Working Documents & Templates\Development Plan Template History Dep.docx"
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
@@ -65,7 +65,7 @@ def create_docx_memo(dest_path, recipient, subject, date_str, body_paragraphs):
     body = ET.SubElement(root, f"{{{W_NS}}}body")
     
     # Title
-    body.append(make_p([("MEONCROSS SCHOOL | HISTORY DEPARTMENT", True, False, "20", "64748b")], space_after="60"))
+    body.append(make_p([("The History Portal | History Department", True, False, "20", "64748b")], space_after="60"))
     body.append(make_p([("Parental Communication Draft (via School Office)", True, False, "30", "0f172a")], space_after="180"))
     
     # Metadata Box
@@ -78,7 +78,7 @@ def create_docx_memo(dest_path, recipient, subject, date_str, body_paragraphs):
     
     body.append(make_p([
         ("FROM: ", True, False, "22", "0f172a"),
-        ("Ben Lovett (Head of History)    ", False, False, "22", "334155"),
+        ("Department Lead (Head of History)    ", False, False, "22", "334155"),
         ("PURPOSE: ", True, False, "22", "0f172a"),
         ("Circulation to Ypres Trip Parents & Guardians", True, False, "22", "059669")
     ], space_after="100"))
@@ -118,7 +118,7 @@ def create_docx_memo(dest_path, recipient, subject, date_str, body_paragraphs):
             zout.writestr(fname, data)
 
 def create_eml_file(dest_path, recipient, subject, body_text, date_obj):
-    eml_content = f"""From: Ben Lovett <ben.lovett@meoncross.co.uk>
+    eml_content = f"""From: Department Lead <contact@historyhub.local>
 To: {recipient}
 Subject: {subject}
 Date: {date_obj.strftime("%a, %d %b %Y 08:00:00 +0100")}
@@ -409,12 +409,12 @@ def main():
         "2. Ypres Trip 2026 Code of Conduct.pdf",
         "Thank you so much for your help getting this out on Monday morning!",
         "Warm regards,",
-        "Ben Lovett\nHead of History\nMeoncross School"
+        "Department Lead\nHead of History\nThe History Portal"
     ]
     
     parent_email = [
         "----------------------------------------------------------------------",
-        "SUBJECT: Meoncross History Battlefield Tour (Ypres 2026) – Final Itinerary, Kit List & Next Steps",
+        "SUBJECT: The History Portal Battlefield Tour (Ypres 2026) – Final Itinerary, Kit List & Next Steps",
         "",
         "Dear Parents and Guardians,",
         "",
@@ -423,8 +423,8 @@ def main():
         "Please find attached our complete two-page Parent Information Pack (Version 2) and the Pupil & Parent Code of Conduct form. Please keep these for your reference throughout the tour.",
         "",
         "## Key Tour Details & Departure Timings",
-        "- Departure: Thursday 1st October. Pupils must arrive at Meoncross School promptly at 06:15 for registration, medical handovers, and final bag checks. The coach will depart strictly at 06:30 for our Eurotunnel Le Shuttle crossing at Folkestone.",
-        "- Return: Saturday 3rd October. We expect to arrive back at Meoncross School at approximately 20:00. Live journey updates and accurate ETAs will be broadcast via our trip WhatsApp group as we cross the Channel.",
+        "- Departure: Thursday 1st October. Pupils must arrive at The History Portal promptly at 06:15 for registration, medical handovers, and final bag checks. The coach will depart strictly at 06:30 for our Eurotunnel Le Shuttle crossing at Folkestone.",
+        "- Return: Saturday 3rd October. We expect to arrive back at The History Portal at approximately 20:00. Live journey updates and accurate ETAs will be broadcast via our trip WhatsApp group as we cross the Channel.",
         "- Expedition Base: Peace Village Hostel, Mesen, Belgium (+32 57 226 040 · peacevillage.be). A secure rural educational base with ensuite rooms, secure keycard access, and staff accommodated on the same corridors.",
         "",
         "## Essential Kit & Luggage Reminders",
@@ -444,17 +444,17 @@ def main():
         "- Trip WhatsApp Broadcast Group: We have set up a staff-to-parent broadcast group to share live journey updates, crossing progress, and daily visit photos. If you have not yet joined, please follow the link in your briefing pack.",
         "",
         "## Important Action Deadlines",
-        "- Passports & GHIC/EHIC: Please ensure your child’s valid UK passport (with at least 3 months validity beyond 3rd October) and GHIC/EHIC card are handed to Mr Lovett by Friday 25th September.",
+        "- Passports & GHIC/EHIC: Please ensure your child’s valid UK passport (with at least 3 months validity beyond 3rd October) and GHIC/EHIC card are handed to Department Lead by Friday 25th September.",
         "- Code of Conduct Agreement: Please sign and return the attached Code of Conduct form by Friday 25th September (noting our strict Nut & Sesame Safety Policy).",
         "- Medications & Medical Forms: Any prescription medicines or travel sickness tablets must be handed to staff on Thursday morning in their original pharmacy packaging, clearly displaying your child's name, dosage, and instructions.",
         "",
-        "If you have any questions regarding kit, medical requirements, or travel arrangements, please do not hesitate to contact Mr Lovett directly via the school office.",
+        "If you have any questions regarding kit, medical requirements, or travel arrangements, please do not hesitate to contact Department Lead directly via the school office.",
         "",
         "Thank you for your continued support in making this landmark educational journey a memorable and safe experience for our pupils.",
         "",
         "Warm regards,",
         "",
-        "Ben Lovett\nHead of History\nMeoncross School"
+        "Department Lead\nHead of History\nThe History Portal"
     ]
     
     full_body_paragraphs = cover_note + [""] + parent_email

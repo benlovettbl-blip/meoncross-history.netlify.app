@@ -2040,7 +2040,7 @@ window.finishQuizModal = function () {
 
   try {
     localStorage.setItem(
-      'meoncross_quiz_' + lessonId,
+      'history_quiz_' + lessonId,
       JSON.stringify({ score, total, pct, date: Date.now() }),
     );
   } catch (e) {}
@@ -3046,7 +3046,7 @@ window.openTeacherGuideModal = function () {
           <i class="fa-solid fa-chalkboard-user"></i> Teacher & Tour Guide Instructions
         </h2>
         
-        <p style="font-size: 1.1rem; line-height: 1.6;">Welcome to the Meoncross Battlefield Tour App! This app is designed with a "Dual Interface" to keep pupils engaged while giving you, the teacher, all the information you need.</p>
+        <p style="font-size: 1.1rem; line-height: 1.6;">Welcome to the GCSE Battlefield Tour App! This app is designed with a "Dual Interface" to keep pupils engaged while giving you, the teacher, all the information you need.</p>
         
         <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-mobile-screen"></i> 1. The Pupil View vs. Teacher View</h3>
         <p style="font-size: 1.05rem; line-height: 1.6;">By default, the app is in <strong>Pupil Mode</strong>. They will see the timeline, photos, and interactive maps. However, they do NOT see the historical script or the answers to questions.</p>

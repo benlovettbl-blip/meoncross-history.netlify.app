@@ -9,11 +9,11 @@ The current local time is: 2026-08-04T15:02:24+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 2 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -27,11 +27,11 @@ The current local time is: 2026-08-04T15:20:34+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 2 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -45,11 +45,11 @@ The current local time is: 2026-08-04T15:30:38+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -63,11 +63,11 @@ The current local time is: 2026-08-04T15:44:36+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -81,11 +81,11 @@ The current local time is: 2026-08-04T15:54:50+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -99,11 +99,11 @@ The current local time is: 2026-08-04T16:07:26+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -117,11 +117,11 @@ The current local time is: 2026-08-04T16:15:48+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -135,11 +135,11 @@ The current local time is: 2026-08-04T16:22:46+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
 </ADDITIONAL_METADATA>
@@ -153,13 +153,13 @@ The current local time is: 2026-08-04T19:42:11+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
-  Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War - Printable Workbook) - file:///C:/Projects/meoncross-history.netlify.app/public/units/great_war/workboo... [ACTIVE]
+  Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War - Printable Workbook) - file:///C:/Projects/the-history-revision-hub.netlify.app/public/units/great_war/workboo... [ACTIVE]
     Viewport: 1920x945, Page Height: 38403
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
@@ -174,13 +174,13 @@ The current local time is: 2026-08-04T19:47:51+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
-  Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War - Printable Workbook) - file:///C:/Projects/meoncross-history.netlify.app/public/units/great_war/workboo... [ACTIVE]
+  Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War - Printable Workbook) - file:///C:/Projects/the-history-revision-hub.netlify.app/public/units/great_war/workboo... [ACTIVE]
     Viewport: 1920x945, Page Height: 38403
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
@@ -231,13 +231,13 @@ The current local time is: 2026-08-04T19:48:51+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
-  Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War - Printable Workbook) - file:///C:/Projects/meoncross-history.netlify.app/public/units/great_war/workboo... [ACTIVE]
+  Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War - Printable Workbook) - file:///C:/Projects/the-history-revision-hub.netlify.app/public/units/great_war/workboo... [ACTIVE]
     Viewport: 1920x945, Page Height: 38403
 </ADDITIONAL_METADATA>
 
@@ -250,11 +250,11 @@ The current local time is: 2026-08-04T19:56:22+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -271,11 +271,11 @@ The current local time is: 2026-08-04T20:10:24+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 () - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 0x0, Page Height: 0
@@ -292,11 +292,11 @@ The current local time is: 2026-08-04T21:40:26+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -311,11 +311,11 @@ The current local time is: 2026-08-04T21:41:23+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -330,11 +330,11 @@ The current local time is: 2026-08-04T21:42:20+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -349,11 +349,11 @@ The current local time is: 2026-08-04T21:43:12+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -368,11 +368,11 @@ The current local time is: 2026-08-04T21:45:45+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -389,11 +389,11 @@ The current local time is: 2026-08-04T21:47:11+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -410,11 +410,11 @@ The current local time is: 2026-08-04T21:48:14+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -431,11 +431,11 @@ The current local time is: 2026-08-04T21:49:40+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -450,11 +450,11 @@ The current local time is: 2026-08-04T21:49:57+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -469,11 +469,11 @@ The current local time is: 2026-08-04T21:50:29+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -488,11 +488,11 @@ The current local time is: 2026-08-04T21:51:59+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -507,11 +507,11 @@ The current local time is: 2026-08-04T21:52:16+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -526,11 +526,11 @@ The current local time is: 2026-08-04T21:57:47+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -547,11 +547,11 @@ The current local time is: 2026-08-04T22:02:57+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -568,11 +568,11 @@ The current local time is: 2026-08-04T22:04:31+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -589,11 +589,11 @@ The current local time is: 2026-08-04T22:10:09+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -610,11 +610,11 @@ The current local time is: 2026-08-04T22:29:39+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -631,11 +631,11 @@ The current local time is: 2026-08-04T22:29:39+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -652,11 +652,11 @@ The current local time is: 2026-08-04T22:34:58+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -688,11 +688,11 @@ The current local time is: 2026-08-04T22:37:32+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -724,11 +724,11 @@ The current local time is: 2026-08-04T22:37:32+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -782,11 +782,11 @@ The current local time is: 2026-08-04T22:45:51+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -841,11 +841,11 @@ The current local time is: 2026-08-04T22:57:22+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -860,11 +860,11 @@ The current local time is: 2026-08-04T23:14:14+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -881,11 +881,11 @@ The current local time is: 2026-08-04T23:29:11+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -902,11 +902,11 @@ The current local time is: 2026-08-04T23:29:53+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -965,11 +965,11 @@ The current local time is: 2026-08-04T23:42:41+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -984,11 +984,11 @@ The current local time is: 2026-08-04T23:45:36+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1005,11 +1005,11 @@ The current local time is: 2026-08-04T23:46:09+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1026,11 +1026,11 @@ The current local time is: 2026-08-04T23:47:56+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1059,11 +1059,11 @@ The current local time is: 2026-08-04T23:49:39+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1122,11 +1122,11 @@ The current local time is: 2026-08-04T23:51:08+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1141,11 +1141,11 @@ The current local time is: 2026-08-05T08:46:28+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1217,11 +1217,11 @@ The current local time is: 2026-08-05T09:04:01+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1267,11 +1267,11 @@ The current local time is: 2026-08-05T09:04:11+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1286,11 +1286,11 @@ The current local time is: 2026-08-05T09:20:00+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1307,11 +1307,11 @@ The current local time is: 2026-08-05T09:20:00+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1351,11 +1351,11 @@ The current local time is: 2026-08-05T09:46:55+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1374,11 +1374,11 @@ The current local time is: 2026-08-05T09:55:03+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1395,11 +1395,11 @@ The current local time is: 2026-08-05T09:56:32+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1416,11 +1416,11 @@ The current local time is: 2026-08-05T10:08:00+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1470,11 +1470,11 @@ The current local time is: 2026-08-05T11:36:15+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1491,11 +1491,11 @@ The current local time is: 2026-08-05T11:37:55+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1512,11 +1512,11 @@ The current local time is: 2026-08-05T11:41:49+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1531,11 +1531,11 @@ The current local time is: 2026-08-05T11:43:50+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1552,11 +1552,11 @@ The current local time is: 2026-08-05T11:46:27+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1573,11 +1573,11 @@ The current local time is: 2026-08-05T12:03:00+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1594,11 +1594,11 @@ The current local time is: 2026-08-05T12:03:00+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1615,11 +1615,11 @@ The current local time is: 2026-08-05T12:18:50+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1636,11 +1636,11 @@ The current local time is: 2026-08-05T12:18:50+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1657,11 +1657,11 @@ The current local time is: 2026-08-05T12:34:47+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1678,11 +1678,11 @@ The current local time is: 2026-08-05T12:36:16+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1699,11 +1699,11 @@ The current local time is: 2026-08-05T12:46:58+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1720,11 +1720,11 @@ The current local time is: 2026-08-05T12:58:54+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1741,11 +1741,11 @@ The current local time is: 2026-08-05T12:59:41+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1762,11 +1762,11 @@ The current local time is: 2026-08-05T13:14:49+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1783,11 +1783,11 @@ The current local time is: 2026-08-05T13:19:40+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: Causes of the Great War) - http://localhost:3003/unit.html?id=great_war&lesson=0 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1804,11 +1804,11 @@ The current local time is: 2026-08-05T13:35:03+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1836,11 +1836,11 @@ The current local time is: 2026-08-05T13:40:16+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1879,11 +1879,11 @@ The current local time is: 2026-08-05T13:41:40+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1902,11 +1902,11 @@ The current local time is: 2026-08-05T16:28:03+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1925,11 +1925,11 @@ The current local time is: 2026-08-05T16:29:20+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1948,11 +1948,11 @@ The current local time is: 2026-08-05T16:30:09+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1969,11 +1969,11 @@ The current local time is: 2026-08-05T16:38:02+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -1992,11 +1992,11 @@ The current local time is: 2026-08-05T16:38:02+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2015,11 +2015,11 @@ The current local time is: 2026-08-05T16:51:15+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2036,11 +2036,11 @@ The current local time is: 2026-08-05T17:00:12+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2079,11 +2079,11 @@ The current local time is: 2026-08-05T17:05:46+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2102,11 +2102,11 @@ The current local time is: 2026-08-05T18:31:11+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2125,11 +2125,11 @@ The current local time is: 2026-08-05T18:32:53+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2148,11 +2148,11 @@ The current local time is: 2026-08-05T18:35:08+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2171,11 +2171,11 @@ The current local time is: 2026-08-05T18:39:20+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2194,11 +2194,11 @@ The current local time is: 2026-08-05T18:44:22+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2217,11 +2217,11 @@ The current local time is: 2026-08-05T18:44:22+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2240,11 +2240,11 @@ The current local time is: 2026-08-05T18:53:18+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2304,11 +2304,11 @@ The current local time is: 2026-08-05T18:57:45+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2325,11 +2325,11 @@ The current local time is: 2026-08-05T18:59:16+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2389,11 +2389,11 @@ The current local time is: 2026-08-05T19:07:12+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2412,11 +2412,11 @@ The current local time is: 2026-08-05T19:13:40+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2435,11 +2435,11 @@ The current local time is: 2026-08-05T19:14:31+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2458,11 +2458,11 @@ The current local time is: 2026-08-05T19:19:23+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2481,11 +2481,11 @@ The current local time is: 2026-08-05T19:23:42+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2504,11 +2504,11 @@ The current local time is: 2026-08-05T19:26:31+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2527,11 +2527,11 @@ The current local time is: 2026-08-05T19:26:31+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2550,11 +2550,11 @@ The current local time is: 2026-08-05T19:38:04+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2573,11 +2573,11 @@ The current local time is: 2026-08-05T19:45:48+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2596,11 +2596,11 @@ The current local time is: 2026-08-05T19:52:35+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2619,11 +2619,11 @@ The current local time is: 2026-08-05T19:54:10+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2642,11 +2642,11 @@ The current local time is: 2026-08-05T19:57:50+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2665,11 +2665,11 @@ The current local time is: 2026-08-05T21:22:07+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2688,11 +2688,11 @@ The current local time is: 2026-08-05T21:25:13+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2711,11 +2711,11 @@ The current local time is: 2026-08-05T21:33:10+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2734,11 +2734,11 @@ The current local time is: 2026-08-05T21:56:11+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2757,11 +2757,11 @@ The current local time is: 2026-08-05T21:57:59+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2780,11 +2780,11 @@ The current local time is: 2026-08-05T22:09:12+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2803,11 +2803,11 @@ The current local time is: 2026-08-05T22:32:55+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2838,11 +2838,11 @@ The current local time is: 2026-08-05T22:36:32+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2861,11 +2861,11 @@ The current local time is: 2026-08-05T22:48:20+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -2897,11 +2897,11 @@ The current local time is: 2026-08-05T22:49:40+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -2935,11 +2935,11 @@ The current local time is: 2026-08-05T22:52:35+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -3023,11 +3023,11 @@ The current local time is: 2026-08-05T22:58:29+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -3044,11 +3044,11 @@ The current local time is: 2026-08-05T23:05:33+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -3067,11 +3067,11 @@ The current local time is: 2026-08-05T23:06:49+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -3090,11 +3090,11 @@ The current local time is: 2026-08-05T23:18:41+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -3113,11 +3113,11 @@ The current local time is: 2026-08-05T23:19:07+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -3140,11 +3140,11 @@ The current local time is: 2026-08-05T23:23:17+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -3223,11 +3223,11 @@ The current local time is: 2026-08-05T23:37:23+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -3303,11 +3303,11 @@ The current local time is: 2026-08-05T23:51:55+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -3324,11 +3324,11 @@ The current local time is: 2026-08-05T23:54:30+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page DA641C6E9BD81BA52BA934AA5807C772 (KS3: The Great War (1914-1919)) - http://localhost:3003/unit.html?id=great_war_part2&lesson=5 [ACTIVE]
     Viewport: 1920x945, Page Height: 945
@@ -3404,11 +3404,11 @@ The current local time is: 2026-08-05T23:56:30+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 25173F6D2DB3A89CC9D6016FBB90B7C7 (Side by side georeferenced maps viewer - Map images - National Library of Scotland) - https://maps.nls.uk/geo/explore/side-by-side/#zoom=18.4&lat=50.82517&lon=-1.2178...
     Viewport: 1920x945, Page Height: 945
@@ -3487,11 +3487,11 @@ The current local time is: 2026-08-06T00:16:15+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
 No browser pages are currently open.
 </ADDITIONAL_METADATA>
 
@@ -3564,11 +3564,11 @@ The current local time is: 2026-08-06T00:22:25+01:00.
 
 The user's current state is as follows:
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
-- c:\Projects\meoncross-history.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\src\core_app.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\key_individuals.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\weimar_nazi_germany\data.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\check_weimar_banners.mjs (LANGUAGE_JAVASCRIPT)
 No browser pages are currently open.
 
 The user has uploaded 1 audio file(s). Consider them as a part of their message.
@@ -3621,10 +3621,10 @@ anisphere / Mercator World Map Strip
 The current local time is: 2026-08-06T14:15:55+01:00.
 
 The user's current state is as follows:
-Active Document: c:\Projects\meoncross-history.netlify.app\inject_lesson6.js (LANGUAGE_JAVASCRIPT)
+Active Document: c:\Projects\the-history-revision-hub.netlify.app\inject_lesson6.js (LANGUAGE_JAVASCRIPT)
 Cursor is on line: 1
 Other open documents:
-- c:\Projects\meoncross-history.netlify.app\inject_lesson6.js (LANGUAGE_JAVASCRIPT)
+- c:\Projects\the-history-revision-hub.netlify.app\inject_lesson6.js (LANGUAGE_JAVASCRIPT)
 Browser State:
   Page 1D9F50DF2ECBAEFDFA00A9D56EE72DB0 (Paper 1: Medicine Through Time with the Western Front) - http://localhost:3003/unit.html?id=edexcel_medicine
     Viewport: 1920x945, Page Height: 945

@@ -2,7 +2,7 @@ const fs = require('fs');
 
 async function processUnit() {
     // 1. Edexcel Medicine
-    let dataPath = 'c:/Projects/meoncross-history.netlify.app/edexcel_medicine/data.js';
+    let dataPath = 'c:/Projects/the-history-revision-hub.netlify.app/edexcel_medicine/data.js';
     let mod = await import('file://' + dataPath + '?update=' + Date.now());
     let data = mod.unitData;
 
@@ -23,7 +23,7 @@ async function processUnit() {
     console.log('Injected key topics for Medicine!');
 
     // 2. CME New
-    dataPath = 'c:/Projects/meoncross-history.netlify.app/public/units/cme_new/data.js';
+    dataPath = 'c:/Projects/the-history-revision-hub.netlify.app/public/units/cme_new/data.js';
     mod = await import('file://' + dataPath + '?update=' + Date.now());
     data = mod.unitData;
 

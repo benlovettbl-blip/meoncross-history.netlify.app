@@ -209,7 +209,7 @@ function bullet(text, boldPrefix = '') {
 // ----------------------------------------------------
 async function buildDocx() {
   const doc = new Document({
-    creator: 'Meoncross School History Department',
+    creator: 'The History Department',
     title: 'Research Dossier & AI Case Study: 2nd Lt Ernest Edward Crummack MC DCM',
     description:
       'A technical record of primary archival discovery, AI research capabilities, identified errors, root cause analysis, and verification protocols structured around The Good, The Bad, and The Ugly.',
@@ -222,7 +222,7 @@ async function buildDocx() {
                 alignment: AlignmentType.RIGHT,
                 children: [
                   new TextRun({
-                    text: 'Meoncross History Department · Research Dossier & AI Case Study',
+                    text: 'The History Department · Research Dossier & AI Case Study',
                     size: 16,
                     color: '94A3B8',
                     font: 'Segoe UI',
@@ -280,7 +280,7 @@ async function buildDocx() {
             spacing: { before: 100, after: 60 },
             children: [
               new TextRun({
-                text: 'MEONCROSS SCHOOL HISTORY DEPARTMENT · ARCHIVAL RESEARCH DOSSIER',
+                text: 'The History Department · ARCHIVAL RESEARCH DOSSIER',
                 bold: true,
                 size: 20,
                 color: 'B45309',
@@ -386,9 +386,12 @@ async function buildDocx() {
                     width: { size: 72, type: WidthType.PERCENTAGE },
                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                     children: [
-                      p('Meoncross School GCSE Battlefield Study Expedition 2026 (Ypres & Somme)', {
-                        size: 18,
-                      }),
+                      p(
+                        'The History Portal GCSE Battlefield Study Expedition 2026 (Ypres & Somme)',
+                        {
+                          size: 18,
+                        },
+                      ),
                     ],
                   }),
                 ],
@@ -408,7 +411,7 @@ async function buildDocx() {
                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                     children: [
                       p(
-                        'Benjamin Lovett (Head of History) & John Pearson (Family Military Historian)',
+                        'Department Lead (Head of History) & the family archive researcher (Family Military Historian)',
                         { size: 18 },
                       ),
                     ],
@@ -427,7 +430,7 @@ async function buildDocx() {
                     width: { size: 72, type: WidthType.PERCENTAGE },
                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                     children: [
-                      p('September 2026 · Compiled at Meoncross School, Stubbington, Hampshire', {
+                      p('September 2026 · Compiled at The History Portal, Stubbington, Hampshire', {
                         size: 18,
                       }),
                     ],
@@ -442,10 +445,10 @@ async function buildDocx() {
           // SECTION 1: EXECUTIVE SUMMARY & THE TRIPARTITE AUDIT FRAMEWORK
           h1('1. Executive Summary & The Tripartite Audit Framework'),
           p(
-            'This dossier provides an exhaustive technical and methodological record of the archival reconstruction of 2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958). Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project set out to investigate the direct Great War ancestry of a Year 10 pupil and family.',
+            'This dossier provides an exhaustive technical and methodological record of the archival reconstruction of 2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958). Conducted by the The History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project set out to investigate the direct Great War ancestry of a Year 10 pupil and family.',
           ),
           p(
-            'The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian John Pearson, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.',
+            'The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian the family archive researcher, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.',
           ),
           p(
             'To evaluate the utility and perils of AI in historical inquiry with complete methodological honesty, this report structures its findings around the tripartite framework of The Good, The Bad, and The Ugly:',
@@ -466,7 +469,7 @@ async function buildDocx() {
           // SECTION 2: THE HUMAN FOUNDATION
           h1('2. Foundational Primary Clues (The Human Baseline)'),
           p(
-            'A foundational law of historiography in the digital age is: Machine tools cannot discover truth in a vacuum. AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from John Pearson’s multi-decade family archive:',
+            'A foundational law of historiography in the digital age is: Machine tools cannot discover truth in a vacuum. AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from the family archive researcher’s multi-decade family archive:',
           ),
           bullet(
             'Ernest Edward Crummack was born on 6 September 1885 at Rawmarsh, near Rotherham. His father, Charles Crummack, was a skilled Shingler/Puddler working the reverberatory furnaces at Parkgate Iron and Steel Plant.',
@@ -497,7 +500,7 @@ async function buildDocx() {
             '7. Wider Family War Effort:',
           ),
           bullet(
-            'Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest child, Mary Crummack (John Pearson’s mother), carried the family’s direct DNA and lineage down to family historian John Pearson and the modern family.',
+            'Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest child, Mary Crummack (the family archive researcher’s mother), carried the family’s direct DNA and lineage down to the family archive researcher and the modern family.',
             '8. Second Marriage & Lineage:',
           ),
           bullet(
@@ -558,7 +561,7 @@ async function buildDocx() {
 
           h2('3. Forensic Triangulation: Proving the Identity of 2nd Lt Marcus Goodall'),
           p(
-            'Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. John Pearson had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:',
+            'Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. the family archive researcher had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:',
           ),
           bullet(
             'Recorded that only one officer was wounded while cutting enemy wire during the raid on 3–4 July 1916 along Mill Road.',
@@ -882,7 +885,7 @@ async function buildDocx() {
             'However, left unchecked, AI inevitably degrades into regional stereotyping, demographic drift, and genealogical fiction. The ultimate safeguard remains the critical eye of the human historian. This dossier stands as permanent departmental record of how primary archival discipline preserves historical truth in the digital era.',
           ),
           p('', { spaceAfter: 100 }),
-          p('Meoncross School History Department', { bold: true, color: '1E3A8A' }),
+          p('The History Department', { bold: true, color: '1E3A8A' }),
           p('Stubbington, Hampshire · September 2026'),
         ],
       },
@@ -1097,7 +1100,7 @@ async function buildHtmlAndPdf() {
 <body>
 
   <div class="header-block">
-    <div class="sub-dept">Meoncross School History Department · Archival Research Dossier</div>
+    <div class="sub-dept">The History Department · Archival Research Dossier</div>
     <h1 class="doc-title">Research Dossier &amp; AI Case Study</h1>
     <div class="doc-subtitle">Reconstructing 2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958):<br>Primary Archival Discovery, AI Capabilities, Research Errors, and "The Good, The Bad, and The Ugly" Historiographical Audit</div>
   </div>
@@ -1113,21 +1116,21 @@ async function buildHtmlAndPdf() {
     </tr>
     <tr>
       <td class="meta-label">Institutional Context:</td>
-      <td>Meoncross School GCSE Battlefield Study Expedition 2026 (Ypres &amp; Somme)</td>
+      <td>The History Portal GCSE Battlefield Study Expedition 2026 (Ypres &amp; Somme)</td>
     </tr>
     <tr>
       <td class="meta-label">Research Contributors:</td>
-      <td>Benjamin Lovett (Head of History) &amp; John Pearson (Family Military Historian)</td>
+      <td>Department Lead (Head of History) &amp; the family archive researcher (Family Military Historian)</td>
     </tr>
     <tr>
       <td class="meta-label">Date of Record:</td>
-      <td>September 2026 · Compiled at Meoncross School, Stubbington, Hampshire</td>
+      <td>September 2026 · Compiled at The History Portal, Stubbington, Hampshire</td>
     </tr>
   </table>
 
   <h2 class="section-title">1. Executive Summary &amp; The Tripartite Audit Framework</h2>
-  <p>This dossier provides an exhaustive technical and methodological record of the archival reconstruction of <strong>2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958)</strong>. Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project investigated the direct Great War ancestry of a Year 10 pupil and family.</p>
-  <p>The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian <strong>John Pearson</strong>, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.</p>
+  <p>This dossier provides an exhaustive technical and methodological record of the archival reconstruction of <strong>2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958)</strong>. Conducted by the The History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project investigated the direct Great War ancestry of a Year 10 pupil and family.</p>
+  <p>The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian <strong>the family archive researcher</strong>, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.</p>
   <p>To evaluate the utility and perils of AI in historical inquiry with complete methodological honesty, this report structures its findings around the tripartite framework of <strong>The Good, The Bad, and The Ugly</strong>:</p>
   <ul>
     <li><span class="tag-badge badge-good">The Good</span> <strong>Breakthrough Discoveries &amp; Digital Acceleration:</strong> Bypassing human clerical typos via Boolean operators, instant retrieval of British Government London Gazette dispatches, 4-way cross-archival triangulation of censored casualties (2nd Lt Marcus Goodall), and paleographic transcription of Siegfried Sassoon’s trench notebook at Cambridge University Library.</li>
@@ -1136,7 +1139,7 @@ async function buildHtmlAndPdf() {
   </ul>
 
   <h2 class="section-title">2. Foundational Primary Clues (The Human Baseline)</h2>
-  <p>A foundational law of historiography in the digital age is: <em>Machine tools cannot discover truth in a vacuum.</em> AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from John Pearson’s multi-decade family archive:</p>
+  <p>A foundational law of historiography in the digital age is: <em>Machine tools cannot discover truth in a vacuum.</em> AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from the family archive researcher’s multi-decade family archive:</p>
   <ul>
     <li><strong>1. Birth &amp; Heavy Industry Origins:</strong> Ernest was born on 6 September 1885 at Rawmarsh, Rotherham. His father, Charles Crummack, was a skilled Shingler/Puddler at Parkgate Iron and Steel Plant, working with reverberatory furnaces in heavy metallurgy.</li>
     <li><strong>2. First Marriage &amp; Family Loss:</strong> Ernest married Maud Coxon in Rawmarsh on 20 August 1906. They had two children: Edward ("Ted", born 1908) and Hilda. Maud tragically died of tuberculosis in April 1914, leaving Ernest a widower prior to mobilization.</li>
@@ -1145,7 +1148,7 @@ async function buildHtmlAndPdf() {
     <li><strong>5. The Clerical Typo Clue:</strong> War Office clerks misprinted his surname as "Crummock" with an ‘o’ in the London Gazette, causing search engines to miss his entry for decades.</li>
     <li><strong>6. The Goodall &amp; Sassoon Nexus:</strong> The rescued officer was 2nd Lt Marcus Goodall, son of the Canon of Rotherham and intimate friend of famed war poet Siegfried Sassoon. Canon Goodall visited Ernest after the war to express gratitude.</li>
     <li><strong>7. Wider Family War Effort:</strong> Elder brother Frank Crummack served in the 1/5th York &amp; Lancasters and was invalided out following the Boesinghe gas attack; sisters worked in munitions factories, notably Jessica Alma Crummack, Captain and Goalkeeper of a wartime women’s football team.</li>
-    <li><strong>8. Second Marriage &amp; Lineage:</strong> Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest daughter, Mary Crummack (John Pearson’s mother), carried the family’s direct DNA and lineage down to family historian John Pearson and the modern family.</li>
+    <li><strong>8. Second Marriage &amp; Lineage:</strong> Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest daughter, Mary Crummack (the family archive researcher’s mother), carried the family’s direct DNA and lineage down to the family archive researcher and the modern family.</li>
     <li><strong>9. Officer Commissioning &amp; 1918 MC:</strong> Commissioned on 30 January 1918 into the 1/4th (Territorial) Bn, but attached in operational service to the 6th (Service) Battalion, winning the Military Cross at the Canal du Nord in September 1918.</li>
     <li><strong>10. Interwar Legacy, Passing &amp; Regimental Museum:</strong> Surviving interwar postcards confirm Ernest visited the Menin Gate, stayed at the Hôtel Ypriana in Ypres, and visited Albert on the Somme, before passing away peacefully in Dinnington in 1958 at age 73. His complete mounted six-medal group was presented many decades ago by his eldest son Ted Crummack to the York and Lancaster Regimental Museum at Clifton Park, Rotherham, where it remains on public display.</li>
   </ul>
@@ -1169,7 +1172,7 @@ async function buildHtmlAndPdf() {
   </div>
 
   <h3 class="sub-section-title">3. Forensic Triangulation: Proving 2nd Lt Marcus Goodall Across 4 Repositories</h3>
-  <p>Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. John Pearson had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:</p>
+  <p>Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. the family archive researcher had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:</p>
   <ul>
     <li><strong>1/5th Battalion War Diary (July 1916):</strong> Recorded that only one officer was wounded while cutting enemy wire during the raid on 3–4 July 1916 along Mill Road.</li>
     <li><strong>Eyewitness Field Diary:</strong> Pte Walter Hutchinson recorded an officer staggering into the trench at 10 am stating that Captain Goodall had been badly wounded and requesting stretchers.</li>
@@ -1298,7 +1301,7 @@ Provide citations to official British military histories or war diaries.</div>
   <p>However, left unchecked, AI inevitably degrades into regional stereotyping, demographic drift, and genealogical fiction. The ultimate safeguard remains the critical eye of the human historian. This dossier stands as permanent departmental record of how primary archival discipline preserves historical truth in the digital era.</p>
 
   <div class="footer-signoff">
-    <p style="margin: 0; font-weight: 700; color: #1e3a8a;">Meoncross School History Department</p>
+    <p style="margin: 0; font-weight: 700; color: #1e3a8a;">The History Department</p>
     <p style="margin: 2px 0 0 0;">Stubbington, Hampshire · September 2026</p>
   </div>
 
@@ -1330,7 +1333,7 @@ Provide citations to official British military histories or war diaries.</div>
     },
     displayHeaderFooter: true,
     headerTemplate:
-      '<div style="font-size: 7.5pt; color: #94a3b8; width: 100%; text-align: right; padding-right: 13mm; font-family: sans-serif;">Meoncross History Department · Research Dossier & AI Case Study</div>',
+      '<div style="font-size: 7.5pt; color: #94a3b8; width: 100%; text-align: right; padding-right: 13mm; font-family: sans-serif;">The History Department · Research Dossier & AI Case Study</div>',
     footerTemplate:
       '<div style="font-size: 7.5pt; color: #94a3b8; width: 100%; display: flex; justify-content: space-between; padding-left: 13mm; padding-right: 13mm; font-family: sans-serif;"><span>2nd Lt Ernest Crummack MC DCM · "The Good, The Bad, and The Ugly" Audit</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>',
   });

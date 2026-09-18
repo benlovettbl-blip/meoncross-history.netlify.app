@@ -39,15 +39,15 @@ const ddpData = [
     evidenceLinks: [
       {
         title: 'USA Exam & Revision Guide (36pp)',
-        url: 'https://meoncross-history.netlify.app/pdfs/edexcel_usa_visual_revision_and_exam_guide.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/edexcel_usa_visual_revision_and_exam_guide.pdf',
       },
       {
         title: 'Medicine Exam & Revision Guide (36pp)',
-        url: 'https://meoncross-history.netlify.app/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
       },
       {
         title: 'Department Marking & Feedback Policy',
-        url: 'https://meoncross-history.netlify.app/pdfs/history_marking_and_feedback_policy_v2.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/history_marking_and_feedback_policy_v2.pdf',
       },
     ],
     dates: 'Ongoing 2026–27',
@@ -70,15 +70,15 @@ const ddpData = [
     evidenceLinks: [
       {
         title: 'Whole-School Curriculum Overview (PDF)',
-        url: 'https://meoncross-history.netlify.app/pdfs/whole_school_curriculum_overview.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/whole_school_curriculum_overview.pdf',
       },
       {
         title: '5-Year Chronological Sequence Map',
-        url: 'https://meoncross-history.netlify.app/pdfs/curriculum_overview_tabular.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/curriculum_overview_tabular.pdf',
       },
       {
         title: 'Henry Cort Funtley Primary Source Pack',
-        url: 'https://meoncross-history.netlify.app/pdfs/henry_cort_funtley_primary_source_pack.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/henry_cort_funtley_primary_source_pack.pdf',
       },
     ],
     dates: 'Ongoing 2026–27',
@@ -91,7 +91,7 @@ const ddpData = [
     sipBadgeColor: '#7c3aed',
     aim: 'Broaden pupil horizons and foster historical curiosity, strategic thinking, and leadership through extra-curricular activities and experiential field trips.',
     actions: [
-      'Run the weekly Meoncross Chess Club, encouraging house participation, ladder progression, and tactical skill.',
+      'Run the weekly The History Portal Chess Club, encouraging house participation, ladder progression, and tactical skill.',
       'Plan and deliver the GCSE Ypres Battlefield Study Visit (October 2026) to support Paper 1 Western Front depth study.',
       'Support interested pupils in submitting research entries to the annual Hampshire Archives Local History Competition.',
     ],
@@ -102,15 +102,15 @@ const ddpData = [
     evidenceLinks: [
       {
         title: 'Ypres Pupil Field Guide (32pp)',
-        url: 'https://meoncross-history.netlify.app/pdfs/ypres_1914_1918_pupil_field_guide.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/ypres_1914_1918_pupil_field_guide.pdf',
       },
       {
         title: 'Ypres 2026 Parent Information Pack',
-        url: 'https://meoncross-history.netlify.app/pdfs/ypres_2026_parent_information_pack_v2.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/ypres_2026_parent_information_pack_v2.pdf',
       },
       {
         title: 'Chess Club QR Board Stand Resources',
-        url: 'https://meoncross-history.netlify.app/pdfs/meoncross_chess_board_qr_stands.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/chess_board_qr_stands.pdf',
       },
     ],
     dates: 'Ongoing 2026–27',
@@ -133,11 +133,11 @@ const ddpData = [
     evidenceLinks: [
       {
         title: 'Live History Hub (Digital SEN Mode)',
-        url: 'https://meoncross-history.netlify.app/?view=booklet&unit=eee',
+        url: 'https://the-history-revision-hub.netlify.app/?view=booklet&unit=eee',
       },
       {
         title: 'Sample A4 Differentiated Workbook (EEE)',
-        url: 'https://meoncross-history.netlify.app/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
       },
     ],
     dates: 'Embedded in practice',
@@ -160,7 +160,7 @@ const ddpData = [
     evidenceLinks: [
       {
         title: 'Gridmaker SMSC Curriculum Mapping',
-        url: 'https://meoncross-history.netlify.app/pdfs/curriculum_overview_tabular.pdf',
+        url: 'https://the-history-revision-hub.netlify.app/pdfs/curriculum_overview_tabular.pdf',
       },
     ],
     dates: 'Termly as needed',
@@ -173,7 +173,7 @@ function generateHTML() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meoncross School History Department - Department Development Plan 2026-27</title>
+  <title>The History Department - Department Development Plan 2026-27</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
     
@@ -397,7 +397,7 @@ function generateHTML() {
   <div class="page">
     <div class="header">
       <div>
-        <h1>Meoncross School History Department</h1>
+        <h1>The History Department</h1>
         <p>Department Development Plan (DDP) 2026–2027</p>
       </div>
       <div style="text-align: right;">
@@ -405,7 +405,7 @@ function generateHTML() {
           Operational Master
         </span>
         <div style="margin-top: 3px;">
-          <a href="https://meoncross-history.netlify.app" target="_blank" style="color: #93c5fd; font-size: 7.0pt; text-decoration: none; font-weight: 600;">Live Portal: meoncross-history.netlify.app ↗</a>
+          <a href="https://the-history-revision-hub.netlify.app" target="_blank" style="color: #93c5fd; font-size: 7.0pt; text-decoration: none; font-weight: 600;">Live Portal: the-history-revision-hub.netlify.app ↗</a>
         </div>
       </div>
     </div>
@@ -417,7 +417,7 @@ function generateHTML() {
       </div>
       <div class="meta-box">
         <div class="meta-label">Subject Leader</div>
-        <div class="meta-val">Benjamin Lovett (Head of History)</div>
+        <div class="meta-val">Department Lead (Head of History)</div>
       </div>
       <div class="meta-box">
         <div class="meta-label">Academic Year</div>
@@ -425,7 +425,7 @@ function generateHTML() {
       </div>
       <div class="meta-box">
         <div class="meta-label">Alignment</div>
-        <div class="meta-val">Meoncross SIP 2026</div>
+        <div class="meta-val">The History Portal SIP 2026</div>
       </div>
     </div>
 
@@ -495,7 +495,7 @@ function generateHTML() {
   <div class="page">
     <div class="header" style="margin-bottom: 8px; padding: 8px 16px;">
       <div>
-        <h1 style="font-size: 13pt;">Meoncross School History Department Development Plan</h1>
+        <h1 style="font-size: 13pt;">The History Department Development Plan</h1>
         <p style="font-size: 7.8pt;">Priorities 4–5: Adaptive Teaching &amp; SMSC / British Values</p>
       </div>
       <span style="background: rgba(255,255,255,0.15); color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 7.4pt; font-weight: 600;">

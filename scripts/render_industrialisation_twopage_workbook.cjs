@@ -519,7 +519,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     <div style="margin-bottom: 10px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
         <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 700;">
-          Meoncross School &bull; Department of History
+          The History Portal &bull; Department of History
         </span>
         <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 600;">
           Year 8 History
@@ -1041,7 +1041,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
       <!-- Left Page Footer -->
       <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-        <span>Meoncross History &bull; KS3 Industrialisation</span>
+        <span>The History Portal &bull; KS3 Industrialisation</span>
         <span>Page ${leftPageNum} (Facing Spread Left)</span>
       </div>
     </div>
@@ -1220,7 +1220,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
     <!-- Colophon at very bottom of outer cover -->
     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 4px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #94a3b8;">
-      <span>Meoncross School &bull; History Department Archive</span>
+      <span>The History Portal &bull; History Department Archive</span>
       <span>Unit Reflection &bull; Page 20 (Saddle-Stitch Outer Cover)</span>
     </div>
   </div>

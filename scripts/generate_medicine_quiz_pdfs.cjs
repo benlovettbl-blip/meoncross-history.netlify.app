@@ -83,7 +83,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 1}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Knowledge Vault</span><span>Western Front Retrieval</span><span>Page 1 of 4</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Knowledge Vault</span><span>Western Front Retrieval</span><span>Page 1 of 4</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>The British Sector of the Western Front, 1914–1918</h1><p>Complete Knowledge Retrieval Vault · Questions 51 to 100</p></div><span class="header-tag">WF Vault 2</span></div>
@@ -94,7 +94,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 51}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Knowledge Vault</span><span>Western Front Retrieval</span><span>Page 2 of 4</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Knowledge Vault</span><span>Western Front Retrieval</span><span>Page 2 of 4</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Western Front Mark Scheme Answers</h1><p>Quick-Marking Bank · Answers 1 to 50</p></div><span class="header-tag">Answers 1–50</span></div>
@@ -105,7 +105,7 @@ async function run() {
           `<div class="ans-item"><span class="ans-num">${i + 1}.</span><span class="ans-text">${item.a}</span><span class="ans-check">[✓][✗]</span></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Answers Bank</span><span>Western Front</span><span>Page 3 of 4</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Answers Bank</span><span>Western Front</span><span>Page 3 of 4</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Western Front Mark Scheme Answers</h1><p>Quick-Marking Bank · Answers 51 to 100</p></div><span class="header-tag">Answers 51–100</span></div>
@@ -116,7 +116,7 @@ async function run() {
           `<div class="ans-item"><span class="ans-num">${i + 51}.</span><span class="ans-text">${item.a}</span><span class="ans-check">[✓][✗]</span></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Answers Bank</span><span>Western Front</span><span>Page 4 of 4</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Answers Bank</span><span>Western Front</span><span>Page 4 of 4</span></div>
   </div>`;
 
   // 2. Build Thematic Study Quiz HTML (12 Pages: 80 Med, 60 Ren, 60 Ind, 80 Mod)
@@ -131,7 +131,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 1}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 1 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 1 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Unit 1: Medicine in Medieval Britain, c1250–c1500</h1><p>Knowledge Retrieval Vault · Questions 41 to 80</p></div><span class="header-tag">Medieval 2</span></div>
@@ -142,7 +142,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 41}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 2 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 2 of 12</span></div>
   </div>
 
   <!-- Renaissance Pages (2 pages Qs) -->
@@ -155,7 +155,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 1}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 3 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 3 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Unit 2: The Medical Renaissance in Britain, c1500–c1700</h1><p>Knowledge Retrieval Vault · Questions 31 to 60</p></div><span class="header-tag">Renaissance 2</span></div>
@@ -166,7 +166,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 31}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 4 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 4 of 12</span></div>
   </div>
 
   <!-- Industrial Pages (2 pages Qs) -->
@@ -179,7 +179,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 1}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 5 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 5 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Unit 3: Medicine in 18th & 19th Century Britain, c1700–c1900</h1><p>Knowledge Retrieval Vault · Questions 31 to 60</p></div><span class="header-tag">Industrial 2</span></div>
@@ -190,7 +190,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 31}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 6 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 6 of 12</span></div>
   </div>
 
   <!-- Modern Pages (2 pages Qs) -->
@@ -203,7 +203,7 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 1}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 7 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 7 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Unit 4: Medicine in Modern Britain, c1900–present</h1><p>Knowledge Retrieval Vault · Questions 41 to 80</p></div><span class="header-tag">Modern 2</span></div>
@@ -214,29 +214,29 @@ async function run() {
           `<div class="quiz-item"><div class="quiz-cb"></div><div style="flex:1"><strong>${i + 41}.</strong> ${item.q}<div style="color:#475569;font-size:6.8pt">[${item.source}]</div></div></div>`,
       )
       .join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3</span><span>Page 8 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3</span><span>Page 8 of 12</span></div>
   </div>
 
   <!-- Answer Banks (4 pages Answers) -->
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Medieval Medicine Mark Scheme Answers</h1><p>Quick-Marking Answers Bank · Questions 1 to 80</p></div><span class="header-tag">Medieval Ans</span></div>
     <div class="ans-grid">${medQuestions.map((item, i) => `<div class="ans-item"><span class="ans-num">${i + 1}.</span><span class="ans-text">${item.a}</span><span class="ans-check">[✓][✗]</span></div>`).join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Answers</span><span>Page 9 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Answers</span><span>Page 9 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Renaissance Medicine Mark Scheme Answers</h1><p>Quick-Marking Answers Bank · Questions 1 to 60</p></div><span class="header-tag">Renaissance Ans</span></div>
     <div class="ans-grid">${renQuestions.map((item, i) => `<div class="ans-item"><span class="ans-num">${i + 1}.</span><span class="ans-text">${item.a}</span><span class="ans-check">[✓][✗]</span></div>`).join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Answers</span><span>Page 10 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Answers</span><span>Page 10 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>18th & 19th C Medicine Mark Scheme Answers</h1><p>Quick-Marking Answers Bank · Questions 1 to 60</p></div><span class="header-tag">Industrial Ans</span></div>
     <div class="ans-grid">${indQuestions.map((item, i) => `<div class="ans-item"><span class="ans-num">${i + 1}.</span><span class="ans-text">${item.a}</span><span class="ans-check">[✓][✗]</span></div>`).join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Answers</span><span>Page 11 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Answers</span><span>Page 11 of 12</span></div>
   </div>
   <div class="page">
     <div class="page-header"><div class="header-left"><h1>Modern Medicine Mark Scheme Answers</h1><p>Quick-Marking Answers Bank · Questions 1 to 80</p></div><span class="header-tag">Modern Ans</span></div>
     <div class="ans-grid">${modQuestions.map((item, i) => `<div class="ans-item"><span class="ans-num">${i + 1}.</span><span class="ans-text">${item.a}</span><span class="ans-check">[✓][✗]</span></div>`).join('')}</div>
-    <div class="page-footer"><span>Mr Lovett's History Hub · Pillar 3 Answers</span><span>Page 12 of 12</span></div>
+    <div class="page-footer"><span>The History Revision Hub · Pillar 3 Answers</span><span>Page 12 of 12</span></div>
   </div>`;
 
   const browser = await puppeteer.launch({

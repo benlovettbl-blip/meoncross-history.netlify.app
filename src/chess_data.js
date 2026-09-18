@@ -1,5 +1,5 @@
 /**
- * Meoncross School Chess Club Data Registry
+ * The History Portal Chess Club Data Registry
  * Configured for Period 6 Thursdays
  * School Houses: Warrior, Dreadnought, Victory, Invincible
  * Year Groups: Years 7–11 (KS3 & KS4)
@@ -1065,7 +1065,7 @@ export const BEGINNER_GOLDEN_RULES = [
     icon: 'fa-trophy',
     color: '#ca8a04',
     summary:
-      'Great grandmasters and Meoncross champions follow these 3 steps in the opening of every game:',
+      'Great grandmasters and History Hub champions follow these 3 steps in the opening of every game:',
     points: [
       '<strong>1. Control the Center Courtyard:</strong> Push your center pawns (e4 or d4) to claim the middle of the board.',
       '<strong>2. Develop Knights & Bishops:</strong> Bring out your minor pieces toward the center before you touch your Queen or rooks.',

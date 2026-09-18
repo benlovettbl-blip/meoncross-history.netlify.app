@@ -484,7 +484,7 @@ function generateBoosterHtml(cfg, topTopics) {
       .join('')}
 
     <div class="page-footer">
-      <div>Meoncross School History Hub • ${cfg.cohort} Portfolio Tracker</div>
+      <div>The History Portal History Hub • ${cfg.cohort} Portfolio Tracker</div>
       <div>Page 1 of 2 (Turn over for Retrieval Hinge Check & Grade 9 Model)</div>
     </div>
   </div>
@@ -563,7 +563,7 @@ function generateBoosterHtml(cfg, topTopics) {
     </table>
 
     <div class="page-footer">
-      <div>Meoncross School History Hub • ${cfg.cohort} Portfolio Tracker</div>
+      <div>The History Portal History Hub • ${cfg.cohort} Portfolio Tracker</div>
       <div>Page 2 of 2 • Edexcel GCSE (9–1) Revision Booster</div>
     </div>
   </div>

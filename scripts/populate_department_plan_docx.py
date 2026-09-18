@@ -72,8 +72,8 @@ def update_docx():
     
     # Row 1: Subject -> History
     set_cell_content(t1_rows[0].findall(f".//{{{W_NS}}}tc")[1], [("History", True, False, "22")])
-    # Row 2: Owner -> Benjamin Lovett (Head of History)
-    set_cell_content(t1_rows[1].findall(f".//{{{W_NS}}}tc")[1], [("Benjamin Lovett (Head of History)", True, False, "22")])
+    # Row 2: Owner -> Department Lead (Head of History)
+    set_cell_content(t1_rows[1].findall(f".//{{{W_NS}}}tc")[1], [("Department Lead (Head of History)", True, False, "22")])
     # Row 3: Date: -> September 2026
     set_cell_content(t1_rows[2].findall(f".//{{{W_NS}}}tc")[1], [("September 2026", False, False, "22")])
     
@@ -123,7 +123,7 @@ def update_docx():
         ("(Linked to SIP Strategic Aim 2 & 4: Opportunities Beyond Classroom)", False, True, "18")
     ])
     set_cell_content(t2_rows[3].findall(f".//{{{W_NS}}}tc")[1], [
-        ("1. Run the weekly Meoncross Chess Club, encouraging house participation and tactical play.", False, False, "18"),
+        ("1. Run the weekly The History Portal Chess Club, encouraging house participation and tactical play.", False, False, "18"),
         ("2. Plan and deliver the biannual GCSE Ypres Battlefield Tour to support Paper 1 Western Front depth study.", False, False, "18"),
         ("3. Support pupil entries into the annual Hampshire Archives Local History Competition.", False, False, "18")
     ])

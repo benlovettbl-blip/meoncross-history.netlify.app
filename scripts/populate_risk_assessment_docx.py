@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 import os
 import shutil
 
-DOCX_PATH = r"G:\My Drive\AAMX\Dep File\00_Department_Admin_and_Policies\20260908 - New  OFG Risk assessment History room.docx"
+DOCX_PATH = r"G:\My Drive\AAMX\Dep File\00_Department_Admin_and_Policies\20260908 - New  Educational Trust Risk assessment History room.docx"
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 XML_NS = "http://www.w3.org/XML/1998/namespace"
@@ -115,7 +115,7 @@ def populate_risk_assessment():
     # 1. Update Premises / Site Name & Room ID
     for p in root.iter(f"{{{W_NS}}}p"):
         p_text = "".join([t.text for t in p.iter(f"{{{W_NS}}}t") if t.text])
-        if "Premises/Site Name" in p_text and "Meoncross" in p_text:
+        if "Premises/Site Name" in p_text and "The History Portal" in p_text:
             print("Found premises header paragraph. Updating...")
             for child in list(p):
                 p.remove(child)
@@ -123,7 +123,7 @@ def populate_risk_assessment():
             sp = ET.SubElement(pPr, f"{{{W_NS}}}spacing")
             sp.set(f"{{{W_NS}}}after", "120")
             p.append(make_run("Premises/Site Name: ", bold=True, size="20"))
-            p.append(make_run("Meoncross School", bold=False, size="20"))
+            p.append(make_run("The History Portal", bold=False, size="20"))
             p.append(make_run("               Risk Assessment ID: ", bold=True, size="20"))
             p.append(make_run("History Room", bold=True, size="20"))
             break
@@ -267,14 +267,14 @@ def populate_risk_assessment():
     for p in list(c0.findall(f"{{{W_NS}}}p")):
         c0.remove(p)
     c0.append(make_p([("ASSESSMENT DATE: ", True, False, "18"), ("08/09/2026", False, False, "18")]))
-    c0.append(make_p([("COMPLETED BY: ", True, False, "18"), ("B. Lovett (Head of History)", False, False, "18")]))
+    c0.append(make_p([("COMPLETED BY: ", True, False, "18"), ("Department Lead (Head of History)", False, False, "18")]))
     
     # Cell 1: Review Date
     c1 = cells_dates[1]
     for p in list(c1.findall(f"{{{W_NS}}}p")):
         c1.remove(p)
     c1.append(make_p([("REVIEW DATE: ", True, False, "18"), ("08/09/2027", False, False, "18")]))
-    c1.append(make_p([("COMPLETED BY: ", True, False, "18"), ("B. Lovett / Site Team", False, False, "18")]))
+    c1.append(make_p([("COMPLETED BY: ", True, False, "18"), ("Department Lead / Site Team", False, False, "18")]))
 
     # Row 6 (Ratings)
     row_ratings = rows[6]
@@ -336,9 +336,9 @@ def populate_risk_assessment():
             sp.set(f"{{{W_NS}}}after", "80")
             sp.set(f"{{{W_NS}}}line", "260")
             p.append(make_run("Signed: (Manager) Name: ", bold=True, size="20"))
-            p.append(make_run("B. Lovett   ", bold=False, size="20"))
+            p.append(make_run("Department Lead   ", bold=False, size="20"))
             p.append(make_run("Signature: ", bold=True, size="20"))
-            p.append(make_run("B. Lovett   ", bold=True, italic=True, size="20"))
+            p.append(make_run("Department Lead   ", bold=True, italic=True, size="20"))
             p.append(make_run("Date: ", bold=True, size="20"))
             p.append(make_run("08/09/2026", bold=False, size="20"))
             break

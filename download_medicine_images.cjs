@@ -17,7 +17,7 @@ const url = `https://en.wikipedia.org/w/api.php?action=query&titles=${queries.ma
 
 const options = {
   headers: {
-    'User-Agent': 'MeoncrossHistoryApp/1.0 (benlovett.bl@gmail.com)',
+    'User-Agent': 'The History PortalApp/1.0 (contact@historyhub.local)',
   },
 };
 

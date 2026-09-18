@@ -4,11 +4,13 @@ const path = require('path');
 const QRCode = require('qrcode');
 
 async function generateBoardQRStands() {
-  console.log('♟️ Generating Meoncross Chess Club Board Sign-In QR Stands (Boards 1–10)...');
+  console.log(
+    '♟️ Generating The History Portal Chess Club Board Sign-In QR Stands (Boards 1–10)...',
+  );
 
   const boards = [];
   for (let i = 1; i <= 10; i++) {
-    const url = `https://meoncross-history.netlify.app/?view=chess&board=${i}`;
+    const url = `https://the-history-revision-hub.netlify.app/?view=chess&board=${i}`;
     const qrDataUrl = await QRCode.toDataURL(url, {
       margin: 1,
       width: 320,
@@ -30,7 +32,7 @@ async function generateBoardQRStands() {
           <div class="tent-half tent-front">
             <div class="header-strip">
               <div class="school-brand">
-                <i class="fa-solid fa-graduation-cap"></i> MEONCROSS SCHOOL
+                <i class="fa-solid fa-graduation-cap"></i> The History Portal
               </div>
               <div class="club-tag">Period 6 Chess Club</div>
             </div>
@@ -91,7 +93,7 @@ async function generateBoardQRStands() {
           <div class="tent-half tent-front">
             <div class="header-strip">
               <div class="school-brand">
-                <i class="fa-solid fa-graduation-cap"></i> MEONCROSS SCHOOL
+                <i class="fa-solid fa-graduation-cap"></i> The History Portal
               </div>
               <div class="club-tag">Period 6 Chess Club</div>
             </div>
@@ -154,7 +156,7 @@ async function generateBoardQRStands() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meoncross Chess Club - Board Sign-In QR Stands</title>
+  <title>The History Portal Chess Club - Board Sign-In QR Stands</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
@@ -363,13 +365,7 @@ async function generateBoardQRStands() {
 </body>
 </html>`;
 
-  const outputPath = path.join(
-    __dirname,
-    '..',
-    'public',
-    'pdfs',
-    'meoncross_chess_board_qr_stands.pdf',
-  );
+  const outputPath = path.join(__dirname, '..', 'public', 'pdfs', 'chess_board_qr_stands.pdf');
   const browser = await puppeteer.launch({
     headless: 'new',
     args: ['--allow-file-access-from-files', '--disable-web-security'],

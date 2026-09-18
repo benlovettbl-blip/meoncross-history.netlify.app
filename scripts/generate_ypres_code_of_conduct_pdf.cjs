@@ -7,7 +7,7 @@ async function generatePDF() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meoncross School - Ypres Trip 2026 Code of Conduct</title>
+  <title>The History Portal - Ypres Trip 2026 Code of Conduct</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -312,7 +312,7 @@ async function generatePDF() {
     <!-- HEADER -->
     <div class="header">
       <div class="school-crest-group">
-        <div class="school-name">Meoncross School</div>
+        <div class="school-name">The History Portal</div>
         <div class="doc-subtitle">Code of Conduct: Ypres Trip 2026</div>
       </div>
       <div class="header-badge">
@@ -446,7 +446,7 @@ async function generatePDF() {
 
     <!-- FOOTER -->
     <div class="footer-note">
-      Meoncross School Residential Visits &bull; Ypres Battlefield Tour 2026 &bull; Please sign and return this completed agreement prior to departure.
+      The History Portal Residential Visits &bull; Ypres Battlefield Tour 2026 &bull; Please sign and return this completed agreement prior to departure.
     </div>
   </div>
 </body>

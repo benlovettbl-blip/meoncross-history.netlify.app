@@ -65,7 +65,7 @@ def create_docx_memo(dest_path, recipient, subject, date_str, body_paragraphs):
     body = ET.SubElement(root, f"{{{W_NS}}}body")
     
     # Title
-    body.append(make_p([("MEONCROSS SCHOOL | HISTORY DEPARTMENT", True, False, "20", "64748b")], space_after="60"))
+    body.append(make_p([("The History Portal | History Department", True, False, "20", "64748b")], space_after="60"))
     body.append(make_p([("Department Email / Memorandum Draft", True, False, "32", "0f172a")], space_after="200"))
     
     # Metadata Box
@@ -78,7 +78,7 @@ def create_docx_memo(dest_path, recipient, subject, date_str, body_paragraphs):
     
     body.append(make_p([
         ("FROM: ", True, False, "22", "0f172a"),
-        ("Ben Lovett (Head of History)    ", False, False, "22", "334155"),
+        ("Department Lead (Head of History)    ", False, False, "22", "334155"),
         ("STATUS: ", True, False, "22", "0f172a"),
         ("Ready to Send", True, False, "22", "059669")
     ], space_after="100"))
@@ -114,7 +114,7 @@ def create_docx_memo(dest_path, recipient, subject, date_str, body_paragraphs):
             zout.writestr(fname, data)
 
 def create_eml_file(dest_path, recipient, subject, body_text):
-    eml_content = f"""From: Ben Lovett <ben.lovett@meoncross.co.uk>
+    eml_content = f"""From: Department Lead <contact@historyhub.local>
 To: {recipient}
 Subject: {subject}
 Date: {datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0100")}

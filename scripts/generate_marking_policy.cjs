@@ -33,7 +33,7 @@ const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meoncross School History Department - Marking, Feedback & Assessment Policy</title>
+  <title>The History Department - Marking, Feedback & Assessment Policy</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
 
@@ -393,7 +393,7 @@ const htmlContent = `<!DOCTYPE html>
   <div class="page">
     <div class="cover-container">
       <div class="cover-top">
-        <div class="school-crest-tag">Meoncross School</div>
+        <div class="school-crest-tag">The History Portal</div>
         <div class="faculty-tag">Faculty of Humanities • Department of History</div>
       </div>
 
@@ -414,7 +414,7 @@ const htmlContent = `<!DOCTYPE html>
           </div>
           <div class="cover-meta-card">
             <div class="cover-meta-label">Department Lead</div>
-            <div class="cover-meta-value">Mr. B. Lovett (Head of History)</div>
+            <div class="cover-meta-value">Department Lead</div>
           </div>
           <div class="cover-meta-card">
             <div class="cover-meta-label">Policy Status</div>
@@ -424,7 +424,7 @@ const htmlContent = `<!DOCTYPE html>
       </div>
 
       <div class="cover-footer">
-        <div>Meoncross School • Faculty of Humanities • Department of History</div>
+        <div>Faculty of Humanities • Department of History</div>
         <div>Revised for Academic Year 2026–2027</div>
       </div>
     </div>
@@ -438,7 +438,7 @@ const htmlContent = `<!DOCTYPE html>
     </div>
 
     <p style="font-size: 8.8pt;">
-      The Meoncross History Department adheres to the triad of <strong>Meaningful, Manageable, and Motivating</strong> feedback. Extensive research from the Education Endowment Foundation (EEF) demonstrates that retrospective written grading has negligible correlation with pupil attainment. Instead, teacher time is strategically redirected into in-lesson diagnostic questioning, high-quality modelling, and structured student response.
+      The The History Department adheres to the triad of <strong>Meaningful, Manageable, and Motivating</strong> feedback. Extensive research from the Education Endowment Foundation (EEF) demonstrates that retrospective written grading has negligible correlation with pupil attainment. Instead, teacher time is strategically redirected into in-lesson diagnostic questioning, high-quality modelling, and structured student response.
     </p>
 
     <div class="two-col-grid" style="margin-bottom: 6px;">
@@ -801,7 +801,7 @@ const htmlContent = `<!DOCTYPE html>
     headerTemplate: '<div></div>',
     footerTemplate: `
       <div style="font-size: 8pt; width: 100%; padding: 0 15mm; display: flex; justify-content: space-between; font-family: 'Outfit', sans-serif; color: #64748b;">
-        <span>Meoncross School History Department • Marking, Feedback & Assessment Policy (2026–2027)</span>
+        <span>The History Department • Marking, Feedback & Assessment Policy (2026–2027)</span>
         <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
       </div>
     `,

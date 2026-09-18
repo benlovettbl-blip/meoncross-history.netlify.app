@@ -1,12 +1,12 @@
 const fs = require('fs');
 
 async function updateCME() {
-    const cmePath = 'c:/Projects/meoncross-history.netlify.app/public/units/cme_new/data.js';
+    const cmePath = 'c:/Projects/the-history-revision-hub.netlify.app/public/units/cme_new/data.js';
     const cmeMod = await import('file://' + cmePath);
     const data = cmeMod.unitData;
 
     // 1. Key Individuals
-    const biosPath = 'c:/Projects/meoncross-history.netlify.app/public/units/cme_new/biographies.json';
+    const biosPath = 'c:/Projects/the-history-revision-hub.netlify.app/public/units/cme_new/biographies.json';
     if (fs.existsSync(biosPath)) {
         const bios = JSON.parse(fs.readFileSync(biosPath, 'utf8'));
         // Biographies is an object with { groups: [], individuals: [] } or just an array?

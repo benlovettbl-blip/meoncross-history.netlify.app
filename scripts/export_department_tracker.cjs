@@ -117,7 +117,7 @@ const styledHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meoncross History Department Master Plan & Tracker</title>
+  <title>The History Department Master Plan & Tracker</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <style>
     @page {
@@ -153,7 +153,7 @@ const styledHtml = `<!DOCTYPE html>
   <div class="header-banner">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <span style="font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 700;">
-        Meoncross School &bull; History Department
+        The History Portal &bull; History Department
       </span>
       <span class="badge">Official Department Policy</span>
     </div>
@@ -162,7 +162,7 @@ const styledHtml = `<!DOCTYPE html>
   ${convertMdToHtml(mdContent)}
 
   <div style="margin-top: 30px; border-top: 1px solid #cbd5e1; padding-top: 8px; font-size: 7.5pt; color: #64748b; text-align: center;">
-    Meoncross School Department of History &bull; Master Plan & Curriculum Tracker &bull; 2026 Edition
+    The History Portal Department of History &bull; Master Plan & Curriculum Tracker &bull; 2026 Edition
   </div>
 </body>
 </html>`;

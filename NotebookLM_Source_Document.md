@@ -1,4 +1,4 @@
-# Meoncross History Hub - Full Curriculum Data
+# GCSE History Hub - Full Curriculum Data
 
 This document contains the complete text for every lesson across all units. Use this as a primary source for NotebookLM to evaluate gaps against the Edexcel GCSE History specification.
 

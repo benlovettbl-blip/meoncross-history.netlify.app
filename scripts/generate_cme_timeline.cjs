@@ -869,7 +869,7 @@ function buildTimelineHTML(unitData) {
           </div>
 
           <div class="footer-signoff">
-            <span>Meoncross School History Department &bull; Edexcel Paper 2 Master Revision Guide</span>
+            <span>The History Department &bull; Edexcel Paper 2 Master Revision Guide</span>
             <span>Pearson Edexcel Specification 1HI0/26 &bull; Page ${era.page} of 4</span>
           </div>
         </div>

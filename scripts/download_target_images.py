@@ -4,7 +4,7 @@ import json
 import time
 import os
 
-headers = {'User-Agent': 'MeoncrossHistoryHub/1.0 (educational; history@meoncross.co.uk)'}
+headers = {'User-Agent': 'GCSE History Hub/1.0 (educational; contact@historyhub.local)'}
 
 queries = [
     ('hotel_dieu_hospital.jpg', 'Salle des malades de l\'Hôtel-Dieu de Paris'),

@@ -1,5 +1,5 @@
 /**
- * Meoncross Chess Club: Real-Time Cloud Synchronization Manager
+ * The History Portal Chess Club: Real-Time Cloud Synchronization Manager
  * Connects teacher arbiter actions to pupil devices in real time.
  */
 

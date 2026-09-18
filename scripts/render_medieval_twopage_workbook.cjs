@@ -581,7 +581,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     <div style="margin-bottom: 10px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
         <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 700;">
-          Meoncross School &bull; Department of History
+          The History Portal &bull; Department of History
         </span>
         <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 600;">
           Year 7 History &bull; KS3 Core
@@ -1106,7 +1106,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <!-- Guided Reading Footnote Quick-Link (Vector QR Code) -->
         <div style="border: 1px solid #cbd5e1; border-left: 3px solid #be185d; border-radius: 4px; padding: 3px 8px; background: #fdf2f8; margin-top: 4px; display: flex; align-items: center; gap: 8px;">
           <div style="width: 32px; height: 32px; flex-shrink: 0; background: #ffffff; padding: 1.5px; border: 1px solid #fbcfe8; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
-            ${generateQrSvg(`https://meoncross-history.netlify.app/?view=interactive&unit=medieval_england&tab=guided_reading&lesson=${lIdx}`)}
+            ${generateQrSvg(`https://the-history-revision-hub.netlify.app/?view=interactive&unit=medieval_england&tab=guided_reading&lesson=${lIdx}`)}
           </div>
           <div style="flex: 1; min-width: 0;">
             <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -1127,7 +1127,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       <!-- Left Page Footer -->
       <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-        <span>Meoncross History &bull; KS3 Medieval England (1066–1485)</span>
+        <span>The History Portal &bull; KS3 Medieval England (1066–1485)</span>
         <span>Page ${leftPageNum} (Facing Spread Left)</span>
       </div>
     </div>
@@ -1379,7 +1379,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
             Departmental Marking Policy &amp; Code
           </h2>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #64748b; margin-top: 2px;">
-            Meoncross School History Department Standard
+            The History Department Standard
           </div>
         </div>
         <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Policy</span>
@@ -1427,7 +1427,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       <!-- Digital Revision Hub Quick-Link (Vector QR Code) -->
       <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 12px; background: #f0f9ff; display: flex; align-items: center; gap: 14px;">
         <div style="width: 78px; height: 78px; flex-shrink: 0; background: #ffffff; padding: 3px; border: 1.2px solid #bae6fd; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
-          ${generateQrSvg('https://meoncross-history.netlify.app/?view=interactive&unit=medieval_england')}
+          ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=interactive&unit=medieval_england')}
         </div>
         <div style="flex: 1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
@@ -1444,7 +1444,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
             <span>&bull; <strong>Quiz Bank:</strong> 177 self-marking recall questions</span>
           </div>
           <div style="font-family: monospace; font-size: 6.8pt; color: #0284c7; margin-top: 2px;">
-            https://meoncross-history.netlify.app/?view=interactive&amp;unit=medieval_england
+            https://the-history-revision-hub.netlify.app/?view=interactive&amp;unit=medieval_england
           </div>
         </div>
       </div>
@@ -1452,7 +1452,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
     <!-- Colophon & Seal -->
     <div style="border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #94a3b8;">
-      <span>Meoncross School &bull; History Department Curriculum Archive</span>
+      <span>The History Portal &bull; History Department Curriculum Archive</span>
       <span style="color: #1e3a8a; font-weight: 700; letter-spacing: 1px;">Page 24 &bull; Outside Back Cover</span>
     </div>
   </div>

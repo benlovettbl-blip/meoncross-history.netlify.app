@@ -1,5 +1,5 @@
 const fs = require('fs');
-const data = JSON.parse(fs.readFileSync('c:/Projects/meoncross-history.netlify.app/public/database.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync('c:/Projects/the-history-revision-hub.netlify.app/public/database.json', 'utf8'));
 
 const med = data.edexcel_medicine.data;
 const cme = data.cme_new.data;

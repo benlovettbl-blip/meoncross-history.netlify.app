@@ -256,7 +256,7 @@ const KT_METADATA = {
       const sample20Rapid = rapidQs.slice(0, 20);
 
       // Generate QR Code linking to online live Leitner deck
-      const liveDeckUrl = `https://meoncross-history.netlify.app/units/cme_new/mastery_pack_${ktKey}.html#practice-mode`;
+      const liveDeckUrl = `https://the-history-revision-hub.netlify.app/units/cme_new/mastery_pack_${ktKey}.html#practice-mode`;
       const qrDataUrl = await QRCode.toDataURL(liveDeckUrl, { width: 140, margin: 1 });
 
       // -------------------------------------------------------------
@@ -424,7 +424,7 @@ const KT_METADATA = {
         </div>
 
         <div class="footer-note">
-            Mr Lovett's History Hub · Pearson Edexcel GCSE (9–1) History · Option P5: Conflict in the Middle East · Page 1 of 2
+            The History Revision Hub · Pearson Edexcel GCSE (9–1) History · Option P5: Conflict in the Middle East · Page 1 of 2
         </div>
     </div>
 
@@ -500,7 +500,7 @@ const KT_METADATA = {
         </div>
 
         <div class="footer-note">
-            Mr Lovett's History Hub · Pearson Edexcel GCSE (9–1) History · Option P5: Conflict in the Middle East · Page 2 of 2
+            The History Revision Hub · Pearson Edexcel GCSE (9–1) History · Option P5: Conflict in the Middle East · Page 2 of 2
         </div>
     </div>
 
@@ -714,7 +714,7 @@ const KT_METADATA = {
 
     <!-- Footer -->
     <div class="footer-bar">
-        <span>Mr Lovett's History Hub · Option P5: Conflict in the Middle East</span>
+        <span>The History Revision Hub · Option P5: Conflict in the Middle East</span>
         <span>Format 2: A3 Landscape Desk Revision Placemat</span>
         <span>Photocopiable for classroom &amp; independent pupil revision</span>
     </div>
@@ -881,7 +881,7 @@ const KT_METADATA = {
             </div>
         </div>
 
-        <div class="footer-tag">Panel 3: Mr Lovett's History Hub</div>
+        <div class="footer-tag">Panel 3: The History Revision Hub</div>
     </div>
 
 </div>

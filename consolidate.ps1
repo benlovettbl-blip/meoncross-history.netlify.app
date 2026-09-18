@@ -14,7 +14,7 @@ $rootDirs = @(
     "weimar_nazi_germany"
 )
 
-$basePath = "C:\Projects\meoncross-history.netlify.app"
+$basePath = "C:\Projects\the-history-revision-hub.netlify.app"
 $unitsPath = "$basePath\units"
 
 foreach ($dir in $rootDirs) {

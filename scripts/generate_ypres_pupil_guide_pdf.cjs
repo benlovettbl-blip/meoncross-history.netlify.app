@@ -381,7 +381,7 @@ function getHtmlContent() {
   <div class="page page-break" style="justify-content: space-between; text-align: center; background: radial-gradient(circle at 50% 20%, #ffffff 0%, #f8fafc 100%);">
     <div style="border-bottom: 2px solid #cbd5e1; padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
       <div style="text-align: left;">
-        <span style="font-size: 11pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.08em; display: block;">Meoncross School</span>
+        <span style="font-size: 11pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.08em; display: block;">The History Portal</span>
         <span style="font-size: 8pt; color: #64748b; font-weight: 600;">Department of History · Ypres Expedition 2026</span>
       </div>
       <div style="text-align: right;">
@@ -413,11 +413,11 @@ function getHtmlContent() {
     <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 8.6pt; color: #334155; margin-bottom: 8px;">
       <div style="text-align: left;">
         <strong style="color: #1e3a8a;">TOUR LEADERS:</strong><br>
-        Mr Ben Lovett (Head of History) &amp; Mr James Garrett (The History Boys)
+        Department Lead &amp; Mr James Garrett (The History Boys)
       </div>
       <div style="text-align: right;">
         <strong style="color: #1e3a8a;">ACCOMPANYING STAFF:</strong><br>
-        Two Meoncross Staff
+        Fieldwork Staff
       </div>
     </div>
 
@@ -444,7 +444,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 1 of 12</span>
     </div>
   </div>
@@ -487,7 +487,7 @@ function getHtmlContent() {
         <tbody>
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 1 · 06:15</strong></td>
-            <td style="padding: 2.6px 6px;">Depart Meoncross School · Folkestone Le Shuttle</td>
+            <td style="padding: 2.6px 6px;">Depart The History Portal · Folkestone Le Shuttle</td>
             <td style="padding: 2.6px 6px;">Jet Connect coach departure; 11:20 Eurotunnel crossing; arrival in France/Belgium.</td>
           </tr>
           <tr>
@@ -543,7 +543,7 @@ function getHtmlContent() {
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 2 · 19:20</strong></td>
             <td style="padding: 2.6px 6px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
-            <td style="padding: 2.6px 6px;">Arrive early for 20:00 ceremony; locate Pte. Franklin &amp; Pte. Ayling (Panel 35); Meoncross wreath laying.</td>
+            <td style="padding: 2.6px 6px;">Arrive early for 20:00 ceremony; locate Pte. Franklin &amp; Pte. Ayling (Panel 35); The History Portal wreath laying.</td>
           </tr>
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 3 · 09:15</strong></td>
@@ -589,7 +589,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 2 of 12</span>
     </div>
   </div>
@@ -697,7 +697,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 3 of 12</span>
     </div>
   </div>
@@ -808,7 +808,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 4 of 12</span>
     </div>
   </div>
@@ -906,7 +906,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 5 of 12</span>
     </div>
   </div>
@@ -990,7 +990,7 @@ We shall not sleep, though poppies grow
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 6 of 12</span>
     </div>
   </div>
@@ -1074,7 +1074,7 @@ Great death has made all his for evermore.
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 7 of 12</span>
     </div>
   </div>
@@ -1155,7 +1155,7 @@ Just a little white with the dust.
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 8 of 12</span>
     </div>
   </div>
@@ -1236,7 +1236,7 @@ We will remember them.
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 9 of 12</span>
     </div>
   </div>
@@ -1307,16 +1307,16 @@ Rise and deride this sepulchre of crime.
 
       <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #991b1b; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-     Meoncross School Wreath Laying Ceremony Protocol
+     The History Portal Wreath Laying Ceremony Protocol
         </div>
         <div style="font-size: 8.5pt; color: #7f1d1d; line-height: 1.45;">
-          At 19:45, our designated student wreath-bearers will take their positions under the central vault alongside staff. When invited forward by the master of ceremonies, step in unison, place the poppy wreath upon the plinth on behalf of Meoncross School and the parish of Stubbington, take two paces back, and bow heads in silent remembrance.
+          At 19:45, our designated student wreath-bearers will take their positions under the central vault alongside staff. When invited forward by the master of ceremonies, step in unison, place the poppy wreath upon the plinth on behalf of The History Portal and the parish of Stubbington, take two paces back, and bow heads in silent remembrance.
         </div>
       </div>
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 10 of 12</span>
     </div>
   </div>
@@ -1408,7 +1408,7 @@ Her sights and sounds; dreams happy as her day;
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 11 of 12</span>
     </div>
   </div>
@@ -1555,14 +1555,14 @@ Her sights and sounds; dreams happy as her day;
           1. <strong>Quiet Respect:</strong> Cemeteries are active places of international mourning. Walk strictly on grass paths; never sit on headstones.<br>
           2. <strong>Mobile Phone Protocol:</strong> Phones may be used for educational photography during visits. Collected into secure bags at evening curfew.<br>
           3. <strong>Hostel Downtime:</strong> Quiet hours from 22:00 at Peace Village. Respect other international student groups.<br>
-          4. <strong>Ambassadors of Meoncross:</strong> We represent our school and the village of Stubbington before the people of Flanders.
+          4. <strong>Ambassadors of The History Portal:</strong> We represent our school and the village of Stubbington before the people of Flanders.
         </div>
       </div>
 
       <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 8pt;">
         <div>
           <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
-          Mr Ben Lovett &amp; Mr James Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff
+          Department Lead &amp; Mr James Garrett (Tour Leaders) · Accompanied by Fieldwork Staff
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
@@ -1572,7 +1572,7 @@ Her sights and sounds; dreams happy as her day;
     </div>
 
     <div class="footer-bar">
-      <span>Meoncross School History Department · Ypres 1914–1918 Pupil Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Pupil Field Guide</span>
       <span class="page-number">Page 12 of 12</span>
     </div>
   </div>

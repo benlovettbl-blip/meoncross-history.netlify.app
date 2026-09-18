@@ -7,7 +7,7 @@ async function generateCortDossier() {
   console.log('📜 Generating Henry Cort & Funtley Primary Source Starter Pack PDF...');
 
   const portalUrl =
-    'https://meoncross-history.netlify.app/?view=lessons&unit=industrialisation_and_empire&lesson=0';
+    'https://the-history-revision-hub.netlify.app/?view=lessons&unit=industrialisation_and_empire&lesson=0';
   const qrPortalDataUrl = await QRCode.toDataURL(portalUrl, {
     margin: 1,
     width: 200,
@@ -343,7 +343,7 @@ async function generateCortDossier() {
     <div class="header-bar">
       <div class="header-left">
         <div class="doc-badge">
-          <i class="fa-solid fa-box-archive"></i> Meoncross History Archive Starter Pack · Primary Source Dossier
+          <i class="fa-solid fa-box-archive"></i> The History Portal Archive Starter Pack · Primary Source Dossier
         </div>
         <h1 class="main-title">Henry Cort &amp; The Funtley Ironworks (1783–1784)</h1>
         <div class="sub-title">Supporting the Hampshire Archives Trust Competition &amp; Year 8 Industrial Revolution Enquiry</div>
@@ -433,8 +433,8 @@ async function generateCortDossier() {
     <!-- Footer -->
     <div class="footer-bar">
       <div class="footer-text">
-        <div><strong>Meoncross School History Department</strong> · Archival Research Resource Pack</div>
-        <div>Submit your Hampshire Archives Trust competition entries to <strong>Mr Lovett</strong> by <strong>19 March 2027</strong>.</div>
+        <div><strong>The History Department</strong> · Archival Research Resource Pack</div>
+        <div>Submit your Hampshire Archives Trust competition entries to <strong>Department Lead</strong> by <strong>19 March 2027</strong>.</div>
       </div>
       <div class="footer-qr">
         <img src="${qrPortalDataUrl}" alt="Lesson Portal QR">
