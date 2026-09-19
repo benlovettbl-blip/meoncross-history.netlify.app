@@ -22693,23 +22693,61 @@
           "narrative_blocks": [
             {
               "title": "Act 1: Context & Catalyst (The Monastic Scribal Monopoly)",
-              "text": "<span class=\"para-ref\">[1.1]</span> Throughout the Middle Ages, the communication of medical ideas was severely constricted by the physical limitations of book production and the ideological monopoly of the Catholic Church. Every medical treatise, herbal compendium, and anatomical diagram had to be hand-transcribed by monastic scribes in cathedral scriptoria. This process was exceptionally slow, immensely expensive, and fraught with cumulative human error: copyists frequently misread obscure Latin terms, omitted crucial lines, and distorted hand-drawn illustrations beyond scientific recognition. Furthermore, because monks controlled the production of books, the Church exercised strict doctrinal censorship, suppressing any writing that questioned Galenic orthodoxy or Biblical interpretation while declaring Galen’s teleological treatises infallible sacred truth.<br><br><span class=\"para-ref\">[1.2]</span> In c.1440, the German metalworker Johannes Gutenberg perfected the movable-type printing press in Mainz, introducing individual cast-metal letters that could be arranged into pages, inked, and pressed onto paper at high speed. Brought to England by William Caxton in 1476, the printing press revolutionized European intellectual life. For the first time, hundreds of identical copies of a medical work could be produced in weeks rather than years, at a fraction of the cost. Crucially, the press bypassed monastic scriptoria, transferring publishing into the hands of secular scholars, commercial printers, and university faculties."
+              "source": {
+                "id": "source_a_printing_press",
+                "letter": "A",
+                "title": "Source A: Renaissance Printing House with Movable Type (16th c.)",
+                "src": "/images/printing_press.jpg",
+                "source": "/images/printing_press.jpg",
+                "image": "/images/printing_press.jpg",
+                "caption": "A 16th-century workshop showing compositors setting movable metal type and pressmen operating wooden screw presses.",
+                "desc": "Renaissance printing house illustrating the mechanisation of book production.",
+                "provenance": "Engraving of an early modern printshop, 16th century. Wellcome Collection, London (Shelfmark: L0015482).",
+                "citation": "Engraving of an early modern printshop, 16th century. Wellcome Collection, London (Shelfmark: L0015482).",
+                "source_context": "A 16th-century woodcut engraving depicting a bustling European printing workshop with compositors setting movable metal type and pressmen operating wooden screw presses.",
+                "context": "A 16th-century woodcut engraving depicting a bustling European printing workshop with compositors setting movable metal type and pressmen operating wooden screw presses.",
+                "question": "How did the mechanical nature of the printing press prevent the theological censorship and copyist errors that had protected Galenic dogma for over a thousand years?",
+                "hinge_question": "How did the mechanical nature of the printing press prevent the theological censorship and copyist errors that had protected Galenic dogma for over a thousand years?"
+              },
+              "text": "<span class=\"para-ref\">[1.1]</span> Throughout the Middle Ages, the communication of medical ideas was severely constricted by the physical limitations of book production and the ideological monopoly of the Catholic Church. Every medical treatise, herbal compendium, and anatomical diagram had to be hand-transcribed by monastic scribes in cathedral scriptoria. This process was exceptionally slow, immensely expensive, and fraught with cumulative human error: copyists frequently misread obscure Latin terms, omitted crucial lines, and distorted hand-drawn illustrations beyond scientific recognition. Furthermore, because monks controlled the production of books, the Church exercised strict doctrinal censorship, suppressing any writing that questioned Galenic orthodoxy or Biblical interpretation while declaring Galen’s teleological treatises infallible sacred truth.<br><br><span class=\"para-ref\">[1.2]</span> In c.1440, the German metalworker Johannes Gutenberg perfected the movable-type printing press (<span class=\"archival-meta-tag\">Source A</span>) in Mainz, introducing individual cast-metal letters that could be arranged into pages, inked, and pressed onto paper at high speed. Brought to England by William Caxton in 1476, the printing press revolutionized European intellectual life. For the first time, hundreds of identical copies of a medical work could be produced in weeks rather than years, at a fraction of the cost. Crucially, the press bypassed monastic scriptoria, transferring publishing into the hands of secular scholars, commercial printers, and university faculties."
             },
             {
               "title": "Act 2: Escalation & Conflict (The Royal Society & Nullius in Verba)",
-              "text": "<span class=\"para-ref\">[2.1]</span> By the mid-17th century, the revival of classical Greek scholarship known as Humanism had inspired natural philosophers to demand empirical, observable proof rather than blind deference to ancient texts. In November 1660, a group of twelve scholars—including the architect Christopher Wren, the chemist Robert Boyle, and the polymath Robert Hooke—met at Gresham College in London to establish a formal scientific institution. In 1662, King Charles II granted them a prestigious Royal Charter, formally incorporating \"The Royal Society of London for Improving Natural Knowledge\".<br><br><span class=\"para-ref\">[2.2]</span> The Royal Society adopted the radical Latin motto <em>Nullius in Verba</em> (\"Take nobody's word for it\"), boldly declaring their refusal to accept any scientific claim based merely on classical authority, ecclesiastical tradition, or philosophical speculation. To replace hearsay, members conducted weekly laboratory demonstrations, demanding repeatable physical evidence. In 1665, the Society’s secretary, Henry Oldenburg, launched <em>Philosophical Transactions</em>, the world’s first peer-reviewed scientific journal. This publication established an international communications network where researchers across Europe could submit experimental findings, replicate observations, and debate discoveries, permanently democratizing scientific inquiry."
-            },
-            {
-              "title": "Act 3: Forensic Evidence (Microscopes & Optical Frontiers)",
               "source": {
+                "id": "source_b_philosophical_transactions",
+                "letter": "B",
                 "title": "Source B: Title Page of Philosophical Transactions, Vol. I (1665–1666)",
                 "src": "/images/philosophical_transactions_vol1.jpg",
                 "source": "/images/philosophical_transactions_vol1.jpg",
                 "image": "/images/philosophical_transactions_vol1.jpg",
+                "caption": "The frontispiece of Volume I of Philosophical Transactions (1665), the world’s first peer-reviewed scientific journal.",
+                "desc": "Foundational frontispiece of the Royal Society’s journal.",
                 "question": "Notice that this journal was printed for John Martyn, 'Printer to the Royal Society'. How does the creation of Europe's first peer-reviewed scientific journal embody the Royal Society's radical motto Nullius in Verba ('Take nobody's word for it'), and why was publishing verified laboratory methods in print essential for transforming alchemy into modern scientific medicine?",
+                "hinge_question": "Notice that this journal was printed for John Martyn, 'Printer to the Royal Society'. How does the creation of Europe's first peer-reviewed scientific journal embody the Royal Society's radical motto Nullius in Verba ('Take nobody's word for it'), and why was publishing verified laboratory methods in print essential for transforming alchemy into modern scientific medicine?",
                 "source_context": "In 1665, Henry Oldenburg founded Philosophical Transactions to establish an international scientific communications network. For the first time, scholars did not keep experiments secret; methods and results were published for European natural philosophers to replicate, critique, and verify.",
+                "context": "In 1665, Henry Oldenburg founded Philosophical Transactions to establish an international scientific communications network. For the first time, scholars did not keep experiments secret; methods and results were published for European natural philosophers to replicate, critique, and verify.",
                 "provenance": "Frontispiece of Philosophical Transactions, Vol. I, London: Royal Society, 1665–1666. Royal Society Archives (Shelfmark: Phil. Trans. Vol. 1) / British Library.",
                 "citation": "Frontispiece of Philosophical Transactions, Vol. I, London: Royal Society, 1665–1666. Royal Society Archives (Shelfmark: Phil. Trans. Vol. 1) / British Library."
+              },
+              "text": "<span class=\"para-ref\">[2.1]</span> By the mid-17th century, the revival of classical Greek scholarship known as Humanism had inspired natural philosophers to demand empirical, observable proof rather than blind deference to ancient texts. In November 1660, a group of twelve scholars—including the architect Christopher Wren, the chemist Robert Boyle, and the polymath Robert Hooke—met at Gresham College in London to establish a formal scientific institution. In 1662, King Charles II granted them a prestigious Royal Charter, formally incorporating \"The Royal Society of London for Improving Natural Knowledge\".<br><br><span class=\"para-ref\">[2.2]</span> The Royal Society adopted the radical Latin motto <em>Nullius in Verba</em> (\"Take nobody's word for it\"), boldly declaring their refusal to accept any scientific claim based merely on classical authority, ecclesiastical tradition, or philosophical speculation. To replace hearsay, members conducted weekly laboratory demonstrations, demanding repeatable physical evidence. In 1665, the Society’s secretary, Henry Oldenburg, launched <em>Philosophical Transactions</em> (<span class=\"archival-meta-tag\">Source B</span>), the world’s first peer-reviewed scientific journal. This publication established an international communications network where researchers across Europe could submit experimental findings, replicate observations, and debate discoveries, permanently democratizing scientific inquiry."
+            },
+            {
+              "title": "Act 3: Forensic Evidence (Microscopes & Optical Frontiers)",
+              "source": {
+                "id": "source_c_hooke_flea",
+                "letter": "C",
+                "title": "Source C: Robert Hooke's Engraving of a Flea from Micrographia (1665)",
+                "src": "/images/hooke_micrographia_flea.jpg",
+                "source": "/images/hooke_micrographia_flea.jpg",
+                "image": "/images/hooke_micrographia_flea.jpg",
+                "caption": "Robert Hooke’s famous fold-out engraving of a magnified flea from Micrographia (1665), published by the Royal Society using the compound microscope.",
+                "desc": "Landmark microscopic illustration from Micrographia.",
+                "question": "What does Hooke’s detailed rendering of an everyday flea reveal about the new scientific priorities of the Royal Society, and why did this visual evidence fail to change medical treatments?",
+                "hinge_question": "What does Hooke’s detailed rendering of an everyday flea reveal about the new scientific priorities of the Royal Society, and why did this visual evidence fail to change medical treatments?",
+                "source_context": "Robert Hooke’s famous fold-out engraving of a magnified flea from Micrographia (1665), published by the Royal Society using the compound microscope.",
+                "context": "Robert Hooke’s famous fold-out engraving of a magnified flea from Micrographia (1665), published by the Royal Society using the compound microscope.",
+                "provenance": "Copperplate engraving from Micrographia by Robert Hooke, Royal Society, London, 1665. British Library (Shelfmark: 435.e.19).",
+                "citation": "Copperplate engraving from Micrographia by Robert Hooke, Royal Society, London, 1665. British Library (Shelfmark: 435.e.19)."
               },
               "text": "<span class=\"para-ref\">[3.1]</span> The empirical mandate of the Royal Society was powerfully demonstrated through groundbreaking optical innovations. In 1665, Robert Hooke published <em>Micrographia</em>, an extraordinary volume illustrated with magnificent fold-out engravings of insects, feathers, and plants observed through compound microscopes. Hooke’s famous rendering of an ordinary flea (<span class=\"archival-meta-tag\">Source C</span>), magnified to terrifying monstrous proportions, astonished the public and proved that nature contained an invisible, intricate microscopic architecture invisible to the naked human eye. While inspecting thin slices of cork, Hooke observed small box-like compartments and coined the term \"cells\".<br><br><span class=\"para-ref\">[3.2]</span> A decade later, in 1676, a Dutch draper and amateur microscope-maker named Antonie van Leeuwenhoek submitted letters to the Royal Society describing tiny living creatures he had discovered swimming in pond water and dental scrapings. Using single-lens microscopes with exquisite optical magnification, Leeuwenhoek documented \"animalcules\"—the first recorded observation of bacteria and protozoa in human history. The Royal Society confirmed his startling findings, publishing his letters in <em>Philosophical Transactions</em> to an astonished continent."
             },
@@ -23208,7 +23246,23 @@
           "narrative_blocks": [
             {
               "title": "Act 1: Context & Catalyst (The \"English Hippocrates\" at the Bedside)",
-              "text": "<span class=\"para-ref\">[1.1]</span> In the mid-17th century, university medical education in England remained stubbornly detached from the reality of patient care. Wealthy physicians spent years studying Galen, Hippocrates, and Aristotle in Latin, memorizing theoretical passages and casting horoscopes to diagnose illnesses. When visiting a sick aristocrat, a physician often spent more time inspecting a glass matula filled with urine or calculating planetary alignments than examining the patient’s physical body. If a treatment failed, doctors blamed the patient’s corrupt humoural constitution rather than their own medical theories.<br><br><span class=\"para-ref\">[1.2]</span> Thomas Sydenham (1624–1689) rebelled against this academic detachment. Having served as a cavalry officer in the English Civil War, Sydenham brought a practical, no-nonsense soldier’s mindset to medicine. Practicing in Westminster, he insisted that true medical knowledge could only be gained by sitting beside the patient’s bed, taking comprehensive clinical notes, and carefully tracking symptoms from the onset of fever to recovery or death. Because he revived the ancient Greek emphasis on natural observation, contemporaries revered him as the \"English Hippocrates\"."
+              "source": {
+                "id": "source_a_thomas_sydenham",
+                "letter": "A",
+                "title": "Source A: Portrait of Thomas Sydenham by Mary Beale (c1688)",
+                "src": "/images/thomas_sydenham.jpg",
+                "source": "/images/thomas_sydenham.jpg",
+                "image": "/images/thomas_sydenham.jpg",
+                "caption": "Oil portrait of Dr Thomas Sydenham (c.1688) by Mary Beale.",
+                "desc": "Portrait of Thomas Sydenham by Mary Beale.",
+                "question": "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
+                "hinge_question": "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
+                "source_context": "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
+                "context": "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
+                "provenance": "Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).",
+                "citation": "Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211)."
+              },
+              "text": "<span class=\"para-ref\">[1.1]</span> In the mid-17th century, university medical education in England remained stubbornly detached from the reality of patient care. Wealthy physicians spent years studying Galen, Hippocrates, and Aristotle in Latin, memorizing theoretical passages and casting horoscopes to diagnose illnesses. When visiting a sick aristocrat, a physician often spent more time inspecting a glass matula filled with urine or calculating planetary alignments than examining the patient’s physical body. If a treatment failed, doctors blamed the patient’s corrupt humoural constitution rather than their own medical theories.<br><br><span class=\"para-ref\">[1.2]</span> Thomas Sydenham (1624–1689) (<span class=\"archival-meta-tag\">Source A</span>) rebelled against this academic detachment. Having served as a cavalry officer in the English Civil War, Sydenham brought a practical, no-nonsense soldier’s mindset to medicine. Practicing in Westminster, he insisted that true medical knowledge could only be gained by sitting beside the patient’s bed, taking comprehensive clinical notes, and carefully tracking symptoms from the onset of fever to recovery or death. Because he revived the ancient Greek emphasis on natural observation, contemporaries revered him as the \"English Hippocrates\"."
             },
             {
               "title": "Act 2: Escalation & Conflict (Observationes Medicae & Disease Species)",
@@ -23216,20 +23270,26 @@
             },
             {
               "title": "Act 3: Forensic Evidence (Practical Therapies vs Quack Remedies)",
-              "source": {
-                "title": "Source A: Portrait of Thomas Sydenham by Mary Beale (c1688)",
-                "src": "/images/thomas_sydenham.jpg",
-                "source": "/images/thomas_sydenham.jpg",
-                "image": "/images/thomas_sydenham.jpg",
-                "question": "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
-                "source_context": "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
-                "provenance": "Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).",
-                "citation": "Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211)."
-              },
               "text": "<span class=\"para-ref\">[3.1]</span> Sydenham’s empirical focus led him to champion innovative, common-sense treatments. For smallpox, traditional physicians sealed sickrooms, lit roaring fires, and covered shivering patients in heavy woolen blankets to \"sweat out the venom\". Sydenham recognized that this suffocating heat worsened the fever and killed patients. Instead, he pioneered a revolutionary \"cooling regime\": opening windows to circulate fresh air, removing heavy blankets, and prescribing cool fluids and mild cordials. Survival rates among his smallpox patients improved dramatically.<br><br><span class=\"para-ref\">[3.2]</span> Sydenham also enthusiastically embraced new botanical remedies brought from the Americas. He popularized the use of Cinchona bark (Peruvian bark, containing quinine) to treat ague (malaria), showing that specific medicines could target specific diseases rather than just purging the whole body. He also developed liquid laudanum (opium dissolved in alcohol), providing the first reliable and easily dosed painkiller for chronic sufferers."
             },
             {
               "title": "Act 4: The Historical Verdict & The Limits of Observation",
+              "source": {
+                "id": "source_b_quack_physician",
+                "letter": "B",
+                "title": "Source B: The Quack Physician by Jan Steen (1660s)",
+                "src": "/images/quack_doctor_steen.jpg",
+                "source": "/images/quack_doctor_steen.jpg",
+                "image": "/images/quack_doctor_steen.jpg",
+                "caption": "The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient.",
+                "desc": "Contemporary satire illustrating the thriving trade in unscientific quack medicines.",
+                "provenance": "Oil on wood by Jan Steen, c. 1660–1670. Rijksmuseum, Amsterdam (Accession No. SK-A-399).",
+                "citation": "Oil on wood by Jan Steen, c. 1660–1670. Rijksmuseum, Amsterdam (Accession No. SK-A-399).",
+                "source_context": "The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient.",
+                "context": "The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient.",
+                "question": "How does this contemporary satire demonstrate why Sydenham felt it was urgent to establish scientific, clinical observation in place of commercial superstition?",
+                "hinge_question": "How does this contemporary satire demonstrate why Sydenham felt it was urgent to establish scientific, clinical observation in place of commercial superstition?"
+              },
               "text": "<span class=\"para-ref\">[4.1]</span> Despite his profound contributions to clinical diagnosis, Sydenham’s practice illustrates the hard boundaries of Renaissance science. Because the Germ Theory lay nearly two centuries in the future, Sydenham had no understanding of bacteria, viruses, or the true biological causes of infection. He firmly believed that epidemics were triggered by mysterious atmospheric changes and poisonous \"miasmas\" rising from the earth. Consequently, while his clinical descriptions of illnesses were brilliant, his understanding of what caused them remained speculative.<br><br><span class=\"para-ref\">[4.2]</span> Furthermore, when faced with conditions that did not respond to cinchona or cooling regimes, Sydenham fell back on traditional medieval therapies. Throughout his long career, he routinely bled and purged his patients to rebalance their humours, believing that bleeding lowered inflammatory heat. Furthermore, conservative physicians in London condemned him for undermining university tradition, and ordinary people continued to patronize quack doctors selling fake panaceas (<span class=\"archival-meta-tag\">Source B</span>). Nonetheless, by establishing bedside empirical observation and disease classification, Sydenham laid the indispensable foundation for modern clinical epidemiology."
             }
           ],
@@ -23723,6 +23783,22 @@
           "narrative_blocks": [
             {
               "title": "Act 1: Context & Catalyst (The Padua Anatomical Theatre)",
+              "source": {
+                "id": "source_a_vesalius_frontispiece",
+                "letter": "A",
+                "title": "Source A: Frontispiece of De Humani Corporis Fabrica (1543)",
+                "src": "/images/vesalius_fabrica_frontispiece.jpg",
+                "source": "/images/vesalius_fabrica_frontispiece.jpg",
+                "image": "/images/vesalius_fabrica_frontispiece.jpg",
+                "caption": "The frontispiece of De Fabrica (1543) showing Vesalius personally dissecting a female cadaver surrounded by students and spectators.",
+                "desc": "Authentic 1543 woodcut frontispiece of Vesalius’s landmark anatomical treatise.",
+                "provenance": "Woodcut title page to De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Shelfmark: EPB/D/543).",
+                "citation": "Woodcut title page to De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Shelfmark: EPB/D/543).",
+                "source_context": "The famous engraved title-page frontispiece of De Humani Corporis Fabrica (Basel, 1543), showing Vesalius personally dissecting a female cadaver at the University of Padua surrounded by students, doctors, and nobles.",
+                "context": "The famous engraved title-page frontispiece of De Humani Corporis Fabrica (Basel, 1543), showing Vesalius personally dissecting a female cadaver at the University of Padua surrounded by students, doctors, and nobles.",
+                "question": "Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?",
+                "hinge_question": "Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?"
+              },
               "text": "<span class=\"para-ref\">[1.1]</span> In medieval European universities, the study of human anatomy was an exercise in passive textual repetition rather than scientific discovery. In rare winter dissections—permitted only a few times each year on executed criminals—the professor of anatomy sat elevated above the lecture hall in a high wooden pulpit called the <em>cathedra</em>. From this throne, he read aloud ancient Latin texts written by the Roman physician Claudius Galen. Down below on the damp stone floor, an uneducated barber-surgeon (the <em>demonstrator</em>) sliced open the body, while a junior assistant pointed out organs with a wooden wand. If a dissected organ clearly contradicted Galen’s written descriptions, professors dismissed the discrepancy by claiming the corpse was deformed, diseased, or that human bodies had physically degenerated since classical times.<br><br><span class=\"para-ref\">[1.2]</span> This entrenched scholastic tradition was shattered when Andreas Vesalius (1514–1564) arrived at the University of Padua. Appointed Professor of Surgery in 1537 at just 23 years old, Vesalius rejected the cathedra. In front of packed audiences of students, visiting physicians, and city officials (<span class=\"archival-meta-tag\">Source A</span>), he stepped down to the dissection table, took the scalpel into his own hands, and dissected human cadavers himself. Vesalius insisted that medical students must trust what their own eyes observed in human tissue rather than blindly revering ancient authority."
             },
             {
@@ -23732,12 +23808,18 @@
             {
               "title": "Act 3: Forensic Evidence (De Humani Corporis Fabrica, 1543)",
               "source": {
+                "id": "source_b_vesalius_muscle_men",
+                "letter": "B",
                 "title": "Source B: Vesalius Muscle Men Plate from De Fabrica (1543)",
                 "src": "/images/vesalius_muscle_men.jpg",
                 "source": "/images/vesalius_muscle_men.jpg",
                 "image": "/images/vesalius_muscle_men.jpg",
+                "caption": "One of the famous \"Muscle Men\" woodcut plates from Book II of De Fabrica, showing the superficial muscular layer in classical posture.",
+                "desc": "Masterwork anatomical woodcut plate from De Fabrica (1543).",
                 "question": "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
+                "hinge_question": "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
                 "source_context": "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
+                "context": "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
                 "provenance": "Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512).",
                 "citation": "Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512)."
               },
@@ -23745,6 +23827,22 @@
             },
             {
               "title": "Act 4: The Historical Verdict & The Limits of Anatomy",
+              "source": {
+                "id": "source_c_renaissance_phlebotomy_man",
+                "letter": "C",
+                "title": "Source C: Traditional Phlebotomy Man Diagram",
+                "src": "/images/renaissance_phlebotomy_man.jpg",
+                "source": "/images/renaissance_phlebotomy_man.jpg",
+                "image": "/images/renaissance_phlebotomy_man.jpg",
+                "caption": "A 16th-century printed bloodletting chart illustrating the enduring reliance on Galenic humoural vein points.",
+                "desc": "Renaissance broadsheet showing bloodletting points on the human body.",
+                "provenance": "Woodcut broadsheet illustrating vein-letting anatomical points, 16th century. Wellcome Collection, London (Shelfmark: L0023641).",
+                "citation": "Woodcut broadsheet illustrating vein-letting anatomical points, 16th century. Wellcome Collection, London (Shelfmark: L0023641).",
+                "source_context": "A 16th-century printed \"Phlebotomy Man\" diagram showing traditional bloodletting points based on Galenic humoural theory.",
+                "context": "A 16th-century printed \"Phlebotomy Man\" diagram showing traditional bloodletting points based on Galenic humoural theory.",
+                "question": "Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
+                "hinge_question": "Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?"
+              },
               "text": "<span class=\"para-ref\">[4.1]</span> The publication of <em>De Fabrica</em> provoked furious hostility from conservative medical establishments. Many senior professors, whose reputations were built on interpreting Galen, fiercely attacked Vesalius. His former teacher at Paris, Jacobus Sylvius, denounced him as an arrogant madman (\"Vesanus\"), claiming that Galen was completely correct and that the human body must have changed shape since antiquity. Disillusioned by this bitter academic resistance, Vesalius burned many of his unpublished manuscripts and resigned from Padua to serve as imperial court physician to Emperor Charles V.<br><br><span class=\"para-ref\">[4.2]</span> Crucially, while Vesalius revolutionized anatomical science and inspired generations of researchers, his discoveries had virtually zero immediate impact on treating sick patients. Knowing the exact structure of a muscle or the shape of the liver did not explain what caused internal diseases, nor did it provide cures for infectious epidemics like the plague. Furthermore, surgery remained primitive, agonizing, and dangerous: without anaesthetics to control pain or antiseptics to prevent infection, surgeons could not perform major internal operations based on Vesalius’s maps. For the average sick patient, physicians continued to consult traditional humoural charts (<span class=\"archival-meta-tag\">Source C</span>) and prescribe bloodletting, leaving everyday healthcare entirely untouched by the anatomical revolution."
             }
           ],
@@ -24735,17 +24833,39 @@
             },
             {
               "title": "Act 2: Escalation & Conflict (Municipal Quarantine Orders: The Change)",
+              "source": {
+                "id": "source_b_plague_burial",
+                "letter": "B",
+                "title": "Source B: Night Burial in a Mass Plague Pit (1665)",
+                "src": "/images/plague_burial.jpg",
+                "source": "/images/plague_burial.jpg",
+                "image": "/images/plague_burial.jpg",
+                "caption": "A contemporary woodcut broadsheet showing dead-carts dumping plague victims at night into a mass lime pit.",
+                "desc": "Historic woodcut broadsheet illustrating nocturnal plague burials during the 1665 epidemic.",
+                "provenance": "Woodcut broadsheet depicting burial carts at the Holywell Mount pest pit, London, 1665. Museum of London (Accession No. NN2598).",
+                "citation": "Woodcut broadsheet depicting burial carts at the Holywell Mount pest pit, London, 1665. Museum of London (Accession No. NN2598).",
+                "source_context": "A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount.",
+                "context": "A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount.",
+                "question": "Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?",
+                "hinge_question": "Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?"
+              },
               "text": "<span class=\"para-ref\">[2.1]</span> Compared to the disorganized, panicked response to the Black Death in 1348, the response of London’s local government in 1665 demonstrated a major advancement in civic public health administration. The Lord Mayor and Court of Aldermen issued strict \"Plague Orders\". Parishes appointed two female \"Searchers of the Dead\" to inspect corpses and verify the cause of death. Parishes also published weekly <em>Bills of Mortality</em>, detailing deaths parish by parish to monitor the epidemic’s spread—an early form of statistical epidemiology.<br><br><span class=\"para-ref\">[2.2]</span> The most aggressive municipal policy was compulsory household quarantine. When plague struck a family, the entire house was boarded up and locked for 28 days. A red cross, twelve inches high, was painted on the door beneath the solemn plea: \"Lord have mercy upon us\". Two watchmen were assigned to every locked home—one by day and one by night—to bring food and prevent anyone from escaping. All public gatherings, theatrical performances, sports, and traditional funeral ceremonies were banned. Burials were permitted only between sunset and sunrise, with bodies tipped into vast mass lime pits (<span class=\"archival-meta-tag\">Source B</span>)."
             },
             {
               "title": "Act 3: Forensic Evidence (Medical Ignorance & Superstitious Continuity)",
               "source": {
+                "id": "source_a_plague_doctor",
+                "letter": "A",
                 "title": "Source A: 17th-Century Plague Doctor (Schnabel von Rom)",
                 "src": "/images/plague_doctor_1665.png",
                 "source": "/images/plague_doctor_1665.png",
                 "image": "/images/plague_doctor_1665.png",
+                "caption": "A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.",
+                "desc": "Iconic primary engraving of an early modern plague doctor in full protective attire.",
                 "question": "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+                "hinge_question": "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
                 "source_context": "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
+                "context": "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
                 "provenance": "Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.",
                 "citation": "Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834."
               },
