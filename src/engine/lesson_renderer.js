@@ -3078,8 +3078,27 @@ export function renderLesson(lesson) {
                 ${sourceBodyHtml}
                 ${
                   rawSource.question
-                    ? `<div class="${bQClassAttr}" ${bQDataAttr} style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${rawSource.qNum ? `Q${rawSource.qNum}. ` : ''}${formatQuestion(rawSource.question, !rawSource.qNum)}</strong></p>
+                    ? `<div class="${bQClassAttr}" ${bQDataAttr} style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 16px 18px; border-radius: 0 6px 6px 0; text-align: left; margin-top: 15px;">
+                  <div style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #0284c7; letter-spacing: 0.5px; margin-bottom: 6px;">
+                    <i class="fa-solid fa-feather-pointed"></i> Disciplinary Source Interrogation
+                  </div>
+                  <p style="margin-bottom: 8px; font-size: 1.05rem; color: #0f172a; line-height: 1.5;"><strong>${rawSource.qNum ? `Q${rawSource.qNum}. ` : ''}${formatQuestion(rawSource.question, !rawSource.qNum)}</strong></p>
+                  ${
+                    rawSource.starter
+                      ? `<div style="font-size: 0.88rem; font-style: italic; color: #0369a1; background: #ffffff; padding: 8px 12px; border-left: 3px solid #0284c7; border-radius: 4px; margin-bottom: 10px;">
+                          <strong>Sentence Starter:</strong> "${rawSource.starter}"
+                        </div>`
+                      : ''
+                  }
+                  ${
+                    rawSource.model_answer
+                      ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="src-ans-${index}"><i class="fa-solid fa-eye"></i> Reveal Archival Model Answer</button>
+                         <div class="answer" id="src-ans-${index}" style="display: none; margin-top: 10px; background: #ffffff; padding: 12px 15px; border-left: 3px solid #b45309; border-radius: 4px; color: #451a03; line-height: 1.65; font-size: 0.95rem;">
+                           <strong style="color: #92400e; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">Admiralty Trial Model Answer:</strong>
+                           ${rawSource.model_answer}
+                         </div>`
+                      : ''
+                  }
                 </div>`
                     : ''
                 }

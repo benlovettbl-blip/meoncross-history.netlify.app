@@ -39,16 +39,23 @@ const lessonConfigs = [
         'Distinguish between brittle <strong>pig iron</strong> (high carbon content) and tough naval <strong>wrought iron</strong> (refined by Cort at Funtley):',
     },
     bridgeTask: {
-      type: 'draw_label',
-      badge: 'Technical Blueprint & Archival Anatomy',
-      title: 'Task 4: Draw & Label Henry Cort’s Puddling Furnace & Grooved Rollers (1784)',
+      type: 'source_annotation',
+      badge: 'Archival Forensic Investigation',
+      title: 'Task 4: Archival Interrogation & Annotation: Source C (Portsmouth Dockyard, 1787)',
       instruction:
-        'Using Source B in your textbook / on screen, sketch the furnace and rollers in the box below, then label the 4 key parts:',
-      checklist:
-        '① <strong>Firebox</strong> (keeps coal separate from iron) &bull; ② <strong>Arched roof</strong> (bounces heat down onto iron) &bull; ③ <strong>Puddling bar</strong> (worker stirs out carbon) &bull; ④ <strong>Grooved rollers</strong> (squeezes out impurities)',
-      clue: '<em>Low-Floor Clue:</em> Notice how the coal fuel never touches the iron directly—only the heat melts the metal, keeping it pure and strong.',
+        'Interrogate official Navy Board trial records testing Henry Cort’s Funtley iron at Portsmouth Dockyard.',
+      sourceTitle: 'Source C: Admiralty Navy Board Portsmouth Dockyard Trial Minutes (March 1787)',
+      shelfmark: 'ADMIRALTY PAPERS · ADM 106/2347 · PORTSMOUTH DOCKYARD',
+      sourceText:
+        '“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”',
+      provenance:
+        'Official Navy Board Report to the Admiralty, Portsmouth Royal Navy Dockyard, March 1787.',
+      questionA:
+        'What can an historian infer from Source C about why Cort’s iron was critical for British naval supremacy during wartime?',
+      questionB:
+        'Explain why official trials conducted by Admiralty master smiths make Source C exceptionally reliable evidence for an enquiry into the Industrial Revolution:',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> Why did Britain’s ability to mass-produce coal-fired wrought iron give it a huge naval advantage over France?',
+        '<strong>★ Scholar’s Edge:</strong> Why did ending reliance on Baltic "Orgrounds" iron protect Britain from naval blockades during the Napoleonic Wars?',
     },
   },
   {
@@ -891,7 +898,60 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     `;
 
     // Render task body based on type
-    if (cfg.bridgeTask.type === 'draw_label') {
+    if (cfg.bridgeTask.type === 'source_annotation') {
+      html += `
+          <!-- Archival Source C Excerpt Box for Annotation -->
+          <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #1e3a8a; background: #fffdfa; border-radius: 4px; padding: 7px 10px; margin-bottom: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: #1e3a8a;">
+                ${cfg.bridgeTask.sourceTitle || 'Primary Archive Record · Source C'}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #475569; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">
+                ${cfg.bridgeTask.shelfmark || 'ADMIRALTY PAPERS'}
+              </span>
+            </div>
+            <div style="font-family: 'Georgia', serif; font-size: 8.8pt; font-style: italic; color: #1e293b; line-height: 1.55; margin-bottom: 4px;">
+              ${cfg.bridgeTask.sourceText}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; border-top: 1px dotted #e2e8f0; padding-top: 2px;">
+              <strong>Provenance:</strong> ${cfg.bridgeTask.provenance}
+            </div>
+          </div>
+
+          <!-- Active Reading Annotation Prompts -->
+          <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 4px; padding: 4px 7px; margin-bottom: 5px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              ✏️ Active Source Annotation Tasks:
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0c4a6e; line-height: 1.25;">
+              <div><strong>① Underline:</strong> phrase proving Funtley iron exceeded all British iron.</div>
+              <div><strong>② Circle:</strong> foreign gold standard matched (Swedish Orgrounds).</div>
+              <div><strong>③ Box:</strong> 3 Royal Navy ship parts forged (bolts, hoops, anchors).</div>
+            </div>
+          </div>
+
+          <!-- Disciplinary Application Questions -->
+          <div style="margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+              <span style="color: #1e3a8a;">Part A (GCSE Inference):</span> ${cfg.bridgeTask.questionA}
+            </div>
+            <div class="task-line" style="height: 5.6mm;"></div>
+            <div class="task-line" style="height: 5.6mm;"></div>
+          </div>
+
+          <div style="margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+              <span style="color: #1e3a8a;">Part B (GCSE Provenance):</span> ${cfg.bridgeTask.questionB}
+            </div>
+            <div class="task-line" style="height: 5.6mm;"></div>
+            <div class="task-line" style="height: 5.6mm;"></div>
+          </div>
+
+          <div style="font-family: 'Georgia', serif; font-size: 8pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    } else if (cfg.bridgeTask.type === 'draw_label') {
       html += `
           <div class="auto-fill-drawing-box" style="height: 360px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; background: #f1f5f9; padding: 5px 8px; border-radius: 4px; margin-bottom: 4px; border: 1px solid #cbd5e1;">

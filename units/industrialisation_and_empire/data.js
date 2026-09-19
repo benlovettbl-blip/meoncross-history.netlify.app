@@ -217,6 +217,14 @@ export const unitData = {
               '“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”',
             citation:
               'Official Navy Board Report to the Admiralty, Portsmouth Royal Navy Dockyard, March 1787.',
+            question:
+              'Archival Interrogation: (a) What can an historian infer from Source C about why Cort’s iron was critical for British naval supremacy? (b) Explain why official trials conducted by Admiralty master smiths at Portsmouth make Source C exceptionally reliable evidence.',
+            starter:
+              'From Source C, an historian can infer that Cort’s Funtley iron was critical because... Furthermore, the source is exceptionally reliable because...',
+            provenance_clue:
+              "Consider the Author, Audience, and Stakes: The Navy Board commissioners and master smiths were responsible for the defence of the British realm. Why did they test Cort's iron destructively with 20-pound sledgehammers cold before certifying it for His Majesty's Fleet?",
+            model_answer:
+              'From Source C, an historian can infer that Cort’s Funtley iron solved Britain’s national military crisis. First, it exceeded in strength and toughness any iron previously forged in the British kingdom, proving it was suitable for high-stress naval components like mast hoops, hull bolts, and anchors. Second, it matched the "Swedish Orgrounds" gold standard, freeing the Royal Navy from Baltic blockades.<br><br>Regarding reliability, Source C is exceptionally trustworthy: it is an official internal report created by expert Admiralty dockyard commissioners and master smiths at Portsmouth Dockyard after physical destructive hammer trials. The Admiralty had rejected domestic British iron for over a century due to sulphur brittleness; their emphatic endorsement proves that the metallurgical breakthrough was genuine and independently verified.',
           },
           archival_source: {
             title: 'Source C: Admiralty Navy Board Portsmouth Dockyard Trial Minutes (March 1787)',
@@ -224,6 +232,12 @@ export const unitData = {
             text: '“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”',
             citation:
               'Official Navy Board Report to the Admiralty, Portsmouth Royal Navy Dockyard, March 1787.',
+            question:
+              'Archival Interrogation: (a) What can an historian infer from Source C about why Cort’s iron was critical for British naval supremacy? (b) Explain why official trials conducted by Admiralty master smiths at Portsmouth make Source C exceptionally reliable evidence.',
+            starter:
+              'From Source C, an historian can infer that Cort’s Funtley iron was critical because... Furthermore, the source is exceptionally reliable because...',
+            model_answer:
+              'From Source C, an historian can infer that Cort’s Funtley iron solved Britain’s national military crisis. First, it exceeded in strength and toughness any iron previously forged in the British kingdom, proving it was suitable for high-stress naval components like mast hoops, hull bolts, and anchors. Second, it matched the "Swedish Orgrounds" gold standard, freeing the Royal Navy from Baltic blockades.<br><br>Regarding reliability, Source C is exceptionally trustworthy: it is an official internal report created by expert Admiralty dockyard commissioners and master smiths at Portsmouth Dockyard after physical destructive hammer trials. The Admiralty had rejected domestic British iron for over a century due to sulphur brittleness; their emphatic endorsement proves that the metallurgical breakthrough was genuine and independently verified.',
           },
         },
         {
