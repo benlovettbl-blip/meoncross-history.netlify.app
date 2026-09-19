@@ -221,7 +221,8 @@ function getFileHash(filePath) {
                 unit === 'edexcel_medicine' &&
                 (file === 'pupil_workbook_medieval.html' ||
                   file === 'pupil_workbook_renaissance.html' ||
-                  file === 'pupil_workbook_18th_19th.html')
+                  file === 'pupil_workbook_18th_19th.html' ||
+                  file === 'pupil_workbook_modern.html')
                   ? '<div></div>'
                   : '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
               margin:
@@ -265,5 +266,16 @@ function getFileHash(filePath) {
   }
 
   await browser.close();
+
+  // Auto-merge master workbook for edexcel_medicine
+  if (units.includes('edexcel_medicine') || unitArg === 'all' || unitArg === 'edexcel_medicine') {
+    try {
+      const { mergeMedicineMasterWorkbook } = require('./merge_medicine_master_workbook.cjs');
+      await mergeMedicineMasterWorkbook();
+    } catch (err) {
+      console.warn('⚠️ Notice: Could not auto-merge medicine master workbook:', err.message);
+    }
+  }
+
   console.log(`PDF generation complete! Generated ${generatedCount} new PDFs.`);
 })();
