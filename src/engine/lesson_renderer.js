@@ -3164,10 +3164,10 @@ export function renderLesson(lesson) {
                       : ''
                   }
                   ${
-                    rawSource.source_context
+                    rawSource.source_context || rawSource.context
                       ? `
                     <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                      <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context)}
+                      <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context || rawSource.context)}
                     </div>
                   `
                       : ''
@@ -3184,9 +3184,9 @@ export function renderLesson(lesson) {
                   }
                 </div>
                 ${
-                  rawSource.citation
+                  rawSource.citation || rawSource.provenance
                     ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
-                        <span><strong>Provenance:</strong> ${rawSource.citation}</span>
+                        <span><strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}</span>
                         <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
                       </div>`
                     : ''
@@ -4132,7 +4132,94 @@ export function renderLesson(lesson) {
             });
             return;
           }
-          let rawQText = typeof task === 'string' ? task : task.text || task.question || '';
+          if (task.type === 'two_sided_argument') {
+            const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+            const adv = task.advancement || {};
+            const lim = task.limitations || {};
+            const advTitle = adv.title || 'Advancement & Progress (Change)';
+            const limTitle = lim.title || 'Critical Limitations & Stagnation (Continuity)';
+            const advPoints = adv.points || [];
+            const limPoints = lim.points || [];
+            const advStarter = adv.starter || adv.sentence_starter || '';
+            const limStarter = lim.starter || lim.sentence_starter || '';
+            const synthesisPrompt =
+              task.synthesis_prompt ||
+              task.question ||
+              'Write a balanced GCSE exam paragraph evaluating both sides.';
+            const connectives = task.synthesis_connectives || [
+              'On the one hand...',
+              'For example...',
+              'On the other hand...',
+              'Consequently...',
+              'Overall, while...',
+            ];
+            const modelAnswer = task.model_answer || task.model || '';
+
+            htmlTasks += `
+              <div class="task-box two-sided-argument-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f766e; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #0f766e; font-size: 1.15rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
+                  <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>
+                </div>
+                ${task.question ? `<div style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.5; padding: 10px 14px; background: #f0fdf4; border-left: 4px solid #0f766e; border-radius: 0 6px 6px 0;"><strong>Question:</strong> ${task.question}</div>` : ''}
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <!-- Side 1: Advancement / Progress -->
+                  <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 14px;">
+                    <h5 style="margin: 0 0 10px 0; color: #166534; font-size: 1rem; border-bottom: 2px solid #86efac; padding-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-arrow-trend-up"></i> ${advTitle}
+                    </h5>
+                    <ul style="margin: 0 0 12px 0; padding-left: 18px; color: #1e293b; font-size: 0.9rem; line-height: 1.45;">
+                      ${advPoints.map((pt) => `<li style="margin-bottom: 6px;">${pt}</li>`).join('')}
+                    </ul>
+                    ${advStarter ? `<div style="padding: 8px 10px; background: #ffffff; border-left: 3px solid #22c55e; border-radius: 4px; font-size: 0.85rem; color: #15803d; font-style: italic;"><strong>Evidence Stem:</strong> &ldquo;${advStarter}&rdquo;</div>` : ''}
+                  </div>
+
+                  <!-- Side 2: Limitations / Continuity -->
+                  <div style="background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 8px; padding: 14px;">
+                    <h5 style="margin: 0 0 10px 0; color: #9f1239; font-size: 1rem; border-bottom: 2px solid #fecdd3; padding-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-hand"></i> ${limTitle}
+                    </h5>
+                    <ul style="margin: 0 0 12px 0; padding-left: 18px; color: #1e293b; font-size: 0.9rem; line-height: 1.45;">
+                      ${limPoints.map((pt) => `<li style="margin-bottom: 6px;">${pt}</li>`).join('')}
+                    </ul>
+                    ${limStarter ? `<div style="padding: 8px 10px; background: #ffffff; border-left: 3px solid #f43f5e; border-radius: 4px; font-size: 0.85rem; color: #be123c; font-style: italic;"><strong>Counter-Stem:</strong> &ldquo;${limStarter}&rdquo;</div>` : ''}
+                  </div>
+                </div>
+
+                <!-- Synthesis: GCSE Paragraph Builder -->
+                <div style="background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 8px; padding: 14px;">
+                  <h5 style="margin: 0 0 8px 0; color: #92400e; font-size: 1rem; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis
+                  </h5>
+                  <p style="font-size: 0.92rem; color: #78350f; font-weight: 600; margin: 0 0 10px 0;">${synthesisPrompt}</p>
+                  
+                  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #92400e; text-transform: uppercase;">Analytical Connectives (Click to Insert):</span>
+                    ${connectives.map((c) => `<button type="button" class="connective-chip" data-connective="${c.replace(/"/g, '&quot;')}" style="background: #ffffff; border: 1px solid #fde68a; color: #b45309; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;" title="Click to insert at cursor">${c}</button>`).join('')}
+                  </div>
+
+                  <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.92rem; font-family: inherit; resize: vertical;" placeholder="Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph..."></textarea>
+
+                  ${
+                    modelAnswer
+                      ? `
+                    <details class="model-paragraph-reveal" style="margin-top: 12px; border: 1px dashed #d97706; border-radius: 6px; padding: 8px 12px; background: #fffbeb;">
+                      <summary style="cursor: pointer; color: #b45309; font-weight: 700; font-size: 0.88rem; outline: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Paragraph ]</summary>
+                      <div class="scaffold-box model-box" style="margin-top: 10px; padding: 12px 15px; background: #ffffff; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.92rem; color: #78350f; line-height: 1.6; border: 1px solid #fde68a;">
+                        ${modelAnswer}
+                      </div>
+                    </details>
+                  `
+                      : ''
+                  }
+                </div>
+              </div>
+            `;
+            return;
+          }
+          let rawQText = typeof task === 'string' ? task : task.question || task.text || '';
           let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
           let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
           let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
@@ -4144,7 +4231,9 @@ export function renderLesson(lesson) {
 
           let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*([\s\S]*)/);
           let displayHeading = '';
-          if (match) {
+          if (task.topic) {
+            displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${task.topic}</div>`;
+          } else if (match && match[2] && match[2].length > 15) {
             displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
             qText = match[2];
           }

@@ -145,41 +145,59 @@ export function getBestVoice(genderPreference = currentVoiceGender) {
   });
   if (ukNaturalGender) return ukNaturalGender;
 
-  // 3. Any UK English Natural / Neural voice (regardless of gender)
-  const anyUkNatural = voices.find((v) => isUkLang(v) && isNaturalVoice(v));
-  if (anyUkNatural) return anyUkNatural;
-
-  // 4. Any English Natural/Neural voice matching preferred gender (e.g. US Natural)
+  // 3. Any English Natural/Neural voice matching preferred gender (e.g. US Natural)
   const anyEnglishNaturalGender = voices.find((v) => {
     if (!isEnglishLang(v) || !isNaturalVoice(v)) return false;
     return wantFemale ? isVoiceFemale(v) : isVoiceMale(v);
   });
   if (anyEnglishNaturalGender) return anyEnglishNaturalGender;
 
-  // 5. Any English Natural / Neural voice
-  const anyEnglishNatural = voices.find((v) => isEnglishLang(v) && isNaturalVoice(v));
-  if (anyEnglishNatural) return anyEnglishNatural;
-
-  // 6. High quality non-robotic UK voice matching gender
+  // 4. High quality non-robotic UK voice matching gender
   const ukNonRoboticGender = voices.find((v) => {
     if (!isUkLang(v) || isRoboticDesktopVoice(v)) return false;
     return wantFemale ? isVoiceFemale(v) : isVoiceMale(v);
   });
   if (ukNonRoboticGender) return ukNonRoboticGender;
 
-  // 7. Any non-robotic UK voice
+  // 5. Any UK voice matching gender (even if desktop)
+  const anyUkGender = voices.find((v) => {
+    if (!isUkLang(v)) return false;
+    return wantFemale ? isVoiceFemale(v) : isVoiceMale(v);
+  });
+  if (anyUkGender) return anyUkGender;
+
+  // 6. Any English voice (non-robotic) matching gender
+  const anyEnglishNonRoboticGender = voices.find((v) => {
+    if (!isEnglishLang(v) || isRoboticDesktopVoice(v)) return false;
+    return wantFemale ? isVoiceFemale(v) : isVoiceMale(v);
+  });
+  if (anyEnglishNonRoboticGender) return anyEnglishNonRoboticGender;
+
+  // 7. Any English voice matching gender
+  const anyEnglishGender = voices.find((v) => {
+    if (!isEnglishLang(v)) return false;
+    return wantFemale ? isVoiceFemale(v) : isVoiceMale(v);
+  });
+  if (anyEnglishGender) return anyEnglishGender;
+
+  // --- Fallbacks if no voice of the requested gender is available on the device ---
+  // 8. Any UK English Natural / Neural voice (regardless of gender)
+  const anyUkNatural = voices.find((v) => isUkLang(v) && isNaturalVoice(v));
+  if (anyUkNatural) return anyUkNatural;
+
+  // 9. Any English Natural / Neural voice (regardless of gender)
+  const anyEnglishNatural = voices.find((v) => isEnglishLang(v) && isNaturalVoice(v));
+  if (anyEnglishNatural) return anyEnglishNatural;
+
+  // 10. Any non-robotic UK voice
   const anyUkNonRobotic = voices.find((v) => isUkLang(v) && !isRoboticDesktopVoice(v));
   if (anyUkNonRobotic) return anyUkNonRobotic;
 
-  // 8. Any UK voice (even if desktop)
+  // 11. Any UK voice
   const anyUk = voices.find((v) => isUkLang(v));
   if (anyUk) return anyUk;
 
-  // 9. Any English voice (non-robotic)
-  const anyEnglishNonRobotic = voices.find((v) => isEnglishLang(v) && !isRoboticDesktopVoice(v));
-  if (anyEnglishNonRobotic) return anyEnglishNonRobotic;
-
-  // 10. Fallback to any English or first voice
+  // 12. Fallback to any English or first voice
   const anyEnglish = voices.find((v) => isEnglishLang(v));
   return anyEnglish || voices[0] || null;
 }
@@ -513,6 +531,8 @@ export function resetActiveSpeech() {
  * Stop any currently playing speech synthesis.
  */
 export function cancelSpeech() {
+  activeUtterance = null;
+  window._activeSpeechUtterance = null;
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
@@ -548,11 +568,19 @@ function resumeSpeechFromCurrentSentence() {
   if (speechHeartbeat) clearInterval(speechHeartbeat);
   if (softwareTickerTimer) clearInterval(softwareTickerTimer);
 
+  // Invalidate current utterance reference BEFORE cancel so its pending onend/onerror cannot reset new speech
+  activeUtterance = null;
+  window._activeSpeechUtterance = null;
+
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
 
-  startUtterance(remainingText, charOffset, firstSpan);
+  // Small asynchronous buffer (60ms) to allow Chromium/WebKit OS audio stack to finish cancellation cleanly
+  setTimeout(() => {
+    if (!activeHighlightContainer) return;
+    startUtterance(remainingText, charOffset, firstSpan);
+  }, 60);
 }
 
 /**
@@ -589,6 +617,9 @@ function startUtterance(textToSpeak, charOffset, initialSpan) {
 
   // Real-time Hardware Boundary Event Handler
   utterance.onboundary = (event) => {
+    // If this boundary event is from a superseded utterance, ignore
+    if (activeUtterance !== utterance) return;
+
     lastHardwareBoundaryTime = Date.now();
 
     if (event.name === 'word' || !event.name) {
@@ -612,10 +643,14 @@ function startUtterance(textToSpeak, charOffset, initialSpan) {
   };
 
   utterance.onend = () => {
+    // Discard end event if this is not the currently active utterance
+    if (activeUtterance !== utterance) return;
     resetActiveSpeech();
   };
 
   utterance.onerror = (e) => {
+    // Discard error event if this is not the currently active utterance
+    if (activeUtterance !== utterance) return;
     if (e.error !== 'interrupted' && e.error !== 'canceled') {
       console.warn('Speech synthesis error:', e);
     }

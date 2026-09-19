@@ -2720,6 +2720,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Scientific Communication vs Everyday Medical Beliefs',
+          question:
+            '‘The creation of the Royal Society was more important than the invention of the printing press in advancing medical ideas in the Renaissance.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Scientific Communication vs Everyday Medical Beliefs: Advancement vs Limitations',
           instruction:
             'GCSE Evaluative Assessment: Weigh the revolutionary impact of the printing press and Royal Society against the persistent continuity in everyday medical treatment.',
@@ -3294,6 +3296,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Thomas Sydenham: Bedside Clinical Observation vs Traditional Humoural Treatments',
+          question:
+            '‘Thomas Sydenham’s bedside observation transformed medical practice in the seventeenth century.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Thomas Sydenham: Bedside Clinical Observation vs Traditional Humoural Treatments',
           instruction:
             'GCSE Analytical Assessment: Evaluate the diagnostic advancements of Thomas Sydenham against his continued reliance on traditional humoral treatments.',
@@ -3868,6 +3872,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Andreas Vesalius: Human Anatomical Dissection vs Lack of Medical Cures',
+          question:
+            '‘Andreas Vesalius’s anatomical dissections were the most significant medical breakthrough of the Renaissance.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Andreas Vesalius: Human Anatomical Dissection vs Lack of Medical Cures',
           instruction:
             'GCSE Evaluative Assessment: Evaluate whether Vesalius’s anatomical revolution was the most significant medical breakthrough of the Renaissance.',
@@ -4422,6 +4428,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'William Harvey: Mechanical Circulation vs Traditional Humoural Practice',
+          question:
+            '‘William Harvey’s discovery of the circulation of the blood was a turning point in medicine c1500–c1700.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'William Harvey: Mechanical Circulation vs Traditional Humoural Practice',
           instruction:
             'GCSE Analytical Assessment: Evaluate the physiological breakthrough of William Harvey against his total lack of immediate clinical cures.',
@@ -4964,6 +4972,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'The Great Plague of 1665: Municipal Quarantine vs Medical Stagnation',
+          question:
+            '‘Responses to the Great Plague of 1665 showed significant change compared to the Black Death of 1348.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'The Great Plague of 1665: Municipal Quarantine vs Medical Stagnation',
           instruction:
             'GCSE Analytical Assessment: Evaluate whether responses to the Great Plague showed greater change or continuity compared to the Black Death.',
@@ -5591,6 +5601,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Pasteur vs Koch in Revolutionizing Medical Science',
+          question:
+            '‘Louis Pasteur’s Germ Theory was more important than Robert Koch’s discovery of specific bacteria in advancing medical understanding c1860–c1890.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Louis Pasteur vs Robert Koch: Theoretical Foundation vs Diagnostic Precision',
           instruction:
             'GCSE Evaluative Assessment: Weigh the relative importance of Louis Pasteur’s Germ Theory against Robert Koch’s bacteriological methodology in changing the understanding of disease causes.',
@@ -6082,6 +6094,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Jenner’s Significance: Medical Revolution vs Historical Limitations',
+          question:
+            '‘Edward Jenner’s development of the smallpox vaccine was the most significant breakthrough in the prevention of disease in the period c1700–c1900.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Edward Jenner’s Smallpox Vaccine: Revolutionary Milestone vs One-Off Limitation',
           instruction:
             'GCSE Evaluative Assessment: Evaluate whether Jenner’s smallpox vaccination was the most significant turning point in disease prevention c1700–c1900.',
@@ -6576,6 +6590,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Sanitary Reform vs Medical Science in Hospital Improvement',
+          question:
+            '‘Florence Nightingale’s sanitary reforms were the main reason for the improvement in hospital care in the nineteenth century.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Nightingale’s Sanitary Discipline vs Scientific Bacteriology',
           instruction:
             'GCSE Evaluative Assessment: Weigh the relative importance of Florence Nightingale’s sanitary reforms against scientific breakthroughs in improving hospital care in the 19th century.',
@@ -7075,6 +7091,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Simpson vs Lister in Revolutionizing 19th-Century Surgery',
+          question:
+            '‘Joseph Lister’s antiseptic techniques were more significant than James Simpson’s discovery of chloroform in revolutionizing nineteenth-century surgery.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'Simpson’s Chloroform vs Lister’s Antiseptics: Pain Relief vs Infection Control',
           instruction:
             'GCSE Evaluative Assessment: Weigh the relative importance of James Simpson’s chloroform against Joseph Lister’s carbolic acid in making surgery safer c1840–c1900.',
@@ -7589,6 +7607,8 @@ export const unitData = {
         {
           type: 'two_sided_argument',
           topic: 'Scientific Proof vs Government Intervention in Public Health Reform',
+          question:
+            '‘The work of John Snow was the main reason for improvements in public health in the nineteenth century.’ How far do you agree? Explain your answer [16+4 marks].',
           text: 'John Snow’s Scientific Detective Work vs The Compulsory 1875 Public Health Act',
           instruction:
             'GCSE Evaluative Assessment: Weigh the relative importance of John Snow’s 1854 discovery against compulsory government legislation (1875 Public Health Act) in improving 19th-century public health.',
