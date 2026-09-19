@@ -20,7 +20,7 @@ const YEAR_COLOURS = {
 };
 
 let metaCache = null;
-let currentViewTab = 'sequence'; // 'sequence' | 'matrix'
+let currentViewTab = 'sequence'; // 'sequence' | 'matrix' | 'pedagogy'
 let selectedStrand = 'all'; // 'all' | 'causation' | 'change_continuity' | 'source_utility' | 'interpretations'
 let selectedYear = 'all'; // 'all' | 'Year 7' | ...
 let matrixLayout = 'strand'; // 'strand' | 'year'
@@ -65,6 +65,15 @@ export async function renderCurriculumMap() {
              onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
             <i class="fa-solid fa-book-open"></i> Full SOW (PDF)
           </a>
+          <a href="/pdfs/pedagogy/01_high_challenge_shared_reading_and_the_decoded_classroom.pdf" target="_blank"
+             style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+                    background:#0f766e; color:#fff; border-radius:8px; text-decoration:none;
+                    font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s; border:1px solid #14b8a6;"
+             onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'"
+             title="Pedagogical Research Dossier 01: High-Challenge Shared Reading &amp; The Decoded Classroom (PDF)">
+            <i class="fa-solid fa-graduation-cap"></i> Pedagogy Dossier 01 (PDF)
+          </a>
           <a href="/pdfs/history_marking_and_feedback_policy_v2.pdf" target="_blank"
              style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
                     background:#1e293b; color:#fff; border-radius:8px; text-decoration:none;
@@ -72,13 +81,13 @@ export async function renderCurriculumMap() {
              onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
              onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'"
              title="Department Policy: Core principles with visual marking evidence and standards appendix">
-            <i class="fa-solid fa-file-circle-check"></i> Marking &amp; Feedback Policy (with Visual Appendix)
+            <i class="fa-solid fa-file-circle-check"></i> Marking &amp; Feedback Policy
           </a>
         </div>
       </div>
 
       <!-- Navigation Tab Switcher -->
-      <div style="display:flex; gap:12px; margin-bottom:24px; border-bottom:2px solid var(--border, #e2e8f0); padding-bottom:12px;">
+      <div style="display:flex; gap:12px; margin-bottom:24px; border-bottom:2px solid var(--border, #e2e8f0); padding-bottom:12px; flex-wrap:wrap;">
         <button id="btn-tab-sequence" 
           style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:8px; font-weight:600; font-size:0.92rem; cursor:pointer; border:none; transition:all 0.2s; ${currentViewTab === 'sequence' ? 'background:#1b365d; color:#fff; box-shadow:0 2px 8px rgba(27,54,93,0.25);' : 'background:var(--surface-secondary, #f1f5f9); color:var(--text-secondary, #475569);'}">
           <i class="fa-solid fa-map-location-dot"></i> Curriculum Sequence (Termly Grid)
@@ -86,6 +95,10 @@ export async function renderCurriculumMap() {
         <button id="btn-tab-matrix" 
           style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:8px; font-weight:600; font-size:0.92rem; cursor:pointer; border:none; transition:all 0.2s; ${currentViewTab === 'matrix' ? 'background:#1b365d; color:#fff; box-shadow:0 2px 8px rgba(27,54,93,0.25);' : 'background:var(--surface-secondary, #f1f5f9); color:var(--text-secondary, #475569);'}">
           <i class="fa-solid fa-stairs"></i> Disciplinary Skills Matrix (Progression Grid)
+        </button>
+        <button id="btn-tab-pedagogy" 
+          style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:8px; font-weight:600; font-size:0.92rem; cursor:pointer; border:none; transition:all 0.2s; ${currentViewTab === 'pedagogy' ? 'background:#1b365d; color:#fff; box-shadow:0 2px 8px rgba(27,54,93,0.25);' : 'background:var(--surface-secondary, #f1f5f9); color:var(--text-secondary, #475569);'}">
+          <i class="fa-solid fa-graduation-cap"></i> Departmental Pedagogy &amp; Research Base
         </button>
       </div>
 
@@ -103,11 +116,17 @@ export async function renderCurriculumMap() {
     currentViewTab = 'matrix';
     renderCurriculumMap();
   });
+  document.getElementById('btn-tab-pedagogy')?.addEventListener('click', () => {
+    currentViewTab = 'pedagogy';
+    renderCurriculumMap();
+  });
 
   if (currentViewTab === 'sequence') {
     await renderSequenceView();
-  } else {
+  } else if (currentViewTab === 'matrix') {
     renderMatrixView();
+  } else if (currentViewTab === 'pedagogy') {
+    renderPedagogyView();
   }
 }
 
@@ -512,6 +531,135 @@ function renderFilteredMatrixCards() {
     strandBox.appendChild(yearGrid);
     container.appendChild(strandBox);
   }
+}
+
+/**
+ * View 3: Departmental Pedagogy & Research Base
+ */
+function renderPedagogyView() {
+  const body = document.getElementById('curriculum-map-body');
+  if (!body) return;
+
+  body.innerHTML = `
+    <div style="display: flex; flex-direction: column; gap: 28px;">
+      <!-- Hero Executive Statement -->
+      <div style="background: linear-gradient(135deg, #1b365d 0%, #0f172a 100%); color: #ffffff; padding: 26px 30px; border-radius: 12px; border-left: 5px solid #facc15; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #facc15; font-weight: 700;">Departmental Research Doctrine</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; margin: 4px 0 0 0; color: #ffffff;">
+              Pedagogical Framework, Disciplinary Literacy &amp; Cognitive Research
+            </h2>
+          </div>
+          <span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; color: #e2e8f0; font-weight: 600;">
+            Evidence Base: 2026–2027
+          </span>
+        </div>
+        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; max-width: 960px;">
+          The History Department operates on an uncompromising <strong>high-challenge, low-threat</strong> disciplinary model. We explicitly reject the dumbing-down or lexical truncation of historical enquiry texts. Instead, complex causal narratives (reading age 16–18+) are paired with structured whole-class modelled reading, assistive speech tracking, and a disciplined 2-page workbook format that preserves working memory for rigorous historical argument.
+        </p>
+      </div>
+
+      <!-- Published Research Dossier 01 (Featured Card) -->
+      <div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; margin: 0; color: var(--text-primary, #f8fafc); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-file-shield" style="color: #14b8a6;"></i> Published Research Dossiers (Official Doctrine)
+          </h3>
+          <span style="font-size: 0.82rem; color: var(--text-muted, #94a3b8); font-weight: 600;">Publication-Grade Policy Documents</span>
+        </div>
+
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+            <div style="flex: 1; min-width: 300px;">
+              <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+                <span style="background: #0f766e; color: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 4px;">DOSSIER 01</span>
+                <span style="background: #dcfce7; color: #166534; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;">OFFICIAL DOCTRINE</span>
+                <span style="color: #64748b; font-size: 0.78rem;">Key Stage 3 &amp; GCSE</span>
+              </div>
+              <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 0 0 6px 0; color: #0f172a;">
+                High-Challenge Shared Reading &amp; The Decoded Classroom
+              </h4>
+              <div style="color: #475569; font-size: 0.88rem; font-weight: 600;">
+                Disciplinary Literacy Architecture &amp; Cognitive Working Memory in KS3 History
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="/pdfs/pedagogy/01_high_challenge_shared_reading_and_the_decoded_classroom.pdf" target="_blank"
+                 style="display: inline-flex; align-items: center; gap: 8px; background: #1b365d; color: #ffffff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.88rem; box-shadow: 0 2px 6px rgba(27,54,93,0.3); transition: all 0.2s;"
+                 onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
+                 onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
+                <i class="fa-solid fa-file-pdf"></i> Download Dossier 01 (PDF)
+              </a>
+              <a href="/pedagogy/01_high_challenge_shared_reading_and_the_decoded_classroom.html" target="_blank"
+                 style="display: inline-flex; align-items: center; gap: 8px; background: #f1f5f9; color: #334155; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.88rem; border: 1px solid #cbd5e1; transition: all 0.2s;"
+                 onmouseover="this.style.background='#e2e8f0'"
+                 onmouseout="this.style.background='#f1f5f9'">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Read Web Version
+              </a>
+            </div>
+          </div>
+
+          <p style="color: #334155; font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px;">
+            This foundational paper establishes the research rationale for maintaining high-challenge, 16–18+ reading age narrative texts in Year 8. It evaluates why unassisted silent reading induces severe decoding fatigue in struggling readers, and details our <strong>Two-Lesson Enquiry Choreography</strong> (Lesson 1: Immersion &amp; Shared Reading; Lesson 2: Historiographical Debate &amp; Workbook Mastery) anchored by the Henry Cort case study.
+          </p>
+
+          <!-- Theorist Chips -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 14px;">
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px;">
+              <div style="font-weight: 700; color: #1e3a8a; font-size: 0.82rem; text-transform: uppercase;">Alex Quigley (2020)</div>
+              <div style="color: #475569; font-size: 0.8rem; margin-top: 2px;">Whole-class prosody and teacher-modelled shared reading to prevent the Matthew Effect.</div>
+            </div>
+            <div style="background: #fdfaf2; border: 1px solid #fef08a; border-radius: 6px; padding: 10px 12px;">
+              <div style="font-weight: 700; color: #854d0e; font-size: 0.82rem; text-transform: uppercase;">Christine Counsell (2000/2018)</div>
+              <div style="color: #574e40; font-size: 0.8rem; margin-top: 2px;">Narrative as the indispensable cognitive carrier of agency, causation, and historical tension.</div>
+            </div>
+            <div style="background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 6px; padding: 10px 12px;">
+              <div style="font-weight: 700; color: #0f766e; font-size: 0.82rem; text-transform: uppercase;">Mary Myatt (2016)</div>
+              <div style="color: #134e4a; font-size: 0.8rem; margin-top: 2px;">Curricular dignity: respecting the pupil's intellect through high challenge and low decoding threat.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forthcoming Dossiers Pipeline -->
+      <div>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin: 0 0 12px 0; color: var(--text-primary, #f8fafc);">
+          <i class="fa-solid fa-layer-group" style="color: var(--text-muted, #94a3b8);"></i> Forthcoming Research Dossiers (In Development)
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+            <span style="background: #f1f5f9; color: #475569; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">DOSSIER 02</span>
+            <h4 style="font-size: 0.98rem; margin: 6px 0 4px 0; color: #0f172a;">The Four-Act Narrative Architecture</h4>
+            <div style="color: #64748b; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">Christine Counsell &amp; Ian Dawson</div>
+            <p style="color: #475569; font-size: 0.82rem; line-height: 1.4; margin: 0;">The structural anatomy of our enquiry lessons: Outpost &rarr; Boiling Point &rarr; Forensic Primary Dissection &rarr; Historiographical Verdict.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+            <span style="background: #f1f5f9; color: #475569; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">DOSSIER 03</span>
+            <h4 style="font-size: 0.98rem; margin: 6px 0 4px 0; color: #0f172a;">The 2-Page Spread &amp; Cognitive Load</h4>
+            <div style="color: #64748b; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">John Sweller &amp; Tom Sherrington</div>
+            <p style="color: #475569; font-size: 0.82rem; line-height: 1.4; margin: 0;">Why we abolished the 4-page booklet: zero page-flipping, Verso evidence launch, Recto independent writing, and Task 4 rotation.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+            <span style="background: #f1f5f9; color: #475569; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">DOSSIER 04</span>
+            <h4 style="font-size: 0.98rem; margin: 6px 0 4px 0; color: #0f172a;">Disciplinary Vocabulary &amp; Analytical Distinction</h4>
+            <div style="color: #64748b; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">Isabel Beck &amp; Alex Quigley</div>
+            <p style="color: #475569; font-size: 0.82rem; line-height: 1.4; margin: 0;">Moving beyond generic Frayer models: rotating Contextual Cloze, Vocabulary Mapping, and Dual-Term Analytical Distinction.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+            <span style="background: #f1f5f9; color: #475569; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">DOSSIER 05</span>
+            <h4 style="font-size: 0.98rem; margin: 6px 0 4px 0; color: #0f172a;">Pedagogical Recall Isolation &amp; Retrieval</h4>
+            <div style="color: #64748b; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">Rosenshine, Willingham &amp; Christodoulou</div>
+            <p style="color: #475569; font-size: 0.82rem; line-height: 1.4; margin: 0;">The rule of Zero Same-Lesson Recall: why Do Now bell-ringers strictly test prior knowledge, domino flowcharts, and memory retention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 // Inject styling helper for active pills

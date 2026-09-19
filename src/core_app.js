@@ -683,7 +683,8 @@ export function initializeApp(unitData) {
     });
 
     // Inject Laptop Mode & Teacher Mode Buttons
-    const headerActions = document.querySelector('.header-actions');
+    const headerActions =
+      document.querySelector('.header-actions') || document.querySelector('.header-right');
     if (headerActions) {
       const btnLaptop = document.createElement('button');
       btnLaptop.className = 'btn btn-secondary';

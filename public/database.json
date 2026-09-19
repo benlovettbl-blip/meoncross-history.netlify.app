@@ -46699,6 +46699,59 @@
           "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
           "teacher_notes": {
             "primer": "This enquiry introduces the transition from the domestic system to mechanized industrial production, anchored in the energy shift from wood and water to coal and steam. The lesson centers on a world-class local history study of Fareham ironmaster Henry Cort at the Funtley Ironworks (1775–1784) and the decisive 1787 Portsmouth Royal Navy Dockyard trials. Pupils investigate how local Hampshire metallurgical innovation liberated the Royal Navy from foreign import dependency on the eve of the French Revolutionary Wars, while engaging with historiographical debates surrounding geographical proximity versus technological genius, and the global Atlantic networks that financed industrial capital.",
+            "delivery_plan": {
+              "format": "2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period",
+              "lesson_1": {
+                "title": "Lesson 1: Immersion, Shared Reading & Hampshire Archaeology (50 mins)",
+                "phases": [
+                  {
+                    "time": "00–10m",
+                    "label": "Hook & Prior Retrieval",
+                    "instruction": "Display Source A (Coalbrookdale by Night). Connect the shift to concentrated coal power with prior recall of the domestic system and waterwheels."
+                  },
+                  {
+                    "time": "10–30m",
+                    "label": "Modelled Shared Reading",
+                    "instruction": "Read Acts 1 & 2 together (or project web app with natural UK audio at 1.0x). Pause at Act 1 to interrogate the Baltic naval import crisis."
+                  },
+                  {
+                    "time": "30–45m",
+                    "label": "Archival & Fieldwork Analysis",
+                    "instruction": "Study Source B and the Funtley Fieldwork Dossier. Contrast the 1784 watercolour with surviving River Meon weir and Hampshire’s only puddling slag wall."
+                  },
+                  {
+                    "time": "45–50m",
+                    "label": "Formative Hinge Plenary",
+                    "instruction": "Conduct check for understanding on Hinge Question 2: How does an iron slag dry-stone wall prove Cort’s chemical puddling process succeeded?"
+                  }
+                ]
+              },
+              "lesson_2": {
+                "title": "Lesson 2: The Portsmouth Trials, Historiography & Extended Writing (50 mins)",
+                "phases": [
+                  {
+                    "time": "00–10m",
+                    "label": "Spaced Retrieval & Vocab Anchor",
+                    "instruction": "Complete retrieval check in printed workbook. Review crucial distinction: Brittle Pig Iron vs. Tough Naval Wrought Iron."
+                  },
+                  {
+                    "time": "10–25m",
+                    "label": "Shared Reading & Historiographical Debate",
+                    "instruction": "Read Acts 3 & 4. Debate competing historical verdicts: Was Cort’s triumph driven by geographical proximity to Portsmouth Dockyard or metallurgical genius?"
+                  },
+                  {
+                    "time": "25–45m",
+                    "label": "Workbook Application (Pages 4–5)",
+                    "instruction": "Pupils complete the reverberatory furnace annotation, Admiralty trial evaluation, and 18-line PEEL extended writing using the Gold Criteria Strip."
+                  },
+                  {
+                    "time": "45–50m",
+                    "label": "Live Exemplar Debrief",
+                    "instruction": "Peer assessment or live visualiser critique of high-level student responses against the departmental evaluative criteria."
+                  }
+                ]
+              }
+            },
             "objectives": [
               {
                 "objective": "Explain how the transition from the domestic system to coal and Watt's steam engine liberated manufacturing from river valleys.",

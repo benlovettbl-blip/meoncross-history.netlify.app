@@ -4552,6 +4552,41 @@ body.whiteboard-mode-active .btn-whiteboard-toggle,
   box-shadow: 0 0 12px rgba(2, 132, 199, 0.4) !important;
 }
 
+.btn-teacher-mode-toggle {
+  background: #ffffff;
+  color: #1e3a8a;
+  border: 1.5px solid #cbd5e1;
+  font-weight: 700;
+  padding: 6px 12px;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-teacher-mode-toggle:hover {
+  background: #f8fafc;
+  border-color: #facc15;
+}
+
+body.teacher-mode-active .btn-teacher-mode-toggle,
+.btn-teacher-mode-toggle.active {
+  background: #1b365d !important;
+  color: #ffffff !important;
+  border: 1.5px solid #facc15 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.35) !important;
+}
+
+body.teacher-mode-active .btn-teacher-mode-toggle i,
+.btn-teacher-mode-toggle.active i {
+  color: #facc15 !important;
+}
+
 /* Flexi Timer Preset Pills */
 .btn-timer-pill {
   transition: all 0.15s ease;

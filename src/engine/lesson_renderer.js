@@ -550,6 +550,43 @@ window.syncWhiteboardButtons = function (isActive) {
   });
 };
 
+window.toggleTeacherMode = function (forceState) {
+  const isCurrentlyActive = document.body.classList.contains('teacher-mode-active');
+  const nextState = typeof forceState === 'boolean' ? forceState : !isCurrentlyActive;
+  if (nextState) {
+    document.body.classList.add('teacher-mode-active');
+  } else {
+    document.body.classList.remove('teacher-mode-active');
+  }
+  try {
+    localStorage.setItem('teacherMode', nextState ? 'true' : 'false');
+  } catch (e) {}
+  window.syncTeacherButtons(nextState);
+};
+
+window.syncTeacherButtons = function (isActive) {
+  const btns = document.querySelectorAll('.btn-teacher-mode-toggle');
+  btns.forEach((btn) => {
+    if (isActive) {
+      btn.classList.add('active');
+      btn.innerHTML =
+        '<i class="fa-solid fa-user-tie"></i> <span class="teacher-btn-label">Teacher Mode: ON</span>';
+      btn.title = 'Teacher Mode is ON (Click to hide teacher guidance)';
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML =
+        '<i class="fa-solid fa-user-tie"></i> <span class="teacher-btn-label">Teacher Mode</span>';
+      btn.title = 'Click to show Teacher Guidance & Delivery Roadmap';
+    }
+  });
+};
+
+if (typeof localStorage !== 'undefined' && localStorage.getItem('teacherMode') === 'true') {
+  if (typeof document !== 'undefined' && document.body) {
+    document.body.classList.add('teacher-mode-active');
+  }
+}
+
 window.renderLessonByIndex = function (index, skipHistory = false) {
   if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
     window.cancelSpeech();
@@ -1191,6 +1228,7 @@ export function renderLesson(lesson) {
                   : ''
               }
               <button class="btn btn-whiteboard-toggle ${typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active') ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" title="Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)"><i class="fa-solid fa-chalkboard"></i> <span class="wb-btn-label">Whiteboard View</span></button>
+              <button class="btn btn-secondary btn-teacher-mode-toggle ${typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active') ? 'active' : ''}" id="teacher-mode-btn" data-action="toggle-teacher-mode" onclick="event.stopPropagation(); window.toggleTeacherMode();" title="${typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active') ? 'Teacher Mode is ON (Click to hide teacher guidance)' : 'Click to show Teacher Guidance & Delivery Roadmap'}"><i class="fa-solid fa-user-tie"></i> <span class="teacher-btn-label">${typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active') ? 'Teacher Mode: ON' : 'Teacher Mode'}</span></button>
               <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-task-whiteboard" title="Teacher Whiteboard / Live Marking"><i class="fa-solid fa-person-chalkboard" style="color: #0284c7;"></i> Whiteboard</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'gcse_usa_1954_1975'}"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
@@ -1293,6 +1331,50 @@ export function renderLesson(lesson) {
       const sourceContext = sourceContextText
         ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">Source Context</span></strong><br/>${sourceContextText}</div>`
         : '';
+      let deliveryPlanHtml = '';
+      if (lesson.teacher_notes.delivery_plan) {
+        const dp = lesson.teacher_notes.delivery_plan;
+        const renderLessonPhases = (lObj, label) => {
+          if (!lObj || !lObj.phases) return '';
+          const phaseItems = lObj.phases
+            .map(
+              (p) => `
+            <div style="display: flex; gap: 12px; margin-bottom: 8px; align-items: flex-start; font-size: 0.9rem;">
+              <span style="display: inline-block; background: #1e3a8a; color: #93c5fd; font-weight: 700; font-size: 0.78rem; padding: 2px 8px; border-radius: 4px; white-space: nowrap; font-family: monospace;">${p.time}</span>
+              <div style="flex: 1;">
+                <strong style="color: #f8fafc; font-size: 0.92rem;">${p.label}:</strong> <span style="color: #cbd5e1;">${p.instruction}</span>
+              </div>
+            </div>
+          `,
+            )
+            .join('');
+
+          return `
+            <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 6px; padding: 14px; flex: 1; min-width: 280px;">
+              <div style="font-weight: bold; color: #38bdf8; margin-bottom: 10px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-regular fa-clock"></i> ${lObj.title || label}
+              </div>
+              ${phaseItems}
+            </div>
+          `;
+        };
+
+        deliveryPlanHtml = `
+          <div style="margin-bottom: 22px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <strong style="color: #facc15; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-timeline"></i> Classroom Delivery Roadmap (${dp.format || '2-Lesson Sequence'})
+              </strong>
+              <span style="font-size: 0.8rem; color: #94a3b8; background: rgba(0,0,0,0.3); padding: 3px 8px; border-radius: 4px;">Departmental Timing Standard</span>
+            </div>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              ${renderLessonPhases(dp.lesson_1, 'Lesson 1')}
+              ${renderLessonPhases(dp.lesson_2, 'Lesson 2')}
+            </div>
+          </div>
+        `;
+      }
+
       const objectivesHtml = (lesson.teacher_notes.objectives || [])
         .map(
           (note) => `
@@ -1304,7 +1386,7 @@ export function renderLesson(lesson) {
         `,
         )
         .join('');
-      notesHtml = primerText + sourceContext + objectivesHtml;
+      notesHtml = primerText + deliveryPlanHtml + sourceContext + objectivesHtml;
     } else if (Array.isArray(lesson.teacher_notes)) {
       notesHtml = lesson.teacher_notes
         .map(
