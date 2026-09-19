@@ -118,7 +118,7 @@ const eighteenthNineteenthConfigs = [
       'Robert Koch photographed bacteria so clearly that British doctors could no longer blame bad smells for tuberculosis.',
   },
   {
-    lessonIndex: 12, // mapped to lesson_3_3 in units/edexcel_medicine/data.js (Jenner)
+    lessonIndex: 11, // mapped to lesson_3_2 in units/edexcel_medicine/data.js (Jenner)
     lessonNum: 2,
     id: 'lesson_3_2',
     title: 'KT3.2: Approaches to Prevention: Edward Jenner & The Smallpox Vaccine',
@@ -214,7 +214,7 @@ const eighteenthNineteenthConfigs = [
       'Cartoons showed vaccinated people growing cow heads and horns. Historical proof that anti-vax memes existed long before social media.',
   },
   {
-    lessonIndex: 11, // mapped to lesson_3_2 in units/edexcel_medicine/data.js (Nightingale)
+    lessonIndex: 12, // mapped to lesson_3_3 in units/edexcel_medicine/data.js (Nightingale)
     lessonNum: 3,
     id: 'lesson_3_3',
     title: 'KT3.3: Improvements in Hospital Care: Florence Nightingale & Professional Nursing',
@@ -313,7 +313,7 @@ const eighteenthNineteenthConfigs = [
       'Nightingale believed miasma caused disease, not germs. She was technically wrong about the biology, but opening windows and scrubbing floors saved thousands anyway.',
   },
   {
-    lessonIndex: 11, // mapped to lesson_3_2 in units/edexcel_medicine/data.js (Simpson & Lister)
+    lessonIndex: 13, // mapped to lesson_3_4 in units/edexcel_medicine/data.js (Simpson & Lister)
     lessonNum: 4,
     id: 'lesson_3_4',
     title: 'KT3.4: The Surgical Revolution: Simpson’s Chloroform & Lister’s Antiseptics',
@@ -412,7 +412,7 @@ const eighteenthNineteenthConfigs = [
       'Lister sprayed carbolic acid everywhere until surgeons’ hands cracked and peeled. Harsh on the skin, but great for keeping patients alive.',
   },
   {
-    lessonIndex: 12, // mapped to lesson_3_3 in units/edexcel_medicine/data.js (Snow & Public Health)
+    lessonIndex: 14, // mapped to lesson_3_5 in units/edexcel_medicine/data.js (Snow & Public Health)
     lessonNum: 5,
     id: 'lesson_3_5',
     title: 'KT3.5: Public Health & Cholera: John Snow & The 1875 Public Health Act',

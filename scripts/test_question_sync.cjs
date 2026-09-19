@@ -170,11 +170,16 @@ function extractCanonicalWorkbookNumbering(lesson, unitId) {
           label: (t.question || t.text || '').slice(0, 45),
         });
       });
-    } else if (lesson.gcse_task.topic) {
+    } else if (lesson.gcse_task.topic || lesson.gcse_task.question || lesson.gcse_task.text) {
       items.push({
         id: 'gcse_task',
         qNum: globalQNum++,
-        label: lesson.gcse_task.topic.slice(0, 45),
+        label: (
+          lesson.gcse_task.topic ||
+          lesson.gcse_task.question ||
+          lesson.gcse_task.text ||
+          ''
+        ).slice(0, 45),
       });
     }
   }
