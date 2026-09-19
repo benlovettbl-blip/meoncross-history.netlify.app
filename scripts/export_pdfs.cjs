@@ -218,7 +218,9 @@ function getFileHash(filePath) {
               displayHeaderFooter: true,
               headerTemplate: '<div></div>',
               footerTemplate:
-                '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+                unit === 'edexcel_medicine' && file === 'pupil_workbook_medieval.html'
+                  ? '<div></div>'
+                  : '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
               margin:
                 (unit === 'edexcel_medicine' && file.startsWith('pupil_workbook')) ||
                 unit === 'industrialisation_and_empire'

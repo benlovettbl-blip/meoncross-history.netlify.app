@@ -118,9 +118,9 @@ const medievalConfigs = [
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.1). In the drawing box, sketch a monk copying Galen’s medical book in a scriptorium. Add two speech bubbles explaining why the Church banned new medical experiments and imprisoned Roger Bacon in 1277.',
     leftPageQuip:
-      'Medieval Diagnostic Tip: If you develop a fever in 1300, church logic dictates you definitely committed a sin last Tuesday. Time to buy a pilgrimage badge!',
+      'If you develop a fever in 1300, church logic dictates you definitely committed a sin last Tuesday. Time to buy a pilgrimage badge!',
     rightPageQuip:
-      'Church Orthodoxy 101: Galen wrote it, monks copied it, nobody dared question it. Because questioning Galen wasn’t just bad science—it was a heresy trial.',
+      'Galen wrote it, monks copied it, nobody dared question it. Because questioning Galen wasn’t just bad science—it was a heresy trial.',
   },
   {
     lessonIndex: 1,
@@ -211,9 +211,9 @@ const medievalConfigs = [
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.2). In the drawing box, sketch a physician holding a urine flask (matula) up to the light. Label two reasons why physicians checked star charts (the Zodiac Man) before treating a patient.',
     leftPageQuip:
-      'Uroscopy Masterclass: 20 shades on the urine wheel, and physicians regularly smelled, held up, and tasted the sample. Truly, the golden age of medical diagnostic dignity.',
+      '20 shades on the urine wheel, and physicians regularly smelled, held up, and tasted the sample. Truly, the golden age of medical diagnostic dignity.',
     rightPageQuip:
-      'Galen’s Logic: Got a cold, wet cough? Eat burning hot red peppers. Burning with a raging fever? Jump in an ice-cold river. What could possibly go wrong?',
+      'Got a cold, wet cough? Eat burning hot red peppers. Burning with a raging fever? Jump in an ice-cold river. What could possibly go wrong?',
   },
   {
     lessonIndex: 2,
@@ -307,9 +307,9 @@ const medievalConfigs = [
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.3). In the drawing box, draw a barber-surgeon’s bleeding bowl, fleam, and leeches. Write a 2-sentence explanation of how bloodletting was believed to restore humoural balance.',
     leftPageQuip:
-      'Barber-Surgeon Philosophy: “Whatever is wrong with you, draining two pints of blood with thirty hungry leeches will at least distract you from your runny nose.”',
+      'Whatever is wrong with you, draining two pints of blood with thirty hungry leeches will at least distract you from your runny nose.',
     rightPageQuip:
-      'Apothecary Special: Medieval Theriac contained 64 ingredients, including mashed vipers and raw opium. If it didn’t cure your fever, at least you stopped caring.',
+      'Medieval Theriac contained 64 ingredients, including mashed vipers and raw opium. If it didn’t cure your fever, at least you stopped caring.',
   },
   {
     lessonIndex: 3,
@@ -403,9 +403,9 @@ const medievalConfigs = [
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.4). In the drawing box, sketch medieval hospital beds facing a chapel altar. Write two bullet points explaining why monastic hospitals focused on spiritual ‘care, not cure’.',
     leftPageQuip:
-      'Healthcare on a Budget: Can’t afford 10 gold groats for an Oxford-trained physician? The local wise woman has some mashed cabbage, nettles, and a lucky Latin rhyme.',
+      'Can’t afford 10 gold groats for an Oxford-trained physician? The local wise woman has some mashed cabbage, nettles, and a lucky Latin rhyme.',
     rightPageQuip:
-      'Monastic Hospital Policy: Warm broth, clean linen sheets, and non-stop chapel prayers. But if you’re actually contagious, you’re strictly not getting past the door.',
+      'Warm broth, clean linen sheets, and non-stop chapel prayers. But if you’re actually contagious, you’re strictly not getting past the door.',
   },
   {
     lessonIndex: 4,
@@ -496,11 +496,33 @@ const medievalConfigs = [
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.5). In the drawing boxes, sketch the spread of the Black Death (rat fleas and airborne coughs) and Londoners cleaning streets. Explain why clearing dung could not stop the plague.',
     leftPageQuip:
-      'Plague Prevention (1348): Carrying a posy of dried lavender and sniffing vinegar won’t stop flea bites, but at least London streets smelled slightly more tolerable.',
+      'Carrying a posy of dried lavender and sniffing vinegar won’t stop flea bites, but at least London streets smelled slightly more tolerable.',
     rightPageQuip:
-      'Grade 9 Distinction: Whipping yourself bloody in flagellant street processions to appease God’s wrath unfortunately just gave the local rat fleas an easier landing pad.',
+      'Whipping yourself bloody in flagellant street processions to appease God’s wrath unfortunately just gave the local rat fleas an easier landing pad.',
   },
 ];
+
+// ============================================================================
+// FOOTER STRIP HELPER (Page Number + Quip on the Same Line)
+// Even pages (verso/left): Page number on left, quip on right.
+// Odd pages (recto/right): Quip on left, page number on right.
+// ============================================================================
+function renderFooterStrip(pageNum, quipText, totalPages = 14) {
+  const isEven = pageNum % 2 === 0;
+  if (isEven) {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 12px;">Page ${pageNum} of ${totalPages}</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;"><em>${quipText}</em></span>
+      </div>`;
+  } else {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 12px;"><em>${quipText}</em></span>
+        <span class="footer-page-num">Page ${pageNum} of ${totalPages}</span>
+      </div>`;
+  }
+}
 
 // ============================================================================
 // HTML WORKBOOK GENERATOR FUNCTION (100% Black & White / Photocopy-Ready)
@@ -581,7 +603,32 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       width: 100%;
       box-sizing: border-box;
     }
-    /* CGP-Style Humorous Revision Footnote */
+    /* Single-Line Page Footer with Page Number & Humorous Revision Quip */
+    .page-footer-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid #d0d0d0;
+      padding-top: 1.5px;
+      margin-top: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      line-height: 1.15;
+      color: #666666;
+    }
+    .footer-quip {
+      font-style: italic;
+      letter-spacing: 0.1px;
+      color: #666666;
+    }
+    .footer-page-num {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      white-space: nowrap;
+      color: #000000;
+      font-size: 7pt;
+    }
+    /* CGP-Style Humorous Revision Footnote (Fallback) */
     .cgp-footnote {
       text-align: center;
       font-family: 'Inter', sans-serif;
@@ -694,10 +741,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </ul>
       </div>
 
-      <!-- CGP-Style Humorous Revision Footnote -->
-      <div class="cgp-footnote">
-        &bull; <em>Revision Tip: If you ever feel stressed about GCSE exams, just remember that in 1348 your doctor’s solution would have been strapping a live toad to your chest.</em>
-      </div>
+      ${renderFooterStrip(1, 'If you ever feel stressed about GCSE exams, just remember that in 1348 your doctor’s solution would have been strapping a live toad to your chest.')}
     </div>
   </div>
 `;
@@ -790,10 +834,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      <!-- CGP-Style Humorous Revision Footnote -->
-      <div class="cgp-footnote">
-        &bull; <em>CGP Fact: Franciscan friar Roger Bacon spent 14 years in prison for suggesting doctors should test things. Stick to the syllabus and avoid 14 years in solitary confinement.</em>
-      </div>
+      ${renderFooterStrip(2, 'Franciscan friar Roger Bacon spent 14 years in prison for suggesting doctors should test things. Stick to the syllabus and avoid 14 years in solitary confinement.')}
     </div>
   </div>
 
@@ -881,10 +922,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      <!-- CGP-Style Humorous Revision Footnote -->
-      <div class="cgp-footnote">
-        &bull; <em>Exam Insight: King Edward III ordered Londoners to clean human filth off the streets in 1349. Outstanding for civic smell, totally useless against Yersinia pestis fleas.</em>
-      </div>
+      ${renderFooterStrip(3, 'King Edward III ordered Londoners to clean human filth off the streets in 1349. Outstanding for civic smell, totally useless against Yersinia pestis fleas.')}
     </div>
   </div>
 `;
@@ -1000,10 +1038,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      <!-- CGP-Style Humorous Revision Footnote -->
-      <div class="cgp-footnote">
-        &bull; <em>${cfg.leftPageQuip}</em>
-      </div>
+      ${renderFooterStrip(leftPageNum, cfg.leftPageQuip)}
     </div>
   </div>
 
@@ -1103,10 +1138,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </span>
       </div>
 
-      <!-- CGP-Style Humorous Revision Footnote -->
-      <div class="cgp-footnote">
-        &bull; <em>${cfg.rightPageQuip}</em>
-      </div>
+      ${renderFooterStrip(rightPageNum, cfg.rightPageQuip)}
     </div>
   </div>
 `;
@@ -1279,10 +1311,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- CGP-Style Humorous Revision Footnote -->
-      <div class="cgp-footnote">
-        &bull; <em>Final Revision Motto: Unlike medieval bloodletting, scanning these quiz QR codes is 100% painless and significantly more likely to boost your survival in the exam hall.</em>
-      </div>
+      ${renderFooterStrip(14, 'Unlike medieval bloodletting, scanning these quiz QR codes is 100% painless and significantly more likely to boost your survival in the exam hall.')}
     </div>
   </div>
 </body>
