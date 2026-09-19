@@ -81,6 +81,41 @@ export function initEventDelegation() {
   });
 
   document.body.addEventListener('click', (e) => {
+    // Two-Sided Argument: Click-to-Insert Analytical Connectives
+    const connectiveChip = e.target.closest('.connective-chip');
+    if (connectiveChip) {
+      e.preventDefault();
+      const textToInsert = connectiveChip.getAttribute('data-connective');
+      const container =
+        connectiveChip.closest('.two-sided-argument-interactive') ||
+        connectiveChip.closest('.task-box');
+      const textarea = container ? container.querySelector('textarea.interactive-textarea') : null;
+      if (textarea && textToInsert) {
+        const start = textarea.selectionStart ?? textarea.value.length;
+        const end = textarea.selectionEnd ?? textarea.value.length;
+        const val = textarea.value;
+        const before = val.substring(0, start);
+        const after = val.substring(end);
+        const spacerBefore =
+          before.length > 0 && !before.endsWith(' ') && !before.endsWith('\n') ? ' ' : '';
+        const spacerAfter = ' ';
+        textarea.value = before + spacerBefore + textToInsert + spacerAfter + after;
+        const newPos =
+          before.length + spacerBefore.length + textToInsert.length + spacerAfter.length;
+        textarea.selectionStart = textarea.selectionEnd = newPos;
+        textarea.focus();
+        connectiveChip.style.transform = 'scale(0.92)';
+        connectiveChip.style.borderColor = '#b45309';
+        connectiveChip.style.backgroundColor = '#fef3c7';
+        setTimeout(() => {
+          connectiveChip.style.transform = '';
+          connectiveChip.style.borderColor = '#fde68a';
+          connectiveChip.style.backgroundColor = '#ffffff';
+        }, 180);
+      }
+      return;
+    }
+
     // 1. Vocabulary Matching Game Handlers
     const termBtn = e.target.closest('.match-term-btn');
     const defBtn = e.target.closest('.match-def-btn');

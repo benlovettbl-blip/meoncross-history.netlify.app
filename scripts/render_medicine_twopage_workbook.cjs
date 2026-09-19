@@ -6,7 +6,7 @@ function formatText(txt) {
   return txt;
 }
 
-// 5 Dedicated Renaissance Lessons Configurations with Living Timeline Missions and Spec Anchors
+// 5 Dedicated Renaissance Lessons Configurations with Flexible GCSE Layout
 const renaissanceConfigs = [
   {
     lessonIndex: 3, // mapped to index 3 in units/edexcel_medicine/data.js (lesson_2_1)
@@ -60,29 +60,19 @@ const renaissanceConfigs = [
         q: 'State one reason why the medieval Catholic Church actively protected Galen’s medical ideas.',
         a: 'Galen believed the body was designed by a single Creator, fitting Christian doctrine.',
       },
-      {
-        q: 'What term describes the foul, poisonous air widely believed to cause pestilence?',
-        a: 'Miasma',
-      },
     ],
-    sources: [
+    coreKnowledge: [
       {
-        id: 'Source A',
-        title: 'Gutenberg Screw Press (c1440)',
-        src: '../../images/printing_press.jpg',
-        desc: 'Movable metal type press that mass-produced identical texts and complex anatomical woodcuts without copying errors.',
+        heading: 'Gutenberg’s Movable Type (c1440 / Caxton 1476):',
+        text: 'Took book production out of Catholic Church scriptoria; mass-produced identical medical treatises and anatomical woodcuts across Europe without copyist errors.',
       },
       {
-        id: 'Source B',
-        title: 'Philosophical Transactions (1665)',
-        src: '../../images/philosophical_transactions_vol1.jpg',
-        desc: "Frontispiece of Vol. 1 of Europe's first peer-reviewed scientific journal, established by Henry Oldenburg.",
+        heading: 'The Royal Society (1660 / Royal Charter 1662):',
+        text: "Elite scientific body granted Crown prestige by Charles II; operated under Nullius in Verba ('Take nobody's word for it'); published Philosophical Transactions (1665), Europe's first peer-reviewed scientific journal.",
       },
       {
-        id: 'Source C',
-        title: "Hooke's Micrographia Flea (1665)",
-        src: '../../images/hooke_micrographia_flea.jpg',
-        desc: 'Giant fold-out copperplate engraving from Micrographia, stunning the public with the invisible world of microscopic parasites.',
+        heading: 'Optical Discoveries & The Renaissance Paradox:',
+        text: "Hooke's Micrographia (1665) and Leeuwenhoek's 'animalcules' (1676) revealed microscopic cells and bacteria, but without understanding that microbes caused disease, saving zero lives.",
       },
     ],
     vocabTask: {
@@ -90,7 +80,14 @@ const renaissanceConfigs = [
       termA: 'Monastic Scriptoria',
       termB: 'Movable Metal Type',
       prompt:
-        'Distinguish between hand-copied <strong>monastic scriptoria</strong> (Church monopoly) and Gutenberg’s <strong>movable metal type</strong> (mass communication):',
+        'Explain the crucial difference between hand-copied <strong>monastic scriptoria</strong> (Church monopoly) and Gutenberg’s <strong>movable metal type</strong> (mass scientific communication):',
+    },
+    fourMarkComparison: {
+      question:
+        'Explain one way in which ideas about the cause of disease in the Renaissance were similar to ideas in the Medieval period. [4 marks]',
+      hint: "Focus on the persistent reliance on miasma (foul air) and God's will among ordinary people, despite elite scientific debates.",
+      stems:
+        'One way ideas about causes were similar was the continued belief in... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
     },
     livingTimelineMission: {
       milestone: 'Milestones 1 & 5 (1440 & 1662)',
@@ -110,7 +107,7 @@ const renaissanceConfigs = [
     tariff: '[12 marks &bull; 15 mins]',
     examStem:
       'Explain why Thomas Sydenham was significant in the development of medicine in Britain. [12 marks]',
-    stimulus: ['Observationes Medicae (1676)', 'Classifying diseases'],
+    stimulus: ['Observationes Medicae (1676)', 'Classifying diseases into species'],
     structureStrip: [
       {
         col: '1. BEDSIDE EMPIRICISM',
@@ -118,70 +115,73 @@ const renaissanceConfigs = [
       },
       {
         col: '2. CLASSIFYING DISEASES',
-        text: 'Explain how Sydenham pioneered classifying diseases into distinct species (like a botanist), successfully distinguishing scarlet fever from measles.',
+        text: 'Explain how Sydenham argued diseases were distinct species (like plants), successfully distinguishing measles from scarlet fever.',
       },
       {
-        col: '3. LIMITS OF DIAGNOSIS',
-        text: 'Evaluate his limitations: despite revolutionary observation and prescribing fresh air and cinchona bark, he still could not see germs and believed in miasma.',
+        col: '3. TREATMENT & LIMITS',
+        text: 'Explain his practical innovations (cinchona bark for malaria; cool regimes for smallpox) alongside his continued use of bloodletting and purging.',
       },
     ],
     connectives:
-      'A primary reason Sydenham was significant was... &bull; In particular, he revolutionized diagnosis by... &bull; Furthermore, his publication of... &bull; However, his impact was constrained by... &bull; Overall, he represents...',
+      'Sydenham was significant because... &bull; By rejecting classical theory, he established... &bull; This directly led to... &bull; However, his impact on treatments was limited because...',
     wordBank: {
       technical:
-        'bedside observation &bull; symptom clustering &bull; Observationes Medicae (1676) &bull; botanical taxonomy &bull; measles vs scarlet fever',
+        'English Hippocrates &bull; bedside observation &bull; Observationes Medicae &bull; clinical symptoms &bull; disease species',
       treatments:
-        'cinchona bark (quinine) &bull; laudanum (pain relief) &bull; cool regimen for smallpox &bull; fresh air therapy &bull; iron for anaemia',
+        'scarlet fever vs measles &bull; cinchona bark (quinine) &bull; cooling regime &bull; fresh air &bull; smallpox ventilation',
       continuity:
-        'Four Humours denial &bull; miasma belief &bull; humoural remnants &bull; pre-bacteriology limits &bull; The English Hippocrates',
+        'bloodletting &bull; purging &bull; Four Humours &bull; traditional apothecaries &bull; symptomatic relief',
     },
     doNow: [
       {
-        q: 'What was the revolutionary Latin motto of the Royal Society, founded in 1660?',
-        a: "Nullius in Verba ('Take nobody's word for it')",
+        q: "What was the Latin motto of the Royal Society, meaning 'Take nobody's word for it'?",
+        a: 'Nullius in Verba',
       },
       {
-        q: 'Which German inventor pioneered the movable metal type printing press in c1440?',
-        a: 'Johannes Gutenberg',
-      },
-      {
-        q: "Name the world's first peer-reviewed scientific journal, published from 1665.",
+        q: "Name the world's first peer-reviewed scientific journal published by the Royal Society in 1665.",
         a: 'Philosophical Transactions',
       },
       {
-        q: "Who discovered microscopic 'animalcules' (bacteria) using a single-lens microscope in 1676?",
-        a: 'Antonie van Leeuwenhoek',
+        q: 'What name did Antonie van Leeuwenhoek give to the microscopic organisms he observed in 1676?',
+        a: 'Animalcules (bacteria)',
       },
       {
-        q: 'Why did the invention of printing NOT immediately cure illnesses among ordinary Londoners?',
-        a: 'Medical texts were in Latin and expensive; the public was illiterate and still bought cheap astrology books.',
+        q: 'Who published Micrographia in 1665 featuring a giant fold-out engraving of a flea?',
+        a: 'Robert Hooke',
       },
     ],
-    sources: [
+    coreKnowledge: [
       {
-        id: 'Source A',
-        title: 'Portrait of Dr Thomas Sydenham by Mary Beale',
-        src: '../../images/thomas_sydenham.jpg',
-        desc: "Thomas Sydenham (1624–1689), 'The English Hippocrates', who insisted on bedside observation over Galen.",
+        heading: "The 'English Hippocrates':",
+        text: 'Sydenham rejected university book-learning, pulse-taking charts, and astrology, insisting that physicians must sit at the bedside and carefully record patient symptoms over time.',
       },
       {
-        id: 'Source B',
-        title: 'Bedside Clinical Observation',
-        src: '../../images/philosophical_transactions_vol1.jpg',
-        desc: 'Empirical records recording the precise progression of epidemic fevers and smallpox symptoms.',
+        heading: 'Classifying Diseases as Species:',
+        text: 'Argued that diseases were separate biological entities with specific characteristics (like plants in a botany book), successfully distinguishing scarlet fever from measles.',
+      },
+      {
+        heading: 'Treatments & The Limits of Change:',
+        text: 'Prescribed cinchona bark (quinine) for malaria and cool regimes (open windows, light blankets) for smallpox; yet continued to rely on traditional bloodletting and purging.',
       },
     ],
     vocabTask: {
-      type: 'mapping',
-      termA: 'Bedside Observation',
-      termB: 'Species of Disease',
+      type: 'distinction',
+      termA: 'Humoral Diagnosis',
+      termB: 'Disease Classification',
       prompt:
-        "Write one historically accurate sentence connecting <strong>bedside observation</strong> to Sydenham's classification of <strong>species of disease</strong>:",
+        "Explain the difference between medieval <strong>humoral diagnosis</strong> (treating individual imbalance) and Sydenham's <strong>disease classification</strong> (treating external disease species):",
+    },
+    fourMarkComparison: {
+      question:
+        "Explain one way in which Thomas Sydenham's approach to diagnosis was different from medieval physicians. [4 marks]",
+      hint: 'Contrast Sydenham’s detailed bedside observation of external symptoms with medieval urine charts and astrology.',
+      stems:
+        'One way diagnosis was different was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, Sydenham insisted on...',
     },
     livingTimelineMission: {
       milestone: 'Milestone 8 (1676)',
       instruction:
-        "Turn back to <strong>Pages 2–3 (Milestone 8: 1676)</strong>. In the sketchpad frame, sketch Sydenham taking notes at a patient's bedside and annotate: <em>'Classify diseases like plants; observe the patient, don't read Galen!'</em>",
+        "Turn back to <strong>Pages 2–3 (Milestone 8: 1676)</strong>. In the sketchpad frame, sketch Sydenham recording clinical symptoms at a patient's bedside and annotate his landmark book: <em>Observationes Medicae</em>!",
     },
   },
   {
@@ -189,253 +189,261 @@ const renaissanceConfigs = [
     lessonNum: 3,
     id: 'lesson_2_3',
     title: 'KT2.3: Andreas Vesalius & The Anatomical Revolution (1543)',
-    enquiryQuestion: "How did Andreas Vesalius challenge Galen's authority on human anatomy?",
+    enquiryQuestion:
+      'Why did Andreas Vesalius succeed in overturning 1,400 years of Galenic anatomical authority?',
     specAnchor:
-      'Approaches to prevention and treatment: Andreas Vesalius and the study of human anatomy.',
-    tariff: '[12 marks &bull; 15 mins]',
+      'Andreas Vesalius and his work on anatomy; the impact of De Humani Corporis Fabrica (1543).',
+    tariff: '[16+4 marks &bull; 25 mins]',
     examStem:
-      'Explain why Andreas Vesalius was able to make breakthroughs in anatomical knowledge in the sixteenth century. [12 marks]',
-    stimulus: ['De Humani Corporis Fabrica (1543)', 'Dissections in Padua'],
+      "'Andreas Vesalius’s work on anatomy was the most significant breakthrough in medicine in the period c1500–c1700.' How far do you agree? Explain your answer. [16+4 marks]",
+    stimulus: ['De Humani Corporis Fabrica (1543)', 'Medical treatments in the 16th century'],
     structureStrip: [
       {
-        col: '1. HUMAN DISSECTION',
-        text: 'Explain how Vesalius dissected executed criminals himself at Padua university, discovering Galen had dissected pigs, dogs, and apes instead of humans.',
+        col: '1. OVERTURNING GALEN (CHANGE)',
+        text: 'Explain how Vesalius dissected human cadavers himself at Padua, correcting 300+ errors (e.g. human lower jaw is 1 bone not 2; no invisible heart pores).',
       },
       {
-        col: '2. DISPROVING GALEN (300 ERRORS)',
-        text: 'Detail specific anatomical corrections: human lower jaw is one single bone (not two), breastbone has three parts (not seven), no holes in septum.',
+        col: '2. VISUAL MASS COMMUNICATION',
+        text: 'Explain the impact of De Fabrica (1543): masterfully illustrated anatomical plates printed identically on printing presses, inspiring a generation of anatomists.',
       },
       {
-        col: '3. PRINTING & SPREAD IN ENGLAND',
-        text: "Explain how Fabrica's exquisite woodcut illustrations were mass-printed and copied in England by Thomas Geminus (Compendiosa, 1545).",
+        col: '3. LIMITATIONS ON TREATMENT (CRITERIA)',
+        text: 'Evaluate: Vesalius created accurate anatomy, but knowing the structure of the body did not cure disease. Doctors remained helpless at the bedside.',
       },
     ],
     connectives:
-      "The primary catalyst for Vesalius's success was... &bull; By conducting dissections with his own hands... &bull; Crucially, he disproved Galen by showing... &bull; Furthermore, the printing press allowed... &bull; Consequently...",
+      'On the one hand, Vesalius transformed anatomy because... &bull; Crucially, this disproved... &bull; However, in terms of treating patients... &bull; Therefore, his immediate impact was...',
     wordBank: {
       technical:
-        'human dissection &bull; Padua University &bull; De Humani Corporis Fabrica (1543) &bull; anatomical woodcuts &bull; cathedra (pulpit)',
+        'De Humani Corporis Fabrica (1543) &bull; University of Padua &bull; dissection &bull; human cadaver &bull; anatomical plates',
       corrections:
-        'single human mandible &bull; sternum (3 parts) &bull; cardiac septum (impermeable) &bull; renal blood vessels &bull; 300 Galenic errors',
-      impact:
-        'Thomas Geminus (1545) &bull; barber-surgeons manual &bull; empirical observation &bull; anatomical theater &bull; Padua medical school',
+        '300 Galenic errors &bull; lower jaw (mandible) &bull; septum pores &bull; breastbone segments &bull; animal vs human anatomy',
+      continuity:
+        'lack of cures &bull; traditional surgery &bull; bleeding &bull; surgical pain &bull; infection risks',
     },
     doNow: [
       {
-        q: "Why was Thomas Sydenham known as the 'English Hippocrates'?",
-        a: 'Because he emphasized careful bedside observation of patient symptoms rather than book theory.',
+        q: 'What nickname was given to Thomas Sydenham because of his emphasis on bedside observation?',
+        a: 'The English Hippocrates',
       },
       {
-        q: 'Name one disease that Sydenham successfully distinguished from another illness.',
-        a: 'Measles from scarlet fever.',
+        q: 'Name the 1676 book in which Sydenham set out his methods of clinical observation.',
+        a: 'Observationes Medicae',
       },
       {
-        q: 'What was the main language in which Renaissance scientific books were published?',
-        a: 'Latin.',
+        q: 'What treatment did Sydenham prescribe for malaria fevers, imported from South America?',
+        a: 'Cinchona bark (quinine)',
       },
       {
-        q: "State one reason why Galen's anatomical knowledge contained numerous errors.",
-        a: 'Roman law forbade dissecting human corpses, so Galen dissected animals like pigs, dogs, and Barbary apes.',
-      },
-      {
-        q: 'How many bones did Galen claim made up the human lower jaw?',
-        a: 'Two bones (true for dogs and apes, but false for humans, who have one mandible).',
+        q: 'Which two childhood illnesses did Sydenham successfully prove were separate diseases?',
+        a: 'Measles and scarlet fever',
       },
     ],
-    sources: [
+    coreKnowledge: [
       {
-        id: 'Source A',
-        title: 'De Humani Corporis Fabrica Frontispiece (1543)',
-        src: '../../images/vesalius_fabrica_frontispiece.jpg',
-        desc: 'Vesalius dissecting a human corpse in the center of the crowded Padua anatomy theater with his own hands.',
+        heading: 'Padua Anatomical Theatre & Human Dissection:',
+        text: "Vesalius descended from the high lecturer's pulpit to dissect human cadavers himself, rather than letting illiterate barber-surgeons do the cutting while professors read Galen.",
       },
       {
-        id: 'Source B',
-        title: 'Vesalius Muscle Men Plate',
-        src: '../../images/vesalius_muscle_men.jpg',
-        desc: 'Exquisite anatomical plate showing human musculature drawn in a classical Renaissance landscape.',
+        heading: 'Correcting Over 300 Galenic Errors:',
+        text: 'Proved Galen had only dissected animals (pigs, apes, dogs); proved human lower jaw is one bone not two; breastbone has 3 parts not 7; septum of the heart has no invisible holes.',
+      },
+      {
+        heading: 'De Humani Corporis Fabrica (1543):',
+        text: 'Published magnificent folio with precise woodcut anatomical illustrations mass-produced on printing presses; yet accurate anatomy could not cure infection or internal illness.',
       },
     ],
     vocabTask: {
       type: 'distinction',
-      termA: 'Medieval Cathedra Lecture',
-      termB: 'Empirical Human Dissection',
+      termA: 'Galenic Orthodoxy',
+      termB: 'Direct Human Dissection',
       prompt:
-        "Distinguish between passive <strong>cathedra lectures</strong> (professors reading Latin while barbers sliced pigs) and Vesalius's <strong>direct human dissection</strong>:",
+        "Explain the difference between medieval <strong>Galenic orthodoxy</strong> (reading ancient books) and Vesalius's <strong>direct human dissection</strong> (hands-on observation):",
+    },
+    fourMarkComparison: {
+      question:
+        'Explain one way in which methods of investigating the human body in the Renaissance were different from methods in the Medieval period. [4 marks]',
+      hint: 'Contrast medieval professors lecturing from Galenic texts while barbers cut with Vesalius performing human dissections himself.',
+      stems:
+        'One way methods of investigation differed was... &bull; In the Medieval period... &bull; In contrast, in the Renaissance, Vesalius...',
     },
     livingTimelineMission: {
       milestone: 'Milestone 3 (1543)',
       instruction:
-        "Turn back to <strong>Pages 2–3 (Milestone 3: 1543)</strong>. In the sketchpad frame, sketch the single human lower jawbone and annotate: <em>'De Fabrica — 300 Galenic Errors Corrected through Human Dissection'</em>!",
+        'Turn back to <strong>Pages 2–3 (Milestone 3: 1543)</strong>. In the sketchpad frame, sketch Vesalius dissecting the human muscular system and annotate his landmark masterwork: <em>De Humani Corporis Fabrica</em>!',
     },
   },
   {
     lessonIndex: 6, // lesson_2_4
     lessonNum: 4,
     id: 'lesson_2_4',
-    title: 'KT2.4: William Harvey & The Circulation of Blood (1628)',
+    title: 'KT2.4: William Harvey & The Circulation of the Blood (1628)',
     enquiryQuestion:
-      "Why did William Harvey's discovery of blood circulation meet fierce initial resistance?",
+      "Why did William Harvey's discovery of blood circulation meet fierce medical resistance?",
     specAnchor:
-      'Ideas about the cause of disease and illness: William Harvey and the circulation of the blood.',
+      'William Harvey and his work on the circulation of the blood; the impact of De Motu Cordis (1628).',
     tariff: '[12 marks &bull; 15 mins]',
     examStem:
-      "Explain why William Harvey's discovery of the circulation of blood had a limited immediate impact on medical treatment in the seventeenth century. [12 marks]",
-    stimulus: ['De Motu Cordis (1628)', 'The Four Humours'],
+      "Explain why William Harvey's discovery of the circulation of the blood was a turning point in medicine. [12 marks]",
+    stimulus: ['Calculating blood volume', 'De Motu Cordis (1628)'],
     structureStrip: [
       {
-        col: '1. THE CIRCULATION DISCOVERY',
-        text: 'Explain how Harvey proved the heart is a mechanical pump, disproving Galen’s claim that liver makes blood constantly from food consumed as fuel.',
+        col: '1. THE HEART AS A MECHANICAL PUMP',
+        text: 'Explain how Harvey proved the heart acts as a pump, circulating blood through a closed one-way system of arteries and veins.',
       },
       {
-        col: '2. MATHEMATICS & EXPERIMENT',
-        text: 'Detail his mechanical proofs: calculated heart pumps 540 pints/day (too much to consume); tight-ligature arm tests showing one-way vein valves.',
+        col: '2. MATHEMATICAL CALCULATION',
+        text: 'Explain how Harvey calculated that the heart pumped 540 pints an hour (more than body weight), disproving Galen’s theory that the liver made blood from food.',
       },
       {
-        col: '3. WHY TREATMENTS DID NOT CHANGE',
-        text: 'Explain the paradox: knowing blood circulated did not cure disease; doctors still bled patients with leeches; capillaries remained invisible without microscopes.',
+        col: '3. RESISTANCE & TREATMENT LIMITS',
+        text: "Explain why conservative doctors rejected Harvey ('quack') and why his discovery did not change medical treatments or halt bloodletting.",
       },
     ],
     connectives:
-      'On the one hand, Harvey revolutionized physiology because... &bull; Using mathematical calculation, he proved... &bull; However, his discovery had limited practical effect because... &bull; In particular, physicians still practiced... &bull; Consequently...',
+      'Harvey’s discovery was a turning point because... &bull; By applying mechanical calculations, he proved... &bull; Consequently, this disproved Galen’s idea that... &bull; However, his practical impact was delayed because...',
     wordBank: {
       technical:
-        'De Motu Cordis (1628) &bull; mechanical pump &bull; circulation of blood &bull; one-way venous valves &bull; tight ligature test',
-      mathematics:
-        '540 pints per day &bull; arterial vs venous flow &bull; cold-blooded animal dissection &bull; disproved liver furnace &bull; systole and diastole',
-      limits:
-        'invisible capillaries &bull; persisting phlebotomy (bleeding) &bull; Four Humours adherence &bull; quack ridicule &bull; zero new medications',
+        'De Motu Cordis (1628) &bull; circulation of the blood &bull; mechanical pump &bull; arteries &bull; veins &bull; vein valves',
+      experiments:
+        'Padua (Fabricius) &bull; ligature experiment &bull; 540 pints per hour &bull; dissection of cold-blooded animals &bull; capillaries',
+      continuity:
+        "conservative backlash ('circulator/quack') &bull; lack of treatment impact &bull; continued bloodletting &bull; microscopic limits",
     },
     doNow: [
       {
-        q: "In what year was Andreas Vesalius's 'De Humani Corporis Fabrica' published?",
+        q: 'In what year did Andreas Vesalius publish De Humani Corporis Fabrica?',
         a: '1543',
       },
       {
-        q: 'Name one specific Galenic error regarding bones that Vesalius corrected.',
-        a: 'The human lower jaw has one bone (not two); the breastbone has three parts (not seven).',
+        q: 'At which famous Italian university did Vesalius serve as professor of surgery?',
+        a: 'University of Padua',
       },
       {
-        q: "Which English publisher pirated Vesalius's plates for English barber-surgeons in 1545?",
-        a: 'Thomas Geminus (Compendiosa).',
+        q: 'How many anatomical errors made by Galen did Vesalius identify and correct?',
+        a: 'Over 300 errors',
       },
       {
-        q: 'What ancient theory did Galen propose about how blood was produced in the body?',
-        a: 'Galen claimed blood was constantly produced by the liver from food and consumed by tissues like fuel.',
-      },
-      {
-        q: 'What role did Galen believe the heart played in the vascular system?',
-        a: 'A furnace that warmed blood and allowed spirits to cross through invisible pores in the septum.',
+        q: 'State one specific anatomical error of Galen corrected by Vesalius.',
+        a: 'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
       },
     ],
-    sources: [
+    coreKnowledge: [
       {
-        id: 'Source A',
-        title: "Harvey's Forearm Ligature Experiment (1628)",
-        src: '../../images/harvey_veins.jpg',
-        desc: 'Original plate from De Motu Cordis demonstrating how pressing blood in veins proves internal one-way valves.',
+        heading: 'The Heart as a Mechanical Pump:',
+        text: 'Influenced by Renaissance mechanical water pumps, Harvey proved the heart is a muscular pump that forces blood into arteries, which returns through veins in a closed, one-way system.',
       },
       {
-        id: 'Source B',
-        title: 'Vesalius Fabrica Dissection Plate',
-        src: '../../images/vesalius_fabrica_frontispiece.jpg',
-        desc: 'Padua university training where Harvey studied before serving as physician to James I and Charles I.',
+        heading: "Disproving Galen's Liver Theory:",
+        text: 'Galen taught blood was made in the liver and consumed like fuel. Harvey mathematically calculated the heart pumped 540 pints an hour (more than body weight), proving blood must recirculate.',
+      },
+      {
+        heading: 'Forensic Experiments & Treatment Limits:',
+        text: 'Used tight ligatures on arms to prove vein valves only allow blood to flow towards the heart; published De Motu Cordis (1628); yet bloodletting continued because doctors lacked drug cures.',
       },
     ],
     vocabTask: {
-      type: 'cloze',
+      type: 'distinction',
+      termA: 'Galenic Blood Consumption',
+      termB: 'Circular Recirculation',
       prompt:
-        'Complete the summary below using the terms <em>Circulation</em>, <em>Mechanical Pump</em>, and <em>Phlebotomy</em>:',
-      clozeText:
-        'William Harvey proved that the heart acted as a [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ], maintaining the continuous [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] of blood. Despite this breakthrough, physicians continued the harmful practice of [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ].',
-      followUp:
-        'Explain why physicians refused to abandon bleeding even after Harvey disproved Galen:',
+        "Explain the difference between Galen's theory of <strong>blood consumption</strong> (liver creating blood burned as fuel) and Harvey's <strong>circular recirculation</strong> (closed continuous circuit):",
+    },
+    fourMarkComparison: {
+      question:
+        "Explain one way in which William Harvey's understanding of the circulatory system was different from Galen's theories. [4 marks]",
+      hint: "Contrast Galen's idea that blood is made in the liver and consumed as fuel with Harvey's proof of a closed, one-way circulation pumped by the heart.",
+      stems:
+        "One way Harvey's ideas differed from Galen was... &bull; Galen claimed that blood was... &bull; In contrast, Harvey proved that...",
     },
     livingTimelineMission: {
       milestone: 'Milestone 4 (1628)',
       instruction:
-        'Turn back to <strong>Pages 2–3 (Milestone 4: 1628)</strong>. In the sketchpad frame, sketch Harvey’s forearm tight-ligature experiment showing swollen vein valves that proved blood flows toward the heart only!',
+        'Turn back to <strong>Pages 2–3 (Milestone 4: 1628)</strong>. In the sketchpad frame, sketch the famous arm ligature experiment showing vein valves and annotate: <em>De Motu Cordis (1628)</em>!',
     },
   },
   {
     lessonIndex: 7, // lesson_2_5
     lessonNum: 5,
     id: 'lesson_2_5',
-    title: 'KT2.5: Continuity, Quackery & The Great Plague of 1665',
+    title: 'KT2.5: Continuity in Treatment & The Great Plague of London (1665)',
     enquiryQuestion:
-      'Was the response to the Great Plague of 1665 modern public health or medieval superstition?',
+      'Why did the Great Plague of 1665 reveal the severe limitations of Renaissance medical progress?',
     specAnchor:
-      'A case study of the treatment and prevention of illness during the Great Plague of 1665: approaches to treatment and attempts to prevent its spread.',
+      'Dealing with the Great Plague in London, 1665: approaches to treatment and attempts to prevent its spread.',
     tariff: '[16+4 marks &bull; 25 mins]',
     examStem:
-      '“The responses of ordinary people and local government to the Great Plague of 1665 showed that medical understanding had completely transformed since the Black Death of 1348.” How far do you agree? Explain your answer. [16 marks + 4 marks for SPaG]',
-    stimulus: ['Mayoral Quarantine Orders', 'Plague amulets and smoking'],
+      "'Approaches to treating and preventing disease during the Great Plague of 1665 showed almost complete continuity with the Black Death of 1348.' How far do you agree? Explain your answer. [16+4 marks]",
+    stimulus: ['The Four Humours and miasma', 'Quarantine and watchmen'],
     structureStrip: [
       {
-        col: '1. LOCAL GOVERNMENT CHANGE',
-        text: "Explain new mayoral measures: 28-day quarantine of infected houses, red cross on doors with 'Lord have mercy', parish watchmen, banned gatherings.",
+        col: '1. LOCAL CIVIC ACTION (CHANGE)',
+        text: "Explain how London authorities enforced organized quarantine: padlocking infected houses for 28 days with red crosses ('Lord have mercy upon us'), watchmen, and Bills of Mortality.",
       },
       {
-        col: '2. POPULAR CONTINUITY & BELIEFS',
-        text: 'Explain what stayed the same: Four Humours bleeding, miasma posies/smoking tobacco, astrology, God’s wrath, slaughtering 40,000 dogs and 200,000 cats.',
+        col: '2. MEDICAL TREATMENT (CONTINUITY)',
+        text: "Explain how doctors still blamed miasma, God, and the Four Humours: smoking tobacco, holding pomanders, bleeding patients, and taking useless quack 'Plague Water'.",
       },
       {
-        col: '3. OVERALL EVALUATIVE JUDGMENT',
-        text: 'Weigh the balance: Did administrative quarantine represent genuine scientific progress, or did total ignorance of Yersinia pestis bacteria mean responses remained medieval?',
+        col: '3. EVALUATIVE VERDICT (CRITERIA)',
+        text: 'Weigh civic organisation against medical ignorance: government responses became more organized, but medical knowledge of the disease was identical to 1348.',
       },
     ],
     connectives:
-      "In support of the statement, municipal authorities introduced... &bull; In particular, the Mayor's 1665 Plague Orders enforced... &bull; On the other hand, popular understanding showed profound continuity because... &bull; Crucially, people still believed... &bull; Overall, I judge that...",
+      'On the one hand, responses in 1665 showed change because... &bull; For example, local authorities... &bull; On the other hand, there was complete continuity in... &bull; Overall, while civic methods changed...',
     wordBank: {
-      government:
-        "Mayor's Plague Orders &bull; 28-day quarantine &bull; parish watchmen &bull; Bills of Mortality &bull; red cross on door",
+      technical:
+        'The Great Plague (1665) &bull; London Bills of Mortality &bull; searchers of the dead &bull; mass plague pits &bull; parish watchmen',
+      quarantine:
+        "28-day house quarantine &bull; red cross on doors &bull; 'Lord have mercy upon us' &bull; killing 200,000 dogs and cats",
       continuity:
-        'miasma pomanders &bull; forced tobacco smoking &bull; astrological alignment &bull; divine retribution &bull; slaughter of dogs and cats',
-      treatments:
-        'plague water / theriac &bull; hot onions on buboes &bull; bleeding with leeches &bull; quack remedies &bull; mass burial pits (100,000 dead)',
+        'miasma &bull; pomanders &bull; smoking tobacco &bull; Four Humours &bull; bloodletting &bull; quack remedies &bull; plague water',
     },
     doNow: [
       {
-        q: 'In what year did the Great Plague strike London, killing roughly 100,000 people?',
-        a: '1665',
+        q: 'In what year did William Harvey publish De Motu Cordis?',
+        a: '1628',
       },
       {
-        q: 'How did William Harvey calculate that blood must circulate continuously?',
-        a: 'The heart pumped 540 pints a day—far more blood than food eaten could possibly replace.',
+        q: 'Which ancient theory of blood production did Harvey disprove through mathematical calculations?',
+        a: "Galen's theory that the liver constantly manufactures blood from food",
       },
       {
-        q: "Why did Harvey's discovery NOT immediately cure disease?",
-        a: 'Doctors still did not know what caused disease (bacteria was unknown); they continued bloodletting.',
+        q: 'What tiny blood vessels connecting arteries and veins could Harvey NOT see without a microscope?',
+        a: 'Capillaries',
       },
       {
-        q: 'What symbol was painted on the doors of infected houses during the 1665 Plague?',
-        a: "A red cross, accompanied by the words 'Lord have mercy upon us'.",
-      },
-      {
-        q: 'What animal was wrongly blamed and slaughtered in tens of thousands during the 1665 Plague?',
-        a: 'Dogs and cats (which allowed the true carriers—black rats and fleas—to multiply).',
+        q: "Why did Harvey's discovery of blood circulation have NO immediate effect on medical treatment?",
+        a: 'Doctors did not know what caused infection and continued bloodletting to balance humours.',
       },
     ],
-    sources: [
+    coreKnowledge: [
       {
-        id: 'Source A',
-        title: 'Doctor Schnabel von Rom (Plague Doctor 1665)',
-        src: '../../images/plague_doctor_1665.png',
-        desc: 'Protective waxed leather robe and bird beak mask stuffed with sweet herbs against poisonous miasma.',
+        heading: 'The Great Plague Catastrophe (1665):',
+        text: 'Swept through overcrowded London, killing roughly 100,000 citizens (20% of the population); bodies collected at night by dead-carts and dumped in mass parish lime pits.',
       },
       {
-        id: 'Source B',
-        title: 'Plague Pit Burial at Holywell Mount (1665)',
-        src: '../../images/plague_burial.jpg',
-        desc: 'Dead-carts collecting bodies at night for mass lime-pit burials across London parishes.',
+        heading: 'Civic Plague Orders (Change):',
+        text: "Mayor enforced strict municipal quarantine: infected houses padlocked for 28 days, painted with a red cross and 'Lord have mercy upon us', guarded by watchmen; 200,000 dogs and cats slaughtered.",
+      },
+      {
+        heading: 'Stagnation in Treatment (Continuity):',
+        text: "Physicians had no understanding of rat fleas or bacteria; citizens smoked tobacco and carried pomanders against miasma; apothecaries sold fake 'Plague Water'; bleeding and purging persisted.",
       },
     ],
     vocabTask: {
       type: 'distinction',
-      termA: 'Parish Quarantine Orders',
-      termB: 'Miasma Pomanders',
+      termA: 'Civic Quarantine Orders',
+      termB: 'Miasmatic Pomanders',
       prompt:
-        'Distinguish between civic public health measures (quarantine and watchmen) and superstitious individual protections (pomanders and smoking):',
+        'Explain the difference between municipal <strong>civic quarantine orders</strong> (watchmen, red crosses, locked houses) and individual <strong>miasmatic pomanders</strong> (herbs, smoking):',
+    },
+    fourMarkComparison: {
+      question:
+        'Explain one way in which government reactions to the Great Plague of 1665 were different from reactions to the Black Death of 1348. [4 marks]',
+      hint: "Contrast the lack of organized municipal action in 1348 with London's 1665 quarantine orders, locked houses, appointed watchmen, and Bills of Mortality.",
+      stems:
+        'One way government reactions differed was... &bull; In 1348, the government... &bull; In contrast, in 1665, London authorities...',
     },
     livingTimelineMission: {
       milestone: 'Milestone 7 (1665)',
@@ -490,19 +498,19 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
     }
     .task-line {
       border-bottom: 1.2px solid #475569;
-      height: 7.6mm;
+      height: 7.4mm;
       width: 100%;
       box-sizing: border-box;
     }
     .task-line-dotted {
       border-bottom: 1.2px solid #475569;
-      height: 5.6mm;
+      height: 5.2mm;
       width: 100%;
       box-sizing: border-box;
     }
     .archival-badge {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       padding: 2.5px 7px;
@@ -518,7 +526,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
       border-left: 4px solid #1e3a8a;
       border-radius: 4px;
       padding: 4px 8px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -548,32 +556,33 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
+      font-family: 'Inter', sans-serif;
     }
     .living-mission-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 7pt;
-      font-weight: 800;
       background: #0284c7;
       color: #ffffff;
-      padding: 1.5px 6px;
-      border-radius: 2px;
+      font-size: 6.8pt;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 3px;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 6px;
       white-space: nowrap;
     }
     .living-mission-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 7.4pt;
       color: #0369a1;
       line-height: 1.25;
-      flex: 1;
     }
     .living-mission-link {
-      font-family: 'Inter', sans-serif;
-      font-size: 7pt;
       font-weight: 700;
       color: #0284c7;
+      font-size: 7.2pt;
       white-space: nowrap;
+      margin-left: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
@@ -581,22 +590,24 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGE 1: FRONT COVER (Recto, Right Page)
+  // PAGE 1: FRONT COVER (Strict Neutral Departmental Branding)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 16px 18px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: flex-start;">
-    <!-- Institutional Header & Pupil Registration Strip -->
-    <div style="margin-bottom: 10px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
-        <span class="school-brand-target" data-department-name="The History Department" style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 700;">
-          The History Department
-        </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 600;">
-          GCSE History &bull; Paper 1
-        </span>
+  <div class="page page-container" id="page-1" style="padding: 18px 22px; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
+    <div>
+      <!-- Top Institutional Banner with Customizer Stamping Hook -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 12px;">
+        <div data-department-name="The History Department" style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-family: 'Cinzel', serif; font-size: 10pt; font-weight: 900; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px;">
+            <span class="school-brand-target">The History Department</span> &bull; Pupil Mastery Series
+          </span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #64748b; letter-spacing: 0.5px;">
+          EDEXCEL GCSE (9–1) HISTORY &bull; EDITION 2026.1
+        </div>
       </div>
 
-      <!-- Pupil Name & Class Box at Top -->
+      <!-- Pupil Details Strip -->
       <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 12px; background: #f8fafc; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center;">
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Pupil Name:</strong>
@@ -724,7 +735,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
                 <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Johannes Gutenberg: Movable Metal Type Printing Press</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Invented in Mainz, Germany; brought to Westminster by William Caxton in 1476. Shatters the Catholic Church\'s monopoly over scriptoria. Enables rapid, cheap production of identical anatomical woodcuts and medical texts with zero hand-copying distortions.
+                Invented in Mainz, Germany; brought to Westminster by William Caxton in 1476. Shatters the Catholic Church's monopoly over scriptoria. Enables rapid, cheap production of identical anatomical woodcuts and medical texts with zero hand-copying distortions.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
@@ -750,14 +761,14 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
             <div>
               <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
                 <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">c.1500</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">The Humanist Renaissance: Questioning Ancient Dogma</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">The Rise of Medical Humanism</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Scholars rediscover original Greek and Roman manuscripts uncontaminated by medieval monastic translations. Humanism promotes human reason, direct observation of nature, and the moral duty to interrogate the physical universe rather than blindly obeying medieval authority.
+                Scholars bypass distorted medieval Church translations and translate original Greek and Latin medical manuscripts directly. Promotes human reason, empirical observation, and critical questioning, fostering an intellectual climate ready to challenge Galen.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lessons 1–3 &bull; Recovery of ancient clinical ideals &bull; Sparking anatomical enquiry
+              <strong>Key Enquiry Link:</strong> Lesson 1 &bull; Intellectual catalyst &bull; Re-evaluating ancient anatomical authority
             </div>
           </div>
         </div>
@@ -769,7 +780,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
               <span>⌜</span><span>Milestone 3 Sketchpad</span><span>⌝</span>
             </div>
             <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; font-style: italic;">
-              [Sketch: Vesalius Fabrica 1-piece lower jawbone]
+              [Sketch: Dissected skeleton leaning on spade from De Fabrica]
             </div>
             <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
               <span>⌞</span><span>1543 Anatomy</span><span>⌟</span>
@@ -782,11 +793,11 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
                 <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Andreas Vesalius Publishes De Humani Corporis Fabrica</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Conducting dissections with his own hands at Padua University, Vesalius proves Galen made over 300 anatomical errors because Galen dissected apes, dogs, and pigs. Corrects Galen: lower jaw is one bone (not two); breastbone has three parts (not seven); no holes exist in the heart septum.
+                Based on direct human dissection at Padua, Vesalius corrects over 300 errors in Galen's anatomy (e.g. human lower jaw is one bone, not two; no pores in the heart septum). Proves Galen only dissected animals. Inspires empirical observation across Europe.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lesson 3 &bull; Shattering Galenic infallibility &bull; Thomas Geminus brings prints to London (1545)
+              <strong>Key Enquiry Link:</strong> Lesson 3 &bull; Overturning 1,400 years of Galen &bull; Zero immediate cures limitation
             </div>
           </div>
         </div>
@@ -798,7 +809,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
               <span>⌜</span><span>Milestone 4 Sketchpad</span><span>⌝</span>
             </div>
             <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; font-style: italic;">
-              [Sketch: Forearm tight ligature &amp; venous valves]
+              [Sketch: Arm ligature with vein valves and swollen nodes]
             </div>
             <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
               <span>⌞</span><span>1628 Circulation</span><span>⌟</span>
@@ -808,14 +819,14 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
             <div>
               <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
                 <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1628</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">William Harvey: Circulation of Blood (De Motu Cordis)</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">William Harvey Publishes De Motu Cordis</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Calculates mathematically that the heart pumps 540 pints of blood per day—proving blood cannot be manufactured constantly by the liver as fuel. Proves blood circulates continuously in one direction; heart acts as a mechanical pump. Vein valves prevent backflow.
+                Calculates heart pumps 540 pints of blood per hour—proving blood must circulate through a closed system rather than being consumed as fuel. Demonstrates vein valves ensure one-way flow. Proves the heart acts as a mechanical pump.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lesson 4 &bull; Mathematical physiology vs. Four Humours &bull; Initial resistance from conservative physicians
+              <strong>Key Enquiry Link:</strong> Lesson 4 &bull; Mathematical physiology &bull; Resistance from traditional physicians
             </div>
           </div>
         </div>
@@ -838,10 +849,10 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
       <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
         <div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-            Living Unit Timeline &bull; Part II: Institutional Science &amp; Public Reality (1660–1676)
+            Living Unit Timeline &bull; Part II: Institutional Science &amp; Diagnosis (1660–1676)
           </div>
           <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 14pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
-            The Scientific Method vs Popular Tradition
+            Empiricism &bull; Institutions &bull; Continuity
           </h2>
         </div>
         <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">
@@ -850,35 +861,35 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Protocol Banner -->
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #0284c7; padding: 4px 8px; margin-bottom: 7px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
-        <span><strong>Living Timeline Complete:</strong> Cross-reference these 8 milestones during extended exam writing to evaluate change vs continuity.</span>
-        <span style="font-weight: 700; color: #0284c7; white-space: nowrap; margin-left: 8px;">Spine &bull; Facing Right</span>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #1e3a8a; padding: 4px 8px; margin-bottom: 7px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
+        <span><strong>Living Timeline Protocol:</strong> Complete all milestone sketches and summary links to unlock the back-page revision matrix.</span>
+        <span style="font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">Spine &bull; Facing Right</span>
       </div>
 
       <!-- Chronological Timeline Nodes: 1660–1676 -->
       <div style="display: flex; flex-direction: column; gap: 7px;">
 
-        <!-- Milestone 5: 1660–1662 -->
+        <!-- Milestone 5: 1660/1662 -->
         <div style="display: grid; grid-template-columns: 105px 1fr; gap: 10px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
           <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 27mm;">
             <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
               <span>⌜</span><span>Milestone 5 Sketchpad</span><span>⌝</span>
             </div>
             <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; font-style: italic;">
-              [Sketch: Royal Society crest &amp; motto 'Nullius in Verba']
+              [Sketch: Royal Society seal with Nullius in Verba motto]
             </div>
             <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1662 Charter</span><span>⌟</span>
+              <span>⌞</span><span>1662 Royal Charter</span><span>⌟</span>
             </div>
           </div>
           <div style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1662</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Foundation of The Royal Society &amp; Nullius in Verba</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1660/62</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Foundation of The Royal Society (Royal Charter 1662)</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Founded at Gresham College in London (1660); granted Royal Charter by King Charles II in 1662. Adopts radical Latin motto <em>Nullius in Verba</em> (&ldquo;Take nobody\'s word for it&rdquo;). Demands laboratory demonstration and repeatable experiment over ancient theological and Galenic authority.
+                Founded at Gresham College in London (1660); granted Royal Charter by King Charles II in 1662. Adopts radical Latin motto <em>Nullius in Verba</em> (&ldquo;Take nobody's word for it&rdquo;). Demands laboratory demonstration and repeatable experiment over ancient theological and Galenic authority.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
@@ -904,10 +915,10 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
             <div>
               <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
                 <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1665</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Philosophical Transactions &amp; Hooke\'s Micrographia</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Philosophical Transactions &amp; Hooke's Micrographia</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Henry Oldenburg establishes Europe\'s first peer-reviewed journal, creating an international scientific communication network. Robert Hooke publishes <em>Micrographia</em>, revealing complex microscopic structures. Later, Leeuwenhoek submits drawings of living &ldquo;animalcules&rdquo; (bacteria) in 1676.
+                Henry Oldenburg establishes Europe's first peer-reviewed journal, creating an international scientific communication network. Robert Hooke publishes <em>Micrographia</em>, revealing complex microscopic structures. Later, Leeuwenhoek submits drawings of living &ldquo;animalcules&rdquo; (bacteria) in 1676.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
@@ -965,7 +976,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
                 <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Thomas Sydenham Publishes Observationes Medicae</strong>
               </div>
               <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; line-height: 1.35; margin: 0;">
-                The \'English Hippocrates\' moves medicine away from ancient book theory. Argues that diseases should be classified into distinct species like plants. Successfully distinguishes measles from scarlet fever; prescribes fresh air and cinchona bark (quinine) for fevers.
+                The 'English Hippocrates' moves medicine away from ancient book theory. Argues that diseases should be classified into distinct species like plants. Successfully distinguishes measles from scarlet fever; prescribes fresh air and cinchona bark (quinine) for fevers.
               </p>
             </div>
             <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
@@ -1000,37 +1011,37 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
     <div class="page page-container" id="page-${leftPageNum}" style="padding: 10px 14px; display: flex; flex-direction: column; height: 272mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -6px;">
       <div>
         <!-- Lesson Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Lesson ${cfg.lessonNum} &bull; Disciplinary Enquiry
+              Lesson ${cfg.lessonNum} &bull; Core Knowledge &amp; Comparative Analysis
             </div>
-            <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; line-height: 1.25;">
+            <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 12.5pt; color: #0f172a; line-height: 1.25;">
               ${cfg.title}
             </h2>
           </div>
           <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">
-            Disciplinary Lab
+            Disciplinary Study
           </span>
         </div>
 
-        <!-- Task 1: Do Now Recall (5 Questions from Prior Knowledge) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; margin-bottom: 6px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px;">
+        <!-- Task 1: Do Now Recall (4 Questions from Prior Knowledge) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #f8fafc; margin-bottom: 5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px;">
               Task 1: Prior Knowledge Retrieval (Do Now)
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">Target: 5/5</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #64748b;">Target: 4/4</span>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="display: flex; flex-direction: column; gap: 2.5px;">
             ${cfg.doNow
               .map(
                 (dn, qIdx) => `
-              <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.4pt;">
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.3pt;">
                 <span style="font-weight: 700; color: #1e3a8a;">${qIdx + 1}.</span>
                 <div>
                   <span style="color: #1e293b;">${dn.q}</span>
-                  <div class="task-line-dotted" style="height: 4.8mm; margin-top: 1px;"></div>
+                  <div class="task-line-dotted" style="height: 4.6mm; margin-top: 1px;"></div>
                 </div>
               </div>
             `,
@@ -1039,26 +1050,20 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
           </div>
         </div>
 
-        <!-- Task 2: Authentic Primary Source Archival Investigation -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px;">
-              Task 2: Primary Archival Forensic Evidence
+        <!-- Core Substantive Knowledge & Disciplinary Concepts (Christine Counsell Core + Hinterland) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px;">
+              Core Substantive Knowledge &bull; The Historical Mechanism
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">Interrogate authentic primary plates</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">Essential specification facts</span>
           </div>
-          <div style="display: grid; grid-template-columns: ${cfg.sources.length === 3 ? '1fr 1fr 1fr' : '1fr 1fr'}; gap: 6px;">
-            ${cfg.sources
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            ${cfg.coreKnowledge
               .map(
-                (s) => `
-              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="height: 110px; width: 100%; border: 1px solid #cbd5e1; border-radius: 2px; overflow: hidden; background: #fff; margin-bottom: 3px;">
-                  <img src="${s.src}" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="${s.title}">
-                </div>
-                <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; display: block; line-height: 1.2;">${s.id}: ${s.title}</strong>
-                  <span style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #475569; line-height: 1.2; display: block; margin-top: 2px;">${s.desc}</span>
-                </div>
+                (ck) => `
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.35; color: #334155;">
+                <strong style="color: #0f172a;">${ck.heading}</strong> ${ck.text}
               </div>
             `,
               )
@@ -1066,30 +1071,38 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
           </div>
         </div>
 
-        <!-- Task 3: Disciplinary Vocabulary Precision Task -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; margin-bottom: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; margin-bottom: 2px;">
-            Task 3: Disciplinary Vocabulary Mastery
+        <!-- Task 2: Disciplinary Vocabulary Mastery -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #f8fafc; margin-bottom: 5px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; margin-bottom: 2px;">
+            Task 2: Disciplinary Vocabulary Distinction
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; margin-bottom: 3px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; margin-bottom: 3px;">
             ${cfg.vocabTask.prompt}
           </div>
-          ${
-            cfg.vocabTask.type === 'cloze'
-              ? `
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 6px; font-family: 'Georgia', serif; font-size: 7.4pt; color: #1e293b; line-height: 1.35; margin-bottom: 3px;">
-              ${cfg.vocabTask.clozeText}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #64748b; margin-bottom: 2px;">${cfg.vocabTask.followUp}</div>
-            <div class="task-line" style="height: 6mm;"></div>
-            <div class="task-line" style="height: 6mm;"></div>
-          `
-              : `
-            <div class="task-line" style="height: 6.2mm;"></div>
-            <div class="task-line" style="height: 6.2mm;"></div>
-            <div class="task-line" style="height: 6.2mm;"></div>
-          `
-          }
+          <div class="task-line" style="height: 5.8mm;"></div>
+          <div class="task-line" style="height: 5.8mm;"></div>
+        </div>
+
+        <!-- Task 3: Edexcel Paper 1 Q3 Practice (4-Mark Similarity / Difference Question) -->
+        <div style="border: 1.5px solid #0f766e; border-radius: 4px; padding: 5px 8px; background: #f0fdf4; margin-bottom: 5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #0f766e; letter-spacing: 0.5px;">
+              <i class="fa-solid fa-pen-nib" style="margin-right: 4px;"></i> Task 3: Edexcel Paper 1 Q3 Practice
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; background: #0f766e; color: #ffffff; padding: 1.5px 5px; border-radius: 3px;">
+              [4 marks &bull; 5 mins]
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-weight: 700; color: #0f172a; line-height: 1.3; margin-bottom: 2px;">
+            ${cfg.fourMarkComparison.question}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #047857; margin-bottom: 3px; font-style: italic;">
+            ${cfg.fourMarkComparison.stems}
+          </div>
+          <div class="task-line" style="height: 5.8mm; border-bottom-color: #0f766e;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom-color: #0f766e;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom-color: #0f766e;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom-color: #0f766e;"></div>
         </div>
 
       </div>
@@ -1111,7 +1124,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
         <!-- Left Page Footer -->
         <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
           <span>The History Department &bull; GCSE Medicine</span>
-          <span>Lesson ${cfg.lessonNum}: Disciplinary Knowledge</span>
+          <span>Lesson ${cfg.lessonNum}: Core Knowledge &amp; Q3 Practice</span>
           <span>Page ${leftPageNum} (Facing Spread Left)</span>
         </div>
       </div>
@@ -1185,7 +1198,7 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
         <div style="border: 1px solid #cbd5e1; background: #ffffff; border-radius: 4px; padding: 3px 6px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.3;">
           <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: baseline;">
             <strong style="color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">Key Bank:</strong>
-            <span style="color: #334155;">${cfg.wordBank.technical} &bull; ${cfg.wordBank.institutional || cfg.wordBank.treatments || cfg.wordBank.corrections || cfg.wordBank.government}</span>
+            <span style="color: #334155;">${cfg.wordBank.technical} &bull; ${cfg.wordBank.institutional || cfg.wordBank.treatments || cfg.wordBank.corrections || cfg.wordBank.government || cfg.wordBank.experiments || cfg.wordBank.quarantine}</span>
           </div>
           <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: baseline; border-top: 1px dashed #e2e8f0; margin-top: 1px; padding-top: 1px;">
             <strong style="color: #b91c1c; text-transform: uppercase; letter-spacing: 0.5px;">Causal Stems:</strong>
@@ -1201,9 +1214,9 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
           <span><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluate overall historical impact.</span>
         </div>
 
-        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.6" style="width: 100%; margin-bottom: 4px;">
-          ${Array(17).fill('<div class="task-line" style="height: 7.6mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (Spacious 17 Lines, 7.4mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.4" style="width: 100%; margin-bottom: 4px;">
+          ${Array(17).fill('<div class="task-line" style="height: 7.4mm;"></div>').join('')}
         </div>
 
       </div>
@@ -1251,131 +1264,122 @@ function buildMedicineTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Specification Audit Table -->
-      <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.8pt; margin-bottom: 12px;">
-        <thead>
-          <tr style="background: #1e3a8a; color: #ffffff;">
-            <th style="padding: 5px 8px; border: 1px solid #334155; text-align: left; width: 35%;">Pearson Edexcel Specification Topic</th>
-            <th style="padding: 5px 8px; border: 1px solid #334155; text-align: left; width: 45%;">Core Historical Mechanisms &amp; Case Studies</th>
-            <th style="padding: 5px 8px; border: 1px solid #334155; text-align: center; width: 20%;">Mastery Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a; background: #f8fafc;">1. Causes of Disease</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; color: #334155;">Continuity of Four Humours and miasma; decline in Church authority; Sydenham\'s classification of diseases into biological species.</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; text-align: center; font-weight: 600;">[ R &bull; A &bull; G ]</td>
-          </tr>
-          <tr>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a; background: #f8fafc;">2. Treatment &amp; Care</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; color: #334155;">Continuity of traditional herbal remedies; bleeding and purging; quack doctors; dissolution of monastic hospitals under Henry VIII.</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; text-align: center; font-weight: 600;">[ R &bull; A &bull; G ]</td>
-          </tr>
-          <tr>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a; background: #f8fafc;">3. Scientific Communication</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; color: #334155;">Gutenberg\'s printing press (c1440); The Royal Society (1660/1662); Nullius in Verba; Philosophical Transactions (1665); Leeuwenhoek\'s animalcules.</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; text-align: center; font-weight: 600;">[ R &bull; A &bull; G ]</td>
-          </tr>
-          <tr>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a; background: #f8fafc;">4. Vesalius &amp; Anatomy</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; color: #334155;">De Humani Corporis Fabrica (1543); Padua human dissections; corrected 300 Galenic errors (mandible, sternum, septum); Geminus\'s English prints.</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; text-align: center; font-weight: 600;">[ R &bull; A &bull; G ]</td>
-          </tr>
-          <tr>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a; background: #f8fafc;">5. Harvey &amp; Circulation</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; color: #334155;">De Motu Cordis (1628); heart as a mechanical pump; calculated 540 pints/day; forearm ligature test proving one-way venous valves; limits of change.</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; text-align: center; font-weight: 600;">[ R &bull; A &bull; G ]</td>
-          </tr>
-          <tr>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; font-weight: 700; color: #be123c; background: #fff1f2;">6. Case Study: Great Plague</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; color: #334155;">1665 outbreak (100,000 deaths); Mayor\'s quarantine orders (red cross, 28-day isolation, watchmen) vs popular continuity (pomanders, tobacco, amulets).</td>
-            <td style="padding: 5px 8px; border: 1px solid #cbd5e1; text-align: center; font-weight: 600;">[ R &bull; A &bull; G ]</td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
 
-      <!-- Synoptic Revision Advice Box -->
-      <div style="border: 1.2px solid #1e3a8a; border-radius: 5px; padding: 10px 14px; background: #f0f4ff; margin-bottom: 12px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a; display: block; margin-bottom: 4px; text-transform: uppercase;">
-          <i class="fa-solid fa-lightbulb"></i> The Golden Exam Rule for Paper 1 Section B (Question 4 &amp; 5/6):
-        </strong>
-        <p style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #1e293b; line-height: 1.45; margin: 0;">
-          Never confuse <em>scientific discovery</em> with <em>practical cure</em>. Whenever evaluating the impact of Vesalius, Harvey, or the Royal Society, always emphasize the historical paradox: although their ideas were revolutionary and permanently destroyed Galen\'s authority among university academics, they did not lead to a single new medical treatment for ordinary patients during the Renaissance. Doctors continued bloodletting, and Londoners in 1665 still believed miasma caused the plague.
-        </p>
-      </div>
-
-      <!-- Revision QR & Digital Companion Box -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 10px 14px; background: #fafaf9; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a; display: block; margin-bottom: 2px;">
-            The History Revision Hub &bull; Digital Mastery Portal
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">
-            Access interactive Leitner flashcards, exam mark scheme breakdowns, and model answers.
-          </span>
+        <!-- Spec Item 1 -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a;">
+              1. Ideas about Causes &amp; The Royal Society
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; margin: 0 0 4px 0; line-height: 1.35;">
+            Influence of the printing press (Gutenberg c1440/1476) on sharing identical medical texts without Church censorship; founding of the Royal Society (1660/1662 charter); motto <em>Nullius in Verba</em>; publication of <em>Philosophical Transactions</em> (1665) and Hooke\'s <em>Micrographia</em>.
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+            <span>&bull; Lesson 1 Mastered</span>
+            <span>&bull; Pages 4–5 Complete</span>
+            <span>&bull; Timeline Node 1 &amp; 5 Illustrated</span>
+          </div>
         </div>
-        <span class="archival-badge" style="background: #1e3a8a; color: #ffffff; border-color: #1e3a8a; font-weight: 700;">
-          Edition 2026.1
-        </span>
+
+        <!-- Spec Item 2 -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a;">
+              2. Thomas Sydenham &amp; Observation of Symptoms
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; margin: 0 0 4px 0; line-height: 1.35;">
+            The \'English Hippocrates\'; shift from ancient book-learning to clinical bedside observation; publication of <em>Observationes Medicae</em> (1676); classifying diseases into distinct species; distinguishing measles from scarlet fever; cinchona bark and smallpox cool regimes.
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+            <span>&bull; Lesson 2 Mastered</span>
+            <span>&bull; Pages 6–7 Complete</span>
+            <span>&bull; Timeline Node 8 Illustrated</span>
+          </div>
+        </div>
+
+        <!-- Spec Item 3 -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a;">
+              3. Andreas Vesalius &amp; Human Anatomy
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; margin: 0 0 4px 0; line-height: 1.35;">
+            Direct dissection of human cadavers at Padua University; correcting over 300 errors in Galen\'s animal-based anatomy (mandible, breastbone, heart septum); publication of <em>De Humani Corporis Fabrica</em> (1543); revolutionary visual woodcut plates.
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+            <span>&bull; Lesson 3 Mastered</span>
+            <span>&bull; Pages 8–9 Complete</span>
+            <span>&bull; Timeline Node 3 Illustrated</span>
+          </div>
+        </div>
+
+        <!-- Spec Item 4 -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a;">
+              4. William Harvey &amp; Blood Circulation
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; margin: 0 0 4px 0; line-height: 1.35;">
+            Proving the heart is a muscular mechanical pump; calculation that heart pumps 540 pints per hour; disproving Galen\'s liver-fuel theory; ligature experiments proving vein valves force one-way circulation; publication of <em>De Motu Cordis</em> (1628).
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+            <span>&bull; Lesson 4 Mastered</span>
+            <span>&bull; Pages 10–11 Complete</span>
+            <span>&bull; Timeline Node 4 Illustrated</span>
+          </div>
+        </div>
+
+        <!-- Spec Item 5 -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a;">
+              5. The Great Plague of London (1665)
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #334155; margin: 0 0 4px 0; line-height: 1.35;">
+            Mayor\'s plague orders: 28-day house quarantine, red crosses (\'Lord have mercy upon us\'), searchers of the dead, night burial pits, slaughter of 200,000 cats and dogs; contrast with 1348 Black Death; continued reliance on miasma pomanders and quack remedies.
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+            <span>&bull; Lesson 5 Mastered</span>
+            <span>&bull; Pages 12–13 Complete</span>
+            <span>&bull; Timeline Node 7 Illustrated</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- Outside Back Cover Footer -->
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 4px;">
-      <span>The History Department &bull; GCSE History Revision Hub</span>
-      <span>Key Topic 2 &bull; Revision &amp; Assessment Matrix</span>
-      <span>Page 14 (Outside Back Cover)</span>
+    <!-- Back Page Revision Advice -->
+    <div>
+      <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 8px 12px; background: #eff6ff; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e3a8a; line-height: 1.35;">
+        <strong>Examiner’s Final Revision Tip (Paper 1 Section B):</strong> Remember the central historical paradox of the Medical Renaissance: revolutionary advances in <em>anatomical understanding</em>, <em>scientific communication</em>, and <em>experimental proof</em> occurred alongside <em>almost complete continuity</em> in everyday clinical treatment. Knowing how blood flowed or how many bones made up the jaw did not save a single patient from the Great Plague of 1665. Always balance change in theory against continuity in treatment!
+      </div>
+      <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 4px; margin-top: 8px;">
+        <span>The History Department &bull; GCSE Medicine Revision Series</span>
+        <span>Key Topic 2 &bull; Outside Back Cover</span>
+        <span>Page 14</span>
+      </div>
     </div>
   </div>
   `;
 
-  // Auto-Fill Client-Side Script
   html += `
-  <script>
-    (function () {
-      function autoFillPages() {
-        const pages = document.querySelectorAll('.page');
-        pages.forEach((page, pIdx) => {
-          const pageId = page.id || 'page-' + (pIdx + 1);
-          const writingContainer = page.querySelector('.auto-fill-writing-lines');
-          if (writingContainer) {
-            const lineH = parseFloat(writingContainer.getAttribute('data-line-height')) || 7.6;
-            const lineHpx = lineH * 3.7795275591;
-            const targetPageHeight = 272 * 3.7795275591;
-
-            const getGap = () => targetPageHeight - page.scrollHeight;
-
-            let safety = 0;
-            while (getGap() >= lineHpx && safety < 30) {
-              const newLine = document.createElement('div');
-              newLine.className = 'task-line';
-              newLine.style.height = lineH + 'mm';
-              writingContainer.appendChild(newLine);
-              safety++;
-            }
-            while (getGap() < 6 && writingContainer.children.length > 6) {
-              writingContainer.removeChild(writingContainer.lastElementChild);
-            }
-          }
-        });
-      }
-
-      if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        autoFillPages();
-      } else {
-        window.addEventListener('DOMContentLoaded', autoFillPages);
-      }
-      window.addEventListener('load', autoFillPages);
-    })();
-  </script>
 </body>
 </html>
 `;
-
   return html;
 }
 
 module.exports = {
   buildMedicineTwoPageWorkbook,
-  renaissanceConfigs,
 };
