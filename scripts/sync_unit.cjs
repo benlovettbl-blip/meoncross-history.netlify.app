@@ -141,6 +141,19 @@ async function runSync() {
     }
   }
 
+  // Step 5b: Pedagogical Standards & Rollout Audit
+  console.log(
+    `\n[Step 5b/6] 🏛️ Auditing Pedagogical Standards & Rollout Progress for ${unitId}...`,
+  );
+  try {
+    execSync(`node scripts/audit_pedagogy_standards.cjs ${unitId}`, {
+      stdio: 'inherit',
+      cwd: ROOT_DIR,
+    });
+  } catch (err) {
+    console.warn(`⚠️ Warning: Pedagogical standards audit encountered an issue:`, err.message);
+  }
+
   // Step 6: Google Drive Department File Synchronization (School Laptop Access)
   console.log(
     `\n[Step 6/6] 📂 Mirroring PDFs to Google Drive Department File (School Laptop Access)...`,
