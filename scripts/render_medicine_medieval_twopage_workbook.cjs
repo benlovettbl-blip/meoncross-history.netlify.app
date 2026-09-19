@@ -6,44 +6,46 @@ function formatText(txt) {
   return txt;
 }
 
-// 3 Dedicated Medieval Lessons Configurations with Standardised GCSE Two-Page Spread Layout
+// ============================================================================
+// 5 Dedicated Medieval Enquiry Lesson Configurations (14-Page Mastery Workbook)
+// ============================================================================
 const medievalConfigs = [
   {
-    lessonIndex: 0, // mapped to index 0 in units/edexcel_medicine/data.js (lesson_1_1)
+    lessonIndex: 0, // lesson_1_1
     lessonNum: 1,
     id: 'lesson_1_1',
-    title: 'KT1.1: Ideas About the Causes of Disease & Illness (c1250–c1500)',
+    title: 'KT1.1: Supernatural & Religious Explanations of Disease (c1250–c1500)',
     enquiryQuestion:
-      'Why did ancient Roman and Greek ideas about disease dominate medical thinking for over a thousand years?',
+      'Why did the medieval Catholic Church hold an unshakeable monopoly over beliefs about the causes of disease?',
     specAnchor:
-      'Ideas about the causes of disease and illness: supernatural and religious explanations; rational explanations (Hippocrates and Galen, Four Humours, Opposites, Miasma); the Church’s influence.',
+      'Ideas about the causes of disease: supernatural and religious explanations; the influence of the Catholic Church on medicine and science.',
     tariff: '[12 marks &bull; 15 mins]',
     examStem:
-      'Explain why there was so little change in medical ideas about the causes of disease between c1250 and c1500. [12 marks]',
-    stimulus: ['The Catholic Church', 'Galen'],
+      'Explain why the Catholic Church had such a major influence on ideas about the causes of disease in the period c1250–c1500. [12 marks]',
+    stimulus: ['Monastic scriptoria and book-copying', 'The imprisonment of Roger Bacon (1277)'],
     structureStrip: [
       {
-        col: '1. THE CATHOLIC CHURCH & SCRIBAL CONTROL',
-        text: 'Explain how the Catholic Church controlled universities, libraries, and book-copying; dissent was punished as heresy (e.g. Roger Bacon in 1277).',
+        col: '1. MONASTIC MONOPOLY ON LEARNING',
+        text: 'Explain how monks controlled all manuscript copying in scriptoria; universities taught theology and Galen exclusively; dissent was punished as heresy (Roger Bacon 1277).',
       },
       {
-        col: '2. GALEN’S PURPOSE & TELEOLOGY',
-        text: 'Explain how Galen’s belief that a single Creator designed every human organ made his classical Latin treatises sacred, infallible Christian dogma.',
+        col: '2. DISEASE AS DIVINE RETRIBUTION',
+        text: 'Explain how the Church taught illness was sent directly by God to punish individual or communal sin, or test virtue (e.g. biblical leprosy and Lazar houses).',
       },
       {
-        col: '3. LACK OF SCIENTIFIC INSTRUMENTS',
-        text: 'Explain how the lack of microscopes, ban on human dissection, and deep respect for tradition prevented doctors from discovering real bodily causes.',
+        col: '3. ASTROLOGY & SCRIPTURAL DOGMA',
+        text: 'Explain how church scholars accepted Christian astrology (e.g. 1345 planetary conjunction); lack of scientific instruments left ordinary people with zero alternative ideas.',
       },
     ],
     connectives:
-      'One major reason for lack of change was... &bull; Furthermore, the Church enforced... &bull; Crucially, Galen’s ideas were protected because... &bull; Without scientific instruments... &bull; Consequently...',
+      'One major reason for Church influence was... &bull; In particular, monastic scriptoria... &bull; Furthermore, disease was seen as divine retribution... &bull; Crucially, the imprisonment of Roger Bacon in 1277 proved... &bull; Consequently...',
     wordBank: {
       technical:
-        'Four Humours &bull; Theory of Opposites &bull; phlebotomy &bull; uroscopy (matula) &bull; Vademecum &bull; Zodiac Man',
+        'divine retribution &bull; biblical leprosy &bull; Lazar houses &bull; teleology &bull; heresy &bull; Roger Bacon (1277)',
       institutional:
-        'The Catholic Church &bull; monastic scriptoria &bull; teleology &bull; heresy &bull; Roger Bacon (1277) &bull; Articella',
+        'monastic scriptoria &bull; Catholic Church &bull; University of Paris &bull; papal authority &bull; Articella',
       continuity:
-        'Hippocrates &bull; Galen &bull; miasma (bad air) &bull; planetary conjunction (1345) &bull; ancient authority',
+        'supernatural punishment &bull; 1345 planetary conjunction &bull; Mars, Jupiter &amp; Saturn in Aquarius &bull; astrological almanacs',
     },
     doNow: [
       {
@@ -51,30 +53,119 @@ const medievalConfigs = [
         a: 'Hippocrates of Kos',
       },
       {
-        q: 'Which ancient Roman doctor expanded this into the Theory of Opposites?',
+        q: 'Which ancient Roman physician expanded this into the Theory of Opposites?',
         a: 'Claudius Galen',
       },
       {
-        q: 'What four bodily fluids did the humoural theory claim dictated health?',
-        a: 'Blood, Phlegm, Yellow Bile, Black Bile',
+        q: 'What is the medical term for corrupt, foul-smelling air believed to cause disease?',
+        a: 'Miasma',
       },
       {
-        q: 'What Latin term was used for corrupt, foul-smelling air believed to cause disease?',
-        a: 'Miasma',
+        q: 'Why did the medieval Catholic Church actively support the medical writings of Galen?',
+        a: 'Galen taught that the human body was designed by a single divine Creator (teleology).',
       },
     ],
     coreKnowledge: [
       {
-        heading: 'The Four Humours & Galen’s Theory of Opposites:',
-        text: 'Hippocrates taught health was a balance of blood, phlegm, yellow bile, and black bile. Galen developed the Theory of Opposites: treating an illness with its opposite (e.g. cold, moist phlegm treated with hot, dry pepper; fever treated with cold cucumber).',
+        heading: 'The Church Monopoly on Education & Scriptorium Censorship:',
+        text: 'Monasteries controlled all manuscript copying and libraries. Because Galen argued every human organ was purposefully crafted by a single divine Creator, the Church declared his writings sacred dogma. Questioning Galen was branded heresy; Franciscan friar Roger Bacon was imprisoned in 1277 for advocating firsthand empirical experimentation.',
       },
       {
-        heading: 'The Catholic Church & Teleological Dogma:',
-        text: 'The Church held a monopoly on education, universities, and manuscript copying. Because Galen argued the human body was purposefully crafted by a single Creator, the Church declared his writings sacred dogma; questioning Galen was branded heresy.',
+        heading: 'Disease as Divine Retribution for Sin:',
+        text: 'Illness was understood as sent directly by God to punish personal sin, cleanse moral corruption, or test faith. Leprosy was viewed as an outward sign of internal wickedness; lepers were cast out into Lazar houses with wooden clappers as living warnings of divine wrath.',
       },
       {
-        heading: 'The Diagnostic Toolkit (Uroscopy & Astrology):',
-        text: 'Physicians diagnosed humoural imbalance by examining urine color, clarity, and smell against 20-shade radial charts in a glass matula; consulted the Zodiac Man in their pocket Vademecum to ensure the moon was not in an unfavorable sign before bleeding.',
+        heading: 'Astrology & The 1345 Planetary Conjunction:',
+        text: 'The Church incorporated astrology into Christian philosophy. When unusual alignments occurred—such as the March 1345 conjunction of Mars, Jupiter, and Saturn in Aquarius—University of Paris physicians blamed celestial forces for corrupting the atmosphere with pestilence.',
+      },
+    ],
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Divine Retribution',
+      termB: 'Planetary Conjunction',
+      prompt:
+        'Explain the crucial difference between <strong>divine retribution</strong> (God directly inflicting illness as punishment for sin) and a <strong>planetary conjunction</strong> (astrological alignment of planets corrupting the air):',
+    },
+    fourMarkComparison: {
+      question:
+        'Explain one way in which ideas about the cause of disease in the Medieval period (c1250–c1500) were similar to ideas in the Renaissance period (c1500–c1700). [4 marks]',
+      hint: 'Focus on the persistent belief that God sent epidemic disease (such as the 1348 Black Death and the 1665 Great Plague) to punish human sin.',
+      stems:
+        'One way ideas about causes were similar was the continued belief in divine punishment... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+    },
+    livingTimelineMission: {
+      milestone: 'Milestones 1 & 2 (c. 1250 & 1277)',
+      instruction:
+        'Turn back to <strong>Pages 2–3 (Milestones 1 & 2)</strong>. In the sketchpad frame, sketch the monastic scriptorium and annotate the Church warning: <em>Dissent from Galen is Heresy!</em>',
+    },
+  },
+  {
+    lessonIndex: 1, // lesson_1_2
+    lessonNum: 2,
+    id: 'lesson_1_2',
+    title: 'KT1.2: Rational Explanations: Hippocrates, Galen & The Four Humours (c1250–c1500)',
+    enquiryQuestion:
+      'How did Hippocrates and Galen provide medieval doctors with an entirely rational, natural explanation of disease?',
+    specAnchor:
+      'Rational explanations for disease: the Theory of the Four Humours (Hippocrates), the Theory of Opposites (Galen), and Miasma theory.',
+    tariff: '[12 marks &bull; 15 mins]',
+    examStem:
+      'Explain why the Theory of the Four Humours remained the dominant rational explanation of disease throughout the period c1250–c1500. [12 marks]',
+    stimulus: ['Galen’s Theory of Opposites', 'The diagnostic matula (uroscopy)'],
+    structureStrip: [
+      {
+        col: '1. ELEGANT LOGIC OF THE FOUR HUMOURS',
+        text: 'Explain how Hippocrates’ balance of blood, phlegm, yellow bile, and black bile linked bodily fluids to seasons and elements, providing a universal, sensible explanation.',
+      },
+      {
+        col: '2. GALEN’S THEORY OF OPPOSITES',
+        text: 'Explain how Galen provided doctors with practical treatment rules (curing excess cold/moist phlegm with hot/dry remedies), making the theory actionable and comprehensive.',
+      },
+      {
+        col: '3. UNIVERSAL DIAGNOSTIC TOOLS',
+        text: 'Explain how uroscopy (examining urine in a matula against radial charts) and the Zodiac Man gave physicians authority without needing human dissection.',
+      },
+    ],
+    connectives:
+      'A primary reason for the dominance of the Four Humours was... &bull; Crucially, Galen extended this by introducing... &bull; Furthermore, diagnostic tools such as the matula... &bull; Because the theory explained every symptom without contradiction... &bull; Consequently...',
+    wordBank: {
+      technical:
+        'Four Humours &bull; Theory of Opposites &bull; uroscopy &bull; matula flask &bull; Vademecum &bull; Zodiac Man (Homo Signorum)',
+      fluids:
+        'blood (sanguine) &bull; phlegm (phlegmatic) &bull; yellow bile (choleric) &bull; black bile (melancholic) &bull; clinical observation',
+      rational:
+        'Hippocrates of Kos &bull; Claudius Galen &bull; Articella &bull; miasma (corrupt air) &bull; bodily equilibrium',
+    },
+    doNow: [
+      {
+        q: 'Why did the medieval Church consider Galen’s writings acceptable for Christian teaching?',
+        a: 'Galen taught that the body was designed by a single divine Creator (teleology).',
+      },
+      {
+        q: 'Name the Franciscan friar imprisoned in 1277 for advocating firsthand empirical experimentation.',
+        a: 'Roger Bacon',
+      },
+      {
+        q: 'What astrological event in March 1345 did University of Paris physicians blame for corrupting the atmosphere?',
+        a: 'The conjunction of Saturn, Jupiter, and Mars in Aquarius',
+      },
+      {
+        q: 'What special hospitals were built outside medieval town walls to isolate patients suffering from divine skin disease?',
+        a: 'Lazar houses (for lepers)',
+      },
+    ],
+    coreKnowledge: [
+      {
+        heading: 'The Four Humours & Bodily Equilibrium:',
+        text: 'Hippocrates taught that health was an exact balance of blood (spring/air/hot & wet), phlegm (winter/water/cold & wet), yellow bile (summer/fire/hot & dry), and black bile (autumn/earth/cold & dry). An imbalance caused distinct symptoms and temperaments (sanguine, phlegmatic, choleric, melancholic).',
+      },
+      {
+        heading: 'Galen’s Theory of Opposites:',
+        text: 'Second-century Roman physician Galen developed the Theory of Opposites: treating an excess of one humour with its opposite quality. A patient with a cold, moist phlegmatic fever was treated with hot, dry pepper or wine; an overheated choleric fever was cooled with cucumber and cold baths.',
+      },
+      {
+        heading: 'The Physician’s Diagnostic Toolkit (Uroscopy & Astrology):',
+        text: 'Physicians diagnosed patients without physical examination by holding urine up to the light in a glass matula, comparing color, clarity, and sediment against a 20-shade chart; they consulted the Zodiac Man in their pocket Vademecum before prescribing bloodletting.',
       },
     ],
     vocabTask: {
@@ -82,88 +173,177 @@ const medievalConfigs = [
       termA: 'Humoural Imbalance',
       termB: 'Miasmatic Corruption',
       prompt:
-        'Explain the crucial difference between an internal <strong>humoural imbalance</strong> (diet, personality, bodily fluids) and external <strong>miasmatic corruption</strong> (foul air from swamps, rotting matter):',
+        'Explain the crucial difference between an internal <strong>humoural imbalance</strong> (bodily fluids out of equilibrium) and external <strong>miasmatic corruption</strong> (breathing foul air from rotting waste or swamps):',
     },
     fourMarkComparison: {
       question:
-        'Explain one way in which ideas about the causes of illness in the Medieval period (c1250–c1500) were similar to ideas in the Renaissance period (c1500–c1700). [4 marks]',
-      hint: 'Focus on the persistent reliance on miasma (foul air) or the continued belief in the Four Humours among ordinary people despite elite anatomical debates.',
+        'Explain one way in which ideas about the cause of disease in the Medieval period (c1250–c1500) were different from ideas in the Modern period (c1900–present). [4 marks]',
+      hint: 'Contrast the medieval belief in invisible humoural imbalances and miasma with the modern understanding of specific pathogenic microbes (bacteria and viruses) discovered under microscopes.',
       stems:
-        'One way ideas about causes were similar was the continued belief in... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+        'One way ideas about causes differed was the belief in... &bull; In the Medieval period, disease was blamed on... &bull; In contrast, in the Modern period...',
     },
     livingTimelineMission: {
-      milestone: 'Milestones 1 & 2 (c. 1250 & 1277)',
+      milestone: 'Milestone 3 (c. 1300)',
       instruction:
-        'Turn back to <strong>Pages 2–3 (Milestones 1 & 2)</strong>. In the sketchpad frame, sketch the Four Humours balance and annotate the Church’s warning against Roger Bacon: <em>Dissent from Galen is Heresy!</em>',
+        'Turn back to <strong>Pages 2–3 (Milestone 3: c. 1300)</strong>. In the sketchpad frame, sketch a physician holding a glass matula up to the light and annotate: <em>The Vademecum and Zodiac Man!</em>',
     },
   },
   {
-    lessonIndex: 1, // lesson_1_2
-    lessonNum: 2,
-    id: 'lesson_1_2',
-    title: 'KT1.2: Approaches to Prevention, Treatment & Care (c1250–c1500)',
+    lessonIndex: 2, // lesson_1_3
+    lessonNum: 3,
+    id: 'lesson_1_3',
+    title: 'KT1.3: Approaches to Prevention & Treatment: Rituals, Bleeding & Purging (c1250–c1500)',
     enquiryQuestion:
-      'How did medieval approaches to prevention and treatment combine rational ideas with religious belief?',
+      'Why did medieval treatments focus so heavily on draining, purging, and balancing the body?',
     specAnchor:
-      'Approaches to prevention and treatment: religious and supernatural methods; rational treatments (bloodletting, purging, herbal remedies, regimen sanitatis); medical care providers and medieval hospitals.',
+      'Approaches to prevention and treatment: religious and supernatural methods (pilgrimage, prayer, relics); rational treatments (bloodletting, purging, herbal remedies, regimen sanitatis).',
     tariff: '[12 marks &bull; 15 mins]',
     examStem:
-      'Explain why approaches to medical treatment changed very little during the Middle Ages (c1250–c1500). [12 marks]',
-    stimulus: ['The Theory of Opposites', 'Monastic hospitals'],
+      'Explain why humoural treatments such as bloodletting and purging remained the standard medical response to illness throughout the Middle Ages (c1250–c1500). [12 marks]',
+    stimulus: ['Phlebotomy (bloodletting)', 'The Regimen Sanitatis'],
     structureStrip: [
       {
-        col: '1. THE THEORY OF OPPOSITES & PURGING',
-        text: 'Explain how physicians relied on humoural balancing (bloodletting with fleams/leeches; purging with emetics and laxatives), which physically weakened patients.',
+        col: '1. PHLEBOTOMY & HUMOURAL DRAINING',
+        text: 'Explain how doctors believed excess blood caused fevers and inflammation; describe methods (fleam incisions into veins, cupping, and live leeches) and why patients felt psychosomatic relief.',
       },
       {
-        col: '2. MONASTIC HOSPITALS & RELIGIOUS CARE',
-        text: 'Explain how over 1,200 hospitals run by monks and nuns focused on hospitality, warmth, prayer, and salvation (‘care not cure’) rather than medical discovery.',
+        col: '2. PURGING & THE DIGESTIVE TRACT',
+        text: 'Explain how emetics (inducing vomiting) and laxatives/enemas (clysters) were used to violently expel corrupted humours from the stomach and intestines.',
       },
       {
-        col: '3. THE COST & LIMITS OF PRACTITIONERS',
-        text: 'Explain why university-trained physicians were rare and expensive; most ordinary people could only afford barber-surgeons, apothecaries, or home herbal remedies.',
+        col: '3. HERBAL REMEDIES & REGIMEN SANITATIS',
+        text: 'Explain how apothecaries compounded complex herbal antidotes like Theriac (60+ ingredients) and how physicians advised rich patients to follow the Regimen Sanitatis (diet, exercise, rest).',
       },
     ],
     connectives:
-      'One major reason treatments did not change was... &bull; In particular, physicians relied on... &bull; Furthermore, monastic hospitals were designed to... &bull; Crucially, ordinary people could only afford... &bull; Consequently...',
+      'One major reason bloodletting was so widespread was... &bull; Furthermore, physicians believed that purging... &bull; Crucially, complex herbal remedies like Theriac... &bull; Because these treatments aligned perfectly with Galenic theory... &bull; Consequently...',
     wordBank: {
       technical:
-        'phlebotomy (bloodletting) &bull; fleam &bull; cupping &bull; leeches &bull; purging &bull; emetics &bull; Theriac &bull; Regimen Sanitatis',
-      practitioners:
-        'university physician &bull; apothecary &bull; barber-surgeon &bull; wise woman &bull; guild apprenticeship &bull; pulse-taking',
-      institutional:
-        'monastic infirmary &bull; ‘care not cure’ &bull; St Bartholomew’s (1123) &bull; Augustinian nuns &bull; chapel altar &bull; Lazar houses',
+        'phlebotomy (bloodletting) &bull; fleam &bull; cupping &bull; leeches (Hirudo medicinalis) &bull; purging &bull; emetics &bull; clyster (enema)',
+      remedies:
+        'Theriac (treacle) &bull; herbal infusions &bull; viper flesh &bull; opium &bull; chamomile &bull; mint &bull; Regimen Sanitatis',
+      supernatural:
+        'pilgrimages (Canterbury) &bull; holy relics &bull; fasting &amp; prayer &bull; votive candles &bull; incantations',
     },
     doNow: [
       {
-        q: 'Why did the medieval Catholic Church actively support the medical writings of Galen?',
-        a: 'Galen taught that the human body was designed by a single divine Creator.',
+        q: 'Name the four humours identified by Hippocrates.',
+        a: 'Blood, Phlegm, Yellow Bile, Black Bile',
       },
       {
-        q: 'Name the ancient Roman physician who created the Theory of Opposites.',
-        a: 'Claudius Galen',
+        q: 'What medical theory developed by Galen treated excess heat and moisture with cold and dry substances?',
+        a: 'The Theory of Opposites',
       },
       {
-        q: 'What pocket handbook containing urine charts and astrological diagrams did medieval doctors carry?',
-        a: 'Vademecum',
-      },
-      {
-        q: 'What diagram showed which star signs governed different parts of the human body?',
+        q: 'What circular diagram linked star signs to body parts to dictate when surgery could be performed?',
         a: 'The Zodiac Man (Homo Signorum)',
+      },
+      {
+        q: 'What clear glass flask was used by medieval physicians to examine urine colour, sediment, and clarity?',
+        a: 'The Matula',
       },
     ],
     coreKnowledge: [
       {
-        heading: 'Religious & Supernatural Healing:',
-        text: 'The Church taught illness was sent by God to punish sin or test faith. Treatments included prayer, fasting, confession, pilgrimages to holy shrines (e.g. Canterbury), touching holy relics, and lighting votive candles.',
+        heading: 'Supernatural Healing Rituals & Divine Intercession:',
+        text: 'To appease God’s wrath or cleanse sin, patients undertook pilgrimages to holy shrines (e.g. St Thomas Becket at Canterbury), touched holy relics, lit wax votive candles matching their body weight, fasted, and recited Ave Marias under priestly guidance.',
       },
       {
-        heading: 'Rational Humoural Treatments & Regimen Sanitatis:',
-        text: 'To balance humours under Galen’s Opposites, physicians ordered phlebotomy (opening veins with a fleam, cupping, or leeches) and purging (inducing vomiting or diarrhoea); prescribed herbal infusions like Theriac (60+ ingredients); advised diet and sleep under the Regimen Sanitatis.',
+        heading: 'Humoural Draining (Phlebotomy & Purging):',
+        text: 'To restore balance under Galen’s Opposites, physicians prescribed phlebotomy: opening veins with a fleam, drawing blood with cupping glasses, or applying live leeches; digestive tracts were evacuated using herbal emetics (scammony) or clyster syringes.',
       },
       {
-        heading: 'Practitioners & Monastic Hospitals (‘Care Not Cure’):',
-        text: 'University physicians were rare and expensive book-learners; barber-surgeons performed bloodletting and minor surgery; apothecaries mixed herbs; over 1,200 hospitals run by monks and nuns provided hospitality, warmth, food, and prayer, excluding infectious patients.',
+        heading: 'Herbal Pharmacopoeia & The Regimen Sanitatis:',
+        text: 'Apothecaries prepared Theriac (an ancient compound of 64 ingredients including opium and viper flesh); wealthy households followed the Regimen Sanitatis—a personalised lifestyle guide regulating diet, sleep, exercise, and bathing to maintain humoural balance.',
+      },
+    ],
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Phlebotomy (Bloodletting)',
+      termB: 'Purging (Emetics/Clysters)',
+      prompt:
+        'Explain the difference between humoural draining via <strong>phlebotomy</strong> (opening veins with a fleam or leeches) and humoural evacuation via <strong>purging</strong> (inducing vomiting or bowel movements with emetics and clysters):',
+    },
+    fourMarkComparison: {
+      question:
+        'Explain one way in which medical treatments in the Medieval period (c1250–c1500) were different from medical treatments in the Renaissance period (c1500–c1700). [4 marks]',
+      hint: 'Contrast medieval reliance on herbal Theriac and humoural balance with Renaissance chemical remedies pioneered by Paracelsus (e.g. antimony, mercury, and minerals).',
+      stems:
+        'One way medical treatments differed was... &bull; In the Medieval period, treatments relied on... &bull; In contrast, in the Renaissance period, practitioners began to use...',
+    },
+    livingTimelineMission: {
+      milestone: 'Milestone 4 (c. 1320)',
+      instruction:
+        'Turn back to <strong>Pages 2–3 (Milestone 4: c. 1320)</strong>. In the sketchpad frame, sketch a fleam, cupping glass, and medicinal leeches, and annotate: <em>Bleeding and Purging to balance the Humours!</em>',
+    },
+  },
+  {
+    lessonIndex: 3, // lesson_1_4
+    lessonNum: 4,
+    id: 'lesson_1_4',
+    title: 'KT1.4: Medical Care Providers & Monastic Hospitals: ‘Care Not Cure’ (c1250–c1500)',
+    enquiryQuestion:
+      'Why did medieval hospitals focus entirely on ‘care not cure’, and who actually treated the sick?',
+    specAnchor:
+      'Medical care providers: university-trained physicians, barber-surgeons, apothecaries, and wise women; the role of medieval hospitals and monastic care.',
+    tariff: '[12 marks &bull; 15 mins]',
+    examStem:
+      'Explain why medieval hospitals focused on providing ‘care not cure’ in the period c1250–c1500. [12 marks]',
+    stimulus: ['The role of monks and nuns', 'The exclusion of infectious patients'],
+    structureStrip: [
+      {
+        col: '1. RELIGIOUS FOUNDATIONS & HOSPITIUM',
+        text: 'Explain how over 1,200 medieval hospitals were monastic charities funded by the Church; their purpose was hospitium (hospitality, warmth, food, clean sheets, and spiritual salvation facing a chapel altar).',
+      },
+      {
+        col: '2. LACK OF MEDICAL KNOWLEDGE & PHYSICIANS',
+        text: 'Explain how hospitals employed monks and nuns rather than university physicians; doctors were too expensive, surgery was prohibited to monks, and medicine had no known cures for internal disease.',
+      },
+      {
+        col: '3. STRICT SELECTION CRITERIA & EXCLUSION',
+        text: 'Explain why hospitals excluded infectious lepers, plague victims, and terminal cases to preserve spiritual peace and avoid contamination, sending them to isolated Lazar houses.',
+      },
+    ],
+    connectives:
+      'A central reason medieval hospitals focused on care not cure was... &bull; In particular, monasteries established hospitals to... &bull; Furthermore, university-trained physicians were absent because... &bull; Crucially, infectious patients were turned away because... &bull; Consequently...',
+    wordBank: {
+      technical:
+        '‘care not cure’ &bull; hospitium &bull; infirmary &bull; St Bartholomew’s (1123) &bull; Augustinian nuns &bull; chapel altar',
+      practitioners:
+        'university physician &bull; barber-surgeon &bull; apothecary &bull; wise woman &bull; guild apprenticeship &bull; Guild of Surgeons (1368)',
+      exclusion:
+        'Lazar houses &bull; leprosy &bull; infectious diseases &bull; terminal illness &bull; spiritual salvation &bull; daily Mass',
+    },
+    doNow: [
+      {
+        q: 'What three methods were used by medieval practitioners to perform bloodletting?',
+        a: 'Fleams (vein incision), cupping glasses, and live leeches',
+      },
+      {
+        q: 'What famous herbal compound contained over 60 ingredients including dried viper flesh and opium?',
+        a: 'Theriac',
+      },
+      {
+        q: 'What Latin name was given to the lifestyle guide advising medieval elites on diet, sleep, and bathing?',
+        a: 'Regimen Sanitatis',
+      },
+      {
+        q: 'What surgical tool was used by barber-surgeons to cut into a vein for phlebotomy?',
+        a: 'A fleam',
+      },
+    ],
+    coreKnowledge: [
+      {
+        heading: 'The Medieval Practitioner Hierarchy:',
+        text: 'Wealthy elites hired university physicians (studied 7–10 years reading Latin Galenic texts without touching patients); ordinary people consulted barber-surgeons (manual bloodletting, tooth-pulling, amputations), apothecaries (compounding herbs), or local wise women (herbs, charms, and childbirth).',
+      },
+      {
+        heading: 'Monastic Hospitals & Spiritual Salvation:',
+        text: 'By 1500, England had over 1,200 hospitals run by religious orders (e.g. St Bartholomew’s, 1123). Wards were arranged like churches so patients could view the altar from their beds, receiving nourishing stew, clean linen, warmth, and daily Mass.',
+      },
+      {
+        heading: '‘Care Not Cure’ & Strict Patient Selection:',
+        text: 'Hospitals aimed to heal the immortal soul rather than cure bodily pathology; pregnant women, lepers, the blind, and those with contagious pestilence were strictly barred, redirecting lepers to separate Lazar houses.',
       },
     ],
     vocabTask: {
@@ -171,26 +351,26 @@ const medievalConfigs = [
       termA: 'Monastic Hospital ‘Care’',
       termB: 'Modern Medical ‘Cure’',
       prompt:
-        'Explain the difference between a medieval monastic hospital offering <strong>spiritual care</strong> (shelter, bed rest, prayer, Mass) and modern hospital <strong>medical cure</strong> (surgery, pharmaceuticals):',
+        'Explain the difference between medieval monastic hospital <strong>spiritual care</strong> (hospitality, clean bedding, warmth, prayer, Mass) and modern hospital <strong>medical cure</strong> (specialist doctors, clinical surgery, pharmaceuticals):',
     },
     fourMarkComparison: {
       question:
-        'Explain one way in which hospital care in the Medieval period was different from hospital care in the 18th or 19th century. [4 marks]',
-      hint: 'Contrast medieval monastic hospitals offering religious shelter and comfort (‘care not cure’) without doctors, with 18th/19th century voluntary hospitals treating illness with trained physicians and surgery.',
+        'Explain one way in which hospital care in the Medieval period (c1250–c1500) was different from hospital care in the 18th or 19th century. [4 marks]',
+      hint: 'Contrast medieval monastic hospitals run by nuns offering rest and prayer without doctors, with 18th/19th century voluntary hospitals employing trained surgeons and medical staff to actively cure disease.',
       stems:
         'One way hospital care differed was... &bull; In the Medieval period, hospitals... &bull; In contrast, in the 18th and 19th centuries...',
     },
     livingTimelineMission: {
-      milestone: 'Milestone 6 (1400s)',
+      milestone: 'Milestones 7 & 8 (c. 1400 & c. 1450)',
       instruction:
-        'Turn back to <strong>Pages 2–3 (Milestone 6: 1400s)</strong>. In the sketchpad frame, sketch a monastic hospital ward facing a chapel altar and annotate the golden rule: <em>Hospitality and prayer, not medical cure!</em>',
+        'Turn back to <strong>Pages 2–3 (Milestones 7 & 8)</strong>. In the sketchpad frame, sketch a monastic hospital ward facing the altar and annotate: <em>Hospitality, warmth, and prayer, not medical cure!</em>',
     },
   },
   {
-    lessonIndex: 2, // lesson_1_3
-    lessonNum: 3,
-    id: 'lesson_1_3',
-    title: 'KT1.3: Dealing with the Black Death (1348–1349)',
+    lessonIndex: 4, // lesson_1_5
+    lessonNum: 5,
+    id: 'lesson_1_5',
+    title: 'KT1.5: Case Study: Dealing with the Black Death (1348–1349)',
     enquiryQuestion:
       'Why were medieval people completely helpless in the face of the Black Death epidemic?',
     specAnchor:
@@ -202,81 +382,84 @@ const medievalConfigs = [
     structureStrip: [
       {
         col: '1. SUPERNATURAL CAUSES & RELIGIOUS PANIC (AGREE)',
-        text: 'Explain how people believed God sent the plague to punish sin, leading to prayer, religious processions, and flagellants whipping themselves rather than stopping infection.',
+        text: 'Explain how people believed God sent the pestilence to punish sin, prompting mass church gatherings, pilgrimages, and flagellants scourging themselves—which actually accelerated the spread of contagion.',
       },
       {
-        col: '2. MIASMA, LIVING CONDITIONS & RATS (DISAGREE)',
-        text: 'Explain how people blamed corrupt air, carrying herbs and lighting fires, while filthy, crowded streets allowed black rats and fleas to multiply uncontrollably.',
+        col: '2. MIASMA, LIVING CONDITIONS & FLEAS (DISAGREE)',
+        text: 'Explain how belief in bad air led to ineffective measures (street fires, carrying sweet posies), while squalid, cramped timber housing and open cesspits enabled black rats and fleas (Yersinia pestis) to multiply unchecked.',
       },
       {
-        col: '3. EVALUATIVE VERDICT & CIVIC WEAKNESS (CRITERIA)',
-        text: 'Weigh the factors: neither doctors nor councils understood that rat fleas or bacteria caused the plague; Edward III’s street-cleaning order came too late to halt the catastrophe.',
+        col: '3. LACK OF MEDICAL KNOWLEDGE & CIVIC WEAKNESS (EVALUATION)',
+        text: 'Weigh the factors: neither physicians nor civic officials understood germ theory; Edward III’s 1349 street-cleaning mandate was powerless against rat fleas and pneumonic coughing droplets.',
       },
     ],
     connectives:
-      'On the one hand, belief in supernatural causes was a major reason because... &bull; For example, flagellants... &bull; On the other hand, environmental factors and miasma were crucial because... &bull; Furthermore, neither doctors nor councils understood... &bull; Overall, while supernatural beliefs led to fatalistic reactions...',
+      'On the one hand, belief in supernatural causes was a primary reason for failure because... &bull; For instance, flagellants whipped themselves... &bull; On the other hand, misdiagnosis of miasma and squalid conditions were equally vital because... &bull; Crucially, authorities lacked knowledge of Yersinia pestis... &bull; In conclusion, while religious fatalism dictated reactions, the fundamental barrier was...',
     wordBank: {
       technical:
-        'The Black Death (1348) &bull; Yersinia pestis &bull; bubonic plague &bull; pneumonic plague &bull; buboes &bull; high fever &bull; 30–50% mortality',
-      prevention:
-        'flagellants &bull; religious processions &bull; lighting street fires &bull; sweet posies/pomanders &bull; ringing bells &bull; voluntary quarantine',
+        'The Black Death (1348–49) &bull; Melcombe Regis &bull; Yersinia pestis &bull; bubonic strain (rat fleas) &bull; pneumonic strain (droplets) &bull; buboes &bull; 30–50% mortality',
+      reactions:
+        'flagellants &bull; public religious processions &bull; sweet posies &amp; pomanders &bull; street bonfires &bull; lancing buboes',
       civic:
-        'King Edward III &bull; Mayor of London &bull; street-cleaning order (1349) &bull; East Smithfield plague pits &bull; lancing buboes',
+        'King Edward III &bull; Mayor of London &bull; 1349 street-cleaning order &bull; East Smithfield plague pits &bull; quarantine failure',
     },
     doNow: [
       {
-        q: 'What was the most common surgical procedure performed by barber-surgeons to balance the humours?',
-        a: 'Bloodletting (Phlebotomy)',
-      },
-      {
-        q: 'What herbal remedy containing over 60 ingredients was widely used as a medieval cure-all?',
-        a: 'Theriac',
-      },
-      {
-        q: 'What was the primary purpose of a medieval monastic hospital?',
+        q: 'State the motto or philosophy of medieval monastic hospitals regarding patient treatment.',
         a: '‘Care not cure’ (hospitality, warmth, food, and prayer)',
       },
       {
-        q: 'Name one group of patients who were strictly excluded from medieval hospitals.',
-        a: 'Infectious patients (lepers, plague victims) and pregnant women',
+        q: 'Which group of medical practitioners carried out bloodletting, tooth-pulling, and minor amputations?',
+        a: 'Barber-surgeons',
+      },
+      {
+        q: 'Which patients were strictly excluded from medieval monastic hospitals?',
+        a: 'Lepers, plague victims, the terminally ill, and pregnant women',
+      },
+      {
+        q: 'In what Dorset port did the Black Death first arrive in England in June 1348?',
+        a: 'Melcombe Regis',
       },
     ],
     coreKnowledge: [
       {
-        heading: 'Arrival & Symptoms of the Pestilence (1348):',
-        text: 'Arrived at Melcombe Regis (Dorset) in June 1348, killing 30–50% of England’s population. Bubonic plague (rat fleas) caused excruciating groin/armpit buboes, dark blotches, and fever; pneumonic plague (spread by coughs/breath) attacked the lungs with nearly 100% mortality.',
+        heading: 'Arrival & Dual Strains (1348):',
+        text: 'Arrived in June 1348 at Melcombe Regis (Dorset) on trade ships from Gascony, killing 30–50% of England’s population. Bubonic plague (rat flea bites) caused agonizing lymph buboes in the groin/armpits (50% mortality); Pneumonic plague (spread by cough droplets) attacked lungs with near 100% mortality.',
       },
       {
-        heading: 'Believed Causes: Divine Wrath & Miasma:',
-        text: 'People blamed God’s punishment for human wickedness; the 1345 planetary conjunction of Mars, Jupiter, and Saturn in Aquarius; and corrupt miasma from rotting matter, unburied bodies, and stagnant swamps.',
+        heading: 'Believed Causes & Desperate Prevention:',
+        text: 'People blamed God’s wrath, the 1345 planetary conjunction in Aquarius, and corrupt miasma from rotting waste. Reactions included processions, self-flagellation with iron scourges, burning aromatic resin fires, and carrying sweet posies.',
       },
       {
-        heading: 'Desperate Responses & Limited Civic Action:',
-        text: 'People prayed, joined religious processions, or whipped themselves as flagellants; burned incense, carried sweet posies, and lit street fires; lanced buboes with hot irons. In 1349, King Edward III ordered the Mayor of London to clean the filthy streets, but authorities lacked power or knowledge to halt the plague.',
+        heading: 'Ineffective Treatments & Civic Panic:',
+        text: 'Barber-surgeons lanced buboes with hot irons or tied live plucked chickens to swellings; local councils were overwhelmed. In 1349, King Edward III ordered the Mayor of London to clear filth and human dung, but unburied corpses filled emergency mass pits at East Smithfield.',
       },
     ],
     vocabTask: {
       type: 'distinction',
-      termA: 'Religious Penitence (Flagellants)',
-      termB: 'Civic Sanitation (Street Cleaning)',
+      termA: 'Bubonic Plague (Flea-Borne)',
+      termB: 'Pneumonic Plague (Airborne)',
       prompt:
-        'Explain the difference between <strong>religious penitence</strong> (whipping oneself to appease God’s wrath) and <strong>civic sanitation</strong> (King Edward III ordering London streets cleared of dung and waste):',
+        'Explain the critical distinction between <strong>bubonic plague</strong> (spread by rat flea bites, producing agonizing lymph buboes) and <strong>pneumonic plague</strong> (spread by cough droplets, attacking lungs with near 100% mortality):',
     },
     fourMarkComparison: {
       question:
         'Explain one way in which reactions to the Black Death (1348) were similar to reactions to the Great Plague of London (1665). [4 marks]',
-      hint: 'Focus on the persistent belief that miasma caused the epidemic, leading people to burn fires in the streets, carry sweet-smelling herbs, or flee the cities.',
+      hint: 'Focus on the continued reliance on fires in the streets, carrying sweet herbs to counter miasma, and viewing epidemics as divine punishment for human wickedness.',
       stems:
-        'One way reactions were similar was the widespread belief in... &bull; During the Black Death of 1348... &bull; Similarly, during the Great Plague of 1665...',
+        'One way reactions were similar was the widespread belief that miasma caused the plague... &bull; During the Black Death in 1348... &bull; Similarly, during the Great Plague of 1665...',
     },
     livingTimelineMission: {
-      milestone: 'Milestones 4 & 5 (1348 & 1349)',
+      milestone: 'Milestones 5 & 6 (1348 & 1349)',
       instruction:
-        'Turn back to <strong>Pages 2–3 (Milestones 4 & 5)</strong>. In the sketchpad frame, sketch the mass burial pit at East Smithfield and annotate Edward III’s order: <em>Clean the streets of pestilential filth!</em>',
+        'Turn back to <strong>Pages 2–3 (Milestones 5 & 6)</strong>. In the sketchpad frame, sketch the emergency plague burial pit at East Smithfield and annotate: <em>The Catastrophe of 1348–1349!</em>',
     },
   },
 ];
 
+// ============================================================================
+// HTML WORKBOOK GENERATOR FUNCTION
+// ============================================================================
 function buildMedievalTwoPageWorkbook(unitData, period) {
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -345,15 +528,15 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       font-weight: 600;
     }
     .spec-anchor-bar {
-      background: #f8fafc;
-      border: 1.2px solid #cbd5e1;
+      background: #fdf8f6;
+      border: 1.2px solid #fed7aa;
       border-left: 4px solid #78350f;
       border-radius: 4px;
-      padding: 4px 8px;
+      padding: 3.5px 7px;
       margin-bottom: 5px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-family: 'Inter', sans-serif;
     }
     .spec-anchor-badge {
@@ -368,7 +551,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       white-space: nowrap;
     }
     .spec-anchor-text {
-      font-size: 7.5pt;
+      font-size: 7.2pt;
       color: #1e293b;
       line-height: 1.25;
     }
@@ -376,7 +559,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       border: 1.2px dashed #92400e;
       background: #fffbeb;
       border-radius: 4px;
-      padding: 4px 7px;
+      padding: 3.5px 7px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -395,14 +578,14 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       white-space: nowrap;
     }
     .living-mission-text {
-      font-size: 7.4pt;
+      font-size: 7.2pt;
       color: #78350f;
       line-height: 1.25;
     }
     .living-mission-link {
       font-weight: 700;
       color: #92400e;
-      font-size: 7.2pt;
+      font-size: 7pt;
       white-space: nowrap;
       margin-left: 6px;
       text-transform: uppercase;
@@ -448,65 +631,75 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
     </div>
 
-    <!-- Main Title Block -->
-    <div style="text-align: center; border-bottom: 1px solid #cbd5e1; padding: 2px 0 8px 0; margin-bottom: 8px;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #78350f; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px;">
-        Pearson Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
+    <!-- Central Hero & Title Block -->
+    <div style="text-align: center; margin: 15px 0;">
+      <div style="display: inline-block; background: #78350f; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; padding: 3px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;">
+        Key Topic 1 &bull; c1250–c1500 &bull; 14-Page Complete Mastery Workbook
       </div>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: 22pt; color: #0f172a; margin: 0 0 3px 0; text-transform: uppercase; letter-spacing: 1.2px; line-height: 1.15;">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 26pt; line-height: 1.15; color: #0f172a; margin: 0 0 6px 0; font-weight: 800; letter-spacing: -0.5px;">
         Medicine in Medieval England
       </h1>
-      <div style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #334155; font-weight: 500; letter-spacing: 0.5px;">
-        Key Topic 1: Ideas, Treatments, Monastic Care &amp; The Black Death (c1250–c1500)
+      <div style="font-family: 'Cinzel', serif; font-size: 12.5pt; color: #78350f; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px;">
+        Supernatural Dogma, The Four Humours &amp; The Black Death Catastrophe
       </div>
-    </div>
 
-    <!-- Overarching Enquiry Callout Box -->
-    <div style="border: 1.5px solid #78350f; border-radius: 5px; padding: 8px 16px; background: #fdf8f6; margin-bottom: 8px; text-align: center;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1.8px; color: #78350f; font-weight: 700; margin-bottom: 2px;">
-        Overarching Historical Enquiry
-      </div>
-      <div style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; font-style: italic; font-weight: 600; line-height: 1.25;">
-        &ldquo;Why did Galen, the Catholic Church, and ancient superstition freeze medical thinking for a thousand years?&rdquo;
-      </div>
-    </div>
-
-    <!-- Hero Primary Source Presentation -->
-    <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; background: #ffffff; display: grid; grid-template-columns: 190px 1fr; gap: 16px; align-items: center;">
-      <div style="text-align: center; border: 1px solid #94a3b8; border-radius: 4px; padding: 4px; background: #fdf8f6; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
-        <img src="/images/four_humours.jpg" style="width: 100%; height: 160px; object-fit: contain; border-radius: 2px; display: block;" alt="The Four Humours Wheel">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; margin-top: 4px; text-transform: uppercase;">
-          The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)
+      <!-- Historical Primary Artifact Banner Frame -->
+      <div style="border: 2px solid #78350f; border-radius: 6px; padding: 5px; background: #fdf8f6; max-width: 580px; margin: 0 auto; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <img src="/images/history_of_medicine_hero.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 165px; object-fit: cover; border-radius: 4px; display: block;">
+        <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; padding: 4px 6px 0 6px;">
+          <span><strong>Primary Artifact:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585</span>
+          <span>Shelfmark: ARCH-MED-1250</span>
         </div>
       </div>
-      <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 3px; text-transform: uppercase;">
-              Primary Historical Artifact &bull; Humoural Medicine
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">ÖNB MS 2644</span>
-          </div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #0f172a; margin: 0 0 4px 0; font-weight: 700;">
-            The Intellectual Monopoly: Blood, Phlegm, Choler &amp; Melancholy
+    </div>
+
+    <!-- Specification Breakdown & Learning Pillars -->
+    <div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+        <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #78350f; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #78350f; text-transform: uppercase; margin: 0 0 4px 0;">
+            Thematic Specification Inquiries (KT1.1–KT1.5)
           </h4>
-          <p style="font-size: 8pt; line-height: 1.35; color: #334155; margin: 0 0 6px 0;">
-            In medieval England, medical authority rested upon ancient Greek philosophy, Roman treatises, and Catholic Christian theology. Sickness was explained as an internal imbalance of the body’s four humours or the corrupting influence of foul miasmas. With the Church declaring Galen infallible dogma and human dissection forbidden, medical ideas remained virtually unchanged for over a thousand years.
-          </p>
+          <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt; color: #334155; line-height: 1.35;">
+            <li><strong>KT1.1:</strong> Supernatural &amp; religious explanations; Church scribal monopoly.</li>
+            <li><strong>KT1.2:</strong> Rational explanations: Hippocrates, Galen, Four Humours &amp; Opposites.</li>
+            <li><strong>KT1.3:</strong> Approaches to treatment: Phlebotomy, purging, Theriac &amp; Regimen.</li>
+            <li><strong>KT1.4:</strong> Care providers &amp; monastic hospitals (‘care not cure’).</li>
+            <li><strong>KT1.5:</strong> Case study: Dealing with the Black Death catastrophe (1348–1349).</li>
+          </ul>
         </div>
+        <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #78350f; border-radius: 4px; padding: 8px 10px; background: #ffffff;">
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #78350f; text-transform: uppercase; margin: 0 0 4px 0;">
+            Rigorous Exam Mastery Architecture
+          </h4>
+          <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt; color: #334155; line-height: 1.35;">
+            <li><strong>Living Timeline:</strong> 8-node dual-page chronological sketchpad (Pages 2–3).</li>
+            <li><strong>Knowledge Injection:</strong> Do Now recall, core knowledge &amp; distinction tasks.</li>
+            <li><strong>Paper 1 Question 3:</strong> 5x 4-mark similarity/difference comparative tasks.</li>
+            <li><strong>Paper 1 Question 4:</strong> 4x 12-mark causation essays with 3-column structure strips.</li>
+            <li><strong>Paper 1 Question 5/6:</strong> 1x 16+4-mark evaluative essay with criteria judgement.</li>
+          </ul>
+        </div>
+      </div>
 
-        <div style="border-top: 1px dashed #cbd5e1; padding-top: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569;">
-            <strong style="color: #78350f;">Booklet Blueprint:</strong> 3 Rigorous Spreads (KT1.1–1.3) + Living Timeline + Exam Mastery Workshop
+      <!-- Departmental Guarantee Strip -->
+      <div style="border: 1.2px solid #78350f; border-radius: 4px; padding: 6px 12px; background: #fdf8f6; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
+            GCSE History Revision Hub &bull; Independent Educational Series
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569;">
-            <strong style="color: #78350f;">Exam Tariff:</strong> Q3 Similarity/Difference (4m), Q4 Explain Why (12m), Q5/6 Essay (16+4m)
+          <div style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #475569;">
+            Standardized 14-Page Double-Page Spread Layout &bull; Zero Page Overflows Guaranteed
           </div>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #78350f;">96 TOTAL MARKS</span>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-weight: 600;">PAPER 1 SECTION B</div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Departmental Guarantee & Specification Seal -->
+    <!-- Bottom Departmental Footer -->
     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1.5px solid #78350f; padding-top: 8px; margin-top: 4px;">
       <div style="display: flex; align-items: center; gap: 6px;">
         <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #16a34a;"></span>
@@ -515,225 +708,333 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </span>
       </div>
       <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #78350f; letter-spacing: 0.5px;">
-        PAGES 1 &bull; 12
+        PAGE 1 OF 14
       </div>
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 2–3: DOUBLE-PAGE SPREAD: MEDIEVAL LIVING TIMELINE & SPEC MAP
+  // PAGES 2–3: DOUBLE-PAGE SPREAD: MEDIEVAL LIVING TIMELINE (8 MILESTONES)
   // ====================================================================
   html += `
-  <!-- PAGE 2: TIMELINE PART 1 (MILESTONES 1–3) -->
-  <div class="page page-container" id="page-2" style="padding: 14px 18px; justify-content: space-between;">
+  <!-- PAGE 2: LIVING TIMELINE PART 1 (MILESTONES 1–4: c1250–c1320) -->
+  <div class="page page-container" id="page-2" style="padding: 10px 14px; display: flex; flex-direction: column; height: 272mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #78350f; outline-offset: -6px;">
     <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 8px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="background: #78350f; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
-            Living Timeline &bull; Part 1
-          </span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; color: #0f172a; margin: 0; font-weight: 700;">
-            The Foundations of Medieval Medicine (c1250–c1345)
+      <div style="border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; color: #78350f; font-weight: 700;">
+            Living Unit Timeline &bull; Part I: Religious Dogma &amp; Humoural Foundations (c1250–c1320)
+          </div>
+          <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+            The Medieval Intellectual World
           </h2>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b; font-weight: 600;">
-          PAGE 2 &bull; LIVING CHRONOLOGY
-        </div>
+        <span class="archival-badge" style="background: #fdf8f6; color: #78350f; border-color: #fed7aa;">
+          Pages 2–3 Facing Spread
+        </span>
       </div>
 
-      <div style="background: #fdf8f6; border: 1.2px solid #fed7aa; border-radius: 4px; padding: 5px 10px; margin-bottom: 8px; font-size: 7.5pt; color: #78350f;">
-        <strong>Interactive Visual Mission:</strong> As you progress through each lesson, locate the target milestone below. Sketch the historical artifact in the frame and annotate the key historical mechanisms!
+      <div style="background: #fdf8f6; border: 1px solid #fed7aa; border-left: 3px solid #78350f; padding: 3.5px 8px; margin-bottom: 6px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
+        <span><strong>Living Timeline Protocol:</strong> Illustrate each milestone inside its sketchpad box. Add visual symbols, causal arrows, and forensic tags as you complete each lesson.</span>
+        <span style="font-weight: 700; color: #78350f; white-space: nowrap; margin-left: 8px;">Spine &bull; Facing Left</span>
       </div>
 
-      <!-- Milestone 1: c. 1250 Hippocrates & Galen -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; margin-bottom: 8px; background: #ffffff; display: grid; grid-template-columns: 90px 1fr 105px; gap: 10px; align-items: center;">
-        <div style="text-align: center; border-right: 1.5px solid #fed7aa; padding-right: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f; line-height: 1;">c. 1250</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #92400e; text-transform: uppercase;">Milestone 1</div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6pt; background: #fef3c7; color: #92400e; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; font-weight: 700;">Dogma</span>
-        </div>
-        <div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 9.5pt; color: #0f172a; margin: 0 0 2px 0; font-weight: 700;">
-            The Intellectual Triad: Hippocrates, Galen &amp; The Catholic Church
-          </h4>
-          <p style="font-size: 7.4pt; color: #334155; margin: 0; line-height: 1.3;">
-            Ancient Greek humoral theory (Hippocrates) and the Roman Theory of Opposites (Galen) become the unquestioned foundation of European medicine. Because Galen believed every organ had a divine purpose created by a single Creator, the Catholic Church embraces his texts as sacred doctrine. Monks control manuscript copying; universities teach Galen exclusively.
-          </p>
-        </div>
-        <div style="border: 1.5px dashed #94a3b8; border-radius: 4px; height: 58px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #64748b; font-weight: 700; text-transform: uppercase;">Sketchpad 1</div>
-          <div style="font-size: 6.2pt; color: #94a3b8; font-style: italic;">[Four Humours / Opposites]</div>
-        </div>
-      </div>
+      <!-- Chronological Timeline Nodes: Milestones 1–4 -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
 
-      <!-- Milestone 2: 1277 Roger Bacon -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; margin-bottom: 8px; background: #ffffff; display: grid; grid-template-columns: 90px 1fr 105px; gap: 10px; align-items: center;">
-        <div style="text-align: center; border-right: 1.5px solid #fed7aa; padding-right: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f; line-height: 1;">1277</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #92400e; text-transform: uppercase;">Milestone 2</div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6pt; background: #fee2e2; color: #991b1b; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; font-weight: 700;">Heresy</span>
+        <!-- Milestone 1: c. 1250 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 1 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Scriptorium monk copying Galen text]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>c.1250 Dogma</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #78350f; color: #ffffff; padding: 1px 5px; border-radius: 3px;">c. 1250</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">The Intellectual Triad: Hippocrates, Galen &amp; The Catholic Church</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                Hippocrates’ Four Humours and Galen’s Theory of Opposites dominate medical thinking. Because Galen believed every organ was designed by a single Creator, the Catholic Church adopts his writings as sacred dogma, controlling all manuscript copying in monastic scriptoria.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 1 &bull; Church scribal monopoly &bull; teleology &bull; suppression of dissent
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 9.5pt; color: #0f172a; margin: 0 0 2px 0; font-weight: 700;">
-            The Imprisonment of Roger Bacon &amp; Enforcement of Conformity
-          </h4>
-          <p style="font-size: 7.4pt; color: #334155; margin: 0; line-height: 1.3;">
-            Franciscan friar Roger Bacon is imprisoned by Church leaders for suggesting that scientists should perform firsthand experiments rather than blindly accepting ancient books. This harsh punishment serves as a terrifying warning across European universities: challenging Galen is equivalent to challenging the Catholic Church itself, completely freezing medical progress.
-          </p>
-        </div>
-        <div style="border: 1.5px dashed #94a3b8; border-radius: 4px; height: 58px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #64748b; font-weight: 700; text-transform: uppercase;">Sketchpad 2</div>
-          <div style="font-size: 6.2pt; color: #94a3b8; font-style: italic;">[Bacon in Chains / Heresy]</div>
-        </div>
-      </div>
 
-      <!-- Milestone 3: 1345 The Astrological Alignment -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; margin-bottom: 8px; background: #ffffff; display: grid; grid-template-columns: 90px 1fr 105px; gap: 10px; align-items: center;">
-        <div style="text-align: center; border-right: 1.5px solid #fed7aa; padding-right: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f; line-height: 1;">1345</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #92400e; text-transform: uppercase;">Milestone 3</div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6pt; background: #e0e7ff; color: #3730a3; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; font-weight: 700;">Astrology</span>
+        <!-- Milestone 2: 1277 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 2 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Roger Bacon in chains / warning sign]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>1277 Heresy</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #991b1b; color: #ffffff; padding: 1px 5px; border-radius: 3px;">1277</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">The Imprisonment of Roger Bacon &amp; Enforcement of Conformity</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                Franciscan friar Roger Bacon is imprisoned by Church authorities for advocating firsthand scientific experimentation over unquestioned obedience to ancient books. His punishment acts as a chilling warning across European universities: challenging Galen is branded heresy.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 1 &bull; Church censorship &bull; suppression of empirical science
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 9.5pt; color: #0f172a; margin: 0 0 2px 0; font-weight: 700;">
-            The Great Planetary Conjunction of Mars, Jupiter &amp; Saturn
-          </h4>
-          <p style="font-size: 7.4pt; color: #334155; margin: 0; line-height: 1.3;">
-            In March 1345, an unusual conjunction of Saturn, Jupiter, and Mars in the sign of Aquarius occurs. Leading physicians at the University of Paris claim this celestial event drew up poisonous vapors from the earth, corrupting the air with deadly miasma. Astrological almanacs become mandatory diagnostic tools for physicians predicting epidemics and planning phlebotomy.
-          </p>
+
+        <!-- Milestone 3: c. 1300 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 3 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Matula urine flask &amp; Zodiac Man]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>c.1300 Diagnosis</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #78350f; color: #ffffff; padding: 1px 5px; border-radius: 3px;">c. 1300</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">The Physician’s Diagnostic Toolkit: Uroscopy &amp; The Zodiac Man</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                Physicians carry pocket Vademecum handbooks containing urine charts and astrology wheels. Examining urine color, clarity, and sediment in a glass matula against 20 shades becomes the standard diagnostic method; doctors consult the Zodiac Man before deciding where and when to bleed.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 2 &bull; Uroscopy &bull; astrological diagnostics &bull; Vademecum
+            </div>
+          </div>
         </div>
-        <div style="border: 1.5px dashed #94a3b8; border-radius: 4px; height: 58px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #64748b; font-weight: 700; text-transform: uppercase;">Sketchpad 3</div>
-          <div style="font-size: 6.2pt; color: #94a3b8; font-style: italic;">[Planets / Zodiac Man]</div>
+
+        <!-- Milestone 4: c. 1320 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 4 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Barber fleam, leeches &amp; Theriac jar]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>c.1320 Therapy</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #78350f; color: #ffffff; padding: 1px 5px; border-radius: 3px;">c. 1320</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">Humoural Therapeutics: Phlebotomy, Purging &amp; Theriac</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                Treatments focus entirely on restoring humoural balance. Phlebotomy (bloodletting with fleams, cupping, or leeches) and purging (emetics and clysters) physically deplete patients. Apothecaries compound Theriac (60+ ingredients including viper flesh) as a universal antidote.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 3 &bull; Bloodletting &bull; purging &bull; Theriac &bull; Regimen Sanitatis
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
-      <span>The History Department &bull; Edexcel GCSE (9–1) Medicine &bull; Paper 1</span>
-      <span>PAGE 2</span>
+    <!-- Page 2 Footer -->
+    <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <span>The History Department &bull; GCSE Medicine Revision Series</span>
+      <span>Key Topic 1 &bull; Living Timeline Part I</span>
+      <span>Page 2</span>
     </div>
   </div>
 
-  <!-- PAGE 3: TIMELINE PART 2 (MILESTONES 4–6 & SPEC MAP) -->
-  <div class="page page-container" id="page-3" style="padding: 14px 18px; justify-content: space-between;">
+  <!-- PAGE 3: LIVING TIMELINE PART 2 (MILESTONES 5–8: 1345–c1500) -->
+  <div class="page page-container" id="page-3" style="padding: 10px 14px; display: flex; flex-direction: column; height: 272mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #78350f; outline-offset: -6px;">
     <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 8px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="background: #78350f; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
-            Living Timeline &bull; Part 2
-          </span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; color: #0f172a; margin: 0; font-weight: 700;">
-            The Black Death Catastrophe &amp; Monastic Care (1348–c1500)
+      <div style="border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; color: #78350f; font-weight: 700;">
+            Living Unit Timeline &bull; Part II: Epidemic Catastrophe &amp; Monastic Care (1345–c1500)
+          </div>
+          <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+            The Black Death &amp; Institutional Care
           </h2>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b; font-weight: 600;">
-          PAGE 3 &bull; LIVING CHRONOLOGY
-        </div>
+        <span class="archival-badge" style="background: #fdf8f6; color: #78350f; border-color: #fed7aa;">
+          Pages 2–3 Facing Spread
+        </span>
       </div>
 
-      <!-- Milestone 4: 1348 Arrival of the Black Death -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; margin-bottom: 8px; background: #ffffff; display: grid; grid-template-columns: 90px 1fr 105px; gap: 10px; align-items: center;">
-        <div style="text-align: center; border-right: 1.5px solid #fed7aa; padding-right: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f; line-height: 1;">1348</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #92400e; text-transform: uppercase;">Milestone 4</div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6pt; background: #fee2e2; color: #991b1b; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; font-weight: 700;">Epidemic</span>
-        </div>
-        <div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 9.5pt; color: #0f172a; margin: 0 0 2px 0; font-weight: 700;">
-            The Black Death Reaches England (Melcombe Regis, Dorset)
-          </h4>
-          <p style="font-size: 7.4pt; color: #334155; margin: 0; line-height: 1.3;">
-            In June 1348, ships from Gascony dock at Melcombe Regis carrying plague-infected black rats and fleas. The epidemic spreads rapidly along trade roads, striking London by autumn. Between 30% and 50% of England’s population dies within 18 months. Churchyards overflow; emergency mass burial pits are dug outside town walls at East Smithfield.
-          </p>
-        </div>
-        <div style="border: 1.5px dashed #94a3b8; border-radius: 4px; height: 58px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #64748b; font-weight: 700; text-transform: uppercase;">Sketchpad 4</div>
-          <div style="font-size: 6.2pt; color: #94a3b8; font-style: italic;">[Buboes / Mass Pit]</div>
-        </div>
+      <div style="background: #fdf8f6; border: 1px solid #fed7aa; border-left: 3px solid #78350f; padding: 3.5px 8px; margin-bottom: 6px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
+        <span><strong>Living Timeline Protocol:</strong> Illustrate milestones 5–8 below. Notice how the catastrophe of 1348 exposed the total failure of ancient medical theories.</span>
+        <span style="font-weight: 700; color: #78350f; white-space: nowrap; margin-left: 8px;">Spine &bull; Facing Right</span>
       </div>
 
-      <!-- Milestone 5: 1349 Edward III's Street Cleaning Order -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; margin-bottom: 8px; background: #ffffff; display: grid; grid-template-columns: 90px 1fr 105px; gap: 10px; align-items: center;">
-        <div style="text-align: center; border-right: 1.5px solid #fed7aa; padding-right: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f; line-height: 1;">1349</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #92400e; text-transform: uppercase;">Milestone 5</div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6pt; background: #fef3c7; color: #92400e; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; font-weight: 700;">Sanitation</span>
-        </div>
-        <div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 9.5pt; color: #0f172a; margin: 0 0 2px 0; font-weight: 700;">
-            King Edward III’s Sanitary Order to the Mayor of London
-          </h4>
-          <p style="font-size: 7.4pt; color: #334155; margin: 0; line-height: 1.3;">
-            Alarmed by the overwhelming stench and mounds of decaying corpses, King Edward III writes to the Mayor of London demanding streets be cleaned of human dung and rotting waste to eliminate corrupt miasma. While an early example of civic public health intervention, authorities have zero power to enforce quarantine or eliminate the rat fleas transmitting the bacterium.
-          </p>
-        </div>
-        <div style="border: 1.5px dashed #94a3b8; border-radius: 4px; height: 58px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #64748b; font-weight: 700; text-transform: uppercase;">Sketchpad 5</div>
-          <div style="font-size: 6.2pt; color: #94a3b8; font-style: italic;">[Edward III / Street Dung]</div>
-        </div>
-      </div>
+      <!-- Chronological Timeline Nodes: Milestones 5–8 -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
 
-      <!-- Milestone 6: 1400s Monastic Hospitals -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; margin-bottom: 8px; background: #ffffff; display: grid; grid-template-columns: 90px 1fr 105px; gap: 10px; align-items: center;">
-        <div style="text-align: center; border-right: 1.5px solid #fed7aa; padding-right: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f; line-height: 1;">1400s</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #92400e; text-transform: uppercase;">Milestone 6</div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6pt; background: #f0fdf4; color: #166534; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; font-weight: 700;">Care</span>
-        </div>
-        <div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 9.5pt; color: #0f172a; margin: 0 0 2px 0; font-weight: 700;">
-            The Golden Age of Monastic Hospitals: ‘Care Not Cure’
-          </h4>
-          <p style="font-size: 7.4pt; color: #334155; margin: 0; line-height: 1.3;">
-            By the 15th century, over 1,200 hospitals operate across England, run by Catholic religious orders. Institutions like St Bartholomew’s (founded 1123) and St Thomas’s provide clean bedding, warm fires, nutritious broth, and continuous prayer facing an altar. However, no medical treatment or surgical cure is attempted; their primary purpose is spiritual salvation.
-          </p>
-        </div>
-        <div style="border: 1.5px dashed #94a3b8; border-radius: 4px; height: 58px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #64748b; font-weight: 700; text-transform: uppercase;">Sketchpad 6</div>
-          <div style="font-size: 6.2pt; color: #94a3b8; font-style: italic;">[Hospital Ward / Chapel]</div>
-        </div>
-      </div>
-
-      <!-- Specification Matrix Overview -->
-      <div style="border: 1.2px solid #78350f; border-radius: 5px; padding: 6px 10px; background: #fdf8f6;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #78350f; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
-          Edexcel GCSE History Specification Matrix: Key Topic 1 (c1250–c1500)
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b;">
-          <div style="border-left: 2.5px solid #78350f; padding-left: 5px;">
-            <strong style="color: #78350f;">1.1 Causes:</strong> God's punishment, sin, astrology (1345 alignment), Four Humours, Opposites, Miasma, Church teleology.
+        <!-- Milestone 5: 1345 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 5 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Planets aligned over smoking city]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>1345 Conjunction</span><span>⌟</span>
+            </div>
           </div>
-          <div style="border-left: 2.5px solid #78350f; padding-left: 5px;">
-            <strong style="color: #78350f;">1.2 Treatments:</strong> Prayer, relics, pilgrimages, bloodletting (fleam, leeches), purging, herbal Theriac, monastic care.
-          </div>
-          <div style="border-left: 2.5px solid #78350f; padding-left: 5px;">
-            <strong style="color: #78350f;">1.3 Black Death:</strong> Bubonic & pneumonic plague, buboes, street fires, flagellants, quarantine, Edward III’s order.
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #3730a3; color: #ffffff; padding: 1px 5px; border-radius: 3px;">1345</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">The Great Planetary Conjunction of Mars, Jupiter &amp; Saturn</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                In March 1345, Mars, Jupiter, and Saturn align in the sign of Aquarius. University of Paris scholars declare this celestial event drew poisonous vapours from the earth, corrupting the air with deadly miasma. Astrological almanacs become standard tools for predicting pestilence.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lessons 1 &amp; 5 &bull; Astrological causation &bull; atmospheric miasma
+            </div>
           </div>
         </div>
+
+        <!-- Milestone 6: 1348 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 6 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Black rat flea, bubo &amp; mass grave]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>1348 Pestilence</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #991b1b; color: #ffffff; padding: 1px 5px; border-radius: 3px;">1348</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">The Black Death Catastrophe at Melcombe Regis, Dorset</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                In June 1348, the pestilence arrives on trade ships from Gascony carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes, 50% death) and pneumonic plague (airborne coughing droplets, 100% death)—wipes out 30–50% of England within 18 months.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 5 &bull; Bubonic vs pneumonic strains &bull; catastrophic mortality
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 7: 1349 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 7 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Edward III royal seal &amp; East Smithfield]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>1349 Sanitation</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #78350f; color: #ffffff; padding: 1px 5px; border-radius: 3px;">1349</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">King Edward III’s Sanitary Mandate &amp; London Mass Pits</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                Alarmed by rotting corpses and filth, Edward III commands the Mayor of London to clean the streets of animal dung and human waste to eliminate corrupt miasma. Simultaneously, churchyards overflow and emergency trenches are dug at East Smithfield to bury hundreds daily.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 5 &bull; Civic public health orders &bull; mass mortality
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 8: c. 1400 -->
+        <div style="display: grid; grid-template-columns: 105px 1fr; gap: 9px; align-items: stretch; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff;">
+          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 26mm;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌜</span><span>Milestone 8 Sketchpad</span><span>⌝</span>
+            </div>
+            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic;">
+              [Sketch: Hospital ward beds facing chapel altar]
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
+              <span>⌞</span><span>c.1400 Hospitals</span><span>⌟</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #166534; color: #ffffff; padding: 1px 5px; border-radius: 3px;">c. 1400</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a;">Monastic Hospitals: The Golden Age of ‘Care Not Cure’</strong>
+              </div>
+              <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; line-height: 1.3; margin: 0;">
+                Over 1,200 hospitals operate across England run by monks and nuns (e.g. St Bartholomew’s, St Thomas’s). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
+              </p>
+            </div>
+            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+              <strong>Key Enquiry Link:</strong> Lesson 4 &bull; ‘Care not cure’ &bull; religious hospitium &bull; patient exclusion
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
-      <span>The History Department &bull; Edexcel GCSE (9–1) Medicine &bull; Paper 1</span>
-      <span>PAGE 3</span>
+    <!-- Page 3 Footer -->
+    <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <span>The History Department &bull; GCSE Medicine Revision Series</span>
+      <span>Key Topic 1 &bull; Living Timeline Part II</span>
+      <span>Page 3</span>
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–9: 3 DEDICATED TWO-PAGE SPREADS (LESSONS 1.1 TO 1.3)
+  // PAGES 4–13: 5 DEDICATED TWO-PAGE SPREADS (LESSONS 1.1 TO 1.5)
   // ====================================================================
   medievalConfigs.forEach((cfg) => {
-    const leftPageNum = cfg.lessonNum * 2 + 2; // e.g. 1*2+2 = 4
-    const rightPageNum = cfg.lessonNum * 2 + 3; // e.g. 1*2+3 = 5
+    const leftPageNum = cfg.lessonNum * 2 + 2; // e.g. 1*2+2 = 4, 2*2+2 = 6, ..., 5*2+2 = 12
+    const rightPageNum = cfg.lessonNum * 2 + 3; // e.g. 1*2+3 = 5, 2*2+3 = 7, ..., 5*2+3 = 13
 
     // ------------------------------------------------------------------
     // LEFT PAGE: KNOWLEDGE INJECTION, RETRIEVAL & 4-MARK COMPARISON
     // ------------------------------------------------------------------
     html += `
-  <div class="page page-container" id="page-${leftPageNum}" style="padding: 12px 18px; justify-content: space-between;">
+  <div class="page page-container" id="page-${leftPageNum}" style="padding: 10px 14px; display: flex; flex-direction: column; height: 272mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #78350f; outline-offset: -6px;">
     <div>
       <!-- Lesson Header & Spec Anchor -->
       <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #78350f; padding-bottom: 3px; margin-bottom: 5px;">
@@ -752,32 +1053,27 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       <!-- Specification Anchor Bar -->
       <div class="spec-anchor-bar">
-        <span class="spec-anchor-badge">Spec Anchor</span>
+        <span class="spec-anchor-badge">Spec Focus</span>
         <span class="spec-anchor-text">${cfg.specAnchor}</span>
       </div>
 
-      <!-- Overarching Enquiry Question Callout -->
-      <div style="background: #fdf8f6; border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 8px; margin-bottom: 6px; font-family: 'Playfair Display', serif; font-size: 8.5pt; color: #78350f; font-style: italic; font-weight: 600;">
-        &ldquo;${cfg.enquiryQuestion}&rdquo;
-      </div>
-
-      <!-- TASK 1: SPACED RETRIEVAL DO NOW (4 RECALL QUESTIONS) -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Task 1: Spaced Retrieval Do Now &bull; Prior Knowledge Check
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; font-weight: 600;">[4 Marks &bull; 4 Mins]</span>
+      <!-- 4-Question Do Now Retrieval Grid -->
+      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #ffffff; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #78350f; text-transform: uppercase;">
+            &bull; 'Do Now' Retrieval Drill (Prior Knowledge Recall)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b;">4 Marks Available</span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
           ${cfg.doNow
             .map(
-              (item, i) => `
-          <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; background: #f8fafc;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.25; margin-bottom: 2px;">
-              <strong>Q${i + 1}:</strong> ${item.q}
+              (item, idx) => `
+          <div style="background: #fdf8f6; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 5px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">
+              ${idx + 1}. ${item.q}
             </div>
-            <div style="border-bottom: 1px solid #475569; height: 11px; margin-top: 2px;"></div>
+            <div class="task-line-dotted"></div>
           </div>
           `,
             )
@@ -785,21 +1081,18 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- TASK 2: CORE SUBSTANTIVE KNOWLEDGE (3 ANCHORS) -->
-      <div style="border: 1.2px solid #78350f; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Task 2: Core Substantive Knowledge &bull; The Historical Mechanism
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #78350f; font-weight: 700;">HIGH-YIELD SPECIFICATION CORE</span>
+      <!-- Core Knowledge Architecture (3 Thematic Pillars) -->
+      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; background: #ffffff; margin-bottom: 5px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #78350f; text-transform: uppercase; margin-bottom: 3px;">
+          Core Knowledge Architecture &bull; High-Yield Fact Injection
         </div>
         <div style="display: flex; flex-direction: column; gap: 4px;">
           ${cfg.coreKnowledge
             .map(
-              (ck) => `
-          <div style="border-left: 2.5px solid #78350f; padding-left: 6px; background: #fdf8f6; border-radius: 0 3px 3px 0; padding-top: 2px; padding-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #78350f;">${ck.heading}</strong>
-            <span style="font-size: 7.2pt; color: #1e293b; line-height: 1.25;"> ${ck.text}</span>
+              (know) => `
+          <div style="border-left: 2.5px solid #78350f; padding-left: 6px; background: #fafaf9;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #78350f; display: block; margin-bottom: 1px;">${know.heading}</strong>
+            <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0; line-height: 1.25;">${know.text}</p>
           </div>
           `,
             )
@@ -807,49 +1100,43 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- TASK 3: DISCIPLINARY DISTINCTION TASK -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Task 3: Disciplinary Vocabulary &bull; Dual-Term Analytical Distinction
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; font-weight: 600;">[Tier 3 Vocabulary]</span>
+      <!-- Disciplinary Vocabulary Distinction Task -->
+      <div style="border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; background: #fffbeb; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #78350f; text-transform: uppercase;">
+            Disciplinary Vocabulary &bull; Dual-Term Analytical Distinction
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; background: #78350f; color: #ffffff; padding: 1px 4px; border-radius: 2px; font-weight: 700;">PRECISION</span>
         </div>
-        <p style="font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
-          ${cfg.vocabTask.prompt}
-        </p>
-        <div style="display: flex; flex-direction: column; gap: 3px;">
-          <div class="task-line-dotted"></div>
-          <div class="task-line-dotted"></div>
-        </div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; margin: 0 0 2px 0;">${cfg.vocabTask.prompt}</p>
+        <div class="task-line-dotted"></div>
+        <div class="task-line-dotted"></div>
       </div>
 
-      <!-- TASK 4: DELIBERATE 4-MARK EXAM PRACTICE (QUESTION 3 SIMILARITY/DIFFERENCE) -->
-      <div style="border: 1.2px solid #78350f; border-radius: 4px; padding: 6px 8px; background: #fdf8f6;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Task 4: GCSE Exam Practice &bull; Paper 1 Section B &bull; Question 3
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #78350f;">[4 Marks &bull; 5 Mins]</span>
+      <!-- Edexcel Paper 1 Question 3: 4-Mark Comparison Task -->
+      <div style="border: 1.2px solid #78350f; border-radius: 4px; padding: 5px 7px; background: #fdf8f6;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #78350f; text-transform: uppercase;">
+            Paper 1 Question 3 Workshop &bull; ${cfg.fourMarkComparison.question.includes('similar') ? 'Explain One Similarity' : 'Explain One Difference'} [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; color: #78350f;">[4 MARKS &bull; 5 MINS]</span>
         </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 700; color: #0f172a; margin-bottom: 3px; line-height: 1.25;">
-          ${cfg.fourMarkComparison.question}
+        <p style="font-family: 'Playfair Display', serif; font-size: 7.6pt; font-weight: 700; color: #0f172a; margin: 0 0 2px 0;">${cfg.fourMarkComparison.question}</p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; font-style: italic; margin-bottom: 3px;">
+          <strong>Examiner Scaffolding Hint:</strong> ${cfg.fourMarkComparison.hint}
         </div>
-        <div style="font-size: 6.6pt; color: #64748b; margin-bottom: 4px; font-family: 'Inter', sans-serif;">
-          <strong>Guidance:</strong> ${cfg.fourMarkComparison.hint} <br>
-          <strong>Sentence Stems:</strong> <em>${cfg.fourMarkComparison.stems}</em>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #78350f; font-weight: 600; margin-bottom: 3px;">
+          <strong>Model Stems:</strong> ${cfg.fourMarkComparison.stems}
         </div>
-        <div style="display: flex; flex-direction: column; gap: 3px;">
-          <div class="task-line-dotted"></div>
-          <div class="task-line-dotted"></div>
-          <div class="task-line-dotted"></div>
-          <div class="task-line-dotted"></div>
-        </div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
       </div>
     </div>
 
     <!-- Left Page Footer -->
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
       <span>The History Department &bull; Edexcel GCSE (9–1) Medicine &bull; Paper 1</span>
       <span>PAGE ${leftPageNum}</span>
     </div>
@@ -858,7 +1145,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM MASTERY & TIMELINE MISSION               -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-${rightPageNum}" style="padding: 12px 18px; justify-content: space-between;">
+  <div class="page page-container" id="page-${rightPageNum}" style="padding: 10px 14px; display: flex; flex-direction: column; height: 272mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #78350f; outline-offset: -6px;">
     <div>
       <!-- Exam Mastery Header -->
       <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #78350f; padding-bottom: 3px; margin-bottom: 5px;">
@@ -876,14 +1163,14 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Exam Question Stem & Stimulus Box -->
-      <div style="background: #fdf8f6; border: 1.2px solid #fed7aa; border-radius: 4px; padding: 5px 8px; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 700; color: #0f172a; margin-bottom: 3px; line-height: 1.25;">
+      <div style="background: #fdf8f6; border: 1.2px solid #fed7aa; border-radius: 4px; padding: 4.5px 7px; margin-bottom: 5px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; line-height: 1.25;">
           ${cfg.examStem}
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #78350f;">
+        <div style="display: flex; align-items: center; gap: 7px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #78350f;">
           <strong>Stimulus:</strong>
-          <span style="background: #ffffff; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">${cfg.stimulus[0]}</span>
-          <span style="background: #ffffff; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">${cfg.stimulus[1]}</span>
+          <span style="background: #ffffff; border: 1px solid #cbd5e1; padding: 1px 5px; border-radius: 3px;">${cfg.stimulus[0]}</span>
+          <span style="background: #ffffff; border: 1px solid #cbd5e1; padding: 1px 5px; border-radius: 3px;">${cfg.stimulus[1]}</span>
           <span style="color: #64748b; font-style: italic;">(You must also use information of your own)</span>
         </div>
       </div>
@@ -898,8 +1185,8 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
             .map(
               (strip) => `
           <div style="border: 1px solid #e2e8f0; border-top: 2.5px solid #78350f; border-radius: 2px; padding: 3px 5px; background: #fdf8f6;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #78350f; display: block; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-size: 6.3pt; color: #1e293b; line-height: 1.2; display: block;">${strip.text}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #78350f; display: block; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-size: 6.2pt; color: #1e293b; line-height: 1.2; display: block;">${strip.text}</span>
           </div>
           `,
             )
@@ -908,21 +1195,21 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Analytical Connectives & High-Yield Vocabulary Bank -->
-      <div style="border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; background: #fffbeb; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+      <div style="border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; background: #fffbeb; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #78350f; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-size: 6.2pt; color: #1e293b; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #78350f; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
+          <span style="font-size: 6.1pt; color: #1e293b; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #78350f; text-transform: uppercase; display: block;">High-Yield Word Bank:</strong>
-          <span style="font-size: 6.2pt; color: #1e293b; line-height: 1.2; display: block;">
-            ${cfg.wordBank.technical} &bull; ${cfg.wordBank.institutional || cfg.wordBank.practitioners || cfg.wordBank.prevention}
+          <strong style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #78350f; text-transform: uppercase; display: block;">High-Yield Word Bank:</strong>
+          <span style="font-size: 6.1pt; color: #1e293b; line-height: 1.2; display: block;">
+            ${cfg.wordBank.technical} &bull; ${cfg.wordBank.institutional || cfg.wordBank.practitioners || cfg.wordBank.reactions || cfg.wordBank.remedies || cfg.wordBank.fluids}
           </span>
         </div>
       </div>
 
       <!-- 16 Ruled Task Lines for Extended Writing -->
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 6px;">
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -952,7 +1239,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     </div>
 
     <!-- Right Page Footer -->
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
       <span>The History Department &bull; Edexcel GCSE (9–1) Medicine &bull; Paper 1</span>
       <span>PAGE ${rightPageNum}</span>
     </div>
@@ -961,363 +1248,168 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   });
 
   // ====================================================================
-  // PAGE 10: SYNOPTIC KNOWLEDGE MAP & CROSS-ERA COMPARISON MATRIX
+  // PAGE 14: OUTSIDE BACK COVER (96-MARK LEDGER, AUDIT & DIRT)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-10" style="padding: 14px 18px; justify-content: space-between;">
+  <!-- PAGE 14: OUTSIDE BACK COVER · SUMMATIVE LEDGER & SPEC AUDIT -->
+  <div class="page page-container" id="page-14" style="padding: 10px 14px; display: flex; flex-direction: column; height: 272mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #78350f; outline-offset: -6px;">
     <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 8px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="background: #78350f; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
-            Synoptic Workshop
-          </span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12pt; color: #0f172a; margin: 0; font-weight: 700;">
-            The Medieval Medicine Synoptic Knowledge Map &amp; Comparison Matrix
+      <!-- Back Cover Header Strip -->
+      <div style="border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; color: #78350f; font-weight: 700;">
+            Summative Assessment &bull; Key Topic 1 Mastery Record
+          </div>
+          <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+            Medieval Medicine Performance Ledger
           </h2>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b; font-weight: 600;">
-          PAGE 10 &bull; REVISION
+        <span class="archival-badge" style="background: #fdf8f6; color: #78350f; border-color: #fed7aa;">
+          Outside Back Cover
+        </span>
+      </div>
+
+      <!-- Pupil Target & Progress Matrix -->
+      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4.5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
+        <div>
+          <span style="color: #64748b; display: block; font-size: 6.2pt; text-transform: uppercase;">Pupil Target Grade</span>
+          <strong style="font-size: 9.5pt; color: #78350f;">Grade: [ &nbsp; ]</strong>
+        </div>
+        <div>
+          <span style="color: #64748b; display: block; font-size: 6.2pt; text-transform: uppercase;">Q3 Skills Total</span>
+          <strong style="font-size: 9.5pt; color: #0f172a;">&nbsp; / 20 Marks</strong>
+        </div>
+        <div>
+          <span style="color: #64748b; display: block; font-size: 6.2pt; text-transform: uppercase;">Extended Total</span>
+          <strong style="font-size: 9.5pt; color: #0f172a;">&nbsp; / 76 Marks</strong>
+        </div>
+        <div style="background: #fdf8f6; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 6px; text-align: center;">
+          <span style="color: #78350f; display: block; font-size: 6.2pt; font-weight: 800; text-transform: uppercase;">Overall Mastery</span>
+          <strong style="font-size: 10.5pt; color: #78350f;">&nbsp; / 96 Marks</strong>
         </div>
       </div>
 
-      <div style="background: #fdf8f6; border: 1.2px solid #fed7aa; border-radius: 4px; padding: 5px 10px; margin-bottom: 8px; font-size: 7.4pt; color: #78350f;">
-        <strong>Edexcel Paper 1 Question 3 Mastery:</strong> Question 3 asks you to explain ONE similarity or ONE difference between two eras. Master this cross-era matrix to instantly access full marks!
-      </div>
-
-      <!-- The 4-Pillar Thematic Comparison Matrix -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; overflow: hidden; margin-bottom: 8px;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 7pt; font-family: 'Inter', sans-serif;">
+      <!-- 96-Mark GCSE Exam Progress Ledger Table -->
+      <div style="border: 1px solid #cbd5e1; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
           <thead>
             <tr style="background: #78350f; color: #ffffff;">
-              <th style="padding: 5px 8px; text-align: left; width: 18%;">Thematic Pillar</th>
-              <th style="padding: 5px 8px; text-align: left; width: 28%; background: #92400e;">Medieval (c1250–c1500)</th>
-              <th style="padding: 5px 8px; text-align: left; width: 27%;">Renaissance (c1500–c1700)</th>
-              <th style="padding: 5px 8px; text-align: left; width: 27%;">Industrial / Modern</th>
+              <th style="padding: 3px 6px; text-align: left; width: 28%;">Lesson &bull; Specification Focus</th>
+              <th style="padding: 3px 6px; width: 20%; text-align: center;">Q3 Skills [4m]</th>
+              <th style="padding: 3px 6px; width: 34%;">Extended Exam Response</th>
+              <th style="padding: 3px 6px; width: 18%; text-align: center;">Lesson Total</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-              <td style="padding: 5px 8px; font-weight: 700; color: #78350f; background: #fdf8f6;">Causes of Disease</td>
-              <td style="padding: 5px 8px; background: #fffbeb; border-right: 1px solid #fed7aa;">
-                God’s punishment for sin, astrology (1345 conjunction), Theory of Four Humours (internal imbalance), miasma (foul air).
-              </td>
-              <td style="padding: 5px 8px; border-right: 1px solid #cbd5e1;">
-                Continued reliance on miasma and Four Humours; seeds of disease (Fracastoro), Sydenham classifies disease species.
-              </td>
-              <td style="padding: 5px 8px;">
-                Germ Theory (Pasteur 1861, Koch 1876); microbes identified; genetics and DNA (Watson &amp; Crick 1953).
-              </td>
+            <tr style="background: #ffffff;">
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;"><strong>L1:</strong> Supernatural &amp; Church</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center;">Q3 Similarity: &nbsp;<strong>/ 4</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">&nbsp; / 16</td>
             </tr>
-            <tr style="border-bottom: 1px solid #cbd5e1; background: #f8fafc;">
-              <td style="padding: 5px 8px; font-weight: 700; color: #78350f; background: #fdf8f6;">Treatments &amp; Cures</td>
-              <td style="padding: 5px 8px; background: #fffbeb; border-right: 1px solid #fed7aa;">
-                Galen’s Theory of Opposites; phlebotomy (bloodletting with fleams/leeches), purging (emetics/laxatives), herbal Theriac.
-              </td>
-              <td style="padding: 5px 8px; border-right: 1px solid #cbd5e1;">
-                Continuity in bloodletting and purging; chemical cures (iatrochemistry), cinchona bark (quinine) for malaria.
-              </td>
-              <td style="padding: 5px 8px;">
-                Antiseptics (Lister 1865), anaesthetics (Simpson 1847), Magic Bullets (Ehrlich 1909), Penicillin (Fleming 1928 / Florey &amp; Chain 1941).
-              </td>
+            <tr style="background: #fdf8f6;">
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;"><strong>L2:</strong> Four Humours &amp; Galen</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center;">Q3 Difference: &nbsp;<strong>/ 4</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">&nbsp; / 16</td>
             </tr>
-            <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-              <td style="padding: 5px 8px; font-weight: 700; color: #78350f; background: #fdf8f6;">Prevention Methods</td>
-              <td style="padding: 5px 8px; background: #fffbeb; border-right: 1px solid #fed7aa;">
-                Prayer, fasting, pilgrimages, touching relics, flagellation, carrying sweet posies/pomanders, burning street fires.
-              </td>
-              <td style="padding: 5px 8px; border-right: 1px solid #cbd5e1;">
-                Smoking tobacco against miasma; civic quarantine (1665 plague orders, watchmen, red crosses on doors).
-              </td>
-              <td style="padding: 5px 8px;">
-                Smallpox vaccination (Jenner 1796), Public Health Acts (1848, 1875), clean water (Snow 1854), government lifestyle campaigns.
-              </td>
+            <tr style="background: #ffffff;">
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;"><strong>L3:</strong> Bleeding, Purging &amp; Theriac</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center;">Q3 Difference: &nbsp;<strong>/ 4</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">&nbsp; / 16</td>
             </tr>
-            <tr style="background: #f8fafc;">
-              <td style="padding: 5px 8px; font-weight: 700; color: #78350f; background: #fdf8f6;">Care &amp; Hospitals</td>
-              <td style="padding: 5px 8px; background: #fffbeb; border-right: 1px solid #fed7aa;">
-                Monastic hospitals run by monks/nuns; ‘care not cure’ (warmth, soup, prayer, altar); infectious patients turned away.
-              </td>
-              <td style="padding: 5px 8px; border-right: 1px solid #cbd5e1;">
-                Dissolution of Monasteries (1536) closes Catholic hospitals; endowed city hospitals reopen (St Bart’s, St Thomas’s).
-              </td>
-              <td style="padding: 5px 8px;">
-                Florence Nightingale revolutionises nursing (1854); specialized wards, trained doctors, antiseptic surgery, NHS (1948).
-              </td>
+            <tr style="background: #fdf8f6;">
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;"><strong>L4:</strong> Practitioners &amp; Hospitals</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center;">Q3 Difference: &nbsp;<strong>/ 4</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">&nbsp; / 16</td>
+            </tr>
+            <tr style="background: #ffffff;">
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;"><strong>L5:</strong> The Black Death 1348–49</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center;">Q3 Similarity: &nbsp;<strong>/ 4</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q5/6 Essay [16+4 SPaG]: &nbsp;<strong>/ 20</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #78350f;">&nbsp; / 24</td>
+            </tr>
+            <tr style="background: #fef3c7; font-weight: 800; border-top: 1.5px solid #78350f;">
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-transform: uppercase;">Cumulative Totals</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; color: #78350f;">Q3 Total: &nbsp;<strong>/ 20</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; color: #78350f;">Extended Total: &nbsp;<strong>/ 76</strong></td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-size: 8pt; background: #fed7aa; color: #78350f;">&nbsp; / 96</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- The Medieval Disciplinary Vocabulary Vault -->
-      <div style="border: 1.2px solid #78350f; border-radius: 5px; padding: 6px 10px; background: #ffffff;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase; margin-bottom: 4px;">
-          The Medieval Tier 3 Vocabulary Vault &bull; High-Yield Technical Glossary
+      <!-- 5-Point High-Yield Specification Revision Checklist -->
+      <div style="margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #78350f; letter-spacing: 0.5px;">
+            &bull; High-Yield Specification Audit (Self-Check Confidence)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+            [ R = Needs Work &bull; A = Secure &bull; G = Mastered ]
+          </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 6.8pt; line-height: 1.25; color: #1e293b;">
-          <div>
-            <strong style="color: #78350f;">1. Four Humours:</strong> Greek theory stating blood, phlegm, yellow bile, and black bile dictated internal health.<br>
-            <strong style="color: #78350f;">2. Theory of Opposites:</strong> Galen’s method of treating excess humours with contrary qualities (cold with hot).<br>
-            <strong style="color: #78350f;">3. Miasma:</strong> Corrupt, poisonous air from swamps or rotting filth believed to disrupt bodily humours.<br>
-            <strong style="color: #78350f;">4. Teleology:</strong> The philosophical belief that every organ was designed with divine purpose by a single Creator.<br>
-            <strong style="color: #78350f;">5. Monastic Scriptoria:</strong> Monastery workshops where monks hand-copied manuscripts, enforcing Church censorship.<br>
-            <strong style="color: #78350f;">6. Uroscopy (Matula):</strong> Diagnosing disease by inspecting urine color, sediment, and smell against radial charts.
+        <div style="display: flex; flex-direction: column; gap: 3.5px;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+              <strong>1. Supernatural &amp; Church:</strong> God's will, divine retribution for sin, scriptorial book-copying, Roger Bacon 1277, 1345 planetary conjunction.
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; white-space: nowrap; margin-left: 8px;">[ R &bull; A &bull; G ]</span>
           </div>
-          <div>
-            <strong style="color: #78350f;">7. Vademecum:</strong> A doctor’s pocket handbook containing urine charts, herbal recipes, and Zodiac Man diagrams.<br>
-            <strong style="color: #78350f;">8. Phlebotomy:</strong> The practice of bloodletting using fleams, lancets, cupping, or leeches to restore balance.<br>
-            <strong style="color: #78350f;">9. Theriac:</strong> A complex herbal compound of 60+ ingredients (including viper flesh) used as a universal cure.<br>
-            <strong style="color: #78350f;">10. Lazar House:</strong> Segregated colonies built outside city boundaries to banish infectious leprosy sufferers.<br>
-            <strong style="color: #78350f;">11. Flagellants:</strong> Religious sects who whipped themselves in public to appease God’s wrath during the Black Death.<br>
-            <strong style="color: #78350f;">12. Regimen Sanitatis:</strong> A personalized lifestyle guide advising moderation in diet, sleep, exercise, and baths.
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+              <strong>2. Four Humours &amp; Galen:</strong> Hippocratic balance (blood, phlegm, yellow bile, black bile); Galen's Theory of Opposites; uroscopy in matula; Zodiac Man.
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; white-space: nowrap; margin-left: 8px;">[ R &bull; A &bull; G ]</span>
           </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+              <strong>3. Treatments &amp; Prevention:</strong> Phlebotomy (fleam, cupping, leeches); purging (emetics, clysters); Theriac (60+ ingredients); Regimen Sanitatis.
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; white-space: nowrap; margin-left: 8px;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+              <strong>4. Practitioners &amp; Hospitals:</strong> Physicians vs barber-surgeons vs apothecaries; over 1,200 monastic hospitals providing 'care not cure' (excluding lepers).
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; white-space: nowrap; margin-left: 8px;">[ R &bull; A &bull; G ]</span>
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+              <strong>5. The Black Death (1348–49):</strong> Melcombe Regis, bubonic vs pneumonic strains, buboes, flagellants, street fires, Edward III cleanliness order, East Smithfield pits.
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; white-space: nowrap; margin-left: 8px;">[ R &bull; A &bull; G ]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher Feedback & D.I.R.T. Section -->
+      <div style="border: 1.2px solid #78350f; border-radius: 4px; padding: 4.5px 8px; background: #fdf8f6; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
+          <strong style="color: #78350f; text-transform: uppercase;">Teacher Summative Feedback &amp; D.I.R.T. Target</strong>
+          <span style="color: #475569;">Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ] &nbsp;|&nbsp; <strong>&square; D.I.R.T. Complete</strong></span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.35; margin-bottom: 3px;">
+          <strong>WWW:</strong> <span class="line" style="display: inline-block; width: 92%; border-bottom: 1px solid #94a3b8; height: 11px;"></span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.35; margin-bottom: 3px;">
+          <strong>EBI:</strong> &nbsp;&nbsp;<span class="line" style="display: inline-block; width: 92%; border-bottom: 1px solid #94a3b8; height: 11px;"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
+          <span><strong>Teacher Signature:</strong> ____________________________</span>
+          <span><strong>Date:</strong> ____________________</span>
+          <span><strong>D.I.R.T. Responded:</strong> &square; Yes &square; No</span>
         </div>
       </div>
     </div>
 
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
-      <span>The History Department &bull; Edexcel GCSE (9–1) Medicine &bull; Paper 1</span>
-      <span>PAGE 10</span>
-    </div>
-  </div>
-
-  <!-- ==================================================================== -->
-  <!-- PAGE 11: SECTION B EXAM MODEL ANSWERS & EXAMINER ADVICE              -->
-  <!-- ==================================================================== -->
-  <div class="page page-container" id="page-11" style="padding: 14px 18px; justify-content: space-between;">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 8px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="background: #78350f; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
-            Exam Workshop
-          </span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12pt; color: #0f172a; margin: 0; font-weight: 700;">
-            Section B Exam Model Answers &amp; Senior Examiner Guidance
-          </h2>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b; font-weight: 600;">
-          PAGE 11 &bull; EXAM STRATEGY
-        </div>
-      </div>
-
-      <!-- Model Answer 1: Question 3 Similarity [4 Marks] -->
-      <div style="border: 1.2px solid #78350f; border-radius: 5px; padding: 6px 10px; background: #ffffff; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Model Answer: Question 3 Similarity [4 Marks &bull; 5 Mins]
-          </span>
-          <span style="background: #dcfce7; color: #166534; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">
-            GRADE 9 EXEMPLAR (4/4)
-          </span>
-        </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-style: italic; color: #0f172a; margin-bottom: 4px;">
-          &ldquo;Explain one way in which ideas about the causes of illness in the Medieval period were similar to ideas in the Renaissance.&rdquo;
-        </div>
-        <div style="font-size: 7pt; line-height: 1.35; color: #1e293b; background: #fdf8f6; border-left: 3px solid #78350f; padding: 5px 8px; border-radius: 0 4px 4px 0; margin-bottom: 3px;">
-          <strong>Point:</strong> One way ideas about the causes of illness were similar was the continued widespread belief in miasma (foul air) as the primary cause of epidemic disease.<br>
-          <strong>Medieval Evidence:</strong> In the Medieval period, when the Black Death struck England in 1348, people believed corrupt vapors from swamps and unburied waste entered the body and poisoned the humours, prompting Edward III to order London streets cleared of filth in 1349.<br>
-          <strong>Renaissance Comparison:</strong> Similarly, during the Great Plague of 1665 in the Renaissance, physicians and citizens still blamed corrupt air, smoking tobacco and carrying pomanders filled with sweet herbs to purify the miasma.<br>
-          <strong>Explanation:</strong> Both eras completely lacked Germ Theory, meaning that despite Renaissance anatomical breakthroughs, ordinary people and doctors still believed poisonous smells directly caused sickness.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
-          <strong style="color: #78350f;">Examiner Note:</strong> Notice how the student gives precise dates (1348, 1665) and specific historical details for BOTH eras. Never write both a similarity and a difference—the exam only asks for ONE!
-        </div>
-      </div>
-
-      <!-- Model Answer 2: Question 4 Explain Why Model Paragraph [12 Marks] -->
-      <div style="border: 1.2px solid #78350f; border-radius: 5px; padding: 6px 10px; background: #ffffff; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Model Paragraph: Question 4 Explain Why [12 Marks &bull; 15 Mins]
-          </span>
-          <span style="background: #dcfce7; color: #166534; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">
-            GRADE 9 EXEMPLAR (P1)
-          </span>
-        </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-style: italic; color: #0f172a; margin-bottom: 4px;">
-          &ldquo;Explain why there was so little change in medical ideas about the causes of disease between c1250 and c1500.&rdquo;
-        </div>
-        <div style="font-size: 7pt; line-height: 1.35; color: #1e293b; background: #fdf8f6; border-left: 3px solid #78350f; padding: 5px 8px; border-radius: 0 4px 4px 0; margin-bottom: 3px;">
-          One major reason why medical ideas about causes showed so little change was the absolute dominance of the Catholic Church over education and society. In the medieval period, the Church controlled all European universities (such as Oxford and Paris) and held a strict monopoly on the production of books, as monastic scriptoria were the only places where texts were hand-copied. The Church fiercely promoted the medical writings of ancient Roman physician Claudius Galen because his teleological philosophy—that every organ in the human body was purposefully crafted by a single divine Creator—aligned perfectly with Genesis and Christian theology. Consequently, the Church declared Galen’s humoural treatises infallible sacred truth. Anyone who dared to challenge Galen or advocate experimental dissection was severely punished as a heretic; for example, the Franciscan friar Roger Bacon was imprisoned in 1277 for advocating firsthand empirical science. Therefore, because the Church outlawed criticism of classical authority and controlled the training of every physician, medical thinking remained completely frozen in ancient dogma.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">
-          <strong style="color: #78350f;">Examiner Note:</strong> The answer uses clear causal signposts (<em>'One major reason why... because... Consequently... Therefore...'</em>) and specific historical evidence (Roger Bacon, 1277, scriptoria, teleology) to link back to the question.
-        </div>
-      </div>
-
-      <!-- Top 3 GCSE Exam Strategies for Section B -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #78350f; text-transform: uppercase; margin-bottom: 2px;">
-          Top 3 Exam Strategies for Edexcel GCSE Paper 1 Section B
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #334155;">
-          <div>
-            <strong style="color: #78350f;">1. Q3 Timing (5 mins):</strong> Stick to 1 developed PEEL paragraph. Do NOT evaluate usefulness or write both similarity and difference.
-          </div>
-          <div>
-            <strong style="color: #78350f;">2. Q4 Structure (15 mins):</strong> Write 3 distinct PEEL paragraphs (Stimulus 1, Stimulus 2, plus Own Knowledge). Explain CAUSES, don’t just describe.
-          </div>
-          <div>
-            <strong style="color: #78350f;">3. Q5/6 Essay (25 mins):</strong> 16+4 marks. Provide 2 balanced sides followed by a clear, sustained judgement with criteria in the conclusion.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
-      <span>The History Department &bull; Edexcel GCSE (9–1) Medicine &bull; Paper 1</span>
-      <span>PAGE 11</span>
-    </div>
-  </div>
-
-  <!-- ==================================================================== -->
-  <!-- PAGE 12: OUTSIDE BACK COVER (PROGRESS LEDGER & SPEC CHECKLIST)       -->
-  <!-- ==================================================================== -->
-  <div class="page page-container" id="page-12" style="padding: 16px 20px; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #78350f; outline-offset: -8px;">
-    <div>
-      <!-- Top Institutional Back Header -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #78350f; padding-bottom: 4px; margin-bottom: 8px;">
-        <div data-department-name="The History Department" style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Cinzel', serif; font-size: 9.5pt; font-weight: 900; color: #78350f; text-transform: uppercase; letter-spacing: 1.2px;">
-            <span class="school-brand-target">The History Department</span> &bull; Assessment &amp; Feedback
-          </span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #64748b;">
-          UNIT COMPILATION &bull; KEY TOPIC 1
-        </div>
-      </div>
-
-      <!-- Target Grade & Performance Badges Strip -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 12px; background: #fdf8f6; display: flex; justify-content: space-around; align-items: center; margin-bottom: 8px;">
-        <div style="text-align: center;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b; text-transform: uppercase;">Pupil Target</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f;">GRADE ______</div>
-        </div>
-        <div style="width: 1px; height: 26px; background: #cbd5e1;"></div>
-        <div style="text-align: center;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b; text-transform: uppercase;">Booklet Assessment</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #166534;">GRADE ______</div>
-        </div>
-        <div style="width: 1px; height: 26px; background: #cbd5e1;"></div>
-        <div style="text-align: center;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b; text-transform: uppercase;">Total Marks Earned</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 900; color: #78350f;">______ / 56</div>
-        </div>
-      </div>
-
-      <!-- 56-Mark GCSE Exam Progress Ledger -->
-      <div style="border: 1.2px solid #78350f; border-radius: 5px; padding: 6px 10px; background: #ffffff; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Key Topic 1 Assessment Ledger &bull; 56 Total Marks Available
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b;">EDEXCEL PAPER 1 SECTION B STANDARDS</span>
-        </div>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7pt;">
-          <thead>
-            <tr style="background: #fdf8f6; border-bottom: 1px solid #cbd5e1; color: #78350f;">
-              <th style="padding: 3px 6px; text-align: left;">Lesson / Topic</th>
-              <th style="padding: 3px 6px; text-align: left;">Task Type</th>
-              <th style="padding: 3px 6px; text-align: center;">Target Marks</th>
-              <th style="padding: 3px 6px; text-align: center;">Actual Score</th>
-              <th style="padding: 3px 6px; text-align: center;">Teacher Initials</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 3px 6px; font-weight: 600;">KT1.1: Causes of Illness</td>
-              <td style="padding: 3px 6px;">Q3 Similarity (4m) + Q4 Explain Why (12m)</td>
-              <td style="padding: 3px 6px; text-align: center; font-weight: 700; color: #78350f;">16 Marks</td>
-              <td style="padding: 3px 6px; text-align: center;">_____ / 16</td>
-              <td style="padding: 3px 6px; text-align: center;">_______</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 3px 6px; font-weight: 600;">KT1.2: Treatments &amp; Care</td>
-              <td style="padding: 3px 6px;">Q3 Difference (4m) + Q4 Explain Why (12m)</td>
-              <td style="padding: 3px 6px; text-align: center; font-weight: 700; color: #78350f;">16 Marks</td>
-              <td style="padding: 3px 6px; text-align: center;">_____ / 16</td>
-              <td style="padding: 3px 6px; text-align: center;">_______</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 3px 6px; font-weight: 600;">KT1.3: The Black Death</td>
-              <td style="padding: 3px 6px;">Q3 Similarity (4m) + Q5/6 Essay (16+4m)</td>
-              <td style="padding: 3px 6px; text-align: center; font-weight: 700; color: #78350f;">24 Marks</td>
-              <td style="padding: 3px 6px; text-align: center;">_____ / 24</td>
-              <td style="padding: 3px 6px; text-align: center;">_______</td>
-            </tr>
-            <tr style="background: #fdf8f6; font-weight: 800; color: #78350f;">
-              <td style="padding: 4px 6px;" colspan="2">TOTAL MASTERED MARKS EARNED:</td>
-              <td style="padding: 4px 6px; text-align: center;">56 Marks</td>
-              <td style="padding: 4px 6px; text-align: center;">_____ / 56</td>
-              <td style="padding: 4px 6px; text-align: center;">_______</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 5-Point Specification High-Yield Revision Checklist -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 10px; background: #ffffff; margin-bottom: 8px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase; margin-bottom: 3px;">
-          Key Topic 1 Specification Revision Checklist &bull; R-A-G Self-Audit
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 3px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b;">
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span>1. Explain supernatural causes (God, sin) vs rational causes (Four Humours, Opposites, miasma).</span>
-            <span style="display: flex; gap: 4px;"><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span></span>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span>2. Explain why the Catholic Church protected Galen and how this froze medical progress for 1,000 years.</span>
-            <span style="display: flex; gap: 4px;"><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span></span>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span>3. Detail humoural treatments: phlebotomy (fleams, leeches), purging, Theriac, and the Regimen Sanitatis.</span>
-            <span style="display: flex; gap: 4px;"><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span></span>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span>4. Distinguish between physicians, barber-surgeons, apothecaries, and monastic hospitals (‘care not cure’).</span>
-            <span style="display: flex; gap: 4px;"><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span></span>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span>5. Assess responses to the Black Death (1348): believed causes, flagellants, street fires, and Edward III’s order.</span>
-            <span style="display: flex; gap: 4px;"><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span><span style="border: 1px solid #94a3b8; width: 12px; height: 12px; border-radius: 2px;"></span></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher Feedback & D.I.R.T. Box -->
-      <div style="border: 1.2px solid #78350f; border-radius: 5px; padding: 6px 10px; background: #fdf8f6;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #78350f; text-transform: uppercase;">
-            Teacher Feedback &bull; D.I.R.T. (Dedicated Improvement &amp; Reflection Time)
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b;">WWW / EBI TARGET</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-          <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #166534; text-transform: uppercase;">What Went Well (WWW):</strong>
-            <div style="border-bottom: 1px solid #cbd5e1; height: 14px;"></div>
-            <div style="border-bottom: 1px solid #cbd5e1; height: 14px;"></div>
-          </div>
-          <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #991b1b; text-transform: uppercase;">Even Better If (EBI):</strong>
-            <div style="border-bottom: 1px solid #cbd5e1; height: 14px;"></div>
-            <div style="border-bottom: 1px solid #cbd5e1; height: 14px;"></div>
-          </div>
-        </div>
-        <div style="margin-top: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #78350f; text-transform: uppercase;">Pupil D.I.R.T. Response / Redraft Action:</strong>
-          <div style="border-bottom: 1px solid #cbd5e1; height: 14px;"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Departmental Back Cover Footer -->
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1.5px solid #78350f; padding-top: 6px; margin-top: 4px;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">
-        GCSE History Revision Hub &bull; Independent Commercial Educational Platform
-      </div>
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #78350f; letter-spacing: 0.5px;">
-        PAGE 12 &bull; END OF BOOKLET
-      </div>
+    <!-- Outside Back Cover Footer -->
+    <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <span>The History Department &bull; GCSE Medicine Revision Series</span>
+      <span>Key Topic 1 &bull; Outside Back Cover</span>
+      <span>Page 14 &bull; END OF BOOKLET</span>
     </div>
   </div>
 </body>

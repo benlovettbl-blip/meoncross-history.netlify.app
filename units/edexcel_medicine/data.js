@@ -533,764 +533,649 @@ export const unitData = {
   lessons: [
     {
       id: 'lesson_1_1',
-      title: 'KT1.1: What did Medieval people believe caused illness?',
-      enquiry_question: 'KT1.1: What did Medieval people believe caused illness?',
-      hook_text:
-        "During the medieval period, life was difficult, and sudden illness was terrifying. Without microscopes or an understanding of germs, people desperately sought ways to make sense of sickness. The explanations they relied on-ranging from God's wrath to the alignment of the stars and the imbalance of bodily fluids-shaped every aspect of medical treatment for centuries. Understanding these beliefs is the key to understanding all of medieval medicine.",
-      teacher_notes: {
-        primer:
-          "The goal of this lesson is to help students move beyond viewing medieval people as 'irrational' or 'unintelligent' and instead understand that their medical beliefs formed a highly cohesive, logical system based on the evidence they had. By deconstructing beliefs about God, miasma, and the Four Humours, students will see that medieval medicine made sense to those living inside it, and they will learn to identify the key factors (such as religion and respect for tradition) that preserved these ideas for over a thousand years.",
-        objectives: [
-          {
-            objective:
-              'Explain how supernatural and religious factors influenced beliefs about the cause of illness.',
-            primer:
-              "Introduce the Church's control over education, books, and societal attitudes. Use the example of leprosy in the Bible as a physical sign of sin, and the 1345 planetary alignment as an astrological explanation for the Black Death. Emphasise that because people believed God sent disease as a punishment, there was little motivation to seek other physical causes.",
-            question: 'Why did the Church promote the work of the ancient Roman doctor Galen?',
-          },
-          {
-            objective:
-              'Analyse the rational, natural theories of disease used in medieval England.',
-            primer:
-              'Break down the Theory of the Four Humours and Miasma. Show how these theories were based on empirical observation (e.g. sneezing phlegm during a cold, smelling dirty streets) even though they were scientifically incorrect. Explain how Galen developed this into the Theory of Opposites.',
-            question:
-              'Under the Theory of Opposites, how would a medieval doctor treat a patient suffering from a fever, and why?',
-          },
-        ],
-        source_context: {
-          'Source A':
-            'The Theory of the Four Humours, first devised by Hippocrates in ancient Greece and developed by Galen in ancient Rome, dominated medieval European medicine. Medieval physicians believed that good health required all four bodily humours to remain in precise balance. Each humour corresponded to a season, an element, and specific qualities of heat and moisture. When a person fell ill, doctors assumed that one humour was in excess or putrefied. **Hinge Question:** If a patient suffering from a cold and shivering was treated with hot spices and dry foods, which medical theory was the physician applying, and why did this belief prevent scientific progress for over a thousand years?',
-          'Source B':
-            "Medieval doctors believed the movement of planets and stars directly influenced human physiology and health. Each part of the body was thought to be governed by a zodiac constellation—Aries ruled the head, Taurus the neck, and Pisces the feet. Before carrying out bloodletting, surgery, or administering strong medicines, university-trained physicians consulted complex astrological almanacs (calendars) to ensure the moon was not in an unfavorable zodiac sign for that body part. **Hinge Question:** Why would a medieval university-trained physician refuse to operate on a patient's limb if the moon was in a certain astrological sign, and what does this reveal about medieval attitudes toward natural versus supernatural causes?",
-          'Source C':
-            "Uroscopy (the inspection of urine) was the cornerstone of clinical diagnosis in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of a patient's urine in a pear-shaped glass vessel called a matula. By comparing the sample against radial urine wheels, doctors deduced which humour was dominating or corrupted inside the body. **Hinge Question:** How did urine charts reinforce the unquestioned authority of Galen's humoural system, even though medieval physicians were examining physical, empirical bodily fluids?",
+      title: 'KT1.1: Supernatural & Religious Explanations of Disease (c1250–c1500)',
+      specification_anchor:
+        'Ideas about the cause of disease and illness: supernatural and religious explanations; the influence of the Church on medicine and science.',
+      enquiry_question:
+        'Why did the medieval Catholic Church hold an unshakeable monopoly over beliefs about the causes of disease?',
+      living_timeline_mission: {
+        target_milestones: 'Milestones 1 & 2 (c. 1250 & 1277)',
+        pages: 'Pages 2–3',
+        instruction:
+          "Turn back to Pages 2–3 (Milestones 1 & 2). In the sketchpad frame, sketch the Church scriptorium and annotate the terrifying warning: 'Dissent from Galen is Heresy!'",
+      },
+      timeline_anchor: [
+        {
+          date: 'c. 1250',
+          title: 'The Church Monopoly on Medical Texts',
+          desc: "Monastic scriptoria control all manuscript copying; the Catholic Church declares Galen's teleological medical treatises sacred Christian dogma.",
+        },
+        {
+          date: '1277',
+          title: 'Imprisonment of Roger Bacon',
+          desc: 'Franciscan friar Roger Bacon is imprisoned for advocating firsthand empirical experimentation over unquestioned obedience to ancient books.',
+        },
+        {
+          date: '1345',
+          title: 'The Great Planetary Conjunction',
+          desc: 'Astrologers and University of Paris physicians blame the conjunction of Mars, Jupiter, and Saturn in Aquarius for corrupting the atmosphere.',
+        },
+      ],
+      delivery_plan: {
+        format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+        lesson_1: {
+          title: 'Lesson 1: The Church Monopoly & Divine Punishment (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Hook & Spaced Retrieval',
+              instruction:
+                'Complete Do Now retrieval. Display Source A (Medieval Church Altar & Doom Painting). Contrast medieval spiritual worldviews with modern germ understanding.',
+            },
+            {
+              time: '10–30m',
+              label: 'Modelled Shared Reading & Discussion',
+              instruction:
+                'Read Acts 1 & 2 with paragraph signposting ([1.1] to [2.2]). Deconstruct why sickness was viewed as divine retribution for sin and examine the social banishment of lepers to Lazar houses.',
+            },
+            {
+              time: '30–45m',
+              label: 'Analytical Assessment Ledger',
+              instruction:
+                'Complete Disciplinary Vocabulary Distinction (Divine Retribution vs Physical Causation) and annotate the Roger Bacon case study.',
+            },
+            {
+              time: '45–50m',
+              label: 'Formative Check & Plenary',
+              instruction:
+                'Teacher poses Hinge Question 1 on Source A. Pupils log key takeaways on their Living Timeline.',
+            },
+          ],
+        },
+        lesson_2: {
+          title: 'Lesson 2: Astrology, Teleology & Exam Mastery (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Retrieval & Visual Forensic Inspection',
+              instruction:
+                'Inspect Source B (The Zodiac Man). Discuss how physicians reconciled astrology with Church doctrine using planetary conjunctions.',
+            },
+            {
+              time: '10–25m',
+              label: 'Deconstruct Acts 3 & 4 (Galen’s Teleology)',
+              instruction:
+                'Explain why the Church embraced Galen’s idea of purposeful design by a single Creator, making criticism of Galen an act of heresy.',
+            },
+            {
+              time: '25–45m',
+              label: 'Deliberate Exam Practice (12m)',
+              instruction:
+                'Complete Question 4 Explain Why: Explain why the Catholic Church had such a powerful influence on medical ideas (c1250–c1500) using the 3-column structure strip.',
+            },
+            {
+              time: '45–50m',
+              label: 'Self-Assessment & D.I.R.T.',
+              instruction:
+                'Pupils self-assess against the high-yield vocabulary bank and log their marks on the back-cover ledger.',
+            },
+          ],
         },
       },
-      creative_task: {
-        type: 'conceptual_triad',
-        title: 'The Intellectual Triad: Hippocrates, Galen & The Catholic Church',
-        subtitle:
-          'Why did ancient medical dogma freeze European understanding of disease for 1,400 years?',
-        briefing:
-          'In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Use this visual revision guide to revise all medieval beliefs about disease before answering the Edexcel exam questions opposite.',
-        pillars: [
+      teacher_notes: {
+        primer:
+          'The overarching pedagogical goal of this lesson is to help pupils understand that medieval beliefs about disease were not random superstition, but a deeply cohesive and logical system anchored to Catholic theology. By exploring the Church’s monopoly on education, book copying, and university curricula, pupils understand why medical progress stalled for centuries.',
+        objectives: [
           {
-            id: 'church',
-            name: 'The Catholic Church',
-            dates: 'c. 500 – 1500 AD',
-            badge: 'Monopoly on Truth',
-            role: 'Monastic Scriptoria, Universities & Religious Dogma',
-            core_knowledge: [
-              {
-                q: 'Why did the Church embrace Galen?',
-                a: 'Galen argued every organ had a purposeful divine design created by a single Creator (teleology). This aligned perfectly with Genesis, so the Church declared his writings infallible sacred truth.',
-              },
-              {
-                q: 'How was medical dogma enforced?',
-                a: 'Monks controlled manuscript copying; universities taught only Galen and Hippocrates. Questioning dogma was heresy; Roger Bacon was imprisoned in 1277 for advocating experimental science.',
-              },
-            ],
-          },
-          {
-            id: 'hippocrates',
-            name: 'Hippocrates of Kos',
-            dates: 'c. 460 – c. 370 BC',
-            badge: 'Ancient Greek Roots',
-            image: '/images/hippocrates_portrait.jpg',
-            role: 'Clinical Observation & The Four Humours',
-            core_knowledge: [
-              {
-                q: 'The Four Humours Theory:',
-                a: 'Blood (Spring/Air/Hot & Wet), Phlegm (Winter/Water/Cold & Wet), Yellow Bile (Summer/Fire/Hot & Dry), Black Bile (Autumn/Earth/Cold & Dry). Sickness was an internal humoural imbalance.',
-              },
-              {
-                q: 'The Clinical Method & Regimen Sanitatis:',
-                a: 'Revolutionary rejection of spirits and demons. Promoted bedside observation (pulse, symptoms) and balanced lifestyle (diet, rest, exercise) in the Regimen Sanitatis.',
-              },
-            ],
-          },
-          {
-            id: 'galen',
-            name: 'Claudius Galenus (Galen)',
-            dates: 'AD 129 – c. 216',
-            badge: 'Roman Imperial Synthesis',
-            image: '/images/galen_portrait.jpg',
-            role: 'Theory of Opposites & Teleological Anatomy',
-            core_knowledge: [
-              {
-                q: 'The Theory of Opposites:',
-                a: 'Expanded humoural balance by treating symptoms with their contrary (e.g. cold, wet phlegm treated with hot, dry pepper; excess hot blood treated with cold cucumber or bloodletting).',
-              },
-              {
-                q: 'Anatomical Errors & 1,300-Year Dogma:',
-                a: 'Dissected pigs and Barbary apes due to Roman taboos, claiming the human liver had 5 lobes and jaw had 2 bones. His errors were frozen as sacred truth for 1,300 years.',
-              },
-            ],
-          },
-        ],
-        vectors: [
-          {
-            label: '1. Ancient Roots to Roman Doctrine',
-            text: 'Galen adopted Hippocrates’ Four Humours, developed the Theory of Opposites, and systematized Greek medicine into 350+ Latin treatises.',
-          },
-          {
-            label: '2. Theological Sanctification',
-            text: 'Monastic scriptoria translated and hand-copied Galen; the Church declared his teleological writings infallible doctrine alongside scripture.',
-          },
-          {
-            label: '3. The 1,400-Year Stagnation',
-            text: 'With university curricula fixed on Galen and dissent punished as heresy, medical inquiry halted completely until the Renaissance.',
-          },
-        ],
-        supernatural_and_environmental: [
-          {
-            title: "God's Wrath, Sin & Leprosy",
-            badge: 'Supernatural',
-            text: 'The Church taught that illness was a punishment from God for sins or a test of faith. Lepers were cast out into Lazar houses, forced to ring bells and wear cloaks. Prayer, fasting, pilgrimages, and flagellation were seen as genuine cures.',
-          },
-          {
-            title: 'Astrology & The 1345 Alignment',
-            badge: 'Astrological',
-            text: 'Physicians consulted Almanacs and star charts to check planetary alignments. In 1345, an unusual conjunction of Mars, Jupiter, and Saturn was blamed for the Black Death. Star alignments were believed to directly corrupt the humours.',
-          },
-          {
-            title: 'Miasma & Pestilential Air',
-            badge: 'Environmental',
-            text: 'Bad air from rotting waste, swamps, and filth was believed to poison the body. People burned incense, carried pomanders or sweet herbs, and avoided foul-smelling areas to protect their humoural balance.',
-          },
-        ],
-        diagnostic_toolkit: [
-          {
-            title: 'Uroscopy (The Urine Chart)',
-            icon: 'flask',
-            text: 'The primary diagnostic tool. Physicians examined urine in a glass matula, checking colour, density, smell, and even taste against a 20-shade chart. White/watery urine indicated excess phlegm; deep red indicated excess blood. Cathedral priories hired full-time urine examiners.',
-          },
-          {
-            title: 'The Zodiac Man (Homo Signorum)',
-            icon: 'stars',
-            text: 'Included in every physician’s pocket Vademecum handbook. Illustrated how the 12 star signs governed different bodily organs (e.g. Aries ruled the head; Pisces the feet). Doctors were strictly forbidden to bleed or operate when the Moon was in a body part’s governing sign.',
-          },
-          {
-            title: 'University Dissection Ritual',
-            icon: 'book',
-            text: 'Medical training at Oxford, Paris, and Bologna was based on book learning, not practical treatment. During rare dissections, the professor (Lector) sat in a high chair reading Galen, while an assistant cut. If the body contradicted Galen, the corpse was dismissed as malformed.',
-          },
-        ],
-        cross_era_links: [
-          {
-            title: 'Continuity: Miasma & Humours in the Renaissance',
-            badge: 'Key Similarity',
-            text: 'Miasma remained the leading explanation for epidemics like the Great Plague (1665). Ordinary people still used bloodletting, purging, and herbal remedies to balance humours throughout the 16th and 17th centuries.',
-          },
-          {
-            title: 'Change: Challenging Galen (Vesalius & Harvey)',
-            badge: 'Anatomical Shift',
-            text: 'Vesalius (1543) proved Galen made human errors (e.g. human lower jaw is 1 bone, not 2). William Harvey (1628) proved blood circulates, disproving Galen’s idea that the liver constantly manufactured new blood.',
-          },
-          {
-            title: 'Change: Thomas Sydenham (1676)',
-            badge: 'Diagnostic Shift',
-            text: 'Known as the "English Hippocrates", Sydenham moved medicine away from individual humoural imbalance toward diagnosing diseases as distinct, external species with fixed symptom patterns.',
-          },
-        ],
-        keywords: [
-          'Four Humours',
-          'Theory of Opposites',
-          'Clinical Observation',
-          'Teleology',
-          'Monastic Scriptoria',
-          'Roger Bacon (1277)',
-          'Heresy',
-          'Miasma',
-          'Uroscopy (Matula)',
-          'Zodiac Man',
-          'Lazar House',
-          'Regimen Sanitatis',
-        ],
-        takeaway_points: [
-          'The Catholic Church’s monopoly on education, universities, and hand-copied manuscripts prevented new ideas.',
-          'Galen’s teleological theory of purposeful design aligned with Christian creation, making his texts sacred and unchallengeable.',
-          'Lack of alternative scientific explanations or technology (no microscopes, no printing press) reinforced reliance on ancient tradition.',
-        ],
-        exam_task: {
-          q3: {
-            tariff: 'Question 3: Similarity OR Difference [4 Marks]',
-            board: 'Edexcel GCSE (9–1) Paper 1 &bull; Question 3',
+            objective: 'Explain supernatural and religious explanations for the cause of illness.',
+            primer:
+              'Focus on paragraphs [1.1] and [2.1]. Guide pupils to see that if illness is sent by God to punish sin or test faith, searching for biological causes was considered pointless or even blasphemous.',
             question:
-              'Explain one way in which ideas about the causes of illness in the Medieval period (c.1250–c.1500) were similar to ideas about the causes of illness in the Renaissance period (c.1500–c.1700).',
-            guidance:
-              'Timing: 5 mins &bull; Structure: 1 developed comparative PEEL paragraph. Focus on ONE valid similarity with specific knowledge from both eras. (e.g. Continued widespread belief in miasma / bad air as a cause of epidemics, or the enduring reliance on humoural imbalance). Do NOT write both similarity and difference!',
-            lines: 8,
+              'If medieval people believed God directly sent illness as a punishment for sin, why did this stop doctors from investigating physical causes of disease?',
           },
-          q4: {
-            tariff: 'Explain Why [12 Marks]',
-            board: 'Edexcel GCSE (9–1) Paper 1 &bull; Question 4',
+          {
+            objective:
+              'Analyse how the Church enforced Galenic orthodoxy and suppressed scientific dissent.',
+            primer:
+              'Direct pupils to paragraphs [3.1] and [4.1]. Emphasise Galen’s teleological argument (purposeful design by a single Creator) and the exemplary punishment of Roger Bacon in 1277.',
             question:
-              'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.',
-            stimulus: ['The Catholic Church', 'Galen'],
-            note: '(You must also use information of your own.)',
-            guidance:
-              'Timing: 18 mins &bull; Structure: 3 fully developed PEEL paragraphs (P1: Church, P2: Galen, P3: Own Knowledge)',
-            lines: 24,
+              'Why did the Church declare the pagan Roman doctor Galen infallible, and what happened to anyone who questioned his writings?',
           },
-        },
+        ],
       },
       do_now: {
         type: 'questions',
-        title: 'Have a Guess! (Prior Knowledge Check)',
+        title: 'Spaced Retrieval Do Now: Foundations of Medicine',
         instructions:
-          "This is the very first lesson of the course, so you haven't been taught this yet. Make your best guess based on what you already know, then check back at the end of the lesson to see how many you got right.",
+          'Answer the four recall questions below from memory to check your grounding in medieval medical concepts.',
         items: [
           {
-            question: "What does the term 'public health' refer to?",
-            answer:
-              'The health of the population as a whole, especially as monitored and regulated by the state.',
+            question:
+              'Which ancient civilization first introduced the idea of natural, humoural balance?',
+            answer: 'The Ancient Greeks',
+            options: ['The Ancient Greeks', 'The Normans', 'The Anglo-Saxons', 'The Romans'],
+          },
+          {
+            question: 'Name the ancient Roman physician who created the Theory of Opposites.',
+            answer: 'Claudius Galen',
+            options: ['Hippocrates', 'Aristotle', 'Roger Bacon', 'Claudius Galen'],
+          },
+          {
+            question:
+              'What four bodily fluids did the humoural theory claim dictated human health?',
+            answer: 'Blood, Phlegm, Yellow Bile, Black Bile',
             options: [
-              'The health of the population as a whole, especially as monitored and regulated by the state.',
-              'Treating patients inside private clinics or monasteries.',
-              'A medical theory developed by the Romans to bleed patients.',
-              'The training of physicians in medieval universities.',
+              'Blood, Phlegm, Water, Bile',
+              'Blood, Phlegm, Yellow Bile, Black Bile',
+              'Blood, Saliva, Sweat, Bile',
+              'Blood, Choler, Urine, Phlegm',
             ],
           },
           {
-            question: 'Name one ancient civilization that heavily influenced medieval medicine.',
-            answer: 'The Ancient Greeks.',
-            options: ['The Anglo-Saxons.', 'The Vikings.', 'The Normans.', 'The Ancient Greeks.'],
-          },
-          {
-            question: 'Which Greek physician originally created the Theory of the Four Humours?',
-            answer: 'Hippocrates.',
-            options: ['Galen.', 'Hippocrates.', 'Harvey', 'Vesalius.'],
-          },
-          {
-            question: 'Which Roman physician developed the Theory of Opposites?',
-            answer: 'Galen.',
-            options: ['Hippocrates.', 'Thomas Sydenham.', 'Galen.', 'Roger Bacon'],
-          },
-          {
-            question: 'What are the four humours?',
-            answer: 'Blood, phlegm, yellow bile, black bile.',
-            options: [
-              'Blood, phlegm, yellow bile, urine.',
-              'Blood, water, air, bile.',
-              'Blood, phlegm, yellow bile, black bile.',
-              'Blood, water, pus, black bile.',
-            ],
-          },
-          {
-            question: "What was 'miasma'?",
-            answer: 'Bad air or noxious smells believed to cause disease.',
-            options: [
-              'An imbalance of the four humours.',
-              'Bad air or noxious smells believed to cause disease.',
-              'A treatment involving bleeding and purging.',
-              'A holy water used by priests to cure illness.',
-            ],
-          },
-          {
-            question: 'How did the medieval Church explain the cause of disease?',
-            answer: 'God sent disease as a punishment for sin or to test faith.',
-            options: [
-              'God sent disease as a punishment for sin or to test faith.',
-              'Imbalances in the solar system caused organs to fail.',
-              'Disease was spread by dirty water and bacteria.',
-              'Poor sanitation in large industrial cities.',
-            ],
-          },
-          {
-            question: 'Why did the medieval Church promote the ideas of Galen?',
-            answer:
-              "Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.",
-            options: [
-              "Galen's books were written in Latin by medieval monks.",
-              'Galen proved that God performed miracles in hospitals.',
-              'Galen was a Christian bishop who lived in Rome.',
-              "Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.",
-            ],
-          },
-          {
-            question: 'Explain how astrology was used in medieval medicine.',
-            answer:
-              'Physicians used star charts and planetary alignments to diagnose illness and plan treatments.',
-            options: [
-              'It was used to calculate the exact price of apothecary medicines.',
-              'Physicians believed that the stars physically fell to Earth to infect water.',
-              'Physicians used star charts and planetary alignments to diagnose illness and plan treatments.',
-              'Astrology was strictly banned by the Church as witchcraft.',
-            ],
-          },
-          {
-            question: "What was the 'urine chart' used for in medieval diagnosis?",
-            answer: 'To check the colour, taste, and smell of urine to identify humour imbalances.',
-            options: [
-              'To check for bacterial infections using microscopes.',
-              'To determine if a patient was possessed by a demon.',
-              'To guide bloodletting by indicating the best vein to open.',
-              'To check the colour, taste, and smell of urine to identify humour imbalances.',
-            ],
+            question:
+              'What term was used for corrupt, foul-smelling air believed to cause disease?',
+            answer: 'Miasma',
+            options: ['Phlebotomy', 'Teleology', 'Miasma', 'Articella'],
           },
         ],
       },
-      fun_facts: [
-        '5th Century BCE: The era when the Ancient Greek doctor Hippocrates first developed the foundational Theory of the Four Humours.',
-        '4: The exact number of bodily fluids (blood, phlegm, yellow bile, black bile) that medieval doctors believed dictated human health and disease.',
-        '1345: The year an unusual planetary alignment occurred, which medieval astrologers and physicians blamed for causing the devastating Black Death shortly after.',
-      ],
-      guided_reading: [],
       narrative_blocks: [
         {
-          text: "**The Dominance of the Church**\n\nIn the Medieval period, the Catholic Church controlled almost all education, libraries, and universities. Monks were the only people who copied books by hand, meaning the Church decided what people read and what was taught. The Church strongly supported the ideas of Galen because he believed the body had a 'creator', which fit perfectly with Christian teachings.\n\nBecause the Church had such immense power, challenging Galen's ideas was seen as challenging the Church itself. Anyone who dared to question the Four Humours or suggest new theories about disease was likely to be punished or even accused of heresy. Furthermore, the Church taught that disease was a punishment from God for sins, meaning many people believed the only way to get better was through prayer and repentance, rather than seeking medical cures. The Church taught that since God sent illness, any recovery was a miracle achieved through prayer; this acted as 'proof of the divine,' providing concrete evidence of God's active existence to the medieval population.\n\nFurthermore, bad smells and decay (miasmatas) were not just viewed as physical hazards; they were deeply associated with sinfulness and spiritual corruption. A clean, sweet-smelling home was seen as a sign of spiritual purity, which is why incense was heavily burned in churches to purify the air.",
+          act: 1,
+          act_title: 'Context & Catalyst: The Catholic Church Monopoly',
+          text: '<span class="para-ref">[1.1]</span> In medieval England (c1250–c1500), the Roman Catholic Church exercised near-total control over intellectual life, education, and social values. Formal education was an ecclesiastical privilege; cathedral schools and universities like Oxford and Paris were staffed entirely by clergy. Most crucially, book production was concentrated inside monastic scriptoria, where monks hand-copied manuscripts. Because every text required months of laborious transcription, the Church acted as an unyielding censor, deciding which books were preserved and which were suppressed.\n\n<span class="para-ref">[1.2]</span> Medical teaching was strictly theoretical and anchored to Latin scripture. The Church taught that the physical world was merely a temporary, imperfect realm governed by divine will. Consequently, understanding the universe did not require physical dissection or laboratory experiments; it required studying holy scripture and classical treatises approved by the Pope. To question established teaching was not merely an academic error—it was an act of heresy against God.',
+          source: {
+            id: 'source_a_church',
+            letter: 'A',
+            title: 'Source A: Medieval Church Interior with Altar & Doom Painting (14th c.)',
+            src: '/images/medieval_church_interior.jpg',
+            source: '/images/medieval_church_interior.jpg',
+            image: '/images/medieval_church_interior.jpg',
+            caption:
+              'A medieval parish church interior showing the elevated altar and the vivid Doom painting above the chancel arch depicting Heaven and Hell.',
+            provenance: 'St Thomas Church, Salisbury, 14th century Doom mural and altar.',
+            context:
+              'The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly and viewed illness, famine, and recovery as direct expressions of God’s divine intervention.',
+            question:
+              'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+            hinge_question:
+              'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+          },
         },
         {
-          text: "**Supernatural and Religious Explanations**\n\nThe Catholic Church dominated medieval society and controlled all formal medical education and the copying of books.\n\nThe Church taught that illness was a punishment from God for committing sins, or a test of a person's faith. For example, the Bible used leprosy as an illustration of divine punishment, leading sufferers to be socially outcasted and banished to Lazar Houses (specialized leper colonies outside towns). If allowed to travel, lepers had to wear a covering cloak and ring a bell to warn people of their approach. They used this bell to beg for alms (charity), chanting phrases like 'Some good, my gentle master, for God's sake'. Although incorrect, medieval people believed a leper's breath was contagious, showing they did possess basic, primitive ideas about disease transmission.\n\nAstrology was also highly influential. Initially, the Church was highly conservative and frowned upon the use of astrology for diagnosis, viewing it as a dangerous step toward fortune-telling. However, after the devastating arrival of the Black Death in 1348, the Church became much more accepting of astrological explanations. Physicians used Almanacs and star charts to check the alignment of the planets, believing that negative alignments caused disease. For example, an unusual alignment of Mars, Jupiter, and Saturn in 1345 was widely blamed for causing the Black Death. Because people believed God or the stars controlled illness, there was very little motivation to search for other scientific or physical causes, which severely held back medical progress.",
+          act: 2,
+          act_title: 'Escalation: God’s Wrath, Sin & Leprosy',
+          text: '<span class="para-ref">[2.1]</span> Because the Church taught that God controlled every aspect of health, sickness was universally interpreted as a spiritual condition. Sudden illness was seen as divine retribution—a punishment sent by God for personal sins such as greed, gluttony, or heresy, or as a divine test of a Christian’s faith and devotion (similar to Job in the Old Testament). Recovery was regarded as a miracle granted through prayer, confession, and repentance, rather than the result of medical skill.\n\n<span class="para-ref">[2.2]</span> The most vivid illustration of divine punishment was leprosy. Mentioned prominently in the Bible, leprosy was regarded as a physical manifestation of inner moral corruption and sin. Sufferers were socially ostracised; they underwent a symbolic funeral service before being banished to specialized Lazar houses built outside city walls. When forced to travel, lepers had to wear concealing grey cloaks, keep to the middle of the road, and continuously ring a handheld bell while crying out for alms, warning healthy citizens to avoid their breath.',
           tasks: [
             {
               type: 'written',
-              text: 'Explain how supernatural and religious beliefs were used to explain the causes of disease in medieval England.',
+              text: 'Using paragraphs [2.1]–[2.2], explain how religious beliefs dictated the social treatment of leprosy sufferers.',
               model:
-                'The Catholic Church taught that disease was sent by God as a punishment for sin or a test of faith (such as leprosy in the Bible). Additionally, people used astrology, believing that negative planetary alignments (such as the 1345 alignment of Mars, Jupiter, and Saturn) corrupted the air and caused epidemics like the Black Death. Because people believed God and the stars controlled health, they sought spiritual cures like prayer rather than scientific medicine.',
+                'The Catholic Church taught that leprosy was a direct punishment from God for internal sin and moral corruption. Consequently, society treated lepers as spiritually dangerous outcasts, performing symbolic funeral services before banishing them to Lazar houses outside town boundaries. To protect healthy citizens from their breath, lepers were forced to wear concealing cloaks and sound a warning bell.',
             },
           ],
-          image: '/images/zodiac_man.jpg',
-          image_alt: "Source B: The 'Zodiac Man' (Homo Signorum, c.1380)",
-          caption:
-            'The Zodiac Man (Homo Signorum) showing the astrological signs that medieval physicians believed ruled over different areas and organs of the human body.',
-          source_letter: 'B',
-          image_context:
-            "Medieval doctors believed the movement of planets and stars directly influenced human physiology and health. Each part of the body was thought to be governed by a zodiac constellation—Aries ruled the head, Taurus the neck, and Pisces the feet. Before carrying out bloodletting, surgery, or administering strong medicines, university-trained physicians consulted complex astrological almanacs (calendars) to ensure the moon was not in an unfavorable zodiac sign for that body part. **Hinge Question:** Why would a medieval university-trained physician refuse to operate on a patient's limb if the moon was in a certain astrological sign, and what does this reveal about medieval attitudes toward natural versus supernatural causes?",
         },
         {
-          text: "**Rational Explanations: The Four Humours and Miasma**\n\nThe Theory of the Four Humours was created by the Ancient Greek physician Hippocrates in the 5th century BCE.\n\nIt stated that the body was made of four liquids, each associated with specific seasons, elements, and psychological traits. Blood (Spring, Air, Hot/Wet) was linked to a Sanguine personality (optimistic). Choler or Yellow Bile (Summer, Fire, Hot/Dry) was linked to a Choleric personality (quick-tempered) and appeared in vomit or pus. Black Bile (Autumn, Earth, Cold/Dry) was linked to a Melancholic personality (depression) and appeared in clotted blood or excrement. Phlegm (Winter, Water, Cold/Wet) was linked to a Phlegmatic personality (lethargic, sneezing). Physicians believed illness occurred naturally when these humours became unbalanced.\n\nMiasma was another highly popular rational theory; people believed that breathing in 'bad air' filled with foul-smelling fumes from rotting matter or swamps corrupted the body's humours and caused disease. Medieval physicians rarely used the word 'miasma' itself, instead referring to it in records as 'corruption of the air,' 'pestilential air,' or 'putrefaction of the air.' The Theory of the Four Humours was incredibly significant because it provided a complete, logical system that physicians used to diagnose and treat almost every physical and mental illness in medieval England.",
+          act: 3,
+          act_title: 'Forensic Evidence: Celestial Forces & Astrology',
+          text: '<span class="para-ref">[3.1]</span> Alongside divine retribution, medieval people believed that human health was intimately governed by the alignment of the stars and planets. While early Church leaders initially condemned astrology as pagan fortune-telling, by the 14th century, astrological medicine was fully incorporated into university curricula and endorsed by European prelates. The cosmos was viewed as God’s vast clockwork creation; planets were believed to exert physical gravitational and mystical influences upon the earthly elements.\n\n<span class="para-ref">[3.2]</span> When catastrophic epidemics struck, physicians pointed to unusual celestial configurations. Most famously, when the Black Death decimated Europe, scholars at the University of Paris officially declared that the plague was caused by the conjunction of Saturn, Jupiter, and Mars in the astrological sign of Aquarius in March 1345. This planetary alignment was believed to have drawn up poisonous vapors from deep within the earth, corrupting the air with deadly miasma.',
+          source: {
+            id: 'source_b_zodiac',
+            letter: 'B',
+            title: "Source B: The 'Zodiac Man' (Homo Signorum, c.1380)",
+            src: '/images/zodiac_man.jpg',
+            source: '/images/zodiac_man.jpg',
+            image: '/images/zodiac_man.jpg',
+            caption:
+              'The Zodiac Man (Homo Signorum) showing the 12 astrological signs that medieval physicians believed governed different bodily organs.',
+            provenance: 'MS Harley 3719, British Library, London, c.1380.',
+            context:
+              'Medieval physicians carried pocket handbooks called Vademecums containing Zodiac Man diagrams. Doctors were strictly forbidden to bleed, purge, or operate on a body part when the moon was in its governing astrological sign.',
+            question:
+              'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+            hinge_question:
+              'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+          },
+        },
+        {
+          act: 4,
+          act_title: 'Historical Verdict: Galen’s Teleology & The Enforcement of Dogma',
+          text: '<span class="para-ref">[4.1]</span> Why did the Christian Church adopt the medical treatises of Claudius Galen, a pagan doctor from 2nd-century imperial Rome? The crucial connection was teleology. Galen repeatedly argued in his treatises that every single bone, muscle, and organ in the human body had been purposefully crafted by a supreme, singular Creator. This design argument aligned so perfectly with Genesis and Christian creation theology that church leaders declared Galen’s anatomical writings infallible sacred truth.\n\n<span class="para-ref">[4.2]</span> The consequence for European medicine was catastrophic stagnation. Questioning Galen became synonymous with questioning scripture. When rare university dissections of executed criminals were conducted, the physician sat high up in a raised chair reading aloud from Galen’s Latin text while an untrained barber cut the body; if a physical organ contradicted Galen, the corpse was dismissed as deformed. When the English Franciscan friar Roger Bacon argued around 1277 that scholars should stop relying on ancient authority and conduct firsthand empirical experiments, church authorities had him imprisoned. For over a millennium, medical progress was effectively criminalised.',
           tasks: [
             {
-              type: 'two_sided_argument',
-              topic: 'The Theory of the Four Humours and Galenic Medicine',
-              instruction:
-                'GCSE Analytical Assessment: Evaluate the logical strengths and scientific limitations of Galenic humoral medicine in the Middle Ages.',
-              advancement: {
-                title: 'Logical & Natural Rationale (Rationality)',
-                points: [
-                  'Provided a rational, natural explanation for illness based on physical bodily fluids (blood, phlegm, yellow bile, black bile) rather than blaming demons or witchcraft.',
-                  "Galen's Theory of Opposites gave physicians a systematic framework for prescribing clinical treatments (e.g. treating a cold phlegmatic fever with hot, dry pepper).",
-                  'Encouraged careful observation of bodily symptoms, diet, and clinical pulse taking.',
-                ],
-                starter:
-                  'On the one hand, the Theory of the Four Humours was considered a rational medical framework because...',
-              },
-              limitations: {
-                title: 'Doctrinal Stagnation & Flaws',
-                points: [
-                  'The four humours were factually non-existent; treatments based on balancing them (bleeding, purging, vomiting) severely weakened sick patients and frequently proved fatal.',
-                  'The Catholic Church adopted Galen as absolute dogma because his writings argued the body was designed by a single Creator, making criticism of Galen an act of heresy.',
-                  'The Church strictly banned human dissection, freezing anatomical knowledge in classical antiquity and preventing doctors from discovering real bodily organs.',
-                ],
-                starter:
-                  'However, Galenic humoral medicine severely hindered medical progress because...',
-              },
-              synthesis_prompt:
-                'Write a balanced GCSE exam paragraph evaluating why Galenic medicine dominated the medieval period despite having fatal medical flaws.',
-              synthesis_connectives: [
-                'Although the Four Humours offered a naturalistic explanation...',
-                'However, its factual inaccuracies meant that...',
-                'Furthermore, because the Church enforced it as religious dogma...',
-                'Consequently...',
-              ],
-              model_answer:
-                "On the one hand, the Theory of the Four Humours represented a rational and sophisticated medical framework for medieval society because it offered a naturalistic, secular explanation for disease. Derived from Hippocrates and expanded by Galen, the theory posited that health was governed by a balance of four bodily fluids: blood, phlegm, yellow bile, and black bile. Rather than attributing illness to demonic possession, witchcraft, or divine curse, humoral theory argued that disease was caused by a physical imbalance within the patient's own body, influenced by diet, climate, and lifestyle. Furthermore, Galen's Theory of Opposites provided physicians with a logical system of clinical intervention (for example, counteracting cold, moist phlegm with warm, dry foods like hot peppers), encouraging doctors to conduct careful bedside observations of symptoms, pulses, and urine charts.<br><br>However, Galenic humoral medicine severely paralyzed medical progress for over a millennium because it was factually incorrect and backed by religious tyranny. Because the biological humours did not exist, standard humoral treatments—most notably aggressive bloodletting (phlebotomy) and violent purging with laxatives—drastically lowered the immune defenses of sick patients and frequently hastened death from dehydration and blood loss. More critically, the Catholic Church embraced Galen's treatises as absolute theological dogma because Galen believed that every human organ had been purposefully designed by a single divine Creator. Consequently, the Church controlled university medical training, strictly forbade human dissection, and treated anyone who questioned Galen as a dangerous heretic. This ensured that medieval doctors remained trapped in classical dogma, leaving patients entirely vulnerable to fatal epidemics.",
-            },
-          ],
-          image: '/images/four_humours.jpg',
-          image_alt: 'Source A: The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)',
-          caption:
-            'The Four Humours Wheel: Blood (air/hot & wet), Phlegm (water/cold & wet), Yellow Bile (fire/hot & dry), and Black Bile (earth/cold & dry).',
-          source_letter: 'A',
-          image_context:
-            'The Theory of the Four Humours, first devised by Hippocrates in ancient Greece and developed by Galen in ancient Rome, dominated medieval European medicine. Medieval physicians believed that good health required all four bodily humours to remain in precise balance. Each humour corresponded to a season, an element, and specific qualities of heat and moisture. When a person fell ill, doctors assumed that one humour was in excess or putrefied. **Hinge Question:** If a patient suffering from a cold and shivering was treated with hot spices and dry foods, which medical theory was the physician applying, and why did this belief prevent scientific progress for over a thousand years?',
-        },
-        {
-          text: '[Key Individual: Hippocrates]',
-          hinge_question: {
-            text: 'Why did the Church promote the work of the ancient Roman doctor Galen?',
-            options: [
-              'Because Galen proved that God sent diseases as a punishment.',
-              "Because Galen's theory of a perfectly designed body fit Christian creation theology.",
-              'Because Galen was a devout Christian.',
-              'Because he was the personal physician to the Pope.',
-            ],
-            correct_index: 1,
-            explanation:
-              "Galen was a Roman pagan, but his 'Design Theory' (that every part of the body had a purpose) perfectly matched the Christian belief that God created humanity.",
-          },
-          theme_heading: 'Hippocrates:',
-        },
-        {
-          text: "**The Continuing Influence of Galen**\n\nGalen, an Ancient Roman physician, developed Hippocrates' ideas further by creating the Theory of Opposites (for example, treating an excess of 'cold' phlegm with 'hot' peppers).\n\nThe Church fiercely promoted Galen's ideas because he wrote that the body was perfectly designed with a specific purpose, which perfectly fit the Christian belief in a single Creator.\n\nBecause the Church controlled the universities, Galen's texts became the absolute foundation of medical training. Medical students relied on a core textbook called the Articella, which included translations of Galen and Hippocrates, alongside the work of the 9th-century Persian doctor Hunayn ibn-Is'haq. Training also heavily emphasized the logical works of the Greek philosopher Aristotle and the Persian physician Avicenna. In medieval universities, 'book learning' and being widely read was considered a far greater sign of a physician's intelligence than actual hands-on clinical experience treating patients. Discovering new ideas through human dissection was strictly discouraged because the Church taught the body needed to be buried whole. When rare dissections of executed criminals did occur, the university physician sat high up in a chair far away from the body, simply reading Galen's texts aloud while an untrained barber-surgeon did the actual cutting. If any internal organ on the table physically contradicted Galen's descriptions, the physician would explain it away by claiming the criminal's body was imperfect or deformed, leaving Galen's authority completely unchallenged. Galen's absolute authority meant that his sometimes incorrect anatomical ideas went unchallenged for over a thousand years, making it almost impossible for new medical discoveries to be made during the Middle Ages.",
-          tasks: [
-            {
-              type: 'written',
-              text: 'Evaluate the significance of the Church in holding back medical progress in the Middle Ages.',
+              type: 'exam_practice',
+              tariff: '[12 marks]',
+              question:
+                'Explain why the Catholic Church had such a powerful influence on medical ideas about the causes of disease in the period c1250–c1500.',
+              stimulus: ['Monastic scriptoria', 'Roger Bacon'],
               model:
-                "The Church was highly significant in holding back progress because it controlled education and the copying of texts. By enforcing Galen's ideas as absolute truth and discouraging human dissection, the Church prevented any new medical discoveries.",
+                'One major reason why the Catholic Church had such a powerful influence on medical ideas was its complete control over education and book production. In the medieval period, the only places where manuscripts were copied were monastic scriptoria, where monks hand-transcribed Latin texts. This gave Church authorities an absolute monopoly over what was read and taught across European universities like Oxford and Paris. Because the Church strictly censored any new or controversial ideas, medical students were taught only texts approved by the Pope, preventing alternative scientific explanations from emerging.\n\nFurthermore, the Church fiercely promoted the medical writings of the Roman physician Claudius Galen because of his teleological philosophy. Galen argued that every organ in the human body was purposefully designed by a single Creator. This aligned perfectly with Christian creation theology, leading Church leaders to declare Galen’s writings infallible sacred dogma. Because the Church taught that Galen was divinely inspired, questioning his anatomical errors was treated as dangerous heresy. Medical education focused on memorising Galen’s texts rather than conducting clinical research, completely freezing anatomical knowledge in classical antiquity.\n\nFinally, the Church ruthlessly suppressed any scholar who advocated firsthand experimentation. When the Franciscan friar Roger Bacon suggested around 1277 that scientific truth should be established through observation rather than unquestioned obedience to ancient books, Church superiors had him imprisoned. This severe punishment sent a chilling message across Europe that empirical enquiry would be punished as heresy. Consequently, respect for classical authority and fear of ecclesiastical punishment ensured that medical ideas remained unchanged throughout the Middle Ages.',
             },
           ],
-        },
-        {
-          text: '[Key Individual: Claudius Galen]',
-          theme_heading: 'Galen: Medical Pioneer',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Using the Claudius Galen Key Individual card, explain why Galen made anatomical errors, and why these errors remained unchallenged throughout the Middle Ages.',
-              model:
-                "Galen made anatomical errors because Roman law prohibited the dissection of human corpses, forcing him to dissect animals like pigs and Barbary apes. This caused him to make major anatomical mistakes, such as claiming the human lower jaw consists of two bones, the liver has five lobes, and blood flows through invisible pores in the heart septum. These errors remained unchallenged for over 1,000 years because the Catholic Church held absolute authority over education and universities, outlawed human dissection, and treated Galen's writings as divine dogma, punishing anyone who challenged him.",
-            },
-          ],
-        },
-        {
-          text: "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part.",
-          image: '/images/medieval_urine_chart.jpg',
-          image_alt: 'Source C: Physician Inspecting Urine Flask (Fasciculus Medicinae, 1491)',
-          caption:
-            'The Medieval Urine Chart: a radial wheel showing twenty flasks of differing colours, which physicians examined, smelled, and sometimes tasted to diagnose humoural imbalance.',
-          source_letter: 'C',
-          image_context:
-            "Uroscopy (the inspection of urine) was the cornerstone of clinical diagnosis in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of a patient's urine in a pear-shaped glass vessel called a matula. By comparing the sample against radial urine wheels, doctors deduced which humour was dominating or corrupted inside the body. **Hinge Question:** How did urine charts reinforce the unquestioned authority of Galen's humoural system, even though medieval physicians were examining physical, empirical bodily fluids?",
-        },
-      ],
-      exam_practice: [
-        {
-          type: '12-mark',
-          marks: 12,
-          question:
-            'Explain why there was so little change in ideas about the cause of disease in the years c.1250-c.1500.',
-          stimulus: ['The Church', 'Galen'],
-          model_answer:
-            '<p style="margin-bottom: 1.5rem;">The primary reason why ideas about the cause of disease remained completely unchanged in the medieval period was the overwhelming institutional and religious influence of the <strong>Catholic Church</strong>. In medieval Europe, the Church controlled education and held a strict monopoly over book production, with monks painstakingly copying medical manuscripts by hand in monastic libraries. The Church taught that all events on Earth, including illness and health, were controlled directly by God. Disease was widely explained as a punishment sent by God for sinful behaviour, or as a test of an individual\'s religious faith (as depicted in the biblical story of Satan infecting Job with boils). Because this religious explanation was almost universally accepted and provided a complete, comforting worldview, there was very little motivation for physicians or ordinary people to seek out alternative, scientific explanations. Furthermore, any independent-minded scholars who attempted to challenge Church dogma or conduct original medical research were heavily suppressed; for example, when the 13th-century scientist Roger Bacon suggested that doctors should carry out their own experiments, he was promptly imprisoned by Church leaders.</p><p style="margin-bottom: 1.5rem;">Another major factor that prevented change in medieval medical ideas was the unquestioned authority of the ancient Roman doctor Claudius <strong>Galen</strong>, whose teachings were actively promoted by the Church. Although Galen had lived in the 2nd century AD, his extensive medical writings remained the absolute basis of all university-trained physicians\' education for over a thousand years. The Church chose to preserve and promote Galen\'s texts because his writings suggested that the human body was so complex and perfectly balanced that it must have been designed by a single, purposeful "creator". This matched Christian creation theology perfectly. Consequently, physicians trained at medieval universities (which were themselves set up and run by the bishops) spent between seven and ten years reading and memorising Galen\'s theories rather than treating actual patients. Under Galen\'s <strong>Theory of the Four Humours</strong> and <strong>Theory of Opposites</strong>, all illness was explained as an internal imbalance of blood, phlegm, yellow bile, and black bile. Questioning Galen\'s books was seen as a sign of intellectual incompetence or even religious heresy, meaning physicians actively twisted physical evidence to fit ancient texts rather than developing new medical theories.</p><p style="margin-bottom: 1.5rem;">Finally, the lack of scientific technology and physical evidence made it practically impossible for medieval people to develop new ideas about the cause of disease. Without microscopes, which would not be developed until centuries later, the existence of microscopic pathogens was completely undiscovered. This meant that medieval people had no empirical way of observing bacteria, leaving them with no viable alternative to the Theory of the Four Humours. In addition, the Church strongly discouraged the practice of human dissection, teaching that the human body had to be buried whole for the soul to enter heaven. This prevented physicians from examining real human anatomy to challenge Galen\'s existing errors. When dissections did occasionally take place in universities, they were not used to make new discoveries; instead, a physician sat high up reading aloud from Galen\'s texts while an assistant dissected the body, simply to demonstrate to students that Galen was correct. As a result of this lack of technology and practical observation, medieval ideas about disease causes remained entirely stagnant.</p>',
-        },
-      ],
-      ai_revision_pack: {
-        images: [
-          '/assets/infographics/KT1.1 Medieval c1250-c1500 Causes of Illness/Medieval Causes of Illness Chart.png',
-        ],
-        videos: [],
-        documents: [],
-      },
-      extended: {
-        question: "Describe two features of Galen's Theory of Opposites. (4 marks)",
-        starter: 'One feature is...',
-        model:
-          "<strong>Grade 9 Model Answer:</strong><br>One feature is that it treated a humoural imbalance by applying its opposite quality, such as giving a patient with a 'cold, wet' illness a 'hot, dry' remedy like pepper. A second feature is that it built directly on Hippocrates' Theory of the Four Humours, since a physician first had to diagnose which humour was dominant before choosing the opposite treatment.",
-      },
-      vocab: [
-        {
-          term: 'Four Humours',
-          definition:
-            'The ancient medical theory that the human body contained four vital liquids: blood, phlegm, yellow bile, and black bile.',
-        },
-        {
-          term: 'Theory of Opposites',
-          definition:
-            "Galen's medical principle that an excess of one humour could be cured by applying its direct opposite quality.",
-        },
-        {
-          term: 'Miasma',
-          definition:
-            'The widespread belief that disease was caused by foul, poisonous air rising from rotting organic matter and filth.',
-        },
-        {
-          term: 'Astrology',
-          definition:
-            'The study of planetary alignments and celestial bodies, used by medieval physicians to diagnose illnesses and time treatments.',
-        },
-        {
-          term: 'Hippocrates',
-          definition:
-            "The ancient Greek 'father of medicine' who created the Four Humours theory and promoted clinical observation.",
-        },
-        {
-          term: 'Galen',
-          definition:
-            'The Roman physician whose anatomical and physiological writings were strictly accepted as absolute dogma by the medieval Church.',
-        },
-      ],
-      vocab_cloze_text:
-        'In medieval England, medical understanding was dominated by the ancient Greek ideas of [Hippocrates], who taught that good health required a perfect balance among the [Four Humours]. The Roman doctor [Galen] expanded this idea through the [Theory of Opposites], arguing that a cold disease should be counteracted with heat. Medieval physicians also consulted charts of [Astrology] to time treatments according to star movements, while ordinary people universally blamed foul [Miasma] or divine punishment for spreading deadly pestilence.',
-      pair_share: {
-        prompt:
-          'Which factor was the most powerful barrier to medieval medical progress: the absolute authority of the Christian Church, or the logical appeal of the Theory of the Four Humours?',
-        think:
-          'Jot down your choice and one piece of evidence from the sources (e.g., Church control of universities/libraries, or how symptoms like sneezing phlegm seemed to prove the humours existed).',
-        pair: "Take turns explaining your choice, making sure you explain why your factor had a bigger impact than your partner's.",
-        share:
-          "Be ready to report your partner's best point to the class, especially if they managed to sway your opinion.",
-      },
-      gcse_task: {
-        title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
-        tasks: [
-          {
-            type: 'written',
-            text: 'Explain one way in which ideas about the cause of disease in the medieval period (c1250–c1500) were similar to ideas about the cause of disease in the Renaissance period (c1500–c1700). (4 marks)',
-            model:
-              'One way in which ideas about the cause of disease were similar across both periods was the persistent belief in **miasma** (poisonous air). In the medieval period, people believed the Black Death (1348) was spread by foul air corrupted by swamps and uncleaned streets; identically, in the Renaissance, miasma was widely blamed for the Great Plague of 1665. **This similarity existed because** although Renaissance anatomists like Vesalius corrected Galen’s anatomical errors, no scientist had yet discovered the existence of microscopic germs or bacteria. Consequently, foul odors and contaminated air remained the most logical scientific explanation for the spread of infectious disease in both eras.',
-          },
-          {
-            type: 'written',
-            text: 'Explain why the Church had such a significant influence on medieval medicine in the period c1250–c1500. (12 marks)',
-            model:
-              "The Catholic Church exercised immense influence over medieval medicine primarily through its **monopoly over education and university medical training**. During the Middle Ages, virtually all European universities were controlled and funded by the Church, and medical students were required to be clerics who could read and write Latin. The Church strictly determined the medical curriculum, enforcing the study of classical texts by Hippocrates and Galen. **This meant that** students were taught that Galen's anatomical descriptions were completely infallible. **Consequently**, doctors were trained not to experiment or observe human anatomy directly, but rather to memorize ancient books. Because the Church taught that challenging Galen was an act of heresy that defied God's divine order, medical thinking remained completely static for centuries.<br><br>A second major factor was the **theological role of the Church in explaining the causes of disease**. Christianity taught that all disease was sent directly by God, either as a divine punishment for personal sins or as a test of faith. **This resulted in** patients seeking spiritual and supernatural remedies rather than medical cures. **This meant that** when catastrophic epidemics like the Black Death struck England in 1348, people turned to prayer, purchasing indulgences, pilgrimages to holy shrines, and self-flagellation to appease God's anger. **Consequently**, scientific investigation into the physical causes of disease was discouraged, as attempting to cure a disease sent by God was viewed as interfering with divine will.<br><br>Furthermore, the Church controlled medical practice through its **establishment and management of medieval hospitals**. Rather than functioning as places of medical treatment and cure, medieval hospitals were religious hospices run by monks and nuns dedicated to providing spiritual care, shelter, warmth, and food for the poor, elderly, and dying. **As a result**, physicians were rarely employed in hospitals, and surgical operations were prohibited. The primary objective was saving the patient's eternal soul through regular confession and prayer rather than curing their earthly illness. **Therefore**, the Church shaped the entire experience of illness from diagnosis to death, cementing its institutional control over medieval healthcare.",
-          },
-        ],
-      },
-      learning_objectives: {
-        overarching: 'To explore: What did Medieval people believe caused illness',
-        scaffolded: [
-          'Explain how supernatural and religious factors influenced beliefs about the cause of illness.',
-          'Analyse the rational, natural theories of disease used in medieval England.',
-        ],
-      },
-      starters: [],
-      quiz: [
-        {
-          question:
-            'Who was the Ancient Greek physician credited with creating the Theory of the Four Humours?',
-          options: ['Hippocrates', 'Galen', 'Aristotle', 'Avicenna'],
-          answer: 0,
-        },
-        {
-          question:
-            'In the Theory of the Four Humours, which humour was associated with the season of Autumn, the element of Earth, and the qualities of cold and dry?',
-          options: ['Blood', 'Black bile', 'Phlegm', 'Yellow bile'],
-          answer: 1,
-        },
-        {
-          question:
-            "Which humour was linked to the temperament 'sanguine' and had the qualities of being hot and wet?",
-          options: ['Blood', 'Phlegm', 'Black bile', 'Choler (yellow bile)'],
-          answer: 0,
-        },
-        {
-          question:
-            "How did the 2nd-century Roman physician Galen develop Hippocrates' original ideas on the humours?",
-          options: [
-            'By proving that disease was caused by microscopic germs rather than liquid imbalances',
-            'By creating the Theory of Opposites to treat humoural imbalances with their opposite qualities',
-            'By introducing the idea that miasma or bad air was the sole cause of bodily illness',
-            'By proving that human dissection was the only way to balance the humours',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "Why did the medieval Christian Church so strongly support and promote Galen's medical ideas?",
-          options: [
-            'Because his texts strictly forbade the use of pagan Greek theories like the Four Humours',
-            'Because Galen proved that prayer was the only effective cure for physical disease',
-            'Because Galen was a Christian saint who performed medical miracles',
-            "Because his writings argued the body was perfectly designed by a single 'Creator', fitting Christian theology",
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'What was the name of the mid-13th-century medical textbook collection used by students in European universities?',
-          options: [
-            'Materia Medica',
-            'Observationes Medicae',
-            'The Articella',
-            'De Humani Corporis Fabrica',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            "According to the medieval Church's teachings, why did God send diseases like leprosy to humans?",
-          options: [
-            'To show that rational treatments like bloodletting were sinful',
-            'As a natural consequence of incorrect planetary alignments',
-            "As a punishment for sins or as a test of an individual's religious faith",
-            'To force towns to clean up corrupt miasma from their streets',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'During the medieval period, what did physicians use to determine the best time for treatment based on the positions of the planets?',
-          options: [
-            'An Almanac (astrology chart)',
-            'The Articella',
-            'A urine chart wheel',
-            'A fleam',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'In medieval England, an unusual planetary alignment of Mars, Jupiter, and Saturn in the year 1345 was widely blamed for causing which disaster?',
-          options: [
-            'The Great Famine',
-            'The arrival of the Black Death',
-            'The banning of human dissection',
-            'The closure of monastic hospitals',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "Which theory suggested that breathing in 'bad air' filled with harmful fumes from swamps, corpses, or rotting matter corrupted the humours?",
-          options: [
-            'The Theory of Opposites',
-            'The Theory of Transference',
-            'The Spontaneous Generation theory',
-            'The Miasma theory',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Why did the Church strictly discourage and prevent medical students and physicians from performing human dissections?',
-          options: [
-            'Because dissecting a body was seen as supporting the unscientific ideas of Galen',
-            'Because university-trained physicians were expected to focus only on herbal treatments',
-            'Because the Church believed dissection would spread corrupt miasma through the air',
-            'Because Church doctrine taught that the physical body needed to be buried whole to go to heaven',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'In the Theory of the Four Humours, which element and qualities were associated with Phlegm?',
-          options: [
-            'Water; cold and wet',
-            'Fire; hot and dry',
-            'Air; hot and wet',
-            'Earth; cold and dry',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            "What was the primary purpose of a medieval physician examining a patient's urine?",
-          options: [
-            "To align the patient's physical symptoms with their zodiac sign",
-            'To identify the presence of specific disease-causing micro-organisms',
-            "To check the internal balance of the patient's four humours",
-            'To determine if the patient was suffering from divine punishment or demonic possession',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Which three characteristics of a urine sample did medieval physicians check on a urine chart wheel?',
-          options: [
-            'Viscosity, sweetness, and clarity',
-            'Color, thickness, and smell',
-            'Chemical composition, gravity, and sediment',
-            'Quantity, temperature, and acidity',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "Which ancient Greek philosopher's work on logic and observation was studied by medieval medical students alongside the works of Galen?",
-          options: ['Aristotle', 'Plato', 'Pythagoras', 'Socrates'],
-          answer: 0,
-        },
-        {
-          question:
-            'In the context of the Theory of Opposites, how would a medieval physician treat a patient who had a cold, wet fever (excess phlegm)?',
-          options: [
-            'By carrying sweet-smelling herbs to purify the air',
-            'By giving them hot, dry foods or spices like hot peppers',
-            'By giving them cold baths and cool foods like cucumber',
-            'By performing immediate venesection on their arm',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "How did the Church's total control over education and book production affect medical progress in the Middle Ages?",
-          options: [
-            'It accelerated change by encouraging students to write original medical texts',
-            'It had no impact because most medical training took place outside the universities',
-            'It hindered progress by preserving and copying only classical texts, preventing challenge to Galen',
-            'It forced physicians to abandon rational treatments in favor of herbal remedies',
-          ],
-          answer: 2,
-        },
-        {
-          question: "What was the 'Vademecum' carried by medieval physicians?",
-          options: [
-            'A book of herbs and plants used by apothecaries to mix remedies',
-            'A religious amulet worn to protect against miasma and corrupt air',
-            'A special container used to transport urine samples safely',
-            'A handbook of medical diagrams and charts used during diagnosis',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'In the Theory of the Four Humours, the liver was associated with which humour?',
-          options: ['Phlegm', 'Yellow bile (choler)', 'Black bile', 'Blood'],
-          answer: 1,
-        },
-        {
-          question: 'How was leprosy viewed by the medieval Church and population?',
-          options: [
-            'As a purely physical condition caused by an excess of black bile',
-            'As a sign of divine favor and spiritual cleansing',
-            'As a terrifying skin disease sent as a direct punishment from God for sins',
-            'As a water-borne epidemic spread through public pumps',
-          ],
-          answer: 2,
-        },
-      ],
-      flashcards: [
-        {
-          term: 'Miasma',
-          definition:
-            'The belief that bad air filled with foul-smelling fumes from rotting matter caused disease.',
-        },
-        {
-          term: 'Four Humours',
-          definition:
-            'The theory that the body is made of four liquids: blood, phlegm, yellow bile, and black bile.',
-        },
-        {
-          term: 'Astrology',
-          definition:
-            'The use of planetary alignments and star charts to explain the cause of illness, such as the 1345 alignment.',
-        },
-      ],
-      draw_tasks: {
-        title: 'Sketch the Four Humours',
-        instructions:
-          'Draw the Four Humours wheel, making sure to link each humour to its corresponding season, element, and temperature (e.g. Blood = Spring, Air, Hot/Wet).',
-      },
-      video: [
-        {
-          url: 'https://era.org.uk/streaming-service-resource/4-medicine-and-long-term-change-history-file/',
-          title: 'History File: Medicine and Long Term Change (Overview)',
-        },
-        {
-          url: 'https://era.org.uk/streaming-service-resource/1-medicine-religion-and-natural-causes-history-file/',
-          title: '1 Medicine Religion And Natural Causes History File',
-        },
-        {
-          url: 'https://era.org.uk/streaming-service-resource/1-medicine-and-religion-history-file/',
-          title: '1 Medicine And Religion History File',
-        },
-        {
-          url: 'https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-pain-message-bbc-four/',
-          title: 'Pain Pus And Poison The Search For Modern Medicine Pain Message Bbc Four',
-        },
-        {
-          url: 'https://www.youtube.com/watch?v=nVJV8iEAm88',
-          title: 'Medieval Medicine | Secondary History - Medicine Through Time',
         },
       ],
       sources: [
         {
-          id: 'source_a',
+          id: 'source_a_church',
+          letter: 'A',
+          title: 'Source A: Medieval Church Interior with Altar & Doom Painting (14th c.)',
+          src: '/images/medieval_church_interior.jpg',
+          source: '/images/medieval_church_interior.jpg',
+          image: '/images/medieval_church_interior.jpg',
+          caption:
+            'A medieval parish church interior showing the elevated altar and the vivid Doom painting above the chancel arch depicting Heaven and Hell.',
+          provenance: 'St Thomas Church, Salisbury, 14th century Doom mural and altar.',
+          context:
+            'The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly and viewed illness, famine, and recovery as direct expressions of God’s divine intervention.',
+          question:
+            'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+          hinge_question:
+            'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+        },
+        {
+          id: 'source_b_zodiac',
+          letter: 'B',
+          title: "Source B: The 'Zodiac Man' (Homo Signorum, c.1380)",
+          src: '/images/zodiac_man.jpg',
+          source: '/images/zodiac_man.jpg',
+          image: '/images/zodiac_man.jpg',
+          caption:
+            'The Zodiac Man (Homo Signorum) showing the 12 astrological signs that medieval physicians believed governed different bodily organs.',
+          provenance: 'MS Harley 3719, British Library, London, c.1380.',
+          context:
+            'Medieval physicians carried pocket handbooks called Vademecums containing Zodiac Man diagrams. Doctors were strictly forbidden to bleed, purge, or operate on a body part when the moon was in its governing astrological sign.',
+          question:
+            'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+          hinge_question:
+            'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+        },
+      ],
+      quick_quiz: [
+        {
+          question:
+            'Who controlled formal medical education and the copying of books in medieval England?',
+          options: [
+            'The Crown and royal parliament.',
+            'The Royal College of Physicians.',
+            'The Catholic Church and monastic scriptoria.',
+            'Independent guild printers.',
+          ],
+          answer: 'The Catholic Church and monastic scriptoria.',
+          explanation:
+            'Monasteries were the sole centers of manuscript copying, giving the Catholic Church total control over what medical texts were read and taught.',
+        },
+        {
+          question:
+            'Why was sudden illness viewed as a spiritual condition rather than a biological infection?',
+          options: [
+            'The government legally outlawed physical medical treatments.',
+            'People believed sickness was sent by God to punish sin or test religious faith.',
+            'Physicians believed germs spontaneously generated inside blood.',
+            'People believed disease was caused solely by dirty drinking water.',
+          ],
+          answer: 'People believed sickness was sent by God to punish sin or test religious faith.',
+          explanation:
+            'The medieval Church taught that God was omnipotent; illness was interpreted as divine punishment or a divine test.',
+        },
+        {
+          question: 'How did medieval society treat leprosy sufferers based on biblical scripture?',
+          options: [
+            'They were banished to Lazar houses outside towns, wearing cloaks and ringing warning bells.',
+            'They were appointed as churchwardens to pray for the sick.',
+            'They were treated in monastic infirmary wards alongside fever patients.',
+            'They were surgically cured by barber-surgeons using cauterisation.',
+          ],
+          answer:
+            'They were banished to Lazar houses outside towns, wearing cloaks and ringing warning bells.',
+          explanation:
+            'Viewed as morally corrupt, lepers were socially isolated in Lazar houses and had to ring bells to warn others away.',
+        },
+        {
+          question:
+            'What celestial event in March 1345 did University of Paris scholars blame for the Black Death?',
+          options: [
+            'A meteor shower striking southern Italy.',
+            'A total solar eclipse over Western Europe.',
+            'The appearance of Halley’s Comet in the sky.',
+            'An unusual planetary conjunction of Saturn, Jupiter, and Mars in Aquarius.',
+          ],
+          answer: 'An unusual planetary conjunction of Saturn, Jupiter, and Mars in Aquarius.',
+          explanation:
+            'Physicians believed this planetary conjunction generated corrupt miasmatic vapors from the earth.',
+        },
+        {
+          question:
+            'What pocket manual did medieval physicians carry to consult astrological diagrams and urine charts?',
+          options: [
+            'A Pharmacopoeia.',
+            'The Canon of Medicine.',
+            'A Vademecum handbook.',
+            'Philosophical Transactions.',
+          ],
+          answer: 'A Vademecum handbook.',
+          explanation:
+            'The Vademecum was a portable folding reference book containing Zodiac Man charts, calendars, and urine wheels.',
+        },
+        {
+          question:
+            'Why did the Christian Church adopt the medical writings of the Roman pagan physician Galen?',
+          options: [
+            'Galen proved that God sent diseases as punishment for heresy.',
+            'Galen converted to Christianity on his deathbed.',
+            'Galen’s treatises were originally written in Latin by the Apostles.',
+            'Galen’s teleological theory argued every organ was designed with purpose by a single Creator.',
+          ],
+          answer:
+            'Galen’s teleological theory argued every organ was designed with purpose by a single Creator.',
+          explanation:
+            'Galen’s belief in purposeful design by a divine Creator aligned perfectly with Christian creation doctrine.',
+        },
+        {
+          question:
+            'What happened to the English friar Roger Bacon around 1277 after he advocated firsthand scientific experiments?',
+          options: [
+            'He was imprisoned by Church authorities for heresy.',
+            'He was made Archbishop of Canterbury.',
+            'He founded the first secular medical school in London.',
+            'He was awarded a royal charter by King Edward I.',
+          ],
+          answer: 'He was imprisoned by Church authorities for heresy.',
+          explanation:
+            'Bacon’s demand for empirical observation over blind reliance on ancient books was punished as heresy.',
+        },
+        {
+          question:
+            'What did university professors do during rare dissections of executed criminals in medieval universities?',
+          options: [
+            'They allowed medical students to debate whether Galen was wrong.',
+            'They sat high in a chair reading Galen aloud while a barber-surgeon did the cutting.',
+            'They examined tissue samples under compound microscopes.',
+            'They performed intricate dissections with scalpels to discover new organs.',
+          ],
+          answer:
+            'They sat high in a chair reading Galen aloud while a barber-surgeon did the cutting.',
+          explanation:
+            'The professor (Lector) read Galen’s text; if the corpse disagreed, the body was dismissed as malformed.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'Why did the medieval Catholic Church hold a monopoly on medical knowledge?',
+          a: 'The Church controlled all universities and monastic scriptoria, where monks hand-copied books and strictly censored ideas that contradicted scripture.',
+        },
+        {
+          q: 'How did medieval people explain the religious cause of disease?',
+          a: 'Illness was viewed as divine retribution sent by God to punish sin, test faith, or cleanse the soul; recovery was achieved through prayer and repentance.',
+        },
+        {
+          q: 'What were Lazar houses?',
+          a: 'Segregated quarantine colonies built outside town boundaries to isolate leprosy sufferers, who were forced to wear cloaks and ring warning bells.',
+        },
+        {
+          q: 'Why did the Church embrace Galen’s medical ideas?',
+          a: 'Galen argued that every organ had a purposeful design created by a single Creator (teleology), which matched Christian creation theology in Genesis.',
+        },
+        {
+          q: 'Why was Roger Bacon imprisoned in 1277?',
+          a: 'The Franciscan friar advocated experimental science and firsthand observation instead of blind obedience to ancient texts, which the Church deemed heresy.',
+        },
+      ],
+      draw_tasks: [
+        {
+          title: 'Diagram: The Church Monopolistic Scriptorium',
+          instruction:
+            'Sketch a medieval monk copying an ancient Latin manuscript in a monastery scriptorium, labeling the quill, the Latin parchment, and the Church seal of approval.',
+        },
+      ],
+    },
+    {
+      id: 'lesson_1_2',
+      title: 'KT1.2: Rational Explanations: Hippocrates, Galen & The Four Humours (c1250–c1500)',
+      specification_anchor:
+        'Rational explanations: the Theory of the Four Humours and the Theory of Opposites; the miasma theory; the continuing influence of Hippocrates and Galen.',
+      enquiry_question:
+        'How did the Theory of the Four Humours provide a logical, complete explanation for every illness in medieval England?',
+      living_timeline_mission: {
+        target_milestones: 'Milestone 1 (c. 1250)',
+        pages: 'Pages 2–3',
+        instruction:
+          "Turn back to Pages 2–3 (Milestone 1). In the sketchpad frame, sketch the Four Humours wheel and annotate Galen's Theory of Opposites!",
+      },
+      timeline_anchor: [
+        {
+          date: 'c. 400 BC',
+          title: 'Hippocrates & The Four Humours',
+          desc: 'Hippocrates develops the natural theory that health depends upon balancing blood, phlegm, yellow bile, and black bile.',
+        },
+        {
+          date: 'c. 160 AD',
+          title: 'Galen & The Theory of Opposites',
+          desc: 'Galen expands humoural medicine in Rome, introducing the Theory of Opposites to treat excess humours with contrary qualities.',
+        },
+        {
+          date: 'c. 1300',
+          title: 'Uroscopy Wheels Standardised',
+          desc: 'Radial 20-shade urine charts and pear-shaped glass matulas become the primary diagnostic tool for university-trained physicians.',
+        },
+      ],
+      delivery_plan: {
+        format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+        lesson_1: {
+          title: 'Lesson 1: Hippocratic Humours & Galenic Opposites (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Hook & Spaced Retrieval',
+              instruction:
+                'Complete Do Now recall on Church monopoly. Display Source A (Four Humours Wheel). Explain how Greek naturalism replaced demonic superstition.',
+            },
+            {
+              time: '10–30m',
+              label: 'Modelled Shared Reading & Discussion',
+              instruction:
+                'Read Acts 1 & 2 with paragraph signposting ([1.1] to [2.2]). Deconstruct the 4 humours, seasons, elements, and Galen’s Theory of Opposites.',
+            },
+            {
+              time: '30–45m',
+              label: 'Analytical Assessment Ledger',
+              instruction:
+                'Complete Disciplinary Vocabulary Distinction (Humoural Imbalance vs External Contagion). Practice matching clinical symptoms to humours.',
+            },
+            {
+              time: '45–50m',
+              label: 'Formative Check & Plenary',
+              instruction:
+                'Teacher poses Hinge Question 1 on Source A. Pupils log key takeaways on their Living Timeline.',
+            },
+          ],
+        },
+        lesson_2: {
+          title: 'Lesson 2: Miasma Theory, Uroscopy & Exam Mastery (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Retrieval & Visual Forensic Inspection',
+              instruction:
+                'Inspect Source B (Medieval Urine Chart). Discuss why doctors examined colour, sediment, and taste without surgery.',
+            },
+            {
+              time: '10–25m',
+              label: 'Deconstruct Acts 3 & 4 (Miasma & Uroscopy)',
+              instruction:
+                'Explore how miasma linked environmental stench to bodily putrefaction, making clean air a moral and medical priority.',
+            },
+            {
+              time: '25–45m',
+              label: 'Deliberate Exam Practice (4m / 12m)',
+              instruction:
+                'Complete Question 3 Similarity: Explain one way in which ideas about causes in the Medieval period were similar to the Renaissance [4m].',
+            },
+            {
+              time: '45–50m',
+              label: 'Self-Assessment & D.I.R.T.',
+              instruction:
+                'Pupils peer-assess their 4-mark PEEL paragraph against the model answer and log marks on the back cover.',
+            },
+          ],
+        },
+      },
+      teacher_notes: {
+        primer:
+          'The overarching pedagogical goal of this lesson is to demonstrate that humoural medicine was an exceptionally rational, coherent, and empirical system for its time. Rather than relying on magic or witchcraft, physicians used physical symptoms (vomit, phlegm, urine) to deduce internal fluid imbalances.',
+        objectives: [
+          {
+            objective: 'Explain the Theory of the Four Humours and Galen’s Theory of Opposites.',
+            primer:
+              'Direct pupils to paragraphs [1.1] and [2.1]. Emphasise that health was viewed as an internal balance of blood, phlegm, yellow bile, and black bile, with opposites used to restore equilibrium.',
+            question:
+              'How would a medieval physician use the Theory of Opposites to treat a patient suffering from a fever with excess hot, dry yellow bile?',
+          },
+          {
+            objective: 'Analyse miasma theory and medieval diagnostic methods (uroscopy).',
+            primer:
+              'Focus on paragraphs [3.1] and [4.1]. Show how uroscopy allowed doctors to diagnose internal conditions non-invasively, reinforcing Galenic dogma.',
+            question:
+              'Why did physicians examine urine against a 20-shade wheel instead of examining internal organs directly?',
+          },
+        ],
+      },
+      do_now: {
+        type: 'questions',
+        title: 'Spaced Retrieval Do Now: Religion & Authority',
+        instructions:
+          'Answer the four recall questions below based on your prior learning in Lesson 1.1.',
+        items: [
+          {
+            question:
+              'Why did the medieval Catholic Church actively promote the medical texts of Galen?',
+            answer:
+              'Galen taught that the body was created with purpose by a single divine Creator.',
+            options: [
+              'Galen taught that the body was created with purpose by a single divine Creator.',
+              'Galen’s treatises were written in medieval English.',
+              'Galen was a Christian martyr in Rome.',
+              'Galen proved that prayer alone could cure disease.',
+            ],
+          },
+          {
+            question:
+              'What punishment did the English friar Roger Bacon receive in 1277 for advocating experiments?',
+            answer: 'He was imprisoned by the Church for heresy.',
+            options: [
+              'He was made physician to the King.',
+              'He was imprisoned by the Church for heresy.',
+              'He was awarded a royal pension.',
+              'He was exiled to a remote Scottish monastery.',
+            ],
+          },
+          {
+            question: 'Where were leprosy sufferers banished to in medieval society?',
+            answer: 'Lazar houses outside town boundaries.',
+            options: [
+              'Royal palaces in Westminster.',
+              'Monastic infirmaries in London.',
+              'University medical wards.',
+              'Lazar houses outside town boundaries.',
+            ],
+          },
+          {
+            question: 'What did people believe caused the Black Death in March 1345?',
+            answer: 'A conjunction of Saturn, Jupiter, and Mars in Aquarius.',
+            options: [
+              'The arrival of Spanish explorers.',
+              'An outbreak of bacteria in Paris water wells.',
+              'A conjunction of Saturn, Jupiter, and Mars in Aquarius.',
+              'A severe drought across northern Europe.',
+            ],
+          },
+        ],
+      },
+      narrative_blocks: [
+        {
+          act: 1,
+          act_title: 'Context: The Greek Foundations of Humoural Theory',
+          text: '<span class="para-ref">[1.1]</span> While religion explained why God permitted illness, medieval doctors needed a naturalistic, physical framework to explain how disease functioned inside the body. For this, European universities relied upon the ancient Greek physician Hippocrates (c. 460–c. 370 BC). Hippocrates made a revolutionary contribution by rejecting demonic possession and witchcraft, arguing instead that health and disease were entirely natural phenomena governed by bodily fluids.\n\n<span class="para-ref">[1.2]</span> Hippocrates posited that the human body contained four primary liquids, termed the Four Humours: Blood (produced by the liver; associated with spring, air, and being hot and wet); Phlegm (produced by the brain and lungs; associated with winter, water, and being cold and wet); Yellow Bile or Choler (produced by the gall bladder; associated with summer, fire, and being hot and dry); and Black Bile or Melancholy (produced by the spleen; associated with autumn, earth, and being cold and dry). Good health required all four humours to remain in harmonious balance. If an individual developed an excess of one humour, or if a humour became putrefied, physical illness immediately resulted.',
+          source: {
+            id: 'source_a_humours',
+            letter: 'A',
+            title: 'Source A: The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)',
+            src: '/images/four_humours.jpg',
+            source: '/images/four_humours.jpg',
+            image: '/images/four_humours.jpg',
+            caption:
+              'The Four Humours Wheel: Blood (air/hot & wet), Phlegm (water/cold & wet), Yellow Bile (fire/hot & dry), and Black Bile (earth/cold & dry).',
+            provenance:
+              'Tacuinum Sanitatis manuscript, 14th century, Österreichische Nationalbibliothek, Vienna.',
+            context:
+              'The Theory of the Four Humours dominated medieval clinical diagnosis. Doctors believed every person had a unique humoural balance dictated by their birth, diet, personality, and age.',
+            question:
+              'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
+            hinge_question:
+              'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
+          },
+        },
+        {
+          act: 2,
+          act_title: 'Escalation: Galen & The Theory of Opposites',
+          text: '<span class="para-ref">[2.1]</span> In the 2nd century AD, the Roman imperial physician Claudius Galen expanded Hippocrates’ humoural theory into a comprehensive clinical treatment methodology known as the Theory of Opposites (Contraria Contrariis Curantur). Galen argued that doctors should treat illnesses by counteracting the excessive qualities of the dominating humour with their direct opposites.\n\n<span class="para-ref">[2.2]</span> Under this rational system, if a patient suffered from an excess of cold, wet phlegm (manifested as a shivering winter cold and sneezing), the physician prescribed warm, dry treatments such as eating hot chilli peppers, drinking ginger infusions, and resting by a roaring fire. Conversely, if a patient suffered from a high fever caused by an excess of hot, dry yellow bile or hot blood, the doctor prescribed cool cucumbers, cold baths, and bloodletting to lower internal heat. This system gave physicians a systematic logic for prescribing diets, herbal drinks, and purges.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Using paragraphs [2.1]–[2.2], explain how Galen’s Theory of Opposites worked in practice.',
+              model:
+                'Galen’s Theory of Opposites worked by treating an excess of one humour with its opposite quality. For example, if a patient had an excess of cold, wet phlegm (causing chills and runny noses), the physician prescribed hot, dry foods like peppers or ginger. If a patient had an excess of hot, dry yellow bile or blood (causing a fever), they were treated with cold cucumber, cooling baths, or bloodletting.',
+            },
+          ],
+        },
+        {
+          act: 3,
+          act_title: 'Forensic Evidence: Miasma Theory & Pestilential Air',
+          text: '<span class="para-ref">[3.1]</span> Alongside internal humoural imbalance, the leading environmental explanation for epidemic disease was Miasma. Miasma was defined as corrupt, foul-smelling air filled with poisonous vapors. Medieval people believed that breathing in poisonous air directly corrupted the blood and unbalanced the humours inside the chest and heart. In medieval hospital and municipal records, this concept was described as "pestilential air," "corruption of the atmosphere," or "putrefaction."\n\n<span class="para-ref">[3.2]</span> Miasma was believed to originate from stagnant marshes, open cesspits, unburied corpses, rotting animal carcasses, and dung heaps. Because bad smells were deeply associated with disease and sinfulness, medieval prevention heavily emphasized sweet odors. Wealthy citizens carried hollow pomanders filled with fragrant spices, held bunches of sweet herbs (posies) to their noses when walking through crowded streets, and burned aromatic incense in their homes.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Explain the connection between miasma theory and medieval attempts to prevent disease.',
+              model:
+                'Miasma theory claimed that breathing in foul-smelling, corrupt air poisoned the body’s humours and caused epidemics. Consequently, medieval prevention focused on eliminating bad odors and purifying the air by burning incense in homes, lighting bonfires in streets, and carrying pomanders or sweet-smelling posies of herbs to mask bad smells.',
+            },
+          ],
+        },
+        {
+          act: 4,
+          act_title: 'Historical Verdict: Diagnostic Tools—Uroscopy & The Vademecum',
+          text: '<span class="para-ref">[4.1]</span> Because human dissection was forbidden, how did a university-trained medieval physician actually diagnose internal humoural imbalance? The cornerstone of clinical examination was Uroscopy (the inspection of urine). Physicians collected patient urine in a pear-shaped glass flask called a matula, designed to represent the shape of the human bladder. The doctor carefully examined the color, thickness, sediment, and smell of the sample, sometimes even tasting it, comparing it against a radial chart of 20 distinct urine shades.\n\n<span class="para-ref">[4.2]</span> A deep red or golden urine indicated an excess of hot blood or choler; pale, watery white urine indicated an excess of cold phlegm. Doctors carried this chart inside their folding pocket Vademecum handbook alongside the Zodiac Man. While uroscopy involved empirical observation of physical bodily fluids, it completely locked doctors inside Galen’s flawed humoural framework. Because doctors assumed every symptom was caused by humours rather than bacteria or physical organ failure, patient diagnosis remained fundamentally inaccurate.',
+          source: {
+            id: 'source_b_urine',
+            letter: 'B',
+            title: 'Source B: Physician Inspecting Urine Flask (Fasciculus Medicinae, 1491)',
+            src: '/images/medieval_urine_chart.jpg',
+            source: '/images/medieval_urine_chart.jpg',
+            image: '/images/medieval_urine_chart.jpg',
+            caption:
+              'The Medieval Urine Chart: a radial wheel showing twenty flasks of differing colours, which physicians examined, smelled, and sometimes tasted to diagnose humoural imbalance.',
+            provenance: 'Johannes de Ketham, Fasciculus Medicinae, Venice, 1491.',
+            context:
+              'Uroscopy was the primary clinical diagnostic method in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of urine in a matula to deduce which humour was corrupted.',
+            question:
+              'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+            hinge_question:
+              'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+          },
+          tasks: [
+            {
+              type: 'exam_practice',
+              tariff: '[4 marks]',
+              question:
+                'Explain one way in which ideas about the causes of illness in the Medieval period were similar to ideas about the causes of illness in the Renaissance period.',
+              model:
+                'One way ideas about the causes of illness were similar was the continued widespread belief in miasma (bad air) as a leading cause of epidemic disease. In the Medieval period, people believed the Black Death of 1348 was caused by corrupt, foul-smelling vapors arising from stagnant swamps, rotting filth, and unburied corpses. Similarly, during the Great Plague of 1665 in the Renaissance, physicians and ordinary citizens still believed that foul odors transmitted the plague, prompting people to smoke tobacco and carry sweet-smelling pomanders to purify the air. Both eras completely lacked Germ Theory, leading people to believe poisonous smells directly produced disease.',
+            },
+          ],
+        },
+      ],
+      sources: [
+        {
+          id: 'source_a_humours',
           letter: 'A',
           title: 'Source A: The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)',
           src: '/images/four_humours.jpg',
@@ -1301,33 +1186,16 @@ export const unitData = {
           provenance:
             'Tacuinum Sanitatis manuscript, 14th century, Österreichische Nationalbibliothek, Vienna.',
           context:
-            'The Theory of the Four Humours, first devised by Hippocrates in ancient Greece and developed by Galen in ancient Rome, dominated medieval European medicine. Medieval physicians believed that good health required all four bodily humours to remain in precise balance. Each humour corresponded to a season, an element, and specific qualities of heat and moisture. When a person fell ill, doctors assumed that one humour was in excess or putrefied.',
+            'The Theory of the Four Humours dominated medieval clinical diagnosis. Doctors believed every person had a unique humoural balance dictated by their birth, diet, personality, and age.',
           question:
-            "Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen's Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?",
+            'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
           hinge_question:
-            "Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen's Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?",
+            'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
         },
         {
-          id: 'source_b',
+          id: 'source_b_urine',
           letter: 'B',
-          title: "Source B: The 'Zodiac Man' (Homo Signorum, c.1380)",
-          src: '/images/zodiac_man.jpg',
-          source: '/images/zodiac_man.jpg',
-          image: '/images/zodiac_man.jpg',
-          caption:
-            'The Zodiac Man (Homo Signorum) showing the astrological signs that medieval physicians believed ruled over different areas and organs of the human body.',
-          provenance: 'MS Harley 3719, British Library, London, c.1380.',
-          context:
-            'Medieval doctors believed the movement of planets and stars directly influenced human physiology and health. Each part of the body was thought to be governed by a zodiac constellation—Aries ruled the head, Taurus the neck, and Pisces the feet. Before carrying out bloodletting, surgery, or administering strong medicines, university-trained physicians consulted complex astrological almanacs (calendars) to ensure the moon was not in an unfavorable zodiac sign for that body part.',
-          question:
-            'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
-          hinge_question:
-            'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
-        },
-        {
-          id: 'source_c',
-          letter: 'C',
-          title: 'Source C: Physician Inspecting Urine Flask (Fasciculus Medicinae, 1491)',
+          title: 'Source B: Physician Inspecting Urine Flask (Fasciculus Medicinae, 1491)',
           src: '/images/medieval_urine_chart.jpg',
           source: '/images/medieval_urine_chart.jpg',
           image: '/images/medieval_urine_chart.jpg',
@@ -1335,839 +1203,775 @@ export const unitData = {
             'The Medieval Urine Chart: a radial wheel showing twenty flasks of differing colours, which physicians examined, smelled, and sometimes tasted to diagnose humoural imbalance.',
           provenance: 'Johannes de Ketham, Fasciculus Medicinae, Venice, 1491.',
           context:
-            "Uroscopy (the inspection of urine) was the cornerstone of clinical diagnosis in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of a patient's urine in a pear-shaped glass vessel called a matula. By comparing the sample against radial urine wheels, doctors deduced which humour was dominating or corrupted inside the body.",
+            'Uroscopy was the primary clinical diagnostic method in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of urine in a matula to deduce which humour was corrupted.',
           question:
-            'Look at Source C above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+            'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
           hinge_question:
-            'Look at Source C above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+            'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
         },
       ],
-      essay_planning: {
-        statement:
-          "'The Church was the main reason why there was little change in ideas about the cause of disease in the period c1250–c1500.' How far do you agree? Explain your answer.",
-        marks: '16 marks + 4 marks for SPaG',
-        stimulus: ['The role of the Church', 'Galen'],
-        supporting_factors: [
-          "The Catholic Church held an absolute monopoly over education, universities, and the copying of medical manuscripts, actively enforcing Galen's anatomical and humoural writings as infallible Christian dogma.",
-          'Illness was taught to be sent directly by God as divine punishment for sin or a test of faith, meaning that seeking natural scientific causes or questioning classical authority was condemned as sinful heresy.',
-        ],
-        counter_factors: [
-          "The logical internal coherence of Hippocrates' Theory of the Four Humours and Galen's Theory of Opposites (treatments seemed to match observable symptoms like sweating during fever or sneezing phlegm).",
-          'A total lack of scientific instruments and technology: without microscopes, it was physically impossible for medieval people to discover microscopic bacteria, making miasma and humours the only rational explanations.',
-        ],
-        criteria_prompt:
-          "Weigh the relative importance: Was the Catholic Church's theological authority the active institutional cause of stagnation, or was the absence of scientific technology and alternative empirical proof the fundamental limiting factor?",
-      },
-    },
-    {
-      id: 'lesson_1_2',
-      title: 'KT1.2: How did Medieval people try to prevent and treat disease?',
-      enquiry_question: 'KT1.2: How did Medieval people try to prevent and treat disease?',
-      hook_text:
-        "In medieval England, a lack of scientific knowledge meant treatments were heavily based on religion, superstition, and the Ancient Greeks. Care was mostly provided at home by women, while the wealthy paid for university-trained physicians. The methods used to treat and prevent sickness directly matched people's beliefs about what caused disease, resulting in a bizarre mix of herbal remedies, prayer, and drastic measures like bloodletting to balance the body.",
-      teacher_notes: {
-        primer:
-          'The overarching goal of this lesson is to help students connect the beliefs about the causes of illness in medieval England directly to the treatments and preventions they used, while evaluating the different healthcare providers available in medieval society.',
-        objectives: [
-          {
-            objective:
-              'Explain the connection between medieval beliefs about disease and their approaches to treatment and prevention.',
-            primer:
-              "Guide students to see how humoural imbalance led to physical treatments like phlebotomy and purging, how miasma led to purifying the air, and how beliefs in God's punishment led to prayer, fasting, and pilgrimages.",
-            question: 'What was the purpose of purging as a humoural treatment?',
-          },
-          {
-            objective:
-              'Evaluate the roles, training, and accessibility of different medical healers in medieval society.',
-            primer:
-              "Contrast university-trained physicians with practical healers like apothecaries, barber surgeons, and women in the home. Use Lady Margaret Paston's letters to demonstrate contemporary attitudes towards professional doctors.",
-            question:
-              'Why did most medieval people seek treatment in the home or from apothecaries rather than consulting a physician?',
-          },
-        ],
-        source_context: {
-          'Source A':
-            'Phlebotomy (bloodletting) was the most widely practiced medical treatment in medieval Europe. Physicians believed that an excess of blood—the warmest and wettest humour—caused fevers and pestilence. Blood was removed by opening a vein with a fleam or lancet, applying heated cupping glasses to draw blood through scratches, or using medicinal leeches. **Hinge Question:** Why was bloodletting considered both a vital preventative measure and an active medical treatment in medieval England, and why did it frequently kill weakened patients?',
-          'Source B':
-            'In medieval society, medical practice was strictly divided by class. University-trained physicians studied theory and Latin texts for years but rarely touched patients. Practical surgery—setting fractured bones, pulling teeth, lancing painful boils, and suturing wounds—was carried out by barber surgeons, who learned their trade through manual apprenticeships. Because their work involved physical manual labor and blood, barber surgeons were regarded as lower in social status than university physicians. **Hinge Question:** Why did medieval university physicians look down on barber surgeons, despite barber surgeons performing the only practical, lifesaving procedures of the era?',
-          'Source C':
-            'Medieval hospitals were religious foundations run by monks and nuns, not modern medical centers. Their stated purpose was hospitality, warmth, food, and spiritual care rather than scientific cure. Patients suffering from infectious diseases or mental illness were turned away. Inside, beds were placed in open wards aligned toward an altar so that bedridden patients could hear the Mass and pray for the salvation of their souls. **Hinge Question:** Looking at the nuns providing spiritual care and prayer rather than surgery, why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure?',
-        },
-      },
-      do_now: {
-        type: 'questions',
-        title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences.',
-        items: [
-          {
-            question: 'Which Roman physician developed the Theory of Opposites?',
-            answer: 'Galen.',
-            options: ['Galen.', 'Hippocrates.', 'Vesalius.', 'Harvey'],
-          },
-          {
-            question: 'How did the medieval Church explain the cause of disease?',
-            answer: 'God sent disease as a punishment for sin or to test faith.',
-            options: [
-              'Imbalances in the solar system caused organs to fail.',
-              'Disease was spread by dirty water and bacteria.',
-              'Poor sanitation in large industrial cities.',
-              'God sent disease as a punishment for sin or to test faith.',
-            ],
-          },
-          {
-            question: "What was 'miasma'?",
-            answer: 'Bad air or noxious smells believed to cause disease.',
-            options: [
-              'An imbalance of the four humours.',
-              'A treatment involving bleeding and purging.',
-              'Bad air or noxious smells believed to cause disease.',
-              'A holy water used by priests to cure illness.',
-            ],
-          },
-          {
-            question: 'What are the four humours?',
-            answer: 'Blood, phlegm, yellow bile, black bile.',
-            options: [
-              'Blood, phlegm, yellow bile, black bile.',
-              'Blood, phlegm, yellow bile, urine.',
-              'Blood, water, air, bile.',
-              'Blood, water, pus, black bile.',
-            ],
-          },
-          {
-            question: 'Explain how astrology was used in medieval medicine.',
-            answer:
-              'Physicians used star charts and planetary alignments to diagnose illness and plan treatments.',
-            options: [
-              'It was used to calculate the exact price of apothecary medicines.',
-              'Physicians used star charts and planetary alignments to diagnose illness and plan treatments.',
-              'Physicians believed that the stars physically fell to Earth to infect water.',
-              'Astrology was strictly banned by the Church as witchcraft.',
-            ],
-          },
-          {
-            question: "What was the 'urine chart' used for in medieval diagnosis?",
-            answer: 'To check the colour, taste, and smell of urine to identify humour imbalances.',
-            options: [
-              'To check for bacterial infections using microscopes.',
-              'To determine if a patient was possessed by a demon.',
-              'To guide bloodletting by indicating the best vein to open.',
-              'To check the colour, taste, and smell of urine to identify humour imbalances.',
-            ],
-          },
-          {
-            question: "What does the term 'public health' refer to?",
-            answer:
-              'The health of the population as a whole, especially as monitored and regulated by the state.',
-            options: [
-              'Treating patients inside private clinics or monasteries.',
-              'A medical theory developed by the Romans to bleed patients.',
-              'The health of the population as a whole, especially as monitored and regulated by the state.',
-              'The training of physicians in medieval universities.',
-            ],
-          },
-          {
-            question: 'Name one ancient civilization that heavily influenced medieval medicine.',
-            answer: 'The Ancient Greeks.',
-            options: ['The Anglo-Saxons.', 'The Vikings.', 'The Normans.', 'The Ancient Greeks.'],
-          },
-          {
-            question: 'Under the Theory of Opposites, how would a fever (hot/dry) be treated?',
-            answer: 'With cold treatments like cucumber or cool baths.',
-            options: [
-              'By praying to the Saint of Fevers.',
-              'With cold treatments like cucumber or cool baths.',
-              'With hot spices like pepper and mustard.',
-              'By placing hot cups on the back to draw out blood.',
-            ],
-          },
-          {
-            question: 'Which Greek physician originally created the Theory of the Four Humours?',
-            answer: 'Hippocrates.',
-            options: ['Hippocrates.', 'Galen.', 'Harvey', 'Vesalius.'],
-          },
-        ],
-      },
-      fun_facts: [
-        '1,100: The approximate number of hospitals operating in England by the year 1500, mostly run by the Catholic Church.',
-        '7 to 10: The number of years a physician spent training at a university, mostly reading the ancient books of Hippocrates and Galen rather than treating patients.',
-        '1215: The year a Church decree formally forbade clergymen (many of whom were physicians) from carrying out surgical operations that involved cutting the patient.',
-      ],
-      guided_reading: [],
-      narrative_blocks: [
-        {
-          text: "**Rational and Supernatural Treatments**\n\nMedieval treatments were a mix of physical and supernatural (magical/religious) ideas. However, it is a crucial trap to think of supernatural treatments as 'irrational'. If someone believed their illness was sent by God as a punishment for sin, it was considered a highly logical, rational response to try and cure the soul rather than the physical body. Therefore, patients would use spiritual treatments like fasting, praying, or going on a pilgrimage. Some even whipped themselves (flagellants) to show God they were truly sorry for their sins.\n\nIf they believed their illness was caused by an imbalance in the Four Humours, they would use rational treatments. The most common was bloodletting (phlebotomy), where doctors would cut a vein or use leeches to remove 'excess' blood. Purging was also common, involving giving the patient an emetic to make them vomit or a laxative to clear their bowels. While these treatments were logical based on their beliefs, they often made the patient weaker and sicker.",
-        },
-        {
-          text: '**Religious and Supernatural Treatments**\n\nBecause people believed God caused illness as a punishment for sin, treatments focused heavily on spiritual healing. Patients would use prayer, fasting, or go on a pilgrimage to holy shrines to ask for forgiveness or touch holy relics.\n\nSupernatural methods, although frowned upon by the Catholic Church, included chanting spells, reciting incantations, or carrying lucky amulets to ward off evil spirits. Because treatments focused on curing the soul rather than the physical body, medical intervention remained incredibly basic, meaning the death rate for curable diseases remained very high.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Identify one supernatural method used to prevent disease.',
-              model: 'Going on a pilgrimage or carrying lucky amulets to ward off evil spirits.',
-            },
-          ],
-        },
-        {
-          text: "**Rational Treatments: Balancing the Humours**\n\nBased on the Theory of the Four Humours, physicians aimed to rebalance the body using bloodletting (phlebotomy). This involved cutting a vein (venesection), using leeches, or cupping to remove excess blood.\n\nPurging the digestive system was another highly common method. Healers used emetics to cause vomiting, or laxatives and clysters (enemas) to clear the bowels of leftover food.\n\nPeople also used the Theory of Opposites (created by Galen) to balance humours with specific diets or herbal remedies, such as eating hot peppers to cure a 'cold' illness like an excess of phlegm. These rational treatments were actually highly dangerous; bleeding or purging an already weak patient often worsened their condition, and court records show patients occasionally died from the procedures.",
-          tasks: [
-            {
-              type: 'two_sided_argument',
-              topic: 'Medieval Hospitals: Care versus Cure',
-              instruction:
-                'GCSE Analytical Assessment: Evaluate the compassionate care provided by medieval hospitals against their total lack of medical cures.',
-              advancement: {
-                title: 'Compassionate Care & Hospitality',
-                points: [
-                  "Hundreds of hospitals established by religious orders (over 700 in England by 1500, e.g. St Bartholomew's in London founded 1123).",
-                  'Provided clean beds, warmth, nutritious food, clean water, and peaceful shelter for the destitute, elderly, and travelers.',
-                  'Monks and nuns offered compassionate spiritual comfort, palliative nursing, and dignity to the dying.',
-                ],
-                starter:
-                  'On the one hand, medieval hospitals provided essential humanitarian care because...',
-              },
-              limitations: {
-                title: 'Total Lack of Medical Cure',
-                points: [
-                  'Hospitals provided care, NOT cure; doctors and surgeons were rarely employed, and surgical operations were forbidden.',
-                  'Infectious, contagious patients and pregnant women were strictly turned away to prevent contaminating the wards.',
-                  'Primary focus was on saving the soul through daily mass, prayer, and confession, leaving physical disease untreated.',
-                ],
-                starter:
-                  'However, medieval hospitals were completely ineffective at curing disease because...',
-              },
-              synthesis_prompt:
-                'Write a balanced GCSE exam paragraph evaluating the statement: "Medieval hospitals were places of spiritual hospitality rather than medical treatment."',
-              synthesis_connectives: [
-                'Although hospitals provided vital shelter and basic nursing...',
-                'However, in terms of clinical medicine...',
-                'Because infectious diseases were excluded...',
-                'Ultimately...',
-              ],
-              model_answer:
-                "On the one hand, medieval hospitals provided invaluable humanitarian care and shelter for the vulnerable in a society with zero state welfare. Run exclusively by monastic orders, over 700 hospitals were established in England by 1500, such as St Leonard's in York and St Bartholomew's in London (founded 1123). For the poor, the elderly, and disabled travelers, these institutions provided clean bedding, warmth, nutritious food, fresh water, and rest. Monks and Augustinian nuns provided compassionate nursing care, changing dressings, washing patients, and offering palliative peace. In an era of harsh poverty and famine, this institutional charity saved many vulnerable people from starvation and exposure.<br><br>However, medieval hospitals were fundamentally religious hospices rather than centers of medical treatment and cure. Because the Latin word *hospes* means guest, these facilities were designed for Christian hospitality and spiritual salvation rather than medical intervention. University-trained physicians were virtually never employed on the wards, and surgical operations were strictly forbidden. Furthermore, anyone suffering from contagious epidemic diseases, leprosy, or mental illness was explicitly banned from admission to avoid contaminating the religious community. The central feature of every hospital ward was an altar where patients were required to attend daily mass, confess their sins, and pray for the souls of the wealthy patrons who endowed the hospital. Consequently, while medieval hospitals were successful refuges of Christian charity, they did nothing to advance medical science or cure bodily diseases.",
-            },
-          ],
-          image: '/images/bloodletting.jpg',
-          image_alt: 'Source A: Phlebotomy / Bloodletting Manuscript (c.1300)',
-          caption:
-            'Medieval manuscript illumination depicting a physician opening a vein in the arm to draw blood into a bowl to restore humoural equilibrium.',
-          source_letter: 'A',
-          image_context:
-            'Phlebotomy (bloodletting) was the most widely practiced medical treatment in medieval Europe. Physicians believed that an excess of blood—the warmest and wettest humour—caused fevers and pestilence. Blood was removed by opening a vein with a fleam or lancet, applying heated cupping glasses to draw blood through scratches, or using medicinal leeches. **Hinge Question:** Why was bloodletting considered both a vital preventative measure and an active medical treatment in medieval England, and why did it frequently kill weakened patients?',
-        },
-        {
-          text: '**Purifying the Air and Preventing Illness**\n\nTo prevent breathing in deadly miasma (bad air), people carried pomanders (a locket filled with sweet-smelling herbs like lavender) or lit large fires in the street to purify the corruption.\n\nThe wealthy paid for the Regimen Sanitatis, a set of instructions written by a physician detailing how to maintain perfect health through a careful diet, regular exercise, and bathing. Although the reasoning behind it was incorrect, the practical steps taken by local authorities to remove rotting waste and clean the smelly air actually helped improve hygiene in crowded medieval towns.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Explain how the Theory of Opposites was used in treatments.',
-              model:
-                "Doctors would balance humours with opposite treatments, such as eating hot peppers to cure a 'cold' illness like an excess of phlegm.",
-            },
-          ],
-        },
-        {
-          text: "**Medical Professionals: Physicians, Apothecaries, and Surgeons**\n\nPhysicians trained at university for seven to ten years. They diagnosed illnesses by consulting astrology charts and checking the colour, smell, and taste of a patient's urine (using urine charts). They were very expensive and rarely treated patients themselves.\n\nApothecaries mixed herbal remedies using books like the Materia Medica. One highly popular remedy they mixed was Theriaca, a complex, spice-based mixture containing up to 70 distinct ingredients (including opium and snake flesh) that was used as a universal antidote. Apothecaries were much cheaper than physicians and were the main source of medicine for ordinary people.\n\nBarber surgeons had no university training but learned through apprenticeships. They performed minor surgeries, pulled teeth, and did the bloodletting. The strict division of medical roles meant that the most highly educated people in the country (physicians) rarely ever touched the patients or carried out the practical treatments themselves.",
-          tasks: [
-            {
-              type: 'written',
-              text: 'To what extent were medieval treatments dangerous for patients?',
-              model:
-                'They were highly dangerous because treatments like bloodletting or severe purging would weaken an already sick patient, sometimes even causing death.',
-            },
-          ],
-          hinge_question: {
-            text: 'What was the main difference between an apothecary and a physician?',
-            options: [
-              'Physicians performed surgery, apothecaries diagnosed illness.',
-              'Apothecaries mixed herbal remedies based on experience, while physicians diagnosed using astrology and ancient books.',
-              'Apothecaries were trained at university, physicians were not.',
-              'Physicians were always monks, apothecaries were always women.',
-            ],
-            correct_index: 1,
-            explanation:
-              "Apothecaries were practical tradesmen who mixed remedies (like modern pharmacists), while physicians were highly expensive academic scholars who diagnosed patients using urine charts and Galen's texts.",
-          },
-          image: '/images/medieval_barber_surgeon.jpg',
-          image_alt: 'Source B: Medieval Surgeon Suturing a Head Wound (14th c.)',
-          caption:
-            "A medieval guild-trained surgeon suturing a patient's severe head wound with needle and thread, recorded in a 14th-century Latin manuscript.",
-          source_letter: 'B',
-          image_context:
-            'In medieval society, medical practice was strictly divided by class. University-trained physicians studied theory and Latin texts for years but rarely touched patients. Practical surgery—setting fractured bones, pulling teeth, lancing painful boils, and suturing wounds—was carried out by barber surgeons, who learned their trade through manual apprenticeships. Because their work involved physical manual labor and blood, barber surgeons were regarded as lower in social status than university physicians. **Hinge Question:** Why did medieval university physicians look down on barber surgeons, despite barber surgeons performing the only practical, lifesaving procedures of the era?',
-        },
-        {
-          text: '**Caring for the Sick: Hospitals and the Home**\n\nThe vast majority of sick people were cared for at home by female family members, who grew healing plants in their gardens and mixed them into herbal remedies. Common examples included marigold and plantain, which were crushed into poultices for wounds and skin infections, and mint or camomile, which were brewed as infusions to settle coughs and stomach complaints. This home-based care, passed down from mother to daughter, treated far more ordinary illnesses each year than physicians or hospitals ever did.\n\nHospitals were run by the Church (staffed by monks and nuns). They offered \'hospitality\' to travellers and the elderly, focusing on a clean environment, rest, and a good diet.\n\nInfectious and terminal patients were usually rejected from these hospitals because prayer and penance could do nothing for them. Because hospitals focused purely on "care, not cure" and relied on prayer rather than doctors, they offered no real medical advancement or effective treatment for severe diseases.',
-          image: '/images/hotel_dieu_hospital.jpg',
-          image_alt: 'Source C: Hôtel-Dieu Hospital Ward (Livre de Vie Active, c.1482)',
-          caption:
-            'The main ward of the Hôtel-Dieu in Paris: Augustinian nuns tending to rows of patients sharing beds, providing spiritual comfort and rest.',
-          source_letter: 'C',
-          image_context:
-            'Medieval hospitals were religious foundations run by monks and nuns, not modern medical centers. Their stated purpose was hospitality, warmth, food, and spiritual care rather than scientific cure. Patients suffering from infectious diseases or mental illness were turned away. Inside, beds were placed in open wards aligned toward an altar so that bedridden patients could hear the Mass and pray for the salvation of their souls. **Hinge Question:** Looking at the nuns providing spiritual care and prayer rather than surgery, why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure?',
-        },
-      ],
-      exam_practice: [
-        {
-          type: '12-mark',
-          marks: 12,
-          question:
-            'Explain why there was little change in the care provided by hospitals in the period c.1250-c.1500.',
-          stimulus: ['Monks and nuns', 'infectious diseases'],
-          model_answer:
-            '<p style="margin-bottom: 1.5rem;">The primary reason why the care provided by medieval hospitals changed so little was that they were run and staffed entirely by religious orders, whose fundamental mission was spiritual care rather than medical treatment. Monastic hospitals, run by <strong>monks and nuns</strong>, operated under the strict belief that all illness was sent as a punishment or test of faith by God. Consequently, the only true "cure" for disease was spiritual penance, confession, and prayer. In these hospitals, nuns carried out basic, routine nursing care-such as washing linen and keeping the ward clean-while priests and monks oversaw the spiritual welfare of patients, ensuring they could see the chapel altar from their beds to participate in Mass. Because healing was viewed as a matter of the soul rather than a clinical science, medieval hospitals focused strictly on <strong>"care, not cure"</strong>. This religious mandate remained entirely unchanged throughout the years c.1250-c.1500, ensuring that hospital care remained focused on spiritual comfort, warmth, and rest rather than the development of active medical therapies.</p><p style="margin-bottom: 1.5rem;">Another major factor that ensured hospital care remained stagnant was the strict exclusion of patients suffering from <strong>infectious diseases</strong>. Medieval hospitals consistently rejected people suffering from terminal or highly contagious illnesses, such as leprosy or the plague, to prevent the spread of infection to other patients and because they believed spiritual care could do nothing for those already marked by God\'s terminal judgment. Infectious individuals were instead banished to specialized, isolated local institutions like lazar houses (for lepers) or kept under quarantine in their own homes. By removing infectious diseases entirely from general hospital wards, medical staff were never pressured to develop new isolation techniques, specialized clinical care, or sanitary treatments for epidemics. General hospitals could comfortably maintain their traditional, uniform care-which simply consisted of providing food, shelter, and a bed (often shared between multiple patients)-without having to adapt to meet the challenges of infectious outbreaks.</p><p style="margin-bottom: 1.5rem;">Furthermore, the care provided in hospitals did not change because hospitals were completely divorced from university-trained medical professionals. University-educated physicians were extremely rare and expensive in medieval England, and they almost exclusively treated wealthy, private clients in their homes. Physicians did not work in medieval hospitals, leaving hospital care to untrained monastic staff who possessed no clinical knowledge of anatomy or pharmacology. Instead of practicing active medicine, monastic hospitals relied on simple herbal remedies, rest, and a balanced diet (such as *blanc mangier*, a warm chicken and almond dish). For the vast majority of ordinary peasants, the hospital was merely a place of charity and last resort. Most medical care was actually carried out in the home by female relatives, mothers, or wise women who used traditional herbal remedies passed down through generations. Because physicians did not operate within hospitals and the general public relied primarily on domestic care, there was neither the scientific expertise nor the social demand to reform or change the care provided in hospital wards.</p>',
-        },
-      ],
-      ai_revision_pack: {
-        images: [
-          '/assets/infographics/KT1.2 Medieval c1250-c1500 Prevention & Treatment/KT1.2 Medieval c1250-c1500 Prevention & Treatment.png',
-        ],
-        videos: [],
-        documents: [],
-      },
-      extended: {
-        question: 'Describe two features of the role of the medieval apothecary. (4 marks)',
-        starter: 'One feature is...',
-        model:
-          '<strong>Grade 9 Model Answer:</strong><br>One feature is that apothecaries mixed and sold herbal remedies, such as the popular spice-based cure-all Theriaca. A second feature is that they were much cheaper than university-trained physicians, making them the main source of medicine for ordinary people.',
-      },
-      vocab: [
-        {
-          term: 'Phlebotomy',
-          definition:
-            'Bloodletting; the widespread medieval practice of removing blood via lancets, cupping, or leeches to rebalance humours.',
-        },
-        {
-          term: 'Purging',
-          definition:
-            'The administration of emetics, laxatives, or enemas (clysters) to physically expel corrupt humours from the digestive system.',
-        },
-        {
-          term: 'Regimen Sanitatis',
-          definition:
-            'A set of personalised health guidelines provided by physicians advising patients on diet, exercise, and sleep to avoid illness.',
-        },
-        {
-          term: 'Theriaca',
-          definition:
-            'A complex, expensive herbal concoction containing dozens of ingredients used as a universal antidote against poisons and disease.',
-        },
-        {
-          term: 'Apothecary',
-          definition:
-            "Medieval tradespeople who mixed and dispensed herbal remedies, ointments, and potions according to physicians' prescriptions.",
-        },
-        {
-          term: 'Barber Surgeon',
-          definition:
-            'Craftsmen who performed basic surgical procedures like bloodletting, tooth extraction, and amputations alongside haircuts.',
-        },
-      ],
-      vocab_cloze_text:
-        'To prevent illness, medieval physicians advised wealthy clients to follow a strict [Regimen Sanitatis] governing diet and lifestyle. When illness struck, treatments aimed to rebalance the humours, commonly through [Phlebotomy] using leeches or through violent [Purging] with herbal laxatives. Prescriptions were fulfilled by an [Apothecary], who prepared remedies such as [Theriaca], a mixture of up to seventy herbs. Most ordinary people could not afford a university-trained physician, turning instead to a local [Barber Surgeon] for practical treatments and minor operations.',
-      pair_share: {
-        prompt:
-          'If you were a medieval peasant, who would you trust more to care for your family: an expensive university-trained physician who diagnosed using urine and star charts, or a female family member treating you in the home with herbal remedies?',
-        think:
-          'Jot down your choice and one piece of evidence from the sources (such as the Paston family letters showing deep distrust of professional physicians, or the fact that women treated families for free with garden herbs like marigolds and clover).',
-        pair: 'Take turns explaining your choice, discussing the practicality and accessibility of home-based care versus university-trained theory.',
-        share:
-          "Be ready to report your partner's best point, focusing on how class and cost shaped a patient's choices.",
-      },
-      gcse_task: {
-        title: 'Edexcel 12-Mark Essay Practice (Section B)',
-        tasks: [
-          {
-            type: 'written',
-            text: 'Explain why bleeding and purging were such common treatments in the medieval period (c1250-c1500). (12 marks)',
-            model:
-              "Bleeding and purging were extremely common treatments in medieval England because they were logical, rational clinical therapies directly rooted in the universally accepted **Theory of the Four Humours**. Developed by Hippocrates and expanded by Galen, this theory taught that good health was maintained only when the body's four core fluids (**blood, phlegm, yellow bile, and black bile**) were in perfect balance, and that any illness was the direct result of an internal fluid excess or deficiency. **Consequently**, when a patient exhibited symptoms-such as a hot fever (linked to blood) or a cold winter cough (linked to phlegm)-medieval physicians broke down each symptom as a physical imbalance that required active extraction to restore harmony. This led directly to the near-universal practice of **bloodletting** (phlebotomy via cutting a vein, applying leeches, or cupping) and digestive **purges** (using herbal emetics or laxatives) to physically drain the excess humours from the patient's body. Because these treatments matched what people could observe with their own eyes-such as the sweating out of a fever or the vomiting of bile-they felt highly effective, which solidified their dominant status.<br><br>A second crucial factor was that these treatments were carried out by **barber-surgeons**, who made them highly accessible and affordable to the general public. While university-trained physicians were rare, expensive, and diagnostic-focused (often refusing to perform manual labor), barber-surgeons were practically trained through apprenticeships and charged low fees for basic physical procedures. **This meant that** whenever an ordinary peasant or townsperson fell ill, they would directly visit their local barber-surgeon to undergo bleeding, tooth-pulling, or purging rather than consulting a physician. The widespread geographical presence of these practical healers across medieval towns and villages ensured that humoural treatments became the default, everyday medical experience for the vast majority of the English population.<br><br>Furthermore, these treatments remained dominant because **the Catholic Church** controlled all higher education, universities, and the copying of medical manuscripts. Because Galen's anatomical writings argued that the human body was so incredibly complex and purposeful that it must have been designed by a single \"Creator,\" his ideas aligned perfectly with Christian creation theology. **This led directly to** the Church preserving and copying only Galen's books in monastic libraries, making them the sole basis of study at medical universities. Because the Church banned human dissection and actively discouraged experimentation that might challenge classical texts, physicians had no alternative biological framework to work with. **As a result**, generations of university-trained physicians graduated strictly memorising Galen's works and continued to prescribe bleeding and purging as the absolute, unquestioned standards of professional medical practice.",
-          },
-        ],
-      },
-      learning_objectives: {
-        overarching: 'To explore: How did Medieval people try to prevent and treat disease',
-        scaffolded: [
-          'Explain the connection between medieval beliefs about disease and their approaches to treatment and prevention.',
-          'Evaluate the roles, training, and accessibility of different medical healers in medieval society.',
-        ],
-      },
-      starters: [],
-      quiz: [
+      quick_quiz: [
         {
           question:
-            'What was the most common medical method used to balance an excess of the blood humour in medieval England?',
+            'Which ancient Greek physician originally developed the Theory of the Four Humours?',
+          options: ['Aristotle.', 'Claudius Galen.', 'Hippocrates of Kos.', 'Alexander the Great.'],
+          answer: 'Hippocrates of Kos.',
+          explanation:
+            'Hippocrates developed the Theory of the Four Humours in ancient Greece to explain disease as natural fluid imbalance.',
+        },
+        {
+          question:
+            'Which of the four humours was associated with spring, air, and being hot and wet?',
+          options: ['Blood.', 'Black Bile.', 'Yellow Bile.', 'Phlegm.'],
+          answer: 'Blood.',
+          explanation:
+            'Blood was produced by the liver and linked with air, spring, and a sanguine (optimistic) temperament.',
+        },
+        {
+          question:
+            'How did Galen’s Theory of Opposites suggest treating a patient with cold, wet phlegm?',
           options: [
-            'Bloodletting (phlebotomy)',
-            'Burning sweet-smelling herbs to clear miasma',
-            'Fasting and self-flagellation',
-            'Purging the bowels with herbal laxatives',
+            'With extensive bloodletting.',
+            'With warm, dry foods like hot peppers or ginger.',
+            'With cold cucumbers and cold baths.',
+            'By drinking large amounts of cold water.',
           ],
-          answer: 0,
+          answer: 'With warm, dry foods like hot peppers or ginger.',
+          explanation:
+            'Under the Theory of Opposites, cold and wet symptoms were counteracted with hot, dry remedies.',
         },
         {
-          question:
-            'Which of the following was a standard method of bloodletting where a vein was opened, usually in the arm, using a sharp tool called a fleam?',
-          options: ['Cauterisation', 'Venesection', 'Cupping', 'Leeching'],
-          answer: 1,
-        },
-        {
-          question:
-            'In what medical scenario would a medieval physician choose leeching (using leeches) over venesection?',
+          question: 'What was miasma believed to be in medieval medicine?',
           options: [
-            "When the patient's astrological chart showed Mars was in retrograde",
-            'For wealthy patients who could afford imports from the New World',
-            'Only when a patient was diagnosed with an excess of black bile',
-            'For patients who were too young, elderly, or physically weak to withstand a vein being opened',
+            'A microscopic bacterium transmitted by black rat fleas.',
+            'A magical curse cast by witches or heretics.',
+            'An imbalance between red blood cells and white blood cells.',
+            'A poisonous, foul-smelling vapor arising from decaying filth and swamps.',
           ],
-          answer: 3,
+          answer: 'A poisonous, foul-smelling vapor arising from decaying filth and swamps.',
+          explanation:
+            'Miasma was believed to corrupt the atmosphere and unbalance bodily humours upon inhalation.',
+        },
+        {
+          question: 'What was a glass matula used for in medieval clinical diagnosis?',
+          options: [
+            'Mixing complex herbal syrups like Theriac.',
+            'Distilling alcohol for surgical antiseptics.',
+            'Collecting blood drawn during phlebotomy.',
+            'Holding patient urine for inspection against colour wheels.',
+          ],
+          answer: 'Holding patient urine for inspection against colour wheels.',
+          explanation:
+            'The matula was a bladder-shaped glass flask used by physicians during uroscopy.',
         },
         {
           question:
-            "During the cupping method of bloodletting, what was the purpose of heating the glass or metal cup before placing it on the patient's skin?",
+            'What item did wealthy medieval people carry to protect themselves against miasma in crowded streets?',
           options: [
-            "To ward off evil spirits and purify the patient's blood",
-            'To sterilise the skin and prevent the spread of gangrene',
-            'To create a vacuum that would pull blood to the surface of the skin',
-            'To heat up cold humours like phlegm before extraction',
+            'A sweet-smelling pomander or posy of herbs.',
+            'A portable surgical scalpel.',
+            'A pocket magnifying glass.',
+            'A bottle of carbolic acid.',
           ],
-          answer: 2,
+          answer: 'A sweet-smelling pomander or posy of herbs.',
+          explanation:
+            'Pomanders and herb posies were held to the nose to mask foul miasmas and purify inspired air.',
         },
         {
-          question: "What was the medical purpose of 'purging' a patient in medieval medicine?",
+          question: 'Why did the Theory of the Four Humours hinder long-term scientific progress?',
           options: [
-            'To align the physical body with the surrounding stars and planets',
-            'To expel excess or corrupt humours from the digestive tract using emetics or laxatives',
-            'To physically remove corrupt miasma from the lungs through deep breathing exercises',
-            "To cleanse the patient's soul of sin before administering herbal cures",
+            'Because ordinary citizens refused to take herbal remedies.',
+            'Because it required doctors to perform thousands of illegal human dissections.',
+            'Because doctors assumed disease was internal fluid imbalance, ignoring real physical bacteria and organs.',
+            'Because the Theory of Opposites was strictly banned by the Catholic Church.',
           ],
-          answer: 1,
-        },
-        {
-          question: "What was a 'clyster' in medieval medicine?",
-          options: [
-            'A metal iron used to burn open wounds to prevent infection',
-            'A pocket book of astrological charts carried by physicians',
-            'An enema used to clear the bowels, often containing honey, water, and herbal mixtures',
-            'A natural poultice made from cow dung applied to infected wounds',
-          ],
-          answer: 2,
-        },
-        {
-          question: "What was the 'Regimen Sanitatis'?",
-          options: [
-            'A compulsory royal law that forced towns to clean their streets twice a year',
-            'The official book of medical remedies used by apothecaries to mix drugs',
-            'The spiritual guide used by monastic hospitals to treat the souls of the dying',
-            'A personalized set of rules regarding diet, exercise, sleep, and hygiene written by a physician to help a patient prevent illness',
-          ],
-          answer: 3,
+          answer:
+            'Because doctors assumed disease was internal fluid imbalance, ignoring real physical bacteria and organs.',
+          explanation:
+            'Humoural theory provided a false but complete explanation that prevented doctors from discovering real anatomical causes.',
         },
         {
           question:
-            'Which of the following was a highly popular, complex medieval remedy containing up to 70 herbs, spices, and ingredients like opium and snake flesh, used as a universal antidote?',
-          options: ['Theriaca', 'Aqua Vitae', 'Mithridatium', "Galen's Opposites"],
-          answer: 0,
-        },
-        {
-          question:
-            'How did medieval people attempt to prevent miasma from entering their bodies or homes?',
-          options: [
-            'By boiling all drinking water before consumption',
-            'By staying indoors during lunar eclipses',
-            'By building high stone walls around their wells and water pumps',
-            'By carrying sweet-smelling herbs, burning incense, or carrying a pomander',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Why did medieval physicians often recommend bathing in warm water as a treatment?',
-          options: [
-            'To protect the lungs against breathing in corrupted miasma',
-            'To wash away microscopic bacteria from the skin',
-            'To help sweat out excess humours, open the pores, and dissolve impurities in the body',
-            'Because the Church required patients to be physically clean before they could pray for a cure',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'If a patient was suffering from a hot and dry illness, such as a fever, how would a physician apply the Theory of Opposites to treat them?',
-          options: [
-            'By prescribing cool, wet remedies, such as giving them cucumbers or cold baths',
-            'By wrapping the patient in thick blankets near a hot open fire',
-            'By prescribing hot, spicy foods like peppers to sweat out the illness',
-            'By bleeding them from both arms simultaneously to cool the liver',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'What religious act was commonly undertaken by sick medieval people to show repentance for their sins and beg God for a miraculous physical cure?',
-          options: [
-            'Undergoing immediate venesection inside a cathedral',
-            'Going on a pilgrimage to a holy shrine containing saintly relics',
-            "Paying a physician to read Galen's texts in a church",
-            'Banning all barber-surgeons from their parish',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'What did the medieval Church teach was the spiritual value of enduring physical pain and illness?',
-          options: [
-            "It proved that the patient's humours were naturally balanced",
-            "It was a sign that the patient had challenged Galen's ideas",
-            'It was a sign of demonic possession that required exorcism',
-            "It was a way to cleanse the soul of sin and shorten a person's time in Purgatory",
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Which herbal preparation involved crushing medicinal plants and applying them directly to the skin to draw out poisons or ease pain?',
-          options: ['A poultice', 'A decoction', 'A theriaca', 'An infusion'],
-          answer: 0,
-        },
-        {
-          question:
-            "Why did public baths ('stewes') in England begin to close down toward the end of the medieval period?",
-          options: [
-            'Because the supply of wood required to heat the baths ran out',
-            'Because Germ Theory proved that public water spread infectious pathogens',
-            'Because they became associated with moral corruption, prostitution, and the spread of diseases like leprosy',
-            'Because the government declared clean water was a public hazard',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'In the context of humoural medicine, why did physicians pay close attention to what patients ate and drank?',
-          options: [
-            'To ensure they did not breathe in miasma while chewing',
-            'Because different foods had specific qualities (hot, cold, wet, dry) that directly influenced and balanced the humours',
-            'To guarantee they remained strong enough to endure major surgical amputations',
-            'To prevent them from consuming meat slaughtered on holy days',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'What was the primary method of purging a patient if the physician believed the excess humour was located in the upper stomach?',
-          options: [
-            'Performing venesection on the feet',
-            'Administering an emetic to induce vomiting',
-            'Giving them a strong herbal laxative like scammony',
-            'Using a clyster',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "What spiritual practice did extreme religious groups perform publicly during crises to appease God's anger and prevent disease?",
-          options: [
-            'Flagellation (whipping themselves to show repentance for sin)',
-            "Burning medical libraries that contained Galen's texts",
-            'Undergoing mass public cupping ceremonies',
-            'Buying medical indulgences from university physicians',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Which of these was a common laxative plant used in medieval England to purge the bowels?',
-          options: ['Rosemary', 'Lavender', 'Mint', 'Senna'],
-          answer: 3,
-        },
-        {
-          question:
-            'What was the purpose of keeping a piece of amber or gold near a patient suffering from certain illnesses?',
-          options: [
-            'To align the physical humours with the element of Fire',
-            "To chemically purify the air around the patient's bed",
-            'To protect the patient through sympathetic magic or transference, believing the gold would draw out the disease',
-            "To pay the physician's fees immediately if the patient died",
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Which medical practitioner in medieval England attended university for up to ten years, was licensed to diagnose illness, but rarely carried out physical treatment himself?',
-          options: [
-            'A barber-surgeon',
-            'A university-trained physician',
-            'An apothecary',
-            'A wise woman',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'Which group of medieval medical practitioners mixed herbal remedies, sold spices, and were often viewed as a cheaper alternative to expensive physicians?',
-          options: ['Leper wardens', 'Monks', 'Barber-surgeons', 'Apothecaries'],
-          answer: 3,
-        },
-        {
-          question:
-            'What training route did medieval barber-surgeons take to learn their craft, such as performing amputations or pulling teeth?',
-          options: [
-            'Serving a practical apprenticeship under an experienced master in a guild',
-            'Studying classical Latin texts like the Articella',
-            'Undergoing theological training inside a Catholic monastery',
-            'Attending medical lectures at Oxford or Cambridge University',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Why did the medieval Catholic Church strictly ban monks and priests from performing surgeries that involved shedding blood?',
-          options: [
-            'Because barber-surgeons successfully sued the Church to protect their monopoly',
-            'Because surgery was believed to attract evil spirits to the monastery',
-            'Because spilling blood was seen as incompatible with a holy, spiritual office',
-            'Because the Church believed surgical tools were inherently sinful',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'In a typical medieval hospital run by the Church, what was the primary focus of the monastic staff?',
-          options: [
-            'Providing basic physical care, warmth, food, and spiritual preparation for the soul',
-            'Testing new chemical remedies and iatrochemistry on poor patients',
-            'Performing complex surgical procedures to remove cataracts and stones',
-            'Isolating victims of highly infectious diseases like cholera and the plague',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Which of the following groups of patients would be systematically turned away and rejected from entering a medieval charity hospital?',
-          options: [
-            'The poor and elderly in need of basic shelter',
-            'Infectious people, pregnant women, and the mentally ill',
-            'Pilgrims and travellers seeking a bed for the night',
-            'Sufferers of non-contagious physical exhaustion',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'Why did many medieval hospitals have their chapel positioned at the very center of the ward, visible from all patient beds?',
-          options: [
-            "To allow physicians to perform surgeries on the altar under God's eye",
-            'To maximize ventilation and keep bad miasma from building up in the corners',
-            'To save space because building materials were too expensive',
-            'To ensure patients could observe and participate in daily holy Mass from their beds, prioritizing spiritual healing',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'In medieval England, who was responsible for providing the vast majority of daily medical care and herbal treatments to the sick?',
-          options: [
-            'Guild-licensed apothecaries working in municipal clinics',
-            'University-trained physicians visiting homes in rural villages',
-            'Women in the home, such as mothers, wives, and local wise women',
-            'Monks traveling between parishes to administer bloodletting',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Which of the following was a manual surgical task that a medieval barber-surgeon would regularly perform?',
-          options: [
-            'Writing a personalized Regimen Sanitatis for wealthy clients',
-            'Checking the color and smell of urine to diagnose humours',
-            'Mixing complex theriaca remedies for internal illnesses',
-            'Trepanning the skull or setting fractured limbs',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Why were university-trained physicians so rarely employed or seen in medieval England?',
-          options: [
-            'Because they were extremely expensive and their services were limited to the wealthy and royalty',
-            'Because they spent all of their time working in monastic charity hospitals',
-            'Because the Church declared university medical degrees to be illegal',
-            'Because most patients preferred the clinical success of barber-surgeons',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            "What was the main diagnostic tool a medieval physician used at a patient's bedside before consulting their books?",
-          options: [
-            'A chemical test of the blood to look for infectious microbes',
-            "An inspection of the patient's pulse and urine sample",
-            "An examination of the patient's reflexes and physical strength",
-            'A stethoscope to listen to the lungs',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'How did apothecaries typically acquire their knowledge of herbs, spices, and drug preparation?',
-          options: [
-            'By completing a mandatory seven-year Latin degree at a university',
-            'By translating ancient Roman scrolls in monastic libraries',
-            'Through hands-on experience, trade networks, and passing down secrets from father to son',
-            'By working as assistants to university-trained physicians in London hospitals',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Why did medieval physicians rarely touch or physically examine their patients during a consultation?',
-          options: [
-            'Because they believed medical knowledge was a purely intellectual, book-based science of logical observation',
-            'Because the law strictly forbade doctors from touching members of different social classes',
-            'Because they believed physical touch would corrupt their own humours',
-            'Because they were afraid of catching contagious skin diseases like leprosy',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Which of these ingredients was commonly grown in a medieval home garden and used by women to treat basic coughs and chest ailments?',
-          options: [
-            'Opium and antimony',
-            'Mint and chamomile',
-            'Arsenic and mercury',
-            'Tobacco and cinchona bark',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'How did the Guild of Barber-Surgeons regulate the standard of surgery in medieval towns?',
-          options: [
-            'By forcing all surgeons to work for free in local leper colonies',
-            'By requiring all members to pass university Latin examinations',
-            'By printing and distributing anatomical dissection diagrams',
-            'By monitoring apprenticeships, inspecting workshops, and punishing unlicensed or dangerous practitioners',
-          ],
-          answer: 3,
-        },
-        {
-          question: "What was a major limitation of a medieval apothecary's remedies?",
-          options: [
-            'They were too expensive for anyone except the royal family to buy',
-            'They were strictly banned by the Catholic Church as witchcraft',
-            'They often mixed ingredients based on astrological alignments or supernatural properties rather than proven clinical trial',
-            'They could only be prescribed by a licensed university physician',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Approximately how many charity hospitals existed in medieval England by the year 1400?',
-          options: ['Around 200', 'Nearly 5,000', 'Over 1,100', 'Fewer than 50'],
-          answer: 2,
-        },
-        {
-          question: 'In what way did medieval charity hospitals contribute to public health?',
-          options: [
-            'By training hundreds of skilled university-trained surgeons each year',
-            'By providing a clean, warm environment and nutritious food to help vulnerable people recover naturally',
-            'By acting as quarantine centers where contagious plague victims were cured',
-            'By developing and testing the first safe vaccinations against infectious diseases',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'What did medieval surgeons use to try and dull the pain of an amputation, despite the extreme risk of killing the patient?',
-          options: [
-            'Carbolic acid and vinegar',
-            'Chloroform and ether',
-            'A local injection of cocaine solution',
-            'Herbal mixtures containing highly toxic hemlock, opium, or mandrake',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Why did the medieval medical community believe that academic physicians were of a higher social and intellectual standing than barber-surgeons?',
-          options: [
-            'Because physicians were university-educated and understood the logical theories of Galen, whereas surgeons were considered manual craftsmen who worked with their hands',
-            'Because physicians were ordained priests, while surgeons were secular outcasts',
-            'Because physicians were allowed to perform dissections, while surgeons were not',
-            'Because physicians successfully cured over 90% of their patients',
-          ],
-          answer: 0,
+            'What bodily organ did Galen claim was responsible for constantly producing blood from digested food?',
+          options: ['The heart.', 'The liver.', 'The spleen.', 'The lungs.'],
+          answer: 'The liver.',
+          explanation:
+            'Galen taught that the liver manufactured blood, which was then consumed as fuel by bodily tissues.',
         },
       ],
       flashcards: [
         {
-          term: 'Theory of Opposites',
-          definition:
-            "Galen's treatment method of balancing humours by giving the patient the opposite of their symptoms (e.g. hot pepper for a cold).",
+          q: 'What are the Four Humours?',
+          a: 'Blood (hot/wet), Phlegm (cold/wet), Yellow Bile (hot/dry), and Black Bile (cold/dry). Sickness was an internal imbalance of these fluids.',
         },
         {
-          term: 'Barber Surgeon',
-          definition:
-            'Untrained medical practitioners who performed basic surgeries like bloodletting and tooth extraction.',
+          q: 'What was Galen’s Theory of Opposites?',
+          a: 'A clinical method treating excess humours with contrary qualities (e.g. treating cold, wet phlegm with hot, dry peppers and spices).',
         },
         {
-          term: 'Apothecary',
-          definition:
-            'Medieval pharmacists who mixed herbal remedies and potions based on materia medica.',
+          q: 'What was Miasma Theory?',
+          a: 'The belief that poisonous, foul-smelling air from swamps, rotting waste, and corpses poisoned the body’s humours upon inhalation.',
+        },
+        {
+          q: 'What was Uroscopy?',
+          a: 'Clinical examination of urine in a glass matula, checking colour, sediment, and smell against a 20-shade chart to diagnose humoural imbalance.',
+        },
+        {
+          q: 'What was a Vademecum?',
+          a: 'A physician’s portable handbook containing astrological Zodiac Man charts, calendars, and urine wheels used at the patient’s bedside.',
         },
       ],
-      draw_tasks: {
-        title: "The Apothecary's Shop",
-        instructions:
-          'Sketch an apothecary mixing herbal remedies. Label at least three common ingredients they might use (like honey, mint, or theriac).',
-      },
-      video: [
+      draw_tasks: [
         {
-          url: 'https://era.org.uk/streaming-service-resource/3-medicine-women-and-society-history-file/',
-          title: '3 Medicine Women And Society History File',
+          title: 'Diagram: The Four Humours Cross',
+          instruction:
+            'Sketch a diagram of the Four Humours cross, labeling Blood, Phlegm, Yellow Bile, and Black Bile alongside their corresponding seasons and qualities.',
+        },
+      ],
+    },
+    {
+      id: 'lesson_1_3',
+      title:
+        'KT1.3: Approaches to Prevention & Treatment: Rituals, Bleeding & Purging (c1250–c1500)',
+      specification_anchor:
+        'Approaches to prevention and treatment: religious and supernatural methods (prayer, fasting, pilgrimages); rational treatments (bloodletting, purging, herbal remedies, regimen sanitatis).',
+      enquiry_question:
+        'Why did standard medieval medical treatments frequently endanger the lives of the patients they were meant to cure?',
+      living_timeline_mission: {
+        target_milestones: 'Milestones 1 & 6 (c. 1250 & 1400s)',
+        pages: 'Pages 2–3',
+        instruction:
+          'Turn back to Pages 2–3 (Milestones 1 & 6). In the sketchpad frame, sketch a fleam and bowl used for bloodletting alongside herbal Theriac!',
+      },
+      timeline_anchor: [
+        {
+          date: 'c. 1250',
+          title: 'Phlebotomy Standardised',
+          desc: 'Monasteries and barber-surgeons establish regular seasonal bloodletting schedules to balance humours.',
+        },
+        {
+          date: 'c. 1300',
+          title: 'The Cult of Relics & Pilgrimage',
+          desc: 'Shrines like Thomas Becket at Canterbury become major centres for religious healing and miraculous cures.',
+        },
+        {
+          date: '1400',
+          title: 'The Regimen Sanitatis',
+          desc: 'Physicians prescribe personalised lifestyle treatises advising moderation in diet, sleep, and exercise to prevent illness.',
+        },
+      ],
+      delivery_plan: {
+        format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+        lesson_1: {
+          title: 'Lesson 1: Spiritual Healing vs Phlebotomy (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Hook & Spaced Retrieval',
+              instruction:
+                'Complete Do Now recall on Four Humours. Display Source A (Phlebotomy Manuscript). Contrast religious prayer with surgical bloodletting.',
+            },
+            {
+              time: '10–30m',
+              label: 'Modelled Shared Reading & Discussion',
+              instruction:
+                'Read Acts 1 & 2 with paragraph signposting ([1.1] to [2.2]). Deconstruct the 3 phlebotomy methods (fleam, cupping, leeches) and why bloodletting weakened sick patients.',
+            },
+            {
+              time: '30–45m',
+              label: 'Analytical Assessment Ledger',
+              instruction:
+                'Complete Disciplinary Vocabulary Distinction (Symptomatic Balancing vs Antimicrobial Cure) and annotate the phlebotomy diagram.',
+            },
+            {
+              time: '45–50m',
+              label: 'Formative Check & Plenary',
+              instruction:
+                'Teacher poses Hinge Question 1 on Source A. Pupils log key takeaways on their Living Timeline.',
+            },
+          ],
+        },
+        lesson_2: {
+          title: 'Lesson 2: Purging, Herbal Remedies & Exam Mastery (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Retrieval & Visual Forensic Inspection',
+              instruction:
+                'Inspect Galen’s portrait (Source B). Discuss how the Theory of Opposites drove apothecaries to compound Theriac with 60+ ingredients.',
+            },
+            {
+              time: '10–25m',
+              label: 'Deconstruct Acts 3 & 4 (Purging & Regimen Sanitatis)',
+              instruction:
+                'Examine violent laxatives, emetics, and the Regimen Sanitatis as daily preventative duty.',
+            },
+            {
+              time: '25–45m',
+              label: 'Deliberate Exam Practice (12m)',
+              instruction:
+                'Complete Question 4 Explain Why: Explain why medical treatments changed very little during the Middle Ages (c1250–c1500) [12m].',
+            },
+            {
+              time: '45–50m',
+              label: 'Self-Assessment & D.I.R.T.',
+              instruction:
+                'Pupils self-assess against the PEEL structure strip and vocabulary bank, logging scores on the back cover.',
+            },
+          ],
+        },
+      },
+      teacher_notes: {
+        primer:
+          'The overarching pedagogical goal of this lesson is to help pupils understand why medieval treatments—such as bloodletting and purging—persisted for centuries despite killing patients. Because people believed humours had to be physically drained to lower heat, these debilitating treatments were viewed as medically essential.',
+        objectives: [
+          {
+            objective: 'Analyse religious and supernatural methods of healing and prevention.',
+            primer:
+              'Direct pupils to paragraph [1.1]. Emphasise pilgrimages, relics, fasting, and confession as genuine frontline treatments.',
+            question:
+              'Why did sick medieval people travel hundreds of miles to touch holy relics at Canterbury instead of visiting a doctor?',
+          },
+          {
+            objective:
+              'Explain rational humoural treatments: phlebotomy, purging, and herbal Theriac.',
+            primer:
+              'Focus on paragraphs [2.1] and [3.1]. Explain the three methods of bloodletting (vein cutting, cupping, leeches) and the composition of Theriac.',
+            question:
+              'Why did bloodletting and violent purging frequently cause the death of already weakened patients?',
+          },
+        ],
+      },
+      do_now: {
+        type: 'questions',
+        title: 'Spaced Retrieval Do Now: Humours & Diagnosis',
+        instructions:
+          'Answer the four recall questions below from memory to test your knowledge of Lesson 1.2.',
+        items: [
+          {
+            question: 'What Greek physician originally created the Theory of the Four Humours?',
+            answer: 'Hippocrates of Kos',
+            options: ['Hippocrates of Kos', 'Roger Bacon', 'Claudius Galen', 'Thomas Sydenham'],
+          },
+          {
+            question: 'Under Galen’s Theory of Opposites, how would a feverish patient be treated?',
+            answer: 'With cold cucumber, cold baths, and bloodletting.',
+            options: [
+              'With heavy wool blankets near a fire.',
+              'With cold cucumber, cold baths, and bloodletting.',
+              'With hot chilli peppers and hot wine.',
+              'With animalcules and microscopic antibiotics.',
+            ],
+          },
+          {
+            question: 'What did physicians examine in a glass matula to deduce humoural balance?',
+            answer: 'Patient urine against a 20-shade colour wheel.',
+            options: [
+              'Stomach bacteria cultures.',
+              'Blood platelets and white cells.',
+              'Patient urine against a 20-shade colour wheel.',
+              'Tissue cells under a microscope.',
+            ],
+          },
+          {
+            question: 'What did people believe corrupt miasma did upon inhalation?',
+            answer: 'It directly poisoned the blood and corrupted internal humours.',
+            options: [
+              'It balanced phlegm and choler naturally.',
+              'It caused lungs to produce excess yellow bile.',
+              'It cured smallpox and fevers.',
+              'It directly poisoned the blood and corrupted internal humours.',
+            ],
+          },
+        ],
+      },
+      narrative_blocks: [
+        {
+          act: 1,
+          act_title: 'Context: Spiritual Healing & Religious Penitence',
+          text: '<span class="para-ref">[1.1]</span> Because illness was widely regarded as God’s punishment for sin, the first and most urgent response to sickness was spiritual. Sufferers were instructed to confess their sins to a parish priest and pray for divine forgiveness. The Church taught that without spiritual cleansing, physical treatments were entirely useless. Wealthy families paid for chanting monks to sing special intercessory Masses, while ordinary people fasted, gave alms to the poor, and lit votive candles before images of healing saints.\n\n<span class="para-ref">[1.2]</span> Pilgrimages were among the most popular therapeutic actions in medieval England. Sick pilgrims walked hundreds of miles to shrines containing holy relics—such as the tomb of Saint Thomas Becket at Canterbury Cathedral, or the shrine of Our Lady at Walsingham. Sufferers touched reliquaries containing saints’ bones, drank holy water, or purchased lead pilgrim badges as talismans. Miraculous cures reported at shrines reinforced the belief that divine intervention was far more powerful than physical medicine.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Using paragraphs [1.1]–[1.2], explain why religious rituals were considered frontline medical treatments.',
+              model:
+                'Religious rituals were considered frontline treatments because people believed God directly sent illness as a punishment for sin. Without confessing sins, fasting, praying, or visiting holy shrines to touch saints’ relics (such as Thomas Becket at Canterbury), people believed physical treatments would fail to appease God’s wrath.',
+            },
+          ],
+        },
+        {
+          act: 2,
+          act_title: 'Escalation: Phlebotomy—The Universal Humoural Treatment',
+          text: '<span class="para-ref">[2.1]</span> When physical treatments were administered, the most common and revered procedure was Phlebotomy (bloodletting). Based upon Galen’s belief that blood was the dominant, warmest humour and the primary cause of fevers, physicians ordered regular bloodletting to lower internal bodily heat and restore equilibrium. Phlebotomy was so routine that monasteries set aside specific "bleeding weeks" several times a year where all monks were bled for preventative maintenance.\n\n<span class="para-ref">[2.2]</span> Phlebotomy was performed using three distinct surgical techniques. The most common was vein-opening using a sharp, double-edged lancet called a fleam, collecting up to a pint of blood in a marked pewter bowl. Alternatively, for localized inflammation, practitioners used Cupping: heating a glass cup over a flame and placing it over scratched skin, creating a vacuum that drew blood to the surface. Finally, Leeching was utilized for delicate areas like the face or piles; medicinal leeches were placed on the skin to engorge themselves on blood. While intended to heal, excessive bloodletting drastically lowered blood pressure, induced fainting, and frequently caused fatal hypovolemic shock in weakened patients.',
+          source: {
+            id: 'source_a_bleeding',
+            letter: 'A',
+            title: 'Source A: Phlebotomy / Bloodletting Manuscript (MS Sloane 1977, c.1300)',
+            src: '/images/bloodletting.jpg',
+            source: '/images/bloodletting.jpg',
+            image: '/images/bloodletting.jpg',
+            caption:
+              'A medieval physician opening a vein in the arm using a fleam while blood drains into a bowl, supervised by an attendant.',
+            provenance: 'British Library MS Sloane 1977, England, c.1300.',
+            context:
+              'Bloodletting was the most universal surgical intervention in medieval Europe, performed by both physicians and barber-surgeons to balance humours.',
+            question:
+              'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+            hinge_question:
+              'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+          },
+        },
+        {
+          act: 3,
+          act_title: 'Forensic Evidence: Purging, Emetics & Herbal Theriac',
+          text: '<span class="para-ref">[3.1]</span> If bloodletting failed to rebalance the humours, physicians turned to Purging to evacuate corrupted digestive fluids. The digestive system was viewed as an internal furnace; if food putrefied, it generated toxic yellow and black bile. Doctors administered powerful emetics containing antimony or dried crushed beetles to induce violent vomiting. Alternatively, strong herbal laxatives made from scammony, senna, and hellebore were given to cause explosive diarrhoea, or clysters (enemas) were pumped into the rectum using pigs’ bladders and reeds.\n\n<span class="para-ref">[3.2]</span> Herbal medicine was the primary pharmaceutical therapy. Apothecaries mixed complex syrups, electuaries, and ointments using local herbs (mint, sage, chamomile, garlic) and expensive imported spices (cinnamon, cloves, pepper). The most famous universal cure-all was Theriac (treacle), an ancient compound containing over 60 ingredients, including crushed viper flesh, opium, and honey. Prescribed for poisons, fevers, and bites, Theriac was so trusted that physicians believed it could neutralize any humoural toxin.',
+          source: {
+            id: 'source_b_galen',
+            letter: 'B',
+            title: 'Source B: Portrait of Claudius Galen (Engraving)',
+            src: '/images/galen_portrait.jpg',
+            source: '/images/galen_portrait.jpg',
+            image: '/images/galen_portrait.jpg',
+            caption:
+              'Claudius Galen (AD 129–c. 216), whose clinical treatises on the Theory of Opposites, phlebotomy, and purging dominated European medicine for 1,400 years.',
+            provenance: 'Historical engraving after ancient Roman busts of Galen.',
+            context:
+              'Galen’s treatises on therapeutics dictated that doctors must actively expel corrupt humours through bleeding, sweating, and purging.',
+            question:
+              'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+            hinge_question:
+              'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+          },
+        },
+        {
+          act: 4,
+          act_title: 'Historical Verdict: Prevention & The Regimen Sanitatis',
+          text: '<span class="para-ref">[4.1]</span> Prevention was viewed as far superior to cure. In medieval thinking, maintaining personal health was a moral and physical duty. Wealthy nobles and high-ranking clerics commissioned custom copies of the Regimen Sanitatis (Rule of Health), a lifestyle guide originating from the medical school of Salerno. The guide advised daily moderation across six essential factors: air quality, exercise, diet, sleep, bowel evacuations, and emotional control.\n\n<span class="para-ref">[4.2]</span> People were instructed to bathe regularly in warm herbal infusions, avoid damp night mists, sleep with windows shuttered against miasma, and eat foods tailored to their humoural complexion (e.g. moist fish for hot personalities). While these hygiene measures promoted general wellbeing, they provided zero protection against deadly bacterial infections like the plague. Because medieval treatments were based on balancing imaginary humours through aggressive bleeding and purging, medical care often hastened the death of the sick.',
+          tasks: [
+            {
+              type: 'exam_practice',
+              tariff: '[12 marks]',
+              question:
+                'Explain why approaches to medical treatment changed very little during the Middle Ages (c1250–c1500).',
+              stimulus: ['The Theory of Opposites', 'Bloodletting'],
+              model:
+                'One major reason why medical treatments changed very little during the Middle Ages was the overwhelming authority of Galen’s Theory of Opposites. Medieval physicians were trained at universities where Galen’s treatises were taught as infallible truth. Under Galen’s system, disease was treated by applying opposite qualities to balance excess humours. Consequently, treatments were rigidly standardized: cold phlegmatic chills were treated with hot spices, and hot fevers were treated with bloodletting and cool cucumbers. Because physicians believed this system provided a complete and logical explanation for all illnesses, there was no perceived need to experiment with new treatments.\n\nFurthermore, the practice of bloodletting (phlebotomy) was deeply entrenched in medieval culture and backed by the Catholic Church. Both university physicians and guild-trained barber-surgeons performed bloodletting using fleams, cupping glasses, and leeches. Because people observed blood draining out and patients cooling down, they genuinely believed the bad humours were being removed, even though patients were simply fainting from blood loss. Religious customaries even required regular bleeding for monks in monasteries. Because bloodletting seemed to produce a physical result that matched Galen’s teachings, it remained unchallenged throughout the period.\n\nFinally, the lack of scientific instruments and understanding of chemistry prevented the development of new treatments. Without microscopes, doctors had no knowledge of bacteria or viruses; they could only treat visible symptoms using traditional herbal mixtures like Theriac (containing 60+ ingredients). Because the Church controlled education and banned any questioning of ancient texts, physicians focused on memorising traditional herbal recipes and classical Latin treatises rather than conducting chemical or clinical trials. Consequently, treatments remained virtually identical from 1250 to 1500.',
+            },
+          ],
         },
       ],
       sources: [
         {
-          id: 'source_a',
+          id: 'source_a_bleeding',
           letter: 'A',
-          title: 'Source A: Phlebotomy / Bloodletting Manuscript (c.1300)',
+          title: 'Source A: Phlebotomy / Bloodletting Manuscript (MS Sloane 1977, c.1300)',
           src: '/images/bloodletting.jpg',
           source: '/images/bloodletting.jpg',
           image: '/images/bloodletting.jpg',
           caption:
-            'Medieval manuscript illumination depicting a physician opening a vein in the arm to draw blood into a bowl to restore humoural equilibrium.',
+            'A medieval physician opening a vein in the arm using a fleam while blood drains into a bowl, supervised by an attendant.',
           provenance: 'British Library MS Sloane 1977, England, c.1300.',
           context:
-            'Phlebotomy (bloodletting) was the most widely practiced medical treatment in medieval Europe. Physicians believed that an excess of blood—the warmest and wettest humour—caused fevers and pestilence. Blood was removed by opening a vein with a fleam or lancet, applying heated cupping glasses to draw blood through scratches, or using medicinal leeches.',
+            'Bloodletting was the most universal surgical intervention in medieval Europe, performed by both physicians and barber-surgeons to balance humours.',
           question:
             'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
           hinge_question:
             'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
         },
         {
-          id: 'source_b',
+          id: 'source_b_galen',
           letter: 'B',
-          title: 'Source B: Medieval Surgeon Suturing a Head Wound (14th c.)',
+          title: 'Source B: Portrait of Claudius Galen (Engraving)',
+          src: '/images/galen_portrait.jpg',
+          source: '/images/galen_portrait.jpg',
+          image: '/images/galen_portrait.jpg',
+          caption:
+            'Claudius Galen (AD 129–c. 216), whose clinical treatises on the Theory of Opposites, phlebotomy, and purging dominated European medicine for 1,400 years.',
+          provenance: 'Historical engraving after ancient Roman busts of Galen.',
+          context:
+            'Galen’s treatises on therapeutics dictated that doctors must actively expel corrupt humours through bleeding, sweating, and purging.',
+          question:
+            'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+          hinge_question:
+            'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+        },
+      ],
+      quick_quiz: [
+        {
+          question:
+            'What was the most common surgical treatment performed in medieval England to restore humoural balance?',
+          options: [
+            'Antiseptic wound washing.',
+            'Phlebotomy (bloodletting).',
+            'Inoculation.',
+            'Appendectomy.',
+          ],
+          answer: 'Phlebotomy (bloodletting).',
+          explanation:
+            'Bloodletting was used to lower internal body temperature and remove excess hot blood.',
+        },
+        {
+          question:
+            'Which instrument was commonly used to open a patient’s vein during bloodletting?',
+          options: [
+            'A hypodermic syringe.',
+            'A cautery iron.',
+            'A fleam or lancet blade.',
+            'A trephine drill.',
+          ],
+          answer: 'A fleam or lancet blade.',
+          explanation:
+            'A fleam was a small, sharp surgical knife pressed into a surface vein to drain blood.',
+        },
+        {
+          question:
+            'What method of bloodletting involved creating a warm vacuum over scratched skin?',
+          options: ['Cupping.', 'Amputation.', 'Leeching.', 'Cauterisation.'],
+          answer: 'Cupping.',
+          explanation:
+            'Heated glass cups placed over scratched skin created a vacuum suction that drew blood.',
+        },
+        {
+          question: 'What was Theriac in medieval medicine?',
+          options: [
+            'A holy oil blessed by the Pope for dying patients.',
+            'A chemical compound of mercury and sulphur.',
+            'An antiseptic solution made of wine and vinegar.',
+            'A complex universal herbal remedy containing over 60 ingredients, including crushed viper flesh.',
+          ],
+          answer:
+            'A complex universal herbal remedy containing over 60 ingredients, including crushed viper flesh.',
+          explanation:
+            'Theriac was a famous ancient electuary believed to cure poisons, bites, and fevers.',
+        },
+        {
+          question: 'Why did physicians prescribe emetics and violent laxatives to patients?',
+          options: [
+            'To clean dental cavities and cure toothaches.',
+            'To test whether the patient was possessed by evil spirits.',
+            'To purge and evacuate corrupt humours like yellow and black bile from the digestive system.',
+            'To prepare the patient for immediate amputation.',
+          ],
+          answer:
+            'To purge and evacuate corrupt humours like yellow and black bile from the digestive system.',
+          explanation: 'Purging was used to clear toxic humours from the stomach and bowels.',
+        },
+        {
+          question: 'What was the Regimen Sanitatis?',
+          options: [
+            'A personalized lifestyle guide advising moderation in diet, sleep, exercise, and baths.',
+            'A monastic rule forbidding monks from leaving monastery grounds.',
+            'A royal statute banning foreign doctors from practicing in London.',
+            'A Latin text describing how to perform battlefield amputations.',
+          ],
+          answer:
+            'A personalized lifestyle guide advising moderation in diet, sleep, exercise, and baths.',
+          explanation:
+            'The Regimen Sanitatis outlined the rules of daily hygiene and humoural moderation.',
+        },
+        {
+          question: 'Why did routine bloodletting and purging often result in patient death?',
+          options: [
+            'Church law prohibited patients from sleeping after being bled.',
+            'They caused severe blood loss, dehydration, and weakened immune defenses in already sick patients.',
+            'The instruments were secretly poisoned by barber-surgeons.',
+            'Patients refused to eat any food for three weeks following treatment.',
+          ],
+          answer:
+            'They caused severe blood loss, dehydration, and weakened immune defenses in already sick patients.',
+          explanation:
+            'Draining blood and inducing severe diarrhoea physically exhausted weakened bodies.',
+        },
+        {
+          question:
+            'What religious practice did sick people perform at shrines like Thomas Becket at Canterbury?',
+          options: [
+            'Receiving university medical degrees.',
+            'Undergoing human dissection.',
+            'Purchasing licensed apothecary drugs.',
+            'Touching holy relics and praying for miraculous healing.',
+          ],
+          answer: 'Touching holy relics and praying for miraculous healing.',
+          explanation:
+            'Pilgrims traveled to shrines to touch sacred relics and seek divine intervention.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What was Phlebotomy?',
+          a: 'The practice of bloodletting using fleams, cupping glasses, or medicinal leeches to lower internal bodily heat and restore humoural balance.',
+        },
+        {
+          q: 'What were the three methods of bloodletting?',
+          a: '1. Vein-opening with a fleam; 2. Cupping (heated glass vacuum); 3. Leeching (medicinal leeches drawing blood).',
+        },
+        {
+          q: 'What was Purging?',
+          a: 'Using emetics (inducing vomiting) and strong laxatives (scammony, hellebore) or clysters (enemas) to clear corrupt humours from the digestive tract.',
+        },
+        {
+          q: 'What was Theriac?',
+          a: 'A complex, expensive herbal electuary of 60+ ingredients (including viper flesh and opium) used as a universal cure-all.',
+        },
+        {
+          q: 'What was the Regimen Sanitatis?',
+          a: 'A personalized lifestyle handbook advising moderation in diet, exercise, sleep, and bathing to maintain humoural balance.',
+        },
+      ],
+      draw_tasks: [
+        {
+          title: 'Diagram: Medieval Phlebotomy Tools',
+          instruction:
+            'Sketch the tools used during bloodletting: a lancet fleam, a cupping glass over a flame, and a medicinal leech in a jar.',
+        },
+      ],
+    },
+    {
+      id: 'lesson_1_4',
+      title: 'KT1.4: Medical Care Providers & Monastic Hospitals: ‘Care Not Cure’ (c1250–c1500)',
+      specification_anchor:
+        'The roles of the physician, apothecary and barber surgeon; care in the home; the role of medieval hospitals.',
+      enquiry_question:
+        'How did social hierarchy and the Catholic Church shape who provided medical care in medieval England?',
+      living_timeline_mission: {
+        target_milestones: 'Milestones 6 (1400s)',
+        pages: 'Pages 2–3',
+        instruction:
+          "Turn back to Pages 2–3 (Milestone 6). In the sketchpad frame, sketch a monastic hospital ward facing a chapel altar and annotate: 'Hospitality and prayer, not medical cure!'",
+      },
+      timeline_anchor: [
+        {
+          date: '1123',
+          title: 'Foundation of St Bartholomew’s Hospital',
+          desc: 'Founded in London by Rahere, providing monastic hospitality, clean beds, and daily prayer for the poor.',
+        },
+        {
+          date: '1215',
+          title: 'Fourth Lateran Council',
+          desc: 'Pope Innocent III forbids Catholic priests and monks from shedding blood, forcing surgery entirely into the hands of secular barber-surgeons.',
+        },
+        {
+          date: '1368',
+          title: 'Guild of Surgeons Founded in London',
+          desc: 'Master surgeons separate from barber-surgeons, establishing apprenticeships to regulate surgical standards and wound treatment.',
+        },
+      ],
+      delivery_plan: {
+        format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+        lesson_1: {
+          title: 'Lesson 1: The Social Hierarchy of Healers (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Hook & Spaced Retrieval',
+              instruction:
+                'Complete Do Now recall on bloodletting. Display Source A (Surgeon suturing head wound). Contrast university physicians with manual barber-surgeons.',
+            },
+            {
+              time: '10–30m',
+              label: 'Modelled Shared Reading & Discussion',
+              instruction:
+                'Read Acts 1 & 2 with paragraph signposting ([1.1] to [2.2]). Deconstruct the roles of physicians (theory, Latin, uroscopy) vs barber-surgeons (manual surgery, pulling teeth).',
+            },
+            {
+              time: '30–45m',
+              label: 'Analytical Assessment Ledger',
+              instruction:
+                'Complete Disciplinary Vocabulary Distinction (Academic Scholasticism vs Guild Apprenticeship).',
+            },
+            {
+              time: '45–50m',
+              label: 'Formative Check & Plenary',
+              instruction:
+                'Teacher poses Hinge Question 1 on Source A. Pupils log key takeaways on their Living Timeline.',
+            },
+          ],
+        },
+        lesson_2: {
+          title: 'Lesson 2: Monastic Hospitals & Exam Mastery (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Retrieval & Visual Forensic Inspection',
+              instruction:
+                'Inspect Source B (Hôtel-Dieu Hospital Ward). Discuss why beds faced an altar and why infectious patients were excluded.',
+            },
+            {
+              time: '10–25m',
+              label: 'Deconstruct Acts 3 & 4 (Monastic Care vs Modern Cure)',
+              instruction:
+                'Emphasise the golden rule: "Hospitality and prayer for the soul, not medical cure." Examine the exclusion of lepers to Lazar houses.',
+            },
+            {
+              time: '25–45m',
+              label: 'Deliberate Exam Practice (4m / 12m)',
+              instruction:
+                'Complete Question 3 Difference: Explain one way in which medieval hospital care differed from hospital care in the 18th or 19th century [4m].',
+            },
+            {
+              time: '45–50m',
+              label: 'Self-Assessment & D.I.R.T.',
+              instruction:
+                'Pupils peer-assess their 4-mark comparison against the PEEL model answer and record marks on the back cover.',
+            },
+          ],
+        },
+      },
+      teacher_notes: {
+        primer:
+          'The overarching pedagogical goal of this lesson is to eliminate the common GCSE misconception that medieval hospitals were medical treatment centers. By exploring the religious nature of monastic care, pupils understand that hospitals provided shelter, warmth, and prayer ("care not cure"), while surgical and medical treatments were carried out by barber-surgeons, apothecaries, and wise women in the home.',
+        objectives: [
+          {
+            objective:
+              'Distinguish between the roles, training, and status of medieval healthcare providers.',
+            primer:
+              'Focus on paragraphs [1.1] and [2.1]. Emphasise that university physicians studied Latin theory for 7–10 years and rarely touched patients, while barber-surgeons performed physical surgery.',
+            question:
+              'Why were university-trained physicians regarded as higher in social status than barber-surgeons, despite barber-surgeons performing all physical operations?',
+          },
+          {
+            objective: 'Analyse the role of medieval monastic hospitals (‘care not cure’).',
+            primer:
+              'Direct pupils to paragraphs [3.1] and [4.1]. Highlight that hospitals were run by monks and nuns to offer hospitality and pray for souls, excluding infectious patients.',
+            question:
+              'Why did medieval hospitals have chapels and altars at the end of their wards instead of surgical operating rooms?',
+          },
+        ],
+      },
+      do_now: {
+        type: 'questions',
+        title: 'Spaced Retrieval Do Now: Treatments & Theory',
+        instructions:
+          'Answer the four recall questions below based on your prior learning in Lesson 1.3.',
+        items: [
+          {
+            question:
+              'What surgical treatment involved opening a vein with a fleam or using leeches?',
+            answer: 'Phlebotomy (bloodletting).',
+            options: ['Inoculation.', 'Cauterisation.', 'Phlebotomy (bloodletting).', 'Uroscopy.'],
+          },
+          {
+            question:
+              'What famous herbal cure-all contained over 60 ingredients including crushed viper flesh?',
+            answer: 'Theriac.',
+            options: ['Penicillin.', 'Laudanum.', 'Cinchona bark.', 'Theriac.'],
+          },
+          {
+            question:
+              'Under Galen’s Theory of Opposites, why were emetics administered to feverish patients?',
+            answer: 'To purge excess corrupt yellow bile from the stomach.',
+            options: [
+              'To lower blood pressure directly in the brain.',
+              'To purge excess corrupt yellow bile from the stomach.',
+              'To test if the patient had asthma.',
+              'To disinfect surgical incisions.',
+            ],
+          },
+          {
+            question:
+              'What lifestyle handbook advised nobles on diet, sleep, and exercise to prevent illness?',
+            answer: 'The Regimen Sanitatis.',
+            options: ['The Regimen Sanitatis.', 'The Vademecum.', 'The Articella.', 'De Fabrica.'],
+          },
+        ],
+      },
+      narrative_blocks: [
+        {
+          act: 1,
+          act_title: 'Context: The Elite University Physician',
+          text: '<span class="para-ref">[1.1]</span> In medieval England, access to healthcare was strictly dictated by wealth and social status. At the pinnacle of the medical hierarchy was the university-trained Physician (Medicus). Physicians studied for 7 to 10 years at ecclesiastical universities such as Oxford, Cambridge, Paris, or Bologna. Their training was entirely theoretical and literary; students memorised classical Latin translations of Galen, Hippocrates, and Islamic scholars like Avicenna and Rhazes. Physical contact with living sick people was almost non-existent during their degrees.\n\n<span class="para-ref">[1.2]</span> Because training was lengthy and expensive, university physicians were exceedingly rare—it is estimated there were fewer than 100 fully qualified physicians in England before 1350. They were retained almost exclusively by royalty, wealthy aristocrats, and bishoprics. When treating a patient, the physician did not dress wounds or dispense medicine; he examined the urine flask (matula), took the pulse, consulted astrological charts, and wrote a Latin prescription dictating which humours required bleeding or purging.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Using paragraphs [1.1]–[1.2], explain why ordinary medieval people rarely saw a university-trained physician.',
+              model:
+                'Ordinary people rarely saw a university physician because they were extremely rare (fewer than 100 in England) and charged prohibitively high fees. Their training took 7 to 10 years at elite universities studying Latin texts, meaning they were affordable only to wealthy nobles, royalty, and high-ranking clergy.',
+            },
+          ],
+        },
+        {
+          act: 2,
+          act_title: 'Escalation: Barber-Surgeons, Apothecaries & Domestic Healers',
+          text: '<span class="para-ref">[2.1]</span> For the vast majority of ordinary citizens, healthcare was delivered by craftsmen rather than university scholars. Practical, manual procedures were performed by Barber-Surgeons. Barber-surgeons were guild-trained through manual apprenticeships. Armed with razors, fleams, probes, and bone-saws, they pulled teeth, stitched lacerations, set broken limbs, lanced boils, and performed bloodletting. Because they worked with their hands and shed blood, university physicians regarded them with social contempt, viewing them as uneducated tradesmen.\n\n<span class="para-ref">[2.2]</span> Meanwhile, medicines were formulated by Apothecaries. Organized in merchant guilds, apothecaries mixed herbal compounds, ointments, and syrups, stocking both domestic English herbs and imported spices. Finally, the true frontline of medieval healthcare was Care in the Home, provided by women, mothers, and local "wise women." Women brewed herbal teas, dressed minor wounds, and served as village midwives. Wise women possessed generations of inherited folklore regarding local medicinal plants, offering cheap, accessible relief to peasant communities.',
+          source: {
+            id: 'source_a_surgeon',
+            letter: 'A',
+            title: 'Source A: Medieval Surgeon Suturing a Head Wound (14th c.)',
+            src: '/images/medieval_barber_surgeon.jpg',
+            source: '/images/medieval_barber_surgeon.jpg',
+            image: '/images/medieval_barber_surgeon.jpg',
+            caption:
+              'A guild-trained surgeon physically stitching a patient’s severe head wound with needle and thread, recorded in a 14th-century Latin surgical treatise.',
+            provenance: 'Wellcome Collection MS L0037333, 14th century surgical treatise.',
+            context:
+              'Surgeons learned their craft through apprenticeships rather than universities. They performed physical operations without anesthetics or antiseptics, relying on wine to clean wounds and cautery irons to stop bleeding.',
+            question:
+              'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+            hinge_question:
+              'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+          },
+        },
+        {
+          act: 3,
+          act_title: 'Forensic Evidence: The Medieval Monastic Hospital',
+          text: '<span class="para-ref">[3.1]</span> Between 1100 and 1500, over 1,200 hospitals were established across England. However, a medieval hospital was fundamentally different from a modern medical center. The English word "hospital" derived from the Latin hospitalitas (hospitality). Hospitals were religious charitable foundations funded by royal endowments or wealthy benefactors seeking to reduce their time in Purgatory. They were operated entirely by Catholic religious orders—monks, canons, and Augustinian nuns—not by doctors.\n\n<span class="para-ref">[3.2]</span> Famous foundations like St Bartholomew’s (founded in London in 1123 by Rahere) and St Thomas’s housed travelers, the elderly, and the impoverished sick. The central ethos was "Care Not Cure." Patients were washed, provided with clean bedding, warmed by large open hearths, fed nourishing broths and ale, and comforted through continuous prayer. However, no medical treatment, surgery, or pharmacological cure was attempted. Wards were laid out like church chapels, with beds arranged in rows pointing toward a high altar so that bedridden patients could witness the elevation of the Host during Mass and pray for their salvation.',
+          source: {
+            id: 'source_b_hospital',
+            letter: 'B',
+            title: 'Source B: Hôtel-Dieu Hospital Ward (Livre de Vie Active, c.1482)',
+            src: '/images/hotel_dieu_hospital.jpg',
+            source: '/images/hotel_dieu_hospital.jpg',
+            image: '/images/hotel_dieu_hospital.jpg',
+            caption:
+              'The main ward of the Hôtel-Dieu in Paris: Augustinian nuns tending to rows of patients sharing beds, providing spiritual comfort and rest.',
+            provenance:
+              "Livre de Vie Active des Religieuses de l'Hôtel-Dieu de Paris, Jean Henry, c.1482.",
+            context:
+              'Medieval hospitals were religious houses dedicated to Christian charity. Patients shared beds, were fed nourishing food, and received spiritual absolution.',
+            question:
+              'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+            hinge_question:
+              'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+          },
+        },
+        {
+          act: 4,
+          act_title: 'Historical Verdict: Strict Exclusion & The Lazar House',
+          text: '<span class="para-ref">[4.1]</span> Because the primary goal of monastic hospitals was peace, prayer, and hospitality, they strictly enforced entrance criteria. Hospital regulations explicitly barred patients suffering from contagious infectious illnesses, leprosy, or mental insanity, as well as pregnant women. Authorities feared that infectious sufferers would disrupt monastic prayers and contaminate the spiritual purity of the house.\n\n<span class="para-ref">[4.2]</span> Instead, infectious diseases were segregated outside urban centers. Sufferers of leprosy were consigned to Lazar Houses (leprosaria), such as St Giles in London or Sherburn Hospital in Durham. In summary, medieval institutional care offered immense Christian charity, shelter, and spiritual solace to the poor, but contributed nothing to anatomical research or clinical cures. Effective medical treatment remained absent from the medieval hospital.',
+          tasks: [
+            {
+              type: 'exam_practice',
+              tariff: '[4 marks]',
+              question:
+                'Explain one way in which hospital care in the Medieval period (c1250–c1500) was different from hospital care in the 18th or 19th century.',
+              model:
+                'One way hospital care in the Medieval period was different was that its primary purpose was religious hospitality and spiritual comfort ("care not cure"), rather than active medical treatment or scientific cure. In the Medieval period, hospitals were run by Catholic monks and nuns who washed patients, provided warm beds, and held regular church services facing a chapel altar, but no trained doctors worked there and infectious patients were turned away. In contrast, in the 18th and 19th centuries, hospitals became medical institutions funded by voluntary donations where university-trained physicians and surgeons diagnosed illnesses, performed surgeries, and trained medical students.',
+            },
+          ],
+        },
+      ],
+      sources: [
+        {
+          id: 'source_a_surgeon',
+          letter: 'A',
+          title: 'Source A: Medieval Surgeon Suturing a Head Wound (14th c.)',
           src: '/images/medieval_barber_surgeon.jpg',
           source: '/images/medieval_barber_surgeon.jpg',
           image: '/images/medieval_barber_surgeon.jpg',
           caption:
-            "A medieval guild-trained surgeon suturing a patient's severe head wound with needle and thread, recorded in a 14th-century Latin manuscript.",
+            'A guild-trained surgeon physically stitching a patient’s severe head wound with needle and thread, recorded in a 14th-century Latin surgical treatise.',
           provenance: 'Wellcome Collection MS L0037333, 14th century surgical treatise.',
           context:
-            'In medieval society, medical practice was strictly divided by class. University-trained physicians studied theory and Latin texts for years but rarely touched patients. Practical surgery—setting fractured bones, pulling teeth, lancing painful boils, and suturing wounds—was carried out by barber surgeons, who learned their trade through manual apprenticeships. Because their work involved physical manual labor and blood, barber surgeons were regarded as lower in social status than university physicians.',
+            'Surgeons learned their craft through apprenticeships rather than universities. They performed physical operations without anesthetics or antiseptics, relying on wine to clean wounds and cautery irons to stop bleeding.',
           question:
-            'Look at Source B above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+            'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
           hinge_question:
-            'Look at Source B above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+            'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
         },
         {
-          id: 'source_c',
-          letter: 'C',
-          title: 'Source C: Hôtel-Dieu Hospital Ward (Livre de Vie Active, c.1482)',
+          id: 'source_b_hospital',
+          letter: 'B',
+          title: 'Source B: Hôtel-Dieu Hospital Ward (Livre de Vie Active, c.1482)',
           src: '/images/hotel_dieu_hospital.jpg',
           source: '/images/hotel_dieu_hospital.jpg',
           image: '/images/hotel_dieu_hospital.jpg',
@@ -2176,561 +1980,389 @@ export const unitData = {
           provenance:
             "Livre de Vie Active des Religieuses de l'Hôtel-Dieu de Paris, Jean Henry, c.1482.",
           context:
-            'Medieval hospitals were religious foundations run by monks and nuns, not modern medical centers. Their stated purpose was hospitality, warmth, food, and spiritual care rather than scientific cure. Patients suffering from infectious diseases or mental illness were turned away. Inside, beds were placed in open wards aligned toward an altar so that bedridden patients could hear the Mass and pray for the salvation of their souls.',
+            'Medieval hospitals were religious houses dedicated to Christian charity. Patients shared beds, were fed nourishing food, and received spiritual absolution.',
           question:
-            "Look at Source C above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital 'care not cure' (providing food, shelter, and prayer) rather than performing medical treatments or curing disease?",
+            'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
           hinge_question:
-            "Look at Source C above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital 'care not cure' (providing food, shelter, and prayer) rather than performing medical treatments or curing disease?",
+            'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
         },
       ],
-    },
-    {
-      id: 'lesson_1_3',
-      title: 'KT1.3: How did people respond to the Black Death?',
-      lesson_reflection: {
-        prompt:
-          'You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
-        instructions: [
-          'Complete the WWW (What Went Well) section — what did you enjoy or find easiest?',
-          'Complete the EBI (Even Better If) section — what did you find most challenging?',
-          'Circle your effort level (1-5) and set a specific target for the next Key Topic.',
-        ],
-      },
-      enquiry_question: 'KT1.3: How did people respond to the Black Death?',
-      hook_text:
-        'In 1348, a devastating pandemic known as the Black Death struck England, rapidly wiping out at least a third of the population. Because medieval people had no scientific understanding of bacteria or germs, they desperately blamed the crisis on God, astrology, and foul air. This catastrophic event reveals the horrifying reality of medieval medicine, highlighting how powerless people were when forced to rely on religion and ancient, flawed theories in the face of a true public health emergency.',
-      teacher_notes: {
-        primer:
-          'The pedagogical goal of this lesson is to enable students to analyze and evaluate the varying ways medieval people responded to the Black Death, recognizing that while their treatments seem bizarre today, they were logical and rational within their contemporary worldview of religion and miasma.',
-        objectives: [
-          {
-            objective: 'Explain the religious and supernatural responses to the Black Death.',
-            primer:
-              "Introduce the concept of God's punishment as the primary contemporary explanation for the plague. Have students examine the actions of flagellants and the role of daily church services, fasting, and pilgrimages.",
-            question:
-              'Why did groups of flagellants whip themselves in public during the Black Death?',
-          },
-          {
-            objective:
-              'Analyse the rational and governmental methods used to prevent and treat the plague.',
-            primer:
-              'Explore the connection between miasma theory and actions like cleaning filth from streets, carrying sweet herbs, and lighting street fires. Discuss the introduction of early quarantine laws and their limitations.',
-            question:
-              'What preventative action did local town councils take to combat the threat of miasma?',
-          },
-        ],
-        source_context: {
-          'Source A':
-            'When the Black Death struck Europe in 1347–1349, it wiped out between 30% and 50% of the entire population. In London, parish churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside the walls (such as at East Smithfield). Normal religious funeral rites collapsed because clergy died in huge numbers, and frightened grave-diggers could not keep pace with the mounds of corpses. **Hinge Question:** What does the systematic stacking of identical wooden coffins in mass burial pits reveal about the breakdown of traditional Catholic funeral rites and social order during the Black Death?',
-          'Source B':
-            'The bubonic plague, caused by the bacterium Yersinia pestis carried by black rat fleas, manifested in high fevers, internal bleeding (causing dark purple skin blotches), and excruciating swelling of the lymph glands in the neck, armpits, and groin. Medieval observers had no knowledge of bacteria or fleas; they believed the buboes were visible proof of humoural poisons and corrupt miasma boiling out of the blood. **Hinge Question:** Why did the terrifying appearance of neck and groin buboes convince contemporary doctors that the four humours had completely putrefied inside the body, and why did this lead to deadly treatments like lancing buboes with heated irons?',
-        },
-      },
-      do_now: {
-        type: 'questions',
-        title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences.',
-        items: [
-          {
-            question: "What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?",
-            answer: 'To restore balance to the four humours by releasing excess blood.',
-            options: [
-              'To restore balance to the four humours by releasing excess blood.',
-              "To release evil spirits from the patient's body.",
-              'To allow fresh air into the circulatory system.',
-              'To test the blood for bacterial infections.',
-            ],
-          },
-          {
-            question: 'What was the role of a medieval apothecary?',
-            answer: 'Preparing and selling herbal remedies and potions.',
-            options: [
-              'Bleeding patients using leeches or cups.',
-              'Running the local hospital under Church supervision.',
-              'Preparing and selling herbal remedies and potions.',
-              'Performing complex surgical operations.',
-            ],
-          },
-          {
-            question: 'How did medieval hospitals differ from modern ones?',
-            answer: 'They provided shelter and care, not medical treatment.',
-            options: [
-              'They specialized in complex surgery and amputations.',
-              'They treated only plague victims during epidemics.',
-              'They were run by local town councils rather than the Church.',
-              'They provided shelter and care, not medical treatment.',
-            ],
-          },
-          {
-            question: "What was 'purging'?",
-            answer: 'Using laxatives or emetics to clear the digestive system.',
-            options: [
-              'Cutting open a vein to release bad blood.',
-              'Using laxatives or emetics to clear the digestive system.',
-              'Boiling clothes to kill fleas and lice.',
-              'Praying to God to purge sins from the soul.',
-            ],
-          },
-          {
-            question: 'What was the role of a medieval barber surgeon?',
-            answer: 'Performing minor surgery, pulling teeth, and bloodletting.',
-            options: [
-              'Diagnosing illness using urine charts and astrology.',
-              'Performing minor surgery, pulling teeth, and bloodletting.',
-              'Preparing and selling herbal remedies and potions.',
-              'Running the local monastic hospital.',
-            ],
-          },
-          {
-            question: "What was the 'Regimen Sanitatis'?",
-            answer: 'A set of instructions on diet, exercise, and hygiene to help prevent illness.',
-            options: [
-              'A religious pilgrimage undertaken to cure disease.',
-              'A herbal remedy sold by apothecaries.',
-              'A set of instructions on diet, exercise, and hygiene to help prevent illness.',
-              'A law passed by the King to clean the streets.',
-            ],
-          },
-          {
-            question: 'Which Roman physician developed the Theory of Opposites?',
-            answer: 'Galen.',
-            options: ['Galen.', 'Hippocrates.', 'Vesalius.', 'Harvey'],
-          },
-          {
-            question: "What was 'miasma'?",
-            answer: 'Bad air or noxious smells believed to cause disease.',
-            options: [
-              'An imbalance of the four humours.',
-              'A treatment involving bleeding and purging.',
-              'A holy water used by priests to cure illness.',
-              'Bad air or noxious smells believed to cause disease.',
-            ],
-          },
-          {
-            question: 'How did the medieval Church explain the cause of disease?',
-            answer: 'God sent disease as a punishment for sin or to test faith.',
-            options: [
-              'God sent disease as a punishment for sin or to test faith.',
-              'Imbalances in the solar system caused organs to fail.',
-              'Disease was spread by dirty water and bacteria.',
-              'Poor sanitation in large industrial cities.',
-            ],
-          },
-          {
-            question: 'What are the four humours?',
-            answer: 'Blood, phlegm, yellow bile, black bile.',
-            options: [
-              'Blood, phlegm, yellow bile, urine.',
-              'Blood, water, air, bile.',
-              'Blood, water, pus, black bile.',
-              'Blood, phlegm, yellow bile, black bile.',
-            ],
-          },
-        ],
-      },
-      fun_facts: [
-        '1348: The exact year the Black Death first arrived in England, spreading rapidly across the country.',
-        'One-third: The estimated proportion of the English population killed by the plague in just over a year.',
-        'Buboes: The dark, painful, pus-filled swellings in the armpit or groin that gave the bubonic plague its name.',
-      ],
-      guided_reading: [],
-      narrative_blocks: [
+      quick_quiz: [
         {
-          text: "**The Black Death Arrives**\n\nThe Black Death arrived in England in 1348 and killed roughly one-third of the population. People had no idea that the disease was caused by a bacteria carried by fleas on rats. Instead, they blamed the plague on God's anger, bad air (miasma), and the alignment of the planets.\n\nBecause they didn't know the true cause, their attempts to prevent it were completely ineffective. People prayed, marched through the streets whipping themselves, lit fires to drive away bad air, and carried sweet-smelling herbs. The government did try some public health measures, like ordering streets to be cleaned, but since the rats continued to roam freely, the plague spread uncontrollably.",
-          image: '/images/plague_burial.jpg',
-          image_alt: 'Source A: Citizens of Tournai Burying Plague Victims (1349)',
-          caption:
-            'The citizens of Tournai carrying wooden coffins to mass communal plague burial pits during the devastating Black Death epidemic of 1349.',
-          source_letter: 'A',
-          image_context:
-            'When the Black Death struck Europe in 1347–1349, it wiped out between 30% and 50% of the entire population. In London, parish churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside the walls (such as at East Smithfield). Normal religious funeral rites collapsed because clergy died in huge numbers, and frightened grave-diggers could not keep pace with the mounds of corpses. **Hinge Question:** What does the systematic stacking of identical wooden coffins in mass burial pits reveal about the breakdown of traditional Catholic funeral rites and social order during the Black Death?',
-        },
-        {
-          text: '**Ideas about the Cause of the Plague**\n\nMany people believed the plague was a terrifying punishment from God for their sins, sent to cleanse the world of wickedness.\n\nAstrologers blamed the outbreak on a strange and unusual alignment of the planets Mars, Jupiter, and Saturn that occurred in 1345.\n\nMiasma (bad air) was a very popular rational theory; people believed that foul, poisonous fumes released by distant earthquakes or rotting rubbish in the streets had corrupted the air they breathed. Because they did not understand that the disease was actually caused by bacteria carried by fleas living on black rats, they were entirely unable to fight the true root of the epidemic.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Identify the true cause of the Black Death.',
-              model: 'It was caused by a bacteria carried by fleas living on rats.',
-            },
-          ],
-          image: '/images/black_death.jpg',
-          image_alt: 'Source B: Plague Victim with Groin and Armpit Buboes (1497)',
-          caption:
-            'A bedridden plague victim showing painful inflamed lymph swellings (buboes) in the groin and neck, surrounded by weeping attendants.',
-          source_letter: 'B',
-          image_context:
-            'The bubonic plague, caused by the bacterium Yersinia pestis carried by black rat fleas, manifested in high fevers, internal bleeding (causing dark purple skin blotches), and excruciating swelling of the lymph glands in the neck, armpits, and groin. Medieval observers had no knowledge of bacteria or fleas; they believed the buboes were visible proof of humoural poisons and corrupt miasma boiling out of the blood. **Hinge Question:** Why did the terrifying appearance of neck and groin buboes convince contemporary doctors that the four humours had completely putrefied inside the body, and why did this lead to deadly treatments like lancing buboes with heated irons?',
-        },
-        {
-          text: "**Approaches to Treatment**\n\nPhysicians attempted to rebalance the humours using traditional methods like bloodletting and purging, but this only weakened patients and often made them die faster.\n\nSome surgeons tried lancing (cutting open) the buboes-the dark, painful swellings on the groin and armpits-to let the 'bad blood' and poison escape.\n\nApothecaries sold herbal remedies, including strong-smelling herbs like aloe and the expensive, spice-based mixture known as Theriaca. The complete failure of these medical treatments proved that the ancient ideas of Galen and Hippocrates were useless against serious epidemic diseases, though people were too terrified to abandon them entirely.",
-          tasks: [
-            {
-              type: 'written',
-              text: 'Describe two ways people tried to prevent the Black Death.',
-              model:
-                'People whipped themselves (flagellants) to beg God for forgiveness, and carried sweet-smelling herbs to block miasma.',
-            },
-          ],
-        },
-        {
-          text: '**Attempts to Prevent the Spread (Religious & Natural)**\n\nThe Catholic Church advised people to pray, fast, and go on a pilgrimage. Groups of Flagellants walked through the streets whipping themselves in public to beg for God\'s forgiveness.\n\nTo avoid breathing in miasma, people carried posies of sweet-smelling flowers to their noses, or lit large fires in the streets to purify the air.\n\nThe most effective natural method was simply running away; the Pope\'s physician, Guy de Chauliac, advised people to "go quickly, go far, and return slowly." Because prevention was mainly focused on spiritual healing or masking bad smells, the disease continued to spread effortlessly through flea bites, crippling the entire country.',
-          tasks: [
-            {
-              type: 'written',
-              text: "Explain why the government's response to the Black Death failed.",
-              model:
-                "Local authorities tried to clean the streets to remove bad air, but because they didn't know rats and fleas caused the disease, they didn't kill the rats, so the plague continued spreading.",
-            },
-          ],
-        },
-        {
-          text: '**Local Government Action**\n\nLocal authorities and King Edward III issued orders to clean the streets of animal dung and rotting waste to eliminate the bad air.\n\nSome towns tried to enforce early quarantine laws, isolating newcomers for 40 days or locking infected families inside their houses. Although local governments attempted to take action, they did not have the power or money to enforce these rules strictly, meaning the plague continued to spread rapidly across the country.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Evaluate the impact of the Black Death on medieval society.',
-              model:
-                'It had a massive impact, killing roughly one-third of the population. However, it did not lead to medical progress, as people continued to blame God and the planets instead of investigating the true cause.',
-            },
-          ],
-          hinge_question: {
-            text: "Why were the government's orders to clean the streets completely ineffective at stopping the Black Death?",
-            options: [
-              "Because the peasants refused to obey the King's laws.",
-              'Because the disease was actually a punishment from God.',
-              'Because they were trying to remove bad smells (miasma), but ignored the rats and fleas that actually spread the disease.',
-              'Because the dirt on the streets was actually killing the germs.',
-            ],
-            correct_index: 2,
-            explanation:
-              "The government took rational public health measures, but because Germ Theory didn't exist, their measures targeted the wrong cause (miasma) instead of the actual vector (flea-infested rats).",
-          },
-        },
-      ],
-      exam_practice: [
-        {
-          type: '16-mark',
-          marks: 16,
-          question:
-            "'The main reason why medical care and treatment was ineffective during the medieval period (c1250-c1500) was because medical knowledge was based on Galen's ideas.' How far do you agree? Explain your answer. (16 marks + 4 marks for SPaG)",
-          stimulus: ['The Four Humours', 'The Black Death'],
-          model_answer:
-            '<p style="margin-bottom: 1.5rem;">To a large extent, I agree with the statement that medical care and treatment were ineffective during the medieval period because medical knowledge was heavily based on the flawed anatomical and physiological ideas of Claudius Galen. However, other factors-specifically the pervasive belief in religious and supernatural causes of illness, the lack of scientific technology, and the nature of medieval care providers-were equally responsible for making medieval medicine ineffective.</p><p style="margin-bottom: 1.5rem;">On the one hand, Galen\'s theories were a primary cause of ineffective medical treatments because they locked physicians into a scientifically incorrect framework of diagnosis and therapy. Medical training in medieval universities was entirely based on memorising Galen\'s texts, which promoted the <strong>Theory of the Four Humours</strong>. Physicians believed that all illnesses were caused by an internal imbalance of blood, phlegm, yellow bile, and black bile. Consequently, the standard treatments they prescribed consisted of severe purging and <strong>bloodletting</strong> (via venesection, cupping, or leeching) to restore humoural balance. When patients were subjected to these treatments, particularly during severe illnesses, the loss of blood and fluids actually weakened their immune systems, often hastening their deaths. Furthermore, Galen\'s <strong>Theory of Opposites</strong> led to treating symptoms rather than the underlying disease; for example, a cold was treated with hot peppers and a fever with cold cucumbers, which had no clinical impact on the root infection. Because university degrees mandated the absolute study of Galen and discouraged independent clinical research, physicians were unable to develop new, effective treatments.</p><p style="margin-bottom: 1.5rem;">On the other hand, the cataclysmic outbreak of the <strong>Black Death</strong> in 1348 demonstrated that medieval medical care was also highly ineffective because of powerful supernatural and religious beliefs. Because the Catholic Church dominated all aspects of medieval thought, the most popular explanation for the plague was that God had sent it as a punishment for the sins of mankind. This led to entirely religious and ineffective responses; people flocked to churches to pray, fasted, went on pilgrimages to holy shrines, or joined groups of flagellants who publicly whipped themselves to beg for God\'s forgiveness. These actions not only failed to cure the sick, but the crowded religious gatherings and the open wounds of flagellants actually accelerated the physical spread of the plague. Additionally, physicians consulted <strong>astrology</strong> (blaming an unusual alignment of Mars, Jupiter, and Saturn in 1345) to time their humoural treatments. These non-Galenic, spiritual explanations completely prevented people from seeking rational, biological causes for the epidemic.</p><p style="margin-bottom: 1.5rem;">Furthermore, the general ineffectiveness of medieval care was exacerbated by a complete lack of scientific technology. Without microscopes, it was impossible for medieval people to discover the true cause of the Black Death-the *Yersinia pestis* bacterium carried by fleas on rats. Instead, they relied on the <strong>miasma theory</strong> (the belief that bad, smelly air caused illness). To prevent breathing in the "pestilential air," people carried sweet-smelling herbs called posies, lit street fires, or avoided bathing because they believed warm water opened the skin\'s pores to corrupt air. Because they lacked the technology to identify the true biological vectors of disease, even their most rational attempts at environmental sanitation and local quarantine were severely limited and largely ineffective.</p><p style="margin-bottom: 1.5rem;">Finally, socio-economic factors meant that the elite, Galenic medical care provided by physicians was completely inaccessible to the vast majority of the population who were poor. Peasants who fell ill relied instead on <strong>herbal remedies</strong> provided by local apothecaries or female family members in the home. Interestingly, these home-based treatments were sometimes *more* effective than the expensive physician\'s Galenic bleeding, as wise women and apothecaries used ingredients like honey and garlic, which modern science has proved possess natural antibacterial properties. This suggests that it was specifically the university-trained physicians\' rigid adherence to Galenic theory that made "professional" care so dangerous and ineffective.</p><p style="margin-bottom: 1.5rem;">In conclusion, I agree that Galen\'s ideas were a major cause of ineffective medical treatment, as his humoural theories led directly to physically harmful treatments like bloodletting and purging. However, Galen\'s ideas only remained so dominant because of the institutional power of the <strong>Catholic Church</strong>, which controlled medical universities, banned human dissection, and imprisoned anyone who challenged classical authority. Therefore, the primary and overarching reason for the ineffectiveness of medieval medical care was the institutional control of the Church, which successfully locked medical knowledge in a stagnant, pre-scientific state.</p>',
-          model:
-            "**To a moderate extent, I agree that the reliance on Claudius Galen's ideas was the primary cause of ineffective medical care and treatment in the Middle Ages.** Because Galen's unscientific physiological models were treated as absolute facts, medieval treatments were logically designed to target incorrect internal causes, often resulting in harmful clinical practices like bloodletting. However, Galen's authority was merely a symptom of a much larger, structural root cause: **the Catholic Church's absolute control over education**, which actively outlawed scientific dissection and exploration, combined with a **complete lack of microscopic diagnostic technology**.\n\n**On the one hand, medical care was heavily undermined because physicians based their treatments on Galen's unscientific ideas, particularly the Theory of Opposites.** Galen had expanded Hippocrates' Theory of the Four Humours by teaching that an excess or deficiency of blood, phlegm, yellow bile, or black bile caused all illnesses. Under the **Theory of Opposites**, Galen taught that a humoural imbalance should be treated with its opposite quality-for instance, treating a cold, wet fever with \"hot\" pepper or dry wine. Because Galen lacked correct knowledge of human anatomy-relying on the dissection of pigs and apes rather than humans-his writings contained major errors. However, medieval physicians accepted his texts as infallible. **Consequently**, when treating sick patients, they targeted incorrect humoural causes. This led directly to the near-universal practice of **bloodletting** (phlebotomy via cutting a vein or applying leeches) and purging. Rather than helping, draining blood from critically ill, infected, or elderly patients severely weakened their immune systems and often directly accelerated their deaths, proving that relying on Galen made clinical medicine highly dangerous.\n\n**On the other hand, the primary reason why these unscientific ideas remained dominant was because the medieval Catholic Church used its immense institutional power to freeze medical progress.** The Church strictly controlled the universities, libraries, and the copying of medical manuscripts. Because Galen's anatomical writings argued that the human body was so incredibly complex and purposeful that it must have been designed by a single \"Creator,\" his ideas aligned perfectly with Christian creation theology. **Consequently**, the Church declared Galen's texts infallible and banned human **dissection** for scientific research, believing that the physical body had to be buried whole to allow the soul to go to heaven. In rare academic demonstrations, the body of an executed criminal was dissected by an untrained assistant while the university professor sat far away, reading Galen's words aloud strictly to prove the book was correct. If an anatomical detail on the table contradicted the text, the professor would claim the body itself was deformed rather than questioning Galen. This religious monopoly completely blocked any progress.\n\n**Furthermore, medical care was ineffective due to the spiritual function of medieval hospitals and a complete lack of diagnostic technology.** Run by monks and nuns, the **1,100 charity hospitals** in England by 1500 did not aim to provide medical cures. Instead, their primary focus was on **spiritual care and hospitality**-providing the poor, travelers, and the elderly with shelter, clean sheets, and hot meals while preparing their souls for the afterlife. Patients suffering from highly infectious diseases (such as leprosy or the plague) or terminal illnesses were strictly excluded to prevent the spread of infection. Additionally, in an era before the invention of powerful microscopes, it was physically impossible to see microscopic bacteria or prove that pathogens caused infections. This lack of technology left medieval people with no alternative but to rely on other unscientific, non-Galenic ideas, such as believing that God sent the Black Death in 1348 as a punishment for sin or that bad air (miasma) corrupted the body's humours.\n\n**In conclusion, I only agree to a moderate extent that Galen was the main cause of ineffective medical care.** While it is true that humoural treatments like the **Theory of Opposites** were clinically harmful and biologically useless, Galen's ideas did not survive on their merit. The true root cause of medical stagnation was the institutional authority of the **Church**, which used its control over libraries and education to ban human dissection and prosecute free-thinkers. Without the intellectual freedom to experiment, and lacking the microscope technology required to discover microbes, medieval medicine was structurally doomed to remain ineffective.",
-        },
-      ],
-      ai_revision_pack: {
-        images: [
-          '/assets/infographics/KT1.3 Medieval c1250-c1500 The Black Death/Black Death History Revision Guide.png',
-          '/assets/infographics/KT1.3 Medieval c1250-c1500 The Black Death/Medieval Black Death History Overview.png',
-        ],
-        videos: [],
-        documents: [],
-      },
-      extended: {
-        question:
-          'Describe two features of how medieval people tried to prevent the spread of the Black Death. (4 marks)',
-        starter: 'One feature is...',
-        model:
-          '<strong>Grade 9 Model Answer:</strong><br>One feature is that people carried sweet-smelling herbs (posies) or lit large fires in the streets, believing this would purify the miasma (bad air) that they thought was spreading the disease. A second feature is that local authorities attempted early quarantine measures, such as isolating newcomers or locking infected families inside their houses for 40 days.',
-      },
-      vocab: [
-        {
-          term: 'Buboes',
-          definition:
-            'Painful, pus-filled swellings in the armpits and groin characteristic of the bubonic plague.',
-        },
-        {
-          term: 'Flagellants',
-          definition:
-            'Religious zealots who whipped themselves publicly to demonstrate penance and beg God to lift the plague.',
-        },
-        {
-          term: 'Quarantine',
-          definition:
-            'The practice of isolating infected individuals or ships for forty days to stop the contagion from spreading.',
-        },
-        {
-          term: 'Miasma',
-          definition:
-            "Corrupt 'bad air' blamed for causing the Black Death, prompting people to carry posies and burn sweet-smelling wood.",
-        },
-        {
-          term: 'Pestilence',
-          definition:
-            'A fatal, devastating epidemic disease, specifically the catastrophic plague that struck England in 1348.',
-        },
-        {
-          term: 'Compulsory Isolation',
-          definition:
-            'Emergency civic regulations requiring houses with infected family members to be locked and boarded up.',
-        },
-      ],
-      vocab_cloze_text:
-        "When the devastating [Pestilence] reached England in the summer of 1348, victims developed excruciating, swollen [Buboes] before dying within days. Terrified communities burned aromatic wood and herbs to dispel corrupt [Miasma], while groups of [Flagellants] marched between towns whipping themselves in public to appease God's wrath. Town councils attempted to enforce [Compulsory Isolation] by boarding up infected houses, while ports imposed a strict forty-day [Quarantine] on arriving ships to prevent the lethal contagion from spreading.",
-      pair_share: {
-        prompt:
-          'Was the medieval response to the Black Death dominated more by desperate spiritual panic or by logical, rational attempts at disease prevention based on the scientific ideas of the time?',
-        think:
-          'Jot down your choice and one piece of evidence (e.g., the public whipping of the flagellants vs. mayors ordering rakers to clear dung and waste from the streets to stop bad air).',
-        pair: 'Take turns explaining your choice, arguing whether spiritual panic or rational action dictated public behavior more.',
-        share:
-          "Be ready to report your partner's best point, focusing on how they defended their side of the argument.",
-      },
-      gcse_task: {
-        title: 'Edexcel 12-Mark Essay Practice (Section B)',
-        tasks: [
-          {
-            type: 'written',
-            text: 'Explain why the Black Death spread so rapidly in Britain in 1348. (12 marks)',
-            model:
-              'The rapid and devastating transmission of the Black Death in 1348 was heavily accelerated by the **appallingly unhygienic living conditions** within medieval towns. Urban environments were characterized by overcrowded housing, narrow streets, and a total absence of proper sewage systems or clean water infrastructure. Citizens routinely dumped household waste, rotting food, and human excrement directly onto the streets, creating a highly attractive breeding ground for black rats (*Rattus rattus*). **Consequently**, fleas infested with the *Yersinia pestis* bacteria multiplied rapidly on the rats and easily transferred onto humans who lived in close proximity. Because families slept crowded together in poorly ventilated, damp timber homes, flea-to-human and human-to-human transmission occurred with extreme speed, allowing the plague to engulf entire urban populations in a matter of weeks.<br><br>A second major factor was that **deeply held religious beliefs** led medieval populations to employ highly counterproductive preventative measures. Because people had no concept of germs, the Church taught that the epidemic was sent directly by God as a punishment for human sin. **This led directly to** a complete failure to implement effective biological quarantine measures. Instead, desperate populations huddled together in massive daily religious processions and crowded church services to beg God for forgiveness. Similarly, groups of **flagellants** traveled between towns publicly whipping themselves to show penance, which actively carried the highly contagious flea-borne and airborne pneumonic pathogens directly into previously uninfected rural communities. **As a result**, these crowded, unhygienic religious gatherings turned into biological hotspots, allowing the plague to multiply unchecked.<br><br>Furthermore, the transmission was driven by the **complete lack of correct scientific knowledge** regarding infectious pathogens, combined with a weak, decentralized government. Because people blamed the plague on supernatural planetary alignments or corrupt air known as **miasma**, they focused on useless preventions like carrying sweet-smelling herbs or burning tar. Crucially, the central government maintained a strict **laissez-faire** administrative structure. King Edward III and his council collected no national taxes for public health and took virtually no national action to restrict travel, leaving town mayors entirely unequipped to enforce quarantine or systematically clear filth. **This meant that** infected traders, soldiers, and refugees moved freely from infected ports like Melcombe Regis to the rest of the country, ensuring the epidemic spread to every corner of Britain.',
-          },
-        ],
-      },
-      learning_objectives: {
-        overarching: 'To explore: How did people respond to the Black Death',
-        scaffolded: [
-          'Explain the religious and supernatural responses to the Black Death.',
-          'Analyse the rational and governmental methods used to prevent and treat the plague.',
-        ],
-      },
-      starters: [],
-      quiz: [
-        {
-          question: 'In which year did the Black Death first arrive on the shores of England?',
-          options: ['1345', '1349', '1348', '1350'],
-          answer: 2,
-        },
-        {
-          question:
-            'What is the actual scientific cause of the Black Death, and how was it primarily spread during the Middle Ages?',
+          question: 'Where were university-trained physicians educated in medieval Europe?',
           options: [
-            'Vibrio cholerae bacteria, transmitted through water contaminated with human faeces',
-            'Yersinia pestis bacteria, carried in the digestive systems of fleas on black rats',
-            'Anaerobic gas gangrene, spread by contact with heavily manured agricultural soil',
-            'A respiratory influenza virus, transmitted through stagnant moisture in the air',
+            'At universities like Oxford, Paris, and Bologna studying Latin texts for 7–10 years.',
+            'At public grammar schools.',
+            'Inside royal naval dockyards.',
+            'Through 3-year manual apprenticeships with barber guilds.',
           ],
-          answer: 1,
+          answer:
+            'At universities like Oxford, Paris, and Bologna studying Latin texts for 7–10 years.',
+          explanation:
+            'Physicians studied ancient Latin treatises for nearly a decade; hands-on dissection was rare.',
         },
         {
-          question:
-            'Which astrological event in the year 1345 was widely blamed by medieval scholars for causing the Black Death?',
+          question: 'Why were university-trained physicians socially superior to barber-surgeons?',
           options: [
-            'A rare lunar eclipse that turned the moon a deep blood-red',
-            'An unusual alignment of the planets Mars, Jupiter, and Saturn',
-            'A total solar eclipse that blocked out the sun across Europe',
-            'The appearance of a bright, sweeping comet in the night sky',
+            'They possessed exclusive rights to compound herbal Theriac.',
+            'They were educated in Latin, studied classical theory, and did not perform manual labor.',
+            'They performed all major abdominal surgeries in hospitals.',
+            'They were personally appointed by the Pope.',
           ],
-          answer: 1,
+          answer:
+            'They were educated in Latin, studied classical theory, and did not perform manual labor.',
+          explanation:
+            'Medieval intellectual hierarchy valued theoretical book-learning far above manual craftsmanship.',
         },
         {
-          question:
-            'What was the name of the hard, painful, pus-filled swellings that appeared in the armpits and groin of Black Death victims?',
-          options: ['Tokens', 'Miasmas', 'Humours', 'Buboes'],
-          answer: 3,
-        },
-        {
-          question:
-            'Which lung-based variant of the plague was spread directly through coughing and sneezing, was 100% fatal, and killed victims much faster?',
-          options: ['Trench fever', 'Septicaemic plague', 'Pneumonic plague', 'Bubonic plague'],
-          answer: 2,
-        },
-        {
-          question:
-            "Why did the religious groups known as 'flagellants' whip themselves publicly in the streets of London?",
+          question: 'What manual procedures did guild-trained barber-surgeons perform?',
           options: [
-            'To show God they were sorry for their sins and beg Him to stop the plague',
-            'To demonstrate to onlookers that their faith made them immune to pain',
-            'To clear the bad air (miasma) with the rapid, whipping motion of their cords',
-            'To physically balance their humours by forcing blood to escape the body',
+            'Teaching Latin grammar at Oxford University.',
+            'Preaching sermons and administering holy communion.',
+            'Compounding imported chemical drugs.',
+            'Pulling teeth, bloodletting, stitching wounds, and lancing boils.',
           ],
-          answer: 0,
+          answer: 'Pulling teeth, bloodletting, stitching wounds, and lancing boils.',
+          explanation:
+            'Barber-surgeons performed all practical manual surgery without anesthetics or antiseptics.',
         },
         {
-          question:
-            'What natural disaster did medieval people believe had cracked open the earth, releasing the poisonous fumes (miasma) that caused the plague?',
+          question: 'What did apothecaries do in the medieval medical division of labour?',
           options: [
-            'A massive flood of the River Thames',
-            'A subterranean landslide in rural valleys',
-            'A volcanic eruption or earthquake',
-            'A severe winter frost that split the soil',
+            'Served as full-time hospital surgeons.',
+            'Issued royal quarantine orders during epidemics.',
+            'Formulated and dispensed herbal syrups, ointments, and medicines.',
+            'Conducted clinical post-mortem dissections on corpses.',
           ],
-          answer: 2,
+          answer: 'Formulated and dispensed herbal syrups, ointments, and medicines.',
+          explanation:
+            'Organised into merchant guilds, apothecaries mixed and sold herbal and spice remedies.',
         },
         {
           question:
-            "Which French physician to the Pope famously advised people to 'Go quickly, go far, and return slowly' to survive the Black Death?",
-          options: ['Guy de Chauliac', 'Thomas Sydenham', 'Harvey Cushing', 'Hippocrates'],
-          answer: 0,
-        },
-        {
-          question:
-            'Under the local quarantine rules introduced during the Black Death, how long were travelers new to an area forced to stay away from others?',
-          options: ['14 days', '40 days', '28 days', '60 days'],
-          answer: 1,
-        },
-        {
-          question:
-            'Why did local authorities in some medieval towns deliberately stop sweeping and cleaning the streets during the Black Death?',
+            'Who provided the vast majority of day-to-day healthcare for ordinary medieval peasants?',
           options: [
-            'Because they believed sweeping would stir up dry plague dust into the air',
-            'Because the King ordered that all public labor must be redirected to church construction',
-            'Because they ran out of public taxes to pay the street rakers',
-            'Because they believed the foul stench of rotting waste would drive away the plague miasma',
+            'Hospital doctors operating specialized clinics.',
+            'Women, mothers, and local wise women caring for sick family members in the home.',
+            'Traveling Italian pharmacists.',
+            'University physicians charging modest charitable fees.',
           ],
-          answer: 3,
+          answer:
+            'Women, mothers, and local wise women caring for sick family members in the home.',
+          explanation:
+            'Most people could not afford professionals; domestic women brewed herbal remedies and acted as midwives.',
         },
         {
-          question:
-            'Why were medieval local governments largely unsuccessful in fully enforcing quarantine laws during the 1348 epidemic?',
+          question: 'What was the central purpose of a medieval hospital run by monks and nuns?',
           options: [
-            'Because university-trained physicians declared that quarantine was medically dangerous',
-            'Because they did not realize the plague could spread from person to person',
-            'Because they lacked power, meaning the rich moved freely and the Church ran services as normal',
-            'Because the King vetoed all quarantine rules to protect overseas trade',
+            'Conducting scientific trials on new pharmacological drugs.',
+            'Performing complex surgical amputations in sterile operating theatres.',
+            '‘Care not cure’: providing hospitality, warmth, food, and prayer for the soul.',
+            'Quarantining victims of the bubonic plague.',
           ],
-          answer: 2,
+          answer: '‘Care not cure’: providing hospitality, warmth, food, and prayer for the soul.',
+          explanation:
+            'Hospitals provided shelter, basic nursing, and religious services; medical treatments were not attempted.',
         },
         {
           question:
-            'Which traditional treatment did medieval physicians try on Black Death patients that actually made them die more quickly?',
+            'Which of the following patient groups was strictly EXCLUDED from medieval monastic hospitals?',
           options: [
-            'Administering cold baths and cool cucumber slices',
-            'Bleeding and purging',
-            'Placing sweet-smelling herbs under their noses',
-            'Lancing the buboes to let the pus run out',
+            'The elderly and infirm poor.',
+            'Impoverished church clerics.',
+            'Traveling religious pilgrims.',
+            'Infectious patients (lepers, plague victims) and pregnant women.',
           ],
-          answer: 1,
+          answer: 'Infectious patients (lepers, plague victims) and pregnant women.',
+          explanation:
+            'Hospitals barred infectious patients to preserve peace, avoid contamination, and protect prayers.',
         },
         {
           question:
-            'Which treatment occasionally allowed a Black Death patient to survive if it was done successfully by a barber-surgeon?',
+            'What famous London hospital was founded in 1123 by Rahere to care for the poor?',
           options: [
-            'Cauterizing the open sores with hot iron rods',
-            'Transfusing fresh blood from a healthy animal donor',
-            "Trepanning a small hole in the patient's skull",
-            'Cutting open (lancing) the buboes to drain the pus',
+            'St Bartholomew’s Hospital.',
+            'Guy’s Hospital.',
+            'Florence Nightingale Hospital.',
+            'The Royal Free Hospital.',
           ],
-          answer: 3,
-        },
-        {
-          question:
-            'Approximately what percentage of the English population is estimated to have died during the Black Death epidemic of 1348-49?',
-          options: [
-            'Between 30% and 50% (nearly one-third to one-half)',
-            'Over 80%',
-            'Roughly 10% to 15%',
-            'Virtually 100%',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'In which year did King Edward III write his famous letter to the Mayor of London complaining about the filthy, death-carrying air of the city?',
-          options: ['1349', '1348', '1350', '1345'],
-          answer: 0,
-        },
-        {
-          question:
-            'Which popular, spice-based medieval medicine containing up to 70 ingredients (including opium) was prescribed as an antidote during the Black Death?',
-          options: ['Salvarsan 606', 'Antimony', 'Prontosil', 'Theriaca'],
-          answer: 3,
-        },
-        {
-          question:
-            "Which of the following was a common way people tried to prevent 'bad air' (miasma) from entering their bodies during the Black Death?",
-          options: [
-            'Boiling all of their drinking water',
-            'Carrying sweet-smelling herbs, flowers, or spices',
-            'Soaking their trade coins in jars of vinegar',
-            'Massmuting and killing all dogs and cats in the town',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "Why is it historically incorrect to write about 'searchers', 'red crosses on doors', or 'killing 40,000 dogs' in a GCSE answer about the 1348 Black Death?",
-          options: [
-            'Because those actions were strictly banned by the Catholic Church as heresy',
-            'Because those actions were invented by Florence Nightingale during the Crimean War',
-            'Because those specific administrative preventions occurred only during the 1665 Great Plague',
-            'Because those techniques were only developed after the creation of the NHS in 1948',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Why did the plague return to England periodically every 10 to 20 years after the first 1348 outbreak?',
-          options: [
-            'Because unhygienic, crowded, and rat-infested living conditions remained completely unchanged',
-            'Because the local authorities continued to purge the water supply with bad air',
-            'Because the government banned the use of vaccines and magic bullets',
-            'Because the positions of the planets Mars, Jupiter, and Saturn aligned every decade',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Where do historians believe the Black Death first broke out before traveling along trade routes to Sicily, Europe, and finally England?',
-          options: [
-            'The Western Front',
-            'The New World (the Americas)',
-            'Rome',
-            'The Far East (such as China)',
-          ],
-          answer: 3,
+          answer: 'St Bartholomew’s Hospital.',
+          explanation:
+            'St Bartholomew’s was founded in 1123 as an Augustinian priory hospital caring for the poor.',
         },
       ],
       flashcards: [
         {
-          term: '1348',
-          definition:
-            'The year the Black Death first arrived in England, eventually killing around one-third of the population.',
+          q: 'What was the training of a medieval university physician?',
+          a: '7 to 10 years of theoretical book-learning at universities like Oxford or Paris, studying Latin translations of Galen and Hippocrates, with almost zero hands-on clinical practice.',
         },
         {
-          term: 'Flagellants',
-          definition:
-            'Religious extremists who publicly whipped themselves to show God they were sorry for their sins, hoping to avoid the plague.',
+          q: 'What was the role of a barber-surgeon?',
+          a: 'Guild-apprenticed craftsmen who performed manual surgery: bloodletting, pulling teeth, suturing wounds, lancing boils, and amputations without anaesthetics.',
         },
         {
-          term: 'Quarantine',
-          definition:
-            'A local government prevention method where infected houses were boarded up for 40 days to stop the spread.',
+          q: 'What did apothecaries do?',
+          a: 'Guild merchants who mixed and sold herbal remedies, ointments, and syrups based on traditional recipes and Galen’s Theory of Opposites.',
+        },
+        {
+          q: 'What was the primary purpose of a medieval monastic hospital?',
+          a: '‘Care not cure’: providing hospitality, clean bedding, warmth, food, and continuous prayer facing a chapel altar, without medical doctors or surgery.',
+        },
+        {
+          q: 'Who was excluded from medieval monastic hospitals?',
+          a: 'Infectious patients (lepers, plague victims), the insane, and pregnant women were turned away to maintain spiritual peace and prayer.',
         },
       ],
-      draw_tasks: {
-        title: 'Plague Symptoms',
-        instructions:
-          'Draw a patient suffering from the bubonic plague, clearly labeling the key symptom: a large, dark swelling (bubo) in the armpit or groin.',
+      draw_tasks: [
+        {
+          title: 'Diagram: The Medieval Medical Hierarchy',
+          instruction:
+            'Sketch a diagram illustrating the hierarchy of healers: Physician at the top (with Latin book and matula), Barber-Surgeon (with razor and fleam), Apothecary (with mortar and pestle), and Wise Woman in the home.',
+        },
+      ],
+    },
+    {
+      id: 'lesson_1_5',
+      title: 'KT1.5: Case Study: Dealing with the Black Death (1348–1349)',
+      specification_anchor:
+        'Case study: dealing with the Black Death, 1348–49; approaches to treatment and attempts to prevent its spread.',
+      enquiry_question:
+        'Why were medieval communities, doctors, and civic authorities completely powerless to stop the Black Death?',
+      living_timeline_mission: {
+        target_milestones: 'Milestones 4 & 5 (1348 & 1349)',
+        pages: 'Pages 2–3',
+        instruction:
+          "Turn back to Pages 2–3 (Milestones 4 & 5). In the sketchpad frame, sketch the mass burial pit at East Smithfield and annotate Edward III’s mandate: 'Clean the streets of pestilential filth!'",
       },
-      video: [
+      timeline_anchor: [
         {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=YhsPPBGtquo',
-          title: 'Black Death - Timelines.tv',
-          duration: '6 mins 33 secs',
-          viewing_task:
-            'Explain how the Black Death entered Britain in 1348, how it spread, and what medieval people believed caused the disease.',
-          model_answer:
-            'The Black Death entered southern England through coastal ports (such as Melcombe Regis in Dorset) in the summer of 1348 aboard merchant trade ships. Carried by fleas living on black rats, it spread rapidly along river and road trade networks. Medieval people had no knowledge of bacteria or microbiology, believing the devastating pestilence was caused by divine retribution from God, astrological conjunctions, or corrupting miasma.',
+          date: 'June 1348',
+          title: 'Arrival at Melcombe Regis',
+          desc: 'Plague-infected black rats and fleas land on trade ships from Gascony, rapidly spreading through Dorset and southern England.',
         },
         {
-          url: 'https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-the-symptoms-of-black-death-and-how-it-spread/',
-          title:
-            'Bbc Two A History Of Britain By Simon Schama Series 1 King Death The Symptoms Of Black Death And How It Spread',
+          date: 'Autumn 1348',
+          title: 'London Engulfed by Pestilence',
+          desc: 'Churchyards overflow within weeks; emergency communal trench pits are dug at East Smithfield as 30–50% of the population perishes.',
         },
         {
-          url: 'https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-medieval-treatment-and-beliefs-on-the-cause-of-the-black-death/',
-          title:
-            'Bbc Two A History Of Britain By Simon Schama Series 1 King Death Medieval Treatment And Beliefs On The Cause Of The Black Death',
+          date: 'April 1349',
+          title: 'King Edward III’s Sanitary Order',
+          desc: 'King Edward III orders the Mayor of London to clear human dung and animal filth from streets to eliminate corrupt miasma.',
+        },
+      ],
+      delivery_plan: {
+        format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+        lesson_1: {
+          title: 'Lesson 1: Symptoms, Transmission & Believed Causes (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Hook & Spaced Retrieval',
+              instruction:
+                'Complete Do Now retrieval on medieval hospitals. Display Source A (Tournai plague burials). Explore the sudden catastrophe of 1348.',
+            },
+            {
+              time: '10–30m',
+              label: 'Modelled Shared Reading & Discussion',
+              instruction:
+                'Read Acts 1 & 2 with paragraph signposting ([1.1] to [2.2]). Deconstruct the 2 strains (bubonic vs pneumonic) and believed causes (God, 1345 alignment, miasma).',
+            },
+            {
+              time: '30–45m',
+              label: 'Analytical Assessment Ledger',
+              instruction:
+                'Complete Disciplinary Vocabulary Distinction (Bubonic Swellings vs Pneumonic Airborne Transmission).',
+            },
+            {
+              time: '45–50m',
+              label: 'Formative Check & Plenary',
+              instruction:
+                'Teacher poses Hinge Question 1 on Source A. Pupils log key takeaways on their Living Timeline.',
+            },
+          ],
+        },
+        lesson_2: {
+          title: 'Lesson 2: Treatments, Civic Action & Evaluative Essay (50 mins)',
+          phases: [
+            {
+              time: '00–10m',
+              label: 'Retrieval & Visual Forensic Inspection',
+              instruction:
+                'Inspect Source B (Plague Victim with Buboes). Discuss why lancing buboes with hot irons failed to save infected patients.',
+            },
+            {
+              time: '10–25m',
+              label: 'Deconstruct Acts 3 & 4 (Civic Sanitation & Flagellants)',
+              instruction:
+                'Contrast religious panic (flagellants whipping themselves) with civic orders (Edward III ordering London cleaned of dung).',
+            },
+            {
+              time: '25–45m',
+              label: 'Deliberate Exam Practice (16+4m)',
+              instruction:
+                'Complete Question 5/6 Essay: ‘The main reason why people failed to prevent the spread of the Black Death in 1348–49 was belief in supernatural causes.’ How far do you agree? [16+4m].',
+            },
+            {
+              time: '45–50m',
+              label: 'Self-Assessment & D.I.R.T.',
+              instruction:
+                'Pupils assess their balanced criteria judgement against the Grade 9 exemplar and complete the back-cover ledger.',
+            },
+          ],
+        },
+      },
+      teacher_notes: {
+        primer:
+          'The overarching pedagogical goal of this lesson is to examine how the Black Death exposed the total impotence of medieval medicine. Without Germ Theory or microscopes, neither religious rituals, humoural purges, nor civic street cleaning could stop the flea-borne bacterium Yersinia pestis, resulting in devastating demographic collapse.',
+        objectives: [
+          {
+            objective: 'Explain the symptoms, real causes, and believed causes of the Black Death.',
+            primer:
+              'Direct pupils to paragraphs [1.1] and [2.1]. Contrast the real biological mechanism (rat fleas, Yersinia pestis) with medieval beliefs (God’s anger, 1345 astrological alignment, miasma).',
+            question:
+              'Why did medieval people believe the 1345 planetary conjunction and foul smells caused the Black Death instead of rats and fleas?',
+          },
+          {
+            objective: 'Analyse treatments, attempts at prevention, and government responses.',
+            primer:
+              'Focus on paragraphs [3.1] and [4.1]. Examine flagellants, street fires, posies, lancing buboes, and Edward III’s 1349 order to the Mayor of London.',
+            question:
+              'Why did public religious processions and flagellation actually accelerate the spread of the Black Death rather than stopping it?',
+          },
+        ],
+      },
+      do_now: {
+        type: 'questions',
+        title: 'Spaced Retrieval Do Now: Practitioners & Hospitals',
+        instructions:
+          'Answer the four recall questions below based on your learning in Lesson 1.4.',
+        items: [
+          {
+            question: 'What was the primary purpose of a medieval monastic hospital?',
+            answer:
+              '‘Care not cure’: providing hospitality, warmth, food, and prayer for the soul.',
+            options: [
+              'Compounding synthetic antibiotic drugs.',
+              'Performing emergency amputations and dissections.',
+              'Training medical students in human surgical anatomy.',
+              '‘Care not cure’: providing hospitality, warmth, food, and prayer for the soul.',
+            ],
+          },
+          {
+            question:
+              'Which of the following was strictly excluded from medieval monastic hospitals?',
+            answer: 'Infectious patients (lepers, plague victims) and pregnant women.',
+            options: [
+              'Catholic monks and nuns.',
+              'Elderly poor citizens.',
+              'Infectious patients (lepers, plague victims) and pregnant women.',
+              'Traveling religious pilgrims.',
+            ],
+          },
+          {
+            question:
+              'What medical practitioners performed practical surgery and bloodletting in medieval England?',
+            answer: 'Guild-trained barber-surgeons.',
+            options: [
+              'Guild-trained barber-surgeons.',
+              'University-trained physicians.',
+              'Monastic bishops.',
+              'Royal apothecaries.',
+            ],
+          },
+          {
+            question: 'Where did university physicians receive their formal medical education?',
+            answer:
+              'At ecclesiastical universities like Oxford, Paris, and Bologna studying Latin texts.',
+            options: [
+              'At military field dressing stations.',
+              'At ecclesiastical universities like Oxford, Paris, and Bologna studying Latin texts.',
+              'Through manual apprenticeships on pirate ships.',
+              'Inside London craft barber guilds.',
+            ],
+          },
+        ],
+      },
+      narrative_blocks: [
+        {
+          act: 1,
+          act_title: 'Context: The Arrival & Deadly Symptoms of the Pestilence',
+          text: '<span class="para-ref">[1.1]</span> In June 1348, ships from Gascony carrying wine docked at the port of Melcombe Regis in Dorset. Unbeknownst to the sailors, their cargo harboured black rats carrying fleas infected with the deadly bacterium Yersinia pestis. Within weeks, the catastrophic epidemic known as the Black Death broke out, sweeping relentlessly across England along trade routes and engulfing London by autumn. Between 1348 and 1350, the pestilence decimated the country, killing an estimated 30% to 50% of the entire population—over 1.5 million people.\n\n<span class="para-ref">[1.2]</span> The disease manifested in two terrifying clinical forms. The most prevalent was Bubonic Plague, transmitted by the bites of infected black rat fleas. Victims suffered from agonizing high fevers, shivering, violent vomiting, dark subcutaneous hemorrhages (causing purple blotches called "God’s tokens"), and large, painful inflammatory swellings of the lymph nodes in the groin, armpits, and neck, termed buboes. Buboes swelled to the size of apples, blackened, and oozed foul pus; untreated, victims died in agony within 3 to 5 days. The second, even deadlier form was Pneumonic Plague, which occurred when the bacterium infected the lungs. Spread directly through the air via coughs and breath, pneumonic plague caused victims to cough up black blood, killing almost 100% of sufferers within 48 hours.',
+          source: {
+            id: 'source_a_burial',
+            letter: 'A',
+            title: 'Source A: Citizens of Tournai Burying Plague Victims (1349)',
+            src: '/images/plague_burial.jpg',
+            source: '/images/plague_burial.jpg',
+            image: '/images/plague_burial.jpg',
+            caption:
+              'The citizens of Tournai carrying wooden coffins to mass communal plague burial pits during the devastating Black Death epidemic of 1349.',
+            provenance:
+              'Illumination by Pierart dou Tielt, Gilles Li Muisis chronicle, MS 13076-77, Bibliothèque Royale de Belgique, Brussels, 1349.',
+            context:
+              'When the Black Death struck Europe in 1348–1349, it wiped out between 30% and 50% of the population. Churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside town walls.',
+            question:
+              'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
+            hinge_question:
+              'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
+          },
+        },
+        {
+          act: 2,
+          act_title: 'Escalation: Explaining the Apocalypse—God, Astrology & Miasma',
+          text: '<span class="para-ref">[2.1]</span> Entirely ignorant of microscopic bacteria or flea vectors, medieval society explained the catastrophe through established religious and humoural doctrines. The primary explanation was Supernatural: the Church preached that God had sent the plague as divine retribution to punish humanity for its wickedness, pride, and greed. Many believed the end of the world had arrived. Simultaneously, astrologers pointed to the March 1345 planetary conjunction of Saturn, Jupiter, and Mars in Aquarius, claiming celestial alignment had corrupted the atmosphere.\n\n<span class="para-ref">[2.2]</span> On an earthly level, Miasma theory was universally blamed. Physicians claimed that foul, pestilential air caused by unburied decomposing bodies, stagnant cesspits, animal dung, and poisonous vapors rising from earthquakes had entered victims’ bodies, completely corrupting their humours. In mainland Europe, panic also sparked xenophobic scapegoating; Jews were falsely accused of poisoning drinking wells, leading to horrific pogroms, though in England, the Jewish population had already been expelled by King Edward I in 1290.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Using paragraphs [2.1]–[2.2], explain the three main causes medieval people believed were responsible for the Black Death.',
+              model:
+                'Medieval people believed the Black Death had three main causes: 1. Supernatural: God sent the plague as divine punishment for human wickedness and sin; 2. Astrological: An unusual alignment of Mars, Jupiter, and Saturn in 1345 corrupted the cosmos; 3. Environmental: Miasma (poisonous, corrupt air from unburied bodies, filth, and marshes) poisoned bodily humours upon inhalation.',
+            },
+          ],
+        },
+        {
+          act: 3,
+          act_title: 'Forensic Evidence: Desperate Treatments & Religious Panic',
+          text: '<span class="para-ref">[3.1]</span> Because people believed God was punishing them, religious responses were frenzied. The King and bishops ordered daily church services, fasting, and massive public religious processions. Most extreme were the Flagellants: sects of penitent men who marched from town to town stripped to the waist, whipping themselves with iron-tipped scourges to appease God’s anger. Tragically, these large public gatherings and bleeding flagellants actively accelerated the transmission of pneumonic plague and flea vectors between communities.\n\n<span class="para-ref">[3.2]</span> Medical treatments were completely ineffective and frequently agonizing. Physicians and barber-surgeons applied heated cupping glasses or lanced swollen buboes with red-hot irons to drain "corrupt humours," which caused excruciating pain and deadly secondary blood infections. Other doctors strapped live, plucked chickens or toads to the buboes, believing the creatures would draw out the poison. Patients were force-fed Theriac or made to drink crushed emeralds and vinegar, while homes were sealed to prevent bad air from entering.',
+          source: {
+            id: 'source_b_buboes',
+            letter: 'B',
+            title: 'Source B: Plague Victim with Groin and Armpit Buboes (1497)',
+            src: '/images/black_death.jpg',
+            source: '/images/black_death.jpg',
+            image: '/images/black_death.jpg',
+            caption:
+              'A bedridden plague victim showing painful inflamed lymph swellings (buboes) in the groin and neck, surrounded by weeping attendants.',
+            provenance: 'Woodcut of St. Sebastian interceding for plague victims, Augsburg, 1497.',
+            context:
+              'Bubonic plague caused excruciating lymph swellings. Medieval observers had no knowledge of bacteria or fleas; they believed buboes were visible proof of humoural poisons boiling out of the blood.',
+            question:
+              'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
+            hinge_question:
+              'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
+          },
+        },
+        {
+          act: 4,
+          act_title: 'Historical Verdict: Civic Action, Edward III & Social Collapse',
+          text: '<span class="para-ref">[4.1]</span> To combat miasma, local authorities and ordinary people made desperate attempts at environmental prevention. Citizens lit large bonfires in public squares, burned fragrant rosemary and incense, and continuously carried sweet posies or held sponges soaked in vinegar to their faces. Some towns attempted quarantine: Gloucester shut its gates to outsiders, though travelers simply carried the disease along country lanes. In London, parish churchyards overflowed within weeks, forcing the Bishop of London to consecrate emergency communal trench pits at East Smithfield, where bodies were stacked five deep.\n\n<span class="para-ref">[4.2]</span> In April 1349, King Edward III intervened, writing a stern mandate to the Mayor of London complaining that the streets were choked with human faeces, rotting animal dung, and putrefying entrails, generating a stench that was poisoning citizens. He ordered the streets to be thoroughly cleaned to clear the miasma. However, because authorities had no police force or civil service, and because the true vector—fleas on black rats—remained entirely unknown, street cleaning could not halt the pandemic. The Black Death wiped out up to half of England’s population, shattering feudal social structures and proving the total helplessness of medieval medicine.',
+          tasks: [
+            {
+              type: 'exam_practice',
+              tariff: '[16+4 marks]',
+              question:
+                '‘The main reason why people failed to prevent the spread of the Black Death in 1348–49 was belief in supernatural causes.’ How far do you agree? Explain your answer.',
+              stimulus: ['Punishment from God', 'Miasma (bad air)'],
+              model:
+                'On the one hand, belief in supernatural causes was a primary reason why people failed to prevent the spread of the Black Death because it led communities to adopt religious reactions that actively worsened the epidemic. In 1348, the Catholic Church taught that the pestilence was sent directly by God as divine retribution to punish human wickedness. Consequently, authorities and ordinary people believed that the only effective response was spiritual appeasement. Bishops ordered daily church services, public fasting, and massive crowded religious processions, while groups like the Flagellants marched between towns whipping themselves in public squares. Tragically, gathering hundreds of people together in churches and public squares created ideal conditions for the pneumonic plague to spread rapidly through coughs and breath, while crowded streets enabled black rat fleas to jump between hosts. Because people fatalistically believed God alone controlled their fate, they failed to implement scientific hygiene measures or strict isolation.\n\nOn the other hand, failure to contain the disease was heavily driven by the universal belief in Miasma theory. Medical scholars from the University of Paris officially blamed the plague on the 1345 planetary conjunction of Mars, Jupiter, and Saturn, which they believed generated poisonous vapors from the earth. Furthermore, people believed that breathing foul air corrupted the humours. This belief led to prevention methods that were completely ineffective against bacteria and rat fleas: citizens lit fires in the streets, burned incense, shuttered windows, and carried sweet-smelling posies and pomanders. While people spent time and resources trying to mask bad smells, they did nothing to eliminate the real vectors—black rats and fleas living in thatched roofs, dirt floors, and crowded timber houses. Furthermore, medieval doctors had no understanding of contagion or bacteria; treatments like lancing buboes with hot irons caused severe blood loss and secondary infections, hastening death.\n\nIn conclusion, while belief in supernatural causes led to fatalistic religious processions that accelerated contagion, the fundamental reason why people failed to stop the Black Death was the complete absence of scientific knowledge regarding Germ Theory and flea vectors. Even when civic authorities attempted practical public health measures—such as King Edward III ordering the Mayor of London to clean dung from the streets in 1349, or Gloucester closing its gates to outsiders—they were completely powerless because neither doctors, councils, nor the King understood that microscopic Yersinia pestis bacteria carried by fleas on black rats was the true cause of the plague.',
+            },
+          ],
         },
       ],
       sources: [
         {
-          id: 'source_a',
+          id: 'source_a_burial',
           letter: 'A',
           title: 'Source A: Citizens of Tournai Burying Plague Victims (1349)',
           src: '/images/plague_burial.jpg',
@@ -2741,14 +2373,14 @@ export const unitData = {
           provenance:
             'Illumination by Pierart dou Tielt, Gilles Li Muisis chronicle, MS 13076-77, Bibliothèque Royale de Belgique, Brussels, 1349.',
           context:
-            'When the Black Death struck Europe in 1347–1349, it wiped out between 30% and 50% of the entire population. In London, parish churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside the walls (such as at East Smithfield). Normal religious funeral rites collapsed because clergy died in huge numbers, and frightened grave-diggers could not keep pace with the mounds of corpses.',
+            'When the Black Death struck Europe in 1348–1349, it wiped out between 30% and 50% of the population. Churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside town walls.',
           question:
             'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
           hinge_question:
             'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
         },
         {
-          id: 'source_b',
+          id: 'source_b_buboes',
           letter: 'B',
           title: 'Source B: Plague Victim with Groin and Armpit Buboes (1497)',
           src: '/images/black_death.jpg',
@@ -2758,29 +2390,138 @@ export const unitData = {
             'A bedridden plague victim showing painful inflamed lymph swellings (buboes) in the groin and neck, surrounded by weeping attendants.',
           provenance: 'Woodcut of St. Sebastian interceding for plague victims, Augsburg, 1497.',
           context:
-            'The bubonic plague, caused by the bacterium Yersinia pestis carried by black rat fleas, manifested in high fevers, internal bleeding (causing dark purple skin blotches), and excruciating swelling of the lymph glands in the neck, armpits, and groin. Medieval observers had no knowledge of bacteria or fleas; they believed the buboes were visible proof of humoural poisons and corrupt miasma boiling out of the blood.',
+            'Bubonic plague caused excruciating lymph swellings. Medieval observers had no knowledge of bacteria or fleas; they believed buboes were visible proof of humoural poisons boiling out of the blood.',
           question:
             'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
           hinge_question:
             'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
         },
       ],
-      essay_planning: {
-        statement:
-          "'The main reason why medical care and treatment was ineffective during the medieval period (c1250–c1500) was because medical knowledge was based on Galen's ideas.' How far do you agree? Explain your answer.",
-        marks: '16 marks + 4 marks for SPaG',
-        stimulus: ['The Four Humours', 'The Black Death'],
-        supporting_factors: [
-          "Galen's flawed humoural physiology and Theory of Opposites led directly to physically harmful clinical treatments like severe bloodletting (phlebotomy) and purging, which severely weakened infected patients.",
-          "Medical education strictly required physicians to memorise Galen's texts rather than conduct practical research; treatments targeted humoural symptoms (e.g. cold cucumbers for fever) rather than underlying infections.",
-        ],
-        counter_factors: [
-          'Pervasive supernatural and religious beliefs during crises like the Black Death (1348), where populations relied on public flagellation, prayer, and pilgrimages that actively accelerated contagion rather than containing it.',
-          'Monastic hospitals (over 1,100 in England by 1500) were run by monks and nuns to provide hospitality and spiritual care for the soul rather than physical medical cures, strictly excluding infectious victims.',
-        ],
-        criteria_prompt:
-          "Weigh the relative importance: Did Galen's flawed anatomical models cause treatment failures, or did religious doctrine prioritizing spiritual salvation over biological cure prevent effective healthcare?",
-      },
+      quick_quiz: [
+        {
+          question: 'Where did the Black Death first arrive in England in June 1348?',
+          options: [
+            'The Tower of London.',
+            'Portsmouth Dockyard in Hampshire.',
+            'The port of Dover in Kent.',
+            'Melcombe Regis in Dorset.',
+          ],
+          answer: 'Melcombe Regis in Dorset.',
+          explanation:
+            'Trade ships carrying wine from Gascony landed at Melcombe Regis carrying plague-infected black rats and fleas.',
+        },
+        {
+          question: 'What bacterium, unknown to medieval people, actually caused the Black Death?',
+          options: [
+            'Yersinia pestis.',
+            'Streptococcus pneumoniae.',
+            'Vibrio cholerae.',
+            'Mycobacterium leprae.',
+          ],
+          answer: 'Yersinia pestis.',
+          explanation:
+            'Yersinia pestis was the bacterium carried in the gut of black rat fleas (Xenopsylla cheopis).',
+        },
+        {
+          question:
+            'What were the agonizing, swollen lymph glands in the groin and armpits called?',
+          options: ['Miasmas.', 'Vademecums.', 'Buboes.', 'Carbuncles.'],
+          answer: 'Buboes.',
+          explanation: 'Buboes were swollen, inflamed lymph nodes that blackened and oozed pus.',
+        },
+        {
+          question: 'How was the pneumonic form of the plague transmitted between humans?',
+          options: [
+            'Through eating rotten meat.',
+            'Through coughs, sneezes, and breath directly through the air.',
+            'Through drinking infected well water.',
+            'Through touching churchyard soil.',
+          ],
+          answer: 'Through coughs, sneezes, and breath directly through the air.',
+          explanation:
+            'Pneumonic plague infected the lungs and was highly contagious via airborne droplets.',
+        },
+        {
+          question: 'Who were the Flagellants who appeared during the Black Death epidemic?',
+          options: [
+            'Guild barber-surgeons employed to lance buboes.',
+            'Religious sects who marched from town to town whipping themselves to appease God’s wrath.',
+            'Royal tax collectors sent by Edward III.',
+            'Parish gravediggers digging emergency trench pits.',
+          ],
+          answer:
+            'Religious sects who marched from town to town whipping themselves to appease God’s wrath.',
+          explanation:
+            'Flagellants believed self-inflicted punishment would convince God to forgive human sins.',
+        },
+        {
+          question: 'What did King Edward III order the Mayor of London to do in April 1349?',
+          options: [
+            'Clean human faeces and animal dung from London streets to clear corrupt miasma.',
+            'Close all Catholic churches and cancel Mass.',
+            'Execute all barber-surgeons who failed to cure patients.',
+            'Burn down all infected wooden houses in the city.',
+          ],
+          answer: 'Clean human faeces and animal dung from London streets to clear corrupt miasma.',
+          explanation:
+            'Edward III complained that filthy streets were generating foul miasma that poisoned the city.',
+        },
+        {
+          question:
+            'What proportion of England’s entire population is estimated to have died during the Black Death?',
+          options: [
+            'Over 90%.',
+            'Roughly 10%.',
+            'Less than 5%.',
+            'Between 30% and 50% (over 1.5 million people).',
+          ],
+          answer: 'Between 30% and 50% (over 1.5 million people).',
+          explanation:
+            'Historians estimate between one-third and one-half of the population perished in 1348–1350.',
+        },
+        {
+          question:
+            'Why did emergency mass burial pits have to be dug outside city walls at East Smithfield in London?',
+          options: [
+            'The King passed a law requiring all deaths to be buried in the River Thames.',
+            'The Catholic Church refused to bury plague victims in consecrated ground.',
+            'Parish churchyards overflowed with corpses within weeks of the outbreak.',
+            'Doctors demanded corpses be buried near hospitals for anatomical research.',
+          ],
+          answer: 'Parish churchyards overflowed with corpses within weeks of the outbreak.',
+          explanation:
+            'The sheer volume of deaths quickly overwhelmed parish churchyards, requiring mass trench graves.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'When and where did the Black Death enter England?',
+          a: 'June 1348 at the port of Melcombe Regis in Dorset, arriving on trade ships from Gascony carrying plague-infected black rats and fleas.',
+        },
+        {
+          q: 'What were the two strains of the Black Death?',
+          a: '1. Bubonic plague (transmitted by rat flea bites, causing agonizing groin/armpit buboes); 2. Pneumonic plague (airborne via coughs/breath, attacking lungs, nearly 100% fatal).',
+        },
+        {
+          q: 'What were believed causes of the Black Death in 1348?',
+          a: 'God’s punishment for sin, the 1345 planetary conjunction of Mars, Jupiter, and Saturn in Aquarius, and corrupt miasma from rotting filth and unburied corpses.',
+        },
+        {
+          q: 'Who were the Flagellants?',
+          a: 'Penitent religious sects who marched between towns whipping themselves with iron-tipped scourges to appease God’s wrath, unintentionally spreading the plague.',
+        },
+        {
+          q: 'What was King Edward III’s sanitary order in 1349?',
+          a: 'A royal mandate to the Mayor of London ordering streets cleared of human faeces and animal dung to eliminate the foul miasma believed to spread the pestilence.',
+        },
+      ],
+      draw_tasks: [
+        {
+          title: 'Diagram: The Two Strains of the Black Death',
+          instruction:
+            'Sketch a comparison diagram of Bubonic plague (rat flea, bubo on groin/armpit) vs Pneumonic plague (airborne cough droplets, lungs).',
+        },
+      ],
     },
     {
       id: 'lesson_2_1',
@@ -3095,8 +2836,8 @@ export const unitData = {
           options: [
             'It made every peasant in Europe immediately literate in medical Latin.',
             'It allowed identical texts and anatomical diagrams to be mass-produced quickly without copyist errors, bypassing Church censorship.',
-            'It proved that the Four Humours did not exist by analyzing ink chemistry.',
             'It forced all universities to close down and burn ancient manuscripts.',
+            'It proved that the Four Humours did not exist by analyzing ink chemistry.',
           ],
           answer:
             'It allowed identical texts and anatomical diagrams to be mass-produced quickly without copyist errors, bypassing Church censorship.',
@@ -3107,10 +2848,10 @@ export const unitData = {
           question:
             'What is the official Latin motto of the Royal Society, and what is its English translation?',
           options: [
-            "'Cogito Ergo Sum' ('I think, therefore I am').",
-            "'Carpe Diem' ('Seize the day').",
-            "'Nullius in Verba' ('Take nobody\\'s word for it').",
             "'In Vino Veritas' ('In wine there is truth').",
+            "'Carpe Diem' ('Seize the day').",
+            "'Cogito Ergo Sum' ('I think, therefore I am').",
+            "'Nullius in Verba' ('Take nobody\\'s word for it').",
           ],
           answer: "'Nullius in Verba' ('Take nobody\\'s word for it').",
           explanation:
@@ -3120,10 +2861,10 @@ export const unitData = {
           question:
             "What was the name of the world's first peer-reviewed scientific journal, published by the Royal Society in 1665?",
           options: [
+            'Philosophical Transactions',
+            'The Lancet',
             'Observationes Medicae',
             'De Humani Corporis Fabrica',
-            'The Lancet',
-            'Philosophical Transactions',
           ],
           answer: 'Philosophical Transactions',
           explanation:
@@ -3132,10 +2873,10 @@ export const unitData = {
         {
           question: "What was the 'Renaissance Paradox' in medical history?",
           options: [
-            'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
-            'Fewer people died of plague even though no doctors existed.',
-            'The Catholic Church supported dissections while outlawing the printing press.',
             'Physicians became much poorer while university fees tripled.',
+            'Fewer people died of plague even though no doctors existed.',
+            'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
+            'The Catholic Church supported dissections while outlawing the printing press.',
           ],
           answer:
             'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
@@ -3518,9 +3259,9 @@ export const unitData = {
           question:
             'What nickname was given to Thomas Sydenham because of his emphasis on bedside observation?',
           options: [
-            'The Father of Surgery',
-            'The Roman Galen',
             'The English Hippocrates',
+            'The Roman Galen',
+            'The Father of Surgery',
             'The London Alchemist',
           ],
           answer: 'The English Hippocrates',
@@ -3531,10 +3272,10 @@ export const unitData = {
           question:
             'Name the 1676 book in which Sydenham set out his methods of clinical observation.',
           options: [
-            'Micrographia',
-            'Observationes Medicae',
-            'De Humani Corporis Fabrica',
             'Philosophical Transactions',
+            'Observationes Medicae',
+            'Micrographia',
+            'De Humani Corporis Fabrica',
           ],
           answer: 'Observationes Medicae',
           explanation:
@@ -3545,9 +3286,9 @@ export const unitData = {
             'What treatment did Sydenham prescribe for malaria fevers, imported from South America?',
           options: [
             'Mercury ointment',
-            'Cinchona bark (quinine)',
-            'Leeches and vinegar',
             'Boiling elderberry oil',
+            'Leeches and vinegar',
+            'Cinchona bark (quinine)',
           ],
           answer: 'Cinchona bark (quinine)',
           explanation:
@@ -3557,10 +3298,10 @@ export const unitData = {
           question:
             'Which two childhood illnesses did Sydenham successfully prove were separate diseases?',
           options: [
-            'Measles and scarlet fever',
-            'Tuberculosis and cholera',
             'Typhoid and dysentery',
             'Smallpox and plague',
+            'Measles and scarlet fever',
+            'Tuberculosis and cholera',
           ],
           answer: 'Measles and scarlet fever',
           explanation:
@@ -3945,7 +3686,7 @@ export const unitData = {
       quiz: [
         {
           question: 'In what year did Andreas Vesalius publish De Humani Corporis Fabrica?',
-          options: ['1628', '1665', '1543', '1476'],
+          options: ['1628', '1476', '1665', '1543'],
           answer: '1543',
           explanation:
             'Vesalius published De Humani Corporis Fabrica in 1543, the same year Copernicus published his theory that the Earth revolved around the Sun.',
@@ -3954,10 +3695,10 @@ export const unitData = {
           question:
             'At which famous Italian university did Vesalius serve as professor of surgery?',
           options: [
+            'University of Padua',
+            'University of Oxford',
             'University of Bologna',
             'University of Paris',
-            'University of Oxford',
-            'University of Padua',
           ],
           answer: 'University of Padua',
           explanation:
@@ -3965,7 +3706,7 @@ export const unitData = {
         },
         {
           question: 'How many anatomical errors made by Galen did Vesalius identify and correct?',
-          options: ['Exactly 12 errors', 'Over 2,000 errors', 'Zero errors', 'Over 300 errors'],
+          options: ['Exactly 12 errors', 'Over 300 errors', 'Over 2,000 errors', 'Zero errors'],
           answer: 'Over 300 errors',
           explanation:
             'Vesalius proved over 300 of Galen’s anatomical descriptions were false because Galen had dissected animals rather than humans.',
@@ -3973,10 +3714,10 @@ export const unitData = {
         {
           question: 'State one specific anatomical error of Galen corrected by Vesalius.',
           options: [
-            'The human brain is completely hollow.',
-            'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
             'Human blood is purple rather than red.',
             'The human heart has 5 chambers instead of 4.',
+            'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
+            'The human brain is completely hollow.',
           ],
           answer:
             'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
@@ -4357,7 +4098,7 @@ export const unitData = {
       quiz: [
         {
           question: 'In what year did William Harvey publish De Motu Cordis?',
-          options: ['1628', '1543', '1676', '1665'],
+          options: ['1628', '1543', '1665', '1676'],
           answer: '1628',
           explanation: 'Harvey published De Motu Cordis in Frankfurt in 1628.',
         },
@@ -4366,8 +4107,8 @@ export const unitData = {
             'Which ancient theory of blood production did Harvey disprove through mathematical calculations?',
           options: [
             "Hippocrates' theory that blood is made in the spleen",
-            "Aristotle's theory that blood is created by breathing air",
             "Galen's theory that the liver constantly manufactures blood from food",
+            "Aristotle's theory that blood is created by breathing air",
             "Vesalius's theory that blood is stored in the bones",
           ],
           answer: "Galen's theory that the liver constantly manufactures blood from food",
@@ -4377,7 +4118,7 @@ export const unitData = {
         {
           question:
             'What tiny blood vessels connecting arteries and veins could Harvey NOT see without a microscope?',
-          options: ['Ligatures', 'Aortas', 'Vena cavas', 'Capillaries'],
+          options: ['Vena cavas', 'Ligatures', 'Aortas', 'Capillaries'],
           answer: 'Capillaries',
           explanation:
             'Capillaries were invisible to the naked eye; Marcello Malpighi discovered them in 1661 using a microscope.',
@@ -4386,10 +4127,10 @@ export const unitData = {
           question:
             "Why did Harvey's discovery of blood circulation have NO immediate effect on medical treatment?",
           options: [
+            'The King banned the practice of medicine across England.',
+            'All patients refused to let doctors touch their pulses.',
             'Doctors did not know what caused infection and continued bloodletting to balance humours.',
             'Harvey burned all his research papers before dying.',
-            'All patients refused to let doctors touch their pulses.',
-            'The King banned the practice of medicine across England.',
           ],
           answer:
             'Doctors did not know what caused infection and continued bloodletting to balance humours.',
@@ -4747,8 +4488,8 @@ export const unitData = {
         {
           question: 'Roughly how many Londoners died during the Great Plague of 1665?',
           options: [
-            'Over 1 million',
             'About 5,000',
+            'Over 1 million',
             'Over 100,000 (roughly 20%)',
             'Less than 1,000',
           ],
@@ -4772,10 +4513,10 @@ export const unitData = {
           question:
             'Why was the slaughter of 200,000 cats and dogs in 1665 a catastrophic mistake?',
           options: [
-            'The meat was needed to feed citizens during quarantine.',
-            'It removed the natural predators of black rats, allowing the flea-carrying rat population to explode.',
             'Cats and dogs were the only animals that could smell the plague bacteria.',
+            'The meat was needed to feed citizens during quarantine.',
             'It angered the King, who punished the Lord Mayor.',
+            'It removed the natural predators of black rats, allowing the flea-carrying rat population to explode.',
           ],
           answer:
             'It removed the natural predators of black rats, allowing the flea-carrying rat population to explode.',
@@ -4786,10 +4527,10 @@ export const unitData = {
           question:
             'Which event in September 1666 helped bring an end to the plague epidemic in London?',
           options: [
-            'A severe drought that dried up the Thames',
-            'The arrival of Penicillin',
             'The Great Fire of London',
             'The coronation of a new King',
+            'A severe drought that dried up the Thames',
+            'The arrival of Penicillin',
           ],
           answer: 'The Great Fire of London',
           explanation:
@@ -4906,10 +4647,10 @@ export const unitData = {
             question: 'What did William Harvey discover about the human body?',
             answer: 'Blood circulates around the body, pumped by the heart.',
             options: [
+              'Blood circulates around the body, pumped by the heart.',
               'Bacteria are the cause of cholera and the plague.',
               'The brain is the center of the nervous system.',
               'The human jawbone consists of two separate bones.',
-              'Blood circulates around the body, pumped by the heart.',
             ],
           },
           {
@@ -4917,26 +4658,26 @@ export const unitData = {
             answer:
               'Galen believed the liver constantly manufactured new blood which was consumed by the body.',
             options: [
-              'Galen believed the liver constantly manufactured new blood which was consumed by the body.',
               'Galen believed that bloodletting was useless.',
               'Galen argued that veins had valves that stopped backflow.',
+              'Galen believed the liver constantly manufactured new blood which was consumed by the body.',
               'Galen claimed that blood was pumped by the lungs.',
             ],
           },
           {
             question: 'In what year did the Great Plague hit London?',
             answer: '1665.',
-            options: ['1854.', '1543.', '1665.', '1348.'],
+            options: ['1854.', '1348.', '1543.', '1665.'],
           },
           {
             question: "What was 'transference'?",
             answer:
               'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
             options: [
-              'Transferring blood from a healthy donor to a sick patient.',
-              'The process of printing books using movable type.',
               'Moving sick patients from monasteries to city hospitals.',
               'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
+              'Transferring blood from a healthy donor to a sick patient.',
+              'The process of printing books using movable type.',
             ],
           },
           {
@@ -4955,25 +4696,25 @@ export const unitData = {
             answer:
               "An English physician who advocated observing patients' symptoms rather than relying on books.",
             options: [
-              "An English physician who advocated observing patients' symptoms rather than relying on books.",
               'The scientist who discovered penicillin.',
-              'A surgeon who discovered that blood circulates around the body.',
               "A monk who translated Galen's works into English.",
+              "An English physician who advocated observing patients' symptoms rather than relying on books.",
+              'A surgeon who discovered that blood circulates around the body.',
             ],
           },
           {
             question: "Who wrote 'On the Fabric of the Human Body' (1543)?",
             answer: 'Andreas Vesalius.',
-            options: ['Andreas Vesalius.', 'William Harvey.', 'Galen.', 'Thomas Sydenham.'],
+            options: ['Andreas Vesalius.', 'William Harvey.', 'Thomas Sydenham.', 'Galen.'],
           },
           {
             question: 'What invention helped spread new medical ideas during the Renaissance?',
             answer: 'The printing press.',
             options: [
-              'The steam engine.',
-              'The printing press.',
-              'The telegraph.',
               'The microscope.',
+              'The steam engine.',
+              'The telegraph.',
+              'The printing press.',
             ],
           },
           {
@@ -4981,20 +4722,20 @@ export const unitData = {
             answer:
               'The scientific method promoted questioning old authorities, and the Reformation weakened Church power.',
             options: [
+              'The scientific method promoted questioning old authorities, and the Reformation weakened Church power.',
+              'The invention of the printing press was declared illegal by bishops.',
               'The Church was officially banned by Renaissance monarchs.',
               'Everyone became atheists during the Renaissance.',
-              'The invention of the printing press was declared illegal by bishops.',
-              'The scientific method promoted questioning old authorities, and the Reformation weakened Church power.',
             ],
           },
           {
             question: "What did Vesalius prove about Galen's anatomical ideas?",
             answer: 'Galen had made over 300 mistakes because he dissected animals, not humans.',
             options: [
-              'Galen was 100% correct in every anatomical diagram.',
-              "Galen's books were written by fake physicians.",
-              'Galen had made over 300 mistakes because he dissected animals, not humans.',
               "Galen's Theory of Opposites was scientifically true.",
+              "Galen's books were written by fake physicians.",
+              'Galen was 100% correct in every anatomical diagram.',
+              'Galen had made over 300 mistakes because he dissected animals, not humans.',
             ],
           },
         ],
@@ -5234,42 +4975,42 @@ export const unitData = {
           question:
             "Before Louis Pasteur's Germ Theory was accepted, what was the popular scientific theory that claimed microscopic organisms were the result rather than the cause of decay?",
           options: [
+            'The Theory of Opposites',
             'The Theory of the Four Humours',
             'The theory of Spontaneous Generation',
             'The Miasma theory',
-            'The Theory of Opposites',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             'How did the theory of Spontaneous Generation differ from the traditional theory of Miasma?',
           options: [
+            'Spontaneous Generation blamed divine intervention, while Miasma blamed planetary alignments.',
             'Spontaneous Generation argued that rotting or decaying matter naturally produced microbes, while Miasma claimed that foul-smelling air transmitted disease.',
             'There was no difference; both terms were identical names for the Theory of the Four Humours.',
-            'Spontaneous Generation blamed divine intervention, while Miasma blamed planetary alignments.',
             'Spontaneous Generation claimed that germs were passed through contaminated water, while Miasma claimed germs were inherited genetically.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             'In which year did Louis Pasteur publish his landmark Germ Theory, and what was he originally investigating that led to this discovery?',
           options: [
+            '1882; investigating the spread of tuberculosis in industrial factories',
+            '1861; investigating why liquids like beetroot alcohol and wine went sour',
             '1796; investigating why milkmaids were immune to smallpox',
             '1854; investigating the Broad Street cholera outbreak in London',
-            '1861; investigating why liquids like beetroot alcohol and wine went sour',
-            '1882; investigating the spread of tuberculosis in industrial factories',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question:
             'Which famous piece of laboratory equipment did Louis Pasteur use to prove that microbes in the air caused decay, rather than the air itself creating them?',
           options: [
             'An agar jelly dish stained with industrial aniline dyes',
-            'A glass clyster tube filled with bicarbonate of soda',
             'A compound microscope with improved glass lenses',
+            'A glass clyster tube filled with bicarbonate of soda',
             'Swan-neck flasks that kept sterilized liquids fresh by trapping airborne dust',
           ],
           answer: 3,
@@ -5278,23 +5019,23 @@ export const unitData = {
           question:
             'How did the publication of Germ Theory in 1861 immediately affect everyday medical treatments for the general public in Britain?',
           options: [
+            'It prompted the British government to immediately build the London sewer system and establish the NHS.',
+            'It made everyday herbal remedies illegal, forcing patients to seek high-tech surgery instead.',
             'It had very little immediate impact on everyday treatments, as most doctors resisted the theory and continued to use traditional remedies.',
             'It led to the immediate creation of synthetic antibiotics to cure common infections.',
-            'It made everyday herbal remedies illegal, forcing patients to seek high-tech surgery instead.',
-            'It prompted the British government to immediately build the London sewer system and establish the NHS.',
           ],
-          answer: 0,
+          answer: 2,
         },
         {
           question:
             "Why did many traditional British doctors and the British government initially reject Pasteur's Germ Theory in the 1860s?",
           options: [
-            'Because Pasteur refused to show his experiments in public or share his printed texts.',
+            'Because Pasteur was a university chemist, not a licensed medical doctor, and his work focused primarily on food and drink rather than human disease.',
             "Because Robert Koch proved that Pasteur's swan-neck flask experiments were completely falsified.",
             "Because the Catholic Church officially declared Germ Theory to be a heretical challenge to Galen's texts.",
-            'Because Pasteur was a university chemist, not a licensed medical doctor, and his work focused primarily on food and drink rather than human disease.',
+            'Because Pasteur refused to show his experiments in public or share his printed texts.',
           ],
-          answer: 3,
+          answer: 0,
         },
         {
           question:
@@ -5311,20 +5052,20 @@ export const unitData = {
           question:
             "Which breakthrough laboratory methodology did Robert Koch develop that allowed scientists to grow and study 'pure' cultures of specific bacteria without them getting mixed up?",
           options: [
-            'Using heated swan-neck flasks to keep airborne germs away',
             'Growing bacteria on solid agar jelly derived from seaweed in a flat dish',
-            'Transfusing contaminated animal blood into healthy human volunteers',
+            'Using heated swan-neck flasks to keep airborne germs away',
             'Exposing bacterial samples to high-pressure steam in autoclaves',
+            'Transfusing contaminated animal blood into healthy human volunteers',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'Why did Robert Koch begin using synthetic aniline dyes in his bacteriological research?',
           options: [
-            'To prove that dyes imported from the New World could cure tuberculosis',
-            'To stain the transparent bacteria so they would stand out and be clearly visible under a microscope',
             'To chemically destroy the microbes before they could infect laboratory staff',
+            'To stain the transparent bacteria so they would stand out and be clearly visible under a microscope',
+            'To prove that dyes imported from the New World could cure tuberculosis',
             'To disinfect his hands and surgical instruments before performing animal dissections',
           ],
           answer: 1,
@@ -5333,34 +5074,34 @@ export const unitData = {
           question:
             'Which deadly disease-causing microbe did Robert Koch successfully identify and isolate in the year 1882, which was the biggest killer in Victorian Britain?',
           options: [
-            'The Tuberculosis (TB) microbe',
+            'The Plague bacillus (Yersinia pestis)',
             'The Cholera microbe',
             'The Tetanus bacillus',
-            'The Plague bacillus (Yersinia pestis)',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            "Which of the following is a common chronological error regarding Robert Koch's use of microscopes?",
-          options: [
-            'Believing that microscopes were only invented after the creation of the NHS in 1948.',
-            'Believing that Koch refused to use microscopes because he preferred chemical tests.',
-            'Believing that the British government banned Koch from importing microscopes from France.',
-            "Believing that Koch was the first person to invent the microscope, when in fact Antonie van Leeuwenhoek had observed 'animalcules' back in the 17th century.",
+            'The Tuberculosis (TB) microbe',
           ],
           answer: 3,
         },
         {
           question:
-            "How did Robert Koch's work fundamentally change the way British medical scientists studied diseases?",
+            "Which of the following is a common chronological error regarding Robert Koch's use of microscopes?",
           options: [
-            'They focused entirely on mapping the human genome to find genetic mutations.',
-            'They abandoned laboratory science in favor of direct, spiritual bedside observation.',
-            'They stopped studying the physical symptoms of patients and began studying the specific microbes causing the disease.',
-            'They stopped using chemical drugs and reverted back to traditional humoural bloodletting.',
+            'Believing that Koch refused to use microscopes because he preferred chemical tests.',
+            'Believing that microscopes were only invented after the creation of the NHS in 1948.',
+            "Believing that Koch was the first person to invent the microscope, when in fact Antonie van Leeuwenhoek had observed 'animalcules' back in the 17th century.",
+            'Believing that the British government banned Koch from importing microscopes from France.',
           ],
           answer: 2,
+        },
+        {
+          question:
+            "How did Robert Koch's work fundamentally change the way British medical scientists studied diseases?",
+          options: [
+            'They abandoned laboratory science in favor of direct, spiritual bedside observation.',
+            'They stopped studying the physical symptoms of patients and began studying the specific microbes causing the disease.',
+            'They focused entirely on mapping the human genome to find genetic mutations.',
+            'They stopped using chemical drugs and reverted back to traditional humoural bloodletting.',
+          ],
+          answer: 1,
         },
         {
           question:
@@ -5371,60 +5112,60 @@ export const unitData = {
         {
           question:
             "In 1870, which physicist supported Pasteur's Germ Theory by theorizing that disease-carrying germs were spread through microscopic dust particles in the air?",
-          options: ['John Tyndall', 'Harvey Cushing', 'Robert Koch', 'William Harvey'],
+          options: ['John Tyndall', 'Harvey Cushing', 'William Harvey', 'Robert Koch'],
           answer: 0,
         },
         {
           question:
             'In what way did the work of Pasteur and Koch eventually lead to massive progress in the prevention of disease by the late 19th century?',
           options: [
-            'It convinced the government to make blood transfusions free on the NHS.',
-            'It led to the immediate discovery of penicillin and streptomycin.',
             'It allowed scientists to identify specific bacteria and subsequently develop targeted vaccines for multiple diseases.',
             'It proved that lifestyle choices like smoking were the primary cause of lung cancer.',
+            'It led to the immediate discovery of penicillin and streptomycin.',
+            'It convinced the government to make blood transfusions free on the NHS.',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
             'How did the intense scientific and political rivalry between France (Pasteur) and Germany (Koch) affect medical progress?',
           options: [
-            'It slowed down progress because both countries banned the export of microscopes.',
-            'It accelerated progress because both governments funded research teams who raced to identify the microbes for cholera, pneumonia, and plague.',
             'It had no impact because the scientific community refused to publish their findings in peer-reviewed journals.',
             'It led to both scientists abandoning their research to serve as military doctors in WWI.',
+            'It slowed down progress because both countries banned the export of microscopes.',
+            'It accelerated progress because both governments funded research teams who raced to identify the microbes for cholera, pneumonia, and plague.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'According to the Theory of Spontaneous Generation, where did microbes come from?',
           options: [
             'They were breathed in from foul miasma rising from cesspits.',
-            'They were transmitted through the bites of fleas on black rats.',
-            'They were sent directly by God as a punishment for moral sins.',
             'They were created by decaying or rotting matter.',
+            'They were sent directly by God as a punishment for moral sins.',
+            'They were transmitted through the bites of fleas on black rats.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             "How did Louis Pasteur's swan-neck flask experiments specifically disprove Spontaneous Generation?",
           options: [
-            'By demonstrating that transparent bacteria turned purple when exposed to aniline dyes.',
-            'By showing that microbes existed in the air first and caused decay, and that if air was kept out, no decay or germs appeared in the liquid.',
-            'By proving that boiling a liquid completely destroyed its chemical molecular structure.',
             'By proving that dirty water could be filtered using a broad sand filter.',
+            'By proving that boiling a liquid completely destroyed its chemical molecular structure.',
+            'By showing that microbes existed in the air first and caused decay, and that if air was kept out, no decay or germs appeared in the liquid.',
+            'By demonstrating that transparent bacteria turned purple when exposed to aniline dyes.',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             "Why is it historically inaccurate to state that Edward Jenner developed his 1796 smallpox vaccine as a direct result of Pasteur's Germ Theory?",
           options: [
             "Because Jenner's work occurred over 60 years before Pasteur published Germ Theory, meaning Jenner did not actually understand why his vaccine worked.",
-            'Because Jenner used cowpox rather than bacteria to immunize patients.',
             'Because smallpox is caused by a virus, which Pasteur argued did not exist.',
+            'Because Jenner used cowpox rather than bacteria to immunize patients.',
             'Because the British government banned Jenner from reading French scientific papers.',
           ],
           answer: 0,
@@ -5432,8 +5173,8 @@ export const unitData = {
         {
           question:
             'In 1883, Robert Koch traveled to Egypt and Calcutta to identify the specific microbe causing which deadly water-borne epidemic?',
-          options: ['Tuberculosis', 'Tetanus', 'Cholera', 'Diphtheria'],
-          answer: 2,
+          options: ['Tetanus', 'Diphtheria', 'Tuberculosis', 'Cholera'],
+          answer: 3,
         },
       ],
       flashcards: [
@@ -5585,26 +5326,26 @@ export const unitData = {
             question: "What was 'Spontaneous Generation'?",
             answer: 'The belief that microbes and decay appeared spontaneously out of dead matter.',
             options: [
-              'The theory that diseases were generated by bad air (miasma).',
               'The discovery that bacteria reproduce using cell division.',
-              'The process of creating vaccines in laboratories.',
               'The belief that microbes and decay appeared spontaneously out of dead matter.',
+              'The theory that diseases were generated by bad air (miasma).',
+              'The process of creating vaccines in laboratories.',
             ],
           },
           {
             question: 'Who published the Germ Theory in 1861?',
             answer: 'Louis Pasteur.',
-            options: ['Robert Koch.', 'Louis Pasteur.', 'Edward Jenner', 'Alexander Fleming.'],
+            options: ['Edward Jenner', 'Robert Koch.', 'Louis Pasteur.', 'Alexander Fleming.'],
           },
           {
             question: 'What did Robert Koch contribute to Germ Theory?',
             answer:
               'He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).',
             options: [
+              'He invented the smallpox vaccine using cowpox.',
               'He proved that blood circulation was driven by the heart.',
               'He discovered penicillin in a petri dish.',
               'He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).',
-              'He invented the smallpox vaccine using cowpox.',
             ],
           },
           {
@@ -5622,9 +5363,9 @@ export const unitData = {
             question: 'What method did Robert Koch use to isolate and photograph bacteria?',
             answer: 'Using agar jelly to grow cultures and methyl violet dye to stain them.',
             options: [
+              'Using X-ray machines to photograph organs.',
               'Dissecting human bodies under high-power lenses.',
               'Using agar jelly to grow cultures and methyl violet dye to stain them.',
-              'Using X-ray machines to photograph organs.',
               'Injecting microbes directly into healthy human volunteers.',
             ],
           },
@@ -5633,10 +5374,10 @@ export const unitData = {
             answer:
               'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
             options: [
+              'Moving sick patients from monasteries to city hospitals.',
+              'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
               'Transferring blood from a healthy donor to a sick patient.',
               'The process of printing books using movable type.',
-              'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
-              'Moving sick patients from monasteries to city hospitals.',
             ],
           },
           {
@@ -5644,9 +5385,9 @@ export const unitData = {
             answer: 'Blood circulates around the body, pumped by the heart.',
             options: [
               'Bacteria are the cause of cholera and the plague.',
+              'Blood circulates around the body, pumped by the heart.',
               'The brain is the center of the nervous system.',
               'The human jawbone consists of two separate bones.',
-              'Blood circulates around the body, pumped by the heart.',
             ],
           },
           {
@@ -5656,8 +5397,8 @@ export const unitData = {
             options: [
               "An English physician who advocated observing patients' symptoms rather than relying on books.",
               'The scientist who discovered penicillin.',
-              'A surgeon who discovered that blood circulates around the body.',
               "A monk who translated Galen's works into English.",
+              'A surgeon who discovered that blood circulates around the body.',
             ],
           },
           {
@@ -5665,16 +5406,16 @@ export const unitData = {
             answer:
               'A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.',
             options: [
-              'A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.',
               'A religious order that maintained medical libraries.',
               'A charity set up by the King to build free municipal hospitals.',
+              'A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.',
               'The governing body of apothecaries and surgeons in London.',
             ],
           },
           {
             question: "Who wrote 'On the Fabric of the Human Body' (1543)?",
             answer: 'Andreas Vesalius.',
-            options: ['William Harvey.', 'Andreas Vesalius.', 'Galen.', 'Thomas Sydenham.'],
+            options: ['William Harvey.', 'Thomas Sydenham.', 'Galen.', 'Andreas Vesalius.'],
           },
         ],
       },
@@ -5918,8 +5659,8 @@ export const unitData = {
           question:
             'What was the critical difference between the 1848 Public Health Act and the 1875 Public Health Act?',
           options: [
-            'The 1848 Act was compulsory, while the 1875 Act was permissive and optional for local councils.',
             'The 1848 Act was based on Germ Theory, while the 1875 Act was based on the Theory of the Four Humours.',
+            'The 1848 Act was compulsory, while the 1875 Act was permissive and optional for local councils.',
             'The 1848 Act created the National Health Service (NHS), while the 1875 Act abolished it.',
             "The 1848 Act was 'permissive' (optional), whereas the 1875 Act was 'compulsory,' forcing local councils to provide clean water, sewers, and waste disposal.",
           ],
@@ -5930,31 +5671,31 @@ export const unitData = {
             'What did Florence Nightingale believe was the primary cause of disease spreading in hospitals when she reformed them?',
           options: [
             'Spiritual corruption and a lack of religious devotion among the patients.',
-            "Microscopic bacteria and germs, as described in Louis Pasteur's Germ Theory.",
             'Miasma (bad air), which is why she emphasized high ceilings, large windows, and excellent ventilation.',
+            "Microscopic bacteria and germs, as described in Louis Pasteur's Germ Theory.",
             'Inherited genetic mutations and unhealthy diet.',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Which of the following correctly pairs a 19th-century surgical breakthrough with its specific medical function?',
-          options: [
-            'Chloroform as a vaccine to prevent smallpox; Carbolic acid as a magic bullet to cure syphilis.',
-            'Chloroform as an anaesthetic to eliminate pain; Carbolic acid as an antiseptic to kill microbes and prevent infection.',
-            'Chloroform as an antiseptic to kill germs in open wounds; Carbolic acid as an anaesthetic to put patients to sleep.',
-            'Chloroform as an aseptic technique; Carbolic acid as a blood group stabilizer to stop clumping.',
           ],
           answer: 1,
         },
         {
           question:
+            'Which of the following correctly pairs a 19th-century surgical breakthrough with its specific medical function?',
+          options: [
+            'Chloroform as an anaesthetic to eliminate pain; Carbolic acid as an antiseptic to kill microbes and prevent infection.',
+            'Chloroform as an antiseptic to kill germs in open wounds; Carbolic acid as an anaesthetic to put patients to sleep.',
+            'Chloroform as a vaccine to prevent smallpox; Carbolic acid as a magic bullet to cure syphilis.',
+            'Chloroform as an aseptic technique; Carbolic acid as a blood group stabilizer to stop clumping.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
             "Which feature of Florence Nightingale's 'pavilion-style' hospital design was specifically meant to combat the threat of miasma?",
           options: [
-            'Small, dark rooms with carpeted floors to absorb liquids.',
-            'Separate operating theatres equipped with steam-sterilizers and rubber gloves.',
-            'Wards built with high ceilings, large windows, and separate wings to maximize ventilation and airflow.',
             'Specialized laboratories for studying bacterial cultures on agar jelly.',
+            'Small, dark rooms with carpeted floors to absorb liquids.',
+            'Wards built with high ceilings, large windows, and separate wings to maximize ventilation and airflow.',
+            'Separate operating theatres equipped with steam-sterilizers and rubber gloves.',
           ],
           answer: 2,
         },
@@ -5974,8 +5715,8 @@ export const unitData = {
           options: [
             "After reading Louis Pasteur's Germ Theory and realizing he could use chemistry to kill airborne microbes before they infected wounds.",
             'By observing milkmaids who were immune to smallpox.',
-            'By mapping cholera deaths around the Broad Street pump in Soho.',
             'By testing mineral iatrochemistry during the Great Plague of London.',
+            'By mapping cholera deaths around the Broad Street pump in Soho.',
           ],
           answer: 0,
         },
@@ -5983,43 +5724,43 @@ export const unitData = {
           question:
             "Why did the discovery of chloroform as an anaesthetic initially lead to the 'Black Period' of surgery (1840s-1870s)?",
           options: [
+            'Because the government banned the use of any pain relief to save money, leading to a rise in shock deaths.',
             'Because chloroform itself was highly contagious and caused trench fever in hospital wards.',
             'Because surgeons attempted deeper, more complex operations on unconscious patients, but because they did not yet understand antiseptics, many patients died of severe infections.',
-            'Because the government banned the use of any pain relief to save money, leading to a rise in shock deaths.',
             'Because the Catholic Church threw all surgeons using anaesthetics into prison for heresy.',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             "What did the 19th-century British government's 'laissez-faire' attitude refer to, and how did it affect public health?",
           options: [
-            "A 'leave it alone' belief that it was not the government's responsibility or right to interfere in people's daily lives, which blocked sanitation improvements for years.",
-            'The military policy of using motorized ambulances rather than stretcher-bearers on the Western Front.',
             "A belief that the government must actively intervene in public hygiene, which led to the rapid creation of Bazalgette's sewers.",
+            "A 'leave it alone' belief that it was not the government's responsibility or right to interfere in people's daily lives, which blocked sanitation improvements for years.",
             'A belief that all public hospitals must be run strictly by Catholic monks and nuns.',
+            'The military policy of using motorized ambulances rather than stretcher-bearers on the Western Front.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             "Where did Florence Nightingale establish the world's first professional training school for nurses in 1860, and what was its focus?",
           options: [
-            'At Scutari hospital during the Crimean War; focusing on bacteriology and antiseptic surgery.',
             'Behind the frontline on the Western Front; focusing on FANY ambulance driving.',
-            "At Oxford University; focusing on translating Galen's classical anatomical texts.",
             "At St Thomas' Hospital in London; focusing on cleanliness, strict hygiene, and raising nursing to a respected, trained profession.",
+            'At Scutari hospital during the Crimean War; focusing on bacteriology and antiseptic surgery.',
+            "At Oxford University; focusing on translating Galen's classical anatomical texts.",
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'Why did the 1848 Public Health Act fail to significantly improve living conditions across most of Britain?',
           options: [
-            'Because it was only enforced in leper colonies outside London.',
+            'Because the Act banned the use of vaccines and carbolic acid antiseptics.',
             'Because it was compulsory, which led to widespread public riots against clean water.',
             'Because it was optional (permissive), meaning most local town councils chose not to set up Boards of Health or spend taxes on sewers.',
-            'Because the Act banned the use of vaccines and carbolic acid antiseptics.',
+            'Because it was only enforced in leper colonies outside London.',
           ],
           answer: 2,
         },
@@ -6027,21 +5768,21 @@ export const unitData = {
           question:
             "By 1890, the medical community shifted from 'antiseptic' surgery to 'aseptic' surgery. What is the difference between these two approaches?",
           options: [
+            'Antiseptic surgery was based on the Four Humours, while aseptic surgery was based on Spontaneous Generation.',
+            'Antiseptic surgery uses chloroform to stop pain, while aseptic surgery uses carbolic spray to kill germs.',
             'There is no difference; they are two different names for the same carbolic spray technique.',
             'Antiseptic surgery focuses on killing germs already in the wound (using carbolic acid), while aseptic surgery focuses on preventing germs from getting into the operating theatre in the first place (using steam-cleaned instruments, gowns, and rubber gloves).',
-            'Antiseptic surgery uses chloroform to stop pain, while aseptic surgery uses carbolic spray to kill germs.',
-            'Antiseptic surgery was based on the Four Humours, while aseptic surgery was based on Spontaneous Generation.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'What did the tragic death of 14-year-old Hannah Greener in 1848 during a minor toenail operation demonstrate about early anaesthetics?',
           options: [
             'That chloroform was difficult to dose correctly and carried a serious risk of fatal overdose.',
-            "That John Snow's water mapping was incorrect.",
             'That traditional bloodletting was a safer way to cure infections.',
             'That carbolic acid was too toxic to be sprayed in operating theatres.',
+            "That John Snow's water mapping was incorrect.",
           ],
           answer: 0,
         },
@@ -6060,8 +5801,8 @@ export const unitData = {
           question:
             'Which historical event in 1853 finally broke down public and medical resistance to the use of chloroform in Britain?',
           options: [
-            'Joseph Lister sprayed chloroform in his ward during the Crimean War.',
             'The compulsory 1853 Vaccination Act was passed by parliament.',
+            'Joseph Lister sprayed chloroform in his ward during the Crimean War.',
             'Louis Pasteur published his Germ Theory.',
             'Queen Victoria chose to use chloroform during the birth of her eighth child, making the anaesthetic highly fashionable and accepted.',
           ],
@@ -6071,33 +5812,33 @@ export const unitData = {
           question:
             'Which of the following duties was compulsory for local city authorities to provide under the 1875 Public Health Act?',
           options: [
-            'Clean piped water, sewage disposal systems, public toilets, and street lighting.',
             'Free blood transfusions and mobile X-ray units for all citizens.',
+            'Clean piped water, sewage disposal systems, public toilets, and street lighting.',
             'Free chloroform for women in childbirth and compulsory carbolic spray in homes.',
             'Specialized leper isolation houses and mandatory bloodletting twice a year.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             "How did Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population help pave the way for public health reform?",
           options: [
-            'It proved that smallpox could be cured using cowpox inoculations.',
-            'It recommended that all hospitals be staffed exclusively by FANY volunteers.',
             'It argued that living in filth and disease caused early deaths and cost the government money, suggesting that cleaning up cities would save taxpayer funds.',
+            'It recommended that all hospitals be staffed exclusively by FANY volunteers.',
             'It proved that microscopic germs caused cholera.',
+            'It proved that smallpox could be cured using cowpox inoculations.',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question: "What was the significance of the 'Great Stink' of 1858 in London?",
           options: [
-            "It was a miasma epidemic that led directly to Florence Nightingale's retirement.",
-            'It was a massive cholera outbreak that killed over 50% of the royal family.',
-            'It was a gas attack launched on the Western Front that prompted the design of flannel pads.',
             "The smell of rotting waste in the Thames was so severe that it disrupted parliament, finally forcing MPs to fund Joseph Bazalgette to build London's massive sewer system.",
+            'It was a massive cholera outbreak that killed over 50% of the royal family.',
+            "It was a miasma epidemic that led directly to Florence Nightingale's retirement.",
+            'It was a gas attack launched on the Western Front that prompted the design of flannel pads.',
           ],
-          answer: 3,
+          answer: 0,
         },
         {
           question:
@@ -6105,8 +5846,8 @@ export const unitData = {
           options: [
             'From 15% down to almost zero.',
             'From 42% down to 2%.',
-            'From 80% down to 20%.',
             'From 100% down to 50%.',
+            'From 80% down to 20%.',
           ],
           answer: 1,
         },
@@ -6114,23 +5855,23 @@ export const unitData = {
           question:
             'What did Joseph Lister find was the long-term impact of his carbolic spray, even though the spray itself fell out of favor by 1890?',
           options: [
-            'It permanently changed the attitude of surgeons, who finally understood that preventing post-operative infection was their clinical duty.',
             'It forced the government to establish the NHS in 1948.',
             'It was replaced by traditional herbal remedies like cinchona bark.',
             "It proved that Pasteur's Germ Theory was scientifically incorrect.",
+            'It permanently changed the attitude of surgeons, who finally understood that preventing post-operative infection was their clinical duty.',
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
             "Why did many surgeons initially refuse to use Joseph Lister's carbolic acid antiseptics in the 1860s?",
           options: [
-            'Because they believed that pain was the only barrier to surgery and that infection did not matter.',
-            'Because Lister kept his chemical formula a secret and refused to write about it in medical journals.',
             'Because carbolic acid was an expensive New World import that was heavily taxed by the state.',
+            'Because they believed that pain was the only barrier to surgery and that infection did not matter.',
             "Because they did not accept Louis Pasteur's Germ Theory and did not believe that invisible, microscopic bacteria actually existed.",
+            'Because Lister kept his chemical formula a secret and refused to write about it in medical journals.',
           ],
-          answer: 3,
+          answer: 2,
         },
       ],
       flashcards: [
@@ -6302,23 +6043,23 @@ export const unitData = {
             question: 'What did Florence Nightingale believe caused disease?',
             answer: 'Miasma (bad air) and poor hygiene.',
             options: [
-              'Inherited genetic defects.',
-              'Imbalances in the four humours.',
               'Miasma (bad air) and poor hygiene.',
+              'Imbalances in the four humours.',
+              'Inherited genetic defects.',
               'Bacteria and germs in the water.',
             ],
           },
           {
             question: 'Which anesthetic was discovered by James Simpson in 1847?',
             answer: 'Chloroform.',
-            options: ['Cocaine', 'Ether.', 'Chloroform.', 'Nitrous oxide.'],
+            options: ['Ether.', 'Nitrous oxide.', 'Chloroform.', 'Cocaine'],
           },
           {
             question: "What was 'Spontaneous Generation'?",
             answer: 'The belief that microbes and decay appeared spontaneously out of dead matter.',
             options: [
-              'The theory that diseases were generated by bad air (miasma).',
               'The discovery that bacteria reproduce using cell division.',
+              'The theory that diseases were generated by bad air (miasma).',
               'The process of creating vaccines in laboratories.',
               'The belief that microbes and decay appeared spontaneously out of dead matter.',
             ],
@@ -6326,48 +6067,48 @@ export const unitData = {
           {
             question: 'Who published the Germ Theory in 1861?',
             answer: 'Louis Pasteur.',
-            options: ['Robert Koch.', 'Louis Pasteur.', 'Edward Jenner', 'Alexander Fleming.'],
+            options: ['Louis Pasteur.', 'Edward Jenner', 'Robert Koch.', 'Alexander Fleming.'],
           },
           {
             question: 'What did Robert Koch contribute to Germ Theory?',
             answer:
               'He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).',
             options: [
-              'He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).',
+              'He invented the smallpox vaccine using cowpox.',
               'He proved that blood circulation was driven by the heart.',
               'He discovered penicillin in a petri dish.',
-              'He invented the smallpox vaccine using cowpox.',
+              'He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).',
             ],
           },
           {
             question: 'In what year did the Black Death arrive in England?',
             answer: '1348.',
-            options: ['1665.', '1415.', '1066.', '1348.'],
+            options: ['1415.', '1665.', '1348.', '1066.'],
           },
           {
             question: "What did Vesalius prove about Galen's anatomical ideas?",
             answer: 'Galen had made over 300 mistakes because he dissected animals, not humans.',
             options: [
-              'Galen had made over 300 mistakes because he dissected animals, not humans.',
-              'Galen was 100% correct in every anatomical diagram.',
-              "Galen's books were written by fake physicians.",
               "Galen's Theory of Opposites was scientifically true.",
+              'Galen had made over 300 mistakes because he dissected animals, not humans.',
+              "Galen's books were written by fake physicians.",
+              'Galen was 100% correct in every anatomical diagram.',
             ],
           },
           {
             question: 'Who introduced antiseptic surgery using carbolic acid in 1865?',
             answer: 'Joseph Lister.',
-            options: ['Robert Koch.', 'Joseph Lister.', 'James Simpson.', 'Louis Pasteur'],
+            options: ['James Simpson.', 'Joseph Lister.', 'Louis Pasteur', 'Robert Koch.'],
           },
           {
             question: 'What was the significance of the Public Health Act of 1875?',
             answer:
               'It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.',
             options: [
-              'It established the National Health Service (NHS) in Britain.',
-              "It funded Robert Koch's research into tuberculosis.",
               'It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.',
+              'It established the National Health Service (NHS) in Britain.',
               'It banned the use of leeches and bloodletting.',
+              "It funded Robert Koch's research into tuberculosis.",
             ],
           },
         ],
@@ -6556,9 +6297,9 @@ export const unitData = {
           question:
             'In which year did Edward Jenner develop the smallpox vaccine, and what traditional preventative method did it replace?',
           options: [
+            '1854; replacing the use of carbolic acid spray in municipal clinics',
             '1861; replacing the unscientific theory of spontaneous generation',
             '1721; replacing the medieval use of theriaca as a universal antidote',
-            '1854; replacing the use of carbolic acid spray in municipal clinics',
             '1796; replacing the dangerous practice of smallpox inoculation',
           ],
           answer: 3,
@@ -6567,76 +6308,76 @@ export const unitData = {
           question:
             'What was the process of smallpox inoculation used in 18th-century Britain, and what was its major clinical risk?',
           options: [
-            'Smearing active pus from a smallpox scab into a cut in the skin, which carried a high risk of causing a fatal smallpox outbreak',
-            "Injecting a chemical magic bullet, which regularly poisoned the patient's liver",
             'Giving patients a mild dose of cowpox, which carried a risk of turning the patient into a cow',
             'Filtering river water through sand filters, which failed to remove disease-carrying miasma',
+            'Smearing active pus from a smallpox scab into a cut in the skin, which carried a high risk of causing a fatal smallpox outbreak',
+            "Injecting a chemical magic bullet, which regularly poisoned the patient's liver",
           ],
-          answer: 0,
+          answer: 2,
         },
         {
           question:
             'On what specific group of people did Edward Jenner make his initial observations that led to the discovery of the smallpox vaccine?',
           options: [
-            'Sewage workers in London who seemed immune to water-borne cholera',
-            'Dairy maids who had contracted cowpox and subsequently seemed immune to smallpox',
             'Industrial chimney sweeps who suffered from high rates of lung cancer',
+            'Sewage workers in London who seemed immune to water-borne cholera',
             'Wounded infantrymen who survived severe shrapnel wounds on the Western Front',
+            'Dairy maids who had contracted cowpox and subsequently seemed immune to smallpox',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'What empirical experiment did Jenner perform in 1796 to prove the safety and effectiveness of his smallpox vaccine?',
           options: [
-            'He mapped cholera fatalities around a highly popular water pump in Soho',
-            'He sprayed a solution of carbolic acid over post-operative patients in a Gloucester hospital',
             'He infected a young boy, James Phipps, with cowpox, and later exposed him to smallpox to prove he was immune',
+            'He mapped cholera fatalities around a highly popular water pump in Soho',
             'He used a high-powered compound microscope to isolate the smallpox pathogen in his laboratory',
+            'He sprayed a solution of carbolic acid over post-operative patients in a Gloucester hospital',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
             "What was a massive scientific limitation of Edward Jenner's 1796 vaccine breakthrough?",
           options: [
             'The vaccine was made of toxic arsenic, which regularly triggered terminal shock in children',
-            'The vaccine only protected patients against cholera and was completely useless against smallpox',
             'The Royal Society refused to let him publish his research in pamphlets',
             'Because Germ Theory was still decades away, Jenner did not know *why* his vaccine worked, meaning he could not replicate his method for other diseases',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            "Why was Jenner's vaccine a 'one-off' breakthrough in the late 18th and early 19th centuries?",
-          options: [
-            'The government immediately passed a law banning any further medical experimentation in England',
-            "The printing press was not advanced enough to replicate Jenner's detailed anatomical guides",
-            "Without an understanding of microbes and antibodies, scientists could not systematically design vaccines for other diseases until Louis Pasteur's Germ Theory was accepted",
-            'The global supply of cowpox vanished completely from British dairy farms after 1800',
+            'The vaccine only protected patients against cholera and was completely useless against smallpox',
           ],
           answer: 2,
         },
         {
           question:
+            "Why was Jenner's vaccine a 'one-off' breakthrough in the late 18th and early 19th centuries?",
+          options: [
+            'The global supply of cowpox vanished completely from British dairy farms after 1800',
+            "Without an understanding of microbes and antibodies, scientists could not systematically design vaccines for other diseases until Louis Pasteur's Germ Theory was accepted",
+            "The printing press was not advanced enough to replicate Jenner's detailed anatomical guides",
+            'The government immediately passed a law banning any further medical experimentation in England',
+          ],
+          answer: 1,
+        },
+        {
+          question:
             "Which of the following is a common student misconception regarding Edward Jenner's cowpox discovery?",
           options: [
-            'All of the above are common misconceptions that examiners frequently identify',
-            'Believing that Jenner used a microscope to identify the cowpox virus',
             'Believing Jenner used cowpox because he understood Germ Theory or how antibodies worked',
             'Confusing Jenner with Robert Koch, who isolated the tuberculosis microbe',
+            'Believing that Jenner used a microscope to identify the cowpox virus',
+            'All of the above are common misconceptions that examiners frequently identify',
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
             "How did the British government eventually support Edward Jenner's smallpox vaccine in the 19th century?",
           options: [
-            'By ordering the immediate, mass slaughter of 40,000 cows to prevent animal-to-human transmission',
-            'By awarding Jenner £30,000 in grants and eventually passing a law in 1853 making the vaccine compulsory',
-            'By hiring Joseph Bazalgette to construct a national vaccine manufacturing plant in London',
             'By establishing the modern National Health Service (NHS) in 1802 to distribute the vaccine for free',
+            'By awarding Jenner £30,000 in grants and eventually passing a law in 1853 making the vaccine compulsory',
+            'By ordering the immediate, mass slaughter of 40,000 cows to prevent animal-to-human transmission',
+            'By hiring Joseph Bazalgette to construct a national vaccine manufacturing plant in London',
           ],
           answer: 1,
         },
@@ -6644,31 +6385,31 @@ export const unitData = {
           question:
             "Despite government backing, why was there initial public and professional opposition to Jenner's smallpox vaccine in Britain?",
           options: [
-            'The Catholic Church banned the vaccine because they believed smallpox was a direct test of faith from God that should not be prevented',
-            'The Royal Society published pamphlets proving that the cowpox vaccine caused immediate cholera outbreaks',
             'Professional inoculators feared losing their businesses, some religious leaders objected to injecting animal matter, and Jenner could not scientifically explain why the vaccine worked',
+            'The Royal Society published pamphlets proving that the cowpox vaccine caused immediate cholera outbreaks',
             'Practicing physicians argued that the vaccine was a French scientific hoax designed by Louis Pasteur',
+            'The Catholic Church banned the vaccine because they believed smallpox was a direct test of faith from God that should not be prevented',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
             'Which deadly disease did Dr. John Snow investigate in London in 1854, and what was its popular believed cause before his work?',
           options: [
+            'Smallpox; believed to be caused by an excess of blood',
             'Trench foot; believed to be caused by water-borne parasites in the soil',
             'Cholera; believed to be spread by miasma (foul-smelling bad air) or spontaneous generation',
             'The Great Plague; believed to be caused by an unusual alignment of the planets',
-            'Smallpox; believed to be caused by an excess of blood',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             "What was John Snow's theory about how cholera was transmitted, which he published in his 1849 pamphlet?",
           options: [
+            'It was carried by fleas on black rats that nested in filthy slums',
             'It was a respiratory infection caused by breathing in bad air rising from rotting waste',
             'It was an inherited genetic disorder caused by mutations in the lungs',
-            'It was carried by fleas on black rats that nested in filthy slums',
             'It was water-borne, spread by drinking water contaminated with cholera-ridden human waste',
           ],
           answer: 3,
@@ -6677,52 +6418,52 @@ export const unitData = {
           question:
             'How did John Snow gather empirical evidence to prove his water-borne cholera theory during the 1854 Broad Street epidemic?',
           options: [
-            'He created a detailed spot map of Soho, showing that deaths were tightly clustered around the Broad Street water pump',
-            'He quarantined the entire city of London for 40 days and locked down all public markets',
-            'He used a compound microscope to stain and isolate the Vibrio cholerae bacteria in Soho',
             'He tested several chemical arsenic compounds until he found one that cured infected patients',
+            'He created a detailed spot map of Soho, showing that deaths were tightly clustered around the Broad Street water pump',
+            'He used a compound microscope to stain and isolate the Vibrio cholerae bacteria in Soho',
+            'He quarantined the entire city of London for 40 days and locked down all public markets',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             "What famous 'control group' case studies did John Snow use to prove that the 1854 Soho cholera outbreak was linked to the water pump?",
           options: [
             'A group of soldiers on the Western Front who wore protective masks to block miasma',
-            "A ward in St Bartholomew's Hospital managed by trained Nightingale nurses",
             'A leper colony outside London that was completely isolated from bad air',
             'A local workhouse and a brewery near Broad Street where workers did not catch cholera because they had private wells or drank only beer',
+            "A ward in St Bartholomew's Hospital managed by trained Nightingale nurses",
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             'What immediate, physical action did John Snow take in Soho that stopped the local 1854 cholera outbreak?',
           options: [
-            'He set up giant bonfires of tar in the streets to chemically purify the bad air',
             'He removed the handle of the Broad Street water pump so the public could no longer drink from it',
-            'He ordered all homes with infected families to be boarded up for 28 days',
             "He made Jenner's smallpox vaccination compulsory for everyone living in Golden Square",
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "How did the General Board of Health and the wider medical establishment initially react to John Snow's 1854 findings?",
-          options: [
-            'They largely rejected his findings and clung to Miasma theory, as Snow lacked the microscopic biological proof that Germ Theory would later provide',
-            'They established the National Health Service to build new water treatment plants throughout Soho',
-            'They immediately made it illegal for water companies to draw water from the polluted parts of the Thames',
-            'They threw Snow into prison for destroying public property when he removed the pump handle',
+            'He ordered all homes with infected families to be boarded up for 28 days',
+            'He set up giant bonfires of tar in the streets to chemically purify the bad air',
           ],
           answer: 0,
         },
         {
           question:
+            "How did the General Board of Health and the wider medical establishment initially react to John Snow's 1854 findings?",
+          options: [
+            'They threw Snow into prison for destroying public property when he removed the pump handle',
+            'They largely rejected his findings and clung to Miasma theory, as Snow lacked the microscopic biological proof that Germ Theory would later provide',
+            'They established the National Health Service to build new water treatment plants throughout Soho',
+            'They immediately made it illegal for water companies to draw water from the polluted parts of the Thames',
+          ],
+          answer: 1,
+        },
+        {
+          question:
             "What major environmental event in 1858, combined with Snow's research, finally forced the British government to build a massive sewer system for London?",
           options: [
-            'The creation of the first blood bank at the Battle of Cambrai',
             'The arrival of a new Black Death epidemic',
+            'The creation of the first blood bank at the Battle of Cambrai',
             "'The Great Stink' of 1858, where hot weather exposed rotting sewage in the Thames, disrupting Parliament",
             "The publication of Andreas Vesalius's anatomical book on human dissection",
           ],
@@ -6731,8 +6472,8 @@ export const unitData = {
         {
           question:
             "Who was the engineer appointed by the government to construct London's massive new sewer system (completed in 1875) following John Snow's work and the Great Stink?",
-          options: ['Thomas Sydenham', 'James Simpson', 'Joseph Bazalgette', 'Robert Koch'],
-          answer: 2,
+          options: ['Robert Koch', 'Thomas Sydenham', 'James Simpson', 'Joseph Bazalgette'],
+          answer: 3,
         },
         {
           question:
@@ -6749,23 +6490,23 @@ export const unitData = {
           question:
             "Which subsequent scientific developments finally provided the undeniable biological proof that John Snow's water-borne cholera theory was correct?",
           options: [
-            "James Simpson's successful use of chloroform in childbirth",
             "Louis Pasteur's Germ Theory (1861) and Robert Koch's identification of the specific cholera microbe (1883)",
-            'The mapping of the human genome in 2000',
+            "James Simpson's successful use of chloroform in childbirth",
             'The discovery of the first arsenic-based magic bullet, Salvarsan 606',
+            'The mapping of the human genome in 2000',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             "Comparing Jenner's and Snow's breakthroughs, what makes them similar in terms of 19th-century medical progress?",
           options: [
             'Both breakthroughs completely eradicated the diseases of smallpox and cholera in Britain by 1800',
+            'Both individuals used empirical observation and scientific methods to achieve massive breakthroughs, yet faced initial resistance because their findings challenged traditional beliefs (like Miasma) before Germ Theory was established',
             'Both of their discoveries were based on mapping the DNA of infectious microbes',
             'Both individuals were highly supported by the medieval Catholic Church',
-            'Both individuals used empirical observation and scientific methods to achieve massive breakthroughs, yet faced initial resistance because their findings challenged traditional beliefs (like Miasma) before Germ Theory was established',
           ],
-          answer: 3,
+          answer: 1,
         },
       ],
       flashcards: [
@@ -6925,27 +6666,27 @@ export const unitData = {
           {
             question: 'What disease did Edward Jenner vaccinate against in 1796?',
             answer: 'Smallpox.',
-            options: ['Anthrax', 'Smallpox.', 'Tuberculosis.', 'Cholera.'],
+            options: ['Tuberculosis.', 'Cholera.', 'Anthrax', 'Smallpox.'],
           },
           {
             question: 'What did Edward Jenner observe that led to his vaccine?',
             answer: 'Milkmaids who caught cowpox never caught the deadly smallpox.',
             options: [
-              'Milkmaids who caught cowpox never caught the deadly smallpox.',
-              'Penicillium mould killed staphylococci bacteria.',
               'Boiling broth inside swan-necked flasks stopped decay.',
+              'Penicillium mould killed staphylococci bacteria.',
+              'Milkmaids who caught cowpox never caught the deadly smallpox.',
               'Clean water stopped people from getting cholera.',
             ],
           },
           {
             question: 'Who discovered the cause of cholera in 1854?',
             answer: 'John Snow.',
-            options: ['Robert Koch.', 'Edward Jenner', 'John Snow.', 'Louis Pasteur.'],
+            options: ['Robert Koch.', 'John Snow.', 'Edward Jenner', 'Louis Pasteur.'],
           },
           {
             question: 'Which Roman physician developed the Theory of Opposites?',
             answer: 'Galen.',
-            options: ['Hippocrates.', 'Vesalius.', 'Harvey', 'Galen.'],
+            options: ['Hippocrates.', 'Harvey', 'Galen.', 'Vesalius.'],
           },
           {
             question: 'What was the Royal Society?',
@@ -6953,15 +6694,15 @@ export const unitData = {
               'A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.',
             options: [
               'A religious order that maintained medical libraries.',
-              'A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.',
               'A charity set up by the King to build free municipal hospitals.',
               'The governing body of apothecaries and surgeons in London.',
+              'A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.',
             ],
           },
           {
             question: 'Who introduced antiseptic surgery using carbolic acid in 1865?',
             answer: 'Joseph Lister.',
-            options: ['Joseph Lister.', 'Robert Koch.', 'James Simpson.', 'Louis Pasteur'],
+            options: ['Joseph Lister.', 'James Simpson.', 'Louis Pasteur', 'Robert Koch.'],
           },
           {
             question: "What did Harvey prove wrong about Galen's theories of blood?",
@@ -6969,24 +6710,24 @@ export const unitData = {
               'Galen believed the liver constantly manufactured new blood which was consumed by the body.',
             options: [
               'Galen believed that bloodletting was useless.',
+              'Galen believed the liver constantly manufactured new blood which was consumed by the body.',
               'Galen argued that veins had valves that stopped backflow.',
               'Galen claimed that blood was pumped by the lungs.',
-              'Galen believed the liver constantly manufactured new blood which was consumed by the body.',
             ],
           },
           {
             question: 'Who published the Germ Theory in 1861?',
             answer: 'Louis Pasteur.',
-            options: ['Robert Koch.', 'Edward Jenner', 'Louis Pasteur.', 'Alexander Fleming.'],
+            options: ['Louis Pasteur.', 'Edward Jenner', 'Robert Koch.', 'Alexander Fleming.'],
           },
           {
             question: 'What invention helped spread new medical ideas during the Renaissance?',
             answer: 'The printing press.',
             options: [
+              'The microscope.',
               'The steam engine.',
               'The telegraph.',
               'The printing press.',
-              'The microscope.',
             ],
           },
           {
@@ -6994,10 +6735,10 @@ export const unitData = {
             answer:
               'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
             options: [
-              'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
-              'Transferring blood from a healthy donor to a sick patient.',
-              'The process of printing books using movable type.',
               'Moving sick patients from monasteries to city hospitals.',
+              'Transferring blood from a healthy donor to a sick patient.',
+              'A Renaissance belief that a disease could be passed on or transferred to an object or animal.',
+              'The process of printing books using movable type.',
             ],
           },
         ],
@@ -7191,67 +6932,67 @@ export const unitData = {
             'How did the 20th-century understanding of what causes illness fundamentally differ from the 19th-century focus on Germ Theory?',
           options: [
             'It proved that all modern diseases are caused by newly mutated variants of the cholera germ.',
-            'It shifted from blaming bad air (miasma) to blaming chemical imbalances in stomach acid.',
-            'It abandoned scientific explanations completely in favor of spiritual and environmental factors.',
             'It moved to a multi-causal approach, recognizing that while microbes cause infectious diseases, genetics and lifestyle choices cause chronic illnesses.',
+            'It abandoned scientific explanations completely in favor of spiritual and environmental factors.',
+            'It shifted from blaming bad air (miasma) to blaming chemical imbalances in stomach acid.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'Which 19th-century scientist first demonstrated that physical characteristics could be passed down between generations of living things?',
-          options: ['Robert Koch', 'Gregor Mendel', 'Alexander Fleming', 'Louis Pasteur'],
-          answer: 1,
+          options: ['Gregor Mendel', 'Louis Pasteur', 'Alexander Fleming', 'Robert Koch'],
+          answer: 0,
         },
         {
           question:
             "What crucial scientific technique did Rosalind Franklin and Maurice Wilkins use at King's College London to help identify the structure of DNA?",
           options: [
-            'Chemical analysis of sodium citrate preservatives',
             'Electron microscopy to magnify living viruses',
-            'X-ray crystallography to take photographs of human cells',
             'Agar jelly staining with aniline dyes',
+            'X-ray crystallography to take photographs of human cells',
+            'Chemical analysis of sodium citrate preservatives',
           ],
           answer: 2,
         },
         {
           question:
             'In which year did James Watson and Francis Crick successfully work out and model the double-helix structure of DNA?',
-          options: ['1953', '1948', '1928', '1990'],
-          answer: 0,
+          options: ['1928', '1948', '1990', '1953'],
+          answer: 3,
         },
         {
           question:
             'What major international scientific project was launched in 1990 to identify and map every single gene in human DNA?',
           options: [
-            'The National Health Service (NHS) Diagnostics Project',
             'The Human Genome Project',
-            'The British Medical Association Research Council',
             'The Watson and Crick Double-Helix Initiative',
+            'The National Health Service (NHS) Diagnostics Project',
+            'The British Medical Association Research Council',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'What is a major modern limitation of the genetic breakthroughs achieved by mapping the human genome?',
           options: [
-            'The printing press cannot replicate double-helix illustrations without human error.',
             'DNA testing has proved to be completely inaccurate at predicting hereditary illnesses.',
             'Scientists have been legally banned from utilizing DNA information to understand genetic conditions.',
             'There is still no cure or highly effective treatment for the majority of genetic conditions.',
+            'The printing press cannot replicate double-helix illustrations without human error.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             'How do modern doctors use DNA discoveries to prevent or catch illnesses early through genetic screening?',
           options: [
-            "By checking an individual's genetic code to see if they carry genes that put them at higher risk of developing certain cancers or conditions.",
-            "By checking the patient's zodiac alignment against their DNA structure.",
-            'By injecting patients with healthy donor DNA to replace their entire genome.',
             'By using high-tech scanners to physically remove mutated genes from the bloodstream.',
+            'By injecting patients with healthy donor DNA to replace their entire genome.',
+            "By checking the patient's zodiac alignment against their DNA structure.",
+            "By checking an individual's genetic code to see if they carry genes that put them at higher risk of developing certain cancers or conditions.",
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
@@ -7262,13 +7003,13 @@ export const unitData = {
         {
           question:
             'What chronic modern disease is directly linked to eating a diet too high in fat and experiencing obesity?',
-          options: ['Cholera', 'Lung cancer', 'Heart disease', "Down's syndrome"],
-          answer: 2,
+          options: ['Heart disease', "Down's syndrome", 'Cholera', 'Lung cancer'],
+          answer: 0,
         },
         {
           question:
             'Apart from lung cancer, what other debilitating respiratory disease has modern research linked directly to tobacco smoking?',
-          options: ['Type 2 diabetes', 'Scarlet fever', 'Trench fever', 'Emphysema'],
+          options: ['Trench fever', 'Type 2 diabetes', 'Scarlet fever', 'Emphysema'],
           answer: 3,
         },
         {
@@ -7277,27 +7018,27 @@ export const unitData = {
           options: [
             'Emphysema and high blood pressure',
             'Liver disease, kidney disease, and several cancers',
-            'Tuberculosis and brain tumors',
             "Type 2 diabetes and Down's syndrome",
+            'Tuberculosis and brain tumors',
           ],
           answer: 1,
         },
         {
           question:
             'Which major piece of technology, invented in the 1930s, was 1,000 times more powerful than standard light microscopes, allowing scientists to see viruses for the first time?',
-          options: ['The Electron microscope', 'The X-Ray tube', 'The CT Scanner', 'The Endoscope'],
-          answer: 0,
+          options: ['The X-Ray tube', 'The Endoscope', 'The Electron microscope', 'The CT Scanner'],
+          answer: 2,
         },
         {
           question:
             'How did diagnosis in the modern era fundamentally change compared to previous historical periods?',
           options: [
-            'It abandoned physical examinations completely and relied solely on astrological charts.',
-            'It shifted from scientific blood analysis back to the traditional examination of urine color wheels.',
             'It made diagnostic surgery compulsory for every patient before any treatment was given.',
+            'It shifted from scientific blood analysis back to the traditional examination of urine color wheels.',
             "It shifted from a doctor's clinical observation of physical symptoms to precise, high-tech laboratory tests and scans.",
+            'It abandoned physical examinations completely and relied solely on astrological charts.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
@@ -7305,19 +7046,19 @@ export const unitData = {
           options: [
             'The 2000s; they were developed as part of the Human Genome Project to replace CT scans.',
             'The 1900s; they allowed doctors to measure electrical impulses of the heart.',
-            'The 1930s; they allowed doctors to test for a vast number of conditions without invasive surgery.',
             'The 1960s; they allowed patients to check their own blood sugar levels daily.',
+            'The 1930s; they allowed doctors to test for a vast number of conditions without invasive surgery.',
           ],
-          answer: 2,
+          answer: 3,
         },
         {
           question:
             'What is the key diagnostic advantage of a modern CT scan compared to a traditional X-ray?',
           options: [
-            'A CT scan uses sound waves instead of radiation, making it completely risk-free for pregnant women.',
+            'A CT scan takes a single flat image of bones, whereas an X-ray provides detailed chemical blood analysis.',
             'A CT scan is a 3D scan that creates detailed images of the inside of the body, allowing doctors to spot tiny tumors when they are the size of a pea.',
             'There is no difference; both terms refer to the same 1895 X-ray technology.',
-            'A CT scan takes a single flat image of bones, whereas an X-ray provides detailed chemical blood analysis.',
+            'A CT scan uses sound waves instead of radiation, making it completely risk-free for pregnant women.',
           ],
           answer: 1,
         },
@@ -7325,56 +7066,56 @@ export const unitData = {
           question:
             'When were ultrasound scans first developed, and how do they help doctors diagnose internal conditions like gallstones or kidney stones?',
           options: [
-            'The 1890s; they use X-rays to create 3D cross-sections of organs.',
-            'The 1900s; they use electrical impulses to track heart activity.',
             'The 1940s; they use high-frequency sound waves to build up a picture of the inside of the body.',
             "The 1960s; they use magnetic fields to analyze the patient's DNA.",
+            'The 1900s; they use electrical impulses to track heart activity.',
+            'The 1890s; they use X-rays to create 3D cross-sections of organs.',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
             'What are ECGs (electrocardiograms), which were developed in the 1900s, used for in modern diagnosis?',
           options: [
-            'They use electrical impulses to track and monitor heart activity.',
-            'They use flexible tubes to take cell samples from the lungs.',
             'They use sound waves to find gallstones in the liver.',
             'They analyze blood samples to check for genetic mutations.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'What is an endoscope (such as a bronchoscope used in lung investigations), and how does it assist in modern diagnosis?',
-          options: [
-            'A sterile chemical spray used to kill airborne microbes in operating theatres.',
-            'A pocket-sized monitor used by diabetic patients to measure sugar in the bloodstream.',
-            'A high-tech machine that uses powerful magnets to map 3D structures of the brain.',
-            'A flexible tube with a camera that allows doctors to see inside the body and collect cell samples without major surgery.',
+            'They use flexible tubes to take cell samples from the lungs.',
+            'They use electrical impulses to track and monitor heart activity.',
           ],
           answer: 3,
         },
         {
           question:
-            'What is a biopsy, and what role does it play in the modern diagnosis of chronic illnesses like cancer?',
+            'What is an endoscope (such as a bronchoscope used in lung investigations), and how does it assist in modern diagnosis?',
           options: [
-            'Taking a tiny sample of tissue from a lump to test it and see if it is cancerous.',
-            'Injecting a patient with chemical magic bullets to shrink a lump.',
-            'Using sound waves to dissolve painful stones in the kidneys.',
-            'Taking a detailed 3D scan of the chest to look for respiratory diseases.',
+            'A flexible tube with a camera that allows doctors to see inside the body and collect cell samples without major surgery.',
+            'A pocket-sized monitor used by diabetic patients to measure sugar in the bloodstream.',
+            'A high-tech machine that uses powerful magnets to map 3D structures of the brain.',
+            'A sterile chemical spray used to kill airborne microbes in operating theatres.',
           ],
           answer: 0,
+        },
+        {
+          question:
+            'What is a biopsy, and what role does it play in the modern diagnosis of chronic illnesses like cancer?',
+          options: [
+            'Taking a detailed 3D scan of the chest to look for respiratory diseases.',
+            'Taking a tiny sample of tissue from a lump to test it and see if it is cancerous.',
+            'Using sound waves to dissolve painful stones in the kidneys.',
+            'Injecting a patient with chemical magic bullets to shrink a lump.',
+          ],
+          answer: 1,
         },
         {
           question:
             'When was blood sugar monitoring introduced, and how did it change the daily management of diabetes?',
           options: [
             'The 1990s; it was developed alongside the Human Genome Project to cure genetic diabetes.',
-            'The 1960s; it allowed patients to regularly check their own blood sugar at home to manage their condition.',
             'The 1930s; it allowed physicians to test for insulin levels in hospital laboratories.',
+            'The 1960s; it allowed patients to regularly check their own blood sugar at home to manage their condition.',
             'The 1900s; it replaced traditional urine tasting by physicians.',
           ],
-          answer: 1,
+          answer: 2,
         },
       ],
       flashcards: [
@@ -7522,10 +7263,10 @@ export const unitData = {
             question: 'What structure did Watson and Crick discover in 1953?',
             answer: 'The double helix structure of DNA.',
             options: [
-              'The penicillin mould culture.',
               'The valves inside human veins.',
-              'The double helix structure of DNA.',
+              'The penicillin mould culture.',
               'The bacteria responsible for tuberculosis.',
+              'The double helix structure of DNA.',
             ],
           },
           {
@@ -7533,20 +7274,20 @@ export const unitData = {
             answer:
               'It contains genetic instructions that can cause hereditary diseases or influence susceptibility.',
             options: [
+              'It contains genetic instructions that can cause hereditary diseases or influence susceptibility.',
               'It is a vaccine injected to prevent viral infections.',
               'It is a chemical that actively kills bacteria in the blood.',
               'It is a type of scanner used to detect lung cancer.',
-              'It contains genetic instructions that can cause hereditary diseases or influence susceptibility.',
             ],
           },
           {
             question: 'Name one modern lifestyle factor that causes disease.',
             answer: 'Smoking, poor diet, or lack of exercise.',
             options: [
-              'Dissecting animal bodies in university labs.',
-              'Smoking, poor diet, or lack of exercise.',
-              'Undergoing surgical operations under anesthetic.',
               'Drinking clean tap water.',
+              'Smoking, poor diet, or lack of exercise.',
+              'Dissecting animal bodies in university labs.',
+              'Undergoing surgical operations under anesthetic.',
             ],
           },
           {
@@ -7554,9 +7295,9 @@ export const unitData = {
               "Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?",
             answer: 'Rosalind Franklin.',
             options: [
-              'Rosalind Franklin.',
               'Dorothy Hodgkin',
               'Florence Nightingale.',
+              'Rosalind Franklin.',
               'Marie Curie.',
             ],
           },
@@ -7565,9 +7306,9 @@ export const unitData = {
             answer:
               'Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.',
             options: [
-              'Genetic science was banned by international ethical treaties.',
-              'Scientists realized that genes do not actually cause any diseases.',
               'The government classified the human genome map as a state secret.',
+              'Scientists realized that genes do not actually cause any diseases.',
+              'Genetic science was banned by international ethical treaties.',
               'Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.',
             ],
           },
@@ -7585,17 +7326,17 @@ export const unitData = {
           {
             question: 'Who published the Germ Theory in 1861?',
             answer: 'Louis Pasteur.',
-            options: ['Robert Koch.', 'Louis Pasteur.', 'Edward Jenner', 'Alexander Fleming.'],
+            options: ['Louis Pasteur.', 'Edward Jenner', 'Robert Koch.', 'Alexander Fleming.'],
           },
           {
             question: 'Who introduced antiseptic surgery using carbolic acid in 1865?',
             answer: 'Joseph Lister.',
-            options: ['Robert Koch.', 'James Simpson.', 'Joseph Lister.', 'Louis Pasteur'],
+            options: ['James Simpson.', 'Joseph Lister.', 'Louis Pasteur', 'Robert Koch.'],
           },
           {
             question: "Who wrote 'On the Fabric of the Human Body' (1543)?",
             answer: 'Andreas Vesalius.',
-            options: ['Andreas Vesalius.', 'William Harvey.', 'Galen.', 'Thomas Sydenham.'],
+            options: ['William Harvey.', 'Thomas Sydenham.', 'Andreas Vesalius.', 'Galen.'],
           },
           {
             question: 'What was the significance of the Public Health Act of 1875?',
@@ -7603,9 +7344,9 @@ export const unitData = {
               'It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.',
             options: [
               'It established the National Health Service (NHS) in Britain.',
-              "It funded Robert Koch's research into tuberculosis.",
-              'It banned the use of leeches and bloodletting.',
               'It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.',
+              'It banned the use of leeches and bloodletting.',
+              "It funded Robert Koch's research into tuberculosis.",
             ],
           },
         ],
@@ -7810,30 +7551,30 @@ export const unitData = {
           question:
             "In 1909, Paul Ehrlich and his research team developed Salvarsan 606 to treat syphilis. Why was Salvarsan 606 clinically known as the first 'magic bullet'?",
           options: [
-            "Because it was a synthetic chemical compound designed to target and destroy a specific disease-causing microbe inside the body without harming the rest of the patient's cells.",
             'Because it was the first natural antibiotic grown from living fungi that destroyed bacterial infections.',
             'Because it was a liquid chemical sprayed on surgical tables to create an aseptic environment.',
             'Because it was a mass-produced vaccine that provided universal immunity to all infectious diseases.',
+            "Because it was a synthetic chemical compound designed to target and destroy a specific disease-causing microbe inside the body without harming the rest of the patient's cells.",
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question: 'During his research, how did Paul Ehrlich discover Salvarsan 606?',
           options: [
-            'By extracting chemicals from South American cinchona bark to treat yellow fever.',
             'By methodically testing over 600 arsenic chemical compounds until finding one (the 606th) that specifically destroyed syphilis bacteria.',
-            'By analyzing the star charts of syphilis patients in German charity hospitals.',
+            'By extracting chemicals from South American cinchona bark to treat yellow fever.',
             'By accidentally leaving petri dishes exposed to mold spores while on holiday.',
+            'By analyzing the star charts of syphilis patients in German charity hospitals.',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             "In 1932, Gerhard Domagk discovered Prontosil, the second 'magic bullet'. What type of infection did Prontosil cure?",
           options: [
             'Tuberculosis and water-borne cholera.',
-            'Syphilis and other sexually transmitted infections.',
             'Influenza and viral chest infections.',
+            'Syphilis and other sexually transmitted infections.',
             'Puerperal (childbed) fever and blood poisoning caused by streptococcus bacteria.',
           ],
           answer: 3,
@@ -7842,34 +7583,34 @@ export const unitData = {
           question:
             "How did 20th-century 'magic bullets' fundamentally differ in their clinical application from 19th-century antiseptics like Joseph Lister's carbolic acid?",
           options: [
+            "There was no difference; 'magic bullet' was simply the German marketing term for carbolic acid spray.",
+            'Antiseptics killed microbes on external surfaces or open wound tissue, whereas magic bullets were taken internally to target and destroy specific pathogens inside the body without poisoning the patient.',
             'Antiseptics targeted only viruses, while magic bullets were designed to destroy red blood cells.',
             'Antiseptics were natural antibiotics grown from mold, whereas magic bullets were synthetic mineral remedies.',
-            'Antiseptics killed microbes on external surfaces or open wound tissue, whereas magic bullets were taken internally to target and destroy specific pathogens inside the body without poisoning the patient.',
-            "There was no difference; 'magic bullet' was simply the German marketing term for carbolic acid spray.",
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question:
             "What is the biological difference between early chemical 'magic bullets' like Salvarsan 606 and the first true antibiotic, penicillin?",
           options: [
-            'Magic bullets were taken as tablets, whereas antibiotics could only be injected using mobile X-ray units.',
-            'Magic bullets only cured viral infections, while antibiotics targeted hereditary genetic diseases.',
             'Magic bullets were synthetic chemical compounds created in laboratories, whereas antibiotics like penicillin were created using living microorganisms to kill bacteria.',
             'Magic bullets were natural vaccinations, whereas antibiotics were synthetic chemical dyes.',
+            'Magic bullets were taken as tablets, whereas antibiotics could only be injected using mobile X-ray units.',
+            'Magic bullets only cured viral infections, while antibiotics targeted hereditary genetic diseases.',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
             'After Gerhard Domagk published his findings on Prontosil, what active ingredient did French scientists isolate, leading to the creation of cheap sulphonamide drugs?',
           options: [
+            'Antimony, which replaced traditional herbal remedies in hospitals.',
             'Arsenic, which was used to stain transparent tuberculosis bacteria.',
             'Sulphanilamide, which allowed pharmaceutical companies to mass-produce cheap, effective drugs for pneumonia, meningitis, and scarlet fever.',
-            'Antimony, which replaced traditional herbal remedies in hospitals.',
             'Citrate glucose, which extended the storage of blood banks.',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
@@ -7877,19 +7618,19 @@ export const unitData = {
           options: [
             'It strictly banned the use of chemical magic bullets and surgical anaesthetics.',
             'It only applied to wealthy aristocrats who could afford private insurance panels.',
-            'It only covered hospital stays for patients suffering from infectious cholera outbreaks.',
             'It only provided free GP care to sick workers who paid weekly contributions, completely excluding their wives, children, and those who were unemployed or retired.',
+            'It only covered hospital stays for patients suffering from infectious cholera outbreaks.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             "Which landmark 1942 government report recommended that the British state should provide comprehensive social security and healthcare 'from the cradle to the grave'?",
           options: [
             'The Beveridge Report',
-            'The Observationes Medicae',
-            'The Edwin Chadwick Sanitary Report',
             'The De Motu Cordis',
+            'The Edwin Chadwick Sanitary Report',
+            'The Observationes Medicae',
           ],
           answer: 0,
         },
@@ -7898,31 +7639,31 @@ export const unitData = {
             'In which year did the National Health Service (NHS) begin operating, and who was the government minister responsible for its launch?',
           options: [
             '1953; under Clement Attlee',
-            '1911; under David Lloyd George',
-            '1945; under Winston Churchill',
             '1948; under Aneurin Bevan',
+            '1945; under Winston Churchill',
+            '1911; under David Lloyd George',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'What was the revolutionary founding principle of the National Health Service (NHS) in 1948?',
           options: [
-            'That comprehensive healthcare should be free at the point of delivery for everyone in Britain, paid for through national taxation.',
             'That all traditional general practitioners must be replaced by university-trained research chemists.',
-            'That only workers who paid a high private monthly premium could access municipal hospitals.',
             'That hospitals should focus entirely on soul care, rest, and prayer rather than physical cure.',
+            'That only workers who paid a high private monthly premium could access municipal hospitals.',
+            'That comprehensive healthcare should be free at the point of delivery for everyone in Britain, paid for through national taxation.',
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
             "When the NHS was launched in 1948, its services were organized into a 'tripartite' (three-part) system. What were these three parts?",
           options: [
-            'Monastery hospitals, wise women, and barber-surgeons.',
-            'Primary care (GPs, dentists, opticians), hospital services (managed by regional boards), and local authority health services (such as ambulances and health visitors).',
             'X-ray diagnostic clinics, chemical laboratories, and genetic screening centers.',
+            'Primary care (GPs, dentists, opticians), hospital services (managed by regional boards), and local authority health services (such as ambulances and health visitors).',
             'Advanced dressing stations, casualty clearing stations, and base hospitals.',
+            'Monastery hospitals, wise women, and barber-surgeons.',
           ],
           answer: 1,
         },
@@ -7930,99 +7671,99 @@ export const unitData = {
           question:
             "Why did the British Medical Association (BMA)-representing the country's doctors-initially strongly oppose the creation of the NHS?",
           options: [
-            "They believed that making healthcare free was a sin that went against Galen's teachings.",
-            'They argued that the government should fund vaccines instead of building new hospitals.',
             'They feared they would lose their independent status, lose their private patient income, and become state-controlled civil servants.',
+            'They argued that the government should fund vaccines instead of building new hospitals.',
             'They believed the 1911 National Insurance Act already provided complete medical coverage for all families.',
+            "They believed that making healthcare free was a sin that went against Galen's teachings.",
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question: 'How did Aneurin Bevan famously win over the doctors who opposed the NHS?',
           options: [
-            'By threatening to close down all medical schools at Oxford and Cambridge.',
             'By replacing all hostile doctors with volunteer nurses trained by Florence Nightingale.',
-            'By passing a law making it a criminal offense for general practitioners to charge fees.',
+            'By threatening to close down all medical schools at Oxford and Cambridge.',
             "By 'stuffing their mouths with gold'-allowing hospital consultants to continue treating lucrative private patients alongside their NHS work.",
+            'By passing a law making it a criminal offense for general practitioners to charge fees.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             'How did the launch of the NHS in 1948 transform access to high-tech medical treatments for the working class?',
           options: [
+            'It forced municipal councils to revert back to traditional, low-cost herbal remedies.',
+            'It guaranteed that all working-class citizens received genetic screening before starting employment.',
             'It provided every household with a private home physician and an insulated blood depot.',
             'It made advanced diagnostic tests and specialized surgical treatments free for everyone, removing the fear of bankruptcy from getting ill.',
-            'It guaranteed that all working-class citizens received genetic screening before starting employment.',
-            'It forced municipal councils to revert back to traditional, low-cost herbal remedies.',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'Following the introduction of sulphonamide magic bullets in the 1930s and the NHS in 1948, what dramatic trend occurred in maternal mortality (mothers dying during or after childbirth)?',
-          options: [
-            'It fell rapidly, dropping from high rates in the early 20th century to less than 1% by the late 20th century.',
-            'It fluctuated wildly depending on the seasonal alignments of Mars, Jupiter, and Saturn.',
-            'It rose sharply because doctors began performing deeper, more dangerous surgeries without antiseptics.',
-            'It remained completely unchanged because doctors still relied on the Four Humours.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'As part of its modern focus on preventing disease, what type of campaigns does the government run through the NHS?',
-          options: [
-            'National distribution of theriaca to prevent chronic illnesses.',
-            'Compulsory municipal sweeping of city streets to clear miasma.',
-            'Public education and lifestyle campaigns encouraging healthy eating, physical exercise, and reducing tobacco or alcohol consumption.',
-            'Forced quarantine of all citizens during solar eclipses.',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            "Why does the 1935 illustration 'Medical moments in time' in the textbook emphasize that the pace of medical change in the first half of the 20th century was steady rather than rapid?",
-          options: [
-            'Because the NHS was closed down during the First World War.',
-            'Because the government had banned the use of vaccines and magic bullets.',
-            'Because while breakthroughs like X-rays and aseptic surgery existed, many traditional home remedies (like wrapping brown paper and vinegar for headaches) remained highly common.',
-            "Because Robert Koch's bacteriological discoveries had been completely disproved by the Royal Society.",
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'Which of the following is a successful example of a modern, government-funded NHS preventative immunization campaign that wiped out a major paralyzing disease in Britain?',
-          options: [
-            'The introduction of the polio vaccine in the 1950s.',
-            'The distribution of Salvarsan 606 to school children.',
-            'The 1875 carbolic acid campaign.',
-            'The compulsory inoculation of cowpox scabs.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Which of the following represents a modern, high-tech surgical treatment developed in the late 20th century that is provided free of charge under the NHS?',
-          options: [
-            'Bloodletting using leeches on weak or elderly patients.',
-            'Lancing buboes and administering toxic emetics.',
-            'Mandatory cauterisation of wound margins using hot iron rods.',
-            'Organ transplants, prosthetic joint replacements, and keyhole surgery.',
           ],
           answer: 3,
         },
         {
           question:
+            'Following the introduction of sulphonamide magic bullets in the 1930s and the NHS in 1948, what dramatic trend occurred in maternal mortality (mothers dying during or after childbirth)?',
+          options: [
+            'It rose sharply because doctors began performing deeper, more dangerous surgeries without antiseptics.',
+            'It fell rapidly, dropping from high rates in the early 20th century to less than 1% by the late 20th century.',
+            'It remained completely unchanged because doctors still relied on the Four Humours.',
+            'It fluctuated wildly depending on the seasonal alignments of Mars, Jupiter, and Saturn.',
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            'As part of its modern focus on preventing disease, what type of campaigns does the government run through the NHS?',
+          options: [
+            'Public education and lifestyle campaigns encouraging healthy eating, physical exercise, and reducing tobacco or alcohol consumption.',
+            'Forced quarantine of all citizens during solar eclipses.',
+            'Compulsory municipal sweeping of city streets to clear miasma.',
+            'National distribution of theriaca to prevent chronic illnesses.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
+            "Why does the 1935 illustration 'Medical moments in time' in the textbook emphasize that the pace of medical change in the first half of the 20th century was steady rather than rapid?",
+          options: [
+            "Because Robert Koch's bacteriological discoveries had been completely disproved by the Royal Society.",
+            'Because the government had banned the use of vaccines and magic bullets.',
+            'Because the NHS was closed down during the First World War.',
+            'Because while breakthroughs like X-rays and aseptic surgery existed, many traditional home remedies (like wrapping brown paper and vinegar for headaches) remained highly common.',
+          ],
+          answer: 3,
+        },
+        {
+          question:
+            'Which of the following is a successful example of a modern, government-funded NHS preventative immunization campaign that wiped out a major paralyzing disease in Britain?',
+          options: [
+            'The 1875 carbolic acid campaign.',
+            'The distribution of Salvarsan 606 to school children.',
+            'The introduction of the polio vaccine in the 1950s.',
+            'The compulsory inoculation of cowpox scabs.',
+          ],
+          answer: 2,
+        },
+        {
+          question:
+            'Which of the following represents a modern, high-tech surgical treatment developed in the late 20th century that is provided free of charge under the NHS?',
+          options: [
+            'Mandatory cauterisation of wound margins using hot iron rods.',
+            'Lancing buboes and administering toxic emetics.',
+            'Organ transplants, prosthetic joint replacements, and keyhole surgery.',
+            'Bloodletting using leeches on weak or elderly patients.',
+          ],
+          answer: 2,
+        },
+        {
+          question:
             'What is a major modern challenge facing the long-term effectiveness of antibiotic treatments like penicillin?',
           options: [
-            'Antibiotics are only effective against viral diseases, which are declining in modern Britain.',
             'The evolution of drug-resistant strains of bacteria (superbugs like MRSA) due to the over-prescription and overuse of antibiotics.',
             'The Catholic Church has banned their use in all major hospitals.',
             'The cost of raw materials imported from the New World has made them unaffordable.',
+            'Antibiotics are only effective against viral diseases, which are declining in modern Britain.',
           ],
-          answer: 1,
+          answer: 0,
         },
       ],
       flashcards: [
@@ -8172,25 +7913,25 @@ export const unitData = {
             answer:
               'A chemical compound that targets and kills specific microbes without harming the rest of the body.',
             options: [
+              'An injection of cowpox to prevent smallpox.',
+              'A type of shrapnel shell used on the Western Front.',
               'A pill containing vitamins to boost public health.',
               'A chemical compound that targets and kills specific microbes without harming the rest of the body.',
-              'A type of shrapnel shell used on the Western Front.',
-              'An injection of cowpox to prevent smallpox.',
             ],
           },
           {
             question: 'Name the first magic bullet, discovered by Paul Ehrlich in 1909.',
             answer: 'Salvarsan 606.',
-            options: ['Salvarsan 606.', 'Prontosil.', 'Carbolic acid', 'Penicillin.'],
+            options: ['Penicillin.', 'Salvarsan 606.', 'Prontosil.', 'Carbolic acid'],
           },
           {
             question: 'What was established in Britain in 1948 to provide free medical care?',
             answer: 'The National Health Service (NHS).',
             options: [
-              'The Red Cross.',
-              'The Royal Society.',
-              'The National Health Service (NHS).',
               'The RAMC.',
+              'The Red Cross.',
+              'The National Health Service (NHS).',
+              'The Royal Society.',
             ],
           },
           {
@@ -8198,24 +7939,24 @@ export const unitData = {
               'Who was the Minister of Health responsible for establishing the NHS in 1948?',
             answer: 'Aneurin Bevan.',
             options: [
-              'Florence Nightingale.',
-              'Alexander Fleming',
-              'Winston Churchill.',
               'Aneurin Bevan.',
+              'Alexander Fleming',
+              'Florence Nightingale.',
+              'Winston Churchill.',
             ],
           },
           {
             question:
               'Name the second magic bullet, discovered by Gerhard Domagk in 1932 to treat strep infections.',
             answer: 'Prontosil.',
-            options: ['Prontosil.', 'Penicillin.', 'Chloroform', 'Salvarsan 606.'],
+            options: ['Chloroform', 'Prontosil.', 'Salvarsan 606.', 'Penicillin.'],
           },
           {
             question: 'What structure did Watson and Crick discover in 1953?',
             answer: 'The double helix structure of DNA.',
             options: [
-              'The penicillin mould culture.',
               'The valves inside human veins.',
+              'The penicillin mould culture.',
               'The bacteria responsible for tuberculosis.',
               'The double helix structure of DNA.',
             ],
@@ -8223,21 +7964,21 @@ export const unitData = {
           {
             question: 'Who published the Germ Theory in 1861?',
             answer: 'Louis Pasteur.',
-            options: ['Robert Koch.', 'Edward Jenner', 'Louis Pasteur.', 'Alexander Fleming.'],
+            options: ['Louis Pasteur.', 'Edward Jenner', 'Robert Koch.', 'Alexander Fleming.'],
           },
           {
             question: 'Who introduced antiseptic surgery using carbolic acid in 1865?',
             answer: 'Joseph Lister.',
-            options: ['Robert Koch.', 'Joseph Lister.', 'James Simpson.', 'Louis Pasteur'],
+            options: ['James Simpson.', 'Joseph Lister.', 'Louis Pasteur', 'Robert Koch.'],
           },
           {
             question: 'Name one modern lifestyle factor that causes disease.',
             answer: 'Smoking, poor diet, or lack of exercise.',
             options: [
-              'Dissecting animal bodies in university labs.',
-              'Undergoing surgical operations under anesthetic.',
-              'Smoking, poor diet, or lack of exercise.',
               'Drinking clean tap water.',
+              'Dissecting animal bodies in university labs.',
+              'Smoking, poor diet, or lack of exercise.',
+              'Undergoing surgical operations under anesthetic.',
             ],
           },
           {
@@ -8246,9 +7987,9 @@ export const unitData = {
             answer: 'Rosalind Franklin.',
             options: [
               'Dorothy Hodgkin',
-              'Rosalind Franklin.',
               'Florence Nightingale.',
               'Marie Curie.',
+              'Rosalind Franklin.',
             ],
           },
         ],
@@ -8462,11 +8203,11 @@ export const unitData = {
             'In which year did Alexander Fleming make his accidental observation of Penicillium mould on a staphylococci culture plate, and where did this take place?',
           options: [
             '1944; in an industrial manufacturing plant in the United States',
-            '1914; in a British military battlefield hospital in France',
-            '1938; in the pathology laboratory at Oxford University',
             "1928; at St Mary's Hospital in London",
+            '1938; in the pathology laboratory at Oxford University',
+            '1914; in a British military battlefield hospital in France',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
@@ -8474,8 +8215,8 @@ export const unitData = {
           options: [
             'A contaminating mould had grown on the dish and killed off the surrounding staphylococci bacteria.',
             'Microscopic bacteria were naturally mutating into harmless, non-infectious organisms.',
-            'The mould was feeding on the agar jelly and chemically converting it into sodium citrate.',
             'Airborne dust particles had spontaneously generated new bacteria inside a sealed swan-neck flask.',
+            'The mould was feeding on the agar jelly and chemically converting it into sodium citrate.',
           ],
           answer: 0,
         },
@@ -8483,34 +8224,34 @@ export const unitData = {
           question:
             'Why did Alexander Fleming abandon his research into penicillin as a systemic medical treatment by 1931?',
           options: [
-            'He lacked the specialized chemical team and funding needed to isolate, concentrate, and stabilize the active compound.',
-            'The British government officially banned his experiments because they believed it was unscientific.',
-            'He discovered that penicillin was highly toxic and killed 100% of the animal subjects he tested it on.',
             'The staphylococci bacteria quickly mutated and became 100% resistant to the mould.',
+            'He discovered that penicillin was highly toxic and killed 100% of the animal subjects he tested it on.',
+            'The British government officially banned his experiments because they believed it was unscientific.',
+            'He lacked the specialized chemical team and funding needed to isolate, concentrate, and stabilize the active compound.',
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
             "Which of the following is a widespread historical 'myth' regarding the development of penicillin that examiners warn students to avoid in their essays?",
           options: [
-            'That the first human trials of penicillin were carried out on mice in 1940.',
-            'That Alexander Fleming single-handedly developed penicillin into a mass-produced, usable medicine.',
-            'That penicillin was developed to treat wounds during the First World War.',
             'That Howard Florey and Ernst Chain were the ones who originally discovered the mould in 1928.',
+            'That penicillin was developed to treat wounds during the First World War.',
+            'That Alexander Fleming single-handedly developed penicillin into a mass-produced, usable medicine.',
+            'That the first human trials of penicillin were carried out on mice in 1940.',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             "How did Alexander Fleming's early laboratory experiments in 1928-1929 mislead him about penicillin's potential as an internal medicine?",
           options: [
             'He found that the mould only grew on New World cinchona bark, which was too expensive to import.',
-            'He mistakenly believed that penicillin could only be used to treat viral illnesses like smallpox.',
-            'His compound microscopes were not powerful enough to show the boundaries between the mould and the bacteria.',
             'He found that penicillin became completely ineffective when mixed with blood in test tubes, causing him to doubt its value in living people.',
+            'His compound microscopes were not powerful enough to show the boundaries between the mould and the bacteria.',
+            'He mistakenly believed that penicillin could only be used to treat viral illnesses like smallpox.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
@@ -8527,73 +8268,73 @@ export const unitData = {
           question:
             "How did Ernst Chain contribute to the team's early breakthroughs in purifying penicillin?",
           options: [
-            'He convinced the US government to provide five years of unrestricted research funding.',
-            'He was a medical officer who ran the clinical trials on wounded soldiers in battlefield hospitals.',
-            'He was an engineer who designed the first deep-fermentation tanks used in beer vats.',
             'As a skilled biochemist, he successfully grew the mould in his laboratory and extracted the active chemical compound.',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            "What was the result of Florey and Chain's landmark scientific experiment on mice in the year 1940?",
-          options: [
-            'It proved that penicillin was an effective antiseptic when sprayed onto external wounds.',
-            'It proved that penicillin was only effective when combined with Salvarsan 606.',
-            'It proved that penicillin was a highly effective antibiotic capable of killing deadly infections inside living bodies.',
-            'It proved that penicillin caused severe genetic mutations in the offspring of the mice.',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            "Why did Florey and Chain's Oxford research team have to use household objects like milk churns, bed pans, and even a bath tub in their laboratory?",
-          options: [
-            'They believed that the biochemical structure of penicillin could only be preserved in porous zinc containers.',
-            'Penicillin was incredibly difficult to produce in large quantities, requiring massive volumes of grown mould to extract tiny amounts of active liquid.',
-            'The British government had made it illegal to buy professional glass scientific equipment during WWII.',
-            'They were trying to prove that ordinary citizens could easily make penicillin at home to prevent miasma.',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            "Who was the first human patient to be treated with Florey and Chain's purified penicillin in 1941, and how did he contract his infection?",
-          options: [
-            'Albert Alexander, a local policeman who developed septicaemia after being scratched by a rose bush.',
-            'James Phipps, a young schoolboy who developed a severe smallpox infection.',
-            'Hannah Greener, a young girl who suffered from a fatal post-operative wound infection.',
-            'John Tyndall, a physics student who contracted trench fever on the Western Front.',
+            'He was a medical officer who ran the clinical trials on wounded soldiers in battlefield hospitals.',
+            'He convinced the US government to provide five years of unrestricted research funding.',
+            'He was an engineer who designed the first deep-fermentation tanks used in beer vats.',
           ],
           answer: 0,
         },
         {
           question:
-            'What tragic clinical outcome occurred during the first human trial of penicillin in 1941, and why?',
+            "What was the result of Florey and Chain's landmark scientific experiment on mice in the year 1940?",
           options: [
-            'The patient suffered a fatal allergic shock because penicillin was contaminated with arsenic.',
-            'The patient initially showed dramatic recovery, but died after the tiny supply of penicillin ran out, despite the doctors trying to recycle the drug from his urine.',
-            'The patient was completely cured of his infection but died from chloroform overdose during surgery.',
-            "The penicillin proved to be completely ineffective, failing to slow down the patient's septicaemia at all.",
+            'It proved that penicillin caused severe genetic mutations in the offspring of the mice.',
+            'It proved that penicillin was only effective when combined with Salvarsan 606.',
+            'It proved that penicillin was an effective antiseptic when sprayed onto external wounds.',
+            'It proved that penicillin was a highly effective antibiotic capable of killing deadly infections inside living bodies.',
+          ],
+          answer: 3,
+        },
+        {
+          question:
+            "Why did Florey and Chain's Oxford research team have to use household objects like milk churns, bed pans, and even a bath tub in their laboratory?",
+          options: [
+            'Penicillin was incredibly difficult to produce in large quantities, requiring massive volumes of grown mould to extract tiny amounts of active liquid.',
+            'They believed that the biochemical structure of penicillin could only be preserved in porous zinc containers.',
+            'The British government had made it illegal to buy professional glass scientific equipment during WWII.',
+            'They were trying to prove that ordinary citizens could easily make penicillin at home to prevent miasma.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
+            "Who was the first human patient to be treated with Florey and Chain's purified penicillin in 1941, and how did he contract his infection?",
+          options: [
+            'James Phipps, a young schoolboy who developed a severe smallpox infection.',
+            'Albert Alexander, a local policeman who developed septicaemia after being scratched by a rose bush.',
+            'John Tyndall, a physics student who contracted trench fever on the Western Front.',
+            'Hannah Greener, a young girl who suffered from a fatal post-operative wound infection.',
           ],
           answer: 1,
         },
         {
           question:
-            'When Florey and Chain first approached British pharmaceutical companies in 1939-1940 to mass-produce penicillin, why were they turned down?',
+            'What tragic clinical outcome occurred during the first human trial of penicillin in 1941, and why?',
           options: [
-            'The British government had placed a total ban on the manufacture of any drug derived from mould.',
-            'The firms believed that chemical magic bullets like Prontosil were far superior and cheaper to make.',
-            'British firms were fully occupied with the war effort, manufacturing essential military supplies and ammunition for World War II.',
-            "British companies argued that Louis Pasteur's Germ Theory had already been disproved.",
+            'The patient was completely cured of his infection but died from chloroform overdose during surgery.',
+            "The penicillin proved to be completely ineffective, failing to slow down the patient's septicaemia at all.",
+            'The patient initially showed dramatic recovery, but died after the tiny supply of penicillin ran out, despite the doctors trying to recycle the drug from his urine.',
+            'The patient suffered a fatal allergic shock because penicillin was contaminated with arsenic.',
           ],
           answer: 2,
         },
         {
           question:
-            'To which country did Howard Florey travel in July 1941 to seek the industrial help and investment needed to mass-produce penicillin?',
-          options: ['Nazi Germany', 'France', 'Australia', 'The United States'],
+            'When Florey and Chain first approached British pharmaceutical companies in 1939-1940 to mass-produce penicillin, why were they turned down?',
+          options: [
+            "British companies argued that Louis Pasteur's Germ Theory had already been disproved.",
+            'The firms believed that chemical magic bullets like Prontosil were far superior and cheaper to make.',
+            'The British government had placed a total ban on the manufacture of any drug derived from mould.',
+            'British firms were fully occupied with the war effort, manufacturing essential military supplies and ammunition for World War II.',
+          ],
           answer: 3,
+        },
+        {
+          question:
+            'To which country did Howard Florey travel in July 1941 to seek the industrial help and investment needed to mass-produce penicillin?',
+          options: ['Australia', 'The United States', 'Nazi Germany', 'France'],
+          answer: 1,
         },
         {
           question:
@@ -8601,8 +8342,8 @@ export const unitData = {
           options: [
             'The entry of the United States into World War II, making the treatment of wounded soldiers a matter of urgent national priority.',
             'The successful mapping of the human genome.',
-            'The creation of the British National Health Service (NHS).',
             'The outbreak of the first global influenza epidemic.',
+            'The creation of the British National Health Service (NHS).',
           ],
           answer: 0,
         },
@@ -8610,12 +8351,12 @@ export const unitData = {
           question:
             'Which industrial manufacturing method allowed US pharmaceutical companies to scale up penicillin production from small laboratory bottles to millions of doses?',
           options: [
-            'Growing the mould in giant beer vats and deep-fermentation tanks.',
             "Using high-pressure steam autoclaves to chemically copy the mould's structure.",
-            'Synthesizing the drug using coal tar and industrial aniline dyes.',
             'Using mobile X-ray units to accelerate the growth of the fungi.',
+            'Synthesizing the drug using coal tar and industrial aniline dyes.',
+            'Growing the mould in giant beer vats and deep-fermentation tanks.',
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
@@ -8632,40 +8373,40 @@ export const unitData = {
           question:
             "How did Howard Florey's attitude toward patenting penicillin accelerate its worldwide availability and keep manufacturing costs down?",
           options: [
-            'He patented it only in Britain, allowing the NHS to hold a complete global monopoly.',
-            'He patented it immediately and sold the rights to the highest-bidding US company to fund further research.',
             'He sold the chemical formula to the Royal Society so they could publish it in their journal.',
             'He refused to patent the drug, declaring that it should be a free, lifesaving resource available to everyone in the world.',
+            'He patented it only in Britain, allowing the NHS to hold a complete global monopoly.',
+            'He patented it immediately and sold the rights to the highest-bidding US company to fund further research.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'Which female scientist at Oxford University identified the exact chemical structure of penicillin in 1945, allowing chemists to create semi-synthetic variations?',
           options: [
             'Rosalind Franklin',
+            'Florence Nightingale',
             'Dorothy Crowfoot Hodgkin',
             'Marie Curie',
-            'Florence Nightingale',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             'In which year did Fleming, Florey, and Chain jointly receive the Nobel Prize in Medicine to recognize their collective roles in the penicillin breakthrough?',
-          options: ['1948', '1928', '1938', '1945'],
-          answer: 3,
+          options: ['1945', '1948', '1928', '1938'],
+          answer: 0,
         },
         {
           question:
             "Looking at the penicillin story through Edexcel GCSE 'factors', which combination of factors was most crucial in turning a minor 1928 laboratory discovery into a global medical revolution by 1944?",
           options: [
             'The authority of Galen, the power of the Catholic Church, and the printing press.',
-            'Individual brilliance (Fleming/Florey/Chain), institutions (the US Government), science/technology (deep fermentation), and the catalyst of war (WWII).',
-            'Supernatural beliefs, local wise women, and royal support.',
             'The laissez-faire philosophy of the British government, hospital hygiene reforms, and the 1875 Public Health Act.',
+            'Supernatural beliefs, local wise women, and royal support.',
+            'Individual brilliance (Fleming/Florey/Chain), institutions (the US Government), science/technology (deep fermentation), and the catalyst of war (WWII).',
           ],
-          answer: 1,
+          answer: 3,
         },
       ],
       flashcards: [
@@ -8827,26 +8568,26 @@ export const unitData = {
           {
             question: 'Who discovered Penicillin by accident in 1928?',
             answer: 'Alexander Fleming.',
-            options: ['Alexander Fleming.', 'Howard Florey.', 'Ernst Chain.', 'Robert Koch'],
+            options: ['Alexander Fleming.', 'Ernst Chain.', 'Robert Koch', 'Howard Florey.'],
           },
           {
             question: 'Which two scientists at Oxford developed Penicillin into a usable drug?',
             answer: 'Howard Florey and Ernst Chain.',
             options: [
+              'Watson and Crick.',
+              'Howard Florey and Ernst Chain.',
               'Louis Pasteur and Robert Koch.',
               'Paul Ehrlich and Gerhard Domagk.',
-              'Howard Florey and Ernst Chain.',
-              'Watson and Crick.',
             ],
           },
           {
             question: 'What major global event drove the mass production of Penicillin?',
             answer: 'The Second World War.',
             options: [
-              'The Crimean War.',
               'The Industrial Revolution.',
-              'The Second World War.',
               'The Great Plague.',
+              'The Crimean War.',
+              'The Second World War.',
             ],
           },
           {
@@ -8854,20 +8595,20 @@ export const unitData = {
             answer:
               'A chemical compound that targets and kills specific microbes without harming the rest of the body.',
             options: [
-              'A pill containing vitamins to boost public health.',
-              'A type of shrapnel shell used on the Western Front.',
               'An injection of cowpox to prevent smallpox.',
+              'A type of shrapnel shell used on the Western Front.',
               'A chemical compound that targets and kills specific microbes without harming the rest of the body.',
+              'A pill containing vitamins to boost public health.',
             ],
           },
           {
             question: 'What was established in Britain in 1948 to provide free medical care?',
             answer: 'The National Health Service (NHS).',
             options: [
+              'The RAMC.',
               'The Red Cross.',
               'The National Health Service (NHS).',
               'The Royal Society.',
-              'The RAMC.',
             ],
           },
           {
@@ -8875,9 +8616,9 @@ export const unitData = {
               'Who was the Minister of Health responsible for establishing the NHS in 1948?',
             answer: 'Aneurin Bevan.',
             options: [
+              'Alexander Fleming',
               'Aneurin Bevan.',
               'Florence Nightingale.',
-              'Alexander Fleming',
               'Winston Churchill.',
             ],
           },
@@ -8885,16 +8626,16 @@ export const unitData = {
             question: 'What are the four humours?',
             answer: 'Blood, phlegm, yellow bile, black bile.',
             options: [
+              'Blood, water, pus, black bile.',
+              'Blood, water, air, bile.',
               'Blood, phlegm, yellow bile, urine.',
               'Blood, phlegm, yellow bile, black bile.',
-              'Blood, water, air, bile.',
-              'Blood, water, pus, black bile.',
             ],
           },
           {
             question: "Who wrote 'On the Fabric of the Human Body' (1543)?",
             answer: 'Andreas Vesalius.',
-            options: ['William Harvey.', 'Galen.', 'Thomas Sydenham.', 'Andreas Vesalius.'],
+            options: ['Andreas Vesalius.', 'William Harvey.', 'Thomas Sydenham.', 'Galen.'],
           },
           {
             question:
@@ -8904,8 +8645,8 @@ export const unitData = {
             options: [
               'Chemotherapy was officially banned by the NHS.',
               'Modern science has not yet mapped the lung genome.',
-              'Symptoms often do not appear until the cancer is advanced and has spread to other organs.',
               'CT scans cannot detect tumors in the lungs.',
+              'Symptoms often do not appear until the cancer is advanced and has spread to other organs.',
             ],
           },
           {
@@ -8914,9 +8655,9 @@ export const unitData = {
             answer: 'The British Doctors Study by Richard Doll and Bradford Hill.',
             options: [
               'The British Doctors Study by Richard Doll and Bradford Hill.',
-              'The Florence Nightingale Hygiene Audit.',
               'The John Snow Cholera Report.',
               'The Alexander Fleming Penicillin Memo.',
+              'The Florence Nightingale Hygiene Audit.',
             ],
           },
         ],
@@ -9101,7 +8842,7 @@ export const unitData = {
         {
           question:
             'In which year did the British Medical Research Council publish the landmark study by Doll and Hill that conclusively proved the link between smoking and lung cancer?',
-          options: ['1928', '1950', '1965', '1948'],
+          options: ['1948', '1950', '1928', '1965'],
           answer: 1,
         },
         {
@@ -9110,63 +8851,63 @@ export const unitData = {
           options: [
             'Because university-trained physicians argued that smoking helped to balance the phlegm humour.',
             'Because the NHS cost of treating lung cancer was higher than the revenue earned from tobacco taxes.',
-            'Because the Royal Society officially published a study claiming that lung cancer was caused by coal smog.',
             'Because the government earned around £4 billion from tobacco tax, thousands of jobs depended on the industry, and there were ethical debates about limiting personal freedoms.',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'What was a major limitation of using traditional chest X-rays to diagnose lung cancer before advanced scanning technology was developed?',
-          options: [
-            'They were not clear enough, meaning tumors were often missed entirely or mistaken for other things like lung abscesses.',
-            'X-rays could only detect cancer if the patient was also suffering from tuberculosis.',
-            'X-rays were not powerful enough to show bones, making it impossible to see the lungs.',
-            'X-rays required doctors to perform invasive chest surgery to view the results.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'What key technological advantage does a modern CT (computerised tomography) scan have over a traditional chest X-ray in diagnosing lung cancer?',
-          options: [
-            'A CT scan automatically performs a biopsy to confirm if a lump is cancerous.',
-            "A CT scan analyzes the patient's DNA to see if they carry hereditary cancer genes.",
-            'A CT scan uses dye and takes detailed 3D images, allowing doctors to spot tiny tumors when they are the size of a pea.',
-            'A CT scan uses high-frequency sound waves, completely eliminating the need for radiation.',
+            'Because the Royal Society officially published a study claiming that lung cancer was caused by coal smog.',
           ],
           answer: 2,
         },
         {
           question:
-            "How does a high-tech PET (positron emission tomography) scan assist modern doctors in managing a lung cancer patient's treatment?",
+            'What was a major limitation of using traditional chest X-rays to diagnose lung cancer before advanced scanning technology was developed?',
           options: [
-            "It chemically filters second-hand smoke out of the patient's healthy lung.",
-            'It shows how active the cancer cells are by tracking how much energy the tumor is using, helping doctors see if a treatment is working.',
-            'It injects the patient with magic bullets like Salvarsan 606 to destroy pathogens.',
-            'It uses flexible cameras to physically cut away the tumor without surgery.',
+            'X-rays could only detect cancer if the patient was also suffering from tuberculosis.',
+            'X-rays were not powerful enough to show bones, making it impossible to see the lungs.',
+            'X-rays required doctors to perform invasive chest surgery to view the results.',
+            'They were not clear enough, meaning tumors were often missed entirely or mistaken for other things like lung abscesses.',
+          ],
+          answer: 3,
+        },
+        {
+          question:
+            'What key technological advantage does a modern CT (computerised tomography) scan have over a traditional chest X-ray in diagnosing lung cancer?',
+          options: [
+            "A CT scan analyzes the patient's DNA to see if they carry hereditary cancer genes.",
+            'A CT scan uses dye and takes detailed 3D images, allowing doctors to spot tiny tumors when they are the size of a pea.',
+            'A CT scan automatically performs a biopsy to confirm if a lump is cancerous.',
+            'A CT scan uses high-frequency sound waves, completely eliminating the need for radiation.',
           ],
           answer: 1,
         },
         {
           question:
-            'What is bronchoscopy (a type of endoscope) and how is it used to diagnose lung cancer?',
+            "How does a high-tech PET (positron emission tomography) scan assist modern doctors in managing a lung cancer patient's treatment?",
           options: [
-            "A flexible tube with a camera passed down the patient's airway, allowing doctors to see inside the lungs and collect cell samples.",
-            'A 3D scanner that maps the electrical pathways of the heart.',
-            "A chemical blood test used to check the patient's white blood cell count.",
-            'A targeted radiation beam used to shrink tumors in the chest.',
+            'It shows how active the cancer cells are by tracking how much energy the tumor is using, helping doctors see if a treatment is working.',
+            'It uses flexible cameras to physically cut away the tumor without surgery.',
+            "It chemically filters second-hand smoke out of the patient's healthy lung.",
+            'It injects the patient with magic bullets like Salvarsan 606 to destroy pathogens.',
           ],
           answer: 0,
         },
         {
           question:
+            'What is bronchoscopy (a type of endoscope) and how is it used to diagnose lung cancer?',
+          options: [
+            'A 3D scanner that maps the electrical pathways of the heart.',
+            "A chemical blood test used to check the patient's white blood cell count.",
+            "A flexible tube with a camera passed down the patient's airway, allowing doctors to see inside the lungs and collect cell samples.",
+            'A targeted radiation beam used to shrink tumors in the chest.',
+          ],
+          answer: 2,
+        },
+        {
+          question:
             'What is a biopsy, and why is it a crucial step in the modern diagnosis of lung cancer?',
           options: [
-            'It is the surgical removal of an entire lung to prevent the spread of disease.',
+            "It is a lifestyle questionnaire used to assess a patient's daily smoking habits.",
             "It is an immunization campaign designed to boost the patient's antibodies.",
             'It is the extraction and scientific analysis of a tiny sample of lung tissue to confirm if a tumor is indeed cancerous.',
-            "It is a lifestyle questionnaire used to assess a patient's daily smoking habits.",
+            'It is the surgical removal of an entire lung to prevent the spread of disease.',
           ],
           answer: 2,
         },
@@ -9174,59 +8915,59 @@ export const unitData = {
           question:
             'How does modern chemotherapy treat lung cancer, and what is its main clinical drawback?',
           options: [
+            'It uses powerful drugs (chemicals) to attack and kill cancer cells throughout the body, but it also damages healthy cells, causing severe side effects.',
+            'It uses targeted radiation beams to burn the tumor, but it often misses smaller cancer cells.',
             "It boosts the patient's immune system to destroy the cancer naturally, but it takes years to show results.",
             'It uses remote-controlled robotic tools to cut out the tumor, but it requires weeks of hospital recovery.',
-            'It uses targeted radiation beams to burn the tumor, but it often misses smaller cancer cells.',
-            'It uses powerful drugs (chemicals) to attack and kill cancer cells throughout the body, but it also damages healthy cells, causing severe side effects.',
           ],
-          answer: 3,
+          answer: 0,
         },
         {
           question: 'What does modern radiotherapy treatment for lung cancer involve?',
           options: [
-            'Placing the patient in a pressurized chamber filled with chemically purified air.',
-            'Using targeted, high-energy radiation beams to shrink and destroy localized cancer tumors.',
             "Checking the patient's DNA to tailor specific chemical drugs to their genome.",
+            'Placing the patient in a pressurized chamber filled with chemically purified air.',
             'Injecting the patient with living penicillium mold to destroy bacteria.',
+            'Using targeted, high-energy radiation beams to shrink and destroy localized cancer tumors.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'What is immunotherapy, one of the most advanced treatments for lung cancer in the twenty-first century?',
           options: [
-            "Using specialized drugs to 'wake up' and boost the patient's own immune system so it can identify and destroy cancer cells.",
-            'Using genetic engineering to replace mutated cancer genes with healthy ones.',
-            'A surgical procedure where a healthy donor lung is transplanted into the patient.',
             'Injecting the patient with synthetic cowpox matter to provide lifelong immunity to cancer.',
+            "Using specialized drugs to 'wake up' and boost the patient's own immune system so it can identify and destroy cancer cells.",
+            'A surgical procedure where a healthy donor lung is transplanted into the patient.',
+            'Using genetic engineering to replace mutated cancer genes with healthy ones.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             'What was the very first major advertising restriction the British government placed on tobacco, introduced in 1965?',
           options: [
             'Banning all cigarette sponsorship of major sporting events like the Grand Prix.',
-            'Forcing shops to remove all cigarette products from display.',
             'Banning cigarette advertisements on television.',
+            'Forcing shops to remove all cigarette products from display.',
             'Banning characters from smoking in radio dramas.',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question:
             'Following gradual extensions of advertising rules, in which year did the government finally implement a complete ban on all tobacco advertising and sports sponsorship in the UK?',
-          options: ['2015', '1965', '1985', '2005'],
-          answer: 3,
+          options: ['2005', '2015', '1965', '1985'],
+          answer: 0,
         },
         {
           question:
             "In 2007, what legislative measure did the government take to restrict teenagers' access to tobacco products?",
           options: [
             'They banned shops from selling cigarettes to anyone who did not have an NHS card.',
-            'They made it illegal for anyone under 21 to buy cigarettes.',
-            'They raised the legal age for buying tobacco from 16 to 18.',
             'They made smoking under the age of 18 a criminal offense punishable by prison.',
+            'They raised the legal age for buying tobacco from 16 to 18.',
+            'They made it illegal for anyone under 21 to buy cigarettes.',
           ],
           answer: 2,
         },
@@ -9234,43 +8975,43 @@ export const unitData = {
           question:
             'Under the Health Act of 2006, what major legislative ban came into force on 1 July 2007 to protect the public from passive smoking?',
           options: [
-            'A ban on smoking in all enclosed workplaces, including pubs, cafés, restaurants, and offices.',
             'A ban on smoking within 100 meters of any hospital or school.',
-            'A ban on importing any tobacco products into the United Kingdom.',
             'A total ban on smoking in all private homes.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'What retail display regulation was introduced in 2012 to discourage young people from taking up smoking?',
-          options: [
-            'A law making it illegal to sell more than one packet of cigarettes to a customer at a time.',
-            'A law requiring all cigarette packs to be sold in bright, colorful cartoon boxes.',
-            'A ban on selling cigarettes in any shop that also sold food or soft drinks.',
-            'A requirement that all tobacco products in shops must be removed from open display and kept hidden from sight.',
+            'A ban on importing any tobacco products into the United Kingdom.',
+            'A ban on smoking in all enclosed workplaces, including pubs, cafés, restaurants, and offices.',
           ],
           answer: 3,
         },
         {
           question:
+            'What retail display regulation was introduced in 2012 to discourage young people from taking up smoking?',
+          options: [
+            'A requirement that all tobacco products in shops must be removed from open display and kept hidden from sight.',
+            'A law requiring all cigarette packs to be sold in bright, colorful cartoon boxes.',
+            'A law making it illegal to sell more than one packet of cigarettes to a customer at a time.',
+            'A ban on selling cigarettes in any shop that also sold food or soft drinks.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
             'In 2015, how did the government extend the smoking ban to protect children from the dangers of second-hand smoke?',
           options: [
-            'By banning tobacco sales to parents who had children under school age.',
-            'By banning smoking in all cars carrying children under the age of 18.',
             'By making it illegal to smoke inside any home where a child lived.',
             'By making it illegal to smoke in public parks and playgrounds.',
+            'By banning tobacco sales to parents who had children under school age.',
+            'By banning smoking in all cars carrying children under the age of 18.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             "Which of the following was a 'nudge' tactic introduced in 2015 that standardizes cigarette boxes to make them unappealing to young people?",
           options: [
-            'Forcing tobacco companies to print recipes for herbal remedies on packaging.',
+            "Banning tobacco companies from printing the word 'cigarette' on their boxes.",
             'Forcing shops to wrap all cigarette packets in brown paper and vinegar.',
             'Compulsory plain, olive-green packaging featuring prominent graphic health warnings and no brand logos.',
-            "Banning tobacco companies from printing the word 'cigarette' on their boxes.",
+            'Forcing tobacco companies to print recipes for herbal remedies on packaging.',
           ],
           answer: 2,
         },
@@ -9278,12 +9019,12 @@ export const unitData = {
           question:
             'Why is there currently no national routine screening program for lung cancer in the UK, unlike other chronic conditions?',
           options: [
-            'Because the available tests are not accurate enough to outweigh the negative effects of screening, such as exposing healthy people to radiation.',
             'Because the NHS cannot afford to buy CT scanners for hospitals.',
+            'Because the available tests are not accurate enough to outweigh the negative effects of screening, such as exposing healthy people to radiation.',
             'Because the 2007 smoking ban successfully wiped out lung cancer across the UK.',
             'Because the government still maintains a strictly laissez-faire attitude toward lung cancer.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
@@ -9291,19 +9032,19 @@ export const unitData = {
           options: [
             "In both cases, the government's response was managed entirely by the medieval Catholic Church.",
             'In both cases, the government immediately banned the sale of the product causing the epidemic.',
-            'In both cases, the government took immediate, highly effective national action the moment scientific proof was published.',
             'In both cases, the initial response was slow, with the government only directly intervening with compulsory laws after the death toll became too high to ignore.',
+            'In both cases, the government took immediate, highly effective national action the moment scientific proof was published.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             "The government's modern campaigns (like the Sugar Tax and Change4Life) and legislative bans represent a transition away from which historical political philosophy?",
           options: [
-            'The Theory of Opposites',
-            'The laissez-faire (leave it alone) approach of the 19th century',
-            'Humanism',
             'Spontaneous Generation',
+            'The laissez-faire (leave it alone) approach of the 19th century',
+            'The Theory of Opposites',
+            'Humanism',
           ],
           answer: 1,
         },
@@ -9434,41 +9175,41 @@ export const unitData = {
           {
             question: 'What lifestyle choice was definitively linked to lung cancer in the 1950s?',
             answer: 'Smoking tobacco.',
-            options: ['Smoking tobacco.', 'Drinking alcohol.', 'Lack of sleep', 'Eating red meat.'],
+            options: ['Eating red meat.', 'Lack of sleep', 'Drinking alcohol.', 'Smoking tobacco.'],
           },
           {
             question: 'Name one modern technology used to diagnose lung cancer.',
             answer: 'CT scans or Bronchoscopy.',
             options: [
-              'Stethoscope or Blood pressure cuffs.',
-              'Urine charts and pulse checking.',
               'CT scans or Bronchoscopy.',
+              'Stethoscope or Blood pressure cuffs.',
               'X-ray crystallography.',
+              'Urine charts and pulse checking.',
             ],
           },
           {
             question: 'State one way the modern government tries to prevent people from smoking.',
             answer: 'Banning cigarette advertising, raising taxes, and packaging warning labels.',
             options: [
-              'Mass-vaccinating teenagers against nicotine addiction.',
-              'Making smoking entirely illegal for all citizens.',
-              'Quarantining smokers inside their homes.',
               'Banning cigarette advertising, raising taxes, and packaging warning labels.',
+              'Mass-vaccinating teenagers against nicotine addiction.',
+              'Quarantining smokers inside their homes.',
+              'Making smoking entirely illegal for all citizens.',
             ],
           },
           {
             question: 'When did the First World War begin and end?',
             answer: '1914 to 1918.',
-            options: ['1950 to 1953.', '1914 to 1918.', '1899 to 1902.', '1939 to 1945.'],
+            options: ['1899 to 1902.', '1914 to 1918.', '1950 to 1953.', '1939 to 1945.'],
           },
           {
             question: "What was the 'Western Front'?",
             answer: 'A 400-mile line of trenches stretching through Belgium and France.',
             options: [
-              'A 400-mile line of trenches stretching through Belgium and France.',
-              'The battles fought in the deserts of Mesopotamia.',
-              'The naval blockade in the North Sea.',
               'The medical supply route between London and Paris.',
+              'The naval blockade in the North Sea.',
+              'The battles fought in the deserts of Mesopotamia.',
+              'A 400-mile line of trenches stretching through Belgium and France.',
             ],
           },
           {
@@ -9476,25 +9217,25 @@ export const unitData = {
             answer:
               'A chemical compound that targets and kills specific microbes without harming the rest of the body.',
             options: [
-              'A pill containing vitamins to boost public health.',
-              'A type of shrapnel shell used on the Western Front.',
               'An injection of cowpox to prevent smallpox.',
+              'A type of shrapnel shell used on the Western Front.',
               'A chemical compound that targets and kills specific microbes without harming the rest of the body.',
+              'A pill containing vitamins to boost public health.',
             ],
           },
           {
             question: 'What disease did Edward Jenner vaccinate against in 1796?',
             answer: 'Smallpox.',
-            options: ['Anthrax', 'Tuberculosis.', 'Smallpox.', 'Cholera.'],
+            options: ['Tuberculosis.', 'Cholera.', 'Anthrax', 'Smallpox.'],
           },
           {
             question: 'What was established in Britain in 1948 to provide free medical care?',
             answer: 'The National Health Service (NHS).',
             options: [
+              'The RAMC.',
               'The Red Cross.',
               'The National Health Service (NHS).',
               'The Royal Society.',
-              'The RAMC.',
             ],
           },
           {
@@ -9502,9 +9243,9 @@ export const unitData = {
               'Who was the Minister of Health responsible for establishing the NHS in 1948?',
             answer: 'Aneurin Bevan.',
             options: [
-              'Florence Nightingale.',
-              'Aneurin Bevan.',
               'Alexander Fleming',
+              'Aneurin Bevan.',
+              'Florence Nightingale.',
               'Winston Churchill.',
             ],
           },
@@ -9512,10 +9253,10 @@ export const unitData = {
             question: 'Which anesthetic was discovered by James Simpson in 1847?',
             answer: 'Chloroform.',
             options: [
-              'Tanks were immediately fitted with gas-spraying nozzles.',
-              'Tanks were completely useless on muddy terrain.',
               'Chloroform.',
+              'Tanks were completely useless on muddy terrain.',
               'Tanks were primarily used to transport wounded casualties.',
+              'Tanks were immediately fitted with gas-spraying nozzles.',
             ],
           },
         ],
@@ -9801,38 +9542,38 @@ export const unitData = {
           question:
             "By 1900, how had surgical practice in civilian hospitals evolved from Joseph Lister's earlier methods?",
           options: [
-            'Surgeons had abandoned all cleaning methods and returned to the Four Humours.',
-            'Surgeons discovered that spraying penicillin in the air prevented all postoperative infections.',
             'Surgeons began using radioactive mud to sterilize their instruments.',
             "Surgeons moved from 'antiseptic' surgery (killing germs already in the wound) to 'aseptic' surgery (preventing germs from entering the operating theatre in the first place).",
+            'Surgeons had abandoned all cleaning methods and returned to the Four Humours.',
+            'Surgeons discovered that spraying penicillin in the air prevented all postoperative infections.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'Which of the following was a key piece of technology used in aseptic surgery by the outbreak of the First World War?',
           options: [
-            'The steam autoclave (invented in 1881) used to sterilise surgical instruments.',
-            'Mobile genetic screening units.',
             'Deep-fermentation tanks used to grow antibiotics.',
+            'Mobile genetic screening units.',
+            'The steam autoclave (invented in 1881) used to sterilise surgical instruments.',
             'Electrocardiogram (ECG) machines to restart stopped hearts.',
           ],
-          answer: 0,
+          answer: 2,
         },
         {
           question:
             'In what year did the German physicist Wilhelm Roentgen accidentally discover X-rays?',
-          options: ['1928', '1914', '1895', '1861'],
-          answer: 2,
+          options: ['1861', '1928', '1914', '1895'],
+          answer: 3,
         },
         {
           question:
             'Which of the following was a major limitation of using early X-ray machines in 1914?',
           options: [
             'The radiation doses were 1,500 times stronger than today, causing severe burns and hair loss.',
+            'They were incredibly small and often got lost in the muddy trenches.',
             'They required the patient to swallow a camera on a flexible tube.',
             'They could only be used on patients who had previously caught smallpox.',
-            'They were incredibly small and often got lost in the muddy trenches.',
           ],
           answer: 0,
         },
@@ -9840,43 +9581,43 @@ export const unitData = {
           question:
             'Why were early X-ray machines highly unsuitable for the fast-paced, mobile environment of a battlefield in 1914?',
           options: [
-            "They made a loud noise that instantly gave away the army's position to enemy artillery.",
             'The glass tubes were incredibly fragile, the machines were too heavy to move easily, and taking a single image could take up to 90 minutes.',
             'They required an active internet connection to process the images.',
+            "They made a loud noise that instantly gave away the army's position to enemy artillery.",
             'They relied on injecting patients with Salvarsan 606, which was in short supply.',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'In 1901, the Austrian doctor Karl Landsteiner made a breakthrough that revolutionized blood transfusions. What did he discover?',
           options: [
-            'He discovered the double-helix structure of human DNA.',
-            'He discovered how to synthetically manufacture artificial blood in a laboratory.',
             'He discovered sodium citrate, which stopped blood from clotting.',
+            'He discovered how to synthetically manufacture artificial blood in a laboratory.',
             'He discovered three blood groups (A, B, and O), meaning doctors could finally match donor and patient blood types to prevent fatal rejection.',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Before the discovery of sodium citrate in 1915, what was the massive problem with performing blood transfusions on the battlefield?',
-          options: [
-            'Donating blood was strictly illegal under British military law.',
-            'Only blood group AB could be safely transfused into wounded soldiers.',
-            'Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.',
-            'The rubber tubes used for transfusions instantly melted when exposed to poison gas.',
+            'He discovered the double-helix structure of human DNA.',
           ],
           answer: 2,
         },
         {
           question:
+            'Before the discovery of sodium citrate in 1915, what was the massive problem with performing blood transfusions on the battlefield?',
+          options: [
+            'The rubber tubes used for transfusions instantly melted when exposed to poison gas.',
+            'Donating blood was strictly illegal under British military law.',
+            'Only blood group AB could be safely transfused into wounded soldiers.',
+            'Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.',
+          ],
+          answer: 3,
+        },
+        {
+          question:
             'When the British Expeditionary Force (BEF) arrived on the Western Front in 1914, what geographical feature made the medical situation catastrophic?',
           options: [
-            'The extreme desert heat caused rapid dehydration and sunstroke.',
-            'The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.',
             'The dense tropical jungles harbored malaria-carrying mosquitoes.',
+            'The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.',
             'The steep, freezing mountains made it impossible to carry stretchers.',
+            'The extreme desert heat caused rapid dehydration and sunstroke.',
           ],
           answer: 1,
         },
@@ -9884,23 +9625,23 @@ export const unitData = {
           question:
             "What is the military definition of a 'salient', such as the famous one at Ypres?",
           options: [
-            'A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.',
-            'A mobile hospital unit mounted on a canal barge.',
             'A secret medical headquarters located behind the reserve trenches.',
             'A heavily fortified underground chalk tunnel.',
+            'A mobile hospital unit mounted on a canal barge.',
+            'A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.',
           ],
-          answer: 0,
+          answer: 3,
         },
         {
           question:
             'Which major British offensive, launched in 1916, became a medical disaster with over 57,000 casualties on the very first day?',
           options: [
-            'The Battle of Waterloo',
             'The Battle of Cambrai',
-            'The Battle of Arras',
             'The Battle of the Somme',
+            'The Battle of Arras',
+            'The Battle of Waterloo',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
@@ -9917,21 +9658,21 @@ export const unitData = {
           question:
             'During the Battle of Cambrai in 1917, what groundbreaking medical logistical system was used for the first time by Oswald Robertson?',
           options: [
-            'The first use of plastic surgery to reconstruct facial injuries in a trench.',
             'The first use of helicopter medical evacuation.',
             'The mass distribution of smallpox vaccines to the frontline.',
             'The first ever blood bank, using stored blood to treat soldiers suffering from severe shock.',
+            'The first use of plastic surgery to reconstruct facial injuries in a trench.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             'Why did aseptic surgery (sterile operating theatres) prove to be nearly useless in frontline dressing stations in 1914?',
           options: [
-            'Surgeons forgot how to use the autoclaves.',
             'The rubber gloves melted due to the cold winter temperatures.',
-            "The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.",
             'Aseptic surgery only worked on viral infections, not physical shrapnel wounds.',
+            "The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.",
+            'Surgeons forgot how to use the autoclaves.',
           ],
           answer: 2,
         },
@@ -9939,53 +9680,53 @@ export const unitData = {
           question:
             'What made transporting wounded soldiers away from the frontline so incredibly difficult?',
           options: [
+            'The stretchers were too wide to fit down the communication trenches.',
+            'The government refused to pay for motorized ambulances.',
             'The soldiers refused to be moved because they preferred the trenches.',
             'The deep mud, craters, and destroyed roads made motorized transport impossible near the front, forcing stretcher-bearers to manually carry the wounded for miles.',
-            'The government refused to pay for motorized ambulances.',
-            'The stretchers were too wide to fit down the communication trenches.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'To what extent was the Royal Army Medical Corps (RAMC) prepared for the medical challenges of the Western Front in 1914?',
           options: [
-            'They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.',
-            'They were well-equipped with blood banks but lacked basic bandages.',
             'They were perfectly prepared, having trained in identical muddy conditions in Britain.',
+            'They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.',
             'They were overly reliant on antibiotics, which quickly ran out.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            "What did the term 'war of attrition' mean for the soldiers living in the trench system?",
-          options: [
-            'A diplomatic war resolved through peace treaties rather than combat.',
-            'A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.',
-            'A fast-moving cavalry war where troops constantly advanced.',
-            'A purely aerial war fought entirely by fighter planes.',
+            'They were well-equipped with blood banks but lacked basic bandages.',
           ],
           answer: 1,
         },
         {
           question:
+            "What did the term 'war of attrition' mean for the soldiers living in the trench system?",
+          options: [
+            'A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.',
+            'A diplomatic war resolved through peace treaties rather than combat.',
+            'A purely aerial war fought entirely by fighter planes.',
+            'A fast-moving cavalry war where troops constantly advanced.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
             'Why were horse-drawn ambulances often ineffective in the worst conditions of the Western Front?',
           options: [
-            'The horses were needed exclusively to pull the new tanks.',
             'The horses refused to walk near the loud artillery.',
             "The deep mud was so thick that wagons had to be pulled by six horses instead of two, and the severe shaking often worsened the patients' injuries.",
+            'The horses were needed exclusively to pull the new tanks.',
             'They were banned by the RAMC for being too unhygienic.',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question:
             'Which of the following best describes the layout of the trench system on the Western Front?',
           options: [
             'A massive circular wall surrounding the city of Ypres.',
-            'A single, straight line of sandbags separating the two armies.',
             'A series of isolated concrete bunkers with no connecting paths.',
+            'A single, straight line of sandbags separating the two armies.',
             'A complex network of zigzag dugouts consisting of a front line, support trench, reserve trench, and communication trenches linking them.',
           ],
           answer: 3,
@@ -9993,17 +9734,17 @@ export const unitData = {
         {
           question:
             'In what year did Karl Landsteiner discover that blood group O was the universal donor group?',
-          options: ['1914', '1907', '1895', '1901'],
-          answer: 1,
+          options: ['1901', '1895', '1907', '1914'],
+          answer: 2,
         },
         {
           question:
             "Which statement accurately summarises the 'historical context' of medicine at the outbreak of war in 1914?",
           options: [
             'High-tech medicine (aseptic surgery, x-rays, blood typing) had emerged, but key limitations in mobility and blood storage meant it was not yet adapted for a muddy, static battlefield.',
-            'Medicine was entirely primitive; doctors still believed in the Four Humours and miasma.',
-            'Penicillin and magic bullets had already cured all major infectious diseases.',
             'The RAMC had completely abandoned surgery in favor of chemical remedies.',
+            'Penicillin and magic bullets had already cured all major infectious diseases.',
+            'Medicine was entirely primitive; doctors still believed in the Four Humours and miasma.',
           ],
           answer: 0,
         },
@@ -10090,15 +9831,15 @@ export const unitData = {
           {
             question: 'When did the First World War begin and end?',
             answer: '1914 to 1918.',
-            options: ['1950 to 1953.', '1899 to 1902.', '1914 to 1918.', '1939 to 1945.'],
+            options: ['1899 to 1902.', '1914 to 1918.', '1950 to 1953.', '1939 to 1945.'],
           },
           {
             question: "What was the 'Western Front'?",
             answer: 'A 400-mile line of trenches stretching through Belgium and France.',
             options: [
-              'The battles fought in the deserts of Mesopotamia.',
-              'The naval blockade in the North Sea.',
               'The medical supply route between London and Paris.',
+              'The naval blockade in the North Sea.',
+              'The battles fought in the deserts of Mesopotamia.',
               'A 400-mile line of trenches stretching through Belgium and France.',
             ],
           },
@@ -10106,34 +9847,34 @@ export const unitData = {
             question: 'Name the three major battles fought by the British on the Western Front.',
             answer: 'Ypres, Somme, Cambrai.',
             options: [
-              'Gallipoli, Verdun, Marne.',
-              'Waterloo, Trafalgar, Hastings.',
               'Ypres, Somme, Cambrai.',
               'Crimea, Sevastopol, Balaclava.',
+              'Gallipoli, Verdun, Marne.',
+              'Waterloo, Trafalgar, Hastings.',
             ],
           },
           {
             question: "What was 'No Man's Land'?",
             answer: 'The dangerous, open ground between the Allied and German front-line trenches.',
             options: [
-              'The dangerous, open ground between the Allied and German front-line trenches.',
-              'The transport area behind the third line of trenches.',
               'A demilitarized zone where hospitals were built.',
               'The medical tents set up at base camps.',
+              'The dangerous, open ground between the Allied and German front-line trenches.',
+              'The transport area behind the third line of trenches.',
             ],
           },
           {
             question: 'Name the pattern in which trenches were dug.',
             answer: 'A zig-zag pattern.',
-            options: ['A circular maze.', 'A straight line.', 'Grid squares', 'A zig-zag pattern.'],
+            options: ['A straight line.', 'A zig-zag pattern.', 'Grid squares', 'A circular maze.'],
           },
           {
             question: "What was the purpose of the 'duckboards' in the trenches?",
             answer:
               "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
             options: [
-              'To serve as stretchers to carry wounded men.',
               "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
+              'To serve as stretchers to carry wounded men.',
               'To protect soldiers from overhead shrapnel shells.',
               'To block gas from entering the sleeping dugouts.',
             ],
@@ -10141,12 +9882,12 @@ export const unitData = {
           {
             question: 'Who discovered the cause of cholera in 1854?',
             answer: 'John Snow.',
-            options: ['Robert Koch.', 'John Snow.', 'Edward Jenner', 'Louis Pasteur.'],
+            options: ['Robert Koch.', 'Edward Jenner', 'John Snow.', 'Louis Pasteur.'],
           },
           {
             question: 'Which anesthetic was discovered by James Simpson in 1847?',
             answer: 'Chloroform.',
-            options: ['Cocaine', 'Ether.', 'Nitrous oxide.', 'Chloroform.'],
+            options: ['Ether.', 'Nitrous oxide.', 'Cocaine', 'Chloroform.'],
           },
           {
             question: 'Explain why the zig-zag pattern of trenches was crucial for survival.',
@@ -10154,8 +9895,8 @@ export const unitData = {
               'It contained the blast of any shell and prevented enemies from shooting straight down the trench.',
             options: [
               'It was easier to dig in rocky soils.',
-              'It let supply horses turn corners more safely.',
               'It contained the blast of any shell and prevented enemies from shooting straight down the trench.',
+              'It let supply horses turn corners more safely.',
               'It allowed rainwater to drain easily into the sump pits.',
             ],
           },
@@ -10164,8 +9905,8 @@ export const unitData = {
             answer: 'Front-line, Support, and Communication trenches.',
             options: [
               'Front-line, Support, and Communication trenches.',
-              'Allied, German, and Neutral trenches.',
               'Soldier, Officer, and Medical trenches.',
+              'Allied, German, and Neutral trenches.',
               'Attack, Retreat, and Reserve trenches.',
             ],
           },
@@ -10463,8 +10204,8 @@ export const unitData = {
           question:
             "What was the direct environmental cause of 'Trench Foot' on the Western Front?",
           options: [
-            'Wearing experimental rubber boots that caused the feet to blister.',
             'Walking barefoot on sharp chalk rocks during the Battle of Arras.',
+            'Wearing experimental rubber boots that caused the feet to blister.',
             'Standing for days in cold, waterlogged mud without changing socks.',
             'A bacterial infection transmitted by rats living in the frontline trenches.',
           ],
@@ -10474,40 +10215,40 @@ export const unitData = {
           question: 'What were the symptoms of severe, untreated Trench Foot?',
           options: [
             'The soldier would develop severe joint pain and high fevers.',
-            "The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.",
             'The feet would develop a highly contagious fungal infection that spread rapidly across the battalion.',
             'The toes would fuse together, causing permanent nerve damage but no loss of limbs.',
-          ],
-          answer: 1,
-        },
-        {
-          question:
-            'How did the British Army attempt to clinically prevent the spread of Trench Foot in permanently flooded trenches?',
-          options: [
-            'By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.',
-            'By heating the trenches with underground steam pipes.',
-            'By forcing all soldiers to wear thick wooden clogs.',
-            'By administering a new, experimental Trench Foot vaccine.',
-          ],
-          answer: 0,
-        },
-        {
-          question: "What was 'Trench Fever', and what were its primary symptoms?",
-          options: [
-            'A respiratory infection causing a chronic, bloody cough.',
-            'A psychological breakdown causing uncontrolled shaking.',
-            'A viral disease causing blindness due to exposure to mustard gas.',
-            'A flu-like illness characterized by severe joint pain, shivering, and high fevers.',
+            "The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.",
           ],
           answer: 3,
         },
         {
           question:
+            'How did the British Army attempt to clinically prevent the spread of Trench Foot in permanently flooded trenches?',
+          options: [
+            'By administering a new, experimental Trench Foot vaccine.',
+            'By forcing all soldiers to wear thick wooden clogs.',
+            'By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.',
+            'By heating the trenches with underground steam pipes.',
+          ],
+          answer: 2,
+        },
+        {
+          question: "What was 'Trench Fever', and what were its primary symptoms?",
+          options: [
+            'A flu-like illness characterized by severe joint pain, shivering, and high fevers.',
+            'A respiratory infection causing a chronic, bloody cough.',
+            'A viral disease causing blindness due to exposure to mustard gas.',
+            'A psychological breakdown causing uncontrolled shaking.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
             'It took years for medical officers to discover the cause of Trench Fever. What was eventually found to be the transmitter?',
           options: [
-            'Contaminated drinking water in shell craters.',
-            'The anaerobic bacteria found in the heavily manured soil of Flanders.',
             'The constant inhalation of cordite smoke from artillery shells.',
+            'The anaerobic bacteria found in the heavily manured soil of Flanders.',
+            'Contaminated drinking water in shell craters.',
             "The millions of body lice living in the seams of the soldiers' unwashed uniforms.",
           ],
           answer: 3,
@@ -10517,21 +10258,21 @@ export const unitData = {
             'How did the British Army strategically adapt to combat the epidemic of Trench Fever once its cause was discovered?',
           options: [
             'They provided soldiers with daily doses of early antibiotics.',
-            'They burned all uniforms and issued entirely new kit every single week.',
             'They set up massive delousing stations and bathhouses to disinfect clothing with hot steam.',
             'They abandoned the trench system completely and fought in the open.',
+            'They burned all uniforms and issued entirely new kit every single week.',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question: "What was the 'Ypres Salient'?",
           options: [
-            'An extensive underground hospital built out of chalk.',
-            "A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.",
-            'A secure, heavily fortified communication trench connecting the front to the rear.',
             'A medical clearing station located safely on the French coast.',
+            'A secure, heavily fortified communication trench connecting the front to the rear.',
+            "A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.",
+            'An extensive underground hospital built out of chalk.',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
@@ -10539,92 +10280,92 @@ export const unitData = {
           options: [
             'They held onto the salient to stop the Germans advancing to the sea, successfully retaining control of the vital English Channel ports.',
             'They successfully captured the German capital of Berlin.',
-            'It was the battle where they discovered penicillin.',
             'It was the first time they successfully deployed tanks.',
+            'It was the battle where they discovered penicillin.',
           ],
           answer: 0,
         },
         {
           question:
             'What terrifying new weapon was first used by the German Army at the Second Battle of Ypres in 1915?',
-          options: ['Tear gas', 'Flamethrowers', 'High-explosive artillery shells', 'Chlorine gas'],
+          options: ['Flamethrowers', 'Tear gas', 'High-explosive artillery shells', 'Chlorine gas'],
           answer: 3,
         },
         {
           question:
             'During the fight for Hill 60 in April 1915, what tactic did the British successfully use to defeat the German positions?',
           options: [
-            'A massive aerial bombardment.',
             'A massive cavalry charge.',
             'Offensive mining to tunnel under and blow up the German positions from below.',
             'A continuous, three-week-long artillery creeping barrage.',
+            'A massive aerial bombardment.',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question: 'Why did the British launch the massive Battle of the Somme in 1916?',
           options: [
-            'To capture the German railway network.',
             'To relieve extreme military pressure on the French army fighting at Verdun.',
+            'To capture the German railway network.',
             'To establish a new deep-water port on the French coast.',
             'To test out their new tank battalions in secret.',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             "What made the Battle of the Somme a 'medical nightmare' on its very first day?",
           options: [
-            'The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.',
-            'A massive outbreak of cholera swept through the reserve trenches.',
-            'The Germans successfully bombed all the British hospitals.',
             'The entire RAMC staff went on strike.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Because the ground at Arras was chalky and easy to tunnel through, what incredible feat did British and New Zealand miners achieve in 1917?',
-          options: [
-            'They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.',
-            'They tunneled directly into the German command bunker.',
-            'They dug deep trenches that completely prevented soldiers from getting Trench Foot.',
-            'They tunneled entirely underneath the English Channel to directly supply troops from Britain.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            "In the organisation of the trench system, what was the primary purpose of the 'support trench', located roughly 80 metres behind the frontline?",
-          options: [
-            'It was a storage area for artillery shells.',
-            'It was used exclusively for treating the severely wounded.',
-            'It was where troops would retreat to if the frontline came under heavy attack or was overrun.',
-            'It was a secure area used only by senior generals to observe the battle.',
+            'A massive outbreak of cholera swept through the reserve trenches.',
+            'The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.',
+            'The Germans successfully bombed all the British hospitals.',
           ],
           answer: 2,
         },
         {
           question:
-            'Why were trenches deliberately dug in a zig-zag pattern instead of a straight line?',
+            'Because the ground at Arras was chalky and easy to tunnel through, what incredible feat did British and New Zealand miners achieve in 1917?',
           options: [
-            'To make it easier for horse-drawn ambulances to turn around.',
-            'To confuse German spies trying to map the area.',
-            'To follow the natural curves of the agricultural rivers.',
-            'To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.',
+            'They tunneled entirely underneath the English Channel to directly supply troops from Britain.',
+            'They dug deep trenches that completely prevented soldiers from getting Trench Foot.',
+            'They tunneled directly into the German command bunker.',
+            'They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.',
           ],
           answer: 3,
+        },
+        {
+          question:
+            "In the organisation of the trench system, what was the primary purpose of the 'support trench', located roughly 80 metres behind the frontline?",
+          options: [
+            'It was used exclusively for treating the severely wounded.',
+            'It was where troops would retreat to if the frontline came under heavy attack or was overrun.',
+            'It was a storage area for artillery shells.',
+            'It was a secure area used only by senior generals to observe the battle.',
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            'Why were trenches deliberately dug in a zig-zag pattern instead of a straight line?',
+          options: [
+            'To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.',
+            'To confuse German spies trying to map the area.',
+            'To follow the natural curves of the agricultural rivers.',
+            'To make it easier for horse-drawn ambulances to turn around.',
+          ],
+          answer: 0,
         },
         {
           question:
             'How did the complex, zig-zag design of the trenches unintentionally create severe problems for the medical services?',
           options: [
             'It made the trenches too wide, offering no protection from snipers.',
-            'It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.',
             'The corners were constantly collapsing due to the chalky soil.',
             'The zig-zags trapped poison gas, making the communication trenches permanently impassable.',
+            'It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
@@ -10632,29 +10373,29 @@ export const unitData = {
           options: [
             'The RAMC refused to pay for petrol.',
             'Horse-drawn wagons were much faster than 1914 motor engines.',
-            'Motor ambulances were too loud and startled the troops.',
             'The heavy motor ambulances frequently got permanently stuck in the deep, waterlogged mud.',
+            'Motor ambulances were too loud and startled the troops.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
             'What was the main medical danger caused by delays in evacuating wounded soldiers across the devastated, muddy terrain?',
           options: [
-            'The soldiers would often catch Trench Fever while waiting on a stretcher.',
-            'The delay meant that doctors forgot how to perform the required surgery.',
-            'The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.',
             'The stretchers would rot in the mud, dropping the patients.',
+            'The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.',
+            'The delay meant that doctors forgot how to perform the required surgery.',
+            'The soldiers would often catch Trench Fever while waiting on a stretcher.',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question: "What was 'Dysentery' and how was it spread on the Western Front?",
           options: [
-            'A skin disease caused by the lice living in uniforms.',
+            'A psychological condition caused by witnessing heavy artillery bombardments.',
             'A stomach infection causing severe diarrhea and dehydration, spread by drinking contaminated water from shell holes.',
             'A lung infection spread by coughing.',
-            'A psychological condition caused by witnessing heavy artillery bombardments.',
+            'A skin disease caused by the lice living in uniforms.',
           ],
           answer: 1,
         },
@@ -10662,12 +10403,12 @@ export const unitData = {
           question:
             "What does the medical condition 'Shell Shock' (now understood as PTSD) reveal about the environment of the Western Front?",
           options: [
+            'That soldiers were simply cowards who refused to follow orders.',
+            'That soldiers were allergic to the chemical explosives used in artillery shells.',
             'That the relentless psychological trauma, noise, and sheer terror of the artillery war caused severe mental breakdowns, resulting in tiredness, nightmares, and uncontrollable shaking.',
             'That the physical trauma of explosions caused a contagious viral infection in the brain.',
-            'That soldiers were allergic to the chemical explosives used in artillery shells.',
-            'That soldiers were simply cowards who refused to follow orders.',
           ],
-          answer: 0,
+          answer: 2,
         },
       ],
     },
@@ -10742,16 +10483,16 @@ export const unitData = {
             question: "What was 'No Man's Land'?",
             answer: 'The dangerous, open ground between the Allied and German front-line trenches.',
             options: [
-              'The transport area behind the third line of trenches.',
               'A demilitarized zone where hospitals were built.',
-              'The dangerous, open ground between the Allied and German front-line trenches.',
               'The medical tents set up at base camps.',
+              'The transport area behind the third line of trenches.',
+              'The dangerous, open ground between the Allied and German front-line trenches.',
             ],
           },
           {
             question: 'Name the pattern in which trenches were dug.',
             answer: 'A zig-zag pattern.',
-            options: ['A circular maze.', 'A zig-zag pattern.', 'A straight line.', 'Grid squares'],
+            options: ['A zig-zag pattern.', 'A straight line.', 'Grid squares', 'A circular maze.'],
           },
           {
             question: "What was the purpose of the 'duckboards' in the trenches?",
@@ -10760,8 +10501,8 @@ export const unitData = {
             options: [
               'To serve as stretchers to carry wounded men.',
               'To protect soldiers from overhead shrapnel shells.',
-              'To block gas from entering the sleeping dugouts.',
               "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
+              'To block gas from entering the sleeping dugouts.',
             ],
           },
           {
@@ -10770,9 +10511,9 @@ export const unitData = {
               'A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.',
             options: [
               'A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.',
+              'A mental breakdown caused by constant artillery shell fire.',
               'An infection caused by stepping on rusty barbed wire.',
               'A disease spread by lice living in the seams of uniforms.',
-              'A mental breakdown caused by constant artillery shell fire.',
             ],
           },
           {
@@ -10785,24 +10526,24 @@ export const unitData = {
             answer:
               'The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.',
             options: [
-              'Poison gas infected the open flesh wounds.',
               'Soldiers went weeks without bathing or washing their hands.',
               'The British army did not carry any antiseptic dressings.',
+              'Poison gas infected the open flesh wounds.',
               'The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.',
             ],
           },
           {
             question: 'Who discovered Penicillin by accident in 1928?',
             answer: 'Alexander Fleming.',
-            options: ['Howard Florey.', 'Ernst Chain.', 'Alexander Fleming.', 'Robert Koch'],
+            options: ['Ernst Chain.', 'Robert Koch', 'Alexander Fleming.', 'Howard Florey.'],
           },
           {
             question: 'What structure did Watson and Crick discover in 1953?',
             answer: 'The double helix structure of DNA.',
             options: [
+              'The valves inside human veins.',
               'The double helix structure of DNA.',
               'The penicillin mould culture.',
-              'The valves inside human veins.',
               'The bacteria responsible for tuberculosis.',
             ],
           },
@@ -10812,9 +10553,9 @@ export const unitData = {
               'Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.',
             options: [
               'Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.',
+              'They were vaccinated against trench foot twice a year.',
               'They wore heavy rubber boots imported from America.',
               'They washed their feet in carbolic acid every morning.',
-              'They were vaccinated against trench foot twice a year.',
             ],
           },
           {
@@ -10823,9 +10564,9 @@ export const unitData = {
               'A psychological condition caused by the trauma of constant shelling, now known as PTSD.',
             options: [
               'A physical injury caused by shrapnel hitting the helmet.',
-              'A psychological condition caused by the trauma of constant shelling, now known as PTSD.',
               'A chemical burn caused by chlorine gas.',
               'An ear infection caused by loud gunfire.',
+              'A psychological condition caused by the trauma of constant shelling, now known as PTSD.',
             ],
           },
         ],
@@ -11118,75 +10859,75 @@ export const unitData = {
           question:
             'Which type of weapon was responsible for the highest percentage of wounds (roughly 58%) on the Western Front?',
           options: [
-            'Bayonet and hand-to-hand combat.',
+            'High-explosive artillery shells and shrapnel.',
             'Poison gas attacks.',
             'Machine gun and rifle fire.',
-            'High-explosive artillery shells and shrapnel.',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Why were deep shrapnel wounds almost guaranteed to become severely infected within hours?',
-          options: [
-            'British soldiers were completely unvaccinated.',
-            'The German army deliberately coated their artillery shells with cholera bacteria.',
-            'The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.',
-            'The cold weather immediately caused frostbite inside the wound.',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'What was biologically unique about the mud in Flanders and France that made it so deadly when dragged into a wound?',
-          options: [
-            'It contained high levels of naturally occurring radiation.',
-            'It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.',
-            'It contained high concentrations of naturally occurring arsenic.',
-            'It was mostly comprised of sharp, microscopic shards of glass.',
-          ],
-          answer: 1,
-        },
-        {
-          question: "What is the defining, fatal characteristic of the 'Gas Gangrene' infection?",
-          options: [
-            'It caused the patient to violently cough up a greenish froth.',
-            'It caused severe, unquenchable thirst and hallucinations.',
-            'It caused the victim to lose their sight permanently.',
-            'It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'Why did traditional 19th-century surgical antiseptics (like carbolic acid spray) fail to cure Gas Gangrene on the Western Front?',
-          options: [
-            'The carbolic acid froze inside the bottles due to the winter weather.',
-            'The bacteria had mutated to become completely immune to acid.',
-            'Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.',
-            'Doctors refused to use antiseptics because they believed in miasma.',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'How did the British Army successfully reduce the threat of Tetanus infections on the Western Front?',
-          options: [
-            'By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.',
-            'By supplying all soldiers with prophylactic penicillin pills.',
-            'By forcing all troops to wash their uniforms in boiling water daily.',
-            'By amputating the limbs of anyone who touched the mud.',
+            'Bayonet and hand-to-hand combat.',
           ],
           answer: 0,
         },
         {
           question:
+            'Why were deep shrapnel wounds almost guaranteed to become severely infected within hours?',
+          options: [
+            'The cold weather immediately caused frostbite inside the wound.',
+            'British soldiers were completely unvaccinated.',
+            'The German army deliberately coated their artillery shells with cholera bacteria.',
+            'The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.',
+          ],
+          answer: 3,
+        },
+        {
+          question:
+            'What was biologically unique about the mud in Flanders and France that made it so deadly when dragged into a wound?',
+          options: [
+            'It was mostly comprised of sharp, microscopic shards of glass.',
+            'It contained high concentrations of naturally occurring arsenic.',
+            'It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.',
+            'It contained high levels of naturally occurring radiation.',
+          ],
+          answer: 2,
+        },
+        {
+          question: "What is the defining, fatal characteristic of the 'Gas Gangrene' infection?",
+          options: [
+            'It caused the victim to lose their sight permanently.',
+            'It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.',
+            'It caused severe, unquenchable thirst and hallucinations.',
+            'It caused the patient to violently cough up a greenish froth.',
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            'Why did traditional 19th-century surgical antiseptics (like carbolic acid spray) fail to cure Gas Gangrene on the Western Front?',
+          options: [
+            'Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.',
+            'The carbolic acid froze inside the bottles due to the winter weather.',
+            'The bacteria had mutated to become completely immune to acid.',
+            'Doctors refused to use antiseptics because they believed in miasma.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
+            'How did the British Army successfully reduce the threat of Tetanus infections on the Western Front?',
+          options: [
+            'By forcing all troops to wash their uniforms in boiling water daily.',
+            'By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.',
+            'By amputating the limbs of anyone who touched the mud.',
+            'By supplying all soldiers with prophylactic penicillin pills.',
+          ],
+          answer: 1,
+        },
+        {
+          question:
             'At the start of the war in 1914, why were head injuries disproportionately high (accounting for roughly 20% of wounds)?',
           options: [
-            'The German army trained their snipers to only aim for the head.',
             'Soldiers frequently hit their heads on the low ceilings of underground dugouts.',
-            'Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.',
             "The trenches were dug so shallow that soldiers couldn't fully stand up.",
+            'Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.',
+            'The German army trained their snipers to only aim for the head.',
           ],
           answer: 2,
         },
@@ -11194,8 +10935,8 @@ export const unitData = {
           question:
             'What crucial piece of protective equipment was introduced in 1915, drastically reducing fatal head injuries by 80%?',
           options: [
-            'The Kevlar body armour vest',
             'The rubber trench wader',
+            'The Kevlar body armour vest',
             'The gas mask',
             'The steel Brodie helmet',
           ],
@@ -11204,15 +10945,15 @@ export const unitData = {
         {
           question:
             'What terrifying new weapon did the German army introduce at the Second Battle of Ypres in April 1915?',
-          options: ['Flamethrowers', 'Chlorine Gas', 'Phosgene Gas', 'Mustard Gas'],
+          options: ['Flamethrowers', 'Chlorine Gas', 'Mustard Gas', 'Phosgene Gas'],
           answer: 1,
         },
         {
           question: 'What was the physical effect of a Chlorine Gas attack on a soldier?',
           options: [
             'It destroyed the respiratory system, causing victims to slowly suffocate as their lungs filled with fluid.',
-            'It caused immediate, painless unconsciousness.',
             'It triggered violent seizures and extreme joint pain.',
+            'It caused immediate, painless unconsciousness.',
             'It caused severe external blisters that burned through clothing.',
           ],
           answer: 0,
@@ -11221,27 +10962,27 @@ export const unitData = {
           question:
             'Before official gas masks were widely issued in July 1915, how did soldiers desperately attempt to survive gas attacks?',
           options: [
-            'They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.',
-            'They ran straight toward the gas cloud while holding their breath.',
             'They hid inside airtight wooden crates.',
+            'They ran straight toward the gas cloud while holding their breath.',
+            'They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.',
             'They tried to blow the gas back using large mechanical fans.',
           ],
-          answer: 0,
+          answer: 2,
         },
         {
           question:
             'Which poisonous gas, introduced later in 1915, was significantly faster-acting than chlorine and capable of killing an exposed person within two days?',
-          options: ['Sarin Gas', 'Phosgene Gas', 'Tear Gas', 'Mustard Gas'],
-          answer: 1,
+          options: ['Sarin Gas', 'Tear Gas', 'Mustard Gas', 'Phosgene Gas'],
+          answer: 3,
         },
         {
           question:
             'What made Mustard Gas (introduced in 1917) such a horrific and distinct weapon?',
           options: [
-            'It caused immediate and permanent deafness.',
+            'It caused a highly contagious disease that spread throughout the trench.',
             "It instantly froze the soldier's blood.",
             'It was completely odourless and worked slowly, causing severe internal and external blisters that could burn skin straight through uniforms.',
-            'It caused a highly contagious disease that spread throughout the trench.',
+            'It caused immediate and permanent deafness.',
           ],
           answer: 2,
         },
@@ -11249,17 +10990,17 @@ export const unitData = {
           question:
             'Despite the immense psychological terror it caused, why did poison gas actually account for under 5% of all British deaths (around 6,000 soldiers)?',
           options: [
+            'The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.',
             'Gas attacks were only ever used once during the entire war.',
             'The British army discovered a universal antidote injection.',
             'The wind always blew the gas back into the German trenches.',
-            'The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.',
           ],
-          answer: 3,
+          answer: 0,
         },
         {
           question:
             "Which debilitating environmental illness was spread by the millions of body lice living in the seams of the soldiers' unwashed uniforms?",
-          options: ['Trench Foot', 'Cholera', 'Dysentery', 'Trench Fever'],
+          options: ['Dysentery', 'Trench Foot', 'Cholera', 'Trench Fever'],
           answer: 3,
         },
         {
@@ -11267,54 +11008,54 @@ export const unitData = {
             'How did the British Army attempt to medically prevent the spread of Trench Foot in the flooded trenches?',
           options: [
             'By forcing soldiers to apply iodine to their feet.',
-            'By draining all the trenches using mechanical water pumps.',
             'By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.',
             'By providing all soldiers with heated rubber boots.',
+            'By draining all the trenches using mechanical water pumps.',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question: "What was 'Shellshock'?",
           options: [
-            'A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.',
-            'A temporary loss of hearing caused by loud gunfire.',
             'A physical injury caused by the concussive pressure wave of an exploding artillery shell.',
+            'A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.',
             'A viral infection of the brain.',
+            'A temporary loss of hearing caused by loud gunfire.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             'Which specialist medical facility in Edinburgh was set up specifically to treat British officers suffering from severe Shellshock?',
           options: [
-            "St Thomas' Hospital",
-            'Craiglockhart Hospital',
-            "Guy's Hospital",
             'The Royal Victoria Pavilion',
+            "St Thomas' Hospital",
+            "Guy's Hospital",
+            'Craiglockhart Hospital',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'What exact acronym did the British Army officially use in medical records to categorise cases of Shellshock?',
           options: [
-            'LOM (Loss of Morale)',
-            'NYD.N (Not Yet Diagnosed, Nervous)',
             'CFA (Combat Fatigue, Acute)',
             'PTSD (Post-Traumatic Stress Disorder)',
+            'NYD.N (Not Yet Diagnosed, Nervous)',
+            'LOM (Loss of Morale)',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             "Why did the brutal environment of the trenches force the Royal Army Medical Corps (RAMC) to dedicate huge resources to 'preventative measures'?",
           options: [
-            'Because there were no actual combat casualties during the first two years of the war.',
-            'Because they ran out of surgical tools to perform operations.',
             'Because the harsh conditions caused so many massive casualties from illnesses (like trench foot and fever) that they had to actively prevent disease just to keep the army fit enough to fight.',
+            'Because they ran out of surgical tools to perform operations.',
             'Because the British government made preventative medicine legally compulsory.',
+            'Because there were no actual combat casualties during the first two years of the war.',
           ],
-          answer: 2,
+          answer: 0,
         },
       ],
       video: [
@@ -11396,36 +11137,36 @@ export const unitData = {
             answer:
               'A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.',
             options: [
-              'A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.',
-              'An infection caused by stepping on rusty barbed wire.',
-              'A disease spread by lice living in the seams of uniforms.',
               'A mental breakdown caused by constant artillery shell fire.',
+              'An infection caused by stepping on rusty barbed wire.',
+              'A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.',
+              'A disease spread by lice living in the seams of uniforms.',
             ],
           },
           {
             question: 'Which weapon caused the most casualties on the Western Front?',
             answer: 'Artillery shells and shrapnel.',
-            options: ['Bayonets', 'Rifles.', 'Poison gas.', 'Artillery shells and shrapnel.'],
+            options: ['Bayonets', 'Artillery shells and shrapnel.', 'Rifles.', 'Poison gas.'],
           },
           {
             question: 'Why were wounds on the Western Front highly prone to severe infection?',
             answer:
               'The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.',
             options: [
-              'Poison gas infected the open flesh wounds.',
-              'Soldiers went weeks without bathing or washing their hands.',
               'The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.',
+              'Soldiers went weeks without bathing or washing their hands.',
               'The British army did not carry any antiseptic dressings.',
+              'Poison gas infected the open flesh wounds.',
             ],
           },
           {
             question: 'What does RAMC stand for?',
             answer: 'Royal Army Medical Corps.',
             options: [
-              'Royal Army Medical Corps.',
+              'Regimental Ambulance Mobilization Corps.',
               'Rescue and Medical Command.',
               'Royal Auxiliary Military Clinicians.',
-              'Regimental Ambulance Mobilization Corps.',
+              'Royal Army Medical Corps.',
             ],
           },
           {
@@ -11444,24 +11185,24 @@ export const unitData = {
               'A series of medical posts starting at the front line and ending at base hospitals.',
             options: [
               'The training program for stretcher-bearers.',
+              'The evacuation of civilians from cities near the battlefields.',
               'A series of medical posts starting at the front line and ending at base hospitals.',
               'The method of importing medical supplies from Britain via ships.',
-              'The evacuation of civilians from cities near the battlefields.',
             ],
           },
           {
             question: 'What lifestyle choice was definitively linked to lung cancer in the 1950s?',
             answer: 'Smoking tobacco.',
-            options: ['Drinking alcohol.', 'Lack of sleep', 'Smoking tobacco.', 'Eating red meat.'],
+            options: ['Eating red meat.', 'Smoking tobacco.', 'Lack of sleep', 'Drinking alcohol.'],
           },
           {
             question: 'What was established in Britain in 1948 to provide free medical care?',
             answer: 'The National Health Service (NHS).',
             options: [
+              'The National Health Service (NHS).',
+              'The RAMC.',
               'The Red Cross.',
               'The Royal Society.',
-              'The RAMC.',
-              'The National Health Service (NHS).',
             ],
           },
           {
@@ -11469,9 +11210,9 @@ export const unitData = {
             answer: 'To perform urgent surgery to save life or limbs close to the front line.',
             options: [
               'To quarantine soldiers suffering from gas attacks.',
-              'To perform urgent surgery to save life or limbs close to the front line.',
               "To bury soldiers who died in No Man's Land.",
               'To supply healthy blood to the Regimental Aid Posts.',
+              'To perform urgent surgery to save life or limbs close to the front line.',
             ],
           },
           {
@@ -11479,10 +11220,10 @@ export const unitData = {
             answer:
               'On the French coast, treating long-term casualties or sending them to Britain.',
             options: [
-              'On the French coast, treating long-term casualties or sending them to Britain.',
-              'Right behind the front-line trenches in deep dugouts.',
               'In London, training medical students in battlefield triage.',
               'In neutral Switzerland to protect wounded prisoners.',
+              'On the French coast, treating long-term casualties or sending them to Britain.',
+              'Right behind the front-line trenches in deep dugouts.',
             ],
           },
         ],
@@ -11726,149 +11467,149 @@ export const unitData = {
           question:
             "What was the fundamental purpose of the 'Chain of Evacuation' on the Western Front?",
           options: [
+            'To transport healthy soldiers from Britain directly to the frontline trenches.',
             'To provide a highly organised, multi-stage system of medical triage to rescue, transport, and treat massive numbers of casualties without overwhelming frontline units.',
             'To evacuate French civilians out of the warzone.',
             'To safely transport captured German prisoners of war back to base camps.',
-            'To transport healthy soldiers from Britain directly to the frontline trenches.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            "Who had the dangerous task of initially rescuing wounded men directly from No Man's Land under enemy fire?",
-          options: [
-            'Pilots flying small rescue biplanes.',
-            'Surgeons from the Casualty Clearing Stations.',
-            'Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.',
-            'FANY volunteers driving motor ambulances.',
-          ],
-          answer: 2,
-        },
-        {
-          question: 'Where was the Regimental Aid Post (RAP) physically located?',
-          options: [
-            'Seven miles behind the frontline, safely out of artillery range.',
-            'In large, specialized hospitals back in Britain.',
-            'On the French coast, near the major ports.',
-            'Within 200m of the frontline, often in a communication trench or dugout.',
-          ],
-          answer: 3,
-        },
-        {
-          question:
-            'What was the medical capability of the Regimental Medical Officer stationed at the RAP?',
-          options: [
-            'They performed complex brain surgery and amputations.',
-            'They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.',
-            'They possessed portable X-ray machines to scan for shrapnel.',
-            'They were strictly administrators and provided no medical treatment.',
           ],
           answer: 1,
         },
         {
           question:
-            'Who staffed the Advanced Dressing Stations (ADS) and Main Dressing Stations (MDS)?',
+            "Who had the dangerous task of initially rescuing wounded men directly from No Man's Land under enemy fire?",
           options: [
-            'Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.',
-            'Only the highest-ranking generals in the British Army.',
-            'Civilian French doctors who volunteered their time.',
-            'Captured German medical personnel.',
+            'Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.',
+            'Surgeons from the Casualty Clearing Stations.',
+            'Pilots flying small rescue biplanes.',
+            'FANY volunteers driving motor ambulances.',
           ],
           answer: 0,
+        },
+        {
+          question: 'Where was the Regimental Aid Post (RAP) physically located?',
+          options: [
+            'Within 200m of the frontline, often in a communication trench or dugout.',
+            'On the French coast, near the major ports.',
+            'Seven miles behind the frontline, safely out of artillery range.',
+            'In large, specialized hospitals back in Britain.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
+            'What was the medical capability of the Regimental Medical Officer stationed at the RAP?',
+          options: [
+            'They possessed portable X-ray machines to scan for shrapnel.',
+            'They were strictly administrators and provided no medical treatment.',
+            'They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.',
+            'They performed complex brain surgery and amputations.',
+          ],
+          answer: 2,
+        },
+        {
+          question:
+            'Who staffed the Advanced Dressing Stations (ADS) and Main Dressing Stations (MDS)?',
+          options: [
+            'Captured German medical personnel.',
+            'Only the highest-ranking generals in the British Army.',
+            'Civilian French doctors who volunteered their time.',
+            'Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.',
+          ],
+          answer: 3,
         },
         {
           question:
             'How did the British military respond to the violent, injury-worsening journeys caused by horse-drawn ambulance wagons?',
           options: [
             'They completely banned all transport and forced all wounded to walk.',
-            'They built a continuous paved highway from the trenches to the coast.',
-            'They replaced all horses with armored tanks.',
             'The Times newspaper launched a public appeal in 1914, raising money to purchase 512 new motor ambulances.',
+            'They replaced all horses with armored tanks.',
+            'They built a continuous paved highway from the trenches to the coast.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'Why did the RAMC still have to rely heavily on horse-drawn wagons (sometimes needing six horses) even after acquiring motor ambulances?',
           options: [
             'Because the noise of the engines frightened the wounded soldiers.',
-            'Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.',
-            'Because the British army refused to pay for petrol.',
             'Because motor ambulances were physically too small to fit a stretcher.',
+            'Because the British army refused to pay for petrol.',
+            'Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'How were massive numbers of stabilized casualties (up to 800 at a time) transported from the CCS to the Base Hospitals?',
           options: [
-            'They were transported in the cargo holds of passenger ferries.',
-            'They were carried on the backs of mules.',
-            'On specially designed ambulance trains and canal barges.',
             'In massive fleets of hot air balloons.',
+            'They were transported in the cargo holds of passenger ferries.',
+            'On specially designed ambulance trains and canal barges.',
+            'They were carried on the backs of mules.',
           ],
           answer: 2,
         },
         {
           question: 'Where were the Casualty Clearing Stations (CCS) strategically located?',
           options: [
-            'In the frontline trenches.',
             'Underground in the London Tube network.',
             '7 to 12 miles back from the frontline, safely out of artillery range but positioned near railway lines for rapid transport.',
             'Directly on the beaches of the English Channel.',
-          ],
-          answer: 2,
-        },
-        {
-          question:
-            'What vital medical sorting process took place at the Casualty Clearing Station (CCS)?',
-          options: [
-            'Quarantine for infectious diseases like influenza.',
-            'Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.',
-            'Psychological debriefing.',
-            'Vaccination.',
+            'In the frontline trenches.',
           ],
           answer: 1,
         },
         {
           question:
-            'Because deadly gas gangrene developed so rapidly, how did the role of the Casualty Clearing Station (CCS) critically change during the war?',
+            'What vital medical sorting process took place at the Casualty Clearing Station (CCS)?',
           options: [
-            'It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.',
-            'It was converted into a factory for manufacturing artificial limbs.',
-            'It stopped treating wounds entirely and only treated shellshock.',
-            'It was shut down, forcing all surgeries to happen in the muddy frontline trenches.',
+            'Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.',
+            'Quarantine for infectious diseases like influenza.',
+            'Psychological debriefing.',
+            'Vaccination.',
           ],
           answer: 0,
         },
         {
+          question:
+            'Because deadly gas gangrene developed so rapidly, how did the role of the Casualty Clearing Station (CCS) critically change during the war?',
+          options: [
+            'It was converted into a factory for manufacturing artificial limbs.',
+            'It stopped treating wounds entirely and only treated shellshock.',
+            'It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.',
+            'It was shut down, forcing all surgeries to happen in the muddy frontline trenches.',
+          ],
+          answer: 2,
+        },
+        {
           question: 'Where were Base Hospitals located on the Western Front?',
           options: [
-            'In the neutral territory of Switzerland.',
             'In the communication trenches.',
-            'In the center of Paris.',
             "Near the French and Belgian coastal ports, ready to ship patients back to 'Blighty' (Britain).",
+            'In the neutral territory of Switzerland.',
+            'In the center of Paris.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'As the war progressed and the CCS took over emergency amputations, what did Base Hospitals begin to specialize in?',
           options: [
-            'Manufacturing artillery shells.',
             'Training new recruits for infantry combat.',
-            'The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.',
             'Developing new types of poison gas.',
+            'Manufacturing artillery shells.',
+            'The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.',
           ],
-          answer: 2,
+          answer: 3,
         },
         {
           question:
             'To cope with the unprecedented scale of casualties, how drastically did the RAMC (Royal Army Medical Corps) expand between 1914 and 1918?',
           options: [
             'From 9,000 men to 113,000 men.',
-            'It did not expand; it actually lost members.',
             'From 500 men to 2,000 men.',
+            'It did not expand; it actually lost members.',
             'From 100,000 men to 500,000 men.',
           ],
           answer: 0,
@@ -11876,66 +11617,66 @@ export const unitData = {
         {
           question: 'Who were the QAIMNS, whose numbers grew from 300 to 10,000 during the war?',
           options: [
-            'A secret spy network of French civilians.',
             'The regiment responsible for digging new trenches.',
-            'A group of male volunteer stretcher-bearers.',
             "Queen Alexandra's Imperial Military Nursing Service, a corps of highly trained professional military nurses.",
+            'A secret spy network of French civilians.',
+            'A group of male volunteer stretcher-bearers.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question: 'What does the acronym FANY stand for?',
           options: [
-            'Forward Area Nightingales Yeomanry.',
-            'First Aid Nursing Yeomanry.',
             'Field Ambulance Network York.',
+            'Forward Area Nightingales Yeomanry.',
             'Frontline Auxiliary Nursing Youth.',
+            'First Aid Nursing Yeomanry.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'What was the most famous and physically demanding frontline role undertaken by the female volunteers of the FANY?',
           options: [
-            'They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.',
-            'They flew reconnaissance aircraft over enemy lines.',
-            'They operated the heavy artillery guns.',
             'They performed open-heart surgery in the trenches.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Aside from driving ambulances, what other vital morale and hygiene services did the FANY provide?',
-          options: [
-            'They trained the infantry in bayonet combat.',
-            'They baked bread for the French civilian population.',
-            'They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.',
-            'They wrote letters to the families of German prisoners.',
+            'They flew reconnaissance aircraft over enemy lines.',
+            'They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.',
+            'They operated the heavy artillery guns.',
           ],
           answer: 2,
         },
         {
           question:
+            'Aside from driving ambulances, what other vital morale and hygiene services did the FANY provide?',
+          options: [
+            'They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.',
+            'They wrote letters to the families of German prisoners.',
+            'They trained the infantry in bayonet combat.',
+            'They baked bread for the French civilian population.',
+          ],
+          answer: 0,
+        },
+        {
+          question:
             "What was incredibly unique about 'Thompson's Cave', built by British and Commonwealth troops in 1916?",
           options: [
-            'It was a hospital disguised as a medieval castle.',
             'It was a massive, fully functioning underground hospital built into existing chalk tunnels beneath the town of Arras.',
+            'It was a hospital disguised as a medieval castle.',
             'It was a hospital suspended in the air using zeppelins.',
             'It was a floating hospital built on a massive wooden raft in the English Channel.',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'Why was the underground hospital at Arras highly significant for treating casualties?',
           options: [
             'Because it was the only hospital that allowed women to work as head surgeons.',
+            'Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.',
             'Because it was located directly underneath the German frontline, allowing them to steal German supplies.',
             'Because it was the first hospital to be completely run by robots.',
-            'Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.',
           ],
-          answer: 3,
+          answer: 1,
         },
       ],
       video: [
@@ -12077,10 +11818,10 @@ export const unitData = {
             question: 'What does RAMC stand for?',
             answer: 'Royal Army Medical Corps.',
             options: [
-              'Rescue and Medical Command.',
-              'Royal Army Medical Corps.',
-              'Royal Auxiliary Military Clinicians.',
               'Regimental Ambulance Mobilization Corps.',
+              'Rescue and Medical Command.',
+              'Royal Auxiliary Military Clinicians.',
+              'Royal Army Medical Corps.',
             ],
           },
           {
@@ -12098,10 +11839,10 @@ export const unitData = {
             answer:
               'A series of medical posts starting at the front line and ending at base hospitals.',
             options: [
-              'A series of medical posts starting at the front line and ending at base hospitals.',
               'The training program for stretcher-bearers.',
-              'The method of importing medical supplies from Britain via ships.',
+              'A series of medical posts starting at the front line and ending at base hospitals.',
               'The evacuation of civilians from cities near the battlefields.',
+              'The method of importing medical supplies from Britain via ships.',
             ],
           },
           {
@@ -12110,24 +11851,24 @@ export const unitData = {
               'A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.',
             options: [
               'A device used to filter chlorine gas from the lungs.',
-              'A surgical knife used to amputate infected limbs.',
               'A method of storing blood using sodium citrate.',
+              'A surgical knife used to amputate infected limbs.',
               'A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.',
             ],
           },
           {
             question: 'What chemical was discovered in 1915 to prevent blood from clotting?',
             answer: 'Sodium citrate.',
-            options: ['Sodium citrate.', 'Penicillin', 'Ether.', 'Carbolic acid.'],
+            options: ['Ether.', 'Carbolic acid.', 'Sodium citrate.', 'Penicillin'],
           },
           {
             question: 'What did the discovery of blood storage allow surgeons to do?',
             answer:
               'Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.',
             options: [
-              'Store vaccines for plague and cholera outbreaks.',
-              'Diagnose gas gangrene using chemical tests.',
               'Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.',
+              'Diagnose gas gangrene using chemical tests.',
+              'Store vaccines for plague and cholera outbreaks.',
               'Perform amputations without using anesthetics.',
             ],
           },
@@ -12136,25 +11877,25 @@ export const unitData = {
             answer: 'James Watson and Francis Crick.',
             options: [
               'William Harvey and Andreas Vesalius.',
-              'Alexander Fleming and Howard Florey.',
               'Louis Pasteur and Robert Koch.',
               'James Watson and Francis Crick.',
+              'Alexander Fleming and Howard Florey.',
             ],
           },
           {
             question: 'Who introduced antiseptic surgery using carbolic acid in 1865?',
             answer: 'Joseph Lister.',
-            options: ['Robert Koch.', 'Joseph Lister.', 'James Simpson.', 'Louis Pasteur'],
+            options: ['James Simpson.', 'Louis Pasteur', 'Robert Koch.', 'Joseph Lister.'],
           },
           {
             question: 'How did WWI affect the use of X-rays in medicine?',
             answer:
               'Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.',
             options: [
-              'X-rays were banned because they caused severe radiation burns.',
-              'They were only used in London base hospitals.',
-              'Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.',
               'X-rays were used to diagnose trench foot in soldiers.',
+              'Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.',
+              'They were only used in London base hospitals.',
+              'X-rays were banned because they caused severe radiation burns.',
             ],
           },
           {
@@ -12162,10 +11903,10 @@ export const unitData = {
             answer:
               'Sterilizing deep wounds by constantly flushing them with an antiseptic solution.',
             options: [
-              'The use of whale oil to prevent trench foot.',
               'Sterilizing deep wounds by constantly flushing them with an antiseptic solution.',
-              'A technique to store blood in vacuum flasks.',
               'A method of amputating limbs in less than 30 seconds.',
+              'The use of whale oil to prevent trench foot.',
+              'A technique to store blood in vacuum flasks.',
             ],
           },
         ],
@@ -12421,8 +12162,8 @@ export const unitData = {
             'Why was traditional 19th-century aseptic surgery effectively impossible to maintain on the Western Front?',
           options: [
             'Because the chaotic, muddy casualty stations were impossible to keep perfectly sterile, and traditional carbolic acid did not kill gas gangrene bacteria effectively.',
-            'Because there was no fresh water anywhere in France or Belgium.',
             'Because all the doctors were drafted as infantry soldiers instead.',
+            'Because there was no fresh water anywhere in France or Belgium.',
             'Because the British government made it illegal to wash surgical instruments.',
           ],
           answer: 0,
@@ -12432,21 +12173,21 @@ export const unitData = {
             "Faced with rampant gas gangrene, surgeons began using a technique called 'Debridement' (Wound Excision). What did this involve?",
           options: [
             'Soaking the wound in boiling water for an hour.',
+            'Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.',
             'Placing leeches around the wound to suck out the infected blood.',
             'Sealing the wound tightly with hot wax.',
-            'Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question: "What was the 'Carrel-Dakin method' used to treat deep infections?",
           options: [
             "A method of wrapping the wound in unwashed sheep's wool.",
-            'A method of amputating limbs using a high-speed mechanical saw.',
             'A technique for freezing the wound using liquid nitrogen.',
             'A system where tubes pumped a chemical sterilized salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria.',
+            'A method of amputating limbs using a high-speed mechanical saw.',
           ],
-          answer: 3,
+          answer: 2,
         },
         {
           question:
@@ -12454,143 +12195,143 @@ export const unitData = {
           options: [
             'It could only be manufactured in America.',
             'It required electricity, which was never available.',
-            'The solution only stayed fresh for six hours and had to be constantly made as it was needed.',
             'It cost thousands of pounds per bottle.',
+            'The solution only stayed fresh for six hours and had to be constantly made as it was needed.',
           ],
-          answer: 2,
+          answer: 3,
         },
         {
           question:
             "If antiseptics, debridement, and the Carrel-Dakin method all failed to stop the rapid spread of gas gangrene, what was a surgeon's only remaining option to save the patient's life?",
           options: [
-            'A heart transplant.',
-            'Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).',
             'Bloodletting.',
+            'A heart transplant.',
             'Sending the patient back to the frontline to fight.',
+            'Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             'Before 1915, what was the estimated mortality (death) rate for a soldier who suffered a fractured femur (thigh bone) from a gunshot or shrapnel wound?',
-          options: ['80%', '20%', '5%', '50%'],
-          answer: 0,
+          options: ['5%', '50%', '80%', '20%'],
+          answer: 2,
         },
         {
           question:
             'Why did a fractured femur cause such a high death rate during early transport?',
           options: [
-            "Because femur fractures instantly paralyzed the soldier's lungs.",
             'Because traditional splints did not keep the leg straight, meaning the jagged broken bones ground together, severing major arteries and causing fatal internal bleeding and shock.',
             'Because the bone released a highly toxic venom.',
             'Because the soldiers were allergic to the wooden splints.',
+            "Because femur fractures instantly paralyzed the soldier's lungs.",
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'Who originally designed the Thomas Splint before the outbreak of the First World War?',
           options: [
-            'Robert Jones',
             'Richard Lewisohn',
             'Hugh Owen Thomas',
+            'Robert Jones',
             'Oswald Hope Robertson',
           ],
-          answer: 2,
+          answer: 1,
         },
         {
           question:
             'How did the Thomas Splint (introduced to the Western Front by Robert Jones in December 1915) miraculously increase the survival rate for thigh fractures from 20% to 82%?',
           options: [
+            'It was so heavy that the soldier could not be moved at all.',
             'It rigidly pulled the leg lengthways (traction), completely stopping the broken bones from grinding on each other and preventing fatal blood loss and shock during transport.',
             'It was made of magical healing crystals.',
-            'It was so heavy that the soldier could not be moved at all.',
             'It contained a hidden compartment with antibiotics.',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             'What diagnostic technology was absolutely essential for accurately locating deeply embedded shrapnel so surgeons could remove it before infection set in?',
-          options: ['Microscopes', 'Thermometers', 'Stethoscopes', 'X-Rays'],
-          answer: 3,
+          options: ['Thermometers', 'Microscopes', 'X-Rays', 'Stethoscopes'],
+          answer: 2,
         },
         {
           question:
             'How was X-Ray technology adapted to deal with the vast number of casualties closer to the frontline?',
           options: [
-            "Miniature X-Ray machines were built into soldiers' helmets.",
             'Six mobile X-ray units (vans) were developed to operate in the British sector, allowing them to be driven directly to Casualty Clearing Stations.',
-            "It wasn't; X-Ray machines were too large and stayed in Britain.",
+            "Miniature X-Ray machines were built into soldiers' helmets.",
             'X-Rays were projected from airplanes flying above the trenches.',
+            "It wasn't; X-Ray machines were too large and stayed in Britain.",
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'What was a major technical limitation of the early mobile X-ray units used on the Western Front?',
           options: [
-            'The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.',
+            'They took three days to develop a single photograph.',
             'They only worked on officers, not regular soldiers.',
             'They required the sun to be shining directly on them.',
-            'They took three days to develop a single photograph.',
-          ],
-          answer: 0,
-        },
-        {
-          question:
-            'Early blood transfusions (such as those pioneered by Dr Lawrence Bruce Robertson) were heavily limited because blood could not be stored. How did this force doctors to perform transfusions?',
-          options: [
-            'They had to magically teleport the blood.',
-            'They had to use animal blood.',
-            'They had to freeze the patient entirely.',
-            "Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.",
+            'The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.',
           ],
           answer: 3,
         },
         {
           question:
-            'In 1915, what chemical did Richard Lewisohn discover could be added to blood to successfully stop it from clotting?',
-          options: ['Carbolic Acid', 'Penicillin', 'Sodium Citrate', 'Chlorine'],
+            'Early blood transfusions (such as those pioneered by Dr Lawrence Bruce Robertson) were heavily limited because blood could not be stored. How did this force doctors to perform transfusions?',
+          options: [
+            'They had to freeze the patient entirely.',
+            'They had to use animal blood.',
+            "Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.",
+            'They had to magically teleport the blood.',
+          ],
           answer: 2,
+        },
+        {
+          question:
+            'In 1915, what chemical did Richard Lewisohn discover could be added to blood to successfully stop it from clotting?',
+          options: ['Sodium Citrate', 'Carbolic Acid', 'Chlorine', 'Penicillin'],
+          answer: 0,
         },
         {
           question:
             "Following Lewisohn's discovery, Richard Weil discovered that blood mixed with sodium citrate could be refrigerated for up to two days. What monumentally significant breakthrough did Francis Rous and James Turner make in 1916?",
           options: [
-            'They invented the first artificial, synthetic blood.',
-            'They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.',
-            'They discovered how to turn water into blood.',
             'They discovered how to completely drain a human of blood.',
+            'They invented the first artificial, synthetic blood.',
+            'They discovered how to turn water into blood.',
+            'They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.',
           ],
-          answer: 1,
+          answer: 3,
         },
         {
           question:
             "Which American doctor utilized these chemical discoveries to establish the world's first 'blood depot' (blood bank) before the Battle of Cambrai in 1917?",
           options: [
-            'Oswald Hope Robertson',
             'Alexander Fleming',
+            'Oswald Hope Robertson',
             'Harold Gillies',
             'Hugh Owen Thomas',
           ],
-          answer: 0,
+          answer: 1,
         },
         {
           question:
             'How did Oswald Hope Robertson successfully store the 22 units of pre-donated universal Type O blood for his pioneering blood bank at Cambrai?',
           options: [
-            'He injected the blood into horses for safekeeping.',
-            'He kept them inside a heated oven.',
-            'He stored the blood in glass bottles packed with ice and sawdust.',
             "He buried the bottles deep under the mud of No Man's Land.",
+            'He injected the blood into horses for safekeeping.',
+            'He stored the blood in glass bottles packed with ice and sawdust.',
+            'He kept them inside a heated oven.',
           ],
           answer: 2,
         },
         {
           question:
             'Which pioneering surgeon developed early plastic surgery techniques to rebuild the severe, disfiguring facial injuries caused by shrapnel?',
-          options: ['Joseph Lister', 'John Snow', 'Edwin Chadwick', 'Harold Gillies'],
+          options: ['John Snow', 'Edwin Chadwick', 'Joseph Lister', 'Harold Gillies'],
           answer: 3,
         },
         {
@@ -12598,20 +12339,20 @@ export const unitData = {
             'Why did the brutal environment and massive casualty numbers of the Western Front force rapid medical advancements?',
           options: [
             'Because the British government offered a million-pound reward for new inventions.',
-            'Because doctors were bored and wanted to experiment on healthy soldiers.',
-            'Because the Germans gave them all their medical secrets.',
             'Because traditional peacetime surgical methods completely failed to treat the complex, infected shrapnel wounds, forcing doctors to innovate radical new techniques out of sheer desperation.',
+            'Because the Germans gave them all their medical secrets.',
+            'Because doctors were bored and wanted to experiment on healthy soldiers.',
           ],
-          answer: 3,
+          answer: 1,
         },
         {
           question:
             'Which of the following represents a major diagnostic limitation of the mobile X-ray units?',
           options: [
             'They could not detect pieces of dirty clothing that had been driven into wounds by shrapnel, which often caused lethal infections.',
+            'They were so loud that they caused permanent deafness.',
             'They required the patient to hold their breath for 20 minutes.',
             "They could only scan the patient's feet.",
-            'They were so loud that they caused permanent deafness.',
           ],
           answer: 0,
         },
