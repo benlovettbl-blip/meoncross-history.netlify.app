@@ -656,6 +656,167 @@ function renderPedagogyView() {
             <div style="color: #64748b; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">Rosenshine, Willingham &amp; Christodoulou</div>
             <p style="color: #475569; font-size: 0.82rem; line-height: 1.4; margin: 0;">The rule of Zero Same-Lesson Recall: why Do Now bell-ringers strictly test prior knowledge, domino flowcharts, and memory retention.</p>
           </div>
+      <!-- Departmental Delivery Roadmap & Implementation Tracker -->
+      <div style="margin-top: 32px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 18px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;">
+              <i class="fa-solid fa-list-check"></i> Living Departmental Progress Ledger
+            </div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.35rem; margin: 0 0 6px 0; color: #0f172a;">
+              2-Lesson Enquiry Delivery Roadmap &amp; Rollout Tracker
+            </h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #475569; max-width: 820px; line-height: 1.5;">
+              This tracking matrix monitors the department-wide implementation of the <strong>High-Challenge Shared Reading &amp; 2-Lesson Enquiry Standard</strong> (50m Reading &amp; Context + 50m Debate &amp; Workbook Mastery) across all 16 curriculum units. Permanently anchored in <code>DEPARTMENTAL_ROADMAP.md</code> and enforced in <code>AGENTS.md</code>.
+            </p>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 16px; text-align: right;">
+            <span style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: #64748b; letter-spacing: 0.06em;">Active Rollout Unit</span>
+            <div style="font-weight: 800; color: #1b365d; font-size: 1.05rem;">Year 8: Industrialisation &amp; Empire</div>
+            <div style="font-size: 0.78rem; color: #0f766e; font-weight: 600; margin-top: 2px;">
+              <i class="fa-solid fa-circle-check"></i> 1 of 8 Lessons Pilot Complete
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Priority Banner -->
+        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%); border: 1px solid #fcd34d; border-left: 4px solid #d97706; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span style="background: #b45309; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">NEXT IMMEDIATE PRIORITY</span>
+            <div style="font-weight: 700; color: #78350f; font-size: 1rem; margin-top: 4px;">
+              Lesson 2: How did Richard Arkwright and the factory system revolutionize human labor?
+            </div>
+            <div style="font-size: 0.82rem; color: #92400e; margin-top: 2px;">
+              Inject 2-Lesson Phase Timings (<code>delivery_plan</code>), learning objective hinge questions, and calibrate 2-page workbook.
+            </div>
+          </div>
+          <button onclick="window.switchView('lessons', 'industrialisation_and_empire'); setTimeout(() => { if (window.renderLessonByIndex) window.renderLessonByIndex(1); }, 150);"
+                  style="background: #d97706; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(217,119,6,0.25);">
+            <i class="fa-solid fa-bolt"></i> Queue Lesson 2 Now
+          </button>
+        </div>
+
+        <!-- Pilot Unit Lessons Table -->
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.84rem; text-align: left;">
+            <thead>
+              <tr style="background: #f1f5f9; color: #334155; border-bottom: 2px solid #cbd5e1;">
+                <th style="padding: 10px 12px; font-weight: 700; width: 35%;">Lesson Title &amp; Core Historical Mechanism</th>
+                <th style="padding: 10px 12px; font-weight: 700; text-align: center;">4-Act Narrative</th>
+                <th style="padding: 10px 12px; font-weight: 700; text-align: center;">Delivery Plan (50m+50m)</th>
+                <th style="padding: 10px 12px; font-weight: 700; text-align: center;">2-Page Workbook</th>
+                <th style="padding: 10px 12px; font-weight: 700; text-align: center;">SOW Status</th>
+                <th style="padding: 10px 12px; font-weight: 700; text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #f0fdf4;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 700; color: #166534;">Lesson 1: Henry Cort &amp; Funtley Ironworks</span>
+                  <div style="font-size: 0.76rem; color: #475569;">Puddling &amp; rolling, Baltic pig iron bottleneck, Royal Navy supremacy.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Phased (50m+50m)</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ 2-Page Spread</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Synced</span></td>
+                <td style="padding: 10px 12px; text-align: right;">
+                  <button onclick="window.switchView('lessons', 'industrialisation_and_empire'); setTimeout(() => { if (window.renderLessonByIndex) window.renderLessonByIndex(0); }, 150);"
+                          style="background: #166534; color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; cursor: pointer;">
+                    View Pilot
+                  </button>
+                </td>
+              </tr>
+
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #fffbeb;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 700; color: #92400e;">Lesson 2: Richard Arkwright &amp; The Factory System</span>
+                  <div style="font-size: 0.76rem; color: #475569;">Cromford Mill, water frame, shift from cottage to factory discipline.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">⏳ Next Target</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #f1f5f9; color: #64748b; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 600;">In Progress</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #f1f5f9; color: #64748b; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 600;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;">
+                  <button onclick="window.switchView('lessons', 'industrialisation_and_empire'); setTimeout(() => { if (window.renderLessonByIndex) window.renderLessonByIndex(1); }, 150);"
+                          style="background: #d97706; color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; cursor: pointer;">
+                    Open Lesson
+                  </button>
+                </td>
+              </tr>
+
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 600; color: #1e293b;">Lesson 3: Human Cost of Industrial Supremacy</span>
+                  <div style="font-size: 0.76rem; color: #64748b;">Coal mines, cotton mills, Sadler Committee, child labour.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+              </tr>
+
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 600; color: #1e293b;">Lesson 4: Steam Locomotives &amp; Brunel</span>
+                  <div style="font-size: 0.76rem; color: #64748b;">Railway mania, Great Western Railway, Box Tunnel engineering.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+              </tr>
+
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 600; color: #1e293b;">Lesson 5: Transatlantic Slave Trade &amp; Plantation Wealth</span>
+                  <div style="font-size: 0.76rem; color: #64748b;">Triangular trade, Liverpool capital accumulation, industrial dependency.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+              </tr>
+
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 600; color: #1e293b;">Lesson 6: East India Company &amp; The British Raj</span>
+                  <div style="font-size: 0.76rem; color: #64748b;">Battle of Plassey, company monopoly, 1857 rebellion, direct crown rule.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+              </tr>
+
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 600; color: #1e293b;">Lesson 7: The Scramble for Africa</span>
+                  <div style="font-size: 0.76rem; color: #64748b;">1884 Berlin Conference, rubber &amp; minerals, colonial exploitation.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+              </tr>
+
+              <tr>
+                <td style="padding: 10px 12px;">
+                  <span style="font-weight: 600; color: #1e293b;">Lesson 8: Portsmouth &amp; Hampshire: Maritime Engine</span>
+                  <div style="font-size: 0.76rem; color: #64748b;">Block Mills, Brunel's steam pulleys, HMS Victory, dockyard expansion.</div>
+                </td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">✅ Active</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+                <td style="padding: 10px 12px; text-align: center;"><span style="color: #94a3b8; font-size: 0.75rem;">Pending</span></td>
+                <td style="padding: 10px 12px; text-align: right;"><span style="color: #94a3b8; font-size: 0.75rem;">Queued</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

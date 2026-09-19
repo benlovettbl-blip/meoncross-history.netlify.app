@@ -875,6 +875,31 @@ function generateSOWHTML(db, yearGroup, unitIds) {
           if (hingeObj) hinge = hingeObj.question;
         }
 
+        let deliveryPlanSOW = '';
+        if (lesson.teacher_notes && lesson.teacher_notes.delivery_plan) {
+          const dp = lesson.teacher_notes.delivery_plan;
+          const l1Summary = dp.lesson_1?.phases
+            ? dp.lesson_1.phases
+                .map((p) => `<strong>${p.time}:</strong> ${p.label}`)
+                .join(' &bull; ')
+            : '';
+          const l2Summary = dp.lesson_2?.phases
+            ? dp.lesson_2.phases
+                .map((p) => `<strong>${p.time}:</strong> ${p.label}`)
+                .join(' &bull; ')
+            : '';
+
+          deliveryPlanSOW = `
+            <div class="sow-delivery-box" style="margin-top: 8px; background: #f0f9ff; border: 1px solid #bae6fd; border-left: 3px solid #0284c7; border-radius: 4px; padding: 5px 8px; font-size: 7pt; color: #0c4a6e; line-height: 1.35;">
+              <div style="font-weight: 700; color: #0369a1; margin-bottom: 3px; display: flex; align-items: center; gap: 4px;">
+                <span>⏱️ Delivery Phasing (${dp.format || '2-Lesson Sequence'})</span>
+              </div>
+              ${l1Summary ? `<div style="margin-bottom: 2px;"><strong style="color: #0369a1;">L1 (Reading &amp; Sources):</strong> ${l1Summary}</div>` : ''}
+              ${l2Summary ? `<div><strong style="color: #0369a1;">L2 (Debate &amp; Writing):</strong> ${l2Summary}</div>` : ''}
+            </div>
+          `;
+        }
+
         const tier = extractLessonThreeTier(lesson, uid, unitData, idx);
 
         html += `
@@ -886,6 +911,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                             <td>
                                 ${objsHTML}
                                 ${hinge ? `<span class="hinge-question">Hinge Q: ${hinge}</span>` : ''}
+                                ${deliveryPlanSOW}
                             </td>
                             <td>
                                 <div class="sow-three-tier">

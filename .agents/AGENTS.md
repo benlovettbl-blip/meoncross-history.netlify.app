@@ -222,3 +222,29 @@ All GCSE revision materials (Visual Revision Guides, Mastery Exam Practice Packs
      - **Pillar 3:** Knowledge Retrieval Quiz Pack (`<unit>_recall_quiz_FULL.pdf` / `<unit>_recall_quiz_pack_FULL.pdf`)
    - Split PDFs (by Key Topic or section) are strictly forbidden in public distributions.
 
+## Classroom Delivery Roadmap Standard (2-Lesson Enquiry Choreography)
+Whenever authoring, enriching, or refactoring curriculum data (`data.js` or `data.json`) for any lesson across Key Stage 3 and GCSE:
+1. **Mandatory `delivery_plan` in `teacher_notes`:** You MUST automatically include a structured `delivery_plan` object inside `teacher_notes`.
+2. **Schema & Phasing:** The `delivery_plan` must follow this standard:
+   - `format`: `"2-Lesson Sequence (50 mins each)"`
+   - `lesson_1`: `{ title: "Lesson 1: Immersion, Context & Shared Reading (50 mins)", phases: [...] }`
+     - Phase 1 (00:00–05:00): Hook & Prior Knowledge Retrieval
+     - Phase 2 (05:00–22:00): Whole-Class Shared Reading & Prosody Modelling (Acts 1–3, with assistive speech tracking)
+     - Phase 3 (22:00–35:00): Forensic Evidence & Primary Source Analysis
+     - Phase 4 (35:00–47:00): Analytical Application & Task 1 (Vocabulary / Distinction)
+     - Phase 5 (47:00–50:00): Hinge Question Plenary
+   - `lesson_2`: `{ title: "Lesson 2: Historiographical Debate & Workbook Mastery (50 mins)", phases: [...] }`
+     - Phase 1 (00:00–05:00): Prior-Lesson Recall Retrieval
+     - Phase 2 (05:00–18:00): Act 4 Historiographical Debate & Forensic Dissection
+     - Phase 3 (18:00–38:00): 2-Page Workbook Enquiry Essay Output (Verso evidence launch & Recto independent writing)
+     - Phase 4 (38:00–46:00): Live Exemplar Critique & Peer Moderation
+     - Phase 5 (46:00–50:00): Consolidation Exit Ticket
+3. **Parity Across Media:** Ensure this delivery plan is rendered in the web app's Teacher Mode, printed in the departmental Scheme of Work (SOW), and documented in `DEPARTMENTAL_ROADMAP.md`.
+
+## Departmental Roadmap Tracking & Perpetual Reminder Protocol
+To ensure that large-scale curriculum improvements and delivery rollouts are never lost or forgotten across working sessions:
+1. **Central Progress Ledger:** The project maintains an official status tracker in `DEPARTMENTAL_ROADMAP.md` documenting the audit and implementation status of all 16 units across our core pedagogical pillars (4-Act Structure, Reading Age Calibration, `delivery_plan`, 2-Page Workbook, and SOW Sync).
+2. **Mandatory Per-Turn Proactive Roadmap Prompt:** At the conclusion of EVERY agent turn (in your proactive recommendations), you MUST:
+   - Inspect `DEPARTMENTAL_ROADMAP.md`.
+   - Identify the current active unit and the exact next incomplete lesson or milestone in the rollout.
+   - Provide a clear, actionable reminder stating exactly where we are in the departmental rollout and what needs to be done next, so the user never has to remember or track project status manually.
