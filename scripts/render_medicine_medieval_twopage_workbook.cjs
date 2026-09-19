@@ -117,6 +117,10 @@ const medievalConfigs = [
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.1). In the drawing box, sketch a monk copying Galen’s medical book in a scriptorium. Add two speech bubbles explaining why the Church banned new medical experiments and imprisoned Roger Bacon in 1277.',
+    leftPageQuip:
+      'Medieval Diagnostic Tip: If you develop a fever in 1300, church logic dictates you definitely committed a sin last Tuesday. Time to buy a pilgrimage badge!',
+    rightPageQuip:
+      'Church Orthodoxy 101: Galen wrote it, monks copied it, nobody dared question it. Because questioning Galen wasn’t just bad science—it was a heresy trial.',
   },
   {
     lessonIndex: 1,
@@ -206,6 +210,10 @@ const medievalConfigs = [
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.2). In the drawing box, sketch a physician holding a urine flask (matula) up to the light. Label two reasons why physicians checked star charts (the Zodiac Man) before treating a patient.',
+    leftPageQuip:
+      'Uroscopy Masterclass: 20 shades on the urine wheel, and physicians regularly smelled, held up, and tasted the sample. Truly, the golden age of medical diagnostic dignity.',
+    rightPageQuip:
+      'Galen’s Logic: Got a cold, wet cough? Eat burning hot red peppers. Burning with a raging fever? Jump in an ice-cold river. What could possibly go wrong?',
   },
   {
     lessonIndex: 2,
@@ -298,6 +306,10 @@ const medievalConfigs = [
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.3). In the drawing box, draw a barber-surgeon’s bleeding bowl, fleam, and leeches. Write a 2-sentence explanation of how bloodletting was believed to restore humoural balance.',
+    leftPageQuip:
+      'Barber-Surgeon Philosophy: “Whatever is wrong with you, draining two pints of blood with thirty hungry leeches will at least distract you from your runny nose.”',
+    rightPageQuip:
+      'Apothecary Special: Medieval Theriac contained 64 ingredients, including mashed vipers and raw opium. If it didn’t cure your fever, at least you stopped caring.',
   },
   {
     lessonIndex: 3,
@@ -390,6 +402,10 @@ const medievalConfigs = [
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.4). In the drawing box, sketch medieval hospital beds facing a chapel altar. Write two bullet points explaining why monastic hospitals focused on spiritual ‘care, not cure’.',
+    leftPageQuip:
+      'Healthcare on a Budget: Can’t afford 10 gold groats for an Oxford-trained physician? The local wise woman has some mashed cabbage, nettles, and a lucky Latin rhyme.',
+    rightPageQuip:
+      'Monastic Hospital Policy: Warm broth, clean linen sheets, and non-stop chapel prayers. But if you’re actually contagious, you’re strictly not getting past the door.',
   },
   {
     lessonIndex: 4,
@@ -479,6 +495,10 @@ const medievalConfigs = [
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.5). In the drawing boxes, sketch the spread of the Black Death (rat fleas and airborne coughs) and Londoners cleaning streets. Explain why clearing dung could not stop the plague.',
+    leftPageQuip:
+      'Plague Prevention (1348): Carrying a posy of dried lavender and sniffing vinegar won’t stop flea bites, but at least London streets smelled slightly more tolerable.',
+    rightPageQuip:
+      'Grade 9 Distinction: Whipping yourself bloody in flagellant street processions to appease God’s wrath unfortunately just gave the local rat fleas an easier landing pad.',
   },
 ];
 
@@ -551,7 +571,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     /* Thick Black Writing Lines for Handwriting */
     .task-line {
       border-bottom: 1.5px solid #000000;
-      height: 7.8mm;
+      height: 7.4mm;
       width: 100%;
       box-sizing: border-box;
     }
@@ -560,6 +580,19 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       height: 6.2mm;
       width: 100%;
       box-sizing: border-box;
+    }
+    /* CGP-Style Humorous Revision Footnote */
+    .cgp-footnote {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-style: italic;
+      color: #666666;
+      border-top: 0.5px solid #d0d0d0;
+      padding-top: 1.5px;
+      margin-top: 2px;
+      line-height: 1.15;
+      letter-spacing: 0.1px;
     }
   </style>
 </head>
@@ -615,7 +648,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       <!-- Prominent Primary Visual Source Centerpiece (Unboxed, Full Width) -->
       <div style="margin: 3px 0 6px 0;">
-        <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 255px; object-fit: cover; display: block; border-bottom: 1.5px solid #000000;">
+        <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 248px; object-fit: cover; display: block; border-bottom: 1.5px solid #000000;">
         <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; padding: 3px 2px 1px 2px;">
           <span><strong>Primary Artifact:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585 (c. 1250)</span>
           <span>Accession Shelfmark: ARCH-MED-1250</span>
@@ -660,6 +693,11 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
           </li>
         </ul>
       </div>
+
+      <!-- CGP-Style Humorous Revision Footnote -->
+      <div class="cgp-footnote">
+        &bull; <em>Revision Tip: If you ever feel stressed about GCSE exams, just remember that in 1348 your doctor’s solution would have been strapping a live toad to your chest.</em>
+      </div>
     </div>
   </div>
 `;
@@ -699,7 +737,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Hippocrates’ Four Humours and Galen’s Opposites dominate medical thinking. Because Galen believed every organ was designed by a single Creator, the Church adopts his texts as sacred doctrine, controlling all manuscript copying in monastic scriptoria.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 2 -->
@@ -715,7 +753,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Franciscan friar Roger Bacon is imprisoned by Church leaders for advocating firsthand observation and scientific experiments rather than unquestioned acceptance of ancient books. This harsh punishment warns scholars that challenging Galen is heresy.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 3 -->
@@ -731,7 +769,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Physicians carry pocket Vademecum handbooks containing 20-shade urine charts and astrology wheels. Examining urine in a glass matula becomes the primary diagnostic method; doctors check the Zodiac Man to determine when to perform bloodletting.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 4 -->
@@ -747,9 +785,14 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Treatments focus entirely on restoring humoural balance. Phlebotomy (bloodletting with fleams, cupping, or leeches) and purging (emetics and clysters) physically deplete patients. Apothecaries prepare Theriac (60+ ingredients including viper flesh) as a universal remedy.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
+      </div>
+
+      <!-- CGP-Style Humorous Revision Footnote -->
+      <div class="cgp-footnote">
+        &bull; <em>CGP Fact: Franciscan friar Roger Bacon spent 14 years in prison for suggesting doctors should test things. Stick to the syllabus and avoid 14 years in solitary confinement.</em>
       </div>
     </div>
   </div>
@@ -785,7 +828,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Key Topic 1.5: 1345 Planetary Conjunction -->
@@ -801,7 +844,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Key Topic 1.5: 1348 Arrival of Black Death -->
@@ -817,7 +860,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Key Topic 1.5: 1349 Cleanliness Order & Mass Pits -->
@@ -833,9 +876,14 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
         </div>
 
+      </div>
+
+      <!-- CGP-Style Humorous Revision Footnote -->
+      <div class="cgp-footnote">
+        &bull; <em>Exam Insight: King Edward III ordered Londoners to clean human filth off the streets in 1349. Outstanding for civic smell, totally useless against Yersinia pestis fleas.</em>
       </div>
     </div>
   </div>
@@ -951,6 +999,11 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
         <div class="task-line"></div>
       </div>
+
+      <!-- CGP-Style Humorous Revision Footnote -->
+      <div class="cgp-footnote">
+        &bull; <em>${cfg.leftPageQuip}</em>
+      </div>
     </div>
   </div>
 
@@ -1048,6 +1101,11 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
           &larr; Pages 2–3
         </span>
+      </div>
+
+      <!-- CGP-Style Humorous Revision Footnote -->
+      <div class="cgp-footnote">
+        &bull; <em>${cfg.rightPageQuip}</em>
       </div>
     </div>
   </div>
@@ -1219,6 +1277,11 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
             })
             .join('')}
         </div>
+      </div>
+
+      <!-- CGP-Style Humorous Revision Footnote -->
+      <div class="cgp-footnote">
+        &bull; <em>Final Revision Motto: Unlike medieval bloodletting, scanning these quiz QR codes is 100% painless and significantly more likely to boost your survival in the exam hall.</em>
       </div>
     </div>
   </div>
