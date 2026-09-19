@@ -46787,7 +46787,53 @@
               "text": "<span class=\"para-ref\">[2.1]</span> The crisis was felt nowhere more acutely than along the Hampshire coastline. Just fifteen miles down the Solent lay <strong>Portsmouth Royal Navy Dockyard</strong>—the largest industrial complex on Earth and the beating military heart of the British Empire. Royal Navy shipwrights were desperate for iron. An energetic former naval supply agent named <strong>Henry Cort</strong> recognized a once-in-a-lifetime opportunity: whoever could unlock a way to turn cheap, brittle British pig iron into naval-grade wrought iron would secure an immense fortune from the Admiralty.<br><br><span class=\"para-ref\">[2.2]</span> In 1775, Cort bet his life savings. He leased the old corn mill at <strong>Funtley</strong> along the quiet River Meon, just north of Fareham. Funtley was an inspired gamble: the rushing river supplied continuous water power to turn heavy mill wheels, while Fareham Creek gave him direct tidal water transport down Portsmouth Harbour straight into the Royal Dockyard.<br><br><span class=\"para-ref\">[2.3]</span> Between 1783 and 1784, working amid blistering heat and flying sparks, Cort patented two epoch-making breakthroughs that fundamentally transformed modern metallurgy:<br>1. <strong>The Reverberatory Puddling Furnace (1783):</strong> Cort designed a furnace with an arched brick roof that kept the coal fire physically separate from the iron. The coal burned in a side chamber, and the curved masonry bounced (reverberated) pure, radiant heat down onto the shallow hearth like a giant oven. The dirty coal smoke and sulphur never touched the metal! In front of this blistering 1,200°C inferno stood the \"puddler\"—a skilled artisan who slid a 10-foot iron paddle through a porthole, stirring the bubbling liquid metal like a witch's cauldron. As he stirred, oxygen reacted with the molten soup, burning away carbon until the iron thickened into glowing, pasty balls of pure wrought iron.<br>2. <strong>The Grooved Rolling Mill (1784):</strong> Instead of having teams of exhausted blacksmiths slowly hammer the hot iron blooms by hand for hours, Cort fed the glowing metal directly through pairs of water-driven, grooved iron rollers. In seconds, the rollers squeezed out remaining liquid slag and compressed the metal into uniform naval bolts, bars, and rails at <strong>fifteen times the speed</strong> of traditional forge hammers.<br><br><span class=\"para-ref\">[2.4]</span> <strong>Fieldwork Archaeology: The Surviving Hydraulic Footprint:</strong> Although Cort's ironworks were later dismantled, the physical anatomy of this industrial breakthrough remains etched into the Hampshire landscape along the River Meon at Funtley. When historians compare the 1784 framed contemporary watercolour of Fontley Iron Mills against modern fieldwork photographs, the site's industrial layout becomes clear. The 1784 painting depicts an active, smoking forge: dense black plumes rise from the reverberatory puddling furnace chimney, workers maneuver glowing metal, and water surges into the mill race. Today, the River Meon still plunges over the surviving 18th-century stone weir and sluice gate that directed hydraulic energy into the works. Directly beside the waterfall, the curved circular brick housing marks the exact position of Cort's massive waterwheel, which supplied the horsepower needed to drive his patented grooved rolling mill.<br><br><span class=\"para-ref\">[2.5]</span> <strong>Forensic Metallurgy: Puddling Slag & Hampshire's Only Slag Wall:</strong> The chemical reality of Cort's puddling process left an indestructible archaeological fingerprint: <strong>iron slag</strong> (clinker). As molten iron was stirred and squeezed through rollers, glassy silicate impurities were separated and discarded in massive mounds around the forge. Over two centuries later, the owner of the surviving mill property excavated tons of this heavy, dark, pitted clinker from the soil and built a dry-stone perimeter wall bordering the lawn—creating the <strong>only iron slag wall in Hampshire</strong>. Nearby stands <strong>Fontley House</strong>, the Georgian red-brick residence of Cort's business partner Samuel Jellicoe. Crowning its roofline are authentic 18th-century chimney pots known as <strong>Fareham \"Tallboys\"</strong>, crafted from the region's famous vibrant red terracotta clay with distinctive crimped white-slip collars. Together, these landscape relics prove how local Hampshire geography, natural hydraulics, and innovative metallurgy combined to create a world-changing industrial powerhouse.",
               "image": "/images/funtley_ironworks.jpg",
               "image_alt": "Cross-section of Henry Cort's Reverberatory Puddling Furnace at Funtley Ironworks",
-              "image_caption": "Source B: Technical cross-section of Henry Cort's patented reverberatory puddling furnace at Funtley Ironworks, Hampshire (1783). The arched brick roof reverberated intense heat downward onto the shallow hearth, burning off carbon while keeping raw coal smoke away from the refining metal."
+              "image_caption": "Source B: Technical cross-section of Henry Cort's patented reverberatory puddling furnace at Funtley Ironworks, Hampshire (1783). The arched brick roof reverberated intense heat downward onto the shallow hearth, burning off carbon while keeping raw coal smoke away from the refining metal.",
+              "tasks": [
+                {
+                  "type": "diagram_annotation",
+                  "text": "Visual Blueprint & Archival Anatomy: Henry Cort's Reverberatory Furnace (1783)",
+                  "instruction": "Study the 18th-century architectural cross-section of Henry Cort's patented reverberatory furnace and rolling mill at Funtley Ironworks. Examine each numbered engineering hotspot and analyze how it solved Britain's pig iron crisis.",
+                  "image": "/images/funtley_ironworks.jpg",
+                  "caption": "Technical cross-section diagram of Henry Cort's reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks, Hampshire (Patent No. 1420, 1784).",
+                  "annotations": [
+                    {
+                      "num": 1,
+                      "label": "Separated Firebox (The Raised Grate)",
+                      "prompt": "Identify feature [1] and explain why keeping the coal fire physically separate from the molten iron was revolutionary:",
+                      "starter": "The firebox was housed in a separate chamber to the left so that...",
+                      "model": "Cort placed the pit coal fire on a raised grate physically separated by a fire-bridge masonry wall from the refining hearth. This revolutionary design ensured that sulphur and phosphorus in raw British pit coal never came into direct contact with the melting iron, completely solving the chemical flaw of brittle pig iron."
+                    },
+                    {
+                      "num": 2,
+                      "label": "Arched Masonry Ceiling (The Reverberator)",
+                      "prompt": "Identify feature [2] and explain how the curved brick roof transferred heat without fuel contact:",
+                      "starter": "The arched refractory brick ceiling acted as a reverberator by...",
+                      "model": "The curved brick roof acted as a giant radiant reflector, deflecting (reverberating) pure radiant flame and burning gases down onto the shallow iron bed like a colossal oven. This generated blistering temperatures of 1,200°C without contaminating the metal with coal ash."
+                    },
+                    {
+                      "num": 3,
+                      "label": "The Puddling Hearth & Working Rabble Porthole",
+                      "prompt": "Identify feature [3] and describe the role of the artisan puddler operating through the porthole:",
+                      "starter": "The central shallow bowl was the puddling hearth where the artisan...",
+                      "model": "The puddler stood before the furnace porthole, sliding a 10-foot iron paddle (rabble) through the aperture to stir the boiling metal in an oxidising atmosphere. Stirring exposed the molten soup to oxygen, burning away carbon until the iron thickened into glowing, decarburised balls of tough wrought iron."
+                    },
+                    {
+                      "num": 4,
+                      "label": "Adjustable Damper & Chimney Flue",
+                      "prompt": "Identify feature [4] and explain how the tall chimney stack and damper regulated furnace draft:",
+                      "starter": "The tall chimney stack and movable iron damper plate allowed the ironmaster to...",
+                      "model": "The tall masonry stack created a strong natural thermal updraft, drawing combustion gases across the hearth. By adjusting the iron damper plate with chains, the ironmaster could precisely regulate the airflow, combustion velocity, and furnace temperature."
+                    },
+                    {
+                      "num": 5,
+                      "label": "Hydraulic Grooved Rollers (Rolling Mill)",
+                      "prompt": "Identify feature [5] and explain why mechanised rolling was superior to traditional forge hammering:",
+                      "starter": "Driven by the River Meon waterwheel, the grooved rollers...",
+                      "model": "Instead of slow, exhausting manual hammering by forge smiths, Cort fed the white-hot puddled iron balls directly between pairs of grooved iron rollers powered by the River Meon waterwheel. This squeezed out glassy silicate slag and compressed the grain into uniform naval bars at fifteen times the speed of tilt hammers."
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "photo_slider",
@@ -46987,6 +47033,18 @@
             {
               "term": "Fareham Tallboys",
               "definition": "Distinctive tall terracotta chimney pots crafted from local Fareham Red clay featuring a crimped white slip collar."
+            },
+            {
+              "term": "Reverberatory Furnace",
+              "definition": "A specialised furnace where burning coal is kept separate from molten metal, deflecting heat downward from an arched brick ceiling to prevent chemical contamination."
+            },
+            {
+              "term": "Orgrounds Iron",
+              "definition": "The highest quality Swedish charcoal-smelted wrought iron, long regarded as the global gold standard for Royal Navy warship construction."
+            },
+            {
+              "term": "Baltic Bottleneck",
+              "definition": "Britain’s dangerous wartime dependence on importing over 50,000 tons of malleable iron annually from Sweden and Russia across vulnerable sea lanes."
             }
           ],
           "quiz": [

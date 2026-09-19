@@ -180,6 +180,65 @@ export const unitData = {
             "Cross-section of Henry Cort's Reverberatory Puddling Furnace at Funtley Ironworks",
           image_caption:
             "Source B: Technical cross-section of Henry Cort's patented reverberatory puddling furnace at Funtley Ironworks, Hampshire (1783). The arched brick roof reverberated intense heat downward onto the shallow hearth, burning off carbon while keeping raw coal smoke away from the refining metal.",
+          tasks: [
+            {
+              type: 'diagram_annotation',
+              text: "Visual Blueprint & Archival Anatomy: Henry Cort's Reverberatory Furnace (1783)",
+              instruction:
+                "Study the 18th-century architectural cross-section of Henry Cort's patented reverberatory furnace and rolling mill at Funtley Ironworks. Examine each numbered engineering hotspot and analyze how it solved Britain's pig iron crisis.",
+              image: '/images/funtley_ironworks.jpg',
+              caption:
+                "Technical cross-section diagram of Henry Cort's reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks, Hampshire (Patent No. 1420, 1784).",
+              annotations: [
+                {
+                  num: 1,
+                  label: 'Separated Firebox (The Raised Grate)',
+                  prompt:
+                    'Identify feature [1] and explain why keeping the coal fire physically separate from the molten iron was revolutionary:',
+                  starter: 'The firebox was housed in a separate chamber to the left so that...',
+                  model:
+                    'Cort placed the pit coal fire on a raised grate physically separated by a fire-bridge masonry wall from the refining hearth. This revolutionary design ensured that sulphur and phosphorus in raw British pit coal never came into direct contact with the melting iron, completely solving the chemical flaw of brittle pig iron.',
+                },
+                {
+                  num: 2,
+                  label: 'Arched Masonry Ceiling (The Reverberator)',
+                  prompt:
+                    'Identify feature [2] and explain how the curved brick roof transferred heat without fuel contact:',
+                  starter: 'The arched refractory brick ceiling acted as a reverberator by...',
+                  model:
+                    'The curved brick roof acted as a giant radiant reflector, deflecting (reverberating) pure radiant flame and burning gases down onto the shallow iron bed like a colossal oven. This generated blistering temperatures of 1,200°C without contaminating the metal with coal ash.',
+                },
+                {
+                  num: 3,
+                  label: 'The Puddling Hearth & Working Rabble Porthole',
+                  prompt:
+                    'Identify feature [3] and describe the role of the artisan puddler operating through the porthole:',
+                  starter: 'The central shallow bowl was the puddling hearth where the artisan...',
+                  model:
+                    'The puddler stood before the furnace porthole, sliding a 10-foot iron paddle (rabble) through the aperture to stir the boiling metal in an oxidising atmosphere. Stirring exposed the molten soup to oxygen, burning away carbon until the iron thickened into glowing, decarburised balls of tough wrought iron.',
+                },
+                {
+                  num: 4,
+                  label: 'Adjustable Damper & Chimney Flue',
+                  prompt:
+                    'Identify feature [4] and explain how the tall chimney stack and damper regulated furnace draft:',
+                  starter:
+                    'The tall chimney stack and movable iron damper plate allowed the ironmaster to...',
+                  model:
+                    'The tall masonry stack created a strong natural thermal updraft, drawing combustion gases across the hearth. By adjusting the iron damper plate with chains, the ironmaster could precisely regulate the airflow, combustion velocity, and furnace temperature.',
+                },
+                {
+                  num: 5,
+                  label: 'Hydraulic Grooved Rollers (Rolling Mill)',
+                  prompt:
+                    'Identify feature [5] and explain why mechanised rolling was superior to traditional forge hammering:',
+                  starter: 'Driven by the River Meon waterwheel, the grooved rollers...',
+                  model:
+                    'Instead of slow, exhausting manual hammering by forge smiths, Cort fed the white-hot puddled iron balls directly between pairs of grooved iron rollers powered by the River Meon waterwheel. This squeezed out glassy silicate slag and compressed the grain into uniform naval bars at fifteen times the speed of tilt hammers.',
+                },
+              ],
+            },
+          ],
         },
         {
           type: 'photo_slider',
@@ -418,6 +477,21 @@ export const unitData = {
           term: 'Fareham Tallboys',
           definition:
             'Distinctive tall terracotta chimney pots crafted from local Fareham Red clay featuring a crimped white slip collar.',
+        },
+        {
+          term: 'Reverberatory Furnace',
+          definition:
+            'A specialised furnace where burning coal is kept separate from molten metal, deflecting heat downward from an arched brick ceiling to prevent chemical contamination.',
+        },
+        {
+          term: 'Orgrounds Iron',
+          definition:
+            'The highest quality Swedish charcoal-smelted wrought iron, long regarded as the global gold standard for Royal Navy warship construction.',
+        },
+        {
+          term: 'Baltic Bottleneck',
+          definition:
+            'Britain’s dangerous wartime dependence on importing over 50,000 tons of malleable iron annually from Sweden and Russia across vulnerable sea lanes.',
         },
       ],
       quiz: [
