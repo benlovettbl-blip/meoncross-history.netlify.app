@@ -4,6 +4,7 @@ export function getAssetUrl(path) {
     if (typeof path.url === 'string') path = path.url;
     else if (typeof path.src === 'string') path = path.src;
     else if (typeof path.image === 'string') path = path.image;
+    else if (typeof path.source === 'string') path = path.source;
     else if (typeof path.image_url === 'string') path = path.image_url;
     else if (Array.isArray(path) && path.length > 0 && typeof path[0] === 'string') path = path[0];
     else return '';

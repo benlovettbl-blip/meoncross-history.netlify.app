@@ -1502,11 +1502,11 @@ export function renderLesson(lesson) {
               </div>
             </div>
             ${
-              source.src
+              source.src || source.source || source.image
                 ? `
               <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
                 <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
-                  <img src="${getAssetUrl(source.src)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
+                  <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
                   <div class="archival-source-inspect-badge">
                     <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                   </div>
@@ -1597,11 +1597,11 @@ export function renderLesson(lesson) {
               ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
               
               ${
-                source.src
+                source.src || source.source || source.image
                   ? `
                 <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
                   <div style="position: relative;">
-                    <img src="${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" data-action="open-modal" data-src="${getAssetUrl(source.src)}">
+                    <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}">
                   </div>
                   ${
                     source.caption
@@ -1798,7 +1798,7 @@ export function renderLesson(lesson) {
               <div style="display: flex; flex-direction: column; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; height: 100%;">
                 <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 2px solid #3b82f6; padding-bottom: 5px;">Source ${String.fromCharCode(65 + index)}: ${starter.title}</h4>
                 <div style="width: 100%; height: 250px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
-                  <img src="${starter.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${starter.source}">
+                  <img src="${getAssetUrl(starter.source || starter.src || starter.image)}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(starter.source || starter.src || starter.image)}">
                 </div>
                 <div style="font-size: 0.95rem; color: #475569; margin-bottom: 15px; font-style: italic;">
                   ${starter.caption}
@@ -1834,9 +1834,10 @@ export function renderLesson(lesson) {
                </div>
              `;
       } else {
+        const utilSourceSrc = getAssetUrl(source.source || source.src || source.image);
         sourceContentHtml = `
                 <div class="utility-source-visual">
-                  <img class="utility-source-img" src="${source.source}" alt="${source.title || 'Historical Source'}" data-action="open-modal" data-src="${source.source}">
+                  <img class="utility-source-img" src="${utilSourceSrc}" alt="${source.title || 'Historical Source'}" data-action="open-modal" data-src="${utilSourceSrc}">
                 </div>
                 ${source.caption ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 15px; font-style: italic;">${source.caption}</div>` : ''}
              `;
@@ -3137,10 +3138,11 @@ export function renderLesson(lesson) {
             }
           `;
         } else {
+          const rawSourceImgUrl = getAssetUrl(rawSource.src || rawSource.source || rawSource.image);
           sourceBodyHtml = `
             <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
               <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
-                <img src="${getAssetUrl(rawSource.source || rawSource.src)}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${getAssetUrl(rawSource.source || rawSource.src)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
+                <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
                 <div class="archival-source-inspect-badge">
                   <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                 </div>

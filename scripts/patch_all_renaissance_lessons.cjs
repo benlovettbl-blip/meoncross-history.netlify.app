@@ -200,6 +200,8 @@ const lesson_2_1 = {
       title: 'Act 3: Forensic Evidence (Microscopes & Optical Frontiers)',
       source: {
         title: 'Source B: Title Page of Philosophical Transactions, Vol. I (1665–1666)',
+        src: '/images/philosophical_transactions_vol1.jpg',
+        source: '/images/philosophical_transactions_vol1.jpg',
         image: '/images/philosophical_transactions_vol1.jpg',
         question:
           'How does this publication demonstrate the shift toward peer-reviewed, collaborative scientific communication?',
@@ -612,6 +614,8 @@ const lesson_2_2 = {
       title: 'Act 3: Forensic Evidence (Practical Therapies vs Quack Remedies)',
       source: {
         title: 'Source A: Portrait of Thomas Sydenham by Mary Beale (c1688)',
+        src: '/images/thomas_sydenham.jpg',
+        source: '/images/thomas_sydenham.jpg',
         image: '/images/thomas_sydenham.jpg',
         question:
           'What does Sydenham’s sober, plain dress reveal about his clinical philosophy compared to theatrical university professors?',
@@ -1020,6 +1024,8 @@ const lesson_2_3 = {
       title: 'Act 3: Forensic Evidence (De Humani Corporis Fabrica, 1543)',
       source: {
         title: 'Source B: Vesalius Muscle Men Plate from De Fabrica (1543)',
+        src: '/images/vesalius_muscle_men.jpg',
+        source: '/images/vesalius_muscle_men.jpg',
         image: '/images/vesalius_muscle_men.jpg',
         question:
           'How do the detailed woodcut muscles in this plate reflect the combination of Renaissance art and scientific dissection?',
@@ -1412,6 +1418,8 @@ const lesson_2_4 = {
       title: 'Act 3: Forensic Evidence (The Tourniquet Experiment & De Motu Cordis)',
       source: {
         title: 'Source A: Vein Valve Experiments from De Motu Cordis (1628)',
+        src: '/images/harvey_veins.jpg',
+        source: '/images/harvey_veins.jpg',
         image: '/images/harvey_veins.jpg',
         question:
           'How did pressing a finger along a vein toward the hand prove that blood only travels toward the heart?',
@@ -1793,6 +1801,8 @@ const lesson_2_5 = {
       title: 'Act 3: Forensic Evidence (Medical Ignorance & Superstitious Continuity)',
       source: {
         title: 'Source A: 17th-Century Plague Doctor (Schnabel von Rom)',
+        src: '/images/plague_doctor_1665.png',
+        source: '/images/plague_doctor_1665.png',
         image: '/images/plague_doctor_1665.png',
         question:
           'How does the herb-filled beak mask demonstrate the total continuity of the miasma theory in 1665?',
