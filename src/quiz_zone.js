@@ -42,7 +42,7 @@ export function renderQuizZone(container, unitData) {
       };
 
       // For quizPack (structured quizzes)
-      const lessonQuiz = l.quiz || l.quiz_questions;
+      const lessonQuiz = l.quiz || l.quick_quiz || l.quiz_questions;
       if (lessonQuiz && Array.isArray(lessonQuiz)) {
         lessonQuiz.forEach((q) => {
           const qText = q.question || q.q;

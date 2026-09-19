@@ -565,7 +565,8 @@ export function renderInteractiveQuiz() {
   let totalQuestions = 0;
   const lessons = data.lessons || data.subtopics || [];
   lessons.forEach((l) => {
-    if (l.quiz && Array.isArray(l.quiz)) totalQuestions += l.quiz.length;
+    const qList = l.quiz || l.quick_quiz || l.quiz_questions;
+    if (qList && Array.isArray(qList)) totalQuestions += qList.length;
     if (l.do_now && Array.isArray(l.do_now.items)) totalQuestions += l.do_now.items.length;
     else if (l.do_now && Array.isArray(l.do_now.questions))
       totalQuestions += l.do_now.questions.length;

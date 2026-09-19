@@ -846,7 +846,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Hippocrates’ Four Humours and Galen’s Opposites dominate medical thinking. Because Galen believed every organ was designed by a single Creator, the Church adopts his texts as sacred doctrine, controlling all manuscript copying in monastic scriptoria.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 2 -->
@@ -862,7 +862,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Franciscan friar Roger Bacon is imprisoned by Church leaders for advocating firsthand observation and scientific experiments rather than unquestioned acceptance of ancient books. This harsh punishment warns scholars that challenging Galen is heresy.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 3 -->
@@ -878,7 +878,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Physicians carry pocket Vademecum handbooks containing 20-shade urine charts and astrology wheels. Examining urine in a glass matula becomes the primary diagnostic method; doctors check the Zodiac Man to determine when to perform bloodletting.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 4 -->
@@ -894,7 +894,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Treatments focus entirely on restoring humoural balance. Phlebotomy (bloodletting with fleams, cupping, or leeches) and purging (emetics and clysters) physically deplete patients. Apothecaries prepare Theriac (60+ ingredients including viper flesh) as a universal remedy.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
       </div>
@@ -934,7 +934,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Key Topic 1.5: 1345 Planetary Conjunction -->
@@ -950,7 +950,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Key Topic 1.5: 1348 Arrival of Black Death -->
@@ -966,7 +966,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Key Topic 1.5: 1349 Cleanliness Order & Mass Pits -->
@@ -982,7 +982,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
             </p>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 38mm; flex: 1; background: #ffffff;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
       </div>
@@ -1167,6 +1167,9 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write 1–2 detailed analytical paragraphs below (continue in your exercise book for full timed paper):
+      </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1356,19 +1359,22 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
                 'Black Death',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
             <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
               KT1.${cfg.lessonNum}
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 600; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
-            <div style="width: 25mm; height: 25mm; margin: 0 auto 2px auto;">
+            <div style="width: 23mm; height: 23mm; margin: 0 auto 2px auto;">
               ${qrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px; margin-bottom: 2px;">
               Scan to Quiz
             </span>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #000000;">
+              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
+            </div>
           </div>
           `;
             })

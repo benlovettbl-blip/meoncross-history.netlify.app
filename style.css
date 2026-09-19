@@ -4628,3 +4628,84 @@ body.teacher-mode-active .btn-teacher-mode-toggle i,
   border-color: #0284c7 !important;
   color: #0369a1 !important;
 }
+
+/* ==========================================================================
+   Full-Screen Mobile Quiz Engine & QR Scanner Experience
+   ========================================================================== */
+body.mobile-fullscreen-quiz-active {
+  overflow: hidden !important;
+}
+
+body.mobile-fullscreen-quiz-active .app-header,
+body.mobile-fullscreen-quiz-active .mobile-bottom-nav,
+body.mobile-fullscreen-quiz-active .app-sidebar {
+  display: none !important;
+}
+
+#quizModal.fullscreen-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+
+#quizModal.fullscreen-modal .modal-content {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 16px 20px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow-y: auto !important;
+  transform: none !important;
+  background: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  #quizModal {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 99999 !important;
+  }
+  #quizModal .modal-content {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 14px 16px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    overflow-y: auto !important;
+    transform: none !important;
+    background: #ffffff !important;
+  }
+}

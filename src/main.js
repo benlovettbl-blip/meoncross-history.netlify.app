@@ -164,6 +164,30 @@ window.addEventListener('DOMContentLoaded', async () => {
         window.renderLessonByIndex(parseInt(initialLesson, 10), true);
       }
     }
+
+    // Direct Fullscreen Mobile QR Quiz Experience
+    const isQuizRequested =
+      urlParams.get('quiz') === 'true' ||
+      urlParams.get('quiz') === '1' ||
+      urlParams.get('view') === 'quiz';
+
+    if (isQuizRequested && typeof window.startQuiz === 'function') {
+      const lessonIdx =
+        initialLesson !== null && !isNaN(parseInt(initialLesson, 10))
+          ? parseInt(initialLesson, 10)
+          : 0;
+      const unitData =
+        window.currentUnitData ||
+        (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
+      const targetLesson =
+        unitData && unitData.lessons ? unitData.lessons[lessonIdx] || unitData.lessons[0] : null;
+      const lessonId = targetLesson ? targetLesson.id : `lesson_${lessonIdx}`;
+
+      setTimeout(() => {
+        window.startQuiz(lessonId, true);
+      }, 120);
+    }
+
     if (window.location.hash && window.location.hash.includes('-section')) {
       setTimeout(() => {
         const target = document.querySelector(window.location.hash);

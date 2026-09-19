@@ -5231,7 +5231,8 @@ export function renderLesson(lesson) {
   }
 
   // --- PLENARY RETRIEVAL QUIZ LAUNCHER (Compact ~80px card immediately above Exit Ticket) ---
-  if (lesson.quiz && lesson.quiz.length > 0 && appStore.state.activeUnitData.type !== 'trip') {
+  const rawLessonQuiz = lesson.quiz || lesson.quick_quiz || lesson.quiz_questions;
+  if (rawLessonQuiz && rawLessonQuiz.length > 0 && appStore.state.activeUnitData.type !== 'trip') {
     let savedScoreBadge = '';
     try {
       const savedRaw = localStorage.getItem('history_quiz_' + lesson.id);
@@ -5256,7 +5257,7 @@ export function renderLesson(lesson) {
             </div>
             <div>
               <h3 style="margin: 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', Georgia, serif;">Plenary Retrieval Quiz</h3>
-              <p style="margin: 3px 0 0 0; color: #64748b; font-size: 0.88rem;">Rapid closed-book recall &bull; <strong>${lesson.quiz.length} Questions</strong></p>
+              <p style="margin: 3px 0 0 0; color: #64748b; font-size: 0.88rem;">Rapid closed-book recall &bull; <strong>${rawLessonQuiz.length} Questions</strong></p>
             </div>
           </div>
           <div id="quiz-status-badge-${lesson.id}" style="display: flex; align-items: center;">

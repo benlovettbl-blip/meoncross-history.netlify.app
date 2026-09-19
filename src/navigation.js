@@ -480,8 +480,9 @@ async function loadUnit(unitId) {
       const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
       lessonsList.forEach((lesson, lIdx) => {
         const baseId = lesson.id || `lesson_${lIdx}`;
-        if (lesson.quiz && Array.isArray(lesson.quiz)) {
-          lesson.quiz.forEach((q, idx) => {
+        const rawQuizzes = lesson.quiz || lesson.quick_quiz || lesson.quiz_questions;
+        if (rawQuizzes && Array.isArray(rawQuizzes)) {
+          rawQuizzes.forEach((q, idx) => {
             const prompt = q.question || q.q;
             const ans = q.answer || q.a;
             if (prompt && ans && q.options && Array.isArray(q.options)) {

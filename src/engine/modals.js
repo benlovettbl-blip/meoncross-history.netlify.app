@@ -1443,72 +1443,169 @@ window.closeMilestoneModal = function () {
 window.injectQuizModalIfNeeded = function () {
   if (document.getElementById('quizModal')) return;
   const html = `
-  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;">
-    <div class="modal-content" style="background: #ffffff; border-radius: 14px; padding: 28px 32px; max-width: 650px; width: 92%; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.35); transform: scale(0.95); transition: transform 0.3s ease; border: 1px solid #e2e8f0; max-height: 90vh; overflow-y: auto;">
-      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 16px; right: 18px; background: #f1f5f9; border: none; color: #64748b; width: 32px; height: 32px; border-radius: 50%; font-size: 14pt; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 99999; opacity: 0; transition: opacity 0.25s ease;">
+    <div class="modal-content" style="background: #ffffff; border-radius: 16px; padding: 20px 24px 24px; max-width: 680px; width: 94%; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); transform: scale(0.96); transition: transform 0.25s ease; border: 1px solid #e2e8f0; max-height: 92vh; overflow-y: auto; display: flex; flex-direction: column;">
       
-      <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
-        <div style="width: 44px; height: 44px; border-radius: 10px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; color: #2563eb; margin-right: 14px; flex-shrink: 0; border: 1.5px solid #bfdbfe;">
-          🎯
+      <!-- Top Bar: Exit button, Topic Pill, and Progress Pill -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 10px;">
+        <button class="modal-close-btn" onclick="window.closeQuizModal()" style="background: #f1f5f9; border: 1.5px solid #cbd5e1; color: #334155; height: 36px; padding: 0 12px; border-radius: 8px; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s;">
+          <i class="fa-solid fa-arrow-left"></i> <span>Exit</span>
+        </button>
+
+        <div style="flex: 1; text-align: center; min-width: 0;">
+          <span id="quiz-lesson-badge" style="display: inline-block; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 800; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 3px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.3px;">
+            Retrieval Practice
+          </span>
         </div>
-        <div style="flex: 1;">
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-right: 36px;">
-            <h3 style="margin: 0; color: #0f172a; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">Plenary Knowledge Check</h3>
-            <span id="quiz-progress-pill" style="background: #f1f5f9; color: #475569; font-weight: 700; font-size: 0.82rem; padding: 3px 10px; border-radius: 12px;">Q <span id="quiz-progress">1 / 20</span></span>
-          </div>
-          <div style="width: 100%; height: 6px; background: #e2e8f0; border-radius: 4px; margin-top: 8px; overflow: hidden;">
-            <div id="quiz-progress-bar" style="width: 5%; height: 100%; background: #2563eb; transition: width 0.25s ease;"></div>
-          </div>
-        </div>
+
+        <span id="quiz-progress-pill" style="background: #0f172a; color: #ffffff; font-weight: 800; font-size: 0.8rem; padding: 4px 10px; border-radius: 20px; flex-shrink: 0; letter-spacing: 0.5px;">
+          Q <span id="quiz-progress">1 / 8</span>
+        </span>
+      </div>
+
+      <!-- Animated Progress Bar -->
+      <div style="width: 100%; height: 5px; background: #e2e8f0; border-radius: 4px; margin-bottom: 16px; overflow: hidden;">
+        <div id="quiz-progress-bar" style="width: 12%; height: 100%; background: linear-gradient(90deg, #3b82f6, #2563eb); transition: width 0.3s ease;"></div>
       </div>
       
-      <div id="quiz-question-container">
+      <!-- Question and Options Area -->
+      <div id="quiz-question-container" style="flex: 1;">
         <!-- Populated dynamically -->
       </div>
       
-      <div id="quiz-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 22px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+      <!-- Feedback and Next Action Footer -->
+      <div id="quiz-footer" style="margin-top: 16px; border-top: 1px solid #f1f5f9; padding-top: 12px; display: flex; flex-direction: column; gap: 10px;">
         <div id="quiz-feedback" style="font-weight: 600; font-size: 0.95rem;"></div>
-        <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none; padding: 9px 20px; font-weight: 700; border-radius: 8px;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+        <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none; padding: 13px 20px; font-weight: 800; font-size: 1rem; border-radius: 10px; width: 100%; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onclick="window.nextQuizQuestion()">
+          Next Question <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
+
     </div>
   </div>`;
   document.body.insertAdjacentHTML('beforeend', html);
 };
 
-window.startQuiz = function (lessonId) {
+window.startQuiz = function (lessonId, isFullscreen = false) {
   window.injectQuizModalIfNeeded();
   const unitData =
     window.currentUnitData ||
     (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
   if (!unitData || !unitData.lessons) return;
-  const lesson = unitData.lessons.find((l) => l.id === lessonId);
-  if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
 
-  window.currentQuizData = lesson.quiz.map((q) => {
-    if (!q.options && q.distractors && q.distractors.length > 0) {
-      let opts = [q.answer || q.a, ...q.distractors];
-      opts = opts.sort(() => Math.random() - 0.5);
-      const correctIdx = opts.indexOf(q.answer || q.a);
-      return { ...q, options: opts, answer: correctIdx };
-    } else if (q.options && typeof (q.answer || q.a) === 'string') {
-      let opts = [...q.options];
-      opts = opts.sort(() => Math.random() - 0.5);
-      return { ...q, options: opts, answer: opts.indexOf(q.answer || q.a) };
+  let lesson = unitData.lessons.find((l) => l.id === lessonId);
+  if (!lesson && !isNaN(parseInt(lessonId, 10))) {
+    lesson = unitData.lessons[parseInt(lessonId, 10)];
+  }
+  if (!lesson) {
+    lesson = unitData.lessons.find((l) =>
+      (l.id || '').toLowerCase().includes(String(lessonId).toLowerCase()),
+    );
+  }
+  if (!lesson) return;
+
+  const rawQuiz = lesson.quiz || lesson.quick_quiz || lesson.quiz_questions || [];
+  if (!rawQuiz || rawQuiz.length === 0) return;
+
+  // Set topic badge
+  const badge = document.getElementById('quiz-lesson-badge');
+  if (badge) {
+    badge.innerText = lesson.title || 'Retrieval Practice';
+  }
+
+  window.currentQuizData = rawQuiz.map((q) => {
+    let options = q.options ? [...q.options] : [];
+    let correctIdx = -1;
+    const rawAns = q.answer !== undefined ? q.answer : q.a;
+    if (typeof rawAns === 'number') {
+      correctIdx = rawAns;
+    } else if (typeof rawAns === 'string') {
+      correctIdx = options.findIndex(
+        (opt) => opt.trim().toLowerCase() === rawAns.trim().toLowerCase(),
+      );
+      if (correctIdx === -1 && options.length === 0 && q.distractors) {
+        options = [rawAns, ...q.distractors].sort(() => Math.random() - 0.5);
+        correctIdx = options.indexOf(rawAns);
+      }
     }
-    return q;
+    return {
+      ...q,
+      question: q.question || q.q,
+      options: options,
+      answer: correctIdx >= 0 ? correctIdx : 0,
+      explanation: q.explanation || q.historian_explanation || '',
+    };
   });
+
   window.currentQuizIndex = 0;
   window.currentQuizScore = 0;
-  window.currentQuizLessonId = lessonId;
+  window.currentQuizLessonId = lesson.id || lessonId;
+
+  // Fullscreen mobile adaptation
+  const isMobile =
+    window.innerWidth <= 768 ||
+    isFullscreen ||
+    new URLSearchParams(window.location.search).get('quiz') === 'true';
+  const modal = document.getElementById('quizModal');
+  const content = modal ? modal.querySelector('.modal-content') : null;
+  if (isMobile) {
+    document.body.classList.add('mobile-fullscreen-quiz-active');
+    if (modal) {
+      modal.classList.add('fullscreen-modal');
+      modal.style.background = '#ffffff';
+      modal.style.alignItems = 'stretch';
+      modal.style.justifyContent = 'stretch';
+      modal.style.padding = '0';
+      modal.style.backdropFilter = 'none';
+    }
+    if (content) {
+      content.style.width = '100vw';
+      content.style.height = '100vh';
+      content.style.maxWidth = '100vw';
+      content.style.maxHeight = '100vh';
+      content.style.borderRadius = '0';
+      content.style.boxShadow = 'none';
+      content.style.border = 'none';
+      content.style.transform = 'none';
+      content.style.padding = '14px 16px 20px';
+      content.style.margin = '0';
+      content.style.display = 'flex';
+      content.style.flexDirection = 'column';
+      content.style.justifyContent = 'space-between';
+      content.style.background = '#ffffff';
+    }
+  } else {
+    document.body.classList.remove('mobile-fullscreen-quiz-active');
+    if (modal) {
+      modal.classList.remove('fullscreen-modal');
+      modal.style.background = 'rgba(15, 23, 42, 0.85)';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.padding = '';
+      modal.style.backdropFilter = 'blur(8px)';
+    }
+    if (content) {
+      content.style.width = '94%';
+      content.style.height = '';
+      content.style.maxWidth = '680px';
+      content.style.maxHeight = '92vh';
+      content.style.borderRadius = '16px';
+      content.style.boxShadow = '0 25px 50px -12px rgba(0,0,0,0.35)';
+      content.style.border = '1px solid #e2e8f0';
+      content.style.padding = '20px 24px 24px';
+      content.style.margin = '';
+    }
+  }
 
   window.renderQuizQuestion();
 
-  const modal = document.getElementById('quizModal');
   if (modal) {
     modal.style.display = 'flex';
     void modal.offsetWidth; // Trigger reflow
     modal.style.opacity = '1';
-    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+    if (content && !isMobile) {
+      content.style.transform = 'scale(1)';
+    }
   }
 };
 
@@ -1524,12 +1621,12 @@ window.renderQuizQuestion = function () {
   if (progBar) progBar.style.width = `${pctProgress}%`;
 
   let optionsHtml = '';
-  if (qData.options) {
+  if (qData.options && qData.options.length > 0) {
     qData.options.forEach((opt, idx) => {
       optionsHtml += `
-        <button class="btn-quiz-option quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: flex; align-items: center; width: 100%; text-align: left; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.98rem; cursor: pointer; transition: all 0.2s; color: #1e293b;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; line-height: 28px; text-align: center; background: #f1f5f9; border-radius: 50%; margin-right: 14px; font-weight: 800; color: #475569; flex-shrink: 0; font-size: 0.85rem;">${String.fromCharCode(65 + idx)}</span>
-          <span style="flex: 1;">${opt}</span>
+        <button class="btn-quiz-option quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: flex; align-items: center; width: 100%; text-align: left; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 13px 16px; margin-bottom: 10px; font-size: 0.96rem; cursor: pointer; transition: all 0.15s ease; color: #1e293b; min-height: 52px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 50%; margin-right: 14px; font-weight: 800; color: #334155; flex-shrink: 0; font-size: 0.85rem;">${String.fromCharCode(65 + idx)}</span>
+          <span style="flex: 1; line-height: 1.35;">${opt}</span>
         </button>
       `;
     });
@@ -1545,7 +1642,8 @@ window.renderQuizQuestion = function () {
   const container = document.getElementById('quiz-question-container');
   if (container) {
     container.innerHTML = `
-      <h3 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 18px; line-height: 1.45; font-weight: 700;">${qData.question || qData.q}</h3>
+      <h3 style="font-size: 1.18rem; color: #0f172a; margin-top: 4px; margin-bottom: 18px; line-height: 1.4; font-family: 'Inter', sans-serif; font-weight: 800;">${qData.question || qData.q}</h3>
+      ${qData.img ? `<div style="text-align: center; margin-bottom: 16px;"><img src="${qData.img}" style="max-height: 220px; max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0; object-fit: contain;"></div>` : ''}
       <div class="quiz-options-list">${optionsHtml}</div>
     `;
   }
@@ -1580,14 +1678,15 @@ window.checkQuizAnswer = function (btnEl, selectedIdx) {
     btn.disabled = true;
     btn.style.cursor = 'default';
     if (parseInt(btn.dataset.idx) === qData.answer) {
-      btn.style.borderColor = '#16a34a';
-      btn.style.background = '#f0fdf4';
-      btn.style.color = '#15803d';
-      btn.style.fontWeight = '600';
+      btn.style.borderColor = '#10b981';
+      btn.style.background = '#ecfdf5';
+      btn.style.color = '#065f46';
+      btn.style.fontWeight = '700';
       const badge = btn.querySelector('span:first-child');
       if (badge) {
-        badge.style.background = '#16a34a';
+        badge.style.background = '#10b981';
         badge.style.color = '#ffffff';
+        badge.style.borderColor = '#10b981';
       }
     }
   });
@@ -1595,18 +1694,27 @@ window.checkQuizAnswer = function (btnEl, selectedIdx) {
   const feedbackEl = document.getElementById('quiz-feedback');
   if (isCorrect) {
     feedbackEl.innerHTML =
-      '<span style="color: #16a34a; display: inline-flex; align-items: center; gap: 6px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Correct!</span>';
+      '<div style="color: #059669; display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.05rem;"><i class="fa-solid fa-circle-check"></i> Correct!</div>';
   } else {
-    btnEl.style.borderColor = '#dc2626';
+    btnEl.style.borderColor = '#ef4444';
     btnEl.style.background = '#fef2f2';
     btnEl.style.color = '#991b1b';
     const badge = btnEl.querySelector('span:first-child');
     if (badge) {
-      badge.style.background = '#dc2626';
+      badge.style.background = '#ef4444';
       badge.style.color = '#ffffff';
+      badge.style.borderColor = '#ef4444';
     }
     feedbackEl.innerHTML =
-      '<span style="color: #dc2626; display: inline-flex; align-items: center; gap: 6px; font-weight: 700;"><i class="fa-solid fa-circle-xmark"></i> Incorrect. See correct answer above.</span>';
+      '<div style="color: #dc2626; display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.05rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrect</div>';
+  }
+
+  if (qData.explanation) {
+    const expDiv = document.createElement('div');
+    expDiv.style.cssText =
+      'margin-top: 10px; padding: 12px 14px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 6px; font-size: 0.88rem; color: #1e293b; line-height: 1.45; text-align: left;';
+    expDiv.innerHTML = `<strong style="color: #1e40af; display: block; margin-bottom: 3px;"><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Historical Fact &amp; Context:</strong><span>${qData.explanation}</span>`;
+    feedbackEl.appendChild(expDiv);
   }
 
   const nextBtn = document.getElementById('quiz-next-btn');
@@ -1662,23 +1770,37 @@ window.finishQuizModal = function () {
   const container = document.getElementById('quiz-question-container');
   if (container) {
     container.innerHTML = `
-      <div style="text-align: center; padding: 20px 10px;">
-        <div style="font-size: 3.5rem; margin-bottom: 12px;">🏆</div>
-        <h3 style="font-size: 1.45rem; color: #0f172a; margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif;">Plenary Knowledge Check Complete!</h3>
-        <div style="display: inline-block; background: #f0fdf4; border: 2px solid #86efac; border-radius: 12px; padding: 10px 24px; margin: 15px 0;">
-          <div style="font-size: 0.85rem; font-weight: 700; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">Your Score</div>
-          <div style="font-size: 2.2rem; font-weight: 900; color: #15803d; line-height: 1.1;">${score} / ${total}</div>
-          <div style="font-size: 0.95rem; font-weight: 700; color: #166534;">${pct}% Correct</div>
+      <div style="text-align: center; padding: 15px 5px;">
+        <div style="font-size: 3.2rem; margin-bottom: 8px;">🏆</div>
+        <h2 style="font-size: 1.4rem; color: #0f172a; margin: 0 0 6px 0; font-weight: 800; font-family: 'Inter', sans-serif;">
+          Retrieval Practice Complete!
+        </h2>
+        <div style="display: inline-block; background: #f0fdf4; border: 2px solid #86efac; border-radius: 14px; padding: 12px 28px; margin: 12px 0;">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">Your Score</div>
+          <div style="font-size: 2.4rem; font-weight: 900; color: #15803d; line-height: 1.1;">${score} / ${total}</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #166534;">${pct}% Correct</div>
         </div>
-        <p style="font-size: 0.98rem; color: ${descriptorColor}; max-width: 480px; margin: 8px auto 25px auto; font-weight: 600; line-height: 1.5;">
+
+        <!-- Prominent Physical Booklet Connection Callout -->
+        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 12px 16px; max-width: 440px; margin: 8px auto 18px auto; text-align: center;">
+          <div style="font-size: 0.92rem; font-weight: 800; color: #1e40af; margin-bottom: 3px;">
+            📘 Record Your Score in Your Workbook!
+          </div>
+          <div style="font-size: 0.82rem; color: #1e3a8a; line-height: 1.4;">
+            Turn to <strong>Page 14</strong> of your printed booklet and write <strong>${score} / ${total}</strong> in the <strong>Best Score</strong> box under this topic.
+          </div>
+        </div>
+
+        <p style="font-size: 0.92rem; color: ${descriptorColor}; max-width: 440px; margin: 0 auto 20px auto; font-weight: 600; line-height: 1.45;">
           ${descriptor}
         </p>
-        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-          <button class="btn-pedagogy-primary" onclick="window.closeAndScrollToExitTicket()" style="padding: 12px 24px; font-size: 1rem; font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
-            <i class="fa-solid fa-ticket"></i> Proceed to Exit Ticket
+
+        <div style="display: flex; flex-direction: column; gap: 10px; max-width: 380px; margin: 0 auto;">
+          <button class="btn-pedagogy-primary" onclick="window.startQuiz('${lessonId}', true)" style="padding: 13px 20px; font-size: 0.98rem; font-weight: 800; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
+            <i class="fa-solid fa-rotate-right"></i> Retake Quiz
           </button>
-          <button class="btn btn-secondary" onclick="window.startQuiz('${lessonId}')" style="padding: 12px 20px; font-size: 0.95rem; font-weight: 600; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-rotate-right"></i> Re-take Quiz
+          <button class="btn btn-secondary" onclick="window.closeQuizModal()" style="padding: 12px 20px; font-size: 0.95rem; font-weight: 700; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; color: #1e293b;">
+            <i class="fa-solid fa-book-open"></i> View Full Lesson Masterclass
           </button>
         </div>
       </div>
@@ -1702,15 +1824,41 @@ window.closeAndScrollToExitTicket = function () {
 };
 
 window.closeQuizModal = function () {
+  document.body.classList.remove('mobile-fullscreen-quiz-active');
   const modal = document.getElementById('quizModal');
   if (modal) {
+    modal.classList.remove('fullscreen-modal');
     modal.style.opacity = '0';
     const content = modal.querySelector('.modal-content');
     if (content) content.style.transform = 'scale(0.95)';
     setTimeout(() => {
       modal.style.display = 'none';
-    }, 300);
+      modal.style.background = 'rgba(15, 23, 42, 0.85)';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.padding = '';
+      modal.style.backdropFilter = 'blur(8px)';
+      if (content) {
+        content.style.width = '94%';
+        content.style.height = '';
+        content.style.maxWidth = '680px';
+        content.style.maxHeight = '92vh';
+        content.style.borderRadius = '16px';
+        content.style.boxShadow = '0 25px 50px -12px rgba(0,0,0,0.35)';
+        content.style.border = '1px solid #e2e8f0';
+        content.style.padding = '20px 24px 24px';
+        content.style.margin = '';
+        content.style.transform = 'scale(0.96)';
+      }
+    }, 250);
   }
+  try {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('quiz')) {
+      url.searchParams.delete('quiz');
+      window.history.replaceState({}, '', url.toString());
+    }
+  } catch (e) {}
 };
 
 window.openModal = function (src) {

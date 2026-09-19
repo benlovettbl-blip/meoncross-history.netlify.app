@@ -3135,6 +3135,34 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
     transform: translateY(0);
   }
 }
+
+/* GCSE Specification Anchor Strip */
+.gcse-spec-anchor-strip {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #1e3a8a;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  flex-wrap: wrap;
+  font-family: 'Inter', sans-serif;
+}
+:root[data-theme='space'] .gcse-spec-anchor-strip {
+  background: #1e293b;
+  border-color: #334155;
+  border-left-color: #60a5fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+:root[data-theme='space'] .gcse-spec-anchor-strip .spec-text {
+  color: #f1f5f9 !important;
+}
+:root[data-theme='space'] .gcse-spec-anchor-strip .spec-text strong {
+  color: #93c5fd !important;
+}
 .para-number {
   background: #e2e8f0;
   color: #475569;
@@ -4552,6 +4580,41 @@ body.whiteboard-mode-active .btn-whiteboard-toggle,
   box-shadow: 0 0 12px rgba(2, 132, 199, 0.4) !important;
 }
 
+.btn-teacher-mode-toggle {
+  background: #ffffff;
+  color: #1e3a8a;
+  border: 1.5px solid #cbd5e1;
+  font-weight: 700;
+  padding: 6px 12px;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-teacher-mode-toggle:hover {
+  background: #f8fafc;
+  border-color: #facc15;
+}
+
+body.teacher-mode-active .btn-teacher-mode-toggle,
+.btn-teacher-mode-toggle.active {
+  background: #1b365d !important;
+  color: #ffffff !important;
+  border: 1.5px solid #facc15 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.35) !important;
+}
+
+body.teacher-mode-active .btn-teacher-mode-toggle i,
+.btn-teacher-mode-toggle.active i {
+  color: #facc15 !important;
+}
+
 /* Flexi Timer Preset Pills */
 .btn-timer-pill {
   transition: all 0.15s ease;
@@ -4564,4 +4627,85 @@ body.whiteboard-mode-active .btn-whiteboard-toggle,
   background: #e0f2fe !important;
   border-color: #0284c7 !important;
   color: #0369a1 !important;
+}
+
+/* ==========================================================================
+   Full-Screen Mobile Quiz Engine & QR Scanner Experience
+   ========================================================================== */
+body.mobile-fullscreen-quiz-active {
+  overflow: hidden !important;
+}
+
+body.mobile-fullscreen-quiz-active .app-header,
+body.mobile-fullscreen-quiz-active .mobile-bottom-nav,
+body.mobile-fullscreen-quiz-active .app-sidebar {
+  display: none !important;
+}
+
+#quizModal.fullscreen-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+
+#quizModal.fullscreen-modal .modal-content {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 16px 20px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow-y: auto !important;
+  transform: none !important;
+  background: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  #quizModal {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 99999 !important;
+  }
+  #quizModal .modal-content {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 14px 16px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    overflow-y: auto !important;
+    transform: none !important;
+    background: #ffffff !important;
+  }
 }
