@@ -21501,33 +21501,39 @@
               "letter": "A",
               "title": "Source A: The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)",
               "src": "/images/four_humours.jpg",
+              "source": "/images/four_humours.jpg",
               "image": "/images/four_humours.jpg",
               "caption": "The Four Humours Wheel: Blood (air/hot & wet), Phlegm (water/cold & wet), Yellow Bile (fire/hot & dry), and Black Bile (earth/cold & dry).",
               "provenance": "Tacuinum Sanitatis manuscript, 14th century, Österreichische Nationalbibliothek, Vienna.",
               "context": "The Theory of the Four Humours, first devised by Hippocrates in ancient Greece and developed by Galen in ancient Rome, dominated medieval European medicine. Medieval physicians believed that good health required all four bodily humours to remain in precise balance. Each humour corresponded to a season, an element, and specific qualities of heat and moisture. When a person fell ill, doctors assumed that one humour was in excess or putrefied.",
-              "hinge_question": "If a patient suffering from a cold and shivering was treated with hot spices and dry foods, which medical theory was the physician applying, and why did this belief prevent scientific progress for over a thousand years?"
+              "question": "Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen's Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?",
+              "hinge_question": "Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen's Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?"
             },
             {
               "id": "source_b",
               "letter": "B",
               "title": "Source B: The 'Zodiac Man' (Homo Signorum, c.1380)",
               "src": "/images/zodiac_man.jpg",
+              "source": "/images/zodiac_man.jpg",
               "image": "/images/zodiac_man.jpg",
               "caption": "The Zodiac Man (Homo Signorum) showing the astrological signs that medieval physicians believed ruled over different areas and organs of the human body.",
               "provenance": "MS Harley 3719, British Library, London, c.1380.",
               "context": "Medieval doctors believed the movement of planets and stars directly influenced human physiology and health. Each part of the body was thought to be governed by a zodiac constellation—Aries ruled the head, Taurus the neck, and Pisces the feet. Before carrying out bloodletting, surgery, or administering strong medicines, university-trained physicians consulted complex astrological almanacs (calendars) to ensure the moon was not in an unfavorable zodiac sign for that body part.",
-              "hinge_question": "Why would a medieval university-trained physician refuse to operate on a patient's limb if the moon was in a certain astrological sign, and what does this reveal about medieval attitudes toward natural versus supernatural causes?"
+              "question": "Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?",
+              "hinge_question": "Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?"
             },
             {
               "id": "source_c",
               "letter": "C",
               "title": "Source C: Physician Inspecting Urine Flask (Fasciculus Medicinae, 1491)",
               "src": "/images/medieval_urine_chart.jpg",
+              "source": "/images/medieval_urine_chart.jpg",
               "image": "/images/medieval_urine_chart.jpg",
               "caption": "The Medieval Urine Chart: a radial wheel showing twenty flasks of differing colours, which physicians examined, smelled, and sometimes tasted to diagnose humoural imbalance.",
               "provenance": "Johannes de Ketham, Fasciculus Medicinae, Venice, 1491.",
               "context": "Uroscopy (the inspection of urine) was the cornerstone of clinical diagnosis in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of a patient's urine in a pear-shaped glass vessel called a matula. By comparing the sample against radial urine wheels, doctors deduced which humour was dominating or corrupted inside the body.",
-              "hinge_question": "How did urine charts reinforce the unquestioned authority of Galen's humoural system, even though medieval physicians were examining physical, empirical bodily fluids?"
+              "question": "Look at Source C above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?",
+              "hinge_question": "Look at Source C above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?"
             }
           ],
           "essay_planning": {
@@ -22293,33 +22299,39 @@
               "letter": "A",
               "title": "Source A: Phlebotomy / Bloodletting Manuscript (c.1300)",
               "src": "/images/bloodletting.jpg",
+              "source": "/images/bloodletting.jpg",
               "image": "/images/bloodletting.jpg",
               "caption": "Medieval manuscript illumination depicting a physician opening a vein in the arm to draw blood into a bowl to restore humoural equilibrium.",
               "provenance": "British Library MS Sloane 1977, England, c.1300.",
               "context": "Phlebotomy (bloodletting) was the most widely practiced medical treatment in medieval Europe. Physicians believed that an excess of blood—the warmest and wettest humour—caused fevers and pestilence. Blood was removed by opening a vein with a fleam or lancet, applying heated cupping glasses to draw blood through scratches, or using medicinal leeches.",
-              "hinge_question": "Why was bloodletting considered both a vital preventative measure and an active medical treatment in medieval England, and why did it frequently kill weakened patients?"
+              "question": "Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?",
+              "hinge_question": "Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?"
             },
             {
               "id": "source_b",
               "letter": "B",
               "title": "Source B: Medieval Surgeon Suturing a Head Wound (14th c.)",
               "src": "/images/medieval_barber_surgeon.jpg",
+              "source": "/images/medieval_barber_surgeon.jpg",
               "image": "/images/medieval_barber_surgeon.jpg",
               "caption": "A medieval guild-trained surgeon suturing a patient's severe head wound with needle and thread, recorded in a 14th-century Latin manuscript.",
               "provenance": "Wellcome Collection MS L0037333, 14th century surgical treatise.",
               "context": "In medieval society, medical practice was strictly divided by class. University-trained physicians studied theory and Latin texts for years but rarely touched patients. Practical surgery—setting fractured bones, pulling teeth, lancing painful boils, and suturing wounds—was carried out by barber surgeons, who learned their trade through manual apprenticeships. Because their work involved physical manual labor and blood, barber surgeons were regarded as lower in social status than university physicians.",
-              "hinge_question": "Why did medieval university physicians look down on barber surgeons, despite barber surgeons performing the only practical, lifesaving procedures of the era?"
+              "question": "Look at Source B above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?",
+              "hinge_question": "Look at Source B above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?"
             },
             {
               "id": "source_c",
               "letter": "C",
               "title": "Source C: Hôtel-Dieu Hospital Ward (Livre de Vie Active, c.1482)",
               "src": "/images/hotel_dieu_hospital.jpg",
+              "source": "/images/hotel_dieu_hospital.jpg",
               "image": "/images/hotel_dieu_hospital.jpg",
               "caption": "The main ward of the Hôtel-Dieu in Paris: Augustinian nuns tending to rows of patients sharing beds, providing spiritual comfort and rest.",
               "provenance": "Livre de Vie Active des Religieuses de l'Hôtel-Dieu de Paris, Jean Henry, c.1482.",
               "context": "Medieval hospitals were religious foundations run by monks and nuns, not modern medical centers. Their stated purpose was hospitality, warmth, food, and spiritual care rather than scientific cure. Patients suffering from infectious diseases or mental illness were turned away. Inside, beds were placed in open wards aligned toward an altar so that bedridden patients could hear the Mass and pray for the salvation of their souls.",
-              "hinge_question": "Looking at the nuns providing spiritual care and prayer rather than surgery, why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure?"
+              "question": "Look at Source C above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital 'care not cure' (providing food, shelter, and prayer) rather than performing medical treatments or curing disease?",
+              "hinge_question": "Look at Source C above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital 'care not cure' (providing food, shelter, and prayer) rather than performing medical treatments or curing disease?"
             }
           ]
         },
@@ -22855,22 +22867,26 @@
               "letter": "A",
               "title": "Source A: Citizens of Tournai Burying Plague Victims (1349)",
               "src": "/images/plague_burial.jpg",
+              "source": "/images/plague_burial.jpg",
               "image": "/images/plague_burial.jpg",
               "caption": "The citizens of Tournai carrying wooden coffins to mass communal plague burial pits during the devastating Black Death epidemic of 1349.",
               "provenance": "Illumination by Pierart dou Tielt, Gilles Li Muisis chronicle, MS 13076-77, Bibliothèque Royale de Belgique, Brussels, 1349.",
               "context": "When the Black Death struck Europe in 1347–1349, it wiped out between 30% and 50% of the entire population. In London, parish churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside the walls (such as at East Smithfield). Normal religious funeral rites collapsed because clergy died in huge numbers, and frightened grave-diggers could not keep pace with the mounds of corpses.",
-              "hinge_question": "What does the systematic stacking of identical wooden coffins in mass burial pits reveal about the breakdown of traditional Catholic funeral rites and social order during the Black Death?"
+              "question": "Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?",
+              "hinge_question": "Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?"
             },
             {
               "id": "source_b",
               "letter": "B",
               "title": "Source B: Plague Victim with Groin and Armpit Buboes (1497)",
               "src": "/images/black_death.jpg",
+              "source": "/images/black_death.jpg",
               "image": "/images/black_death.jpg",
               "caption": "A bedridden plague victim showing painful inflamed lymph swellings (buboes) in the groin and neck, surrounded by weeping attendants.",
               "provenance": "Woodcut of St. Sebastian interceding for plague victims, Augsburg, 1497.",
               "context": "The bubonic plague, caused by the bacterium Yersinia pestis carried by black rat fleas, manifested in high fevers, internal bleeding (causing dark purple skin blotches), and excruciating swelling of the lymph glands in the neck, armpits, and groin. Medieval observers had no knowledge of bacteria or fleas; they believed the buboes were visible proof of humoural poisons and corrupt miasma boiling out of the blood.",
-              "hinge_question": "Why did the terrifying appearance of neck and groin buboes convince contemporary doctors that the four humours had completely putrefied inside the body, and why did this lead to deadly treatments like lancing buboes with heated irons?"
+              "question": "Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?",
+              "hinge_question": "Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?"
             }
           ],
           "essay_planning": {
@@ -23243,21 +23259,27 @@
               "src": "/images/printing_press.jpg",
               "source": "/images/printing_press.jpg",
               "caption": "A Renaissance printing house showing compositors setting movable metal type and pressmen operating the heavy wooden screw press.",
-              "desc": "Contemporary engraving showing the mechanical process of movable type book printing."
+              "desc": "Contemporary engraving showing the mechanical process of movable type book printing.",
+              "question": "Look at Source A above: Study the compositors arranging individual type characters and the pressmen operating the wooden screw press. How did this mechanical printing process permanently prevent Church authorities from suppressing new anatomical discoveries, and why did it eliminate the compounding errors introduced by medieval copyists?",
+              "hinge_question": "Look at Source A above: Study the compositors arranging individual type characters and the pressmen operating the wooden screw press. How did this mechanical printing process permanently prevent Church authorities from suppressing new anatomical discoveries, and why did it eliminate the compounding errors introduced by medieval copyists?"
             },
             {
               "title": "Source B: Title Page of Philosophical Transactions, Vol. I (1665–1666)",
               "src": "/images/philosophical_transactions_vol1.jpg",
               "source": "/images/philosophical_transactions_vol1.jpg",
               "caption": "Frontispiece of Volume I of Philosophical Transactions (1665), the world's first peer-reviewed scientific journal, printed for John Martyn, printer to the Royal Society.",
-              "desc": "Frontispiece of the Royal Society's groundbreaking peer-reviewed scientific journal."
+              "desc": "Frontispiece of the Royal Society's groundbreaking peer-reviewed scientific journal.",
+              "question": "Look at Source B above: How does the establishment of an official, peer-reviewed scientific journal demonstrate a complete departure from medieval university traditions where knowledge was based on memorising Galen's classical Latin texts?",
+              "hinge_question": "Look at Source B above: How does the establishment of an official, peer-reviewed scientific journal demonstrate a complete departure from medieval university traditions where knowledge was based on memorising Galen's classical Latin texts?"
             },
             {
               "title": "Source C: Robert Hooke's Engraving of a Flea from Micrographia (1665)",
               "src": "/images/hooke_micrographia_flea.jpg",
               "source": "/images/hooke_micrographia_flea.jpg",
               "caption": "Robert Hooke's famous fold-out engraving of a flea observed under the compound microscope, published by the Royal Society in Micrographia (1665).",
-              "desc": "Detailed microscopic engraving from Robert Hooke's landmark 1665 work Micrographia."
+              "desc": "Detailed microscopic engraving from Robert Hooke's landmark 1665 work Micrographia.",
+              "question": "Look at Source C above: Hooke drew this flea using a compound microscope in 1665. Why did seeing microscopic details of insects amaze people in the 17th century, yet fail to help doctors understand what actually caused infectious diseases?",
+              "hinge_question": "Look at Source C above: Hooke drew this flea using a compound microscope in 1665. Why did seeing microscopic details of insects amaze people in the 17th century, yet fail to help doctors understand what actually caused infectious diseases?"
             }
           ]
         },
@@ -23613,21 +23635,27 @@
               "src": "/images/thomas_sydenham.jpg",
               "source": "/images/thomas_sydenham.jpg",
               "caption": "Portrait of Dr Thomas Sydenham painted by his close friend Mary Beale, showing his sober attire and reflective demeanor.",
-              "desc": "Authentic 17th-century portrait of Thomas Sydenham by Mary Beale."
+              "desc": "Authentic 17th-century portrait of Thomas Sydenham by Mary Beale.",
+              "question": "Look at Source A above: Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
+              "hinge_question": "Look at Source A above: Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?"
             },
             {
               "title": "Source B: The Quack Physician by Jan Steen (1660s)",
               "src": "/images/quack_doctor_steen.jpg",
               "source": "/images/quack_doctor_steen.jpg",
               "caption": "A 17th-century painting depicting an itinerant quack doctor examining a urine flask and flattering a patient.",
-              "desc": "Contemporary oil painting depicting the commercial superstition of 17th-century medicine."
+              "desc": "Contemporary oil painting depicting the commercial superstition of 17th-century medicine.",
+              "question": "Look at Source B above: Look at the theatrical gestures of the travelling quack and the gullible villagers gathering around him. Why did uneducated mountebanks and quack doctors continue to flourish in 17th-century England, despite the groundbreaking discoveries of Vesalius and Harvey?",
+              "hinge_question": "Look at Source B above: Look at the theatrical gestures of the travelling quack and the gullible villagers gathering around him. Why did uneducated mountebanks and quack doctors continue to flourish in 17th-century England, despite the groundbreaking discoveries of Vesalius and Harvey?"
             },
             {
               "title": "Source C: Renaissance Municipal Hospital Ward",
               "src": "/images/hotel_dieu_hospital.jpg",
               "source": "/images/hotel_dieu_hospital.jpg",
               "caption": "A 17th-century hospital ward showing rows of beds cared for by matrons following the closure of religious monastic infirmaries.",
-              "desc": "Historic depiction of early modern hospital patient care."
+              "desc": "Historic depiction of early modern hospital patient care.",
+              "question": "Look at Source C above: Compare this early modern municipal hospital ward with medieval monastic care. What changes can you identify in terms of hygiene, administration, and medical supervision following Henry VIII's Dissolution of the Monasteries?",
+              "hinge_question": "Look at Source C above: Compare this early modern municipal hospital ward with medieval monastic care. What changes can you identify in terms of hygiene, administration, and medical supervision following Henry VIII's Dissolution of the Monasteries?"
             }
           ]
         },
@@ -23983,21 +24011,27 @@
               "src": "/images/vesalius_fabrica_frontispiece.jpg",
               "source": "/images/vesalius_fabrica_frontispiece.jpg",
               "caption": "The frontispiece of De Fabrica (1543) showing Vesalius personally dissecting a female cadaver surrounded by students and spectators.",
-              "desc": "Authentic 1543 woodcut frontispiece of Vesalius’s landmark anatomical treatise."
+              "desc": "Authentic 1543 woodcut frontispiece of Vesalius’s landmark anatomical treatise.",
+              "question": "Look at Source A above: Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?",
+              "hinge_question": "Look at Source A above: Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?"
             },
             {
               "title": "Source B: Vesalius Muscle Men Plate (1543)",
               "src": "/images/vesalius_muscle_men.jpg",
               "source": "/images/vesalius_muscle_men.jpg",
               "caption": "One of the famous \"Muscle Men\" woodcut plates from Book II of De Fabrica, showing the superficial muscular layer in classical posture.",
-              "desc": "Masterwork anatomical woodcut plate from De Fabrica (1543)."
+              "desc": "Masterwork anatomical woodcut plate from De Fabrica (1543).",
+              "question": "Look at Source B above: Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
+              "hinge_question": "Look at Source B above: Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?"
             },
             {
               "title": "Source C: Traditional Phlebotomy Man Diagram",
               "src": "/images/renaissance_phlebotomy_man.jpg",
               "source": "/images/renaissance_phlebotomy_man.jpg",
               "caption": "A 16th-century printed bloodletting chart illustrating the enduring reliance on Galenic humoural vein points.",
-              "desc": "Renaissance broadsheet showing bloodletting points on the human body."
+              "desc": "Renaissance broadsheet showing bloodletting points on the human body.",
+              "question": "Look at Source C above: Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
+              "hinge_question": "Look at Source C above: Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?"
             }
           ]
         },
@@ -24352,7 +24386,9 @@
               "src": "/images/harvey_veins.jpg",
               "source": "/images/harvey_veins.jpg",
               "caption": "The engraved plate from Chapter 13 of De Motu Cordis (1628) showing Harvey’s arm ligature experiments with swollen veins and one-way valves.",
-              "desc": "Authentic 1628 engraving from William Harvey’s De Motu Cordis."
+              "desc": "Authentic 1628 engraving from William Harvey’s De Motu Cordis.",
+              "question": "Look at Source A above: Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
+              "hinge_question": "Look at Source A above: Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?"
             }
           ]
         },
@@ -24707,14 +24743,18 @@
               "src": "/images/plague_doctor_1665.png",
               "source": "/images/plague_doctor_1665.png",
               "caption": "A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.",
-              "desc": "Iconic primary engraving of an early modern plague doctor in full protective attire."
+              "desc": "Iconic primary engraving of an early modern plague doctor in full protective attire.",
+              "question": "Look at Source A above: Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+              "hinge_question": "Look at Source A above: Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?"
             },
             {
               "title": "Source B: Night Burial in a Mass Plague Pit (1665)",
               "src": "/images/plague_burial.jpg",
               "source": "/images/plague_burial.jpg",
               "caption": "A contemporary woodcut broadsheet showing dead-carts dumping plague victims at night into a mass lime pit.",
-              "desc": "Historic woodcut broadsheet illustrating nocturnal plague burials during the 1665 epidemic."
+              "desc": "Historic woodcut broadsheet illustrating nocturnal plague burials during the 1665 epidemic.",
+              "question": "Look at Source B above: Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?",
+              "hinge_question": "Look at Source B above: Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?"
             }
           ],
           "lesson_reflection": {
