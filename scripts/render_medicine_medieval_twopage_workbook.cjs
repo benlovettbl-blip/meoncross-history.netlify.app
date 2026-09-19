@@ -538,9 +538,22 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
+    /* Print Offset for Saddle-Stitch Booklet Binding (3mm alternating inner margin) */
     @page {
       size: A4 portrait;
       margin: 10mm 10mm 12mm 10mm;
+    }
+    @page:left {
+      margin-top: 10mm;
+      margin-bottom: 12mm;
+      margin-left: 7mm;
+      margin-right: 13mm; /* 3mm inner gutter on right for verso staple fold */
+    }
+    @page:right {
+      margin-top: 10mm;
+      margin-bottom: 12mm;
+      margin-left: 13mm; /* 3mm inner gutter on left for recto staple fold */
+      margin-right: 7mm;
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
@@ -651,7 +664,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   // PAGE 1: FRONT COVER (Clean, Large Image, No Outer Border, Bulleted Spec)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding with Customizer Hook -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px;">
@@ -814,7 +827,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   // ====================================================================
   html += `
   <!-- PAGE 2: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
-  <div class="page page-container" id="page-2" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-2" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -902,7 +915,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   </div>
 
   <!-- PAGE 3: LIVING TIMELINE PART 2 (MILESTONES 5–8) -->
-  <div class="page page-container" id="page-3" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-3" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1001,7 +1014,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
     // ------------------------------------------------------------------
     html += `
-  <div class="page page-container" id="page-${leftPageNum}">
+  <div class="page page-container verso-page" id="page-${leftPageNum}">
     <div class="page-body-full">
       <!-- Lesson Header (No Redundant Page/Spread Number) -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1108,7 +1121,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-${rightPageNum}">
+  <div class="page page-container recto-page" id="page-${rightPageNum}">
     <div class="page-body-full">
       <!-- Exam Header (No Redundant Page/Spread Number) -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1214,7 +1227,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   // PAGE 14: OUTSIDE BACK COVER (Target Grade, Wide Ledger, 5 QR Codes)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Back Cover Header Strip (No Redundant 'OUTSIDE BACK COVER' text) -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
