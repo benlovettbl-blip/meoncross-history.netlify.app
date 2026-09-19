@@ -2140,10 +2140,29 @@ window.finishQuizModal = function () {
   const pct = Math.round((score / total) * 100);
   const lessonId = window.currentQuizLessonId;
 
+  // Retrieve previous attempt from LocalStorage
+  let prevRecord = null;
+  try {
+    const raw = localStorage.getItem('history_quiz_' + lessonId);
+    if (raw) prevRecord = JSON.parse(raw);
+  } catch (e) {}
+
+  const prevBestScore =
+    prevRecord && typeof prevRecord.score === 'number' ? prevRecord.score : null;
+  const isNewBest = prevBestScore === null || score > prevBestScore;
+  const bestScore = prevBestScore === null ? score : Math.max(score, prevBestScore);
+
   try {
     localStorage.setItem(
       'history_quiz_' + lessonId,
-      JSON.stringify({ score, total, pct, date: Date.now() }),
+      JSON.stringify({
+        score: bestScore,
+        lastScore: score,
+        prevBest: prevBestScore,
+        total,
+        pct,
+        date: Date.now(),
+      }),
     );
   } catch (e) {}
 
@@ -2157,6 +2176,30 @@ window.finishQuizModal = function () {
         <i class="fa-solid fa-rotate-right"></i> Re-take
       </button>
     `;
+  }
+
+  // Trajectory Growth Badge
+  let trajectoryHtml = '';
+  if (prevBestScore === null) {
+    trajectoryHtml = `
+      <div style="display: inline-block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.82rem; margin-top: 8px;">
+        <i class="fa-solid fa-star" style="color: #3b82f6;"></i> First Attempt Completed!
+      </div>`;
+  } else if (score > prevBestScore) {
+    trajectoryHtml = `
+      <div style="display: inline-block; background: #f0fdf4; color: #15803d; border: 1.5px solid #86efac; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 0.84rem; margin-top: 8px;">
+        <i class="fa-solid fa-arrow-trend-up"></i> New Personal Best! (Previous: ${prevBestScore}/${total} &rarr; Now: ${score}/${total} 🎉)
+      </div>`;
+  } else if (score === prevBestScore) {
+    trajectoryHtml = `
+      <div style="display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.82rem; margin-top: 8px;">
+        <i class="fa-solid fa-bullseye"></i> Matched Personal Best: ${score}/${total} 🎯
+      </div>`;
+  } else {
+    trajectoryHtml = `
+      <div style="display: inline-block; background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.82rem; margin-top: 8px;">
+        Current: ${score}/${total} &bull; Personal Best: ${prevBestScore}/${total}
+      </div>`;
   }
 
   let descriptor = '';
@@ -2181,19 +2224,21 @@ window.finishQuizModal = function () {
         <h2 style="font-size: 1.4rem; color: #0f172a; margin: 0 0 6px 0; font-weight: 800; font-family: 'Inter', sans-serif;">
           Retrieval Practice Complete!
         </h2>
-        <div style="display: inline-block; background: #f0fdf4; border: 2px solid #86efac; border-radius: 14px; padding: 12px 28px; margin: 12px 0;">
+        <div style="display: inline-block; background: #f0fdf4; border: 2px solid #86efac; border-radius: 14px; padding: 12px 28px; margin: 10px 0 6px 0;">
           <div style="font-size: 0.8rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">Your Score</div>
           <div style="font-size: 2.4rem; font-weight: 900; color: #15803d; line-height: 1.1;">${score} / ${total}</div>
           <div style="font-size: 0.95rem; font-weight: 800; color: #166534;">${pct}% Correct</div>
         </div>
 
+        <div>${trajectoryHtml}</div>
+
         <!-- Prominent Physical Booklet Connection Callout -->
-        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 12px 16px; max-width: 440px; margin: 8px auto 18px auto; text-align: center;">
+        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 12px 16px; max-width: 440px; margin: 12px auto 18px auto; text-align: center;">
           <div style="font-size: 0.92rem; font-weight: 800; color: #1e40af; margin-bottom: 3px;">
             📘 Record Your Score in Your Workbook!
           </div>
           <div style="font-size: 0.82rem; color: #1e3a8a; line-height: 1.4;">
-            Turn to <strong>Page 14</strong> of your printed booklet and write <strong>${score} / ${total}</strong> in the <strong>Best Score</strong> box under this topic.
+            Turn to <strong>Page 14</strong> of your printed booklet and write <strong>${bestScore} / ${total}</strong> in the <strong>Best Score</strong> box under this topic.
           </div>
         </div>
 
