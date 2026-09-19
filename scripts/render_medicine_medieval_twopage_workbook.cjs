@@ -682,66 +682,128 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Main Title Block -->
-      <div style="text-align: center; margin: 4px 0 8px 0;">
-        <div style="display: inline-block; background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 9pt; font-weight: 800; padding: 3px 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
+      <div style="text-align: center; margin: 2px 0 6px 0;">
+        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; background: #ffffff;">
           Key Topic 1 &bull; c1250–c1500
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 24pt; line-height: 1.15; color: #000000; margin: 2px 0 4px 0; font-weight: 900;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 22pt; line-height: 1.15; color: #000000; margin: 2px 0 3px 0; font-weight: 900;">
           Medicine in Medieval England
         </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 11pt; color: #000000; font-style: italic; font-weight: 700;">
+        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #222222; font-style: italic; font-weight: 600;">
           Supernatural Dogma, The Four Humours and The Black Death Catastrophe
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Complete, Uncropped Manuscript) -->
-      <div style="margin: 2px 0 6px 0; display: flex; flex-direction: column; align-items: center;">
-        <div style="border: 1.5px solid #000000; border-radius: 3px; overflow: hidden; background: #ffffff; display: inline-block;">
-          <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="height: 220px; width: auto; max-width: 100%; display: block;">
+      <!-- Prominent Primary Visual Source Centerpiece (Complete, Uncropped Archival Plate) -->
+      <div style="margin: 2px 0 6px 0; border: 1.2px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="display: flex; justify-content: center; align-items: center; padding: 6px 0; background: #ffffff;">
+          <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="max-height: 190px; width: auto; max-width: 95%; display: block;">
         </div>
-        <div style="width: 100%; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; padding: 4px 2px 1px 2px;">
-          <span><strong>Primary Artifact:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585 (c. 1250)</span>
-          <span>Accession Shelfmark: ARCH-MED-1250</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1px solid #000000; background: #ffffff;">
+          <span><strong>Primary Visual Source:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585 (c. 1250)</span>
+          <span>Accession Shelfmark: <strong>ARCH-MED-1250</strong></span>
         </div>
       </div>
 
-      <!-- Bullet-Pointed Specification Enquiries (Bottom Half of Front Cover) -->
-      <div style="border-top: 2px solid #000000; padding-top: 8px; margin-top: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px;">
-          Course Specification
-        </div>
-        <ul style="margin: 0; padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 8px;">
-          <li style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #000000; line-height: 1.3;">
-            <strong>Key Topic 1.1: Supernatural &amp; Religious Explanations of Disease</strong>
-            <div style="font-family: 'Georgia', serif; font-size: 8.6pt; font-style: italic; color: #222222; margin-top: 2px;">
-              Why did medieval people believe disease was sent by God, and how did the Catholic Church enforce medical dogma?
-            </div>
-          </li>
-          <li style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #000000; line-height: 1.3;">
-            <strong>Key Topic 1.2: Rational Explanations: Hippocrates, Galen &amp; The Four Humours</strong>
-            <div style="font-family: 'Georgia', serif; font-size: 8.6pt; font-style: italic; color: #222222; margin-top: 2px;">
-              How did the Four Humours and Theory of Opposites explain illness, and why were they never questioned?
-            </div>
-          </li>
-          <li style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #000000; line-height: 1.3;">
-            <strong>Key Topic 1.3: Approaches to Prevention &amp; Treatment: Bleeding, Purging &amp; Herbal Remedies</strong>
-            <div style="font-family: 'Georgia', serif; font-size: 8.6pt; font-style: italic; color: #222222; margin-top: 2px;">
-              Why did humoural treatments such as bloodletting, purging, and Theriac remain the standard medical response?
-            </div>
-          </li>
-          <li style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #000000; line-height: 1.3;">
-            <strong>Key Topic 1.4: Medical Care Providers &amp; Monastic Hospitals: ‘Care Not Cure’</strong>
-            <div style="font-family: 'Georgia', serif; font-size: 8.6pt; font-style: italic; color: #222222; margin-top: 2px;">
-              Who treated the sick in medieval England, and why did monastic hospitals focus purely on spiritual care?
-            </div>
-          </li>
-          <li style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #000000; line-height: 1.3;">
-            <strong>Key Topic 1.5: Case Study: Dealing with the Black Death Catastrophe (1348–1349)</strong>
-            <div style="font-family: 'Georgia', serif; font-size: 8.6pt; font-style: italic; color: #222222; margin-top: 2px;">
-              Why were medieval people, physicians, and civic authorities completely unable to stop the Black Death?
-            </div>
-          </li>
-        </ul>
+      <!-- Course Specification Curriculum Tracking Table -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 4px 0 2px 0;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
+          <thead>
+            <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
+              <th style="padding: 6px 10px; text-align: left; font-size: 8.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+                Course Specification &bull; Key Enquiry Sequence
+              </th>
+              <th style="padding: 6px 4px; width: 68px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+                Learnt
+              </th>
+              <th style="padding: 6px 4px; width: 68px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+                Revised
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+                  Key Topic 1.1: Supernatural &amp; Religious Explanations of Disease
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                  Why did medieval people believe disease was sent by God, and how did the Catholic Church enforce medical dogma?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+                  Key Topic 1.2: Rational Explanations: Hippocrates, Galen &amp; The Four Humours
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                  How did the Four Humours and Theory of Opposites explain illness, and why were they never questioned?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+                  Key Topic 1.3: Approaches to Prevention &amp; Treatment: Bleeding, Purging &amp; Herbal Remedies
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                  Why did humoural treatments such as bloodletting, purging, and Theriac remain the standard medical response?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+                  Key Topic 1.4: Medical Care Providers &amp; Monastic Hospitals: ‘Care Not Cure’
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                  Who treated the sick in medieval England, and why did monastic hospitals focus purely on spiritual care?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+                  Key Topic 1.5: Case Study: Dealing with the Black Death Catastrophe (1348–1349)
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                  Why were medieval people, physicians, and civic authorities completely unable to stop the Black Death?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       ${renderFooterStrip(1, 'If you ever feel stressed about GCSE exams, just remember that in 1348 your doctor’s solution would have been strapping a live toad to your chest.')}
