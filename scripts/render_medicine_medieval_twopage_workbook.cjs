@@ -579,16 +579,15 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       justify-content: space-between;
     }
-    /* Clean Task Section Dividers (Zero clunky nested outer boxes) */
+    /* Clean Task Section Spacing (Zero double lines after handwriting task lines) */
     .task-section {
       margin-bottom: 5px;
+      padding-bottom: 0;
+    }
+    .task-section-divider {
       border-bottom: 1.2px solid #000000;
       padding-bottom: 4px;
-    }
-    .task-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
+      margin-bottom: 5px;
     }
     /* Thick Black Writing Lines for Handwriting */
     .task-line {
@@ -951,7 +950,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- 10-Question Do Now Retrieval Grid (Clean borderless presentation) -->
-      <div class="task-section">
+      <div class="task-section task-section-divider">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
