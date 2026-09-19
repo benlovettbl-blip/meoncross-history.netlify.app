@@ -90,7 +90,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           prefix: 'lesson_4_',
           gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)',
           border: '#0284c7',
-          image: '/images/banner_medicine_modern.png',
+          image: '/images/banner_medicine_modern.jpg',
           enquiry:
             'How did technology and government intervention revolutionize 20th-century medicine?',
         },

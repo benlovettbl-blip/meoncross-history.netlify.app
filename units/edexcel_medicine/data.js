@@ -8266,6 +8266,8 @@ export const unitData = {
     },
     {
       id: 'lesson_4_2',
+      banner: '/images/banner_mri_hospital.jpg',
+      banner_position: 'center 40%',
       title:
         'KT4.2: Lifestyle Factors & The Technological Revolution in Diagnosis (c.1900–present)',
       specification_anchor:
@@ -8668,6 +8670,8 @@ export const unitData = {
     },
     {
       id: 'lesson_4_3',
+      banner: '/images/banner_medicine_modern.jpg',
+      banner_position: 'center 30%',
       title:
         'KT4.3: The Search for Magic Bullets, High-Tech Treatments & The Birth of the NHS (1909–1948)',
       specification_anchor:
@@ -9056,6 +9060,8 @@ export const unitData = {
     },
     {
       id: 'lesson_4_4',
+      banner: '/images/banner_fleming_lab.jpg',
+      banner_position: 'center 30%',
       title:
         'KT4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey & Chain and Penicillin (1928–1945)',
       specification_anchor:
@@ -9454,6 +9460,8 @@ export const unitData = {
     },
     {
       id: 'lesson_4_5',
+      banner: '/images/banner_radiotherapy.jpg',
+      banner_position: 'center 40%',
       title: 'KT4.5: Case Study 2: Public Health & The Fight Against Lung Cancer (c.1950–present)',
       specification_anchor:
         'Case study: The fight against lung cancer in the twenty-first century: the use of science and technology in diagnosis and treatment; government action.',

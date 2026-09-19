@@ -1124,11 +1124,18 @@ export function renderLesson(lesson) {
     else if (ktMatch[1].startsWith('2')) heroImage = '/assets/cme_new_kt2_cover.png';
     else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
   } else if (window.currentUnitId === 'edexcel_medicine' && ktMatch) {
-    if (ktMatch[1].startsWith('1')) heroImage = '/images/banner_medicine_medieval.jpg';
-    else if (ktMatch[1].startsWith('2')) heroImage = '/images/banner_medicine_renaissance.jpg';
-    else if (ktMatch[1].startsWith('3')) heroImage = '/images/banner_medicine_18th_19th.jpg';
-    else if (ktMatch[1].startsWith('4')) heroImage = '/images/banner_medicine_modern.png';
-    else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
+    if (lesson.banner) {
+      heroImage =
+        typeof lesson.banner === 'string'
+          ? lesson.banner
+          : lesson.banner.image || lesson.banner.url;
+    } else {
+      if (ktMatch[1].startsWith('1')) heroImage = '/images/banner_medicine_medieval.jpg';
+      else if (ktMatch[1].startsWith('2')) heroImage = '/images/banner_medicine_renaissance.jpg';
+      else if (ktMatch[1].startsWith('3')) heroImage = '/images/banner_medicine_18th_19th.jpg';
+      else if (ktMatch[1].startsWith('4')) heroImage = '/images/banner_medicine_modern.jpg';
+      else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
+    }
   } else if (window.currentUnitId === 'usa' && ktMatch) {
     if (ktMatch[1].startsWith('1'))
       heroImage = '/units/usa/assets/sources/airborne-little-rock-patrol.jpg';
