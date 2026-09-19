@@ -1248,53 +1248,53 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.1:</strong> Printing &amp; Royal Society</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
-              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.1:</strong> Printing &amp; Royal Society</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.2:</strong> Thomas Sydenham</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
-              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.2:</strong> Thomas Sydenham</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.3:</strong> Andreas Vesalius</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q5/6 Essay: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
-              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.3:</strong> Andreas Vesalius</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.4:</strong> William Harvey</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
-              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.4:</strong> William Harvey</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.5:</strong> Great Plague of 1665</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q5/6 Essay: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
-              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.5:</strong> Great Plague of 1665</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 5px 8px; border-right: 1px solid #000000; text-transform: uppercase;">Cumulative Assessment Totals</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Total: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Extended: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 76</strong> ]</td>
-              <td style="padding: 5px 6px; text-align: center; font-size: 8.5pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
+              <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Cumulative Assessment Totals</td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Total: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Extended: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 76</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 10.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- Teacher Feedback Section (WWW & EBI 4 lines each) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 7px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
             Teacher Formative Assessment &bull; Feedback
           </strong>
@@ -1303,8 +1303,8 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
           </span>
         </div>
 
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
+        <div style="margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
             What Went Well (WWW):
           </strong>
           <div class="task-line"></div>
@@ -1313,8 +1313,8 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
           <div class="task-line"></div>
         </div>
 
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
+        <div style="margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
             Even Better If (EBI):
           </strong>
           <div class="task-line"></div>
@@ -1323,7 +1323,7 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
           <div class="task-line"></div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt;">
           <span><strong>Teacher Signature:</strong> ____________________________</span>
           <span><strong>Date:</strong> ____________________</span>
         </div>
@@ -1331,7 +1331,7 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
 
       <!-- Interactive Quizzing QR Codes for Lessons 2.1–2.5 -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
           </strong>
@@ -1353,20 +1353,20 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
               ];
               return `
           <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
               KT2.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 600; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
-            <div style="width: 23mm; height: 23mm; margin: 0 auto 2px auto;">
+            <div style="width: 21.5mm; height: 21.5mm; margin: 0 auto 2px auto;">
               ${qrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px; margin-bottom: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
               Scan to Quiz
             </span>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #000000;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
+              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
             </div>
           </div>
           `;
