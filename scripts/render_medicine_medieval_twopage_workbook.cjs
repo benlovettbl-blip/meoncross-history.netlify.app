@@ -116,7 +116,7 @@ const medievalConfigs = [
         'One way ideas differed was the understanding of causes... &bull; In the Medieval period, people believed... &bull; In contrast, in the Modern period...',
     },
     timelineMission:
-      'Construct an analytical cause-and-effect flowchart on Milestone 1 &amp; 2 (Pages 2–3) contrasting monastic scriptoria book-copying with Roger Bacon’s 1277 heresy trial. Annotate 3 specific mechanisms the Church used to enforce Galenic teleology and prevent scientific experimentation.',
+      'Turn to Pages 2–3 (Key Topic 1.1). In the drawing box, sketch a monk copying Galen’s medical book in a scriptorium. Add two speech bubbles explaining why the Church banned new medical experiments and imprisoned Roger Bacon in 1277.',
   },
   {
     lessonIndex: 1,
@@ -205,7 +205,7 @@ const medievalConfigs = [
         'One way methods of diagnosis differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Modern period...',
     },
     timelineMission:
-      'Diagram the diagnostic workflow of a medieval physician on Milestone 3 (Pages 2–3). Cross-reference the 20-shade matula urine wheel with the Zodiac Man (Homo Signorum), annotating why internal humoural diagnosis was conducted entirely without physical examination.',
+      'Turn to Pages 2–3 (Key Topic 1.2). In the drawing box, sketch a physician holding a urine flask (matula) up to the light. Label two reasons why physicians checked star charts (the Zodiac Man) before treating a patient.',
   },
   {
     lessonIndex: 2,
@@ -297,7 +297,7 @@ const medievalConfigs = [
         'One way medical treatments differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Renaissance...',
     },
     timelineMission:
-      'Construct a comparative therapeutics matrix on Milestone 4 (Pages 2–3) contrasting phlebotomy (fleam vein incision vs cupping vs leeches) with digestive purging (emetics vs clysters). Annotate how each treatment applied Galen’s Theory of Opposites to fever symptoms.',
+      'Turn to Pages 2–3 (Key Topic 1.3). In the drawing box, draw a barber-surgeon’s bleeding bowl, fleam, and leeches. Write a 2-sentence explanation of how bloodletting was believed to restore humoural balance.',
   },
   {
     lessonIndex: 3,
@@ -389,7 +389,7 @@ const medievalConfigs = [
         'One way hospital care differed was... &bull; In the Medieval period, hospitals... &bull; In contrast, in the 18th and 19th centuries...',
     },
     timelineMission:
-      'Draw an architectural cross-section of a monastic hospital ward (e.g. St Bartholomew’s, 1123) on Milestone 8 (Pages 2–3). Annotate why beds directly faced the chapel altar, why nuns provided palliative warmth and prayer, and why lepers and plague victims were strictly excluded.',
+      'Turn to Pages 2–3 (Key Topic 1.4). In the drawing box, sketch medieval hospital beds facing a chapel altar. Write two bullet points explaining why monastic hospitals focused on spiritual ‘care, not cure’.',
   },
   {
     lessonIndex: 4,
@@ -478,7 +478,7 @@ const medievalConfigs = [
         'One way civic reactions differed was... &bull; During the Black Death in 1348... &bull; In contrast, during the Great Plague of 1665...',
     },
     timelineMission:
-      'Diagram the dual transmission mechanisms of Yersinia pestis (Bubonic rat-flea vector vs Pneumonic airborne droplets) on Milestones 6 &amp; 7 (Pages 2–3). Annotate why Edward III’s 1349 street-cleaning order and religious flagellant processions fatally accelerated contagion.',
+      'Turn to Pages 2–3 (Key Topic 1.5). In the drawing boxes, sketch the spread of the Black Death (rat fleas and airborne coughs) and Londoners cleaning streets. Explain why clearing dung could not stop the plague.',
   },
 ];
 
@@ -613,12 +613,12 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Large Historical Primary Artifact Frame -->
-      <div style="border: 2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; margin-bottom: 10px;">
-        <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 235px; object-fit: cover; border-radius: 2px; display: block;">
-        <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; padding: 4px 4px 1px 4px;">
-          <span><strong>Primary Artifact:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585</span>
-          <span>Shelfmark: ARCH-MED-1250</span>
+      <!-- Prominent Primary Visual Source Centerpiece (Unboxed, Full Width) -->
+      <div style="margin: 3px 0 6px 0;">
+        <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 255px; object-fit: cover; display: block; border-bottom: 1.5px solid #000000;">
+        <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; padding: 3px 2px 1px 2px;">
+          <span><strong>Primary Artifact:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585 (c. 1250)</span>
+          <span>Accession Shelfmark: ARCH-MED-1250</span>
         </div>
       </div>
 
@@ -679,7 +679,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the in-depth timeline mission tasks by diagramming and annotating your historical evidence in the open milestone spaces below.
+          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
         </div>
       </div>
 
@@ -693,7 +693,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 c. 1250 &bull; The Church Monopoly: Galen &amp; Monastic Scriptoria
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 1</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.1</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               Hippocrates’ Four Humours and Galen’s Opposites dominate medical thinking. Because Galen believed every organ was designed by a single Creator, the Church adopts his texts as sacred doctrine, controlling all manuscript copying in monastic scriptoria.
@@ -709,7 +709,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1277 &bull; The Imprisonment of Roger Bacon (Suppression of Experimentation)
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 2</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.1</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               Franciscan friar Roger Bacon is imprisoned by Church leaders for advocating firsthand observation and scientific experiments rather than unquestioned acceptance of ancient books. This harsh punishment warns scholars that challenging Galen is heresy.
@@ -725,7 +725,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 c. 1300 &bull; The Physician’s Toolkit: Uroscopy in the Matula &amp; Zodiac Man
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 3</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.2</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               Physicians carry pocket Vademecum handbooks containing 20-shade urine charts and astrology wheels. Examining urine in a glass matula becomes the primary diagnostic method; doctors check the Zodiac Man to determine when to perform bloodletting.
@@ -741,7 +741,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 c. 1320 &bull; Humoural Therapeutics: Phlebotomy, Purging &amp; Theriac
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 4</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.3</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               Treatments focus entirely on restoring humoural balance. Phlebotomy (bloodletting with fleams, cupping, or leeches) and purging (emetics and clysters) physically deplete patients. Apothecaries prepare Theriac (60+ ingredients including viper flesh) as a universal remedy.
@@ -760,26 +760,42 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
           <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-            Living Timeline &bull; Part 2: Epidemic Catastrophe &amp; Monastic Care (1345–c1500)
+            Living Timeline &bull; Part 2: Monastic Care &amp; The Black Death Catastrophe (1345–c1500)
           </h2>
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the in-depth timeline mission tasks by diagramming and annotating your historical evidence in the open milestone spaces below.
+          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
         </div>
       </div>
 
       <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
       <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
 
-        <!-- Milestone 5 -->
+        <!-- Key Topic 1.4: Monastic Hospitals -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                c. 1350–1400 &bull; Monastic Hospitals: The Era of ‘Care Not Cure’
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.4</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
+            </p>
+          </div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
+        </div>
+
+        <!-- Key Topic 1.5: 1345 Planetary Conjunction -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1345 &bull; The Great Planetary Conjunction in Aquarius
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 5</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.5</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
@@ -788,14 +804,14 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
           <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
-        <!-- Milestone 6 -->
+        <!-- Key Topic 1.5: 1348 Arrival of Black Death -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1348 &bull; The Black Death Reaches Melcombe Regis, Dorset
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 6</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.5</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
@@ -804,33 +820,17 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
           <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
-        <!-- Milestone 7 -->
+        <!-- Key Topic 1.5: 1349 Cleanliness Order & Mass Pits -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1349 &bull; King Edward III’s Cleanliness Order &amp; East Smithfield Mass Pits
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 7</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.5</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
               Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
-            </p>
-          </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
-        </div>
-
-        <!-- Milestone 8 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                c. 1400 &bull; Monastic Hospitals: The Golden Age of ‘Care Not Cure’
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 8</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
             </p>
           </div>
           <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
