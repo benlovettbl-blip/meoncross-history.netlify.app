@@ -1860,33 +1860,44 @@ window.currentQuizLessonId = null;
 window.injectQuizModalIfNeeded = function () {
   if (document.getElementById('quizModal')) return;
   const html = `
-  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
-    <div class="modal-content" style="background: #ffffff; border-radius: 16px; padding: 28px 32px; max-width: 640px; width: 92%; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3); transform: scale(0.95); transition: transform 0.3s ease; border: 1px solid #e2e8f0;">
-      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; color: #94a3b8; font-size: 1.3rem; cursor: pointer; transition: color 0.2s; padding: 6px; line-height: 1;"><i class="fa-solid fa-xmark"></i></button>
+  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 99999; opacity: 0; transition: opacity 0.25s ease;">
+    <div class="modal-content" style="background: #ffffff; border-radius: 16px; padding: 20px 24px 24px; max-width: 680px; width: 94%; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); transform: scale(0.96); transition: transform 0.25s ease; border: 1px solid #e2e8f0; max-height: 92vh; overflow-y: auto; display: flex; flex-direction: column;">
       
-      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 16px;">
-        <div style="width: 42px; height: 42px; border-radius: 10px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #2563eb; border: 1px solid #bfdbfe; flex-shrink: 0;">
-          🎯
+      <!-- Top Bar: Exit button, Topic Pill, and Progress Pill -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 10px;">
+        <button class="modal-close-btn" onclick="window.closeQuizModal()" style="background: #f1f5f9; border: 1.5px solid #cbd5e1; color: #334155; height: 36px; padding: 0 12px; border-radius: 8px; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s;">
+          <i class="fa-solid fa-arrow-left"></i> <span>Exit</span>
+        </button>
+
+        <div style="flex: 1; text-align: center; min-width: 0;">
+          <span id="quiz-lesson-badge" style="display: inline-block; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 800; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 3px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.3px;">
+            Retrieval Practice
+          </span>
         </div>
-        <div style="flex: 1;">
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-right: 36px;">
-            <h3 style="margin: 0; color: #0f172a; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">Plenary Knowledge Check</h3>
-            <span id="quiz-progress-pill" style="background: #f1f5f9; color: #475569; font-weight: 700; font-size: 0.82rem; padding: 3px 10px; border-radius: 12px;">Q <span id="quiz-progress">1 / 20</span></span>
-          </div>
-          <div style="width: 100%; height: 6px; background: #e2e8f0; border-radius: 4px; margin-top: 8px; overflow: hidden;">
-            <div id="quiz-progress-bar" style="width: 5%; height: 100%; background: #2563eb; transition: width 0.25s ease;"></div>
-          </div>
-        </div>
+
+        <span id="quiz-progress-pill" style="background: #0f172a; color: #ffffff; font-weight: 800; font-size: 0.8rem; padding: 4px 10px; border-radius: 20px; flex-shrink: 0; letter-spacing: 0.5px;">
+          Q <span id="quiz-progress">1 / 8</span>
+        </span>
+      </div>
+
+      <!-- Animated Progress Bar -->
+      <div style="width: 100%; height: 5px; background: #e2e8f0; border-radius: 4px; margin-bottom: 16px; overflow: hidden;">
+        <div id="quiz-progress-bar" style="width: 12%; height: 100%; background: linear-gradient(90deg, #3b82f6, #2563eb); transition: width 0.3s ease;"></div>
       </div>
       
-      <div id="quiz-question-container">
+      <!-- Question and Options Area -->
+      <div id="quiz-question-container" style="flex: 1;">
         <!-- Populated dynamically -->
       </div>
       
-      <div id="quiz-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 22px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+      <!-- Feedback and Next Action Footer -->
+      <div id="quiz-footer" style="margin-top: 16px; border-top: 1px solid #f1f5f9; padding-top: 12px; display: flex; flex-direction: column; gap: 10px;">
         <div id="quiz-feedback" style="font-weight: 600; font-size: 0.95rem;"></div>
-        <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none; padding: 9px 20px; font-weight: 700; border-radius: 8px;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+        <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none; padding: 13px 20px; font-weight: 800; font-size: 1rem; border-radius: 10px; width: 100%; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onclick="window.nextQuizQuestion()">
+          Next Question <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
+
     </div>
   </div>`;
   document.body.insertAdjacentHTML('beforeend', html);

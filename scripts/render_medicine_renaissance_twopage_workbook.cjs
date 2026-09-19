@@ -1248,35 +1248,35 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.1:</strong> Printing &amp; Royal Society</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
               <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.2:</strong> Thomas Sydenham</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
               <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.3:</strong> Andreas Vesalius</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q5/6 Essay: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
               <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.4:</strong> William Harvey</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
               <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT2.5:</strong> Great Plague of 1665</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
               <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q5/6 Essay: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
