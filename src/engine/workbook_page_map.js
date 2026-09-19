@@ -190,31 +190,31 @@ export const WORKBOOK_PAGE_MAP = {
   },
   edexcel_medicine: {
     lesson_1_1: {
-      page: 3,
+      page: 4,
       booklet: 'Medieval Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 0,
     },
     lesson_1_2: {
-      page: 20,
+      page: 6,
       booklet: 'Medieval Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 1,
     },
     lesson_1_3: {
-      page: 32,
+      page: 15,
       booklet: 'Medieval Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 2,
     },
     lesson_1_4: {
-      page: 21,
+      page: 10,
       booklet: 'Medieval Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 3,
     },
     lesson_1_5: {
-      page: 27,
+      page: 12,
       booklet: 'Medieval Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 4,

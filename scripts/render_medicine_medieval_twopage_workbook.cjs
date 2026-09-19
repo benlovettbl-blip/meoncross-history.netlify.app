@@ -1,5 +1,21 @@
 const fs = require('fs');
 const path = require('path');
+const QRCode = require('qrcode');
+
+function generateQrSvg(url) {
+  const qr = QRCode.create(url, { margin: 1 });
+  const size = qr.modules.size;
+  const data = qr.modules.data;
+  let pathD = '';
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (data[r * size + c]) {
+        pathD += `M${c},${r}h1v1h-1z `;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
+}
 
 function formatText(txt) {
   if (!txt) return '';
@@ -100,7 +116,7 @@ const medievalConfigs = [
         'One way ideas differed was the understanding of causes... &bull; In the Medieval period, people believed... &bull; In contrast, in the Modern period...',
     },
     timelineMission:
-      'Turn back to Pages 2–3 (Milestones 1 & 2). In the open milestone space, illustrate the Church scriptorium and annotate: ‘Dissent from Galen is Heresy!’',
+      'Construct an analytical cause-and-effect flowchart on Milestone 1 &amp; 2 (Pages 2–3) contrasting monastic scriptoria book-copying with Roger Bacon’s 1277 heresy trial. Annotate 3 specific mechanisms the Church used to enforce Galenic teleology and prevent scientific experimentation.',
   },
   {
     lessonIndex: 1,
@@ -189,7 +205,7 @@ const medievalConfigs = [
         'One way methods of diagnosis differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Modern period...',
     },
     timelineMission:
-      'Turn back to Pages 2–3 (Milestone 3: c. 1300). In the open space, sketch a physician holding a glass matula up to the light and annotate: ‘The Diagnostic Matula & Zodiac Man’.',
+      'Diagram the diagnostic workflow of a medieval physician on Milestone 3 (Pages 2–3). Cross-reference the 20-shade matula urine wheel with the Zodiac Man (Homo Signorum), annotating why internal humoural diagnosis was conducted entirely without physical examination.',
   },
   {
     lessonIndex: 2,
@@ -281,7 +297,7 @@ const medievalConfigs = [
         'One way medical treatments differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Renaissance...',
     },
     timelineMission:
-      'Turn back to Pages 2–3 (Milestone 4: c. 1320). In the open space, sketch a barber’s fleam, cupping glass, and leeches, and annotate: ‘Humoural Draining: Bleeding & Purging’.',
+      'Construct a comparative therapeutics matrix on Milestone 4 (Pages 2–3) contrasting phlebotomy (fleam vein incision vs cupping vs leeches) with digestive purging (emetics vs clysters). Annotate how each treatment applied Galen’s Theory of Opposites to fever symptoms.',
   },
   {
     lessonIndex: 3,
@@ -373,7 +389,7 @@ const medievalConfigs = [
         'One way hospital care differed was... &bull; In the Medieval period, hospitals... &bull; In contrast, in the 18th and 19th centuries...',
     },
     timelineMission:
-      'Turn back to Pages 2–3 (Milestone 8: c. 1400). In the open space, sketch hospital ward beds facing the chapel altar and annotate: ‘Monastic Care Not Cure’.',
+      'Draw an architectural cross-section of a monastic hospital ward (e.g. St Bartholomew’s, 1123) on Milestone 8 (Pages 2–3). Annotate why beds directly faced the chapel altar, why nuns provided palliative warmth and prayer, and why lepers and plague victims were strictly excluded.',
   },
   {
     lessonIndex: 4,
@@ -462,7 +478,7 @@ const medievalConfigs = [
         'One way civic reactions differed was... &bull; During the Black Death in 1348... &bull; In contrast, during the Great Plague of 1665...',
     },
     timelineMission:
-      'Turn back to Pages 2–3 (Milestones 6 & 7). In the open space, sketch the mass plague pit at East Smithfield and annotate: ‘The Black Death Catastrophe 1348–1349’.',
+      'Diagram the dual transmission mechanisms of Yersinia pestis (Bubonic rat-flea vector vs Pneumonic airborne droplets) on Milestones 6 &amp; 7 (Pages 2–3). Annotate why Edward III’s 1349 street-cleaning order and religious flagellant processions fatally accelerated contagion.',
   },
 ];
 
@@ -474,7 +490,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KT1: Medicine in Medieval England Workbook</title>
+  <title>Key Topic 1: Medicine in Medieval England Workbook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
@@ -482,12 +498,12 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     *, *:before, *:after { box-sizing: border-box; }
     @page {
       size: A4 portrait;
-      margin: 10mm 12mm 12mm 12mm;
+      margin: 10mm 10mm 12mm 10mm;
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
       font-size: 8.5pt;
-      line-height: 1.35;
+      line-height: 1.32;
       color: #000000;
       margin: 0;
       padding: 0;
@@ -496,6 +512,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
     }
+    /* Page Container: Zero outer border, pure flex distribution for optimal page budget */
     .page, .page-container {
       width: 100%;
       height: 272mm;
@@ -507,36 +524,42 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: 1.5px solid #000000;
-      padding: 11px 14px;
+      padding: 3mm 4mm;
       background: #ffffff;
     }
     .page:last-child, .page-container:last-child {
       page-break-after: auto;
     }
+    /* Full flex section container for interior distribution */
+    .page-body-full {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Clean Task Section Dividers (Zero clunky nested outer boxes) */
+    .task-section {
+      margin-bottom: 5px;
+      border-bottom: 1.2px solid #000000;
+      padding-bottom: 4px;
+    }
+    .task-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
     /* Thick Black Writing Lines for Handwriting */
     .task-line {
       border-bottom: 1.5px solid #000000;
-      height: 8.2mm;
+      height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
-      height: 6.5mm;
+      height: 6.2mm;
       width: 100%;
       box-sizing: border-box;
-    }
-    .page-footer {
-      border-top: 1px solid #000000;
-      padding-top: 3px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
-      font-weight: 700;
-      color: #000000;
     }
   </style>
 </head>
@@ -544,13 +567,13 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGE 1: FRONT COVER (Clean, Large Image, No AI Fluff, No Target)
+  // PAGE 1: FRONT COVER (Clean, Large Image, No Outer Border, Bulleted Spec)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 16px 20px; justify-content: space-between;">
-    <div>
+  <div class="page page-container" id="page-1" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
       <!-- Top Departmental Branding with Customizer Hook -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 6px; margin-bottom: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px;">
         <div data-department-name="The History Department">
           <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 1px;">
             <span class="school-brand-target">The History Department</span>
@@ -561,8 +584,8 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Pupil Details Strip (Target is placed on Back Cover tracking grid) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 12px;">
+      <!-- Pupil Details Strip (Target Grade placed on Back Cover tracking ledger) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 10px;">
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
@@ -578,8 +601,8 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Main Title Block -->
-      <div style="text-align: center; margin: 8px 0 12px 0;">
-        <div style="display: inline-block; background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 9pt; font-weight: 800; padding: 3px 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">
+      <div style="text-align: center; margin: 4px 0 8px 0;">
+        <div style="display: inline-block; background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 9pt; font-weight: 800; padding: 3px 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
           Key Topic 1 &bull; c1250–c1500
         </div>
         <h1 style="font-family: 'Playfair Display', serif; font-size: 24pt; line-height: 1.15; color: #000000; margin: 2px 0 4px 0; font-weight: 900;">
@@ -591,204 +614,229 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Large Historical Primary Artifact Frame -->
-      <div style="border: 2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; margin-bottom: 12px;">
-        <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 260px; object-fit: cover; border-radius: 2px; display: block;">
+      <div style="border: 2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; margin-bottom: 10px;">
+        <img src="/images/banner_medicine_medieval.jpg" alt="Medieval Physician Examining Urine in a Matula" style="width: 100%; height: 235px; object-fit: cover; border-radius: 2px; display: block;">
         <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; padding: 4px 4px 1px 4px;">
           <span><strong>Primary Artifact:</strong> Medieval Physician Examining a Matula &bull; British Library MS Harley 1585</span>
           <span>Shelfmark: ARCH-MED-1250</span>
         </div>
       </div>
 
-      <!-- Five Enquiry Lessons Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 8px 12px; background: #ffffff;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1px solid #000000; padding-bottom: 2px;">
-          Key Topic 1 Enquiry Sequence
+      <!-- Bullet-Pointed Specification Enquiries (Bottom Half of Front Cover) -->
+      <div style="border-top: 2px solid #000000; padding-top: 8px; margin-top: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px;">
+          Course Specification &bull; Key Topic 1 Enquiry Sequence
         </div>
-        <div style="display: flex; flex-direction: column; gap: 3.5px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000;">
-          <div><strong>Enquiry 1.1:</strong> Supernatural &amp; Religious Explanations of Disease (c1250–c1500)</div>
-          <div><strong>Enquiry 1.2:</strong> Rational Explanations: Hippocrates, Galen &amp; The Four Humours</div>
-          <div><strong>Enquiry 1.3:</strong> Approaches to Prevention &amp; Treatment: Rituals, Bleeding &amp; Purging</div>
-          <div><strong>Enquiry 1.4:</strong> Medical Care Providers &amp; Monastic Hospitals: ‘Care Not Cure’</div>
-          <div><strong>Enquiry 1.5:</strong> Case Study: Dealing with the Black Death Catastrophe (1348–1349)</div>
-        </div>
+        <ul style="margin: 0; padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 7px;">
+          <li style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; line-height: 1.25;">
+            <strong>Key Topic 1.1: Supernatural &amp; Religious Explanations of Disease</strong>
+            <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #222222; margin-top: 1.5px;">
+              Why did medieval people believe disease was sent by God, and how did the Catholic Church enforce medical dogma?
+            </div>
+          </li>
+          <li style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; line-height: 1.25;">
+            <strong>Key Topic 1.2: Rational Explanations: Hippocrates, Galen &amp; The Four Humours</strong>
+            <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #222222; margin-top: 1.5px;">
+              How did the Four Humours and Theory of Opposites explain illness, and why were they never questioned?
+            </div>
+          </li>
+          <li style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; line-height: 1.25;">
+            <strong>Key Topic 1.3: Approaches to Prevention &amp; Treatment: Bleeding, Purging &amp; Herbal Remedies</strong>
+            <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #222222; margin-top: 1.5px;">
+              Why did humoural treatments such as bloodletting, purging, and Theriac remain the standard medical response?
+            </div>
+          </li>
+          <li style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; line-height: 1.25;">
+            <strong>Key Topic 1.4: Medical Care Providers &amp; Monastic Hospitals: ‘Care Not Cure’</strong>
+            <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #222222; margin-top: 1.5px;">
+              Who treated the sick in medieval England, and why did monastic hospitals focus purely on spiritual care?
+            </div>
+          </li>
+          <li style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; line-height: 1.25;">
+            <strong>Key Topic 1.5: Case Study: Dealing with the Black Death Catastrophe (1348–1349)</strong>
+            <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #222222; margin-top: 1.5px;">
+              Why were medieval people, physicians, and civic authorities completely unable to stop the Black Death?
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Page 1 Footer -->
-    <div class="page-footer">
-      <span>GCSE History Revision Hub</span>
-      <span>PAGE 1</span>
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 2–3: LIVING TIMELINE (Clean, Date Focused, Open Sketch/Note Space)
+  // PAGES 2–3: LIVING TIMELINE (Expanded Open Drawing/Note Spaces)
   // ====================================================================
   html += `
   <!-- PAGE 2: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
-  <div class="page page-container" id="page-2">
-    <div>
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Living Timeline &bull; Part 1: Religious Ideas &amp; Humoural Foundations (c1250–c1320)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700;">PAGE 2</span>
+  <div class="page page-container" id="page-2" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+            Living Timeline &bull; Part 1: Religious Ideas &amp; Humoural Foundations (c1250–c1320)
+          </h2>
+        </div>
+
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong>Instructions:</strong> As you study each enquiry lesson, complete the in-depth timeline mission tasks by diagramming and annotating your historical evidence in the open milestone spaces below.
+        </div>
       </div>
 
-      <div style="border: 1px solid #000000; padding: 4px 8px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-        <strong>Instructions:</strong> As you study each enquiry lesson, illustrate the milestone and record your key notes in the open space below.
-      </div>
-
-      <!-- 4 Milestones with Large Blank Drawing/Notes Area -->
-      <div style="display: flex; flex-direction: column; gap: 8px;">
+      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
 
         <!-- Milestone 1 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              c. 1250 &bull; The Church Monopoly: Galen &amp; Monastic Scriptoria
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 1</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                c. 1250 &bull; The Church Monopoly: Galen &amp; Monastic Scriptoria
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 1</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Hippocrates’ Four Humours and Galen’s Opposites dominate medical thinking. Because Galen believed every organ was designed by a single Creator, the Church adopts his texts as sacred doctrine, controlling all manuscript copying in monastic scriptoria.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            Hippocrates’ Four Humours and Galen’s Opposites dominate medical thinking. Because Galen believed every organ was designed by a single Creator, the Church adopts his texts as sacred doctrine, controlling all manuscript copying in monastic scriptoria.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 2 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              1277 &bull; The Imprisonment of Roger Bacon (Suppression of Experimentation)
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 2</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                1277 &bull; The Imprisonment of Roger Bacon (Suppression of Experimentation)
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 2</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Franciscan friar Roger Bacon is imprisoned by Church leaders for advocating firsthand observation and scientific experiments rather than unquestioned acceptance of ancient books. This harsh punishment warns scholars that challenging Galen is heresy.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            Franciscan friar Roger Bacon is imprisoned by Church leaders for advocating firsthand observation and scientific experiments rather than unquestioned acceptance of ancient books. This harsh punishment warns scholars that challenging Galen is heresy.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 3 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              c. 1300 &bull; The Physician’s Toolkit: Uroscopy in the Matula &amp; Zodiac Man
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 3</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                c. 1300 &bull; The Physician’s Toolkit: Uroscopy in the Matula &amp; Zodiac Man
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 3</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Physicians carry pocket Vademecum handbooks containing 20-shade urine charts and astrology wheels. Examining urine in a glass matula becomes the primary diagnostic method; doctors check the Zodiac Man to determine when to perform bloodletting.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            Physicians carry pocket Vademecum handbooks containing 20-shade urine charts and astrology wheels. Examining urine in a glass matula becomes the primary diagnostic method; doctors check the Zodiac Man to determine when to perform bloodletting.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 4 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              c. 1320 &bull; Humoural Therapeutics: Phlebotomy, Purging &amp; Theriac
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 4</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                c. 1320 &bull; Humoural Therapeutics: Phlebotomy, Purging &amp; Theriac
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 4</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Treatments focus entirely on restoring humoural balance. Phlebotomy (bloodletting with fleams, cupping, or leeches) and purging (emetics and clysters) physically deplete patients. Apothecaries prepare Theriac (60+ ingredients including viper flesh) as a universal remedy.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            Treatments focus entirely on restoring humoural balance. Phlebotomy (bloodletting with fleams, cupping, or leeches) and purging (emetics and clysters) physically deplete patients. Apothecaries prepare Theriac (60+ ingredients including viper flesh) as a universal remedy.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
       </div>
-    </div>
-
-    <!-- Page 2 Footer -->
-    <div class="page-footer">
-      <span>Living Timeline &bull; Part 1</span>
-      <span>PAGE 2</span>
     </div>
   </div>
 
   <!-- PAGE 3: LIVING TIMELINE PART 2 (MILESTONES 5–8) -->
-  <div class="page page-container" id="page-3">
-    <div>
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Living Timeline &bull; Part 2: Epidemic Catastrophe &amp; Monastic Care (1345–c1500)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700;">PAGE 3</span>
+  <div class="page page-container" id="page-3" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+            Living Timeline &bull; Part 2: Epidemic Catastrophe &amp; Monastic Care (1345–c1500)
+          </h2>
+        </div>
+
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong>Instructions:</strong> As you study each enquiry lesson, complete the in-depth timeline mission tasks by diagramming and annotating your historical evidence in the open milestone spaces below.
+        </div>
       </div>
 
-      <div style="border: 1px solid #000000; padding: 4px 8px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-        <strong>Instructions:</strong> As you study each enquiry lesson, illustrate the milestone and record your key notes in the open space below.
-      </div>
-
-      <!-- 4 Milestones with Large Blank Drawing/Notes Area -->
-      <div style="display: flex; flex-direction: column; gap: 8px;">
+      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
 
         <!-- Milestone 5 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              1345 &bull; The Great Planetary Conjunction in Aquarius
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 5</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                1345 &bull; The Great Planetary Conjunction in Aquarius
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 5</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 6 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              1348 &bull; The Black Death Reaches Melcombe Regis, Dorset
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 6</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                1348 &bull; The Black Death Reaches Melcombe Regis, Dorset
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 6</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 7 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              1349 &bull; King Edward III’s Cleanliness Order &amp; East Smithfield Mass Pits
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 7</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                1349 &bull; King Edward III’s Cleanliness Order &amp; East Smithfield Mass Pits
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 7</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
         <!-- Milestone 8 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-              c. 1400 &bull; Monastic Hospitals: The Golden Age of ‘Care Not Cure’
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px;">Milestone 8</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                c. 1400 &bull; Monastic Hospitals: The Golden Age of ‘Care Not Cure’
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Milestone 8</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 5px 0; line-height: 1.25;">
-            Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
-          </p>
-          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 36mm; background: #ffffff;"></div>
+          <div style="border: 1px solid #000000; border-radius: 3px; min-height: 41mm; flex: 1; background: #ffffff;"></div>
         </div>
 
       </div>
-    </div>
-
-    <!-- Page 3 Footer -->
-    <div class="page-footer">
-      <span>Living Timeline &bull; Part 2</span>
-      <span>PAGE 3</span>
     </div>
   </div>
 `;
@@ -801,33 +849,32 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     const rightPageNum = cfg.lessonNum * 2 + 3;
 
     // ------------------------------------------------------------------
-    // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB + TWO 4-MARK QUESTIONS
+    // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
     // ------------------------------------------------------------------
     html += `
   <div class="page page-container" id="page-${leftPageNum}">
-    <div>
-      <!-- Lesson Header -->
+    <div class="page-body-full">
+      <!-- Lesson Header (No Redundant Page/Spread Number) -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; text-transform: uppercase;">
-            Spread ${cfg.lessonNum} &bull; Practice &bull; Part A
-          </span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 0 0; font-weight: 800;">
-            ${cfg.title}
-          </h2>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700;">PAGE ${leftPageNum}</span>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+        </span>
       </div>
 
-      <!-- 10-Question Do Now Retrieval Grid -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; margin-bottom: 7px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; border-bottom: 1px solid #000000; padding-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
+      <!-- 10-Question Do Now Retrieval Grid (Clean borderless presentation) -->
+      <div class="task-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700;">10 MARKS AVAILABLE</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 3px;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
+          </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px;">
           ${cfg.doNow
             .map(
               (item, idx) => `
@@ -843,28 +890,29 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Key Vocabulary Task -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; margin-bottom: 7px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
+      <!-- Key Vocabulary Task (3 Handwriting Lines to eliminate underflow) -->
+      <div class="task-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Key Vocabulary Task
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
         </div>
         <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
           ${cfg.vocabPrompt}
         </p>
         <div class="task-line"></div>
         <div class="task-line"></div>
+        <div class="task-line"></div>
       </div>
 
       <!-- Exam Practice Question 3A [4 marks] -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; margin-bottom: 7px;">
+      <div class="task-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 3(a): Explain One ${cfg.fourMarkA.type} [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700;">[4 MARKS &bull; 5 MINS]</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${cfg.fourMarkA.question}
@@ -872,7 +920,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
           <strong>Hint:</strong> ${cfg.fourMarkA.hint}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 3px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Stems:</strong> ${cfg.fourMarkA.stems}
         </div>
         <div class="task-line"></div>
@@ -881,13 +929,13 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      <!-- Exam Practice Question 3B [4 marks] (Second 4-marker to eliminate dead space!) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
+      <!-- Exam Practice Question 3B [4 marks] -->
+      <div class="task-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 3(b): Explain One ${cfg.fourMarkB.type} [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700;">[4 MARKS &bull; 5 MINS]</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${cfg.fourMarkB.question}
@@ -895,7 +943,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
           <strong>Hint:</strong> ${cfg.fourMarkB.hint}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 3px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Stems:</strong> ${cfg.fourMarkB.stems}
         </div>
         <div class="task-line"></div>
@@ -904,34 +952,25 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
     </div>
-
-    <!-- Left Page Footer -->
-    <div class="page-footer">
-      <span>Spread ${cfg.lessonNum} &bull; Practice</span>
-      <span>PAGE ${leftPageNum}</span>
-    </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & BOTTOM TIMELINE MISSION       -->
+  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container" id="page-${rightPageNum}">
-    <div>
-      <!-- Exam Header -->
+    <div class="page-body-full">
+      <!-- Exam Header (No Redundant Page/Spread Number) -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; text-transform: uppercase;">
-            Spread ${cfg.lessonNum} &bull; Extended Writing &bull; Part B
-          </span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 0 0; font-weight: 800;">
-            ${cfg.tariff}
-          </h2>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700;">PAGE ${rightPageNum}</span>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.tariff}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing Assessment
+        </span>
       </div>
 
       <!-- Question Stem & Stimulus Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px; background: #ffffff; margin-bottom: 6px;">
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
         <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
           ${cfg.examStem}
         </div>
@@ -944,15 +983,15 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- 3-Column Planning Structure Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 7px; background: #ffffff; margin-bottom: 6px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+      <div style="margin-bottom: 5px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
           Structure Strip &bull; 3-Paragraph Analytical Plan
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
           ${cfg.structureStrip
             .map(
               (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px;">
+          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; line-height: 1.2; display: block;">${strip.text}</span>
           </div>
@@ -963,7 +1002,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
         <div>
           <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
@@ -974,8 +1013,8 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (Full Downward Extension) -->
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 6px;">
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -996,47 +1035,40 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      <!-- Timeline Mission (Cleanly Anchored at Bottom of Page) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
-        <div style="display: flex; align-items: center; gap: 6px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+      <!-- Timeline Mission (Deep Historical Analytical Task) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
             Timeline Mission
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
             ${cfg.timelineMission}
           </span>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
           &larr; Pages 2–3
         </span>
       </div>
-    </div>
-
-    <!-- Right Page Footer -->
-    <div class="page-footer">
-      <span>Spread ${cfg.lessonNum} &bull; Extended Writing</span>
-      <span>PAGE ${rightPageNum}</span>
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (Target on Grid, Generous Lines, No RAG)
+  // PAGE 14: OUTSIDE BACK COVER (Target Grade, Wide Ledger, 5 QR Codes)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-14">
-    <div>
-      <!-- Back Cover Header Strip -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 13pt; color: #000000; text-transform: uppercase; font-weight: 900;">
+  <div class="page page-container" id="page-14" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Back Cover Header Strip (No Redundant 'OUTSIDE BACK COVER' text) -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 12.5pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
           Student Assessment Record &amp; Progress Tracker
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800;">OUTSIDE BACK COVER</span>
       </div>
 
-      <!-- Pupil Details & Target Grade Strip (Transferred from Front Cover) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 10px;">
+      <!-- Pupil Details & Target Grade Strip -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 7px;">
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
@@ -1051,71 +1083,77 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- 96-Mark Progress Ledger Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 10px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
+      <!-- 96-Mark Progress Ledger Table with 'Date Completed' as Column 1 and Wide Score Boxes -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 7px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
           <thead>
             <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 5px 8px; text-align: left; width: 30%;">Lesson &bull; Specification Enquiry</th>
-              <th style="padding: 5px 8px; width: 22%; text-align: center;">Q3 Practice [4m]</th>
-              <th style="padding: 5px 8px; width: 32%;">Extended Response</th>
-              <th style="padding: 5px 8px; width: 16%; text-align: center;">Lesson Total</th>
+              <th style="padding: 5px 6px; width: 15%; text-align: center; border-right: 1px solid #444444;">Date Completed</th>
+              <th style="padding: 5px 8px; width: 28%; text-align: left; border-right: 1px solid #444444;">Lesson &bull; Specification Focus</th>
+              <th style="padding: 5px 8px; width: 19%; text-align: center; border-right: 1px solid #444444;">Q3 Practice [4m]</th>
+              <th style="padding: 5px 8px; width: 24%; text-align: center; border-right: 1px solid #444444;">Extended Response</th>
+              <th style="padding: 5px 6px; width: 14%; text-align: center;">Lesson Total</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>L1:</strong> Supernatural &amp; Church</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: &nbsp;<strong>/ 4</strong></td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
-              <td style="padding: 5px 8px; text-align: center; font-weight: 700;">&nbsp; / 16</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT1.1:</strong> Supernatural &amp; Church</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
+              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>L2:</strong> Four Humours &amp; Galen</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: &nbsp;<strong>/ 4</strong></td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
-              <td style="padding: 5px 8px; text-align: center; font-weight: 700;">&nbsp; / 16</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT1.2:</strong> Four Humours &amp; Galen</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
+              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>L3:</strong> Bleeding &amp; Purging</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: &nbsp;<strong>/ 4</strong></td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
-              <td style="padding: 5px 8px; text-align: center; font-weight: 700;">&nbsp; / 16</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT1.3:</strong> Bleeding &amp; Purging</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
+              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>L4:</strong> Care &amp; Monastic Hospitals</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: &nbsp;<strong>/ 4</strong></td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;">Q4 Explain Why [12m]: &nbsp;<strong>/ 12</strong></td>
-              <td style="padding: 5px 8px; text-align: center; font-weight: 700;">&nbsp; / 16</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT1.4:</strong> Care &amp; Monastic Hospitals</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Difference: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q4 Explain Why: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</td>
+              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>L5:</strong> The Black Death 1348–49</td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: &nbsp;<strong>/ 4</strong></td>
-              <td style="padding: 5px 8px; border-right: 1px solid #000000;">Q5/6 Essay [16+4m]: &nbsp;<strong>/ 20</strong></td>
-              <td style="padding: 5px 8px; text-align: center; font-weight: 700;">&nbsp; / 24</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; color: #555555;">____ / ____ / 2026</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000;"><strong>KT1.5:</strong> The Black Death 1348–49</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Similarity: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q5/6 Essay: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
+              <td style="padding: 5px 6px; text-align: center; font-weight: 700;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td style="padding: 6px 8px; border-right: 1px solid #000000; text-transform: uppercase;">Cumulative Totals</td>
-              <td style="padding: 6px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Total: &nbsp;<strong>/ 20</strong></td>
-              <td style="padding: 6px 8px; border-right: 1px solid #000000;">Extended Total: &nbsp;<strong>/ 76</strong></td>
-              <td style="padding: 6px 8px; text-align: center; font-size: 9pt;">&nbsp; / 96</td>
+              <td colspan="2" style="padding: 5px 8px; border-right: 1px solid #000000; text-transform: uppercase;">Cumulative Assessment Totals</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Q3 Total: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</td>
+              <td style="padding: 5px 8px; border-right: 1px solid #000000; text-align: center;">Extended: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 76</strong> ]</td>
+              <td style="padding: 5px 6px; text-align: center; font-size: 8.5pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback Section (WWW & EBI with Generous Lines) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 10px; background: #ffffff; margin-bottom: 10px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase;">
+      <!-- Teacher Feedback Section (WWW & EBI 4 lines each) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 7px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
             Teacher Formative Assessment &bull; Feedback
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700;">
             Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ]
           </span>
         </div>
 
-        <div style="margin-bottom: 6px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
+        <div style="margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
             What Went Well (WWW):
           </strong>
           <div class="task-line"></div>
@@ -1124,8 +1162,8 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
           <div class="task-line"></div>
         </div>
 
-        <div style="margin-bottom: 6px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
+        <div style="margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
             Even Better If (EBI):
           </strong>
           <div class="task-line"></div>
@@ -1134,38 +1172,54 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
           <div class="task-line"></div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 4px; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
           <span><strong>Teacher Signature:</strong> ____________________________</span>
           <span><strong>Date:</strong> ____________________</span>
         </div>
       </div>
 
-      <!-- Pupil D.I.R.T. Response Section (Generous Lines) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 10px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase;">
-            Pupil D.I.R.T. Response &amp; Redraft Area
+      <!-- Interactive Quizzing QR Codes for Lessons 1.1–1.5 (Replaces Pupil D.I.R.T.) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
+            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700;">
-            [ ] D.I.R.T. Completed &amp; Checked
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+            ONLINE RECALL
           </span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; margin: 0 0 3px 0;">
-          Respond directly to your teacher’s EBI target above by redrafting an explanation, adding precise factual evidence, or improving your causal connectives:
-        </p>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+          ${medievalConfigs
+            .map((cfg, idx) => {
+              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${idx}&quiz=true`;
+              const qrSvg = generateQrSvg(quizUrl);
+              const shortLabels = [
+                'Supernatural',
+                'Four Humours',
+                'Treatments',
+                'Hospitals',
+                'Black Death',
+              ];
+              return `
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+              KT1.${cfg.lessonNum}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 600; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+              ${shortLabels[idx]}
+            </div>
+            <div style="width: 25mm; height: 25mm; margin: 0 auto 2px auto;">
+              ${qrSvg}
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+              Scan to Quiz
+            </span>
+          </div>
+          `;
+            })
+            .join('')}
+        </div>
       </div>
-    </div>
-
-    <!-- Page 14 Footer -->
-    <div class="page-footer">
-      <span>Key Topic 1 &bull; Outside Back Cover</span>
-      <span>PAGE 14 &bull; END OF WORKBOOK</span>
     </div>
   </div>
 </body>

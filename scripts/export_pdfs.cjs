@@ -220,8 +220,9 @@ function getFileHash(filePath) {
               footerTemplate:
                 '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
               margin:
+                (unit === 'edexcel_medicine' && file.startsWith('pupil_workbook')) ||
                 unit === 'industrialisation_and_empire'
-                  ? { top: '10mm', right: '12mm', bottom: '12mm', left: '12mm' }
+                  ? { top: '10mm', right: '10mm', bottom: '12mm', left: '10mm' }
                   : ['early_modern_world', 'medieval_england'].includes(unit)
                     ? { top: '15mm', right: '20mm', bottom: '22mm', left: '20mm' }
                     : { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
