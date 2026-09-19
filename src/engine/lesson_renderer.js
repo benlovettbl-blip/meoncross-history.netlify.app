@@ -3739,6 +3739,142 @@ export function renderLesson(lesson) {
             `;
             return;
           }
+          if (task.type === 'extended_writing' && task.scaffolding) {
+            const ansId = `ans-emb-${index}-${tIdx}`;
+            const scaf = task.scaffolding || {};
+            const structureStrip = scaf.structure_strip || [];
+            const starters = scaf.sentence_starters || [];
+            const connectives = scaf.connective_bank || [];
+            const words = scaf.word_bank || [];
+            const questionTitle = task.question || task.text || 'Extended Analytical Writing';
+
+            extrasHtml += `
+              <div class="task-box extended-writing-box" style="margin-bottom: 25px; background: #ffffff; padding: 22px; border-radius: 10px; border: 2px solid #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 2px solid #e0f2fe; padding-bottom: 12px;">
+                  <h4 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-feather-pointed" style="color: #0284c7;"></i>
+                    <span>${window.formatBold ? window.formatBold(questionTitle) : questionTitle}</span>
+                  </h4>
+                  <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Analytical Masterclass</span>
+                </div>
+                ${scaf.guidance ? `<p style="font-size: 0.95rem; color: #334155; margin-top: 0; margin-bottom: 16px; line-height: 1.5;">${scaf.guidance}</p>` : ''}
+
+                ${
+                  structureStrip.length > 0
+                    ? `
+                  <div style="margin-bottom: 18px;">
+                    <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #0284c7; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-layer-group"></i> Analytical Structure Strip
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px;">
+                      ${structureStrip
+                        .map((step, sIdx) => {
+                          const isScholar =
+                            step.col && (step.col.includes('Scholar') || step.col.includes('★'));
+                          const borderCol = isScholar
+                            ? '#8b5cf6'
+                            : sIdx === 0
+                              ? '#0284c7'
+                              : sIdx === 1
+                                ? '#059669'
+                                : '#d97706';
+                          const bgCol = isScholar ? '#fbf7ff' : '#f8fafc';
+                          const badgeCol = isScholar ? '#7c3aed' : borderCol;
+                          return `
+                          <div style="background: ${bgCol}; border: 1.5px solid ${borderCol}; border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                              <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: ${badgeCol}; margin-bottom: 4px;">
+                                ${step.col}
+                              </div>
+                              <div style="font-size: 0.84rem; color: #1e293b; line-height: 1.4; margin-bottom: 8px;">
+                                ${step.prompt}
+                              </div>
+                            </div>
+                            ${
+                              step.starter
+                                ? `
+                              <div style="font-size: 0.78rem; font-style: italic; color: #475569; border-left: 2px solid ${badgeCol}; padding-left: 6px; margin-top: 4px;">
+                                "${step.starter}"
+                              </div>
+                            `
+                                : ''
+                            }
+                          </div>
+                        `;
+                        })
+                        .join('')}
+                    </div>
+                  </div>
+                `
+                    : ''
+                }
+
+                ${
+                  starters.length > 0 || connectives.length > 0 || words.length > 0
+                    ? `
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px;">
+                    ${
+                      words.length > 0
+                        ? `
+                      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px;">
+                        <strong style="display: block; font-size: 0.75rem; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; margin-bottom: 6px;">
+                          GCSE Key Vocabulary Bank
+                        </strong>
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                          ${words.map((w) => `<span style="background: #e2e8f0; color: #1e293b; font-size: 0.74rem; font-weight: 600; padding: 2px 7px; border-radius: 4px;">${w}</span>`).join('')}
+                        </div>
+                      </div>
+                    `
+                        : ''
+                    }
+                    ${
+                      connectives.length > 0
+                        ? `
+                      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 10px 12px;">
+                        <strong style="display: block; font-size: 0.75rem; text-transform: uppercase; color: #15803d; letter-spacing: 0.5px; margin-bottom: 6px;">
+                          Causal Connectives Bank
+                        </strong>
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                          ${connectives.map((c) => `<span style="background: #dcfce7; color: #166534; font-size: 0.74rem; font-weight: 600; padding: 2px 7px; border-radius: 4px;">${c}</span>`).join('')}
+                        </div>
+                      </div>
+                    `
+                        : ''
+                    }
+                  </div>
+                `
+                    : ''
+                }
+
+                ${
+                  starters.length > 0
+                    ? `
+                  <details style="margin-bottom: 14px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 8px 12px;">
+                    <summary style="cursor: pointer; font-size: 0.84rem; font-weight: 700; color: #1d4ed8;"><i class="fa-solid fa-pen-fancy"></i> Expand Master Sentence Starters Bank (${starters.length} prompts)</summary>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: #1e40af; line-height: 1.5;">
+                      ${starters.map((s) => `<li style="margin-bottom: 4px;">${s}</li>`).join('')}
+                    </ul>
+                  </details>
+                `
+                    : ''
+                }
+
+                <div style="margin-bottom: 14px;">
+                  <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Pupil Extended Writing Area:</label>
+                  <textarea style="width: 100%; box-sizing: border-box; min-height: 130px; padding: 10px 12px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="Compose your 3-paragraph historical evaluation here using the structure strip and connectives..."></textarea>
+                </div>
+
+                <div>
+                  <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="${ansId}"><i class="fa-solid fa-eye"></i> Reveal Master Model Answer</button>
+                  <div class="answer" id="${ansId}" style="display: none; margin-top: 12px; background: #fffbeb; padding: 14px 16px; border-left: 4px solid #b45309; border-radius: 4px; color: #451a03; line-height: 1.7; font-size: 0.95rem;">
+                    <div style="font-weight: 800; font-size: 0.8rem; text-transform: uppercase; color: #92400e; margin-bottom: 6px; letter-spacing: 0.5px;">Master Model Answer:</div>
+                    ${task.model_answer || task.model || task.answer || ''}
+                  </div>
+                </div>
+              </div>
+            `;
+            return;
+          }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
           const cleanTaskText = (task.text || task.question || '').replace(/^Q\d+[\.\:]\s*/i, '');
           const ansId = `ans-emb-${index}-${tIdx}`;

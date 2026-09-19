@@ -30,7 +30,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'The immediate breakthrough was... • Over time, this changed Britain because... • Crucially, this transformed... • In terms of importance... • Overall, Cort was significant because...',
+      'The immediate breakthrough was... • Over time, this changed Britain because... • Crucially, this transformed... • Key Vocab: pig iron, reverberatory puddling furnace, grooved rollers, Baltic bottleneck.',
     vocabTask: {
       type: 'distinction',
       termA: 'Pig Iron',

@@ -163,16 +163,17 @@ async function runLinter() {
       taskList.forEach((tObj, tIdx) => {
         const tNum = tIdx + 1;
         const taskType = tObj.task.type;
-        if (tNum <= 3) {
+        const isAct4 = (tObj.blockTitle && /Act 4/i.test(tObj.blockTitle)) || tObj.blockIdx === 3;
+        if (!isAct4 && tNum <= 3) {
           if (!NON_PROSE_TYPES.has(taskType)) {
             errors.push(
               `[L${lessonNum}] Task Q${tNum} in "${tObj.blockTitle}" has continuous prose type '${taskType}'. Acts 1–3 MUST use rotating non-prose tasks (e.g. causal_domino, visual_annotation, word_scalpel, ledger_audit, significance_diamond)!`,
             );
           }
-        } else if (tNum === 4) {
+        } else if (isAct4 || tNum === 4) {
           if (taskType !== 'extended_writing') {
             warnings.push(
-              `[L${lessonNum}] Task Q4 in "${tObj.blockTitle}" is '${taskType}' (expected 'extended_writing' for the Act 4 Enquiry Essay).`,
+              `[L${lessonNum}] Task in "${tObj.blockTitle}" is '${taskType}' (expected 'extended_writing' for the Act 4 Enquiry Essay).`,
             );
           }
         }

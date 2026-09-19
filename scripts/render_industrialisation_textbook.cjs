@@ -3,6 +3,13 @@ const path = require('path');
 
 function formatText(txt) {
   if (!txt) return '';
+  if (typeof txt !== 'string') {
+    if (txt.prompt) {
+      return `<strong>${txt.col || ''}</strong>: ${txt.prompt}${txt.starter ? `<br><em>Starter: "${txt.starter}"</em>` : ''}`;
+    }
+    if (txt.text) return txt.text;
+    return String(txt);
+  }
   return txt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
 
@@ -384,6 +391,30 @@ function buildIndustrialisationTextbook(unitData) {
         const def =
           typeof v === 'object' && v.definition ? ` &mdash; <em>${v.definition}</em>` : '';
         html += `<span style="background: #ffffff; border: 1px solid #fed7aa; padding: 2px 7px; border-radius: 4px; color: #7c2d12;"><strong>${word}</strong>${def}</span>`;
+      });
+      html += `
+        </div>
+      </div>
+      `;
+    }
+
+    // Chronological Milestone Cards (Horizontal Timeline Anchor)
+    if (lesson.timeline_anchor && lesson.timeline_anchor.length > 0) {
+      html += `
+      <div style="margin-bottom: 12px; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; background: #f8fafc; page-break-inside: avoid; break-inside: avoid;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: #1e3a8a; margin-bottom: 6px;">
+          Chronological Anchors: 4 Key Milestones
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+      `;
+      lesson.timeline_anchor.forEach((card) => {
+        html += `
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-top: 2.5px solid #1e3a8a; border-radius: 4px; padding: 6px; font-family: 'Inter', sans-serif;">
+            <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase;">${card.date}</div>
+            <div style="font-size: 7.6pt; font-weight: 700; color: #0f172a; margin: 2px 0;">${card.title}</div>
+            <div style="font-size: 7pt; color: #475569; line-height: 1.25;">${card.desc}</div>
+          </div>
+        `;
       });
       html += `
         </div>
