@@ -533,6 +533,8 @@ export const unitData = {
   lessons: [
     {
       id: 'lesson_1_1',
+      banner: '/images/banner_medicine_medieval.jpg',
+      banner_position: 'center',
       title: 'KT1.1: Supernatural & Religious Explanations of Disease (c1250–c1500)',
       specification_anchor:
         'Ideas about the cause of disease and illness: supernatural and religious explanations; the influence of the Church on medicine and science.',
@@ -926,6 +928,8 @@ export const unitData = {
     },
     {
       id: 'lesson_1_2',
+      banner: '/images/medieval_urine_chart.jpg',
+      banner_position: 'center 35%',
       title: 'KT1.2: Rational Explanations: Hippocrates, Galen & The Four Humours (c1250–c1500)',
       specification_anchor:
         'Rational explanations: the Theory of the Four Humours and the Theory of Opposites; the miasma theory; the continuing influence of Hippocrates and Galen.',
@@ -1323,6 +1327,8 @@ export const unitData = {
     },
     {
       id: 'lesson_1_3',
+      banner: '/images/medieval_barber_surgeon.jpg',
+      banner_position: 'center 80%',
       title:
         'KT1.3: Approaches to Prevention & Treatment: Rituals, Bleeding & Purging (c1250–c1500)',
       specification_anchor:
@@ -1716,6 +1722,8 @@ export const unitData = {
     },
     {
       id: 'lesson_1_4',
+      banner: '/images/hotel_dieu_hospital.jpg',
+      banner_position: 'center 40%',
       title: 'KT1.4: Medical Care Providers & Monastic Hospitals: ‘Care Not Cure’ (c1250–c1500)',
       specification_anchor:
         'The roles of the physician, apothecary and barber surgeon; care in the home; the role of medieval hospitals.',
@@ -2107,6 +2115,8 @@ export const unitData = {
     },
     {
       id: 'lesson_1_5',
+      banner: '/images/plague_toggenburg_wide.jpg',
+      banner_position: 'center 50%',
       title: 'KT1.5: Case Study: Dealing with the Black Death (1348–1349)',
       specification_anchor:
         'Case study: dealing with the Black Death, 1348–49; approaches to treatment and attempts to prevent its spread.',
@@ -2505,6 +2515,8 @@ export const unitData = {
     },
     {
       id: 'lesson_2_1',
+      banner: '/images/printing_press.jpg',
+      banner_position: 'center',
       title:
         'KT2.1: The New Spirit of Enquiry: Humanism, The Printing Press & The Royal Society (c1500–c1700)',
       specification_anchor:
@@ -3147,6 +3159,8 @@ export const unitData = {
     },
     {
       id: 'lesson_2_2',
+      banner: '/images/renaissance_apothecary_shop.jpg',
+      banner_position: 'center 25%',
       title: 'KT2.2: Thomas Sydenham & The Art of Bedside Observation (1676)',
       specification_anchor:
         'Continuity and change in care and treatment: Thomas Sydenham and the observation of symptoms.',
@@ -3761,6 +3775,8 @@ export const unitData = {
     },
     {
       id: 'lesson_2_3',
+      banner: '/images/vesalius_dissection_hero.jpg',
+      banner_position: 'center 20%',
       title: 'KT2.3: Andreas Vesalius & The Anatomical Revolution (1543)',
       specification_anchor:
         'Andreas Vesalius and his work on anatomy; the impact of De Humani Corporis Fabrica (1543).',
@@ -3946,6 +3962,7 @@ export const unitData = {
           source: {
             id: 'source_a_vesalius_frontispiece',
             letter: 'A',
+            default_zoom: '2x',
             title: 'Source A: Frontispiece of De Humani Corporis Fabrica (1543)',
             src: '/images/vesalius_fabrica_frontispiece.jpg',
             source: '/images/vesalius_fabrica_frontispiece.jpg',
@@ -4382,6 +4399,8 @@ export const unitData = {
     },
     {
       id: 'lesson_2_4',
+      banner: '/images/harvey_veins.jpg',
+      banner_position: 'center',
       title: 'KT2.4: William Harvey & The Circulation of the Blood (1628)',
       specification_anchor:
         'William Harvey and his work on the circulation of the blood; the impact of De Motu Cordis (1628).',
@@ -4929,6 +4948,8 @@ export const unitData = {
     },
     {
       id: 'lesson_2_5',
+      banner: '/images/great_plague_broadsheet_1665.jpg',
+      banner_position: 'center 20%',
       title: 'KT2.5: Continuity in Treatment & The Great Plague of London (1665)',
       specification_anchor:
         'Dealing with the Great Plague in London, 1665: approaches to treatment and attempts to prevent its spread.',
@@ -4998,9 +5019,9 @@ export const unitData = {
           phases: [
             {
               time: '00–10m',
-              label: 'Inspect Source B (Mass Plague Pit)',
+              label: 'Inspect Source B (Plague Doctor & Beak Mask)',
               instruction:
-                'Examine Source B (plague burial pit). Analyze the failure of medical treatments.',
+                'Examine Source B (Plague Doctor). Analyze the persistence of miasma theory and failure of medical treatments.',
             },
             {
               time: '10–25m',
@@ -5056,9 +5077,9 @@ export const unitData = {
         ],
         source_context: {
           'Source A':
-            'A famous 17th-century copperplate engraving of a Plague Doctor (Doctor Schnabel von Rom, 1656/1665) wearing an oiled leather coat, spectacles, and a bird-like beak mask filled with sweet-smelling herbs. **Hinge Question:** What does the beak mask filled with dried flowers and camphor prove about the enduring dominance of the miasma theory in 1665?',
-          'Source B':
             'A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount. **Hinge Question:** Why did municipal authorities order burials to take place exclusively at night, and what does this show about the government’s fear of public panic?',
+          'Source B':
+            'A famous 17th-century copperplate engraving of a Plague Doctor (Doctor Schnabel von Rom, 1656/1665) wearing an oiled leather coat, spectacles, and a bird-like beak mask filled with sweet-smelling herbs. **Hinge Question:** What does the beak mask filled with dried flowers and camphor prove about the enduring dominance of the miasma theory in 1665?',
         },
       },
       do_now: [
@@ -5115,9 +5136,9 @@ export const unitData = {
         {
           title: 'Act 2: Escalation & Conflict (Municipal Quarantine Orders: The Change)',
           source: {
-            id: 'source_b_plague_burial',
-            letter: 'B',
-            title: 'Source B: Night Burial in a Mass Plague Pit (1665)',
+            id: 'source_a_plague_burial',
+            letter: 'A',
+            title: 'Source A: Night Burial in a Mass Plague Pit (1665)',
             src: '/images/plague_burial.jpg',
             source: '/images/plague_burial.jpg',
             image: '/images/plague_burial.jpg',
@@ -5133,18 +5154,18 @@ export const unitData = {
             context:
               'A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount.',
             question:
-              'Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?',
+              'Study Source A. How does this scene of dead-carts dumping bodies into a mass pit at night illustrate both the terrifying scale of the 1665 Great Plague and the municipal government’s desperate containment measures?',
             hinge_question:
-              'Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?',
+              'Study Source A. How does this scene of dead-carts dumping bodies into a mass pit at night illustrate both the terrifying scale of the 1665 Great Plague and the municipal government’s desperate containment measures?',
           },
-          text: '<span class="para-ref">[2.1]</span> Compared to the disorganized, panicked response to the Black Death in 1348, the response of London’s local government in 1665 demonstrated a major advancement in civic public health administration. The Lord Mayor and Court of Aldermen issued strict "Plague Orders". Parishes appointed two female "Searchers of the Dead" to inspect corpses and verify the cause of death. Parishes also published weekly <em>Bills of Mortality</em>, detailing deaths parish by parish to monitor the epidemic’s spread—an early form of statistical epidemiology.<br><br><span class="para-ref">[2.2]</span> The most aggressive municipal policy was compulsory household quarantine. When plague struck a family, the entire house was boarded up and locked for 28 days. A red cross, twelve inches high, was painted on the door beneath the solemn plea: "Lord have mercy upon us". Two watchmen were assigned to every locked home—one by day and one by night—to bring food and prevent anyone from escaping. All public gatherings, theatrical performances, sports, and traditional funeral ceremonies were banned. Burials were permitted only between sunset and sunrise, with bodies tipped into vast mass lime pits (<span class="archival-meta-tag">Source B</span>).',
+          text: '<span class="para-ref">[2.1]</span> Compared to the disorganized, panicked response to the Black Death in 1348, the response of London’s local government in 1665 demonstrated a major advancement in civic public health administration. The Lord Mayor and Court of Aldermen issued strict "Plague Orders". Parishes appointed two female "Searchers of the Dead" to inspect corpses and verify the cause of death. Parishes also published weekly <em>Bills of Mortality</em>, detailing deaths parish by parish to monitor the epidemic’s spread—an early form of statistical epidemiology.<br><br><span class="para-ref">[2.2]</span> The most aggressive municipal policy was compulsory household quarantine. When plague struck a family, the entire house was boarded up and locked for 28 days. A red cross, twelve inches high, was painted on the door beneath the solemn plea: "Lord have mercy upon us". Two watchmen were assigned to every locked home—one by day and one by night—to bring food and prevent anyone from escaping. All public gatherings, theatrical performances, sports, and traditional funeral ceremonies were banned. Burials were permitted only between sunset and sunrise, with bodies tipped into vast mass lime pits (<span class="archival-meta-tag">Source A</span>).',
         },
         {
           title: 'Act 3: Forensic Evidence (Medical Ignorance & Superstitious Continuity)',
           source: {
-            id: 'source_a_plague_doctor',
-            letter: 'A',
-            title: 'Source A: 17th-Century Plague Doctor (Schnabel von Rom)',
+            id: 'source_b_plague_doctor',
+            letter: 'B',
+            title: 'Source B: 17th-Century Plague Doctor (Schnabel von Rom)',
             src: '/images/plague_doctor_1665.png',
             source: '/images/plague_doctor_1665.png',
             image: '/images/plague_doctor_1665.png',
@@ -5152,9 +5173,9 @@ export const unitData = {
               'A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.',
             desc: 'Iconic primary engraving of an early modern plague doctor in full protective attire.',
             question:
-              "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+              "Study Source B. Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
             hinge_question:
-              "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+              "Study Source B. Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
             source_context:
               "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
             context:
@@ -5164,7 +5185,7 @@ export const unitData = {
             citation:
               'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
           },
-          text: '<span class="para-ref">[3.1]</span> While municipal administration progressed, medical understanding in 1665 showed almost complete continuity with the medieval Black Death. Because the bacterium <em>Yersinia pestis</em> was unknown, physicians and magistrates remained completely ignorant of the true vector: rat fleas. Believing that domestic animals carried the poisonous contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals: over 40,000 dogs and an estimated 200,000 cats were slaughtered. This tragic error wiped out the natural predators of the black rat, allowing flea-carrying rodents to multiply unchecked throughout London’s timbered tenements.<br><br><span class="para-ref">[3.2]</span> Furthermore, the miasma theory remained the dominant medical explanation. Doctors wore protective leather suits and grotesque bird-like beak masks (<span class="archival-meta-tag">Source A</span>) packed with dried roses, cloves, and camphor to filter out "pestilential air". Citizens carried sweet-smelling pomanders, held sponges soaked in vinegar to their noses, and burned barrels of pitch in the streets. Schoolboys at Eton were forced to smoke tobacco every morning to ward off contagion. Quack doctors made fortunes selling useless "Plague Water", while folk healers strapped plucked, living chickens or dried toads to swollen buboes to "draw out the poison".',
+          text: '<span class="para-ref">[3.1]</span> While municipal administration progressed, medical understanding in 1665 showed almost complete continuity with the medieval Black Death. Because the bacterium <em>Yersinia pestis</em> was unknown, physicians and magistrates remained completely ignorant of the true vector: rat fleas. Believing that domestic animals carried the poisonous contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals: over 40,000 dogs and an estimated 200,000 cats were slaughtered. This tragic error wiped out the natural predators of the black rat, allowing flea-carrying rodents to multiply unchecked throughout London’s timbered tenements.<br><br><span class="para-ref">[3.2]</span> Furthermore, the miasma theory remained the dominant medical explanation. Doctors wore protective leather suits and grotesque bird-like beak masks (<span class="archival-meta-tag">Source B</span>) packed with dried roses, cloves, and camphor to filter out "pestilential air". Citizens carried sweet-smelling pomanders, held sponges soaked in vinegar to their noses, and burned barrels of pitch in the streets. Schoolboys at Eton were forced to smoke tobacco every morning to ward off contagion. Quack doctors made fortunes selling useless "Plague Water", while folk healers strapped plucked, living chickens or dried toads to swollen buboes to "draw out the poison".',
         },
         {
           title: 'Act 4: The Historical Verdict & 1348 vs 1665 Historiographical Debate',
@@ -5403,20 +5424,7 @@ export const unitData = {
       ],
       sources: [
         {
-          title: 'Source A: 17th-Century Plague Doctor (Schnabel von Rom)',
-          src: '/images/plague_doctor_1665.png',
-          source: '/images/plague_doctor_1665.png',
-          caption:
-            'A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.',
-          desc: 'Iconic primary engraving of an early modern plague doctor in full protective attire.',
-          provenance:
-            'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
-          hinge_question:
-            "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
-          letter: 'A',
-        },
-        {
-          title: 'Source B: Night Burial in a Mass Plague Pit (1665)',
+          title: 'Source A: Night Burial in a Mass Plague Pit (1665)',
           src: '/images/plague_burial.jpg',
           source: '/images/plague_burial.jpg',
           caption:
@@ -5425,7 +5433,20 @@ export const unitData = {
           provenance:
             'Woodcut broadsheet depicting burial carts at the Holywell Mount pest pit, London, 1665. Museum of London (Accession No. NN2598).',
           hinge_question:
-            'Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?',
+            'Study Source A. How does this scene of dead-carts dumping bodies into a mass pit at night illustrate both the terrifying scale of the 1665 Great Plague and the municipal government’s desperate containment measures?',
+          letter: 'A',
+        },
+        {
+          title: 'Source B: 17th-Century Plague Doctor (Schnabel von Rom)',
+          src: '/images/plague_doctor_1665.png',
+          source: '/images/plague_doctor_1665.png',
+          caption:
+            'A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.',
+          desc: 'Iconic primary engraving of an early modern plague doctor in full protective attire.',
+          provenance:
+            'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
+          hinge_question:
+            "Study Source B. Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
           letter: 'B',
         },
       ],

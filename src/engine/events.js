@@ -282,9 +282,13 @@ export function initEventDelegation() {
           parentCursor === 'zoom-in'
         ) {
           const imgSrc = zoomImg.dataset.src || zoomImg.getAttribute('src') || zoomImg.src;
+          const defaultZoom =
+            zoomImg.dataset.defaultZoom ||
+            zoomImg.getAttribute('data-default-zoom') ||
+            zoomImg.closest('[data-default-zoom]')?.getAttribute('data-default-zoom');
           if (imgSrc && window.openModal) {
             e.preventDefault();
-            window.openModal(imgSrc);
+            window.openModal(imgSrc, { defaultZoom });
             return;
           }
         }
@@ -314,8 +318,15 @@ export function initEventDelegation() {
             target.querySelector('img')?.getAttribute('src') ||
             target.querySelector('img')?.src;
 
+          const defaultZoom =
+            target.dataset.defaultZoom ||
+            target.getAttribute('data-default-zoom') ||
+            target.closest('[data-default-zoom]')?.getAttribute('data-default-zoom') ||
+            e.target.dataset?.defaultZoom ||
+            e.target.getAttribute?.('data-default-zoom');
+
           if (imgSrc) {
-            window.openModal(imgSrc);
+            window.openModal(imgSrc, { defaultZoom });
           }
         }
         break;

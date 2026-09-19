@@ -1906,7 +1906,7 @@ window.closeQuizModal = function () {
   } catch (e) {}
 };
 
-window.openModal = function (src) {
+window.openModal = function (src, options = {}) {
   if (
     !src ||
     typeof src !== 'string' ||
@@ -2092,7 +2092,19 @@ window.openModal = function (src) {
   img.style.webkitUserSelect = 'none';
   img.style.cursor = 'zoom-in';
 
-  let scale = 1;
+  const defaultZoomOpt =
+    typeof options === 'object' && options !== null ? options.defaultZoom : options;
+  let baseScale = 1;
+  if (defaultZoomOpt === 2 || defaultZoomOpt === '2' || defaultZoomOpt === '2x') {
+    baseScale = 2;
+  } else if (
+    typeof src === 'string' &&
+    (src.includes('vesalius_fabrica_frontispiece') || src.includes('vesalius_fabrica_1543'))
+  ) {
+    baseScale = 2;
+  }
+
+  let scale = baseScale;
   let posX = 0;
   let posY = 0;
   let isDragging = false;
@@ -2113,6 +2125,10 @@ window.openModal = function (src) {
     }
     zoomLabel.innerText = `${Math.round(scale * 100)}%`;
   };
+
+  if (scale > 1) {
+    updateTransform();
+  }
 
   zoomInBtn.onclick = (e) => {
     e.stopPropagation();
