@@ -1579,10 +1579,16 @@ export function renderLesson(lesson) {
             `
             }
             ${
-              source.question
+              source.question || source.hinge_question
                 ? `
-              <div style="background: #eff6ff; border-left: 4px solid #1e40af; padding: 16px 20px; border-radius: 0 6px 6px 0; text-align: left; margin-top: 18px; box-shadow: 0 2px 5px rgba(30,58,138,0.05);">
-                <p style="margin-bottom: 0; font-size: 1.05rem; color: #1e3a8a; line-height: 1.5;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question, !source.qNum)}</strong></p>
+              <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 14px 18px; border-radius: 4px; text-align: left; margin-top: 14px; box-shadow: 0 2px 5px rgba(30,58,138,0.06);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;">BOARD INQUIRY &bull; WHOLE-CLASS DISCUSSION</span>
+                  <span style="font-size: 0.72rem; color: #64748b; font-style: italic;">Look at the source above:</span>
+                </div>
+                <p style="margin-bottom: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
+                  <strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question || source.hinge_question, !source.qNum)}</strong>
+                </p>
               </div>
             `
                 : ''
@@ -3194,6 +3200,21 @@ export function renderLesson(lesson) {
               <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
                 ${sourceHeaderHtml}
                 ${sourceBodyHtml}
+                ${
+                  rawSource.question || rawSource.hinge_question
+                    ? `
+                  <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;">BOARD INQUIRY &bull; WHOLE-CLASS DISCUSSION</span>
+                      <span style="font-size: 0.72rem; color: #64748b; font-style: italic;">Look at the source above:</span>
+                    </div>
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
+                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.question || rawSource.hinge_question) : rawSource.question || rawSource.hinge_question}
+                    </div>
+                  </div>
+                `
+                    : ''
+                }
               </div>
              `;
       }

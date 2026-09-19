@@ -204,7 +204,11 @@ const lesson_2_1 = {
         source: '/images/philosophical_transactions_vol1.jpg',
         image: '/images/philosophical_transactions_vol1.jpg',
         question:
-          'How does this publication demonstrate the shift toward peer-reviewed, collaborative scientific communication?',
+          "Look at Source B above: Notice that this journal was printed for John Martyn, 'Printer to the Royal Society'. How does the creation of Europe's first peer-reviewed scientific journal embody the Royal Society's radical motto Nullius in Verba ('Take nobody's word for it'), and why was publishing verified laboratory methods in print essential for transforming alchemy into modern scientific medicine?",
+        source_context:
+          'In 1665, Henry Oldenburg founded Philosophical Transactions to establish an international scientific communications network. For the first time, scholars did not keep experiments secret; methods and results were published for European natural philosophers to replicate, critique, and verify.',
+        citation:
+          'Frontispiece of Philosophical Transactions, Giving Some Accompt of the Present Undertakings, Studies, and Labours of the Ingenious, Vol. I, London: Royal Society, 1665–1666.',
       },
       text: '<span class="para-ref">[3.1]</span> The empirical mandate of the Royal Society was powerfully demonstrated through groundbreaking optical innovations. In 1665, Robert Hooke published <em>Micrographia</em>, an extraordinary volume illustrated with magnificent fold-out engravings of insects, feathers, and plants observed through compound microscopes. Hooke’s famous rendering of an ordinary flea (<span class="archival-meta-tag">Source C</span>), magnified to terrifying monstrous proportions, astonished the public and proved that nature contained an invisible, intricate microscopic architecture invisible to the naked human eye. While inspecting thin slices of cork, Hooke observed small box-like compartments and coined the term "cells".<br><br><span class="para-ref">[3.2]</span> A decade later, in 1676, a Dutch draper and amateur microscope-maker named Antonie van Leeuwenhoek submitted letters to the Royal Society describing tiny living creatures he had discovered swimming in pond water and dental scrapings. Using single-lens microscopes with exquisite optical magnification, Leeuwenhoek documented "animalcules"—the first recorded observation of bacteria and protozoa in human history. The Royal Society confirmed his startling findings, publishing his letters in <em>Philosophical Transactions</em> to an astonished continent.',
     },
@@ -618,7 +622,11 @@ const lesson_2_2 = {
         source: '/images/thomas_sydenham.jpg',
         image: '/images/thomas_sydenham.jpg',
         question:
-          'What does Sydenham’s sober, plain dress reveal about his clinical philosophy compared to theatrical university professors?',
+          "Look at Source A above: Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
+        source_context:
+          "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
+        citation:
+          'Oil portrait of Dr Thomas Sydenham by Mary Beale, c.1688, National Portrait Gallery, London (NPG 211).',
       },
       text: '<span class="para-ref">[3.1]</span> Sydenham’s empirical focus led him to champion innovative, common-sense treatments. For smallpox, traditional physicians sealed sickrooms, lit roaring fires, and covered shivering patients in heavy woolen blankets to "sweat out the venom". Sydenham recognized that this suffocating heat worsened the fever and killed patients. Instead, he pioneered a revolutionary "cooling regime": opening windows to circulate fresh air, removing heavy blankets, and prescribing cool fluids and mild cordials. Survival rates among his smallpox patients improved dramatically.<br><br><span class="para-ref">[3.2]</span> Sydenham also enthusiastically embraced new botanical remedies brought from the Americas. He popularized the use of Cinchona bark (Peruvian bark, containing quinine) to treat ague (malaria), showing that specific medicines could target specific diseases rather than just purging the whole body. He also developed liquid laudanum (opium dissolved in alcohol), providing the first reliable and easily dosed painkiller for chronic sufferers.',
     },
@@ -1028,7 +1036,11 @@ const lesson_2_3 = {
         source: '/images/vesalius_muscle_men.jpg',
         image: '/images/vesalius_muscle_men.jpg',
         question:
-          'How do the detailed woodcut muscles in this plate reflect the combination of Renaissance art and scientific dissection?',
+          "Look at Source B above: Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
+        source_context:
+          "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
+        citation:
+          'Woodcut plate of the third muscle man from Book II of De Humani Corporis Fabrica, Basel: Johannes Oporinus, 1543.',
       },
       text: '<span class="para-ref">[3.1]</span> In 1543, at the age of twenty-eight, Vesalius published his monumental masterwork: <em>De Humani Corporis Fabrica</em> ("On the Fabric of the Human Body"). Printed in Basel by Johannes Oporinus, this massive 700-page folio represented a pinnacle of Renaissance printing technology and artistic brilliance. Vesalius collaborated with master artists from the Venetian workshop of Titian (including Jan van Calcar) to produce over 200 breathtakingly accurate woodcut illustrations (<span class="archival-meta-tag">Source B</span>). For the first time in medical history, students across Europe could examine identical, mathematically precise visual representations of human bones, muscles, veins, and internal organs.<br><br><span class="para-ref">[3.2]</span> To ensure his findings reached beyond elite Latin scholars, Vesalius also published an abridged, cheaper summary handbook called the <em>Epitome</em>, designed specifically for practicing surgeons and medical apprentices. Illustrated editions and pirated copies quickly circulated across Germany, France, and England, standardizing anatomical education throughout the continent and permanently establishing human dissection as an essential requirement in university medical training.',
     },
@@ -1422,7 +1434,11 @@ const lesson_2_4 = {
         source: '/images/harvey_veins.jpg',
         image: '/images/harvey_veins.jpg',
         question:
-          'How did pressing a finger along a vein toward the hand prove that blood only travels toward the heart?',
+          "Look at Source A above: Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
+        source_context:
+          "In 1628, William Harvey published De Motu Cordis ('On the Motion of the Heart and Blood in Animals'). Using tight ligatures on human arms, Harvey demonstrated that internal vein valves only permit blood to travel in a single direction: towards the heart.",
+        citation:
+          'Engraved plate demonstrating vein valves from Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus, Frankfurt: William Fitzer, 1628.',
       },
       text: '<span class="para-ref">[3.1]</span> To prove that blood circulated in a single direction, Harvey devised a brilliant, elegant experiment using living human volunteers (<span class="archival-meta-tag">Source A</span>). He tied a tight ligature (tourniquet) around an arm until the arterial pulse in the wrist ceased and the hand grew pale and cold, proving that blood entered the arm through deep arteries. When he loosened the bandage slightly into a medium tightness, the arteries remained open, but the superficial surface veins were compressed. The veins swelled dramatically, and tiny nodules appeared along their length—the one-way valves discovered by Fabricius.<br><br><span class="para-ref">[3.2]</span> Harvey then used his finger to press and push blood down a vein away from the heart, between two valves. The vein remained completely empty and collapsed; blood refused to flow backwards. As soon as he released the lower finger, blood instantly rushed upwards toward the shoulder. This simple, repeatable physical demonstration proved conclusively that veins carry blood in only one direction: toward the heart. In 1628, Harvey published his complete findings in Frankfurt in his masterpiece, <em>Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus</em> ("On the Motion of the Heart and Blood in Animals").',
     },
@@ -1805,7 +1821,11 @@ const lesson_2_5 = {
         source: '/images/plague_doctor_1665.png',
         image: '/images/plague_doctor_1665.png',
         question:
-          'How does the herb-filled beak mask demonstrate the total continuity of the miasma theory in 1665?',
+          "Look at Source A above: Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+        source_context:
+          "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
+        citation:
+          'Copperplate engraving by Paul Fürst of Nuremberg, after a 1656 drawing by J. Columbina, Germanisches Nationalmuseum, Nuremberg.',
       },
       text: '<span class="para-ref">[3.1]</span> While municipal administration progressed, medical understanding in 1665 showed almost complete continuity with the medieval Black Death. Because the bacterium <em>Yersinia pestis</em> was unknown, physicians and magistrates remained completely ignorant of the true vector: rat fleas. Believing that domestic animals carried the poisonous contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals: over 40,000 dogs and an estimated 200,000 cats were slaughtered. This tragic error wiped out the natural predators of the black rat, allowing flea-carrying rodents to multiply unchecked throughout London’s timbered tenements.<br><br><span class="para-ref">[3.2]</span> Furthermore, the miasma theory remained the dominant medical explanation. Doctors wore protective leather suits and grotesque bird-like beak masks (<span class="archival-meta-tag">Source A</span>) packed with dried roses, cloves, and camphor to filter out "pestilential air". Citizens carried sweet-smelling pomanders, held sponges soaked in vinegar to their noses, and burned barrels of pitch in the streets. Schoolboys at Eton were forced to smoke tobacco every morning to ward off contagion. Quack doctors made fortunes selling useless "Plague Water", while folk healers strapped plucked, living chickens or dried toads to swollen buboes to "draw out the poison".',
     },
