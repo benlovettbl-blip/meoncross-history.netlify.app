@@ -20914,15 +20914,15 @@
               "source": {
                 "id": "source_a_church",
                 "letter": "A",
-                "title": "Source A: Medieval Church Interior with Altar & Doom Painting (14th c.)",
+                "title": "Source A: The Doom Painting of St Thomas’s Church, Salisbury (c.1475)",
                 "src": "/images/medieval_church_interior.jpg",
                 "source": "/images/medieval_church_interior.jpg",
                 "image": "/images/medieval_church_interior.jpg",
-                "caption": "A medieval parish church interior showing the elevated altar and the vivid Doom painting above the chancel arch depicting Heaven and Hell.",
-                "provenance": "St Thomas Church, Salisbury, 14th century Doom mural and altar.",
-                "context": "The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly and viewed illness, famine, and recovery as direct expressions of God’s divine intervention.",
-                "question": "Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?",
-                "hinge_question": "Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?"
+                "caption": "The monumental 15th-century Doom painting above the chancel arch depicting Christ in Majesty, the righteous ascending to Heaven (left), and the damned being dragged into the Hellmouth (right).",
+                "provenance": "St Thomas’s Church, Salisbury, c.1475 wall mural above the chancel arch.",
+                "context": "The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly beneath monumental Doom paintings, which reinforced the teaching that sin led directly to divine punishment, damnation, or catastrophic disease.",
+                "question": "Study Christ judging humanity and the damned being dragged into the Hellmouth on the right. How did medieval wall paintings like this reinforce the belief that sickness and epidemics were sent by God as punishments for sin?",
+                "hinge_question": "Study Christ judging humanity and the damned being dragged into the Hellmouth on the right. How did medieval wall paintings like this reinforce the belief that sickness and epidemics were sent by God as punishments for sin?"
               }
             },
             {
@@ -20977,14 +20977,14 @@
             {
               "id": "source_a_church",
               "letter": "A",
-              "title": "Source A: Medieval Church Interior with Altar & Doom Painting (14th c.)",
+              "title": "Source A: The Doom Painting of St Thomas’s Church, Salisbury (c.1475)",
               "src": "/images/medieval_church_interior.jpg",
               "source": "/images/medieval_church_interior.jpg",
               "image": "/images/medieval_church_interior.jpg",
-              "caption": "A medieval parish church interior showing the elevated altar and the vivid Doom painting above the chancel arch depicting Heaven and Hell.",
-              "provenance": "St Thomas Church, Salisbury, 14th century Doom mural and altar.",
-              "context": "The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly and viewed illness, famine, and recovery as direct expressions of God’s divine intervention.",
-              "hinge_question": "Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?"
+              "caption": "The monumental 15th-century Doom painting above the chancel arch depicting Christ in Majesty, the righteous ascending to Heaven (left), and the damned being dragged into the Hellmouth (right).",
+              "provenance": "St Thomas’s Church, Salisbury, c.1475 wall mural above the chancel arch.",
+              "context": "The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly beneath monumental Doom paintings, which reinforced the teaching that sin led directly to divine punishment, damnation, or catastrophic disease.",
+              "hinge_question": "Study Christ judging humanity and the damned being dragged into the Hellmouth on the right. How did medieval wall paintings like this reinforce the belief that sickness and epidemics were sent by God as punishments for sin?"
             },
             {
               "id": "source_b_zodiac",
