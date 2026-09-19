@@ -159,9 +159,21 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
 
   switchView(view, unit, true).then(() => {
-    if (view === 'lessons' && initialLesson !== null && !isNaN(parseInt(initialLesson, 10))) {
-      if (typeof window.renderLessonByIndex === 'function') {
-        window.renderLessonByIndex(parseInt(initialLesson, 10), true);
+    if (view === 'lessons' && initialLesson !== null) {
+      let targetIdx = !isNaN(parseInt(initialLesson, 10)) ? parseInt(initialLesson, 10) : -1;
+      const unitDataObj =
+        window.currentUnitData ||
+        (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
+      if (targetIdx === -1 && unitDataObj && Array.isArray(unitDataObj.lessons)) {
+        targetIdx = unitDataObj.lessons.findIndex(
+          (l) =>
+            l.id === initialLesson ||
+            (l.id && l.id.toLowerCase() === String(initialLesson).toLowerCase()) ||
+            (l.title && l.title.toLowerCase().includes(String(initialLesson).toLowerCase())),
+        );
+      }
+      if (targetIdx !== -1 && typeof window.renderLessonByIndex === 'function') {
+        window.renderLessonByIndex(targetIdx, true);
       }
     }
 

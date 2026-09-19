@@ -3022,11 +3022,11 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             <i class="fa-solid fa-file-lines"></i> Sheet Preview
           </button>
           <button id="coverTabTextBtn" style="background: transparent; color: #94a3b8; border: 1px solid transparent; font-weight: 600; font-size: 0.85rem; padding: 7px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
-            <i class="fa-solid fa-envelope"></i> Email / VLE Text
+            <i class="fa-solid fa-envelope"></i> Cover Email
           </button>
           <div style="width: 1px; height: 24px; background: #334155; margin: 0 4px;"></div>
           <button id="coverCopyVleBtn" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(5,150,105,0.3); transition: all 0.2s ease;">
-            <i class="fa-solid fa-copy"></i> Copy Email / VLE Text
+            <i class="fa-solid fa-copy"></i> Copy Cover Email
           </button>
           <button id="coverPrintTriggerBtn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(37,99,235,0.35); transition: all 0.2s ease;">
             <i class="fa-solid fa-print"></i> Print / Save PDF
@@ -3041,8 +3041,22 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       <div style="flex: 1; display: flex; overflow: hidden; background: #0b1329;">
         
         <!-- Left Sidebar: Controls -->
-        <div style="width: 360px; min-width: 320px; background: #111c35; border-right: 1px solid #1e293b; padding: 18px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;">
+        <div style="width: 380px; min-width: 340px; background: #111c35; border-right: 1px solid #1e293b; padding: 18px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;">
           
+          <!-- Duty Cover Setting -->
+          <div style="background: rgba(225, 29, 72, 0.08); border: 1px solid rgba(225, 29, 72, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <label style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #fb7185; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-shield-halved"></i> Duty Cover (AM / PM)
+              </span>
+              <label style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.74rem; color: #cbd5e1; cursor: pointer; font-weight: 600;">
+                <input type="checkbox" id="coverDutyCheckbox" checked style="width: 14px; height: 14px; accent-color: #e11d48; cursor: pointer;">
+                Include
+              </label>
+            </label>
+            <input type="text" id="coverDutyInput" value="Warrior 2 AM/PM if there's a duty to be covered." placeholder="e.g. Warrior 2 AM/PM if there's a duty to be covered." style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 6px 10px; font-size: 0.8rem; outline: none; font-weight: 500;">
+          </div>
+
           <!-- Unit Selector -->
           <div>
             <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
@@ -3079,18 +3093,57 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
           <!-- Lesson Pickers -->
           <div id="coverLessonSelectorsContainer" style="display: flex; flex-direction: column; gap: 12px;">
             <div>
-              <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-                <span id="coverLesson1Label">Period 1 Lesson:</span>
-              </label>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <label style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">
+                    Period:
+                  </label>
+                  <select id="coverPeriod1Num" style="background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; outline: none; cursor: pointer;">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">Class:</span>
+                  <input type="text" id="coverClass1Input" value="Year 11" placeholder="e.g. Year 11" style="width: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #38bdf8; font-weight: 700; font-size: 0.78rem; padding: 3px 6px; outline: none;">
+                </div>
+              </div>
               <select id="coverLesson1Select" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.84rem; outline: none; cursor: pointer;"></select>
             </div>
 
             <div id="coverLesson2Wrapper">
-              <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-                Period 2 Lesson:
-              </label>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <label style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">
+                    Period:
+                  </label>
+                  <select id="coverPeriod2Num" style="background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; outline: none; cursor: pointer;">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">Class:</span>
+                  <input type="text" id="coverClass2Input" value="Year 11" placeholder="e.g. Year 11" style="width: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #38bdf8; font-weight: 700; font-size: 0.78rem; padding: 3px 6px; outline: none;">
+                </div>
+              </div>
               <select id="coverLesson2Select" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.84rem; outline: none; cursor: pointer;"></select>
             </div>
+
+            <!-- Extra Periods Dynamic List -->
+            <div id="coverExtraPeriodsList" style="display: flex; flex-direction: column; gap: 10px;"></div>
+
+            <button id="coverAddPeriodBtn" type="button" style="background: rgba(56, 189, 248, 0.1); border: 1px dashed #38bdf8; color: #38bdf8; padding: 7px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s;">
+              <i class="fa-solid fa-plus"></i> Add Another Period to Cover
+            </button>
           </div>
 
           <!-- Resource Setting Mode -->
@@ -3184,13 +3237,13 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <span style="font-size: 0.85rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">
-                  Formatted for Outlook, Gmail, or Google Classroom:
+                  Ready to send to Paul &amp; Helen:
                 </span>
                 <button id="coverCopyTextInnerBtn" style="background: #059669; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                  <i class="fa-solid fa-copy"></i> Copy Text
+                  <i class="fa-solid fa-copy"></i> Copy Email
                 </button>
               </div>
-              <textarea id="coverPlainTextArea" readonly style="width: 100%; height: 70vh; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f1f5f9; padding: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.82rem; line-height: 1.5; resize: none;"></textarea>
+              <textarea id="coverPlainTextArea" readonly style="width: 100%; height: 70vh; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f1f5f9; padding: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.86rem; line-height: 1.6; resize: none;"></textarea>
             </div>
           </div>
 
@@ -3227,6 +3280,140 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const printBtn = overlay.querySelector('#coverPrintTriggerBtn');
   const closeBtn = overlay.querySelector('#coverCloseBtn');
   const modalContent = overlay.querySelector('.modal-content');
+  const dutyCheckbox = overlay.querySelector('#coverDutyCheckbox');
+  const dutyInput = overlay.querySelector('#coverDutyInput');
+  const period1NumSelect = overlay.querySelector('#coverPeriod1Num');
+  const class1Input = overlay.querySelector('#coverClass1Input');
+  const period2NumSelect = overlay.querySelector('#coverPeriod2Num');
+  const class2Input = overlay.querySelector('#coverClass2Input');
+  const extraPeriodsList = overlay.querySelector('#coverExtraPeriodsList');
+  const addPeriodBtn = overlay.querySelector('#coverAddPeriodBtn');
+
+  let extraPeriods = [];
+
+  const updateDefaultClassNames = () => {
+    const meta = availableUnits.find((u) => u.id === currentUnitId);
+    const yr = (meta && meta.year) || 'Year 11';
+    if (class1Input && (!class1Input.value || class1Input.value.startsWith('Year'))) {
+      class1Input.value = yr;
+    }
+    if (class2Input && (!class2Input.value || class2Input.value.startsWith('Year'))) {
+      class2Input.value = yr;
+    }
+  };
+
+  const renderExtraPeriodsUI = () => {
+    if (!extraPeriodsList) return;
+    extraPeriodsList.innerHTML = '';
+    extraPeriods.forEach((ep, epIndex) => {
+      const epUData = getUnitData(ep.unitId);
+      const epLessons = epUData.lessons || [];
+
+      const row = document.createElement('div');
+      row.style.cssText =
+        'background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px; position: relative;';
+
+      row.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #94a3b8;">
+              Period:
+            </label>
+            <select class="ep-period-num" style="background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; outline: none; cursor: pointer;">
+              ${[1, 2, 3, 4, 5, 6].map((n) => `<option value="${n}" ${n === ep.periodNum ? 'selected' : ''}>${n}</option>`).join('')}
+            </select>
+          </div>
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">Class:</span>
+            <input type="text" class="ep-class-input" value="${ep.className || 'Year 9'}" placeholder="e.g. Year 9" style="width: 85px; background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #38bdf8; font-weight: 700; font-size: 0.78rem; padding: 2px 6px; outline: none;">
+            <button type="button" class="ep-remove-btn" style="background: transparent; border: none; color: #ef4444; cursor: pointer; padding: 2px 5px; font-size: 0.85rem;" title="Remove Period">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+        <div>
+          <select class="ep-unit-select" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; padding: 6px 8px; font-size: 0.8rem; outline: none; cursor: pointer; margin-bottom: 6px;">
+            ${unitGroups
+              .map(
+                (g) => `
+              <optgroup label="${g.label}">
+                ${g.units.map((u) => `<option value="${u.id}" ${u.id === ep.unitId ? 'selected' : ''}>${u.name}</option>`).join('')}
+              </optgroup>
+            `,
+              )
+              .join('')}
+          </select>
+          <select class="ep-lesson-select" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; padding: 6px 8px; font-size: 0.8rem; outline: none; cursor: pointer;">
+            ${
+              epLessons.length === 0
+                ? '<option value="0">Lesson 1</option>'
+                : epLessons
+                    .map(
+                      (l, idx) =>
+                        `<option value="${idx}" ${idx === ep.lessonIdx ? 'selected' : ''}>${idx + 1}. ${l.title || 'Lesson ' + (idx + 1)}</option>`,
+                    )
+                    .join('')
+            }
+          </select>
+        </div>
+      `;
+
+      const pNumSel = row.querySelector('.ep-period-num');
+      const cInp = row.querySelector('.ep-class-input');
+      const uSel = row.querySelector('.ep-unit-select');
+      const lSel = row.querySelector('.ep-lesson-select');
+      const remBtn = row.querySelector('.ep-remove-btn');
+
+      pNumSel.onchange = () => {
+        ep.periodNum = parseInt(pNumSel.value, 10);
+        updateCover();
+      };
+      cInp.oninput = () => {
+        ep.className = cInp.value;
+        updateCover();
+      };
+      uSel.onchange = () => {
+        ep.unitId = uSel.value;
+        ep.lessonIdx = 0;
+        const uMeta = availableUnits.find((u) => u.id === ep.unitId);
+        if (uMeta && uMeta.year) {
+          ep.className = uMeta.year;
+          cInp.value = uMeta.year;
+        }
+        renderExtraPeriodsUI();
+        updateCover();
+      };
+      lSel.onchange = () => {
+        ep.lessonIdx = parseInt(lSel.value, 10) || 0;
+        updateCover();
+      };
+      remBtn.onclick = () => {
+        extraPeriods.splice(epIndex, 1);
+        renderExtraPeriodsUI();
+        updateCover();
+      };
+
+      extraPeriodsList.appendChild(row);
+    });
+  };
+
+  if (addPeriodBtn) {
+    addPeriodBtn.onclick = () => {
+      const baseCount = periodType === 'double' ? 2 : 1;
+      const nextP = Math.min(6, baseCount + extraPeriods.length + 1);
+      const defaultUnit = currentUnitId;
+      const uMeta = availableUnits.find((u) => u.id === defaultUnit) || { year: 'Year 9' };
+      extraPeriods.push({
+        id: Date.now(),
+        periodNum: nextP,
+        className: uMeta.year || 'Year 9',
+        unitId: defaultUnit,
+        lessonIdx: 0,
+      });
+      renderExtraPeriodsUI();
+      updateCover();
+    };
+  }
 
   // Populate lessons for current unit
   const populateLessons = () => {
@@ -3345,8 +3532,8 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     const l1 = lessons[lesson1Idx] || { id: 'lesson_1', title: 'Lesson 1' };
     const l2 = lessons[lesson2Idx] || { id: 'lesson_2', title: 'Lesson 2' };
 
-    const l1Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l1.id || 'lesson_' + (lesson1Idx + 1)}`;
-    const l2Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l2.id || 'lesson_' + (lesson2Idx + 1)}`;
+    const l1Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${lesson1Idx}`;
+    const l2Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${lesson2Idx}`;
 
     const l1Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l1Url)}`;
     const l2Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l2Url)}`;
@@ -3356,17 +3543,38 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     const collectNotice = getCollectionNotice();
 
     // Helper to render streamlined 3-step period
-    const renderPeriodHtml = (periodNum, lessonObj, pRefs, lessonUrl, qrUrl) => `
+    const renderPeriodHtml = (
+      periodNum,
+      lessonObj,
+      pRefs,
+      lessonUrl,
+      qrUrl,
+      className,
+      customUnitMeta,
+      customUData,
+    ) => {
+      const uMeta = customUnitMeta || unitMeta;
+      const uTitle = (customUData && customUData.title) || uData.title || uMeta.name;
+      const clsName = className || uMeta.year || 'Class';
+      const dutyNotice =
+        dutyCheckbox && dutyCheckbox.checked && dutyInput && dutyInput.value.trim()
+          ? dutyInput.value.trim()
+          : '';
+
+      return `
       <div style="border-bottom: 2px solid #881337; padding-bottom: 6px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: center;">
         <div style="flex: 1;">
-          <span style="display: inline-block; background: #881337; color: white; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding: 2.5px 8px; border-radius: 4px; margin-bottom: 2px;">
-            The History Revision Hub • ${unitMeta.spec} (${unitMeta.year})
-          </span>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
+            <span style="display: inline-block; background: #881337; color: white; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding: 2.5px 8px; border-radius: 4px;">
+              The History Revision Hub • ${uMeta.spec || 'GCSE'} (${clsName})
+            </span>
+            ${dutyNotice && String(periodNum) === '1' ? `<span style="display: inline-block; background: #fff1f2; color: #be123c; font-size: 7pt; font-weight: 700; border: 1px solid #fecdd3; padding: 2px 7px; border-radius: 4px;">🛡️ Duty: ${dutyNotice}</span>` : ''}
+          </div>
           <h1 style="font-size: 13.5pt; margin: 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
-            ${uData.title || unitMeta.name}
+            ${uTitle}
           </h1>
           <div style="font-size: 9.2pt; color: #475569; font-weight: 700; margin-bottom: 3px;">
-            Period ${periodNum} Cover Enquiry: ${lessonObj.title}
+            Period ${periodNum} (${clsName}) Cover Enquiry: ${lessonObj.title}
           </div>
           <div style="font-size: 7.8pt; color: #881337; background: #fff1f2; padding: 3px 8px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
             🌐 <strong>Interactive App:</strong> <a href="${lessonUrl}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${lessonUrl}</a>
@@ -3474,52 +3682,84 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         <span>${collectNotice.footer}</span>
       </div>
     `;
+    };
 
-    let sheetHtml = renderPeriodHtml(1, l1, p1Refs, l1Url, l1Qr);
+    const p1Num = period1NumSelect ? period1NumSelect.value : '1';
+    const c1Name =
+      class1Input && class1Input.value.trim()
+        ? class1Input.value.trim()
+        : unitMeta.year || 'Year 11';
+    let sheetHtml = renderPeriodHtml(p1Num, l1, p1Refs, l1Url, l1Qr, c1Name, unitMeta, uData);
 
     if (periodType === 'double') {
+      const p2Num = period2NumSelect ? period2NumSelect.value : '2';
+      const c2Name =
+        class2Input && class2Input.value.trim()
+          ? class2Input.value.trim()
+          : unitMeta.year || 'Year 11';
       sheetHtml += `
         <!-- ==================== PERIOD 2 (PAGE BREAK) ==================== -->
         <div style="page-break-before: always; break-before: page; margin-top: 15mm;"></div>
-        ${renderPeriodHtml(2, l2, p2Refs, l2Url, l2Qr)}
+        ${renderPeriodHtml(p2Num, l2, p2Refs, l2Url, l2Qr, c2Name, unitMeta, uData)}
       `;
     }
 
+    extraPeriods.forEach((ep) => {
+      const epUData = getUnitData(ep.unitId);
+      const epUnitMeta = availableUnits.find((u) => u.id === ep.unitId) || {
+        name: epUData.title || ep.unitId,
+        year: ep.className,
+        spec: 'History',
+      };
+      const epLessons = epUData.lessons || [];
+      const epLesson = epLessons[ep.lessonIdx] || { title: 'Lesson ' + (ep.lessonIdx + 1) };
+      const epUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${ep.unitId}&lesson=${ep.lessonIdx}`;
+      const epQr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(epUrl)}`;
+      const epRefs = getPageReferences(ep.unitId, ep.lessonIdx, epLesson);
+      sheetHtml += `
+        <!-- ==================== EXTRA PERIOD (PAGE BREAK) ==================== -->
+        <div style="page-break-before: always; break-before: page; margin-top: 15mm;"></div>
+        ${renderPeriodHtml(ep.periodNum, epLesson, epRefs, epUrl, epQr, ep.className, epUnitMeta, epUData)}
+      `;
+    });
+
     paperSheet.innerHTML = sheetHtml;
 
-    // Build Plain Text VLE / Email string
-    let plainText = `SUBJECT: GCSE History — ${unitMeta.year} Cover Work (${periodType === 'double' ? 'Double Period' : 'Single Period'})\n`;
-    plainText += `TOPIC: ${uData.title || unitMeta.name}\n`;
-    plainText += `RESOURCES: ${resourceMode === 'workbooks' ? `Pupils have their printed physical Course Textbook and Pupil Workbook.` : `1 sheet of clean A4 paper per pupil.`}\n`;
-    plainText += `WORK POLICY: ${collectNotice.plain}\n`;
-    if (supervisorNotes) plainText += `SUPERVISOR NOTE: ${supervisorNotes}\n`;
-    plainText += `\n=========================================\n`;
-    plainText += `PERIOD 1 — ${l1.title}\n`;
-    plainText += `🌐 Digital App: ${l1Url}\n`;
-    if (resourceMode === 'workbooks') {
-      plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • Open workbook to ${p1Refs.doNow}. Complete the 10 recall starter questions.\n   • On ${p1Refs.vocab}, complete the key vocabulary activity.\n`;
-      plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read textbook ${p1Refs.tb} or the core historical narrative on the app.\n   • In workbook (${p1Refs.wb}), complete all structured enquiry tasks using PEE/PEEL structure strips and the Causal Connective Bank.\n`;
-      plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the interactive quiz on the app to lock in your retrieval score.\n   • ${collectNotice.plain}\n`;
-    } else {
-      plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • On clean A4 paper, answer the 5 recall starter questions from the app.\n   • Define 3 essential historical concepts from today's enquiry in full sentences.\n`;
-      plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read the core historical narrative on screen.\n   • Complete the application task: ${currentUnitId === 'cme_new' ? 'Sketch Partition Map of Palestine (Resolution 181), shade Jewish/Arab zones, annotate 3 reasons for accept/reject.' : 'Complete 2-column comparative factor matrix and 1-paragraph evaluative conclusion.'}\n`;
-      plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the digital quiz on the app.\n   • ${collectNotice.plain}\n`;
+    // Build Concise, Natural Cover Email (Strictly Human, No AI Fluff)
+    let plainText = `Dear Paul and Helen,\n\n`;
+    plainText += `I'm not in today. I'm not well.\n`;
+    plainText += `Here is the cover.\n\n`;
+
+    const includeDuty = dutyCheckbox ? dutyCheckbox.checked : true;
+    const dutyVal =
+      dutyInput && dutyInput.value.trim()
+        ? dutyInput.value.trim()
+        : "Warrior 2 AM/PM if there's a duty to be covered.";
+    if (includeDuty && dutyVal) {
+      plainText += `${dutyVal}\n\n`;
     }
 
+    plainText += `Period ${p1Num} (${c1Name}): ${l1.title}\n`;
+    plainText += `${l1Url}\n`;
+
     if (periodType === 'double') {
-      plainText += `\n=========================================\n`;
-      plainText += `PERIOD 2 — ${l2.title}\n`;
-      plainText += `🌐 Digital App: ${l2Url}\n`;
-      if (resourceMode === 'workbooks') {
-        plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • Open workbook to ${p2Refs.doNow} (10 recall questions) and ${p2Refs.vocab} (vocab mapping).\n`;
-        plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read textbook ${p2Refs.tb} or the core narrative on the app.\n   • In workbook (${p2Refs.wb}), complete the comparison grid and evaluation tasks.\n`;
-        plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the Lesson Mastery Quiz on the app before the end of the double period.\n   • ${collectNotice.plain}\n`;
-      } else {
-        plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • On paper, complete the 5 recall starter questions.\n`;
-        plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read the core narrative for Period 2 on screen.\n   • Complete the synthesis task: ${currentUnitId === 'cme_new' ? 'Construct a 12-point chronological timeline (1915–1949) with 2 bullet points per milestone.' : 'Construct an 8-event cause-and-consequence milestone flowchart.'}\n`;
-        plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the digital quiz on the app.\n   • ${collectNotice.plain}\n`;
-      }
+      const p2Num = period2NumSelect ? period2NumSelect.value : '2';
+      const c2Name =
+        class2Input && class2Input.value.trim()
+          ? class2Input.value.trim()
+          : unitMeta.year || 'Year 11';
+      plainText += `\nPeriod ${p2Num} (${c2Name}): ${l2.title}\n`;
+      plainText += `${l2Url}\n`;
     }
+
+    extraPeriods.forEach((ep) => {
+      const epUData = getUnitData(ep.unitId);
+      const epLessons = epUData.lessons || [];
+      const epLesson = epLessons[ep.lessonIdx] || { title: 'Lesson ' + (ep.lessonIdx + 1) };
+      const epUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${ep.unitId}&lesson=${ep.lessonIdx}`;
+      plainText += `\nPeriod ${ep.periodNum} (${ep.className}): ${epLesson.title}\n`;
+      plainText += `${epUrl}\n`;
+    });
 
     plainTextArea.value = plainText;
   };
@@ -3579,9 +3819,17 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     modeWorkbooks.style.borderColor = resourceMode === 'workbooks' ? '#10b981' : '#334155';
     modePaper.style.background = resourceMode === 'paper' ? 'rgba(245, 158, 11, 0.15)' : '#1e293b';
     modePaper.style.borderColor = resourceMode === 'paper' ? '#f59e0b' : '#334155';
+    updateDefaultClassNames();
     populateLessons();
     updateCover();
   };
+
+  if (dutyCheckbox) dutyCheckbox.onchange = updateCover;
+  if (dutyInput) dutyInput.oninput = updateCover;
+  if (period1NumSelect) period1NumSelect.onchange = updateCover;
+  if (class1Input) class1Input.oninput = updateCover;
+  if (period2NumSelect) period2NumSelect.onchange = updateCover;
+  if (class2Input) class2Input.oninput = updateCover;
 
   btnPeriodSingle.onclick = () => {
     periodType = 'single';
@@ -3764,6 +4012,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
   // Initial population
   populateLessons();
+  updateDefaultClassNames();
   updateCover();
 
   // Animate in
