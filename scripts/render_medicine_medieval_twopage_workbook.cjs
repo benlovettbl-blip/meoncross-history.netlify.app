@@ -512,14 +512,14 @@ function renderFooterStrip(pageNum, quipText, totalPages = 14) {
   if (isEven) {
     return `
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 12px;">Page ${pageNum} of ${totalPages}</span>
+        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>${quipText}</em></span>
       </div>`;
   } else {
     return `
       <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 12px;"><em>${quipText}</em></span>
-        <span class="footer-page-num">Page ${pageNum} of ${totalPages}</span>
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>${quipText}</em></span>
+        <span class="footer-page-num">${pageNum}/${totalPages}</span>
       </div>`;
   }
 }
@@ -611,21 +611,23 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       padding-top: 1.5px;
       margin-top: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 6.4pt;
       line-height: 1.15;
       color: #666666;
     }
     .footer-quip {
       font-style: italic;
-      letter-spacing: 0.1px;
       color: #666666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .footer-page-num {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
       white-space: nowrap;
       color: #000000;
-      font-size: 7pt;
+      font-size: 6.8pt;
     }
     /* CGP-Style Humorous Revision Footnote (Fallback) */
     .cgp-footnote {
