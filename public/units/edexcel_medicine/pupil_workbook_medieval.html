@@ -52,6 +52,16 @@
       img { max-width: 100% !important; object-fit: contain !important;  }
       .source-container {  }
     }
+    /* Commercial School Brand Customizer */
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target {
+      display: inline-block;
+      font-size: 0 !important;
+    }
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target::after {
+      content: attr(data-department-name);
+      font-size: 11pt !important;
+      letter-spacing: 2px;
+    }
 </style>
 </head>
 <body>
@@ -61,8 +71,8 @@
   <img src="../../units/edexcel_medicine/assets/authentic_medieval.jpg" style="max-height: 100%; max-width: 100%; width: 100%; object-fit: cover; display: block;">
 </div>
       
-      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;">
-        <span style="flex: 1; text-align: center;">The History Portal | History Department</span>
+      <div class="cover-brand-banner" data-department-name="The History Department" style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;">
+        <span style="flex: 1; text-align: center;">The History Portal | <span class="school-brand-target">History Department</span></span>
         <span style="font-size: 8.5pt; font-weight: 600; letter-spacing: 1px; opacity: 0.9; background: rgba(255,255,255,0.18); padding: 2px 8px; border-radius: 4px; white-space: nowrap;">Edition 2026.1</span>
       </div>
       
@@ -759,7 +769,7 @@
         </tbody>
       </table>
     </div>
-    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-09-17 21:26:31 UTC | Unit: edexcel_medicine | Edition: 2026.1</div><script>
+    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-09-19 13:08:30 UTC | Unit: edexcel_medicine | Edition: 2026.1</div><script>
   document.addEventListener("DOMContentLoaded", function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
     function replaceLines(className) {
@@ -794,5 +804,14 @@
     // replaceLines('task-lines');
     // replaceLines('task-lines-large');
     document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const customSchool = params.get('school') || params.get('dept');
+      if (customSchool) {
+        document.querySelectorAll('[data-department-name]').forEach(function(el) {
+          el.setAttribute('data-department-name', customSchool);
+        });
+      }
+    } catch(e) {}
   });
 </script></body></html>

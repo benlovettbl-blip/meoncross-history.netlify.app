@@ -214,13 +214,13 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 3,
     },
     lesson_2_2: {
-      page: 16,
+      page: 11,
       booklet: 'Renaissance Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 4,
     },
     lesson_2_3: {
-      page: 29,
+      page: 24,
       booklet: 'Renaissance Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 5,

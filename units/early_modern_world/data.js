@@ -1358,14 +1358,14 @@ const early_modern_world = {
         {
           question:
             'In what year did Martin Luther post his 95 Theses, starting the Protestant Reformation?',
-          options: ['1588', '1534', '1492', '1517'],
+          options: ['1492', '1534', '1588', '1517'],
           answer: 3,
           explanation: '1517',
         },
         {
           question:
             'Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?',
-          options: ['Mary I', 'Edward VI', 'Henry VIII', 'Elizabeth I'],
+          options: ['Edward VI', 'Elizabeth I', 'Henry VIII', 'Mary I'],
           answer: 2,
           explanation: 'Henry VIII',
         },
@@ -1373,9 +1373,9 @@ const early_modern_world = {
           question:
             'What was the name of the 1494 papal agreement that divided the Americas between Spain and Portugal?',
           options: [
-            'The Magna Carta',
-            'The Treaty of Tordesillas',
             'The Treaty of Versailles',
+            'The Treaty of Tordesillas',
+            'The Magna Carta',
             'The Edict of Nantes',
           ],
           answer: 1,
@@ -1384,15 +1384,15 @@ const early_modern_world = {
         {
           question:
             'What official document gave privateers legal permission from a monarch to attack foreign ships?',
-          options: ['A Letter of Marque', 'A Royal Charter', 'An Indulgence', 'A Papal Bull'],
+          options: ['A Letter of Marque', 'An Indulgence', 'A Papal Bull', 'A Royal Charter'],
           answer: 0,
           explanation: 'A Letter of Marque',
         },
         {
           question: 'What nickname did the Spanish give to ?',
           options: [
-            'The Heretic',
             'The Pirate King',
+            'The Heretic',
             'The English Devil',
             'El Draque ("The Dragon")',
           ],
@@ -1401,7 +1401,7 @@ const early_modern_world = {
         },
         {
           question: 'Name the flagship on which  circumnavigated the globe between 1577 and 1580.',
-          options: ['The Golden Hind', 'The Mayflower', 'The Victory', 'The Mary Rose'],
+          options: ['The Golden Hind', 'The Mayflower', 'The Mary Rose', 'The Victory'],
           answer: 0,
           explanation: 'The Golden Hind',
         },
@@ -1411,8 +1411,8 @@ const early_modern_world = {
           options: [
             'Boarding parties',
             'Fire ships',
-            'Cannon bombardment from shore',
             'Submarine warfare',
+            'Cannon bombardment from shore',
           ],
           answer: 1,
           explanation: 'Fire ships',
@@ -1420,7 +1420,7 @@ const early_modern_world = {
         {
           question:
             'Who was the Catholic King of Spain who launched the Armada against England in 1588?',
-          options: ['King Louis XIV', 'King Ferdinand II', 'King Philip II', 'King Charles V'],
+          options: ['King Charles V', 'King Ferdinand II', 'King Philip II', 'King Louis XIV'],
           answer: 2,
           explanation: 'King Philip II',
         },
@@ -1430,8 +1430,8 @@ const early_modern_world = {
           options: [
             'The Protestant Wind',
             'The Armada Storm',
-            'The Divine Tempest',
             'The English Channel Gale',
+            'The Divine Tempest',
           ],
           answer: 0,
           explanation: 'The Protestant Wind',
@@ -1439,7 +1439,7 @@ const early_modern_world = {
         {
           question:
             "What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?",
-          options: ['Asia', 'North America', 'Europe', 'Africa'],
+          options: ['Africa', 'North America', 'Asia', 'Europe'],
           answer: 1,
           explanation: 'North America',
         },
@@ -1840,9 +1840,9 @@ const early_modern_world = {
           question:
             'What type of business model allowed multiple investors to pool their money to fund risky overseas colonial ventures?',
           options: [
+            'Feudal Guilds',
             'State-Owned Enterprises',
             'Royal Monopolies',
-            'Feudal Guilds',
             'Joint-Stock Companies',
           ],
           answer: 3,
@@ -1851,28 +1851,28 @@ const early_modern_world = {
         {
           question:
             'On which island was the famous "Lost Colony" of 1585 founded by Sir Walter Raleigh?',
-          options: ['Bermuda', 'Jamestown Island', 'Roanoke Island', 'Manhattan Island'],
+          options: ['Manhattan Island', 'Bermuda', 'Roanoke Island', 'Jamestown Island'],
           answer: 2,
           explanation: 'Roanoke Island',
         },
         {
           question:
             'What single word was found carved into a wooden post when supply ships returned to Roanoke in 1590?',
-          options: ['FAMINE', 'CROATOAN', 'ABANDONED', 'DANGER'],
+          options: ['ABANDONED', 'CROATOAN', 'DANGER', 'FAMINE'],
           answer: 1,
           explanation: 'CROATOAN',
         },
         {
           question:
             'What was the name of the first permanent English settlement established in North America in 1607?',
-          options: ['Boston', 'Williamsburg', 'Plymouth', 'Jamestown'],
+          options: ['Williamsburg', 'Plymouth', 'Boston', 'Jamestown'],
           answer: 3,
           explanation: 'Jamestown',
         },
         {
           question:
             'Which cash crop introduced by John Rolfe saved the Jamestown colony from economic ruin?',
-          options: ['Sugar', 'Cotton', 'Tobacco', 'Indigo'],
+          options: ['Cotton', 'Sugar', 'Tobacco', 'Indigo'],
           answer: 2,
           explanation: 'Tobacco',
         },
@@ -1881,9 +1881,9 @@ const early_modern_world = {
             'What was the title of the native ruler who led the Powhatan Confederacy when the English arrived in Virginia?',
           options: [
             'Chief Powhatan (Wahunsenacawh)',
-            'Chief Tecumseh',
-            'Chief Pontiac',
             'Chief Sitting Bull',
+            'Chief Pontiac',
+            'Chief Tecumseh',
           ],
           answer: 0,
           explanation: 'Chief Powhatan (Wahunsenacawh)',
@@ -1891,7 +1891,7 @@ const early_modern_world = {
         {
           question:
             'In what year was the English East India Company (EIC) granted its royal charter by Queen Elizabeth I?',
-          options: ['1492', '1620', '1600', '1588'],
+          options: ['1492', '1588', '1600', '1620'],
           answer: 2,
           explanation: '1600',
         },
@@ -1899,10 +1899,10 @@ const early_modern_world = {
           question:
             'Which powerful Muslim empire ruled India during the 17th century when the English first arrived?',
           options: [
-            'The Maratha Empire',
+            'The Ottoman Empire',
             'The Mughal Empire',
             'The Safavid Empire',
-            'The Ottoman Empire',
+            'The Maratha Empire',
           ],
           answer: 1,
           explanation: 'The Mughal Empire',
@@ -1912,8 +1912,8 @@ const early_modern_world = {
             'Name the English ambassador sent by King James I to bow before Emperor Jahangir in 1615.',
           options: [
             'Sir Thomas Roe',
-            'Sir Francis Drake',
             'Sir Walter Raleigh',
+            'Sir Francis Drake',
             'Sir John Hawkins',
           ],
           answer: 0,
@@ -2432,9 +2432,9 @@ const early_modern_world = {
           question:
             'What political belief held that kings were chosen directly by God and possessed absolute power?',
           options: [
-            'Parliamentary Sovereignty',
-            'Papal Infallibility',
             'Constitutional Monarchy',
+            'Papal Infallibility',
+            'Parliamentary Sovereignty',
             'The Divine Right of Kings',
           ],
           answer: 3,
@@ -2443,14 +2443,14 @@ const early_modern_world = {
         {
           question:
             "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
-          options: ['Ship Money', 'The Hearth Tax', 'The Window Tax', 'The Poll Tax'],
+          options: ['Ship Money', 'The Window Tax', 'The Hearth Tax', 'The Poll Tax'],
           answer: 0,
           explanation: 'Ship Money',
         },
         {
           question:
             'On what date was King Charles I executed outside the Banqueting House in London?',
-          options: ['15 June 1215', '4 July 1776', '30 January 1649', '5 November 1605'],
+          options: ['5 November 1605', '15 June 1215', '30 January 1649', '4 July 1776'],
           answer: 2,
           explanation: '30 January 1649',
         },
@@ -2458,9 +2458,9 @@ const early_modern_world = {
           question:
             'What was the name of Parliament’s disciplined, professional military force created during the Civil War?',
           options: [
-            'The Continental Army',
-            'The New Model Army',
             'The Royalist Vanguard',
+            'The New Model Army',
+            'The Continental Army',
             'The Home Guard',
           ],
           answer: 1,
@@ -2469,7 +2469,7 @@ const early_modern_world = {
         {
           question:
             "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
-          options: ['Sir Thomas Fairfax', 'Oliver Cromwell', 'John Pym', 'Prince Rupert'],
+          options: ['John Pym', 'Oliver Cromwell', 'Prince Rupert', 'Sir Thomas Fairfax'],
           answer: 1,
           explanation: 'Oliver Cromwell',
         },
@@ -2479,8 +2479,8 @@ const early_modern_world = {
           options: [
             'The Commonwealth of England',
             'The United Kingdom',
-            'The English Federation',
             'The First British Empire',
+            'The English Federation',
           ],
           answer: 0,
           explanation: 'The Commonwealth of England',
@@ -2496,10 +2496,10 @@ const early_modern_world = {
           question:
             'What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?',
           options: [
-            'The Stamp Acts',
             'The Trade and Revenue Acts',
-            'The Navigation Acts',
             'The Sugar Acts',
+            'The Navigation Acts',
+            'The Stamp Acts',
           ],
           answer: 2,
           explanation: 'The Navigation Acts',
@@ -2507,7 +2507,7 @@ const early_modern_world = {
         {
           question:
             "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
-          options: ['The Methodists', 'The Catholics', 'The Quakers', 'The Puritans'],
+          options: ['The Quakers', 'The Methodists', 'The Catholics', 'The Puritans'],
           answer: 3,
           explanation: 'The Puritans',
         },
@@ -2515,9 +2515,9 @@ const early_modern_world = {
           question: 'What event in 1660 brought  back to the throne, ending the Commonwealth era?',
           options: [
             'The Restoration',
-            'The Norman Conquest',
             'The Reformation',
             'The Glorious Revolution',
+            'The Norman Conquest',
           ],
           answer: 0,
           explanation: 'The Restoration',
@@ -2774,10 +2774,10 @@ const early_modern_world = {
           question:
             'What political belief held that kings were chosen directly by God and possessed absolute power?',
           options: [
-            'Parliamentary Sovereignty',
+            'Constitutional Monarchy',
             'Papal Infallibility',
             'The Divine Right of Kings',
-            'Constitutional Monarchy',
+            'Parliamentary Sovereignty',
           ],
           answer: 2,
           explanation: 'The Divine Right of Kings',
@@ -2785,14 +2785,14 @@ const early_modern_world = {
         {
           question:
             "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
-          options: ['The Hearth Tax', 'Ship Money', 'The Window Tax', 'The Poll Tax'],
+          options: ['The Window Tax', 'Ship Money', 'The Hearth Tax', 'The Poll Tax'],
           answer: 1,
           explanation: 'Ship Money',
         },
         {
           question:
             'On what date was King Charles I executed outside the Banqueting House in London?',
-          options: ['15 June 1215', '4 July 1776', '30 January 1649', '5 November 1605'],
+          options: ['5 November 1605', '15 June 1215', '30 January 1649', '4 July 1776'],
           answer: 2,
           explanation: '30 January 1649',
         },
@@ -2800,8 +2800,8 @@ const early_modern_world = {
           question:
             'What was the name of Parliament’s disciplined, professional military force created during the Civil War?',
           options: [
-            'The Continental Army',
             'The Royalist Vanguard',
+            'The Continental Army',
             'The Home Guard',
             'The New Model Army',
           ],
@@ -2811,7 +2811,7 @@ const early_modern_world = {
         {
           question:
             "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
-          options: ['Oliver Cromwell', 'Sir Thomas Fairfax', 'John Pym', 'Prince Rupert'],
+          options: ['Oliver Cromwell', 'John Pym', 'Prince Rupert', 'Sir Thomas Fairfax'],
           answer: 0,
           explanation: 'Oliver Cromwell',
         },
@@ -2821,8 +2821,8 @@ const early_modern_world = {
           options: [
             'The United Kingdom',
             'The Commonwealth of England',
-            'The English Federation',
             'The First British Empire',
+            'The English Federation',
           ],
           answer: 1,
           explanation: 'The Commonwealth of England',
@@ -2838,10 +2838,10 @@ const early_modern_world = {
           question:
             'What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?',
           options: [
-            'The Stamp Acts',
             'The Trade and Revenue Acts',
-            'The Navigation Acts',
             'The Sugar Acts',
+            'The Navigation Acts',
+            'The Stamp Acts',
           ],
           answer: 2,
           explanation: 'The Navigation Acts',
@@ -2849,7 +2849,7 @@ const early_modern_world = {
         {
           question:
             "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
-          options: ['The Methodists', 'The Catholics', 'The Quakers', 'The Puritans'],
+          options: ['The Quakers', 'The Methodists', 'The Catholics', 'The Puritans'],
           answer: 3,
           explanation: 'The Puritans',
         },
@@ -2857,9 +2857,9 @@ const early_modern_world = {
           question: 'What event in 1660 brought  back to the throne, ending the Commonwealth era?',
           options: [
             'The Restoration',
-            'The Norman Conquest',
             'The Reformation',
             'The Glorious Revolution',
+            'The Norman Conquest',
           ],
           answer: 0,
           explanation: 'The Restoration',
@@ -3185,9 +3185,9 @@ const early_modern_world = {
           question: 'What were the three main stages of the Triangular Trade?',
           options: [
             'Europe to Asia, Asia to Africa, Africa to Europe.',
-            'Africa to the Americas, the Americas to Asia, Asia to Africa.',
-            'Europe to Africa, Africa to the Americas, the Americas to Europe.',
             'The Americas to Europe, Europe to Asia, Asia to the Americas.',
+            'Europe to Africa, Africa to the Americas, the Americas to Europe.',
+            'Africa to the Americas, the Americas to Asia, Asia to Africa.',
           ],
           answer: 2,
           explanation:
@@ -3196,7 +3196,7 @@ const early_modern_world = {
         {
           question:
             'Which of the following was NOT a typical good traded by Europeans in West Africa?',
-          options: ['Alcohol', 'Guns', 'Textiles', 'Sugar'],
+          options: ['Guns', 'Alcohol', 'Textiles', 'Sugar'],
           answer: 3,
           explanation:
             'Sugar was produced in the Americas. Europeans traded manufactured goods like guns, alcohol, and textiles in West Africa.',
@@ -3204,10 +3204,10 @@ const early_modern_world = {
         {
           question: "What was the 'Middle Passage'?",
           options: [
-            'The transport of sugar and tobacco from the Americas to Europe.',
-            'The brutal forced voyage of enslaved Africans across the Atlantic.',
-            'The overland trade route across the Sahara Desert.',
             'The journey of manufactured goods from Europe to Africa.',
+            'The brutal forced voyage of enslaved Africans across the Atlantic.',
+            'The transport of sugar and tobacco from the Americas to Europe.',
+            'The overland trade route across the Sahara Desert.',
           ],
           answer: 1,
           explanation:
@@ -3216,7 +3216,7 @@ const early_modern_world = {
         {
           question:
             'What was the primary crop grown on Caribbean plantations such as in Jamaica and Barbados?',
-          options: ['Sugar', 'Cotton', 'Tobacco', 'Indigo'],
+          options: ['Sugar', 'Tobacco', 'Cotton', 'Indigo'],
           answer: 0,
           explanation:
             'Sugar was the incredibly profitable but brutally demanding primary crop of the Caribbean.',
@@ -3225,10 +3225,10 @@ const early_modern_world = {
           question:
             'How did the experience of enslaved people in Virginia generally compare to those in the Caribbean by the 1700s?',
           options: [
-            'Enslaved people in Virginia primarily farmed sugar rather than tobacco.',
-            "The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.",
             'There was no significant difference between the two regions.',
+            "The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.",
             "Virginia plantations relied on a 'death camp' model to constantly import new enslaved people.",
+            'Enslaved people in Virginia primarily farmed sugar rather than tobacco.',
           ],
           answer: 1,
           explanation:
@@ -3238,8 +3238,8 @@ const early_modern_world = {
           question: "What is an 'absentee landlord' in the context of Caribbean sugar plantations?",
           options: [
             'An enslaved person who escaped the plantation.',
-            'An overseer who refused to work on the plantation.',
             'A European merchant who never visited West Africa.',
+            'An overseer who refused to work on the plantation.',
             'A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.',
           ],
           answer: 3,
@@ -3250,9 +3250,9 @@ const early_modern_world = {
           question: "Why was the Caribbean sugar system often described as a 'death camp' model?",
           options: [
             'Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.',
+            'The plantations were located in areas with high rates of natural disasters.',
             'Enslaved people frequently died from starvation during the Middle Passage.',
             'It was a system designed primarily to punish criminals.',
-            'The plantations were located in areas with high rates of natural disasters.',
           ],
           answer: 0,
           explanation:
@@ -3261,10 +3261,10 @@ const early_modern_world = {
         {
           question: 'How did the Triangular Trade fuel the Industrial Revolution in Britain?',
           options: [
-            'Britain stopped trading with Europe to focus solely on the Americas.',
             'The British government used taxes from the trade to build free public schools.',
-            'Profits from slave-produced goods were invested in British banks, infrastructure, and factories.',
             'Enslaved Africans were brought to Britain to work in factories.',
+            'Profits from slave-produced goods were invested in British banks, infrastructure, and factories.',
+            'Britain stopped trading with Europe to focus solely on the Americas.',
           ],
           answer: 2,
           explanation:
@@ -3274,10 +3274,10 @@ const early_modern_world = {
           question:
             'According to the UCL Legacies of British Slavery Database, what happened in 1833?',
           options: [
-            'The first slave ship arrived in Virginia.',
-            'The British government paid reparations to formerly enslaved people.',
-            'The British government paid massive compensation to former slave owners.',
             'The Triangular Trade officially began.',
+            'The first slave ship arrived in Virginia.',
+            'The British government paid massive compensation to former slave owners.',
+            'The British government paid reparations to formerly enslaved people.',
           ],
           answer: 2,
           explanation:
@@ -3287,9 +3287,9 @@ const early_modern_world = {
           question:
             "How does the reality of the Transatlantic Slave Trade challenge the idea of 18th-century Britain as a purely 'modern' and enlightened society?",
           options: [
-            'It proves that the Enlightenment had no impact on British politics.',
             'It highlights the fact that Britain was still primarily a feudal society.',
             'It shows that Britain was less technologically advanced than its European rivals.',
+            'It proves that the Enlightenment had no impact on British politics.',
             "It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.",
           ],
           answer: 3,
@@ -3644,8 +3644,8 @@ const early_modern_world = {
           question: "What were the 'Maroons' in Jamaica?",
           options: [
             'Communities of escaped enslaved people who fought guerrilla wars against the British.',
-            'A secret network of safe houses in the American South.',
             'British politicians who campaigned for the abolition of the slave trade.',
+            'A secret network of safe houses in the American South.',
             'Enslaved people who worked primarily as domestic servants.',
           ],
           answer: 0,
@@ -3657,8 +3657,8 @@ const early_modern_world = {
           options: [
             'It led to the immediate abolition of slavery throughout the British Empire.',
             'It was the only successful large-scale slave revolt in history, resulting in an independent nation.',
-            'It resulted in the creation of the Underground Railroad.',
             'It was a peaceful transition to independence negotiated by French politicians.',
+            'It resulted in the creation of the Underground Railroad.',
           ],
           answer: 1,
           explanation:
@@ -3667,10 +3667,10 @@ const early_modern_world = {
         {
           question: 'Who was Harriet Tubman?',
           options: [
-            'A Jamaican plantation overseer who wrote a diary about enslaved resistance.',
-            "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
-            'A British politician who campaigned alongside William Wilberforce.',
             'The leader of the First Maroon War in Jamaica.',
+            "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
+            'A Jamaican plantation overseer who wrote a diary about enslaved resistance.',
+            'A British politician who campaigned alongside William Wilberforce.',
           ],
           answer: 1,
           explanation:
@@ -3680,9 +3680,9 @@ const early_modern_world = {
           question: "What was the 'Underground Railroad'?",
           options: [
             'A secret network of safe houses and routes that helped enslaved people escape.',
+            'A British political movement to abolish the slave trade.',
             'A trade route used by the Maroons to smuggle goods.',
             'A literal subterranean train system built by enslaved people.',
-            'A British political movement to abolish the slave trade.',
           ],
           answer: 0,
           explanation:
@@ -3691,8 +3691,8 @@ const early_modern_world = {
         {
           question: "What was 'Obeah' in the context of the Caribbean?",
           options: [
-            'The name of a famous British slave ship.',
             'A type of cash crop grown alongside sugar.',
+            'The name of a famous British slave ship.',
             'A term used to describe absentee landlords.',
             'A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.',
           ],
@@ -3703,10 +3703,10 @@ const early_modern_world = {
         {
           question: 'Why did enslavers live in constant terror of Obeah?',
           options: [
-            'Because Obeah was supported by the British government.',
             'Because it encouraged enslaved people to stop working entirely.',
-            'Because practitioners could use their botanical knowledge to slowly and undetectably poison them.',
             'Because Obeah leaders frequently organized massive armed rebellions.',
+            'Because practitioners could use their botanical knowledge to slowly and undetectably poison them.',
+            'Because Obeah was supported by the British government.',
           ],
           answer: 2,
           explanation:
@@ -3715,8 +3715,8 @@ const early_modern_world = {
         {
           question: "What is the 'White Savior Narrative' regarding the abolition of slavery?",
           options: [
-            'The argument that slavery ended primarily due to economic factors.',
             'The belief that enslaved people freed themselves without any outside help.',
+            'The argument that slavery ended primarily due to economic factors.',
             'The view that abolition was a mistake supported only by a small minority.',
             'The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.',
           ],
@@ -3742,9 +3742,9 @@ const early_modern_world = {
             'How does the story of the Underground Railroad challenge traditional historical narratives?',
           options: [
             'It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.',
-            'It demonstrates that the Triangular Trade was economically unsustainable.',
-            'It suggests that abolition was primarily an American, rather than British, achievement.',
             'It proves that slavery was not as brutal as some historians claim.',
+            'It suggests that abolition was primarily an American, rather than British, achievement.',
+            'It demonstrates that the Triangular Trade was economically unsustainable.',
           ],
           answer: 0,
           explanation:
@@ -3832,21 +3832,21 @@ const early_modern_world = {
         {
           question:
             'In what year was the Bank of England established, revolutionizing British national debt and finance?',
-          options: ['1750', '1694', '1492', '1600'],
+          options: ['1600', '1694', '1750', '1492'],
           answer: 1,
           explanation: '1694',
         },
         {
           question:
             'What famous 1751 William Hogarth engraving depicted the social decay and poverty caused by alcohol addiction in London slums?',
-          options: ['Gin Lane', "A Harlot's Progress", 'Beer Street', "The Rake's Progress"],
+          options: ['Gin Lane', "The Rake's Progress", "A Harlot's Progress", 'Beer Street'],
           answer: 0,
           explanation: 'Gin Lane',
         },
         {
           question:
             'Roughly what percentage of the male population had the right to vote in British parliamentary elections in 1750?',
-          options: ['About 50%', 'Around 20%', 'Over 80%', 'Less than 5% (approx. 3-5%)'],
+          options: ['Around 20%', 'About 50%', 'Over 80%', 'Less than 5% (approx. 3-5%)'],
           answer: 3,
           explanation: 'Less than 5% (approx. 3-5%)',
         },
@@ -3862,9 +3862,9 @@ const early_modern_world = {
             'Which two European revolutions (1642-1651 & 1688) permanently reduced the absolute power of the British monarchy?',
           options: [
             'The English Civil War and the Glorious Revolution',
-            'The Industrial Revolution and the Agrarian Revolution',
             'The Protestant Reformation and the Renaissance',
             'The French Revolution and the American Revolution',
+            'The Industrial Revolution and the Agrarian Revolution',
           ],
           answer: 0,
           explanation: 'The English Civil War and the Glorious Revolution',
@@ -3873,10 +3873,10 @@ const early_modern_world = {
           question:
             'What informal term was given to the 18th-century English criminal code that carried over 200 capital offenses?',
           options: [
-            'The Napoleonic Code',
+            'Magna Carta',
             'The Bill of Rights',
             "The 'Bloody Code'",
-            'Magna Carta',
+            'The Napoleonic Code',
           ],
           answer: 2,
           explanation: "The 'Bloody Code'",
@@ -3897,10 +3897,10 @@ const early_modern_world = {
           question:
             'What was the name given to corrupt parliamentary constituencies with very few voters that were easily bought by aristocrats?',
           options: [
-            'Burgage Plots',
+            'Pocket Counties',
             'Rotten Boroughs',
             'Gerrymandered Districts',
-            'Pocket Counties',
+            'Burgage Plots',
           ],
           answer: 1,
           explanation: 'Rotten Boroughs',
@@ -3908,7 +3908,7 @@ const early_modern_world = {
         {
           question:
             'Name two major consumer goods imported into Britain in 1750 that relied directly on Caribbean plantation slave labor.',
-          options: ['Sugar and Tobacco', 'Cotton and Wool', 'Tea and Silk', 'Spices and Porcelain'],
+          options: ['Sugar and Tobacco', 'Tea and Silk', 'Cotton and Wool', 'Spices and Porcelain'],
           answer: 0,
           explanation: 'Sugar and Tobacco',
         },
@@ -3916,9 +3916,9 @@ const early_modern_world = {
           question:
             "Which major historical transformation, beginning around 1750, would turn Britain into the 'Workshop of the World'?",
           options: [
-            'The Scientific Revolution',
-            'The Industrial Revolution',
             'The Commercial Revolution',
+            'The Industrial Revolution',
+            'The Scientific Revolution',
             'The Agricultural Revolution',
           ],
           answer: 1,
@@ -4301,21 +4301,21 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/niccol_barbaro.jpg',
-      options: ['Pope Alexander VI', 'Sultan Mehmed II', 'Niccolò Barbaro', 'Chief Powhatan'],
+      options: ['Sultan Mehmed II', 'Pope Alexander VI', 'Niccolò Barbaro', 'Chief Powhatan'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/sultan_mehmed_ii.jpg',
-      options: ['Professor Eric Williams', 'Chief Powhatan', 'Olaudah Equiano', 'Sultan Mehmed II'],
+      options: ['Chief Powhatan', 'Professor Eric Williams', 'Olaudah Equiano', 'Sultan Mehmed II'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/mansa_musa.jpg',
-      options: ['Mansa Musa', 'Shashi Tharoor', 'John Hawkins', 'John Bradshaw'],
+      options: ['Mansa Musa', 'John Hawkins', 'Shashi Tharoor', 'John Bradshaw'],
       answer: 0,
       source: 'Key Individuals',
     },
@@ -4323,8 +4323,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/admiral_zheng_he.jpg',
       options: [
-        'Professor Peter Frankopan',
         'King Charles II',
+        'Professor Peter Frankopan',
         'Admiral Zheng He',
         'Sir Walter Raleigh',
       ],
@@ -4335,9 +4335,9 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/christopher_columbus.jpg',
       options: [
-        'Mary, Queen of Scots',
-        'Christopher Columbus',
         'Henry Fielding',
+        'Christopher Columbus',
+        'Mary, Queen of Scots',
         'Sir Walter Raleigh',
       ],
       answer: 1,
@@ -4347,8 +4347,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/martin_luther.jpg',
       options: [
-        'Sir Walter Raleigh',
         'Mary, Queen of Scots',
+        'Sir Walter Raleigh',
         'Professor Eric Williams',
         'Martin Luther',
       ],
@@ -4358,77 +4358,77 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/pope_alexander_vi.jpg',
-      options: ['Pope Alexander VI', 'Niccolò Barbaro', 'Christopher Columbus', 'Henry Fielding'],
+      options: ['Pope Alexander VI', 'Christopher Columbus', 'Niccolò Barbaro', 'Henry Fielding'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_philip_ii.jpg',
-      options: ['Shashi Tharoor', 'John Rolfe', 'Admiral Zheng He', 'King Philip II'],
+      options: ['John Rolfe', 'Shashi Tharoor', 'Admiral Zheng He', 'King Philip II'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/queen_elizabeth_i.jpg',
-      options: ['Chief Powhatan', 'Queen Elizabeth I', 'King George II', 'Mary, Queen of Scots'],
+      options: ['King George II', 'Queen Elizabeth I', 'Chief Powhatan', 'Mary, Queen of Scots'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/mary_queen_of_scots.jpg',
-      options: ['Sir Walter Raleigh', 'King Philip II', 'Mary, Queen of Scots', 'Martin Luther'],
+      options: ['King Philip II', 'Sir Walter Raleigh', 'Mary, Queen of Scots', 'Martin Luther'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/henry_viii.jpg',
-      options: ['King Philip II', 'Oliver Cromwell', 'Henry VIII', 'King Charles I'],
+      options: ['Oliver Cromwell', 'King Philip II', 'Henry VIII', 'King Charles I'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/francis_drake.jpg',
-      options: ['Francis Drake', 'Olaudah Equiano', 'King Philip II', 'Oliver Cromwell'],
+      options: ['Francis Drake', 'King Philip II', 'Olaudah Equiano', 'Oliver Cromwell'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/john_hawkins.JPG',
-      options: ['Mary, Queen of Scots', 'John Hawkins', 'Henry Fielding', 'Sultan Mehmed II'],
+      options: ['Henry Fielding', 'John Hawkins', 'Mary, Queen of Scots', 'Sultan Mehmed II'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/sir_walter_raleigh.jpg',
-      options: ['Olaudah Equiano', 'Henry Fielding', 'Francis Drake', 'Sir Walter Raleigh'],
+      options: ['Henry Fielding', 'Olaudah Equiano', 'Francis Drake', 'Sir Walter Raleigh'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/chief_powhatan.jpg',
-      options: ['Oliver Cromwell', 'William Hogarth', 'Chief Powhatan', 'Christopher Columbus'],
+      options: ['William Hogarth', 'Oliver Cromwell', 'Chief Powhatan', 'Christopher Columbus'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/john_rolfe.jpg',
-      options: ['King James I', 'John Rolfe', 'William Hogarth', 'Chief Powhatan'],
+      options: ['William Hogarth', 'John Rolfe', 'King James I', 'Chief Powhatan'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_james_i.jpg',
-      options: ['King James I', 'Pierre-Jean Grosley', 'Martin Luther', 'Oliver Cromwell'],
+      options: ['King James I', 'Martin Luther', 'Pierre-Jean Grosley', 'Oliver Cromwell'],
       answer: 0,
       source: 'Key Individuals',
     },
@@ -4436,8 +4436,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/sir_thomas_roe.jpg',
       options: [
-        'Christopher Columbus',
         'King Charles II',
+        'Christopher Columbus',
         'Professor Eric Williams',
         'Sir Thomas Roe',
       ],
@@ -4447,7 +4447,7 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/emperor_jahangir.jpeg',
-      options: ['Emperor Jahangir', 'Professor Eric Williams', 'King Philip II', 'King James I'],
+      options: ['Emperor Jahangir', 'King Philip II', 'Professor Eric Williams', 'King James I'],
       answer: 0,
       source: 'Key Individuals',
     },
@@ -4455,9 +4455,9 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_charles_i.jpg',
       options: [
-        'Professor Eric Williams',
-        'King Charles I',
         'Pierre-Jean Grosley',
+        'King Charles I',
+        'Professor Eric Williams',
         'William Hogarth',
       ],
       answer: 1,
@@ -4467,8 +4467,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/oliver_cromwell.jpg',
       options: [
-        'Henry VIII',
         'Queen Nanny (Nanny of the Maroons)',
+        'Henry VIII',
         'Sultan Mehmed II',
         'Oliver Cromwell',
       ],
@@ -4478,7 +4478,7 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/john_bradshaw.png',
-      options: ['Niccolò Barbaro', 'Sultan Mehmed II', 'John Bradshaw', 'John Rolfe'],
+      options: ['Sultan Mehmed II', 'Niccolò Barbaro', 'John Bradshaw', 'John Rolfe'],
       answer: 2,
       source: 'Key Individuals',
     },
@@ -4486,8 +4486,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_charles_ii.jpg',
       options: [
-        'Professor Peter Frankopan',
         'Mary, Queen of Scots',
+        'Professor Peter Frankopan',
         'King Charles II',
         'Martin Luther',
       ],
@@ -4498,9 +4498,9 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/queen_nanny_nanny_of_the_maroons.jpg',
       options: [
-        'King Philip II',
-        'Queen Nanny (Nanny of the Maroons)',
         'Pope Alexander VI',
+        'Queen Nanny (Nanny of the Maroons)',
+        'King Philip II',
         'Sir Thomas Roe',
       ],
       answer: 1,
@@ -4509,56 +4509,56 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/olaudah_equiano.png',
-      options: ['Olaudah Equiano', 'King James I', 'Emperor Jahangir', 'Professor Eric Williams'],
+      options: ['Olaudah Equiano', 'Emperor Jahangir', 'King James I', 'Professor Eric Williams'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_george_ii.jpg',
-      options: ['John Hawkins', 'King Charles I', 'John Rolfe', 'King George II'],
+      options: ['King Charles I', 'John Hawkins', 'John Rolfe', 'King George II'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/pierre_jean_grosley.jpg',
-      options: ['John Hawkins', 'Sir Walter Raleigh', 'Oliver Cromwell', 'Pierre-Jean Grosley'],
+      options: ['Sir Walter Raleigh', 'John Hawkins', 'Oliver Cromwell', 'Pierre-Jean Grosley'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/henry_fielding.jpg',
-      options: ['Henry Fielding', 'King George II', 'Emperor Jahangir', 'Chief Powhatan'],
+      options: ['Henry Fielding', 'Emperor Jahangir', 'King George II', 'Chief Powhatan'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/william_hogarth.jpg',
-      options: ['Henry Fielding', 'William Hogarth', 'Professor Eric Williams', 'Mansa Musa'],
+      options: ['Professor Eric Williams', 'William Hogarth', 'Henry Fielding', 'Mansa Musa'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/professor_peter_frankopan.JPG',
-      options: ['Chief Powhatan', 'Martin Luther', 'Professor Peter Frankopan', 'King Charles I'],
+      options: ['Martin Luther', 'Chief Powhatan', 'Professor Peter Frankopan', 'King Charles I'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/shashi_tharoor.jpg',
-      options: ['Professor Peter Frankopan', 'Shashi Tharoor', 'Henry Fielding', 'King James I'],
+      options: ['Henry Fielding', 'Shashi Tharoor', 'Professor Peter Frankopan', 'King James I'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/professor_eric_williams.jpg',
-      options: ['John Hawkins', 'Francis Drake', 'Admiral Zheng He', 'Professor Eric Williams'],
+      options: ['Francis Drake', 'John Hawkins', 'Admiral Zheng He', 'Professor Eric Williams'],
       answer: 3,
       source: 'Key Individuals',
     },

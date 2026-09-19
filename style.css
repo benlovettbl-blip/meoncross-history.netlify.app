@@ -3135,6 +3135,34 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
     transform: translateY(0);
   }
 }
+
+/* GCSE Specification Anchor Strip */
+.gcse-spec-anchor-strip {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #1e3a8a;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  flex-wrap: wrap;
+  font-family: 'Inter', sans-serif;
+}
+:root[data-theme='space'] .gcse-spec-anchor-strip {
+  background: #1e293b;
+  border-color: #334155;
+  border-left-color: #60a5fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+:root[data-theme='space'] .gcse-spec-anchor-strip .spec-text {
+  color: #f1f5f9 !important;
+}
+:root[data-theme='space'] .gcse-spec-anchor-strip .spec-text strong {
+  color: #93c5fd !important;
+}
 .para-number {
   background: #e2e8f0;
   color: #475569;

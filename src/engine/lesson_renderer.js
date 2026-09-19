@@ -1265,6 +1265,31 @@ export function renderLesson(lesson) {
       </div>
     `;
 
+  // GCSE Specification Anchor Strip
+  if (lesson.specification_anchor) {
+    const specPaperBadge =
+      unitId === 'edexcel_medicine'
+        ? 'Edexcel Paper 1 &bull; Specification Anchor'
+        : unitId === 'cme_new'
+          ? 'Edexcel Paper 2 &bull; Specification Anchor'
+          : unitId === 'eee'
+            ? 'Edexcel Paper 2 &bull; Specification Anchor'
+            : unitId === 'weimar_nazi_germany'
+              ? 'Edexcel Paper 3 &bull; Specification Anchor'
+              : 'Edexcel GCSE &bull; Specification Anchor';
+
+    html += `
+      <div class="gcse-spec-anchor-strip">
+        <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-bookmark" style="color: #60a5fa;"></i> ${specPaperBadge}
+        </span>
+        <span class="spec-text" style="font-family: 'Inter', sans-serif; font-size: 0.92rem; color: #1e293b; line-height: 1.4; flex: 1; min-width: 260px;">
+          <strong style="color: #0f172a;">Syllabus Focus:</strong> &ldquo;${lesson.specification_anchor}&rdquo;
+        </span>
+      </div>
+    `;
+  }
+
   // -----------------------------------------------------
   // TABS NAVIGATION UI
   // -----------------------------------------------------
@@ -1751,7 +1776,16 @@ export function renderLesson(lesson) {
     }
   }
 
-  if (lesson.starters && lesson.starters.length > 0) {
+  const isMedicineUnit =
+    (typeof window !== 'undefined' && window.currentUnitId === 'edexcel_medicine') ||
+    (lesson.id && /^lesson_[1-5]_\d+$/.test(lesson.id));
+  if (
+    !isMedicineUnit &&
+    lesson.starters &&
+    lesson.starters.length > 0 &&
+    typeof lesson.starters[0] === 'object' &&
+    lesson.starters[0].source
+  ) {
     htmlPrimary += `
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <div style="padding: 15px 20px; background: linear-gradient(to right, #1e3a8a, #3b82f6); color: white; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center;">
