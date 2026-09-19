@@ -2706,8 +2706,10 @@ export const unitData = {
               "Notice that this journal was printed for John Martyn, 'Printer to the Royal Society'. How does the creation of Europe's first peer-reviewed scientific journal embody the Royal Society's radical motto Nullius in Verba ('Take nobody's word for it'), and why was publishing verified laboratory methods in print essential for transforming alchemy into modern scientific medicine?",
             source_context:
               'In 1665, Henry Oldenburg founded Philosophical Transactions to establish an international scientific communications network. For the first time, scholars did not keep experiments secret; methods and results were published for European natural philosophers to replicate, critique, and verify.',
+            provenance:
+              'Frontispiece of Philosophical Transactions, Vol. I, London: Royal Society, 1665–1666. Royal Society Archives (Shelfmark: Phil. Trans. Vol. 1) / British Library.',
             citation:
-              'Frontispiece of Philosophical Transactions, Giving Some Accompt of the Present Undertakings, Studies, and Labours of the Ingenious, Vol. I, London: Royal Society, 1665–1666.',
+              'Frontispiece of Philosophical Transactions, Vol. I, London: Royal Society, 1665–1666. Royal Society Archives (Shelfmark: Phil. Trans. Vol. 1) / British Library.',
           },
           text: '<span class="para-ref">[3.1]</span> The empirical mandate of the Royal Society was powerfully demonstrated through groundbreaking optical innovations. In 1665, Robert Hooke published <em>Micrographia</em>, an extraordinary volume illustrated with magnificent fold-out engravings of insects, feathers, and plants observed through compound microscopes. Hooke’s famous rendering of an ordinary flea (<span class="archival-meta-tag">Source C</span>), magnified to terrifying monstrous proportions, astonished the public and proved that nature contained an invisible, intricate microscopic architecture invisible to the naked human eye. While inspecting thin slices of cork, Hooke observed small box-like compartments and coined the term "cells".<br><br><span class="para-ref">[3.2]</span> A decade later, in 1676, a Dutch draper and amateur microscope-maker named Antonie van Leeuwenhoek submitted letters to the Royal Society describing tiny living creatures he had discovered swimming in pond water and dental scrapings. Using single-lens microscopes with exquisite optical magnification, Leeuwenhoek documented "animalcules"—the first recorded observation of bacteria and protozoa in human history. The Royal Society confirmed his startling findings, publishing his letters in <em>Philosophical Transactions</em> to an astonished continent.',
         },
@@ -2951,6 +2953,8 @@ export const unitData = {
           caption:
             'A Renaissance printing house showing compositors setting movable metal type and pressmen operating the heavy wooden screw press.',
           desc: 'Contemporary engraving showing the mechanical process of movable type book printing.',
+          provenance:
+            'Woodcut by Jost Amman, Frankfurt am Main, 1568. British Museum, London (BM 1904,0206.53.86) / Wellcome Collection V0023992.',
           hinge_question:
             'Study the compositors arranging individual type characters and the pressmen operating the wooden screw press. How did this mechanical printing process permanently prevent Church authorities from suppressing new anatomical discoveries, and why did it eliminate the compounding errors introduced by medieval copyists?',
           letter: 'A',
@@ -2962,6 +2966,8 @@ export const unitData = {
           caption:
             "Frontispiece of Volume I of Philosophical Transactions (1665), the world's first peer-reviewed scientific journal, printed for John Martyn, printer to the Royal Society.",
           desc: "Frontispiece of the Royal Society's groundbreaking peer-reviewed scientific journal.",
+          provenance:
+            'Frontispiece of Philosophical Transactions, Vol. I, London: Royal Society, 1665–1666. Royal Society Archives (Shelfmark: Phil. Trans. Vol. 1) / British Library.',
           hinge_question:
             "How does the establishment of an official, peer-reviewed scientific journal demonstrate a complete departure from medieval university traditions where knowledge was based on memorising Galen's classical Latin texts?",
           letter: 'B',
@@ -2973,6 +2979,8 @@ export const unitData = {
           caption:
             "Robert Hooke's famous fold-out engraving of a flea observed under the compound microscope, published by the Royal Society in Micrographia (1665).",
           desc: "Detailed microscopic engraving from Robert Hooke's landmark 1665 work Micrographia.",
+          provenance:
+            'Engraving by Robert Hooke, Micrographia, Scheme XXXIV, Royal Society, London, 1665. British Library (Shelfmark: 462.f.1) / Wellcome Collection L0022998.',
           hinge_question:
             'Hooke drew this flea using a compound microscope in 1665. Why did seeing microscopic details of insects amaze people in the 17th century, yet fail to help doctors understand what actually caused infectious diseases?',
           letter: 'C',
@@ -3282,8 +3290,10 @@ export const unitData = {
               "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
             source_context:
               "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
+            provenance:
+              'Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).',
             citation:
-              'Oil portrait of Dr Thomas Sydenham by Mary Beale, c.1688, National Portrait Gallery, London (NPG 211).',
+              'Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).',
           },
           text: '<span class="para-ref">[3.1]</span> Sydenham’s empirical focus led him to champion innovative, common-sense treatments. For smallpox, traditional physicians sealed sickrooms, lit roaring fires, and covered shivering patients in heavy woolen blankets to "sweat out the venom". Sydenham recognized that this suffocating heat worsened the fever and killed patients. Instead, he pioneered a revolutionary "cooling regime": opening windows to circulate fresh air, removing heavy blankets, and prescribing cool fluids and mild cordials. Survival rates among his smallpox patients improved dramatically.<br><br><span class="para-ref">[3.2]</span> Sydenham also enthusiastically embraced new botanical remedies brought from the Americas. He popularized the use of Cinchona bark (Peruvian bark, containing quinine) to treat ague (malaria), showing that specific medicines could target specific diseases rather than just purging the whole body. He also developed liquid laudanum (opium dissolved in alcohol), providing the first reliable and easily dosed painkiller for chronic sufferers.',
         },
@@ -3526,6 +3536,8 @@ export const unitData = {
           caption:
             'Portrait of Dr Thomas Sydenham painted by his close friend Mary Beale, showing his sober attire and reflective demeanor.',
           desc: 'Authentic 17th-century portrait of Thomas Sydenham by Mary Beale.',
+          provenance:
+            'Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).',
           hinge_question:
             "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
           letter: 'A',
@@ -3537,6 +3549,8 @@ export const unitData = {
           caption:
             'A 17th-century painting depicting an itinerant quack doctor examining a urine flask and flattering a patient.',
           desc: 'Contemporary oil painting depicting the commercial superstition of 17th-century medicine.',
+          provenance:
+            'Oil on panel by Jan Steen, c. 1660–1665. Rijksmuseum, Amsterdam (Accession No. SK-A-399).',
           hinge_question:
             'Look at the theatrical gestures of the travelling quack and the gullible villagers gathering around him. Why did uneducated mountebanks and quack doctors continue to flourish in 17th-century England, despite the groundbreaking discoveries of Vesalius and Harvey?',
           letter: 'B',
@@ -3548,6 +3562,8 @@ export const unitData = {
           caption:
             'A 17th-century hospital ward showing rows of beds cared for by matrons following the closure of religious monastic infirmaries.',
           desc: 'Historic depiction of early modern hospital patient care.',
+          provenance:
+            'Engraving of the Salle Saint-Roch, Hôtel-Dieu de Paris, 17th century. Bibliothèque nationale de France, Paris (BnF Estampes Va-269).',
           hinge_question:
             "Compare this early modern municipal hospital ward with medieval monastic care. What changes can you identify in terms of hygiene, administration, and medical supervision following Henry VIII's Dissolution of the Monasteries?",
           letter: 'C',
@@ -3858,8 +3874,10 @@ export const unitData = {
               "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
             source_context:
               "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
+            provenance:
+              'Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512).',
             citation:
-              'Woodcut plate of the third muscle man from Book II of De Humani Corporis Fabrica, Basel: Johannes Oporinus, 1543.',
+              'Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512).',
           },
           text: '<span class="para-ref">[3.1]</span> In 1543, at the age of twenty-eight, Vesalius published his monumental masterwork: <em>De Humani Corporis Fabrica</em> ("On the Fabric of the Human Body"). Printed in Basel by Johannes Oporinus, this massive 700-page folio represented a pinnacle of Renaissance printing technology and artistic brilliance. Vesalius collaborated with master artists from the Venetian workshop of Titian (including Jan van Calcar) to produce over 200 breathtakingly accurate woodcut illustrations (<span class="archival-meta-tag">Source B</span>). For the first time in medical history, students across Europe could examine identical, mathematically precise visual representations of human bones, muscles, veins, and internal organs.<br><br><span class="para-ref">[3.2]</span> To ensure his findings reached beyond elite Latin scholars, Vesalius also published an abridged, cheaper summary handbook called the <em>Epitome</em>, designed specifically for practicing surgeons and medical apprentices. Illustrated editions and pirated copies quickly circulated across Germany, France, and England, standardizing anatomical education throughout the continent and permanently establishing human dissection as an essential requirement in university medical training.',
         },
@@ -4095,6 +4113,8 @@ export const unitData = {
           caption:
             'The frontispiece of De Fabrica (1543) showing Vesalius personally dissecting a female cadaver surrounded by students and spectators.',
           desc: 'Authentic 1543 woodcut frontispiece of Vesalius’s landmark anatomical treatise.',
+          provenance:
+            'Woodcut title page to De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Shelfmark: EPB/D/543).',
           hinge_question:
             'Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?',
           letter: 'A',
@@ -4106,6 +4126,8 @@ export const unitData = {
           caption:
             'One of the famous "Muscle Men" woodcut plates from Book II of De Fabrica, showing the superficial muscular layer in classical posture.',
           desc: 'Masterwork anatomical woodcut plate from De Fabrica (1543).',
+          provenance:
+            'Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512).',
           hinge_question:
             "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
           letter: 'B',
@@ -4117,6 +4139,8 @@ export const unitData = {
           caption:
             'A 16th-century printed bloodletting chart illustrating the enduring reliance on Galenic humoural vein points.',
           desc: 'Renaissance broadsheet showing bloodletting points on the human body.',
+          provenance:
+            'Woodcut broadsheet illustrating vein-letting anatomical points, 16th century. Wellcome Collection, London (Shelfmark: L0023641).',
           hinge_question:
             "Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
           letter: 'C',
@@ -4414,8 +4438,10 @@ export const unitData = {
               "Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
             source_context:
               "In 1628, William Harvey published De Motu Cordis ('On the Motion of the Heart and Blood in Animals'). Using tight ligatures on human arms, Harvey demonstrated that internal vein valves only permit blood to travel in a single direction: towards the heart.",
+            provenance:
+              'Engraved plate from Chapter 13 of De Motu Cordis, William Fitzer, Frankfurt, 1628. Wellcome Collection, London (Shelfmark: EPB 3037/A).',
             citation:
-              'Engraved plate demonstrating vein valves from Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus, Frankfurt: William Fitzer, 1628.',
+              'Engraved plate from Chapter 13 of De Motu Cordis, William Fitzer, Frankfurt, 1628. Wellcome Collection, London (Shelfmark: EPB 3037/A).',
           },
           text: '<span class="para-ref">[3.1]</span> To prove that blood circulated in a single direction, Harvey devised a brilliant, elegant experiment using living human volunteers (<span class="archival-meta-tag">Source A</span>). He tied a tight ligature (tourniquet) around an arm until the arterial pulse in the wrist ceased and the hand grew pale and cold, proving that blood entered the arm through deep arteries. When he loosened the bandage slightly into a medium tightness, the arteries remained open, but the superficial surface veins were compressed. The veins swelled dramatically, and tiny nodules appeared along their length—the one-way valves discovered by Fabricius.<br><br><span class="para-ref">[3.2]</span> Harvey then used his finger to press and push blood down a vein away from the heart, between two valves. The vein remained completely empty and collapsed; blood refused to flow backwards. As soon as he released the lower finger, blood instantly rushed upwards toward the shoulder. This simple, repeatable physical demonstration proved conclusively that veins carry blood in only one direction: toward the heart. In 1628, Harvey published his complete findings in Frankfurt in his masterpiece, <em>Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus</em> ("On the Motion of the Heart and Blood in Animals").',
         },
@@ -4654,6 +4680,8 @@ export const unitData = {
           caption:
             'The engraved plate from Chapter 13 of De Motu Cordis (1628) showing Harvey’s arm ligature experiments with swollen veins and one-way valves.',
           desc: 'Authentic 1628 engraving from William Harvey’s De Motu Cordis.',
+          provenance:
+            'Engraved plate from Chapter 13 of De Motu Cordis, William Fitzer, Frankfurt, 1628. Wellcome Collection, London (Shelfmark: EPB 3037/A).',
           hinge_question:
             "Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
           letter: 'A',
@@ -4958,8 +4986,10 @@ export const unitData = {
               "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
             source_context:
               "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
+            provenance:
+              'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
             citation:
-              'Copperplate engraving by Paul Fürst of Nuremberg, after a 1656 drawing by J. Columbina, Germanisches Nationalmuseum, Nuremberg.',
+              'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
           },
           text: '<span class="para-ref">[3.1]</span> While municipal administration progressed, medical understanding in 1665 showed almost complete continuity with the medieval Black Death. Because the bacterium <em>Yersinia pestis</em> was unknown, physicians and magistrates remained completely ignorant of the true vector: rat fleas. Believing that domestic animals carried the poisonous contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals: over 40,000 dogs and an estimated 200,000 cats were slaughtered. This tragic error wiped out the natural predators of the black rat, allowing flea-carrying rodents to multiply unchecked throughout London’s timbered tenements.<br><br><span class="para-ref">[3.2]</span> Furthermore, the miasma theory remained the dominant medical explanation. Doctors wore protective leather suits and grotesque bird-like beak masks (<span class="archival-meta-tag">Source A</span>) packed with dried roses, cloves, and camphor to filter out "pestilential air". Citizens carried sweet-smelling pomanders, held sponges soaked in vinegar to their noses, and burned barrels of pitch in the streets. Schoolboys at Eton were forced to smoke tobacco every morning to ward off contagion. Quack doctors made fortunes selling useless "Plague Water", while folk healers strapped plucked, living chickens or dried toads to swollen buboes to "draw out the poison".',
         },
@@ -5206,6 +5236,8 @@ export const unitData = {
           caption:
             'A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.',
           desc: 'Iconic primary engraving of an early modern plague doctor in full protective attire.',
+          provenance:
+            'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
           hinge_question:
             "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
           letter: 'A',
@@ -5217,6 +5249,8 @@ export const unitData = {
           caption:
             'A contemporary woodcut broadsheet showing dead-carts dumping plague victims at night into a mass lime pit.',
           desc: 'Historic woodcut broadsheet illustrating nocturnal plague burials during the 1665 epidemic.',
+          provenance:
+            'Woodcut broadsheet depicting burial carts at the Holywell Mount pest pit, London, 1665. Museum of London (Accession No. NN2598).',
           hinge_question:
             'Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?',
           letter: 'B',
@@ -5561,7 +5595,8 @@ export const unitData = {
             image: '/images/pasteur_lab.jpg',
             caption:
               "Albert Edelfelt's celebrated 1885 portrait depicting Louis Pasteur examining a phial in his laboratory at the École Normale Supérieure in Paris, surrounded by experimental glassware.",
-            provenance: 'Oil on canvas by Albert Edelfelt, 1885. Musée d’Orsay, Paris.',
+            provenance:
+              'Oil on canvas by Albert Edelfelt, 1885. Musée d’Orsay, Paris (Accession No. RF 1982-12).',
             context:
               'Pasteur began his career as an industrial chemist solving fermentation problems for French wine and beer producers. In his Paris laboratory, surrounded by precision glassware and swan-neck flasks, Pasteur proved that fermentation and putrefaction were caused by living microscopic organisms, not spontaneous generation.',
             question:
@@ -5582,7 +5617,7 @@ export const unitData = {
             caption:
               "Tafel XXVI from Robert Koch's landmark publication Die Aetiologie der Tuberkulose, showing Mycobacterium tuberculosis stained with aniline methyl violet dye within infected lung tissue.",
             provenance:
-              'Die Aetiologie der Tuberkulose, Dr Robert Koch, Berliner Klinische Wochenschrift, No. 15, 10 April 1882.',
+              'Tafel XXVI, Die Aetiologie der Tuberkulose, Dr Robert Koch, Berliner Klinische Wochenschrift, No. 15, 10 April 1882. Wellcome Collection, London (Iconographic Coll. L0022359).',
             context:
               'In 1882, Robert Koch announced the discovery of the tuberculosis bacillus to the Berlin Physiological Society. Koch’s microphotographs provided indisputable visual proof that a specific, physical microorganism caused consumption, permanently destroying miasma theory.',
             question:
@@ -5796,7 +5831,8 @@ export const unitData = {
           image: '/images/pasteur_lab.jpg',
           caption:
             "Albert Edelfelt's celebrated 1885 portrait depicting Louis Pasteur examining a phial in his laboratory at the École Normale Supérieure in Paris, surrounded by experimental glassware.",
-          provenance: 'Oil on canvas by Albert Edelfelt, 1885. Musée d’Orsay, Paris.',
+          provenance:
+            'Oil on canvas by Albert Edelfelt, 1885. Musée d’Orsay, Paris (Accession No. RF 1982-12).',
           context:
             'Pasteur began his career as an industrial chemist solving fermentation problems for French wine and beer producers. In his Paris laboratory, surrounded by precision glassware and swan-neck flasks, Pasteur proved that fermentation and putrefaction were caused by living microscopic organisms, not spontaneous generation.',
           hinge_question:
@@ -5812,7 +5848,7 @@ export const unitData = {
           caption:
             "Tafel XXVI from Robert Koch's landmark publication Die Aetiologie der Tuberkulose, showing Mycobacterium tuberculosis stained with aniline methyl violet dye within infected lung tissue.",
           provenance:
-            'Die Aetiologie der Tuberkulose, Dr Robert Koch, Berliner Klinische Wochenschrift, No. 15, 10 April 1882.',
+            'Tafel XXVI, Die Aetiologie der Tuberkulose, Dr Robert Koch, Berliner Klinische Wochenschrift, No. 15, 10 April 1882. Wellcome Collection, London (Iconographic Coll. L0022359).',
           context:
             'In 1882, Robert Koch announced the discovery of the tuberculosis bacillus to the Berlin Physiological Society. Koch’s microphotographs provided indisputable visual proof that a specific, physical microorganism caused consumption, permanently destroying miasma theory.',
           hinge_question:
@@ -6075,7 +6111,7 @@ export const unitData = {
             caption:
               "James Gillray's satirical cartoon showing Edward Jenner administering cowpox vaccine at the Smallpox Hospital, while terrified patients sprout cows from their bodies.",
             provenance:
-              'Hand-coloured satirical etching by James Gillray, published by Hannah Humphrey, St James’s Street, London, 12 June 1802.',
+              'Hand-coloured satirical etching by James Gillray, published by Hannah Humphrey, London, 12 June 1802. British Museum (BM Satires 9924) / Wellcome Collection V0011116.',
             context:
               'Published in London in 1802, Gillray’s satire reflected fierce public paranoia and medical opposition fueled by commercial inoculators and religious preachers who argued that injecting matter from beasts into humans violated God’s divine law.',
             question:
@@ -6308,7 +6344,7 @@ export const unitData = {
           caption:
             "James Gillray's satirical cartoon showing Edward Jenner administering cowpox vaccine at the Smallpox Hospital, while terrified patients sprout cows from their bodies.",
           provenance:
-            'Hand-coloured satirical etching by James Gillray, published by Hannah Humphrey, St James’s Street, London, 12 June 1802.',
+            'Hand-coloured satirical etching by James Gillray, published by Hannah Humphrey, London, 12 June 1802. British Museum (BM Satires 9924) / Wellcome Collection V0011116.',
           context:
             'Published in London in 1802, Gillray’s satire reflected fierce public paranoia and medical opposition fueled by commercial inoculators and religious preachers who argued that injecting matter from beasts into humans violated God’s divine law.',
           hinge_question:
@@ -6571,7 +6607,7 @@ export const unitData = {
             caption:
               "Florence Nightingale's celebrated Polar Area Diagram showing the causes of mortality in the army in the East from April 1854 to March 1856.",
             provenance:
-              'Diagram of the Causes of Mortality in the Army in the East, Royal Commission on the Health of the Army, London, 1858.',
+              'Diagram of the Causes of Mortality in the Army in the East, Royal Commission on the Health of the Army, London, 1858. The National Archives, Kew (Catalogue Ref: WO 33/6) / Wellcome Collection L0032240.',
             context:
               'Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus.',
             question:
@@ -6808,7 +6844,7 @@ export const unitData = {
           caption:
             "Florence Nightingale's celebrated Polar Area Diagram showing the causes of mortality in the army in the East from April 1854 to March 1856.",
           provenance:
-            'Diagram of the Causes of Mortality in the Army in the East, Royal Commission on the Health of the Army, London, 1858.',
+            'Diagram of the Causes of Mortality in the Army in the East, Royal Commission on the Health of the Army, London, 1858. The National Archives, Kew (Catalogue Ref: WO 33/6) / Wellcome Collection L0032240.',
           context:
             'Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus.',
           hinge_question:
@@ -7051,7 +7087,7 @@ export const unitData = {
             caption:
               '19th-century engraving depicting Dr James Young Simpson, Dr George Keith, and Dr James Duncan collapsed unconscious under the dining table after inhaling chloroform vapor at 52 Queen Street, Edinburgh.',
             provenance:
-              'Historical engraving, Wellcome Collection, London, depicting the evening of 4 November 1847 in Edinburgh.',
+              'Wood engraving depicting the experiment of 4 November 1847 at 52 Queen Street, Edinburgh. Wellcome Collection, London (Iconographic Coll. V0015502).',
             context:
               'Prior to 1847, operations were harrowing ordeals of agony and shock. Simpson tested numerous chemical vapors on himself and his assistants at dinner parties. On 4 November 1847, the trio inhaled chloroform and woke up under the table, proving its powerful anaesthetic effect.',
             question:
@@ -7072,7 +7108,7 @@ export const unitData = {
             caption:
               "Wood engraving from W. Watson Cheyne's Antiseptic Surgery (1882) showing Joseph Lister performing surgery enveloped in a steam-powered cloud of carbolic acid spray.",
             provenance:
-              'Fig. 23 from Antiseptic Surgery: Its Principles, Practice, History and Results, W. Watson Cheyne, London: Smith, Elder & Co., 1882.',
+              'Fig. 23 from Antiseptic Surgery: Its Principles, Practice, History and Results, W. Watson Cheyne, London: Smith, Elder & Co., 1882. Royal College of Surgeons of England (RCS Tracts 2305) / Wellcome Collection L0008892.',
             context:
               'Illustrated in W. Watson Cheyne’s Antiseptic Surgery (1882), this plate shows Lister’s complete antiseptic operating technique. Lister used a steam spray to kill airborne microbes in the theatre.',
             question:
@@ -7284,7 +7320,7 @@ export const unitData = {
           caption:
             '19th-century engraving depicting Dr James Young Simpson, Dr George Keith, and Dr James Duncan collapsed unconscious under the dining table after inhaling chloroform vapor at 52 Queen Street, Edinburgh.',
           provenance:
-            'Historical engraving, Wellcome Collection, London, depicting the evening of 4 November 1847 in Edinburgh.',
+            'Wood engraving depicting the experiment of 4 November 1847 at 52 Queen Street, Edinburgh. Wellcome Collection, London (Iconographic Coll. V0015502).',
           context:
             'Prior to 1847, operations were harrowing ordeals of agony and shock. Simpson tested numerous chemical vapors on himself and his assistants at dinner parties. On 4 November 1847, the trio inhaled chloroform and woke up under the table, proving its powerful anaesthetic effect.',
           hinge_question:
@@ -7300,7 +7336,7 @@ export const unitData = {
           caption:
             "Wood engraving from W. Watson Cheyne's Antiseptic Surgery (1882) showing Joseph Lister performing surgery enveloped in a steam-powered cloud of carbolic acid spray.",
           provenance:
-            'Fig. 23 from Antiseptic Surgery: Its Principles, Practice, History and Results, W. Watson Cheyne, London: Smith, Elder & Co., 1882.',
+            'Fig. 23 from Antiseptic Surgery: Its Principles, Practice, History and Results, W. Watson Cheyne, London: Smith, Elder & Co., 1882. Royal College of Surgeons of England (RCS Tracts 2305) / Wellcome Collection L0008892.',
           context:
             'Illustrated in W. Watson Cheyne’s Antiseptic Surgery (1882), this plate shows Lister’s complete antiseptic operating technique. Lister used a steam spray to kill airborne microbes in the theatre.',
           hinge_question:
@@ -7544,7 +7580,7 @@ export const unitData = {
             caption:
               "John Leech's famous satirical wood engraving in Punch (1852) depicting the horrific squalor, overflowing cesspools, and dung heaps of an industrial London slum court where children play and a coffin is carried.",
             provenance:
-              'Wood engraving by John Leech, Punch, or the London Charivari, Vol. 23, 25 September 1852.',
+              'Wood engraving by John Leech, Punch, or the London Charivari, Vol. 23, 25 September 1852, p. 139. British Library / Wellcome Collection V0011166.',
             context:
               'During the rapid industrialization of the nineteenth century, working-class families lived crammed into unpaved, undrained slum courts with shared privies over unlined cesspools. The cartoon depicts this squalor as the throne room of King Cholera, shaming Parliament for its laissez-faire inaction.',
             question:
@@ -7567,7 +7603,7 @@ export const unitData = {
             caption:
               'Map showing the distribution of cholera deaths in Soho, London, during the September 1854 epidemic, compiled by Dr John Snow.',
             provenance:
-              'Map 1 from On the Mode of Communication of Cholera (2nd edition), Dr John Snow, London: John Churchill, 1855.',
+              'Lithograph map from On the Mode of Communication of Cholera (2nd edition), Dr John Snow, London: John Churchill, 1855. Wellcome Collection, London (Iconographic Coll. L0014886).',
             context:
               'During the catastrophic September 1854 cholera outbreak in Soho, Dr John Snow marked each recorded death with a black bar on a street map. The deaths clustered overwhelmingly around the Broad Street water pump, while workers at the nearby brewery (who drank beer rather than pump water) remained unharmed.',
             question:
@@ -7588,7 +7624,7 @@ export const unitData = {
             caption:
               'Sir Joseph Bazalgette and engineering staff inspecting the massive brick tunnels of the Northern Outfall Sewer during construction in east London, c. 1863.',
             provenance:
-              'Contemporary photograph of the Northern Outfall Sewer works, Metropolitan Board of Works, London, c. 1863.',
+              'Albumen silver print of the Northern Outfall Sewer works, Metropolitan Board of Works, London, c. 1863. London Metropolitan Archives (Accession No. SC/PH/LMA/01/0572).',
             context:
               'Constructed between 1859 and 1865, Bazalgette’s London sewer system was one of the largest engineering projects in the Victorian world. It was authorized by Parliament after the Great Stink forced politicians to act.',
             question:
@@ -7805,7 +7841,7 @@ export const unitData = {
           caption:
             "John Leech's famous satirical wood engraving in Punch (1852) depicting the horrific squalor, overflowing cesspools, and dung heaps of an industrial London slum court where children play and a coffin is carried.",
           provenance:
-            'Wood engraving by John Leech, Punch, or the London Charivari, Vol. 23, 25 September 1852.',
+            'Wood engraving by John Leech, Punch, or the London Charivari, Vol. 23, 25 September 1852, p. 139. British Library / Wellcome Collection V0011166.',
           context:
             'During the rapid industrialization of the nineteenth century, working-class families lived crammed into unpaved, undrained slum courts with shared privies over unlined cesspools. The cartoon depicts this squalor as the throne room of King Cholera, shaming Parliament for its laissez-faire inaction.',
           hinge_question:
@@ -7821,7 +7857,7 @@ export const unitData = {
           caption:
             'Map showing the distribution of cholera deaths in Soho, London, during the September 1854 epidemic, compiled by Dr John Snow.',
           provenance:
-            'Map 1 from On the Mode of Communication of Cholera (2nd edition), Dr John Snow, London: John Churchill, 1855.',
+            'Lithograph map from On the Mode of Communication of Cholera (2nd edition), Dr John Snow, London: John Churchill, 1855. Wellcome Collection, London (Iconographic Coll. L0014886).',
           context:
             'During the catastrophic September 1854 cholera outbreak in Soho, Dr John Snow marked each recorded death with a black bar on a street map. The deaths clustered overwhelmingly around the Broad Street water pump, while workers at the nearby brewery (who drank beer rather than pump water) remained unharmed.',
           hinge_question:
@@ -7837,7 +7873,7 @@ export const unitData = {
           caption:
             'Sir Joseph Bazalgette and engineering staff inspecting the massive brick tunnels of the Northern Outfall Sewer during construction in east London, c. 1863.',
           provenance:
-            'Contemporary photograph of the Northern Outfall Sewer works, Metropolitan Board of Works, London, c. 1863.',
+            'Albumen silver print of the Northern Outfall Sewer works, Metropolitan Board of Works, London, c. 1863. London Metropolitan Archives (Accession No. SC/PH/LMA/01/0572).',
           context:
             'Constructed between 1859 and 1865, Bazalgette’s London sewer system was one of the largest engineering projects in the Victorian world. It was authorized by Parliament after the Great Stink forced politicians to act.',
           hinge_question:

@@ -1465,7 +1465,7 @@ export function renderLesson(lesson) {
           ? `data-target-source="${sLetter}" title="Hover or click to highlight Source ${sLetter}"`
           : '';
 
-      if (unitId === 'great_war') {
+      if (unitId === 'great_war' || unitId === 'edexcel_medicine') {
         const sLetterMatch = (source.title || '').match(/(?:Source|Map|Diagram)\s+([A-Z])/i);
         const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
         const isMap = /map/i.test(source.title);
@@ -1498,14 +1498,14 @@ export function renderLesson(lesson) {
             ${
               source.src || source.source || source.image
                 ? `
-              <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
-                <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
-                  <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
+              <div class="archival-source-split-layout">
+                <div class="archival-source-media-col">
+                  <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}" style="cursor: zoom-in;">
                   <div class="archival-source-inspect-badge">
                     <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                   </div>
                 </div>
-                <div class="archival-source-details-col" style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; box-sizing: border-box; overflow: hidden;">
+                <div class="archival-source-details-col">
                   <div>
                     ${
                       source.caption
@@ -1528,10 +1528,10 @@ export function renderLesson(lesson) {
                     }
                   </div>
                   ${
-                    source.citation
+                    source.citation || source.provenance
                       ? `
                     <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
-                      <strong>Provenance:</strong> ${source.citation}
+                      <strong>Provenance:</strong> ${source.citation || source.provenance}
                     </div>
                   `
                       : ''
@@ -1560,10 +1560,10 @@ export function renderLesson(lesson) {
                   : ''
               }
               ${
-                source.citation
+                source.citation || source.provenance
                   ? `
                 <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 12px;">
-                  <strong>Provenance:</strong> ${source.citation}
+                  <strong>Provenance:</strong> ${source.citation || source.provenance}
                 </div>
               `
                   : ''
@@ -1671,14 +1671,14 @@ export function renderLesson(lesson) {
             ${
               srcs.length > 0
                 ? `
-              <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
-                <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
-                  ${srcs.map((src) => `<img src="${getAssetUrl(src)}" alt="${lesson.primary_source.title}" data-action="open-modal" data-src="${getAssetUrl(src)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">`).join('')}
+              <div class="archival-source-split-layout">
+                <div class="archival-source-media-col">
+                  ${srcs.map((src) => `<img src="${getAssetUrl(src)}" alt="${lesson.primary_source.title}" data-action="open-modal" data-src="${getAssetUrl(src)}" style="cursor: zoom-in;">`).join('')}
                   <div class="archival-source-inspect-badge">
                     <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                   </div>
                 </div>
-                <div class="archival-source-details-col" style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; box-sizing: border-box; overflow: hidden;">
+                <div class="archival-source-details-col">
                   <div>
                     ${
                       lesson.primary_source.caption
@@ -1701,10 +1701,10 @@ export function renderLesson(lesson) {
                     }
                   </div>
                   ${
-                    lesson.primary_source.citation
+                    lesson.primary_source.citation || lesson.primary_source.provenance
                       ? `
                     <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
-                      <strong>Provenance:</strong> ${lesson.primary_source.citation}
+                      <strong>Provenance:</strong> ${lesson.primary_source.citation || lesson.primary_source.provenance}
                     </div>
                   `
                       : ''
@@ -1716,10 +1716,10 @@ export function renderLesson(lesson) {
             }
             ${lesson.primary_source.quote ? `<blockquote style="border-left: 4px solid #3b82f6; background: #f8fafc; padding: 14px 18px; margin: 15px 0; border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; text-align: left; font-size: 1rem; line-height: 1.6;">&ldquo;${lesson.primary_source.quote}&rdquo;</blockquote>` : ''}
             ${
-              lesson.primary_source.citation
+              lesson.primary_source.citation || lesson.primary_source.provenance
                 ? `
               <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 14px;">
-                <strong>Provenance:</strong> ${lesson.primary_source.citation}
+                <strong>Provenance:</strong> ${lesson.primary_source.citation || lesson.primary_source.provenance}
               </div>
             `
                 : ''
@@ -3123,14 +3123,14 @@ export function renderLesson(lesson) {
         } else {
           const rawSourceImgUrl = getAssetUrl(rawSource.src || rawSource.source || rawSource.image);
           sourceBodyHtml = `
-            <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
-              <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
-                <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
+            <div class="archival-source-split-layout">
+              <div class="archival-source-media-col">
+                <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" style="cursor: zoom-in;">
                 <div class="archival-source-inspect-badge">
                   <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                 </div>
               </div>
-              <div class="archival-source-details-col" style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; box-sizing: border-box; overflow: hidden;">
+              <div class="archival-source-details-col">
                 <div>
                   ${
                     (window.currentUnitId === 'cme_new' ||

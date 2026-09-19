@@ -4226,17 +4226,30 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
 
 @media (max-width: 768px) {
   .archival-source-split-layout {
-    flex-direction: column;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
   .archival-source-media-col {
-    flex: 1 1 100%;
-    max-width: 100%;
+    flex: 0 0 180px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
   }
   .archival-source-media-col img {
-    max-height: 200px;
+    height: 100% !important;
+    max-height: 168px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
   }
   .archival-source-details-col {
-    flex: 1 1 100%;
+    flex: 1 1 auto !important;
+    width: 100% !important;
   }
 }
 
