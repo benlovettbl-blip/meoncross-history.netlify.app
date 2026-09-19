@@ -219,13 +219,12 @@ function getFileHash(filePath) {
               headerTemplate: '<div></div>',
               footerTemplate:
                 '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
-              margin: [
-                'industrialisation_and_empire',
-                'early_modern_world',
-                'medieval_england',
-              ].includes(unit)
-                ? { top: '15mm', right: '20mm', bottom: '22mm', left: '20mm' }
-                : { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
+              margin:
+                unit === 'industrialisation_and_empire'
+                  ? { top: '10mm', right: '12mm', bottom: '12mm', left: '12mm' }
+                  : ['early_modern_world', 'medieval_england'].includes(unit)
+                    ? { top: '15mm', right: '20mm', bottom: '22mm', left: '20mm' }
+                    : { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
             });
             success = true;
             console.log('Saved ' + pdfPath);

@@ -460,7 +460,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     *, *:before, *:after { box-sizing: border-box; }
     @page {
       size: A4 portrait;
-      margin: 15mm 20mm 15mm 20mm;
+      margin: 10mm 12mm 12mm 12mm;
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
@@ -476,8 +476,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     }
     .page, .page-container {
       width: 100%;
-      height: 256mm;
-      max-height: 256mm;
+      height: 272mm;
+      max-height: 272mm;
       overflow: hidden;
       box-sizing: border-box;
       position: relative;
@@ -611,7 +611,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   // PAGE 2: PROGRESS & ASSESSMENT TRACKER (Verso, Left Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-2" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+  <div class="page page-container" id="page-2" style="padding: 10px 0; display: flex; flex-direction: column; height: 272mm; justify-content: space-between;">
     <div>
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 7px;">
         <h2 style="margin: 0; color: #1e3a8a; font-size: 14pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
@@ -700,7 +700,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   // PAGE 3: COURSE MAP & TIMELINE (Recto, Right Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-3" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+  <div class="page page-container" id="page-3" style="padding: 10px 0; display: flex; flex-direction: column; height: 272mm; justify-content: space-between;">
     <div style="flex-shrink: 0;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 6px;">
         <h2 style="margin: 0; font-size: 14.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Curriculum Roadmap & Chronological Spine</h2>
@@ -901,8 +901,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     if (cfg.bridgeTask.type === 'source_annotation') {
       html += `
           <!-- Archival Source C Excerpt Box for Annotation -->
-          <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #1e3a8a; background: #fffdfa; border-radius: 4px; padding: 7px 10px; margin-bottom: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+          <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #1e3a8a; background: #fffdfa; border-radius: 4px; padding: 6px 10px; margin-bottom: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 4px;">
               <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: #1e3a8a;">
                 ${cfg.bridgeTask.sourceTitle || 'Primary Archive Record · Source C'}
               </span>
@@ -910,7 +910,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
                 ${cfg.bridgeTask.shelfmark || 'ADMIRALTY PAPERS'}
               </span>
             </div>
-            <div style="font-family: 'Georgia', serif; font-size: 8.8pt; font-style: italic; color: #1e293b; line-height: 1.55; margin-bottom: 4px;">
+            <div style="font-family: 'Georgia', serif; font-size: 8.8pt; font-style: italic; color: #1e293b; line-height: 1.45; margin-bottom: 3px;">
               ${cfg.bridgeTask.sourceText}
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; border-top: 1px dotted #e2e8f0; padding-top: 2px;">
@@ -919,7 +919,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           </div>
 
           <!-- Active Reading Annotation Prompts -->
-          <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 4px; padding: 4px 7px; margin-bottom: 5px;">
+          <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 4px; padding: 4px 7px; margin-bottom: 4px;">
             <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
               ✏️ Active Source Annotation Tasks:
             </div>
@@ -932,24 +932,29 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
           <!-- Disciplinary Application Questions -->
           <div style="margin-bottom: 3px;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">
               <span style="color: #1e3a8a;">Part A (GCSE Inference):</span> ${cfg.bridgeTask.questionA}
             </div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
           </div>
 
           <div style="margin-bottom: 3px;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
-              <span style="color: #1e3a8a;">Part B (GCSE Provenance):</span> ${cfg.bridgeTask.questionB}
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">
+              <span style="color: #1e3a8a;">Part B (GCSE Provenance &amp; Reliability):</span> ${cfg.bridgeTask.questionB}
             </div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
           </div>
 
-          <div style="font-family: 'Georgia', serif; font-size: 8pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
+          <div class="task-line" style="height: 5.8mm;"></div>
       `;
     } else if (cfg.bridgeTask.type === 'draw_label') {
       html += `
@@ -1378,16 +1383,16 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
             );
             const lineHPx = lineH * 3.7795; // ~28.7px
             let safety = 0;
-            // Append lines while keeping a comfortable 30px buffer above teacher assessment
-            while (getGap() > lineHPx + 30 && safety < 15) {
+            // Append lines while keeping a comfortable ~10-15px buffer above teacher assessment
+            while (getGap() > lineHPx + 8 && safety < 25) {
               const newLine = document.createElement('div');
               newLine.className = 'task-line';
               newLine.style.height = lineH + 'mm';
               writingContainer.appendChild(newLine);
               safety++;
             }
-            // Guard: ensure no page ever overflows (gap must be >= 24px)
-            while (getGap() < 24 && writingContainer.children.length > 8) {
+            // Guard: ensure no page ever overflows (gap must be >= 6px)
+            while (getGap() < 6 && writingContainer.children.length > 8) {
               writingContainer.removeChild(writingContainer.lastElementChild);
             }
           }
