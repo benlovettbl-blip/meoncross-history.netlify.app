@@ -1776,23 +1776,23 @@ window.finishQuizModal = function () {
   let trajectoryHtml = '';
   if (prevBestScore === null) {
     trajectoryHtml = `
-      <div style="display: inline-block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.82rem; margin-top: 8px;">
+      <div style="display: inline-block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-top: 8px; white-space: nowrap;">
         <i class="fa-solid fa-star" style="color: #3b82f6;"></i> First Attempt Completed!
       </div>`;
   } else if (score > prevBestScore) {
     trajectoryHtml = `
-      <div style="display: inline-block; background: #f0fdf4; color: #15803d; border: 1.5px solid #86efac; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 0.84rem; margin-top: 8px;">
-        <i class="fa-solid fa-arrow-trend-up"></i> New Personal Best! (Previous: ${prevBestScore}/${total} &rarr; Now: ${score}/${total} 🎉)
+      <div style="display: inline-block; background: #f0fdf4; color: #15803d; border: 1.5px solid #86efac; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; margin-top: 8px; white-space: nowrap;">
+        <i class="fa-solid fa-arrow-trend-up"></i> New Personal Best! (Prev: ${prevBestScore}/${total} &rarr; Now: ${score}/${total} 🎉)
       </div>`;
   } else if (score === prevBestScore) {
     trajectoryHtml = `
-      <div style="display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.82rem; margin-top: 8px;">
-        <i class="fa-solid fa-bullseye"></i> Matched Personal Best: ${score}/${total} 🎯
+      <div style="display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-top: 8px; white-space: nowrap;">
+        <i class="fa-solid fa-bullseye"></i> Matched Best: ${score}/${total} 🎯
       </div>`;
   } else {
     trajectoryHtml = `
-      <div style="display: inline-block; background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.82rem; margin-top: 8px;">
-        Current: ${score}/${total} &bull; Personal Best: ${prevBestScore}/${total}
+      <div style="display: inline-block; background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; margin-top: 8px; white-space: nowrap;">
+        Current: ${score}/${total} &bull; Best: ${prevBestScore}/${total}
       </div>`;
   }
 

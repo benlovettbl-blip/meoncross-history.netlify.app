@@ -1422,8 +1422,10 @@ allDirs.forEach((unitId) => {
     }
 
     if (unitId === 'edexcel_medicine' && period.name === 'renaissance') {
-      const { buildMedicineTwoPageWorkbook } = require('./render_medicine_twopage_workbook.cjs');
-      let customHtml = buildMedicineTwoPageWorkbook(unitData, period);
+      const {
+        buildRenaissanceTwoPageWorkbook,
+      } = require('./render_medicine_renaissance_twopage_workbook.cjs');
+      let customHtml = buildRenaissanceTwoPageWorkbook(unitData, period);
       const filename = `pupil_workbook_${period.name}.html`;
       const outPath = path.join(publicUnitsDir, unitId, filename);
       try {
