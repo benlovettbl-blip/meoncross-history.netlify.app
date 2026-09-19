@@ -1490,15 +1490,9 @@ export function renderLesson(lesson) {
           <div class="archival-source-box accent-amber" style="background: #fffdfa; border: 1px solid #cbd5e1; border-top: 3.5px solid ${isMap ? '#059669' : '#1e3a8a'}; border-radius: 8px; padding: 22px 26px; margin-bottom: 24px; text-align: left; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
             <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0;">
               <div>
-                <span class="archival-meta-tag" style="display: block; margin-bottom: 4px; color: ${isMap ? '#059669' : '#1e3a8a'}; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;">
-                  ${metaTag} · ${prefix}
-                </span>
                 <h4 class="archival-source-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.35;">
-                  ${displayTitle}
+                  ${source.title || displayTitle}
                 </h4>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span class="archival-shelfmark-stamp">${source.shelfmark || (sLetter ? `ARCHIVE · ${sLetter}` : 'ARCHIVAL RECORD')}</span>
               </div>
             </div>
             ${
@@ -1536,9 +1530,8 @@ export function renderLesson(lesson) {
                   ${
                     source.citation
                       ? `
-                    <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
-                      <span><strong>Provenance:</strong> ${source.citation}</span>
-                      <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                    <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
+                      <strong>Provenance:</strong> ${source.citation}
                     </div>
                   `
                       : ''
@@ -1569,9 +1562,8 @@ export function renderLesson(lesson) {
               ${
                 source.citation
                   ? `
-                <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 12px;">
-                  <span><strong>Provenance:</strong> ${source.citation}</span>
-                  <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 12px;">
+                  <strong>Provenance:</strong> ${source.citation}
                 </div>
               `
                   : ''
@@ -1582,12 +1574,8 @@ export function renderLesson(lesson) {
               source.question || source.hinge_question
                 ? `
               <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 14px 18px; border-radius: 4px; text-align: left; margin-top: 14px; box-shadow: 0 2px 5px rgba(30,58,138,0.06);">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                  <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;">BOARD INQUIRY &bull; WHOLE-CLASS DISCUSSION</span>
-                  <span style="font-size: 0.72rem; color: #64748b; font-style: italic;">Look at the source above:</span>
-                </div>
                 <p style="margin-bottom: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                  <strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question || source.hinge_question, !source.qNum)}</strong>
+                  <strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(cleanQuestionText(source.question || source.hinge_question), !source.qNum)}</strong>
                 </p>
               </div>
             `
@@ -1715,9 +1703,8 @@ export function renderLesson(lesson) {
                   ${
                     lesson.primary_source.citation
                       ? `
-                    <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
-                      <span><strong>Provenance:</strong> ${lesson.primary_source.citation}</span>
-                      <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                    <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
+                      <strong>Provenance:</strong> ${lesson.primary_source.citation}
                     </div>
                   `
                       : ''
@@ -1731,9 +1718,8 @@ export function renderLesson(lesson) {
             ${
               lesson.primary_source.citation
                 ? `
-              <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 14px;">
-                <span><strong>Provenance:</strong> ${lesson.primary_source.citation}</span>
-                <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+              <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 14px;">
+                <strong>Provenance:</strong> ${lesson.primary_source.citation}
               </div>
             `
                 : ''
@@ -3083,17 +3069,9 @@ export function renderLesson(lesson) {
 
         const sourceHeaderHtml = sourceTitle
           ? `
-            <div class="archival-source-header">
-              <div>
-                <span class="archival-meta-tag accent-blue" style="display: block; margin-bottom: 3px;">
-                  Primary Historical Evidence ${bLetter ? `· Source ${bLetter}` : ''}
-                </span>
-                <h4 class="archival-source-title">${sourceTitle}</h4>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                ${rawSource.shelfmark ? `<span class="archival-shelfmark-stamp">${rawSource.shelfmark}</span>` : bLetter ? `<span class="archival-shelfmark-stamp">SOURCE ${bLetter}</span>` : ''}
-                ${sourceAudioBtnHtml}
-              </div>
+            <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
+              <h4 class="archival-source-title" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.12rem; font-weight: 700; color: #0f172a;">${sourceTitle}</h4>
+              ${sourceAudioBtnHtml}
             </div>
           `
           : isWrittenSource
@@ -3112,9 +3090,8 @@ export function renderLesson(lesson) {
             </div>
             ${
               rawSource.citation
-                ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
-                    <span><strong>Provenance:</strong> ${rawSource.citation}</span>
-                    <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
+                    <strong>Provenance:</strong> ${rawSource.citation}
                   </div>`
                 : ''
             }
@@ -3185,9 +3162,8 @@ export function renderLesson(lesson) {
                 </div>
                 ${
                   rawSource.citation || rawSource.provenance
-                    ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
-                        <span><strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}</span>
-                        <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                    ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
+                        <strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}
                       </div>`
                     : ''
                 }
@@ -3204,12 +3180,8 @@ export function renderLesson(lesson) {
                   rawSource.question || rawSource.hinge_question
                     ? `
                   <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                      <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;">BOARD INQUIRY &bull; WHOLE-CLASS DISCUSSION</span>
-                      <span style="font-size: 0.72rem; color: #64748b; font-style: italic;">Look at the source above:</span>
-                    </div>
                     <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.question || rawSource.hinge_question) : rawSource.question || rawSource.hinge_question}
+                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question)}
                     </div>
                   </div>
                 `

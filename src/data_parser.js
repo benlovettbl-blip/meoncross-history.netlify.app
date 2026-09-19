@@ -14,6 +14,8 @@ export function cleanQuestionText(text) {
       .replace(/^PAST TOPIC:\s*/i, '')
       .replace(/^Enquiry:\s*/i, '')
       .replace(/^Predict:\s*/i, '')
+      .replace(/^Look at (?:Source\s+[A-Z]|the source)\s+above:\s*/i, '')
+      .replace(/^Look at Source\s+[A-Z][.:]?\s*/i, '')
       // 2. Remove variations of question/task numbering (e.g., "1. ", "Q1: ", "Task 2: ", "Question 3a: ", "Enquiry Task: ")
       .replace(
         /^(Q\d+[:.]? |Task \d+[:.]? |Question \d+[a-z]?[:.]? |Enquiry Task[:.]? |\d+[__________]\s*)/i,
@@ -60,10 +62,22 @@ export function sanitizeLessonData(lesson) {
     }
   }
 
+  if (lesson.sources) {
+    lesson.sources.forEach((s) => {
+      if (s.question) s.question = cleanQuestionText(s.question);
+      if (s.hinge_question) s.hinge_question = cleanQuestionText(s.hinge_question);
+    });
+  }
+
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
       if (!block.text && block.content) {
         block.text = block.content;
+      }
+      if (block.source) {
+        if (block.source.question) block.source.question = cleanQuestionText(block.source.question);
+        if (block.source.hinge_question)
+          block.source.hinge_question = cleanQuestionText(block.source.hinge_question);
       }
       if (block.tasks) {
         block.tasks.forEach((task) => {

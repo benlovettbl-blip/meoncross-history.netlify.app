@@ -697,9 +697,9 @@ export const unitData = {
             context:
               'The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly and viewed illness, famine, and recovery as direct expressions of God’s divine intervention.',
             question:
-              'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+              'Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
             hinge_question:
-              'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+              'Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
           },
         },
         {
@@ -732,9 +732,9 @@ export const unitData = {
             context:
               'Medieval physicians carried pocket handbooks called Vademecums containing Zodiac Man diagrams. Doctors were strictly forbidden to bleed, purge, or operate on a body part when the moon was in its governing astrological sign.',
             question:
-              'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+              'Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
             hinge_question:
-              'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+              'Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
           },
         },
         {
@@ -768,7 +768,7 @@ export const unitData = {
           context:
             'The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly and viewed illness, famine, and recovery as direct expressions of God’s divine intervention.',
           hinge_question:
-            'Look at Source A above: Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
+            'Study the central position of the altar and the depiction of the Last Judgment (Doom painting). Why did the medieval Church teach that illness was sent directly by God as a punishment for sin, and how did this belief discourage people from searching for physical causes of disease?',
         },
         {
           id: 'source_b_zodiac',
@@ -783,7 +783,7 @@ export const unitData = {
           context:
             'Medieval physicians carried pocket handbooks called Vademecums containing Zodiac Man diagrams. Doctors were strictly forbidden to bleed, purge, or operate on a body part when the moon was in its governing astrological sign.',
           hinge_question:
-            'Look at Source B above: Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+            'Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
         },
       ],
       quick_quiz: [
@@ -1105,9 +1105,9 @@ export const unitData = {
             context:
               'The Theory of the Four Humours dominated medieval clinical diagnosis. Doctors believed every person had a unique humoural balance dictated by their birth, diet, personality, and age.',
             question:
-              'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
+              'Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
             hinge_question:
-              'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
+              'Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
           },
         },
         {
@@ -1153,9 +1153,9 @@ export const unitData = {
             context:
               'Uroscopy was the primary clinical diagnostic method in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of urine in a matula to deduce which humour was corrupted.',
             question:
-              'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+              'Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
             hinge_question:
-              'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+              'Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
           },
           tasks: [
             {
@@ -1184,7 +1184,7 @@ export const unitData = {
           context:
             'The Theory of the Four Humours dominated medieval clinical diagnosis. Doctors believed every person had a unique humoural balance dictated by their birth, diet, personality, and age.',
           hinge_question:
-            'Look at Source A above: Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
+            'Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
         },
         {
           id: 'source_b_urine',
@@ -1199,7 +1199,7 @@ export const unitData = {
           context:
             'Uroscopy was the primary clinical diagnostic method in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of urine in a matula to deduce which humour was corrupted.',
           hinge_question:
-            'Look at Source B above: Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+            'Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
         },
       ],
       quick_quiz: [
@@ -1508,9 +1508,9 @@ export const unitData = {
             context:
               'Bloodletting was the most universal surgical intervention in medieval Europe, performed by both physicians and barber-surgeons to balance humours.',
             question:
-              'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+              'Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
             hinge_question:
-              'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+              'Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
           },
         },
         {
@@ -1530,9 +1530,9 @@ export const unitData = {
             context:
               'Galen’s treatises on therapeutics dictated that doctors must actively expel corrupt humours through bleeding, sweating, and purging.',
             question:
-              'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+              'Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
             hinge_question:
-              'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+              'Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
           },
         },
         {
@@ -1566,7 +1566,7 @@ export const unitData = {
           context:
             'Bloodletting was the most universal surgical intervention in medieval Europe, performed by both physicians and barber-surgeons to balance humours.',
           hinge_question:
-            'Look at Source A above: Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+            'Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
         },
         {
           id: 'source_b_galen',
@@ -1581,7 +1581,7 @@ export const unitData = {
           context:
             'Galen’s treatises on therapeutics dictated that doctors must actively expel corrupt humours through bleeding, sweating, and purging.',
           hinge_question:
-            'Look at Source B above: Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+            'Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
         },
       ],
       quick_quiz: [
@@ -1894,9 +1894,9 @@ export const unitData = {
             context:
               'Surgeons learned their craft through apprenticeships rather than universities. They performed physical operations without anesthetics or antiseptics, relying on wine to clean wounds and cautery irons to stop bleeding.',
             question:
-              'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+              'Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
             hinge_question:
-              'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+              'Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
           },
         },
         {
@@ -1917,9 +1917,9 @@ export const unitData = {
             context:
               'Medieval hospitals were religious houses dedicated to Christian charity. Patients shared beds, were fed nourishing food, and received spiritual absolution.',
             question:
-              'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+              'Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
             hinge_question:
-              'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+              'Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
           },
         },
         {
@@ -1952,7 +1952,7 @@ export const unitData = {
           context:
             'Surgeons learned their craft through apprenticeships rather than universities. They performed physical operations without anesthetics or antiseptics, relying on wine to clean wounds and cautery irons to stop bleeding.',
           hinge_question:
-            'Look at Source A above: Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
+            'Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
         },
         {
           id: 'source_b_hospital',
@@ -1968,7 +1968,7 @@ export const unitData = {
           context:
             'Medieval hospitals were religious houses dedicated to Christian charity. Patients shared beds, were fed nourishing food, and received spiritual absolution.',
           hinge_question:
-            'Look at Source B above: Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+            'Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
         },
       ],
       quick_quiz: [
@@ -2287,9 +2287,9 @@ export const unitData = {
             context:
               'When the Black Death struck Europe in 1348–1349, it wiped out between 30% and 50% of the population. Churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside town walls.',
             question:
-              'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
+              'Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
             hinge_question:
-              'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
+              'Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
           },
         },
         {
@@ -2322,9 +2322,9 @@ export const unitData = {
             context:
               'Bubonic plague caused excruciating lymph swellings. Medieval observers had no knowledge of bacteria or fleas; they believed buboes were visible proof of humoural poisons boiling out of the blood.',
             question:
-              'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
+              'Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
             hinge_question:
-              'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
+              'Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
           },
         },
         {
@@ -2359,7 +2359,7 @@ export const unitData = {
           context:
             'When the Black Death struck Europe in 1348–1349, it wiped out between 30% and 50% of the population. Churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside town walls.',
           hinge_question:
-            'Look at Source A above: Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
+            'Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
         },
         {
           id: 'source_b_buboes',
@@ -2374,7 +2374,7 @@ export const unitData = {
           context:
             'Bubonic plague caused excruciating lymph swellings. Medieval observers had no knowledge of bacteria or fleas; they believed buboes were visible proof of humoural poisons boiling out of the blood.',
           hinge_question:
-            'Look at Source B above: Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
+            'Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
         },
       ],
       quick_quiz: [
@@ -2703,7 +2703,7 @@ export const unitData = {
             source: '/images/philosophical_transactions_vol1.jpg',
             image: '/images/philosophical_transactions_vol1.jpg',
             question:
-              "Look at Source B above: Notice that this journal was printed for John Martyn, 'Printer to the Royal Society'. How does the creation of Europe's first peer-reviewed scientific journal embody the Royal Society's radical motto Nullius in Verba ('Take nobody's word for it'), and why was publishing verified laboratory methods in print essential for transforming alchemy into modern scientific medicine?",
+              "Notice that this journal was printed for John Martyn, 'Printer to the Royal Society'. How does the creation of Europe's first peer-reviewed scientific journal embody the Royal Society's radical motto Nullius in Verba ('Take nobody's word for it'), and why was publishing verified laboratory methods in print essential for transforming alchemy into modern scientific medicine?",
             source_context:
               'In 1665, Henry Oldenburg founded Philosophical Transactions to establish an international scientific communications network. For the first time, scholars did not keep experiments secret; methods and results were published for European natural philosophers to replicate, critique, and verify.',
             citation:
@@ -2952,7 +2952,7 @@ export const unitData = {
             'A Renaissance printing house showing compositors setting movable metal type and pressmen operating the heavy wooden screw press.',
           desc: 'Contemporary engraving showing the mechanical process of movable type book printing.',
           hinge_question:
-            'Look at Source A above: Study the compositors arranging individual type characters and the pressmen operating the wooden screw press. How did this mechanical printing process permanently prevent Church authorities from suppressing new anatomical discoveries, and why did it eliminate the compounding errors introduced by medieval copyists?',
+            'Study the compositors arranging individual type characters and the pressmen operating the wooden screw press. How did this mechanical printing process permanently prevent Church authorities from suppressing new anatomical discoveries, and why did it eliminate the compounding errors introduced by medieval copyists?',
           letter: 'A',
         },
         {
@@ -2963,7 +2963,7 @@ export const unitData = {
             "Frontispiece of Volume I of Philosophical Transactions (1665), the world's first peer-reviewed scientific journal, printed for John Martyn, printer to the Royal Society.",
           desc: "Frontispiece of the Royal Society's groundbreaking peer-reviewed scientific journal.",
           hinge_question:
-            "Look at Source B above: How does the establishment of an official, peer-reviewed scientific journal demonstrate a complete departure from medieval university traditions where knowledge was based on memorising Galen's classical Latin texts?",
+            "How does the establishment of an official, peer-reviewed scientific journal demonstrate a complete departure from medieval university traditions where knowledge was based on memorising Galen's classical Latin texts?",
           letter: 'B',
         },
         {
@@ -2974,7 +2974,7 @@ export const unitData = {
             "Robert Hooke's famous fold-out engraving of a flea observed under the compound microscope, published by the Royal Society in Micrographia (1665).",
           desc: "Detailed microscopic engraving from Robert Hooke's landmark 1665 work Micrographia.",
           hinge_question:
-            'Look at Source C above: Hooke drew this flea using a compound microscope in 1665. Why did seeing microscopic details of insects amaze people in the 17th century, yet fail to help doctors understand what actually caused infectious diseases?',
+            'Hooke drew this flea using a compound microscope in 1665. Why did seeing microscopic details of insects amaze people in the 17th century, yet fail to help doctors understand what actually caused infectious diseases?',
           letter: 'C',
         },
       ],
@@ -3279,7 +3279,7 @@ export const unitData = {
             source: '/images/thomas_sydenham.jpg',
             image: '/images/thomas_sydenham.jpg',
             question:
-              "Look at Source A above: Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
+              "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
             source_context:
               "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
             citation:
@@ -3527,7 +3527,7 @@ export const unitData = {
             'Portrait of Dr Thomas Sydenham painted by his close friend Mary Beale, showing his sober attire and reflective demeanor.',
           desc: 'Authentic 17th-century portrait of Thomas Sydenham by Mary Beale.',
           hinge_question:
-            "Look at Source A above: Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
+            "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
           letter: 'A',
         },
         {
@@ -3538,7 +3538,7 @@ export const unitData = {
             'A 17th-century painting depicting an itinerant quack doctor examining a urine flask and flattering a patient.',
           desc: 'Contemporary oil painting depicting the commercial superstition of 17th-century medicine.',
           hinge_question:
-            'Look at Source B above: Look at the theatrical gestures of the travelling quack and the gullible villagers gathering around him. Why did uneducated mountebanks and quack doctors continue to flourish in 17th-century England, despite the groundbreaking discoveries of Vesalius and Harvey?',
+            'Look at the theatrical gestures of the travelling quack and the gullible villagers gathering around him. Why did uneducated mountebanks and quack doctors continue to flourish in 17th-century England, despite the groundbreaking discoveries of Vesalius and Harvey?',
           letter: 'B',
         },
         {
@@ -3549,7 +3549,7 @@ export const unitData = {
             'A 17th-century hospital ward showing rows of beds cared for by matrons following the closure of religious monastic infirmaries.',
           desc: 'Historic depiction of early modern hospital patient care.',
           hinge_question:
-            "Look at Source C above: Compare this early modern municipal hospital ward with medieval monastic care. What changes can you identify in terms of hygiene, administration, and medical supervision following Henry VIII's Dissolution of the Monasteries?",
+            "Compare this early modern municipal hospital ward with medieval monastic care. What changes can you identify in terms of hygiene, administration, and medical supervision following Henry VIII's Dissolution of the Monasteries?",
           letter: 'C',
         },
       ],
@@ -3855,7 +3855,7 @@ export const unitData = {
             source: '/images/vesalius_muscle_men.jpg',
             image: '/images/vesalius_muscle_men.jpg',
             question:
-              "Look at Source B above: Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
+              "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
             source_context:
               "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
             citation:
@@ -4096,7 +4096,7 @@ export const unitData = {
             'The frontispiece of De Fabrica (1543) showing Vesalius personally dissecting a female cadaver surrounded by students and spectators.',
           desc: 'Authentic 1543 woodcut frontispiece of Vesalius’s landmark anatomical treatise.',
           hinge_question:
-            'Look at Source A above: Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?',
+            'Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?',
           letter: 'A',
         },
         {
@@ -4107,7 +4107,7 @@ export const unitData = {
             'One of the famous "Muscle Men" woodcut plates from Book II of De Fabrica, showing the superficial muscular layer in classical posture.',
           desc: 'Masterwork anatomical woodcut plate from De Fabrica (1543).',
           hinge_question:
-            "Look at Source B above: Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
+            "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
           letter: 'B',
         },
         {
@@ -4118,7 +4118,7 @@ export const unitData = {
             'A 16th-century printed bloodletting chart illustrating the enduring reliance on Galenic humoural vein points.',
           desc: 'Renaissance broadsheet showing bloodletting points on the human body.',
           hinge_question:
-            "Look at Source C above: Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
+            "Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
           letter: 'C',
         },
       ],
@@ -4411,7 +4411,7 @@ export const unitData = {
             source: '/images/harvey_veins.jpg',
             image: '/images/harvey_veins.jpg',
             question:
-              "Look at Source A above: Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
+              "Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
             source_context:
               "In 1628, William Harvey published De Motu Cordis ('On the Motion of the Heart and Blood in Animals'). Using tight ligatures on human arms, Harvey demonstrated that internal vein valves only permit blood to travel in a single direction: towards the heart.",
             citation:
@@ -4655,7 +4655,7 @@ export const unitData = {
             'The engraved plate from Chapter 13 of De Motu Cordis (1628) showing Harvey’s arm ligature experiments with swollen veins and one-way valves.',
           desc: 'Authentic 1628 engraving from William Harvey’s De Motu Cordis.',
           hinge_question:
-            "Look at Source A above: Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
+            "Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
           letter: 'A',
         },
       ],
@@ -4955,7 +4955,7 @@ export const unitData = {
             source: '/images/plague_doctor_1665.png',
             image: '/images/plague_doctor_1665.png',
             question:
-              "Look at Source A above: Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+              "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
             source_context:
               "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
             citation:
@@ -5207,7 +5207,7 @@ export const unitData = {
             'A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.',
           desc: 'Iconic primary engraving of an early modern plague doctor in full protective attire.',
           hinge_question:
-            "Look at Source A above: Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
+            "Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
           letter: 'A',
         },
         {
@@ -5218,7 +5218,7 @@ export const unitData = {
             'A contemporary woodcut broadsheet showing dead-carts dumping plague victims at night into a mass lime pit.',
           desc: 'Historic woodcut broadsheet illustrating nocturnal plague burials during the 1665 epidemic.',
           hinge_question:
-            'Look at Source B above: Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?',
+            'Study the dead-cart dumping bodies into a mass pit at night. How does this scene illustrate both the terrifying scale of the 1665 Great Plague and the complete inability of doctors and authorities to stop the spread of the disease?',
           letter: 'B',
         },
       ],
@@ -5565,9 +5565,9 @@ export const unitData = {
             context:
               'Pasteur began his career as an industrial chemist solving fermentation problems for French wine and beer producers. In his Paris laboratory, surrounded by precision glassware and swan-neck flasks, Pasteur proved that fermentation and putrefaction were caused by living microscopic organisms, not spontaneous generation.',
             question:
-              'Look at Source A above: Study Pasteur intently examining a glass phial under natural window light, surrounded by delicate glassware and observation notebooks. How does this portrait depict the shift from abstract medical philosophy to meticulous laboratory science?',
+              'Study Pasteur intently examining a glass phial under natural window light, surrounded by delicate glassware and observation notebooks. How does this portrait depict the shift from abstract medical philosophy to meticulous laboratory science?',
             hinge_question:
-              'Look at Source A above: Study Pasteur intently examining a glass phial under natural window light, surrounded by delicate glassware and observation notebooks. How does this portrait depict the shift from abstract medical philosophy to meticulous laboratory science?',
+              'Study Pasteur intently examining a glass phial under natural window light, surrounded by delicate glassware and observation notebooks. How does this portrait depict the shift from abstract medical philosophy to meticulous laboratory science?',
           },
         },
         {
@@ -5586,9 +5586,9 @@ export const unitData = {
             context:
               'In 1882, Robert Koch announced the discovery of the tuberculosis bacillus to the Berlin Physiological Society. Koch’s microphotographs provided indisputable visual proof that a specific, physical microorganism caused consumption, permanently destroying miasma theory.',
             question:
-              'Look at Source B above: Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?',
+              'Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?',
             hinge_question:
-              'Look at Source B above: Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?',
+              'Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?',
           },
           text: '<span class="para-ref">[3.1]</span> Despite Pasteur’s brilliance, his Germ Theory encountered formidable resistance in Britain. Pasteur was an industrial chemist, not a qualified physician; while he proved microbes caused beer to turn sour, he had not proven which specific germ caused which specific human disease. Powerful British authorities—led by Dr Henry Bastian, Professor of Pathological Anatomy at University College London—violently opposed Germ Theory through the 1870s. In the <em>British Medical Journal</em>, Bastian pointed out that because transparent bacteria lived habitually inside healthy human throats and intestines, it was absurd to blame them for lethal epidemics.<br><br><span class="para-ref">[3.2]</span> The diagnostic deadlock was broken by Robert Koch, a meticulous country doctor working in Imperial Germany. Koch transformed microbiology into an exact forensic science through four breakthrough innovations: first, using solid culture media (nutrient agar jelly derived from seaweed in flat glass Petri dishes) instead of contaminated liquid broths, allowing pure, isolated bacterial colonies to be grown; second, staining transparent microbes with synthetic industrial aniline dyes (methyl violet and methylene blue), making bacteria stand out sharply against human tissue; third, fitting Zeiss compound microscopes with precision oil-immersion lenses; and fourth, photographing bacterial specimens with camera attachments (<span class="archival-meta-tag">Source B</span>), producing permanent, irrefutable photographic evidence.<br><br><span class="para-ref">[3.3]</span> Between 1876 and 1883, Koch and his disciples isolated the specific causative bacterial pathogens for anthrax (1876), wound infections (1878), tuberculosis (1882), and cholera (1883). Koch formulated his celebrated <em>Four Postulates</em>: rules to prove a specific microbe causes a specific disease. Koch shifted medicine from vague guesswork to targeted bacteriological identification.',
         },
@@ -5800,7 +5800,7 @@ export const unitData = {
           context:
             'Pasteur began his career as an industrial chemist solving fermentation problems for French wine and beer producers. In his Paris laboratory, surrounded by precision glassware and swan-neck flasks, Pasteur proved that fermentation and putrefaction were caused by living microscopic organisms, not spontaneous generation.',
           hinge_question:
-            'Look at Source A above: Study Pasteur intently examining a glass phial under natural window light, surrounded by delicate glassware and observation notebooks. How does this portrait depict the shift from abstract medical philosophy to meticulous laboratory science?',
+            'Study Pasteur intently examining a glass phial under natural window light, surrounded by delicate glassware and observation notebooks. How does this portrait depict the shift from abstract medical philosophy to meticulous laboratory science?',
         },
         {
           id: 'source_b_koch_bacteria',
@@ -5816,7 +5816,7 @@ export const unitData = {
           context:
             'In 1882, Robert Koch announced the discovery of the tuberculosis bacillus to the Berlin Physiological Society. Koch’s microphotographs provided indisputable visual proof that a specific, physical microorganism caused consumption, permanently destroying miasma theory.',
           hinge_question:
-            'Look at Source B above: Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?',
+            'Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?',
         },
       ],
     },
@@ -6057,9 +6057,9 @@ export const unitData = {
             context:
               'Edward Jenner practiced as a country doctor in Berkeley, Gloucestershire. By listening carefully to local dairymaids who claimed their previous cowpox infections made them immune to smallpox, Jenner conducted empirical field observations rather than relying on London medical dogma.',
             question:
-              'Look at Source A above: Notice Dr Jenner resting his arm upon an oak tree while dairy cows and a milkmaid carry milk pails in the background. Why did Jenner’s countryside observations of dairymaids and cowpox prove more revolutionary than the book-learning of London’s elite physicians?',
+              'Notice Dr Jenner resting his arm upon an oak tree while dairy cows and a milkmaid carry milk pails in the background. Why did Jenner’s countryside observations of dairymaids and cowpox prove more revolutionary than the book-learning of London’s elite physicians?',
             hinge_question:
-              'Look at Source A above: Notice Dr Jenner resting his arm upon an oak tree while dairy cows and a milkmaid carry milk pails in the background. Why did Jenner’s countryside observations of dairymaids and cowpox prove more revolutionary than the book-learning of London’s elite physicians?',
+              'Notice Dr Jenner resting his arm upon an oak tree while dairy cows and a milkmaid carry milk pails in the background. Why did Jenner’s countryside observations of dairymaids and cowpox prove more revolutionary than the book-learning of London’s elite physicians?',
           },
         },
         {
@@ -6079,9 +6079,9 @@ export const unitData = {
             context:
               'Published in London in 1802, Gillray’s satire reflected fierce public paranoia and medical opposition fueled by commercial inoculators and religious preachers who argued that injecting matter from beasts into humans violated God’s divine law.',
             question:
-              'Look at Source B above: James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?',
+              'James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?',
             hinge_question:
-              'Look at Source B above: James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?',
+              'James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?',
           },
           text: '<span class="para-ref">[3.1]</span> In 1798, Jenner privately published his findings in a landmark treatise: <em>An Inquiry into the Causes and Effects of the Variolae Vaccinae</em>, naming the procedure *vaccination* after *vacca*, the Latin word for cow. Jenner’s treatise presented detailed case histories and colour illustrations showing that cowpox could be passed safely from arm to arm without losing its potency.<br><br><span class="para-ref">[3.2]</span> Despite its obvious lifesaving potential, Jenner’s discovery provoked ferocious, sustained opposition from three entrenched factions: first, commercial inoculators and London physicians, who feared the loss of their lucrative variolation monopoly and spread rumors that cowpox was ineffective; second, religious preachers, who thundered from church pulpits that injecting disease matter from a "brute beast" into human veins was an ungodly abomination that interfered with God’s divine punishment for sin; and third, the conservative scientific establishment. The Royal Society initially refused to publish Jenner’s paper because he could not explain *why* cowpox conferred immunity. Furthermore, sensational anti-vaccination caricatures—most famously James Gillray’s 1802 print <em>The Cow-Pock</em> (<span class="archival-meta-tag">Source B</span>)—stoked visceral public panic by depicting vaccinated citizens sprouting horns, tails, and full-grown cows from their flesh.',
         },
@@ -6295,7 +6295,7 @@ export const unitData = {
           context:
             'Edward Jenner practiced as a country doctor in Berkeley, Gloucestershire. By listening carefully to local dairymaids who claimed their previous cowpox infections made them immune to smallpox, Jenner conducted empirical field observations rather than relying on London medical dogma.',
           hinge_question:
-            'Look at Source A above: Notice Dr Jenner resting his arm upon an oak tree while dairy cows and a milkmaid carry milk pails in the background. Why did Jenner’s countryside observations of dairymaids and cowpox prove more revolutionary than the book-learning of London’s elite physicians?',
+            'Notice Dr Jenner resting his arm upon an oak tree while dairy cows and a milkmaid carry milk pails in the background. Why did Jenner’s countryside observations of dairymaids and cowpox prove more revolutionary than the book-learning of London’s elite physicians?',
         },
         {
           id: 'source_b_cow_pock_gillray',
@@ -6312,7 +6312,7 @@ export const unitData = {
           context:
             'Published in London in 1802, Gillray’s satire reflected fierce public paranoia and medical opposition fueled by commercial inoculators and religious preachers who argued that injecting matter from beasts into humans violated God’s divine law.',
           hinge_question:
-            'Look at Source B above: James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?',
+            'James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?',
         },
       ],
     },
@@ -6554,9 +6554,9 @@ export const unitData = {
             context:
               'Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment.',
             question:
-              'Look at Source A above: Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?',
+              'Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?',
             hinge_question:
-              'Look at Source A above: Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?',
+              'Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?',
           },
         },
         {
@@ -6575,9 +6575,9 @@ export const unitData = {
             context:
               'Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus.',
             question:
-              'Look at Source B above: Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?',
+              'Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?',
             hinge_question:
-              'Look at Source B above: Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?',
+              'Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?',
           },
           text: '<span class="para-ref">[3.1]</span> Upon returning to England in 1856 as a national heroine, Nightingale refused romantic celebrity and launched a ruthless political campaign to reform the British army and civilian hospitals. Realizing that dense statistical tables were ignored by politicians, Nightingale invented the <em>Polar Area Diagram</em> (the famous "Coxcomb", <span class="archival-meta-tag">Source B</span>). Published in her 1858 Royal Commission report, the chart used expanding concentric wedges to demonstrate visually that the vast majority of military deaths (large blue wedges) were caused by preventable zymotic diseases—cholera, typhus, and dysentery—resulting from bad drainage, while combat wounds (red wedges) accounted for only a fraction of casualties.<br><br><span class="para-ref">[3.2]</span> Nightingale codified her architectural and medical principles in two influential bestsellers: <em>Notes on Nursing</em> (1859) and <em>Notes on Hospitals</em> (1863). She advocated the <em>Pavilion Hospital Plan</em>: hospitals were to be constructed as separate detached wings (pavilions) connected by covered walkways. Wards had to be long, narrow, and high-ceilinged, lined with large facing windows ensuring constant cross-ventilation to dilute foul miasma. Walls were finished with wipeable glazed ceramic tiles, floors were polished hardwood rather than absorbent timber, and beds were spaced strictly eight feet apart to prevent airborne contamination. When London’s St Thomas’ Hospital was rebuilt on the Thames in 1871, it was constructed strictly according to Nightingale’s pavilion design.',
         },
@@ -6796,7 +6796,7 @@ export const unitData = {
           context:
             'Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment.',
           hinge_question:
-            'Look at Source A above: Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?',
+            'Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?',
         },
         {
           id: 'source_b_nightingale_coxcomb',
@@ -6812,7 +6812,7 @@ export const unitData = {
           context:
             'Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus.',
           hinge_question:
-            'Look at Source B above: Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?',
+            'Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?',
         },
       ],
     },
@@ -7055,9 +7055,9 @@ export const unitData = {
             context:
               'Prior to 1847, operations were harrowing ordeals of agony and shock. Simpson tested numerous chemical vapors on himself and his assistants at dinner parties. On 4 November 1847, the trio inhaled chloroform and woke up under the table, proving its powerful anaesthetic effect.',
             question:
-              'Look at Source A above: Study Dr Simpson and his assistants collapsed beneath the dining table after inhaling chloroform vapor. Why was self-experimentation so common among 19th-century medical pioneers, and what severe dangers did it carry?',
+              'Study Dr Simpson and his assistants collapsed beneath the dining table after inhaling chloroform vapor. Why was self-experimentation so common among 19th-century medical pioneers, and what severe dangers did it carry?',
             hinge_question:
-              'Look at Source A above: Study Dr Simpson and his assistants collapsed beneath the dining table after inhaling chloroform vapor. Why was self-experimentation so common among 19th-century medical pioneers, and what severe dangers did it carry?',
+              'Study Dr Simpson and his assistants collapsed beneath the dining table after inhaling chloroform vapor. Why was self-experimentation so common among 19th-century medical pioneers, and what severe dangers did it carry?',
           },
         },
         {
@@ -7076,9 +7076,9 @@ export const unitData = {
             context:
               'Illustrated in W. Watson Cheyne’s Antiseptic Surgery (1882), this plate shows Lister’s complete antiseptic operating technique. Lister used a steam spray to kill airborne microbes in the theatre.',
             question:
-              'Look at Source B above: Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?',
+              'Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?',
             hinge_question:
-              'Look at Source B above: Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?',
+              'Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?',
           },
           text: '<span class="para-ref">[3.1]</span> In 1865, Joseph Lister, Professor of Surgery at Glasgow Royal Infirmary, resolved to conquer the scourge of wound sepsis. Reading Louis Pasteur’s 1861 paper on fermentation, Lister realized that wound rot was not caused by moist air or chemical oxidation, but by living microscopic germs entering the body from the air and surgical contact. Lister noticed that the town council of Carlisle used crude *carbolic acid* (creosote) to disinfect sewage and kill cattle parasites without harming livestock.<br><br><span class="para-ref">[3.2]</span> In August 1865, eleven-year-old James Greenlees was brought to Glasgow Infirmary with an open compound fracture of the leg after being run over by a cart—a condition that almost invariably ended in fatal gangrene and amputation. Lister cleaned the bone, dressed the wound with lint soaked in liquid carbolic acid, and covered it with tinfoil. To the astonishment of his colleagues, the bone healed cleanly within six weeks without a trace of infection or pus.<br><br><span class="para-ref">[3.3]</span> Between 1865 and 1869, Lister published a series of landmark clinical papers in *The Lancet*, documenting that his antiseptic method had slashed surgical mortality from 45.7% down to 15.0%. Lister developed a comprehensive antiseptic regime: surgeons washed their hands in carbolic lotion, instruments were soaked in carbolic solution, dressings were impregnated with carbolic oil, and a steam-driven apparatus pumped a fine mist of carbolic acid over the patient throughout the operation (<span class="archival-meta-tag">Source B</span>).',
         },
@@ -7288,7 +7288,7 @@ export const unitData = {
           context:
             'Prior to 1847, operations were harrowing ordeals of agony and shock. Simpson tested numerous chemical vapors on himself and his assistants at dinner parties. On 4 November 1847, the trio inhaled chloroform and woke up under the table, proving its powerful anaesthetic effect.',
           hinge_question:
-            'Look at Source A above: Study Dr Simpson and his assistants collapsed beneath the dining table after inhaling chloroform vapor. Why was self-experimentation so common among 19th-century medical pioneers, and what severe dangers did it carry?',
+            'Study Dr Simpson and his assistants collapsed beneath the dining table after inhaling chloroform vapor. Why was self-experimentation so common among 19th-century medical pioneers, and what severe dangers did it carry?',
         },
         {
           id: 'source_b_lister_carbolic_spray',
@@ -7304,7 +7304,7 @@ export const unitData = {
           context:
             'Illustrated in W. Watson Cheyne’s Antiseptic Surgery (1882), this plate shows Lister’s complete antiseptic operating technique. Lister used a steam spray to kill airborne microbes in the theatre.',
           hinge_question:
-            'Look at Source B above: Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?',
+            'Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?',
         },
       ],
     },
@@ -7548,9 +7548,9 @@ export const unitData = {
             context:
               'During the rapid industrialization of the nineteenth century, working-class families lived crammed into unpaved, undrained slum courts with shared privies over unlined cesspools. The cartoon depicts this squalor as the throne room of King Cholera, shaming Parliament for its laissez-faire inaction.',
             question:
-              "Look at Source A above: Notice the barefoot children playing in filthy mud heaps, open cesspools, and dilapidated tenement houses beneath the banner 'Good Beds'. What specific environmental factors in Victorian slum courts allowed water-borne diseases like cholera to spread so rapidly?",
+              "Notice the barefoot children playing in filthy mud heaps, open cesspools, and dilapidated tenement houses beneath the banner 'Good Beds'. What specific environmental factors in Victorian slum courts allowed water-borne diseases like cholera to spread so rapidly?",
             hinge_question:
-              "Look at Source A above: Notice the barefoot children playing in filthy mud heaps, open cesspools, and dilapidated tenement houses beneath the banner 'Good Beds'. What specific environmental factors in Victorian slum courts allowed water-borne diseases like cholera to spread so rapidly?",
+              "Notice the barefoot children playing in filthy mud heaps, open cesspools, and dilapidated tenement houses beneath the banner 'Good Beds'. What specific environmental factors in Victorian slum courts allowed water-borne diseases like cholera to spread so rapidly?",
           },
         },
         {
@@ -7571,9 +7571,9 @@ export const unitData = {
             context:
               'During the catastrophic September 1854 cholera outbreak in Soho, Dr John Snow marked each recorded death with a black bar on a street map. The deaths clustered overwhelmingly around the Broad Street water pump, while workers at the nearby brewery (who drank beer rather than pump water) remained unharmed.',
             question:
-              'Look at Source B above: Notice how the black bars indicating cholera deaths cluster densely around the Broad Street water pump, while the nearby brewery recorded zero deaths. How did Snow use cartographic data to prove that cholera was water-borne rather than airborne miasma?',
+              'Notice how the black bars indicating cholera deaths cluster densely around the Broad Street water pump, while the nearby brewery recorded zero deaths. How did Snow use cartographic data to prove that cholera was water-borne rather than airborne miasma?',
             hinge_question:
-              'Look at Source B above: Notice how the black bars indicating cholera deaths cluster densely around the Broad Street water pump, while the nearby brewery recorded zero deaths. How did Snow use cartographic data to prove that cholera was water-borne rather than airborne miasma?',
+              'Notice how the black bars indicating cholera deaths cluster densely around the Broad Street water pump, while the nearby brewery recorded zero deaths. How did Snow use cartographic data to prove that cholera was water-borne rather than airborne miasma?',
           },
         },
         {
@@ -7592,9 +7592,9 @@ export const unitData = {
             context:
               'Constructed between 1859 and 1865, Bazalgette’s London sewer system was one of the largest engineering projects in the Victorian world. It was authorized by Parliament after the Great Stink forced politicians to act.',
             question:
-              'Look at Source C above: Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?',
+              'Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?',
             hinge_question:
-              'Look at Source C above: Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?',
+              'Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?',
           },
           text: '<span class="para-ref">[3.1]</span> Snow confirmed his water-borne hypothesis on a massive municipal scale through his celebrated "Grand Experiment" in South London during the 1854 epidemic. Comparing two competing private water companies that supplied houses along the exact same streets in Lambeth and Southwark, Snow uncovered stark statistical proof: customers of the *Southwark and Vauxhall Water Company* (which drew raw water from the sewage-polluted tidal Thames in central London) suffered **71 cholera deaths per 10,000 houses**; in contrast, customers of the *Lambeth Water Company* (which had moved its intake upriver to clean rural water at Thames Ditton) suffered only **5 deaths per 10,000 houses**. Despite this overwhelming evidence, the General Board of Health rejected Snow’s 1855 report, obstinately maintaining that miasma was the true cause.<br><br><span class="para-ref">[3.2]</span> The event that finally shattered government inertia was not Snow’s medical proof, but the political crisis of the *Great Stink of July 1858*. An intense summer heatwave caused the River Thames—which served as London’s open sewer for two million inhabitants—to ferment into a suffocating, putrid stench. Sittings in the House of Commons were halted, and window curtains were soaked in chloride of lime to neutralize the fumes. Terrified that the miasma would infect politicians, Parliament abandoned *laissez-faire* in just sixteen days, passing an emergency bill granting £3 million to civil engineer Sir Joseph Bazalgette to build London’s underground intercepting sewer network (<span class="archival-meta-tag">Source C</span>).',
         },
@@ -7809,7 +7809,7 @@ export const unitData = {
           context:
             'During the rapid industrialization of the nineteenth century, working-class families lived crammed into unpaved, undrained slum courts with shared privies over unlined cesspools. The cartoon depicts this squalor as the throne room of King Cholera, shaming Parliament for its laissez-faire inaction.',
           hinge_question:
-            "Look at Source A above: Notice the barefoot children playing in filthy mud heaps, open cesspools, and dilapidated tenement houses beneath the banner 'Good Beds'. What specific environmental factors in Victorian slum courts allowed water-borne diseases like cholera to spread so rapidly?",
+            "Notice the barefoot children playing in filthy mud heaps, open cesspools, and dilapidated tenement houses beneath the banner 'Good Beds'. What specific environmental factors in Victorian slum courts allowed water-borne diseases like cholera to spread so rapidly?",
         },
         {
           id: 'source_b_snow_cholera_map',
@@ -7825,7 +7825,7 @@ export const unitData = {
           context:
             'During the catastrophic September 1854 cholera outbreak in Soho, Dr John Snow marked each recorded death with a black bar on a street map. The deaths clustered overwhelmingly around the Broad Street water pump, while workers at the nearby brewery (who drank beer rather than pump water) remained unharmed.',
           hinge_question:
-            'Look at Source B above: Notice how the black bars indicating cholera deaths cluster densely around the Broad Street water pump, while the nearby brewery recorded zero deaths. How did Snow use cartographic data to prove that cholera was water-borne rather than airborne miasma?',
+            'Notice how the black bars indicating cholera deaths cluster densely around the Broad Street water pump, while the nearby brewery recorded zero deaths. How did Snow use cartographic data to prove that cholera was water-borne rather than airborne miasma?',
         },
         {
           id: 'source_c_bazalgette_sewer',
@@ -7841,7 +7841,7 @@ export const unitData = {
           context:
             'Constructed between 1859 and 1865, Bazalgette’s London sewer system was one of the largest engineering projects in the Victorian world. It was authorized by Parliament after the Great Stink forced politicians to act.',
           hinge_question:
-            'Look at Source C above: Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?',
+            'Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?',
         },
       ],
     },
