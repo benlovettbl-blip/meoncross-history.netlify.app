@@ -3,7 +3,7 @@
  * Intercepts clicks and routes them to appropriate handlers using data attributes.
  */
 import { appStore } from './store.js';
-import { readAloudText, setSpeechRate } from './speech.js';
+import { readAloudText, setSpeechRate, cancelSpeech, toggleVoiceGender } from './speech.js';
 
 export function initEventDelegation() {
   // Vocabulary Matching Game State
@@ -316,6 +316,22 @@ export function initEventDelegation() {
           readAloudText(target);
         } else if (window.readAloudText) {
           window.readAloudText(target);
+        }
+        break;
+
+      case 'stop-speech':
+        if (typeof cancelSpeech === 'function') {
+          cancelSpeech();
+        } else if (window.cancelSpeech) {
+          window.cancelSpeech();
+        }
+        break;
+
+      case 'toggle-speech-voice-gender':
+        if (typeof toggleVoiceGender === 'function') {
+          toggleVoiceGender();
+        } else if (window.toggleVoiceGender) {
+          window.toggleVoiceGender();
         }
         break;
 

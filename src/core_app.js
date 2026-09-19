@@ -632,36 +632,40 @@ export function initializeApp(unitData) {
       }
     };
 
-    // Global Read Aloud logic (Per Paragraph)
-    window.readAloudText = function (btnElement) {
-      if (synth.speaking && btnElement.classList.contains('reading-active')) {
+    // Global Read Aloud logic: Defer to modern engine/speech.js if available
+    if (!window.readAloudText || window.readAloudText._isLegacy) {
+      const legacyReadAloud = function (btnElement) {
+        if (synth.speaking && btnElement.classList.contains('reading-active')) {
+          synth.cancel();
+          btnElement.classList.remove('reading-active');
+          btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+          return;
+        }
+
         synth.cancel();
-        btnElement.classList.remove('reading-active');
-        btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-        return;
-      }
+        document.querySelectorAll('.narrative-chunk button').forEach((b) => {
+          b.classList.remove('reading-active');
+          b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        });
 
-      synth.cancel();
-      document.querySelectorAll('.narrative-chunk button').forEach((b) => {
-        b.classList.remove('reading-active');
-        b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      });
+        const textToRead = btnElement
+          .closest('.narrative-chunk')
+          .querySelector('.narrative-text').textContent;
+        if (textToRead.trim() === '') return;
 
-      const textToRead = btnElement
-        .closest('.narrative-chunk')
-        .querySelector('.narrative-text').textContent;
-      if (textToRead.trim() === '') return;
+        btnElement.classList.add('reading-active');
+        btnElement.innerHTML = '<i class="fa-solid fa-stop"></i>';
 
-      btnElement.classList.add('reading-active');
-      btnElement.innerHTML = '<i class="fa-solid fa-stop"></i>';
-
-      utterance = new SpeechSynthesisUtterance(textToRead);
-      utterance.onend = () => {
-        btnElement.classList.remove('reading-active');
-        btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        utterance = new SpeechSynthesisUtterance(textToRead);
+        utterance.onend = () => {
+          btnElement.classList.remove('reading-active');
+          btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        };
+        synth.speak(utterance);
       };
-      synth.speak(utterance);
-    };
+      legacyReadAloud._isLegacy = true;
+      window.readAloudText = legacyReadAloud;
+    }
 
     // Toggle Dyslexia Mode (Preserve icon)
     btnDyslexia.addEventListener('click', () => {
