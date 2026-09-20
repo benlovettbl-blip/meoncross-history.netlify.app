@@ -1481,6 +1481,26 @@ allDirs.forEach((unitId) => {
       return;
     }
 
+    if (unitId === 'edexcel_medicine' && period.name === 'western_front') {
+      const {
+        buildWesternFrontTwoPageWorkbook,
+      } = require('./render_medicine_western_front_twopage_workbook.cjs');
+      let customHtml = buildWesternFrontTwoPageWorkbook(unitData, period);
+      const filename = `pupil_workbook_${period.name}.html`;
+      const outPath = path.join(publicUnitsDir, unitId, filename);
+      try {
+        fs.writeFileSync(outPath, customHtml);
+        const altUnitsPath = path.join(PATHS.ROOT, 'units', unitId, filename);
+        if (fs.existsSync(path.dirname(altUnitsPath))) {
+          fs.writeFileSync(altUnitsPath, customHtml);
+        }
+        console.log(`Generated 2-page spread workbook for ${unitId}: ${filename}`);
+      } catch (err) {
+        console.error(`❌ Failed to write workbook for ${unitId}: ${filename}`, err.message);
+      }
+      return;
+    }
+
     if (unitId === 'great_war_part2') {
       const {
         buildGreatWarPart2TwoPageWorkbook,

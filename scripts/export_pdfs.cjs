@@ -222,7 +222,8 @@ function getFileHash(filePath) {
                 (file === 'pupil_workbook_medieval.html' ||
                   file === 'pupil_workbook_renaissance.html' ||
                   file === 'pupil_workbook_18th_19th.html' ||
-                  file === 'pupil_workbook_modern.html')
+                  file === 'pupil_workbook_modern.html' ||
+                  file === 'pupil_workbook_western_front.html')
                   ? '<div></div>'
                   : '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
               margin:

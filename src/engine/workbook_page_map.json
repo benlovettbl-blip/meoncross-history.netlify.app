@@ -315,28 +315,34 @@
       "lessonIndex": 20
     },
     "lesson_5_2": {
-      "page": 11,
+      "page": 9,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 21
     },
     "lesson_5_3": {
-      "page": 20,
+      "page": 15,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 22
     },
     "lesson_5_4": {
-      "page": 28,
+      "page": 21,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 23
     },
     "lesson_5_5": {
-      "page": 36,
+      "page": 27,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 24
+    },
+    "lesson_5_6": {
+      "page": 33,
+      "booklet": "Western Front Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 25
     }
   },
   "eee": {
