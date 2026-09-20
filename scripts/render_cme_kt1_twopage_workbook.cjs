@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
+const {
+  renderStandardFrontCover,
+  renderStandardBackCover,
+} = require('./components/render_standard_cover.cjs');
 
 function generateQrSvg(url) {
   const qr = QRCode.create(url, { margin: 1 });
@@ -19,22 +23,22 @@ function generateQrSvg(url) {
 
 // Approved Witty Revision Quips for CME Key Topic 1
 const approvedFunnyFooters = [
-  'Conflict in the Middle East Revision Hub • Key Topic 1 • The History Department', // Page 1
-  '"Timeline rule: 1917 Balfour, 1947 Partition, 1948 War — keep the causal chain unbroken."', // Page 2
-  '"Dual-coding tip: A clean sketch of the 1947 UN Partition map is worth a hundred words."', // Page 3
-  '"Contradictory promises: McMahon said yes, Balfour said yes, Sykes-Picot drew the line."', // Page 4
-  '"Carving up empires: straight lines across a desert map rarely lead to lasting peace."', // Page 5
-  '"The King David Hotel bombing shattered British resolve overnight: explain that consequence."', // Page 6
-  '"Resolution 181 passed 33 to 13, but the hardest part was what happened on the ground."', // Page 7
-  '"A war of survival and displacement: detail the military turning points with exact dates."', // Page 8
-  '"Armistice lines are not peace treaties: never confuse the 1949 Green Line with permanent peace."', // Page 9
-  '"The Nakba displaced 700,000 Palestinians: precision in terminology is vital for Band 4."', // Page 10
-  '"The Law of Return opened the gates: explain how mass immigration transformed Israeli society."', // Page 11
-  '"Nasser\'s nationalisation of Suez was popular in Cairo, but intolerable in London and Paris."', // Page 12
-  '"The Protocol of Sèvres was top secret in 1956; in an Edexcel exam, you must reveal it all."', // Page 13
-  '"Master the specification: When dates, statistics, and connectives align, Grade 9 follows."', // Page 14
-  '"The difference between Grade 7 and Grade 9 is not what happened, but precisely why it mattered."', // Page 15
-  'Key Topic 1 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 16
+  '"Remember: In history exams, \'they had a disagreement\' is worth 0 marks. Give the dates!"', // Page 1
+  '"Diplomacy 101: Never promise the exact same slice of land to three different people at once."', // Page 2
+  '"Sykes and Picot drew borders with a pencil and a ruler — please be slightly more careful with your map sketches!"', // Page 3
+  '"The 1939 White Paper managed to infuriate absolutely everyone: truly the peak of British compromise."', // Page 4
+  '"Saying \'Britain was tired after the war\' is true, but the examiner expects 8 marks of depth!"', // Page 5
+  '"Irgun checked into the King David Hotel with milk churns... and checked Britain out of the Mandate."', // Page 6
+  '"UN Resolution 181 gave each side a jigsaw puzzle; neither side liked the picture."', // Page 7
+  '"Ben-Gurion proclaimed independence in 16 minutes flat: you have 12 minutes for this narrative!"', // Page 8
+  '"Five invading Arab armies, zero unified commanders: coordination counts in war and in paragraphs."', // Page 9
+  '"Calling 700,000 displaced refugees \'a minor consequence\' is a guaranteed ticket to a Level 1 mark."', // Page 10
+  '"The Law of Return opened Israel\'s gates; you just need to return to your essay plan."', // Page 11
+  '"Eden thought Nasser was Mussolini on the Nile; Eisenhower promptly reminded Eden what year it was."', // Page 12
+  '"The Protocol of Sèvres was so top secret the French burnt their copies — don\'t burn your exam paper!"', // Page 13
+  "\"If you can't remember whether it was 1948 or 1949, don't write 'sometime in the 20th century'!\"", // Page 14
+  '"Examiners read 300 essays a day: write legibly, or they might think Balfour was a French cheese."', // Page 15
+  '"You\'ve finished Key Topic 1! Take a deep breath... Key Topic 2 has three more wars waiting for you."', // Page 16
 ];
 
 // ============================================================================
@@ -134,16 +138,25 @@ const kt1Configs = [
     },
     extendedPractice: {
       type: 'narrative_8',
-      tariff: 'Question 2: Write an Analytical Narrative [8 marks]',
-      stem: 'Write an analytical narrative explaining how British wartime diplomacy between 1915 and 1922 created long-term conflict between Jews and Arabs in Palestine.',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      stem: 'Write a narrative account analysing how British wartime diplomacy and policy between 1915 and 1923 created long-term conflict in Palestine. [8 marks]',
       stimulus: ['The McMahon-Hussein Correspondence (1915)', 'The Balfour Declaration (1917)'],
       structureStrip: [
-        'Phase 1: Wartime Pledges to Arabs & Jews (1915–1917 &bull; Contradictory Promises)',
-        'Phase 2: Secret Imperial Carve-Up (1916–1919 &bull; Sykes-Picot & Betrayal)',
-        'Phase 3: The Mandate System (1920–1922 &bull; League of Nations & Rising Friction)',
+        {
+          col: '1. PHASE 1: CONTRADICTORY PLEDGES',
+          text: 'Explain McMahon’s 1915 pledge to Sharif Hussein vs the 1917 Balfour Declaration pledging a Jewish national home.',
+        },
+        {
+          col: '2. PHASE 2: SECRET IMPERIAL CARVE-UP',
+          text: 'Explain the 1916 Sykes-Picot Agreement carving up Ottoman lands and Arab outrage at perceived imperial betrayal.',
+        },
+        {
+          col: '3. PHASE 3: THE MANDATE & CLASHES',
+          text: 'Explain League of Nations Mandate (1922), Churchill White Paper, and early Arab-Jewish friction in Jerusalem.',
+        },
       ],
-      causalConnectives:
-        'Consequently &bull; In direct reaction to &bull; This fundamentally shifted &bull; As a direct result &bull; Crucially &bull; This created an unresolvable contradiction because',
+      connectives:
+        'The conflict originated during WWI when Britain... &bull; In direct reaction, Arab forces launched... &bull; Crucially, contradictory promises emerged because... &bull; Consequently, when the League of Nations ratified... &bull; This fundamentally altered relations because... &bull; Ultimately, this resulted in unresolvable conflict because...',
       wordBank:
         'McMahon-Hussein (1915) &bull; Sharif Hussein &bull; Sykes-Picot (1916) &bull; Balfour Declaration (1917) &bull; Arthur Balfour &bull; Lord Rothschild &bull; "national home" &bull; League of Nations Mandate (1922) &bull; Yishuv &bull; Arab Nationalism &bull; Jewish immigration',
       timelineMission:
@@ -220,18 +233,28 @@ const kt1Configs = [
     },
     extendedPractice: {
       type: 'importance_8',
-      tariff: 'Question 3: Explain the Importance of... [8 marks]',
-      stem: 'Explain the importance of the bombing of the King David Hotel (July 1946) for the British decision to withdraw from Palestine and hand the problem to the United Nations.',
-      stimulus: [
-        'Aspect 1: Military & Administrative Impact (Headquarters destruction & troop vulnerability)',
-        'Aspect 2: Domestic Political Crisis (British financial exhaustion & public pressure to withdraw)',
+      tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
+      stem: 'Explain the importance of the bombing of the King David Hotel (July 1946) for the British decision to withdraw from Palestine. [8 marks]',
+      focusAspects: [
+        'Destruction of British Military HQ & Security Breakdown',
+        'Domestic Economic Exhaustion & Handover to the UN',
       ],
       structureStrip: [
-        'Aspect 1: Military Paralysis & Security Breakdown (91 deaths & loss of British administrative control)',
-        'Aspect 2: Domestic Backlash & Economic Exhaustion (Clement Attlee & the decision to abandon the Mandate)',
+        {
+          col: '1. POINT 1: SECURITY BREAKDOWN',
+          text: 'Explain how the 91 casualties and destruction of British Secretariat/HQ in Jerusalem shattered security control and proved the Mandate was ungovernable.',
+        },
+        {
+          col: '2. POINT 2: DOMESTIC CRISIS',
+          text: 'Detail British post-WWII bankruptcy, 100,000 garrison costs, and the public outcry to "bring our boys home" following Sergeant executions.',
+        },
+        {
+          col: '3. EVALUATIVE SUMMARY: UN REFERRAL',
+          text: 'Assess why Foreign Secretary Bevin concluded Britain could not reconcile Zionist and Arab demands, forcing the February 1947 handover to UNSCOP.',
+        },
       ],
-      causalConnectives:
-        'This was of paramount importance because &bull; Consequently &bull; This decisively altered British policy by &bull; Crucially &bull; This meant that maintaining the Mandate was',
+      connectives:
+        'This was of paramount importance because... &bull; Specifically, the bombing destroyed... &bull; Furthermore, British public opinion hardened when... &bull; Crucially, maintaining 100,000 troops cost... &bull; Consequently, Prime Minister Attlee decided to... &bull; Ultimately, this was important because it made British withdrawal inevitable.',
       wordBank:
         'King David Hotel (July 1946) &bull; Irgun &bull; Menachem Begin &bull; 91 casualties &bull; British Military HQ &bull; Secretariat &bull; Clement Attlee &bull; Ernest Bevin &bull; financial cost &bull; 100,000 troops &bull; UNSCOP &bull; February 1947 handover',
       timelineMission:
@@ -307,19 +330,28 @@ const kt1Configs = [
     },
     extendedPractice: {
       type: 'narrative_8',
-      tariff: 'Question 2: Write an Analytical Narrative [8 marks]',
-      stem: 'Write an analytical narrative explaining the course of the 1948–49 Arab-Israeli War from the declaration of the State of Israel to the 1949 Armistice Agreements.',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      stem: 'Write a narrative account analysing the key events of the 1948–49 Arab-Israeli War from the declaration of the State of Israel to the 1949 Armistice Agreements. [8 marks]',
       stimulus: [
         'David Ben-Gurion’s Declaration of Independence (14 May 1948)',
         'The first UN truce and Czechoslovakian arms shipments (June 1948)',
       ],
       structureStrip: [
-        'Phase 1: Arab Invasion & Initial Israeli Defence (15 May 1948 &bull; 5 Arab armies attack)',
-        'Phase 2: The Turning Point Truce (June–July 1948 &bull; Czech arms & unified IDF command)',
-        'Phase 3: Israeli Counter-Offensives & 1949 Armistices (Rhodes talks & The Green Line)',
+        {
+          col: '1. PHASE 1: ARAB INVASION',
+          text: 'Detail Ben-Gurion’s 14 May declaration, the 15 May invasion by 5 Arab armies, and early defensive survival by Haganah/IDF.',
+        },
+        {
+          col: '2. PHASE 2: TURNING POINT TRUCE',
+          text: 'Explain how the June 1948 UN truce enabled Israel to import Czechoslovakian weapons and unify command under IDF.',
+        },
+        {
+          col: '3. PHASE 3: ISRAELI OFFENSIVES',
+          text: 'Detail Operations Dani and Yoav breaking Arab armies, leading to the 1949 Rhodes Armistice Agreements and Green Line.',
+        },
       ],
-      causalConnectives:
-        'Consequently &bull; In direct reaction to &bull; This fundamentally shifted &bull; As a direct result &bull; Crucially &bull; This military turning point ensured that',
+      connectives:
+        'The war commenced on 14 May 1948 when... &bull; Immediately on 15 May, five Arab armies... &bull; The vital turning point occurred during the June truce when... &bull; With Czechoslovakian weapons secured, the IDF launched... &bull; Consequently, Arab armies were pushed back because... &bull; Ultimately, the 1949 Armistices established...',
       wordBank:
         'David Ben-Gurion &bull; 14 May 1948 &bull; Tel Aviv Museum &bull; Arab invasion &bull; Egypt, Jordan, Syria, Iraq, Lebanon &bull; Arab Legion &bull; Glubb Pasha &bull; June 1948 truce &bull; Count Folke Bernadotte &bull; Czech arms deal &bull; Operation Dani &bull; Operation Yoav &bull; 1949 Armistices &bull; Green Line',
       timelineMission:
@@ -397,20 +429,30 @@ const kt1Configs = [
     },
     extendedPractice: {
       type: 'importance_8',
-      tariff: 'Question 3: Explain the Importance of... [8 marks]',
-      stem: 'Explain the importance of the Law of Return (1950) for the development of the new State of Israel in the aftermath of the 1948–49 War.',
-      stimulus: [
-        'Aspect 1: Demographic Growth & Absorption of Holocaust Survivors and Mizrahi Jews',
-        'Aspect 2: Military Manpower & National Consolidation against Arab Neighbours',
+      tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
+      stem: 'Explain the importance of the Law of Return (1950) for the development of the new State of Israel in the aftermath of the 1948–49 War. [8 marks]',
+      focusAspects: [
+        'Demographic Expansion & Absorbing Holocaust Survivors and Mizrahi Jews',
+        'Military Manpower & National Consolidation against Arab Neighbours',
       ],
       structureStrip: [
-        'Aspect 1: Demographic Transformation & State Identity (Doubling population & absorbing refugees)',
-        'Aspect 2: Military Capability & Economic Expansion (Compulsory conscription & border settlements)',
+        {
+          col: '1. POINT 1: DEMOGRAPHIC GROWTH',
+          text: 'Explain how automatic citizenship for all Jewish immigrants absorbed 700,000 refugees and Holocaust survivors, doubling the population.',
+        },
+        {
+          col: '2. POINT 2: MILITARY & BORDER SECURITY',
+          text: 'Detail how universal conscription into the IDF and establishing kibbutzim along the Green Line fortified frontiers against Arab neighbours.',
+        },
+        {
+          col: '3. EVALUATIVE SUMMARY: STATE IDENTITY',
+          text: 'Assess how the Law fulfilled the founding Zionist mission of a sovereign sanctuary, cementing state legitimacy despite severe rationing.',
+        },
       ],
-      causalConnectives:
-        'This was crucial for Israel’s development because &bull; Consequently &bull; This fundamentally strengthened the state by &bull; Crucially &bull; This ensured that the infant nation could',
+      connectives:
+        'This was crucial for Israel’s development because... &bull; Specifically, the 1950 Law guaranteed... &bull; Consequently, over 700,000 immigrants arrived, which... &bull; Furthermore, this demographic influx enabled the IDF to... &bull; Crucially, placing new arrivals in border kibbutzim ensured... &bull; Ultimately, this transformed Israel from a fragile enclave into...',
       wordBank:
-        'Law of Return (1950) &bull; David Ben-Gurion &bull; Jewish diaspora &bull; Holocaust survivors &bull; Displaced Persons camps &bull; Mizrahi Jews &bull; Arab states expulsions &bull; ma’abarot (transit camps) &bull; population doubled &bull; IDF universal conscription &bull; kibbutzim border defense',
+        'Law of Return (1950) &bull; David Ben-Gurion &bull; Jewish diaspora &bull; Holocaust survivors &bull; Displaced Persons camps &bull; Mizrahi Jews &bull; ma’abarot (transit camps) &bull; population doubled &bull; IDF universal conscription &bull; kibbutzim border defense',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 1.4). In Milestone 5, sketch the overcrowded UNRWA refugee tents alongside the cargo ships arriving in Haifa with Jewish immigrants.',
     },
@@ -486,21 +528,30 @@ const kt1Configs = [
     },
     extendedPractice: {
       type: 'narrative_8',
-      tariff: 'Question 2: Write an Analytical Narrative [8 marks]',
-      stem: 'Write an analytical narrative explaining the events of the 1956 Suez Crisis from the nationalisation of the canal to the withdrawal of Anglo-French and Israeli forces.',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      stem: 'Write a narrative account analysing the events of the 1956 Suez Crisis from the nationalisation of the canal to the withdrawal of Anglo-French forces. [8 marks]',
       stimulus: [
         'President Nasser nationalises the Suez Canal (26 July 1956)',
         'The secret Protocol of Sèvres and Israeli invasion of Sinai (October 1956)',
       ],
       structureStrip: [
-        'Phase 1: Catalyst & Nationalisation (July 1956 &bull; Aswan Dam loan cancelled & Nasser’s speech)',
-        'Phase 2: Secret Conspiracy & Tripartite Invasion (October 1956 &bull; Sèvres Protocol & Sinai offensive)',
-        'Phase 3: Superpower Intervention & Humiliating Withdrawal (November 1956 &bull; Eisenhower’s ultimatum & UNEF)',
+        {
+          col: '1. PHASE 1: CATALYST & NATIONALISATION',
+          text: 'Explain US cancellation of Aswan Dam loans, prompting Nasser to nationalise the Suez Canal on 26 July 1956 to fund the dam.',
+        },
+        {
+          col: '2. PHASE 2: SECRET SÈVRES CONSPIRACY',
+          text: 'Detail the secret Protocol of Sèvres where Israel invaded Sinai, providing the pretext for Anglo-French paratrooper landings at Port Said.',
+        },
+        {
+          col: '3. PHASE 3: SUPERPOWER ULTIMATUM',
+          text: 'Explain Eisenhower’s financial threat to collapse sterling, forcing humiliating Anglo-French retreat and deploying UNEF.',
+        },
       ],
-      causalConnectives:
-        'Consequently &bull; In direct reaction to &bull; This fundamentally shifted &bull; As a direct result &bull; Crucially &bull; This superpower ultimatum ensured that',
+      connectives:
+        'The crisis began on 26 July 1956 when President Nasser... &bull; In response, Britain and France secretly allied with Israel through... &bull; On 29 October 1956, the plan unfolded when Israeli forces invaded... &bull; Under the pretext of separating the combatants, Anglo-French paratroopers... &bull; However, US President Eisenhower intervened decisively by... &bull; Consequently, Britain and France were forced into a humiliating retreat, resulting in...',
       wordBank:
-        'Gamal Abdel Nasser &bull; Aswan High Dam &bull; nationalisation &bull; 26 July 1956 &bull; Anthony Eden &bull; Guy Mollet &bull; Protocol of Sèvres &bull; Operation Musketeer &bull; Sinai Peninsula &bull; Port Said paratroopers &bull; Dwight D. Eisenhower &bull; oil sanctions &bull; run on the pound &bull; UN Emergency Force (UNEF) &bull; United Arab Republic (1958)',
+        'Gamal Abdel Nasser &bull; Aswan High Dam &bull; nationalisation &bull; 26 July 1956 &bull; Anthony Eden &bull; Protocol of Sèvres &bull; Operation Musketeer &bull; Sinai Peninsula &bull; Port Said paratroopers &bull; Dwight D. Eisenhower &bull; oil sanctions &bull; run on the pound &bull; UN Emergency Force (UNEF) &bull; United Arab Republic (1958)',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 1.5). In Milestone 6, sketch the nationalised Suez Canal waterway and the British paratroopers landing at Port Said under US diplomatic pressure.',
     },
@@ -624,367 +675,66 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
   }
 
   // ====================================================================
-  // PAGE 1: FRONT COVER (Publisher Side-by-Side Hero Layout, Large Photo)
   // ====================================================================
-  html += `
-  <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
-    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-      
-      <!-- Top Publisher Header -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 12pt; font-weight: 900; letter-spacing: 2.5px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">GCSE History Revision Hub &bull; Pupil Workbook</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800;">SPECIFICATION 1HI0/2B</span>
-        </div>
-      </div>
-
-      <!-- Grand Publisher Title Banner (Full Page Width) -->
-      <div style="border: 1.8px solid #000; border-radius: 4px; padding: 5px 12px; margin-bottom: 4px; background: #fff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 8px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;">
-              KEY TOPIC 1
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #222;">
-              CHRONOLOGICAL ENQUIRY SEQUENCE &bull; 1945–1963
-            </span>
-          </div>
-        </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 17.5pt; line-height: 1.1; margin: 1px 0 2px 0; font-weight: 900; letter-spacing: -0.2px;">
-          The Birth of the State of Israel, 1945–1963
-        </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #222; font-style: italic; line-height: 1.2;">
-          British Mandate Collapse, King David Hotel, UN Resolution 181, The 1948 War, The Nakba &amp; The Suez Crisis
-        </div>
-      </div>
-
-      <!-- Main Content Area: Massive Photo Left (108mm) + Docked Publisher Panels Right (66mm) -->
-      <div style="flex: 1; display: flex; gap: 6px; margin-bottom: 3px; min-height: 0;">
-        
-        <!-- Left Column: Master Photographic Plate (108mm wide) -->
-        <div style="width: 108mm; border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <!-- Large Photo Frame (Spans Full Available Height) -->
-          <div style="flex: 1; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden; min-height: 0;">
-            <img src="${coverImgSrc}" alt="David Ben-Gurion Declaring the State of Israel, Tel Aviv" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(100%) contrast(115%);">
-          </div>
-
-          <!-- Archival Provenance Plate Underneath Photo -->
-          <div style="border-top: 1.5px solid #000; padding: 5px 9px; background: #fff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-                Archival Primary Record &bull; 14 May 1948
-              </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px;">
-                GPO-D597-087
-              </span>
-            </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 10pt; font-weight: 800; line-height: 1.15; margin: 2px 0;">
-              Proclamation of the State of Israel, Tel Aviv Museum of Art
-            </div>
-            <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111; line-height: 1.25;">
-              Rudi Weissenstein (1910–1969) &bull; David Ben-Gurion, Executive Head of the World Zionist Organisation, reads the Declaration of Independence beneath the portrait of Theodor Herzl on 5 Iyyar 5708. Registered in the State of Israel Government Press Office archive under Accession Shelfmark GPO-D597-087.
-            </div>
-            <div style="margin-top: 3px; padding-top: 3px; border-top: 1px dashed #999; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; color: #333;">
-              <span>Historical Primary Source</span>
-              <span>Edexcel Paper 2 Master Archive</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Column: Docked Editorial Panels (66mm wide, Zero Gaps, Rich Content) -->
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-height: 0;">
-          
-          <!-- Panel 1: Pupil Enrollment & Assessment Portfolio Card -->
-          <div style="border: 1.5px solid #000; border-radius: 4px; padding: 5px 8px; background: #fff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                Pupil Workbook &amp; Assessment Portfolio
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; color: #333;">
-                GCSE History
-              </span>
-            </div>
-            
-            <div style="font-family: 'Inter', sans-serif; font-size: 7pt;">
-              <div style="display: flex; align-items: baseline; margin-bottom: 4px;">
-                <strong style="text-transform: uppercase; width: 44px; font-size: 6.8pt;">Name:</strong>
-                <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-              </div>
-              
-              <div style="display: flex; gap: 8px; margin-bottom: 4px;">
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 38px; font-size: 6.8pt;">Class:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 44px; font-size: 6.8pt;">Teacher:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-              </div>
-
-              <!-- Detailed Key Topic Sign-Off Tracker Table -->
-              <div style="border: 1px solid #000; border-radius: 2px; overflow: hidden;">
-                <div style="background: #222; color: #fff; display: flex; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; padding: 1.5px 4px;">
-                  <div style="width: 36px;">Enquiry</div>
-                  <div style="flex: 1; text-align: center;">Taught</div>
-                  <div style="flex: 1; text-align: center;">Do Now</div>
-                  <div style="flex: 1; text-align: center;">Q1 [4m]</div>
-                  <div style="flex: 1; text-align: center;">Q2/3 [8m]</div>
-                  <div style="width: 28px; text-align: right;">Score</div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fff; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 1.1</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fafafa; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 1.2</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fff; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 1.3</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fafafa; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 1.4</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; background: #fff; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 1.5</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Panel 2: Unified Editorial Suite (Docked Flush: Architecture + Roadmap + Chronology + Formula) -->
-          <div style="flex: 1; border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column;">
-            
-            <!-- Section A: Assessment Architecture -->
-            <div style="border-bottom: 1.5px solid #000;">
-              <div style="background: #000; color: #fff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
-                <span>Paper 2 Exam Architecture &amp; Tariffs</span>
-                <span>26m / Enquiry &bull; 130m Total</span>
-              </div>
-              <div style="padding: 3px 6px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.28; background: #fafafa;">
-                <div style="display: flex; justify-content: space-between;">
-                  <span>&bull; <strong>Q1(a) &amp; Q1(b):</strong> Consequence Questions (PFC Formula)</span>
-                  <span style="font-weight: 800;">[4m + 4m = 8m]</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>&bull; <strong>Q2 / Q3:</strong> Analytical Narrative &bull; Explain Importance</span>
-                  <span style="font-weight: 800;">[8m / 16m]</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>&bull; <strong>Do Now Recall:</strong> 10-Question Knowledge Retrieval Bell-Ringer</span>
-                  <span style="font-weight: 800;">[10m]</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Section B: 5 Enquiries Roadmap (Rich Content, Beautifully Distributed) -->
-            <div style="flex: 1; display: flex; flex-direction: column;">
-              <div style="background: #000; color: #fff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
-                <span>Specification Enquiry Sequence (KT1)</span>
-              </div>
-
-              <!-- Lesson 1 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fff; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 1.1: Imperial Origins &amp; Promises
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1915–45</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    Why did British wartime diplomacy make conflict inevitable?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Pledges:</strong> McMahon-Hussein vs Balfour Declaration; Sykes-Picot line.<br>
-                    &bull; <strong>Mandate:</strong> Jewish immigration, Arab revolt, 1939 White Paper quota.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Zionism &bull; Arab Nationalism &bull; Mandate</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q2 Narrative [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 2 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fafafa; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 1.2: Mandate Collapse &amp; UN Partition
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1945–47</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    Why did Britain hand the Palestine problem to the UN?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Insurgency:</strong> King David Hotel bombing (July 1946; 91 casualties); Irgun.<br>
-                    &bull; <strong>Pressure:</strong> SS Exodus affair, British bankruptcy, UNSCOP partition plan.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Irgun &bull; UNSCOP &bull; King David Hotel</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q3 Importance [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 3 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fff; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 1.3: UN 181 &amp; The 1948–49 War
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1947–49</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    How was the State of Israel proclaimed and defended?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Birth:</strong> UN Res 181 partition; Ben-Gurion declaration (14 May 1948).<br>
-                    &bull; <strong>War:</strong> 5 Arab armies invade; June truce &amp; Czech arms; 1949 Green Line.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Resolution 181 &bull; Green Line &bull; Czech Arms</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q2 Narrative [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 4 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fafafa; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 1.4: Nakba &amp; The New Israeli State
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1948–54</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    Why did the 1948 war produce permanent displacement?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Refugees:</strong> 700,000 displaced Palestinians (Al-Nakba); UNRWA camps.<br>
-                    &bull; <strong>Statehood:</strong> Law of Return (1950); IDF creation; massive US aid loans.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Al-Nakba &bull; Law of Return &bull; IDF &bull; UNRWA</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q3 Importance [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 5 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1.5px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fff; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 1.5: Nasser &amp; The 1956 Suez Crisis
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1955–58</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    Why did the nationalisation of Suez trigger war?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Crisis:</strong> Gaza raid 1955, Czech arms deal, Canal nationalised (July 1956).<br>
-                    &bull; <strong>War:</strong> Sèvres conspiracy; Sinai invasion; US financial halt; UAR 1958.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Fedayeen &bull; Protocol of Sèvres &bull; UAR</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q2 Narrative [8m]</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Section C: Core Chronological Anchors (10 Key Events in 2 Columns) -->
-            <div style="border-bottom: 1.5px solid #000; background: #fafafa; padding: 2.5px 6px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1.5px; display: flex; justify-content: space-between;">
-                <span>Core Chronological Anchors</span>
-                <span style="font-weight: 800;">1917–1958</span>
-              </div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px 8px; font-family: 'Inter', sans-serif; font-size: 5.7pt; line-height: 1.18; color: #111;">
-                <div>&bull; <strong>1917 (Nov):</strong> Balfour Declaration issued</div>
-                <div>&bull; <strong>1948 (14 May):</strong> Israel declared by Ben-Gurion</div>
-                <div>&bull; <strong>1939 (May):</strong> British White Paper quota</div>
-                <div>&bull; <strong>1948–49:</strong> Arab invasion &amp; 1949 Armistice</div>
-                <div>&bull; <strong>1946 (Jul):</strong> King David Hotel bombing</div>
-                <div>&bull; <strong>1950 (Jul):</strong> Israeli Law of Return passed</div>
-                <div>&bull; <strong>1947 (Jul):</strong> SS Exodus turned back</div>
-                <div>&bull; <strong>1955 (Feb):</strong> Israeli paratrooper Gaza Raid</div>
-                <div>&bull; <strong>1947 (Nov):</strong> UN Res 181 Partition Plan</div>
-                <div>&bull; <strong>1956 (Oct):</strong> Suez Crisis &amp; Sinai Campaign</div>
-              </div>
-            </div>
-
-            <!-- Section D: PFC Writing Formula & Benchmark Model Answer -->
-            <div style="padding: 3px 6px; background: #fff; font-family: 'Inter', sans-serif; font-size: 6.0pt; line-height: 1.2;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                <strong style="text-transform: uppercase; font-size: 6.5pt; letter-spacing: 0.3px;">Edexcel PFC Writing Technique (Q1 Consequence):</strong>
-                <span style="font-size: 5.8pt; font-weight: 800; background: #000; color: #fff; padding: 0.5px 4px; border-radius: 2px;">4 MARKS</span>
-              </div>
-              <div style="display: flex; gap: 3px; border: 1px solid #000; padding: 1.5px 4px; border-radius: 2px; background: #fafafa; margin-bottom: 2px;">
-                <div style="flex: 1;"><strong>[P] Point:</strong> Name consequence</div>
-                <div style="flex: 1.1;"><strong>[F] Fact:</strong> Specific date/stat</div>
-                <div style="flex: 1.2;"><strong>[C] Consequence:</strong> Historical impact</div>
-              </div>
-              <div style="border-left: 2px solid #000; padding-left: 4px; font-family: 'Georgia', serif; font-size: 5.7pt; color: #111; line-height: 1.15;">
-                <strong>Model Answer:</strong> One consequence of the July 1946 King David Hotel bombing was British military and political demoralisation. The Irgun detonated explosives destroying the British Secretariat, killing 91 administrative and military personnel. This directly resulted in overwhelming British public outrage, convincing Prime Minister Attlee that the Mandate was ungovernable and prompting the decision to surrender Palestine to the UN.
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      ${renderFooterStrip(1, approvedFunnyFooters[0], 16)}
-    </div>
-  </div>
-`;
+  // PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover)
+  // ====================================================================
+  html += renderStandardFrontCover({
+    unitId: 'cme_new',
+    paperTitle: 'EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995',
+    specCode: 'SPECIFICATION 1HI0/2B',
+    keyTopicNum: 1,
+    dateRange: '1945–1963',
+    title: 'The Birth of the State of Israel, 1945–1963',
+    subtitle:
+      'British Mandate Collapse, King David Hotel, UN Resolution 181, The 1948 War, The Nakba &amp; The Suez Crisis',
+    heroImage: {
+      src: coverImgSrc,
+      alt: 'David Ben-Gurion Declaring the State of Israel, Tel Aviv',
+      objectPosition: 'center 36%',
+      shelfmark: 'GPO-D597-087',
+      date: '14 May 1948',
+      title: 'Proclamation of the State of Israel, Tel Aviv Museum of Art',
+      caption:
+        'Rudi Weissenstein (1910–1969) &bull; David Ben-Gurion, Executive Head of the World Zionist Organisation, reads the Declaration of Independence beneath the portrait of Theodor Herzl on 5 Iyyar 5708. Registered in the State of Israel Government Press Office archive under Accession Shelfmark GPO-D597-087.',
+      sourceTag: 'Historical Primary Source',
+      archiveTag: 'Edexcel Paper 2 Master Archive',
+      heightMm: 120,
+    },
+    specBox: {
+      title: 'Pearson Edexcel GCSE (9–1) History Specification &bull; Key Topic 1 Content',
+      subtopics: [
+        {
+          title: '1. The British withdrawal &amp; Israel',
+          items: [
+            'Conflicting interests and demands of Jews and Arabs within the British Mandate.',
+            'Key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.',
+            'Key events of the Arab-Israeli war (1948–49).',
+          ],
+        },
+        {
+          title: '2. Aftermath of the 1948–49 war',
+          items: [
+            'Territorial changes and their impact.',
+            'The refugee status of Palestinian Arabs.',
+            'The creation of the Israeli Defence Forces (IDF) and the Law of Return (1950).',
+            'US aid to Israel.',
+            'Israel’s relations with Egypt.',
+          ],
+        },
+        {
+          title: '3. Increased tension, 1955–63',
+          items: [
+            'Nasser and Egypt’s leadership of the Arab world.',
+            'The events and significance of Israeli attacks on Gaza in 1955 and Sinai in 1956.',
+            'The events and significance of the Suez Crisis (1956), including the formation of the United Arab Republic (UAR) in 1958.',
+          ],
+        },
+      ],
+    },
+    footerQuip: approvedFunnyFooters[0],
+    totalPageCount: 16,
+    renderFooterStrip,
+  });
 
   // ====================================================================
   // PAGES 2–3: LIVING TIMELINE (Panoramic Dual-Coding Spread, 6 Milestones)
@@ -1281,7 +1031,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </span>
       </div>
 
-      <!-- Unified 3-Row Scaffolding Block (Docked Directly Below Header) -->
+      <!-- Unified 3-Row Scaffolding Block (Zero Inter-Row Gaps • Docked Directly Below Header) -->
       <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-top: 1px; margin-bottom: 2px; background: #ffffff;">
         
         <!-- Row 1: Question Stem & Stimulus / Analytical Focus -->
@@ -1294,47 +1044,59 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               ? `
           <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
             <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
-          </div>`
+          </div>
+          `
               : `
           <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
-            <strong>Analytical Focus:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]}
-          </div>`
+            <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
+          </div>
+          `
           }
         </div>
 
-        <!-- Row 2: Structure Strip & Analytical Connectives -->
-        <div style="display: flex; border-bottom: 1px solid #000000; background: #fafafa;">
-          <div style="flex: 1.4; border-right: 1px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.22;">
-            <strong style="text-transform: uppercase; font-size: 7.5pt;">Structure Strip:</strong><br>
-            &bull; <strong>Phase 1:</strong> ${rx.structureStrip[0]}<br>
-            &bull; <strong>Phase 2:</strong> ${rx.structureStrip[1]}
-            ${rx.structureStrip[2] ? `<br>&bull; <strong>Phase 3:</strong> ${rx.structureStrip[2]}` : ''}
+        <!-- Row 2: 3-Column Planning Structure Strip (Flush Directly Beneath Row 1) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #fafafa;">
+          ${rx.structureStrip
+            .map(
+              (strip, sIdx) => `
+          <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
-          <div style="flex: 1; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.22; background: #ffffff;">
-            <strong style="text-transform: uppercase; font-size: 7.2pt;">Causal Connectives:</strong><br>
-            ${rx.causalConnectives}
-          </div>
+          `,
+            )
+            .join('')}
         </div>
 
-        <!-- Row 3: Vocabulary Bank & Dual-Coding Timeline Mission -->
-        <div style="display: flex; background: #ffffff;">
-          <div style="flex: 1.4; border-right: 1px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.2;">
-            <strong style="text-transform: uppercase; font-size: 7.2pt;">Vocabulary &amp; Historical Terms:</strong><br>
-            ${rx.wordBank}
+        <!-- Row 3: Connectives & Key Vocabulary Bank (Flush Directly Beneath Row 2) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
+          <div style="padding: 2px 5px; border-right: 1px solid #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives || rx.causalConnectives}</span>
           </div>
-          <div style="flex: 1; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; background: #f8fafc;">
-            <strong style="text-transform: uppercase; font-size: 7.2pt; color: #000000;">Dual-Coding Mission:</strong><br>
-            ${rx.timelineMission}
+          <div style="padding: 2px 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Exactly 16 Thick Black Writing Lines for SEND/Pearson Standard -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
-        ${Array.from({ length: 16 })
-          .map(() => `<div class="task-line"></div>`)
-          .join('')}
+      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
+      <div style="margin-bottom: 2px;">
+        ${Array.from({ length: 27 })
+          .map(() => '<div class="task-line"></div>')
+          .join('\n        ')}
+      </div>
+
+      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
+          Timeline Mission &bull; Pages 2–3
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
+          ${rx.timelineMission}
+        </div>
       </div>
 
       ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 16)}
@@ -1590,172 +1352,105 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
     </div>
   </div>
 `;
+  // ====================================================================
+  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
+  // ====================================================================
+  html += renderStandardBackCover({
+    unitId: 'cme_new',
+    paperTitle: 'EDEXCEL GCSE (9–1) HISTORY • PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995',
+    keyTopicNum: 1,
+    trackerTitle: 'Student Assessment Record • Key Topic 1 Tracker',
+    trackerSubtitle:
+      'Paper 2: Conflict in the Middle East, 1945–1995 • The Creation of the State of Israel (1945–1956)',
+    enquiries: [
+      {
+        num: 1,
+        code: 'KT1.1',
+        title: 'Imperial Origins & Promises',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q2',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 2,
+        code: 'KT1.2',
+        title: 'Mandate Collapse & King David',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q3',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 3,
+        code: 'KT1.3',
+        title: 'UN Res 181 & The 1948–49 War',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q2',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 4,
+        code: 'KT1.4',
+        title: 'Nakba & The Law of Return',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q3',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 5,
+        code: 'KT1.5',
+        title: 'Nasser & The 1956 Suez Crisis',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q2',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+    ],
+    feedback: {
+      signature: '____________________________',
+      date: '____________________',
+    },
+    qrLessons: [
+      {
+        label: 'KT 1.1: Imperial Pledges',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=0`,
+      },
+      {
+        label: 'KT 1.2: Mandate Collapse',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=1`,
+      },
+      {
+        label: 'KT 1.3: UN 181 & 1948 War',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=2`,
+      },
+      {
+        label: 'KT 1.4: Nakba & Statehood',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=3`,
+      },
+      {
+        label: 'KT 1.5: Nasser & Suez 1956',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=4`,
+      },
+    ],
+    footerQuip: approvedFunnyFooters[15],
+    totalPageCount: 16,
+    renderFooterStrip,
+  });
 
-  // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Assessment Tracker & Digital Quizzing Hub)
-  // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #000000; margin: 0; font-weight: 900; text-transform: uppercase;">
-            Key Topic 1 &bull; Progress Tracker &amp; Digital Hub
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px;">
-            PORTFOLIO COMPLETION RECORD
-          </span>
-        </div>
-      </div>
-
-      <!-- Section 1: Detailed Key Topic 1 Assessment Gradebook -->
-      <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px; background: #fff; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-            Assessment Gradebook &bull; Enquiry Tasks &amp; Extended Writing
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700;">
-            Target Grade: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
-          </span>
-        </div>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; border: 1px solid #000;">
-          <thead>
-            <tr style="background: #000; color: #fff; font-weight: 800; text-transform: uppercase;">
-              <th style="padding: 2px 4px; text-align: left; width: 34%; border-right: 1px solid #fff;">Enquiry Lesson</th>
-              <th style="padding: 2px 4px; text-align: center; width: 14%; border-right: 1px solid #fff;">Do Now (/10)</th>
-              <th style="padding: 2px 4px; text-align: center; width: 14%; border-right: 1px solid #fff;">Q1(a) (/4)</th>
-              <th style="padding: 2px 4px; text-align: center; width: 14%; border-right: 1px solid #fff;">Q1(b) (/4)</th>
-              <th style="padding: 2px 4px; text-align: center; width: 14%; border-right: 1px solid #fff;">Q2/3 (/8)</th>
-              <th style="padding: 2px 4px; text-align: center; width: 10%;">Signed</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #ccc;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #ccc;">KT 1.1: Imperial Origins &amp; Promises</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="text-align: center;"></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #ccc; background: #fafafa;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #ccc;">KT 1.2: Mandate Collapse &amp; UN 181</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="text-align: center;"></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #ccc;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #ccc;">KT 1.3: UN 181 &amp; The 1948–49 War</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="text-align: center;"></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #ccc; background: #fafafa;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #ccc;">KT 1.4: Nakba &amp; The New State</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="text-align: center;"></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #ccc;">KT 1.5: Nasser &amp; The Suez Crisis</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="border-right: 1px solid #ccc; text-align: center;"></td>
-              <td style="text-align: center;"></td>
-            </tr>
-            <tr style="background: #f0fdf4; font-weight: 900;">
-              <td style="padding: 2px 4px; text-transform: uppercase; border-right: 1px solid #ccc;">Unit Aggregate Total:</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;">[ &nbsp;&nbsp; / 50 ]</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;">[ &nbsp;&nbsp; / 20 ]</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;">[ &nbsp;&nbsp; / 20 ]</td>
-              <td style="border-right: 1px solid #ccc; text-align: center;">[ &nbsp;&nbsp; / 40 ]</td>
-              <td style="text-align: center; font-size: 6pt;">OVERALL GRADE:</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Section 2: Formal Teacher Diagnostic WWW / EBI Matrix -->
-      <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px; background: #fafafa; margin-bottom: 4px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-          Teacher Diagnostic Feedback &amp; Mastery Target (WWW &bull; EBI)
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
-          <div>
-            <strong style="text-transform: uppercase; color: #000;">What Went Well (WWW):</strong><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Accurate recall of core dates, treaties &amp; resolutions</label><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Clear Point-Fact-Consequence (PFC) analytical structure</label><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Balanced explanation of Jewish and Arab perspectives</label><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Thorough understanding of military turning points</label>
-          </div>
-          <div>
-            <strong style="text-transform: uppercase; color: #000;">Even Better If (EBI):</strong><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Inject more specific statistical evidence (dates, casualties)</label><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Explicitly link causes to consequences using causal connectives</label><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Address all 3 phases in 8-mark analytical narratives</label><br>
-            <label><input type="checkbox" style="vertical-align: middle;"> Evaluate long-term significance rather than merely describing</label>
-          </div>
-        </div>
-        <div style="margin-top: 3px; border-top: 1px dashed #ccc; padding-top: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase;">Teacher Personalized Commentary:</div>
-          <div class="task-line" style="height: 6mm;"></div>
-          <div class="task-line" style="height: 6mm;"></div>
-        </div>
-      </div>
-
-      <!-- Section 3: Vector QR Code Smartphone Interactive Quizzing Hub -->
-      <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px; background: #fff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-            Digital Quizzing Hub &bull; Smartphone Quizzes &amp; Flashcard Decks
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222222; font-weight: 700;">
-            Scan with smartphone camera to open live interactive 20-question self-marking quizzes
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
-          ${kt1Configs
-            .map((cfg, idx) => {
-              const quizUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=${cfg.lessonIndex}`;
-              const qrSvg = generateQrSvg(quizUrl);
-              const shortLabels = [
-                'Imperial Pledges',
-                'Mandate Collapse',
-                'UN 181 & 1948 War',
-                'Nakba & Statehood',
-                'Nasser & Suez 1956',
-              ];
-              return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000; margin-bottom: 2px; text-transform: uppercase;">
-              KT 1.${idx + 1}: ${shortLabels[idx]}
-            </div>
-            <div style="width: 20mm; height: 20mm; margin: 2px auto;">
-              ${qrSvg}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000; margin-top: 2px;">
-              Scan to Quiz
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]
-            </div>
-          </div>
-          `;
-            })
-            .join('')}
-        </div>
-      </div>
-
-      ${renderFooterStrip(16, approvedFunnyFooters[15], 16)}
-    </div>
-  </div>
 </body>
 </html>
 `;

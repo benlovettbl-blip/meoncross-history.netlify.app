@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
+const {
+  renderStandardFrontCover,
+  renderStandardBackCover,
+} = require('./components/render_standard_cover.cjs');
 
 function generateQrSvg(url) {
   const qr = QRCode.create(url, { margin: 1 });
@@ -672,370 +676,66 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     const coverImgBase64 = fs.readFileSync(coverImgPath).toString('base64');
     coverImgSrc = `data:image/jpeg;base64,${coverImgBase64}`;
   }
-
   // ====================================================================
-  // PAGE 1: FRONT COVER (Publisher Side-by-Side Hero Layout, Large Photo)
+  // PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover)
   // ====================================================================
-  html += `
-  <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
-    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-      
-      <!-- Top Publisher Header -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 12pt; font-weight: 900; letter-spacing: 2.5px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">GCSE History Revision Hub &bull; Pupil Workbook</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800;">SPECIFICATION 1HI0/2B</span>
-        </div>
-      </div>
-
-      <!-- Grand Publisher Title Banner (Full Page Width) -->
-      <div style="border: 1.8px solid #000; border-radius: 4px; padding: 5px 12px; margin-bottom: 4px; background: #fff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 8px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;">
-              KEY TOPIC 2
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #222;">
-              CHRONOLOGICAL ENQUIRY SEQUENCE &bull; 1964–1973
-            </span>
-          </div>
-        </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 17.5pt; line-height: 1.1; margin: 1px 0 2px 0; font-weight: 900; letter-spacing: -0.2px;">
-          The Escalating Conflict, 1964–1973
-        </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #222; font-style: italic; line-height: 1.2;">
-          The Cairo Conference, Six-Day War, Resolution 242, Palestinian Resistance &amp; The Yom Kippur War
-        </div>
-      </div>
-
-      <!-- Main Content Area: Massive Photo Left (108mm) + Docked Publisher Panels Right (66mm) -->
-      <div style="flex: 1; display: flex; gap: 6px; margin-bottom: 3px; min-height: 0;">
-        
-        <!-- Left Column: Master Photographic Plate (108mm wide) -->
-        <div style="width: 108mm; border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <!-- Large Photo Frame (Spans Full Available Height) -->
-          <div style="flex: 1; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden; min-height: 0;">
-            <img src="${coverImgSrc}" alt="Israeli Paratroopers at the Western Wall, Jerusalem" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(100%) contrast(115%);">
-          </div>
-
-          <!-- Archival Provenance Plate Underneath Photo -->
-          <div style="border-top: 1.5px solid #000; padding: 5px 9px; background: #fff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-                Archival Primary Record &bull; 7 June 1967
-              </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px;">
-                GPO-D388-052
-              </span>
-            </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 10pt; font-weight: 800; line-height: 1.15; margin: 2px 0;">
-              Israeli Paratroopers at the Western Wall, Jerusalem
-            </div>
-            <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111; line-height: 1.25;">
-              David Rubinger (1924–2017) &bull; Paratroopers of the 55th Paratroopers Brigade stand in silence before the Western Wall (Kotel) following the capture of the Old City during the Six-Day War. Registered in the State of Israel Government Press Office archive under Accession Shelfmark GPO-D388-052.
-            </div>
-            <div style="margin-top: 3px; padding-top: 3px; border-top: 1px dashed #999; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; color: #333;">
-              <span>Historical Primary Source</span>
-              <span>Edexcel Paper 2 Master Archive</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Column: Docked Editorial Panels (66mm wide, Zero Gaps, Rich Content) -->
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-height: 0;">
-          
-          <!-- Panel 1: Pupil Enrollment & Assessment Portfolio Card -->
-          <div style="border: 1.5px solid #000; border-radius: 4px; padding: 5px 8px; background: #fff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                Pupil Workbook &amp; Assessment Portfolio
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; color: #333;">
-                GCSE History
-              </span>
-            </div>
-            
-            <div style="font-family: 'Inter', sans-serif; font-size: 7pt;">
-              <div style="display: flex; align-items: baseline; margin-bottom: 4px;">
-                <strong style="text-transform: uppercase; width: 44px; font-size: 6.8pt;">Name:</strong>
-                <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-              </div>
-              
-              <div style="display: flex; gap: 8px; margin-bottom: 4px;">
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 38px; font-size: 6.8pt;">Class:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 44px; font-size: 6.8pt;">Teacher:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-              </div>
-
-
-              <!-- Detailed Key Topic Sign-Off Tracker Table -->
-              <div style="border: 1px solid #000; border-radius: 2px; overflow: hidden;">
-                <div style="background: #222; color: #fff; display: flex; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; padding: 1.5px 4px;">
-                  <div style="width: 36px;">Enquiry</div>
-                  <div style="flex: 1; text-align: center;">Taught</div>
-                  <div style="flex: 1; text-align: center;">Do Now</div>
-                  <div style="flex: 1; text-align: center;">Q1 [4m]</div>
-                  <div style="flex: 1; text-align: center;">Q2/3 [8m]</div>
-                  <div style="width: 28px; text-align: right;">Score</div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fff; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 2.1</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fafafa; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 2.2</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fff; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 2.3</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; border-bottom: 1px solid #ddd; background: #fafafa; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 2.4</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-                <div style="display: flex; font-size: 5.8pt; padding: 1.5px 4px; background: #fff; align-items: center;">
-                  <div style="width: 36px; font-weight: 700;">KT 2.5</div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="flex: 1; text-align: center;"><span style="display:inline-block; width:7px; height:7px; border:1px solid #000;"></span></div>
-                  <div style="width: 28px; text-align: right; border-bottom: 1px solid #000; height: 9px;"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Panel 2: Unified Editorial Suite (Docked Flush: Architecture + Roadmap + Chronology + Formula) -->
-          <div style="flex: 1; border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column;">
-            
-            <!-- Section A: Assessment Architecture -->
-            <div style="border-bottom: 1.5px solid #000;">
-              <div style="background: #000; color: #fff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
-                <span>Paper 2 Exam Architecture &amp; Tariffs</span>
-                <span>26m / Enquiry &bull; 130m Total</span>
-              </div>
-              <div style="padding: 3px 6px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.28; background: #fafafa;">
-                <div style="display: flex; justify-content: space-between;">
-                  <span>&bull; <strong>Q1(a) &amp; Q1(b):</strong> Consequence Questions (PFC Formula)</span>
-                  <span style="font-weight: 800;">[4m + 4m = 8m]</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>&bull; <strong>Q2 / Q3:</strong> Analytical Narrative &bull; Explain Importance</span>
-                  <span style="font-weight: 800;">[8m / 16m]</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>&bull; <strong>Do Now Recall:</strong> 10-Question Knowledge Retrieval Bell-Ringer</span>
-                  <span style="font-weight: 800;">[10m]</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Section B: 5 Enquiries Roadmap (Rich Content, Beautifully Distributed) -->
-            <div style="flex: 1; display: flex; flex-direction: column;">
-              <div style="background: #000; color: #fff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
-                <span>Specification Enquiry Sequence (KT2)</span>
-              </div>
-
-              <!-- Lesson 1 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fff; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 2.1: The Road to War: Water Wars
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1964–67</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    What caused the outbreak of the Six-Day War in June 1967?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Cairo (1964):</strong> PLO founded; Jordan headwater diversion; Syrian fedayeen raids.<br>
-                    &bull; <strong>Escalation:</strong> Samu raid; 7 April dogfight over Golan Heights (6 MiGs shot down).
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Water Diversion &bull; Fedayeen &bull; Dogfight</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q2 Narrative [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 2 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fafafa; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 2.2: Course of the Six-Day War
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">June 1967</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    How did Israel secure total military victory during the Six-Day War?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Catalyst:</strong> UNEF expelled; Straits of Tiran closed; Egyptian troops mass in Sinai.<br>
-                    &bull; <strong>Operation Focus:</strong> Air supremacy in 3 hours; lightning capture of Sinai, West Bank, Golan.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Pre-emptive Strike &bull; Air Superiority</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q3 Importance [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 3 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fff; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 2.3: Aftermath: Occupied Lands &amp; Res 242
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1967</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    Why did the aftermath of the 1967 war lead to lasting deadlock?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Territory:</strong> Israel triples in size; 1m Palestinians under military rule.<br>
-                    &bull; <strong>Diplomacy:</strong> Khartoum 'Three Noes'; UN Res 242 ('Land for Peace' dispute).
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Land for Peace &bull; Resolution 242 &bull; Three Noes</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q2 Narrative [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 4 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fafafa; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 2.4: Palestinian Resistance &amp; Munich
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1968–72</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    Why did Palestinian groups turn to international terrorism?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Resistance:</strong> Rise of Fatah &amp; Arafat; Battle of Karameh (1968); guerrilla tactics.<br>
-                    &bull; <strong>Terrorism:</strong> Dawson's Field (1970); Black September in Jordan; Munich 1972 massacre.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Karameh &bull; Black September &bull; Munich 1972</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q3 Importance [8m]</span>
-                </div>
-              </div>
-
-              <!-- Lesson 5 -->
-              <div style="padding: 2.5px 6px; border-bottom: 1.5px solid #000; display: flex; flex-direction: column; justify-content: space-between; background: #fff; flex: 1;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000;">
-                      KT 2.5: The Yom Kippur War &amp; Oil Crisis
-                    </span>
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1969–73</span>
-                    </div>
-                  </div>
-                  <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
-                    How did the Yom Kippur War shatter Israeli invincibility?
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #222; line-height: 1.18;">
-                    &bull; <strong>Assault:</strong> Bar-Lev Line breached with high-pressure water monitors.<br>
-                    &bull; <strong>Crisis:</strong> US Operation Nickel Grass airlift; Israeli counter-thrust; OPEC oil shock.
-                  </div>
-                </div>
-                <div style="margin-top: 1.5px; padding-top: 1.5px; border-top: 1px dashed #ccc; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #555; font-weight: 700;">
-                  <span>Concepts: Operation Badr &bull; Bar-Lev &bull; OPEC Embargo</span>
-                  <span>Exam: Q1 Consequence [4m] &bull; Q2 Narrative [8m]</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Section C: Core Chronological Anchors (10 Key Events in 2 Columns) -->
-            <div style="border-bottom: 1.5px solid #000; background: #fafafa; padding: 2.5px 6px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1.5px; display: flex; justify-content: space-between;">
-                <span>Core Chronological Anchors</span>
-                <span style="font-weight: 800;">1964–1973</span>
-              </div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px 8px; font-family: 'Inter', sans-serif; font-size: 5.7pt; line-height: 1.18; color: #111;">
-                <div>&bull; <strong>1964 (Jan):</strong> Cairo Summit &bull; PLO founded</div>
-                <div>&bull; <strong>1967 (Sep):</strong> Khartoum 'Three Noes'</div>
-                <div>&bull; <strong>1965 (Jan):</strong> Fatah launches guerrilla raids</div>
-                <div>&bull; <strong>1967 (Nov):</strong> UN Res 242 ('Land for Peace')</div>
-                <div>&bull; <strong>1967 (Apr):</strong> 7 April Golan dogfight (6 MiGs)</div>
-                <div>&bull; <strong>1970 (Sep):</strong> Dawson's Field &bull; Black Sept</div>
-                <div>&bull; <strong>1967 (May):</strong> UNEF expelled &bull; Tiran closed</div>
-                <div>&bull; <strong>1972 (Sep):</strong> Munich Olympics massacre</div>
-                <div>&bull; <strong>1967 (5–10 Jun):</strong> Six-Day War victory</div>
-                <div>&bull; <strong>1973 (Oct):</strong> Yom Kippur War &bull; OPEC shock</div>
-              </div>
-            </div>
-
-            <!-- Section D: PFC Writing Formula & Benchmark Model Answer -->
-            <div style="padding: 3px 6px; background: #fff; font-family: 'Inter', sans-serif; font-size: 6.0pt; line-height: 1.2;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                <strong style="text-transform: uppercase; font-size: 6.5pt; letter-spacing: 0.3px;">Edexcel PFC Writing Technique (Q1 Consequence):</strong>
-                <span style="font-size: 5.8pt; font-weight: 800; background: #000; color: #fff; padding: 0.5px 4px; border-radius: 2px;">4 MARKS</span>
-              </div>
-              <div style="display: flex; gap: 3px; border: 1px solid #000; padding: 1.5px 4px; border-radius: 2px; background: #fafafa; margin-bottom: 2px;">
-                <div style="flex: 1;"><strong>[P] Point:</strong> Name consequence</div>
-                <div style="flex: 1.1;"><strong>[F] Fact:</strong> Specific date/stat</div>
-                <div style="flex: 1.2;"><strong>[C] Consequence:</strong> Historical impact</div>
-              </div>
-              <div style="border-left: 2px solid #000; padding-left: 4px; font-family: 'Georgia', serif; font-size: 5.7pt; color: #111; line-height: 1.15;">
-                <strong>Model Answer:</strong> One consequence of the 1964 Cairo Conference was escalating border violence. Arab leaders founded the PLO and began diverting the River Jordan. This resulted in Israeli air strikes on Syrian works, transforming water competition into open clashes that provoked the 1967 Six-Day War.
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      ${renderFooterStrip(1, approvedFunnyFooters[0], 16)}
-    </div>
-  </div>
-`;
+  html += renderStandardFrontCover({
+    unitId: 'cme_new',
+    paperTitle: 'EDEXCEL GCSE (9–1) HISTORY • PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995',
+    specCode: 'SPECIFICATION 1HI0/2B',
+    keyTopicNum: 2,
+    dateRange: '1964–1973',
+    title: 'The Escalating Conflict, 1964–1973',
+    subtitle:
+      'The Cairo Conference, Six-Day War, Resolution 242, Palestinian Resistance & The Yom Kippur War',
+    heroImage: {
+      src: coverImgSrc,
+      alt: 'Israeli Paratroopers at the Western Wall, Jerusalem',
+      objectPosition: 'center 60%',
+      shelfmark: 'GPO-D388-052',
+      date: '7 June 1967',
+      title: 'Israeli Paratroopers at the Western Wall, Jerusalem',
+      caption:
+        'David Rubinger (1924–2017) • Paratroopers of the 55th Paratroopers Brigade stand in silence before the Western Wall (Kotel) following the capture of the Old City during the Six-Day War. Registered in the State of Israel Government Press Office archive under Accession Shelfmark GPO-D388-052.',
+      sourceTag: 'Historical Primary Source',
+      archiveTag: 'Edexcel Paper 2 Master Archive',
+      heightMm: 120,
+    },
+    specBox: {
+      title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
+      subtopics: [
+        {
+          title: '1. The Six Day War, 1967',
+          items: [
+            'Significance of Cairo Conference (1964) & growth of Fatah / PLO',
+            'Escalating tension: Syria’s support for Fatah, Samu raid, 7 April 1967',
+            'Actions of the USSR, Nasser and the USA leading to war',
+            'Key events of the war across Sinai, West Bank, Jerusalem & Golan',
+          ],
+        },
+        {
+          title: '2. Aftermath of the 1967 War',
+          items: [
+            'UN Resolution 242 and continued dispute over the Suez Canal',
+            'Palestinian refugees and occupied territories (Golan, Gaza, West Bank, Sinai, East Jerusalem)',
+            'Terrorism, response & attitudes: PFLP hijacks 1970, Black September, Munich Olympics',
+            'Expulsion of the PLO from Jordan (1970)',
+          ],
+        },
+        {
+          title: '3. Israel & Egypt, 1967–73',
+          items: [
+            'Egyptian relations with Israel, the USA, the USSR and Arab states',
+            'Israel’s consolidation of control of the occupied territories',
+            'Key events of the Yom Kippur War (1973) and its aftermath',
+          ],
+        },
+      ],
+    },
+    footerQuip: approvedFunnyFooters[0],
+    totalPageCount: 16,
+    renderFooterStrip,
+  });
 
   // ====================================================================
   // PAGES 2–3: LIVING TIMELINE (Panoramic Dual-Coding Spread, 6 Milestones)
@@ -1789,205 +1489,104 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Spacious Ledger, Feedback & QR Hub)
+  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
   // ====================================================================
+  html += renderStandardBackCover({
+    unitId: 'cme_new',
+    paperTitle: 'EDEXCEL GCSE (9–1) HISTORY • PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995',
+    keyTopicNum: 2,
+    trackerTitle: 'Student Assessment Record • Key Topic 2 Tracker',
+    trackerSubtitle:
+      'Paper 2: Conflict in the Middle East, 1945–1995 • The Escalating Conflict (1964–1973)',
+    enquiries: [
+      {
+        num: 1,
+        code: 'KT2.1',
+        title: 'Cairo Conference & Water Wars',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q2',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 2,
+        code: 'KT2.2',
+        title: 'Straits of Tiran & Six Day War',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q3',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 3,
+        code: 'KT2.3',
+        title: 'Occupied Territories & Res 242',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q2',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 4,
+        code: 'KT2.4',
+        title: 'Black September & Munich 1972',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q3',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+      {
+        num: 5,
+        code: 'KT2.5',
+        title: 'Yom Kippur War & Oil Embargo',
+        doNowMarks: 10,
+        q1aMarks: 4,
+        q1bMarks: 4,
+        extType: 'Q2',
+        extMarks: 8,
+        totalMarks: 26,
+      },
+    ],
+    feedback: {
+      signature: '____________________________',
+      date: '____________________',
+    },
+    qrLessons: [
+      {
+        label: 'KT 2.1: Water Wars',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=4`,
+      },
+      {
+        label: 'KT 2.2: Six-Day War',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=5`,
+      },
+      {
+        label: 'KT 2.3: Res 242',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=6`,
+      },
+      {
+        label: 'KT 2.4: Munich 1972',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=7`,
+      },
+      {
+        label: 'KT 2.5: Yom Kippur',
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=8`,
+      },
+    ],
+    footerQuip: approvedFunnyFooters[15],
+    totalPageCount: 16,
+    renderFooterStrip,
+  });
+
   html += `
-  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Top Departmental Branding -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Pupil Assessment Record</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">OUTSIDE BACK COVER</span>
-        </div>
-      </div>
-
-      <!-- Header Block -->
-      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; margin: 0 0 2px 0; font-weight: 900; text-transform: uppercase;">
-          Student Assessment Record &bull; Key Topic 2 Tracker
-        </h2>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #222222; font-weight: 700; letter-spacing: 0.5px;">
-          Paper 2: Conflict in the Middle East, 1945–1995 &bull; The Escalating Conflict (1964–1973)
-        </div>
-      </div>
-
-      <!-- Target Grade & Pupil Information Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 14px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 12px; align-items: center; margin-bottom: 6px;">
-        <div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
-          <div style="border-bottom: 1.5px solid #000000; height: 16px; margin-top: 1px;"></div>
-        </div>
-        <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
-          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
-        </div>
-        <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
-          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
-        </div>
-        <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Attitude:</span>
-          <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 800; margin-top: 4px;">
-            1 &bull; 2 &bull; 3 &bull; 4 &bull; 5
-          </div>
-        </div>
-      </div>
-
-      <!-- Assessment Progress Ledger Table (Expanded Spacing & Clear 26m Totals) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
-          <thead>
-            <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 6px 6px; width: 32px; text-align: center; font-size: 8.5pt; font-weight: 900; border-right: 1px solid #000000;">#</th>
-              <th style="padding: 6px 10px; text-align: left; font-size: 8.5pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Enquiry / Lesson Assessment</th>
-              <th style="padding: 6px 6px; width: 88px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Do Now (10m)</th>
-              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1 Conseq (8m)</th>
-              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Extended (8m)</th>
-              <th style="padding: 6px 8px; width: 92px; text-align: center; font-size: 8.5pt; font-weight: 900; text-transform: uppercase;">Lesson Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">1</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.1:</strong> Cairo Conference &amp; Water Wars</td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">2</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.2:</strong> Straits of Tiran &amp; Six Day War</td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">3</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.3:</strong> Occupied Territories &amp; Res 242</td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">4</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.4:</strong> Black September &amp; Munich 1972</td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">5</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.5:</strong> Yom Kippur War &amp; Oil Embargo</td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
-            </tr>
-            <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 6px 10px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8.2pt;">Key Topic 2 Cumulative Assessment Totals</td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Do Now: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 50</strong> ]</span></td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1 Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 40</strong> ]</span></td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Ext Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 40</strong> ]</span></td>
-              <td style="padding: 6px 8px; text-align: center; font-size: 10.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 130</strong> ]</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Teacher Feedback Section (WWW & EBI 4 lines each at 7.2mm) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; color: #000000;">
-            Teacher Formative Assessment &bull; WWW / EBI Feedback
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #222222; font-weight: 700;">
-            Effort Grade: [ &nbsp;&nbsp;&nbsp;&nbsp; ]
-          </span>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-          <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
-              What Went Well (WWW):
-            </span>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-          </div>
-          <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
-              Even Better If (EBI):
-            </span>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
-          <span><strong>Teacher Signature:</strong> ____________________________</span>
-          <span><strong>Date:</strong> ____________________</span>
-        </div>
-      </div>
-
-      <!-- Interactive Quizzing & Revision QR Hub (5 QR Codes for Lessons 5 to 9) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; color: #000000;">
-            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant 20-Question Retrieval Practice
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222222; font-weight: 700;">
-            Scan with smartphone camera to open live interactive 20-question self-marking quizzes
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
-          ${kt2Configs
-            .map((cfg, idx) => {
-              const quizUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=${cfg.lessonIndex}`;
-              const qrSvg = generateQrSvg(quizUrl);
-              const shortLabels = [
-                'Water Wars',
-                'Six-Day War',
-                'Res 242',
-                'Munich 1972',
-                'Yom Kippur',
-              ];
-              return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; color: #000000; margin-bottom: 2px; text-transform: uppercase;">
-              KT 2.${idx + 1}: ${shortLabels[idx]}
-            </div>
-            <div style="width: 20mm; height: 20mm; margin: 2px auto;">
-              ${qrSvg}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000; margin-top: 2px;">
-              Scan to Quiz
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]
-            </div>
-          </div>
-          `;
-            })
-            .join('')}
-        </div>
-      </div>
-
-      ${renderFooterStrip(16, approvedFunnyFooters[15], 16)}
-    </div>
-  </div>
 </body>
 </html>
 `;
