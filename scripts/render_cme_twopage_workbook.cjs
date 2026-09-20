@@ -17,41 +17,41 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-// 14 APPROVED RISQUÉ / CHEEKY BLACKADDER-STYLE QUIPS (One per page)
-const quipList = [
-  'Conflict in the Middle East Revision Hub • The History Department', // Page 1
-  'Water diversion tip: If Syria diverts the Banyas River and you divert the Jordan, everyone ends up thirsty with tanks on their lawn.', // Page 2
-  'Living Timeline complete: 10 years of border skirmishes, pre-emptive strikes, and oil crises summarized in 6 chronological milestones.', // Page 3
-  'National Water Carrier: Millions of gallons pumped to make the desert bloom, accompanied by artillery duels across the demilitarised zone.', // Page 4
-  'Aerial dogfights: When six Syrian MiG-21s are downed before breakfast, it is usually a sign that diplomatic talks have stalled.', // Page 5
-  'Closing the Straits of Tiran: An excellent way to provoke a pre-emptive strike in three hours flat.', // Page 6
-  'Operation Focus: If your entire air force is parked in neat rows on the tarmac at 7:45 AM, do not expect them to still be there at 8:00 AM.', // Page 7
-  'Resolution 242: Drafting an ambiguous resolution without the word "the" is diplomacy at its most gloriously confusing.', // Page 8
-  'The Khartoum Summit: The "Three Noes" proved that when in doubt, Arab leaders could at least agree on what they definitely would not do.', // Page 9
-  'Operating a state-within-a-state: Guaranteed to annoy your host monarch until he brings in the Jordanian 40th Armoured Brigade.', // Page 10
-  'Dawson’s Field: Blowing up three Boeing 707s in the desert gets you global headlines, but also an eviction notice from Amman.', // Page 11
-  'The Bar-Lev Line: Twelve miles of sand ramparts and concrete bunkers—breached in two hours by high-pressure fire hoses.', // Page 12
-  'The OPEC oil embargo: Proof that turning off the petroleum tap concentrates American diplomatic minds faster than a thousand speeches.', // Page 13
-  'Key Topic 2 Mastery complete: Three question types conquered, zero complacency, and full marks secured in the revision ledger.', // Page 14
+// Footers currently on pages (retaining departmental styling for pupil books)
+const currentFooters = [
+  'Conflict in the Middle East Revision Hub • Key Topic 2 • The History Department', // Page 1
+  'Milestones 1–3: The Road to War and the Six-Day War (1964–1967)', // Page 2
+  'Milestones 4–6: Diplomacy, Terror, and the Yom Kippur War (1967–1973)', // Page 3
+  'Key Topic 2.1: The Road to War (1964–1967) • Knowledge Retrieval & Exam Practice', // Page 4
+  'Key Topic 2.1: Extended Writing Assessment • Question 2: Analytical Narrative', // Page 5
+  'Key Topic 2.2: The Six-Day War (1967) • Knowledge Retrieval & Exam Practice', // Page 6
+  'Key Topic 2.2: Extended Writing Assessment • Question 3: Explain the Importance', // Page 7
+  'Key Topic 2.3: Aftermath & Resolution 242 (1967) • Knowledge Retrieval & Exam Practice', // Page 8
+  'Key Topic 2.3: Extended Writing Assessment • Question 2: Analytical Narrative', // Page 9
+  'Key Topic 2.4: Palestinian Resistance & Munich (1968–1972) • Knowledge Retrieval & Exam Practice', // Page 10
+  'Key Topic 2.4: Extended Writing Assessment • Question 3: Explain the Importance', // Page 11
+  'Key Topic 2.5: Yom Kippur War & Oil Crisis (1969–1973) • Knowledge Retrieval & Exam Practice', // Page 12
+  'Key Topic 2.5: Extended Writing Assessment • Question 2: Analytical Narrative', // Page 13
+  'Key Topic 2 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 14
 ];
 
 // ============================================================================
-// FOOTER STRIP HELPER (Page Number + Quip on the Same Line)
-// Even pages (verso/left): Page number on left, quip on right.
-// Odd pages (recto/right): Quip on left, page number on right.
+// FOOTER STRIP HELPER (Page Number + Footer Text on the Same Line)
+// Even pages (verso/left): Page number on left, text on right.
+// Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 14) {
+function renderFooterStrip(pageNum, text, totalPages = 14) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
       <div class="page-footer-strip">
         <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;"><em>${quipText}</em></span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">${text}</span>
       </div>`;
   } else {
     return `
       <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>${quipText}</em></span>
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${text}</span>
         <span class="footer-page-num">${pageNum}/${totalPages}</span>
       </div>`;
   }
@@ -65,25 +65,24 @@ const kt2Configs = [
     lessonIndex: 4,
     lessonNum: 1,
     id: 'lesson_6',
-    title:
-      'KT2.1: The Road to War: The Cairo Conference, Water Wars & Border Skirmishes (1964–1967)',
+    title: 'KT2.1: The Road to War: Water Wars & Skirmishes (1964–1967)',
     specAnchor:
-      'The Arab League and the Cairo Conference (1964); disputes over the River Jordan water diversion; the creation of the PLO and Fatah; Syrian-backed fedayeen guerrilla attacks; Israeli reprisal raids and the 7 April 1967 aerial battle over the Golan Heights.',
+      'The Cairo Conference (1964) and creation of the PLO; River Jordan water dispute and Headwater Diversion Plan; Syrian-backed fedayeen guerrilla attacks; Israeli reprisal raids and the 7 April 1967 aerial battle over the Golan Heights.',
     doNow: [
       {
-        q: 'What 1917 British policy document supported a "national home for the Jewish people" in Palestine?',
+        q: 'What 1917 British declaration supported a Jewish national home in Palestine?',
         a: 'The Balfour Declaration',
       },
       {
-        q: 'What administrative authority was granted to Britain over Palestine by the League of Nations in 1922?',
-        a: 'The British Mandate',
+        q: 'Which international organisation granted Britain the Mandate for Palestine in 1922?',
+        a: 'The League of Nations',
       },
       {
-        q: 'Which Jerusalem hotel was bombed by the Zionist paramilitary group Irgun in July 1946?',
+        q: 'Which Jerusalem hotel was bombed by the Zionist militant group Irgun in July 1946?',
         a: 'The King David Hotel',
       },
       {
-        q: 'What was the number of the United Nations Resolution passed in November 1947 to partition Palestine?',
+        q: 'What was the number of the United Nations Resolution to partition Palestine in 1947?',
         a: 'UN Resolution 181',
       },
       {
@@ -91,365 +90,370 @@ const kt2Configs = [
         a: '14 May 1948',
       },
       {
-        q: 'Approximately how many Palestinian Arabs became refugees during the 1948–49 Arab-Israeli War?',
+        q: 'Approximately how many Palestinian Arabs became refugees during the 1948–49 War?',
         a: 'Approximately 700,000',
       },
       {
-        q: 'What law passed by the Israeli Knesset in 1950 granted every Jewish person the right to settle in Israel?',
+        q: 'What 1950 Israeli law granted every Jewish person the right to settle in Israel?',
         a: 'The Law of Return',
       },
       {
-        q: 'Who became President of Egypt in 1954 and emerged as the champion of Pan-Arab nationalism?',
+        q: 'Who became President of Egypt in 1954 and emerged as leader of Pan-Arab nationalism?',
         a: 'Gamal Abdel Nasser',
       },
       {
-        q: 'What vital international waterway did Nasser nationalise in July 1956, sparking the Suez Crisis?',
+        q: 'What vital international waterway did Nasser nationalise in July 1956?',
         a: 'The Suez Canal',
       },
       {
-        q: 'Which two European powers secretly colluded with Israel in the Protocol of Sèvres in October 1956?',
+        q: 'Which two European powers secretly colluded with Israel in the Protocol of Sèvres (1956)?',
         a: 'Britain and France',
       },
     ],
     vocabPrompt:
-      'Explain the crucial tactical difference between Israel’s National Water Carrier and Syria’s Headwater Diversion project, and why water rights ignited cross-border combat.',
-    drillType: 'consequence_4',
-    tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
-    examStem:
-      'Explain one consequence of the 7 April 1967 aerial battle over the Golan Heights. [4 marks]',
-    provenanceClue:
-      'Consider the topographical military survey of the Golan Heights (1967). How did Syrian artillery superiority from the plateau overlooking kibbutzim in the Hula Valley make armed confrontation unavoidable?',
-    source: {
-      title: 'Historical Topographical Survey: The Syrian Armistice Line & Golan Heights Plateau',
-      shelfmark: 'ISR-SYR-66',
-      src: '/images/cme_golan_heights_relief_map_1967.jpg',
-      caption:
-        'Topographical contour survey showing Syrian artillery batteries on the Golan Heights dominating Israeli kibbutzim in the Hula Valley (1964–1967).',
-      provenance:
-        'Department of Military Survey, Historical Topographical Record, Sheet 4 (Accession Ref: ISR-SYR-66).',
-      context:
-        'This official military survey details the fortified Syrian artillery bunkers and trench networks excavated along the Golan Heights plateau, from which Syrian forces regularly shelled Israeli tractors and border communities in the demilitarised zone.',
-      hinge:
-        'How does the physical elevation of the Golan Heights shown in Source A explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
+      'Define the <strong>Headwater Diversion Plan</strong> and explain how it differed from a conventional border clash as a catalyst for military escalation:',
+    consequenceA: {
+      question:
+        'Explain one consequence of the Arab League’s Headwater Diversion Plan (1964–66). [4 marks]',
+      guidance:
+        'Point (IDF airstrikes and artillery destroying Syrian earthmoving machinery) &bull; Fact (Israel targeted Banyas canal diversion works) &bull; Consequence (Halted Arab water diversion but sharply escalated cross-border shelling and Syrian backing for Fatah guerrilla raids).',
+      stems:
+        'One major consequence was... &bull; Specifically, when Syria attempted to divert the headwaters of the Jordan... &bull; Consequently, this resulted in...',
     },
-    structureStrip: [
-      {
-        col: '1. IDENTIFY CONSEQUENCE',
-        text: 'State clearly one major result: the shooting down of six Syrian MiGs and the profound humiliation of the Syrian government.',
-      },
-      {
-        col: '2. DEPLOY HISTORICAL EVIDENCE',
-        text: 'Detail the IAF Mirage fighters pursuing MiGs over Damascus and the activation of the 1966 Egyptian-Syrian Mutual Defense Pact.',
-      },
-      {
-        col: '3. EXPLAIN CAUSAL IMPACT',
-        text: 'Explain how Arab public outcry forced President Nasser to mobilise Egyptian forces in Sinai to protect his Pan-Arab leadership, directly precipitating the Six-Day War.',
-      },
-    ],
-    connectives:
-      'One significant consequence of the 7 April 1967 air battle was... &bull; Specifically, during the aerial clash over the Golan... &bull; Furthermore, this activated... &bull; Consequently, this directly compelled Nasser to... &bull; Therefore...',
-    wordBank:
-      'National Water Carrier &bull; Banyas River &bull; demilitarised zone (DMZ) &bull; Kibbutz Ein Gev &bull; Syrian MiG-21 &bull; IAF Mirage jets &bull; Damascus &bull; Mutual Defense Pact &bull; Pan-Arab credibility',
-    timelineMission:
-      'Sketch and annotate the River Jordan water diversion route and the 7 April air battle on Milestones 1 and 2',
-    leftPageQuip:
-      'National Water Carrier: Millions of gallons pumped to make the desert bloom, accompanied by artillery duels across the demilitarised zone.',
-    rightPageQuip:
-      'Aerial dogfights: When six Syrian MiG-21s are downed before breakfast, it is usually a sign that diplomatic talks have stalled.',
+    consequenceB: {
+      question:
+        'Explain one consequence of the 7 April 1967 air battle over the Golan Heights. [4 marks]',
+      guidance:
+        'Point (Humiliating defeat for the Syrian Air Force) &bull; Fact (Israeli Mirage jets shot down six Syrian MiG-21s and flew victory passes over Damascus) &bull; Consequence (Provoked false Soviet intelligence reports in May 1967, pressuring Nasser to mobilise in Sinai).',
+      stems:
+        'One major consequence was... &bull; Specifically, during the aerial clash on 7 April 1967... &bull; Consequently, this directly triggered...',
+    },
+    // Right Page: Question 2 Analytical Narrative [8 marks]
+    rightExam: {
+      type: 'narrative_8',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      stem: 'Write a narrative account analysing the key events that led to the outbreak of the Six-Day War (1964–June 1967). [8 marks]',
+      stimulus: [
+        'The closure of the Straits of Tiran (May 1967)',
+        'The expulsion of UNEF from Sinai',
+      ],
+      structureStrip: [
+        {
+          col: '1. PHASE 1: CATALYSTS (1964–66)',
+          text: 'Explain the Cairo Conference (1964), River Jordan water disputes, creation of the PLO, and escalating cross-border Syrian artillery and fedayeen raids.',
+        },
+        {
+          col: '2. PHASE 2: ESCALATION (MAY 1967)',
+          text: 'Explain Soviet false warnings, Nasser expelling UNEF peacekeepers, moving 100,000 troops into Sinai, and closing the Straits of Tiran at Sharm el-Sheikh.',
+        },
+        {
+          col: '3. PHASE 3: OUTCOME (JUNE 1967)',
+          text: 'Explain the Egyptian-Jordanian defence pact (May 30) encircling Israel, and Israel launching Operation Focus pre-emptive airstrikes on 5 June.',
+        },
+      ],
+      connectives:
+        'The crisis began in 1964 when... &bull; Tensions escalated sharply in May 1967 because... &bull; Following the expulsion of UNEF, Nasser... &bull; Consequently, Israel viewed this as a casus belli... &bull; Ultimately, this culminated in...',
+      wordBank:
+        'Cairo Conference (1964) &bull; National Water Carrier &bull; Headwater Diversion &bull; Fatah raids &bull; 7 April air battle &bull; UNEF peacekeepers &bull; Straits of Tiran &bull; Sharm el-Sheikh &bull; casus belli &bull; Operation Focus',
+      timelineMission:
+        'Turn to Pages 2–3 (Key Topic 2.1). In Milestones 1 and 2, sketch the Cairo Arab Summit symbol and annotate the blockade of the Straits of Tiran at Sharm el-Sheikh.',
+    },
   },
 
   {
     lessonIndex: 5,
     lessonNum: 2,
     id: 'lesson_7',
-    title: 'KT2.2: The Slide to War & The Six Day War (May–June 1967)',
+    title: 'KT2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     specAnchor:
-      'The escalation of tension: Soviet false reports; Nasser’s remilitarisation of the Sinai, expulsion of UNEF peacekeepers, and blockade of the Straits of Tiran; the Jordanian-Egyptian defense pact; Israeli pre-emptive strike (Operation Focus); the three-front war and territorial conquests.',
+      'The outbreak of war on 5 June 1967; Operation Focus (destruction of Arab air forces on the ground); the three-front campaign in Sinai, West Bank/Jerusalem, and Golan Heights; Israel’s total military victory and capture of strategic territory.',
     doNow: [
       {
-        q: 'Where did Arab League leaders meet in January 1964 to coordinate policy against Israel?',
-        a: 'Cairo (The Cairo Conference)',
+        q: 'In which city was the Palestine Liberation Organisation (PLO) founded in January 1964?',
+        a: 'Cairo',
       },
       {
-        q: 'What organisation was founded in 1964 under Ahmad Shukeiri to represent Palestinian Arabs?',
-        a: 'The Palestine Liberation Organisation (PLO)',
+        q: 'Who was elected the first chairman of the PLO in 1964?',
+        a: 'Ahmad Shukeiri',
       },
       {
-        q: 'Which Palestinian guerrilla movement was led by Yasser Arafat from 1959 onwards?',
+        q: 'Which Palestinian guerrilla faction was founded by Yasser Arafat in Kuwait in 1959?',
         a: 'Fatah',
       },
       {
-        q: 'What was the name of the Israeli engineering project diverting River Jordan water to the Negev?',
-        a: 'The National Water Carrier',
-      },
-      {
-        q: 'Which strategic plateau did Syrian artillery use to shell Israeli settlements in the Hula Valley?',
+        q: 'What strategic high ground overlooking Galilee kibbutzim was controlled by Syria before 1967?',
         a: 'The Golan Heights',
       },
       {
-        q: 'How many Syrian MiG-21 fighter jets did the Israeli Air Force shoot down on 7 April 1967?',
-        a: 'Six MiG-21s',
+        q: 'How many Syrian MiG-21s were shot down by the Israeli Air Force on 7 April 1967?',
+        a: 'Six',
       },
       {
-        q: 'Over which Arab capital city did Israeli Mirage fighters perform celebratory victory rolls in April 1967?',
-        a: 'Damascus',
+        q: 'What peacekeeping force was deployed in Sinai following the 1956 Suez Crisis?',
+        a: 'UNEF (UN Emergency Force)',
       },
       {
-        q: 'What treaty signed in November 1966 bound Egypt and Syria into a mutual military alliance?',
-        a: 'The Egyptian-Syrian Mutual Defense Pact',
+        q: 'What narrow strait did President Nasser close to Israeli shipping on 22 May 1967?',
+        a: 'The Straits of Tiran',
       },
       {
-        q: 'What strip of territory along the Jordan-Syrian border was designated as neutral but frequently farmed?',
-        a: 'The Demilitarised Zone (DMZ)',
+        q: 'Which coastal outpost at the entrance of the Gulf of Aqaba was fortified by Egyptian guns?',
+        a: 'Sharm el-Sheikh',
       },
       {
-        q: 'Which superpower provided false intelligence in May 1967 claiming Israeli troops were massing on Syria’s border?',
-        a: 'The Soviet Union (USSR)',
+        q: 'Which monarch of Jordan flew to Cairo on 30 May 1967 to sign a joint defence pact with Nasser?',
+        a: 'King Hussein',
+      },
+      {
+        q: 'Who was appointed Israeli Minister of Defence on 1 June 1967 on the eve of war?',
+        a: 'Moshe Dayan',
       },
     ],
     vocabPrompt:
-      'Explain why Israel defined Egypt’s closure of the Straits of Tiran as a "casus belli" (justification for war) and how this concept led directly to Operation Focus.',
-    drillType: 'narrative_8',
-    tariff: 'Question 2: Narrative Account Analysing Key Events [8 marks &bull; 10 mins]',
-    examStem:
-      'Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]',
-    stimulus: [
-      "Nasser's closure of the Straits of Tiran (May 1967)",
-      'The pre-emptive Israeli air strike (5 June 1967)',
-    ],
-    provenanceClue:
-      'Consider the official aerial damage reconnaissance photograph taken at Bir Gifgafa airbase on 5 June 1967. How does photographic proof of total air supremacy explain why the ground campaign across Sinai was decided so rapidly?',
-    source: {
-      title:
-        'Archival Reconnaissance Photograph: Destroyed Egyptian Combat Aircraft at Bir Gifgafa Airbase',
-      shelfmark: 'AIR-1967-0506',
-      src: '/images/cme_six_day_war_airfield_1967.jpg',
-      caption:
-        'Charred wreckage of Egyptian combat aircraft destroyed on the tarmac during Operation Focus at dawn on 5 June 1967.',
-      provenance:
-        'IDF Military Archive, Western Sinai Campaign Collection (Accession Ref: AIR-1967-0506).',
-      context:
-        'This primary aerial intelligence photograph records the catastrophic aftermath of the Israeli dawn airstrike at Bir Gifgafa airbase in the Sinai Peninsula. By destroying Arab runways and aircraft within three hours, Israel secured complete uncontested air supremacy.',
-      hinge:
-        'How does Source A help explain why the ground war in the Sinai Peninsula was decided so rapidly in Israel’s favour?',
+      'Define a <strong>Pre-emptive Strike</strong> and explain why Israeli commanders argued Operation Focus was necessary for national survival on 5 June 1967:',
+    consequenceA: {
+      question:
+        'Explain one consequence of Operation Focus on the morning of 5 June 1967. [4 marks]',
+      guidance:
+        'Point (Complete destruction of the Egyptian Air Force on the ground) &bull; Fact (Over 300 of Egypt’s 420 combat aircraft wiped out in 3 hours using runway-crater bombs) &bull; Consequence (Gave Israel total air supremacy, leaving Egyptian ground forces in Sinai defenseless without air cover).',
+      stems:
+        'One major consequence was... &bull; Specifically, when the Israeli Air Force launched Operation Focus... &bull; Consequently, this enabled the IDF to...',
     },
-    structureStrip: [
-      {
-        col: '1. PHASE 1: CRISIS & ENCIRCLEMENT',
-        text: 'Explain the catalyst: Nasser’s expulsion of UNEF peacekeepers, blockade of the Straits of Tiran, and Jordan signing a defense pact, creating perceived encirclement.',
-      },
-      {
-        col: '2. PHASE 2: PRE-EMPTIVE AIR STRIKE',
-        text: 'Explain the turning point: Operation Focus launched at 07:45 on 5 June, destroying over 400 Arab aircraft on the ground in 3 hours and securing total air dominance.',
-      },
-      {
-        col: '3. PHASE 3: TERRITORIAL CONQUEST',
-        text: 'Explain the outcome: rapid three-front armoured advance capturing Sinai and Gaza from Egypt, West Bank and East Jerusalem from Jordan, and Golan Heights from Syria by 10 June.',
-      },
-    ],
-    connectives:
-      'The conflict began in May 1967 when President Nasser... &bull; This directly triggered an existential crisis because the blockade... &bull; Consequently, on 5 June 1967 Israel launched... &bull; This shifted the military balance decisively because... &bull; As a direct result, by 10 June 1967...',
-    wordBank:
-      'Straits of Tiran &bull; Sharm el-Sheikh &bull; UNEF peacekeepers &bull; casus belli &bull; Operation Focus &bull; General Yitzhak Rabin &bull; Bir Gifgafa &bull; Western Wall &bull; Golan Heights &bull; 1 million refugees',
-    timelineMission:
-      'Sketch and annotate Operation Focus airstrikes and the five conquered territories on Milestone 3',
-    leftPageQuip:
-      'Closing the Straits of Tiran: An excellent way to provoke a pre-emptive strike in three hours flat.',
-    rightPageQuip:
-      'Operation Focus: If your entire air force is parked in neat rows on the tarmac at 7:45 AM, do not expect them to still be there at 8:00 AM.',
+    consequenceB: {
+      question: 'Explain one consequence of Jordan entering the war on 5 June 1967. [4 marks]',
+      guidance:
+        'Point (Israel’s capture of East Jerusalem and the entire West Bank) &bull; Fact (Jordanian artillery shelled West Jerusalem based on false Egyptian reports; Israeli paratroopers counter-attacked) &bull; Consequence (Israel captured the Old City and annexed East Jerusalem, displacing 300,000+ Palestinians).',
+      stems:
+        'One major consequence was... &bull; Specifically, after King Hussein ordered Jordanian forces to fire... &bull; Consequently, this resulted in...',
+    },
+    // Right Page: Question 3 Explain Importance [8 marks]
+    rightExam: {
+      type: 'importance_8',
+      tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
+      stem: 'Explain the importance of the Israeli capture of the Golan Heights (9–10 June 1967) for Israeli security. [8 marks]',
+      focusAspects: [
+        'Protection of Galilee Farming Settlements & Water Sources',
+        'Topographical High Ground & Strategic Early Warning',
+      ],
+      structureStrip: [
+        {
+          col: '1. POINT 1: ELIMINATING BORDER SHELLING',
+          text: 'Explain how Syrian artillery bunkers on the escarpment had terrorised Hula Valley kibbutzim for 19 years; capturing the heights permanently ended cross-border bombardments.',
+        },
+        {
+          col: '2. POINT 2: STRATEGIC HIGH GROUND',
+          text: 'Explain how holding Mt Hermon and the high volcanic plateau placed the IDF within 40 miles of Damascus, providing early radar warning and blocking Syrian armored invasions.',
+        },
+        {
+          col: '3. EVALUATIVE SUMMARY: PERMANENT SHIFT',
+          text: 'Explain how capturing the Golan permanently transformed Israel from a vulnerable defensive position into the dominant military power on its northern frontier.',
+        },
+      ],
+      connectives:
+        'The capture of the Golan Heights was important for Israeli security because... &bull; In particular, for 19 years Syrian forces had... &bull; By capturing the volcanic escarpment, the IDF... &bull; Furthermore, holding the high plateau provided... &bull; Ultimately, this transformed...',
+      wordBank:
+        'Golan escarpment &bull; Galilee kibbutzim &bull; Hula Valley &bull; Syrian artillery bunkers &bull; General David Elazar &bull; Mt Hermon &bull; radar early warning &bull; Damascus buffer &bull; strategic depth &bull; 9–10 June assault',
+      timelineMission:
+        'Turn to Pages 2–3 (Key Topic 2.2). In Milestone 3, sketch Israeli Centurion tanks advancing through the desert and label the Golan Heights, West Bank, and Sinai.',
+    },
   },
 
   {
     lessonIndex: 6,
     lessonNum: 3,
     id: 'lesson_8',
-    title: 'KT2.3: The Aftermath of 1967: The Occupied Territories & UN Resolution 242',
+    title: 'KT2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     specAnchor:
-      "The political and territorial consequences of the Six Day War: the Occupied Territories (Sinai, Gaza, West Bank, Golan Heights, East Jerusalem); UN Security Council Resolution 242 ('Land for Peace'); the Khartoum Arab Summit and the 'Three Noes'; the initiation of Israeli settlement policy.",
+      'The creation of the Occupied Territories (Sinai, Gaza, West Bank, East Jerusalem, Golan Heights); Palestinian refugee crisis (300,000+ displaced); the Khartoum Conference and the "Three Noes" (Aug–Sept 1967); UN Resolution 242 and "Land for Peace" (Nov 1967).',
     doNow: [
       {
-        q: 'What international peacekeeping force was expelled from the Sinai Peninsula by Nasser in May 1967?',
-        a: 'The UN Emergency Force (UNEF)',
+        q: 'How many days did the Arab-Israeli war of June 1967 last?',
+        a: 'Six days (5–10 June 1967)',
       },
       {
-        q: 'What narrow strait connecting the Gulf of Aqaba to the Red Sea was blockaded by Egypt in May 1967?',
-        a: 'The Straits of Tiran',
+        q: 'Name the massive desert peninsula captured by Israel from Egypt in 1967.',
+        a: 'The Sinai Peninsula',
       },
       {
-        q: 'What was the codename of the pre-emptive Israeli air strike launched on 5 June 1967?',
-        a: 'Operation Focus (Mivtza Moked)',
+        q: 'Which territory along the Mediterranean coast was captured from Egyptian military administration?',
+        a: 'The Gaza Strip',
       },
       {
-        q: 'Which three Arab countries fought against Israel in the Six-Day War?',
-        a: 'Egypt, Jordan, and Syria',
-      },
-      {
-        q: 'Name two territories captured by Israel from Egypt during the Six-Day War.',
-        a: 'Sinai Peninsula and Gaza Strip',
-      },
-      {
-        q: 'What territory, including East Jerusalem, was captured by Israel from Jordan in June 1967?',
+        q: 'Which territory on the west bank of the River Jordan was captured from the Kingdom of Jordan?',
         a: 'The West Bank',
       },
       {
-        q: 'What strategic elevated plateau was captured by Israel from Syria in the final days of the 1967 war?',
+        q: 'Which holy sector of Jerusalem was captured and annexed by Israel in June 1967?',
+        a: 'East Jerusalem (including the Old City)',
+      },
+      {
+        q: 'Which strategic volcanic plateau was captured by Israeli troops from Syria on 9–10 June?',
         a: 'The Golan Heights',
       },
       {
-        q: 'Approximately how many Palestinian Arabs came under Israeli military occupation following June 1967?',
-        a: 'Over one million (approx. 1.1 million)',
+        q: 'Approximately how many Palestinian Arabs became refugees following the 1967 war?',
+        a: 'Between 300,000 and 350,000',
       },
       {
-        q: 'Which holy Jewish site in the Old City of Jerusalem was brought under Israeli control on 7 June 1967?',
-        a: 'The Western Wall (Wailing Wall)',
+        q: 'What city in Sudan hosted the Arab League summit in August–September 1967?',
+        a: 'Khartoum',
       },
       {
-        q: 'What was the official duration of the 1967 Arab-Israeli War?',
-        a: 'Six Days (5–10 June 1967)',
+        q: 'What famous formula summarized the Arab League position at the Khartoum Summit?',
+        a: 'The "Three Noes" (no peace, no recognition, no negotiations)',
+      },
+      {
+        q: 'What core diplomatic formula was introduced by UN Security Council Resolution 242?',
+        a: '"Land for Peace"',
       },
     ],
     vocabPrompt:
-      'Explain the crucial legal distinction between military occupation and territorial annexation, using the West Bank and East Jerusalem as examples.',
-    drillType: 'importance_8',
-    tariff: 'Question 3: Explain the Importance [8 marks &bull; 10 mins]',
-    examStem:
-      'Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy. [8 marks]',
-    provenanceClue:
-      'Consider the official diplomatic communiqué issued by eight Arab heads of state at Khartoum in September 1967. How does their collective declaration of the "Three Noes" explain why Resolution 242 failed to produce immediate peace?',
-    source: {
-      title: 'Archival Primary Excerpt: The Khartoum Arab League Summit Communiqué (Clause 3)',
-      shelfmark: 'ARAB-LEAGUE-1967-KRT',
-      src: '', // text-based primary source box
-      caption:
-        'Official English translation of the third clause of the Khartoum Summit declaration issued by eight Arab heads of state on 1 September 1967.',
-      provenance:
-        'Arab League Summit Records, Fourth Arab Summit Conference, Khartoum (1 September 1967).',
-      context:
-        'This official declaration was adopted by eight Arab heads of state—including Egypt, Jordan, Syria, and Saudi Arabia—meeting in Khartoum following the Six-Day War. Clause 3 established the famous "Three Noes", rejecting direct negotiations or recognition of Israel.',
-      hinge:
-        'Why did the "Three Noes" in Source A convince Israeli leaders that offering to return the Occupied Territories would not bring genuine peace?',
+      'Define the diplomatic principle of <strong>"Land for Peace"</strong> and explain why its interpretation caused 30 years of diplomatic stalemate after November 1967:',
+    consequenceA: {
+      question:
+        'Explain one consequence of the Six-Day War for Palestinian civilians in the West Bank. [4 marks]',
+      guidance:
+        'Point (Mass displacement and military occupation) &bull; Fact (Over 300,000 Palestinians fled across the River Jordan; 1 million fell under Israeli military rule) &bull; Consequence (Deepened the refugee crisis and drove young Palestinians into armed guerrilla groups like Fatah).',
+      stems:
+        'One major consequence for Palestinian civilians was... &bull; Specifically, during and immediately after the June 1967 fighting... &bull; Consequently, this resulted in...',
     },
-    structureStrip: [
-      {
-        col: '1. "LAND FOR PEACE" PRINCIPLE',
-        text: 'Explain how Res 242 established the universal formula: withdrawal of Israeli armed forces in exchange for Arab recognition and secure borders.',
-      },
-      {
-        col: '2. DELIBERATE DIPLOMATIC AMBIGUITY',
-        text: 'Explain how omitting "the" before "territories" in English allowed Israel to claim partial withdrawal while Arabs demanded full withdrawal.',
-      },
-      {
-        col: '3. ENDURING DIPLOMATIC BENCHMARK',
-        text: 'Explain how 242 became the indispensable basis for all future Middle East treaties: Camp David (1978), Oslo (1993), and Jordan-Israel (1994).',
-      },
-    ],
-    connectives:
-      'UN Resolution 242 was important for peace diplomacy because it established... &bull; Specifically, the doctrine of "Land for Peace" meant... &bull; However, its significance was complicated by... &bull; Furthermore, the resolution became the cornerstone because... &bull; Consequently...',
-    wordBank:
-      'Resolution 242 &bull; Land for Peace &bull; Lord Caradon &bull; territorial ambiguity &bull; Khartoum Summit &bull; Three Noes (no peace, no recognition, no negotiation) &bull; Occupied Territories &bull; Gush Emunim &bull; Allon Plan',
-    timelineMission:
-      'Sketch and annotate the "Land for Peace" balance scales and the Khartoum "Three Noes" banner on Milestone 4',
-    leftPageQuip:
-      'Resolution 242: Drafting an ambiguous resolution without the word "the" is diplomacy at its most gloriously confusing.',
-    rightPageQuip:
-      'The Khartoum Summit: The "Three Noes" proved that when in doubt, Arab leaders could at least agree on what they definitely would not do.',
+    consequenceB: {
+      question:
+        'Explain one consequence of the Khartoum Arab Summit (August–September 1967). [4 marks]',
+      guidance:
+        'Point (Entrenched total diplomatic deadlock via the "Three Noes") &bull; Fact (Eight Arab heads of state declared: No peace, no recognition, no negotiations with Israel) &bull; Consequence (Convinced Israeli leaders that Arab states would never negotiate, prompting Israel to retain the lands and build settlements).',
+      stems:
+        'One major consequence was... &bull; Specifically, Arab leaders resolved at Khartoum that... &bull; Consequently, this entrenched deadlock because...',
+    },
+    // Right Page: Question 2 Analytical Narrative [8 marks]
+    rightExam: {
+      type: 'narrative_8',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      stem: 'Write a narrative account analysing the diplomatic responses to the Six-Day War between June and November 1967. [8 marks]',
+      stimulus: [
+        'The Khartoum Conference (August–September 1967)',
+        'UN Security Council Resolution 242 (November 1967)',
+      ],
+      structureStrip: [
+        {
+          col: '1. PHASE 1: OCCUPATION & REFUGEES (JUNE)',
+          text: 'Explain Israel annexing East Jerusalem and occupying Sinai, Gaza, West Bank, and Golan; 300,000+ Palestinian refugees fleeing across the River Jordan.',
+        },
+        {
+          col: '2. PHASE 2: ARAB DEFIANCE AT KHARTOUM (AUG–SEPT)',
+          text: 'Explain Arab heads of state meeting in Sudan to adopt the "Three Noes" (no peace, no recognition, no negotiation), refusing to concede defeat or negotiate.',
+        },
+        {
+          col: '3. PHASE 3: UN COMPROMISE (NOV 1967)',
+          text: 'Explain British drafting of Resolution 242 establishing "Land for Peace", deliberate linguistic ambiguity ("territories occupied"), and resulting deadlock.',
+        },
+      ],
+      connectives:
+        'Following the swift conclusion of the June 1967 war... &bull; This territorial transformation prompted Arab leaders to meet at Khartoum, where... &bull; In response to the growing diplomatic impasse, the UN drafted... &bull; Consequently, Lord Caradon formulated... &bull; Ultimately, this established...',
+      wordBank:
+        'Occupied Territories &bull; 300,000 refugees &bull; Khartoum Summit &bull; "Three Noes" &bull; UN Resolution 242 &bull; Lord Caradon &bull; "Land for Peace" &bull; "territories occupied" &bull; Gunnar Jarring &bull; military governor',
+      timelineMission:
+        'Turn to Pages 2–3 (Key Topic 2.3). In Milestone 4, sketch the UN Security Council emblem and write out the three banners of the Khartoum "Three Noes".',
+    },
   },
 
   {
     lessonIndex: 7,
     lessonNum: 4,
     id: 'lesson_9',
-    title:
-      'KT2.4: The Rise of Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
+    title: 'KT2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     specAnchor:
-      'The growth of Palestinian nationalism: the Battle of Karameh (1968) and Yasser Arafat’s chairmanship of the PLO; the PFLP and international terrorism (Dawson’s Field hijackings 1970); Black September in Jordan and expulsion to Lebanon; the 1972 Munich Olympic massacre and Israeli retaliation.',
+      'The rise of independent Palestinian resistance: the Battle of Karameh (1968) and Yasser Arafat taking leadership of the PLO; PFLP aircraft hijackings and Dawson’s Field (1970); Black September in Jordan (1970) and expulsion to Lebanon; the Munich Olympics massacre (1972) and Israeli reprisals.',
     doNow: [
       {
-        q: 'What diplomatic formula was established by UN Security Council Resolution 242 in November 1967?',
+        q: 'What core diplomatic formula was established by UN Resolution 242 in November 1967?',
         a: '"Land for Peace"',
       },
       {
-        q: 'What was the famous phrase summarizing the resolutions passed at the September 1967 Khartoum Arab Summit?',
-        a: 'The "Three Noes"',
+        q: 'What were the famous "Three Noes" declared by Arab leaders at Khartoum in 1967?',
+        a: 'No peace, no recognition, no negotiations with Israel',
       },
       {
-        q: 'Name the three principles of the "Three Noes".',
-        a: 'No peace, no recognition, no negotiation with Israel',
+        q: 'Name three of the five territories captured by Israel in the Six-Day War.',
+        a: 'Any 3: Sinai, Gaza, West Bank, East Jerusalem, Golan Heights',
       },
       {
-        q: 'What language version of Resolution 242 included the definite article "the" before "territories"?',
-        a: 'The French version',
+        q: 'How many Palestinian refugees fled into Jordan following the 1967 war?',
+        a: 'Approximately 300,000 to 350,000',
       },
       {
-        q: 'Which Israeli settlement plan proposed defensive military outposts along the Jordan River rift valley?',
-        a: 'The Allon Plan',
+        q: 'Which Palestinian guerrilla movement was led by Yasser Arafat?',
+        a: 'Fatah',
       },
       {
-        q: 'What religious-nationalist movement pioneered Jewish settlement construction in the West Bank?',
-        a: 'Gush Emunim (Bloc of the Faithful)',
+        q: 'What does the acronym PLO stand for?',
+        a: 'Palestine Liberation Organisation',
       },
       {
-        q: 'Who was elected Chairman of the Palestine Liberation Organisation (PLO) Executive Committee in 1969?',
-        a: 'Yasser Arafat',
+        q: 'In what year was Yasser Arafat elected Chairman of the PLO?',
+        a: '1969',
       },
       {
-        q: 'Which March 1968 battle in Jordan was celebrated as a heroic moral victory for Palestinian fedayeen?',
-        a: 'The Battle of Karameh',
+        q: 'Which Egyptian president expelled UNEF and closed the Straits of Tiran in 1967?',
+        a: 'Gamal Abdel Nasser',
       },
       {
-        q: 'Which Marxist-Leninist Palestinian group pioneered international aircraft hijackings from 1968 onwards?',
-        a: 'The Popular Front for the Liberation of Palestine (PFLP)',
+        q: 'What was the 1949 armistice border between Israel and Jordan known as?',
+        a: 'The Green Line',
       },
       {
-        q: 'Who was the King of Jordan who confronted and expelled armed Palestinian guerrillas in September 1970?',
-        a: 'King Hussein',
+        q: 'What term describes Palestinian armed guerrilla fighters who "sacrifice themselves"?',
+        a: 'Fedayeen',
       },
     ],
     vocabPrompt:
-      'Explain how the phrase "state within a state" accurately characterizes the political and military autonomy of the PLO inside Jordan prior to September 1970.',
-    drillType: 'consequence_4',
-    tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
-    examStem:
-      'Explain one consequence of the Black September conflict in Jordan (1970) for the PLO. [4 marks]',
-    provenanceClue:
-      'Consider Kurt Strumpf’s iconic primary photograph of the masked Black September gunman on the balcony at the Munich Olympic Village (1972). How did live global television coverage both elevate the Palestinian cause and provoke international condemnation?',
-    source: {
-      title:
-        'Archival Primary Photograph: Masked Black September Militant on Balcony at Munich Olympic Village',
-      shelfmark: 'AP-MUC-1972-0509',
-      src: '/images/cme_munich_1972_balcony.jpg',
-      caption:
-        'A masked member of the Black September militant organisation on the balcony of 31 Connollystraße during the Munich Olympic hostage crisis (5 September 1972).',
-      provenance: 'Kurt Strumpf / Associated Press Archive (Accession Ref: AP-MUC-1972-0509).',
-      context:
-        'Taken during the live global broadcast of the 1972 Munich Olympics attack, this primary photograph shows a militant guarding the quarters of the Israeli Olympic team. Eleven Israeli athletes and coaches and one German policeman were murdered, prompting Operation Wrath of God.',
-      hinge:
-        'Why did the live television broadcast of the Munich crisis shown in Source A create both worldwide publicity and widespread condemnation for the Palestinian cause?',
+      'Explain the crucial tactical difference between <strong>Fedayeen Guerrilla Warfare</strong> and <strong>International Terrorism</strong> as methods adopted by Palestinian factions after 1967:',
+    consequenceA: {
+      question:
+        'Explain one consequence of the Battle of Karameh (March 1968) for the Palestinian national movement. [4 marks]',
+      guidance:
+        'Point (Surge in volunteers and Fatah taking leadership of the PLO) &bull; Fact (Palestinian fedayeen resisted an Israeli armored raid in Jordan, killing 28 IDF soldiers) &bull; Consequence (Celebrated as a moral victory after 1967, transforming Arafat into a hero and leading to his 1969 election as PLO Chairman).',
+      stems:
+        'One major consequence was... &bull; Specifically, when Palestinian fedayeen fought at Karameh... &bull; Consequently, this resulted in...',
     },
-    structureStrip: [
-      {
-        col: '1. IDENTIFY CONSEQUENCE',
-        text: 'State clearly one major result: the expulsion of the PLO from Jordan to Southern Lebanon, transferring the base of Palestinian guerrilla operations to Beirut.',
-      },
-      {
-        col: '2. DEPLOY HISTORICAL EVIDENCE',
-        text: 'Detail King Hussein’s military offensive in September 1970 following the Dawson’s Field hijackings, killing 3,000+ fighters and driving Arafat’s forces into exile.',
-      },
-      {
-        col: '3. EXPLAIN CAUSAL IMPACT',
-        text: 'Explain how losing the Jordanian border base prompted radical splinter groups to turn to international terror (Munich 1972) and destabilised Lebanon.',
-      },
-    ],
-    connectives:
-      "One significant consequence of the Black September conflict for the PLO was... &bull; Specifically, after the Dawson's Field hijackings... &bull; In response, King Hussein deployed... &bull; Consequently, this forced Yasser Arafat and the PLO to... &bull; Therefore...",
-    wordBank:
-      "Battle of Karameh (1968) &bull; George Habash (PFLP) &bull; Dawson's Field &bull; King Hussein of Jordan &bull; Black September (1970) &bull; Fatahland (Southern Lebanon) &bull; Munich Olympic massacre (1972) &bull; Operation Wrath of God",
-    timelineMission:
-      'Sketch and annotate the Dawson’s Field hijackings and the PLO exile route to Southern Lebanon on Milestone 5',
-    leftPageQuip:
-      'Operating a state-within-a-state: Guaranteed to annoy your host monarch until he brings in the Jordanian 40th Armoured Brigade.',
-    rightPageQuip:
-      'Dawson’s Field: Blowing up three Boeing 707s in the desert gets you global headlines, but also an eviction notice from Amman.',
+    consequenceB: {
+      question:
+        'Explain one consequence of the Black September conflict (1970) for the PLO. [4 marks]',
+      guidance:
+        'Point (Total military expulsion of the PLO from Jordan to southern Lebanon) &bull; Fact (Following the Dawson’s Field airliner hijackings, King Hussein ordered his army to crush armed militias in Amman) &bull; Consequence (The PLO lost its border with Israel and established "Fatahland" in Lebanon, pushing radical cells toward international terror).',
+      stems:
+        'One major consequence was... &bull; Specifically, after the Dawson’s Field hijackings... &bull; Consequently, this forced the PLO to...',
+    },
+    // Right Page: Question 3 Explain Importance [8 marks]
+    rightExam: {
+      type: 'importance_8',
+      tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
+      stem: 'Explain the importance of the 1972 Munich Olympics massacre for international attitudes towards the Palestinian cause. [8 marks]',
+      focusAspects: [
+        'Global Media Recognition of the Palestinian Problem',
+        'International Moral Outrage & Israeli Targeted Retaliation',
+      ],
+      structureStrip: [
+        {
+          col: '1. POINT 1: GLOBAL TV SPOTLIGHT',
+          text: 'Explain how Black September holding 11 Israeli athletes broadcast the Palestinian cause live to 900 million TV viewers, destroying the idea that Palestinians were merely passive refugees.',
+        },
+        {
+          col: '2. POINT 2: MORAL OUTRAGE & REPRISALS',
+          text: 'Explain how murdering unarmed athletes provoked worldwide condemnation, branding militants as terrorists and prompting Golda Meir to launch Operation Wrath of God assassinations.',
+        },
+        {
+          col: '3. EVALUATIVE SUMMARY: STRATEGIC IMPACT',
+          text: 'Explain how the outrage proved terrorism could not win statehood, ultimately pushing Yasser Arafat to steer the PLO toward international diplomacy (1974 UN speech).',
+        },
+      ],
+      connectives:
+        'The Munich Olympics attack was important for international attitudes because... &bull; By striking a global sporting event broadcast live... &bull; However, the murder of eleven athletes provoked... &bull; In response, Israeli Prime Minister Golda Meir... &bull; Ultimately, this forced the world community to...',
+      wordBank:
+        'Black September &bull; 5 September 1972 &bull; 11 Israeli athletes &bull; Olympic Village &bull; 900 million viewers &bull; Golda Meir &bull; Operation Wrath of God &bull; Mossad assassinations &bull; global terrorism &bull; 1974 UN speech',
+      timelineMission:
+        'Turn to Pages 2–3 (Key Topic 2.4). In Milestone 5, sketch the Dawson’s Field aircraft explosion and trace the PLO exile route from Jordan to southern Lebanon.',
+    },
   },
 
   {
@@ -458,96 +462,92 @@ const kt2Configs = [
     id: 'lesson_10',
     title: 'KT2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     specAnchor:
-      'The War of Attrition (1969–70); the death of Nasser and succession of Anwar Sadat; reasons for the 1973 attack; Operation Badr (Suez crossing and Bar-Lev Line breach); the Golan front; superpower involvement (US and Soviet airlifts); the OPEC oil embargo; military and political outcomes.',
+      'The War of Attrition (1969–70) and the Bar-Lev Line; death of Nasser and succession of Anwar Sadat; reasons for the 1973 attack; surprise assault on Yom Kippur (6 Oct 1973); water-monitor breach of the Bar-Lev Line; superpower involvement (US and Soviet airlifts); Sharon’s counter-crossing; the OPEC oil embargo; military and political outcomes.',
     doNow: [
       {
-        q: "What was the name of the Israeli Olympic athletes' hostage crisis that occurred in September 1972?",
-        a: 'The Munich Olympic Massacre',
+        q: 'What Israeli hostage crisis occurred at an international sporting event in September 1972?',
+        a: 'The Munich Olympics massacre',
       },
       {
-        q: 'What covert Israeli retaliation campaign was authorized by Prime Minister Golda Meir following Munich?',
+        q: 'What covert Mossad retaliation operation was authorized by Golda Meir following Munich?',
         a: 'Operation Wrath of God',
       },
       {
-        q: 'Which desert airstrip in Jordan was used by the PFLP in September 1970 to blow up three hijacked Western airliners?',
-        a: 'Dawson’s Field (Zarqa)',
+        q: 'Which desert airstrip in Jordan was used by the PFLP in 1970 to blow up hijacked airliners?',
+        a: 'Dawson’s Field',
       },
       {
-        q: 'Which country became the main operating headquarters for the PLO after their expulsion from Jordan in 1971?',
-        a: 'Lebanon (Beirut / Southern Lebanon)',
+        q: 'Which country became the main headquarters for the PLO after being expelled from Jordan in 1971?',
+        a: 'Lebanon',
       },
       {
-        q: 'What static artillery and commando conflict was fought along the Suez Canal between Egypt and Israel in 1969–70?',
+        q: 'What static artillery border conflict was fought along the Suez Canal in 1969–70?',
         a: 'The War of Attrition',
       },
       {
-        q: 'Who succeeded Gamal Abdel Nasser as President of Egypt following Nasser’s sudden death in September 1970?',
+        q: 'Who succeeded Gamal Abdel Nasser as President of Egypt following Nasser’s death in 1970?',
         a: 'Anwar Sadat',
       },
       {
-        q: 'What heavily fortified sand-rampart defensive line did Israel build along the eastern bank of the Suez Canal?',
+        q: 'What fortified sand-rampart defensive line did Israel construct along the Suez Canal?',
         a: 'The Bar-Lev Line',
       },
       {
-        q: 'What technological method did Egyptian engineers use to blast through the sand ramparts of the Bar-Lev Line?',
-        a: 'High-pressure water cannons (monitors)',
+        q: 'What method did Egyptian engineers use to blast through the sand ramparts of the Bar-Lev Line?',
+        a: 'High-pressure water monitors (water cannons)',
       },
       {
-        q: 'On what Jewish holy day did Egypt and Syria launch their coordinated surprise attack in October 1973?',
+        q: 'On what Jewish holy day did Egypt and Syria launch their coordinated surprise attack in 1973?',
         a: 'Yom Kippur (Day of Atonement)',
       },
       {
-        q: 'Which vital international waterway remained closed to international shipping between 1967 and 1975?',
+        q: 'Which vital international waterway remained closed to shipping between 1967 and 1975?',
         a: 'The Suez Canal',
       },
     ],
     vocabPrompt:
-      'Explain the tactical purpose of the Bar-Lev Line and why Egyptian engineers deployed high-pressure water monitors to breach it on 6 October 1973.',
-    drillType: 'narrative_8',
-    tariff: 'Question 2: Narrative Account [8m] &bull; Question 3: Importance [8m]',
-    examStem:
-      'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]',
-    stimulus: ['The surprise attack on 6 October 1973', 'The OPEC oil embargo'],
-    provenanceClue:
-      'Consider the official wartime photograph of Egyptian infantry crossing the Suez Canal under a Soviet SAM umbrella. How does this successful assault demonstrate why Israeli complacency after 1967 was shattered?',
-    source: {
-      title:
-        'Archival Photographic Record: Egyptian Infantry and Armored Columns Crossing the Suez Canal',
-      shelfmark: 'EGY-1973-1006',
-      src: '/images/cme_egyptians_crossing_suez_1973.jpg',
-      caption:
-        'Egyptian infantry and armored vehicles crossing pontoon bridges over the Suez Canal after blasting through Israel’s sand ramparts on 6 October 1973.',
-      provenance:
-        'Egyptian Armed Forces Directorate of Moral Affairs (Accession Ref: EGY-1973-1006).',
-      context:
-        'Taken during Operation Badr on 6 October 1973, this primary photograph records Egyptian troops crossing the Suez Canal. Using British and German high-pressure water monitors, engineers blasted 60 breaches through the 20-metre sand ramparts of the Bar-Lev Line within hours.',
-      hinge:
-        'How does Source A illustrate why the opening crossing of the Suez Canal was viewed as a major technological and psychological triumph for Egypt?',
+      'Define the <strong>Bar-Lev Line</strong> and explain why Egyptian military planners deployed high-pressure water monitors to breach it on 6 October 1973:',
+    consequenceA: {
+      question: 'Explain one consequence of Operation Badr on 6 October 1973. [4 marks]',
+      guidance:
+        'Point (Successful breach of the Bar-Lev Line and crossing of the Suez Canal) &bull; Fact (80,000 Egyptian infantry crossed on rafts, washed away sand ramparts, and established bridgeheads under SAM missiles) &bull; Consequence (Shattered Israeli confidence in defensive invincibility and destroyed 150+ Israeli tanks in 48 hours).',
+      stems:
+        'One major consequence of Operation Badr was... &bull; Specifically, on the afternoon of 6 October 1973... &bull; Consequently, this resulted in...',
     },
-    structureStrip: [
-      {
-        col: '1. PHASE 1: SURPRISE CROSSING',
-        text: 'Explain the 6 October surprise crossing on Yom Kippur / Ramadan: water cannons breaching Bar-Lev Line under Soviet SAM umbrella while Syria hit Golan.',
-      },
-      {
-        col: '2. PHASE 2: AIRLIFTS & COUNTER-CROSSING',
-        text: 'Explain the massive US emergency airlift (Nickel Grass) enabling General Sharon’s armored division to counter-cross the canal and encircle Egypt’s 3rd Army.',
-      },
-      {
-        col: '3. PHASE 3: OUTCOME & OIL EMBARGO',
-        text: 'Explain the Arab OPEC oil embargo quadrupling world oil prices, shattering Israeli invincibility and forcing US shuttle diplomacy.',
-      },
-    ],
-    connectives:
-      'The war began on 6 October 1973 when Egypt and Syria launched... &bull; This coordinated assault achieved tactical surprise because... &bull; This early Arab success prompted the United States to... &bull; Consequently, General Sharon was able to... &bull; In retaliation, Arab OPEC ministers unleashed... &bull; Ultimately, this forced...',
-    wordBank:
-      'Operation Badr &bull; Bar-Lev Line &bull; water monitors &bull; SAM-6 missiles &bull; Golan Heights &bull; Operation Nickel Grass &bull; Ariel Sharon &bull; Third Army encirclement &bull; OPEC oil embargo &bull; Henry Kissinger &bull; Agranat Commission',
-    timelineMission:
-      'Sketch and annotate the water-cannon breach of the Bar-Lev Line and the OPEC oil embargo pipeline on Milestone 6',
-    leftPageQuip:
-      'The Bar-Lev Line: Twelve miles of sand ramparts and concrete bunkers—breached in two hours by high-pressure fire hoses.',
-    rightPageQuip:
-      'The OPEC oil embargo: Proof that turning off the petroleum tap concentrates American diplomatic minds faster than a thousand speeches.',
+    consequenceB: {
+      question: 'Explain one consequence of the OPEC oil embargo in October 1973. [4 marks]',
+      guidance:
+        'Point (Global energy crisis and quadrupling of world crude oil prices) &bull; Fact (Arab oil states cut output 5% monthly and embargoed the US and Netherlands; oil rose from $3 to $12 a barrel) &bull; Consequence (Caused inflation, fuel queues, and economic distress in the West, forcing the US into active peace mediation).',
+      stems:
+        'One major consequence was... &bull; Specifically, when Arab OPEC oil ministers enacted the embargo... &bull; Consequently, this directly forced...',
+    },
+    // Right Page: Question 2 Analytical Narrative [8 marks]
+    rightExam: {
+      type: 'narrative_8',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      stem: 'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]',
+      stimulus: ['The surprise attack on 6 October 1973', 'The OPEC oil embargo'],
+      structureStrip: [
+        {
+          col: '1. PHASE 1: SURPRISE TWO-FRONT ASSAULT',
+          text: 'Explain the 6 October surprise crossing on Yom Kippur / Ramadan: water monitors breaching Bar-Lev Line under Soviet SAM umbrella while Syria assaulted Golan.',
+        },
+        {
+          col: '2. PHASE 2: AIRLIFTS & COUNTER-CROSSING',
+          text: 'Explain massive US emergency airlift (Nickel Grass) enabling General Sharon’s armored division to counter-cross the canal and encircle Egypt’s 3rd Army.',
+        },
+        {
+          col: '3. PHASE 3: OIL WEAPON & CEASEFIRE',
+          text: 'Explain Arab OPEC oil embargo quadrupling world oil prices, superpower nuclear DEFCON 3 tension, and Henry Kissinger securing a UN ceasefire on 24 October.',
+        },
+      ],
+      connectives:
+        'The war began on 6 October 1973 when Egypt and Syria launched... &bull; This coordinated assault achieved tactical surprise because... &bull; As early losses threatened Israel, the United States... &bull; Consequently, General Sharon was able to... &bull; In response, Arab oil nations deployed the oil weapon by... &bull; Ultimately, this forced...',
+      wordBank:
+        'Operation Badr &bull; Bar-Lev Line &bull; water monitors &bull; SAM-6 missiles &bull; Golan Heights &bull; Operation Nickel Grass &bull; Ariel Sharon &bull; Third Army encirclement &bull; OPEC oil embargo &bull; DEFCON 3 &bull; Henry Kissinger',
+      timelineMission:
+        'Turn to Pages 2–3 (Key Topic 2.5). In Milestone 6, sketch the water-monitor breach of the Bar-Lev Line and the OPEC oil pipeline embargo valve.',
+    },
   },
 ];
 
@@ -587,7 +587,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     body {
       font-family: 'Georgia', 'Garamond', serif;
       font-size: 8.5pt;
-      line-height: 1.32;
+      line-height: 1.3;
       color: #000000;
       margin: 0;
       padding: 0;
@@ -598,51 +598,47 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
     }
-    /* Page Container: Zero outer border, pure flex distribution for optimal page budget */
-    .page, .page-container {
+    .page-container {
       width: 100%;
       height: 272mm;
       max-height: 272mm;
-      overflow: hidden;
-      box-sizing: border-box;
       position: relative;
       page-break-after: always;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 3mm 4mm;
       background: #ffffff;
+      box-sizing: border-box;
     }
-    .page:last-child, .page-container:last-child {
-      page-break-after: auto;
+    .verso-page {
+      padding-left: 4mm;
+      padding-right: 8mm;
     }
-    /* Full flex section container for interior distribution */
+    .recto-page {
+      padding-left: 8mm;
+      padding-right: 4mm;
+    }
     .page-body-full {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 100%;
+      overflow: hidden;
     }
-    /* Clean Task Section Spacing */
     .task-section {
-      margin-bottom: 4px;
-      padding-bottom: 0;
+      margin-bottom: 3px;
     }
-    .task-section-divider {
-      border-bottom: 1.2px solid #000000;
-      padding-bottom: 3px;
-      margin-bottom: 4px;
-    }
-    /* Thick Black Writing Lines for Handwriting */
     .task-line {
-      border-bottom: 1.2px solid #000000;
-      height: 7.2mm;
+      border-bottom: 1px solid #000000;
+      height: 6.6mm;
       margin: 0;
       box-sizing: border-box;
     }
     .task-line-dotted {
       border-bottom: 1px dotted #333333;
-      height: 5.8mm;
+      height: 5.6mm;
       margin: 0;
       box-sizing: border-box;
     }
@@ -664,21 +660,6 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     .footer-quip {
       font-style: italic;
       color: #222222;
-    }
-    /* Primary Archival Excerpt / Citation Box */
-    .archival-box {
-      border: 1.5px solid #000000;
-      border-radius: 4px;
-      padding: 4px 7px;
-      margin-bottom: 4px;
-      background: #ffffff;
-    }
-    .archival-shelfmark {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: #000000;
     }
     /* Commercial School Brand Customizer */
     [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target {
@@ -703,7 +684,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     <div class="page-body-full">
       
       <!-- Top Department Header Strip -->
-      <div style="text-align: center; border-bottom: 1.5px solid #000000; padding-bottom: 3px; margin-bottom: 5px;" data-department-name="The History Department">
+      <div style="text-align: center; border-bottom: 1.5px solid #000000; padding-bottom: 3px; margin-bottom: 4px;" data-department-name="The History Department">
         <div style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #000000;">
           <span class="school-brand-target">The History Department</span>
         </div>
@@ -713,7 +694,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Pupil Details Box (Top of Cover, 3 Columns) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 6px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 4px;">
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
@@ -729,166 +710,169 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Main Title Block -->
-      <div style="text-align: center; margin: 2px 0 6px 0;">
-        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; background: #ffffff;">
+      <div style="text-align: center; margin: 1px 0 4px 0;">
+        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 1px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; background: #ffffff;">
           Key Topic 2 &bull; 1964–1973
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 21pt; line-height: 1.15; color: #000000; margin: 2px 0 3px 0; font-weight: 900;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; line-height: 1.15; color: #000000; margin: 1px 0 2px 0; font-weight: 900;">
           The Escalating Conflict, 1964–1973
         </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #222222; font-style: italic; font-weight: 600;">
+        <div style="font-family: 'Georgia', serif; font-size: 9.5pt; color: #222222; font-style: italic; font-weight: 600;">
           The Cairo Conference, Six-Day War, Resolution 242, Palestinian Resistance &amp; The Yom Kippur War
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Archival Presentation) -->
-      <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="/units/cme_new/assets/kt2_cover.jpg" alt="David Rubinger: Israeli Paratroopers at the Western Wall, Jerusalem" style="width: 100%; max-height: 235px; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; filter: grayscale(100%);">
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
+      <!-- Prominent Primary Visual Source Centerpiece (Entirety of Photograph Fully Visible) -->
+      <div style="margin: 1px 0 4px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="height: 72mm; display: flex; justify-content: center; align-items: center; padding: 2px 0; background: #fdfdfd;">
+          <img src="/units/cme_new/assets/kt2_cover.jpg" alt="David Rubinger: Israeli Paratroopers at the Western Wall, Jerusalem" style="max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(100%);">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; padding: 2px 8px; border-top: 1.2px solid #000000; background: #ffffff;">
           <span><strong>Primary Visual Source:</strong> <em>Israeli Paratroopers at the Western Wall</em> &bull; David Rubinger (7 June 1967)</span>
           <span>Accession Shelfmark: <strong>GPO-D388-052</strong></span>
         </div>
       </div>
 
       <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 4px 0 2px 0;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 2px 0;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 5px 10px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+              <th style="padding: 4px 10px; text-align: left; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
                 Course Specification &bull; Key Enquiry Sequence
               </th>
-              <th style="padding: 5px 4px; width: 68px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+              <th style="padding: 4px 4px; width: 68px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
                 Learnt
               </th>
-              <th style="padding: 5px 4px; width: 68px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              <th style="padding: 4px 4px; width: 68px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
                 Revised
               </th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 2.1: The Road to War: The Cairo Conference, Water Wars &amp; Skirmishes (1964–67)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  How did the River Jordan water dispute, the creation of the PLO, and the 7 April 1967 Golan air clash escalate Arab-Israeli tensions?
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                  How did the River Jordan water dispute, creation of the PLO, and 7 April 1967 air clash escalate tensions?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.2;">
-                  Key Topic 2.2: The Slide to War &amp; The Six Day War (May–June 1967)
+              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+                  Key Topic 2.2: The Outbreak &amp; Course of the Six-Day War (June 1967)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  Why did Nasser close the Straits of Tiran, and how did Operation Focus enable Israel to seize Sinai, Gaza, West Bank, Jerusalem, and Golan?
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                  Why was Operation Focus decisive, and how did Israel conquer the Sinai, West Bank, and Golan Heights?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.2;">
-                  Key Topic 2.3: The Aftermath of 1967: The Occupied Territories &amp; UN Resolution 242
+              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+                  Key Topic 2.3: The Aftermath: Resolution 242 &amp; The Occupied Territories (1967)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  How did the "Land for Peace" principle in UN Resolution 242 clash with the Khartoum "Three Noes" and early Israeli settlements?
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                  Why did the Khartoum "Three Noes" and the linguistic ambiguity of Resolution 242 cause enduring deadlock?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.2;">
-                  Key Topic 2.4: The Rise of Palestinian Resistance: The PLO, Black September &amp; Munich (1968–72)
+              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+                  Key Topic 2.4: Palestinian Resistance: The PLO, Black September &amp; Munich (1968–1972)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  How did the Battle of Karameh elevate Arafat, why did King Hussein expel the PLO in 1970, and how did Munich impact world opinion?
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                  How did the Battle of Karameh empower the PLO, and why did factions turn to hijackings and the Munich attack?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr>
-              <td style="padding: 4px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 2.5: The War of Attrition &amp; The Yom Kippur War (1969–1973)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  How did Egypt breach the Bar-Lev Line, how did US and Soviet airlifts alter the conflict, and why did the OPEC oil embargo matter?
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                  Why did Egypt and Syria achieve surprise, how did the oil embargo impact the West, and why did it lead to peace?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      ${renderFooterStrip(1, quipList[0], 14)}
+      ${renderFooterStrip(1, currentFooters[0], 14)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 2–3: LIVING TIMELINE SPREAD (2 Pages, Zero Exam Synthesis)
+  // PAGES 2–3: LIVING TIMELINE (Panoramic Dual-Coding Spread, 6 Milestones)
+  // Zero Exam Synthesis Questions • Zero Ruled Lines • 48mm Sketch Canvases
   // ====================================================================
   html += `
-  <!-- PAGE 2: LIVING TIMELINE PART 1 (MILESTONES 1–3: 1964–1967) -->
+  <!-- PAGE 2: LIVING TIMELINE PART 1 (MILESTONES 1–3) -->
   <div class="page page-container verso-page" id="page-2" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
           <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-            Living Timeline &bull; Part 1: Water Wars, Border Skirmishes &amp; The Six-Day War (1964–1967)
+            Living Timeline &bull; Part 1: The Road to War &amp; The Six-Day War (1964–1967)
           </h2>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
           <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
         </div>
       </div>
 
-      <!-- 3 Spacious Milestones with Large Blank Dual-Coding Workspace (Zero Exam Synthesis) -->
+      <!-- 3 Spacious Milestones with Large Blank Dual-Coding Workspace -->
       <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
 
-        <!-- Milestone 1: 1964 -->
+        <!-- Milestone 1: JAN 1964 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                JANUARY 1964 &bull; The Cairo Conference &amp; The Creation of the PLO
+                JAN 1964 &bull; The Cairo Conference &amp; The Foundation of the PLO
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              The Arab League convenes in Cairo to counter Israel’s National Water Carrier, which diverts River Jordan water to the Negev. The summit resolves to establish the Palestine Liberation Organisation (PLO) under Ahmad Shukeiri, while Yasser Arafat’s Fatah faction launches cross-border fedayeen raids backed by Syria.
+              Thirteen Arab League leaders meet in Cairo to oppose Israel's National Water Carrier. They establish the Palestine Liberation Organisation (PLO) under Ahmad Shukeiri and approve the Headwater Diversion Plan to divert the Hasbani and Banyas rivers away from the Sea of Galilee.
             </p>
           </div>
           <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
@@ -899,12 +883,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                MAY–JUNE 1967 &bull; The Slide to War: Straits of Tiran &amp; UNEF Expulsion
+                MAY–JUNE 1967 &bull; Straits of Tiran Blockade &amp; UNEF Expulsion
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1 &bull; 2.2</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Following false Soviet reports of Israeli troop build-ups on the Syrian border, President Nasser expels UN Emergency Force (UNEF) peacekeepers, marches 100,000 Egyptian troops into the Sinai, and closes the Straits of Tiran to Israeli shipping. On 30 May, King Hussein signs a joint Egyptian-Jordanian defense pact.
+              Spurred by Soviet false warnings, President Nasser demands the immediate withdrawal of UN Emergency Force (UNEF) peacekeepers, moves 100,000 troops into Sinai, and blockades the Straits of Tiran at Sharm el-Sheikh, cutting off Israel's southern oil route (casus belli).
             </p>
           </div>
           <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
@@ -920,7 +904,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.2</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Israel launches Operation Focus at dawn on 5 June, destroying over 400 Arab aircraft on the ground in three hours. Israeli armoured divisions sweep through Sinai to the Suez Canal, seize the West Bank and East Jerusalem from Jordan, and scale the Golan Heights to defeat Syria, capturing five strategic territories in six days.
+              Israel launches Operation Focus, wiping out the Egyptian Air Force on the tarmac. In six days of mobile warfare, the IDF captures the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.
             </p>
           </div>
           <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
@@ -928,26 +912,26 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, quipList[1], 14)}
+      ${renderFooterStrip(2, currentFooters[1], 14)}
     </div>
   </div>
 
-  <!-- PAGE 3: LIVING TIMELINE PART 2 (MILESTONES 4–6: 1967–1973) -->
+  <!-- PAGE 3: LIVING TIMELINE PART 2 (MILESTONES 4–6) -->
   <div class="page page-container recto-page" id="page-3" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
           <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-            Living Timeline &bull; Part 2: Occupation, Black September &amp; The Yom Kippur War (1967–1973)
+            Living Timeline &bull; Part 2: Diplomacy, Resistance &amp; The Yom Kippur War (1967–1973)
           </h2>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
           <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
         </div>
       </div>
 
-      <!-- 3 Spacious Milestones with Large Blank Dual-Coding Workspace (Zero Exam Synthesis) -->
+      <!-- 3 Spacious Milestones with Large Blank Dual-Coding Workspace -->
       <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
 
         <!-- Milestone 4: NOV 1967 -->
@@ -1000,7 +984,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, quipList[2], 14)}
+      ${renderFooterStrip(3, currentFooters[2], 14)}
     </div>
   </div>
 `;
@@ -1009,43 +993,48 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
   // PAGES 4–13: 5 DEDICATED TWO-PAGE SPREADS (LESSONS KT 2.1 TO 2.5)
   // ====================================================================
   kt2Configs.forEach((cfg) => {
-    const lesson = lessons[cfg.lessonIndex];
     const leftPageNum = cfg.lessonNum * 2 + 2; // Pages 4, 6, 8, 10, 12
     const rightPageNum = leftPageNum + 1; // Pages 5, 7, 9, 11, 13
+    const rx = cfg.rightExam;
 
     // ------------------------------------------------------------------
-    // LEFT PAGE: 10 DO NOW + VOCAB APPLICATION (3 LINES) + EXAM DRILL
+    // LEFT PAGE: SPEC FOCUS + 10 DO NOW + VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
     // ------------------------------------------------------------------
     html += `
   <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Planning Drill
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Retrieval &bull; Vocabulary &bull; Exam Practice
         </span>
       </div>
 
-      <!-- 10-Question Do Now Retrieval Grid (Clean borderless presentation) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Prior Learning Retrieval (10 Recall Questions)
+      <!-- Key Specification Focus -->
+      <div style="border-left: 3px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.25;">
+        <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
+      </div>
+
+      <!-- 10-Question Do Now Retrieval Grid -->
+      <div class="task-section" style="margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 3px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
             Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px;">
           ${cfg.doNow
             .map(
               (item, idx) => `
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #000000; line-height: 1.15;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000; line-height: 1.15;">
               ${idx + 1}. ${item.q}
             </div>
             <div class="task-line-dotted"></div>
@@ -1056,15 +1045,15 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines to eliminate underflow) -->
-      <div class="task-section task-section-divider">
+      <!-- Key Vocabulary (3 Lines, No Double Border) -->
+      <div class="task-section" style="margin-bottom: 4px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Application Task
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Key Vocabulary
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
         <div class="task-line"></div>
@@ -1072,185 +1061,105 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      <!-- Edexcel Paper 2 Exam Planning Drill (Rotating Q1 Consequence, Q2 Narrative, Q3 Importance) -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Edexcel Paper 2 Exam Planning Drill &bull; ${cfg.tariff}
+      <!-- Question 1(a): Explain One Consequence [4 marks] -->
+      <div class="task-section" style="margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 1(a): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
-            ${cfg.drillType === 'consequence_4' ? 'PEE CAUSAL DRILL' : cfg.drillType === 'narrative_8' ? '3-STAGE CHRONOLOGY' : '2-POINT IMPORTANCE'}
-          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
-        
-        ${
-          cfg.drillType === 'consequence_4'
-            ? `
-        <div style="margin-bottom: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2; margin-bottom: 2px; background: #f4f4f4; padding: 3px 6px; border-left: 2.5px solid #000000;">
-            <strong>Edexcel PEE Framework:</strong> <em>Point</em> (Identify the consequence) &rarr; <em>Evidence</em> (Specific factual proof) &rarr; <em>Explanation</em> (Historical mechanism and ongoing impact).
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">1. Consequence (Point):</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">2. Evidence (Facts/Dates):</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">3. Explanation (Impact):</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-          </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+          ${cfg.consequenceA.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
         </div>
-        `
-            : cfg.drillType === 'narrative_8'
-              ? `
-        <div style="margin-bottom: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2; margin-bottom: 2px; background: #f4f4f4; padding: 3px 6px; border-left: 2.5px solid #000000;">
-            <strong>3-Stage Narrative Structure:</strong> Phase 1 (Beginning / Trigger) &rarr; Phase 2 (Turning Point / Escalation) &rarr; Phase 3 (Outcome / Long-term Resolution).
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">Phase 1: Beginning</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">Phase 2: Turning Point</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">Phase 3: Outcome</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-          </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; margin-bottom: 1px;">
+          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
         </div>
-        `
-              : `
-        <div style="margin-bottom: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2; margin-bottom: 2px; background: #f4f4f4; padding: 3px 6px; border-left: 2.5px solid #000000;">
-            <strong>The 'X Linked to Y' Importance Model:</strong> Explain what difference X made to Y across two distinct analytical PEEL paragraphs.
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">Point 1: Immediate Difference X Made to Y:</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-            <div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">Point 2: Long-Term Significance for Relations:</span>
-              <div class="task-line" style="height: 6.4mm;"></div>
-              <div class="task-line" style="height: 6.4mm;"></div>
-            </div>
-          </div>
-        </div>
-        `
-        }
-
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
       </div>
 
-      ${renderFooterStrip(leftPageNum, cfg.leftPageQuip, 14)}
+      <!-- Question 1(b): Explain One Consequence [4 marks] -->
+      <div class="task-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 1(b): Explain One Consequence [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+          ${cfg.consequenceB.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+          <strong>PFC Guidance:</strong> ${cfg.consequenceB.guidance}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; margin-bottom: 1px;">
+          <strong>Sentence Stems:</strong> ${cfg.consequenceB.stems}
+        </div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+      </div>
+
+      ${renderFooterStrip(leftPageNum, currentFooters[leftPageNum - 1], 14)}
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: PRIMARY SOURCE + EXAM ASSESSMENT + TIMELINE MISSION     -->
+  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- Zero Maps/Sources • 11 Fixed Ruled Lines • Clean Timeline Mission   -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.tariff}
+          ${rx.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Primary Archival Source &bull; Edexcel Paper 2 Exam Assessment
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing Assessment
         </span>
       </div>
 
-      <!-- Archival Primary Source Box -->
-      <div class="archival-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">
-            ${cfg.source.title}
-          </span>
-          <span class="archival-shelfmark">
-            ${cfg.source.shelfmark}
-          </span>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center;">
-          ${
-            cfg.source.src
-              ? `
-          <div style="flex: 1.1; text-align: center;">
-            <img src="${cfg.source.src}" alt="${cfg.source.title}" style="max-height: 38mm; max-width: 100%; object-fit: contain; border: 1px solid #000000; filter: grayscale(100%);">
-            <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-style: italic; margin-top: 1px; color: #333333;">
-              ${cfg.source.caption}
-            </div>
-          </div>
-          `
-              : `
-          <div style="flex: 1.1; padding: 4px 6px; border: 1px solid #000000; background: #fdfdfd; font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.25; font-style: italic;">
-            "The Arab States agree to united action to safeguard their existence, recover Arab rights in Palestine, and reject reconciliation: No peace with Israel, no recognition of Israel, no negotiations with Israel, and adherence to the rights of the Palestinian people in their homeland."
-            <div style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-style: normal; margin-top: 2px; color: #444; font-weight: 700;">
-              &mdash; Khartoum Arab League Summit Resolution, Clause 3 (1 Sept 1967)
-            </div>
-          </div>
-          `
-          }
-          <div style="flex: 1.5; font-size: 6.8pt; line-height: 1.25; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <strong>Provenance:</strong> ${cfg.source.provenance}<br>
-              <span style="margin-top: 2px; display: block;"><strong>Historical Context:</strong> ${cfg.source.context}</span>
-            </div>
-            <div style="border-top: 1px dashed #666666; padding-top: 2px; margin-top: 2px; background: #f9f9f9; padding: 2px 4px; border-left: 2px solid #000000;">
-              <strong>Hinge Question:</strong> <em>${cfg.source.hinge}</em>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Question Stem & Scaffolding Box -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.2;">
-          ${cfg.examStem}
+      <!-- Question Stem & Stimulus/Focus Box -->
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.25;">
+          ${rx.stem}
         </div>
         ${
-          cfg.stimulus
+          rx.type === 'narrative_8'
             ? `
-        <div style="background: #f4f4f4; border-left: 2px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; margin-bottom: 2px;">
-          <strong>You may use the following in your answer:</strong> &bull; ${cfg.stimulus[0]} &bull; ${cfg.stimulus[1]}<br>
+        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
+          <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]}<br>
           <em>You must also use information of your own.</em>
         </div>
         `
             : `
-        <div style="background: #f4f4f4; border-left: 2px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; margin-bottom: 2px;">
-          <strong>Guidance:</strong> Focus strictly on explaining one consequence with precise evidence and its historical impact. Do not write a narrative of the event itself.
+        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
+          <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
         </div>
         `
         }
       </div>
 
       <!-- 3-Column Planning Structure Strip -->
-      <div style="margin-bottom: 3px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+      <div style="margin-bottom: 4px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
           Structure Strip &bull; Analytical Step-by-Step Framework
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
-          ${cfg.structureStrip
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px;">
+          ${rx.structureStrip
             .map(
               (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.2px solid #000000; border-radius: 2px; padding: 2px 4px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
+          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #000000; line-height: 1.15; display: block;">${strip.text}</span>
           </div>
           `,
@@ -1260,22 +1169,25 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
         <div>
           <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; line-height: 1.15; display: block;">${cfg.connectives}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; line-height: 1.15; display: block;">${rx.connectives}</span>
         </div>
         <div>
           <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.15; display: block;">${cfg.wordBank}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; display: block;">${rx.wordBank}</span>
         </div>
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing -->
+      <!-- Ruled Task Lines for Extended Writing (Fixed Height 6.8mm, No Flex Stretching) -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #222222; margin-bottom: 1px;">
         <strong>Task:</strong> Using the structure strip above, write your analytical exam answer in full sentences below:
       </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 3px; flex: 1; justify-content: space-between;">
+      <div style="margin-bottom: 4px;">
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1286,220 +1198,218 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      <!-- Timeline Mission (Direct Link to Pages 2–3 Living Timeline) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-            Timeline Mission
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; line-height: 1.2;">
-            ${cfg.timelineMission}
-          </span>
+      <!-- Clean Tidy Timeline Mission Box -->
+      <div style="border: 1px solid #000000; border-left: 3px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fdfdfd; margin-top: 1px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
+          Timeline Mission &bull; Pages 2–3
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &larr; Pages 2–3
-        </span>
+        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #000000; line-height: 1.2;">
+          ${rx.timelineMission}
+        </div>
       </div>
 
-      ${renderFooterStrip(rightPageNum, cfg.rightPageQuip, 14)}
+      ${renderFooterStrip(rightPageNum, currentFooters[rightPageNum - 1], 14)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (Target Grade, 82-Mark Ledger, QR Hub)
+  // PAGE 14: OUTSIDE BACK COVER (Spacious Ledger, Feedback & QR Hub)
   // ====================================================================
   html += `
   <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
-      <!-- Back Cover Header Strip -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 12.5pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
-          Student Assessment Record &amp; Progress Tracker
+      <!-- Header Block -->
+      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; margin: 0 0 2px 0; font-weight: 900; text-transform: uppercase;">
+          Student Assessment Record &bull; Key Topic 2 Tracker
         </h2>
-      </div>
-
-      <!-- Pupil Details & Target Grade Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 6px;">
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target Grade:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px; text-align: center; font-weight: 900;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #222222; font-weight: 700; letter-spacing: 0.5px;">
+          Paper 2: Conflict in the Middle East, 1945–1995 &bull; The Escalating Conflict (1964–1973)
         </div>
       </div>
 
-      <!-- 82-Mark Progress Ledger Table with 'Date Completed' and Wide Score Boxes -->
+      <!-- Target Grade & Pupil Information Strip -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 14px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 12px; align-items: center; margin-bottom: 6px;">
+        <div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
+          <div style="border-bottom: 1.5px solid #000000; height: 16px; margin-top: 1px;"></div>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
+          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
+          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Attitude:</span>
+          <div style="font-family: 'Inter', sans-serif; font-size: 9pt; font-weight: 800; margin-top: 4px;">
+            1 &bull; 2 &bull; 3 &bull; 4 &bull; 5
+          </div>
+        </div>
+      </div>
+
+      <!-- Assessment Progress Ledger Table (Expanded Spacing & Clear 26m Totals) -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
-            <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 4px 6px; width: 14%; text-align: center; border-right: 1px solid #444444; font-size: 7.6pt;">Date Completed</th>
-              <th style="padding: 4px 8px; width: 32%; text-align: left; border-right: 1px solid #444444; font-size: 7.6pt;">Lesson &bull; Specification Focus</th>
-              <th style="padding: 4px 6px; width: 18%; text-align: center; border-right: 1px solid #444444; font-size: 7.6pt;">Do Now Retrieval</th>
-              <th style="padding: 4px 6px; width: 22%; text-align: center; border-right: 1px solid #444444; font-size: 7.6pt;">Exam Practice Practice</th>
-              <th style="padding: 4px 6px; width: 14%; text-align: center; font-size: 7.6pt;">Lesson Total</th>
+            <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
+              <th style="padding: 6px 6px; width: 32px; text-align: center; font-size: 8pt; font-weight: 900; border-right: 1px solid #000000;">#</th>
+              <th style="padding: 6px 10px; text-align: left; font-size: 8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Enquiry / Lesson Assessment</th>
+              <th style="padding: 6px 6px; width: 88px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Do Now (10m)</th>
+              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1 Conseq (8m)</th>
+              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Extended (8m)</th>
+              <th style="padding: 6px 8px; width: 92px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase;">Lesson Total</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.1:</strong> Cairo Conference &amp; Water Wars</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1 Conseq: <span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 14</strong> ]</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">1</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.1:</strong> Cairo Conference &amp; Water Wars</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.2:</strong> Straits of Tiran &amp; Six Day War</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narrat: <span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 18</strong> ]</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">2</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.2:</strong> Straits of Tiran &amp; Six Day War</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.3:</strong> Occupied Territories &amp; Res 242</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Import: <span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 18</strong> ]</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">3</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.3:</strong> Occupied Territories &amp; Res 242</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.4:</strong> Black September &amp; Munich 1972</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1 Conseq: <span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 14</strong> ]</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">4</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.4:</strong> Black September &amp; Munich 1972</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT2.5:</strong> Yom Kippur War &amp; Oil Embargo</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2/Q3 Drill: <span style="font-size: 9pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 18</strong> ]</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">5</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.5:</strong> Yom Kippur War &amp; Oil Embargo</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 7.8pt;">Key Topic 2 Assessment Totals</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Do Now: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 50</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Exam Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 32</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 82</strong> ]</td>
+              <td colspan="2" style="padding: 6px 10px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Key Topic 2 Cumulative Assessment Totals</td>
+              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Do Now: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 50</strong> ]</span></td>
+              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1 Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 40</strong> ]</span></td>
+              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Ext Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 40</strong> ]</span></td>
+              <td style="padding: 6px 8px; text-align: center; font-size: 10.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 130</strong> ]</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback Section (WWW & EBI 4 lines each) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; margin-bottom: 6px;">
+      <!-- Teacher Feedback Section (WWW & EBI 4 lines each at 7.2mm) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
             Teacher Formative Assessment &bull; WWW / EBI Feedback
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222222; font-weight: 700;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #222222; font-weight: 700;">
             Effort Grade: [ &nbsp;&nbsp;&nbsp;&nbsp; ]
           </span>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
               What Went Well (WWW):
             </span>
-            <div class="task-line" style="height: 6.4mm;"></div>
-            <div class="task-line" style="height: 6.4mm;"></div>
-            <div class="task-line" style="height: 6.4mm;"></div>
-            <div class="task-line" style="height: 6.4mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
           </div>
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
               Even Better If (EBI):
             </span>
-            <div class="task-line" style="height: 6.4mm;"></div>
-            <div class="task-line" style="height: 6.4mm;"></div>
-            <div class="task-line" style="height: 6.4mm;"></div>
-            <div class="task-line" style="height: 6.4mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
           </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
+          <span><strong>Teacher Signature:</strong> ____________________________</span>
+          <span><strong>Date:</strong> ____________________</span>
         </div>
       </div>
 
       <!-- Interactive Quizzing & Revision QR Hub (5 QR Codes for Lessons 5 to 9) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #000000;">
-            Interactive Quizzing &bull; Digital Revision Hub
+            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; font-weight: 700;">
             Scan with smartphone camera to open live interactive self-marking quizzes
           </span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
-          
-          <div>
-            <div style="width: 44px; height: 44px; margin: 0 auto; border: 1px solid #000000; padding: 1px;">
-              ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=5')}
+          ${kt2Configs
+            .map((cfg, idx) => {
+              const quizUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=${cfg.lessonIndex}`;
+              const qrSvg = generateQrSvg(quizUrl);
+              const shortLabels = [
+                'Water Wars',
+                'Six-Day War',
+                'Res 242',
+                'Munich 1972',
+                'Yom Kippur',
+              ];
+              return `
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+              KT2.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; margin-top: 2px; line-height: 1.1;">
-              KT 2.1 Quiz<br><span style="font-weight: normal; font-size: 5.8pt;">Water Wars</span>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+              ${shortLabels[idx]}
             </div>
-          </div>
-
-          <div>
-            <div style="width: 44px; height: 44px; margin: 0 auto; border: 1px solid #000000; padding: 1px;">
-              ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=6')}
+            <div style="width: 20mm; height: 20mm; margin: 0 auto 2px auto;">
+              ${qrSvg}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; margin-top: 2px; line-height: 1.1;">
-              KT 2.2 Quiz<br><span style="font-weight: normal; font-size: 5.8pt;">Six Day War</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="width: 44px; height: 44px; margin: 0 auto; border: 1px solid #000000; padding: 1px;">
-              ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=7')}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; margin-top: 2px; line-height: 1.1;">
-              KT 2.3 Quiz<br><span style="font-weight: normal; font-size: 5.8pt;">Res 242</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="width: 44px; height: 44px; margin: 0 auto; border: 1px solid #000000; padding: 1px;">
-              ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=8')}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; margin-top: 2px; line-height: 1.1;">
-              KT 2.4 Quiz<br><span style="font-weight: normal; font-size: 5.8pt;">Munich 1972</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
+              Scan to Quiz
+            </span>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
+              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
           </div>
-
-          <div>
-            <div style="width: 44px; height: 44px; margin: 0 auto; border: 1px solid #000000; padding: 1px;">
-              ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=9')}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; margin-top: 2px; line-height: 1.1;">
-              KT 2.5 Quiz<br><span style="font-weight: normal; font-size: 5.8pt;">Yom Kippur</span>
-            </div>
-          </div>
-
+          `;
+            })
+            .join('')}
         </div>
       </div>
 
-      ${renderFooterStrip(14, quipList[13], 14)}
+      ${renderFooterStrip(14, currentFooters[13], 14)}
     </div>
   </div>
-`;
-
-  html += `
 </body>
-</html>`;
+</html>
+`;
 
   return html;
 }
 
-module.exports = {
-  buildCmeKt2TwoPageWorkbook,
-};
+module.exports = { buildCmeKt2TwoPageWorkbook };
