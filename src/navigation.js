@@ -541,6 +541,25 @@ async function loadUnit(unitId) {
       }));
     }
 
+    // CME Living Timeline Integration
+    if (unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995') {
+      try {
+        const cmeTl = await import('./data/cme/timeline_data.js');
+        if (cmeTl && cmeTl.CME_TIMELINE_MILESTONES) {
+          state.activeUnitData.timelineMilestones = cmeTl.CME_TIMELINE_MILESTONES;
+          state.activeUnitData.eras = cmeTl.CME_ERAS;
+          state.activeUnitData.timelineEvents = cmeTl.CME_TIMELINE_MILESTONES.map((m) => ({
+            year: m.date,
+            title: m.title,
+            text: m.action || m.trigger || '',
+            ...m,
+          }));
+        }
+      } catch (err) {
+        console.error('Failed to load CME timeline data:', err);
+      }
+    }
+
     // Add loaded questions to general index to support Leitner status mapping
     if (!state.allQuestions) state.allQuestions = [];
     if (state.activeUnitData.quizData) {
@@ -689,12 +708,16 @@ function updateSidebarForUnit(unitId, unitData = {}) {
 
   const hasTimeline =
     (unitData.timelineEvents && unitData.timelineEvents.length > 0) ||
-    (unitData.timeline && unitData.timeline.length > 0);
+    (unitData.timeline && unitData.timeline.length > 0) ||
+    unitId === 'cme_new' ||
+    unitId === 'gcse_middle_east_1945_1995';
   if (navTimeline && hasTimeline) {
     navTimeline.style.display = 'flex';
     navTimeline.dataset.action = 'switch-view';
     navTimeline.dataset.view = 'timeline';
     navTimeline.dataset.unit = unitId;
+    navTimeline.innerHTML =
+      '<i class="fa-solid fa-timeline" style="color: #6366f1;"></i><span>Living Timeline</span>';
     navTimeline.onclick = () => switchView('timeline', unitId);
   } else if (navTimeline) {
     navTimeline.style.display = 'none';

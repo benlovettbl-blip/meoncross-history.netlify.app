@@ -17,21 +17,21 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-// Footers currently on pages (retaining departmental styling for pupil books)
-const currentFooters = [
+// Approved Witty Revision Quips (Confirmed and approved for CME Key Topic 2)
+const approvedFunnyFooters = [
   'Conflict in the Middle East Revision Hub • Key Topic 2 • The History Department', // Page 1
-  'Milestones 1–3: The Road to War and the Six-Day War (1964–1967)', // Page 2
-  'Milestones 4–6: Diplomacy, Terror, and the Yom Kippur War (1967–1973)', // Page 3
-  'Key Topic 2.1: The Road to War (1964–1967) • Knowledge Retrieval & Exam Practice', // Page 4
-  'Key Topic 2.1: Extended Writing Assessment • Question 2: Analytical Narrative', // Page 5
-  'Key Topic 2.2: The Six-Day War (1967) • Knowledge Retrieval & Exam Practice', // Page 6
-  'Key Topic 2.2: Extended Writing Assessment • Question 3: Explain the Importance', // Page 7
-  'Key Topic 2.3: Aftermath & Resolution 242 (1967) • Knowledge Retrieval & Exam Practice', // Page 8
-  'Key Topic 2.3: Extended Writing Assessment • Question 2: Analytical Narrative', // Page 9
-  'Key Topic 2.4: Palestinian Resistance & Munich (1968–1972) • Knowledge Retrieval & Exam Practice', // Page 10
-  'Key Topic 2.4: Extended Writing Assessment • Question 3: Explain the Importance', // Page 11
-  'Key Topic 2.5: Yom Kippur War & Oil Crisis (1969–1973) • Knowledge Retrieval & Exam Practice', // Page 12
-  'Key Topic 2.5: Extended Writing Assessment • Question 2: Analytical Narrative', // Page 13
+  '"Remember: A crisis without a plan is just an essay waiting to happen."', // Page 2
+  '"Chronology is king: 1967 happens before 1973, even under exam pressure!"', // Page 3
+  '"Don\'t just state the Straits were closed — explain who couldn\'t sail through them!"', // Page 4
+  '"Operation Focus took 45 minutes; you have 10 minutes to write this answer."', // Page 5
+  '"Triple territory gained in six days: please write more than six lines about it."', // Page 6
+  '"Topography wins wars: who controls the Golan Heights controls the skyline."', // Page 7
+  '"The \'Three Noes\' of Khartoum: No peace, no recognition, no negotiations (and no blank answers!)."', // Page 8
+  '"Resolution 242 was deliberately ambiguous; your exam answer should NOT be."', // Page 9
+  '"Hijackings made headlines, but did they win hearts? Evaluate the consequence."', // Page 10
+  '"Munich broadcast terror into 900 million homes: explain that importance clearly."', // Page 11
+  '"The Bar-Lev Line took 3 years to build and 2 hours to breach — detail matters."', // Page 12
+  '"A war fought on holy days: keep your cause and consequence strictly separated."', // Page 13
   'Key Topic 2 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 14
 ];
 
@@ -65,6 +65,9 @@ const kt2Configs = [
     lessonIndex: 4,
     lessonNum: 1,
     id: 'lesson_6',
+    inquiryQuestion: 'What caused the outbreak of the Six-Day War in June 1967?',
+    subTitle:
+      'Key Topic 2.1: The Road to War: Water Wars, Guerrilla Raids & Skirmishes (1964–1967)',
     title: 'KT2.1: The Road to War: Water Wars & Skirmishes (1964–1967)',
     specAnchor:
       'The Cairo Conference (1964) and creation of the PLO; River Jordan water dispute and Headwater Diversion Plan; Syrian-backed fedayeen guerrilla attacks; Israeli reprisal raids and the 7 April 1967 aerial battle over the Golan Heights.',
@@ -164,6 +167,8 @@ const kt2Configs = [
     lessonIndex: 5,
     lessonNum: 2,
     id: 'lesson_7',
+    inquiryQuestion: 'How did Israel secure total military victory during the Six-Day War?',
+    subTitle: 'Key Topic 2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     title: 'KT2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     specAnchor:
       'The outbreak of war on 5 June 1967; Operation Focus (destruction of Arab air forces on the ground); the three-front campaign in Sinai, West Bank/Jerusalem, and Golan Heights; Israel’s total military victory and capture of strategic territory.',
@@ -262,6 +267,8 @@ const kt2Configs = [
     lessonIndex: 6,
     lessonNum: 3,
     id: 'lesson_8',
+    inquiryQuestion: 'Why did the aftermath of the 1967 war lead to lasting diplomatic deadlock?',
+    subTitle: 'Key Topic 2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     title: 'KT2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     specAnchor:
       'The creation of the Occupied Territories (Sinai, Gaza, West Bank, East Jerusalem, Golan Heights); Palestinian refugee crisis (300,000+ displaced); the Khartoum Conference and the "Three Noes" (Aug–Sept 1967); UN Resolution 242 and "Land for Peace" (Nov 1967).',
@@ -361,6 +368,10 @@ const kt2Configs = [
     lessonIndex: 7,
     lessonNum: 4,
     id: 'lesson_9',
+    inquiryQuestion:
+      'Why did Palestinian groups turn to international terrorism between 1968 and 1972?',
+    subTitle:
+      'Key Topic 2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     title: 'KT2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     specAnchor:
       'The rise of independent Palestinian resistance: the Battle of Karameh (1968) and Yasser Arafat taking leadership of the PLO; PFLP aircraft hijackings and Dawson’s Field (1970); Black September in Jordan (1970) and expulsion to Lebanon; the Munich Olympics massacre (1972) and Israeli reprisals.',
@@ -460,6 +471,8 @@ const kt2Configs = [
     lessonIndex: 8,
     lessonNum: 5,
     id: 'lesson_10',
+    inquiryQuestion: 'How did the Yom Kippur War shatter Israeli invincibility in October 1973?',
+    subTitle: 'Key Topic 2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     title: 'KT2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     specAnchor:
       'The War of Attrition (1969–70) and the Bar-Lev Line; death of Nasser and succession of Anwar Sadat; reasons for the 1973 attack; surprise assault on Yom Kippur (6 Oct 1973); water-monitor breach of the Bar-Lev Line; superpower involvement (US and Soviet airlifts); Sharon’s counter-crossing; the OPEC oil embargo; military and political outcomes.',
@@ -586,7 +599,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
-      font-size: 8.5pt;
+      font-size: 8.8pt;
       line-height: 1.3;
       color: #000000;
       margin: 0;
@@ -628,17 +641,18 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       overflow: hidden;
     }
     .task-section {
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
+    /* Thick Black Writing Lines for Accessibility & Special Needs */
     .task-line {
-      border-bottom: 1px solid #000000;
-      height: 6.6mm;
+      border-bottom: 1.5px solid #000000;
+      height: 7.0mm;
       margin: 0;
       box-sizing: border-box;
     }
     .task-line-dotted {
-      border-bottom: 1px dotted #333333;
-      height: 5.6mm;
+      border-bottom: 1.2px dotted #000000;
+      height: 6.0mm;
       margin: 0;
       box-sizing: border-box;
     }
@@ -651,7 +665,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       justify-content: space-between;
       align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       color: #000000;
     }
     .footer-page-num {
@@ -659,7 +673,8 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     }
     .footer-quip {
       font-style: italic;
-      color: #222222;
+      color: #111111;
+      font-weight: 500;
     }
     /* Commercial School Brand Customizer */
     [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target {
@@ -677,14 +692,14 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGE 1: FRONT COVER (Specification Checklist, Shelfmark GPO-D388-052)
+  // PAGE 1: FRONT COVER (Publisher Side-by-Side Hero Layout, Large Photo)
   // ====================================================================
   html += `
   <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Top Department Header Strip -->
-      <div style="text-align: center; border-bottom: 1.5px solid #000000; padding-bottom: 3px; margin-bottom: 4px;" data-department-name="The History Department">
+      <div style="text-align: center; border-bottom: 1.5px solid #000000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
         <div style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #000000;">
           <span class="school-brand-target">The History Department</span>
         </div>
@@ -693,148 +708,181 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Pupil Details Box (Top of Cover, 3 Columns) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 4px;">
+      <!-- Pupil Details Box (Top of Cover, 4 Columns) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; align-items: center; margin-bottom: 5px;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 6px;">Pupil Name:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 6px;">Class:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 6px;">Teacher:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 6px;">Target:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
       </div>
 
-      <!-- Main Title Block -->
-      <div style="text-align: center; margin: 1px 0 4px 0;">
-        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 1px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; background: #ffffff;">
-          Key Topic 2 &bull; 1964–1973
+      <!-- Professional Publisher Side-by-Side Hero Block (Enlarged Photograph on Left) -->
+      <div style="display: flex; gap: 10px; margin-bottom: 4px; height: 122mm;">
+        
+        <!-- Left Column: Primary Visual Source (Significantly Larger, 118mm Frame!) -->
+        <div style="width: 82mm; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="flex: 1; display: flex; justify-content: center; align-items: center; background: #fdfdfd; padding: 2px;">
+            <img src="/units/cme_new/assets/kt2_cover.jpg" alt="David Rubinger: Israeli Paratroopers at the Western Wall, Jerusalem" style="max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(100%);">
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; padding: 2.5px 6px; border-top: 1.2px solid #000000; background: #ffffff; line-height: 1.2;">
+            <div><strong>Primary Visual Source:</strong> <em>Israeli Paratroopers at the Western Wall</em></div>
+            <div style="display: flex; justify-content: space-between; margin-top: 1px;">
+              <span>David Rubinger (7 June 1967)</span>
+              <span>Accession: <strong>GPO-D388-052</strong></span>
+            </div>
+          </div>
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; line-height: 1.15; color: #000000; margin: 1px 0 2px 0; font-weight: 900;">
-          The Escalating Conflict, 1964–1973
-        </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 9.5pt; color: #222222; font-style: italic; font-weight: 600;">
-          The Cairo Conference, Six-Day War, Resolution 242, Palestinian Resistance &amp; The Yom Kippur War
+
+        <!-- Right Column: Title Block, Archival Context & Paper 2 Architecture -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          
+          <!-- Main Title Block -->
+          <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 9px; background: #ffffff;">
+            <div style="display: inline-block; border: 1.2px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; padding: 1px 7px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; background: #ffffff;">
+              Key Topic 2 &bull; 1964–1973
+            </div>
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 16pt; line-height: 1.15; color: #000000; margin: 2px 0 2px 0; font-weight: 900;">
+              The Escalating Conflict, 1964–1973
+            </h1>
+            <div style="font-family: 'Georgia', serif; font-size: 8.4pt; color: #222222; font-style: italic; line-height: 1.25;">
+              The Cairo Conference, Six-Day War, Resolution 242, Palestinian Resistance &amp; The Yom Kippur War
+            </div>
+          </div>
+
+          <!-- Archival Context Strip -->
+          <div style="border: 1.2px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #fdfdfd; font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.22; color: #000000;">
+            <strong>Archival Primary Record:</strong> David Rubinger’s photograph captures Israeli paratroopers of the 55th Paratroopers Brigade at the Western Wall (Kotel) in Jerusalem on 7 June 1967, following the capture of the Old City during the Six-Day War. Registered in the State of Israel Government Press Office archive under Accession Shelfmark <strong>GPO-D388-052</strong>.
+          </div>
+
+          <!-- Paper 2 Exam Assessment Architecture -->
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+              Edexcel GCSE Paper 2 Assessment Architecture
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.25;">
+              <div>&bull; <strong>Question 1(a) &amp; 1(b):</strong> Two 4-Mark Consequence Questions (PFC Formula)</div>
+              <div>&bull; <strong>Question 2 / 3:</strong> 8-Mark Analytical Narrative / Explain Importance</div>
+              <div>&bull; <strong>Cumulative Weight:</strong> 26 Marks per Lesson Spread &bull; 130 Marks Total</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Entirety of Photograph Fully Visible) -->
-      <div style="margin: 1px 0 4px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <div style="height: 72mm; display: flex; justify-content: center; align-items: center; padding: 2px 0; background: #fdfdfd;">
-          <img src="/units/cme_new/assets/kt2_cover.jpg" alt="David Rubinger: Israeli Paratroopers at the Western Wall, Jerusalem" style="max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(100%);">
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; padding: 2px 8px; border-top: 1.2px solid #000000; background: #ffffff;">
-          <span><strong>Primary Visual Source:</strong> <em>Israeli Paratroopers at the Western Wall</em> &bull; David Rubinger (7 June 1967)</span>
-          <span>Accession Shelfmark: <strong>GPO-D388-052</strong></span>
-        </div>
-      </div>
-
-      <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 2px 0;">
+      <!-- Course Specification Curriculum Tracking Table (5 Lessons with Inquiry Questions) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 2px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 4px 10px; text-align: left; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+              <th style="padding: 3px 8px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
                 Course Specification &bull; Key Enquiry Sequence
               </th>
-              <th style="padding: 4px 4px; width: 68px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+              <th style="padding: 3px 4px; width: 62px; text-align: center; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
                 Learnt
               </th>
-              <th style="padding: 4px 4px; width: 68px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              <th style="padding: 3px 4px; width: 62px; text-align: center; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
                 Revised
               </th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 2.5px 8px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8pt; font-weight: 800; color: #000000; line-height: 1.15;">
                   Key Topic 2.1: The Road to War: The Cairo Conference, Water Wars &amp; Skirmishes (1964–67)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  How did the River Jordan water dispute, creation of the PLO, and 7 April 1967 air clash escalate tensions?
+                <div style="font-family: 'Georgia', serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.15;">
+                  What caused the outbreak of the Six-Day War in June 1967?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 2.5px 8px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8pt; font-weight: 800; color: #000000; line-height: 1.15;">
                   Key Topic 2.2: The Outbreak &amp; Course of the Six-Day War (June 1967)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  Why was Operation Focus decisive, and how did Israel conquer the Sinai, West Bank, and Golan Heights?
+                <div style="font-family: 'Georgia', serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.15;">
+                  How did Israel secure total military victory during the Six-Day War?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 2.5px 8px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8pt; font-weight: 800; color: #000000; line-height: 1.15;">
                   Key Topic 2.3: The Aftermath: Resolution 242 &amp; The Occupied Territories (1967)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  Why did the Khartoum "Three Noes" and the linguistic ambiguity of Resolution 242 cause enduring deadlock?
+                <div style="font-family: 'Georgia', serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.15;">
+                  Why did the aftermath of the 1967 war lead to lasting diplomatic deadlock?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 2.5px 8px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8pt; font-weight: 800; color: #000000; line-height: 1.15;">
                   Key Topic 2.4: Palestinian Resistance: The PLO, Black September &amp; Munich (1968–1972)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  How did the Battle of Karameh empower the PLO, and why did factions turn to hijackings and the Munich attack?
+                <div style="font-family: 'Georgia', serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.15;">
+                  Why did Palestinian groups turn to international terrorism between 1968 and 1972?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr>
-              <td style="padding: 3px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 2.5px 8px; border-right: 1.2px solid #000000;">
+                <div style="font-size: 8pt; font-weight: 800; color: #000000; line-height: 1.15;">
                   Key Topic 2.5: The War of Attrition &amp; The Yom Kippur War (1969–1973)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  Why did Egypt and Syria achieve surprise, how did the oil embargo impact the West, and why did it lead to peace?
+                <div style="font-family: 'Georgia', serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.15;">
+                  How did the Yom Kippur War shatter Israeli invincibility in October 1973?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 13px; height: 13px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      ${renderFooterStrip(1, currentFooters[0], 14)}
+      ${renderFooterStrip(1, approvedFunnyFooters[0], 14)}
     </div>
   </div>
 `;
@@ -912,7 +960,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, currentFooters[1], 14)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 14)}
     </div>
   </div>
 
@@ -984,7 +1032,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, currentFooters[2], 14)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 14)}
     </div>
   </div>
 `;
@@ -998,34 +1046,42 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     const rx = cfg.rightExam;
 
     // ------------------------------------------------------------------
-    // LEFT PAGE: SPEC FOCUS + 10 DO NOW + VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
+    // LEFT PAGE: ENQUIRY TITLE + SPEC FOCUS + 10 DO NOW + VOCAB + TWO 4-MARKERS
     // ------------------------------------------------------------------
     html += `
   <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
-      <!-- Lesson Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
+      <!-- Lesson Header with Inquiry Question Title -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            KEY TOPIC 2.${cfg.lessonNum} &bull; ENQUIRY LESSON
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL PAPER 2 &bull; 26 MARKS
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
+          ${cfg.inquiryQuestion}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Retrieval &bull; Vocabulary &bull; Exam Practice
-        </span>
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #222222; line-height: 1.2;">
+          ${cfg.subTitle}
+        </div>
       </div>
 
-      <!-- Key Specification Focus -->
-      <div style="border-left: 3px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.25;">
+      <!-- Key Specification Focus: Directly beneath the Title -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.22;">
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- 10-Question Do Now Retrieval Grid -->
-      <div class="task-section" style="margin-bottom: 4px;">
+      <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
             Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
           </span>
         </div>
@@ -1034,7 +1090,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (item, idx) => `
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000; line-height: 1.15;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000; line-height: 1.15;">
               ${idx + 1}. ${item.q}
             </div>
             <div class="task-line-dotted"></div>
@@ -1046,14 +1102,14 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (3 Lines, No Double Border) -->
-      <div class="task-section" style="margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+      <div class="task-section" style="margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Key Vocabulary
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
         <div class="task-line"></div>
@@ -1062,20 +1118,20 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Question 1(a): Explain One Consequence [4 marks] -->
-      <div class="task-section" style="margin-bottom: 4px;">
+      <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(a): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
           <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; margin-bottom: 1px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; margin-bottom: 1px;">
           <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
         </div>
         <div class="task-line"></div>
@@ -1087,18 +1143,18 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Question 1(b): Explain One Consequence [4 marks] -->
       <div class="task-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(b): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceB.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
           <strong>PFC Guidance:</strong> ${cfg.consequenceB.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; margin-bottom: 1px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; margin-bottom: 1px;">
           <strong>Sentence Stems:</strong> ${cfg.consequenceB.stems}
         </div>
         <div class="task-line"></div>
@@ -1107,58 +1163,55 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      ${renderFooterStrip(leftPageNum, currentFooters[leftPageNum - 1], 14)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 14)}
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
-  <!-- Zero Maps/Sources • 11 Fixed Ruled Lines • Clean Timeline Mission   -->
+  <!-- Zero Extraneous Gaps • Pushed Up to Top • 15 Ruled Writing Lines   -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
           ${rx.tariff}
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing Assessment
+          Extended Writing Assessment &bull; 8 Marks
         </span>
       </div>
 
-      <!-- Question Stem & Stimulus/Focus Box -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.25;">
+      <!-- Question Stem & Stimulus/Focus Box (Pushed Up, Minimal Margin) -->
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 1px; line-height: 1.25;">
           ${rx.stem}
         </div>
         ${
           rx.type === 'narrative_8'
             ? `
-        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
+        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
           <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]}<br>
           <em>You must also use information of your own.</em>
         </div>
         `
             : `
-        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
+        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
           <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
         </div>
         `
         }
       </div>
 
-      <!-- 3-Column Planning Structure Strip -->
-      <div style="margin-bottom: 4px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Structure Strip &bull; Analytical Step-by-Step Framework
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px;">
+      <!-- 3-Column Planning Structure Strip (Pushed Up) -->
+      <div style="margin-bottom: 2px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
           ${rx.structureStrip
             .map(
               (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
+          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 2px 4px; background: #ffffff;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #000000; line-height: 1.15; display: block;">${strip.text}</span>
           </div>
@@ -1168,8 +1221,8 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <!-- Connectives & Key Vocabulary Bank (Pushed Up) -->
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; background: #ffffff; margin-bottom: 2px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
         <div>
           <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; line-height: 1.15; display: block;">${rx.connectives}</span>
@@ -1180,11 +1233,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (Fixed Height 6.8mm, No Flex Stretching) -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #222222; margin-bottom: 1px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical exam answer in full sentences below:
-      </div>
-      <div style="margin-bottom: 4px;">
+      <!-- Ruled Task Lines for Extended Writing (15 Fixed Lines for 3 Full Paragraphs) -->
+      <div style="margin-bottom: 2px;">
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
+        <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1199,7 +1253,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Clean Tidy Timeline Mission Box -->
-      <div style="border: 1px solid #000000; border-left: 3px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fdfdfd; margin-top: 1px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #fdfdfd; margin-top: 1px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -1208,7 +1262,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(rightPageNum, currentFooters[rightPageNum - 1], 14)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 14)}
     </div>
   </div>
 `;
@@ -1379,19 +1433,16 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                 'Yom Kippur',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
-              KT2.${cfg.lessonNum}
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; color: #000000; margin-bottom: 2px; text-transform: uppercase;">
+              KT 2.${idx + 1}: ${shortLabels[idx]}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
-              ${shortLabels[idx]}
-            </div>
-            <div style="width: 20mm; height: 20mm; margin: 0 auto 2px auto;">
+            <div style="width: 20mm; height: 20mm; margin: 2px auto;">
               ${qrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000; margin-top: 2px;">
               Scan to Quiz
-            </span>
+            </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
               Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
@@ -1402,7 +1453,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, currentFooters[13], 14)}
+      ${renderFooterStrip(14, approvedFunnyFooters[13], 14)}
     </div>
   </div>
 </body>

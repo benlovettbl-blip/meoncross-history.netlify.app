@@ -936,9 +936,17 @@ window.submitQuizAnswer = function (qid, chosen, btnElement) {
   feedback.classList.remove('hidden');
 };
 
-export function renderTimeline() {
+export async function renderTimeline() {
   const container = document.getElementById('main-content');
-  const events = state.activeUnitData.timelineEvents;
+  const unitId = state.selectedUnitId || window.currentUnitId;
+
+  if (unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995') {
+    const { renderCmeLivingTimeline } = await import('./cme_living_timeline.js');
+    renderCmeLivingTimeline(container);
+    return;
+  }
+
+  const events = state.activeUnitData ? state.activeUnitData.timelineEvents : null;
 
   if (!events || events.length === 0) {
     container.innerHTML = `
