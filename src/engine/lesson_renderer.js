@@ -3018,6 +3018,18 @@ export function renderLesson(lesson) {
                <div style="${imgWrapperStyle}">
                  <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block; margin: 0 auto;" data-action="open-modal" data-src="${getAssetUrl(block.image)}">
                  ${block.caption || block.image_caption || block.image_alt ? `<div class="image-hint-caption" data-action="toggle-caption-blur" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
+                  ${
+                    window.currentUnitId === 'cme_new' ||
+                    window.currentUnitId === 'gcse_middle_east_1945_1995'
+                      ? `
+                    <div style="margin-top: 6px; text-align: center;">
+                      <button class="cme-timeline-jump-badge" onclick="if(typeof window.switchView==='function'){window.switchView('timeline', 'cme_new');}else if(typeof window.navigateTo==='function'){window.navigateTo('timeline');}" style="background: rgba(30, 58, 138, 0.08); border: 1px solid rgba(30, 58, 138, 0.25); color: #1e3a8a; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;" title="Jump to interactive chronological Living Timeline">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Living Timeline Milestone &bull; View Chronology &rarr;
+                      </button>
+                    </div>
+                    `
+                      : ''
+                  }
                </div>
                ${contextHtml}
              </div>
@@ -3147,6 +3159,18 @@ export function renderLesson(lesson) {
                 <div class="archival-source-inspect-badge">
                   <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                 </div>
+                ${
+                  window.currentUnitId === 'cme_new' ||
+                  window.currentUnitId === 'gcse_middle_east_1945_1995'
+                    ? `
+                  <div style="margin-top: 6px; text-align: center;">
+                    <button class="cme-timeline-jump-badge" onclick="if(typeof window.switchView==='function'){window.switchView('timeline', 'cme_new');}else if(typeof window.navigateTo==='function'){window.navigateTo('timeline');}" style="background: rgba(30, 58, 138, 0.08); border: 1px solid rgba(30, 58, 138, 0.25); color: #1e3a8a; font-size: 0.72rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s ease;" title="Jump to interactive chronological Living Timeline">
+                      <i class="fa-solid fa-clock-rotate-left"></i> Living Timeline Milestone &bull; View Chronology &rarr;
+                    </button>
+                  </div>
+                  `
+                    : ''
+                }
               </div>
               <div class="archival-source-details-col">
                 <div>

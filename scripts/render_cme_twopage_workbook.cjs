@@ -116,18 +116,16 @@ const kt2Configs = [
     vocabPrompt:
       'Define the <strong>Headwater Diversion Plan</strong> and explain how it differed from a conventional border clash as a catalyst for military escalation:',
     consequenceA: {
-      question:
-        'Explain one consequence of the Arab League’s Headwater Diversion Plan (1964–66). [4 marks]',
+      question: 'Explain one consequence of the Cairo Conference (1964). [4 marks]',
       guidance:
-        'Point (IDF airstrikes and artillery destroying Syrian earthmoving machinery) &bull; Fact (Israel targeted Banyas canal diversion works) &bull; Consequence (Halted Arab water diversion but sharply escalated cross-border shelling and Syrian backing for Fatah guerrilla raids).',
+        'Point (Creation of the Palestine Liberation Organisation and unified Arab command) &bull; Fact (Arab League heads of state authorized the Palestinian National Charter and water diversion) &bull; Consequence (United Arab resistance and established armed fedayeen factions like Fatah to actively challenge Israel).',
       stems:
-        'One major consequence was... &bull; Specifically, when Syria attempted to divert the headwaters of the Jordan... &bull; Consequently, this resulted in...',
+        'One major consequence was... &bull; Specifically, following the Cairo Conference in 1964... &bull; Consequently, this led directly to...',
     },
     consequenceB: {
-      question:
-        'Explain one consequence of the 7 April 1967 air battle over the Golan Heights. [4 marks]',
+      question: 'Explain one consequence of the events of 7 April 1967. [4 marks]',
       guidance:
-        'Point (Humiliating defeat for the Syrian Air Force) &bull; Fact (Israeli Mirage jets shot down six Syrian MiG-21s and flew victory passes over Damascus) &bull; Consequence (Provoked false Soviet intelligence reports in May 1967, pressuring Nasser to mobilise in Sinai).',
+        'Point (Humiliating defeat for the Syrian Air Force and sharp escalation towards war) &bull; Fact (Israeli Mirage jets shot down six Syrian MiG-21s and flew victory passes over Damascus) &bull; Consequence (Provoked false Soviet intelligence reports in May 1967, pressuring Nasser to mobilise in Sinai).',
       stems:
         'One major consequence was... &bull; Specifically, during the aerial clash on 7 April 1967... &bull; Consequently, this directly triggered...',
     },
@@ -135,29 +133,26 @@ const kt2Configs = [
     rightExam: {
       type: 'narrative_8',
       tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
-      stem: 'Write a narrative account analysing the key events that led to the outbreak of the Six-Day War (1964–June 1967). [8 marks]',
-      stimulus: [
-        'The closure of the Straits of Tiran (May 1967)',
-        'The expulsion of UNEF from Sinai',
-      ],
+      stem: 'Write a narrative account analysing the key events leading to the outbreak of the Six-Day War (1967). [8 marks]',
+      stimulus: ['Syria’s support for Fatah', 'The actions of Nasser'],
       structureStrip: [
         {
-          col: '1. PHASE 1: CATALYSTS (1964–66)',
-          text: 'Explain the Cairo Conference (1964), River Jordan water disputes, creation of the PLO, and escalating cross-border Syrian artillery and fedayeen raids.',
+          col: '1. PHASE 1: BORDER TENSIONS (1964–66)',
+          text: 'Explain the Cairo Conference (1964), Syria’s support for Fatah guerrilla raids across the border, and Israeli retaliatory strikes culminating in the events of 7 April 1967.',
         },
         {
-          col: '2. PHASE 2: ESCALATION (MAY 1967)',
-          text: 'Explain Soviet false warnings, Nasser expelling UNEF peacekeepers, moving 100,000 troops into Sinai, and closing the Straits of Tiran at Sharm el-Sheikh.',
+          col: '2. PHASE 2: ESCALATION IN SINAI (MAY 1967)',
+          text: 'Explain Soviet false warnings, and the actions of Nasser: expelling UNEF peacekeepers, mobilising 100,000 troops into Sinai, and blockading the Straits of Tiran.',
         },
         {
-          col: '3. PHASE 3: OUTCOME (JUNE 1967)',
-          text: 'Explain the Egyptian-Jordanian defence pact (May 30) encircling Israel, and Israel launching Operation Focus pre-emptive airstrikes on 5 June.',
+          col: '3. PHASE 3: OUTBREAK OF WAR (JUNE 1967)',
+          text: 'Explain the Egyptian-Jordanian defence pact (30 May) encircling Israel, and Israel launching Operation Focus pre-emptive airstrikes on 5 June 1967.',
         },
       ],
       connectives:
-        'The crisis began in 1964 when... &bull; Tensions escalated sharply in May 1967 because... &bull; Following the expulsion of UNEF, Nasser... &bull; Consequently, Israel viewed this as a casus belli... &bull; Ultimately, this culminated in...',
+        'The escalation began when... &bull; In response to Syrian support for Fatah, Israel... &bull; Tensions heightened in May 1967 when the actions of Nasser... &bull; Consequently, Israel viewed the Straits blockade as a casus belli... &bull; Ultimately, this culminated on 5 June 1967 when...',
       wordBank:
-        'Cairo Conference (1964) &bull; National Water Carrier &bull; Headwater Diversion &bull; Fatah raids &bull; 7 April air battle &bull; UNEF peacekeepers &bull; Straits of Tiran &bull; Sharm el-Sheikh &bull; casus belli &bull; Operation Focus',
+        'Cairo Conference (1964) &bull; Syria’s support for Fatah &bull; Samu raid &bull; events of 7 April 1967 &bull; Soviet false warnings &bull; actions of Nasser &bull; UNEF withdrawal &bull; Straits of Tiran &bull; Sharm el-Sheikh &bull; pre-emptive strike',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 2.1). In Milestones 1 and 2, sketch the Cairo Arab Summit symbol and annotate the blockade of the Straits of Tiran at Sharm el-Sheikh.',
     },
@@ -171,7 +166,7 @@ const kt2Configs = [
     subTitle: 'Key Topic 2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     title: 'KT2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     specAnchor:
-      'The outbreak of war on 5 June 1967; Operation Focus (destruction of Arab air forces on the ground); the three-front campaign in Sinai, West Bank/Jerusalem, and Golan Heights; Israel’s total military victory and capture of strategic territory.',
+      'The actions of the USSR, Nasser and the USA in the period leading to war; the outbreak of war on 5 June 1967; Operation Focus; key events of the war in Sinai, the West Bank, East Jerusalem and the Golan Heights.',
     doNow: [
       {
         q: 'In which city was the Palestine Liberation Organisation (PLO) founded in January 1964?',
@@ -218,46 +213,46 @@ const kt2Configs = [
       'Define a <strong>Pre-emptive Strike</strong> and explain why Israeli commanders argued Operation Focus was necessary for national survival on 5 June 1967:',
     consequenceA: {
       question:
-        'Explain one consequence of Operation Focus on the morning of 5 June 1967. [4 marks]',
+        'Explain one consequence of the actions of Nasser in the period leading to war. [4 marks]',
       guidance:
-        'Point (Complete destruction of the Egyptian Air Force on the ground) &bull; Fact (Over 300 of Egypt’s 420 combat aircraft wiped out in 3 hours using runway-crater bombs) &bull; Consequence (Gave Israel total air supremacy, leaving Egyptian ground forces in Sinai defenseless without air cover).',
+        'Point (Forced Israel into launching a pre-emptive strike) &bull; Fact (Nasser mobilized troops in Sinai, expelled UNEF, and blockaded the Straits of Tiran at Sharm el-Sheikh) &bull; Consequence (Convinced Israeli leaders that war was imminent, prompting the surprise destruction of Arab air forces on 5 June 1967).',
       stems:
-        'One major consequence was... &bull; Specifically, when the Israeli Air Force launched Operation Focus... &bull; Consequently, this enabled the IDF to...',
+        'One major consequence was... &bull; Specifically, when President Nasser took the decision to... &bull; Consequently, this resulted in...',
     },
     consequenceB: {
-      question: 'Explain one consequence of Jordan entering the war on 5 June 1967. [4 marks]',
+      question: 'Explain one consequence of the outbreak of the Six-Day War (1967). [4 marks]',
       guidance:
-        'Point (Israel’s capture of East Jerusalem and the entire West Bank) &bull; Fact (Jordanian artillery shelled West Jerusalem based on false Egyptian reports; Israeli paratroopers counter-attacked) &bull; Consequence (Israel captured the Old City and annexed East Jerusalem, displacing 300,000+ Palestinians).',
+        'Point (Total Israeli military victory and capture of strategic territory) &bull; Fact (Israel destroyed Arab air forces within three hours, capturing the Sinai, Gaza Strip, West Bank, East Jerusalem, and Golan Heights) &bull; Consequence (Tripled the land under Israeli control and placed over 1 million Palestinian Arabs under military occupation).',
       stems:
-        'One major consequence was... &bull; Specifically, after King Hussein ordered Jordanian forces to fire... &bull; Consequently, this resulted in...',
+        'One major consequence was... &bull; Specifically, when war broke out on 5 June 1967... &bull; Consequently, this transformed the region because...',
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
       type: 'importance_8',
       tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
-      stem: 'Explain the importance of the Israeli capture of the Golan Heights (9–10 June 1967) for Israeli security. [8 marks]',
+      stem: 'Explain the importance of the Golan Heights for Israeli security. [8 marks]',
       focusAspects: [
         'Protection of Galilee Farming Settlements & Water Sources',
         'Topographical High Ground & Strategic Early Warning',
       ],
       structureStrip: [
         {
-          col: '1. POINT 1: ELIMINATING BORDER SHELLING',
-          text: 'Explain how Syrian artillery bunkers on the escarpment had terrorised Hula Valley kibbutzim for 19 years; capturing the heights permanently ended cross-border bombardments.',
+          col: '1. POINT 1: ENDING BORDER SHELLING',
+          text: 'Explain how Syrian artillery bunkers on the escarpment had terrorised Hula Valley kibbutzim for 19 years; controlling the heights permanently ended cross-border bombardments.',
         },
         {
           col: '2. POINT 2: STRATEGIC HIGH GROUND',
           text: 'Explain how holding Mt Hermon and the high volcanic plateau placed the IDF within 40 miles of Damascus, providing early radar warning and blocking Syrian armored invasions.',
         },
         {
-          col: '3. EVALUATIVE SUMMARY: PERMANENT SHIFT',
-          text: 'Explain how capturing the Golan permanently transformed Israel from a vulnerable defensive position into the dominant military power on its northern frontier.',
+          col: '3. EVALUATIVE SUMMARY: REGIONAL BALANCE',
+          text: 'Explain how holding the Golan Heights permanently transformed Israel from a vulnerable defensive position into the dominant military power on its northern frontier.',
         },
       ],
       connectives:
-        'The capture of the Golan Heights was important for Israeli security because... &bull; In particular, for 19 years Syrian forces had... &bull; By capturing the volcanic escarpment, the IDF... &bull; Furthermore, holding the high plateau provided... &bull; Ultimately, this transformed...',
+        'The Golan Heights were important for Israeli security because... &bull; In particular, for 19 years Syrian forces had... &bull; By capturing the volcanic escarpment, the IDF... &bull; Furthermore, holding the high plateau provided... &bull; Ultimately, this transformed Israel’s security by...',
       wordBank:
-        'Golan escarpment &bull; Galilee kibbutzim &bull; Hula Valley &bull; Syrian artillery bunkers &bull; General David Elazar &bull; Mt Hermon &bull; radar early warning &bull; Damascus buffer &bull; strategic depth &bull; 9–10 June assault',
+        'Golan Heights &bull; Galilee kibbutzim &bull; Hula Valley &bull; Syrian artillery bunkers &bull; General David Elazar &bull; Mt Hermon &bull; radar early warning &bull; Damascus buffer &bull; strategic depth &bull; 9–10 June assault',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 2.2). In Milestone 3, sketch Israeli Centurion tanks advancing through the desert and label the Golan Heights, West Bank, and Sinai.',
     },
@@ -271,7 +266,7 @@ const kt2Configs = [
     subTitle: 'Key Topic 2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     title: 'KT2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     specAnchor:
-      'The creation of the Occupied Territories (Sinai, Gaza, West Bank, East Jerusalem, Golan Heights); Palestinian refugee crisis (300,000+ displaced); the Khartoum Conference and the "Three Noes" (Aug–Sept 1967); UN Resolution 242 and "Land for Peace" (Nov 1967).',
+      'UN Resolution 242 and the continued dispute over the Suez Canal; Palestinian refugees and the significance of the occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem.',
     doNow: [
       {
         q: 'How many days did the Arab-Israeli war of June 1967 last?',
@@ -317,30 +312,25 @@ const kt2Configs = [
     vocabPrompt:
       'Define the diplomatic principle of <strong>"Land for Peace"</strong> and explain why its interpretation caused 30 years of diplomatic stalemate after November 1967:',
     consequenceA: {
-      question:
-        'Explain one consequence of the Six-Day War for Palestinian civilians in the West Bank. [4 marks]',
+      question: 'Explain one consequence of UN Resolution 242. [4 marks]',
       guidance:
-        'Point (Mass displacement and military occupation) &bull; Fact (Over 300,000 Palestinians fled across the River Jordan; 1 million fell under Israeli military rule) &bull; Consequence (Deepened the refugee crisis and drove young Palestinians into armed guerrilla groups like Fatah).',
+        'Point (Established the principle of "Land for Peace" but created lasting diplomatic stalemate) &bull; Fact (The resolution called for withdrawal from "territories occupied", leaving deliberate ambiguity between English and French texts) &bull; Consequence (Arab states insisted on total withdrawal, while Israel insisted on direct peace treaties and retained the lands).',
       stems:
-        'One major consequence for Palestinian civilians was... &bull; Specifically, during and immediately after the June 1967 fighting... &bull; Consequently, this resulted in...',
+        'One major consequence was... &bull; Specifically, when the UN Security Council passed Resolution 242 in November 1967... &bull; Consequently, this created deadlock because...',
     },
     consequenceB: {
-      question:
-        'Explain one consequence of the Khartoum Arab Summit (August–September 1967). [4 marks]',
+      question: 'Explain one consequence of the continued dispute over the Suez Canal. [4 marks]',
       guidance:
-        'Point (Entrenched total diplomatic deadlock via the "Three Noes") &bull; Fact (Eight Arab heads of state declared: No peace, no recognition, no negotiations with Israel) &bull; Consequence (Convinced Israeli leaders that Arab states would never negotiate, prompting Israel to retain the lands and build settlements).',
+        'Point (Triggered the War of Attrition and long-term economic disruption) &bull; Fact (The Suez Canal became the ceasefire frontline, remaining closed to international shipping from 1967 to 1975) &bull; Consequence (Led Israel to construct the fortified Bar-Lev Line and prompted persistent artillery and commando duels with Egypt).',
       stems:
-        'One major consequence was... &bull; Specifically, Arab leaders resolved at Khartoum that... &bull; Consequently, this entrenched deadlock because...',
+        'One major consequence was... &bull; Specifically, with the Suez Canal closed as a hostile frontline... &bull; Consequently, this resulted in...',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
       type: 'narrative_8',
       tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
-      stem: 'Write a narrative account analysing the diplomatic responses to the Six-Day War between June and November 1967. [8 marks]',
-      stimulus: [
-        'The Khartoum Conference (August–September 1967)',
-        'UN Security Council Resolution 242 (November 1967)',
-      ],
+      stem: 'Write a narrative account analysing the aftermath of the 1967 war in the period from June to November 1967. [8 marks]',
+      stimulus: ['The occupied territories', 'UN Resolution 242'],
       structureStrip: [
         {
           col: '1. PHASE 1: OCCUPATION & REFUGEES (JUNE)',
@@ -351,14 +341,14 @@ const kt2Configs = [
           text: 'Explain Arab heads of state meeting in Sudan to adopt the "Three Noes" (no peace, no recognition, no negotiation), refusing to concede defeat or negotiate.',
         },
         {
-          col: '3. PHASE 3: UN COMPROMISE (NOV 1967)',
+          col: '3. PHASE 3: UN RESOLUTION 242 (NOV 1967)',
           text: 'Explain British drafting of Resolution 242 establishing "Land for Peace", deliberate linguistic ambiguity ("territories occupied"), and resulting deadlock.',
         },
       ],
       connectives:
-        'Following the swift conclusion of the June 1967 war... &bull; This territorial transformation prompted Arab leaders to meet at Khartoum, where... &bull; In response to the growing diplomatic impasse, the UN drafted... &bull; Consequently, Lord Caradon formulated... &bull; Ultimately, this established...',
+        'Following the swift conclusion of the June 1967 war... &bull; This territorial transformation displaced 300,000 refugees and prompted... &bull; In response to the growing diplomatic impasse, the UN drafted... &bull; Consequently, Resolution 242 formulated... &bull; Ultimately, this established...',
       wordBank:
-        'Occupied Territories &bull; 300,000 refugees &bull; Khartoum Summit &bull; "Three Noes" &bull; UN Resolution 242 &bull; Lord Caradon &bull; "Land for Peace" &bull; "territories occupied" &bull; Gunnar Jarring &bull; military governor',
+        'Occupied territories &bull; 300,000 refugees &bull; West Bank &bull; Gaza Strip &bull; Golan Heights &bull; Khartoum Conference &bull; "Three Noes" &bull; UN Resolution 242 &bull; "Land for Peace" &bull; diplomatic deadlock',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 2.3). In Milestone 4, sketch the UN Security Council emblem and write out the three banners of the Khartoum "Three Noes".',
     },
@@ -374,7 +364,7 @@ const kt2Configs = [
       'Key Topic 2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     title: 'KT2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     specAnchor:
-      'The rise of independent Palestinian resistance: the Battle of Karameh (1968) and Yasser Arafat taking leadership of the PLO; PFLP aircraft hijackings and Dawson’s Field (1970); Black September in Jordan (1970) and expulsion to Lebanon; the Munich Olympics massacre (1972) and Israeli reprisals.',
+      'The use of terrorism, Israel’s response and international attitudes towards the Palestine issue: the PFLP airplane hijacks of 1970; Black September and the Munich Olympics; the expulsion of the PLO from Jordan (1970).',
     doNow: [
       {
         q: 'What core diplomatic formula was established by UN Resolution 242 in November 1967?',
@@ -420,48 +410,46 @@ const kt2Configs = [
     vocabPrompt:
       'Explain the crucial tactical difference between <strong>Fedayeen Guerrilla Warfare</strong> and <strong>International Terrorism</strong> as methods adopted by Palestinian factions after 1967:',
     consequenceA: {
-      question:
-        'Explain one consequence of the Battle of Karameh (March 1968) for the Palestinian national movement. [4 marks]',
+      question: 'Explain one consequence of the PFLP airplane hijacks of 1970. [4 marks]',
       guidance:
-        'Point (Surge in volunteers and Fatah taking leadership of the PLO) &bull; Fact (Palestinian fedayeen resisted an Israeli armored raid in Jordan, killing 28 IDF soldiers) &bull; Consequence (Celebrated as a moral victory after 1967, transforming Arafat into a hero and leading to his 1969 election as PLO Chairman).',
+        'Point (Directly triggered King Hussein’s military crackdown against Palestinian militias in Jordan) &bull; Fact (PFLP militants blew up three hijacked Western airliners at Dawson’s Field in front of international TV cameras) &bull; Consequence (King Hussein declared martial law in September 1970, launching the Black September civil war to expel armed Palestinian groups).',
       stems:
-        'One major consequence was... &bull; Specifically, when Palestinian fedayeen fought at Karameh... &bull; Consequently, this resulted in...',
+        'One major consequence was... &bull; Specifically, when the PFLP hijacked Western airliners to Dawson’s Field... &bull; Consequently, this provoked King Hussein to...',
     },
     consequenceB: {
-      question:
-        'Explain one consequence of the Black September conflict (1970) for the PLO. [4 marks]',
+      question: 'Explain one consequence of the expulsion of the PLO from Jordan (1970). [4 marks]',
       guidance:
-        'Point (Total military expulsion of the PLO from Jordan to southern Lebanon) &bull; Fact (Following the Dawson’s Field airliner hijackings, King Hussein ordered his army to crush armed militias in Amman) &bull; Consequence (The PLO lost its border with Israel and established "Fatahland" in Lebanon, pushing radical cells toward international terror).',
+        'Point (Relocation of PLO headquarters to southern Lebanon and rise of clandestine terror cells) &bull; Fact (Jordanian forces crushed PLO resistance and expelled armed guerrillas to Lebanon by 1971) &bull; Consequence (The PLO lost its direct border with Israel, created "Fatahland" in Lebanon, and radical elements formed the "Black September" terror group).',
       stems:
-        'One major consequence was... &bull; Specifically, after the Dawson’s Field hijackings... &bull; Consequently, this forced the PLO to...',
+        'One major consequence was... &bull; Specifically, following the expulsion of the PLO from Jordan... &bull; Consequently, this forced the movement to...',
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
       type: 'importance_8',
       tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
-      stem: 'Explain the importance of the 1972 Munich Olympics massacre for international attitudes towards the Palestinian cause. [8 marks]',
+      stem: 'Explain the importance of the Munich Olympics for international attitudes towards the Palestine issue. [8 marks]',
       focusAspects: [
-        'Global Media Recognition of the Palestinian Problem',
-        'International Moral Outrage & Israeli Targeted Retaliation',
+        'Global Television Awareness of Palestinian Demands',
+        'International Condemnation of Terrorism & Israel’s Response',
       ],
       structureStrip: [
         {
           col: '1. POINT 1: GLOBAL TV SPOTLIGHT',
-          text: 'Explain how Black September holding 11 Israeli athletes broadcast the Palestinian cause live to 900 million TV viewers, destroying the idea that Palestinians were merely passive refugees.',
+          text: 'Explain how Black September holding 11 Israeli athletes broadcast the Palestine issue live to 900 million TV viewers, destroying the idea that Palestinians were merely passive refugees.',
         },
         {
           col: '2. POINT 2: MORAL OUTRAGE & REPRISALS',
           text: 'Explain how murdering unarmed athletes provoked worldwide condemnation, branding militants as terrorists and prompting Golda Meir to launch Operation Wrath of God assassinations.',
         },
         {
-          col: '3. EVALUATIVE SUMMARY: STRATEGIC IMPACT',
+          col: '3. EVALUATIVE SUMMARY: STRATEGIC SHIFT',
           text: 'Explain how the outrage proved terrorism could not win statehood, ultimately pushing Yasser Arafat to steer the PLO toward international diplomacy (1974 UN speech).',
         },
       ],
       connectives:
-        'The Munich Olympics attack was important for international attitudes because... &bull; By striking a global sporting event broadcast live... &bull; However, the murder of eleven athletes provoked... &bull; In response, Israeli Prime Minister Golda Meir... &bull; Ultimately, this forced the world community to...',
+        'The Munich Olympics was important for international attitudes because... &bull; By striking a global sporting event broadcast live... &bull; However, the murder of eleven athletes provoked... &bull; In response, Israeli Prime Minister Golda Meir... &bull; Ultimately, this forced the world community to...',
       wordBank:
-        'Black September &bull; 5 September 1972 &bull; 11 Israeli athletes &bull; Olympic Village &bull; 900 million viewers &bull; Golda Meir &bull; Operation Wrath of God &bull; Mossad assassinations &bull; global terrorism &bull; 1974 UN speech',
+        'Munich Olympics &bull; Black September &bull; 5 September 1972 &bull; 11 Israeli athletes &bull; Olympic Village &bull; 900 million viewers &bull; international attitudes &bull; Palestine issue &bull; Operation Wrath of God &bull; 1974 UN speech',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 2.4). In Milestone 5, sketch the Dawson’s Field aircraft explosion and trace the PLO exile route from Jordan to southern Lebanon.',
     },
@@ -475,7 +463,7 @@ const kt2Configs = [
     subTitle: 'Key Topic 2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     title: 'KT2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     specAnchor:
-      'The War of Attrition (1969–70) and the Bar-Lev Line; death of Nasser and succession of Anwar Sadat; reasons for the 1973 attack; surprise assault on Yom Kippur (6 Oct 1973); water-monitor breach of the Bar-Lev Line; superpower involvement (US and Soviet airlifts); Sharon’s counter-crossing; the OPEC oil embargo; military and political outcomes.',
+      'Israel’s consolidation of control of the occupied territories; key events of the Yom Kippur War (1973) and its aftermath.',
     doNow: [
       {
         q: 'What Israeli hostage crisis occurred at an international sporting event in September 1972?',
@@ -521,24 +509,25 @@ const kt2Configs = [
     vocabPrompt:
       'Define the <strong>Bar-Lev Line</strong> and explain why Egyptian military planners deployed high-pressure water monitors to breach it on 6 October 1973:',
     consequenceA: {
-      question: 'Explain one consequence of Operation Badr on 6 October 1973. [4 marks]',
+      question:
+        'Explain one consequence of Israel’s consolidation of control of the occupied territories. [4 marks]',
       guidance:
-        'Point (Successful breach of the Bar-Lev Line and crossing of the Suez Canal) &bull; Fact (80,000 Egyptian infantry crossed on rafts, washed away sand ramparts, and established bridgeheads under SAM missiles) &bull; Consequence (Shattered Israeli confidence in defensive invincibility and destroyed 150+ Israeli tanks in 48 hours).',
+        'Point (Deepened Arab determination to launch a military attack to reclaim occupied lands) &bull; Fact (Israel constructed the Bar-Lev Line along the Suez Canal and established permanent settlements in Sinai, Golan, and the West Bank) &bull; Consequence (Convinced Egyptian President Anwar Sadat that diplomacy had failed, leading directly to the coordinated surprise attack on Yom Kippur 1973).',
       stems:
-        'One major consequence of Operation Badr was... &bull; Specifically, on the afternoon of 6 October 1973... &bull; Consequently, this resulted in...',
+        'One major consequence was... &bull; Specifically, as Israel consolidated control by building the Bar-Lev Line... &bull; Consequently, this convinced Arab leaders that...',
     },
     consequenceB: {
-      question: 'Explain one consequence of the OPEC oil embargo in October 1973. [4 marks]',
+      question: 'Explain one consequence of the Yom Kippur War (1973). [4 marks]',
       guidance:
-        'Point (Global energy crisis and quadrupling of world crude oil prices) &bull; Fact (Arab oil states cut output 5% monthly and embargoed the US and Netherlands; oil rose from $3 to $12 a barrel) &bull; Consequence (Caused inflation, fuel queues, and economic distress in the West, forcing the US into active peace mediation).',
+        'Point (Shattered the myth of Israeli invincibility and triggered the global energy crisis) &bull; Fact (Arab states launched an oil embargo quadrupling crude oil prices; Israel suffered heavy casualties before counter-crossing the canal) &bull; Consequence (Forced the United States and Israel to recognise that military superiority alone could not guarantee security, paving the way for peace negotiations).',
       stems:
-        'One major consequence was... &bull; Specifically, when Arab OPEC oil ministers enacted the embargo... &bull; Consequently, this directly forced...',
+        'One major consequence was... &bull; Specifically, the initial surprise attack on 6 October 1973... &bull; Consequently, the aftermath of the war resulted in...',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
       type: 'narrative_8',
       tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
-      stem: 'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]',
+      stem: 'Write a narrative account analysing the key events of the Yom Kippur War (1973) and its aftermath. [8 marks]',
       stimulus: ['The surprise attack on 6 October 1973', 'The OPEC oil embargo'],
       structureStrip: [
         {
@@ -550,14 +539,14 @@ const kt2Configs = [
           text: 'Explain massive US emergency airlift (Nickel Grass) enabling General Sharon’s armored division to counter-cross the canal and encircle Egypt’s 3rd Army.',
         },
         {
-          col: '3. PHASE 3: OIL WEAPON & CEASEFIRE',
+          col: '3. PHASE 3: OIL WEAPON & AFTERMATH',
           text: 'Explain Arab OPEC oil embargo quadrupling world oil prices, superpower nuclear DEFCON 3 tension, and Henry Kissinger securing a UN ceasefire on 24 October.',
         },
       ],
       connectives:
-        'The war began on 6 October 1973 when Egypt and Syria launched... &bull; This coordinated assault achieved tactical surprise because... &bull; As early losses threatened Israel, the United States... &bull; Consequently, General Sharon was able to... &bull; In response, Arab oil nations deployed the oil weapon by... &bull; Ultimately, this forced...',
+        'The war began on 6 October 1973 when Egypt and Syria launched... &bull; This coordinated assault achieved tactical surprise because... &bull; As early losses threatened Israel, the United States... &bull; Consequently, General Sharon was able to... &bull; In response, Arab oil nations deployed the oil weapon by... &bull; Ultimately, the aftermath resulted in...',
       wordBank:
-        'Operation Badr &bull; Bar-Lev Line &bull; water monitors &bull; SAM-6 missiles &bull; Golan Heights &bull; Operation Nickel Grass &bull; Ariel Sharon &bull; Third Army encirclement &bull; OPEC oil embargo &bull; DEFCON 3 &bull; Henry Kissinger',
+        'Yom Kippur War (1973) &bull; Bar-Lev Line &bull; water monitors &bull; SAM-6 missiles &bull; Golan Heights &bull; Operation Nickel Grass &bull; Ariel Sharon &bull; Third Army encirclement &bull; OPEC oil embargo &bull; DEFCON 3 &bull; Henry Kissinger',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 2.5). In Milestone 6, sketch the water-monitor breach of the Bar-Lev Line and the OPEC oil pipeline embargo valve.',
     },
@@ -580,22 +569,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
-    /* Print Offset for Saddle-Stitch Booklet Binding (3mm alternating inner margin) */
+    /* Uniform Page Margins for Booklet Imposition & Printing */
     @page {
       size: A4 portrait;
-      margin: 10mm 10mm 12mm 10mm;
-    }
-    @page:left {
-      margin-top: 10mm;
-      margin-bottom: 12mm;
-      margin-left: 7mm;
-      margin-right: 13mm; /* 3mm inner gutter on right for verso staple fold */
-    }
-    @page:right {
-      margin-top: 10mm;
-      margin-bottom: 12mm;
-      margin-left: 13mm; /* 3mm inner gutter on left for recto staple fold */
-      margin-right: 7mm;
+      margin: 10mm 10mm 10mm 10mm;
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
@@ -624,13 +601,9 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       background: #ffffff;
       box-sizing: border-box;
     }
-    .verso-page {
-      padding-left: 4mm;
-      padding-right: 8mm;
-    }
+    .verso-page,
     .recto-page {
-      padding-left: 8mm;
-      padding-right: 4mm;
+      padding: 4mm 6mm;
     }
     .page-body-full {
       flex: 1;
@@ -1169,71 +1142,73 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
-  <!-- Zero Extraneous Gaps • Pushed Up to Top • 15 Ruled Writing Lines   -->
+  <!-- Docked 3-Row Scaffolding Block (Zero Gaps) • 16 Writing Lines       -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+      <!-- Exam Header (Top of Page) -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${rx.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
           Extended Writing Assessment &bull; 8 Marks
         </span>
       </div>
 
-      <!-- Question Stem & Stimulus/Focus Box (Pushed Up, Minimal Margin) -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 1px; line-height: 1.25;">
-          ${rx.stem}
+      <!-- Unified 3-Row Scaffolding Block (Zero Inter-Row Gaps • Docked Directly Below Header) -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-top: 1px; margin-bottom: 2px; background: #ffffff;">
+        
+        <!-- Row 1: Question Stem & Stimulus / Analytical Focus -->
+        <div style="padding: 2.5px 6px; border-bottom: 1px solid #000000; background: #ffffff;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            ${rx.stem}
+          </div>
+          ${
+            rx.type === 'narrative_8'
+              ? `
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15;">
+            <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
+          </div>
+          `
+              : `
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15;">
+            <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
+          </div>
+          `
+          }
         </div>
-        ${
-          rx.type === 'narrative_8'
-            ? `
-        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
-          <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]}<br>
-          <em>You must also use information of your own.</em>
-        </div>
-        `
-            : `
-        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.2;">
-          <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
-        </div>
-        `
-        }
-      </div>
 
-      <!-- 3-Column Planning Structure Strip (Pushed Up) -->
-      <div style="margin-bottom: 2px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+        <!-- Row 2: 3-Column Planning Structure Strip (Flush Directly Beneath Row 1) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #fafafa;">
           ${rx.structureStrip
             .map(
-              (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 2px 4px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #000000; line-height: 1.15; display: block;">${strip.text}</span>
+              (strip, sIdx) => `
+          <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.1pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
           `,
             )
             .join('')}
         </div>
+
+        <!-- Row 3: Connectives & Key Vocabulary Bank (Flush Directly Beneath Row 2) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
+          <div style="padding: 2px 5px; border-right: 1px solid #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives}</span>
+          </div>
+          <div style="padding: 2px 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Connectives & Key Vocabulary Bank (Pushed Up) -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; background: #ffffff; margin-bottom: 2px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; line-height: 1.15; display: block;">${rx.connectives}</span>
-        </div>
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; display: block;">${rx.wordBank}</span>
-        </div>
-      </div>
-
-      <!-- Ruled Task Lines for Extended Writing (15 Fixed Lines for 3 Full Paragraphs) -->
+      <!-- Ruled Task Lines for Extended Writing (16 Thick Black Lines) -->
       <div style="margin-bottom: 2px;">
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1250,14 +1225,15 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
+        <div class="task-line"></div>
       </div>
 
-      <!-- Clean Tidy Timeline Mission Box -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #fdfdfd; margin-top: 1px;">
+      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #000000; line-height: 1.2;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.1pt; color: #000000; line-height: 1.2;">
           ${rx.timelineMission}
         </div>
       </div>
@@ -1414,10 +1390,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #000000;">
-            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
+            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant 20-Question Retrieval Practice
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; font-weight: 700;">
-            Scan with smartphone camera to open live interactive self-marking quizzes
+            Scan with smartphone camera to open live interactive 20-question self-marking quizzes
           </span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
@@ -1444,7 +1420,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
               Scan to Quiz
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
+              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]
             </div>
           </div>
           `;
