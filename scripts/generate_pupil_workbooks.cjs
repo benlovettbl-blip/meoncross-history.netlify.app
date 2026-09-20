@@ -265,10 +265,13 @@ const cmeWarNarrativeConfigs = {
     title: 'GCSE Narrative Account: The Six Day War (June 1967)',
     question:
       'Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]',
-    stimulus: ['Operation Focus (5 June 1967)', 'The capture of East Jerusalem (7 June 1967)'],
+    stimulus: [
+      'The Pre-emptive Dawn Air Strike (5 June 1967)',
+      'The capture of East Jerusalem (7 June 1967)',
+    ],
     events: [
       'Nasser expels UNEF peacekeepers from Sinai and blockades the Straits of Tiran.',
-      'Operation Focus: Israeli Air Force destroys 300+ Egyptian aircraft in three hours.',
+      'Pre-emptive Strike: Israeli Air Force destroys 300+ Egyptian aircraft in three hours.',
       'Israeli armoured divisions shatter Egyptian defensive positions across the Sinai.',
       'Jordan shells West Jerusalem; IDF paratroopers storm and capture the Old City.',
       'Israeli infantry scale the Syrian volcanic ramparts to capture the Golan Heights.',
@@ -277,7 +280,7 @@ const cmeWarNarrativeConfigs = {
     keywords: [
       'UNEF Expulsion',
       'Straits of Tiran',
-      'Operation Focus (Moked)',
+      'Pre-emptive Strike',
       'General Moshe Dayan',
       'Air Supremacy',
       'Sinai Tank Battles',
@@ -288,7 +291,7 @@ const cmeWarNarrativeConfigs = {
     ],
     phases: [
       {
-        label: 'Phase 1: Diplomatic Escalation & Operation Focus Pre-emptive Strike (5 June 1967)',
+        label: 'Phase 1: Diplomatic Escalation & Pre-emptive Dawn Air Strike (5 June 1967)',
         lines: 7,
       },
       {
@@ -296,7 +299,7 @@ const cmeWarNarrativeConfigs = {
         lines: 7,
       },
       {
-        label: 'Phase 3: Ceasefire, Tripled Territory & The Khartoum "Three Nos" Resolution',
+        label: 'Phase 3: Ceasefire, Quadrupled Territory & The Khartoum "Three Nos" Resolution',
         lines: 7,
       },
     ],
@@ -305,10 +308,13 @@ const cmeWarNarrativeConfigs = {
     title: 'GCSE Narrative Account: The Yom Kippur War (October 1973)',
     question:
       'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]',
-    stimulus: ['Operation Badr (6 October 1973)', 'The US and Soviet arms airlifts'],
+    stimulus: [
+      'The Crossing of the Suez Canal (6 October 1973)',
+      'The US and Soviet arms airlifts',
+    ],
     events: [
       'Sadat expels 15,000 Soviet advisers to prepare an independent military strategy.',
-      'Operation Badr: Egyptian troops use water monitors to breach the Bar-Lev Line.',
+      'Surprise Assault: Egyptian troops use water monitors to breach the Bar-Lev Line.',
       'Soviet SAM-6 missile umbrellas inflict devastating losses on the Israeli Air Force.',
       'IDF reserves mobilize, halt the Syrian tank surge at the Valley of Tears, and counter-attack.',
       'General Ariel Sharon leads tanks across the Suez Canal at the Chinese Farm.',
@@ -316,20 +322,19 @@ const cmeWarNarrativeConfigs = {
     ],
     keywords: [
       'Anwar Sadat',
-      'Operation Badr (6 Oct)',
+      'Suez Crossing (6 Oct)',
       'Bar-Lev Line',
       'Water Monitors',
       'SAM-6 Missiles',
       'Valley of Tears',
       'Chinese Farm (Suez Crossing)',
-      'Operation Nickel Grass',
+      'Emergency US Airlift',
       'OPEC Oil Embargo ($3 to $12)',
       'Agranat Commission',
     ],
     phases: [
       {
-        label:
-          'Phase 1: Operation Badr Surprise Attack & The Breaching of the Bar-Lev Line (6–8 Oct 1973)',
+        label: 'Phase 1: Surprise Attack & The Breaching of the Bar-Lev Line (6–8 Oct 1973)',
         lines: 7,
       },
       {
@@ -983,11 +988,29 @@ function generateCmeWarTimelineCanvas(lesson) {
     cfg = cmeWarNarrativeConfigs.lesson_2;
   else if (lesson.id === 'lesson_4' || (lesson.title && lesson.title.includes('KT 1.3')))
     cfg = cmeWarNarrativeConfigs.lesson_4;
-  else if (lesson.id === 'lesson_5' || (lesson.title && lesson.title.includes('KT 2.1')))
+  else if (
+    lesson.id === 'lesson_5' ||
+    lesson.id === 'lesson_7' ||
+    (lesson.title &&
+      (lesson.title.includes('KT 2.1') ||
+        lesson.title.includes('KT 2.2') ||
+        lesson.title.includes('Six Day War')))
+  )
     cfg = cmeWarNarrativeConfigs.lesson_5;
-  else if (lesson.id === 'lesson_7' || (lesson.title && lesson.title.includes('KT 2.3')))
+  else if (
+    lesson.id === 'lesson_7' ||
+    lesson.id === 'lesson_10' ||
+    (lesson.title &&
+      (lesson.title.includes('KT 2.3') ||
+        lesson.title.includes('KT 2.5') ||
+        lesson.title.includes('Yom Kippur War')))
+  )
     cfg = cmeWarNarrativeConfigs.lesson_7;
-  else if (lesson.id === 'lesson_9' || (lesson.title && lesson.title.includes('KT 3.2')))
+  else if (
+    lesson.id === 'lesson_9' ||
+    lesson.id === 'lesson_12' ||
+    (lesson.title && (lesson.title.includes('KT 3.2') || lesson.title.includes('Lebanon')))
+  )
     cfg = cmeWarNarrativeConfigs.lesson_9;
 
   if (!cfg) return '';

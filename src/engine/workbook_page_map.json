@@ -56,41 +56,53 @@
       "unitId": "cme_new",
       "lessonIndex": 3
     },
-    "lesson_5": {
+    "lesson_6": {
       "page": 3,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 4
     },
-    "lesson_6": {
-      "page": 12,
+    "lesson_7": {
+      "page": 9,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 5
     },
-    "lesson_7": {
-      "page": 18,
+    "lesson_8": {
+      "page": 15,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 6
     },
-    "lesson_8": {
-      "page": 3,
-      "booklet": "Key Topic 3 Booklet",
+    "lesson_9": {
+      "page": 21,
+      "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 7
     },
-    "lesson_9": {
-      "page": 10,
-      "booklet": "Key Topic 3 Booklet",
+    "lesson_10": {
+      "page": 27,
+      "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 8
     },
-    "lesson_10": {
-      "page": 18,
+    "lesson_11": {
+      "page": 3,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 9
+    },
+    "lesson_12": {
+      "page": 10,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 10
+    },
+    "lesson_13": {
+      "page": 18,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 11
     }
   },
   "cold_war": {

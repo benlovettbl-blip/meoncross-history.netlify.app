@@ -12,17 +12,17 @@ const unitPdfConfigs = {
     {
       booklet: 'Key Topic 1 Booklet',
       file: 'cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
-      filter: (l, i) => i < 4,
+      filter: (l, i) => (l.title || '').includes('KT 1') || (l.title || '').includes('KT1'),
     },
     {
       booklet: 'Key Topic 2 Booklet',
       file: 'cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
-      filter: (l, i) => i >= 4 && i < 7,
+      filter: (l, i) => (l.title || '').includes('KT 2') || (l.title || '').includes('KT2'),
     },
     {
       booklet: 'Key Topic 3 Booklet',
       file: 'cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
-      filter: (l, i) => i >= 7,
+      filter: (l, i) => (l.title || '').includes('KT 3') || (l.title || '').includes('KT3'),
     },
   ],
   cold_war: [{ booklet: 'Pupil Workbook', file: 'cold_war_pupil_workbook_FINAL_V17.pdf' }],
