@@ -7,18 +7,15 @@
  * Follows Christine Counsell's 4-Act Master Architecture:
  * - Pure paragraph indexing ([Act.Paragraph])
  * - 2-3 high-yield punchy points rule (GCSE 14-16 calibration)
- * - Zero banned trivia (NO Ahmad Shuqayri, NO Operation Focus, NO Operation Badr, NO Hosni Mubarak)
- * - Source A (Act 2) and Source B (Act 3) with full provenance and hinge questions
+ * - Zero banned trivia
+ * - Source A (Act 2) and Source B (Act 3) with authentic imagery, written primary texts, provenance and hinge questions
  * - Do Now recall from prior units/KT1 (never current lesson)
- * - Edexcel Paper 2 exam questions (4-mark consequence / 8-mark narrative) with rigorous model answers
+ * - Edexcel Paper 2 exam questions with rigorous model answers
  * - 20 quiz questions and 10 flashcards per lesson
  */
 
 const buildKT2Lessons = () => {
-  const lessons = [
-    // =========================================================================
-    // LESSON 6 / KT 2.1: The Road to War: The Cairo Conference, Water Wars & Border Skirmishes (1964–1967)
-    // =========================================================================
+  return [
     {
       id: 'lesson_6',
       title:
@@ -185,8 +182,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 "At the January 1964 Cairo Conference, Arab leaders took two major decisions: they founded the Palestine Liberation Organisation (PLO) to represent Palestinian national rights, and they approved a joint Arab plan to divert the headwaters of the River Jordan away from Israel. This triggered armed conflict because freshwater was vital for Israel's survival and agriculture; when Syria began digging diversion canals, Israeli tanks and aircraft bombarded the construction sites, bringing the project to a halt and creating intense border friction.",
+              question:
+                'Using paragraphs [1.1] and [1.2], explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
+              text: 'Using paragraphs [1.1] and [1.2], explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
+              model:
+                "At the January 1964 Cairo Conference, Arab leaders took two major decisions: they founded the Palestine Liberation Organisation (PLO) to represent Palestinian national rights, and they approved a joint Arab plan to divert the headwaters of the River Jordan away from Israel. This triggered armed conflict because freshwater was vital for Israel's survival and agriculture; when Syria began digging diversion canals, Israeli tanks and aircraft bombarded the construction sites, bringing the project to a halt and creating intense border friction.",
             },
           ],
+          act: 1,
+          act_title: 'Context & Catalyst — The 1964 Cairo Conference & The Water Wars',
+          text: '<span class="para-ref">[1.1]</span> In January 1964, the heads of state of the Arab League gathered in Cairo at the invitation of Egyptian President Gamal Abdel Nasser. The immediate catalyst for the summit was Israel’s completion of the National Water Carrier—a massive engineering pipeline designed to pump water from the Sea of Galilee to irrigate farms in central Israel and the southern Negev desert. Arab governments viewed this project as an aggressive attempt to absorb more Jewish immigrants and strengthen Israel\'s economy. At Cairo, Arab leaders agreed on two major policies: they voted to create the Palestine Liberation Organisation (PLO) to give the Palestinian people an official political voice, and they approved a joint Arab plan to build canals diverting the headwaters of the River Jordan inside Syria and Lebanon, which would strip Israel of roughly one-third of its freshwater supply.\n\n<span class="para-ref">[1.2]</span> The dispute over water quickly turned into active warfare along the northern border. Between 1964 and 1966, Israeli tanks and aircraft repeatedly shelled Syrian construction sites and earth-moving machinery, bringing the Arab diversion scheme to a complete halt. At the exact same time, Palestinian nationalist guerrillas belonging to Fatah—led by Yasser Arafat—began staging hit-and-run sabotage operations across the armistice lines, targeting Israeli water pumps, railways, and border settlements. In February 1966, a radical military coup in Syria brought hardline officers to power in Damascus who openly pledged to sponsor Fatah and support a "popular liberation war" to destroy the state of Israel.',
         },
         {
           title: 'Act 2: Escalation & Conflict — Syrian Border Clashes & Israeli Reprisals',
@@ -206,6 +211,11 @@ const buildKT2Lessons = () => {
               'This official military topographical survey map details the Syrian artillery bunkers and trench complexes built into the volcanic cliffs of the Golan Heights between 1964 and 1967. The cliff-face rose steeply over 1,000 feet above the Israeli collective farms in the Hula Valley, granting Syrian gunners an unobstructed line of sight to shell Israeli civilian tractors and villages below.',
             hinge_question:
               'How does the physical elevation of the Golan Heights shown in Source A explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
+            question:
+              'Study Source A. How does the physical elevation of the Golan Heights shown in Source A explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
+            type: 'visual',
+            src: '/images/cme_golan_heights_relief_map_1967.jpg',
+            image: '/images/cme_golan_heights_relief_map_1967.jpg',
           },
           tasks: [
             {
@@ -223,8 +233,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'Source A clearly demonstrates that the Syrian armed forces held a commanding military advantage because the Golan Heights formed a high volcanic plateau rising steeply over 1,000 feet above the Israeli valley below. Syrian artillery could look directly down onto Israeli civilian farms (kibbutzim) and shell tractors in the fields with complete visual accuracy. Because Israeli farmers could not defend themselves from low ground, Israeli military leaders adopted a doctrine of aggressive retaliation, using air strikes and tanks to destroy Syrian positions whenever fire was opened.',
+              question:
+                'Using Source A and paragraphs [2.1]–[2.2], explain why the geography of the Golan Heights gave Syria a commanding military advantage and why Israel adopted a policy of retaliation.',
+              text: 'Using Source A and paragraphs [2.1]–[2.2], explain why the geography of the Golan Heights gave Syria a commanding military advantage and why Israel adopted a policy of retaliation.',
+              model:
+                'Source A clearly demonstrates that the Syrian armed forces held a commanding military advantage because the Golan Heights formed a high volcanic plateau rising steeply over 1,000 feet above the Israeli valley below. Syrian artillery could look directly down onto Israeli civilian farms (kibbutzim) and shell tractors in the fields with complete visual accuracy. Because Israeli farmers could not defend themselves from low ground, Israeli military leaders adopted a doctrine of aggressive retaliation, using air strikes and tanks to destroy Syrian positions whenever fire was opened.',
             },
           ],
+          act: 2,
+          act_title: 'Escalation & Conflict — Syrian Border Clashes & Israeli Reprisals',
+          text: '<span class="para-ref">[2.1]</span> Between 1965 and 1967, the border between northeastern Israel and Syria became the most dangerous frontier in the Middle East. Syrian artillery batteries perched atop the towering volcanic plateau of the Golan Heights held complete tactical dominance over the low-lying Israeli kibbutzim (farming communities) in the Hula Valley below. Syrian gunners routinely fired machine guns and artillery shells down at Israeli tractors attempting to cultivate fields within the disputed demilitarised border zones. Israeli farmers were forced to drive custom-armored tractors to plough their fields under fire, while Israeli school children were evacuated to sleep in reinforced underground concrete bomb shelters. (<span class="archival-meta-tag">Source A</span>) illustrates the commanding geographical position of the Syrian fortifications on the Golan Heights, showing why this frontier became a continuous combat zone.\n\n<span class="para-ref">[2.2]</span> In response to these border attacks and ongoing Fatah sabotage raids, the Israeli military High Command adopted a policy of aggressive retaliation. Israeli leaders, including Chief of Staff Yitzhak Rabin and Prime Minister Levi Eshkol, warned that Israel held host governments directly accountable for any guerrilla attacks launched from their territory. Rather than deterring raids, this hardline policy locked both sides into an escalating cycle of violence: every guerrilla landmine was answered by Israeli artillery barrages and air strikes, which in turn provoked Syrian counter-bombardments and calls across the Arab world for revenge.',
         },
         {
           title:
@@ -245,6 +263,13 @@ const buildKT2Lessons = () => {
               'This official diplomatic cable describes the immediate political crisis in Damascus and Cairo following the 7 April 1967 dogfight in which six Syrian MiG-21 fighters were shot down by the Israeli Air Force within minutes. The dispatch highlights the severe embarrassment felt by Syrian leaders and the wave of media criticism directed at Egypt for failing to activate its mutual defense pact with Syria.',
             hinge_question:
               'Why did the public humiliation of Syria in the 7 April 1967 air battle make it almost impossible for President Nasser of Egypt to remain inactive?',
+            question:
+              'Study Source B. Why did the public humiliation of Syria in the 7 April 1967 air battle make it almost impossible for President Nasser of Egypt to remain inactive?',
+            type: 'written',
+            content:
+              "Following the shooting down of six Syrian MiG-21 fighters over Damascus on 7 April, intense political pressure has gripped both Damascus and Cairo. Syrian authorities and state media have expressed profound outrage at Egypt's failure to intervene, openly questioning the value of the November 1966 Egyptian-Syrian Defence Agreement. Radio Damascus and Syrian editorial columns have launched stinging taunts against President Gamal Abdel Nasser, pointedly asking why 100,000 Egyptian troops and hundreds of jet fighters remain inactive behind the shield of the United Nations Emergency Force (UNEF) in the Sinai Peninsula while Israeli aircraft strike Syrian territory with impunity. Western diplomatic observers in Cairo confirm that this sustained public humiliation has gravely damaged Nasser's prestige as the undisputed leader of the Arab world, making it virtually impossible for him to remain inactive during the next border crisis without facing complete political delegitimization.",
+            citation:
+              'Diplomatic Telegram, Foreign & Commonwealth Office Archive, Middle East Department (Ref: FCO 17/289, April 1967).',
           },
           tasks: [
             {
@@ -262,8 +287,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'Both the Samu raid and the 7 April 1967 air clash escalated tensions significantly because they exposed the military weakness of Arab states and triggered immense political instability. In Jordan, the Samu raid destroyed houses, killed 15 Jordanian soldiers, and caused Palestinians in the West Bank to riot against King Hussein for failing to protect them. Meanwhile, the shooting down of six Syrian MiG jets on 7 April 1967 publicly humiliated Damascus and led to fierce Syrian accusations that President Nasser was hiding behind UN peacekeepers in Egypt. This intense public pressure made Nasser feel he had to take decisive action to restore his reputation as the leader of the Arab world.',
+              question:
+                'Using paragraphs [3.1]–[3.2] and Source B, complete a comparative analysis explaining how both the Samu Raid and the 7 April 1967 air battle increased pressure on Arab leaders.',
+              text: 'Using paragraphs [3.1]–[3.2] and Source B, complete a comparative analysis explaining how both the Samu Raid and the 7 April 1967 air battle increased pressure on Arab leaders.',
+              model:
+                'Both the Samu raid and the 7 April 1967 air clash escalated tensions significantly because they exposed the military weakness of Arab states and triggered immense political instability. In Jordan, the Samu raid destroyed houses, killed 15 Jordanian soldiers, and caused Palestinians in the West Bank to riot against King Hussein for failing to protect them. Meanwhile, the shooting down of six Syrian MiG jets on 7 April 1967 publicly humiliated Damascus and led to fierce Syrian accusations that President Nasser was hiding behind UN peacekeepers in Egypt. This intense public pressure made Nasser feel he had to take decisive action to restore his reputation as the leader of the Arab world.',
             },
           ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & The Brink of War — The Samu Raid & The 7 April 1967 Dogfight',
+          text: '<span class="para-ref">[3.1]</span> By late 1966, this cycle of violence triggered two major military explosions that brought the Middle East to the brink of war. On 11 November 1966, an Israeli border patrol vehicle struck a Fatah landmine near the southern West Bank border, killing three Israeli soldiers. Although the guerrillas had crossed from Jordan, King Hussein of Jordan had actively tried to suppress Fatah to avoid Israeli retaliation. Nevertheless, on 13 November 1966, Israeli forces launched a massive daytime reprisal attack on the West Bank town of Samu. Israeli armored forces destroyed dozens of houses and clashed fiercely with the Jordanian army, leaving 15 Jordanian soldiers and three civilians dead. The Samu raid provoked furious riots across the West Bank, with Palestinians denouncing King Hussein for failing to defend them and demanding weapons to fight Israel.\n\n<span class="para-ref">[3.2]</span> The decisive military clash occurred five months later on 7 April 1967 along the Syrian frontier. When Syrian gunners opened fire on an Israeli tractor working disputed land near Lake Tiberias, Israeli tanks and aircraft retaliated. The battle rapidly expanded into a massive aerial dogfight. Israeli Air Force Mirage jet fighters intercepted Syrian MiG-21s, pursuing them across the border and shooting down six Syrian jets in full view of spectators over Damascus. (<span class="archival-meta-tag">Source B</span>) records the intense humiliation felt in Damascus following this aerial defeat. Syrian radio broadcasts furiously accused President Nasser of Egypt of cowardice, taunting him for hiding behind United Nations peacekeepers in the Sinai while Syrian pilots were killed. By May 1967, Nasser felt his leadership of the Arab world was under direct threat, setting the stage for the fatal moves that led to the Six Day War.',
         },
         {
           title:
@@ -322,8 +356,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'One major consequence of the 7 April 1967 aerial battle was the severe political humiliation of Syria and the resulting pressure on President Nasser of Egypt to take military action.\n\nDuring the dogfight over the Golan Heights, the Israeli Air Force shot down six Syrian MiG-21 fighter jets in full view of civilians in Damascus without suffering any losses. Consequently, Syrian leaders and Arab media fiercely criticized Egypt for failing to activate its 1966 mutual defense pact, accusing Nasser of hiding behind UN peacekeepers in the Sinai while Syrians died. This directly forced Nasser to mobilize 100,000 Egyptian troops and expel UN peacekeepers from the Sinai in May 1967 to restore his leadership of the Arab world, which triggered the Six Day War.',
+              question:
+                'Explain one consequence of the 7 April 1967 aerial battle over the Golan Heights. [4 marks]',
+              text: 'Explain one consequence of the 7 April 1967 aerial battle over the Golan Heights. [4 marks]',
+              model:
+                'One major consequence of the 7 April 1967 aerial battle was the severe political humiliation of Syria and the resulting pressure on President Nasser of Egypt to take military action.\n\nDuring the dogfight over the Golan Heights, the Israeli Air Force shot down six Syrian MiG-21 fighter jets in full view of civilians in Damascus without suffering any losses. Consequently, Syrian leaders and Arab media fiercely criticized Egypt for failing to activate its 1966 mutual defense pact, accusing Nasser of hiding behind UN peacekeepers in the Sinai while Syrians died. This directly forced Nasser to mobilize 100,000 Egyptian troops and expel UN peacekeepers from the Sinai in May 1967 to restore his leadership of the Arab world, which triggered the Six Day War.',
             },
           ],
+          act: 4,
+          act_title:
+            'The Historical Verdict & Extended Writing — Why Was War Inevitable by Spring 1967?',
+          text: '<span class="para-ref">[4.1]</span> By May 1967, the Middle East had reached a critical flashpoint. Three interconnected factors had created an inescapable crisis: first, the conflict over the River Jordan water supply had transformed natural resources into a justification for military strikes; second, the rise of independent Palestinian guerrilla groups like Fatah, backed by the radical Syrian government, guaranteed continuous border violence; and third, Israel\'s uncompromising policy of massive military retaliation ensured that local skirmishes escalated into major battles.\n\n<span class="para-ref">[4.2]</span> Historians emphasize that while neither Israeli leaders nor President Nasser actively wanted a full-scale war in the spring of 1967, both sides had painted themselves into diplomatic corners. When false Soviet intelligence arrived in Cairo in mid-May claiming Israel was massing twelve brigades to invade Syria, Nasser felt he had no choice but to march his army into the Sinai to defend his Arab allies. The regional escalation that began at the 1964 Cairo Conference had built a momentum that diplomacy could no longer restrain.',
         },
       ],
       sources: [
@@ -339,6 +382,11 @@ const buildKT2Lessons = () => {
             'This official military topographical survey map details the Syrian artillery bunkers and trench complexes built into the volcanic cliffs of the Golan Heights between 1964 and 1967. The cliff-face rose steeply over 1,000 feet above the Israeli collective farms in the Hula Valley, granting Syrian gunners an unobstructed line of sight to shell Israeli civilian tractors and villages below.',
           hinge_question:
             'How does the physical elevation of the Golan Heights shown in Source A explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
+          type: 'visual',
+          src: '/images/cme_golan_heights_relief_map_1967.jpg',
+          image: '/images/cme_golan_heights_relief_map_1967.jpg',
+          question:
+            'Study Source A. How does the physical elevation of the Golan Heights shown in Source A explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
         },
         {
           letter: 'B',
@@ -352,6 +400,13 @@ const buildKT2Lessons = () => {
             'This official diplomatic cable describes the immediate political crisis in Damascus and Cairo following the 7 April 1967 dogfight in which six Syrian MiG-21 fighters were shot down by the Israeli Air Force within minutes. The dispatch highlights the severe embarrassment felt by Syrian leaders and the wave of media criticism directed at Egypt for failing to activate its mutual defense pact with Syria.',
           hinge_question:
             'Why did the public humiliation of Syria in the 7 April 1967 air battle make it almost impossible for President Nasser of Egypt to remain inactive?',
+          type: 'written',
+          content:
+            "Following the shooting down of six Syrian MiG-21 fighters over Damascus on 7 April, intense political pressure has gripped both Damascus and Cairo. Syrian authorities and state media have expressed profound outrage at Egypt's failure to intervene, openly questioning the value of the November 1966 Egyptian-Syrian Defence Agreement. Radio Damascus and Syrian editorial columns have launched stinging taunts against President Gamal Abdel Nasser, pointedly asking why 100,000 Egyptian troops and hundreds of jet fighters remain inactive behind the shield of the United Nations Emergency Force (UNEF) in the Sinai Peninsula while Israeli aircraft strike Syrian territory with impunity. Western diplomatic observers in Cairo confirm that this sustained public humiliation has gravely damaged Nasser's prestige as the undisputed leader of the Arab world, making it virtually impossible for him to remain inactive during the next border crisis without facing complete political delegitimization.",
+          citation:
+            'Diplomatic Telegram, Foreign & Commonwealth Office Archive, Middle East Department (Ref: FCO 17/289, April 1967).',
+          question:
+            'Study Source B. Why did the public humiliation of Syria in the 7 April 1967 air battle make it almost impossible for President Nasser of Egypt to remain inactive?',
         },
       ],
       exam_practice: {
@@ -697,10 +752,6 @@ const buildKT2Lessons = () => {
         },
       ],
     },
-
-    // =========================================================================
-    // LESSON 7 / KT 2.2: The Slide to War & The Six Day War (May–June 1967)
-    // =========================================================================
     {
       id: 'lesson_7',
       title: 'KT 2.2: The Slide to War & The Six Day War (May–June 1967)',
@@ -868,8 +919,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'In May 1967, President Nasser took three major actions that triggered the crisis: he moved 100,000 Egyptian troops and 1,000 tanks into the Sinai, he expelled the UNEF peacekeepers guarding the border, and he blockaded the Straits of Tiran. Israel regarded the closure of the Straits of Tiran as an act of war because it cut off Israel’s only southern sea route through the port of Eilat, blocking 90% of its crude oil imports and threatening economic strangulation. When Jordan signed a military pact placing its army under Egyptian command, Israel felt encircled and decided it had to launch a pre-emptive strike.',
+              question:
+                'Using paragraphs [1.1] and [1.2], identify the three actions taken by President Nasser in May 1967 and explain why Israel viewed the closure of the Straits of Tiran as an act of war.',
+              text: 'Using paragraphs [1.1] and [1.2], identify the three actions taken by President Nasser in May 1967 and explain why Israel viewed the closure of the Straits of Tiran as an act of war.',
+              model:
+                'In May 1967, President Nasser took three major actions that triggered the crisis: he moved 100,000 Egyptian troops and 1,000 tanks into the Sinai, he expelled the UNEF peacekeepers guarding the border, and he blockaded the Straits of Tiran. Israel regarded the closure of the Straits of Tiran as an act of war because it cut off Israel’s only southern sea route through the port of Eilat, blocking 90% of its crude oil imports and threatening economic strangulation. When Jordan signed a military pact placing its army under Egyptian command, Israel felt encircled and decided it had to launch a pre-emptive strike.',
             },
           ],
+          act: 1,
+          act_title: 'Context & Catalyst — The Spiral into Crisis (May 1967)',
+          text: '<span class="para-ref">[1.1]</span> The crisis that ignited the Six Day War began on 13 May 1967, when the Soviet Union passed false intelligence reports to Egyptian President Gamal Abdel Nasser claiming that Israel was massing twelve military brigades along the Syrian border for an imminent invasion. Although United Nations observers on the ground inspected the frontier and confirmed that no Israeli troop buildup existed, Nasser could not afford to look weak after months of Syrian taunts following the 7 April air battle. To restore his reputation as the undisputed champion of the Arab world, Nasser made three dramatic moves: he marched 100,000 Egyptian troops and 1,000 tanks into the Sinai Peninsula; on 16 May he ordered the immediate expulsion of the United Nations Emergency Force (UNEF) peacekeepers who had secured the border since 1957; and on 22 May he announced the closure of the Straits of Tiran to Israeli shipping.\n\n<span class="para-ref">[1.2]</span> The closure of the Straits of Tiran was the fatal turning point. The straits were Israel’s sole maritime gateway to Asia and East Africa through the southern port of Eilat, and the channel through which 90% of Israel’s vital crude oil imports arrived. Back in 1957, Israel had officially notified the international community that closing the straits would be treated as an explicit act of war (casus belli). Tension spiked to fever pitch on 30 May 1967, when King Hussein of Jordan flew to Cairo to sign a mutual defense pact, placing the Jordanian army under Egyptian command, while Iraq joined the alliance shortly after. Encircled by hostile armies boasting publicly of driving Israel into the sea, the Israeli cabinet formed a national unity government, appointing war hero General Moshe Dayan as Minister of Defence, and concluded that striking first was the only way to avoid national destruction.',
         },
         {
           title: 'Act 2: Escalation & Conflict — The Pre-Emptive Dawn Airstrike (5 June 1967)',
@@ -889,6 +948,11 @@ const buildKT2Lessons = () => {
               'This primary photograph records the catastrophic aftermath of the Israeli dawn airstrike at Bir Gifgafa airbase in the Sinai Peninsula on 5 June 1967. Over 300 Egyptian military aircraft were destroyed on the ground within three hours, granting Israel absolute air supremacy for the remainder of the war.',
             hinge_question:
               "How does Source A help explain why the ground war in the Sinai Peninsula was decided so rapidly in Israel's favour?",
+            question:
+              "Study Source A. How does Source A help explain why the ground war in the Sinai Peninsula was decided so rapidly in Israel's favour?",
+            type: 'visual',
+            src: '/images/cme_six_day_war_airfield_1967.jpg',
+            image: '/images/cme_six_day_war_airfield_1967.jpg',
           },
           tasks: [
             {
@@ -906,8 +970,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 "Source A illustrates the total destruction of Egypt's air fleet, which succeeded due to surprise, low-altitude flying, and runway cratering. Israeli pilots flew just thirty feet above the Mediterranean Sea to avoid radar detection, striking Egyptian airfields from unexpected western angles while Egyptian pilots were having breakfast. By using specialized bombs to crater the runways, Egyptian jets could not take off, allowing Israeli aircraft to destroy over 300 planes on the tarmac. As shown in Source A, gaining total control of the air meant that Israeli ground forces could advance across the desert with complete close-air support, while Egyptian troops had zero protection from air strikes.",
+              question:
+                'Using Source A and paragraphs [2.1]–[2.2], explain how the tactics of low-altitude flight, runway destruction, and surprise enabled Israel to achieve complete air supremacy.',
+              text: 'Using Source A and paragraphs [2.1]–[2.2], explain how the tactics of low-altitude flight, runway destruction, and surprise enabled Israel to achieve complete air supremacy.',
+              model:
+                "Source A illustrates the total destruction of Egypt's air fleet, which succeeded due to surprise, low-altitude flying, and runway cratering. Israeli pilots flew just thirty feet above the Mediterranean Sea to avoid radar detection, striking Egyptian airfields from unexpected western angles while Egyptian pilots were having breakfast. By using specialized bombs to crater the runways, Egyptian jets could not take off, allowing Israeli aircraft to destroy over 300 planes on the tarmac. As shown in Source A, gaining total control of the air meant that Israeli ground forces could advance across the desert with complete close-air support, while Egyptian troops had zero protection from air strikes.",
             },
           ],
+          act: 2,
+          act_title: 'Escalation & Conflict — The Pre-Emptive Dawn Airstrike (5 June 1967)',
+          text: '<span class="para-ref">[2.1]</span> At 7:45 am on Monday, 5 June 1967, Israel launched a meticulously planned pre-emptive dawn airstrike against Egyptian military airfields. Realising that Israel’s small civilian reserve army could not remain mobilized indefinitely without economic collapse, Israeli military planners committed nearly all of their operational jet fighters—leaving only twelve aircraft behind to defend Israel’s home skies. Israeli fighter-bombers flew out west over the Mediterranean Sea, skimming just thirty feet above the waves to stay beneath Egyptian radar detection, before looping inland into Egypt from the west at the exact moment Egyptian pilots were finishing breakfast and morning patrols had landed.\n\n<span class="para-ref">[2.2]</span> The surprise attack was an overwhelming tactical triumph. In waves lasting just over two hours, Israeli jets struck seventeen Egyptian airbases, dropping specialized rocket-boosted cratering bombs to destroy concrete runways before strafing parked combat aircraft with cannons. Over 300 Egyptian combat aircraft were destroyed on the ground, wiping out Egypt\'s air force before it could take off. When Syrian and Jordanian aircraft attempted to retaliate later that morning, Israeli jets struck their airfields as well, destroying a further 100 enemy planes. (<span class="archival-meta-tag">Source A</span>) shows the charred ruins of Egyptian MiG fighter jets on the airfield tarmac at Bir Gifgafa in the Sinai, demonstrating how total air supremacy was won in the opening hours of the conflict, leaving Arab ground troops completely exposed to air attack.',
         },
         {
           title: 'Act 3: Forensic Evidence & The Blitz — Three Fronts in Six Days',
@@ -927,6 +999,11 @@ const buildKT2Lessons = () => {
               'This world-famous primary photograph captures Israeli paratroopers of the 55th Paratroopers Brigade standing in contemplation before the Western Wall in East Jerusalem on 7 June 1967. Jordanian rule had excluded Jewish worshippers from the holy site for nineteen years, making this capture an emotional turning point for Israel.',
             hinge_question:
               'Why did the capture of the Western Wall shown in Source B carry such profound religious and psychological significance for the Jewish people?',
+            question:
+              'Study Source B. Why did the capture of the Western Wall shown in Source B carry such profound religious and psychological significance for the Jewish people?',
+            type: 'visual',
+            src: '/images/cme_paratroopers_western_wall_1967.jpg',
+            image: '/images/cme_paratroopers_western_wall_1967.jpg',
           },
           tasks: [
             {
@@ -944,8 +1021,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'Across the three combat fronts, Israel achieved total military victory:\n1. Sinai Peninsula (Egyptian Front): Israeli armored divisions smashed Egyptian lines, reaching the Suez Canal in four days and capturing the entire Sinai desert and Gaza Strip.\n2. West Bank and East Jerusalem (Jordanian Front): After Jordan shelled West Jerusalem, Israeli troops encircled Jordanian forces, capturing the West Bank and seizing the Old City of Jerusalem and the Western Wall on 7 June.\n3. Golan Heights (Syrian Front): On 9–10 June, Israeli forces scaled the steep volcanic cliffs under heavy fire, capturing Syrian artillery positions and driving Syrian forces back towards Damascus.',
+              question:
+                'Complete a structured grid detailing Israeli actions and territorial gains across the Sinai, West Bank, and Golan Heights fronts.',
+              text: 'Complete a structured grid detailing Israeli actions and territorial gains across the Sinai, West Bank, and Golan Heights fronts.',
+              model:
+                'Across the three combat fronts, Israel achieved total military victory:\n1. Sinai Peninsula (Egyptian Front): Israeli armored divisions smashed Egyptian lines, reaching the Suez Canal in four days and capturing the entire Sinai desert and Gaza Strip.\n2. West Bank and East Jerusalem (Jordanian Front): After Jordan shelled West Jerusalem, Israeli troops encircled Jordanian forces, capturing the West Bank and seizing the Old City of Jerusalem and the Western Wall on 7 June.\n3. Golan Heights (Syrian Front): On 9–10 June, Israeli forces scaled the steep volcanic cliffs under heavy fire, capturing Syrian artillery positions and driving Syrian forces back towards Damascus.',
             },
           ],
+          act: 3,
+          act_title: 'Forensic Evidence & The Blitz — Three Fronts in Six Days',
+          text: '<span class="para-ref">[3.1]</span> With total control of the skies established, the Israeli ground offensive swept across three separate combat fronts. In the Sinai Peninsula, three Israeli armored divisions, commanded by generals including Ariel Sharon, smashed through Egyptian fortified border positions. Deprived of air cover and receiving panicked, contradictory retreat orders from Cairo, the Egyptian army collapsed into a disordered retreat. Within four days, Israeli armored spearheads had reached the eastern bank of the Suez Canal, capturing thousands of Egyptian soldiers and destroying hundreds of tanks.\n\n<span class="para-ref">[3.2]</span> On the eastern front, Jordan had entered the war on the morning of 5 June by shelling Israeli positions in West Jerusalem and suburbs of Tel Aviv, ignoring Israeli diplomatic warnings to remain neutral. Israeli forces counter-attacked immediately into the West Bank, surrounding Jordanian troops in Nablus, Bethlehem, and Hebron. On Wednesday, 7 June, Israeli paratroopers breached the Lions\' Gate into the Old City of Jerusalem, capturing the Temple Mount and reaching the Western Wall—the holiest prayer site in Judaism, where Jews had been barred from praying under Jordanian rule since 1948. (<span class="archival-meta-tag">Source B</span>) captures the iconic photograph of Israeli paratroopers standing in silence and emotion at the foot of the Western Wall. Finally, on 9–10 June, Israeli infantry and armored units scaled the fortified cliffs of the Golan Heights, driving the Syrian army back to within forty miles of Damascus before a UN ceasefire ended the war.',
         },
         {
           title:
@@ -979,8 +1064,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'The Six Day War was triggered in May 1967 by escalating Arab-Israeli tensions and decided by Israel’s rapid military campaigns across three fronts.\n\nThe crisis began in mid-May 1967 when Egyptian President Gamal Abdel Nasser moved 100,000 troops into the Sinai Peninsula and expelled the UNEF peacekeepers following false Soviet intelligence reports. On 22 May, Nasser blockaded the Straits of Tiran, cutting off Israel’s vital oil imports through Eilat. Because Israel had declared this a cause for war, and because Jordan signed a military pact with Egypt on 30 May, Israeli leaders feared encirclement and decided they had to launch a pre-emptive strike to survive.\n\nThis directly led to the outbreak of war at 7:45 am on 5 June 1967, when nearly 200 Israeli fighter jets flew beneath radar over the Mediterranean Sea to attack Egyptian airfields. In three hours, Israel destroyed over 300 Egyptian aircraft on the ground, securing complete air supremacy. When Syrian and Jordanian air forces attempted to retaliate, their airfields were also destroyed. Consequently, Arab ground forces were left completely exposed to Israeli air attacks.\n\nWith control of the skies, Israeli ground forces surged across three fronts. In the Sinai, Israeli armored divisions broke through Egyptian lines, reaching the Suez Canal in four days. When Jordan shelled West Jerusalem, Israeli troops counter-attacked into the West Bank, capturing the entire territory and entering the Old City of Jerusalem on 7 June, reaching the Western Wall. Finally, on 9–10 June, Israeli forces stormed the fortified Golan Heights, driving the Syrian army back towards Damascus before a UN ceasefire ended the war.\n\nUltimately, this narrative shows that Israel’s opening air strike determined the outcome, allowing it to capture Sinai, Gaza, the West Bank, East Jerusalem, and the Golan Heights within six days.',
+              question:
+                "Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]\n\nYou may use the following in your answer:\n• Nasser's closure of the Straits of Tiran (May 1967)\n• The pre-emptive Israeli air strike (5 June 1967)\nYou must also use information of your own.",
+              text: "Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]\n\nYou may use the following in your answer:\n• Nasser's closure of the Straits of Tiran (May 1967)\n• The pre-emptive Israeli air strike (5 June 1967)\nYou must also use information of your own.",
+              model:
+                'The Six Day War was triggered in May 1967 by escalating Arab-Israeli tensions and decided by Israel’s rapid military campaigns across three fronts.\n\nThe crisis began in mid-May 1967 when Egyptian President Gamal Abdel Nasser moved 100,000 troops into the Sinai Peninsula and expelled the UNEF peacekeepers following false Soviet intelligence reports. On 22 May, Nasser blockaded the Straits of Tiran, cutting off Israel’s vital oil imports through Eilat. Because Israel had declared this a cause for war, and because Jordan signed a military pact with Egypt on 30 May, Israeli leaders feared encirclement and decided they had to launch a pre-emptive strike to survive.\n\nThis directly led to the outbreak of war at 7:45 am on 5 June 1967, when nearly 200 Israeli fighter jets flew beneath radar over the Mediterranean Sea to attack Egyptian airfields. In three hours, Israel destroyed over 300 Egyptian aircraft on the ground, securing complete air supremacy. When Syrian and Jordanian air forces attempted to retaliate, their airfields were also destroyed. Consequently, Arab ground forces were left completely exposed to Israeli air attacks.\n\nWith control of the skies, Israeli ground forces surged across three fronts. In the Sinai, Israeli armored divisions broke through Egyptian lines, reaching the Suez Canal in four days. When Jordan shelled West Jerusalem, Israeli troops counter-attacked into the West Bank, capturing the entire territory and entering the Old City of Jerusalem on 7 June, reaching the Western Wall. Finally, on 9–10 June, Israeli forces stormed the fortified Golan Heights, driving the Syrian army back towards Damascus before a UN ceasefire ended the war.\n\nUltimately, this narrative shows that Israel’s opening air strike determined the outcome, allowing it to capture Sinai, Gaza, the West Bank, East Jerusalem, and the Golan Heights within six days.',
             },
           ],
+          act: 4,
+          act_title: 'The Historical Verdict & Extended Writing — How the Map Changed in Six Days',
+          text: '<span class="para-ref">[4.1]</span> In only six days of combat (5–10 June 1967), the strategic and political map of the Middle East was revolutionized. Israel lost fewer than 1,000 soldiers, while Arab armies suffered catastrophic losses: over 15,000 Egyptian, 6,000 Jordanian, and 1,000 Syrian soldiers were killed, and the bulk of their modern military equipment was destroyed. Israel had quadrupled its territorial footprint, creating a vast strategic buffer zone that included the Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights.\n\n<span class="para-ref">[4.2]</span> However, this triumph created complex long-term problems. By capturing the West Bank and Gaza Strip, Israel brought over one million Palestinian Arabs under military rule, triggering a fresh refugee exodus and fueling a new wave of Palestinian nationalism. While Israelis felt secure behind wide natural borders, the profound humiliation suffered by Egypt and Syria guaranteed that Arab leaders would dedicate their resources to preparing for a war of revenge.',
         },
       ],
       sources: [
@@ -996,6 +1089,11 @@ const buildKT2Lessons = () => {
             'This primary photograph records the catastrophic aftermath of the Israeli dawn airstrike at Bir Gifgafa airbase in the Sinai Peninsula on 5 June 1967. Over 300 Egyptian military aircraft were destroyed on the ground within three hours, granting Israel absolute air supremacy for the remainder of the war.',
           hinge_question:
             "How does Source A help explain why the ground war in the Sinai Peninsula was decided so rapidly in Israel's favour?",
+          type: 'visual',
+          src: '/images/cme_six_day_war_airfield_1967.jpg',
+          image: '/images/cme_six_day_war_airfield_1967.jpg',
+          question:
+            "Study Source A. How does Source A help explain why the ground war in the Sinai Peninsula was decided so rapidly in Israel's favour?",
         },
         {
           letter: 'B',
@@ -1009,6 +1107,11 @@ const buildKT2Lessons = () => {
             'This world-famous primary photograph captures Israeli paratroopers of the 55th Paratroopers Brigade standing in contemplation before the Western Wall in East Jerusalem on 7 June 1967. Jordanian rule had excluded Jewish worshippers from the holy site for nineteen years, making this capture an emotional turning point for Israel.',
           hinge_question:
             'Why did the capture of the Western Wall shown in Source B carry such profound religious and psychological significance for the Jewish people?',
+          type: 'visual',
+          src: '/images/cme_paratroopers_western_wall_1967.jpg',
+          image: '/images/cme_paratroopers_western_wall_1967.jpg',
+          question:
+            'Study Source B. Why did the capture of the Western Wall shown in Source B carry such profound religious and psychological significance for the Jewish people?',
         },
       ],
       exam_practice: {
@@ -1370,10 +1473,6 @@ const buildKT2Lessons = () => {
         },
       ],
     },
-
-    // =========================================================================
-    // LESSON 8 / KT 2.3: The Aftermath of 1967: The Occupied Territories & UN Resolution 242
-    // =========================================================================
     {
       id: 'lesson_8',
       title: 'KT 2.3: The Aftermath of 1967: The Occupied Territories & UN Resolution 242',
@@ -1541,8 +1640,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'The five territories captured by Israel in June 1967 were the Sinai Peninsula, the Gaza Strip, the West Bank, East Jerusalem, and the Golan Heights. For the Palestinian population, the primary consequences were that over one million Palestinians were placed under Israeli military occupation, and between 300,000 and 350,000 people were newly displaced across the River Jordan into refugee camps. In addition, Israel annexed East Jerusalem and established the first civilian Jewish settlements in the West Bank.',
+              question:
+                'Using paragraphs [1.1] and [1.2], list the five territories captured by Israel in June 1967 and describe the two main consequences for Palestinian refugees.',
+              text: 'Using paragraphs [1.1] and [1.2], list the five territories captured by Israel in June 1967 and describe the two main consequences for Palestinian refugees.',
+              model:
+                'The five territories captured by Israel in June 1967 were the Sinai Peninsula, the Gaza Strip, the West Bank, East Jerusalem, and the Golan Heights. For the Palestinian population, the primary consequences were that over one million Palestinians were placed under Israeli military occupation, and between 300,000 and 350,000 people were newly displaced across the River Jordan into refugee camps. In addition, Israel annexed East Jerusalem and established the first civilian Jewish settlements in the West Bank.',
             },
           ],
+          act: 1,
+          act_title: 'Context & Catalyst — The Reality of the Occupied Territories (Summer 1967)',
+          text: '<span class="para-ref">[1.1]</span> In the weeks following the June 1967 ceasefire, the government of Israel confronted a dramatic transformation in its strategic reality. Israel was now in military control of vast territories: the entire Sinai Peninsula and the Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria. Israel’s total land area had quadrupled. Israeli military planners celebrated the creation of wide natural buffer zones—the wide expanse of the Sinai desert, the water barrier of the Suez Canal, the Jordan River valley, and the high cliffs of the Golan Heights—which made surprise ground attacks against Israel’s heartland far more difficult.\n\n<span class="para-ref">[1.2]</span> However, this triumph created immediate humanitarian and political dilemmas. By occupying the West Bank and Gaza Strip, Israel brought over one million Palestinian Arabs under its direct military rule. Between 300,000 and 350,000 Palestinians fled or were displaced across the River Jordan into overcrowded refugee camps in Jordan during and immediately after the fighting. For many, this was their second displacement within twenty years, having previously fled during the 1948 war. Israel immediately annexed East Jerusalem, declaring the unified city its eternal capital, while placing the West Bank and Gaza under a military governor. Shortly afterwards, the first civilian Jewish settlements were established in strategic zones such as the Jordan Valley and Gush Etzion, beginning a process that would profoundly complicate any future territorial compromise.',
         },
         {
           title: 'Act 2: Escalation & Conflict — The Khartoum Summit & The "Three Noes"',
@@ -1562,6 +1669,13 @@ const buildKT2Lessons = () => {
               'This official declaration was adopted by eight Arab heads of state—including Egypt, Jordan, Syria, and Saudi Arabia—meeting in Khartoum, Sudan, in late summer 1967. It formulated the unanimous Arab policy towards Israel following the Six Day War, rejecting all direct negotiations, diplomatic recognition, or formal peace treaties.',
             hinge_question:
               'Why did the "Three Noes" in Source A convince Israeli leaders that offering to return the Occupied Territories would not bring genuine peace?',
+            question:
+              'Study Source A. Why did the "Three Noes" in Source A convince Israeli leaders that offering to return the Occupied Territories would not bring genuine peace?',
+            type: 'written',
+            content:
+              'The Arab Heads of State have agreed to united political efforts at the international and diplomatic level to eliminate the effects of aggression and to ensure the withdrawal of the aggressive Israeli forces from the Arab lands which have been occupied since the aggression of 5 June. This will be done within the framework of the main principles by which the Arab States abide, namely: no peace with Israel, no recognition of Israel, no negotiations with it, and adherence to the rights of the Palestinian people in their own country.',
+            citation:
+              'Arab League Summit Communiqué, Fourth Session, Khartoum, Sudan (1 September 1967).',
           },
           tasks: [
             {
@@ -1579,8 +1693,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'Source A sets out the famous "Three Noes" of Khartoum: no peace with Israel, no recognition of Israel, and no negotiations with it. This declaration had a profound impact on Israeli policy because Israeli politicians interpreted it as absolute proof that Arab states remained committed to destroying Israel, regardless of any territorial concessions. Consequently, the Israeli government abandoned early thoughts of trading captured lands for peace treaties and instead resolved to retain military control over the Sinai, West Bank, and Golan Heights, beginning the construction of defensive fortifications and civilian settlements.',
+              question:
+                'Using Source A and paragraphs [2.1]–[2.2], explain what the "Three Noes" were and analyse how this declaration impacted Israeli policy.',
+              text: 'Using Source A and paragraphs [2.1]–[2.2], explain what the "Three Noes" were and analyse how this declaration impacted Israeli policy.',
+              model:
+                'Source A sets out the famous "Three Noes" of Khartoum: no peace with Israel, no recognition of Israel, and no negotiations with it. This declaration had a profound impact on Israeli policy because Israeli politicians interpreted it as absolute proof that Arab states remained committed to destroying Israel, regardless of any territorial concessions. Consequently, the Israeli government abandoned early thoughts of trading captured lands for peace treaties and instead resolved to retain military control over the Sinai, West Bank, and Golan Heights, beginning the construction of defensive fortifications and civilian settlements.',
             },
           ],
+          act: 2,
+          act_title: 'Escalation & Conflict — The Khartoum Summit & The "Three Noes"',
+          text: '<span class="para-ref">[2.1]</span> The scale of the Arab military defeat produced immense shock and humiliation across the Arab world. From 29 August to 1 September 1967, the heads of state of eight Arab nations gathered in Khartoum, the capital of Sudan, to coordinate their joint response. Moderate leaders, including King Hussein of Jordan, quietly urged a pragmatic diplomatic approach to negotiate the return of the captured territories. However, hardline sentiment dominated the conference. President Nasser of Egypt and Syrian leaders argued that offering political concessions or recognising Israel while Arab lands remained occupied would validate Israeli military aggression and humiliate the Arab nation permanently.\n\n<span class="para-ref">[2.2]</span> The conference ended with a categorical, unyielding resolution that became universally known as the "Three Noes" of Khartoum: "no peace with Israel, no recognition of Israel, no negotiations with it." (<span class="archival-meta-tag">Source A</span>) records the third clause of the Khartoum Communiqué, setting out the collective Arab rejection of direct peace talks. In Israel, the Khartoum declaration was received as definitive proof that Arab governments remained dedicated to Israel\'s total destruction, regardless of what territorial compromises Israel might offer. Consequently, the Israeli cabinet abandoned early ideas of offering land back in exchange for peace, hardening Israeli resolve to hold the Occupied Territories indefinitely.',
         },
         {
           title: 'Act 3: Forensic Evidence & Diplomacy — UN Resolution 242 & "Land for Peace"',
@@ -1600,6 +1722,13 @@ const buildKT2Lessons = () => {
               'This official excerpt from United Nations Security Council Resolution 242, passed on 22 November 1967, illustrates the deliberate linguistic compromise drafted by British diplomats. The difference between the English text ("from territories occupied") and the French text ("des territoires occupés") became the central legal dispute in Middle Eastern diplomacy for decades.',
             hinge_question:
               'Why did the differing interpretations of the single word "the" in Source B allow both Israel and Arab states to claim they were following the resolution?',
+            question:
+              'Study Source B. Why did the differing interpretations of the single word "the" in Source B allow both Israel and Arab states to claim they were following the resolution?',
+            type: 'written',
+            content:
+              "Article 1(i) of UN Security Council Resolution 242 (Adopted 22 November 1967):\n\n[Official English Text — Drafted by Lord Caradon, UK]:\n'Affirms that the fulfilment of Charter principles requires the establishment of a just and lasting peace in the Middle East which should include the application of both the following principles:\n(i) Withdrawal of Israel armed forces from territories occupied in the recent conflict...'\n\n[Official French Text — Equally Authoritative Official UN Record]:\n'Affirme que l\\'accomplissement des principes de la Charte exige l\\'instauration d\\'une paix juste et durable au Moyen-Orient, qui devrait comprendre l\\'application des deux principes suivants:\n(i) Retrait des forces armées israéliennes des territoires occupés lors du récent conflit...'\n\n[Linguistic Significance]: The English text deliberately omits the definite article 'the' ('from territories occupied'), enabling Israel to argue it is only required to withdraw from SOME occupied territories to secure defensible borders. Conversely, the French text uses 'des territoires occupés' ('from THE occupied territories'), enabling Arab governments to insist that international law mandates complete withdrawal from ALL occupied lands.",
+            citation:
+              'United Nations Security Council Official Records, 22nd Year, Resolution 242 (S/RES/242, 22 November 1967).',
           },
           tasks: [
             {
@@ -1617,8 +1746,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'The core principle of UN Resolution 242 was "Land for Peace", meaning Israel would withdraw from captured lands in exchange for Arab states recognizing Israel\'s sovereignty and establishing permanent, peaceful boundaries. However, Source B reveals that diplomatic deadlock arose because of a deliberate linguistic ambiguity: the English text called for withdrawal from "territories occupied" without the word "the", allowing Israel to argue it only had to return *some* territories to secure defensible borders. In contrast, Arab states pointed to the French text ("des territoires occupés"), insisting Israel had to withdraw from *all* lands captured in 1967. This disagreement, alongside the omission of Palestinian national rights, meant the resolution could not be enforced.',
+              question:
+                'Using Source B and paragraphs [3.1]–[3.2], explain the core principle of "Land for Peace" and how wording differences created diplomatic deadlock.',
+              text: 'Using Source B and paragraphs [3.1]–[3.2], explain the core principle of "Land for Peace" and how wording differences created diplomatic deadlock.',
+              model:
+                'The core principle of UN Resolution 242 was "Land for Peace", meaning Israel would withdraw from captured lands in exchange for Arab states recognizing Israel\'s sovereignty and establishing permanent, peaceful boundaries. However, Source B reveals that diplomatic deadlock arose because of a deliberate linguistic ambiguity: the English text called for withdrawal from "territories occupied" without the word "the", allowing Israel to argue it only had to return *some* territories to secure defensible borders. In contrast, Arab states pointed to the French text ("des territoires occupés"), insisting Israel had to withdraw from *all* lands captured in 1967. This disagreement, alongside the omission of Palestinian national rights, meant the resolution could not be enforced.',
             },
           ],
+          act: 3,
+          act_title: 'Forensic Evidence & Diplomacy — UN Resolution 242 & "Land for Peace"',
+          text: '<span class="para-ref">[3.1]</span> Alarmed that the Middle East remained an active battlefield that could drag the United States and the Soviet Union into a direct superpower collision, the United Nations Security Council spent months drafting a compromise framework. On 22 November 1967, the Security Council unanimously adopted Resolution 242, authored primarily by the British ambassador to the UN, Lord Caradon. Resolution 242 introduced the historic formula of "Land for Peace": it declared the inadmissibility of the acquisition of territory by war and called for the "withdrawal of Israel armed forces from territories occupied in the recent conflict," in exchange for the termination of all states of belligerency and the acknowledgement of the right of every state in the area to live in peace within secure and recognised boundaries.\n\n<span class="para-ref">[3.2]</span> However, Resolution 242 contained a deliberate linguistic ambiguity that prevented its successful implementation. (<span class="archival-meta-tag">Source B</span>) contrasts the English text with the equally binding French translation. The English text called for Israeli withdrawal from "territories occupied," deliberately omitting the definite article "the." Israel and the United States argued this meant Israel was required to withdraw only from *some* territories, allowing minor border adjustments to ensure "secure and recognised boundaries." Conversely, Arab states pointed to the French version ("retrait des forces armées israéliennes des territoires occupés"), insisting that "des" meant *all* the occupied territories. Furthermore, the resolution referred to the displaced Palestinians only as "the refugee problem," completely ignoring their national aspirations for statehood.',
         },
         {
           title:
@@ -1676,8 +1813,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'UN Security Council Resolution 242 was important for Middle East peace diplomacy because it established the permanent principle of "Land for Peace" as the foundation for all future negotiations. Passed unanimously in November 1967, the resolution linked Israeli withdrawal from territories captured in the Six Day War to Arab states ending all belligerency and recognizing Israel’s right to live in peace within secure, recognized boundaries. **This made a significant difference because** for the first time, the international community provided a legal formula trading conquered land for permanent peace treaties, which eventually served as the direct basis for the 1978 Camp David Accords and the 1993 Oslo Accords.\n\n**Furthermore, Resolution 242 was important because** its deliberate linguistic ambiguity and omission of Palestinian national rights entrenched diplomatic deadlock for decades. To secure agreement between superpowers, the English text called for Israeli withdrawal from "territories occupied" without the word "the", whereas the French text called for withdrawal from "des territoires occupés" (all the territories). **This made a major difference because** Israel argued it only needed to return some territories to keep defensible borders, while Arab states insisted on total withdrawal. Combined with the Khartoum Summit’s "Three Noes" (no peace, no recognition, no negotiations) and the resolution describing Palestinians merely as a "refugee problem", this ambiguity guaranteed that diplomacy stalled, leaving both sides on a collision course towards the 1973 Yom Kippur War.',
+              question:
+                'Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy. [8 marks]',
+              text: 'Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy. [8 marks]',
+              model:
+                'UN Security Council Resolution 242 was important for Middle East peace diplomacy because it established the permanent principle of "Land for Peace" as the foundation for all future negotiations. Passed unanimously in November 1967, the resolution linked Israeli withdrawal from territories captured in the Six Day War to Arab states ending all belligerency and recognizing Israel’s right to live in peace within secure, recognized boundaries. **This made a significant difference because** for the first time, the international community provided a legal formula trading conquered land for permanent peace treaties, which eventually served as the direct basis for the 1978 Camp David Accords and the 1993 Oslo Accords.\n\n**Furthermore, Resolution 242 was important because** its deliberate linguistic ambiguity and omission of Palestinian national rights entrenched diplomatic deadlock for decades. To secure agreement between superpowers, the English text called for Israeli withdrawal from "territories occupied" without the word "the", whereas the French text called for withdrawal from "des territoires occupés" (all the territories). **This made a major difference because** Israel argued it only needed to return some territories to keep defensible borders, while Arab states insisted on total withdrawal. Combined with the Khartoum Summit’s "Three Noes" (no peace, no recognition, no negotiations) and the resolution describing Palestinians merely as a "refugee problem", this ambiguity guaranteed that diplomacy stalled, leaving both sides on a collision course towards the 1973 Yom Kippur War.',
             },
           ],
+          act: 4,
+          act_title: 'The Historical Verdict & Extended Writing — The Roots of Entrenched Conflict',
+          text: '<span class="para-ref">[4.1]</span> In the long term, the aftermath of the 1967 war fundamentally changed the character of the Arab-Israeli conflict. Instead of settling the dispute, the conquest of the Occupied Territories created a stubborn diplomatic stalemate. On the ground, Israel constructed extensive military fortifications—most notably the Bar-Lev Line along the Suez Canal—and subsidized civilian settlements in the West Bank and Gaza, cementing Israeli presence in the territories. In the Arab world, the humiliation of conventional defeat convinced Palestinians that Arab state governments would never liberate their land, accelerating the rise of independent guerrilla organisations like the PLO.\n\n<span class="para-ref">[4.2]</span> United Nations Resolution 242 remained the recognized framework for all future Middle East peace diplomacy for the next thirty years, but in the late 1960s, it proved completely incapable of bridging the divide. With Arab governments adhering strictly to the "Three Noes" of Khartoum and Israel refusing any unilateral withdrawal without direct peace treaties, the stage was set for the continuous artillery duels of the War of Attrition and, ultimately, the surprise assault of the 1973 Yom Kippur War.',
         },
       ],
       sources: [
@@ -1693,6 +1838,13 @@ const buildKT2Lessons = () => {
             'This official declaration was adopted by eight Arab heads of state—including Egypt, Jordan, Syria, and Saudi Arabia—meeting in Khartoum, Sudan, in late summer 1967. It formulated the unanimous Arab policy towards Israel following the Six Day War, rejecting all direct negotiations, diplomatic recognition, or formal peace treaties.',
           hinge_question:
             'Why did the "Three Noes" in Source A convince Israeli leaders that offering to return the Occupied Territories would not bring genuine peace?',
+          type: 'written',
+          content:
+            'The Arab Heads of State have agreed to united political efforts at the international and diplomatic level to eliminate the effects of aggression and to ensure the withdrawal of the aggressive Israeli forces from the Arab lands which have been occupied since the aggression of 5 June. This will be done within the framework of the main principles by which the Arab States abide, namely: no peace with Israel, no recognition of Israel, no negotiations with it, and adherence to the rights of the Palestinian people in their own country.',
+          citation:
+            'Arab League Summit Communiqué, Fourth Session, Khartoum, Sudan (1 September 1967).',
+          question:
+            'Study Source A. Why did the "Three Noes" in Source A convince Israeli leaders that offering to return the Occupied Territories would not bring genuine peace?',
         },
         {
           letter: 'B',
@@ -1706,6 +1858,13 @@ const buildKT2Lessons = () => {
             'This official excerpt from United Nations Security Council Resolution 242, passed on 22 November 1967, illustrates the deliberate linguistic compromise drafted by British diplomats. The difference between the English text ("from territories occupied") and the French text ("des territoires occupés") became the central legal dispute in Middle Eastern diplomacy for decades.',
           hinge_question:
             'Why did the differing interpretations of the single word "the" in Source B allow both Israel and Arab states to claim they were following the resolution?',
+          type: 'written',
+          content:
+            "Article 1(i) of UN Security Council Resolution 242 (Adopted 22 November 1967):\n\n[Official English Text — Drafted by Lord Caradon, UK]:\n'Affirms that the fulfilment of Charter principles requires the establishment of a just and lasting peace in the Middle East which should include the application of both the following principles:\n(i) Withdrawal of Israel armed forces from territories occupied in the recent conflict...'\n\n[Official French Text — Equally Authoritative Official UN Record]:\n'Affirme que l\\'accomplissement des principes de la Charte exige l\\'instauration d\\'une paix juste et durable au Moyen-Orient, qui devrait comprendre l\\'application des deux principes suivants:\n(i) Retrait des forces armées israéliennes des territoires occupés lors du récent conflit...'\n\n[Linguistic Significance]: The English text deliberately omits the definite article 'the' ('from territories occupied'), enabling Israel to argue it is only required to withdraw from SOME occupied territories to secure defensible borders. Conversely, the French text uses 'des territoires occupés' ('from THE occupied territories'), enabling Arab governments to insist that international law mandates complete withdrawal from ALL occupied lands.",
+          citation:
+            'United Nations Security Council Official Records, 22nd Year, Resolution 242 (S/RES/242, 22 November 1967).',
+          question:
+            'Study Source B. Why did the differing interpretations of the single word "the" in Source B allow both Israel and Arab states to claim they were following the resolution?',
         },
       ],
       exam_practice: {
@@ -2064,10 +2223,6 @@ const buildKT2Lessons = () => {
         },
       ],
     },
-
-    // =========================================================================
-    // LESSON 9 / KT 2.4: The Rise of Palestinian Resistance: The PLO, Black September & Munich (1968–1972)
-    // =========================================================================
     {
       id: 'lesson_9',
       title:
@@ -2236,8 +2391,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'The Battle of Karameh in March 1968 was a major turning point because Palestinian guerrillas (fedayeen) chose to stand and fight an Israeli armored raid rather than retreating, killing 28 Israeli soldiers and damaging tanks. After the humiliation of the 1967 Six Day War, this was hailed across the Arab world as a moral triumph showing that Palestinians could stand up to Israel. Consequently, thousands of young Palestinians joined Fatah, and in February 1969 Yasser Arafat was elected Chairman of the PLO, transforming it into an active, armed national movement independent of Arab governments.',
+              question:
+                'Using paragraphs [1.1] and [1.2], explain why the Battle of Karameh was a turning point for Palestinian national identity and how it led to Yasser Arafat taking control of the PLO.',
+              text: 'Using paragraphs [1.1] and [1.2], explain why the Battle of Karameh was a turning point for Palestinian national identity and how it led to Yasser Arafat taking control of the PLO.',
+              model:
+                'The Battle of Karameh in March 1968 was a major turning point because Palestinian guerrillas (fedayeen) chose to stand and fight an Israeli armored raid rather than retreating, killing 28 Israeli soldiers and damaging tanks. After the humiliation of the 1967 Six Day War, this was hailed across the Arab world as a moral triumph showing that Palestinians could stand up to Israel. Consequently, thousands of young Palestinians joined Fatah, and in February 1969 Yasser Arafat was elected Chairman of the PLO, transforming it into an active, armed national movement independent of Arab governments.',
             },
           ],
+          act: 1,
+          act_title: 'Context & Catalyst — From Dependence to Armed Resistance (1968–1969)',
+          text: '<span class="para-ref">[1.1]</span> The disastrous defeat of Arab state armies in the 1967 Six Day War destroyed Palestinian confidence in Arab leaders like Gamal Abdel Nasser. For nineteen years, Palestinians had waited for regular Arab armies to defeat Israel and restore their homeland. After 1967, young Palestinians decided that they had to take their destiny into their own hands, joining independent armed guerrilla organisations known as *fedayeen* ("those who sacrifice themselves"). The defining turning point occurred on 21 March 1968 at the town of Karameh inside Jordan. When a large Israeli armored force crossed the border to destroy guerrilla camps, Palestinian fighters belonging to Yasser Arafat’s Fatah movement chose to stand and fight alongside Jordanian artillery rather than retreating into the surrounding hills.\n\n<span class="para-ref">[1.2]</span> The Battle of Karameh was a military victory for Israel, which destroyed the guerrilla base and killed over 100 fighters. However, Palestinian guerrillas inflicted unusually heavy casualties on the Israeli Defence Forces, killing 28 Israeli soldiers and disabling several tanks. Across the Arab world, Karameh was celebrated as a legendary moral victory—the first time Arab fighters had stood their ground and inflicted serious losses on the Israeli army. Thousands of young men volunteered to join Fatah in the weeks that followed. In February 1969, Yasser Arafat was elected Chairman of the PLO, cementing Fatah\'s leadership and transforming the PLO from a corrupt diplomatic group controlled by Arab heads of state into an independent, armed national liberation movement.',
         },
         {
           title:
@@ -2258,6 +2421,11 @@ const buildKT2Lessons = () => {
               "This primary photograph captures the destruction of three Western commercial airliners at Dawson's Field in the Jordanian desert on 12 September 1970. The PFLP blew up the aircraft after releasing the passengers to publicize the Palestinian plight, an open challenge to King Hussein of Jordan that directly provoked the Black September civil war.",
             hinge_question:
               'How does Source A help explain why King Hussein of Jordan concluded that the armed Palestinian guerrilla factions had to be expelled from his country?',
+            question:
+              'Study Source A. How does Source A help explain why King Hussein of Jordan concluded that the armed Palestinian guerrilla factions had to be expelled from his country?',
+            type: 'visual',
+            src: '/images/cme_dawsons_field_1970.jpg',
+            image: '/images/cme_dawsons_field_1970.jpg',
           },
           tasks: [
             {
@@ -2275,8 +2443,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'Source A shows the dramatic destruction of three hijacked passenger planes at Dawson\'s Field in Jordan, which triggered the Black September crisis because it proved that Palestinian guerrilla groups like the PFLP were operating completely outside the law as a "state within a state". By landing hijacked Western planes in the Jordanian desert and blowing them up in front of international media, the militants humiliated King Hussein and challenged his royal authority. Realising his kingdom was slipping into lawlessness, King Hussein ordered his army to crush the Palestinian militias on 17 September 1970. After fierce urban fighting, the Jordanian military defeated the militias and expelled the PLO to Lebanon by mid-1971.',
+              question:
+                "Using Source A and paragraphs [2.1]–[2.2], explain how the Dawson's Field hijackings led directly to the Black September crackdown and the expulsion of the PLO to Lebanon.",
+              text: "Using Source A and paragraphs [2.1]–[2.2], explain how the Dawson's Field hijackings led directly to the Black September crackdown and the expulsion of the PLO to Lebanon.",
+              model:
+                'Source A shows the dramatic destruction of three hijacked passenger planes at Dawson\'s Field in Jordan, which triggered the Black September crisis because it proved that Palestinian guerrilla groups like the PFLP were operating completely outside the law as a "state within a state". By landing hijacked Western planes in the Jordanian desert and blowing them up in front of international media, the militants humiliated King Hussein and challenged his royal authority. Realising his kingdom was slipping into lawlessness, King Hussein ordered his army to crush the Palestinian militias on 17 September 1970. After fierce urban fighting, the Jordanian military defeated the militias and expelled the PLO to Lebanon by mid-1971.',
             },
           ],
+          act: 2,
+          act_title:
+            "Escalation & Conflict — Dawson's Field & The Crisis of Black September (1970)",
+          text: '<span class="para-ref">[2.1]</span> By 1970, the growing strength of Palestinian guerrilla groups inside Jordan had created an unsustainable crisis. Armed guerrillas operated as a "state within a state" in the capital city of Amman, setting up roadblocks, carrying loaded assault rifles in public, refusing to pay Jordanian taxes, and ignoring police authority. Radical Marxist splinter groups, most notably George Habash’s Popular Front for the Liberation of Palestine (PFLP), believed that small-scale border raids would never force Western superpowers to pay attention to Palestine. The PFLP pioneered international airplane hijackings to capture world headlines. In early September 1970, PFLP militants staged their most daring operation, hijacking four Western commercial airliners bound for New York.\n\n<span class="para-ref">[2.2]</span> Three of the hijacked aircraft (Swissair, TWA, and BOAC flights) were forced to land at Dawson\'s Field, a remote desert airstrip in northern Jordan. After holding over 300 passengers hostage for several days, the hijackers released the passengers and blew up the multi-million-dollar airliners in front of international media cameras. (<span class="archival-meta-tag">Source A</span>) shows the charred, smoking ruins of the blown-up passenger planes at Dawson\'s Field, an act of defiance that directly threatened the authority and sovereignty of King Hussein of Jordan. Realising that his kingdom was descending into anarchy, King Hussein declared martial law on 17 September 1970. The Jordanian army launched an all-out offensive against Palestinian militias in Amman in a bloody civil war known as "Black September." After ten days of heavy fighting that cost thousands of lives, Palestinian fighters were crushed, and by mid-1971, the PLO and its forces were completely expelled from Jordan, relocating their headquarters to southern Lebanon.',
         },
         {
           title: 'Act 3: Forensic Evidence & Terror — The 1972 Munich Olympics Massacre',
@@ -2296,6 +2473,11 @@ const buildKT2Lessons = () => {
               'This iconic primary photograph, taken by AP photographer Kurt Strumpf on 5 September 1972, captures a hooded Black September militant peering from the balcony of the Israeli Olympic team quarters in Munich. The crisis was broadcast live to an estimated 900 million television viewers worldwide, ending in the murder of eleven Israeli athletes and coaches.',
             hinge_question:
               'Why did the live television broadcast of the Munich crisis shown in Source B create both worldwide publicity and widespread condemnation for the Palestinian cause?',
+            question:
+              'Study Source B. Why did the live television broadcast of the Munich crisis shown in Source B create both worldwide publicity and widespread condemnation for the Palestinian cause?',
+            type: 'visual',
+            src: '/images/cme_munich_1972_balcony.jpg',
+            image: '/images/cme_munich_1972_balcony.jpg',
           },
           tasks: [
             {
@@ -2313,8 +2495,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'Source B captures a masked Black September militant at the Munich Olympics, an event that shocked international public opinion because it brought armed terrorism directly onto live television screens watched by nearly 900 million people. By striking the Olympic Games, militants ensured that the word "Palestine" and their demands were broadcast globally, destroying the Western idea that Palestinians were merely passive refugees. However, the murder of eleven unarmed athletes provoked worldwide outrage, branding the Palestinian liberation movement as ruthless terrorists. In response, Israeli Prime Minister Golda Meir authorized retaliatory air strikes against guerrilla bases in Lebanon and ordered the Mossad to systematically hunt down and assassinate the organizers.',
+              question:
+                "Using Source B and paragraphs [3.1]–[3.2], explain how the Munich attack brought international publicity to the Palestinian issue, and analyse Israel's response.",
+              text: "Using Source B and paragraphs [3.1]–[3.2], explain how the Munich attack brought international publicity to the Palestinian issue, and analyse Israel's response.",
+              model:
+                'Source B captures a masked Black September militant at the Munich Olympics, an event that shocked international public opinion because it brought armed terrorism directly onto live television screens watched by nearly 900 million people. By striking the Olympic Games, militants ensured that the word "Palestine" and their demands were broadcast globally, destroying the Western idea that Palestinians were merely passive refugees. However, the murder of eleven unarmed athletes provoked worldwide outrage, branding the Palestinian liberation movement as ruthless terrorists. In response, Israeli Prime Minister Golda Meir authorized retaliatory air strikes against guerrilla bases in Lebanon and ordered the Mossad to systematically hunt down and assassinate the organizers.',
             },
           ],
+          act: 3,
+          act_title: 'Forensic Evidence & Terror — The 1972 Munich Olympics Massacre',
+          text: '<span class="para-ref">[3.1]</span> Driven into exile in Lebanon and burning for revenge against King Hussein and Israel, radical Palestinian militants formed a covert terrorist cell calling itself "Black September." On 5 September 1972, during the Summer Olympic Games in Munich, West Germany, eight heavily armed Black September militants scaled the wire fence of the Olympic Village. They forced their way into the quarters of the Israeli Olympic team, immediately shooting dead a weightlifter and a wrestling coach who tried to resist, and taking nine other Israeli athletes, coaches, and referees hostage.\n\n<span class="para-ref">[3.2]</span> The militants demanded the immediate release of 234 Palestinian prisoners held in Israeli jails. Israeli Prime Minister Golda Meir flatly refused, stating that giving in to blackmail would endanger Israelis and Jewish people worldwide. German authorities arranged to transport the terrorists and hostages by helicopter to the nearby Fürstenfeldbruck airbase, pretending they would be flown to Egypt, while secretly preparing a police ambush. However, the German rescue attempt was disastrously mismanaged: snipers had no night-vision equipment or radio communication, and armored vehicles arrived late. In the resulting firefight on the tarmac, a terrorist tossed a grenade into one helicopter, while another gunman shot the hostages in the second helicopter. All nine remaining Israeli hostages, five terrorists, and one German police officer were killed. (<span class="archival-meta-tag">Source B</span>) shows the chilling photograph of a masked Black September gunman on the Olympic village balcony, an image beamed live by television into hundreds of millions of living rooms around the globe. In response, Golda Meir authorized the Mossad intelligence agency to track down and assassinate the planners of the massacre in a covert campaign known as "Operation Wrath of God."',
         },
         {
           title:
@@ -2382,8 +2572,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'One major consequence of the Black September conflict in 1970 was the total expulsion of the PLO and its armed guerrilla fighters from Jordan into southern Lebanon.\n\nFollowing the Dawson’s Field airplane hijackings in September 1970, King Hussein ordered the Jordanian army to crush Palestinian militias operating as a "state within a state" in Amman, expelling all guerrilla fighters from the country by July 1971. Consequently, the PLO lost its direct border with Israel and was forced to establish a new headquarters and military base in southern Lebanon (known as "Fatahland"). This directly altered PLO strategy, leading radical factions to escalate international terrorist attacks like the 1972 Munich Olympics massacre and ultimately embroiling Lebanon in a devastating civil war.',
+              question:
+                'Explain one consequence of the Black September conflict in Jordan (1970) for the PLO. [4 marks]',
+              text: 'Explain one consequence of the Black September conflict in Jordan (1970) for the PLO. [4 marks]',
+              model:
+                'One major consequence of the Black September conflict in 1970 was the total expulsion of the PLO and its armed guerrilla fighters from Jordan into southern Lebanon.\n\nFollowing the Dawson’s Field airplane hijackings in September 1970, King Hussein ordered the Jordanian army to crush Palestinian militias operating as a "state within a state" in Amman, expelling all guerrilla fighters from the country by July 1971. Consequently, the PLO lost its direct border with Israel and was forced to establish a new headquarters and military base in southern Lebanon (known as "Fatahland"). This directly altered PLO strategy, leading radical factions to escalate international terrorist attacks like the 1972 Munich Olympics massacre and ultimately embroiling Lebanon in a devastating civil war.',
             },
           ],
+          act: 4,
+          act_title:
+            'The Historical Verdict & Extended Writing — Did Terrorism Help or Harm the Cause?',
+          text: '<span class="para-ref">[4.1]</span> The turn to international terrorism between 1968 and 1972 had deeply contradictory consequences for the Palestinian struggle. On the one hand, spectacular attacks like the Dawson\'s Field hijackings and the Munich Olympics forced the international community to acknowledge that the Palestinian problem was not simply a humanitarian refugee issue, but an unresolved political struggle for national self-determination. By 1974, the United Nations invited Yasser Arafat to address the General Assembly as the recognized representative of the Palestinian people.\n\n<span class="para-ref">[4.2]</span> On the other hand, terrorism caused severe strategic damage to the Palestinian national cause. In Jordan, reckless armed militancy brought about the catastrophe of Black September, costing thousands of Palestinian lives and depriving the PLO of its border with Israel. Internationally, the Munich massacre alienated Western governments and justified aggressive Israeli military reprisals. While violence won global headlines, it ultimately demonstrated that terrorism alone could never defeat Israel or achieve an independent state, prompting Yasser Arafat to gradually steer the PLO towards international diplomacy in the mid-1970s.',
         },
       ],
       sources: [
@@ -2399,6 +2598,11 @@ const buildKT2Lessons = () => {
             "This primary photograph captures the destruction of three Western commercial airliners at Dawson's Field in the Jordanian desert on 12 September 1970. The PFLP blew up the aircraft after releasing the passengers to publicize the Palestinian plight, an open challenge to King Hussein of Jordan that directly provoked the Black September civil war.",
           hinge_question:
             'How does Source A help explain why King Hussein of Jordan concluded that the armed Palestinian guerrilla factions had to be expelled from his country?',
+          type: 'visual',
+          src: '/images/cme_dawsons_field_1970.jpg',
+          image: '/images/cme_dawsons_field_1970.jpg',
+          question:
+            'Study Source A. How does Source A help explain why King Hussein of Jordan concluded that the armed Palestinian guerrilla factions had to be expelled from his country?',
         },
         {
           letter: 'B',
@@ -2411,6 +2615,11 @@ const buildKT2Lessons = () => {
             'This iconic primary photograph, taken by AP photographer Kurt Strumpf on 5 September 1972, captures a hooded Black September militant peering from the balcony of the Israeli Olympic team quarters in Munich. The crisis was broadcast live to an estimated 900 million television viewers worldwide, ending in the murder of eleven Israeli athletes and coaches.',
           hinge_question:
             'Why did the live television broadcast of the Munich crisis shown in Source B create both worldwide publicity and widespread condemnation for the Palestinian cause?',
+          type: 'visual',
+          src: '/images/cme_munich_1972_balcony.jpg',
+          image: '/images/cme_munich_1972_balcony.jpg',
+          question:
+            'Study Source B. Why did the live television broadcast of the Munich crisis shown in Source B create both worldwide publicity and widespread condemnation for the Palestinian cause?',
         },
       ],
       exam_practice: {
@@ -2491,7 +2700,10 @@ const buildKT2Lessons = () => {
           front: 'Why was the Battle of Karameh (March 1968) important for Palestinians?',
           back: 'Palestinian fighters stood their ground against an Israeli armored raid, killing 28 Israeli soldiers and creating a moral victory.',
         },
-        { front: 'When was Yasser Arafat elected Chairman of the PLO?', back: 'February 1969.' },
+        {
+          front: 'When was Yasser Arafat elected Chairman of the PLO?',
+          back: 'February 1969.',
+        },
         {
           front:
             'What radical Palestinian organisation pioneered international airplane hijackings?',
@@ -2755,10 +2967,6 @@ const buildKT2Lessons = () => {
         },
       ],
     },
-
-    // =========================================================================
-    // LESSON 10 / KT 2.5: The War of Attrition & The Yom Kippur War (1969–1973)
-    // =========================================================================
     {
       id: 'lesson_10',
       title: 'KT 2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
@@ -2927,8 +3135,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 "The War of Attrition (1969–1970) was a static border conflict along the Suez Canal involving heavy Egyptian artillery bombardments, commando raids, and Israeli counter-strikes along the fortified Bar-Lev Line. Anwar Sadat recognized that Egypt's economy could not sustain permanent mobilization and that Israel would never surrender the Sinai voluntarily while it held complete military superiority. Consequently, Sadat planned a limited war: his goal was not to destroy Israel, but to cross the canal, seize a ten-mile bridgehead, shatter the myth of Israeli invincibility, and force the United States to intervene and broker peace.",
+              question:
+                'Using paragraphs [1.1] and [1.2], explain what the War of Attrition was and why Anwar Sadat decided to wage a limited war rather than trying to destroy Israel.',
+              text: 'Using paragraphs [1.1] and [1.2], explain what the War of Attrition was and why Anwar Sadat decided to wage a limited war rather than trying to destroy Israel.',
+              model:
+                "The War of Attrition (1969–1970) was a static border conflict along the Suez Canal involving heavy Egyptian artillery bombardments, commando raids, and Israeli counter-strikes along the fortified Bar-Lev Line. Anwar Sadat recognized that Egypt's economy could not sustain permanent mobilization and that Israel would never surrender the Sinai voluntarily while it held complete military superiority. Consequently, Sadat planned a limited war: his goal was not to destroy Israel, but to cross the canal, seize a ten-mile bridgehead, shatter the myth of Israeli invincibility, and force the United States to intervene and broker peace.",
             },
           ],
+          act: 1,
+          act_title:
+            "Context & Catalyst — The Impasse of Attrition & Anwar Sadat's Plan (1969–1973)",
+          text: '<span class="para-ref">[1.1]</span> Following the 1967 war, Egyptian President Gamal Abdel Nasser refused to accept Israeli occupation of the Sinai Peninsula. In March 1969, Nasser launched the "War of Attrition"—a prolonged campaign of heavy artillery bombardments, commando raids, and aerial dogfights across the Suez Canal designed to inflict unsustainable casualties on the small Israeli army. In response, Israel constructed the "Bar-Lev Line," an elaborate chain of fortified concrete bunkers and massive sand ramparts over sixty feet high running the entire length of the canal. The War of Attrition dragged on until an American-brokered ceasefire in August 1970, which cost over 10,000 Egyptian and 360 Israeli lives without shifting the front lines by an inch.\n\n<span class="para-ref">[1.2]</span> When Nasser died of a heart attack in September 1970, he was succeeded by his vice-president, Anwar Sadat. Observers in Israel and Washington initially dismissed Sadat as a weak leader. However, Sadat possessed a bold, realistic strategic vision. He recognized that Egypt\'s economy was crumbling under immense military spending and that Israel would never surrender the Sinai Peninsula through peaceful diplomacy while it enjoyed total military superiority. Sadat did not plan an impossible war to destroy Israel; instead, he planned a limited, high-intensity surprise offensive to cross the canal, seize a secure bridgehead in the Sinai, shatter the myth of Israeli invincibility, and force the American superpower to intervene and broker a comprehensive peace.',
         },
         {
           title:
@@ -2949,6 +3166,11 @@ const buildKT2Lessons = () => {
               'This primary photograph records the successful Egyptian crossing of the Suez Canal on 6–7 October 1973. Egyptian infantry used high-pressure water monitors to wash away the sixty-foot sand ramparts of the Bar-Lev Line, enabling pontoon bridges to be laid across the canal under a protective anti-aircraft missile umbrella.',
             hinge_question:
               'How does Source A illustrate why the opening crossing of the Suez Canal was viewed as a major technological and psychological triumph for Egypt?',
+            question:
+              'Study Source A. How does Source A illustrate why the opening crossing of the Suez Canal was viewed as a major technological and psychological triumph for Egypt?',
+            type: 'visual',
+            src: '/images/cme_egyptians_crossing_suez_1973.jpg',
+            image: '/images/cme_egyptians_crossing_suez_1973.jpg',
           },
           tasks: [
             {
@@ -2966,8 +3188,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 "Egypt achieved complete tactical surprise on 6 October 1973 because the attack was launched on Yom Kippur, the holiest day in Judaism, when Israeli soldiers were fasting and communication networks were shut down. As shown in Source A, Egyptian engineers breached the sixty-foot sand ramparts of the Bar-Lev Line by using high-pressure water monitors to wash away the sand in hours, allowing pontoon bridges to be deployed. Furthermore, Israeli armored and air counter-attacks were devastated because Egyptian troops were protected by mobile Soviet-supplied SAM-6 anti-aircraft missiles and wire-guided Sagger anti-tank missiles, neutralizing Israel's traditional air superiority.",
+              question:
+                'Using Source A and paragraphs [2.1]–[2.2], explain how Egypt achieved surprise on Yom Kippur and how water monitors and Soviet missiles neutralized Israeli advantages.',
+              text: 'Using Source A and paragraphs [2.1]–[2.2], explain how Egypt achieved surprise on Yom Kippur and how water monitors and Soviet missiles neutralized Israeli advantages.',
+              model:
+                "Egypt achieved complete tactical surprise on 6 October 1973 because the attack was launched on Yom Kippur, the holiest day in Judaism, when Israeli soldiers were fasting and communication networks were shut down. As shown in Source A, Egyptian engineers breached the sixty-foot sand ramparts of the Bar-Lev Line by using high-pressure water monitors to wash away the sand in hours, allowing pontoon bridges to be deployed. Furthermore, Israeli armored and air counter-attacks were devastated because Egyptian troops were protected by mobile Soviet-supplied SAM-6 anti-aircraft missiles and wire-guided Sagger anti-tank missiles, neutralizing Israel's traditional air superiority.",
             },
           ],
+          act: 2,
+          act_title:
+            'Escalation & Conflict — The Surprise Assault on the Holy Day (6 October 1973)',
+          text: '<span class="para-ref">[2.1]</span> On Saturday, 6 October 1973, at 2:00 pm, Egypt and Syria launched a coordinated surprise assault on two fronts. The timing was chosen with meticulous care: it was Yom Kippur, the holiest day in Judaism, when Israeli radio stations were silent, roads were empty, and many soldiers were home with their families or fasting in synagogues. It was also the Muslim holy month of Ramadan. In the north, 1,400 Syrian tanks surged across the Golan Heights armistice line, overwhelming thin Israeli defensive units. In the south, over 80,000 Egyptian infantrymen crossed the Suez Canal on assault rafts under cover of a massive 2,000-gun artillery bombardment.\n\n<span class="para-ref">[2.2]</span> The Egyptian army executed a brilliant engineering feat. Rather than using conventional explosives to clear the massive sand ramparts of the Bar-Lev Line, Egyptian engineers deployed high-pressure water turbines pumping water directly from the canal, washing away thousands of tons of sand in hours to create bridge ramps. (<span class="archival-meta-tag">Source A</span>) shows Egyptian infantry crossing the Suez Canal on pontoon bridges and planting the Egyptian flag on the captured ramparts. When Israeli jet fighters and tanks rushed forward to counter-attack, they were devastated by mobile Soviet-supplied surface-to-air missiles (SAM-6) and wire-guided anti-tank missiles (Saggers). In the first forty-eight hours of combat, Israel lost over 150 tanks and dozens of aircraft, plunging the Israeli leadership into panic.',
         },
         {
           title:
@@ -2988,6 +3219,11 @@ const buildKT2Lessons = () => {
               "This primary photograph records General Ariel Sharon's daring armored counter-crossing to the western bank of the Suez Canal on 15–18 October 1973. Israeli tanks broke through between the Egyptian Second and Third Armies, cutting off the supply lines to Egypt's Third Army and threatening Cairo.",
             hinge_question:
               'How does Source B demonstrate how the military tide of the war shifted during the second week of fighting in October 1973?',
+            question:
+              'Study Source B. How does Source B demonstrate how the military tide of the war shifted during the second week of fighting in October 1973?',
+            type: 'visual',
+            src: '/images/cme_israeli_crossing_suez_1973.jpg',
+            image: '/images/cme_israeli_crossing_suez_1973.jpg',
           },
           tasks: [
             {
@@ -3005,8 +3241,17 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 'The Yom Kippur War expanded into a global crisis because both superpowers intervened with massive military airlifts: the USSR resupplied Egypt and Syria, while the USA flew hundreds of plane-loads of tanks and ammunition to Israel. As shown in Source B, this US resupply enabled General Ariel Sharon to cross to the western bank of the Suez Canal and encircle Egypt\'s Third Army. In response, Arab oil nations in OPEC used the "oil weapon", cutting production and imposing an oil embargo on countries supporting Israel. This quadrupled oil prices from $3 to $12 a barrel, causing petrol shortages and severe inflation across the West, which forced US Secretary of State Henry Kissinger to urgently intervene and broker a ceasefire.',
+              question:
+                'Using Source B and paragraphs [3.1]–[3.2], explain how the US and Soviet airlifts impacted the war and how the OPEC oil embargo affected Western nations.',
+              text: 'Using Source B and paragraphs [3.1]–[3.2], explain how the US and Soviet airlifts impacted the war and how the OPEC oil embargo affected Western nations.',
+              model:
+                'The Yom Kippur War expanded into a global crisis because both superpowers intervened with massive military airlifts: the USSR resupplied Egypt and Syria, while the USA flew hundreds of plane-loads of tanks and ammunition to Israel. As shown in Source B, this US resupply enabled General Ariel Sharon to cross to the western bank of the Suez Canal and encircle Egypt\'s Third Army. In response, Arab oil nations in OPEC used the "oil weapon", cutting production and imposing an oil embargo on countries supporting Israel. This quadrupled oil prices from $3 to $12 a barrel, causing petrol shortages and severe inflation across the West, which forced US Secretary of State Henry Kissinger to urgently intervene and broker a ceasefire.',
             },
           ],
+          act: 3,
+          act_title:
+            "Forensic Evidence & Diplomacy — Superpower Airlifts, Sharon's Crossing & The Oil Weapon",
+          text: '<span class="para-ref">[3.1]</span> Facing critical shortages of ammunition and equipment, Israeli Prime Minister Golda Meir appealed urgently to the United States. US President Richard Nixon ordered a massive emergency military airlift, flying hundreds of transport planes loaded with tanks, artillery shells, and electronic countermeasures directly to Israeli airfields. Simultaneously, the Soviet Union launched an airlift to resupply Egypt and Syria. Having stabilized the northern front in fierce tank battles in the Golan Heights, Israeli armored divisions under General Ariel Sharon found an undefended seam between Egypt\'s Second and Third Armies. On the night of 15 October, Sharon\'s forces crossed to the western bank of the Suez Canal on pontoon rafts, establishing a bridgehead inside mainland Egypt. (<span class="archival-meta-tag">Source B</span>) shows Israeli tanks and armor crossing to the western bank, where they severed Egyptian supply lines and encircled Egypt\'s 30,000-strong Third Army.\n\n<span class="para-ref">[3.2]</span> As the military balance swung violently back towards Israel, the conflict triggered a global crisis. On 17 October, the Organisation of Petroleum Exporting Countries (OPEC), led by Saudi Arabia, deployed the "oil weapon." Arab nations cut oil production by 5% per month and placed a total oil embargo on the United States and the Netherlands. The price of crude oil quadrupled from $3 to nearly $12 a barrel, causing catastrophic petrol shortages, inflation, and economic panic across the Western world. Meanwhile, when the Soviet Union threatened to deploy airborne troops to save the surrounded Egyptian Third Army, the United States placed its nuclear armed forces on worldwide DEFCON 3 alert. US Secretary of State Henry Kissinger flew urgently between Moscow, Tel Aviv, and Cairo, finally securing a binding UN ceasefire on 24 October 1973.',
         },
         {
           title:
@@ -3037,8 +3282,16 @@ const buildKT2Lessons = () => {
               },
               model_answer:
                 "The Yom Kippur War was launched as a surprise attack by Egypt and Syria to break the post-1967 diplomatic stalemate and ended by forcing both sides towards peace negotiations.\n\nThe conflict began on 6 October 1973 at 2:00 pm when Egyptian and Syrian forces launched a coordinated surprise assault on the Jewish holy day of Yom Kippur during Ramadan. In the south, 80,000 Egyptian infantry crossed the Suez Canal, using high-pressure water monitors to wash away the sand ramparts of the Bar-Lev Line. In the north, 1,400 Syrian tanks attacked across the Golan Heights. Egyptian forces were shielded by mobile Soviet SAM-6 anti-aircraft missiles and wire-guided Sagger anti-tank missiles, destroying over 150 Israeli tanks and dozens of aircraft in the first 48 hours.\n\nThis early Arab success prompted superpower intervention. As Israeli ammunition ran critically low, US President Nixon ordered an emergency military airlift to resupply Israel with tanks and ammunition, while the USSR resupplied Egypt and Syria. This resupply shifted the military balance. Having pushed Syrian forces back in the Golan, Israeli armored divisions under General Ariel Sharon crossed to the western bank of the Suez Canal on 15 October, encircling Egypt's 30,000-strong Third Army.\n\nThis turnaround triggered an international crisis. On 17 October, Arab oil-producing nations in OPEC enacted an oil embargo against countries supporting Israel, cutting oil supplies and quadrupling world oil prices. Furthermore, when the USSR threatened to intervene to save Egypt's army, the US placed its nuclear forces on DEFCON 3 alert. Alarmed by the threat of global war and economic collapse, US Secretary of State Henry Kissinger flew between capitals to broker a UN ceasefire on 24 October 1973.\n\nUltimately, this narrative shows that although Israel recovered militarily, the heavy casualties shattered its confidence in the Bar-Lev Line, while restored Arab pride allowed Anwar Sadat to negotiate peace as an equal.",
+              question:
+                'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]\n\nYou may use the following in your answer:\n• The surprise attack on 6 October 1973\n• The OPEC oil embargo\nYou must also use information of your own.',
+              text: 'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]\n\nYou may use the following in your answer:\n• The surprise attack on 6 October 1973\n• The OPEC oil embargo\nYou must also use information of your own.',
+              model:
+                "The Yom Kippur War was launched as a surprise attack by Egypt and Syria to break the post-1967 diplomatic stalemate and ended by forcing both sides towards peace negotiations.\n\nThe conflict began on 6 October 1973 at 2:00 pm when Egyptian and Syrian forces launched a coordinated surprise assault on the Jewish holy day of Yom Kippur during Ramadan. In the south, 80,000 Egyptian infantry crossed the Suez Canal, using high-pressure water monitors to wash away the sand ramparts of the Bar-Lev Line. In the north, 1,400 Syrian tanks attacked across the Golan Heights. Egyptian forces were shielded by mobile Soviet SAM-6 anti-aircraft missiles and wire-guided Sagger anti-tank missiles, destroying over 150 Israeli tanks and dozens of aircraft in the first 48 hours.\n\nThis early Arab success prompted superpower intervention. As Israeli ammunition ran critically low, US President Nixon ordered an emergency military airlift to resupply Israel with tanks and ammunition, while the USSR resupplied Egypt and Syria. This resupply shifted the military balance. Having pushed Syrian forces back in the Golan, Israeli armored divisions under General Ariel Sharon crossed to the western bank of the Suez Canal on 15 October, encircling Egypt's 30,000-strong Third Army.\n\nThis turnaround triggered an international crisis. On 17 October, Arab oil-producing nations in OPEC enacted an oil embargo against countries supporting Israel, cutting oil supplies and quadrupling world oil prices. Furthermore, when the USSR threatened to intervene to save Egypt's army, the US placed its nuclear forces on DEFCON 3 alert. Alarmed by the threat of global war and economic collapse, US Secretary of State Henry Kissinger flew between capitals to broker a UN ceasefire on 24 October 1973.\n\nUltimately, this narrative shows that although Israel recovered militarily, the heavy casualties shattered its confidence in the Bar-Lev Line, while restored Arab pride allowed Anwar Sadat to negotiate peace as an equal.",
             },
           ],
+          act: 4,
+          act_title: 'The Historical Verdict & Extended Writing — The Turning Point Towards Peace',
+          text: '<span class="para-ref">[4.1]</span> The Yom Kippur War of 1973 was a profound psychological and political earthquake for both sides. For Israel, although its army had recovered to surround enemy forces within fifty miles of Cairo and Damascus, the cost had been catastrophic: over 2,600 Israeli soldiers killed and the shattering of the nation\'s supreme confidence in military invincibility. A subsequent government inquiry (the Agranat Commission) forced the resignation of military chiefs and contributed to Prime Minister Golda Meir stepping down in 1974.\n\n<span class="para-ref">[4.2]</span> For Egypt, although militarily contained at the end, the war was celebrated as a monumental national victory. By successfully crossing the Suez Canal and standing toe-to-toe with the IDF, Egypt had wiped away the shame of 1967 and restored Arab pride. Crucially, this restored dignity gave Anwar Sadat the political authority he needed to negotiate with Israel as an equal. The war had proven to Israelis that occupying land did not guarantee security, while the OPEC oil crisis forced the United States to commit permanently to Middle Eastern peace diplomacy. The road was now open for Kissinger\'s shuttle diplomacy, Sadat\'s historic 1977 visit to Jerusalem, and the 1978 Camp David Accords.',
         },
       ],
       sources: [
@@ -3054,6 +3307,11 @@ const buildKT2Lessons = () => {
             'This primary photograph records the successful Egyptian crossing of the Suez Canal on 6–7 October 1973. Egyptian infantry used high-pressure water monitors to wash away the sixty-foot sand ramparts of the Bar-Lev Line, enabling pontoon bridges to be laid across the canal under a protective anti-aircraft missile umbrella.',
           hinge_question:
             'How does Source A illustrate why the opening crossing of the Suez Canal was viewed as a major technological and psychological triumph for Egypt?',
+          type: 'visual',
+          src: '/images/cme_egyptians_crossing_suez_1973.jpg',
+          image: '/images/cme_egyptians_crossing_suez_1973.jpg',
+          question:
+            'Study Source A. How does Source A illustrate why the opening crossing of the Suez Canal was viewed as a major technological and psychological triumph for Egypt?',
         },
         {
           letter: 'B',
@@ -3067,6 +3325,11 @@ const buildKT2Lessons = () => {
             "This primary photograph records General Ariel Sharon's daring armored counter-crossing to the western bank of the Suez Canal on 15–18 October 1973. Israeli tanks broke through between the Egyptian Second and Third Armies, cutting off the supply lines to Egypt's Third Army and threatening Cairo.",
           hinge_question:
             'How does Source B demonstrate how the military tide of the war shifted during the second week of fighting in October 1973?',
+          type: 'visual',
+          src: '/images/cme_israeli_crossing_suez_1973.jpg',
+          image: '/images/cme_israeli_crossing_suez_1973.jpg',
+          question:
+            'Study Source B. How does Source B demonstrate how the military tide of the war shifted during the second week of fighting in October 1973?',
         },
       ],
       exam_practice: {
@@ -3474,28 +3737,6 @@ const buildKT2Lessons = () => {
       ],
     },
   ];
-
-  lessons.forEach((lesson) => {
-    (lesson.narrative_blocks || []).forEach((block, idx) => {
-      block.act = idx + 1;
-      if (!block.act_title && block.title) {
-        block.act_title = block.title.replace(/^Act \d+:\s*/, '');
-      }
-      if (!block.text && Array.isArray(block.paragraphs)) {
-        block.text = block.paragraphs.join('\n\n');
-      }
-      if (
-        block.source &&
-        block.source.letter &&
-        block.source.hinge_question &&
-        !block.source.question
-      ) {
-        block.source.question = `Study Source ${block.source.letter}. ${block.source.hinge_question}`;
-      }
-    });
-  });
-
-  return lessons;
 };
 
 module.exports = { buildKT2Lessons };

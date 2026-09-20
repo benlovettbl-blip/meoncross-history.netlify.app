@@ -76,13 +76,13 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 6,
     },
     lesson_9: {
-      page: 23,
+      page: 24,
       booklet: 'Key Topic 2 Booklet',
       unitId: 'cme_new',
       lessonIndex: 7,
     },
     lesson_10: {
-      page: 29,
+      page: 30,
       booklet: 'Key Topic 2 Booklet',
       unitId: 'cme_new',
       lessonIndex: 8,

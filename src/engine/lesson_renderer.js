@@ -2786,14 +2786,25 @@ export function renderLesson(lesson) {
               }
 
               const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
-              const cleanTaskText = (task.text || task.question || '').replace(
-                /^Q\d+[\.\:]\s*/i,
-                '',
-              );
-              const taskStarter = task.starter || task.sentence_starter;
-              const taskModel = task.model || task.model_answer;
+              const taskPrompt =
+                task.text || task.question || task.instructions || task.prompt || '';
+              const cleanTaskText = taskPrompt.replace(/^Q\d+[\.\:]\s*/i, '');
+              const taskTitle =
+                task.title && task.title !== taskPrompt && !cleanTaskText.startsWith(task.title)
+                  ? task.title
+                  : '';
+              const titleHtml = taskTitle
+                ? `<div style="font-weight: 800; font-size: 0.88rem; color: #92400e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">${taskTitle}</div>`
+                : '';
+              const taskStarter =
+                task.starter ||
+                task.sentence_starter ||
+                (task.scaffolding &&
+                  (task.scaffolding.starter || task.scaffolding.sentence_starter));
+              const taskModel = task.model || task.model_answer || task.answer;
               htmlNarrative += `
                 <div class="task-box" style="margin-bottom: 12px; background: white; padding: 12px 15px; border-radius: 6px; border: 1px solid #fde68a;">
+                  ${titleHtml}
                   <strong style="color: #92400e; font-size: 1.05rem;">${qNumPrefix}${cleanTaskText}</strong>
                   ${taskStarter ? `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #0284c7; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-pen"></i> Sentence Starter</summary><div class="scaffold-box starter-box" style="margin-top: 8px; padding: 10px; background: #f0f9ff; border-left: 3px solid #0284c7; border-radius: 4px; font-size: 0.95rem; color: #0c4a6e; font-style: italic;">${taskStarter}</div></details>` : ''}
                   ${taskModel ? `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-eye"></i> View Model Answer</summary><div class="scaffold-box model-box" style="margin-top: 8px; padding: 10px; background: #fef3c7; border-left: 3px solid #b45309; border-radius: 4px; font-size: 0.95rem; color: #78350f;">${taskModel}</div></details>` : ''}
@@ -3987,9 +3998,20 @@ export function renderLesson(lesson) {
             return;
           }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
-          const cleanTaskText = (task.text || task.question || '').replace(/^Q\d+[\.\:]\s*/i, '');
+          const taskPrompt = task.text || task.question || task.instructions || task.prompt || '';
+          const cleanTaskText = taskPrompt.replace(/^Q\d+[\.\:]\s*/i, '');
+          const taskTitle =
+            task.title && task.title !== taskPrompt && !cleanTaskText.startsWith(task.title)
+              ? task.title
+              : '';
+          const titleHtml = taskTitle
+            ? `<div style="font-weight: 800; font-size: 0.92rem; color: #92400e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">${window.formatBold(taskTitle)}</div>`
+            : '';
           const ansId = `ans-emb-${index}-${tIdx}`;
-          const starterText = task.starter || task.sentence_starter;
+          const starterText =
+            task.starter ||
+            task.sentence_starter ||
+            (task.scaffolding && (task.scaffolding.starter || task.scaffolding.sentence_starter));
           const starterBtn = starterText
             ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-starter" data-action="toggle-element" data-target-id="starter-${ansId}"><i class="fa-solid fa-pen"></i> Starter</button>`
             : '';
@@ -4024,8 +4046,9 @@ export function renderLesson(lesson) {
             `;
           }
           extrasHtml += `
-               <div style="margin-bottom: 10px;">
+               <div style="margin-bottom: 14px;">
                  ${flowchartHtml}
+                 ${titleHtml}
                  <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + cleanTaskText)}</div>
                  <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="${ansId}"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
