@@ -32,7 +32,9 @@ const approvedFunnyFooters = [
   '"Munich broadcast terror into 900 million homes: explain that importance clearly."', // Page 11
   '"The Bar-Lev Line took 3 years to build and 2 hours to breach — detail matters."', // Page 12
   '"A war fought on holy days: keep your cause and consequence strictly separated."', // Page 13
-  'Key Topic 2 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 14
+  '"Master the specification: When facts, dates, and connectives align, Grade 9 follows."', // Page 14
+  '"The difference between Grade 7 and Grade 9 is not what happened, but precisely why it mattered."', // Page 15
+  'Key Topic 2 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 16
 ];
 
 // ============================================================================
@@ -40,7 +42,7 @@ const approvedFunnyFooters = [
 // Even pages (verso/left): Page number on left, text on right.
 // Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, text, totalPages = 14) {
+function renderFooterStrip(pageNum, text, totalPages = 16) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -1030,7 +1032,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(1, approvedFunnyFooters[0], 14)}
+      ${renderFooterStrip(1, approvedFunnyFooters[0], 16)}
     </div>
   </div>
 `;
@@ -1108,7 +1110,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, approvedFunnyFooters[1], 14)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 16)}
     </div>
   </div>
 
@@ -1180,7 +1182,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, approvedFunnyFooters[2], 14)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 16)}
     </div>
   </div>
 `;
@@ -1311,7 +1313,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 14)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 16)}
     </div>
   </div>
 
@@ -1400,19 +1402,411 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 14)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 16)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (Spacious Ledger, Feedback & QR Hub)
+  // PAGE 14: KEY TOPIC 2 MASTER KNOWLEDGE ORGANISER (Verso / Left Page)
+  // Specification Synthesis & Flash Recall Accelerator
   // ====================================================================
   html += `
   <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+      
+      <!-- Top Departmental Branding -->
+      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Master Knowledge Organiser</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 2 SYNTHESIS</span>
+        </div>
+      </div>
+
+      <!-- Main Title Header -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1px;">
+            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
+              CORE KNOWLEDGE
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+              Specification Synthesis (1964–1973)
+            </span>
+          </div>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; line-height: 1.15; margin: 0; font-weight: 900;">
+            The Escalating Conflict, 1964–1973: Master Knowledge Organiser
+          </h2>
+        </div>
+        <div style="text-align: right; border-left: 1.5px solid #000; padding-left: 10px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; display: block;">Paper 2 Spec</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900;">1HI0/2B</span>
+        </div>
+      </div>
+
+      <!-- Section 1: 5 Enquiries Core Specification Synthesis (High-Density Cards) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
+        <div style="background: #000; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
+          <span>1. The 5 Core Specification Enquiries (Chronological Causal Sequence)</span>
+          <span>Pearson Edexcel High-Yield Content</span>
+        </div>
+
+        <!-- Enquiry 1 -->
+        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.1: The Road to War: Water Wars &amp; Border Skirmishes (1964–67)</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q2 Narrative</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
+            <strong>Cairo Conference (1964):</strong> Arab League meets in Cairo to oppose Israel's National Water Carrier; creates the <strong>Palestine Liberation Organisation (PLO)</strong> under Ahmad Shuqeiri and approves the Syrian Headwater Diversion Plan. <br>
+            <strong>Border Clashes:</strong> Israeli airstrikes destroy Syrian earth-moving equipment. Syrian-backed <strong>Fatah fedayeen</strong> conduct cross-border guerrilla sabotage. Israel retaliates with the Samu raid in Jordan (Nov 1966) and the <strong>7 April 1967 air dogfight</strong> over the Golan Heights, shooting down 6 Syrian MiG-21s and buzzing Damascus.
+          </p>
+        </div>
+
+        <!-- Enquiry 2 -->
+        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fafafa;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.2: Course of the Six-Day War (5–10 June 1967)</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q3 Importance</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
+            <strong>May 1967 Escalation:</strong> Soviet false intelligence warns Syria of Israeli troop build-up. In response, Egyptian President Nasser expels <strong>UNEF peacekeepers</strong> from Sinai (18 May), deploys 100,000 troops and 1,000 tanks, closes the <strong>Straits of Tiran</strong> at Sharm el-Sheikh to Israeli shipping (22 May), and signs a Mutual Defence Pact with King Hussein of Jordan (30 May). <br>
+            <strong>Operation Focus (5–10 June):</strong> On 5 June, Israel launches a pre-emptive air strike, wiping out 300+ Egyptian aircraft on the ground in 3 hours. Israeli forces secure total air supremacy and capture the <strong>Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem (Western Wall), and Golan Heights</strong> in just six days.
+          </p>
+        </div>
+
+        <!-- Enquiry 3 -->
+        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.3: Aftermath: Occupied Territories &amp; UN Resolution 242 (1967)</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q2 Narrative</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
+            <strong>Territorial Expansion:</strong> Israel triples its land area, establishing strategic depth but bringing over 1 million Palestinian Arabs under direct military occupation. Jewish religious and security settlements begin in the West Bank and Golan. <br>
+            <strong>Diplomatic Deadlock:</strong> Arab leaders meet at the <strong>Khartoum Summit (Sept 1967)</strong> and issue the <em>‘Three Noes’</em>: No peace with Israel, no recognition of Israel, no negotiations with Israel. In November 1967, the UN passes <strong>Resolution 242</strong> establishing the <em>‘Land for Peace’</em> formula; its deliberate English ambiguity ('withdrawal from territories' vs French 'des territoires') leads to diplomatic stalemate.
+          </p>
+        </div>
+
+        <!-- Enquiry 4 -->
+        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fafafa;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.4: Palestinian Nationalism &amp; International Terrorism (1968–72)</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q3 Importance</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
+            <strong>Rise of Fatah &amp; Arafat:</strong> Following the Arab armies' defeat, Palestinians conclude they must liberate themselves. At the <strong>Battle of Karameh (March 1968)</strong>, Palestinian fighters inflict heavy casualties on an Israeli raid, boosting recruitment. <strong>Yasser Arafat</strong> becomes PLO Chairman in 1969. <br>
+            <strong>Terrorism &amp; Expulsion:</strong> George Habash's PFLP hijacks 4 Western airliners to Dawson’s Field, Jordan (Sept 1970). King Hussein’s army launches <strong>Black September</strong>, violently expelling the PLO to Lebanon. In revenge, the Black September faction murders 11 Israeli athletes at the <strong>1972 Munich Olympics</strong>, triggering Israeli Operation Wrath of God counter-assassinations.
+          </p>
+        </div>
+
+        <!-- Enquiry 5 -->
+        <div style="padding: 3.5px 8px; background: #fff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.5: The Yom Kippur War &amp; The Global Oil Weapon (1973)</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q2 Narrative</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
+            <strong>Operation Badr (6 Oct 1973):</strong> Egyptian President Anwar Sadat and Syrian President Hafez al-Assad launch a coordinated surprise assault on Yom Kippur/Ramadan. Egyptian forces use high-pressure water monitors to breach the <strong>Bar-Lev Line</strong> sand wall, crossing the Suez Canal under a mobile Soviet SAM-6 anti-aircraft umbrella while Syria invades the Golan Heights. <br>
+            <strong>Airlifts, Counter-Attack &amp; Oil Embargo:</strong> The US launches massive emergency airlift <strong>Operation Nickel Grass</strong> to re-arm Israel. General Ariel Sharon counter-crosses the canal, encircling Egypt's Third Army. Arab members of <strong>OPEC deploy the oil weapon</strong>, cutting production and imposing an embargo on the US and Netherlands, quadrupling global oil prices. US Secretary of State Henry Kissinger brokers a ceasefire (UN Res 338).
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 2: Dual-Term Conceptual & Analytical Distinctions -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
+        <div style="background: #000; color: #fff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
+          <span>2. Dual-Term Analytical Distinctions (Do Not Confuse in Extended Writing)</span>
+          <span>Conceptual Precision</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.22;">
+          <div style="padding: 3px 6px; border-right: 1px solid #000; border-bottom: 1px solid #000;">
+            <strong style="text-transform: uppercase;">Pre-emptive Strike vs Act of Aggression:</strong><br>
+            <span style="font-family: 'Georgia', serif;">Israel argued Operation Focus was a legal pre-emptive strike in self-defence against an existential blockade; Arab states condemned it as unprovoked territorial aggression.</span>
+          </div>
+          <div style="padding: 3px 6px; border-bottom: 1px solid #000;">
+            <strong style="text-transform: uppercase;">Fatah vs The PLO:</strong><br>
+            <span style="font-family: 'Georgia', serif;">Fatah was Arafat's specific secular guerrilla faction (formed 1959); the PLO was the wider umbrella body established by the Arab League (1964) which Fatah took control of in 1969.</span>
+          </div>
+          <div style="padding: 3px 6px; border-right: 1px solid #000;">
+            <strong style="text-transform: uppercase;">'Three Noes' vs 'Land for Peace':</strong><br>
+            <span style="font-family: 'Georgia', serif;">Khartoum (Sept 1967) rejected peace, recognition, and talks with Israel; UN Res 242 (Nov 1967) offered Arab recognition and secure borders in exchange for Israeli territorial withdrawal.</span>
+          </div>
+          <div style="padding: 3px 6px;">
+            <strong style="text-transform: uppercase;">Water Monitors vs Artillery Shelling:</strong><br>
+            <span style="font-family: 'Georgia', serif;">Water monitors were high-pressure water cannons pumping canal water to liquify 20m sand ramparts in 2 hours; conventional explosives were proven useless against loose sand.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Rapid Retrieval Statistical Anchors (10 Must-Know Flash Facts) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #fafafa;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
+          <span>3. Rapid Retrieval Flash Anchors &bull; 10 Essential Chronological &amp; Statistical Milestones</span>
+          <span>Memorise for Grade 9</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; text-align: center; font-family: 'Inter', sans-serif;">
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">1964</strong>
+            <span style="font-size: 5.8pt; color: #222;">Cairo Summit &bull; PLO Created</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">7 Apr 1967</strong>
+            <span style="font-size: 5.8pt; color: #222;">Golan Dogfight (6 MiGs)</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">5–10 Jun 1967</strong>
+            <span style="font-size: 5.8pt; color: #222;">Six-Day Blitzkrieg</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">Nov 1967</strong>
+            <span style="font-size: 5.8pt; color: #222;">UN Resolution 242</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">Mar 1968</strong>
+            <span style="font-size: 5.8pt; color: #222;">Battle of Karameh</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">Sep 1970</strong>
+            <span style="font-size: 5.8pt; color: #222;">Dawson's Field &amp; Black Sept</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">Sep 1972</strong>
+            <span style="font-size: 5.8pt; color: #222;">Munich Olympics (11 killed)</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">6 Oct 1973</strong>
+            <span style="font-size: 5.8pt; color: #222;">Op Badr (Yom Kippur)</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">Oct 1973</strong>
+            <span style="font-size: 5.8pt; color: #222;">OPEC Embargo (400% rise)</span>
+          </div>
+          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
+            <strong style="font-size: 7.2pt; display: block;">24 Oct 1973</strong>
+            <span style="font-size: 5.8pt; color: #222;">UN Res 338 Ceasefire</span>
+          </div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(14, approvedFunnyFooters[13], 16)}
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- PAGE 15: INSIDE BACK COVER: GRADE 9 EXAM MASTERCLASS (Recto / Right)  -->
+  <!-- Pearson Edexcel Rubric, PFC Formula & Analytical Connectives         -->
+  <!-- ==================================================================== -->
+  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+      
+      <!-- Top Departmental Branding -->
+      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Grade 9 Masterclass</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">INSIDE BACK COVER</span>
+        </div>
+      </div>
+
+      <!-- Main Title Header -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1px;">
+            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
+              EXAM ARCHITECTURE
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+              Pearson Edexcel Paper 2 Assessment Rubric
+            </span>
+          </div>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; line-height: 1.15; margin: 0; font-weight: 900;">
+            Grade 9 Extended Writing Masterclass &amp; Mark Scheme Rubric
+          </h2>
+        </div>
+        <div style="text-align: right; border-left: 1.5px solid #000; padding-left: 10px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; display: block;">Target Standard</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900;">GRADE 9 (85%+)</span>
+        </div>
+      </div>
+
+      <!-- Section 1: Official Pearson Edexcel Mark Scheme Descriptors Matrix -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
+        <div style="background: #000; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
+          <span>1. Official Pearson Edexcel Mark Scheme Descriptors (Q2 Narrative &amp; Q3 Importance [8 Marks])</span>
+          <span>Assessment Criteria</span>
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
+          <thead>
+            <tr style="background: #f0f0f0; border-bottom: 1.2px solid #000;">
+              <th style="padding: 3px 6px; width: 65px; text-align: center; border-right: 1px solid #000;">Level &amp; Marks</th>
+              <th style="padding: 3px 8px; text-align: left; border-right: 1px solid #000;">Official Pearson Edexcel Standard</th>
+              <th style="padding: 3px 8px; text-align: left; width: 230px;">Actionable Pupil Guidance (How to Secure It)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #000; background: #fff;">
+              <td style="padding: 3px 6px; text-align: center; font-weight: 900; font-size: 7.5pt; border-right: 1px solid #000;">
+                Level 4<br><span style="font-size: 8.5pt;">7–8m</span>
+              </td>
+              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
+                An analytical explanation is offered which is consistently directed to the question. Shows comprehensive, accurate historical knowledge and understanding. Synthesises a sustained, coherent line of reasoning with explicit causal links between events/phases.
+              </td>
+              <td style="padding: 3px 8px; font-weight: 600;">
+                &bull; Never just say <em>'and then'</em>; explain <strong>HOW</strong> event A directly forced event B.<br>
+                &bull; Integrate at least 4 precise proper nouns, statistics, or named figures per paragraph.<br>
+                &bull; Conclude each paragraph with an analytical verdict directly answering the stem.
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000; background: #fafafa;">
+              <td style="padding: 3px 6px; text-align: center; font-weight: 800; font-size: 7.5pt; border-right: 1px solid #000;">
+                Level 3<br><span style="font-size: 8.5pt;">5–6m</span>
+              </td>
+              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
+                An analytical explanation is offered with some focus on the question. Accurate knowledge is demonstrated. The account is mostly coherent and structured, with some causal links established between stages.
+              </td>
+              <td style="padding: 3px 8px;">
+                &bull; Good factual knowledge and chronological ordering, but some sections lapse into storytelling without explaining historical consequence.<br>
+                &bull; Weak or missing transitions between the phases of the event.
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000; background: #fff;">
+              <td style="padding: 3px 6px; text-align: center; font-weight: 800; font-size: 7.5pt; border-right: 1px solid #000;">
+                Level 2<br><span style="font-size: 8.5pt;">3–4m</span>
+              </td>
+              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
+                A narrative or descriptive account is offered. Basic knowledge is shown. Links between events are weak, simple, or purely chronological rather than causal.
+              </td>
+              <td style="padding: 3px 8px;">
+                &bull; Retells the plot chronologically without answering the prompt's key analytical verb.<br>
+                &bull; Broad generalisations with few specific dates, proper nouns, or named battles.
+              </td>
+            </tr>
+            <tr style="background: #fafafa;">
+              <td style="padding: 3px 6px; text-align: center; font-weight: 800; font-size: 7.5pt; border-right: 1px solid #000;">
+                Level 1<br><span style="font-size: 8.5pt;">1–2m</span>
+              </td>
+              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
+                Simple, general statements are made. Demonstrates limited knowledge with significant factual confusion or irrelevance.
+              </td>
+              <td style="padding: 3px 8px;">
+                &bull; 1–2 vague, disjointed sentences without historical grounding. Needs basic recall drill.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section 2: The Edexcel PFC Formula for Q1 Consequence Questions [4 Marks] -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #fff; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">
+            2. The Edexcel PFC Formula for Q1 Consequence Questions [4 Marks in 4 Minutes]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">
+            1 PARAGRAPH = 4/4 MARKS
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr 1.4fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.5pt; margin-bottom: 2px;">
+          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
+            <strong>[P] POINT (1 Mark):</strong> Identify ONE specific consequence clearly in your very first sentence.
+          </div>
+          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
+            <strong>[F] FACT (1–2 Marks):</strong> Deploy 2–3 precise proper nouns, statistics, or chronological details.
+          </div>
+          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
+            <strong>[C] CONSEQUENCE (1 Mark):</strong> Explain the direct historical impact and why it mattered.
+          </div>
+        </div>
+        <div style="border-left: 2px solid #000; padding-left: 5px; font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.2; color: #111;">
+          <strong>Exemplar 4/4 Model:</strong> <em>One consequence of Nasser closing the Straits of Tiran in May 1967 was that it made war inevitable [P]. By blockading the port of Eilat, Egypt cut off 90% of Israel’s vital oil imports, which Prime Minister Levi Eshkol had repeatedly declared would be treated as an explicit casus belli [F]. Consequently, this economic asphyxiation convinced the Israeli Cabinet that diplomatic options were exhausted, directly triggering the pre-emptive air strikes of Operation Focus on 5 June 1967 [C].</em>
+        </div>
+      </div>
+
+      <!-- Section 3: High-Yield Analytical Connective & Sentence Starter Matrix -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
+        <div style="background: #000; color: #fff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
+          <span>3. Grade 9 Analytical Connective &amp; Transition Bank</span>
+          <span>Elevate Your Writing</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.22;">
+          <div style="padding: 3px 6px; border-right: 1px solid #000; background: #fff;">
+            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Causal Chain Stems:</strong>
+            <span style="font-family: 'Georgia', serif; font-style: italic;">
+              &bull; "The underlying catalyst was..."<br>
+              &bull; "This directly precipitated..."<br>
+              &bull; "Consequently, this forced Israel to..."<br>
+              &bull; "As an inevitable repercussion..."
+            </span>
+          </div>
+          <div style="padding: 3px 6px; border-right: 1px solid #000; background: #fafafa;">
+            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Narrative Progression:</strong>
+            <span style="font-family: 'Georgia', serif; font-style: italic;">
+              &bull; "The immediate precursor was..."<br>
+              &bull; "Tensions intensified when..."<br>
+              &bull; "This military breakthrough enabled..."<br>
+              &bull; "The situation culminated in..."
+            </span>
+          </div>
+          <div style="padding: 3px 6px; background: #fff;">
+            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Significance &amp; Verdict:</strong>
+            <span style="font-family: 'Georgia', serif; font-style: italic;">
+              &bull; "This proved decisive because..."<br>
+              &bull; "The fundamental turning point lay in..."<br>
+              &bull; "This shattered the assumption that..."<br>
+              &bull; "The enduring consequence was..."
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Pupil Extended Writing Self-Audit Checklist -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #fafafa;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
+          <span>4. Pupil Extended Writing Self-Audit Checklist (The Grade 9 Polish)</span>
+          <span>Tick Before Handing In</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2;">
+          <div>&bull; &#9633; Did I name at least 3 specific historical proper nouns per paragraph?</div>
+          <div>&bull; &#9633; Did I frame my opening line to echo the exact words of the exam question?</div>
+          <div>&bull; &#9633; Did I explain <strong>HOW</strong> event A caused event B rather than just stating it?</div>
+          <div>&bull; &#9633; For narrative accounts: Are my 3 paragraphs in strict chronological sequence?</div>
+          <div>&bull; &#9633; Did I use causal connectives (<em>Consequently, This directly led to</em>)?</div>
+          <div>&bull; &#9633; For importance questions: Did I evaluate the lasting impact or turning point?</div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(15, approvedFunnyFooters[14], 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGE 16: OUTSIDE BACK COVER (Spacious Ledger, Feedback & QR Hub)
+  // ====================================================================
+  html += `
+  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
+      <!-- Top Departmental Branding -->
+      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Pupil Assessment Record</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">OUTSIDE BACK COVER</span>
+        </div>
+      </div>
+
       <!-- Header Block -->
       <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; margin: 0 0 2px 0; font-weight: 900; text-transform: uppercase;">
@@ -1591,7 +1985,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, approvedFunnyFooters[13], 14)}
+      ${renderFooterStrip(16, approvedFunnyFooters[15], 16)}
     </div>
   </div>
 </body>
