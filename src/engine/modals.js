@@ -3253,7 +3253,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <span style="font-size: 0.85rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">
-                  Ready to send to Paul &amp; Helen:
+                  Ready to send:
                 </span>
                 <button id="coverCopyTextInnerBtn" style="background: #059669; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
                   <i class="fa-solid fa-copy"></i> Copy Email
@@ -3741,22 +3741,18 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
     paperSheet.innerHTML = sheetHtml;
 
-    // Build Concise, Natural Cover Email (Strictly Human, No AI Fluff)
-    let plainText = `Dear Paul and Helen,\n\n`;
-    plainText += `I'm not in today. I'm not well.\n`;
-    plainText += `Here is the cover.\n\n`;
+    // Build Concise Departmental Cover Email
+    let plainText = `Dear ,\n`;
+    plainText += `Please find below the emergency cover schedule and lesson plans for today.\n`;
+    plainText += `Tutor AM / PM Warrior 2\n`;
 
-    const includeDuty = dutyCheckbox ? dutyCheckbox.checked : true;
-    const dutyVal =
-      dutyInput && dutyInput.value.trim()
-        ? dutyInput.value.trim()
-        : "Warrior 2 AM/PM if there's a duty to be covered.";
-    if (includeDuty && dutyVal) {
-      plainText += `${dutyVal}\n\n`;
-    }
+    const includeDuty = dutyCheckbox ? dutyCheckbox.checked : false;
+    const dutyVal = dutyInput && dutyInput.value.trim() ? dutyInput.value.trim() : '';
+    plainText += `Duties: ${includeDuty && dutyVal ? dutyVal : 'none'}\n`;
 
-    plainText += `Period ${p1Num} (${c1Name}): ${l1.title}\n`;
-    plainText += `${l1Url}\n`;
+    const l1UnitTitle = uData.title || unitMeta.name;
+    plainText += `▶ PERIOD ${p1Num} — ${c1Name}\n`;
+    plainText += `Topic: ${l1.title} (${l1UnitTitle}) [${l1Url}](${l1Url})\n`;
 
     if (periodType === 'double') {
       const p2Num = period2NumSelect ? period2NumSelect.value : '2';
@@ -3764,18 +3760,26 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         class2Input && class2Input.value.trim()
           ? class2Input.value.trim()
           : unitMeta.year || 'Year 11';
-      plainText += `\nPeriod ${p2Num} (${c2Name}): ${l2.title}\n`;
-      plainText += `${l2Url}\n`;
+      plainText += `▶ PERIOD ${p2Num} — ${c2Name}\n`;
+      plainText += `Topic: ${l2.title} (${l1UnitTitle}) [${l2Url}](${l2Url})\n`;
     }
 
     extraPeriods.forEach((ep) => {
       const epUData = getUnitData(ep.unitId);
       const epLessons = epUData.lessons || [];
       const epLesson = epLessons[ep.lessonIdx] || { title: 'Lesson ' + (ep.lessonIdx + 1) };
-      const epUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${ep.unitId}&lesson=${ep.lessonIdx}`;
-      plainText += `\nPeriod ${ep.periodNum} (${ep.className}): ${epLesson.title}\n`;
-      plainText += `${epUrl}\n`;
+      const epUrl = `https://the-history-revision-hub.netlify.app/?unit=${ep.unitId}&lesson=${ep.lessonIdx}`;
+      const epMeta = availableUnits.find((u) => u.id === ep.unitId) || {
+        name: epUData.title || ep.unitId,
+      };
+      const epUnitTitle = epUData.title || epMeta.name;
+      plainText += `▶ PERIOD ${ep.periodNum} — ${ep.className}\n`;
+      plainText += `Topic: ${epLesson.title} (${epUnitTitle}) [${epUrl}](${epUrl})\n`;
     });
+
+    plainText += `Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.\n`;
+    plainText += `Kind regards,\n`;
+    plainText += `The History Department\n`;
 
     plainTextArea.value = plainText;
   };

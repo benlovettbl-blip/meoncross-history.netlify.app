@@ -25,6 +25,7 @@
     "verify:alignment": "node scripts/verify_source_act_alignment.cjs",
     "export:pdf": "node scripts/export_pdfs.cjs && node scripts/generate_scheme_of_work.cjs",
     "cover:standalone": "node scripts/generate_all_standalone_cover_packs.cjs",
+    "cover:email": "python scripts/generate_cover_email.py",
     "booklet:yr7": "node scripts/generate_water_sanitation_quiz_booklet.cjs",
     "booklet:yr8": "node scripts/generate_early_modern_quiz_booklet.cjs",
     "booklet:yr9": "node scripts/generate_great_war_quiz_booklet.cjs",

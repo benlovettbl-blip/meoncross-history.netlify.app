@@ -109,7 +109,7 @@ def load_timetable():
     with open(TIMETABLE_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def generate_cover_plan(week, day, overrides=None, target_date=None):
+def generate_cover_plan(week, day, overrides=None, target_date=None, period_filter=None):
     overrides = overrides or {}
     tt = load_timetable()
     if not tt or week not in tt or day not in tt[week]:
@@ -117,6 +117,13 @@ def generate_cover_plan(week, day, overrides=None, target_date=None):
 
     schedule = tt[week][day]
     day_duties = tt.get("duties", {}).get(day, [])
+    
+    parsed_filter = None
+    if period_filter:
+        if isinstance(period_filter, str):
+            parsed_filter = [p.strip().lower().replace("period", "").strip() for p in period_filter.split(",") if p.strip()]
+        elif isinstance(period_filter, (list, tuple)):
+            parsed_filter = [str(p).strip().lower().replace("period", "").strip() for p in period_filter]
     
     if target_date is not None:
         date_str = target_date.strftime("%d %B %Y")
@@ -139,6 +146,9 @@ def generate_cover_plan(week, day, overrides=None, target_date=None):
     for item in schedule:
         raw = item["raw"]
         period = item["period"]
+        p_num = period.lower().replace("period", "").strip()
+        if parsed_filter and p_num not in parsed_filter and period.lower() not in parsed_filter:
+            continue
         time_slot = item["time"]
         item_type = item.get("type", "lesson")
         
@@ -209,88 +219,43 @@ def generate_cover_plan(week, day, overrides=None, target_date=None):
         
     return plan
 
-def render_email_text(plan, recipient="Cover Manager / SLT"):
+def render_email_text(plan, recipient=None):
     lines = []
-    lines.append(f"Dear {recipient},")
-    lines.append("")
-    lines.append(f"Please find below the emergency cover schedule and lesson plans for today, {plan['day']}, {plan['date_str']} ({plan['week']}).")
-    lines.append("All history lessons are fully planned and self-running via our digital revision platform and printed pupil booklets.")
-    lines.append("")
-    
-    lines.append("=" * 65)
-    lines.append("📌 MORNING REGISTRATION & DUTY COMMITMENTS (COVER REQUIRED)")
-    lines.append("=" * 65)
-    lines.append(f"1. TUTOR GROUP COMMITMENT: Tutor AM / PM Warrior 2")
-    lines.append(f"   • Morning Registration: 08:45 – 09:10")
-    lines.append(f"   • PM Mobile Collection & Dismissal: 15:50 – 15:55")
-    lines.append(f"   • Notes: Standard registration and silent reading.")
-    lines.append("")
-    
-    lines.append("2. DUTIES SCHEDULED FOR TODAY:")
-    if plan["duties"]:
-        for d in plan["duties"]:
-            lines.append(f"   ⚠️ {d['time']}: {d['duty']}")
-        lines.append("   • Please assign a cover colleague to cover this duty post.")
+    if recipient and recipient.strip():
+        lines.append(f"Dear {recipient.strip()},")
     else:
-        lines.append("   • None scheduled today.")
-    lines.append("=" * 65)
-    lines.append("")
-
-    lines.append("=" * 65)
-    lines.append("TIMETABLED LESSONS & PERIOD-BY-PERIOD COVER WORK")
-    lines.append("=" * 65)
-    lines.append("")
+        lines.append("Dear ,")
+    lines.append(f"Please find below the emergency cover schedule and lesson plans for today, {plan['day']}, {plan['date_str']} ({plan['week']}).")
+    lines.append(f"Tutor AM / PM {plan.get('tutor_group', 'Warrior 2')}")
+    
+    if plan.get("duties"):
+        duty_strs = [f"{d['time']} ({d['duty']})" for d in plan["duties"]]
+        lines.append(f"Duties: {'; '.join(duty_strs)}")
+    else:
+        lines.append("Duties: none")
 
     for p in plan["periods"]:
         if p["type"] == "hub":
-            lines.append(f"▶ {p['period'].upper()} ({p['time']}) — HUB SUPERVISION")
-            lines.append("  ⚠️ SUPERVISION ONLY — NO COVER WORK TO SET:")
-            lines.append("  • " + p["notes"])
-            lines.append("-" * 65)
-            lines.append("")
+            lines.append(f"{p['period'].upper()} ({p['time']}) — HUB SUPERVISION")
+            lines.append("SUPERVISION ONLY — NO COVER WORK TO SET:")
             continue
             
         if p["type"] == "club":
-            lines.append(f"▶ {p['period'].upper()} ({p['time']}) — {p['title'].upper()}")
-            lines.append("  • " + p["notes"])
-            lines.append("-" * 65)
-            lines.append("")
+            lines.append(f"{p['period'].upper()} ({p['time']}) — {p['title'].upper()}")
+            lines.append("SUPERVISION ONLY — NO COVER WORK TO SET:")
             continue
             
         # Lesson
-        lines.append(f"▶ {p['period'].upper()} ({p['time']}) — {p['set_name']} ({p['year']}) | ROOM {p['room']}")
-        lines.append(f"Topic: {p['topic_name']} ({p['unit_name']})")
-        lines.append("")
-        lines.append("STUDENT INSTRUCTIONS FOR COVER TEACHER:")
-        lines.append("1. Starter / Recall (10 mins):")
-        lines.append("   • Pupils complete the 4-question retrieval 'Do Now' in their printed booklets (or online).")
-        lines.append("")
-        lines.append("2. Core Knowledge & Guided Reading (20 mins):")
-        lines.append("   • Direct pupils to lesson masterclass: " + p['live_url'])
-        lines.append("   • Pupils read the structured narrative blocks and note down core historical concepts.")
-        lines.append("")
-        lines.append("3. Digital Retrieval Quiz & Score Tracking (15 mins):")
-        lines.append("   • Direct pupils to interactive full-screen quiz: " + p['quiz_url'])
-        lines.append("   • Pupils complete the 8 retrieval questions on mobile or Chromebook.")
-        lines.append("   • Pupils must record their score on Page 14 of their printed booklet in the 'Best Score' box.")
-        lines.append("")
-        lines.append("4. Consolidation & Extended Writing (10 mins):")
-        lines.append("   • Complete the analytical PEEL summary paragraph in their workbooks or exercise books.")
-        lines.append("")
-        lines.append(f"Cover Teacher Notes: {p['teacher_notes']}")
-        lines.append("-" * 65)
-        lines.append("")
+        lines.append(f"▶ {p['period'].upper()} ({p['time']}) — {p['set_name']}")
+        lines.append(f"Topic: {p['topic_name']} ({p['unit_name']}) [{p['live_url']}]({p['live_url']})")
 
     lines.append("Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.")
-    lines.append("")
-    lines.append("Thank you very much for your assistance with covering these classes today.")
-    lines.append("")
     lines.append("Kind regards,")
     lines.append("The History Department")
     
     return "\n".join(lines)
 
-def save_cover_package(plan, recipient="Cover Manager / SLT"):
+def save_cover_package(plan, recipient=None):
     body_text = render_email_text(plan, recipient)
     subject = f"EMERGENCY COVER: History - {plan['day']}, {plan['date_str']} ({plan['week']})"
     
@@ -306,8 +271,9 @@ def save_cover_package(plan, recipient="Cover Manager / SLT"):
         f.write(body_text)
         
     local_eml = os.path.join(LOCAL_COVER_DIR, f"{base_name}.eml")
+    eml_to = recipient.strip() if recipient and recipient.strip() else "Cover Manager / SLT"
     eml_content = f"""From: The History Department <history@hub.local>
-To: {recipient}
+To: {eml_to}
 Subject: {subject}
 Date: {datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0100")}
 MIME-Version: 1.0
@@ -389,7 +355,8 @@ if __name__ == "__main__":
     parser.add_argument("--day", choices=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], default=None, help="Day of the week")
     parser.add_argument("--tomorrow", action="store_true", help="Generate cover for tomorrow")
     parser.add_argument("--date", default=None, help="Specific date e.g. '21 September 2026' or '2026-09-21'")
-    parser.add_argument("--recipient", default="Cover Manager / SLT", help="Recipient name")
+    parser.add_argument("--periods", default=None, help="Comma-separated periods to include e.g. '1,3' or '3'")
+    parser.add_argument("--recipient", default="", help="Recipient name (defaults to 'Dear ,')")
     args = parser.parse_args()
     
     target_date = None
@@ -415,7 +382,7 @@ if __name__ == "__main__":
             days_ahead = 1 if args.day == "Sunday" else 2
             target_date = datetime.now() + timedelta(days=days_ahead)
             
-    plan = generate_cover_plan(args.week, args.day, target_date=target_date)
+    plan = generate_cover_plan(args.week, args.day, target_date=target_date, period_filter=args.periods)
     if not plan:
         print(f"Error: Could not find timetable for {args.week} {args.day}")
         sys.exit(1)
