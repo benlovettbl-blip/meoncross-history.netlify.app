@@ -167,6 +167,15 @@
               <i class="fa-solid fa-trophy" style="color: #f59e0b"></i>
               <span>Competitions &amp; Awards</span>
             </div>
+            <div
+              class="nav-item"
+              id="nav-cover-generator"
+              style="display: none"
+              onclick="window.openEmergencyCoverModal && window.openEmergencyCoverModal()"
+            >
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span>Cover Generator</span>
+            </div>
           </div>
 
           <!-- Unit Workspace Mode (Visible when inside a Unit / Scheme of Work) -->
@@ -408,6 +417,19 @@
             >
               <i class="fa-solid fa-volume-high"></i>
               <span class="btn-text" id="voice-toggle-label">Voice: UK ♀</span>
+            </button>
+
+            <!-- Cover Lesson Email Generator (Staff Only) -->
+            <button
+              id="btn-cover-modal"
+              class="header-tool-btn"
+              style="display: none"
+              onclick="window.openEmergencyCoverModal && window.openEmergencyCoverModal()"
+              title="Cover Lesson Generator (Staff Timetable Tool)"
+              aria-label="Open Cover Lesson Generator"
+            >
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span class="btn-text">Cover</span>
             </button>
 
             <!-- Persistent Theme Toggle (always visible in header) -->

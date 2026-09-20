@@ -2840,10 +2840,37 @@ window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
  * ============================================================================
  */
 window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData) {
+  // Staff Privacy Guard for Netlify deployment
+  const isLocal =
+    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const hasStoredAuth =
+    localStorage.getItem('history_hub_teacher_mode') === 'true' ||
+    localStorage.getItem('history_chess_teacher_auth') === 'true';
+
+  if (!isLocal && !hasStoredAuth) {
+    const entered = prompt('History Department Staff Verification: Enter Passkey:');
+    if (
+      entered &&
+      (entered.trim().toLowerCase() === 'drake.30' || entered.trim().toLowerCase() === 'drake.30!')
+    ) {
+      localStorage.setItem('history_hub_teacher_mode', 'true');
+      window.isTeacherMode = true;
+      const headerBtn = document.getElementById('btn-cover-modal');
+      if (headerBtn) headerBtn.style.display = 'inline-flex';
+      const sidebarBtn = document.getElementById('nav-cover-generator');
+      if (sidebarBtn) sidebarBtn.style.display = 'flex';
+    } else {
+      if (entered !== null) {
+        alert('Access restricted to authorized teaching staff.');
+      }
+      return;
+    }
+  }
+
   const existing = document.getElementById('emergencyCoverModal');
   if (existing) existing.remove();
 
-  // Fetch or retrieve database
+  // Load database for lesson titles and units
   let db = window.cachedDatabase;
   if (!db) {
     try {
@@ -2851,416 +2878,789 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       db = await res.json();
       window.cachedDatabase = db;
     } catch (e) {
-      console.warn('Could not fetch database.json, fallback to activeUnitData:', e);
+      console.warn('Could not fetch database.json, using fallback data:', e);
       db = {};
     }
   }
 
-  const unitGroups = [
-    {
-      label: 'Year 7 (Key Stage 3)',
-      units: [
+  const TIMETABLE_DATA = {
+    'Week A': {
+      Monday: [
+        { period: 'Period 1', time: '09:10 - 10:05', type: 'hub', raw: 'Hub Supervision' },
         {
-          id: 'water_and_sanitation',
-          name: 'Water & Sanitation Through Time',
-          year: 'Year 7',
-          spec: 'KS3 Thematic Enquiry',
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 9yHi\nHistory\n(20)',
         },
         {
-          id: 'medieval_england',
-          name: 'Medieval England & The Struggle for Power (1066–1485)',
-          year: 'Year 7',
-          spec: 'KS3 History',
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+      ],
+      Tuesday: [
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 7XHi\nHistory\n(18)',
+        },
+        { period: 'Period 3', time: '11:20 - 12:15', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 7YHi\nHistory\n(17)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+      ],
+      Wednesday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 8yHi\nHistory\n(11)',
+        },
+      ],
+      Thursday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 9xHi\nHistory\n(19)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 8xHi\nHistory\n(11)',
+        },
+        { period: 'Period 3', time: '11:20 - 12:15', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        { period: 'Period 6', time: '14:55 - 15:50', type: 'club', raw: 'Chess Club' },
+      ],
+      Friday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 8xHi\nHistory\n(11)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 9xHi\nHistory\n(19)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 7YHi\nHistory\n(17)',
+        },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 7XHi\nHistory\n(18)',
+        },
+        { period: 'Period 5', time: '14:00 - 14:55', type: 'hub', raw: 'Hub Supervision' },
+      ],
+    },
+    'Week B': {
+      Monday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 7XHi\nHistory\n(18)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 9yHi\nHistory\n(20)',
+        },
+        { period: 'Period 4', time: '12:15 - 13:10', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+      ],
+      Tuesday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        { period: 'Period 2', time: '10:25 - 11:20', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 8yHi\nHistory\n(11)',
+        },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+      ],
+      Wednesday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        { period: 'Period 4', time: '12:15 - 13:10', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+      ],
+      Thursday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 8xHi\nHistory\n(11)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 9xHi\nHistory\n(19)',
+        },
+        { period: 'Period 4', time: '12:15 - 13:10', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 7YHi\nHistory\n(17)',
+        },
+        { period: 'Period 6', time: '14:55 - 15:50', type: 'club', raw: 'Chess Club' },
+      ],
+      Friday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 9yHi\nHistory\n(20)',
+        },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        { period: 'Period 5', time: '14:00 - 14:55', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 8yHi\nHistory\n(11)',
         },
       ],
     },
-    {
-      label: 'Year 8 (Key Stage 3)',
-      units: [
+    duties: {
+      Monday: [],
+      Tuesday: [],
+      Wednesday: [{ time: '13:10 - 13:30', duty: 'Lunch Hall Duty' }],
+      Thursday: [
         {
-          id: 'early_modern_world',
-          name: 'The Early Modern World & Global Encounters (1450–1750)',
-          year: 'Year 8',
-          spec: 'KS3 History',
-        },
-        {
-          id: 'industrialisation_and_empire',
-          name: 'Industrialisation, Empire & Power (1750–1900)',
-          year: 'Year 8',
-          spec: 'KS3 History',
-        },
-        {
-          id: 'australia',
-          name: 'History of Australia & First Nations',
-          year: 'Year 8',
-          spec: 'KS3 History',
+          time: '13:10 - 13:35',
+          duty: 'Lunch Duty Zone 1 (Classrooms, Gym Toilets, Changing Toilets)',
         },
       ],
+      Friday: [{ time: '13:10 - 13:30', duty: 'Lunch Hall Duty' }],
+    },
+  };
+
+  const ALL_UNITS = [
+    // GCSE History
+    {
+      id: 'edexcel_medicine',
+      title: 'Paper 1: Medicine Through Time (1250–present)',
+      group: 'GCSE History',
     },
     {
-      label: 'Year 9 (Key Stage 3)',
-      units: [
-        {
-          id: 'great_war',
-          name: 'Causes of the Great War (1914–1916)',
-          year: 'Year 9',
-          spec: 'KS3 History',
-        },
-        {
-          id: 'great_war_part2',
-          name: 'The Great War (1917–1919)',
-          year: 'Year 9',
-          spec: 'KS3 History',
-        },
-        {
-          id: 'the_shoah',
-          name: 'The Shoah (Holocaust Education)',
-          year: 'Year 9',
-          spec: 'KS3 Enquiry',
-        },
-        { id: 'cold_war', name: 'The Cold War (1945–1991)', year: 'Year 9', spec: 'KS3 History' },
-        {
-          id: 'post_war_britain',
-          name: 'Rights, Protest & Post-War Britain (1900–Present)',
-          year: 'Year 9',
-          spec: 'KS3 History',
-        },
-      ],
+      id: 'cme_new',
+      title: 'Paper 2: Conflict in the Middle East (1945–1995)',
+      group: 'GCSE History',
+    },
+    { id: 'eee', title: 'Paper 2: Early Elizabethan England (1558–1588)', group: 'GCSE History' },
+    {
+      id: 'weimar_nazi_germany',
+      title: 'Paper 3: Weimar & Nazi Germany (1918–1939)',
+      group: 'GCSE History',
     },
     {
-      label: 'Year 10 (Edexcel GCSE)',
-      units: [
-        {
-          id: 'cme_new',
-          name: 'Conflict in the Middle East (1915–1949)',
-          year: 'Year 10',
-          spec: 'Edexcel GCSE Paper 2',
-        },
-        {
-          id: 'weimar_nazi_germany',
-          name: 'Weimar & Nazi Germany (1918–1939)',
-          year: 'Year 10',
-          spec: 'Edexcel GCSE Paper 3',
-        },
-      ],
+      id: 'usa',
+      title: 'Paper 3: Conflict at Home and Abroad: USA (1954–1975)',
+      group: 'GCSE History',
     },
     {
-      label: 'Year 11 (Edexcel GCSE)',
-      units: [
-        {
-          id: 'edexcel_medicine',
-          name: 'Medicine Through Time (c1250–present)',
-          year: 'Year 11',
-          spec: 'Edexcel GCSE Paper 1',
-        },
-        {
-          id: 'eee',
-          name: 'Early Elizabethan England (1558–1588)',
-          year: 'Year 11',
-          spec: 'Edexcel GCSE Paper 2',
-        },
-        {
-          id: 'usa',
-          name: 'The USA: Conflict at Home & Abroad (1954–1975)',
-          year: 'Year 11',
-          spec: 'Edexcel GCSE Paper 3',
-        },
-      ],
+      id: 'trip_ypres',
+      title: 'GCSE Battlefield Tour: Ypres & The Salient',
+      group: 'GCSE History',
+    },
+    // Key Stage 3
+    { id: 'medieval_england', title: 'KS3: Medieval England (1066–1485)', group: 'Key Stage 3' },
+    {
+      id: 'early_modern_world',
+      title: 'KS3: Early Modern World & Encounters (1450–1750)',
+      group: 'Key Stage 3',
     },
     {
-      label: 'Battlefield Tour',
-      units: [
-        {
-          id: 'trip_ypres',
-          name: 'Battlefield Tour: Ypres & The Somme',
-          year: 'Field Trip',
-          spec: 'Digital Educational Tour',
-        },
-      ],
+      id: 'industrialisation_and_empire',
+      title: 'KS3: Industrialisation, Empire & Power (1750–1900)',
+      group: 'Key Stage 3',
+    },
+    { id: 'great_war', title: 'KS3: Causes of the Great War', group: 'Key Stage 3' },
+    { id: 'great_war_part2', title: 'KS3: The Great War (1914–1919)', group: 'Key Stage 3' },
+    { id: 'the_shoah', title: 'KS3: The Shoah / Holocaust', group: 'Key Stage 3' },
+    {
+      id: 'post_war_britain',
+      title: 'KS3: Rights, Protest & Post-War Britain (1900–Present)',
+      group: 'Key Stage 3',
+    },
+    { id: 'cold_war', title: 'KS3: The Cold War', group: 'Key Stage 3' },
+    { id: 'australia', title: 'KS3: History of Australia', group: 'Key Stage 3' },
+    {
+      id: 'water_and_sanitation',
+      title: 'KS3: Water & Sanitation Through Time',
+      group: 'Key Stage 3',
     },
   ];
 
-  const availableUnits = unitGroups.flatMap((g) => g.units);
-
-  let currentUnitId =
-    initialUnitId || (state && state.selectedUnitId) || window.currentUnitId || 'cme_new';
-  if (!availableUnits.some((u) => u.id === currentUnitId)) {
-    currentUnitId = 'cme_new';
-  }
-
-  let periodType = 'double'; // 'single' or 'double'
-  let resourceMode = currentUnitId === 'cme_new' ? 'paper' : 'workbooks'; // 'workbooks' or 'paper'
-  let workCollectionMode = 'collect'; // 'collect', 'folders', or 'digital'
-  let lesson1Idx = 0;
-  let lesson2Idx = 1;
-  let supervisorNotes = 'Pupils should sit in their normal seating plan. Silent independent work.';
-  let activeTab = 'preview'; // 'preview' or 'text'
-
-  const getUnitData = (uId) => {
-    if (uId === (state && state.selectedUnitId) && initialUnitData && initialUnitData.lessons) {
-      return initialUnitData;
-    }
-    if (db && db[uId] && db[uId].data) {
-      return db[uId].data;
-    }
-    if (db && db[uId] && db[uId].lessons) {
-      return db[uId];
-    }
-    return { title: 'History Unit', lessons: [] };
+  const DEFAULT_SET_MAPPING = {
+    'Set 7XHi': {
+      year: 'Year 7',
+      unit: 'medieval_england',
+      unit_name: 'Medieval England (1066–1485)',
+      default_lesson: 0,
+      default_topic: 'The Norman Conquest & Battle of Hastings',
+    },
+    'Set 7YHi': {
+      year: 'Year 7',
+      unit: 'medieval_england',
+      unit_name: 'Medieval England (1066–1485)',
+      default_lesson: 0,
+      default_topic: 'The Norman Conquest & Battle of Hastings',
+    },
+    'Set 8xHi': {
+      year: 'Year 8',
+      unit: 'industrialisation_and_empire',
+      unit_name: 'Industrialisation, Empire, and Power (1750–1900)',
+      default_lesson: 0,
+      default_topic: 'The Agricultural Revolution & Origins of Industry',
+    },
+    'Set 8yHi': {
+      year: 'Year 8',
+      unit: 'industrialisation_and_empire',
+      unit_name: 'Industrialisation, Empire, and Power (1750–1900)',
+      default_lesson: 0,
+      default_topic: 'The Agricultural Revolution & Origins of Industry',
+    },
+    'Set 9xHi': {
+      year: 'Year 9',
+      unit: 'great_war',
+      unit_name: 'The Great War (1914–1919)',
+      default_lesson: 0,
+      default_topic: 'The Long-Term Causes of the First World War (MAIN)',
+    },
+    'Set 9yHi': {
+      year: 'Year 9',
+      unit: 'great_war',
+      unit_name: 'The Great War (1914–1919)',
+      default_lesson: 0,
+      default_topic: 'The Long-Term Causes of the First World War (MAIN)',
+    },
+    'Set 10aHiB': {
+      year: 'Year 10',
+      unit: 'edexcel_medicine',
+      unit_name: 'Edexcel GCSE Paper 1: Medicine Through Time',
+      default_lesson: 0,
+      default_topic: 'Medieval Ideas on Cause of Disease (Hippocrates & Galen)',
+    },
+    'Set 11aHiC': {
+      year: 'Year 11',
+      unit: 'weimar_nazi_germany',
+      unit_name: 'Edexcel GCSE Paper 3: Weimar and Nazi Germany (1918–1939)',
+      default_lesson: 0,
+      default_topic: 'The Legacy of the First World War & The Weimar Constitution',
+    },
+    'Set 11aHiD': {
+      year: 'Year 11',
+      unit: 'weimar_nazi_germany',
+      unit_name: 'Edexcel GCSE Paper 3: Weimar and Nazi Germany (1918–1939)',
+      default_lesson: 0,
+      default_topic: 'The Legacy of the First World War & The Weimar Constitution',
+    },
   };
 
+  const HUB_BASE_URL = 'https://the-history-revision-hub.netlify.app';
+
+  // 1. Dynamic UK Academic Calendar Week Calculation
+  // Academic Reference: Monday 7 September 2026 is Week B (Switched as requested)
+  const getAcademicWeekForDate = (targetDate) => {
+    const refMonday = new Date(2026, 8, 7); // 7 Sept 2026
+    const d = new Date(targetDate);
+    const day = d.getDay();
+    const diffToMon = (day === 0 ? -6 : 1) - day;
+    d.setDate(d.getDate() + diffToMon);
+    d.setHours(0, 0, 0, 0);
+    const diffWeeks = Math.round((d.getTime() - refMonday.getTime()) / (7 * 24 * 60 * 60 * 1000));
+    return Math.abs(diffWeeks) % 2 === 0 ? 'Week B' : 'Week A';
+  };
+
+  // Helper to compute target date object given day name & tomorrow flag
+  const getTargetDateObj = (dayName, targetIsTomorrow) => {
+    const d = new Date();
+    if (targetIsTomorrow) {
+      d.setDate(d.getDate() + 1);
+    } else {
+      const curDayIdx = d.getDay();
+      const targetDayIdx = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ].indexOf(dayName);
+      let diff = targetDayIdx - curDayIdx;
+      if (diff < 0) diff += 7;
+      d.setDate(d.getDate() + diff);
+    }
+    return d;
+  };
+
+  const formatTargetDate = (d) => {
+    const day = d.getDate();
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
+
+  // Determine initial day & week
+  const now = new Date();
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayIdx = now.getDay();
+  const currentHour = now.getHours();
+
+  let isTomorrow = false;
+  let currentDay = 'Monday';
+
+  if (currentHour >= 15 || todayIdx === 0 || todayIdx === 6) {
+    isTomorrow = true;
+    if (todayIdx === 5 || todayIdx === 6 || todayIdx === 0) {
+      currentDay = 'Monday';
+      isTomorrow = todayIdx === 0;
+    } else {
+      currentDay = daysOfWeek[todayIdx + 1];
+    }
+  } else {
+    currentDay = todayIdx === 0 || todayIdx === 6 ? 'Monday' : daysOfWeek[todayIdx];
+    isTomorrow = false;
+  }
+
+  const initialTargetDate = getTargetDateObj(currentDay, isTomorrow);
+  let currentWeek = getAcademicWeekForDate(initialTargetDate);
+
+  let defaultResourceMode = 'workbooks'; // 'workbooks' or 'paper'
+  let defaultShelfMode = true; // whether workbooks are handed out from shelf & returned at end
+  let defaultCollectionMode = 'collect'; // 'collect', 'folders', 'digital'
+  let includePolicyNotes = true;
+  let selectedUnits = {}; // Maps periodIndex -> unitId
+  let selectedLessons = {}; // Maps periodIndex -> lessonIdx
+  let periodSettings = {}; // Maps `${currentDay}_${pIdx}` -> { resource, shelf, collection }
+  let currentDispatchPayload = null;
+
+  const getPeriodSetting = (pIdx, setName) => {
+    const key = `${currentDay}_${pIdx}`;
+    if (!periodSettings[key]) {
+      if (setName && periodSettings[setName]) {
+        periodSettings[key] = { ...periodSettings[setName] };
+      } else {
+        periodSettings[key] = {
+          resource: defaultResourceMode,
+          shelf: defaultShelfMode,
+          collection: defaultCollectionMode,
+        };
+      }
+    }
+    return periodSettings[key];
+  };
+
+  const setPeriodSetting = (pIdx, setName, updates) => {
+    const key = `${currentDay}_${pIdx}`;
+    if (!periodSettings[key]) {
+      periodSettings[key] = { ...getPeriodSetting(pIdx, setName) };
+    }
+    Object.assign(periodSettings[key], updates);
+    if (setName) {
+      if (!periodSettings[setName]) periodSettings[setName] = {};
+      Object.assign(periodSettings[setName], updates);
+    }
+  };
+
+  // 2. Local Storage Helpers for Topic Persistence & Multi-day Cover Memory
+  const getSavedTopics = () => {
+    try {
+      return JSON.parse(localStorage.getItem('history_cover_last_topics') || '{}');
+    } catch (e) {
+      return {};
+    }
+  };
+
+  const saveTopicForSet = (setName, unitId, lessonIdx) => {
+    try {
+      const topics = getSavedTopics();
+      topics[setName] = { unit: unitId, lesson: lessonIdx };
+      localStorage.setItem('history_cover_last_topics', JSON.stringify(topics));
+    } catch (e) {}
+  };
+
+  const getRecentCoverLog = () => {
+    try {
+      return JSON.parse(localStorage.getItem('history_cover_recent_log') || '[]');
+    } catch (e) {
+      return [];
+    }
+  };
+
+  const saveToCoverLog = (entry) => {
+    try {
+      let log = getRecentCoverLog();
+      log = log.filter(
+        (item) => !(item.dateStr === entry.dateStr && item.dayName === entry.dayName),
+      );
+      log.unshift(entry);
+      if (log.length > 10) log = log.slice(0, 10);
+      localStorage.setItem('history_cover_recent_log', JSON.stringify(log));
+    } catch (e) {}
+  };
+
+  const wipeAbsenceMemory = () => {
+    try {
+      localStorage.removeItem('history_cover_recent_log');
+      localStorage.removeItem('history_cover_last_topics');
+    } catch (e) {}
+  };
+
+  // Helper to get lessons for a unit
+  const getUnitLessons = (unitId) => {
+    if (db && db[unitId] && db[unitId].data && db[unitId].data.lessons) {
+      return db[unitId].data.lessons;
+    }
+    if (db && db[unitId] && db[unitId].lessons) {
+      return db[unitId].lessons;
+    }
+    return [];
+  };
+
+  const getUnitTitle = (unitId) => {
+    const u = ALL_UNITS.find((item) => item.id === unitId);
+    if (u) return u.title;
+    if (db && db[unitId] && db[unitId].data && db[unitId].data.title) {
+      return db[unitId].data.title;
+    }
+    return unitId;
+  };
+
+  // Create High-Contrast, Modern Dark Slate Modal Overlay
   const overlay = document.createElement('div');
   overlay.id = 'emergencyCoverModal';
   overlay.className = 'modal-overlay no-print';
   overlay.style.cssText =
-    'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.22s ease; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;';
+    'position: fixed; inset: 0; background: rgba(11, 19, 43, 0.85); backdrop-filter: blur(8px); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.25s ease; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;';
 
   overlay.innerHTML = `
-    <div class="modal-content" style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; width: 95vw; max-width: 1400px; height: 93vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85); transform: scale(0.98); transition: transform 0.22s ease;">
+    <div class="modal-content" id="coverModalContainer" style="background: #0f172a; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; border-radius: 0; border: none; display: flex; flex-direction: column; overflow: hidden; box-shadow: none; color: #f8fafc;">
       
-      <!-- Top Modal Header -->
-      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <!-- Top Navigation & Header Bar -->
+      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
         <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.15rem; box-shadow: 0 2px 10px rgba(225,29,72,0.4);">
-            <i class="fa-solid fa-truck-medical"></i>
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #2563eb, #1d4ed8); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);">
+            <i class="fa-solid fa-envelope-open-text"></i>
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(225, 29, 72, 0.2); color: #fb7185; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(225, 29, 72, 0.3);">Teacher Planning Hub</span>
-              <span style="font-size: 0.72rem; font-weight: 600; color: #94a3b8;">Emergency Cover Engine</span>
+              <h2 style="margin: 0; color: #f8fafc; font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em;">Cover Lesson Generator</h2>
+              <span style="background: #3b82f6; color: #ffffff; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Live Dispatch</span>
             </div>
-            <h3 style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em;">Automated Cover Lesson Generator</h3>
+            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">The History Department • Departmental Cover Portal</span>
           </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <button id="coverTabPreviewBtn" style="background: #334155; color: #ffffff; border: 1px solid #475569; font-weight: 700; font-size: 0.85rem; padding: 7px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
-            <i class="fa-solid fa-file-lines"></i> Sheet Preview
-          </button>
-          <button id="coverTabTextBtn" style="background: transparent; color: #94a3b8; border: 1px solid transparent; font-weight: 600; font-size: 0.85rem; padding: 7px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
-            <i class="fa-solid fa-envelope"></i> Cover Email
-          </button>
-          <div style="width: 1px; height: 24px; background: #334155; margin: 0 4px;"></div>
-          <button id="coverCopyVleBtn" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(5,150,105,0.3); transition: all 0.2s ease;">
-            <i class="fa-solid fa-copy"></i> Copy Cover Email
-          </button>
-          <button id="coverPrintTriggerBtn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(37,99,235,0.35); transition: all 0.2s ease;">
-            <i class="fa-solid fa-print"></i> Print / Save PDF
-          </button>
-          <button id="coverCloseBtn" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #94a3b8; font-size: 1.1rem; width: 34px; height: 34px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button id="coverModalCloseBtn" type="button" title="Close Cover Generator" style="background: #0f172a; border: 1px solid #334155; color: #94a3b8; width: 34px; height: 34px; border-radius: 6px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;" onmouseover="this.style.color='#f8fafc'; this.style.borderColor='#ef4444'; this.style.background='#7f1d1d';" onmouseout="this.style.color='#94a3b8'; this.style.borderColor='#334155'; this.style.background='#0f172a';">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
       </div>
 
-      <!-- Main Body: Split Settings and Preview -->
-      <div style="flex: 1; display: flex; overflow: hidden; background: #0b1329;">
+      <!-- Main Widescreen Workspace: 2 Columns -->
+      <div style="flex: 1; display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.98fr); gap: 16px; padding: 16px 20px; overflow: hidden; background: #0b1120;">
         
-        <!-- Left Sidebar: Controls -->
-        <div style="width: 380px; min-width: 340px; background: #111c35; border-right: 1px solid #1e293b; padding: 18px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;">
+        <!-- Left Column: Timetable Controls & Class Lesson Pickers -->
+        <div style="display: flex; flex-direction: column; gap: 12px; overflow-y: auto; padding-right: 6px;">
           
-          <!-- Duty Cover Setting -->
-          <div style="background: rgba(225, 29, 72, 0.08); border: 1px solid rgba(225, 29, 72, 0.25); border-radius: 8px; padding: 10px 12px;">
-            <label style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <span style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #fb7185; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-shield-halved"></i> Duty Cover (AM / PM)
-              </span>
-              <label style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.74rem; color: #cbd5e1; cursor: pointer; font-weight: 600;">
-                <input type="checkbox" id="coverDutyCheckbox" checked style="width: 14px; height: 14px; accent-color: #e11d48; cursor: pointer;">
-                Include
+          <!-- Schedule Navigation Card -->
+          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
+              
+              <!-- Quick Day Presets -->
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Target:</span>
+                <button id="quickTomorrowBtn" type="button" style="background: ${isTomorrow ? '#2563eb' : '#0f172a'}; color: ${isTomorrow ? '#ffffff' : '#cbd5e1'}; border: 1px solid ${isTomorrow ? '#3b82f6' : '#334155'}; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;">
+                  <i class="fa-solid fa-bolt" style="color: ${isTomorrow ? '#fde047' : '#94a3b8'};"></i> Tomorrow
+                </button>
+                <button id="quickTodayBtn" type="button" style="background: ${!isTomorrow ? '#2563eb' : '#0f172a'}; color: ${!isTomorrow ? '#ffffff' : '#cbd5e1'}; border: 1px solid ${!isTomorrow ? '#3b82f6' : '#334155'}; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
+                  Today
+                </button>
+              </div>
+
+              <!-- Academic Week Toggle with dynamic sync indicator -->
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Timetable Week:</span>
+                <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
+                  <button id="btnWeekA" type="button" style="background: ${currentWeek === 'Week A' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week A' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week A</button>
+                  <button id="btnWeekB" type="button" style="background: ${currentWeek === 'Week B' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week B' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week B</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Days of the Week Row -->
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; padding-top: 4px; border-top: 1px solid rgba(51, 65, 85, 0.5);">
+              <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Day:</span>
+              <div style="display: flex; gap: 6px; flex: 1; max-width: 440px;">
+                ${['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+                  .map(
+                    (d) => `
+                  <button class="day-btn" data-day="${d}" type="button" style="flex: 1; background: ${d === currentDay ? '#2563eb' : '#0f172a'}; color: ${d === currentDay ? '#ffffff' : '#cbd5e1'}; border: 1px solid ${d === currentDay ? '#3b82f6' : '#334155'}; padding: 6px 0; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">${d.slice(0, 3)}</button>
+                `,
+                  )
+                  .join('')}
+              </div>
+            </div>
+          </div>
+
+          <!-- Resource Settings & Collection Policy Card (Defaults & Bulk Apply) -->
+          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; font-size: 0.78rem;">
+            <!-- Resource Setting -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.05em;">Defaults:</span>
+              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #e2e8f0; font-weight: 500;">
+                <input type="radio" name="coverResourceMode" value="workbooks" checked style="accent-color: #3b82f6; cursor: pointer;"> Printed Workbooks
               </label>
-            </label>
-            <input type="text" id="coverDutyInput" value="Warrior 2 AM/PM if there's a duty to be covered." placeholder="e.g. Warrior 2 AM/PM if there's a duty to be covered." style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 6px 10px; font-size: 0.8rem; outline: none; font-weight: 500;">
-          </div>
+              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
+                <input type="radio" name="coverResourceMode" value="paper" style="accent-color: #3b82f6; cursor: pointer;"> Paper Only
+              </label>
+            </div>
 
-          <!-- Unit Selector -->
-          <div>
-            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-              <i class="fa-solid fa-book" style="color: #38bdf8; margin-right: 5px;"></i> Teaching Unit
+            <!-- Shelf Handout Option -->
+            <label id="lblDefaultShelf" style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #93c5fd; font-weight: 600; font-size: 0.74rem;">
+              <input type="checkbox" id="chkDefaultShelf" checked style="accent-color: #3b82f6; cursor: pointer;">
+              <span>Hand out from shelf &amp; return</span>
             </label>
-            <select id="coverUnitSelect" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.88rem; outline: none; cursor: pointer;">
-              ${unitGroups
-                .map(
-                  (g) => `
-                <optgroup label="${g.label}">
-                  ${g.units.map((u) => `<option value="${u.id}" ${u.id === currentUnitId ? 'selected' : ''}>${u.name}</option>`).join('')}
-                </optgroup>
-              `,
-                )
-                .join('')}
-            </select>
-          </div>
 
-          <!-- Period Format Toggle -->
-          <div>
-            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-              <i class="fa-solid fa-clock" style="color: #f59e0b; margin-right: 5px;"></i> Duration / Periods
-            </label>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-              <button id="coverBtnPeriodSingle" type="button" style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 8px 10px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                <i class="fa-regular fa-clock"></i> Single (55m)
+            <!-- Collection Mode -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.05em;">Collection:</span>
+              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #e2e8f0; font-weight: 500;">
+                <input type="radio" name="coverCollectionMode" value="collect" checked style="accent-color: #3b82f6; cursor: pointer;"> Collect at End
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
+                <input type="radio" name="coverCollectionMode" value="folders" style="accent-color: #3b82f6; cursor: pointer;"> In Folders
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
+                <input type="radio" name="coverCollectionMode" value="digital" style="accent-color: #3b82f6; cursor: pointer;"> VLE
+              </label>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button id="btnApplyDefaultsToAll" type="button" style="background: #0f172a; border: 1px solid #3b82f6; color: #60a5fa; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Apply these default resource and collection settings to all lessons below">
+                <i class="fa-solid fa-arrows-rotate"></i> Apply to All
               </button>
-              <button id="coverBtnPeriodDouble" type="button" style="background: rgba(225, 29, 72, 0.2); color: #fb7185; border: 1px solid #e11d48; padding: 8px 10px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                <i class="fa-solid fa-hourglass-half"></i> Double (110m)
-              </button>
+
+              <!-- Include in Email toggle -->
+              <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: #94a3b8; font-size: 0.74rem;">
+                <input type="checkbox" id="chkIncludePolicy" checked style="accent-color: #3b82f6; cursor: pointer;">
+                <span>Include Notes</span>
+              </label>
             </div>
           </div>
 
-          <!-- Lesson Pickers -->
-          <div id="coverLessonSelectorsContainer" style="display: flex; flex-direction: column; gap: 12px;">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">
-                    Period:
-                  </label>
-                  <select id="coverPeriod1Num" style="background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; outline: none; cursor: pointer;">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                  </select>
-                </div>
-                <div style="display: flex; align-items: center; gap: 5px;">
-                  <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">Class:</span>
-                  <input type="text" id="coverClass1Input" value="Year 11" placeholder="e.g. Year 11" style="width: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #38bdf8; font-weight: 700; font-size: 0.78rem; padding: 3px 6px; outline: none;">
-                </div>
-              </div>
-              <select id="coverLesson1Select" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.84rem; outline: none; cursor: pointer;"></select>
+          <!-- Multi-Day Absence Memory Bar & Wipe Button -->
+          <div style="background: #162032; border: 1px solid #1e293b; border-radius: 8px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center;">
+            <div id="coverRecentHistoryToggle" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;">
+              <i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; font-size: 0.85rem;"></i>
+              <span style="font-size: 0.74rem; font-weight: 700; color: #e2e8f0;">Absence History Log</span>
+              <span id="coverRecentHistoryBadge" style="background: #1e293b; border: 1px solid #334155; color: #60a5fa; padding: 1px 7px; border-radius: 10px; font-size: 0.68rem; font-weight: 700;">0 logged</span>
+              <i class="fa-solid fa-chevron-down" id="coverHistoryChevron" style="font-size: 0.65rem; color: #94a3b8; transition: transform 0.2s;"></i>
             </div>
 
-            <div id="coverLesson2Wrapper">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">
-                    Period:
-                  </label>
-                  <select id="coverPeriod2Num" style="background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; outline: none; cursor: pointer;">
-                    <option value="1">1</option>
-                    <option value="2" selected>2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                  </select>
-                </div>
-                <div style="display: flex; align-items: center; gap: 5px;">
-                  <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">Class:</span>
-                  <input type="text" id="coverClass2Input" value="Year 11" placeholder="e.g. Year 11" style="width: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 4px; color: #38bdf8; font-weight: 700; font-size: 0.78rem; padding: 3px 6px; outline: none;">
-                </div>
-              </div>
-              <select id="coverLesson2Select" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.84rem; outline: none; cursor: pointer;"></select>
-            </div>
-
-            <!-- Extra Periods Dynamic List -->
-            <div id="coverExtraPeriodsList" style="display: flex; flex-direction: column; gap: 10px;"></div>
-
-            <button id="coverAddPeriodBtn" type="button" style="background: rgba(56, 189, 248, 0.1); border: 1px dashed #38bdf8; color: #38bdf8; padding: 7px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s;">
-              <i class="fa-solid fa-plus"></i> Add Another Period to Cover
+            <button id="coverWipeMemoryBtn" type="button" title="Clear all saved cover memory and remembered lessons from this machine" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.35); color: #fca5a5; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;" onmouseover="this.style.background='rgba(239, 68, 68, 0.3)';" onmouseout="this.style.background='rgba(239, 68, 68, 0.15)';">
+              <i class="fa-solid fa-trash-can"></i> Wipe Absence Memory
             </button>
           </div>
 
-          <!-- Resource Setting Mode -->
-          <div>
-            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-              <i class="fa-solid fa-boxes-stacked" style="color: #10b981; margin-right: 5px;"></i> Classroom Setting Mode
-            </label>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div id="coverModeWorkbooks" style="background: ${resourceMode === 'workbooks' ? 'rgba(16, 185, 129, 0.15)' : '#1e293b'}; border: 1px solid ${resourceMode === 'workbooks' ? '#10b981' : '#334155'}; border-radius: 6px; padding: 10px; cursor: pointer;">
-                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: ${resourceMode === 'workbooks' ? '#34d399' : '#e2e8f0'};">
-                  <i class="fa-solid fa-book-open"></i> Printed Physical Workbooks
-                </div>
-                <div style="font-size: 0.74rem; color: #94a3b8; margin-top: 3px; line-height: 1.3;">
-                  Pupils have their printed physical course booklets in class. Exact page numbers will be referenced.
-                </div>
-              </div>
+          <!-- Collapsible Recent History Panel -->
+          <div id="coverRecentHistoryList" style="display: none; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 10px 12px; flex-direction: column; gap: 6px;">
+            <!-- Dynamically populated -->
+          </div>
 
-              <div id="coverModePaper" style="background: ${resourceMode === 'paper' ? 'rgba(245, 158, 11, 0.15)' : '#1e293b'}; border: 1px solid ${resourceMode === 'paper' ? '#f59e0b' : '#334155'}; border-radius: 6px; padding: 10px; cursor: pointer;">
-                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: ${resourceMode === 'paper' ? '#fbbf24' : '#e2e8f0'};">
-                  <i class="fa-regular fa-file"></i> Paper Only (No Workbooks in School)
-                </div>
-                <div style="font-size: 0.74rem; color: #94a3b8; margin-top: 3px; line-height: 1.3;">
-                  Pupils use blank/lined A4 paper. Generates structured dual-perspective maps, flowcharts, or timelines.
-                </div>
-              </div>
+          <!-- Timetabled Lessons & Unit/Topic Customization Cards -->
+          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #f8fafc; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-calendar-check" style="color: #3b82f6;"></i>
+                <span id="coverScheduleLabel">Schedule for Week A Tuesday</span>
+              </span>
+              <span style="font-size: 0.7rem; color: #94a3b8;">Choose Unit &amp; Lesson for each class</span>
             </div>
-          </div>
 
-          <!-- Work Collection Policy Selector -->
-          <div>
-            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-              <i class="fa-solid fa-clipboard-check" style="color: #38bdf8; margin-right: 5px;"></i> Work Collection Policy
-            </label>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div id="coverWorkCollect" style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; border-radius: 6px; padding: 7px 10px; cursor: pointer; transition: all 0.15s ease;">
-                <div style="display: flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 700; color: #7dd3fc;">
-                  <i class="fa-solid fa-inbox"></i> Collect at End of Period
-                </div>
-                <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">
-                  Supervisor collects all work at the bell to leave on teacher's desk.
-                </div>
-              </div>
-
-              <div id="coverWorkFolders" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 7px 10px; cursor: pointer; transition: all 0.15s ease;">
-                <div style="display: flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 700; color: #e2e8f0;">
-                  <i class="fa-solid fa-folder-closed"></i> Keep in Books / Folders
-                </div>
-                <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">
-                  Pupils keep work safe in their books/folders; checked next lesson.
-                </div>
-              </div>
-
-              <div id="coverWorkDigital" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 7px 10px; cursor: pointer; transition: all 0.15s ease;">
-                <div style="display: flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 700; color: #e2e8f0;">
-                  <i class="fa-solid fa-cloud-arrow-up"></i> Submit Digitally (VLE)
-                </div>
-                <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">
-                  Pupils submit notes/photos via Google Classroom / Microsoft Teams.
-                </div>
-              </div>
+            <div id="coverPeriodsContainer" style="display: flex; flex-direction: column; gap: 10px;">
+              <!-- Dynamically populated with Period rows -->
             </div>
-          </div>
-
-          <!-- Supervisor Custom Notes -->
-          <div>
-            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
-              <i class="fa-solid fa-pencil" style="color: #cbd5e1; margin-right: 5px;"></i> Supervisor Instructions / Room
-            </label>
-            <textarea id="coverSupervisorInput" rows="2" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px; font-size: 0.82rem; outline: none; resize: vertical;">${supervisorNotes}</textarea>
-          </div>
-
-          <!-- Info Box -->
-          <div style="background: rgba(2, 132, 199, 0.1); border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 0 4px 4px 0; font-size: 0.74rem; color: #bae6fd; line-height: 1.35;">
-            <strong>💡 Zero-Friction:</strong> Pupils do NOT need logins. Links and QR codes open directly in browser on any device.
           </div>
 
         </div>
 
-        <!-- Right Main: Preview or Text -->
-        <div style="flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #334155; position: relative;">
+        <!-- Right Column: Live Email Preview & Instant Dispatch -->
+        <div style="display: flex; flex-direction: column; gap: 10px; height: 100%; min-height: 0;">
           
-          <!-- Sheet Preview View -->
-          <div id="coverPreviewContainer" style="flex: 1; overflow-y: auto; padding: 25px; display: flex; justify-content: center; background: #475569;">
-            <div id="coverPaperSheet" style="background: #ffffff; width: 210mm; min-height: 297mm; padding: 10mm 14mm; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-radius: 2px; color: #1e293b; font-size: 8.8pt; line-height: 1.32; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-              <!-- Dynamic Sheet Content Injected Here -->
+          <!-- Dispatch Toolbar -->
+          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 0.78rem; font-weight: 700; color: #f8fafc;">Live Email Draft</span>
+              <span style="font-size: 0.7rem; color: #94a3b8;">(Updates in real-time)</span>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <a id="coverMailtoBtn" href="#" class="btn-mail" style="background: #0f172a; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.borderColor='#60a5fa'; this.style.color='#ffffff';" onmouseout="this.style.borderColor='#334155'; this.style.color='#cbd5e1';">
+                <i class="fa-solid fa-envelope"></i> Mail
+              </a>
+              <a id="coverOutlookBtn" href="#" target="_blank" class="btn-outlook" style="background: #0f172a; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.borderColor='#60a5fa'; this.style.color='#ffffff';" onmouseout="this.style.borderColor='#334155'; this.style.color='#cbd5e1';">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Outlook Web
+              </a>
+              <button id="coverCopyActionBtn" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: 1px solid #3b82f6; padding: 7px 18px; border-radius: 6px; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); transition: all 0.15s;">
+                <i class="fa-solid fa-copy"></i> Copy Cover Email
+              </button>
             </div>
           </div>
 
-          <!-- Plain Text View -->
-          <div id="coverTextContainer" style="flex: 1; overflow-y: auto; padding: 25px; display: none; background: #0f172a;">
-            <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 0.85rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">
-                  Ready to send:
-                </span>
-                <button id="coverCopyTextInnerBtn" style="background: #059669; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                  <i class="fa-solid fa-copy"></i> Copy Email
-                </button>
-              </div>
-              <textarea id="coverPlainTextArea" readonly style="width: 100%; height: 70vh; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f1f5f9; padding: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.86rem; line-height: 1.6; resize: none;"></textarea>
-            </div>
+          <!-- Email Preview Textarea Container -->
+          <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
+            <textarea id="coverEmailOutputArea" readonly style="flex: 1; width: 100%; box-sizing: border-box; background: #070d1e; border: 1px solid #1e293b; border-radius: 8px; color: #f1f5f9; padding: 16px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.84rem; line-height: 1.6; resize: none; outline: none; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);"></textarea>
           </div>
 
         </div>
@@ -3273,751 +3673,691 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   document.body.appendChild(overlay);
 
   // References
-  const unitSelect = overlay.querySelector('#coverUnitSelect');
-  const btnPeriodSingle = overlay.querySelector('#coverBtnPeriodSingle');
-  const btnPeriodDouble = overlay.querySelector('#coverBtnPeriodDouble');
-  const lesson1Select = overlay.querySelector('#coverLesson1Select');
-  const lesson2Select = overlay.querySelector('#coverLesson2Select');
-  const lesson2Wrapper = overlay.querySelector('#coverLesson2Wrapper');
-  const modeWorkbooks = overlay.querySelector('#coverModeWorkbooks');
-  const modePaper = overlay.querySelector('#coverModePaper');
-  const workCollectBtn = overlay.querySelector('#coverWorkCollect');
-  const workFoldersBtn = overlay.querySelector('#coverWorkFolders');
-  const workDigitalBtn = overlay.querySelector('#coverWorkDigital');
-  const supervisorInput = overlay.querySelector('#coverSupervisorInput');
-  const tabPreviewBtn = overlay.querySelector('#coverTabPreviewBtn');
-  const tabTextBtn = overlay.querySelector('#coverTabTextBtn');
-  const previewContainer = overlay.querySelector('#coverPreviewContainer');
-  const textContainer = overlay.querySelector('#coverTextContainer');
-  const paperSheet = overlay.querySelector('#coverPaperSheet');
-  const plainTextArea = overlay.querySelector('#coverPlainTextArea');
-  const copyBtn = overlay.querySelector('#coverCopyVleBtn');
-  const copyInnerBtn = overlay.querySelector('#coverCopyTextInnerBtn');
-  const printBtn = overlay.querySelector('#coverPrintTriggerBtn');
-  const closeBtn = overlay.querySelector('#coverCloseBtn');
-  const modalContent = overlay.querySelector('.modal-content');
-  const dutyCheckbox = overlay.querySelector('#coverDutyCheckbox');
-  const dutyInput = overlay.querySelector('#coverDutyInput');
-  const period1NumSelect = overlay.querySelector('#coverPeriod1Num');
-  const class1Input = overlay.querySelector('#coverClass1Input');
-  const period2NumSelect = overlay.querySelector('#coverPeriod2Num');
-  const class2Input = overlay.querySelector('#coverClass2Input');
-  const extraPeriodsList = overlay.querySelector('#coverExtraPeriodsList');
-  const addPeriodBtn = overlay.querySelector('#coverAddPeriodBtn');
+  const modalContainer = overlay.querySelector('#coverModalContainer');
+  const closeBtn = overlay.querySelector('#coverModalCloseBtn');
+  const quickTomorrowBtn = overlay.querySelector('#quickTomorrowBtn');
+  const quickTodayBtn = overlay.querySelector('#quickTodayBtn');
+  const btnWeekA = overlay.querySelector('#btnWeekA');
+  const btnWeekB = overlay.querySelector('#btnWeekB');
+  const dayButtons = overlay.querySelectorAll('.day-btn');
+  const resourceRadios = overlay.querySelectorAll('input[name="coverResourceMode"]');
+  const collectionRadios = overlay.querySelectorAll('input[name="coverCollectionMode"]');
+  const chkDefaultShelf = overlay.querySelector('#chkDefaultShelf');
+  const btnApplyDefaultsToAll = overlay.querySelector('#btnApplyDefaultsToAll');
+  const chkIncludePolicy = overlay.querySelector('#chkIncludePolicy');
+  const scheduleLabel = overlay.querySelector('#coverScheduleLabel');
+  const periodsContainer = overlay.querySelector('#coverPeriodsContainer');
+  const emailOutputArea = overlay.querySelector('#coverEmailOutputArea');
+  const mailtoBtn = overlay.querySelector('#coverMailtoBtn');
+  const outlookBtn = overlay.querySelector('#coverOutlookBtn');
+  const copyActionBtn = overlay.querySelector('#coverCopyActionBtn');
+  const recentHistoryToggle = overlay.querySelector('#coverRecentHistoryToggle');
+  const recentHistoryList = overlay.querySelector('#coverRecentHistoryList');
+  const recentHistoryBadge = overlay.querySelector('#coverRecentHistoryBadge');
+  const historyChevron = overlay.querySelector('#coverHistoryChevron');
+  const wipeMemoryBtn = overlay.querySelector('#coverWipeMemoryBtn');
 
-  let extraPeriods = [];
-
-  const updateDefaultClassNames = () => {
-    const meta = availableUnits.find((u) => u.id === currentUnitId);
-    const yr = (meta && meta.year) || 'Year 11';
-    if (class1Input && (!class1Input.value || class1Input.value.startsWith('Year'))) {
-      class1Input.value = yr;
-    }
-    if (class2Input && (!class2Input.value || class2Input.value.startsWith('Year'))) {
-      class2Input.value = yr;
-    }
+  // Recent History Drawer Toggle
+  let historyDrawerOpen = false;
+  recentHistoryToggle.onclick = () => {
+    historyDrawerOpen = !historyDrawerOpen;
+    recentHistoryList.style.display = historyDrawerOpen ? 'flex' : 'none';
+    historyChevron.style.transform = historyDrawerOpen ? 'rotate(180deg)' : 'rotate(0deg)';
   };
 
-  const renderExtraPeriodsUI = () => {
-    if (!extraPeriodsList) return;
-    extraPeriodsList.innerHTML = '';
-    extraPeriods.forEach((ep, epIndex) => {
-      const epUData = getUnitData(ep.unitId);
-      const epLessons = epUData.lessons || [];
-
-      const row = document.createElement('div');
-      row.style.cssText =
-        'background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px; position: relative;';
-
-      row.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #94a3b8;">
-              Period:
-            </label>
-            <select class="ep-period-num" style="background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; outline: none; cursor: pointer;">
-              ${[1, 2, 3, 4, 5, 6].map((n) => `<option value="${n}" ${n === ep.periodNum ? 'selected' : ''}>${n}</option>`).join('')}
-            </select>
-          </div>
-          <div style="display: flex; align-items: center; gap: 5px;">
-            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">Class:</span>
-            <input type="text" class="ep-class-input" value="${ep.className || 'Year 9'}" placeholder="e.g. Year 9" style="width: 85px; background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #38bdf8; font-weight: 700; font-size: 0.78rem; padding: 2px 6px; outline: none;">
-            <button type="button" class="ep-remove-btn" style="background: transparent; border: none; color: #ef4444; cursor: pointer; padding: 2px 5px; font-size: 0.85rem;" title="Remove Period">
-              <i class="fa-solid fa-trash-can"></i>
-            </button>
-          </div>
-        </div>
-        <div>
-          <select class="ep-unit-select" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; padding: 6px 8px; font-size: 0.8rem; outline: none; cursor: pointer; margin-bottom: 6px;">
-            ${unitGroups
-              .map(
-                (g) => `
-              <optgroup label="${g.label}">
-                ${g.units.map((u) => `<option value="${u.id}" ${u.id === ep.unitId ? 'selected' : ''}>${u.name}</option>`).join('')}
-              </optgroup>
-            `,
-              )
-              .join('')}
-          </select>
-          <select class="ep-lesson-select" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc; padding: 6px 8px; font-size: 0.8rem; outline: none; cursor: pointer;">
-            ${
-              epLessons.length === 0
-                ? '<option value="0">Lesson 1</option>'
-                : epLessons
-                    .map(
-                      (l, idx) =>
-                        `<option value="${idx}" ${idx === ep.lessonIdx ? 'selected' : ''}>${idx + 1}. ${l.title || 'Lesson ' + (idx + 1)}</option>`,
-                    )
-                    .join('')
-            }
-          </select>
-        </div>
-      `;
-
-      const pNumSel = row.querySelector('.ep-period-num');
-      const cInp = row.querySelector('.ep-class-input');
-      const uSel = row.querySelector('.ep-unit-select');
-      const lSel = row.querySelector('.ep-lesson-select');
-      const remBtn = row.querySelector('.ep-remove-btn');
-
-      pNumSel.onchange = () => {
-        ep.periodNum = parseInt(pNumSel.value, 10);
-        updateCover();
-      };
-      cInp.oninput = () => {
-        ep.className = cInp.value;
-        updateCover();
-      };
-      uSel.onchange = () => {
-        ep.unitId = uSel.value;
-        ep.lessonIdx = 0;
-        const uMeta = availableUnits.find((u) => u.id === ep.unitId);
-        if (uMeta && uMeta.year) {
-          ep.className = uMeta.year;
-          cInp.value = uMeta.year;
-        }
-        renderExtraPeriodsUI();
-        updateCover();
-      };
-      lSel.onchange = () => {
-        ep.lessonIdx = parseInt(lSel.value, 10) || 0;
-        updateCover();
-      };
-      remBtn.onclick = () => {
-        extraPeriods.splice(epIndex, 1);
-        renderExtraPeriodsUI();
-        updateCover();
-      };
-
-      extraPeriodsList.appendChild(row);
-    });
+  // Wipe Memory Handler
+  wipeMemoryBtn.onclick = () => {
+    wipeAbsenceMemory();
+    selectedUnits = {};
+    selectedLessons = {};
+    const origHtml = wipeMemoryBtn.innerHTML;
+    wipeMemoryBtn.innerHTML = '<i class="fa-solid fa-check"></i> Wiped Clean!';
+    wipeMemoryBtn.style.background = 'rgba(16, 185, 129, 0.25)';
+    wipeMemoryBtn.style.borderColor = 'rgba(16, 185, 129, 0.6)';
+    wipeMemoryBtn.style.color = '#6ee7b7';
+    renderRecentHistory();
+    updateModalState();
+    setTimeout(() => {
+      wipeMemoryBtn.innerHTML = origHtml;
+      wipeMemoryBtn.style.background = 'rgba(239, 68, 68, 0.15)';
+      wipeMemoryBtn.style.borderColor = 'rgba(239, 68, 68, 0.35)';
+      wipeMemoryBtn.style.color = '#fca5a5';
+    }, 2000);
   };
 
-  if (addPeriodBtn) {
-    addPeriodBtn.onclick = () => {
-      const baseCount = periodType === 'double' ? 2 : 1;
-      const nextP = Math.min(6, baseCount + extraPeriods.length + 1);
-      const defaultUnit = currentUnitId;
-      const uMeta = availableUnits.find((u) => u.id === defaultUnit) || { year: 'Year 9' };
-      extraPeriods.push({
-        id: Date.now(),
-        periodNum: nextP,
-        className: uMeta.year || 'Year 9',
-        unitId: defaultUnit,
-        lessonIdx: 0,
-      });
-      renderExtraPeriodsUI();
-      updateCover();
-    };
-  }
-
-  // Populate lessons for current unit
-  const populateLessons = () => {
-    const uData = getUnitData(currentUnitId);
-    const lessons = uData.lessons || [];
-
-    lesson1Select.innerHTML = '';
-    lesson2Select.innerHTML = '';
-
-    if (lessons.length === 0) {
-      lesson1Select.innerHTML = '<option value="0">Lesson 1 (General Overview)</option>';
-      lesson2Select.innerHTML = '<option value="0">Lesson 2 (Application & Review)</option>';
+  // Render Multi-Day Absence History
+  const renderRecentHistory = () => {
+    const log = getRecentCoverLog();
+    recentHistoryBadge.textContent = `${log.length} logged`;
+    if (log.length === 0) {
+      recentHistoryList.innerHTML = `<span style="color: #94a3b8; font-size: 0.72rem; font-style: italic;">No previous absence cover entries recorded on this machine yet. As you copy or dispatch cover, records will automatically appear here.</span>`;
       return;
     }
 
-    lessons.forEach((l, idx) => {
-      const opt1 = document.createElement('option');
-      opt1.value = idx;
-      opt1.textContent = `${idx + 1}. ${l.title || 'Lesson ' + (idx + 1)}`;
-      if (idx === lesson1Idx) opt1.selected = true;
-      lesson1Select.appendChild(opt1);
-
-      const opt2 = document.createElement('option');
-      opt2.value = idx;
-      opt2.textContent = `${idx + 1}. ${l.title || 'Lesson ' + (idx + 1)}`;
-      if (idx === lesson2Idx) opt2.selected = true;
-      lesson2Select.appendChild(opt2);
-    });
-
-    if (lesson1Idx >= lessons.length) lesson1Idx = 0;
-    if (lesson2Idx >= lessons.length) lesson2Idx = Math.min(1, lessons.length - 1);
-  };
-
-  // Helper to map page numbers for workbooks using dynamic WORKBOOK_PAGE_MAP
-  const getPageReferences = (uId, lessonIdx, lesson) => {
-    const lId = lesson ? lesson.id || `lesson_${lessonIdx + 1}` : `lesson_${lessonIdx + 1}`;
-    let anchor = null;
-    try {
-      if (typeof getWorkbookPageAnchor === 'function') {
-        anchor = getWorkbookPageAnchor(uId, lId, lessonIdx);
-      }
-    } catch (e) {
-      console.warn('Page anchor error:', e);
-    }
-
-    if (anchor && anchor.page) {
-      const p = anchor.page;
-      const bTitle = anchor.booklet || 'Pupil Workbook';
-      const isMultiBooklet = [
-        'cme_new',
-        'edexcel_medicine',
-        'eee',
-        'usa',
-        'weimar_nazi_germany',
-      ].includes(uId);
-      const bLabel = isMultiBooklet ? `${bTitle}` : 'Pupil Workbook';
-      return {
-        booklet: bLabel,
-        wb: `${bLabel} (Pages ${p}–${p + 3})`,
-        tb: `Textbook (Pages ${Math.max(1, p - 1)}–${p + 3})`,
-        doNow: `${bLabel} (Page ${p})`,
-        vocab: `${bLabel} (Page ${p + 1})`,
-        rawPage: p,
-      };
-    }
-
-    // Fallback if not mapped
-    const wbStart = 3 + lessonIdx * 6;
-    return {
-      booklet: 'Pupil Workbook',
-      wb: `Pages ${wbStart}–${wbStart + 3}`,
-      tb: `Pages ${wbStart}–${wbStart + 3}`,
-      doNow: `Page ${wbStart}`,
-      vocab: `Page ${wbStart + 1}`,
-      rawPage: wbStart,
-    };
-  };
-
-  const getCollectionNotice = () => {
-    if (workCollectionMode === 'collect') {
-      return {
-        sheet:
-          "<strong>📥 Work Collection:</strong> All completed work MUST be collected by the supervisor at the bell and left on the teacher's desk.",
-        plain:
-          "All work MUST be collected by the supervisor at the bell and left on the teacher's desk.",
-        footer: 'All work collected by supervisor at the bell.',
-      };
-    }
-    if (workCollectionMode === 'folders') {
-      return {
-        sheet:
-          '<strong>📁 Work Collection:</strong> Pupils must keep all completed work safely filed in their history folders/books. It will be inspected and marked next lesson.',
-        plain:
-          'Pupils must keep all completed work safely filed in their history folders/books; checked next lesson.',
-        footer: 'Keep work safely in student books / folders for teacher inspection.',
-      };
-    }
-    return {
-      sheet:
-        '<strong>🌐 Work Collection:</strong> Pupils must photograph or submit their completed work via Google Classroom / Teams before leaving the classroom.',
-      plain: 'Pupils must submit their completed work on Google Classroom / Teams before leaving.',
-      footer: 'Digital submission required via Google Classroom / Teams.',
-    };
-  };
-
-  // Render Cover HTML and Plain Text
-  const updateCover = () => {
-    const uData = getUnitData(currentUnitId);
-    const unitMeta = availableUnits.find((u) => u.id === currentUnitId) || {
-      name: uData.title || currentUnitId,
-      year: 'Year 10/11',
-      spec: 'Edexcel GCSE',
-    };
-    const lessons = uData.lessons || [];
-
-    const l1 = lessons[lesson1Idx] || { id: 'lesson_1', title: 'Lesson 1' };
-    const l2 = lessons[lesson2Idx] || { id: 'lesson_2', title: 'Lesson 2' };
-
-    const l1Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${lesson1Idx}`;
-    const l2Url = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${lesson2Idx}`;
-
-    const l1Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l1Url)}`;
-    const l2Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l2Url)}`;
-
-    const p1Refs = getPageReferences(currentUnitId, lesson1Idx, l1);
-    const p2Refs = getPageReferences(currentUnitId, lesson2Idx, l2);
-    const collectNotice = getCollectionNotice();
-
-    // Helper to render streamlined 3-step period
-    const renderPeriodHtml = (
-      periodNum,
-      lessonObj,
-      pRefs,
-      lessonUrl,
-      qrUrl,
-      className,
-      customUnitMeta,
-      customUData,
-    ) => {
-      const uMeta = customUnitMeta || unitMeta;
-      const uTitle = (customUData && customUData.title) || uData.title || uMeta.name;
-      const clsName = className || uMeta.year || 'Class';
-      const dutyNotice =
-        dutyCheckbox && dutyCheckbox.checked && dutyInput && dutyInput.value.trim()
-          ? dutyInput.value.trim()
-          : '';
-
-      return `
-      <div style="border-bottom: 2px solid #881337; padding-bottom: 6px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
-            <span style="display: inline-block; background: #881337; color: white; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding: 2.5px 8px; border-radius: 4px;">
-              The History Revision Hub • ${uMeta.spec || 'GCSE'} (${clsName})
+    recentHistoryList.innerHTML = log
+      .map(
+        (item, idx) => `
+      <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; gap: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 700; color: #60a5fa; font-size: 0.78rem;">${item.dayName}, ${item.dateStr} (${item.week})</span>
+          <span style="color: #94a3b8; font-size: 0.7rem;">Dispatched at ${item.recordedAt || ''}</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.72rem; color: #cbd5e1;">
+          ${(item.entries || [])
+            .map(
+              (e) => `
+            <span style="background: #0f172a; border: 1px solid #334155; padding: 2px 7px; border-radius: 4px;">
+              <strong style="color: #f8fafc;">${e.period}:</strong> ${e.setName} — ${e.topic}
             </span>
-            ${dutyNotice && String(periodNum) === '1' ? `<span style="display: inline-block; background: #fff1f2; color: #be123c; font-size: 7pt; font-weight: 700; border: 1px solid #fecdd3; padding: 2px 7px; border-radius: 4px;">🛡️ Duty: ${dutyNotice}</span>` : ''}
-          </div>
-          <h1 style="font-size: 13.5pt; margin: 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
-            ${uTitle}
-          </h1>
-          <div style="font-size: 9.2pt; color: #475569; font-weight: 700; margin-bottom: 3px;">
-            Period ${periodNum} (${clsName}) Cover Enquiry: ${lessonObj.title}
-          </div>
-          <div style="font-size: 7.8pt; color: #881337; background: #fff1f2; padding: 3px 8px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
-            🌐 <strong>Interactive App:</strong> <a href="${lessonUrl}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${lessonUrl}</a>
-          </div>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px; padding: 4px 7px; margin-left: 10px;">
-          <img src="${qrUrl}" alt="QR" style="width: 50px; height: 50px; display: block;">
-          <span style="font-size: 5.8pt; font-weight: 800; color: #881337; margin-top: 2px;">SCAN TO OPEN</span>
+          `,
+            )
+            .join('')}
         </div>
       </div>
-
-      <!-- Supervisor & Class Survival Box -->
-      <div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 6px 10px; border-radius: 0 5px 5px 0; margin-bottom: 8px; font-size: 8.5pt; line-height: 1.4;">
-        <div style="margin-bottom: 3px;">
-          <strong>📋 CLASS SETTING:</strong> 
-          ${
-            resourceMode === 'workbooks'
-              ? `Pupils have their <strong>printed Course Textbook (${pRefs.tb})</strong> and <strong>printed Pupil Workbook (${pRefs.wb})</strong>. Complete all written tasks in neat pen.`
-              : `Pupils complete their work on <strong>1 clean sheet of A4 paper</strong>. Access historical narrative and contemporary sources via the link or QR above.`
-          }
-        </div>
-        <div style="color: #c2410c; margin-bottom: 2px;">
-          ${collectNotice.sheet}
-        </div>
-        ${supervisorNotes ? `<div style="color: #475569; font-style: italic; margin-top: 2px;">Room / Supervisor Note: ${supervisorNotes}</div>` : ''}
-      </div>
-
-      <div style="font-size: 9.8pt; font-weight: 800; color: #881337; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 3px; margin: 6px 0 8px 0; display: flex; align-items: center; gap: 7px;">
-        <span style="background: #be123c; color: white; font-size: 7.2pt; font-weight: 800; padding: 1.5px 6px; border-radius: 3px; text-transform: uppercase;">Period ${periodNum}</span>
-        <span>Three-Step Lesson Pathway</span>
-      </div>
-
-      <!-- STEP 1: RETRIEVAL STARTER & VOCABULARY (10 MINS) -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4.5px solid #2563eb; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-weight: 800; color: #1e3a8a; font-size: 9.2pt;">
-            STEP 1: Retrieval Starter &amp; Academic Vocabulary (10 Mins)
-          </span>
-          <span style="font-size: 7.2pt; font-weight: 800; background: #dbeafe; color: #1e40af; padding: 1.5px 6px; border-radius: 3px;">
-            ${resourceMode === 'workbooks' ? pRefs.doNow : 'A4 Paper (Top)'}
-          </span>
-        </div>
-        <ol style="margin: 2px 0 2px 18px; padding: 0; font-size: 8.6pt; line-height: 1.45; color: #1e293b;">
-          ${
-            resourceMode === 'workbooks'
-              ? `<li><strong>Do Now Recall:</strong> Open your workbook to <strong>${pRefs.doNow}</strong>. Complete the 10 retrieval questions testing recall from previous topics.</li>
-                 <li><strong>Vocabulary Foundation:</strong> On <strong>${pRefs.vocab}</strong>, complete the vocabulary activity (fill-in-the-blank summary or dual-term analytical mapping).</li>`
-              : `<li><strong>Recall Starter:</strong> Write today's date, title, and your full name at the top of your paper. Open the digital lesson and write down the answers to the 5 recall starter questions.</li>
-                 <li><strong>Key Concepts:</strong> Read the key terminology box and write full definitions for 3 essential historical terms from this lesson.</li>`
-          }
-        </ol>
-      </div>
-
-      <!-- STEP 2: CORE HISTORICAL INVESTIGATION & APPLICATION (30 MINS) -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4.5px solid #881337; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-weight: 800; color: #881337; font-size: 9.2pt;">
-            STEP 2: Core Investigation &amp; Extended Enquiry (30 Mins)
-          </span>
-          <span style="font-size: 7.2pt; font-weight: 800; background: #fee2e2; color: #991b1b; padding: 1.5px 6px; border-radius: 3px;">
-            ${resourceMode === 'workbooks' ? pRefs.wb : 'A4 Paper Task'}
-          </span>
-        </div>
-        <div style="font-size: 8.6pt; line-height: 1.45; color: #1e293b;">
-          <div style="margin-bottom: 4px;">
-            📖 <strong>Core Reading:</strong> ${resourceMode === 'workbooks' ? `Read through <strong>${pRefs.tb}</strong> in your textbook or read the core historical narrative on the app.` : `Read through the core narrative on your screen, carefully studying the contemporary maps and primary sources.`}
-          </div>
-          <div>
-            ✍️ <strong>Written Application Task:</strong>
-            ${
-              resourceMode === 'workbooks'
-                ? `Turn to <strong>${pRefs.wb}</strong> in your workbook. Complete the structured analytical enquiry tasks in neat pen. Write in academic prose deploying <strong>PEE/PEEL structure strips</strong> and connectives from the <strong>Causal Connective Bank</strong> (<em>Consequently, As a direct result, In stark contrast</em>).`
-                : currentUnitId === 'cme_new'
-                  ? periodNum === 1
-                    ? `<strong>Dual-Perspective Partition Map Activity:</strong> Sketch the outline of Mandate Palestine. Clearly shade the proposed Jewish state vs Arab state under the 1947 UN Partition Plan (Resolution 181). Around the margins, annotate 3 reasons why Jewish leaders accepted the plan and 3 reasons why Arab leaders rejected it.`
-                    : `<strong>12-Point Chronological Milestone Timeline:</strong> Construct an annotated timeline (1915–1949). For each event (McMahon, Balfour, Arab Revolt, 1948 War), write 2 bullet points: (1) What happened, and (2) Why it escalated conflict.`
-                  : `<strong>Analytical Evidence Matrix &amp; Conclusion:</strong> Divide your page into two columns comparing competing historical factors (e.g., Short-term vs Long-term causes, or Change vs Continuity). Annotate 4 precise historical facts in each column, then write a 1-paragraph evaluative verdict answering the lesson enquiry.`
-            }
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 3: DIGITAL MASTERY CHECK & WORK SUBMISSION (15 MINS) -->
-      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4.5px solid #16a34a; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-weight: 800; color: #166534; font-size: 9.2pt;">
-            STEP 3: Digital Mastery Check &amp; Submission (15 Mins)
-          </span>
-          <span style="font-size: 7.2pt; font-weight: 800; background: #dcfce7; color: #15803d; padding: 1.5px 6px; border-radius: 3px;">
-            Interactive Quiz
-          </span>
-        </div>
-        <div style="font-size: 8.6pt; line-height: 1.45; color: #14532d;">
-          <p style="margin: 0 0 3px 0;">
-            🎯 <strong>Mastery Quiz:</strong> Open the <strong>Interactive Quiz Zone</strong> on the lesson app page. Complete the quick-fire questions to check your recall score before the end of the lesson.
-          </p>
-          <p style="margin: 0; font-weight: 700; color: #166534;">
-            📦 <strong>Pack Up:</strong> ${collectNotice.sheet}
-          </p>
-        </div>
-      </div>
-
-      <div style="margin-top: 10px; padding-top: 4px; border-top: 1px solid #e2e8f0; font-size: 7.2pt; color: #64748b; display: flex; justify-content: space-between;">
-        <span>The History Revision Hub • Department Lead</span>
-        <span>${collectNotice.footer}</span>
-      </div>
-    `;
-    };
-
-    const p1Num = period1NumSelect ? period1NumSelect.value : '1';
-    const c1Name =
-      class1Input && class1Input.value.trim()
-        ? class1Input.value.trim()
-        : unitMeta.year || 'Year 11';
-    let sheetHtml = renderPeriodHtml(p1Num, l1, p1Refs, l1Url, l1Qr, c1Name, unitMeta, uData);
-
-    if (periodType === 'double') {
-      const p2Num = period2NumSelect ? period2NumSelect.value : '2';
-      const c2Name =
-        class2Input && class2Input.value.trim()
-          ? class2Input.value.trim()
-          : unitMeta.year || 'Year 11';
-      sheetHtml += `
-        <!-- ==================== PERIOD 2 (PAGE BREAK) ==================== -->
-        <div style="page-break-before: always; break-before: page; margin-top: 15mm;"></div>
-        ${renderPeriodHtml(p2Num, l2, p2Refs, l2Url, l2Qr, c2Name, unitMeta, uData)}
-      `;
-    }
-
-    extraPeriods.forEach((ep) => {
-      const epUData = getUnitData(ep.unitId);
-      const epUnitMeta = availableUnits.find((u) => u.id === ep.unitId) || {
-        name: epUData.title || ep.unitId,
-        year: ep.className,
-        spec: 'History',
-      };
-      const epLessons = epUData.lessons || [];
-      const epLesson = epLessons[ep.lessonIdx] || { title: 'Lesson ' + (ep.lessonIdx + 1) };
-      const epUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=${ep.unitId}&lesson=${ep.lessonIdx}`;
-      const epQr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(epUrl)}`;
-      const epRefs = getPageReferences(ep.unitId, ep.lessonIdx, epLesson);
-      sheetHtml += `
-        <!-- ==================== EXTRA PERIOD (PAGE BREAK) ==================== -->
-        <div style="page-break-before: always; break-before: page; margin-top: 15mm;"></div>
-        ${renderPeriodHtml(ep.periodNum, epLesson, epRefs, epUrl, epQr, ep.className, epUnitMeta, epUData)}
-      `;
-    });
-
-    paperSheet.innerHTML = sheetHtml;
-
-    // Build Concise Departmental Cover Email
-    let plainText = `Dear ,\n`;
-    plainText += `Please find below the emergency cover schedule and lesson plans for today.\n`;
-    plainText += `Tutor AM / PM Warrior 2\n`;
-
-    const includeDuty = dutyCheckbox ? dutyCheckbox.checked : false;
-    const dutyVal = dutyInput && dutyInput.value.trim() ? dutyInput.value.trim() : '';
-    plainText += `Duties: ${includeDuty && dutyVal ? dutyVal : 'none'}\n`;
-
-    const l1UnitTitle = uData.title || unitMeta.name;
-    plainText += `▶ PERIOD ${p1Num} — ${c1Name}\n`;
-    plainText += `Topic: ${l1.title} (${l1UnitTitle}) [${l1Url}](${l1Url})\n`;
-
-    if (periodType === 'double') {
-      const p2Num = period2NumSelect ? period2NumSelect.value : '2';
-      const c2Name =
-        class2Input && class2Input.value.trim()
-          ? class2Input.value.trim()
-          : unitMeta.year || 'Year 11';
-      plainText += `▶ PERIOD ${p2Num} — ${c2Name}\n`;
-      plainText += `Topic: ${l2.title} (${l1UnitTitle}) [${l2Url}](${l2Url})\n`;
-    }
-
-    extraPeriods.forEach((ep) => {
-      const epUData = getUnitData(ep.unitId);
-      const epLessons = epUData.lessons || [];
-      const epLesson = epLessons[ep.lessonIdx] || { title: 'Lesson ' + (ep.lessonIdx + 1) };
-      const epUrl = `https://the-history-revision-hub.netlify.app/?unit=${ep.unitId}&lesson=${ep.lessonIdx}`;
-      const epMeta = availableUnits.find((u) => u.id === ep.unitId) || {
-        name: epUData.title || ep.unitId,
-      };
-      const epUnitTitle = epUData.title || epMeta.name;
-      plainText += `▶ PERIOD ${ep.periodNum} — ${ep.className}\n`;
-      plainText += `Topic: ${epLesson.title} (${epUnitTitle}) [${epUrl}](${epUrl})\n`;
-    });
-
-    plainText += `Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.\n`;
-    plainText += `Kind regards,\n`;
-    plainText += `The History Department\n`;
-
-    plainTextArea.value = plainText;
+    `,
+      )
+      .join('');
   };
 
-  // Work Collection Mode Event Handlers
-  const updateWorkCollectionUI = () => {
-    [
-      { btn: workCollectBtn, mode: 'collect' },
-      { btn: workFoldersBtn, mode: 'folders' },
-      { btn: workDigitalBtn, mode: 'digital' },
-    ].forEach(({ btn, mode }) => {
-      if (!btn) return;
-      const isActive = workCollectionMode === mode;
-      btn.style.background = isActive ? 'rgba(56, 189, 248, 0.15)' : '#1e293b';
-      btn.style.borderColor = isActive ? '#38bdf8' : '#334155';
-      const labelDiv = btn.firstElementChild;
-      if (labelDiv) labelDiv.style.color = isActive ? '#7dd3fc' : '#e2e8f0';
-    });
-  };
-
-  if (workCollectBtn) {
-    workCollectBtn.onclick = () => {
-      workCollectionMode = 'collect';
-      updateWorkCollectionUI();
-      updateCover();
-    };
-  }
-
-  if (workFoldersBtn) {
-    workFoldersBtn.onclick = () => {
-      workCollectionMode = 'folders';
-      updateWorkCollectionUI();
-      updateCover();
-    };
-  }
-
-  if (workDigitalBtn) {
-    workDigitalBtn.onclick = () => {
-      workCollectionMode = 'digital';
-      updateWorkCollectionUI();
-      updateCover();
-    };
-  }
-
-  // Event Handlers
-  unitSelect.onchange = () => {
-    currentUnitId = unitSelect.value;
-    lesson1Idx = 0;
-    lesson2Idx = 1;
-    if (currentUnitId === 'cme_new') {
-      resourceMode = 'paper';
-    } else {
-      resourceMode = 'workbooks';
-    }
-    modeWorkbooks.style.background =
-      resourceMode === 'workbooks' ? 'rgba(16, 185, 129, 0.15)' : '#1e293b';
-    modeWorkbooks.style.borderColor = resourceMode === 'workbooks' ? '#10b981' : '#334155';
-    modePaper.style.background = resourceMode === 'paper' ? 'rgba(245, 158, 11, 0.15)' : '#1e293b';
-    modePaper.style.borderColor = resourceMode === 'paper' ? '#f59e0b' : '#334155';
-    updateDefaultClassNames();
-    populateLessons();
-    updateCover();
-  };
-
-  if (dutyCheckbox) dutyCheckbox.onchange = updateCover;
-  if (dutyInput) dutyInput.oninput = updateCover;
-  if (period1NumSelect) period1NumSelect.onchange = updateCover;
-  if (class1Input) class1Input.oninput = updateCover;
-  if (period2NumSelect) period2NumSelect.onchange = updateCover;
-  if (class2Input) class2Input.oninput = updateCover;
-
-  btnPeriodSingle.onclick = () => {
-    periodType = 'single';
-    btnPeriodSingle.style.background = 'rgba(225, 29, 72, 0.2)';
-    btnPeriodSingle.style.color = '#fb7185';
-    btnPeriodSingle.style.borderColor = '#e11d48';
-
-    btnPeriodDouble.style.background = '#1e293b';
-    btnPeriodDouble.style.color = '#94a3b8';
-    btnPeriodDouble.style.borderColor = '#334155';
-
-    lesson2Wrapper.style.display = 'none';
-    updateCover();
-  };
-
-  btnPeriodDouble.onclick = () => {
-    periodType = 'double';
-    btnPeriodDouble.style.background = 'rgba(225, 29, 72, 0.2)';
-    btnPeriodDouble.style.color = '#fb7185';
-    btnPeriodDouble.style.borderColor = '#e11d48';
-
-    btnPeriodSingle.style.background = '#1e293b';
-    btnPeriodSingle.style.color = '#94a3b8';
-    btnPeriodSingle.style.borderColor = '#334155';
-
-    lesson2Wrapper.style.display = 'block';
-    updateCover();
-  };
-
-  lesson1Select.onchange = () => {
-    lesson1Idx = parseInt(lesson1Select.value, 10) || 0;
-    if (lesson2Idx <= lesson1Idx) {
-      lesson2Idx = Math.min(lesson1Idx + 1, lesson2Select.options.length - 1);
-      lesson2Select.value = lesson2Idx;
-    }
-    updateCover();
-  };
-
-  lesson2Select.onchange = () => {
-    lesson2Idx = parseInt(lesson2Select.value, 10) || 0;
-    updateCover();
-  };
-
-  modeWorkbooks.onclick = () => {
-    resourceMode = 'workbooks';
-    modeWorkbooks.style.background = 'rgba(16, 185, 129, 0.15)';
-    modeWorkbooks.style.borderColor = '#10b981';
-    modePaper.style.background = '#1e293b';
-    modePaper.style.borderColor = '#334155';
-    updateCover();
-  };
-
-  modePaper.onclick = () => {
-    resourceMode = 'paper';
-    modePaper.style.background = 'rgba(245, 158, 11, 0.15)';
-    modePaper.style.borderColor = '#f59e0b';
-    modeWorkbooks.style.background = '#1e293b';
-    modeWorkbooks.style.borderColor = '#334155';
-    updateCover();
-  };
-
-  supervisorInput.oninput = () => {
-    supervisorNotes = supervisorInput.value;
-    updateCover();
-  };
-
-  // Tab switching
-  tabPreviewBtn.onclick = () => {
-    activeTab = 'preview';
-    tabPreviewBtn.style.background = '#334155';
-    tabPreviewBtn.style.color = '#ffffff';
-    tabPreviewBtn.style.borderColor = '#475569';
-    tabTextBtn.style.background = 'transparent';
-    tabTextBtn.style.color = '#94a3b8';
-    tabTextBtn.style.borderColor = 'transparent';
-
-    previewContainer.style.display = 'flex';
-    textContainer.style.display = 'none';
-  };
-
-  tabTextBtn.onclick = () => {
-    activeTab = 'text';
-    tabTextBtn.style.background = '#334155';
-    tabTextBtn.style.color = '#ffffff';
-    tabTextBtn.style.borderColor = '#475569';
-    tabPreviewBtn.style.background = 'transparent';
-    tabPreviewBtn.style.color = '#94a3b8';
-    tabPreviewBtn.style.borderColor = 'transparent';
-
-    textContainer.style.display = 'flex';
-    previewContainer.style.display = 'none';
-  };
-
-  // Copy plain text handler
-  const handleCopy = () => {
-    navigator.clipboard
-      .writeText(plainTextArea.value)
-      .then(() => {
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied to Clipboard!';
-        copyBtn.style.background = '#10b981';
-        setTimeout(() => {
-          copyBtn.innerHTML = originalText;
-          copyBtn.style.background = 'linear-gradient(135deg, #059669 0%, #047857 100%)';
-        }, 2500);
-
-        if (copyInnerBtn) {
-          copyInnerBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-          setTimeout(() => {
-            copyInnerBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Text';
-          }, 2500);
+  // Helper to find previous cover topic for a set from history
+  const findPreviousCoverForSet = (setName) => {
+    const log = getRecentCoverLog();
+    for (const item of log) {
+      if (item.entries) {
+        const found = item.entries.find((e) => e.setName === setName);
+        if (found) {
+          return {
+            dateStr: `${item.dayName.slice(0, 3)} ${item.dateStr.split(' ')[0]} ${item.dateStr.split(' ')[1]}`,
+            topic: found.topic,
+            lessonIdx: found.lessonIdx,
+            unitTitle: found.unitTitle,
+          };
         }
+      }
+    }
+    return null;
+  };
+
+  // Main Reactive Update Function
+  const updateModalState = () => {
+    // 1. Update Week Buttons
+    if (currentWeek === 'Week A') {
+      btnWeekA.style.background = '#3b82f6';
+      btnWeekA.style.color = '#ffffff';
+      btnWeekB.style.background = 'transparent';
+      btnWeekB.style.color = '#94a3b8';
+    } else {
+      btnWeekB.style.background = '#3b82f6';
+      btnWeekB.style.color = '#ffffff';
+      btnWeekA.style.background = 'transparent';
+      btnWeekA.style.color = '#94a3b8';
+    }
+
+    // 2. Update Day Buttons
+    dayButtons.forEach((btn) => {
+      const d = btn.getAttribute('data-day');
+      if (d === currentDay) {
+        btn.style.background = '#2563eb';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = '#3b82f6';
+      } else {
+        btn.style.background = '#0f172a';
+        btn.style.color = '#cbd5e1';
+        btn.style.borderColor = '#334155';
+      }
+    });
+
+    // 3. Update Quick Preset Buttons
+    if (isTomorrow) {
+      quickTomorrowBtn.style.background = '#2563eb';
+      quickTomorrowBtn.style.color = '#ffffff';
+      quickTomorrowBtn.style.borderColor = '#3b82f6';
+      quickTodayBtn.style.background = '#0f172a';
+      quickTodayBtn.style.color = '#cbd5e1';
+      quickTodayBtn.style.borderColor = '#334155';
+    } else {
+      quickTodayBtn.style.background = '#2563eb';
+      quickTodayBtn.style.color = '#ffffff';
+      quickTodayBtn.style.borderColor = '#3b82f6';
+      quickTomorrowBtn.style.background = '#0f172a';
+      quickTomorrowBtn.style.color = '#cbd5e1';
+      quickTomorrowBtn.style.borderColor = '#334155';
+    }
+
+    // 4. Update Schedule Label
+    scheduleLabel.textContent = `Schedule for ${currentWeek} ${currentDay}`;
+
+    // 5. Render Periods & Customization Rows
+    periodsContainer.innerHTML = '';
+    const timetableDayList =
+      (TIMETABLE_DATA[currentWeek] && TIMETABLE_DATA[currentWeek][currentDay]) || [];
+    const duties = (TIMETABLE_DATA.duties && TIMETABLE_DATA.duties[currentDay]) || [];
+
+    const savedLastTopics = getSavedTopics();
+    const periodsData = [];
+
+    timetableDayList.forEach((slot, pIdx) => {
+      const periodName = slot.period;
+      const timeSlot = slot.time;
+
+      if (slot.type === 'hub') {
+        periodsData.push({
+          type: 'hub',
+          period: periodName,
+          time: timeSlot,
+          title: 'Hub Supervision',
+        });
+
+        const hubRow = document.createElement('div');
+        hubRow.style.cssText =
+          'background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;';
+        hubRow.innerHTML = `
+          <div>
+            <span style="font-weight: 700; color: #f8fafc;">${periodName.toUpperCase()} (${timeSlot})</span>
+            <span style="color: #94a3b8; font-weight: 600; margin-left: 8px;">— HUB SUPERVISION</span>
+          </div>
+          <span style="font-size: 0.7rem; color: #fbbf24; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Supervision Only (No Work)</span>
+        `;
+        periodsContainer.appendChild(hubRow);
+        return;
+      }
+
+      if (slot.type === 'club') {
+        periodsData.push({
+          type: 'club',
+          period: periodName,
+          time: timeSlot,
+          title: slot.raw || 'Chess Club',
+        });
+
+        const clubRow = document.createElement('div');
+        clubRow.style.cssText =
+          'background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;';
+        clubRow.innerHTML = `
+          <div>
+            <span style="font-weight: 700; color: #f8fafc;">${periodName.toUpperCase()} (${timeSlot})</span>
+            <span style="color: #94a3b8; font-weight: 600; margin-left: 8px;">— ${(slot.raw || 'Chess Club').toUpperCase()}</span>
+          </div>
+          <span style="font-size: 0.7rem; color: #34d399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Supervision Only</span>
+        `;
+        periodsContainer.appendChild(clubRow);
+        return;
+      }
+
+      // Teaching class
+      const setNameMatch = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
+      const setName = setNameMatch
+        ? setNameMatch[0]
+        : slot.raw
+          ? slot.raw.split('\n')[0]
+          : 'History Class';
+      const defaultInfo = DEFAULT_SET_MAPPING[setName] || {
+        year: 'GCSE',
+        unit: 'great_war',
+        unit_name: 'The Great War (1914–1919)',
+        default_lesson: 0,
+        default_topic: 'Key Historical Enquiry',
+      };
+
+      // Determine active unit for this class
+      if (selectedUnits[pIdx] === undefined) {
+        if (savedLastTopics[setName] && savedLastTopics[setName].unit) {
+          selectedUnits[pIdx] = savedLastTopics[setName].unit;
+        } else {
+          selectedUnits[pIdx] = defaultInfo.unit;
+        }
+      }
+      const activeUnitId = selectedUnits[pIdx];
+      const activeUnitTitle = getUnitTitle(activeUnitId);
+      const unitLessons = getUnitLessons(activeUnitId);
+
+      // Determine active lesson index
+      if (selectedLessons[pIdx] === undefined) {
+        if (savedLastTopics[setName] && savedLastTopics[setName].lesson !== undefined) {
+          selectedLessons[pIdx] = savedLastTopics[setName].lesson;
+        } else {
+          selectedLessons[pIdx] = defaultInfo.default_lesson || 0;
+        }
+      }
+      if (selectedLessons[pIdx] >= unitLessons.length) {
+        selectedLessons[pIdx] = 0;
+      }
+
+      const activeLIdx = selectedLessons[pIdx];
+      const activeLesson = unitLessons[activeLIdx] || { title: defaultInfo.default_topic };
+      const activeTopic = activeLesson.title || defaultInfo.default_topic;
+      const liveUrl = `${HUB_BASE_URL}/?unit=${activeUnitId}&lesson=${activeLIdx}`;
+
+      periodsData.push({
+        pIdx: pIdx,
+        type: 'lesson',
+        period: periodName,
+        time: timeSlot,
+        setName: setName,
+        unitId: activeUnitId,
+        unitName: activeUnitTitle,
+        topicName: activeTopic,
+        lessonIdx: activeLIdx,
+        liveUrl: liveUrl,
+      });
+
+      // Previous cover tag
+      const prevCover = findPreviousCoverForSet(setName);
+      const prevCoverTag = prevCover
+        ? `
+        <span style="font-size: 0.68rem; color: #93c5fd; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 2px 7px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
+          <i class="fa-solid fa-clock-rotate-left"></i> Prev: ${prevCover.dateStr} (Lesson ${(prevCover.lessonIdx ?? 0) + 1})
+        </span>
+      `
+        : '';
+
+      // Build Unit Dropdown Options with optgroups
+      const gcseUnits = ALL_UNITS.filter((u) => u.group === 'GCSE History');
+      const ks3Units = ALL_UNITS.filter((u) => u.group === 'Key Stage 3');
+
+      const unitOptionsHtml = `
+        <optgroup label="GCSE History Specification">
+          ${gcseUnits.map((u) => `<option value="${u.id}" ${u.id === activeUnitId ? 'selected' : ''}>${u.title}</option>`).join('')}
+        </optgroup>
+        <optgroup label="Key Stage 3 Curriculum">
+          ${ks3Units.map((u) => `<option value="${u.id}" ${u.id === activeUnitId ? 'selected' : ''}>${u.title}</option>`).join('')}
+        </optgroup>
+      `;
+
+      // Build Lesson Dropdown Options
+      let lessonOptionsHtml = '';
+      if (unitLessons.length > 0) {
+        lessonOptionsHtml = unitLessons
+          .map(
+            (l, lIndex) => `
+          <option value="${lIndex}" ${lIndex === activeLIdx ? 'selected' : ''}>Lesson ${lIndex + 1}: ${l.title}</option>
+        `,
+          )
+          .join('');
+      } else {
+        lessonOptionsHtml = `<option value="0">${defaultInfo.default_topic}</option>`;
+      }
+
+      // Per-Period Settings
+      const pSetting = getPeriodSetting(pIdx, setName);
+      const isWorkbooks = pSetting.resource === 'workbooks';
+      const isShelf = pSetting.shelf === true;
+      const colMode = pSetting.collection || 'collect';
+
+      const row = document.createElement('div');
+      row.style.cssText =
+        'background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px;';
+
+      row.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-weight: 700; color: #60a5fa; font-size: 0.84rem;">▶ ${periodName.toUpperCase()} (${timeSlot})</span>
+            <span style="color: #f8fafc; font-weight: 700; font-size: 0.84rem;">— ${setName}</span>
+          </div>
+          ${prevCoverTag}
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <!-- Unit Selector -->
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Unit of Study:</span>
+            <select class="cover-unit-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #f8fafc; font-size: 0.78rem; padding: 5px 8px; outline: none; cursor: pointer;">
+              ${unitOptionsHtml}
+            </select>
+          </div>
+
+          <!-- Lesson / Topic Selector -->
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Topic / Lesson:</span>
+            <select class="cover-lesson-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #f8fafc; font-size: 0.78rem; padding: 5px 8px; outline: none; cursor: pointer;">
+              ${lessonOptionsHtml}
+            </select>
+          </div>
+        </div>
+
+        <!-- Per-Period Instructions Bar -->
+        <div style="background: #162032; border: 1px solid #293548; border-radius: 6px; padding: 7px 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
+          <!-- Resource Toggle & Shelf Handout -->
+          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Resource:</span>
+            <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
+              <button type="button" class="btn-p-res" data-val="workbooks" style="background: ${isWorkbooks ? '#2563eb' : 'transparent'}; color: ${isWorkbooks ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
+                <i class="fa-solid fa-book-open"></i> Workbooks
+              </button>
+              <button type="button" class="btn-p-res" data-val="paper" style="background: ${!isWorkbooks ? '#2563eb' : 'transparent'}; color: ${!isWorkbooks ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
+                <i class="fa-solid fa-file-lines"></i> Paper Only
+              </button>
+            </div>
+
+            <!-- Shelf Handout / Return Button -->
+            <button type="button" class="btn-p-shelf-toggle" style="display: ${isWorkbooks ? 'inline-flex' : 'none'}; align-items: center; gap: 5px; background: ${isShelf ? 'rgba(59, 130, 246, 0.22)' : '#0f172a'}; border: 1px solid ${isShelf ? '#3b82f6' : '#334155'}; color: ${isShelf ? '#93c5fd' : '#64748b'}; padding: 3px 9px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.15s;" title="Toggle whether workbooks must be handed out from classroom shelf and returned to shelf at end">
+              <i class="fa-solid ${isShelf ? 'fa-square-check' : 'fa-square'}" style="color: ${isShelf ? '#60a5fa' : '#64748b'};"></i>
+              <span>Shelf: Hand out &amp; Return</span>
+            </button>
+          </div>
+
+          <!-- Collection Mode Pills -->
+          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Collection:</span>
+            <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
+              <button type="button" class="btn-p-col" data-val="collect" style="background: ${colMode === 'collect' ? '#3b82f6' : 'transparent'}; color: ${colMode === 'collect' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Collect all pupil work at end of lesson">
+                Collect at End
+              </button>
+              <button type="button" class="btn-p-col" data-val="folders" style="background: ${colMode === 'folders' ? '#3b82f6' : 'transparent'}; color: ${colMode === 'folders' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Pupils keep work in folders/books">
+                In Folders
+              </button>
+              <button type="button" class="btn-p-col" data-val="digital" style="background: ${colMode === 'digital' ? '#3b82f6' : 'transparent'}; color: ${colMode === 'digital' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Pupils submit digitally on VLE">
+                VLE
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Unit change listener
+      const unitPickerEl = row.querySelector('.cover-unit-picker');
+      unitPickerEl.onchange = (e) => {
+        const newUnitId = e.target.value;
+        selectedUnits[pIdx] = newUnitId;
+        selectedLessons[pIdx] = 0; // Reset to lesson 1 of newly chosen unit
+        saveTopicForSet(setName, newUnitId, 0);
+        updateModalState();
+      };
+
+      // Lesson change listener
+      const lessonPickerEl = row.querySelector('.cover-lesson-picker');
+      lessonPickerEl.onchange = (e) => {
+        const newLessonIdx = parseInt(e.target.value, 10) || 0;
+        selectedLessons[pIdx] = newLessonIdx;
+        saveTopicForSet(setName, activeUnitId, newLessonIdx);
+        updateModalState();
+      };
+
+      // Per-period resource toggle listeners
+      row.querySelectorAll('.btn-p-res').forEach((btn) => {
+        btn.onclick = () => {
+          const val = btn.getAttribute('data-val');
+          setPeriodSetting(pIdx, setName, { resource: val });
+          updateModalState();
+        };
+      });
+
+      // Shelf handout toggle listener
+      const shelfBtn = row.querySelector('.btn-p-shelf-toggle');
+      if (shelfBtn) {
+        shelfBtn.onclick = () => {
+          setPeriodSetting(pIdx, setName, { shelf: !isShelf });
+          updateModalState();
+        };
+      }
+
+      // Per-period collection listeners
+      row.querySelectorAll('.btn-p-col').forEach((btn) => {
+        btn.onclick = () => {
+          const val = btn.getAttribute('data-val');
+          setPeriodSetting(pIdx, setName, { collection: val });
+          updateModalState();
+        };
+      });
+
+      periodsContainer.appendChild(row);
+    });
+
+    // 6. Build Plain-Text Cover Email Output
+    const targetDateObj = getTargetDateObj(currentDay, isTomorrow);
+    const dateStr = formatTargetDate(targetDateObj);
+    const whenWord = isTomorrow ? 'tomorrow' : 'today';
+
+    const emailLines = [];
+    emailLines.push('Dear ,');
+    emailLines.push(
+      `Please find below the cover for ${whenWord}, ${currentDay}, ${dateStr} (${currentWeek}).`,
+    );
+    emailLines.push('Tutor AM / PM Warrior 2');
+
+    if (duties.length > 0) {
+      const dutyStrs = duties.map((d) => `${d.time} (${d.duty})`).join('; ');
+      emailLines.push(`Duties: ${dutyStrs}`);
+    } else {
+      emailLines.push('Duties: none');
+    }
+
+    periodsData.forEach((p) => {
+      if (p.type === 'hub') {
+        emailLines.push(`${p.period.toUpperCase()} (${p.time}) — HUB SUPERVISION`);
+        emailLines.push('SUPERVISION ONLY — NO COVER WORK TO SET:');
+        return;
+      }
+      if (p.type === 'club') {
+        emailLines.push(`${p.period.toUpperCase()} (${p.time}) — ${p.title.toUpperCase()}`);
+        emailLines.push('SUPERVISION ONLY — NO COVER WORK TO SET:');
+        return;
+      }
+      emailLines.push(`▶ ${p.period.toUpperCase()} (${p.time}) — ${p.setName}`);
+      emailLines.push(`Topic: ${p.topicName} (${p.unitName}) [${p.liveUrl}](${p.liveUrl})`);
+
+      if (includePolicyNotes) {
+        const pSet = getPeriodSetting(p.pIdx, p.setName);
+        if (pSet.resource === 'paper') {
+          emailLines.push('Resources: Paper only — pupils complete all work on lined A4 paper.');
+        } else {
+          if (pSet.shelf) {
+            emailLines.push(
+              'Resources: Printed physical workbooks — please hand out from classroom shelf and ensure all are returned to shelf at end.',
+            );
+          } else {
+            emailLines.push('Resources: Pupils should work in their printed physical workbooks.');
+          }
+        }
+        if (pSet.collection === 'folders') {
+          emailLines.push(
+            'Work Collection: Pupils keep completed work in their books/folders for next lesson.',
+          );
+        } else if (pSet.collection === 'digital') {
+          emailLines.push(
+            'Work Collection: Pupils submit work digitally via Google Classroom / VLE.',
+          );
+        } else {
+          emailLines.push(
+            'Work Collection: Please collect all pupil work at the end of the period.',
+          );
+        }
+      }
+    });
+
+    emailLines.push(
+      'Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.',
+    );
+    emailLines.push('Kind regards,');
+    emailLines.push('The History Department');
+
+    const emailText = emailLines.join('\n');
+    emailOutputArea.value = emailText;
+
+    // 7. Configure Outlook Web & Mailto Links
+    const subject = `COVER: History - ${currentDay}, ${dateStr} (${currentWeek})`;
+    const encodedSubj = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(emailText);
+
+    mailtoBtn.href = `mailto:?subject=${encodedSubj}&body=${encodedBody}`;
+    outlookBtn.href = `https://outlook.office.com/mail/deeplink/compose?subject=${encodedSubj}&body=${encodedBody}`;
+
+    // Update live dispatch payload for recording upon actual dispatch / copy
+    currentDispatchPayload = {
+      dateStr: dateStr,
+      dayName: currentDay,
+      week: currentWeek,
+      entries: periodsData
+        .filter((p) => p.type === 'lesson')
+        .map((p) => ({
+          period: p.period,
+          setName: p.setName,
+          unitTitle: p.unitName,
+          topic: p.topicName,
+          lessonIdx: p.lessonIdx,
+        })),
+    };
+
+    renderRecentHistory();
+  };
+
+  const commitDispatchToLog = () => {
+    if (
+      currentDispatchPayload &&
+      currentDispatchPayload.entries &&
+      currentDispatchPayload.entries.length > 0
+    ) {
+      currentDispatchPayload.recordedAt = new Date().toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+      saveToCoverLog(currentDispatchPayload);
+      renderRecentHistory();
+    }
+  };
+
+  // Event Listeners for Presets & Toggles
+  quickTomorrowBtn.onclick = () => {
+    isTomorrow = true;
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][
+      d.getDay()
+    ];
+    currentDay = dayName === 'Saturday' || dayName === 'Sunday' ? 'Monday' : dayName;
+    const targetDate = getTargetDateObj(currentDay, isTomorrow);
+    currentWeek = getAcademicWeekForDate(targetDate);
+    selectedLessons = {};
+    updateModalState();
+  };
+
+  quickTodayBtn.onclick = () => {
+    isTomorrow = false;
+    const d = new Date();
+    const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][
+      d.getDay()
+    ];
+    currentDay = dayName === 'Saturday' || dayName === 'Sunday' ? 'Monday' : dayName;
+    const targetDate = getTargetDateObj(currentDay, isTomorrow);
+    currentWeek = getAcademicWeekForDate(targetDate);
+    selectedLessons = {};
+    updateModalState();
+  };
+
+  btnWeekA.onclick = () => {
+    currentWeek = 'Week A';
+    selectedLessons = {};
+    updateModalState();
+  };
+
+  btnWeekB.onclick = () => {
+    currentWeek = 'Week B';
+    selectedLessons = {};
+    updateModalState();
+  };
+
+  dayButtons.forEach((btn) => {
+    btn.onclick = () => {
+      currentDay = btn.getAttribute('data-day');
+      const targetDate = getTargetDateObj(currentDay, isTomorrow);
+      currentWeek = getAcademicWeekForDate(targetDate);
+      selectedLessons = {};
+      updateModalState();
+    };
+  });
+
+  resourceRadios.forEach((r) => {
+    r.onchange = () => {
+      defaultResourceMode = r.value;
+      if (chkDefaultShelf && chkDefaultShelf.parentElement) {
+        chkDefaultShelf.parentElement.style.opacity =
+          defaultResourceMode === 'workbooks' ? '1' : '0.4';
+      }
+    };
+  });
+
+  if (chkDefaultShelf) {
+    chkDefaultShelf.onchange = () => {
+      defaultShelfMode = chkDefaultShelf.checked;
+    };
+  }
+
+  collectionRadios.forEach((r) => {
+    r.onchange = () => {
+      defaultCollectionMode = r.value;
+    };
+  });
+
+  if (btnApplyDefaultsToAll) {
+    btnApplyDefaultsToAll.onclick = () => {
+      const rawDayData =
+        TIMETABLE_DATA[currentWeek] && TIMETABLE_DATA[currentWeek][currentDay]
+          ? TIMETABLE_DATA[currentWeek][currentDay]
+          : [];
+      rawDayData.forEach((slot, pIdx) => {
+        const match = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
+        const setName = match ? match[0] : slot.raw ? slot.raw.split('\n')[0] : 'Class';
+        setPeriodSetting(pIdx, setName, {
+          resource: defaultResourceMode,
+          shelf: defaultShelfMode,
+          collection: defaultCollectionMode,
+        });
+      });
+      const origHtml = btnApplyDefaultsToAll.innerHTML;
+      btnApplyDefaultsToAll.innerHTML = '<i class="fa-solid fa-check"></i> Applied!';
+      btnApplyDefaultsToAll.style.color = '#34d399';
+      btnApplyDefaultsToAll.style.borderColor = '#10b981';
+      updateModalState();
+      setTimeout(() => {
+        btnApplyDefaultsToAll.innerHTML = origHtml;
+        btnApplyDefaultsToAll.style.color = '#60a5fa';
+        btnApplyDefaultsToAll.style.borderColor = '#3b82f6';
+      }, 1500);
+    };
+  }
+
+  chkIncludePolicy.onchange = () => {
+    includePolicyNotes = chkIncludePolicy.checked;
+    updateModalState();
+  };
+
+  mailtoBtn.onclick = () => {
+    commitDispatchToLog();
+  };
+
+  outlookBtn.onclick = () => {
+    commitDispatchToLog();
+  };
+
+  // Copy Action with rich feedback
+  copyActionBtn.onclick = () => {
+    commitDispatchToLog();
+    navigator.clipboard
+      .writeText(emailOutputArea.value)
+      .then(() => {
+        const orig = copyActionBtn.innerHTML;
+        copyActionBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied to Clipboard!';
+        copyActionBtn.style.background = '#10b981';
+        copyActionBtn.style.borderColor = '#059669';
+        setTimeout(() => {
+          copyActionBtn.innerHTML = orig;
+          copyActionBtn.style.background = 'linear-gradient(135deg, #2563eb, #1d4ed8)';
+          copyActionBtn.style.borderColor = '#3b82f6';
+        }, 2000);
       })
       .catch((err) => {
-        console.error('Clipboard copy failed:', err);
-        alert('Could not copy automatically. Please select all in the text box and press Ctrl+C.');
+        console.warn('Clipboard write error:', err);
+        emailOutputArea.select();
+        document.execCommand('copy');
+        alert('Copied to clipboard!');
       });
   };
 
-  copyBtn.onclick = handleCopy;
-  copyInnerBtn.onclick = handleCopy;
-
-  // Print handler
-  printBtn.onclick = () => {
-    const printFrame = document.createElement('iframe');
-    printFrame.style.position = 'fixed';
-    printFrame.style.top = '-9999px';
-    printFrame.style.left = '-9999px';
-    printFrame.style.width = '0';
-    printFrame.style.height = '0';
-    printFrame.style.border = 'none';
-    document.body.appendChild(printFrame);
-
-    const frameDoc = printFrame.contentDocument || printFrame.contentWindow.document;
-    frameDoc.open();
-    frameDoc.write(`<!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-        <title>Cover Lesson - ${currentUnitId}</title>
-        <style>
-          @page { size: A4; margin: 8mm 12mm 8mm 12mm; }
-          * { box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-          body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1e293b; margin: 0; padding: 0; font-size: 8.8pt; line-height: 1.32; background: #ffffff; }
-          .page-break { page-break-before: always; break-before: page; }
-          a { text-decoration: underline; color: #be123c; }
-        </style>
-      </head>
-      <body>
-        ${paperSheet.innerHTML}
-      </body>
-      </html>
-    `);
-    frameDoc.close();
-
-    setTimeout(() => {
-      printFrame.contentWindow.focus();
-      printFrame.contentWindow.print();
-      setTimeout(() => printFrame.remove(), 2000);
-    }, 400);
-  };
-
-  // Close handler
+  // Close handlers
   const closeModal = () => {
     window.removeEventListener('keydown', handleEsc);
     overlay.style.opacity = '0';
-    modalContent.style.transform = 'scale(0.98)';
-    setTimeout(() => overlay.remove(), 220);
+    setTimeout(() => overlay.remove(), 250);
   };
 
   const handleEsc = (e) => {
@@ -4030,15 +4370,11 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     if (e.target === overlay) closeModal();
   };
 
-  // Initial population
-  populateLessons();
-  updateDefaultClassNames();
-  updateCover();
+  // Initialize
+  updateModalState();
 
-  // Animate in
-  void overlay.offsetWidth;
   overlay.style.opacity = '1';
-  modalContent.style.transform = 'scale(1)';
+  modalContainer.style.transform = 'scale(1)';
 };
 
 export function openGuidedReadingModal(lessonIndex) {

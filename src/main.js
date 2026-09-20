@@ -63,6 +63,83 @@ function purgeGDPRHistoricalCache() {
   }
 }
 
+export function initTeacherMode() {
+  try {
+    const isLocal =
+      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const params = new URLSearchParams(window.location.search);
+    const passkey = (params.get('passkey') || params.get('staff') || params.get('teacher') || '')
+      .toLowerCase()
+      .trim();
+    const validPasskeys = ['drake.30', 'drake.30!', 'true'];
+
+    const hasStoredAuth =
+      localStorage.getItem('history_hub_teacher_mode') === 'true' ||
+      localStorage.getItem('history_chess_teacher_auth') === 'true';
+
+    const isAuthorized =
+      isLocal ||
+      hasStoredAuth ||
+      params.get('role') === 'teacher' ||
+      validPasskeys.includes(passkey);
+
+    if (isAuthorized) {
+      localStorage.setItem('history_hub_teacher_mode', 'true');
+      window.isTeacherMode = true;
+
+      const showButtons = () => {
+        const headerBtn = document.getElementById('btn-cover-modal');
+        if (headerBtn) headerBtn.style.display = 'inline-flex';
+        const sidebarBtn = document.getElementById('nav-cover-generator');
+        if (sidebarBtn) sidebarBtn.style.display = 'flex';
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showButtons);
+      } else {
+        showButtons();
+      }
+    } else {
+      window.isTeacherMode = false;
+    }
+
+    // Keyboard shortcut for staff: Ctrl + Shift + C or Ctrl + Shift + T
+    window.addEventListener('keydown', (e) => {
+      if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        (e.key === 'C' || e.key === 'c' || e.key === 'T' || e.key === 't')
+      ) {
+        e.preventDefault();
+        if (window.isTeacherMode) {
+          if (typeof window.openEmergencyCoverModal === 'function') {
+            window.openEmergencyCoverModal();
+          }
+        } else {
+          const code = prompt('History Department Staff Verification: Enter Passkey:');
+          if (
+            code &&
+            (code.trim().toLowerCase() === 'drake.30' || code.trim().toLowerCase() === 'drake.30!')
+          ) {
+            localStorage.setItem('history_hub_teacher_mode', 'true');
+            window.isTeacherMode = true;
+            const headerBtn = document.getElementById('btn-cover-modal');
+            if (headerBtn) headerBtn.style.display = 'inline-flex';
+            const sidebarBtn = document.getElementById('nav-cover-generator');
+            if (sidebarBtn) sidebarBtn.style.display = 'flex';
+            if (typeof window.openEmergencyCoverModal === 'function') {
+              window.openEmergencyCoverModal();
+            }
+          } else if (code !== null) {
+            alert('Access denied.');
+          }
+        }
+      }
+    });
+  } catch (err) {
+    console.warn('Teacher mode initialization warning:', err);
+  }
+}
+
 window.addEventListener('DOMContentLoaded', async () => {
   // Execute GDPR cache, storage, and service worker scrub
   purgeGDPRHistoricalCache();
@@ -71,6 +148,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   initNavigationUI();
   initEventDelegation();
   initSpeech();
+  initTeacherMode();
 
   // Bind global helper routing
   window.switchView = switchView;
