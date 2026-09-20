@@ -694,16 +694,13 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <div style="border: 1.8px solid #000; border-radius: 4px; padding: 5px 12px; margin-bottom: 4px; background: #fff;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; padding: 1.5px 8px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;">
+            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 8px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;">
               KEY TOPIC 2
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #222;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #222;">
               CHRONOLOGICAL ENQUIRY SEQUENCE &bull; 1964–1973
             </span>
           </div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #444;">
-            Cumulative Topic Tariff: 130 Marks
-          </span>
         </div>
         <h1 style="font-family: 'Playfair Display', serif; font-size: 17.5pt; line-height: 1.1; margin: 1px 0 2px 0; font-weight: 900; letter-spacing: -0.2px;">
           The Escalating Conflict, 1964–1973
@@ -779,20 +776,6 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                 </div>
               </div>
 
-              <div style="display: flex; gap: 8px; margin-bottom: 5px;">
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 44px; font-size: 6.8pt;">Target:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 48px; font-size: 6.8pt;">Working:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-                <div style="flex: 1; display: flex; align-items: baseline;">
-                  <strong style="text-transform: uppercase; width: 44px; font-size: 6.8pt;">Predict:</strong>
-                  <div style="flex: 1; border-bottom: 1.2px solid #000; height: 12px;"></div>
-                </div>
-              </div>
 
               <!-- Detailed Key Topic Sign-Off Tracker Table -->
               <div style="border: 1px solid #000; border-radius: 2px; overflow: hidden;">
@@ -876,9 +859,8 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
             <!-- Section B: 5 Enquiries Roadmap (Rich Content, Beautifully Distributed) -->
             <div style="flex: 1; display: flex; flex-direction: column;">
-              <div style="background: #000; color: #fff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
+              <div style="background: #000; color: #fff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
                 <span>Specification Enquiry Sequence (KT2)</span>
-                <span style="font-size: 6pt; letter-spacing: 0.5px;">Learnt &bull; Rev</span>
               </div>
 
               <!-- Lesson 1 -->
@@ -889,9 +871,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                       KT 2.1: The Road to War: Water Wars
                     </span>
                     <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; color: #555;">1964–67</span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
+                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1964–67</span>
                     </div>
                   </div>
                   <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
@@ -916,9 +896,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                       KT 2.2: Course of the Six-Day War
                     </span>
                     <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; color: #555;">June 1967</span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
+                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">June 1967</span>
                     </div>
                   </div>
                   <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
@@ -943,9 +921,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                       KT 2.3: Aftermath: Occupied Lands &amp; Res 242
                     </span>
                     <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; color: #555;">1967</span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
+                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1967</span>
                     </div>
                   </div>
                   <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
@@ -970,9 +946,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                       KT 2.4: Palestinian Resistance &amp; Munich
                     </span>
                     <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; color: #555;">1968–72</span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
+                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1968–72</span>
                     </div>
                   </div>
                   <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
@@ -997,9 +971,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                       KT 2.5: The Yom Kippur War &amp; Oil Crisis
                     </span>
                     <div style="display: flex; gap: 4px; align-items: center;">
-                      <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; color: #555;">1969–73</span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
-                      <span style="display:inline-block; width:9px; height:9px; border:1.2px solid #000; border-radius:2px;"></span>
+                      <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 800; color: #333;">1969–73</span>
                     </div>
                   </div>
                   <div style="font-family: 'Georgia', serif; font-size: 6.1pt; font-style: italic; color: #333; line-height: 1.15; margin: 1px 0;">
@@ -1090,12 +1062,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.8pt; color: #000000;">
                 JAN 1964 &bull; The Cairo Conference &amp; The Foundation of the PLO
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+            <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
               Thirteen Arab League leaders meet in Cairo to oppose Israel's National Water Carrier. They establish the Palestine Liberation Organisation (PLO) under Ahmad Shukeiri and approve the Headwater Diversion Plan to divert the Hasbani and Banyas rivers away from the Sea of Galilee.
             </p>
           </div>
@@ -1106,12 +1078,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.8pt; color: #000000;">
                 MAY–JUNE 1967 &bull; Straits of Tiran Blockade &amp; UNEF Expulsion
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.1</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+            <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
               Spurred by Soviet false warnings, President Nasser demands the immediate withdrawal of UN Emergency Force (UNEF) peacekeepers, moves 100,000 troops into Sinai, and blockades the Straits of Tiran at Sharm el-Sheikh, cutting off Israel's southern oil route (casus belli).
             </p>
           </div>
@@ -1122,12 +1094,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.8pt; color: #000000;">
                 5–10 JUNE 1967 &bull; The Six-Day War &amp; The Conquered Territories
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.2</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.2</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+            <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
               Israel launches Operation Focus, wiping out the Egyptian Air Force on the tarmac. In six days of mobile warfare, the IDF captures the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.
             </p>
           </div>
@@ -1145,12 +1117,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.5pt; color: #000000; text-transform: uppercase; font-weight: 800;">
             Living Timeline &bull; Part 2: Diplomacy, Resistance &amp; The Yom Kippur War (1967–1973)
           </h2>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
           <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
         </div>
       </div>
@@ -1162,12 +1134,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.8pt; color: #000000;">
                 22 NOV 1967 &bull; UN Resolution 242 &amp; The Khartoum "Three Noes"
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.3</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.3</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+            <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
               The UN Security Council unanimously adopts Resolution 242, establishing the foundational principle of "Land for Peace" (Israeli withdrawal in exchange for Arab recognition and secure borders). At the Khartoum Summit, the Arab League issues the defiant "Three Noes": no peace, no recognition, and no negotiations with Israel.
             </p>
           </div>
@@ -1178,12 +1150,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.8pt; color: #000000;">
                 SEPT 1970 – 1972 &bull; Black September in Jordan &amp; The Munich Olympics
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.4</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.4</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+            <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
               Operating as a "state within a state" in Jordan, the PFLP blows up three hijacked Western airliners at Dawson's Field. King Hussein’s army crushes Palestinian militia strongholds in September 1970, expelling the PLO to Lebanon. In September 1972, the militant splinter faction Black September murders 11 Israeli Olympic athletes in Munich.
             </p>
           </div>
@@ -1194,12 +1166,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.8pt; color: #000000;">
                 6–25 OCT 1973 &bull; The Yom Kippur War &amp; The OPEC Oil Embargo
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.5</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 2.5</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+            <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
               Egypt and Syria launch a surprise assault on Yom Kippur. Egyptian infantry blast through the Bar-Lev Line using high-pressure water monitors under a Soviet SAM umbrella. Following emergency US airlifts and an Israeli counter-crossing led by Ariel Sharon, Arab OPEC ministers impose an oil embargo that quadruples global prices, shattering Israeli complacency.
             </p>
           </div>
@@ -1238,26 +1210,26 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             EDEXCEL PAPER 2 &bull; 26 MARKS
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${cfg.inquiryQuestion}
         </h2>
-        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #222222; line-height: 1.2;">
+        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; font-style: italic; color: #222222; line-height: 1.2;">
           ${cfg.subTitle}
         </div>
       </div>
 
       <!-- Key Specification Focus: Directly beneath the Title -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.22;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.22;">
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- 10-Question Do Now Retrieval Grid -->
       <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
             Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
           </span>
         </div>
@@ -1266,7 +1238,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (item, idx) => `
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000; line-height: 1.15;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000; line-height: 1.18;">
               ${idx + 1}. ${item.q}
             </div>
             <div class="task-line-dotted"></div>
@@ -1280,12 +1252,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Key Vocabulary (3 Lines, No Double Border) -->
       <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Key Vocabulary
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
         <div class="task-line"></div>
@@ -1296,18 +1268,18 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Question 1(a): Explain One Consequence [4 marks] -->
       <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(a): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
           <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; margin-bottom: 1px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 1px;">
           <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
         </div>
         <div class="task-line"></div>
@@ -1319,18 +1291,18 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Question 1(b): Explain One Consequence [4 marks] -->
       <div class="task-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(b): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceB.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
           <strong>PFC Guidance:</strong> ${cfg.consequenceB.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; margin-bottom: 1px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 1px;">
           <strong>Sentence Stems:</strong> ${cfg.consequenceB.stems}
         </div>
         <div class="task-line"></div>
@@ -1352,10 +1324,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       
       <!-- Exam Header (Top of Page) -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${rx.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
           Extended Writing Assessment &bull; 8 Marks
         </span>
       </div>
@@ -1365,18 +1337,18 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         
         <!-- Row 1: Question Stem & Stimulus / Analytical Focus -->
         <div style="padding: 2.5px 6px; border-bottom: 1px solid #000000; background: #ffffff;">
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; line-height: 1.2;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; line-height: 1.2;">
             ${rx.stem}
           </div>
           ${
             rx.type === 'narrative_8'
               ? `
-          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15;">
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
             <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
           </div>
           `
               : `
-          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15;">
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
             <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
           </div>
           `
@@ -1389,8 +1361,8 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (strip, sIdx) => `
           <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.1pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
           `,
             )
@@ -1400,43 +1372,30 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <!-- Row 3: Connectives & Key Vocabulary Bank (Flush Directly Beneath Row 2) -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
           <div style="padding: 2px 5px; border-right: 1px solid #000000;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives}</span>
           </div>
           <div style="padding: 2px 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (16 Thick Black Lines) -->
+      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
       <div style="margin-bottom: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        ${Array.from({ length: 27 })
+          .map(() => '<div class="task-line"></div>')
+          .join('\n        ')}
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
       <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.1pt; color: #000000; line-height: 1.2;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
           ${rx.timelineMission}
         </div>
       </div>
@@ -1467,20 +1426,20 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Target Grade & Pupil Information Strip -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 14px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 12px; align-items: center; margin-bottom: 6px;">
         <div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
           <div style="border-bottom: 1.5px solid #000000; height: 16px; margin-top: 1px;"></div>
         </div>
         <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
           <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
         </div>
         <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
           <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
         </div>
         <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Attitude:</span>
-          <div style="font-family: 'Inter', sans-serif; font-size: 9pt; font-weight: 800; margin-top: 4px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Attitude:</span>
+          <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 800; margin-top: 4px;">
             1 &bull; 2 &bull; 3 &bull; 4 &bull; 5
           </div>
         </div>
@@ -1491,57 +1450,57 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 6px 6px; width: 32px; text-align: center; font-size: 8pt; font-weight: 900; border-right: 1px solid #000000;">#</th>
-              <th style="padding: 6px 10px; text-align: left; font-size: 8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Enquiry / Lesson Assessment</th>
-              <th style="padding: 6px 6px; width: 88px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Do Now (10m)</th>
-              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1 Conseq (8m)</th>
-              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Extended (8m)</th>
-              <th style="padding: 6px 8px; width: 92px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase;">Lesson Total</th>
+              <th style="padding: 6px 6px; width: 32px; text-align: center; font-size: 8.5pt; font-weight: 900; border-right: 1px solid #000000;">#</th>
+              <th style="padding: 6px 10px; text-align: left; font-size: 8.5pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Enquiry / Lesson Assessment</th>
+              <th style="padding: 6px 6px; width: 88px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Do Now (10m)</th>
+              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1 Conseq (8m)</th>
+              <th style="padding: 6px 6px; width: 108px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Extended (8m)</th>
+              <th style="padding: 6px 8px; width: 92px; text-align: center; font-size: 8.5pt; font-weight: 900; text-transform: uppercase;">Lesson Total</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">1</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.1:</strong> Cairo Conference &amp; Water Wars</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">1</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.1:</strong> Cairo Conference &amp; Water Wars</td>
               <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
               <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">2</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.2:</strong> Straits of Tiran &amp; Six Day War</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">2</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.2:</strong> Straits of Tiran &amp; Six Day War</td>
               <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
               <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">3</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.3:</strong> Occupied Territories &amp; Res 242</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">3</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.3:</strong> Occupied Territories &amp; Res 242</td>
               <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
               <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">4</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.4:</strong> Black September &amp; Munich 1972</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">4</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.4:</strong> Black September &amp; Munich 1972</td>
               <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q3 Impt: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
               <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800;">5</td>
-              <td style="padding: 5px 10px; border-right: 1px solid #000000;"><strong>KT2.5:</strong> Yom Kippur War &amp; Oil Embargo</td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; font-weight: 800; font-size: 8.5pt;">5</td>
+              <td style="padding: 5px 10px; border-right: 1px solid #000000; font-size: 8.2pt;"><strong>KT2.5:</strong> Yom Kippur War &amp; Oil Embargo</td>
               <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;"><span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
-              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q1(a+b): <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
+              <td style="padding: 5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 8pt;">Q2 Narr: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]</span></td>
               <td style="padding: 5px 8px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 26</strong> ]</td>
             </tr>
             <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 6px 10px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Key Topic 2 Cumulative Assessment Totals</td>
+              <td colspan="2" style="padding: 6px 10px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8.2pt;">Key Topic 2 Cumulative Assessment Totals</td>
               <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Do Now: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 50</strong> ]</span></td>
               <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q1 Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 40</strong> ]</span></td>
               <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Ext Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 40</strong> ]</span></td>
@@ -1554,17 +1513,17 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Teacher Feedback Section (WWW & EBI 4 lines each at 7.2mm) -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; color: #000000;">
             Teacher Formative Assessment &bull; WWW / EBI Feedback
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #222222; font-weight: 700;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #222222; font-weight: 700;">
             Effort Grade: [ &nbsp;&nbsp;&nbsp;&nbsp; ]
           </span>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
               What Went Well (WWW):
             </span>
             <div class="task-line" style="height: 7.2mm;"></div>
@@ -1573,7 +1532,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             <div class="task-line" style="height: 7.2mm;"></div>
           </div>
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
               Even Better If (EBI):
             </span>
             <div class="task-line" style="height: 7.2mm;"></div>
@@ -1583,7 +1542,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
           <span><strong>Teacher Signature:</strong> ____________________________</span>
           <span><strong>Date:</strong> ____________________</span>
         </div>
@@ -1592,10 +1551,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Interactive Quizzing & Revision QR Hub (5 QR Codes for Lessons 5 to 9) -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #000000;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; color: #000000;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant 20-Question Retrieval Practice
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; font-weight: 700;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222222; font-weight: 700;">
             Scan with smartphone camera to open live interactive 20-question self-marking quizzes
           </span>
         </div>
