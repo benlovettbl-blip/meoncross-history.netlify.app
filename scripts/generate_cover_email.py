@@ -3,7 +3,7 @@ import sys
 import json
 import argparse
 import urllib.parse
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 if hasattr(sys.stdout, 'reconfigure'):
     try:
@@ -109,7 +109,7 @@ def load_timetable():
     with open(TIMETABLE_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def generate_cover_plan(week, day, overrides=None):
+def generate_cover_plan(week, day, overrides=None, target_date=None):
     overrides = overrides or {}
     tt = load_timetable()
     if not tt or week not in tt or day not in tt[week]:
@@ -118,10 +118,18 @@ def generate_cover_plan(week, day, overrides=None):
     schedule = tt[week][day]
     day_duties = tt.get("duties", {}).get(day, [])
     
+    if target_date is not None:
+        date_str = target_date.strftime("%d %B %Y")
+        date_tag = target_date.strftime("%Y-%m-%d")
+    else:
+        date_str = datetime.now().strftime("%d %B %Y")
+        date_tag = datetime.now().strftime("%Y-%m-%d")
+    
     plan = {
         "week": week,
         "day": day,
-        "date_str": datetime.now().strftime("%d %B %Y"),
+        "date_str": date_str,
+        "date_tag": date_tag,
         "tutor_group": "Warrior 2",
         "tutor_times": "AM (08:45–09:10) & PM Mobile Collection (15:50–15:55)",
         "duties": day_duties,
@@ -290,7 +298,7 @@ def save_cover_package(plan, recipient="Cover Manager / SLT"):
     if os.path.exists(EMAILS_DIR):
         os.makedirs(EMAILS_DIR, exist_ok=True)
         
-    date_tag = datetime.now().strftime("%Y-%m-%d")
+    date_tag = plan.get("date_tag", datetime.now().strftime("%Y-%m-%d"))
     base_name = f"Cover_History_{date_tag}_{plan['week'].replace(' ', '_')}_{plan['day']}"
     
     local_txt = os.path.join(LOCAL_COVER_DIR, f"{base_name}.txt")
@@ -378,18 +386,43 @@ Content-Transfer-Encoding: 8bit
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate Emergency History Cover Email")
     parser.add_argument("--week", choices=["Week A", "Week B"], default="Week A", help="Week A or Week B")
-    parser.add_argument("--day", choices=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], default="Monday", help="Day of the week")
+    parser.add_argument("--day", choices=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], default=None, help="Day of the week")
+    parser.add_argument("--tomorrow", action="store_true", help="Generate cover for tomorrow")
+    parser.add_argument("--date", default=None, help="Specific date e.g. '21 September 2026' or '2026-09-21'")
     parser.add_argument("--recipient", default="Cover Manager / SLT", help="Recipient name")
     args = parser.parse_args()
     
-    plan = generate_cover_plan(args.week, args.day)
+    target_date = None
+    if args.tomorrow:
+        target_date = datetime.now() + timedelta(days=1)
+        if not args.day:
+            args.day = target_date.strftime("%A")
+    elif args.date:
+        for fmt in ("%Y-%m-%d", "%d %B %Y", "%d/%m/%Y", "%d-%m-%Y"):
+            try:
+                target_date = datetime.strptime(args.date, fmt)
+                break
+            except ValueError:
+                pass
+        if target_date and not args.day:
+            args.day = target_date.strftime("%A")
+            
+    if not args.day:
+        args.day = datetime.now().strftime("%A")
+        if args.day in ["Saturday", "Sunday"]:
+            args.day = "Monday"
+            # Default to next Monday if run on weekend
+            days_ahead = 1 if args.day == "Sunday" else 2
+            target_date = datetime.now() + timedelta(days=days_ahead)
+            
+    plan = generate_cover_plan(args.week, args.day, target_date=target_date)
     if not plan:
         print(f"Error: Could not find timetable for {args.week} {args.day}")
         sys.exit(1)
         
     pkg = save_cover_package(plan, args.recipient)
     print("=" * 65)
-    print(f"✅ Emergency Cover Package Generated for {args.week} {args.day}!")
+    print(f"✅ Emergency Cover Package Generated for {args.week} {args.day} ({plan['date_str']})!")
     print(f"Subject: {pkg['subject']}")
     print(f"Local HTML Launcher: {pkg['html_path']}")
     if pkg['gdrive_path']:
