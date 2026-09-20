@@ -200,6 +200,19 @@ window.addEventListener('DOMContentLoaded', async () => {
       }, 120);
     }
 
+    // Direct Emergency Cover Generator Modal Experience
+    const isCoverRequested =
+      urlParams.get('cover') === 'true' ||
+      urlParams.get('cover') === '1' ||
+      urlParams.get('view') === 'cover';
+
+    if (isCoverRequested && typeof window.openEmergencyCoverModal === 'function') {
+      const uId = unit || 'cme_new';
+      setTimeout(() => {
+        window.openEmergencyCoverModal(uId);
+      }, 150);
+    }
+
     if (window.location.hash && window.location.hash.includes('-section')) {
       setTimeout(() => {
         const target = document.querySelector(window.location.hash);
