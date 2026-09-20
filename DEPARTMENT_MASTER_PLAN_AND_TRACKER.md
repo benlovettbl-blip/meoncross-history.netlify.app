@@ -1,115 +1,166 @@
-# History Department Master Plan & Curriculum Tracker
-**The History Department — Curriculum Architecture & Workbook Standard**
-*Last Updated: 13 September 2026*
+# The History Department: Master Plan & Curriculum Tracker (2026)
+**Departmental Curriculum Architecture, 16-Page Booklet Blueprint & RAG Implementation Ledger**  
+*Last Updated: 20 September 2026 • Official Department Documentation • Academic Year 2026–2027*
 
 ---
 
-## 1. Executive Summary & Core Architectural Decision
+## 1. Executive Summary & Active Departmental Milestones
 
-### The Shift: From 4-Page Widget Layout to the 2-Page (Double-Page Spread) Standard
-Following extensive pedagogical review and physical print binding testing, the department transitioned from the earlier 4-page model to a strict **2-Page (Single Double-Page Spread) per Lesson** standard for all KS3 pupil workbooks.
-
-### Why This Shift Was Made:
-1. **Zero Page-Flipping Cognitive Load:** 
-   In the 4-page format, evidence was on Page 3 and the essay was on Page 4 (the reverse side of the sheet). Pupils were forced to flip back and forth while writing. In the 2-page spread, the booklet lies flat on the desk: **Evidence is on the Left (Verso); Writing is on the Right (Recto)**.
-2. **Realistic Time Budgeting:** 
-   No 13-year-old pupil can complete a Do Now, a vocab challenge, a 4-step flowchart, an image annotation, a primary source analysis, AND a 24-line essay in a 50-minute lesson. The 2-page spread fits a standard 50–60 minute lesson perfectly, or splits naturally across two lessons (Day 1: Left Page / Day 2: Right Page).
-3. **Elimination of "Widget Monotony":**
-   Instead of forcing the identical 4 widgets (domino, visual annotation, word scalpel) on every lesson, **Task 4 on the Left Page rotates dynamically** based on what the historical inquiry requires (Technical Drawing Blueprint, Conflict Ledger, Archival Dissection, Causal Pivot).
-4. **Reprographics & Environmental Efficiency:**
-   Halves booklet page counts (e.g. Year 8 booklets drop from 44 pages to 20–22 pages), drastically reducing printing costs and school reprographics lead times.
+### Core Milestone Confirmations (Permanent Memory)
+1. **Edexcel GCSE Paper 1 (Medicine in Britain c1250–Present & Western Front):**  
+   - **STATUS: COMPLETED (GREEN).**  
+   - All thematic eras (Medieval, Renaissance, Industrial/18th–19th Century, Modern) and Section A (Western Front) lesson narratives are 100% authored and enriched with Christine Counsell 4-Act dramatic structures and delivery plans.
+2. **Edexcel GCSE Paper 2 (Conflict in the Middle East, 1945–1995 — `cme_new`):**  
+   - **Key Topic 2 (The Escalating Conflict, 1964–1973): COMPLETED (GREEN).**  
+   - All 5 enquiry lessons (KT 2.1 to KT 2.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT2.html`) is fully compiled, featuring the publisher-grade front cover, 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker.
+   - **Key Topics 1 & 3: PRIORITY #1 FOR ROLLOUT (AMBER).**  
+   - Key Topic 1 (*The Birth of the State of Israel, 1945–1956*) and Key Topic 3 (*The Search for Peace, 1973–1995*) are scheduled to adopt this exact 16-page booklet architecture immediately.
 
 ---
 
-## 2. The 2-Page Spread Specification (The Departmental Blueprint)
+## 2. Departmental RAG Status Audit Table (All 16 Units)
 
-Each lesson occupies exactly **one double-page spread (2 pages)**:
+The following ledger tracks the departmental shift to **Christine Counsell 4-Act Lessons** and the **Double-Page Spread Booklet Architecture** across all Key Stage 3 and GCSE units.
 
-### A. Left Page (Verso): "Evidence & Retrieval Launch"
-1. **Header (Compact):** Lesson title, inquiry question, and 3 learning objectives.
-2. **Do Now Retrieval Grid:** 4-box spaced recall (Last lesson, 2 lessons ago, Last unit, Big picture).
-3. **Vocabulary Check:** 2 core historical terms (dual-term distinction or cloze check).
-4. **Task 4: The Historical Thinking Preparation Bridge (~80–90mm height):**
-   - **Purpose:** Acts as the cognitive launchpad providing the raw evidence needed for the essay on the right page.
-   - **Modalities:**
-     - *Diagrammatic Blueprint (Draw & Label):* Generous sketch canvas + 4 mandatory technical labels + subtle visual ghost anchor for lower attainers.
-     - *Conflict / Impact Ledger:* Two-column comparison box (e.g. Winners vs Losers / Masters vs Luddites).
-     - *Archival Witness Dissection:* Primary source quote + underline prompt + 5–6 ruled lines.
-     - *Causal Pivot:* 3-step causal link + analytical prompt with ruled lines.
-     - *Visual Forensic Analysis:* Deconstructing a contemporary propaganda cartoon or map.
-   - **Differentiation Built-In (Low Floor, High Ceiling):**
-     - *Low Floor:* Visual ghosting / mini icons, clue line-numbers, 3-word glossaries.
-     - *High Ceiling:* **★ Scholar's Edge** extension query challenging high attainers with historiographical debate.
-
-### B. Right Page (Recto): "The Independent Historical Argument"
-1. **Enquiry Question Banner:** Overarching historical investigation.
-2. **Mastery Structure Strip & Criteria (Compact 25mm banner):**
-   - *Column 1:* Claim & Core Historical Factor.
-   - *Column 2:* Specific Evidence & Causal Mechanism.
-   - *Column 3:* Evaluative Judgment & Weighing Criteria (Scale, Permanence, Catalyst).
-   - *Connective Bank:* Disciplinary academic connectives (*Consequently, Pivotal, Catalysed, In direct contrast*).
-3. **Extended Writing Area:** 18 to 20 clean ruled lines.
-4. **Differentiated Writing Milestones:**
-   - *Bronze (Accessible):* 1 complete PEEL paragraph using Page 1 evidence (8–10 lines).
-   - *Silver (Standard):* 2 balanced paragraphs with causal connectives (14–16 lines).
-   - *Gold (Scholarship):* Full essay with sustained judgment using the Evaluation Criteria (18–20 lines).
-5. **Discreet Assessment Footer:** `Effort: [ 1 • 2 • 3 • 4 • 5 ] | Knowledge: [ 1 • 2 • 3 • 4 ] | Analysis: [ 1 • 2 • 3 • 4 ] | PEEL: P E E L or Source Utility: C OK NOP`.
+| Unit ID | Key Stage / Year | Unit Title | 4-Act Christine Counsell Lessons | Double-Page Booklet Architecture | Classroom Reprographics State | Priority & Next Action |
+| :--- | :---: | :--- | :---: | :---: | :---: | :--- |
+| `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present & Western Front | 🟩 **GREEN**<br>(100% Complete — All 4 Eras + Section A) | 🟩 **GREEN**<br>(3-Pillar Master Packs Complete) | Production Ready / Active | **COMPLETE:** Maintenance and ongoing retrieval testing only. |
+| `cme_new` (KT2) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 2 (1964–1973) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** Benchmark template for all future GCSE booklets. |
+| `cme_new` (KT1/3) | GCSE (Y10–11) | Conflict in the Middle East: Key Topics 1 & 3 | 🟨 **AMBER**<br>(Core Narratives Authored) | 🟨 **AMBER**<br>(Scheduled for 16-Page Standard) | Staging / In Progress | 🚨 **PRIORITY #1:** Convert KT1 and KT3 to the 16-page double-page spread booklet. |
+| `industrialisation_and_empire` | KS3 (Year 8) | Industrialisation, Empire, and Power (1750–1900) | 🟩 **GREEN**<br>(8 Lessons Complete + Delivery Plans) | 🟩 **GREEN**<br>(20-Page Double-Page Spread Ready) | Staged for Term 2 Delivery | 🟡 **PRIORITY #2:** Finalize Lessons 2–8 delivery plan timings and compile master class pack. |
+| `water_and_sanitation` | KS3 (Year 7) | Water and Sanitation Through Time | 🟨 **AMBER**<br>(Partial 4-Act Narrative) | 🟥 **RED**<br>(Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |
+| `early_modern_world` | KS3 (Year 8) | Early Modern World & Global Encounters (1450–1750) | 🟨 **AMBER**<br>(Narrative Complete) | 🟥 **RED**<br>(Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |
+| `great_war` | KS3 (Year 9) | Causes of the Great War (1870–1914) | 🟨 **AMBER**<br>(Narrative Complete) | 🟨 **AMBER**<br>(Legacy Mastery Standard) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |
+| `great_war_part2` | KS3 (Year 9) | The Great War: Western Front & Aftermath (1914–1919) | 🟩 **GREEN**<br>(9 Lessons 4-Act Complete) | 🟨 **AMBER**<br>(Pending 2-Page Migration) | Upcoming Unit (Not Yet Printed) | 🟡 **PRIORITY #4:** Migrate to 2-page double-page spread booklet before printing. |
+| `medieval_england` | KS3 (Year 7) | Medieval England & Struggle for Power (1066–1485) | 🟩 **GREEN**<br>(38 Lessons 4-Act Complete) | 🟨 **AMBER**<br>(Pending 2-Page Migration) | Upcoming Unit (Not Yet Printed) | Migrate comprehension questions to 2-page evidence launch/writing spread. |
+| `eee` | GCSE (Y10–11) | Early Elizabethan England, 1558–1588 | 🟨 **AMBER**<br>(22 Lessons Authored) | 🟨 **AMBER**<br>(Currently Split in 3 Booklets) | Scheduled for GCSE Term 2 | 🟡 **PRIORITY #3:** Consolidate to single 36-page master volume & 16-page enquiry booklets. |
+| `usa` | GCSE (Y10–11) | The USA, 1954–75: Conflict at Home & Abroad | 🟨 **AMBER**<br>(Core Specification Complete) | 🟩 **GREEN**<br>(16 Spreads, 4-4-4-4 Matrix) | Production Ready / Active | Master 3-pillar volumes compiled. Ongoing exam coaching. |
+| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany, 1918–1939 | 🟨 **AMBER**<br>(24 Lessons Authored) | 🟥 **RED**<br>(Split in 4 Separate Booklets) | Scheduled for GCSE Year 11 | Scheduled for 16-page double-page spread and 4-4-4-4 visual guide conversion. |
+| `the_shoah` | KS3 (Year 9) | The Shoah (Holocaust Education) | 🟥 **RED**<br>(Core Text Drafted) | 🟥 **RED**<br>(Legacy Standalone Format) | Queued for Year 9 Term 2/3 | Scheduled for 4-Act refactoring. |
+| `cold_war` | KS3 (Year 9) | The Cold War (1945–1991) | 🟥 **RED**<br>(Prose Drafted) | 🟥 **RED**<br>(Legacy Standalone Format) | Queued for Year 9 Term 3 | Scheduled for 4-Act refactoring. |
+| `post_war_britain` | KS3 (Year 9) | Rights, Protest, and Post-War Britain | 🟥 **RED**<br>(Prose Drafted) | 🟥 **RED**<br>(Legacy Standalone Format) | Queued for Year 9 Term 3 | Scheduled for 4-Act refactoring. |
+| `australia` | KS3 (Year 8/9) | History of Australia | 🟥 **RED**<br>(Draft Modules) | 🟥 **RED**<br>(Legacy Standalone Format) | Elective Depth Study | Queued for 4-Act refactoring. |
+| `trip_ypres` | GCSE Field Trip | Battlefield Tour: Ypres & The Somme | 🟩 **GREEN**<br>(14 Field Stops Complete) | 🟩 **GREEN**<br>(Digital Companion Complete) | Live Interactive Field Web App | Digital field guide intentionally bypassed from print booklet pipeline. |
 
 ---
 
-## 3. Departmental Conversion Ledgers & Production Status
+## 3. Reprographics Protection & Classroom Rollout Protocol (The "Zero Disruption" Rule)
 
-### A. GCSE Three Pillars Production & Conversion Matrix
-The department mandates that every GCSE unit must be consolidated into strictly **three canonical master volumes** (eliminating all individual Key Topic and section split PDFs to maximize reprographics efficiency and classroom usability):
-- **Pillar 1:** Visual Revision Guide & Cartographic Atlas (Pure double-page knowledge spreads, 0 practice lines, authentic primary visual plates, and word-for-word official specification coverage).
-- **Pillar 2:** Mastery Exam Practice Pack (Unified single volume, differentiated stepped ladder, past-paper provenance badges `Edexcel June YYYY`, and Pearson 7.4mm ruled response lines).
-- **Pillar 3:** Knowledge Retrieval Quiz Compendium (Complete unit recall bank, micro-checkboxes, RAG tracking, and randomized Vault self-marking keys).
+### The Challenge: Protecting Active Classroom Booklets
+Three core units currently have physical, bound workbooks printed and in daily classroom use:
+- **Year 7:** *Water and Sanitation Through Time* (`water_and_sanitation`)
+- **Year 8:** *Early Modern World & Global Encounters* (`early_modern_world`)
+- **Year 9:** *Causes of the Great War* (`great_war`)
 
-| GCSE Unit | Pillar 1: Visual Revision Guide | Pillar 2: Exam Practice Mastery Pack | Pillar 3: Retrieval Quizzing Pack | Overall Status & Next Action |
-| :--- | :--- | :--- | :--- | :--- |
-| **Paper 2: Conflict in the Middle East, 1945–1995** (`cme_new`) | **✅ 36 Pages**<br>• 12 double-page spreads<br>• 4 full-page cartographic war atlases<br>• 100% verbatim spec cover<br>• 0 overflows (≤1123px)<br>• Pure monochrome<br>`cme_revision_guide.pdf` | **✅ 36 Pages**<br>• Combined KT1–KT3 volume<br>• Stepped ladder & exam models<br>• Provenance: June 2018, 2019, 2022, 2023 & Forecasts<br>• Pearson 7.4mm ruled lines<br>`cme_mastery_pack_FULL.pdf` | **✅ 44 Pages**<br>• All 200 crucial questions<br>• Memory hacking rules<br>• RAG threat-level boxes<br>• Vault self-marking keys<br>• Randomized option spread<br>`cme_recall_quiz_FULL.pdf` | **✅ 100% PRODUCTION READY**<br>Strictly 3 master PDFs.<br>Zero split files.<br>Synchronized to Drive & Netlify. |
-| **Paper 3: The USA, 1954–75: Conflict at Home & Abroad** (`usa`) | **✅ 36 Pages**<br>• 16 double-page spreads<br>• 4-4-4-4 question matrix<br>• Hodder-grounded facts<br>• 0 overflows (≤1123px)<br>• Pure monochrome<br>`usa_visual_revision_guide.pdf` | **✅ 48 Pages**<br>• Combined KT1–KT4 volume<br>• 4 full Paper 3 simulations<br>• 16 primary sources/interpretations<br>• 24 Grade 8/9 exemplars<br>`usa_mastery_pack_FULL.pdf` | **✅ 54 Pages**<br>• All 320 crucial questions<br>• Memory hacking rules<br>• RAG tracking & Vault keys<br>• Randomized option spread<br>`usa_recall_quiz_FULL.pdf` | **✅ 100% PRODUCTION READY**<br>Strictly 3 master PDFs.<br>Zero split files.<br>Synchronized to Drive & Netlify. |
-| **Paper 1: Medicine in Britain, c1250–present & Western Front** (`edexcel_medicine`) | **✅ 36 Pages**<br>• 18 double-page spreads<br>• All 4 thematic eras + Section A<br>• Dual contrasting archival plates<br>• High-contrast monochrome<br>`edexcel_medicine_visual_revision_and_exam_guide.pdf` | **✅ 20 Pages**<br>• Combined Section A & B volume<br>• 2m feature, 8m utility, 4m follow-up<br>• 4m similarity, 12m explain, 16m essay<br>• Provenance badges & exam models<br>`med_mastery_pack_FULL.pdf` | **✅ 16 Pages**<br>• All 380 rapid recall questions<br>• Section A + all 4 eras<br>• Standardized monochrome<br>• Micro-checkboxes & answers bank<br>`med_recall_quiz_pack_FULL.pdf` | **✅ STANDARDIZED & VERIFIED**<br>Strictly 3 master PDFs.<br>Typography converted to GCSE standard.<br>Synchronized to Drive. |
-| **Paper 2: Early Elizabethan England, 1558–1588** (`eee`) | **🟡 Pending Conversion**<br>Needs authoring of 24–28 page Visual Revision Guide (12 spreads across KT1–KT3). | **🟡 Pending Conversion**<br>Currently split in KT1, KT2, KT3. Needs consolidation to single 36-page master volume with past paper session badges (June 2018–2024). | **🟡 Pending Conversion**<br>Needs compilation into unified master recall quiz booklet (240 questions) with Vault answer keys. | **🟡 PRIORITY #1 FOR CONVERSION**<br>Scheduled as immediate next unit for Three Pillars unification. |
-| **Paper 3: Weimar and Nazi Germany, 1918–1939** (`weimar_nazi_germany`) | **⚪ Scheduled**<br>Scheduled for 36-page 4-4-4-4 Visual Revision Guide across KT1–KT4. | **⚪ Scheduled**<br>Currently split in 4 KT booklets. Needs consolidation to single 48-page master volume with past paper session badges. | **⚪ Scheduled**<br>Needs compilation into unified master recall quiz booklet (320 questions) with Vault answer keys. | **⚪ PRIORITY #2 IN ROADMAP**<br>Scheduled following Early Elizabethan England completion. |
+If we modify or overwrite their HTML/PDF files now:
+1. Teacher lesson slides, page number references, and question numbers will no longer match what is on pupils' desks.
+2. Pupils will have mismatching homework tasks, line budgets, and Do Now recall questions.
 
----
-
-### B. KS3 Curriculum Progress & 2-Page Spread Ledger
-
-| Unit ID | Title | Key Stage | Lessons | Status | Notes / Next Action |
-| :--- | :--- | :---: | :---: | :--- | :--- |
-| **`industrialisation_and_empire`** | Industrialisation, Empire, and Power (1750–1900) | KS3 (Yr 8) | 8 | **✅ Complete & Production Ready** | Full 20-page saddle-stitch 2-page spread standard finalized. 0 layout overflows, standardized cover, Page 2 tracker (Effort 1–5), Task 4 preparation bridges, bracketless C • OK • NOP source utility mastery, and Page 20 Pupil Voice reflection. |
-| **`early_modern_world`** | Early Modern World & Global Encounters (1450–1750) | KS3 (Yr 8) | 9 | **🟡 Next in Queue (Pending 2-Page Migration)** | 4-Act structure complete. Next KS3 unit scheduled to migrate from legacy 4-page to the new 2-page double-page spread standard. |
-| **`great_war`** | Causes of the Great War (1870–1914) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
-| **`great_war_part2`** | The Great War (1914–1919) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
-| **`medieval_england`** | Medieval England & The Struggle for Power (1066–1485) | KS3 (Yr 7) | 9 | **Pending Conversion** | Uses legacy prose comprehension questions. |
-| **`water_and_sanitation`** | Water and Sanitation Through Time | KS3 (Yr 7/8) | 6 | **Pending Conversion** | Legacy format. |
-| **`post_war_britain`** | Rights, Protest, and Post-War Britain (1900–Present) | KS3 (Yr 9) | 6 | **Pending Conversion** | Legacy format. |
-| **`the_shoah`** | The Shoah | KS3 (Yr 9) | 7 | **Pending Conversion** | Legacy format. |
-| **`australia`** | History of Australia | KS3 (Yr 8/9) | 5 | **Pending Conversion** | Legacy format. |
-| **`cold_war`** | The Cold War | KS3 (Yr 9) | 7 | **Pending Conversion** | Legacy format. |
-| **`trip_ypres`** | GCSE Battlefield Tour: Ypres & The Salient | GCSE Field Trip | 14 stops | **Digital Field Trip Guide** | Interactive web companion; workbook export intentionally bypassed. |
+### The Departmental Rollout Architecture:
+1. **Strict Physical-Digital Freeze on Active Units:**  
+   The active files (`public/units/<unit>/pupil_workbook.html` and `public/pdfs/<unit>_pupil_workbook_FINAL_V17.pdf`) for these three units are **FROZEN**. No automated or manual script may overwrite them mid-term.
+2. **Parallel Staged Development (`v2_twopage`):**  
+   When modernizing Year 7 Sanitation, Year 8 Early Modern, and Year 9 Causes of the Great War to the new 4-Act and double-page spread architecture, all code and HTML are compiled into parallel staging files (e.g. `twopage_workbook_v2.html` or `render_twopage_workbook.cjs`).
+3. **Phased Rollout Order (Unprinted / Upcoming Units First):**  
+   - **Phase 1 (Immediate Focus):** Units whose booklets have *not yet been printed* for the upcoming term:  
+     1. Edexcel Middle East (`cme_new`) Key Topics 1 & 3 (16-Page Double-Page Booklets).  
+     2. Year 8 *Industrialisation, Empire & Power* (Lessons 2–8 Double-Page Spread).  
+     3. Year 9 *The Great War: Part 2* (2-Page Double-Page Spread).  
+     4. Edexcel *Early Elizabethan England* (Three Pillars Unification & 16-Page Booklets).  
+     5. Edexcel *Weimar and Nazi Germany* (16-Page Booklets & 4-4-4-4 Visual Guide).  
+   - **Phase 2 (End-of-Term / Vacation Reprint Cycle):**  
+     Only during the scheduled end-of-term school reprographics window (before the next academic cycle) do we promote the staged V2 booklets for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Causes of the Great War to become the official printed classroom copies.
 
 ---
 
-## 4. `industrialisation_and_empire` Lesson-by-Lesson Task 4 Mapping
+## 4. Technical & Publisher Specification Catalog: The 16-Page Booklet Standard
 
-| Lesson | Core Inquiry Question | Task 4 Type & Historical Focus | Right Page Writing Focus |
-| :---: | :--- | :--- | :--- |
-| **1** | Why was Britain the first nation to industrialize? | **Causal Pivot Chain:** Coal + Capital + Patent System mechanism. | Why Britain? (Factor prioritization). |
-| **2** | How far did metallurgy & steam power revolutionize industry? | **Diagrammatic Blueprint (Draw & Label):** Henry Cort's Puddling Furnace & Grooved Rollers with visual ghosting & labels. | Metallurgy & Steam as structural catalysts. |
-| **3** | Was industrial work progress or punishment? | **Two-Sided Conflict Ledger:** Factory wealth creation vs slum/child labour misery. | Social triumph vs catastrophe evaluation. |
-| **4** | Did canals or railways have a greater economic impact? | **Comparative Metric Table:** Canals (bulk coal) vs Railways (speed, network). | Transport revolution essay. |
-| **5** | Why did the ruling class resist working-class reform? | **Archival Witness Dissection:** 1819 Peterloo Magistrate Riot Act order. Underline fear of French Revolution. | Peterloo & the 1832 Reform Act. |
-| **6** | To what extent was British industry built on transatlantic slavery? | **The Flow Blueprint:** Triangular Trade system and British bank capital accumulation. | Slavery vs domestic capital debate. |
-| **7** | How did the East India Company transform from traders into rulers? | **The Crucible Fork:** 1757 Battle of Plassey shift: trading post vs imperial tax collection. | EIC corporate empire essay. |
-| **8** | How did Victorian culture justify colonial conquest? | **Visual Forensic Dissection:** 1890s Pears' Soap advertisement ("White Man's Burden"). | Imperial propaganda & ideology essay. |
+The newly established 16-page pupil workbook standard combines **world-class publisher aesthetics**, **monochrome reprographics efficiency**, and **rigorous cognitive load reduction**:
+
+### A. Page Geometry & Imposition Standards
+- **Page Dimensions:** A4 Portrait per page container (`width: 100%; height: 272mm; max-height: 272mm;`).
+- **Booklet Folding Format:** Saddle-stitched 4-sheet signature (16 pages = 4 folded A3 sheets or 4 duplexed A4 sheets folded into an A5 booklet).
+- **Page Margins:** Uniform 10mm (`margin: 10mm 10mm 10mm 10mm;`) across all pages for consistent duplex printing and wire/staple gutter clearance.
+- **Pixel Budget:** Strictly calibrated at `794px × 1123px` (0px layout overflow threshold verified by Puppeteer automated audits).
+
+### B. Departmental Typography System & Exact Font Sizes
+- **Document Headers & Department Banner:**  
+  - Font: `Inter` sans-serif, bold 900, uppercase, letter-spacing `2.5px`, size `12pt`.
+  - Brand Customizer Target: Enclosed in `<span class="school-brand-target">The History Department</span>` with `data-department-name` wrapper.
+  - Sub-banner: `Inter` sans-serif, bold 800, uppercase, letter-spacing `1.5px`, size `7.2pt`.
+- **Grand Publisher Title Banner:**  
+  - Key Topic Pill: `Inter` sans-serif, bold 900, white text on solid black fill, size `7.2pt`.
+  - Sub-banner Label: `Inter` sans-serif, bold 800, uppercase, letter-spacing `1.0px`, size `7.5pt`.
+  - Unit Main Title: `Playfair Display` serif, bold 900, line-height `1.10`, size `17.5pt`.
+  - Subtitle Narrative: `Georgia` serif italic, color `#222222`, line-height `1.20`, size `8.2pt`.
+- **Main Photographic Plate & Provenance Caption:**  
+  - Primary Record Badge: `Inter` sans-serif, bold 900, uppercase, letter-spacing `0.5px`, size `7.2pt`.
+  - Accession Shelfmark Tag: `Inter` sans-serif, bold 900, solid black badge, size `6.8pt` (e.g. `GPO-D388-052`).
+  - Source Title: `Playfair Display` serif, bold 800, line-height `1.15`, size `10.0pt`.
+  - Archival Context Narrative: `Georgia` serif, line-height `1.25`, size `7.2pt`.
+  - Sub-bar Archival Tags: `Inter` sans-serif, bold 800, uppercase, size `6.5pt`.
+- **Pupil Enrollment & Portfolio Tracking Panel:**  
+  - Section Header: `Inter` sans-serif, bold 900, uppercase, size `7.2pt`.
+  - Form Fields (Name, Class, Teacher): `Inter` sans-serif, bold 800, uppercase, size `6.8pt` (12px line height).
+  - Enquiry Tracking Table: `Inter` sans-serif, bold 800, table headers `5.8pt`, data rows `5.8pt` with 7×7mm tick-boxes.
+- **Docked Editorial Panels (Right Column):**  
+  - Header Banners: `Inter` sans-serif, bold 900, white on black, size `7.0pt`, letter-spacing `0.5px`.
+  - Exam Tariffs Breakdown: `Inter` sans-serif, size `6.3pt`, line-height `1.28`.
+  - Enquiry Card Titles: `Inter` sans-serif, bold 800, size `6.8pt`.
+  - Enquiry Sub-questions: `Georgia` serif italic, size `6.1pt`, line-height `1.15`.
+  - Enquiry Core Knowledge Bullets: `Inter` sans-serif, size `5.8pt`, line-height `1.18`.
+  - Concepts & Exam Sub-bars: `Inter` sans-serif, bold 700, size `5.6pt`.
+  - Chronological Anchor Milestones: `Inter` sans-serif, size `5.7pt`, line-height `1.18` (2 columns of 5 milestones).
+  - PFC Technique Breakdown: `Inter` sans-serif, bold 800, size `6.5pt` (badges) / `6.0pt` (formula).
+  - Benchmark Model Answer: `Georgia` serif, size `5.7pt`, line-height `1.15`.
+- **Body & Extended Writing Pages (Pages 2–13):**  
+  - Enquiry Banner: `Inter` sans-serif, bold 800, size `11.0pt`.
+  - Do Now Retrieval Questions: `Inter` sans-serif, size `7.8pt` (prompts) / `7.2pt` (sub-text).
+  - Writing Structure Strip: `Inter` sans-serif, bold 800, size `7.0pt`–`7.5pt`.
+  - Writing Lines: Thick solid black border-bottom `1.5px solid #000000`, line height `7.0mm` (Pearson standard, high SEND legibility).
+- **Footers:**  
+  - Running Footers: `Inter` sans-serif, size `7.2pt` (page number bold 800, quip italic 500).
+
+### C. Master Page Architecture (16-Page Breakdown)
+- **Page 1: Front Cover**  
+  - Master Photographic Hero Left (108mm wide): High-res base64 image + GPO Accession provenance plate.  
+  - Docked Editorial Suite Right (66mm wide): Pupil Portfolio, Exam Tariffs, 5-Enquiry Sequence, 10-Milestone Chronology, and PFC 4/4 Model Answer.
+- **Pages 2–3: Living Timeline & Panoramic Dual-Coding Spread**  
+  - 6 Chronological Milestones (1964–1973) with generous 48mm sketch canvases for student dual-coding, zero clutter, and structured timeline missions.
+- **Pages 4–5: Enquiry 1 (KT 2.1 — The Road to War: Water Wars & Border Clashes)**  
+  - Verso: 10-question retrieval Do Now, Vocab analytical distinction, 2x Q1 Consequence [4m+4m] with stems & 7.0mm ruled response lines.  
+  - Recto: Q2 Analytical Narrative [8m] with 3-phase structure strip, causal connectives, word bank, and full-page ruled lines.
+- **Pages 6–7: Enquiry 2 (KT 2.2 — Course of the Six-Day War)**  
+  - Verso: 10-question retrieval Do Now, Vocab distinction, 2x Q1 Consequence [4m+4m].  
+  - Recto: Q3 Explain Importance [8m] with 2 focus aspects, structure strip, and full-page ruled lines.
+- **Pages 8–9: Enquiry 3 (KT 2.3 — Aftermath: Occupied Lands & UN Resolution 242)**  
+  - Verso: 10-question retrieval Do Now, Vocab distinction, 2x Q1 Consequence [4m+4m].  
+  - Recto: Q2 Analytical Narrative [8m] with 3-phase structure strip and full-page ruled lines.
+- **Pages 10–11: Enquiry 4 (KT 2.4 — Palestinian Resistance: PLO, Black September & Munich)**  
+  - Verso: 10-question retrieval Do Now, Vocab distinction, 2x Q1 Consequence [4m+4m].  
+  - Recto: Q3 Explain Importance [8m] with structure strip and full-page ruled lines.
+- **Pages 12–13: Enquiry 5 (KT 2.5 — The Yom Kippur War & The Oil Crisis)**  
+  - Verso: 10-question retrieval Do Now, Vocab distinction, 2x Q1 Consequence [4m+4m].  
+  - Recto: Q2 Analytical Narrative [8m] with 3-phase structure strip and full-page ruled lines.
+- **Page 14: Master Knowledge Organiser**  
+  - Bilingual Hebrew and Arabic key terminology glossary (*Fedayeen, Nakba, Kotel, Al-Naksa, Mossad, Knesset*).  
+  - High-yield thematic reference tables (Territories annexed, leaders, military operations, and diplomatic resolutions).  
+  - Core causal matrices for rapid pre-exam revision.
+- **Page 15: Grade 9 Extended Writing Masterclass & Band 4 Rubric**  
+  - Point-Fact-Consequence (PFC) analytical framework.  
+  - Causal connectives toolkit (*Consequently, In direct reaction to, Crucially*).  
+  - Edexcel Band 4 evaluative criteria prompts (Scale, Permanence, Diplomatic Deadlock, Strategic Supremacy).  
+  - Full annotated Grade 9 benchmark essay.
+- **Page 16: Outside Back Cover (Assessment Tracker & Digital Hub)**  
+  - Pupil Key Topic Target Tracker & Assessment Gradebook.  
+  - Formal WWW / EBI Teacher Feedback Matrix with diagnostic checkboxes.  
+  - Vector QR Code Mobile Quizzing Hub (instant direct access to smartphone flashcard and quiz decks).
 
 ---
 
-## 5. Architectural Invariants & Safety Guardrails
-1. **GCSE Isolation:** Never apply KS3 4-Act or 2-page workbook generator logic to GCSE units (`cme_new`, `edexcel_medicine`, `eee`, `usa`, `weimar_nazi_germany`, `cold_war`).
-2. **Page Budget Invariant:** Every KS3 workbook lesson must fit strictly within **2 pages (1 double-page spread)**. Never allow bleed into a 3rd page.
-3. **Low Floor, High Ceiling:** Every Task 4 must have an accessible entry point (visual anchor / clues) and a high-level extension (**★ Scholar's Edge**).
-4. **App vs Workbook Separation:** Multimedia (videos, interactive quizzes, animated flowcharts, pair & share) lives in the Web App; rigorous written accountability lives in the Workbook.
+## 5. Implementation Roadmap & Immediate Next Steps
+
+1. **Step 1 (Immediate):** Finish Middle East Key Topic 1 and Key Topic 3 (`cme_new`) using this newly finalized 16-page double-page spread workbook standard.
+2. **Step 2:** Finalize delivery plans and compile the 20-page double-page spread workbook for Year 8 *Industrialisation, Empire & Power* (Lessons 2–8).
+3. **Step 3:** Consolidate GCSE *Early Elizabethan England* (`eee`) from 3 split booklets into the single unified master volume and 16-page key topic workbooks.
+4. **Step 4:** Maintain strict protection over active printed booklets (Year 7 Sanitation, Year 8 Early Modern, Year 9 Causes of the Great War) until the scheduled vacation reprint cycle.

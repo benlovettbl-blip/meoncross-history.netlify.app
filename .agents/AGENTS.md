@@ -248,3 +248,35 @@ To ensure that large-scale curriculum improvements and delivery rollouts are nev
    - Inspect `DEPARTMENTAL_ROADMAP.md`.
    - Identify the current active unit and the exact next incomplete lesson or milestone in the rollout.
    - Provide a clear, actionable reminder stating exactly where we are in the departmental rollout and what needs to be done next, so the user never has to remember or track project status manually.
+
+## Permanent Departmental Milestone Memory: Medicine & Middle East KT2 Completed
+STRICT DEPARTMENTAL RECORD & ACTIVE MEMORY:
+1. **Edexcel Paper 1 (Medicine in Britain & Western Front):**
+   - **Status: COMPLETED (GREEN).** All lessons across the thematic eras (Medieval, Renaissance, 18th/19th Century, Modern) and Section A Western Front are fully authored, enriched with 4-Act Christine Counsell narrative arcs, and compiled.
+2. **Edexcel Paper 2 (Conflict in the Middle East, 1945–1995 - `cme_new`):**
+   - **Key Topic 2 (The Escalating Conflict, 1964–1973):** **COMPLETED (GREEN).** All 5 enquiry lessons (KT 2.1 to KT 2.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT2.html`) is 100% finalized, featuring the publisher-grade cover (108mm portrait photographic plate, docked 66mm editorial suite), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker.
+   - **Key Topic 1 & Key Topic 3 (`cme_new`):** **PRIORITY #1 TO FINISH SOON (AMBER).** These units must be converted to this newly established 16-page double-page booklet template moving forward.
+
+## Universal 16-Page Double-Page Pupil Workbook Standard
+All future GCSE key topic workbooks and KS3 enquiry booklets moving forward MUST adopt the newly proven 16-page architecture established in `cme_new` KT2:
+1. **Page 1: Publisher-Grade Front Cover:**
+   - Left Column (108mm wide): Massive portrait photographic plate with base64 embedded historical source + Archival Primary Record caption plate citing repository accession shelfmarks (e.g. `GPO-D388-052`).
+   - Right Column (66mm wide): Docked editorial panels with zero dead space: Pupil Portfolio card (Name, Class, Teacher, 5-enquiry tracking table), Section A Exam Architecture & Tariffs, Section B Specification Enquiry Sequence (with titles, dates, enquiry questions, specification bullets, concepts, and exam tariffs), Section C 10-Milestone Chronological Anchors, and Section D PFC Writing Technique with 4/4 benchmark model answer.
+2. **Pages 2–3: Living Timeline & Panoramic Dual-Coding Spread:** 6 milestones across the period with 48mm sketch canvases for dual-coding.
+3. **Pages 4–13: 5x Double-Page Enquiry Spreads (2 Pages per Enquiry):**
+   - Verso (Left Page): 10-question retrieval Do Now, Vocab analytical distinction, 2x Q1 Consequence [4m+4m] with stems & 7.0mm ruled response lines.
+   - Recto (Right Page): Full 8m / 16m extended writing practice with Mastery Structure Strip, analytical connectives, word bank, timeline mission, and full-page ruled lines.
+4. **Page 14: Master Knowledge Organiser:** Bilingual Hebrew & Arabic / specialized terminology glossary, high-yield thematic tables, cause & consequence matrices.
+5. **Page 15: Grade 9 Extended Writing Masterclass & Band 4 Rubric:** Point-Fact-Consequence model, analytical connectives, evaluative criteria prompts, sustained judgment.
+6. **Page 16: Outside Back Cover:** Assessment Tracker, WWW/EBI Teacher Feedback Grid, and Mobile QR Quiz Matrix.
+
+## Reprographics Protection & Classroom Rollout Protocol (The "Zero Disruption" Rule)
+Certain units have physical booklets printed and actively in pupils' hands in classrooms right now:
+- **Year 7:** Water and Sanitation Through Time (`water_and_sanitation`)
+- **Year 8:** Early Modern World & Global Encounters (`early_modern_world`)
+- **Year 9:** Causes of the Great War (`great_war`)
+To roll out our new 4-Act Christine Counsell lessons and 16-page double-page spreads WITHOUT disrupting or invalidating active printed workbooks:
+1. **Active Files Frozen:** The existing `pupil_workbook.html` and compiled `_FINAL_V17.pdf` files for these three units must remain 100% frozen and untouched.
+2. **Parallel Staged Development:** Modernized 4-Act narratives and 2-page / 16-page spread templates for these units must be created in parallel staging files (e.g. `twopage_workbook_v2.html` or `render_twopage_workbook.cjs`). They must NEVER overwrite active classroom files mid-term.
+3. **Rollout Sequence (Unprinted / Upcoming First):** Focus all active deployment on units whose booklets are NOT yet printed (Middle East KT1 and KT3, Year 8 Industrialisation Lessons 2–8, Great War Part 2, Elizabethan England, Weimar Germany). Only swap active units during scheduled end-of-term reprint cycles.
+
