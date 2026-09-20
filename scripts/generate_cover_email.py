@@ -109,7 +109,7 @@ def load_timetable():
     with open(TIMETABLE_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def generate_cover_plan(week, day, overrides=None, target_date=None, period_filter=None):
+def generate_cover_plan(week, day, overrides=None, target_date=None, period_filter=None, is_tomorrow=False, when_word=None):
     overrides = overrides or {}
     tt = load_timetable()
     if not tt or week not in tt or day not in tt[week]:
@@ -131,12 +131,15 @@ def generate_cover_plan(week, day, overrides=None, target_date=None, period_filt
     else:
         date_str = datetime.now().strftime("%d %B %Y")
         date_tag = datetime.now().strftime("%Y-%m-%d")
+        
+    resolved_when = when_word or ("tomorrow" if is_tomorrow else "today")
     
     plan = {
         "week": week,
         "day": day,
         "date_str": date_str,
         "date_tag": date_tag,
+        "when_word": resolved_when,
         "tutor_group": "Warrior 2",
         "tutor_times": "AM (08:45–09:10) & PM Mobile Collection (15:50–15:55)",
         "duties": day_duties,
@@ -225,7 +228,8 @@ def render_email_text(plan, recipient=None):
         lines.append(f"Dear {recipient.strip()},")
     else:
         lines.append("Dear ,")
-    lines.append(f"Please find below the emergency cover schedule and lesson plans for today, {plan['day']}, {plan['date_str']} ({plan['week']}).")
+    when_word = plan.get("when_word", "today")
+    lines.append(f"Please find below the cover for {when_word}, {plan['day']}, {plan['date_str']} ({plan['week']}).")
     lines.append(f"Tutor AM / PM {plan.get('tutor_group', 'Warrior 2')}")
     
     if plan.get("duties"):
@@ -257,7 +261,7 @@ def render_email_text(plan, recipient=None):
 
 def save_cover_package(plan, recipient=None):
     body_text = render_email_text(plan, recipient)
-    subject = f"EMERGENCY COVER: History - {plan['day']}, {plan['date_str']} ({plan['week']})"
+    subject = f"COVER: History - {plan['day']}, {plan['date_str']} ({plan['week']})"
     
     os.makedirs(LOCAL_COVER_DIR, exist_ok=True)
     if os.path.exists(EMAILS_DIR):
@@ -350,16 +354,18 @@ Content-Transfer-Encoding: 8bit
     }
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate Emergency History Cover Email")
+    parser = argparse.ArgumentParser(description="Generate History Cover Email")
     parser.add_argument("--week", choices=["Week A", "Week B"], default="Week A", help="Week A or Week B")
     parser.add_argument("--day", choices=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], default=None, help="Day of the week")
     parser.add_argument("--tomorrow", action="store_true", help="Generate cover for tomorrow")
-    parser.add_argument("--date", default=None, help="Specific date e.g. '21 September 2026' or '2026-09-21'")
+    parser.add_argument("--when", choices=["today", "tomorrow"], default=None, help="Force 'today' or 'tomorrow' phrasing")
+    parser.add_argument("--date", default=None, help="Specific date e.g. '22 September 2026' or '2026-09-22'")
     parser.add_argument("--periods", default=None, help="Comma-separated periods to include e.g. '1,3' or '3'")
     parser.add_argument("--recipient", default="", help="Recipient name (defaults to 'Dear ,')")
     args = parser.parse_args()
     
     target_date = None
+    is_tomorrow = bool(args.tomorrow)
     if args.tomorrow:
         target_date = datetime.now() + timedelta(days=1)
         if not args.day:
@@ -374,6 +380,17 @@ if __name__ == "__main__":
         if target_date and not args.day:
             args.day = target_date.strftime("%A")
             
+    if args.day and not target_date:
+        days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        today = datetime.now()
+        today_idx = today.weekday()
+        if args.day in days_of_week:
+            target_idx = days_of_week.index(args.day)
+            delta = (target_idx - today_idx) % 7
+            target_date = today + timedelta(days=delta)
+            if delta == 1:
+                is_tomorrow = True
+                
     if not args.day:
         args.day = datetime.now().strftime("%A")
         if args.day in ["Saturday", "Sunday"]:
@@ -382,14 +399,14 @@ if __name__ == "__main__":
             days_ahead = 1 if args.day == "Sunday" else 2
             target_date = datetime.now() + timedelta(days=days_ahead)
             
-    plan = generate_cover_plan(args.week, args.day, target_date=target_date, period_filter=args.periods)
+    plan = generate_cover_plan(args.week, args.day, target_date=target_date, period_filter=args.periods, is_tomorrow=is_tomorrow, when_word=args.when)
     if not plan:
         print(f"Error: Could not find timetable for {args.week} {args.day}")
         sys.exit(1)
         
     pkg = save_cover_package(plan, args.recipient)
     print("=" * 65)
-    print(f"✅ Emergency Cover Package Generated for {args.week} {args.day} ({plan['date_str']})!")
+    print(f"✅ Cover Package Generated for {args.week} {args.day} ({plan['date_str']})!")
     print(f"Subject: {pkg['subject']}")
     print(f"Local HTML Launcher: {pkg['html_path']}")
     if pkg['gdrive_path']:
