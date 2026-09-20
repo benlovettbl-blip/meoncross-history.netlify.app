@@ -115,3 +115,56 @@ The browser subagent visually rendered and inspected both workbooks and textbook
   - Layout overflow audit: Passed with 0 overflows.
 - Executed `node verify_images.cjs`: All images verified (no corrupt HTML files).
 - Git pre-commit hooks passed: Clean commit `4dca8708` pushed to `origin main`.
+
+---
+
+## 6. Phase 1: Edexcel GCSE Paper 1 Medicine & The Western Front (`edexcel_medicine`) — COMPLETE
+- Fully aligned with Pearson Edexcel GCSE 9–1 Option 11/12 specification.
+- Built bespoke 2-page spread Western Front workbook pipeline (`scripts/render_medicine_western_front_twopage_workbook.cjs`).
+- Compiled, audited for 0px page overflows, synced to `public/database.json`, exported PDFs, and committed to git (`8b156b5d`).
+
+---
+
+## 7. Phase 2: Conflict in the Middle East (`cme_new`) — Key Topic 2 (1964–1973) Overhaul — COMPLETE
+
+### A. Core Architecture & Specification Guardrails (Option P5)
+Built 5 brand new Christine Counsell 4-Act lessons in [`scripts/build_cme_kt2_lessons.cjs`](file:///c:/Projects/the-history-revision-hub.netlify.app/scripts/build_cme_kt2_lessons.cjs) and applied to [`units/cme_new/data.js`](file:///c:/Projects/the-history-revision-hub.netlify.app/units/cme_new/data.js):
+- **Lesson 6 (KT 2.1):** The Road to War: The Cairo Conference, Water Wars & Border Skirmishes (1964–1967)
+- **Lesson 7 (KT 2.2):** The Slide to War & The Six Day War (May–June 1967)
+- **Lesson 8 (KT 2.3):** The Aftermath of 1967: The Occupied Territories & UN Resolution 242
+- **Lesson 9 (KT 2.4):** The Rise of Palestinian Resistance: The PLO, Black September & Munich (1968–1972)
+- **Lesson 10 (KT 2.5):** The War of Attrition & The Yom Kippur War (1969–1973)
+
+### B. Pedagogical & Specification Enforcements:
+1. **Language & Depth of Knowledge (DoK) Calibration:**
+   - Tone calibrated specifically for 14–16 year old GCSE students (Pearson/Hodder standard).
+   - Zero obscure university-level figures: **Ahmad Shuqayri is strictly excluded**.
+   - Strict 2-to-3 punchy points rule applied across all acts, causes, and consequences.
+2. **Pure Paragraph Indexing:**
+   - Strictly indexed paragraphs using `<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[2.1]</span>`, `<span class="para-ref">[3.1]</span>`, `<span class="para-ref">[4.1]</span>`. Zero sentence-level indexing.
+3. **Authentic Primary Sources with Archival Alignment:**
+   - Sequential lettering: Source A (Act 2) and Source B (Act 3) in each lesson.
+   - Verified 10 archival citations in narrative blocks aligning with `block.source`.
+   - Every source includes full provenance, historical context, and an exploratory **Hinge Question**.
+   - Every source includes a `question` starting with `Study Source [Letter].` satisfying `verify_source_sync.cjs`.
+4. **Pedagogical Recall Isolation (Do Now):**
+   - All 10 Do Now questions per lesson strictly test prior knowledge from Key Topic 1 (Balfour Declaration, British Mandate, King David Hotel, 1947 Partition, 1948 War, Suez Crisis). Zero current-lesson recall.
+5. **Edexcel Paper 2 Exam Questions & Rigorous Models:**
+   - Edexcel updated Paper 2 formats: 4-mark consequence ("Explain one consequence of...") and 8-mark narrative accounts with stimulus points. Zero generic placeholders.
+6. **Mastery Quiz & Flashcard Vault:**
+   - 20 four-option multiple choice questions with detailed historical explanations per lesson (100 total for KT2).
+   - 10 disciplinary vocabulary terms and definitions per lesson (50 total for KT2).
+
+### C. Validation & Audit Pipeline Results:
+- `node scripts/verify_source_act_alignment.cjs cme_new`: **100% Clean** (105 blocks checked, 10 citations verified).
+- `node scripts/verify_source_sync.cjs`: **100% Clean** (37 sources sequenced and verified across all lessons).
+- `node scripts/lint_task_uniformity.cjs cme_new`: **100% Clean**.
+- `node scripts/lint_gcse_dok.cjs cme_new`: **100% Clean** (0 banned trivia terms).
+- `node scripts/verify_curriculum_facts.cjs cme_new`: **100% Clean**.
+- `node scripts/verify_sanitization.cjs`: **100% Clean** (0 school or teacher identifiers across 4,030 files).
+- `node scripts/sync_unit.cjs cme_new`: **100% Clean in 53.1s** (HTML workbooks, textbooks, page maps, and PDFs re-compiled).
+- `node scripts/check_overflows.cjs cme_new`: **0 layout overflows across all KT2 workbooks and textbooks**.
+- `npm run test:qa`: **100% Passed**.
+- Browser Visual Verification: Verified live on `http://localhost:3003/?view=lessons&unit=cme_new&lesson=lesson_6` with flawless typography, styling, and 0 console errors.
+- Git Checkpoint: Committed cleanly as `46cabe78`.
+
