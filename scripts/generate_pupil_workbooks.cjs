@@ -1581,6 +1581,24 @@ allDirs.forEach((unitId) => {
       return;
     }
 
+    if (unitId === 'cme_new' && period.name === 'KT3') {
+      const { buildCmeKt3TwoPageWorkbook } = require('./render_cme_kt3_twopage_workbook.cjs');
+      let customHtml = buildCmeKt3TwoPageWorkbook(unitData, period);
+      const filename = `pupil_workbook_${period.name}.html`;
+      const outPath = path.join(publicUnitsDir, unitId, filename);
+      try {
+        fs.writeFileSync(outPath, customHtml);
+        const altUnitsPath = path.join(PATHS.ROOT, 'units', unitId, filename);
+        if (fs.existsSync(path.dirname(altUnitsPath))) {
+          fs.writeFileSync(altUnitsPath, customHtml);
+        }
+        console.log(`Generated 2-page spread workbook for ${unitId}: ${filename}`);
+      } catch (err) {
+        console.error(`❌ Failed to write workbook for ${unitId}: ${filename}`, err.message);
+      }
+      return;
+    }
+
     let html = htmlHead;
     const periodLessons = unitData.lessons.filter(period.filter);
     if (periodLessons.length === 0) return;

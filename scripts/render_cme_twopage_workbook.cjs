@@ -676,6 +676,23 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     const coverImgBase64 = fs.readFileSync(coverImgPath).toString('base64');
     coverImgSrc = `data:image/jpeg;base64,${coverImgBase64}`;
   }
+
+  // Map images for Page 14 Cartographic Masterclass
+  const sixDayWarMapPath = path.resolve(
+    'public/units/cme_new/assets/palestine_1967_six_day_war_map.png',
+  );
+  let sixDayWarMapSrc = '/units/cme_new/assets/palestine_1967_six_day_war_map.png';
+  if (fs.existsSync(sixDayWarMapPath)) {
+    const b64 = fs.readFileSync(sixDayWarMapPath).toString('base64');
+    sixDayWarMapSrc = `data:image/png;base64,${b64}`;
+  }
+
+  const yomKippurMapPath = path.resolve('public/units/cme_new/assets/cme_yom_kippur_1973_map.png');
+  let yomKippurMapSrc = '/units/cme_new/assets/cme_yom_kippur_1973_map.png';
+  if (fs.existsSync(yomKippurMapPath)) {
+    const b64 = fs.readFileSync(yomKippurMapPath).toString('base64');
+    yomKippurMapSrc = `data:image/png;base64,${b64}`;
+  }
   // ====================================================================
   // PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover)
   // ====================================================================
@@ -1109,188 +1126,102 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
   });
 
   // ====================================================================
-  // PAGE 14: KEY TOPIC 2 MASTER KNOWLEDGE ORGANISER (Verso / Left Page)
-  // Specification Synthesis & Flash Recall Accelerator
+  // PAGE 14: KEY TOPIC 2 CARTOGRAPHIC MASTERCLASS & STRATEGIC ATLAS
+  // The 1967 Six-Day War & The 1973 Yom Kippur War Primary Cartography
   // ====================================================================
   html += `
   <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
     <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
       
       <!-- Top Departmental Branding -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
+      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Master Knowledge Organiser</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Cartographic Masterclass</span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 2 SYNTHESIS</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 2 CARTOGRAPHIC EVIDENCE</span>
         </div>
       </div>
 
-      <!-- Main Title Header -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1px;">
-            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
-              CORE KNOWLEDGE
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-              Specification Synthesis (1964–1973)
-            </span>
-          </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; line-height: 1.15; margin: 0; font-weight: 900;">
-            The Escalating Conflict, 1964–1973: Master Knowledge Organiser
+      <!-- Main Title Bar -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
+            Key Topic 2 Cartographic Masterclass &bull; The 1967 &amp; 1973 Wars
           </h2>
-        </div>
-        <div style="text-align: right; border-left: 1.5px solid #000; padding-left: 10px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; display: block;">Paper 2 Spec</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900;">1HI0/2B</span>
-        </div>
-      </div>
-
-      <!-- Section 1: 5 Enquiries Core Specification Synthesis (High-Density Cards) -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
-        <div style="background: #000; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
-          <span>1. The 5 Core Specification Enquiries (Chronological Causal Sequence)</span>
-          <span>Pearson Edexcel High-Yield Content</span>
-        </div>
-
-        <!-- Enquiry 1 -->
-        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.1: The Road to War: Water Wars &amp; Border Skirmishes (1964–67)</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q2 Narrative</span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
-            <strong>Cairo Conference (1964):</strong> Arab League meets in Cairo to oppose Israel's National Water Carrier; creates the <strong>Palestine Liberation Organisation (PLO)</strong> under Ahmad Shuqeiri and approves the Syrian Headwater Diversion Plan. <br>
-            <strong>Border Clashes:</strong> Israeli airstrikes destroy Syrian earth-moving equipment. Syrian-backed <strong>Fatah fedayeen</strong> conduct cross-border guerrilla sabotage. Israel retaliates with the Samu raid in Jordan (Nov 1966) and the <strong>7 April 1967 air dogfight</strong> over the Golan Heights, shooting down 6 Syrian MiG-21s and buzzing Damascus.
-          </p>
-        </div>
-
-        <!-- Enquiry 2 -->
-        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fafafa;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.2: Course of the Six-Day War (5–10 June 1967)</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q3 Importance</span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
-            <strong>May 1967 Escalation:</strong> Soviet false intelligence warns Syria of Israeli troop build-up. In response, Egyptian President Nasser expels <strong>UNEF peacekeepers</strong> from Sinai (18 May), deploys 100,000 troops and 1,000 tanks, closes the <strong>Straits of Tiran</strong> at Sharm el-Sheikh to Israeli shipping (22 May), and signs a Mutual Defence Pact with King Hussein of Jordan (30 May). <br>
-            <strong>Operation Focus (5–10 June):</strong> On 5 June, Israel launches a pre-emptive air strike, wiping out 300+ Egyptian aircraft on the ground in 3 hours. Israeli forces secure total air supremacy and capture the <strong>Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem (Western Wall), and Golan Heights</strong> in just six days.
-          </p>
-        </div>
-
-        <!-- Enquiry 3 -->
-        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.3: Aftermath: Occupied Territories &amp; UN Resolution 242 (1967)</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q2 Narrative</span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
-            <strong>Territorial Expansion:</strong> Israel triples its land area, establishing strategic depth but bringing over 1 million Palestinian Arabs under direct military occupation. Jewish religious and security settlements begin in the West Bank and Golan. <br>
-            <strong>Diplomatic Deadlock:</strong> Arab leaders meet at the <strong>Khartoum Summit (Sept 1967)</strong> and issue the <em>‘Three Noes’</em>: No peace with Israel, no recognition of Israel, no negotiations with Israel. In November 1967, the UN passes <strong>Resolution 242</strong> establishing the <em>‘Land for Peace’</em> formula; its deliberate English ambiguity ('withdrawal from territories' vs French 'des territoires') leads to diplomatic stalemate.
-          </p>
-        </div>
-
-        <!-- Enquiry 4 -->
-        <div style="padding: 3.5px 8px; border-bottom: 1px solid #000; background: #fafafa;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.4: Palestinian Nationalism &amp; International Terrorism (1968–72)</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q3 Importance</span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
-            <strong>Rise of Fatah &amp; Arafat:</strong> Following the Arab armies' defeat, Palestinians conclude they must liberate themselves. At the <strong>Battle of Karameh (March 1968)</strong>, Palestinian fighters inflict heavy casualties on an Israeli raid, boosting recruitment. <strong>Yasser Arafat</strong> becomes PLO Chairman in 1969. <br>
-            <strong>Terrorism &amp; Expulsion:</strong> George Habash's PFLP hijacks 4 Western airliners to Dawson’s Field, Jordan (Sept 1970). King Hussein’s army launches <strong>Black September</strong>, violently expelling the PLO to Lebanon. In revenge, the Black September faction murders 11 Israeli athletes at the <strong>1972 Munich Olympics</strong>, triggering Israeli Operation Wrath of God counter-assassinations.
-          </p>
-        </div>
-
-        <!-- Enquiry 5 -->
-        <div style="padding: 3.5px 8px; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">KT 2.5: The Yom Kippur War &amp; The Global Oil Weapon (1973)</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; background: #eee; padding: 0.5px 4px; border-radius: 2px;">Exam: Q1 Conseq &bull; Q2 Narrative</span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.25; margin: 0; color: #111;">
-            <strong>Operation Badr (6 Oct 1973):</strong> Egyptian President Anwar Sadat and Syrian President Hafez al-Assad launch a coordinated surprise assault on Yom Kippur/Ramadan. Egyptian forces use high-pressure water monitors to breach the <strong>Bar-Lev Line</strong> sand wall, crossing the Suez Canal under a mobile Soviet SAM-6 anti-aircraft umbrella while Syria invades the Golan Heights. <br>
-            <strong>Airlifts, Counter-Attack &amp; Oil Embargo:</strong> The US launches massive emergency airlift <strong>Operation Nickel Grass</strong> to re-arm Israel. General Ariel Sharon counter-crosses the canal, encircling Egypt's Third Army. Arab members of <strong>OPEC deploy the oil weapon</strong>, cutting production and imposing an embargo on the US and Netherlands, quadrupling global oil prices. US Secretary of State Henry Kissinger brokers a ceasefire (UN Res 338).
-          </p>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
+            Geographical Disciplinary Evidence
+          </span>
         </div>
       </div>
 
-      <!-- Section 2: Dual-Term Conceptual & Analytical Distinctions -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
-        <div style="background: #000; color: #fff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
-          <span>2. Dual-Term Analytical Distinctions (Do Not Confuse in Extended Writing)</span>
-          <span>Conceptual Precision</span>
+      <!-- Two Authentic Historical Maps Side by Side -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px; flex: 1;">
+        
+        <!-- Map 1: 1967 Six-Day War Blitzkrieg -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
+                1. The Six-Day War (June 1967): Blitzkrieg
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">MAP ARCHIVE</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
+              Operation Focus dawn airstrike and the capture of the Sinai Peninsula, Gaza Strip, West Bank, Jerusalem &amp; Golan Heights:
+            </p>
+          </div>
+          
+          <div style="text-align: center; margin: 2px 0;">
+            <img src="${sixDayWarMapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="Six-Day War Historical Map">
+          </div>
+
+          <!-- Key Data Statistics Box -->
+          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
+            <div>&bull; <strong>Operation Focus (5 June):</strong> Israeli jets destroy 300+ Egyptian aircraft on tarmac in 3 hours, achieving total air supremacy.</div>
+            <div>&bull; <strong>Triple Front Advance:</strong> IDF armor captures Sinai to Suez; paratroopers take Old City Jerusalem (7 June); Golan cliffs scaled (9–10 June).</div>
+            <div>&bull; <strong>Strategic Outcomes:</strong> Israeli territory quadruples; creates buffer zones; places 1M+ Palestinians under direct military occupation.</div>
+          </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.22;">
-          <div style="padding: 3px 6px; border-right: 1px solid #000; border-bottom: 1px solid #000;">
-            <strong style="text-transform: uppercase;">Pre-emptive Strike vs Act of Aggression:</strong><br>
-            <span style="font-family: 'Georgia', serif;">Israel argued Operation Focus was a legal pre-emptive strike in self-defence against an existential blockade; Arab states condemned it as unprovoked territorial aggression.</span>
+
+        <!-- Map 2: 1973 Yom Kippur War Suez Crossing -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
+                2. The Yom Kippur War (Oct 1973): Sinai Front
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">CAMPAIGN ARCHIVE</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
+              Operation Badr canal crossing, the Bar-Lev sand rampart breach, and Sharon's armoured counter-crossing at Deversoir:
+            </p>
           </div>
-          <div style="padding: 3px 6px; border-bottom: 1px solid #000;">
-            <strong style="text-transform: uppercase;">Fatah vs The PLO:</strong><br>
-            <span style="font-family: 'Georgia', serif;">Fatah was Arafat's specific secular guerrilla faction (formed 1959); the PLO was the wider umbrella body established by the Arab League (1964) which Fatah took control of in 1969.</span>
+
+          <div style="text-align: center; margin: 2px 0;">
+            <img src="${yomKippurMapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="Yom Kippur War Sinai Map">
           </div>
-          <div style="padding: 3px 6px; border-right: 1px solid #000;">
-            <strong style="text-transform: uppercase;">'Three Noes' vs 'Land for Peace':</strong><br>
-            <span style="font-family: 'Georgia', serif;">Khartoum (Sept 1967) rejected peace, recognition, and talks with Israel; UN Res 242 (Nov 1967) offered Arab recognition and secure borders in exchange for Israeli territorial withdrawal.</span>
-          </div>
-          <div style="padding: 3px 6px;">
-            <strong style="text-transform: uppercase;">Water Monitors vs Artillery Shelling:</strong><br>
-            <span style="font-family: 'Georgia', serif;">Water monitors were high-pressure water cannons pumping canal water to liquify 20m sand ramparts in 2 hours; conventional explosives were proven useless against loose sand.</span>
+
+          <!-- Strategic Key Data Box -->
+          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
+            <div>&bull; <strong>Operation Badr (6 Oct):</strong> 80,000 Egyptian troops cross Suez; high-pressure water monitors wash away Bar-Lev sand wall in 2 hours.</div>
+            <div>&bull; <strong>Sharon's Counter-Crossing (15–16 Oct):</strong> Israeli armor exploits seam between 2nd &amp; 3rd Armies, encircling Egypt's 3rd Army on west bank.</div>
+            <div>&bull; <strong>Global Shock:</strong> OPEC oil embargo quadruples world crude oil prices; US DEFCON 3 alert; Henry Kissinger brokers UN Res 338 ceasefire.</div>
           </div>
         </div>
+
       </div>
 
-      <!-- Section 3: Rapid Retrieval Statistical Anchors (10 Must-Know Flash Facts) -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #fafafa;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
-          <span>3. Rapid Retrieval Flash Anchors &bull; 10 Essential Chronological &amp; Statistical Milestones</span>
-          <span>Memorise for Grade 9</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; text-align: center; font-family: 'Inter', sans-serif;">
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">1964</strong>
-            <span style="font-size: 5.8pt; color: #222;">Cairo Summit &bull; PLO Created</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">7 Apr 1967</strong>
-            <span style="font-size: 5.8pt; color: #222;">Golan Dogfight (6 MiGs)</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">5–10 Jun 1967</strong>
-            <span style="font-size: 5.8pt; color: #222;">Six-Day Blitzkrieg</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">Nov 1967</strong>
-            <span style="font-size: 5.8pt; color: #222;">UN Resolution 242</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">Mar 1968</strong>
-            <span style="font-size: 5.8pt; color: #222;">Battle of Karameh</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">Sep 1970</strong>
-            <span style="font-size: 5.8pt; color: #222;">Dawson's Field &amp; Black Sept</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">Sep 1972</strong>
-            <span style="font-size: 5.8pt; color: #222;">Munich Olympics (11 killed)</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">6 Oct 1973</strong>
-            <span style="font-size: 5.8pt; color: #222;">Op Badr (Yom Kippur)</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">Oct 1973</strong>
-            <span style="font-size: 5.8pt; color: #222;">OPEC Embargo (400% rise)</span>
-          </div>
-          <div style="border: 1px solid #000; padding: 2px; border-radius: 2px; background: #fff;">
-            <strong style="font-size: 7.2pt; display: block;">24 Oct 1973</strong>
-            <span style="font-size: 5.8pt; color: #222;">UN Res 338 Ceasefire</span>
-          </div>
-        </div>
+      <!-- Cartographic Disciplinary Synthesis Box -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fafafa; margin-bottom: 2px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+          Cartographic Disciplinary Insight: Why Did Topography &amp; Buffer Zones Dictate Middle Eastern Military Strategy?
+        </strong>
+        <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0; line-height: 1.22;">
+          The geographical outcome of 1967 fundamentally altered regional military doctrine. While Israel viewed the vast Sinai desert, Suez water barrier, and Golan Heights as an impenetrable defensive buffer, this exact geographical reality convinced Egypt and Syria that only a high-technology surprise assault—using water monitors to dissolve sand ramparts and mobile SAM umbrellas—could overcome Israeli air superiority. Consequently, the 1973 war shattered the assumption that defensible geographical borders alone could guarantee national security.
+        </p>
       </div>
 
       ${renderFooterStrip(14, approvedFunnyFooters[13], 16)}

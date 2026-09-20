@@ -39,19 +39,19 @@
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 11,
+      "page": 9,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 1
     },
     "lesson_3": {
-      "page": 19,
+      "page": 15,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 25,
+      "page": 21,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 3
@@ -75,13 +75,13 @@
       "lessonIndex": 6
     },
     "lesson_9": {
-      "page": 10,
+      "page": 21,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 7
     },
     "lesson_10": {
-      "page": 12,
+      "page": 27,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 8
@@ -93,13 +93,13 @@
       "lessonIndex": 9
     },
     "lesson_12": {
-      "page": 10,
+      "page": 9,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 10
     },
     "lesson_13": {
-      "page": 18,
+      "page": 15,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 11

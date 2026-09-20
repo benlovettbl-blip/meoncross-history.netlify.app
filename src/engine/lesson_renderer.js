@@ -6147,8 +6147,7 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
   // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
-      if (block.source && block.source.question && unit !== 'cme_new')
-        block.source.qNum = globalQNum++;
+      if (block.source && block.source.question) block.source.qNum = globalQNum++;
       if (block.tasks) {
         block.tasks.forEach((task) => {
           if (

@@ -669,6 +669,74 @@ export function closeProjectorMode() {
 }
 
 /**
+ * Generate Artist Spotlight / Biographical Blurb Card HTML
+ * Positioned on the top right, directly above the countdown timer
+ */
+export function getArtistSpotlightCardHtml(item, isProjector = false) {
+  if (!item || !item.artistBio) return '';
+
+  const factsHtml = (item.artistBio.fastFacts || [])
+    .map(
+      (fact) => `
+      <div style="display: flex; align-items: flex-start; gap: 7px; font-size: 0.77rem; color: #cbd5e1; line-height: 1.35;">
+        <span style="color: #f59e0b; margin-top: 2px; font-size: 0.65rem; flex-shrink: 0;"><i class="fa-solid fa-chevron-right"></i></span>
+        <span>${fact.replace(/\*(.*?)\*/g, '<strong style="color: #fde68a;">$1</strong>')}</span>
+      </div>
+    `,
+    )
+    .join('');
+
+  return `
+    <!-- Artist Spotlight Card (Above Timer) -->
+    <div class="masterpiece-artist-spotlight" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 14px; padding: 14px 16px; color: #f8fafc; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.35); position: relative; overflow: hidden; flex-shrink: 0;">
+      
+      <!-- Subtle Ambient Gold Glow -->
+      <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+      <!-- Header: Category & Artist Dates Badge -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 8px; flex-wrap: wrap;">
+        <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #f59e0b; display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-palette"></i> Artist Spotlight
+        </span>
+        <span style="background: rgba(245, 158, 11, 0.15); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;">
+          ${item.artistDates}
+        </span>
+      </div>
+
+      <!-- Main Profile: Portrait + Identity + Summary Blurb -->
+      <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px;">
+        <div style="position: relative; flex-shrink: 0;">
+          <img src="${item.artistPortrait}" alt="${item.artist}" style="width: 52px; height: 62px; object-fit: cover; border-radius: 8px; border: 1.5px solid rgba(245, 158, 11, 0.5); box-shadow: 0 4px 10px rgba(0,0,0,0.4); display: block;" />
+          <span style="position: absolute; bottom: -3px; right: -3px; background: #0f172a; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.6); font-size: 0.58rem; padding: 1px 4px; border-radius: 3px;" title="Historical Portrait">
+            <i class="fa-solid fa-paintbrush"></i>
+          </span>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; font-weight: 700; color: #ffffff; line-height: 1.25; margin-bottom: 2px;">
+            ${item.artist}
+          </div>
+          <div style="font-size: 0.75rem; font-weight: 700; color: #fcd34d; margin-bottom: 5px; line-height: 1.3;">
+            ${item.artistBio.headline}
+          </div>
+          <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.42; margin: 0;">
+            ${item.artistBio.summary}
+          </p>
+        </div>
+      </div>
+
+      <!-- Fascinating Fast Facts Strip -->
+      <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; display: flex; align-items: center; gap: 5px;">
+          <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Fascinating Artist Facts
+        </div>
+        ${factsHtml}
+      </div>
+
+    </div>
+  `;
+}
+
+/**
  * Generate Inner HTML for Projector Mode
  */
 function getProjectorModalInnerHtml() {
@@ -776,6 +844,9 @@ function getProjectorModalInnerHtml() {
         <!-- Right: Whiteboard Starter Prompts & Huge Timer -->
         <div id="projector-right-column" style="display: flex; flex-direction: column; gap: 14px; height: 100%; overflow-y: auto; padding-right: 4px;">
           
+          <!-- Artist Spotlight & Biographical Blurb -->
+          ${getArtistSpotlightCardHtml(item, true)}
+
           <!-- Giant Whiteboard Tap Timer -->
           <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #3b82f6; border-radius: 16px; padding: 18px 22px; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
@@ -1206,31 +1277,15 @@ export function getMasterpieceStudioHtml() {
                 <div style="font-weight: 700; font-size: 0.88rem; color: #ffffff;">${item.artist} (${item.artistDates})</div>
                 <div style="font-size: 0.74rem; color: #94a3b8;">${item.date} · ${item.medium} · ${item.location}</div>
               </div>
-              <button id="masterpiece-atelier-btn" style="background: rgba(245, 158, 11, 0.2); border: 1px solid #f59e0b; color: #fde68a; padding: 4px 10px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                <i class="fa-solid fa-paintbrush"></i>
-                <span>Artist Atelier</span>
-              </button>
+              <span style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde68a; padding: 4px 10px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-landmark"></i> ${item.curatorBadge}
+              </span>
             </div>
           </div>
 
           <!-- Curator Hook Commentary -->
           <div style="font-size: 0.85rem; color: var(--text-muted, #475569); line-height: 1.5; background: var(--bg-main, #f8fafc); border-radius: 10px; padding: 10px 14px; border-left: 3.5px solid #f59e0b;">
             <strong style="color: var(--text-main, #0f172a);"><i class="fa-solid fa-quote-left" style="color: #f59e0b; margin-right: 4px;"></i> Historical Context:</strong> ${item.curatorHook}
-          </div>
-
-          <!-- Artist Atelier Drawer (Collapsible) -->
-          <div id="masterpiece-atelier-drawer" style="display: ${studioState.atelierOpen ? 'block' : 'none'}; background: #fafaf9; border: 1.5px solid #e7e5e4; border-radius: 12px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-            <div style="display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap;">
-              <img src="${item.artistPortrait}" alt="${item.artist}" style="width: 80px; height: 105px; object-fit: cover; border-radius: 8px; border: 1.5px solid #d6d3d1; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
-              <div style="flex: 1; min-width: 200px;">
-                <div style="font-weight: 800; font-size: 0.92rem; color: #1c1917; margin-bottom: 2px;">${item.artistBio.headline}</div>
-                <div style="font-size: 0.74rem; color: #78716c; margin-bottom: 8px; font-style: italic;">${item.artistPortraitCaption}</div>
-                <p style="font-size: 0.82rem; color: #44403c; line-height: 1.45; margin: 0 0 8px 0;">${item.artistBio.summary}</p>
-                <ul style="margin: 0; padding-left: 18px; font-size: 0.78rem; color: #57534e; line-height: 1.4;">
-                  ${item.artistBio.fastFacts.map((f) => `<li>${f}</li>`).join('')}
-                </ul>
-              </div>
-            </div>
           </div>
 
           <!-- Detective Riddle Card -->
@@ -1256,6 +1311,9 @@ export function getMasterpieceStudioHtml() {
         <!-- Right Column: Interactive Starter Timer & 3 Discussion Phases -->
         <div style="display: flex; flex-direction: column; gap: 14px;">
           
+          <!-- Artist Spotlight & Biographical Blurb -->
+          ${getArtistSpotlightCardHtml(item, false)}
+
           <!-- Timer Display Card -->
           <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 14px; padding: 16px 20px; color: #ffffff; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">

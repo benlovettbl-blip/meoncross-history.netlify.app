@@ -674,6 +674,23 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
     coverImgSrc = `data:image/jpeg;base64,${coverImgBase64}`;
   }
 
+  // Map images for Page 14 Cartographic Masterclass
+  const palestine1949MapPath = path.resolve('public/units/cme_new/assets/palestine_1949_map.png');
+  let palestine1949MapSrc = '/units/cme_new/assets/palestine_1949_map.png';
+  if (fs.existsSync(palestine1949MapPath)) {
+    const b64 = fs.readFileSync(palestine1949MapPath).toString('base64');
+    palestine1949MapSrc = `data:image/png;base64,${b64}`;
+  }
+
+  const suez1956MapPath = path.resolve(
+    'public/units/cme_new/assets/cme_suez_1956_campaign_map.jpg',
+  );
+  let suez1956MapSrc = '/units/cme_new/assets/cme_suez_1956_campaign_map.jpg';
+  if (fs.existsSync(suez1956MapPath)) {
+    const b64 = fs.readFileSync(suez1956MapPath).toString('base64');
+    suez1956MapSrc = `data:image/jpeg;base64,${b64}`;
+  }
+
   // ====================================================================
   // ====================================================================
   // PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover)
@@ -1106,146 +1123,102 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
   });
 
   // ====================================================================
-  // PAGE 14: MASTER KNOWLEDGE ORGANISER (Bilingual Glossary & Spec Tables)
+  // PAGE 14: KEY TOPIC 1 CARTOGRAPHIC MASTERCLASS & STRATEGIC ATLAS
+  // The 1947 Partition, 1949 Armistice & 1956 Suez Campaign Cartography
   // ====================================================================
   html += `
   <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #000000; margin: 0; font-weight: 900; text-transform: uppercase;">
-            Key Topic 1 &bull; Master Knowledge Organiser
+    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+      
+      <!-- Top Departmental Branding -->
+      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Cartographic Masterclass</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 1 CARTOGRAPHIC EVIDENCE</span>
+        </div>
+      </div>
+
+      <!-- Main Title Bar -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
+            Key Topic 1 Cartographic Masterclass &bull; Partition &amp; Suez (1947–1956)
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px;">
-            REVISION REFERENCE VAULT
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
+            Geographical Disciplinary Evidence
           </span>
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between;">
+      <!-- Two Authentic Historical Maps Side by Side -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px; flex: 1;">
         
-        <!-- Section 1: Bilingual Hebrew & Arabic Terminology Glossary -->
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 3px 6px; background: #fff;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-            Bilingual Key Terminology Glossary (Hebrew &amp; Arabic Concepts)
+        <!-- Map 1: 1949 Armistice Green Line -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
+                1. The 1949 Rhodes Armistice Green Line
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">MAP ARCHIVE</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
+              From the 1947 UN Resolution 181 partition proposal to the 1949 Armistice borders and the Nakba:
+            </p>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22;">
-            <div>&bull; <strong>Zionism (צִיּוֹנוּת):</strong> Movement for Jewish self-determination &amp; homeland.</div>
-            <div>&bull; <strong>Al-Nakba (النكبة):</strong> "The Catastrophe" — displacement of 700k Palestinians in 1948.</div>
-            <div>&bull; <strong>Yishuv (יִשּׁוּב):</strong> The Jewish pre-state community living in Mandatory Palestine.</div>
-            <div>&bull; <strong>Fedayeen (فدائيون):</strong> "Self-sacrificers" — Palestinian guerrilla border fighters.</div>
-            <div>&bull; <strong>Haganah (הַהֲגָנָה):</strong> "The Defence" — mainstream Zionist militia formed in 1920 (pre-IDF).</div>
-            <div>&bull; <strong>UNRWA:</strong> UN Relief and Works Agency created in 1949 to assist refugees.</div>
-            <div>&bull; <strong>Irgun (אצ״ל):</strong> Militant Zionist breakaway group led by Menachem Begin.</div>
-            <div>&bull; <strong>Green Line:</strong> 1949 armistice demarcation drawn in green pencil on Rhodes maps.</div>
-            <div>&bull; <strong>Aliyah (עֲלִיָּה):</strong> "Ascent" — waves of Jewish immigration to the Holy Land.</div>
-            <div>&bull; <strong>Law of Return (1950):</strong> Legislation granting every Jew worldwide right to settle.</div>
-            <div>&bull; <strong>Knesset (כְּנֶסֶת):</strong> The democratic unicameral parliament of the State of Israel.</div>
-            <div>&bull; <strong>UAR:</strong> United Arab Republic — political union between Egypt and Syria (1958).</div>
-          </div>
-        </div>
-
-        <!-- Section 2: Three High-Yield Pearson Spec Reference Tables -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex: 1;">
           
-          <!-- Table 1: Key Leaders & Historical Figures -->
-          <div style="border: 1.2px solid #000; border-radius: 3px; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; padding: 2px 6px; text-transform: uppercase;">
-              Key Historical Leaders &amp; Diplomats
-            </div>
-            <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.18; flex: 1;">
-              <tbody>
-                <tr style="border-bottom: 1px solid #ccc; background: #f8fafc;">
-                  <td style="padding: 2px 4px; font-weight: 800; width: 32%;">David Ben-Gurion</td>
-                  <td style="padding: 2px 4px;">Zionist leader; 1st Israeli PM; declared State of Israel (14 May 1948).</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">Gamal Abdel Nasser</td>
-                  <td style="padding: 2px 4px;">Egyptian President (1954–70); champion of pan-Arabism; nationalised Suez.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc; background: #f8fafc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">Menachem Begin</td>
-                  <td style="padding: 2px 4px;">Commander of the Irgun; ordered King David Hotel bombing; future PM.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">Clement Attlee</td>
-                  <td style="padding: 2px 4px;">British Labour PM (1945–51); decided to end Mandate due to costs.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc; background: #f8fafc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">King Abdullah I</td>
-                  <td style="padding: 2px 4px;">Ruler of Jordan; commanded Arab Legion; captured and annexed West Bank.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">Anthony Eden</td>
-                  <td style="padding: 2px 4px;">British PM; conspired at Sèvres; resigned following Suez humiliation.</td>
-                </tr>
-                <tr>
-                  <td style="padding: 2px 4px; font-weight: 800; background: #f8fafc;">Dwight Eisenhower</td>
-                  <td style="padding: 2px 4px; background: #f8fafc;">US President; halted Suez invasion via financial sanctions on UK sterling.</td>
-                </tr>
-              </tbody>
-            </table>
+          <div style="text-align: center; margin: 2px 0;">
+            <img src="${palestine1949MapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="1949 Armistice Map">
           </div>
 
-          <!-- Table 2: Decisive Treaties, Pledges & Resolutions -->
-          <div style="border: 1.2px solid #000; border-radius: 3px; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; padding: 2px 6px; text-transform: uppercase;">
-              Decisive Pledges, Treaties &amp; Resolutions
-            </div>
-            <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.18; flex: 1;">
-              <tbody>
-                <tr style="border-bottom: 1px solid #ccc; background: #f8fafc;">
-                  <td style="padding: 2px 4px; font-weight: 800; width: 34%;">McMahon-Hussein (1915)</td>
-                  <td style="padding: 2px 4px;">British pledge to support independent Arab kingdom for Ottoman revolt.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">Sykes-Picot (1916)</td>
-                  <td style="padding: 2px 4px;">Secret Anglo-French deal carving Middle East into colonial spheres.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc; background: #f8fafc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">Balfour Decl. (1917)</td>
-                  <td style="padding: 2px 4px;">British pledge supporting a "national home for the Jewish people".</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">1939 White Paper</td>
-                  <td style="padding: 2px 4px;">Restricted Jewish immigration to 75,000 over 5 years; rejected by Zionists.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc; background: #f8fafc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">UN Res 181 (1947)</td>
-                  <td style="padding: 2px 4px;">UN plan to partition Palestine: 55% Jewish, 44% Arab, Jerusalem int’l.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ccc;">
-                  <td style="padding: 2px 4px; font-weight: 800;">1949 Armistices</td>
-                  <td style="padding: 2px 4px;">Rhodes agreements establishing Green Line borders; no peace treaty.</td>
-                </tr>
-                <tr>
-                  <td style="padding: 2px 4px; font-weight: 800; background: #f8fafc;">Protocol of Sèvres (1956)</td>
-                  <td style="padding: 2px 4px; background: #f8fafc;">Secret collusion: Israel attacks Sinai, UK/France seize Suez Canal.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-
-        <!-- Section 3: Military Capabilities & Armies Comparison -->
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 3px 6px; background: #fafafa;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
-            Military Formations &amp; Turning Points (1948 &amp; 1956)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2;">
-            <div style="border-right: 1px solid #ccc; padding-right: 4px;">
-              <strong>1948 Arab Coalition:</strong> 5 armies (~30,000 troops initially). Arab Legion (Jordan) highly trained under Glubb Pasha; poor unified command; rival national territorial ambitions.
-            </div>
-            <div style="border-right: 1px solid #ccc; padding-right: 4px;">
-              <strong>1948 Israeli Forces:</strong> Haganah transformed into IDF. ~30k troops grew to 100k by Dec 1948. Czech rifles, machine guns, and Avia S-199 fighters bought during June truce turned tide.
-            </div>
-            <div>
-              <strong>1956 Sinai Campaign:</strong> IDF under Moshe Dayan captured Sinai in 100 hours. British/French paratroopers took Port Said. UNEF peacekeepers placed at Sharm el-Sheikh until 1967.
-            </div>
+          <!-- Key Data Statistics Box -->
+          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
+            <div>&bull; <strong>UN Resolution 181 (1947):</strong> Allocated 55% to Jewish state, 44% to Arab state, Jerusalem international Corpus Separatum.</div>
+            <div>&bull; <strong>1948–49 War Outcome:</strong> Israel expanded to secure 79% of Mandate Palestine; Transjordan annexed West Bank; Egypt held Gaza.</div>
+            <div>&bull; <strong>The Nakba (1948):</strong> 700,000+ Palestinian Arabs displaced; armistice demarcation drawn in green pencil at Rhodes (Green Line).</div>
           </div>
         </div>
 
+        <!-- Map 2: 1956 Suez Campaign & Sinai Conquest -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
+                2. The 1956 Suez Crisis &bull; Sinai Conquest
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">CAMPAIGN ARCHIVE</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
+              Operation Kadesh, the secret Protocol of Sèvres collusion, and the Anglo-French Port Said landings:
+            </p>
+          </div>
+
+          <div style="text-align: center; margin: 2px 0;">
+            <img src="${suez1956MapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="1956 Suez Campaign Map">
+          </div>
+
+          <!-- Strategic Key Data Box -->
+          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
+            <div>&bull; <strong>Protocol of Sèvres:</strong> Secret collusion between Britain, France, and Israel to seize the canal and overthrow President Nasser.</div>
+            <div>&bull; <strong>100-Hour Blitzkrieg:</strong> Moshe Dayan’s IDF swept across Sinai in 100 hours; 202nd Paratroopers dropped at Mitla Pass; took Sharm el-Sheikh.</div>
+            <div>&bull; <strong>Superpower Intervention:</strong> US President Eisenhower forced Allied withdrawal via financial pressure; UNEF deployed to Sinai.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cartographic Disciplinary Synthesis Box -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fafafa; margin-bottom: 2px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+          Cartographic Disciplinary Insight: How Did Borders &amp; Strategic Maritime Chokepoints Fuel Conflict?
+        </strong>
+        <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0; line-height: 1.22;">
+          The armistice boundaries of 1949 created extreme strategic vulnerability: Israel’s coastal waist near Tel Aviv was only 9 miles wide, while over 700,000 displaced Palestinians were confined to crowded refugee enclaves in Gaza and the West Bank without sovereignty. Simultaneously, critical maritime waterways—the Suez Canal and the Straits of Tiran at Sharm el-Sheikh—became geopolitical flashpoints. Nasser’s blockade of Israeli shipping directly precipitated the 1956 invasion, demonstrating how geography and maritime access dictated the rhythm of regional warfare.
+        </p>
       </div>
 
       ${renderFooterStrip(14, approvedFunnyFooters[13], 16)}
