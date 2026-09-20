@@ -9113,13 +9113,14 @@ export const unitData = {
           source: {
             id: 'source_a_ehrlich_lab',
             letter: 'A',
-            title: 'Source A: Paul Ehrlich and Sahachiro Hata in their Frankfurt Laboratory (1909)',
+            title:
+              'Source A: Archival Photograph: Paul Ehrlich in his Frankfurt Laboratory Developing Salvarsan 606 (1909)',
             src: '/images/paul_ehrlich_lab.jpg',
             source: '/images/paul_ehrlich_lab.jpg',
             image: '/images/paul_ehrlich_lab.jpg',
             caption:
               'Paul Ehrlich examining chemical test tubes in his Frankfurt laboratory in 1909, during the systematic research that led to the discovery of Salvarsan 606 with Sahachiro Hata.',
-            desc: 'Archival photograph of Paul Ehrlich and Sahachiro Hata working in their Frankfurt laboratory.',
+            desc: 'Archival photograph of German physician Paul Ehrlich at his workbench in Frankfurt researching synthetic magic bullets.',
             provenance:
               'Primary archival photograph taken in 1909 at the Royal Institute for Experimental Therapy, Frankfurt, Germany. Paul Ehrlich Institute / Wellcome Collection Archive (Shelfmark: ICV No 18274).',
             citation:
@@ -9564,13 +9565,14 @@ export const unitData = {
           source: {
             id: 'source_a_fleming_dish',
             letter: 'A',
-            title: 'Source A: Alexander Fleming’s Original 1928 Penicillin Culture Plate',
+            title:
+              'Source A: Archival Photograph: Sir Alexander Fleming in his Laboratory at St Mary’s Hospital (c.1943)',
             src: '/images/fleming_petri_dish.jpg',
             source: '/images/fleming_petri_dish.jpg',
             image: '/images/fleming_petri_dish.jpg',
             caption:
-              'Alexander Fleming examining culture plates in his laboratory at St Mary’s Hospital, London, where he discovered Penicillium notatum in September 1928.',
-            desc: 'Historic laboratory photograph of Alexander Fleming examining culture plates at St Mary’s Hospital.',
+              'Sir Alexander Fleming seated at his workbench in the Inoculation Department at St Mary’s Hospital, London, examining culture plates of Penicillium notatum.',
+            desc: 'Historic laboratory photograph of Sir Alexander Fleming examining bacterial culture plates at his workbench in St Mary’s Hospital.',
             provenance:
               'Primary photographic record captured in 1928 at the Inoculation Department, St Mary’s Hospital, Paddington, London. Imperial War Museum Collection / Wellcome Collection (L0005721).',
             citation:
