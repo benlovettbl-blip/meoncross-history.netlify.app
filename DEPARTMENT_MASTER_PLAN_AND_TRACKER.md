@@ -11,10 +11,12 @@
    - **STATUS: COMPLETED (GREEN).**  
    - All thematic eras (Medieval, Renaissance, Industrial/18th–19th Century, Modern) and Section A (Western Front) lesson narratives are 100% authored and enriched with Christine Counsell 4-Act dramatic structures and delivery plans.
 2. **Edexcel GCSE Paper 2 (Conflict in the Middle East, 1945–1995 — `cme_new`):**  
+   - **Key Topic 1 (The Birth of the State of Israel, 1945–1963): COMPLETED (GREEN).**  
+     All 5 enquiry lessons (KT 1.1 to KT 1.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT1.html`) is fully compiled, featuring the Rudi Weissenstein Ben-Gurion Declaration hero cover (`GPO-D597-087`), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and back cover assessment tracker with 5 QR portals (0px overflow on all 16 pages).
    - **Key Topic 2 (The Escalating Conflict, 1964–1973): COMPLETED (GREEN).**  
-   - All 5 enquiry lessons (KT 2.1 to KT 2.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT2.html`) is fully compiled, featuring the publisher-grade front cover, 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker.
-   - **Key Topics 1 & 3: PRIORITY #1 FOR ROLLOUT (AMBER).**  
-   - Key Topic 1 (*The Birth of the State of Israel, 1945–1956*) and Key Topic 3 (*The Search for Peace, 1973–1995*) are scheduled to adopt this exact 16-page booklet architecture immediately.
+     All 5 enquiry lessons (KT 2.1 to KT 2.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT2.html`) is fully compiled, featuring the David Rubinger Western Wall hero plate (`GPO-D388-052`), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker.
+   - **Key Topic 3 (The Search for Peace, 1973–1995): PRIORITY #1 FOR ROLLOUT (AMBER).**  
+     Key Topic 3 (*The Search for Peace, 1973–1995*) is next in line to adopt this exact 16-page booklet architecture.
 
 ---
 
@@ -25,8 +27,9 @@ The following ledger tracks the departmental shift to **Christine Counsell 4-Act
 | Unit ID | Key Stage / Year | Unit Title | 4-Act Christine Counsell Lessons | Double-Page Booklet Architecture | Classroom Reprographics State | Priority & Next Action |
 | :--- | :---: | :--- | :---: | :---: | :---: | :--- |
 | `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present & Western Front | 🟩 **GREEN**<br>(100% Complete — All 4 Eras + Section A) | 🟩 **GREEN**<br>(3-Pillar Master Packs Complete) | Production Ready / Active | **COMPLETE:** Maintenance and ongoing retrieval testing only. |
+| `cme_new` (KT1) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 1 (1945–1963) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook compiled with 0px overflow. |
 | `cme_new` (KT2) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 2 (1964–1973) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** Benchmark template for all future GCSE booklets. |
-| `cme_new` (KT1/3) | GCSE (Y10–11) | Conflict in the Middle East: Key Topics 1 & 3 | 🟨 **AMBER**<br>(Core Narratives Authored) | 🟨 **AMBER**<br>(Scheduled for 16-Page Standard) | Staging / In Progress | 🚨 **PRIORITY #1:** Convert KT1 and KT3 to the 16-page double-page spread booklet. |
+| `cme_new` (KT3) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 3 (1973–1995) | 🟨 **AMBER**<br>(Core Narratives Authored) | 🟨 **AMBER**<br>(Scheduled for 16-Page Standard) | Staging / In Progress | 🚨 **PRIORITY #1:** Convert KT3 to the 16-page double-page spread booklet. |
 | `industrialisation_and_empire` | KS3 (Year 8) | Industrialisation, Empire, and Power (1750–1900) | 🟩 **GREEN**<br>(8 Lessons Complete + Delivery Plans) | 🟩 **GREEN**<br>(20-Page Double-Page Spread Ready) | Staged for Term 2 Delivery | 🟡 **PRIORITY #2:** Finalize Lessons 2–8 delivery plan timings and compile master class pack. |
 | `water_and_sanitation` | KS3 (Year 7) | Water and Sanitation Through Time | 🟨 **AMBER**<br>(Partial 4-Act Narrative) | 🟥 **RED**<br>(Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |
 | `early_modern_world` | KS3 (Year 8) | Early Modern World & Global Encounters (1450–1750) | 🟨 **AMBER**<br>(Narrative Complete) | 🟥 **RED**<br>(Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |

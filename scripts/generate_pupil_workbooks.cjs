@@ -1545,6 +1545,24 @@ allDirs.forEach((unitId) => {
       return;
     }
 
+    if (unitId === 'cme_new' && period.name === 'KT1') {
+      const { buildCmeKt1TwoPageWorkbook } = require('./render_cme_kt1_twopage_workbook.cjs');
+      let customHtml = buildCmeKt1TwoPageWorkbook(unitData, period);
+      const filename = `pupil_workbook_${period.name}.html`;
+      const outPath = path.join(publicUnitsDir, unitId, filename);
+      try {
+        fs.writeFileSync(outPath, customHtml);
+        const altUnitsPath = path.join(PATHS.ROOT, 'units', unitId, filename);
+        if (fs.existsSync(path.dirname(altUnitsPath))) {
+          fs.writeFileSync(altUnitsPath, customHtml);
+        }
+        console.log(`Generated 2-page spread workbook for ${unitId}: ${filename}`);
+      } catch (err) {
+        console.error(`❌ Failed to write workbook for ${unitId}: ${filename}`, err.message);
+      }
+      return;
+    }
+
     if (unitId === 'cme_new' && period.name === 'KT2') {
       const { buildCmeKt2TwoPageWorkbook } = require('./render_cme_twopage_workbook.cjs');
       let customHtml = buildCmeKt2TwoPageWorkbook(unitData, period);
