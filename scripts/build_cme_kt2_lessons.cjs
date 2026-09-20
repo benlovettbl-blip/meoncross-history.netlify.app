@@ -275,25 +275,53 @@ const buildKT2Lessons = () => {
           tasks: [
             {
               id: 'task_6_4',
-              title: 'Task 4: GCSE Extended Writing — Causes of Rising Tension, 1964–1967',
+              title: 'Task 4: Edexcel Paper 2 Exam Practice — Question 1 (Consequence)',
               instructions:
-                'Explain why tensions between Israel and its Arab neighbours increased significantly in the years 1964–1967. [12 marks]',
+                'Explain one consequence of the 7 April 1967 aerial battle over the Golan Heights. [4 marks]',
               scaffolding: {
+                acronym: 'P-F-C (Point • Fact • Consequence)',
+                acronym_title: "The 'P-F-C' High-Yield Consequence Formula (1 Concise Paragraph)",
+                guidance:
+                  'Write 1 concise paragraph (approx. 5 minutes, 60–80 words). Directly state the consequence in your opening sentence, support it with specific historical evidence, and explain the resulting impact on President Nasser.',
+                steps: [
+                  {
+                    letter: 'P',
+                    name: 'Point',
+                    prompt: 'State the consequence directly in your first sentence.',
+                    starter: 'One major consequence of the 7 April 1967 aerial battle was...',
+                  },
+                  {
+                    letter: 'F',
+                    name: 'Fact',
+                    prompt:
+                      'Provide specific historical facts (six Syrian MiG-21s shot down over Damascus).',
+                    starter:
+                      'Specifically, the Israeli Air Force shot down six Syrian MiG-21 fighter jets...',
+                  },
+                  {
+                    letter: 'C',
+                    name: 'Consequence Link',
+                    prompt:
+                      'Explain the ongoing historical result (Syrian taunts forced Nasser to mobilize in the Sinai).',
+                    starter: 'Consequently, this resulted in...',
+                  },
+                ],
                 sentence_starters: [
-                  'One major reason why tensions increased between 1964 and 1967 was the conflict over water and the creation of the PLO...',
-                  'Another key factor that escalated tension was the continuous border warfare between Israel and Syria on the Golan Heights...',
-                  'Finally, major military clashes in late 1966 and early 1967 made war almost unavoidable...',
+                  'One major consequence of the 7 April 1967 aerial battle was...',
+                  'During the dogfight over the Golan Heights, Israeli aircraft shot down...',
+                  'Consequently, Syrian leaders publicly accused President Nasser of cowardice...',
+                  'This directly forced Nasser to mobilize 100,000 troops into the Sinai Peninsula...',
                 ],
-                causal_connectives: [
-                  'Consequently, this directly resulted in...',
-                  'Furthermore, this created a situation where...',
-                  'This was significant because it forced leaders to...',
+                connectives_bank: [
+                  'One major consequence was',
+                  'Specifically',
+                  'Consequently',
+                  'This directly resulted in',
+                  'As a result',
                 ],
-                evaluative_criteria:
-                  'Judge which factor was the most critical in making war inevitable by spring 1967.',
               },
               model_answer:
-                "Tensions between Israel and its Arab neighbours increased significantly between 1964 and 1967 due to water disputes, Palestinian guerrilla activity, and direct military clashes.\n\nOne major reason for rising tension was the conflict over freshwater and the founding of the PLO in 1964. At the Cairo Conference in January 1964, Arab leaders met to oppose Israel’s National Water Carrier, which pumped water from the Sea of Galilee. Arab states attempted to divert headwaters of the River Jordan inside Syria, which led to Israeli tanks and aircraft bombing Syrian engineering sites. At the same conference, Arab leaders created the PLO to champion Palestinian rights, while Yasser Arafat's Fatah movement began launching guerrilla raids into Israel. Consequently, water became a military trigger and cross-border attacks increased.\n\nAnother significant cause was the continuous border skirmishes along the Golan Heights between Israel and Syria. Syrian artillery batteries perched atop the high volcanic cliffs of the Golan Heights regularly shelled Israeli collective farms (kibbutzim) in the Hula Valley below, forcing Israeli children to sleep in bomb shelters. In response, Israeli military leaders adopted a doctrine of severe retaliation, warning that host nations would be held responsible for all guerrilla raids. This tit-for-tat violence trapped both nations in a cycle of escalation where neither side could afford to back down.\n\nFinally, two major military flashpoints in 1966–67 brought the region to the brink of war. In November 1966, Israel launched the Samu raid into the West Bank, destroying houses and killing 15 Jordanian soldiers after a landmine incident. This caused mass riots in Jordan against King Hussein. Then, on 7 April 1967, an agricultural dispute escalated into a major air battle in which Israeli fighter jets shot down six Syrian MiG-21s over Damascus. This humiliated Syria and prompted intense taunts against President Nasser of Egypt for failing to defend his Arab allies.\n\nOverall, the most critical factor was the 7 April 1967 air battle, because it publicly exposed Arab military weakness and placed intolerable pressure on Nasser to mobilize his army, making the Six Day War inevitable.",
+                'One major consequence of the 7 April 1967 aerial battle was the severe political humiliation of Syria and the resulting pressure on President Nasser of Egypt to take military action.\n\nDuring the dogfight over the Golan Heights, the Israeli Air Force shot down six Syrian MiG-21 fighter jets in full view of civilians in Damascus without suffering any losses. Consequently, Syrian leaders and Arab media fiercely criticized Egypt for failing to activate its 1966 mutual defense pact, accusing Nasser of hiding behind UN peacekeepers in the Sinai while Syrians died. This directly forced Nasser to mobilize 100,000 Egyptian troops and expel UN peacekeepers from the Sinai in May 1967 to restore his leadership of the Arab world, which triggered the Six Day War.',
             },
           ],
         },
@@ -327,13 +355,72 @@ const buildKT2Lessons = () => {
         },
       ],
       exam_practice: {
-        question:
-          'Explain one consequence of the 7 April 1967 aerial battle over the Golan Heights. [4 marks]',
-        marks: 4,
-        time_mins: 5,
-        type: 'consequence',
-        model_answer:
-          'One direct consequence of the 7 April 1967 aerial battle was the severe political humiliation of Syria and the resulting pressure on President Nasser of Egypt to take military action.\n\nDuring the dogfight, the Israeli Air Force shot down six Syrian MiG-21 fighter jets in full view of civilians in Damascus without suffering any losses. Consequently, Syrian leaders and media fiercely criticized Egypt for failing to activate its 1966 mutual defense pact, accusing Nasser of hiding behind UN peacekeepers in the Sinai while Syrians died. This directly forced Nasser to mobilize 100,000 Egyptian troops and expel UN peacekeepers from the Sinai in May 1967 to restore his leadership of the Arab world, which triggered the Six Day War.',
+        type: 'consequence_4m',
+        title: 'Edexcel GCSE Paper 2 Exam Practice: Question 1 (Consequence)',
+        tariff: '4 marks',
+        questions: [
+          {
+            tariff: '4 marks',
+            type: '4-mark',
+            marks: 4,
+            question:
+              'Explain one consequence of the 7 April 1967 aerial battle over the Golan Heights. (4 marks)',
+            prompt:
+              'Write 1 concise paragraph (approx. 3–4 sentences) using the P-F-C formula: State the consequence clearly (Point), support it with specific historical evidence (Fact), and explain how this directly resulted from the event (Consequence Link).',
+            model:
+              'One major consequence of the 7 April 1967 aerial battle was the severe political humiliation of Syria and the resulting pressure on President Nasser of Egypt to take military action.\n\nDuring the dogfight over the Golan Heights, the Israeli Air Force shot down six Syrian MiG-21 fighter jets in full view of civilians in Damascus without suffering any losses. Consequently, Syrian leaders and Arab media fiercely criticized Egypt for failing to activate its 1966 mutual defense pact, accusing Nasser of hiding behind UN peacekeepers in the Sinai while Syrians died. This directly forced Nasser to mobilize 100,000 Egyptian troops and expel UN peacekeepers from the Sinai in May 1967 to restore his leadership of the Arab world, which triggered the Six Day War.',
+            scaffolding: {
+              acronym: 'P-F-C (Point • Fact • Consequence)',
+              acronym_title: "The 'P-F-C' High-Yield Consequence Formula (1 Concise Paragraph)",
+              guidance:
+                'Write 1 concise paragraph (approx. 5 minutes, 60–80 words). Directly answer the question in the first sentence.',
+              steps: [
+                {
+                  letter: 'P',
+                  name: 'Point',
+                  prompt: 'State the consequence directly in your first sentence.',
+                  starter: 'One major consequence of the 7 April 1967 aerial battle was...',
+                },
+                {
+                  letter: 'F',
+                  name: 'Fact',
+                  prompt:
+                    'Provide specific historical facts (six Syrian MiG-21s shot down, dogfight over Damascus).',
+                  starter:
+                    'Specifically, the Israeli Air Force shot down six Syrian MiG-21 fighter jets...',
+                },
+                {
+                  letter: 'C',
+                  name: 'Consequence Link',
+                  prompt:
+                    'Explain the ongoing historical result (Syrian taunts forced Nasser to mobilize in the Sinai).',
+                  starter: 'Consequently, this resulted in...',
+                },
+              ],
+              sentence_starters: [
+                'One major consequence of the 7 April 1967 aerial battle was...',
+                'During the dogfight, the Israeli Air Force shot down...',
+                'Consequently, Syrian leaders publicly accused President Nasser of cowardice...',
+                'This directly forced Nasser to mobilize 100,000 troops into the Sinai...',
+              ],
+              connectives_bank: [
+                'One consequence was',
+                'Specifically',
+                'Consequently',
+                'This led directly to',
+                'As a result',
+              ],
+              red_flags: [
+                'Do NOT write about the whole Six Day War—focus strictly on the consequences of the 7 April air battle.',
+              ],
+              checklist: [
+                'Did I state the consequence in sentence 1?',
+                'Did I include specific facts (6 MiGs, Damascus, Nasser)?',
+                'Did I explain the ongoing result (Sinai mobilization)?',
+              ],
+            },
+          },
+        ],
       },
       flashcards: [
         {
@@ -870,9 +957,10 @@ const buildKT2Lessons = () => {
           tasks: [
             {
               id: 'task_7_4',
-              title: 'Task 4: GCSE Narrative Account — The Six Day War (June 1967)',
+              title:
+                'Task 4: Edexcel Paper 2 Exam Practice — Question 2 (Narrative Account) [8 marks]',
               instructions:
-                'Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]',
+                "Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]\n\nYou may use the following in your answer:\n• Nasser's closure of the Straits of Tiran (May 1967)\n• The pre-emptive Israeli air strike (5 June 1967)\nYou must also use information of your own.",
               scaffolding: {
                 stimulus_points: [
                   "Nasser's closure of the Straits of Tiran (May 1967)",
@@ -924,13 +1012,82 @@ const buildKT2Lessons = () => {
         },
       ],
       exam_practice: {
-        question:
-          "Explain one consequence of Israel's pre-emptive dawn airstrike on 5 June 1967. [4 marks]",
-        marks: 4,
-        time_mins: 5,
-        type: 'consequence',
-        model_answer:
-          "One major consequence of Israel's pre-emptive dawn airstrike on 5 June 1967 was that Israel achieved complete air supremacy within the first three hours of the war.\n\nBy flying low beneath radar and cratering Egyptian runways, Israeli aircraft destroyed over 300 Egyptian military aircraft on the tarmac before they could take off. Consequently, Egyptian armored forces in the Sinai Peninsula were left completely without air cover, enabling Israeli armored columns to advance rapidly across the desert with direct air support, destroying hundreds of Egyptian tanks and reaching the Suez Canal in just four days.",
+        type: 'narrative_8m',
+        title: 'Edexcel GCSE Paper 2 Exam Practice: Question 2 (Narrative Account)',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: '8-mark',
+            marks: 8,
+            question:
+              "Write a narrative account analysing the key events of the Six Day War (June 1967). (8 marks)\n\nYou may use the following in your answer:\n• Nasser's closure of the Straits of Tiran (May 1967)\n• The pre-emptive Israeli air strike (5 June 1967)\nYou must also use information of your own.",
+            prompt:
+              'Write 3 chronological paragraphs (Beginning → Middle → Outcome). Ensure you connect each phase using explicit causal link words (e.g. "This directly led to...", "Consequently...", "This paved the way for..."). Cover at least three distinct chronological aspects.',
+            model:
+              'The Six Day War was triggered in May 1967 by escalating Arab-Israeli tensions and decided by Israel’s rapid military campaigns across three fronts.\n\nThe crisis began in mid-May 1967 when Egyptian President Gamal Abdel Nasser moved 100,000 troops into the Sinai Peninsula and expelled the UNEF peacekeepers following false Soviet intelligence reports. On 22 May, Nasser blockaded the Straits of Tiran, cutting off Israel’s vital oil imports through Eilat. Because Israel had declared this a cause for war, and because Jordan signed a military pact with Egypt on 30 May, Israeli leaders feared encirclement and decided they had to launch a pre-emptive strike to survive.\n\nThis directly led to the outbreak of war at 7:45 am on 5 June 1967, when nearly 200 Israeli fighter jets flew beneath radar over the Mediterranean Sea to attack Egyptian airfields. In three hours, Israel destroyed over 300 Egyptian aircraft on the ground, securing complete air supremacy. When Syrian and Jordanian air forces attempted to retaliate, their airfields were also destroyed. Consequently, Arab ground forces were left completely exposed to Israeli air attacks.\n\nWith control of the skies, Israeli ground forces surged across three fronts. In the Sinai, Israeli armored divisions broke through Egyptian lines, reaching the Suez Canal in four days. When Jordan shelled West Jerusalem, Israeli troops counter-attacked into the West Bank, capturing the entire territory and entering the Old City of Jerusalem on 7 June, reaching the Western Wall. Finally, on 9–10 June, Israeli forces stormed the fortified Golan Heights, driving the Syrian army back towards Damascus before a UN ceasefire ended the war.\n\nUltimately, this narrative shows that Israel’s opening air strike determined the outcome, allowing it to capture Sinai, Gaza, the West Bank, East Jerusalem, and the Golan Heights within six days.',
+            scaffolding: {
+              acronym: 'Beginning → Middle → Outcome',
+              acronym_title: 'The 3-Stage Chronological Narrative Framework (8 Marks)',
+              guidance:
+                'Write 3 chronological paragraphs (approx. 12–15 minutes, 160–200 words). Focus on explaining HOW one event led to the next. You must use both stimulus points plus own knowledge (e.g. the ground war in Sinai, West Bank, or Golan Heights).',
+              steps: [
+                {
+                  letter: 'P1',
+                  name: 'Phase 1: Beginning / Escalation & Straits of Tiran (May 1967)',
+                  prompt:
+                    'Explain how Nasser’s troop build-up in the Sinai and blockade of the Straits of Tiran triggered the crisis.',
+                  starter:
+                    'The crisis began in mid-May 1967 when Egyptian President Gamal Abdel Nasser moved 100,000 troops into the Sinai Peninsula and closed the Straits of Tiran...',
+                },
+                {
+                  letter: 'P2',
+                  name: 'Phase 2: Turning Point / Pre-emptive Air Strike (5 June 1967)',
+                  prompt:
+                    'Explain how the Israeli dawn air strike destroyed over 300 Egyptian aircraft, securing air supremacy.',
+                  starter:
+                    'This directly led to the outbreak of war at 7:45 am on 5 June 1967, when Israeli aircraft launched a pre-emptive strike...',
+                },
+                {
+                  letter: 'P3',
+                  name: 'Phase 3: Outcome / Three-Front Victory & Territorial Conquest (June 1967)',
+                  prompt:
+                    'Explain how air supremacy allowed Israeli forces to capture Sinai, West Bank/Jerusalem, and the Golan Heights in six days.',
+                  starter:
+                    'With control of the skies, Israeli ground forces surged across three fronts, capturing...',
+                },
+              ],
+              stimulus_points: [
+                "Nasser's closure of the Straits of Tiran (May 1967)",
+                'The pre-emptive Israeli air strike (5 June 1967)',
+              ],
+              sentence_starters: [
+                'The crisis began in mid-May 1967 when President Nasser moved 100,000 troops into the Sinai...',
+                'Because Israel viewed the blockade of Tiran as an act of war, this directly led to...',
+                'At 7:45 am on 5 June 1967, Israeli aircraft launched a pre-emptive strike destroying over 300 aircraft...',
+                'With complete air supremacy, Israeli ground forces captured the Sinai, West Bank, and Golan Heights...',
+              ],
+              connectives_bank: [
+                'This directly led to',
+                'Consequently',
+                'As a direct result of this',
+                'This paved the way for',
+                'Following this air victory',
+                'Ultimately, this resulted in',
+              ],
+              red_flags: [
+                'Do NOT merely list events chronologically without causal explanation.',
+                'Ensure you use at least one point of your own beyond the two stimulus points (e.g. capturing the West Bank & Old Jerusalem, or scaling the Golan Heights).',
+              ],
+              checklist: [
+                'Did I cover the sequence across three distinct phases?',
+                'Did I include causal links explaining how each event led to the next?',
+                'Did I use both stimulus points plus my own specific historical detail?',
+                'Did I explain the final outcome/resolution of the war?',
+              ],
+            },
+          },
+        ],
       },
       flashcards: [
         {
@@ -1473,26 +1630,52 @@ const buildKT2Lessons = () => {
           tasks: [
             {
               id: 'task_8_4',
-              title:
-                'Task 4: GCSE Extended Writing — Why Did Resolution 242 Fail to Bring Immediate Peace?',
+              title: 'Task 4: Edexcel Paper 2 Exam Practice — Question 3 (Importance) [8 marks]',
               instructions:
-                'Explain why United Nations Resolution 242 failed to bring immediate peace to the Middle East in the years 1967–1973. [12 marks]',
+                'Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy. [8 marks]',
               scaffolding: {
+                acronym: "PEEL x 2 ('What difference did X make to Y?')",
+                acronym_title:
+                  "The 'X Linked to Y' Significance Framework (2 Focused PEEL Paragraphs)",
+                guidance:
+                  'Write exactly 2 analytical PEEL paragraphs (approx. 10–12 minutes, 150–180 words). Explain strictly what difference Resolution 242 made to Middle East peace diplomacy. Do not write a narrative of the Six Day War.',
+                steps: [
+                  {
+                    letter: 'P1',
+                    name: 'Point 1: Foundation of "Land for Peace"',
+                    prompt:
+                      'Explain how Resolution 242 created the legal formula trading captured territory for permanent peace recognition.',
+                    starter:
+                      'UN Resolution 242 was important for peace diplomacy because it established the core principle of "Land for Peace"...',
+                  },
+                  {
+                    letter: 'P2',
+                    name: 'Point 2: Linguistic Ambiguity & Diplomatic Deadlock',
+                    prompt:
+                      'Explain how the dispute over "the" and omitting Palestinian rights led to 30 years of diplomatic stalemate.',
+                    starter:
+                      'Furthermore, Resolution 242 was important because its deliberate textual ambiguity and omission of Palestinian rights caused lasting deadlock...',
+                  },
+                ],
                 sentence_starters: [
-                  'One major reason why Resolution 242 failed was the deliberate linguistic ambiguity of its text...',
-                  'Another key factor was the unyielding political stance of the Arab states formulated at Khartoum...',
-                  "Furthermore, Israel's policy of consolidating control over the Occupied Territories prevented compromise...",
+                  'UN Resolution 242 was important for Middle East peace diplomacy because it established...',
+                  'This made a significant difference because for the first time, international law linked...',
+                  'Furthermore, the resolution was important because its deliberate textual ambiguity created...',
+                  'This directly affected diplomacy because neither side could agree on whether withdrawal applied to...',
                 ],
                 causal_connectives: [
-                  'Consequently, this directly prevented agreement because...',
-                  'Furthermore, this created a situation where...',
-                  'This was significant because neither side was willing to...',
+                  'Resolution 242 was important because',
+                  'This made a significant difference because',
+                  'This established the principle that',
+                  'Furthermore, it was significant because',
+                  'Consequently, this entrenched deadlock by',
+                  'As a direct result of this ambiguity',
                 ],
                 evaluative_criteria:
-                  'Conclude by explaining which obstacle was the most significant in creating the diplomatic deadlock.',
+                  'Ensure both paragraphs clearly explain "what difference it made" to diplomatic efforts between 1967 and future peace treaties.',
               },
               model_answer:
-                'United Nations Resolution 242 failed to bring immediate peace to the Middle East between 1967 and 1973 due to textual ambiguities, Arab rejection of direct talks, and Israeli consolidation of the Occupied Territories.\n\nOne primary reason for failure was the deliberate linguistic ambiguity in the text of the resolution. Drafted by British diplomats to secure unanimous Security Council support, the English text called for Israeli withdrawal "from territories occupied in the recent conflict," omitting the word "the." Israel and the United States argued this meant Israel was only required to withdraw from some lands, allowing border modifications to ensure secure boundaries. However, Arab governments pointed to the French text ("des territoires occupés"), insisting on total withdrawal from all occupied lands. Consequently, both sides claimed they were adhering to the resolution while disagreeing on its most fundamental requirement.\n\nA second critical factor was the hardline policy adopted by Arab leaders at the Khartoum Conference in September 1967. Humiliated by their defeat, eight Arab heads of state issued the "Three Noes": no peace with Israel, no recognition of Israel, and no negotiations with it. Because Resolution 242 required the termination of all belligerency and the recognition of borders, the Arab refusal to hold direct talks or sign peace treaties made diplomatic implementation impossible. This confirmed Israeli suspicions that Arab states remained committed to Israel\'s eventual destruction.\n\nFinally, Israel’s actions on the ground created permanent obstacles to peace. Israel annexed East Jerusalem immediately in 1967, built the fortified Bar-Lev Line along the Suez Canal, and began establishing civilian Jewish settlements in the West Bank and Gaza Strip. Furthermore, Resolution 242 failed to address the Palestinian people as a nation with self-determination, referring to them only as "the refugee problem," which drove Palestinian groups like Fatah to reject the resolution and pursue armed guerrilla warfare.\n\nIn conclusion, the most significant reason for failure was the Khartoum "Three Noes," because it eliminated the possibility of direct bilateral negotiations, ensuring that the formula of "Land for Peace" remained an empty promise until after the 1973 Yom Kippur War.',
+                'UN Security Council Resolution 242 was important for Middle East peace diplomacy because it established the permanent principle of "Land for Peace" as the foundation for all future negotiations. Passed unanimously in November 1967, the resolution linked Israeli withdrawal from territories captured in the Six Day War to Arab states ending all belligerency and recognizing Israel’s right to live in peace within secure, recognized boundaries. **This made a significant difference because** for the first time, the international community provided a legal formula trading conquered land for permanent peace treaties, which eventually served as the direct basis for the 1978 Camp David Accords and the 1993 Oslo Accords.\n\n**Furthermore, Resolution 242 was important because** its deliberate linguistic ambiguity and omission of Palestinian national rights entrenched diplomatic deadlock for decades. To secure agreement between superpowers, the English text called for Israeli withdrawal from "territories occupied" without the word "the", whereas the French text called for withdrawal from "des territoires occupés" (all the territories). **This made a major difference because** Israel argued it only needed to return some territories to keep defensible borders, while Arab states insisted on total withdrawal. Combined with the Khartoum Summit’s "Three Noes" (no peace, no recognition, no negotiations) and the resolution describing Palestinians merely as a "refugee problem", this ambiguity guaranteed that diplomacy stalled, leaving both sides on a collision course towards the 1973 Yom Kippur War.',
             },
           ],
         },
@@ -1526,12 +1709,71 @@ const buildKT2Lessons = () => {
         },
       ],
       exam_practice: {
-        question: 'Explain one consequence of the Khartoum Conference of September 1967. [4 marks]',
-        marks: 4,
-        time_mins: 5,
-        type: 'consequence',
-        model_answer:
-          'One direct consequence of the Khartoum Conference of September 1967 was that it made direct peace negotiations between Arab states and Israel impossible.\n\nAt the summit, eight Arab heads of state formulated the "Three Noes": no peace, no recognition, and no negotiations with Israel. Consequently, Arab leaders refused to enter bilateral talks or sign formal peace treaties in exchange for the return of captured lands. This convinced Israeli leaders that the Arab states were still committed to Israel’s destruction, which led Israel to harden its stance and retain military control over the Occupied Territories.',
+        type: 'importance_8m',
+        title: 'Edexcel GCSE Paper 2 Exam Practice: Question 3 (Importance)',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: '8-mark',
+            marks: 8,
+            question:
+              'Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy. (8 marks)',
+            prompt:
+              'Write 2 structured PEEL paragraphs explaining two distinct reasons why Resolution 242 mattered: (1) The difference it made by establishing the universal principle of "Land for Peace", and (2) The difference it made by creating diplomatic deadlock through linguistic ambiguity and the omission of Palestinian national rights.',
+            model:
+              'UN Security Council Resolution 242 was important for Middle East peace diplomacy because it established the permanent principle of "Land for Peace" as the foundation for all future negotiations. Passed unanimously in November 1967, the resolution linked Israeli withdrawal from territories captured in the Six Day War to Arab states ending all belligerency and recognizing Israel’s right to live in peace within secure, recognized boundaries. **This made a significant difference because** for the first time, the international community provided a legal formula trading conquered land for permanent peace treaties, which eventually served as the direct basis for the 1978 Camp David Accords and the 1993 Oslo Accords.\n\n**Furthermore, Resolution 242 was important because** its deliberate linguistic ambiguity and omission of Palestinian national rights entrenched diplomatic deadlock for decades. To secure agreement between superpowers, the English text called for Israeli withdrawal from "territories occupied" without the word "the", whereas the French text called for withdrawal from "des territoires occupés" (all the territories). **This made a major difference because** Israel argued it only needed to return some territories to keep defensible borders, while Arab states insisted on total withdrawal. Combined with the Khartoum Summit’s "Three Noes" (no peace, no recognition, no negotiations) and the resolution describing Palestinians merely as a "refugee problem", this ambiguity guaranteed that diplomacy stalled, leaving both sides on a collision course towards the 1973 Yom Kippur War.',
+            scaffolding: {
+              acronym: "PEEL x 2 ('What difference did X make to Y?')",
+              acronym_title:
+                "The 'X Linked to Y' Significance Framework (2 Focused PEEL Paragraphs)",
+              guidance:
+                'Write exactly 2 analytical PEEL paragraphs (approx. 10–12 minutes, 150–180 words). Explain strictly what difference Resolution 242 made to Middle East peace diplomacy. Do not write a narrative of the Six Day War.',
+              steps: [
+                {
+                  letter: 'P1',
+                  name: 'Point 1: Foundation of "Land for Peace"',
+                  prompt:
+                    'Explain how Resolution 242 created the legal formula trading captured territory for permanent peace recognition.',
+                  starter:
+                    'UN Resolution 242 was important for peace diplomacy because it established the core principle of "Land for Peace"...',
+                },
+                {
+                  letter: 'P2',
+                  name: 'Point 2: Linguistic Ambiguity & Diplomatic Deadlock',
+                  prompt:
+                    'Explain how the dispute over "the" and omitting Palestinian rights led to 30 years of diplomatic stalemate.',
+                  starter:
+                    'Furthermore, Resolution 242 was important because its deliberate textual ambiguity and omission of Palestinian rights caused lasting deadlock...',
+                },
+              ],
+              sentence_starters: [
+                'UN Resolution 242 was important for Middle East peace diplomacy because it established...',
+                'This made a significant difference because for the first time, international law linked...',
+                'Furthermore, the resolution was important because its deliberate textual ambiguity created...',
+                'This directly affected diplomacy because neither side could agree on whether withdrawal applied to...',
+              ],
+              connectives_bank: [
+                'Resolution 242 was important because',
+                'This made a significant difference because',
+                'This established the principle that',
+                'Furthermore, it was significant because',
+                'Consequently, this entrenched deadlock by',
+                'As a direct result of this ambiguity',
+              ],
+              red_flags: [
+                'Do NOT describe the Six Day War battles—focus strictly on the importance of Resolution 242 for diplomacy.',
+                'Ensure both paragraphs clearly explain "what difference it made" to diplomatic efforts.',
+              ],
+              checklist: [
+                'Did I write two distinct PEEL paragraphs?',
+                'Did I explain the "Land for Peace" principle?',
+                'Did I explain the linguistic dispute over "territories occupied" vs "all territories"?',
+                'Did I explain how it affected future diplomacy (deadlock / Camp David)?',
+              ],
+            },
+          },
+        ],
       },
       flashcards: [
         {
@@ -2084,24 +2326,62 @@ const buildKT2Lessons = () => {
           tasks: [
             {
               id: 'task_9_4',
-              title: 'Task 4: GCSE Narrative Account — The Palestinian Resistance (1968–1972)',
+              title: 'Task 4: Edexcel Paper 2 Exam Practice — Question 1 (Consequence) [4 marks]',
               instructions:
-                'Write a narrative account analysing the key events of the Palestinian resistance between 1968 and 1972. [8 marks]',
+                'Explain one consequence of the Black September conflict in Jordan (1970) for the PLO. [4 marks]',
               scaffolding: {
-                stimulus_points: ['The Battle of Karameh (1968)', 'The Munich Olympics (1972)'],
-                sentence_starters: [
-                  'Following the 1967 defeat, Palestinian fighters turned to independent armed struggle, beginning with...',
-                  'This led to growing militancy and conflict in Jordan, including...',
-                  'Following expulsion from Jordan, radical groups turned to international terrorism, culminating in...',
+                acronym: 'P-F-C (Point • Fact • Consequence)',
+                acronym_title: "The 'P-F-C' High-Yield Consequence Formula (1 Concise Paragraph)",
+                guidance:
+                  'Write exactly 1 punchy paragraph (approx. 4–5 minutes, 50–70 words). Directly answer the question in the first sentence.',
+                steps: [
+                  {
+                    letter: 'P',
+                    name: 'Point (Identify Consequence)',
+                    prompt: 'State the consequence for the PLO clearly in sentence 1.',
+                    starter:
+                      'One major consequence of the Black September conflict for the PLO was...',
+                  },
+                  {
+                    letter: 'F',
+                    name: 'Fact (Historical Detail)',
+                    prompt:
+                      'Provide specific facts (King Hussein, Jordanian army crackdown in Amman, expulsion by 1971).',
+                    starter:
+                      'Following the Dawson’s Field airliner hijackings, King Hussein deployed the Jordanian army...',
+                  },
+                  {
+                    letter: 'C',
+                    name: 'Consequence Link (Result for PLO)',
+                    prompt:
+                      'Explain the ongoing impact (loss of Jordanian border, relocation to Lebanon / "Fatahland", turn to international terrorism).',
+                    starter: 'Consequently, this forced the PLO to relocate to...',
+                  },
                 ],
-                causal_connectives: [
-                  'As a direct consequence of this...',
-                  'This was significant because...',
-                  'Ultimately, this resulted in...',
+                sentence_starters: [
+                  'One major consequence of the Black September conflict for the PLO was...',
+                  'This occurred after King Hussein ordered his army to crush...',
+                  'Consequently, the PLO was expelled and forced to establish...',
+                  'This directly affected the PLO because losing their border with Israel led them to...',
+                ],
+                connectives_bank: [
+                  'One major consequence was',
+                  'Specifically',
+                  'Consequently',
+                  'This directly resulted in',
+                  'As a result',
+                ],
+                red_flags: [
+                  'Do NOT narrate the entire Munich Olympics—focus strictly on the consequences of the 1970 Black September expulsion from Jordan.',
+                ],
+                checklist: [
+                  'Did I state the consequence in sentence 1 (expulsion to Lebanon / loss of base)?',
+                  'Did I include specific facts (King Hussein, Jordanian army, 1970–71)?',
+                  'Did I explain the result for the PLO (relocation to Lebanon / "Fatahland")?',
                 ],
               },
               model_answer:
-                'The Palestinian resistance transformed between 1968 and 1972 from local cross-border raiding into an independent national movement that utilized international terrorism.\n\nThe transformation began on 21 March 1968 at the Battle of Karameh in Jordan. When an Israeli armored force attacked guerrilla camps, Palestinian fighters belonging to Fatah stood their ground alongside Jordanian artillery, killing 28 Israeli soldiers. Although the base was destroyed, Karameh was celebrated across the Arab world as a moral victory that proved Palestinians could stand up to Israel. Consequently, thousands of recruits joined Fatah, and in February 1969 Yasser Arafat was elected Chairman of the PLO, establishing independent Palestinian leadership.\n\nThis rise in armed strength led to direct confrontation in Jordan. Palestinian guerrillas operated as a "state within a state" in Amman, and in September 1970 the radical PFLP hijacked three passenger airliners and blew them up at Dawson\'s Field. King Hussein viewed this as a direct threat to his monarchy and launched the "Black September" military crackdown. After ten days of fierce fighting, the Jordanian army defeated the militias, and by 1971 the PLO was expelled to Lebanon, cutting off their direct border with Israel.\n\nDriven into exile in Lebanon and seeking revenge, radical militants formed Black September and escalated to international terrorism, culminating in the Munich Olympics attack on 5 September 1972. Eight gunmen infiltrated the Olympic Village, killing two Israeli athletes and taking nine hostage. After a bungled German rescue attempt at the airport, all nine remaining hostages were murdered. While Munich beamed the Palestinian struggle to 900 million television viewers worldwide, it caused immense international outrage and prompted Israeli retaliatory strikes.\n\nUltimately, this narrative demonstrates that while armed resistance and terrorism won worldwide publicity for the Palestinian cause, it caused the loss of their Jordanian base and alienated international opinion.',
+                'One major consequence of the Black September conflict in 1970 was the total expulsion of the PLO and its armed guerrilla fighters from Jordan into southern Lebanon.\n\nFollowing the Dawson’s Field airplane hijackings in September 1970, King Hussein ordered the Jordanian army to crush Palestinian militias operating as a "state within a state" in Amman, expelling all guerrilla fighters from the country by July 1971. Consequently, the PLO lost its direct border with Israel and was forced to establish a new headquarters and military base in southern Lebanon (known as "Fatahland"). This directly altered PLO strategy, leading radical factions to escalate international terrorist attacks like the 1972 Munich Olympics massacre and ultimately embroiling Lebanon in a devastating civil war.',
             },
           ],
         },
@@ -2134,13 +2414,73 @@ const buildKT2Lessons = () => {
         },
       ],
       exam_practice: {
-        question:
-          'Explain one consequence of the Black September conflict in Jordan (1970). [4 marks]',
-        marks: 4,
-        time_mins: 5,
-        type: 'consequence',
-        model_answer:
-          'One major consequence of the Black September conflict in 1970 was the total expulsion of the PLO and its armed fighters from Jordan to Lebanon.\n\nFollowing the Dawson’s Field airplane hijackings, King Hussein ordered the Jordanian army to crush Palestinian militias operating as a "state within a state" in Amman. Consequently, after heavy urban fighting, the PLO lost its military bases along the River Jordan and was forced to relocate its headquarters, fighters, and refugee institutions to southern Lebanon. This created a new center of Palestinian militant operations (known as "Fatahland") that dragged Lebanon into civil war and triggered future Israeli invasions.',
+        type: 'consequence_4m',
+        title: 'Edexcel GCSE Paper 2 Exam Practice: Question 1 (Consequence)',
+        tariff: '4 marks',
+        questions: [
+          {
+            tariff: '4 marks',
+            type: '4-mark',
+            marks: 4,
+            question:
+              'Explain one consequence of the Black September conflict in Jordan (1970) for the PLO. (4 marks)',
+            prompt:
+              'Write 1 concise paragraph (approx. 3–4 sentences) using the P-F-C formula: State the consequence clearly (Point), support it with specific historical evidence (Fact), and explain how this directly resulted from the event (Consequence Link).',
+            model:
+              'One major consequence of the Black September conflict in 1970 was the total expulsion of the PLO and its armed guerrilla fighters from Jordan into southern Lebanon.\n\nFollowing the Dawson’s Field airplane hijackings in September 1970, King Hussein ordered the Jordanian army to crush Palestinian militias operating as a "state within a state" in Amman, expelling all guerrilla fighters from the country by July 1971. Consequently, the PLO lost its direct border with Israel and was forced to establish a new headquarters and military base in southern Lebanon (known as "Fatahland"). This directly altered PLO strategy, leading radical factions to escalate international terrorist attacks like the 1972 Munich Olympics massacre and ultimately embroiling Lebanon in a devastating civil war.',
+            scaffolding: {
+              acronym: 'P-F-C (Point • Fact • Consequence)',
+              acronym_title: "The 'P-F-C' High-Yield Consequence Formula (1 Concise Paragraph)",
+              guidance:
+                'Write exactly 1 punchy paragraph (approx. 4–5 minutes, 50–70 words). Directly answer the question in the first sentence.',
+              steps: [
+                {
+                  letter: 'P',
+                  name: 'Point (Identify Consequence)',
+                  prompt: 'State the consequence for the PLO clearly in sentence 1.',
+                  starter:
+                    'One major consequence of the Black September conflict for the PLO was...',
+                },
+                {
+                  letter: 'F',
+                  name: 'Fact (Historical Detail)',
+                  prompt:
+                    'Provide specific facts (King Hussein, Jordanian army crackdown in Amman, expulsion by 1971).',
+                  starter:
+                    'Following the Dawson’s Field airliner hijackings, King Hussein deployed the Jordanian army...',
+                },
+                {
+                  letter: 'C',
+                  name: 'Consequence Link (Result for PLO)',
+                  prompt:
+                    'Explain the ongoing impact (loss of Jordanian border, relocation to Lebanon / "Fatahland", turn to international terrorism).',
+                  starter: 'Consequently, this forced the PLO to relocate to...',
+                },
+              ],
+              sentence_starters: [
+                'One major consequence of the Black September conflict for the PLO was...',
+                'This occurred after King Hussein ordered his army to crush...',
+                'Consequently, the PLO was expelled and forced to establish...',
+                'This directly affected the PLO because losing their border with Israel led them to...',
+              ],
+              connectives_bank: [
+                'One major consequence was',
+                'Specifically',
+                'Consequently',
+                'This directly resulted in',
+                'As a result',
+              ],
+              red_flags: [
+                'Do NOT narrate the entire Munich Olympics—focus strictly on the consequences of the 1970 Black September expulsion from Jordan.',
+              ],
+              checklist: [
+                'Did I state the consequence in sentence 1 (expulsion to Lebanon / loss of base)?',
+                'Did I include specific facts (King Hussein, Jordanian army, 1970–71)?',
+                'Did I explain the result for the PLO (relocation to Lebanon / "Fatahland")?',
+              ],
+            },
+          },
+        ],
       },
       flashcards: [
         {
@@ -2678,9 +3018,10 @@ const buildKT2Lessons = () => {
           tasks: [
             {
               id: 'task_10_4',
-              title: 'Task 4: GCSE Narrative Account — The Yom Kippur War (October 1973)',
+              title:
+                'Task 4: Edexcel Paper 2 Exam Practice — Question 2 (Narrative Account) [8 marks]',
               instructions:
-                'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]',
+                'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]\n\nYou may use the following in your answer:\n• The surprise attack on 6 October 1973\n• The OPEC oil embargo\nYou must also use information of your own.',
               scaffolding: {
                 stimulus_points: ['The surprise attack on 6 October 1973', 'The OPEC oil embargo'],
                 sentence_starters: [
@@ -2729,12 +3070,137 @@ const buildKT2Lessons = () => {
         },
       ],
       exam_practice: {
-        question: 'Explain one consequence of the OPEC oil embargo in October 1973. [4 marks]',
-        marks: 4,
-        time_mins: 5,
-        type: 'consequence',
-        model_answer:
-          'One major consequence of the OPEC oil embargo in October 1973 was that it caused a severe global economic crisis and forced Western governments to pressure Israel for peace.\n\nArab oil-producing nations cut production and banned exports to the United States and the Netherlands for supporting Israel, which quadrupled crude oil prices from $3 to $12 a barrel. Consequently, Western nations experienced petrol rationing, long queues at filling stations, and high inflation, which forced US Secretary of State Henry Kissinger to urgently intervene with shuttle diplomacy to broker a ceasefire and push for long-term Middle East peace.',
+        type: 'narrative_8m',
+        title: 'Edexcel GCSE Paper 2 Exam Practice: Question 2 (Narrative Account)',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: '8-mark',
+            marks: 8,
+            question:
+              'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). (8 marks)\n\nYou may use the following in your answer:\n• The surprise attack on 6 October 1973\n• The OPEC oil embargo\nYou must also use information of your own.',
+            prompt:
+              'Write 3 chronological paragraphs (Beginning → Middle → Outcome). Ensure you connect each phase using explicit causal link words (e.g. "This directly triggered...", "Consequently...", "This turnaround led to..."). Cover at least three distinct chronological aspects.',
+            model:
+              "The Yom Kippur War was launched as a coordinated surprise attack by Egypt and Syria to break the post-1967 diplomatic stalemate and ended by forcing both sides towards peace negotiations.\n\nThe conflict began on 6 October 1973 at 2:00 pm when Egyptian and Syrian forces launched a coordinated surprise assault on the Jewish holy day of Yom Kippur during Ramadan. In the south, 80,000 Egyptian infantry crossed the Suez Canal, using high-pressure water monitors to wash away the sand ramparts of the Bar-Lev Line. In the north, 1,400 Syrian tanks attacked across the Golan Heights. Egyptian forces were shielded by mobile Soviet SAM-6 anti-aircraft missiles and wire-guided Sagger anti-tank missiles, destroying over 150 Israeli tanks and dozens of aircraft in the first 48 hours.\n\nThis early Arab success prompted superpower intervention. As Israeli ammunition ran critically low, US President Nixon ordered an emergency military airlift to resupply Israel with tanks and ammunition, while the USSR resupplied Egypt and Syria. This resupply shifted the military balance. Having pushed Syrian forces back in the Golan, Israeli armored divisions under General Ariel Sharon crossed to the western bank of the Suez Canal on 15 October, encircling Egypt's 30,000-strong Third Army.\n\nThis turnaround triggered an international crisis. On 17 October, Arab oil-producing nations in OPEC enacted an oil embargo against countries supporting Israel, cutting oil supplies and quadrupling world oil prices. Furthermore, when the USSR threatened to intervene to save Egypt's army, the US placed its nuclear forces on DEFCON 3 alert. Alarmed by the threat of global war and economic collapse, US Secretary of State Henry Kissinger flew between capitals to broker a UN ceasefire on 24 October 1973.\n\nUltimately, this narrative shows that although Israel recovered militarily, the heavy casualties shattered its confidence in the Bar-Lev Line, while restored Arab pride allowed Anwar Sadat to negotiate peace as an equal.",
+            scaffolding: {
+              acronym: 'Beginning → Middle → Outcome',
+              acronym_title: 'The 3-Stage Chronological Narrative Framework (8 Marks)',
+              guidance:
+                'Write 3 chronological paragraphs (approx. 12–15 minutes, 160–200 words). Focus on explaining HOW one event led to the next. You must use both stimulus points plus own knowledge (e.g. the US/Soviet airlifts, Sharon’s canal counter-crossing, or the Bar-Lev Line breach).',
+              steps: [
+                {
+                  letter: 'P1',
+                  name: 'Phase 1: Beginning / The Two-Front Surprise Attack (6 October 1973)',
+                  prompt:
+                    'Explain how Egypt crossed the Suez Canal / breached the Bar-Lev Line and Syria attacked the Golan Heights during Yom Kippur.',
+                  starter:
+                    'The conflict began on 6 October 1973 when Egyptian and Syrian forces launched a coordinated surprise attack on Yom Kippur...',
+                },
+                {
+                  letter: 'P2',
+                  name: 'Phase 2: Turning Point / Superpower Airlifts & Israeli Counter-Attack',
+                  prompt:
+                    'Explain how the US emergency airlift enabled Israeli armored columns under Sharon to counter-cross the Suez Canal.',
+                  starter:
+                    'This early crisis prompted superpower intervention, as a massive US military airlift enabled Israeli forces to...',
+                },
+                {
+                  letter: 'P3',
+                  name: 'Phase 3: Outcome / The OPEC Oil Embargo & Ceasefire',
+                  prompt:
+                    'Explain how OPEC Arab states used the oil embargo, quadrupling prices and forcing Henry Kissinger to broker a ceasefire.',
+                  starter:
+                    'This turnaround triggered a global crisis when Arab nations in OPEC enacted an oil embargo...',
+                },
+              ],
+              stimulus_points: ['The surprise attack on 6 October 1973', 'The OPEC oil embargo'],
+              sentence_starters: [
+                'The Yom Kippur War began on 6 October 1973 when Egypt and Syria launched...',
+                'In the first 48 hours, Egyptian troops crossed the canal using water monitors while Syrian tanks...',
+                'This prompted President Nixon to order an emergency airlift, which enabled Israeli forces to counter-attack...',
+                'In response, Arab oil nations in OPEC used the oil weapon to embargo exports, forcing Henry Kissinger to...',
+              ],
+              connectives_bank: [
+                'This directly resulted in',
+                'Consequently',
+                'This early Arab success prompted',
+                'This dramatically shifted the military balance because',
+                'This turnaround triggered an international crisis when',
+                'Ultimately, this resulted in',
+              ],
+              red_flags: [
+                'Do NOT write about the 1967 Six Day War—keep strictly to October 1973.',
+                'Ensure you explain the causal link between the US resupply and the OPEC oil embargo decision.',
+              ],
+              checklist: [
+                'Did I cover the 3 chronological phases (surprise attack, superpower resupply/counter-crossing, oil embargo/ceasefire)?',
+                'Did I use both stimulus points (6 Oct surprise attack, OPEC oil embargo)?',
+                'Did I include own knowledge (Bar-Lev Line, water monitors, US airlift, or Sharon’s crossing)?',
+                'Did I link each phase using causal connective phrases?',
+              ],
+            },
+          },
+          {
+            tariff: '8 marks',
+            type: '8-mark',
+            marks: 8,
+            question:
+              'Explain the importance of the Yom Kippur War (1973) for Arab-Israeli relations. (8 marks)',
+            prompt:
+              'Write 2 structured PEEL paragraphs explaining two distinct reasons why the 1973 war mattered: (1) Shattering Israeli complacency and proving that holding occupied land did not guarantee military security, and (2) Restoring Egyptian pride and giving Anwar Sadat the political authority to negotiate peace with Israel as an equal.',
+            model:
+              'The Yom Kippur War was important for Arab-Israeli relations because it shattered Israel’s sense of military invincibility and demonstrated that occupying the Sinai Peninsula did not guarantee national security. For six years after 1967, Israeli leaders believed the fortified Bar-Lev Line and their air supremacy made them impregnable. **This made a significant difference because** the loss of over 2,600 Israeli soldiers and the initial collapse of canal defenses caused deep national trauma, forcing Israeli politicians to realize that lasting security could only be achieved through negotiated diplomatic treaties rather than indefinite military occupation.\n\n**Furthermore, the war was important because** it restored Arab dignity and created the political conditions necessary for peace negotiations. Although Israel recovered to encircle Egypt’s Third Army, Egypt’s successful crossing of the Suez Canal wiped away the humiliation of 1967 and proved that Arab armies could fight effectively. **This made a critical difference because** President Anwar Sadat gained the domestic prestige and legitimacy he needed to negotiate with Israel as an equal. With the United States alarmed by the OPEC oil crisis and Soviet tensions, the war paved the way directly for Henry Kissinger’s shuttle diplomacy, Sadat’s historic visit to Jerusalem in 1977, and the 1978 Camp David Accords.',
+            scaffolding: {
+              acronym: "PEEL x 2 ('What difference did X make to Y?')",
+              acronym_title:
+                "The 'X Linked to Y' Significance Framework (2 Focused PEEL Paragraphs)",
+              guidance:
+                'Write exactly 2 analytical PEEL paragraphs (approx. 10–12 minutes, 150–180 words). Explain strictly what difference the Yom Kippur War made to Arab-Israeli relations.',
+              steps: [
+                {
+                  letter: 'P1',
+                  name: 'Point 1: Impact on Israeli Thinking & Security Beliefs',
+                  prompt:
+                    'Explain how heavy casualties and the collapse of the Bar-Lev Line forced Israel to realize occupation did not guarantee security.',
+                  starter:
+                    'The Yom Kippur War was important for Arab-Israeli relations because it shattered Israel’s assumption of invincibility...',
+                },
+                {
+                  letter: 'P2',
+                  name: 'Point 2: Restoring Arab Dignity & Enabling Sadat’s Peace Initiative',
+                  prompt:
+                    'Explain how crossing the canal restored Egyptian pride and gave Sadat the standing to negotiate peace as an equal.',
+                  starter:
+                    'Furthermore, the war was important because it restored Egyptian national pride, enabling Anwar Sadat to...',
+                },
+              ],
+              sentence_starters: [
+                'The Yom Kippur War was important for Arab-Israeli relations because it shattered...',
+                'This made a significant difference because Israeli leaders realized that holding the Sinai did not...',
+                'Furthermore, the war was important because it restored Arab dignity, which gave Anwar Sadat...',
+                'This directly affected relations because it created the political equality needed for...',
+              ],
+              connectives_bank: [
+                'The war was important for relations because',
+                'This made a significant difference because',
+                'Consequently, this convinced Israeli leaders that',
+                'Furthermore, it was significant because',
+                'This paved the way directly for',
+              ],
+              red_flags: [
+                'Do NOT write a narrative of the 1973 battles—focus strictly on the importance of the war for relations between Arabs and Israelis.',
+              ],
+              checklist: [
+                'Did I write two distinct PEEL paragraphs?',
+                'Did I explain the impact on Israeli confidence and security policy?',
+                'Did I explain the impact on Egyptian pride and Sadat’s ability to make peace?',
+                'Did I explain how it led to diplomacy (Camp David Accords)?',
+              ],
+            },
+          },
+        ],
       },
       flashcards: [
         {
