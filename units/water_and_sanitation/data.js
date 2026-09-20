@@ -384,9 +384,9 @@ const water_and_sanitation = {
           question:
             "Which Roman fort on Hadrian's Wall contains Britain's best-preserved communal latrine, with running water channels flushing waste into sewers?",
           options: [
+            'Fishbourne Roman Palace',
             'Bearsden Bathhouse on the Antonine Wall',
             'Vindolanda Roman Fort',
-            'Fishbourne Roman Palace',
             "Housesteads Fort on Hadrian's Wall",
           ],
           answer: 3,
@@ -421,9 +421,9 @@ const water_and_sanitation = {
           question: 'In a Roman town, where did wastewater from public baths and latrines drain?',
           options: [
             'Into underground stone sewers like the Cloaca Maxima that discharged into local rivers',
-            'Directly onto the pedestrian pavements',
             'Into private garden cesspits in every household',
             'Into wooden barrels collected weekly by horses',
+            'Directly onto the pedestrian pavements',
           ],
           answer: 0,
         },
@@ -507,19 +507,19 @@ const water_and_sanitation = {
             'Who paid for the construction of most public bathhouses and fountains in Roman Britain?',
           options: [
             'Wealthy local magistrates and benefactors seeking political status',
-            'Foreign merchants visiting from Gaul',
             'The Roman Emperor directly from his private treasury',
             'Compulsory taxes collected from enslaved people',
+            'Foreign merchants visiting from Gaul',
           ],
           answer: 0,
         },
         {
           question: 'What health hazard was unwittingly introduced by Roman plumbing in Britain?',
           options: [
-            'Mercury poisoning from bronze taps',
-            'Lead poisoning from lead water pipes and cooking vessels',
-            'Asbestos poisoning from wall insulation',
             'Arsenic contamination in ceramic tiles',
+            'Lead poisoning from lead water pipes and cooking vessels',
+            'Mercury poisoning from bronze taps',
+            'Asbestos poisoning from wall insulation',
           ],
           answer: 1,
         },
@@ -875,9 +875,9 @@ const water_and_sanitation = {
         {
           question: 'How did medieval town councils like London attempt to combat street filth?',
           options: [
+            'By establishing free hospitals in every borough',
             'By ordering all citizens to boil water daily',
             'By building nationwide underground sewer networks',
-            'By establishing free hospitals in every borough',
             'By passing municipal laws fining residents who threw waste into the street and appointing rakers',
           ],
           answer: 3,
@@ -886,9 +886,9 @@ const water_and_sanitation = {
           question: 'Where did most ordinary medieval townspeople obtain their drinking water?',
           options: [
             'From communal public conduits, town wells, or local water carriers called cobs',
+            'From bottled spring water sold in markets',
             'From underground reservoirs maintained by the Crown',
             'From lead pipes directly inside their kitchens',
-            'From bottled spring water sold in markets',
           ],
           answer: 0,
         },
@@ -1297,9 +1297,9 @@ const water_and_sanitation = {
           question: 'Who were "searchers of the dead" during early modern plague outbreaks?',
           options: [
             'Elderly parish women appointed to inspect corpses and report the official cause of death',
+            'Military officers who collected weapons from dead soldiers',
             'Gravediggers who excavated mass burial pits',
             'Royal physicians trained at Oxford University',
-            'Military officers who collected weapons from dead soldiers',
           ],
           answer: 0,
         },
@@ -1307,9 +1307,9 @@ const water_and_sanitation = {
           question:
             'What happened to London’s hygiene and disease levels after the Great Fire of 1666?',
           options: [
+            'The government banned all private toilets in London',
             'The River Thames dried up completely',
             'Plague returned with greater intensity the next summer',
-            'The government banned all private toilets in London',
             'The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built',
           ],
           answer: 3,
@@ -1328,9 +1328,9 @@ const water_and_sanitation = {
           question: 'What was the Great Conduit water system supplemented by in London in 1613?',
           options: [
             'Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal',
+            'A network of steam-powered desalination plants on the coast',
             'Imported barrels of French bottled mineral water',
             'Bazalgette’s Victorian sewer system',
-            'A network of steam-powered desalination plants on the coast',
           ],
           answer: 0,
         },
@@ -1360,10 +1360,10 @@ const water_and_sanitation = {
           question:
             'How did wealthy early modern citizens protect their drinking water compared to the poor?',
           options: [
-            'They boiled all river water using gas stoves',
-            'They had private water filtration plants in their gardens',
-            'They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week',
             'They drank only distilled alcohol and never touched water',
+            'They boiled all river water using gas stoves',
+            'They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week',
+            'They had private water filtration plants in their gardens',
           ],
           answer: 2,
         },
@@ -1653,10 +1653,10 @@ const water_and_sanitation = {
         {
           question: "What was a 'water seller's' job in an Early Modern town?",
           options: [
-            'Designing indoor plumbing systems for wealthy merchants',
-            'Transporting river water in large barrels on horseback to sell to homes',
             'Filtering well water through sand and charcoal beds',
+            'Transporting river water in large barrels on horseback to sell to homes',
             'Digging deep stone-lined conduits for town councils',
+            'Designing indoor plumbing systems for wealthy merchants',
           ],
           answer: 1,
         },
@@ -1674,17 +1674,17 @@ const water_and_sanitation = {
         {
           question:
             'In what year did Asiatic Cholera first arrive on British shores in the port of Sunderland?',
-          options: ['1854', '1831', '1875', '1789'],
+          options: ['1875', '1831', '1789', '1854'],
           answer: 1,
         },
         {
           question:
             'What nickname did the terrified Victorian public give to cholera because of its horrifying physical symptoms?',
           options: [
-            'The Yellow Fever',
-            'The Black Death',
-            'King Cholera (or the Blue Death)',
             'The White Plague',
+            'The Yellow Fever',
+            'King Cholera (or the Blue Death)',
+            'The Black Death',
           ],
           answer: 2,
         },
@@ -1693,9 +1693,9 @@ const water_and_sanitation = {
             'What was the central argument of Edwin Chadwick’s landmark 1842 Sanitary Report?',
           options: [
             'That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates',
+            'That cholera was transmitted by invisible airborne bacteria that only affected criminals',
             'That private water companies should be given total control of all British rivers',
             'That poverty and illness were moral failings that the government should ignore',
-            'That cholera was transmitted by invisible airborne bacteria that only affected criminals',
           ],
           answer: 0,
         },
@@ -1724,9 +1724,9 @@ const water_and_sanitation = {
             'Why did ratepayers (local taxpayers and landlords) vigorously oppose Chadwick’s sanitation proposals in the 1840s?',
           options: [
             'They did not want their local taxes increased to pay for expensive sewer pipes and drainage',
+            'They wanted the government to build railways instead',
             'They feared running water would weaken the British race',
             'They believed clean water was un-Christian',
-            'They wanted the government to build railways instead',
           ],
           answer: 0,
         },
@@ -1775,19 +1775,19 @@ const water_and_sanitation = {
         {
           question: 'Why was the 1848 General Board of Health disbanded in 1854?',
           options: [
-            'Because Queen Victoria ordered all health boards closed',
-            'Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers',
             'Because Parliament ran out of money during the Crimean War',
+            'Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers',
             'Because cholera had been completely wiped out of Europe',
+            'Because Queen Victoria ordered all health boards closed',
           ],
           answer: 1,
         },
         {
           question: 'What was a "court" or "yard" in an early 19th-century industrial town?',
           options: [
+            'A legal building where sanitary trials took place',
             'A designated open park reserved for children',
             'A tennis court used by wealthy factory owners',
-            'A legal building where sanitary trials took place',
             'A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies',
           ],
           answer: 3,
@@ -2094,9 +2094,9 @@ const water_and_sanitation = {
             'What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?',
           options: [
             'Miasma Theory (the belief that disease is spread by bad smells)',
+            'Humoral Theory (the belief that body fluids must be balanced)',
             'Astrological Theory (the belief that planetary positions cause disease)',
             'Germ Theory (the belief that micro-organisms cause disease)',
-            'Humoral Theory (the belief that body fluids must be balanced)',
           ],
           answer: 0,
         },
@@ -2137,9 +2137,9 @@ const water_and_sanitation = {
           question:
             'Who was appointed chief engineer of the Metropolitan Board of Works to design London’s new sewer system?',
           options: [
+            'George Stephenson',
             'Thomas Telford',
             'Isambard Kingdom Brunel',
-            'George Stephenson',
             'Sir Joseph Bazalgette',
           ],
           answer: 3,
@@ -2202,9 +2202,9 @@ const water_and_sanitation = {
           question:
             'What grand public embankments were built in London on top of Bazalgette’s low-level intercepting sewers?',
           options: [
-            'The Hyde Park Corner overpasses',
             'The Regent Street shopping colonnades',
             'The Tower Bridge Walkways',
+            'The Hyde Park Corner overpasses',
             'The Victoria, Albert, and Chelsea Embankments along the Thames',
           ],
           answer: 3,
@@ -2224,10 +2224,10 @@ const water_and_sanitation = {
           question:
             'What Victorian engineering landmarks were constructed by Bazalgette to pump sewage up to river discharge levels?',
           options: [
-            'The Greenwich Maritime Observatory',
-            'The Royal Albert Docks',
-            'The Abbey Mills and Crossness Pumping Stations, nicknamed "Cathedrals of Sewage"',
             'The Crystal Palace water towers',
+            'The Greenwich Maritime Observatory',
+            'The Abbey Mills and Crossness Pumping Stations, nicknamed "Cathedrals of Sewage"',
+            'The Royal Albert Docks',
           ],
           answer: 2,
         },
@@ -2236,9 +2236,9 @@ const water_and_sanitation = {
             'What political change in 1867 helped encourage Parliament to pass stronger public health laws like the 1875 Act?',
           options: [
             'The Second Reform Act, which gave the vote to urban working-class men',
+            'Queen Victoria declared herself Empress of India',
             'The outbreak of the Franco-Prussian War',
             'The abolition of the House of Lords',
-            'Queen Victoria declared herself Empress of India',
           ],
           answer: 0,
         },
@@ -2400,9 +2400,9 @@ const water_and_sanitation = {
             'What was Dr John Snow’s revolutionary hypothesis regarding how cholera was transmitted in 1849?',
           options: [
             'It was a waterborne disease transmitted by swallowing invisible contaminated water or food',
+            'It was an airborne virus passed through sneezing',
             'It was a moral punishment inflicted on heavy alcohol drinkers',
             'It was caused by inhaling sewer gas in damp cellars',
-            'It was an airborne virus passed through sneezing',
           ],
           answer: 0,
         },
@@ -2421,10 +2421,10 @@ const water_and_sanitation = {
           question:
             'What did John Snow convince the parish Board of Guardians to do on 8 September 1854 to halt the Soho epidemic?',
           options: [
-            'Dump lime into all churchyard cesspits',
-            'Remove the handle from the Broad Street water pump so residents could not drink the water',
             'Evacuate all Soho residents to Hyde Park',
+            'Remove the handle from the Broad Street water pump so residents could not drink the water',
             'Burn down all houses on Broad Street',
+            'Dump lime into all churchyard cesspits',
           ],
           answer: 1,
         },
@@ -2515,10 +2515,10 @@ const water_and_sanitation = {
           question:
             'How did Roman public health differ fundamentally from Victorian public health?',
           options: [
-            'Victorians had worse technology than Iron Age peasants',
-            'Romans had Germ Theory while Victorians believed in evil spirits',
-            'Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws',
             'Romans only allowed emperors to drink clean water',
+            'Victorians had worse technology than Iron Age peasants',
+            'Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws',
+            'Romans had Germ Theory while Victorians believed in evil spirits',
           ],
           answer: 2,
         },
@@ -2547,10 +2547,10 @@ const water_and_sanitation = {
           question:
             'Why did John Snow’s investigation become famous as a founding moment of modern medical science?',
           options: [
-            'It established the first private pharmaceutical corporation in England',
-            'It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics',
             'It was the first medical study funded by the British royal family',
+            'It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics',
             'It proved that prayers in church cured bacterial infection',
+            'It established the first private pharmaceutical corporation in England',
           ],
           answer: 1,
         },
@@ -2671,10 +2671,10 @@ const water_and_sanitation = {
       q: "Which Roman fort on Hadrian's Wall contains Britain's best-preserved communal latrine, with running water channels flushing waste into sewers?",
       a: "Housesteads Fort on Hadrian's Wall",
       options: [
-        'Bearsden Bathhouse on the Antonine Wall',
-        "Housesteads Fort on Hadrian's Wall",
-        'Vindolanda Roman Fort',
         'Fishbourne Roman Palace',
+        "Housesteads Fort on Hadrian's Wall",
+        'Bearsden Bathhouse on the Antonine Wall',
+        'Vindolanda Roman Fort',
       ],
     },
     {
@@ -2701,20 +2701,20 @@ const water_and_sanitation = {
       q: 'What is a famous Roman bath complex located in Somerset, England?',
       a: 'Aquae Sulis (Bath)',
       options: [
-        'Eboracum (York)',
         'Venta Belgarum (Winchester)',
-        'Aquae Sulis (Bath)',
         'Londinium (London)',
+        'Aquae Sulis (Bath)',
+        'Eboracum (York)',
       ],
     },
     {
       q: "What is a 'hypocaust' in Roman architecture?",
       a: 'An underfloor heating system used in bathhouses',
       options: [
-        'A type of curved roof tile to collect rainwater',
-        'An underfloor heating system used in bathhouses',
         'A communal toilet block',
+        'An underfloor heating system used in bathhouses',
         'A large public fountain in the town square',
+        'A type of curved roof tile to collect rainwater',
       ],
     },
     {
@@ -2725,7 +2725,7 @@ const water_and_sanitation = {
     {
       q: 'What Roman philosopher complained about the noise in a public bathhouse?',
       a: 'Seneca the Younger',
-      options: ['Julius Caesar', 'Pliny the Elder', 'Marcus Aurelius', 'Seneca the Younger'],
+      options: ['Pliny the Elder', 'Marcus Aurelius', 'Julius Caesar', 'Seneca the Younger'],
     },
     {
       q: 'How did early Iron Age Britons dispose of waste safely?',
@@ -2801,9 +2801,9 @@ const water_and_sanitation = {
       q: 'Where did garderobes in castles usually empty their waste?',
       a: 'Directly into the moat or a cesspit at the base of the wall',
       options: [
-        'Into buckets that were emptied by servants daily',
         'Into a nearby river',
         'Into a complex underground sewer system',
+        'Into buckets that were emptied by servants daily',
         'Directly into the moat or a cesspit at the base of the wall',
       ],
     },
@@ -2820,16 +2820,16 @@ const water_and_sanitation = {
     {
       q: 'Who was employed to clean out medieval cesspits?',
       a: 'Gongfermers (or Gong Farmers)',
-      options: ['Sweepers', 'Nightmen', 'Gongfermers (or Gong Farmers)', 'Scavengers'],
+      options: ['Scavengers', 'Sweepers', 'Gongfermers (or Gong Farmers)', 'Nightmen'],
     },
     {
       q: 'What was the main source of water for early medieval towns before pipes were common?',
       a: 'Rivers, streams, and local wells',
       options: [
-        'Deep artesian wells',
-        'Rivers, streams, and local wells',
         'Aqueducts left over from Roman times',
+        'Rivers, streams, and local wells',
         'Rainwater collected from roofs',
+        'Deep artesian wells',
       ],
     },
     {
@@ -2867,9 +2867,9 @@ const water_and_sanitation = {
       a: 'Transporting river water in large barrels on horseback to sell to homes',
       options: [
         'Transporting river water in large barrels on horseback to sell to homes',
-        'Maintaining the public conduits and fountains',
         'Digging new wells for wealthy citizens',
         'Selling bottled mineral water from natural springs',
+        'Maintaining the public conduits and fountains',
       ],
     },
     {
@@ -2891,10 +2891,10 @@ const water_and_sanitation = {
       q: "What were Early Modern 'conduits'?",
       a: 'Public water fountains where citizens could collect fresh water',
       options: [
-        'Wooden pipes carrying water to individual houses',
-        'Public water fountains where citizens could collect fresh water',
         'Large reservoirs storing water for the city',
+        'Public water fountains where citizens could collect fresh water',
         'Underground sewers carrying waste to the river',
+        'Wooden pipes carrying water to individual houses',
       ],
     },
     {
@@ -2947,9 +2947,9 @@ const water_and_sanitation = {
       a: 'Miasma Theory (the belief that disease is spread by bad smells)',
       options: [
         'Miasma Theory (the belief that disease is spread by bad smells)',
+        'The Four Humours Theory',
         'The Spontaneous Generation Theory',
         'Germ Theory (the belief that microscopic organisms cause disease)',
-        'The Four Humours Theory',
       ],
     },
     {
@@ -2991,40 +2991,40 @@ const water_and_sanitation = {
       q: 'What was the main problem with the 1848 Public Health Act?',
       a: 'It was not compulsory, so many towns ignored it to save money',
       options: [
-        'It was too expensive for the government to enforce',
-        'It was not compulsory, so many towns ignored it to save money',
-        'It did not apply to London',
         'It only focused on cleaning the streets, not the water supply',
+        'It was not compulsory, so many towns ignored it to save money',
+        'It was too expensive for the government to enforce',
+        'It did not apply to London',
       ],
     },
     {
       q: 'What was the primary symptom of Cholera?',
       a: 'Severe diarrhea, dehydration, and blue skin',
       options: [
-        'Swollen lymph nodes in the armpits and groin',
-        'A high fever and a red rash',
-        'Severe diarrhea, dehydration, and blue skin',
         'Coughing up blood and chest pains',
+        'Swollen lymph nodes in the armpits and groin',
+        'Severe diarrhea, dehydration, and blue skin',
+        'A high fever and a red rash',
       ],
     },
     {
       q: 'How did John Snow stop the Soho cholera outbreak of 1854?',
       a: 'He persuaded the local parish to remove the Broad Street pump handle',
       options: [
-        'He ordered the streets to be cleaned of all rubbish',
-        'He persuaded the local parish to remove the Broad Street pump handle',
         'He gave the local residents a new medicine he invented',
+        'He persuaded the local parish to remove the Broad Street pump handle',
         'He boiled all the water in the local area',
+        'He ordered the streets to be cleaned of all rubbish',
       ],
     },
     {
       q: "What event in the summer of 1858 finally forced politicians to fund London's sewer network?",
       a: 'The Great Stink of the River Thames',
       options: [
-        'A petition signed by 100,000 Londoners',
-        'A massive outbreak of cholera in Parliament',
-        'The Great Stink of the River Thames',
         "The publication of John Snow's map",
+        'A petition signed by 100,000 Londoners',
+        'The Great Stink of the River Thames',
+        'A massive outbreak of cholera in Parliament',
       ],
     },
     {
@@ -3036,9 +3036,9 @@ const water_and_sanitation = {
       q: 'What did the landmark 1875 Public Health Act force local councils to do?',
       a: 'Ensure all houses had piped clean water and proper sewer connections',
       options: [
-        'Build a hospital in every town',
         'Ban back-to-back housing completely',
         'Provide free medical care to all citizens',
+        'Build a hospital in every town',
         'Ensure all houses had piped clean water and proper sewer connections',
       ],
     },
@@ -3086,10 +3086,10 @@ const water_and_sanitation = {
       q: 'How did John Snow map the 1854 Cholera outbreak?',
       a: 'He mapped the deaths and noticed they clustered around the Broad Street pump',
       options: [
-        'He mapped the factories to see which ones were polluting the air',
-        'He mapped the deaths and noticed they clustered around the Broad Street pump',
         'He mapped the poor areas to show where the disease was worst',
+        'He mapped the deaths and noticed they clustered around the Broad Street pump',
         'He mapped the sewers to find where they were leaking',
+        'He mapped the factories to see which ones were polluting the air',
       ],
     },
   ],

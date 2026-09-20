@@ -1365,7 +1365,7 @@ const early_modern_world = {
         {
           question:
             'Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?',
-          options: ['Elizabeth I', 'Mary I', 'Henry VIII', 'Edward VI'],
+          options: ['Mary I', 'Edward VI', 'Henry VIII', 'Elizabeth I'],
           answer: 2,
           explanation: 'Henry VIII',
         },
@@ -1384,7 +1384,7 @@ const early_modern_world = {
         {
           question:
             'What official document gave privateers legal permission from a monarch to attack foreign ships?',
-          options: ['A Letter of Marque', 'A Papal Bull', 'A Royal Charter', 'An Indulgence'],
+          options: ['A Letter of Marque', 'A Royal Charter', 'An Indulgence', 'A Papal Bull'],
           answer: 0,
           explanation: 'A Letter of Marque',
         },
@@ -1439,7 +1439,7 @@ const early_modern_world = {
         {
           question:
             "What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?",
-          options: ['Europe', 'North America', 'Africa', 'Asia'],
+          options: ['Asia', 'North America', 'Europe', 'Africa'],
           answer: 1,
           explanation: 'North America',
         },
@@ -1840,9 +1840,9 @@ const early_modern_world = {
           question:
             'What type of business model allowed multiple investors to pool their money to fund risky overseas colonial ventures?',
           options: [
+            'State-Owned Enterprises',
             'Royal Monopolies',
             'Feudal Guilds',
-            'State-Owned Enterprises',
             'Joint-Stock Companies',
           ],
           answer: 3,
@@ -1851,21 +1851,21 @@ const early_modern_world = {
         {
           question:
             'On which island was the famous "Lost Colony" of 1585 founded by Sir Walter Raleigh?',
-          options: ['Jamestown Island', 'Manhattan Island', 'Roanoke Island', 'Bermuda'],
+          options: ['Bermuda', 'Jamestown Island', 'Roanoke Island', 'Manhattan Island'],
           answer: 2,
           explanation: 'Roanoke Island',
         },
         {
           question:
             'What single word was found carved into a wooden post when supply ships returned to Roanoke in 1590?',
-          options: ['DANGER', 'CROATOAN', 'FAMINE', 'ABANDONED'],
+          options: ['FAMINE', 'CROATOAN', 'ABANDONED', 'DANGER'],
           answer: 1,
           explanation: 'CROATOAN',
         },
         {
           question:
             'What was the name of the first permanent English settlement established in North America in 1607?',
-          options: ['Plymouth', 'Boston', 'Williamsburg', 'Jamestown'],
+          options: ['Boston', 'Williamsburg', 'Plymouth', 'Jamestown'],
           answer: 3,
           explanation: 'Jamestown',
         },
@@ -2373,7 +2373,7 @@ const early_modern_world = {
           ],
         },
         {
-          title: "The Historians' Debate: Who won the English Civil War?",
+          title: 'Historiographical Debate: Who won the English Civil War?',
           text: '<p><strong>Source F:</strong></p><div class=\'scaffold-box\'><strong>Interpretation A: Professor Christopher Hill (The Political View)</strong><br><em>"The English Civil War was a revolutionary class struggle. It permanently smashed the absolute monarchy and the old feudal order, transferring political power to Parliament and the middling sorts."</em></div><br><br><div class=\'scaffold-box\'><strong>Interpretation B: Professor Eric Williams (The Imperial/Economic View)</strong><br><em>"The true victors of the 17th century were the imperial merchant classes. By restricting the monarchy, Parliament secured the political stability needed to build the massive joint-stock companies (like the East India Company and the Royal African Company) which extracted vast wealth through colonization and slavery."</em></div>',
           tasks: [
             {
@@ -2450,7 +2450,7 @@ const early_modern_world = {
         {
           question:
             'On what date was King Charles I executed outside the Banqueting House in London?',
-          options: ['4 July 1776', '5 November 1605', '30 January 1649', '15 June 1215'],
+          options: ['15 June 1215', '4 July 1776', '30 January 1649', '5 November 1605'],
           answer: 2,
           explanation: '30 January 1649',
         },
@@ -2469,7 +2469,7 @@ const early_modern_world = {
         {
           question:
             "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
-          options: ['Prince Rupert', 'Oliver Cromwell', 'Sir Thomas Fairfax', 'John Pym'],
+          options: ['Sir Thomas Fairfax', 'Oliver Cromwell', 'John Pym', 'Prince Rupert'],
           answer: 1,
           explanation: 'Oliver Cromwell',
         },
@@ -2496,10 +2496,10 @@ const early_modern_world = {
           question:
             'What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?',
           options: [
-            'The Sugar Acts',
             'The Stamp Acts',
-            'The Navigation Acts',
             'The Trade and Revenue Acts',
+            'The Navigation Acts',
+            'The Sugar Acts',
           ],
           answer: 2,
           explanation: 'The Navigation Acts',
@@ -2507,7 +2507,7 @@ const early_modern_world = {
         {
           question:
             "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
-          options: ['The Catholics', 'The Quakers', 'The Methodists', 'The Puritans'],
+          options: ['The Methodists', 'The Catholics', 'The Quakers', 'The Puritans'],
           answer: 3,
           explanation: 'The Puritans',
         },
@@ -2515,9 +2515,9 @@ const early_modern_world = {
           question: 'What event in 1660 brought  back to the throne, ending the Commonwealth era?',
           options: [
             'The Restoration',
-            'The Glorious Revolution',
             'The Norman Conquest',
             'The Reformation',
+            'The Glorious Revolution',
           ],
           answer: 0,
           explanation: 'The Restoration',
@@ -2792,7 +2792,7 @@ const early_modern_world = {
         {
           question:
             'On what date was King Charles I executed outside the Banqueting House in London?',
-          options: ['4 July 1776', '5 November 1605', '30 January 1649', '15 June 1215'],
+          options: ['15 June 1215', '4 July 1776', '30 January 1649', '5 November 1605'],
           answer: 2,
           explanation: '30 January 1649',
         },
@@ -2811,7 +2811,7 @@ const early_modern_world = {
         {
           question:
             "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
-          options: ['Oliver Cromwell', 'Prince Rupert', 'Sir Thomas Fairfax', 'John Pym'],
+          options: ['Oliver Cromwell', 'Sir Thomas Fairfax', 'John Pym', 'Prince Rupert'],
           answer: 0,
           explanation: 'Oliver Cromwell',
         },
@@ -2838,10 +2838,10 @@ const early_modern_world = {
           question:
             'What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?',
           options: [
-            'The Sugar Acts',
             'The Stamp Acts',
-            'The Navigation Acts',
             'The Trade and Revenue Acts',
+            'The Navigation Acts',
+            'The Sugar Acts',
           ],
           answer: 2,
           explanation: 'The Navigation Acts',
@@ -2849,7 +2849,7 @@ const early_modern_world = {
         {
           question:
             "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
-          options: ['The Catholics', 'The Quakers', 'The Methodists', 'The Puritans'],
+          options: ['The Methodists', 'The Catholics', 'The Quakers', 'The Puritans'],
           answer: 3,
           explanation: 'The Puritans',
         },
@@ -2857,9 +2857,9 @@ const early_modern_world = {
           question: 'What event in 1660 brought  back to the throne, ending the Commonwealth era?',
           options: [
             'The Restoration',
-            'The Glorious Revolution',
             'The Norman Conquest',
             'The Reformation',
+            'The Glorious Revolution',
           ],
           answer: 0,
           explanation: 'The Restoration',
@@ -3204,10 +3204,10 @@ const early_modern_world = {
         {
           question: "What was the 'Middle Passage'?",
           options: [
-            'The overland trade route across the Sahara Desert.',
-            'The brutal forced voyage of enslaved Africans across the Atlantic.',
-            'The journey of manufactured goods from Europe to Africa.',
             'The transport of sugar and tobacco from the Americas to Europe.',
+            'The brutal forced voyage of enslaved Africans across the Atlantic.',
+            'The overland trade route across the Sahara Desert.',
+            'The journey of manufactured goods from Europe to Africa.',
           ],
           answer: 1,
           explanation:
@@ -3225,10 +3225,10 @@ const early_modern_world = {
           question:
             'How did the experience of enslaved people in Virginia generally compare to those in the Caribbean by the 1700s?',
           options: [
-            "Virginia plantations relied on a 'death camp' model to constantly import new enslaved people.",
-            "The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.",
             'Enslaved people in Virginia primarily farmed sugar rather than tobacco.',
+            "The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.",
             'There was no significant difference between the two regions.',
+            "Virginia plantations relied on a 'death camp' model to constantly import new enslaved people.",
           ],
           answer: 1,
           explanation:
@@ -3250,9 +3250,9 @@ const early_modern_world = {
           question: "Why was the Caribbean sugar system often described as a 'death camp' model?",
           options: [
             'Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.',
+            'Enslaved people frequently died from starvation during the Middle Passage.',
             'It was a system designed primarily to punish criminals.',
             'The plantations were located in areas with high rates of natural disasters.',
-            'Enslaved people frequently died from starvation during the Middle Passage.',
           ],
           answer: 0,
           explanation:
@@ -3261,10 +3261,10 @@ const early_modern_world = {
         {
           question: 'How did the Triangular Trade fuel the Industrial Revolution in Britain?',
           options: [
-            'Enslaved Africans were brought to Britain to work in factories.',
             'Britain stopped trading with Europe to focus solely on the Americas.',
-            'Profits from slave-produced goods were invested in British banks, infrastructure, and factories.',
             'The British government used taxes from the trade to build free public schools.',
+            'Profits from slave-produced goods were invested in British banks, infrastructure, and factories.',
+            'Enslaved Africans were brought to Britain to work in factories.',
           ],
           answer: 2,
           explanation:
@@ -3274,10 +3274,10 @@ const early_modern_world = {
           question:
             'According to the UCL Legacies of British Slavery Database, what happened in 1833?',
           options: [
-            'The British government paid reparations to formerly enslaved people.',
-            'The Triangular Trade officially began.',
-            'The British government paid massive compensation to former slave owners.',
             'The first slave ship arrived in Virginia.',
+            'The British government paid reparations to formerly enslaved people.',
+            'The British government paid massive compensation to former slave owners.',
+            'The Triangular Trade officially began.',
           ],
           answer: 2,
           explanation:
@@ -3287,9 +3287,9 @@ const early_modern_world = {
           question:
             "How does the reality of the Transatlantic Slave Trade challenge the idea of 18th-century Britain as a purely 'modern' and enlightened society?",
           options: [
-            'It shows that Britain was less technologically advanced than its European rivals.',
             'It proves that the Enlightenment had no impact on British politics.',
             'It highlights the fact that Britain was still primarily a feudal society.',
+            'It shows that Britain was less technologically advanced than its European rivals.',
             "It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.",
           ],
           answer: 3,
@@ -3667,10 +3667,10 @@ const early_modern_world = {
         {
           question: 'Who was Harriet Tubman?',
           options: [
-            'A British politician who campaigned alongside William Wilberforce.',
-            "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
-            'The leader of the First Maroon War in Jamaica.',
             'A Jamaican plantation overseer who wrote a diary about enslaved resistance.',
+            "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
+            'A British politician who campaigned alongside William Wilberforce.',
+            'The leader of the First Maroon War in Jamaica.',
           ],
           answer: 1,
           explanation:
@@ -3680,9 +3680,9 @@ const early_modern_world = {
           question: "What was the 'Underground Railroad'?",
           options: [
             'A secret network of safe houses and routes that helped enslaved people escape.',
+            'A trade route used by the Maroons to smuggle goods.',
             'A literal subterranean train system built by enslaved people.',
             'A British political movement to abolish the slave trade.',
-            'A trade route used by the Maroons to smuggle goods.',
           ],
           answer: 0,
           explanation:
@@ -3703,10 +3703,10 @@ const early_modern_world = {
         {
           question: 'Why did enslavers live in constant terror of Obeah?',
           options: [
-            'Because Obeah leaders frequently organized massive armed rebellions.',
             'Because Obeah was supported by the British government.',
-            'Because practitioners could use their botanical knowledge to slowly and undetectably poison them.',
             'Because it encouraged enslaved people to stop working entirely.',
+            'Because practitioners could use their botanical knowledge to slowly and undetectably poison them.',
+            'Because Obeah leaders frequently organized massive armed rebellions.',
           ],
           answer: 2,
           explanation:
@@ -3832,14 +3832,14 @@ const early_modern_world = {
         {
           question:
             'In what year was the Bank of England established, revolutionizing British national debt and finance?',
-          options: ['1492', '1694', '1600', '1750'],
+          options: ['1750', '1694', '1492', '1600'],
           answer: 1,
           explanation: '1694',
         },
         {
           question:
             'What famous 1751 William Hogarth engraving depicted the social decay and poverty caused by alcohol addiction in London slums?',
-          options: ['Gin Lane', 'Beer Street', "The Rake's Progress", "A Harlot's Progress"],
+          options: ['Gin Lane', "A Harlot's Progress", 'Beer Street', "The Rake's Progress"],
           answer: 0,
           explanation: 'Gin Lane',
         },
@@ -3862,9 +3862,9 @@ const early_modern_world = {
             'Which two European revolutions (1642-1651 & 1688) permanently reduced the absolute power of the British monarchy?',
           options: [
             'The English Civil War and the Glorious Revolution',
-            'The French Revolution and the American Revolution',
             'The Industrial Revolution and the Agrarian Revolution',
             'The Protestant Reformation and the Renaissance',
+            'The French Revolution and the American Revolution',
           ],
           answer: 0,
           explanation: 'The English Civil War and the Glorious Revolution',
@@ -4187,8 +4187,8 @@ const early_modern_world = {
           source_letter: 'E',
         },
         {
-          title: "The Historians' Debate: 'The First Modern Society'?",
-          text: '<div style="border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;">    <div style="display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;">        <button id="histBtn1" onclick="document.getElementById(\'hist1\').style.display=\'block\'; document.getElementById(\'hist2\').style.display=\'none\'; this.style.background=\'#fff\'; this.nextElementSibling.style.background=\'#f1f5f9\';" style="flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;">View A: The "March of Progress"</button>        <button id="histBtn2" onclick="document.getElementById(\'hist1\').style.display=\'none\'; document.getElementById(\'hist2\').style.display=\'block\'; this.style.background=\'#fff\'; this.previousElementSibling.style.background=\'#f1f5f9\';" style="flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;">View B: The "Human Cost &amp; Exploitation"</button>    </div>    <div id="hist1" style="padding: 25px; display: block; background: #f0f9ff;">        <h4 style="margin-top: 0; color: #1e40af;">View A: The "March of Progress" (Modernity &amp; Liberty)</h4>        <p><em>"By 1750, Britain was already the world’s first modern, energetic consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued science, innovation, and personal freedom."</em></p>    </div>    <div id="hist2" style="padding: 25px; display: none; background: #fff7ed;">        <h4 style="margin-top: 0; color: #b45309;">View B: The "Human Cost &amp; Exploitation" (Inequality &amp; Slavery)</h4>        <p><em>"18th-century Britain was not truly \'modern\'. It was a harsh, deeply divided society dominated by wealthy landowners, where fewer than 5% could vote and the law hanged starving people for petty theft. Above all, its wealth was financed by the brutality of the Transatlantic Slave Trade."</em></p>    </div></div>',
+          title: "Historiographical Debate: 'The First Modern Society'?",
+          text: '<div style="border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;">    <div style="display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;">        <button id="histBtn1" onclick="document.getElementById(\'hist1\').style.display=\'block\'; document.getElementById(\'hist2\').style.display=\'none\'; this.style.background=\'#fff\'; this.nextElementSibling.style.background=\'#f1f5f9\';" style="flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;">Interpretation A: ]</button>        <button id="histBtn2" onclick="document.getElementById(\'hist1\').style.display=\'none\'; document.getElementById(\'hist2\').style.display=\'block\'; this.style.background=\'#fff\'; this.previousElementSibling.style.background=\'#f1f5f9\';" style="flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;">Interpretation B: ]</button>    </div>    <div id="hist1" style="padding: 25px; display: block; background: #f0f9ff;">        <h4 style="margin-top: 0; color: #1e40af;">Historian Perspective A:  (1990)</h4>        <p><em>"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress."</em></p>    </div>    <div id="hist2" style="padding: 25px; display: none; background: #fff7ed;">        <h4 style="margin-top: 0; color: #b45309;">Historian Perspective B:  (1985)</h4>        <p><em>"18th-century Britain was not a \'modern\' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty."</em></p>    </div></div>',
         },
         {
           title: 'Synthesis Essay Planning Task',

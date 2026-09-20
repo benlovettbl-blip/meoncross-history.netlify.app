@@ -32,7 +32,7 @@ const great_war = {
   ],
   lessons: [
     {
-      id: 'lesson_1',
+      id: 'lesson_0',
       title: 'How was the German Empire created in 1871?',
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
       teacher_notes: {
@@ -84,12 +84,12 @@ const great_war = {
         {
           q: 'How many independent states existed in Central Europe before 1871?',
           a: '39',
-          options: ['300', '39', '15', '50'],
+          options: ['50', '39', '300', '15'],
         },
         {
           q: 'Which state was the most powerful among the German states before 1871?',
           a: 'Prussia',
-          options: ['Bavaria', 'Saxony', 'Austria', 'Prussia'],
+          options: ['Saxony', 'Austria', 'Bavaria', 'Prussia'],
         },
         {
           q: 'Who became the Prime Minister of Prussia in 1862?',
@@ -115,10 +115,10 @@ const great_war = {
           q: "What did 'blood and iron' mean in Bismarck's approach?",
           a: 'Warfare and military strength',
           options: [
-            'Industrial factories only',
-            'Warfare and military strength',
-            'Democratic votes',
             'Peaceful treaties',
+            'Warfare and military strength',
+            'Industrial factories only',
+            'Democratic votes',
           ],
         },
         {
@@ -141,9 +141,9 @@ const great_war = {
           a: 'Palace of Versailles',
           options: [
             'Palace of Versailles',
+            'Tower of London',
             'Reichstag in Berlin',
             'Schönbrunn Palace',
-            'Tower of London',
           ],
         },
         {
@@ -154,7 +154,7 @@ const great_war = {
         {
           q: 'Which valuable French territory did Germany seize in 1871?',
           a: 'Alsace-Lorraine',
-          options: ['Normandy', 'Brittany', 'Burgundy', 'Alsace-Lorraine'],
+          options: ['Burgundy', 'Normandy', 'Brittany', 'Alsace-Lorraine'],
         },
         {
           q: 'What was the economic union created by Prussia in 1834 called?',
@@ -205,9 +205,9 @@ const great_war = {
           q: 'What long-term effect did the taking of Alsace-Lorraine have?',
           a: 'It created long-term rivalry and hatred between France and Germany',
           options: [
-            'It made France and Germany permanent allies',
             'It caused the collapse of the British Empire',
             'It led directly to the Russian Revolution',
+            'It made France and Germany permanent allies',
             'It created long-term rivalry and hatred between France and Germany',
           ],
         },
@@ -228,9 +228,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=-PAEmgYv0DE',
           title: 'German Unification and Empire - History in 5 Minutes',
           duration: '5 mins 21 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Punchy starter recap or SEN visual hook. Rapidly outlines Bismarck\'s "blood and iron" doctrine and the three decisive unification wars in just over 5 minutes.',
           viewing_task:
             'Note down the key steps Bismarck took to unify the German states and create the Empire.',
           model_answer:
@@ -241,9 +238,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=o_PKusG7NFs',
           title: '"The Great War" 1 | What Made Germany So Successful Before World War 1?',
           duration: '23 mins 7 secs',
-          pathway: 'Deep-Dive Documentary',
-          teacher_guidance:
-            "Recommended for flipped learning, independent homework, or high-attaining pupils seeking in-depth analysis of Wilhelmine Germany's industrial boom, steel production, and military discipline.",
           viewing_task:
             'Watch the first 5 minutes of this documentary and note down the key factors that made the German Empire such a powerful new nation.',
           model_answer:
@@ -374,7 +368,7 @@ const great_war = {
       },
     },
     {
-      id: 'lesson_2',
+      id: 'lesson_1',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
       video: [
         {
@@ -382,9 +376,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
           title: 'History Matters: The Franco Prussian War (Short Animated Documentary)',
           duration: '3 mins 49 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Ideal for starter recaps, rapid retrieval, or lower-attaining / SEN learners needing core factual concepts without cognitive overload.',
           viewing_task:
             'Identify how Otto von Bismarck engineered the conflict against Napoleon III, how the German Empire was proclaimed in Versailles, and why the annexation of Alsace-Lorraine created permanent French resentment.',
           model_answer:
@@ -392,25 +383,9 @@ const great_war = {
         },
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=xfTI_YLapog',
-          title: 'Welcome To Glory & Defeat - Why We Should Remember The Franco-Prussian War',
-          duration: '4 mins 28 secs',
-          pathway: 'Broader Context & Strategic Causes',
-          teacher_guidance:
-            'Excellent introductory hook, homework primer, or flipped learning task before analyzing the Ems Telegram and the proclamation in the Hall of Mirrors.',
-          viewing_task:
-            'Watch this introductory overview and note down three reasons why the Franco-Prussian War of 1870–71 was a crucial turning point that shaped modern European history and paved the path toward 1914.',
-          model_answer:
-            'The documentary explains that the Franco-Prussian War created the modern German nation-state, destroyed the French Second Empire, led to the traumatic Paris Commune, and ignited decades of bitter French resentment (revanche) that made a future European confrontation virtually inevitable.',
-        },
-        {
-          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=xVISzFmBiPU',
           title: 'The Armchair Historian: How Prussia Ended The French Empire',
           duration: '27 mins 56 secs',
-          pathway: 'In-Depth Military Mechanics',
-          teacher_guidance:
-            'Great for high-attainers wanting granular tactical detail on Krupp breech-loading steel artillery, railway mobilization, and the Sedan encirclement.',
           viewing_task:
             'Observe the technological and logistical advantages of the Prussian military (Krupp breech-loading artillery, needle guns, railway mobilization) over the French Imperial Army.',
           model_answer:
@@ -480,32 +455,6 @@ const great_war = {
           term: 'Reinsurance Treaty',
           definition:
             'A secret 1887 agreement between Germany and Russia pledging mutual neutrality if attacked.',
-        },
-        {
-          term: 'Nationalism',
-          definition:
-            "A fierce devotion to one's nation, believing shared language and culture should unite an independent state.",
-        },
-        {
-          term: 'Imperialism',
-          definition:
-            "The policy of extending a nation's authority by territorial acquisition or political/economic dominance.",
-        },
-      ],
-      distinction_tasks: [
-        {
-          terms: ['Annexation', 'Revanche'],
-          question:
-            'Explain the crucial historical distinction and cause-and-effect relationship between Annexation and Revanche following the Franco-Prussian War.',
-          model_answer:
-            'Annexation refers to the physical and legal seizure of sovereign territory (specifically Germany taking Alsace-Lorraine under the 1871 Treaty of Frankfurt), whereas Revanche is the deep psychological and political doctrine of revenge that this loss provoked across French society, making permanent European reconciliation impossible.',
-        },
-        {
-          terms: ['Nationalism', 'Imperialism'],
-          question:
-            'Explain the crucial historical distinction between 19th-century European Nationalism and Imperialism.',
-          model_answer:
-            'Nationalism is the ideological movement asserting that people with a shared language, culture, and identity have the right to self-determination and political unity within a sovereign state (exemplified by German unification in 1871). In contrast, Imperialism is the aggressive projection of state power to conquer, dominate, and exploit external lands, colonies, and distinct foreign populations.',
         },
       ],
       extended: {
@@ -809,7 +758,7 @@ const great_war = {
         {
           q: 'In what year did the Franco-Prussian War break out?',
           a: '1870',
-          options: ['1871', '1870', '1890', '1914'],
+          options: ['1890', '1870', '1914', '1871'],
         },
         {
           q: 'Which two provinces were taken from France in the peace settlement?',
@@ -830,10 +779,10 @@ const great_war = {
           q: 'What was the size of the war indemnity France was forced to pay?',
           a: '5 billion francs',
           options: [
-            '1 billion marks',
-            '5 billion francs',
-            '6.6 billion pounds',
             '132 billion gold marks',
+            '5 billion francs',
+            '1 billion marks',
+            '6.6 billion pounds',
           ],
         },
         {
@@ -860,16 +809,16 @@ const great_war = {
           q: "What was Germany's greatest fear that drove its military planning?",
           a: 'A two-front war',
           options: [
-            'A naval blockade',
-            'A two-front war',
-            'An Italian invasion',
             'A socialist revolution',
+            'A two-front war',
+            'A naval blockade',
+            'An Italian invasion',
           ],
         },
         {
           q: 'What was the name of the German military plan created to defeat France quickly?',
           a: 'Schlieffen Plan',
-          options: ['Plan XVII', 'Bismarck Plan', 'Moltke Offensive', 'Schlieffen Plan'],
+          options: ['Moltke Offensive', 'Plan XVII', 'Bismarck Plan', 'Schlieffen Plan'],
         },
         {
           q: 'Which French leader was captured at the Battle of Sedan?',
@@ -881,9 +830,9 @@ const great_war = {
           a: 'To unify the southern German states with the north',
           options: [
             'To unify the southern German states with the north',
-            'To steal French gold',
             'To crown himself Emperor',
             'To conquer Paris permanently',
+            'To steal French gold',
           ],
         },
         {
@@ -940,16 +889,16 @@ const great_war = {
           q: 'Where exactly was the new German Empire proclaimed?',
           a: 'The Hall of Mirrors at Versailles',
           options: [
-            'The Louvre',
-            'The Hall of Mirrors at Versailles',
-            'The Reichstag in Berlin',
             'Notre Dame Cathedral',
+            'The Hall of Mirrors at Versailles',
+            'The Louvre',
+            'The Reichstag in Berlin',
           ],
         },
       ],
     },
     {
-      id: 'lesson_3',
+      id: 'lesson_2',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
       sources: [
         {
@@ -1212,16 +1161,13 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
-          title: "What was the 'Scramble for Africa'? - BBC What's New",
-          duration: '3 mins 0 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Bite-sized starter recap or SEN introduction. Explains the 1884 Berlin Conference and how European empires carved up the continent without African consultation.',
+          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
+          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
+          duration: '26 mins 6 secs',
           viewing_task:
-            'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
+            'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
           model_answer:
-            'At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted.',
+            "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy.",
         },
         {
           type: 'youtube',
@@ -1229,9 +1175,6 @@ const great_war = {
           title:
             '80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I',
           duration: '12 mins 49 secs',
-          pathway: 'Core Curriculum Overview',
-          teacher_guidance:
-            'Ideal for direct whole-class instruction or guided note-taking. Connects industrial capitalism, raw material extraction, and imperial rivalry directly to the road to 1914.',
           viewing_task:
             'Note down how the industrial revolution pushed European nations to scramble for African colonies.',
           model_answer:
@@ -1239,16 +1182,13 @@ const great_war = {
         },
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
-          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
-          duration: '26 mins 6 secs',
-          pathway: 'Deep-Dive Documentary',
-          teacher_guidance:
-            'Superb for flipped learning, independent research, or high-attainers. Explores the interlocking tensions of Weltpolitik, the Moroccan Crises, and naval competition in rich narrative detail.',
+          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
+          title: "What was the 'Scramble for Africa'? - BBC What's New",
+          duration: '3 mins 0 secs',
           viewing_task:
-            'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
+            'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
           model_answer:
-            "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy.",
+            'At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted.',
         },
       ],
       narrative_blocks: [
@@ -1398,9 +1338,9 @@ const great_war = {
           q: "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
           a: 'He wanted Germany to have a global empire like Britain and France',
           options: [
-            'He wanted a holiday home in Africa',
             'He wanted to conquer South America',
             'He wanted to control the Mediterranean Sea',
+            'He wanted a holiday home in Africa',
             'He wanted Germany to have a global empire like Britain and France',
           ],
         },
@@ -1408,10 +1348,10 @@ const great_war = {
           q: 'What happened during the First Moroccan Crisis (1905)?',
           a: 'The Kaiser visited Tangier and declared support for Moroccan independence',
           options: [
-            'Germany invaded Morocco',
-            'The Kaiser visited Tangier and declared support for Moroccan independence',
-            'France surrendered Morocco to Britain',
             'The local sultan defeated the French army',
+            'The Kaiser visited Tangier and declared support for Moroccan independence',
+            'Germany invaded Morocco',
+            'France surrendered Morocco to Britain',
           ],
         },
         {
@@ -1457,7 +1397,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_4',
+      id: 'lesson_3',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       sources: [
         {
@@ -1694,26 +1634,9 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=yryey5NVODs',
-          title:
-            '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
-          duration: '2 mins 35 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Snappy starter clip focusing on the Second German Naval Law of 1900 and Admiral von Tirpitz\'s "Risk Fleet" doctrine.',
-          viewing_task:
-            'Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.',
-          model_answer:
-            'The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes.',
-        },
-        {
-          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=-osfjjJuY6U',
           title: 'Anglo-German Dreadnought Arms Race - Anything you can build I can build better!',
           duration: '32 mins 1 sec',
-          pathway: 'In-Depth Naval Analysis',
-          teacher_guidance:
-            "Superb for whole-class exploration or extension study into the revolutionary engineering of HMS Dreadnought, Fisher's reforms, and the North Sea gunnery race.",
           viewing_task:
             'Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.',
           model_answer:
@@ -1721,12 +1644,20 @@ const great_war = {
         },
         {
           type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=yryey5NVODs',
+          title:
+            '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
+          duration: '2 mins 35 secs',
+          viewing_task:
+            'Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.',
+          model_answer:
+            'The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes.',
+        },
+        {
+          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=qmYJUYwsZqY',
           title: '67. Anglo-German Relations',
           duration: '52 mins 22 secs',
-          pathway: 'Archival Masterclass',
-          teacher_guidance:
-            'Advanced academic lecture for high-attainers or teacher subject knowledge. Delves into diplomatic exchanges, public press agitation, and the Navy League.',
           viewing_task:
             'Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.',
           model_answer:
@@ -1858,7 +1789,7 @@ const great_war = {
         {
           q: 'Which German Admiral was in charge of expanding the German Navy?',
           a: 'Admiral von Tirpitz',
-          options: ['Admiral Scheer', 'Admiral Hipper', 'Kaiser Wilhelm II', 'Admiral von Tirpitz'],
+          options: ['Kaiser Wilhelm II', 'Admiral Scheer', 'Admiral Hipper', 'Admiral von Tirpitz'],
         },
         {
           q: 'What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?',
@@ -1875,9 +1806,9 @@ const great_war = {
           a: "It was faster, heavier armored, and had all 'big-guns'",
           options: [
             "It was faster, heavier armored, and had all 'big-guns'",
-            'It was the first submarine',
             'It could launch airplanes',
             'It was completely invisible to radar',
+            'It was the first submarine',
           ],
         },
         {
@@ -1894,9 +1825,9 @@ const great_war = {
           q: "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
           a: "Building a navy large enough that Britain wouldn't risk fighting it",
           options: [
+            'Refusing to build any ships to avoid angering Britain',
             'Attacking Britain immediately',
             'Building only submarines',
-            'Refusing to build any ships to avoid angering Britain',
             "Building a navy large enough that Britain wouldn't risk fighting it",
           ],
         },
@@ -1924,10 +1855,10 @@ const great_war = {
           q: 'What laws were passed in Germany to fund their massive naval buildup?',
           a: 'The Naval Laws of 1898 and 1900',
           options: [
-            'The Shipyard Acts',
-            'The Tirpitz Decrees',
-            'The Naval Laws of 1898 and 1900',
             'The Imperial Fleet Bills',
+            'The Shipyard Acts',
+            'The Naval Laws of 1898 and 1900',
+            'The Tirpitz Decrees',
           ],
         },
         {
@@ -1953,7 +1884,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_5',
+      id: 'lesson_4',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
       sources: [
         {
@@ -2214,9 +2145,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=f11CKYB2FCA',
           title: 'Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3',
           duration: '9 mins 47 secs',
-          pathway: 'Core Alliance System',
-          teacher_guidance:
-            "Clear, visual breakdown of the transition from Bismarck's complex defensive network to the rigid two-camp division (Triple Entente vs. Triple Alliance).",
           viewing_task:
             'Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.',
           model_answer:
@@ -2227,9 +2155,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=dYrofaDfMKI',
           title: 'Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3',
           duration: '7 mins 37 secs',
-          pathway: 'Balkan Flashpoints',
-          teacher_guidance:
-            'Focuses on the Bosnian Crisis (1908) and Balkan Wars (1912–13), explaining why the Balkans became the "powder keg" that triggered the alliance chain reaction.',
           viewing_task:
             'Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.',
           model_answer:
@@ -2383,10 +2308,10 @@ const great_war = {
           q: 'What was a major flaw of the alliance system?',
           a: 'A small dispute between two nations could drag all major powers into war',
           options: [
-            'It prevented any trade between the blocs',
-            'A small dispute between two nations could drag all major powers into war',
             'It made the armies too small',
+            'A small dispute between two nations could drag all major powers into war',
             'It forced countries to disarm',
+            'It prevented any trade between the blocs',
           ],
         },
         {
@@ -2403,9 +2328,9 @@ const great_war = {
           q: "What was the 'Entente Cordiale' signed in 1904?",
           a: 'A friendly agreement between Britain and France, settling colonial disputes',
           options: [
+            'An agreement to build dreadnoughts together',
             'A military alliance between Germany and Russia',
             'A peace treaty ending a war',
-            'An agreement to build dreadnoughts together',
             'A friendly agreement between Britain and France, settling colonial disputes',
           ],
         },
@@ -2423,10 +2348,10 @@ const great_war = {
           q: "What does 'Weltpolitik' mean?",
           a: "World policy (Germany's desire for a global empire)",
           options: [
-            'Naval supremacy',
-            'Splendid isolation',
-            "World policy (Germany's desire for a global empire)",
             'Peaceful co-existence',
+            'Naval supremacy',
+            "World policy (Germany's desire for a global empire)",
+            'Splendid isolation',
           ],
         },
         {
@@ -2437,7 +2362,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_6',
+      id: 'lesson_5',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
       video: [
         {
@@ -2446,9 +2371,6 @@ const great_war = {
           title:
             'Simple History: The Bullet that Started WWI (The Assassination of Franz Ferdinand)',
           duration: '10 mins 27 secs',
-          pathway: 'Core Narrative & July Crisis',
-          teacher_guidance:
-            'Engaging, highly accurate animated breakdown of the assassination day in Sarajevo and the subsequent diplomatic chain reaction across Europe.',
           viewing_task:
             "Trace the sequence of events on 28 June 1914 in Sarajevo, from the Black Hand plot to Gavrilo Princip's fateful encounter with the Archduke's car outside Schiller's Delicatessen.",
           model_answer:
@@ -2858,22 +2780,22 @@ const great_war = {
         {
           q: 'Which empire had annexed Bosnia in 1908, angering Serbian nationalists?',
           a: 'Austria-Hungary',
-          options: ['The Ottoman Empire', 'Austria-Hungary', 'Russia', 'Germany'],
+          options: ['Germany', 'Austria-Hungary', 'The Ottoman Empire', 'Russia'],
         },
         {
           q: 'Who was the heir to the Austro-Hungarian throne that visited Sarajevo?',
           a: 'Archduke Franz Ferdinand',
           options: [
-            'Emperor Franz Joseph',
             'Kaiser Wilhelm II',
-            'Archduke Franz Ferdinand',
             'Tsar Nicholas II',
+            'Archduke Franz Ferdinand',
+            'Emperor Franz Joseph',
           ],
         },
         {
           q: 'What terrorist group supplied the assassins with weapons?',
           a: 'The Black Hand',
-          options: ['Young Bosnia', 'The Red Army', 'The Serbian Guard', 'The Black Hand'],
+          options: ['The Red Army', 'The Serbian Guard', 'Young Bosnia', 'The Black Hand'],
         },
         {
           q: 'What was the first, failed assassination attempt on the Archduke that morning?',
@@ -2889,10 +2811,10 @@ const great_war = {
           q: "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
           a: 'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
           options: [
-            'Princip had planned the exact route',
-            'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
-            'The Archduke went in to buy a sandwich',
             'The police ordered the car to stop there',
+            'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
+            'Princip had planned the exact route',
+            'The Archduke went in to buy a sandwich',
           ],
         },
         {
@@ -2920,9 +2842,9 @@ const great_war = {
           a: 'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
           options: [
             'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
+            'Because Germany sank a British ship',
             'Because of the assassination in Sarajevo',
             'Because France surrendered',
-            'Because Germany sank a British ship',
           ],
         },
       ],
@@ -2973,9 +2895,9 @@ const great_war = {
       q: 'Which two countries did Bismarck fear would ally against Germany?',
       a: 'France and Russia',
       options: [
-        'Britain and France',
         'Russia and Austria-Hungary',
         'Britain and Russia',
+        'Britain and France',
         'France and Russia',
       ],
       id: 'gw_q6',
@@ -3028,16 +2950,16 @@ const great_war = {
     {
       q: 'In which African country did Wilhelm provoke crises in 1905 and 1911?',
       a: 'Morocco',
-      options: ['Egypt', 'South Africa', 'Morocco', 'Sudan'],
+      options: ['Sudan', 'Egypt', 'Morocco', 'South Africa'],
       id: 'gw_q12',
     },
     {
       q: 'What was the result of the First Moroccan (Tangier) Crisis?',
       a: 'Britain and France grew closer, isolating Germany',
       options: [
-        'Germany gained control of Morocco',
         'The Entente Cordiale was dissolved',
         'Russia declared war on Germany',
+        'Germany gained control of Morocco',
         'Britain and France grew closer, isolating Germany',
       ],
       id: 'gw_q13',
@@ -3051,7 +2973,7 @@ const great_war = {
     {
       q: 'What was the name of the German gunboat sent to Agadir in 1911?',
       a: 'SMS Panther',
-      options: ['HMS Dreadnought', 'SMS Emden', 'SMS Panther', 'SMS Bismarck'],
+      options: ['SMS Emden', 'SMS Bismarck', 'SMS Panther', 'HMS Dreadnought'],
       id: 'gw_q15',
     },
     {
@@ -3085,7 +3007,7 @@ const great_war = {
     {
       q: "What was Britain's traditional foreign policy of avoiding European alliances called?",
       a: 'Splendid Isolation',
-      options: ['Splendid Isolation', 'The Two-Power Standard', 'Balance of Power', 'Appeasement'],
+      options: ['Splendid Isolation', 'Appeasement', 'The Two-Power Standard', 'Balance of Power'],
       id: 'gw_q19',
     },
     {
@@ -3109,10 +3031,10 @@ const great_war = {
       q: 'What declining multi-ethnic empire dominated the northern Balkans?',
       a: 'The Austro-Hungarian Empire',
       options: [
-        'The Ottoman Empire',
         'The Russian Empire',
-        'The Austro-Hungarian Empire',
         'The British Empire',
+        'The Austro-Hungarian Empire',
+        'The Ottoman Empire',
       ],
       id: 'gw_q22',
     },
@@ -3120,9 +3042,9 @@ const great_war = {
       q: 'Which empire was retreating from the Balkans, leaving a power vacuum?',
       a: 'The Ottoman Empire',
       options: [
-        'The Austro-Hungarian Empire',
         'The Russian Empire',
         'The German Empire',
+        'The Austro-Hungarian Empire',
         'The Ottoman Empire',
       ],
       id: 'gw_q23',
@@ -3130,7 +3052,7 @@ const great_war = {
     {
       q: "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
       a: 'Serbia',
-      options: ['Serbia', 'Bosnia', 'Croatia', 'Bulgaria'],
+      options: ['Serbia', 'Bulgaria', 'Bosnia', 'Croatia'],
       id: 'gw_q24',
     },
     {
@@ -3159,7 +3081,7 @@ const great_war = {
     {
       q: 'In which city was the Archduke assassinated?',
       a: 'Sarajevo',
-      options: ['Belgrade', 'Vienna', 'Berlin', 'Sarajevo'],
+      options: ['Berlin', 'Belgrade', 'Vienna', 'Sarajevo'],
       id: 'gw_q28',
     },
     {
@@ -3171,7 +3093,7 @@ const great_war = {
     {
       q: 'Who assassinated the Archduke?',
       a: 'Gavrilo Princip',
-      options: ['Nedeljko Čabrinović', 'Dragutin Dimitrijević', 'Leon Trotsky', 'Gavrilo Princip'],
+      options: ['Leon Trotsky', 'Nedeljko Čabrinović', 'Dragutin Dimitrijević', 'Gavrilo Princip'],
       id: 'gw_q30',
     },
     {
@@ -3216,7 +3138,7 @@ const great_war = {
     {
       q: 'Which country began mobilizing its army to protect Serbia?',
       a: 'Russia',
-      options: ['France', 'Britain', 'Germany', 'Russia'],
+      options: ['Britain', 'Germany', 'France', 'Russia'],
       id: 'gw_q35',
     },
     {
@@ -3234,7 +3156,7 @@ const great_war = {
     {
       q: 'Which country declared war on Germany due to the invasion of Belgium?',
       a: 'Britain',
-      options: ['Russia', 'Britain', 'Italy', 'The United States'],
+      options: ['Italy', 'Britain', 'The United States', 'Russia'],
       id: 'gw_q38',
     },
     {
@@ -3263,10 +3185,10 @@ const great_war = {
       q: 'What treaty ended the First World War in 1919?',
       a: 'The Treaty of Versailles',
       options: [
-        'The Treaty of Brest-Litovsk',
         'The Treaty of Trianon',
-        'The Treaty of Versailles',
         'The Congress of Vienna',
+        'The Treaty of Versailles',
+        'The Treaty of Brest-Litovsk',
       ],
       id: 'gw_q41',
     },
@@ -3284,7 +3206,7 @@ const great_war = {
     {
       q: 'What is the term for a war launched to destroy a rising threat before it gets too strong?',
       a: 'Preventative War',
-      options: ['Total War', 'War of Attrition', 'Proxy War', 'Preventative War'],
+      options: ['Proxy War', 'Total War', 'War of Attrition', 'Preventative War'],
       id: 'gw_q43',
     },
     {
@@ -3325,7 +3247,7 @@ const great_war = {
     {
       q: 'What ideological threat did the Allies want to separate from Germany after the war?',
       a: 'Soviet Communism',
-      options: ['Fascism', 'Anarchism', 'Imperialism', 'Soviet Communism'],
+      options: ['Anarchism', 'Imperialism', 'Fascism', 'Soviet Communism'],
       id: 'gw_q49',
     },
     {
@@ -3336,16 +3258,6 @@ const great_war = {
     },
   ],
   glossary: [
-    {
-      term: 'Weltpolitik [Velt-pol-ee-teek]',
-      definition:
-        '"World Policy." Kaiser Wilhelm II\'s aggressive foreign policy to transform Germany into a dominant global superpower with an overseas empire and massive battlefleet.',
-    },
-    {
-      term: 'Revanche [Ruh-vahnsh]',
-      definition:
-        '"Revenge." The profound, enduring French national desire to avenge their humiliating defeat in the Franco-Prussian War (1870–71) and reclaim Alsace-Lorraine.',
-    },
     {
       term: 'Alsace-Lorraine',
       definition: 'A resource-rich border region taken by Germany from France in 1871.',

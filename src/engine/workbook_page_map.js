@@ -433,38 +433,38 @@ export const WORKBOOK_PAGE_MAP = {
     },
   },
   great_war: {
-    lesson_1: {
+    lesson_0: {
       page: 3,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 0,
     },
-    lesson_2: {
+    lesson_1: {
       page: 8,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 1,
     },
-    lesson_3: {
-      page: 13,
+    lesson_2: {
+      page: 14,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 2,
     },
-    lesson_4: {
-      page: 18,
+    lesson_3: {
+      page: 20,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 3,
     },
-    lesson_5: {
-      page: 23,
+    lesson_4: {
+      page: 26,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 4,
     },
-    lesson_6: {
-      page: 29,
+    lesson_5: {
+      page: 33,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 5,

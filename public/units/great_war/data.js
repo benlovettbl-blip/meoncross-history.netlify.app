@@ -32,7 +32,7 @@ const great_war = {
   ],
   lessons: [
     {
-      id: 'lesson_1',
+      id: 'lesson_0',
       title: 'How was the German Empire created in 1871?',
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
       teacher_notes: {
@@ -228,9 +228,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=-PAEmgYv0DE',
           title: 'German Unification and Empire - History in 5 Minutes',
           duration: '5 mins 21 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Punchy starter recap or SEN visual hook. Rapidly outlines Bismarck\'s "blood and iron" doctrine and the three decisive unification wars in just over 5 minutes.',
           viewing_task:
             'Note down the key steps Bismarck took to unify the German states and create the Empire.',
           model_answer:
@@ -241,9 +238,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=o_PKusG7NFs',
           title: '"The Great War" 1 | What Made Germany So Successful Before World War 1?',
           duration: '23 mins 7 secs',
-          pathway: 'Deep-Dive Documentary',
-          teacher_guidance:
-            "Recommended for flipped learning, independent homework, or high-attaining pupils seeking in-depth analysis of Wilhelmine Germany's industrial boom, steel production, and military discipline.",
           viewing_task:
             'Watch the first 5 minutes of this documentary and note down the key factors that made the German Empire such a powerful new nation.',
           model_answer:
@@ -328,7 +322,7 @@ const great_war = {
       ],
       primary_source: {
         title:
-          'Source A: Cartographic Analysis — The German Empire (1871) vs Modern European Borders',
+          'Source A: A map from 1871 showing the newly created German Empire compared to modern Germany.',
         src: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
         caption:
           'This map illustrates the dramatic shift in European borders following the Franco-Prussian War in 1871. By uniting various independent German states into a single, massive German Empire under Prussian leadership, Otto von Bismarck completely altered the balance of power in Europe. This sudden creation of a massive, heavily armed, and highly industrialized powerhouse in the center of Europe deeply terrified its neighbors, setting the stage for future conflict.',
@@ -348,11 +342,6 @@ const great_war = {
               'Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia).',
           },
         ],
-        shelfmark: 'Comparative Cartographic Study',
-        citation:
-          'Comparative Historical Cartography: German Empire (1871) boundary surveys paired with modern European geopolitical borders.',
-        context:
-          "In January 1871, following Prussia's swift victory over France in the Franco-Prussian War, Otto von Bismarck united thirty-nine sovereign German states into a single unified empire dominated by Prussia. This cartographic comparison reveals the massive geopolitical footprint of the new state in the very heart of Central Europe, stretching from Alsace-Lorraine in the west to East Prussia in the east. The sudden arrival of a heavily industrialized empire with an army of over one million men completely shattered the traditional European balance of power established after the Napoleonic Wars. **Hinge Question:** How did the central geographical position and massive borders of the newly unified German Empire create immediate security dilemmas for both Germany and its neighbors?",
       },
       vocab: [
         {
@@ -374,49 +363,8 @@ const great_war = {
       },
     },
     {
-      id: 'lesson_2',
+      id: 'lesson_1',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
-      video: [
-        {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
-          title: 'History Matters: The Franco Prussian War (Short Animated Documentary)',
-          duration: '3 mins 49 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Ideal for starter recaps, rapid retrieval, or lower-attaining / SEN learners needing core factual concepts without cognitive overload.',
-          viewing_task:
-            'Identify how Otto von Bismarck engineered the conflict against Napoleon III, how the German Empire was proclaimed in Versailles, and why the annexation of Alsace-Lorraine created permanent French resentment.',
-          model_answer:
-            'Bismarck used the Ems Dispatch to provoke Napoleon III into declaring war, uniting the southern German states with Prussia. Prussian military efficiency culminated in the catastrophic French defeat at Sedan. In January 1871, the German Empire was proclaimed in the Hall of Mirrors at Versailles, and Germany annexed the border province of Alsace-Lorraine and imposed a 5 billion franc indemnity, establishing an enduring French desire for revenge (revanche).',
-        },
-        {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=xfTI_YLapog',
-          title: 'Welcome To Glory & Defeat - Why We Should Remember The Franco-Prussian War',
-          duration: '4 mins 28 secs',
-          pathway: 'Broader Context & Strategic Causes',
-          teacher_guidance:
-            'Excellent introductory hook, homework primer, or flipped learning task before analyzing the Ems Telegram and the proclamation in the Hall of Mirrors.',
-          viewing_task:
-            'Watch this introductory overview and note down three reasons why the Franco-Prussian War of 1870–71 was a crucial turning point that shaped modern European history and paved the path toward 1914.',
-          model_answer:
-            'The documentary explains that the Franco-Prussian War created the modern German nation-state, destroyed the French Second Empire, led to the traumatic Paris Commune, and ignited decades of bitter French resentment (revanche) that made a future European confrontation virtually inevitable.',
-        },
-        {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=xVISzFmBiPU',
-          title: 'The Armchair Historian: How Prussia Ended The French Empire',
-          duration: '27 mins 56 secs',
-          pathway: 'In-Depth Military Mechanics',
-          teacher_guidance:
-            'Great for high-attainers wanting granular tactical detail on Krupp breech-loading steel artillery, railway mobilization, and the Sedan encirclement.',
-          viewing_task:
-            'Observe the technological and logistical advantages of the Prussian military (Krupp breech-loading artillery, needle guns, railway mobilization) over the French Imperial Army.',
-          model_answer:
-            'Prussia utilised rapid railway mobilisation and a professional General Staff under Helmuth von Moltke. Prussian breech-loading Krupp steel artillery heavily outranged French bronze muzzle-loaders, allowing the Prussians to encircle and annihilate French armies at Sedan and Metz despite the superior French Chassepot rifle.',
-        },
-      ],
       sources: [
         {
           title: 'Map A: The Annexation of Alsace-Lorraine (Treaty of Frankfurt, 1871)',
@@ -425,9 +373,6 @@ const great_war = {
             'Map showing the strategic borderland of Alsace-Lorraine (Reichsland Elsaß-Lothringen), seized from France by Otto von Bismarck following the Franco-Prussian War of 1870–71.',
           context:
             'Following their victory in 1871, the Germans annexed Alsace and northern Lorraine. This was an economic and psychological catastrophe for France: the region contained 80% of France’s iron ore, vital coal deposits, and major textile factories, while placing 1.5 million French citizens under German military control. For the next 44 years, French school children were taught that Alsace-Lorraine was a "stolen child," and the statue representing Strasbourg in Paris was draped in black mourning cloth until 1918. This annexation made permanent peace between France and Germany impossible, driving France into the arms of Russia and Britain and creating the rigid alliance system of 1914. **Hinge Question:** Why did Bismarck’s annexation of Alsace-Lorraine make a future war between France and Germany virtually inevitable?',
-          shelfmark: 'Curriculum Reference Cartography',
-          citation:
-            'Historical reference cartography illustrating the border changes and territorial cessions under the Treaty of Frankfurt (1871).',
         },
         {
           title: 'Source B: The Black Spot (La Tache Noire) by Albert Bettannier (1887)',
@@ -436,9 +381,6 @@ const great_war = {
             'Albert Bettannier’s iconic 1887 painting (Musée d’Orsay) showing a French schoolmaster in a black coat pointing with a wooden pointer to the blacked-out region of Alsace-Lorraine on a classroom map of France. A young French boy in a cadet uniform stands attentively beside him while solemn schoolmates look on, illustrating how an entire generation of French schoolchildren was educated to prepare for revenge (revanche) against Germany.',
           context:
             'Painted in 1887, this masterpiece captures the intense patriotic indoctrination in French schools under the Third Republic. Following the humiliation of 1871, school textbooks taught French boys that Alsace-Lorraine was a sacred territory stolen by the German Empire. Physical education and military drill were introduced into elementary schools so that pupils would grow into soldiers ready to reconquer the lost provinces. Notice the military medal on the student on the right and the drums in the corner. This relentless cultural focus on revanche meant that no French politician could ever accept permanent German control over the borderlands. **Hinge Question:** How does Bettannier use the classroom setting to prove that the Franco-Prussian War of 1871 had not truly ended?',
-          shelfmark: "Musée d'Orsay RF 1982-53",
-          citation:
-            "Albert Bettannier, La Tache Noire (The Black Spot), 1887, Oil on canvas, Musée d'Orsay, Paris",
         },
       ],
       vocab: [
@@ -480,32 +422,6 @@ const great_war = {
           term: 'Reinsurance Treaty',
           definition:
             'A secret 1887 agreement between Germany and Russia pledging mutual neutrality if attacked.',
-        },
-        {
-          term: 'Nationalism',
-          definition:
-            "A fierce devotion to one's nation, believing shared language and culture should unite an independent state.",
-        },
-        {
-          term: 'Imperialism',
-          definition:
-            "The policy of extending a nation's authority by territorial acquisition or political/economic dominance.",
-        },
-      ],
-      distinction_tasks: [
-        {
-          terms: ['Annexation', 'Revanche'],
-          question:
-            'Explain the crucial historical distinction and cause-and-effect relationship between Annexation and Revanche following the Franco-Prussian War.',
-          model_answer:
-            'Annexation refers to the physical and legal seizure of sovereign territory (specifically Germany taking Alsace-Lorraine under the 1871 Treaty of Frankfurt), whereas Revanche is the deep psychological and political doctrine of revenge that this loss provoked across French society, making permanent European reconciliation impossible.',
-        },
-        {
-          terms: ['Nationalism', 'Imperialism'],
-          question:
-            'Explain the crucial historical distinction between 19th-century European Nationalism and Imperialism.',
-          model_answer:
-            'Nationalism is the ideological movement asserting that people with a shared language, culture, and identity have the right to self-determination and political unity within a sovereign state (exemplified by German unification in 1871). In contrast, Imperialism is the aggressive projection of state power to conquer, dominate, and exploit external lands, colonies, and distinct foreign populations.',
         },
       ],
       extended: {
@@ -592,11 +508,6 @@ const great_war = {
         ],
         model_answer:
           'The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914.',
-        shelfmark: 'BArch Bild 183-R1218-502 / Friedrichsruh Edition',
-        citation:
-          'Anton von Werner, The Proclamation of the German Empire, 1885 (Third Version, Bismarck-Museum Friedrichsruh)',
-        context:
-          'Anton von Werner was commissioned by the Prussian royal family to immortalize the declaration of the German Empire. The ceremony was deliberately staged inside the Hall of Mirrors at the Palace of Versailles—the ancestral palace of French kings—while Prussian siege artillery was still shelling Paris. Otto von Bismarck stands prominently in the center wearing a gleaming white cuirassier uniform, surrounded by German princes raising their sabers to Kaiser Wilhelm I. This calculated humiliation caused a deep, enduring trauma in French society known as revanche (revenge). **Hinge Question:** Why was staging the German coronation inside the French royal palace of Versailles guaranteed to make future reconciliation between the two nations impossible?',
       },
       flashcards: [
         {
@@ -949,30 +860,18 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_3',
+      id: 'lesson_2',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
       sources: [
         {
-          title: 'Map A: The Partition of Africa at the Outbreak of War (1914)',
+          title: 'Map A: Partition of Africa (1914)',
           src: '/units/great_war/assets/map_lesson2.png',
-          caption:
-            'Curriculum reference map illustrating the complete division of the African continent following thirty years of imperial expansion under the Berlin Act of 1885.',
-          shelfmark: 'Curriculum Reference Cartography',
-          citation:
-            'Curriculum Reference Cartography based on colonial territorial boundaries established following the 1884–85 Berlin Conference.',
-          context:
-            "Between 1881 and 1914, European powers invaded and colonized 90% of the African continent during the 'Scramble for Africa'. At the Berlin Conference of 1884–85, Bismarck mediated the partition of territory to prevent war between European empires, establishing the principle of 'effective occupation'. By 1914, Britain held a vast continuous north-south corridor from Egypt to South Africa, France dominated West and Equatorial Africa, while Germany controlled Tanganyika, South-West Africa, Cameroon, and Togoland. Clashes over African territory—such as the Fashoda Incident (1898) and the First and Second Moroccan Crises (1905, 1911)—brought the great powers to the brink of war and solidified the Anglo-French Entente Cordiale. **Hinge Question:** To what extent did imperial rivalry in Africa accelerate the division of Europe into hostile military alliance blocs?",
+          caption: '',
         },
         {
-          title: 'Map B: Walter Crane’s Imperial Federation Map of the World (1886)',
+          title: 'Map B: The Global Imperial Lanes',
           src: '/units/great_war/assets/map_lesson2_b.png',
-          caption:
-            'Walter Crane’s famous 1886 world map showing the extent of the British Empire (coloured in red), maritime shipping routes, and global telegraph cables, framed by figures representing the colonies.',
-          shelfmark: 'British Library Cartographic Collection Maps 957.(46.)',
-          citation:
-            'Walter Crane, Imperial Federation: Map of the World Showing the Extent of the British Empire in 1886 (London: Maclure & Co., 1886)',
-          context:
-            "Created for the Colonial and Indian Exhibition of 1886, Walter Crane's iconic map visualizes the vast global network of the British Empire, spanning one-quarter of the world's landmass and population. The map prominently traces the global maritime shipping lanes and submarine telegraph cables that connected London to Bombay, Singapore, Sydney, and Cape Town. When Kaiser Wilhelm II launched Germany's Weltpolitik (World Policy) and built a high-seas fleet, British statesmen viewed it as an existential threat to these delicate maritime arteries that sustained the British home islands. **Hinge Question:** Why would any attempt by Germany to build a powerful navy directly threaten the global imperial trade routes shown on Crane's map?",
+          caption: '',
         },
       ],
       vocab: [
@@ -1085,7 +984,7 @@ const great_war = {
       },
       primary_source: {
         title:
-          "Source A: John Tenniel’s Satirical Cartoon — 'The Greedy Boy' (Punch Magazine, 10 January 1885)",
+          'Source A: A political cartoon by John Tenniel from 1885 showing German Chancellor Otto von Bismarck as a greedy boy.',
         src: '/units/great_war/assets/was_greedy_boy.png',
         caption:
           "This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
@@ -1113,11 +1012,6 @@ const great_war = {
         ],
         model_answer:
           "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire.",
-        shelfmark: 'Punch Historical Archive, Vol. 88, p. 19',
-        citation:
-          "Sir John Tenniel, 'The Greedy Boy', Punch, or the London Charivari, 10 January 1885",
-        context:
-          "Published during the Berlin Conference (1884–85), this cartoon captures British alarm over German Chancellor Otto von Bismarck's sudden entry into the colonial arena. John Bull, depicted as an innocent schoolboy with an empty plate, watches in astonishment as Bismarck cuts himself massive portions of the imperial plum pudding, labeled 'New Guinea' and 'Angra Pequena' (German South-West Africa). The cartoon illustrates the growing British suspicion that Germany was no longer content with being a European continental power and was now demanding a global empire ('a place in the sun'). **Hinge Question:** How does Tenniel's depiction of Bismarck as a greedy boy reflect British anxieties about Germany overturning the global status quo?",
       },
       flashcards: [
         {
@@ -1212,16 +1106,13 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
-          title: "What was the 'Scramble for Africa'? - BBC What's New",
-          duration: '3 mins 0 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Bite-sized starter recap or SEN introduction. Explains the 1884 Berlin Conference and how European empires carved up the continent without African consultation.',
+          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
+          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
+          duration: '26 mins 6 secs',
           viewing_task:
-            'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
+            'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
           model_answer:
-            'At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted.',
+            "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy.",
         },
         {
           type: 'youtube',
@@ -1229,9 +1120,6 @@ const great_war = {
           title:
             '80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I',
           duration: '12 mins 49 secs',
-          pathway: 'Core Curriculum Overview',
-          teacher_guidance:
-            'Ideal for direct whole-class instruction or guided note-taking. Connects industrial capitalism, raw material extraction, and imperial rivalry directly to the road to 1914.',
           viewing_task:
             'Note down how the industrial revolution pushed European nations to scramble for African colonies.',
           model_answer:
@@ -1239,16 +1127,13 @@ const great_war = {
         },
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
-          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
-          duration: '26 mins 6 secs',
-          pathway: 'Deep-Dive Documentary',
-          teacher_guidance:
-            'Superb for flipped learning, independent research, or high-attainers. Explores the interlocking tensions of Weltpolitik, the Moroccan Crises, and naval competition in rich narrative detail.',
+          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
+          title: "What was the 'Scramble for Africa'? - BBC What's New",
+          duration: '3 mins 0 secs',
           viewing_task:
-            'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
+            'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
           model_answer:
-            "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy.",
+            'At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted.',
         },
       ],
       narrative_blocks: [
@@ -1457,19 +1342,13 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_4',
+      id: 'lesson_3',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       sources: [
         {
-          title: 'Map A: The North Sea & Naval Chokepoints (Strategic Hydrographic Map)',
+          title: 'Map A: The North Sea & Naval Chokepoints',
           src: '/units/great_war/assets/map_lesson3.png',
-          caption:
-            'Strategic hydrographic reference map of the North Sea showing the shallow German Bight, the English Channel bottleneck, and the northern naval blockade patrol lines between Scotland and Norway.',
-          shelfmark: 'Curriculum Reference Cartography',
-          citation:
-            'Curriculum Reference Cartography based on British Admiralty North Sea naval patrol zones and strategic choke points (1914).',
-          context:
-            'Geography dictated naval strategy in the Anglo-German arms race. The German High Seas Fleet was trapped in the shallow waters of the German Bight behind Heligoland, with only two exits into the open Atlantic: the heavily defended English Channel and the northern choke point between the Orkney Islands and Norway. By stationing the British Grand Fleet at Scapa Flow in Scotland, the Royal Navy could enforce a distant blockade on Germany without risking its battleships near German minefields and U-boats. This blockade would eventually starve Germany of vital food and fertilizer imports during World War I. **Hinge Question:** How did the natural geography of the North Sea give Britain a decisive strategic advantage over the German fleet?',
+          caption: '',
         },
       ],
       vocab: [
@@ -1583,10 +1462,10 @@ const great_war = {
       },
       primary_source: {
         title:
-          'Source A: Admiralty Elevation & Deck Plan — The Revolutionary Design of HMS Dreadnought (1906)',
+          'Source A: An official technical blueprint from 1906 showing the revolutionary design of HMS Dreadnought.',
         src: '/units/great_war/assets/was_dreadnought_blueprint.png',
         caption:
-          "Contemporary architectural elevation and upper deck layout from Brassey's Naval Annual, illustrating the revolutionary 'all-big-gun' armament and turbine machinery of HMS Dreadnought.",
+          'This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.',
         question:
           'Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?',
         tasks: [
@@ -1599,11 +1478,6 @@ const great_war = {
         ],
         model_answer:
           "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete.",
-        shelfmark: 'National Maritime Museum / Brassey’s Naval Warship Archives (1913 Edition)',
-        citation:
-          "Brassey's Naval Annual, British Warship Plans & Elevations, 1913 (London: J. Griffin & Co., p. 216)",
-        context:
-          'Launched in February 1906 under the direction of First Sea Lord Sir John Fisher, HMS Dreadnought was the most powerful warship ever built. Equipped with ten 12-inch guns in rotating turrets and powered by revolutionary steam turbine engines, she could steam at 21 knots—faster than any existing battleship—and fire a broadside twice as heavy as any vessel afloat. However, by rendering all pre-dreadnought battleships obsolete overnight, Britain inadvertently wiped out its own overwhelming naval lead. Kaiser Wilhelm II and Admiral Alfred von Tirpitz immediately seized the opportunity to match the Royal Navy by passing the German Naval Laws and building their own dreadnought fleet (the Nassau and Helgoland classes). **Hinge Question:** Why did building HMS Dreadnought represent both a crowning British technological triumph and a disastrous strategic gamble?',
       },
       flashcards: [
         {
@@ -1694,26 +1568,9 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=yryey5NVODs',
-          title:
-            '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
-          duration: '2 mins 35 secs',
-          pathway: 'Quick Summary',
-          teacher_guidance:
-            'Snappy starter clip focusing on the Second German Naval Law of 1900 and Admiral von Tirpitz\'s "Risk Fleet" doctrine.',
-          viewing_task:
-            'Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.',
-          model_answer:
-            'The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes.',
-        },
-        {
-          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=-osfjjJuY6U',
           title: 'Anglo-German Dreadnought Arms Race - Anything you can build I can build better!',
           duration: '32 mins 1 sec',
-          pathway: 'In-Depth Naval Analysis',
-          teacher_guidance:
-            "Superb for whole-class exploration or extension study into the revolutionary engineering of HMS Dreadnought, Fisher's reforms, and the North Sea gunnery race.",
           viewing_task:
             'Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.',
           model_answer:
@@ -1721,12 +1578,20 @@ const great_war = {
         },
         {
           type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=yryey5NVODs',
+          title:
+            '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
+          duration: '2 mins 35 secs',
+          viewing_task:
+            'Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.',
+          model_answer:
+            'The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes.',
+        },
+        {
+          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=qmYJUYwsZqY',
           title: '67. Anglo-German Relations',
           duration: '52 mins 22 secs',
-          pathway: 'Archival Masterclass',
-          teacher_guidance:
-            'Advanced academic lecture for high-attainers or teacher subject knowledge. Delves into diplomatic exchanges, public press agitation, and the Navy League.',
           viewing_task:
             'Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.',
           model_answer:
@@ -1953,32 +1818,20 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_5',
+      id: 'lesson_4',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
       sources: [
         {
-          title: 'Diagram A: The European Alliance System Matrix (1879–1914)',
+          title: 'Diagram A: The Alliance System (1914)',
           src: '/units/great_war/assets/alliance_system.svg',
-          caption:
-            'Curriculum analytical matrix mapping the interlocking bilateral and multilateral mutual defence pacts dividing Europe into the Triple Alliance and Triple Entente.',
-          shelfmark: 'Curriculum Analytical Diagram',
-          citation:
-            'Curriculum analytical diagram mapping the bilateral and multilateral mutual defence pacts (1879–1914).',
-          context:
-            "Between the Dual Alliance of 1879 and the Anglo-Russian Convention of 1907, Europe gradually crystallized into two armed camps: the Triple Alliance (Germany, Austria-Hungary, Italy) and the Triple Entente (Britain, France, Russia). While statesmen argued that balance-of-power alliances would deter any single power from risking war, the system removed flexibility. Each power felt bound to support its ally even in reckless ventures—such as Germany backing Austria-Hungary with the 'blank cheque'—for fear of losing its only partner and facing encirclement. **Hinge Question:** Why did the formation of the Triple Entente convince German military planners that war was inevitable sooner rather than later?",
+          caption: 'The complex web of treaties that dragged Europe into a global war.',
         },
         {
-          title: 'Map A: European Military Alliance Blocs & Ethno-National Minorities (1914)',
+          title: 'Map A: European Military Alliance Blocs (1914)',
           src: '/units/great_war/assets/map_lesson4.png',
-          caption:
-            'Geopolitical reference map of Europe in 1914 showing the central bloc of the Central Powers (brown) surrounded by the Triple Entente (green), highlighting the volatile ethnic fault lines within Austria-Hungary.',
+          caption: '',
           question:
             'Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?',
-          shelfmark: 'Curriculum Reference Cartography',
-          citation:
-            'Curriculum reference map illustrating the Triple Entente and Central Powers European military alliance blocs in 1914.',
-          context:
-            'This map illustrates the profound strategic vulnerability felt in Berlin and Vienna. Positioned in the center of Europe, Germany and Austria-Hungary faced a two-front war against France in the west and the Russian Empire in the east. At the same time, Austria-Hungary was an empire of eleven distinct nationalities (Germans, Hungarians, Czechs, Slovaks, Poles, Ukrainians, Croats, Serbs, Slovenes, Romanians, and Italians), many of whom yearned for independence. If Serbia succeeded in uniting South Slavs, Austria-Hungary would disintegrate. This internal fragility made Austro-Hungarian leaders desperate to crush Serbian nationalism once and for all. **Hinge Question:** How did the internal ethnic instability of Austria-Hungary make its alliance with Germany extraordinarily dangerous for European peace?',
         },
       ],
       vocab: [
@@ -2089,10 +1942,10 @@ const great_war = {
       },
       primary_source: {
         title:
-          "Source A: Nelson Harding’s Editorial Cartoon — 'The Chain of Friendship' (July 1914)",
+          'Source A: An American political cartoon from July 1914 showing the chain reaction of the European alliance system.',
         src: '/units/great_war/assets/was_military_matrix.png',
         caption:
-          'Editorial cartoon published in the Brooklyn Daily Eagle (July 1914) satirising how the rigid system of European treaty obligations dragged one nation after another into war.',
+          'This cartoon vividly illustrates the terrifying domino effect of the European alliance system. Following the assassination in Sarajevo, the rigid network of treaties dragged all the major powers into war. Serbia is threatened by Austria-Hungary, who is threatened by Russia, who is threatened by Germany, and so on. The alliances, which were theoretically designed to prevent war by acting as a deterrent, instead acted as tripwires that guaranteed a localized dispute would instantly explode into a continent-wide conflict.',
         question:
           'Enquiry: Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?',
         tasks: [
@@ -2111,11 +1964,6 @@ const great_war = {
         ],
         model_answer:
           "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war.",
-        shelfmark: 'Library of Congress Prints & Photographs LC-USZ62-114782',
-        citation:
-          "Nelson Harding, 'The Chain of Friendship', Brooklyn Daily Eagle, July 1914 (Reprinted across American newspapers)",
-        context:
-          "Created in July 1914 as the Austro-Hungarian ultimatum expired, this classic cartoon portrays the major powers of Europe as a line of men ready to strike each other. Serbia is confronted by Austria-Hungary ('If you touch me I'll—'), who is threatened by Russia ('If you make a move I'll—'), who is threatened by Germany ('If you strike my friend I'll—'), who is confronted by France and Britain. The cartoon illustrates how defensive treaties, originally negotiated to deter aggression through mutual defense, instead functioned as a lethal tripwire mechanism that converted a regional Balkan clash into an uncontrollable world war. **Hinge Question:** Does Harding's cartoon portray the European leaders as calculated aggressors or as helpless prisoners of their own treaties?",
       },
       flashcards: [
         {
@@ -2214,9 +2062,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=f11CKYB2FCA',
           title: 'Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3',
           duration: '9 mins 47 secs',
-          pathway: 'Core Alliance System',
-          teacher_guidance:
-            "Clear, visual breakdown of the transition from Bismarck's complex defensive network to the rigid two-camp division (Triple Entente vs. Triple Alliance).",
           viewing_task:
             'Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.',
           model_answer:
@@ -2227,9 +2072,6 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=dYrofaDfMKI',
           title: 'Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3',
           duration: '7 mins 37 secs',
-          pathway: 'Balkan Flashpoints',
-          teacher_guidance:
-            'Focuses on the Bosnian Crisis (1908) and Balkan Wars (1912–13), explaining why the Balkans became the "powder keg" that triggered the alliance chain reaction.',
           viewing_task:
             'Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.',
           model_answer:
@@ -2437,57 +2279,24 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_6',
+      id: 'lesson_5',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
-      video: [
-        {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=Fmobm9pZtTg',
-          title:
-            'Simple History: The Bullet that Started WWI (The Assassination of Franz Ferdinand)',
-          duration: '10 mins 27 secs',
-          pathway: 'Core Narrative & July Crisis',
-          teacher_guidance:
-            'Engaging, highly accurate animated breakdown of the assassination day in Sarajevo and the subsequent diplomatic chain reaction across Europe.',
-          viewing_task:
-            "Trace the sequence of events on 28 June 1914 in Sarajevo, from the Black Hand plot to Gavrilo Princip's fateful encounter with the Archduke's car outside Schiller's Delicatessen.",
-          model_answer:
-            "Six teenage Bosnian Serb nationalists recruited by the Black Hand lined the Appel Quay armed with bombs and pistols. An initial grenade thrown by Čabrinović missed. Later, when the motorcade changed plans to visit injured officers, the chauffeur took a wrong turn into Franz Josef Street. While trying to reverse, the car stalled outside Schiller's Delicatessen directly in front of Gavrilo Princip, who fired two shots, killing Sophie and Franz Ferdinand and sparking the July Crisis.",
-        },
-      ],
       sources: [
         {
-          title: 'Diagram A: The July Crisis Domino Sequence (1914)',
+          title: 'Diagram A: The July Crisis Domino Effect',
           src: '/units/great_war/assets/july_crisis.svg',
           caption:
-            'Curriculum causal flowchart illustrating the thirty-seven days of escalating ultimatums and mobilisations following the assassination of Archduke Franz Ferdinand.',
-          shelfmark: 'Curriculum Analytical Flowchart',
-          citation:
-            'Curriculum causal chronology tracing the escalation of the July Crisis from the Sarajevo assassination to the outbreak of war.',
-          context:
-            "The assassination of Franz Ferdinand on 28 June 1914 did not immediately cause war. For three weeks, European diplomacy seemed normal. But behind the scenes, Austria-Hungary secured a 'blank cheque' of unconditional support from Germany on 5 July, and on 23 July issued an impossible 48-hour ultimatum to Serbia. When Serbia accepted nine of the ten points but rejected Austro-Hungarian officials running investigations inside Serbia, Austria declared war on 28 July and bombarded Belgrade. Russia mobilized to protect Serbia; Germany declared war on Russia and France; and Germany's invasion of neutral Belgium on 4 August triggered Britain's entry into the war. **Hinge Question:** At which specific point during the July Crisis could the escalation to a world war have been averted?",
+            'How a single assassination in the Balkans escalated into a world war within a month.',
         },
         {
-          title: 'Map A: The Balkan Peninsula & The Frontiers of 1914',
+          title: 'Map A: The Balkan Peninsula (1914)',
           src: '/units/great_war/assets/balkans_1914_simple_map.png',
-          caption:
-            'Cartographic reference map showing the expansion of Serbia and the Balkan states following the Balkan Wars of 1912–13, bordering the Austro-Hungarian provinces of Bosnia and Herzegovina.',
-          shelfmark: 'Curriculum Reference Cartography',
-          citation:
-            'Historical reference cartography illustrating the borders of Serbia, Bulgaria, Greece, and Ottoman Thrace following the Balkan Wars (1912–13).',
-          context:
-            "Known as the 'powder keg of Europe', the Balkan Peninsula was the meeting point of three decaying empires: the Ottoman Empire, the Austro-Hungarian Empire, and the Russian Empire. The annexation of Bosnia and Herzegovina by Austria-Hungary in 1908 provoked deep outrage in Serbia, which hoped to unite all South Slavic peoples into a Greater Serbia. Russia, humiliated by having to back down during the 1908 Bosnian Crisis, vowed never to abandon Serbia again. By 1914, Serbia's military victories in the Balkan Wars made it appear as a grave mortal danger to Austria-Hungary's southern frontier. **Hinge Question:** Why did the geographical expansion of Serbia in 1912–13 terrify Austro-Hungarian leaders in Vienna?",
+          caption: 'Simplified map of the highly unstable Balkan Peninsula in 1914.',
         },
         {
-          title: 'Map B: Forensic Crime Scene Plan — Sarajevo, 28 June 1914: The Fatal Route',
+          title: 'Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route',
           src: '/units/great_war/assets/map_sarajevo_route.jpg',
-          caption:
-            "Historical schematic plan of the Franz Josef Street intersection along the Appel Quay, marking the positions of the assassins and the fateful wrong turn taken by the Archduke's chauffeur.",
-          shelfmark: 'Historical Forensic Plan',
-          citation:
-            'Historical schematic crime scene plan of Franz Josef Street and Appel Quay, Sarajevo (28 June 1914).',
-          context:
-            "This forensic map was compiled by the Sarajevo police following the assassination of Archduke Franz Ferdinand and his wife Sophie. The route followed the Appel Quay along the Miljacka River. After an initial bomb thrown by Nedeljko Čabrinović bounced off the car and exploded behind them, the Archduke decided to visit wounded officers in hospital. Crucially, the motorcade's Czech chauffeur, Leopold Lojka, was never informed of the change of route. When Lojka mistakenly turned right onto Franz Josef Street, Governor Potiorek shouted at him to stop. Lojka braked directly in front of Schiller's delicatessen, where nineteen-year-old Gavrilo Princip was standing just five feet away. Princip drew his Browning FN Model 1910 semi-automatic pistol and fired two shots that ignited the First World War. **Hinge Question:** How does the police sketch map demonstrate the role of pure chance versus careful terrorist conspiracy in the assassination of Franz Ferdinand?",
+          caption: '',
         },
       ],
       vocab: [
@@ -2595,10 +2404,10 @@ const great_war = {
       },
       primary_source: {
         title:
-          "Source A: Leonard Raven-Hill’s Satirical Cartoon — 'The Boiling Point' (Punch Magazine, 2 October 1912)",
+          'Source A: A British political cartoon by Leonard Raven-Hill from 1912 showing European leaders sitting on the boiling Balkans.',
         src: '/units/great_war/assets/was_boiling_point.png',
         caption:
-          "Leonard Raven-Hill's celebrated 1912 cartoon depicting European emperors and statesmen struggling to sit on the lid of the boiling cauldron of 'Balkan Troubles'.",
+          'This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.',
         question:
           "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
         tasks: [
@@ -2617,11 +2426,6 @@ const great_war = {
         ],
         model_answer:
           "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war.",
-        shelfmark: 'Punch Historical Archive, Vol. 143, p. 273',
-        citation:
-          "Leonard Raven-Hill, 'The Boiling Point', Punch, or the London Charivari, 2 October 1912",
-        context:
-          "Published during the First Balkan War in autumn 1912, Raven-Hill's cartoon personifies the Balkans as a violently bubbling cauldron of nationalism and ethnic conflict. The leaders of Britain, Germany, France, Russia, and Austria-Hungary are shown perched precariously on the cauldron lid, desperate to contain the explosive steam before it blows Europe apart. By 1914, two successive Balkan Wars had doubled the territory of Serbia, emboldened radical Slavic nationalist societies like the Black Hand, and left Austria-Hungary determined to crush Serbia before it could destabilize the Habsburg crown lands of Bosnia. **Hinge Question:** What visual symbols does Raven-Hill use to indicate that the Great Powers' attempt to contain the Balkan crisis was unsustainable?",
       },
       flashcards: [
         {
@@ -3337,16 +3141,6 @@ const great_war = {
   ],
   glossary: [
     {
-      term: 'Weltpolitik [Velt-pol-ee-teek]',
-      definition:
-        '"World Policy." Kaiser Wilhelm II\'s aggressive foreign policy to transform Germany into a dominant global superpower with an overseas empire and massive battlefleet.',
-    },
-    {
-      term: 'Revanche [Ruh-vahnsh]',
-      definition:
-        '"Revenge." The profound, enduring French national desire to avenge their humiliating defeat in the Franco-Prussian War (1870–71) and reclaim Alsace-Lorraine.',
-    },
-    {
       term: 'Alsace-Lorraine',
       definition: 'A resource-rich border region taken by Germany from France in 1871.',
     },
@@ -3669,4 +3463,3 @@ const great_war = {
 };
 
 export default great_war;
-if (typeof module !== 'undefined') module.exports = great_war;

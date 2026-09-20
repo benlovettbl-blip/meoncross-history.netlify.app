@@ -34,41 +34,12 @@
             box-sizing: border-box;
         }
         @media print {
-            @page {
-                size: A4 portrait;
-                margin: 12mm 15mm;
-            }
-            body {
-                background: #fff !important;
-                color: #000 !important;
-                padding: 0 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
             .page {
-                margin: 0 !important;
-                box-shadow: none !important;
-                width: 100% !important;
-                min-height: 270mm !important;
-                padding: 0 !important;
-                page-break-after: always !important;
-                break-after: page !important;
-            }
-            .page:last-child {
-                page-break-after: avoid !important;
-                break-after: avoid !important;
-            }
-            .screen-vault-toolbar,
-            .leitner-modal-overlay,
-            .vault-screen-controls,
-            .vault-btn-group,
-            .cover-qr-card {
-                /* ensure clean print output */
-            }
-            .screen-vault-toolbar,
-            .leitner-modal-overlay,
-            .vault-screen-controls {
-                display: none !important;
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100%;
+                padding: 0;
             }
         }
         
@@ -76,13 +47,12 @@
         .cover {
             background-color: var(--brand-dark);
             color: white;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
-            box-sizing: border-box !important;
             background-image: url('/images/john_snow_cholera_map.jpg'); background-size: cover; background-position: center;
         }
         .cover::after {
@@ -97,10 +67,8 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             height: 100%;
-            min-height: 240mm;
-            box-sizing: border-box;
         }
         .cover h1 {
             font-family: 'Playfair Display', serif;
@@ -194,39 +162,6 @@
             font-weight: 700;
             color: #2563eb;
             word-break: break-all;
-        }
-
-        /* Strategy Page Styling */
-        .strategy {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            box-sizing: border-box !important;
-        }
-        .strategy h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 2.2rem;
-        }
-        .strategy h2 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            color: var(--brand-dark);
-            margin-top: 14px;
-            margin-bottom: 6px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 4px;
-        }
-        .strategy p, .strategy li {
-            font-size: 1.02rem;
-            line-height: 1.5;
-            color: #334155;
-        }
-        .strategy ul {
-            margin: 6px 0;
-            padding-left: 20px;
         }
 
         /* Screen-Only Mobile Toolbar */
@@ -1789,7 +1724,7 @@
             table-layout: fixed;
         }
         th, td {
-            border: 1.2px solid #475569;
+            border: 1px solid #ccc;
             padding: 8px 10px;
             text-align: left;
             vertical-align: top;
@@ -1810,25 +1745,26 @@
         
         .rag-checkbox {
             width: 12px; height: 12px;
-            border: 1.5px solid #334155;
+            border: 1px solid #888;
             margin: 0 auto;
             background: white;
         }
 
         /* Footer Debrief */
         .debrief {
-            margin-top: auto !important;
+            margin-top: auto;
             border: 2px dashed var(--brand-red);
-            padding: 14px 18px;
+            padding: 15px;
             background: #fff;
+            margin-top: 20px;
         }
         .debrief h3 {
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--brand-red);
         }
         .debrief p {
-            margin: 4px 0;
+            margin: 5px 0;
             font-weight: 600;
         }
 
@@ -1836,10 +1772,6 @@
         .vault-page {
             background-color: #fffbc8; /* Pastel yellow */
             position: relative;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            box-sizing: border-box !important;
         }
         .vault-watermark {
             position: absolute;
@@ -1854,10 +1786,6 @@
         .vault-content {
             position: relative;
             z-index: 1;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         .vault-page h1 {
             font-family: 'Montserrat', sans-serif;
@@ -1990,29 +1918,20 @@
             }
         }
 
-        /* Tracker Page Flex Distribution */
-        .tracker-page {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            box-sizing: border-box !important;
-        }
+        /* Tracker Page */
         .tracker-page h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            margin-top: 5px;
-            margin-bottom: 4px;
         }
         .tracker-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
-            margin-bottom: 12px;
         }
         .tracker-table th, .tracker-table td {
-            padding: 16px 12px;
-            font-size: 1.05rem;
-            border: 1.2px solid #cbd5e1;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
             text-align: center;
         }
         .tracker-table th {
@@ -2091,34 +2010,9 @@
         }
         .reflection-box {
             border: 2px solid var(--brand-dark);
-            padding: 20px 24px;
-            margin-top: 10px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 240px;
-            background: #fdfdfd;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-        .reflection-box h3 {
-            margin-top: 0;
-            font-size: 1.25rem;
-            color: var(--brand-dark);
-            border-bottom: 2px solid var(--brand-dark);
-            padding-bottom: 4px;
-            margin-bottom: 8px;
-        }
-        .reflection-prompt {
-            margin: 8px 0;
-            font-size: 0.98rem;
-        }
-        .reflection-lines {
-            border-bottom: 1.2px dashed #94a3b8;
-            height: 28px;
-            width: 100%;
-            margin-top: 4px;
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 150px;
         }
 
         /* Print Optimization & Vault Answers Guarantee */
@@ -2192,7 +2086,7 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 126 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
                         <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
                         <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
@@ -3553,9 +3447,9 @@
     </div>
             
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
+    <div class="page vault-page page-break vault-bg" id="the-vault">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content page-body-stretch">
+        <div class="vault-content">
             <h1>THE VAULT</h1>
             <p class="vault-subtitle">Restricted Access: Answer Keys</p>
             <div class="vault-screen-controls">
@@ -3726,13 +3620,7 @@
                     <div class="answer-num">32.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">God’s wrath punishing humanity for sin, and planetary alignments</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg page-flex-full">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content page-body-stretch">
-                <div class="answer-list"><h3>How much progress did the Romans make in public health?</h3>
+                
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet</div>
@@ -3772,7 +3660,13 @@
                     <div class="answer-num">40.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">To march and fight efficiently across the Empire.</div>
                 </div>
-                </div><div class="answer-list"><h3>Why did public health decline during the Middle Ages?</h3>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>Why did public health decline during the Middle Ages?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Hospitals (Valetudinariums).</div>
@@ -3892,13 +3786,7 @@
                     <div class="answer-num">64.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir John Harington</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg page-flex-full">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content page-body-stretch">
-                <div class="answer-list"><h3>To what extent did towns become filthier during the Early Modern period?</h3>
+                
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Houses lacked running piped water and connections to street sewers</div>
@@ -3978,7 +3866,13 @@
                     <div class="answer-num">80.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Population growth outpaced the ability to dispose of waste.</div>
                 </div>
-                </div><div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">John Harington.</div>
@@ -4058,13 +3952,7 @@
                     <div class="answer-num">96.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg page-flex-full">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content page-body-stretch">
-                <div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
+                
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The Victoria, Albert, and Chelsea Embankments along the Thames</div>
@@ -4184,7 +4072,13 @@
                     <div class="answer-num">120.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics</div>
                 </div>
-                </div><div class="answer-list"><h3>End of Unit Assessment: Cholera Investigation</h3>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>End of Unit Assessment: Cholera Investigation</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma</div>
@@ -4219,23 +4113,22 @@
     </div>
     
     <!-- Tracker Page -->
-    <div class="page tracker-page page-flex-full">
-        <div>
-            <h1>Mastery Tracker</h1>
-            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all 126 questions.</p>
-            
-            <table class="tracker-table">
-                <thead>
-                    <tr>
-                        <th class="col-attempt">Attempt</th>
-                        <th class="col-date">Date</th>
-                        <th class="col-score">Score (/126)</th>
-                        <th class="col-sig">Parent Validation Stamp</th>
-                        <th class="col-target">Target for Next Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+    <div class="page tracker-page">
+        <h1>Mastery Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 126 questions.</p>
+        
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th class="col-attempt">Attempt</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-score">Score (/126)</th>
+                    <th class="col-sig">Parent Validation Stamp</th>
+                    <th class="col-target">Target for Next Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4245,7 +4138,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4255,7 +4148,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4265,28 +4158,13 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
 
-        <div class="reflection-box page-body-stretch">
-            <h3>Operative Reflection</h3>
-            <div class="reflection-prompt">
-                <strong>1. My ultimate strength in this unit is...</strong>
-                <div class="reflection-lines"></div>
-                <div class="reflection-lines"></div>
-            </div>
-            <div class="reflection-prompt">
-                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
-                <div class="reflection-lines"></div>
-                <div class="reflection-lines"></div>
-                <div class="reflection-lines"></div>
-            </div>
-            <div class="reflection-prompt">
-                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
-                <div class="reflection-lines"></div>
-                <div class="reflection-lines"></div>
-            </div>
+        <div class="reflection-box">
+            <h3 style="margin-top: 0;">Operative Reflection</h3>
+            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
+            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
         </div>
     </div>
 
