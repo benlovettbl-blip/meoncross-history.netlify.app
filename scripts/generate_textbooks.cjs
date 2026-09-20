@@ -839,16 +839,34 @@ allDirs.forEach((unitId) => {
 
           if (block.source) {
             let sIdx = lesson.sources ? lesson.sources.length + bIdx : bIdx;
-            html += `
-            <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
-              <span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${block.source.title ? `<strong>${badgeSource(block.source.title, getSourceOverride())}</strong><br>` : ''}
-              ${block.source.src || block.source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src || block.source.source, 2) : block.source.src || block.source.source}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
-              ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
-              ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
-              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${block.source.question.replace(/^Source Detective[:.]?\s*/i, '').replace(/^Q\d+[\.\:]\s*/i, '')}</strong></div>` : ''}
-            </div>
-          `;
+            if (unitId === 'cme_new') {
+              html += `
+              <details class="cme-source-drawer source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden;">
+                <summary style="padding: 10px 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #1e293b; user-select: none;">
+                  <span>${badgeSource(block.source.title, getSourceOverride())}</span>
+                  <span style="font-size: 8.5pt; color: #64748b; font-style: italic;">Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span></span>
+                </summary>
+                <div class="cme-source-content" style="padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                  <span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+                  ${block.source.src || block.source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src || block.source.source, 2) : block.source.src || block.source.source}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
+                  ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
+                  ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
+                  ${block.source.hinge_question ? `<div style="margin-top: 10px; padding: 8px 12px; background: #eff6ff; border-left: 3px solid #1e40af; border-radius: 4px; font-size: 9pt; color: #1e3a8a;"><strong>Discussion / Hinge Question:</strong> ${block.source.hinge_question}</div>` : ''}
+                </div>
+              </details>
+            `;
+            } else {
+              html += `
+              <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
+                <span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+                ${block.source.title ? `<strong>${badgeSource(block.source.title, getSourceOverride())}</strong><br>` : ''}
+                ${block.source.src || block.source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src || block.source.source, 2) : block.source.src || block.source.source}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
+                ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
+                ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
+                ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${block.source.question.replace(/^Source Detective[:.]?\s*/i, '').replace(/^Q\d+[\.\:]\s*/i, '')}</strong></div>` : ''}
+              </div>
+            `;
+            }
           }
 
           // Legacy support for single 'image' string

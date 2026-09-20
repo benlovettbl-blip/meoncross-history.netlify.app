@@ -16,9 +16,11 @@ import {
   renderLessonsView,
   renderIndividualsView,
   renderReadingView,
-  renderCompetitionsView,
-  renderChessHubView,
+  renderMasterpieceView,
 } from './views.js'; // Trigger HMR
+import { renderCompetitionsView } from './competitions_zone.js';
+import { renderChessHubView } from './chess_zone.js';
+
 import { renderCurriculumMap } from './curriculum_map.js';
 
 // Subscribe to state changes to handle DOM updates independently of the router
@@ -217,6 +219,8 @@ export function updateBreadcrumbs(customTrail = null) {
     else if (viewName === 'taboo') currentSectionLabel = 'Taboo Recall';
     else if (viewName === 'individuals') currentSectionLabel = 'Key Individuals';
     else if (viewName === 'reading') currentSectionLabel = 'Guided Reading';
+    else if (viewName === 'masterpiece' || viewName === 'gallery')
+      currentSectionLabel = 'Masterpiece Studio';
 
     if (currentSectionLabel) {
       trail.push({ label: currentSectionLabel });
@@ -432,6 +436,8 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     renderCompetitionsView();
   } else if (viewName === 'chess') {
     renderChessHubView();
+  } else if (viewName === 'masterpiece' || viewName === 'gallery') {
+    renderMasterpieceView();
   }
 
   // Update dynamic breadcrumbs

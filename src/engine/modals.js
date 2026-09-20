@@ -2886,131 +2886,6 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const TIMETABLE_DATA = {
     'Week A': {
       Monday: [
-        { period: 'Period 1', time: '09:10 - 10:05', type: 'hub', raw: 'Hub Supervision' },
-        {
-          period: 'Period 3',
-          time: '11:20 - 12:15',
-          type: 'lesson',
-          raw: 'Set 9yHi\nHistory\n(20)',
-        },
-        {
-          period: 'Period 4',
-          time: '12:15 - 13:10',
-          type: 'lesson',
-          raw: 'Set 11aHiD\nHistory\n(7)',
-        },
-        {
-          period: 'Period 5',
-          time: '14:00 - 14:55',
-          type: 'lesson',
-          raw: 'Set 10aHiB\nHistory\n(7)',
-        },
-        {
-          period: 'Period 6',
-          time: '14:55 - 15:50',
-          type: 'lesson',
-          raw: 'Set 11aHiC\nHistory\n(5)',
-        },
-      ],
-      Tuesday: [
-        {
-          period: 'Period 2',
-          time: '10:25 - 11:20',
-          type: 'lesson',
-          raw: 'Set 7XHi\nHistory\n(18)',
-        },
-        { period: 'Period 3', time: '11:20 - 12:15', type: 'hub', raw: 'Hub Supervision' },
-        {
-          period: 'Period 4',
-          time: '12:15 - 13:10',
-          type: 'lesson',
-          raw: 'Set 7YHi\nHistory\n(17)',
-        },
-        {
-          period: 'Period 6',
-          time: '14:55 - 15:50',
-          type: 'lesson',
-          raw: 'Set 11aHiD\nHistory\n(7)',
-        },
-      ],
-      Wednesday: [
-        {
-          period: 'Period 1',
-          time: '09:10 - 10:05',
-          type: 'lesson',
-          raw: 'Set 10aHiB\nHistory\n(7)',
-        },
-        {
-          period: 'Period 3',
-          time: '11:20 - 12:15',
-          type: 'lesson',
-          raw: 'Set 11aHiD\nHistory\n(7)',
-        },
-        {
-          period: 'Period 4',
-          time: '12:15 - 13:10',
-          type: 'lesson',
-          raw: 'Set 11aHiC\nHistory\n(5)',
-        },
-        {
-          period: 'Period 6',
-          time: '14:55 - 15:50',
-          type: 'lesson',
-          raw: 'Set 8yHi\nHistory\n(11)',
-        },
-      ],
-      Thursday: [
-        {
-          period: 'Period 1',
-          time: '09:10 - 10:05',
-          type: 'lesson',
-          raw: 'Set 9xHi\nHistory\n(19)',
-        },
-        {
-          period: 'Period 2',
-          time: '10:25 - 11:20',
-          type: 'lesson',
-          raw: 'Set 8xHi\nHistory\n(11)',
-        },
-        { period: 'Period 3', time: '11:20 - 12:15', type: 'hub', raw: 'Hub Supervision' },
-        {
-          period: 'Period 5',
-          time: '14:00 - 14:55',
-          type: 'lesson',
-          raw: 'Set 11aHiC\nHistory\n(5)',
-        },
-        { period: 'Period 6', time: '14:55 - 15:50', type: 'club', raw: 'Chess Club' },
-      ],
-      Friday: [
-        {
-          period: 'Period 1',
-          time: '09:10 - 10:05',
-          type: 'lesson',
-          raw: 'Set 8xHi\nHistory\n(11)',
-        },
-        {
-          period: 'Period 2',
-          time: '10:25 - 11:20',
-          type: 'lesson',
-          raw: 'Set 9xHi\nHistory\n(19)',
-        },
-        {
-          period: 'Period 3',
-          time: '11:20 - 12:15',
-          type: 'lesson',
-          raw: 'Set 7YHi\nHistory\n(17)',
-        },
-        {
-          period: 'Period 4',
-          time: '12:15 - 13:10',
-          type: 'lesson',
-          raw: 'Set 7XHi\nHistory\n(18)',
-        },
-        { period: 'Period 5', time: '14:00 - 14:55', type: 'hub', raw: 'Hub Supervision' },
-      ],
-    },
-    'Week B': {
-      Monday: [
         {
           period: 'Period 1',
           time: '09:10 - 10:05',
@@ -3153,6 +3028,131 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         },
       ],
     },
+    'Week B': {
+      Monday: [
+        { period: 'Period 1', time: '09:10 - 10:05', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 9yHi\nHistory\n(20)',
+        },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+      ],
+      Tuesday: [
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 7XHi\nHistory\n(18)',
+        },
+        { period: 'Period 3', time: '11:20 - 12:15', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 7YHi\nHistory\n(17)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+      ],
+      Wednesday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 10aHiB\nHistory\n(7)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 11aHiD\nHistory\n(7)',
+        },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        {
+          period: 'Period 6',
+          time: '14:55 - 15:50',
+          type: 'lesson',
+          raw: 'Set 8yHi\nHistory\n(11)',
+        },
+      ],
+      Thursday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 9xHi\nHistory\n(19)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 8xHi\nHistory\n(11)',
+        },
+        { period: 'Period 3', time: '11:20 - 12:15', type: 'hub', raw: 'Hub Supervision' },
+        {
+          period: 'Period 5',
+          time: '14:00 - 14:55',
+          type: 'lesson',
+          raw: 'Set 11aHiC\nHistory\n(5)',
+        },
+        { period: 'Period 6', time: '14:55 - 15:50', type: 'club', raw: 'Chess Club' },
+      ],
+      Friday: [
+        {
+          period: 'Period 1',
+          time: '09:10 - 10:05',
+          type: 'lesson',
+          raw: 'Set 8xHi\nHistory\n(11)',
+        },
+        {
+          period: 'Period 2',
+          time: '10:25 - 11:20',
+          type: 'lesson',
+          raw: 'Set 9xHi\nHistory\n(19)',
+        },
+        {
+          period: 'Period 3',
+          time: '11:20 - 12:15',
+          type: 'lesson',
+          raw: 'Set 7YHi\nHistory\n(17)',
+        },
+        {
+          period: 'Period 4',
+          time: '12:15 - 13:10',
+          type: 'lesson',
+          raw: 'Set 7XHi\nHistory\n(18)',
+        },
+        { period: 'Period 5', time: '14:00 - 14:55', type: 'hub', raw: 'Hub Supervision' },
+      ],
+    },
     duties: {
       Monday: [],
       Tuesday: [],
@@ -3227,105 +3227,132 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const DEFAULT_SET_MAPPING = {
     'Set 7XHi': {
       year: 'Year 7',
-      unit: 'medieval_england',
-      unit_name: 'Medieval England (1066–1485)',
-      default_lesson: 0,
-      default_topic: 'The Norman Conquest & Battle of Hastings',
+      unit: 'water_and_sanitation',
+      unit_name: 'KS3: Water & Sanitation Through Time',
+      default_lesson: 1,
+      default_topic: 'Why did public health decline during the Middle Ages?',
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'collect',
     },
     'Set 7YHi': {
       year: 'Year 7',
-      unit: 'medieval_england',
-      unit_name: 'Medieval England (1066–1485)',
-      default_lesson: 0,
-      default_topic: 'The Norman Conquest & Battle of Hastings',
+      unit: 'water_and_sanitation',
+      unit_name: 'KS3: Water & Sanitation Through Time',
+      default_lesson: 1,
+      default_topic: 'Why did public health decline during the Middle Ages?',
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'collect',
     },
     'Set 8xHi': {
       year: 'Year 8',
       unit: 'industrialisation_and_empire',
-      unit_name: 'Industrialisation, Empire, and Power (1750–1900)',
+      unit_name: 'KS3: Industrialisation, Empire & Power (1750–1900)',
       default_lesson: 0,
       default_topic: 'The Agricultural Revolution & Origins of Industry',
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'collect',
     },
     'Set 8yHi': {
       year: 'Year 8',
       unit: 'industrialisation_and_empire',
-      unit_name: 'Industrialisation, Empire, and Power (1750–1900)',
+      unit_name: 'KS3: Industrialisation, Empire & Power (1750–1900)',
       default_lesson: 0,
       default_topic: 'The Agricultural Revolution & Origins of Industry',
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'collect',
     },
     'Set 9xHi': {
       year: 'Year 9',
       unit: 'great_war',
-      unit_name: 'The Great War (1914–1919)',
-      default_lesson: 0,
-      default_topic: 'The Long-Term Causes of the First World War (MAIN)',
+      unit_name: 'KS3: Causes of the Great War',
+      default_lesson: 2,
+      default_topic: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'collect',
     },
     'Set 9yHi': {
       year: 'Year 9',
       unit: 'great_war',
-      unit_name: 'The Great War (1914–1919)',
-      default_lesson: 0,
-      default_topic: 'The Long-Term Causes of the First World War (MAIN)',
+      unit_name: 'KS3: Causes of the Great War',
+      default_lesson: 2,
+      default_topic: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'collect',
     },
     'Set 10aHiB': {
       year: 'Year 10',
-      unit: 'edexcel_medicine',
-      unit_name: 'Edexcel GCSE Paper 1: Medicine Through Time',
-      default_lesson: 0,
-      default_topic: 'Medieval Ideas on Cause of Disease (Hippocrates & Galen)',
+      unit: 'cme_new',
+      unit_name: 'Paper 2: Conflict in the Middle East (1945–1995)',
+      default_lesson: 2,
+      default_topic: 'KT 1.2: The Aftermath of the 1948–49 War & The Palestinian Refugee Crisis',
+      default_resource: 'workbooks',
+      default_shelf: false,
+      default_collection: 'folders',
     },
     'Set 11aHiC': {
       year: 'Year 11',
-      unit: 'weimar_nazi_germany',
-      unit_name: 'Edexcel GCSE Paper 3: Weimar and Nazi Germany (1918–1939)',
-      default_lesson: 0,
-      default_topic: 'The Legacy of the First World War & The Weimar Constitution',
+      unit: 'edexcel_medicine',
+      unit_name: 'Paper 1: Medicine Through Time (1250–present)',
+      default_lesson: 5,
+      default_topic:
+        'KT2.1: The New Spirit of Enquiry: Humanism, The Printing Press & The Royal Society (c1500–c1700)',
+      default_resource: 'workbooks',
+      default_shelf: true,
+      default_collection: 'folders',
     },
     'Set 11aHiD': {
       year: 'Year 11',
-      unit: 'weimar_nazi_germany',
-      unit_name: 'Edexcel GCSE Paper 3: Weimar and Nazi Germany (1918–1939)',
-      default_lesson: 0,
-      default_topic: 'The Legacy of the First World War & The Weimar Constitution',
+      unit: 'edexcel_medicine',
+      unit_name: 'Paper 1: Medicine Through Time (1250–present)',
+      default_lesson: 5,
+      default_topic:
+        'KT2.1: The New Spirit of Enquiry: Humanism, The Printing Press & The Royal Society (c1500–c1700)',
+      default_resource: 'laptops',
+      default_shelf: false,
+      default_collection: 'folders',
     },
   };
 
   const HUB_BASE_URL = 'https://the-history-revision-hub.netlify.app';
 
   // 1. Dynamic UK Academic Calendar Week Calculation
-  // Academic Reference: Monday 7 September 2026 is Week B (Switched as requested)
+  // Academic Reference: Monday 7 September 2026 is Week A (Term start)
   const getAcademicWeekForDate = (targetDate) => {
-    const refMonday = new Date(2026, 8, 7); // 7 Sept 2026
+    const refMonday = new Date(2026, 8, 7); // Monday 7 Sept 2026 is Week A
     const d = new Date(targetDate);
     const day = d.getDay();
     const diffToMon = (day === 0 ? -6 : 1) - day;
     d.setDate(d.getDate() + diffToMon);
     d.setHours(0, 0, 0, 0);
     const diffWeeks = Math.round((d.getTime() - refMonday.getTime()) / (7 * 24 * 60 * 60 * 1000));
-    return Math.abs(diffWeeks) % 2 === 0 ? 'Week B' : 'Week A';
+    return Math.abs(diffWeeks) % 2 === 0 ? 'Week A' : 'Week B';
   };
 
-  // Helper to compute target date object given day name & tomorrow flag
-  const getTargetDateObj = (dayName, targetIsTomorrow) => {
+  // Helper to compute target date object given day name & target academic week
+  const getTargetDateObj = (dayName, targetWeek) => {
     const d = new Date();
-    if (targetIsTomorrow) {
-      d.setDate(d.getDate() + 1);
-    } else {
-      const curDayIdx = d.getDay();
-      const targetDayIdx = [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-      ].indexOf(dayName);
-      let diff = targetDayIdx - curDayIdx;
-      if (diff < 0) diff += 7;
-      d.setDate(d.getDate() + diff);
+    const curDay = d.getDay(); // 0 = Sun, 1 = Mon ... 6 = Sat
+    const mondayOffset = curDay === 0 ? 1 : curDay === 6 ? 2 : 1 - curDay;
+    const targetMonday = new Date(d);
+    targetMonday.setDate(d.getDate() + mondayOffset);
+    targetMonday.setHours(0, 0, 0, 0);
+
+    const baseWeek = getAcademicWeekForDate(targetMonday);
+    if (targetWeek && targetWeek !== baseWeek) {
+      targetMonday.setDate(targetMonday.getDate() + 7);
     }
-    return d;
+
+    const dayOffsets = { Monday: 0, Tuesday: 1, Wednesday: 2, Thursday: 3, Friday: 4 };
+    const offset = dayOffsets[dayName] !== undefined ? dayOffsets[dayName] : 0;
+    const res = new Date(targetMonday);
+    res.setDate(targetMonday.getDate() + offset);
+    return res;
   };
 
   const formatTargetDate = (d) => {
@@ -3355,23 +3382,20 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const todayIdx = now.getDay();
   const currentHour = now.getHours();
 
-  let isTomorrow = false;
   let currentDay = 'Monday';
-
-  if (currentHour >= 15 || todayIdx === 0 || todayIdx === 6) {
-    isTomorrow = true;
-    if (todayIdx === 5 || todayIdx === 6 || todayIdx === 0) {
+  if (todayIdx === 0 || todayIdx === 6) {
+    currentDay = 'Monday';
+  } else if (currentHour >= 15) {
+    if (todayIdx === 5) {
       currentDay = 'Monday';
-      isTomorrow = todayIdx === 0;
     } else {
       currentDay = daysOfWeek[todayIdx + 1];
     }
   } else {
-    currentDay = todayIdx === 0 || todayIdx === 6 ? 'Monday' : daysOfWeek[todayIdx];
-    isTomorrow = false;
+    currentDay = daysOfWeek[todayIdx];
   }
 
-  const initialTargetDate = getTargetDateObj(currentDay, isTomorrow);
+  const initialTargetDate = getTargetDateObj(currentDay);
   let currentWeek = getAcademicWeekForDate(initialTargetDate);
 
   let defaultResourceMode = 'workbooks'; // 'workbooks' or 'paper'
@@ -3389,10 +3413,11 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       if (setName && periodSettings[setName]) {
         periodSettings[key] = { ...periodSettings[setName] };
       } else {
+        const def = (setName && DEFAULT_SET_MAPPING[setName]) || {};
         periodSettings[key] = {
-          resource: defaultResourceMode,
-          shelf: defaultShelfMode,
-          collection: defaultCollectionMode,
+          resource: def.default_resource || defaultResourceMode,
+          shelf: def.default_shelf !== undefined ? def.default_shelf : defaultShelfMode,
+          collection: def.default_collection || defaultCollectionMode,
         };
       }
     }
@@ -3517,23 +3542,12 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
           <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
               
-              <!-- Quick Day Presets -->
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Target:</span>
-                <button id="quickTomorrowBtn" type="button" style="background: ${isTomorrow ? '#2563eb' : '#0f172a'}; color: ${isTomorrow ? '#ffffff' : '#cbd5e1'}; border: 1px solid ${isTomorrow ? '#3b82f6' : '#334155'}; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;">
-                  <i class="fa-solid fa-bolt" style="color: ${isTomorrow ? '#fde047' : '#94a3b8'};"></i> Tomorrow
-                </button>
-                <button id="quickTodayBtn" type="button" style="background: ${!isTomorrow ? '#2563eb' : '#0f172a'}; color: ${!isTomorrow ? '#ffffff' : '#cbd5e1'}; border: 1px solid ${!isTomorrow ? '#3b82f6' : '#334155'}; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
-                  Today
-                </button>
-              </div>
-
               <!-- Academic Week Toggle with dynamic sync indicator -->
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Timetable Week:</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Timetable Week:</span>
                 <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
-                  <button id="btnWeekA" type="button" style="background: ${currentWeek === 'Week A' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week A' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week A</button>
-                  <button id="btnWeekB" type="button" style="background: ${currentWeek === 'Week B' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week B' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week B</button>
+                  <button id="btnWeekA" type="button" style="background: ${currentWeek === 'Week A' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week A' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week A</button>
+                  <button id="btnWeekB" type="button" style="background: ${currentWeek === 'Week B' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week B' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week B</button>
                 </div>
               </div>
             </div>
@@ -3563,6 +3577,9 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
               </label>
               <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
                 <input type="radio" name="coverResourceMode" value="paper" style="accent-color: #3b82f6; cursor: pointer;"> Paper Only
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
+                <input type="radio" name="coverResourceMode" value="laptops" style="accent-color: #3b82f6; cursor: pointer;"> Laptops / None
               </label>
             </div>
 
@@ -3658,6 +3675,30 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             </div>
           </div>
 
+          <!-- Quick Email Customization Bar (Recipient, Sender, General VLE Note) -->
+          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div>
+                <label style="display: block; font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 3px;">Recipient (e.g. Paul):</label>
+                <input type="text" id="coverRecipientInput" value="${localStorage.getItem('cover_recipient') || 'Paul'}" style="width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.8rem; padding: 5px 8px; outline: none;" placeholder="Paul">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 3px;">Sign-off Sender Name:</label>
+                <input type="text" id="coverSenderInput" value="${localStorage.getItem('cover_sender_name') || 'Ben'}" style="width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.8rem; padding: 5px 8px; outline: none;" placeholder="Ben">
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                <label style="font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">General VLE / Device Instruction (after Duties):</label>
+                <label style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; color: #cbd5e1; cursor: pointer;">
+                  <input type="checkbox" id="chkIncludeGeneralNote" checked style="accent-color: #3b82f6; cursor: pointer;">
+                  <span>Include</span>
+                </label>
+              </div>
+              <input type="text" id="coverGeneralNoteInput" value="${localStorage.getItem('cover_general_note') !== null ? localStorage.getItem('cover_general_note') : 'All cover set on VLE; please allow pupils to use laptops as textbooks only.'}" style="width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.8rem; padding: 5px 8px; outline: none;" placeholder="All cover set on VLE; please allow pupils to use laptops as textbooks only.">
+            </div>
+          </div>
+
           <!-- Email Preview Textarea Container -->
           <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
             <textarea id="coverEmailOutputArea" readonly style="flex: 1; width: 100%; box-sizing: border-box; background: #070d1e; border: 1px solid #1e293b; border-radius: 8px; color: #f1f5f9; padding: 16px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.84rem; line-height: 1.6; resize: none; outline: none; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);"></textarea>
@@ -3675,8 +3716,6 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   // References
   const modalContainer = overlay.querySelector('#coverModalContainer');
   const closeBtn = overlay.querySelector('#coverModalCloseBtn');
-  const quickTomorrowBtn = overlay.querySelector('#quickTomorrowBtn');
-  const quickTodayBtn = overlay.querySelector('#quickTodayBtn');
   const btnWeekA = overlay.querySelector('#btnWeekA');
   const btnWeekB = overlay.querySelector('#btnWeekB');
   const dayButtons = overlay.querySelectorAll('.day-btn');
@@ -3688,6 +3727,10 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const scheduleLabel = overlay.querySelector('#coverScheduleLabel');
   const periodsContainer = overlay.querySelector('#coverPeriodsContainer');
   const emailOutputArea = overlay.querySelector('#coverEmailOutputArea');
+  const recipientInput = overlay.querySelector('#coverRecipientInput');
+  const senderInput = overlay.querySelector('#coverSenderInput');
+  const generalNoteInput = overlay.querySelector('#coverGeneralNoteInput');
+  const chkIncludeGeneralNote = overlay.querySelector('#chkIncludeGeneralNote');
   const mailtoBtn = overlay.querySelector('#coverMailtoBtn');
   const outlookBtn = overlay.querySelector('#coverOutlookBtn');
   const copyActionBtn = overlay.querySelector('#coverCopyActionBtn');
@@ -3807,24 +3850,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       }
     });
 
-    // 3. Update Quick Preset Buttons
-    if (isTomorrow) {
-      quickTomorrowBtn.style.background = '#2563eb';
-      quickTomorrowBtn.style.color = '#ffffff';
-      quickTomorrowBtn.style.borderColor = '#3b82f6';
-      quickTodayBtn.style.background = '#0f172a';
-      quickTodayBtn.style.color = '#cbd5e1';
-      quickTodayBtn.style.borderColor = '#334155';
-    } else {
-      quickTodayBtn.style.background = '#2563eb';
-      quickTodayBtn.style.color = '#ffffff';
-      quickTodayBtn.style.borderColor = '#3b82f6';
-      quickTomorrowBtn.style.background = '#0f172a';
-      quickTomorrowBtn.style.color = '#cbd5e1';
-      quickTomorrowBtn.style.borderColor = '#334155';
-    }
-
-    // 4. Update Schedule Label
+    // 3. Update Schedule Label
     scheduleLabel.textContent = `Schedule for ${currentWeek} ${currentDay}`;
 
     // 5. Render Periods & Customization Rows
@@ -4024,8 +4050,11 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
               <button type="button" class="btn-p-res" data-val="workbooks" style="background: ${isWorkbooks ? '#2563eb' : 'transparent'}; color: ${isWorkbooks ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
                 <i class="fa-solid fa-book-open"></i> Workbooks
               </button>
-              <button type="button" class="btn-p-res" data-val="paper" style="background: ${!isWorkbooks ? '#2563eb' : 'transparent'}; color: ${!isWorkbooks ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
+              <button type="button" class="btn-p-res" data-val="paper" style="background: ${pSetting.resource === 'paper' ? '#2563eb' : 'transparent'}; color: ${pSetting.resource === 'paper' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
                 <i class="fa-solid fa-file-lines"></i> Paper Only
+              </button>
+              <button type="button" class="btn-p-res" data-val="laptops" style="background: ${pSetting.resource === 'laptops' ? '#2563eb' : 'transparent'}; color: ${pSetting.resource === 'laptops' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Pupils use laptops as textbooks only (no physical workbooks or lined paper needed)">
+                <i class="fa-solid fa-laptop"></i> Laptops
               </button>
             </div>
 
@@ -4104,41 +4133,83 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     });
 
     // 6. Build Plain-Text Cover Email Output
-    const targetDateObj = getTargetDateObj(currentDay, isTomorrow);
+    const targetDateObj = getTargetDateObj(currentDay, currentWeek);
     const dateStr = formatTargetDate(targetDateObj);
-    const whenWord = isTomorrow ? 'tomorrow' : 'today';
+
+    const todayDate = new Date();
+    const tomorrowDate = new Date();
+    tomorrowDate.setDate(todayDate.getDate() + 1);
+    const isSameDay = (d1, d2) =>
+      d1.getFullYear() === d2.getFullYear() &&
+      d1.getMonth() === d2.getMonth() &&
+      d1.getDate() === d2.getDate();
+
+    let whenPhrase = '';
+    if (isSameDay(targetDateObj, todayDate)) {
+      whenPhrase = 'for today, ';
+    } else if (isSameDay(targetDateObj, tomorrowDate)) {
+      whenPhrase = 'for tomorrow, ';
+    } else {
+      whenPhrase = 'for ';
+    }
+
+    const savedRecipient = localStorage.getItem('cover_recipient') || 'Paul';
+    const recipient = (recipientInput && recipientInput.value.trim()) || savedRecipient;
+
+    const savedSender = localStorage.getItem('cover_sender_name') || 'Ben';
+    const sender = (senderInput && senderInput.value.trim()) || savedSender;
+
+    const defaultGenNote =
+      'All cover set on VLE; please allow pupils to use laptops as textbooks only.';
+    const savedGeneralNote =
+      localStorage.getItem('cover_general_note') !== null
+        ? localStorage.getItem('cover_general_note')
+        : defaultGenNote;
+    const generalNote =
+      generalNoteInput &&
+      generalNoteInput.value !== undefined &&
+      generalNoteInput.value.trim() !== ''
+        ? generalNoteInput.value.trim()
+        : savedGeneralNote;
+    const includeGeneralNote = chkIncludeGeneralNote ? chkIncludeGeneralNote.checked : true;
 
     const emailLines = [];
-    emailLines.push('Dear ,');
+    emailLines.push(`Dear ${recipient},`);
     emailLines.push(
-      `Please find below the cover for ${whenWord}, ${currentDay}, ${dateStr} (${currentWeek}).`,
+      `Please find below the cover ${whenPhrase}${currentDay}, ${dateStr} (${currentWeek}).`,
     );
     emailLines.push('Tutor AM / PM Warrior 2');
 
+    let dutiesStr = 'none';
     if (duties.length > 0) {
-      const dutyStrs = duties.map((d) => `${d.time} (${d.duty})`).join('; ');
-      emailLines.push(`Duties: ${dutyStrs}`);
+      dutiesStr = duties.map((d) => `${d.time} (${d.duty})`).join('; ');
+    }
+
+    if (includeGeneralNote && generalNote) {
+      emailLines.push(`Duties: ${dutiesStr} ${generalNote}`);
     } else {
-      emailLines.push('Duties: none');
+      emailLines.push(`Duties: ${dutiesStr}`);
     }
 
     periodsData.forEach((p) => {
       if (p.type === 'hub') {
         emailLines.push(`${p.period.toUpperCase()} (${p.time}) — HUB SUPERVISION`);
-        emailLines.push('SUPERVISION ONLY — NO COVER WORK TO SET:');
+        emailLines.push('SUPERVISION ONLY — NO COVER WORK TO SET');
         return;
       }
       if (p.type === 'club') {
         emailLines.push(`${p.period.toUpperCase()} (${p.time}) — ${p.title.toUpperCase()}`);
-        emailLines.push('SUPERVISION ONLY — NO COVER WORK TO SET:');
+        emailLines.push('SUPERVISION ONLY — NO COVER WORK TO SET');
         return;
       }
       emailLines.push(`▶ ${p.period.toUpperCase()} (${p.time}) — ${p.setName}`);
-      emailLines.push(`Topic: ${p.topicName} (${p.unitName}) [${p.liveUrl}](${p.liveUrl})`);
+      emailLines.push(`Topic: ${p.topicName} (${p.unitName}) [${p.liveUrl}]`);
 
       if (includePolicyNotes) {
         const pSet = getPeriodSetting(p.pIdx, p.setName);
-        if (pSet.resource === 'paper') {
+        if (pSet.resource === 'laptops' || pSet.resource === 'none') {
+          // Laptops used as textbooks: omit physical resources line
+        } else if (pSet.resource === 'paper') {
           emailLines.push('Resources: Paper only — pupils complete all work on lined A4 paper.');
         } else {
           if (pSet.shelf) {
@@ -4168,8 +4239,8 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     emailLines.push(
       'Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.',
     );
-    emailLines.push('Kind regards,');
-    emailLines.push('The History Department');
+    emailLines.push('Thanks');
+    emailLines.push(sender);
 
     const emailText = emailLines.join('\n');
     emailOutputArea.value = emailText;
@@ -4216,34 +4287,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     }
   };
 
-  // Event Listeners for Presets & Toggles
-  quickTomorrowBtn.onclick = () => {
-    isTomorrow = true;
-    const d = new Date();
-    d.setDate(d.getDate() + 1);
-    const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][
-      d.getDay()
-    ];
-    currentDay = dayName === 'Saturday' || dayName === 'Sunday' ? 'Monday' : dayName;
-    const targetDate = getTargetDateObj(currentDay, isTomorrow);
-    currentWeek = getAcademicWeekForDate(targetDate);
-    selectedLessons = {};
-    updateModalState();
-  };
-
-  quickTodayBtn.onclick = () => {
-    isTomorrow = false;
-    const d = new Date();
-    const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][
-      d.getDay()
-    ];
-    currentDay = dayName === 'Saturday' || dayName === 'Sunday' ? 'Monday' : dayName;
-    const targetDate = getTargetDateObj(currentDay, isTomorrow);
-    currentWeek = getAcademicWeekForDate(targetDate);
-    selectedLessons = {};
-    updateModalState();
-  };
-
+  // Event Listeners for Week & Day Toggles
   btnWeekA.onclick = () => {
     currentWeek = 'Week A';
     selectedLessons = {};
@@ -4259,8 +4303,6 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   dayButtons.forEach((btn) => {
     btn.onclick = () => {
       currentDay = btn.getAttribute('data-day');
-      const targetDate = getTargetDateObj(currentDay, isTomorrow);
-      currentWeek = getAcademicWeekForDate(targetDate);
       selectedLessons = {};
       updateModalState();
     };
@@ -4320,6 +4362,33 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     includePolicyNotes = chkIncludePolicy.checked;
     updateModalState();
   };
+
+  if (recipientInput) {
+    recipientInput.oninput = () => {
+      localStorage.setItem('cover_recipient', recipientInput.value);
+      updateModalState();
+    };
+  }
+
+  if (senderInput) {
+    senderInput.oninput = () => {
+      localStorage.setItem('cover_sender_name', senderInput.value);
+      updateModalState();
+    };
+  }
+
+  if (generalNoteInput) {
+    generalNoteInput.oninput = () => {
+      localStorage.setItem('cover_general_note', generalNoteInput.value);
+      updateModalState();
+    };
+  }
+
+  if (chkIncludeGeneralNote) {
+    chkIncludeGeneralNote.onchange = () => {
+      updateModalState();
+    };
+  }
 
   mailtoBtn.onclick = () => {
     commitDispatchToLog();

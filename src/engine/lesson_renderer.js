@@ -3214,23 +3214,61 @@ export function renderLesson(lesson) {
           `;
         }
 
-        blockSourceHtml = `
-              <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
+        if (window.currentUnitId === 'cme_new') {
+          const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
+          const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
+          const displayTitle = rawSource.title
+            ? rawSource.title.replace(/^Source\s+[A-Z0-9]+[:\s-]*/i, '').trim()
+            : rawSource.caption || 'Archival Primary Record';
+
+          blockSourceHtml = `
+            <details class="cme-source-drawer archival-drawer gcse-source-container archival-source-box" ${bCardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;">${sLetter ? `SOURCE ${sLetter}` : 'ARCHIVAL EVIDENCE'}</span>
+                  <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e293b; font-weight: 700;">${displayTitle}</span>
+                </div>
+                <span class="drawer-toggle-indicator" style="font-size: 0.8rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                  Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span>
+                </span>
+              </summary>
+              <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
                 ${sourceHeaderHtml}
                 ${sourceBodyHtml}
                 ${
-                  rawSource.question || rawSource.hinge_question
+                  rawSource.hinge_question || rawSource.question
                     ? `
-                  <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+                  <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+                    <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;"><i class="fa-solid fa-comments"></i> Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
                     <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question)}
+                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.hinge_question || rawSource.question)) : cleanQuestionText(rawSource.hinge_question || rawSource.question)}
                     </div>
                   </div>
                 `
                     : ''
                 }
               </div>
-             `;
+            </details>
+          `;
+        } else {
+          blockSourceHtml = `
+                <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
+                  ${sourceHeaderHtml}
+                  ${sourceBodyHtml}
+                  ${
+                    rawSource.question || rawSource.hinge_question
+                      ? `
+                    <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+                      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
+                        ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question)}
+                      </div>
+                    </div>
+                  `
+                      : ''
+                  }
+                </div>
+               `;
+        }
       }
 
       htmlNarrative += `
@@ -6109,7 +6147,8 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
   // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
-      if (block.source && block.source.question) block.source.qNum = globalQNum++;
+      if (block.source && block.source.question && unit !== 'cme_new')
+        block.source.qNum = globalQNum++;
       if (block.tasks) {
         block.tasks.forEach((task) => {
           if (

@@ -1,41 +1,6 @@
 {
   "Week A": {
     "Monday": [
-      { "period": "Period 1", "time": "09:10 - 10:05", "type": "hub", "raw": "Hub Supervision" },
-      { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 9yHi\nHistory\n(20)" },
-      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" },
-      { "period": "Period 5", "time": "14:00 - 14:55", "type": "lesson", "raw": "Set 10aHiB\nHistory\n(7)" },
-      { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 11aHiC\nHistory\n(5)" }
-    ],
-    "Tuesday": [
-      { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 7XHi\nHistory\n(18)" },
-      { "period": "Period 3", "time": "11:20 - 12:15", "type": "hub", "raw": "Hub Supervision" },
-      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 7YHi\nHistory\n(17)" },
-      { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" }
-    ],
-    "Wednesday": [
-      { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 10aHiB\nHistory\n(7)" },
-      { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" },
-      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 11aHiC\nHistory\n(5)" },
-      { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 8yHi\nHistory\n(11)" }
-    ],
-    "Thursday": [
-      { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 9xHi\nHistory\n(19)" },
-      { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 8xHi\nHistory\n(11)" },
-      { "period": "Period 3", "time": "11:20 - 12:15", "type": "hub", "raw": "Hub Supervision" },
-      { "period": "Period 5", "time": "14:00 - 14:55", "type": "lesson", "raw": "Set 11aHiC\nHistory\n(5)" },
-      { "period": "Period 6", "time": "14:55 - 15:50", "type": "club", "raw": "Chess Club" }
-    ],
-    "Friday": [
-      { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 8xHi\nHistory\n(11)" },
-      { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 9xHi\nHistory\n(19)" },
-      { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 7YHi\nHistory\n(17)" },
-      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 7XHi\nHistory\n(18)" },
-      { "period": "Period 5", "time": "14:00 - 14:55", "type": "hub", "raw": "Hub Supervision" }
-    ]
-  },
-  "Week B": {
-    "Monday": [
       { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" },
       { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 7XHi\nHistory\n(18)" },
       { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 9yHi\nHistory\n(20)" },
@@ -71,6 +36,41 @@
       { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 10aHiB\nHistory\n(7)" },
       { "period": "Period 5", "time": "14:00 - 14:55", "type": "hub", "raw": "Hub Supervision" },
       { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 8yHi\nHistory\n(11)" }
+    ]
+  },
+  "Week B": {
+    "Monday": [
+      { "period": "Period 1", "time": "09:10 - 10:05", "type": "hub", "raw": "Hub Supervision" },
+      { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 9yHi\nHistory\n(20)" },
+      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" },
+      { "period": "Period 5", "time": "14:00 - 14:55", "type": "lesson", "raw": "Set 10aHiB\nHistory\n(7)" },
+      { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 11aHiC\nHistory\n(5)" }
+    ],
+    "Tuesday": [
+      { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 7XHi\nHistory\n(18)" },
+      { "period": "Period 3", "time": "11:20 - 12:15", "type": "hub", "raw": "Hub Supervision" },
+      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 7YHi\nHistory\n(17)" },
+      { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" }
+    ],
+    "Wednesday": [
+      { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 10aHiB\nHistory\n(7)" },
+      { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 11aHiD\nHistory\n(7)" },
+      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 11aHiC\nHistory\n(5)" },
+      { "period": "Period 6", "time": "14:55 - 15:50", "type": "lesson", "raw": "Set 8yHi\nHistory\n(11)" }
+    ],
+    "Thursday": [
+      { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 9xHi\nHistory\n(19)" },
+      { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 8xHi\nHistory\n(11)" },
+      { "period": "Period 3", "time": "11:20 - 12:15", "type": "hub", "raw": "Hub Supervision" },
+      { "period": "Period 5", "time": "14:00 - 14:55", "type": "lesson", "raw": "Set 11aHiC\nHistory\n(5)" },
+      { "period": "Period 6", "time": "14:55 - 15:50", "type": "club", "raw": "Chess Club" }
+    ],
+    "Friday": [
+      { "period": "Period 1", "time": "09:10 - 10:05", "type": "lesson", "raw": "Set 8xHi\nHistory\n(11)" },
+      { "period": "Period 2", "time": "10:25 - 11:20", "type": "lesson", "raw": "Set 9xHi\nHistory\n(19)" },
+      { "period": "Period 3", "time": "11:20 - 12:15", "type": "lesson", "raw": "Set 7YHi\nHistory\n(17)" },
+      { "period": "Period 4", "time": "12:15 - 13:10", "type": "lesson", "raw": "Set 7XHi\nHistory\n(18)" },
+      { "period": "Period 5", "time": "14:00 - 14:55", "type": "hub", "raw": "Hub Supervision" }
     ]
   },
   "duties": {

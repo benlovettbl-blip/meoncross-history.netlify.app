@@ -21,83 +21,110 @@ DEFAULT_SET_MAPPING = {
     "Set 7XHi": {
         "year": "Year 7",
         "room": "18",
-        "unit": "medieval_england",
-        "unit_name": "Medieval England (1066–1485)",
-        "default_lesson": 0,
-        "default_topic": "The Norman Conquest & Battle of Hastings",
-        "notes": "Pupils should work in their printed Medieval England workbooks or on school Chromebooks."
+        "unit": "water_and_sanitation",
+        "unit_name": "KS3: Water & Sanitation Through Time",
+        "default_lesson": 1,
+        "default_topic": "Why did public health decline during the Middle Ages?",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "collect",
+        "notes": "Pupils should work in their printed Water & Sanitation workbooks."
     },
     "Set 7YHi": {
         "year": "Year 7",
         "room": "17",
-        "unit": "medieval_england",
-        "unit_name": "Medieval England (1066–1485)",
-        "default_lesson": 0,
-        "default_topic": "The Norman Conquest & Battle of Hastings",
-        "notes": "Pupils should work in their printed Medieval England workbooks or on school Chromebooks."
+        "unit": "water_and_sanitation",
+        "unit_name": "KS3: Water & Sanitation Through Time",
+        "default_lesson": 1,
+        "default_topic": "Why did public health decline during the Middle Ages?",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "collect",
+        "notes": "Pupils should work in their printed Water & Sanitation workbooks."
     },
     "Set 8xHi": {
         "year": "Year 8",
         "room": "11",
         "unit": "industrialisation_and_empire",
-        "unit_name": "Industrialisation, Empire, and Power (1750–1900)",
+        "unit_name": "KS3: Industrialisation, Empire & Power (1750–1900)",
         "default_lesson": 0,
         "default_topic": "The Agricultural Revolution & Origins of Industry",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "collect",
         "notes": "Pupils have workbooks in the classroom cupboard. Zero-noise individual study."
     },
     "Set 8yHi": {
         "year": "Year 8",
         "room": "11",
         "unit": "industrialisation_and_empire",
-        "unit_name": "Industrialisation, Empire, and Power (1750–1900)",
+        "unit_name": "KS3: Industrialisation, Empire & Power (1750–1900)",
         "default_lesson": 0,
         "default_topic": "The Agricultural Revolution & Origins of Industry",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "collect",
         "notes": "Pupils have workbooks in the classroom cupboard. Zero-noise individual study."
     },
     "Set 9xHi": {
         "year": "Year 9",
         "room": "19",
         "unit": "great_war",
-        "unit_name": "The Great War (1914–1919)",
-        "default_lesson": 0,
-        "default_topic": "The Long-Term Causes of the First World War (MAIN)",
+        "unit_name": "KS3: Causes of the Great War",
+        "default_lesson": 2,
+        "default_topic": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "collect",
         "notes": "High expectations for written evidence and causal connectives."
     },
     "Set 9yHi": {
         "year": "Year 9",
         "room": "20",
         "unit": "great_war",
-        "unit_name": "The Great War (1914–1919)",
-        "default_lesson": 0,
-        "default_topic": "The Long-Term Causes of the First World War (MAIN)",
+        "unit_name": "KS3: Causes of the Great War",
+        "default_lesson": 2,
+        "default_topic": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "collect",
         "notes": "High expectations for written evidence and causal connectives."
     },
     "Set 10aHiB": {
         "year": "Year 10",
         "room": "7",
-        "unit": "edexcel_medicine",
-        "unit_name": "Edexcel GCSE Paper 1: Medicine Through Time",
-        "default_lesson": 0,
-        "default_topic": "Medieval Ideas on Cause of Disease (Hippocrates & Galen)",
-        "notes": "GCSE cohort. Pupils must complete the Do Now, Guided Masterclass, and 8-Question Digital Retrieval Quiz."
+        "unit": "cme_new",
+        "unit_name": "Paper 2: Conflict in the Middle East (1945–1995)",
+        "default_lesson": 2,
+        "default_topic": "KT 1.2: The Aftermath of the 1948–49 War & The Palestinian Refugee Crisis",
+        "resource": "workbooks",
+        "shelf": False,
+        "collection": "folders",
+        "notes": "Pupils should work in their printed physical workbooks."
     },
     "Set 11aHiC": {
         "year": "Year 11",
         "room": "5",
-        "unit": "weimar_nazi_germany",
-        "unit_name": "Edexcel GCSE Paper 3: Weimar and Nazi Germany (1918–1939)",
-        "default_lesson": 0,
-        "default_topic": "The Legacy of the First World War & The Weimar Constitution",
+        "unit": "edexcel_medicine",
+        "unit_name": "Paper 1: Medicine Through Time (1250–present)",
+        "default_lesson": 5,
+        "default_topic": "KT2.1: The New Spirit of Enquiry: Humanism, The Printing Press & The Royal Society (c1500–c1700)",
+        "resource": "workbooks",
+        "shelf": True,
+        "collection": "folders",
         "notes": "Year 11 GCSE exam group. Silent independent revision and exam practice."
     },
     "Set 11aHiD": {
         "year": "Year 11",
         "room": "7",
-        "unit": "weimar_nazi_germany",
-        "unit_name": "Edexcel GCSE Paper 3: Weimar and Nazi Germany (1918–1939)",
-        "default_lesson": 0,
-        "default_topic": "The Legacy of the First World War & The Weimar Constitution",
-        "notes": "Year 11 GCSE exam group. Silent independent revision and exam practice."
+        "unit": "edexcel_medicine",
+        "unit_name": "Paper 1: Medicine Through Time (1250–present)",
+        "default_lesson": 5,
+        "default_topic": "KT2.1: The New Spirit of Enquiry: Humanism, The Printing Press & The Royal Society (c1500–c1700)",
+        "resource": "laptops",
+        "shelf": False,
+        "collection": "folders",
+        "notes": "Year 11 GCSE exam group. Pupils use laptops as textbooks."
     }
 }
 
@@ -109,7 +136,7 @@ def load_timetable():
     with open(TIMETABLE_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def generate_cover_plan(week, day, overrides=None, target_date=None, period_filter=None, is_tomorrow=False, when_word=None):
+def generate_cover_plan(week, day, overrides=None, target_date=None, period_filter=None, is_tomorrow=False, when_word=None, general_note="All cover set on VLE; please allow pupils to use laptops as textbooks only."):
     overrides = overrides or {}
     tt = load_timetable()
     if not tt or week not in tt or day not in tt[week]:
@@ -143,6 +170,7 @@ def generate_cover_plan(week, day, overrides=None, target_date=None, period_filt
         "tutor_group": "Warrior 2",
         "tutor_times": "AM (08:45–09:10) & PM Mobile Collection (15:50–15:55)",
         "duties": day_duties,
+        "general_note": general_note,
         "periods": []
     }
     
@@ -190,6 +218,9 @@ def generate_cover_plan(week, day, overrides=None, target_date=None, period_filt
             "unit_name": "History Study",
             "default_lesson": 0,
             "default_topic": "Key Historical Enquiry",
+            "resource": "workbooks",
+            "shelf": True,
+            "collection": "collect",
             "notes": "Pupils complete independent study."
         })
         
@@ -199,6 +230,9 @@ def generate_cover_plan(week, day, overrides=None, target_date=None, period_filt
         lesson_idx = class_override.get("lesson", set_info["default_lesson"])
         topic_name = class_override.get("topic", set_info["default_topic"])
         custom_instructions = class_override.get("instructions", None)
+        res_mode = class_override.get("resource", set_info.get("resource", "workbooks"))
+        shelf = class_override.get("shelf", set_info.get("shelf", True))
+        col = class_override.get("collection", set_info.get("collection", "collect"))
         
         live_app_url = f"{HUB_BASE_URL}/?unit={unit_id}&lesson={lesson_idx}"
         quiz_url = f"{HUB_BASE_URL}/?unit={unit_id}&lesson={lesson_idx}&quiz=true"
@@ -214,6 +248,9 @@ def generate_cover_plan(week, day, overrides=None, target_date=None, period_filt
             "unit_name": set_info["unit_name"],
             "lesson_idx": lesson_idx,
             "topic_name": topic_name,
+            "resource": res_mode,
+            "shelf": shelf,
+            "collection": col,
             "live_url": live_app_url,
             "quiz_url": quiz_url,
             "teacher_notes": set_info["notes"],
@@ -222,45 +259,71 @@ def generate_cover_plan(week, day, overrides=None, target_date=None, period_filt
         
     return plan
 
-def render_email_text(plan, recipient=None):
+def render_email_text(plan, recipient=None, sender=None):
+    recip = recipient.strip() if recipient and recipient.strip() else "Paul"
+    send = sender.strip() if sender and sender.strip() else "Ben"
     lines = []
-    if recipient and recipient.strip():
-        lines.append(f"Dear {recipient.strip()},")
-    else:
-        lines.append("Dear ,")
+    lines.append(f"Dear {recip},")
     when_word = plan.get("when_word", "today")
     lines.append(f"Please find below the cover for {when_word}, {plan['day']}, {plan['date_str']} ({plan['week']}).")
     lines.append(f"Tutor AM / PM {plan.get('tutor_group', 'Warrior 2')}")
     
     if plan.get("duties"):
         duty_strs = [f"{d['time']} ({d['duty']})" for d in plan["duties"]]
-        lines.append(f"Duties: {'; '.join(duty_strs)}")
+        duties_line = f"Duties: {'; '.join(duty_strs)}"
     else:
-        lines.append("Duties: none")
+        duties_line = "Duties: none"
+
+    gen_note = plan.get("general_note")
+    if gen_note:
+        lines.append(f"{duties_line} {gen_note.strip()}")
+    else:
+        lines.append(duties_line)
 
     for p in plan["periods"]:
         if p["type"] == "hub":
             lines.append(f"{p['period'].upper()} ({p['time']}) — HUB SUPERVISION")
-            lines.append("SUPERVISION ONLY — NO COVER WORK TO SET:")
+            lines.append("SUPERVISION ONLY — NO COVER WORK TO SET")
             continue
             
         if p["type"] == "club":
             lines.append(f"{p['period'].upper()} ({p['time']}) — {p['title'].upper()}")
-            lines.append("SUPERVISION ONLY — NO COVER WORK TO SET:")
+            lines.append("SUPERVISION ONLY — NO COVER WORK TO SET")
             continue
             
         # Lesson
         lines.append(f"▶ {p['period'].upper()} ({p['time']}) — {p['set_name']}")
-        lines.append(f"Topic: {p['topic_name']} ({p['unit_name']}) [{p['live_url']}]({p['live_url']})")
+        lines.append(f"Topic: {p['topic_name']} ({p['unit_name']}) [{p['live_url']}]")
+
+        res = p.get("resource", "workbooks")
+        shelf = p.get("shelf", True)
+        col = p.get("collection", "collect")
+
+        if res == "laptops" or res == "none":
+            pass
+        elif res == "paper":
+            lines.append("Resources: Paper only — pupils complete all work on lined A4 paper.")
+        else:
+            if shelf:
+                lines.append("Resources: Printed physical workbooks — please hand out from classroom shelf and ensure all are returned to shelf at end.")
+            else:
+                lines.append("Resources: Pupils should work in their printed physical workbooks.")
+
+        if col == "folders":
+            lines.append("Work Collection: Pupils keep completed work in their books/folders for next lesson.")
+        elif col == "digital":
+            lines.append("Work Collection: Pupils submit work digitally via Google Classroom / VLE.")
+        else:
+            lines.append("Work Collection: Please collect all pupil work at the end of the period.")
 
     lines.append("Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.")
-    lines.append("Kind regards,")
-    lines.append("The History Department")
+    lines.append("Thanks")
+    lines.append(send)
     
     return "\n".join(lines)
 
-def save_cover_package(plan, recipient=None):
-    body_text = render_email_text(plan, recipient)
+def save_cover_package(plan, recipient=None, sender=None):
+    body_text = render_email_text(plan, recipient, sender)
     subject = f"COVER: History - {plan['day']}, {plan['date_str']} ({plan['week']})"
     
     os.makedirs(LOCAL_COVER_DIR, exist_ok=True)
@@ -361,7 +424,9 @@ if __name__ == "__main__":
     parser.add_argument("--when", choices=["today", "tomorrow"], default=None, help="Force 'today' or 'tomorrow' phrasing")
     parser.add_argument("--date", default=None, help="Specific date e.g. '22 September 2026' or '2026-09-22'")
     parser.add_argument("--periods", default=None, help="Comma-separated periods to include e.g. '1,3' or '3'")
-    parser.add_argument("--recipient", default="", help="Recipient name (defaults to 'Dear ,')")
+    parser.add_argument("--recipient", default="Paul", help="Recipient name (defaults to 'Paul')")
+    parser.add_argument("--sender", default="Ben", help="Sender name (defaults to 'Ben')")
+    parser.add_argument("--general-note", default="All cover set on VLE; please allow pupils to use laptops as textbooks only.", help="General instructions appended to duties line")
     args = parser.parse_args()
     
     target_date = None
@@ -399,12 +464,12 @@ if __name__ == "__main__":
             days_ahead = 1 if args.day == "Sunday" else 2
             target_date = datetime.now() + timedelta(days=days_ahead)
             
-    plan = generate_cover_plan(args.week, args.day, target_date=target_date, period_filter=args.periods, is_tomorrow=is_tomorrow, when_word=args.when)
+    plan = generate_cover_plan(args.week, args.day, target_date=target_date, period_filter=args.periods, is_tomorrow=is_tomorrow, when_word=args.when, general_note=args.general_note)
     if not plan:
         print(f"Error: Could not find timetable for {args.week} {args.day}")
         sys.exit(1)
         
-    pkg = save_cover_package(plan, args.recipient)
+    pkg = save_cover_package(plan, args.recipient, args.sender)
     print("=" * 65)
     print(f"✅ Cover Package Generated for {args.week} {args.day} ({plan['date_str']})!")
     print(f"Subject: {pkg['subject']}")

@@ -23,8 +23,12 @@ import { initGuidedReadingTask } from './guided_reading.js';
 import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
 import { renderDiagnosticLauncherHTML } from './diagnostic_benchmark.js';
-export { renderCompetitionsView } from './competitions_zone.js';
-export { renderChessHubView } from './chess_zone.js';
+import {
+  getMasterpieceStarterStripHtml,
+  attachStarterStripEvents,
+  getMasterpieceStudioHtml,
+  attachStudioEvents,
+} from './masterpiece_studio.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -124,6 +128,11 @@ export function renderDashboard() {
         </button>
       </div>
 
+    </div>
+
+    <!-- Masterpiece of the Week: Classroom Starter Strip -->
+    <div id="masterpiece-starter-strip-root" style="margin-bottom: 24px;">
+      ${getMasterpieceStarterStripHtml()}
     </div>
   `;
 
@@ -361,6 +370,31 @@ export function renderDashboard() {
   }
   html += `</div>`;
   container.innerHTML = html;
+
+  const stripRoot = document.getElementById('masterpiece-starter-strip-root');
+  if (stripRoot) {
+    attachStarterStripEvents(stripRoot);
+  }
+}
+
+export function renderMasterpieceView() {
+  const container = document.getElementById('main-content');
+  const contentArea = document.getElementById('content-area');
+  if (contentArea) contentArea.style.paddingTop = '1.5rem';
+
+  container.innerHTML = `
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px 60px 24px;">
+      <button id="masterpiece-back-to-dashboard-btn" style="display:none;" onclick="window.switchView('dashboard')"></button>
+      <div id="masterpiece-studio-root">
+        ${getMasterpieceStudioHtml()}
+      </div>
+    </div>
+  `;
+
+  const studioRoot = document.getElementById('masterpiece-studio-root');
+  if (studioRoot) {
+    attachStudioEvents(studioRoot);
+  }
 }
 
 export function renderProfileView() {

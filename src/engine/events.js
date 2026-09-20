@@ -732,6 +732,18 @@ export function initEventDelegation() {
         if (window.launchSubApp) window.launchSubApp(target.dataset.unit);
         break;
 
+      case 'launch-masterpiece-projector':
+        if (typeof window.openMasterpieceProjector === 'function') {
+          window.openMasterpieceProjector();
+        }
+        break;
+
+      case 'open-masterpiece-studio':
+        if (typeof window.switchView === 'function') {
+          window.switchView('masterpiece');
+        }
+        break;
+
       case 'open-link':
         window.open(target.dataset.url, '_blank');
         break;
