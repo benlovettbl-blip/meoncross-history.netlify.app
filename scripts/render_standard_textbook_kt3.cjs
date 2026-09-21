@@ -86,6 +86,12 @@ async function buildPublisherTextbookHtmlKT3() {
   const cardKissinger =
     getBase64Image('units/cme_new/assets/henry_kissinger.jpg') ||
     getBase64Image('units/cme_new/assets/card_carter.png');
+  const cardSadat =
+    getBase64Image('units/cme_new/assets/card_sadat.png') ||
+    getBase64Image('units/cme_new/assets/anwar_sadat.jpg');
+  const cardCarter =
+    getBase64Image('units/cme_new/assets/card_carter.png') ||
+    getBase64Image('units/cme_new/assets/jimmy_carter.jpg');
 
   const campDavidPhoto = getBase64Image('images/cme_camp_david_1978.jpg');
   const treatyHandshake = getBase64Image('images/cme_treaty_triple_handshake_1979.jpg');
@@ -483,6 +489,187 @@ async function buildPublisherTextbookHtmlKT3() {
     }
     .kf-actions-list li {
       margin-bottom: 1.5px;
+    }
+
+    /* Compact Key Figure Variant (For Tight 1-Column Embeds) */
+    .key-figure-box.compact {
+      padding: 4px 6px;
+      margin: 4px 0;
+    }
+    .key-figure-box.compact .kf-portrait {
+      width: 38px;
+      height: 48px;
+    }
+    .key-figure-box.compact .kf-name {
+      font-size: 8.6pt;
+    }
+    .key-figure-box.compact .kf-role {
+      font-size: 6.2pt;
+    }
+    .key-figure-box.compact .kf-significance {
+      font-size: 7.2pt;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .key-figure-box.compact .kf-actions-title {
+      font-size: 6.0pt;
+      margin: 2px 0 1px 0;
+    }
+    .key-figure-box.compact .kf-actions-list {
+      padding-left: 10px;
+      font-size: 6.3pt;
+      line-height: 1.25;
+    }
+    .key-figure-box.compact .kf-actions-list li {
+      margin-bottom: 1px;
+    }
+
+    /* Micro Key Figure Card (Surgically sized for 60-80px column gaps) */
+    .key-figure-micro {
+      background: #fdfcfb;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #1e3a8a;
+      border-radius: 3px;
+      padding: 4px 6px;
+      margin: 4px 0 0 0;
+      break-inside: avoid;
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    .kfm-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 2px;
+    }
+    .kfm-tag {
+      font-size: 6.2pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .kfm-dates {
+      font-size: 5.8pt;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .kfm-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .kfm-portrait {
+      width: 32px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 2px;
+      border: 1px solid #94a3b8;
+      flex-shrink: 0;
+    }
+    .kfm-text {
+      flex: 1;
+      font-size: 7.2pt;
+      line-height: 1.25;
+      color: #1e293b;
+    }
+    .kfm-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.4pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+    }
+    .kfm-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.8pt;
+      font-weight: 700;
+      color: #b45309;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.5px;
+    }
+
+    /* Concept Spotlight Box (Curriculum Depth & Historical Mechanism) */
+    .concept-spotlight-box {
+      background: #fdfaf6;
+      border: 1px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      border-radius: 4px;
+      padding: 6px 9px;
+      margin: 7px 0;
+      break-inside: avoid;
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    .csb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #ffedd5;
+      font-family: 'Inter', sans-serif;
+    }
+    .csb-tag {
+      font-size: 6.6pt;
+      font-weight: 800;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .csb-category {
+      font-size: 6.2pt;
+      font-weight: 700;
+      color: #b45309;
+      background: #ffedd5;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .csb-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #7c2d12;
+      margin: 1px 0 3px 0;
+      line-height: 1.2;
+    }
+    .csb-body {
+      font-size: 7.8pt;
+      line-height: 1.38;
+      color: #1e293b;
+      margin-bottom: 3px;
+    }
+    .csb-takeaway {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 600;
+      color: #78350f;
+      background: #fef3c7;
+      border-left: 2px solid #d97706;
+      padding: 2px 6px;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Compact Concept Spotlight Variant */
+    .concept-spotlight-box.compact {
+      padding: 4px 7px;
+      margin: 4px 0;
+    }
+    .concept-spotlight-box.compact .csb-title {
+      font-size: 8.5pt;
+      margin: 1px 0 2px 0;
+      line-height: 1.15;
+    }
+    .concept-spotlight-box.compact .csb-body {
+      font-size: 7.3pt;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .concept-spotlight-box.compact .csb-takeaway {
+      font-size: 6.2pt;
+      line-height: 1.2;
+      padding: 1.5px 5px;
     }
 
     /* Full-Width Bottom Enquiry Deck (Pinned to bottom of page container) */
@@ -902,6 +1089,22 @@ async function buildPublisherTextbookHtmlKT3() {
         Kissinger's strategy yielded concrete breakthroughs. In January 1974, Egypt and Israel signed the <strong>Sinai I Disengagement Accord</strong>, pulling Israeli troops back from the canal and creating a UN-monitored buffer zone. In May 1974, Kissinger brokered a parallel Syrian-Israeli disengagement on the Golan Heights. In September 1975, the <strong>Sinai II Accord</strong> saw Israel withdraw further to the strategic Gidi and Mitla Passes, returning the Abu Rudeis oilfields to Egypt. In exchange, Egypt pledged non-belligerency, allowed non-military Israeli cargoes through the canal, and on 5 June 1975, officially reopened the <strong>Suez Canal</strong> to international commerce after eight years of closure.
       </div>
 
+      <!-- Key Figure Micro-Card: Henry Kissinger (Fills Gap Under Para 1.4 in Column 1) -->
+      <div class="key-figure-micro">
+        <div class="kfm-header">
+          <span class="kfm-tag">KEY INDIVIDUAL</span>
+          <span class="kfm-dates">1923–2023</span>
+        </div>
+        <div class="kfm-row">
+          ${cardKissinger ? `<img src="${cardKissinger}" class="kfm-portrait" alt="Henry Kissinger">` : ''}
+          <div class="kfm-text">
+            <h5 class="kfm-name">Henry Kissinger</h5>
+            <div class="kfm-role">US Secretary of State (1973–1977)</div>
+            Pioneered 'shuttle diplomacy' between Jerusalem, Cairo, and Damascus. Brokered the 1974 &amp; 1975 Sinai Disengagement Accords, decoupling Egypt from Moscow and realigning Middle Eastern diplomacy firmly toward Washington.
+          </div>
+        </div>
+      </div>
+
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
@@ -911,7 +1114,7 @@ async function buildPublisherTextbookHtmlKT3() {
           <span class="source-date-micro">13 November 1974</span>
         </div>
         <div class="archival-title">Yasser Arafat Addresses the UN General Assembly in New York</div>
-        ${arafatUNPhoto ? `<img src="${arafatUNPhoto}" class="archival-image" alt="Yasser Arafat at the UN">` : ''}
+        ${arafatUNPhoto ? `<img src="${arafatUNPhoto}" class="archival-image" style="max-height: 105px;" alt="Yasser Arafat at the UN">` : ''}
         <div class="archival-body">
           Invited to address the UN General Assembly following the Arab League's recognition of the PLO at the Rabat Summit, Chairman Yasser Arafat declared: <em>"I have come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand."</em>
         </div>
@@ -1002,28 +1205,62 @@ async function buildPublisherTextbookHtmlKT3() {
         </div>
       </div>
 
-      <!-- Key Figure Box: Henry Kissinger -->
+      <!-- Key Figure Box: Anwar Sadat -->
       <div class="key-figure-box">
         <div class="kf-header">
           <span class="kf-tag">KEY FIGURE</span>
-          <span class="kf-lifespan">1923–2023</span>
+          <span class="kf-lifespan">1918–1981</span>
         </div>
         <div class="kf-identity-row">
-          ${cardKissinger ? `<img src="${cardKissinger}" class="kf-portrait" alt="Henry Kissinger">` : ''}
+          ${cardSadat ? `<img src="${cardSadat}" class="kf-portrait" alt="Anwar Sadat">` : ''}
           <div class="kf-identity-text">
-            <h4 class="kf-name">Henry Kissinger</h4>
-            <div class="kf-role">US Secretary of State (1973–1977)</div>
+            <h4 class="kf-name">Anwar Sadat</h4>
+            <div class="kf-role">President of Egypt (1970–1981)</div>
           </div>
         </div>
         <div class="kf-significance">
-          Architect of 'shuttle diplomacy' who brokered post-1973 disengagement accords, realigning Egypt towards the Western superpower orbit.
+          Bold strategist who launched the 1973 crossing to break diplomatic deadlock, then took the historic risk to visit Jerusalem and sign peace with Israel.
         </div>
         <div class="kf-actions-title">Strategic Decisions &amp; Actions:</div>
         <ul class="kf-actions-list">
-          <li><strong>Pioneered Step-by-Step Diplomacy:</strong> Avoided unresolvable comprehensive summits in favor of pragmatic, bilateral troop disengagements in Sinai and Golan.</li>
-          <li><strong>Marginalised Soviet Influence:</strong> Exploited Egyptian frustration with Moscow to make the United States the sole indispensable mediator in the Middle East.</li>
-          <li><strong>Secured Reopening of Suez:</strong> Brokered the 1975 Sinai II Accord, restoring international maritime shipping and reducing global oil tensions.</li>
+          <li><strong>Broke Diplomatic Deadlock:</strong> Addressed the Israeli Knesset in November 1977, dismantling 30 years of Arab psychological rejectionism.</li>
+          <li><strong>Camp David Accords (1978):</strong> Negotiated the phased return of the entire Sinai Peninsula and oilfields to Egyptian sovereignty.</li>
+          <li><strong>Paid with His Life:</strong> Assassinated on 6 October 1981 by Islamic Jihad militants in Cairo for signing a separate bilateral peace.</li>
         </ul>
+      </div>
+
+      <!-- Concept Spotlight: The 1977 Bread Riots -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL CONTEXT</span>
+          <span class="csb-category">DOMESTIC PRESSURES</span>
+        </div>
+        <h4 class="csb-title">The 1977 Cairo Bread Riots &amp; The Economic Drive for Peace</h4>
+        <div class="csb-body">
+          In January 1977, violent riots swept Cairo when Sadat cut basic food subsidies to satisfy IMF lenders. With 30% of Egypt's budget devoured by military readiness and Soviet debt crushing the treasury, Sadat recognized that Egypt faced domestic economic collapse. Economic necessity—not ideological affection for Israel—drove his breathtaking gamble to fly to Jerusalem.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Exam Insight:</strong> Explains why Sadat broke Arab League unity: domestic economic desperation forced a swift bilateral exit from war.
+        </div>
+      </div>
+
+      <!-- Archival Dispatch: Walter Cronkite & Television Diplomacy -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Live Broadcast</span>
+          </div>
+          <span class="source-date-micro">14 November 1977</span>
+        </div>
+        <div class="archival-title">Walter Cronkite's Live Television Summit</div>
+        <div class="archival-body">
+          In a historic split-screen broadcast on CBS News, Walter Cronkite asked Sadat if he would truly travel to Jerusalem. When Sadat affirmed he would go immediately upon receiving an official invitation, Cronkite switched live to Begin in Jerusalem, who responded on air: <em>"Any time, any day, he will be received cordially and with the respect due to a President."</em> The diplomatic bluff was called on live television.
+        </div>
+        <div class="archival-footer">
+          <span>CBS Evening News Archive</span>
+          <span>Broadcast Record, 14 November 1977</span>
+        </div>
       </div>
     </div>
 
@@ -1252,6 +1489,21 @@ async function buildPublisherTextbookHtmlKT3() {
           <li><strong>Annexed Jerusalem &amp; Invaded Lebanon:</strong> Passed the 1980 Jerusalem Law declaring unified Jerusalem Israel's eternal capital, and launched the 1982 invasion of Lebanon.</li>
         </ul>
       </div>
+
+      <!-- Concept Spotlight: The Reality of Cold Peace -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL MECHANISM</span>
+          <span class="csb-category">DIPLOMATIC REALITIES</span>
+        </div>
+        <h4 class="csb-title">The Reality of the 'Cold Peace': Why Normalisation Stalled</h4>
+        <div class="csb-body">
+          While the 1979 treaty eliminated conventional warfare between armies and established official embassies, true social and cultural reconciliation never developed. Egyptian professional syndicates (lawyers, doctors, engineers) expelled members who visited Israel, tourism was one-way, and popular anger erupted following Israel's 1982 invasion of Lebanon. The treaty created peace between states, but not peace between peoples.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Analytical Distinction:</strong> Distinguish strategic military non-belligerency (the treaty) from grassroots cultural normalization ('cold peace').
+        </div>
+      </div>
     </div>
 
     <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
@@ -1456,8 +1708,23 @@ async function buildPublisherTextbookHtmlKT3() {
         The Lebanon War produced disastrous long-term blowback for Israeli security. In 1982–83, Iranian Revolutionary Guards mobilized Lebanon's marginalized Shia population to create <strong>Hezbollah</strong> ('Party of God'). Committed to driving Western and Israeli forces out through suicide bombings, Hezbollah unleashed devastating attacks: on 23 October 1983, coordinated suicide truck bombings in Beirut destroyed the US Marine barracks (killing 241 Americans) and French paratrooper headquarters (killing 58 French soldiers), compelling Western peacekeepers to evacuate. By 1985, Israel pulled back to a narrow southern 'Security Zone,' where IDF soldiers remained trapped in a fifteen-year war of attrition until May 2000.
       </div>
 
-      <!-- Key Figure Box: Ariel Sharon -->
-      <div class="key-figure-box">
+      <!-- Concept Spotlight Box: Kings of Israel Square & Domestic Rupture (Column 1) -->
+      <div class="concept-spotlight-box compact">
+        <div class="csb-header">
+          <span class="csb-tag">CONCEPT SPOTLIGHT</span>
+          <span class="csb-category">DOMESTIC CRISIS &bull; SEPT 1982</span>
+        </div>
+        <div class="csb-title">Kings of Israel Square: 400,000 Protest Beirut</div>
+        <div class="csb-body">
+          On 25 September 1982, 400,000 Israelis (nearly 10% of the nation) rallied in Tel Aviv demanding Sharon's dismissal. It was the largest demonstration in Israeli history and exposed profound domestic moral rupture.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Key Significance:</strong> Shattered wartime consensus and forced appointment of the Kahan Commission.
+        </div>
+      </div>
+
+      <!-- Key Figure Box: Ariel Sharon (Column 2) -->
+      <div class="key-figure-box compact">
         <div class="kf-header">
           <span class="kf-tag">KEY FIGURE</span>
           <span class="kf-lifespan">1928–2014</span>
@@ -1470,13 +1737,12 @@ async function buildPublisherTextbookHtmlKT3() {
           </div>
         </div>
         <div class="kf-significance">
-          Aggressive military commander who orchestrated the 1982 invasion of Lebanon and was found indirectly responsible for the Sabra and Shatila massacres.
+          Aggressive military commander who orchestrated the 1982 Lebanon invasion and was found indirectly responsible for Sabra-Shatila.
         </div>
         <div class="kf-actions-title">Strategic Decisions &amp; Actions:</div>
         <ul class="kf-actions-list">
-          <li><strong>Engineered Operation Peace for Galilee:</strong> Advanced IDF troops 60 miles to Beirut to destroy PLO military infrastructure.</li>
-          <li><strong>Authorized Phalangist Camp Entry:</strong> Allowed Christian militia into Sabra and Shatila, leading to mass slaughter and international condemnation.</li>
-          <li><strong>Forced Resignation:</strong> Dismissed as Defence Minister in 1983 following the scathing judicial verdict of the Kahan Commission.</li>
+          <li><strong>Operation Peace for Galilee:</strong> Pushed IDF 60 miles to Beirut to destroy PLO infrastructure.</li>
+          <li><strong>Forced Resignation:</strong> Dismissed in 1983 following the scathing judicial verdict of the Kahan Commission.</li>
         </ul>
       </div>
     </div>
