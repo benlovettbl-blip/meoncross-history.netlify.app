@@ -11,6 +11,7 @@ import { state } from './state.js';
 import { initEventDelegation } from './engine/events.js';
 import { initSpeech, cancelSpeech } from './engine/speech.js';
 import './langemarck_myth.js';
+import('./digital_textbook_reader.js');
 
 function purgeGDPRHistoricalCache() {
   try {
@@ -269,7 +270,11 @@ window.addEventListener('DOMContentLoaded', async () => {
       let lessonIdx =
         initialLesson !== null && !isNaN(parseInt(initialLesson, 10))
           ? parseInt(initialLesson, 10)
-          : (quizParam === 'kt2' ? 4 : (quizParam === 'kt3' ? 9 : 0));
+          : quizParam === 'kt2'
+            ? 4
+            : quizParam === 'kt3'
+              ? 9
+              : 0;
       const unitData =
         window.currentUnitData ||
         (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);

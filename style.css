@@ -4673,7 +4673,6 @@ body.mobile-fullscreen-quiz-active .app-sidebar {
   justify-content: stretch !important;
 }
 
-#quizModal.fullscreen-modal,
 @media (max-width: 768px) {
   #quizModal {
     position: fixed !important;

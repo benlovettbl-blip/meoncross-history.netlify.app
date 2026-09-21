@@ -17,6 +17,7 @@ import {
   renderIndividualsView,
   renderReadingView,
   renderMasterpieceView,
+  renderDigitalReaderView,
 } from './views.js'; // Trigger HMR
 import { renderCompetitionsView } from './competitions_zone.js';
 import { renderChessHubView } from './chess_zone.js';
@@ -202,7 +203,9 @@ export function updateBreadcrumbs(customTrail = null) {
         viewName === 'decisions' ||
         viewName === 'taboo' ||
         viewName === 'individuals' ||
-        viewName === 'reading')
+        viewName === 'reading' ||
+        viewName === 'reader' ||
+        viewName === 'textbook-reader')
     ) {
       trail.push({ label: getUnitName(unitId), view: 'lessons', unit: unitId });
     }
@@ -223,6 +226,8 @@ export function updateBreadcrumbs(customTrail = null) {
     else if (viewName === 'reading') currentSectionLabel = 'Guided Reading';
     else if (viewName === 'masterpiece' || viewName === 'gallery')
       currentSectionLabel = 'Masterpiece Studio';
+    else if (viewName === 'reader' || viewName === 'textbook-reader')
+      currentSectionLabel = 'Dual-Spread Digital Reader';
 
     if (currentSectionLabel) {
       trail.push({ label: currentSectionLabel });
@@ -446,6 +451,15 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     renderChessHubView();
   } else if (viewName === 'masterpiece' || viewName === 'gallery') {
     renderMasterpieceView();
+  } else if (viewName === 'reader' || viewName === 'textbook-reader') {
+    const unitTarget =
+      (param && typeof param === 'string' && param.split(':')[0]) ||
+      state.selectedUnitId ||
+      'cme_new';
+    if (unitTarget && unitTarget !== state.selectedUnitId) {
+      await loadUnit(unitTarget);
+    }
+    await renderDigitalReaderView(param);
   }
 
   // Update dynamic breadcrumbs

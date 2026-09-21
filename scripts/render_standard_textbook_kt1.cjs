@@ -558,19 +558,35 @@ async function buildPublisherTextbookHtmlKT1() {
 
         <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111; flex: 1;">
           <!-- 1.1 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 1.1 Creation of Israel, 1945–48
               </strong>
-              <div style="margin-bottom: 2.5px;">&bull; Conflicting interests after WWII; Jewish insurgency (<strong>Irgun and Lehi</strong>).</div>
-              <div style="margin-bottom: 2.5px;">&bull; Bombing of the <strong>King David Hotel (July 1946)</strong> &amp; Sergeants Affair.</div>
-              <div style="margin-bottom: 2.5px;">&bull; British economic/military exhaustion &amp; the <strong>SS Exodus (1947)</strong>.</div>
-              <div>&bull; Handover to UN, <strong>Resolution 181 Partition Plan</strong> &amp; Civil War.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Conflicting post-WWII interests: Jewish immigration vs Arab national self-determination.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Armed Jewish insurgency: Haganah, <strong>Irgun</strong> &amp; Lehi; bombing of <strong>King David Hotel (July 1946)</strong>.</div>
+              <div style="margin-bottom: 2.5px;">&bull; British exhaustion: 100,000 troops deployed, post-war debts, and the <strong>SS Exodus affair (July 1947)</strong>.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Referral to UN: UNSCOP commission &amp; <strong>UN Resolution 181 Partition Plan</strong> (Nov 1947).</div>
+              <div>&bull; Outbreak of sectarian communal civil war following UN partition announcement.</div>
+            </div>
+
+            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
+            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
+              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                <span>Disciplinary Concepts</span>
+                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
+              </div>
+              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
+                Mandate &bull; Partition &bull; Insurgency &bull; UNSCOP &bull; Corpus Separatum
+              </div>
+              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
+                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
+                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
+              </div>
             </div>
 
             <!-- Chronological Sequence Flow -->
-            <div style="margin-top: 4px; padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
+            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
               <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
                 <span>Causal Chain of Events</span>
                 <span style="color: #64748b; font-weight: 700;">Chronology</span>
@@ -600,19 +616,35 @@ async function buildPublisherTextbookHtmlKT1() {
           </div>
 
           <!-- 1.2 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 1.2 The 1948–49 War &amp; Refugees
               </strong>
-              <div style="margin-bottom: 2.5px;">&bull; Proclamation of Israel (14 May 1948) &amp; <strong>Arab invasion</strong>.</div>
-              <div style="margin-bottom: 2.5px;">&bull; Military turning points: <strong>Czech arms resupply</strong> &amp; UN truces.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>1949 Armistice (Green Line)</strong> &amp; Israeli territorial gains.</div>
-              <div>&bull; <strong>Palestinian refugee crisis (Nakba)</strong>, UNRWA &amp; Law of Return.</div>
+              <div style="margin-bottom: 2.5px;">&bull; British Mandate terminates; Ben-Gurion proclaims <strong>State of Israel</strong> (14 May 1948).</div>
+              <div style="margin-bottom: 2.5px;">&bull; Immediate Arab invasion by five neighboring armies; initial Israeli defensive crisis.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Turning points: First UN Truce (June 1948), <strong>Czech arms resupply</strong> &amp; IDF unification.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>1949 Armistice agreements (Green Line)</strong>: Israeli territory expands from 56% to 78%.</div>
+              <div>&bull; <strong>Palestinian refugee crisis (Nakba)</strong>: 700,000 displaced; UNRWA &amp; 1950 Law of Return.</div>
+            </div>
+
+            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
+            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
+              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                <span>Disciplinary Concepts</span>
+                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
+              </div>
+              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
+                Nakba &bull; Green Line &bull; Law of Return &bull; UNRWA &bull; Armistice
+              </div>
+              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
+                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
+                <span><strong>Target:</strong> Q3 Causation [12m]</span>
+              </div>
             </div>
 
             <!-- Chronological Sequence Flow -->
-            <div style="margin-top: 4px; padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
+            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
               <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
                 <span>Causal Chain of Events</span>
                 <span style="color: #64748b; font-weight: 700;">Chronology</span>
@@ -642,19 +674,35 @@ async function buildPublisherTextbookHtmlKT1() {
           </div>
 
           <!-- 1.3 -->
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 1.3 The Suez Crisis, 1955–63
               </strong>
-              <div style="margin-bottom: 2.5px;">&bull; Rise of <strong>Gamal Abdel Nasser</strong>, Pan-Arabism &amp; Czech arms deal (1955).</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Nationalisation of Suez Canal</strong> (July 1956) after Aswan Dam aid lost.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Protocol of Sèvres</strong> collusion (Britain, France, Israel).</div>
-              <div>&bull; US financial intervention, Anglo-French defeat &amp; UNEF deployment.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Rise of <strong>Gamal Abdel Nasser</strong>, Pan-Arabism, Gaza Raid &amp; Czech arms deal (1955).</div>
+              <div style="margin-bottom: 2.5px;">&bull; US cancels Aswan Dam loans; Nasser announces <strong>nationalisation of Suez Canal</strong> (July 1956).</div>
+              <div style="margin-bottom: 2.5px;">&bull; Secret tripartite collusion: Anglo-French-Israeli invasion across Sinai &amp; Port Said.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Superpower intervention: US financial pressure halts invasion; UN emergency ceasefire.</div>
+              <div>&bull; Humiliating British/French withdrawal, deployment of <strong>UNEF peacekeepers</strong> in Sinai.</div>
+            </div>
+
+            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
+            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
+              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                <span>Disciplinary Concepts</span>
+                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
+              </div>
+              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
+                Pan-Arabism &bull; Nationalisation &bull; Tripartite Collusion &bull; UNEF &bull; Casus Belli
+              </div>
+              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
+                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
+                <span><strong>Target:</strong> Q3 Causation [12m]</span>
+              </div>
             </div>
 
             <!-- Chronological Sequence Flow -->
-            <div style="margin-top: 4px; padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
+            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
               <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
                 <span>Causal Chain of Events</span>
                 <span style="color: #64748b; font-weight: 700;">Chronology</span>
@@ -672,7 +720,7 @@ async function buildPublisherTextbookHtmlKT1() {
                 <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
                 <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
                   <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1956</span>
-                  <span>Secret Protocol of Sèvres Signed</span>
+                  <span>Secret Tripartite Collusion Signed</span>
                 </div>
                 <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
                 <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">

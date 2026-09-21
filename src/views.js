@@ -2416,3 +2416,8 @@ export async function renderMockExamsView() {
   if (window.scrollToTop) window.scrollToTop(true);
   else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+export async function renderDigitalReaderView(param) {
+  const { renderDigitalReaderView: renderReader } = await import('./digital_textbook_reader.js');
+  await renderReader(param);
+}
