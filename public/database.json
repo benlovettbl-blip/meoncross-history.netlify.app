@@ -26273,6 +26273,61 @@
               ],
               "answer": "He pointed out that bacteria lived harmlessly inside healthy people, arguing they were byproducts not causes.",
               "explanation": "Bastian argued that because countless bacteria inhabit healthy throats, they were the result of illness rather than the cause."
+            },
+            {
+              "question": "What commercial problem in Lille first led Louis Pasteur to investigate the cause of fermentation in 1857?",
+              "options": [
+                "Beetroot alcohol was turning sour and ruining local distillers.",
+                "Milk was failing to turn into cheese.",
+                "Beer barrels were exploding in transit across the English Channel.",
+                "Bread dough was refusing to rise in bakeries."
+              ],
+              "answer": "Beetroot alcohol was turning sour and ruining local distillers.",
+              "explanation": "A Lille industrialist asked Pasteur to investigate why alcohol vats turned into lactic acid; Pasteur discovered that rod-shaped microbes caused spoilage."
+            },
+            {
+              "question": "Which livestock disease did Robert Koch study in 1876, establishing his scientific method for linking a specific bacterium to a disease?",
+              "options": [
+                "Anthrax.",
+                "Cowpox.",
+                "Rinderpest.",
+                "Foot-and-mouth disease."
+              ],
+              "answer": "Anthrax.",
+              "explanation": "Koch isolated the rod-shaped anthrax bacterium, cultured it for eight generations, injected it into mice, and proved it consistently reproduced anthrax."
+            },
+            {
+              "question": "How did Louis Pasteur accidentally discover the principle of artificial vaccine attenuation in 1879?",
+              "options": [
+                "He boiled rabies saliva until it evaporated into a dry powder.",
+                "Charles Chamberland left chicken cholera cultures exposed to air over the summer, and weakened germs induced immunity.",
+                "He injected sheep with crushed mould scraped from cellar walls.",
+                "He exposed anthrax bacilli to intense ultraviolet sunlight."
+              ],
+              "answer": "Charles Chamberland left chicken cholera cultures exposed to air over the summer, and weakened germs induced immunity.",
+              "explanation": "The aged cultures made chickens mildly ill but protected them against fresh virulent strains, uncovering the mechanism for laboratory-made vaccines."
+            },
+            {
+              "question": "Which fatal nervous system disease did Louis Pasteur successfully vaccinate against in July 1885, saving young Joseph Meister?",
+              "options": [
+                "Diphtheria.",
+                "Tetanus.",
+                "Rabies (Hydrophobia).",
+                "Polio."
+              ],
+              "answer": "Rabies (Hydrophobia).",
+              "explanation": "Pasteur treated nine-year-old Joseph Meister, bitten by a rabid dog, with successively stronger doses of attenuated rabies virus, saving his life."
+            },
+            {
+              "question": "What specific water-borne bacterial pathogen did Robert Koch isolate in Egypt and India in 1883?",
+              "options": [
+                "Vibrio cholerae (Cholera).",
+                "Salmonella typhi (Typhoid).",
+                "Yersinia pestis (Plague).",
+                "Treponema pallidum (Syphilis)."
+              ],
+              "answer": "Vibrio cholerae (Cholera).",
+              "explanation": "Koch traveled to Alexandria and Calcutta to isolate Vibrio cholerae, biologically confirming John Snow’s earlier epidemiological deduction."
             }
           ],
           "flashcards": [
@@ -26704,6 +26759,61 @@
               ],
               "answer": "Because without Germ Theory, Jenner did not know why it worked, so he could not adapt it for other diseases.",
               "explanation": "Jenner lacked an understanding of microbes or antibodies, preventing him from developing vaccines for other diseases."
+            },
+            {
+              "question": "What longstanding dairy folklore observation formed the clinical basis of Edward Jenner’s 1796 experiment?",
+              "options": [
+                "Drinking raw cow milk cured tuberculosis in children.",
+                "Milkmaids who contracted mild cowpox from cow udders never contracted lethal smallpox.",
+                "Rubbing butter on the forehead prevented epidemic fevers.",
+                "Farmers who worked with horses were immune to the Black Death."
+              ],
+              "answer": "Milkmaids who contracted mild cowpox from cow udders never contracted lethal smallpox.",
+              "explanation": "Jenner tested Gloucestershire country folklore that dairymaids had famously clear complexions because cowpox conferred immunity against smallpox."
+            },
+            {
+              "question": "Why did the prestigious Royal Society initially reject Edward Jenner’s smallpox paper in 1797?",
+              "options": [
+                "They claimed his French spelling was inaccurate.",
+                "They considered an experiment on a single child insufficient proof and warned he risked his medical reputation.",
+                "They believed smallpox was caused by volcanic emissions.",
+                "They demanded that he test the treatment on royalty first."
+              ],
+              "answer": "They considered an experiment on a single child insufficient proof and warned he risked his medical reputation.",
+              "explanation": "The Royal Society demanded wider empirical trials, prompting Jenner to self-publish his findings in 1798 after vaccinating additional subjects."
+            },
+            {
+              "question": "Why were commercial inoculators (variolators) among the fiercest opponents of Jenner’s cowpox vaccine?",
+              "options": [
+                "They feared losing a highly lucrative medical business charging wealthy families large fees for variolation.",
+                "They objected to touching cattle on strict religious grounds.",
+                "They argued that cowpox made patients speak with animal sounds.",
+                "They believed smallpox was already completely extinct in England."
+              ],
+              "answer": "They feared losing a highly lucrative medical business charging wealthy families large fees for variolation.",
+              "explanation": "Variolators ran expensive residential clinics and saw Jenner’s simple, cheap cowpox vaccination as a direct threat to their livelihood."
+            },
+            {
+              "question": "Why did the Anti-Vaccination League form in Britain following the 1853 and 1867 Vaccination Acts?",
+              "options": [
+                "Members demanded that Parliament raise taxes on doctors.",
+                "Opponents viewed compulsory state vaccination as an infringement of personal liberty and feared animal contamination.",
+                "Protesters wanted the vaccine reserved exclusively for wealthy citizens.",
+                "Parents objected to school closures during harvest time."
+              ],
+              "answer": "Opponents viewed compulsory state vaccination as an infringement of personal liberty and feared animal contamination.",
+              "explanation": "The Anti-Vaccination League mobilized parents who opposed state compulsion, religious interference with God’s will, and sanitary risks from arm-to-arm transmission."
+            },
+            {
+              "question": "In what year did the World Health Organization (WHO) declare smallpox officially eradicated from the planet?",
+              "options": [
+                "1918.",
+                "1953.",
+                "1980.",
+                "2005."
+              ],
+              "answer": "1980.",
+              "explanation": "Following a coordinated global surveillance and ring-vaccination campaign, the WHO certified total smallpox eradication in May 1980."
             }
           ],
           "flashcards": [
@@ -27134,6 +27244,61 @@
               ],
               "answer": "She funded her own voyage to the Crimea and opened the British Hotel to nurse soldiers under fire.",
               "explanation": "Mary Seacole traveled independently and set up the British Hotel near Balaclava, caring for troops on the frontline."
+            },
+            {
+              "question": "What statistical visualization did Florence Nightingale design in 1858 to convince Queen Victoria and Parliament of the need for military sanitary reform?",
+              "options": [
+                "A scatter plot of hospital budgets.",
+                "The Polar Area Diagram (the \"Coxcomb\"), showing that preventable diseases caused far more deaths than combat wounds.",
+                "A chronological bar graph of ammunition production.",
+                "A geographic topographic map of the Crimean peninsula."
+              ],
+              "answer": "The Polar Area Diagram (the \"Coxcomb\"), showing that preventable diseases caused far more deaths than combat wounds.",
+              "explanation": "Nightingale used expanding concentric colored wedges to prove visually that zymotic diseases (blue wedges) dwarfed battlefield casualties (red wedges)."
+            },
+            {
+              "question": "Which fictional Charles Dickens character popularized the pre-1860 stereotype of nurses as drunken, negligent, and dishonest domestic drudges?",
+              "options": [
+                "Miss Havisham.",
+                "Mrs Sarah Gamp in Martin Chuzzlewit.",
+                "Nancy in Oliver Twist.",
+                "Estella in Great Expectations."
+              ],
+              "answer": "Mrs Sarah Gamp in Martin Chuzzlewit.",
+              "explanation": "Mrs Gamp typified the public perception of Victorian nurses before Nightingale’s professional training school elevated nursing into a respected career."
+            },
+            {
+              "question": "Why did Nightingale mandate that hospital walls be finished with glazed ceramic tiles and floors with polished hardwood?",
+              "options": [
+                "To make the rooms darker so patients could sleep during daylight hours.",
+                "Because smooth, non-porous surfaces could be washed clean and would not absorb poisonous miasmic air or bodily fluids.",
+                "To reduce building construction costs for charitable trusts.",
+                "Because Victorian wallpaper was believed to cause cholera."
+              ],
+              "answer": "Because smooth, non-porous surfaces could be washed clean and would not absorb poisonous miasmic air or bodily fluids.",
+              "explanation": "Nightingale insisted on wipeable, non-absorbent materials to eliminate dirt and damp where miasma and hospital gangrene were thought to linger."
+            },
+            {
+              "question": "What medical belief system guided Florence Nightingale’s sanitary reforms throughout her entire life?",
+              "options": [
+                "Pasteur’s Germ Theory of bacteriology.",
+                "Miasma Theory (that disease was spontaneously generated by filth, stagnant air, and decaying matter).",
+                "Paracelsian chemical alchemy.",
+                "Ancient Galenic Four Humours astrology."
+              ],
+              "answer": "Miasma Theory (that disease was spontaneously generated by filth, stagnant air, and decaying matter).",
+              "explanation": "Although Nightingale firmly rejected Germ Theory, her crusade to eliminate bad air and filth inadvertently destroyed the bacteria that caused lethal infections."
+            },
+            {
+              "question": "What minimum distance did Florence Nightingale demand between patient beds in the Pavilion hospital design?",
+              "options": [
+                "Two feet.",
+                "Four feet.",
+                "Eight feet.",
+                "Fifteen feet."
+              ],
+              "answer": "Eight feet.",
+              "explanation": "Nightingale specified an eight-foot gap between beds to ensure adequate space for cross-ventilation and prevent airborne contagion between patients."
             }
           ],
           "flashcards": [
@@ -27564,6 +27729,61 @@
               ],
               "answer": "The steam autoclave.",
               "explanation": "The autoclave used high-pressure superheated steam to sterilize instruments for aseptic surgery."
+            },
+            {
+              "question": "Which young patient died in 1848 while receiving chloroform to remove an infected toenail, triggering intense medical controversy over anaesthetic safety?",
+              "options": [
+                "James Phipps.",
+                "Hannah Greener.",
+                "James Greenlees.",
+                "Sarah Gamp."
+              ],
+              "answer": "Hannah Greener.",
+              "explanation": "Hannah Greener’s death in January 1848 was the first recorded fatality from chloroform anaesthesia, sparking furious debates about dangerous dosages."
+            },
+            {
+              "question": "Which royal milestone in 1853 effectively silenced religious and moral objections against the use of chloroform in childbirth?",
+              "options": [
+                "King George III was given chloroform during dental surgery.",
+                "Queen Victoria publicly used chloroform during the birth of Prince Leopold.",
+                "The Archbishop of Canterbury blessed the use of chloroform in St Paul’s Cathedral.",
+                "Parliament passed the Royal Anaesthesia Charter."
+              ],
+              "answer": "Queen Victoria publicly used chloroform during the birth of Prince Leopold.",
+              "explanation": "Queen Victoria’s endorsement (\"blessed chloroform\") administered by Dr John Snow in 1853 removed religious prejudice and made pain relief fashionable."
+            },
+            {
+              "question": "Who was the 11-year-old boy whose compound leg fracture was successfully treated with carbolic acid dressings by Joseph Lister in 1865, avoiding amputation?",
+              "options": [
+                "James Phipps.",
+                "James Greenlees.",
+                "Alexander Fleck.",
+                "Robert Liston."
+              ],
+              "answer": "James Greenlees.",
+              "explanation": "James Greenlees was run over by a cart; Lister soaked lint in carbolic acid, and the bone and skin healed completely without suppuration or gangrene."
+            },
+            {
+              "question": "Why did many Victorian surgeons vigorously oppose Lister’s carbolic acid spray in the 1870s?",
+              "options": [
+                "It caused fires when brought near surgical gas lamps.",
+                "It cracked surgeons’ hands, irritated lungs, slowed operating speed, and surgeons argued bacteria in the air were harmless.",
+                "Carbolic acid was too expensive for voluntary hospitals to afford.",
+                "Parliament had banned the industrial import of carbolic acid from France."
+              ],
+              "answer": "It cracked surgeons’ hands, irritated lungs, slowed operating speed, and surgeons argued bacteria in the air were harmless.",
+              "explanation": "Surgeons found the carbolic mist painful and cumbersome, and many older doctors still rejected Germ Theory, believing air itself was not pathogenic."
+            },
+            {
+              "question": "What is the fundamental difference between antiseptic surgery and aseptic surgery?",
+              "options": [
+                "Antiseptic uses boiling water, whereas aseptic uses cold carbolic acid.",
+                "Antiseptic surgery kills germs already in the wound using chemicals; aseptic surgery excludes all microbes from the theatre entirely through complete sterilisation.",
+                "Antiseptic surgery is performed outdoors; aseptic surgery is performed in military tents.",
+                "Antiseptic surgery requires anaesthetic; aseptic surgery is performed without anaesthetic."
+              ],
+              "answer": "Antiseptic surgery kills germs already in the wound using chemicals; aseptic surgery excludes all microbes from the theatre entirely through complete sterilisation.",
+              "explanation": "Lister pioneered antiseptic surgery (killing germs with carbolic), while the 1890s saw the rise of aseptic surgery (autoclaves, rubber gloves, and masks to keep germs out)."
             }
           ],
           "flashcards": [
@@ -28014,6 +28234,61 @@
               ],
               "answer": "It was compulsory, legally forcing all local councils to provide clean water and drainage.",
               "explanation": "The 1875 Act made sanitary provisions compulsory rather than permissive."
+            },
+            {
+              "question": "What immediate practical action did Dr John Snow persuade the parish Board of Guardians to take on 8 September 1854 to halt the Soho epidemic?",
+              "options": [
+                "Burn all bedding in Broad Street.",
+                "Remove the handle from the Broad Street water pump.",
+                "Pour carbolic acid into the Soho gutters.",
+                "Evacuate all Soho residents to Hampstead."
+              ],
+              "answer": "Remove the handle from the Broad Street water pump.",
+              "explanation": "Removing the pump handle prevented residents from drinking the contaminated well water, causing the local outbreak to rapidly subside."
+            },
+            {
+              "question": "How did the cholera death of Susannah Eley in distant Hampstead provide crucial evidence confirming Snow’s water-borne theory?",
+              "options": [
+                "She had never visited Soho but had Broad Street well water delivered daily because she liked its sparkling taste.",
+                "She worked as a nurse in Soho Hospital.",
+                "She had handled infected cloth imported from India.",
+                "She contracted cholera directly from a cloud of miasma blown northwards."
+              ],
+              "answer": "She had never visited Soho but had Broad Street well water delivered daily because she liked its sparkling taste.",
+              "explanation": "Susannah Eley lived miles away in clean Hampstead, but her sons sent her a bottle of Broad Street water; she drank it and died, ruling out local airborne miasma."
+            },
+            {
+              "question": "What seminal report published by Edwin Chadwick in 1842 proved that filth and epidemic disease caused widespread economic poverty?",
+              "options": [
+                "Report on the Sanitary Condition of the Labouring Population.",
+                "The Microbe Hunter’s Gazette.",
+                "The Royal Commission on Anaesthesia.",
+                "The Soho Mortality Survey."
+              ],
+              "answer": "Report on the Sanitary Condition of the Labouring Population.",
+              "explanation": "Chadwick used statistical evidence to demonstrate that poor sanitary conditions caused chronic disease, which forced families into poverty and raised poor rates."
+            },
+            {
+              "question": "How did the passage of the 1867 Second Reform Act directly accelerate public health legislation in Victorian Britain?",
+              "options": [
+                "It abolished all municipal taxes.",
+                "It enfranchised working-class men, forcing political parties to pass social reforms to win their votes.",
+                "It banned private water companies from operating in London.",
+                "It required all Members of Parliament to undergo medical training."
+              ],
+              "answer": "It enfranchised working-class men, forcing political parties to pass social reforms to win their votes.",
+              "explanation": "Giving working-class town workers the vote meant politicians like Benjamin Disraeli had to champion public health (\"Sanitas sanitatum\") to secure election victories."
+            },
+            {
+              "question": "Which of the following was a mandatory requirement imposed on local councils by the compulsory 1875 Public Health Act?",
+              "options": [
+                "Appointing a qualified Medical Officer of Health and providing clean water, paving, lighting, and sewage disposal.",
+                "Building free sanatoria in every rural parish.",
+                "Providing free smallpox inoculations to all adults.",
+                "Compulsory quarantine for all arriving maritime sailors."
+              ],
+              "answer": "Appointing a qualified Medical Officer of Health and providing clean water, paving, lighting, and sewage disposal.",
+              "explanation": "The 1875 Act legally compelled local authorities to inspect food, pave and light streets, manage sewers, and appoint Medical Officers of Health."
             }
           ],
           "flashcards": [
