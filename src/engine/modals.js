@@ -3557,210 +3557,251 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     return unitId;
   };
 
+  // Helper to generate the 10 timetable days across the 2-week cycle
+  const get10DaysList = () => {
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const weeks = ['Week A', 'Week B'];
+    const nowDate = new Date();
+    const tomorrowDate = new Date();
+    tomorrowDate.setDate(nowDate.getDate() + 1);
+
+    const isSameDate = (d1, d2) =>
+      d1.getFullYear() === d2.getFullYear() &&
+      d1.getMonth() === d2.getMonth() &&
+      d1.getDate() === d2.getDate();
+
+    const shortMonths = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+
+    const list = [];
+    weeks.forEach((w) => {
+      days.forEach((d) => {
+        const dateObj = getTargetDateObj(d, w);
+        const dayNum = dateObj.getDate();
+        const monStr = shortMonths[dateObj.getMonth()];
+        const isToday = isSameDate(dateObj, nowDate);
+        const isTom = isSameDate(dateObj, tomorrowDate);
+        list.push({
+          week: w,
+          day: d,
+          shortCode: `${d.slice(0, 3)} ${w.slice(-1)}`,
+          dateLabel: `${dayNum} ${monStr}`,
+          isToday: isToday,
+          isTomorrow: isTom,
+          dateObj: dateObj,
+        });
+      });
+    });
+    return list;
+  };
+
   // Create High-Contrast, Modern Dark Slate Modal Overlay
   const overlay = document.createElement('div');
   overlay.id = 'emergencyCoverModal';
   overlay.className = 'modal-overlay no-print';
   overlay.style.cssText =
-    'position: fixed; inset: 0; background: rgba(11, 19, 43, 0.85); backdrop-filter: blur(8px); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.25s ease; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;';
+    'position: fixed; inset: 0; background: rgba(11, 19, 43, 0.88); backdrop-filter: blur(8px); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.25s ease; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;';
 
   overlay.innerHTML = `
-    <div class="modal-content" id="coverModalContainer" style="background: #0f172a; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; border-radius: 0; border: none; display: flex; flex-direction: column; overflow: hidden; box-shadow: none; color: #f8fafc;">
+    <div class="modal-content" id="coverModalContainer" style="background: #0b1120; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; border-radius: 0; border: none; display: flex; flex-direction: column; overflow: hidden; box-shadow: none; color: #f8fafc;">
       
       <!-- Top Navigation & Header Bar -->
-      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #2563eb, #1d4ed8); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);">
             <i class="fa-solid fa-envelope-open-text"></i>
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <h2 style="margin: 0; color: #f8fafc; font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em;">Cover Lesson Generator</h2>
-              <span style="background: #3b82f6; color: #ffffff; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Live Dispatch</span>
+              <h2 style="margin: 0; color: #f8fafc; font-size: 1.12rem; font-weight: 700; letter-spacing: -0.01em;">Cover Lesson Generator</h2>
+              <span style="background: #3b82f6; color: #ffffff; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Interactive Draft Email</span>
             </div>
             <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">The History Department • Departmental Cover Portal</span>
           </div>
         </div>
 
         <div style="display: flex; align-items: center; gap: 10px;">
-          <button id="coverModalCloseBtn" type="button" title="Close Cover Generator" style="background: #0f172a; border: 1px solid #334155; color: #94a3b8; width: 34px; height: 34px; border-radius: 6px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;" onmouseover="this.style.color='#f8fafc'; this.style.borderColor='#ef4444'; this.style.background='#7f1d1d';" onmouseout="this.style.color='#94a3b8'; this.style.borderColor='#334155'; this.style.background='#0f172a';">
+          <!-- Recent History Log Toggle -->
+          <div id="coverRecentHistoryToggle" style="display: flex; align-items: center; gap: 6px; background: #0f172a; border: 1px solid #334155; padding: 5px 10px; border-radius: 6px; cursor: pointer; user-select: none; font-size: 0.74rem;">
+            <i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6;"></i>
+            <span style="font-weight: 600; color: #e2e8f0;">Absence History</span>
+            <span id="coverRecentHistoryBadge" style="background: #1e293b; border: 1px solid #334155; color: #60a5fa; padding: 0 5px; border-radius: 8px; font-size: 0.65rem; font-weight: 700;">0</span>
+            <i class="fa-solid fa-chevron-down" id="coverHistoryChevron" style="font-size: 0.6rem; color: #94a3b8; transition: transform 0.2s;"></i>
+          </div>
+
+          <button id="coverWipeMemoryBtn" type="button" title="Clear all saved cover memory from this machine" style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; padding: 5px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;">
+            <i class="fa-solid fa-trash-can"></i> Wipe Memory
+          </button>
+
+          <button id="coverModalCloseBtn" type="button" title="Close Cover Generator" style="background: #0f172a; border: 1px solid #334155; color: #94a3b8; width: 32px; height: 32px; border-radius: 6px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;" onmouseover="this.style.color='#f8fafc'; this.style.borderColor='#ef4444'; this.style.background='#7f1d1d';" onmouseout="this.style.color='#94a3b8'; this.style.borderColor='#334155'; this.style.background='#0f172a';">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
       </div>
 
-      <!-- Main Widescreen Workspace: 2 Columns -->
-      <div style="flex: 1; display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.98fr); gap: 16px; padding: 16px 20px; overflow: hidden; background: #0b1120;">
+      <!-- Collapsible Recent History Panel -->
+      <div id="coverRecentHistoryList" style="display: none; background: #0f172a; border-bottom: 1px solid #334155; padding: 10px 20px; flex-direction: column; gap: 6px; max-height: 180px; overflow-y: auto;">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- 10-Day Quick Timetable Tab Strip -->
+      <div id="cover10DayStrip" style="background: #131c2d; border-bottom: 1px solid #1e293b; padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; flex-shrink: 0;">
+        <!-- Hidden test compatibility elements -->
+        <div style="display: none;" aria-hidden="true">
+          <button id="btnWeekA" type="button"></button>
+          <button id="btnWeekB" type="button"></button>
+          <button class="day-btn" data-day="Monday" type="button"></button>
+          <button class="day-btn" data-day="Tuesday" type="button"></button>
+          <button class="day-btn" data-day="Wednesday" type="button"></button>
+          <button class="day-btn" data-day="Thursday" type="button"></button>
+          <button class="day-btn" data-day="Friday" type="button"></button>
+          <input type="checkbox" id="chkIncludePolicy" checked>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; flex: 1; flex-wrap: wrap;">
+          <!-- Week A Group -->
+          <div style="display: flex; align-items: center; gap: 6px; background: rgba(15, 23, 42, 0.7); border: 1px solid #243044; border-radius: 8px; padding: 3px 8px;">
+            <span style="font-size: 0.68rem; font-weight: 800; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.06em; padding-right: 4px;">Week A</span>
+            <div id="coverWeekAGroup" style="display: flex; gap: 4px;">
+              <!-- 5 buttons populated -->
+            </div>
+          </div>
+
+          <!-- Week B Group -->
+          <div style="display: flex; align-items: center; gap: 6px; background: rgba(15, 23, 42, 0.7); border: 1px solid #243044; border-radius: 8px; padding: 3px 8px;">
+            <span style="font-size: 0.68rem; font-weight: 800; color: #c084fc; text-transform: uppercase; letter-spacing: 0.06em; padding-right: 4px;">Week B</span>
+            <div id="coverWeekBGroup" style="display: flex; gap: 4px;">
+              <!-- 5 buttons populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Single-Click Bulk Action in Tab Strip -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button id="btnApplyDefaultsToAll" type="button" style="background: #0f172a; border: 1px solid #3b82f6; color: #60a5fa; padding: 5px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Apply standard printed workbooks (shelf handout) & collect at end to all teaching periods today">
+            <i class="fa-solid fa-arrows-rotate"></i> Apply Workbooks to All
+          </button>
+        </div>
+      </div>
+
+      <!-- Action Dispatch Toolbar (Sticky directly above the email document) -->
+      <div id="coverDispatchBar" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #f8fafc; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-file-pen" style="color: #3b82f6;"></i>
+            <span id="coverScheduleLabel">Schedule for Week A Tuesday</span>
+          </span>
+          <span style="font-size: 0.72rem; color: #94a3b8;">• Select topics and options directly in the draft sentences below</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button id="btnToggleRawText" type="button" style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s;" title="Toggle raw plain-text output view">
+            <i class="fa-solid fa-code"></i> <span id="btnToggleRawTextLabel">View Plain Text</span>
+          </button>
+
+          <a id="coverMailtoBtn" href="#" class="btn-mail" style="background: #1e293b; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.borderColor='#60a5fa'; this.style.color='#ffffff';" onmouseout="this.style.borderColor='#334155'; this.style.color='#cbd5e1';">
+            <i class="fa-solid fa-envelope"></i> Mail
+          </a>
+
+          <a id="coverOutlookBtn" href="#" target="_blank" class="btn-outlook" style="background: #1e293b; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.borderColor='#60a5fa'; this.style.color='#ffffff';" onmouseout="this.style.borderColor='#334155'; this.style.color='#cbd5e1';">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Outlook Web
+          </a>
+
+          <button id="coverCopyActionBtn" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: 1px solid #3b82f6; padding: 7px 18px; border-radius: 6px; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); transition: all 0.15s;">
+            <i class="fa-solid fa-copy"></i> Copy Cover Email
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Main Canvas: The Interactive Cloze Email Document -->
+      <div style="flex: 1; overflow-y: auto; padding: 24px 20px; background: #080d19; display: flex; flex-direction: column; align-items: center;">
         
-        <!-- Left Column: Timetable Controls & Class Lesson Pickers -->
-        <div style="display: flex; flex-direction: column; gap: 12px; overflow-y: auto; padding-right: 6px;">
+        <!-- Interactive Executive Stationery Card -->
+        <div id="coverEmailDocument" style="width: 100%; max-width: 860px; background: #0d1527; border: 1px solid #1e293b; border-radius: 12px; padding: 28px 34px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 0.92rem; line-height: 1.65; color: #f1f5f9;">
           
-          <!-- Schedule Navigation Card -->
-          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
-              
-              <!-- Academic Week Toggle with dynamic sync indicator -->
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Timetable Week:</span>
-                <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
-                  <button id="btnWeekA" type="button" style="background: ${currentWeek === 'Week A' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week A' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week A</button>
-                  <button id="btnWeekB" type="button" style="background: ${currentWeek === 'Week B' ? '#3b82f6' : 'transparent'}; color: ${currentWeek === 'Week B' ? '#ffffff' : '#94a3b8'}; border: none; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">Week B</button>
-                </div>
+          <!-- Email Envelope / Header Fields -->
+          <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 16px; border-bottom: 1px solid #1e293b;">
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; width: 44px;">To:</span>
+                <input type="text" id="coverRecipientInput" value="${localStorage.getItem('cover_recipient') || 'Paul'}" style="background: #162032; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.84rem; font-weight: 600; padding: 4px 10px; width: 130px; outline: none;" placeholder="Paul">
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; width: 44px;">From:</span>
+                <input type="text" id="coverSenderInput" value="${localStorage.getItem('cover_sender_name') || 'Ben'}" style="background: #162032; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.84rem; font-weight: 600; padding: 4px 10px; width: 130px; outline: none;" placeholder="Ben">
               </div>
             </div>
 
-            <!-- Days of the Week Row -->
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; padding-top: 4px; border-top: 1px solid rgba(51, 65, 85, 0.5);">
-              <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em;">Day:</span>
-              <div style="display: flex; gap: 6px; flex: 1; max-width: 440px;">
-                ${['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-                  .map(
-                    (d) => `
-                  <button class="day-btn" data-day="${d}" type="button" style="flex: 1; background: ${d === currentDay ? '#2563eb' : '#0f172a'}; color: ${d === currentDay ? '#ffffff' : '#cbd5e1'}; border: 1px solid ${d === currentDay ? '#3b82f6' : '#334155'}; padding: 6px 0; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">${d.slice(0, 3)}</button>
-                `,
-                  )
-                  .join('')}
-              </div>
-            </div>
-          </div>
-
-          <!-- Resource Settings & Collection Policy Card (Defaults & Bulk Apply) -->
-          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; font-size: 0.78rem;">
-            <!-- Resource Setting -->
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.05em;">Defaults:</span>
-              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #e2e8f0; font-weight: 500;">
-                <input type="radio" name="coverResourceMode" value="workbooks" checked style="accent-color: #3b82f6; cursor: pointer;"> Printed Workbooks
-              </label>
-              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
-                <input type="radio" name="coverResourceMode" value="paper" style="accent-color: #3b82f6; cursor: pointer;"> Paper Only
-              </label>
-              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
-                <input type="radio" name="coverResourceMode" value="laptops" style="accent-color: #3b82f6; cursor: pointer;"> Laptops / None
-              </label>
-            </div>
-
-            <!-- Shelf Handout Option -->
-            <label id="lblDefaultShelf" style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #93c5fd; font-weight: 600; font-size: 0.74rem;">
-              <input type="checkbox" id="chkDefaultShelf" checked style="accent-color: #3b82f6; cursor: pointer;">
-              <span>Hand out from shelf &amp; return</span>
-            </label>
-
-            <!-- Collection Mode -->
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.05em;">Collection:</span>
-              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #e2e8f0; font-weight: 500;">
-                <input type="radio" name="coverCollectionMode" value="collect" checked style="accent-color: #3b82f6; cursor: pointer;"> Collect at End
-              </label>
-              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
-                <input type="radio" name="coverCollectionMode" value="folders" style="accent-color: #3b82f6; cursor: pointer;"> In Folders
-              </label>
-              <label style="display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #cbd5e1; font-weight: 500;">
-                <input type="radio" name="coverCollectionMode" value="digital" style="accent-color: #3b82f6; cursor: pointer;"> VLE
-              </label>
-            </div>
-
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <button id="btnApplyDefaultsToAll" type="button" style="background: #0f172a; border: 1px solid #3b82f6; color: #60a5fa; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Apply these default resource and collection settings to all lessons below">
-                <i class="fa-solid fa-arrows-rotate"></i> Apply to All
-              </button>
-
-              <!-- Include in Email toggle -->
-              <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: #94a3b8; font-size: 0.74rem;">
-                <input type="checkbox" id="chkIncludePolicy" checked style="accent-color: #3b82f6; cursor: pointer;">
-                <span>Include Notes</span>
-              </label>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; width: 55px;">Subject:</span>
+              <span id="coverSubjectLine" style="color: #60a5fa; font-weight: 700; font-size: 0.88rem;">COVER: History - ...</span>
             </div>
           </div>
 
-          <!-- Multi-Day Absence Memory Bar & Wipe Button -->
-          <div style="background: #162032; border: 1px solid #1e293b; border-radius: 8px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div id="coverRecentHistoryToggle" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;">
-              <i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; font-size: 0.85rem;"></i>
-              <span style="font-size: 0.74rem; font-weight: 700; color: #e2e8f0;">Absence History Log</span>
-              <span id="coverRecentHistoryBadge" style="background: #1e293b; border: 1px solid #334155; color: #60a5fa; padding: 1px 7px; border-radius: 10px; font-size: 0.68rem; font-weight: 700;">0 logged</span>
-              <i class="fa-solid fa-chevron-down" id="coverHistoryChevron" style="font-size: 0.65rem; color: #94a3b8; transition: transform 0.2s;"></i>
+          <!-- Email Body Section -->
+          <div style="padding-top: 18px; display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              Dear <span id="clozeRecipientDisplay" style="font-weight: 700; color: #ffffff;">Paul</span>,
             </div>
 
-            <button id="coverWipeMemoryBtn" type="button" title="Clear all saved cover memory and remembered lessons from this machine" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.35); color: #fca5a5; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;" onmouseover="this.style.background='rgba(239, 68, 68, 0.3)';" onmouseout="this.style.background='rgba(239, 68, 68, 0.15)';">
-              <i class="fa-solid fa-trash-can"></i> Wipe Absence Memory
-            </button>
-          </div>
+            <div>
+              Please find below the cover <span id="clozeWhenPhrase">for </span><strong id="clozeDateDisplay" style="color: #93c5fd;">...</strong>.
+            </div>
 
-          <!-- Collapsible Recent History Panel -->
-          <div id="coverRecentHistoryList" style="display: none; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 10px 12px; flex-direction: column; gap: 6px;">
-            <!-- Dynamically populated -->
-          </div>
+            <div>
+              Tutor AM / PM Warrior 2
+            </div>
 
-          <!-- Timetabled Lessons & Unit/Topic Customization Cards -->
-          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #f8fafc; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-calendar-check" style="color: #3b82f6;"></i>
-                <span id="coverScheduleLabel">Schedule for Week A Tuesday</span>
+            <!-- Duties & General Note Line -->
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <span>Duties: <span id="clozeDutiesText" style="color: #e2e8f0;">none</span></span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; background: #162032; border: 1px solid #243044; border-radius: 6px; padding: 3px 8px; font-size: 0.8rem;">
+                <input type="checkbox" id="chkIncludeGeneralNote" checked style="accent-color: #3b82f6; cursor: pointer;">
+                <input type="text" id="coverGeneralNoteInput" value="${localStorage.getItem('cover_general_note') !== null ? localStorage.getItem('cover_general_note') : 'All cover set on VLE; please allow pupils to use laptops as textbooks only.'}" style="background: transparent; border: none; color: #cbd5e1; outline: none; width: 460px; font-size: 0.8rem;" placeholder="All cover set on VLE; please allow pupils to use laptops as textbooks only.">
               </span>
-              <span style="font-size: 0.7rem; color: #94a3b8;">Choose Unit &amp; Lesson for each class</span>
             </div>
 
-            <div id="coverPeriodsContainer" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Dynamic Timetable Period Rows (The Gap-Fill / Cloze Section) -->
+            <div id="coverEmailPeriodsFlow" style="display: flex; flex-direction: column; gap: 6px; margin: 8px 0;">
               <!-- Dynamically populated with Period rows -->
             </div>
+
+            <!-- Email Closing Section -->
+            <div style="margin-top: 8px; color: #94a3b8; font-size: 0.85rem;">
+              Early Finishers: Pupils should navigate to the Revision Zone flashcards or Living Timeline challenge on the platform.
+            </div>
+
+            <div style="margin-top: 12px; color: #f8fafc;">
+              Thanks
+            </div>
+            <div style="color: #ffffff; font-weight: 700; font-size: 0.95rem;">
+              <span id="clozeSenderDisplay">Ben</span>
+            </div>
+
           </div>
 
         </div>
 
-        <!-- Right Column: Live Email Preview & Instant Dispatch -->
-        <div style="display: flex; flex-direction: column; gap: 10px; height: 100%; min-height: 0;">
-          
-          <!-- Dispatch Toolbar -->
-          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <span style="font-size: 0.78rem; font-weight: 700; color: #f8fafc;">Live Email Draft</span>
-              <span style="font-size: 0.7rem; color: #94a3b8;">(Updates in real-time)</span>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <a id="coverMailtoBtn" href="#" class="btn-mail" style="background: #0f172a; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.borderColor='#60a5fa'; this.style.color='#ffffff';" onmouseout="this.style.borderColor='#334155'; this.style.color='#cbd5e1';">
-                <i class="fa-solid fa-envelope"></i> Mail
-              </a>
-              <a id="coverOutlookBtn" href="#" target="_blank" class="btn-outlook" style="background: #0f172a; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.borderColor='#60a5fa'; this.style.color='#ffffff';" onmouseout="this.style.borderColor='#334155'; this.style.color='#cbd5e1';">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Outlook Web
-              </a>
-              <button id="coverCopyActionBtn" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: 1px solid #3b82f6; padding: 7px 18px; border-radius: 6px; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); transition: all 0.15s;">
-                <i class="fa-solid fa-copy"></i> Copy Cover Email
-              </button>
-            </div>
+        <!-- Collapsible Raw Plain-Text Textarea Drawer -->
+        <div id="coverRawTextDrawer" style="display: none; width: 100%; max-width: 860px; margin-top: 18px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 0.74rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Raw Plain-Text Email Feed:</span>
+            <span style="font-size: 0.7rem; color: #64748b;">Synchronized continuously with Cloze fields above</span>
           </div>
-
-          <!-- Quick Email Customization Bar (Recipient, Sender, General VLE Note) -->
-          <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-              <div>
-                <label style="display: block; font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 3px;">Recipient (e.g. Paul):</label>
-                <input type="text" id="coverRecipientInput" value="${localStorage.getItem('cover_recipient') || 'Paul'}" style="width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.8rem; padding: 5px 8px; outline: none;" placeholder="Paul">
-              </div>
-              <div>
-                <label style="display: block; font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 3px;">Sign-off Sender Name:</label>
-                <input type="text" id="coverSenderInput" value="${localStorage.getItem('cover_sender_name') || 'Ben'}" style="width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.8rem; padding: 5px 8px; outline: none;" placeholder="Ben">
-              </div>
-            </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-                <label style="font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">General VLE / Device Instruction (after Duties):</label>
-                <label style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; color: #cbd5e1; cursor: pointer;">
-                  <input type="checkbox" id="chkIncludeGeneralNote" checked style="accent-color: #3b82f6; cursor: pointer;">
-                  <span>Include</span>
-                </label>
-              </div>
-              <input type="text" id="coverGeneralNoteInput" value="${localStorage.getItem('cover_general_note') !== null ? localStorage.getItem('cover_general_note') : 'All cover set on VLE; please allow pupils to use laptops as textbooks only.'}" style="width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.8rem; padding: 5px 8px; outline: none;" placeholder="All cover set on VLE; please allow pupils to use laptops as textbooks only.">
-            </div>
-          </div>
-
-          <!-- Email Preview Textarea Container -->
-          <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
-            <textarea id="coverEmailOutputArea" readonly style="flex: 1; width: 100%; box-sizing: border-box; background: #070d1e; border: 1px solid #1e293b; border-radius: 8px; color: #f1f5f9; padding: 16px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.84rem; line-height: 1.6; resize: none; outline: none; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);"></textarea>
-          </div>
-
+          <textarea id="coverEmailOutputArea" readonly style="width: 100%; height: 260px; box-sizing: border-box; background: #070d1e; border: 1px solid #1e293b; border-radius: 8px; color: #f1f5f9; padding: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.82rem; line-height: 1.6; resize: vertical; outline: none; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);"></textarea>
         </div>
 
       </div>
@@ -3776,13 +3817,11 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const btnWeekA = overlay.querySelector('#btnWeekA');
   const btnWeekB = overlay.querySelector('#btnWeekB');
   const dayButtons = overlay.querySelectorAll('.day-btn');
-  const resourceRadios = overlay.querySelectorAll('input[name="coverResourceMode"]');
-  const collectionRadios = overlay.querySelectorAll('input[name="coverCollectionMode"]');
-  const chkDefaultShelf = overlay.querySelector('#chkDefaultShelf');
-  const btnApplyDefaultsToAll = overlay.querySelector('#btnApplyDefaultsToAll');
   const chkIncludePolicy = overlay.querySelector('#chkIncludePolicy');
   const scheduleLabel = overlay.querySelector('#coverScheduleLabel');
-  const periodsContainer = overlay.querySelector('#coverPeriodsContainer');
+  const coverWeekAGroup = overlay.querySelector('#coverWeekAGroup');
+  const coverWeekBGroup = overlay.querySelector('#coverWeekBGroup');
+  const periodsFlow = overlay.querySelector('#coverEmailPeriodsFlow');
   const emailOutputArea = overlay.querySelector('#coverEmailOutputArea');
   const recipientInput = overlay.querySelector('#coverRecipientInput');
   const senderInput = overlay.querySelector('#coverSenderInput');
@@ -3796,6 +3835,26 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const recentHistoryBadge = overlay.querySelector('#coverRecentHistoryBadge');
   const historyChevron = overlay.querySelector('#coverHistoryChevron');
   const wipeMemoryBtn = overlay.querySelector('#coverWipeMemoryBtn');
+  const btnApplyDefaultsToAll = overlay.querySelector('#btnApplyDefaultsToAll');
+  const btnToggleRawText = overlay.querySelector('#btnToggleRawText');
+  const btnToggleRawTextLabel = overlay.querySelector('#btnToggleRawTextLabel');
+  const coverRawTextDrawer = overlay.querySelector('#coverRawTextDrawer');
+  const clozeRecipientDisplay = overlay.querySelector('#clozeRecipientDisplay');
+  const clozeSenderDisplay = overlay.querySelector('#clozeSenderDisplay');
+  const clozeWhenPhrase = overlay.querySelector('#clozeWhenPhrase');
+  const clozeDateDisplay = overlay.querySelector('#clozeDateDisplay');
+  const clozeDutiesText = overlay.querySelector('#clozeDutiesText');
+  const coverSubjectLine = overlay.querySelector('#coverSubjectLine');
+
+  // Toggle Raw Plain-Text Drawer
+  let rawTextDrawerOpen = false;
+  btnToggleRawText.onclick = () => {
+    rawTextDrawerOpen = !rawTextDrawerOpen;
+    coverRawTextDrawer.style.display = rawTextDrawerOpen ? 'block' : 'none';
+    btnToggleRawTextLabel.textContent = rawTextDrawerOpen ? 'Hide Plain Text' : 'View Plain Text';
+    btnToggleRawText.style.background = rawTextDrawerOpen ? '#2563eb' : '#1e293b';
+    btnToggleRawText.style.color = rawTextDrawerOpen ? '#ffffff' : '#94a3b8';
+  };
 
   // Recent History Drawer Toggle
   let historyDrawerOpen = false;
@@ -3819,8 +3878,8 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     updateModalState();
     setTimeout(() => {
       wipeMemoryBtn.innerHTML = origHtml;
-      wipeMemoryBtn.style.background = 'rgba(239, 68, 68, 0.15)';
-      wipeMemoryBtn.style.borderColor = 'rgba(239, 68, 68, 0.35)';
+      wipeMemoryBtn.style.background = 'rgba(239, 68, 68, 0.12)';
+      wipeMemoryBtn.style.borderColor = 'rgba(239, 68, 68, 0.3)';
       wipeMemoryBtn.style.color = '#fca5a5';
     }, 2000);
   };
@@ -3828,7 +3887,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   // Render Multi-Day Absence History
   const renderRecentHistory = () => {
     const log = getRecentCoverLog();
-    recentHistoryBadge.textContent = `${log.length} logged`;
+    recentHistoryBadge.textContent = `${log.length}`;
     if (log.length === 0) {
       recentHistoryList.innerHTML = `<span style="color: #94a3b8; font-size: 0.72rem; font-style: italic;">No previous absence cover entries recorded on this machine yet. As you copy or dispatch cover, records will automatically appear here.</span>`;
       return;
@@ -3836,7 +3895,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
     recentHistoryList.innerHTML = log
       .map(
-        (item, idx) => `
+        (item) => `
       <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; gap: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <span style="font-weight: 700; color: #60a5fa; font-size: 0.78rem;"><i class="fa-solid fa-calendar-day" style="margin-right: 5px;"></i>${item.dayName}, ${item.dateStr} (${item.week})</span>
@@ -3909,20 +3968,74 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
   // Main Reactive Update Function
   const updateModalState = () => {
-    // 1. Update Week Buttons
-    if (currentWeek === 'Week A') {
-      btnWeekA.style.background = '#3b82f6';
-      btnWeekA.style.color = '#ffffff';
-      btnWeekB.style.background = 'transparent';
-      btnWeekB.style.color = '#94a3b8';
-    } else {
-      btnWeekB.style.background = '#3b82f6';
-      btnWeekB.style.color = '#ffffff';
-      btnWeekA.style.background = 'transparent';
-      btnWeekA.style.color = '#94a3b8';
-    }
+    // 1. Render & Update 10-Day Quick Selector Tabs
+    const tenDays = get10DaysList();
+    const weekADays = tenDays.filter((t) => t.week === 'Week A');
+    const weekBDays = tenDays.filter((t) => t.week === 'Week B');
 
-    // 2. Update Day Buttons
+    const renderDayTabButtons = (daysArr, container) => {
+      container.innerHTML = '';
+      daysArr.forEach((item) => {
+        const isActive = item.week === currentWeek && item.day === currentDay;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'cover-10day-tab';
+        btn.setAttribute('data-week', item.week);
+        btn.setAttribute('data-day', item.day);
+        btn.style.cssText = `
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 4px 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: all 0.15s;
+          border: 1px solid ${isActive ? '#60a5fa' : '#334155'};
+          background: ${isActive ? 'linear-gradient(135deg, #2563eb, #1d4ed8)' : '#0f172a'};
+          color: ${isActive ? '#ffffff' : '#cbd5e1'};
+          box-shadow: ${isActive ? '0 2px 8px rgba(37, 99, 235, 0.4)' : 'none'};
+          min-width: 62px;
+        `;
+
+        let badgeHtml = '';
+        if (item.isToday) {
+          badgeHtml = `<span style="background: #10b981; color: #ffffff; font-size: 0.58rem; padding: 1px 4px; border-radius: 3px; font-weight: 800; text-transform: uppercase;">TODAY</span>`;
+        } else if (item.isTomorrow) {
+          badgeHtml = `<span style="background: #3b82f6; color: #ffffff; font-size: 0.58rem; padding: 1px 4px; border-radius: 3px; font-weight: 800; text-transform: uppercase;">TOMORROW</span>`;
+        }
+
+        btn.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span style="font-size: 0.78rem; font-weight: 700;">${item.day.slice(0, 3)}</span>
+            ${badgeHtml}
+          </div>
+          <span style="font-size: 0.65rem; opacity: 0.85; margin-top: 1px;">${item.dateLabel}</span>
+        `;
+
+        btn.onclick = () => {
+          currentWeek = item.week;
+          currentDay = item.day;
+          selectedLessons = {};
+          updateModalState();
+        };
+
+        container.appendChild(btn);
+      });
+    };
+
+    renderDayTabButtons(weekADays, coverWeekAGroup);
+    renderDayTabButtons(weekBDays, coverWeekBGroup);
+
+    // 2. Synchronize hidden legacy elements for test script compatibility
+    if (btnWeekA) {
+      btnWeekA.style.background = currentWeek === 'Week A' ? '#3b82f6' : 'transparent';
+      btnWeekA.style.color = currentWeek === 'Week A' ? '#ffffff' : '#94a3b8';
+    }
+    if (btnWeekB) {
+      btnWeekB.style.background = currentWeek === 'Week B' ? '#3b82f6' : 'transparent';
+      btnWeekB.style.color = currentWeek === 'Week B' ? '#ffffff' : '#94a3b8';
+    }
     dayButtons.forEach((btn) => {
       const d = btn.getAttribute('data-day');
       if (d === currentDay) {
@@ -3936,443 +4049,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       }
     });
 
-    // 3. Update Schedule Label
-    scheduleLabel.textContent = `Schedule for ${currentWeek} ${currentDay}`;
-
-    // 5. Render Periods & Customization Rows
-    periodsContainer.innerHTML = '';
-    const timetableDayList =
-      (TIMETABLE_DATA[currentWeek] && TIMETABLE_DATA[currentWeek][currentDay]) || [];
-    const duties = (TIMETABLE_DATA.duties && TIMETABLE_DATA.duties[currentDay]) || [];
-
-    const savedLastTopics = getSavedTopics();
-    const periodsData = [];
-
-    // Pre-scan for recent cover memories & quick-advanceable classes
-    const teachingSlotsWithCover = [];
-    const advanceableSlots = [];
-
-    timetableDayList.forEach((slot, pIdx) => {
-      if (slot.type === 'hub' || slot.type === 'club') return;
-      const setNameMatch = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
-      const setName = setNameMatch
-        ? setNameMatch[0]
-        : slot.raw
-          ? slot.raw.split('\n')[0]
-          : 'History Class';
-      const prev = findPreviousCoverForSet(setName);
-      if (prev) {
-        teachingSlotsWithCover.push({ pIdx, setName, prevCover: prev });
-        if (prev.nextLesson) {
-          advanceableSlots.push({ pIdx, setName, prevCover: prev });
-        }
-      }
-    });
-
-    // Render Prominent "Prior Absence Cover Memory" Banner if previous cover detected
-    if (teachingSlotsWithCover.length > 0) {
-      const memoryBanner = document.createElement('div');
-      memoryBanner.style.cssText =
-        'background: linear-gradient(135deg, rgba(30, 58, 138, 0.28), rgba(15, 23, 42, 0.8)); border: 1px solid rgba(59, 130, 246, 0.45); border-radius: 8px; padding: 11px 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);';
-
-      memoryBanner.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; font-size: 0.95rem;"></i>
-            <span style="font-size: 0.8rem; font-weight: 700; color: #f8fafc; letter-spacing: -0.01em;">Recent Cover Memory Detected</span>
-            <span style="font-size: 0.66rem; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; padding: 1px 7px; border-radius: 10px; font-weight: 600;">No Email Searching Required</span>
-          </div>
-
-          ${
-            advanceableSlots.length > 0
-              ? `
-            <button id="btnAdvanceAllCover" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: 1px solid #3b82f6; padding: 4px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4); transition: all 0.15s;" onmouseover="this.style.filter='brightness(1.15)';" onmouseout="this.style.filter='none';" title="Advance all matching classes on today's timetable to their subsequent lesson with 1 click">
-              <i class="fa-solid fa-forward-fast"></i> Advance All to Next Lesson (+1)
-            </button>
-          `
-              : ''
-          }
-        </div>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          ${teachingSlotsWithCover
-            .map((item) => {
-              const yb = getYearBadge(item.setName);
-              const p = item.prevCover;
-              return `
-              <div style="background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; display: flex; align-items: center; gap: 6px;">
-                <span style="background: ${yb.bg}; border: 1px solid ${yb.border}; color: ${yb.color}; padding: 1px 5px; border-radius: 3px; font-size: 0.64rem; font-weight: 700;">${yb.label}</span>
-                <span style="color: #f8fafc; font-weight: 700;">${item.setName}:</span>
-                <span style="color: #cbd5e1;">Last set was <strong style="color: #93c5fd;">Lesson ${(p.lessonIdx ?? 0) + 1}</strong> (${p.dateStr})</span>
-                ${p.nextLesson ? `<span style="color: #34d399; font-weight: 700;">➔ Next: L${p.nextLesson.idx + 1}</span>` : ''}
-              </div>
-            `;
-            })
-            .join('')}
-        </div>
-      `;
-
-      // Advance All click handler
-      const btnAdvanceAll = memoryBanner.querySelector('#btnAdvanceAllCover');
-      if (btnAdvanceAll) {
-        btnAdvanceAll.onclick = () => {
-          advanceableSlots.forEach(({ pIdx, setName, prevCover }) => {
-            selectedUnits[pIdx] = prevCover.unitId;
-            selectedLessons[pIdx] = prevCover.nextLesson.idx;
-            saveTopicForSet(setName, prevCover.unitId, prevCover.nextLesson.idx);
-          });
-          updateModalState();
-        };
-      }
-
-      periodsContainer.appendChild(memoryBanner);
-    }
-
-    timetableDayList.forEach((slot, pIdx) => {
-      const periodName = slot.period;
-      const timeSlot = slot.time;
-
-      if (slot.type === 'hub') {
-        periodsData.push({
-          type: 'hub',
-          period: periodName,
-          time: timeSlot,
-          title: 'Hub Supervision',
-        });
-
-        const hubRow = document.createElement('div');
-        hubRow.style.cssText =
-          'background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;';
-        hubRow.innerHTML = `
-          <div>
-            <span style="font-weight: 700; color: #f8fafc;">${periodName.toUpperCase()} (${timeSlot})</span>
-            <span style="color: #94a3b8; font-weight: 600; margin-left: 8px;">— HUB SUPERVISION</span>
-          </div>
-          <span style="font-size: 0.7rem; color: #fbbf24; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Supervision Only (No Work)</span>
-        `;
-        periodsContainer.appendChild(hubRow);
-        return;
-      }
-
-      if (slot.type === 'club') {
-        periodsData.push({
-          type: 'club',
-          period: periodName,
-          time: timeSlot,
-          title: slot.raw || 'Chess Club',
-        });
-
-        const clubRow = document.createElement('div');
-        clubRow.style.cssText =
-          'background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;';
-        clubRow.innerHTML = `
-          <div>
-            <span style="font-weight: 700; color: #f8fafc;">${periodName.toUpperCase()} (${timeSlot})</span>
-            <span style="color: #94a3b8; font-weight: 600; margin-left: 8px;">— ${(slot.raw || 'Chess Club').toUpperCase()}</span>
-          </div>
-          <span style="font-size: 0.7rem; color: #34d399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Supervision Only</span>
-        `;
-        periodsContainer.appendChild(clubRow);
-        return;
-      }
-
-      // Teaching class
-      const setNameMatch = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
-      const setName = setNameMatch
-        ? setNameMatch[0]
-        : slot.raw
-          ? slot.raw.split('\n')[0]
-          : 'History Class';
-      const defaultInfo = DEFAULT_SET_MAPPING[setName] || {
-        year: 'GCSE',
-        unit: 'great_war',
-        unit_name: 'The Great War (1914–1919)',
-        default_lesson: 0,
-        default_topic: 'Key Historical Enquiry',
-      };
-
-      // Determine active unit for this class
-      if (selectedUnits[pIdx] === undefined) {
-        if (savedLastTopics[setName] && savedLastTopics[setName].unit) {
-          selectedUnits[pIdx] = savedLastTopics[setName].unit;
-        } else {
-          selectedUnits[pIdx] = defaultInfo.unit;
-        }
-      }
-      const activeUnitId = selectedUnits[pIdx];
-      const activeUnitTitle = getUnitTitle(activeUnitId);
-      const unitLessons = getUnitLessons(activeUnitId);
-
-      // Determine active lesson index
-      if (selectedLessons[pIdx] === undefined) {
-        if (savedLastTopics[setName] && savedLastTopics[setName].lesson !== undefined) {
-          selectedLessons[pIdx] = savedLastTopics[setName].lesson;
-        } else {
-          selectedLessons[pIdx] = defaultInfo.default_lesson || 0;
-        }
-      }
-      if (selectedLessons[pIdx] >= unitLessons.length) {
-        selectedLessons[pIdx] = 0;
-      }
-
-      const activeLIdx = selectedLessons[pIdx];
-      const activeLesson = unitLessons[activeLIdx] || { title: defaultInfo.default_topic };
-      const activeTopic = activeLesson.title || defaultInfo.default_topic;
-      const liveUrl = `${HUB_BASE_URL}/?unit=${activeUnitId}&lesson=${activeLIdx}`;
-
-      periodsData.push({
-        pIdx: pIdx,
-        type: 'lesson',
-        period: periodName,
-        time: timeSlot,
-        setName: setName,
-        unitId: activeUnitId,
-        unitName: activeUnitTitle,
-        topicName: activeTopic,
-        lessonIdx: activeLIdx,
-        liveUrl: liveUrl,
-      });
-
-      // Year badge & Previous cover info
-      const yb = getYearBadge(setName);
-      const prevCover = findPreviousCoverForSet(setName);
-
-      // Build Unit Dropdown Options with optgroups
-      const gcseUnits = ALL_UNITS.filter((u) => u.group === 'GCSE History');
-      const ks3Units = ALL_UNITS.filter((u) => u.group === 'Key Stage 3');
-
-      const unitOptionsHtml = `
-        <optgroup label="GCSE History Specification">
-          ${gcseUnits.map((u) => `<option value="${u.id}" ${u.id === activeUnitId ? 'selected' : ''}>${u.title}</option>`).join('')}
-        </optgroup>
-        <optgroup label="Key Stage 3 Curriculum">
-          ${ks3Units.map((u) => `<option value="${u.id}" ${u.id === activeUnitId ? 'selected' : ''}>${u.title}</option>`).join('')}
-        </optgroup>
-      `;
-
-      // Build Lesson Dropdown Options
-      let lessonOptionsHtml = '';
-      if (unitLessons.length > 0) {
-        lessonOptionsHtml = unitLessons
-          .map(
-            (l, lIndex) => `
-          <option value="${lIndex}" ${lIndex === activeLIdx ? 'selected' : ''}>Lesson ${lIndex + 1}: ${l.title}</option>
-        `,
-          )
-          .join('');
-      } else {
-        lessonOptionsHtml = `<option value="0">${defaultInfo.default_topic}</option>`;
-      }
-
-      // Per-Period Settings
-      const pSetting = getPeriodSetting(pIdx, setName);
-      const isWorkbooks = pSetting.resource === 'workbooks';
-      const isShelf = pSetting.shelf === true;
-      const colMode = pSetting.collection || 'collect';
-      const isSettingsOpen = !!expandedSettings[pIdx];
-
-      // Build Quick Bump or Status Badge HTML
-      let quickBumpHtml = '';
-      if (prevCover && prevCover.nextLesson) {
-        if (activeLIdx === prevCover.nextLesson.idx && activeUnitId === prevCover.unitId) {
-          quickBumpHtml = `
-            <span style="background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-circle-check"></i> Advanced to Lesson ${activeLIdx + 1} (After L${prevCover.lessonIdx + 1})
-            </span>
-          `;
-        } else {
-          quickBumpHtml = `
-            <button type="button" class="btn-quick-bump" data-pidx="${pIdx}" data-unitid="${prevCover.unitId}" data-nextidx="${prevCover.nextLesson.idx}" style="background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #ffffff; border: 1px solid #3b82f6; padding: 4px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35); transition: all 0.15s;" onmouseover="this.style.filter='brightness(1.15)';" onmouseout="this.style.filter='none';" title="Advance to Lesson ${prevCover.nextLesson.idx + 1}: ${prevCover.nextLesson.title}">
-              <i class="fa-solid fa-forward-step"></i> Advance to Lesson ${prevCover.nextLesson.idx + 1} (+1)
-            </button>
-          `;
-        }
-      } else if (prevCover && prevCover.isLastLesson) {
-        quickBumpHtml = `
-          <span style="color: #94a3b8; font-size: 0.7rem; font-style: italic;">
-            <i class="fa-solid fa-flag-checkered" style="color: #60a5fa; margin-right: 4px;"></i>Completed unit on ${prevCover.dateStr}
-          </span>
-        `;
-      } else if (prevCover) {
-        quickBumpHtml = `
-          <span style="color: #94a3b8; font-size: 0.7rem;">
-            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; margin-right: 4px;"></i>Prev: ${prevCover.dateStr} (Lesson ${(prevCover.lessonIdx ?? 0) + 1})
-          </span>
-        `;
-      }
-
-      const row = document.createElement('div');
-      row.style.cssText =
-        'background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px;';
-
-      row.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="background: ${yb.bg}; border: 1px solid ${yb.border}; color: ${yb.color}; padding: 3px 9px; border-radius: 5px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;">
-              ${yb.label}
-            </span>
-            <span style="color: #f8fafc; font-weight: 700; font-size: 0.86rem;">
-              ${periodName.toUpperCase()} (${timeSlot}) — ${setName}
-            </span>
-          </div>
-          <div>
-            ${quickBumpHtml}
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-          <!-- Unit Selector -->
-          <div style="display: flex; flex-direction: column; gap: 3px;">
-            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Unit of Study:</span>
-            <select class="cover-unit-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #f8fafc; font-size: 0.78rem; padding: 5px 8px; outline: none; cursor: pointer;">
-              ${unitOptionsHtml}
-            </select>
-          </div>
-
-          <!-- Lesson / Topic Selector -->
-          <div style="display: flex; flex-direction: column; gap: 3px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Topic / Lesson:</span>
-              ${prevCover ? `<span style="font-size: 0.66rem; color: #60a5fa;">Prev: L${(prevCover.lessonIdx ?? 0) + 1} (${prevCover.dateStr})</span>` : ''}
-            </div>
-            <select class="cover-lesson-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #f8fafc; font-size: 0.78rem; padding: 5px 8px; outline: none; cursor: pointer;">
-              ${lessonOptionsHtml}
-            </select>
-          </div>
-        </div>
-
-        <!-- Sleek Per-Period Summary & Customization Toggle (De-cluttered) -->
-        <div style="background: #162032; border: 1px solid #243044; border-radius: 6px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
-          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.74rem;">
-            <span style="color: #93c5fd; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
-              ${isWorkbooks ? '<i class="fa-solid fa-book-open" style="color: #3b82f6;"></i> Workbooks' : pSetting.resource === 'paper' ? '<i class="fa-solid fa-file-lines" style="color: #3b82f6;"></i> Paper Only' : '<i class="fa-solid fa-laptop" style="color: #3b82f6;"></i> Laptops Only'}
-              ${isWorkbooks && isShelf ? '<span style="font-size: 0.66rem; background: rgba(59, 130, 246, 0.2); color: #bfdbfe; padding: 1px 5px; border-radius: 3px; font-weight: 600;">Shelf</span>' : ''}
-            </span>
-            <span style="color: #475569;">•</span>
-            <span style="color: #94a3b8;">
-              Collection: <strong style="color: #e2e8f0;">${colMode === 'collect' ? 'Collect at End' : colMode === 'folders' ? 'In Folders' : 'VLE'}</strong>
-            </span>
-          </div>
-
-          <button type="button" class="btn-toggle-period-settings" data-pidx="${pIdx}" style="background: transparent; border: 1px solid #334155; color: #94a3b8; padding: 2px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;" onmouseover="this.style.color='#f8fafc'; this.style.borderColor='#60a5fa';" onmouseout="this.style.color='#94a3b8'; this.style.borderColor='#334155';">
-            <i class="fa-solid fa-sliders"></i> ${isSettingsOpen ? 'Done' : 'Customise'}
-          </button>
-        </div>
-
-        <!-- Expandable Per-Period Settings Bar -->
-        <div class="period-custom-settings" style="display: ${isSettingsOpen ? 'flex' : 'none'}; background: #0b1120; border: 1px solid #1e293b; border-radius: 6px; padding: 8px 10px; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
-          <!-- Resource Toggle & Shelf Handout -->
-          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
-            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Resource:</span>
-            <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
-              <button type="button" class="btn-p-res" data-val="workbooks" style="background: ${isWorkbooks ? '#2563eb' : 'transparent'}; color: ${isWorkbooks ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
-                <i class="fa-solid fa-book-open"></i> Workbooks
-              </button>
-              <button type="button" class="btn-p-res" data-val="paper" style="background: ${pSetting.resource === 'paper' ? '#2563eb' : 'transparent'}; color: ${pSetting.resource === 'paper' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;">
-                <i class="fa-solid fa-file-lines"></i> Paper Only
-              </button>
-              <button type="button" class="btn-p-res" data-val="laptops" style="background: ${pSetting.resource === 'laptops' ? '#2563eb' : 'transparent'}; color: ${pSetting.resource === 'laptops' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Pupils use laptops as textbooks only (no physical workbooks or lined paper needed)">
-                <i class="fa-solid fa-laptop"></i> Laptops
-              </button>
-            </div>
-
-            <!-- Shelf Handout / Return Button -->
-            <button type="button" class="btn-p-shelf-toggle" style="display: ${isWorkbooks ? 'inline-flex' : 'none'}; align-items: center; gap: 5px; background: ${isShelf ? 'rgba(59, 130, 246, 0.22)' : '#0f172a'}; border: 1px solid ${isShelf ? '#3b82f6' : '#334155'}; color: ${isShelf ? '#93c5fd' : '#64748b'}; padding: 3px 9px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.15s;" title="Toggle whether workbooks must be handed out from classroom shelf and returned to shelf at end">
-              <i class="fa-solid ${isShelf ? 'fa-square-check' : 'fa-square'}" style="color: ${isShelf ? '#60a5fa' : '#64748b'};"></i>
-              <span>Shelf: Hand out &amp; Return</span>
-            </button>
-          </div>
-
-          <!-- Collection Mode Pills -->
-          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
-            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Collection:</span>
-            <div style="display: inline-flex; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 2px;">
-              <button type="button" class="btn-p-col" data-val="collect" style="background: ${colMode === 'collect' ? '#3b82f6' : 'transparent'}; color: ${colMode === 'collect' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Collect all pupil work at end of lesson">
-                Collect at End
-              </button>
-              <button type="button" class="btn-p-col" data-val="folders" style="background: ${colMode === 'folders' ? '#3b82f6' : 'transparent'}; color: ${colMode === 'folders' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Pupils keep work in folders/books">
-                In Folders
-              </button>
-              <button type="button" class="btn-p-col" data-val="digital" style="background: ${colMode === 'digital' ? '#3b82f6' : 'transparent'}; color: ${colMode === 'digital' ? '#ffffff' : '#94a3b8'}; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Pupils submit digitally on VLE">
-                VLE
-              </button>
-            </div>
-          </div>
-        </div>
-      `;
-
-      // Quick bump button listener
-      const bumpBtn = row.querySelector('.btn-quick-bump');
-      if (bumpBtn) {
-        bumpBtn.onclick = () => {
-          const targetUnitId = bumpBtn.getAttribute('data-unitid');
-          const targetLessonIdx = parseInt(bumpBtn.getAttribute('data-nextidx'), 10);
-          selectedUnits[pIdx] = targetUnitId;
-          selectedLessons[pIdx] = targetLessonIdx;
-          saveTopicForSet(setName, targetUnitId, targetLessonIdx);
-          updateModalState();
-        };
-      }
-
-      // Settings toggle listener
-      const toggleSettingsBtn = row.querySelector('.btn-toggle-period-settings');
-      if (toggleSettingsBtn) {
-        toggleSettingsBtn.onclick = () => {
-          expandedSettings[pIdx] = !expandedSettings[pIdx];
-          updateModalState();
-        };
-      }
-
-      // Unit change listener
-      const unitPickerEl = row.querySelector('.cover-unit-picker');
-      unitPickerEl.onchange = (e) => {
-        const newUnitId = e.target.value;
-        selectedUnits[pIdx] = newUnitId;
-        selectedLessons[pIdx] = 0; // Reset to lesson 1 of newly chosen unit
-        saveTopicForSet(setName, newUnitId, 0);
-        updateModalState();
-      };
-
-      // Lesson change listener
-      const lessonPickerEl = row.querySelector('.cover-lesson-picker');
-      lessonPickerEl.onchange = (e) => {
-        const newLessonIdx = parseInt(e.target.value, 10) || 0;
-        selectedLessons[pIdx] = newLessonIdx;
-        saveTopicForSet(setName, activeUnitId, newLessonIdx);
-        updateModalState();
-      };
-
-      // Per-period resource toggle listeners
-      row.querySelectorAll('.btn-p-res').forEach((btn) => {
-        btn.onclick = () => {
-          const val = btn.getAttribute('data-val');
-          setPeriodSetting(pIdx, setName, { resource: val });
-          updateModalState();
-        };
-      });
-
-      // Shelf handout toggle listener
-      const shelfBtn = row.querySelector('.btn-p-shelf-toggle');
-      if (shelfBtn) {
-        shelfBtn.onclick = () => {
-          setPeriodSetting(pIdx, setName, { shelf: !isShelf });
-          updateModalState();
-        };
-      }
-
-      // Per-period collection listeners
-      row.querySelectorAll('.btn-p-col').forEach((btn) => {
-        btn.onclick = () => {
-          const val = btn.getAttribute('data-val');
-          setPeriodSetting(pIdx, setName, { collection: val });
-          updateModalState();
-        };
-      });
-
-      periodsContainer.appendChild(row);
-    });
-
-    // 6. Build Plain-Text Cover Email Output
+    // 3. Compute Dates & Header Strings
     const targetDateObj = getTargetDateObj(currentDay, currentWeek);
     const dateStr = formatTargetDate(targetDateObj);
 
@@ -4413,17 +4090,332 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         : savedGeneralNote;
     const includeGeneralNote = chkIncludeGeneralNote ? chkIncludeGeneralNote.checked : true;
 
+    scheduleLabel.textContent = `Schedule for ${currentWeek} ${currentDay} (${dateStr})`;
+    const subject = `COVER: History - ${currentDay}, ${dateStr} (${currentWeek})`;
+    coverSubjectLine.textContent = subject;
+
+    clozeRecipientDisplay.textContent = recipient;
+    clozeSenderDisplay.textContent = sender;
+    clozeWhenPhrase.textContent = whenPhrase;
+    clozeDateDisplay.textContent = `${currentDay}, ${dateStr} (${currentWeek})`;
+
+    const timetableDayList =
+      (TIMETABLE_DATA[currentWeek] && TIMETABLE_DATA[currentWeek][currentDay]) || [];
+    const duties = (TIMETABLE_DATA.duties && TIMETABLE_DATA.duties[currentDay]) || [];
+
+    let dutiesStr = 'none';
+    if (duties.length > 0) {
+      dutiesStr = duties.map((d) => `${d.time} (${d.duty})`).join('; ');
+    }
+    clozeDutiesText.textContent = dutiesStr;
+
+    // 4. Render Dynamic Periods Flow (Cloze Gap-Fill Rows)
+    periodsFlow.innerHTML = '';
+    const savedLastTopics = getSavedTopics();
+    const periodsData = [];
+
+    timetableDayList.forEach((slot, pIdx) => {
+      const periodName = slot.period;
+      const timeSlot = slot.time;
+
+      if (slot.type === 'hub') {
+        periodsData.push({
+          type: 'hub',
+          period: periodName,
+          time: timeSlot,
+          title: 'Hub Supervision',
+        });
+
+        const hubRow = document.createElement('div');
+        hubRow.style.cssText =
+          'margin: 12px 0; padding: 12px 16px; background: rgba(30, 41, 59, 0.45); border-left: 4px solid #64748b; border-radius: 0 8px 8px 0; display: flex; justify-content: space-between; align-items: center;';
+        hubRow.innerHTML = `
+          <div>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.92rem;">${periodName.toUpperCase()} (${timeSlot}) — HUB SUPERVISION</div>
+            <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;">SUPERVISION ONLY — NO COVER WORK TO SET</div>
+          </div>
+          <span style="font-size: 0.7rem; color: #fbbf24; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase;">Supervision Only</span>
+        `;
+        periodsFlow.appendChild(hubRow);
+        return;
+      }
+
+      if (slot.type === 'club') {
+        periodsData.push({
+          type: 'club',
+          period: periodName,
+          time: timeSlot,
+          title: slot.raw || 'Chess Club',
+        });
+
+        const clubRow = document.createElement('div');
+        clubRow.style.cssText =
+          'margin: 12px 0; padding: 12px 16px; background: rgba(30, 41, 59, 0.45); border-left: 4px solid #10b981; border-radius: 0 8px 8px 0; display: flex; justify-content: space-between; align-items: center;';
+        clubRow.innerHTML = `
+          <div>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.92rem;">${periodName.toUpperCase()} (${timeSlot}) — ${(slot.raw || 'Chess Club').toUpperCase()}</div>
+            <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;">SUPERVISION ONLY — NO COVER WORK TO SET</div>
+          </div>
+          <span style="font-size: 0.7rem; color: #34d399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase;">Supervision Only</span>
+        `;
+        periodsFlow.appendChild(clubRow);
+        return;
+      }
+
+      // Teaching class
+      const setNameMatch = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
+      const setName = setNameMatch
+        ? setNameMatch[0]
+        : slot.raw
+          ? slot.raw.split('\n')[0]
+          : 'History Class';
+      const defaultInfo = DEFAULT_SET_MAPPING[setName] || {
+        year: 'GCSE',
+        unit: 'great_war',
+        unit_name: 'The Great War (1914–1919)',
+        default_lesson: 0,
+        default_topic: 'Key Historical Enquiry',
+      };
+
+      // Active Unit
+      if (selectedUnits[pIdx] === undefined) {
+        if (savedLastTopics[setName] && savedLastTopics[setName].unit) {
+          selectedUnits[pIdx] = savedLastTopics[setName].unit;
+        } else {
+          selectedUnits[pIdx] = defaultInfo.unit;
+        }
+      }
+      const activeUnitId = selectedUnits[pIdx];
+      const activeUnitTitle = getUnitTitle(activeUnitId);
+      const unitLessons = getUnitLessons(activeUnitId);
+
+      // Active Lesson
+      if (selectedLessons[pIdx] === undefined) {
+        if (savedLastTopics[setName] && savedLastTopics[setName].lesson !== undefined) {
+          selectedLessons[pIdx] = savedLastTopics[setName].lesson;
+        } else {
+          selectedLessons[pIdx] = defaultInfo.default_lesson || 0;
+        }
+      }
+      if (selectedLessons[pIdx] >= unitLessons.length) {
+        selectedLessons[pIdx] = 0;
+      }
+
+      const activeLIdx = selectedLessons[pIdx];
+      const activeLesson = unitLessons[activeLIdx] || { title: defaultInfo.default_topic };
+      const activeTopic = activeLesson.title || defaultInfo.default_topic;
+      const liveUrl = `${HUB_BASE_URL}/?unit=${activeUnitId}&lesson=${activeLIdx}`;
+
+      periodsData.push({
+        pIdx: pIdx,
+        type: 'lesson',
+        period: periodName,
+        time: timeSlot,
+        setName: setName,
+        unitId: activeUnitId,
+        unitName: activeUnitTitle,
+        topicName: activeTopic,
+        lessonIdx: activeLIdx,
+        liveUrl: liveUrl,
+      });
+
+      const yb = getYearBadge(setName);
+      const prevCover = findPreviousCoverForSet(setName);
+
+      // Build Unit Dropdown Options with optgroups
+      const gcseUnits = ALL_UNITS.filter((u) => u.group === 'GCSE History');
+      const ks3Units = ALL_UNITS.filter((u) => u.group === 'Key Stage 3');
+
+      const unitOptionsHtml = `
+        <optgroup label="GCSE History Specification">
+          ${gcseUnits.map((u) => `<option value="${u.id}" ${u.id === activeUnitId ? 'selected' : ''}>${u.title}</option>`).join('')}
+        </optgroup>
+        <optgroup label="Key Stage 3 Curriculum">
+          ${ks3Units.map((u) => `<option value="${u.id}" ${u.id === activeUnitId ? 'selected' : ''}>${u.title}</option>`).join('')}
+        </optgroup>
+      `;
+
+      // Build Lesson Dropdown Options
+      let lessonOptionsHtml = '';
+      if (unitLessons.length > 0) {
+        lessonOptionsHtml = unitLessons
+          .map(
+            (l, lIndex) => `
+          <option value="${lIndex}" ${lIndex === activeLIdx ? 'selected' : ''}>Lesson ${lIndex + 1}: ${l.title}</option>
+        `,
+          )
+          .join('');
+      } else {
+        lessonOptionsHtml = `<option value="0">${defaultInfo.default_topic}</option>`;
+      }
+
+      // Per-Period Settings
+      const pSetting = getPeriodSetting(pIdx, setName);
+      const isWorkbooks = pSetting.resource === 'workbooks';
+      const isShelf = pSetting.shelf === true;
+      const colMode = pSetting.collection || 'collect';
+
+      // Quick bump badge/button
+      let quickBumpHtml = '';
+      if (prevCover && prevCover.nextLesson) {
+        if (activeLIdx === prevCover.nextLesson.idx && activeUnitId === prevCover.unitId) {
+          quickBumpHtml = `
+            <span style="background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; padding: 2px 8px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+              <i class="fa-solid fa-circle-check"></i> Advanced to L${activeLIdx + 1} (After L${prevCover.lessonIdx + 1})
+            </span>
+          `;
+        } else {
+          quickBumpHtml = `
+            <button type="button" class="btn-quick-bump" data-pidx="${pIdx}" data-unitid="${prevCover.unitId}" data-nextidx="${prevCover.nextLesson.idx}" style="background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #ffffff; border: 1px solid #3b82f6; padding: 3px 10px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35); transition: all 0.15s;" onmouseover="this.style.filter='brightness(1.15)';" onmouseout="this.style.filter='none';" title="Advance to Lesson ${prevCover.nextLesson.idx + 1}: ${prevCover.nextLesson.title}">
+              <i class="fa-solid fa-forward-step"></i> Advance to Lesson ${prevCover.nextLesson.idx + 1} (+1)
+            </button>
+          `;
+        }
+      } else if (prevCover && prevCover.isLastLesson) {
+        quickBumpHtml = `
+          <span style="color: #94a3b8; font-size: 0.7rem; font-style: italic;">
+            <i class="fa-solid fa-flag-checkered" style="color: #60a5fa; margin-right: 4px;"></i>Completed unit on ${prevCover.dateStr}
+          </span>
+        `;
+      } else if (prevCover) {
+        quickBumpHtml = `
+          <span style="color: #94a3b8; font-size: 0.7rem;">
+            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; margin-right: 4px;"></i>Prev: ${prevCover.dateStr} (Lesson ${(prevCover.lessonIdx ?? 0) + 1})
+          </span>
+        `;
+      }
+
+      // Determine resources dropdown value
+      let currentResSelectVal = 'workbooks_shelf';
+      if (pSetting.resource === 'paper') {
+        currentResSelectVal = 'paper';
+      } else if (pSetting.resource === 'laptops') {
+        currentResSelectVal = 'laptops';
+      } else if (pSetting.resource === 'workbooks') {
+        currentResSelectVal = isShelf ? 'workbooks_shelf' : 'workbooks_pupil';
+      }
+
+      const card = document.createElement('div');
+      card.className = 'cloze-period-card';
+      card.style.cssText =
+        'margin: 14px 0; padding: 14px 18px; background: #111a2e; border: 1px solid #1e293b; border-left: 4px solid #3b82f6; border-radius: 0 8px 8px 0; display: flex; flex-direction: column; gap: 10px;';
+
+      card.innerHTML = `
+        <!-- Period & Class Header Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="background: ${yb.bg}; border: 1px solid ${yb.border}; color: ${yb.color}; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;">
+              ${yb.label}
+            </span>
+            <strong style="color: #ffffff; font-size: 0.95rem;">
+              ▶ ${periodName.toUpperCase()} (${timeSlot}) — ${setName}
+            </strong>
+          </div>
+          <div>${quickBumpHtml}</div>
+        </div>
+
+        <!-- Cloze Line 1: Topic -->
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.88rem; color: #cbd5e1;">
+          <span style="color: #94a3b8; font-weight: 700; min-width: 44px;">Topic:</span>
+          <select class="cloze-unit-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.82rem; padding: 4px 8px; outline: none; cursor: pointer; max-width: 270px;">
+            ${unitOptionsHtml}
+          </select>
+          <select class="cloze-lesson-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.82rem; padding: 4px 8px; outline: none; cursor: pointer; max-width: 360px;">
+            ${lessonOptionsHtml}
+          </select>
+          <a href="${liveUrl}" target="_blank" title="Preview lesson on Hub" style="background: #1e293b; border: 1px solid #334155; color: #60a5fa; padding: 4px 8px; border-radius: 6px; font-size: 0.76rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open
+          </a>
+        </div>
+
+        <!-- Cloze Line 2: Resources -->
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.88rem; color: #cbd5e1;">
+          <span style="color: #94a3b8; font-weight: 700; min-width: 44px;">Resources:</span>
+          <select class="cloze-res-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.82rem; padding: 4px 8px; outline: none; cursor: pointer; flex: 1; min-width: 320px;">
+            <option value="workbooks_shelf" ${currentResSelectVal === 'workbooks_shelf' ? 'selected' : ''}>Printed physical workbooks — please hand out from classroom shelf and ensure all are returned to shelf at end</option>
+            <option value="workbooks_pupil" ${currentResSelectVal === 'workbooks_pupil' ? 'selected' : ''}>Pupils should work in their printed physical workbooks</option>
+            <option value="paper" ${currentResSelectVal === 'paper' ? 'selected' : ''}>Paper only — pupils complete all work on lined A4 paper</option>
+            <option value="laptops" ${currentResSelectVal === 'laptops' ? 'selected' : ''}>Laptops only (textbook reading on VLE / no physical paper needed)</option>
+          </select>
+        </div>
+
+        <!-- Cloze Line 3: Work Collection -->
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.88rem; color: #cbd5e1;">
+          <span style="color: #94a3b8; font-weight: 700; min-width: 44px;">Collection:</span>
+          <select class="cloze-col-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.82rem; padding: 4px 8px; outline: none; cursor: pointer; flex: 1; min-width: 280px;">
+            <option value="collect" ${colMode === 'collect' ? 'selected' : ''}>Please collect all pupil work at the end of the period</option>
+            <option value="folders" ${colMode === 'folders' ? 'selected' : ''}>Pupils keep completed work in their books/folders for next lesson</option>
+            <option value="digital" ${colMode === 'digital' ? 'selected' : ''}>Pupils submit work digitally via Google Classroom / VLE</option>
+          </select>
+        </div>
+      `;
+
+      // Quick bump button listener
+      const bumpBtn = card.querySelector('.btn-quick-bump');
+      if (bumpBtn) {
+        bumpBtn.onclick = () => {
+          const targetUnitId = bumpBtn.getAttribute('data-unitid');
+          const targetLessonIdx = parseInt(bumpBtn.getAttribute('data-nextidx'), 10);
+          selectedUnits[pIdx] = targetUnitId;
+          selectedLessons[pIdx] = targetLessonIdx;
+          saveTopicForSet(setName, targetUnitId, targetLessonIdx);
+          updateModalState();
+        };
+      }
+
+      // Unit dropdown listener
+      const unitPickerEl = card.querySelector('.cloze-unit-picker');
+      unitPickerEl.onchange = (e) => {
+        const newUnitId = e.target.value;
+        selectedUnits[pIdx] = newUnitId;
+        selectedLessons[pIdx] = 0;
+        saveTopicForSet(setName, newUnitId, 0);
+        updateModalState();
+      };
+
+      // Lesson dropdown listener
+      const lessonPickerEl = card.querySelector('.cloze-lesson-picker');
+      lessonPickerEl.onchange = (e) => {
+        const newLessonIdx = parseInt(e.target.value, 10) || 0;
+        selectedLessons[pIdx] = newLessonIdx;
+        saveTopicForSet(setName, activeUnitId, newLessonIdx);
+        updateModalState();
+      };
+
+      // Resources dropdown listener
+      const resPickerEl = card.querySelector('.cloze-res-picker');
+      resPickerEl.onchange = (e) => {
+        const val = e.target.value;
+        if (val === 'workbooks_shelf') {
+          setPeriodSetting(pIdx, setName, { resource: 'workbooks', shelf: true });
+        } else if (val === 'workbooks_pupil') {
+          setPeriodSetting(pIdx, setName, { resource: 'workbooks', shelf: false });
+        } else if (val === 'paper') {
+          setPeriodSetting(pIdx, setName, { resource: 'paper', shelf: false });
+        } else if (val === 'laptops') {
+          setPeriodSetting(pIdx, setName, { resource: 'laptops', shelf: false });
+        }
+        updateModalState();
+      };
+
+      // Collection dropdown listener
+      const colPickerEl = card.querySelector('.cloze-col-picker');
+      colPickerEl.onchange = (e) => {
+        const val = e.target.value;
+        setPeriodSetting(pIdx, setName, { collection: val });
+        updateModalState();
+      };
+
+      periodsFlow.appendChild(card);
+    });
+
+    // 5. Generate Synchronized Clean Plain-Text Output
     const emailLines = [];
     emailLines.push(`Dear ${recipient},`);
     emailLines.push(
       `Please find below the cover ${whenPhrase}${currentDay}, ${dateStr} (${currentWeek}).`,
     );
     emailLines.push('Tutor AM / PM Warrior 2');
-
-    let dutiesStr = 'none';
-    if (duties.length > 0) {
-      dutiesStr = duties.map((d) => `${d.time} (${d.duty})`).join('; ');
-    }
 
     if (includeGeneralNote && generalNote) {
       emailLines.push(`Duties: ${dutiesStr} ${generalNote}`);
@@ -4485,8 +4477,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     const emailText = emailLines.join('\n');
     emailOutputArea.value = emailText;
 
-    // 7. Configure Outlook Web & Mailto Links
-    const subject = `COVER: History - ${currentDay}, ${dateStr} (${currentWeek})`;
+    // 6. Configure Outlook Web & Mailto Links
     const encodedSubj = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(emailText);
 
@@ -4528,46 +4519,28 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     }
   };
 
-  // Event Listeners for Week & Day Toggles
-  btnWeekA.onclick = () => {
-    currentWeek = 'Week A';
-    selectedLessons = {};
-    updateModalState();
-  };
+  // Event Listeners for Week & Day Toggles (Legacy & Test Script Support)
+  if (btnWeekA) {
+    btnWeekA.onclick = () => {
+      currentWeek = 'Week A';
+      selectedLessons = {};
+      updateModalState();
+    };
+  }
 
-  btnWeekB.onclick = () => {
-    currentWeek = 'Week B';
-    selectedLessons = {};
-    updateModalState();
-  };
+  if (btnWeekB) {
+    btnWeekB.onclick = () => {
+      currentWeek = 'Week B';
+      selectedLessons = {};
+      updateModalState();
+    };
+  }
 
   dayButtons.forEach((btn) => {
     btn.onclick = () => {
       currentDay = btn.getAttribute('data-day');
       selectedLessons = {};
       updateModalState();
-    };
-  });
-
-  resourceRadios.forEach((r) => {
-    r.onchange = () => {
-      defaultResourceMode = r.value;
-      if (chkDefaultShelf && chkDefaultShelf.parentElement) {
-        chkDefaultShelf.parentElement.style.opacity =
-          defaultResourceMode === 'workbooks' ? '1' : '0.4';
-      }
-    };
-  });
-
-  if (chkDefaultShelf) {
-    chkDefaultShelf.onchange = () => {
-      defaultShelfMode = chkDefaultShelf.checked;
-    };
-  }
-
-  collectionRadios.forEach((r) => {
-    r.onchange = () => {
-      defaultCollectionMode = r.value;
     };
   });
 
@@ -4581,13 +4554,13 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         const match = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
         const setName = match ? match[0] : slot.raw ? slot.raw.split('\n')[0] : 'Class';
         setPeriodSetting(pIdx, setName, {
-          resource: defaultResourceMode,
-          shelf: defaultShelfMode,
-          collection: defaultCollectionMode,
+          resource: 'workbooks',
+          shelf: true,
+          collection: 'collect',
         });
       });
       const origHtml = btnApplyDefaultsToAll.innerHTML;
-      btnApplyDefaultsToAll.innerHTML = '<i class="fa-solid fa-check"></i> Applied!';
+      btnApplyDefaultsToAll.innerHTML = '<i class="fa-solid fa-check"></i> Applied Workbooks!';
       btnApplyDefaultsToAll.style.color = '#34d399';
       btnApplyDefaultsToAll.style.borderColor = '#10b981';
       updateModalState();
@@ -4599,10 +4572,12 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     };
   }
 
-  chkIncludePolicy.onchange = () => {
-    includePolicyNotes = chkIncludePolicy.checked;
-    updateModalState();
-  };
+  if (chkIncludePolicy) {
+    chkIncludePolicy.onchange = () => {
+      includePolicyNotes = chkIncludePolicy.checked;
+      updateModalState();
+    };
+  }
 
   if (recipientInput) {
     recipientInput.oninput = () => {
