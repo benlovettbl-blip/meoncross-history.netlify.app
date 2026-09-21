@@ -16,18 +16,14 @@
 
     body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.5pt;
-      line-height: 1.46;
+      font-size: 9.6pt;
+      line-height: 1.47;
       color: #1c1917;
       background: #ffffff;
       margin: 0;
       padding: 0;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
-    }
-
-    .sans {
-      font-family: 'Inter', -apple-system, sans-serif;
     }
 
     /* Strict A4 Page Container (297mm - 24mm margins = 273mm printable height) */
@@ -48,15 +44,15 @@
     .running-header {
       border-bottom: 1.5px solid #0f172a;
       padding-bottom: 3px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: baseline;
       font-family: 'Inter', sans-serif;
       font-size: 7.2pt;
       font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
       color: #475569;
       flex-shrink: 0;
     }
@@ -216,141 +212,130 @@
     .source-badge {
       background: #1e3a8a;
       color: #ffffff;
-      font-size: 6.8pt;
+      font-size: 6.6pt;
       font-weight: 800;
-      text-transform: uppercase;
-      padding: 1.5px 5px;
+      padding: 1px 5px;
       border-radius: 2px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
     .source-type {
-      font-size: 6.8pt;
+      font-size: 6.6pt;
       font-weight: 700;
-      color: #475569;
+      color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .source-date-micro {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      color: #64748b;
+      font-size: 6.6pt;
       font-weight: 600;
+      color: #64748b;
     }
     .archival-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 8.8pt;
-      font-weight: 700;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.0pt;
+      font-weight: 800;
       color: #0f172a;
-      margin: 1px 0 3px 0;
-      line-height: 1.25;
+      margin-bottom: 4px;
+      line-height: 1.22;
     }
     .archival-image {
       width: 100%;
-      max-height: 130px;
+      height: auto;
+      max-height: 145px;
       object-fit: cover;
-      border-radius: 3px;
-      margin: 4px 0;
-      border: 1px solid #cbd5e1;
-      display: block;
-    }
-    .archival-map-image {
-      width: 100%;
-      max-height: 175px;
-      object-fit: contain;
-      background: #fafaf9;
-      border-radius: 3px;
-      margin: 4px 0;
-      border: 1px solid #cbd5e1;
+      object-position: top;
+      border-radius: 2px;
+      margin-bottom: 4px;
       display: block;
     }
     .archival-portrait-image {
       width: 100%;
-      max-height: 150px;
+      height: auto;
+      max-height: 155px;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 2px;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .archival-map-image {
+      width: 100%;
+      height: auto;
+      max-height: 175px;
       object-fit: contain;
       background: #f8fafc;
-      border-radius: 3px;
-      margin: 4px 0;
-      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      margin-bottom: 4px;
       display: block;
     }
     .archival-body {
-      font-size: 8.2pt;
-      line-height: 1.38;
-      color: #1e293b;
-      margin: 3px 0;
+      font-size: 7.8pt;
+      line-height: 1.35;
+      color: #292524;
       font-style: italic;
-      background: #f8fafc;
-      padding: 5px 8px;
-      border-left: 2.5px solid #94a3b8;
-      border-radius: 0 3px 3px 0;
+      margin-bottom: 3px;
     }
     .archival-footer {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 3px;
-      margin-top: 4px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
-      color: #64748b;
+      border-top: 1px dashed #d6d3d1;
+      padding-top: 2px;
+      margin-top: 3px;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .archival-footer span {
-      line-height: 1.25;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      color: #78716c;
+      font-weight: 600;
     }
 
-    /* Key Figure Profile Box (Embedded in Reading Column) */
+    /* Key Individual Profile Box (Integrated with prose flow) */
     .key-figure-box {
-      background: #fdfcfb;
+      background: #f8fafc;
       border: 1px solid #cbd5e1;
-      border-top: 3px solid #1e3a8a;
+      border-left: 3.5px solid #1e3a8a;
       border-radius: 4px;
-      padding: 7px 9px;
-      margin: 8px 0;
+      padding: 6px 9px;
+      margin: 6px 0;
       break-inside: avoid;
       font-family: 'Newsreader', Georgia, serif;
     }
     .kf-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
+      align-items: center;
+      margin-bottom: 3px;
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
-      font-size: 6.6pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
     }
     .kf-lifespan {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      font-weight: 700;
+      font-size: 6.2pt;
       color: #64748b;
+      font-weight: 600;
     }
     .kf-identity-row {
       display: flex;
       gap: 8px;
       align-items: center;
       margin-bottom: 4px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #e2e8f0;
     }
     .kf-portrait {
       width: 44px;
       height: 56px;
       object-fit: cover;
+      object-position: top;
       border-radius: 3px;
-      border: 1px solid #94a3b8;
-      background: #ffffff;
+      border: 1.2px solid #94a3b8;
       flex-shrink: 0;
+      background: #e2e8f0;
     }
     .kf-identity-text {
       flex: 1;
-      min-width: 0;
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
@@ -395,6 +380,88 @@
     }
     .kf-actions-list li {
       margin-bottom: 1.5px;
+    }
+
+    /* Concept Spotlight Box (Curriculum Depth & Historical Mechanism) */
+    .concept-spotlight-box {
+      background: #fdfaf6;
+      border: 1px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      border-radius: 4px;
+      padding: 6px 9px;
+      margin: 7px 0;
+      break-inside: avoid;
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    .csb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #ffedd5;
+      font-family: 'Inter', sans-serif;
+    }
+    .csb-tag {
+      font-size: 6.6pt;
+      font-weight: 800;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .csb-category {
+      font-size: 6.2pt;
+      font-weight: 700;
+      color: #b45309;
+      background: #ffedd5;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .csb-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #7c2d12;
+      margin: 1px 0 3px 0;
+      line-height: 1.2;
+    }
+    .csb-body {
+      font-size: 7.8pt;
+      line-height: 1.38;
+      color: #1e293b;
+      margin-bottom: 3px;
+    }
+    .csb-takeaway {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 600;
+      color: #78350f;
+      background: #fef3c7;
+      border-left: 2px solid #d97706;
+      padding: 2px 6px;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Compact Concept Spotlight Variant */
+    .concept-spotlight-box.compact {
+      padding: 4px 7px;
+      margin: 4px 0;
+    }
+    .concept-spotlight-box.compact .csb-title {
+      font-size: 8.5pt;
+      margin: 1px 0 2px 0;
+      line-height: 1.15;
+    }
+    .concept-spotlight-box.compact .csb-body {
+      font-size: 7.3pt;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .concept-spotlight-box.compact .csb-takeaway {
+      font-size: 6.2pt;
+      line-height: 1.2;
+      padding: 1.5px 5px;
     }
 
     /* Full-Width Bottom Enquiry Deck */
@@ -566,17 +633,17 @@
               Archival Primary Record &bull; 7 June 1967
             </span>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px;">
-              GPO-ARCHIVE / ACC-1967-06-07
+              GPO-ISRAEL / ACC-1967-06-07
             </span>
           </div>
           <div style="font-family: 'Playfair Display', serif; font-size: 9.8pt; font-weight: 800; line-height: 1.2; margin: 1px 0;">
-            Israeli Paratroopers at the Western Wall, Jerusalem
+            Paratroopers at the Western Wall (David Rubinger)
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111; line-height: 1.25;">
-            Yitzhak Yifat, Tzion Karasenti, and Haim Oshri of the 55th Paratroopers Brigade standing before the Western Wall following the capture of the Old City (David Rubinger, 7 June 1967).
+            Israeli paratroopers Zion Karasenti, Yitzhak Yifat, and Haim Oshri stand before the Western Wall moments after capturing the Old City of Jerusalem.
           </div>
           <div style="margin-top: 2px; padding-top: 2px; border-top: 1px dashed #999; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; text-transform: uppercase; color: #333;">
-            <span>Archival Primary Record</span>
+            <span>Government Press Office Archive</span>
             <span>Edexcel Paper 2 Master Archive</span>
           </div>
         </div>
@@ -595,41 +662,41 @@
             <!-- 2.1 -->
             <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
-                2.1 The Six Day War, 1967
+                2.1 The Outbreak of War, 1967
               </strong>
-              <div style="margin-bottom: 2.5px;">&bull; Significance of the <strong>Cairo Conference (1964)</strong> &amp; growth of Fatah / PLO.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Water Wars &amp; border skirmishes:</strong> Syrian shelling from Golan, Samu raid (1966).</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>April 1967 Air Battle:</strong> 6 Syrian MiGs downed; Soviet false warnings trigger Egyptian mobilisation.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Escalation to war:</strong> UNEF expelled from Sinai, Straits of Tiran blockaded, Jordan defence pact.</div>
-              <div>&bull; <strong>Six-Day Blitz (5–10 June):</strong> Pre-emptive airstrike destroys Arab air forces; Sinai, Golan, West Bank captured.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Water Wars:</strong> Arab diversion of River Jordan headwaters; Israeli strikes.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Border Tensions:</strong> Samu reprisal raid; April 1967 Syrian air battles.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>May 1967 Escalation:</strong> Soviet false reports; Nasser expels UNEF peacekeepers.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Blockade:</strong> Egyptian forces close Straits of Tiran; Arab pacts.</div>
+              <div>&bull; <strong>Casus Belli:</strong> Israeli pre-emptive strike on 5 June 1967.</div>
             </div>
 
             <!-- 2.2 -->
             <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
-                2.2 Aftermath of the 1967 War
+                2.2 The Six-Day War &amp; Impact
               </strong>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Territorial conquest:</strong> Sinai, Gaza Strip, West Bank, East Jerusalem &amp; Golan occupied.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Khartoum Resolution (Sep 1967):</strong> Arab League 'Three Noes' (peace, recognition, talks).</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>UN Resolution 242 (Nov 1967):</strong> 'Land for peace' principle &amp; differing interpretations.</div>
-              <div style="margin-bottom: 2.5px;">&bull; Palestinian resistance &amp; PLO under <strong>Yasser Arafat</strong>; Dawson's Field hijackings (1970).</div>
-              <div>&bull; <strong>Black September (1970):</strong> Expulsion of PLO from Jordan; <strong>Munich Olympics massacre (1972)</strong>.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Operation Focus:</strong> Destruction of Egyptian Air Force in dawn blitz.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Triple Front Victory:</strong> Sinai (Egypt), West Bank (Jordan), Golan (Syria).</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Territorial Quadrupling:</strong> Conquered lands create 1M new refugees.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Khartoum Summit:</strong> Arab 'Three Noes' (No peace, recognition, talks).</div>
+              <div>&bull; <strong>UN Resolution 242:</strong> 'Land for Peace' formula establishes basis for talks.</div>
             </div>
 
             <!-- 2.3 -->
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
-                2.3 Israel and Egypt, 1967–73
+                2.3 Resistance &amp; Yom Kippur
               </strong>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>War of Attrition (1969–70):</strong> Artillery duels across Suez, Soviet air defences, Bar-Lev Line.</div>
-              <div style="margin-bottom: 2.5px;">&bull; Death of Nasser (1970); <strong>Anwar Sadat</strong> consolidates power, expels Soviet advisers (1972).</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Yom Kippur surprise attack (6 Oct 1973):</strong> Coordinated Egyptian crossing of Suez &amp; Syrian assault.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Superpower airlift:</strong> US Operation Nickel Grass &amp; Soviet resupply; Sharon counter-crossing.</div>
-              <div>&bull; <strong>OPEC oil weapon:</strong> Production cuts &amp; Western embargo; UN Resolution 338 ceasefire.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Armed Struggle:</strong> Battle of Karameh (1968); Yasser Arafat leads PLO.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>International Terror:</strong> PFLP aircraft hijackings; Black September (1970).</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Munich Olympics (1972):</strong> Hostage crisis and Israeli reprisals.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Yom Kippur War (1973):</strong> Egyptian canal crossing; Syrian assault.</div>
+              <div>&bull; <strong>Superpower Alert &amp; Oil:</strong> US-Soviet airlift crisis; OPEC oil embargo.</div>
             </div>
           </div>
 
-          <!-- Row 2: Causal Chain of Events (Mathematically locked to exact same horizontal line) -->
+          <!-- Row 2: Causal Chain of Events -->
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 6px;">
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
@@ -640,17 +707,17 @@
                 <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
                   <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
                     <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jan 1964</span>
-                    <span>Cairo Summit: PLO &amp; Water Plan</span>
+                    <span>Cairo Summit: PLO Founded</span>
                   </div>
                   <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
                   <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
-                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">1964–66</span>
-                    <span>Water Wars &amp; Golan Shelling</span>
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Nov 1966</span>
+                    <span>Samu Reprisal Raid in West Bank</span>
                   </div>
                   <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
                   <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
                     <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">7 Apr 67</span>
-                    <span>Air Battle: Mirages Down 6 MiGs</span>
+                    <span>Air Dogfight: 6 Syrian MiGs Downed</span>
                   </div>
                   <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
                   <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
@@ -891,7 +958,7 @@
           <span>ENQUIRY: How Did Water, Border Raids, and Rhetoric Make a Second War Inevitable?</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
+        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box & Component Bank -->
         <div class="two-column-prose">
           
           <div class="section-banner">
@@ -963,6 +1030,42 @@
           
         </div>
         
+          
+      <!-- Concept Spotlight: Battle Over the Headwaters -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL CONTEXT</span>
+          <span class="csb-category">WATER SECURITY &amp; ESCALATION</span>
+        </div>
+        <h4 class="csb-title">The Battle Over the Headwaters: The Jordan River Diversion</h4>
+        <div class="csb-body">
+          In 1964, Israel completed its National Water Carrier, drawing freshwater from Lake Tiberias (Sea of Galilee) to irrigate the arid Negev Desert. In response, Arab League states launched the Headwater Diversion Scheme to divert the Dan and Banias tributaries away from Israel into Syria and Jordan, threatening 35% of Israel's freshwater supply. Israeli artillery strikes and airstrikes systematically obliterated the Syrian earthworks between 1965 and 1967. Simultaneously, Syrian artillery on the Golan Heights shelled Israeli kibbutzim in the Hula Valley below, turning regional water control into the initial catalyst of total war.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Key Causation:</strong> Proved that border escalation predated troop mobilizations: water security was viewed by Israeli military planners as an existential casus belli.
+        </div>
+      </div>
+    
+          
+      <!-- Archival Dispatch: Radio Cairo Broadcast -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Radio Cairo Broadcast</span>
+          </div>
+          <span class="source-date-micro">26 May 1967</span>
+        </div>
+        <div class="archival-title">President Nasser's Address to Arab Trade Unionists</div>
+        <div class="archival-body">
+          "The battle will be a general one and our basic objective will be to destroy Israel. We probably could not have said such things five or even three years ago. Today I say such words because I am confident. We are now ready to confront Israel in battle."
+        </div>
+        <div class="archival-footer">
+          <span>Voice of the Arabs / Egyptian State Information Service</span>
+          <span>Cairo, 26 May 1967</span>
+        </div>
+      </div>
+    
         </div>
 
         
@@ -1134,7 +1237,7 @@
           <span>ENQUIRY: Why Was the Six-Day War Decided in Three Hours?</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
+        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box & Component Bank -->
         <div class="two-column-prose">
           
           <div class="section-banner">
@@ -1184,6 +1287,11 @@
                 However, this triumph created complex long-term problems. By capturing the West Bank and Gaza Strip, Israel brought over one million Palestinian Arabs under military rule, triggering a fresh refugee exodus and fueling a new wave of Palestinian nationalism. While Israelis felt secure behind wide natural borders, the profound humiliation suffered by Egypt and Syria guaranteed that Arab leaders would dedicate their resources to preparing for a war of revenge.
               </div>
             
+              <div class="numbered-para">
+                <span class="para-ref-pill">[4.3]</span>
+                In geopolitical terms, the sweeping Israeli victory transformed Cold War dynamics across the Middle East. The Soviet Union severed diplomatic relations with Israel and launched a multi-billion-dollar emergency rearmament of Egypt and Syria. Meanwhile, the United States recognized Israel as its primary regional strategic ally, initiating large-scale military assistance that solidified the post-1967 <strong>regional balance of power</strong>.
+              </div>
+            
           
         
           
@@ -1206,6 +1314,42 @@
           
         </div>
         
+          
+      <!-- Concept Spotlight: Operation Focus (Moked) -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">TACTICAL MASTERSTROKE</span>
+          <span class="csb-category">OPERATION MOKED &bull; JUNE 1967</span>
+        </div>
+        <h4 class="csb-title">Operation Focus (Moked): The 170-Minute Air Blitz</h4>
+        <div class="csb-body">
+          At 07:45 on 5 June 1967, Israeli Air Force commander Mordechai Hod committed 196 of Israel's 208 combat jets to a daring pre-emptive strike. Flying radar-evading routes just 50 feet above the Mediterranean waves under radio silence, Israeli Mirage and Vautour aircraft struck 19 Egyptian airbases simultaneously using specialized rocket-assisted runway-cratering bombs ('Dibber'). In less than three hours, 309 of Egypt's 340 combat aircraft were demolished on the tarmac. By midday, Hod redirected sorties against Syrian and Jordanian airfields, destroying a further 60 aircraft and winning absolute regional air dominance.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Decisive Factor:</strong> Total air supremacy allowed Israeli armored divisions under Tal, Sharon, and Yoffe to advance across Sinai and the West Bank without threat of air interdiction.
+        </div>
+      </div>
+    
+          
+      <!-- Archival Dispatch: Rabin's Order of the Day -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">IDF General Staff Order</span>
+          </div>
+          <span class="source-date-micro">5 June 1967</span>
+        </div>
+        <div class="archival-title">Chief of Staff Yitzhak Rabin's Order of the Day</div>
+        <div class="archival-body">
+          "Soldiers of the Israel Defense Forces! Today our armed forces strike at the forces arrayed to annihilate our people. We go into battle not to conquer, but to secure our survival in our ancestral land. The fate of Israel rests upon your courage and discipline."
+        </div>
+        <div class="archival-footer">
+          <span>IDF General Staff Historical Archive</span>
+          <span>Tel Aviv Command, 5 June 1967</span>
+        </div>
+      </div>
+    
         </div>
 
         
@@ -1216,16 +1360,16 @@
           </div>
           <div class="beb-grid">
             <div class="beb-col">
-              <strong>1. Air Superiority:</strong>
-              Explain why Operation Focus succeeded in destroying over 300 Egyptian aircraft on the ground in the first three hours of 5 June 1967.
+              <strong>1. Operation Focus:</strong>
+              Why was the Israeli Air Force's surprise dawn blitz on 5 June 1967 decisive in determining the entire outcome of the Six-Day War?
             </div>
             <div class="beb-col">
-              <strong>2. Three-Front Mobilization:</strong>
-              How did Israeli forces achieve rapid territorial victories against Egyptian, Jordanian, and Syrian armies simultaneously within six days?
+              <strong>2. Multi-Front Advance:</strong>
+              Explain why Jordan entered the war despite Israeli warnings, and describe the consequences for East Jerusalem and the West Bank.
             </div>
             <div class="beb-col">
               <strong>3. Evaluative Hinge:</strong>
-              To what extent was Israel's victory the result of superior military planning rather than Arab strategic and communication failures?
+              Was Israeli victory primarily the result of brilliant tactical planning (pre-emption) or disastrous Arab disunity and military incompetence?
             </div>
           </div>
         </div>
@@ -1377,7 +1521,7 @@
           <span>ENQUIRY: How Did the 1967 Conquered Territories Transform the Conflict?</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
+        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box & Component Bank -->
         <div class="two-column-prose">
           
           <div class="section-banner">
@@ -1459,6 +1603,8 @@
           
         </div>
         
+          
+          
         </div>
 
         
@@ -1596,17 +1742,17 @@
             
               <div class="bvb-col">
                 <strong>Fatah & The PLO</strong>
-                Armed Palestinian nationalist movements led by Yasser Arafat, committed to independent armed struggle to liberate Palestine.
+                Palestinian nationalist political and military organization founded by Yasser Arafat, committed to armed liberation of Palestine.
               </div>
             
               <div class="bvb-col">
-                <strong>Dawson's Field (1970)</strong>
-                PFLP coordinated hijackings of three commercial airliners to a Jordanian desert airfield, destroying them before international cameras.
+                <strong>Black September (1970)</strong>
+                Armed conflict between Jordanian Armed Forces under King Hussein and the PLO, resulting in the expulsion of Palestinian guerrilla leadership to Lebanon.
               </div>
             
               <div class="bvb-col">
-                <strong>Black September</strong>
-                The 1970 Jordanian civil war in which King Hussein's army defeated and expelled armed PLO factions, forcing their relocation to Lebanon.
+                <strong>Munich Olympics (1972)</strong>
+                Terrorist attack by the Black September faction taking eleven Israeli Olympic team members hostage, culminating in their murder at Fürstenfeldbruck airport.
               </div>
             
           </div>
@@ -1630,7 +1776,7 @@
           <span>ENQUIRY: The Rise of Palestinian Resistance: The PLO, Black September & Munich</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
+        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box & Component Bank -->
         <div class="two-column-prose">
           
           <div class="section-banner">
@@ -1702,6 +1848,42 @@
           
         </div>
         
+          
+      <!-- Concept Spotlight: Battle of Karameh -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL TURNING POINT</span>
+          <span class="csb-category">GUERRILLA LEGITIMACY &bull; MARCH 1968</span>
+        </div>
+        <h4 class="csb-title">The Battle of Karameh: How a Tactical Clash Created a Legend</h4>
+        <div class="csb-body">
+          On 21 March 1968, 15,000 Israeli soldiers launched a punitive raid across the Jordan River into the town of Karameh to destroy PLO basecamps. Anticipating the assault, Yasser Arafat ordered Fatah commandos to stand their ground alongside the Jordanian Army's 1st Infantry Division. Despite suffering 156 dead and the destruction of the town, Palestinian fighters destroyed 4 Israeli tanks and inflicted 28 IDF fatalities. Arafat framed Karameh as the first time Arab fighters stood against the IDF without fleeing, sparking a massive surge in Palestinian nationalist enlistment across the Middle East.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Key Significance:</strong> Transformed Fatah from an obscure guerrilla fringe into the dominant political vanguard of the Palestinian national movement.
+        </div>
+      </div>
+    
+          
+      <!-- Archival Dispatch: Operation Wrath of God -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Cabinet Security Directive</span>
+          </div>
+          <span class="source-date-micro">September 1972</span>
+        </div>
+        <div class="archival-title">Golda Meir's Directive: Operation Wrath of God</div>
+        <div class="archival-body">
+          Following the massacre of eleven Israeli Olympic athletes in Munich, Prime Minister Golda Meir authorized Mossad to track down and assassinate every Black September planner across Europe and the Middle East, declaring: <em>"We have no choice but to strike at the terrorist organizations wherever we can reach them."</em>
+        </div>
+        <div class="archival-footer">
+          <span>Prime Minister's Office Classified Minutes</span>
+          <span>Jerusalem Security Committee, September 1972</span>
+        </div>
+      </div>
+    
         </div>
 
         
@@ -1839,17 +2021,17 @@
             
               <div class="bvb-col">
                 <strong>Bar-Lev Line</strong>
-                Massive, 150km-long Israeli fortified sand rampart and bunker complex along the eastern bank of the Suez Canal, overrun in 1973.
+                Massive chain of 35 fortified Israeli bunkers and 60-foot sand ramparts along the east bank of the Suez Canal, built after 1967 to repel Egyptian amphibious assault.
               </div>
             
               <div class="bvb-col">
-                <strong>Operation Badr</strong>
-                The surprise Egyptian amphibious assault crossing the Suez Canal using high-pressure water cannons on Yom Kippur, 6 October 1973.
+                <strong>Operation Badr (1973)</strong>
+                Egyptian assault crossing the Suez Canal on Yom Kippur, deploying high-pressure water cannons to blast breaches through the Bar-Lev Line ramparts.
               </div>
             
               <div class="bvb-col">
-                <strong>OPEC Oil Weapon</strong>
-                Arab oil ministers' embargo and production cuts targeting Western nations supporting Israel, causing global economic shockwaves.
+                <strong>OPEC Oil Embargo</strong>
+                Decision by Arab oil-producing states to cut petroleum production and embargo Western supporters of Israel, quadrupling global oil prices.
               </div>
             
           </div>
@@ -1873,7 +2055,7 @@
           <span>ENQUIRY: The War of Attrition & The Yom Kippur War (1969–1973)</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
+        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box & Component Bank -->
         <div class="two-column-prose">
           
           <div class="section-banner">
@@ -1945,6 +2127,42 @@
           
         </div>
         
+          
+      <!-- Concept Spotlight: Operation Badr -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">ENGINEERING TRIUMPH</span>
+          <span class="csb-category">OPERATION BADR &bull; OCTOBER 1973</span>
+        </div>
+        <h4 class="csb-title">Breaching the Bar-Lev Line: The High-Pressure Water Cannons</h4>
+        <div class="csb-body">
+          The Israeli Bar-Lev Line was shielded by a 60-foot-high sand rampart along the eastern bank of the Suez Canal, calculated by Western engineers to require 24 to 48 hours and heavy explosives to breach. Egyptian military engineer General Baki Zaki Yousef proposed using commercial British-built high-pressure water pumps. Mounting 450 pumps on pontoon barges, Egyptian engineering units blasted 81 separate breaches through 3 million cubic meters of sand in less than five hours, enabling 100,000 soldiers and 1,020 tanks to surge into Sinai before the IDF could mobilize.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Strategic Shock:</strong> Shattered Israel's doctrine of 'The Concept' (Hamusag)—the misplaced conviction that Arab armies lacked the technical sophistication to mount a crossing.
+        </div>
+      </div>
+    
+          
+      <!-- Archival Dispatch: Sadat's War Directive -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Presidential War Directive</span>
+          </div>
+          <span class="source-date-micro">5 October 1973</span>
+        </div>
+        <div class="archival-title">President Anwar Sadat's Strategic War Directive</div>
+        <div class="archival-body">
+          "The strategic objective of the Egyptian armed forces is to challenge Israeli military doctrine by launching a military action... to shatter the theory of Israeli security and force a political crisis that will compel international intervention to resolve the stalemate."
+        </div>
+        <div class="archival-footer">
+          <span>Egyptian Supreme Council of the Armed Forces</span>
+          <span>War Directive No. 41, 5 October 1973</span>
+        </div>
+      </div>
+    
         </div>
 
         
@@ -2016,133 +2234,108 @@
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.32;">
           <tbody>
             <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; width: 85px; white-space: nowrap;">Jan 1964</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a; width: 140px;">Cairo Arab Summit</td>
-              <td style="padding: 4px 8px; color: #334155;">Arab League convenes to counter Israeli National Water Carrier; Palestinian Liberation Organization (PLO) formed.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; width: 85px; white-space: nowrap;">Jan 1964</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a; width: 140px;">Cairo Arab League Summit</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Arab states endorse headwater diversion scheme against Israel's National Water Carrier; PLO created.</td>
             </tr>
             <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Nov 1966</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">Samu Reprisal Raid</td>
-              <td style="padding: 4px 8px; color: #334155;">IDF launches major raid into Jordanian West Bank following Fatah mine attack; severely damages King Hussein's prestige.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Nov 1966</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Samu Reprisal Raid</td>
+              <td style="padding: 3.5px 8px; color: #334155;">IDF launches heavy raid into Jordanian West Bank after Fatah mine kills 3 soldiers; radicalizes West Bank.</td>
             </tr>
             <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">7 Apr 1967</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">Air Dogfight over Damascus</td>
-              <td style="padding: 4px 8px; color: #334155;">Israeli Mirage jets shoot down 6 Syrian MiG-21s; Arab public taunts Nasser over Egyptian inaction behind UNEF lines.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">7 Apr 1967</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Tractor War Air Dogfight</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Syrian shelling of DMZ tractors leads to dogfight; IAF downs 6 Syrian MiGs and flies over Damascus.</td>
             </tr>
             <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">May 1967</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">Straits of Tiran Blockade</td>
-              <td style="padding: 4px 8px; color: #334155;">Nasser expels UNEF peacekeepers, mobilises 100,000 troops in Sinai, and closes Straits of Tiran; Israel declares casus belli.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">May 1967</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Sinai Mobilization &amp; Blockade</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Soviet disinformation prompts Nasser to demand UNEF withdrawal and close Straits of Tiran.</td>
             </tr>
             <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">5–10 Jun 1967</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">The Six-Day War</td>
-              <td style="padding: 4px 8px; color: #334155;">Operation Focus preempts Egyptian Air Force; Israel captures Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and Golan Heights.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">5 Jun 1967</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Operation Focus (Moked)</td>
+              <td style="padding: 3.5px 8px; color: #334155;">IAF pre-emptive dawn strike neutralizes Egyptian air force on runways, establishing complete air dominance.</td>
             </tr>
             <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Sep 1967</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">Khartoum Summit</td>
-              <td style="padding: 4px 8px; color: #334155;">Eight Arab states adopt the "Three Noes": No peace with Israel, No recognition of Israel, No negotiations with Israel.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">5–10 Jun 1967</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">The Six-Day War</td>
+              <td style="padding: 3.5px 8px; color: #334155;">IDF captures Sinai, Gaza Strip, West Bank, East Jerusalem, and Syrian Golan Heights; territory expands x3.</td>
             </tr>
             <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">22 Nov 1967</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">UN Resolution 242</td>
-              <td style="padding: 4px 8px; color: #334155;">Establishes "Land for Peace" principle; deliberately ambiguous language ("territories occupied" vs "des territoires occupés").</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Sep 1967</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Khartoum Resolution</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Eight Arab heads of state proclaim the 'Three Noes': No peace, no recognition, no negotiations with Israel.</td>
             </tr>
             <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Sep 1970</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">Black September</td>
-              <td style="padding: 4px 8px; color: #334155;">PFLP hijacks commercial planes to Dawson's Field; King Hussein expels armed PLO militias from Jordan to southern Lebanon.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">22 Nov 1967</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">UN Resolution 242</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Security Council establishes 'Land for Peace' formula: Israeli withdrawal in exchange for recognized boundaries.</td>
             </tr>
             <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Sep 1972</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">Munich Olympics Massacre</td>
-              <td style="padding: 4px 8px; color: #334155;">Black September terrorists murder 11 Israeli Olympic team members; prompts Israel's Operation "Wrath of God" counter-strikes.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">21 Mar 1968</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Battle of Karameh</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Fatah fighters and Jordanian army resist IDF raid, transforming Arafat into an international Palestinian icon.</td>
+            </tr>
+            <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Sep 1970</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Dawson's Field &amp; Black September</td>
+              <td style="padding: 3.5px 8px; color: #334155;">PFLP hijacks 4 planes to Jordan; King Hussein unleashes army to crush and expel PLO fedayeen to Lebanon.</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">Sep 1972</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">Munich Olympics Massacre</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Black September murders 11 Israeli Olympic athletes; Israel responds with 'Operation Wrath of God'.</td>
             </tr>
             <tr style="background: #ffffff;">
-              <td style="padding: 4px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">6–25 Oct 1973</td>
-              <td style="padding: 4px 8px; font-weight: 700; color: #0f172a;">The Yom Kippur War</td>
-              <td style="padding: 4px 8px; color: #334155;">Egypt &amp; Syria launch coordinated surprise attack; IDF counter-attacks across Suez; OPEC initiates Arab oil embargo.</td>
+              <td style="padding: 3.5px 8px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">6–25 Oct 1973</td>
+              <td style="padding: 3.5px 8px; font-weight: 700; color: #0f172a;">The Yom Kippur War</td>
+              <td style="padding: 3.5px 8px; color: #334155;">Coordinated Egyptian-Syrian surprise crossing of Suez and Golan; Sharon counter-encirclement; OPEC oil crisis.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Disciplinary Glossary & Exam Architecture Grid (Hybrid Powerhouse) -->
-      <div style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 8px; margin-bottom: 5px;">
+      <!-- Core Specification Terminology & Exam Question Models -->
+      <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 8px; margin-bottom: 5px;">
         
-        <!-- Core Conceptual Vocabulary -->
-        <div style="border: 1.5px solid #cbd5e1; border-radius: 4px; padding: 6px 9px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; display: block; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 4px; letter-spacing: 0.4px;">
-            Key Topic 2 Disciplinary Terminology
+        <!-- Key Historical Concepts & Terminology -->
+        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 6px 9px; background: #ffffff;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.4px; display: block; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 4px;">
+            Key Disciplinary Terminology
           </strong>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; line-height: 1.32; color: #334155; display: flex; flex-direction: column; gap: 3.5px;">
-            <div>&bull; <strong>Casus Belli:</strong> An act or event that provokes or justifies war (e.g. Nasser's closure of the Straits of Tiran on 22 May 1967).</div>
-            <div>&bull; <strong>Pre-emption:</strong> Launching a military strike to disrupt an imminent and inevitable enemy attack (e.g. Operation Focus dawn airstrike, 5 June 1967).</div>
-            <div>&bull; <strong>UNEF:</strong> United Nations Emergency Force deployed in Sinai to maintain peace buffer between Egypt and Israel; expelled by Nasser in May 1967.</div>
-            <div>&bull; <strong>Bar-Lev Line:</strong> Massive chain of Israeli sand ramparts and concrete fortified strongpoints along the east bank of the Suez Canal.</div>
-            <div>&bull; <strong>OPEC Oil Weapon:</strong> Arab production cutbacks and selective embargo against Western nations supporting Israel during the 1973 Yom Kippur War.</div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.34; color: #334155; display: flex; flex-direction: column; gap: 3px;">
+            <div>&bull; <strong>Casus Belli:</strong> An act or event that provokes or is used to justify a declaration of war.</div>
+            <div>&bull; <strong>Pre-emptive Strike:</strong> A military attack launched to repel or defeat an imminent offensive.</div>
+            <div>&bull; <strong>Strategic Depth:</strong> Distances between frontiers and core civilian/industrial population centres.</div>
+            <div>&bull; <strong>Land for Peace:</strong> Legal principle of returning occupied territory in exchange for recognized peace.</div>
+            <div>&bull; <strong>Asymmetrical Warfare:</strong> Armed conflict between belligerents whose military power differs vastly.</div>
+            <div>&bull; <strong>The Concept (Hamusag):</strong> Pre-1973 Israeli intelligence assumption that Egypt would not attack without air parity.</div>
           </div>
         </div>
 
         <!-- Examination Question Structure with Concrete Specification Models -->
         <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 6px 9px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 4px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.4px;">
-              Edexcel Paper 2 Exam Framework &amp; Models
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; background: #0f172a; color: #fff; padding: 1px 5px; border-radius: 2px;">
-              32 MARKS TOTAL
-            </span>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; line-height: 1.3; color: #1e293b; display: flex; flex-direction: column; gap: 3.5px;">
-            <div style="background: #f8fafc; border-left: 2.5px solid #1e3a8a; padding: 2.5px 5px; border-radius: 0 2px 2px 0;">
-              <span style="font-weight: 800; color: #1e3a8a;">Q1: Explain ONE consequence of... [4 Marks]</span><br>
-              <em>Model Question:</em> &ldquo;Explain one consequence of the closure of the Straits of Tiran in May 1967.&rdquo;<br>
-              <span style="color: #64748b; font-size: 6.3pt; font-weight: 600;">Formula: Trigger &rarr; Direct strategic impact on Israel &rarr; Escalation to war. (1 paragraph)</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.4px; display: block; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 4px;">
+            Edexcel Paper 2 Examination Frameworks
+          </strong>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.32; color: #334155; display: flex; flex-direction: column; gap: 3.5px;">
+            <div>
+              <strong style="color: #0f172a;">Q1: Explain one consequence of... [4 Marks]</strong><br>
+              <em>Model Focus:</em> State one clear consequence &bull; Support with precise factual detail (names, dates, figures) &bull; Explain the resulting historical impact on regional tension.
             </div>
-            <div style="background: #f8fafc; border-left: 2.5px solid #b45309; padding: 2.5px 5px; border-radius: 0 2px 2px 0;">
-              <span style="font-weight: 800; color: #b45309;">Q2: Write an analytical narrative explaining... [8 Marks]</span><br>
-              <em>Model Question:</em> &ldquo;Write an analytical narrative explaining the outbreak of the Six-Day War (1967). You may use: (1) National Water Carrier, (2) Expulsion of UNEF.&rdquo;<br>
-              <span style="color: #64748b; font-size: 6.3pt; font-weight: 600;">Formula: 3 chronological stages linked with causal connectives (&lsquo;Consequently&rsquo;, &lsquo;As a direct result&rsquo;).</span>
+            <div>
+              <strong style="color: #0f172a;">Q2: Write an analytical narrative explaining... [8 Marks]</strong><br>
+              <em>Model Focus:</em> 3-stage causal sequencing (Catalyst &bull; Escalation &bull; Outcome) &bull; Connect each step with explicit analytical connectives (Consequently, This directly led to).
             </div>
-            <div style="background: #f8fafc; border-left: 2.5px solid #15803d; padding: 2.5px 5px; border-radius: 0 2px 2px 0;">
-              <span style="font-weight: 800; color: #15803d;">Q3: Explain the importance of... for... [8 Marks]</span><br>
-              <em>Model Question:</em> &ldquo;Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy.&rdquo;<br>
-              <span style="color: #64748b; font-size: 6.3pt; font-weight: 600;">Formula: 2 PEEL paragraphs explaining &lsquo;What difference did X make to Y?&rsquo;</span>
+            <div>
+              <strong style="color: #0f172a;">Q3: Explain two of the following... [16 Marks]</strong><br>
+              <em>Model Focus:</em> 2 sustained PEEL paragraphs per chosen option &bull; Prioritize causal mechanisms over simple narrative &bull; Conclude with clear comparative significance.
             </div>
           </div>
         </div>
 
-      </div>
-
-      <!-- Interactive Digital Retrieval & Revision Hub (Full-Width Strip) -->
-      <div style="border: 1.5px solid #1e3a8a; border-left: 4.5px solid #1e3a8a; border-radius: 4px; padding: 6px 10px; background: #f8fafc; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px;">
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2.5px;">
-            <span style="background: #1e3a8a; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; padding: 1.5px 6px; border-radius: 2px; letter-spacing: 0.5px;">
-              Interactive Digital Retrieval Hub
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.3px;">
-              Key Topic 2 Knowledge Quiz &amp; Flashcards
-            </span>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; line-height: 1.34; margin-bottom: 3.5px;">
-            Scan the QR code with any smartphone or tablet camera to launch the interactive, self-marking retrieval bank for Key Topic 2. Test your rapid recall across the 1964 Cairo Summit, Six-Day War, Resolution 242, Black September, and the Yom Kippur War with instant model answers and scoring.
-          </div>
-          <div style="display: flex; gap: 10px; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #475569;">
-            <span>&bull; 20 Specification Recall Questions</span>
-            <span>&bull; Instant Self-Marking &amp; Explanations</span>
-            <span>&bull; Digital Leitner Flashcard Deck</span>
-          </div>
-        </div>
-        <div style="text-align: center; flex-shrink: 0; display: flex; flex-direction: column; align-items: center;">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAAAklEQVR4AewaftIAAAhRSURBVO3BwY1cOQxF0WuhAuCSOTD/UF4OXDIDjzcChAZUlv5UezwAz/nx8xdaOzRo7cKgtQuD1i68+MI8+G6VYmUeTJViZR6sKsWOebBTKT7BPDhVKXbMg51KsTIPpkqxMg++W6WYBq1dGLR2YdDahRe/USk+wTzYqRSnzIOpUuxUilPmwU6lOFUpdsyDVaWYzINPqBSfYB7sDFq7MGjtwosL5sGpSnHKPNipFKcqxWQevFMpTpgHq0oxmQfvmAdTpViZB6cqxRPmwalKcWLQ2oVBaxcGrV148ReoFJN5sDIPTlWKqVKszIPvZh6sKsVkHjxlHkyV4r80aO3CoLULL/5nKsWOeTBVilWleKJSfEKlWJkHpyrF32LQ2oVBaxcGrV14caFSfAfzYKoUK/NgZR5MleIp82CqFCvz4ESlWJkHO+bBU+bBVClOVYpPG7R2YdDahUFrF178hnnwN6kUk3mwqhSTebCqFJ9gHkyV4qlKMZkHn2AefLdBaxcGrV148UWl+NMqxROVYmUeTJViZR6cqhSTefAJlWKnUqzMg1Wl2KkUf9KgtQuD1i4MWrvw4gvzYFUpJvNgVSlOmQc7leKUeTBVilWlmMyDVaVYmQeTebBTKf4vzINVpdgxD1aVYjIPVpViGrR2YdDahRdfVIqVeXDCPHinUuyYB1Ol+NMqxY55sKoUk3mwqhQr8+ATzIOpUqzMg1PmwY55cGLQ2oVBaxcGrV148U0qxco8mCrFdzAPpkpxyjxYVYod82DHPDhVKXbMg1WlOFEpVubBqlKcMA92Bq1dGLR2YdDahRcXKsXKPJgqxco8WFWKE+bBqlI8YR6cqhQr8+BEpViZBzuVYsc8WFWKlXkwVYpVpZjMg0+oFDuD1i4MWrvw4+cvfIB5cKpS7JgHq0qxMg92KsVkHqwqxco8mCrFKfNgqhTvmAc7lWLHPFhVih3zYKoUn2AerCrFNGjtwqC1C4PWLrz4wjxYVYpPqBQ75sGOebCqFJN5sDIPpkqxMg92zINTleLTzIN3zIOpUuyYB6tKsTIPpkrxxKC1C4PWLrz4olLsmAc7leId82CqFDuV4h3zYKoUO+bBqUqxYx6szIOpUjxlHpyqFJN5sFMpTpkHTwxauzBo7cKgtQsvfsM82KkUk3mwqhSrSjGZBzvmwTuVYjIPPsE8WFWKnUrxCZViMg9WleIJ8+BUpXhi0NqFQWsXBq1dePEblWIyD54yD6ZKcco8+IRKsWMenDIPpkpxqlLsVIp3zIOpUqzMg6lSPGUe7FSKadDahUFrF158YR7sVIqVeTBVincqxY55cMo8mCrFyjx4olI8YR6sKsWOebCqFJN58CeYB//WoLULg9YuDFq78OKLSrEyDybzYFUpJvPgO1SKlXlwolKszINVpZjMg1Wl2KkU/yXzYFUpJvPgnUpxwjzYGbR2YdDahRcXKsXKPJgqxSeYB+9Uip1KMZkHq0qxUylOmQdTpViZB6tKMZkHO5ViZR7sVIpTlWJlHkyVYqdS7AxauzBo7cKgtQsvfqNSTObBqlJM5sFTleKUeTBVilPmwU6l2KkUK/Ngp1KszIOpUpyqFCvzYMc8OFUpdsyDqVLsDFq7MGjtwosvzINT5sFOpThlHjxhHuxUipV5sKoUJ8yDHfNgVSl2zINVpZjMg0+oFJ9gHqwqxTRo7cKgtQuD1i68+KJSfAfzYKoUq0oxmQenKsXKPHjCPDhVKSbz4FSlWJkHU6VYmQenKsUp82CnUkzmwc6gtQuD1i4MWrvw4+cvLMyDnUqxMg+mSnHKPFhVisk8eKdSnDAPVpXilHkwVYqVeTBVilPmwapSTObBqlLsmAerSjGZB6cqxROD1i4MWrvw4+cv/AHmwU6l2DEPVpVixzyYKsU75sG/VSneMQ+mSvGUeTBVipV5MFWKp8yDnUoxDVq7MGjtwqC1Cy/+BfNgqhTvVIod82CqFO+YB38L82BVKXbMg51KsTIPnjAPVpViZR5MlWJVKSbzYGfQ2oVBaxdefGEenKoUp8yDE+bBqlKcMg8m82BVKU5Visk8WFWKJyrFyjyYzIN3KsWJSrEyD1aVYjIPVpXixKC1C4PWLgxau/Dii0rxCebBqlJM5sFOpThlHuxUipV5sFMpvkOlmMyDVaWYzIN3zIOdSnHKPJgqxco8mCrFzqC1C4PWLgxau/DiC/PgVKWYzINVpViZB0+YB6tKsVMpJvNgVSm+m3mwqhRPVIqVebBjHnxCpTgxaO3CoLULP37+wn/MPJgqxco8WFWKHfNgqhQr8+BUpZjMg51K8Y55cKJSvGMeTJXilHmwqhQ75sFOpZgGrV0YtHZh0NqFF1+YB9+tUnw38+BUpXjCPFhViifMg1WlOGUeTJXiqUoxmQc7g9YuDFq78OI3KsUnmAc7leIJ8+ATzINVpZgqxSnzYKdS7JgHK/PgVKX4BPNgqhQ7g9YuDFq7MGjtwosL5sGpSvGEefBUpZjMg3cqxWQefEKlWJkHJyrFyjzYMQ++m3mwqhTToLULg9YuDFq78OIvUylW5sFOpThVKZ4wD76DeXCqUjxhHqzMg51KcWLQ2oVBaxde/AXMg6lSrCrFyjyYKsUp82BVKXbMg51KMZkHq0qxMg8m82CnUpwyD1aVYjIPTlWKHfNgVSmmQWsXBq1dGLR24cWFSvEdKsWOefAJlWKnUqzMgxOVYmUe7FSKHfPgnUpxolKszIMnKsXOoLULg9Yu/Pj5Cwvz4LtVipV5cKpSTObBqlJM5sGpSrFjHuxUij/BPJgqxco82KkUK/NgqhQ75sGqUkyD1i4MWrswaO3Cj5+/0NqhQWsXBq1d+AeK77klDYlWyQAAAABJRU5ErkJggg==" alt="Key Topic 2 Quiz QR" style="width: 22mm; height: 22mm; display: block; border: 1px solid #cbd5e1; border-radius: 3px; padding: 1px; background: #fff;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; margin-top: 2px; letter-spacing: 0.3px;">
-            Scan for Mobile Quiz
-          </span>
-        </div>
       </div>
 
       <!-- Back Cover Footer -->

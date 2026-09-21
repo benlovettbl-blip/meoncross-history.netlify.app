@@ -24,6 +24,8 @@
     "verify:lettering": "node scripts/verify_source_lettering.cjs",
     "verify:alignment": "node scripts/verify_source_act_alignment.cjs",
     "export:pdf": "node scripts/export_pdfs.cjs && node scripts/generate_scheme_of_work.cjs",
+    "balance:textbook": "node scripts/auto_balance_textbook.cjs",
+    "audit:textbook": "node scripts/audit_textbook_pages.cjs",
     "cover:standalone": "node scripts/generate_all_standalone_cover_packs.cjs",
     "cover:email": "python scripts/generate_cover_email.py",
     "booklet:yr7": "node scripts/generate_water_sanitation_quiz_booklet.cjs",

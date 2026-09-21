@@ -374,6 +374,88 @@
       margin-bottom: 1.5px;
     }
 
+    /* Concept Spotlight Box (Curriculum Depth & Historical Mechanism) */
+    .concept-spotlight-box {
+      background: #fdfaf6;
+      border: 1px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      border-radius: 4px;
+      padding: 6px 9px;
+      margin: 7px 0;
+      break-inside: avoid;
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    .csb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #ffedd5;
+      font-family: 'Inter', sans-serif;
+    }
+    .csb-tag {
+      font-size: 6.6pt;
+      font-weight: 800;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .csb-category {
+      font-size: 6.2pt;
+      font-weight: 700;
+      color: #b45309;
+      background: #ffedd5;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .csb-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #7c2d12;
+      margin: 1px 0 3px 0;
+      line-height: 1.2;
+    }
+    .csb-body {
+      font-size: 7.8pt;
+      line-height: 1.38;
+      color: #1e293b;
+      margin-bottom: 3px;
+    }
+    .csb-takeaway {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 600;
+      color: #78350f;
+      background: #fef3c7;
+      border-left: 2px solid #d97706;
+      padding: 2px 6px;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Compact Concept Spotlight Variant */
+    .concept-spotlight-box.compact {
+      padding: 4px 7px;
+      margin: 4px 0;
+    }
+    .concept-spotlight-box.compact .csb-title {
+      font-size: 8.5pt;
+      margin: 1px 0 2px 0;
+      line-height: 1.15;
+    }
+    .concept-spotlight-box.compact .csb-body {
+      font-size: 7.3pt;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .concept-spotlight-box.compact .csb-takeaway {
+      font-size: 6.2pt;
+      line-height: 1.2;
+      padding: 1.5px 5px;
+    }
+
     /* Full-Width Bottom Enquiry Deck (Pinned to bottom of page container) */
     .bottom-enquiry-box {
       width: 100%;
@@ -915,6 +997,40 @@
           <li><strong>Institutionalised the Mandate:</strong> Championed the incorporation of the Balfour Declaration into the 1922 League of Nations Mandate.</li>
         </ul>
       </div>
+
+      <!-- Concept Spotlight: The Balfour Formula -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL CONCEPT</span>
+          <span class="csb-category">DIPLOMATIC AMBIGUITY</span>
+        </div>
+        <h4 class="csb-title">The Balfour Formula: 'National Home' vs 'State'</h4>
+        <div class="csb-body">
+          Arthur Balfour and Lloyd George's War Cabinet deliberately selected the unprecedented phrase 'a national home for the Jewish people' rather than 'a Jewish state'. This calculated ambiguity was designed to avoid alarming non-Zionist British Jews and Palestinian Arabs while rallying Jewish wartime support in America and Russia. Simultaneously, it protected British imperial control over the approaches to the Suez Canal. It created an irreconcilable diplomatic contradiction that bedevilled the British administration for thirty years.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Exam Distinction:</strong> 'National Home' offered cultural and spiritual refuge without explicitly guaranteeing sovereign statehood or defined territorial boundaries.
+        </div>
+      </div>
+
+      <!-- Archival Dispatch: War Cabinet Minutes -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">War Cabinet Record</span>
+          </div>
+          <span class="source-date-micro">31 October 1917</span>
+        </div>
+        <div class="archival-title">Balfour Defends the Formula to the War Cabinet</div>
+        <div class="archival-body">
+          "The vast majority of Jews in Russia and America appear to be favourably disposed to Zionism... If we could make a declaration favourable to such an ideal, we should be able to carry out extremely useful propaganda in both countries. Furthermore, it establishes a strategic buffer adjacent to the vital maritime corridor of the Suez Canal."
+        </div>
+        <div class="archival-footer">
+          <span>British War Cabinet Minutes (CAB/23/4)</span>
+          <span>10 Downing Street, 31 October 1917</span>
+        </div>
+      </div>
     </div>
 
     <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
@@ -1099,7 +1215,7 @@
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[2.10]</span>
-        The UN created the <strong>United Nations Special Committee on Palestine (UNSCOP)</strong>, composed of eleven neutral nations. UNSCOP toured the country, witnessed the interception of the SS Exodus, and interviewed Jewish leaders. Arab leaders boycotted the committee, arguing that the UN had no legal right to partition land that belonged to its indigenous inhabitants. In August 1947, UNSCOP voted by majority to recommend the termination of the British Mandate and the partition of Palestine into independent Arab and Jewish states, with Jerusalem placed under international trusteeship. In September, Britain announced it would withdraw all forces by 15 May 1948.
+        The UN created the <strong>United Nations Special Committee on Palestine (UNSCOP)</strong>, composed of eleven neutral nations (including Sweden, Canada, and Guatemala) to guarantee impartiality. UNSCOP toured the country for five weeks, witnessed firsthand the violent interception of the SS Exodus in Haifa harbor, and conducted extensive interviews with Jewish Agency leaders David Ben-Gurion and Moshe Sharett. The Arab Higher Committee completely boycotted the inquiry, arguing that Palestine's indigenous Arab majority possessed an inherent democratic right to self-determination and that European crimes against Jews could not justly be compensated with Arab ancestral land. In August 1947, UNSCOP published its report: a unanimous recommendation to terminate the British Mandate, and a majority recommendation (7 to 3) to partition Palestine into independent Arab and Jewish states with international trusteeship over Jerusalem. In September, Britain announced it would reject enforcing any partition opposed by either party, setting a rigid, unilateral evacuation deadline of 15 May 1948.
       </div>
 
       <!-- Key Figure Box: Clement Attlee -->
@@ -1124,6 +1240,40 @@
           <li><strong>Set Hard Evacuation Deadline:</strong> Refused to enforce UN Partition, setting a rigid withdrawal date of 15 May 1948 to minimize British casualties.</li>
           <li><strong>Withdrew 100,000 British Troops:</strong> Ended British financial drainage (£40M/year) amidst post-war rationing and economic austerity.</li>
         </ul>
+      </div>
+
+      <!-- Concept Spotlight: The Economic Drain -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL MECHANISM</span>
+          <span class="csb-category">IMPERIAL EXHAUSTION</span>
+        </div>
+        <h4 class="csb-title">The Economic Drain: 100,000 British Troops &amp; Post-War Austerity</h4>
+        <div class="csb-body">
+          By early 1947, Great Britain was gripped by severe economic strain: devastating coal shortages during the freeze of 1946–47, strict bread rationing at home, and heavy war debts owed to Washington. Deploying 100,000 soldiers in Palestine cost £40 million annually (£1.8 billion today). Clement Attlee's Cabinet realized Britain could no longer sustain costly imperial policing while constructing the National Health Service and Welfare State at home.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Key Causation:</strong> Domestic economic exhaustion—not military collapse—forced Britain's historic decision to hand the Palestine Mandate to the United Nations.
+        </div>
+      </div>
+
+      <!-- Archival Dispatch: Bevin's UN Referral -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Parliamentary Statement</span>
+          </div>
+          <span class="source-date-micro">25 February 1947</span>
+        </div>
+        <div class="archival-title">Ernest Bevin Announces Referral to the UN</div>
+        <div class="archival-body">
+          "His Majesty's Government have been faced with an irreconcilable conflict of principles. We have decided that we are unable to accept the scheme put forward by either the Arabs or the Jews... and we have resolved to refer the whole problem to the United Nations. We are not going to the United Nations to ask for their advice; we are setting the problem before them so that they may settle it, as Britain can no longer bear this unilateral burden alone."
+        </div>
+        <div class="archival-footer">
+          <span>Hansard Parliamentary Debates</span>
+          <span>House of Commons, 25 February 1947</span>
+        </div>
       </div>
     </div>
 
@@ -1345,6 +1495,21 @@
           <li><strong>Secured Czech Arms Pipeline:</strong> Authorized emergency funding for Czechoslovakian aircraft and rifles during the critical first UN truce.</li>
         </ul>
       </div>
+
+      <!-- Concept Spotlight: The Altalena Affair -->
+      <div class="concept-spotlight-box compact">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL CRISIS</span>
+          <span class="csb-category">STATE SOVEREIGNTY &bull; JUNE 1948</span>
+        </div>
+        <div class="csb-title">The Altalena Affair: Enforcing the State's Monopoly on Force</div>
+        <div class="csb-body">
+          When the Irgun attempted to land arms aboard the transport ship <em>Altalena</em> on Tel Aviv beach during the first truce, Ben-Gurion ordered the newly formed IDF to shell the vessel. Sixteen Irgun fighters died, but Ben-Gurion decisively established that no independent private militias would be tolerated within the new sovereign state.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Key Significance:</strong> Established undisputed civilian authority over the armed forces, preventing civil war.
+        </div>
+      </div>
     </div>
 
     <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
@@ -1535,11 +1700,11 @@
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[4.7]</span>
-        While adamantly refusing the repatriation of Palestinian Arab refugees, the Israeli Knesset enacted the foundational <strong>Law of Return (5 July 1950)</strong>. The landmark statute declared that every Jewish person across the diaspora possessed an inalienable right to immigrate to Israel and claim automatic citizenship. Over the subsequent four years, Israel's Jewish population more than doubled, soaring from approximately 650,000 in May 1948 to over 1.5 million by 1953.
+        While adamantly refusing the repatriation of Palestinian Arab refugees, the Israeli Knesset enacted the foundational <strong>Law of Return (5 July 1950)</strong>. The landmark statute declared that every Jewish person across the global diaspora possessed an inalienable, ancestral right to immigrate to Israel and claim immediate, automatic citizenship. Over the subsequent four years, Israel's Jewish population more than doubled, soaring from approximately 650,000 in May 1948 to over 1.5 million by 1953.
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[4.8]</span>
-        This demographic transformation occurred through two major waves: first, European Holocaust survivors from DP camps; second, over 600,000 <strong>Mizrahi Jews</strong> fleeing rising persecution, riots, and expulsions across the Arab world (including Iraq, Yemen, Morocco, and Egypt). To house the newcomers, Israel established transit camps (<em>ma'abarot</em>) of tin huts and tents, gradually building new development towns along the borders. This mass ingathering cemented Israel's Jewish demographic majority but deepened the bitter rift with the Arab world, where Palestinians saw Jewish immigrants occupying their ancestral homes.
+        This demographic transformation occurred through two major waves: first, approximately 300,000 European Holocaust survivors from DP camps; second, over 600,000 <strong>Mizrahi Jews</strong> fleeing rising persecution, anti-Zionist riots, and state-sponsored expulsions across the Arab world (including ancient Jewish communities in Iraq, Yemen, Morocco, Libya, and Egypt). To absorb the massive influx, Israel established emergency transit camps (<em>ma'abarot</em>) of tin huts and canvas tents, gradually building new development towns along vulnerable frontiers. This mass ingathering cemented Israel's Jewish demographic majority but deepened the bitter rift with the Arab world, where Palestinians saw Jewish immigrants occupying their requisitioned ancestral homes.
       </div>
 
       <!-- Key Figure Box: King Hussein -->
@@ -1564,6 +1729,40 @@
           <li><strong>Maintained Custodianship of Holy Sites:</strong> Preserved Jordan's historic custodianship over Muslim and Christian holy places in Jerusalem (Haram al-Sharif / Temple Mount).</li>
           <li><strong>Managed Border Clashes:</strong> Struggled to control cross-border fedayeen raids while facing massive Israeli military reprisal strikes (such as Qibya in 1953 and Samu in 1966).</li>
         </ul>
+      </div>
+
+      <!-- Concept Spotlight: UNRWA and Refugee Camps -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL REALITY</span>
+          <span class="csb-category">DISPLACEMENT &amp; SETTLEMENT</span>
+        </div>
+        <h4 class="csb-title">UNRWA &amp; The Refugee Camps: From Canvas to Concrete</h4>
+        <div class="csb-body">
+          Established by UN Resolution 302 in December 1949, UNRWA provided emergency shelter, healthcare, and food rations to over 700,000 displaced Palestinians. What were intended as temporary tent encampments gradually hardened into permanent concrete cinderblock townships across Gaza, the West Bank, Jordan, Syria, and Lebanon. Host nations, except Jordan, denied full citizenship to keep the collective 'Right of Return' alive, cementing generations of Palestinians in stateless refugee camps.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Disciplinary Insight:</strong> Camp permanence institutionalized the refugee crisis as the enduring moral and territorial core of the conflict.
+        </div>
+      </div>
+
+      <!-- Archival Dispatch: Law of Return 1950 -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Legislative Enactment</span>
+          </div>
+          <span class="source-date-micro">5 July 1950</span>
+        </div>
+        <div class="archival-title">The Law of Return Enacted by the Israeli Knesset</div>
+        <div class="archival-body">
+          "Every Jew has the right to come to this country as an oleh (immigrant)... An immigrant's visa shall be granted to every Jew who has expressed his desire to settle in Israel, unless the Minister of Immigration is satisfied that the applicant is acting against the Jewish people." Enacted on 5 July 1950, doubling Israel's Jewish population within three years.
+        </div>
+        <div class="archival-footer">
+          <span>Knesset Parliamentary Records</span>
+          <span>Laws of the State of Israel (Vol. 4, 1950)</span>
+        </div>
       </div>
     </div>
 
@@ -1784,6 +1983,40 @@
           <li><strong>Miscalculated US Reaction:</strong> Erroneously assumed Eisenhower would remain neutral or support Britain against Soviet encroachment.</li>
           <li><strong>Resigned in Disgrace:</strong> Capitulated to US financial pressure, suffering total political collapse and resigning as Prime Minister in January 1957.</li>
         </ul>
+      </div>
+
+      <!-- Concept Spotlight: Protocol of Sevres -->
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">HISTORICAL MECHANISM</span>
+          <span class="csb-category">DIPLOMATIC COLLUSION</span>
+        </div>
+        <h4 class="csb-title">The Protocol of Sèvres: Collusion &amp; Imperial Rupture</h4>
+        <div class="csb-body">
+          Drafted in secrecy at a private villa outside Paris on 24 October 1956, the Protocol of Sèvres bound Britain, France, and Israel in an artificial conspiracy. Israel would attack Egypt; Britain and France would intervene as 'neutral peacekeepers' to separate the combatants and seize the canal. Prime Minister Anthony Eden ordered all British copies burned to hide the conspiracy, dreading international condemnation and legal prosecution under the UN Charter.
+        </div>
+        <div class="csb-takeaway">
+          <strong>Exam Significance:</strong> Exposed the total collapse of 19th-century imperial gunboat diplomacy in a post-WWII world governed by superpowers and the UN.
+        </div>
+      </div>
+
+      <!-- Archival Dispatch: Eisenhower's Financial Ultimatum -->
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-type">Presidential Ultimatum</span>
+          </div>
+          <span class="source-date-micro">6 November 1956</span>
+        </div>
+        <div class="archival-title">President Eisenhower's Sterling Ultimatum to Eden</div>
+        <div class="archival-body">
+          President Dwight D. Eisenhower blocked IMF emergency loans and threatened to dump US holdings of the British pound sterling unless Eden ordered an immediate ceasefire in Egypt within 24 hours. Facing currency collapse with reserves plunging $50 million daily and unable to finance food and fuel imports, Downing Street was forced into an unconditional capitulation.
+        </div>
+        <div class="archival-footer">
+          <span>US Department of State Diplomatic Files</span>
+          <span>Foreign Relations of the United States (1956)</span>
+        </div>
       </div>
     </div>
 
