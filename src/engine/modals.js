@@ -3332,6 +3332,63 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     },
   };
 
+  const DEFAULT_PREVIOUS_COVERS = {
+    'Set 7XHi': {
+      unitId: 'water_and_sanitation',
+      lessonIdx: 0,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 7YHi': {
+      unitId: 'water_and_sanitation',
+      lessonIdx: 0,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 8xHi': {
+      unitId: 'industrialisation_and_empire',
+      lessonIdx: 0,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 8yHi': {
+      unitId: 'industrialisation_and_empire',
+      lessonIdx: 0,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 9xHi': {
+      unitId: 'great_war',
+      lessonIdx: 1,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 9yHi': {
+      unitId: 'great_war',
+      lessonIdx: 1,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 10aHiB': {
+      unitId: 'cme_new',
+      lessonIdx: 1,
+      dateStr: '17 Sep',
+      fullDateStr: 'Thursday, 17 September 2026',
+    },
+    'Set 11aHiC': {
+      unitId: 'edexcel_medicine',
+      lessonIdx: 4,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+    'Set 11aHiD': {
+      unitId: 'edexcel_medicine',
+      lessonIdx: 4,
+      dateStr: '18 Sep',
+      fullDateStr: 'Friday, 18 September 2026',
+    },
+  };
+
   const HUB_BASE_URL = 'https://the-history-revision-hub.netlify.app';
 
   // 1. Dynamic UK Academic Calendar Week Calculation
@@ -3420,6 +3477,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   let periodSettings = {}; // Maps `${currentDay}_${pIdx}` -> { resource, shelf, collection }
   let currentDispatchPayload = null;
   let expandedSettings = {}; // Maps pIdx -> boolean for revealing detailed per-period settings
+  const sessionCoverHistory = {}; // Maps `${week}_${day}_${setName}` -> { unitId, lessonIdx, topic, dayName, dateStr }
 
   const getYearBadge = (setName) => {
     const def = (setName && DEFAULT_SET_MAPPING[setName]) || {};
@@ -3690,6 +3748,9 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
         <!-- Single-Click Bulk Action in Tab Strip -->
         <div style="display: flex; align-items: center; gap: 8px;">
+          <button id="btnAdvanceAllSets" type="button" style="display: none; background: rgba(37, 99, 235, 0.18); border: 1px solid #3b82f6; color: #93c5fd; padding: 5px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);" title="Auto-advance all eligible classes to their next sequential lesson (+1)">
+            <i class="fa-solid fa-forward-step"></i> +1 Advance All
+          </button>
           <button id="btnApplyDefaultsToAll" type="button" style="background: #0f172a; border: 1px solid #3b82f6; color: #60a5fa; padding: 5px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Apply standard printed workbooks (shelf handout) & collect at end to all teaching periods today">
             <i class="fa-solid fa-arrows-rotate"></i> Apply Workbooks to All
           </button>
@@ -3920,10 +3981,48 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       .join('');
   };
 
-  // Helper to find previous cover topic for a set from history
+  // Helper to find previous cover topic for a set from history & session
   const findPreviousCoverForSet = (setName) => {
+    // 1. Search sessionCoverHistory across prior days in the 10-day cycle
+    const tenDays = get10DaysList();
+    const currentDayIdx = tenDays.findIndex((t) => t.week === currentWeek && t.day === currentDay);
+    if (currentDayIdx > 0) {
+      for (let i = currentDayIdx - 1; i >= 0; i--) {
+        const priorDay = tenDays[i];
+        const key = `${priorDay.week}_${priorDay.day}_${setName}`;
+        if (sessionCoverHistory[key]) {
+          const entry = sessionCoverHistory[key];
+          const unitLessons = getUnitLessons(entry.unitId);
+          const nextLessonIdx =
+            entry.lessonIdx !== undefined && entry.lessonIdx !== null ? entry.lessonIdx + 1 : null;
+          const hasNextLesson = nextLessonIdx !== null && nextLessonIdx < unitLessons.length;
+          return {
+            dateStr: `${priorDay.shortCode} (${priorDay.dateLabel})`,
+            fullDateStr: `${priorDay.day}, ${priorDay.dateLabel} (${priorDay.week})`,
+            topic: entry.topic,
+            lessonIdx: entry.lessonIdx,
+            unitId: entry.unitId,
+            unitTitle: entry.unitTitle || getUnitTitle(entry.unitId),
+            nextLesson: hasNextLesson
+              ? {
+                  idx: nextLessonIdx,
+                  title:
+                    (unitLessons[nextLessonIdx] && unitLessons[nextLessonIdx].title) ||
+                    `Lesson ${nextLessonIdx + 1}`,
+                }
+              : null,
+            totalLessons: unitLessons.length,
+            isLastLesson: nextLessonIdx !== null && nextLessonIdx >= unitLessons.length,
+          };
+        }
+      }
+    }
+
+    // 2. Search recent cover log (persisted from previous dispatches/copies)
     const log = getRecentCoverLog();
     for (const item of log) {
+      // Don't match the current day itself if it was previously dispatched
+      if (item.week === currentWeek && item.dayName === currentDay) continue;
       if (item.entries) {
         const found = item.entries.find((e) => e.setName === setName);
         if (found) {
@@ -3940,15 +4039,6 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
           const nextLessonIdx =
             found.lessonIdx !== undefined && found.lessonIdx !== null ? found.lessonIdx + 1 : null;
           const hasNextLesson = nextLessonIdx !== null && nextLessonIdx < unitLessons.length;
-          const nextLesson = hasNextLesson
-            ? {
-                idx: nextLessonIdx,
-                title:
-                  (unitLessons[nextLessonIdx] && unitLessons[nextLessonIdx].title) ||
-                  `Lesson ${nextLessonIdx + 1}`,
-              }
-            : null;
-
           return {
             dateStr: `${item.dayName.slice(0, 3)} ${item.dateStr.split(' ')[0]} ${item.dateStr.split(' ')[1]}`,
             fullDateStr: `${item.dayName}, ${item.dateStr}`,
@@ -3956,13 +4046,80 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             lessonIdx: found.lessonIdx,
             unitId: unitId,
             unitTitle: found.unitTitle || getUnitTitle(unitId),
-            nextLesson: nextLesson,
+            nextLesson: hasNextLesson
+              ? {
+                  idx: nextLessonIdx,
+                  title:
+                    (unitLessons[nextLessonIdx] && unitLessons[nextLessonIdx].title) ||
+                    `Lesson ${nextLessonIdx + 1}`,
+                }
+              : null,
             totalLessons: unitLessons.length,
             isLastLesson: nextLessonIdx !== null && nextLessonIdx >= unitLessons.length,
           };
         }
       }
     }
+
+    // 3. Fallback to last saved topics in localStorage
+    const savedTopics = getSavedTopics();
+    if (savedTopics[setName] && savedTopics[setName].unit) {
+      const saved = savedTopics[setName];
+      const unitLessons = getUnitLessons(saved.unit);
+      const nextLessonIdx =
+        saved.lesson !== undefined && saved.lesson !== null ? saved.lesson + 1 : null;
+      const hasNextLesson = nextLessonIdx !== null && nextLessonIdx < unitLessons.length;
+      return {
+        dateStr: 'Last Saved',
+        fullDateStr: 'Last Saved Topic',
+        topic:
+          (unitLessons[saved.lesson] && unitLessons[saved.lesson].title) ||
+          `Lesson ${saved.lesson + 1}`,
+        lessonIdx: saved.lesson,
+        unitId: saved.unit,
+        unitTitle: getUnitTitle(saved.unit),
+        nextLesson: hasNextLesson
+          ? {
+              idx: nextLessonIdx,
+              title:
+                (unitLessons[nextLessonIdx] && unitLessons[nextLessonIdx].title) ||
+                `Lesson ${nextLessonIdx + 1}`,
+            }
+          : null,
+        totalLessons: unitLessons.length,
+        isLastLesson: nextLessonIdx !== null && nextLessonIdx >= unitLessons.length,
+      };
+    }
+
+    // 4. Default baseline curriculum progression fallback
+    if (DEFAULT_PREVIOUS_COVERS && DEFAULT_PREVIOUS_COVERS[setName]) {
+      const def = DEFAULT_PREVIOUS_COVERS[setName];
+      const unitLessons = getUnitLessons(def.unitId);
+      const nextLessonIdx =
+        def.lessonIdx !== undefined && def.lessonIdx !== null ? def.lessonIdx + 1 : null;
+      const hasNextLesson = nextLessonIdx !== null && nextLessonIdx < unitLessons.length;
+      return {
+        dateStr: def.dateStr || 'Prior Lesson',
+        fullDateStr: def.fullDateStr || 'Prior Lesson Recorded',
+        topic:
+          (unitLessons[def.lessonIdx] && unitLessons[def.lessonIdx].title) ||
+          `Lesson ${def.lessonIdx + 1}`,
+        lessonIdx: def.lessonIdx,
+        unitId: def.unitId,
+        unitTitle: getUnitTitle(def.unitId),
+        nextLesson: hasNextLesson
+          ? {
+              idx: nextLessonIdx,
+              title:
+                (unitLessons[nextLessonIdx] && unitLessons[nextLessonIdx].title) ||
+                `Lesson ${nextLessonIdx + 1}`,
+            }
+          : null,
+        totalLessons: unitLessons.length,
+        isLastLesson: nextLessonIdx !== null && nextLessonIdx >= unitLessons.length,
+      };
+    }
+
     return null;
   };
 
@@ -4219,6 +4376,16 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         liveUrl: liveUrl,
       });
 
+      // Record current state into sessionCoverHistory for this slot
+      sessionCoverHistory[`${currentWeek}_${currentDay}_${setName}`] = {
+        unitId: activeUnitId,
+        unitTitle: activeUnitTitle,
+        lessonIdx: activeLIdx,
+        topic: activeTopic,
+        dayName: currentDay,
+        dateStr: dateStr,
+      };
+
       const yb = getYearBadge(setName);
       const prevCover = findPreviousCoverForSet(setName);
 
@@ -4255,32 +4422,37 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       const isShelf = pSetting.shelf === true;
       const colMode = pSetting.collection || 'collect';
 
-      // Quick bump badge/button
-      let quickBumpHtml = '';
+      // Header previous context display
+      let headerPrevHtml = '';
+      if (prevCover) {
+        headerPrevHtml = `
+          <span style="color: #94a3b8; font-size: 0.73rem; display: inline-flex; align-items: center; gap: 5px;" title="${prevCover.fullDateStr}: ${prevCover.topic}">
+            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; font-size: 0.7rem;"></i>
+            Previously: <strong style="color: #cbd5e1; font-weight: 600;">Lesson ${(prevCover.lessonIdx ?? 0) + 1}</strong> <span style="color: #64748b;">(${prevCover.dateStr})</span>
+          </span>
+        `;
+      }
+
+      // Smart Lesson Auto-Increment (+1 Bump) Badge next to topic dropdown
+      let advanceBadgeHtml = '';
       if (prevCover && prevCover.nextLesson) {
         if (activeLIdx === prevCover.nextLesson.idx && activeUnitId === prevCover.unitId) {
-          quickBumpHtml = `
-            <span style="background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; padding: 2px 8px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-              <i class="fa-solid fa-circle-check"></i> Advanced to L${activeLIdx + 1} (After L${prevCover.lessonIdx + 1})
+          advanceBadgeHtml = `
+            <span class="badge-advanced-confirm" style="background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.45); color: #6ee7b7; padding: 3px 9px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;" title="Auto-advanced sequentially to Lesson ${activeLIdx + 1} (Following ${prevCover.dateStr})">
+              <i class="fa-solid fa-circle-check"></i> +1 Advanced (L${activeLIdx + 1})
             </span>
           `;
         } else {
-          quickBumpHtml = `
-            <button type="button" class="btn-quick-bump" data-pidx="${pIdx}" data-unitid="${prevCover.unitId}" data-nextidx="${prevCover.nextLesson.idx}" style="background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #ffffff; border: 1px solid #3b82f6; padding: 3px 10px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35); transition: all 0.15s;" onmouseover="this.style.filter='brightness(1.15)';" onmouseout="this.style.filter='none';" title="Advance to Lesson ${prevCover.nextLesson.idx + 1}: ${prevCover.nextLesson.title}">
-              <i class="fa-solid fa-forward-step"></i> Advance to Lesson ${prevCover.nextLesson.idx + 1} (+1)
+          advanceBadgeHtml = `
+            <button type="button" class="btn-quick-bump" data-pidx="${pIdx}" data-setname="${setName}" data-unitid="${prevCover.unitId}" data-nextidx="${prevCover.nextLesson.idx}" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(29, 78, 216, 0.35)); color: #93c5fd; border: 1px solid #3b82f6; padding: 3px 9px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25); transition: all 0.15s; white-space: nowrap;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#60a5fa';" onmouseout="this.style.background='linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(29, 78, 216, 0.35))'; this.style.color='#93c5fd'; this.style.borderColor='#3b82f6';" title="Auto-select next sequential lesson in unit: Lesson ${prevCover.nextLesson.idx + 1} (${prevCover.nextLesson.title}) — following ${prevCover.dateStr}">
+              <i class="fa-solid fa-forward-step" style="font-size: 0.68rem;"></i> +1 Advance (L${prevCover.nextLesson.idx + 1})
             </button>
           `;
         }
       } else if (prevCover && prevCover.isLastLesson) {
-        quickBumpHtml = `
-          <span style="color: #94a3b8; font-size: 0.7rem; font-style: italic;">
-            <i class="fa-solid fa-flag-checkered" style="color: #60a5fa; margin-right: 4px;"></i>Completed unit on ${prevCover.dateStr}
-          </span>
-        `;
-      } else if (prevCover) {
-        quickBumpHtml = `
-          <span style="color: #94a3b8; font-size: 0.7rem;">
-            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; margin-right: 4px;"></i>Prev: ${prevCover.dateStr} (Lesson ${(prevCover.lessonIdx ?? 0) + 1})
+        advanceBadgeHtml = `
+          <span style="color: #94a3b8; font-size: 0.72rem; font-style: italic; display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; background: rgba(148, 163, 184, 0.1); border-radius: 4px;" title="Completed all ${prevCover.totalLessons} lessons in ${prevCover.unitTitle}">
+            <i class="fa-solid fa-flag-checkered" style="color: #60a5fa;"></i> Completed Unit
           </span>
         `;
       }
@@ -4311,7 +4483,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
               ▶ ${periodName.toUpperCase()} (${timeSlot}) — ${setName}
             </strong>
           </div>
-          <div>${quickBumpHtml}</div>
+          <div>${headerPrevHtml}</div>
         </div>
 
         <!-- Cloze Line 1: Topic -->
@@ -4323,6 +4495,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
           <select class="cloze-lesson-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; font-size: 0.82rem; padding: 4px 8px; outline: none; cursor: pointer; max-width: 360px;">
             ${lessonOptionsHtml}
           </select>
+          ${advanceBadgeHtml}
           <a href="${liveUrl}" target="_blank" title="Preview lesson on Hub" style="background: #1e293b; border: 1px solid #334155; color: #60a5fa; padding: 4px 8px; border-radius: 6px; font-size: 0.76rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Open
           </a>
@@ -4408,6 +4581,52 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
       periodsFlow.appendChild(card);
     });
+
+    // Wire Batch Advance All Sets Button in toolbar
+    const pendingAdvances = [];
+    timetableDayList.forEach((slot, pIdx) => {
+      if (slot.type === 'lesson') {
+        const match = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
+        const setName = match ? match[0] : slot.raw ? slot.raw.split('\n')[0] : 'Class';
+        const prev = findPreviousCoverForSet(setName);
+        if (prev && prev.nextLesson) {
+          const curUnit =
+            selectedUnits[pIdx] ||
+            (DEFAULT_SET_MAPPING[setName] && DEFAULT_SET_MAPPING[setName].unit) ||
+            'great_war';
+          const curL =
+            selectedLessons[pIdx] !== undefined
+              ? selectedLessons[pIdx]
+              : (DEFAULT_SET_MAPPING[setName] && DEFAULT_SET_MAPPING[setName].default_lesson) || 0;
+          if (curL !== prev.nextLesson.idx || curUnit !== prev.unitId) {
+            pendingAdvances.push({
+              pIdx,
+              setName,
+              unitId: prev.unitId,
+              nextLessonIdx: prev.nextLesson.idx,
+            });
+          }
+        }
+      }
+    });
+
+    const btnAdvanceAllSets = overlay.querySelector('#btnAdvanceAllSets');
+    if (btnAdvanceAllSets) {
+      if (pendingAdvances.length > 0) {
+        btnAdvanceAllSets.style.display = 'inline-flex';
+        btnAdvanceAllSets.innerHTML = `<i class="fa-solid fa-forward-step"></i> +1 Advance All Sets (${pendingAdvances.length})`;
+        btnAdvanceAllSets.onclick = () => {
+          pendingAdvances.forEach((item) => {
+            selectedUnits[item.pIdx] = item.unitId;
+            selectedLessons[item.pIdx] = item.nextLessonIdx;
+            saveTopicForSet(item.setName, item.unitId, item.nextLessonIdx);
+          });
+          updateModalState();
+        };
+      } else {
+        btnAdvanceAllSets.style.display = 'none';
+      }
+    }
 
     // 5. Generate Synchronized Clean Plain-Text Output
     const emailLines = [];
