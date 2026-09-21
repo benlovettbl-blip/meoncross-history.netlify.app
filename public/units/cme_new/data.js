@@ -110,6 +110,19 @@ export const unitData = {
   lessons: [
     {
       id: 'lesson_1',
+      key_individual: {
+        name: 'Arthur Balfour',
+        role: 'British Foreign Secretary (1916–1919)',
+        lifespan: '1848–1930',
+        image: '/units/cme_new/assets/card_balfour.png',
+        strategic_actions: [
+          'Authored the historic 67-word Balfour Declaration in November 1917, pledging British support for a Jewish national home in Palestine.',
+          'Secured League of Nations approval for the British Mandate framework, entrenching British imperial governance.',
+          'Created contradictory diplomatic commitments between Zionist national aspirations and indigenous Arab self-determination.',
+        ],
+        significance:
+          "Balfour's 1917 letter established official British imperial sponsorship for Zionist aspirations. By creating irreconcilable promises to Jewish immigrants and Arab residents, Balfour laid the structural foundations for modern Arab-Israeli conflict.",
+      },
       quiz: [
         {
           question:
@@ -1235,6 +1248,19 @@ export const unitData = {
     },
     {
       id: 'lesson_2',
+      key_individual: {
+        name: 'David Ben-Gurion',
+        role: 'First Prime Minister of Israel (1948–1954, 1955–1963)',
+        lifespan: '1886–1973',
+        image: '/units/cme_new/assets/card_bengurion.png',
+        strategic_actions: [
+          'Endorsed the 1947 UN Partition Plan (Resolution 181), accepting sovereign statehood despite contentious borders.',
+          'Proclaimed the Declaration of the Establishment of the State of Israel in Tel Aviv on 14 May 1948.',
+          'Disbanded underground paramilitaries (Haganah, Irgun, Lehi), consolidating them into the unified Israel Defense Forces (IDF).',
+        ],
+        significance:
+          "As Israel's paramount founding father, Ben-Gurion declared independence in defiance of international hesitation and coordinated invasions by five Arab armies, securing the state's survival through the 1948–49 War.",
+      },
       title: 'KT 1.1: The End of the British Mandate and the Creation of Israel, 1945–1949',
       video: {
         type: 'era',
@@ -2555,6 +2581,19 @@ export const unitData = {
     },
     {
       id: 'lesson_3',
+      key_individual: {
+        name: 'King Hussein of Jordan',
+        role: 'King of the Hashemite Kingdom of Jordan (1952–1999)',
+        lifespan: '1935–1999',
+        image: '/units/cme_new/assets/card_hussein.png',
+        strategic_actions: [
+          'Governed the annexed West Bank and East Jerusalem, formally granting Jordanian citizenship to over 400,000 Palestinian refugees.',
+          'Attempted to contain cross-border fedayeen guerrilla attacks into Israel to prevent devastating IDF retaliatory reprisals.',
+          'Maintained secret back-channel communication with Israeli diplomats while navigating intense Arab League nationalist pressure.',
+        ],
+        significance:
+          'Hussein steered Jordan through the catastrophic demographic and geopolitical fallout of the 1948 War, absorbing the largest concentration of Palestinian refugees while fighting to ensure the survival of the Hashemite crown.',
+      },
       title: 'KT 1.2: The Aftermath of the 1948–49 War & The Palestinian Refugee Crisis',
       learning_objective:
         'To understand the consequences of the 1948-49 war for Palestinians, Israelis, and regional borders.',
@@ -3684,6 +3723,19 @@ export const unitData = {
     },
     {
       id: 'lesson_4',
+      key_individual: {
+        name: 'Anthony Eden',
+        role: 'Prime Minister of the United Kingdom (1955–1957)',
+        lifespan: '1897–1977',
+        image: '/units/cme_new/assets/card_eden.png',
+        strategic_actions: [
+          "Viewed Gamal Abdel Nasser's nationalization of the Suez Canal as an existential threat to the British Empire and global trade.",
+          'Orchestrated the secret tripartite Protocol of Sèvres with France and Israel to fabricate a pretext for military intervention.',
+          'Ordered British forces to invade Port Said, but was forced into a humiliating withdrawal under severe US financial pressure.',
+        ],
+        significance:
+          "Eden's disastrous handling of the 1956 Suez Crisis marked the definitive end of Britain as an independent global superpower, shattered European imperial hegemony in the Middle East, and led directly to his resignation.",
+      },
       title: 'KT 1.3: Increased Tension, Nasser, and the Suez Crisis, 1955–1963',
       lesson_reflection: {
         prompt:
@@ -8772,6 +8824,19 @@ export const unitData = {
     },
     {
       id: 'lesson_11',
+      key_individual: {
+        name: 'Menachem Begin',
+        role: 'Prime Minister of Israel (1977–1983)',
+        lifespan: '1913–1992',
+        image: '/units/cme_new/assets/card_begin.png',
+        strategic_actions: [
+          'Welcomed Egyptian President Anwar Sadat to Jerusalem in November 1977, hosting his historic address to the Knesset.',
+          'Negotiated the Camp David Accords with President Jimmy Carter and Sadat during twelve grueling days in September 1978.',
+          'Signed the 1979 Egypt-Israel Peace Treaty, returning the entire oil-rich Sinai Peninsula and dismantling Israeli settlements.',
+        ],
+        significance:
+          "Despite leading the nationalist Likud party, Begin proved that a right-wing Israeli leader could make profound territorial concessions, delivering Israel's first formal peace treaty with an Arab neighbour and breaking the Arab rejectionist front.",
+      },
       title: 'KT 3.1: Diplomatic Negotiations: From Shuttle Diplomacy to Camp David, 1974–1979',
       quiz: [
         {
@@ -9949,6 +10014,19 @@ export const unitData = {
     },
     {
       id: 'lesson_12',
+      key_individual: {
+        name: 'Ariel Sharon',
+        role: 'Israeli Minister of Defence (1981–1983)',
+        lifespan: '1928–2014',
+        image: '/units/cme_new/assets/card_sharon.png',
+        strategic_actions: [
+          'Engineered Operation Peace for Galilee in June 1982, pushing IDF armored forces beyond southern Lebanon all the way to Beirut.',
+          'Encircled the PLO leadership in West Beirut, forcing Yasser Arafat and 14,000 fighters to evacuate by sea to Tunisia.',
+          'Resigned as Defence Minister in 1983 after the independent Kahan Commission found him personally and indirectly responsible for Sabra and Shatila.',
+        ],
+        significance:
+          "Known as 'The Bulldozer', Sharon sought to militarily eliminate Palestinian nationalism in Lebanon, but the resulting bloodshed and moral outcry sparked massive anti-war protests in Israel and deeply polarized public opinion.",
+      },
       title:
         'KT 3.2: The Palestinian Issue: Lebanon, Sabra & Shatila, and the First Intifada, 1974–1993',
       quiz: [
@@ -11243,6 +11321,19 @@ export const unitData = {
     },
     {
       id: 'lesson_13',
+      key_individual: {
+        name: 'Yitzhak Rabin',
+        role: 'Prime Minister of Israel (1974–1977, 1992–1995)',
+        lifespan: '1922–1995',
+        image: '/units/cme_new/assets/card_rabin.png',
+        strategic_actions: [
+          'Authorized back-channel secret negotiations in Norway that yielded mutual diplomatic recognition between Israel and the PLO.',
+          'Signed the Declaration of Principles (Oslo I) on the White House lawn in September 1993, famously shaking hands with Yasser Arafat.',
+          'Signed the 1995 Oslo II interim agreement transferring civil administration of Palestinian urban population centers to the PA.',
+        ],
+        significance:
+          "A decorated warrior and former Chief of Staff who had enforced the 'Iron Fist' during the First Intifada, Rabin came to believe military force alone could not solve the conflict. His courageous pursuit of peace ended tragically when an extremist Israeli assassin shot him in November 1995.",
+      },
       title: 'KT 3.3: Attempts at a Solution: From the Oslo Accords to Oslo II, 1988–1995',
       lesson_reflection: {
         prompt:

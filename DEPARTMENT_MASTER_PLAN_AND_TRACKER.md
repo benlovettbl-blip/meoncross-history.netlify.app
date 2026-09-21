@@ -167,3 +167,12 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 2. **Step 2:** Finalize delivery plans and compile the 20-page double-page spread workbook for Year 8 *Industrialisation, Empire & Power* (Lessons 2–8).
 3. **Step 3:** Consolidate GCSE *Early Elizabethan England* (`eee`) from 3 split booklets into the single unified master volume and 16-page key topic workbooks.
 4. **Step 4:** Maintain strict protection over active printed booklets (Year 7 Sanitation, Year 8 Early Modern, Year 9 Causes of the Great War) until the scheduled vacation reprint cycle.
+
+---
+
+## 6. Proactive Recommendations & Innovation Register
+All session recommendations are permanently logged, accumulated, and tracked in:  
+👉 **[`DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`](./DEPARTMENT_RECOMMENDATIONS_BACKLOG.md)**  
+*(Recommendations persist cumulatively across conversations and are only executed or cleared upon explicit user instruction).*
+
+
