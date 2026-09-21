@@ -3730,7 +3730,7 @@ export const unitData = {
         image: '/units/cme_new/assets/card_eden.png',
         strategic_actions: [
           "Viewed Gamal Abdel Nasser's nationalization of the Suez Canal as an existential threat to the British Empire and global trade.",
-          'Orchestrated the secret tripartite Protocol of Sèvres with France and Israel to fabricate a pretext for military intervention.',
+          'Orchestrated the secret tripartite pact with France and Israel to fabricate a pretext for military intervention.',
           'Ordered British forces to invade Port Said, but was forced into a humiliating withdrawal under severe US financial pressure.',
         ],
         significance:
@@ -5743,7 +5743,7 @@ export const unitData = {
         image: '/units/cme_new/assets/card_dayan.png',
         strategic_actions: [
           'Appointed Minister of Defence on 1 June 1967 amid national crisis to unify the Israeli war cabinet.',
-          'Authorised Operation Focus—the pre-emptive dawn air strike that destroyed the Egyptian Air Force on the tarmac.',
+          'Authorised the pre-emptive dawn air strike that destroyed the Egyptian Air Force on the tarmac.',
           'Directed three-front combat operations that captured the Sinai Peninsula, West Bank, East Jerusalem, and the Golan Heights.',
         ],
         significance:
@@ -8049,7 +8049,7 @@ export const unitData = {
         image: '/units/cme_new/assets/card_sadat.png',
         strategic_actions: [
           'Succeeded Nasser in 1970 and expelled 15,000 Soviet military advisers in 1972 to gain independent strategic freedom.',
-          'Orchestrated Operation Badr with Syria, launching a synchronized surprise attack on Yom Kippur (6 October 1973).',
+          'Orchestrated a synchronized surprise attack with Syria on Yom Kippur (6 October 1973).',
           'Breached the Bar-Lev Line using high-pressure water cannons, shattering the myth of Israeli invincibility.',
         ],
         significance:

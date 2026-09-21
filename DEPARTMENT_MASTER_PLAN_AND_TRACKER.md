@@ -15,8 +15,8 @@
      All 5 enquiry lessons (KT 1.1 to KT 1.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT1.html`) is fully compiled, featuring the Rudi Weissenstein Ben-Gurion Declaration hero cover (`GPO-D597-087`), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and back cover assessment tracker with 5 QR portals (0px overflow on all 16 pages).
    - **Key Topic 2 (The Escalating Conflict, 1964–1973): COMPLETED (GREEN).**  
      All 5 enquiry lessons (KT 2.1 to KT 2.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT2.html`) is fully compiled, featuring the David Rubinger Western Wall hero plate (`GPO-D388-052`), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker.
-   - **Key Topic 3 (The Search for Peace, 1973–1995): PRIORITY #1 FOR ROLLOUT (AMBER).**  
-     Key Topic 3 (*The Search for Peace, 1973–1995*) is next in line to adopt this exact 16-page booklet architecture.
+   - **Key Topic 3 (The Search for Peace, 1973–1995): COMPLETED (GREEN).**  
+     All 5 enquiry lessons (KT 3.1 to KT 3.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT3.html`) is fully compiled, featuring the 1993 White House Lawn Handshake hero plate, 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker (0px overflow on all 16 pages). In addition, the master 12-page publisher-grade textbook (`cme_new_textbook_KT3_PUBLISHER.pdf`) is fully compiled with embedded single-column Key Figure profiles.
 
 ---
 
@@ -27,9 +27,9 @@ The following ledger tracks the departmental shift to **Christine Counsell 4-Act
 | Unit ID | Key Stage / Year | Unit Title | 4-Act Christine Counsell Lessons | Double-Page Booklet Architecture | Classroom Reprographics State | Priority & Next Action |
 | :--- | :---: | :--- | :---: | :---: | :---: | :--- |
 | `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present & Western Front | 🟩 **GREEN**<br>(100% Complete — All 4 Eras + Section A) | 🟩 **GREEN**<br>(3-Pillar Master Packs Complete) | Production Ready / Active | **COMPLETE:** Maintenance and ongoing retrieval testing only. |
-| `cme_new` (KT1) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 1 (1945–1963) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook compiled with 0px overflow. |
-| `cme_new` (KT2) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 2 (1964–1973) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** Benchmark template for all future GCSE booklets. |
-| `cme_new` (KT3) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 3 (1973–1995) | 🟨 **AMBER**<br>(Core Narratives Authored) | 🟨 **AMBER**<br>(Scheduled for 16-Page Standard) | Staging / In Progress | 🚨 **PRIORITY #1:** Convert KT3 to the 16-page double-page spread booklet. |
+| `cme_new` (KT1) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 1 (1945–1963) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook & 12-page publisher textbook compiled with 0px overflow. |
+| `cme_new` (KT2) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 2 (1964–1973) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook & 12-page publisher textbook compiled with 0px overflow. |
+| `cme_new` (KT3) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 3 (1973–1995) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook & 12-page publisher textbook compiled with 0px overflow. |
 | `industrialisation_and_empire` | KS3 (Year 8) | Industrialisation, Empire, and Power (1750–1900) | 🟩 **GREEN**<br>(8 Lessons Complete + Delivery Plans) | 🟩 **GREEN**<br>(20-Page Double-Page Spread Ready) | Staged for Term 2 Delivery | 🟡 **PRIORITY #2:** Finalize Lessons 2–8 delivery plan timings and compile master class pack. |
 | `water_and_sanitation` | KS3 (Year 7) | Water and Sanitation Through Time | 🟨 **AMBER**<br>(Partial 4-Act Narrative) | 🟥 **RED**<br>(Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |
 | `early_modern_world` | KS3 (Year 8) | Early Modern World & Global Encounters (1450–1750) | 🟨 **AMBER**<br>(Narrative Complete) | 🟥 **RED**<br>(Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN**<br>Printed & in pupils' hands | 🛡️ **CLASSROOM PROTECTED:** Do NOT modify active files mid-term. Staged for Term 2 reprint. |
@@ -163,7 +163,11 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 
 ## 5. Implementation Roadmap & Immediate Next Steps
 
-1. **Step 1 (Immediate):** Finish Middle East Key Topic 1 and Key Topic 3 (`cme_new`) using this newly finalized 16-page double-page spread workbook standard.
+1. **Step 1 (COMPLETED):** Conflict in the Middle East (`cme_new`) is 100% complete and up to date:
+   - **Key Individuals:** All 12 key individual profile cards hard-coded, vetted, and synchronized across `data.js`, `database.json`, and web app.
+   - **Publisher Textbooks (12 Pages Each):** Key Topics 1, 2, and 3 compiled into strictly 12-page publisher-grade textbooks (`public/pdfs/cme_new_textbook_KT1_PUBLISHER.pdf`, `KT2_PUBLISHER.pdf`, `KT3_PUBLISHER.pdf`) featuring 2-column Cambridge/OUP academic measure, uncropped archival photographic plates, and embedded Key Figure boxes.
+   - **Pupil Workbooks (16 Pages Each):** Full V17 16-page double-page spread workbooks for KT1, KT2, and KT3.
+   - **Mastery Packs:** Key Topics 1, 2, and 3 mastery packs fully compiled.
 2. **Step 2:** Finalize delivery plans and compile the 20-page double-page spread workbook for Year 8 *Industrialisation, Empire & Power* (Lessons 2–8).
 3. **Step 3:** Consolidate GCSE *Early Elizabethan England* (`eee`) from 3 split booklets into the single unified master volume and 16-page key topic workbooks.
 4. **Step 4:** Maintain strict protection over active printed booklets (Year 7 Sanitation, Year 8 Early Modern, Year 9 Causes of the Great War) until the scheduled vacation reprint cycle.

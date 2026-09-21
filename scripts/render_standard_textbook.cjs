@@ -1175,24 +1175,25 @@ async function buildPublisherTextbookHtml() {
 </html>`;
 }
 
-(async () => {
-  console.log(
-    '🚀 Compiling Publisher-Level Standard Textbook Pilot for Middle East Key Topic 2...',
-  );
+async function runKT2() {
+  console.log('🚀 Compiling Publisher-Level Standard Textbook for Middle East Key Topic 2...');
 
   const htmlContent = await buildPublisherTextbookHtml();
 
   // Save HTML companion
   const htmlOutputDir = path.join(ROOT_DIR, 'public', 'units', 'cme_new');
   if (!fs.existsSync(htmlOutputDir)) fs.mkdirSync(htmlOutputDir, { recursive: true });
-  const htmlPath = path.join(htmlOutputDir, 'textbook_KT2_PUBLISHER_PILOT.html');
+  const htmlPath = path.join(htmlOutputDir, 'textbook_KT2_PUBLISHER.html');
+  const pilotHtmlPath = path.join(htmlOutputDir, 'textbook_KT2_PUBLISHER_PILOT.html');
   fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-  console.log(`✅ Saved HTML companion to: ${htmlPath}`);
+  fs.writeFileSync(pilotHtmlPath, htmlContent, 'utf8');
+  console.log(`✅ Saved HTML companions to: ${htmlPath} and ${pilotHtmlPath}`);
 
   // Compile PDF with Puppeteer
   const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
   if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
-  const pdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT2_PUBLISHER_PILOT.pdf');
+  const pdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT2_PUBLISHER.pdf');
+  const pilotPdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT2_PUBLISHER_PILOT.pdf');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -1209,9 +1210,52 @@ async function buildPublisherTextbookHtml() {
     margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
 
-  console.log(`🎉 Masterpiece PDF Textbook Pilot successfully compiled!`);
+  // Also copy to pilot path for backwards compatibility
+  fs.copyFileSync(pdfPath, pilotPdfPath);
+
+  console.log(`🎉 Masterpiece PDF Textbook KT2 successfully compiled!`);
   console.log(`📄 PDF Output: ${pdfPath}`);
 
   await page.close();
   await browser.close();
-})();
+}
+
+async function main() {
+  const target = (process.argv[2] || 'all').toLowerCase();
+  console.log(`\n======================================================`);
+  console.log(`📚 History Revision Hub: Publisher Standard Textbook Engine`);
+  console.log(`   Target: [${target.toUpperCase()}]`);
+  console.log(`======================================================\n`);
+
+  if (target === 'kt1' || target === '1') {
+    const { run: runKT1 } = require('./render_standard_textbook_kt1.cjs');
+    await runKT1();
+  } else if (target === 'kt2' || target === '2') {
+    await runKT2();
+  } else if (target === 'kt3' || target === '3') {
+    const { run: runKT3 } = require('./render_standard_textbook_kt3.cjs');
+    await runKT3();
+  } else if (target === 'all') {
+    const { run: runKT1 } = require('./render_standard_textbook_kt1.cjs');
+    const { run: runKT3 } = require('./render_standard_textbook_kt3.cjs');
+    console.log(`>>> Step 1/3: Compiling Key Topic 1 Textbook...`);
+    await runKT1();
+    console.log(`\n>>> Step 2/3: Compiling Key Topic 2 Textbook...`);
+    await runKT2();
+    console.log(`\n>>> Step 3/3: Compiling Key Topic 3 Textbook...`);
+    await runKT3();
+    console.log(`\n🎉 ALL 3 CONFLICT IN THE MIDDLE EAST TEXTBOOKS SUCCESSFULLY COMPILED!`);
+  } else {
+    console.error(`Unknown target: ${target}. Use 'kt1', 'kt2', 'kt3', or 'all'.`);
+    process.exit(1);
+  }
+}
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error('Fatal textbook compilation error:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { buildPublisherTextbookHtml, runKT2, main };

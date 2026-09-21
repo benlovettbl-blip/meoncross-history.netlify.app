@@ -116,6 +116,13 @@ async function runSync() {
         cwd: ROOT_DIR,
       });
       execSync(`node scripts/export_pdfs.cjs ${unitId}`, { stdio: 'inherit', cwd: ROOT_DIR });
+      if (unitId === 'cme_new') {
+        console.log(`\n📚 Compiling 12-page publisher-grade textbooks for [cme_new]...`);
+        execSync(`node scripts/render_standard_textbook.cjs all`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

@@ -725,6 +725,68 @@ export function renderWorkbooksZone(container, unitData) {
       ],
     );
   }
+  // 5b. Conflict in the Middle East (`cme_new`)
+  else if (activeUnitId === 'cme_new') {
+    const cmeCards = [
+      {
+        id: 'KT1',
+        title: 'KT1: Creation of Israel (1945–56)',
+        desc: 'Mandate collapse, Jewish insurgency, UN Partition, 1948 War, Palestinian refugees & 1956 Suez Crisis.',
+      },
+      {
+        id: 'KT2',
+        title: 'KT2: The Escalating Conflict (1964–73)',
+        desc: 'Water Wars, Six-Day War (1967), Conquered Territories, Resolution 242, Black September, Munich & Yom Kippur War.',
+      },
+      {
+        id: 'KT3',
+        title: 'KT3: The Search for Peace (1974–95)',
+        desc: 'Shuttle diplomacy, Camp David (1978), Lebanon & Sabra/Shatila (1982), First Intifada (1987), Oslo Accords & Rabin assassination.',
+      },
+    ];
+
+    html += `
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
+    `;
+
+    cmeCards.forEach((kt) => {
+      html += `
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #0284c7; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+              <span style="font-size: 0.68rem; font-weight: 800; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 3px; border: 1px solid #bae6fd;">
+                ${kt.id} • PAPER 2 (26/27)
+              </span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #64748b;">
+                <i class="fa-solid fa-file-pdf" style="color: #0284c7; margin-right: 3px;"></i>Publisher Suite
+              </span>
+            </div>
+            <h3 style="margin: 0 0 4px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25;">
+              ${kt.title}
+            </h3>
+            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3;">
+              ${kt.desc}
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 5px; margin-top: 8px;">
+            <a href="/pdfs/cme_new_textbook_${kt.id}_PUBLISHER.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-book-open"></i> Text
+            </a>
+            <a href="/pdfs/cme_new_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-user-pen"></i> Work
+            </a>
+            <a href="/pdfs/cme_new_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-shield-halved"></i> Master
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+    html += renderMockExamsRow('cme_new', unitData.mock_exams || []);
+  }
   // 6. Weimar and Nazi Germany (`weimar_nazi_germany`)
   else if (activeUnitId === 'weimar_nazi_germany') {
     const weimarCards = [
