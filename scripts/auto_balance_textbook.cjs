@@ -46,6 +46,26 @@ const TOPIC_CONFIGS = {
     htmlPath: path.join(ROOT_DIR, 'public', 'units', 'cme_new', 'textbook_KT3_PUBLISHER.html'),
     pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'cme_new_textbook_KT3_PUBLISHER.pdf'),
   },
+  great_war: {
+    id: 'great_war',
+    title: 'KS3: Causes of the Great War (1871–1914)',
+    compilerScript: path.join(__dirname, 'render_standard_textbook_great_war.cjs'),
+    htmlPath: path.join(ROOT_DIR, 'public', 'units', 'great_war', 'textbook_PUBLISHER.html'),
+    pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'great_war_textbook_PUBLISHER.pdf'),
+  },
+  early_modern_world: {
+    id: 'early_modern_world',
+    title: 'KS3: Early Modern World (1450–1750)',
+    compilerScript: path.join(__dirname, 'render_standard_textbook_early_modern_world.cjs'),
+    htmlPath: path.join(
+      ROOT_DIR,
+      'public',
+      'units',
+      'early_modern_world',
+      'textbook_PUBLISHER.html',
+    ),
+    pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'early_modern_world_textbook_PUBLISHER.pdf'),
+  },
 };
 
 /**
@@ -53,8 +73,11 @@ const TOPIC_CONFIGS = {
  */
 async function auditTextbook(config, browser) {
   const page = await browser.newPage();
+  page.setDefaultNavigationTimeout(120000);
   await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
-  await page.goto('file://' + path.resolve(config.htmlPath), { waitUntil: 'networkidle0' });
+  await page.goto(require('url').pathToFileURL(path.resolve(config.htmlPath)).href, {
+    waitUntil: 'networkidle2',
+  });
 
   const auditData = await page.evaluate(() => {
     const pageEls = Array.from(document.querySelectorAll('.textbook-page'));
@@ -199,7 +222,7 @@ function printAuditTable(topicId, title, results) {
 
   if (issues.length === 0) {
     console.log(
-      `🎉 ALL 12 PAGES PASS: 0px overflow, 0 dead underflow, >=90% fill on all right-hand pages!\n`,
+      `🎉 ALL ${results.length} PAGES PASS: 0px overflow, 0 dead underflow, >=90% fill on all right-hand pages!\n`,
     );
   } else {
     console.log(`⚠️ ${issues.length} page(s) flagged for attention:\n`);
@@ -222,11 +245,13 @@ async function main() {
   let targets = [];
 
   if (targetArg === 'all') {
-    targets = ['kt1', 'kt2', 'kt3'];
+    targets = ['kt1', 'kt2', 'kt3', 'great_war', 'early_modern_world'];
   } else if (TOPIC_CONFIGS[targetArg]) {
     targets = [targetArg];
   } else {
-    console.error(`Unknown topic target: "${targetArg}". Valid options: kt1, kt2, kt3, all.`);
+    console.error(
+      `Unknown topic target: "${targetArg}". Valid options: kt1, kt2, kt3, great_war, early_modern_world, all.`,
+    );
     process.exit(1);
   }
 

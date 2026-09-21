@@ -65,3 +65,23 @@ jobs:
 
       - name: Space Budget Gate (${{ matrix.unit }})
         run: node scripts/check_overflows.cjs ${{ matrix.unit }} --strict
+
+  textbook_balance_assurance:
+    name: Automated Textbook Balance & Fill Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Auto-Balance Textbook Audit (KS3 & GCSE)
+        run: npm run balance:textbook:all
+
