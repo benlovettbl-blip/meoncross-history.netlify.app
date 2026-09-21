@@ -536,36 +536,146 @@ function buildPublisherTextbookHtml() {
           <span style="font-size: 7.0pt; letter-spacing: 0.5px;">Key Topic 2 Coverage</span>
         </div>
 
-        <div style="padding: 8px 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.38; color: #111; flex: 1;">
+        <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111; flex: 1;">
           <!-- 2.1 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 10px;">
-            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 5px;">
-              2.1 The Six Day War, 1967
-            </strong>
-            <div style="margin-bottom: 4px;">&bull; Significance of the <strong>Cairo Conference (1964)</strong> &amp; the growth of Fatah and the PLO.</div>
-            <div style="margin-bottom: 4px;">&bull; <strong>Escalating tension:</strong> Syrian support for Fatah, Israeli raid on Samu, and 7 April 1967 air battle.</div>
-            <div style="margin-bottom: 4px;">&bull; Actions of the <strong>USSR, Nasser and the USA</strong> leading to war (UNEF expulsion &amp; Straits of Tiran).</div>
-            <div>&bull; <strong>Key events &amp; outcomes</strong> of the Six-Day War (5–10 June 1967).</div>
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
+                2.1 The Six Day War, 1967
+              </strong>
+              <div style="margin-bottom: 2.5px;">&bull; Significance of the <strong>Cairo Conference (1964)</strong> &amp; growth of Fatah / PLO.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Escalating tension:</strong> Syrian support for Fatah, Samu raid &amp; 7 April air battle.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Actions of the <strong>USSR, Nasser and USA</strong> (UNEF expulsion &amp; Straits of Tiran).</div>
+              <div>&bull; <strong>Key events &amp; outcomes</strong> of the Six-Day War (5–10 June 1967).</div>
+            </div>
+
+            <!-- Chronological Causal Sequence Flow -->
+            <div style="margin-top: 4px; padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
+              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                <span>Causal Chain of Events</span>
+                <span style="color: #64748b; font-weight: 700;">Chronology</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1964</span>
+                  <span>Cairo Summit &amp; PLO Formation</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1964–66</span>
+                  <span>Water Wars &amp; Syrian Clashes</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Apr 1967</span>
+                  <span>7 April Air Battle (6 MiGs Down)</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">May 1967</span>
+                  <span>UNEF Expelled &amp; Tiran Blockade</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jun 1967</span>
+                  <span>Operation Focus &amp; 6-Day Blitz</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <!-- 2.2 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 10px;">
-            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 5px;">
-              2.2 Aftermath of the 1967 War
-            </strong>
-            <div style="margin-bottom: 4px;">&bull; <strong>UN Resolution 242</strong> ('Land for Peace') &amp; continued dispute over the Suez Canal.</div>
-            <div style="margin-bottom: 4px;">&bull; <strong>Palestinian refugees</strong> &amp; significance of occupied lands: Golan, Gaza, West Bank, Sinai, East Jerusalem.</div>
-            <div style="margin-bottom: 4px;">&bull; <strong>Terrorism &amp; international attitudes:</strong> PFLP aircraft hijackings to Dawson's Field (1970).</div>
-            <div>&bull; Expulsion of PLO from Jordan (<strong>Black September</strong>) &amp; <strong>Munich Olympics (1972)</strong>.</div>
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
+                2.2 Aftermath of the 1967 War
+              </strong>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>UN Resolution 242</strong> ('Land for Peace') &amp; Suez Canal dispute.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Palestinian refugees</strong> &amp; occupied lands: Golan, Gaza, West Bank, Sinai, E. Jerusalem.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Terrorism &amp; attitudes:</strong> PFLP Dawson's Field hijackings (1970).</div>
+              <div>&bull; PLO expulsion from Jordan (<strong>Black Sept</strong>) &amp; <strong>Munich Olympics (1972)</strong>.</div>
+            </div>
+
+            <!-- Chronological Causal Sequence Flow -->
+            <div style="margin-top: 4px; padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
+              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                <span>Causal Chain of Events</span>
+                <span style="color: #64748b; font-weight: 700;">Chronology</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jun 1967</span>
+                  <span>Sinai, Golan, Gaza &amp; West Bank Held</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1967</span>
+                  <span>Khartoum Summit ('Three Noes')</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1967</span>
+                  <span>UN Resolution 242 ('Land for Peace')</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1970</span>
+                  <span>Dawson's Field &amp; Black September</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1972</span>
+                  <span>Munich Olympics Hostage Crisis</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <!-- 2.3 -->
-          <div>
-            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 5px;">
-              2.3 Israel and Egypt, 1967–73
-            </strong>
-            <div style="margin-bottom: 4px;">&bull; <strong>Egyptian relations</strong> with Israel, the USA, the USSR and other Arab states under Nasser &amp; Sadat.</div>
-            <div style="margin-bottom: 4px;">&bull; The <strong>War of Attrition (1969–70)</strong> &amp; Israel's consolidation of control of occupied lands.</div>
-            <div style="margin-bottom: 4px;">&bull; Key events of the <strong>Yom Kippur War (1973)</strong>: Syrian &amp; Egyptian surprise strikes, IDF counter-attacks.</div>
-            <div>&bull; Aftermath of the 1973 war &amp; the <strong>OPEC oil embargo</strong> crisis.</div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
+                2.3 Israel and Egypt, 1967–73
+              </strong>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>Egyptian relations</strong> with Israel, superpowers &amp; Arab states (Nasser / Sadat).</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>War of Attrition (1969–70)</strong> &amp; Israeli consolidation of occupied lands.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Key events of <strong>Yom Kippur War (1973)</strong>: surprise strikes &amp; counter-attacks.</div>
+              <div>&bull; Aftermath of 1973 war &amp; the <strong>OPEC oil embargo</strong> crisis.</div>
+            </div>
+
+            <!-- Chronological Causal Sequence Flow -->
+            <div style="margin-top: 4px; padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
+              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                <span>Causal Chain of Events</span>
+                <span style="color: #64748b; font-weight: 700;">Chronology</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1969–70</span>
+                  <span>War of Attrition along Suez Canal</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1970–73</span>
+                  <span>Sadat Consolidates; Bar-Lev Fortified</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">6 Oct 1973</span>
+                  <span>Operation Badr: Coordinated Surprise</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1973</span>
+                  <span>IDF Sharon Counter-Crossing</span>
+                </div>
+                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
+                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
+                  <span style="background: #b45309; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1973</span>
+                  <span>OPEC Oil Embargo &amp; Ceasefire</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

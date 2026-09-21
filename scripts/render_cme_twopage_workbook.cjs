@@ -119,9 +119,11 @@ const kt2Configs = [
         a: 'Britain and France',
       },
     ],
+    vocabRef: '[Textbook §1.1–§1.2]',
     vocabPrompt:
       'Define the <strong>Headwater Diversion Plan</strong> and explain how it differed from a conventional border clash as a catalyst for military escalation:',
     consequenceA: {
+      ref: '[Textbook §1.1 &amp; Source A]',
       question: 'Explain one consequence of the Cairo Conference (1964). [4 marks]',
       guidance:
         'Point (Creation of the Palestine Liberation Organisation and unified Arab command) &bull; Fact (Arab League heads of state authorized the Palestinian National Charter and water diversion) &bull; Consequence (United Arab resistance and established armed fedayeen factions like Fatah to actively challenge Israel).',
@@ -129,6 +131,7 @@ const kt2Configs = [
         'One major consequence was... &bull; Specifically, following the Cairo Conference in 1964... &bull; Consequently, this led directly to...',
     },
     consequenceB: {
+      ref: '[Textbook §2.2, §3.1–§3.2 &amp; Source C]',
       question: 'Explain one consequence of the events of 7 April 1967. [4 marks]',
       guidance:
         'Point (Humiliating defeat for the Syrian Air Force and sharp escalation towards war) &bull; Fact (Israeli Mirage jets shot down six Syrian MiG-21s and flew victory passes over Damascus) &bull; Consequence (Provoked false Soviet intelligence reports in May 1967, pressuring Nasser to mobilise in Sinai).',
@@ -137,6 +140,7 @@ const kt2Configs = [
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
+      ref: '[Textbook §1.1–§4.2 &amp; Sources A–C]',
       type: 'narrative_8',
       tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
       stem: 'Write a narrative account analysing the key events leading to the outbreak of the Six-Day War (1967). [8 marks]',
@@ -144,14 +148,17 @@ const kt2Configs = [
       structureStrip: [
         {
           col: '1. PHASE 1: BORDER TENSIONS (1964–66)',
+          ref: '[Textbook §1.1–§2.2]',
           text: 'Explain the Cairo Conference (1964), Syria’s support for Fatah guerrilla raids across the border, and Israeli retaliatory strikes culminating in the events of 7 April 1967.',
         },
         {
           col: '2. PHASE 2: ESCALATION IN SINAI (MAY 1967)',
+          ref: '[Textbook §3.1–§3.2]',
           text: 'Explain Soviet false warnings, and the actions of Nasser: expelling UNEF peacekeepers, mobilising 100,000 troops into Sinai, and blockading the Straits of Tiran.',
         },
         {
           col: '3. PHASE 3: OUTBREAK OF WAR (JUNE 1967)',
+          ref: '[Textbook §4.1–§4.2]',
           text: 'Explain the Egyptian-Jordanian defence pact (30 May) encircling Israel, and Israel launching Operation Focus pre-emptive airstrikes on 5 June 1967.',
         },
       ],
@@ -215,9 +222,11 @@ const kt2Configs = [
         a: 'Moshe Dayan',
       },
     ],
+    vocabRef: '[Textbook §1.1–§2.1 &amp; Source A]',
     vocabPrompt:
       'Define a <strong>Pre-emptive Strike</strong> and explain why Israeli commanders argued Operation Focus was necessary for national survival on 5 June 1967:',
     consequenceA: {
+      ref: '[Textbook §1.1–§1.2]',
       question:
         'Explain one consequence of the actions of Nasser in the period leading to war. [4 marks]',
       guidance:
@@ -226,6 +235,7 @@ const kt2Configs = [
         'One major consequence was... &bull; Specifically, when President Nasser took the decision to... &bull; Consequently, this resulted in...',
     },
     consequenceB: {
+      ref: '[Textbook §2.1–§3.2 &amp; Sources A &amp; B]',
       question: 'Explain one consequence of the outbreak of the Six-Day War (1967). [4 marks]',
       guidance:
         'Point (Total Israeli military victory and capture of strategic territory) &bull; Fact (Israel destroyed Arab air forces within three hours, capturing the Sinai, Gaza Strip, West Bank, East Jerusalem, and Golan Heights) &bull; Consequence (Tripled the land under Israeli control and placed over 1 million Palestinian Arabs under military occupation).',
@@ -234,6 +244,7 @@ const kt2Configs = [
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
+      ref: '[Textbook §2.2, §3.1–§4.2 &amp; Source B (L6)]',
       type: 'importance_8',
       tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
       stem: 'Explain the importance of the Golan Heights for Israeli security. [8 marks]',
@@ -244,14 +255,17 @@ const kt2Configs = [
       structureStrip: [
         {
           col: '1. POINT 1: ENDING BORDER SHELLING',
+          ref: '[Textbook §3.2]',
           text: 'Explain how Syrian artillery bunkers on the escarpment had terrorised Hula Valley kibbutzim for 19 years; controlling the heights permanently ended cross-border bombardments.',
         },
         {
           col: '2. POINT 2: STRATEGIC HIGH GROUND',
+          ref: '[Textbook §3.2 &amp; §4.1]',
           text: 'Explain how holding Mt Hermon and the high volcanic plateau placed the IDF within 40 miles of Damascus, providing early radar warning and blocking Syrian armored invasions.',
         },
         {
           col: '3. EVALUATIVE SUMMARY: REGIONAL BALANCE',
+          ref: '[Textbook §4.1–§4.2]',
           text: 'Explain how holding the Golan Heights permanently transformed Israel from a vulnerable defensive position into the dominant military power on its northern frontier.',
         },
       ],
@@ -315,9 +329,11 @@ const kt2Configs = [
         a: '"Land for Peace"',
       },
     ],
+    vocabRef: '[Textbook §3.1–§3.2 &amp; Source C]',
     vocabPrompt:
       'Define the diplomatic principle of <strong>"Land for Peace"</strong> and explain why its interpretation caused 30 years of diplomatic stalemate after November 1967:',
     consequenceA: {
+      ref: '[Textbook §3.1–§3.2 &amp; Source C]',
       question: 'Explain one consequence of UN Resolution 242. [4 marks]',
       guidance:
         'Point (Established the principle of "Land for Peace" but created lasting diplomatic stalemate) &bull; Fact (The resolution called for withdrawal from "territories occupied", leaving deliberate ambiguity between English and French texts) &bull; Consequence (Arab states insisted on total withdrawal, while Israel insisted on direct peace treaties and retained the lands).',
@@ -325,6 +341,7 @@ const kt2Configs = [
         'One major consequence was... &bull; Specifically, when the UN Security Council passed Resolution 242 in November 1967... &bull; Consequently, this created deadlock because...',
     },
     consequenceB: {
+      ref: '[Textbook §1.1 &amp; §4.1–§4.2]',
       question: 'Explain one consequence of the continued dispute over the Suez Canal. [4 marks]',
       guidance:
         'Point (Triggered the War of Attrition and long-term economic disruption) &bull; Fact (The Suez Canal became the ceasefire frontline, remaining closed to international shipping from 1967 to 1975) &bull; Consequence (Led Israel to construct the fortified Bar-Lev Line and prompted persistent artillery and commando duels with Egypt).',
@@ -333,6 +350,7 @@ const kt2Configs = [
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
+      ref: '[Textbook §1.1–§4.2 &amp; Sources A–C]',
       type: 'narrative_8',
       tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
       stem: 'Write a narrative account analysing the aftermath of the 1967 war in the period from June to November 1967. [8 marks]',
@@ -340,14 +358,17 @@ const kt2Configs = [
       structureStrip: [
         {
           col: '1. PHASE 1: OCCUPATION & REFUGEES (JUNE)',
+          ref: '[Textbook §1.1–§1.2 &amp; Source A]',
           text: 'Explain Israel annexing East Jerusalem and occupying Sinai, Gaza, West Bank, and Golan; 300,000+ Palestinian refugees fleeing across the River Jordan.',
         },
         {
           col: '2. PHASE 2: ARAB DEFIANCE AT KHARTOUM (AUG–SEPT)',
+          ref: '[Textbook §2.1–§2.2 &amp; Source B]',
           text: 'Explain Arab heads of state meeting in Sudan to adopt the "Three Noes" (no peace, no recognition, no negotiation), refusing to concede defeat or negotiate.',
         },
         {
           col: '3. PHASE 3: UN RESOLUTION 242 (NOV 1967)',
+          ref: '[Textbook §3.1–§4.2 &amp; Source C]',
           text: 'Explain British drafting of Resolution 242 establishing "Land for Peace", deliberate linguistic ambiguity ("territories occupied"), and resulting deadlock.',
         },
       ],
@@ -413,9 +434,11 @@ const kt2Configs = [
         a: 'Fedayeen',
       },
     ],
+    vocabRef: '[Textbook §1.1–§2.2 &amp; Source A]',
     vocabPrompt:
       'Explain the crucial tactical difference between <strong>Fedayeen Guerrilla Warfare</strong> and <strong>International Terrorism</strong> as methods adopted by Palestinian factions after 1967:',
     consequenceA: {
+      ref: '[Textbook §2.1–§2.2 &amp; Source A]',
       question: 'Explain one consequence of the PFLP airplane hijacks of 1970. [4 marks]',
       guidance:
         'Point (Directly triggered King Hussein’s military crackdown against Palestinian militias in Jordan) &bull; Fact (PFLP militants blew up three hijacked Western airliners at Dawson’s Field in front of international TV cameras) &bull; Consequence (King Hussein declared martial law in September 1970, launching the Black September civil war to expel armed Palestinian groups).',
@@ -423,6 +446,7 @@ const kt2Configs = [
         'One major consequence was... &bull; Specifically, when the PFLP hijacked Western airliners to Dawson’s Field... &bull; Consequently, this provoked King Hussein to...',
     },
     consequenceB: {
+      ref: '[Textbook §2.2]',
       question: 'Explain one consequence of the expulsion of the PLO from Jordan (1970). [4 marks]',
       guidance:
         'Point (Relocation of PLO headquarters to southern Lebanon and rise of clandestine terror cells) &bull; Fact (Jordanian forces crushed PLO resistance and expelled armed guerrillas to Lebanon by 1971) &bull; Consequence (The PLO lost its direct border with Israel, created "Fatahland" in Lebanon, and radical elements formed the "Black September" terror group).',
@@ -431,6 +455,7 @@ const kt2Configs = [
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
+      ref: '[Textbook §3.1–§4.2 &amp; Source B]',
       type: 'importance_8',
       tariff: 'Question 3: Explain the Importance [8 marks &bull; 12 mins]',
       stem: 'Explain the importance of the Munich Olympics for international attitudes towards the Palestine issue. [8 marks]',
@@ -441,14 +466,17 @@ const kt2Configs = [
       structureStrip: [
         {
           col: '1. POINT 1: GLOBAL TV SPOTLIGHT',
+          ref: '[Textbook §3.1 &amp; Source B]',
           text: 'Explain how Black September holding 11 Israeli athletes broadcast the Palestine issue live to 900 million TV viewers, destroying the idea that Palestinians were merely passive refugees.',
         },
         {
           col: '2. POINT 2: MORAL OUTRAGE & REPRISALS',
+          ref: '[Textbook §3.2 &amp; §4.1]',
           text: 'Explain how murdering unarmed athletes provoked worldwide condemnation, branding militants as terrorists and prompting Golda Meir to launch Operation Wrath of God assassinations.',
         },
         {
           col: '3. EVALUATIVE SUMMARY: STRATEGIC SHIFT',
+          ref: '[Textbook §4.1–§4.2]',
           text: 'Explain how the outrage proved terrorism could not win statehood, ultimately pushing Yasser Arafat to steer the PLO toward international diplomacy (1974 UN speech).',
         },
       ],
@@ -512,9 +540,11 @@ const kt2Configs = [
         a: 'The Suez Canal',
       },
     ],
+    vocabRef: '[Textbook §1.1–§2.1 &amp; Source A]',
     vocabPrompt:
       'Define the <strong>Bar-Lev Line</strong> and explain why Egyptian military planners deployed high-pressure water monitors to breach it on 6 October 1973:',
     consequenceA: {
+      ref: '[Textbook §1.1–§1.2]',
       question:
         'Explain one consequence of Israel’s consolidation of control of the occupied territories. [4 marks]',
       guidance:
@@ -523,6 +553,7 @@ const kt2Configs = [
         'One major consequence was... &bull; Specifically, as Israel consolidated control by building the Bar-Lev Line... &bull; Consequently, this convinced Arab leaders that...',
     },
     consequenceB: {
+      ref: '[Textbook §2.1–§4.2 &amp; Sources A &amp; B]',
       question: 'Explain one consequence of the Yom Kippur War (1973). [4 marks]',
       guidance:
         'Point (Shattered the myth of Israeli invincibility and triggered the global energy crisis) &bull; Fact (Arab states launched an oil embargo quadrupling crude oil prices; Israel suffered heavy casualties before counter-crossing the canal) &bull; Consequence (Forced the United States and Israel to recognise that military superiority alone could not guarantee security, paving the way for peace negotiations).',
@@ -531,6 +562,7 @@ const kt2Configs = [
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
+      ref: '[Textbook §1.1–§4.2 &amp; Sources A &amp; B]',
       type: 'narrative_8',
       tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
       stem: 'Write a narrative account analysing the key events of the Yom Kippur War (1973) and its aftermath. [8 marks]',
@@ -538,14 +570,17 @@ const kt2Configs = [
       structureStrip: [
         {
           col: '1. PHASE 1: SURPRISE TWO-FRONT ASSAULT',
+          ref: '[Textbook §2.1–§2.2 &amp; Source A]',
           text: 'Explain the 6 October surprise crossing on Yom Kippur / Ramadan: water monitors breaching Bar-Lev Line under Soviet SAM umbrella while Syria assaulted Golan.',
         },
         {
           col: '2. PHASE 2: AIRLIFTS & COUNTER-CROSSING',
+          ref: '[Textbook §2.2, §3.1 &amp; Source B]',
           text: 'Explain massive US emergency airlift (Nickel Grass) enabling General Sharon’s armored division to counter-cross the canal and encircle Egypt’s 3rd Army.',
         },
         {
           col: '3. PHASE 3: OIL WEAPON & AFTERMATH',
+          ref: '[Textbook §3.2–§4.2]',
           text: 'Explain Arab OPEC oil embargo quadrupling world oil prices, superpower nuclear DEFCON 3 tension, and Henry Kissinger securing a UN ceasefire on 24 October.',
         },
       ],
@@ -621,6 +656,18 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     }
     .task-section {
       margin-bottom: 2px;
+    }
+    .textbook-cite-badge {
+      display: inline-block;
+      font-family: 'Inter', monospace, sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #000000;
+      background: #f1f5f9;
+      border: 1px solid #000000;
+      padding: 0.5px 4px;
+      border-radius: 2px;
+      letter-spacing: 0.02em;
     }
     /* Thick Black Writing Lines for Accessibility & Special Needs */
     .task-line {
@@ -972,7 +1019,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary
+            &bull; Key Vocabulary <span class="textbook-cite-badge">${cfg.vocabRef}</span>
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
         </div>
@@ -990,7 +1037,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(a): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span class="textbook-cite-badge">${cfg.consequenceA.ref}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          </div>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
@@ -1013,7 +1063,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(b): Explain One Consequence [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span class="textbook-cite-badge">${cfg.consequenceB.ref}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+          </div>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceB.question}
@@ -1046,9 +1099,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${rx.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing Assessment &bull; 8 Marks
-        </span>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <span class="textbook-cite-badge">${rx.ref}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Extended Writing Assessment &bull; 8 Marks
+          </span>
+        </div>
       </div>
 
       <!-- Unified 3-Row Scaffolding Block (Zero Inter-Row Gaps • Docked Directly Below Header) -->
@@ -1080,7 +1136,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (strip, sIdx) => `
           <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; display: flex; justify-content: space-between; align-items: center; line-height: 1.1; margin-bottom: 1px;">
+              <span>${strip.col}</span>
+              ${strip.ref ? `<span class="textbook-cite-badge" style="font-size: 6.0pt; padding: 0 3px;">${strip.ref}</span>` : ''}
+            </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
           `,

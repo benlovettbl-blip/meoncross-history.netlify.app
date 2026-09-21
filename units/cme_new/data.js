@@ -5113,8 +5113,8 @@ export const unitData = {
             question:
               'Study Source B. How does the physical elevation of the Golan Heights shown in Source B explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
             type: 'visual',
-            src: '/images/cme_golan_heights_relief_map_1967.jpg',
-            image: '/images/cme_golan_heights_relief_map_1967.jpg',
+            src: '/images/map_golan_heights_1967_vector.svg',
+            image: '/images/map_golan_heights_1967_vector.svg',
           },
           tasks: [
             {
@@ -5300,8 +5300,8 @@ export const unitData = {
           hinge_question:
             'How does the physical elevation of the Golan Heights shown in Source B explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
           type: 'visual',
-          src: '/images/cme_golan_heights_relief_map_1967.jpg',
-          image: '/images/cme_golan_heights_relief_map_1967.jpg',
+          src: '/images/map_golan_heights_1967_vector.svg',
+          image: '/images/map_golan_heights_1967_vector.svg',
           question:
             'Study Source B. How does the physical elevation of the Golan Heights shown in Source B explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
         },
@@ -6572,8 +6572,8 @@ export const unitData = {
             question:
               'Study Source A. How does the geographical distribution of the territories shown in Source A explain why the Arab states demanded unconditional withdrawal before direct peace negotiations could begin?',
             type: 'visual',
-            src: '/images/cme_1967_occupied_territories_cia_map.png',
-            image: '/images/cme_1967_occupied_territories_cia_map.png',
+            src: '/images/map_1967_conquered_territories_vector.svg',
+            image: '/images/map_1967_conquered_territories_vector.svg',
           },
           tasks: [
             {
@@ -6789,8 +6789,8 @@ export const unitData = {
           hinge_question:
             'How does the geographical distribution of the territories shown in Source A explain why the Arab states demanded unconditional withdrawal before direct peace negotiations could begin?',
           type: 'visual',
-          src: '/images/cme_1967_occupied_territories_cia_map.png',
-          image: '/images/cme_1967_occupied_territories_cia_map.png',
+          src: '/images/map_1967_conquered_territories_vector.svg',
+          image: '/images/map_1967_conquered_territories_vector.svg',
           question:
             'Study Source A. How does the geographical distribution of the territories shown in Source A explain why the Arab states demanded unconditional withdrawal before direct peace negotiations could begin?',
         },
