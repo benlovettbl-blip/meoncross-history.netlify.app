@@ -20,20 +20,26 @@ export const PEDAGOGY_RESEARCH_BANK = [
     title: 'The Disciplinary Narrative Arc & Substantive vs Disciplinary Schema',
     subtitle:
       'Structuring History as an Enquiry-Driven Narrative Rather Than Isolated Fact Pellets',
-    problem:
-      'Pupils often experience history as disjointed fragments of information or dry chronological bullet points. Without an overarching narrative arc and rigorous enquiry question, they struggle to retain knowledge and fail to grasp historical significance, causation, or consequence.',
-    evidence:
-      'Counsell demonstrates that substantive historical knowledge (names, dates, concepts) is held together and rendered meaningful by "narrative glue". Residual knowledge (the enduring mental schema retained years later) is constructed only when pupils encounter rich, dramatic narrative journeys anchored to a disciplinary enquiry question.',
+    overview:
+      'Substantive historical knowledge (names, treaties, dates) rapidly deteriorates into isolated factual fragments if taught without a disciplinary narrative arc. Christine Counsell demonstrates that "narrative glue" is what renders historical material memorable and intellectually coherent. Long-term residual schema—the conceptual understanding pupils retain years after leaving the classroom—is constructed when lessons function as dramatic enquiries answering an overarching historical problem.',
+    analysisHeading: 'The Curricular Challenge',
+    analysisText:
+      'When pupils encounter history as bullet points or disjointed comprehension worksheets, they cannot discern causation, consequence, or significance. Without a dramatic arc, substantive details place an unsustainable burden on working memory, resulting in rapid forgetting and superficial analysis during extended writing.',
+    evidenceHeading: 'Disciplinary & Cognitive Grounding',
+    evidenceText:
+      'Counsell’s research highlights the vital distinction between "fingertip knowledge" (immediate facts mobilized for today’s analytical debate) and "residual knowledge" (the enduring conceptual framework of change, power, and conflict). A carefully structured narrative acts as the carrier wave for disciplinary thinking, allowing pupils to anchor forensic primary evidence within a broader historical context.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
-      '4-Act Dramatic Structure in Every Lesson: Act 1 (Context & Catalyst), Act 2 (Escalation & Conflict), Act 3 (Forensic Archival Evidence), and Act 4 (Historical Verdict & Historiographical Debate).',
-      'Pure [Act.Paragraph] Notation: Paragraphs are indexed cleanly as [1.1], [2.1], [3.1]. Eliminates cognitive clutter from sentence-level micro-indices ([1.1], [1.2], [1.3]) and trains pupils to cite forensic text blocks.',
-      'Fingertip vs. Residual Knowledge Separation: Immediate high-tariff recall is tested in "Do Nows" so working memory is liberated for causal analysis during extended writing.',
-      'Overarching Enquiry Questions: Lessons are phrased as genuine historical problems (e.g. "Why did peace prove so elusive?"), not factual labels.',
+      'Four-Act Dramatic Lesson Architecture: Each enquiry unfolds systematically across Act 1 (Context & Catalyst), Act 2 (Escalation & Conflict), Act 3 (Forensic Archival Evidence), and Act 4 (The Historical Verdict & Historiographical Debate).',
+      'Standardized [Act.Paragraph] Indexing: Paragraphs are indexed strictly as [1.1], [2.1], [3.1], completely replacing sentence-level micro-indices ([1.1], [1.2]) to eliminate visual clutter and train pupils to cite forensic text blocks.',
+      'Separation of Fingertip and Residual Schema: Immediate recall is isolated in starter Do Nows, freeing working memory for deep causal debate during extended writing tasks.',
+      'Enquiry-Led Lesson Framing: Every unit is phrased as a genuine historical dilemma (e.g. "How Did Water, Border Raids, and Rhetoric Make a Second Arab-Israeli War Inevitable?"), driving substantive enquiry.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
-      'Always frame the lesson around the central enquiry question before reading Act 1.',
+      'Frame the entire lesson around the central enquiry question before pupils begin reading Act 1.',
       'Direct pupils to specific paragraphs using the [Act.Paragraph] reference rather than general page numbers.',
-      'Differentiate between fingertip knowledge (needed for today’s debate) and residual knowledge (the conceptual schema that must endure).',
+      'Clarify for pupils which details are fingertip knowledge for today’s debate versus residual knowledge that must be permanently retained.',
     ],
     citations: [
       'Counsell, C. (2000). "Historical knowledge and the curriculum", Teaching History, 100, pp. 54–71.',
@@ -61,20 +67,26 @@ export const PEDAGOGY_RESEARCH_BANK = [
     title: 'Closing the Vocabulary Gap & Disciplinary Literacy in History',
     subtitle:
       'Explicit Tier-2/3 Vocabulary Instruction, Golden Sentences, and Morphological Precision',
-    problem:
-      'Pupils from disadvantaged backgrounds and low-reading-age cohorts enter GCSE history classrooms with a vocabulary deficit of up to 4,000 words. When confronted with dense academic texts containing words like "armistice", "sovereignty", or "concession", they suffer comprehension failure.',
-    evidence:
-      'Quigley’s research shows that vocabulary is the chief predictor of academic success. Explicit, contextualized instruction of Tier-2 general academic words (e.g. "consolidate", "inevitable", "precipitate") alongside Tier-3 domain nouns (e.g. "annexation", "blockade") closes the attainment gap significantly faster than incidental exposure.',
+    overview:
+      'Academic reading in history presents a formidable lexical barrier. Low-reading-age cohorts and disadvantaged pupils frequently enter secondary history with a significant vocabulary deficit. Alex Quigley’s research confirms that vocabulary knowledge is the primary determinant of reading comprehension and academic achievement, requiring systematic, explicit instruction in high-utility Tier-2 academic verbs and domain-specific Tier-3 historical nouns.',
+    analysisHeading: 'The Disciplinary Literacy Barrier',
+    analysisText:
+      'When pupils encounter dense academic prose containing specialized terms such as "annexation", "sovereignty", "armistice", or "concession", comprehension abruptly stalls. Incidental exposure through passive reading fails to bridge this gap; without explicit pre-teaching and syntactic practice, pupils struggle to decode exam sources and produce disjointed written analysis.',
+    evidenceHeading: 'Lexical Acquisition & Cognitive Evidence',
+    evidenceText:
+      'Systematic instruction focusing on word morphology (prefixes, roots, suffixes), contextual usage, and structured sentence construction produces durable gains in disciplinary literacy. Teaching Tier-2 connectives alongside Tier-3 subject terminology enables pupils to express complex historical relationships such as causation, concession, and contingency.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
-      'The Golden Sentence Routine: Pupils write a single, rigorous sentence synthesizing two Tier-3 vocabulary terms connected by a high-level subordinating conjunction (e.g. "Although Nasser blockaded the Straits of Tiran, Israel viewed this as an act of war...").',
-      'Odd-One-Out Vocabulary Trios: Pupils analyze sets of three related historical terms, justifying which one does not belong based on historical causality rather than dictionary definitions.',
-      'Immediate Margin Glossaries: Key vocabulary definitions are positioned immediately adjacent to the reading text to prevent split-attention and cognitive exhaustion from page-flipping.',
-      'Morphology & Etymology Breakdowns: Highlighting Greek/Latin roots (e.g. "anti-", "pan-", "theo-") to build transferable lexical decoding skills.',
+      'The Golden Sentence Routine: Pupils synthesize two Tier-3 historical concepts into a single rigorous analytical sentence using a designated subordinating conjunction.',
+      'Dual-Term Analytical Distinctions: Rotating vocabulary tasks challenge pupils to articulate the vital historical distinction between easily conflated concepts (e.g. "Armistice vs Peace Treaty", "Annexation vs Military Occupation").',
+      'Co-Located Margin Glossaries: Key terminology is defined immediately adjacent to the narrative text, eliminating split-attention tracking fatigue caused by searching distant glossaries.',
+      'Morphological Root Deconstruction: Explicitly highlighting Greek and Latin roots (e.g. "pan-", "anti-", "theo-") equips pupils to independently decode unfamiliar academic terminology.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
-      'Pre-teach 2–3 unfamiliar Tier-3 terms before commencing classroom reading of the narrative.',
-      'Insist on the Golden Sentence format during oral debriefs: never accept simple one-clause answers.',
-      'Use yellow highlighter live in the classroom to celebrate students who deploy target Tier-2 analytical connectives.',
+      'Explicitly pre-teach 2–3 unfamiliar Tier-3 terms before reading the historical narrative with the class.',
+      'Insist on the Golden Sentence standard during oral questioning: do not accept isolated single-clause answers.',
+      'Highlight pupils who successfully deploy Tier-2 analytical connectives live in classroom discussions.',
     ],
     citations: [
       'Quigley, A. (2018). Closing the Vocabulary Gap. London: Routledge.',
@@ -102,20 +114,26 @@ export const PEDAGOGY_RESEARCH_BANK = [
     categoryBadge: 'badge-emerald',
     title: 'The Writing Revolution (TWR): Explicit Sentence-Level Scaffolding',
     subtitle: 'Mastering Sentence Complexity Before Demanding Multi-Page Extended Essays',
-    problem:
-      'Traditional history teaching often asks pupils to "write an essay on the causes of the Six-Day War" before they have mastered sentence mechanics. Pupils produce rambling, chronological run-on sentences lacking analytical causality, topic discipline, or evaluative balance.',
-    evidence:
-      'Hochman & Wexler demonstrated that writing is not a natural developmental milestone like speech; it must be taught explicitly. Developing syntactic control at the sentence level (coordinating and subordinating conjunctions) dramatically boosts reading comprehension, cognitive clarity, and essay quality.',
+    overview:
+      'Writing is not an innate biological development; it is a complex cognitive skill that must be explicitly taught. Judith Hochman and Natalie Wexler demonstrate that assigning lengthy essays to pupils who lack sentence-level mastery produces run-on prose, conceptual ambiguity, and cognitive overload. By explicitly teaching sentence mechanics, subordinating conjunctions, and causal operators, pupils gain the syntactic control necessary for advanced historical writing.',
+    analysisHeading: 'The Syntactic Challenge in History',
+    analysisText:
+      'Conventional history teaching often prompts pupils to write extensive essays (such as 12-mark causation or 16-mark evaluative essays) without checking syntactic command. Pupils resort to chronological narrative retellings linked by "and then", failing to construct coherent arguments, acknowledge counter-arguments, or weigh historical significance.',
+    evidenceHeading: 'Cognitive Science of Sentence Construction',
+    evidenceText:
+      'Developing syntactic control at the sentence level liberates working memory. When conjunctions like "Because", "But", and "So" are practiced systematically, pupils are forced to reflect on cause, contrast, and consequence. Explicit sentence-level practice directly improves reading comprehension by teaching pupils to parse complex compound and complex sentences.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
-      'Because / But / So Scaffolding: Converts simple chronological statements into nuanced historical analysis (e.g. "Nasser closed the Straits of Tiran BECAUSE...", "...BUT...", "...SO...").',
-      'Pre-Crafted Evidence Stems: Provides analytical starting clauses ("A crucial factor was...", "This directly precipitated...") that reduce working memory burdens for lower-attaining and SEND writers.',
-      'Structure Strips for Exam Practice: Step-by-step physical margin guides for 4-mark consequence, 8-mark narrative, and 16-mark essay tasks.',
-      'Strict High-Tariff Model Answers: Eliminates vague placeholders with authentic, historically grounded model responses displaying exemplar syntax.',
+      'Because / But / So Causal Scaffolds: Transforms simple factual statements into multi-clause historical analysis (e.g. "Nasser closed the Straits of Tiran BECAUSE...", "...BUT...", "...SO...").',
+      'Analytical Evidence Stems: Provides pre-crafted sentence starters that reduce working memory strain for lower-attaining and neurodiverse writers.',
+      'Standardized Exam Structure Strips: Step-by-step margin scaffolds for Edexcel 4-mark consequence, 8-mark narrative, and 16-mark essay tasks.',
+      'Authentic Model Answers: Eliminates generic placeholders in favour of historically precise, syntactically rigorous model answers.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
-      'Do not jump straight to 16-mark essay writing without warming up with Because/But/So sentence stems.',
-      'Teach subordinating conjunctions as causal operators: "Although" introduces counter-arguments, "Because" establishes primary cause, "Consequently" marks historical effect.',
-      'Model the structure strip live under the visualizer before independent student writing.',
+      'Warm up with Because/But/So sentence stems before asking students to embark on independent essay paragraphs.',
+      'Treat subordinating conjunctions as analytical operators: "Although" signals nuance, "Because" establishes primary cause, "Consequently" demonstrates outcome.',
+      'Live-model the structure strip under the document camera or visualizer before independent pupil writing begins.',
     ],
     citations: [
       'Hochman, J. C., & Wexler, N. (2017). The Writing Revolution: A Guide to Advancing Thinking Through Writing in All Subjects and Grades. San Francisco: Jossey-Bass.',
@@ -141,22 +159,28 @@ export const PEDAGOGY_RESEARCH_BANK = [
     affiliation: 'University of New South Wales / Cognitive Science',
     category: 'Cognitive Science',
     categoryBadge: 'badge-purple',
-    title: 'Cognitive Load Theory & The Dual-Column Smartboard Measure',
+    title: 'Cognitive Load Theory & Typographic Ergonomics',
     subtitle: 'Minimizing Extraneous Load to Maximize Germane Schema Construction',
-    problem:
-      'When learning resources feature unconstrained line lengths (100–150 characters across widescreen interactive whiteboards), visually cluttered layouts, or split information requiring back-and-forth page flipping, working memory is rapidly exhausted by visual processing rather than historical analysis.',
-    evidence:
-      'Sweller’s Cognitive Load Theory identifies that working memory can hold only 4 to 7 items simultaneously. Extraneous cognitive load (caused by poor presentation and eye tracking fatigue) actively sabotages long-term memory encoding. Research in typographic ergonomics proves optimal reading comprehension occurs at 50–65 characters per line.',
+    overview:
+      'Working memory has a strictly limited capacity, capable of holding only 4 to 7 discrete items at once. John Sweller’s Cognitive Load Theory demonstrates that poorly designed learning materials impose heavy extraneous cognitive load, exhausting pupils’ working memory on perceptual navigation rather than historical thinking. Controlling line lengths, eliminating split-attention, and enforcing rigid page budgets protect cognitive bandwidth for genuine historical reasoning.',
+    analysisHeading: 'The Ergonomic & Presentation Problem',
+    analysisText:
+      'When classroom resources stretch text across full-width widescreen displays (120–150 characters per line) or require pupils to flip back and forth between questions and distant sources, visual tracking fatigue sets in. Dyslexic and lower-attaining pupils frequently lose their line, experiencing severe tracking errors that impede comprehension.',
+    evidenceHeading: 'Empirical Evidence on Typographic Measure',
+    evidenceText:
+      'Extensive research in typographic ergonomics and cognitive psychology establishes that optimal reading comfort occurs at 50 to 65 characters per line (approximately 10–12 words). At this measure, saccadic eye movements remain smooth and predictable, virtually eliminating line-skipping and allowing working memory to focus on text interpretation.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
-      'Two-Column Responsive Reading Measure (50–65 Characters): Eliminates "eye-sweep tracking fatigue" on both classroom smartboards (1080p/4K) and printed A4 textbooks.',
-      'Left-Margin Line Numbering (Every 5 Lines): Enables instantaneous teacher signposting ("Look at line 15, class") eliminating disorientation.',
-      'Split-Attention Elimination: Primary sources, historical maps, and glossary terms are co-located alongside the narrative text rather than buried in distant appendices.',
-      'Rigid Page Budgeting: 16-page consumable workbooks with 0px overflow prevent cognitive panic caused by spilling text and erratic margins.',
+      'Two-Column Responsive Reading Layout (50–65 Characters): Calibrated for classroom interactive smartboards and printed A4 companion anthologies to eliminate eye-sweep fatigue.',
+      'Marginal Line Numbering (Every 5 Lines): Enables instantaneous teacher signposting during whole-class reading ("Look at line 20, class"), preventing pupil disorientation.',
+      'Elimination of Split-Attention: Visual primary sources, historical maps, and vocabulary callouts are situated directly adjacent to corresponding narrative paragraphs.',
+      'Strict Page Budgeting: 16-page consumable workbooks with zero overflow ensure students never encounter spilling text or fragmented layouts.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
-      'Utilize line numbers actively during whole-class reading to maintain focus for pupils with tracking difficulties.',
-      'Ensure the smartboard display uses the 2-column view to prevent pupils losing their place during shared reading.',
-      'Keep visual diagrams directly aligned with explanatory text; never refer to a source on a distant page without visual anchor.',
+      'Use the marginal line numbers actively during shared reading to maintain focus for pupils with tracking difficulties.',
+      'Display the 2-column view on classroom whiteboards to prevent eye-sweep fatigue during whole-class text analysis.',
+      'Ensure visual sources remain visible while discussing corresponding narrative paragraphs; avoid switching slides away from the source.',
     ],
     citations: [
       'Sweller, J. (1988). "Cognitive load during problem solving: Effects on learning", Cognitive Science, 12(2), pp. 257–285.',
@@ -182,30 +206,29 @@ export const PEDAGOGY_RESEARCH_BANK = [
     affiliation: 'Evidence-Based Classroom Practice & SEND Co-ordination',
     category: 'SEND & Inclusion',
     categoryBadge: 'badge-rose',
-    title: 'SEND in the History Classroom: High-Yield Strategies for Neurodiverse Learners',
-    subtitle:
-      'What Actually Works (and What Fails) for Dyslexic, ADHD, and Low-Processing Students',
-    problem:
-      'History is a text-heavy, conceptually abstract discipline. Pupils with dyslexia, ADHD, processing speed delays, and working memory deficits are frequently overwhelmed by unstructured "walls of text", vague essay prompts, and rapid-fire questions, leading to cognitive fatigue, learned helplessness, and disengagement.',
-    evidence:
-      'Research synthesized by the EEF and the British Dyslexia Association indicates that effective SEND provision in mainstream classrooms does not require watering down curriculum rigor. Rather, it requires high structure: predictable typography, reduced visual noise, pre-chunked reading blocks, explicit sentence starters, and verbal modeling.',
+    title: 'SEND in the History Classroom: High-Yield Pedagogical Strategies',
+    subtitle: 'Evidence-Based Accommodations for Dyslexic, ADHD, and Low-Processing Students',
+    overview:
+      'History is a language-dense, conceptually demanding discipline. Pupils with dyslexia, ADHD, processing speed delays, and working memory limitations can quickly become overwhelmed by unstructured walls of text and ambiguous essay prompts. Evidence synthesized by the EEF and the British Dyslexia Association proves that effective SEND practice does not dilute curriculum rigor; instead, it provides strong structural scaffolds that render demanding academic content accessible to all learners.',
+    analysisHeading: 'Practices That Sabotage SEND Attainment',
+    analysisText:
+      'Full-width, unchunked text columns, sentence-level micro-indices ([1.1], [1.2], [1.3]) that clutter paragraph flow, vague essay prompts lacking evidence stems, and forcing pupils to consult sources printed pages away from questions create cognitive barriers that trigger learned helplessness and disengagement.',
+    evidenceHeading: 'High-Structure Pedagogical Principles',
+    evidenceText:
+      'Predictable visual layouts, pre-chunked narrative passages, explicit sentence openers, physical handwriting lines with generous spacing, and dual-modality presentation (synchronous audio read-aloud alongside text) significantly reduce cognitive load, enabling neurodiverse pupils to demonstrate high-level historical reasoning.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
-      'What DOES NOT Work (Strictly Prohibited in Our System):',
-      '❌ Unchunked "walls of text" with full-width screen spans (triggers visual tracking errors and dyslexia line-skipping).',
-      '❌ Sentence-by-sentence micro-indices [1.1], [1.2], [1.3] (creates cognitive clutter and visually fragments paragraphs).',
-      '❌ Vague, open-ended extended writing prompts without structure strips or evidence stems.',
-      '❌ Requiring pupils to read a text on page 3 while answering questions on page 9 (severe split-attention failure).',
-      'What DOES Work (Enforced Across All Workbooks & Digital Hub):',
-      '✅ 50–65 Character Line Length: Dual-column layout provides short, manageable eye-sweeps that prevent line-skipping.',
-      '✅ Chunked 4-Act Narratives: Reading is broken into distinct acts, each under 200 words, punctuated by targeted visual sources.',
-      '✅ Physical Handwriting Lines with 7.2mm Spacing: Accommodates dysgraphic handwriting and motor control needs.',
-      '✅ Pre-Crafted Sentence Openers: Lowers the processing threshold to begin writing, allowing pupils to focus on historical thinking.',
-      '✅ Instant Audio Read-Aloud: Digital app synthesizer allows dual sensory input (listening while following along with the text).',
+      '50–65 Character Line Length: Dual-column formatting provides short, controlled eye-sweeps that prevent line-skipping for dyslexic readers.',
+      'Chunked 4-Act Narratives: Historical reading is partitioned into distinct acts, each under 200 words, punctuated by targeted visual sources.',
+      '7.2mm Physical Handwriting Lines: Accommodates motor control needs and dysgraphic handwriting across consumable workbooks.',
+      'Targeted Sentence Openers: Lowers the entry threshold for independent writing, focusing pupil attention on historical evidence.',
+      'Synchronous Audio Read-Aloud: Integrated digital speech synthesizer supports simultaneous auditory and visual text tracking.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
       'Read narrative sections aloud with the class using the 2-column measure before asking SEND pupils to engage independently.',
-      'Direct dyslexic pupils to use physical bookmarks or rulers along the line-numbered margin to support visual tracking.',
-      'Praise high-level historical reasoning in verbal discussion, then supply the exact sentence stem to help them encode it in writing.',
+      'Guide dyslexic pupils to track lines using a physical ruler or marker along the line-numbered margin.',
+      'Acknowledge analytical insight in verbal contributions, then immediately provide the corresponding sentence starter for written recording.',
     ],
     citations: [
       'Education Endowment Foundation (EEF) (2020). Special Educational Needs in Mainstream Schools: Guidance Report.',
@@ -232,20 +255,26 @@ export const PEDAGOGY_RESEARCH_BANK = [
     categoryBadge: 'badge-teal',
     title: 'Rosenshine’s Principles: Isolated Prior-Learning Retrieval & Hinge Questions',
     subtitle: 'Daily Spaced Practice Without Conflating Prior Memory with Unfamiliar Content',
-    problem:
-      'When bell-ringer or "Do Now" starter activities ask questions about content that has not yet been taught, pupils guess randomly, experience frustration, and encode historical misconceptions into working memory.',
-    evidence:
-      'Rosenshine’s Principles of Instruction prove that the most effective teachers begin lessons with a brief review of previously mastered knowledge. Daily retrieval practice strengthens synaptic memory traces, making recall automatic and freeing cognitive bandwidth for complex new material.',
+    overview:
+      'Rosenshine’s Principles of Instruction show that the most effective teachers begin lessons with a brief, systematic review of previously taught material. Daily retrieval strengthens synaptic neural connections, making recall effortless and freeing cognitive bandwidth for complex new historical topics. Crucially, recall starter tasks must test only prior learning, never introducing unlearned material.',
+    analysisHeading: 'The Starter Misconception Dilemma',
+    analysisText:
+      'When starter or "Do Now" activities ask questions about material that has not yet been taught, pupils guess randomly, experience frustration, and inadvertently encode historical misconceptions into working memory.',
+    evidenceHeading: 'Empirical Evidence on Spaced Retrieval',
+    evidenceText:
+      'Regular, low-stakes retrieval practice interrupted by time delays halts forgetting and strengthens retrieval pathways. Diagnostic hinge questions placed at critical transitions allow teachers to verify class-wide conceptual understanding before advancing to higher-order extended writing.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
       'Strict Pedagogical Recall Isolation: "Do Now" activities strictly test recall from prior lessons or units. They NEVER ask about content from today\'s lesson.',
-      'Hinge Questions in Teacher Notes: Every lesson objective includes an actionable "Hinge Question" to diagnose whole-class conceptual understanding before moving forward.',
-      'Small-Step Guided Practice: Complex historical causation is taught in small, bite-sized steps followed by immediate pupil application.',
-      'High Success Rate Design: Retrieval questions are calibrated so students achieve 80%+ success, cementing foundational confidence.',
+      'Targeted Hinge Questions in Teacher Notes: Every learning objective includes an actionable hinge question to diagnose whole-class comprehension on the fly.',
+      'Small-Step Guided Practice: Complex historical causation is taught in small, manageable sequences followed immediately by application.',
+      'High-Success-Rate Calibration: Starter retrieval is calibrated for 80%+ success, cementing student confidence before tackling new content.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
       'Enforce silent, independent completion of the Do-Now during the first 4 minutes of the lesson.',
-      'Never allow pupils to open the textbook to look up Do-Now answers; it must be a genuine closed-book memory retrieval exercise.',
-      'Use cold-calling on hinge questions to verify class-wide readiness before transitioning from reading to extended writing.',
+      'Do not allow pupils to consult textbooks during the Do-Now; it must function as genuine closed-book memory retrieval.',
+      'Use cold-calling on hinge questions to verify whole-class readiness before transitioning to extended writing.',
     ],
     citations: [
       'Rosenshine, B. (2012). "Principles of instruction: Research-based strategies that all teachers should know", American Educator, 36(1), pp. 12–19.',
@@ -272,20 +301,26 @@ export const PEDAGOGY_RESEARCH_BANK = [
     categoryBadge: 'badge-indigo',
     title: 'Dylan Wiliam: Embedded Formative Assessment & Whole-Class Feedback',
     subtitle: 'Eliminating Low-Impact Margin Scribbling in Favour of Progress Ledgers and DIRT',
-    problem:
-      'Teachers spend hundreds of uncompensated hours writing extensive prose comments in student exercise books—comments that pupils often glance at for 5 seconds before closing the book. This creates immense teacher burnout with negligible student attainment gains.',
-    evidence:
-      'Dylan Wiliam demonstrated that formative assessment is effective only when it causes more thinking for the student than for the teacher. Feedback should be formative, forward-looking, and immediately actionable during dedicated reflection time (DIRT).',
+    overview:
+      'Teachers spend extensive hours writing lengthy narrative comments in student exercise books—comments that pupils often glance at only briefly before closing their books. Dylan Wiliam demonstrated that formative assessment is effective only when it generates more thinking for the student than for the teacher. Feedback must be actionable, immediate, and embedded directly into dedicated classroom reflection time.',
+    analysisHeading: 'The Traditional Marking Trap',
+    analysisText:
+      'Detailed retrospective prose marking at home places an immense workload on teachers with minimal impact on pupil attainment. When feedback does not require an immediate written response from the pupil, misconceptions persist uncorrected into subsequent lessons.',
+    evidenceHeading: 'Formative Feedback & DIRT Principles',
+    evidenceText:
+      'Formative assessment functions as the engine of learning when it provides clear, forward-looking guidance on how to improve, paired with dedicated classroom time (DIRT: Dedicated Improvement and Reflection Time) for students to act on that guidance immediately.',
+    applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
-      'Back-Cover Assessment Progress Ledger: Standardized enquiry mark tracking (/26 marks per topic) right on page 16 of the workbook.',
-      'WWW (What Went Well) & EBI (Even Better If) Handwriting Lines: Pre-printed 7.2mm lines for targeted formative feedback and student response.',
-      'Live Yellow Highlighter Marking: Teachers circulate during independent writing, highlighting exact vocabulary and syntax improvements on the fly.',
-      'Whole-Class Feedback Summaries: Common misconceptions are debriefed collectively on the smartboard, followed by immediate pupil corrections in green pen.',
+      'Standardized Assessment Progress Ledger: Direct tracking of enquiry marks (/26 marks per topic) on the back cover of every consumable workbook.',
+      'Targeted WWW & EBI Handwriting Lines: 7.2mm lines dedicated to teacher feedback and student corrective action.',
+      'Live Highlighter Marking: Teachers circulate during independent writing, highlighting exemplary historical connectives and vocabulary in real time.',
+      'Whole-Class Feedback Grids: Recurring errors and misconceptions are addressed collectively on the board, followed by green-pen pupil corrections.',
     ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
     teacherProtocols: [
-      'Never write extensive narrative comments on student work during home marking; use coded shorthand and address patterns via whole-class debriefs.',
-      'Dedicate 10 minutes at the start of the following lesson to DIRT (Dedicated Improvement and Reflection Time) using the back-cover feedback box.',
-      'Ensure every EBI given requires the student to produce a concrete written output (e.g. rewriting a Golden Sentence).',
+      'Avoid lengthy narrative commentary during home marking; use coded shorthand and address common patterns via whole-class debriefs.',
+      'Dedicate 10 minutes at the start of the following lesson to DIRT using the back-cover feedback box.',
+      'Require pupils to produce a concrete written output for every EBI received (such as revising a sentence or expanding an explanation).',
     ],
     citations: [
       'Wiliam, D. (2011). Embedded Formative Assessment. Bloomington, IN: Solution Tree Press.',

@@ -667,8 +667,9 @@ function renderPedagogyTab(container) {
       item.subtitle.toLowerCase().includes(query) ||
       item.author.toLowerCase().includes(query) ||
       item.affiliation.toLowerCase().includes(query) ||
-      item.problem.toLowerCase().includes(query) ||
-      item.evidence.toLowerCase().includes(query) ||
+      (item.overview && item.overview.toLowerCase().includes(query)) ||
+      (item.analysisText && item.analysisText.toLowerCase().includes(query)) ||
+      (item.evidenceText && item.evidenceText.toLowerCase().includes(query)) ||
       item.implementation.some((imp) => imp.toLowerCase().includes(query)) ||
       item.teacherProtocols.some((p) => p.toLowerCase().includes(query))
     );
@@ -751,17 +752,17 @@ function renderPedagogyTab(container) {
         `
             : filtered
                 .map(
-                  (b, idx) => `
+                  (b) => `
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.03);">
             
             <!-- Card Header -->
-            <div style="padding: 18px 24px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+            <div style="padding: 20px 26px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
               <div>
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                   <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 4px; background: #1e3a8a; color: #ffffff;">
                     ${b.category}
                   </span>
-                  <span style="font-size: 0.8rem; font-weight: 700; color: #0f172a;">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">
                     ${b.author}
                   </span>
                   <span style="font-size: 0.78rem; color: #64748b;">
@@ -775,55 +776,58 @@ function renderPedagogyTab(container) {
                   ${b.subtitle}
                 </div>
               </div>
-              <div style="font-family: monospace; font-size: 0.78rem; font-weight: 700; color: #64748b; background: #edf2f7; padding: 4px 8px; border-radius: 6px;">
-                BRIEFING #${idx + 1}
-              </div>
             </div>
 
-            <!-- Card Body: Structured 3-Column Diagnostic & Implementation Matrix -->
+            <!-- Card Body: Structured Diagnostic & Implementation Details -->
             <div style="padding: 24px; display: flex; flex-direction: column; gap: 18px;">
               
+              <!-- Overview Narrative -->
+              <div style="font-size: 0.9rem; line-height: 1.6; color: #334155; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
+                ${b.overview}
+              </div>
+
+              <!-- Two-Column Context & Cognitive Grounding -->
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
                 
-                <!-- The Classroom Dilemma / Problem -->
-                <div style="background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 16px;">
-                  <strong style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: #92400e; margin-bottom: 6px;">
-                    <i class="fa-solid fa-triangle-exclamation"></i> The Classroom Problem
+                <!-- Pedagogical Challenge -->
+                <div style="background: #fffbeb; border: 1px solid #fef3c7; border-left: 3.5px solid #d97706; border-radius: 6px; padding: 14px 16px;">
+                  <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #92400e; margin-bottom: 6px;">
+                    ${b.analysisHeading || 'Curricular Challenge'}
                   </strong>
                   <p style="margin: 0; font-size: 0.86rem; color: #78350f; line-height: 1.5;">
-                    ${b.problem}
+                    ${b.analysisText || b.problem || ''}
                   </p>
                 </div>
 
-                <!-- The Empirical Evidence -->
-                <div style="background: #eff6ff; border: 1px solid #dbeafe; border-left: 4px solid #2563eb; border-radius: 6px; padding: 14px 16px;">
-                  <strong style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: #1e40af; margin-bottom: 6px;">
-                    <i class="fa-solid fa-flask"></i> What the Evidence Proves
+                <!-- Empirical / Disciplinary Evidence -->
+                <div style="background: #eff6ff; border: 1px solid #dbeafe; border-left: 3.5px solid #2563eb; border-radius: 6px; padding: 14px 16px;">
+                  <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #1e40af; margin-bottom: 6px;">
+                    ${b.evidenceHeading || 'Evidence & Cognitive Grounding'}
                   </strong>
                   <p style="margin: 0; font-size: 0.86rem; color: #1e3a8a; line-height: 1.5;">
-                    ${b.evidence}
+                    ${b.evidenceText || b.evidence || ''}
                   </p>
                 </div>
 
               </div>
 
-              <!-- History Revision Hub Implementation Checklist -->
-              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #059669; border-radius: 6px; padding: 16px;">
-                <strong style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: #065f46; margin-bottom: 8px;">
-                  <i class="fa-solid fa-check-double"></i> Implementation Across The History Revision Hub
+              <!-- Platform Implementation -->
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 3.5px solid #059669; border-radius: 6px; padding: 16px;">
+                <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #065f46; margin-bottom: 8px;">
+                  ${b.applicationHeading || 'Departmental & Platform Implementation'}
                 </strong>
                 <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: #166534; line-height: 1.55;">
                   ${b.implementation.map((imp) => `<li style="margin-bottom: 4px;">${imp}</li>`).join('')}
                 </ul>
               </div>
 
-              <!-- Teacher Action Protocol -->
-              <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #0f172a; border-radius: 6px; padding: 16px;">
-                <strong style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: #0f172a; margin-bottom: 8px;">
-                  <i class="fa-solid fa-chalkboard-user"></i> Practical Classroom Protocol for Teachers
+              <!-- Practical Classroom Protocol -->
+              <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 3.5px solid #0f172a; border-radius: 6px; padding: 16px;">
+                <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #0f172a; margin-bottom: 8px;">
+                  ${b.protocolHeading || 'Classroom Protocol for History Teachers'}
                 </strong>
                 <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: #334155; line-height: 1.55;">
-                  ${b.teacherProtocols.map((p) => `<li style="margin-bottom: 4px;"><strong>Action:</strong> ${p}</li>`).join('')}
+                  ${b.teacherProtocols.map((p) => `<li style="margin-bottom: 4px;">${p}</li>`).join('')}
                 </ul>
               </div>
 
@@ -843,7 +847,6 @@ function renderPedagogyTab(container) {
                         (l) => `
                       <a href="${l.url}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"
                          onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
-                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
                         <span>${l.title}</span>
                         <span style="color: #94a3b8; font-weight: 400; font-size: 0.75rem;">(${l.displayText})</span>
                       </a>
