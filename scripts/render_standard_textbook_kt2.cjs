@@ -806,7 +806,7 @@ async function buildPublisherTextbookHtmlKT2() {
     .archival-image {
       width: 100%;
       height: auto;
-      max-height: 145px;
+      max-height: 155px;
       object-fit: cover;
       object-position: top;
       border-radius: 2px;
@@ -816,7 +816,7 @@ async function buildPublisherTextbookHtmlKT2() {
     .archival-portrait-image {
       width: 100%;
       height: auto;
-      max-height: 155px;
+      max-height: 160px;
       object-fit: cover;
       object-position: center 25%;
       border-radius: 2px;
@@ -826,7 +826,7 @@ async function buildPublisherTextbookHtmlKT2() {
     .archival-map-image {
       width: 100%;
       height: auto;
-      max-height: 175px;
+      max-height: 195px;
       object-fit: contain;
       background: #f8fafc;
       border-radius: 2px;

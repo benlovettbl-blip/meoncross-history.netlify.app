@@ -73,7 +73,7 @@ async function auditTextbook(config, options = {}) {
       const overflow = Math.max(0, scrollH - clientH);
 
       const prose = p.querySelector('.two-column-prose');
-      const enquiry = p.querySelector('.bottom-enquiry-box');
+      const enquiry = p.querySelector('.bottom-enquiry-box, .bottom-vocab-box');
       const keyFigure = p.querySelector('.key-figure-box');
       const sources = Array.from(p.querySelectorAll('.archival-source-box'));
       const footer = p.querySelector('.running-footer');

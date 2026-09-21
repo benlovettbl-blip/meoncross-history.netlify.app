@@ -23410,6 +23410,28 @@
               ],
               "answer": "Scientists had no understanding that bacteria caused human disease or infection.",
               "explanation": "Although Leeuwenhoek observed living microbes, physicians still believed disease was caused by miasma or humoural imbalance; the link between bacteria and infection was not proven until Pasteur's Germ Theory in 1861."
+            },
+            {
+              "question": "Which ancient Roman medical authority had dominated European medical education for over 1,400 years prior to the Renaissance, whose dogma was finally challenged by the new spirit of Humanist enquiry?",
+              "options": [
+                "Claudius Galen",
+                "Edward Jenner",
+                "Alexander Fleming",
+                "Ambroise Paré"
+              ],
+              "answer": "Claudius Galen",
+              "explanation": "Galen’s theories (such as the Four Humours and the liver manufacturing blood) dominated medieval medicine with the blessing of the Catholic Church until Renaissance humanism and empirical observation proved many of his anatomical claims false."
+            },
+            {
+              "question": "What was the central philosophy of the Renaissance Humanist movement that transformed European science and medicine in the early 1500s?",
+              "options": [
+                "Rejecting all ancient books and burning university libraries.",
+                "Rediscovering original classical texts, questioning medieval translations, and promoting empirical observation and human reason.",
+                "Mandating that all medical operations be conducted by Church clergy.",
+                "Insisting that the Four Humours were identical to the movement of stars and planets."
+              ],
+              "answer": "Rediscovering original classical texts, questioning medieval translations, and promoting empirical observation and human reason.",
+              "explanation": "Humanism encouraged scholars to bypass corrupt medieval monastic translations, study original Greek manuscripts directly, and use empirical observation rather than blind faith to understand the natural world."
             }
           ],
           "flashcards": [
@@ -23560,6 +23582,28 @@
               ],
               "answer": "Scientists had no understanding that bacteria caused human disease or infection.",
               "explanation": "Although Leeuwenhoek observed living microbes, physicians still believed disease was caused by miasma or humoural imbalance; the link between bacteria and infection was not proven until Pasteur's Germ Theory in 1861."
+            },
+            {
+              "question": "What was the official Latin motto of the Royal Society, founded in London in 1660, and what did it signal for the development of scientific medicine?",
+              "options": [
+                "\"Deus Vult\" (God wills it), signalling that medical cures required religious devotion.",
+                "\"Nullius in Verba\" (Take nobody's word for it), signalling a commitment to empirical evidence and experimentation over ancient textbook authority.",
+                "\"Festina Lente\" (Make haste slowly), signalling that new surgical operations should be delayed.",
+                "\"In Vino Veritas\" (In wine there is truth), signalling the use of alcohol as the primary Renaissance cure."
+              ],
+              "answer": "\"Nullius in Verba\" (Take nobody's word for it), signalling a commitment to empirical evidence and experimentation over ancient textbook authority.",
+              "explanation": "The Royal Society's motto \"Nullius in Verba\" reflected the revolutionary Renaissance scientific method: demanding physical evidence, reproducible experiments, and peer review rather than trusting ancient authorities like Galen."
+            },
+            {
+              "question": "How did Johannes Gutenberg's movable-type printing press (invented c.1440) transform medical learning during the Renaissance?",
+              "options": [
+                "It allowed rapid, identical duplication of medical textbooks and detailed anatomical illustrations, breaking Church control over knowledge dissemination.",
+                "It made hand-copied manuscripts cheaper and easier to produce in monastic scriptoria.",
+                "It completely eliminated all Latin medical books in favour of English only.",
+                "It was only used for royal tax collection and had no effect on medicine."
+              ],
+              "answer": "It allowed rapid, identical duplication of medical textbooks and detailed anatomical illustrations, breaking Church control over knowledge dissemination.",
+              "explanation": "Before the printing press, books were laboriously hand-copied by monks who censored ideas contrary to Church dogma. The press allowed medical ideas and accurate anatomical diagrams to spread rapidly across Europe without human copying errors."
             }
           ]
         },
@@ -23949,6 +23993,28 @@
               ],
               "answer": "He believed practical bedside observation of symptoms was far more useful for curing patients than gazing at microscopic structures.",
               "explanation": "Sydenham was a staunch pragmatist; he felt looking at microbes did nothing to help a doctor relieve pain or manage disease symptoms at the patient's bedside."
+            },
+            {
+              "question": "What famous advice did Thomas Sydenham give to young medical students regarding the best place to understand disease, breaking away from ancient textbook memorisation?",
+              "options": [
+                "\"You must consult the stars; there alone destiny is revealed.\"",
+                "\"You must inspect the urine matula; there alone the humours show their balance.\"",
+                "\"You must go to the bedside; there alone you can learn disease.\"",
+                "\"You must read Aristotle; there alone pure reason exists.\""
+              ],
+              "answer": "\"You must go to the bedside; there alone you can learn disease.\"",
+              "explanation": "Sydenham insisted that true clinical medicine could not be learned from university libraries or astrological charts, but only by directly observing living patients at the bedside and recording their symptom progression."
+            },
+            {
+              "question": "Despite his pioneering empirical diagnostic methods, in what major way did Thomas Sydenham demonstrate continuity with medieval medical practice?",
+              "options": [
+                "He refused to treat any patients who were not ordained Catholic priests.",
+                "He still believed disease was influenced by atmospheric miasmas and continued prescribing traditional bloodletting and purging.",
+                "He outlawed the use of foreign botanical medicines throughout London.",
+                "He performed public human dissections in university theatres."
+              ],
+              "answer": "He still believed disease was influenced by atmospheric miasmas and continued prescribing traditional bloodletting and purging.",
+              "explanation": "Because germ theory and microscopes were not understood clinically in the 17th century, Sydenham still attributed fevers to toxic air (miasma) and routinely bled and purged patients when modern remedies were unavailable."
             }
           ],
           "flashcards": [
@@ -24099,6 +24165,28 @@
               ],
               "answer": "He believed practical bedside observation of symptoms was far more useful for curing patients than gazing at microscopic structures.",
               "explanation": "Sydenham was a staunch pragmatist; he felt looking at microbes did nothing to help a doctor relieve pain or manage disease symptoms at the patient's bedside."
+            },
+            {
+              "question": "What foundational textbook did Thomas Sydenham publish in 1676, in which he classified diseases into specific families just as a botanist classifies plants?",
+              "options": [
+                "Observationes Medicae",
+                "De Motu Cordis",
+                "De Humani Corporis Fabrica",
+                "Canon of Medicine"
+              ],
+              "answer": "Observationes Medicae",
+              "explanation": "In Observationes Medicae (1676), Sydenham argued that diseases had distinct identities and symptoms that could be categorized scientifically like plant species."
+            },
+            {
+              "question": "How did Thomas Sydenham radically alter the treatment of smallpox, breaking with traditional Galenic heating methods?",
+              "options": [
+                "He ordered windows closed, heavy blankets piled on, and massive bloodletting.",
+                "He prescribed fresh cold air, light blankets, and cooling drinks rather than suffocating heat.",
+                "He injected patients with live smallpox scabs directly into their veins.",
+                "He forced patients to ingest crushed pearls and drink boiled gold."
+              ],
+              "answer": "He prescribed fresh cold air, light blankets, and cooling drinks rather than suffocating heat.",
+              "explanation": "Sydenham pioneered the \"cool treatment\" for smallpox, opening windows to ventilate sickrooms and removing heavy blankets, which dramatically reduced patient mortality compared to traditional heating regimens."
             }
           ]
         },
@@ -24505,6 +24593,28 @@
               ],
               "answer": "Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.",
               "explanation": "While Vesalius created accurate surgical anatomy, doctors still had no effective anaesthetics, antiseptics, or knowledge of germs, meaning patients still faced the same fatal risks from disease."
+            },
+            {
+              "question": "How did Andreas Vesalius revolutionize the teaching of anatomy in university lecture theatres, as famously depicted in the frontispiece of De Humani Corporis Fabrica (1543)?",
+              "options": [
+                "He sat in an elevated chair (cathedra) reading Galen aloud while a barber-surgeon dissected.",
+                "He forbade medical students from ever entering the dissection room.",
+                "He stepped down to personally dissect human cadavers with his own hands directly before his students.",
+                "He used wax models and refused to touch human corpses."
+              ],
+              "answer": "He stepped down to personally dissect human cadavers with his own hands directly before his students.",
+              "explanation": "Unlike medieval professors who sat high above the corpse reading classical Galen while barber-surgeons cut, Vesalius personally performed human dissections, demonstrating anatomical structures directly to his students."
+            },
+            {
+              "question": "How did Andreas Vesalius ensure that his anatomical corrections to Galen were communicated accurately across Europe without being distorted by copyists?",
+              "options": [
+                "He secretly hand-wrote only three copies and kept them locked in Padua.",
+                "He used the movable-type printing press to publish over 200 meticulously accurate woodcut illustrations produced by master Renaissance artists.",
+                "He whispered his findings to passing travellers to avoid Church detection.",
+                "He etched his diagrams onto copper coins distributed to Italian merchants."
+              ],
+              "answer": "He used the movable-type printing press to publish over 200 meticulously accurate woodcut illustrations produced by master Renaissance artists.",
+              "explanation": "By publishing De Fabrica (1543) in Basel with over 200 detailed woodcuts carved by artists from Titian's workshop in Venice, Vesalius provided European physicians with identical, peerless anatomical reference maps."
             }
           ],
           "flashcards": [
@@ -24655,6 +24765,28 @@
               ],
               "answer": "Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.",
               "explanation": "While Vesalius created accurate surgical anatomy, doctors still had no effective anaesthetics, antiseptics, or knowledge of germs, meaning patients still faced the same fatal risks from disease."
+            },
+            {
+              "question": "At which prestigious Italian university was Andreas Vesalius appointed professor of surgery and anatomy, where he personally performed dissections before large student audiences?",
+              "options": [
+                "University of Oxford",
+                "University of Paris",
+                "University of Padua",
+                "University of Bologna"
+              ],
+              "answer": "University of Padua",
+              "explanation": "At the University of Padua in Italy, Vesalius broke with medieval custom by stepping down from the high lecturer's chair to dissect human corpses with his own hands before crowds of medical students."
+            },
+            {
+              "question": "How did Andreas Vesalius obtain human bodies for anatomical dissection during his early research in Paris and Louvain?",
+              "options": [
+                "He paid living volunteers large sums of money to undergo operations.",
+                "He secretly stole corpses from the roadside gallows and raided cemetery burial grounds at night.",
+                "He ordered bodies preserved in ice from Scandinavia.",
+                "He was provided bodies exclusively by the Pope in Rome."
+              ],
+              "answer": "He secretly stole corpses from the roadside gallows and raided cemetery burial grounds at night.",
+              "explanation": "Driven by a relentless quest for anatomical accuracy, the young Vesalius stole rotting bones from roadside gallows outside Louvain and smuggled executed criminals' corpses into his lodgings to dissect them."
             }
           ]
         },
@@ -25021,6 +25153,28 @@
               ],
               "answer": "Many called him a 'quack' or lunatic and refused to abandon Galen's teachings during their lifetimes.",
               "explanation": "Conservative doctors fiercely resisted Harvey because accepting circulation meant admitting Galen was wrong and undermined centuries of traditional bloodletting practice."
+            },
+            {
+              "question": "What mechanical device from the Scientific Revolution did William Harvey compare the human heart to, disproving the ancient idea that the heart acted like an open furnace?",
+              "options": [
+                "A water pump with mechanical valves operating on hydrodynamic principles.",
+                "An hourglass measuring the sands of biological time.",
+                "A windmill grinding nutrients into animal spirits.",
+                "A magnetic compass guiding blood along planetary meridians."
+              ],
+              "answer": "A water pump with mechanical valves operating on hydrodynamic principles.",
+              "explanation": "Influenced by modern Renaissance engineering and mechanical pumps, Harvey recognized that the heart was a muscular pump whose contractions drove blood through one-way valves in a continuous closed circuit."
+            },
+            {
+              "question": "Which English monarchs did William Harvey serve as personal royal physician, granting him access to royal deer herds for dissecting beating hearts?",
+              "options": [
+                "King Henry VIII and Queen Mary I",
+                "Queen Elizabeth I and King Edward VI",
+                "King George III and Queen Victoria",
+                "King James I and King Charles I"
+              ],
+              "answer": "King James I and King Charles I",
+              "explanation": "As royal physician to King James I and King Charles I, Harvey was granted permission to dissect pregnant deer from Windsor Park to study embryonic development and living heart contractions."
             }
           ],
           "flashcards": [
@@ -25151,6 +25305,28 @@
               ],
               "answer": "Many called him a 'quack' or lunatic and refused to abandon Galen's teachings during their lifetimes.",
               "explanation": "Conservative doctors fiercely resisted Harvey because accepting circulation meant admitting Galen was wrong and undermined centuries of traditional bloodletting practice."
+            },
+            {
+              "question": "What mechanical device from the Scientific Revolution did William Harvey compare the human heart to, disproving the ancient idea that the heart acted like an open furnace?",
+              "options": [
+                "A water pump with mechanical valves operating on hydrodynamic principles.",
+                "An hourglass measuring the sands of biological time.",
+                "A windmill grinding nutrients into animal spirits.",
+                "A magnetic compass guiding blood along planetary meridians."
+              ],
+              "answer": "A water pump with mechanical valves operating on hydrodynamic principles.",
+              "explanation": "Influenced by modern Renaissance engineering and mechanical pumps, Harvey recognized that the heart was a muscular pump whose contractions drove blood through one-way valves in a continuous closed circuit."
+            },
+            {
+              "question": "Which English monarchs did William Harvey serve as personal royal physician, granting him access to royal deer herds for dissecting beating hearts?",
+              "options": [
+                "King Henry VIII and Queen Mary I",
+                "Queen Elizabeth I and King Edward VI",
+                "King George III and Queen Victoria",
+                "King James I and King Charles I"
+              ],
+              "answer": "King James I and King Charles I",
+              "explanation": "As royal physician to King James I and King Charles I, Harvey was granted permission to dissect pregnant deer from Windsor Park to study embryonic development and living heart contractions."
             }
           ]
         },
@@ -25539,6 +25715,28 @@
               ],
               "answer": "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
               "explanation": "Despite the scientific revolution, ordinary 1665 medicine remained trapped in ancient dogma: people still blamed God and bad air, and physicians remained helpless to stop the epidemic."
+            },
+            {
+              "question": "What distinctive protective costume was worn by Renaissance plague doctors in 1665, illustrating the persistent belief that disease was transmitted through foul air?",
+              "options": [
+                "White cotton scrubs soaked in antiseptic carbolic acid.",
+                "Full steel armour with an airtight diving helmet.",
+                "Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.",
+                "Woollen monk robes with a red wooden cross tied to the chest."
+              ],
+              "answer": "Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.",
+              "explanation": "Plague doctors wore thick waxed coats to prevent bodily fluids soaking through and beak masks stuffed with aromatic herbs to neutralise deadly 'miasma' (bad air)."
+            },
+            {
+              "question": "What public health orders were enforced by the Lord Mayor and aldermen of London in 1665 to contain the spread of the Great Plague?",
+              "options": [
+                "Mandatory vaccination of all infants with cowpox lymph.",
+                "Closing all water pumps throughout the Soho district of London.",
+                "Draining all marshes and spraying chemical insecticides across the city.",
+                "Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits."
+              ],
+              "answer": "Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.",
+              "explanation": "The Mayor's 1665 Plague Orders shut down theatres and public gatherings, ordered large fires burned in streets to cleanse miasma, and deployed nocturnal 'dead-carts' accompanied by handbells and cries of 'Bring out your dead!'"
             }
           ],
           "flashcards": [
@@ -25687,6 +25885,28 @@
               ],
               "answer": "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
               "explanation": "Despite the scientific revolution, ordinary 1665 medicine remained trapped in ancient dogma: people still blamed God and bad air, and physicians remained helpless to stop the epidemic."
+            },
+            {
+              "question": "What distinctive protective costume was worn by Renaissance plague doctors in 1665, illustrating the persistent belief that disease was transmitted through foul air?",
+              "options": [
+                "White cotton scrubs soaked in antiseptic carbolic acid.",
+                "Full steel armour with an airtight diving helmet.",
+                "Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.",
+                "Woollen monk robes with a red wooden cross tied to the chest."
+              ],
+              "answer": "Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.",
+              "explanation": "Plague doctors wore thick waxed coats to prevent bodily fluids soaking through and beak masks stuffed with aromatic herbs to neutralise deadly 'miasma' (bad air)."
+            },
+            {
+              "question": "What public health orders were enforced by the Lord Mayor and aldermen of London in 1665 to contain the spread of the Great Plague?",
+              "options": [
+                "Mandatory vaccination of all infants with cowpox lymph.",
+                "Closing all water pumps throughout the Soho district of London.",
+                "Draining all marshes and spraying chemical insecticides across the city.",
+                "Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits."
+              ],
+              "answer": "Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.",
+              "explanation": "The Mayor's 1665 Plague Orders shut down theatres and public gatherings, ordered large fires burned in streets to cleanse miasma, and deployed nocturnal 'dead-carts' accompanied by handbells and cries of 'Bring out your dead!'"
             }
           ]
         },
