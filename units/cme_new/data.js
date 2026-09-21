@@ -5113,8 +5113,8 @@ export const unitData = {
             question:
               'Study Source B. How does the physical elevation of the Golan Heights shown in Source B explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
             type: 'visual',
-            src: '/images/map_golan_heights_1967_vector.svg',
-            image: '/images/map_golan_heights_1967_vector.svg',
+            src: '/images/cme_golan_heights_relief_map_1967.jpg',
+            image: '/images/cme_golan_heights_relief_map_1967.jpg',
           },
           tasks: [
             {
@@ -5300,8 +5300,8 @@ export const unitData = {
           hinge_question:
             'How does the physical elevation of the Golan Heights shown in Source B explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
           type: 'visual',
-          src: '/images/map_golan_heights_1967_vector.svg',
-          image: '/images/map_golan_heights_1967_vector.svg',
+          src: '/images/cme_golan_heights_relief_map_1967.jpg',
+          image: '/images/cme_golan_heights_relief_map_1967.jpg',
           question:
             'Study Source B. How does the physical elevation of the Golan Heights shown in Source B explain why border skirmishes between Israel and Syria were so difficult to resolve peacefully?',
         },
@@ -6572,8 +6572,8 @@ export const unitData = {
             question:
               'Study Source A. How does the geographical distribution of the territories shown in Source A explain why the Arab states demanded unconditional withdrawal before direct peace negotiations could begin?',
             type: 'visual',
-            src: '/images/map_1967_conquered_territories_vector.svg',
-            image: '/images/map_1967_conquered_territories_vector.svg',
+            src: '/images/cme_1967_occupied_territories_cia_map.png',
+            image: '/images/cme_1967_occupied_territories_cia_map.png',
           },
           tasks: [
             {
@@ -6712,7 +6712,8 @@ export const unitData = {
           title:
             'Act 4: The Historical Verdict & Extended Writing — The Roots of Entrenched Conflict',
           paragraphs: [
-            '<span class="para-ref">[4.1]</span> In the long term, the aftermath of the 1967 war fundamentally changed the character of the Arab-Israeli conflict. Instead of settling the dispute, the conquest of the Occupied Territories created a stubborn diplomatic stalemate. On the ground, Israel constructed extensive military fortifications—most notably the Bar-Lev Line along the Suez Canal—and subsidized civilian settlements in the West Bank and Gaza, cementing Israeli presence in the territories. In the Arab world, the humiliation of conventional defeat convinced Palestinians that Arab state governments would never liberate their land, accelerating the rise of independent guerrilla organisations like the PLO.\n\n<span class="para-ref">[4.2]</span> United Nations Resolution 242 remained the recognized framework for all future Middle East peace diplomacy for the next thirty years, but in the late 1960s, it proved completely incapable of bridging the divide. With Arab governments adhering strictly to the "Three Noes" of Khartoum and Israel refusing any unilateral withdrawal without direct peace treaties, the stage was set for the continuous artillery duels of the War of Attrition and, ultimately, the surprise assault of the 1973 Yom Kippur War.',
+            '<span class="para-ref">[4.1]</span> In the long term, the aftermath of the 1967 war fundamentally changed the character of the Arab-Israeli conflict. Instead of settling the dispute, the conquest of the Occupied Territories created a stubborn diplomatic stalemate. On the ground, Israel constructed extensive military fortifications—most notably the Bar-Lev Line along the Suez Canal—and subsidized civilian settlements in the West Bank and Gaza, cementing Israeli presence in the territories. In the Arab world, the humiliation of conventional defeat convinced Palestinians that Arab state governments would never liberate their land, accelerating the rise of independent guerrilla organisations like the PLO.',
+            '<span class="para-ref">[4.2]</span> United Nations Resolution 242 remained the recognized framework for all future Middle East peace diplomacy for the next thirty years, but in the late 1960s, it proved completely incapable of bridging the divide. With Arab governments adhering strictly to the "Three Noes" of Khartoum and Israel refusing any unilateral withdrawal without direct peace treaties, the stage was set for the continuous artillery duels of the War of Attrition and, ultimately, the surprise assault of the 1973 Yom Kippur War.',
           ],
           tasks: [
             {
@@ -6789,8 +6790,8 @@ export const unitData = {
           hinge_question:
             'How does the geographical distribution of the territories shown in Source A explain why the Arab states demanded unconditional withdrawal before direct peace negotiations could begin?',
           type: 'visual',
-          src: '/images/map_1967_conquered_territories_vector.svg',
-          image: '/images/map_1967_conquered_territories_vector.svg',
+          src: '/images/cme_1967_occupied_territories_cia_map.png',
+          image: '/images/cme_1967_occupied_territories_cia_map.png',
           question:
             'Study Source A. How does the geographical distribution of the territories shown in Source A explain why the Arab states demanded unconditional withdrawal before direct peace negotiations could begin?',
         },

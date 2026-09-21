@@ -1507,10 +1507,18 @@ window.startQuiz = function (lessonId, isFullscreen = false) {
   const rawQuiz = lesson.quiz || lesson.quick_quiz || lesson.quiz_questions || [];
   if (!rawQuiz || rawQuiz.length === 0) return;
 
-  // Set topic badge
+  // Set topic badge with clean concise Key Topic text for mobile
   const badge = document.getElementById('quiz-lesson-badge');
   if (badge) {
-    badge.innerText = lesson.title || 'Retrieval Practice';
+    let cleanBadge = 'RETRIEVAL PRACTICE';
+    const ktMatch = (lesson.title || '').match(/KT\s*(\d+)/i);
+    if (ktMatch) {
+      cleanBadge = 'KEY TOPIC ' + ktMatch[1];
+    } else if (lesson.title) {
+      let t = lesson.title.replace(/^Enquiry:\s*/i, '');
+      cleanBadge = t.length > 25 ? t.slice(0, 23).trim() + '…' : t;
+    }
+    badge.innerText = cleanBadge;
   }
 
   window.currentQuizData = rawQuiz.map((q) => {
@@ -1733,6 +1741,11 @@ window.finishQuizModal = function () {
   const total = window.currentQuizData.length;
   const pct = Math.round((score / total) * 100);
   const lessonId = window.currentQuizLessonId;
+
+  const progPill = document.getElementById('quiz-progress');
+  if (progPill) progPill.innerText = `${total} / ${total}`;
+  const progBar = document.getElementById('quiz-progress-bar');
+  if (progBar) progBar.style.width = '100%';
 
   // Retrieve previous attempt from LocalStorage
   let prevRecord = null;

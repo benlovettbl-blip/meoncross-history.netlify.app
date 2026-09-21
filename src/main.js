@@ -256,16 +256,20 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Direct Fullscreen Mobile QR Quiz Experience
+    const quizParam = (urlParams.get('quiz') || '').toLowerCase();
     const isQuizRequested =
-      urlParams.get('quiz') === 'true' ||
-      urlParams.get('quiz') === '1' ||
+      quizParam === 'true' ||
+      quizParam === '1' ||
+      quizParam === 'kt1' ||
+      quizParam === 'kt2' ||
+      quizParam === 'kt3' ||
       urlParams.get('view') === 'quiz';
 
     if (isQuizRequested && typeof window.startQuiz === 'function') {
-      const lessonIdx =
+      let lessonIdx =
         initialLesson !== null && !isNaN(parseInt(initialLesson, 10))
           ? parseInt(initialLesson, 10)
-          : 0;
+          : (quizParam === 'kt2' ? 4 : (quizParam === 'kt3' ? 9 : 0));
       const unitData =
         window.currentUnitData ||
         (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);

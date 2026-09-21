@@ -29,6 +29,7 @@
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
+const QRCode = require('qrcode');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const dataPath = path.join(ROOT_DIR, 'units', 'cme_new', 'data.js');
@@ -126,20 +127,29 @@ function extractDate(source) {
   return source.date || '1964–1973';
 }
 
-function getCleanSectionTitle(rawTitle, sectionNum) {
-  if (!rawTitle) return `${sectionNum}. Historical Analysis`;
+function getCleanSectionTitle(rawTitle) {
+  if (!rawTitle) return 'Historical Analysis';
   let clean = rawTitle.replace(/^Act\s+\d+\s*:\s*[^—–-]+[—–-]\s*/i, '').trim();
-  if (sectionNum === 4 && !/^Historical Debate/i.test(clean)) {
-    clean = `Historical Debate: ${clean}`;
-  }
-  return `${sectionNum}. ${clean}`;
+  clean = clean.replace(/^Act\s+\d+\s*:\s*/i, '').replace(/^Historical Debate\s*:\s*/i, '').trim();
+  return clean;
 }
 
 /**
  * Builds the complete 12-page Publisher-Standard Textbook HTML
  */
-function buildPublisherTextbookHtml() {
+async function buildPublisherTextbookHtml() {
   const coverBase64 = getBase64Image('/units/cme_new/assets/kt2_cover.jpg');
+
+  // Generate high-contrast QR Code for Key Topic 2 interactive quiz & flashcards
+  const quizUrl = 'https://the-history-revision-hub.netlify.app/?unit=cme_new&quiz=true&lesson=4';
+  const qrDataUrl = await QRCode.toDataURL(quizUrl, {
+    width: 140,
+    margin: 1,
+    color: {
+      dark: '#0f172a',
+      light: '#ffffff',
+    },
+  });
 
   // Short enquiry descriptions for running headers
   const shortEnquiries = [
@@ -708,8 +718,10 @@ function buildPublisherTextbookHtml() {
       let sourceLetterCode = 65; // 'A'
 
       function renderActBlock(block, sectionNum) {
-        const cleanHeading = getCleanSectionTitle(block.title || block.act_title, sectionNum);
-        const paragraphs = block.paragraphs || (block.text ? [block.text] : []);
+        const cleanHeading = getCleanSectionTitle(block.title || block.act_title);
+        const rawParagraphs = (block.paragraphs || (block.text ? [block.text] : []))
+          .flatMap(p => String(p).split(/\n\n+/))
+          .filter(p => p.trim().length > 0);
         const source = block.source;
 
         let sourceHtml = '';
@@ -767,9 +779,8 @@ function buildPublisherTextbookHtml() {
         return `
           <div class="section-banner">
             <span class="section-title">${cleanHeading}</span>
-            <span class="section-num">SECTION ${sectionNum}</span>
           </div>
-          ${paragraphs
+          ${rawParagraphs
             .map((p, pIdx) => {
               const cleanP = String(p)
                 .replace(/^<span class="para-ref">.*?<\/span>\s*/i, '')
@@ -940,35 +951,80 @@ function buildPublisherTextbookHtml() {
         </table>
       </div>
 
-      <!-- Disciplinary Glossary & Exam Architecture Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px;">
+      <!-- Disciplinary Glossary & Exam Architecture Grid (Hybrid Powerhouse) -->
+      <div style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 8px; margin-bottom: 5px;">
         
         <!-- Core Conceptual Vocabulary -->
-        <div style="border: 1.5px solid #cbd5e1; border-radius: 4px; padding: 6px 10px; background: #f8fafc;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+        <div style="border: 1.5px solid #cbd5e1; border-radius: 4px; padding: 6px 9px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; display: block; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 4px; letter-spacing: 0.4px;">
             Key Topic 2 Disciplinary Terminology
           </strong>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.35; color: #334155;">
-            <div><strong>Casus Belli:</strong> An act or event that provokes or is used to justify war (e.g. closing the Straits of Tiran).</div>
-            <div><strong>Pre-emption:</strong> Launching a military strike to disrupt an imminent and inevitable enemy attack.</div>
-            <div><strong>UNEF:</strong> United Nations Emergency Force deployed in Sinai to maintain buffer between Egypt and Israel.</div>
-            <div><strong>Bar-Lev Line:</strong> Massive chain of Israeli sand fortifications and strongpoints built along the east bank of Suez.</div>
-            <div><strong>OPEC Oil Weapon:</strong> Arab production cuts and embargo against nations supporting Israel during the 1973 war.</div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; line-height: 1.32; color: #334155; display: flex; flex-direction: column; gap: 3.5px;">
+            <div>&bull; <strong>Casus Belli:</strong> An act or event that provokes or justifies war (e.g. Nasser's closure of the Straits of Tiran on 22 May 1967).</div>
+            <div>&bull; <strong>Pre-emption:</strong> Launching a military strike to disrupt an imminent and inevitable enemy attack (e.g. Operation Focus dawn airstrike, 5 June 1967).</div>
+            <div>&bull; <strong>UNEF:</strong> United Nations Emergency Force deployed in Sinai to maintain peace buffer between Egypt and Israel; expelled by Nasser in May 1967.</div>
+            <div>&bull; <strong>Bar-Lev Line:</strong> Massive chain of Israeli sand ramparts and concrete fortified strongpoints along the east bank of the Suez Canal.</div>
+            <div>&bull; <strong>OPEC Oil Weapon:</strong> Arab production cutbacks and selective embargo against Western nations supporting Israel during the 1973 Yom Kippur War.</div>
           </div>
         </div>
 
-        <!-- Examination Question Structure -->
-        <div style="border: 1.5px solid #cbd5e1; border-radius: 4px; padding: 6px 10px; background: #f8fafc;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #0f172a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
-            Edexcel Paper 2 Exam Framework (Middle East)
-          </strong>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.35; color: #334155;">
-            <div><strong>Q1: Explain ONE consequence of... [4 Marks]:</strong> Focus directly on immediate and long-term results with precise contextual evidence.</div>
-            <div><strong>Q2: Write an analytical narrative explaining... [8 Marks]:</strong> Sequence causes, events, and results in precise chronological order using causal connectives.</div>
-            <div><strong>Q3: Explain the importance of... for... [8 Marks]:</strong> Analyse significance and causal transformation for international relations.</div>
+        <!-- Examination Question Structure with Concrete Specification Models -->
+        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 6px 9px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.4px;">
+              Edexcel Paper 2 Exam Framework &amp; Models
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; background: #0f172a; color: #fff; padding: 1px 5px; border-radius: 2px;">
+              32 MARKS TOTAL
+            </span>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; line-height: 1.3; color: #1e293b; display: flex; flex-direction: column; gap: 3.5px;">
+            <div style="background: #f8fafc; border-left: 2.5px solid #1e3a8a; padding: 2.5px 5px; border-radius: 0 2px 2px 0;">
+              <span style="font-weight: 800; color: #1e3a8a;">Q1: Explain ONE consequence of... [4 Marks]</span><br>
+              <em>Model Question:</em> &ldquo;Explain one consequence of the closure of the Straits of Tiran in May 1967.&rdquo;<br>
+              <span style="color: #64748b; font-size: 6.3pt; font-weight: 600;">Formula: Trigger &rarr; Direct strategic impact on Israel &rarr; Escalation to war. (1 paragraph)</span>
+            </div>
+            <div style="background: #f8fafc; border-left: 2.5px solid #b45309; padding: 2.5px 5px; border-radius: 0 2px 2px 0;">
+              <span style="font-weight: 800; color: #b45309;">Q2: Write an analytical narrative explaining... [8 Marks]</span><br>
+              <em>Model Question:</em> &ldquo;Write an analytical narrative explaining the outbreak of the Six-Day War (1967). You may use: (1) National Water Carrier, (2) Expulsion of UNEF.&rdquo;<br>
+              <span style="color: #64748b; font-size: 6.3pt; font-weight: 600;">Formula: 3 chronological stages linked with causal connectives (&lsquo;Consequently&rsquo;, &lsquo;As a direct result&rsquo;).</span>
+            </div>
+            <div style="background: #f8fafc; border-left: 2.5px solid #15803d; padding: 2.5px 5px; border-radius: 0 2px 2px 0;">
+              <span style="font-weight: 800; color: #15803d;">Q3: Explain the importance of... for... [8 Marks]</span><br>
+              <em>Model Question:</em> &ldquo;Explain the importance of UN Security Council Resolution 242 (1967) for Middle East peace diplomacy.&rdquo;<br>
+              <span style="color: #64748b; font-size: 6.3pt; font-weight: 600;">Formula: 2 PEEL paragraphs explaining &lsquo;What difference did X make to Y?&rsquo;</span>
+            </div>
           </div>
         </div>
 
+      </div>
+
+      <!-- Interactive Digital Retrieval & Revision Hub (Full-Width Strip) -->
+      <div style="border: 1.5px solid #1e3a8a; border-left: 4.5px solid #1e3a8a; border-radius: 4px; padding: 6px 10px; background: #f8fafc; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px;">
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2.5px;">
+            <span style="background: #1e3a8a; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; padding: 1.5px 6px; border-radius: 2px; letter-spacing: 0.5px;">
+              Interactive Digital Retrieval Hub
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.3px;">
+              Key Topic 2 Knowledge Quiz &amp; Flashcards
+            </span>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; line-height: 1.34; margin-bottom: 3.5px;">
+            Scan the QR code with any smartphone or tablet camera to launch the interactive, self-marking retrieval bank for Key Topic 2. Test your rapid recall across the 1964 Cairo Summit, Six-Day War, Resolution 242, Black September, and the Yom Kippur War with instant model answers and scoring.
+          </div>
+          <div style="display: flex; gap: 10px; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #475569;">
+            <span>&bull; 20 Specification Recall Questions</span>
+            <span>&bull; Instant Self-Marking &amp; Explanations</span>
+            <span>&bull; Digital Leitner Flashcard Deck</span>
+          </div>
+        </div>
+        <div style="text-align: center; flex-shrink: 0; display: flex; flex-direction: column; align-items: center;">
+          <img src="${qrDataUrl}" alt="Key Topic 2 Quiz QR" style="width: 22mm; height: 22mm; display: block; border: 1px solid #cbd5e1; border-radius: 3px; padding: 1px; background: #fff;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; margin-top: 2px; letter-spacing: 0.3px;">
+            Scan for Mobile Quiz
+          </span>
+        </div>
       </div>
 
       <!-- Back Cover Footer -->
@@ -989,7 +1045,7 @@ function buildPublisherTextbookHtml() {
     '🚀 Compiling Publisher-Level Standard Textbook Pilot for Middle East Key Topic 2...',
   );
 
-  const htmlContent = buildPublisherTextbookHtml();
+  const htmlContent = await buildPublisherTextbookHtml();
 
   // Save HTML companion
   const htmlOutputDir = path.join(ROOT_DIR, 'public', 'units', 'cme_new');
