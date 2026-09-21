@@ -82,6 +82,7 @@ async function buildPublisherTextbookHtmlKT3() {
 
   // Images for sources and key figures
   const sinaiMap = getBase64Image('images/cme_sinai_peninsula_map.jpg');
+  const arafatUNPhoto = getBase64Image('images/cme_arafat_un_1974.png');
   const cardKissinger =
     getBase64Image('units/cme_new/assets/henry_kissinger.jpg') ||
     getBase64Image('units/cme_new/assets/card_carter.png');
@@ -91,15 +92,21 @@ async function buildPublisherTextbookHtmlKT3() {
   const cardBegin = getBase64Image('units/cme_new/assets/card_begin.png');
 
   const lebanonMap = getBase64Image('images/cme_lebanon_1982_campaign_map.png');
+  const litaniMap =
+    getBase64Image('images/cme_operation_litani_1978_map.jpg') ||
+    getBase64Image('images/cme_unifil_lebanon_map.jpg');
   const cardSharon = getBase64Image('units/cme_new/assets/card_sharon.png');
 
   const intifadaPhoto = getBase64Image('units/cme_new/assets/first_intifada.png');
+  const intifadaEscalation = getBase64Image('units/cme_new/assets/intifada_escalation.svg');
   const madridPhoto = getBase64Image('images/cme_madrid_conference_1991.jpg');
   const cardArafat = getBase64Image('units/cme_new/assets/card_arafat.png');
 
-  const osloMap =
-    getBase64Image('units/cme_new/assets/cme_oslo_ii_official_map.jpg') ||
-    getBase64Image('images/cme_west_bank_oslo_areas.png');
+  const osloHandshake = getBase64Image('images/oslo_handshake.jpg');
+  const israelJordanChart = getBase64Image('units/cme_new/assets/israel_jordan.svg');
+  const osloAreasMap =
+    getBase64Image('images/cme_oslo_areas_map.png') ||
+    getBase64Image('units/cme_new/assets/cme_oslo_ii_official_map.jpg');
   const cardRabin = getBase64Image('units/cme_new/assets/card_rabin.png');
 
   return `<!DOCTYPE html>
@@ -120,8 +127,8 @@ async function buildPublisherTextbookHtmlKT3() {
 
     body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.8pt;
-      line-height: 1.44;
+      font-size: 9.6pt;
+      line-height: 1.47;
       color: #1c1917;
       background: #ffffff;
       margin: 0;
@@ -339,8 +346,9 @@ async function buildPublisherTextbookHtmlKT3() {
     }
     .archival-image {
       width: 100%;
-      max-height: 125px;
-      object-fit: cover;
+      max-height: 155px;
+      object-fit: contain;
+      background: #fafaf9;
       border-radius: 3px;
       margin: 4px 0;
       border: 1px solid #cbd5e1;
@@ -476,6 +484,123 @@ async function buildPublisherTextbookHtmlKT3() {
     .kf-actions-list li {
       margin-bottom: 1.5px;
     }
+
+    /* Full-Width Bottom Enquiry Deck (Pinned to bottom of page container) */
+    .bottom-enquiry-box {
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 2px;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-top: 3px solid #1e3a8a;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .beb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    .beb-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #1e3a8a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .beb-badge {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #0f172a;
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .beb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      font-size: 7.2pt;
+      line-height: 1.35;
+      color: #334155;
+    }
+    .beb-col strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      font-size: 6.6pt;
+      letter-spacing: 0.03em;
+    }
+
+    /* Full-Width Bottom Vocabulary Deck (Pinned to bottom of left page container) */
+    .bottom-vocab-box {
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 2px;
+      padding: 6px 10px;
+      background: #fdfaf6;
+      border: 1.5px solid #fed7aa;
+      border-top: 3px solid #b45309;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .bvb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #fed7aa;
+      padding-bottom: 2px;
+    }
+    .bvb-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #92400e;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .bvb-badge {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #b45309;
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .bvb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      font-size: 7.0pt;
+      line-height: 1.34;
+      color: #334155;
+    }
+    .bvb-col {
+      background: #ffffff;
+      padding: 4px 7px;
+      border: 1px solid #ffedd5;
+      border-left: 2.5px solid #b45309;
+      border-radius: 3px;
+    }
+    .bvb-col strong {
+      display: block;
+      color: #7c2d12;
+      margin-bottom: 2px;
+      font-size: 6.7pt;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
   </style>
 </head>
 <body>
@@ -520,7 +645,7 @@ async function buildPublisherTextbookHtmlKT3() {
 
       <!-- Master Wide Photographic Plate (White House Lawn Handshake, 13 September 1993) -->
       <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 5px; display: flex; flex-direction: column;">
-        <div style="height: 98mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+        <div style="height: 87mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
           <img src="${coverBase64}" alt="Signing of the Oslo Accords, White House Lawn (13 September 1993)" style="height: 100%; max-width: 100%; object-fit: contain; display: block;">
         </div>
         <div style="border-top: 1.5px solid #000; padding: 4px 10px; background: #fff;">
@@ -552,10 +677,11 @@ async function buildPublisherTextbookHtmlKT3() {
           <span style="font-size: 7.0pt; letter-spacing: 0.5px;">Key Topic 3 Coverage</span>
         </div>
 
-        <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111; flex: 1;">
-          <!-- 3.1 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
+        <div style="padding: 6px 10px 10px 10px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+          <!-- Row 1: 3-column specification bullets -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111;">
+            <!-- 3.1 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 3.1 Diplomacy &amp; Camp David, 1974–79
               </strong>
@@ -566,54 +692,8 @@ async function buildPublisherTextbookHtmlKT3() {
               <div>&bull; <strong>Camp David Accords (1978)</strong> &amp; 1979 Washington Peace Treaty: Sinai returned to Egypt.</div>
             </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Shuttle Diplomacy &bull; Disengagement &bull; Land for Peace &bull; Normalisation &bull; Knesset
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
-              </div>
-            </div>
-
-            <!-- Chronological Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1974–75</span>
-                  <span>Kissinger's Shuttle Diplomacy</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1977</span>
-                  <span>Sadat Addresses Israeli Knesset</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1978</span>
-                  <span>Camp David Accords Brokered</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Mar 1979</span>
-                  <span>Egypt-Israel Peace Treaty Signed</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3.2 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
+            <!-- 3.2 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 3.2 The Palestinian Issue, 1974–93
               </strong>
@@ -624,53 +704,7 @@ async function buildPublisherTextbookHtmlKT3() {
               <div>&bull; <strong>Rise of Hamas (1987):</strong> Islamic Resistance Movement challenges secular PLO.</div>
             </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Olive Branch &bull; Buffer Zone &bull; Proxy Warfare &bull; Intifada &bull; Asymmetric Resistance
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q3 Causation [12m]</span>
-              </div>
-            </div>
-
-            <!-- Chronological Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1974</span>
-                  <span>Arafat Addresses UN General Assembly</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jun 1982</span>
-                  <span>Operation Peace for Galilee (Lebanon)</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1982</span>
-                  <span>Sabra and Shatila Refugee Massacres</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Dec 1987</span>
-                  <span>First Intifada Erupts in Gaza &amp; West Bank</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3.3 -->
-          <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <!-- 3.3 -->
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 3.3 Attempts at a Solution, 1988–95
@@ -681,47 +715,111 @@ async function buildPublisherTextbookHtmlKT3() {
               <div style="margin-bottom: 2.5px;">&bull; <strong>Palestinian Authority created:</strong> Limited self-rule in Gaza and Jericho; IDF withdrawal.</div>
               <div>&bull; <strong>Oslo II (1995) Areas A, B, C;</strong> extremist opposition; <strong>assassination of Rabin</strong> (Nov 1995).</div>
             </div>
+          </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Mutual Recognition &bull; Declaration of Principles &bull; Self-Determination &bull; Areas A, B, C &bull; Extremism
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
+          <!-- Row 2: Causal Chain of Events (Mathematically locked to exact same horizontal line) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 6px;">
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">1974–75</span>
+                    <span>Kissinger's Shuttle Diplomacy</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">May 1977</span>
+                    <span>Likud Victory: Menachem Begin PM</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Nov 1977</span>
+                    <span>Sadat Addresses Israeli Knesset</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1978</span>
+                    <span>Carter Brokers Camp David Accords</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Mar 1979</span>
+                    <span>Washington Treaty: Sinai Returned</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Chronological Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Nov 1974</span>
+                    <span>Arafat UN Address ('Olive Branch')</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Oct 1981</span>
+                    <span>Sadat Assassinated in Cairo</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jun 1982</span>
+                    <span>Operation Peace for Galilee: Lebanon</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1982</span>
+                    <span>Sabra &amp; Shatila Refugee Massacres</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Dec 1987</span>
+                    <span>First Intifada Erupts (Gaza &amp; West Bank)</span>
+                  </div>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Dec 1988</span>
-                  <span>Arafat Renounces Terror in Geneva</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
                 </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1991</span>
-                  <span>Madrid Peace Conference Convenes</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1993</span>
-                  <span>Oslo I Declaration of Principles</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1995</span>
-                  <span>Yitzhak Rabin Assassinated in Tel Aviv</span>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Oct 1991</span>
+                    <span>Madrid Peace Conference Convenes</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jun 1992</span>
+                    <span>Rabin &amp; Labor Win Election</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">13 Sep 93</span>
+                    <span>Oslo I White House Handshake</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1995</span>
+                    <span>Oslo II: West Bank Enclaves (A, B, C)</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">4 Nov 95</span>
+                    <span>Yitzhak Rabin Assassinated in Tel Aviv</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -803,6 +901,47 @@ async function buildPublisherTextbookHtmlKT3() {
         <span class="para-ref-pill">[1.4]</span>
         Kissinger's strategy yielded concrete breakthroughs. In January 1974, Egypt and Israel signed the <strong>Sinai I Disengagement Accord</strong>, pulling Israeli troops back from the canal and creating a UN-monitored buffer zone. In May 1974, Kissinger brokered a parallel Syrian-Israeli disengagement on the Golan Heights. In September 1975, the <strong>Sinai II Accord</strong> saw Israel withdraw further to the strategic Gidi and Mitla Passes, returning the Abu Rudeis oilfields to Egypt. In exchange, Egypt pledged non-belligerency, allowed non-military Israeli cargoes through the canal, and on 5 June 1975, officially reopened the <strong>Suez Canal</strong> to international commerce after eight years of closure.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">13 November 1974</span>
+        </div>
+        <div class="archival-title">Yasser Arafat Addresses the UN General Assembly in New York</div>
+        ${arafatUNPhoto ? `<img src="${arafatUNPhoto}" class="archival-image" alt="Yasser Arafat at the UN">` : ''}
+        <div class="archival-body">
+          Invited to address the UN General Assembly following the Arab League's recognition of the PLO at the Rabat Summit, Chairman Yasser Arafat declared: <em>"I have come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand."</em>
+        </div>
+        <div class="archival-footer">
+          <span>United Nations Audiovisual Library</span>
+          <span>General Assembly Plenary Meeting 2282, 13 November 1974</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>Shuttle Diplomacy:</strong>
+          Negotiation technique created by Henry Kissinger, flying between Middle Eastern capitals to broker pragmatic disengagement pacts.
+        </div>
+        <div class="bvb-col">
+          <strong>Sinai II Accord (1975):</strong>
+          Bilateral accord restoring Egyptian civilian control over Abu Rudeis oilfields and officially reopening the Suez Canal.
+        </div>
+        <div class="bvb-col">
+          <strong>Knesset Speech (1977):</strong>
+          President Anwar Sadat's historic journey to Jerusalem, addressing the Israeli parliament to break psychological barriers.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -845,6 +984,24 @@ async function buildPublisherTextbookHtmlKT3() {
         On 9 November 1977, Sadat announced to the Egyptian Parliament that he was prepared to go "to the ends of the earth—even to the Israeli Knesset" to discuss peace. Begin immediately issued a formal invitation. On 19 November 1977, Sadat's presidential aircraft landed at Ben-Gurion Airport, where he was greeted with full state honours by Begin and Golda Meir. The following day, Sadat addressed the Knesset in Jerusalem. While reaffirming that peace required total Israeli withdrawal from Arab lands captured in 1967 and the realization of Palestinian rights, Sadat declared unequivocally: <em>"No more war, no more bloodshed."</em> In a single stroke, the psychological barrier of hatred that had paralyzed Arab-Israeli relations for three decades was shattered.
       </div>
 
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Official Speech</span>
+          </div>
+          <span class="source-date-micro">20 November 1977</span>
+        </div>
+        <div class="archival-title">President Anwar Sadat Addresses the Israeli Knesset</div>
+        <div class="archival-body">
+          "I have not come to you to seek a separate peace between Egypt and Israel... I have come to you so that together we might build a durable peace based on justice... In the name of God, I tell you that we welcome you among us with full security and peace. No more war, no more bloodshed."
+        </div>
+        <div class="archival-footer">
+          <span>Knesset Parliamentary Record / Arab Republic of Egypt</span>
+          <span>Jerusalem Address, 20 November 1977</span>
+        </div>
+      </div>
+
       <!-- Key Figure Box: Henry Kissinger -->
       <div class="key-figure-box">
         <div class="kf-header">
@@ -867,6 +1024,28 @@ async function buildPublisherTextbookHtmlKT3() {
           <li><strong>Marginalised Soviet Influence:</strong> Exploited Egyptian frustration with Moscow to make the United States the sole indispensable mediator in the Middle East.</li>
           <li><strong>Secured Reopening of Suez:</strong> Brokered the 1975 Sinai II Accord, restoring international maritime shipping and reducing global oil tensions.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; SHUTTLE DIPLOMACY TO JERUSALEM</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Superpower Leverage:</strong>
+          How did Henry Kissinger's step-by-step 'shuttle diplomacy' realign Egypt away from Moscow and towards Washington?
+        </div>
+        <div class="beb-col">
+          <strong>2. Likud Realism:</strong>
+          Why was Menachem Begin willing to consider peace with Egypt while refusing territorial concessions in the West Bank?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Why did Anwar Sadat's 1977 journey to Jerusalem succeed in breaking psychological barriers where multilateral conferences failed?
+        </div>
       </div>
     </div>
 
@@ -945,6 +1124,46 @@ async function buildPublisherTextbookHtmlKT3() {
         <span class="para-ref-pill">[2.5]</span>
         <strong>2. Framework for Peace in the Middle East:</strong> Envisioned a five-year transitional period for the West Bank and Gaza Strip, during which Israeli military administration would be replaced by a self-governing Palestinian authority. However, this framework was left deliberately vague: Begin insisted 'autonomy' applied only to the people, not the land, and fiercely rejected any independent Palestinian state.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary Diplomatic Accord</span>
+          </div>
+          <span class="source-date-micro">17 September 1978</span>
+        </div>
+        <div class="archival-title">Extract from the Camp David Framework for Peace</div>
+        <div class="archival-body">
+          "Egypt and Israel agree that, in order to ensure peace in the area, a negotiated settlement between Israel and any of its neighbors who have not yet done so is essential... The parties agree that the basis for a peaceful settlement of the conflict is UN Security Council Resolution 242 in all its parts. A peace treaty between Israel and Egypt will be signed within three months, providing for the full exercise of Egyptian sovereignty up to the internationally recognized border between Egypt and mandated Palestine, and the complete withdrawal from the Sinai of Israeli armed forces."
+        </div>
+        <div class="archival-footer">
+          <span>White House Archival Record</span>
+          <span>Camp David Framework for Peace, Document No. 841</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>Camp David Accords:</strong>
+          Thirteen-day trilateral summit hosted by Jimmy Carter (1978), creating frameworks for bilateral peace and Palestinian autonomy.
+        </div>
+        <div class="bvb-col">
+          <strong>Treaty of Washington:</strong>
+          Formal 1979 peace treaty: Egypt recognized Israel; Israel evacuated the entire Sinai Peninsula and returned it to Egypt by 1982.
+        </div>
+        <div class="bvb-col">
+          <strong>Arab League Boycott:</strong>
+          The diplomatic expulsion and economic boycott of Egypt by Arab nations in outrage over concluding a separate peace with Israel.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -968,25 +1187,29 @@ async function buildPublisherTextbookHtmlKT3() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[2.6]</span>
-        On 26 March 1979, on the North Lawn of the White House, Sadat and Begin formally signed the <strong>Treaty of Peace between Egypt and Israel</strong>. The treaty ended 31 years of official state of war. Under the agreement, Israel completed its phased evacuation of Sinai by April 1982, forcibly removing resisting Jewish settlers from Yamit.
+        On 26 March 1979, on the North Lawn of the White House, Sadat and Begin formally signed the <strong>Treaty of Peace between Egypt and Israel</strong>. The treaty ended 31 years of official state of war. Under the agreement, Israel completed its phased evacuation of Sinai by April 1982, returning the oilfields and strategic mountain passes.
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[2.7]</span>
         The treaty was a profound strategic triumph for Israel. By neutralizing Egypt—the most populous Arab country and the only army capable of leading a multi-front assault—Israel eliminated the existential threat of a coordinated conventional invasion. The United States guaranteed the pact by granting massive annual military subsidies: approximately $3 billion to Israel and $2 billion to Egypt annually.
       </div>
+      <div class="numbered-para">
+        <span class="para-ref-pill">[2.8]</span>
+        <strong>The Yamit Resistance &amp; Sinai Evacuation (April 1982):</strong> The surrender of northern Sinai provoked intense domestic trauma within Israel. Ultra-nationalist religious settlers belonging to Gush Emunim barricaded themselves on rooftops and inside bunkers in the Mediterranean coastal town of Yamit, threatening mass suicide. Defence Minister Ariel Sharon deployed thousands of unarmed IDF soldiers to forcibly tear settlers away from their homes, before deploying military bulldozers to level Yamit's houses, schools, and civic buildings into the sand dunes to ensure settlers could never return.
+      </div>
 
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Archival Photograph</span>
           </div>
           <span class="source-date-micro">26 March 1979</span>
         </div>
         <div class="archival-title">Signing the Egypt-Israel Peace Treaty in Washington</div>
-        ${treatyHandshake ? `<img src="${treatyHandshake}" class="archival-image" alt="Treaty of Washington 1979">` : ''}
+        ${treatyHandshake ? `<img src="${treatyHandshake}" class="archival-image" style="width: 100%; height: auto; max-height: 145px; object-fit: contain;" alt="Treaty of Washington 1979">` : ''}
         <div class="archival-body">
-          "Sadat, Carter, and Begin join hands on the White House lawn, formalizing the first peace treaty between the State of Israel and an Arab sovereign nation."
+          Sadat, Carter, and Begin join hands on the North Lawn of the White House, formalizing the first peace treaty between the State of Israel and an Arab sovereign nation.
         </div>
         <div class="archival-footer">
           <span>US National Archives (NARA)</span>
@@ -998,11 +1221,11 @@ async function buildPublisherTextbookHtmlKT3() {
         <span class="section-title">Arab Fury, Boycott &amp; The Assassination of Sadat</span>
       </div>
       <div class="numbered-para">
-        <span class="para-ref-pill">[2.8]</span>
+        <span class="para-ref-pill">[2.9]</span>
         Across the Arab world, the treaty provoked explosive fury. Arab states condemned Sadat as a traitor who had broken the Khartoum 'Three Noes,' abandoned the Palestinians, and sold out Arab solidarity for a separate bilateral deal. The Arab League immediately suspended Egypt's membership, severed diplomatic relations, moved its headquarters from Cairo to Tunis, and imposed a strict economic boycott.
       </div>
       <div class="numbered-para">
-        <span class="para-ref-pill">[2.9]</span>
+        <span class="para-ref-pill">[2.10]</span>
         Within Egypt, domestic opposition surged among leftists, Arab nationalists, and Islamist groups. On 6 October 1981, during a military parade celebrating the eighth anniversary of the 1973 Suez crossing, radical Egyptian Islamic Jihad soldiers leaped from a military truck and opened fire on the reviewing stand with automatic rifles and grenades. Sadat was assassinated instantly. His successor, <strong>Hosni Mubarak</strong>, honored the treaty with Israel while maintaining a 'cold peace,' re-establishing Egypt's ties with the Arab world.
       </div>
 
@@ -1028,6 +1251,28 @@ async function buildPublisherTextbookHtmlKT3() {
           <li><strong>Shared 1978 Nobel Peace Prize:</strong> Awarded the Nobel Peace Prize alongside Anwar Sadat for the historic Camp David breakthrough.</li>
           <li><strong>Annexed Jerusalem &amp; Invaded Lebanon:</strong> Passed the 1980 Jerusalem Law declaring unified Jerusalem Israel's eternal capital, and launched the 1982 invasion of Lebanon.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; CAMP DAVID &amp; THE TREATY OF WASHINGTON</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Two Frameworks:</strong>
+          Explain the difference between the bilateral Egypt-Israel treaty framework and the broader Middle East framework agreed at Camp David.
+        </div>
+        <div class="beb-col">
+          <strong>2. Arab Backlash:</strong>
+          Why did the Arab League sever diplomatic ties with Egypt and expel it following the signing of the 1979 Treaty of Washington?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Did the Camp David Accords bring lasting peace to the Middle East, or did they merely neutralize Egypt and isolate the Palestinians?
+        </div>
       </div>
     </div>
 
@@ -1102,6 +1347,47 @@ async function buildPublisherTextbookHtmlKT3() {
         <span class="para-ref-pill">[3.4]</span>
         While the Israeli cabinet was told the advance would extend only 40 kilometers to push PLO artillery out of range, Sharon had secretly planned to push all the way to Beirut, link up with Christian Phalangist allies, and install a pro-Israeli government. In Operation Mole Cricket 19, the Israeli Air Force destroyed Syria's Soviet-supplied anti-aircraft missile batteries in the Bekaa Valley and shot down 82 Syrian MiGs. By mid-June, Israeli forces encircled West Beirut, subjecting the city to ten weeks of devastating aerial and naval bombardment. In August 1982, US special envoy Philip Habib brokered an agreement: over 14,000 PLO fighters evacuated Beirut by sea, with Arafat establishing a new exile headquarters in distant <strong>Tunis</strong>.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">March 1978</span>
+        </div>
+        <div class="archival-title">Israeli Troops &amp; Armoured Carrier in Southern Lebanon (Operation Litani)</div>
+        ${litaniMap ? `<img src="${litaniMap}" class="archival-image" alt="Operation Litani 1978">` : ''}
+        <div class="archival-body">
+          IDF infantry and M113 armored vehicles patrol southern Lebanese villages during Operation Litani, launched in retaliation for the Coastal Road bus massacre to push PLO fedayeen north of the Litani River.
+        </div>
+        <div class="archival-footer">
+          <span>IDF Historical Archives</span>
+          <span>Southern Lebanon Operations, March 1978</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>Peace for Galilee:</strong>
+          1982 Israeli invasion of Lebanon to push PLO artillery 40km away, escalating into a full siege of Beirut and PLO evacuation.
+        </div>
+        <div class="bvb-col">
+          <strong>Phalangist Militias:</strong>
+          Lebanese Christian Maronite militia responsible for the massacre of Palestinian civilians in Sabra and Shatila refugee camps.
+        </div>
+        <div class="bvb-col">
+          <strong>Kahan Commission:</strong>
+          Independent Israeli judicial inquiry (1983) ruling Defence Minister Ariel Sharon bore personal responsibility for the massacres.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -1141,7 +1427,33 @@ async function buildPublisherTextbookHtmlKT3() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[3.8]</span>
-        In February 1983, the official <strong>Kahan Commission</strong> published its findings. It exonerated the IDF of direct guilt, concluding that Phalangists had perpetrated the killings. However, the commission found Defence Minister Ariel Sharon guilty of <em>"indirect responsibility"</em> and serious negligence for ignoring the obvious danger of bloodshed when ordering bloodthirsty Phalangists into the camps. Sharon was forced to resign as Defence Minister. Deeply depressed by the Lebanese quagmire, Israeli casualties, and the death of his wife, Menachem Begin resigned as Prime Minister in August 1983, retreating into seclusion. Israel remained bogged down in southern Lebanon until its final withdrawal in May 2000, facing the rise of a new and deadlier enemy: the Iranian-backed Shia militia <strong>Hezbollah</strong>.
+        In February 1983, the official <strong>Kahan Commission</strong> published its findings. It exonerated the IDF of direct guilt, concluding that Phalangists had perpetrated the killings. However, the commission found Defence Minister Ariel Sharon guilty of <em>"indirect responsibility"</em> and serious negligence for ignoring the obvious danger of bloodshed when ordering bloodthirsty Phalangists into the camps. Sharon was forced to resign as Defence Minister, while Prime Minister Menachem Begin resigned in August 1983, broken by the quagmire.
+      </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Official Judicial Verdict</span>
+          </div>
+          <span class="source-date-micro">7 February 1983</span>
+        </div>
+        <div class="archival-title">Final Findings of the Official Kahan Commission of Inquiry</div>
+        <div class="archival-body">
+          "It is in our view impossible to justify the Minister of Defence's disregard of the danger of a massacre... If the Minister of Defence decided that Phalangists should enter the camps, it was his duty to consider the grave danger that the Phalangists would perpetrate acts of slaughter and vengeance against the Palestinians... The Minister of Defence bears personal responsibility."
+        </div>
+        <div class="archival-footer">
+          <span>State of Israel Judicial Archives</span>
+          <span>Jerusalem, 7 February 1983</span>
+        </div>
+      </div>
+
+      <div class="section-banner">
+        <span class="section-title">The Beirut Disaster &amp; The Rise of Hezbollah</span>
+      </div>
+      <div class="numbered-para">
+        <span class="para-ref-pill">[3.9]</span>
+        The Lebanon War produced disastrous long-term blowback for Israeli security. In 1982–83, Iranian Revolutionary Guards mobilized Lebanon's marginalized Shia population to create <strong>Hezbollah</strong> ('Party of God'). Committed to driving Western and Israeli forces out through suicide bombings, Hezbollah unleashed devastating attacks: on 23 October 1983, coordinated suicide truck bombings in Beirut destroyed the US Marine barracks (killing 241 Americans) and French paratrooper headquarters (killing 58 French soldiers), compelling Western peacekeepers to evacuate. By 1985, Israel pulled back to a narrow southern 'Security Zone,' where IDF soldiers remained trapped in a fifteen-year war of attrition until May 2000.
       </div>
 
       <!-- Key Figure Box: Ariel Sharon -->
@@ -1166,6 +1478,28 @@ async function buildPublisherTextbookHtmlKT3() {
           <li><strong>Authorized Phalangist Camp Entry:</strong> Allowed Christian militia into Sabra and Shatila, leading to mass slaughter and international condemnation.</li>
           <li><strong>Forced Resignation:</strong> Dismissed as Defence Minister in 1983 following the scathing judicial verdict of the Kahan Commission.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; THE LEBANON WAR &amp; SABRA-SHATILA</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Sharon's Aims:</strong>
+          Explain why Ariel Sharon pushed Israeli forces past the 40km limit all the way to Beirut during Operation Peace for Galilee.
+        </div>
+        <div class="beb-col">
+          <strong>2. Domestic Shock:</strong>
+          Why did the Sabra and Shatila massacres trigger the 400,000-strong Tel Aviv protest and the resignation of Sharon?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Did the 1982 invasion eliminate the threat to Israel's northern border, or did it replace the PLO with a deadlier adversary in Hezbollah?
+        </div>
       </div>
     </div>
 
@@ -1240,6 +1574,47 @@ async function buildPublisherTextbookHtmlKT3() {
         <span class="para-ref-pill">[4.4]</span>
         Israeli Defence Minister <strong>Yitzhak Rabin</strong> responded with an uncompromising <strong>'Iron Fist' policy</strong>. Deploying thousands of troops, the IDF imposed prolonged curfews, rounded up 40,000 suspects into desert detention camps, closed Palestinian schools and universities, and ordered soldiers to "break the bones" of stone-throwers. However, nightly global television broadcasts showing teenage boys facing tanks shattered Israel's international image, causing profound moral distress inside Israeli society.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Analytical Flowchart</span>
+          </div>
+          <span class="source-date-micro">1987–1993</span>
+        </div>
+        <div class="archival-title">The Intifada Escalation Cycle: From Erez to Madrid</div>
+        ${intifadaEscalation ? `<img src="${intifadaEscalation}" class="archival-map-image" alt="Intifada Escalation Flowchart">` : ''}
+        <div class="archival-body">
+          The cycle of grassroots civil disobedience, Israeli military retaliation, and shifting international public opinion forced both Israeli and Palestinian leaders toward the negotiating table.
+        </div>
+        <div class="archival-footer">
+          <span>The History Revision Hub Archival Diagrams</span>
+          <span>Middle East Peace Process Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>The First Intifada:</strong>
+          Spontaneous Palestinian popular uprising (1987) across Gaza and the West Bank using stone-throwing, commercial strikes, and boycotts.
+        </div>
+        <div class="bvb-col">
+          <strong>The UNLU:</strong>
+          Unified National Leadership of the Uprising; local grassroots committees directing strikes independently of the PLO in Tunis.
+        </div>
+        <div class="bvb-col">
+          <strong>Geneva Declaration (1988):</strong>
+          Historic speech in which Yasser Arafat renounced all terrorism and recognized the State of Israel under UN Resolution 242.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -1273,13 +1648,13 @@ async function buildPublisherTextbookHtmlKT3() {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Archival Photograph</span>
           </div>
           <span class="source-date-micro">30 October 1991</span>
         </div>
         <div class="archival-title">The Opening Session of the Madrid Peace Conference</div>
-        ${madridPhoto ? `<img src="${madridPhoto}" class="archival-image" alt="Madrid Conference 1991">` : ''}
+        ${madridPhoto ? `<img src="${madridPhoto}" class="archival-image" style="width: 100%; height: auto; max-height: 145px; object-fit: contain;" alt="Madrid Conference 1991">` : ''}
         <div class="archival-body">
           Co-sponsored by Presidents Bush and Gorbachev, the 1991 Madrid Conference brought Israel, Syria, Lebanon, and a Jordanian-Palestinian delegation face-to-face for the first time.
         </div>
@@ -1299,6 +1674,14 @@ async function buildPublisherTextbookHtmlKT3() {
       <div class="numbered-para">
         <span class="para-ref-pill">[4.8]</span>
         In the 1991 Gulf War, the US crushed Saddam Hussein's Iraqi army. Because Arafat made the disastrous blunder of backing Saddam, wealthy Gulf States cut off all financial subsidies to the PLO, leaving it politically isolated and bankrupt. Exploiting this moment of undisputed American hegemony, US President George H.W. Bush and Secretary of State James Baker convened the <strong>Madrid Peace Conference (October 1991)</strong>, forcing Israeli Prime Minister Yitzhak Shamir and Arab delegations into direct face-to-face negotiations for the first time.
+      </div>
+
+      <div class="section-banner">
+        <span class="section-title">The Gulf War Fall-out &amp; The Diplomatic Imperative</span>
+      </div>
+      <div class="numbered-para">
+        <span class="para-ref-pill">[4.9]</span>
+        The diplomatic landscape after Madrid presented both sides with inescapable realities. While Shamir's hardline Likud government attempted to drag out technical negotiations in Washington without yielding territory, the PLO faced complete extinction. Over 300,000 Palestinians were expelled from liberated Kuwait, and Palestinian tax revenues collapsed. Realizing that the Madrid talks were hopelessly deadlocked and that radical Islamist Hamas was eclipsing the secular PLO inside Gaza and the West Bank, Arafat recognized that only a direct, secret bilateral agreement with Israel could secure the PLO's survival.
       </div>
 
       <!-- Key Figure Box: Yasser Arafat -->
@@ -1323,6 +1706,28 @@ async function buildPublisherTextbookHtmlKT3() {
           <li><strong>Authorized Oslo Backchannel:</strong> Negotiated the 1993 Oslo Declaration of Principles in secret, securing PLO recognition and return to Palestine.</li>
           <li><strong>Became First PA President:</strong> Established the Palestinian National Authority in Gaza and Jericho in 1994, sharing the 1994 Nobel Peace Prize.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; THE FIRST INTIFADA &amp; SUPERPOWER SHIFT</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Grassroots Shift:</strong>
+          Explain why the First Intifada was organized by local UNLU committees rather than PLO leadership in Tunis.
+        </div>
+        <div class="beb-col">
+          <strong>2. Superpower Collapse:</strong>
+          How did the dissolution of the Soviet Union and the 1991 Gulf War compel both Shamir and Arafat to attend Madrid?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Did Arafat renounce terrorism in 1988 out of genuine philosophical moderation, or due to desperate fear of losing leadership of Palestine?
+        </div>
       </div>
     </div>
 
@@ -1371,18 +1776,18 @@ async function buildPublisherTextbookHtmlKT3() {
         <div class="archival-header">
           <div class="source-identity">
             <span class="source-badge">SOURCE A</span>
-            <span class="source-type">Historical Treaty Map</span>
+            <span class="source-type">Archival Photograph</span>
           </div>
-          <span class="source-date-micro">September 1995</span>
+          <span class="source-date-micro">13 September 1993</span>
         </div>
-        <div class="archival-title">The West Bank Divided: Oslo II Areas A, B, and C</div>
-        ${osloMap ? `<img src="${osloMap}" class="archival-map-image" alt="Oslo II Areas A B C Map">` : ''}
+        <div class="archival-title">The Historic Handshake: Rabin, Clinton, and Arafat on the South Lawn</div>
+        ${osloHandshake ? `<img src="${osloHandshake}" class="archival-image" alt="Oslo Handshake 1993">` : ''}
         <div class="archival-body">
-          Oslo II carved the West Bank into disconnected Palestinian enclaves (Area A: full PA control; Area B: joint control; Area C: full Israeli security and settlement jurisdiction).
+          Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat seal the Oslo I Declaration of Principles on the South Lawn of the White House, hosted by US President Bill Clinton.
         </div>
         <div class="archival-footer">
-          <span>Palestinian-Israeli Interim Agreement (Taba Accord)</span>
-          <span>September 1995</span>
+          <span>White House Press Office</span>
+          <span>Washington, D.C., 13 September 1993</span>
         </div>
       </div>
 
@@ -1396,6 +1801,47 @@ async function buildPublisherTextbookHtmlKT3() {
       <div class="numbered-para">
         <span class="para-ref-pill">[5.4]</span>
         The momentum of Oslo spurred regional normalization. On 26 October 1994, Yitzhak Rabin and <strong>King Hussein of Jordan</strong> signed the <strong>Israel-Jordan Peace Treaty</strong> in the Arava Valley, formalizing borders, water-sharing arrangements, and recognizing Jordan's special historic custodianship over Muslim holy shrines in Jerusalem.
+      </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Historical Treaty Record</span>
+          </div>
+          <span class="source-date-micro">26 October 1994</span>
+        </div>
+        <div class="archival-title">The Israel-Jordan Peace Treaty in the Arava Valley</div>
+        ${israelJordanChart ? `<img src="${israelJordanChart}" class="archival-map-image" style="width: 100%; height: auto; max-height: 145px; object-fit: contain;" alt="Israel-Jordan Treaty 1994">` : ''}
+        <div class="archival-body">
+          Prime Minister Yitzhak Rabin and King Hussein of Jordan sign the historic bilateral peace treaty, ending forty-six years of belligerency and establishing normalized borders and water-sharing.
+        </div>
+        <div class="archival-footer">
+          <span>Hashemite Kingdom &amp; Israeli Joint Archive</span>
+          <span>Arava Border Crossing, 26 October 1994</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>Oslo Accord (1993):</strong>
+          Secret Norwegian backchannel breakthrough creating mutual PLO-Israel recognition and phased Palestinian interim self-rule.
+        </div>
+        <div class="bvb-col">
+          <strong>Areas A, B, and C:</strong>
+          Territorial division of the West Bank under Oslo II into Palestinian civil control (A &amp; B) and exclusive Israeli military control (C).
+        </div>
+        <div class="bvb-col">
+          <strong>Rabin Assassination:</strong>
+          Murder of Israeli Prime Minister Yitzhak Rabin on 4 November 1995 by Jewish extremist Yigal Amir, derailing peace implementation.
+        </div>
       </div>
     </div>
 
@@ -1433,6 +1879,25 @@ async function buildPublisherTextbookHtmlKT3() {
         Crucially, Oslo II postponed the most explosive <strong>'Final Status Issues'</strong>—the permanent borders, the status of Jerusalem, Jewish settlements, and the right of return of Palestinian refugees—to future negotiations. This structural flaw allowed extremists on both sides to undermine the process.
       </div>
 
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Historical Treaty Map</span>
+          </div>
+          <span class="source-date-micro">September 1995</span>
+        </div>
+        <div class="archival-title">The West Bank Divided: Oslo II Areas A, B, and C</div>
+        ${osloAreasMap ? `<img src="${osloAreasMap}" class="archival-map-image" style="width: 100%; height: auto; max-height: 155px; object-fit: contain;" alt="Oslo II Areas A B C Map">` : ''}
+        <div class="archival-body">
+          Oslo II carved the West Bank into disconnected Palestinian enclaves (Area A: full PA control; Area B: joint civil-security control; Area C: total Israeli security and settlement jurisdiction).
+        </div>
+        <div class="archival-footer">
+          <span>Palestinian-Israeli Interim Agreement (Taba Accord)</span>
+          <span>September 1995</span>
+        </div>
+      </div>
+
       <div class="section-banner">
         <span class="section-title">Rising Extremism &amp; The Assassination of Rabin</span>
       </div>
@@ -1442,7 +1907,15 @@ async function buildPublisherTextbookHtmlKT3() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[5.9]</span>
-        In Israel, right-wing opposition led by Likud's Benjamin Netanyahu fiercely attacked Rabin, with protest crowds chanting "Rabin is a traitor" and displaying posters of Rabin in Nazi SS uniform. On the evening of <strong>4 November 1995</strong>, Rabin addressed a massive peace rally of 100,000 supporters in Kings of Israel Square in Tel Aviv. As he walked to his car, <strong>Yigal Amir</strong>, a 25-year-old ultra-nationalist Jewish law student who believed giving up biblical land violated Jewish law, fired three hollow-point bullets into Rabin's back. Rabin died at Ichilov Hospital. His assassination dealt a fatal blow to the Oslo peace process, derailing the momentum toward a two-state solution.
+        In Israel, right-wing opposition led by Likud's Benjamin Netanyahu fiercely attacked Rabin, with protest crowds chanting "Rabin is a traitor" and displaying posters of Rabin in Nazi SS uniform. On the evening of <strong>4 November 1995</strong>, Rabin addressed a massive peace rally of 100,000 supporters in Kings of Israel Square in Tel Aviv. As he walked to his car, <strong>Yigal Amir</strong>, a 25-year-old ultra-nationalist Jewish law student who believed giving up biblical land violated Jewish law, fired three hollow-point bullets into Rabin's back. Rabin died at Ichilov Hospital.
+      </div>
+
+      <div class="section-banner">
+        <span class="section-title">The Aftermath &amp; The Derailment of Oslo (1995–1996)</span>
+      </div>
+      <div class="numbered-para">
+        <span class="para-ref-pill">[5.10]</span>
+        Rabin's assassination dealt a fatal blow to the peace process. Following a wave of retaliatory Hamas bus bombings in early 1996 that killed 59 Israeli civilians, public faith in security evaporated. In May 1996, Likud's Benjamin Netanyahu narrowly defeated Shimon Peres on a hardline platform, slowing further troop redeployments and bringing the rapid momentum of the Oslo peace process to a permanent halt.
       </div>
 
       <!-- Key Figure Box: Yitzhak Rabin -->
@@ -1467,6 +1940,28 @@ async function buildPublisherTextbookHtmlKT3() {
           <li><strong>Signed Oslo Accords &amp; Jordan Treaty:</strong> Exchanged mutual recognition with Arafat at the White House and signed the 1994 Israel-Jordan Peace Treaty with King Hussein.</li>
           <li><strong>Paid the Ultimate Sacrifice for Peace:</strong> Stood firm against right-wing incitement until his assassination at a Tel Aviv peace rally on 4 November 1995.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; THE OSLO ACCORDS &amp; LEGACY OF RABIN</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Oslo Provisions:</strong>
+          Explain how the division of the West Bank into Areas A, B, and C under Oslo II left Israel in control of 73% of the land.
+        </div>
+        <div class="beb-col">
+          <strong>2. Opposing Extremism:</strong>
+          How did extremist violence from both Baruch Goldstein/Hamas and Yigal Amir deliberately sabotage the peace process?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Was the Oslo peace process doomed from the start due to deferred 'Final Status Issues', or did Rabin's murder kill the possibility of peace?
+        </div>
       </div>
     </div>
 

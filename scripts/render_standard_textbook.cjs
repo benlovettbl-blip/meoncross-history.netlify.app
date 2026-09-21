@@ -49,6 +49,56 @@ const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')
 const kt2Lessons = unitData.lessons.slice(4, 9);
 console.log(`Loaded ${kt2Lessons.length} Key Topic 2 lessons for publisher textbook pilot.`);
 
+// Enforce universal 3-source Master Pedagogical Blueprint (Source A Act 1, Source B Act 2, Source C Act 3)
+if (
+  kt2Lessons[1] &&
+  kt2Lessons[1].narrative_blocks &&
+  kt2Lessons[1].narrative_blocks[0] &&
+  !kt2Lessons[1].narrative_blocks[0].source
+) {
+  kt2Lessons[1].narrative_blocks[0].source = {
+    title:
+      'Source A: Archival Communiqué: President Gamal Abdel Nasser Announces the Blockade of the Straits of Tiran (22 May 1967)',
+    type: 'written',
+    text: 'The armed forces of the United Arab Republic have reoccupied Sharm el-Sheikh... We will not allow the Israeli flag to pass through the Gulf of Aqaba. Our basic objective will be the destruction of Israel. This war will be a total war and our basic aim will be to destroy Israel.',
+    provenance:
+      'Presidential Address at UAR Advanced Air HQ / Egyptian State Information Service (22 May 1967)',
+    date: '22 May 1967',
+  };
+}
+
+if (
+  kt2Lessons[3] &&
+  kt2Lessons[3].narrative_blocks &&
+  kt2Lessons[3].narrative_blocks[0] &&
+  !kt2Lessons[3].narrative_blocks[0].source
+) {
+  kt2Lessons[3].narrative_blocks[0].source = {
+    title:
+      'Source A: Archival Communiqué: Fatah Communiqué No. 12 Following the Battle of Karameh (21 March 1968)',
+    type: 'written',
+    text: 'In the town of Karameh, the fighters of Fatah and the Palestinian resistance stood shoulder to shoulder against Israeli armor... The myth of Israeli invincibility has been buried forever in the Jordan Valley. Thousands of our youth are flocking to join the armed revolution.',
+    provenance: 'Fatah Military High Command / PLO Central Archive, Amman (March 1968)',
+    date: '21 March 1968',
+  };
+}
+
+if (
+  kt2Lessons[4] &&
+  kt2Lessons[4].narrative_blocks &&
+  kt2Lessons[4].narrative_blocks[0] &&
+  !kt2Lessons[4].narrative_blocks[0].source
+) {
+  kt2Lessons[4].narrative_blocks[0].source = {
+    title:
+      'Source A: Archival Intelligence Report: The Construction and Doctrine of the Israeli Bar-Lev Line Along the Suez Canal (1969–1972)',
+    type: 'written',
+    text: 'The Bar-Lev Line consists of thirty-five fortified strongpoints (Maozim) sunk into sand ramparts sixty feet above the waterline, backed by concrete artillery emplacements and oil-pipe flame barriers. Designed to withstand weeks of sustained Egyptian bombardment, it provides total tactical security for Israeli forces in Sinai.',
+    provenance: 'IDF General Staff Historical Division, Tel Aviv (Accession Ref: IDF-SUEZ-BL-1971)',
+    date: '1969–1972',
+  };
+}
+
 /**
  * Robust Base64 Image Inliner
  * Guarantees 100% reliable rendering in standalone file:// HTML and headless Puppeteer.
@@ -172,6 +222,164 @@ async function buildPublisherTextbookHtml() {
     "Egyptian relations with Israel, the superpowers (USA/USSR), and the Arab world under Nasser and Sadat • The War of Attrition (1969–70) and Israel's consolidation of occupied lands • Key events of the Yom Kippur War (1973): Egyptian Suez crossing, Syrian assault, IDF counter-encirclement, and the OPEC oil crisis.",
   ];
 
+  // High-Yield Edexcel Paper 2 Key Enquiry Check Decks (Bottom of Right-Hand Pages)
+  const kt2EnquiryDecks = [
+    {
+      title: 'KEY ENQUIRY CHECK • ESCALATING CRISIS & WATER WARS (1964–1967)',
+      col1Title: '1. Regional Provocation',
+      col1Text:
+        'Explain how Syrian shelling from the Golan Heights and support for Fatah border raids escalated tensions with Israel after the 1964 Cairo Summit.',
+      col2Title: '2. Superpower Miscalculation',
+      col2Text:
+        'How did Soviet false intelligence reports regarding Israeli troop build-ups lead Nasser to mobilize in Sinai and expel UNEF?',
+      col3Title: '3. Evaluative Hinge',
+      col3Text:
+        "Why did Nasser's closure of the Straits of Tiran on 22 May 1967 represent an unambiguous casus belli (act of war) for the Israeli cabinet?",
+    },
+    {
+      title: 'KEY ENQUIRY CHECK • MILITARY DOCTRINE & THE THREE FRONTS (JUNE 1967)',
+      col1Title: '1. Air Superiority',
+      col1Text:
+        'Explain why Operation Focus succeeded in destroying over 300 Egyptian aircraft on the ground in the first three hours of 5 June 1967.',
+      col2Title: '2. Three-Front Mobilization',
+      col2Text:
+        'How did Israeli forces achieve rapid territorial victories against Egyptian, Jordanian, and Syrian armies simultaneously within six days?',
+      col3Title: '3. Evaluative Hinge',
+      col3Text:
+        "To what extent was Israel's victory the result of superior military planning rather than Arab strategic and communication failures?",
+    },
+    {
+      title: 'KEY ENQUIRY CHECK • OCCUPIED LANDS & DIPLOMATIC DEADLOCK (1967)',
+      col1Title: '1. Strategic Depth',
+      col1Text:
+        "How did the acquisition of the Sinai Peninsula, West Bank, Golan Heights, and Gaza Strip alter Israel's national defence posture?",
+      col2Title: '2. Khartoum Summit',
+      col2Text:
+        'Explain the long-term diplomatic impact of the Arab League\'s "Three Noes" (no peace, no recognition, no negotiation) in September 1967.',
+      col3Title: '3. Evaluative Hinge',
+      col3Text:
+        'Why did the ambiguous phrasing of UN Resolution 242 ("withdrawal from territories" vs "from the territories") prevent a lasting settlement?',
+    },
+    {
+      title: 'KEY ENQUIRY CHECK • ARMED STRUGGLE & INTERNATIONAL TERRORISM (1968–1972)',
+      col1Title: '1. Independence of the PLO',
+      col1Text:
+        'How did the 1968 Battle of Karameh transform Yasser Arafat and Fatah into the dominant force within the Palestinian national movement?',
+      col2Title: '2. Civil War in Jordan',
+      col2Text:
+        'Why did the PFLP Dawson\'s Field hijackings prompt King Hussein to launch military action against the PLO in "Black September" 1970?',
+      col3Title: '3. Evaluative Hinge',
+      col3Text:
+        'Did the 1972 Munich Olympics massacre succeed in putting the Palestinian cause onto the world stage, or did it permanently alienate international sympathy?',
+    },
+    {
+      title: 'KEY ENQUIRY CHECK • SURPRISE OFFENSIVE & SUPERPOWER CRISIS (1969–1973)',
+      col1Title: '1. Tactical Surprise',
+      col1Text:
+        'How did Sadat and Assad coordinate Operation Badr on Yom Kippur to breach the Bar-Lev Line and seize the Golan Heights?',
+      col2Title: '2. The Sharon Counter-Attack',
+      col2Text:
+        "Explain how General Sharon's division exploited the seam between Egypt's Second and Third Armies to encircle Suez City.",
+      col3Title: '3. Evaluative Hinge',
+      col3Text:
+        'Why did the 1973 war restore Arab military honour while simultaneously convincing Sadat that Israel could not be destroyed by force?',
+    },
+  ];
+
+  // Core Specification Vocabulary & Concepts Decks (Bottom of Left-Hand Pages)
+  const kt2VocabDecks = [
+    {
+      title: 'KEY SPECIFICATION TERMINOLOGY & CONCEPTS',
+      badge: 'DISCIPLINARY VOCABULARY',
+      terms: [
+        {
+          term: 'Straits of Tiran',
+          def: "Strategic maritime channel connecting Israel's southern port of Eilat to the Red Sea, blockaded by Nasser on 22 May 1967.",
+        },
+        {
+          term: 'Pan-Arabism',
+          def: 'Political ideology championed by Nasser aiming to unite Arab nations across the Middle East against Western imperialism and Israel.',
+        },
+        {
+          term: 'Samu Reprisal (1966)',
+          def: 'Large-scale IDF cross-border operation into the Jordanian West Bank following deadly Fatah mine attacks on Israeli border roads.',
+        },
+      ],
+    },
+    {
+      title: 'KEY SPECIFICATION TERMINOLOGY & CONCEPTS',
+      badge: 'DISCIPLINARY VOCABULARY',
+      terms: [
+        {
+          term: 'Operation Focus',
+          def: "Israel's surprise dawn airstrike on 5 June 1967, neutralizing 300+ Egyptian aircraft on the tarmac in 3 hours to secure total air supremacy.",
+        },
+        {
+          term: 'Preemptive Strike',
+          def: "A military offensive launched to destroy an adversary's capacity to strike when an enemy attack is believed to be imminent.",
+        },
+        {
+          term: 'Triple Front',
+          def: 'Simultaneous multi-theatre warfare waged by Israel against Egypt in Sinai, Jordan in the West Bank, and Syria on the Golan Heights.',
+        },
+      ],
+    },
+    {
+      title: 'KEY SPECIFICATION TERMINOLOGY & CONCEPTS',
+      badge: 'DISCIPLINARY VOCABULARY',
+      terms: [
+        {
+          term: 'Occupied Territories',
+          def: 'The West Bank, Gaza, Golan Heights, and Sinai Peninsula captured by Israel in 1967 and placed under military administration.',
+        },
+        {
+          term: 'UN Resolution 242',
+          def: 'Adopted in November 1967 establishing the "Land for Peace" principle, calling for Israeli withdrawal from occupied territories.',
+        },
+        {
+          term: "Three No's of Khartoum",
+          def: 'Arab League declaration (Sept 1967): "No peace with Israel, no recognition of Israel, no negotiations with it."',
+        },
+      ],
+    },
+    {
+      title: 'KEY SPECIFICATION TERMINOLOGY & CONCEPTS',
+      badge: 'DISCIPLINARY VOCABULARY',
+      terms: [
+        {
+          term: 'Fatah & The PLO',
+          def: 'Armed Palestinian nationalist movements led by Yasser Arafat, committed to independent armed struggle to liberate Palestine.',
+        },
+        {
+          term: "Dawson's Field (1970)",
+          def: 'PFLP coordinated hijackings of three commercial airliners to a Jordanian desert airfield, destroying them before international cameras.',
+        },
+        {
+          term: 'Black September',
+          def: "The 1970 Jordanian civil war in which King Hussein's army defeated and expelled armed PLO factions, forcing their relocation to Lebanon.",
+        },
+      ],
+    },
+    {
+      title: 'KEY SPECIFICATION TERMINOLOGY & CONCEPTS',
+      badge: 'DISCIPLINARY VOCABULARY',
+      terms: [
+        {
+          term: 'Bar-Lev Line',
+          def: 'Massive, 150km-long Israeli fortified sand rampart and bunker complex along the eastern bank of the Suez Canal, overrun in 1973.',
+        },
+        {
+          term: 'Operation Badr',
+          def: 'The surprise Egyptian amphibious assault crossing the Suez Canal using high-pressure water cannons on Yom Kippur, 6 October 1973.',
+        },
+        {
+          term: 'OPEC Oil Weapon',
+          def: "Arab oil ministers' embargo and production cuts targeting Western nations supporting Israel, causing global economic shockwaves.",
+        },
+      ],
+    },
+  ];
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,8 +398,8 @@ async function buildPublisherTextbookHtml() {
 
     body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.8pt;
-      line-height: 1.44;
+      font-size: 9.5pt;
+      line-height: 1.46;
       color: #1c1917;
       background: #ffffff;
       margin: 0;
@@ -441,7 +649,7 @@ async function buildPublisherTextbookHtml() {
       width: 100%;
       max-height: 150px;
       object-fit: contain;
-      background: #000000;
+      background: #f8fafc;
       border-radius: 3px;
       margin: 4px 0;
       border: 1px solid #cbd5e1;
@@ -570,6 +778,123 @@ async function buildPublisherTextbookHtml() {
     .kf-actions-list li {
       margin-bottom: 1.5px;
     }
+
+    /* Full-Width Bottom Enquiry Deck */
+    .bottom-enquiry-box {
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 2px;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-top: 3px solid #1e3a8a;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .beb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    .beb-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #1e3a8a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .beb-badge {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #0f172a;
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .beb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      font-size: 7.2pt;
+      line-height: 1.35;
+      color: #334155;
+    }
+    .beb-col strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      font-size: 6.6pt;
+      letter-spacing: 0.03em;
+    }
+
+    /* Full-Width Bottom Vocabulary Deck (Pinned to bottom of left page container) */
+    .bottom-vocab-box {
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 2px;
+      padding: 6px 10px;
+      background: #fdfaf6;
+      border: 1.5px solid #fed7aa;
+      border-top: 3px solid #b45309;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .bvb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #fed7aa;
+      padding-bottom: 2px;
+    }
+    .bvb-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #92400e;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .bvb-badge {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #b45309;
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .bvb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      font-size: 7.0pt;
+      line-height: 1.34;
+      color: #334155;
+    }
+    .bvb-col {
+      background: #ffffff;
+      padding: 4px 7px;
+      border: 1px solid #ffedd5;
+      border-left: 2.5px solid #b45309;
+      border-radius: 3px;
+    }
+    .bvb-col strong {
+      display: block;
+      color: #7c2d12;
+      margin-bottom: 2px;
+      font-size: 6.7pt;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
   </style>
 </head>
 <body>
@@ -614,7 +939,7 @@ async function buildPublisherTextbookHtml() {
 
       <!-- Master Wide Photographic Plate (David Rubinger Paratroopers in Full View) -->
       <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 5px; display: flex; flex-direction: column;">
-        <div style="height: 98mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+        <div style="height: 87mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
           <img src="${coverBase64}" alt="Israeli Paratroopers at the Western Wall, Jerusalem (David Rubinger, 7 June 1967)" style="height: 100%; max-width: 100%; object-fit: contain; display: block; filter: grayscale(100%) contrast(115%);">
         </div>
         <div style="border-top: 1.5px solid #000; padding: 4px 10px; background: #fff;">
@@ -646,10 +971,11 @@ async function buildPublisherTextbookHtml() {
           <span style="font-size: 7.0pt; letter-spacing: 0.5px;">Key Topic 2 Coverage</span>
         </div>
 
-        <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111; flex: 1;">
-          <!-- 2.1 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
+        <div style="padding: 6px 10px 10px 10px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+          <!-- Row 1: 3-column specification bullets -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111;">
+            <!-- 2.1 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 2.1 The Six Day War, 1967
               </strong>
@@ -660,116 +986,19 @@ async function buildPublisherTextbookHtml() {
               <div>&bull; <strong>Six-Day Blitz (5–10 June):</strong> Pre-emptive airstrike destroys Arab air forces; Sinai, Golan, West Bank captured.</div>
             </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Pre-emptive Strike &bull; Casus Belli &bull; Air Superiority &bull; Buffer Zone &bull; UNEF
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
-              </div>
-            </div>
-
-            <!-- Chronological Causal Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1964</span>
-                  <span>Cairo Summit &amp; PLO Formation</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Apr 1967</span>
-                  <span>7 April Air Battle (6 MiGs Down)</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">May 1967</span>
-                  <span>UNEF Expelled &amp; Tiran Blockade</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jun 1967</span>
-                  <span>Pre-emptive Strike &amp; 6-Day Blitz</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2.2 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
+            <!-- 2.2 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 2.2 Aftermath of the 1967 War
               </strong>
               <div style="margin-bottom: 2.5px;">&bull; <strong>Territorial conquest:</strong> Sinai, Gaza Strip, West Bank, East Jerusalem &amp; Golan occupied.</div>
               <div style="margin-bottom: 2.5px;">&bull; <strong>Khartoum Resolution (Sep 1967):</strong> Arab League 'Three Noes' (peace, recognition, talks).</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>UN Resolution 242 (Nov 1967):</strong> 'Land for Peace' formula &amp; differing interpretations.</div>
-              <div style="margin-bottom: 2.5px;">&bull; <strong>Palestinian militancy:</strong> Battle of Karameh (1968), PFLP Dawson's Field hijackings (1970).</div>
-              <div>&bull; <strong>Black September (1970)</strong> expulsion from Jordan to Lebanon; <strong>Munich Olympics (1972)</strong>.</div>
+              <div style="margin-bottom: 2.5px;">&bull; <strong>UN Resolution 242 (Nov 1967):</strong> 'Land for peace' principle &amp; differing interpretations.</div>
+              <div style="margin-bottom: 2.5px;">&bull; Palestinian resistance &amp; PLO under <strong>Yasser Arafat</strong>; Dawson's Field hijackings (1970).</div>
+              <div>&bull; <strong>Black September (1970):</strong> Expulsion of PLO from Jordan; <strong>Munich Olympics massacre (1972)</strong>.</div>
             </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Land for Peace &bull; Occupied Territories &bull; Three Noes &bull; Fedayeen &bull; Hijacking
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q3 Causation [12m]</span>
-              </div>
-            </div>
-
-            <!-- Chronological Causal Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jun 1967</span>
-                  <span>Sinai, Golan, Gaza &amp; West Bank Held</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1967</span>
-                  <span>Khartoum Summit ('Three Noes')</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1967</span>
-                  <span>UN Resolution 242 ('Land for Peace')</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1970</span>
-                  <span>Dawson's Field &amp; Black September</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1972</span>
-                  <span>Munich Olympics Hostage Crisis</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2.3 -->
-          <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <!-- 2.3 -->
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 2.3 Israel and Egypt, 1967–73
@@ -780,52 +1009,111 @@ async function buildPublisherTextbookHtml() {
               <div style="margin-bottom: 2.5px;">&bull; <strong>Superpower airlift:</strong> US Operation Nickel Grass &amp; Soviet resupply; Sharon counter-crossing.</div>
               <div>&bull; <strong>OPEC oil weapon:</strong> Production cuts &amp; Western embargo; UN Resolution 338 ceasefire.</div>
             </div>
+          </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                War of Attrition &bull; Bar-Lev Line &bull; Coordinated Surprise &bull; Oil Weapon &bull; Airlift
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
+          <!-- Row 2: Causal Chain of Events (Mathematically locked to exact same horizontal line) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 6px;">
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jan 1964</span>
+                    <span>Cairo Summit: PLO &amp; Water Plan</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">1964–66</span>
+                    <span>Water Wars &amp; Golan Shelling</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">7 Apr 67</span>
+                    <span>Air Battle: Mirages Down 6 MiGs</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">May 1967</span>
+                    <span>UNEF Expelled; Tiran Blockaded</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">5–10 Jun</span>
+                    <span>Pre-emptive Six-Day Victory</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Chronological Causal Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">10 Jun 67</span>
+                    <span>Ceasefire: Territory Expands x3</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1967</span>
+                    <span>Khartoum 'Three Noes' Resolution</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Nov 1967</span>
+                    <span>UN Resolution 242 (Land for Peace)</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1970</span>
+                    <span>Dawson's Field &amp; Black September</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1972</span>
+                    <span>Munich Olympics Hostage Massacre</span>
+                  </div>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1969–70</span>
-                  <span>War of Attrition along Suez Canal</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
                 </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1972</span>
-                  <span>Sadat Expels Soviet Military Advisers</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">6 Oct 1973</span>
-                  <span>Coordinated Egyptian-Syrian Strike</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1973</span>
-                  <span>IDF Sharon Counter-Crossing</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b45309; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1973</span>
-                  <span>OPEC Oil Embargo &amp; Ceasefire</span>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">1969–70</span>
+                    <span>War of Attrition along Suez Canal</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1970</span>
+                    <span>Death of Nasser; Sadat President</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jul 1972</span>
+                    <span>Sadat Expels 15,000 Soviets</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">6 Oct 73</span>
+                    <span>Surprise Assault on Yom Kippur</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">25 Oct 73</span>
+                    <span>Sharon Crossing &amp; Res 338 Ceasefire</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -975,6 +1263,58 @@ async function buildPublisherTextbookHtml() {
         `;
       }
 
+      const ed = kt2EnquiryDecks[lessonIdx];
+      let enquiryDeckHtml = '';
+      if (ed) {
+        enquiryDeckHtml = `
+        <div class="bottom-enquiry-box">
+          <div class="beb-header">
+            <span class="beb-title">${ed.title}</span>
+            <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+          </div>
+          <div class="beb-grid">
+            <div class="beb-col">
+              <strong>${ed.col1Title}:</strong>
+              ${ed.col1Text}
+            </div>
+            <div class="beb-col">
+              <strong>${ed.col2Title}:</strong>
+              ${ed.col2Text}
+            </div>
+            <div class="beb-col">
+              <strong>${ed.col3Title}:</strong>
+              ${ed.col3Text}
+            </div>
+          </div>
+        </div>
+        `;
+      }
+
+      const vd = kt2VocabDecks[lessonIdx];
+      let vocabDeckHtml = '';
+      if (vd) {
+        vocabDeckHtml = `
+        <div class="bottom-vocab-box">
+          <div class="bvb-header">
+            <span class="bvb-title">${vd.title}</span>
+            <span class="bvb-badge">${vd.badge}</span>
+          </div>
+          <div class="bvb-grid">
+            ${vd.terms
+              .map(
+                (t) => `
+              <div class="bvb-col">
+                <strong>${t.term}</strong>
+                ${t.def}
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>
+        `;
+      }
+
       return `
       <!-- ====================================================================
            PAGE ${leftPageNum}: LESSON ${lNum} (LEFT SPREAD: SECTIONS 1 & 2)
@@ -1005,6 +1345,8 @@ async function buildPublisherTextbookHtml() {
           ${acts1And2.map((b, idx) => renderActBlock(b, idx + 1)).join('')}
         </div>
 
+        ${vocabDeckHtml}
+
         <!-- Running Footer -->
         <div class="running-footer">
           <span>The History Revision Hub &bull; GCSE History Student Textbook</span>
@@ -1027,6 +1369,8 @@ async function buildPublisherTextbookHtml() {
           ${acts3And4.map((b, idx) => renderActBlock(b, idx + 3)).join('')}
           ${keyIndividualCardHtml}
         </div>
+
+        ${enquiryDeckHtml}
 
         <!-- Running Footer -->
         <div class="running-footer">

@@ -82,28 +82,32 @@ async function buildPublisherTextbookHtmlKT1() {
 
   // Images for sources and key figures
   const sykesPicotMap = getBase64Image('images/cme_sykes_picot_1916_map.jpg');
+  const allenbyPhoto = getBase64Image('images/cme_allenby_jerusalem_1917.jpg');
   const balfourLetter = getBase64Image('images/cme_balfour_declaration_1917.jpg');
   const cardBalfour = getBase64Image('units/cme_new/assets/card_balfour.png');
 
   const sergeantsPhoto = getBase64Image('images/cme_sergeants_affair_1947.jpg');
+  const kingDavidRuins = getBase64Image('units/cme_new/assets/king_david_ruins.png');
   const exodusPhoto =
     getBase64Image('units/cme_new/assets/exodus_ship.jpg') ||
     getBase64Image('images/cme_exodus.jpeg');
-  const cardAttlee = getBase64Image('units/cme_new/assets/card_truman.png'); // Historical peer portrait
+  const cardAttlee = getBase64Image('units/cme_new/assets/card_attlee.png');
 
   const partitionMap = getBase64Image(
     'units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
   );
   const arabInvasionMap = getBase64Image('images/cme_1948_arab_invasion_map.png');
+  const bengurionDec = getBase64Image('images/cme_bengurion_declaration_1948.jpg');
   const cardBenGurion = getBase64Image('units/cme_new/assets/card_bengurion.png');
 
   const refugeesPhoto = getBase64Image('images/cme_palestinian_refugees_1948.jpg');
+  const gazaRefugees = getBase64Image('images/cme_palestinian_refugees_leaving_gaza.webp');
   const cardHussein = getBase64Image('units/cme_new/assets/card_hussein.png');
+  const palestine1949Map = getBase64Image('units/cme_new/assets/palestine_1949_map.png');
 
   const alAhramPhoto = getBase64Image('images/cme_alahram_suez_1956.jpg');
-  const suezCampaignMap =
-    getBase64Image('images/cme_suez_1956_campaign_map.jpg') ||
-    getBase64Image('images/cme_port_said_british_troops_1956.jpg');
+  const portSaidPhoto = getBase64Image('images/cme_port_said_british_troops_1956.jpg');
+  const suezCampaignMap = getBase64Image('images/cme_suez_1956_campaign_map.jpg');
   const cardEden = getBase64Image('units/cme_new/assets/card_eden.png');
 
   return `<!DOCTYPE html>
@@ -124,8 +128,8 @@ async function buildPublisherTextbookHtmlKT1() {
 
     body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.8pt;
-      line-height: 1.44;
+      font-size: 9.6pt;
+      line-height: 1.47;
       color: #1c1917;
       background: #ffffff;
       margin: 0;
@@ -343,8 +347,9 @@ async function buildPublisherTextbookHtmlKT1() {
     }
     .archival-image {
       width: 100%;
-      max-height: 125px;
-      object-fit: cover;
+      max-height: 155px;
+      object-fit: contain;
+      background: #fafaf9;
       border-radius: 3px;
       margin: 4px 0;
       border: 1px solid #cbd5e1;
@@ -480,6 +485,123 @@ async function buildPublisherTextbookHtmlKT1() {
     .kf-actions-list li {
       margin-bottom: 1.5px;
     }
+
+    /* Full-Width Bottom Enquiry Deck (Pinned to bottom of page container) */
+    .bottom-enquiry-box {
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 2px;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-top: 3px solid #1e3a8a;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .beb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    .beb-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #1e3a8a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .beb-badge {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #0f172a;
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .beb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      font-size: 7.2pt;
+      line-height: 1.35;
+      color: #334155;
+    }
+    .beb-col strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      font-size: 6.6pt;
+      letter-spacing: 0.03em;
+    }
+
+    /* Full-Width Bottom Vocabulary Deck (Pinned to bottom of left page container) */
+    .bottom-vocab-box {
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 2px;
+      padding: 6px 10px;
+      background: #fdfaf6;
+      border: 1.5px solid #fed7aa;
+      border-top: 3px solid #b45309;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .bvb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #fed7aa;
+      padding-bottom: 2px;
+    }
+    .bvb-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #92400e;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .bvb-badge {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #b45309;
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .bvb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      font-size: 7.0pt;
+      line-height: 1.34;
+      color: #334155;
+    }
+    .bvb-col {
+      background: #ffffff;
+      padding: 4px 7px;
+      border: 1px solid #ffedd5;
+      border-left: 2.5px solid #b45309;
+      border-radius: 3px;
+    }
+    .bvb-col strong {
+      display: block;
+      color: #7c2d12;
+      margin-bottom: 2px;
+      font-size: 6.7pt;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
   </style>
 </head>
 <body>
@@ -524,7 +646,7 @@ async function buildPublisherTextbookHtmlKT1() {
 
       <!-- Master Wide Photographic Plate (Ben-Gurion Independence Declaration, 14 May 1948) -->
       <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 5px; display: flex; flex-direction: column;">
-        <div style="height: 98mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+        <div style="height: 87mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
           <img src="${coverBase64}" alt="David Ben-Gurion Declaring the State of Israel (Rudi Weissenstein, 14 May 1948)" style="height: 100%; max-width: 100%; object-fit: contain; display: block;">
         </div>
         <div style="border-top: 1.5px solid #000; padding: 4px 10px; background: #fff;">
@@ -556,10 +678,11 @@ async function buildPublisherTextbookHtmlKT1() {
           <span style="font-size: 7.0pt; letter-spacing: 0.5px;">Key Topic 1 Coverage</span>
         </div>
 
-        <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111; flex: 1;">
-          <!-- 1.1 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
+        <div style="padding: 6px 10px 10px 10px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+          <!-- Row 1: 3-column specification bullets -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.34; color: #111;">
+            <!-- 1.1 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 1.1 Creation of Israel, 1945–48
               </strong>
@@ -570,54 +693,8 @@ async function buildPublisherTextbookHtmlKT1() {
               <div>&bull; Outbreak of sectarian communal civil war following UN partition announcement.</div>
             </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Mandate &bull; Partition &bull; Insurgency &bull; UNSCOP &bull; Corpus Separatum
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
-              </div>
-            </div>
-
-            <!-- Chronological Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1917</span>
-                  <span>Balfour Declaration Pledges Homeland</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jul 1946</span>
-                  <span>King David Hotel Bombing (91 Dead)</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jul 1947</span>
-                  <span>SS Exodus Affair Shocks World</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1947</span>
-                  <span>UN Resolution 181 Partition Plan</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 1.2 -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
+            <!-- 1.2 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 1.2 The 1948–49 War &amp; Refugees
               </strong>
@@ -628,53 +705,7 @@ async function buildPublisherTextbookHtmlKT1() {
               <div>&bull; <strong>Palestinian refugee crisis (Nakba)</strong>: 700,000 displaced; UNRWA &amp; 1950 Law of Return.</div>
             </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Nakba &bull; Green Line &bull; Law of Return &bull; UNRWA &bull; Armistice
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q2 Narrative Account [8m]</span>
-                <span><strong>Target:</strong> Q3 Causation [12m]</span>
-              </div>
-            </div>
-
-            <!-- Chronological Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">14 May 48</span>
-                  <span>Ben-Gurion Declares State of Israel</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">15 May 48</span>
-                  <span>Five Arab Armies Invade Palestine</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Jun 1948</span>
-                  <span>First UN Truce &amp; Czech Arms Resupply</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">1949</span>
-                  <span>Armistice Agreements: Green Line Drawn</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 1.3 -->
-          <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <!-- 1.3 -->
             <div>
               <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 1.5px; display: block; margin-bottom: 4px;">
                 1.3 The Suez Crisis, 1955–63
@@ -685,47 +716,111 @@ async function buildPublisherTextbookHtmlKT1() {
               <div style="margin-bottom: 2.5px;">&bull; Superpower intervention: US financial pressure halts invasion; UN emergency ceasefire.</div>
               <div>&bull; Humiliating British/French withdrawal, deployment of <strong>UNEF peacekeepers</strong> in Sinai.</div>
             </div>
+          </div>
 
-            <!-- Tier 2: Disciplinary Concepts & Exam Tariffs -->
-            <div style="margin: 4px 0; padding: 3px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #0f172a; border-radius: 3px;">
-              <div style="font-size: 6.3pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0f172a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Disciplinary Concepts</span>
-                <span style="color: #0369a1; font-weight: 800;">Paper 2 Tariffs</span>
-              </div>
-              <div style="font-size: 6.5pt; font-weight: 700; color: #334155; line-height: 1.25; margin-bottom: 2px;">
-                Pan-Arabism &bull; Nationalisation &bull; Tripartite Collusion &bull; UNEF &bull; Casus Belli
-              </div>
-              <div style="font-size: 6.2pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 2px; display: flex; justify-content: space-between;">
-                <span><strong>Target:</strong> Q1 Consequence [4m]</span>
-                <span><strong>Target:</strong> Q3 Causation [12m]</span>
+          <!-- Row 2: Causal Chain of Events (Mathematically locked to exact same horizontal line) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 6px;">
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">1917</span>
+                    <span>Balfour Declaration: Jewish Homeland</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jul 1946</span>
+                    <span>King David Hotel Bombing (Irgun)</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Feb 1947</span>
+                    <span>Britain Refers Mandate to the UN</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Nov 1947</span>
+                    <span>UN Resolution 181: Partition Plan</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Apr 1948</span>
+                    <span>Deir Yassin &amp; Sectarian Civil War</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Chronological Sequence Flow -->
-            <div style="padding: 3px 5px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; border-radius: 3px;">
-              <div style="font-size: 6.4pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                <span>Causal Chain of Events</span>
-                <span style="color: #64748b; font-weight: 700;">Chronology</span>
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">14 May 48</span>
+                    <span>Ben-Gurion Declares State of Israel</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">15 May 48</span>
+                    <span>Five Arab Armies Invade Palestine</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Jun 1948</span>
+                    <span>First UN Truce: Czech Arms &amp; IDF</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Oct 1948</span>
+                    <span>Operation Yoav Breaks Negev Siege</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">1949</span>
+                    <span>Green Line Armistice: Nakba Exodus</span>
+                  </div>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 1px;">
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Sep 1955</span>
-                  <span>Egyptian-Czech Arms Agreement</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.8px solid #1e3a8a; border-radius: 4px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1e3a8a; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                  <span>Causal Chain of Events</span>
+                  <span style="color: #64748b; font-weight: 700;">Chronology</span>
                 </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">26 Jul 56</span>
-                  <span>Nasser Nationalises the Suez Canal</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Oct 1956</span>
-                  <span>Secret Tripartite Collusion Signed</span>
-                </div>
-                <div style="text-align: center; font-size: 6.2pt; line-height: 0.7; color: #b45309; font-weight: 900;">&darr;</div>
-                <div style="display: flex; align-items: center; gap: 4px; font-size: 6.7pt; font-weight: 600; color: #0f172a;">
-                  <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 3px; border-radius: 2px; flex-shrink: 0;">Nov 1956</span>
-                  <span>US Threatens Sterling; Allies Retreat</span>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 2px;">
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Feb 1955</span>
+                    <span>Gaza Raid Exposes Egyptian Weakness</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Sep 1955</span>
+                    <span>Egyptian-Czech Arms Agreement</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">26 Jul 56</span>
+                    <span>Nasser Nationalises Suez Canal</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #1e3a8a; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">24 Oct 56</span>
+                    <span>Secret Sèvres Collusion Protocol</span>
+                  </div>
+                  <div style="text-align: center; font-size: 5.8pt; line-height: 0.6; color: #b45309; font-weight: 900;">&darr;</div>
+                  <div style="display: flex; align-items: center; gap: 4px; font-size: 6.6pt; font-weight: 600; color: #0f172a;">
+                    <span style="background: #b91c1c; color: #fff; font-size: 5.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; min-width: 44px; text-align: center;">Nov 1956</span>
+                    <span>Sinai Invasion; US Halts Blitz &amp; UNEF</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -807,6 +902,47 @@ async function buildPublisherTextbookHtmlKT1() {
         <span class="para-ref-pill">[1.4]</span>
         Simultaneously and in absolute secrecy, British diplomat Sir Mark Sykes and French representative François Georges-Picot drafted the <strong>Sykes-Picot Agreement (May 1916)</strong>. Disregarding McMahon's pledges, Britain and France drew an arbitrary line across the map: France claimed direct control of modern Lebanon and Syria, while Britain claimed Iraq and Transjordan. Crucially, Palestine was designated for international administration to safeguard religious shrines. When Bolshevik revolutionaries leaked the secret treaty in November 1917, Arab leaders were enraged by what they regarded as imperial duplicity.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">11 December 1917</span>
+        </div>
+        <div class="archival-title">General Allenby Enters Jerusalem on Foot via the Jaffa Gate</div>
+        ${allenbyPhoto ? `<img src="${allenbyPhoto}" class="archival-image" style="object-position: 50% 88%; max-height: 140px;" alt="General Allenby in Jerusalem">` : ''}
+        <div class="archival-body">
+          General Sir Edmund Allenby enters the Holy City on foot out of religious respect, formally ending four centuries of Ottoman Turkish rule and establishing British military administration across Palestine.
+        </div>
+        <div class="archival-footer">
+          <span>Imperial War Museum Archive</span>
+          <span>Jerusalem Operations, 11 December 1917 (Q 12616)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>Zionism:</strong>
+          Movement founded by Theodor Herzl (1897) advocating for a sovereign Jewish national homeland in Palestine.
+        </div>
+        <div class="bvb-col">
+          <strong>McMahon-Hussein (1915):</strong>
+          British letters promising an independent Arab state in exchange for an armed revolt against Ottoman rule.
+        </div>
+        <div class="bvb-col">
+          <strong>Sykes-Picot (1916):</strong>
+          Secret Anglo-French treaty partitioning the Middle East into British and French imperial spheres of control.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -840,13 +976,13 @@ async function buildPublisherTextbookHtmlKT1() {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Diplomatic Document</span>
           </div>
           <span class="source-date-micro">2 November 1917</span>
         </div>
         <div class="archival-title">The Balfour Declaration to Lord Walter Rothschild</div>
-        ${balfourLetter ? `<img src="${balfourLetter}" class="archival-image" alt="Balfour Declaration Letter">` : ''}
+        ${balfourLetter ? `<img src="${balfourLetter}" class="archival-map-image" style="max-height: 155px; background: #fdfbf7;" alt="Balfour Declaration Letter">` : ''}
         <div class="archival-body">
           "His Majesty's Government view with favour the establishment in Palestine of a national home for the Jewish people, and will use their best endeavours to facilitate the achievement of this object..."
         </div>
@@ -893,6 +1029,28 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
     </div>
 
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; IMPERIAL ORIGINS &amp; CONFLICTING PLEDGES</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Contradictory Pledges:</strong>
+          Explain why Arab leaders viewed the McMahon-Hussein letters and the Sykes-Picot Agreement as proof of British duplicity.
+        </div>
+        <div class="beb-col">
+          <strong>2. Imperial Strategy:</strong>
+          Why did British strategic interests in the Suez Canal lead Lloyd George's cabinet to endorse the Balfour Declaration in 1917?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Why did the 1939 British White Paper anger both Zionists and Palestinian Arab nationalists simultaneously?
+        </div>
+      </div>
+    </div>
+
     <div class="running-footer">
       <span>The History Revision Hub &bull; GCSE History Student Textbook</span>
       <span>Page 3 of 12</span>
@@ -934,25 +1092,6 @@ async function buildPublisherTextbookHtmlKT1() {
         Outraged by Bevin's policy, the three Jewish underground militias in Palestine united under the <strong>United Resistance Movement</strong>. While the mainstream <strong>Haganah</strong> focused on organizing illegal immigrant blockade-runners (Aliyah Bet) and sabotaging British radar stations, radical right-wing paramilitary groups—the <strong>Irgun</strong> (led by Menachem Begin) and the <strong>Lehi</strong> (Stern Gang)—launched an aggressive urban guerilla insurgency targeting British soldiers, police officers, and infrastructure.
       </div>
 
-      <div class="archival-source-box">
-        <div class="archival-header">
-          <div class="source-identity">
-            <span class="source-badge">SOURCE A</span>
-            <span class="source-type">Archival Photograph</span>
-          </div>
-          <span class="source-date-micro">July 1947</span>
-        </div>
-        <div class="archival-title">The Sergeants Affair: Bodies Found Near Netanya</div>
-        ${sergeantsPhoto ? `<img src="${sergeantsPhoto}" class="archival-image" alt="The Sergeants Affair">` : ''}
-        <div class="archival-body">
-          British military intelligence discovered the booby-trapped bodies of British Sergeants Clifford Martin and Mervyn Paice hanged in an orange grove by the Irgun, triggering anti-Jewish riots across British cities.
-        </div>
-        <div class="archival-footer">
-          <span>British War Office Archives</span>
-          <span>July 1947</span>
-        </div>
-      </div>
-
       <div class="section-banner">
         <span class="section-title">The King David Hotel Bombing (July 1946)</span>
       </div>
@@ -962,7 +1101,57 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[2.4]</span>
-        The bombing shocked the British public and government. British authorities declared martial law, imposed curfews, and enclosed government buildings inside barbed-wire barricades nicknamed 'Bevingrad.' Yet the insurgency escalated. In July 1947, when Britain executed three Irgun militants, the Irgun retaliated by hanging two kidnapped British intelligence sergeants—Clifford Martin and Mervyn Paice—and booby-trapping their bodies. The <strong>Sergeants Affair</strong> broke British domestic resolve: angry anti-Jewish riots erupted in London, Liverpool, and Manchester, and the British press fiercely demanded the immediate withdrawal of British troops.
+        The bombing shocked the British public and government. British authorities declared martial law, imposed severe curfews, and enclosed government buildings inside barbed-wire security compounds nicknamed 'Bevingrad.' Over 20,000 British soldiers conducted house-to-house sweeps in Tel Aviv and Jerusalem, detaining thousands of suspects. Yet rather than deterring the insurgents, the harsh security crackdown intensified Jewish popular hostility toward British rule.
+      </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE A</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">22 July 1946</span>
+        </div>
+        <div class="archival-title">Ruins of the King David Hotel, Jerusalem</div>
+        ${kingDavidRuins ? `<img src="${kingDavidRuins}" class="archival-image" style="width: 100%; height: auto; max-height: 155px; object-fit: contain; background: #fafaf9;" alt="King David Hotel Ruins">` : ''}
+        <div class="archival-body">
+          Rescue workers and British soldiers search the rubble of the southwest wing of the King David Hotel after 350 kg of TNT detonated, killing 91 British, Arab, and Jewish civil servants and soldiers.
+        </div>
+        <div class="archival-footer">
+          <span>Palestine Police Photographic Section</span>
+          <span>Jerusalem Incident Archive (22 July 1946)</span>
+        </div>
+      </div>
+
+      <div class="section-banner">
+        <span class="section-title">The Acre Prison Breakout &amp; The Sergeants Affair (1947)</span>
+      </div>
+      <div class="numbered-para">
+        <span class="para-ref-pill">[2.5]</span>
+        On 4 May 1947, the Irgun executed one of the most audacious insurgent operations of the Mandate era: the <strong>Acre Prison Break</strong>. Disguised as British Royal Engineers, Irgun commandos used explosive gelignite to blow a massive breach through the historic walls of the Crusader fortress at Acre. Amid heavy machine-gun fire and diversionary mortar barrages, 27 Irgun and Lehi commanders escaped, while 214 Arab prisoners also broke out amidst the pandemonium.
+      </div>
+      <div class="numbered-para">
+        <span class="para-ref-pill">[2.6]</span>
+        The British responded with severe military justice, sentencing three captured Irgun operatives—Avshalom Haviv, Meir Nakar, and Yaakov Weiss—to death by hanging. In July 1947, when British authorities executed the three men at Acre, the Irgun carried out its threat of immediate retaliation. Operatives abducted two young British Army Intelligence Corps NCOs, <strong>Sergeants Clifford Martin and Mervyn Paice</strong>, and hanged them in an orange grove near Netanya. When British troops discovered the hanging bodies, a hidden anti-personnel mine detonated, severely wounding a British captain. The <strong>Sergeants Affair</strong> provoked anti-Jewish riots across British cities and destroyed British domestic tolerance for remaining in Palestine.
+      </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">July 1947</span>
+        </div>
+        <div class="archival-title">The Sergeants Affair: Bodies Found Near Netanya</div>
+        ${sergeantsPhoto ? `<img src="${sergeantsPhoto}" class="archival-image" style="width: 100%; height: auto; max-height: 180px; object-fit: contain; background: transparent;" alt="The Sergeants Affair">` : ''}
+        <div class="archival-body">
+          British military intelligence discovered the booby-trapped bodies of British Sergeants Clifford Martin and Mervyn Paice hanged in an orange grove by the Irgun, triggering anti-Jewish riots across British cities.
+        </div>
+        <div class="archival-footer">
+          <span>British War Office Archives</span>
+          <span>July 1947</span>
+        </div>
       </div>
     </div>
 
@@ -986,24 +1175,24 @@ async function buildPublisherTextbookHtmlKT1() {
         <span class="section-title">The SS Exodus Affair &amp; British Exhaustion</span>
       </div>
       <div class="numbered-para">
-        <span class="para-ref-pill">[2.5]</span>
+        <span class="para-ref-pill">[2.7]</span>
         In July 1947, the aging American riverboat <strong>SS Exodus 1947</strong>, packed with 4,514 Holocaust survivors including 655 children, approached the coast of Palestine without immigration visas. Royal Navy destroyers rammed the vessel in international waters, boarded with tear gas and batons, and killed three passengers. Instead of placing the refugees in Mediterranean internment camps on Cyprus as was customary, Foreign Secretary Bevin decided to make a punitive example: he ordered the refugees shipped back to port of departure in France, and when they refused to disembark, forcibly deported them to British-occupied Germany.
       </div>
       <div class="numbered-para">
-        <span class="para-ref-pill">[2.6]</span>
+        <span class="para-ref-pill">[2.8]</span>
         The spectacle of British soldiers dragging emaciated Holocaust survivors back behind barbed wire in Hamburg triggered a global public relations catastrophe. American newspapers expressed intense outrage, and US President Harry S. Truman exerted severe diplomatic pressure. For a British economy crippled by war debt, rationing, and imperial overstretch, stationing 100,000 troops in Palestine at an annual cost of £40 million had become financially and politically intolerable.
       </div>
 
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Archival Photograph</span>
           </div>
           <span class="source-date-micro">July 1947</span>
         </div>
         <div class="archival-title">The SS Exodus Arriving in Haifa under Naval Escort</div>
-        ${exodusPhoto ? `<img src="${exodusPhoto}" class="archival-image" alt="SS Exodus in Haifa">` : ''}
+        ${exodusPhoto ? `<img src="${exodusPhoto}" class="archival-image" style="max-height: 140px;" alt="SS Exodus in Haifa">` : ''}
         <div class="archival-body">
           "The spectacle of Holocaust survivors being forced behind barbed wire by British bayonets in Germany destroyed Britain's moral standing and convinced the United Nations that the Mandate had to end."
         </div>
@@ -1017,11 +1206,11 @@ async function buildPublisherTextbookHtmlKT1() {
         <span class="section-title">UN Referral &amp; The UNSCOP Inquiry</span>
       </div>
       <div class="numbered-para">
-        <span class="para-ref-pill">[2.7]</span>
-        Convinced that reconciling Zionist demands for a sovereign state with Arab demands for majority rule was impossible, Prime Minister <strong>Clement Attlee</strong> announced in February 1947 that Britain was washing its hands of Palestine and referring the problem to the newly created <strong>United Nations</strong>.
+        <span class="para-ref-pill">[2.9]</span>
+        By early 1947, Great Britain was gripped by acute economic crisis: severe fuel shortages during the brutal winter of 1946–47, bread rationing at home, and crushing war debts owed to the United States. Stationing 100,000 soldiers in Palestine cost £40 million annually, drawing fierce parliamentary condemnation. Convinced that reconciling Zionist demands for statehood with Arab demands for independence was impossible without open military subjugation, Prime Minister <strong>Clement Attlee</strong> made the momentous decision in February 1947 to surrender Britain's imperial mandate and refer the entire question to the newly created <strong>United Nations</strong>.
       </div>
       <div class="numbered-para">
-        <span class="para-ref-pill">[2.8]</span>
+        <span class="para-ref-pill">[2.10]</span>
         The UN created the <strong>United Nations Special Committee on Palestine (UNSCOP)</strong>, composed of eleven neutral nations. UNSCOP toured the country, witnessed the interception of the SS Exodus, and interviewed Jewish leaders. Arab leaders boycotted the committee, arguing that the UN had no legal right to partition land that belonged to its indigenous inhabitants. In August 1947, UNSCOP voted by majority to recommend the termination of the British Mandate and the partition of Palestine into independent Arab and Jewish states, with Jerusalem placed under international trusteeship. In September, Britain announced it would withdraw all forces by 15 May 1948.
       </div>
 
@@ -1047,6 +1236,28 @@ async function buildPublisherTextbookHtmlKT1() {
           <li><strong>Set Hard Evacuation Deadline:</strong> Refused to enforce UN Partition, setting a rigid withdrawal date of 15 May 1948 to minimize British casualties.</li>
           <li><strong>Withdrew 100,000 British Troops:</strong> Ended British financial drainage (£40M/year) amidst post-war rationing and economic austerity.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; COLLAPSE OF THE MANDATE &amp; INSURGENCY</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Insurgency Impact:</strong>
+          How did the combination of the King David Hotel bombing and the Sergeants Affair make British military occupation untenable?
+        </div>
+        <div class="beb-col">
+          <strong>2. International Outcry:</strong>
+          Explain why the interception and forced deportation of the SS Exodus refugees destroyed Britain's international standing.
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Why did Clement Attlee's government decide to surrender the Palestine Mandate to the UN rather than enforce a compromise?
+        </div>
       </div>
     </div>
 
@@ -1121,6 +1332,47 @@ async function buildPublisherTextbookHtmlKT1() {
         <span class="para-ref-pill">[3.4]</span>
         On the morning of 15 May 1948, regular military forces from five Arab states—<strong>Egypt, Transjordan, Syria, Iraq, and Lebanon</strong>—invaded Palestine. The Arab League declared their goal was to liberate Palestine and establish a unitary Arab state. In the initial weeks, the Arab forces held substantial superiority in heavy artillery, armored vehicles, and airpower. Egyptian columns advanced within 20 miles of Tel Aviv, while the British-officered Arab Legion of Transjordan seized East Jerusalem, driving Jewish defenders from the Old City.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Military Campaign Map</span>
+          </div>
+          <span class="source-date-micro">May–October 1948</span>
+        </div>
+        <div class="archival-title">The 1948 Arab Invasions &amp; Frontline Offensives</div>
+        ${arabInvasionMap ? `<img src="${arabInvasionMap}" class="archival-map-image" alt="1948 Arab Invasions">` : ''}
+        <div class="archival-body">
+          Coordinated five-nation Arab offensive launched on 15 May 1948, showing axes of advance across northern Galilee, central Jerusalem, and southern coastal approaches towards Tel Aviv.
+        </div>
+        <div class="archival-footer">
+          <span>IDF Historical Branch Records</span>
+          <span>1948 War Archive</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>UN Resolution 181 (1947):</strong>
+          UN General Assembly partition plan allocating 56% of Mandatory Palestine to create an independent Jewish state.
+        </div>
+        <div class="bvb-col">
+          <strong>Haganah &amp; The IDF:</strong>
+          The primary Jewish defense militia, officially consolidated into the national Israel Defense Forces on 26 May 1948.
+        </div>
+        <div class="bvb-col">
+          <strong>The Green Line (1949):</strong>
+          Armistice demarcation boundaries signed on Rhodes, leaving Israel in control of 78% of the former British Mandate.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -1148,25 +1400,25 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[3.6]</span>
-        Israel reorganized its militias into a centralized military force: the <strong>Israel Defense Forces (IDF)</strong>. Through mandatory conscription, Israeli troop numbers surged from 30,000 in May to nearly 65,000 by July and over 100,000 by December. In contrast, the Arab coalition was crippled by political divisions, mutual distrust, and lack of coordination. King Abdullah of Jordan aimed primarily to annex the West Bank and secretly sought an accommodation with Israel, while Egypt and Syria distrusted Abdullah's dynastic ambitions.
+        Israel reorganized its competing underground militias into a single, disciplined national military: the <strong>Israel Defense Forces (IDF)</strong>. To eliminate rival commands, Prime Minister David Ben-Gurion ruthlessly enforced state authority. When the Irgun attempted to land an independent cargo of heavy weaponry aboard the transport ship <em>Altalena</em> on Tel Aviv beach in June 1948, Ben-Gurion ordered the IDF to shell the vessel, killing sixteen Irgun fighters and forcing Menachem Begin to disband his forces completely. Israeli troop numbers surged from 30,000 in May to 65,000 by July and over 100,000 by December. In contrast, the five invading Arab armies were crippled by severe political rivalries, non-existent communication, and mutual distrust between King Abdullah of Jordan and the Egyptian monarchy.
       </div>
 
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
-            <span class="source-type">Military Campaign Map</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Archival Photograph</span>
           </div>
-          <span class="source-date-micro">May–October 1948</span>
+          <span class="source-date-micro">14 May 1948</span>
         </div>
-        <div class="archival-title">The 1948 Arab Invasions &amp; Israeli Counter-Offensives</div>
-        ${arabInvasionMap ? `<img src="${arabInvasionMap}" class="archival-map-image" alt="1948 Arab Invasions">` : ''}
+        <div class="archival-title">David Ben-Gurion Proclaims the State of Israel</div>
+        ${bengurionDec ? `<img src="${bengurionDec}" class="archival-image" style="max-height: 135px;" alt="Ben-Gurion Declaration">` : ''}
         <div class="archival-body">
-          IDF counter-offensives (Operation Dani, Yoav, and Hiram) broke Egyptian forces in the south, seized western Galilee, and encircled Arab positions across the central sector.
+          "We hereby declare the establishment of a Jewish state in Eretz-Israel, to be known as the State of Israel." Proclamation read at the Tel Aviv Museum beneath Theodor Herzl's portrait on 14 May 1948.
         </div>
         <div class="archival-footer">
-          <span>IDF Historical Branch Records</span>
-          <span>1948 War Archive</span>
+          <span>Israel Government Press Office (GPO)</span>
+          <span>Independence Hall, Tel Aviv (14 May 1948)</span>
         </div>
       </div>
 
@@ -1175,11 +1427,11 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[3.7]</span>
-        When fighting resumed in the 'Ten Days' of July 1948, the IDF launched sweeping counter-offensives. Operation Dani captured Lydda and Ramle; Operation Yoav broke the Egyptian blockade of the Negev; and Operation Hiram cleared northern Galilee of the Arab Liberation Army. By early 1949, Egyptian forces were trapped in the Faluja pocket, and the invading Arab armies were thoroughly routed.
+        When fighting resumed during the 'Ten Days' of July 1948, the reinforced IDF launched sweeping counter-offensives. Operation Dani captured Lydda and Ramle; Operation Yoav broke the Egyptian blockade of the Negev; and Operation Hiram cleared northern Galilee. In September 1948, Jewish extremist paramilitaries from the <strong>Lehi (Stern Gang)</strong> assassinated UN Mediator Count Folke Bernadotte in Jerusalem after he proposed revising the partition borders and repatriating Arab refugees. The murder shocked world opinion and prompted Ben-Gurion to outlaw Lehi permanently. American diplomat <strong>Ralph Bunche</strong> stepped in to lead the United Nations peace mission.
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[3.8]</span>
-        Between February and July 1949, UN acting mediator Ralph Bunche negotiated bilateral <strong>Armistice Agreements</strong> on the Greek island of Rhodes between Israel and its neighbours (Egypt, Lebanon, Jordan, and Syria). The resulting borders, known as the <strong>Green Line</strong>, expanded Israel's territory to 78% of Mandatory Palestine—21% more than allocated under UN Resolution 181. Transjordan annexed the West Bank and East Jerusalem, while Egypt occupied the Gaza Strip. No independent Palestinian Arab state was created.
+        Between February and July 1949, Bunche presided over protracted bilateral negotiations on the Greek island of Rhodes, resulting in separate <strong>Armistice Agreements</strong> between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting ceasefire boundaries, universally known as the <strong>Green Line</strong>, left Israel in control of 78% of Mandatory Palestine—nearly a third more territory than proposed under UN Resolution 181. Transjordan occupied and subsequently annexed the West Bank and East Jerusalem, while Egypt retained military administration of the Gaza Strip. Crucially, Arab states refused to sign permanent peace treaties or recognize Israel's legal sovereignty, ensuring the border remained a volatile military frontline.
       </div>
 
       <!-- Key Figure Box: David Ben-Gurion -->
@@ -1204,6 +1456,28 @@ async function buildPublisherTextbookHtmlKT1() {
           <li><strong>Created Unified Military (IDF):</strong> Disbanded underground paramilitaries (Irgun, Lehi, Palmach) into a single national army, ordering the shelling of the Irgun arms ship <em>Altalena</em>.</li>
           <li><strong>Secured Czech Arms Pipeline:</strong> Authorized emergency funding for Czechoslovakian aircraft and rifles during the critical first UN truce.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; THE 1948–49 WAR &amp; ARMISTICE</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Turning Point Truce:</strong>
+          How did the secret Czechoslovakian arms airlift during the First UN Truce transform the IDF's military balance?
+        </div>
+        <div class="beb-col">
+          <strong>2. Arab Disunity:</strong>
+          Why were the five invading Arab armies unable to coordinate an effective joint military offensive against Israel?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Why did the 1949 Green Line armistice fail to produce lasting peace treaties between Israel and its Arab neighbours?
+        </div>
       </div>
     </div>
 
@@ -1278,6 +1552,47 @@ async function buildPublisherTextbookHtmlKT1() {
         <span class="para-ref-pill">[4.4]</span>
         Israel adamantly refused the return of refugees, arguing that repatriating hundreds of thousands of hostile Arabs would constitute national suicide and that Arab states bore responsibility for invading. In December 1949, the UN created the <strong>United Nations Relief and Works Agency (UNRWA)</strong> to provide basic food rations, healthcare, and education to the refugees. Except for Jordan, which granted citizenship, Arab host states refused to integrate refugees permanently, insisting they maintain refugee status to preserve their collective right of return.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">1949–1950</span>
+        </div>
+        <div class="archival-title">Displaced Families at an UNRWA Tent Camp</div>
+        ${gazaRefugees ? `<img src="${gazaRefugees}" class="archival-image" alt="UNRWA Refugee Camp">` : ''}
+        <div class="archival-body">
+          Makeshift canvas tents in an emergency UNRWA refugee camp. Over 700,000 Palestinians faced severe overcrowding, winter storms, and reliance on emergency food rations across Gaza and the West Bank.
+        </div>
+        <div class="archival-footer">
+          <span>UNRWA Photographic Archive</span>
+          <span>Refugee Relief Record, 1949–1950</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>The Nakba (Catastrophe):</strong>
+          The expulsion and flight of over 700,000 Palestinian Arabs from their ancestral homes during the 1948 War.
+        </div>
+        <div class="bvb-col">
+          <strong>Law of Return (1950):</strong>
+          Fundamental Israeli legislation granting every Jewish individual worldwide the legal right to immigrate and gain citizenship.
+        </div>
+        <div class="bvb-col">
+          <strong>Fedayeen Guerrillas:</strong>
+          Palestinian nationalist irregulars conducting armed infiltration, sabotage, and mine raids across the armistice frontiers.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -1301,11 +1616,30 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[4.5]</span>
-        The 1949 Armistice Lines were drawn with green pencil on military maps, becoming universally known as the <strong>Green Line</strong>. Crucially, Arab states insisted these lines were merely military ceasefire boundaries, not permanent international borders, as they refused to recognize Israel's existence.
+        The bilateral armistice lines negotiated at Rhodes were drawn with green pencil on military maps, becoming universally known as the <strong>Green Line</strong>. Crucially, Arab delegates insisted that these demarcations were solely temporary military ceasefire boundaries rather than permanent international borders, as they refused to confer de jure recognition upon Israel. Israel, in turn, treated the Green Line as its provisional sovereign frontier, fortifying border outposts.
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[4.6]</span>
         The Green Line created severe friction on the ground. Villages were severed from their farming lands, wells, and ancestral cemeteries. In the early 1950s, thousands of destitute Palestinian refugees crossed the armistice lines back into Israel. While most were unarmed peasants seeking to harvest crops or retrieve belongings, armed Palestinian militants—known as <strong>fedayeen</strong> ('self-sacrificers')—carried out sabotage and guerrilla attacks against Israeli border settlements. Israel responded with an aggressive reprisal policy: for every attack, the IDF launched punitive, cross-border strikes against host villages, creating a continuous cycle of border escalation.
+      </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Historical Map</span>
+          </div>
+          <span class="source-date-micro">1949 Armistice</span>
+        </div>
+        <div class="archival-title">The 1949 Armistice Agreements &amp; The Green Line</div>
+        ${palestine1949Map ? `<img src="${palestine1949Map}" class="archival-map-image" style="max-height: 140px;" alt="1949 Armistice Map">` : ''}
+        <div class="archival-body">
+          "The 1949 Armistice Lines (Green Line) expanded Israel's territory to 78% of Mandatory Palestine. The West Bank was incorporated into Jordan, while the Gaza Strip fell under Egyptian military administration."
+        </div>
+        <div class="archival-footer">
+          <span>United Nations Armistice Commission</span>
+          <span>Rhodes Agreements Record (1949)</span>
+        </div>
       </div>
 
       <div class="section-banner">
@@ -1313,7 +1647,7 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[4.7]</span>
-        While barring Palestinian return, the Israeli Knesset passed the foundational <strong>Law of Return (July 1950)</strong>, declaring that every Jewish person anywhere in the world had the inherent right to immigrate to Israel and receive automatic citizenship. Over the next three years, Israel's population doubled, surging from 650,000 to over 1.4 million.
+        While adamantly refusing the repatriation of Palestinian Arab refugees, the Israeli Knesset enacted the foundational <strong>Law of Return (5 July 1950)</strong>. The landmark statute declared that every Jewish person across the diaspora possessed an inalienable right to immigrate to Israel and claim automatic citizenship. Over the subsequent four years, Israel's Jewish population more than doubled, soaring from approximately 650,000 in May 1948 to over 1.5 million by 1953.
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[4.8]</span>
@@ -1342,6 +1676,28 @@ async function buildPublisherTextbookHtmlKT1() {
           <li><strong>Maintained Custodianship of Holy Sites:</strong> Preserved Jordan's historic custodianship over Muslim and Christian holy places in Jerusalem (Haram al-Sharif / Temple Mount).</li>
           <li><strong>Managed Border Clashes:</strong> Struggled to control cross-border fedayeen raids while facing massive Israeli military reprisal strikes (such as Qibya in 1953 and Samu in 1966).</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; REFUGEES, GREEN LINE &amp; STATE CONSOLIDATION</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. The Nakba:</strong>
+          Explain the primary factors (military offensives, panic, psychological warfare) that caused over 700,000 Palestinians to become refugees.
+        </div>
+        <div class="beb-col">
+          <strong>2. Demographics &amp; Return:</strong>
+          How did the 1950 Law of Return and Mizrahi immigration fundamentally alter Israel's demographic security?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Why did the Green Line border become an unstable battleground of fedayeen raids and IDF reprisals rather than a peaceful frontier?
+        </div>
       </div>
     </div>
 
@@ -1416,6 +1772,47 @@ async function buildPublisherTextbookHtmlKT1() {
         <span class="para-ref-pill">[5.4]</span>
         On 26 July 1956, in a dramatic radio speech in Alexandria, Nasser delivered a secret code-word: *de Lesseps* (the French engineer who built the canal). At that signal, Egyptian troops seized the headquarters of the Anglo-French <strong>Suez Canal Company</strong>. Nasser announced the canal was nationalized and that transit toll revenues would fund the construction of the Aswan Dam. While Arab populations celebrated wildly, British Prime Minister <strong>Anthony Eden</strong> viewed Nasser as an expansionist dictator—a "Mussolini on the Nile"—who threatened Britain's imperial oil route and prestige.
       </div>
+
+      <div class="archival-source-box">
+        <div class="archival-header">
+          <div class="source-identity">
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Archival Photograph</span>
+          </div>
+          <span class="source-date-micro">November 1956</span>
+        </div>
+        <div class="archival-title">British Paratroopers &amp; Centurion Tanks at Port Said</div>
+        ${portSaidPhoto ? `<img src="${portSaidPhoto}" class="archival-image" alt="British Troops at Port Said 1956">` : ''}
+        <div class="archival-body">
+          British paratroopers and Centurion tanks of the Royal Tank Regiment advance through the war-damaged streets of Port Said during Operation Musketeer, shortly before the UN-enforced ceasefire.
+        </div>
+        <div class="archival-footer">
+          <span>Imperial War Museum Archive</span>
+          <span>Suez Landings, Port Said (MH 31737)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Specification Terminology & Concepts -->
+    <div class="bottom-vocab-box">
+      <div class="bvb-header">
+        <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; CONCEPTS</span>
+        <span class="bvb-badge">DISCIPLINARY VOCABULARY</span>
+      </div>
+      <div class="bvb-grid">
+        <div class="bvb-col">
+          <strong>Canal Nationalisation:</strong>
+          Nasser's seizure of the Anglo-French Suez Canal Company in July 1956 following Western cancellation of Aswan Dam loans.
+        </div>
+        <div class="bvb-col">
+          <strong>Protocol of Sèvres:</strong>
+          Secret tripartite collusion pact signed by Britain, France, and Israel in October 1956 to invade Egypt and depose Nasser.
+        </div>
+        <div class="bvb-col">
+          <strong>UNEF Peacekeepers:</strong>
+          The United Nations Emergency Force, deployed as a neutral buffer across Sinai to monitor the tripartite military withdrawal.
+        </div>
+      </div>
     </div>
 
     <div class="running-footer">
@@ -1449,13 +1846,13 @@ async function buildPublisherTextbookHtmlKT1() {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Military Campaign Map</span>
           </div>
           <span class="source-date-micro">October–November 1956</span>
         </div>
         <div class="archival-title">Operation Kadesh &amp; The Anglo-French Assault on Port Said</div>
-        ${suezCampaignMap ? `<img src="${suezCampaignMap}" class="archival-map-image" alt="1956 Suez Campaign Map">` : ''}
+        ${suezCampaignMap ? `<img src="${suezCampaignMap}" class="archival-map-image" style="max-height: 140px;" alt="1956 Suez Campaign Map">` : ''}
         <div class="archival-body">
           Israeli forces seized the Sinai Peninsula in 100 hours while Anglo-French amphibious forces secured the northern entrance to the Suez Canal before international intervention forced a halt.
         </div>
@@ -1474,7 +1871,7 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[5.8]</span>
-        Facing financial collapse, Eden ordered an immediate ceasefire on 6 November. By December, British and French troops made a humiliating withdrawal from Egypt, followed by Israeli withdrawal from Sinai in March 1957. The consequences were profound: Britain was stripped of its status as an independent global superpower; Anthony Eden resigned in disgrace; the United Nations deployed its first peacekeeping force (<strong>UNEF</strong>) along the Egypt-Israel border; and Nasser, despite military defeat, emerged as an untouchable hero of anti-colonial resistance across the Arab world.
+        Facing financial collapse, Eden ordered an immediate ceasefire on 6 November. By December, British and French troops made a humiliating withdrawal from Egypt, followed by Israeli withdrawal from Sinai in March 1957. The consequences were profound: Britain was stripped of its status as an independent global superpower; Anthony Eden resigned in disgrace in January 1957; the United Nations deployed its first peacekeeping force (<strong>UNEF</strong>) along the Egypt-Israel border; and Nasser, despite military defeat, emerged as an untouchable hero of anti-colonial resistance across the Arab world.
       </div>
 
       <!-- Key Figure Box: Anthony Eden -->
@@ -1499,6 +1896,28 @@ async function buildPublisherTextbookHtmlKT1() {
           <li><strong>Miscalculated US Reaction:</strong> Erroneously assumed Eisenhower would remain neutral or support Britain against Soviet encroachment.</li>
           <li><strong>Resigned in Disgrace:</strong> Capitulated to US financial pressure, suffering total political collapse and resigning as Prime Minister in January 1957.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
+    <div class="bottom-enquiry-box">
+      <div class="beb-header">
+        <span class="beb-title">KEY ENQUIRY CHECK &bull; THE SUEZ CRISIS &amp; RETREAT OF EMPIRE</span>
+        <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
+      </div>
+      <div class="beb-grid">
+        <div class="beb-col">
+          <strong>1. Secret Collusion:</strong>
+          Why did Britain, France, and Israel secretly draft the Protocol of Sèvres, and why was international deception necessary?
+        </div>
+        <div class="beb-col">
+          <strong>2. Superpower Powerplay:</strong>
+          How did US financial leverage (IMF loan blockage and run on sterling) force Anthony Eden to order a ceasefire within 48 hours?
+        </div>
+        <div class="beb-col">
+          <strong>3. Evaluative Hinge:</strong>
+          Why is the 1956 Suez Crisis regarded by historians as the definitive end of Britain's status as an independent global superpower?
+        </div>
       </div>
     </div>
 
