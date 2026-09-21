@@ -130,7 +130,10 @@ function extractDate(source) {
 function getCleanSectionTitle(rawTitle) {
   if (!rawTitle) return 'Historical Analysis';
   let clean = rawTitle.replace(/^Act\s+\d+\s*:\s*[^—–-]+[—–-]\s*/i, '').trim();
-  clean = clean.replace(/^Act\s+\d+\s*:\s*/i, '').replace(/^Historical Debate\s*:\s*/i, '').trim();
+  clean = clean
+    .replace(/^Act\s+\d+\s*:\s*/i, '')
+    .replace(/^Historical Debate\s*:\s*/i, '')
+    .trim();
   return clean;
 }
 
@@ -470,6 +473,103 @@ async function buildPublisherTextbookHtml() {
     .archival-footer span {
       line-height: 1.25;
     }
+
+    /* Key Figure Profile Box (Embedded in Reading Column) */
+    .key-figure-box {
+      background: #fdfcfb;
+      border: 1px solid #cbd5e1;
+      border-top: 3px solid #1e3a8a;
+      border-radius: 4px;
+      padding: 7px 9px;
+      margin: 8px 0;
+      break-inside: avoid;
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    .kf-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .kf-tag {
+      font-size: 6.6pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .kf-lifespan {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .kf-identity-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 4px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .kf-portrait {
+      width: 44px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid #94a3b8;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .kf-identity-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .kf-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 1px 0;
+      line-height: 1.18;
+    }
+    .kf-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+    }
+    .kf-significance {
+      font-size: 7.8pt;
+      font-style: italic;
+      color: #334155;
+      line-height: 1.34;
+      margin-bottom: 4px;
+    }
+    .kf-actions-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 3px 0 2px 0;
+    }
+    .kf-actions-list {
+      margin: 0;
+      padding-left: 13px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      line-height: 1.35;
+      color: #1e293b;
+    }
+    .kf-actions-list li {
+      margin-bottom: 1.5px;
+    }
   </style>
 </head>
 <body>
@@ -720,8 +820,8 @@ async function buildPublisherTextbookHtml() {
       function renderActBlock(block, sectionNum) {
         const cleanHeading = getCleanSectionTitle(block.title || block.act_title);
         const rawParagraphs = (block.paragraphs || (block.text ? [block.text] : []))
-          .flatMap(p => String(p).split(/\n\n+/))
-          .filter(p => p.trim().length > 0);
+          .flatMap((p) => String(p).split(/\n\n+/))
+          .filter((p) => p.trim().length > 0);
         const source = block.source;
 
         let sourceHtml = '';
@@ -798,6 +898,40 @@ async function buildPublisherTextbookHtml() {
         `;
       }
 
+      const ki = lesson.key_individual;
+      let keyIndividualCardHtml = '';
+      if (ki) {
+        const kiImgSrc = getBase64Image(ki.image);
+        const actionsList = (ki.strategic_actions || [])
+          .map((act) => `<li>${formatText(act)}</li>`)
+          .join('');
+
+        keyIndividualCardHtml = `
+        <div class="key-figure-box">
+          <div class="kf-header">
+            <span class="kf-tag">KEY FIGURE</span>
+            <span class="kf-lifespan">${ki.lifespan || ''}</span>
+          </div>
+          <div class="kf-identity-row">
+            ${kiImgSrc ? `<img src="${kiImgSrc}" class="kf-portrait" alt="${ki.name}">` : ''}
+            <div class="kf-identity-text">
+              <h4 class="kf-name">${ki.name}</h4>
+              <div class="kf-role">${ki.role || 'Historical Figure'}</div>
+            </div>
+          </div>
+          <div class="kf-significance">${ki.significance || ''}</div>
+          ${
+            actionsList
+              ? `
+            <div class="kf-actions-title">Strategic Decisions &amp; Actions:</div>
+            <ul class="kf-actions-list">${actionsList}</ul>
+          `
+              : ''
+          }
+        </div>
+        `;
+      }
+
       return `
       <!-- ====================================================================
            PAGE ${leftPageNum}: LESSON ${lNum} (LEFT SPREAD: SECTIONS 1 & 2)
@@ -845,9 +979,10 @@ async function buildPublisherTextbookHtml() {
           <span>ENQUIRY: ${enquiryShort}</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 (No artificial bottom synthesis box) -->
+        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
         <div class="two-column-prose">
           ${acts3And4.map((b, idx) => renderActBlock(b, idx + 3)).join('')}
+          ${keyIndividualCardHtml}
         </div>
 
         <!-- Running Footer -->

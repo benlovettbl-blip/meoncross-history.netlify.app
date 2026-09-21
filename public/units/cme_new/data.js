@@ -4891,6 +4891,19 @@ export const unitData = {
     },
     {
       id: 'lesson_6',
+      key_individual: {
+        name: 'Gamal Abdel Nasser',
+        role: 'President of Egypt (1954–1970)',
+        lifespan: '1918–1970',
+        image: '/units/cme_new/assets/card_nasser.png',
+        strategic_actions: [
+          'Convened the 1964 Cairo Summit, creating the PLO to harness Palestinian nationalism under Arab control.',
+          'Demanded the complete withdrawal of the UN Emergency Force (UNEF) from the Sinai buffer zone on 16 May 1967.',
+          'Closed the Straits of Tiran to Israeli shipping on 22 May 1967, which Israel treated as an act of war.',
+        ],
+        significance:
+          'As the charismatic leader of Pan-Arab nationalism, Nasser faced intense domestic and regional pressure after the Samu and Golan clashes. His brinkmanship and closure of the Straits of Tiran directly triggered the pre-emptive Israeli air offensive.',
+      },
       title:
         'KT 2.1 Enquiry: How Did Water, Border Raids, and Rhetoric Make a Second Arab-Israeli War Inevitable? (1964–1967)',
       learning_objective:
@@ -5671,6 +5684,19 @@ export const unitData = {
     },
     {
       id: 'lesson_7',
+      key_individual: {
+        name: 'Moshe Dayan',
+        role: 'Israeli Minister of Defence (1967–1974)',
+        lifespan: '1915–1981',
+        image: '/units/cme_new/assets/card_dayan.png',
+        strategic_actions: [
+          'Appointed Minister of Defence on 1 June 1967 amid national crisis to unify the Israeli war cabinet.',
+          'Authorised Operation Focus—the pre-emptive dawn air strike that destroyed the Egyptian Air Force on the tarmac.',
+          'Directed three-front combat operations that captured the Sinai Peninsula, West Bank, East Jerusalem, and the Golan Heights.',
+        ],
+        significance:
+          'Dayan became the global symbol of Israeli military dominance and deterrence. His aggressive operational tempo secured total victory across three fronts within 132 hours, fundamentally transforming Middle Eastern borders.',
+      },
       title:
         'KT 2.2 Enquiry: Why Was the Six-Day War Decided in Three Hours, and Did Nasser Intend to Fight? (May–June 1967)',
       learning_objective:
@@ -6399,6 +6425,19 @@ export const unitData = {
     },
     {
       id: 'lesson_8',
+      key_individual: {
+        name: 'Golda Meir',
+        role: 'Prime Minister of Israel (1969–1974)',
+        lifespan: '1898–1978',
+        image: '/units/cme_new/assets/card_golda.png',
+        strategic_actions: [
+          'Assumed the premiership in March 1969 following the death of Levi Eshkol, governing during the War of Attrition.',
+          'Consolidated Israeli control over the conquered territories, fortifying the Bar-Lev Line along the Suez Canal.',
+          'Firmly rejected unconditional withdrawal without direct, face-to-face Arab peace treaties and recognized borders.',
+        ],
+        significance:
+          "Known as the 'Iron Lady' of Israeli politics, Meir maintained uncompromising diplomatic resolve following the 1967 war, adhering strictly to 'secure borders' and refusing unilateral territorial concessions without mutual recognition.",
+      },
       title:
         'KT 2.3 Enquiry: "Land for Peace" or Permanent Stalemate: How Did the 1967 Conquered Territories Transform the Conflict?',
       learning_objective:
@@ -7194,6 +7233,19 @@ export const unitData = {
     },
     {
       id: 'lesson_9',
+      key_individual: {
+        name: 'Yasser Arafat',
+        role: 'Chairman of the PLO / Leader of Fatah (1969–2004)',
+        lifespan: '1929–2004',
+        image: '/units/cme_new/assets/card_arafat.png',
+        strategic_actions: [
+          'Led Fatah armed guerrillas at the 1968 Battle of Karameh, boosting Palestinian recruitment and prestige.',
+          'Elected Chairman of the Palestine Liberation Organization (PLO) in 1969, shifting it to independent armed struggle.',
+          'Established an armed state-within-a-state in Jordan until expelled during the brutal Black September civil war of 1970.',
+        ],
+        significance:
+          'Arafat transformed the Palestinian cause from a passive refugee dilemma into an autonomous political and paramilitary movement, demonstrating that Palestinians would fight independently rather than wait for Arab armies.',
+      },
       title:
         'KT 2.4: The Rise of Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
       learning_objective:
@@ -7938,6 +7990,19 @@ export const unitData = {
     },
     {
       id: 'lesson_10',
+      key_individual: {
+        name: 'Anwar Sadat',
+        role: 'President of Egypt (1970–1981)',
+        lifespan: '1918–1981',
+        image: '/units/cme_new/assets/card_sadat.png',
+        strategic_actions: [
+          'Succeeded Nasser in 1970 and expelled 15,000 Soviet military advisers in 1972 to gain independent strategic freedom.',
+          'Orchestrated Operation Badr with Syria, launching a synchronized surprise attack on Yom Kippur (6 October 1973).',
+          'Breached the Bar-Lev Line using high-pressure water cannons, shattering the myth of Israeli invincibility.',
+        ],
+        significance:
+          'Sadat used limited military warfare not to destroy Israel, but to break the diplomatic stalemate, force superpower intervention, and regain Arab honor, paving the way for eventual peace negotiations.',
+      },
       title: 'KT 2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
       learning_objective:
         'Explain why the Yom Kippur War of October 1973 broke the diplomatic deadlock and opened the path to peace.',

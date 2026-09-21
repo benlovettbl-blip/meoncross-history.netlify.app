@@ -4156,6 +4156,20 @@ export function renderLesson(lesson) {
     });
     htmlNarrative += '</div>';
 
+    if (lesson.key_individual) {
+      const ki = lesson.key_individual;
+      const kiCardHtml = generateKeyIndividualEmbedHTML
+        ? generateKeyIndividualEmbedHTML(ki)
+        : `<div>${ki.name}</div>`;
+      htmlNarrative += `
+        <div class="key-individual-lesson-section" style="margin-top: 30px; margin-bottom: 25px;">
+          <div class="key-individual-embed">
+            ${kiCardHtml}
+          </div>
+        </div>
+      `;
+    }
+
     if (!isTrip) {
       if (lesson.tasks && lesson.tasks.length > 0) {
         let hasModels = false;

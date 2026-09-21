@@ -1,11 +1,19 @@
 import { getAssetUrl } from './engine/assets.js';
 
 export function generateKeyIndividualEmbedHTML(person) {
-  const hasBackData = person.actions || (person.achievements && !Array.isArray(person.achievements)) || person.limitations;
-  
+  const hasBackData =
+    person.actions ||
+    person.strategic_actions ||
+    (person.achievements && !Array.isArray(person.achievements)) ||
+    person.limitations;
+
   let imgSrcHtml = '';
   if (person.image || person.image_url) {
-    const imgSrc = person.image_url ? person.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(person.image) : person.image);
+    const imgSrc = person.image_url
+      ? person.image_url
+      : typeof getAssetUrl === 'function'
+        ? getAssetUrl(person.image)
+        : person.image;
     imgSrcHtml = `
       <div style="margin-top: 25px; display: flex; justify-content: center; align-items: flex-start;">
         <img src="${imgSrc}" loading="lazy" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" onerror="this.parentElement.style.display='none'">
@@ -18,7 +26,11 @@ export function generateKeyIndividualEmbedHTML(person) {
     basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;">${person.bio}</div>`;
   } else if (person.significance) {
     basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;"><strong>Significance:</strong> ${person.significance}`;
-    if (person.achievements && Array.isArray(person.achievements) && person.achievements.length > 0) {
+    if (
+      person.achievements &&
+      Array.isArray(person.achievements) &&
+      person.achievements.length > 0
+    ) {
       basicBio += `<br><br><strong>Achievements:</strong><ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>`;
     }
     basicBio += `</div>`;
@@ -32,6 +44,16 @@ export function generateKeyIndividualEmbedHTML(person) {
         <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; border-radius: 4px;">
           <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Core Actions</strong>
           <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.actions}</span>
+        </div>`;
+    }
+    if (person.strategic_actions) {
+      const actionsList = Array.isArray(person.strategic_actions)
+        ? `<ul style="margin-top: 5px; padding-left: 18px; margin-bottom: 0;"><li>${person.strategic_actions.join('</li><li>')}</li></ul>`
+        : person.strategic_actions;
+      backHtml += `
+        <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; border-radius: 4px;">
+          <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Strategic Decisions &amp; Actions</strong>
+          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${actionsList}</span>
         </div>`;
     }
     if (person.achievements && !Array.isArray(person.achievements)) {
@@ -51,7 +73,9 @@ export function generateKeyIndividualEmbedHTML(person) {
     backHtml += `</div>`;
   }
 
-  let lifespanHtml = person.lifespan ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -5px; margin-bottom: 10px;">${person.lifespan}</p>` : '';
+  let lifespanHtml = person.lifespan
+    ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -5px; margin-bottom: 10px;">${person.lifespan}</p>`
+    : '';
 
   return `
     <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch; background: var(--bg-card); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glass);">
@@ -70,10 +94,14 @@ export function generateKeyIndividualEmbedHTML(person) {
 export function generateKeyIndividualCardHTML(person) {
   // FORCE hasBackData to always be true so every card flips, even if empty
   const hasBackData = true;
-  
+
   let frontImgHtml = '';
   if (person.image || person.image_url) {
-    const imgSrc = person.image_url ? person.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(person.image) : person.image);
+    const imgSrc = person.image_url
+      ? person.image_url
+      : typeof getAssetUrl === 'function'
+        ? getAssetUrl(person.image)
+        : person.image;
     frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card, #f8fafc); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden;">
       <img src="${imgSrc}" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;" onerror="this.src='/images/placeholder_portrait.jpg'">
     </div>`;
@@ -93,7 +121,7 @@ export function generateKeyIndividualCardHTML(person) {
   let backHtml = `
     <h3 style="margin: 0 0 15px 0; color: var(--primary); font-family: var(--font-heading); text-align: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px;">${person.name}</h3>
   `;
-  
+
   let hasDetailedContent = false;
 
   if (person.actions) {
@@ -104,9 +132,22 @@ export function generateKeyIndividualCardHTML(person) {
         <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.actions}</span>
       </div>`;
   }
+  if (person.strategic_actions) {
+    hasDetailedContent = true;
+    const actionsList = Array.isArray(person.strategic_actions)
+      ? `<ul style="margin-top: 5px; padding-left: 18px; margin-bottom: 0;"><li>${person.strategic_actions.join('</li><li>')}</li></ul>`
+      : person.strategic_actions;
+    backHtml += `
+      <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+        <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Strategic Decisions &amp; Actions</strong>
+        <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${actionsList}</span>
+      </div>`;
+  }
   if (person.achievements) {
     hasDetailedContent = true;
-    const achievementsList = Array.isArray(person.achievements) ? `<ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>` : person.achievements;
+    const achievementsList = Array.isArray(person.achievements)
+      ? `<ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>`
+      : person.achievements;
     backHtml += `
       <div style="background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
         <strong style="color: #22c55e; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Impact / Achievements</strong>
@@ -121,10 +162,12 @@ export function generateKeyIndividualCardHTML(person) {
         <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.limitations}</span>
       </div>`;
   }
-  
+
   if (person.quotes) {
     hasDetailedContent = true;
-    let quotesHtml = Array.isArray(person.quotes) ? person.quotes.map(q => `&ldquo;${q}&rdquo;`).join('<br><br>') : `&ldquo;${person.quotes}&rdquo;`;
+    let quotesHtml = Array.isArray(person.quotes)
+      ? person.quotes.map((q) => `&ldquo;${q}&rdquo;`).join('<br><br>')
+      : `&ldquo;${person.quotes}&rdquo;`;
     backHtml += `
       <div style="background: rgba(168, 85, 247, 0.1); border-left: 3px solid #a855f7; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
         <strong style="color: #a855f7; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Key Quotes</strong>
@@ -133,12 +176,14 @@ export function generateKeyIndividualCardHTML(person) {
   }
 
   if (!hasDetailedContent) {
-     backHtml += `<div style="padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; background: rgba(0,0,0,0.02); border-radius: 8px;">Detailed revision notes for this individual are currently being compiled. Check back soon!</div>`;
+    backHtml += `<div style="padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; background: rgba(0,0,0,0.02); border-radius: 8px;">Detailed revision notes for this individual are currently being compiled. Check back soon!</div>`;
   }
-  
+
   backHtml += `<div style="text-align: center; margin-top: auto; padding-top: 15px; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-undo"></i> Tap to flip back</div>`;
 
-  let lifespanHtml = person.lifespan ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -10px; margin-bottom: 10px;">${person.lifespan}</p>` : '';
+  let lifespanHtml = person.lifespan
+    ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -10px; margin-bottom: 10px;">${person.lifespan}</p>`
+    : '';
 
   const onclickAttr = `onclick="this.classList.toggle('flipped')"`;
 
@@ -161,7 +206,12 @@ export function generateKeyIndividualCardHTML(person) {
   `;
 }
 
-export function initKeyIndividualsTask(container, keyIndividualsData, customTitle, customDescription) {
+export function initKeyIndividualsTask(
+  container,
+  keyIndividualsData,
+  customTitle,
+  customDescription,
+) {
   if (!keyIndividualsData || keyIndividualsData.length === 0) return;
 
   // Pre-inject the flip-card styles into the document
@@ -276,8 +326,9 @@ export function initKeyIndividualsTask(container, keyIndividualsData, customTitl
   const header = document.createElement('div');
   header.style.textAlign = 'center';
   header.style.marginBottom = '40px';
-    const title = customTitle || 'Key Individuals';
-  const desc = customDescription || 'Profiles of the major historical figures who shaped these events.';
+  const title = customTitle || 'Key Individuals';
+  const desc =
+    customDescription || 'Profiles of the major historical figures who shaped these events.';
   header.innerHTML = `
     <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">${title}</h1>
     <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">${desc}</p>
@@ -295,29 +346,29 @@ export function initKeyIndividualsTask(container, keyIndividualsData, customTitl
       image: 'images/weimar_kt1_cover.jpg',
       gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
       border: '#3b82f6',
-      enquiry: 'To what extent did the Weimar Republic recover from its early crises?'
+      enquiry: 'To what extent did the Weimar Republic recover from its early crises?',
     },
     'Key Topic 2': {
       title: "Key Topic 2: Hitler's Rise to Power, 1919-33",
       image: 'images/weimar_kt2_cover.jpg',
       gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
       border: '#dc2626',
-      enquiry: 'How did a tiny obscure political group transform?'
+      enquiry: 'How did a tiny obscure political group transform?',
     },
     'Key Topic 3': {
-      title: "Key Topic 3: Nazi Control and Dictatorship",
+      title: 'Key Topic 3: Nazi Control and Dictatorship',
       image: 'images/weimar_kt3_cover.jpg',
       gradient: 'linear-gradient(135deg, #4b5563, #1f2937)',
       border: '#1f2937',
-      enquiry: 'From chains to absolute control'
+      enquiry: 'From chains to absolute control',
     },
     'Key Topic 4': {
-      title: "Key Topic 4: Life in Nazi Germany, 1933-39",
+      title: 'Key Topic 4: Life in Nazi Germany, 1933-39',
       image: 'images/weimar_kt4_cover.jpg',
       gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)',
       border: '#65a30d',
-      enquiry: 'Did life improve under the Nazis?'
-    }
+      enquiry: 'Did life improve under the Nazis?',
+    },
   };
 
   if (grouped) {
@@ -325,18 +376,21 @@ export function initKeyIndividualsTask(container, keyIndividualsData, customTitl
     let htmlContent = '';
     let isFirstGroup = true;
 
-    keyIndividualsData.forEach(person => {
+    keyIndividualsData.forEach((person) => {
       if (person.group !== currentGroup) {
         if (!isFirstGroup) {
           htmlContent += '</div>'; // Close previous grid
         }
         isFirstGroup = false;
         currentGroup = person.group;
-        
+
         // Add Banner
         const bannerData = bannerMap[currentGroup];
         if (bannerData) {
-          const bannerUrl = typeof getAssetUrl === 'function' ? getAssetUrl('/' + bannerData.image) : '/' + bannerData.image;
+          const bannerUrl =
+            typeof getAssetUrl === 'function'
+              ? getAssetUrl('/' + bannerData.image)
+              : '/' + bannerData.image;
           htmlContent += `
             <div style="margin-top: 40px; margin-bottom: 25px;">
               <div class="premium-banner" style="position: relative; margin: 0; min-height: 140px;">
@@ -363,7 +417,7 @@ export function initKeyIndividualsTask(container, keyIndividualsData, customTitl
         // Create new grid for this group
         htmlContent += `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; align-items: stretch;">`;
       }
-      
+
       htmlContent += generateKeyIndividualCardHTML(person);
     });
 
@@ -372,7 +426,6 @@ export function initKeyIndividualsTask(container, keyIndividualsData, customTitl
     }
 
     wrapper.insertAdjacentHTML('beforeend', htmlContent);
-
   } else {
     // Legacy non-grouped logic
     const grid = document.createElement('div');
@@ -380,9 +433,9 @@ export function initKeyIndividualsTask(container, keyIndividualsData, customTitl
     grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
     grid.style.gap = '25px';
     grid.style.alignItems = 'stretch';
-    
+
     let gridHtml = '';
-    keyIndividualsData.forEach(person => {
+    keyIndividualsData.forEach((person) => {
       gridHtml += generateKeyIndividualCardHTML(person);
     });
     grid.innerHTML = gridHtml;
