@@ -3419,6 +3419,50 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   let selectedLessons = {}; // Maps periodIndex -> lessonIdx
   let periodSettings = {}; // Maps `${currentDay}_${pIdx}` -> { resource, shelf, collection }
   let currentDispatchPayload = null;
+  let expandedSettings = {}; // Maps pIdx -> boolean for revealing detailed per-period settings
+
+  const getYearBadge = (setName) => {
+    const def = (setName && DEFAULT_SET_MAPPING[setName]) || {};
+    const year = def.year || '';
+    if (year.includes('8') || (setName && setName.includes('8'))) {
+      return {
+        label: 'Year 8',
+        bg: 'rgba(245, 158, 11, 0.16)',
+        border: 'rgba(245, 158, 11, 0.4)',
+        color: '#fbbf24',
+      };
+    }
+    if (year.includes('9') || (setName && setName.includes('9'))) {
+      return {
+        label: 'Year 9',
+        bg: 'rgba(59, 130, 246, 0.16)',
+        border: 'rgba(59, 130, 246, 0.4)',
+        color: '#60a5fa',
+      };
+    }
+    if (year.includes('10') || (setName && setName.includes('10'))) {
+      return {
+        label: 'GCSE Year 10',
+        bg: 'rgba(16, 185, 129, 0.16)',
+        border: 'rgba(16, 185, 129, 0.4)',
+        color: '#34d399',
+      };
+    }
+    if (year.includes('11') || (setName && setName.includes('11'))) {
+      return {
+        label: 'GCSE Year 11',
+        bg: 'rgba(168, 85, 247, 0.16)',
+        border: 'rgba(168, 85, 247, 0.4)',
+        color: '#c084fc',
+      };
+    }
+    return {
+      label: year || 'History Class',
+      bg: 'rgba(148, 163, 184, 0.16)',
+      border: 'rgba(148, 163, 184, 0.35)',
+      color: '#cbd5e1',
+    };
+  };
 
   const getPeriodSetting = (pIdx, setName) => {
     const key = `${currentDay}_${pIdx}`;
@@ -3793,20 +3837,22 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     recentHistoryList.innerHTML = log
       .map(
         (item, idx) => `
-      <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; gap: 5px;">
+      <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; gap: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-weight: 700; color: #60a5fa; font-size: 0.78rem;">${item.dayName}, ${item.dateStr} (${item.week})</span>
-          <span style="color: #94a3b8; font-size: 0.7rem;">Dispatched at ${item.recordedAt || ''}</span>
+          <span style="font-weight: 700; color: #60a5fa; font-size: 0.78rem;"><i class="fa-solid fa-calendar-day" style="margin-right: 5px;"></i>${item.dayName}, ${item.dateStr} (${item.week})</span>
+          <span style="color: #94a3b8; font-size: 0.7rem;"><i class="fa-solid fa-clock" style="margin-right: 4px;"></i>${item.recordedAt || ''}</span>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.72rem; color: #cbd5e1;">
           ${(item.entries || [])
-            .map(
-              (e) => `
-            <span style="background: #0f172a; border: 1px solid #334155; padding: 2px 7px; border-radius: 4px;">
-              <strong style="color: #f8fafc;">${e.period}:</strong> ${e.setName} — ${e.topic}
+            .map((e) => {
+              const yb = getYearBadge(e.setName);
+              return `
+            <span style="background: #0f172a; border: 1px solid #334155; padding: 3px 8px; border-radius: 5px; display: inline-flex; align-items: center; gap: 6px;">
+              <span style="background: ${yb.bg}; border: 1px solid ${yb.border}; color: ${yb.color}; padding: 1px 5px; border-radius: 3px; font-size: 0.64rem; font-weight: 700;">${yb.label}</span>
+              <strong style="color: #f8fafc;">${e.period}:</strong> <span style="color: #e2e8f0;">${e.setName}</span> — <span style="color: #93c5fd;">${e.topic}</span>
             </span>
-          `,
-            )
+          `;
+            })
             .join('')}
         </div>
       </div>
@@ -3822,11 +3868,38 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       if (item.entries) {
         const found = item.entries.find((e) => e.setName === setName);
         if (found) {
+          let unitId = found.unitId;
+          if (!unitId) {
+            const matchedUnit = ALL_UNITS.find(
+              (u) => u.title === found.unitTitle || u.id === found.unitTitle,
+            );
+            unitId = matchedUnit
+              ? matchedUnit.id
+              : (DEFAULT_SET_MAPPING[setName] && DEFAULT_SET_MAPPING[setName].unit) || 'great_war';
+          }
+          const unitLessons = getUnitLessons(unitId);
+          const nextLessonIdx =
+            found.lessonIdx !== undefined && found.lessonIdx !== null ? found.lessonIdx + 1 : null;
+          const hasNextLesson = nextLessonIdx !== null && nextLessonIdx < unitLessons.length;
+          const nextLesson = hasNextLesson
+            ? {
+                idx: nextLessonIdx,
+                title:
+                  (unitLessons[nextLessonIdx] && unitLessons[nextLessonIdx].title) ||
+                  `Lesson ${nextLessonIdx + 1}`,
+              }
+            : null;
+
           return {
             dateStr: `${item.dayName.slice(0, 3)} ${item.dateStr.split(' ')[0]} ${item.dateStr.split(' ')[1]}`,
+            fullDateStr: `${item.dayName}, ${item.dateStr}`,
             topic: found.topic,
             lessonIdx: found.lessonIdx,
-            unitTitle: found.unitTitle,
+            unitId: unitId,
+            unitTitle: found.unitTitle || getUnitTitle(unitId),
+            nextLesson: nextLesson,
+            totalLessons: unitLessons.length,
+            isLastLesson: nextLessonIdx !== null && nextLessonIdx >= unitLessons.length,
           };
         }
       }
@@ -3874,6 +3947,86 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
     const savedLastTopics = getSavedTopics();
     const periodsData = [];
+
+    // Pre-scan for recent cover memories & quick-advanceable classes
+    const teachingSlotsWithCover = [];
+    const advanceableSlots = [];
+
+    timetableDayList.forEach((slot, pIdx) => {
+      if (slot.type === 'hub' || slot.type === 'club') return;
+      const setNameMatch = slot.raw ? slot.raw.match(/Set\s+[0-9a-zA-Z]+/i) : null;
+      const setName = setNameMatch
+        ? setNameMatch[0]
+        : slot.raw
+          ? slot.raw.split('\n')[0]
+          : 'History Class';
+      const prev = findPreviousCoverForSet(setName);
+      if (prev) {
+        teachingSlotsWithCover.push({ pIdx, setName, prevCover: prev });
+        if (prev.nextLesson) {
+          advanceableSlots.push({ pIdx, setName, prevCover: prev });
+        }
+      }
+    });
+
+    // Render Prominent "Prior Absence Cover Memory" Banner if previous cover detected
+    if (teachingSlotsWithCover.length > 0) {
+      const memoryBanner = document.createElement('div');
+      memoryBanner.style.cssText =
+        'background: linear-gradient(135deg, rgba(30, 58, 138, 0.28), rgba(15, 23, 42, 0.8)); border: 1px solid rgba(59, 130, 246, 0.45); border-radius: 8px; padding: 11px 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);';
+
+      memoryBanner.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; font-size: 0.95rem;"></i>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #f8fafc; letter-spacing: -0.01em;">Recent Cover Memory Detected</span>
+            <span style="font-size: 0.66rem; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; padding: 1px 7px; border-radius: 10px; font-weight: 600;">No Email Searching Required</span>
+          </div>
+
+          ${
+            advanceableSlots.length > 0
+              ? `
+            <button id="btnAdvanceAllCover" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: 1px solid #3b82f6; padding: 4px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4); transition: all 0.15s;" onmouseover="this.style.filter='brightness(1.15)';" onmouseout="this.style.filter='none';" title="Advance all matching classes on today's timetable to their subsequent lesson with 1 click">
+              <i class="fa-solid fa-forward-fast"></i> Advance All to Next Lesson (+1)
+            </button>
+          `
+              : ''
+          }
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          ${teachingSlotsWithCover
+            .map((item) => {
+              const yb = getYearBadge(item.setName);
+              const p = item.prevCover;
+              return `
+              <div style="background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; display: flex; align-items: center; gap: 6px;">
+                <span style="background: ${yb.bg}; border: 1px solid ${yb.border}; color: ${yb.color}; padding: 1px 5px; border-radius: 3px; font-size: 0.64rem; font-weight: 700;">${yb.label}</span>
+                <span style="color: #f8fafc; font-weight: 700;">${item.setName}:</span>
+                <span style="color: #cbd5e1;">Last set was <strong style="color: #93c5fd;">Lesson ${(p.lessonIdx ?? 0) + 1}</strong> (${p.dateStr})</span>
+                ${p.nextLesson ? `<span style="color: #34d399; font-weight: 700;">➔ Next: L${p.nextLesson.idx + 1}</span>` : ''}
+              </div>
+            `;
+            })
+            .join('')}
+        </div>
+      `;
+
+      // Advance All click handler
+      const btnAdvanceAll = memoryBanner.querySelector('#btnAdvanceAllCover');
+      if (btnAdvanceAll) {
+        btnAdvanceAll.onclick = () => {
+          advanceableSlots.forEach(({ pIdx, setName, prevCover }) => {
+            selectedUnits[pIdx] = prevCover.unitId;
+            selectedLessons[pIdx] = prevCover.nextLesson.idx;
+            saveTopicForSet(setName, prevCover.unitId, prevCover.nextLesson.idx);
+          });
+          updateModalState();
+        };
+      }
+
+      periodsContainer.appendChild(memoryBanner);
+    }
 
     timetableDayList.forEach((slot, pIdx) => {
       const periodName = slot.period;
@@ -3980,15 +4133,9 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         liveUrl: liveUrl,
       });
 
-      // Previous cover tag
+      // Year badge & Previous cover info
+      const yb = getYearBadge(setName);
       const prevCover = findPreviousCoverForSet(setName);
-      const prevCoverTag = prevCover
-        ? `
-        <span style="font-size: 0.68rem; color: #93c5fd; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 2px 7px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
-          <i class="fa-solid fa-clock-rotate-left"></i> Prev: ${prevCover.dateStr} (Lesson ${(prevCover.lessonIdx ?? 0) + 1})
-        </span>
-      `
-        : '';
 
       // Build Unit Dropdown Options with optgroups
       const gcseUnits = ALL_UNITS.filter((u) => u.group === 'GCSE History');
@@ -4022,18 +4169,55 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       const isWorkbooks = pSetting.resource === 'workbooks';
       const isShelf = pSetting.shelf === true;
       const colMode = pSetting.collection || 'collect';
+      const isSettingsOpen = !!expandedSettings[pIdx];
+
+      // Build Quick Bump or Status Badge HTML
+      let quickBumpHtml = '';
+      if (prevCover && prevCover.nextLesson) {
+        if (activeLIdx === prevCover.nextLesson.idx && activeUnitId === prevCover.unitId) {
+          quickBumpHtml = `
+            <span style="background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-circle-check"></i> Advanced to Lesson ${activeLIdx + 1} (After L${prevCover.lessonIdx + 1})
+            </span>
+          `;
+        } else {
+          quickBumpHtml = `
+            <button type="button" class="btn-quick-bump" data-pidx="${pIdx}" data-unitid="${prevCover.unitId}" data-nextidx="${prevCover.nextLesson.idx}" style="background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #ffffff; border: 1px solid #3b82f6; padding: 4px 12px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35); transition: all 0.15s;" onmouseover="this.style.filter='brightness(1.15)';" onmouseout="this.style.filter='none';" title="Advance to Lesson ${prevCover.nextLesson.idx + 1}: ${prevCover.nextLesson.title}">
+              <i class="fa-solid fa-forward-step"></i> Advance to Lesson ${prevCover.nextLesson.idx + 1} (+1)
+            </button>
+          `;
+        }
+      } else if (prevCover && prevCover.isLastLesson) {
+        quickBumpHtml = `
+          <span style="color: #94a3b8; font-size: 0.7rem; font-style: italic;">
+            <i class="fa-solid fa-flag-checkered" style="color: #60a5fa; margin-right: 4px;"></i>Completed unit on ${prevCover.dateStr}
+          </span>
+        `;
+      } else if (prevCover) {
+        quickBumpHtml = `
+          <span style="color: #94a3b8; font-size: 0.7rem;">
+            <i class="fa-solid fa-clock-rotate-left" style="color: #60a5fa; margin-right: 4px;"></i>Prev: ${prevCover.dateStr} (Lesson ${(prevCover.lessonIdx ?? 0) + 1})
+          </span>
+        `;
+      }
 
       const row = document.createElement('div');
       row.style.cssText =
         'background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px;';
 
       row.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-weight: 700; color: #60a5fa; font-size: 0.84rem;">▶ ${periodName.toUpperCase()} (${timeSlot})</span>
-            <span style="color: #f8fafc; font-weight: 700; font-size: 0.84rem;">— ${setName}</span>
+            <span style="background: ${yb.bg}; border: 1px solid ${yb.border}; color: ${yb.color}; padding: 3px 9px; border-radius: 5px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;">
+              ${yb.label}
+            </span>
+            <span style="color: #f8fafc; font-weight: 700; font-size: 0.86rem;">
+              ${periodName.toUpperCase()} (${timeSlot}) — ${setName}
+            </span>
           </div>
-          ${prevCoverTag}
+          <div>
+            ${quickBumpHtml}
+          </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
@@ -4047,15 +4231,36 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
           <!-- Lesson / Topic Selector -->
           <div style="display: flex; flex-direction: column; gap: 3px;">
-            <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Topic / Lesson:</span>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Topic / Lesson:</span>
+              ${prevCover ? `<span style="font-size: 0.66rem; color: #60a5fa;">Prev: L${(prevCover.lessonIdx ?? 0) + 1} (${prevCover.dateStr})</span>` : ''}
+            </div>
             <select class="cover-lesson-picker" data-pidx="${pIdx}" data-setname="${setName}" style="background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #f8fafc; font-size: 0.78rem; padding: 5px 8px; outline: none; cursor: pointer;">
               ${lessonOptionsHtml}
             </select>
           </div>
         </div>
 
-        <!-- Per-Period Instructions Bar -->
-        <div style="background: #162032; border: 1px solid #293548; border-radius: 6px; padding: 7px 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
+        <!-- Sleek Per-Period Summary & Customization Toggle (De-cluttered) -->
+        <div style="background: #162032; border: 1px solid #243044; border-radius: 6px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.74rem;">
+            <span style="color: #93c5fd; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+              ${isWorkbooks ? '<i class="fa-solid fa-book-open" style="color: #3b82f6;"></i> Workbooks' : pSetting.resource === 'paper' ? '<i class="fa-solid fa-file-lines" style="color: #3b82f6;"></i> Paper Only' : '<i class="fa-solid fa-laptop" style="color: #3b82f6;"></i> Laptops Only'}
+              ${isWorkbooks && isShelf ? '<span style="font-size: 0.66rem; background: rgba(59, 130, 246, 0.2); color: #bfdbfe; padding: 1px 5px; border-radius: 3px; font-weight: 600;">Shelf</span>' : ''}
+            </span>
+            <span style="color: #475569;">•</span>
+            <span style="color: #94a3b8;">
+              Collection: <strong style="color: #e2e8f0;">${colMode === 'collect' ? 'Collect at End' : colMode === 'folders' ? 'In Folders' : 'VLE'}</strong>
+            </span>
+          </div>
+
+          <button type="button" class="btn-toggle-period-settings" data-pidx="${pIdx}" style="background: transparent; border: 1px solid #334155; color: #94a3b8; padding: 2px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;" onmouseover="this.style.color='#f8fafc'; this.style.borderColor='#60a5fa';" onmouseout="this.style.color='#94a3b8'; this.style.borderColor='#334155';">
+            <i class="fa-solid fa-sliders"></i> ${isSettingsOpen ? 'Done' : 'Customise'}
+          </button>
+        </div>
+
+        <!-- Expandable Per-Period Settings Bar -->
+        <div class="period-custom-settings" style="display: ${isSettingsOpen ? 'flex' : 'none'}; background: #0b1120; border: 1px solid #1e293b; border-radius: 6px; padding: 8px 10px; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
           <!-- Resource Toggle & Shelf Handout -->
           <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
             <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Resource:</span>
@@ -4095,6 +4300,28 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
           </div>
         </div>
       `;
+
+      // Quick bump button listener
+      const bumpBtn = row.querySelector('.btn-quick-bump');
+      if (bumpBtn) {
+        bumpBtn.onclick = () => {
+          const targetUnitId = bumpBtn.getAttribute('data-unitid');
+          const targetLessonIdx = parseInt(bumpBtn.getAttribute('data-nextidx'), 10);
+          selectedUnits[pIdx] = targetUnitId;
+          selectedLessons[pIdx] = targetLessonIdx;
+          saveTopicForSet(setName, targetUnitId, targetLessonIdx);
+          updateModalState();
+        };
+      }
+
+      // Settings toggle listener
+      const toggleSettingsBtn = row.querySelector('.btn-toggle-period-settings');
+      if (toggleSettingsBtn) {
+        toggleSettingsBtn.onclick = () => {
+          expandedSettings[pIdx] = !expandedSettings[pIdx];
+          updateModalState();
+        };
+      }
 
       // Unit change listener
       const unitPickerEl = row.querySelector('.cover-unit-picker');
@@ -4276,6 +4503,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
         .map((p) => ({
           period: p.period,
           setName: p.setName,
+          unitId: p.unitId,
           unitTitle: p.unitName,
           topic: p.topicName,
           lessonIdx: p.lessonIdx,
