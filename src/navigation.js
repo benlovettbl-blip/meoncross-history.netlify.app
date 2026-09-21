@@ -22,6 +22,7 @@ import { renderCompetitionsView } from './competitions_zone.js';
 import { renderChessHubView } from './chess_zone.js';
 
 import { renderCurriculumMap } from './curriculum_map.js';
+import { renderDepartmentPortal } from './department_portal.js';
 
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
@@ -213,6 +214,7 @@ export function updateBreadcrumbs(customTrail = null) {
     else if (viewName === 'mock-exams') currentSectionLabel = 'GCSE Mock Exams';
     else if (viewName === 'profile') currentSectionLabel = 'Student Profile';
     else if (viewName === 'curriculum') currentSectionLabel = 'Curriculum Map';
+    else if (viewName === 'department-portal') currentSectionLabel = 'Department Portal';
     else if (viewName === 'competitions') currentSectionLabel = 'Competitions & Awards';
     else if (viewName === 'chess') currentSectionLabel = 'Chess Club';
     else if (viewName === 'decisions') currentSectionLabel = 'Decisions Game';
@@ -345,6 +347,7 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     viewName === 'dashboard' ||
     viewName === 'profile' ||
     viewName === 'curriculum' ||
+    viewName === 'department-portal' ||
     viewName === 'competitions' ||
     viewName === 'chess' ||
     (viewName === 'booklet' && (!param || param === 'all'));
@@ -432,6 +435,11 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     renderReadingView();
   } else if (viewName === 'curriculum') {
     await renderCurriculumMap();
+  } else if (viewName === 'department-portal') {
+    if (param && typeof window !== 'undefined' && typeof window.switchPortalTab === 'function') {
+      window.switchPortalTab(param);
+    }
+    renderDepartmentPortal();
   } else if (viewName === 'competitions') {
     renderCompetitionsView();
   } else if (viewName === 'chess') {

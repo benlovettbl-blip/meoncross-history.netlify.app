@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guide 03: Reprographics & Print Handbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm 10mm 10mm;
+      }
+      body {
+        font-family:
+          'Inter',
+          -apple-system,
+          sans-serif;
+        font-size: 8.5pt;
+        line-height: 1.35;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .page-container {
+        width: 100%;
+        height: 272mm;
+        max-height: 272mm;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2mm 4mm;
+      }
+      .header-bar {
+        border-bottom: 2.5px solid #0f172a;
+        padding-bottom: 5px;
+        margin-bottom: 8px;
+      }
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 3px;
+      }
+      .brand-title {
+        font-size: 11pt;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0f172a;
+      }
+      .brand-subtitle {
+        font-size: 7.5pt;
+        font-weight: 700;
+        color: #64748b;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .cat-badge {
+        display: inline-block;
+        background: #1e3a8a;
+        color: #ffffff;
+        font-size: 6.8pt;
+        font-weight: 800;
+        padding: 2px 8px;
+        border-radius: 3px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 17pt;
+        font-weight: 800;
+        margin: 0 0 2px 0;
+        color: #0f172a;
+        line-height: 1.15;
+      }
+      .subtitle {
+        font-size: 8.5pt;
+        color: #475569;
+        font-style: italic;
+        margin-bottom: 6px;
+      }
+      .intro-box {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-left: 4px solid #1e3a8a;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 8.2pt;
+        line-height: 1.4;
+        color: #1e293b;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .card {
+        border: 1px solid #cbd5e1;
+        border-radius: 5px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-header {
+        padding: 5px 8px;
+        font-weight: 800;
+        font-size: 7.8pt;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+      }
+      .card-header.blue {
+        background: #1e3a8a;
+      }
+      .card-header.amber {
+        background: #b45309;
+      }
+      .card-header.emerald {
+        background: #065f46;
+      }
+      .card-header.purple {
+        background: #581c87;
+      }
+      .card-body {
+        padding: 8px;
+        font-size: 7.6pt;
+        line-height: 1.35;
+        color: #334155;
+        flex: 1;
+      }
+      .card-body ul {
+        margin: 4px 0 0 0;
+        padding-left: 14px;
+      }
+      .card-body li {
+        margin-bottom: 3px;
+      }
+      .citation {
+        margin-top: 6px;
+        padding-top: 5px;
+        border-top: 1px dashed #cbd5e1;
+        font-size: 7pt;
+        color: #64748b;
+      }
+      .citation a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 2px;
+      }
+      .section-title {
+        font-weight: 800;
+        font-size: 8.8pt;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-bottom: 1.5px solid #0f172a;
+        padding-bottom: 2px;
+        margin: 8px 0 6px 0;
+      }
+      .highlight-rule {
+        background: #f0fdf4;
+        border: 1px solid #86efac;
+        border-left: 4px solid #16a34a;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 8pt;
+        color: #166534;
+        line-height: 1.35;
+      }
+      .code-box {
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 7.8pt;
+        line-height: 1.5;
+      }
+      .imposition-diagram {
+        background: #f8fafc;
+        border: 1.5px solid #0284c7;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 7.8pt;
+        color: #0369a1;
+        line-height: 1.6;
+      }
+      .footer-bar {
+        border-top: 1.5px solid #0f172a;
+        padding-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 7pt;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <div>
+        <div class="header-bar">
+          <div class="header-top">
+            <div class="brand-title">THE HISTORY REVISION HUB</div>
+            <div class="brand-subtitle">DEPARTMENT PORTAL &bull; STANDARD OPERATING PROCEDURE</div>
+          </div>
+          <div class="cat-badge">PRINT PRODUCTION & REPROGRAPHICS MANUAL</div>
+          <h1>Guide 03: Reprographics & Print Handbook</h1>
+          <div class="subtitle">
+            Saddle-Stitch Imposition, Gutter Margins & Duplex Booklet Production
+          </div>
+        </div>
+
+        <div class="intro-box">
+          <strong>Instructions for Reprographics & Print Room Staff:</strong> All pupil workbooks
+          are engineered for <strong>A4 Portrait Saddle-Stitched Booklets</strong> (printed two-up
+          on A3 paper, folded and stapled on the spine). Follow these exact machine settings to
+          guarantee flawless page alignment.
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header emerald">🖨️ Photocopier / RISO Machine Settings</div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Original Document Size:</strong> A4 Portrait (210mm &times; 297mm).</li>
+                <li><strong>Target Paper Size:</strong> A3 Landscape (420mm &times; 297mm).</li>
+                <li><strong>Layout Mode:</strong> Booklet / 2-Up Saddle-Stitch (Left Binding).</li>
+                <li><strong>Duplexing:</strong> 2-Sided &rarr; 2-Sided (Flip on Short Edge).</li>
+                <li>
+                  <strong>Finishing / Stapling:</strong> Center Saddle-Stitch (Dual Spine Staples).
+                </li>
+                <li>
+                  <strong>Scaling:</strong> 100% (Do NOT choose "Fit to Printable Area" as margins
+                  are already calibrated).
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header blue">📐 Gutter Margins & Creep Allowance</div>
+            <div class="card-body">
+              <ul>
+                <li>
+                  <strong>Internal Gutter:</strong> 10mm inner margin on all pages ensures text is
+                  never swallowed by the spine fold.
+                </li>
+                <li>
+                  <strong>Outer Margin:</strong> 10mm outer margin protects content from edge
+                  trimmer clipping.
+                </li>
+                <li>
+                  <strong>Page Budget:</strong> 16-page count ensures 4 physical A3 folded sheets
+                  with zero blank waste pages.
+                </li>
+                <li>
+                  <strong>Recommended Paper Stock:</strong>
+                  <ul>
+                    <li>
+                      <strong>Cover Sheet (Pages 1 &amp; 16):</strong> 120gsm or 160gsm Silk/Matt
+                      Cardstock.
+                    </li>
+                    <li>
+                      <strong>Inner Pages (Pages 2–15):</strong> 80gsm or 90gsm Uncoated (prevents
+                      ink show-through from highlighters).
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">16-Page Booklet Imposition Diagram</div>
+        <p>When printed as a saddle-stitched booklet, pages pair automatically on A3 sheets:</p>
+        <div class="imposition-diagram">
+          <strong>Sheet 1 (Outer):</strong> Page 16 (Back Cover) &bull; Page 1 (Front Cover)
+          &nbsp;|&nbsp; <em>Reverse:</em> Page 2 &bull; Page 15<br />
+          <strong>Sheet 2:</strong> Page 14 (Map Atlas) &bull; Page 3 (Enquiry 1) &nbsp;|&nbsp;
+          <em>Reverse:</em> Page 4 &bull; Page 13<br />
+          <strong>Sheet 3:</strong> Page 12 (Exam Practice) &bull; Page 5 (Enquiry 2) &nbsp;|&nbsp;
+          <em>Reverse:</em> Page 6 &bull; Page 11<br />
+          <strong>Sheet 4 (Center):</strong> Page 10 (Exam Practice) &bull; Page 7 (Enquiry 3)
+          &nbsp;|&nbsp; <em>Reverse:</em> Page 8 &bull; Page 9
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <span
+          >The History Revision Hub &bull; Disciplinary Guidance System &bull; 2026 Edition</span
+        >
+        <span>Strict Commercial Neutrality &bull; Page 1 of 1</span>
+      </div>
+    </div>
+  </body>
+</html>

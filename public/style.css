@@ -5049,3 +5049,33 @@ details.cme-source-drawer[open] {
     0 0 0 2px rgba(245, 158, 11, 0.3),
     0 6px 16px rgba(0, 0, 0, 0.08) !important;
 }
+
+/* ====================================================================
+   CLASSROOM SMARTBOARD & BIG-SCREEN 2-COLUMN MEASURE (SEND / ACCESSIBILITY)
+   Constrains line length to 50–65 characters to eliminate eye-sweep fatigue.
+   ==================================================================== */
+@media (min-width: 1024px) {
+  .narrative-chunk .narrative-text {
+    columns: 2;
+    column-gap: 40px;
+    column-rule: 1px solid #e2e8f0;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .narrative-chunk .narrative-text .paragraph-signpost,
+  .narrative-chunk .narrative-text h4,
+  .narrative-chunk .narrative-text .theme-heading {
+    column-span: all;
+    margin-bottom: 12px;
+  }
+  .narrative-chunk .narrative-text .para-ref {
+    break-after: avoid;
+    display: inline-block;
+    margin-right: 4px;
+  }
+  .narrative-chunk .narrative-text .task-box,
+  .narrative-chunk .narrative-text .scaffold-box,
+  .narrative-chunk .narrative-text .key-individual-inline-link {
+    break-inside: avoid;
+  }
+}

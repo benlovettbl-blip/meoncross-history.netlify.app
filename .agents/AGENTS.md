@@ -49,6 +49,17 @@ The `teacher_notes` property MUST be an object following this exact schema:
     - `primer`: Actionable instructions for the teacher on how to achieve this objective, referencing specific paragraphs or tasks in the narrative.
     - `question`: A "Hinge Question" designed to check student understanding of this specific objective.
 
+## Automated Pedagogical Research Bank Protocol
+Whenever you (the AI agent) and the user discuss or develop pedagogical strategies, cognitive science findings, SEND accommodations, disciplinary literacy techniques, or curriculum mechanisms:
+1. **Automatic Synthesis Without Prompting:** Proactively capture and synthesize the pedagogical principle into `src/pedagogy_data.js` (`PEDAGOGY_RESEARCH_BANK`) so it immediately appears in the in-app Department Portal.
+2. **Pragmatic Grounding for Teachers:** Each entry must contain:
+   - The Classroom Dilemma / Problem (why traditional teaching fails).
+   - What the Evidence Proves (academic or cognitive finding).
+   - Revision Hub Implementation (exact tools, typography, or booklet features used).
+   - Practical Classroom Protocol (actionable takeaway for busy teachers).
+   - Direct Academic Citations & Verified External Web Links (with clear URLs so teachers can research further).
+3. **Synchronized Guidance Manuals:** Keep `Guide_04_Disciplinary_Pedagogy_and_Research_Evidence.pdf` (and `scripts/generate_guidance_manuals.cjs`) in sync with new pedagogical bank entries, ensuring all web links are explicitly printed on the page for reprographics.
+
 ## Proactive Planning & Design Persona
 Act as an experienced app builder and an experienced history teacher. Whenever completing a task or planning work, always think ahead and provide 1 to 3 proactive recommendations at the end of your output. These recommendations should suggest where to go next in terms of architecture, design, structure, layout, pedagogy, content, historical knowledge, or pupil tasks.
 

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guide 02: The Master Cover Engine & Commercial Customizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm 10mm 10mm;
+      }
+      body {
+        font-family:
+          'Inter',
+          -apple-system,
+          sans-serif;
+        font-size: 8.5pt;
+        line-height: 1.35;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .page-container {
+        width: 100%;
+        height: 272mm;
+        max-height: 272mm;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2mm 4mm;
+      }
+      .header-bar {
+        border-bottom: 2.5px solid #0f172a;
+        padding-bottom: 5px;
+        margin-bottom: 8px;
+      }
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 3px;
+      }
+      .brand-title {
+        font-size: 11pt;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0f172a;
+      }
+      .brand-subtitle {
+        font-size: 7.5pt;
+        font-weight: 700;
+        color: #64748b;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .cat-badge {
+        display: inline-block;
+        background: #1e3a8a;
+        color: #ffffff;
+        font-size: 6.8pt;
+        font-weight: 800;
+        padding: 2px 8px;
+        border-radius: 3px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 17pt;
+        font-weight: 800;
+        margin: 0 0 2px 0;
+        color: #0f172a;
+        line-height: 1.15;
+      }
+      .subtitle {
+        font-size: 8.5pt;
+        color: #475569;
+        font-style: italic;
+        margin-bottom: 6px;
+      }
+      .intro-box {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-left: 4px solid #1e3a8a;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 8.2pt;
+        line-height: 1.4;
+        color: #1e293b;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .card {
+        border: 1px solid #cbd5e1;
+        border-radius: 5px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-header {
+        padding: 5px 8px;
+        font-weight: 800;
+        font-size: 7.8pt;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+      }
+      .card-header.blue {
+        background: #1e3a8a;
+      }
+      .card-header.amber {
+        background: #b45309;
+      }
+      .card-header.emerald {
+        background: #065f46;
+      }
+      .card-header.purple {
+        background: #581c87;
+      }
+      .card-body {
+        padding: 8px;
+        font-size: 7.6pt;
+        line-height: 1.35;
+        color: #334155;
+        flex: 1;
+      }
+      .card-body ul {
+        margin: 4px 0 0 0;
+        padding-left: 14px;
+      }
+      .card-body li {
+        margin-bottom: 3px;
+      }
+      .citation {
+        margin-top: 6px;
+        padding-top: 5px;
+        border-top: 1px dashed #cbd5e1;
+        font-size: 7pt;
+        color: #64748b;
+      }
+      .citation a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 2px;
+      }
+      .section-title {
+        font-weight: 800;
+        font-size: 8.8pt;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-bottom: 1.5px solid #0f172a;
+        padding-bottom: 2px;
+        margin: 8px 0 6px 0;
+      }
+      .highlight-rule {
+        background: #f0fdf4;
+        border: 1px solid #86efac;
+        border-left: 4px solid #16a34a;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 8pt;
+        color: #166534;
+        line-height: 1.35;
+      }
+      .code-box {
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 7.8pt;
+        line-height: 1.5;
+      }
+      .imposition-diagram {
+        background: #f8fafc;
+        border: 1.5px solid #0284c7;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 7.8pt;
+        color: #0369a1;
+        line-height: 1.6;
+      }
+      .footer-bar {
+        border-top: 1.5px solid #0f172a;
+        padding-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 7pt;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <div>
+        <div class="header-bar">
+          <div class="header-top">
+            <div class="brand-title">THE HISTORY REVISION HUB</div>
+            <div class="brand-subtitle">DEPARTMENT PORTAL &bull; STANDARD OPERATING PROCEDURE</div>
+          </div>
+          <div class="cat-badge">DESIGN SYSTEM & INSTITUTIONAL NEUTRALITY</div>
+          <h1>Guide 02: The Master Cover Engine & Commercial Customizer</h1>
+          <div class="subtitle">
+            Standardized Cover Architecture, Specification Grid & Multi-School Branding
+          </div>
+        </div>
+
+        <div class="intro-box">
+          <strong>Executive Summary:</strong> All printed pupil workbooks and revision guides
+          enforce the
+          <strong>Master Cover Engine</strong>
+          (<code>scripts/components/render_standard_cover.cjs</code>). This ensures a dignified,
+          museum-grade aesthetic that complies with the Pearson Edexcel specification while
+          maintaining 100% commercial neutrality for purchasing schools.
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header blue">🏛️ Front Cover Architecture (Page 1)</div>
+            <div class="card-body">
+              <ul>
+                <li>
+                  <strong>Top Departmental Header:</strong> Features
+                  <code>data-department-name="The History Department"</code>, enabling any school to
+                  brand the cover.
+                </li>
+                <li>
+                  <strong>Chronological Banner:</strong> Displays Key Topic number, dates, and
+                  official Pearson qualification code (e.g. <code>SPECIFICATION 1HI0/2B</code>).
+                </li>
+                <li>
+                  <strong>Archival Hero Plaque:</strong> 120mm landscape historical photograph with
+                  accession shelfmark, date, photographer/artist, and institutional repository.
+                </li>
+                <li>
+                  <strong>Pupil Identification Block:</strong> Crisp Name, Class, and Teacher fields
+                  with classical hairline borders.
+                </li>
+                <li>
+                  <strong>3-Column Specification Breakdown:</strong> Direct Pearson specification
+                  syllabus points filling the bottom page budget with 0 dead white void.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header purple">📊 Back Cover Architecture (Page 16)</div>
+            <div class="card-body">
+              <ul>
+                <li>
+                  <strong>Assessment Progress Ledger:</strong> Formative breakdown of enquiry marks
+                  (/26 per topic, /130 total) with benchmark conversion.
+                </li>
+                <li>
+                  <strong>WWW / EBI Feedback Section:</strong> 4-line 7.2mm handwriting lines for
+                  teacher formative feedback, SEND adaptations, and pupil response.
+                </li>
+                <li>
+                  <strong>Teacher Sign-off:</strong> Dedicated signature and date approval lines.
+                </li>
+                <li>
+                  <strong>5-Code Vector QR Hub:</strong> Vector SVGs linking pupils directly to
+                  online flashcards, digital quizzes, model answers, and audio narratives.
+                </li>
+                <li><strong>Bottom Folio:</strong> Departmental imprint and pagination marker.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Commercial Multi-School Customizer Pattern</div>
+        <p>
+          To maintain commercial neutrality, the repository strictly forbids hardcoded school names.
+          Purchasing schools can instantly brand their printed packs via three seamless mechanisms:
+        </p>
+        <div class="code-box">
+          1. <strong>Browser Query Param:</strong> Add <code>?school=St+Peters+Collegiate</code> to
+          the URL.<br />
+          2. <strong>CLI Build Flag:</strong>
+          <code>SCHOOL_NAME="St Jude's Academy" node scripts/export_pdfs.cjs cme_new</code><br />
+          3. <strong>Pure CSS Override:</strong>
+          <code>[data-department-name]::after { content: "Your School Name"; }</code>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <span
+          >The History Revision Hub &bull; Disciplinary Guidance System &bull; 2026 Edition</span
+        >
+        <span>Strict Commercial Neutrality &bull; Page 1 of 1</span>
+      </div>
+    </div>
+  </body>
+</html>
