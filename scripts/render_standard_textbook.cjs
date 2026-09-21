@@ -6,23 +6,24 @@
  * HTML:   public/units/cme_new/textbook_KT2_PUBLISHER_PILOT.html
  *
  * Architectural Standards Enforced:
- * 1. ZERO AI Fluff: No pedagogical theory jargon in pupil textbooks (removed "Christine Counsell 4-Act Arc").
- * 2. Official Specification Primacy: Header & banners prominently feature Edexcel GCSE 1HI0/26 Option 26/27.
- * 3. Base64 Image Inlining: All archival photos embedded directly as Data URIs (100% reliable offline & in Puppeteer).
- * 4. Dual-Modality Primary Sources: Image sources render with calibrated photos; written diplomatic texts render verbatim.
- * 5. Exact 12-Page Budget (Zero Orphans, Zero Blank Pages):
- *    - Page 1:  Master Front Cover (98mm hero photo, official 3-column spec matrix, zero workbook pupil lines)
- *    - Page 2:  Lesson 6 (KT 2.1 Causes of Six-Day War - Acts 1 & 2, Sources A & B)
- *    - Page 3:  Lesson 6 (KT 2.1 Causes of Six-Day War - Acts 3 & 4, Source C Diplomatic Text)
- *    - Page 4:  Lesson 7 (KT 2.2 Course of Six-Day War - Acts 1 & 2, Source A Airfield Photo)
- *    - Page 5:  Lesson 7 (KT 2.2 Course of Six-Day War - Acts 3 & 4, Source B Paratroopers Photo)
- *    - Page 6:  Lesson 8 (KT 2.3 Conquered Territories & 242 - Acts 1 & 2, Sources A & B Khartoum Text)
- *    - Page 7:  Lesson 8 (KT 2.3 Conquered Territories & 242 - Acts 3 & 4, Source C Treaty Comparison)
- *    - Page 8:  Lesson 9 (KT 2.4 Palestinian Resistance & Munich - Acts 1 & 2, Source A Dawson's Field)
- *    - Page 9:  Lesson 9 (KT 2.4 Palestinian Resistance & Munich - Acts 3 & 4, Source B Balcony Terrorist)
- *    - Page 10: Lesson 10 (KT 2.5 War of Attrition & Yom Kippur - Acts 1 & 2, Source A Egyptian Crossing)
- *    - Page 11: Lesson 10 (KT 2.5 War of Attrition & Yom Kippur - Acts 3 & 4, Source B Israeli Crossing)
- *    - Page 12: Master Back Cover (KT2 Chronological Overview, Core Terminology & Exam Question Guide)
+ * 1. ZERO AI Fluff & Zero Theatrical Jargon: Removed internal DB IDs and "Act 1–4" staging tags.
+ * 2. Official Specification Primacy: Header, cover matrix & lesson banners feature authentic Pearson Edexcel 1HI0/26 spec.
+ * 3. Base64 Image Inlining: All archival photos & maps embedded directly as Data URIs (100% reliable offline & in Puppeteer).
+ * 4. Automated Map Preservation: All historical maps rendered uncropped with object-fit: contain so no borders or legends are clipped.
+ * 5. Clean Chapter Headings: Professional textbook section subheadings with [Section.Paragraph] pills for workbook linkage.
+ * 6. Exact 12-Page Budget (Zero Orphans, Zero Blank Pages):
+ *    - Page 1:  Master Front Cover (98mm uncropped photographic plate, official 3-column spec matrix)
+ *    - Page 2:  Lesson 6 (KT 2.1 Causes of Six-Day War - Sections 1 & 2, Sources A Photo & B Map)
+ *    - Page 3:  Lesson 6 (KT 2.1 Causes of Six-Day War - Sections 3 & 4, Source C Diplomatic Dispatch)
+ *    - Page 4:  Lesson 7 (KT 2.2 Course of Six-Day War - Sections 1 & 2, Source A Airfield Photo)
+ *    - Page 5:  Lesson 7 (KT 2.2 Course of Six-Day War - Sections 3 & 4, Source B Paratroopers Photo)
+ *    - Page 6:  Lesson 8 (KT 2.3 Conquered Territories & 242 - Sections 1 & 2, Sources A Map & B Communiqué)
+ *    - Page 7:  Lesson 8 (KT 2.3 Conquered Territories & 242 - Sections 3 & 4, Source C Treaty Comparison)
+ *    - Page 8:  Lesson 9 (KT 2.4 Palestinian Resistance & Munich - Sections 1 & 2, Source A Dawson's Field Photo)
+ *    - Page 9:  Lesson 9 (KT 2.4 Palestinian Resistance & Munich - Sections 3 & 4, Source B Balcony Terrorist Photo)
+ *    - Page 10: Lesson 10 (KT 2.5 War of Attrition & Yom Kippur - Sections 1 & 2, Source A Egyptian Crossing Photo)
+ *    - Page 11: Lesson 10 (KT 2.5 War of Attrition & Yom Kippur - Sections 3 & 4, Source B Israeli Crossing Photo)
+ *    - Page 12: Master Back Cover (KT2 Chronological Sequence, Core Terminology & Exam Question Guide)
  */
 
 const fs = require('fs');
@@ -81,6 +82,59 @@ function formatText(text) {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
 
+function cleanSourceTitle(rawTitle) {
+  if (!rawTitle) return 'Primary Historical Record';
+  return rawTitle
+    .replace(/^Source\s+[A-Z]\s*:\s*/i, '')
+    .replace(
+      /^(Historical\s+)?(Archival\s+)?(Primary\s+)?(Diplomatic\s+)?(Photograph|Topographical Map|Relief Map|Map|Diplomatic Dispatch|Communiqué|Treaty Comparison|Document)\s*:\s*/i,
+      '',
+    )
+    .trim();
+}
+
+function getSourceTypeLabel(source) {
+  const isMap =
+    /map/i.test(source.title || '') ||
+    /map/i.test(source.image || '') ||
+    /cartograph/i.test(source.type || '');
+  if (isMap) return 'Historical Map';
+  if (source.type === 'written' || !source.image) {
+    if (/treaty/i.test(source.title || '')) return 'Diplomatic Treaty';
+    if (/dispatch/i.test(source.title || '')) return 'Diplomatic Dispatch';
+    if (/communiqué/i.test(source.title || '')) return 'Archival Communiqué';
+    return 'Historical Document';
+  }
+  return 'Archival Photograph';
+}
+
+function extractDate(source) {
+  if (source.date && source.date !== '1964–1973') return source.date;
+  const str = (source.title || '') + ' ' + (source.provenance || '');
+  const fullMatch = str.match(
+    /\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b/i,
+  );
+  if (fullMatch) return fullMatch[0];
+  const monthMatch = str.match(
+    /\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b/i,
+  );
+  if (monthMatch) return monthMatch[0];
+  const yearRangeMatch = str.match(/\b\d{4}[–-]\d{4}\b/);
+  if (yearRangeMatch) return yearRangeMatch[0];
+  const yearMatch = str.match(/\b(19\d\d)\b/);
+  if (yearMatch) return yearMatch[0];
+  return source.date || '1964–1973';
+}
+
+function getCleanSectionTitle(rawTitle, sectionNum) {
+  if (!rawTitle) return `${sectionNum}. Historical Analysis`;
+  let clean = rawTitle.replace(/^Act\s+\d+\s*:\s*[^—–-]+[—–-]\s*/i, '').trim();
+  if (sectionNum === 4 && !/^Historical Debate/i.test(clean)) {
+    clean = `Historical Debate: ${clean}`;
+  }
+  return `${sectionNum}. ${clean}`;
+}
+
 /**
  * Builds the complete 12-page Publisher-Standard Textbook HTML
  */
@@ -94,6 +148,15 @@ function buildPublisherTextbookHtml() {
     'How Did the 1967 Conquered Territories Transform the Conflict?',
     'The Rise of Palestinian Resistance: The PLO, Black September & Munich',
     'The War of Attrition & The Yom Kippur War (1969–1973)',
+  ];
+
+  // Authentic Pearson Edexcel specification statements for lesson anchors
+  const lessonSpecAnchors = [
+    'Significance of the 1964 Cairo Conference & growth of Fatah and the PLO • Escalating border tension: Syrian support for Fatah, the Samu reprisal raid, and the 7 April 1967 air dogfight • Pre-war actions of the USSR, Nasser, and the USA (UNEF expulsion & Straits of Tiran blockade).',
+    'Key events and military turning points of the Six-Day War (5–10 June 1967) • Operation Focus dawn airstrikes against the Egyptian Air Force • Three-front combat: Sinai Peninsula, West Bank and East Jerusalem, and the Golan Heights • The ceasefire and the redrawn territorial map.',
+    "Significance of the newly occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai, and East Jerusalem • The Palestinian refugee crisis • The Khartoum Arab League Summit and the 'Three Noes' • UN Resolution 242 ('Land for Peace') and the Suez Canal dispute.",
+    "The rise of independent Palestinian armed resistance • Use of international terrorism, Israeli responses, and changing world attitudes: PFLP commercial aircraft hijackings to Dawson's Field (1970) • King Hussein's expulsion of the PLO from Jordan (Black September) • The 1972 Munich Olympics massacre.",
+    "Egyptian relations with Israel, the superpowers (USA/USSR), and the Arab world under Nasser and Sadat • The War of Attrition (1969–70) and Israel's consolidation of occupied lands • Key events of the Yom Kippur War (1973): Egyptian Suez crossing, Syrian assault, IDF counter-encirclement, and the OPEC oil crisis.",
   ];
 
   return `<!DOCTYPE html>
@@ -238,43 +301,45 @@ function buildPublisherTextbookHtml() {
       overflow: hidden;
     }
 
-    /* Act Section Banners (Spans across both columns) */
-    .act-banner {
+    /* Chapter Section Heading */
+    .section-banner {
       column-span: all;
-      background: #0f172a;
-      color: #ffffff;
-      padding: 4px 10px;
-      border-radius: 3px;
-      margin: 8px 0 6px 0;
+      background: #f8fafc;
+      border-left: 3.5px solid #1e3a8a;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 3.5px 8px;
+      border-radius: 0 3px 3px 0;
+      margin: 7px 0 5px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-family: 'Inter', sans-serif;
       break-inside: avoid;
     }
-    .act-banner-title {
-      font-size: 8.2pt;
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.6pt;
       font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      color: #0f172a;
+      letter-spacing: 0.01em;
     }
-    .act-banner-tag {
+    .section-num {
       font-size: 6.8pt;
-      font-weight: 700;
-      color: #93c5fd;
+      font-weight: 800;
+      color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
 
-    /* Paragraph Styling with Pure [Act.Paragraph] pill */
+    /* Paragraph Styling with Pure [Section.Paragraph] pill */
     .numbered-para {
-      margin: 0 0 7px 0;
+      margin: 0 0 6px 0;
       text-indent: 0;
       line-height: 1.42;
     }
     .para-ref-pill {
       font-family: 'Inter', monospace;
-      font-size: 7.2pt;
+      font-size: 7.0pt;
       font-weight: 800;
       color: #ffffff;
       background: #1e3a8a;
@@ -286,14 +351,14 @@ function buildPublisherTextbookHtml() {
       letter-spacing: 0.02em;
     }
 
-    /* Archival Primary Source Box */
+    /* Primary Historical Source Box */
     .archival-source-box {
-      background: #fffdfa;
-      border: 1.2px solid #e7e5e4;
-      border-top: 3px solid #78350f;
+      background: #fdfcfb;
+      border: 1px solid #e7e5e4;
+      border-top: 3px solid #1e3a8a;
       border-radius: 4px;
-      padding: 8px 10px;
-      margin: 8px 0;
+      padding: 7px 9px;
+      margin: 6px 0;
       break-inside: avoid;
       font-family: 'Newsreader', Georgia, serif;
     }
@@ -301,31 +366,43 @@ function buildPublisherTextbookHtml() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       font-family: 'Inter', sans-serif;
     }
-    .archival-badge {
-      background: #78350f;
+    .source-identity {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .source-badge {
+      background: #1e3a8a;
       color: #ffffff;
-      font-size: 6.5pt;
+      font-size: 6.8pt;
       font-weight: 800;
       text-transform: uppercase;
       padding: 1.5px 5px;
       border-radius: 2px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
     }
-    .archival-shelfmark {
-      font-family: monospace;
-      font-size: 6.5pt;
-      color: #78716c;
+    .source-type {
+      font-size: 6.8pt;
       font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .source-date-micro {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      color: #64748b;
+      font-weight: 600;
     }
     .archival-title {
       font-family: 'Playfair Display', serif;
-      font-size: 9.0pt;
+      font-size: 8.8pt;
       font-weight: 700;
-      color: #1c1917;
-      margin: 0 0 4px 0;
+      color: #0f172a;
+      margin: 1px 0 3px 0;
       line-height: 1.25;
     }
     .archival-image {
@@ -334,64 +411,54 @@ function buildPublisherTextbookHtml() {
       object-fit: cover;
       border-radius: 3px;
       margin: 4px 0;
-      border: 1px solid #d6d3d1;
+      border: 1px solid #cbd5e1;
+      display: block;
+    }
+    .archival-map-image {
+      width: 100%;
+      max-height: 175px;
+      object-fit: contain;
+      background: #fafaf9;
+      border-radius: 3px;
+      margin: 4px 0;
+      border: 1px solid #cbd5e1;
+      display: block;
+    }
+    .archival-portrait-image {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      background: #000000;
+      border-radius: 3px;
+      margin: 4px 0;
+      border: 1px solid #cbd5e1;
       display: block;
     }
     .archival-body {
-      font-size: 8.4pt;
-      line-height: 1.4;
-      color: #292524;
-      margin: 4px 0;
+      font-size: 8.2pt;
+      line-height: 1.38;
+      color: #1e293b;
+      margin: 3px 0;
       font-style: italic;
-      background: #fafaf9;
-      padding: 6px 8px;
-      border-left: 2px solid #a8a29e;
+      background: #f8fafc;
+      padding: 5px 8px;
+      border-left: 2.5px solid #94a3b8;
       border-radius: 0 3px 3px 0;
     }
     .archival-footer {
-      border-top: 1px dashed #d6d3d1;
+      border-top: 1px solid #e2e8f0;
       padding-top: 3px;
-      margin-top: 5px;
+      margin-top: 4px;
       font-family: 'Inter', sans-serif;
       font-size: 6.5pt;
-      color: #78716c;
+      color: #64748b;
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
     }
-
-    /* Key Individual Callout */
-    .key-individual-box {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-left: 3px solid #059669;
-      border-radius: 4px;
-      padding: 6px 8px;
-      margin: 6px 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
-      line-height: 1.35;
-      color: #166534;
-      break-inside: avoid;
-    }
-    .key-individual-box strong { color: #065f46; }
-
-    /* Specification Review Box */
-    .spec-review-strip {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      padding: 6px 10px;
-      margin-top: 6px;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      color: #334155;
-      break-inside: avoid;
-      column-span: all;
-    }
-    .spec-review-strip strong {
-      color: #1e3a8a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+    .archival-footer span {
+      line-height: 1.25;
     }
   </style>
 </head>
@@ -435,10 +502,10 @@ function buildPublisherTextbookHtml() {
         </div>
       </div>
 
-      <!-- Master Wide Photographic Plate -->
+      <!-- Master Wide Photographic Plate (David Rubinger Paratroopers in Full View) -->
       <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 5px; display: flex; flex-direction: column;">
         <div style="height: 98mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-          <img src="${coverBase64}" alt="Israeli Paratroopers at the Western Wall, Jerusalem (David Rubinger, 7 June 1967)" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; filter: grayscale(100%) contrast(115%);">
+          <img src="${coverBase64}" alt="Israeli Paratroopers at the Western Wall, Jerusalem (David Rubinger, 7 June 1967)" style="height: 100%; max-width: 100%; object-fit: contain; display: block; filter: grayscale(100%) contrast(115%);">
         </div>
         <div style="border-top: 1.5px solid #000; padding: 4px 10px; background: #fff;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
@@ -464,44 +531,41 @@ function buildPublisherTextbookHtml() {
 
       <!-- Pearson Edexcel Specification Coverage (Official 3-Column Matrix) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 4px;">
-        <div style="background: #000; color: #fff; padding: 4px 12px; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="background: #000; color: #fff; padding: 3px 12px; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
           <span>Pearson Edexcel GCSE (9–1) History Specification Content</span>
           <span style="font-size: 7.0pt; letter-spacing: 0.5px;">Key Topic 2 Coverage</span>
         </div>
 
-        <div style="padding: 10px 14px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.48; color: #111; flex: 1;">
+        <div style="padding: 8px 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.38; color: #111; flex: 1;">
           <!-- 2.1 -->
-          <div style="border-right: 1.2px solid #e2e8f0; padding-right: 12px; display: flex; flex-direction: column; justify-content: space-between;">
-            <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 4px;">
-              2.1 Six-Day War Causes
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 10px;">
+            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 5px;">
+              2.1 The Six Day War, 1967
             </strong>
-            <div>&bull; 1964 Cairo Summit &amp; PLO formation</div>
-            <div>&bull; Water Wars &amp; River Jordan diversion</div>
-            <div>&bull; Syrian border raids &amp; Samu reprisal</div>
-            <div>&bull; 7 April 1967 air dogfight</div>
-            <div>&bull; Nasser closes Straits of Tiran</div>
+            <div style="margin-bottom: 4px;">&bull; Significance of the <strong>Cairo Conference (1964)</strong> &amp; the growth of Fatah and the PLO.</div>
+            <div style="margin-bottom: 4px;">&bull; <strong>Escalating tension:</strong> Syrian support for Fatah, Israeli raid on Samu, and 7 April 1967 air battle.</div>
+            <div style="margin-bottom: 4px;">&bull; Actions of the <strong>USSR, Nasser and the USA</strong> leading to war (UNEF expulsion &amp; Straits of Tiran).</div>
+            <div>&bull; <strong>Key events &amp; outcomes</strong> of the Six-Day War (5–10 June 1967).</div>
           </div>
           <!-- 2.2 -->
-          <div style="border-right: 1.2px solid #e2e8f0; padding-right: 12px; display: flex; flex-direction: column; justify-content: space-between;">
-            <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 4px;">
-              2.2 Six-Day War Course
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 10px;">
+            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 5px;">
+              2.2 Aftermath of the 1967 War
             </strong>
-            <div>&bull; Operation Focus dawn airstrikes</div>
-            <div>&bull; Sinai blitzkrieg against Egypt</div>
-            <div>&bull; Capture of West Bank &amp; Jerusalem</div>
-            <div>&bull; Assault on the Golan Heights</div>
-            <div>&bull; Ceasefire &amp; map transformation</div>
+            <div style="margin-bottom: 4px;">&bull; <strong>UN Resolution 242</strong> ('Land for Peace') &amp; continued dispute over the Suez Canal.</div>
+            <div style="margin-bottom: 4px;">&bull; <strong>Palestinian refugees</strong> &amp; significance of occupied lands: Golan, Gaza, West Bank, Sinai, East Jerusalem.</div>
+            <div style="margin-bottom: 4px;">&bull; <strong>Terrorism &amp; international attitudes:</strong> PFLP aircraft hijackings to Dawson's Field (1970).</div>
+            <div>&bull; Expulsion of PLO from Jordan (<strong>Black September</strong>) &amp; <strong>Munich Olympics (1972)</strong>.</div>
           </div>
           <!-- 2.3 -->
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 4px;">
-              2.3 Aftermath &amp; Yom Kippur
+          <div>
+            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 2px; display: block; margin-bottom: 5px;">
+              2.3 Israel and Egypt, 1967–73
             </strong>
-            <div>&bull; Khartoum Summit &amp; 'Three Noes'</div>
-            <div>&bull; UN Resolution 242 ('Land for Peace')</div>
-            <div>&bull; PLO resistance &amp; Dawson's Field</div>
-            <div>&bull; 1972 Munich Olympics massacre</div>
-            <div>&bull; 1973 Yom Kippur surprise &amp; OPEC</div>
+            <div style="margin-bottom: 4px;">&bull; <strong>Egyptian relations</strong> with Israel, the USA, the USSR and other Arab states under Nasser &amp; Sadat.</div>
+            <div style="margin-bottom: 4px;">&bull; The <strong>War of Attrition (1969–70)</strong> &amp; Israel's consolidation of control of occupied lands.</div>
+            <div style="margin-bottom: 4px;">&bull; Key events of the <strong>Yom Kippur War (1973)</strong>: Syrian &amp; Egyptian surprise strikes, IDF counter-attacks.</div>
+            <div>&bull; Aftermath of the 1973 war &amp; the <strong>OPEC oil embargo</strong> crisis.</div>
           </div>
         </div>
       </div>
@@ -524,42 +588,76 @@ function buildPublisherTextbookHtml() {
       const leftPageNum = lNum * 2;
       const rightPageNum = leftPageNum + 1;
       const enquiryShort = shortEnquiries[lessonIdx];
+      const specFocusText = lessonSpecAnchors[lessonIdx];
 
       const blocks = lesson.narrative_blocks || [];
       const acts1And2 = blocks.slice(0, 2);
       const acts3And4 = blocks.slice(2, 4);
 
-      function renderActBlock(block, actNum) {
-        const actHeading = block.title || block.act_title || `Act ${actNum}: Historical Analysis`;
+      // Sequential single-letter source counter per lesson (SOURCE A, SOURCE B, SOURCE C...)
+      let sourceLetterCode = 65; // 'A'
+
+      function renderActBlock(block, sectionNum) {
+        const cleanHeading = getCleanSectionTitle(block.title || block.act_title, sectionNum);
         const paragraphs = block.paragraphs || (block.text ? [block.text] : []);
         const source = block.source;
 
         let sourceHtml = '';
         if (source) {
+          const sourceLetter = String.fromCharCode(sourceLetterCode++);
           const sourceBody = source.content || source.text || source.excerpt || '';
           const sourceImgSrc = source.image ? getBase64Image(source.image) : null;
+          const isMap =
+            /map/i.test(source.title || '') ||
+            /map/i.test(source.image || '') ||
+            /cartograph/i.test(source.type || '');
+          const cleanTitle = cleanSourceTitle(source.title || source.name || 'Primary Source');
+          const sourceType = getSourceTypeLabel(source);
+          const dateStr = extractDate(source);
+          const cleanProvenance = (
+            source.provenance ||
+            source.citation ||
+            source.author ||
+            'Contemporary Record'
+          )
+            .replace(/^Provenance:\s*/i, '')
+            .trim();
+
+          let imgTag = '';
+          if (sourceImgSrc) {
+            if (isMap) {
+              imgTag = `<img src="${sourceImgSrc}" class="archival-map-image" alt="${cleanTitle}">`;
+            } else if (/paratroopers/i.test(source.image)) {
+              imgTag = `<img src="${sourceImgSrc}" class="archival-portrait-image" alt="${cleanTitle}">`;
+            } else {
+              imgTag = `<img src="${sourceImgSrc}" class="archival-image" alt="${cleanTitle}">`;
+            }
+          }
 
           sourceHtml = `
             <div class="archival-source-box">
               <div class="archival-header">
-                <span class="archival-badge">${source.type === 'written' ? 'Historical Document' : 'Archival Primary Record'}</span>
-                <span class="archival-shelfmark">${source.shelfmark || `CME-KT2-L${lNum}-SRC${source.letter || actNum}`}</span>
+                <div class="source-identity">
+                  <span class="source-badge">SOURCE ${sourceLetter}</span>
+                  <span class="source-type">${sourceType}</span>
+                </div>
+                ${dateStr ? `<span class="source-date-micro">${dateStr}</span>` : ''}
               </div>
-              <div class="archival-title">${source.title || source.name || 'Primary Source'}</div>
-              ${sourceImgSrc ? `<img src="${sourceImgSrc}" class="archival-image" alt="${source.title || 'Primary Source'}">` : ''}
+              <div class="archival-title">${cleanTitle}</div>
+              ${imgTag}
               ${sourceBody ? `<div class="archival-body">"${formatText(sourceBody)}"</div>` : ''}
               <div class="archival-footer">
-                <span><strong>Provenance:</strong> ${source.provenance || source.citation || source.author || 'Contemporary Record'}</span>
-                <span><strong>Date:</strong> ${source.date || '1964–1973'}</span>
+                <span>${cleanProvenance}</span>
+                ${dateStr ? `<span>${dateStr}</span>` : ''}
               </div>
             </div>
           `;
         }
 
         return `
-          <div class="act-banner">
-            <span class="act-banner-title">${actHeading}</span>
-            <span class="act-banner-tag">ACT ${actNum}</span>
+          <div class="section-banner">
+            <span class="section-title">${cleanHeading}</span>
+            <span class="section-num">SECTION ${sectionNum}</span>
           </div>
           ${paragraphs
             .map((p, pIdx) => {
@@ -569,7 +667,7 @@ function buildPublisherTextbookHtml() {
                 .trim();
               return `
               <div class="numbered-para">
-                <span class="para-ref-pill">[${actNum}.${pIdx + 1}]</span>
+                <span class="para-ref-pill">[${sectionNum}.${pIdx + 1}]</span>
                 ${formatText(cleanP)}
               </div>
             `;
@@ -581,7 +679,7 @@ function buildPublisherTextbookHtml() {
 
       return `
       <!-- ====================================================================
-           PAGE ${leftPageNum}: LESSON ${lNum} (LEFT SPREAD: ACTS 1 & 2)
+           PAGE ${leftPageNum}: LESSON ${lNum} (LEFT SPREAD: SECTIONS 1 & 2)
            ==================================================================== -->
       <div class="textbook-page">
         <!-- Running Header (Left Verso: Official Specification Reference) -->
@@ -600,11 +698,11 @@ function buildPublisherTextbookHtml() {
             ${lesson.title || 'Historical Enquiry'}
           </h1>
           <div class="lesson-spec-anchor">
-            <strong>Pearson Specification Focus:</strong> ${lesson.spec_anchor || 'Key Topic 2 Specification Content, Geopolitical Mechanisms & Turning Points.'}
+            <strong>Pearson Specification Focus:</strong> ${specFocusText}
           </div>
         </div>
 
-        <!-- Two-Column Prose for Acts 1 & 2 -->
+        <!-- Two-Column Prose for Sections 1 & 2 -->
         <div class="two-column-prose">
           ${acts1And2.map((b, idx) => renderActBlock(b, idx + 1)).join('')}
         </div>
@@ -617,7 +715,7 @@ function buildPublisherTextbookHtml() {
       </div>
 
       <!-- ====================================================================
-           PAGE ${rightPageNum}: LESSON ${lNum} (RIGHT SPREAD: ACTS 3 & 4)
+           PAGE ${rightPageNum}: LESSON ${lNum} (RIGHT SPREAD: SECTIONS 3 & 4)
            ==================================================================== -->
       <div class="textbook-page">
         <!-- Running Header (Right Recto: Key Topic & Specific Lesson Enquiry) -->
@@ -626,14 +724,9 @@ function buildPublisherTextbookHtml() {
           <span>ENQUIRY: ${enquiryShort}</span>
         </div>
 
-        <!-- Two-Column Prose for Acts 3 & 4 -->
+        <!-- Two-Column Prose for Sections 3 & 4 (No artificial bottom synthesis box) -->
         <div class="two-column-prose">
           ${acts3And4.map((b, idx) => renderActBlock(b, idx + 3)).join('')}
-          
-          <!-- Specification Synthesis Strip -->
-          <div class="spec-review-strip">
-            <strong>Exam Synthesis &bull; Key Topic 2.${lNum}:</strong> Review how the evidence in Acts 1–4 explains historical causation and consequence. Use paragraph references <code>[Act.Paragraph]</code> when completing extended analytical writing in your consumable pupil workbook.
-          </div>
         </div>
 
         <!-- Running Footer -->
