@@ -555,15 +555,15 @@ const WATER_LEFT_SOURCES = {
       title: 'Fishbourne Roman Palace: Hydraulic Conduits & Flushed Latrines (AD 75)',
       image: getBase64Image('/images/water_local_fishbourne.jpg'),
       survivingEvidence:
-        'Surviving Fieldwork Archaeology: Interlocking Terracotta Conduits, Sump Basins &amp; Flushed Latrine Channels',
+        'Surviving Fieldwork Archaeology: Interlocking Terracotta Conduits, Sump Basins &amp; Flushed Latrines',
       archaeologicalEvidence:
-        'Archaeological excavations at Fishbourne on the Hampshire border uncover Britain’s earliest monumental domestic plumbing: interlocking terracotta conduit pipes embedded in waterproof mortar, lead distribution boxes, and continuous stone channels that flushed communal latrines directly into the Chichester tidal inlet.',
+        'Excavations at Fishbourne on the Hampshire border uncover Britain’s earliest monumental domestic plumbing: terracotta pipes set in waterproof mortar, lead distribution boxes, and stone channels flushing latrines into Chichester Channel.',
       hydraulicMechanism:
-        'Chalk spring water flowed continuously by gravity along a precise downward gradient to supply decorative fountains and cold/warm plunge baths before sweeping waste through underfloor sewer vaults.',
+        'Chalk spring water flowed continuously by gravity along precise downward gradients to supply decorative fountains and plunge baths before flushing underfloor sewer vaults.',
       historicalSignificance:
-        'Proves that Roman Britain possessed luxury sanitation, but access was restricted to imperial elites and military strongpoints rather than serving the wider population.',
+        'Proves that Roman Britain possessed luxury plumbing, but access was restricted to imperial elites and military bases rather than the wider Celtic population.',
       hingeQuestion:
-        'How does the presence of terracotta water conduits and flushed latrines at Fishbourne prove that Roman public health was driven by imperial luxury and political display rather than a modern scientific understanding of bacteria?',
+        'How does Fishbourne’s terracotta plumbing prove that Roman sanitation served imperial political display rather than scientific disease prevention?',
       shelfmark: 'Fieldwork Primary Record &bull; Hampshire Archaeological Survey (FBP/75/LAT)',
       footer: 'Sussex Archaeological Society &bull; Fishbourne Roman Palace Research Archive',
     },
@@ -589,15 +589,15 @@ const WATER_LEFT_SOURCES = {
       title: 'Titchfield Abbey: Monastic Drainage Channels & River Meon Sluices (1232)',
       image: getBase64Image('/images/water_local_titchfield.jpg'),
       survivingEvidence:
-        'Surviving Fieldwork Archaeology: River Meon Stone Sluiceway, Cloister Lavatorium Leats &amp; Monastic Latrine Culverts',
+        'Surviving Fieldwork Archaeology: River Meon Stone Sluiceway, Lavatorium Leats &amp; Monastic Latrine Culverts',
       archaeologicalEvidence:
-        'Surveys of Titchfield Abbey in the River Meon Valley show that Premonstratensian canons engineered a sophisticated system of stone sluices, mill races, and clean-water culverts to divert fresh river water through the cloister lavatorium while continuously flushing the reredorter (latrines).',
+        'Surveys of Titchfield Abbey in the Meon Valley show that Premonstratensian canons engineered stone sluices, mill races, and clean-water culverts to supply the cloister lavatorium while continuously flushing the reredorter (latrines).',
       hydraulicMechanism:
-        'Canons maintained strict hydraulic separation: pristine upstream water supplied brewing and cooking, while downstream sluice gates flushed waste past the monastery away from living quarters.',
+        'Canons maintained strict hydraulic separation: pristine upstream river water supplied cooking and brewing, while downstream sluice gates flushed latrine waste away from the abbey.',
       historicalSignificance:
-        'Demonstrates that medieval monastic wealth and literacy preserved sophisticated hydraulic engineering centuries before commercial towns solved their sanitation crises.',
+        'Demonstrates that medieval monastic wealth and literacy preserved hydraulic engineering centuries before commercial towns solved their sanitation crises.',
       hingeQuestion:
-        'Why were medieval religious houses like Titchfield Abbey and Canterbury able to construct sophisticated gravity-fed fresh water systems while surrounding peasant villages and commercial boroughs lived in squalor?',
+        'Why were medieval religious houses like Titchfield Abbey able to build sophisticated fresh water networks while surrounding peasant villages lived in squalor?',
       shelfmark: 'Fieldwork Primary Record &bull; Meon Valley Monastic Archive (TA/1232/HYD)',
       footer: 'English Heritage Historical Records &bull; Hampshire Monastic Survey',
     },
@@ -735,72 +735,24 @@ const WATER_LEFT_SOURCES = {
  * Extracts and trims curriculum blocks into clean, structured [1.1]–[4.2] paragraphs.
  */
 function getWaterLessonSections(lesson, idx) {
-  const blocks = (lesson.narrative_blocks || []).filter(
-    (b) =>
-      b && (b.content || b.text) && !String(b.content || b.text).includes('Consolidation Task'),
-  );
-
-  const cleanText = (raw) => {
-    if (!raw) return '';
-    return String(raw)
-      .replace(/<div class="local-history-box"[\s\S]*?<\/div>/gi, '')
-      .replace(/<span class="para-ref">.*?<\/span>/g, '')
-      .replace(/\[\d+\.\d+\]/g, '')
-      .trim();
-  };
-
-  const splitParas = (raw) => {
-    const text = cleanText(raw);
-    let parts = [];
-    if (text.includes('<p>')) {
-      parts = text
-        .split(/<\/p>\s*<p>|<p>|<\/p>/)
-        .map((p) => p.trim())
-        .filter(Boolean);
-    } else {
-      parts = text
-        .split(/<br\s*\/?>\s*<br\s*\/?>|\n\s*\n/)
-        .map((p) => p.trim())
-        .filter(Boolean);
-    }
-    return parts.filter((p) => p.length > 25);
-  };
-
-  // Collect all available text paragraphs across blocks
-  let allParas = [];
-  blocks.forEach((b) => {
-    const pList = splitParas(b.content || b.text);
-    allParas = allParas.concat(pList);
-  });
-
-  // Curate exactly 2 strong paragraphs for each of the 4 Acts
-  const getTwoParas = (startIndex, fallbackA, fallbackB) => {
-    let p1 = allParas[startIndex] || fallbackA;
-    let p2 = allParas[startIndex + 1] || fallbackB;
-    if (p1.length > 420) p1 = p1.substring(0, 415).replace(/\s+\S*$/, '') + '.';
-    if (p2.length > 420) p2 = p2.substring(0, 415).replace(/\s+\S*$/, '') + '.';
-    return { p1, p2 };
-  };
-
-  // Lesson-specific curated Acts
   if (idx === 0) {
     // Lesson 1: Roman Public Health
     return [
       {
         title: 'Pre-Roman Britain & The Imperial Influx',
-        text: `<span class="para-ref">[1.1]</span> For centuries before the Roman conquest, Iron Age Britain was an agrarian society of small, dispersed farming communities. Celtic roundhouses were constructed from wattle-and-daub walls and conical thatched roofs. Because homesteads were scattered across open river valleys, waste management was simple and sustainable: families dug shallow cesspits in vegetable enclosures, naturally fertilising soil without endangering local streams.\n\n<span class="para-ref">[1.2]</span> Everything transformed in AD 43 when Emperor Claudius dispatched four imperial legions to invade Britain. The Romans brought an urban revolution, establishing dense stone-walled towns such as Londinium, Verulamium, and Eboracum. Suddenly, thousands of soldiers, administrators, and traders were concentrated within rigid street grids, demanding centralized freshwater and coordinated waste disposal.`,
+        text: `<span class="para-ref">[1.1]</span> For centuries before the Roman conquest, Iron Age Britain was an agrarian society of dispersed farming communities. Celtic roundhouses were built with wattle-and-daub walls and thatched roofs. Homesteads were scattered across open river valleys, so waste disposal was simple: families dug shallow cesspits in garden plots, fertilising soil without polluting local streams.\n\n<span class="para-ref">[1.2]</span> Everything transformed in AD 43 when Emperor Claudius invaded Britain. The Romans brought an urban revolution, building stone civitas capitals like Londinium, Verulamium, and Calleva Atrebatum (Silchester). Concentrating thousands within street grids demanded organized freshwater and waste management, compelling military surveyors to engineer Britain's first municipal utilities.`,
       },
       {
         title: 'Gravity Aqueducts & Imperial Bathhouses',
-        text: `<span class="para-ref">[2.1]</span> To meet this urban crisis, Roman military engineers harnessed continuous gravity hydraulics. Surveyors calculated delicate downward gradients, constructing monumental stone channels and lead conduits that bridged valleys to bring mountain water directly into town centers without mechanical pumps.\n\n<span class="para-ref">[2.2]</span> This abundant supply filled public fountains, private villas, and lavish bathhouses such as Aquae Sulis (Bath). Citizens soaked in hot caldaria, scraped dirt using metal strigils, and socialized in flushed communal latrines, viewing these engineering monuments as proof of Rome's civilized mastery over barbarism.`,
+        text: `<span class="para-ref">[2.1]</span> To meet this urban crisis, Roman military engineers harnessed continuous gravity hydraulics. Surveyors calculated delicate downward gradients using chorobates and water levels, constructing monumental stone channels, settling tanks, and lead conduits that bridged valleys to bring mountain water directly into town centers without mechanical pumps.\n\n<span class="para-ref">[2.2]</span> This abundant supply filled public fountains, private villas, and lavish bathhouses such as Aquae Sulis (Bath). Citizens soaked in hot caldaria, scraped dirt using bronze strigils, and socialized in flushed communal latrines, viewing these engineering monuments as tangible proof of Rome's civilized mastery over barbarism.\n\n<span class="para-ref">[2.3]</span> To the Romans, clean flowing water and grand stone bathhouses were not merely hygienic conveniences; they were instruments of imperial romanisation, demonstrating imperial authority and technological dominance across the conquered provinces.`,
       },
       {
         title: 'The Elite Privilege & Parasitic Reality',
-        text: `<span class="para-ref">[3.1]</span> Behind the marble grandeur lay stark health inequalities. Wealthy patricians enjoyed private lead pipes connected directly to town mains, while poor plebeians and enslaved workers carried heavy clay amphorae from street fountains and lived in cramped, unventilated timber tenements prone to sudden fire.\n\n<span class="para-ref">[3.2]</span> Furthermore, archaeological excavations reveal that communal bathhouses were rarely drained or disinfected. Without chlorine or chemical filtration, stagnant warm pools accumulated body grease, sweat, and parasites. Bathing was perceived as cleansing, yet it frequently accelerated the spread of skin infections and dysentery.`,
+        text: `<span class="para-ref">[3.1]</span> Behind the marble grandeur lay stark social inequalities. Wealthy patricians paid water taxes for private lead pipes to supply domestic fountains, while poor plebeians carried heavy clay amphorae from public street basins and lived in crowded, unventilated timber tenements.\n\n<span class="para-ref">[3.2]</span> Furthermore, paleopathology reveals that communal bathhouses were rarely drained or disinfected. Without chemical filtration, stagnant warm pools accumulated sweat, dead skin, and parasites. Bathing was perceived as cleansing, yet it frequently accelerated eye infections and intestinal worms.\n\n<span class="para-ref">[3.3]</span> Flushed communal latrines featured stone benches where citizens sat shoulder-to-shoulder. Users cleaned themselves with a shared sponge-on-a-stick (xylospongium) kept in a saltwater trough, inadvertently transferring whipworms and enteric bacteria between bathers.`,
       },
       {
         title: 'The Great Collapse & Historical Verdict',
-        text: `<span class="para-ref">[4.1]</span> When Roman legions withdrew from Britain in AD 410 to defend Rome against Gothic incursions, centralized urban infrastructure disintegrated with dizzying speed. Monumental aqueducts choked with lime sediment, lead pipes were melted down for weapons, and stone bathhouses decayed into weed-choked ruins.\n\n<span class="para-ref">[4.2]</span> Historiographical debate centers on whether Roman sanitation was truly a public health triumph. While Whig historians celebrated Roman engineering as an enlightened golden age, revisionist historians note that life expectancy in Roman Britain remained virtually identical to the Iron Age, proving that monumental stonework without germ theory could not conquer bacterial disease.`,
+        text: `<span class="para-ref">[4.1]</span> When Roman legions withdrew from Britain in AD 410, centralized urban utilities disintegrated rapidly. Aqueducts choked with lime sediment, lead pipes were melted down for weapons, and stone bathhouses decayed into weed-choked ruins.\n\n<span class="para-ref">[4.2]</span> As Roman civitas capitals depopulated, Anglo-Saxon settlers shunned decayed masonry ruins, founding timber settlements along riverbanks and reverting to simple well-water drawing and garden privies for nearly a millennium.\n\n<span class="para-ref">[4.3]</span> Historiographically, debate centers on whether Roman sanitation was a public health triumph. While Whig historians celebrated Roman engineering as an enlightened golden age, revisionist historians note that life expectancy remained identical to the Iron Age, proving that monumental stonework without germ theory could not conquer bacterial disease.`,
       },
     ];
   }
@@ -810,19 +762,19 @@ function getWaterLessonSections(lesson, idx) {
     return [
       {
         title: 'The Rural Baseline & Monastic Splendour',
-        text: `<span class="para-ref">[1.1]</span> In medieval rural villages such as Wharram Percy in Yorkshire, ordinary peasants lived in harmony with natural cycles. Families cultivated open-field strips, drew freshwater from local streams, and used simple outdoor privies. While life was physically demanding, rural dispersal protected communities from the lethal filth of overcrowded towns.\n\n<span class="para-ref">[1.2]</span> In stark contrast, wealthy medieval monasteries represented islands of hydraulic sophistication. Communities of literate monks at Canterbury Cathedral Priory, Fountains Abbey, and Hampshire's Titchfield Abbey engineered lead pipe networks, settling basins, and clean river sluices, ensuring pure water for brewing, cooking, and flushing monastic reredorters.`,
+        text: `<span class="para-ref">[1.1]</span> In medieval rural villages such as Wharram Percy in Yorkshire, ordinary peasants lived in harmony with natural cycles. Families cultivated open-field strips, drew freshwater from local streams, and used simple outdoor privies. While life was physically demanding, rural dispersal protected communities from the lethal filth of overcrowded towns.\n\n<span class="para-ref">[1.2]</span> In stark contrast, wealthy medieval monasteries represented islands of hydraulic sophistication. Literate monks at Canterbury Cathedral Priory and Hampshire's Titchfield Abbey engineered lead pipe networks, settling basins, and sluices, ensuring pure water for cooking and brewing while continuously flushing monastic reredorters away from living quarters.`,
       },
       {
         title: 'Stinking Streets & The Urban Crisis',
-        text: `<span class="para-ref">[2.1]</span> By the thirteenth century, rapid commercial growth transformed walled boroughs like London, York, and Bristol into congested trade hubs. Constrained by defensive stone walls, medieval tenements leaned outward on wooden jetties, blocking sunlight and trapping humid air above unpaved streets churned into foul quagmires.\n\n<span class="para-ref">[2.2]</span> Butchers slaughtered cattle in public shambles, hurling blood and offal into open gutters, while householders routinely dumped domestic slops from bedroom windows with the warning cry "Gardyloo!" Rakers and raker carts struggled continuously to cart tons of horse manure and night-soil outside the city gates.`,
+        text: `<span class="para-ref">[2.1]</span> By the thirteenth century, rapid commercial growth transformed walled boroughs like London, York, and Bristol into congested trade hubs. Constrained by defensive stone walls, medieval tenements leaned outward on wooden jetties, blocking sunlight and trapping humid air above unpaved streets churned into foul quagmires.\n\n<span class="para-ref">[2.2]</span> But butchers slaughtered cattle in public shambles, hurling blood and offal into open gutters, while tanners soaked hides in urine, polluting urban streams. Householders routinely dumped domestic slops from bedroom windows with the warning cry "Gardyloo!" Rakers and raker carts struggled continuously to cart tons of horse manure and night-soil outside the city gates.\n\n<span class="para-ref">[2.3]</span> Open street gutters, known as kennels, ran down the center of lanes, carrying a toxic mixture of rainwater, animal waste, and domestic refuse. Because unpaved thoroughfares possessed no underground drainage, waste pooled in stagnant puddles, creating fertile breeding grounds for intestinal parasites and infectious fevers.`,
       },
       {
         title: 'Gongfermers, Cesspools & Municipal Ordinances',
-        text: `<span class="para-ref">[3.1]</span> To prevent urban catastrophe, municipal town councils employed specialised night-soil workers known as gongfermers. Descending into deep backyard cesspits after dark, gongfermers shoveled human excrement into barrels for 18 pence a night, selling the fertilizer to market gardeners outside city boundaries.\n\n<span class="para-ref">[3.2]</span> Town councils repeatedly passed strict bylaws: London banned butchering within walls, fined citizens for uncleaned gutters, and ordered public latrines maintained over the Thames. Yet with no police force or chemical knowledge, municipal enforcement relied on parish neighbor reporting that easily collapsed under rapid population growth.`,
+        text: `<span class="para-ref">[3.1]</span> To prevent urban catastrophe, municipal town councils employed specialised night-soil workers known as gongfermers. Descending into deep backyard cesspits after dark, gongfermers shoveled human excrement into barrels for 18 pence a night, selling the fertilizer to market gardeners outside city boundaries.\n\n<span class="para-ref">[3.2]</span> Town councils repeatedly passed strict bylaws: London banned butchering within walls, fined citizens for uncleaned gutters, and ordered public latrines maintained over the Thames. Yet with no police force or chemical knowledge, municipal enforcement relied on parish neighbor reporting that easily collapsed under rapid population growth.\n\n<span class="para-ref">[3.3]</span> Despite severe penalties, enforcement remained an endless battle. Municipal wardmote inquests regularly indicted citizens for dumping dung into public watercourses or allowing private privies to leak through party walls, demonstrating that medieval authorities were acutely conscious of sanitation even when lacking engineering capacity.`,
       },
       {
         title: 'The Black Death & The Miasma Dilemma',
-        text: `<span class="para-ref">[4.1]</span> In 1348, the Black Death struck Britain with apocalyptic fury, killing over a third of the population in eighteen months. Dogmatically believing that plague was caused by corrupt atmospheric "miasma" or divine wrath, authorities ordered sweet rosemary fires lit, streets washed, and public gatherings banned.\n\n<span class="para-ref">[4.2]</span> Historiographically, medieval people are often caricatured as filthy and ignorant. However, detailed guild records prove that town councils actively battled urban filth. Their failure was not a lack of civic will, but the sheer technological impossibility of managing concentrated waste without subterranean sewers.`,
+        text: `<span class="para-ref">[4.1]</span> In 1348, the Black Death struck Britain with apocalyptic fury, killing over a third of the population in eighteen months. Dogmatically believing that plague was caused by corrupt atmospheric "miasma" or divine wrath, authorities ordered sweet rosemary fires lit, streets washed, and public gatherings banned.\n\n<span class="para-ref">[4.2]</span> Medieval physicians lacked knowledge of the microscopic plague bacterium (Yersinia pestis) or its rodent-flea vectors. Their belief in Galenic humours led them to view foul odours as the direct cause of disease, creating a logical framework that prioritized street cleaning even if it could not halt the plague.\n\n<span class="para-ref">[4.3]</span> Historiographically, medieval people are often caricatured as filthy and indifferent to squalor. However, detailed guild records prove that town councils actively battled urban filth. Their failure was not a lack of civic will, but the sheer technological impossibility of managing concentrated waste without subterranean sewers.`,
       },
     ];
   }
@@ -832,19 +784,19 @@ function getWaterLessonSections(lesson, idx) {
     return [
       {
         title: 'The Tudor Metropolis & Harington’s Ajax',
-        text: `<span class="para-ref">[1.1]</span> Between 1500 and 1700, England's demographic landscape exploded. While the national population doubled, London grew tenfold from 60,000 to over half a million residents. Thousands of rural migrants crowded into single-room tenements and rickety shantytowns in Southwark and Whitechapel, completely overwhelming traditional waste disposal.\n\n<span class="para-ref">[1.2]</span> In 1596, courtier Sir John Harington invented the first valve-flushing water closet, christened the *Ajax*. Harington installed a working model at Richmond Palace for Queen Elizabeth I. Yet despite royal approval, the invention remained an aristocratic curiosity because early modern homes lacked running pressurized water to supply it.`,
+        text: `<span class="para-ref">[1.1]</span> Between 1500 and 1700, England's demographic landscape exploded. While the national population doubled, London grew tenfold from 60,000 to over half a million residents. Thousands of rural migrants crowded into single-room tenements and rickety shantytowns in Southwark and Whitechapel, completely overwhelming traditional waste disposal.\n\n<span class="para-ref">[1.2]</span> In 1596, courtier Sir John Harington invented the first valve-flushing water closet, christened the Ajax. Harington installed a working model at Richmond Palace for Queen Elizabeth I. Yet despite royal approval, the invention remained an aristocratic curiosity because early modern homes lacked running pressurized water to supply it.\n\n<span class="para-ref">[1.3]</span> The mechanical water closet was centuries ahead of its time. Without a municipal sewer network to receive domestic effluent or high-pressure cast-iron plumbing to supply continuous water, Harington's prototype remained an isolated luxury, leaving the vast majority of Tudor and Stuart households dependent on chamber pots and privies.`,
       },
       {
         title: 'The New River & The Water Supply Revolution',
-        text: `<span class="para-ref">[2.1]</span> Securing clean drinking water for the burgeoning capital became an urgent national challenge. In 1582, Dutch engineer Peter Morrys installed waterwheels beneath the arches of London Bridge, utilizing tidal force to pump river water through lead mains into City houses.\n\n<span class="para-ref">[2.2]</span> A far more ambitious triumph occurred in 1609 when goldsmith Sir Hugh Myddelton financed the New River. This 38-mile artificial gravity canal brought fresh spring water from Hertfordshire into a great reservoir at Islington, distributing sweet water through 400 miles of hollowed-out elm-tree pipes across the capital.`,
+        text: `<span class="para-ref">[2.1]</span> Securing clean drinking water for the burgeoning capital became an urgent national challenge. In 1582, Dutch engineer Peter Morrys installed waterwheels beneath the arches of London Bridge, utilizing tidal force to pump river water through lead mains into City houses.\n\n<span class="para-ref">[2.2]</span> A far more ambitious triumph occurred in 1609 when goldsmith Sir Hugh Myddelton financed the New River. This 38-mile artificial gravity canal brought fresh spring water from Hertfordshire into a great reservoir at Islington, distributing sweet water through 400 miles of hollowed-out elm-tree pipes across the capital.\n\n<span class="para-ref">[2.3]</span> The New River Company operated as a commercial enterprise, charging wealthy households quarterly water rates for direct lead branch connections. While this private engineering triumph brought clean drinking water to thousands, poorer districts remained reliant on public conduit spouts or water-carriers charging per wooden bucket.`,
       },
       {
         title: 'Cellar Cesspools & Samuel Pepys’s London',
-        text: `<span class="para-ref">[3.1]</span> While freshwater delivery advanced, waste management remained catastrophic. Tens of thousands of private privies drained into porous brick cesspools beneath family cellars. In October 1660, naval administrator Samuel Pepys famously stepped into a "great heap of turds" after his neighbour’s cesspool burst through the cellar wall.\n\n<span class="para-ref">[3.2]</span> Night-soil men charged exorbitant fees to empty overflowing pits, prompting corrupt landlords to let waste accumulate for years. In squalid lanes, open dunghills stood ten feet high, and raw sewage seeped through soil directly into shallow parish wells, creating a deadly microbiological trap for summer fevers.`,
+        text: `<span class="para-ref">[3.1]</span> While freshwater delivery advanced, waste management remained catastrophic. Tens of thousands of private privies drained into porous brick cesspools beneath family cellars. In October 1660, naval administrator Samuel Pepys famously stepped into a "great heap of turds" after his neighbour’s cesspool burst through the cellar wall.\n\n<span class="para-ref">[3.2]</span> Night-soil men charged exorbitant fees to empty overflowing pits, prompting corrupt landlords to let waste accumulate for years. In squalid lanes, open dunghills stood ten feet high, and raw sewage seeped through soil directly into shallow parish wells, creating a deadly microbiological trap for summer fevers.\n\n<span class="para-ref">[3.3]</span> Without municipal oversight, cesspools acted as subterranean toxic reservoirs beneath London's residential fabric. Foul sewer gas seeped into ground-floor parlours, and liquid effluent steadily poisoned the gravel water-table, ensuring that water drawn from neighbourhood pump-wells was laced with dangerous bacterial contaminants.`,
       },
       {
         title: 'The Great Plague of 1665 & The Historical Verdict',
-        text: `<span class="para-ref">[4.1]</span> In the scorching summer of 1665, the Great Plague swept London, slaughtering over 100,000 victims. The medical establishment stubbornly clung to miasma dogma, slaughtering 40,000 domestic dogs and cats while plague-bearing rat fleas (*Xenopsylla cheopis*) multiplied freely in uncleaned straw and refuse.\n\n<span class="para-ref">[4.2]</span> Historians debate whether the Early Modern era represented genuine public health progress. While private commercial engineering delivered clean water through Myddelton’s New River, the absolute absence of statutory sewer networks meant London remained as vulnerable to devastating epidemics in 1665 as it had been three centuries earlier.`,
+        text: `<span class="para-ref">[4.1]</span> In the scorching summer of 1665, the Great Plague swept London, slaughtering over 100,000 victims. The medical establishment stubbornly clung to miasma dogma, slaughtering 40,000 domestic dogs and cats while plague-bearing rat fleas (Xenopsylla cheopis) multiplied freely in uncleaned straw and refuse.\n\n<span class="para-ref">[4.2]</span> The Great Fire of September 1666 incinerated five-sixths of the City, wiping out rat-infested wooden tenements. The 1667 Rebuilding Act mandated brick construction and wider thoroughfares, improving surface ventilation even though subterranean drainage and sewage disposal were completely neglected.\n\n<span class="para-ref">[4.3]</span> Historians debate whether the Early Modern era represented genuine public health progress. While private commercial engineering delivered clean water through Myddelton’s New River, the absolute absence of statutory sewer networks meant London remained as vulnerable to devastating epidemics in 1665 as it had been three centuries earlier.`,
       },
     ];
   }
@@ -854,19 +806,19 @@ function getWaterLessonSections(lesson, idx) {
     return [
       {
         title: 'The Factory Boomtown Explosion',
-        text: `<span class="para-ref">[1.1]</span> Between 1780 and 1850, the Industrial Revolution triggered the most chaotic mass migration in British history. Rural farm labourers abandoned agricultural poverty to seek factory wages in northern manufacturing boomtowns: Manchester surged from 25,000 to over 300,000, while Leeds, Sheffield, and Birmingham expanded with dizzying speed.\n\n<span class="para-ref">[1.2]</span> Unregulated by zoning laws or building standards, speculative landlords threw up dense labyrinths of "back-to-back" houses and rented sunless cellar dwellings. Up to eighty factory workers shared a single outdoor privy, and raw effluent leaked across unpaved slum courts where children played barefoot in toxic slime.`,
+        text: `<span class="para-ref">[1.1]</span> Between 1780 and 1850, the Industrial Revolution triggered the most chaotic mass migration in British history. Rural farm labourers abandoned agricultural poverty to seek factory wages in northern manufacturing boomtowns: Manchester surged from 25,000 to over 300,000, while Leeds, Sheffield, and Birmingham expanded with dizzying speed.\n\n<span class="para-ref">[1.2]</span> Unregulated by zoning laws or building standards, speculative landlords threw up dense labyrinths of "back-to-back" houses and rented sunless cellar dwellings. Up to eighty factory workers shared a single outdoor privy, and raw effluent leaked across unpaved slum courts where children played barefoot in toxic slime.\n\n<span class="para-ref">[1.3]</span> Entire working-class families were packed into damp basements where sewage pooled inches beneath floorboards. Factory owners and municipal oligarchs operated under strict laissez-faire principles, refusing to levy local taxes to construct paved roads, street lighting, or municipal drainage for the labouring population.`,
       },
       {
         title: 'The Arrival of King Cholera',
-        text: `<span class="para-ref">[2.1]</span> In October 1831, a terrifying new Asiatic pestilence struck the port of Sunderland: cholera. Caused by waterborne bacteria (*Vibrio cholerae*), cholera killed with agonizing speed: healthy workers collapsed in vomiting and diarrhoea, their skin turning an icy, dehydrated cobalt blue before dying within twelve hours.\n\n<span class="para-ref">[2.2]</span> Over 52,000 Britons perished in the 1831–32 epidemic. Paralyzed by laissez-faire dogma and clinging to miasma theories, the medical establishment advised tar barrels burned on corners and prescribed useless chalk mixtures, leaving working-class slums defenseless against contaminated water supplies.`,
+        text: `<span class="para-ref">[2.1]</span> In October 1831, a terrifying new Asiatic pestilence struck the port of Sunderland: cholera. Caused by waterborne bacteria (Vibrio cholerae), cholera killed with agonizing speed: healthy workers collapsed in violent vomiting and watery diarrhoea, their skin turning an icy, dehydrated cobalt blue before dying within twelve hours.\n\n<span class="para-ref">[2.2]</span> Over 52,000 Britons perished in the 1831–32 epidemic. Paralyzed by laissez-faire dogma and clinging to miasma theories, the medical establishment advised tar barrels burned on corners and prescribed useless chalk mixtures, leaving working-class slums defenseless against contaminated water supplies.\n\n<span class="para-ref">[2.3]</span> The sudden, violent nature of cholera terrified the ruling classes in ways endemic diseases like tuberculosis never had. Because epidemic outbreaks could spread from squalid working-class courts into affluent merchant squares, the presence of cholera shattered the complacent belief that poverty and disease were solely individual moral failures.`,
       },
       {
         title: 'Edwin Chadwick’s Sanitary Arithmetic',
-        text: `<span class="para-ref">[3.1]</span> In response to the crisis, barrister Edwin Chadwick conducted a monumental investigation, publishing his landmark 1842 *Report on the Sanitary Condition of the Labouring Population*. Chadwick used rigorous statistics to prove that industrial slums were killing workers at more than twice the rate of rural shires.\n\n<span class="para-ref">[3.2]</span> Rather than appealing to Christian charity, Chadwick deployed "sanitary arithmetic": he showed that preventable disease orphaned thousands of children, forcing them onto Poor Law parish relief. Chadwick proved to tax-averse industrialists that funding municipal arterial drainage was far cheaper than paying perpetual pauper rates.`,
+        text: `<span class="para-ref">[3.1]</span> In response to the crisis, barrister Edwin Chadwick conducted a monumental investigation, publishing his landmark 1842 Report on the Sanitary Condition of the Labouring Population. Chadwick used rigorous statistics to prove that industrial slums were killing workers at more than twice the rate of rural shires.\n\n<span class="para-ref">[3.2]</span> Rather than appealing to Christian charity, Chadwick deployed "sanitary arithmetic": he showed that preventable disease orphaned thousands of children, forcing them onto Poor Law parish relief. Chadwick proved to tax-averse industrialists that funding municipal arterial drainage was far cheaper than paying perpetual pauper rates.\n\n<span class="para-ref">[3.3]</span> Chadwick pioneered the concept of the continuous arterial system: narrow, smooth, glazed ceramic pipes continuously flushed by running water under pressure. This hydraulic design prevented sewage from stagnating and emitting noxious gases, demonstrating that civil engineering was the foundation of public health reform.`,
       },
       {
         title: 'The 1848 Public Health Act & Laissez-Faire Resistance',
-        text: `<span class="para-ref">[4.1]</span> Terrified by the return of cholera in 1848, Parliament finally passed the landmark Public Health Act 1848, creating the first General Board of Health. The Act empowered local councils to appoint medical officers of health, manage sewers, and provide clean municipal water supplies.\n\n<span class="para-ref">[4.2]</span> However, historians emphasize that the 1848 Act was fatally weakened by laissez-faire compromises: councils were only forced to act if their death rate exceeded 23 per 1,000. Ratepayers fiercely resisted municipal taxation, denouncing Chadwick as a "sanitary tyrant" until the General Board of Health was dissolved in 1854.`,
+        text: `<span class="para-ref">[4.1]</span> Terrified by the return of cholera in 1848, Parliament finally passed the landmark Public Health Act 1848, creating the first General Board of Health. The Act empowered local councils to appoint medical officers of health, manage sewers, and provide clean municipal water supplies.\n\n<span class="para-ref">[4.2]</span> However, historians emphasize that the 1848 Act was fatally weakened by laissez-faire compromises: councils were only forced to act if their death rate exceeded 23 per 1,000. Ratepayers fiercely resisted municipal taxation, denouncing Chadwick as a "sanitary tyrant" until the General Board of Health was dissolved in 1854.\n\n<span class="para-ref">[4.3]</span> Despite its premature demise, the 1848 Act established an indispensable legal precedent. It breached the sacrosanct doctrine of laissez-faire by establishing the statutory principle that central government possessed both the right and the moral obligation to intervene in the physical environment of British towns.`,
       },
     ];
   }
@@ -876,19 +828,19 @@ function getWaterLessonSections(lesson, idx) {
     return [
       {
         title: 'The Flushing Closet & River Thames Crisis',
-        text: `<span class="para-ref">[1.1]</span> By the 1850s, London had embraced the Victorian flushing water closet. Over 200,000 flush toilets were installed across the metropolis. However, because the capital lacked a centralized sewer network, Parliament ordered domestic privies connected directly to ancient stormwater street drains.\n\n<span class="para-ref">[1.2]</span> The consequence was an environmental catastrophe: these drains poured millions of gallons of raw human excrement, slaughterhouse blood, and chemical waste straight into the tidal River Thames—the very source from which commercial water companies pumped domestic drinking water for central London!`,
+        text: `<span class="para-ref">[1.1]</span> By the 1850s, London had embraced the Victorian flushing water closet, installing over 200,000 units across the metropolis. However, because the capital lacked a centralized sewer network, Parliament ordered domestic privies connected directly to ancient street storm-drains, pouring raw domestic effluent directly into the central river.\n\n<span class="para-ref">[1.2]</span> This triggered an environmental catastrophe: millions of gallons of raw sewage, slaughterhouse offal, and chemical waste poured into the tidal Thames—the source of London's piped drinking water. Twice daily, incoming tides pushed floating effluent back into the city, turning the river into a fermenting biological cesspool under the scorching summer sun.`,
       },
       {
         title: 'The Great Stink of Summer 1858',
-        text: `<span class="para-ref">[2.1]</span> In June 1858, an unprecedented heatwave struck the capital, dropping water levels and baking the polluted Thames into a fermenting cesspool. The resulting stench was so suffocating that committee rooms in the newly built Houses of Parliament became completely uninhabitable.\n\n<span class="para-ref">[2.2]</span> MPs soaked library curtains in chloride of lime to neutralize the stench and tried fleeing by steam ferry, only to find the river bubbling with oily sewer gas. When pestilence threatened governing politicians directly, the government abandoned decades of laissez-faire hesitation and passed emergency legislation in just eighteen days.`,
+        text: `<span class="para-ref">[2.1]</span> In June 1858, an unprecedented heatwave struck the capital, dropping water levels and baking the polluted Thames into a fermenting cesspool. The resulting stench was so suffocating that committee rooms in the newly built Houses of Parliament became completely uninhabitable.\n\n<span class="para-ref">[2.2]</span> MPs soaked library curtains in chloride of lime to neutralize the stench and tried fleeing by steam ferry, only to find the river bubbling with oily sewer gas. When pestilence threatened governing politicians directly, the government abandoned decades of laissez-faire hesitation and passed emergency legislation in just eighteen days.\n\n<span class="para-ref">[2.3]</span> The Great Stink shattered parliamentary complacency. For decades, politicians had ignored the pleas of working-class slum doctors; however, the moment the foul miasma threatened the health and comfort of the governing elite in Westminster, state funds and extraordinary executive powers were unlocked immediately.`,
       },
       {
         title: 'Joseph Bazalgette’s Subterranean Cathedrals',
-        text: `<span class="para-ref">[3.1]</span> The Metropolitan Board of Works entrusted the rescue of London to Chief Engineer Joseph Bazalgette. Between 1859 and 1875, Bazalgette commanded 82 miles of massive underground brick intercepting sewers running parallel to the Thames, capturing domestic waste before it could reach the river.\n\n<span class="para-ref">[3.2]</span> Utilising egg-shaped gravity brickwork bound with innovative waterproof Portland cement, Bazalgette channelled waste eastward to monumental pumping stations at Abbey Mills and Crossness. There, massive steam beam engines pumped the sewage into tidal reservoirs to be flushed out into the open sea on the ebb tide.`,
+        text: `<span class="para-ref">[3.1]</span> The Metropolitan Board of Works entrusted the rescue of London to Chief Engineer Joseph Bazalgette. Between 1859 and 1875, Bazalgette commanded 82 miles of massive underground brick intercepting sewers running parallel to the Thames, capturing domestic waste before it could reach the river.\n\n<span class="para-ref">[3.2]</span> Utilising egg-shaped gravity brickwork bound with innovative waterproof Portland cement, Bazalgette channelled waste eastward to monumental pumping stations at Abbey Mills and Crossness. There, massive steam beam engines pumped the sewage into tidal reservoirs to be flushed out into the open sea on the ebb tide.\n\n<span class="para-ref">[3.3]</span> Bazalgette engineered the system with astonishing foresight: calculating London's maximum population, he deliberately doubled the pipe diameters to accommodate future urban expansion. His subterranean brick cathedrals remain the functional backbone of London's sewage infrastructure more than 150 years later.`,
       },
       {
         title: 'The 1875 Public Health Act & The State Revolution',
-        text: `<span class="para-ref">[4.1]</span> Bazalgette’s engineering triumph eliminated cholera from London forever. Inspired by this success and fortified by Louis Pasteur’s 1861 Germ Theory, Benjamin Disraeli’s government passed the historic Public Health Act 1875, making clean water, sewer drainage, and street lighting strictly compulsory across every town in Britain.\n\n<span class="para-ref">[4.2]</span> Historiographically, the 1875 Act represents the definitive death of Victorian laissez-faire. The state asserted that public health was not a matter of private charity or individual responsibility, but a fundamental constitutional duty owed by government to every citizen.`,
+        text: `<span class="para-ref">[4.1]</span> Bazalgette’s engineering triumph eliminated cholera from London forever. Inspired by this success and fortified by Louis Pasteur’s 1861 Germ Theory, Benjamin Disraeli’s government passed the historic Public Health Act 1875, making clean water, sewer drainage, and street lighting strictly compulsory across every town in Britain.\n\n<span class="para-ref">[4.2]</span> Historiographically, the 1875 Act represents the definitive death of Victorian laissez-faire. The state asserted that public health was not a matter of private charity or individual responsibility, but a fundamental constitutional duty owed by government to every citizen.\n\n<span class="para-ref">[4.3]</span> By establishing mandatory sanitary authorities across England and Wales, the 1875 legislation transformed public health into an institutional civic science. Infant mortality dropped steadily, typhus was conquered, and British municipal engineering became the international gold standard for modern urban civilisations.`,
       },
     ];
   }
@@ -898,19 +850,19 @@ function getWaterLessonSections(lesson, idx) {
     return [
       {
         title: 'Terror in Soho: The August 1854 Outbreak',
-        text: `<span class="para-ref">[1.1]</span> In late August 1854, a sudden and ferocious cholera outbreak erupted in the crowded Soho neighborhood of central London. Within ten days, over five hundred men, women, and children living near the intersection of Broad Street and Cambridge Street died in agonizing convulsions, triggering blind panic across the parish.\n\n<span class="para-ref">[1.2]</span> The medical establishment, led by General Board of Health chief William Farr, dogmatically asserted that the catastrophe was caused by foul miasma exhaled from uncleaned cesspools. Authorities advised citizens to burn tar barrels and shut windows, completely convinced that infection travelled on atmospheric breezes.`,
+        text: `<span class="para-ref">[1.1]</span> In late August 1854, a sudden and ferocious cholera outbreak erupted in the crowded Soho neighborhood of central London. Within ten days, over five hundred men, women, and children living near the intersection of Broad Street and Cambridge Street died in agonizing convulsions, triggering blind panic across the parish.\n\n<span class="para-ref">[1.2]</span> The medical establishment, led by General Board of Health chief William Farr, dogmatically asserted that the catastrophe was caused by foul miasma exhaled from uncleaned cesspools. Authorities advised citizens to burn tar barrels and shut windows, completely convinced that infection travelled on atmospheric breezes.\n\n<span class="para-ref">[1.3]</span> Because medical authorities focused exclusively on foul air, they implemented zero restrictions on communal water pumps. Residents fleeing the suffocating indoor stench congregated in the streets, drawing cold, sparkling water from the Broad Street pump, unknowingly swallowing lethal concentrations of waterborne bacteria.`,
       },
       {
         title: 'Dr John Snow: The Epidemiological Detective',
-        text: `<span class="para-ref">[2.1]</span> Dr John Snow, an obstetric anesthetist who had administered chloroform to Queen Victoria, rejected the miasma dogma. Snow recognized that because cholera caused violent intestinal symptoms rather than respiratory distress, the infectious poison must be ingested through contaminated food or water.\n\n<span class="para-ref">[2.2]</span> Moving door to door through the infected streets, Snow meticulously recorded where victims lived and where they obtained drinking water. He plotted every death on a street map as a black bar, discovering that fatalities clustered with mathematical precision around the popular Broad Street public water pump.`,
+        text: `<span class="para-ref">[2.1]</span> Dr John Snow, an obstetric anesthetist who had administered chloroform to Queen Victoria, rejected the miasma dogma. Snow recognized that because cholera caused violent intestinal symptoms rather than respiratory distress, the infectious poison must be ingested through contaminated food or water.\n\n<span class="para-ref">[2.2]</span> Moving door to door through the infected streets, Snow meticulously recorded where victims lived and where they obtained drinking water. He plotted every death on a street map as a black bar, discovering that fatalities clustered with mathematical precision around the popular Broad Street public water pump.\n\n<span class="para-ref">[2.3]</span> Snow’s investigative method was groundbreaking: he combined forensic field interviews with rigorous spatial cartography. By correlating geographic mortality data with infrastructure points, Snow invented modern epidemiological mapping, demonstrating that disease patterns revealed their underlying source of transmission.`,
       },
       {
         title: 'Anomalies, Proof & Removing the Handle',
-        text: `<span class="para-ref">[3.1]</span> Snow secured irrefutable proof by investigating local anomalies: seventy workers at the nearby Broad Street brewery drank free malt beer and suffered zero fatalities. Conversely, an elderly widow living miles away in leafy Hampstead who loved the pump's "sparkling coolness" had water delivered daily and died of cholera.\n\n<span class="para-ref">[3.2]</span> Armed with this forensic evidence, Snow addressed the skeptical St James Parish Board of Guardians on 7 September 1854, demanding that the pump handle be unscrewed. The vestry complied the following morning; the water supply was cut off, and the lethal Soho epidemic abruptly collapsed.`,
+        text: `<span class="para-ref">[3.1]</span> Snow secured irrefutable proof by investigating local anomalies: seventy workers at the nearby Broad Street brewery drank free malt beer and suffered zero fatalities. Conversely, an elderly widow living miles away in leafy Hampstead who loved the pump's "sparkling coolness" had water delivered daily and died of cholera.\n\n<span class="para-ref">[3.2]</span> Armed with this forensic evidence, Snow addressed the skeptical St James Parish Board of Guardians on 7 September 1854, demanding that the pump handle be unscrewed. The vestry complied the following morning; the water supply was cut off, and the lethal Soho epidemic abruptly collapsed.\n\n<span class="para-ref">[3.3]</span> Further investigation by local curate Reverend Henry Whitehead verified Snow's hypothesis: an infant at 40 Broad Street had contracted cholera, and its mother had washed soiled diapers in water thrown into an unlined cesspool that sat just three feet from the pump's subterranean brick well-casing.`,
       },
       {
         title: 'Excavation, Legacy & The Germ Theory Dawn',
-        text: `<span class="para-ref">[4.1]</span> Subsequent excavations revealed that an infant’s contaminated cloth diaper had leaked through defective brickwork from a neighbouring cesspool straight into the pump's 28-foot well. Although the medical establishment resisted his findings until Louis Pasteur and Robert Koch isolated *Vibrio cholerae* in 1883, Snow had pioneered modern epidemiological science.\n\n<span class="para-ref">[4.2]</span> Historians regard John Snow as a foundational figure in scientific medicine. By substituting empirical spatial mapping and statistical deduction for ancient philosophical speculation, Snow proved that infectious disease could be eradicated through systematic public health engineering.`,
+        text: `<span class="para-ref">[4.1]</span> Subsequent excavations revealed that an infant’s contaminated cloth diaper had leaked through defective brickwork from a neighbouring cesspool straight into the pump's 28-foot well. Although the medical establishment resisted his findings until Louis Pasteur and Robert Koch isolated Vibrio cholerae in 1883, Snow had pioneered modern epidemiological science.\n\n<span class="para-ref">[4.2]</span> Historians regard John Snow as a foundational figure in scientific medicine. By substituting empirical spatial mapping and statistical deduction for ancient philosophical speculation, Snow proved that infectious disease could be eradicated through systematic public health engineering.\n\n<span class="para-ref">[4.3]</span> Today, Dr John Snow's Soho investigation stands as the foundational case study in global public health pedagogy. His empirical courage demonstrated that solving medical crises requires challenging entrenched orthodoxies with forensic data, permanently reshaping the sanitation infrastructure of the modern world.`,
       },
     ];
   }
@@ -1309,8 +1261,8 @@ async function buildPublisherTextbookHtmlWater() {
       padding: 0;
       background: #e2e8f0;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.55pt;
-      line-height: 1.46;
+      font-size: 9.85pt;
+      line-height: 1.48;
       color: #1e293b;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -1448,7 +1400,7 @@ async function buildPublisherTextbookHtmlWater() {
 
     /* Narrative Paragraphs */
     .narrative-p {
-      margin: 0 0 5px 0;
+      margin: 0 0 5.5px 0;
       text-align: justify;
       hyphens: auto;
     }
@@ -1520,30 +1472,30 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .archival-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
+      font-size: 9.5pt;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 2.5px;
-      line-height: 1.2;
+      margin-bottom: 3px;
+      line-height: 1.22;
     }
     .archival-image {
       width: 100%;
-      height: 110px;
+      height: 120px;
       object-fit: cover;
       object-position: center;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
     }
     .archival-body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.9pt;
+      font-size: 8.5pt;
       font-style: italic;
       color: #1e293b;
-      line-height: 1.34;
-      margin-bottom: 3px;
-      padding: 2.5px 4.5px;
+      line-height: 1.40;
+      margin-bottom: 3.5px;
+      padding: 3.5px 6px;
       background: #ffffff;
       border-left: 2.5px solid #0369a1;
       border-radius: 0 2px 2px 0;
@@ -1552,33 +1504,39 @@ async function buildPublisherTextbookHtmlWater() {
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
       border-radius: 2px;
-      padding: 3px 5px;
-      margin-bottom: 2.5px;
+      padding: 3.5px 6px;
+      margin-bottom: 3px;
     }
     .archival-context-text {
       font-family: 'Inter', sans-serif;
-      font-size: 6.3pt;
+      font-size: 7.8pt;
       color: #334155;
-      line-height: 1.26;
-      margin: 0 0 2px 0;
+      line-height: 1.36;
+      margin: 0 0 2.5px 0;
     }
     .archival-hinge-q {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 7.8pt;
       color: #0369a1;
-      line-height: 1.25;
+      line-height: 1.36;
       border-top: 1px dashed #cbd5e1;
-      padding-top: 2px;
+      padding-top: 2.5px;
+    }
+    .archival-hinge-q strong {
+      color: #0284c7;
+      text-transform: uppercase;
+      font-size: 6.6pt;
+      letter-spacing: 0.04em;
     }
     .archival-footer {
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 5.6pt;
+      font-size: 6.0pt;
       color: #64748b;
       border-top: 1px solid #e2e8f0;
-      padding-top: 2px;
-      margin-top: 2px;
+      padding-top: 2.5px;
+      margin-top: 2.5px;
     }
 
     /* Fieldwork Source Card (Hampshire Fieldwork Archive) */
@@ -1587,8 +1545,8 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 5px 6.5px 4px 6.5px;
-      margin: 3px 0 4px 0;
+      padding: 3.5px 5.5px;
+      margin: 2.5px 0 3px 0;
       break-inside: avoid;
       box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
@@ -1607,40 +1565,40 @@ async function buildPublisherTextbookHtmlWater() {
     .fieldwork-badge {
       background: #0284c7;
       color: #ffffff;
-      font-size: 5.8pt;
+      font-size: 6.2pt;
       font-weight: 800;
-      padding: 1px 4px;
+      padding: 1px 4.5px;
       border-radius: 2px;
       letter-spacing: 0.04em;
     }
     .fieldwork-tag {
-      font-size: 5.6pt;
+      font-size: 6.6pt;
       font-weight: 800;
       color: #0369a1;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .fieldwork-grid-ref {
-      font-size: 5.6pt;
+      font-size: 6.6pt;
       font-weight: 700;
       color: #64748b;
       font-family: 'Inter', sans-serif;
     }
     .fieldwork-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
+      font-size: 9.5pt;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 2.5px;
-      line-height: 1.2;
+      margin-bottom: 2px;
+      line-height: 1.20;
     }
     .fieldwork-visual-container {
       position: relative;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .fieldwork-image {
       width: 100%;
-      height: 105px;
+      height: 88px;
       object-fit: cover;
       object-position: center;
       border-radius: 2px;
@@ -1649,7 +1607,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .fieldwork-evidence-pill {
       font-family: 'Inter', sans-serif;
-      font-size: 5.6pt;
+      font-size: 6.8pt;
       font-weight: 700;
       color: #0c4a6e;
       background: #e0f2fe;
@@ -1657,47 +1615,49 @@ async function buildPublisherTextbookHtmlWater() {
       padding: 1.5px 5px;
       border-radius: 2px;
       margin-top: 2px;
-      line-height: 1.2;
+      line-height: 1.22;
     }
     .fieldwork-analysis-grid {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 2px;
       padding: 3px 5px;
-      margin-bottom: 2.5px;
+      margin-bottom: 2px;
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
     .fieldwork-row {
       font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      line-height: 1.26;
+      font-size: 7.8pt;
+      line-height: 1.30;
       color: #334155;
     }
     .fw-label {
       font-weight: 800;
       color: #0369a1;
       margin-right: 3px;
+      font-size: 7.8pt;
     }
     .fw-desc {
       color: #1e293b;
+      font-size: 7.8pt;
     }
     .fieldwork-hinge-box {
       font-family: 'Inter', sans-serif;
-      font-size: 6.3pt;
-      line-height: 1.25;
+      font-size: 7.6pt;
+      line-height: 1.30;
       color: #0369a1;
       background: #f0f9ff;
       border: 1px solid #bae6fd;
-      padding: 2px 4px;
+      padding: 2px 4.5px;
       border-radius: 2px;
       margin-bottom: 2px;
     }
     .fieldwork-hinge-box strong {
       color: #0284c7;
       text-transform: uppercase;
-      font-size: 5.6pt;
+      font-size: 6.6pt;
       letter-spacing: 0.04em;
     }
 
@@ -1707,26 +1667,26 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 5px 6.5px 4px 6.5px;
-      margin: 4px 0 5px 0;
+      padding: 4.5px 6.5px;
+      margin: 3px 0 3.5px 0;
       break-inside: avoid;
     }
     .kf-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
-      font-size: 5.8pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .kf-lifespan {
-      font-size: 5.8pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #64748b;
     }
@@ -1734,11 +1694,11 @@ async function buildPublisherTextbookHtmlWater() {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .kf-portrait {
       width: 44px;
-      height: 48px;
+      height: 50px;
       object-fit: cover;
       object-position: top center;
       border-radius: 2px;
@@ -1750,28 +1710,28 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.4pt;
+      font-size: 10.2pt;
       font-weight: 700;
       color: #0f172a;
       line-height: 1.15;
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.5pt;
       font-weight: 600;
       color: #475569;
-      line-height: 1.2;
+      line-height: 1.20;
     }
     .kf-significance {
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       line-height: 1.34;
       color: #334155;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       text-align: justify;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.6pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -1780,11 +1740,11 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .kf-actions-list {
       margin: 0;
-      padding-left: 11px;
+      padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 7.6pt;
       color: #1e293b;
-      line-height: 1.26;
+      line-height: 1.30;
     }
     .kf-actions-list li {
       margin-bottom: 1px;
@@ -1796,53 +1756,53 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #bbf7d0;
       border-top: 2.5px solid #16a34a;
       border-radius: 3px;
-      padding: 5px 6.5px 4px 6.5px;
-      margin: 4px 0 5px 0;
+      padding: 4.5px 6.5px;
+      margin: 3px 0 3.5px 0;
       break-inside: avoid;
     }
     .csb-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2.5px;
+      margin-bottom: 2px;
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 5.6pt;
+      font-size: 6.6pt;
       font-weight: 800;
-      color: #15803d;
+      color: #16a34a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 5.6pt;
+      font-size: 6.6pt;
       font-weight: 700;
       color: #475569;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
+      font-size: 9.6pt;
       font-weight: 700;
       color: #0f172a;
-      margin: 0 0 2.5px 0;
+      margin: 0 0 2px 0;
       line-height: 1.2;
     }
     .csb-body {
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       line-height: 1.34;
       color: #1e293b;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       text-align: justify;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 7.6pt;
       color: #14532d;
       background: #dcfce7;
       border: 1px solid #86efac;
       padding: 2.5px 4.5px;
       border-radius: 2px;
-      line-height: 1.25;
+      line-height: 1.28;
     }
 
     /* Full-Width Bottom Vocabulary Deck (Left Page) */
@@ -1851,46 +1811,47 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 3.5px 6px;
-      margin-top: 2px;
+      padding: 4.5px 7px;
+      margin-top: 3.5px;
       flex-shrink: 0;
     }
     .bvb-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
       font-family: 'Inter', sans-serif;
     }
     .bvb-title {
-      font-size: 6.2pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .bvb-tag {
-      font-size: 5.6pt;
+      font-size: 6.8pt;
       font-weight: 700;
       color: #64748b;
     }
     .bvb-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
+      gap: 6px;
     }
     .bvb-card {
       font-family: 'Inter', sans-serif;
-      font-size: 6.3pt;
-      line-height: 1.24;
+      font-size: 7.6pt;
+      line-height: 1.35;
       color: #334155;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      padding: 2px 4px;
+      padding: 4px 6px;
       border-radius: 2px;
     }
     .bvb-card strong {
-      color: #0f172a;
+      color: #0284c7;
+      font-size: 7.6pt;
     }
 
     /* Full-Width Bottom Enquiry Deck (Right Page) */
@@ -1899,51 +1860,51 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #bfdbfe;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 3.5px 6px;
-      margin-top: 2px;
+      padding: 4.5px 7px;
+      margin-top: 3.5px;
       flex-shrink: 0;
     }
     .beb-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
       font-family: 'Inter', sans-serif;
     }
     .beb-title {
-      font-size: 6.2pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .beb-badge {
-      font-size: 5.6pt;
+      font-size: 6.8pt;
       font-weight: 700;
       color: #1d4ed8;
       background: #dbeafe;
-      padding: 0.5px 4px;
+      padding: 1px 5px;
       border-radius: 2px;
     }
     .beb-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
+      gap: 6px;
     }
     .beb-col {
       font-family: 'Inter', sans-serif;
-      font-size: 6.3pt;
-      line-height: 1.24;
+      font-size: 7.6pt;
+      line-height: 1.35;
       color: #1e293b;
       background: #ffffff;
       border: 1px solid #dbeafe;
-      padding: 2px 4px;
+      padding: 4px 6px;
       border-radius: 2px;
     }
     .beb-col strong {
       color: #0284c7;
       display: block;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
     }
 
     /* Page Footer */
@@ -2035,15 +1996,23 @@ async function buildPublisherTextbookHtmlWater() {
       overflow: hidden;
       background: #f8fafc;
       box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .cover-hero-img {
-      width: 100%;
-      height: 70mm;
-      object-fit: cover;
+      max-height: 80mm;
+      max-width: 100%;
+      width: auto;
+      height: 80mm;
+      object-fit: contain;
       object-position: center;
       display: block;
+      margin: 0 auto;
     }
     .cover-hero-caption {
+      width: 100%;
+      box-sizing: border-box;
       padding: 2mm 3mm;
       font-family: 'Inter', sans-serif;
       font-size: 6.8pt;
@@ -2138,16 +2107,16 @@ async function buildPublisherTextbookHtmlWater() {
       align-items: center;
       background: #0284c7;
       color: #ffffff;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       font-weight: 800;
-      padding: 1.5mm 3mm;
+      padding: 1.8mm 3.5mm;
       border-radius: 2px;
-      margin: 2mm 0 1.5mm 0;
+      margin: 2.5mm 0 2mm 0;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .back-section-tag {
-      font-size: 5.8pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #e0f2fe;
     }
@@ -2156,91 +2125,92 @@ async function buildPublisherTextbookHtmlWater() {
     .back-timeline-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 3.5px;
-      font-size: 6.0pt;
-      line-height: 1.22;
+      gap: 4px;
+      font-size: 7.2pt;
+      line-height: 1.30;
     }
     .bt-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-left: 2px solid #0284c7;
-      padding: 2.5px 4px;
+      border-left: 2.5px solid #0284c7;
+      padding: 3.5px 5.5px;
       border-radius: 2px;
     }
     .bt-card strong {
       color: #0284c7;
+      font-size: 7.2pt;
     }
 
     /* Section 2: Four Progression Pillars */
     .back-thematic-matrix {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      font-size: 6.2pt;
-      line-height: 1.25;
+      gap: 4.5px;
+      font-size: 7.2pt;
+      line-height: 1.30;
     }
     .bmm-col {
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
       border-top: 2.5px solid #16a34a;
-      padding: 3.5px 5px;
+      padding: 4px 5.5px;
       border-radius: 2px;
     }
     .bmm-col strong {
       display: block;
       color: #15803d;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 7.2pt;
       font-weight: 800;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
     }
 
     /* Section 3: Historiographical Schools */
     .back-historiography-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      font-size: 6.2pt;
-      line-height: 1.25;
+      gap: 4.5px;
+      font-size: 7.2pt;
+      line-height: 1.30;
     }
     .bh-card {
       background: #fdfbf7;
       border: 1px solid #fed7aa;
       border-top: 2.5px solid #f97316;
-      padding: 3.5px 5px;
+      padding: 4px 5.5px;
       border-radius: 2px;
     }
     .bh-card strong {
       display: block;
       color: #c2410c;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 7.2pt;
       font-weight: 800;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
     }
 
     /* Section 4: Writing Scaffold */
     .back-writing-scaffold-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      font-size: 6.2pt;
-      line-height: 1.25;
+      gap: 4.5px;
+      font-size: 7.2pt;
+      line-height: 1.30;
     }
     .bws-col {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-top: 2.5px solid #2563eb;
-      padding: 3.5px 5px;
+      padding: 4px 5.5px;
       border-radius: 2px;
     }
     .bws-col strong {
       display: block;
       color: #1e40af;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 7.2pt;
       font-weight: 800;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
     }
 
     /* Section 5: QR Grid */
@@ -2248,14 +2218,14 @@ async function buildPublisherTextbookHtmlWater() {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 4px;
-      margin-top: 1.5mm;
+      margin-top: 2mm;
     }
     .bqr-card {
       background: #ffffff;
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 3px 2px 2.5px 2px;
+      padding: 3.5px 2px 3px 2px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -2269,7 +2239,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .bqr-num {
       display: block;
-      font-size: 6.0pt;
+      font-size: 6.6pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -2277,11 +2247,11 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .bqr-title {
       display: block;
-      font-size: 5.2pt;
+      font-size: 6.0pt;
       font-weight: 700;
       color: #334155;
-      line-height: 1.15;
-      height: 16px;
+      line-height: 1.20;
+      height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2298,7 +2268,7 @@ async function buildPublisherTextbookHtmlWater() {
       border-radius: 2px;
     }
     .bqr-footer {
-      font-size: 4.8pt;
+      font-size: 5.2pt;
       font-weight: 800;
       color: #64748b;
       text-transform: uppercase;
