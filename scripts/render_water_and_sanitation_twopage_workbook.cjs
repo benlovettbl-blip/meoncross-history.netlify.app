@@ -145,7 +145,7 @@ const lessonConfigs = [
       'Explain the difference between an <strong>Aqueduct</strong> (a bridge or channel carrying fresh spring water) and a <strong>Cesspit</strong> (a pit dug in the ground for collecting waste):',
     bridgeTask: {
       type: 'visual_archaeology',
-      title: 'Task 4: Source Investigation — Roman Lead Water Pipes at Fishbourne Palace',
+      title: 'Task 3: Source Investigation — Roman Lead Water Pipes at Fishbourne Palace',
       imgSrc: '/images/water_local_fishbourne.jpg',
       imgCaption: 'Archaeological Excavation Plate: Roman Lead Water Pipes at Fishbourne',
       sourceText:
@@ -210,7 +210,7 @@ const lessonConfigs = [
       'Explain the difference between <strong>Miasma</strong> (the mistaken belief that bad smells cause disease) and a <strong>Gong Farmer</strong> (a worker paid to shovel waste out of cesspits at night):',
     bridgeTask: {
       type: 'dual_source_interrogation',
-      title: 'Task 4: Source Investigation — Town Court Fines vs Monastic Water Plans',
+      title: 'Task 3: Source Investigation — Town Court Fines vs Monastic Water Plans',
       sourceATitle: 'SOURCE A: Norwich & Winchester Court Records (1312 & 1421)',
       sourceAText:
         '“1312: John le Ropere is fined two shillings for keeping a rotting dung-heap in the public street... 1421: Inquest of Winchester: John Hende has allowed his cesspit to overflow into the King’s ditch, polluting water where women wash clothes.”',
@@ -280,7 +280,7 @@ const lessonConfigs = [
       'Explain the difference between <strong>Quarantine</strong> (locking people inside their homes to stop disease spreading) and <strong>Miasma</strong> (believing disease came from foul smells):',
     bridgeTask: {
       type: 'visual_plague',
-      title: 'Task 4: Source Investigation — The Plague Doctor & The 1665 London Plague Orders',
+      title: 'Task 3: Source Investigation — The Plague Doctor & The 1665 London Plague Orders',
       imgSrc: '/images/plague_doctor_1665.png',
       imgCaption: 'Historical Visual: The 17th-Century Plague Doctor Costume',
       sourceText:
@@ -347,7 +347,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'sanitary_table',
       title:
-        'Task 4: Source Investigation — Chadwick’s 1842 Report on the Sanitary Condition of Workers',
+        'Task 3: Source Investigation — Chadwick’s 1842 Report on the Sanitary Condition of Workers',
       sourceTitle:
         'Source C: Life Expectancy by Social Class and Location (Chadwick’s 1842 Statistics)',
       shelfmark: 'BRITISH PARLIAMENTARY PAPERS • CHADWICK REPORT (1842)',
@@ -425,7 +425,7 @@ const lessonConfigs = [
       'Explain the difference between <strong>Water-Borne Disease</strong> (illness spread by drinking contaminated water) and <strong>Miasma Theory</strong> (the belief that bad smells spread sickness):',
     bridgeTask: {
       type: 'visual_cholera_map',
-      title: 'Task 4: Source Investigation — Dr John Snow’s Broad Street Cholera Spot Map (1854)',
+      title: 'Task 3: Source Investigation — Dr John Snow’s Broad Street Cholera Spot Map (1854)',
       imgSrc: '/images/john_snow_cholera_map.jpg',
       imgCaption: 'Primary Cartography: Dr John Snow’s 1854 Spot Map of Soho',
       sourceText:
@@ -495,7 +495,7 @@ const lessonConfigs = [
       'Explain the difference between an <strong>Intercepting Sewer</strong> (a giant pipe that catches sewage before it hits the river and carries it far away) and <strong>Compulsory Legislation</strong> (a law that forces councils to build clean water systems):',
     bridgeTask: {
       type: 'visual_bazalgette',
-      title: 'Task 4: Source Investigation — Building Joseph Bazalgette’s Brick Sewers (c.1860s)',
+      title: 'Task 3: Source Investigation — Building Joseph Bazalgette’s Brick Sewers (c.1860s)',
       imgSrc: '/images/bazalgette_sewer.jpg',
       imgCaption:
         'Engineering Archive Plate: Construction of Egg-Shaped Brick Sewers Beneath London',
@@ -539,6 +539,12 @@ const lessonConfigs = [
       'Turn to Pages 2–3 (Milestone 6: 1858–1875). In the sketchpad, sketch the egg-shaped brick sewer tunnel or the Victoria Embankment hiding the pipes beneath London.',
   },
 ];
+
+// Calibrated Line Counts per lesson spread to eliminate all dead-space voids
+// Verso: Q1 = 4 lines; Q2 fills remaining height to clue footer (gap <= 20px)
+const versoQ2Lines = [12, 11, 11, 9, 11, 10];
+// Recto: Essay writing lines docking directly above Timeline Mission box (gap <= 20px)
+const rectoWritingLines = [25, 25, 26, 25, 25, 25];
 
 // Timeline Milestones across Pages 2 & 3 (3 Milestones per page, 100% full-width cards)
 const timelineMilestones = [
@@ -988,11 +994,11 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
             </ul>
           </div>
 
-          <!-- Do Now: Retrieval Practice (5 Questions, Score / 5) -->
+          <!-- Task 1: Do Now: Retrieval Practice (5 Questions, Score / 5) -->
           <div class="task-section">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                &bull; 'Do Now' Retrieval Practice (5 Prior Recall Questions)
+                Task 1: 'Do Now' Retrieval Practice (5 Prior Recall Questions)
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000; padding: 0 5px; border-radius: 2px;">
                 Score: [ &nbsp;&nbsp;&nbsp;&nbsp; / 5 ]
@@ -1017,13 +1023,13 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
             </div>
           </div>
 
-          <!-- Key Vocabulary -->
+          <!-- Task 2: Key Vocabulary -->
           <div class="task-section" style="margin-top: 3px;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                &bull; Key Vocabulary
+                Task 2: Key Vocabulary
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">HISTORICAL WORDS</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #444;">Core Definitions</span>
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #111; margin-bottom: 2px; line-height: 1.22;">
               ${cfg.vocabPrompt}
@@ -1033,7 +1039,7 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
           </div>
         </div>
 
-        <!-- Task 4: Source Investigation (Expanded to Fill Page Down to Footer) -->
+        <!-- Task 3: Source Investigation (Expanded to Fill Page Down to Footer) -->
         <div style="border: 1.4px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
@@ -1231,24 +1237,20 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
       `;
     }
 
-    // 2 Substantial Questions with 3 Ruled Lines each
+    // 2 Substantial Questions with Ruled Lines (Q1: 4 lines, Q2 calibrated to fill to footer)
     html += `
             <div style="margin-top: 2px;">
               <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000; margin-bottom: 1px;">
                 <strong>Question 1:</strong> ${cfg.bridgeTask.questionA}
               </div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
+              ${Array(4).fill('<div class="task-line"></div>').join('\n              ')}
             </div>
 
             <div style="margin-top: 2px;">
               <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000; margin-bottom: 1px;">
                 <strong>Question 2:</strong> ${cfg.bridgeTask.questionB}
               </div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
+              ${Array(versoQ2Lines[idx]).fill('<div class="task-line"></div>').join('\n              ')}
             </div>
           </div>
 
@@ -1264,7 +1266,7 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
     </div>
 
     <!-- ------------------------------------------------------------------ -->
-    <!-- RIGHT PAGE (RECTO): Extended Enquiry Writing (21 Ruled Lines)      -->
+    <!-- RIGHT PAGE (RECTO): Extended Enquiry Writing                        -->
     <!-- Zero DIRT box • Timeline Mission Box at foot                       -->
     <!-- ------------------------------------------------------------------ -->
     <div class="page page-container" id="page-${rightPageNum}">
@@ -1274,10 +1276,10 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
           <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
             <div>
               <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.8px; color: #444; font-weight: 800;">
-                Historical Focus: ${cfg.skill}
+                Unit: Water &amp; Sanitation &bull; Lesson ${cfg.lessonNum} &bull; Focus: ${cfg.skill}
               </div>
               <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
-                Enquiry: ${cfg.inquiryQuestion}
+                Task 4: Extended Enquiry &bull; ${cfg.inquiryQuestion}
               </h3>
             </div>
             <span class="badge">Extended Writing</span>
@@ -1321,9 +1323,9 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
             <span><strong>[L] Link:</strong> Direct conclusion answering enquiry.</span>
           </div>
 
-          <!-- Ruled Writing Lines (21 Full Lines at 7.0mm) -->
+          <!-- Ruled Writing Lines (${rectoWritingLines[idx]} Full Lines at 7.0mm) -->
           <div style="margin-bottom: 2px;">
-            ${Array(21).fill('<div class="task-line"></div>').join('\n            ')}
+            ${Array(rectoWritingLines[idx]).fill('<div class="task-line"></div>').join('\n            ')}
           </div>
         </div>
 
@@ -1344,11 +1346,17 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
   });
 
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Quizzing Hub)
-  // Master Assessment Tracker matching CME & Great War gold standard
+  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & 6-Lesson QR Hub)
+  // Master Assessment Tracker matching Gold Standard
   // ====================================================================
-  const quizUrl = 'https://history-revision-hub.netlify.app/units/water_and_sanitation/quiz';
-  const qrSvg = generateQrSvg(quizUrl);
+  const lessonShortTitles = [
+    'Fishbourne Roman',
+    'Medieval Monks',
+    'Plague & Harington',
+    'Chadwick Slums',
+    'Dr Snow & Soho',
+    'Bazalgette Sewers',
+  ];
 
   html += `
   <div class="page page-container" id="page-16">
@@ -1367,17 +1375,17 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
       </div>
 
       <!-- Header Block -->
-      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 12pt; margin: 0 0 1px 0; font-weight: 900; text-transform: uppercase;">
           Student Assessment Record &amp; Revision Tracker
         </h2>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #222; font-weight: 600;">
-          Water &amp; Sanitation (c.43 AD–Present) • 6-Lesson Enquiry Sequence
+          Water &amp; Sanitation (c.43 AD–Present) • 6-Lesson Enquiry Sequence (126 Marks Total)
         </div>
       </div>
 
       <!-- Target Grade & Pupil Info Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 10px; align-items: center; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 10px; align-items: center; margin-bottom: 3px;">
         <div>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
           <div style="border-bottom: 1.2px solid #000000; height: 14px; margin-top: 1px;"></div>
@@ -1399,16 +1407,17 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
       </div>
 
       <!-- Assessment Progress Ledger Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 3px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #f8fafc;">
-              <th style="padding: 3px 4px; width: 24px; text-align: center; font-size: 8pt; font-weight: 900; border-right: 1px solid #000;">#</th>
-              <th style="padding: 3px 6px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000;">Lesson Enquiry Title</th>
-              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Do Now (/5)</th>
-              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Essay (/16)</th>
-              <th style="padding: 3px 4px; width: 80px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Total (/21)</th>
-              <th style="padding: 3px 6px; width: 110px; text-align: left; font-size: 7.5pt; font-weight: 900;">Teacher Sign</th>
+              <th style="padding: 2.5px 4px; width: 24px; text-align: center; font-size: 7.8pt; font-weight: 900; border-right: 1px solid #000;">#</th>
+              <th style="padding: 2.5px 6px; text-align: left; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000;">Lesson Enquiry Title</th>
+              <th style="padding: 2.5px 4px; width: 75px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Task 1: Do Now (/5)</th>
+              <th style="padding: 2.5px 4px; width: 75px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Task 3: Sources (/6)</th>
+              <th style="padding: 2.5px 4px; width: 75px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Task 4: Essay (/10)</th>
+              <th style="padding: 2.5px 4px; width: 72px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Total (/21)</th>
+              <th style="padding: 2.5px 6px; width: 95px; text-align: left; font-size: 7.3pt; font-weight: 900;">Teacher Sign</th>
             </tr>
           </thead>
           <tbody>
@@ -1416,12 +1425,13 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
               .map(
                 (l) => `
               <tr style="border-bottom: 1px solid #000000;">
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">L${l.lessonNum}</td>
-                <td style="padding: 3px 6px; border-right: 1px solid #000; font-weight: 600;">${l.title}</td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 5</strong> ]</td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 21</strong> ]</td>
-                <td style="padding: 3px 6px; border-bottom: 1px solid #000;"></td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">L${l.lessonNum}</td>
+                <td style="padding: 2.5px 6px; border-right: 1px solid #000; font-weight: 600;">${l.title}</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 5</strong> ]</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 6</strong> ]</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 21</strong> ]</td>
+                <td style="padding: 2.5px 6px; border-bottom: 1px solid #000;"></td>
               </tr>
             `,
               )
@@ -1429,18 +1439,19 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
             <tr style="background: #f8fafc; font-weight: 900; border-top: 1.5px solid #000000;">
               <td colspan="2" style="padding: 3px 6px; border-right: 1px solid #000; text-transform: uppercase;">Unit Cumulative Total</td>
               <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 30</strong> ]</td>
-              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
-              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-size: 8.5pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 126</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 36</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 60</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-size: 8.2pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 126</strong> ]</td>
               <td style="padding: 3px 6px;"></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback: WWW & EBI -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 4px;">
+      <!-- Teacher Feedback: WWW & EBI (4 Full Lines each + Signature) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #000;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #000;">
             Teacher Feedback &amp; Academic Guidance
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">STAGED V2 PROGRESS</span>
@@ -1450,42 +1461,56 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
               What Went Well (WWW):
             </strong>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
           </div>
           <div>
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
               Even Better If (EBI):
             </strong>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
           </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.0pt; margin-top: 3px; border-top: 1px dotted #ccc; padding-top: 2px;">
+          <span>Teacher Signature: ____________________________________</span>
+          <span>Date: _______ / _______ / 2026</span>
         </div>
       </div>
 
-      <!-- Revision QR Hub & Digital Quizzing -->
-      <div style="border: 1.2px solid #000; border-radius: 4px; padding: 4px 8px; background: #fdfbf7; display: flex; align-items: center; justify-content: space-between;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="width: 22mm; height: 22mm; background: #fff; border: 1px solid #000; padding: 1px; border-radius: 2px;">
-            ${qrSvg}
-          </div>
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #000;">
-              Interactive Flashcards &amp; Digital Quiz Hub
-            </div>
-            <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #222; margin: 1px 0 2px 0; line-height: 1.2;">
-              Scan the QR code on your phone or tablet to revise all 6 lessons and test your recall with 100 interactive questions.
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #444; font-weight: 700;">
-              Target Score: <strong>18 / 20</strong> on Unit Mastery Check
-            </div>
-          </div>
+      <!-- Revision QR Hub & Digital Quizzing (6 Individual Lesson QR Cards) -->
+      <div style="border: 1.4px solid #000; border-radius: 4px; padding: 4px 6px; background: #fdfbf7;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase;">
+            Digital Revision &amp; Interactive Quizzing Hub • 6 Lesson QR Codes (60 Total Questions)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #444;">Scan with Mobile / Tablet</span>
         </div>
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 8px; background: #fff; text-align: center;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase;">Best Quiz Score:</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; margin-top: 1px;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</div>
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
+          ${lessonConfigs
+            .map((cfg, i) => {
+              const lNum = cfg.lessonNum;
+              const lUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=water_and_sanitation&lesson=${lNum}`;
+              const lQr = generateQrSvg(lUrl);
+              return `
+            <div class="qr-card" style="border: 1px solid #000; border-radius: 3px; background: #ffffff; padding: 3px 2px; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase;">Lesson ${lNum}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; color: #333; line-height: 1.1; margin-bottom: 2px; font-weight: 600;">${lessonShortTitles[i]}</span>
+              <div style="width: 17mm; height: 17mm; margin: 1px 0;">
+                ${lQr}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; color: #555; text-transform: uppercase; font-weight: 700;">Scan to Quiz</span>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border-top: 1px dotted #ccc; width: 100%; padding-top: 1px; margin-top: 1px;">
+                Score: [ &nbsp; / 10 ]
+              </div>
+            </div>
+          `;
+            })
+            .join('')}
         </div>
       </div>
 

@@ -142,7 +142,7 @@ const lessonConfigs = [
       'Explain the difference between <strong>Realpolitik</strong> (practical politics based on power) and <strong>Liberalism</strong> (rule of law and elected parliaments):',
     bridgeTask: {
       type: 'source_annotation',
-      title: 'Task 4: Source Investigation — Bismarck’s "Blood and Iron" Speech',
+      title: 'Task 3: Source Investigation — Bismarck’s "Blood and Iron" Speech',
       sourceTitle: 'Source A: Bismarck speaks to the Prussian Parliament (September 1862)',
       shelfmark: 'PRUSSIAN STATE ARCHIVES • BERLIN',
       sourceText:
@@ -211,7 +211,7 @@ const lessonConfigs = [
       'After the German [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] of Alsace-Lorraine, the French public demanded [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] to reclaim their lost provinces.',
     bridgeTask: {
       type: 'visual_painting',
-      title: 'Task 4: Source Investigation — "The Black Stain" (La Tache Noire, 1887)',
+      title: 'Task 3: Source Investigation — "The Black Stain" (La Tache Noire, 1887)',
       imgSrc: '/images/la_tache_noire_1887.jpg',
       imgCaption: 'Albert Bettannier, "La Tache Noire" (1887)',
       sourceText:
@@ -277,16 +277,17 @@ const lessonConfigs = [
       'Explain the difference between <strong>Imperialism</strong> (building an overseas empire) and <strong>Weltpolitik</strong> (Germany’s aggressive drive for world influence):',
     bridgeTask: {
       type: 'visual_map',
-      title: 'Task 4: Source Investigation — The Partition of Africa (1914)',
+      title: 'Task 3: Source Investigation — The Partition of Africa (1914)',
       imgSrc: '/images/map_africa_1914.png',
       imgCaption: 'Primary Map: European Possessions in Africa (1914)',
       sourceText:
-        '“By 1914, only Liberia and Ethiopia remained independent. Britain held a corridor from Cairo to Cape Town; France held vast areas of West Africa. Germany arrived late and gained only scattered territories, convincing the Kaiser that Germany had been cheated of its rightful share.”',
+        '“By 1914, only Liberia and Ethiopia remained independent. Britain held a continuous corridor from Cairo to Cape Town; France held vast areas of West Africa. Germany arrived late and gained only scattered territories (Togo, Cameroon, South-West Africa, German East Africa), convincing the Kaiser that Germany had been cheated of its rightful share.”',
       shelfmark: 'BERLIN CONFERENCE MAP ARCHIVES • 1885–1914',
       annotations: [
-        '① <strong>Underline:</strong> the two countries that held the vast majority of African land.',
-        '② <strong>Circle:</strong> the phrase explaining how the Kaiser felt about Germany’s colonies.',
-        '③ <strong>Box:</strong> the two independent African nations.',
+        '① <strong>Underline:</strong> in the text excerpt, the two powers that held the vast majority of African land.',
+        '② <strong>Circle:</strong> in the text excerpt, how the Kaiser felt about Germany’s share of colonies.',
+        '③ <strong>Box:</strong> in the text excerpt, the two independent African nations.',
+        '④ <strong>Map Action:</strong> on the map, visually trace Britain’s corridor from Cairo to Cape Town.',
       ],
       questionA:
         'What does this map show about why Germany was jealous of the British and French empires?',
@@ -347,7 +348,7 @@ const lessonConfigs = [
       'Explain the difference between the British <strong>Two-Power Standard</strong> (naval safety policy) and the German <strong>Risk Theory</strong> (building enough ships to frighten Britain):',
     bridgeTask: {
       type: 'technical_table',
-      title: 'Task 4: Source Investigation — The Battleship Revolution (1906)',
+      title: 'Task 3: Source Investigation — The Battleship Revolution (1906)',
       sourceTitle: 'Source A: Admiral Sir John Fisher explains the Dreadnought revolution (1906)',
       shelfmark: 'BRITISH ADMIRALTY RECORDS • PORTSMOUTH DOCKYARD',
       sourceText:
@@ -431,7 +432,7 @@ const lessonConfigs = [
       'Explain the difference between a <strong>Defensive Alliance</strong> (promising mutual help if attacked) and <strong>Military Mobilization</strong> (calling up millions of soldiers ready for war):',
     bridgeTask: {
       type: 'willy_nicky_telegrams',
-      title: 'Task 4: Source Investigation — The "Willy-Nicky" Telegrams (July 1914)',
+      title: 'Task 3: Source Investigation — The "Willy-Nicky" Telegrams (July 1914)',
       sourceATitle: 'TELEGRAM 1: Tsar Nicholas II to Kaiser Wilhelm II (29 July 1914)',
       sourceAText:
         '“To try and avoid such a calamity as a European war, I beg you in the name of our old friendship to do what you can to stop your ally [Austria] from going too far. An ignominious war has been declared on a weak country [Serbia]. — NICKY”',
@@ -505,7 +506,7 @@ const lessonConfigs = [
       'Explain the difference between the <strong>Sarajevo Spark</strong> (the immediate trigger) and the <strong>Blank Cheque</strong> (Germany’s promise of unconditional military backing):',
     bridgeTask: {
       type: 'crime_scene_forensics',
-      title: 'Task 4: Source Investigation — The Sarajevo Assassination & The Blank Cheque',
+      title: 'Task 3: Source Investigation — The Sarajevo Assassination & The Blank Cheque',
       routeTitle: 'Forensic Route: Franz Josef Street, Sarajevo (28 June 1914)',
       dispatchTitle: 'Source B: Germany’s "Blank Cheque" Dispatch (5 July 1914)',
       dispatchShelfmark: 'AUSTRIAN STATE ARCHIVES • VIENNA',
@@ -549,6 +550,12 @@ const lessonConfigs = [
       'Turn to Pages 2–3 (Milestone 6: 28 June – Aug 1914). In the sketchpad, sketch the stalled open-top royal car or the dominoes tumbling into war.',
   },
 ];
+
+// Calibrated Line Counts per lesson spread to eliminate all dead-space voids
+// Verso: Q1 = 4 lines; Q2 fills remaining height to clue footer (gap <= 20px)
+const versoQ2Lines = [14, 12, 12, 12, 12, 14];
+// Recto: Essay writing lines docking directly above Timeline Mission box (gap <= 20px)
+const rectoWritingLines = [27, 26, 27, 27, 26, 26];
 
 // Timeline Milestones across Pages 2 & 3 (3 Milestones per page, 100% full-width cards)
 const timelineMilestones = [
@@ -997,11 +1004,11 @@ function buildGreatWarTwoPageWorkbookHtml() {
             </ul>
           </div>
 
-          <!-- Do Now: Retrieval Practice (5 Questions, Score / 5) -->
+          <!-- Task 1: Do Now: Retrieval Practice (5 Questions, Score / 5) -->
           <div class="task-section">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                &bull; 'Do Now' Retrieval Practice (5 Prior Recall Questions)
+                Task 1: 'Do Now' Retrieval Practice (5 Prior Recall Questions)
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000; padding: 0 5px; border-radius: 2px;">
                 Score: [ &nbsp;&nbsp;&nbsp;&nbsp; / 5 ]
@@ -1026,13 +1033,13 @@ function buildGreatWarTwoPageWorkbookHtml() {
             </div>
           </div>
 
-          <!-- Key Vocabulary -->
+          <!-- Task 2: Key Vocabulary -->
           <div class="task-section" style="margin-top: 3px;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                &bull; Key Vocabulary
+                Task 2: Key Vocabulary
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">HISTORICAL WORDS</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #444;">Core Definitions</span>
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #111; margin-bottom: 2px; line-height: 1.22;">
               ${cfg.vocabPrompt}
@@ -1042,7 +1049,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
           </div>
         </div>
 
-        <!-- Task 4: Source Investigation (Expanded to Fill Page Down to Footer) -->
+        <!-- Task 3: Source Investigation (Expanded to Fill Page Down to Footer) -->
         <div style="border: 1.4px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
@@ -1113,9 +1120,9 @@ function buildGreatWarTwoPageWorkbookHtml() {
     } else if (cfg.bridgeTask.type === 'visual_map') {
       const b64Map = getBase64Image(cfg.bridgeTask.imgSrc);
       html += `
-            <div style="display: grid; grid-template-columns: 130px 1fr; gap: 8px; border: 1.2px solid #000; border-radius: 3px; padding: 4px; background: #fdfbf7; margin-bottom: 3px;">
-              <div style="height: 95px; border: 1px solid #000; overflow: hidden; background: #fff;">
-                <img src="${b64Map}" style="width: 100%; height: 100%; object-fit: contain;" alt="Scramble for Africa Map">
+            <div style="display: grid; grid-template-columns: 145px 1fr; gap: 8px; border: 1.2px solid #000; border-radius: 3px; padding: 4px; background: #fdfbf7; margin-bottom: 3px;">
+              <div style="height: 100px; border: 1px solid #000; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center;">
+                <img src="${b64Map}" style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Scramble for Africa Map">
               </div>
               <div style="display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
@@ -1131,11 +1138,9 @@ function buildGreatWarTwoPageWorkbookHtml() {
             </div>
 
             <div style="background: #f0f9ff; border: 1px solid #000; border-radius: 3px; padding: 2px 6px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Reading Clues:</strong>
-              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
-                <div>${cfg.bridgeTask.annotations[0]}</div>
-                <div>${cfg.bridgeTask.annotations[1]}</div>
-                <div>${cfg.bridgeTask.annotations[2]}</div>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Reading Clues &amp; Map Protocol:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 6px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
+                ${cfg.bridgeTask.annotations.map((a) => `<div>${a}</div>`).join('')}
               </div>
             </div>
       `;
@@ -1233,24 +1238,20 @@ function buildGreatWarTwoPageWorkbookHtml() {
       `;
     }
 
-    // 2 Substantial Questions with 3 Ruled Lines each
+    // 2 Substantial Questions with Ruled Lines (Q1: 4 lines, Q2 calibrated to fill to footer)
     html += `
             <div style="margin-top: 2px;">
               <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000; margin-bottom: 1px;">
                 <strong>Question 1:</strong> ${cfg.bridgeTask.questionA}
               </div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
+              ${Array(4).fill('<div class="task-line"></div>').join('\n              ')}
             </div>
 
             <div style="margin-top: 2px;">
               <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000; margin-bottom: 1px;">
                 <strong>Question 2:</strong> ${cfg.bridgeTask.questionB}
               </div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
-              <div class="task-line"></div>
+              ${Array(versoQ2Lines[idx]).fill('<div class="task-line"></div>').join('\n              ')}
             </div>
           </div>
 
@@ -1266,7 +1267,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
     </div>
 
     <!-- ------------------------------------------------------------------ -->
-    <!-- RIGHT PAGE (RECTO): Extended Enquiry Writing (21 Ruled Lines)      -->
+    <!-- RIGHT PAGE (RECTO): Extended Enquiry Writing                        -->
     <!-- Zero DIRT box • Timeline Mission Box at foot                       -->
     <!-- ------------------------------------------------------------------ -->
     <div class="page page-container" id="page-${rightPageNum}">
@@ -1276,10 +1277,10 @@ function buildGreatWarTwoPageWorkbookHtml() {
           <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
             <div>
               <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.8px; color: #444; font-weight: 800;">
-                Historical Focus: ${cfg.skill}
+                Unit 9: Causes of the Great War &bull; Lesson ${cfg.lessonNum} &bull; Focus: ${cfg.skill}
               </div>
               <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
-                Enquiry: ${cfg.inquiryQuestion}
+                Task 4: Extended Enquiry &bull; ${cfg.inquiryQuestion}
               </h3>
             </div>
             <span class="badge">Extended Writing</span>
@@ -1323,9 +1324,9 @@ function buildGreatWarTwoPageWorkbookHtml() {
             <span><strong>[L] Link:</strong> Direct conclusion answering enquiry.</span>
           </div>
 
-          <!-- Ruled Writing Lines (21 Full Lines at 7.0mm) -->
+          <!-- Ruled Writing Lines (${rectoWritingLines[idx]} Full Lines at 7.0mm) -->
           <div style="margin-bottom: 2px;">
-            ${Array(21).fill('<div class="task-line"></div>').join('\n            ')}
+            ${Array(rectoWritingLines[idx]).fill('<div class="task-line"></div>').join('\n            ')}
           </div>
         </div>
 
@@ -1346,11 +1347,17 @@ function buildGreatWarTwoPageWorkbookHtml() {
   });
 
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Quizzing Hub)
-  // Master Assessment Tracker matching CME & Industrialisation gold standard
+  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & 6-Lesson QR Hub)
+  // Master Assessment Tracker matching Gold Standard
   // ====================================================================
-  const quizUrl = 'https://history-revision-hub.netlify.app/units/great_war/quiz';
-  const qrSvg = generateQrSvg(quizUrl);
+  const lessonShortTitles = [
+    'German Empire',
+    'Alsace-Lorraine',
+    'Scramble for Africa',
+    'Naval Arms Race',
+    'Alliance System',
+    'Sarajevo Spark',
+  ];
 
   html += `
   <div class="page page-container" id="page-16">
@@ -1369,17 +1376,17 @@ function buildGreatWarTwoPageWorkbookHtml() {
       </div>
 
       <!-- Header Block -->
-      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 12pt; margin: 0 0 1px 0; font-weight: 900; text-transform: uppercase;">
           Student Assessment Record &amp; Revision Tracker
         </h2>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #222; font-weight: 600;">
-          Unit 9: Causes of the Great War • 6-Lesson Enquiry Sequence
+          Unit 9: Causes of the Great War • 6-Lesson Enquiry Sequence (126 Marks Total)
         </div>
       </div>
 
       <!-- Target Grade & Pupil Info Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 10px; align-items: center; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 10px; align-items: center; margin-bottom: 3px;">
         <div>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
           <div style="border-bottom: 1.2px solid #000000; height: 14px; margin-top: 1px;"></div>
@@ -1401,16 +1408,17 @@ function buildGreatWarTwoPageWorkbookHtml() {
       </div>
 
       <!-- Assessment Progress Ledger Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 3px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #f8fafc;">
-              <th style="padding: 3px 4px; width: 24px; text-align: center; font-size: 8pt; font-weight: 900; border-right: 1px solid #000;">#</th>
-              <th style="padding: 3px 6px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000;">Lesson Enquiry Title</th>
-              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Do Now (/5)</th>
-              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Essay (/16)</th>
-              <th style="padding: 3px 4px; width: 80px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Total (/21)</th>
-              <th style="padding: 3px 6px; width: 110px; text-align: left; font-size: 7.5pt; font-weight: 900;">Teacher Sign</th>
+              <th style="padding: 2.5px 4px; width: 24px; text-align: center; font-size: 7.8pt; font-weight: 900; border-right: 1px solid #000;">#</th>
+              <th style="padding: 2.5px 6px; text-align: left; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000;">Lesson Enquiry Title</th>
+              <th style="padding: 2.5px 4px; width: 75px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Task 1: Do Now (/5)</th>
+              <th style="padding: 2.5px 4px; width: 75px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Task 3: Sources (/6)</th>
+              <th style="padding: 2.5px 4px; width: 75px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Task 4: Essay (/10)</th>
+              <th style="padding: 2.5px 4px; width: 72px; text-align: center; font-size: 7.3pt; font-weight: 900; border-right: 1px solid #000;">Total (/21)</th>
+              <th style="padding: 2.5px 6px; width: 95px; text-align: left; font-size: 7.3pt; font-weight: 900;">Teacher Sign</th>
             </tr>
           </thead>
           <tbody>
@@ -1418,12 +1426,13 @@ function buildGreatWarTwoPageWorkbookHtml() {
               .map(
                 (l) => `
               <tr style="border-bottom: 1px solid #000000;">
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">L${l.lessonNum}</td>
-                <td style="padding: 3px 6px; border-right: 1px solid #000; font-weight: 600;">${l.title}</td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 5</strong> ]</td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 21</strong> ]</td>
-                <td style="padding: 3px 6px; border-bottom: 1px solid #000;"></td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">L${l.lessonNum}</td>
+                <td style="padding: 2.5px 6px; border-right: 1px solid #000; font-weight: 600;">${l.title}</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 5</strong> ]</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 6</strong> ]</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]</td>
+                <td style="padding: 2.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 21</strong> ]</td>
+                <td style="padding: 2.5px 6px; border-bottom: 1px solid #000;"></td>
               </tr>
             `,
               )
@@ -1431,18 +1440,19 @@ function buildGreatWarTwoPageWorkbookHtml() {
             <tr style="background: #f8fafc; font-weight: 900; border-top: 1.5px solid #000000;">
               <td colspan="2" style="padding: 3px 6px; border-right: 1px solid #000; text-transform: uppercase;">Unit 9 Cumulative Total</td>
               <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 30</strong> ]</td>
-              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
-              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-size: 8.5pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 126</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 36</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 60</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-size: 8.2pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 126</strong> ]</td>
               <td style="padding: 3px 6px;"></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback: WWW & EBI -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 4px;">
+      <!-- Teacher Feedback: WWW & EBI (4 Full Lines each + Signature) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #000;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #000;">
             Teacher Feedback &amp; Academic Guidance
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">STAGED V2 PROGRESS</span>
@@ -1452,42 +1462,56 @@ function buildGreatWarTwoPageWorkbookHtml() {
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
               What Went Well (WWW):
             </strong>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
           </div>
           <div>
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
               Even Better If (EBI):
             </strong>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
-            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
+            <div class="task-line" style="height: 5.8mm;"></div>
           </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.0pt; margin-top: 3px; border-top: 1px dotted #ccc; padding-top: 2px;">
+          <span>Teacher Signature: ____________________________________</span>
+          <span>Date: _______ / _______ / 2026</span>
         </div>
       </div>
 
-      <!-- Revision QR Hub & Digital Quizzing -->
-      <div style="border: 1.2px solid #000; border-radius: 4px; padding: 4px 8px; background: #fdfbf7; display: flex; align-items: center; justify-content: space-between;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="width: 22mm; height: 22mm; background: #fff; border: 1px solid #000; padding: 1px; border-radius: 2px;">
-            ${qrSvg}
-          </div>
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #000;">
-              Interactive Flashcards &amp; Digital Quiz Hub
-            </div>
-            <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #222; margin: 1px 0 2px 0; line-height: 1.2;">
-              Scan the QR code on your phone or tablet to revise all 6 lessons and test your recall with 100 interactive questions.
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #444; font-weight: 700;">
-              Target Score: <strong>18 / 20</strong> on Unit Mastery Check
-            </div>
-          </div>
+      <!-- Revision QR Hub & Digital Quizzing (6 Individual Lesson QR Cards) -->
+      <div style="border: 1.4px solid #000; border-radius: 4px; padding: 4px 6px; background: #fdfbf7;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase;">
+            Digital Revision &amp; Interactive Quizzing Hub • 6 Lesson QR Codes (60 Total Questions)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #444;">Scan with Mobile / Tablet</span>
         </div>
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 8px; background: #fff; text-align: center;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase;">Best Quiz Score:</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; margin-top: 1px;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</div>
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
+          ${lessonConfigs
+            .map((cfg, i) => {
+              const lNum = cfg.lessonNum;
+              const lUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=great_war&lesson=${lNum}`;
+              const lQr = generateQrSvg(lUrl);
+              return `
+            <div class="qr-card" style="border: 1px solid #000; border-radius: 3px; background: #ffffff; padding: 3px 2px; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase;">Lesson ${lNum}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; color: #333; line-height: 1.1; margin-bottom: 2px; font-weight: 600;">${lessonShortTitles[i]}</span>
+              <div style="width: 17mm; height: 17mm; margin: 1px 0;">
+                ${lQr}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; color: #555; text-transform: uppercase; font-weight: 700;">Scan to Quiz</span>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border-top: 1px dotted #ccc; width: 100%; padding-top: 1px; margin-top: 1px;">
+                Score: [ &nbsp; / 10 ]
+              </div>
+            </div>
+          `;
+            })
+            .join('')}
         </div>
       </div>
 
