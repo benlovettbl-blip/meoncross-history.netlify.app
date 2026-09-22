@@ -23,6 +23,7 @@ async function runAudit() {
     'eee',
     'cold_war',
     'usa',
+    'water_and_sanitation',
   ];
 
   const unitsToAudit = targetUnitArg

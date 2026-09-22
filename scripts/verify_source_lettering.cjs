@@ -27,6 +27,7 @@ async function runLinter() {
     'eee',
     'cold_war',
     'usa',
+    'water_and_sanitation',
   ];
 
   const unitsToAudit = targetUnitArg

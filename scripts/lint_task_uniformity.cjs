@@ -39,6 +39,7 @@ const FOUR_ACT_UNITS = [
   'great_war_part2',
   'industrialisation_and_empire',
   'early_modern_world',
+  'water_and_sanitation',
 ];
 
 const NON_PROSE_TYPES = new Set([
