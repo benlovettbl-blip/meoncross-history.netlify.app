@@ -84,6 +84,19 @@ const TOPIC_CONFIGS = {
       'industrialisation_and_empire_textbook_PUBLISHER.pdf',
     ),
   },
+  water_and_sanitation: {
+    id: 'water_and_sanitation',
+    title: 'KS3: Water & Sanitation Through Time (AD 43–Present)',
+    compilerScript: path.join(__dirname, 'render_standard_textbook_water_and_sanitation.cjs'),
+    htmlPath: path.join(
+      ROOT_DIR,
+      'public',
+      'units',
+      'water_and_sanitation',
+      'textbook_PUBLISHER.html',
+    ),
+    pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'water_and_sanitation_textbook_PUBLISHER.pdf'),
+  },
 };
 
 /**

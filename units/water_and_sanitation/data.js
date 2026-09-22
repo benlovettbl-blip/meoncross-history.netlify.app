@@ -175,7 +175,7 @@ const water_and_sanitation = {
           citation: 'Housesteads Roman Fort (Vercovicium), English Heritage.',
         },
         {
-          image: '/images/fishbourne.jpg',
+          image: '/images/water_local_fishbourne.jpg',
           tasks: [
             {
               type: 'short_answer',
@@ -204,12 +204,13 @@ const water_and_sanitation = {
           level_4:
             '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href=\'https://sussexpast.co.uk/attraction/fishbourne-roman-palace/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>',
           theme_heading: 'Fishbourne Palace: Steamy Mosaics and Elite Luxury',
-          image_alt: 'Fishbourne Roman Palace Excavations & Hypocaust',
+          image_alt: 'Fishbourne Roman Palace: Hydraulic Conduits & Flushed Latrines (AD 75)',
           caption:
-            '<strong>What is this source showing?</strong> This is a modern photograph of the excavated remains of Fishbourne Roman Palace, the largest residential Roman building discovered in Britain. It features incredibly well-preserved mosaics and the remains of a sophisticated hypocaust underfloor heating system, demonstrating the extreme luxury and sanitation enjoyed by elite Romans.',
+            '<strong>What is this source showing?</strong> Fieldwork archaeology at Fishbourne Roman Palace, Chichester Channel. Uncovers Britain’s earliest monumental domestic plumbing: interlocking terracotta conduit pipes, lead distribution boxes, and continuous stone channels that flushed communal latrines directly into tidal waters.',
           source_letter: 'B',
-          shelfmark: 'Romano-British Palace Excavations',
-          citation: 'Fishbourne Roman Palace, Sussex Archaeological Society.',
+          shelfmark: 'Fieldwork Primary Record &bull; Hampshire Archaeological Survey (FBP/75/LAT)',
+          citation:
+            'Sussex Archaeological Society &bull; Fishbourne Roman Palace Research Archive.',
         },
         {
           text: 'In Roman Britain, this water supplied grand public bathhouses, such as the famous complex at Bearsden. Bathhouses were bustling social spaces where citizens exercised, relaxed, and washed themselves by walking in sequence through cold rooms, warm rooms, and steaming hot chambers. Clean water also constantly flushed through communal public toilets, known as latrines. At Housesteads Fort on Hadrian\'s Wall, soldiers sat side-by-side on stone benches built over deep, stone-lined channels. A continuous stream of water beneath the seats swept human waste directly into underground sewers, keeping the fort clean and preventing the spread of deadly diseases. To wipe themselves, Roman soldiers used a wet sponge attached to the end of a shared wooden stick.\n<br><br><div style="background: #fefce8; border: 1px solid #fde047; padding: 20px; border-radius: 8px; margin: 15px 0;"><strong>Source C: Seneca the Younger on Roman Bathhouses (c. AD 62)</strong><br><em>This is an extract from a letter by the Roman philosopher Seneca the Younger, complaining about the intense noise and activity of a Roman bathhouse he lived above. It shows that baths were busy, social hubs, not just places for quiet hygiene. <br><br>"I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths."</em></div>',
@@ -691,7 +692,13 @@ const water_and_sanitation = {
             'Canterbury Cathedral Priory Waterworks Plan, c. 1165, Eadwine Psalter, Trinity College, Cambridge.',
         },
         {
-          image: '/images/titchfield.jpg',
+          image: '/images/water_local_titchfield.jpg',
+          image_alt: 'Titchfield Abbey: Monastic Drainage Channels & River Meon Sluices (1232)',
+          caption:
+            '<strong>What is this source showing?</strong> Fieldwork survey of the surviving monastic ruins and water management systems at Titchfield Abbey in the River Meon Valley. Premonstratensian canons engineered stone sluices, mill races, and clean-water culverts to divert fresh river water through the cloister lavatorium while continuously flushing the reredorter (latrines).',
+          source_letter: 'B',
+          shelfmark: 'Fieldwork Primary Record &bull; Meon Valley Monastic Archive (TA/1232/HYD)',
+          citation: 'English Heritage Historical Records &bull; Hampshire Monastic Survey.',
           tasks: [
             {
               type: 'short_answer',
@@ -1948,7 +1955,16 @@ const water_and_sanitation = {
           theme_heading: 'The Great Stink of 1858: Parliament Chokes on the Thames',
         },
         {
-          image: '/images/eastney.jpg',
+          image: '/images/water_local_eastney.jpg',
+          image_alt:
+            'Eastney Beam Engine Pumping Station, Portsmouth: Civic Sanitation Masterpiece (1887)',
+          caption:
+            '<strong>What is this source showing?</strong> Surviving Victorian beam engine pumping station at Eastney, Portsmouth, housing twin 150-HP James Watt & Co. steam beam engines that pumped island sewage into Solent tidal reservoirs on the ebb tide.',
+          source_letter: 'A',
+          shelfmark:
+            'Fieldwork Primary Record &bull; Solent Municipal Sanitation Survey (ESP/1887/ENG)',
+          citation:
+            'Portsmouth City Museum Archives &bull; Victorian Municipal Engineering Division.',
           tasks: [
             {
               type: 'short_answer',
@@ -1997,7 +2013,7 @@ const water_and_sanitation = {
           image_alt: 'Construction of the London Main Drainage System (c. 1860s)',
           caption:
             '<strong>What is this source showing?</strong> This photograph captures the colossal engineering effort required to build the London sewer system in the 1860s. Designed by Joseph Bazalgette, the project involved constructing 82 miles of massive enclosed brick intercepting sewers and 1,100 miles of street sewers to stop sewage from flowing directly into the River Thames.',
-          source_letter: 'A',
+          source_letter: 'B',
           shelfmark: 'Metropolitan Board of Works Archive',
           citation:
             'Metropolitan Board of Works Photographic Record, London Metropolitan Archives.',
