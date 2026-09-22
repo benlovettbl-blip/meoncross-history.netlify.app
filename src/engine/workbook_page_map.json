@@ -39,19 +39,19 @@
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 11,
+      "page": 9,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 1
     },
     "lesson_3": {
-      "page": 19,
+      "page": 15,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 25,
+      "page": 21,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 3
@@ -75,13 +75,13 @@
       "lessonIndex": 6
     },
     "lesson_9": {
-      "page": 10,
+      "page": 21,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 7
     },
     "lesson_10": {
-      "page": 12,
+      "page": 27,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 8
@@ -93,13 +93,13 @@
       "lessonIndex": 9
     },
     "lesson_12": {
-      "page": 10,
+      "page": 9,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 10
     },
     "lesson_13": {
-      "page": 18,
+      "page": 15,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 11
@@ -701,92 +701,7 @@
       "lessonIndex": 6
     }
   },
-  "trip_ypres": {
-    "day_0": {
-      "page": 3,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 0
-    },
-    "day_1": {
-      "page": 6,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 1
-    },
-    "day_2": {
-      "page": 11,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 2
-    },
-    "day_3": {
-      "page": 16,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 3
-    },
-    "hero_0": {
-      "page": 19,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 4
-    },
-    "hero_1": {
-      "page": 22,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 5
-    },
-    "hero_2": {
-      "page": 25,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 6
-    },
-    "hero_3": {
-      "page": 28,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 7
-    },
-    "hero_4": {
-      "page": 31,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 8
-    },
-    "hero_5": {
-      "page": 34,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 9
-    },
-    "hero_lowry_william": {
-      "page": 37,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 10
-    },
-    "hero_lowry_auriol": {
-      "page": 40,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 11
-    },
-    "hero_lowry_cyril": {
-      "page": 43,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 12
-    },
-    "hero_crummack": {
-      "page": 46,
-      "booklet": "Pupil Workbook",
-      "unitId": "trip_ypres",
-      "lessonIndex": 13
-    }
-  },
+  "trip_ypres": {},
   "usa": {
     "lesson_1_1": {
       "page": 3,

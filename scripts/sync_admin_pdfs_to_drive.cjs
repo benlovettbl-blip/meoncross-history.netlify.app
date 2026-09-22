@@ -659,77 +659,17 @@ const PDF_MAPPINGS = [
     category: 'Year 10 GCSE',
   },
 
-  // Trips - Battlefield Tour - Ypres
+  // Trips - Battlefield Tour - Ypres (Streamlined Suite)
   {
     folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_1914_1918_pupil_field_guide.pdf',
-    dest: 'Ypres 1914-1918 Pupil Field Guide.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_1914_1918_teacher_companion.pdf',
-    dest: 'Ypres 1914-1918 Teacher Companion.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_1914_1918_field_guide_and_companion.pdf',
-    dest: 'Ypres 1914-1918 Field Guide and Companion (Combined).pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_2026_parent_information_pack.pdf',
+    src: 'ypres_2026_parent_information_pack_v2.pdf',
     dest: 'Ypres 2026 Parent Information Pack.pdf',
     category: 'Trips',
   },
   {
     folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'Ypres trip 2026 Code of Conduct.pdf',
-    dest: 'Ypres Trip 2026 Code of Conduct.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'Ypres_2026_Teacher_Meeting_Prompt_Sheet.pdf',
-    dest: 'Ypres 2026 Teacher Meeting Prompt Sheet.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'trip_ypres_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Ypres Battlefield Pupil Workbook.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'trip_ypres_textbook_FINAL_V17.pdf',
-    dest: 'Ypres Battlefield Master Textbook.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
-    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
-    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
-    dest: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'AI Guide for Family Military Historians (Edward Pearson).docx',
-    dest: 'AI Guide for Family Military Historians (Edward Pearson).docx',
+    src: 'ypres_tour_leader_pocket_guide.pdf',
+    dest: 'Ypres 1914-1918 Tour Leader Pocket Field Guide (A5).pdf',
     category: 'Trips',
   },
 

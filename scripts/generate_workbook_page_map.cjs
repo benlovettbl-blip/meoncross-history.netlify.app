@@ -101,7 +101,7 @@ const unitPdfConfigs = {
     { booklet: 'Pupil Workbook', file: 'post_war_britain_pupil_workbook_FINAL_V17.pdf' },
   ],
   the_shoah: [{ booklet: 'Pupil Workbook', file: 'the_shoah_pupil_workbook_FINAL_V17.pdf' }],
-  trip_ypres: [{ booklet: 'Pupil Workbook', file: 'trip_ypres_pupil_workbook_FINAL_V17.pdf' }],
+  trip_ypres: [],
   usa: [
     {
       booklet: 'Key Topic 1 Booklet',
