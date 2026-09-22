@@ -390,4 +390,60 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'fordham_counsell_spiral_scaffolding',
+    author: 'Michael Fordham & Christine Counsell',
+    affiliation: 'University of Cambridge / The Historical Association',
+    category: 'Curriculum Progression & Assessment',
+    categoryBadge: 'badge-blue',
+    title:
+      'The 4-Skill Disciplinary Spiral & Fading Scaffolding: Bridging KS3 to GCSE Without Dumbing Down',
+    subtitle:
+      'Eradicating the Causation Monoculture through a Systematic Rotation of Edexcel Assessment Genres and Gradual Release of Scaffolding',
+    overview:
+      'Without a rigorous disciplinary blueprint, Key Stage 3 extended writing inevitably collapses into a "causation monoculture"—requiring pupils to produce identical PEEL essays lesson after lesson. Michael Fordham and Christine Counsell establish that true progression requires systematic encounter with distinct second-order historical concepts. By rotating Task 4 across four core Edexcel GCSE genres (Dual-Source Utility, Competing Historical Interpretations, Causation & Consequence, and Change & Continuity) and fading scaffolding year-by-year, pupils develop authentic disciplinary fluency long before Year 10.',
+    analysisHeading: 'The "Causation Monoculture" & The Pseudo-GCSE Trap',
+    analysisText:
+      'When workbooks exclusively assign causation essays, pupils arrive at GCSE completely unprepared for Edexcel Paper 1 (Dual-Source Utility) and Paper 3 (Historiographical Interpretations). Conversely, forcing un-scaffolded GCSE exam questions onto younger pupils creates cognitive overload and produces formulaic, copied answers. Disciplinary progression demands that pupils tackle the authentic mechanics of source utility and historical debate with structured scaffolds that fade across Years 7, 8, and 9.',
+    evidenceHeading: 'Cognitive Science & The Gradual Release of Responsibility',
+    evidenceText:
+      'Research from the Education Endowment Foundation (EEF) on Metacognition and Scaffolding demonstrates that "high challenge / low floor" is achieved through the Gradual Release of Responsibility ("I do, We do, You do"). Scaffolding must support the cognitive process without lowering academic rigor: providing 3-part utility matrices (Content ➔ Provenance ➔ Contextual Knowledge) and fading sentence stems year-by-year ensures that lower-attaining pupils access complex historical debates while higher attainers are pushed toward sophisticated evaluation.',
+    applicationHeading: 'Departmental & Platform Implementation',
+    implementation: [
+      'The 4-Skill Disciplinary Rotation: Every unit rotates Task 4 through 4 distinct assessment genres: (1) Dual-Source Utility (Edexcel Papers 1 & 3), (2) Competing Interpretations (Paper 3), (3) Causation & Significance (Papers 1 & 2), and (4) Change & Continuity (Paper 1 Thematic).',
+      'Three Standardized Page Templates: Template A (Dual-Source Utility with side-by-side primary sources, provenance clues, and 3-column interrogation matrix); Template B (Dual-Historian Debate comparing orthodox vs revisionist scholarship); Template C (Causation & Analytical Narrative structure strips).',
+      '3-Tier Fading Scaffolding Ladder: Year 7 provides heavy scaffolding (word-for-word sentence stems, 2-question provenance prompts, 10–12 lines); Year 8 fades sentence stems to transitional connectives (14–16 lines); Year 9 delivers pre-GCSE mastery (criteria-led rubrics, authentic archival shelfmarks, 16–20 lines).',
+      'Zero-Void Architectural Fit: All source boxes, planning matrices, and ruled writing lines are calibrated with sub-millimeter precision to ensure 0px overflow and optimal page budget across every print workbook.',
+    ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
+    teacherProtocols: [
+      "State today's disciplinary genre during the lesson launch so pupils consciously identify whether they are evaluating evidence utility, historiographical debate, or causal significance.",
+      'Use the 3-part planning matrix (Content, Provenance, Context) for a 3-minute oral rehearsal before pupils begin independent writing.',
+      'Enforce independent writing: resist providing "fill-in-the-blank" summaries to lower attainers, guiding them instead to deploy the provided sentence starters.',
+      'Mark against the genre-specific criteria (e.g. Provenance Analysis, Deployment of Own Knowledge, Evaluative Verdict) rather than generic literacy marks.',
+    ],
+    citations: [
+      'Fordham, M. (2012). "Disciplinary competence and the secondary history curriculum", Teaching History, 148, pp. 38–45.',
+      'Counsell, C. (2018). "The dignity of the thing: What is curriculum?", Impact: Journal of the Chartered College of Teaching, 4.',
+      'Education Endowment Foundation (2021). "Metacognition and Self-Regulated Learning: Guidance Report", EEF.',
+      'Fordham, M. (2016). "Realising and extending the potential of the history curriculum", in Husbands et al., Debates in History Teaching, Routledge.',
+    ],
+    links: [
+      {
+        title: 'Historical Association: Teaching History Journal',
+        url: 'https://www.history.org.uk/secondary/categories/436/module/8702/teaching-history',
+        displayText: 'www.history.org.uk/secondary/categories/436/module/8702/teaching-history',
+      },
+      {
+        title: 'Michael Fordham: Clio et Cetera (History Curriculum & Progression)',
+        url: 'https://clioetcetera.com/',
+        displayText: 'clioetcetera.com',
+      },
+      {
+        title: 'EEF Guidance: Metacognition & Self-Regulated Learning',
+        url: 'https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/metacognition',
+        displayText: 'educationendowmentfoundation.org.uk/.../metacognition',
+      },
+    ],
+  },
 ];

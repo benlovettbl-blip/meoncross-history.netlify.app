@@ -957,7 +957,89 @@ const water_and_sanitation = {
               'How does Samuel Pepys’ diary entry prove that even wealthy government officials lived alongside raw sewage?',
           },
         ],
+        model_answer_key: {
+          skill: 'Dual-Source Utility',
+          enquiry:
+            'How useful are Sources A and B for an enquiry into how London authorities and medical practitioners attempted to control the 1665 Great Plague?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Surface Paraphrase & Generalized Acceptance',
+            descriptor:
+              'Paraphrases literal content with unsupported assertions of truth or simple bias dismissal without provenance context.',
+            exemplar:
+              'Source A is useful because it tells us that houses had red crosses painted on doors with the words “Lord have mercy upon us” and watchmen stopped people leaving. It also says they killed cats and dogs. Source B is useful because Dr Hodges says doctors wore bird masks with herbs and killing cats made rats worse. Both sources are useful because they show what happened in the plague.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Developed Comprehension & Generic Provenance',
+            descriptor:
+              'Makes valid historical inferences from both sources and comments generically on author bias or eyewitness status.',
+            exemplar:
+              'Source A is useful for showing the strict emergency quarantine rules London introduced, such as locking infected families inside for 28 days with watchmen outside. This is reliable because it is an official decree issued by the Lord Mayor. Source B is useful because Dr Hodges was an eyewitness doctor who saw that shut-up houses became “living graves” and that the slaughter of domestic animals was a mistake. However, Hodges may be biased because he was angry that medicine could not stop the dying.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Utility & Provenance Interrogation',
+            descriptor:
+              'Evaluates each source against contextual knowledge of 17th-century beliefs (miasma, municipal governance), assessing usefulness in light of origin and purpose.',
+            exemplar:
+              'Source A is highly useful for demonstrating how 17th-century civic government attempted to halt contagion through centralized coercion. The Lord Mayor used parish constables and watchmen to enforce total isolation, reflecting the contemporary practice of recording deaths through the Bills of Mortality. However, its utility is limited because official legislation does not prove how effectively the rules were obeyed—many Londoners bribed watchmen or escaped through back alleys.\n\nIn contrast, Source B provides invaluable medical insight into why these civic measures failed. Dr Hodges, writing as a practicing physician who stayed in London, confirms that the medical profession was paralyzed by miasma theory. By wearing beak masks stuffed with spices, doctors treated airborne vapors while remaining completely ignorant of the flea-borne bacterium Yersinia pestis. Furthermore, Hodges reveals that slaughtering dogs and cats removed the natural predators of black rats, inadvertently accelerating the epidemic. Therefore, Source B is more useful for understanding the biological failure of plague controls.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative judgement cross-referencing both sources against specific historical knowledge to evaluate overall utility for the enquiry.',
+            exemplar:
+              'Both sources are exceptionally valuable when cross-referenced because together they expose the tragic paradox of 17th-century public health: sophisticated municipal quarantine coexisting with total medical ignorance of bacteriology. Source A proves London possessed the administrative machinery to padlock infected houses, station round-the-clock watchmen, and track parish fatalities through the weekly Bills of Mortality. However, Source B crucially exposes the lethal scientific flaw in this response: Dr Hodges confirms that physicians were trapped by ancient miasma theory. The municipal order to slaughter domestic pets inadvertently wiped out the natural predators of the flea-bearing black rat (Rattus rattus). While Source A demonstrates administrative resolve, Source B provides superior historical utility by revealing why municipal quarantine ultimately failed to prevent over 100,000 Londoners dying in agony.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_3_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Dual-Source Utility & Provenance Investigation',
+          question:
+            'How useful are Sources A and B for an enquiry into how London authorities and medical practitioners attempted to control the 1665 Great Plague?',
+          source_a: {
+            title: 'Source A: The Lord Mayor’s London Plague Orders (1665)',
+            shelfmark: 'LONDON METROPOLITAN ARCHIVES • 1665 GUILDHALL PAPERS',
+            text: '“Every visited house shall be shut up with a red cross marked upon the middle of the door, with these words: ‘LORD HAVE MERCY UPON US.’ A watchman shall stand day and night before the door, to keep the people from coming forth. All dogs and cats shall immediately be killed.”',
+            clue: 'Official municipal decree enforcing compulsory 28-day quarantine and isolation.',
+          },
+          source_b: {
+            title: 'Source B: Dr Nathaniel Hodges, Eyewitness Doctor in London (1665)',
+            shelfmark: 'ROYAL COLLEGE OF PHYSICIANS • LOIMOLOGIA (1672)',
+            text: '“The shut-up houses became living graves. We wore long leather robes and beaks stuffed with sweet herbs to ward off the foul miasma in the air, yet still the pestilence devoured whole streets. Killing the dogs and cats was madness, for the black rats multiplied without check.”',
+            clue: 'Eyewitness physician memoir proving belief in miasma theory and disastrous slaughter of rat predators.',
+          },
+          matrix: [
+            {
+              col: '1. WHAT THE SOURCES SHOW',
+              text: 'Compare the Lord Mayor’s quarantine rules (red cross, watchmen) with Dr Hodges’ eyewitness reality (living graves, beak masks, rat explosion).',
+            },
+            {
+              col: '2. WHO WROTE THEM & WHY',
+              text: 'Contrast official civic regulations aimed at enforcing public order with an insider physician’s clinical reflections on medical helplessness.',
+            },
+            {
+              col: '3. HOW USEFUL ARE THEY?',
+              text: 'Synthesise how both sources together demonstrate that 17th-century public health was administratively rigorous yet medically blind to bacteria and fleas.',
+            },
+          ],
+          connectives: [
+            'Source A is useful for showing that London authorities...',
+            'However, its utility is limited because official orders do not prove...',
+            'In contrast, Source B reveals the harrowing clinical reality that...',
+            'Cross-referencing both records demonstrates that 17th-century responses were...',
+            'Ultimately, Source B is more valuable for this enquiry because...',
+          ],
+          model_answer:
+            'Both sources are exceptionally valuable when cross-referenced because together they expose the tragic paradox of 17th-century public health: sophisticated municipal quarantine coexisting with total medical ignorance of bacteriology. Source A proves London possessed the administrative machinery to padlock infected houses, station round-the-clock watchmen, and track parish fatalities through the weekly Bills of Mortality. However, Source B crucially exposes the lethal scientific flaw in this response: Dr Hodges confirms that physicians were trapped by ancient miasma theory. The municipal order to slaughter domestic pets inadvertently wiped out the natural predators of the flea-bearing black rat (Rattus rattus). While Source A demonstrates administrative resolve, Source B provides superior historical utility by revealing why municipal quarantine ultimately failed to prevent over 100,000 Londoners dying in agony.',
+        },
+      ],
       sources: [
         {
           letter: 'A',
@@ -2226,7 +2308,90 @@ const water_and_sanitation = {
               'Why did the British state require microscopic proof of bacteria before making clean water and sewage compulsory in 1875?',
           },
         ],
+        model_answer_key: {
+          skill: 'Dual-Source Utility',
+          enquiry:
+            'How useful are Sources A and B for an enquiry into why Dr. John Snow’s water-borne theory of cholera was initially rejected in 1854?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Surface Paraphrase & Literal Trust',
+            descriptor:
+              'Paraphrases the map or the miasma broadside literally without contextual knowledge or provenance analysis.',
+            exemplar:
+              'Source A is useful because it is a map by Dr John Snow showing black bars where people died around the Broad Street pump. Source B is useful because it shows the Phantom of Miasma flying over London spreading bad air. Both sources are useful because they show two ideas about cholera in Victorian London.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Developed Comprehension & Generic Provenance',
+            descriptor:
+              'Explains what each source shows about the debate between water contamination and foul air, with simple comments on author reliability.',
+            exemplar:
+              'Source A is very useful because Dr Snow used door-to-door evidence and death certificates to prove that almost all the deaths happened near the Broad Street pump, showing cholera was in the water. Source B is useful for showing that most Victorian doctors believed cholera was an airborne miasma that flew into people’s lungs from rotting filth. Snow is trustworthy because he was a doctor who took the pump handle off, whereas the broadside shows popular superstition.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Utility & Provenance Interrogation',
+            descriptor:
+              'Evaluates both sources in relation to Victorian scientific dogma and the laissez-faire medical establishment.',
+            exemplar:
+              'Source A is exceptionally valuable as a primary epidemiological record. Snow’s 1854 spot map transformed medical research from guesswork into spatial science, showing that 616 deaths clustered within 250 yards of the Broad Street pump. The map’s utility is bolstered by Snow’s investigation of anomalies—such as the 70 brewery workers who drank only beer and survived, and the leaking cesspool at 40 Broad Street.\n\nConversely, Source B is equally useful not for medical fact, but for understanding the dogmatic mindset of Snow’s opponents. The General Board of Health and William Farr dogmatically insisted that cholera was caused by atmospheric miasma rising from filthy streets and the River Thames. Because authorities believed foul smells caused disease, they dismissed Snow’s map as mere coincidence. Therefore, Source B provides vital historical utility by explaining why the medical establishment rejected Snow’s breakthrough for decades until Pasteur and Koch discovered bacteria.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative judgement evaluating both sources against the paradigm shift from miasma to bacteriology.',
+            exemplar:
+              'When cross-referenced, Sources A and B are profoundly useful because they capture the historic clash between empirical epidemiology and entrenched Victorian dogma. Source A provides revolutionary scientific evidence: by plotting deaths geographically, Snow identified water contamination before bacteria were visible under standard microscopes. However, Source B is indispensable for explaining the tragic political inertia that followed: it illustrates why the General Board of Health refused to act on Snow’s findings. Deeply wedded to miasma theory and terrified of the colossal public expenditure needed to replace water mains, the Victorian establishment clung to atmospheric explanations. Snow proved the water was contaminated, but Source B explains why Britain waited another twenty-one years—until the compulsory Public Health Act of 1875—to guarantee clean municipal water for every citizen.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_6_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Dual-Source Utility & Provenance Investigation',
+          question:
+            'How useful are Sources A and B for an enquiry into why Dr. John Snow’s water-borne theory of cholera was initially rejected in 1854?',
+          source_a: {
+            title: 'Source A: Dr. John Snow’s 1854 Cholera Spot Map of Soho, London',
+            shelfmark: 'WELLCOME COLLECTION ARCHIVES • LONDON • EPID/1855/S66',
+            text: '“Each black bar on this map marks a fatal cholera death. The bars cluster with devastating density within 250 yards of the Broad Street public water pump. In contrast, at the nearby Lion Brewery on Broad Street, where 70 men drank only free daily beer, not a single workman contracted the sickness.”',
+            clue: 'Primary epidemiological data map proving that cholera deaths clustered around contaminated well water.',
+          },
+          source_b: {
+            title:
+              'Source B: Report of the Committee for Scientific Inquiries, General Board of Health (1855)',
+            shelfmark: 'PARLIAMENTARY PAPERS • 1855 [1980] VOL. XXI • REPORT ON CHOLERA',
+            text: '“We see no reason to adopt the belief that the Broad Street pump was the main cause of the Soho epidemic. The water may have been impure, but there is no proof that it conveyed the specific contagion. Cholera is an atmospheric pestilence carried upon foul winds and rotting miasma arising from the filthy soil.”',
+            clue: 'Official parliamentary report illustrating the medical establishment’s dogmatic refusal to abandon miasma theory.',
+          },
+          matrix: [
+            {
+              col: '1. WHAT THE SOURCES SHOW',
+              text: 'Contrast Snow’s spatial epidemiological proof (bars clustering at pump, brewery anomaly) with the Board of Health’s insistence on atmospheric miasma.',
+            },
+            {
+              col: '2. WHO WROTE THEM & WHY',
+              text: 'Evaluate how Snow’s independent empirical research clashed with an entrenched government health board reluctant to mandate expensive water reform.',
+            },
+            {
+              col: '3. HOW USEFUL ARE THEY?',
+              text: 'Synthesise how both sources together explain why scientific truth was rejected by a dogmatic medical establishment until bacteriology emerged.',
+            },
+          ],
+          connectives: [
+            'Source A is exceptionally valuable for proving that Dr. Snow...',
+            'Furthermore, the visual distribution of deaths demonstrates...',
+            'In sharp contrast, Source B reveals the entrenched dogma of...',
+            'Cross-referencing both documents explains why Snow’s theory was rejected because...',
+            'Ultimately, Source B is crucial for understanding why Victorian authorities...',
+          ],
+          model_answer:
+            'When cross-referenced, Sources A and B are profoundly useful because they capture the historic clash between empirical epidemiology and entrenched Victorian dogma. Source A provides revolutionary scientific evidence: by plotting deaths geographically, Snow identified water contamination before bacteria were visible under standard microscopes. However, Source B is indispensable for explaining the tragic political inertia that followed: it illustrates why the General Board of Health refused to act on Snow’s findings. Deeply wedded to miasma theory and terrified of the colossal public expenditure needed to replace water mains, the Victorian establishment clung to atmospheric explanations. Snow proved the water was contaminated, but Source B explains why Britain waited another twenty-one years—until the compulsory Public Health Act of 1875—to guarantee clean municipal water for every citizen.',
+        },
+      ],
       sources: [
         {
           letter: 'A',

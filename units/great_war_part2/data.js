@@ -280,7 +280,89 @@ export const unitData = {
         ],
         source_context:
           'Published in 1915 by the Parliamentary Recruiting Committee, Source A represents the weaponization of domesticity. Rather than depicting military glory or battlefields, it frames the decision to fight inside the front room of a home, leveraging female expectation to compel male enlistment. **Hinge Question:** Why did the British government believe that emotional blackmail from wives and mothers would be more persuasive to a working-class man than an appeal to imperial glory?',
+        model_answer_key: {
+          skill: 'Dual-Source Utility',
+          enquiry:
+            'How useful are Sources A and B for an enquiry into why British men volunteered to join the army in 1914?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Surface Paraphrase & Generalized Acceptance',
+            descriptor:
+              'Paraphrases literal content with unsupported assertions of truth or simple bias dismissal without provenance context.',
+            exemplar:
+              'Source A is useful because it tells us that women said go and wanted their boys to fight for their honour. Source B is useful because Private Arthur Green says four of them from the dockyard joined the Pompey Pals because they wanted to be with their mates. Both sources are useful because they show people joining the army.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Developed Comprehension & Generic Provenance',
+            descriptor:
+              'Makes valid historical inferences from both sources and comments generically on author bias or eyewitness status.',
+            exemplar:
+              'Source A is useful for showing how the government put pressure on men to enlist by showing women and children expecting them to go to war. This is a poster designed by the government to convince people, so it is biased propaganda. Source B is useful because it is a real diary from a Portsmouth soldier showing that men joined because they did not want to be called slackers and wanted to stick with their friends. Source B is more reliable because it is a personal diary not meant for the public.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Utility & Provenance Interrogation',
+            descriptor:
+              'Evaluates each source against contextual knowledge of 1914 enlistment (Pals Battalions, lack of conscription, social shame), assessing usefulness in light of origin and purpose.',
+            exemplar:
+              'Source A is highly valuable for demonstrating how the Parliamentary Recruiting Committee weaponized domesticity and gender roles to drive voluntary enlistment before conscription was introduced in 1916. By depicting women gazing proudly at departing troops, the state deliberately induced guilt in civilian men, mirroring civilian campaigns like the Order of the White Feather. However, its utility is limited because as official propaganda it tells us what the state wanted men to think, rather than proving why individual men actually signed up.\n\nIn contrast, Source B provides direct, authentic insight into the psychology of working-class volunteers. As a private diary written at the time, Private Green reveals that enlistment was propelled by the communal magnetism of the Pals Battalions—specifically the 14th and 15th Hampshires (the Pompey Pals). Dockyard apprentices joined collectively because enlisting with friends removed the terror of military isolation. Therefore, Source B is more useful for understanding the genuine social motivation of recruits, whereas Source A explains the institutional propaganda machine.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative judgement cross-referencing both sources against specific historical knowledge to evaluate overall utility for the enquiry.',
+            exemplar:
+              'Both sources are exceptionally valuable for understanding 1914 recruitment because together they illuminate the crucial distinction between top-down state coercion and bottom-up working-class motivation. Source A is highly useful for demonstrating how the Parliamentary Recruiting Committee weaponized domestic shame and female expectation. By framing the decision to fight inside the front room of a home, it proves the state relied on emotional blackmail to overcome the absence of conscription. However, its utility is limited because propaganda posters cannot prove whether men enlisted willingly or out of fear of public disgrace.\n\nIn contrast, Source B provides superior historical utility by capturing the authentic, unvarnished voice of an ordinary worker. Private Green’s diary reveals that enlistment was driven by intense peer camaraderie and the powerful pull of the Pompey Pals. Working-class lads enlisted alongside their dockyard workmates to avoid being separated or branded slackers. While Source A illustrates official manipulation, Source B exposes the living reality: men volunteered because the Pals Battalions transformed military service into an irresistible communal adventure.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_1_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Dual-Source Utility & Provenance Investigation',
+          question:
+            'How useful are Sources A and B for an enquiry into why British men volunteered to join the army in 1914?',
+          source_a: {
+            title: 'Source A: Parliamentary Recruiting Committee Poster (1915)',
+            shelfmark: 'IMPERIAL WAR MUSEUM • LONDON • ART.IWM PST 2763',
+            text: '“Women of Britain say—‘GO!’ Is your lad in uniform yet? If not, why not? Won’t you send him to defend your honour? There are women who would give their lives to bring their boys back from the front, but they sent them willingly.”',
+            clue: 'Official government propaganda poster designed to use domestic emotional guilt and public shame to compel men into uniform.',
+          },
+          source_b: {
+            title: 'Source B: Diary of Private Arthur Green, Portsmouth Dockyard (August 1914)',
+            shelfmark: 'HAMPSHIRE RECORD OFFICE • WINCHESTER • 42M78/P12',
+            text: '“When the call came, four of us from the naval fitting shop marched straight down to the Town Hall to join the Pompey Pals. We feared being called slackers, but mostly we wanted to stick together with our mates. It felt like the greatest adventure of our lives.”',
+            clue: 'Private personal diary written at the time; reveals genuine peer camaraderie and fear of social disgrace among local workers.',
+          },
+          matrix: [
+            {
+              col: '1. CONTENT & DETAIL',
+              text: 'Analyse what each source reveals about reasons for enlisting (shame vs patriotism vs peer camaraderie).',
+            },
+            {
+              col: '2. PROVENANCE & MOTIVE',
+              text: 'Evaluate how the origin and purpose of each source (state propaganda vs private diary) affects its reliability.',
+            },
+            {
+              col: '3. HISTORICAL JUDGEMENT',
+              text: 'Reach a reasoned conclusion: which source is more useful for understanding why ordinary men volunteered in 1914?',
+            },
+          ],
+          connectives: [
+            'Source A is useful for showing that the state used...',
+            'However, its utility is limited because as propaganda it...',
+            'In contrast, Source B provides authentic insight into...',
+            'When cross-referenced with local Portsmouth history...',
+            'On balance, Source [A/B] is more valuable for this enquiry because...',
+          ],
+          model_answer:
+            'Both sources are exceptionally valuable for understanding 1914 recruitment because together they illuminate the crucial distinction between top-down state coercion and bottom-up working-class motivation. Source A is highly useful for demonstrating how the Parliamentary Recruiting Committee weaponized domestic shame and female expectation. By framing the decision to fight inside the front room of a home, it proves the state relied on emotional blackmail to overcome the absence of conscription. However, its utility is limited because propaganda posters cannot prove whether men enlisted willingly or out of fear of public disgrace.\n\nIn contrast, Source B provides superior historical utility by capturing the authentic, unvarnished voice of an ordinary worker. Private Green’s diary reveals that enlistment was driven by intense peer camaraderie and the powerful pull of the Pompey Pals. Working-class lads enlisted alongside their dockyard workmates to avoid being separated or branded slackers. While Source A illustrates official manipulation, Source B exposes the living reality: men volunteered because the Pals Battalions transformed military service into an irresistible communal adventure.',
+        },
+      ],
       vocab_cloze_text:
         'In August 1914, Britain entered the conflict with a small professional army known as the [British Expeditionary Force]. To meet the demand for millions of soldiers, War Secretary [Lord Kitchener] launched an unprecedented recruitment drive. Enthusiastic [Jingoism] swept the nation as entire towns formed [Pals Battalions] to fight side-by-side. Behind the patriotic fanfare, however, civilian groups weaponized social shame by handing out the [White Feather] to men out of uniform, while working-class recruits often volunteered out of economic [Pragmatism] to escape grinding factory poverty.',
       video: [
@@ -1059,7 +1141,89 @@ export const unitData = {
         ],
         source_context:
           'Source A (the 1916 aerial reconnaissance photograph) provides raw, forensic evidence of the architectural complexity of the Western Front. It illustrates that trenches were not crude ditches, but sophisticated defensive labyrinths featuring zig-zag traverses engineered to contain artillery blasts and prevent enfilading machine-gun fire. **Hinge Question:** Looking at the desolate, crater-torn expanse of No Man’s Land in Source A, why was any commander ordering infantry to advance in daylight facing a virtually impossible tactical task?',
+        model_answer_key: {
+          skill: 'Historical Interpretations',
+          enquiry:
+            'How far do you agree with Interpretation 1 that General Haig was an incompetent "donkey" who senselessly slaughtered his troops?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Simple Agreement / One-Sided Assertion',
+            descriptor:
+              'Selects one interpretation and repeats its claims without explaining why historians disagree or using specific factual evidence.',
+            exemplar:
+              'I agree with Interpretation 1 because Alan Clark says British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman living in a French chateau while 57,000 men were killed or wounded on the first day of the Somme. He should not have ordered them to walk across No Man’s Land.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Two-Sided Description with Basic Evidence',
+            descriptor:
+              'Summarizes both points of view (Clark’s donkeys vs Sheffield’s learning curve) and introduces basic factual knowledge from the Somme.',
+            exemplar:
+              'Interpretation 1 argues that Haig was an incompetent butcher because on 1 July 1916 he ordered men to walk across No Man’s Land into German machine guns after the artillery bombardment failed to cut the barbed wire. On the other hand, Interpretation 2 argues that Haig was not a bungler because the British army was on a learning curve. Haig had to help the French army at Verdun, and by 1918 he was using tanks and creeping barrages to win the war. I agree more with Interpretation 2 because Haig eventually won.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Historiographical Analysis',
+            descriptor:
+              'Explains why the historians reach different conclusions, evaluating the evidence supporting each interpretation within its military and technological context.',
+            exemplar:
+              'Interpretation 1 is persuasive because it highlights the catastrophic tactical inflexibility of Haig’s high command on 1 July 1916. Haig believed that the seven-day preliminary bombardment of 1.5 million shells would obliterate the German frontlines. In reality, one-third of the shells were duds and the deep German dugouts protected the defenders. Ordering heavily laden infantry to walk in rigid lines resulted in 57,470 casualties in a single morning, demonstrating Haig’s failure to adapt to rapid-fire Maxim guns.\n\nHowever, Interpretation 2 provides a more sophisticated historical evaluation by contextualizing Haig’s constraints. As Gary Sheffield demonstrates, Haig had no alternative but to launch the Somme offensive because the French army was facing complete collapse at Verdun. Furthermore, Haig lacked the technology needed for flexible command—portable radio communication did not exist, leaving generals reliant on runners across shell-torn ground. Crucially, Haig and the British Army climbed a steep "learning curve", developing creeping barrages, flash-spotting artillery, and combined-arms tank warfare that ultimately defeated the German Army in the Hundred Days Offensive of 1918. Therefore, while Clark reflects popular post-war grief, Sheffield reflects the complex reality of industrial warfare.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced historiographical judgement weighing both interpretations against criteria such as technological constraints, strategic necessity, and operational evolution.',
+            exemplar:
+              'While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s orthodox critique correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal "learning curve", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_2_historical_interpretations',
+          type: 'historical_interpretations',
+          qNum: 4,
+          title: 'Task 4: Historiographical Debate & Leadership Evaluation',
+          question:
+            'How far do you agree with Interpretation 1 that General Haig was an incompetent "donkey" who senselessly slaughtered his troops?',
+          interp1: {
+            title: 'Interpretation 1: Alan Clark, The Donkeys (1961)',
+            badge: 'The Orthodox Critique: Incompetent Donkeys',
+            text: '“British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman who lived in distant comfort in French châteaux, completely out of touch with the frontline slaughter. On 1 July 1916, his stubborn refusal to change tactics condemned 57,470 men to death or injury on a single morning.”',
+            author: 'Alan Clark (British Military Historian & Politician, 1961)',
+          },
+          interp2: {
+            title: 'Interpretation 2: Professor Gary Sheffield, Forgotten Victory (2001)',
+            badge: 'The Revisionist Defence: The Learning Curve',
+            text: "“Haig was neither a butcher nor a bungler. He was trapped in an unprecedented industrial war where defense dominated attack. The British Army underwent a massive 'Learning Curve'. By 1918, Haig had mastered combined-arms warfare—using tanks, creeping barrages, and aircraft to smash the German Army.”",
+            author: 'Prof. Gary Sheffield (Modern Military Historian, 2001)',
+          },
+          matrix: [
+            {
+              col: '1. INTERPRETATION 1 ARGUMENT',
+              text: 'Explain Clark’s view: detached châteaux generals, cavalry obsession, and catastrophic Somme casualties.',
+            },
+            {
+              col: '2. INTERPRETATION 2 ARGUMENT',
+              text: 'Explain Sheffield’s view: lack of radio technology, relieving Verdun, and the tactical "learning curve".',
+            },
+            {
+              col: '3. SUSTAINED HISTORICAL VERDICT',
+              text: 'Evaluate which interpretation is more convincing: was Haig an incompetent "donkey" or a modernizing general?',
+            },
+          ],
+          connectives: [
+            'Interpretation 1 contends that Haig was...',
+            'Evidence supporting this critique includes...',
+            'In sharp contrast, Interpretation 2 argues that Haig...',
+            'This is corroborated by...',
+            'Weighing both interpretations against historical evidence, I conclude that...',
+          ],
+          model_answer:
+            'While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s orthodox critique correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal "learning curve", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing.',
+        },
+      ],
       vocab_cloze_text:
         "Following the Battle of the Marne in 1914, both armies dug defensive trenches, creating an unbroken 400-mile [Stalemate]. Attacking troops faced devastating machine guns and massed [Artillery] across the shell-torn expanse of [No Man's Land]. In the damp trenches, men lived in filth, suffering agonizing fungal rot called [Trench Foot] and debilitating psychological trauma known as [Shell Shock]. Believing in a war of [Attrition], British Commander-in-Chief [Field Marshal Douglas Haig] sought to bleed the enemy dry, eventually perfecting the [Creeping Barrage] to coordinate infantry with advancing curtains of artillery.",
       video: [
@@ -4188,7 +4352,89 @@ export const unitData = {
         ],
         source_context:
           'Source A (the Stubbington War Memorial shelter on the green) is a unique, emotionally resonant primary artifact situated in the pupils’ immediate local environment. Erected in 1922 over the old village pump, it was built by village carpenter Arthur Tribbeck, who had to carve his own son Harold’s name into the oak beams alongside the three Lowry brothers and Nita Madeline King. **Hinge Question:** Why is a functional wooden shelter over a village pump a far more personal and poignant memorial to local grief than a grand stone obelisk in London?',
+        model_answer_key: {
+          skill: 'Local Source Utility',
+          enquiry:
+            'How useful are Sources A and B for an enquiry into the human cost of the Great War on the village of Stubbington?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Surface Paraphrase & Literal Acceptance',
+            descriptor:
+              'Paraphrases the parish minutes or the royal scroll literally without contextual understanding of local bereavement.',
+            exemplar:
+              'Source A is useful because it says they decided to build a thatched shelter over the village water pump on the Green to remember 67 men. Source B is useful because it is a scroll sent to Arthur Tribbeck whose son Arthur was lost on HMS Narbrough. Both sources are useful because they show people remembering the dead.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Developed Comprehension & Generic Provenance',
+            descriptor:
+              'Explains what each source shows about how Stubbington remembered its war casualties, with simple comments on author reliability.',
+            exemplar:
+              'Source A is very useful because it shows the parish council wanted a useful memorial that provided shelter for villagers every day, rather than just on Armistice Day. This is an official council record so it accurately shows what they decided. Source B is useful because it shows the official scroll and bronze Dead Man’s Penny that the government sent to the parents of dead soldiers. Arthur Tribbeck was a local blacksmith who lost his son, which proves the war affected real families in Stubbington.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Utility & Provenance Interrogation',
+            descriptor:
+              'Evaluates both sources in relation to post-war commemoration, bereavement in rural communities, and Jay Winter’s concept of "surrogate tombs".',
+            exemplar:
+              'Source A is exceptionally valuable for revealing the collective psychological response of a small Hampshire village that lost 67 young people from a parish of just 1,500. By resolving to build an open thatched shelter over the village pump, the council created a living, functional memorial. Villagers gathered at the pump daily, ensuring that the sacrifice of local lads was integrated into routine working life rather than locked away in distant cemeteries in France. However, its utility is limited because official committee minutes record administrative decisions rather than the emotional anguish of bereaved families.\n\nIn contrast, Source B illuminates that private family grief. The commemorative scroll delivered to Arthur Tribbeck honours his son Stoker Arthur Tribbeck, who drowned in the wreck of HMS Narbrough with no identifiable grave. For parents facing lifelong absence, this scroll and the accompanying "Dead Man’s Penny" were the only tangible tokens of their child’s existence. As historian Jay Winter argues, such artifacts functioned as "surrogate tombs". Therefore, Source B provides superior emotional and familial utility, while Source A documents civic communal remembrance.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative judgement cross-referencing both sources against the social and cultural history of the "Lost Generation".',
+            exemplar:
+              'Both sources are profoundly valuable when cross-referenced because they capture the duality of post-war grief: the collective communal solidarity of a rural parish and the devastating personal tragedy of individual families. Source A provides exceptional insight into Stubbington’s civic mindset: the parish council deliberately rejected a martial, triumphalist stone obelisk in favour of an open thatched shelter over the village water pump. This proves that local bereavement was woven into the functional fabric of daily life—villagers would remember the 67 fallen neighbours every time they collected drinking water. However, Source A does not reveal the intimate heartbreak experienced by individual households.\n\nIn contrast, Source B provides that missing personal dimension. The commemorative scroll and bronze "Dead Man’s Penny" sent to village blacksmith Arthur Tribbeck for his son Stoker Arthur Tribbeck demonstrates how the state attempted to console grieving parents whose sons had no known grave. Together with the fact that Tribbeck himself helped construct the village shelter where his son’s name was carved, both sources illustrate Professor Jay Winter’s concept of memorials acting as "surrogate tombs". While Source B shows national commemoration entering the private home, Source A provides superior local utility by proving how Stubbington united to preserve communal memory.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_6_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Local Archival Dual-Source Utility',
+          question:
+            'How useful are Sources A and B for an enquiry into the human cost of the Great War on the village of Stubbington?',
+          source_a: {
+            title: 'Source A: Stubbington Parish Memorial Committee Minutes (1921)',
+            shelfmark: 'HAMPSHIRE RECORD OFFICE • FAREHAM PARISH PAPERS • 88M81/W1',
+            text: '“Resolved: That the memorial to the 67 men of this parish shall take the form of an open thatched shelter over the village water pump on the Green. It shall provide daily rest and shelter to villagers, so that our debt to the fallen shall be remembered in every hour of daily life, and not merely on Armistice Sunday.”',
+            clue: 'Official parish council resolution proving villagers consciously chose a living, useful memorial over a remote stone pillar.',
+          },
+          source_b: {
+            title: 'Source B: Official Commemorative Scroll delivered to Arthur Tribbeck (1919)',
+            shelfmark: 'NATIONAL ARCHIVES • ADM 171/123 • ROYAL NAVY COMMEMORATIVE REGISTER',
+            text: '“He whom this scroll commemorates was numbered with those who, at the call of King and Country, left all that was dear to them, gave up their lives for freedom. Stoker Arthur Tribbeck, Royal Navy, lost in the blizzard wreck of HMS Narbrough, January 1918.” (Accompanied by the bronze "Dead Man’s Penny").',
+            clue: 'Standardized national scroll issued directly to local families; demonstrates how private tragedy was honoured by the state.',
+          },
+          matrix: [
+            {
+              col: '1. CONTENT & INFERENCE',
+              text: 'What do the sources reveal about how the community and bereaved families experienced loss (parish shelter vs family plaque)?',
+            },
+            {
+              col: '2. PROVENANCE & MOTIVE',
+              text: 'How does the origin and purpose of each record (local village council vs national crown scroll) shape its historical value?',
+            },
+            {
+              col: '3. LOCAL ARCHIVAL JUDGEMENT',
+              text: 'Which source is more useful for understanding the permanent transformation of Stubbington village after the war?',
+            },
+          ],
+          connectives: [
+            'Source A is exceptionally valuable for revealing...',
+            'Furthermore, the choice of a thatched shelter shows...',
+            'In contrast, Source B demonstrates the intimate grief of local families such as...',
+            'Together, both sources prove that...',
+            'Ultimately, Source [A/B] is more revealing because...',
+          ],
+          model_answer:
+            'Both sources are profoundly valuable when cross-referenced because they capture the duality of post-war grief: the collective communal solidarity of a rural parish and the devastating personal tragedy of individual families. Source A provides exceptional insight into Stubbington’s civic mindset: the parish council deliberately rejected a martial, triumphalist stone obelisk in favour of an open thatched shelter over the village water pump. This proves that local bereavement was woven into the functional fabric of daily life—villagers would remember the 67 fallen neighbours every time they collected drinking water. However, Source A does not reveal the intimate heartbreak experienced by individual households.\n\nIn contrast, Source B provides that missing personal dimension. The commemorative scroll and bronze "Dead Man’s Penny" sent to village blacksmith Arthur Tribbeck for his son Stoker Arthur Tribbeck demonstrates how the state attempted to console grieving parents whose sons had no known grave. Together with the fact that Tribbeck himself helped construct the village shelter where his son’s name was carved, both sources illustrate Professor Jay Winter’s concept of memorials acting as "surrogate tombs". While Source B shows national commemoration entering the private home, Source A provides superior local utility by proving how Stubbington united to preserve communal memory.',
+        },
+      ],
       vocab_cloze_text:
         "For the Hampshire parish of Stubbington, the First World War resulted in a tragic [Lost Generation]. In 1922, the village erected a unique wooden [War Memorial] shelter over the village pump. Among the 67 names carved into the oak beams were the three sons of [Manor Way Grange]: [The Lowry Brothers], all of whom died in battle between 1915 and 1918. The memorial also records [Nita Madeline King], the only female casualty, who died of disease serving in the [QMAAC]. Families received an impersonal bronze plaque known as the [Dead Man's Penny], but for small villages, the [Demographic Depletion] of young men left an enduring void that permanently altered community life.",
       video: [

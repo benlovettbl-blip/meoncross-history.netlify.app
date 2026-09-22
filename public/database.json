@@ -16736,8 +16736,79 @@
                 "primer": "Focus on the visual analysis of the Armada Portrait and the historical interpretations to debate whether the victory was a divine miracle or a result of tactical superiority.",
                 "question": "Based on the visual evidence in the Armada Portrait, how did the defeat of the Spanish Armada change England's self-image and future ambitions?"
               }
-            ]
+            ],
+            "model_answer_key": {
+              "skill": "Dual-Source Utility",
+              "enquiry": "How useful are Sources A and B for an enquiry into why European powers engaged in global oceanic expansion between 1494 and 1588?",
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Surface Paraphrase & Literal Trust",
+                "descriptor": "Paraphrases the papal bull or Hakluyt literally without contextual knowledge of 16th-century religious or commercial competition.",
+                "exemplar": "Source A is useful because it says the Pope gave Spain lands west of the line to convert barbarous nations to Christ. Source B is useful because Richard Hakluyt says the western planting will bring profit, naval timber, sell woollen cloth and stop Philip of Spain. Both sources are useful because they show why countries explored."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Developed Comprehension & Generic Provenance",
+                "descriptor": "Explains the difference between religious motives and commercial/strategic motives with simple comments on author bias.",
+                "exemplar": "Source A is useful for showing that Spain justified its empire through religion, because Pope Alexander VI commanded them to convert native peoples to Roman Catholicism. This is an official decree so it shows the official church position. Source B is useful because Hakluyt was an adviser to Queen Elizabeth I who argued that England needed colonies to sell wool, get naval supplies, and stop Catholic Spain from dominating Europe. Hakluyt might be biased because he was trying to persuade the Queen to spend money on colonies."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Contextualized Utility & Provenance Interrogation",
+                "descriptor": "Evaluates each source against contextual knowledge of the Reformation, Treaty of Tordesillas, and Elizabethan privateering, analyzing the impact of origin and purpose on utility.",
+                "exemplar": "Source A is exceptionally valuable for revealing the ideological justification of early Iberian expansion. Issued by the Borgia Pope Alexander VI, the Papal Bull and subsequent Treaty of Tordesillas (1494) established a legal and spiritual monopoly, dividing the Americas between Spain and Portugal. It demonstrates that exploration was framed as a holy crusade to convert indigenous populations before the Protestant Reformation began. However, its utility is limited because official religious decrees conceal Spain’s ruthless extraction of silver through the Potosí encomienda system.\n\nIn contrast, Source B provides indispensable insight into Protestant England’s aggressive counter-strategy. As a confidential briefing written by Richard Hakluyt for Elizabeth I, it cuts through pious religious rhetoric to reveal raw mercantilist and geopolitical objectives. Hakluyt recognized that England needed overseas colonies to solve domestic crises (unemployed \"idle poor\", timber shortages) and, above all, to intercept the American silver bullion funding Philip II’s armies in the Netherlands. Therefore, Source B is more useful for understanding the commercial and military rivalry that triggered England’s Atlantic voyages."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced comparative judgement cross-referencing both sources against the geopolitical fracture between Catholic monopoly and Protestant mercantilism.",
+                "exemplar": "When cross-referenced, Sources A and B are profoundly useful because together they encapsulate the profound transformation of European imperial motivation across the sixteenth century. Source A illustrates the initial Iberian paradigm: a medieval, unified Christendom where papal authority legitimized vast territorial conquest through the moral imperative of Catholic conversion. However, Source B demonstrates how the Protestant Reformation fundamentally revolutionized oceanic ambition. Hakluyt’s secret briefing reveals that by 1584, exploration had become a cutthroat instrument of Protestant national security and commercial mercantilism. English voyages—spearheaded by privateers like Francis Drake and colonial advocates like Walter Raleigh—were driven not by papal decrees, but by the urgent need to undermine Spain’s silver-fuelled European hegemony and find export markets for English manufactures. While Source A captures the religious rhetoric of Catholic monopoly, Source B provides superior historical utility by exposing the economic and strategic realities that transformed the Atlantic into an imperial battleground."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_2_source_utility",
+              "type": "source_utility",
+              "qNum": 4,
+              "title": "Task 4: Dual-Source Utility & Imperial Ideology Investigation",
+              "question": "How useful are Sources A and B for an enquiry into why European powers engaged in global oceanic expansion between 1494 and 1588?",
+              "source_a": {
+                "title": "Source A: Papal Bull Inter Caetera & Treaty of Tordesillas (1493–1494)",
+                "shelfmark": "ARCHIVO GENERAL DE INDIAS • SEVILLE • PATRONATO 1",
+                "text": "“We assign to you, Catholic Kings of Castile and Leon, all islands and mainlands discovered westward of the meridian line. We strictly command you to lead the inhabitants to embrace the Christian faith, so that the Holy Roman Catholic Church may be exalted and barbarous nations brought to the salvation of Christ.”",
+                "clue": "Official papal decree by Pope Alexander VI; reveals how Spanish imperial claims were justified by divine mandate and religious zeal."
+              },
+              "source_b": {
+                "title": "Source B: Richard Hakluyt, Discourse on Western Planting (1584)",
+                "shelfmark": "BRITISH LIBRARY • LONDON • COTTON MS TITUS B.XIII",
+                "text": "“This western enterprise will yield great profit unto our realm: providing naval timber and pitch, venting our woollen cloth, and employing our idle poor. Crucially, it will check the pride of King Philip of Spain, whose gold mines in the West Indies feed his war against Protestant England.”",
+                "clue": "Secret strategic briefing for Queen Elizabeth I; emphasizes commercial profit, domestic unemployment, and geopolitical rivalry with Catholic Spain."
+              },
+              "matrix": [
+                {
+                  "col": "1. CONTENT & DETAIL",
+                  "text": "Analyse what each source reveals about imperial motives (Catholic evangelism vs English trade profit and naval rivalry)."
+                },
+                {
+                  "col": "2. PROVENANCE & MOTIVE",
+                  "text": "Evaluate how the authorship and purpose of each document (papal decree vs secret royal briefing) affects its historical reliability."
+                },
+                {
+                  "col": "3. HISTORICAL JUDGEMENT",
+                  "text": "Reach a reasoned conclusion: which source is more useful for understanding why European nations took to the Atlantic Ocean?"
+                }
+              ],
+              "connectives": [
+                "Source A is useful for proving that initial oceanic claims were legitimized by...",
+                "However, its utility is limited because as an official papal bull it conceals Spain’s desire for...",
+                "In contrast, Source B provides insider insight into England’s strategic ambition to...",
+                "Cross-referencing both sources demonstrates that exploration was driven by a volatile mix of...",
+                "On balance, Source [A/B] is more valuable for this enquiry because..."
+              ],
+              "model_answer": "When cross-referenced, Sources A and B are profoundly useful because together they encapsulate the profound transformation of European imperial motivation across the sixteenth century. Source A illustrates the initial Iberian paradigm: a medieval, unified Christendom where papal authority legitimized vast territorial conquest through the moral imperative of Catholic conversion. However, Source B demonstrates how the Protestant Reformation fundamentally revolutionized oceanic ambition. Hakluyt’s secret briefing reveals that by 1584, exploration had become a cutthroat instrument of Protestant national security and commercial mercantilism. English voyages—spearheaded by privateers like Francis Drake and colonial advocates like Walter Raleigh—were driven not by papal decrees, but by the urgent need to undermine Spain’s silver-fuelled European hegemony and find export markets for English manufactures. While Source A captures the religious rhetoric of Catholic monopoly, Source B provides superior historical utility by exposing the economic and strategic realities that transformed the Atlantic into an imperial battleground."
+            }
+          ],
           "do_now": {
             "title": "Do Now: Previous Knowledge",
             "type": "questions",
@@ -18173,8 +18244,79 @@
                 "primer": "Discuss how the influx of new goods and wealth changed the everyday lives of people.",
                 "question": "What new goods were introduced through colonial trade, and how did they affect society?"
               }
-            ]
+            ],
+            "model_answer_key": {
+              "skill": "Historical Interpretations",
+              "enquiry": "How far do you agree with Interpretation 1 that the English Civil War was an inevitable constitutional battle for parliamentary liberty?",
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Simple Agreement / One-Sided Assertion",
+                "descriptor": "Agrees simply with Macaulay or Russell without comparing the arguments or deploying factual context.",
+                "exemplar": "I agree with Interpretation 1 because Lord Macaulay says Charles I was a tyrant who ruled without Parliament for eleven years and charged illegal taxes like Ship Money. The Civil War had to happen so Parliament could protect our freedom."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Two-Sided Description with Basic Evidence",
+                "descriptor": "Explains both the Whig and Revisionist interpretations with basic factual details from Charles I’s reign.",
+                "exemplar": "Interpretation 1 argues that the Civil War was an inevitable fight for freedom against Charles I’s tyranny and Personal Rule from 1629 to 1640. On the other hand, Interpretation 2 by Conrad Russell argues that war was not inevitable and that people stumbled into it because of religious fears and Charles trying to govern Scotland and Ireland. I think Interpretation 2 is more accurate because nobody planned to execute the King when the Long Parliament met in 1640."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Contextualized Historiographical Analysis",
+                "descriptor": "Explains why Whig and Revisionist historians reach divergent conclusions, evaluating both viewpoints against specific evidence (Ship Money, Bishops' Wars, Five Members).",
+                "exemplar": "Interpretation 1 is persuasive because it reflects the deep constitutional grievances of the 1630s. Charles I dissolved Parliament and ruled for eleven years (1629–1640), using archaic prerogative courts like the Star Chamber and enforcing unparliamentary Ship Money upon inland counties like Buckinghamshire. When John Hampden was prosecuted, it confirmed to MPs that Charles intended to establish French-style Catholic absolutism. For Whig historians like Macaulay, the conflict was an inevitable ideological clash between royal despotism and parliamentary sovereignty.\n\nHowever, Interpretation 2 provides a more historically accurate and nuanced analysis of why war actually broke out in 1642. As Conrad Russell and John Morrill demonstrate, the Civil War was not a planned struggle for modern democracy; in 1640, virtually every MP was a monarchist who reeled in horror at the thought of rebellion. War was triggered by an unforced \"problem of three kingdoms\": Charles attempted to force the English Prayer Book on Presbyterian Scotland (sparking the Bishops' Wars), which forced him to recall Parliament, while the 1641 Irish Rebellion ignited paranoia that the King would use an army against his own MPs. Charles’s catastrophic blunder in trying to arrest the Five Members destroyed all trust. Therefore, Russell’s revisionist argument that war was an accidental breakdown of trust and religious panic is far more convincing than Macaulay’s teleological myth of inevitable democratic triumph."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced historiographical judgement weighing the Whig thesis of inevitable constitutional evolution against Revisionist contingency and the British Problem.",
+                "exemplar": "While Interpretation 1 eloquently captures the enduring constitutional legacy of the Civil War—the eventual triumph of parliamentary supremacy codified in the 1689 Bill of Rights—Interpretation 2 offers a vastly superior historical explanation of the events of 1640–1642. Macaulay’s Whig orthodoxy commits the classic error of teleology, reading the modern outcome of parliamentary democracy backward into seventeenth-century minds who held no such concept. In contrast, Russell’s revisionist thesis correctly identifies that the Civil War was neither inevitable nor primarily secular. It was a tragic, contingent breakdown caused by religious fanaticism (Puritan terror of Archbishop Laud’s \"popish\" reforms) and Charles I’s fatal unreliability as a ruler across three kingdoms. Until the botched arrest of the Five Members in January 1642, moderate MPs desperately sought compromise. War erupted not because Englishmen marched heroically toward modern liberty, but because Charles I made constitutional coexistence impossible. Therefore, Interpretation 2 is decisively more convincing."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_5_historical_interpretations",
+              "type": "historical_interpretations",
+              "qNum": 4,
+              "title": "Task 4: Historiographical Debate & Constitutional Revolution",
+              "question": "How far do you agree with Interpretation 1 that the English Civil War was an inevitable constitutional battle for parliamentary liberty?",
+              "interp1": {
+                "title": "Interpretation 1: Lord Macaulay & G.M. Trevelyan, The Whig Orthodoxy (1848 / 1926)",
+                "badge": "The Whig View: Inevitable March of Parliamentary Liberty",
+                "text": "“The clash between King and Parliament was the grand heroic struggle of English history. Charles I was an unbending tyrant who sought to extinguish ancient liberties through illegal taxes like Ship Money and eleven years of Personal Rule. The Civil War was the inevitable, necessary triumph of parliamentary freedom, rule of law, and Protestant democracy over royal absolutism.”",
+                "author": "Lord Macaulay (Whig Historian & Statesman)"
+              },
+              "interp2": {
+                "title": "Interpretation 2: Professor Conrad Russell & John Morrill, The Revisionist View (1990 / 1993)",
+                "badge": "The Revisionist View: An Unforced Accident & War of Religion",
+                "text": "“The Civil War was neither inevitable nor primarily about modern constitutional liberty. It was a tragic, unforced breakdown caused by the personal untrustworthiness of Charles I and explosive religious fear. In 1640, nobody wanted war; England stumbled into disaster because the King failed to govern three distinct kingdoms—England, Scotland, and Ireland—simultaneously.”",
+                "author": "Conrad Russell (Professor of Commonwealth History, King's College London)"
+              },
+              "matrix": [
+                {
+                  "col": "1. INTERPRETATION 1 CLAIMS",
+                  "text": "Analyse Macaulay’s Whig argument that tyranny and Ship Money made parliamentary conflict inevitable."
+                },
+                {
+                  "col": "2. INTERPRETATION 2 CRITIQUE",
+                  "text": "Evaluate Russell’s Revisionist counter-argument that war was an accidental crisis of religion and personal mistrust."
+                },
+                {
+                  "col": "3. HISTORIOGRAPHICAL VERDICT",
+                  "text": "Weigh both interpretations against factual evidence (1642 Militia Ordinance, Bishops' Wars) to reach an independent verdict."
+                }
+              ],
+              "connectives": [
+                "Interpretation 1 argues that the Civil War was an inevitable result of...",
+                "This is supported by evidence such as Charles I’s eleven years of Personal Rule and...",
+                "However, Interpretation 2 directly challenges this Whig orthodoxy, maintaining that...",
+                "Russell’s thesis is reinforced by the fact that in 1640 MPs like Pym were terrified of...",
+                "On balance, Interpretation [1/2] offers a more convincing historical explanation because..."
+              ],
+              "model_answer": "While Interpretation 1 eloquently captures the enduring constitutional legacy of the Civil War—the eventual triumph of parliamentary supremacy codified in the 1689 Bill of Rights—Interpretation 2 offers a vastly superior historical explanation of the events of 1640–1642. Macaulay’s Whig orthodoxy commits the classic error of teleology, reading the modern outcome of parliamentary democracy backward into seventeenth-century minds who held no such concept. In contrast, Russell’s revisionist thesis correctly identifies that the Civil War was neither inevitable nor primarily secular. It was a tragic, contingent breakdown caused by religious fanaticism (Puritan terror of Archbishop Laud’s \"popish\" reforms) and Charles I’s fatal unreliability as a ruler across three kingdoms. Until the botched arrest of the Five Members in January 1642, moderate MPs desperately sought compromise. War erupted not because Englishmen marched heroically toward modern liberty, but because Charles I made constitutional coexistence impossible. Therefore, Interpretation 2 is decisively more convincing."
+            }
+          ],
           "do_now": {
             "title": "Do Now: Previous Knowledge",
             "type": "questions",
@@ -42350,8 +42492,79 @@
                 "question": "Was a volunteer in August 1914 acting primarily out of moral patriotism, economic calculation, or fear of public shame?"
               }
             ],
-            "source_context": "Published in 1915 by the Parliamentary Recruiting Committee, Source A represents the weaponization of domesticity. Rather than depicting military glory or battlefields, it frames the decision to fight inside the front room of a home, leveraging female expectation to compel male enlistment. **Hinge Question:** Why did the British government believe that emotional blackmail from wives and mothers would be more persuasive to a working-class man than an appeal to imperial glory?"
+            "source_context": "Published in 1915 by the Parliamentary Recruiting Committee, Source A represents the weaponization of domesticity. Rather than depicting military glory or battlefields, it frames the decision to fight inside the front room of a home, leveraging female expectation to compel male enlistment. **Hinge Question:** Why did the British government believe that emotional blackmail from wives and mothers would be more persuasive to a working-class man than an appeal to imperial glory?",
+            "model_answer_key": {
+              "skill": "Dual-Source Utility",
+              "enquiry": "How useful are Sources A and B for an enquiry into why British men volunteered to join the army in 1914?",
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Surface Paraphrase & Generalized Acceptance",
+                "descriptor": "Paraphrases literal content with unsupported assertions of truth or simple bias dismissal without provenance context.",
+                "exemplar": "Source A is useful because it tells us that women said go and wanted their boys to fight for their honour. Source B is useful because Private Arthur Green says four of them from the dockyard joined the Pompey Pals because they wanted to be with their mates. Both sources are useful because they show people joining the army."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Developed Comprehension & Generic Provenance",
+                "descriptor": "Makes valid historical inferences from both sources and comments generically on author bias or eyewitness status.",
+                "exemplar": "Source A is useful for showing how the government put pressure on men to enlist by showing women and children expecting them to go to war. This is a poster designed by the government to convince people, so it is biased propaganda. Source B is useful because it is a real diary from a Portsmouth soldier showing that men joined because they did not want to be called slackers and wanted to stick with their friends. Source B is more reliable because it is a personal diary not meant for the public."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Contextualized Utility & Provenance Interrogation",
+                "descriptor": "Evaluates each source against contextual knowledge of 1914 enlistment (Pals Battalions, lack of conscription, social shame), assessing usefulness in light of origin and purpose.",
+                "exemplar": "Source A is highly valuable for demonstrating how the Parliamentary Recruiting Committee weaponized domesticity and gender roles to drive voluntary enlistment before conscription was introduced in 1916. By depicting women gazing proudly at departing troops, the state deliberately induced guilt in civilian men, mirroring civilian campaigns like the Order of the White Feather. However, its utility is limited because as official propaganda it tells us what the state wanted men to think, rather than proving why individual men actually signed up.\n\nIn contrast, Source B provides direct, authentic insight into the psychology of working-class volunteers. As a private diary written at the time, Private Green reveals that enlistment was propelled by the communal magnetism of the Pals Battalions—specifically the 14th and 15th Hampshires (the Pompey Pals). Dockyard apprentices joined collectively because enlisting with friends removed the terror of military isolation. Therefore, Source B is more useful for understanding the genuine social motivation of recruits, whereas Source A explains the institutional propaganda machine."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced comparative judgement cross-referencing both sources against specific historical knowledge to evaluate overall utility for the enquiry.",
+                "exemplar": "Both sources are exceptionally valuable for understanding 1914 recruitment because together they illuminate the crucial distinction between top-down state coercion and bottom-up working-class motivation. Source A is highly useful for demonstrating how the Parliamentary Recruiting Committee weaponized domestic shame and female expectation. By framing the decision to fight inside the front room of a home, it proves the state relied on emotional blackmail to overcome the absence of conscription. However, its utility is limited because propaganda posters cannot prove whether men enlisted willingly or out of fear of public disgrace.\n\nIn contrast, Source B provides superior historical utility by capturing the authentic, unvarnished voice of an ordinary worker. Private Green’s diary reveals that enlistment was driven by intense peer camaraderie and the powerful pull of the Pompey Pals. Working-class lads enlisted alongside their dockyard workmates to avoid being separated or branded slackers. While Source A illustrates official manipulation, Source B exposes the living reality: men volunteered because the Pals Battalions transformed military service into an irresistible communal adventure."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_1_source_utility",
+              "type": "source_utility",
+              "qNum": 4,
+              "title": "Task 4: Dual-Source Utility & Provenance Investigation",
+              "question": "How useful are Sources A and B for an enquiry into why British men volunteered to join the army in 1914?",
+              "source_a": {
+                "title": "Source A: Parliamentary Recruiting Committee Poster (1915)",
+                "shelfmark": "IMPERIAL WAR MUSEUM • LONDON • ART.IWM PST 2763",
+                "text": "“Women of Britain say—‘GO!’ Is your lad in uniform yet? If not, why not? Won’t you send him to defend your honour? There are women who would give their lives to bring their boys back from the front, but they sent them willingly.”",
+                "clue": "Official government propaganda poster designed to use domestic emotional guilt and public shame to compel men into uniform."
+              },
+              "source_b": {
+                "title": "Source B: Diary of Private Arthur Green, Portsmouth Dockyard (August 1914)",
+                "shelfmark": "HAMPSHIRE RECORD OFFICE • WINCHESTER • 42M78/P12",
+                "text": "“When the call came, four of us from the naval fitting shop marched straight down to the Town Hall to join the Pompey Pals. We feared being called slackers, but mostly we wanted to stick together with our mates. It felt like the greatest adventure of our lives.”",
+                "clue": "Private personal diary written at the time; reveals genuine peer camaraderie and fear of social disgrace among local workers."
+              },
+              "matrix": [
+                {
+                  "col": "1. CONTENT & DETAIL",
+                  "text": "Analyse what each source reveals about reasons for enlisting (shame vs patriotism vs peer camaraderie)."
+                },
+                {
+                  "col": "2. PROVENANCE & MOTIVE",
+                  "text": "Evaluate how the origin and purpose of each source (state propaganda vs private diary) affects its reliability."
+                },
+                {
+                  "col": "3. HISTORICAL JUDGEMENT",
+                  "text": "Reach a reasoned conclusion: which source is more useful for understanding why ordinary men volunteered in 1914?"
+                }
+              ],
+              "connectives": [
+                "Source A is useful for showing that the state used...",
+                "However, its utility is limited because as propaganda it...",
+                "In contrast, Source B provides authentic insight into...",
+                "When cross-referenced with local Portsmouth history...",
+                "On balance, Source [A/B] is more valuable for this enquiry because..."
+              ],
+              "model_answer": "Both sources are exceptionally valuable for understanding 1914 recruitment because together they illuminate the crucial distinction between top-down state coercion and bottom-up working-class motivation. Source A is highly useful for demonstrating how the Parliamentary Recruiting Committee weaponized domestic shame and female expectation. By framing the decision to fight inside the front room of a home, it proves the state relied on emotional blackmail to overcome the absence of conscription. However, its utility is limited because propaganda posters cannot prove whether men enlisted willingly or out of fear of public disgrace.\n\nIn contrast, Source B provides superior historical utility by capturing the authentic, unvarnished voice of an ordinary worker. Private Green’s diary reveals that enlistment was driven by intense peer camaraderie and the powerful pull of the Pompey Pals. Working-class lads enlisted alongside their dockyard workmates to avoid being separated or branded slackers. While Source A illustrates official manipulation, Source B exposes the living reality: men volunteered because the Pals Battalions transformed military service into an irresistible communal adventure."
+            }
+          ],
           "vocab_cloze_text": "In August 1914, Britain entered the conflict with a small professional army known as the [British Expeditionary Force]. To meet the demand for millions of soldiers, War Secretary [Lord Kitchener] launched an unprecedented recruitment drive. Enthusiastic [Jingoism] swept the nation as entire towns formed [Pals Battalions] to fight side-by-side. Behind the patriotic fanfare, however, civilian groups weaponized social shame by handing out the [White Feather] to men out of uniform, while working-class recruits often volunteered out of economic [Pragmatism] to escape grinding factory poverty.",
           "video": [
             {
@@ -43008,8 +43221,79 @@
                 "question": "Was Douglas Haig an inflexible butcher who needlessly sacrificed his men, or an adaptable commander dealing with an unprecedented industrial war?"
               }
             ],
-            "source_context": "Source A (the 1916 aerial reconnaissance photograph) provides raw, forensic evidence of the architectural complexity of the Western Front. It illustrates that trenches were not crude ditches, but sophisticated defensive labyrinths featuring zig-zag traverses engineered to contain artillery blasts and prevent enfilading machine-gun fire. **Hinge Question:** Looking at the desolate, crater-torn expanse of No Man’s Land in Source A, why was any commander ordering infantry to advance in daylight facing a virtually impossible tactical task?"
+            "source_context": "Source A (the 1916 aerial reconnaissance photograph) provides raw, forensic evidence of the architectural complexity of the Western Front. It illustrates that trenches were not crude ditches, but sophisticated defensive labyrinths featuring zig-zag traverses engineered to contain artillery blasts and prevent enfilading machine-gun fire. **Hinge Question:** Looking at the desolate, crater-torn expanse of No Man’s Land in Source A, why was any commander ordering infantry to advance in daylight facing a virtually impossible tactical task?",
+            "model_answer_key": {
+              "skill": "Historical Interpretations",
+              "enquiry": "How far do you agree with Interpretation 1 that General Haig was an incompetent \"donkey\" who senselessly slaughtered his troops?",
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Simple Agreement / One-Sided Assertion",
+                "descriptor": "Selects one interpretation and repeats its claims without explaining why historians disagree or using specific factual evidence.",
+                "exemplar": "I agree with Interpretation 1 because Alan Clark says British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman living in a French chateau while 57,000 men were killed or wounded on the first day of the Somme. He should not have ordered them to walk across No Man’s Land."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Two-Sided Description with Basic Evidence",
+                "descriptor": "Summarizes both points of view (Clark’s donkeys vs Sheffield’s learning curve) and introduces basic factual knowledge from the Somme.",
+                "exemplar": "Interpretation 1 argues that Haig was an incompetent butcher because on 1 July 1916 he ordered men to walk across No Man’s Land into German machine guns after the artillery bombardment failed to cut the barbed wire. On the other hand, Interpretation 2 argues that Haig was not a bungler because the British army was on a learning curve. Haig had to help the French army at Verdun, and by 1918 he was using tanks and creeping barrages to win the war. I agree more with Interpretation 2 because Haig eventually won."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Contextualized Historiographical Analysis",
+                "descriptor": "Explains why the historians reach different conclusions, evaluating the evidence supporting each interpretation within its military and technological context.",
+                "exemplar": "Interpretation 1 is persuasive because it highlights the catastrophic tactical inflexibility of Haig’s high command on 1 July 1916. Haig believed that the seven-day preliminary bombardment of 1.5 million shells would obliterate the German frontlines. In reality, one-third of the shells were duds and the deep German dugouts protected the defenders. Ordering heavily laden infantry to walk in rigid lines resulted in 57,470 casualties in a single morning, demonstrating Haig’s failure to adapt to rapid-fire Maxim guns.\n\nHowever, Interpretation 2 provides a more sophisticated historical evaluation by contextualizing Haig’s constraints. As Gary Sheffield demonstrates, Haig had no alternative but to launch the Somme offensive because the French army was facing complete collapse at Verdun. Furthermore, Haig lacked the technology needed for flexible command—portable radio communication did not exist, leaving generals reliant on runners across shell-torn ground. Crucially, Haig and the British Army climbed a steep \"learning curve\", developing creeping barrages, flash-spotting artillery, and combined-arms tank warfare that ultimately defeated the German Army in the Hundred Days Offensive of 1918. Therefore, while Clark reflects popular post-war grief, Sheffield reflects the complex reality of industrial warfare."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced historiographical judgement weighing both interpretations against criteria such as technological constraints, strategic necessity, and operational evolution.",
+                "exemplar": "While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s orthodox critique correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal \"learning curve\", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_2_historical_interpretations",
+              "type": "historical_interpretations",
+              "qNum": 4,
+              "title": "Task 4: Historiographical Debate & Leadership Evaluation",
+              "question": "How far do you agree with Interpretation 1 that General Haig was an incompetent \"donkey\" who senselessly slaughtered his troops?",
+              "interp1": {
+                "title": "Interpretation 1: Alan Clark, The Donkeys (1961)",
+                "badge": "The Orthodox Critique: Incompetent Donkeys",
+                "text": "“British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman who lived in distant comfort in French châteaux, completely out of touch with the frontline slaughter. On 1 July 1916, his stubborn refusal to change tactics condemned 57,470 men to death or injury on a single morning.”",
+                "author": "Alan Clark (British Military Historian & Politician, 1961)"
+              },
+              "interp2": {
+                "title": "Interpretation 2: Professor Gary Sheffield, Forgotten Victory (2001)",
+                "badge": "The Revisionist Defence: The Learning Curve",
+                "text": "“Haig was neither a butcher nor a bungler. He was trapped in an unprecedented industrial war where defense dominated attack. The British Army underwent a massive 'Learning Curve'. By 1918, Haig had mastered combined-arms warfare—using tanks, creeping barrages, and aircraft to smash the German Army.”",
+                "author": "Prof. Gary Sheffield (Modern Military Historian, 2001)"
+              },
+              "matrix": [
+                {
+                  "col": "1. INTERPRETATION 1 ARGUMENT",
+                  "text": "Explain Clark’s view: detached châteaux generals, cavalry obsession, and catastrophic Somme casualties."
+                },
+                {
+                  "col": "2. INTERPRETATION 2 ARGUMENT",
+                  "text": "Explain Sheffield’s view: lack of radio technology, relieving Verdun, and the tactical \"learning curve\"."
+                },
+                {
+                  "col": "3. SUSTAINED HISTORICAL VERDICT",
+                  "text": "Evaluate which interpretation is more convincing: was Haig an incompetent \"donkey\" or a modernizing general?"
+                }
+              ],
+              "connectives": [
+                "Interpretation 1 contends that Haig was...",
+                "Evidence supporting this critique includes...",
+                "In sharp contrast, Interpretation 2 argues that Haig...",
+                "This is corroborated by...",
+                "Weighing both interpretations against historical evidence, I conclude that..."
+              ],
+              "model_answer": "While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s orthodox critique correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal \"learning curve\", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing."
+            }
+          ],
           "vocab_cloze_text": "Following the Battle of the Marne in 1914, both armies dug defensive trenches, creating an unbroken 400-mile [Stalemate]. Attacking troops faced devastating machine guns and massed [Artillery] across the shell-torn expanse of [No Man's Land]. In the damp trenches, men lived in filth, suffering agonizing fungal rot called [Trench Foot] and debilitating psychological trauma known as [Shell Shock]. Believing in a war of [Attrition], British Commander-in-Chief [Field Marshal Douglas Haig] sought to bleed the enemy dry, eventually perfecting the [Creeping Barrage] to coordinate infantry with advancing curtains of artillery.",
           "video": [
             {
@@ -45657,8 +45941,79 @@
                 "question": "Were local village war memorials erected to celebrate military victory, or to provide a sacred sanctuary for unbearable family grief?"
               }
             ],
-            "source_context": "Source A (the Stubbington War Memorial shelter on the green) is a unique, emotionally resonant primary artifact situated in the pupils’ immediate local environment. Erected in 1922 over the old village pump, it was built by village carpenter Arthur Tribbeck, who had to carve his own son Harold’s name into the oak beams alongside the three Lowry brothers and Nita Madeline King. **Hinge Question:** Why is a functional wooden shelter over a village pump a far more personal and poignant memorial to local grief than a grand stone obelisk in London?"
+            "source_context": "Source A (the Stubbington War Memorial shelter on the green) is a unique, emotionally resonant primary artifact situated in the pupils’ immediate local environment. Erected in 1922 over the old village pump, it was built by village carpenter Arthur Tribbeck, who had to carve his own son Harold’s name into the oak beams alongside the three Lowry brothers and Nita Madeline King. **Hinge Question:** Why is a functional wooden shelter over a village pump a far more personal and poignant memorial to local grief than a grand stone obelisk in London?",
+            "model_answer_key": {
+              "skill": "Local Source Utility",
+              "enquiry": "How useful are Sources A and B for an enquiry into the human cost of the Great War on the village of Stubbington?",
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Surface Paraphrase & Literal Acceptance",
+                "descriptor": "Paraphrases the parish minutes or the royal scroll literally without contextual understanding of local bereavement.",
+                "exemplar": "Source A is useful because it says they decided to build a thatched shelter over the village water pump on the Green to remember 67 men. Source B is useful because it is a scroll sent to Arthur Tribbeck whose son Arthur was lost on HMS Narbrough. Both sources are useful because they show people remembering the dead."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Developed Comprehension & Generic Provenance",
+                "descriptor": "Explains what each source shows about how Stubbington remembered its war casualties, with simple comments on author reliability.",
+                "exemplar": "Source A is very useful because it shows the parish council wanted a useful memorial that provided shelter for villagers every day, rather than just on Armistice Day. This is an official council record so it accurately shows what they decided. Source B is useful because it shows the official scroll and bronze Dead Man’s Penny that the government sent to the parents of dead soldiers. Arthur Tribbeck was a local blacksmith who lost his son, which proves the war affected real families in Stubbington."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Contextualized Utility & Provenance Interrogation",
+                "descriptor": "Evaluates both sources in relation to post-war commemoration, bereavement in rural communities, and Jay Winter’s concept of \"surrogate tombs\".",
+                "exemplar": "Source A is exceptionally valuable for revealing the collective psychological response of a small Hampshire village that lost 67 young people from a parish of just 1,500. By resolving to build an open thatched shelter over the village pump, the council created a living, functional memorial. Villagers gathered at the pump daily, ensuring that the sacrifice of local lads was integrated into routine working life rather than locked away in distant cemeteries in France. However, its utility is limited because official committee minutes record administrative decisions rather than the emotional anguish of bereaved families.\n\nIn contrast, Source B illuminates that private family grief. The commemorative scroll delivered to Arthur Tribbeck honours his son Stoker Arthur Tribbeck, who drowned in the wreck of HMS Narbrough with no identifiable grave. For parents facing lifelong absence, this scroll and the accompanying \"Dead Man’s Penny\" were the only tangible tokens of their child’s existence. As historian Jay Winter argues, such artifacts functioned as \"surrogate tombs\". Therefore, Source B provides superior emotional and familial utility, while Source A documents civic communal remembrance."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced comparative judgement cross-referencing both sources against the social and cultural history of the \"Lost Generation\".",
+                "exemplar": "Both sources are profoundly valuable when cross-referenced because they capture the duality of post-war grief: the collective communal solidarity of a rural parish and the devastating personal tragedy of individual families. Source A provides exceptional insight into Stubbington’s civic mindset: the parish council deliberately rejected a martial, triumphalist stone obelisk in favour of an open thatched shelter over the village water pump. This proves that local bereavement was woven into the functional fabric of daily life—villagers would remember the 67 fallen neighbours every time they collected drinking water. However, Source A does not reveal the intimate heartbreak experienced by individual households.\n\nIn contrast, Source B provides that missing personal dimension. The commemorative scroll and bronze \"Dead Man’s Penny\" sent to village blacksmith Arthur Tribbeck for his son Stoker Arthur Tribbeck demonstrates how the state attempted to console grieving parents whose sons had no known grave. Together with the fact that Tribbeck himself helped construct the village shelter where his son’s name was carved, both sources illustrate Professor Jay Winter’s concept of memorials acting as \"surrogate tombs\". While Source B shows national commemoration entering the private home, Source A provides superior local utility by proving how Stubbington united to preserve communal memory."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_6_source_utility",
+              "type": "source_utility",
+              "qNum": 4,
+              "title": "Task 4: Local Archival Dual-Source Utility",
+              "question": "How useful are Sources A and B for an enquiry into the human cost of the Great War on the village of Stubbington?",
+              "source_a": {
+                "title": "Source A: Stubbington Parish Memorial Committee Minutes (1921)",
+                "shelfmark": "HAMPSHIRE RECORD OFFICE • FAREHAM PARISH PAPERS • 88M81/W1",
+                "text": "“Resolved: That the memorial to the 67 men of this parish shall take the form of an open thatched shelter over the village water pump on the Green. It shall provide daily rest and shelter to villagers, so that our debt to the fallen shall be remembered in every hour of daily life, and not merely on Armistice Sunday.”",
+                "clue": "Official parish council resolution proving villagers consciously chose a living, useful memorial over a remote stone pillar."
+              },
+              "source_b": {
+                "title": "Source B: Official Commemorative Scroll delivered to Arthur Tribbeck (1919)",
+                "shelfmark": "NATIONAL ARCHIVES • ADM 171/123 • ROYAL NAVY COMMEMORATIVE REGISTER",
+                "text": "“He whom this scroll commemorates was numbered with those who, at the call of King and Country, left all that was dear to them, gave up their lives for freedom. Stoker Arthur Tribbeck, Royal Navy, lost in the blizzard wreck of HMS Narbrough, January 1918.” (Accompanied by the bronze \"Dead Man’s Penny\").",
+                "clue": "Standardized national scroll issued directly to local families; demonstrates how private tragedy was honoured by the state."
+              },
+              "matrix": [
+                {
+                  "col": "1. CONTENT & INFERENCE",
+                  "text": "What do the sources reveal about how the community and bereaved families experienced loss (parish shelter vs family plaque)?"
+                },
+                {
+                  "col": "2. PROVENANCE & MOTIVE",
+                  "text": "How does the origin and purpose of each record (local village council vs national crown scroll) shape its historical value?"
+                },
+                {
+                  "col": "3. LOCAL ARCHIVAL JUDGEMENT",
+                  "text": "Which source is more useful for understanding the permanent transformation of Stubbington village after the war?"
+                }
+              ],
+              "connectives": [
+                "Source A is exceptionally valuable for revealing...",
+                "Furthermore, the choice of a thatched shelter shows...",
+                "In contrast, Source B demonstrates the intimate grief of local families such as...",
+                "Together, both sources prove that...",
+                "Ultimately, Source [A/B] is more revealing because..."
+              ],
+              "model_answer": "Both sources are profoundly valuable when cross-referenced because they capture the duality of post-war grief: the collective communal solidarity of a rural parish and the devastating personal tragedy of individual families. Source A provides exceptional insight into Stubbington’s civic mindset: the parish council deliberately rejected a martial, triumphalist stone obelisk in favour of an open thatched shelter over the village water pump. This proves that local bereavement was woven into the functional fabric of daily life—villagers would remember the 67 fallen neighbours every time they collected drinking water. However, Source A does not reveal the intimate heartbreak experienced by individual households.\n\nIn contrast, Source B provides that missing personal dimension. The commemorative scroll and bronze \"Dead Man’s Penny\" sent to village blacksmith Arthur Tribbeck for his son Stoker Arthur Tribbeck demonstrates how the state attempted to console grieving parents whose sons had no known grave. Together with the fact that Tribbeck himself helped construct the village shelter where his son’s name was carved, both sources illustrate Professor Jay Winter’s concept of memorials acting as \"surrogate tombs\". While Source B shows national commemoration entering the private home, Source A provides superior local utility by proving how Stubbington united to preserve communal memory."
+            }
+          ],
           "vocab_cloze_text": "For the Hampshire parish of Stubbington, the First World War resulted in a tragic [Lost Generation]. In 1922, the village erected a unique wooden [War Memorial] shelter over the village pump. Among the 67 names carved into the oak beams were the three sons of [Manor Way Grange]: [The Lowry Brothers], all of whom died in battle between 1915 and 1918. The memorial also records [Nita Madeline King], the only female casualty, who died of disease serving in the [QMAAC]. Families received an impersonal bronze plaque known as the [Dead Man's Penny], but for small villages, the [Demographic Depletion] of young men left an enduring void that permanently altered community life.",
           "video": [
             {
@@ -69376,8 +69731,77 @@
                 "primer": "Discuss this objective using the lesson narrative.",
                 "question": "What is the key takeaway for this objective?"
               }
-            ]
+            ],
+            "model_answer_key": {
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Paraphrase & Basic Utility",
+                "descriptor": "Simple descriptive comments paraphrasing source content without evaluating author provenance or historical utility.",
+                "exemplar": "Source A is useful because it says houses had red crosses and watchmen day and night. Source B is useful because doctors wore beaks with herbs to stop the miasma smell."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Content-Driven Explanation",
+                "descriptor": "Explains what each source shows about 1665 public health measures, identifying specific actions taken by authorities and physicians.",
+                "exemplar": "Source A is useful for showing that the Lord Mayor enforced strict quarantine on infected families for 28 days to stop contagion spreading. Source B is useful because Dr Hodges reveals that physicians wore bird-beak masks stuffed with camphor to protect against foul air, but killing cats and dogs caused the black rat population to surge."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Provenance & Contextual Analysis",
+                "descriptor": "Analyses how the nature, origin, and purpose of both sources shape their reliability and utility, linking to historical knowledge of miasma theory and municipal administration.",
+                "exemplar": "Source A is an official municipal decree from the London Metropolitan Archives. It is highly useful for proving that civic authorities took centralized control, though as official orders it does not record whether terrified citizens obeyed the lockdown. In contrast, Source B is a private eyewitness memoir by a practicing physician (Loimologia, 1672). This gives it high clinical utility because Hodges exposes the grim reality on the ground—that quarantined houses became \"living graves\" and that killing dogs caused the rat population to explode."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced comparative judgement cross-referencing both sources against specific historical knowledge to evaluate overall utility for the enquiry.",
+                "exemplar": "Both sources are exceptionally valuable when cross-referenced because together they expose the tragic paradox of 17th-century public health: sophisticated municipal quarantine coexisting with total medical ignorance of bacteriology. Source A proves London possessed the administrative machinery to padlock infected houses, station round-the-clock watchmen, and track parish fatalities through the weekly Bills of Mortality. However, Source B crucially exposes the lethal scientific flaw in this response: Dr Hodges confirms that physicians were trapped by ancient miasma theory. The municipal order to slaughter domestic pets inadvertently wiped out the natural predators of the flea-bearing black rat (Rattus rattus). While Source A demonstrates administrative resolve, Source B provides superior historical utility by revealing why municipal quarantine ultimately failed to prevent over 100,000 Londoners dying in agony."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_3_source_utility",
+              "type": "source_utility",
+              "qNum": 4,
+              "title": "Task 4: Dual-Source Utility & Provenance Investigation",
+              "question": "How useful are Sources A and B for an enquiry into how London authorities and medical practitioners attempted to control the 1665 Great Plague?",
+              "source_a": {
+                "title": "Source A: The Lord Mayor’s London Plague Orders (1665)",
+                "shelfmark": "LONDON METROPOLITAN ARCHIVES • 1665 GUILDHALL PAPERS",
+                "text": "“Every visited house shall be shut up with a red cross marked upon the middle of the door, with these words: ‘LORD HAVE MERCY UPON US.’ A watchman shall stand day and night before the door, to keep the people from coming forth. All dogs and cats shall immediately be killed.”",
+                "clue": "Official municipal decree enforcing compulsory 28-day quarantine and isolation."
+              },
+              "source_b": {
+                "title": "Source B: Dr Nathaniel Hodges, Eyewitness Doctor in London (1665)",
+                "shelfmark": "ROYAL COLLEGE OF PHYSICIANS • LOIMOLOGIA (1672)",
+                "text": "“The shut-up houses became living graves. We wore long leather robes and beaks stuffed with sweet herbs to ward off the foul miasma in the air, yet still the pestilence devoured whole streets. Killing the dogs and cats was madness, for the black rats multiplied without check.”",
+                "clue": "Eyewitness physician memoir proving belief in miasma theory and disastrous slaughter of rat predators."
+              },
+              "matrix": [
+                {
+                  "col": "1. WHAT THE SOURCES SHOW",
+                  "text": "Compare the Lord Mayor’s quarantine rules (red cross, watchmen) with Dr Hodges’ eyewitness reality (living graves, beak masks, rat explosion)."
+                },
+                {
+                  "col": "2. WHO WROTE THEM & WHY",
+                  "text": "Contrast official civic regulations aimed at enforcing public order with an insider physician’s clinical reflections on medical helplessness."
+                },
+                {
+                  "col": "3. HOW USEFUL ARE THEY?",
+                  "text": "Synthesise how both sources together demonstrate that 17th-century public health was administratively rigorous yet medically blind to bacteria and fleas."
+                }
+              ],
+              "connectives": [
+                "Source A is useful for showing that London authorities...",
+                "However, its utility is limited because official orders do not prove...",
+                "In contrast, Source B reveals the harrowing clinical reality that...",
+                "Cross-referencing both records demonstrates that 17th-century responses were...",
+                "Ultimately, Source B is more valuable for this enquiry because..."
+              ],
+              "model_answer": "Both sources are exceptionally valuable when cross-referenced because together they expose the tragic paradox of 17th-century public health: sophisticated municipal quarantine coexisting with total medical ignorance of bacteriology. Source A proves London possessed the administrative machinery to padlock infected houses, station round-the-clock watchmen, and track parish fatalities through the weekly Bills of Mortality. However, Source B crucially exposes the lethal scientific flaw in this response: Dr Hodges confirms that physicians were trapped by ancient miasma theory. The municipal order to slaughter domestic pets inadvertently wiped out the natural predators of the flea-bearing black rat (Rattus rattus). While Source A demonstrates administrative resolve, Source B provides superior historical utility by revealing why municipal quarantine ultimately failed to prevent over 100,000 Londoners dying in agony."
+            }
+          ],
           "narrative_blocks": [
             {
               "text": "The conceptual leap toward modern sanitation arrived during the Tudor period when the first flushing toilet—known as the water closet—was invented in 1596 by a brilliant but eccentric courtier named Sir John Harington. Harington designed and installed this mechanical marvel in his manor house, and later built a working model for his godmother, Queen Elizabeth I, at Richmond Palace. The device used a system of valves and a cistern of water to wash away human waste into a vault below. Yet, despite its ingenuity, almost no one adopted it. For a flushing toilet to function safely, a house required a constant, pressurized supply of running water to fill the cistern and a connection to a sprawling underground sewer system to wash the waste away. Because Early Modern London completely lacked both of these municipal networks, Harington’s visionary invention remained a useless, foul-smelling luxury isolated to the royal court.",
@@ -69755,8 +70179,77 @@
                 "primer": "Discuss this objective using the lesson narrative.",
                 "question": "What is the key takeaway for this objective?"
               }
-            ]
+            ],
+            "model_answer_key": {
+              "level_1": {
+                "marks": "1–2 Marks",
+                "title": "Emerging: Paraphrase & Basic Utility",
+                "descriptor": "Simple descriptive comments identifying what the sources say without evaluating author motive, provenance, or comparative utility.",
+                "exemplar": "Source A is useful because Dr Snow found brewery workers drank beer and did not get sick. Source B is useful because the Board of Health says cholera came from bad smells in the air."
+              },
+              "level_2": {
+                "marks": "3–4 Marks",
+                "title": "Developing: Content-Driven Explanation",
+                "descriptor": "Explains what each source shows about the Broad Street cholera debate, contrasting Snow’s empirical evidence with the Board of Health’s miasma claims.",
+                "exemplar": "Source A is useful because Dr Snow used comparative evidence: 70 brewery workers drinking beer survived while factory workers drinking pump water died, proving cholera was water-borne. Source B is useful because it shows the official government board refused to believe him, claiming that decomposing filth and hot night air caused the disease."
+              },
+              "level_3": {
+                "marks": "5–6 Marks",
+                "title": "Secure: Provenance & Contextual Analysis",
+                "descriptor": "Analyses how the nature, origin, and purpose of both sources shape their reliability and utility, contextualising why the Victorian medical establishment defended miasma theory.",
+                "exemplar": "Source A is a primary medical treatise (1855) written by Dr John Snow, a pioneer of epidemiology. It has high utility because Snow used rigorous quantitative door-to-door research to pinpoint the contaminated well, though as his own report it does not capture the intense skepticism he faced. In contrast, Source B is an official Parliamentary Report from the General Board of Health. This is exceptionally valuable for revealing why reform was delayed: senior state physicians were deeply committed to miasma theory and feared that acknowledging water transmission would render their sanitation advice invalid."
+              },
+              "level_4": {
+                "marks": "7–8 Marks",
+                "title": "Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)",
+                "descriptor": "Sustained, balanced comparative evaluation weighing empirical scientific epidemiology against institutional dogma to reach a comprehensive historical verdict.",
+                "exemplar": "Both sources are profoundly useful when evaluated in conjunction because together they capture the decisive intellectual battleground of Victorian public health: the birth of modern epidemiology colliding with entrenched institutional dogma. Source A provides primary empirical proof of water-borne transmission: Dr Snow’s identification of the Lion Brewery control group (70 workers spared due to free beer) against the devastated Eley factory demonstrates deductive scientific method at its finest. However, Source B is equally indispensable because it explains why public health reform stalled: the General Board of Health was not merely ignorant, but actively dogmatic, publishing official state reports asserting that cholera arose from \"poisonous exhalations\" and atmospheric miasma. Therefore, while Source A reveals the scientific truth that ultimately saved millions, Source B provides superior historical utility for understanding why Victorian authorities delayed comprehensive sewer legislation until the environmental crisis of the Great Stink in 1858."
+              }
+            }
           },
+          "tasks": [
+            {
+              "id": "lesson_4_source_utility",
+              "type": "source_utility",
+              "qNum": 4,
+              "title": "Task 4: Dual-Source Utility & Provenance Investigation",
+              "question": "How useful are Sources A and B for an enquiry into why Victorian medical authorities resisted John Snow’s discovery that cholera was water-borne?",
+              "source_a": {
+                "title": "Source A: Dr John Snow, On the Mode of Communication of Cholera (1855)",
+                "shelfmark": "WELLCOME HISTORICAL MEDICAL COLLECTION • SNOW REPORT (1855)",
+                "text": "“Within 250 yards of the Broad Street pump, 500 fatal attacks occurred in 10 days. Yet in the Lion Brewery in Broad Street, where 70 workmen were employed, not one died of cholera. Mr Huggins informed me that the men were allowed free beer and never drank pump water. At the Eley factory, workers drank water carried from Broad Street—and scores died.”",
+                "clue": "Empirical epidemiological evidence comparing beer drinkers with pump water drinkers to isolate the contaminated well."
+              },
+              "source_b": {
+                "title": "Source B: General Board of Health Official Report on Cholera (1854)",
+                "shelfmark": "BRITISH PARLIAMENTARY PAPERS • REPORT ON CHOLERA OUTBREAK",
+                "text": "“We see no reason to adopt Dr Snow’s belief that cholera is propagated through drinking water. The disease is caused by poisonous exhalations rising from decomposing filth and foul drains in overcrowded lanes. The impure atmosphere, especially in warm summer nights, poisons the blood of those breathing it.”",
+                "clue": "Official state medical report showing how senior physicians defended miasma theory despite Snow’s proof."
+              },
+              "matrix": [
+                {
+                  "col": "1. WHAT THE SOURCES SHOW",
+                  "text": "Contrast Snow’s quantitative proof (brewery workers spared vs factory workers dead) with the Board’s defence of atmospheric miasma."
+                },
+                {
+                  "col": "2. WHO WROTE THEM & WHY",
+                  "text": "Evaluate how Snow’s scientific field epidemiology compares with government physicians defending established medical tradition."
+                },
+                {
+                  "col": "3. HOW USEFUL ARE THEY?",
+                  "text": "Synthesise how both sources together expose the intense Victorian conflict between emerging water-borne evidence and traditional miasma dogma."
+                }
+              ],
+              "connectives": [
+                "Source A is highly useful for demonstrating that cholera was water-borne because Dr Snow discovered...",
+                "However, Source A does not explain why contemporary physicians rejected his findings...",
+                "In contrast, Source B is useful because the General Board of Health reveals that...",
+                "Cross-referencing both documents proves that medical progress was obstructed by...",
+                "On balance, both sources are indispensable together because..."
+              ],
+              "model_answer": "Both sources are profoundly useful when evaluated in conjunction because together they capture the decisive intellectual battleground of Victorian public health: the birth of modern epidemiology colliding with entrenched institutional dogma. Source A provides primary empirical proof of water-borne transmission: Dr Snow’s identification of the Lion Brewery control group (70 workers spared due to free beer) against the devastated Eley factory demonstrates deductive scientific method at its finest. However, Source B is equally indispensable because it explains why public health reform stalled: the General Board of Health was not merely ignorant, but actively dogmatic, publishing official state reports asserting that cholera arose from \"poisonous exhalations\" and atmospheric miasma. Therefore, while Source A reveals the scientific truth that ultimately saved millions, Source B provides superior historical utility for understanding why Victorian authorities delayed comprehensive sewer legislation until the environmental crisis of the Great Stink in 1858."
+            }
+          ],
           "video": {
             "title": "BBC Bitesize: Chadwick and Snow | Secondary History",
             "type": "youtube",

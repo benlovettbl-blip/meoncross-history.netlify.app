@@ -23,30 +23,51 @@ function formatText(txt) {
 }
 
 // Bespoke Bridge Tasks, Disciplinary Vocabulary Tasks, and Writing Frameworks for all 7 Great War Part 2 lessons
+// Implements the 4-Skill Disciplinary Spiral:
+// - Lesson 1: Dual-Source Utility (Edexcel Paper 1 & 3 Prep)
+// - Lesson 2: Historical Interpretations Debate (Edexcel Paper 3 Prep)
+// - Lesson 3: Historical Significance & Erasure
+// - Lesson 4: Change & Continuity Matrix
+// - Lesson 5: Causation & Analytical Narrative
+// - Lesson 6: Local Archival Dual-Source Utility (Stubbington)
+// - Lesson 7: Synoptic Capstone Synthesis
 const lessonConfigs = [
   {
     // Lesson 1: Recruitment & The Rush to the Colours (1914)
-    genre: 'Genre 1: Causal Weighting & Motivation',
-    skill: 'Causation',
+    taskType: 'source_utility',
+    genre: 'Genre 1: Source Utility & Enlistment Motivation',
+    skill: 'Dual-Source Utility',
     genreNum: 1,
     enquiryQuestion:
-      'Enquiry: Why did so many young British men volunteer to join the armed forces in 1914?',
-    structureStrip: [
+      'Enquiry: How useful are Sources A and B for an enquiry into why British men volunteered to join the army in 1914?',
+    sourceA: {
+      title: 'Source A: Parliamentary Recruiting Committee Poster (1915)',
+      shelfmark: 'IMPERIAL WAR MUSEUM • LONDON • ART.IWM PST 2763',
+      text: '“Women of Britain say—‘GO!’ Is your lad in uniform yet? If not, why not? Won’t you send him to defend your honour? There are women who would give their lives to bring their boys back from the front, but they sent them willingly.”',
+      clue: 'Provenance Clue: Official government propaganda poster designed to use domestic emotional guilt and public shame to compel men into uniform.',
+    },
+    sourceB: {
+      title: 'Source B: Diary of Private Arthur Green, Portsmouth Dockyard (August 1914)',
+      shelfmark: 'HAMPSHIRE RECORD OFFICE • WINCHESTER • 42M78/P12',
+      text: '“When the call came, four of us from the naval fitting shop marched straight down to the Town Hall to join the Pompey Pals. We feared being called slackers, but mostly we wanted to stick together with our mates. It felt like the greatest adventure of our lives.”',
+      clue: 'Provenance Clue: Private personal diary written at the time; reveals genuine peer camaraderie and fear of social disgrace among local workers.',
+    },
+    matrix: [
       {
-        col: '1. PATRIOTIC MOMENTUM & ADVENTURE',
-        text: 'Explain how Kitchener’s appeal, German atrocities in Belgium, escaping factory monotony, and the belief in a quick victory by Christmas drove the initial surge of 500,000 recruits.',
+        col: '1. CONTENT & DETAIL',
+        text: 'Analyse what each source reveals about reasons for enlisting (shame vs patriotism vs peer camaraderie).',
       },
       {
-        col: '2. SOCIAL COERCION & THE PALS',
-        text: 'Explain how the White Feather campaign, women’s emotional pressure ("Women of Britain Say GO!"), and the peer camaraderie of Pals Battalions (Pompey Pals) made staying home socially humiliating.',
+        col: '2. PROVENANCE & MOTIVE',
+        text: 'Evaluate how the origin and purpose of each source (state propaganda vs private diary) affects its reliability.',
       },
       {
-        col: '3. WEIGHING THE DECISIVE CATALYST',
-        text: 'Give your final judgment: was voluntary enlistment driven primarily by positive patriotic idealism, or by the crushing weight of domestic shame and moral guilt?',
+        col: '3. HISTORICAL JUDGEMENT',
+        text: 'Reach a reasoned conclusion: which source is more useful for understanding why ordinary men volunteered in 1914?',
       },
     ],
     connectives:
-      'A primary catalyst for the rush to enlist was... • In addition, men were profoundly influenced by... • Conversely, intense social pressure was exerted through... • Weighing the balance... • Ultimately, I conclude that voluntary enlistment was primarily driven by...',
+      'Source A is useful for showing that the state used... • However, its utility is limited because as propaganda it... • In contrast, Source B provides authentic insight into... • When cross-referenced with local Portsmouth history... • On balance, Source [A/B] is more valuable for this enquiry because...',
     vocabTask: {
       type: 'distinction',
       termA: 'British Expeditionary Force (BEF)',
@@ -57,7 +78,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'ledger',
       badge: 'Analytical Balance Sheet & Motivation Audit',
-      title: 'Task 4: The Enlistment Balance Sheet: Push Factors vs Pull Factors (1914)',
+      title: 'Task 3: The Enlistment Balance Sheet: Push Factors vs Pull Factors (1914)',
       instruction:
         'Balance the negative domestic pressures driving men into uniform against the positive incentives attracting them to join up:',
       col1Title: 'Push Factors (Domestic Pressure & Fear)',
@@ -81,26 +102,40 @@ const lessonConfigs = [
   },
   {
     // Lesson 2: Trench Warfare & The Haig Debate (1915–1916)
-    genre: 'Genre 2: Historical Interpretation & Military Evaluation',
+    taskType: 'historical_interpretations',
+    genre: 'Genre 2: Historical Interpretations & Military Leadership',
     skill: 'Historical Interpretations',
     genreNum: 2,
-    enquiryQuestion: 'Enquiry: Did British generals make the horror of trench warfare worse?',
-    structureStrip: [
+    enquiryQuestion:
+      'Enquiry: How far do you agree with Interpretation 1 that General Haig was a callous and incompetent commander?',
+    interp1: {
+      title: 'Interpretation 1: Alan Clark, The Donkeys (1961)',
+      badge: 'The Orthodox Critique: Incompetent Donkeys',
+      text: '“British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman who lived in distant comfort in French châteaux, completely out of touch with the frontline slaughter. On 1 July 1916, his stubborn refusal to change tactics condemned 57,470 men to death or injury on a single morning.”',
+      author: 'Alan Clark (British Military Historian & Politician, 1961)',
+    },
+    interp2: {
+      title: 'Interpretation 2: Professor Gary Sheffield, Forgotten Victory (2001)',
+      badge: 'The Revisionist Defence: The Learning Curve',
+      text: "“Haig was neither a butcher nor a bungler. He was trapped in an unprecedented industrial war where defense dominated attack. The British Army underwent a massive 'Learning Curve'. By 1918, Haig had mastered combined-arms warfare—using tanks, creeping barrages, and aircraft to smash the German Army.”",
+      author: 'Prof. Gary Sheffield (Modern Military Historian, 2001)',
+    },
+    matrix: [
       {
-        col: '1. THE CASE FOR THE PROSECUTION',
-        text: 'Explain the arguments against Haig: unbending belief in cavalry breakthrough, distance from the mud ("chateau generals"), repeating frontal assaults, and 57,470 casualties on 1 July 1916.',
+        col: '1. INTERPRETATION 1 ARGUMENT',
+        text: 'Explain Clark’s view: detached châteaux generals, cavalry obsession, and catastrophic Somme casualties.',
       },
       {
-        col: '2. THE CASE FOR THE DEFENCE',
-        text: 'Explain the defence of Haig: the steep "Industrial Learning Curve", relief of the French at Verdun, lack of radio communications, developing the creeping barrage, and introducing tanks.',
+        col: '2. INTERPRETATION 2 ARGUMENT',
+        text: 'Explain Sheffield’s view: lack of radio technology, relieving Verdun, and the tactical "learning curve".',
       },
       {
         col: '3. SUSTAINED HISTORICAL VERDICT',
-        text: 'Give your final evaluative judgment: were British generals incompetent "donkeys" squandering brave soldiers, or professionals caught in an unprecedented technological trap?',
+        text: 'Evaluate which interpretation is more convincing: was Haig an incompetent "donkey" or a modernizing general?',
       },
     ],
     connectives:
-      'Critics of the British military leadership contend that... • Evidence demonstrating command inflexibility includes... • In sharp contrast, revisionist historians argue that... • Crucially, commanders faced... • On balance, my historical judgment is that...',
+      'Interpretation 1 contends that Haig was... Evidence supporting this critique includes... • In sharp contrast, Interpretation 2 argues that Haig... This is corroborated by... • Weighing both interpretations against historical evidence, I conclude that...',
     vocabTask: {
       type: 'mapping',
       termA: 'War of Attrition',
@@ -111,7 +146,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'blueprint',
       badge: 'Defensive Architecture & Tactical Anatomy',
-      title: 'Task 4: Anatomy of the Western Front: The Three-Line Trench Network',
+      title: 'Task 3: Anatomy of the Western Front: The Three-Line Trench Network',
       instruction:
         'Analyse the defensive engineering and lethal vectors of the trench system below:',
       features: [
@@ -130,6 +165,7 @@ const lessonConfigs = [
   },
   {
     // Lesson 3: The Empire’s Forgotten Troops (1914–1918)
+    taskType: 'extended_writing',
     genre: 'Genre 3: Historical Significance & Historiographical Marginalisation',
     skill: 'Historical Significance',
     genreNum: 3,
@@ -161,7 +197,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'matrix',
       badge: 'Imperial Mobilisation & Disciplinary Audit',
-      title: 'Task 4: Imperial Contribution Matrix: The Global War Machine',
+      title: 'Task 3: Imperial Contribution Matrix: The Global War Machine',
       instruction:
         'Audit the scale of mobilisation, key deployments, and postwar recognition across the Empire:',
       boxes: [
@@ -196,6 +232,7 @@ const lessonConfigs = [
   },
   {
     // Lesson 4: Total War & Daily Life on the Home Front (1914–1918)
+    taskType: 'extended_writing',
     genre: 'Genre 1: Change and Continuity on the Home Front',
     skill: 'Change & Continuity',
     genreNum: 1,
@@ -227,7 +264,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'ledger',
       badge: 'Total War Balance Sheet & Social Audit',
-      title: 'Task 4: The Total War Ledger: State Expansion vs Female Emancipation',
+      title: 'Task 3: The Total War Ledger: State Expansion vs Female Emancipation',
       instruction:
         'Balance the repressive growth of state intervention against the progressive opportunities gained by women on the Home Front:',
       col1Title: 'State Coercion & Civil Control',
@@ -251,23 +288,24 @@ const lessonConfigs = [
   },
   {
     // Lesson 5: The Treaty of Versailles (1919)
+    taskType: 'extended_writing',
     genre: 'Genre 2: Causation & Geopolitical Consequences',
-    skill: 'Causation',
+    skill: 'Causation & Consequence',
     genreNum: 2,
     enquiryQuestion:
       'Enquiry: Was the Treaty of Versailles a justified peace or a fatally flawed compromise?',
     structureStrip: [
       {
-        col: '1. THE JUSTIFICATION FOR HARSH TERMS',
+        col: '1. ALLIED GRIEVANCES & CLAIMS',
         text: 'Explain Allied grievances: French devastation (1.4 million dead, industrial north ruined), Belgian occupation, the brutal German Treaty of Brest-Litovsk, and Article 231 (War Guilt).',
       },
       {
-        col: '2. THE FLAWS & GERMAN GRIEVANCE',
-        text: 'Explain why Germans viewed the treaty as a "Diktat": loss of 13% territory and 6 million citizens, £6.6 billion reparations, 100,000-man army limit, and Will Dyson’s "1940 Class" warning.',
+        col: '2. CLASHING AIMS & THE "DIKTAT"',
+        text: 'Explain why Germans viewed the treaty as an unjust Diktat: loss of 13% territory, £6.6 billion reparations, 100,000-man army limit, and Will Dyson’s "1940 Class" cartoon warning.',
       },
       {
         col: '3. SUSTAINED HISTORICAL VERDICT',
-        text: 'Formulate your judgment: was Versailles an unjust "Carthaginian peace" that made World War II inevitable, or a reasonable compromise that failed only because the Allies refused to enforce it?',
+        text: 'Formulate your judgment: was Versailles an unjust "Carthaginian peace" making WWII inevitable, or a reasonable compromise that failed only because the Allies refused to enforce it?',
       },
     ],
     connectives:
@@ -282,7 +320,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'ledger',
       badge: 'Diplomatic Crucible & Treaty Audit',
-      title: 'Task 4: The Versailles Compromise Ledger: Security vs Revenge vs Stability',
+      title: 'Task 3: The Versailles Compromise Ledger: Security vs Revenge vs Stability',
       instruction:
         'Audit the irreconcilable war aims of the Big Three leaders at the Paris Peace Conference:',
       col1Title: 'Clemenceau’s French Demands (Security & Revenge)',
@@ -306,27 +344,40 @@ const lessonConfigs = [
   },
   {
     // Lesson 6: The "Lost Generation" & Stubbington (1914–1922)
-    genre: 'Genre 3: Local Historical Case Study & Communal Remembrance',
-    skill: 'Historical Empathy & Evidence',
+    taskType: 'source_utility',
+    genre: 'Genre 3: Local Archival Evidence & Communal Memory',
+    skill: 'Local Source Utility',
     genreNum: 3,
     enquiryQuestion:
-      'Enquiry: How did the human cost of the Great War shatter and reshape our local Hampshire community of Stubbington?',
-    structureStrip: [
+      'Enquiry: How useful are Sources A and B for an enquiry into the human cost of the Great War on the village of Stubbington?',
+    sourceA: {
+      title: 'Source A: Stubbington Parish Memorial Committee Minutes (1921)',
+      shelfmark: 'HAMPSHIRE RECORD OFFICE • FAREHAM PARISH PAPERS • 88M81/W1',
+      text: '“Resolved: That the memorial to the 67 men of this parish shall take the form of an open thatched shelter over the village water pump on the Green. It shall provide daily rest and shelter to villagers, so that our debt to the fallen shall be remembered in every hour of daily life, and not merely on Armistice Sunday.”',
+      clue: 'Provenance Clue: Official parish council resolution proving villagers consciously chose a living, useful memorial over a remote stone pillar.',
+    },
+    sourceB: {
+      title: 'Source B: Official Commemorative Scroll delivered to Arthur Tribbeck (1919)',
+      shelfmark: 'NATIONAL ARCHIVES • ADM 171/123 • ROYAL NAVY COMMEMORATIVE REGISTER',
+      text: '“He whom this scroll commemorates was numbered with those who, at the call of King and Country, left all that was dear to them, gave up their lives for freedom. Stoker Arthur Tribbeck, Royal Navy, lost in the blizzard wreck of HMS Narbrough, January 1918.” (Accompanied by the bronze "Dead Man’s Penny").',
+      clue: 'Provenance Clue: Standardized national scroll issued directly to local families; demonstrates how private tragedy was honoured by the state.',
+    },
+    matrix: [
       {
-        col: '1. DEMOGRAPHIC CATASTROPHE IN STUBBINGTON',
-        text: 'Explain the devastating impact of losing 67 men from a rural village of only 1,200 people: agricultural labourers, dockyard workers, and fishermen perishing in France, Gallipoli, and at sea.',
+        col: '1. CONTENT & INFERENCE',
+        text: 'What do the sources reveal about how the community and bereaved families experienced loss (parish shelter vs family plaque)?',
       },
       {
-        col: '2. BEREAVEMENT ACROSS SOCIAL DIVISIONS',
-        text: 'Compare working-class loss (Arthur Tribbeck losing multiple sons, including the HMS Narbrough blizzard disaster) against landed gentry tragedy (the Lowry brothers of Manor Way Grange).',
+        col: '2. PROVENANCE & MOTIVE',
+        text: 'How does the origin and purpose of each record (local village council vs national crown scroll) shape its historical value?',
       },
       {
-        col: '3. ARCHITECTURE OF REMEMBRANCE & LEGACY',
-        text: 'Analyse the 1922 thatched shelter on the Green, the carved oak beams, the bronze Dead Man’s Penny, and how communal remembrance permanently altered local village identity.',
+        col: '3. LOCAL ARCHIVAL JUDGEMENT',
+        text: 'Which source is more useful for understanding the permanent transformation of Stubbington village after the war?',
       },
     ],
     connectives:
-      'The human cost of the war was felt with exceptional intimacy in Stubbington because... • Families across all social divisions suffered catastrophic loss, as shown by... • The physical architecture of remembrance on the village green proves that... • Consequently, the concept of a "lost generation"... • Overall, the local legacy was...',
+      'Source A is exceptionally valuable for revealing... • Furthermore, the choice of a thatched shelter shows... • In contrast, Source B demonstrates the intimate grief of local families such as... • Together, both sources prove that... • Ultimately, Source [A/B] is more revealing because...',
     vocabTask: {
       type: 'mapping',
       termA: 'Lost Generation',
@@ -337,7 +388,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'local_archive',
       badge: 'Local Archival Forensic Dissection: Stubbington Green',
-      title: 'Task 4: Forensic Dissection of the Stubbington War Memorial Shelter (1922)',
+      title: 'Task 3: Forensic Dissection of the Stubbington War Memorial Shelter (1922)',
       instruction: 'Examine the archival evidence from our village green and parish records below:',
       records: [
         '① <strong>The 67 Names on the Beams:</strong> Hand-carved into English oak timbers under a unique thatched roof built over the village water pump.',
@@ -355,8 +406,9 @@ const lessonConfigs = [
   },
   {
     // Lesson 7: Capstone Assessment: The Great War (1914–1919)
+    taskType: 'extended_writing',
     genre: 'Genre 4: Synoptic Historical Synthesis (Capstone Essay)',
-    skill: 'Historical Synthesis',
+    skill: 'Synoptic Historical Synthesis',
     genreNum: 4,
     enquiryQuestion:
       'Enquiry: “The First World War was a total war that completely transformed the modern world.” How far do you agree? (1914–1919)',
@@ -386,7 +438,7 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'matrix',
       badge: 'Synoptic Crucible & Master Synthesis',
-      title: 'Task 4: Synoptic Master Matrix: The Four Turning Points (1914–1919)',
+      title: 'Task 3: Synoptic Master Matrix: The Four Turning Points (1914–1919)',
       instruction:
         'Synthesise the four decisive vectors that reshaped global history between 1914 and 1919:',
       boxes: [
@@ -398,25 +450,25 @@ const lessonConfigs = [
         {
           title: '2. The Imperial & Global Dimension',
           evidence:
-            'Over 4 million soldiers and labourers from India, Africa, China, and the Caribbean mobilized to sustain the Allied front, sparking postwar anti-colonial resistance and demands for self-rule.',
+            '4 million non-white colonial troops and labourers mobilized across Europe and Africa, shattering the myth of European racial superiority and igniting global anti-colonial movements.',
         },
         {
-          title: '3. Total War on the Home Front',
+          title: '3. Total War & Domestic Mobilisation',
           evidence:
-            'DORA established unprecedented state control over food, pubs, and press. 1 million women entered munitions factories, breaking Victorian gender roles and winning the vote in 1918.',
+            'State intervention exploded via DORA, national conscription, and food rationing; over 1 million women entered heavy industry, paving the way for the 1918 voting reform.',
         },
         {
-          title: '4. The Flawed Versailles Settlement',
+          title: '4. The Flawed Geopolitical Settlement',
           evidence:
-            'The collapse of 4 historic empires left Central Europe fractured. The punitive terms of Article 231 and reparations bred intense German resentment, directly incubating World War II.',
+            'Fall of 4 empires (Romanov, Hohenzollern, Habsburg, Ottoman); fragile League of Nations established; Article 231 and reparations fostered bitter German resentment.',
         },
       ],
       prompt:
-        'Synthesise your overarching judgment: was the Great War primarily a catalyst for democratic modernization, or a senseless industrial tragedy that broke European civilization?',
+        'Evaluate which of these four vectors produced the most permanent structural change in the modern world:',
       lines: 7,
-      clue: '<em>Low-Floor Clue:</em> Notice how every modern institution—from passports and daylight saving time to women’s voting rights and blood transfusions—was shaped by the Great War.',
+      clue: '<em>Low-Floor Clue:</em> Notice how total war required governments to control every factory, newspaper, and meal, permanently ending the Victorian era of small government.',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> How does historian David Stevenson’s verdict that "the war solved none of the problems of 1914 while creating the catastrophes of 1939" balance against the social emancipation of working-class citizens?',
+        '<strong>★ Scholar’s Edge:</strong> How does historian Eric Hobsbawm’s concept of the "Age of Extremes" argue that 1914 marked the true birth of the 20th century?',
     },
   },
 ];
@@ -790,7 +842,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #ffffff;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
             <div style="display: flex; align-items: center; gap: 8px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Do Now: Spaced Retrieval</strong>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Task 1: 'Do Now' Retrieval Practice</strong>
             </div>
             <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
           </div>
@@ -826,7 +878,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         <!-- Core Vocabulary -->
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #fdfbf7;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Core Disciplinary Vocabulary</strong>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
           </div>
     `;
 
@@ -855,7 +907,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
     html += `
         </div>
 
-        <!-- Task 4 Preparation Bridge Container -->
+        <!-- Task 3 Preparation Bridge Container -->
         <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 7px 9px; background: #ffffff; margin-bottom: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 5px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -1001,14 +1053,222 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
     // ----------------------------------------------------
     // RIGHT PAGE (Recto, Odd Page Number: 5, 7, 9, 11, 13, 15, 17)
     // ----------------------------------------------------
-    html += `
+    if (cfg.taskType === 'source_utility') {
+      // ====================================================
+      // TEMPLATE A: DUAL-SOURCE UTILITY (Edexcel Papers 1 & 3)
+      // ====================================================
+      html += `
+    <div class="page page-container" id="page-${rightPageNum}">
+      <div>
+        <!-- Enquiry Question Header -->
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+              Task 4: Historical Skill: ${cfg.skill} &bull; Dual-Source Evidence
+            </div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 11.8pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
+              ${cfg.enquiryQuestion}
+            </h3>
+          </div>
+          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0; font-size: 7pt;">Edexcel Paper 1 &amp; 3 Prep</span>
+        </div>
+
+        <!-- Dual Primary Sources Box (Side-by-Side) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 5px;">
+          <!-- Source A -->
+          <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e3a8a; text-transform: uppercase;">${cfg.sourceA.title}</strong>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
+              ${cfg.sourceA.text}
+            </p>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
+              <strong>Record:</strong> ${cfg.sourceA.shelfmark}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 2px; padding: 2px 4px; line-height: 1.2;">
+              ${cfg.sourceA.clue}
+            </div>
+          </div>
+
+          <!-- Source B -->
+          <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #0369a1; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0369a1; text-transform: uppercase;">${cfg.sourceB.title}</strong>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
+              ${cfg.sourceB.text}
+            </p>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
+              <strong>Record:</strong> ${cfg.sourceB.shelfmark}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 2px; padding: 2px 4px; line-height: 1.2;">
+              ${cfg.sourceB.clue}
+            </div>
+          </div>
+        </div>
+
+        <!-- Disciplinary Planning Matrix (3 Columns) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 5px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+            ${cfg.matrix
+              .map(
+                (m) => `
+              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 1px;">${m.col}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.2; display: block;">${m.text}</span>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #475569; line-height: 1.25;">
+            <strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}
+          </div>
+        </div>
+
+        <!-- Ruled Writing Lines (13 Lines at 7.2mm line-height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
+          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+        </div>
+      </div>
+
+      <!-- Teacher Grading & Assessment Footer (Utility-Specific Rubric) -->
+      <div>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
+          <div>
+            <strong>Teacher Assessment:</strong> &nbsp;
+            Content &amp; Inference: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
+            Provenance Evaluation: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
+            Contextual Balance: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
+          </div>
+          <div>
+            <strong>Utility Grade:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
+          </div>
+        </div>
+
+        <!-- Right Page Footer -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
+          <span>Source Utility Assessment &bull; The History Portal</span>
+          <span>Page ${rightPageNum} (Facing Spread Right)</span>
+        </div>
+      </div>
+    </div>
+      `;
+    } else if (cfg.taskType === 'historical_interpretations') {
+      // ====================================================
+      // TEMPLATE B: HISTORICAL INTERPRETATIONS (Edexcel Paper 3)
+      // ====================================================
+      html += `
+    <div class="page page-container" id="page-${rightPageNum}">
+      <div>
+        <!-- Enquiry Question Header -->
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+              Task 4: Historical Skill: ${cfg.skill} &bull; Historiographical Debate
+            </div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 11.8pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
+              ${cfg.enquiryQuestion}
+            </h3>
+          </div>
+          <span class="archival-badge" style="background: #fef2f2; color: #b91c1c; border-color: #fecaca; flex-shrink: 0; font-size: 7pt;">Edexcel Paper 3 Prep</span>
+        </div>
+
+        <!-- Dual Interpretations Box (Side-by-Side) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 5px;">
+          <!-- Interpretation 1 -->
+          <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #b91c1c; text-transform: uppercase;">${cfg.interp1.title}</strong>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
+              ${cfg.interp1.text}
+            </p>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
+              <strong>Scholar:</strong> ${cfg.interp1.author}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 2px; padding: 2px 4px; line-height: 1.2;">
+              ${cfg.interp1.badge}
+            </div>
+          </div>
+
+          <!-- Interpretation 2 -->
+          <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e3a8a; text-transform: uppercase;">${cfg.interp2.title}</strong>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
+              ${cfg.interp2.text}
+            </p>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
+              <strong>Scholar:</strong> ${cfg.interp2.author}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 2px; padding: 2px 4px; line-height: 1.2;">
+              ${cfg.interp2.badge}
+            </div>
+          </div>
+        </div>
+
+        <!-- Disciplinary Planning Matrix (3 Columns) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 5px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+            ${cfg.matrix
+              .map(
+                (m) => `
+              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 1px;">${m.col}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.2; display: block;">${m.text}</span>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #475569; line-height: 1.25;">
+            <strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}
+          </div>
+        </div>
+
+        <!-- Ruled Writing Lines (13 Lines at 7.2mm line-height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
+          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+        </div>
+      </div>
+
+      <!-- Teacher Grading & Assessment Footer (Interpretations Rubric) -->
+      <div>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
+          <div>
+            <strong>Teacher Assessment:</strong> &nbsp;
+            Comprehension of Views: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
+            Deployment of Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
+            Evaluative Judgement: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
+          </div>
+          <div>
+            <strong>Debate Grade:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
+          </div>
+        </div>
+
+        <!-- Right Page Footer -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
+          <span>Interpretations Assessment &bull; The History Portal</span>
+          <span>Page ${rightPageNum} (Facing Spread Right)</span>
+        </div>
+      </div>
+    </div>
+      `;
+    } else {
+      // ====================================================
+      // TEMPLATE C: EXTENDED WRITING / NARRATIVE / CAPSTONE
+      // ====================================================
+      html += `
     <div class="page page-container" id="page-${rightPageNum}">
       <div>
         <!-- Enquiry Question Header -->
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Historical Skill: ${cfg.skill} &bull; Extended Writing
+              Task 4: Historical Skill: ${cfg.skill} &bull; Extended Writing
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 12.8pt; color: #0f172a; margin: 3px 0 0 0; line-height: 1.25;">
               ${cfg.enquiryQuestion}
@@ -1072,7 +1332,8 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
     </div>
-    `;
+      `;
+    }
   });
 
   // ==========================================

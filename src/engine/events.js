@@ -81,15 +81,22 @@ export function initEventDelegation() {
   });
 
   document.body.addEventListener('click', (e) => {
-    // Two-Sided Argument: Click-to-Insert Analytical Connectives
+    // Two-Sided Argument & Task 4: Click-to-Insert Analytical Connectives
     const connectiveChip = e.target.closest('.connective-chip');
     if (connectiveChip) {
       e.preventDefault();
       const textToInsert = connectiveChip.getAttribute('data-connective');
-      const container =
-        connectiveChip.closest('.two-sided-argument-interactive') ||
-        connectiveChip.closest('.task-box');
-      const textarea = container ? container.querySelector('textarea.interactive-textarea') : null;
+      const modalTextarea = document.getElementById('t4-modal-textarea');
+      const isModalOpen = modalTextarea && modalTextarea.offsetParent !== null;
+      let textarea = isModalOpen ? modalTextarea : null;
+      if (!textarea) {
+        const container =
+          connectiveChip.closest('.two-sided-argument-interactive') ||
+          connectiveChip.closest('.source-utility-interactive') ||
+          connectiveChip.closest('.historical-interpretations-interactive') ||
+          connectiveChip.closest('.task-box');
+        textarea = container ? container.querySelector('textarea.interactive-textarea') : null;
+      }
       if (textarea && textToInsert) {
         const start = textarea.selectionStart ?? textarea.value.length;
         const end = textarea.selectionEnd ?? textarea.value.length;
@@ -104,6 +111,7 @@ export function initEventDelegation() {
           before.length + spacerBefore.length + textToInsert.length + spacerAfter.length;
         textarea.selectionStart = textarea.selectionEnd = newPos;
         textarea.focus();
+        textarea.dispatchEvent(new Event('input', { bubbles: true }));
         connectiveChip.style.transform = 'scale(0.92)';
         connectiveChip.style.borderColor = '#b45309';
         connectiveChip.style.backgroundColor = '#fef3c7';
@@ -399,6 +407,16 @@ export function initEventDelegation() {
         break;
       case 'open-task-whiteboard':
         if (window.openTaskWhiteboard) window.openTaskWhiteboard();
+        break;
+      case 'launch-task4-workspace':
+        if (window.openTask4WorkspaceModal) {
+          window.openTask4WorkspaceModal(target.dataset.taskId, target);
+        }
+        break;
+      case 'close-task4-workspace':
+        if (window.closeTask4WorkspaceModal) {
+          window.closeTask4WorkspaceModal();
+        }
         break;
       case 'open-vocab-whiteboard':
         if (window.openVocabWhiteboardModal) window.openVocabWhiteboardModal();

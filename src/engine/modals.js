@@ -5153,3 +5153,313 @@ window.toggleGuidedReadingAudio = function () {
     audioEl.pause();
   }
 };
+
+// ==========================================
+// Task 4 Focused Interactive Workspace Modal
+// ==========================================
+let t4TimerSeconds = 900;
+let t4TimerInterval = null;
+let t4CurrentInPageTextarea = null;
+
+export function openTask4WorkspaceModal(taskId, target) {
+  const container = document.getElementById(taskId) || target?.closest('.task-box');
+  if (!container) return;
+
+  t4CurrentInPageTextarea = container.querySelector('textarea.interactive-textarea');
+  const initialText = t4CurrentInPageTextarea ? t4CurrentInPageTextarea.value : '';
+
+  // Extract Question / Title
+  const headingEl = container.querySelector('h4');
+  const questionEl = container.querySelector('[style*="border-left: 4px"]');
+  const titleText = headingEl
+    ? headingEl.textContent.trim()
+    : 'Task 4: Interactive Enquiry Workspace';
+  const promptText = questionEl ? questionEl.innerHTML : '';
+
+  // Extract Side-by-side cards
+  const gridEl = container.querySelector(
+    '[style*="grid-template-columns: repeat(auto-fit, minmax(320px"]',
+  );
+  const sourcesHtml = gridEl ? gridEl.outerHTML : '';
+
+  // Extract 3-Step Matrix
+  const matrixEl =
+    container.querySelector('[style*="3-Step"]')?.parentElement ||
+    container.querySelectorAll('[style*="border-radius: 8px"]')[0];
+  const matrixHtml = matrixEl ? matrixEl.outerHTML : '';
+
+  // Extract Connectives
+  const connectivesEl =
+    container.querySelector('[style*="Analytical Connectives"]') ||
+    container.querySelector('[style*="Historiographical Connectives"]');
+  const connectivesHtml = connectivesEl ? connectivesEl.outerHTML : '';
+
+  // Extract Model Answer
+  const modelEl = container.querySelector('details.model-paragraph-reveal');
+  const modelHtml = modelEl ? modelEl.outerHTML : '';
+
+  let modal = document.getElementById('task4-workspace-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'task4-workspace-modal';
+    document.body.appendChild(modal);
+  }
+
+  modal.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    z-index: 10005;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 16px 24px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  `;
+
+  const wordCount = initialText.trim() ? initialText.trim().split(/\s+/).length : 0;
+  const activeLesson = window.currentActiveLesson || {};
+  const mak = activeLesson.teacher_notes?.model_answer_key;
+
+  modal.innerHTML = `
+    <!-- Modal Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid rgba(255, 255, 255, 0.15); padding-bottom: 12px; flex-wrap: wrap; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="background: #2563eb; color: #ffffff; padding: 6px 12px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-rocket" style="margin-right: 6px;"></i> Task 4 Workspace
+        </span>
+        <div>
+          <h3 style="margin: 0; color: #f8fafc; font-size: 1.15rem; font-weight: 700;">${titleText}</h3>
+        </div>
+      </div>
+
+      <!-- Exam Timer Controls -->
+      <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 0, 0, 0.45); padding: 5px 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15);">
+        <span style="color: #94a3b8; font-size: 0.76rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-stopwatch" style="color: #f59e0b; margin-right: 4px;"></i> 15m Timer:
+        </span>
+        <span id="t4-timer-display" style="font-family: monospace; font-size: 1.25rem; font-weight: 800; color: #facc15; min-width: 55px; text-align: center;">15:00</span>
+        <button type="button" id="t4-timer-toggle-btn" class="btn btn-pedagogy-sm" style="padding: 3px 9px; font-size: 0.78rem; background: #2563eb; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+          <i class="fa-solid fa-play"></i> Start
+        </button>
+        <button type="button" id="t4-timer-reset-btn" class="btn btn-pedagogy-sm" style="padding: 3px 7px; font-size: 0.78rem; background: rgba(255,255,255,0.12); color: #cbd5e1; border: none; border-radius: 4px; cursor: pointer;" title="Reset Timer to 15:00">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+      </div>
+
+      <!-- Actions -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span id="t4-modal-word-count" style="color: #38bdf8; font-family: monospace; font-size: 0.9rem; font-weight: 700; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 4px 10px; border-radius: 6px;">
+          ${wordCount} Words
+        </span>
+        ${
+          mak
+            ? `
+          <button type="button" id="t4-whiteboard-rubric-btn" class="btn btn-pedagogy-sm" style="background: #f59e0b; color: #451a03; font-weight: 700; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-chalkboard"></i> Whiteboard Rubric
+          </button>
+        `
+            : ''
+        }
+        <button type="button" class="btn" data-action="close-task4-workspace" style="background: #10b981; color: #ffffff; font-weight: 700; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);">
+          <i class="fa-solid fa-check"></i> Save & Return
+        </button>
+      </div>
+    </div>
+
+    <!-- Whiteboard Rubric Overlay (Collapsible) -->
+    ${
+      mak
+        ? `
+      <div id="t4-modal-rubric-drawer" style="display: none; margin-top: 12px; background: rgba(15, 23, 42, 0.95); border: 1.5px solid #f59e0b; border-radius: 8px; padding: 14px; max-height: 220px; overflow-y: auto;">
+        <div style="font-weight: 700; color: #facc15; font-size: 0.92rem; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span><i class="fa-solid fa-award"></i> Teacher Model Answer Key &bull; Whiteboard Rubric</span>
+          <span style="font-size: 0.75rem; color: #cbd5e1;">Project on classroom board for live feedback</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px;">
+          ${['level_1', 'level_2', 'level_3', 'level_4']
+            .map((lvlKey, idx) => {
+              const lvl = mak[lvlKey];
+              if (!lvl) return '';
+              const borderCol =
+                idx === 0 ? '#94a3b8' : idx === 1 ? '#38bdf8' : idx === 2 ? '#34d399' : '#f59e0b';
+              return `
+              <div style="background: rgba(255,255,255,0.05); border: 1px solid ${borderCol}; border-radius: 6px; padding: 8px; font-size: 0.78rem;">
+                <div style="font-weight: 700; color: ${borderCol}; text-transform: uppercase;">Level ${idx + 1} (${lvl.marks || (idx === 0 ? '1–2m' : idx === 1 ? '3–4m' : idx === 2 ? '5–6m' : '7–8m')})</div>
+                <div style="color: #f1f5f9; font-weight: 600; margin: 2px 0;">${lvl.title}</div>
+                <div style="color: #cbd5e1; font-style: italic; background: rgba(0,0,0,0.3); padding: 4px 6px; border-radius: 3px; margin-top: 4px;">&ldquo;${lvl.exemplar}&rdquo;</div>
+              </div>
+            `;
+            })
+            .join('')}
+        </div>
+      </div>
+    `
+        : ''
+    }
+
+    <!-- Modal Two-Pane Workspace -->
+    <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-height: 0; margin-top: 14px;">
+      <!-- Left Column: Primary Evidence & Planning Matrix -->
+      <div style="background: #ffffff; border-radius: 8px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        ${
+          promptText
+            ? `
+          <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; padding: 8px 12px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 6px 6px 0;">
+            ${promptText}
+          </div>
+        `
+            : ''
+        }
+        ${sourcesHtml ? `<div>${sourcesHtml}</div>` : ''}
+        ${matrixHtml ? `<div>${matrixHtml}</div>` : ''}
+        ${connectivesHtml ? `<div>${connectivesHtml}</div>` : ''}
+      </div>
+
+      <!-- Right Column: Focused Pupil Writing Area -->
+      <div style="background: #ffffff; border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+          <span style="font-weight: 700; font-size: 0.9rem; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fa-solid fa-pen-nib" style="color: #2563eb; margin-right: 6px;"></i> Extended Essay Response
+          </span>
+          <span style="font-size: 0.78rem; color: #64748b; font-style: italic;">
+            <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981;"></i> Changes sync live to your workbook
+          </span>
+        </div>
+
+        <textarea id="t4-modal-textarea" style="flex: 1; width: 100%; box-sizing: border-box; resize: none; font-size: 1rem; font-family: inherit; line-height: 1.6; padding: 14px; border: 1.5px solid #cbd5e1; border-radius: 6px; outline: none; margin-bottom: 10px;" placeholder="Type your detailed, evaluative exam response here...">${initialText}</textarea>
+
+        ${
+          modelHtml
+            ? `
+          <div style="border-top: 1px solid #e2e8f0; padding-top: 8px;">
+            ${modelHtml}
+          </div>
+        `
+            : ''
+        }
+      </div>
+    </div>
+  `;
+
+  modal.style.display = 'flex';
+
+  // Wire Textarea Live Sync
+  const modalTextarea = modal.querySelector('#t4-modal-textarea');
+  const wordCountBadge = modal.querySelector('#t4-modal-word-count');
+  if (modalTextarea) {
+    modalTextarea.focus();
+    modalTextarea.addEventListener('input', () => {
+      const val = modalTextarea.value;
+      if (t4CurrentInPageTextarea) {
+        t4CurrentInPageTextarea.value = val;
+      }
+      const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+      if (wordCountBadge) wordCountBadge.textContent = `${words} Words`;
+    });
+  }
+
+  // Wire Timer
+  const timerDisplay = modal.querySelector('#t4-timer-display');
+  const timerToggleBtn = modal.querySelector('#t4-timer-toggle-btn');
+  const timerResetBtn = modal.querySelector('#t4-timer-reset-btn');
+
+  const updateTimerDisplay = () => {
+    if (!timerDisplay) return;
+    const mins = Math.floor(t4TimerSeconds / 60);
+    const secs = t4TimerSeconds % 60;
+    timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    if (t4TimerSeconds <= 120) {
+      timerDisplay.style.color = '#ef4444';
+    } else {
+      timerDisplay.style.color = '#facc15';
+    }
+  };
+
+  if (timerToggleBtn) {
+    timerToggleBtn.onclick = () => {
+      if (t4TimerInterval) {
+        clearInterval(t4TimerInterval);
+        t4TimerInterval = null;
+        timerToggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+        timerToggleBtn.style.background = '#2563eb';
+      } else {
+        timerToggleBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+        timerToggleBtn.style.background = '#e11d48';
+        t4TimerInterval = setInterval(() => {
+          if (t4TimerSeconds > 0) {
+            t4TimerSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(t4TimerInterval);
+            t4TimerInterval = null;
+            timerToggleBtn.innerHTML = '<i class="fa-solid fa-flag-checkered"></i> Done';
+            timerToggleBtn.style.background = '#10b981';
+          }
+        }, 1000);
+      }
+    };
+  }
+
+  if (timerResetBtn) {
+    timerResetBtn.onclick = () => {
+      if (t4TimerInterval) {
+        clearInterval(t4TimerInterval);
+        t4TimerInterval = null;
+      }
+      t4TimerSeconds = 900;
+      updateTimerDisplay();
+      if (timerToggleBtn) {
+        timerToggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+        timerToggleBtn.style.background = '#2563eb';
+      }
+    };
+  }
+
+  // Wire Whiteboard Rubric Toggle
+  const rubricBtn = modal.querySelector('#t4-whiteboard-rubric-btn');
+  const rubricDrawer = modal.querySelector('#t4-modal-rubric-drawer');
+  if (rubricBtn && rubricDrawer) {
+    rubricBtn.onclick = () => {
+      const isHidden = rubricDrawer.style.display === 'none';
+      rubricDrawer.style.display = isHidden ? 'block' : 'none';
+      rubricBtn.style.background = isHidden ? '#d97706' : '#f59e0b';
+    };
+  }
+
+  // Escape Key listener
+  if (!window._t4KeyHandlerAttached) {
+    window._t4KeyHandlerAttached = true;
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const m = document.getElementById('task4-workspace-modal');
+        if (m && m.style.display === 'flex') {
+          closeTask4WorkspaceModal();
+        }
+      }
+    });
+  }
+}
+
+export function closeTask4WorkspaceModal() {
+  const modal = document.getElementById('task4-workspace-modal');
+  if (modal) {
+    const modalTextarea = modal.querySelector('#t4-modal-textarea');
+    if (modalTextarea && t4CurrentInPageTextarea) {
+      t4CurrentInPageTextarea.value = modalTextarea.value;
+    }
+    if (t4TimerInterval) {
+      clearInterval(t4TimerInterval);
+      t4TimerInterval = null;
+    }
+    modal.style.display = 'none';
+  }
+}
+
+window.openTask4WorkspaceModal = openTask4WorkspaceModal;
+window.closeTask4WorkspaceModal = closeTask4WorkspaceModal;

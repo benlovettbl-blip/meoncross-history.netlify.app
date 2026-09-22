@@ -1218,7 +1218,89 @@ const early_modern_world = {
               'How does the Armada Portrait function as both religious propaganda and an imperial declaration of England’s global ambitions?',
           },
         ],
+        model_answer_key: {
+          skill: 'Dual-Source Utility',
+          enquiry:
+            'How useful are Sources A and B for an enquiry into why European powers engaged in global oceanic expansion between 1494 and 1588?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Surface Paraphrase & Literal Trust',
+            descriptor:
+              'Paraphrases the papal bull or Hakluyt literally without contextual knowledge of 16th-century religious or commercial competition.',
+            exemplar:
+              'Source A is useful because it says the Pope gave Spain lands west of the line to convert barbarous nations to Christ. Source B is useful because Richard Hakluyt says the western planting will bring profit, naval timber, sell woollen cloth and stop Philip of Spain. Both sources are useful because they show why countries explored.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Developed Comprehension & Generic Provenance',
+            descriptor:
+              'Explains the difference between religious motives and commercial/strategic motives with simple comments on author bias.',
+            exemplar:
+              'Source A is useful for showing that Spain justified its empire through religion, because Pope Alexander VI commanded them to convert native peoples to Roman Catholicism. This is an official decree so it shows the official church position. Source B is useful because Hakluyt was an adviser to Queen Elizabeth I who argued that England needed colonies to sell wool, get naval supplies, and stop Catholic Spain from dominating Europe. Hakluyt might be biased because he was trying to persuade the Queen to spend money on colonies.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Utility & Provenance Interrogation',
+            descriptor:
+              'Evaluates each source against contextual knowledge of the Reformation, Treaty of Tordesillas, and Elizabethan privateering, analyzing the impact of origin and purpose on utility.',
+            exemplar:
+              'Source A is exceptionally valuable for revealing the ideological justification of early Iberian expansion. Issued by the Borgia Pope Alexander VI, the Papal Bull and subsequent Treaty of Tordesillas (1494) established a legal and spiritual monopoly, dividing the Americas between Spain and Portugal. It demonstrates that exploration was framed as a holy crusade to convert indigenous populations before the Protestant Reformation began. However, its utility is limited because official religious decrees conceal Spain’s ruthless extraction of silver through the Potosí encomienda system.\n\nIn contrast, Source B provides indispensable insight into Protestant England’s aggressive counter-strategy. As a confidential briefing written by Richard Hakluyt for Elizabeth I, it cuts through pious religious rhetoric to reveal raw mercantilist and geopolitical objectives. Hakluyt recognized that England needed overseas colonies to solve domestic crises (unemployed "idle poor", timber shortages) and, above all, to intercept the American silver bullion funding Philip II’s armies in the Netherlands. Therefore, Source B is more useful for understanding the commercial and military rivalry that triggered England’s Atlantic voyages.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative judgement cross-referencing both sources against the geopolitical fracture between Catholic monopoly and Protestant mercantilism.',
+            exemplar:
+              'When cross-referenced, Sources A and B are profoundly useful because together they encapsulate the profound transformation of European imperial motivation across the sixteenth century. Source A illustrates the initial Iberian paradigm: a medieval, unified Christendom where papal authority legitimized vast territorial conquest through the moral imperative of Catholic conversion. However, Source B demonstrates how the Protestant Reformation fundamentally revolutionized oceanic ambition. Hakluyt’s secret briefing reveals that by 1584, exploration had become a cutthroat instrument of Protestant national security and commercial mercantilism. English voyages—spearheaded by privateers like Francis Drake and colonial advocates like Walter Raleigh—were driven not by papal decrees, but by the urgent need to undermine Spain’s silver-fuelled European hegemony and find export markets for English manufactures. While Source A captures the religious rhetoric of Catholic monopoly, Source B provides superior historical utility by exposing the economic and strategic realities that transformed the Atlantic into an imperial battleground.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_2_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Dual-Source Utility & Imperial Ideology Investigation',
+          question:
+            'How useful are Sources A and B for an enquiry into why European powers engaged in global oceanic expansion between 1494 and 1588?',
+          source_a: {
+            title: 'Source A: Papal Bull Inter Caetera & Treaty of Tordesillas (1493–1494)',
+            shelfmark: 'ARCHIVO GENERAL DE INDIAS • SEVILLE • PATRONATO 1',
+            text: '“We assign to you, Catholic Kings of Castile and Leon, all islands and mainlands discovered westward of the meridian line. We strictly command you to lead the inhabitants to embrace the Christian faith, so that the Holy Roman Catholic Church may be exalted and barbarous nations brought to the salvation of Christ.”',
+            clue: 'Official papal decree by Pope Alexander VI; reveals how Spanish imperial claims were justified by divine mandate and religious zeal.',
+          },
+          source_b: {
+            title: 'Source B: Richard Hakluyt, Discourse on Western Planting (1584)',
+            shelfmark: 'BRITISH LIBRARY • LONDON • COTTON MS TITUS B.XIII',
+            text: '“This western enterprise will yield great profit unto our realm: providing naval timber and pitch, venting our woollen cloth, and employing our idle poor. Crucially, it will check the pride of King Philip of Spain, whose gold mines in the West Indies feed his war against Protestant England.”',
+            clue: 'Secret strategic briefing for Queen Elizabeth I; emphasizes commercial profit, domestic unemployment, and geopolitical rivalry with Catholic Spain.',
+          },
+          matrix: [
+            {
+              col: '1. CONTENT & DETAIL',
+              text: 'Analyse what each source reveals about imperial motives (Catholic evangelism vs English trade profit and naval rivalry).',
+            },
+            {
+              col: '2. PROVENANCE & MOTIVE',
+              text: 'Evaluate how the authorship and purpose of each document (papal decree vs secret royal briefing) affects its historical reliability.',
+            },
+            {
+              col: '3. HISTORICAL JUDGEMENT',
+              text: 'Reach a reasoned conclusion: which source is more useful for understanding why European nations took to the Atlantic Ocean?',
+            },
+          ],
+          connectives: [
+            'Source A is useful for proving that initial oceanic claims were legitimized by...',
+            'However, its utility is limited because as an official papal bull it conceals Spain’s desire for...',
+            'In contrast, Source B provides insider insight into England’s strategic ambition to...',
+            'Cross-referencing both sources demonstrates that exploration was driven by a volatile mix of...',
+            'On balance, Source [A/B] is more valuable for this enquiry because...',
+          ],
+          model_answer:
+            'When cross-referenced, Sources A and B are profoundly useful because together they encapsulate the profound transformation of European imperial motivation across the sixteenth century. Source A illustrates the initial Iberian paradigm: a medieval, unified Christendom where papal authority legitimized vast territorial conquest through the moral imperative of Catholic conversion. However, Source B demonstrates how the Protestant Reformation fundamentally revolutionized oceanic ambition. Hakluyt’s secret briefing reveals that by 1584, exploration had become a cutthroat instrument of Protestant national security and commercial mercantilism. English voyages—spearheaded by privateers like Francis Drake and colonial advocates like Walter Raleigh—were driven not by papal decrees, but by the urgent need to undermine Spain’s silver-fuelled European hegemony and find export markets for English manufactures. While Source A captures the religious rhetoric of Catholic monopoly, Source B provides superior historical utility by exposing the economic and strategic realities that transformed the Atlantic into an imperial battleground.',
+        },
+      ],
       sources: [
         {
           letter: 'A',
@@ -2664,7 +2746,91 @@ const early_modern_world = {
               'How did the Bill of Rights of 1689 permanently prevent future British monarchs from ruling as absolute despots?',
           },
         ],
+        model_answer_key: {
+          skill: 'Historical Interpretations',
+          enquiry:
+            'How far do you agree with Interpretation 1 that the English Civil War was an inevitable constitutional battle for parliamentary liberty?',
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Simple Agreement / One-Sided Assertion',
+            descriptor:
+              'Agrees simply with Macaulay or Russell without comparing the arguments or deploying factual context.',
+            exemplar:
+              'I agree with Interpretation 1 because Lord Macaulay says Charles I was a tyrant who ruled without Parliament for eleven years and charged illegal taxes like Ship Money. The Civil War had to happen so Parliament could protect our freedom.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Two-Sided Description with Basic Evidence',
+            descriptor:
+              'Explains both the Whig and Revisionist interpretations with basic factual details from Charles I’s reign.',
+            exemplar:
+              'Interpretation 1 argues that the Civil War was an inevitable fight for freedom against Charles I’s tyranny and Personal Rule from 1629 to 1640. On the other hand, Interpretation 2 by Conrad Russell argues that war was not inevitable and that people stumbled into it because of religious fears and Charles trying to govern Scotland and Ireland. I think Interpretation 2 is more accurate because nobody planned to execute the King when the Long Parliament met in 1640.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Contextualized Historiographical Analysis',
+            descriptor:
+              "Explains why Whig and Revisionist historians reach divergent conclusions, evaluating both viewpoints against specific evidence (Ship Money, Bishops' Wars, Five Members).",
+            exemplar:
+              'Interpretation 1 is persuasive because it reflects the deep constitutional grievances of the 1630s. Charles I dissolved Parliament and ruled for eleven years (1629–1640), using archaic prerogative courts like the Star Chamber and enforcing unparliamentary Ship Money upon inland counties like Buckinghamshire. When John Hampden was prosecuted, it confirmed to MPs that Charles intended to establish French-style Catholic absolutism. For Whig historians like Macaulay, the conflict was an inevitable ideological clash between royal despotism and parliamentary sovereignty.\n\nHowever, Interpretation 2 provides a more historically accurate and nuanced analysis of why war actually broke out in 1642. As Conrad Russell and John Morrill demonstrate, the Civil War was not a planned struggle for modern democracy; in 1640, virtually every MP was a monarchist who reeled in horror at the thought of rebellion. War was triggered by an unforced "problem of three kingdoms": Charles attempted to force the English Prayer Book on Presbyterian Scotland (sparking the Bishops\' Wars), which forced him to recall Parliament, while the 1641 Irish Rebellion ignited paranoia that the King would use an army against his own MPs. Charles’s catastrophic blunder in trying to arrest the Five Members destroyed all trust. Therefore, Russell’s revisionist argument that war was an accidental breakdown of trust and religious panic is far more convincing than Macaulay’s teleological myth of inevitable democratic triumph.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced historiographical judgement weighing the Whig thesis of inevitable constitutional evolution against Revisionist contingency and the British Problem.',
+            exemplar:
+              'While Interpretation 1 eloquently captures the enduring constitutional legacy of the Civil War—the eventual triumph of parliamentary supremacy codified in the 1689 Bill of Rights—Interpretation 2 offers a vastly superior historical explanation of the events of 1640–1642. Macaulay’s Whig orthodoxy commits the classic error of teleology, reading the modern outcome of parliamentary democracy backward into seventeenth-century minds who held no such concept. In contrast, Russell’s revisionist thesis correctly identifies that the Civil War was neither inevitable nor primarily secular. It was a tragic, contingent breakdown caused by religious fanaticism (Puritan terror of Archbishop Laud’s "popish" reforms) and Charles I’s fatal unreliability as a ruler across three kingdoms. Until the botched arrest of the Five Members in January 1642, moderate MPs desperately sought compromise. War erupted not because Englishmen marched heroically toward modern liberty, but because Charles I made constitutional coexistence impossible. Therefore, Interpretation 2 is decisively more convincing.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_5_historical_interpretations',
+          type: 'historical_interpretations',
+          qNum: 4,
+          title: 'Task 4: Historiographical Debate & Constitutional Revolution',
+          question:
+            'How far do you agree with Interpretation 1 that the English Civil War was an inevitable constitutional battle for parliamentary liberty?',
+          interp1: {
+            title:
+              'Interpretation 1: Lord Macaulay & G.M. Trevelyan, The Whig Orthodoxy (1848 / 1926)',
+            badge: 'The Whig View: Inevitable March of Parliamentary Liberty',
+            text: '“The clash between King and Parliament was the grand heroic struggle of English history. Charles I was an unbending tyrant who sought to extinguish ancient liberties through illegal taxes like Ship Money and eleven years of Personal Rule. The Civil War was the inevitable, necessary triumph of parliamentary freedom, rule of law, and Protestant democracy over royal absolutism.”',
+            author: 'Lord Macaulay (Whig Historian & Statesman)',
+          },
+          interp2: {
+            title:
+              'Interpretation 2: Professor Conrad Russell & John Morrill, The Revisionist View (1990 / 1993)',
+            badge: 'The Revisionist View: An Unforced Accident & War of Religion',
+            text: '“The Civil War was neither inevitable nor primarily about modern constitutional liberty. It was a tragic, unforced breakdown caused by the personal untrustworthiness of Charles I and explosive religious fear. In 1640, nobody wanted war; England stumbled into disaster because the King failed to govern three distinct kingdoms—England, Scotland, and Ireland—simultaneously.”',
+            author: "Conrad Russell (Professor of Commonwealth History, King's College London)",
+          },
+          matrix: [
+            {
+              col: '1. INTERPRETATION 1 CLAIMS',
+              text: 'Analyse Macaulay’s Whig argument that tyranny and Ship Money made parliamentary conflict inevitable.',
+            },
+            {
+              col: '2. INTERPRETATION 2 CRITIQUE',
+              text: 'Evaluate Russell’s Revisionist counter-argument that war was an accidental crisis of religion and personal mistrust.',
+            },
+            {
+              col: '3. HISTORIOGRAPHICAL VERDICT',
+              text: "Weigh both interpretations against factual evidence (1642 Militia Ordinance, Bishops' Wars) to reach an independent verdict.",
+            },
+          ],
+          connectives: [
+            'Interpretation 1 argues that the Civil War was an inevitable result of...',
+            'This is supported by evidence such as Charles I’s eleven years of Personal Rule and...',
+            'However, Interpretation 2 directly challenges this Whig orthodoxy, maintaining that...',
+            'Russell’s thesis is reinforced by the fact that in 1640 MPs like Pym were terrified of...',
+            'On balance, Interpretation [1/2] offers a more convincing historical explanation because...',
+          ],
+          model_answer:
+            'While Interpretation 1 eloquently captures the enduring constitutional legacy of the Civil War—the eventual triumph of parliamentary supremacy codified in the 1689 Bill of Rights—Interpretation 2 offers a vastly superior historical explanation of the events of 1640–1642. Macaulay’s Whig orthodoxy commits the classic error of teleology, reading the modern outcome of parliamentary democracy backward into seventeenth-century minds who held no such concept. In contrast, Russell’s revisionist thesis correctly identifies that the Civil War was neither inevitable nor primarily secular. It was a tragic, contingent breakdown caused by religious fanaticism (Puritan terror of Archbishop Laud’s "popish" reforms) and Charles I’s fatal unreliability as a ruler across three kingdoms. Until the botched arrest of the Five Members in January 1642, moderate MPs desperately sought compromise. War erupted not because Englishmen marched heroically toward modern liberty, but because Charles I made constitutional coexistence impossible. Therefore, Interpretation 2 is decisively more convincing.',
+        },
+      ],
       sources: [
         {
           letter: 'A',

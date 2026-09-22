@@ -1072,7 +1072,86 @@ const water_and_sanitation = {
             question: 'What is the key takeaway for this objective?',
           },
         ],
+        model_answer_key: {
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Paraphrase & Basic Utility',
+            descriptor:
+              'Simple descriptive comments paraphrasing source content without evaluating author provenance or historical utility.',
+            exemplar:
+              'Source A is useful because it says houses had red crosses and watchmen day and night. Source B is useful because doctors wore beaks with herbs to stop the miasma smell.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Content-Driven Explanation',
+            descriptor:
+              'Explains what each source shows about 1665 public health measures, identifying specific actions taken by authorities and physicians.',
+            exemplar:
+              'Source A is useful for showing that the Lord Mayor enforced strict quarantine on infected families for 28 days to stop contagion spreading. Source B is useful because Dr Hodges reveals that physicians wore bird-beak masks stuffed with camphor to protect against foul air, but killing cats and dogs caused the black rat population to surge.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Provenance & Contextual Analysis',
+            descriptor:
+              'Analyses how the nature, origin, and purpose of both sources shape their reliability and utility, linking to historical knowledge of miasma theory and municipal administration.',
+            exemplar:
+              'Source A is an official municipal decree from the London Metropolitan Archives. It is highly useful for proving that civic authorities took centralized control, though as official orders it does not record whether terrified citizens obeyed the lockdown. In contrast, Source B is a private eyewitness memoir by a practicing physician (Loimologia, 1672). This gives it high clinical utility because Hodges exposes the grim reality on the ground—that quarantined houses became "living graves" and that killing dogs caused the rat population to explode.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative judgement cross-referencing both sources against specific historical knowledge to evaluate overall utility for the enquiry.',
+            exemplar:
+              'Both sources are exceptionally valuable when cross-referenced because together they expose the tragic paradox of 17th-century public health: sophisticated municipal quarantine coexisting with total medical ignorance of bacteriology. Source A proves London possessed the administrative machinery to padlock infected houses, station round-the-clock watchmen, and track parish fatalities through the weekly Bills of Mortality. However, Source B crucially exposes the lethal scientific flaw in this response: Dr Hodges confirms that physicians were trapped by ancient miasma theory. The municipal order to slaughter domestic pets inadvertently wiped out the natural predators of the flea-bearing black rat (Rattus rattus). While Source A demonstrates administrative resolve, Source B provides superior historical utility by revealing why municipal quarantine ultimately failed to prevent over 100,000 Londoners dying in agony.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_3_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Dual-Source Utility & Provenance Investigation',
+          question:
+            'How useful are Sources A and B for an enquiry into how London authorities and medical practitioners attempted to control the 1665 Great Plague?',
+          source_a: {
+            title: 'Source A: The Lord Mayor’s London Plague Orders (1665)',
+            shelfmark: 'LONDON METROPOLITAN ARCHIVES • 1665 GUILDHALL PAPERS',
+            text: '“Every visited house shall be shut up with a red cross marked upon the middle of the door, with these words: ‘LORD HAVE MERCY UPON US.’ A watchman shall stand day and night before the door, to keep the people from coming forth. All dogs and cats shall immediately be killed.”',
+            clue: 'Official municipal decree enforcing compulsory 28-day quarantine and isolation.',
+          },
+          source_b: {
+            title: 'Source B: Dr Nathaniel Hodges, Eyewitness Doctor in London (1665)',
+            shelfmark: 'ROYAL COLLEGE OF PHYSICIANS • LOIMOLOGIA (1672)',
+            text: '“The shut-up houses became living graves. We wore long leather robes and beaks stuffed with sweet herbs to ward off the foul miasma in the air, yet still the pestilence devoured whole streets. Killing the dogs and cats was madness, for the black rats multiplied without check.”',
+            clue: 'Eyewitness physician memoir proving belief in miasma theory and disastrous slaughter of rat predators.',
+          },
+          matrix: [
+            {
+              col: '1. WHAT THE SOURCES SHOW',
+              text: 'Compare the Lord Mayor’s quarantine rules (red cross, watchmen) with Dr Hodges’ eyewitness reality (living graves, beak masks, rat explosion).',
+            },
+            {
+              col: '2. WHO WROTE THEM & WHY',
+              text: 'Contrast official civic regulations aimed at enforcing public order with an insider physician’s clinical reflections on medical helplessness.',
+            },
+            {
+              col: '3. HOW USEFUL ARE THEY?',
+              text: 'Synthesise how both sources together demonstrate that 17th-century public health was administratively rigorous yet medically blind to bacteria and fleas.',
+            },
+          ],
+          connectives: [
+            'Source A is useful for showing that London authorities...',
+            'However, its utility is limited because official orders do not prove...',
+            'In contrast, Source B reveals the harrowing clinical reality that...',
+            'Cross-referencing both records demonstrates that 17th-century responses were...',
+            'Ultimately, Source B is more valuable for this enquiry because...',
+          ],
+          model_answer:
+            'Both sources are exceptionally valuable when cross-referenced because together they expose the tragic paradox of 17th-century public health: sophisticated municipal quarantine coexisting with total medical ignorance of bacteriology. Source A proves London possessed the administrative machinery to padlock infected houses, station round-the-clock watchmen, and track parish fatalities through the weekly Bills of Mortality. However, Source B crucially exposes the lethal scientific flaw in this response: Dr Hodges confirms that physicians were trapped by ancient miasma theory. The municipal order to slaughter domestic pets inadvertently wiped out the natural predators of the flea-bearing black rat (Rattus rattus). While Source A demonstrates administrative resolve, Source B provides superior historical utility by revealing why municipal quarantine ultimately failed to prevent over 100,000 Londoners dying in agony.',
+        },
+      ],
       narrative_blocks: [
         {
           text: 'The conceptual leap toward modern sanitation arrived during the Tudor period when the first flushing toilet—known as the water closet—was invented in 1596 by a brilliant but eccentric courtier named Sir John Harington. Harington designed and installed this mechanical marvel in his manor house, and later built a working model for his godmother, Queen Elizabeth I, at Richmond Palace. The device used a system of valves and a cistern of water to wash away human waste into a vault below. Yet, despite its ingenuity, almost no one adopted it. For a flushing toilet to function safely, a house required a constant, pressurized supply of running water to fill the cistern and a connection to a sprawling underground sewer system to wash the waste away. Because Early Modern London completely lacked both of these municipal networks, Harington’s visionary invention remained a useless, foul-smelling luxury isolated to the royal court.',
@@ -1487,7 +1566,86 @@ const water_and_sanitation = {
             question: 'What is the key takeaway for this objective?',
           },
         ],
+        model_answer_key: {
+          level_1: {
+            marks: '1–2 Marks',
+            title: 'Emerging: Paraphrase & Basic Utility',
+            descriptor:
+              'Simple descriptive comments identifying what the sources say without evaluating author motive, provenance, or comparative utility.',
+            exemplar:
+              'Source A is useful because Dr Snow found brewery workers drank beer and did not get sick. Source B is useful because the Board of Health says cholera came from bad smells in the air.',
+          },
+          level_2: {
+            marks: '3–4 Marks',
+            title: 'Developing: Content-Driven Explanation',
+            descriptor:
+              'Explains what each source shows about the Broad Street cholera debate, contrasting Snow’s empirical evidence with the Board of Health’s miasma claims.',
+            exemplar:
+              'Source A is useful because Dr Snow used comparative evidence: 70 brewery workers drinking beer survived while factory workers drinking pump water died, proving cholera was water-borne. Source B is useful because it shows the official government board refused to believe him, claiming that decomposing filth and hot night air caused the disease.',
+          },
+          level_3: {
+            marks: '5–6 Marks',
+            title: 'Secure: Provenance & Contextual Analysis',
+            descriptor:
+              'Analyses how the nature, origin, and purpose of both sources shape their reliability and utility, contextualising why the Victorian medical establishment defended miasma theory.',
+            exemplar:
+              'Source A is a primary medical treatise (1855) written by Dr John Snow, a pioneer of epidemiology. It has high utility because Snow used rigorous quantitative door-to-door research to pinpoint the contaminated well, though as his own report it does not capture the intense skepticism he faced. In contrast, Source B is an official Parliamentary Report from the General Board of Health. This is exceptionally valuable for revealing why reform was delayed: senior state physicians were deeply committed to miasma theory and feared that acknowledging water transmission would render their sanitation advice invalid.',
+          },
+          level_4: {
+            marks: '7–8 Marks',
+            title: 'Mastery: Evaluative Synthesis & Historical Judgement (Target Exemplar)',
+            descriptor:
+              'Sustained, balanced comparative evaluation weighing empirical scientific epidemiology against institutional dogma to reach a comprehensive historical verdict.',
+            exemplar:
+              'Both sources are profoundly useful when evaluated in conjunction because together they capture the decisive intellectual battleground of Victorian public health: the birth of modern epidemiology colliding with entrenched institutional dogma. Source A provides primary empirical proof of water-borne transmission: Dr Snow’s identification of the Lion Brewery control group (70 workers spared due to free beer) against the devastated Eley factory demonstrates deductive scientific method at its finest. However, Source B is equally indispensable because it explains why public health reform stalled: the General Board of Health was not merely ignorant, but actively dogmatic, publishing official state reports asserting that cholera arose from "poisonous exhalations" and atmospheric miasma. Therefore, while Source A reveals the scientific truth that ultimately saved millions, Source B provides superior historical utility for understanding why Victorian authorities delayed comprehensive sewer legislation until the environmental crisis of the Great Stink in 1858.',
+          },
+        },
       },
+      tasks: [
+        {
+          id: 'lesson_4_source_utility',
+          type: 'source_utility',
+          qNum: 4,
+          title: 'Task 4: Dual-Source Utility & Provenance Investigation',
+          question:
+            'How useful are Sources A and B for an enquiry into why Victorian medical authorities resisted John Snow’s discovery that cholera was water-borne?',
+          source_a: {
+            title: 'Source A: Dr John Snow, On the Mode of Communication of Cholera (1855)',
+            shelfmark: 'WELLCOME HISTORICAL MEDICAL COLLECTION • SNOW REPORT (1855)',
+            text: '“Within 250 yards of the Broad Street pump, 500 fatal attacks occurred in 10 days. Yet in the Lion Brewery in Broad Street, where 70 workmen were employed, not one died of cholera. Mr Huggins informed me that the men were allowed free beer and never drank pump water. At the Eley factory, workers drank water carried from Broad Street—and scores died.”',
+            clue: 'Empirical epidemiological evidence comparing beer drinkers with pump water drinkers to isolate the contaminated well.',
+          },
+          source_b: {
+            title: 'Source B: General Board of Health Official Report on Cholera (1854)',
+            shelfmark: 'BRITISH PARLIAMENTARY PAPERS • REPORT ON CHOLERA OUTBREAK',
+            text: '“We see no reason to adopt Dr Snow’s belief that cholera is propagated through drinking water. The disease is caused by poisonous exhalations rising from decomposing filth and foul drains in overcrowded lanes. The impure atmosphere, especially in warm summer nights, poisons the blood of those breathing it.”',
+            clue: 'Official state medical report showing how senior physicians defended miasma theory despite Snow’s proof.',
+          },
+          matrix: [
+            {
+              col: '1. WHAT THE SOURCES SHOW',
+              text: 'Contrast Snow’s quantitative proof (brewery workers spared vs factory workers dead) with the Board’s defence of atmospheric miasma.',
+            },
+            {
+              col: '2. WHO WROTE THEM & WHY',
+              text: 'Evaluate how Snow’s scientific field epidemiology compares with government physicians defending established medical tradition.',
+            },
+            {
+              col: '3. HOW USEFUL ARE THEY?',
+              text: 'Synthesise how both sources together expose the intense Victorian conflict between emerging water-borne evidence and traditional miasma dogma.',
+            },
+          ],
+          connectives: [
+            'Source A is highly useful for demonstrating that cholera was water-borne because Dr Snow discovered...',
+            'However, Source A does not explain why contemporary physicians rejected his findings...',
+            'In contrast, Source B is useful because the General Board of Health reveals that...',
+            'Cross-referencing both documents proves that medical progress was obstructed by...',
+            'On balance, both sources are indispensable together because...',
+          ],
+          model_answer:
+            'Both sources are profoundly useful when evaluated in conjunction because together they capture the decisive intellectual battleground of Victorian public health: the birth of modern epidemiology colliding with entrenched institutional dogma. Source A provides primary empirical proof of water-borne transmission: Dr Snow’s identification of the Lion Brewery control group (70 workers spared due to free beer) against the devastated Eley factory demonstrates deductive scientific method at its finest. However, Source B is equally indispensable because it explains why public health reform stalled: the General Board of Health was not merely ignorant, but actively dogmatic, publishing official state reports asserting that cholera arose from "poisonous exhalations" and atmospheric miasma. Therefore, while Source A reveals the scientific truth that ultimately saved millions, Source B provides superior historical utility for understanding why Victorian authorities delayed comprehensive sewer legislation until the environmental crisis of the Great Stink in 1858.',
+        },
+      ],
       video: {
         title: 'BBC Bitesize: Chadwick and Snow | Secondary History',
         type: 'youtube',

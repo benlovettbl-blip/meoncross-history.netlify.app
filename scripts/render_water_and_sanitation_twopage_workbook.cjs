@@ -93,7 +93,7 @@ const revisionQuips = [
   '"Medieval monks washed in filtered spring water while townspeople drank from polluted rivers."', // Page 6
   '"Connectives turn facts into explanations: Consequently, As a result, Because of this..."', // Page 7
   '"The plague doctor’s beak was packed with herbs because people believed bad smells caused plague."', // Page 8
-  '"Use PEEL paragraphs to give your historical answer a strong, clear structure."', // Page 9
+  '"When assessing source utility, always ask: what does it reveal, who created it, and what are its limits?"', // Page 9
   '"Chadwick proved that filthy slums were not just cruel—they cost taxpayers a fortune."', // Page 10
   '"Support your explanation with named people, dates, and historical facts."', // Page 11
   '"John Snow mapped cholera deaths bar by bar to prove the water was poisoning Soho."', // Page 12
@@ -259,11 +259,12 @@ const lessonConfigs = [
   {
     // Lesson 3: Early Modern Filth & The Great Plague of 1665
     lessonNum: 3,
-    skill: 'Change & Continuity',
+    taskType: 'source_utility',
+    skill: 'Source Utility',
     title:
       'How did London’s growth create deadly filth, and how did people react to the 1665 Great Plague?',
     inquiryQuestion:
-      'Did public health improve during Tudor and Stuart times, or did overcrowding make towns more dangerous?',
+      'How useful are Sources A and B for an enquiry into how 17th-century London fought the Great Plague of 1665?',
     doNow: [
       { q: 'What night-workers were paid to empty human waste from medieval cesspits?' },
       { q: 'What was the Latin word for bad, poisonous air that people blamed for illness?' },
@@ -298,26 +299,38 @@ const lessonConfigs = [
       scholarsEdge:
         'Challenge Question: How does the plague doctor’s herb-filled beak prove that doctors in 1665 still had no idea what truly caused disease?',
     },
+    sourceA: {
+      title: 'Source A: The Lord Mayor’s London Plague Orders (1665)',
+      shelfmark: 'LONDON METROPOLITAN ARCHIVES • 1665 GUILDHALL PAPERS',
+      text: '“Every visited house shall be shut up with a red cross marked upon the middle of the door, with these words: ‘LORD HAVE MERCY UPON US.’ A watchman shall stand day and night before the door, to keep the people from coming forth. All dogs and cats shall immediately be killed.”',
+      clue: 'Year 7 Clue: Official government rules showing how the city tried to quarantine sick families by force.',
+    },
+    sourceB: {
+      title: 'Source B: Dr Nathaniel Hodges, Eyewitness Doctor in London (1665)',
+      shelfmark: 'ROYAL COLLEGE OF PHYSICIANS • LOIMOLOGIA (1672)',
+      text: '“The shut-up houses became living graves. We wore long leather robes and beaks stuffed with sweet herbs to ward off the foul miasma in the air, yet still the pestilence devoured whole streets. Killing the dogs and cats was madness, for the black rats multiplied without check.”',
+      clue: 'Year 7 Clue: Eyewitness diary from a real doctor proving they believed in miasma and did not understand fleas and germs.',
+    },
     structureStrip: [
       {
-        col: '1. CROWDED SQUALOR',
-        prompt: 'Wooden shacks, open Fleet Ditch, cesspools under floorboards, and poor drainage.',
+        col: '1. WHAT THE SOURCES SHOW',
+        prompt:
+          'What actions did the Lord Mayor and doctors take in 1665 (quarantine, red crosses, beak masks)?',
       },
       {
-        col: '2. INVENTIONS & FAILURE',
-        prompt:
-          'Sir John Harington’s 1596 flushing toilet failed because towns had no running water.',
+        col: '2. WHO WROTE THEM & WHY',
+        prompt: "Compare the official government orders to an eyewitness doctor's diary.",
       },
       {
-        col: '3. YOUR CONCLUSION',
+        col: '3. HOW USEFUL ARE THEY?',
         prompt:
-          'Did red crosses and quarantine show government care, or panic and medical ignorance?',
+          'How do both sources prove that 17th-century people did not understand bacteria and fleas?',
       },
     ],
     wordBank:
-      'Plague Doctor • Red Cross • Quarantine • Sir John Harington • Ajax toilet • Fleet Ditch • 1665 Great Plague • Watchmen',
+      'Plague Doctor • Red Cross • Quarantine • Dr Hodges • Lord Mayor Orders • Miasma • Black Rats • Watchmen',
     connectives:
-      'Tudor and Stuart London grew dangerously filthy because... • Although Harington invented the flushing toilet... • In 1665, the authorities reacted by... • Overall, I judge that...',
+      'Source A is useful for showing that London authorities used quarantine because... • However, it only shows the official rules, not whether people obeyed them. • In contrast, Source B is useful because Dr Hodges was an eyewitness who saw... • Together, both sources are valuable because they prove...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 3: 1596–1665). In the sketchpad, draw the plague doctor’s long-beaked mask or the red cross with ‘Lord Have Mercy Upon Us’.',
   },
@@ -405,10 +418,11 @@ const lessonConfigs = [
   {
     // Lesson 5: John Snow, Cholera & The 1854 Broad Street Pump
     lessonNum: 5,
-    skill: 'Scientific Methodology',
+    taskType: 'source_utility',
+    skill: 'Source Utility',
     title: 'How did Dr John Snow prove that cholera was spread by contaminated drinking water?',
     inquiryQuestion:
-      'Did Dr John Snow’s shoe-leather detective work defeat cholera immediately, or did miasma theory hold Britain back?',
+      'How useful are Sources A and B for an enquiry into whether Victorians believed cholera was caused by water or bad air (miasma)?',
     doNow: [
       { q: 'In what year did Edwin Chadwick publish his famous Sanitary Report?' },
       { q: 'What was the average life expectancy of a Manchester worker in 1842?' },
@@ -444,25 +458,39 @@ const lessonConfigs = [
       scholarsEdge:
         'Challenge Question: How did John Snow’s map create the modern science of epidemiology (tracking disease outbreaks)?',
     },
+    sourceA: {
+      title: 'Source A: Dr John Snow, On the Mode of Communication of Cholera (1855)',
+      shelfmark: 'WELLCOME HISTORICAL MEDICAL COLLECTION • SNOW REPORT (1855)',
+      text: '“Within 250 yards of the Broad Street pump, 500 fatal attacks occurred in 10 days. Yet in the Lion Brewery in Broad Street, where 70 workmen were employed, not one died of cholera. Mr Huggins informed me that the men were allowed free beer and never drank pump water. At the Eley factory, workers drank water carried from Broad Street—and scores died.”',
+      clue: 'Year 7 Clue: Scientific detective proof comparing beer drinkers and pump water drinkers to pinpoint the contaminated well.',
+    },
+    sourceB: {
+      title: 'Source B: General Board of Health Official Report on Cholera (1854)',
+      shelfmark: 'BRITISH PARLIAMENTARY PAPERS • REPORT ON CHOLERA OUTBREAK',
+      text: '“We see no reason to adopt Dr Snow’s belief that cholera is propagated through drinking water. The disease is caused by poisonous exhalations rising from decomposing filth and foul drains in overcrowded lanes. The impure atmosphere, especially in warm summer nights, poisons the blood of those breathing it.”',
+      clue: 'Year 7 Clue: Official government report proving top Victorian doctors stubbornly defended miasma theory despite Snow’s proof.',
+    },
     structureStrip: [
       {
-        col: '1. THE CHOLERA PANIC',
-        prompt: 'Sudden deaths, blue skin, dehydration, and terrifying miasma beliefs.',
-      },
-      {
-        col: '2. DETECTIVE EVIDENCE',
-        prompt: 'Door-to-door interviews, spot map bars, and brewery vs pump drinkers.',
-      },
-      {
-        col: '3. YOUR CONCLUSION',
+        col: '1. WHAT THE SOURCES SHOW',
         prompt:
-          'Did removing the pump handle convince Britain, or did doctors stubbornly resist changing their minds?',
+          'Contrast Snow’s evidence (brewery workers spared vs factory workers dead) with the Board’s miasma claims.',
+      },
+      {
+        col: '2. WHO WROTE THEM & WHY',
+        prompt:
+          'Compare Snow’s door-to-door scientific investigation with the Board of Health defending traditional medical beliefs.',
+      },
+      {
+        col: '3. HOW USEFUL ARE THEY?',
+        prompt:
+          'How do both sources prove that even with solid evidence, Victorians struggled to abandon miasma theory?',
       },
     ],
     wordBank:
-      'Dr John Snow • Broad Street pump • Asiatic Cholera • Spot Map • Lion Brewery • Soho • Epidemiology • Miasma',
+      'Dr John Snow • Broad Street pump • Lion Brewery • General Board of Health • Miasma Theory • Water-Borne • Contaminated well • Epidemiology',
     connectives:
-      'When cholera struck Soho in 1854, most doctors believed... • However, Dr John Snow acted like a detective by... • His crucial breakthrough came when he noticed... • Consequently, Snow proved that...',
+      'Source A is highly useful for proving that cholera was water-borne because Dr Snow discovered... • However, Source A does not explain why other doctors doubted him. • In contrast, Source B is useful because the Board of Health reveals that authorities still believed... • Together, both sources are valuable because they show that scientific breakthroughs...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 5: 1854). In the sketchpad, sketch the famous iron Broad Street pump with its handle removed, or the black bars marking cholera deaths.',
   },
@@ -544,7 +572,7 @@ const lessonConfigs = [
 // Verso: Q1 = 4 lines; Q2 fills remaining height to clue footer (gap <= 20px)
 const versoQ2Lines = [12, 11, 11, 9, 11, 10];
 // Recto: Essay writing lines docking directly above Timeline Mission box (gap <= 20px)
-const rectoWritingLines = [25, 25, 26, 25, 25, 25];
+const rectoWritingLines = [25, 25, 21, 25, 20, 25];
 
 // Timeline Milestones across Pages 2 & 3 (3 Milestones per page, 100% full-width cards)
 const timelineMilestones = [
@@ -1264,11 +1292,121 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
         ${renderFooterStrip(leftPageNum, revisionQuips[leftPageNum - 1], 16)}
       </div>
     </div>
+`;
 
-    <!-- ------------------------------------------------------------------ -->
-    <!-- RIGHT PAGE (RECTO): Extended Enquiry Writing                        -->
-    <!-- Zero DIRT box • Timeline Mission Box at foot                       -->
-    <!-- ------------------------------------------------------------------ -->
+    // ------------------------------------------------------------------
+    // RIGHT PAGE (RECTO): Task 4 Extended Enquiry Writing / Utility
+    // Zero DIRT box • Timeline Mission Box at foot
+    // ------------------------------------------------------------------
+    if (cfg.taskType === 'source_utility') {
+      html += `
+    <div class="page page-container" id="page-${rightPageNum}">
+      <div class="page-body-full" style="justify-content: space-between;">
+        <div>
+          <!-- Enquiry Header -->
+          <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between; align-items: baseline;">
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.8px; color: #444; font-weight: 800;">
+                Unit: Water &amp; Sanitation &bull; Lesson ${cfg.lessonNum} &bull; Focus: ${cfg.skill}
+              </div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
+                Task 4: Source Utility &bull; ${cfg.inquiryQuestion}
+              </h3>
+            </div>
+            <span class="badge" style="background: #eff6ff; color: #1e3a8a; border-color: #1e3a8a;">Source Utility</span>
+          </div>
+
+          <!-- Dual Primary Sources Box (Side-by-Side with Year 7 Guided Clues) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 3px;">
+            <!-- Source A -->
+            <div style="border: 1.2px solid #000; border-top: 3px solid #1e3a8a; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; display: block; margin-bottom: 1px;">${cfg.sourceA.title}</strong>
+              <p style="font-family: 'Georgia', serif; font-size: 7.3pt; color: #111; font-style: italic; margin: 0 0 2px 0; line-height: 1.18;">
+                ${cfg.sourceA.text}
+              </p>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #555; border-top: 1px dotted #ccc; padding-top: 1px; margin-bottom: 1px;">
+                <strong>Record:</strong> ${cfg.sourceA.shelfmark}
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 2px; padding: 1px 3px; line-height: 1.15;">
+                ${cfg.sourceA.clue}
+              </div>
+            </div>
+
+            <!-- Source B -->
+            <div style="border: 1.2px solid #000; border-top: 3px solid #0369a1; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0369a1; text-transform: uppercase; display: block; margin-bottom: 1px;">${cfg.sourceB.title}</strong>
+              <p style="font-family: 'Georgia', serif; font-size: 7.3pt; color: #111; font-style: italic; margin: 0 0 2px 0; line-height: 1.18;">
+                ${cfg.sourceB.text}
+              </p>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #555; border-top: 1px dotted #ccc; padding-top: 1px; margin-bottom: 1px;">
+                <strong>Record:</strong> ${cfg.sourceB.shelfmark}
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 2px; padding: 1px 3px; line-height: 1.15;">
+                ${cfg.sourceB.clue}
+              </div>
+            </div>
+          </div>
+
+          <!-- 3-Column Planning Matrix with Dotted Planning Lines -->
+          <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 5px; background: #fdfbf7; margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 2px; display: flex; justify-content: space-between;">
+              <span>Planning Your Utility Answer: 3 Steps</span>
+              <span style="color: #555; font-weight: 600;">Draft quick bullet points below &darr;</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+              ${cfg.structureStrip
+                .map(
+                  (col) => `
+                <div style="border: 1px solid #000; border-radius: 2px; padding: 2px 4px; background: #ffffff;">
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #000; display: block; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-bottom: 1px;">${col.col}</strong>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #333; line-height: 1.15; display: block; margin-bottom: 1px;">${col.prompt}</span>
+                  <div class="task-line-dotted"></div>
+                  <div class="task-line-dotted"></div>
+                </div>
+              `,
+                )
+                .join('')}
+            </div>
+          </div>
+
+          <!-- Key Words & Connectives Strip -->
+          <div style="border: 1px solid #000; background: #ffffff; border-radius: 3px; padding: 2px 5px; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
+            <div><strong>Key Words:</strong> ${cfg.wordBank}</div>
+            <div style="border-top: 1px dashed #ccc; padding-top: 1px; margin-top: 1px; color: #444; font-style: italic;">
+              <strong>Sentence Starters:</strong> ${cfg.connectives}
+            </div>
+          </div>
+
+          <!-- Writing Guide (Source Utility: Content • Provenance • Knowledge • Utility) -->
+          <div style="background: #f0fdf4; border: 1px solid #000; border-radius: 2px; padding: 1.5px 5px; margin-bottom: 3px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000;">
+            <span><strong>[C] Content:</strong> What factual details does the source give?</span>
+            <span><strong>[P] Provenance:</strong> Who wrote it, when, and why?</span>
+            <span><strong>[K] Knowledge:</strong> Own facts about this event.</span>
+            <span><strong>[U] Utility:</strong> How useful is it for our enquiry?</span>
+          </div>
+
+          <!-- Ruled Writing Lines (${rectoWritingLines[idx]} Full Lines at 7.0mm) -->
+          <div style="margin-bottom: 2px;">
+            ${Array(rectoWritingLines[idx]).fill('<div class="task-line"></div>').join('\n            ')}
+          </div>
+        </div>
+
+        <!-- Timeline Mission Box (Connecting Essay back to Pages 2–3) -->
+        <div style="border: 1.2px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fdfbf7; margin-top: auto; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 1px;">
+            Timeline Mission &bull; Pages 2–3
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #111; line-height: 1.2;">
+            ${cfg.timelineMission}
+          </div>
+        </div>
+
+        ${renderFooterStrip(rightPageNum, revisionQuips[rightPageNum - 1], 16)}
+      </div>
+    </div>
+`;
+    } else {
+      html += `
     <div class="page page-container" id="page-${rightPageNum}">
       <div class="page-body-full" style="justify-content: space-between;">
         <div>
@@ -1343,6 +1481,7 @@ function buildWaterAndSanitationTwoPageWorkbookHtml() {
       </div>
     </div>
 `;
+    }
   });
 
   // ====================================================================
@@ -1546,7 +1685,15 @@ async function renderWaterAndSanitationTwoPageWorkbook() {
     'pupil_workbook_v2.html',
   );
   fs.writeFileSync(outHtmlPath, html, 'utf8');
-  console.log(`✅ Staged HTML generated at: ${outHtmlPath}`);
+  const stdHtmlPath = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'water_and_sanitation',
+    'pupil_workbook.html',
+  );
+  fs.writeFileSync(stdHtmlPath, html, 'utf8');
+  console.log(`✅ Staged HTML generated at: ${outHtmlPath} and ${stdHtmlPath}`);
 
   console.log('🖨️ Compiling PDF via Puppeteer...');
   const browser = await puppeteer.launch({
