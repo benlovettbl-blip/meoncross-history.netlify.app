@@ -1321,6 +1321,33 @@ export const unitData = {
           explanation:
             'Galen taught that the liver manufactured blood, which was then consumed as fuel by bodily tissues.',
         },
+        {
+          question:
+            'Which core clinical practice did Hippocrates pioneer that instructed physicians to observe patient symptoms carefully at the bedside rather than relying on superstition?',
+          options: [
+            'Bedside clinical observation and systematic recording of symptoms.',
+            'Chemical dissection of organs with microscopic lenses.',
+            'Routine injection of herbal antidotes into the bloodstream.',
+            'Trepanning holes in the cranium to release trapped spirits.',
+          ],
+          answer: 'Bedside clinical observation and systematic recording of symptoms.',
+          explanation:
+            'Hippocrates urged physicians to observe patient symptoms systematically at the bedside, record changes in pulse and temperature, and track the progression of natural illness.',
+        },
+        {
+          question:
+            'Why did Galen’s anatomical writings contain significant anatomical errors, such as claiming the human jawbone consisted of two distinct bones?',
+          options: [
+            'Roman law strictly forbade the dissection of human corpses, forcing Galen to dissect animals like pigs and apes instead.',
+            'Medieval monks deliberately falsified Galen’s anatomical diagrams to preserve Church dogma.',
+            'Galen only examined mummified Egyptian bodies whose bones had decomposed.',
+            'Ancient Greek physicians refused to look inside animal bodies due to pagan taboos.',
+          ],
+          answer:
+            'Roman law strictly forbade the dissection of human corpses, forcing Galen to dissect animals like pigs and apes instead.',
+          explanation:
+            'Because human dissection was prohibited in ancient Rome, Galen dissected animals (pigs, dogs, Barbary macaques) and incorrectly assumed human internal anatomy was identical.',
+        },
       ],
       flashcards: [
         {
@@ -1716,6 +1743,34 @@ export const unitData = {
           explanation:
             'Pilgrims traveled to shrines to touch sacred relics and seek divine intervention.',
         },
+        {
+          question:
+            'Why was leeching (hirudotherapy) frequently used as an alternative to venesection (opening a vein with a fleam) in medieval England?',
+          options: [
+            'It allowed controlled, gradual blood extraction for children, the elderly, or delicate areas where a fleam was too dangerous.',
+            'Leeches were believed to inject magical medicinal fluids directly into the patient’s arteries.',
+            'The Catholic Church strictly banned the use of metal surgical blades on human skin.',
+            'Leeches were thought to selectively consume only the diseased black bile humour.',
+          ],
+          answer:
+            'It allowed controlled, gradual blood extraction for children, the elderly, or delicate areas where a fleam was too dangerous.',
+          explanation:
+            'Leeching removed blood slowly and less violently than opening a vein with a fleam, making it suitable for frail, elderly, or young patients.',
+        },
+        {
+          question:
+            'How did medieval physicians use the ‘Zodiac Man’ (Homo Signorum) diagram to plan medical treatments?',
+          options: [
+            'To determine which astrological constellation governed each body part and avoid bleeding or operating when the moon was in that sign.',
+            'To predict whether a newborn infant would become a priest or a farmer.',
+            'To calculate the exact financial cost of herbal medicines based on planetary angles.',
+            'To identify criminal suspects by matching their birth month to physical body marks.',
+          ],
+          answer:
+            'To determine which astrological constellation governed each body part and avoid bleeding or operating when the moon was in that sign.',
+          explanation:
+            'Medieval physicians believed celestial bodies influenced specific organs; the Zodiac Man warned against cutting or bleeding a body part when the moon was in its corresponding astrological sign.',
+        },
       ],
       flashcards: [
         {
@@ -2108,6 +2163,33 @@ export const unitData = {
           answer: 'St Bartholomew’s Hospital.',
           explanation:
             'St Bartholomew’s was founded in 1123 as an Augustinian priory hospital caring for the poor.',
+        },
+        {
+          question:
+            'Why did ordinary medieval villagers consult local ‘wise women’ instead of university-trained physicians for everyday illnesses?',
+          options: [
+            'Wise women lived locally, charged affordable fees or bartered goods, and possessed extensive practical knowledge of herbal remedies.',
+            'University physicians were legally prohibited from travelling outside royal court palaces.',
+            'The Catholic Church made it mandatory for every village to employ a licensed female apothecary.',
+            'Wise women were the only practitioners allowed to perform complex abdominal surgery.',
+          ],
+          answer:
+            'Wise women lived locally, charged affordable fees or bartered goods, and possessed extensive practical knowledge of herbal remedies.',
+          explanation:
+            'University physicians were rare and exorbitantly expensive; rural peasants relied on local wise women who used traditional herbal lore, charms, and community nursing care.',
+        },
+        {
+          question:
+            'What specialized medical institutions were established on the outskirts of medieval towns to isolate patients suffering from contagious leprosy?',
+          options: [
+            'Lazar houses (leprosaria).',
+            'Monastic scriptoria.',
+            'Royal infirmaries.',
+            'Almshouses for retired guild masons.',
+          ],
+          answer: 'Lazar houses (leprosaria).',
+          explanation:
+            'Lazar houses were built outside town walls to isolate lepers, who were viewed with dread because leprosy was incurable, disfiguring, and believed to be a punishment for sin.',
         },
       ],
       flashcards: [
@@ -2508,6 +2590,34 @@ export const unitData = {
           answer: 'Parish churchyards overflowed with corpses within weeks of the outbreak.',
           explanation:
             'The sheer volume of deaths quickly overwhelmed parish churchyards, requiring mass trench graves.',
+        },
+        {
+          question:
+            'How did local authorities in towns like Gloucester attempt to prevent the spread of the Black Death from infected areas?',
+          options: [
+            'They closed city gates, banned strangers from entering, and attempted to isolate themselves from infected cities like Bristol.',
+            'They vaccinated all citizens using cowpox fluid imported from France.',
+            'They constructed underground piped sewage networks to drain contaminated soil.',
+            'They burned down every wooden tavern and inn within twenty miles of the city.',
+          ],
+          answer:
+            'They closed city gates, banned strangers from entering, and attempted to isolate themselves from infected cities like Bristol.',
+          explanation:
+            'Gloucester attempted a policy of complete isolation by turning away travelers from Bristol, though the epidemic inevitably entered the city within weeks.',
+        },
+        {
+          question:
+            'What major economic consequence followed the Black Death due to the severe shortage of agricultural workers in England?',
+          options: [
+            'Surviving peasants demanded higher wages and lower rents, weakening the feudal manor system.',
+            'The King abolished all taxes and disbanded the English army.',
+            'Landowners forced all peasants into slavery and tripled land rents.',
+            'England imported millions of skilled workers from the Holy Roman Empire.',
+          ],
+          answer:
+            'Surviving peasants demanded higher wages and lower rents, weakening the feudal manor system.',
+          explanation:
+            'With a third to a half of the population dead, surviving labourers were in high demand and could bargain for higher pay and greater freedom, undermining traditional feudalism.',
         },
       ],
       flashcards: [
@@ -11208,6 +11318,163 @@ export const unitData = {
           },
         ],
       },
+      quick_quiz: [
+        {
+          question: 'Where was the British sector of the Western Front located?',
+          options: [
+            'In northern France and Belgium (Flanders), defending Channel ports like Calais and Boulogne.',
+            'In southern Germany along the Rhine river.',
+            'Across the Italian Alps near Caporetto.',
+            'Along the Gallipoli peninsula in Turkey.',
+          ],
+          answer:
+            'In northern France and Belgium (Flanders), defending Channel ports like Calais and Boulogne.',
+          explanation:
+            'The British Army defended Flanders and northern France to secure the vital English Channel supply ports of Calais, Boulogne, and Dunkirk.',
+        },
+        {
+          question: 'What was the standard sequence of trenches in the British trench system?',
+          options: [
+            'Front line, support trench, reserve trench, and communication trenches.',
+            'A single continuous trench line with no rear positions.',
+            'Random isolated foxholes connected by tunnels.',
+            'Circular fortress trenches surrounding coastal ports.',
+          ],
+          answer: 'Front line, support trench, reserve trench, and communication trenches.',
+          explanation:
+            'British trenches were arranged in parallel depth: the front line (where attacks were launched/defended), support trench (80m behind), reserve trench (hundreds of metres back), and zigzag communication trenches linking them.',
+        },
+        {
+          question:
+            'Why was the Ypres Salient such a dangerous position for British troops to defend?',
+          options: [
+            'It was surrounded on three sides by German forces holding the higher ground.',
+            'It was located in an arid desert with no water supply.',
+            'It was entirely underwater with no land surface.',
+            'German troops possessed radar and guided missiles.',
+          ],
+          answer: 'It was surrounded on three sides by German forces holding the higher ground.',
+          explanation:
+            'A salient is an outward bulge into enemy territory; German forces occupied Passchendaele ridge and high ground overlooking British positions on three sides.',
+        },
+        {
+          question: 'What tactic did the British use to capture Hill 60 near Ypres in April 1915?',
+          options: [
+            'Specialist tunnelling companies dug deep mines under the hill and detonated massive explosive charges.',
+            'A massive airborne parachute assault.',
+            'Amphibious gunboats sailing up the river Lys.',
+            'High-altitude bombing raids by zeppelins.',
+          ],
+          answer:
+            'Specialist tunnelling companies dug deep mines under the hill and detonated massive explosive charges.',
+          explanation:
+            'Royal Engineers and clay-kicking miners dug five deep tunnels beneath German fortifications on Hill 60, packing them with 10,000 lbs of explosives to blow off the hilltop.',
+        },
+        {
+          question:
+            'How many British casualties were suffered on the first day of the Battle of the Somme (1 July 1916)?',
+          options: [
+            'Approximately 57,000 casualties (including over 19,000 killed).',
+            'Exactly 500 casualties.',
+            'Over 500,000 casualties on the first morning.',
+            'Zero casualties because artillery destroyed all enemy positions.',
+          ],
+          answer: 'Approximately 57,000 casualties (including over 19,000 killed).',
+          explanation:
+            'On 1 July 1916, the British suffered 57,470 casualties (19,240 killed), completely overwhelming front-line medical staff and the casualty evacuation chain.',
+        },
+        {
+          question:
+            'What unique medical facility was created inside the chalk quarries beneath Arras in 1917?',
+          options: [
+            'Thompson’s Cave, a fully functioning 700-bed underground hospital with operating theatres and running water.',
+            'A floating hospital barge on the canal.',
+            'An open-air canvas camp on the battlefield.',
+            'A chemical weapons manufacturing plant.',
+          ],
+          answer:
+            'Thompson’s Cave, a fully functioning 700-bed underground hospital with operating theatres and running water.',
+          explanation:
+            'New Zealand tunnelling companies expanded ancient chalk quarries under Arras into an underground city containing a 700-bed hospital (“Thompson’s Cave”) protected from artillery bombardment.',
+        },
+        {
+          question:
+            'What major technological military innovation was first used en masse at the Battle of Cambrai in November 1917?',
+          options: [
+            'Over 450 British tanks working in close coordination with infantry.',
+            'Poison mustard gas delivered by supersonic rockets.',
+            'Jet fighter aircraft providing close air support.',
+            'Submarines operating on the Western Front rivers.',
+          ],
+          answer: 'Over 450 British tanks working in close coordination with infantry.',
+          explanation:
+            'Cambrai saw the first large-scale massed tank deployment, smashing through Hindenburg Line barbed wire and creating deep forward casualty collection points.',
+        },
+        {
+          question:
+            'Why were British front-line trenches constructed in a zigzag pattern with traverses rather than straight lines?',
+          options: [
+            'To prevent enemy machine-gunners firing down the entire length of the trench and contain artillery shell blasts.',
+            'Because British soldiers did not possess surveying compasses.',
+            'To allow rainwater to drain directly into German lines.',
+            'To make room for cavalry horses to gallop through.',
+          ],
+          answer:
+            'To prevent enemy machine-gunners firing down the entire length of the trench and contain artillery shell blasts.',
+          explanation:
+            'Zigzags and right-angled traverses ensured that if an enemy entered the trench or a shell exploded, blast fragments and gunfire were stopped by the earthen wall rather than travelling down the line.',
+        },
+        {
+          question:
+            'How did the geography of Flanders (Ypres) differ from the chalk hills of the Somme?',
+          options: [
+            'Flanders had a very high water table and clay soil that easily turned to impassable liquid mud, whereas the Somme was undulating dry chalk downland.',
+            'Flanders was mountainous granite while the Somme was low-lying swamp.',
+            'Flanders was dense pine forest while the Somme was coastal sand dunes.',
+            'Flanders had no rainfall while the Somme experienced constant monsoons.',
+          ],
+          answer:
+            'Flanders had a very high water table and clay soil that easily turned to impassable liquid mud, whereas the Somme was undulating dry chalk downland.',
+          explanation:
+            'Ypres had clay soil just metres above sea level with a high water table; artillery destroyed drainage dykes, turning Flanders into a sea of liquid mud, whereas the Somme consisted of dry chalk hills.',
+        },
+        {
+          question:
+            'Why was maintaining the railway line between Amiens, Boulogne, and Le Touquet essential for British medical logistics?',
+          options: [
+            'It was the primary artery for transporting wounded soldiers rapidly from Casualty Clearing Stations to Base Hospitals and hospital ships.',
+            'It was used exclusively to transport German prisoners of war to London.',
+            'It was built to transport civilian holidaymakers away from Paris.',
+            'It carried coal directly to the front line to heat the trenches.',
+          ],
+          answer:
+            'It was the primary artery for transporting wounded soldiers rapidly from Casualty Clearing Stations to Base Hospitals and hospital ships.',
+          explanation:
+            'Medical evacuation depended entirely on railway networks: specialized ambulance trains moved thousands of stabilized casualties from CCS hubs directly to coastal Base Hospitals.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What was the layout of a standard British trench system?',
+          a: 'Front line, support trench (80m back), reserve trench (hundreds of metres back), linked by zigzag communication trenches.',
+        },
+        {
+          q: 'Why was the Ypres Salient so dangerous for British soldiers?',
+          a: 'A salient is an enemy-surrounded bulge; German forces occupied Passchendaele ridge and high ground overlooking British lines on three sides.',
+        },
+        {
+          q: 'What unique medical facility was built in the chalk quarries under Arras in 1917?',
+          a: 'Thompson’s Cave, a fully equipped 700-bed underground hospital with operating theatres and running water.',
+        },
+        {
+          q: 'How many casualties did the British Army suffer on the first day of the Somme (1 July 1916)?',
+          a: '57,470 casualties, including 19,240 killed, completely overwhelming the medical evacuation chain.',
+        },
+        {
+          q: 'What was the military purpose of constructing trenches in a zigzag pattern with traverses?',
+          a: 'To prevent enemy gunfire travelling down the full length of the trench and to contain shell blast fragments.',
+        },
+      ],
     },
     {
       id: 'lesson_5_2',
@@ -11467,6 +11734,163 @@ export const unitData = {
           },
         ],
       },
+      quick_quiz: [
+        {
+          question: 'What was Trench Foot and what caused it?',
+          options: [
+            'A painful swelling and gangrene of the feet caused by prolonged immersion in cold mud and water and tight puttees.',
+            'A fungal infection caught from infected sheep wool.',
+            'A bone fracture caused by marching in heavy leather boots.',
+            'An allergic reaction to chemical poison gas.',
+          ],
+          answer:
+            'A painful swelling and gangrene of the feet caused by prolonged immersion in cold mud and water and tight puttees.',
+          explanation:
+            'Constant exposure to waterlogged trenches restricted circulation, causing numbness, swelling, tissue rot, and potentially fatal gangrene requiring amputation.',
+        },
+        {
+          question: 'What daily routine was enforced by British officers to prevent trench foot?',
+          options: [
+            'Rubbing feet with whale oil, changing into dry socks twice daily, and implementing the buddy system.',
+            'Soaking feet in boiling vinegar every morning.',
+            'Spraying boots with carbolic acid aerosol.',
+            'Wearing thin silk stockings under wet boots.',
+          ],
+          answer:
+            'Rubbing feet with whale oil, changing into dry socks twice daily, and implementing the buddy system.',
+          explanation:
+            'Soldiers were ordered to carry spare dry socks, rub whale oil on feet to repel water, and inspect each other’s feet daily in pairs.',
+        },
+        {
+          question:
+            'What parasite was identified in 1918 as the carrier of Trench Fever (pyrexia of unknown origin)?',
+          options: [
+            'Body lice (Pediculus humanus) spreading bacteria through infected faeces rubbed into the skin.',
+            'Giant sewer rats biting sleeping soldiers.',
+            'Fleas carried by trench pigeons.',
+            'Mosquitoes breeding in flooded shell craters.',
+          ],
+          answer:
+            'Body lice (Pediculus humanus) spreading bacteria through infected faeces rubbed into the skin.',
+          explanation:
+            'Trench fever caused severe headaches, shivering, and joint pain; in 1918 researchers proved body lice carried the infection, which entered the blood when soldiers scratched itchy louse droppings.',
+        },
+        {
+          question:
+            'How did the British Army attempt to combat body lice in the rest areas behind the front?',
+          options: [
+            'Establishing mobile delousing stations with high-pressure steam ovens to sterilize uniforms.',
+            'Spraying all trenches with chemical DDT insecticide.',
+            'Shaving soldiers completely bald and banning wool clothing.',
+            'Forcing men to bathe in cold river water every day.',
+          ],
+          answer:
+            'Establishing mobile delousing stations with high-pressure steam ovens to sterilize uniforms.',
+          explanation:
+            'Soldiers visited delousing baths where their bodies were scrubbed and their uniforms baked in mobile steam boilers to kill lice and their eggs.',
+        },
+        {
+          question:
+            'What organ was damaged by Trench Nephritis, a disease linked to cold, damp conditions and contaminated rations?',
+          options: [
+            'The kidneys, causing severe protein loss and bodily swelling.',
+            'The lungs, causing chronic asthma.',
+            'The liver, causing permanent jaundice.',
+            'The inner ear, causing loss of balance.',
+          ],
+          answer: 'The kidneys, causing severe protein loss and bodily swelling.',
+          explanation:
+            'Trench nephritis was an acute inflammation of the kidneys characterized by protein in urine, headaches, and swollen faces/legs, affecting tens of thousands of troops.',
+        },
+        {
+          question: 'Why was dysentery so widespread among soldiers living in frontline trenches?',
+          options: [
+            'Soldiers drank unpurified water from flooded shell holes and latrines attracted swarms of flies that contaminated rations.',
+            'German forces deliberately poisoned European cloud cover.',
+            'Troops ate raw vegetables grown in unwashed manure.',
+            'The army diet contained too much fresh citrus fruit.',
+          ],
+          answer:
+            'Soldiers drank unpurified water from flooded shell holes and latrines attracted swarms of flies that contaminated rations.',
+          explanation:
+            'Extreme water contamination, unwashed mess tins, and flies moving between open latrine pits and bully beef rations spread bacterial dysentery (severe diarrhoea and dehydration).',
+        },
+        {
+          question:
+            'What chemical was routinely added to British drinking water in the trenches to kill bacteria?',
+          options: [
+            'Chloride of lime (chlorination).',
+            'Pure sulphuric acid.',
+            'Potassium cyanide.',
+            'Chloroform gas.',
+          ],
+          answer: 'Chloride of lime (chlorination).',
+          explanation:
+            'Water collected in two-gallon petrol cans was treated with chloride of lime; although soldiers complained bitterly about the foul chemical taste, it sharply reduced cholera and typhoid.',
+        },
+        {
+          question:
+            'What did the medical designation “NYDN” stand for when soldiers collapsed with shell shock symptoms?',
+          options: [
+            'Not Yet Diagnosed (Nervous).',
+            'No Young Doctors Needed.',
+            'Naval Yard Defence Network.',
+            'Non-Ypres Daily Notification.',
+          ],
+          answer: 'Not Yet Diagnosed (Nervous).',
+          explanation:
+            'The British Army used “NYDN” to categorize traumatized men before distinguishing between physical concussion from shell blasts and psychological breakdown (“shell shock”).',
+        },
+        {
+          question: 'Why were brown sewer rats such a massive nuisance in the trenches?',
+          options: [
+            'They fed on human corpses in No Man’s Land, contaminated rations, and spread contamination through trenches.',
+            'They were trained by German scouts to chew British telephone cables.',
+            'They carried rabies and infected thousands of horses.',
+            'They burrowed through concrete machine-gun bunkers and collapsed them.',
+          ],
+          answer:
+            'They fed on human corpses in No Man’s Land, contaminated rations, and spread contamination through trenches.',
+          explanation:
+            'Millions of brown rats gorged on unburied corpses and food scraps, growing to enormous sizes and scampering over sleeping soldiers’ faces.',
+        },
+        {
+          question:
+            'How did non-combat sickness compare to bullet/shrapnel wounds on the Western Front?',
+          options: [
+            'Non-combat sickness accounted for millions of hospital admissions, and at times incapacitated more troops than enemy fire.',
+            'Sickness was virtually non-existent due to penicillin antibiotics.',
+            'Only 100 soldiers caught infectious diseases throughout the entire war.',
+            'German soldiers were immune to disease while Allied soldiers were not.',
+          ],
+          answer:
+            'Non-combat sickness accounted for millions of hospital admissions, and at times incapacitated more troops than enemy fire.',
+          explanation:
+            'Infectious diseases, trench foot, nephritis, and pyrexia accounted for over half of all medical hospital admissions on the Western Front, proving environmental hygiene was a vital military priority.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What caused Trench Foot on the Western Front?',
+          a: 'Prolonged standing in cold mud and waterlogged trenches, restricting circulation and causing swelling and gangrene.',
+        },
+        {
+          q: 'What measures did officers enforce to prevent Trench Foot?',
+          a: 'Regular foot inspections in pairs (buddy system), rubbing feet with whale oil, and changing into dry socks twice daily.',
+        },
+        {
+          q: 'How was Trench Fever transmitted between soldiers?',
+          a: 'By body lice (Pediculus humanus); infected louse faeces were scratched into itchy skin breaks.',
+        },
+        {
+          q: 'What was “NYDN” in British military medical records?',
+          a: '“Not Yet Diagnosed (Nervous)”, the initial classification given to soldiers suffering from psychological trauma or shell shock.',
+        },
+        {
+          q: 'Why was dysentery widespread in the trenches?',
+          a: 'Drinking contaminated shell-hole water and flies spreading bacteria from open latrines to unsealed rations.',
+        },
+      ],
     },
     {
       id: 'lesson_5_3',
@@ -11727,6 +12151,167 @@ export const unitData = {
           },
         ],
       },
+      quick_quiz: [
+        {
+          question:
+            'What weapon caused the vast majority (approximately 58%) of all wounds on the Western Front?',
+          options: [
+            'Artillery shells and shrapnel fragments.',
+            'Bayonet thrusts in close-quarters combat.',
+            'Poison gas inhalation.',
+            'Sniper pistol bullets.',
+          ],
+          answer: 'Artillery shells and shrapnel fragments.',
+          explanation:
+            'Industrialized artillery bombardments produced jagged, high-velocity metal shrapnel that shattered bones and tore massive cavity wounds into the body.',
+        },
+        {
+          question:
+            'What impact did the introduction of the steel Brodie helmet in late 1915 have on British casualties?',
+          options: [
+            'It reduced fatal head wounds from falling shrapnel by an estimated 80%.',
+            'It made soldiers completely bulletproof from rifle fire at point-blank range.',
+            'It had no effect because soldiers refused to wear metal hats.',
+            'It increased neck injuries and was quickly withdrawn.',
+          ],
+          answer: 'It reduced fatal head wounds from falling shrapnel by an estimated 80%.',
+          explanation:
+            'The steel Brodie helmet protected soldiers from downward-falling shrapnel balls and rock splinters, dramatically cutting fatal head trauma compared to soft cloth caps.',
+        },
+        {
+          question:
+            'Why were compound fractures (where broken bone pierced through the skin) so lethal in 1914–1915?',
+          options: [
+            'The jagged bone tore through major arteries, and exposure to infected soil caused massive haemorrhage and fatal sepsis.',
+            'Broken bones immediately dissolved in cold weather.',
+            'Soldiers were refused hospital admission if their limbs were broken.',
+            'Doctors lacked splints and cast materials in France.',
+          ],
+          answer:
+            'The jagged bone tore through major arteries, and exposure to infected soil caused massive haemorrhage and fatal sepsis.',
+          explanation:
+            'Fractured femur fragments sliced deep blood vessels during transport, causing severe shock; exposed marrow quickly developed lethal gas gangrene.',
+        },
+        {
+          question: 'What micro-organism caused gas gangrene in wounds on the Western Front?',
+          options: [
+            'Anaerobic Clostridium bacteria living in manured agricultural soil that thrived in oxygen-deprived tissue.',
+            'Airborne influenza virus particles.',
+            'Waterborne malaria parasites.',
+            'Bubonic plague fleas living in trench sandbags.',
+          ],
+          answer:
+            'Anaerobic Clostridium bacteria living in manured agricultural soil that thrived in oxygen-deprived tissue.',
+          explanation:
+            'Centuries of intensive fertilizer manure in Flanders farmland meant the soil teemed with Clostridium bacteria, which produced gas bubbles and necrotic toxins inside deep shrapnel wounds.',
+        },
+        {
+          question:
+            'How did the British medical services drastically reduce deaths from tetanus after autumn 1914?',
+          options: [
+            'Routine injection of Anti-Tetanus Serum (ATS) to all wounded men at frontline dressing stations.',
+            'Immediate amputation of every wounded soldier’s arm or leg.',
+            'Forcing wounded men to drink pure alcohol.',
+            'Mass vaccination of German prisoners.',
+          ],
+          answer:
+            'Routine injection of Anti-Tetanus Serum (ATS) to all wounded men at frontline dressing stations.',
+          explanation:
+            'The introduction of ATS injections at Regimental Aid Posts provided immediate passive antibodies, causing tetanus mortality to plummet from 32 per 1,000 wounded to under 1 per 1,000.',
+        },
+        {
+          question:
+            'What were the physical symptoms and effects of chlorine gas, first used by Germany at Second Ypres in April 1915?',
+          options: [
+            'A green-yellow cloud that destroyed lung tissue, causing victims to choke to death as fluid filled their lungs.',
+            'Immediate blindness with zero effect on the lungs.',
+            'Permanent paralysis of the legs without breathing difficulty.',
+            'Rapid heart failure with zero external symptoms.',
+          ],
+          answer:
+            'A green-yellow cloud that destroyed lung tissue, causing victims to choke to death as fluid filled their lungs.',
+          explanation:
+            'Chlorine is a suffocating gas; when inhaled, it reacted with water in the lungs to produce hydrochloric acid, causing acute pulmonary edema (drowning in bodily fluids).',
+        },
+        {
+          question:
+            'Why was phosgene gas (first deployed in late 1915) even deadlier than chlorine?',
+          options: [
+            'It was colourless with a faint smell of mouldy hay, and its lethal suffocating symptoms were delayed for up to 48 hours.',
+            'It exploded upon contact with air like dynamite.',
+            'It dissolved through metal gas masks instantly.',
+            'It was carried by underground earthworms.',
+          ],
+          answer:
+            'It was colourless with a faint smell of mouldy hay, and its lethal suffocating symptoms were delayed for up to 48 hours.',
+          explanation:
+            'Phosgene was six times more toxic than chlorine; soldiers often did not realize they had inhaled a fatal dose until collapsing with choked lungs two days later.',
+        },
+        {
+          question:
+            'What distinguishing characteristic made mustard gas so feared when introduced in July 1917?',
+          options: [
+            'It was an oily blistering agent that burned through clothing, caused massive skin blisters, and contaminated the soil for weeks.',
+            'It had a pleasant smell of roses and caused laughing fits.',
+            'It only affected horses and pack mules.',
+            'It evaporated within five seconds of detonation.',
+          ],
+          answer:
+            'It was an oily blistering agent that burned through clothing, caused massive skin blisters, and contaminated the soil for weeks.',
+          explanation:
+            'Mustard gas was an insidious vesicant; it penetrated uniforms, burned the skin into agonizing weeping blisters, blinded eyes, and remained active in trench mud for days or weeks.',
+        },
+        {
+          question:
+            'What was the most effective British gas mask issued to soldiers from 1916 onwards?',
+          options: [
+            'The Small Box Respirator (SBR), featuring a rubber face mask connected by a hose to a charcoal filter box.',
+            'A urine-soaked cotton pad wrapped around the mouth.',
+            'A solid brass diving helmet with hand-pumped air.',
+            'A leather hood with open glass eyeholes.',
+          ],
+          answer:
+            'The Small Box Respirator (SBR), featuring a rubber face mask connected by a hose to a charcoal filter box.',
+          explanation:
+            'Early improvised cloth pads and “hypo helmets” were replaced by the SBR in 1916, which filtered out toxic vapours through a chest-mounted tin canister containing charcoal and soda lime.',
+        },
+        {
+          question:
+            'What proportion of total British Western Front deaths was directly caused by poison gas?',
+          options: [
+            'Less than 3% of deaths, although gas caused immense psychological terror and hospitalized over 180,000 men.',
+            'Over 85% of all British fatalities.',
+            'Exactly 50% of all battlefield casualties.',
+            'Zero deaths because gas masks were 100% effective from the first day.',
+          ],
+          answer:
+            'Less than 3% of deaths, although gas caused immense psychological terror and hospitalized over 180,000 men.',
+          explanation:
+            'Effective respirators meant only about 3,000 British troops died directly from gas (under 3% of deaths), but gas created catastrophic blisters, long-term respiratory damage, and severe panic.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What weapon caused approximately 58% of all battlefield wounds on the Western Front?',
+          a: 'High explosive artillery shells and jagged shrapnel fragments.',
+        },
+        {
+          q: 'How did the steel Brodie helmet (introduced late 1915) impact casualties?',
+          a: 'It reduced fatal head wounds from falling shrapnel balls and rock splinters by an estimated 80%.',
+        },
+        {
+          q: 'Why did farmland soil in Flanders cause lethal gas gangrene in shrapnel wounds?',
+          a: 'Centuries of fertilizer manure loaded the soil with anaerobic Clostridium bacteria that multiplied in torn, oxygen-starved muscle tissue.',
+        },
+        {
+          q: 'What major symptom characterized chlorine gas attacks (Second Ypres 1915)?',
+          a: 'A greenish-yellow cloud that stripped the lungs, causing acute pulmonary edema (victims drowned in their own lung fluids).',
+        },
+        {
+          q: 'What made mustard gas (introduced 1917) so insidious?',
+          a: 'An oily blistering vesicant that penetrated uniforms, burned eyes and moist skin, and contaminated trench soil for days or weeks.',
+        },
+      ],
     },
     {
       id: 'lesson_5_4',
@@ -11987,6 +12572,168 @@ export const unitData = {
           },
         ],
       },
+      quick_quiz: [
+        {
+          question:
+            'What were the duties and physical challenges faced by frontline stretcher bearers?',
+          options: [
+            'Retrieving wounded men under fire, carrying stretchers through knee-deep mud requiring up to 6–8 men per stretcher.',
+            'Performing emergency open-heart surgery in shell craters.',
+            'Piloting motorized helicopters to evacuate casualties.',
+            'Guarding captured German trenches without weapons.',
+          ],
+          answer:
+            'Retrieving wounded men under fire, carrying stretchers through knee-deep mud requiring up to 6–8 men per stretcher.',
+          explanation:
+            'Each battalion had only 16 stretcher bearers; traversing waterlogged trenches and thick shell-cratered mud required immense physical endurance and multiple men per casualty.',
+        },
+        {
+          question: 'Where was the Regimental Aid Post located and what was its medical function?',
+          options: [
+            'Located within 200m of the front line in a dugout or communication trench to provide immediate first aid and triage.',
+            'Located 50 miles back in Paris for routine dental work.',
+            'Located on hospital ships moored off the coast of England.',
+            'Located on top of observation towers to direct artillery.',
+          ],
+          answer:
+            'Located within 200m of the front line in a dugout or communication trench to provide immediate first aid and triage.',
+          explanation:
+            'Staffed by the battalion medical officer, the RAP bandaged open wounds, administered morphine and anti-tetanus serum, and sorted walking wounded from stretcher cases.',
+        },
+        {
+          question:
+            'What was the position and role of an Advanced Dressing Station in the chain of evacuation?',
+          options: [
+            'Located about 400m to 1km behind the RAP, staffed by the Field Ambulance to dress wounds and stabilize shock before ambulance transport.',
+            'Located in London to manufacture prosthetic limbs.',
+            'Located in the front line trench to launch counter-attacks.',
+            'Located at railway stations to sell coffee to troops.',
+          ],
+          answer:
+            'Located about 400m to 1km behind the RAP, staffed by the Field Ambulance to dress wounds and stabilize shock before ambulance transport.',
+          explanation:
+            'Run by the RAMC Field Ambulance, the ADS received casualties from several RAPs, redressed bandages, treated shock with warm drinks, and loaded horse/motor ambulances.',
+        },
+        {
+          question:
+            'Why was the Casualty Clearing Station (CCS) considered the most crucial surgical hub on the Western Front?',
+          options: [
+            'It was the first facility with full operating theatres, X-rays, and anaesthetists equipped to perform life-saving surgery before infection spread.',
+            'It was the place where soldiers went for two weeks of holiday rest.',
+            'It was exclusively dedicated to manufacturing artificial eyes.',
+            'It was where uniforms were washed and ironed.',
+          ],
+          answer:
+            'It was the first facility with full operating theatres, X-rays, and anaesthetists equipped to perform life-saving surgery before infection spread.',
+          explanation:
+            'Located several miles behind the lines near railway heads, CCSs performed urgent life-saving operations (amputations, debridement, abdominal repair) within the crucial 12-hour window.',
+        },
+        {
+          question: 'How did medical officers at the CCS triage arriving casualties?',
+          options: [
+            'They divided casualties into three categories: walking wounded, in need of immediate surgery, and moribund (hopeless cases given comfort care).',
+            'They treated patients in strict alphabetical order by surname.',
+            'They only treated commissioned officers and sent private soldiers away.',
+            'They treated patients based on whoever paid the highest fee.',
+          ],
+          answer:
+            'They divided casualties into three categories: walking wounded, in need of immediate surgery, and moribund (hopeless cases given comfort care).',
+          explanation:
+            'Strict clinical triage ensured surgical teams focused limited time on casualties who had a fighting chance of survival if operated on immediately.',
+        },
+        {
+          question:
+            'What major problem did horse-drawn ambulances face in the autumn of 1914 that led to the introduction of motor ambulances?',
+          options: [
+            'Horses struggled through thick mud, could only carry two stretchers, and wounded men were severely shaken, worsening haemorrhage.',
+            'Horses refused to cross international borders.',
+            'The British Army possessed zero horses in 1914.',
+            'Motorized vehicles were strictly illegal in France.',
+          ],
+          answer:
+            'Horses struggled through thick mud, could only carry two stretchers, and wounded men were severely shaken, worsening haemorrhage.',
+          explanation:
+            'Slow horse ambulances caused delays that allowed sepsis to take hold; public appeals in Britain raised funds for motorized ambulances (Red Cross vans) that evacuated casualties much faster.',
+        },
+        {
+          question:
+            'Why were canal barges used to transport certain types of wounded soldiers to Base Hospitals?',
+          options: [
+            'Barges provided an extremely smooth, gentle journey that avoided the violent jolting of roads, ideal for men with head trauma or severe fractures.',
+            'Barges travelled faster than high-speed steam trains.',
+            'Barges were invisible to German submarine torpedoes.',
+            'French railways were completely dismantled in 1914.',
+          ],
+          answer:
+            'Barges provided an extremely smooth, gentle journey that avoided the violent jolting of roads, ideal for men with head trauma or severe fractures.',
+          explanation:
+            'France’s network of inland canals allowed hospital barges to transport brain and spine casualties without the painful vibration and shaking of railway carriages and rutted roads.',
+        },
+        {
+          question:
+            'What was the primary purpose of Base Hospitals located at coastal ports like Boulogne and Le Touquet?',
+          options: [
+            'Providing long-term specialist surgical convalescence and preparing soldiers for return to the front or evacuation to Britain via hospital ships.',
+            'Training new infantry recruits in bayonet drill.',
+            'Manufacturing artillery shells and cartridges.',
+            'Storing frozen beef rations imported from South America.',
+          ],
+          answer:
+            'Providing long-term specialist surgical convalescence and preparing soldiers for return to the front or evacuation to Britain via hospital ships.',
+          explanation:
+            'Base Hospitals had thousands of beds in requisitioned hotels and large canvas compounds where soldiers recovered from major operations before returning to duty or boarding hospital ships for England.',
+        },
+        {
+          question:
+            'What role did the First Aid Nursing Yeomanry (FANY) play in the Western Front medical evacuation chain?',
+          options: [
+            'Female volunteers drove frontline field ambulances, transported supplies, and operated mobile soup kitchens and baths.',
+            'They served as fighter pilots in the Royal Flying Corps.',
+            'They commanded artillery batteries along the Somme.',
+            'They worked exclusively as clerical secretaries in the War Office in London.',
+          ],
+          answer:
+            'Female volunteers drove frontline field ambulances, transported supplies, and operated mobile soup kitchens and baths.',
+          explanation:
+            'Founded in 1907, FANY women drove ambulances in dangerous forward zones, ran mobile canteens, and provided nursing care, breaking down resistance to women at the front.',
+        },
+        {
+          question:
+            'Why was speed along the chain of evacuation so vital to preventing death from wound contamination?',
+          options: [
+            'If infected tissue was not excised or cleaned within the “golden window” of 12 to 24 hours, bacteria invaded deep tissue and blood poisoning became fatal.',
+            'Wounded men lost their British citizenship if not hospitalized within 12 hours.',
+            'Hospital beds were forfeited if ambulances arrived after nightfall.',
+            'Stretcher bearers were fined by the army if trips took more than two hours.',
+          ],
+          answer:
+            'If infected tissue was not excised or cleaned within the “golden window” of 12 to 24 hours, bacteria invaded deep tissue and blood poisoning became fatal.',
+          explanation:
+            'Clostridium bacteria and staphylococci multiplied rapidly in mangled tissue; operating at the CCS within 12 hours prevented localized wound sepsis from turning into systemic, incurable gas gangrene.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What was the primary role of the Regimental Aid Post (RAP)?',
+          a: 'Located within 200m of the front line, it provided immediate emergency first aid, bandaging, morphine, and triage.',
+        },
+        {
+          q: 'What was the purpose of a Casualty Clearing Station (CCS)?',
+          a: 'Located several miles back near railways, it was the first facility with operating theatres equipped to perform urgent life-saving surgery.',
+        },
+        {
+          q: 'How did CCS medical staff triage arriving casualties?',
+          a: 'They divided casualties into three categories: walking wounded, in need of immediate surgery, and moribund (hopeless cases given comfort care).',
+        },
+        {
+          q: 'Why were canal barges used to evacuate certain wounded casualties to Base Hospitals?',
+          a: 'Barges provided a smooth, vibration-free journey that avoided road jolting, essential for men with brain, chest, or fractured spine injuries.',
+        },
+        {
+          q: 'What role did the First Aid Nursing Yeomanry (FANY) play on the Western Front?',
+          a: 'Female volunteer drivers ran motorized frontline field ambulances, transported wounded troops, and operated mobile soup kitchens.',
+        },
+      ],
     },
     {
       id: 'lesson_5_5',
@@ -12250,6 +12997,166 @@ export const unitData = {
           },
         ],
       },
+      quick_quiz: [
+        {
+          question:
+            'What was the survival rate for compound femur (thigh bone) fractures at the start of the war in 1914?',
+          options: [
+            'Approximately an 80% mortality rate (only 20% survived).',
+            'A 0% mortality rate because all soldiers survived.',
+            'A 50% recovery rate with zero surgery.',
+            'Exactly 99% survived without splints.',
+          ],
+          answer: 'Approximately an 80% mortality rate (only 20% survived).',
+          explanation:
+            'In 1914–1915, 80% of soldiers with compound femur fractures died from severe internal blood loss and gas gangrene before reaching a base hospital.',
+        },
+        {
+          question:
+            'How did the introduction of the Thomas Splint in late 1915 transform compound fracture survival?',
+          options: [
+            'It pulled the broken leg into rigid traction, preventing bone fragments rubbing together, and reduced mortality from 80% to 20%.',
+            'It completely eliminated the need for any surgery or bandages.',
+            'It was made of solid gold to prevent bacterial growth.',
+            'It allowed soldiers to continue running into battle with a broken leg.',
+          ],
+          answer:
+            'It pulled the broken leg into rigid traction, preventing bone fragments rubbing together, and reduced mortality from 80% to 20%.',
+          explanation:
+            'Designed by Hugh Owen Thomas and introduced by Robert Jones, the splint used traction to stabilize the femur, stopping muscle spasms from driving sharp bone through the femoral artery.',
+        },
+        {
+          question: 'Who was Robert Jones and what was his role in British wartime orthopaedics?',
+          options: [
+            'Hugh Owen Thomas’s nephew, who trained medical orderlies and persuaded the British Army to make the Thomas Splint standard issue at the front.',
+            'A French chemist who developed poison phosgene gas.',
+            'An American pilot who flew medical transport gliders.',
+            'A German surgeon who defected to England in 1914.',
+          ],
+          answer:
+            'Hugh Owen Thomas’s nephew, who trained medical orderlies and persuaded the British Army to make the Thomas Splint standard issue at the front.',
+          explanation:
+            'Robert Jones established an orthopaedic hospital in Liverpool and organized frontline training courses, ensuring every stretcher bearer and RAP had Thomas Splints by December 1915.',
+        },
+        {
+          question: 'What surgical procedure was known as wound debridement?',
+          options: [
+            'Cutting away all contaminated, dead, and damaged tissue around a wound to deny bacteria an environment to grow.',
+            'Sewing the skin tightly closed immediately after injury.',
+            'Pouring boiling oil directly into an open fracture.',
+            'Applying leeches to the open wound for 24 hours.',
+          ],
+          answer:
+            'Cutting away all contaminated, dead, and damaged tissue around a wound to deny bacteria an environment to grow.',
+          explanation:
+            'Because antiseptics could not penetrate deep into torn muscle, surgeons cut away ragged tissue and foreign debris, leaving clean healthy margins that could resist infection.',
+        },
+        {
+          question:
+            'Why did military surgeons leave deep shrapnel wounds open after debridement rather than stitching them shut immediately?',
+          options: [
+            'Stitching an infected wound shut trapped anaerobic bacteria inside, creating a lethal breeding ground for gas gangrene.',
+            'The British Army ran out of surgical thread in 1915.',
+            'It was believed that exposure to trench mud hardened human flesh.',
+            'French law forbade closing wounds on foreign soldiers.',
+          ],
+          answer:
+            'Stitching an infected wound shut trapped anaerobic bacteria inside, creating a lethal breeding ground for gas gangrene.',
+          explanation:
+            'If closed immediately, anaerobic bacteria thrived in the sealed, oxygen-deprived wound; surgeons packed the wound with sterile gauze and only stitched it days later once infection was cleared.',
+        },
+        {
+          question:
+            'How did the Carrel-Dakin method treat deep wound infections from 1916 onwards?',
+          options: [
+            'Flushing the wound continuously through perforated rubber tubes with a mild sodium hypochlorite antiseptic solution.',
+            'Packing wounds with dried moss soaked in carbolic acid.',
+            'Immersing the entire body in a hot sulphur bath.',
+            'Injecting mercury directly into the spinal cord.',
+          ],
+          answer:
+            'Flushing the wound continuously through perforated rubber tubes with a mild sodium hypochlorite antiseptic solution.',
+          explanation:
+            'Alexis Carrel and Henry Dakin invented a technique where sterilised sodium hypochlorite solution was continuously dripped into the depths of a wound via rubber tubes every two hours.',
+        },
+        {
+          question:
+            'What was a major practical limitation of the Carrel-Dakin antiseptic solution in forward hospitals?',
+          options: [
+            'The sodium hypochlorite solution became unstable and lost its antiseptic potency after six hours, requiring fresh preparation daily.',
+            'It corroded glass bottles and caused explosions.',
+            'It turned human skin bright purple permanently.',
+            'It was immediately neutralized by clean water.',
+          ],
+          answer:
+            'The sodium hypochlorite solution became unstable and lost its antiseptic potency after six hours, requiring fresh preparation daily.',
+          explanation:
+            'The solution had to be mixed fresh every few hours because it rapidly degraded, putting enormous strain on hospital pharmacists during intense offensives.',
+        },
+        {
+          question: 'How did mobile X-ray vans improve surgical outcomes near the front lines?',
+          options: [
+            'They located embedded metal shrapnel and shattered bone fragments inside casualties before surgery, allowing precise excision.',
+            'They cured gas gangrene by killing bacteria with radiation.',
+            'They provided high-speed transport for ambulance drivers.',
+            'They projected radar signals across German trenches.',
+          ],
+          answer:
+            'They located embedded metal shrapnel and shattered bone fragments inside casualties before surgery, allowing precise excision.',
+          explanation:
+            'Mobile X-ray vans travelled directly to CCSs; surgeons used photographic plates to pinpoint exactly where metal fragments and dirty uniform cloth were lodged before cutting.',
+        },
+        {
+          question:
+            'What was a significant hazard and limitation of early X-ray equipment in 1914–1918?',
+          options: [
+            'Glass X-ray tubes overheated quickly, could shatter under heavy bombardment, and required minutes of still exposure.',
+            'X-ray vans could only be powered by nuclear reactors.',
+            'Soldiers had to swallow metallic lead before being X-rayed.',
+            'X-rays could not penetrate human skin.',
+          ],
+          answer:
+            'Glass X-ray tubes overheated quickly, could shatter under heavy bombardment, and required minutes of still exposure.',
+          explanation:
+            'Early X-ray machines were fragile, glass tubes overheated after brief use, electrical power generators were unreliable in the field, and patients had to remain motionless for long periods.',
+        },
+        {
+          question:
+            'When all antiseptic and debridement measures failed, why did surgeons resort to limb amputation?',
+          options: [
+            'To prevent localized gas gangrene and sepsis from spreading through the bloodstream and causing fatal multi-organ failure.',
+            'Because amputations paid higher fees from the British government.',
+            'To make soldiers eligible for pension payments.',
+            'Because artificial limbs were cheaper than bandages.',
+          ],
+          answer:
+            'To prevent localized gas gangrene and sepsis from spreading through the bloodstream and causing fatal multi-organ failure.',
+          explanation:
+            'Amputation was an emergency measure of last resort; sacrificing a mangled limb cut off the spread of gangrene toxins, saving over 240,000 British soldiers’ lives.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What was the mortality rate of compound femur fractures in 1914?',
+          a: 'Approximately 80% died from severe shock, blood loss, and rapid gas gangrene infection.',
+        },
+        {
+          q: 'How did the Thomas Splint reduce compound femur fracture mortality from 80% to 20%?',
+          a: 'It pulled the broken leg into rigid traction, preventing broken bone ends rubbing together and slicing the femoral artery during transport.',
+        },
+        {
+          q: 'What was wound debridement (épluchage)?',
+          a: 'Cutting away all contaminated, dead, and torn tissue from a wound to deny bacteria an environment to grow.',
+        },
+        {
+          q: 'How did the Carrel-Dakin method treat deep wound infections?',
+          a: 'Continuously irrigating wounds every two hours with a mild sodium hypochlorite antiseptic solution via perforated rubber tubes.',
+        },
+        {
+          q: 'How did mobile X-ray vans improve surgical survival at Casualty Clearing Stations?',
+          a: 'They located embedded shrapnel metal and shattered bone fragments prior to surgery, allowing precise, targeted extraction.',
+        },
+      ],
     },
     {
       id: 'lesson_5_6',
@@ -12511,6 +13418,168 @@ export const unitData = {
           },
         ],
       },
+      quick_quiz: [
+        {
+          question:
+            'Why was direct person-to-person blood transfusion so difficult and rarely performed at the start of the war?',
+          options: [
+            'Blood clotted within minutes of leaving the body, and donors had to be hooked directly to recipients using fragile glass tubes.',
+            'Blood typing had not yet been discovered.',
+            'Donating blood was illegal under British military law.',
+            'Blood could only be transferred between identical twins.',
+          ],
+          answer:
+            'Blood clotted within minutes of leaving the body, and donors had to be hooked directly to recipients using fragile glass tubes.',
+          explanation:
+            'Without an anticoagulant, blood coagulated almost instantly in syringes and tubing; donor and patient had to lie side-by-side in operating theatres while under artillery fire.',
+        },
+        {
+          question:
+            'What chemical compound was discovered by Richard Lewisohn in 1915 to stop blood from clotting outside the body?',
+          options: [
+            'Sodium citrate.',
+            'Carbolic acid.',
+            'Potassium permanganate.',
+            'Liquid nitrogen.',
+          ],
+          answer: 'Sodium citrate.',
+          explanation:
+            'Adding 0.2% sodium citrate prevented blood from coagulating without poisoning the patient, allowing blood to be bottled and moved between wards.',
+        },
+        {
+          question:
+            'What discovery did Francis Rous and James Turner make in 1916 that allowed blood to be stored for up to four weeks?',
+          options: [
+            'Adding a citrate-glucose solution and storing the bottled blood in ice containers.',
+            'Boiling blood to kill all bacteria.',
+            'Exposing blood to ultra-violet radiation lamps.',
+            'Freezing blood into solid bricks of dry ice.',
+          ],
+          answer:
+            'Adding a citrate-glucose solution and storing the bottled blood in ice containers.',
+          explanation:
+            'Rous and Turner added dextrose (glucose) to citrated blood, providing nutrients for red blood cells and allowing it to be kept refrigerated in ice boxes for 28 days.',
+        },
+        {
+          question:
+            'Who established the world’s first mobile blood bank at the Battle of Cambrai in November 1917?',
+          options: [
+            'Oswald Hope Robertson, an American doctor serving with the British medical service.',
+            'Florence Nightingale.',
+            'Alexander Fleming.',
+            'Joseph Lister.',
+          ],
+          answer:
+            'Oswald Hope Robertson, an American doctor serving with the British medical service.',
+          explanation:
+            'Captain Oswald Hope Robertson collected blood from universal donors (Group O), stored 22 units in ice chests, and successfully transfused 20 severely wounded, shock-ridden soldiers at Cambrai.',
+        },
+        {
+          question:
+            'Why was Group O blood specifically collected and stored in wartime blood depots?',
+          options: [
+            'Group O negative blood can be given safely to patients of any blood group without causing a fatal agglutination reaction.',
+            'Group O was the only blood type that did not turn brown when cold.',
+            'Group O blood carried twice as much oxygen as other types.',
+            'British soldiers only possessed Group O blood.',
+          ],
+          answer:
+            'Group O negative blood can be given safely to patients of any blood group without causing a fatal agglutination reaction.',
+          explanation:
+            'Karl Landsteiner discovered blood groups in 1901; Group O universal donor blood eliminated the time-consuming need for cross-matching during chaotic frontline battle casualties.',
+        },
+        {
+          question:
+            'How did American neurosurgeon Harvey Cushing revolutionize the treatment of battlefield head wounds?',
+          options: [
+            'Operating under local anaesthetic, using silver clips to control bleeding, and using gentle magnets to extract metal fragments.',
+            'Performing rapid trepanning with unsterilised carpenter drills.',
+            'Administering massive doses of general chloroform anaesthetic.',
+            'Refusing to operate on any head wound that was bleeding.',
+          ],
+          answer:
+            'Operating under local anaesthetic, using silver clips to control bleeding, and using gentle magnets to extract metal fragments.',
+          explanation:
+            'Cushing realized general anaesthesia caused brain swelling; operating under local anaesthetic with suction and silver haemostatic clips, he reduced brain surgery mortality from 50% to 28%.',
+        },
+        {
+          question:
+            'What specialized medical hospital was established in 1917 by Harold Gillies for facial reconstructive surgery?',
+          options: [
+            'Queen’s Hospital at Sidcup, Kent.',
+            'St Thomas’ Hospital in central London.',
+            'The Royal Naval Hospital at Greenwich.',
+            'Manchester Royal Infirmary.',
+          ],
+          answer: 'Queen’s Hospital at Sidcup, Kent.',
+          explanation:
+            'Harold Gillies recognized that men with horrific facial disfigurements suffered terrible social stigma; he persuaded the army to build the purpose-designed Queen’s Hospital in Sidcup, performing over 11,000 operations.',
+        },
+        {
+          question:
+            'What revolutionary surgical technique did Harold Gillies develop to graft skin onto damaged faces without tissue necrosis?',
+          options: [
+            'The “tubed pedicle”, rolling skin from the chest or forehead into a living tube to preserve blood supply while migrating it to the face.',
+            'Sewing animal leather directly onto the facial bones.',
+            'Spraying liquid plastic onto open facial burns.',
+            'Transplanting entire donor faces from deceased casualties.',
+          ],
+          answer:
+            'The “tubed pedicle”, rolling skin from the chest or forehead into a living tube to preserve blood supply while migrating it to the face.',
+          explanation:
+            'Gillies rolled a flap of healthy skin into a sealed tube connected at both ends; this preserved blood circulation and prevented infection while the skin was grafted onto the nose or jaw in stages.',
+        },
+        {
+          question:
+            'What photographic and artistic innovation did Gillies introduce at Sidcup to plan intricate reconstructive procedures?',
+          options: [
+            'Detailed photographic records, wax facial casts, and artist sketches by Henry Tonks to plan step-by-step reconstruction.',
+            'Filming surgical operations on colour cinema reels.',
+            'Painting oil portraits of soldiers before they were injured.',
+            'Handing mirrors to blinded soldiers to sketch themselves.',
+          ],
+          answer:
+            'Detailed photographic records, wax facial casts, and artist sketches by Henry Tonks to plan step-by-step reconstruction.',
+          explanation:
+            'Gillies collaborated with artist Henry Tonks and medical photographers to document injuries, sculpt plaster and wax models, and blueprint each surgical stage before cutting.',
+        },
+        {
+          question:
+            'How did wartime medical innovations on the Western Front influence peacetime British medicine?',
+          options: [
+            'Blood transfusion services, advanced plastic reconstruction, and modern orthopaedic casualty units were integrated into civilian hospitals.',
+            'All wartime medical techniques were banned by the British government in 1919.',
+            'Doctors returned to Galen’s Four Humours theory after 1918.',
+            'Military hospitals were burned down to prevent the spread of trench fever.',
+          ],
+          answer:
+            'Blood transfusion services, advanced plastic reconstruction, and modern orthopaedic casualty units were integrated into civilian hospitals.',
+          explanation:
+            'The First World War accelerated medical science by decades: Robertson’s blood depots led to the National Blood Transfusion Service, Gillies founded modern plastic surgery, and the Thomas Splint revolutionized civilian road accident care.',
+        },
+      ],
+      flashcards: [
+        {
+          q: 'What chemical did Richard Lewisohn introduce in 1915 to prevent blood clotting?',
+          a: 'Sodium citrate (0.2%), which stopped blood coagulating without toxic side effects.',
+        },
+        {
+          q: 'How did Francis Rous and James Turner allow blood to be stored for up to 4 weeks in 1916?',
+          a: 'By adding glucose (dextrose) to citrated blood and keeping the bottles refrigerated in ice chests.',
+        },
+        {
+          q: 'Where and when was the world’s first mobile blood bank deployed?',
+          a: 'At the Battle of Cambrai in November 1917, established by American doctor Oswald Hope Robertson with 22 units of Group O blood.',
+        },
+        {
+          q: 'How did Harvey Cushing improve survival in battlefield brain surgery?',
+          a: 'Operating under local anaesthesia to avoid brain swelling, using silver clips for haemostasis, and using gentle magnets to extract metal fragments.',
+        },
+        {
+          q: 'What was Harold Gillies’s “tubed pedicle” technique at Queen’s Hospital in Sidcup?',
+          a: 'Rolling a living flap of skin from the chest into a tube to preserve blood supply while migrating it to reconstruct disfigured facial tissue.',
+        },
+      ],
     },
   ],
   specification: [
