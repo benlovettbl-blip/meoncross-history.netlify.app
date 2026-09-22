@@ -206,11 +206,12 @@ const guides = [
                 <strong>Application in Our System:</strong>
                 <ul>
                   <li><strong>4-Act Dramatic Structure:</strong> Context &rarr; Conflict &rarr; Archival Evidence &rarr; Historical Verdict.</li>
+                  <li><strong>Death of the Comprehension Treadmill:</strong> Eliminates fragmented mid-text recall trivia; channels cognitive energy into a single high-yield Act 4 extended writing enquiry with PEEL scaffolds.</li>
                   <li><strong>Pure [Act.Paragraph] Notation:</strong> Eliminates sentence clutter, indexing text as <code>[1.1]</code>, <code>[2.1]</code> to train pupils to cite narrative blocks.</li>
-                  <li><strong>Fingertip vs. Residual Knowledge:</strong> High-yield retrieval primes memory for deep disciplinary analysis.</li>
+                  <li><strong>Fingertip vs. Residual Knowledge:</strong> Starter retrieval primes prior schema; front-loaded vocab fuels today's debate.</li>
                 </ul>
                 <div class="citation">
-                  <strong>Key Reference:</strong> Counsell, C. (2000). <em>"Historical knowledge and the curriculum"</em>, Teaching History, 100.<br>
+                  <strong>Key Reference:</strong> Counsell, C. (2000). <em>"Historical knowledge and the curriculum"</em>, Teaching History, 100 &bull; Dawson, I. (2004). <em>"Creating a sense of enquiry"</em>, TH 117.<br>
                   <strong>Research Link:</strong> <a href="https://www.history.org.uk/secondary/categories/436/module/8702/teaching-history" target="_blank">www.history.org.uk (Historical Association)</a>
                 </div>
               </div>

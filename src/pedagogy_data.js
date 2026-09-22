@@ -340,4 +340,54 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'counsell_enquiry_vs_comprehension_treadmill',
+    author: 'Christine Counsell & Ian Dawson',
+    affiliation: 'University of Cambridge / The Historical Association',
+    category: 'Disciplinary Writing & Enquiry',
+    categoryBadge: 'badge-purple',
+    title:
+      'The Death of the Comprehension Treadmill: High-Yield Enquiries Over Fact-Pellet Worksheets',
+    subtitle:
+      'Replacing Disjointed Low-Level Recall Questions with Coherent 4-Act Narratives and Single Sustained Extended Writing Tasks',
+    overview:
+      'Secondary history classrooms often fall victim to the "comprehension treadmill"—requiring pupils to answer five to ten disjointed, superficial recall questions per page. Christine Counsell and Ian Dawson demonstrate that this practice fragments historical schema into isolated "fact pellets," exhausting pupils\' working memory on retrieval trivia rather than developing historical explanation. Authentic disciplinary progress occurs when lessons are structured as a sustained enquiry culminating in one scaffolded, high-yield extended writing task.',
+    analysisHeading: 'The Comprehension Worksheet Trap',
+    analysisText:
+      'When pupils read a historical narrative interrupted by frequent, low-level comprehension questions ("What year did Bismarck take office?", "Name three states"), their cognitive attention shifts from causal synthesis to scanning for surface-level keywords. Pupils fail to perceive historical agency, contingency, or overarching narrative arcs, leaving them unable to construct coherent causal arguments in GCSE extended writing.',
+    evidenceHeading: 'Disciplinary Evidence & Schema Synthesis',
+    evidenceText:
+      'Research in history pedagogy demonstrates that deep conceptual retention ("residual knowledge") is forged through sustained, high-challenge shared reading (Acts 1–2), forensic evaluation of authentic primary sources paired with a targeted Hinge Question (Act 3), and analytical synthesis in a single, rigorous extended response (Act 4). Providing structured writing scaffolds (sentence stems, causal connectives, and evaluative criteria) enables all pupils, including SEND and disadvantaged learners, to produce high-level historical analysis.',
+    applicationHeading: 'Departmental & Platform Implementation',
+    implementation: [
+      '4-Act Lesson Architecture: Replaces fragmented comprehension worksheets with a single dramatic arc flowing from Context (Act 1) and Escalation (Act 2) to Archival Evidence (Act 3) and Verdict (Act 4).',
+      'Single High-Yield Enquiry Task: Each lesson concludes with one rigorous, multi-tiered extended writing task answering the overarching lesson enquiry, completely eliminating mid-text trivia questions.',
+      '3-Tier Writing Scaffolds: Every extended writing task provides Model Sentence Starters (Tier 1 access), Analytical Causal Connectives (Tier 2 development), and Evaluative Criteria prompts (Tier 3 high-level judgement).',
+      'Authentic Disciplinary Models: Provides complete, historically rich model answers demonstrating how to weave specific historical evidence into sustained analytical prose.',
+    ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
+    teacherProtocols: [
+      'Instruct pupils to bypass low-level worksheet blanks and dedicate their cognitive energy to the central lesson enquiry.',
+      'Lead high-challenge shared reading of Acts 1 and 2, pausing only for targeted checks for understanding.',
+      'Use the Act 3 primary source and its embedded Hinge Question to orchestrate a 5-minute paired discussion before pupils put pen to paper.',
+      'Allocate a protected 15–20 minute block for pupils to write their sustained Act 4 response using the tiered writing scaffold.',
+    ],
+    citations: [
+      'Counsell, C. (2000). "Historical knowledge and the curriculum", Teaching History, 100, pp. 54–71.',
+      'Dawson, I. (2004). "Creating a sense of enquiry: What makes an enquiry question work?", Teaching History, 117, pp. 18–26.',
+      'Counsell, C. (2018). "The dignity of the thing: What is curriculum?", Impact: Journal of the Chartered College of Teaching, 4.',
+    ],
+    links: [
+      {
+        title: 'Historical Association: Teaching History Journal',
+        url: 'https://www.history.org.uk/secondary/categories/436/module/8702/teaching-history',
+        displayText: 'www.history.org.uk/secondary/categories/436/module/8702/teaching-history',
+      },
+      {
+        title: 'Christine Counsell: The Dignity of the Thing (Curriculum Design)',
+        url: 'https://thedignityofthethingblog.wordpress.com/',
+        displayText: 'thedignityofthethingblog.wordpress.com',
+      },
+    ],
+  },
 ];
