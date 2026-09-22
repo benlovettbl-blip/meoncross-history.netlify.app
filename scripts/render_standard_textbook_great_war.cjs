@@ -709,25 +709,11 @@ function getLessonSections(lesson, idx) {
     (b) => b && b.title !== 'Consolidation Task' && b.theme_heading !== 'Consolidation Task',
   );
 
-  if (idx === 0) {
-    return [
-      {
-        title: blocks[1]?.title || 'The Chessboard of 39 States',
-        text: blocks[1]?.text || blocks[1]?.content || '',
-      },
-      {
-        title: blocks[2]?.title || 'Otto von Bismarck and "Blood and Iron"',
-        text: blocks[2]?.text || blocks[2]?.content || '',
-      },
-      {
-        title: blocks[3]?.title || 'The Three Wars of Unification',
-        text: blocks[3]?.text || blocks[3]?.content || '',
-      },
-      {
-        title: blocks[4]?.title || "Crowning a Kaiser in the Enemy's Palace",
-        text: blocks[4]?.text || blocks[4]?.content || '',
-      },
-    ];
+  if (blocks.length === 4) {
+    return blocks.map((b) => ({
+      title: b.title || `Act ${b.act}`,
+      text: b.text || b.content || '',
+    }));
   }
 
   const n = blocks.length;
@@ -746,10 +732,10 @@ function getLessonSections(lesson, idx) {
   };
 
   return [
-    formatQuarter(q1, 'Historical Context'),
-    formatQuarter(q2, 'Escalating Crisis'),
-    formatQuarter(q3, 'Strategic Maneuvers'),
-    formatQuarter(q4, 'Geopolitical Outcome'),
+    formatQuarter(q1, 'Act 1: Context & Catalyst'),
+    formatQuarter(q2, 'Act 2: Escalation & Conflict'),
+    formatQuarter(q3, 'Act 3: Forensic Archival Evidence'),
+    formatQuarter(q4, 'Act 4: The Historical Verdict'),
   ];
 }
 
@@ -789,6 +775,11 @@ async function buildPublisherTextbookHtmlGreatWar() {
       let paras = [];
       if (Array.isArray(raw)) {
         paras = raw;
+      } else if (raw.includes('<br><br>')) {
+        paras = raw
+          .split('<br><br>')
+          .map((p) => p.trim())
+          .filter(Boolean);
       } else {
         paras = String(raw)
           .split(/\n\s*\n/)
@@ -797,6 +788,9 @@ async function buildPublisherTextbookHtmlGreatWar() {
       }
       return paras
         .map((p, pIdx) => {
+          if (p.includes('para-ref')) {
+            return `<p class="narrative-p">${formatText(p)}</p>`;
+          }
           return `<p class="narrative-p"><span class="para-ref">[${secNum}.${pIdx + 1}]</span>${formatText(p)}</p>`;
         })
         .join('');
@@ -877,19 +871,19 @@ async function buildPublisherTextbookHtmlGreatWar() {
         <!-- 2-Column Core Prose Measure -->
         <div class="two-column-prose">
           
-          <!-- Section 1 -->
+          <!-- Act 1 -->
           <div class="section-banner">
-            <span class="sb-num">SECTION 1</span>
-            <span class="sb-title">${(sec1.title || 'Context').replace(/^\d+\.\s*/, '')}</span>
+            <span class="sb-num">ACT 1</span>
+            <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
           ${formatBlockParas(sec1, 1)}
 
           ${renderArchivalSourceBox(leftSources.sourceA)}
 
-          <!-- Section 2 -->
+          <!-- Act 2 -->
           <div class="section-banner">
-            <span class="sb-num">SECTION 2</span>
-            <span class="sb-title">${(sec2.title || 'Escalating Crisis').replace(/^\d+\.\s*/, '')}</span>
+            <span class="sb-num">ACT 2</span>
+            <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
           ${formatBlockParas(sec2, 2)}
 
@@ -934,7 +928,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
         <div class="right-page-header">
           <div class="rph-meta">
             <span class="rph-tag">PRIMARY ARCHIVE &amp; HISTORICAL VERDICT</span>
-            <span class="rph-lesson">LESSON ${lessonNum}: SECTIONS 3 &amp; 4</span>
+            <span class="rph-lesson">LESSON ${lessonNum}: ACTS 3 &amp; 4</span>
           </div>
           <h3 class="rph-title">${lesson.title}</h3>
         </div>
@@ -942,10 +936,10 @@ async function buildPublisherTextbookHtmlGreatWar() {
         <!-- 2-Column Prose Measure -->
         <div class="two-column-prose">
           
-          <!-- Section 3 -->
+          <!-- Act 3 -->
           <div class="section-banner">
-            <span class="sb-num">SECTION 3</span>
-            <span class="sb-title">${(sec3.title || 'Strategic Developments').replace(/^\d+\.\s*/, '')}</span>
+            <span class="sb-num">ACT 3</span>
+            <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
           ${formatBlockParas(sec3, 3)}
 
@@ -974,10 +968,10 @@ async function buildPublisherTextbookHtmlGreatWar() {
               : ''
           }
 
-          <!-- Section 4 -->
+          <!-- Act 4 -->
           <div class="section-banner">
-            <span class="sb-num">SECTION 4</span>
-            <span class="sb-title">${(sec4.title || 'Geopolitical Outcome').replace(/^\d+\.\s*/, '')}</span>
+            <span class="sb-num">ACT 4</span>
+            <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
           ${formatBlockParas(sec4, 4)}
 
