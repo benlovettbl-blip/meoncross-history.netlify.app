@@ -21554,6 +21554,28 @@
               ],
               "answer": "They sat high in a chair reading Galen aloud while a barber-surgeon did the cutting.",
               "explanation": "The professor (Lector) read Galen’s text; if the corpse disagreed, the body was dismissed as malformed."
+            },
+            {
+              "question": "What religious punishment was self-inflicted by penitents during epidemics to appease God’s wrath?",
+              "options": [
+                "Fasting and self-flagellation with iron-tipped whips.",
+                "Drinking mercury solutions.",
+                "Exile into royal forests.",
+                "Banning all church attendance."
+              ],
+              "answer": "Fasting and self-flagellation with iron-tipped whips.",
+              "explanation": "Medieval penitents whipped themselves and fasted strictly to show remorse for sins and plead for God’s mercy."
+            },
+            {
+              "question": "What was the main reason medieval people believed astrology could cause widespread disease?",
+              "options": [
+                "Planetary alignments and conjunctions were thought to alter earthly atmospheres and corrupt the humours.",
+                "Comets were thought to directly poison well water.",
+                "Stars were believed to be physical burning fires that dried up the human liver.",
+                "The Church taught that constellations were ancient Roman pagan gods with physical powers."
+              ],
+              "answer": "Planetary alignments and conjunctions were thought to alter earthly atmospheres and corrupt the humours.",
+              "explanation": "Astrology was considered an elite rational science where celestial movements governed the balance of earthly elements and human humours."
             }
           ],
           "flashcards": [
