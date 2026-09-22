@@ -14,53 +14,103 @@ export const unitData = {
   ],
   key_individuals: [
     {
-      name: 'James Watt',
-      dates: '1736 – 1819',
-      title: 'Engineer & Inventor',
-      significance:
-        'His crucial improvements to the steam engine powered the Industrial Revolution, allowing massive factories to be built anywhere rather than relying on fast-flowing rivers.',
-    },
-    {
       name: 'Henry Cort',
       dates: '1741 – 1800',
-      title: 'Fareham Ironmaster',
+      title: 'Fareham Ironmaster & Metallurgical Pioneer',
+      role: 'Industrial Pioneer',
+      image: '/images/henry_cort.jpg',
       significance:
-        'Invented the puddling process at Funtley Ironworks in Hampshire. His method allowed Britain to mass-produce high-quality wrought iron for the Royal Navy and the growing railway network.',
+        'Invented the puddling process at Funtley Ironworks in Hampshire. His breakthrough liberated Britain from foreign iron imports, providing the structural wrought iron that built the Royal Navy and the world’s railways.',
+      actions:
+        'Patented puddling and grooved rolling (1783–1784); produced naval iron tested at Portsmouth Dockyard; transformed Britain from an iron importer into the world’s leading exporter.',
     },
     {
-      name: 'Isambard Kingdom Brunel',
-      dates: '1806 – 1859',
-      title: 'Civil Engineer',
+      name: 'James Watt',
+      dates: '1736 – 1819',
+      title: 'Scottish Mechanical Engineer & Inventor',
+      role: 'Mechanical Engineer',
+      image: '/images/james_watt.jpg',
       significance:
-        'One of the most ingenious figures of the Victorian era. He built the Great Western Railway, magnificent bridges, and massive steamships that connected Britain to its empire.',
-    },
-    {
-      name: 'Edwin Chadwick',
-      dates: '1800 – 1890',
-      title: 'Social Reformer',
-      significance:
-        'Published a shocking 1842 report proving that industrial slums were deadlier than modern wars. His relentless campaigning laid the foundation for modern public health and sanitation systems.',
+        'Radically improved the Newcomen steam engine by introducing the separate condenser and rotary motion, freeing industrial manufacturing from reliance on water power.',
+      actions:
+        'Patented the separate condenser (1769); partnered with Matthew Boulton at Soho Manufactory; adapted steam engines to drive rotary machinery in textile mills and mines.',
     },
     {
       name: 'Lord Shaftesbury',
       dates: '1801 – 1885',
-      title: 'Politician & Philanthropist',
+      title: 'Politician, Philanthropist & Social Reformer',
+      role: 'Parliamentary Reformer',
+      image: '/images/lord_shaftesbury.jpg',
       significance:
-        'Fought tirelessly in Parliament to improve the brutal working conditions of the industrial poor, notably championing laws that restricted the use of children in factories and coal mines.',
+        'Led the parliamentary struggle against unbridled laissez-faire capitalism, fighting for statutory limits on factory working hours and championing the abolition of child labor in mines.',
+      actions:
+        'Championed the Ten Hours Act (1847); sponsored the Mines Act 1842 banning underground child labour; served as President of the Ragged Schools Union for forty years.',
     },
     {
-      name: 'Charles Dickens',
-      dates: '1812 – 1870',
-      title: 'Author & Social Critic',
+      name: 'Edwin Chadwick',
+      dates: '1800 – 1890',
+      title: 'Social Reformer & Sanitary Pioneer',
+      role: 'Public Health Pioneer',
+      image: '/images/chadwick.jpg',
       significance:
-        "Used his immensely popular novels, such as 'Oliver Twist' and 'Hard Times', to expose the harsh realities of industrial poverty, the cruel workhouse system, and the widening gap between rich and poor.",
+        'Published the monumental 1842 Report on the Sanitary Condition of the Labouring Population, establishing that infectious disease in industrial slums was directly caused by environmental filth and contaminated water.',
+      actions:
+        'Authored the seminal 1842 Sanitary Report; drafted the Public Health Act 1848; advocated arterial drainage networks, clean pressurized water, and state sanitary regulation.',
+    },
+    {
+      name: 'Isambard Kingdom Brunel',
+      dates: '1806 – 1859',
+      title: 'Civil & Mechanical Engineer',
+      role: 'Imperial Engineer',
+      image: '/images/isambard_kingdom_brunel.jpg',
+      significance:
+        'The preeminent engineering genius of the Victorian era. Constructed the Great Western Railway, revolutionary suspension bridges, and massive steamships that shrank imperial trade routes.',
+      actions:
+        'Constructed the Great Western Railway (1833–1841) and Box Tunnel; designed the SS Great Britain (first iron-hulled propeller liner) and SS Great Eastern; bridged the Avon Gorge.',
+    },
+    {
+      name: 'Rani Lakshmibai of Jhansi',
+      dates: '1828 – 1858',
+      title: 'Rani of the Maratha Princely State of Jhansi',
+      role: 'Rebellion Leader',
+      image: '/images/rani_of_jhansi.jpg',
+      significance:
+        'The foremost symbol of armed resistance against British East India Company colonial rule during the 1857 Rebellion, fighting fiercely after her state was annexed under the Doctrine of Lapse.',
+      actions:
+        'Defied Lord Dalhousie’s Doctrine of Lapse; organized military defense of Jhansi against General Rose; died in combat leading rebel forces at Gwalior in June 1858.',
+    },
+    {
+      name: 'William Lovett',
+      dates: '1800 – 1877',
+      title: 'Cabinetmaker, Radical Reformer & Chartist Leader',
+      role: 'Working-Class Leader',
+      image: '/images/william_lovett.jpg',
+      significance:
+        'Principal author of the People’s Charter of 1838. Championed "Moral Force" Chartism, advocating working-class education, non-violent agitation, and universal male suffrage.',
+      actions:
+        'Drafted the Six Points of the People’s Charter (1838); served as Secretary of the National Chartist Convention; endured imprisonment for political agitation.',
+    },
+    {
+      name: 'Earl Grey',
+      dates: '1764 – 1845',
+      title: 'Whig Prime Minister of the United Kingdom (1830–1834)',
+      role: 'Prime Minister',
+      image: '/images/earl_grey.jpg',
+      significance:
+        'Steered the landmark 1832 Great Reform Act through fierce aristocratic resistance, disenfranchising rotten boroughs and establishing the foundation for Britain’s modern parliamentary democracy.',
+      actions:
+        'Formed reform government in 1830; secured royal pledge to create peers to overcome House of Lords veto; oversaw the 1832 Reform Act and the Slavery Abolition Act 1833.',
     },
     {
       name: 'Queen Victoria',
       dates: '1819 – 1901',
-      title: 'Queen of the United Kingdom',
+      title: 'Queen of the United Kingdom & Empress of India',
+      role: 'Monarch & Imperial Figurehead',
+      image: '/images/queen_victoria.jpg',
       significance:
-        "The monarch who oversaw the massive expansion of the British Empire and the peak of Britain's industrial dominance, becoming the defining figure of the 'Victorian' era.",
+        'Reigned for sixty-three years as the constitutional monarch presiding over Britain’s industrial triumph, parliamentary transformation, and vast global imperial expansion.',
+      actions:
+        'Reigned 1837–1901; patron of the 1851 Great Exhibition; issued the 1858 Royal Proclamation promising religious tolerance in India; proclaimed Empress of India in 1876.',
     },
   ],
   lessons: [
@@ -752,6 +802,68 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This enquiry investigates the human and social impact of industrialisation, moving beyond simplistic narratives by contrasting northern steam-powered textile mills with the local Hampshire industrial economy of the Fareham Red Brick Boom. Pupils examine the shift from task-oriented domestic handcraft to the relentless machine-clock discipline of the factory system. Through Act 3, students contrast qualitative national parliamentary testimony (the 1832 Sadler Committee) with quantitative local parish census data (1881 Fareham and Funtley clay pits), discovering that child labour was not an isolated northern phenomenon but a direct reality in rural Hampshire. Act 4 introduces the central historiographical debate of modern British social history: the Optimist vs. Pessimist clash over the working-class standard of living.',
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Shared Reading & Factory Realities (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source A (Thomas Allom, Powerloom Weaving). Connect the shift from human muscle to steam power with prior recall of Henry Cort’s Funtley puddling furnace and Watt’s steam engine.',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together with prosody tracking. Pause at Act 1 to interrogate the loss of "Saint Monday" and the tyrannical discipline of the factory clock.',
+              },
+              {
+                time: '30–45m',
+                label: 'Archival & Local Analysis',
+                instruction:
+                  'Study Source C (Matthew Crabtree’s 1832 Sadler Committee testimony) and Source D (1881 Fareham Census). Compare northern textile child scavengers with local Hampshire 10-year-old "pug boys" in the Funtley clay pits.',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 2: How does the fact that 6 million Fareham Red bricks built the Royal Albert Hall prove that Victorian architectural splendour was built upon local child labour?',
+              },
+            ],
+          },
+          lesson_2: {
+            title:
+              'Lesson 2: Historiographical Debate, Standard of Living & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review vocabulary mapping: connecting the mechanised pug mill to mass-produced Fareham Red bricks.',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Historiographical Debate',
+                instruction:
+                  'Read Acts 3 & 4. Debate the central historical controversy: The Optimists (Hartwell: rising real wages, consumer goods) vs. The Pessimists (Thompson: discipline, alienation, physical destruction).',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 6–7)',
+                instruction:
+                  'Pupils complete the Analytical Conflict Ledger (Task 4) and 18-line PEEL extended writing enquiry using the Gold Criteria Strip on Page 7.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Visualiser showcase and live critique of pupil responses evaluating whether industrialisation was primarily human punishment or societal progress.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -823,6 +935,28 @@ export const unitData = {
           },
         ],
       },
+      timeline_anchor: [
+        {
+          date: '1771',
+          title: 'Arkwright’s Cromford Mill',
+          desc: 'Richard Arkwright constructs the first water-powered spinning mill in Derbyshire, establishing 24-hour round-the-clock machine shifts and factory discipline.',
+        },
+        {
+          date: '1832',
+          title: 'The Sadler Committee Report',
+          desc: 'Michael Sadler gathers harrowing eyewitness parliamentary testimony exposing 16-hour days, physical strapping, and child deformities in northern mills.',
+        },
+        {
+          date: '1833',
+          title: 'The 1833 Factory Act',
+          desc: 'Parliament bans textile work for children under nine, limits older children to eight-hour shifts, and appoints four inspectors for the entire United Kingdom.',
+        },
+        {
+          date: '1881',
+          title: 'Fareham Red Brick Boom',
+          desc: 'Hampshire parish census records prove 10-year-old local boys work exhausting shifts in Funtley clay pits to manufacture six million bricks for the Royal Albert Hall.',
+        },
+      ],
       narrative_blocks: [
         {
           title: 'Act 1: The Baseline: The Domestic Workshop vs. The Factory Clock (1750–1830)',
@@ -1299,6 +1433,67 @@ export const unitData = {
       teacher_notes: {
         primer:
           "This lesson explores the public health crisis triggered by explosive, unregulated urbanisation between 1800 and 1875. It juxtaposes the immense imperial wealth generated by British manufacturing against the squalid reality of working-class cellar dwellings, overflowing cesspools, and repeated cholera epidemics. Guides pupils through the shift from laissez-faire apathy to state intervention via Edwin Chadwick's 1842 report, the 1858 Great Stink, and Joseph Bazalgette's intercepting sewers.",
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Epidemic Tracking & The Sanitary Crisis (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source A (John Leech, "A Court for King Cholera", 1852). Connect slum overcrowding with prior recall of the domestic-to-factory migration.',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together. Pause at Act 1 to interrogate back-to-back construction, cellar dwellings, and overflowing shared cesspools.',
+              },
+              {
+                time: '30–45m',
+                label: 'Archival & Forensic Investigation',
+                instruction:
+                  'Interrogate Source C (Edwin Chadwick’s 1842 Sanitary Report) and Dr John Snow’s 1854 Broad Street cholera spot map. Contrast miasma dogma with waterborne bacterial contagion.',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 1: Why did the lack of municipal planning inevitably turn urban water pumps into vectors for waterborne disease?',
+              },
+            ],
+          },
+          lesson_2: {
+            title: 'Lesson 2: The Great Stink, Engineering Salvation & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review core disciplinary distinction: Miasma Theory vs. Waterborne Germ Theory.',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Engineering Analysis',
+                instruction:
+                  'Read Acts 3 & 4. Examine how the 1858 Great Stink forced Parliament to abandon laissez-faire dogma and fund Joseph Bazalgette’s 1,100-mile subterranean intercepting sewer network.',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 8–9)',
+                instruction:
+                  'Pupils complete the Sanitary Reform Timeline Domino, causal flow diagram, and 18-line PEEL extended writing evaluation on Page 9.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Live visualiser critique comparing pupil answers evaluating whether technology alone or state intervention made industrial cities livable.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -1439,6 +1634,28 @@ export const unitData = {
             '“Resolved: That the open ditch running from West Street behind the brewery into Fareham Creek constitutes an intolerable public nuisance and danger to health. Overflow from private cesspits and pigsties discharges continuously into the roadway, saturating the subsoil and poisoning adjacent wells from which inhabitants draw daily water. Cases of violent typhus fever have arisen immediately adjacent.”',
           context:
             'Official minute book entry from the Fareham Local Board of Health in 1850, proving that public health crises were not confined to northern industrial capitals like Manchester, but directly plagued local Hampshire market towns. **Hinge Question:** What does local archival evidence in Hampshire reveal about the universal reach of 19th-century sanitary failure?',
+        },
+      ],
+      timeline_anchor: [
+        {
+          date: '1831–1832',
+          title: 'First British Cholera Epidemic',
+          desc: 'Waterborne Asiatic cholera strikes Sunderland and industrial slums, killing over 30,000 Britons while medical authorities cling to miasma theory.',
+        },
+        {
+          date: 'July 1842',
+          title: 'Chadwick’s Sanitary Report',
+          desc: 'Edwin Chadwick proves slum squalor drives life expectancy down to seventeen years in Liverpool, making disease an intolerable national economic cost.',
+        },
+        {
+          date: 'August 1854',
+          title: 'Snow & The Broad Street Pump',
+          desc: 'Dr John Snow maps cholera fatalities in Soho, removes the Broad Street pump handle, and forensically disproves airborne miasma contagion.',
+        },
+        {
+          date: '1858–1865',
+          title: 'The Great Stink & Bazalgette’s Sewers',
+          desc: 'Thames sewage stench forces Parliament to fund Joseph Bazalgette’s 1,100-mile brick sewer network, permanently eradicating waterborne cholera from London.',
         },
       ],
       narrative_blocks: [
@@ -1809,6 +2026,68 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This lesson investigates the dual engines of British imperial supremacy in the 19th century: commercial mercantilism (driven by corporate chartered monopolies like the East India Company) and state industrial naval power (centered at Portsmouth Royal Dockyard). Challenges pupils to evaluate whether the British Empire was built primarily on technological and commercial enterprise or on military coercion, gunboat diplomacy, and the deliberate de-industrialisation of colonized economies like India.',
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Maritime Power & Imperial Expansion (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source A (Walter Crane’s 1886 Imperial Federation Map). Connect imperial trade networks with prior recall of industrial raw materials (cotton, coal, iron).',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together with prosody tracking. Pause at Act 1 to interrogate mercantilist triangular trade and corporate monopoly governance under the East India Company.',
+              },
+              {
+                time: '30–45m',
+                label: 'Archival & Technological Analysis',
+                instruction:
+                  'Study Source B (Portsmouth Dockyard and HMS Warrior). Analyze how Marc Brunel’s automated block mills and steam ironclads enforced global gunboat diplomacy and the Two-Power Standard.',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 2: How did Portsmouth Dockyard’s industrial automation transform Britain from an island kingdom into a global naval hegemon?',
+              },
+            ],
+          },
+          lesson_2: {
+            title:
+              'Lesson 2: Corporate Conquest, Historiographical Balance & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review vocabulary: Mercantilism vs. Free-Trade Imperialism.',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Historiographical Debate',
+                instruction:
+                  'Read Acts 3 & 4. Debate the competing historiographical interpretations: Was the British Empire built on commercial enterprise or coercive military violence and colonial de-industrialisation?',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 10–11)',
+                instruction:
+                  'Pupils complete the Imperial Power Dual-Mechanism Matrix (Task 4) and 18-line PEEL extended writing evaluation using the Gold Criteria Strip on Page 11.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Visualiser critique of student writing evaluating the relative roles of technological innovation versus military conquest in sustaining the empire.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -1949,6 +2228,28 @@ export const unitData = {
             '“In 1814, India exported 1.2 million pieces of cotton handloom cloth to Great Britain. By 1835, this trade had collapsed to nothing, while British factory-made cotton cloth imported into India rose from 800,000 yards to over 51 million yards. The historic city of Dacca, once the manufacturing jewel of Asia, has seen its population shrink from 150,000 to 30,000. Its famous muslin weavers have been reduced to utter starvation, their looms rotting in their houses because British goods are admitted duty-free while Indian goods are taxed at 70 percent.”',
           context:
             "Parliamentary testimony from 1840 documenting the catastrophic collapse of India's world-famous textile industry under British tariff policies designed to protect Lancashire cotton mills. **Hinge Question:** Why did the British government enforce free trade on India while imposing punitive tariffs on Indian textiles entering Britain?",
+        },
+      ],
+      timeline_anchor: [
+        {
+          date: 'June 1757',
+          title: 'Battle of Plassey',
+          desc: 'Robert Clive defeats the Nawab of Bengal, transforming the East India Company from a maritime trading firm into an armed sovereign territorial ruler.',
+        },
+        {
+          date: 'October 1805',
+          title: 'Battle of Trafalgar',
+          desc: 'Lord Nelson’s decisive victory annihilates the Franco-Spanish fleet, securing unchallengeable British naval hegemony across global sea trade lanes.',
+        },
+        {
+          date: '1839–1842',
+          title: 'The First Opium War',
+          desc: 'British steam gunboats force the Qing Empire to cede Hong Kong and open treaty ports under the Treaty of Nanking, demonstrating imperial gunboat diplomacy.',
+        },
+        {
+          date: 'August 1860',
+          title: 'Launch of HMS Warrior',
+          desc: 'Built with revolutionary iron armor and steam screw propulsion, Portsmouth’s HMS Warrior renders every wooden warship on Earth instantly obsolete.',
         },
       ],
       narrative_blocks: [
@@ -2340,6 +2641,68 @@ export const unitData = {
       teacher_notes: {
         primer:
           "This lesson examines the causes, violent outbreak, and traumatic constitutional aftermath of the 1857 Indian Rebellion (historically known as the 'Indian Mutiny' in colonial British historiography and the 'First War of Independence' in modern Indian scholarship). Investigates long-term structural resentments—including Lord Dalhousie's Doctrine of Lapse, religious and cultural interference, and economic plunder—which culminated in the explosive Enfield rifle greased cartridge controversy. Evaluates the brutal reprisals on both sides and the liquidation of the East India Company in favor of direct Crown governance (the British Raj).",
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Colonial Tension & The 1857 Explosion (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source A (Enfield rifle cartridge diagram). Connect religious grievances and structural resentments with prior recall of East India Company military expansion.',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together. Pause at Act 1 to interrogate Lord Dalhousie’s Doctrine of Lapse, taxation burdens, and the deep-seated fear of forced Christian conversion.',
+              },
+              {
+                time: '30–45m',
+                label: 'Archival & Military Analysis',
+                instruction:
+                  'Examine Source B (1858 contemporary lithograph of Rani Lakshmibai of Jhansi). Analyze the strategic importance of restoring Mughal Emperor Bahadur Shah Zafar in Delhi.',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 1: Why did the grease on a rifle cartridge provoke a nationwide political explosion across northern India?',
+              },
+            ],
+          },
+          lesson_2: {
+            title:
+              'Lesson 2: Narrative Retribution, Historiographical Debates & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review vocabulary: Sepoy vs. Viceroy, and Doctrine of Lapse.',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Historiographical Debate',
+                instruction:
+                  'Read Acts 3 & 4. Interrogate the Azamgarh Proclamation (Source C) and debate: Was 1857 a limited military mutiny or a war of national liberation?',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 12–13)',
+                instruction:
+                  'Pupils complete the 1857 Rebellion Causal Chain (Task 4) and 18-line PEEL extended writing evaluation on Page 13.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Visualiser debrief evaluating student responses on the constitutional shift from Company rule to the British Raj under Queen Victoria.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -2480,6 +2843,28 @@ export const unitData = {
             '“We have resolved to take upon Ourselves the government of the territories in India, heretofore administered in trust by the Honourable East India Company. We disclaim alike the right and the desire to impose Our convictions on any of Our subjects. We declare it to be Our royal will and pleasure that none be in any degree molested or disquieted by reason of their religious faith or observances, but that all shall alike enjoy the equal and impartial protection of the law.”',
           context:
             "Following the suppression of the 1857 uprising, the 1858 Government of India Act liquidated the East India Company. Queen Victoria's proclamation pledged non-interference in Indian religious customs and promised equal protection under Crown rule. **Hinge Question:** Why did the British Crown publicly pledge religious neutrality in 1858, and did this truly change the reality of imperial rule?",
+        },
+      ],
+      timeline_anchor: [
+        {
+          date: 'May 1857',
+          title: 'Outbreak at Meerut',
+          desc: 'Indian sepoys court-martialed for refusing greased Enfield cartridges kill British officers and march on Delhi, sparking an insurrection across northern India.',
+        },
+        {
+          date: 'June–Nov 1857',
+          title: 'Sieges of Cawnpore & Lucknow',
+          desc: 'Rebel forces besiege British garrisons; subsequent British relief columns carry out brutal scorched-earth reprisals across Awadh villages.',
+        },
+        {
+          date: 'June 1858',
+          title: 'Fall of Gwalior & Death of Lakshmibai',
+          desc: 'Rani Lakshmibai of Jhansi dies fighting in cavalry action at Gwalior, cementing her legacy as an enduring national martyr of Indian resistance.',
+        },
+        {
+          date: 'August 1858',
+          title: 'Government of India Act',
+          desc: 'British Parliament dissolves the East India Company, transferring direct sovereign rule of the subcontinent to the British Crown under Queen Victoria.',
         },
       ],
       narrative_blocks: [
@@ -2818,6 +3203,67 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This lesson explores the turbulent, often bloody struggles of the British working class to gain political representation, living wages, and trade union rights between 1815 and 1848. Tracks the arc of popular resistance: from the post-Napoleonic economic depression that provoked the 1819 Peterloo Massacre to the rural machine-breaking of the 1830 Captain Swing Riots across Hampshire, the transportation of the 1834 Tolpuddle Martyrs, and the rise of Chartism—Britain’s first mass working-class democratic movement.',
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Radical Protest & The Crackdown (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source A (George Cruikshank’s Peterloo Massacre caricature). Connect post-war economic distress with prior recall of disenfranchised industrial populations.',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together with prosody tracking. Pause at Act 1 to interrogate the St Peter’s Field cavalry charge and the draconian 1819 Six Acts.',
+              },
+              {
+                time: '30–45m',
+                label: 'Local & Archival Investigation',
+                instruction:
+                  'Study Source B (Anonymous 1830 "Captain Swing" threatening letter to Hampshire magistrates) and the 1834 Tolpuddle Martyrs trial dispatches.',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 2: How did the mythical pseudonym of "Captain Swing" become a weapon of psychological warfare against wealthy landowners?',
+              },
+            ],
+          },
+          lesson_2: {
+            title: 'Lesson 2: Chartism, Causal Mechanics & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review vocabulary: Moral Force vs. Physical Force Chartism.',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Historiographical Debate',
+                instruction:
+                  'Read Acts 3 & 4. Interrogate the Six Points of the People’s Charter and debate: Why did Parliament reject three massive petitions signed by millions?',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 14–15)',
+                instruction:
+                  'Pupils complete the Working-Class Resistance Strategy Matrix (Task 4) and 18-line PEEL extended writing evaluation on Page 15.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Visualiser debrief evaluating pupil arguments on whether peaceful petitioning or armed resistance was more effective in advancing democracy.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -2957,6 +3403,28 @@ export const unitData = {
             'Source D: The earliest surviving photograph of a British political protest, showing tens of thousands of Chartists gathering at Kennington Common, London, on 10 April 1848.',
           context:
             "On 10 April 1848, the Chartists organized a colossal rally at Kennington Common to present their Third National Petition to Parliament, boasting over five million signatures. The government mobilized 85,000 special constables and the Duke of Wellington's troops to block their march across the Thames. **Hinge Question:** Why did the sheer scale and discipline of this working-class crowd terrify the aristocratic government?",
+        },
+      ],
+      timeline_anchor: [
+        {
+          date: 'August 1819',
+          title: 'The Peterloo Massacre',
+          desc: 'Magistrates order cavalry to charge 60,000 peaceful reform demonstrators at St Peter’s Field, Manchester, killing 18 and wounding over 650.',
+        },
+        {
+          date: 'October 1830',
+          title: 'The Hampshire Swing Riots',
+          desc: 'Impoverished farmworkers smash threshing machines and burn ricks across Hampshire under the mythical name "Captain Swing", demanding a living wage.',
+        },
+        {
+          date: 'March 1834',
+          title: 'Trial of the Tolpuddle Martyrs',
+          desc: 'Six Dorset agricultural labourers are sentenced to seven years’ penal transportation in Australia for swearing illegal oaths to form a friendly society.',
+        },
+        {
+          date: 'May 1838',
+          title: 'The People’s Charter Published',
+          desc: 'William Lovett and the London Working Men’s Association draft the Six Points, demanding universal male suffrage, secret ballots, and paid MPs.',
         },
       ],
       narrative_blocks: [
@@ -3361,6 +3829,68 @@ export const unitData = {
       teacher_notes: {
         primer:
           "This lesson examines the constitutional evolution of British parliamentary democracy from the notoriously corrupt 'Old Sarum' electoral system to the mass franchise reforms of the late 19th century. Analyzes the landmark 1832 Great Reform Act (which enfranchised the industrial middle class while deliberately excluding workers), the 1872 Secret Ballot Act (which destroyed landlord coercion and open-air bribery), and the 1867/1884 Reform Acts. Challenges pupils to debate whether democracy was granted as an elite concession to avert revolution or won through popular struggle.",
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Rotten Boroughs & Parliamentary Clashes (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source A (Old Sarum electoral mound engraving). Connect parliamentary corruption with prior recall of the Peterloo reform demands.',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together. Pause at Act 1 to contrast rotten boroughs returning two MPs with zero representation for industrial Birmingham and Manchester.',
+              },
+              {
+                time: '30–45m',
+                label: 'Archival & Strategic Analysis',
+                instruction:
+                  'Study Source B (1832 "To Stop the Duke, Go for Gold" bank run placard). Analyze how middle-class economic warfare and threats of revolution forced the King and Lords to yield.',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 2: Did Earl Grey pass the 1832 Reform Act to advance democracy or to preserve aristocratic power?',
+              },
+            ],
+          },
+          lesson_2: {
+            title:
+              'Lesson 2: The Democratic Cascade, Historiographical Models & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review vocabulary: Rotten Borough vs. Secret Ballot.',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Historiographical Debate',
+                instruction:
+                  'Read Acts 3 & 4. Interrogate the 1872 Pontefract liquorice ballot box (Source C) and debate: Was democracy conceded from above by fearful elites or won from below by popular agitation?',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 16–17)',
+                instruction:
+                  'Pupils complete the Reform Acts Comparative Progression Table (Task 4) and 18-line PEEL extended writing evaluation on Page 17.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Live visualiser analysis of student judgements on the relative importance of the 1832, 1867, and 1884 Acts in forging modern democracy.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -3502,6 +4032,28 @@ export const unitData = {
             'Source D: The historic tin ballot box and wax seals used at the Pontefract municipal by-election on 15 August 1872, the first election conducted under the Ballot Act.',
           context:
             'In August 1872, Hugh Childers won re-election in Pontefract in the first British election where voters cast their ballots in private voting compartments. The box was sealed with liquorice stamps from a local confectionery factory to prevent fraud. **Hinge Question:** Why was the introduction of the secret ballot box the decisive turning point that allowed the working class to vote freely?',
+        },
+      ],
+      timeline_anchor: [
+        {
+          date: 'June 1832',
+          title: 'The Great Reform Act',
+          desc: 'Abolishes 56 rotten boroughs and gives MPs to industrial cities like Manchester and Leeds, enfranchising the prosperous manufacturing middle class.',
+        },
+        {
+          date: 'August 1867',
+          title: 'The Second Reform Act',
+          desc: 'Benjamin Disraeli’s landmark legislation extends the franchise to urban male working-class householders, doubling the British electorate to two million.',
+        },
+        {
+          date: 'July 1872',
+          title: 'The Secret Ballot Act',
+          desc: 'Replaces corrupt open-air hustings with private voting booths and printed ballot papers, abolishing landlord intimidation and employer coercion.',
+        },
+        {
+          date: 'December 1884',
+          title: 'The Third Reform Act',
+          desc: 'William Gladstone extends the household franchise to rural agricultural labourers and miners, increasing the electorate to over five million men.',
         },
       ],
       narrative_blocks: [
@@ -3883,6 +4435,68 @@ export const unitData = {
       teacher_notes: {
         primer:
           "The capstone synoptic synthesis lesson of the unit. Integrates the entire historical arc of 19th-century industrialisation and empire: from Henry Cort's iron breakthroughs at Funtley and urban squalor to the East India Company, working-class rebellions, and the expansion of the franchise. Challenges pupils to engage directly with the foundational historiographical debates—the 'Optimist vs. Pessimist' standard of living debate (Clapham/Ashton vs. Thompson/Hobsbawm) and the imperial 'Drain Theory' (Dadabhai Naoroji vs. Niall Ferguson)—culminating in a rigorous, multi-perspectival extended synoptic essay.",
+        delivery_plan: {
+          format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
+          lesson_1: {
+            title: 'Lesson 1: Immersion, Divergent Experiences & Balance Sheet Analysis (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Hook & Prior Retrieval',
+                instruction:
+                  'Display Source D (John Leech’s 1843 "Capital and Labour" Punch cartoon). Connect vertical inequality with prior recall of factory owners vs. slum dwellers.',
+              },
+              {
+                time: '10–30m',
+                label: 'Modelled Shared Reading',
+                instruction:
+                  'Read Acts 1 & 2 together with prosody tracking. Pause at Act 1 to contrast the capitalist fortunes of mill barons and railway magnates with working-class life expectancy in industrial cities.',
+              },
+              {
+                time: '30–45m',
+                label: 'Statistical & Imperial Analysis',
+                instruction:
+                  'Interrogate Source A (1850–1900 real wages chart), Source B (Friedrich Engels’ Manchester slum report), and Source C (Dadabhai Naoroji’s imperial Drain Theory calculation).',
+              },
+              {
+                time: '45–50m',
+                label: 'Formative Hinge Plenary',
+                instruction:
+                  'Conduct check for understanding on Hinge Question 3: Can the industrial success of Victorian Britain be morally separated from the colonization and de-industrialisation of India?',
+              },
+            ],
+          },
+          lesson_2: {
+            title:
+              'Lesson 2: Comparative Synthesis, Master Historical Verdict & Extended Writing (50 mins)',
+            phases: [
+              {
+                time: '00–10m',
+                label: 'Spaced Retrieval & Vocab Anchor',
+                instruction:
+                  'Complete retrieval Do Now in printed workbook. Review foundational historiographical schools: Optimists (Ashton/Hartwell) vs. Pessimists (Thompson/Hobsbawm).',
+              },
+              {
+                time: '10–25m',
+                label: 'Shared Reading & Historiographical Debate',
+                instruction:
+                  'Read Acts 3 & 4. Debate the capstone historical verdict: Was 19th-century transformation a universal tide of progress or an imperial pyramid of structural inequality?',
+              },
+              {
+                time: '25–45m',
+                label: 'Workbook Application (Pages 18–19)',
+                instruction:
+                  'Pupils complete the Synoptic Balance Sheet and 18-line PEEL extended writing evaluation using the Gold Criteria Strip on Page 19.',
+              },
+              {
+                time: '45–50m',
+                label: 'Live Exemplar Debrief',
+                instruction:
+                  'Showcase high-attaining exemplar responses demonstrating mature multi-perspectival synthesis across industrial, working-class, and imperial domains.',
+              },
+            ],
+          },
+        },
         objectives: [
           {
             objective:
@@ -4024,6 +4638,28 @@ export const unitData = {
             'Source D: John Leech, celebrated cartoon published in Punch (1843), illustrating the extreme vertical class divide of the Industrial Revolution.',
           context:
             "John Leech's celebrated 1843 engraving visually divided Victorian society into two distinct worlds: the gilded, lavish salon of the capitalist bourgeoisie above, and the dark, subterranean pit of working-class toil below. **Hinge Question:** How does Leech use visual contrast in Source D to challenge the Victorian narrative of universal industrial progress?",
+        },
+      ],
+      timeline_anchor: [
+        {
+          date: 'May 1851',
+          title: 'The Great Exhibition',
+          desc: 'The Crystal Palace in Hyde Park showcases British industrial supremacy, steam machinery, and colonial treasures to six million awestruck visitors.',
+        },
+        {
+          date: '1867',
+          title: 'Naoroji’s Drain Theory',
+          desc: 'Dadabhai Naoroji demonstrates that Britain extracts £30–40 million annually from India in uncompensated capital, crippling indigenous economic development.',
+        },
+        {
+          date: '1875',
+          title: 'Public Health & Factory Acts',
+          desc: 'Parliament codifies the 56-hour working week and mandates municipal clean water, proving working-class collective action could force legislative reform.',
+        },
+        {
+          date: 'June 1897',
+          title: 'Queen Victoria’s Diamond Jubilee',
+          desc: 'Imperial military pageant celebrates Britain’s global supremacy, masking deep domestic poverty and devastating late-Victorian famines in colonial India.',
         },
       ],
       narrative_blocks: [

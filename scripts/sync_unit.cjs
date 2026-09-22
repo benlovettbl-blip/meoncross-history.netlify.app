@@ -130,6 +130,15 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'industrialisation_and_empire') {
+        console.log(
+          `\n📚 Compiling 18-page publisher-grade textbook for [industrialisation_and_empire]...`,
+        );
+        execSync(`node scripts/render_standard_textbook_industrialisation.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

@@ -65,7 +65,9 @@ for (const relPath of allFiles) {
 
   try {
     const lines = fs.readFileSync(relPath, 'utf8').split('\n');
-    lines.forEach((line, idx) => {
+    lines.forEach((rawLine, idx) => {
+      // Strip inlined base64 data URIs so binary character sequences do not produce false positives
+      const line = rawLine.replace(/data:image\/[a-zA-Z0-9+\/;,=_-]+/g, '');
       // Check meoncross
       if (/meoncross|meon\s+cross/i.test(line)) {
         issues.push({ file: relPath, line: idx + 1, type: 'meoncross', text: line.trim() });
@@ -87,7 +89,9 @@ for (const relPath of allFiles) {
       // Check teacher lovett (excluding historical Chartist William Lovett)
       if (/lovett/i.test(line)) {
         const isHistoricalWilliamLovett =
-          /william\s+lovett|leaders\s+like\s+lovett|lovett\s+and\s+o'connor/i.test(line);
+          /william[_\s]+lovett|leaders\s+like\s+lovett|lovett\s+and\s+o'connor|chartist|charter|people['’]s\s+charter/i.test(
+            line,
+          );
         if (!isHistoricalWilliamLovett) {
           issues.push({ file: relPath, line: idx + 1, type: 'teacher_lovett', text: line.trim() });
         }

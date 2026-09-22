@@ -66,6 +66,24 @@ const TOPIC_CONFIGS = {
     ),
     pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'early_modern_world_textbook_PUBLISHER.pdf'),
   },
+  industrialisation_and_empire: {
+    id: 'industrialisation_and_empire',
+    title: 'KS3: Industrialisation, Empire & Power (1750–1901)',
+    compilerScript: path.join(__dirname, 'render_standard_textbook_industrialisation.cjs'),
+    htmlPath: path.join(
+      ROOT_DIR,
+      'public',
+      'units',
+      'industrialisation_and_empire',
+      'textbook_PUBLISHER.html',
+    ),
+    pdfPath: path.join(
+      ROOT_DIR,
+      'public',
+      'pdfs',
+      'industrialisation_and_empire_textbook_PUBLISHER.pdf',
+    ),
+  },
 };
 
 /**
@@ -172,8 +190,8 @@ async function auditTextbook(config, browser) {
           const src = img.getAttribute('src') || '';
           if (!src) return '';
           if (src.startsWith('data:')) {
-            // First 120 chars of base64 payload uniquely identifies the image content
-            return src.substring(0, 120);
+            // Length plus content sample uniquely identifies image content without JFIF header collisions
+            return `${src.length}_${src.substring(Math.floor(src.length / 2), Math.floor(src.length / 2) + 80)}`;
           }
           return src.split('/').pop().split('?')[0];
         })
