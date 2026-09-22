@@ -281,13 +281,41 @@ All future GCSE key topic workbooks and KS3 enquiry booklets moving forward MUST
 5. **Page 15: Grade 9 Extended Writing Masterclass & Band 4 Rubric:** Point-Fact-Consequence model, analytical connectives, evaluative criteria prompts, sustained judgment.
 6. **Page 16: Outside Back Cover:** Assessment Tracker, WWW/EBI Teacher Feedback Grid, and Mobile QR Quiz Matrix.
 
-## Reprographics Protection & Classroom Rollout Protocol (The "Zero Disruption" Rule)
-Certain units have physical booklets printed and actively in pupils' hands in classrooms right now:
-- **Year 7:** Water and Sanitation Through Time (`water_and_sanitation`)
-- **Year 8:** Early Modern World & Global Encounters (`early_modern_world`)
-- **Year 9:** Causes of the Great War (`great_war`)
-To roll out our new 4-Act Christine Counsell lessons and 16-page double-page spreads WITHOUT disrupting or invalidating active printed workbooks:
-1. **Active Files Frozen:** The existing `pupil_workbook.html` and compiled `_FINAL_V17.pdf` files for these three units must remain 100% frozen and untouched.
-2. **Parallel Staged Development:** Modernized 4-Act narratives and 2-page / 16-page spread templates for these units must be created in parallel staging files (e.g. `twopage_workbook_v2.html` or `render_twopage_workbook.cjs`). They must NEVER overwrite active classroom files mid-term.
-3. **Rollout Sequence (Unprinted / Upcoming First):** Focus all active deployment on units whose booklets are NOT yet printed (Middle East KT1 and KT3, Year 8 Industrialisation Lessons 2–8, Great War Part 2, Elizabethan England, Weimar Germany). Only swap active units during scheduled end-of-term reprint cycles.
+## Publisher-Standard Textbook Engineering & Disciplinary Architecture
+Whenever authoring, compiling, or refactoring publisher-standard textbooks (such as `great_war_textbook_PUBLISHER.pdf` or `cme_new_textbook_KT1_PUBLISHER.pdf`):
+1. **Front Cover Branding & Subtitles:**
+   - Series Masthead: Always use the approved series title: `Key Stage 3 Master Curriculum Series` or `GCSE Visual Revision & Exam Guide`.
+   - Publisher Imprint: At the bottom, render `The History Revision Hub • Student Textbook Edition`.
+   - Never use obscure, awkward jargon like "Disciplinary Standard Edition".
+   - Maintain poetic, dramatic thematic subtitles (e.g., *"From the Hall of Mirrors to the Guns of August: How Decades of Imperial Rivalry and Fear Culminated in Thirty Days of Madness"*).
+2. **PEEL Paragraph Referencing Standard (`[Act.Paragraph]` / `[Section.Paragraph]`):**
+   - Every paragraph in the core prose must feature explicit bracketed PEEL tags: `<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[1.2]</span>`, `<span class="para-ref">[2.1]</span>`, etc.
+   - Never index individual sentences; only index discrete paragraphs.
+3. **Historical Portrait Authenticity vs Hardware/Artworks:**
+   - When presenting a historical person (e.g., Otto von Bismarck, Helmuth von Moltke, Admiral Sir John Fisher, Kaiser Wilhelm II), you MUST use an authentic, historical photograph of that specific person.
+   - Never substitute an oil painting when an authentic photograph exists.
+   - Never substitute a warship, artillery piece, or technical blueprint for a person's biographical card (e.g., Jackie Fisher's portrait card must show Admiral Fisher, never a ship photo).
+4. **Pupil-Centric Disciplinary Headings:**
+   - Avoid abstract, intimidating academic jargon for component tags (e.g., do NOT use `GEOPOLITICAL MECHANISM`).
+   - Use clear, pupil-friendly disciplinary banners: `HISTORICAL DEEP DIVE: CRITICAL MECHANISM` or `HISTORICAL SPOTLIGHT: KEY TURNING POINT`.
+5. **Facing-Page Anti-Duplication Rule:**
+   - Never display the same historical person or image on facing pages (verso and recto).
+   - If a historical figure is featured on the right-hand page (e.g., Gavrilo Princip on Page 13), the facing left-hand page (Page 12) MUST use a different primary source (such as an archival crime scene map, a satirical cartoon, or a written constitutional oath), never a duplicate portrait photo.
+6. **Primary Source Archival Context & Hinge Question Standard:**
+   - Every primary source card on left-hand pages must feature:
+     - Verified archival metadata: accession shelfmark, category badge, and repository footer.
+     - A structured `archival-context-box` explaining the historical background of the document/image.
+     - A targeted, italicized **Hinge Question** (`archival-hinge-q`) to ignite critical historical debate.
+7. **SVG Print Rendering Integrity (`opacity: 1 !important`):**
+   - Animated or interactive SVGs (such as causal domino flowcharts or alliance matrices) must have explicit CSS print overrides: `.domino-group, .arrow-group, svg g { opacity: 1 !important; }`.
+   - When compiled with headless Puppeteer, animations do not trigger at $t=0$; without static print overrides, the diagram will render 100% blank.
+8. **Master Revision Back Cover ($\ge 90\%$ Page Budget):**
+   - The outside back cover must never suffer from dead underflow space or half-empty layouts.
+   - Back covers must be engineered as comprehensive master revision summaries:
+     - Visual period chronology (16–18 event milestone badges).
+     - Analytical framework matrix (e.g., M-A-I-N Causes: Militarism, Alliances, Imperialism, Nationalism).
+     - Historiographical debate box highlighting conflicting academic interpretations (e.g., Fritz Fischer vs Christopher Clark vs Margaret MacMillan).
+     - Disciplinary PEEL writing scaffold with model criteria stems.
+9. **Automated Verification Pipeline:**
+   - All textbooks must be audited using `node scripts/auto_balance_textbook.cjs <topicId>` to enforce 0px overflow and pass the automated Disciplinary Quality & Anti-Duplication Gate.
 

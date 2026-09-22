@@ -1515,6 +1515,15 @@ export function renderLesson(lesson) {
                 <div class="archival-source-details-col">
                   <div>
                     ${
+                      source.text
+                        ? `
+                      <div class="archival-source-body" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; line-height: 1.65; color: #1e293b; background: #fdfbf7; border-left: 4px solid #b45309; padding: 12px 16px; margin-bottom: 14px; border-radius: 0 4px 4px 0; font-style: italic; white-space: pre-line;">
+                        ${source.text}
+                      </div>
+                    `
+                        : ''
+                    }
+                    ${
                       source.caption
                         ? `
                       <div style="font-size: 0.95rem; color: #334155; margin-bottom: 12px; line-height: 1.6; font-style: italic; background: #f8fafc; padding: 12px 16px; border-left: 3px solid #64748b; border-radius: 0 4px 4px 0;">
@@ -1547,6 +1556,15 @@ export function renderLesson(lesson) {
               </div>
             `
                 : `
+              ${
+                source.text
+                  ? `
+                <div class="archival-source-body" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; line-height: 1.7; color: #1e293b; background: #fdfbf7; border-left: 4px solid #b45309; padding: 16px 20px; margin: 14px 0; border-radius: 0 6px 6px 0; font-style: italic; white-space: pre-line;">
+                  ${source.text}
+                </div>
+              `
+                  : ''
+              }
               ${
                 source.caption
                   ? `

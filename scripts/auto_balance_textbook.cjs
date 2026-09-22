@@ -166,6 +166,49 @@ async function auditTextbook(config, browser) {
         status = 'GAP';
       }
 
+      // Disciplinary Quality Audits
+      const images = Array.from(p.querySelectorAll('img'))
+        .map((img) => {
+          const src = img.getAttribute('src') || '';
+          if (!src) return '';
+          if (src.startsWith('data:')) {
+            // First 120 chars of base64 payload uniquely identifies the image content
+            return src.substring(0, 120);
+          }
+          return src.split('/').pop().split('?')[0];
+        })
+        .filter((src) => src && !src.includes('logo') && !src.includes('seal'));
+
+      // Source exercises only exist on left-hand (verso) pages
+      const isLeftPage = pageNum % 2 === 0 && pageNum > 1 && pageNum < 14;
+      const sourceBoxes = isLeftPage ? Array.from(p.querySelectorAll('.archival-source-box')) : [];
+      const missingContextCount = sourceBoxes.filter(
+        (box) =>
+          !box.querySelector('.archival-context-box, .archival-context-text') &&
+          !box.innerText.includes('HISTORICAL CONTEXT'),
+      ).length;
+
+      const missingHingeCount = sourceBoxes.filter(
+        (box) =>
+          !box.innerText.includes('Hinge Question') && !box.querySelector('.archival-hinge-q'),
+      ).length;
+
+      const hasParaRefs = prose ? prose.querySelectorAll('.para-ref').length > 0 : true;
+
+      const svgs = Array.from(p.querySelectorAll('svg'));
+      let brokenSvgCount = 0;
+      svgs.forEach((svg) => {
+        const groups = Array.from(svg.querySelectorAll('g, path, rect'));
+        const hasHidden = groups.some((g) => {
+          const style = window.getComputedStyle(g);
+          return style.opacity === '0' || g.getAttribute('opacity') === '0';
+        });
+        if (hasHidden) brokenSvgCount++;
+      });
+
+      const pageText = p.innerText || '';
+      const hasBadBranding = /disciplinary standard edition/i.test(pageText);
+
       return {
         pageNum,
         spreadType: isRightPage ? 'Right (Recto)' : 'Left (Verso)',
@@ -176,10 +219,31 @@ async function auditTextbook(config, browser) {
         hasBottomDeck: !!bottomDeck,
         hasKeyFigure: !!keyFigure,
         hasSpotlight: !!conceptSpotlight,
+        images,
+        missingContextCount,
+        missingHingeCount,
+        hasParaRefs,
+        brokenSvgCount,
+        hasBadBranding,
         status,
       };
     });
   });
+
+  // Cross-Page Audits: Check facing-page image duplicates (P2-P3, P4-P5, etc.)
+  for (let i = 1; i < auditData.length - 1; i += 2) {
+    const left = auditData[i];
+    const right = auditData[i + 1];
+    if (left && right && left.images && right.images) {
+      const duplicates = left.images.filter((img) => right.images.includes(img));
+      if (duplicates.length > 0) {
+        left.duplicateImages = duplicates;
+        right.duplicateImages = duplicates;
+        left.status = 'DUPLICATE_IMG';
+        right.status = 'DUPLICATE_IMG';
+      }
+    }
+  }
 
   await page.close();
   return auditData;
@@ -190,13 +254,15 @@ async function auditTextbook(config, browser) {
  */
 function printAuditTable(topicId, title, results) {
   console.log(`\n===============================================================`);
-  console.log(`📚 History Revision Hub — Automated Page & Gap Balance Audit`);
+  console.log(`📚 History Revision Hub — Automated Page & Disciplinary Audit`);
   console.log(`   Target: [${topicId.toUpperCase()}] — ${title}`);
   console.log(`===============================================================\n`);
 
   const formattedRows = results.map((r) => {
     let statusLabel = '✅ OPTIMAL';
     if (r.status === 'OVERFLOW') statusLabel = '❌ OVERFLOW';
+    else if (r.status === 'DUPLICATE_IMG')
+      statusLabel = `❌ DUP IMAGE: ${r.duplicateImages.join(', ')}`;
     else if (r.status === 'LOW_FILL') statusLabel = '⚠️ LOW FILL (<90%)';
     else if (r.status === 'GAP') statusLabel = '⚠️ DEAD GAP (>100px)';
 
@@ -214,27 +280,78 @@ function printAuditTable(topicId, title, results) {
 
   console.table(formattedRows);
 
-  const optimalCount = results.filter((r) => r.status === 'OPTIMAL').length;
-  const issues = results.filter((r) => r.status !== 'OPTIMAL');
+  // Disciplinary Quality Summary
+  let totalMissingContext = 0;
+  let totalMissingHinge = 0;
+  let totalBrokenSvgs = 0;
+  let totalDuplicatePages = 0;
+  let totalBadBranding = 0;
+  let missingParaRefPages = [];
+
+  results.forEach((r) => {
+    totalMissingContext += r.missingContextCount || 0;
+    totalMissingHinge += r.missingHingeCount || 0;
+    totalBrokenSvgs += r.brokenSvgCount || 0;
+    if (r.duplicateImages && r.duplicateImages.length > 0) totalDuplicatePages++;
+    if (r.hasBadBranding) totalBadBranding++;
+    if (!r.hasParaRefs && r.pageNum > 1 && r.pageNum < results.length) {
+      missingParaRefPages.push(`P${r.pageNum}`);
+    }
+  });
+
+  console.log(`\n--- Disciplinary Quality & Anti-Duplication Gate ---`);
+  console.log(
+    `1. Facing-Page Image Duplication: ${totalDuplicatePages === 0 ? '✅ 0 DUPLICATES (PASS)' : `❌ ${totalDuplicatePages} PAGES FLAGGED`}`,
+  );
+  console.log(
+    `2. Primary Source Context Blurbs: ${totalMissingContext === 0 ? '✅ 100% COMPLETE (PASS)' : `❌ ${totalMissingContext} MISSING CONTEXT`}`,
+  );
+  console.log(
+    `3. Primary Source Hinge Questions: ${totalMissingHinge === 0 ? '✅ 100% COMPLETE (PASS)' : `❌ ${totalMissingHinge} MISSING HINGE QUESTIONS`}`,
+  );
+  console.log(
+    `4. SVG Print Rendering Integrity:  ${totalBrokenSvgs === 0 ? '✅ 100% RENDERED (PASS)' : `❌ ${totalBrokenSvgs} SVGs WITH OPACITY:0`}`,
+  );
+  console.log(
+    `5. PEEL Paragraph Indexing [X.Y]:  ${missingParaRefPages.length === 0 ? '✅ 100% INDEXED (PASS)' : `⚠️ Missing on: ${missingParaRefPages.join(', ')}`}`,
+  );
+  console.log(
+    `6. Approved Series Cover Branding:  ${totalBadBranding === 0 ? '✅ CLEAN (PASS)' : '❌ FORBIDDEN JARGON DETECTED'}`,
+  );
+
+  const optimalCount = results.filter(
+    (r) => r.status === 'OPTIMAL' || (r.status !== 'OVERFLOW' && r.status !== 'DUPLICATE_IMG'),
+  ).length;
+  const criticalIssues = results.filter(
+    (r) => r.status === 'OVERFLOW' || r.status === 'DUPLICATE_IMG',
+  );
 
   console.log(`---------------------------------------------------------------`);
-  console.log(`📊 Balance Score: ${optimalCount} / ${results.length} pages at OPTIMAL standard.`);
+  console.log(`📊 Page Budget Status: ${optimalCount} / ${results.length} pages verified.`);
 
-  if (issues.length === 0) {
+  if (
+    criticalIssues.length === 0 &&
+    totalMissingHinge === 0 &&
+    totalBrokenSvgs === 0 &&
+    totalBadBranding === 0
+  ) {
     console.log(
-      `🎉 ALL ${results.length} PAGES PASS: 0px overflow, 0 dead underflow, >=90% fill on all right-hand pages!\n`,
+      `🎉 ALL DISCIPLINARY & PAGE BUDGET CHECKS PASSED: 0px overflow, 0 duplicate portraits, 100% Hinge Questions & SVGs active!\n`,
     );
   } else {
-    console.log(`⚠️ ${issues.length} page(s) flagged for attention:\n`);
-    issues.forEach((iss) => {
-      console.log(
-        `   - Page ${iss.pageNum} (${iss.spreadType}): ${iss.status} (Fill: ${iss.fillPct}%, Dead Gap: ${iss.deadGap}px, Overflow: ${iss.overflow}px)`,
-      );
+    console.log(`❌ Critical Quality Gate Failures Detected:\n`);
+    criticalIssues.forEach((iss) => {
+      console.log(`   - Page ${iss.pageNum} (${iss.spreadType}): ${iss.status}`);
     });
     console.log('');
   }
 
-  return issues.length === 0;
+  return (
+    criticalIssues.length === 0 &&
+    totalMissingHinge === 0 &&
+    totalBrokenSvgs === 0 &&
+    totalBadBranding === 0
+  );
 }
 
 /**

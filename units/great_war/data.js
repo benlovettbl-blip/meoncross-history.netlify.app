@@ -35,6 +35,28 @@ const great_war = {
       id: 'lesson_0',
       title: 'How was the German Empire created in 1871?',
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
+      sources: [
+        {
+          title: 'Map A: The German Empire in Central Europe (1871)',
+          src: '/images/german_empire_1871.png',
+          caption:
+            'Geopolitical map showing the unification of thirty-nine sovereign German states into the German Empire under Prussian leadership in 1871.',
+          shelfmark: 'Imperial Cartographic Archive, Berlin',
+          citation: 'Prussian State Library &bull; Map Department (1871).',
+          context:
+            'Following the 1871 Treaty of Frankfurt, thirty-nine previously independent German states united under Prussian leadership to form the German Empire, creating an economic and military powerhouse in the center of Europe. **Hinge Question:** How did the sudden emergence of a unified German Empire fundamentally shatter the European balance of power?',
+        },
+        {
+          title: 'Map B: Modern European Boundaries vs 1871 Frontiers',
+          src: '/images/modern_germany_map.png',
+          caption:
+            'Comparative cartography overlaying 1871 German imperial boundaries onto modern sovereign European borders.',
+          shelfmark: 'Curriculum Comparative Cartography',
+          citation: 'Department Cartographic Collection.',
+          context:
+            "Comparing nineteenth-century borders with modern Europe reveals how the massive German Empire occupied the territories of several modern sovereign nations, generating continuous friction with neighbouring empires. **Hinge Question:** Why would Germany's geographical position between France and Russia cause German military planners permanent strategic anxiety?",
+        },
+      ],
       teacher_notes: {
         primer:
           'This lesson introduces students to the unification of Germany. Before understanding the alliance systems or the arms race, students must grasp the geographical and political shockwave caused by a unified, militaristic German Empire suddenly dominating Central Europe.',
@@ -1401,6 +1423,27 @@ const great_war = {
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       sources: [
         {
+          title: "Source A: Admiral Sir John Fisher's Secret Memorandum to King Edward VII (1906)",
+          text: '“Our only probable enemy is Germany. Germany keeps her whole fleet concentrated within a few hours of England. We must therefore keep a fleet twice as powerful concentrated within a few hours of Germany... HMS Dreadnought can sink the whole existing German Navy. She runs at 21 knots, carries ten 12-inch guns, and can hit the enemy at eight miles before they can even reach us. Speed is armor. Hit first, hit hard, and keep on hitting.”',
+          caption:
+            'Confidential strategic memorandum authored by First Sea Lord Sir John Fisher submitted to King Edward VII, detailing the tactical superiority and deterrent purpose of HMS Dreadnought.',
+          shelfmark: 'Royal Archives, Windsor Castle (VIC/MAIN/W/56)',
+          citation:
+            'Admiralty War Staff Secret Dispatch; First Sea Lord Sir John Fisher to King Edward VII (October 1906).',
+          context:
+            'When First Sea Lord Sir John Fisher commissioned HMS Dreadnought in 1906, his all-big-gun battleship rendered all previous pre-dreadnoughts obsolete overnight. However, it also wiped out Britain’s numerical advantage, allowing Germany to start building dreadnoughts on an equal footing. **Hinge Question:** Why did the invention of HMS Dreadnought ironically restart the naval arms race rather than deterring German ambitions?',
+        },
+        {
+          title: 'Source B: L.M. Glackens: "NO LIMIT" (Puck Magazine, September 1909)',
+          src: '/public/great_war/assets/Naval-race-1909.jpg',
+          caption:
+            'Satirical American cartoon illustrating the ruinous escalation of the Anglo-German naval arms race, with John Bull and Kaiser Wilhelm raising the stakes with battleships.',
+          shelfmark: 'Library of Congress, Prints & Photographs Division, Washington D.C.',
+          citation: 'Puck Magazine, Vol. LXVI, No. 1699, 22 September 1909.',
+          context:
+            'American satirical cartoon showing world leaders playing high-stakes poker, discarding cruisers and raising the stakes with Dreadnought battleships as debt piles up around the table. **Hinge Question:** How does this cartoon illustrate the ruinous financial and psychological pressure of the naval arms race?',
+        },
+        {
           title: 'Map A: The North Sea & Naval Chokepoints (Strategic Hydrographic Map)',
           src: '/units/great_war/assets/map_lesson3.png',
           caption:
@@ -1522,26 +1565,25 @@ const great_war = {
         ],
       },
       primary_source: {
-        title:
-          'Source A: Admiralty Elevation & Deck Plan — The Revolutionary Design of HMS Dreadnought (1906)',
-        src: '/units/great_war/assets/was_dreadnought_blueprint.png',
+        title: "Source A: Admiral Sir John Fisher's Secret Memorandum to King Edward VII (1906)",
+        text: '“Our only probable enemy is Germany. Germany keeps her whole fleet concentrated within a few hours of England. We must therefore keep a fleet twice as powerful concentrated within a few hours of Germany... HMS Dreadnought can sink the whole existing German Navy. She runs at 21 knots, carries ten 12-inch guns, and can hit the enemy at eight miles before they can even reach us. Speed is armor. Hit first, hit hard, and keep on hitting.”',
         caption:
-          "Contemporary architectural elevation and upper deck layout from Brassey's Naval Annual, illustrating the revolutionary 'all-big-gun' armament and turbine machinery of HMS Dreadnought.",
+          'Confidential strategic memorandum authored by First Sea Lord Sir John Fisher submitted to King Edward VII, detailing the tactical superiority and deterrent purpose of HMS Dreadnought.',
         question:
-          'Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?',
+          "Enquiry: According to Admiral Fisher, why did Britain require a fleet 'twice as powerful' concentrated within hours of Germany?",
         tasks: [
           {
-            type: 'draw',
-            text: 'Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.',
+            type: 'short_answer',
+            text: 'Task 1: Identify the three specific tactical advantages of HMS Dreadnought cited by Fisher in his secret memo.',
             model_answer:
-              'Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships.',
+              'Fisher identifies three specific tactical advantages: speed (running at 21 knots), overwhelming firepower (ten 12-inch guns firing at eight miles range), and the offensive doctrine that speed functions as armor.',
           },
         ],
         model_answer:
-          "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete.",
-        shelfmark: 'National Maritime Museum / Brassey’s Naval Warship Archives (1913 Edition)',
+          "Admiral Fisher argued that because Germany kept its entire fleet concentrated within a few hours of England, Britain was forced to maintain a fleet twice as powerful in the North Sea to guarantee security against a surprise attack. He believed HMS Dreadnought's revolutionary 21-knot speed and ten 12-inch guns would act as an unbeatable deterrent.",
+        shelfmark: 'Royal Archives, Windsor Castle (VIC/MAIN/W/56)',
         citation:
-          "Brassey's Naval Annual, British Warship Plans & Elevations, 1913 (London: J. Griffin & Co., p. 216)",
+          'First Sea Lord Admiral Sir John Fisher, Secret Memorandum to King Edward VII on Naval Strategy and the HMS Dreadnought (October 1906).',
         context:
           'Launched in February 1906 under the direction of First Sea Lord Sir John Fisher, HMS Dreadnought was the most powerful warship ever built. Equipped with ten 12-inch guns in rotating turrets and powered by revolutionary steam turbine engines, she could steam at 21 knots—faster than any existing battleship—and fire a broadside twice as heavy as any vessel afloat. However, by rendering all pre-dreadnought battleships obsolete overnight, Britain inadvertently wiped out its own overwhelming naval lead. Kaiser Wilhelm II and Admiral Alfred von Tirpitz immediately seized the opportunity to match the Royal Navy by passing the German Naval Laws and building their own dreadnought fleet (the Nassau and Helgoland classes). **Hinge Question:** Why did building HMS Dreadnought represent both a crowning British technological triumph and a disastrous strategic gamble?',
       },
@@ -1576,9 +1618,10 @@ const great_war = {
       gcse_task: {
         sources: [
           {
-            type: 'visual',
-            src: '/units/great_war/assets/was_dreadnought_blueprint.png',
-            title: 'Source A: Official technical blueprint of HMS Dreadnought, 1906.',
+            type: 'written',
+            text: '“Our only probable enemy is Germany. Germany keeps her whole fleet concentrated within a few hours of England. We must therefore keep a fleet twice as powerful concentrated within a few hours of Germany... HMS Dreadnought can sink the whole existing German Navy. She runs at 21 knots, carries ten 12-inch guns, and can hit the enemy at eight miles before they can even reach us. Speed is armor. Hit first, hit hard, and keep on hitting.”',
+            title:
+              "Source A: Admiral Sir John Fisher's Secret Memorandum to King Edward VII, October 1906.",
           },
           {
             type: 'written',
@@ -1588,7 +1631,7 @@ const great_war = {
         ],
         topic: 'the effects of the Anglo-German naval arms race',
         model_answer:
-          '<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style="color: #0284c7;">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style="color: #9333ea;">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship\'s revolutionary, heavily-armored design.</strong> <strong style="color: #16a34a;">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain\'s naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style="color: #0284c7;">The slogan "We want eight, and we won\'t wait!" shows the intense public demand for more warships.</strong> <strong style="color: #9333ea;">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style="color: #16a34a;">This is supported by the context of \'Jingoism\'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany\'s 17.</strong>',
+          '<strong>Source A is highly useful for demonstrating the strategic and technological mindset that triggered the naval arms race;</strong> <strong style="color: #0284c7;">it reveals First Sea Lord Fisher\'s aggressive doctrine that Germany was the primary enemy and that HMS Dreadnought was built to outrun and outgun any rival.</strong> <strong style="color: #9333ea;">As a confidential memorandum directly to the King, its origin makes it an intimate, unvarnished insight into British Admiralty strategy.</strong> <strong style="color: #16a34a;">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain\'s naval lead and allowing Germany to start building modern dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style="color: #0284c7;">The slogan "We want eight, and we won\'t wait!" shows the intense public demand for more warships.</strong> <strong style="color: #9333ea;">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style="color: #16a34a;">This is supported by the context of \'Jingoism\'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany\'s 17.</strong>',
       },
       learning_objective: 'To understand Whose Navy Was Biggest and Best? The Arms Race',
       learning_objectives: {
@@ -2410,6 +2453,16 @@ const great_war = {
             'Historical schematic crime scene plan of Franz Josef Street and Appel Quay, Sarajevo (28 June 1914).',
           context:
             "This forensic map was compiled by the Sarajevo police following the assassination of Archduke Franz Ferdinand and his wife Sophie. The route followed the Appel Quay along the Miljacka River. After an initial bomb thrown by Nedeljko Čabrinović bounced off the car and exploded behind them, the Archduke decided to visit wounded officers in hospital. Crucially, the motorcade's Czech chauffeur, Leopold Lojka, was never informed of the change of route. When Lojka mistakenly turned right onto Franz Josef Street, Governor Potiorek shouted at him to stop. Lojka braked directly in front of Schiller's delicatessen, where nineteen-year-old Gavrilo Princip was standing just five feet away. Princip drew his Browning FN Model 1910 semi-automatic pistol and fired two shots that ignited the First World War. **Hinge Question:** How does the police sketch map demonstrate the role of pure chance versus careful terrorist conspiracy in the assassination of Franz Ferdinand?",
+        },
+        {
+          title: 'Source B: The Secret Constitution & Blood Oath of the "Black Hand" (1911)',
+          text: '“Article 1: This organization is created for the purpose of realizing the national ideal: the union of all Serbs... Article 2: This organization prefers terrorist action to ideological propaganda. It must therefore remain absolutely secret from the non-initiated.\n\nThe Sacred Oath: ‘I, in joining the organization Union or Death, do swear by the sun that warms me, by the earth that nourishes me, before God, by the blood of my ancestors, on my honor and life, that from this moment until my death I will faithfully serve this organization, and that I will be prepared to endure all sacrifices for it. If I break this oath, let God and my comrades judge me.’”',
+          caption:
+            'Official founding constitution and ritual blood oath of the clandestine Serbian military nationalist society "Union or Death" (popularly known as the Black Hand).',
+          shelfmark: 'Military Intelligence Archive, Belgrade (Doc. No. 1911-BH)',
+          citation: 'State Archives of Serbia; Royal Serbian Army Records (1911).',
+          context:
+            'Founded in Belgrade in 1911 by Serbian military intelligence officer Dragutin Dimitrijević (‘Apis’), the Black Hand trained and armed Gavrilo Princip and his fellow conspirators with Belgian FN Browning semi-automatic pistols and cyanide capsules. **Hinge Question:** Does the Black Hand constitution prove that Princip was a lone nationalist fanatic or the agent of a state-backed conspiracy?',
         },
       ],
       vocab: [

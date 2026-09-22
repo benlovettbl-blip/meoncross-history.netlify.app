@@ -1913,7 +1913,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       </table>
 
       <div class="cover-footer">
-        <span>History Revision Hub &bull; Disciplinary Standard Edition</span>
+        <span>The History Revision Hub &bull; Student Textbook Edition</span>
         <span>Verified Print Publication &bull; September 2026</span>
       </div>
     </div>

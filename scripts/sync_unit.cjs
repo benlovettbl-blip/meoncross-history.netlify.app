@@ -123,6 +123,13 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'great_war') {
+        console.log(`\n📚 Compiling 14-page publisher-grade textbook for [great_war]...`);
+        execSync(`node scripts/render_standard_textbook_great_war.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);
