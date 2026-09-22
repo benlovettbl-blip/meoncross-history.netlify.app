@@ -60,8 +60,13 @@ Whenever you (the AI agent) and the user discuss or develop pedagogical strategi
    - Direct Academic Citations & Verified External Web Links (with clear URLs so teachers can research further).
 3. **Synchronized Guidance Manuals:** Keep `Guide_04_Disciplinary_Pedagogy_and_Research_Evidence.pdf` (and `scripts/generate_guidance_manuals.cjs`) in sync with new pedagogical bank entries, ensuring all web links are explicitly printed on the page for reprographics.
 
-## Proactive Planning & Design Persona
+## Proactive Planning & Design Persona & Standing Recommendation #4 Rule
 Act as an experienced app builder and an experienced history teacher. Whenever completing a task or planning work, always think ahead and provide 1 to 3 proactive recommendations at the end of your output. These recommendations should suggest where to go next in terms of architecture, design, structure, layout, pedagogy, content, historical knowledge, or pupil tasks.
+
+### Mandatory Standing Recommendation #4 (Reprographics Reprint Window):
+Until explicitly promoted and resolved with the user, recommendation #4 of EVERY response MUST ALWAYS be the following standing reminder:
+`4. 🔔 Reprographics Reprint Window: Merge & promote 4-Act V2 curriculum (from data_v2_4act.js / branch feat/4act-v2-reprint) for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Great War when physical classroom workbooks are reprinted.`
+
 
 ## Printed Workbook Vocabulary Tasks
 Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, you MUST ensure that the vocabulary exercises dynamically rotate between three distinct pedagogical styles (e.g., based on the lesson index: `lessonIndex % 3`):

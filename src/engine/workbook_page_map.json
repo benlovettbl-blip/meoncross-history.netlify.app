@@ -39,19 +39,19 @@
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 9,
+      "page": 11,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 1
     },
     "lesson_3": {
-      "page": 15,
+      "page": 19,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 21,
+      "page": 25,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 3
@@ -75,13 +75,13 @@
       "lessonIndex": 6
     },
     "lesson_9": {
-      "page": 21,
+      "page": 10,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 7
     },
     "lesson_10": {
-      "page": 27,
+      "page": 12,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 8
@@ -93,13 +93,13 @@
       "lessonIndex": 9
     },
     "lesson_12": {
-      "page": 9,
+      "page": 10,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 10
     },
     "lesson_13": {
-      "page": 15,
+      "page": 18,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 11
@@ -157,49 +157,43 @@
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 8,
+      "page": 9,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 1
     },
     "lesson_3": {
-      "page": 13,
+      "page": 15,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 18,
+      "page": 27,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 3
     },
     "lesson_5": {
-      "page": 23,
-      "booklet": "Pupil Workbook",
-      "unitId": "early_modern_world",
-      "lessonIndex": 4
-    },
-    "lesson_6": {
-      "page": 28,
+      "page": 33,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 5
     },
-    "lesson_7": {
-      "page": 33,
+    "lesson_6": {
+      "page": 37,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 6
     },
-    "lesson_8": {
-      "page": 38,
+    "lesson_7": {
+      "page": 43,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 7
     },
-    "lesson_9": {
-      "page": 43,
+    "lesson_8": {
+      "page": 50,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 8
@@ -451,25 +445,25 @@
       "lessonIndex": 1
     },
     "lesson_2": {
-      "page": 13,
+      "page": 14,
       "booklet": "Pupil Workbook",
       "unitId": "great_war",
       "lessonIndex": 2
     },
     "lesson_3": {
-      "page": 18,
+      "page": 20,
       "booklet": "Pupil Workbook",
       "unitId": "great_war",
       "lessonIndex": 3
     },
     "lesson_4": {
-      "page": 23,
+      "page": 26,
       "booklet": "Pupil Workbook",
       "unitId": "great_war",
       "lessonIndex": 4
     },
     "lesson_5": {
-      "page": 28,
+      "page": 33,
       "booklet": "Pupil Workbook",
       "unitId": "great_war",
       "lessonIndex": 5
@@ -923,7 +917,7 @@
       "lessonIndex": 4
     },
     "lesson_6": {
-      "page": 33,
+      "page": 29,
       "booklet": "Pupil Workbook",
       "unitId": "water_and_sanitation",
       "lessonIndex": 5
