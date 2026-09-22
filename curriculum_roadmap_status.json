@@ -1,0 +1,146 @@
+[
+  {
+    "id": "water_and_sanitation",
+    "year": "KS3 (Y7)",
+    "title": "Water & Sanitation Through Time",
+    "dataStatus": "STAGED_V2_4ACT",
+    "textbookStatus": "PUBLISHER_MASTER",
+    "workbookStatus": "LEGACY_V1 (🔒 ON DESKS / FROZEN)",
+    "classroomStatus": "🔒 FROZEN ON DESKS (REPRINT WINDOW)"
+  },
+  {
+    "id": "medieval_england",
+    "year": "KS3 (Y7)",
+    "title": "Medieval England (1066–1485)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "MODERN_2PAGE (2 spread scripts)",
+    "classroomStatus": "WORKBOOK_MODERN / TEXTBOOK_QUEUED"
+  },
+  {
+    "id": "early_modern_world",
+    "year": "KS3 (Y8)",
+    "title": "Early Modern World (1450–1750)",
+    "dataStatus": "STAGED_V2_4ACT",
+    "textbookStatus": "PUBLISHER_MASTER",
+    "workbookStatus": "LEGACY_V1 (🔒 ON DESKS / FROZEN)",
+    "classroomStatus": "🔒 FROZEN ON DESKS (REPRINT WINDOW)"
+  },
+  {
+    "id": "industrialisation_and_empire",
+    "year": "KS3 (Y8)",
+    "title": "Industrialisation & Empire (1750–1901)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "PUBLISHER_MASTER",
+    "workbookStatus": "MODERN_2PAGE (1 spread script)",
+    "classroomStatus": "🌟 GOLD_MASTER (100% COMPLETE)"
+  },
+  {
+    "id": "great_war",
+    "year": "KS3 (Y9)",
+    "title": "Causes of the Great War (1871–1914)",
+    "dataStatus": "STAGED_V2_4ACT",
+    "textbookStatus": "PUBLISHER_MASTER",
+    "workbookStatus": "LEGACY_V1 (🔒 ON DESKS / FROZEN)",
+    "classroomStatus": "🔒 FROZEN ON DESKS (REPRINT WINDOW)"
+  },
+  {
+    "id": "great_war_part2",
+    "year": "KS3 (Y9)",
+    "title": "The Great War: Western Front (1914–1918)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "MODERN_2PAGE (1 spread script)",
+    "classroomStatus": "WORKBOOK_MODERN / TEXTBOOK_QUEUED"
+  },
+  {
+    "id": "the_shoah",
+    "year": "KS3 (Y9)",
+    "title": "The Shoah (Holocaust Education)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "LEGACY_V1 (UNCONVERTED)",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "cold_war",
+    "year": "KS3 (Y9)",
+    "title": "The Cold War (1945–1991)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "LEGACY_V1 (UNCONVERTED)",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "post_war_britain",
+    "year": "KS3 (Y9)",
+    "title": "Rights & Post-War Britain",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "LEGACY_V1 (UNCONVERTED)",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "australia",
+    "year": "KS3 Elective",
+    "title": "History of Australia",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "LEGACY_V1 (UNCONVERTED)",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "edexcel_medicine",
+    "year": "GCSE (Y10–11)",
+    "title": "Medicine in Britain & Western Front",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_OR_NONE",
+    "workbookStatus": "MODERN_2PAGE (6 spread scripts)",
+    "classroomStatus": "WORKBOOK_MODERN / TEXTBOOK_QUEUED"
+  },
+  {
+    "id": "cme_new",
+    "year": "GCSE (Y10–11)",
+    "title": "Conflict in the Middle East (1945–1995)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "SCRIPT_READY",
+    "workbookStatus": "MODERN_2PAGE (3 spread scripts)",
+    "classroomStatus": "WORKBOOK_MODERN / TEXTBOOK_QUEUED"
+  },
+  {
+    "id": "eee",
+    "year": "GCSE (Y10–11)",
+    "title": "Early Elizabethan England (1558–1588)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_OR_NONE",
+    "workbookStatus": "NONE",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "usa",
+    "year": "GCSE (Y10–11)",
+    "title": "The USA, 1954–1975: Conflict at Home & Abroad",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_OR_NONE",
+    "workbookStatus": "NONE",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "weimar_nazi_germany",
+    "year": "GCSE (Y10–11)",
+    "title": "Weimar & Nazi Germany (1918–1939)",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_OR_NONE",
+    "workbookStatus": "NONE",
+    "classroomStatus": "QUEUED_DEVELOPMENT"
+  },
+  {
+    "id": "trip_ypres",
+    "year": "GCSE Fieldwork",
+    "title": "Ypres & Somme Battlefield Tour",
+    "dataStatus": "LIVE_4ACT",
+    "textbookStatus": "LEGACY_V1",
+    "workbookStatus": "LEGACY_V1 (UNCONVERTED)",
+    "classroomStatus": "DIGITAL_FIELD_APP"
+  }
+]
