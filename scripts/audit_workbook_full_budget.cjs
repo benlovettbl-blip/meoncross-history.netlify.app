@@ -118,26 +118,32 @@ async function auditWorkbook(htmlRelativePath) {
         }
       }
 
-      // Page 16 checks
+      // Page 16 checks (KS3 Progress & Assessment Tracker & 6 QR Cards)
       else if (pageNum === 16) {
         const qrCards = p.querySelectorAll(
           '.page-body-full .qr-card, .page-body-full div[style*="repeat(6, 1fr)"] > div',
         );
-        const text = p.innerText;
+        const text = p.textContent;
+        const upper = text.toUpperCase();
         if (qrCards.length !== 6) {
           issues.push(
             `Page 16: Expected 6 individual lesson QR cards on outside back cover, found ${qrCards.length}`,
           );
         }
-        if (!text.includes('/ 126') && !text.includes('/126')) {
-          issues.push(`Page 16: Missing cumulative unit total '/ 126' in marks ledger`);
+        if (!upper.includes('EMERGING') || !upper.includes('GREATER DEPTH')) {
+          issues.push(`Page 16: Missing KS3 Pathway benchmark scale (Emerging / Greater Depth)`);
+        }
+        if (!upper.includes('TARGET LEVEL') && !upper.includes('TARGET GCSE')) {
+          issues.push(`Page 16: Missing Target Level or Target GCSE grade prompt`);
         }
         pageReports.push({
           page: 16,
           type: 'Back Cover',
           qrCount: qrCards.length,
           status:
-            qrCards.length === 6 ? '✅ 6 QR CARDS & LEDGER' : '⚠️ ' + qrCards.length + ' QR CARDS',
+            qrCards.length === 6 && upper.includes('EMERGING')
+              ? '✅ KS3 PATHWAY & 6 QR CARDS'
+              : '⚠️ INCOMPLETE BACK COVER',
         });
       }
     });
