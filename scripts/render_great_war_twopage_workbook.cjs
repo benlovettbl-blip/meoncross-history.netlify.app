@@ -5,20 +5,22 @@
  * Output: public/units/great_war/pupil_workbook_v2.html
  * PDF:    public/pdfs/great_war_pupil_workbook_V2.pdf
  *
- * Architecture:
- * - 16-Page A4 Pupil Workbook Standard (Zero Disruption: Staged V2 edition)
- * - Page 1: Master Front Cover (Hero plate, enquiry question, pupil box, 6-lesson syllabus)
- * - Pages 2–3: Living Unit Timeline (1871–1914 Chronological Spine & Sketchpads + Causal Synthesis)
- * - Pages 4–15: 6 Bespoke Double-Page Enquiry Spreads:
- *     Left Page:  Prior-Recall Do Now (5 items), Fingertip Vocab, Forensic Bridge Task (with authentic images/diagrams)
- *     Right Page: Master Enquiry Question, 3-Column Structure Strip with Dotted Planning Lines,
- *                 Categorized Word Bank, PEEL Writing Strip, Ruled Writing Lines, Teacher Assessment DIRT
- * - Page 16: Master Back Cover (M-A-I-N Synthesis Matrix, Historiography, DIRT Progress Ledger, Chronology Challenge, Synoptic Planning)
+ * Gold Standard Publisher Architecture:
+ * - 16-Page A4 Pupil Workbook Standard (Staged V2 edition)
+ * - Friendly, accessible teacher language (no pseudo-academic AI fluff)
+ * - Page 1: Master Front Cover with 120mm photo frame, pupil info card, and syllabus overview
+ * - Pages 2–3: Living Unit Timeline (6 Milestones across 2 pages with 48mm full-width sketchpads)
+ * - Pages 4–15: 6 Double-Page Enquiry Spreads:
+ *     Left Page (Verso): Do Now (5 questions), Key Vocabulary, Task 4 Source Investigation (filling the page, 0 gaps)
+ *     Right Page (Recto): Planning Your Answer (3 columns), Key Words & Connectives, Writing Guide,
+ *                         20 Ruled Writing Lines (7.0mm), Timeline Mission Box, Page Footer Strip (Zero DIRT box)
+ * - Page 16: Outside Back Cover (Student Assessment Record, WWW/EBI Feedback Lines, QR Revision Hub)
  */
 
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
+const QRCode = require('qrcode');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const dataPath = path.join(ROOT_DIR, 'units', 'great_war', 'data_v2_4act.js');
@@ -64,1726 +66,1432 @@ function getBase64Image(relPath) {
   return relPath;
 }
 
-// Bespoke pedagogical configurations for Great War 6 lessons
+function generateQrSvg(url) {
+  const qr = QRCode.create(url, { margin: 1 });
+  const size = qr.modules.size;
+  const data = qr.modules.data;
+  let pathD = '';
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (data[r * size + c]) {
+        pathD += `M${c},${r}h1v1h-1z `;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
+}
+
+// Friendly revision quips for Great War
+const revisionQuips = [
+  'The History Department • Causes of the Great War • Year 9 Workbook', // Page 1
+  '"Remember: A timeline without causal links is just a list of dates."', // Page 2
+  '"Chronology matters: 1914 was prepared by decades of imperial and naval rivalry."', // Page 3
+  '"Bismarck united Germany with iron and blood; Wilhelm II untied it with bluster."', // Page 4
+  '"Always explain HOW an event changed attitudes, not just that it happened."', // Page 5
+  '"Losing Alsace-Lorraine turned French classrooms into training grounds for revenge."', // Page 6
+  '"Support your claims with named treaties, dates, and historical details."', // Page 7
+  '"Colonial squabbles in Africa proved European rivals could not trust each other."', // Page 8
+  '"Use PEEL paragraphs to give your answer a clear, sustained argument."', // Page 9
+  '"HMS Dreadnought made every other warship obsolete in a single afternoon."', // Page 10
+  '"Connectives turn facts into explanations: Consequently, As a result, This led to..."', // Page 11
+  '"The alliance system was meant to keep the peace; instead, it acted like a tripwire."', // Page 12
+  '"Distinguish between long-term MAIN causes and the short-term Sarajevo spark."', // Page 13
+  '"One fatal wrong turn in Sarajevo pulled twenty nations into war in thirty-seven days."', // Page 14
+  '"Outstanding history explains not only what happened, but why people believed it mattered."', // Page 15
+  'Causes of the Great War Mastery Complete • Assessment & Revision Hub', // Page 16
+];
+
+function renderFooterStrip(pageNum, quipText, totalPages = 16) {
+  const isEven = pageNum % 2 === 0;
+  if (isEven) {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">${quipText}</span>
+      </div>`;
+  } else {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${quipText}</span>
+        <span class="footer-page-num">${pageNum}/${totalPages}</span>
+      </div>`;
+  }
+}
+
+// 6 Bespoke Lesson Configurations (Friendly, Teacher-Crafted)
 const lessonConfigs = [
   {
-    // Lesson 0: Creation of German Empire (1871)
-    skill: 'Causation & Diplomacy',
-    enquiryQuestion:
-      'Enquiry: Was the unification of Germany in 1871 primarily achieved through military force or diplomatic calculation?',
+    // Lesson 1: Creation of German Empire (1871)
+    lessonNum: 1,
+    skill: 'Causation',
+    title: 'How was the German Empire created in 1871?',
+    inquiryQuestion: 'Was Germany united mainly by military force or by clever diplomacy?',
     doNow: [
-      {
-        q: 'What is meant by the "Balance of Power" in European diplomacy?',
-        a: 'Equal power so no single nation dominates.',
-      },
-      {
-        q: 'Name two major European empires that existed in 1870 before German unity.',
-        a: 'British & Russian / Austrian empires.',
-      },
-      {
-        q: 'Why did Britain historically fear a single nation dominating Europe?',
-        a: 'Could build an invasion fleet and close Channel trade.',
-      },
-      {
-        q: 'How did the Industrial Revolution change warfare in the 19th century?',
-        a: 'Mass-produced steel artillery, rifles, and military railways.',
-      },
-      {
-        q: 'What was the Zollverein, and which kingdom led it?',
-        a: 'Prussian-led German customs union that excluded Austria.',
-      },
+      { q: 'What was the "Balance of Power" in 19th-century Europe?' },
+      { q: 'Name two major European empires that existed in 1870.' },
+      { q: 'Why did Britain prefer that no single country dominated Europe?' },
+      { q: 'How did railways and telegraphs change warfare by 1870?' },
+      { q: 'What was the Zollverein, and which state led it?' },
     ],
     objectives: [
-      'Understand how Prussia used economic dominance (the Zollverein) and military reform to eclipse Austria.',
-      'Analyze how Bismarck orchestrated three short, decisive wars to achieve unification.',
-      'Evaluate the geopolitical consequences of the proclamation at Versailles and the annexation of Alsace-Lorraine.',
+      'Learn how Prussia grew stronger through industry, railways, and army reforms.',
+      'Explore how Chancellor Otto von Bismarck used three wars to bring German states together.',
+      'Understand how the new German Empire in 1871 changed the balance of power across Europe.',
     ],
+    vocabPrompt:
+      'Explain the difference between <strong>Realpolitik</strong> (practical politics based on power) and <strong>Liberalism</strong> (rule of law and elected parliaments):',
+    bridgeTask: {
+      type: 'source_annotation',
+      title: 'Task 4: Source Investigation — Bismarck’s "Blood and Iron" Speech',
+      sourceTitle: 'Source A: Bismarck speaks to the Prussian Parliament (September 1862)',
+      shelfmark: 'PRUSSIAN STATE ARCHIVES • BERLIN',
+      sourceText:
+        '“Prussia’s borders according to the Vienna treaties are not favorable to a healthy state life. Not by speeches and majority decisions will the great questions of the day be decided—that was the great mistake of 1848 and 1849—but by iron and blood.”',
+      provenance:
+        'Minister-President Otto von Bismarck addressing the Budget Committee in Berlin, 1862.',
+      annotations: [
+        '① <strong>Underline:</strong> words showing Bismarck disliked parliamentary debates.',
+        '② <strong>Circle:</strong> the phrase describing the old 1815 borders.',
+        '③ <strong>Box:</strong> the two words Bismarck said would decide the future.',
+      ],
+      questionA:
+        'What does Source A tell us about Bismarck’s attitude towards democracy and military power?',
+      questionB:
+        'Why did Prussia’s victories between 1864 and 1871 convince Germans that Bismarck’s policy was right?',
+      clue: 'Helpful Clue: Bismarck believed speeches and voting took too long—weapons, factories, and armies were what built nations.',
+      scholarsEdge:
+        'Challenge Question: Did Bismarck’s reliance on the military make the new German Empire distrustful of peace?',
+    },
     structureStrip: [
       {
         col: '1. MILITARY FORCE',
         prompt:
-          'Prussian army reforms, Dreyse needle guns, and victories over Austria (1866) and France (1870).',
+          'Prussian army reforms, Krupp artillery, and victories over Austria (1866) and France (1870).',
       },
       {
-        col: '2. REALPOLITIK DIPLOMACY',
+        col: '2. CLEVER DIPLOMACY',
         prompt:
-          'Bismarck isolating rivals, editing the Ems Telegram, and manipulating southern German nationalism.',
+          'Bismarck isolating rivals, editing the Ems Telegram, and stirring up German national pride.',
       },
       {
-        col: '3. HISTORICAL JUDGMENT',
+        col: '3. YOUR CONCLUSION',
         prompt:
-          'Weigh which factor was decisive: did military force forge unity, or did diplomacy direct the weapon?',
+          'Weigh both sides: did military strength create Germany, or did Bismarck’s diplomacy make it possible?',
       },
     ],
-    wordBank: {
-      technical:
-        'Realpolitik &bull; Blood and Iron (Eisen und Blut) &bull; Zollverein &bull; Ems Telegram &bull; indemnity',
-      geopolitical:
-        'Prussian hegemony &bull; Congress of Vienna &bull; balance of power &bull; Hall of Mirrors &bull; encirclement',
-      connectives:
-        'The decisive military catalyst was... &bull; From a diplomatic perspective... &bull; Crucially, Bismarck ensured that... &bull; Consequently, while force provided the weapon...',
-    },
-    vocabTask: {
-      type: 'distinction',
-      prompt:
-        'Distinguish between Bismarck’s ruthless, pragmatic <strong>Realpolitik</strong> (practical power and national interest) and democratic <strong>Liberalism</strong> (speeches and majority votes):',
-    },
+    wordBank:
+      'Realpolitik • Blood and Iron • Zollverein • Krupp steel • Needle gun • Ems Telegram • Sedan • Alsace-Lorraine',
+    connectives:
+      'The main military factor was... • However, diplomacy was essential because... • Consequently... • Ultimately, I conclude that...',
+    timelineMission:
+      'Turn to Pages 2–3 (Milestone 1: 1871). In the sketchpad, draw Bismarck’s Prussian helmet or the German imperial eagle, and label the proclamation at Versailles.',
+  },
+
+  {
+    // Lesson 2: Franco-Prussian War & Alsace-Lorraine (1871)
+    lessonNum: 2,
+    skill: 'Change & Continuity',
+    title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
+    inquiryQuestion:
+      'Why did the annexation of Alsace-Lorraine make lasting peace in Europe impossible?',
+    doNow: [
+      { q: 'Which Prussian minister was famous for his "Blood and Iron" speech?' },
+      { q: 'In which grand French palace was the German Empire proclaimed in 1871?' },
+      { q: 'Which two provinces did Germany take from France after the war?' },
+      { q: 'What is the French word for "revenge" (revanche)?' },
+      { q: 'Why was France left feeling humiliated and isolated after 1871?' },
+    ],
+    objectives: [
+      'Understand how the Siege of Paris and the harsh 1871 Treaty of Frankfurt shocked France.',
+      'Explore how the loss of Alsace-Lorraine fuelled a deep desire for revenge (revanche).',
+      'Explain how French schools and culture prepared a whole generation for future conflict.',
+    ],
+    vocabPrompt:
+      'Complete the sentence using the terms <strong>Revanche</strong> (revenge) and <strong>Annexation</strong> (taking land by force):<br>' +
+      'After the German [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] of Alsace-Lorraine, the French public demanded [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] to reclaim their lost provinces.',
     bridgeTask: {
-      type: 'source_annotation',
-      title:
-        'Task 4: Archival Interrogation & Annotation: Bismarck’s "Blood and Iron" Speech (1862)',
-      sourceTitle:
-        'Source A: Otto von Bismarck Addresses the Prussian Budget Commission (30 Sept 1862)',
-      shelfmark: 'PRUSSIAN STATE ARCHIVES · PARLIAMENTARY PROCEEDINGS · BERLIN',
+      type: 'visual_painting',
+      title: 'Task 4: Source Investigation — "The Black Stain" (La Tache Noire, 1887)',
+      imgSrc: '/images/la_tache_noire_1887.jpg',
+      imgCaption: 'Albert Bettannier, "La Tache Noire" (1887)',
       sourceText:
-        '“Prussia must concentrate and maintain its power for the favorable moment which has already been missed several times. Prussia’s borders according to the treaties of Vienna are not favorable to a healthy state life. Not through speeches and majority decisions will the great questions of the day be decided—that was the great mistake of 1848 and 1849—but by iron and blood (Eisen und Blut).”',
-      provenance:
-        'Speech by Minister-President Otto von Bismarck to the Budget Committee of the Prussian House of Representatives, Berlin, 1862.',
+        '“In French schoolrooms after 1871, teachers pointed to maps where the lost provinces of Alsace and Lorraine were colored black or violet. Boys wore uniforms and were drilled in gymnastics and rifle handling, taught that their duty was to win back the provinces.”',
+      shelfmark: 'FRENCH MINISTRY OF PUBLIC INSTRUCTION • 1882 EDUCATION REPORT',
       annotations: [
-        '① Underline: phrase proving Bismarck rejected parliamentary voting.',
-        '② Circle: the treaty borders Bismarck declared "unfavorable" to Prussia.',
-        '③ Box: the dual physical elements Bismarck believed decided history.',
+        '① <strong>Underline:</strong> what the teacher is pointing to on the classroom map.',
+        '② <strong>Circle:</strong> the uniform the French schoolboy is wearing.',
+        '③ <strong>Box:</strong> the military skills being taught to the young pupils.',
       ],
       questionA:
-        'What can a historian infer from Source A about why Bismarck rejected constitutional democracy in favor of autocratic military force?',
+        'What does this painting show about how French children were brought up to feel about Germany?',
       questionB:
-        'Explain how Bismarck’s statecraft between 1862 and 1871 proved that "iron and blood" was Prussian state policy rather than mere rhetoric:',
-      clue: '<em>Low-Floor Clue:</em> Look at the words "not through speeches"—Bismarck was warning parliament that weapons and industry, not debates, build nations.',
+        'Why did taking Alsace-Lorraine guarantee that France and Germany could never be true friends?',
+      clue: 'Helpful Clue: Notice the cadet belt and drum. French schools were not just teaching reading; they were preparing boys for a future war.',
       scholarsEdge:
-        '★ Scholar’s Edge: How did Bismarck’s 1862 triumph over parliament embed militarism into the very constitution of the new German Empire?',
+        'Challenge Question: Was taking Alsace-Lorraine Bismarck’s greatest strategic mistake?',
     },
-  },
-  {
-    // Lesson 1: Franco-Prussian War & Alsace-Lorraine
-    skill: 'Change & Continuity',
-    enquiryQuestion:
-      'Enquiry: How far was French revanche for the loss of Alsace-Lorraine the fundamental cause of European instability before 1914?',
-    doNow: [
-      {
-        q: 'What famous phrase did Otto von Bismarck use in 1862 to describe how Germany would be unified?',
-        a: '"By iron and blood" (Eisen und Blut).',
-      },
-      {
-        q: 'Which economic customs union created by Prussia in 1834 excluded Austria?',
-        a: 'The Zollverein.',
-      },
-      {
-        q: 'In what grand French palace was King Wilhelm I proclaimed German Emperor in 1871?',
-        a: 'The Hall of Mirrors at Versailles.',
-      },
-      {
-        q: 'Why did the unification of Germany in 1871 shatter the traditional European balance of power?',
-        a: 'Created a massive industrial superpower in central Europe.',
-      },
-      {
-        q: 'Which two provinces did Germany annex from France in the 1871 Treaty of Frankfurt?',
-        a: 'Alsace and Lorraine.',
-      },
-    ],
-    objectives: [
-      'Explain how the Hohenzollern crisis and the Ems Telegram provoked France into declaring war in 1870.',
-      'Analyze the military catastrophe of Sedan and the traumatic Siege of Paris.',
-      'Evaluate how "la revanche" and Bettannier’s "La Tache Noire" institutionalized anti-German sentiment in France.',
-    ],
     structureStrip: [
       {
-        col: '1. THE 1871 HUMILIATION',
+        col: '1. FRENCH HUMILIATION',
         prompt:
-          'The surrender at Sedan, the starvation siege of Paris, the crowning at Versailles, and 5-billion franc fine.',
+          'The Siege of Paris, German troops marching on the Champs-Élysées, and the £200m indemnity.',
       },
       {
-        col: '2. REVANCHE & BORDER LOSS',
+        col: '2. LOST PROVINCES',
         prompt:
-          'Loss of Alsace-Lorraine, school classroom indoctrination, and French determination to recover the provinces.',
+          'Losing 1.5 million French citizens, iron mines in Lorraine, and the rise of revanche.',
       },
       {
-        col: '3. EVALUATIVE JUDGMENT',
+        col: '3. YOUR CONCLUSION',
         prompt:
-          'Was French revenge the primary danger, or did German fear of a two-front war cause greater European tension?',
+          'Explain why taking land guaranteed that any future European crisis would involve France attacking Germany.',
       },
     ],
-    wordBank: {
-      technical:
-        'La Revanche &bull; Annexation &bull; Ems Telegram &bull; Treaty of Frankfurt &bull; indemnity &bull; Sedan',
-      geopolitical:
-        'Lost Provinces (Provinces Perdues) &bull; Franco-Russian Alliance &bull; diplomatic isolation &bull; security dilemma',
-      connectives:
-        'The immediate trauma of 1871 was... &bull; This fostered a continuous culture of revanche because... &bull; Furthermore, the loss of Alsace-Lorraine... &bull; Ultimately, while revanche kept tension high...',
-    },
-    vocabTask: {
-      type: 'cloze',
-      prompt:
-        'Complete the summary below using the terms <em>Revanche</em> and <em>Annexation</em>:',
-      clozeText:
-        'Following the Prussian victory in 1871, the German Empire enforced the direct [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] of Alsace-Lorraine, sparking a deep and permanent culture of [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] across French politics and education.',
-      followUp:
-        'Explain why Bismarck spent the next twenty years desperately trying to diplomatically isolate France:',
-    },
-    bridgeTask: {
-      type: 'visual_source',
-      title:
-        'Task 4: Archival Interrogation: Albert Bettannier’s "The Black Stain" (La Tache Noire, 1887)',
-      imgSrc: '/images/la_tache_noire_1887.jpg',
-      imgCaption:
-        'Primary Painting: La Tache Noire by Albert Bettannier (1887), Musée de la Cour d’Or, Metz.',
-      sourceText:
-        '“In French school classrooms after 1871, teachers pointed to maps where the lost provinces of Alsace and Lorraine were shaded in deep mourning violet or black. Boys wore military-style uniforms and were drilled in gymnastics and rifle handling, taught that their sacred duty was to reclaim the lost provinces.”',
-      questionA:
-        'Using the visual source and text, explain how French schools deliberately turned national grief into patriotic military conditioning:',
-      questionB:
-        'Explain why the loss of Alsace-Lorraine made a lasting diplomatic peace between France and Germany virtually impossible after 1871:',
-      clue: '<em>Low-Floor Clue:</em> Look at the teacher pointing to the black patch on the map and the boy’s military cadet belt—education was used for war preparation.',
-      scholarsEdge:
-        '★ Scholar’s Edge: How did the French obsession with revanche push France into an unlikely military alliance with autocratic Tsarist Russia in 1894?',
-    },
+    wordBank:
+      'Revanche • Alsace-Lorraine • Treaty of Frankfurt • Siege of Paris • indemnity • Albert Bettannier • patriotism • buffer zone',
+    connectives:
+      'The immediate shock was... • Furthermore, in French society... • This meant that whenever a crisis arose... • In conclusion...',
+    timelineMission:
+      'Turn to Pages 2–3 (Milestone 2: 1871). In the sketchpad, sketch the map of France with the shaded black border provinces of Alsace and Lorraine.',
   },
+
   {
-    // Lesson 2: The Scramble for Africa & Imperial Rivalry
-    skill: 'Causation & Imperialism',
-    enquiryQuestion:
-      'Enquiry: Did colonial rivalry in Africa cause the First World War, or merely mirror existing European tensions?',
+    // Lesson 3: The Scramble for Africa & Weltpolitik
+    lessonNum: 3,
+    skill: 'Causation & Empire',
+    title: 'How did imperialism and the "Scramble for Africa" fuel European rivalry?',
+    inquiryQuestion: 'Did the race for overseas empires make war in Europe more likely?',
     doNow: [
-      {
-        q: 'Why did France desperately seek an alliance against Germany after 1871?',
-        a: 'To end its diplomatic isolation and recover Alsace-Lorraine.',
-      },
-      {
-        q: 'Which two countries signed the Dual Alliance in 1879?',
-        a: 'Germany and Austria-Hungary.',
-      },
-      { q: 'In what year did Kaiser Wilhelm II dismiss Chancellor Bismarck?', a: '1890.' },
-      {
-        q: 'What new German foreign policy demanded an empire and a "Place in the Sun"?',
-        a: 'Weltpolitik.',
-      },
-      {
-        q: 'Which 1894 treaty finally broke France’s diplomatic isolation?',
-        a: 'The Franco-Russian Military Convention.',
-      },
+      { q: 'Which new Kaiser dismissed Bismarck in 1890?' },
+      { q: 'What German phrase described Kaiser Wilhelm’s aggressive world policy (Weltpolitik)?' },
+      { q: 'What nickname was given to European powers carving up Africa between 1881 and 1914?' },
+      { q: 'Which two European powers had by far the largest global empires in 1900?' },
+      { q: 'What valuable raw materials did European nations want from African colonies?' },
     ],
     objectives: [
-      'Understand how the Berlin Conference (1884–85) laid out rules for carving up Africa.',
-      'Analyze Kaiser Wilhelm II’s aggressive Weltpolitik and German colonial jealousy.',
-      'Evaluate how the First (1905) and Second (1911) Moroccan Crises strengthened Anglo-French military cooperation.',
+      'Learn why European powers rushed to colonize 90% of Africa in just thirty years.',
+      'Understand Kaiser Wilhelm II’s ambition for Germany to have a "place in the sun".',
+      'Analyze how colonial disputes in Morocco pushed Britain and France together against Germany.',
     ],
-    structureStrip: [
-      {
-        col: '1. IMPERIAL GREED & WELTPOLITIK',
-        prompt:
-          'Kaiser Wilhelm II’s demand for a "Place in the Sun", German envy of the British Empire, and railway expansion.',
-      },
-      {
-        col: '2. THE MOROCCAN CRISES',
-        prompt:
-          'Tangier (1905) and Agadir (1911): German gunboat diplomacy backfiring and cementing the Anglo-French Entente.',
-      },
-      {
-        col: '3. HISTORICAL JUDGMENT',
-        prompt:
-          'Did colonial clashes cause the war, or did they merely deepen distrust between already polarized alliances?',
-      },
-    ],
-    wordBank: {
-      technical:
-        'Weltpolitik &bull; Scramble for Africa &bull; Berlin Conference (1884) &bull; Gunboat Diplomacy &bull; SMS Panther',
-      geopolitical:
-        'Place in the Sun &bull; Entente Cordiale &bull; Algeciras Conference &bull; Cape-to-Cairo &bull; imperial prestige',
-      connectives:
-        'The fundamental driver of imperial friction was... &bull; This escalated dangerously during the Agadir Crisis when... &bull; Instead of dividing Britain and France, German threats... &bull; Consequently, colonial rivalry...',
-    },
-    vocabTask: {
-      type: 'mapping',
-      termA: 'Weltpolitik',
-      termB: 'Place in the Sun',
-      prompt:
-        'Write one historically accurate sentence connecting Kaiser Wilhelm II’s policy of <strong>Weltpolitik</strong> to Germany’s demand for a <strong>"Place in the Sun"</strong>:',
-    },
+    vocabPrompt:
+      'Explain the difference between <strong>Imperialism</strong> (building an overseas empire) and <strong>Weltpolitik</strong> (Germany’s aggressive drive for world influence):',
     bridgeTask: {
       type: 'visual_map',
-      title: 'Task 4: Forensic Cartographic Analysis: The Scramble for Africa (1914)',
+      title: 'Task 4: Source Investigation — The Partition of Africa (1914)',
       imgSrc: '/images/map_africa_1914.png',
-      imgCaption:
-        'Reference Map: European colonial partitions of Africa on the eve of war in 1914.',
+      imgCaption: 'Primary Map: European Possessions in Africa (1914)',
       sourceText:
-        '“By 1914, Britain controlled over 30% of Africa’s population, stretching from Cairo to the Cape, while France held massive territories in West Africa. Germany, arriving late to the imperial banquet, secured only scattered territories (Togo, Cameroon, German South-West Africa, German East Africa), fueling intense national resentment in Berlin.”',
+        '“By 1914, only Liberia and Ethiopia remained independent. Britain held a corridor from Cairo to Cape Town; France held vast areas of West Africa. Germany arrived late and gained only scattered territories, convincing the Kaiser that Germany had been cheated of its rightful share.”',
+      shelfmark: 'BERLIN CONFERENCE MAP ARCHIVES • 1885–1914',
+      annotations: [
+        '① <strong>Underline:</strong> the two countries that held the vast majority of African land.',
+        '② <strong>Circle:</strong> the phrase explaining how the Kaiser felt about Germany’s colonies.',
+        '③ <strong>Box:</strong> the two independent African nations.',
+      ],
       questionA:
-        'Using the map and text, explain why German nationalists viewed the map of Africa in 1914 as humiliating proof of British and French encirclement:',
+        'What does this map show about why Germany was jealous of the British and French empires?',
       questionB:
-        'Explain why the 1911 Agadir Crisis ended in a total diplomatic defeat for Germany, bringing Britain and France closer together:',
-      clue: '<em>Low-Floor Clue:</em> Compare the continuous British pink strip from Egypt to South Africa against the small, isolated German territories.',
+        'How did German attempts to interfere in Morocco (1905 and 1911) backfire and strengthen Britain and France?',
+      clue: 'Helpful Clue: Look at how much territory Britain and France controlled compared to Germany’s small, isolated patches.',
       scholarsEdge:
-        '★ Scholar’s Edge: Why did German colonial assertiveness in Africa paradoxically push Britain to abandon "Splendid Isolation" and sign naval agreements with France?',
+        'Challenge Question: Did imperial clashes cause the Great War, or did they simply make European powers suspicious of each other?',
     },
-  },
-  {
-    // Lesson 3: HMS Dreadnought & The Naval Arms Race
-    skill: 'Significance & Technological Change',
-    enquiryQuestion:
-      'Enquiry: Why did a battleship building contest destroy Anglo-German relations between 1906 and 1914?',
-    doNow: [
-      {
-        q: 'What German foreign policy demanded an aggressive overseas empire?',
-        a: 'Weltpolitik.',
-      },
-      {
-        q: 'What German gunboat was sent to Morocco in 1911, triggering the Agadir Crisis?',
-        a: 'SMS Panther.',
-      },
-      {
-        q: 'What was the 1904 diplomatic agreement between Britain and France called?',
-        a: 'The Entente Cordiale.',
-      },
-      {
-        q: 'Why did the Moroccan Crises strengthen rather than weaken the Entente Cordiale?',
-        a: 'Britain firmly backed France against German military bullying.',
-      },
-      {
-        q: 'What was Britain’s naval policy of having a fleet larger than the next two navies combined?',
-        a: 'The Two-Power Standard.',
-      },
-    ],
-    objectives: [
-      'Explain the principles of the British Two-Power Standard and Tirpitz’s "Risk Theory".',
-      'Analyze the revolutionary technology of HMS Dreadnought and Admiral Fisher’s naval reforms.',
-      'Evaluate how naval scare-mongering and public slogans ("We want eight and we won’t wait!") drove the arms race.',
-    ],
     structureStrip: [
       {
-        col: '1. DREADNOUGHT REVOLUTION',
+        col: '1. THE RACE FOR LAND',
         prompt:
-          'All-big-gun armament, steam turbine speed, wiping out Britain’s older battleship advantage overnight.',
+          'Raw materials (rubber, copper, oil), markets, and national prestige driving European conquest.',
       },
       {
-        col: '2. THE ARMS RACE ESCALATION',
+        col: '2. GERMAN JEALOUSY',
         prompt:
-          'Tirpitz’s Navy Laws, enlarging the Kiel Canal, public panic, and rival dreadnought construction.',
+          'Wilhelm II demanding a "place in the sun" and challenging French control in Morocco.',
       },
       {
-        col: '3. EVALUATIVE IMPACT',
+        col: '3. YOUR CONCLUSION',
         prompt:
-          'Weigh how far the naval race made war inevitable: did it convince Britain that Germany intended to destroy the Empire?',
+          'Judge whether colonial rivalry was a direct cause of war or just worsened existing European fears.',
       },
     ],
-    wordBank: {
-      technical:
-        'HMS Dreadnought &bull; Two-Power Standard &bull; Risk Theory (Risikogedanke) &bull; steam turbine &bull; 12-inch guns',
-      geopolitical:
-        'Naval mastery &bull; Admiral Jackie Fisher &bull; Admiral Alfred von Tirpitz &bull; Kiel Canal &bull; maritime blockade',
-      connectives:
-        'The launch of HMS Dreadnought was revolutionary because... &bull; However, this paradoxically harmed Britain by... &bull; In response, German naval construction... &bull; Consequently, the naval race poisoned diplomacy...',
-    },
-    vocabTask: {
-      type: 'distinction',
-      prompt:
-        'Distinguish between Britain’s <strong>Two-Power Standard</strong> (Royal Navy equal to next two navies combined) and Admiral Tirpitz’s <strong>Risk Theory</strong> (German navy strong enough that attacking it would risk Britain’s supremacy):',
-    },
+    wordBank:
+      'Imperialism • Scramble for Africa • Weltpolitik • "Place in the Sun" • Berlin Conference • Morocco Crises • Panther gunboat',
+    connectives:
+      'Imperialism heightened tensions because... • In particular, Germany felt... • This backfired when... • Overall, I judge that...',
+    timelineMission:
+      'Turn to Pages 2–3 (Milestone 3: 1898–1904). In the sketchpad, sketch the African continent with British and French flags overshadowing Germany’s tiny colonies.',
+  },
+
+  {
+    // Lesson 4: HMS Dreadnought & The Naval Arms Race
+    lessonNum: 4,
+    skill: 'Technology & Rivalry',
+    title: 'How did the launch of HMS Dreadnought trigger a naval arms race?',
+    inquiryQuestion: 'Was the naval arms race the main reason Britain turned against Germany?',
+    doNow: [
+      {
+        q: 'What British policy said the Royal Navy must equal the next two biggest navies combined?',
+      },
+      {
+        q: 'In what year was the revolutionary battleship HMS Dreadnought launched in Portsmouth?',
+      },
+      { q: 'What new engine made Dreadnought faster than any previous battleship?' },
+      { q: 'Which German admiral drew up the German Navy Laws to rival Britain?' },
+      { q: 'What popular slogan did British newspapers print demanding eight new dreadnoughts?' },
+    ],
+    objectives: [
+      'Understand how revolutionary engineering made HMS Dreadnought faster and more deadly.',
+      'Explain why building dreadnoughts made all previous battleships obsolete overnight.',
+      'Evaluate why Germany’s decision to build battleships frightened Britain into a naval arms race.',
+    ],
+    vocabPrompt:
+      'Explain the difference between the British <strong>Two-Power Standard</strong> (naval safety policy) and the German <strong>Risk Theory</strong> (building enough ships to frighten Britain):',
     bridgeTask: {
       type: 'technical_table',
-      title:
-        'Task 4: Archival Interrogation: Fisher’s Confidential Memo & Technical Dreadnought Comparison',
-      sourceTitle:
-        'Source C: First Sea Lord Admiral Sir John Fisher, Confidential Admiralty Memorandum (Dec 1906)',
-      shelfmark: 'BRITISH ADMIRALTY ARCHIVES · ADM 1/7892 · LONDON',
+      title: 'Task 4: Source Investigation — The Battleship Revolution (1906)',
+      sourceTitle: 'Source A: Admiral Sir John Fisher explains the Dreadnought revolution (1906)',
+      shelfmark: 'BRITISH ADMIRALTY RECORDS • PORTSMOUTH DOCKYARD',
       sourceText:
-        '“My principles are: Speed is armor. Hit first, hit hard, and keep on hitting... The Dreadnought has rendered all existing battleships obsolete. If Germany builds one, we must build two. The Empire floats upon the Royal Navy; if the navy is defeated, we are starved into surrender in three weeks.”',
-      provenance:
-        'Confidential memorandum by First Sea Lord Admiral Sir John Fisher to the British Cabinet, December 1906.',
-      tableHeaders: [
-        'Design Feature',
-        'Pre-Dreadnought (HMS King Edward VII, 1903)',
-        'HMS Dreadnought (1906 Breakthrough)',
-      ],
+        '“HMS Dreadnought can sink the whole German fleet by herself before they can get close enough to hit her. She carries ten 12-inch guns and steam turbines driving her at 21 knots. It has made every existing battleship in the world obsolete.”',
+      tableHeaders: ['Feature', 'Old Battleships (Pre-Dreadnought)', 'HMS Dreadnought (1906)'],
       tableRows: [
         [
           'Main Armament',
-          '4 × 12-inch heavy guns + mixed smaller calibres',
-          '10 × 12-inch guns (all-big-gun uniform battery)',
+          '4 × 12-inch heavy guns + mixed smaller guns',
+          '10 × 12-inch big guns (all-big-gun ship)',
         ],
         [
-          'Broadside Firepower',
-          '4 heavy shells per minute',
-          '8 heavy shells per minute (2.5× destructive energy)',
+          'Engines & Speed',
+          'Piston steam engines (18 knots maximum)',
+          'Steam turbines (21 knots top speed)',
         ],
         [
-          'Propulsion & Speed',
-          'Triple-expansion reciprocating steam (18 knots)',
-          'Parsons steam turbines (21 knots top speed)',
-        ],
-        [
-          'Strategic Effect',
-          'Dominant over older fleets; vulnerable to speed',
-          'Made all 150 battleships in the world obsolete overnight',
+          'Effective Range',
+          'Accurate only up to 4 miles',
+          'Accurate up to 8 miles with central fire control',
         ],
       ],
+      annotations: [
+        '① <strong>Underline:</strong> the number of 12-inch guns Dreadnought carried.',
+        '② <strong>Circle:</strong> Dreadnought’s top speed in knots.',
+        '③ <strong>Box:</strong> what happened to all previous battleships.',
+      ],
       questionA:
-        'Using Fisher’s memorandum and the specifications table, explain why the launch of HMS Dreadnought was described as both a military masterpiece and a strategic nightmare for Britain:',
+        'Using the table, explain why HMS Dreadnought was described as an engineering revolution:',
       questionB:
-        'Explain why the German decision to widen the Kiel Canal and build dreadnoughts convinced the British public and government that Germany was preparing for war:',
-      clue: '<em>Low-Floor Clue:</em> Notice the broadside firepower jumped from 4 to 8 heavy shells—any navy with dreadnoughts could destroy older ships from miles away.',
+        'Why did building Dreadnought accidentally help Germany by wiping out Britain’s huge numerical lead?',
+      clue: 'Helpful Clue: Because all older ships were now useless, both Britain and Germany started from zero in the dreadnought race.',
       scholarsEdge:
-        '★ Scholar’s Edge: How did the naval race transform the Entente Cordiale from a friendly colonial agreement into a binding, de facto military alliance?',
+        'Challenge Question: Why did the German fleet threaten Britain’s very survival, while the British fleet did not threaten Germany’s survival?',
     },
-  },
-  {
-    // Lesson 4: The Alliance System & The Willy-Nicky Telegrams
-    skill: 'Causation & The Diplomatic Web',
-    enquiryQuestion:
-      'Enquiry: Did the European alliance system protect peace or act as a doomsday machine for total war?',
-    doNow: [
-      {
-        q: 'What revolutionary British battleship launched in 1906 triggered the naval arms race?',
-        a: 'HMS Dreadnought.',
-      },
-      {
-        q: 'What was the British naval rule that the Royal Navy must equal the next two navies combined?',
-        a: 'The Two-Power Standard.',
-      },
-      {
-        q: 'Which German admiral designed the German naval expansion based on his "Risk Theory"?',
-        a: 'Admiral Alfred von Tirpitz.',
-      },
-      {
-        q: 'What was the 1907 agreement that united Britain, France, and Russia called?',
-        a: 'The Triple Entente.',
-      },
-      {
-        q: 'Which three nations made up the Triple Alliance by 1914?',
-        a: 'Germany, Austria-Hungary, and Italy.',
-      },
-    ],
-    objectives: [
-      'Explain the formation of the Dual Alliance (1879) and Triple Alliance (1882).',
-      'Analyze why the lapse of the Reinsurance Treaty led directly to the Franco-Russian Alliance (1894).',
-      'Evaluate how rigid railway mobilization timetables and interlocking treaties transformed a localized dispute into global war.',
-    ],
     structureStrip: [
       {
-        col: '1. INTENDED DETERRENCE',
+        col: '1. THE WEAPON',
         prompt:
-          'Alliances designed to prevent attack: Bismarck isolating France, and the balance of fear keeping the peace.',
+          'Ten 12-inch guns, steam turbines, thick Krupp armour, and revolution in naval warfare.',
       },
       {
-        col: '2. THE DOOMSDAY TRAP',
+        col: '2. THE RIVALRY',
         prompt:
-          'Secret clauses, blank cheques, rigid railway mobilization schedules, and the Schlieffen Plan.',
+          'Tirpitz building German dreadnoughts, British public panic ("We want eight and we won’t wait!").',
       },
       {
-        col: '3. HISTORICAL JUDGMENT',
+        col: '3. YOUR CONCLUSION',
         prompt:
-          'Did the alliance system make war inevitable, or did irresponsible political leadership trigger the catastrophe?',
+          'Did building battleships make war inevitable, or did it push Britain into France and Russia’s arms?',
       },
     ],
-    wordBank: {
-      technical:
-        'Triple Alliance &bull; Triple Entente &bull; Deterrence &bull; Mobilisation &bull; Schlieffen Plan &bull; Willy-Nicky Telegrams',
-      geopolitical:
-        'Interlocking treaties &bull; Doomsday machine &bull; Pan-Slavism &bull; two-front war &bull; Blank Cheque',
-      connectives:
-        'European leaders believed large alliances would... &bull; However, secret military protocols ensured that... &bull; When Russia ordered general mobilization... &bull; Consequently, defensive pacts acted as...',
-    },
-    vocabTask: {
-      type: 'cloze',
-      prompt:
-        'Complete the summary below using the terms <em>Deterrence</em> and <em>Mobilisation</em>:',
-      clozeText:
-        'European statesmen believed large defensive alliances would create [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] to prevent aggression; however, the rigid railway timetables of military [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] transformed defensive pacts into an unstoppable chain reaction.',
-      followUp:
-        'Explain why the German Schlieffen Plan made a diplomatic pause impossible once Russia mobilized:',
-    },
+    wordBank:
+      'HMS Dreadnought • Two-Power Standard • Admiral Fisher • Admiral Tirpitz • steam turbine • 12-inch guns • naval arms race',
+    connectives:
+      'Dreadnought transformed naval power because... • However, for Britain, the German challenge was... • Consequently... • Ultimately...',
+    timelineMission:
+      'Turn to Pages 2–3 (Milestone 4: 1906). In the sketchpad, draw the silhouette of HMS Dreadnought with its big gun turrets pointing forward.',
+  },
+
+  {
+    // Lesson 5: The Alliance System & Willy-Nicky Telegrams
+    lessonNum: 5,
+    skill: 'Diplomacy & Evidence',
+    title: 'How did rival alliances and secret treaties divide Europe into two armed camps?',
+    inquiryQuestion:
+      'Was the European alliance system meant to prevent war, or did it make war inevitable?',
+    doNow: [
+      { q: 'Which three nations formed the Triple Alliance in 1882?' },
+      { q: 'Which three nations formed the Triple Entente by 1907?' },
+      { q: 'What term describes an alliance where an attack on one is an attack on all?' },
+      { q: 'What informal diplomatic friendly agreement did Britain and France sign in 1904?' },
+      { q: 'Who were the royal cousins who sent the famous "Willy-Nicky" telegrams in July 1914?' },
+    ],
+    objectives: [
+      'Identify the two armed camps: the Triple Alliance vs the Triple Entente.',
+      'Understand how secret promises and mobilization timetables created a dangerous chain reaction.',
+      'Investigate the private telegrams between Kaiser Wilhelm II and Tsar Nicholas II as war loomed.',
+    ],
+    vocabPrompt:
+      'Explain the difference between a <strong>Defensive Alliance</strong> (promising mutual help if attacked) and <strong>Military Mobilization</strong> (calling up millions of soldiers ready for war):',
     bridgeTask: {
       type: 'willy_nicky_telegrams',
-      title:
-        'Task 4: Archival Interrogation: The Desperate "Willy-Nicky" Telegrams (29–31 July 1914)',
-      sourceATitle: 'TELEGRAM 1: CZAR NICHOLAS II TO KAISER WILHELM II (29 July, 1:00 am)',
+      title: 'Task 4: Source Investigation — The "Willy-Nicky" Telegrams (July 1914)',
+      sourceATitle: 'TELEGRAM 1: Tsar Nicholas II to Kaiser Wilhelm II (29 July 1914)',
       sourceAText:
-        '“To try and avoid such a calamity as a European war, I beg you in the name of our old friendship to do what you can to stop your ally [Austria] from going too far. I foresee that very soon I shall be overwhelmed by the pressure brought upon me, and be forced to take extreme measures which will lead to war.”',
-      sourceAShelfmark: 'RUSSIAN IMPERIAL FOREIGN ARCHIVE · ST PETERSBURG',
-      sourceBTitle: 'TELEGRAM 2: KAISER WILHELM II TO CZAR NICHOLAS II (29 July, 6:30 pm)',
+        '“To try and avoid such a calamity as a European war, I beg you in the name of our old friendship to do what you can to stop your ally [Austria] from going too far. An ignominious war has been declared on a weak country [Serbia]. — NICKY”',
+      sourceAShelfmark: 'RUSSIAN IMPERIAL TELEGRAPH ARCHIVE • ST PETERSBURG',
+      sourceBTitle: 'TELEGRAM 2: Kaiser Wilhelm II to Tsar Nicholas II (30 July 1914)',
       sourceBText:
-        '“I cannot consider Austria’s action against Serbia as an ‘ignoble’ war... In this action, Austria is defending her very existence. If you mobilize against Austria, my role as mediator will be endangered if not ruined. The whole weight of the decision lies on your shoulders now, who have to bear the responsibility for Peace or War.”',
-      sourceBShelfmark: 'GERMAN IMPERIAL ARCHIVE · AUSWÄRTIGES AMT · BERLIN',
+        '“The whole weight of the decision lies upon your shoulders now, who have to bear the responsibility for Peace or War. My ally is acting justly against a nest of assassins. If Russia mobilizes, I will be forced to mobilize too. — WILLY”',
+      sourceBShelfmark: 'GERMAN IMPERIAL TELEGRAPH ARCHIVE • BERLIN',
       annotations: [
-        '① Underline: Nicholas II’s plea invoking their personal friendship.',
-        '② Circle: the phrase showing Nicholas was pressured by his military generals.',
-        '③ Box: Wilhelm’s warning that Russian mobilization would trigger war.',
+        '① <strong>Underline:</strong> the word the Tsar uses to describe European war ("calamity").',
+        '② <strong>Circle:</strong> how the Kaiser describes Serbia ("nest of assassins").',
+        '③ <strong>Box:</strong> the warnings both leaders give about military mobilization.',
       ],
       questionA:
-        'What does the intimate, desperate tone of these telegrams reveal about the power of personal monarchical diplomacy versus the unstoppable momentum of military alliances in 1914?',
+        'What do these telegrams show about the personal relationship between the Tsar and the Kaiser?',
       questionB:
-        'Explain why neither the Kaiser nor the Tsar was able to halt the countdown to war despite their mutual desire to avoid bloodshed:',
-      clue: '<em>Low-Floor Clue:</em> Notice both cousins blame each other’s allies—the rigid alliance treaties meant once military mobilization started, emperors were prisoners of their generals.',
+        'Why were the two leaders unable to stop the war despite calling each other by childhood nicknames?',
+      clue: 'Helpful Clue: Behind their personal friendship, both leaders were trapped by rigid army railway plans and alliance promises.',
       scholarsEdge:
-        '★ Scholar’s Edge: How does the Willy-Nicky exchange support Christopher Clark’s thesis in "The Sleepwalkers" that European rulers were blind to the trap their alliances had created?',
+        'Challenge Question: Did alliances cause the war, or did the fear of being left without allies cause the war?',
     },
+    structureStrip: [
+      {
+        col: '1. TWO ARMED CAMPS',
+        prompt:
+          'Triple Alliance (Germany, Austria, Italy) vs Triple Entente (Britain, France, Russia).',
+      },
+      {
+        col: '2. THE TRIPWIRE',
+        prompt:
+          'Secret agreements, military staff talks, and the domino effect if one ally was attacked.',
+      },
+      {
+        col: '3. YOUR CONCLUSION',
+        prompt:
+          'Did alliances keep peace for twenty years, or did they turn a small Balkan dispute into a world war?',
+      },
+    ],
+    wordBank:
+      'Triple Alliance • Triple Entente • Willy-Nicky telegrams • Entente Cordiale • mobilization • tripwire • balance of power',
+    connectives:
+      'The alliance system was intended to... • However, in reality, it acted as... • The Willy-Nicky telegrams prove that... • Therefore...',
+    timelineMission:
+      'Turn to Pages 2–3 (Milestone 5: 1908–1914). In the sketchpad, draw the two opposing flags (Union Jack / Tricolour vs German Eagle) connected by chains.',
   },
+
   {
-    // Lesson 5: The Sarajevo Assassination & The Blank Cheque
-    skill: 'Forensic Causation & The Spark',
-    enquiryQuestion:
-      'Enquiry: Was the outbreak of the First World War the result of a deliberate German plan or an accidental chain of miscalculations?',
+    // Lesson 6: The Spark — Sarajevo & The July Crisis (1914)
+    lessonNum: 6,
+    skill: 'Chronology & Causation',
+    title: 'How did an assassination in Sarajevo trigger the outbreak of the First World War?',
+    inquiryQuestion:
+      'Could the First World War have been avoided after the shots in Sarajevo, or was it inevitable?',
     doNow: [
+      { q: 'In which Bosnian city was Archduke Franz Ferdinand assassinated on 28 June 1914?' },
+      { q: 'Name the 19-year-old Bosnian Serb student who fired the fatal shots.' },
+      { q: 'What secret nationalist Serbian society helped train and arm the assassins?' },
       {
-        q: 'Which two European armed camps faced each other across Europe by 1914?',
-        a: 'The Triple Alliance and Triple Entente.',
+        q: 'What promise did Germany give to Austria on 5 July 1914, backing them unconditionally?',
       },
       {
-        q: 'What was the German war plan to defeat France first through Belgium called?',
-        a: 'The Schlieffen Plan.',
-      },
-      {
-        q: 'Which neutral country did Germany invade under the Schlieffen Plan in August 1914?',
-        a: 'Belgium.',
-      },
-      {
-        q: 'Which Balkan territory was annexed by Austria-Hungary in 1908, infuriating Serbia?',
-        a: 'Bosnia and Herzegovina.',
-      },
-      {
-        q: 'What was the secret Serbian nationalist society that armed Gavrilo Princip called?',
-        a: 'The Black Hand (Crna Ruka).',
+        q: 'Which neutral country did Germany invade, forcing Britain to enter the war on 4 August?',
       },
     ],
     objectives: [
-      'Explain why Archduke Franz Ferdinand was targeted by the Black Hand in Sarajevo on 28 June 1914.',
-      'Analyze the fateful coincidences and wrong turns during the assassination on 28 June 1914.',
-      'Evaluate the July Crisis, the German "Blank Cheque", and the domino effect of European mobilization.',
+      'Follow the dramatic events of 28 June 1914 in Sarajevo, including the fateful wrong turn.',
+      'Understand how the German "Blank Cheque" gave Austria-Hungary the confidence to attack Serbia.',
+      'Trace the 37-day countdown of the July Crisis from assassination to a world war.',
     ],
-    structureStrip: [
-      {
-        col: '1. SARAJEVO & THE SPARK',
-        prompt:
-          'Franz Ferdinand’s visit on Vidovdan, the failed morning grenade, the fatal wrong turn into Franz Josef Street.',
-      },
-      {
-        col: '2. THE BLANK CHEQUE & ESCALATION',
-        prompt:
-          'Kaiser Wilhelm II promising unconditional support to Austria, the Austrian Ultimatum, and Russian mobilization.',
-      },
-      {
-        col: '3. HISTORICAL VERDICT',
-        prompt:
-          'Judge Fischer vs Clark: did Germany deliberately engineer war, or did all powers sleepwalk into disaster?',
-      },
-    ],
-    wordBank: {
-      technical:
-        'Black Hand &bull; Gavrilo Princip &bull; Franz Josef Street &bull; Blank Cheque &bull; Austrian Ultimatum &bull; Schlieffen Plan',
-      geopolitical:
-        'Balkan Powder Keg &bull; Pan-Slavism &bull; Treaty of London (1839) &bull; Belgian neutrality &bull; Sleepwalkers',
-      connectives:
-        'The immediate catalyst was the fatal wrong turn which... &bull; However, this local crisis became global because Germany issued... &bull; Crucially, the Russian mobilization forced Germany to... &bull; Ultimately, while Princip fired the shots...',
-    },
-    vocabTask: {
-      type: 'golden_sentence',
-      prompt:
-        'Write ONE grammatically sophisticated, historically accurate Golden Sentence connecting <strong>The Black Hand</strong> and the <strong>Blank Cheque</strong> using a causal conjunction (<em>because</em>, <em>although</em>, or <em>consequently</em>):',
-      wordBank:
-        'Assassination &bull; The Black Hand &bull; Franz Josef Street &bull; Blank Cheque &bull; Ultimatum &bull; July Crisis &bull; Mobilisation',
-    },
+    vocabPrompt:
+      'Explain the difference between the <strong>Sarajevo Spark</strong> (the immediate trigger) and the <strong>Blank Cheque</strong> (Germany’s promise of unconditional military backing):',
     bridgeTask: {
       type: 'crime_scene_forensics',
-      title:
-        'Task 4: Forensic Crime Scene Investigation: The Wrong Turn at Schiller’s Delicatessen vs. The Blank Cheque',
-      sourceATitle:
-        'Source A: Sarajevo Police Forensic Plan — Appel Quay & Franz Josef Street (28 June 1914)',
-      sourceAText:
-        '“Motorcade Route Plan: The royal car traveled down Appel Quay. At the Latin Bridge, the lead car took an unauthorized right turn into Franz Josef Street. Governor Potiorek shouted: ‘Stop! That is the wrong way!’ The chauffeur braked and attempted to reverse, stalling the open Graf & Stift cabriolet directly in front of Schiller’s Delicatessen, five feet from Gavrilo Princip.”',
-      sourceBTitle: 'Source B: The German "Blank Cheque" Telegram to Vienna (5 July 1914)',
-      sourceBText:
-        '“His Majesty the Kaiser authorizes me to inform your Government that Austria-Hungary may rely upon Germany’s full support, even if grave European complications should arise out of an action against Serbia. In this case, as in any other, Germany will stand faithfully by Austria’s side according to its alliance obligations.”',
-      sourceBShelfmark:
-        'GERMAN IMPERIAL CHANCELLERY · HOLLWEG TELEGRAM TO VIENNA · ARCHIVE REF 1914-7-5',
+      title: 'Task 4: Source Investigation — The Sarajevo Assassination & The Blank Cheque',
+      routeTitle: 'Forensic Route: Franz Josef Street, Sarajevo (28 June 1914)',
+      dispatchTitle: 'Source B: Germany’s "Blank Cheque" Dispatch (5 July 1914)',
+      dispatchShelfmark: 'AUSTRIAN STATE ARCHIVES • VIENNA',
+      dispatchText:
+        '“Emperor Franz Joseph may rest assured that His Majesty the Kaiser will stand loyally by Austria-Hungary, in accordance with the alliance, even if matters should result in war between Austria-Hungary and Russia.”',
+      annotations: [
+        '① <strong>Underline:</strong> the street where the royal car took the wrong turn (Franz Josef Street).',
+        '② <strong>Circle:</strong> the promise the Kaiser made to stand loyally by Austria.',
+        '③ <strong>Box:</strong> the name of the great power Austria was worried about (Russia).',
+      ],
       questionA:
-        'Forensic Route Analysis: Using the crime scene map and Source A, explain how pure human error and bizarre coincidence allowed Gavrilo Princip to assassinate the Archduke after the morning bomb plot had failed:',
+        'Using the route map, explain why the driver’s wrong turn outside Schiller’s Delicatessen gave Gavrilo Princip his chance:',
       questionB:
-        'The Blank Cheque Escalation: Using Source B, explain why Germany’s unconditional backing transformed an isolated Austrian-Serbian conflict into a global war:',
-      clue: '<em>Low-Floor Clue:</em> Without the wrong turn, the car would never have stopped in front of Princip. Without the Blank Cheque, Austria would never have dared attack Serbia.',
+        'Why was Germany’s "Blank Cheque" on 5 July the crucial turning point that made war inevitable?',
+      clue: 'Helpful Clue: Austria was too weak and frightened of Russia to attack Serbia alone. Germany’s promise gave them the green light.',
       scholarsEdge:
-        '★ Scholar’s Edge: How does the contrast between Source A (chance) and Source B (geopolitics) illustrate the historical debate between the "Great Man" theory and structural causation?',
+        'Challenge Question: If the royal driver had followed the correct route along Appel Quay, would the Great War still have happened?',
     },
+    structureStrip: [
+      {
+        col: '1. THE WRONG TURN',
+        prompt:
+          'Princip, the Black Hand, the failed bomb, and the stalled car outside Schiller’s Delicatessen.',
+      },
+      {
+        col: '2. THE JULY CRISIS',
+        prompt:
+          'The Blank Cheque (5 July), Austria’s harsh ultimatum to Serbia, and Russia mobilizing to protect Slavs.',
+      },
+      {
+        col: '3. YOUR CONCLUSION',
+        prompt:
+          'Judge whether the spark in Sarajevo created the war, or if decades of M-A-I-N tension made an explosion inevitable.',
+      },
+    ],
+    wordBank:
+      'Sarajevo • Gavrilo Princip • Black Hand • Franz Ferdinand • Blank Cheque • Ultimatum • Schlieffen Plan • Belgium • 4 August 1914',
+    connectives:
+      'The immediate trigger occurred when... • However, this localized crisis escalated because... • Without the Blank Cheque... • Ultimately...',
+    timelineMission:
+      'Turn to Pages 2–3 (Milestone 6: 28 June – Aug 1914). In the sketchpad, sketch the stalled open-top royal car or the dominoes tumbling into war.',
+  },
+];
+
+// Timeline Milestones across Pages 2 & 3 (3 Milestones per page, 100% full-width cards)
+const timelineMilestones = [
+  // Page 2 Milestones
+  {
+    page: 2,
+    date: '1871',
+    title: 'The German Empire Proclaimed at Versailles',
+    lesson: 'Lesson 1',
+    summary:
+      'Following Prussia’s swift victory in the Franco-Prussian War, King Wilhelm I is proclaimed German Emperor in the Hall of Mirrors at Versailles. Otto von Bismarck unites 39 separate states into a powerful new industrial empire, permanently upsetting the traditional European balance of power.',
+    sketchPrompt:
+      'Sketch your visual symbol: Bismarck’s spiked Pickelhaube helmet, Prussian needle guns, or the German imperial crown.',
+  },
+  {
+    page: 2,
+    date: '1871–1890',
+    title: 'Bismarckian Diplomacy & The French "Black Stain"',
+    lesson: 'Lesson 2',
+    summary:
+      'Germany annexes the wealthy French provinces of Alsace and Lorraine. Humiliated by defeat and the loss of their lands, French politicians and classrooms embrace "revanche" (revenge). Bismarck works tirelessly to keep France diplomatically isolated through alliances with Russia and Austria.',
+    sketchPrompt:
+      'Sketch your visual symbol: The map of France with Alsace-Lorraine shaded black, or the weeping French Marianne.',
+  },
+  {
+    page: 2,
+    date: '1890–1904',
+    title: 'Wilhelm II, Weltpolitik & The Entente Cordiale',
+    lesson: 'Lesson 3',
+    summary:
+      'Ambitious young Kaiser Wilhelm II dismisses Bismarck in 1890 and demands a "place in the sun" for Germany. German meddling in African colonies and blustering diplomacy alarms Britain, prompting London to abandon "Splendid Isolation" and sign the 1904 Entente Cordiale with France.',
+    sketchPrompt:
+      'Sketch your visual symbol: The African continent with imperial flags, or Kaiser Wilhelm II pointing overseas.',
+  },
+  // Page 3 Milestones
+  {
+    page: 3,
+    date: '1906–1912',
+    title: 'Launch of HMS Dreadnought & The Naval Race',
+    lesson: 'Lesson 4',
+    summary:
+      'The Royal Navy launches HMS Dreadnought in Portsmouth, rendering all older battleships obsolete overnight with its ten 12-inch guns and steam turbines. When Germany starts building its own dreadnoughts, a feverish arms race erupts, convincing Britain that Germany poses a mortal threat.',
+    sketchPrompt:
+      'Sketch your visual symbol: The heavy gun turret of HMS Dreadnought or two battleships firing broadsides.',
+  },
+  {
+    page: 3,
+    date: '1908–1914',
+    title: 'The Alliance System: Europe Divided into Armed Camps',
+    lesson: 'Lesson 5',
+    summary:
+      'Europe hardens into two heavily armed rival blocs: the Triple Alliance (Germany, Austria-Hungary, Italy) and the Triple Entente (Britain, France, Russia). Massive armies draw up strict railway mobilization plans, meaning any local border clash risks pulling all six great powers into war.',
+    sketchPrompt:
+      'Sketch your visual symbol: The two rival alliance shields connected by chains, or the Willy-Nicky telegraph wires.',
+  },
+  {
+    page: 3,
+    date: '28 June – 4 Aug 1914',
+    title: 'The Sarajevo Spark & The Outbreak of Total War',
+    lesson: 'Lesson 6',
+    summary:
+      'Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo. Germany issues Austria the "Blank Cheque" to crush Serbia. Russia mobilizes to protect fellow Slavs; Germany invades neutral Belgium; and on 4 August 1914, Britain enters the conflict. The Great War begins.',
+    sketchPrompt:
+      'Sketch your visual symbol: The stalled open-top car on Franz Josef Street, or a row of tumbling dominoes.',
   },
 ];
 
 /**
- * Builds the complete HTML for the 16-page Great War workbook
+ * Builds the complete Master HTML for Great War V2 Pupil Workbook
  */
 function buildGreatWarTwoPageWorkbookHtml() {
-  const coverImg = getBase64Image('/images/great_war_cover.jpg');
+  const coverImg = getBase64Image('/images/cover_great_war.jpg');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pupil Workbook - Causes of the Great War (Staged V2)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Special+Elite&display=swap" rel="stylesheet">
+  <title>Causes of the Great War (1871–1914) — Pupil Workbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
     @page {
       size: A4 portrait;
-      margin: 10mm 12mm 12mm 12mm;
+      margin: 10mm 10mm 10mm 10mm;
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
-      font-size: 9pt;
-      line-height: 1.32;
-      color: #1e293b;
+      font-size: 8.8pt;
+      line-height: 1.3;
+      color: #000000;
       margin: 0;
       padding: 0;
       background: #ffffff;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
     }
-    .page, .page-container {
+    .page-container {
       width: 100%;
       height: 272mm;
       max-height: 272mm;
-      overflow: hidden;
-      box-sizing: border-box;
       position: relative;
       page-break-after: always;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 14px 16px;
-      border: 1px solid #cbd5e1;
-      outline: 3.5px double #0f172a;
-      outline-offset: -7px;
       background: #ffffff;
+      box-sizing: border-box;
+      padding: 4mm 6mm;
     }
-    .page:last-child, .page-container:last-child {
-      page-break-after: auto;
+    .page-body-full {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      overflow: hidden;
+    }
+    .task-section {
+      margin-bottom: 3px;
     }
     .task-line {
-      border-bottom: 1.2px solid #475569;
-      height: 7.2mm;
-      width: 100%;
+      border-bottom: 1.4px solid #000000;
+      height: 7.0mm;
+      margin: 0;
       box-sizing: border-box;
     }
     .task-line-dotted {
-      border-bottom: 1.2px dotted #64748b;
-      height: 4.8mm;
-      width: 100%;
+      border-bottom: 1.2px dotted #000000;
+      height: 5.4mm;
+      margin: 0;
       box-sizing: border-box;
     }
-    .archival-badge {
+    .page-footer-strip {
+      border-top: 1.2px solid #000000;
+      padding-top: 2px;
+      margin-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7.2pt;
+      color: #000000;
+    }
+    .footer-page-num {
+      font-weight: 800;
+    }
+    .footer-quip {
+      font-style: italic;
+      color: #222222;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 2px 7px;
-      border-radius: 3px;
-      background: #f1f5f9;
-      color: #334155;
-      border: 1px solid #cbd5e1;
-      font-weight: 700;
+      letter-spacing: 0.5px;
+      border: 1px solid #000000;
+      padding: 1px 6px;
+      border-radius: 2px;
+      background: #f8fafc;
+    }
+    /* Commercial School Brand Customizer */
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target {
+      display: inline-block;
+      font-size: 0 !important;
+    }
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target::after {
+      content: attr(data-department-name);
+      font-size: 11pt !important;
+      letter-spacing: 2px;
     }
   </style>
 </head>
 <body>
 `;
 
-  // ==========================================
-  // PAGE 1: FRONT COVER (Recto, Right Page)
-  // ==========================================
+  // ====================================================================
+  // PAGE 1: OUTSIDE FRONT COVER
+  // ====================================================================
   html += `
-  <div class="page page-container" id="page-1" style="justify-content: flex-start;">
-    <!-- Institutional Header & Pupil Registration Strip -->
-    <div style="margin-bottom: 8px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
-        <span class="school-brand-target" data-department-name="The History Department" style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 800;">
-          The History Department
-        </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 700;">
-          Year 9 History &bull; V2 Staged Edition
-        </span>
-      </div>
-
-      <!-- Pupil Name & Class Box -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 12px; background: #f8fafc; display: grid; grid-template-columns: 2.2fr 1fr; gap: 18px; align-items: center;">
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px;"></div>
+  <div class="page page-container" id="page-1">
+    <div class="page-body-full" style="justify-content: space-between;">
+      
+      <!-- Top Branding -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Key Stage 3 History • Year 9 Workbook</span>
         </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px;"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Title Block -->
-    <div style="text-align: center; border-bottom: 1px solid #cbd5e1; padding: 2px 0 7px 0; margin-bottom: 8px;">
-      <h1 style="font-family: 'Playfair Display', serif; font-size: 23pt; color: #0f172a; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 1.5px; line-height: 1.15;">
-        Causes of the Great War
-      </h1>
-      <div style="font-family: 'Inter', sans-serif; font-size: 9pt; color: #334155; font-weight: 600; letter-spacing: 0.5px;">
-        Imperial Rivalry, the Arms Race &amp; The Thirty Days of Madness (1871–1914)
-      </div>
-    </div>
-
-    <!-- Overarching Enquiry Box -->
-    <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 8px 14px; background: #f8fafc; margin-bottom: 8px; text-align: center;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 1.8px; color: #1e3a8a; font-weight: 800; margin-bottom: 2px;">
-        Overarching Historical Enquiry
-      </div>
-      <div style="font-family: 'Playfair Display', serif; font-size: 13.5pt; color: #0f172a; font-style: italic; font-weight: 600; line-height: 1.25;">
-        “How did decades of imperial rivalry and fear culminate in thirty days of madness?”
-      </div>
-    </div>
-
-    <!-- Hero Primary Plate -->
-    <div style="border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 6px; background: #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 8px;">
-      <div style="width: 100%; height: 470px; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; background: #0f172a;">
-        <img src="${coverImg}" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" alt="HMS Dreadnought at sea">
-      </div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px; padding: 0 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b;">
-        <span><strong>Primary Visual Plate:</strong> Royal Navy battleship <em>HMS Dreadnought</em> at sea (c. 1906–1907)</span>
-        <span style="font-style: italic;">Imperial War Museum Photographic Archive</span>
-      </div>
-    </div>
-
-    <!-- Curriculum Synopsis Box -->
-    <div style="border: 1.2px solid #e2e8f0; border-radius: 5px; padding: 7px 11px; background: #fafaf9; margin-bottom: 8px;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; text-transform: uppercase; letter-spacing: 1px; color: #0f172a; font-weight: 800; margin-bottom: 2px;">
-        Curriculum Synopsis &bull; The Powder Keg of Europe
-      </div>
-      <p style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #334155; line-height: 1.4; margin: 0; text-align: justify;">
-        For forty years following the 1871 unification of Germany, the European Great Powers preserved an uneasy armed peace through intricate alliances, imperial expansion, and massive dreadnought construction. In this master enquiry workbook, pupils investigate how long-term militarism, colonial jealousy in Africa, and rigid railway mobilisations transformed two pistol shots in Sarajevo into the unprecedented catastrophe of the First World War.
-      </p>
-    </div>
-
-    <!-- 6 Core Enquiries Unit Syllabus Roadmap -->
-    <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 9px; background: #f8fafc;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 800; margin-bottom: 4px;">
-        The 6 Disciplinary Enquiries:
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; padding: 2px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L1:</strong> Creation of the German Empire (1871)</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; padding: 2px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L4:</strong> Dreadnought &amp; The Naval Arms Race</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; padding: 2px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L2:</strong> Franco-Prussian War &amp; Alsace-Lorraine</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; padding: 2px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L5:</strong> The Alliance System: Peace or Trap?</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; padding: 2px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L3:</strong> The Scramble for Africa &amp; Weltpolitik</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; padding: 2px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L6:</strong> Sarajevo &amp; The Thirty-Seven Days of Crisis</div>
-      </div>
-    </div>
-  </div>
-`;
-
-  // ==========================================
-  // PAGES 2–3: LIVING UNIT TIMELINE SPINE
-  // ==========================================
-  html += `
-  <!-- PAGE 2: TIMELINE PART I (Facing Spread Left) -->
-  <div class="page page-container" id="page-2">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px;">
-        <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 800;">
-            Living Unit Timeline &bull; Part I: The Road to Armed Peace (1871–1904)
-          </div>
-          <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 13.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
-            The European Balance of Power
-          </h2>
-        </div>
-        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">
-          Pages 2–3 Facing Spread
-        </span>
-      </div>
-
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #1e3a8a; padding: 3px 8px; margin-bottom: 6px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
-        <span><strong>Living Timeline Protocol:</strong> Throughout this unit, sketch each historical milestone inside its dedicated frame. Add dates, flags, and causal arrows.</span>
-        <span style="font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">Spine &bull; Facing Left</span>
-      </div>
-
-      <!-- Timeline Nodes -->
-      <div style="display: flex; flex-direction: column; gap: 7px;">
-        <!-- Milestone 1: 1871 -->
-        <div style="display: grid; grid-template-columns: 110px 1fr; gap: 9px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-              [Sketch: Hall of Mirrors / Pickelhaube helmet]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1871 Unification</span><span>⌟</span>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1871</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Proclamation of the German Empire at Versailles</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Following the crushing defeat of Napoleon III at Sedan, King Wilhelm I of Prussia is proclaimed Kaiser in the French Hall of Mirrors at Versailles. Germany annexes Alsace-Lorraine and imposes a 5-billion franc fine, permanently alienating France and shattering the European balance of power.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lessons 1 &amp; 2 &bull; Power shift to Berlin &bull; French territorial loss &bull; Bismarck's isolation policy
-            </div>
-          </div>
-        </div>
-
-        <!-- Milestone 2: 1882 -->
-        <div style="display: grid; grid-template-columns: 110px 1fr; gap: 9px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-              [Sketch: Triple Alliance pact / 3 Eagle crests]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1882 Alliance</span><span>⌟</span>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1882</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Formation of the Triple Alliance</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Bismarck forms a secret defensive military pact between Germany, Austria-Hungary, and Italy. Bismarck’s primary strategic objective is to keep France diplomatically isolated and deprived of continental allies, preventing any coalition from threatening Germany with a two-front war.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lesson 5 &bull; The alliance system as a defensive deterrent &bull; Bismarck's diplomatic web
-            </div>
-          </div>
-        </div>
-
-        <!-- Milestone 3: 1890 -->
-        <div style="display: grid; grid-template-columns: 110px 1fr; gap: 9px; align-items: stretch; border: 1.2px solid #0284c7; border-radius: 4px; padding: 5px 8px; background: #f0f9ff;">
-          <div style="border: 1.2px dashed #0284c7; border-radius: 3px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #0284c7;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #0369a1; font-weight: 600;">
-              [Sketch: Punch cartoon 'Dropping the Pilot']
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #0284c7;">
-              <span>⌞</span><span>1890 Dismissal</span><span>⌟</span>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #0284c7; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1890</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Kaiser Wilhelm II Dismisses Bismarck: The Launch of Weltpolitik</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                The young, impetuous Kaiser Wilhelm II forces Bismarck to resign, abandons the secret Reinsurance Treaty with Russia, and embarks on <em>Weltpolitik</em>—demanding Germany's "Place in the Sun" through an aggressive global empire and a high-seas battle fleet. Russia immediately turns to France.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #0369a1;">
-              <strong>Key Enquiry Link:</strong> Lessons 3 &amp; 4 &bull; End of diplomatic caution &bull; Franco-Russian alliance (1894) &bull; Encirclement fear
-            </div>
-          </div>
-        </div>
-
-        <!-- Milestone 4: 1898–1904 -->
-        <div style="display: grid; grid-template-columns: 110px 1fr; gap: 9px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-              [Sketch: Battleship guns / Entente handshake]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1904 Entente</span><span>⌟</span>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1898–04</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">German Naval Laws &amp; The Anglo-French Entente Cordiale</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Admiral Tirpitz passes the German Navy Laws to build a fleet capable of challenging Britain. Alarmed by German naval expansion and imperial bluster, Great Britain abandons "Splendid Isolation" in 1904, signing the historic <em>Entente Cordiale</em> with France and resolving all colonial disputes.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lessons 3 &amp; 5 &bull; Two-Power Standard &bull; Polarization of Europe into two armed camps
-            </div>
-          </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">UNIT 9: THE OUTBREAK OF THE FIRST WORLD WAR (1871–1914)</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">STAGED V2 EDITION</span>
         </div>
       </div>
 
-      <!-- Living Timeline Part I Synthesis Challenge -->
-      <div style="border: 1.2px solid #1e3a8a; background: #f8fafc; border-radius: 4px; padding: 5px 9px; margin-top: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px;">
-            Living Timeline Synthesis Challenge &bull; The Diplomatic Shift (1871–1904)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #475569;">Causal Linkage Check</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; margin-bottom: 3px; line-height: 1.3;">
-          Explain how Kaiser Wilhelm II’s dismissal of Bismarck in 1890 and the launch of German naval expansion directly drove Great Britain and France into an unexpected alliance by 1904:
-        </div>
-        <div class="task-line-dotted" style="height: 5.2mm;"></div>
-        <div class="task-line-dotted" style="height: 5.2mm;"></div>
-      </div>
-    </div>
-
-    <!-- Colophon -->
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8;">
-      <span>The History Department &bull; Causes of the Great War</span>
-      <span>Page 2 (Facing Spread Left)</span>
-    </div>
-  </div>
-
-  <!-- PAGE 3: TIMELINE PART II (Facing Spread Right) -->
-  <div class="page page-container" id="page-3">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px;">
-        <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 800;">
-            Living Unit Timeline &bull; Part II: Crises &amp; The Spark (1905–1914)
-          </div>
-          <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', serif; font-size: 13.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
-            The Escalation to Total War
-          </h2>
-        </div>
-        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">
-          Pages 2–3 Facing Spread
-        </span>
-      </div>
-
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #1e3a8a; padding: 3px 8px; margin-bottom: 6px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
-        <span><strong>Living Timeline Protocol:</strong> Trace the countdown from the Dreadnought revolution to the Sarajevo assassination and Belgian invasion.</span>
-        <span style="font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">Spine &bull; Facing Right</span>
-      </div>
-
-      <!-- Timeline Nodes -->
-      <div style="display: flex; flex-direction: column; gap: 7px;">
-        <!-- Milestone 5: 1906 -->
-        <div style="display: grid; grid-template-columns: 1fr 110px; gap: 9px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1906</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Launch of HMS Dreadnought: The Naval Revolution</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                The Royal Navy launches <em>HMS Dreadnought</em> in Portsmouth. Powered by revolutionary steam turbines and mounting ten 12-inch guns, it renders every pre-existing battleship obsolete overnight. Germany immediately widens the Kiel Canal and begins building Nassau-class dreadnoughts.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lesson 4 &bull; Naval arms race &bull; Public hysteria ("We want eight and we won't wait!")
-            </div>
-          </div>
-          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-              [Sketch: Dreadnought 12-inch gun turret]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1906 Dreadnought</span><span>⌟</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Milestone 6: 1908–1911 -->
-        <div style="display: grid; grid-template-columns: 1fr 110px; gap: 9px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">1908–11</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Bosnian Crisis &amp; The Agadir Incident</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Austria-Hungary annexes Bosnia and Herzegovina in 1908, infuriating Serbia and humiliating Russia. In 1911, Germany sends the gunboat <em>Panther</em> to Morocco. Britain intervenes forcefully on France’s side, conducting secret joint military staff talks for European troop deployment.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lessons 3 &amp; 5 &bull; The Balkan Powder Keg &bull; Serbian nationalist underground &bull; Panther gunboat
-            </div>
-          </div>
-          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-              [Sketch: SMS Panther gunboat / Balkan map]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1911 Agadir</span><span>⌟</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Milestone 7: 28 June 1914 -->
-        <div style="display: grid; grid-template-columns: 1fr 110px; gap: 9px; align-items: stretch; border: 1.4px solid #b91c1c; border-radius: 4px; padding: 5px 8px; background: #fffaf0;">
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #b91c1c; color: #ffffff; padding: 1px 6px; border-radius: 3px;">28 June 1914</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">Assassination of Archduke Franz Ferdinand in Sarajevo</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Nineteen-year-old Bosnian Serb nationalist Gavrilo Princip shoots Archduke Franz Ferdinand and Sophie at point-blank range on Franz Josef Street. Princip is armed and trained by the clandestine Serbian military network, <em>The Black Hand</em>. The fatal wrong turn ignites the July Crisis.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #b91c1c;">
-              <strong>Key Enquiry Link:</strong> Lesson 6 &bull; Fatal wrong turn &bull; FN Browning semi-automatic pistol &bull; Black Hand conspiracy
-            </div>
-          </div>
-          <div style="border: 1.2px dashed #b91c1c; border-radius: 3px; background: #fef2f2; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #b91c1c;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #991b1b; font-weight: 700;">
-              [Sketch: Browning pistol / Stalled open car]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #b91c1c;">
-              <span>⌞</span><span>Sarajevo Spark</span><span>⌟</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Milestone 8: July–Aug 1914 -->
-        <div style="display: grid; grid-template-columns: 1fr 110px; gap: 9px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-          <div style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 1px 6px; border-radius: 3px;">July–Aug 1914</span>
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a;">The July Crisis &amp; The Outbreak of Total War</strong>
-              </div>
-              <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; line-height: 1.35; margin: 0;">
-                Backed by Germany’s "Blank Cheque", Austria-Hungary issues an ultimatum and declares war on Serbia. Russia mobilizes; Germany declares war on Russia and France, invading neutral Belgium under the Schlieffen Plan. Great Britain declares war on Germany on 4 August to defend the 1839 Treaty of London.
-              </p>
-            </div>
-            <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">
-              <strong>Key Enquiry Link:</strong> Lesson 6 &bull; The July Crisis Domino Sequence &bull; Treaty of London (1839) &bull; World War
-            </div>
-          </div>
-          <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between; padding: 3px 4px; min-height: 36mm;">
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌜</span><span>Milestone Sketchpad</span><span>⌝</span>
-            </div>
-            <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-              [Sketch: 4 August declaration / Belgian border]
-            </div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #94a3b8;">
-              <span>⌞</span><span>1914 World War</span><span>⌟</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Living Timeline Part II Synthesis Challenge -->
-      <div style="border: 1.2px solid #b91c1c; background: #fffaf0; border-radius: 4px; padding: 5px 9px; margin-top: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #b91c1c; letter-spacing: 0.5px;">
-            Living Timeline Synthesis Challenge &bull; The Escalation Dominoes
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #991b1b;">Chain Reaction Check</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; margin-bottom: 3px; line-height: 1.3;">
-          Explain how the combination of the German "Blank Cheque" (5 July) and rigid railway mobilization schedules turned an Austro-Serbian clash into a global war within 37 days:
-        </div>
-        <div class="task-line-dotted" style="height: 5.2mm;"></div>
-        <div class="task-line-dotted" style="height: 5.2mm;"></div>
-      </div>
-    </div>
-
-    <!-- Colophon -->
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8;">
-      <span>The History Department &bull; Causes of the Great War</span>
-      <span>Page 3 (Facing Spread Right)</span>
-    </div>
-  </div>
-`;
-
-  // ==========================================
-  // PAGES 4–15: 6 DOUBLE-PAGE SPREADS
-  // ==========================================
-  lessons.forEach((lesson, lIdx) => {
-    const cfg = lessonConfigs[lIdx];
-    const leftPageNum = lIdx * 2 + 4;
-    const rightPageNum = lIdx * 2 + 5;
-
-    // ----------------------------------------------------
-    // LEFT PAGE (Verso, Even Page Number: 4, 6, 8, 10, 12, 14)
-    // ----------------------------------------------------
-    html += `
-    <div class="page page-container" id="page-${leftPageNum}">
-      <div>
-        <!-- Lesson Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 700;">
-              Unit 9: Causes of the Great War &bull; Lesson ${lIdx + 1}
-            </div>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
-              L${lIdx + 1}: ${lesson.title}
-            </h2>
-          </div>
-          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">
-            Evidence &amp; Skills Launch
+      <!-- Title Banner -->
+      <div style="border: 1.8px solid #000; border-radius: 4px; padding: 4px 8px; background: #fff; margin-bottom: 3px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1px;">
+          <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
+            Year 9 Enquiry
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #222;">
+            M-A-I-N Causes &amp; The July Crisis • 1871–1914
           </span>
         </div>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #000;">
+          CAUSES OF THE GREAT WAR
+        </h1>
+        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #222; font-style: italic; line-height: 1.2;">
+          Overarching Enquiry: "How did decades of imperial rivalry, dreadnoughts, and alliances culminate in thirty-seven days of madness?"
+        </div>
+      </div>
 
-        <!-- Learning Objectives -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">
-            Core Learning Objectives:
+      <!-- Hero Photo Plate -->
+      <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
+        <div style="height: 118mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+          <img src="${coverImg}" alt="Causes of the Great War" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; filter: grayscale(100%) contrast(110%);">
+        </div>
+        <div style="border-top: 1.5px solid #000; padding: 3px 8px; background: #fff;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase;">
+              Primary Visual Plate • 28 June 1914
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">
+              AUSTRIAN STATE ARCHIVES • SARAJEVO
+            </span>
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; line-height: 1.15; margin: 1px 0;">
+            The Arrest of Gavrilo Princip Moments After Firing the Fatal Shots
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.0pt; color: #222; line-height: 1.2;">
+            Austrian gendarmes struggle with 19-year-old Serbian nationalist Gavrilo Princip outside Schiller's Delicatessen on Franz Josef Street, Sarajevo.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pupil Information Card -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 5px 12px; background: #fff; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.8px;">
+            Pupil Workbook &amp; Academic Record
           </strong>
-          <ul style="margin: 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; line-height: 1.3;">
-    `;
-    cfg.objectives.forEach((obj) => {
-      html += `<li>${obj}</li>`;
-    });
-    html += `
-          </ul>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #333;">
+            Year 9 History • Unit 9
+          </span>
         </div>
-
-        <!-- Do Now Recall Strip (5 Questions, Score / 5) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; margin-bottom: 5px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">
-              Do Now: Prior Knowledge Recall
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr; gap: 14px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 48px; font-size: 7pt;">Name:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;">
-    `;
-    cfg.doNow.forEach((item, qIdx) => {
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 44px; font-size: 7pt;">Class:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 56px; font-size: 7pt;">Teacher:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Syllabus Enquiry Overview (Spanning Across the Page, 0 dead void) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 2px;">
+        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>The 6 Historical Enquiries Across This Unit</span>
+          <span style="font-size: 6.8pt; letter-spacing: 0.5px;">Curriculum Progression</span>
+        </div>
+        <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.25; color: #111; flex: 1; align-content: space-around;">
+          <div><strong>L1: Creation of German Empire (1871):</strong> Bismarck, Realpolitik, and Prussian military power.</div>
+          <div><strong>L4: Dreadnought &amp; Naval Race:</strong> The Portsmouth revolution and Anglo-German naval fear.</div>
+          <div><strong>L2: Franco-Prussian War &amp; Alsace-Lorraine:</strong> French revanche and European division.</div>
+          <div><strong>L5: The Rival Alliance System:</strong> Triple Alliance, Triple Entente, and Willy-Nicky cables.</div>
+          <div><strong>L3: Scramble for Africa &amp; Weltpolitik:</strong> Imperial rivalry, Morocco crises, and German jealousy.</div>
+          <div><strong>L6: The Spark — Sarajevo &amp; July Crisis:</strong> Princip, the Black Hand, and the fatal wrong turn.</div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(1, revisionQuips[0], 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGES 2 & 3: LIVING UNIT TIMELINE (Panoramic Dual-Coding Spread, 6 Milestones)
+  // Full-width cards with 48mm open sketchpads (matching CME gold standard)
+  // ====================================================================
+  html += `
+  <!-- PAGE 2: LIVING TIMELINE PART 1 (MILESTONES 1–3) -->
+  <div class="page page-container" id="page-2">
+    <div class="page-body-full" style="justify-content: space-between;">
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
+            Living Unit Timeline • Part 1: The Rise of Rivalries (1871–1904)
+          </h2>
+          <span class="badge">Pages 2–3 Facing Spread</span>
+        </div>
+        <div style="border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #333; display: flex; justify-content: space-between;">
+          <span><strong>How to use this timeline:</strong> As you study each lesson, illustrate the milestone sketchpad with your visual symbol and key notes.</span>
+          <span style="font-weight: 700; color: #1e3a8a;">Spine • Facing Left</span>
+        </div>
+      </div>
+
+      <!-- 3 Full-Width Milestone Cards Filling Height -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
+  `;
+
+  timelineMilestones
+    .filter((m) => m.page === 2)
+    .forEach((m) => {
       html += `
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.2; color: #1e293b; margin-bottom: 2px;">
-                <strong style="color: #1e3a8a;">Q${qIdx + 1}:</strong> ${item.q}
-              </div>
-              <div>
-                <div class="task-line-dotted" style="height: 4.8mm;"></div>
-                <div class="task-line-dotted" style="height: 4.8mm;"></div>
-              </div>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.4pt; color: #000000;">
+                ${m.date} &bull; ${m.title}
+              </strong>
+              <span class="badge" style="font-size: 7pt; padding: 0.5px 5px;">${m.lesson}</span>
             </div>
-      `;
+            <p style="font-family: 'Georgia', serif; font-size: 8.4pt; color: #222222; margin: 0 0 2px 0; line-height: 1.25;">
+              ${m.summary}
+            </p>
+          </div>
+          <!-- Full-Width Open Sketchpad Canvas -->
+          <div style="border-top: 1.2px dashed #000000; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 2px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #777; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
+          </div>
+        </div>
+    `;
     });
+
+  html += `
+      </div>
+
+      <!-- Compact 1-Line Synthesis Check at Bottom -->
+      <div style="border: 1px solid #000; background: #fdfbf7; border-radius: 3px; padding: 2px 8px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222; display: flex; justify-content: space-between; align-items: center;">
+        <span><strong>Timeline Check:</strong> How did Bismarck's unity in 1871 and the loss of Alsace-Lorraine begin Europe's division into rival camps?</span>
+        <span style="font-weight: 700; color: #1e3a8a;">Turn overleaf for Lesson 1 &rarr;</span>
+      </div>
+
+      ${renderFooterStrip(2, revisionQuips[1], 16)}
+    </div>
+  </div>
+
+  <!-- PAGE 3: LIVING TIMELINE PART 2 (MILESTONES 4–6) -->
+  <div class="page page-container" id="page-3">
+    <div class="page-body-full" style="justify-content: space-between;">
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
+            Living Unit Timeline • Part 2: Crises &amp; The Road to War (1906–1914)
+          </h2>
+          <span class="badge">Pages 2–3 Facing Spread</span>
+        </div>
+        <div style="border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #333; display: flex; justify-content: space-between;">
+          <span><strong>How to use this timeline:</strong> As you study each lesson, illustrate the milestone sketchpad with your visual symbol and key notes.</span>
+          <span style="font-weight: 700; color: #1e3a8a;">Spine • Facing Right</span>
+        </div>
+      </div>
+
+      <!-- 3 Full-Width Milestone Cards Filling Height -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
+  `;
+
+  timelineMilestones
+    .filter((m) => m.page === 3)
+    .forEach((m) => {
+      html += `
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 9.4pt; color: #000000;">
+                ${m.date} &bull; ${m.title}
+              </strong>
+              <span class="badge" style="font-size: 7pt; padding: 0.5px 5px;">${m.lesson}</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8.4pt; color: #222222; margin: 0 0 2px 0; line-height: 1.25;">
+              ${m.summary}
+            </p>
+          </div>
+          <!-- Full-Width Open Sketchpad Canvas -->
+          <div style="border-top: 1.2px dashed #000000; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 2px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #777; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
+          </div>
+        </div>
+    `;
+    });
+
+  html += `
+      </div>
+
+      <!-- Compact 1-Line Synthesis Check at Bottom -->
+      <div style="border: 1px solid #000; background: #fdfbf7; border-radius: 3px; padding: 2px 8px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222; display: flex; justify-content: space-between; align-items: center;">
+        <span><strong>Timeline Check:</strong> Why did the naval arms race and the alliance tripwire turn an assassination in Bosnia into a global war?</span>
+        <span style="font-weight: 700; color: #1e3a8a;">Use for revision &rarr;</span>
+      </div>
+
+      ${renderFooterStrip(3, revisionQuips[2], 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGES 4–15: 6 BESPOKE DOUBLE-PAGE ENQUIRY SPREADS
+  // ====================================================================
+  lessonConfigs.forEach((cfg, idx) => {
+    const leftPageNum = idx * 2 + 4;
+    const rightPageNum = idx * 2 + 5;
+
+    // ------------------------------------------------------------------
+    // LEFT PAGE (VERSO): Evidence & Skills Launch (0 dead space)
+    // ------------------------------------------------------------------
     html += `
+    <div class="page page-container" id="page-${leftPageNum}">
+      <div class="page-body-full" style="justify-content: space-between;">
+        <div>
+          <!-- Lesson Header -->
+          <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.8px; color: #444; font-weight: 800;">
+                Unit 9: Causes of the Great War &bull; Lesson ${cfg.lessonNum}
+              </div>
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 12pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
+                L${cfg.lessonNum}: ${cfg.title}
+              </h2>
+            </div>
+            <span class="badge">Evidence &amp; Source Skills</span>
+          </div>
+
+          <!-- Learning Objectives -->
+          <div style="background: #f8fafc; border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 3px 8px; margin-bottom: 4px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
+              What We Are Learning Today:
+            </strong>
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #222; line-height: 1.25;">
+              ${cfg.objectives.map((o) => `<li>${o}</li>`).join('')}
+            </ul>
+          </div>
+
+          <!-- Do Now: Retrieval Practice (5 Questions, Score / 5) -->
+          <div class="task-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
+                &bull; 'Do Now' Retrieval Practice (5 Prior Recall Questions)
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000; padding: 0 5px; border-radius: 2px;">
+                Score: [ &nbsp;&nbsp;&nbsp;&nbsp; / 5 ]
+              </span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;">
+              ${cfg.doNow
+                .map(
+                  (item, qIdx) => `
+                <div style="background: #ffffff; border: 1px solid #000; border-radius: 2px; padding: 3px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.18; color: #000; font-weight: 600; margin-bottom: 1px;">
+                    <strong>Q${qIdx + 1}:</strong> ${item.q}
+                  </div>
+                  <div>
+                    <div class="task-line-dotted"></div>
+                    <div class="task-line-dotted"></div>
+                  </div>
+                </div>
+              `,
+                )
+                .join('')}
+            </div>
+          </div>
+
+          <!-- Key Vocabulary -->
+          <div class="task-section" style="margin-top: 3px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
+                &bull; Key Vocabulary
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">HISTORICAL WORDS</span>
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #111; margin-bottom: 2px; line-height: 1.22;">
+              ${cfg.vocabPrompt}
+            </div>
+            <div class="task-line"></div>
+            <div class="task-line"></div>
           </div>
         </div>
 
-        <!-- Core Vocabulary Check -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; margin-bottom: 5px; background: #fdfbf7;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">
-              Core Vocabulary &amp; Conceptual Precision
-            </strong>
-          </div>
+        <!-- Task 4: Source Investigation (Expanded to Fill Page Down to Footer) -->
+        <div style="border: 1.4px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000; text-transform: uppercase;">
+                ${cfg.bridgeTask.title}
+              </strong>
+              <span class="badge" style="font-size: 6.5pt; padding: 0 4px;">Primary Evidence</span>
+            </div>
     `;
 
-    if (cfg.vocabTask.type === 'distinction') {
-      html += `
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155; margin-bottom: 2px; line-height: 1.25;">
-            ${cfg.vocabTask.prompt}
-          </div>
-          <div class="task-line" style="height: 5.6mm;"></div>
-          <div class="task-line" style="height: 5.6mm;"></div>
-      `;
-    } else if (cfg.vocabTask.type === 'cloze') {
-      html += `
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155; margin-bottom: 2px;">
-            ${cfg.vocabTask.prompt}
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e293b; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 5px; margin-bottom: 2px; line-height: 1.25;">
-            ${cfg.vocabTask.clozeText}
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #475569;">
-            <strong>Application:</strong> ${cfg.vocabTask.followUp}
-          </div>
-          <div class="task-line" style="height: 5.4mm;"></div>
-          <div class="task-line" style="height: 5.4mm;"></div>
-      `;
-    } else if (cfg.vocabTask.type === 'mapping') {
-      html += `
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155; margin-bottom: 2px; line-height: 1.25;">
-            ${cfg.vocabTask.prompt}
-          </div>
-          <div class="task-line" style="height: 5.6mm;"></div>
-          <div class="task-line" style="height: 5.6mm;"></div>
-      `;
-    } else if (cfg.vocabTask.type === 'golden_sentence') {
-      html += `
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155; margin-bottom: 2px; line-height: 1.25;">
-            ${cfg.vocabTask.prompt}
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; padding: 2px 5px; border-radius: 3px; margin-bottom: 2px;">
-            <strong>Word Bank:</strong> ${cfg.vocabTask.wordBank}
-          </div>
-          <div class="task-line" style="height: 5.6mm;"></div>
-          <div class="task-line" style="height: 5.6mm;"></div>
-      `;
-    }
-
-    html += `
-        </div>
-
-        <!-- Task 4: Rich Archival Forensic Interrogation / Bridge Task -->
-        <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 5px 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 2px; margin-bottom: 4px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #0f172a; text-transform: uppercase;">
-              ${cfg.bridgeTask.title}
-            </strong>
-          </div>
-    `;
-
-    // Render bespoke Task 4 variants
+    // Render bespoke Task 4 content based on lesson
     if (cfg.bridgeTask.type === 'source_annotation') {
       html += `
-          <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #1e3a8a; background: #fffdfa; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a;">
-                ${cfg.bridgeTask.sourceTitle}
-              </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #475569; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 5px; border-radius: 3px;">
-                ${cfg.bridgeTask.shelfmark}
-              </span>
+            <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #fdfbf7; padding: 4px 8px; border-radius: 3px; margin-bottom: 3px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">${cfg.bridgeTask.sourceTitle}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; border: 1px solid #000; padding: 0 4px;">${cfg.bridgeTask.shelfmark}</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 8.4pt; font-style: italic; color: #111; line-height: 1.3; margin: 1px 0;">
+                ${cfg.bridgeTask.sourceText}
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #444; border-top: 1px dotted #999; padding-top: 1px;">
+                <strong>Provenance:</strong> ${cfg.bridgeTask.provenance}
+              </div>
             </div>
-            <div style="font-family: 'Georgia', serif; font-size: 8.2pt; font-style: italic; color: #1e293b; line-height: 1.35; margin-bottom: 2px;">
-              ${cfg.bridgeTask.sourceText}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; border-top: 1px dotted #e2e8f0; padding-top: 2px;">
-              <strong>Provenance:</strong> ${cfg.bridgeTask.provenance}
-            </div>
-          </div>
 
-          <!-- Active Annotation Box -->
-          <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 3px; padding: 2px 6px; margin-bottom: 4px;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
-              ✏️ Active Source Annotation Protocol:
+            <!-- Reading Clues Protocol -->
+            <div style="background: #f0f9ff; border: 1px solid #000; border-radius: 3px; padding: 2px 6px; margin-bottom: 4px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
+                Reading Clues:
+              </strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
+                <div>${cfg.bridgeTask.annotations[0]}</div>
+                <div>${cfg.bridgeTask.annotations[1]}</div>
+                <div>${cfg.bridgeTask.annotations[2]}</div>
+              </div>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #0c4a6e; line-height: 1.2;">
-              <div>${cfg.bridgeTask.annotations[0]}</div>
-              <div>${cfg.bridgeTask.annotations[1]}</div>
-              <div>${cfg.bridgeTask.annotations[2]}</div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">1. Historical Inference:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionA}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">2. Contextual Explanation:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionB}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
       `;
-    } else if (cfg.bridgeTask.type === 'visual_source') {
-      const b64Img = getBase64Image(cfg.bridgeTask.imgSrc);
+    } else if (cfg.bridgeTask.type === 'visual_painting') {
+      const b64 = getBase64Image(cfg.bridgeTask.imgSrc);
       html += `
-          <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px; background: #fffdfa; margin-bottom: 4px;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; overflow: hidden; background: #0f172a; height: 105px;">
-              <img src="${b64Img}" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" alt="La Tache Noire">
-            </div>
-            <div style="display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #b91c1c; text-transform: uppercase; margin-bottom: 1px;">
-                  ${cfg.bridgeTask.imgCaption}
+            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; border: 1.2px solid #000; border-radius: 3px; padding: 4px; background: #fdfbf7; margin-bottom: 3px;">
+              <div style="height: 95px; border: 1px solid #000; overflow: hidden; background: #000;">
+                <img src="${b64}" style="width: 100%; height: 100%; object-fit: cover;" alt="La Tache Noire">
+              </div>
+              <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">${cfg.bridgeTask.imgCaption}</strong>
+                  <p style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #111; margin: 2px 0; line-height: 1.25;">
+                    ${cfg.bridgeTask.sourceText}
+                  </p>
                 </div>
-                <p style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #1e293b; line-height: 1.3; margin: 0;">
-                  ${cfg.bridgeTask.sourceText}
-                </p>
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; border-top: 1px dotted #e2e8f0; padding-top: 2px;">
-                <strong>Archival Source:</strong> French Ministry of Public Instruction (1882 Education Law)
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #444; border-top: 1px dotted #999; padding-top: 1px;">
+                  <strong>Record:</strong> ${cfg.bridgeTask.shelfmark}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">1. Visual Interrogation:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionA}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">2. Geopolitical Consequence:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionB}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
+            <div style="background: #f0f9ff; border: 1px solid #000; border-radius: 3px; padding: 2px 6px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Reading Clues:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
+                <div>${cfg.bridgeTask.annotations[0]}</div>
+                <div>${cfg.bridgeTask.annotations[1]}</div>
+                <div>${cfg.bridgeTask.annotations[2]}</div>
+              </div>
+            </div>
       `;
     } else if (cfg.bridgeTask.type === 'visual_map') {
       const b64Map = getBase64Image(cfg.bridgeTask.imgSrc);
       html += `
-          <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; align-items: stretch; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px; background: #fffdfa; margin-bottom: 4px;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; overflow: hidden; background: #f8fafc; height: 105px;">
-              <img src="${b64Map}" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" alt="Map of Africa 1914">
-            </div>
-            <div style="display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 1px;">
-                  ${cfg.bridgeTask.imgCaption}
+            <div style="display: grid; grid-template-columns: 130px 1fr; gap: 8px; border: 1.2px solid #000; border-radius: 3px; padding: 4px; background: #fdfbf7; margin-bottom: 3px;">
+              <div style="height: 95px; border: 1px solid #000; overflow: hidden; background: #fff;">
+                <img src="${b64Map}" style="width: 100%; height: 100%; object-fit: contain;" alt="Scramble for Africa Map">
+              </div>
+              <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">${cfg.bridgeTask.imgCaption}</strong>
+                  <p style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #111; margin: 2px 0; line-height: 1.25;">
+                    ${cfg.bridgeTask.sourceText}
+                  </p>
                 </div>
-                <p style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #1e293b; line-height: 1.3; margin: 0;">
-                  ${cfg.bridgeTask.sourceText}
-                </p>
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; border-top: 1px dotted #e2e8f0; padding-top: 2px;">
-                <strong>Cartographic Record:</strong> General Act of the Berlin Conference (1885)
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #444; border-top: 1px dotted #999; padding-top: 1px;">
+                  <strong>Record:</strong> ${cfg.bridgeTask.shelfmark}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">1. Cartographic Inference:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionA}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">2. Geopolitical Escalation:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionB}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
+            <div style="background: #f0f9ff; border: 1px solid #000; border-radius: 3px; padding: 2px 6px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Reading Clues:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
+                <div>${cfg.bridgeTask.annotations[0]}</div>
+                <div>${cfg.bridgeTask.annotations[1]}</div>
+                <div>${cfg.bridgeTask.annotations[2]}</div>
+              </div>
+            </div>
       `;
     } else if (cfg.bridgeTask.type === 'technical_table') {
       html += `
-          <div style="border: 1.2px solid #cbd5e1; border-left: 4px solid #1e3a8a; background: #fffdfa; border-radius: 4px; padding: 4px 7px; margin-bottom: 4px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a;">
-                ${cfg.bridgeTask.sourceTitle}
-              </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #475569; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 5px; border-radius: 3px;">
-                ${cfg.bridgeTask.shelfmark}
-              </span>
+            <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #fdfbf7; padding: 3px 6px; border-radius: 3px; margin-bottom: 2px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">${cfg.bridgeTask.sourceTitle}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; border: 1px solid #000; padding: 0 4px;">${cfg.bridgeTask.shelfmark}</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #111; line-height: 1.25; margin: 1px 0;">
+                ${cfg.bridgeTask.sourceText}
+              </div>
             </div>
-            <div style="font-family: 'Georgia', serif; font-size: 7.9pt; font-style: italic; color: #1e293b; line-height: 1.3; margin-bottom: 2px;">
-              ${cfg.bridgeTask.sourceText}
-            </div>
-          </div>
 
-          <!-- Technical Comparison Table -->
-          <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.1pt; margin-bottom: 4px; border: 1px solid #cbd5e1;">
-            <thead>
-              <tr style="background: #f1f5f9; color: #0f172a;">
-                ${cfg.bridgeTask.tableHeaders.map((h, hi) => `<th style="padding: 3px 5px; text-align: left; border: 1px solid #cbd5e1; font-size: 7.2pt; width: ${hi === 0 ? '24%' : '38%'};">${h}</th>`).join('')}
-              </tr>
-            </thead>
-            <tbody>
-              ${cfg.bridgeTask.tableRows
-                .map(
-                  (r) => `
-                <tr>
-                  <td style="padding: 2.5px 5px; font-weight: 700; border: 1px solid #cbd5e1; background: #fafaf9;">${r[0]}</td>
-                  <td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">${r[1]}</td>
-                  <td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; background: #eff6ff; font-weight: 600;">${r[2]}</td>
+            <!-- Comparison Table -->
+            <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7pt; margin-bottom: 3px; border: 1.2px solid #000;">
+              <thead>
+                <tr style="background: #f1f5f9; color: #000;">
+                  ${cfg.bridgeTask.tableHeaders.map((h, hi) => `<th style="padding: 2.5px 5px; text-align: left; border: 1px solid #000; font-size: 7.2pt; width: ${hi === 0 ? '22%' : '39%'};">${h}</th>`).join('')}
                 </tr>
-              `,
-                )
-                .join('')}
-            </tbody>
-          </table>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">1. Technological Inference:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionA}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">2. Strategic Escalation:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionB}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
+              </thead>
+              <tbody>
+                ${cfg.bridgeTask.tableRows
+                  .map(
+                    (r) => `
+                  <tr>
+                    <td style="padding: 2px 5px; font-weight: 700; border: 1px solid #000; background: #fafafa;">${r[0]}</td>
+                    <td style="padding: 2px 5px; border: 1px solid #000;">${r[1]}</td>
+                    <td style="padding: 2px 5px; border: 1px solid #000; background: #f0f9ff; font-weight: 600;">${r[2]}</td>
+                  </tr>
+                `,
+                  )
+                  .join('')}
+              </tbody>
+            </table>
       `;
     } else if (cfg.bridgeTask.type === 'willy_nicky_telegrams') {
       html += `
-          <!-- Side-by-Side Telegrams Box -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 4px;">
-            <div style="border: 1.2px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #f8fafc; padding: 4px 6px; border-radius: 3px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">
-                <strong style="font-family: 'Special Elite', monospace; font-size: 7.2pt; color: #1e3a8a;">${cfg.bridgeTask.sourceATitle}</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+              <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #f8fafc; padding: 3px 6px; border-radius: 3px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">${cfg.bridgeTask.sourceATitle}</strong>
+                <p style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #111; margin: 1px 0; line-height: 1.22;">${cfg.bridgeTask.sourceAText}</p>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #444;">${cfg.bridgeTask.sourceAShelfmark}</div>
               </div>
-              <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #1e293b; line-height: 1.25;">
-                ${cfg.bridgeTask.sourceAText}
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; margin-top: 2px;">
-                ${cfg.bridgeTask.sourceAShelfmark}
+              <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #fffaf0; padding: 3px 6px; border-radius: 3px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">${cfg.bridgeTask.sourceBTitle}</strong>
+                <p style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #111; margin: 1px 0; line-height: 1.22;">${cfg.bridgeTask.sourceBText}</p>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #444;">${cfg.bridgeTask.sourceBShelfmark}</div>
               </div>
             </div>
 
-            <div style="border: 1.2px solid #cbd5e1; border-left: 3px solid #b91c1c; background: #fffaf0; padding: 4px 6px; border-radius: 3px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">
-                <strong style="font-family: 'Special Elite', monospace; font-size: 7.2pt; color: #b91c1c;">${cfg.bridgeTask.sourceBTitle}</strong>
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #1e293b; line-height: 1.25;">
-                ${cfg.bridgeTask.sourceBText}
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #64748b; margin-top: 2px;">
-                ${cfg.bridgeTask.sourceBShelfmark}
+            <div style="background: #f0f9ff; border: 1px solid #000; border-radius: 3px; padding: 2px 6px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Reading Clues:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
+                <div>${cfg.bridgeTask.annotations[0]}</div>
+                <div>${cfg.bridgeTask.annotations[1]}</div>
+                <div>${cfg.bridgeTask.annotations[2]}</div>
               </div>
             </div>
-          </div>
-
-          <!-- Active Telegraph Annotation Protocol -->
-          <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 3px; padding: 2px 6px; margin-bottom: 4px;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
-              ✏️ Active Telegraph Annotation Protocol:
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #0c4a6e; line-height: 1.2;">
-              <div>${cfg.bridgeTask.annotations[0]}</div>
-              <div>${cfg.bridgeTask.annotations[1]}</div>
-              <div>${cfg.bridgeTask.annotations[2]}</div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">1. Diplomatic Analysis:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionA}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">2. Structural Inevitability:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionB}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
       `;
     } else if (cfg.bridgeTask.type === 'crime_scene_forensics') {
       html += `
-          <!-- Crime Scene Schematic + Blank Cheque Box -->
-          <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-bottom: 4px;">
-            <!-- SVG Crime Scene Route Map -->
-            <div style="border: 1.2px solid #cbd5e1; border-radius: 3px; background: #fafaf9; padding: 4px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-                Forensic Route Schematic: Sarajevo (28 June 1914)
+            <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-bottom: 3px;">
+              <!-- Route Map Schematic -->
+              <div style="border: 1.2px solid #000; border-radius: 3px; background: #fff; padding: 3px; display: flex; flex-direction: column; justify-content: space-between;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase;">${cfg.bridgeTask.routeTitle}</strong>
+                <svg viewBox="0 0 280 95" style="width: 100%; height: 70px; background: #ffffff; border: 1px solid #ccc; border-radius: 2px;">
+                  <rect x="0" y="68" width="280" height="27" fill="#e0f2fe" />
+                  <text x="10" y="85" font-family="Inter, sans-serif" font-size="8" fill="#0369a1" font-weight="bold">River Miljacka</text>
+                  <rect x="0" y="38" width="280" height="28" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="2,2" />
+                  <text x="10" y="55" font-family="Inter, sans-serif" font-size="7.5" fill="#475569">Appel Quay (Intended Route)</text>
+                  <rect x="135" y="0" width="35" height="40" fill="#fee2e2" stroke="#dc2626" />
+                  <text x="138" y="16" font-family="Inter, sans-serif" font-size="6" fill="#991b1b" font-weight="bold">Franz Josef St</text>
+                  <text x="138" y="27" font-family="Inter, sans-serif" font-size="5.5" fill="#991b1b">(WRONG TURN)</text>
+                  <rect x="175" y="2" width="60" height="32" fill="#fef3c7" stroke="#d97706" />
+                  <text x="178" y="14" font-family="Inter, sans-serif" font-size="6" fill="#92400e" font-weight="bold">Schiller's Deli</text>
+                  <text x="178" y="25" font-family="Inter, sans-serif" font-size="5.5" fill="#b45309">Princip Waiting</text>
+                  <circle cx="152" cy="30" r="5" fill="#dc2626" />
+                  <text x="150" y="33" font-family="Inter, sans-serif" font-size="7" fill="#fff" font-weight="bold">X</text>
+                </svg>
               </div>
-              <!-- Vector Diagram of Franz Josef Street & Appel Quay -->
-              <svg viewBox="0 0 280 110" style="width: 100%; height: 80px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 2px;">
-                <!-- River Miljacka -->
-                <rect x="0" y="80" width="280" height="30" fill="#e0f2fe" />
-                <text x="10" y="98" font-family="Inter, sans-serif" font-size="8" fill="#0369a1" font-weight="bold">River Miljacka</text>
-                <!-- Appel Quay -->
-                <rect x="0" y="48" width="280" height="30" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="2,2" />
-                <text x="10" y="66" font-family="Inter, sans-serif" font-size="7.5" fill="#475569">Appel Quay (Original Motorcade Route)</text>
-                <!-- Latin Bridge -->
-                <rect x="145" y="48" width="22" height="62" fill="#cbd5e1" stroke="#475569" stroke-width="1.2" />
-                <text x="156" y="95" font-family="Inter, sans-serif" font-size="6.5" fill="#0f172a" text-anchor="middle" transform="rotate(-90 156 95)">Latin Bridge</text>
-                <!-- Franz Josef Street -->
-                <rect x="145" y="0" width="22" height="48" fill="#fef3c7" stroke="#d97706" />
-                <!-- Wrong Turn Arrow -->
-                <path d="M 125 63 L 156 63 L 156 25" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)" />
-                <defs>
-                  <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626" />
-                  </marker>
-                </defs>
-                <!-- Schiller's Delicatessen -->
-                <rect x="170" y="5" width="85" height="36" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.2" rx="2" />
-                <text x="212" y="20" font-family="Inter, sans-serif" font-size="6.5" fill="#991b1b" font-weight="bold" text-anchor="middle">Schiller's Deli</text>
-                <text x="212" y="32" font-family="Inter, sans-serif" font-size="6" fill="#dc2626" text-anchor="middle">★ Princip Stood Here</text>
-                <!-- Stalled Car Marker -->
-                <circle cx="156" cy="22" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
-                <text x="156" y="25" font-family="Inter, sans-serif" font-size="7" fill="#ffffff" font-weight="bold" text-anchor="middle">✕</text>
-                <text x="100" y="18" font-family="Inter, sans-serif" font-size="6.5" fill="#b91c1c" font-weight="bold">Fatal Wrong Turn</text>
-              </svg>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; margin-top: 1px;">
-                Chauffeur stalls car attempting to reverse outside Schiller's Delicatessen.
+
+              <!-- Blank Cheque Dispatch -->
+              <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #fffaf0; padding: 3px 6px; border-radius: 3px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">${cfg.bridgeTask.dispatchTitle}</strong>
+                  <p style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #111; margin: 1px 0; line-height: 1.22;">
+                    ${cfg.bridgeTask.dispatchText}
+                  </p>
+                </div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #444;">${cfg.bridgeTask.dispatchShelfmark}</div>
               </div>
             </div>
-
-            <!-- Source B: Blank Cheque Box -->
-            <div style="border: 1.2px solid #cbd5e1; border-left: 3px solid #b91c1c; background: #fffaf0; padding: 4px 6px; border-radius: 3px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #b91c1c; text-transform: uppercase; margin-bottom: 2px;">
-                  ${cfg.bridgeTask.sourceBTitle}
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #1e293b; line-height: 1.25;">
-                  ${cfg.bridgeTask.sourceBText}
-                </div>
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
-                ${cfg.bridgeTask.sourceBShelfmark}
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">1. Forensic Route Analysis:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionA}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
-
-          <div style="margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a;">2. Geopolitical Escalation:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155;">${cfg.bridgeTask.questionB}</span>
-            <div class="task-line" style="height: 5.6mm;"></div>
-            <div class="task-line" style="height: 5.6mm;"></div>
-          </div>
       `;
     }
 
-    // Clue & Scholar's Edge footer
+    // 2 Substantial Questions with 3 Ruled Lines each
     html += `
-          <div style="border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px; display: flex; justify-content: space-between; font-family: 'Georgia', serif; font-size: 7.2pt;">
-            <span style="color: #475569;">${cfg.bridgeTask.clue}</span>
-            <span style="color: #1e3a8a; font-weight: bold;">${cfg.bridgeTask.scholarsEdge}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Left Page Colophon -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8;">
-        <span>The History Department &bull; Causes of the Great War (V2 Staged)</span>
-        <span>Page ${leftPageNum} (Facing Spread Left)</span>
-      </div>
-    </div>
-    `;
-
-    // ----------------------------------------------------
-    // RIGHT PAGE (Recto, Odd Page Number: 5, 7, 9, 11, 13, 15)
-    // ----------------------------------------------------
-    html += `
-    <div class="page page-container" id="page-${rightPageNum}">
-      <div>
-        <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 800;">
-              Historical Skill: ${cfg.skill}
-            </div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
-              ${cfg.enquiryQuestion}
-            </h3>
-          </div>
-          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">
-            Extended Writing
-          </span>
-        </div>
-
-        <!-- Bespoke Disciplinary Structure Strip (Active Student Planning Matrix with Dotted Lines) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 4px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; margin-bottom: 3px; display: flex; justify-content: space-between;">
-            <span>Enquiry Planning Matrix: Map your 3 arguments before writing</span>
-            <span style="color: #64748b; font-weight: 600;">Draft bullet points below &darr;</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px;">
-            ${cfg.structureStrip
-              .map(
-                (col) => `
-              <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 2px;">${col.col}</strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #475569; line-height: 1.2; display: block; margin-bottom: 2px;">${col.prompt}</span>
-                <div class="task-line-dotted" style="height: 4.6mm;"></div>
-                <div class="task-line-dotted" style="height: 4.6mm;"></div>
-                <div class="task-line-dotted" style="height: 4.6mm;"></div>
+            <div style="margin-top: 2px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000; margin-bottom: 1px;">
+                <strong>Question 1:</strong> ${cfg.bridgeTask.questionA}
               </div>
-            `,
-              )
-              .join('')}
+              <div class="task-line"></div>
+              <div class="task-line"></div>
+              <div class="task-line"></div>
+            </div>
+
+            <div style="margin-top: 2px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000; margin-bottom: 1px;">
+                <strong>Question 2:</strong> ${cfg.bridgeTask.questionB}
+              </div>
+              <div class="task-line"></div>
+              <div class="task-line"></div>
+              <div class="task-line"></div>
+            </div>
+          </div>
+
+          <!-- Helpful Clue & Challenge Question -->
+          <div style="border-top: 1px dotted #000; padding-top: 2px; margin-top: 2px; display: flex; justify-content: space-between; font-family: 'Georgia', serif; font-size: 7.2pt;">
+            <span style="color: #444; font-style: italic;">${cfg.bridgeTask.clue}</span>
+            <span style="color: #000; font-weight: bold;">${cfg.bridgeTask.scholarsEdge}</span>
           </div>
         </div>
 
-        <!-- Categorized Word Bank & Causal Connectives -->
-        <div style="border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 4px; padding: 3px 7px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7pt; line-height: 1.3;">
-          <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: center; margin-bottom: 1px;">
-            <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Technical Bank:</strong>
-            <span style="color: #334155;">${cfg.wordBank.technical}</span>
-          </div>
-          <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: center; margin-bottom: 1px;">
-            <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Geopolitical Bank:</strong>
-            <span style="color: #334155;">${cfg.wordBank.geopolitical}</span>
-          </div>
-          <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: center;">
-            <strong style="color: #b91c1c; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Causal Stems:</strong>
-            <span style="color: #475569; font-style: italic;">${cfg.wordBank.connectives}</span>
-          </div>
-        </div>
-
-        <!-- Disciplinary Writing Framework Strip (PEEL) -->
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 7px; margin-bottom: 4px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b;">
-          <span><strong style="color: #1e3a8a;">[P] Point:</strong> Clear thesis answering question.</span>
-          <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific dates, treaties &amp; sources.</span>
-          <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Causal mechanism explained.</span>
-          <span><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluate overall historical weight.</span>
-        </div>
-
-        <!-- Ruled Writing Lines (Precisely 13 lines at 7.2mm filling the page) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.2">
-          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
-        </div>
-      </div>
-
-      <!-- Teacher Assessment & DIRT Footer -->
-      <div style="margin-top: 4px;">
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
-            <span><strong style="color: #0f172a;">Mark:</strong> &nbsp; &nbsp; &nbsp; &nbsp; / 16</span>
-            <span><strong style="color: #0f172a;">DOK Level:</strong> [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-            <span><strong style="color: #0f172a;">Fingertip Vocab Used:</strong> [ Y &bull; N ]</span>
-            <span style="font-weight: 700; color: #1e3a8a; text-transform: uppercase;">Teacher Assessment &bull; DIRT Target</span>
-          </div>
-          <div style="display: flex; align-items: center; margin-top: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; margin-right: 6px; white-space: nowrap;">DIRT Target:</strong>
-            <div style="flex: 1; border-bottom: 1.2px dotted #94a3b8; height: 12px;"></div>
-          </div>
-        </div>
-
-        <!-- Colophon -->
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #94a3b8;">
-          <span>Causes of the Great War &bull; Extended Writing Spread</span>
-          <span>Page ${rightPageNum} (Facing Spread Right)</span>
-        </div>
+        ${renderFooterStrip(leftPageNum, revisionQuips[leftPageNum - 1], 16)}
       </div>
     </div>
-    `;
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- RIGHT PAGE (RECTO): Extended Enquiry Writing (21 Ruled Lines)      -->
+    <!-- Zero DIRT box • Timeline Mission Box at foot                       -->
+    <!-- ------------------------------------------------------------------ -->
+    <div class="page page-container" id="page-${rightPageNum}">
+      <div class="page-body-full" style="justify-content: space-between;">
+        <div>
+          <!-- Enquiry Header -->
+          <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.8px; color: #444; font-weight: 800;">
+                Historical Focus: ${cfg.skill}
+              </div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
+                Enquiry: ${cfg.inquiryQuestion}
+              </h3>
+            </div>
+            <span class="badge">Extended Writing</span>
+          </div>
+
+          <!-- 3-Column Planning Matrix with Dotted Planning Lines -->
+          <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 6px; background: #fdfbf7; margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 2px; display: flex; justify-content: space-between;">
+              <span>Planning Your Answer: 3 Key Arguments</span>
+              <span style="color: #555; font-weight: 600;">Draft quick bullet points below &darr;</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+              ${cfg.structureStrip
+                .map(
+                  (col) => `
+                <div style="border: 1px solid #000; border-radius: 2px; padding: 3px 4px; background: #ffffff;">
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000; display: block; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-bottom: 1px;">${col.col}</strong>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #333; line-height: 1.18; display: block; margin-bottom: 1px;">${col.prompt}</span>
+                  <div class="task-line-dotted"></div>
+                  <div class="task-line-dotted"></div>
+                </div>
+              `,
+                )
+                .join('')}
+            </div>
+          </div>
+
+          <!-- Key Words & Connectives Strip -->
+          <div style="border: 1px solid #000; background: #ffffff; border-radius: 3px; padding: 2px 6px; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.25;">
+            <div><strong>Key Words:</strong> ${cfg.wordBank}</div>
+            <div style="border-top: 1px dashed #ccc; padding-top: 1px; margin-top: 1px; color: #444; font-style: italic;">
+              <strong>Sentence Starters:</strong> ${cfg.connectives}
+            </div>
+          </div>
+
+          <!-- Writing Guide (PEEL) -->
+          <div style="background: #f8fafc; border: 1px solid #000; border-radius: 2px; padding: 1.5px 6px; margin-bottom: 3px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #000;">
+            <span><strong>[P] Point:</strong> Clear sentence answering the question.</span>
+            <span><strong>[E] Evidence:</strong> Names, dates, battles, and treaties.</span>
+            <span><strong>[E] Explain:</strong> How and why this caused tension.</span>
+            <span><strong>[L] Link:</strong> Direct conclusion answering enquiry.</span>
+          </div>
+
+          <!-- Ruled Writing Lines (21 Full Lines at 7.0mm) -->
+          <div style="margin-bottom: 2px;">
+            ${Array(21).fill('<div class="task-line"></div>').join('\n            ')}
+          </div>
+        </div>
+
+        <!-- Timeline Mission Box (Connecting Essay back to Pages 2–3) -->
+        <div style="border: 1.2px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fdfbf7; margin-top: auto; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 1px;">
+            Timeline Mission &bull; Pages 2–3
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #111; line-height: 1.2;">
+            ${cfg.timelineMission}
+          </div>
+        </div>
+
+        ${renderFooterStrip(rightPageNum, revisionQuips[rightPageNum - 1], 16)}
+      </div>
+    </div>
+`;
   });
 
-  // ==========================================
-  // PAGE 16: MASTER REVIEW & ASSESSMENT HUB
-  // ==========================================
+  // ====================================================================
+  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Quizzing Hub)
+  // Master Assessment Tracker matching CME & Industrialisation gold standard
+  // ====================================================================
+  const quizUrl = 'https://history-revision-hub.netlify.app/units/great_war/quiz';
+  const qrSvg = generateQrSvg(quizUrl);
+
   html += `
-  <div class="page page-container" id="page-16" style="justify-content: space-between;">
-    <div>
-      <!-- Header -->
-      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+  <div class="page page-container" id="page-16">
+    <div class="page-body-full" style="justify-content: space-between;">
+      
+      <!-- Top Branding -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Pupil Assessment Record</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">KEY STAGE 3 HISTORY • UNIT 9: CAUSES OF THE GREAT WAR (1871–1914)</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">OUTSIDE BACK COVER</span>
+        </div>
+      </div>
+
+      <!-- Header Block -->
+      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12pt; margin: 0 0 1px 0; font-weight: 900; text-transform: uppercase;">
+          Student Assessment Record &amp; Revision Tracker
+        </h2>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #222; font-weight: 600;">
+          Unit 9: Causes of the Great War • 6-Lesson Enquiry Sequence
+        </div>
+      </div>
+
+      <!-- Target Grade & Pupil Info Strip -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 10px; align-items: center; margin-bottom: 4px;">
         <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 700;">
-            The History Department &bull; Assessment &amp; Revision Synthesis
-          </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 14pt; color: #0f172a; margin: 2px 0 0 0; text-transform: uppercase; letter-spacing: 0.5px;">
-            Causes of the Great War (1871–1914) &bull; Master Review
-          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
+          <div style="border-bottom: 1.2px solid #000000; height: 14px; margin-top: 1px;"></div>
         </div>
-        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">
-          Unit Revision Hub
-        </span>
-      </div>
-
-      <!-- M-A-I-N Long-Term Causes Matrix -->
-      <div style="border: 1.2px solid #0f172a; border-radius: 5px; padding: 6px 9px; background: #f8fafc; margin-bottom: 6px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 4px;">
-          The M-A-I-N Framework of Long-Term Causes:
-        </strong>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; padding: 3px 6px; background: #ffffff; border-radius: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a;">[M] MILITARISM</strong>
-            <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; margin: 2px 0 0 0; line-height: 1.25;">
-              The Anglo-German naval arms race (Dreadnoughts); rigid railway mobilization timetables (Schlieffen Plan); glorification of armed combat as national duty.
-            </p>
-          </div>
-          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; padding: 3px 6px; background: #ffffff; border-radius: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a;">[A] ALLIANCES</strong>
-            <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; margin: 2px 0 0 0; line-height: 1.25;">
-              The Triple Alliance (Germany, Austria-Hungary, Italy) vs. The Triple Entente (Britain, France, Russia). Intended as deterrence, but acted as a doomsday machine.
-            </p>
-          </div>
-          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; padding: 3px 6px; background: #ffffff; border-radius: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a;">[I] IMPERIALISM</strong>
-            <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; margin: 2px 0 0 0; line-height: 1.25;">
-              Kaiser Wilhelm II’s aggressive demand for a "Place in the Sun" (Weltpolitik); clashes over Morocco (Tangier 1905, Agadir 1911); partition of Africa.
-            </p>
-          </div>
-          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; padding: 3px 6px; background: #ffffff; border-radius: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a;">[N] NATIONALISM</strong>
-            <p style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #334155; margin: 2px 0 0 0; line-height: 1.25;">
-              French desire for revanche over Alsace-Lorraine; Pan-Slavic nationalism in the Balkans; Serbian underground networks (The Black Hand).
-            </p>
+        <div style="text-align: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
+          <div style="border: 1.2px solid #000000; border-radius: 2px; width: 32px; height: 20px; margin: 1px auto 0 auto;"></div>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
+          <div style="border: 1.2px solid #000000; border-radius: 2px; width: 32px; height: 20px; margin: 1px auto 0 auto;"></div>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase;">Effort:</span>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; margin-top: 2px;">
+            1 &bull; 2 &bull; 3 &bull; 4
           </div>
         </div>
       </div>
 
-      <!-- Historiographical Debate -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 9px; background: #ffffff; margin-bottom: 6px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 3px;">
-          Historiographical Debate: Who Was to Blame?
-        </strong>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #334155; line-height: 1.3;">
-            <strong style="color: #b91c1c;">Fritz Fischer (1961):</strong> Argued that imperial Germany bore primary responsibility by deliberately provoking a European war via the "Blank Cheque" to break out of encirclement and achieve world power status.
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #334155; line-height: 1.3;">
-            <strong style="color: #0369a1;">Christopher Clark (2012):</strong> Argued in <em>The Sleepwalkers</em> that all European powers shared blame. Leaders were blind to the catastrophic risks of their diplomatic maneuvers, sleepwalking into a tragedy none truly wanted.
-          </div>
-        </div>
-      </div>
-
-      <!-- Chronological Mastery Challenge (Matching Grid) -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 5px 9px; background: #fdfbf7; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a; text-transform: uppercase;">
-            Chronological Mastery Challenge &bull; Match Event to Year:
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #64748b;">Draw connecting lines</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 7.1pt;">
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 1871:</strong> German Empire proclaimed at Versailles</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 1890:</strong> Bismarck dismissed; Reinsurance Treaty lapses</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 1904:</strong> Entente Cordiale ends British isolation</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 1906:</strong> HMS Dreadnought launched in Portsmouth</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 1911:</strong> SMS Panther sent to Agadir; crisis erupts</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 28 June 1914:</strong> Princip shoots Archduke in Sarajevo</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 5 July 1914:</strong> Germany gives Austria the "Blank Cheque"</div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 3px;"><strong>[ &nbsp; ] 4 Aug 1914:</strong> Britain declares war over Belgian neutrality</div>
-        </div>
-      </div>
-
-      <!-- Pupil Assessment & DIRT Progress Ledger -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 9px; background: #ffffff; margin-bottom: 6px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 3px;">
-          Pupil Assessment &amp; DIRT Progress Ledger
-        </strong>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.1pt; border: 1px solid #cbd5e1;">
+      <!-- Assessment Progress Ledger Table -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
           <thead>
-            <tr style="background: #f1f5f9; color: #0f172a;">
-              <th style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: left;">Lesson Enquiry</th>
-              <th style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; width: 65px;">Do Now (/5)</th>
-              <th style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; width: 65px;">Essay (/16)</th>
-              <th style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; width: 85px;">DIRT Complete</th>
-              <th style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: left;">Teacher Signature</th>
+            <tr style="border-bottom: 1.5px solid #000000; background: #f8fafc;">
+              <th style="padding: 3px 4px; width: 24px; text-align: center; font-size: 8pt; font-weight: 900; border-right: 1px solid #000;">#</th>
+              <th style="padding: 3px 6px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000;">Lesson Enquiry Title</th>
+              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Do Now (/5)</th>
+              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Essay (/16)</th>
+              <th style="padding: 3px 4px; width: 80px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1px solid #000;">Total (/21)</th>
+              <th style="padding: 3px 6px; width: 110px; text-align: left; font-size: 7.5pt; font-weight: 900;">Teacher Sign</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">L1: German Empire Unification (1871)</td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1; text-align: center;">[ &nbsp; ]</td><td style="border: 1px solid #cbd5e1;"></td></tr>
-            <tr><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">L2: Franco-Prussian War &amp; Alsace-Lorraine</td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1; text-align: center;">[ &nbsp; ]</td><td style="border: 1px solid #cbd5e1;"></td></tr>
-            <tr><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">L3: The Scramble for Africa &amp; Weltpolitik</td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1; text-align: center;">[ &nbsp; ]</td><td style="border: 1px solid #cbd5e1;"></td></tr>
-            <tr><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">L4: HMS Dreadnought &amp; Naval Arms Race</td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1; text-align: center;">[ &nbsp; ]</td><td style="border: 1px solid #cbd5e1;"></td></tr>
-            <tr><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">L5: The Alliance System: Peace or Trap?</td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1; text-align: center;">[ &nbsp; ]</td><td style="border: 1px solid #cbd5e1;"></td></tr>
-            <tr><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">L6: Sarajevo Assassination &amp; July Crisis</td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1;"></td><td style="border: 1px solid #cbd5e1; text-align: center;">[ &nbsp; ]</td><td style="border: 1px solid #cbd5e1;"></td></tr>
+            ${lessonConfigs
+              .map(
+                (l) => `
+              <tr style="border-bottom: 1px solid #000000;">
+                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">L${l.lessonNum}</td>
+                <td style="padding: 3px 6px; border-right: 1px solid #000; font-weight: 600;">${l.title}</td>
+                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 5</strong> ]</td>
+                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 21</strong> ]</td>
+                <td style="padding: 3px 6px; border-bottom: 1px solid #000;"></td>
+              </tr>
+            `,
+              )
+              .join('')}
+            <tr style="background: #f8fafc; font-weight: 900; border-top: 1.5px solid #000000;">
+              <td colspan="2" style="padding: 3px 6px; border-right: 1px solid #000; text-transform: uppercase;">Unit 9 Cumulative Total</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 30</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
+              <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-size: 8.5pt;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 126</strong> ]</td>
+              <td style="padding: 3px 6px;"></td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Synoptic Final Verdict Planning Strip -->
-      <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 4px 8px; background: #f8fafc;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">
-          Synoptic Master Enquiry Verdict: "How did decades of rivalry culminate in 30 days of madness?"
-        </strong>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; margin-bottom: 2px;">
-          Draft your overall historical conclusion connecting long-term militarism (M-A-I-N) to the short-term July Crisis trigger:
+      <!-- Teacher Feedback: WWW & EBI -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #000;">
+            Teacher Feedback &amp; Academic Guidance
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">STAGED V2 PROGRESS</span>
         </div>
-        <div class="task-line-dotted" style="height: 4.8mm;"></div>
-        <div class="task-line-dotted" style="height: 4.8mm;"></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
+              What Went Well (WWW):
+            </strong>
+            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 6.0mm;"></div>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
+              Even Better If (EBI):
+            </strong>
+            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 6.0mm;"></div>
+            <div class="task-line" style="height: 6.0mm;"></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Final Institutional Signoff -->
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b;">
-      <span>The History Revision Hub &bull; Year 9 Master Curriculum Series &bull; Staged 4-Act V2 Edition</span>
+      <!-- Revision QR Hub & Digital Quizzing -->
+      <div style="border: 1.2px solid #000; border-radius: 4px; padding: 4px 8px; background: #fdfbf7; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 22mm; height: 22mm; background: #fff; border: 1px solid #000; padding: 1px; border-radius: 2px;">
+            ${qrSvg}
+          </div>
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #000;">
+              Interactive Flashcards &amp; Digital Quiz Hub
+            </div>
+            <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #222; margin: 1px 0 2px 0; line-height: 1.2;">
+              Scan the QR code on your phone or tablet to revise all 6 lessons and test your recall with 100 interactive questions.
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #444; font-weight: 700;">
+              Target Score: <strong>18 / 20</strong> on Unit Mastery Check
+            </div>
+          </div>
+        </div>
+        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 8px; background: #fff; text-align: center;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase;">Best Quiz Score:</div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; margin-top: 1px;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(16, revisionQuips[15], 16)}
     </div>
   </div>
 `;
@@ -1803,12 +1511,10 @@ async function renderGreatWarTwoPageWorkbook() {
   console.log('🚀 Rendering Staged V2 Two-Page Workbook for Causes of the Great War...');
   const html = buildGreatWarTwoPageWorkbookHtml();
 
-  // Write staged HTML file
   const outHtmlPath = path.join(ROOT_DIR, 'public', 'units', 'great_war', 'pupil_workbook_v2.html');
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`✅ Staged HTML generated at: ${outHtmlPath}`);
 
-  // Compile PDF via Puppeteer
   console.log('🖨️ Compiling PDF via Puppeteer...');
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -1824,7 +1530,7 @@ async function renderGreatWarTwoPageWorkbook() {
     path: outPdfPath,
     format: 'A4',
     printBackground: true,
-    margin: { top: '10mm', bottom: '12mm', left: '12mm', right: '12mm' },
+    margin: { top: '10mm', bottom: '10mm', left: '10mm', right: '10mm' },
   });
 
   await browser.close();
@@ -1842,7 +1548,6 @@ if (require.main === module) {
 }
 
 module.exports = {
-  buildGreatWarTwoPageWorkbookHtml,
   renderGreatWarTwoPageWorkbook,
-  lessonConfigs,
+  buildGreatWarTwoPageWorkbookHtml,
 };
