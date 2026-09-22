@@ -5,8 +5,8 @@
     "title": "Water & Sanitation Through Time",
     "dataStatus": "STAGED_V2_4ACT",
     "textbookStatus": "PUBLISHER_MASTER",
-    "workbookStatus": "LEGACY_V1 (🔒 ON DESKS / FROZEN)",
-    "classroomStatus": "🔒 FROZEN ON DESKS (REPRINT WINDOW)"
+    "workbookStatus": "🔒 V1 ON DESKS (✨ V2 STAGED)",
+    "classroomStatus": "🔒 FROZEN (✨ V2 SUITE STAGED)"
   },
   {
     "id": "medieval_england",
@@ -23,7 +23,7 @@
     "title": "Early Modern World (1450–1750)",
     "dataStatus": "STAGED_V2_4ACT",
     "textbookStatus": "PUBLISHER_MASTER",
-    "workbookStatus": "LEGACY_V1 (🔒 ON DESKS / FROZEN)",
+    "workbookStatus": "🔒 V1 ON DESKS (QUEUED V2)",
     "classroomStatus": "🔒 FROZEN ON DESKS (REPRINT WINDOW)"
   },
   {
@@ -41,8 +41,8 @@
     "title": "Causes of the Great War (1871–1914)",
     "dataStatus": "STAGED_V2_4ACT",
     "textbookStatus": "PUBLISHER_MASTER",
-    "workbookStatus": "LEGACY_V1 (🔒 ON DESKS / FROZEN)",
-    "classroomStatus": "🔒 FROZEN ON DESKS (REPRINT WINDOW)"
+    "workbookStatus": "🔒 V1 ON DESKS (✨ V2 STAGED)",
+    "classroomStatus": "🔒 FROZEN (✨ V2 SUITE STAGED)"
   },
   {
     "id": "great_war_part2",

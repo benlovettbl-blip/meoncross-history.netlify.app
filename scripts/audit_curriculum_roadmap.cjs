@@ -127,6 +127,7 @@ function findWorkbookScripts(unitId) {
   const scriptFiles = fs.readdirSync(path.join(ROOT_DIR, 'scripts'));
   return scriptFiles.filter((f) => {
     if (!f.includes('twopage_workbook')) return false;
+    if (unitId === 'water_and_sanitation' && f.includes('water_and_sanitation')) return true;
     if (unitId === 'industrialisation_and_empire' && f.includes('industrialisation')) return true;
     if (unitId === 'great_war_part2' && f.includes('great_war_part2')) return true;
     if (unitId === 'great_war' && f === 'render_great_war_twopage_workbook.cjs') return true;
@@ -180,13 +181,24 @@ function auditUnit(unit) {
   const wbScripts = findWorkbookScripts(unit.id);
   const pubWbHtml = path.join(pubDir, 'pupil_workbook.html');
   const unitWbHtml = path.join(unitDir, 'pupil_workbook.html');
+  const stagedWbHtml = path.join(pubDir, 'pupil_workbook_v2.html');
+  const hasStagedV2Wb = fs.existsSync(stagedWbHtml);
+
   const targetWb = fs.existsSync(pubWbHtml)
     ? pubWbHtml
     : fs.existsSync(unitWbHtml)
       ? unitWbHtml
       : null;
 
-  if (wbScripts.length > 0) {
+  if (unit.frozenOnDesks) {
+    if (hasStagedV2Wb) {
+      workbookStatus = '🔒 V1 ON DESKS (✨ V2 STAGED)';
+    } else {
+      workbookStatus = '🔒 V1 ON DESKS (QUEUED V2)';
+    }
+  } else if (hasStagedV2Wb) {
+    workbookStatus = 'MODERN_2PAGE (V2 STAGED)';
+  } else if (wbScripts.length > 0) {
     workbookStatus = `MODERN_2PAGE (${wbScripts.length} spread script${wbScripts.length > 1 ? 's' : ''})`;
   } else if (targetWb) {
     const wbContent = fs.readFileSync(targetWb, 'utf8');
@@ -196,8 +208,6 @@ function auditUnit(unit) {
       wbContent.includes('bridge-task')
     ) {
       workbookStatus = 'MODERN_2PAGE';
-    } else if (unit.frozenOnDesks) {
-      workbookStatus = 'LEGACY_V1 (🔒 ON DESKS / FROZEN)';
     } else {
       workbookStatus = 'LEGACY_V1 (UNCONVERTED)';
     }
@@ -208,7 +218,14 @@ function auditUnit(unit) {
   if (unit.digitalOnly) {
     classroomStatus = 'DIGITAL_FIELD_APP';
   } else if (unit.frozenOnDesks) {
-    classroomStatus = '🔒 FROZEN ON DESKS (REPRINT WINDOW)';
+    if (
+      hasStagedV2Wb &&
+      (textbookStatus === 'PUBLISHER_MASTER' || textbookStatus === 'SCRIPT_READY')
+    ) {
+      classroomStatus = '🔒 FROZEN (✨ V2 SUITE STAGED)';
+    } else {
+      classroomStatus = '🔒 FROZEN ON DESKS (REPRINT WINDOW)';
+    }
   } else if (workbookStatus.startsWith('MODERN_2PAGE') && textbookStatus === 'PUBLISHER_MASTER') {
     classroomStatus = '🌟 GOLD_MASTER (100% COMPLETE)';
   } else if (workbookStatus.startsWith('MODERN_2PAGE')) {
