@@ -6,7 +6,12 @@ const pdfsDir = path.join(__dirname, '../public/pdfs');
 if (!fs.existsSync(pdfsDir)) {
   fs.mkdirSync(pdfsDir, { recursive: true });
 }
-const outputPath = path.join(pdfsDir, 'ypres_tour_leader_pocket_guide.pdf');
+
+// Output paths: primary A4 companion + backward-compatible aliases
+const outputPathA4 = path.join(pdfsDir, 'ypres_tour_leader_companion_a4.pdf');
+const outputPathLegacyCompanion = path.join(pdfsDir, 'ypres_1914_1918_teacher_companion.pdf');
+const outputPathLegacyPupil = path.join(pdfsDir, 'ypres_1914_1918_pupil_field_guide.pdf');
+const outputPathPocketGuide = path.join(pdfsDir, 'ypres_tour_leader_pocket_guide.pdf');
 
 // Helper to convert images to base64 for fast, reliable offline rendering
 function getBase64Image(relPath) {
@@ -27,14 +32,11 @@ function getHtmlContent() {
   const lowryCyril = getBase64Image('images/lowry_cyril.png');
   const lowryEric = getBase64Image('images/lowry_auriol.png');
   const salientMap = getBase64Image('images/ypres_salient_map_new.png');
-  const essexFarm = getBase64Image('images/ypres_essex_farm.jpg');
   const headstoneImg = getBase64Image('images/cwgc_headstone_essex_farm.jpg');
   const broodingSoldier = getBase64Image('images/brooding_soldier_gas.jpg');
   const hoogeCrater = getBase64Image('images/hooge_crater.jpg');
   const tyneCot = getBase64Image('images/ypres_tyne_cot.jpg');
   const meninGate = getBase64Image('images/ypres_menin_gate.jpg');
-  const clothHall = getBase64Image('images/ypres_cloth_hall.jpg');
-  const talbotHouse = getBase64Image('images/talbot_house_relaxing.jpg');
   const passchendaeleDugout = getBase64Image('images/passchendaele_museum_dugout.jpg');
   const cheshireTrench = getBase64Image('images/cheshire_regiment_trench.png');
 
@@ -52,12 +54,12 @@ function getHtmlContent() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ypres 1914–1918: Tour Leader Pocket Field Guide</title>
+  <title>Ypres 1914–1918: Tour Leader &amp; Teacher Field Companion (A4)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
     @page {
-      size: 148mm 210mm; /* A5 Portrait */
+      size: 210mm 297mm; /* Standard A4 Portrait */
       margin: 0;
     }
 
@@ -73,15 +75,15 @@ function getHtmlContent() {
       background: #ffffff;
       margin: 0;
       padding: 0;
-      font-size: 7.4pt;
-      line-height: 1.34;
+      font-size: 8.6pt;
+      line-height: 1.42;
     }
 
-    /* Discrete A5 Page Container for Saddle-Stitching */
+    /* Discrete A4 Page Container (210mm x 297mm) */
     .page {
-      width: 148mm;
-      height: 210mm;
-      padding: 6.5mm 8mm 5.5mm 8mm;
+      width: 210mm;
+      height: 297mm;
+      padding: 9mm 12mm 8mm 12mm;
       position: relative;
       background: #ffffff;
       overflow: hidden;
@@ -99,48 +101,48 @@ function getHtmlContent() {
 
     /* Running Header Bar */
     .header-bar {
-      border-bottom: 2px solid #1e3a8a;
-      padding-bottom: 2.5px;
-      margin-bottom: 4px;
+      border-bottom: 2.5px solid #1e3a8a;
+      padding-bottom: 4px;
+      margin-bottom: 7px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
     }
 
     .school-title {
-      font-size: 8.6pt;
+      font-size: 11.5pt;
       font-weight: 800;
       letter-spacing: 0.04em;
       color: #1e3a8a;
       text-transform: uppercase;
       font-family: 'Outfit', sans-serif;
-      line-height: 1.1;
+      line-height: 1.15;
     }
 
     .school-sub {
-      font-size: 6.6pt;
+      font-size: 8.2pt;
       color: #475569;
       font-weight: 600;
-      margin-top: 1px;
+      margin-top: 1.5px;
     }
 
     .partner-pill {
       background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      padding: 1.5px 5px;
-      border-radius: 4px;
+      border: 1.2px solid #cbd5e1;
+      padding: 2.5px 8px;
+      border-radius: 5px;
       text-align: right;
     }
 
     .partner-pill .brand {
       font-weight: 800;
       color: #b45309;
-      font-size: 6.6pt;
+      font-size: 8.2pt;
       text-transform: uppercase;
     }
 
     .partner-pill .lead {
-      font-size: 6pt;
+      font-size: 7.2pt;
       color: #334155;
       font-weight: 600;
     }
@@ -152,115 +154,115 @@ function getHtmlContent() {
       color: #0f172a;
     }
 
-    /* Core Pedagogical & Briefing Boxes */
+    /* Pedagogical Architecture Callout Boxes */
     .pitch-box {
       background: #eff6ff;
-      border: 1.2px solid #bfdbfe;
-      border-left: 4px solid #1e3a8a;
-      border-radius: 5px;
-      padding: 4.5px 7px;
-      margin-bottom: 4px;
+      border: 1.5px solid #bfdbfe;
+      border-left: 5px solid #1e3a8a;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 7px;
     }
 
     .pitch-box .box-header {
-      font-size: 7pt;
+      font-size: 8.6pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
     }
 
     .pitch-box p {
       margin: 0;
-      font-size: 7.1pt;
+      font-size: 8.5pt;
       color: #1e293b;
-      line-height: 1.32;
+      line-height: 1.42;
     }
 
     .look-fors-box {
       background: #f8fafc;
-      border: 1.2px solid #cbd5e1;
-      border-left: 4px solid #059669;
-      border-radius: 5px;
-      padding: 3.5px 7px;
-      margin-bottom: 4px;
+      border: 1.5px solid #cbd5e1;
+      border-left: 5px solid #059669;
+      border-radius: 6px;
+      padding: 7px 12px;
+      margin-bottom: 7px;
     }
 
     .look-fors-box .box-header {
-      font-size: 7pt;
+      font-size: 8.6pt;
       font-weight: 800;
       color: #065f46;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 1.5px;
+      margin-bottom: 2.5px;
     }
 
     .look-fors-list {
       margin: 0;
-      padding-left: 11px;
-      font-size: 6.8pt;
+      padding-left: 15px;
+      font-size: 8.3pt;
       color: #334155;
-      line-height: 1.28;
+      line-height: 1.38;
     }
 
     .hinge-box {
       background: #fffbeb;
-      border: 1.2px solid #fde68a;
-      border-left: 4px solid #d97706;
-      border-radius: 5px;
-      padding: 3.5px 7px;
-      margin-bottom: 4px;
+      border: 1.5px solid #fde68a;
+      border-left: 5px solid #d97706;
+      border-radius: 6px;
+      padding: 7px 12px;
+      margin-bottom: 7px;
     }
 
     .hinge-box .box-header {
-      font-size: 6.8pt;
+      font-size: 8.4pt;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
     }
 
     .hinge-box p {
       margin: 0;
-      font-size: 6.8pt;
+      font-size: 8.3pt;
       color: #451a03;
-      line-height: 1.28;
+      line-height: 1.38;
       font-style: italic;
     }
 
     /* Poetry Box */
     .poem-box {
       background: #fafaf9;
-      border: 1px solid #e7e5e4;
-      border-left: 3.5px solid #78716c;
-      border-radius: 5px;
-      padding: 4px 7px;
-      margin-bottom: 4px;
+      border: 1.5px solid #e7e5e4;
+      border-left: 4.5px solid #78716c;
+      border-radius: 6px;
+      padding: 7px 12px;
+      margin-bottom: 7px;
     }
 
     .poem-box .poem-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
       border-bottom: 1px dashed #d6d3d1;
-      padding-bottom: 2px;
+      padding-bottom: 3px;
     }
 
     .poem-box .poem-title {
       font-family: 'Playfair Display', serif;
-      font-size: 8pt;
+      font-size: 10.2pt;
       font-weight: 700;
       color: #292524;
     }
 
     .poem-box .poem-meta {
-      font-size: 6pt;
+      font-size: 7.6pt;
       color: #78716c;
       font-weight: 700;
       text-transform: uppercase;
@@ -269,71 +271,71 @@ function getHtmlContent() {
     .poem-box .poem-lines {
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: 6.6pt;
+      font-size: 8.3pt;
       color: #292524;
-      line-height: 1.26;
+      line-height: 1.36;
       white-space: pre-line;
     }
 
     /* Visual Media & Grid Utilities */
     .photo-card {
       background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      padding: 3px;
+      border: 1.2px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 5px;
       text-align: center;
     }
 
     .photo-card img {
       width: 100%;
-      border-radius: 2px;
+      border-radius: 3px;
       object-fit: cover;
       display: block;
     }
 
     .photo-card .caption {
-      font-size: 6.1pt;
+      font-size: 7.5pt;
       color: #475569;
       font-style: italic;
-      margin-top: 2px;
-      line-height: 1.2;
+      margin-top: 3px;
+      line-height: 1.3;
       text-align: left;
     }
 
     .grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5px;
+      gap: 10px;
     }
 
     .grid-3col {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4px;
+      gap: 8px;
     }
 
     .compact-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 6.6pt;
+      font-size: 8pt;
     }
 
     .compact-table th {
       background: #0f172a;
       color: #ffffff;
       text-align: left;
-      padding: 2.5px 4.5px;
-      font-size: 6.1pt;
+      padding: 4px 7px;
+      font-size: 7.5pt;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
 
     .compact-table td {
-      padding: 2px 4.5px;
+      padding: 3.5px 7px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
       vertical-align: top;
-      line-height: 1.22;
+      line-height: 1.34;
     }
 
     .compact-table tr:nth-child(even) td {
@@ -342,9 +344,9 @@ function getHtmlContent() {
 
     /* Running Footer Bar */
     .footer-bar {
-      border-top: 1px solid #cbd5e1;
-      padding-top: 2.5px;
-      font-size: 6.4pt;
+      border-top: 1.5px solid #cbd5e1;
+      padding-top: 4px;
+      font-size: 7.8pt;
       font-weight: 600;
       color: #64748b;
       display: flex;
@@ -357,10 +359,10 @@ function getHtmlContent() {
       font-weight: 800;
       color: #1e3a8a;
       background: #eff6ff;
-      padding: 1px 5px;
-      border-radius: 3px;
+      padding: 1.5px 7px;
+      border-radius: 4px;
       border: 1px solid #bfdbfe;
-      font-size: 6.4pt;
+      font-size: 7.8pt;
     }
   </style>
 </head>
@@ -369,37 +371,37 @@ function getHtmlContent() {
   <!-- ================= PAGE 1: COVER & MISSION ================= -->
   <div class="page">
     <div>
-      <div style="border-bottom: 1.5px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="border-bottom: 2px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <span style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.08em; display: block;">The History Portal</span>
-          <span style="font-size: 6.4pt; color: #64748b; font-weight: 600;">Department of History · Ypres Salient Fieldwork</span>
+          <span style="font-size: 13pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.08em; display: block;">The History Portal</span>
+          <span style="font-size: 8.8pt; color: #64748b; font-weight: 600;">Department of History · Ypres Salient Fieldwork</span>
         </div>
         <div style="text-align: right;">
-          <span style="font-size: 7.6pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: block;">The History Boys</span>
-          <span style="font-size: 6pt; color: #64748b; font-weight: 600;">Specialist Battlefield Education</span>
+          <span style="font-size: 11pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: block;">The History Boys</span>
+          <span style="font-size: 8.5pt; color: #64748b; font-weight: 600;">Specialist Battlefield Education</span>
         </div>
       </div>
 
-      <div style="text-align: center; margin-bottom: 5px;">
-        <div style="display: inline-block; background: #eff6ff; border: 1px solid #93c5fd; color: #1e3a8a; font-size: 6.5pt; font-weight: 800; padding: 2px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px;">
-          Tour Leader Field Pocket Guide · Staff Edition
+      <div style="text-align: center; margin-bottom: 12px;">
+        <div style="display: inline-block; background: #eff6ff; border: 1.5px solid #93c5fd; color: #1e3a8a; font-size: 8.8pt; font-weight: 800; padding: 3px 16px; border-radius: 16px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+          Tour Leader Field Companion · Staff Edition (A4)
         </div>
-        <h1 style="font-size: 19pt; line-height: 1.1; color: #0f172a; margin-bottom: 2px; letter-spacing: 0.02em;">
+        <h1 style="font-size: 28pt; line-height: 1.1; color: #0f172a; margin-bottom: 3px; letter-spacing: 0.02em;">
           YPRES 1914–1918
         </h1>
-        <div style="font-size: 8.6pt; font-weight: 600; color: #b45309; font-style: italic;">
-          Master Tour Scripts, Site Storytelling, Look-Fors &amp; Timings
+        <div style="font-size: 12pt; font-weight: 600; color: #b45309; font-style: italic;">
+          Master Tour Scripts, Site Storytelling, Look-Fors, Timings &amp; Primary Readings
         </div>
       </div>
 
       <!-- Tour Leadership Box -->
-      <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
-        <div style="font-size: 6.9pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+        <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           Expedition Directorate &amp; 24/7 Field Contacts
         </div>
-        <div style="font-size: 6.7pt; line-height: 1.32; color: #1e293b;">
+        <div style="font-size: 8.4pt; line-height: 1.45; color: #1e293b;">
           <strong>Tour Leaders:</strong> Department Lead &amp; Mr James Garrett (The History Boys)<br>
-          <strong>Field Staff:</strong> Accompanying Staff (Pastoral Care &amp; First Aid Leads)<br>
+          <strong>Accompanying Staff:</strong> Fieldwork Staff (Pastoral Care &amp; First Aid Leads)<br>
           <strong>Dates:</strong> Thursday 1st – Saturday 3rd October 2026<br>
           <strong>Base Camp:</strong> Peace Village Hostel, Nieuwkerkestraat 9, 8957 Mesen (+32 57 226 040)<br>
           <strong>24/7 School Emergency Base:</strong> +44 (0)1329 662182 / 07825 297749
@@ -407,35 +409,35 @@ function getHtmlContent() {
       </div>
 
       <!-- Cover Photo -->
-      <div style="margin-bottom: 5px;">
-        <img src="${stubbingtonMem}" alt="Holy Rood Memorial" style="width: 100%; height: 130px; object-fit: cover; border-radius: 4px; border: 1.2px solid #cbd5e1;">
-        <div style="font-size: 6.1pt; color: #64748b; font-style: italic; margin-top: 2px; text-align: center;">
+      <div style="margin-bottom: 10px;">
+        <img src="${stubbingtonMem}" alt="Holy Rood Memorial" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1.5px solid #cbd5e1;">
+        <div style="font-size: 7.8pt; color: #64748b; font-style: italic; margin-top: 4px; text-align: center;">
           The War Memorial at Holy Rood Church, Stubbington — Anchoring our school expedition to our local parish fallen.
         </div>
       </div>
 
       <!-- The Charge -->
-      <div style="background: #fffbeb; border: 1.2px solid #fde68a; border-left: 3.5px solid #b45309; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
-        <div style="font-size: 6.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; margin-bottom: 1.5px;">
+      <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 5px solid #b45309; border-radius: 7px; padding: 10px 14px; margin-bottom: 9px;">
+        <div style="font-size: 8.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; margin-bottom: 3px;">
           The Tour Leader's Charge: A Pilgrimage of Remembrance
         </div>
-        <p style="font-size: 6.7pt; color: #334155; line-height: 1.28; margin: 0 0 2px 0;">
-          This pocket guide equips the teacher with rich, memorable historical narratives at every cemetery and trench. Each stop provides a 45-second spoken pitch, 3 concrete look-fors, an enquiry hinge question, and the complete war poem.
+        <p style="font-size: 8.4pt; color: #334155; line-height: 1.42; margin: 0 0 5px 0;">
+          This master companion equips the tour leader with rich, dramatic historical narratives at every cemetery and trench. Each stop provides a 45-second spoken pitch, 3 concrete look-fors on site, an enquiry hinge question, and the complete war poem printed in full.
         </p>
-        <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 6.7pt; color: #1e3a8a;">
+        <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 8.6pt; color: #1e3a8a;">
           "They shall grow not old, as we that are left grow old... At the going down of the sun and in the morning, We will remember them."
         </div>
       </div>
 
       <!-- Booklet Format Badge -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; display: flex; justify-content: space-between; align-items: center; font-size: 6.2pt; color: #475569;">
-        <span><strong>Pagination:</strong> 16-Page Saddle-Stitch Format (A5 Folded)</span>
-        <span><strong>Curriculum:</strong> Edexcel GCSE Paper 1 &amp; Key Stage 3</span>
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 7.8pt; color: #475569;">
+        <span><strong>Format:</strong> 16-Page A4 Master Field Companion (Saddle-Stitch / Binder Ready)</span>
+        <span><strong>Curriculum:</strong> Edexcel GCSE Paper 1 (Western Front) &amp; Key Stage 3</span>
       </div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 1 of 16</span>
     </div>
   </div>
@@ -456,16 +458,16 @@ function getHtmlContent() {
       </div>
 
       <!-- Map -->
-      <div class="photo-card" style="margin-bottom: 4px; padding: 2px;">
-        <img src="${salientMap}" alt="Salient Map" style="height: 76px; object-fit: contain; background: #ffffff;">
+      <div class="photo-card" style="margin-bottom: 8px; padding: 4px;">
+        <img src="${salientMap}" alt="Salient Map" style="height: 140px; object-fit: contain; background: #ffffff;">
       </div>
 
       <!-- Timetable Table -->
-      <table class="compact-table" style="margin-bottom: 4px;">
+      <table class="compact-table" style="margin-bottom: 8px;">
         <thead>
           <tr>
-            <th style="width: 19%;">Time</th>
-            <th style="width: 38%;">Site / Location</th>
+            <th style="width: 17%;">Time</th>
+            <th style="width: 36%;">Site / Location</th>
             <th>Teacher Focus &amp; Protocol</th>
           </tr>
         </thead>
@@ -473,82 +475,82 @@ function getHtmlContent() {
           <tr>
             <td><strong>D1 · 06:15</strong></td>
             <td>Depart The History Portal · Folkestone</td>
-            <td>Jet Connect coach; passports collected; 11:20 Eurotunnel.</td>
+            <td>Jet Connect coach; passports collected; 11:20 Eurotunnel; arrival in Flanders.</td>
           </tr>
           <tr>
             <td><strong>D1 · 14:30</strong></td>
             <td><strong>Stop 1:</strong> Essex Farm ADS</td>
-            <td>Bunker 4; Alexis Helmer burial; read <em>In Flanders Fields</em>.</td>
+            <td>Bunker 4; Alexis Helmer burial; read <em>In Flanders Fields</em>; Valentine Strudwick (15 yrs).</td>
           </tr>
           <tr>
             <td><strong>D1 · 15:15</strong></td>
             <td><strong>Stop 2:</strong> Yorkshire Trench</td>
-            <td>Canal bank breastworks, A-frames, deep dugout entrance.</td>
+            <td>Canal bank breastworks, A-frames, deep dugout entrance, phosgene gas attack.</td>
           </tr>
           <tr>
             <td><strong>D1 · 16:00</strong></td>
             <td><strong>Stop 3:</strong> Langemarck Cemetery</td>
-            <td><em>Kindermord</em> myth; Kameradengrab (24,917); Krieger bronzes.</td>
+            <td><em>Kindermord</em> myth; Kameradengrab (24,917); Emil Krieger bronzes; Hitler visit.</td>
           </tr>
           <tr>
             <td><strong>D1 · 17:00</strong></td>
             <td><strong>Stop 4:</strong> Hooge Crater Museum</td>
-            <td>Mine warfare crater; 1915 flamethrower attack site; artifacts.</td>
+            <td>19 July 1915 mine blast (120ft crater); 30 July flamethrower debut; museum weapons.</td>
           </tr>
           <tr>
             <td><strong>D1 · 18:00</strong></td>
             <td>Arrive Peace Village, Mesen</td>
-            <td>Room keys, 18:30 dinner, 19:30 evening seminar room debrief.</td>
+            <td>Room keys, 18:30 dinner, 19:30 evening seminar room debrief and D.I.R.T. marking.</td>
           </tr>
           <tr>
             <td><strong>D2 · 09:15</strong></td>
             <td><strong>Stop 5:</strong> Vancouver Corner</td>
-            <td>First gas attack (22 April 1915); Canadian stand; Brooding Soldier.</td>
+            <td>First gas attack (22 April 1915); Canadian stand; urine-cloth defense; Brooding Soldier.</td>
           </tr>
           <tr>
             <td><strong>D2 · 10:00</strong></td>
             <td><strong>Stop 6:</strong> Sanctuary Wood</td>
-            <td>Preserved British trenches, traverses, mud, duckboard sumps.</td>
+            <td>Preserved British frontline trenches, traverses, mud, duckboard sumps, trench rats.</td>
           </tr>
           <tr>
             <td><strong>D2 · 11:45</strong></td>
             <td>Lunch &amp; Aldi Supermarket, Ypres</td>
-            <td>Supervised shopping for fresh picnic lunches &amp; rations.</td>
+            <td>Supervised shopping for fresh picnic lunches, fruit, and snacks in town centre.</td>
           </tr>
           <tr>
             <td><strong>D2 · 13:00</strong></td>
             <td><strong>Stop 7:</strong> Tyne Cot Cemetery</td>
-            <td>11,961 graves; Baker pillbox cross; rear wall (34,984 missing).</td>
+            <td>11,961 graves (70% unknown); Baker pillbox cross; rear wall (34,984 missing names).</td>
           </tr>
           <tr>
             <td><strong>D2 · 14:30</strong></td>
             <td><strong>Stop 8:</strong> Lijssenthoek Cemetery</td>
-            <td>Casualty Clearing Station chain; Staff Nurse Nellie Spindler.</td>
+            <td>Casualty Clearing Station chain; 300,000 wounded; Staff Nurse Nellie Spindler.</td>
           </tr>
           <tr>
             <td><strong>D2 · 16:00</strong></td>
             <td><strong>Stop 9:</strong> Passchendaele Museum</td>
-            <td>Subterranean dugouts 20ft deep; reconstructed trench systems.</td>
+            <td>Subterranean dugouts 20ft deep; living bunks; reconstructed trench systems.</td>
           </tr>
           <tr>
             <td><strong>D2 · 19:20</strong></td>
             <td><strong>Stop 10:</strong> Menin Gate Last Post</td>
-            <td>Wreath laying; Panel 35 (Franklin &amp; Ayling); Fire Brigade buglers.</td>
+            <td>Wreath laying; Panel 35 (Franklin &amp; Ayling); volunteer Fire Brigade buglers at 20:00.</td>
           </tr>
           <tr>
             <td><strong>D3 · 09:30</strong></td>
             <td><strong>Stop 11:</strong> Ypres Cloth Hall</td>
-            <td>Grote Markt; stone-by-stone reconstruction; chocolate shops.</td>
+            <td>Grote Markt; stone-by-stone reconstruction; civilian rebirth; Belgian chocolate shops.</td>
           </tr>
           <tr>
             <td><strong>D3 · 10:45</strong></td>
             <td><strong>Stop 12:</strong> Talbot House, Poperinge</td>
-            <td>Tubby Clayton; Everyman sanctuary; attic Upper Room chapel.</td>
+            <td>Tubby Clayton; Everyman sanctuary; Upper Room hop-loft chapel; carpenter's altar.</td>
           </tr>
           <tr>
             <td><strong>D3 · 12:45</strong></td>
             <td><strong>Stop 13:</strong> Poperinge Death Cells</td>
-            <td>Town Hall execution post; military justice; 2006 pardons.</td>
+            <td>Town Hall execution post; military justice; 306 shot at dawn; 2006 statutory pardon.</td>
           </tr>
           <tr>
             <td><strong>D3 · 14:30</strong></td>
@@ -559,18 +561,18 @@ function getHtmlContent() {
       </table>
 
       <!-- Pacing Directive -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #0f172a; text-transform: uppercase;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 7px 10px;">
+        <div style="font-size: 8.2pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
           Driver Hours &amp; Supervisory Protocol
         </div>
-        <div style="font-size: 6.3pt; color: #475569; line-height: 1.23;">
-          Our Jet Connect driver operates under strict EU tachograph hours. Group must board 10 mins before departure. Headcounts mandatory at every gate. Buddy-pair system active throughout.
+        <div style="font-size: 7.8pt; color: #475569; line-height: 1.38;">
+          Our Jet Connect driver operates under strict EU tachograph hours. Group must board 10 mins before scheduled departures. Headcounts mandatory at every gate. Designated assembly point is always the coach bay.
         </div>
       </div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 2 of 16</span>
     </div>
   </div>
@@ -599,39 +601,39 @@ function getHtmlContent() {
       </div>
 
       <!-- Headstone Anatomy Graphic & Breakdown -->
-      <div class="grid-2col" style="margin-bottom: 4px; align-items: stretch;">
-        <div class="photo-card" style="padding: 2px;">
-          <img src="${headstoneImg}" alt="CWGC Headstone" style="height: 125px; object-fit: contain; background: #ffffff;">
-          <div class="caption">CWGC Portland Stone: 81cm x 38cm x 7.5cm. Absolute equality in death.</div>
+      <div class="grid-2col" style="margin-bottom: 7px; align-items: stretch;">
+        <div class="photo-card" style="padding: 4px;">
+          <img src="${headstoneImg}" alt="CWGC Headstone" style="height: 175px; object-fit: contain; background: #ffffff;">
+          <div class="caption">CWGC Portland Stone: 81cm x 38cm x 7.5cm. Absolute equality across ranks.</div>
         </div>
 
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
               CWGC Headstone Anatomy
             </div>
-            <div style="font-size: 6.5pt; color: #334155; line-height: 1.24;">
+            <div style="font-size: 8.2pt; color: #334155; line-height: 1.4;">
               <strong>1. Regimental Badge:</strong> Identical size for privates and generals.<br>
               <strong>2. Service Details:</strong> Number, rank, name, honors, battalion.<br>
               <strong>3. Religious Emblem:</strong> Latin Cross, Star of David, or blank.<br>
               <strong>4. Date &amp; Age:</strong> Salient average age was 24.<br>
               <strong>5. Personal Inscription:</strong> Family-chosen (max 66 letters; 3½d per letter).<br>
-              <strong>Unknowns:</strong> Kipling's universal words: <em>"A Soldier of the Great War — Known unto God."</em>
+              <strong>Unknowns:</strong> Rudyard Kipling's universal words: <em>"A Soldier of the Great War — Known unto God."</em>
             </div>
           </div>
-          <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 3px; font-size: 6pt; color: #475569;">
-            <strong>Principles:</strong> Equality across rank, permanence in foreign soil, no repatriation.
+          <div style="background: #f1f5f9; padding: 5px 8px; border-radius: 4px; font-size: 7.6pt; color: #475569;">
+            <strong>Core Principles:</strong> Radical equality in death, permanence in foreign soil, zero repatriation.
           </div>
         </div>
       </div>
 
       <!-- Inscription Typologies Box -->
-      <div style="background: #fefce8; border: 1.2px solid #fde047; border-left: 3.5px solid #ca8a04; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #854d0e; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #fefce8; border: 1.5px solid #fde047; border-left: 5px solid #ca8a04; border-radius: 6px; padding: 7px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #854d0e; text-transform: uppercase; margin-bottom: 2px;">
           Deciphering Family Inscription Typologies
         </div>
-        <div style="font-size: 6.4pt; color: #713f12; line-height: 1.23;">
-          Have pupils classify personal epitaphs into four categories: (1) <strong>Christian Hope:</strong> <em>"Thy Will Be Done"</em>; (2) <strong>Classical Duty:</strong> <em>"For King &amp; Country"</em>; (3) <strong>Raw Grief:</strong> <em>"A Day of Memory Sad to Recall, Without Goodbye He Left Us All"</em>; (4) <strong>Stoic Pride:</strong> <em>"Duty Nobly Done"</em>.
+        <div style="font-size: 8pt; color: #713f12; line-height: 1.38;">
+          Have pupils classify personal epitaphs into four distinct categories: (1) <strong>Christian Hope:</strong> <em>"Thy Will Be Done"</em>; (2) <strong>Classical Duty:</strong> <em>"For King &amp; Country"</em>; (3) <strong>Raw Grief:</strong> <em>"A Day of Memory Sad to Recall, Without Goodbye He Left Us All"</em>; (4) <strong>Stoic Pride:</strong> <em>"Duty Nobly Done"</em>.
         </div>
       </div>
 
@@ -645,7 +647,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 3 of 16</span>
     </div>
   </div>
@@ -674,29 +676,29 @@ function getHtmlContent() {
       </div>
 
       <!-- 3 Lowry Brothers Cards -->
-      <div class="grid-3col" style="margin-bottom: 4px;">
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px; text-align: center;">
-          <img src="${lowryWilliam}" alt="William" style="height: 52px; width: 40px; object-fit: cover; margin: 0 auto 2px auto; display: block; border-radius: 2px;">
-          <div style="font-size: 6.7pt; font-weight: 800; color: #0f172a;">Lieut. William Lowry</div>
-          <div style="font-size: 5.7pt; color: #b45309; font-weight: 700;">8th Gurkha Rifles (Age 25)</div>
-          <div style="font-size: 5.7pt; color: #475569; line-height: 1.18;">Killed 4 June 1915, Gallipoli charge. Helles Memorial.</div>
+      <div class="grid-3col" style="margin-bottom: 7px;">
+        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 7px; text-align: center;">
+          <img src="${lowryWilliam}" alt="William" style="height: 80px; width: 60px; object-fit: cover; margin: 0 auto 4px auto; display: block; border-radius: 3px;">
+          <div style="font-size: 8.2pt; font-weight: 800; color: #0f172a;">Lieut. William Lowry</div>
+          <div style="font-size: 7.2pt; color: #b45309; font-weight: 700;">8th Gurkha Rifles (Age 25)</div>
+          <div style="font-size: 7.4pt; color: #475569; line-height: 1.3;">Killed 4 June 1915, Gallipoli charge up Gully Ravine. Helles Memorial.</div>
         </div>
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px; text-align: center;">
-          <img src="${lowryCyril}" alt="Cyril" style="height: 52px; width: 40px; object-fit: cover; margin: 0 auto 2px auto; display: block; border-radius: 2px;">
-          <div style="font-size: 6.7pt; font-weight: 800; color: #0f172a;">Capt. Cyril Lowry</div>
-          <div style="font-size: 5.7pt; color: #b45309; font-weight: 700;">2nd West Yorks (Age 20)</div>
-          <div style="font-size: 5.7pt; color: #475569; line-height: 1.18;">Killed 25 Mar 1918, Somme. Pozières Memorial.</div>
+        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 7px; text-align: center;">
+          <img src="${lowryCyril}" alt="Cyril" style="height: 80px; width: 60px; object-fit: cover; margin: 0 auto 4px auto; display: block; border-radius: 3px;">
+          <div style="font-size: 8.2pt; font-weight: 800; color: #0f172a;">Capt. Cyril Lowry</div>
+          <div style="font-size: 7.2pt; color: #b45309; font-weight: 700;">2nd West Yorks (Age 20)</div>
+          <div style="font-size: 7.4pt; color: #475569; line-height: 1.3;">Killed 25 Mar 1918, Somme counter-attack. Pozières Memorial.</div>
         </div>
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px; text-align: center;">
-          <img src="${lowryEric}" alt="Eric" style="height: 52px; width: 40px; object-fit: cover; margin: 0 auto 2px auto; display: block; border-radius: 2px;">
-          <div style="font-size: 6.7pt; font-weight: 800; color: #0f172a;">Lt. Col. Eric Lowry</div>
-          <div style="font-size: 5.7pt; color: #b45309; font-weight: 700;">2nd West Yorks DSO MC (25)</div>
-          <div style="font-size: 5.7pt; color: #475569; line-height: 1.18;">Killed 23 Sep 1918, Arras. La Targette Cemetery.</div>
+        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 7px; text-align: center;">
+          <img src="${lowryEric}" alt="Eric" style="height: 80px; width: 60px; object-fit: cover; margin: 0 auto 4px auto; display: block; border-radius: 3px;">
+          <div style="font-size: 8.2pt; font-weight: 800; color: #0f172a;">Lt. Col. Eric Lowry</div>
+          <div style="font-size: 7.2pt; color: #b45309; font-weight: 700;">2nd West Yorks DSO MC (25)</div>
+          <div style="font-size: 7.4pt; color: #475569; line-height: 1.3;">Killed 23 Sep 1918, Arras outpost inspection. La Targette Cemetery.</div>
         </div>
       </div>
 
       <!-- Parish Fallen Table -->
-      <table class="compact-table" style="margin-bottom: 4px;">
+      <table class="compact-table" style="margin-bottom: 7px;">
         <thead>
           <tr>
             <th>Local Soldier</th>
@@ -708,32 +710,32 @@ function getHtmlContent() {
           <tr>
             <td><strong>Pte. Thomas Franklin</strong></td>
             <td>1st Bn, Hampshire Regt (Age 23)</td>
-            <td><strong>Menin Gate · Panel 35</strong> (Frezenberg Ridge, 1915)</td>
+            <td><strong>Menin Gate · Panel 35</strong> (Frezenberg Ridge, 29 April 1915)</td>
           </tr>
           <tr>
             <td><strong>Pte. William Ayling</strong></td>
             <td>1st Bn, Hampshire Regt (Age 20)</td>
-            <td><strong>Menin Gate · Panel 35</strong> (Mortar attack, July 1915)</td>
+            <td><strong>Menin Gate · Panel 35</strong> (Trench mortar attack, 9 July 1915)</td>
           </tr>
           <tr>
             <td><strong>Pte. Sydney Muckett</strong></td>
             <td>15th Bn, Hampshire Regt (Age 21)</td>
-            <td><strong>Tyne Cot · Panels 88–90</strong> (Menin Road Ridge, 1917)</td>
+            <td><strong>Tyne Cot · Panels 88–90</strong> (Menin Road Ridge, 20 September 1917)</td>
           </tr>
           <tr>
             <td><strong>Pte. Arthur Rye</strong></td>
             <td>14th Bn, Hampshire Regt (Age 21)</td>
-            <td><strong>Tyne Cot · Panels 88–90</strong> (Polygon Wood, 1917)</td>
+            <td><strong>Tyne Cot · Panels 88–90</strong> (Polygon Wood, 26 September 1917)</td>
           </tr>
           <tr>
             <td><strong>L/Cpl. Archibald Ward</strong></td>
             <td>15th Bn, Hampshire Regt (Age 23)</td>
-            <td><strong>Tyne Cot · Panels 88–90</strong> (Killed 14 Oct 1918 in mist)</td>
+            <td><strong>Tyne Cot · Panels 88–90</strong> (Gheluwe advance in mist, 14 October 1918)</td>
           </tr>
           <tr>
             <td><strong>Pte. Charles Warland</strong></td>
             <td>3rd/4th The Queen's (Age 20)</td>
-            <td><strong>Tyne Cot · Panels 14–17</strong> (Broodseinde marsh, 1917)</td>
+            <td><strong>Tyne Cot · Panels 14–17</strong> (Broodseinde marsh, 4 October 1917)</td>
           </tr>
         </tbody>
       </table>
@@ -748,7 +750,7 @@ function getHtmlContent() {
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 4 of 16</span>
     </div>
   </div>
@@ -777,11 +779,11 @@ function getHtmlContent() {
       </div>
 
       <!-- Boy Soldier Valentine Strudwick Focus -->
-      <div style="background: #fef2f2; border: 1.2px solid #fecaca; border-left: 3.5px solid #dc2626; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.8pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px;">
           Case Study: Private Valentine Strudwick (Plot I. U. 8)
         </div>
-        <div style="font-size: 6.5pt; color: #450a0a; line-height: 1.25;">
+        <div style="font-size: 8.1pt; color: #450a0a; line-height: 1.38;">
           Enlisted at 14 lying about his age; sent to Flanders with the 8th Rifle Brigade. Killed on 14 January 1916 aged just <strong>15 years and 11 months</strong>—one of the youngest casualties on the Western Front. Point out his mother's moving epitaph: <em>"Not gone from memory, not gone from love, but gone to our Father's home above."</em>
         </div>
       </div>
@@ -803,7 +805,7 @@ function getHtmlContent() {
             <span class="poem-title">In Flanders Fields</span>
             <span class="poem-meta"> · Lt. Col. John McCrae (Canadian AMC) · 3 May 1915</span>
           </div>
-          <img src="${mccraeImg}" alt="John McCrae" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${mccraeImg}" alt="John McCrae" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">In Flanders fields the poppies blow
 Between the crosses, row on row,
@@ -834,7 +836,7 @@ In Flanders fields.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 5 of 16</span>
     </div>
   </div>
@@ -863,23 +865,23 @@ In Flanders fields.</div>
       </div>
 
       <!-- Photo & Trench Anatomy Card -->
-      <div class="grid-2col" style="margin-bottom: 4px; align-items: stretch;">
-        <div class="photo-card" style="padding: 2px;">
-          <img src="${cheshireTrench}" alt="Trench Construction" style="height: 95px; object-fit: cover;">
-          <div class="caption">Frontline breastworks: Sandbag revetments and duckboards.</div>
+      <div class="grid-2col" style="margin-bottom: 7px; align-items: stretch;">
+        <div class="photo-card" style="padding: 4px;">
+          <img src="${cheshireTrench}" alt="Trench Construction" style="height: 140px; object-fit: cover;">
+          <div class="caption">Frontline breastworks: Sandbag revetments, duckboards, and A-frames.</div>
         </div>
 
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
               Traverses &amp; Sump Drainage
             </div>
-            <div style="font-size: 6.5pt; color: #334155; line-height: 1.23;">
+            <div style="font-size: 8.1pt; color: #334155; line-height: 1.4;">
               Trenches followed a rigid 90-degree zig-zag pattern with thick earth baffles called <strong>traverses</strong> to isolate shell blast shrapnel. Sump pits beneath duckboards drained stagnant water to combat trench foot.
             </div>
           </div>
-          <div style="background: #eff6ff; padding: 2px 4px; border-radius: 3px; font-size: 6pt; color: #1e3a8a;">
-            Deep dugout shafts sheltered 200 men from high explosive barrages.
+          <div style="background: #eff6ff; padding: 5px 8px; border-radius: 4px; font-size: 7.6pt; color: #1e3a8a;">
+            Deep dugout shafts sheltered 200 men from relentless high-explosive bombardments.
           </div>
         </div>
       </div>
@@ -895,11 +897,11 @@ In Flanders fields.</div>
       </div>
 
       <!-- Context Note: The Dec 1915 Phosgene Attack -->
-      <div style="background: #eff6ff; border: 1.2px solid #bfdbfe; border-left: 3.5px solid #2563eb; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
           Tactical Event: The Phosgene Attack of 19 December 1915
         </div>
-        <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #1e293b; line-height: 1.38;">
           This sector saw the German military debut of <strong>phosgene gas</strong>, mixed with chlorine. Colorless and smelling faintly of moldy hay, phosgene was six times deadlier than chlorine because its suffocating fluid buildup in the lungs took 24 to 48 hours to manifest, catching unwary troops without gas helmets.
         </div>
       </div>
@@ -914,7 +916,7 @@ In Flanders fields.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 6 of 16</span>
     </div>
   </div>
@@ -943,11 +945,11 @@ In Flanders fields.</div>
       </div>
 
       <!-- Adolf Hitler Historical Connection -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
           Historical Context: Adolf Hitler &amp; The List Regiment (1914 &amp; 1940)
         </div>
-        <div style="font-size: 6.4pt; color: #334155; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #334155; line-height: 1.38;">
           A young 25-year-old dispatch runner named Adolf Hitler served here in October 1914 with the 16th Bavarian Reserve Regiment (the List Regiment). The myth of heroic youth sacrifice at Langemarck shaped Nazi propaganda in the 1920s and 30s. On 1 June 1940, immediately following the fall of France, Hitler returned here and was photographed standing in triumph outside the gatehouse.
         </div>
       </div>
@@ -969,7 +971,7 @@ In Flanders fields.</div>
             <span class="poem-title">When You See Millions of the Mouthless Dead</span>
             <span class="poem-meta"> · Capt. Charles Sorley (7th Suffolks) · 1915</span>
           </div>
-          <img src="${sorleyImg}" alt="Charles Sorley" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${sorleyImg}" alt="Charles Sorley" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">When you see millions of the mouthless dead
 Across your dreams in pale battalions go,
@@ -998,7 +1000,7 @@ Great death has made all his for evermore.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 7 of 16</span>
     </div>
   </div>
@@ -1027,22 +1029,22 @@ Great death has made all his for evermore.</div>
       </div>
 
       <!-- Photo & Crater Breakdown -->
-      <div class="grid-2col" style="margin-bottom: 4px; align-items: stretch;">
-        <div class="photo-card" style="padding: 2px;">
-          <img src="${hoogeCrater}" alt="Hooge Crater" style="height: 105px;">
-          <div class="caption">The water-filled mine crater rim at Hooge along the Menin Road.</div>
+      <div class="grid-2col" style="margin-bottom: 7px; align-items: stretch;">
+        <div class="photo-card" style="padding: 4px;">
+          <img src="${hoogeCrater}" alt="Hooge Crater" style="height: 145px;">
+          <div class="caption">The water-filled mine crater basin at Hooge along the Menin Road.</div>
         </div>
 
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
               The Menin Road Bloodbath
             </div>
-            <div style="font-size: 6.5pt; color: #334155; line-height: 1.23;">
+            <div style="font-size: 8.1pt; color: #334155; line-height: 1.4;">
               Because Hooge sat on the main road between Ypres and Menen, both sides fought relentlessly for control of its shattered stables and chateau ruins. Artillery pounded the sector day and night, turning the woods into jagged stumps known as 'Sanctuary Wood' and 'Chateau Wood'.
             </div>
           </div>
-          <div style="background: #eff6ff; padding: 2px 4px; border-radius: 3px; font-size: 6pt; color: #1e3a8a;">
+          <div style="background: #eff6ff; padding: 5px 8px; border-radius: 4px; font-size: 7.6pt; color: #1e3a8a;">
             <strong>Museum Highlights:</strong> Preserved flamethrower nozzles, trench armour, sniper plates.
           </div>
         </div>
@@ -1059,11 +1061,11 @@ Great death has made all his for evermore.</div>
       </div>
 
       <!-- Evening Transfer Note -->
-      <div style="background: #f0fdf4; border: 1.2px solid #bbf7d0; border-left: 3.5px solid #16a34a; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 2px;">
           Teacher Directive: Evening Base Camp Transfer to Mesen
         </div>
-        <div style="font-size: 6.4pt; color: #14532d; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #14532d; line-height: 1.38;">
           Board coach at 17:30. Travel south past Messines Ridge to Peace Village Hostel (Mesen). Check-in at 18:00; dinner at 18:30; evening seminar debrief on Day 1 findings in Seminar Room A from 19:30 to 20:30.
         </div>
       </div>
@@ -1078,7 +1080,7 @@ Great death has made all his for evermore.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 8 of 16</span>
     </div>
   </div>
@@ -1123,7 +1125,7 @@ Great death has made all his for evermore.</div>
             <span class="poem-title">Dulce et Decorum Est</span>
             <span class="poem-meta"> · Wilfred Owen · 1917</span>
           </div>
-          <img src="${owenImg}" alt="Wilfred Owen" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${owenImg}" alt="Wilfred Owen" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">Gas! Gas! Quick, boys!—An ecstasy of fumbling,
 Fitting the clumsy helmets just in time;
@@ -1154,7 +1156,7 @@ Pro patria mori.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 9 of 16</span>
     </div>
   </div>
@@ -1199,7 +1201,7 @@ Pro patria mori.</div>
             <span class="poem-title">Break of Day in the Trenches</span>
             <span class="poem-meta"> · Isaac Rosenberg (Private, King's Own) · 1916</span>
           </div>
-          <img src="${rosenbergImg}" alt="Isaac Rosenberg" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${rosenbergImg}" alt="Isaac Rosenberg" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">The darkness crumbles away.
 It is the same old druid Time as ever,
@@ -1216,6 +1218,7 @@ To cross the sleeping green between.
 What do you see in our eyes
 At the shrieking iron and flame
 Hurled through still heavens?
+What quaver—what heart ague has torn you?
 Poppies from man's roots brought
 But mine in my ear is safe—
 Just a little white with the dust.</div>
@@ -1231,7 +1234,7 @@ Just a little white with the dust.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 10 of 16</span>
     </div>
   </div>
@@ -1260,18 +1263,18 @@ Just a little white with the dust.</div>
       </div>
 
       <!-- Photo & Parish Fallen Focus -->
-      <div class="grid-2col" style="margin-bottom: 4px; align-items: stretch;">
-        <div class="photo-card" style="padding: 2px;">
-          <img src="${tyneCot}" alt="Tyne Cot" style="height: 98px;">
+      <div class="grid-2col" style="margin-bottom: 7px; align-items: stretch;">
+        <div class="photo-card" style="padding: 4px;">
+          <img src="${tyneCot}" alt="Tyne Cot" style="height: 140px;">
           <div class="caption">Cross of Sacrifice mounted directly on captured German bunker.</div>
         </div>
 
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
               Our Parish Fallen at Tyne Cot
             </div>
-            <div style="font-size: 6.5pt; color: #334155; line-height: 1.22;">
+            <div style="font-size: 8.1pt; color: #334155; line-height: 1.38;">
               Lead pupils along the rear memorial wall to locate our four local boys:<br>
               • <strong>Pte. Sydney Muckett</strong> (Panel 88)<br>
               • <strong>Pte. Arthur Rye</strong> (Panel 88)<br>
@@ -1279,7 +1282,7 @@ Just a little white with the dust.</div>
               • <strong>Pte. Charles Warland</strong> (Panel 14)
             </div>
           </div>
-          <div style="background: #eff6ff; padding: 2px 4px; border-radius: 3px; font-size: 6pt; color: #1e3a8a;">
+          <div style="background: #eff6ff; padding: 5px 8px; border-radius: 4px; font-size: 7.6pt; color: #1e3a8a;">
             Lay the school remembrance cross at the central pillbox aperture.
           </div>
         </div>
@@ -1302,7 +1305,7 @@ Just a little white with the dust.</div>
             <span class="poem-title">For the Fallen</span>
             <span class="poem-meta"> · Laurence Binyon · 1914</span>
           </div>
-          <img src="${binyonImg}" alt="Laurence Binyon" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${binyonImg}" alt="Laurence Binyon" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">With proud thanksgiving, a mother for her children,
 England mourns for her dead across the sea...
@@ -1332,7 +1335,7 @@ They sleep beyond England's foam.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 11 of 16</span>
     </div>
   </div>
@@ -1361,11 +1364,11 @@ They sleep beyond England's foam.</div>
       </div>
 
       <!-- Staff Nurse Nellie Spindler Focus -->
-      <div style="background: #fef2f2; border: 1.2px solid #fecaca; border-left: 3.5px solid #dc2626; border-radius: 4px; padding: 3.5px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.8pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px;">
           The Heroine of Lijssenthoek: Staff Nurse Nellie Spindler (Plot XVI. A. 3)
         </div>
-        <div style="font-size: 6.5pt; color: #450a0a; line-height: 1.25;">
+        <div style="font-size: 8.1pt; color: #450a0a; line-height: 1.38;">
           Gather pupils at Plot XVI, Row A, Grave 3. Staff Nurse Nellie Spindler was a 26-year-old nurse from Leeds with Queen Alexandra's Imperial Military Nursing Service. On 21 August 1917, during Third Ypres, a German long-range 5.9-inch naval gun shelled CCS 44. A shell splinter pierced her chest; she died in the arms of her fellow nurses twenty minutes later. She is one of only two female British nurses buried on the Western Front killed by enemy fire, buried with full military honours as buglers sounded the <em>Last Post</em> over her grave.
         </div>
       </div>
@@ -1381,11 +1384,11 @@ They sleep beyond England's foam.</div>
       </div>
 
       <!-- Context Note: The Medical Evacuation Chain -->
-      <div style="background: #eff6ff; border: 1.2px solid #bfdbfe; border-left: 3.5px solid #2563eb; border-radius: 4px; padding: 3.5px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
           The Evacuation Chain: From Mud to Base Hospital
         </div>
-        <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #1e293b; line-height: 1.38;">
           Stretcher Bearers (frontline mud) → <strong>RAP</strong> (Regimental Aid Post, 200m) → <strong>ADS</strong> (Advanced Dressing Station, e.g. Essex Farm, 1-2 miles) → <strong>CCS</strong> (Casualty Clearing Station, e.g. Lijssenthoek, 8 miles) → <strong>Ambulance Train</strong> → <strong>Base Hospital</strong> (Boulogne/Etaples).
         </div>
       </div>
@@ -1400,7 +1403,7 @@ They sleep beyond England's foam.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 12 of 16</span>
     </div>
   </div>
@@ -1429,22 +1432,22 @@ They sleep beyond England's foam.</div>
       </div>
 
       <!-- Dugout Photo Card -->
-      <div class="grid-2col" style="margin-bottom: 4px; align-items: stretch;">
-        <div class="photo-card" style="padding: 2px;">
-          <img src="${passchendaeleDugout}" alt="Passchendaele Dugout" style="height: 105px;">
-          <div class="caption">Reconstructed 20ft subterranean dugout labyrinth at Zonnebeke.</div>
+      <div class="grid-2col" style="margin-bottom: 7px; align-items: stretch;">
+        <div class="photo-card" style="padding: 4px;">
+          <img src="${passchendaeleDugout}" alt="Passchendaele Dugout" style="height: 140px;">
+          <div class="caption">Reconstructed 20ft subterranean dugout labyrinth at Zonnebeke Chateau.</div>
         </div>
 
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
               Subterranean Survival
             </div>
-            <div style="font-size: 6.5pt; color: #334155; line-height: 1.23;">
+            <div style="font-size: 8.1pt; color: #334155; line-height: 1.4;">
               Air had to be manually pumped down through ventilation shafts using bellows. A single candle was kept burning at floor level: if the flame sputtered and died, it warned the men that carbon dioxide was pooling and asphyxiation was imminent.
             </div>
           </div>
-          <div style="background: #eff6ff; padding: 2px 4px; border-radius: 3px; font-size: 6pt; color: #1e3a8a;">
+          <div style="background: #eff6ff; padding: 5px 8px; border-radius: 4px; font-size: 7.6pt; color: #1e3a8a;">
             <strong>Outdoor Trench Park:</strong> Authentic comparison of British A-frames vs German hurdles.
           </div>
         </div>
@@ -1461,11 +1464,11 @@ They sleep beyond England's foam.</div>
       </div>
 
       <!-- Evening Menin Gate Transit Briefing -->
-      <div style="background: #f0fdf4; border: 1.2px solid #bbf7d0; border-left: 3.5px solid #16a34a; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 2px;">
           Tour Leader Briefing: Transfer to Ypres for Menin Gate
         </div>
-        <div style="font-size: 6.4pt; color: #14532d; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #14532d; line-height: 1.38;">
           Board coach at 17:30. Travel into Ypres; early dinner in town square / hostel at 18:15. Depart for Menin Gate at 19:15 sharp to secure prime viewing positions under the north archway before crowds assemble for the 20:00 Last Post ceremony.
         </div>
       </div>
@@ -1480,7 +1483,7 @@ They sleep beyond England's foam.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 13 of 16</span>
     </div>
   </div>
@@ -1509,25 +1512,25 @@ They sleep beyond England's foam.</div>
       </div>
 
       <!-- Photo & Protocol Card -->
-      <div class="grid-2col" style="margin-bottom: 4px; align-items: stretch;">
-        <div class="photo-card" style="padding: 2px;">
-          <img src="${meninGate}" alt="Menin Gate" style="height: 105px;">
+      <div class="grid-2col" style="margin-bottom: 7px; align-items: stretch;">
+        <div class="photo-card" style="padding: 4px;">
+          <img src="${meninGate}" alt="Menin Gate" style="height: 140px;">
           <div class="caption">The Menin Gate Memorial to the Missing, inaugurated July 1927.</div>
         </div>
 
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
               Ceremony Protocol &amp; Panel 35
             </div>
-            <div style="font-size: 6.5pt; color: #334155; line-height: 1.22;">
+            <div style="font-size: 8.1pt; color: #334155; line-height: 1.38;">
               • <strong>19:20:</strong> Secure standing position along north walkway.<br>
               • <strong>19:45:</strong> Two designated pupil wreath bearers escorted by staff to ceremonial marshalling point.<br>
               • <strong>20:00:</strong> Last Post sounded, 2-minute silence, wreath laid.<br>
               • <strong>Panel 35:</strong> Inscribed with Pte. T. J. Franklin &amp; Pte. W. Ayling.
             </div>
           </div>
-          <div style="background: #eff6ff; padding: 2px 4px; border-radius: 3px; font-size: 6pt; color: #1e3a8a;">
+          <div style="background: #eff6ff; padding: 5px 8px; border-radius: 4px; font-size: 7.6pt; color: #1e3a8a;">
             Maintain absolute silence during the sounding of the bugles.
           </div>
         </div>
@@ -1550,7 +1553,7 @@ They sleep beyond England's foam.</div>
             <span class="poem-title">On Passing the New Menin Gate</span>
             <span class="poem-meta"> · Capt. Siegfried Sassoon · 1927</span>
           </div>
-          <img src="${sassoonImg}" alt="Siegfried Sassoon" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${sassoonImg}" alt="Siegfried Sassoon" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">Who will remember, passing through this Gate,
 The unheroic Dead who fed the guns?
@@ -1576,7 +1579,7 @@ Rise and deride this sepulchre of crime.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 14 of 16</span>
     </div>
   </div>
@@ -1624,7 +1627,7 @@ Rise and deride this sepulchre of crime.</div>
             <span class="poem-title">The Soldier</span>
             <span class="poem-meta"> · Rupert Brooke (Royal Naval Division) · 1914</span>
           </div>
-          <img src="${brookeImg}" alt="Rupert Brooke" style="width: 24px; height: 30px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1;">
+          <img src="${brookeImg}" alt="Rupert Brooke" style="width: 34px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
         </div>
         <div class="poem-lines">If I should die, think only this of me:
 That there's some corner of a foreign field
@@ -1644,11 +1647,11 @@ In hearts at peace, under an English heaven.</div>
       </div>
 
       <!-- Shot at Dawn Pardon Context -->
-      <div style="background: #fef2f2; border: 1.2px solid #fecaca; border-left: 3.5px solid #dc2626; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 6px; padding: 6px 12px; margin-bottom: 7px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px;">
           Historical Justice: The 2006 Statutory Pardon
         </div>
-        <div style="font-size: 6.4pt; color: #450a0a; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #450a0a; line-height: 1.38;">
           Of the 306 men shot at dawn, over 90% had suffered severe combat trauma or prolonged shell shock (*neurasthenia*). In 2006, after decades of campaigning, the UK Parliament passed the Armed Forces Act, granting all 306 posthumous pardons and acknowledging that they were victims of war.
         </div>
       </div>
@@ -1663,7 +1666,7 @@ In hearts at peace, under an English heaven.</div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 15 of 16</span>
     </div>
   </div>
@@ -1684,11 +1687,11 @@ In hearts at peace, under an English heaven.</div>
       </div>
 
       <!-- 24/7 Emergency Contacts Box -->
-      <div style="background: #0f172a; color: #ffffff; border-radius: 4px; padding: 5px 8px; margin-bottom: 4px;">
-        <div style="font-size: 7pt; font-weight: 800; color: #fbbf24; text-transform: uppercase; margin-bottom: 2px;">
+      <div style="background: #0f172a; color: #ffffff; border-radius: 6px; padding: 9px 14px; margin-bottom: 8px;">
+        <div style="font-size: 8.8pt; font-weight: 800; color: #fbbf24; text-transform: uppercase; margin-bottom: 3px;">
           24/7 Tour Directorate &amp; Emergency Communication
         </div>
-        <div style="font-size: 6.5pt; line-height: 1.28; color: #e2e8f0;">
+        <div style="font-size: 8.2pt; line-height: 1.45; color: #e2e8f0;">
           <strong>School Emergency Base:</strong> +44 (0)1329 662182 / 07825 297749<br>
           <strong>Base Camp:</strong> Peace Village Hostel, Mesen (+32 57 226 040)<br>
           <strong>Coach Operator:</strong> Jet Connect Executive Travel (+44 1322 221122)<br>
@@ -1697,8 +1700,8 @@ In hearts at peace, under an English heaven.</div>
       </div>
 
       <!-- Essential Battlefield Glossary -->
-      <div style="margin-bottom: 4px;">
-        <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+      <div style="margin-bottom: 8px;">
+        <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
           Essential Battlefield Glossary
         </div>
         <table class="compact-table">
@@ -1740,28 +1743,28 @@ In hearts at peace, under an English heaven.</div>
       </div>
 
       <!-- Flemish Toponyms -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; margin-bottom: 4px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 7px 12px; margin-bottom: 8px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
           Flemish Toponyms Guide
         </div>
-        <div style="font-size: 6.3pt; color: #475569; line-height: 1.23;">
+        <div style="font-size: 8pt; color: #475569; line-height: 1.38;">
           <strong>Ieper:</strong> Flemish for Ypres · <strong>Poperinge:</strong> British staging town nicknamed <em>"Pop"</em> · <strong>Mesen:</strong> Historic Messines · <strong>Menenpoort:</strong> Menin Gate · <strong>Lakenhalle:</strong> Medieval Cloth Hall.
         </div>
       </div>
 
       <!-- Closing Dedication -->
-      <div style="background: #eff6ff; border: 1.2px solid #bfdbfe; border-left: 3.5px solid #1e3a8a; border-radius: 4px; padding: 4px 7px;">
-        <div style="font-size: 6.7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 1px;">
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e3a8a; border-radius: 6px; padding: 8px 12px;">
+        <div style="font-size: 8.4pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
           The Department Dedication
         </div>
-        <p style="font-size: 6.4pt; color: #1e293b; line-height: 1.23; margin: 0;">
+        <p style="font-size: 8pt; color: #1e293b; line-height: 1.38; margin: 0;">
           "Dedicated to the memory of the fallen of our home parish of Holy Rood and the countless thousands who lie in the quiet earth of Flanders. We will remember them."
         </p>
       </div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Pocket Field Guide</span>
+      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 16 of 16</span>
     </div>
   </div>
@@ -1772,7 +1775,7 @@ In hearts at peace, under an English heaven.</div>
 }
 
 async function generatePdf() {
-  console.log('Generating Ypres Tour Leader A5 Pocket Field Guide (16 Pages)...');
+  console.log('Generating Ypres Tour Leader A4 Master Field Companion (16 Pages)...');
   const browser = await puppeteer.launch({
     headless: 'new',
     args: ['--allow-file-access-from-files', '--disable-web-security', '--no-sandbox'],
@@ -1793,7 +1796,7 @@ async function generatePdf() {
     }));
   });
 
-  console.log('Page Height & Overflow Audit:');
+  console.log('Page Height & Overflow Audit (A4):');
   pageEvaluations.forEach((p) => {
     console.log(
       `Page ${p.pageIndex}: scroll=${p.scrollHeight}px, client=${p.clientHeight}px, overflow=${p.overflowPx}px`,
@@ -1804,26 +1807,41 @@ async function generatePdf() {
   if (totalOverflow > 0) {
     console.warn(`⚠️ Warning: Detected ${totalOverflow}px overflow across pages!`);
   } else {
-    console.log('✅ Perfect 0px overflow across all 16 pages!');
+    console.log('✅ Perfect 0px overflow across all 16 pages in A4!');
   }
 
+  // Generate primary A4 PDF
   await page.pdf({
-    path: outputPath,
-    width: '148mm',
-    height: '210mm',
+    path: outputPathA4,
+    format: 'A4',
     printBackground: true,
     margin: { top: 0, bottom: 0, left: 0, right: 0 },
   });
 
+  // Also write copies to backward-compatible names so no URL ever 404s
+  fs.copyFileSync(outputPathA4, outputPathLegacyCompanion);
+  fs.copyFileSync(outputPathA4, outputPathLegacyPupil);
+  fs.copyFileSync(outputPathA4, outputPathPocketGuide);
+
   await browser.close();
-  console.log('✅ Ypres Tour Leader Pocket Guide PDF successfully created at:', outputPath);
+  console.log('✅ Ypres Tour Leader Companion (A4) successfully created at:');
+  console.log('  -', outputPathA4);
+  console.log('  -', outputPathLegacyCompanion);
+  console.log('  -', outputPathLegacyPupil);
+  console.log('  -', outputPathPocketGuide);
 }
 
 if (require.main === module) {
   generatePdf().catch((err) => {
-    console.error('Error generating Tour Leader Pocket Guide PDF:', err);
+    console.error('Error generating Tour Leader Field Companion PDF:', err);
     process.exit(1);
   });
 }
 
-module.exports = { getHtmlContent, generatePdf, outputPath };
+module.exports = {
+  getHtmlContent,
+  generatePdf,
+  outputPathA4,
+  outputPathLegacyCompanion,
+  outputPathPocketGuide,
+};

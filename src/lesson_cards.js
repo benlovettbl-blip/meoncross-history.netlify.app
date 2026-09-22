@@ -389,11 +389,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Fieldwork study expedition led by Department Lead &amp; Humanities Staff. Packing checklist, catering, itinerary, and preparation guidance.</p>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-              <a href="/pdfs/ypres_1914_1918_pupil_field_guide.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #93c5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">
-                <i class="fa-solid fa-book-bookmark" style="color: #2563eb;"></i> Pupil Guide (PDF)
-              </a>
-              <a href="/pdfs/ypres_1914_1918_teacher_companion.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#ede9fe';" onmouseout="this.style.background='#f5f3ff';">
-                <i class="fa-solid fa-compass" style="color: #7c3aed;"></i> Tour Companion (PDF)
+              <a href="/pdfs/ypres_tour_leader_companion_a4.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#ede9fe';" onmouseout="this.style.background='#f5f3ff';">
+                <i class="fa-solid fa-compass" style="color: #7c3aed;"></i> Tour Companion (A4 PDF)
               </a>
               <a href="/pdfs/ypres_2026_parent_information_pack_v2.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #fefce8; color: #b45309; border: 1.5px solid #fde68a; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#fef08a';" onmouseout="this.style.background='#fefce8';">
                 <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Parent Pack (PDF)

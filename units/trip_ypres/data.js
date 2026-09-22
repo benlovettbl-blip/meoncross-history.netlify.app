@@ -274,11 +274,8 @@ export const unitData = {
               </div>
 
               <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
-                <a href="/pdfs/ypres_1914_1918_pupil_field_guide.pdf" target="_blank" class="btn" style="background: #eff6ff; color: #1e3a8a; border: 1.5px solid #93c5fd; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                  <i class="fa-solid fa-book-bookmark" style="color: #2563eb; font-size: 1.1rem;"></i> Download Pupil Field Guide (PDF)
-                </a>
-                <a href="/pdfs/ypres_1914_1918_teacher_companion.pdf" target="_blank" class="btn" style="background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                  <i class="fa-solid fa-compass" style="color: #7c3aed; font-size: 1.1rem;"></i> Download Tour Leader Companion (PDF)
+                <a href="/pdfs/ypres_tour_leader_companion_a4.pdf" target="_blank" class="btn" style="background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                  <i class="fa-solid fa-compass" style="color: #7c3aed; font-size: 1.1rem;"></i> Download Tour Leader Field Companion (A4 PDF)
                 </a>
                 <a href="/pdfs/ypres_2026_parent_information_pack_v2.pdf" target="_blank" class="btn" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 1.1rem;"></i> Download Parent Pack (PDF)

@@ -97,6 +97,20 @@ const PDF_MAPPINGS = [
     category: 'Scheme of Work',
   },
 
+  // 02 - Fieldwork & Battlefield Tours
+  {
+    folder: '02_Fieldwork_and_Expeditions',
+    src: 'ypres_tour_leader_companion_a4.pdf',
+    dest: 'Ypres 1914-1918 Tour Leader Field Companion (A4 Master).pdf',
+    category: 'Fieldwork',
+  },
+  {
+    folder: '02_Fieldwork_and_Expeditions',
+    src: 'ypres_2026_parent_information_pack_v2.pdf',
+    dest: 'Ypres 2026 Parent Information Pack (v2).pdf',
+    category: 'Fieldwork',
+  },
+
   // Year 7
   {
     folder: path.join('Year 7', 'Medieval England'),
@@ -668,8 +682,8 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_tour_leader_pocket_guide.pdf',
-    dest: 'Ypres 1914-1918 Tour Leader Pocket Field Guide (A5).pdf',
+    src: 'ypres_tour_leader_companion_a4.pdf',
+    dest: 'Ypres 1914-1918 Tour Leader Field Companion (A4).pdf',
     category: 'Trips',
   },
 
