@@ -28,6 +28,7 @@ const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
 const puppeteer = require('puppeteer');
+const { renderKs3BackCover } = require('./components/render_standard_cover.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -79,6 +80,8 @@ const lessonConfigs = [
     genre: 'Genre 1: Global Encounter & Change',
     skill: 'Change & Continuity',
     genreNum: 1,
+    timelineMission:
+      'Illustrate Milestone 1 on Page 2: Sketch the Ottoman siege cannon, Mehmed II’s overland galleys, or Constantinople.',
     enquiryQuestion:
       'Enquiry: Who held true global power in 1450, and why was Europe on the geographic periphery?',
     vocabTask: {
@@ -133,6 +136,8 @@ const lessonConfigs = [
     genre: 'Genre 1: Source Utility & Imperial Zeal',
     skill: 'Dual-Source Utility',
     genreNum: 1,
+    timelineMission:
+      'Illustrate Milestone 2 on Page 2: Sketch the 1494 Tordesillas meridian dividing the Atlantic, or Drake’s fireships scattering the Armada.',
     enquiryQuestion:
       'Enquiry: How useful are Sources A and B for an enquiry into why European powers engaged in global oceanic expansion between 1494 and 1588?',
     sourceA: {
@@ -199,6 +204,8 @@ const lessonConfigs = [
     genre: 'Genre 2: Causation & Imperial Encounter',
     skill: 'Causation & Consequence',
     genreNum: 2,
+    timelineMission:
+      'Illustrate Milestone 3 on Page 2: Sketch Sir Thomas Roe before Emperor Jahangir, or a fortified coastal trading factory at Surat.',
     enquiryQuestion:
       'Enquiry: Trade or takeover: How did early commercial trading posts transform into colonial empires?',
     vocabTask: {
@@ -253,6 +260,8 @@ const lessonConfigs = [
     genre: 'Genre 2: Religious Volatility & State Security',
     skill: 'Historical Significance',
     genreNum: 2,
+    timelineMission:
+      'Illustrate Milestone 4 on Page 2: Sketch the 36 barrels in the Parliament undercroft, the Monteagle letter, or Guy Fawkes’ lantern.',
     enquiryQuestion:
       'Enquiry: Why was religious division so volatile and dangerous under King James I?',
     vocabTask: {
@@ -307,6 +316,8 @@ const lessonConfigs = [
     genre: 'Genre 3: Historiographical Debate & Revolution',
     skill: 'Historical Interpretations',
     genreNum: 3,
+    timelineMission:
+      'Illustrate Milestone 5 on Page 3: Sketch Charles I raising his standard at Nottingham, or the execution scaffold outside Whitehall.',
     enquiryQuestion:
       'Enquiry: How far do you agree with Interpretation 1 that the English Civil War was an inevitable constitutional battle for parliamentary liberty?',
     interp1: {
@@ -374,6 +385,8 @@ const lessonConfigs = [
     genre: 'Genre 3: Constitutional Turning Points',
     skill: 'Turning Point Analysis',
     genreNum: 3,
+    timelineMission:
+      'Illustrate Milestone 6 on Page 3: Sketch the 1689 Bill of Rights parchment, or the founding charter and gold vaults of the Bank of England.',
     enquiryQuestion:
       'Enquiry: How did the 1688 Glorious Revolution and the creation of the Bank of England transform British state power?',
     vocabTask: {
@@ -428,6 +441,8 @@ const lessonConfigs = [
     genre: 'Genre 4: Historical Evidence & Chattel Slavery',
     skill: 'Historical Evidence & Cause',
     genreNum: 4,
+    timelineMission:
+      'Illustrate Milestone 7 on Page 3: Sketch the brutal plan of the slave ship Brookes, or the triangular flow of goods, captives, and sugar.',
     enquiryQuestion:
       'Enquiry: What were the systematic mechanics, commercial scale, and human cost of the Transatlantic Slave Trade?',
     vocabTask: {
@@ -482,6 +497,8 @@ const lessonConfigs = [
     genre: 'Genre 4: Agency & Historical Resistance',
     skill: 'Agency & Historical Significance',
     genreNum: 4,
+    timelineMission:
+      'Illustrate Milestone 8 on Page 3: Sketch Queen Nanny’s Blue Mountain fighters, or the signing of the 1739 Maroon Peace Treaty.',
     enquiryQuestion:
       'Enquiry: How did enslaved Africans actively resist, undermine, and dismantle the Transatlantic slave system?',
     vocabTask: {
@@ -577,12 +594,12 @@ function buildEarlyModernWorldTwoPageWorkbook() {
     }
     .task-line {
       border-bottom: 1.2px solid #475569;
-      height: 7.2mm;
+      height: 7.0mm;
       width: 100%;
       box-sizing: border-box;
     }
     .task-line-dotted {
-      border-bottom: 1.2px solid #475569;
+      border-bottom: 1.2px dotted #475569;
       height: 5.4mm;
       width: 100%;
       box-sizing: border-box;
@@ -599,6 +616,16 @@ function buildEarlyModernWorldTwoPageWorkbook() {
       border: 1px solid #cbd5e1;
       font-weight: 600;
     }
+    /* Commercial School Brand Customizer */
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target {
+      display: inline-block;
+      font-size: 0 !important;
+    }
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target::after {
+      content: attr(data-department-name);
+      font-size: 11pt !important;
+      letter-spacing: 2px;
+    }
   </style>
 </head>
 <body>
@@ -608,254 +635,379 @@ function buildEarlyModernWorldTwoPageWorkbook() {
   // PAGE 1: FRONT COVER (Recto, Right Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 16px 18px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: flex-start;">
-    <!-- Institutional Header & Pupil Registration Strip -->
-    <div style="margin-bottom: 10px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 700;">
-          The History Portal &bull; Department of History
-        </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 600;">
-          Year 8 History &bull; KS3 Core Curriculum
-        </span>
+  <div class="page page-container" id="page-1" style="padding: 14px 16px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: space-between;">
+    <!-- Top Branding Banner with Commercial Customizer -->
+    <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 3px;" data-department-name="The History Department">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;">The History Department</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #475569;">Key Stage 3 History • Year 8 Workbook</span>
       </div>
-
-      <!-- Pupil Name & Class Box at Top -->
-      <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 12px; background: #f8fafc; display: grid; grid-template-columns: 2.2fr 1fr; gap: 18px; align-items: center;">
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px;"></div>
-        </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #cbd5e1; padding-top: 2px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #1e3a8a;">UNIT: THE EARLY MODERN WORLD (1450–1750)</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b;">DEPARTMENTAL STANDARD EDITION</span>
       </div>
     </div>
 
-    <!-- Main Title Block -->
-    <div style="text-align: center; border-bottom: 1px solid #cbd5e1; padding: 2px 0 8px 0; margin-bottom: 9px;">
-      <h1 style="font-family: 'Playfair Display', serif; font-size: 21pt; color: #0f172a; margin: 0 0 3px 0; text-transform: uppercase; letter-spacing: 1.2px; line-height: 1.15;">
-        The Early Modern World: 1450–1750
+    <!-- Title Banner -->
+    <div style="border: 1.8px solid #0f172a; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
+        <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
+          Year 8 Enquiry
+        </span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #334155;">
+          Global Encounters, Reformation, Civil War &amp; The Transatlantic Slave Trade
+        </span>
+      </div>
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 15pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
+        THE EARLY MODERN WORLD: 1450–1750
       </h1>
-      <div style="font-family: 'Inter', sans-serif; font-size: 9pt; color: #334155; font-weight: 500; letter-spacing: 0.5px;">
-        Global Encounters, Reformation, Civil War &amp; The Transatlantic Slave Trade
+      <div style="font-family: 'Georgia', serif; font-size: 8.4pt; color: #1e293b; font-style: italic; line-height: 1.25;">
+        Overarching Enquiry: “How did religious conflict, oceanic exploration, constitutional civil war, and popular resistance transform Britain and the wider world?”
       </div>
     </div>
 
-    <!-- Overarching Enquiry Callout Box -->
-    <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 8px 16px; background: #f8fafc; margin-bottom: 9px; text-align: center;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1.8px; color: #1e3a8a; font-weight: 700; margin-bottom: 3px;">
-        Overarching Historical Enquiry:
+    <!-- Hero Photo Plate -->
+    <div style="border: 1.8px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px; display: flex; flex-direction: column;">
+      <div style="height: 94mm; background: #ffffff; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+        <img src="${frontCoverImage}" alt="East Offering Its Riches to Britannia" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;">
       </div>
-      <div style="font-family: 'Playfair Display', serif; font-size: 10.8pt; color: #0f172a; font-style: italic; line-height: 1.35;">
-        “How did religious conflict, oceanic exploration, constitutional civil war, and popular resistance transform Britain and the wider world?”
-      </div>
-    </div>
-
-    <!-- Front Cover Image Container -->
-    <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; overflow: hidden; background: #f1f5f9; text-align: center; margin-bottom: 8px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <img src="${frontCoverImage}" alt="East Offering Its Riches to Britannia" style="max-height: 98mm; width: 100%; object-fit: cover; object-position: center; display: block;">
-      <div style="padding: 4px 10px; background: #ffffff; border-top: 1px solid #e2e8f0; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569; text-align: center; font-style: italic;">
-        ‘The East Offering Its Riches to Britannia’ (Spiridione Roma, 1778) • Ceiling painting for the East India Company House, London • Visualising the colonial transfer of wealth.
-      </div>
-    </div>
-
-    <!-- Term & Specification Strip -->
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1; padding: 4px 6px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569;">
-      <span><strong>Term:</strong> Spring Term &bull; Year 8</span>
-      <span><strong>Edition:</strong> 2026.1 Departmental Standard</span>
-      <span><strong>Format:</strong> 20-Page Double-Page Spread (5 A3 Sheets)</span>
-    </div>
-
-    <!-- Disciplinary Genres Ribbon -->
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 7px; text-align: center;">
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 2px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; display: block;">Genre 1</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155;">Global Encounters</span>
-      </div>
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 2px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; display: block;">Genre 2</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155;">Source Utility</span>
-      </div>
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 2px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; display: block;">Genre 3</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155;">Historiography</span>
-      </div>
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 2px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; display: block;">Genre 4</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155;">Slave Resistance</span>
+      <div style="border-top: 1.5px solid #0f172a; padding: 3px 8px; background: #f8fafc;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a;">
+            Primary Painting Plate • Spiridione Roma (1778)
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
+            THE BRITISH LIBRARY &bull; EAST INDIA HOUSE
+          </span>
+        </div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
+          ‘The East Offering Its Riches to Britannia’
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; line-height: 1.2;">
+          Spiridione Roma’s 1778 ceiling fresco commissioned for the East India Company House in Leadenhall Street, London, allegorically visualising the colonial extraction and transfer of Asian wealth to Britannia.
+        </div>
       </div>
     </div>
 
-    <!-- Preservation & Academic Integrity Footer -->
-    <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; text-align: center; line-height: 1.35; padding-top: 2px;">
-      This workbook is a permanent academic record of historical scholarship. Bring it to every history lesson.
+    <!-- Pupil Information Card -->
+    <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 5px 12px; background: #ffffff; margin-bottom: 3px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.8px; color: #0f172a;">
+          Pupil Workbook &amp; Academic Record
+        </strong>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #64748b;">
+          Year 8 History • Unit 2
+        </span>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="text-transform: uppercase; width: 48px; font-size: 7pt; color: #0f172a;">Name:</strong>
+          <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="text-transform: uppercase; width: 44px; font-size: 7pt; color: #0f172a;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="text-transform: uppercase; width: 56px; font-size: 7pt; color: #0f172a;">Teacher:</strong>
+          <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="text-transform: uppercase; width: 44px; font-size: 7pt; color: #0f172a;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 14px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syllabus Enquiry Overview (The 8 Enquiries Learning Journey) -->
+    <div style="border: 1.5px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
+      <div style="background: #0f172a; color: #ffffff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+        <span>The 8 Historical Enquiries Across This Unit</span>
+        <span style="font-size: 6.8pt; letter-spacing: 0.5px; color: #94a3b8;">Curriculum Progression &bull; 1450–1750</span>
+      </div>
+      <div style="padding: 5px 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 14px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.25; color: #1e293b; flex: 1; align-content: space-around;">
+        <div><strong>L1: Global Power in 1450:</strong> Ottoman Hegemony, Fall of Constantinople &amp; European Periphery.</div>
+        <div><strong>L5: The English Civil War:</strong> Divine Right Absolutism, Ship Money, Regicide &amp; Cromwell.</div>
+        <div><strong>L2: Religious Zeal &amp; Exploration:</strong> Papal Bull, Treaty of Tordesillas &amp; Spanish Armada.</div>
+        <div><strong>L6: The Financial Revolution:</strong> The 1688 Settlement, Bank of England &amp; Fiscal State.</div>
+        <div><strong>L3: Trade to Empire:</strong> East India Company, Mughal Bengal &amp; North American Trade.</div>
+        <div><strong>L7: Transatlantic Slave Trade:</strong> Triangular Trade, The Brookes &amp; The Middle Passage.</div>
+        <div><strong>L4: Gunpowder Plot &amp; Terror:</strong> Recusancy Fines, 36 Barrels &amp; Cecil’s Surveillance State.</div>
+        <div><strong>L8: Enslaved Resistance:</strong> Queen Nanny of the Maroons, Tacky’s Revolt &amp; Abolition Agency.</div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer Strip -->
+    <div style="border-top: 1.2px solid #0f172a; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569;">
+      <span><strong>Term:</strong> Spring Term &bull; Year 8 History</span>
+      <span style="font-style: italic; color: #64748b;">Permanent Academic Record &bull; Retain for Synoptic Revision</span>
+      <span><strong>Edition:</strong> 2026.1 Publisher Standard</span>
     </div>
   </div>
   `;
 
   // ==========================================
-  // PAGE 2: PROGRESS & ASSESSMENT TRACKER (Verso, Left Page)
+  // PAGES 2 & 3: FACING LIVING UNIT TIMELINE SPREAD (1450–1750)
   // ==========================================
+
+  // PAGE 2: LIVING UNIT TIMELINE (1450–1605) · PART I (Facing Spread Left)
   html += `
-  <div class="page page-container" id="page-2" style="padding: 10px 0; display: flex; flex-direction: column; height: 256mm; justify-content: space-between;">
+  <div class="page page-container verso-page" id="page-2" style="padding: 10px 14px; display: flex; flex-direction: column; height: 256mm; justify-content: space-between; box-sizing: border-box;">
     <div>
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 7px;">
-        <h2 style="margin: 0; color: #1e3a8a; font-size: 13.5pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
-          Progress &amp; Assessment Tracker &bull; Year 8 Early Modern
+      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Living Unit Timeline &bull; Part 1: Global Encounter &amp; Religious Crisis (1450–1605)
         </h2>
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 600; color: #334155;">
-          Target Level: <span style="display: inline-block; width: 65px; border-bottom: 1.5px solid #0f172a; margin-left: 4px;"></span>
-        </div>
+        <span class="archival-badge" style="background: #1e3a8a; color: #ffffff; border-color: #1e3a8a; font-size: 6.8pt; padding: 1.5px 6px;">Pages 2–3 Facing Spread</span>
       </div>
-      
-      <!-- Grading Criteria Benchmarks -->
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2; margin-bottom: 6px;">
-        <tbody>
-          <tr>
-            <td style="border: 1px solid #94a3b8; padding: 3px 6px; font-weight: 700; background-color: #1e3a8a; color: #ffffff; width: 10%; text-transform: uppercase; letter-spacing: 0.5px;">Criteria</td>
-            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #f8fafc;"><strong style="color: #0f172a;">Emerging (1–2):</strong> Identifies simple facts; surface description of monarchs, explorers, or battles.</td>
-            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #ffffff;"><strong style="color: #0f172a;">Emerging+ (3):</strong> Identifies causes &amp; consequences with simple historical explanation.</td>
-            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #f8fafc;"><strong style="color: #0f172a;">Expected (4–5):</strong> Structured PEEL arguments; supports claims with specific early modern evidence.</td>
-            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #ffffff;"><strong style="color: #0f172a;">Greater Depth (6–9):</strong> Evaluates conflicting sources/interpretations; nuanced causal synthesis.</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #94a3b8; padding: 2.5px 6px; font-weight: 700; background-color: #0f2942; color: #ffffff; width: 10%; text-transform: uppercase; letter-spacing: 0.5px;">Effort</td>
-            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #f8fafc;"><strong style="color: #0f172a;">1 • Concern:</strong> Disengaged / incomplete work.</td>
-            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #ffffff;"><strong style="color: #0f172a;">2 • Inconsistent:</strong> Requires repeated prompting.</td>
-            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #f8fafc;"><strong style="color: #0f172a;">3 • Satisfactory:</strong> Meets baseline expectations.</td>
-            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #ffffff;"><strong style="color: #0f172a;">4 • Good / 5 • Exemplary:</strong> Proactive focus; voluntary Scholar’s Edge extension.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569; display: flex; justify-content: space-between;">
+        <span><strong>Timeline Mission:</strong> In each lesson, turn back to this double-page spread to illustrate the milestone sketchpad with your visual symbol and key notes.</span>
+        <span style="font-weight: 700; color: #1e3a8a;">Chronological Spine &bull; Facing Left</span>
+      </div>
     </div>
 
-    <div style="width: 100%; display: flex; justify-content: center; flex: 1; min-height: 0; margin-bottom: 4px;">
-      <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.22; background-color: #ffffff; table-layout: fixed;">
-        <thead>
-          <tr style="background-color: #1e3a8a; color: #ffffff;">
-            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 8px; width: 26%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Lesson / Enquiry Title</th>
-            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 3px; width: 6.5%; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Effort (1–5)</th>
-            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 3px; width: 5.5%; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Level</th>
-            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 10px; width: 62%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Teacher Formative Feedback &amp; Next Steps</th>
-          </tr>
-        </thead>
-        <tbody>
-  `;
+    <!-- Milestones 1 to 4 Container -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 2px 0;">
+      
+      <!-- Milestone 1 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1453</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 1: Fall of Constantinople &amp; Ottoman Hegemony</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 1</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          Sultan Mehmed II’s Ottoman forces breach the Byzantine walls using massive siege cannons. Controlling Constantinople and the Silk Road, the Ottoman Empire levies heavy transit taxes, forcing peripheral European crowns out onto the Atlantic to search for maritime routes to Asian spices.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch the Ottoman siege cannon, Mehmed II’s galleys rolling over land, or the golden horns of Constantinople.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Ottoman Hegemony</span>
+            <span>Date: May 1453</span>
+          </div>
+        </div>
+      </div>
 
-  lessonConfigs.forEach((cfg, i) => {
-    const bg = i % 2 === 1 ? 'background-color: #f8fafc;' : 'background-color: #ffffff;';
-    html += `
-          <tr style="${bg}">
-            <td style="border: 1px solid #cbd5e1; padding: 4.5px 8px; font-weight: 600; font-size: 7.2pt; color: #0f172a; line-height: 1.25;">
-              <div style="color: #1e3a8a; font-weight: 700; font-size: 7.5pt; text-transform: uppercase; margin-bottom: 1px;">Lesson ${i + 1}</div>
-              <div style="color: #334155; font-weight: 500;">${cfg.enquiryQuestion.replace(/^Enquiry:\s*/i, '')}</div>
-            </td>
-            <td style="border: 1px solid #cbd5e1; padding: 3px; text-align: center; font-weight: 600; font-size: 8.5pt; color: #0f172a;"></td>
-            <td style="border: 1px solid #cbd5e1; padding: 3px; text-align: center; font-weight: 600; font-size: 8.5pt; color: #0f172a;"></td>
-            <td style="border: 1px solid #cbd5e1; padding: 4px 10px; vertical-align: top;"></td>
-          </tr>
-    `;
-  });
+      <!-- Milestone 2 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1494–1588</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 2: Treaty of Tordesillas &amp; Defeat of the Spanish Armada</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 2</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          Pope Alexander VI divides the globe between Catholic Spain and Portugal (Treaty of Tordesillas). Protestant England strikes back through state-sponsored privateering (Drake, Hawkins). When Philip II sends the 1588 Armada to invade England, English fireships and storms scatter the fleet, unleashing English oceanic ambitions.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch the 1494 Tordesillas meridian dividing the Atlantic, or Drake’s fireships scattering the Spanish crescent formation at Gravelines.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Mercantilism &amp; Privateering</span>
+            <span>Date: 1494 / 1588</span>
+          </div>
+        </div>
+      </div>
 
-  html += `
-          <tr style="background-color: #e2e8f0; font-weight: bold;">
-            <td style="border: 1px solid #94a3b8; padding: 4px 8px; text-align: right; color: #0f172a; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-              Final Unit Level &bull; Target Outcome:
-            </td>
-            <td style="border: 1px solid #94a3b8; padding: 3px; background: #ffffff; text-align: center; font-size: 9pt; font-weight: 700; color: #1e3a8a;"></td>
-            <td style="border: 1px solid #94a3b8; padding: 3px; background: #ffffff; text-align: center; font-size: 9pt; font-weight: 700; color: #1e3a8a;"></td>
-            <td style="border: 1px solid #94a3b8; padding: 4px 10px; background: #ffffff;"></td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Milestone 3 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1600–1615</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 3: Foundation of the East India Company &amp; Mughal Trade</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 3</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          Elizabeth I charters the East India Company. English merchants operate as humble supplicants at the court of Mughal Emperor Jahangir, securing trade firmans to build fortified factories at Surat and Madras. Over time, commercial enclaves expand into private corporate armies and territorial rule.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch Sir Thomas Roe bowing before Emperor Jahangir, or a fortified coastal trading factory at Surat with spice barrels.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Joint-Stock Factory</span>
+            <span>Date: 31 Dec 1600</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 4 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1605</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 4: The Gunpowder Plot &amp; Jacobean Surveillance State</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 4</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          Disillusioned Catholic conspirators led by Robert Catesby conceal 36 gunpowder barrels beneath the House of Lords. Discovered on 4 November, Guy Fawkes is captured. Robert Cecil’s surveillance network weaponizes the conspiracy to enact ferocious anti-recusancy laws and solidify Protestant state identity.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch the 36 barrels in the Parliament undercroft, the Monteagle letter, or Guy Fawkes holding his lantern and fuse.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Recusancy &amp; Counter-Espionage</span>
+            <span>Date: 5 Nov 1605</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Synthesis Box (Facing Spread Left) -->
+    <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 3px 8px; background: #eff6ff; display: flex; justify-content: space-between; align-items: center; margin-top: 3px;">
+      <span style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #1e3a8a;">
+        <strong>Timeline Check:</strong> Why did the fall of Constantinople in 1453 force European crowns out onto the Atlantic Ocean?
+      </span>
+      <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #0f172a; white-space: nowrap; margin-left: 8px;">
+        See Milestone 5 Facing Right &rarr;
+      </span>
+    </div>
+
+    <!-- Footer Strip -->
+    <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px;">
+      <span>The History Department &bull; Year 8 Early Modern World &bull; Living Chronology</span>
+      <span>Page 2 (Facing Spread Left)</span>
     </div>
   </div>
   `;
 
-  // ==========================================
-  // PAGE 3: COURSE MAP & TIMELINE (Recto, Right Page)
-  // ==========================================
+  // PAGE 3: LIVING UNIT TIMELINE (1642–1739) · PART II (Facing Spread Right)
   html += `
-  <div class="page page-container" id="page-3" style="padding: 10px 0; display: flex; flex-direction: column; height: 256mm; justify-content: space-between;">
-    <div style="flex-shrink: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 6px;">
-        <h2 style="margin: 0; font-size: 14pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Curriculum Roadmap &amp; Chronological Spine</h2>
-        <span class="archival-badge">1450 – 1750</span>
+  <div class="page page-container recto-page" id="page-3" style="padding: 10px 14px; display: flex; flex-direction: column; height: 256mm; justify-content: space-between; box-sizing: border-box;">
+    <div>
+      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Living Unit Timeline &bull; Part 2: Civil War, Finance &amp; Enslaved Resistance (1642–1739)
+        </h2>
+        <span class="archival-badge" style="background: #1e3a8a; color: #ffffff; border-color: #1e3a8a; font-size: 6.8pt; padding: 1.5px 6px;">Pages 2–3 Facing Spread</span>
       </div>
-      <p style="font-family: 'Inter', sans-serif; font-size: 8.3pt; color: #475569; margin: 0; line-height: 1.35;">
-        Trace the 300-year transformation of early modern power: from the fall of Constantinople in 1453 to global oceanic rivalries, civil war regicide, financial revolution, and resistance to Atlantic slavery.
-      </p>
+      <div style="border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569; display: flex; justify-content: space-between;">
+        <span><strong>Timeline Mission:</strong> In each lesson, turn back to this double-page spread to illustrate the milestone sketchpad with your visual symbol and key notes.</span>
+        <span style="font-weight: 700; color: #1e3a8a;">Chronological Spine &bull; Facing Right</span>
+      </div>
     </div>
 
-    <!-- Visual Chronological Spine -->
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 6px 0; padding: 2px 0;">
-  `;
-
-  const timelineItems = [
-    {
-      year: '1453',
-      title: 'Fall of Constantinople & Rise of Ottoman Hegemony',
-      desc: 'Sultan Mehmed II breaches Byzantine walls; Ottoman Empire takes control of Silk Road spice trade, forcing European crowns to search for oceanic routes.',
-    },
-    {
-      year: '1494',
-      title: 'Treaty of Tordesillas & Atlantic Oceanic Rivalry',
-      desc: 'Pope Alexander VI divides the non-European world between Catholic Spain and Portugal, sparking fierce Protestant pushback from English and Dutch privateers.',
-    },
-    {
-      year: '1588',
-      title: 'Defeat of the Spanish Armada & English Expansion',
-      desc: 'Elizabeth I’s navy repels King Philip II’s invasion fleet; England establishes global privateering, chartered trading companies, and early American colonies.',
-    },
-    {
-      year: '1605',
-      title: 'Gunpowder Plot & Jacobean Religious Volatility',
-      desc: 'Catholic conspirators lead by Robert Catesby attempt to blow up King James I and Parliament; state responds with intense anti-popery legislation and surveillance.',
-    },
-    {
-      year: '1649',
-      title: 'Execution of King Charles I & The Commonwealth',
-      desc: 'English Civil War concludes in unprecedented regicide; monarchy and House of Lords abolished as Oliver Cromwell establishes the Puritan Commonwealth.',
-    },
-    {
-      year: '1688',
-      title: 'Glorious Revolution & The 1689 Bill of Rights',
-      desc: 'James II deposed; William III and Mary II sign the Bill of Rights, establishing parliamentary supremacy and religious limits on the British Crown.',
-    },
-    {
-      year: '1694',
-      title: 'Founding of the Bank of England & National Debt',
-      desc: 'Financial Revolution creates modern public credit; British fiscal-military state funds global naval supremacy, colonial garrisons, and overseas empire.',
-    },
-    {
-      year: '1739',
-      title: 'Jamaican Maroon Treaty: Sovereign African Resistance',
-      desc: 'Queen Nanny and Jamaican Maroons defeat British forces in the Blue Mountains, forcing the Crown to sign a treaty recognizing Maroon land sovereignty.',
-    },
-  ];
-
-  timelineItems.forEach((item, tIdx) => {
-    html += `
-      <div style="display: flex; gap: 10px; align-items: flex-start; border-left: 2.5px solid #1e3a8a; padding-left: 10px; margin-bottom: 2px;">
-        <div style="background: #1e3a8a; color: #ffffff; font-weight: 800; font-size: 7.8pt; padding: 2px 7px; border-radius: 3px; font-family: monospace; white-space: nowrap; flex-shrink: 0;">
-          ${item.year}
+    <!-- Milestones 5 to 8 Container -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 2px 0;">
+      
+      <!-- Milestone 5 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1642–1649</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 5: The English Civil War &amp; Execution of Charles I</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 5</span>
         </div>
-        <div style="flex: 1;">
-          <div style="font-weight: 700; color: #0f172a; font-size: 8.3pt; line-height: 1.2;">${item.title}</div>
-          <div style="color: #475569; font-size: 7.4pt; line-height: 1.3; margin-top: 1px;">${item.desc}</div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          Constitutional collision over Divine Right, Ship Money, and religion plunges England into civil war. Parliament's New Model Army defeats Royalist forces. In January 1649, Charles I is executed outside Whitehall for treason against his own people; England becomes an unprecedented Puritan republic under Oliver Cromwell.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch Charles I raising the royal standard at Nottingham, or the execution scaffold and severed crown outside Whitehall.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Regicide &amp; Parliamentary Sovereignty</span>
+            <span>Date: 30 Jan 1649</span>
+          </div>
         </div>
       </div>
-    `;
-  });
 
-  html += `
+      <!-- Milestone 6 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1688–1694</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 6: Glorious Revolution &amp; Founding of the Bank of England</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 6</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          James II deposed in the Glorious Revolution. William III and Mary II accept the 1689 Bill of Rights, establishing constitutional monarchy. In 1694, the Bank of England is founded, creating the National Debt; Britain's new fiscal-military state raises millions at low interest to build the Royal Navy into Europe's supreme fleet.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch the 1689 Bill of Rights parchment, or the founding charter and gold vaults of the Bank of England in London.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Fiscal-Military State</span>
+            <span>Date: 1688 / 1694</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 7 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">c.1700–1780</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 7: The Transatlantic Slave Trade &amp; The Brookes</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 7</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          British ports (Liverpool, Bristol, London) dominate the Triangular Trade. British ships force over 3 million enslaved Africans across the catastrophic Middle Passage into chattel slavery on Caribbean sugar estates. In 1788, the abolitionist plan of the slave ship Brookes exposes the industrial scale of human commodification.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch the chilling cross-section diagram of the slave ship Brookes, or the triangular flow of guns, captives, and sugar.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Triangular Trade &amp; Chattel Slavery</span>
+            <span>Date: 18th Century</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 8 -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">1739–1760</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">Milestone 8: Jamaican Maroon Sovereignty &amp; Tacky’s Rebellion</strong>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">Lesson 8</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
+          Enslaved Africans actively resist the plantation machine through sabotage, cultural preservation, and armed insurrection. In Jamaica, Queen Nanny leads Maroon guerillas against British regiments, forcing the Crown to sign the 1739 Peace Treaty recognizing Maroon sovereignty—proving black agency long before parliamentary abolition.
+        </p>
+        <div style="border: 1.2px dashed #94a3b8; border-radius: 3px; background: #fdfbf7; height: 26mm; padding: 3px 6px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; font-style: italic;">
+            ✎ <strong>Dual-Coding Sketchpad:</strong> Sketch Queen Nanny’s Blue Mountain fighters, the horn (abeng) signaling across ravines, or the 1739 Peace Treaty.
+          </span>
+          <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #94a3b8;">
+            <span>Key term: Maroon Sovereignty &amp; Agency</span>
+            <span>Date: 1739 / 1760</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Navigation Prompt to Overleaf Spread -->
-    <div style="flex-shrink: 0; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 600; color: #475569; text-align: center; border-top: 1px solid #cbd5e1; padding-top: 5px;">
-      Turn overleaf to begin <strong>Lesson 1 (Pages 4–5 Facing Spread)</strong> ➔
+    <!-- Bottom Synthesis Box (Facing Spread Right) -->
+    <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 3px 8px; background: #eff6ff; display: flex; justify-content: space-between; align-items: center; margin-top: 3px;">
+      <span style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #1e3a8a;">
+        <strong>Timeline Check:</strong> How did the wealth generated by Atlantic trade and the 1688 financial settlement transform Britain into a global superpower?
+      </span>
+      <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #0f172a; white-space: nowrap; margin-left: 8px;">
+        Turn overleaf for Lesson 1 (Pages 4–5) &rarr;
+      </span>
+    </div>
+
+    <!-- Footer Strip -->
+    <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px;">
+      <span>The History Department &bull; Year 8 Early Modern World &bull; Living Chronology</span>
+      <span>Page 3 (Facing Spread Right)</span>
     </div>
   </div>
   `;
@@ -871,25 +1023,25 @@ function buildEarlyModernWorldTwoPageWorkbook() {
     // LEFT PAGE (Verso, Even Page Number: 4, 6, 8, 10, 12, 14, 16, 18)
     // ----------------------------------------------------
     html += `
-    <div class="page page-container" id="page-${leftPageNum}">
+    <div class="page page-container" id="page-${leftPageNum}" style="padding: 10px 0; display: flex; flex-direction: column; height: 256mm; justify-content: space-between;">
       <div>
         <!-- Lesson Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
               KS3 Early Modern World &bull; Lesson ${lIdx + 1}
             </div>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 12.8pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               L${lIdx + 1}: ${cfg.enquiryQuestion.replace(/^Enquiry:\s*/i, '')}
             </h2>
           </div>
-          <span class="archival-badge" style="background: #f8fafc; color: #1e3a8a; border-color: #cbd5e1; flex-shrink: 0; font-size: 7.2pt;">${cfg.genre}</span>
+          <span class="archival-badge" style="background: #f8fafc; color: #1e3a8a; border-color: #cbd5e1; flex-shrink: 0; font-size: 7pt;">${cfg.genre}</span>
         </div>
 
         <!-- Learning Objectives -->
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Core Learning Objectives:</strong>
-          <ul style="margin: 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; line-height: 1.3;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Core Learning Objectives:</strong>
+          <ul style="margin: 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #334155; line-height: 1.3;">
             <li>Explain the historical context, global geopolitical shifts, and competing perspectives of this enquiry.</li>
             <li>Deploy precise factual evidence to analyse cause, consequence, or second-order significance.</li>
             <li>Formulate an independent, evaluative historical judgement supported by causal reasoning.</li>
@@ -897,36 +1049,34 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         </div>
 
         <!-- Do Now Recall Strip -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 5px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Task 1: 'Do Now' Retrieval Practice</strong>
-            </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Task 1: 'Do Now' Retrieval Practice</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
           </div>
-          <div style="grid-template-columns: repeat(5, 1fr); gap: 6px; display: grid;">
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q1 (Last)</div>
+          <div style="grid-template-columns: repeat(5, 1fr); gap: 5px; display: grid;">
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q1 (Last)</div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
             </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q2 (Last)</div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q2 (Last)</div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
             </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q3 (2 Ago)</div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q3 (2 Ago)</div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
             </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q4 (Unit)</div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q4 (Unit)</div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
             </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q5 (Synoptic)</div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q5 (Synoptic)</div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
               <div class="task-line-dotted" style="height: 5.4mm;"></div>
             </div>
@@ -934,11 +1084,11 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         </div>
 
         <!-- Core Vocabulary -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 5px; background: #fdfbf7;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; background: #fdfbf7;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.1pt; color: #334155; margin-bottom: 3px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.9pt; color: #334155; margin-bottom: 2px;">
             ${cfg.vocabTask.prompt}
           </div>
           <div class="auto-fill-lines">
@@ -946,64 +1096,72 @@ function buildEarlyModernWorldTwoPageWorkbook() {
             <div class="task-line-dotted" style="height: 5.4mm;"></div>
           </div>
         </div>
+      </div>
 
-        <!-- Task 3 Preparation Bridge Container -->
-        <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 9px; background: #ffffff; margin-bottom: 5px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 4px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+      <!-- Task 3 Preparation Bridge Container (Expanded to absorb vertical space) -->
+      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 9px; background: #ffffff; margin-bottom: 3px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 3px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
               ${cfg.bridgeTask.title}
             </strong>
-            <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; font-size: 7pt;">
+            <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; font-size: 6.8pt; padding: 1px 5px;">
               ${cfg.bridgeTask.badge}
             </span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.1pt; color: #334155; margin-bottom: 4px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.9pt; color: #334155; margin-bottom: 4px;">
             ${cfg.bridgeTask.instruction}
           </div>
+        </div>
 
-          <div class="auto-fill-ledger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px; background: #f8fafc;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">${cfg.bridgeTask.col1Title}</strong>
-              <ul style="margin: 0 0 4px 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; line-height: 1.3;">
+        <div class="auto-fill-ledger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 3px; flex: 1;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">${cfg.bridgeTask.col1Title}</strong>
+              <ul style="margin: 0 0 3px 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; line-height: 1.25;">
                 ${cfg.bridgeTask.col1Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 3px 0 1px 0;">
+            </div>
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 2px 0 1px 0;">
                 ✍️ Synthesise their perspective in 2 sentences:
               </div>
-              <div>
-                <div class="task-line-dotted" style="height: 5.4mm;"></div>
-                <div class="task-line-dotted" style="height: 5.4mm;"></div>
-                <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              </div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
             </div>
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px; background: #f8fafc;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">${cfg.bridgeTask.col2Title}</strong>
-              <ul style="margin: 0 0 4px 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; line-height: 1.3;">
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">${cfg.bridgeTask.col2Title}</strong>
+              <ul style="margin: 0 0 3px 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; line-height: 1.25;">
                 ${cfg.bridgeTask.col2Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 3px 0 1px 0;">
+            </div>
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 2px 0 1px 0;">
                 ✍️ Synthesise their perspective in 2 sentences:
               </div>
-              <div>
-                <div class="task-line-dotted" style="height: 5.4mm;"></div>
-                <div class="task-line-dotted" style="height: 5.4mm;"></div>
-                <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              </div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
             </div>
           </div>
+        </div>
 
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #64748b; margin-top: 2px;">
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b; margin-top: 1px;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
         </div>
       </div>
 
       <!-- Left Page Footer -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-        <span>The History Portal &bull; KS3 The Early Modern World (1450–1750)</span>
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 2px;">
+        <span>The History Department &bull; KS3 The Early Modern World (1450–1750)</span>
         <span>Page ${leftPageNum} (Facing Spread Left)</span>
       </div>
     </div>
@@ -1017,12 +1175,12 @@ function buildEarlyModernWorldTwoPageWorkbook() {
       // TEMPLATE A: DUAL-SOURCE UTILITY (Edexcel Papers 1 & 3 Prep)
       // ====================================================
       html += `
-    <div class="page page-container" id="page-${rightPageNum}">
+    <div class="page page-container" id="page-${rightPageNum}" style="padding: 10px 0; display: flex; flex-direction: column; height: 256mm; justify-content: space-between;">
       <div>
         <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
               Task 4: Historical Skill: ${cfg.skill} &bull; Dual-Source Evidence
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
@@ -1033,7 +1191,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         </div>
 
         <!-- Dual Primary Sources Box (Side-by-Side) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 5px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
           <!-- Source A -->
           <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
@@ -1068,7 +1226,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         </div>
 
         <!-- Disciplinary Planning Matrix (3 Columns) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 5px;">
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 4px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
             ${cfg.matrix
               .map(
@@ -1086,29 +1244,44 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (13 Lines at 7.2mm line-height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
-          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (14 Lines at 7.0mm line-height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.0" style="width: 100%; margin-bottom: 3px;">
+          ${Array(14).fill('<div class="task-line" style="height: 7.0mm;"></div>').join('')}
         </div>
       </div>
 
       <!-- Teacher Grading & Assessment Footer (Utility-Specific Rubric) -->
       <div>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
-          <div>
-            <strong>Teacher Assessment:</strong> &nbsp;
-            Content &amp; Inference: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
-            Provenance Evaluation: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
-            Contextual Balance: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
+        <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
+        <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
+              Timeline Mission &bull; Pages 2–3:
+            </strong>
+            <span style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e293b; font-style: italic;">
+              ${cfg.timelineMission || 'Illustrate the milestone sketchpad on Pages 2–3 with your visual symbol.'}
+            </span>
           </div>
-          <div>
-            <strong>Utility Grade:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">
+            Pages 2–3 &rarr;
+          </span>
+        </div>
+
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; white-space: nowrap;">
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <strong>Teacher Assessment:</strong>
+            <span>Content/Inference: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+            <span>Provenance/NOP: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+            <span>Context: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+          </div>
+          <div style="font-weight: 700; color: #1e3a8a;">
+            Utility Grade: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
           </div>
         </div>
 
         <!-- Right Page Footer -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
-          <span>Source Utility Assessment &bull; The History Portal</span>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
+          <span>Source Utility Assessment &bull; The History Department</span>
           <span>Page ${rightPageNum} (Facing Spread Right)</span>
         </div>
       </div>
@@ -1119,12 +1292,12 @@ function buildEarlyModernWorldTwoPageWorkbook() {
       // TEMPLATE B: HISTORICAL INTERPRETATIONS (Edexcel Paper 3 Prep)
       // ====================================================
       html += `
-    <div class="page page-container" id="page-${rightPageNum}">
+    <div class="page page-container" id="page-${rightPageNum}" style="padding: 10px 0; display: flex; flex-direction: column; height: 256mm; justify-content: space-between;">
       <div>
         <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
               Task 4: Historical Skill: ${cfg.skill} &bull; Historiographical Debate
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
@@ -1135,7 +1308,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         </div>
 
         <!-- Dual Interpretations Box (Side-by-Side) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 5px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
           <!-- Interpretation 1 -->
           <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
@@ -1157,7 +1330,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e3a8a; text-transform: uppercase;">${cfg.interp2.title}</strong>
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e40af; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e3a8a; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">
               ${cfg.interp2.badge}
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
@@ -1169,14 +1342,14 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <!-- Disciplinary Debate Matrix (3 Columns) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 5px;">
+        <!-- Disciplinary Planning Matrix (3 Columns) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 4px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
             ${cfg.matrix
               .map(
                 (m) => `
               <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #b91c1c; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 1px;">${m.col}</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 1px;">${m.col}</strong>
                 <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.2; display: block;">${m.text}</span>
               </div>
             `,
@@ -1188,29 +1361,44 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (13 Lines at 7.2mm line-height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
-          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (14 Lines at 7.0mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.0" style="width: 100%; margin-bottom: 3px;">
+          ${Array(14).fill('<div class="task-line" style="height: 7.0mm;"></div>').join('')}
         </div>
       </div>
 
       <!-- Teacher Grading & Assessment Footer (Interpretations Rubric) -->
       <div>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
-          <div>
-            <strong>Teacher Assessment:</strong> &nbsp;
-            Comprehension of Views: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
-            Deployment of Own Evidence: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
-            Sustained Evaluation: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
+        <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
+        <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
+              Timeline Mission &bull; Pages 2–3:
+            </strong>
+            <span style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e293b; font-style: italic;">
+              ${cfg.timelineMission || 'Illustrate the milestone sketchpad on Pages 2–3 with your visual symbol.'}
+            </span>
           </div>
-          <div>
-            <strong>Debate Grade:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">
+            Pages 2–3 &rarr;
+          </span>
+        </div>
+
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; white-space: nowrap;">
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <strong>Teacher Assessment:</strong>
+            <span>Comprehension: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+            <span>Own Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+            <span>Evaluation: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+          </div>
+          <div style="font-weight: 700; color: #b91c1c;">
+            Debate Grade: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
           </div>
         </div>
 
         <!-- Right Page Footer -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
-          <span>Historical Interpretations Assessment &bull; The History Portal</span>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
+          <span>Historical Interpretations Assessment &bull; The History Department</span>
           <span>Page ${rightPageNum} (Facing Spread Right)</span>
         </div>
       </div>
@@ -1221,72 +1409,87 @@ function buildEarlyModernWorldTwoPageWorkbook() {
       // TEMPLATE C: EXTENDED WRITING / DISCIPLINARY EVALUATION
       // ====================================================
       html += `
-    <div class="page page-container" id="page-${rightPageNum}">
+    <div class="page page-container" id="page-${rightPageNum}" style="padding: 10px 0; display: flex; flex-direction: column; height: 256mm; justify-content: space-between;">
       <div>
         <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
               Task 4: Historical Skill: ${cfg.skill} &bull; Extended Writing
             </div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.25;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 12.0pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.25;">
               ${cfg.enquiryQuestion}
             </h3>
           </div>
-          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">Independent Argument</span>
+          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0; font-size: 7pt;">Independent Argument</span>
         </div>
 
-        <!-- Bespoke Disciplinary Structure Strip (3-Columns, 8.2pt) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; background: #f8fafc; margin-bottom: 5px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 3px;">
+        <!-- Bespoke Disciplinary Structure Strip (3-Columns, 8.0pt) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #f8fafc; margin-bottom: 4px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
             ${cfg.structureStrip
               .map(
                 (s) => `
-              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 6px; background: #ffffff;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 2px;">${s.col}</strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.9pt; color: #334155; line-height: 1.25; display: block;">${s.text}</span>
+              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 2px;">${s.col}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #334155; line-height: 1.22; display: block;">${s.text}</span>
               </div>
             `,
               )
               .join('')}
           </div>
           
-          <div style="border-top: 1px dashed #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
-            <span style="color: #475569;"><strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}</span>
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #475569; line-height: 1.25;">
+            <strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}
           </div>
         </div>
 
         <!-- Writing Framework Strip (PEEL Mastery) -->
-        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e293b;">
+        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; margin-bottom: 4px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
           <span><strong style="color: #1e3a8a;">[P] Point:</strong> Clear direct answer to enquiry.</span>
           <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific names, dates, acts &amp; data.</span>
           <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Causal mechanism (why &amp; how).</span>
           <span><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluative conclusion.</span>
         </div>
 
-        <!-- Ruled Writing Lines (19 Lines at 7.2mm Line Height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
-          ${Array(19).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (18 Lines at 7.0mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.0" style="width: 100%; margin-bottom: 3px;">
+          ${Array(18).fill('<div class="task-line" style="height: 7.0mm;"></div>').join('')}
         </div>
       </div>
 
       <!-- Teacher Grading & Assessment Footer -->
       <div>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155;">
-          <div>
-            <strong>Teacher Assessment:</strong> &nbsp;
-            Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ] &nbsp;|&nbsp; 
-            Subject Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
-            Disciplinary Analysis: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
+        <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
+        <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
+              Timeline Mission &bull; Pages 2–3:
+            </strong>
+            <span style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e293b; font-style: italic;">
+              ${cfg.timelineMission || 'Illustrate the milestone sketchpad on Pages 2–3 with your visual symbol.'}
+            </span>
           </div>
-          <div>
-            <strong>PEEL Mastery:</strong> &nbsp;&nbsp; P &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; L
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">
+            Pages 2–3 &rarr;
+          </span>
+        </div>
+
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; white-space: nowrap;">
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <strong>Teacher Assessment:</strong>
+            <span>Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ]</span>
+            <span>Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+            <span>Analysis: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
+          </div>
+          <div style="font-weight: 700; color: #1e3a8a;">
+            PEEL: [ P ] &bull; [ E ] &bull; [ E ] &bull; [ L ]
           </div>
         </div>
 
         <!-- Right Page Footer -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
-          <span>Extended Writing Assessment &bull; The History Portal</span>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
+          <span>Extended Writing Assessment &bull; The History Department</span>
           <span>Page ${rightPageNum} (Facing Spread Right)</span>
         </div>
       </div>
@@ -1296,131 +1499,45 @@ function buildEarlyModernWorldTwoPageWorkbook() {
   });
 
   // ==========================================
-  // PAGE 20: OUTSIDE BACK COVER (Departmental Marking Policy)
+  // PAGE 20: OUTSIDE BACK COVER (Standard Publisher Architecture)
   // ==========================================
-  html += `
-  <div class="page page-container" id="page-20" style="padding: 14px 18px; display: flex; flex-direction: column; height: 256mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
-    <div>
-      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline;">
-        <div>
-          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 15.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
-            Departmental Marking Policy &amp; Code
-          </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #64748b; margin-top: 2px;">
-            The History Department Standard &bull; Year 8 KS3
-          </div>
-        </div>
-        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Policy</span>
-      </div>
-
-      <!-- Marking Symbols Grid -->
-      <div style="margin-bottom: 10px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">
-          Formative Correction Codes:
-        </strong>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.35;">
-          <thead>
-            <tr style="background: #1e3a8a; color: #ffffff;">
-              <th style="padding: 4px 8px; width: 12%; text-align: center; border: 1px solid #94a3b8;">Code</th>
-              <th style="padding: 4px 8px; width: 38%; border: 1px solid #94a3b8;">Meaning &amp; Focus</th>
-              <th style="padding: 4px 8px; width: 50%; border: 1px solid #94a3b8;">Pupil Action / DIRT Task</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #b91c1c;">Sp</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Spelling error in key historical term.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Copy the correct spelling 3 times in margin.</td>
-            </tr>
-            <tr style="background: #f8fafc;">
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #b91c1c;">Gr / P</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Grammar or punctuation slip.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Rewrite the sentence correctly in green pen.</td>
-            </tr>
-            <tr>
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #1e3a8a;">//</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">New paragraph required here.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Insert // symbol and start a new line.</td>
-            </tr>
-            <tr style="background: #f8fafc;">
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #1e3a8a;">[?]</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Meaning unclear / vague phrasing.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Clarify argument using specific evidence.</td>
-            </tr>
-            <tr>
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #0369a1;">Ev</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Missing precise factual evidence.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Add specific dates, names, treaties, or figures.</td>
-            </tr>
-            <tr style="background: #f8fafc;">
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #0369a1;">Ex</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Explanation needs deeper causal link.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Use 'This meant that...' or 'Consequently...'.</td>
-            </tr>
-            <tr>
-              <td style="padding: 3.5px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #15803d;">J</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Historical judgment needed.</td>
-              <td style="padding: 3.5px 8px; border: 1px solid #cbd5e1;">Weigh both factors to reach a sustained verdict.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- The 4 Golden Rules of Extended Writing -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 7px 12px; background: #f8fafc; margin-bottom: 9px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">
-          The 4 Golden Rules of Historical Extended Writing:
-        </strong>
-        <ol style="margin: 0; padding-left: 17px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; line-height: 1.35;">
-          <li><strong>Direct Answer:</strong> Open every paragraph with a clear thematic point that directly answers the enquiry question.</li>
-          <li><strong>Specific Evidence:</strong> Ground every argument in precise historical facts, figures, names, and contemporary legislation.</li>
-          <li><strong>Causal Connectives:</strong> Never just describe events; explain the mechanism of how and why one event caused or accelerated another.</li>
-          <li><strong>Evaluative Judgement:</strong> Weigh competing arguments against explicit historical criteria to reach a nuanced, independent conclusion.</li>
-        </ol>
-      </div>
-
-      <!-- Digital Revision Hub Quick-Link (Vector QR Code) -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 6px 12px; background: #f0f9ff; margin-bottom: 9px; display: flex; align-items: center; gap: 14px;">
-        <div style="width: 74px; height: 74px; flex-shrink: 0; background: #ffffff; padding: 3px; border: 1.2px solid #bae6fd; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
-          ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=interactive&unit=early_modern_world')}
-        </div>
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
-              📱 Digital Revision Hub &bull; Scan with Phone Camera
-            </strong>
-            <span class="archival-badge" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd; font-size: 6.8pt; padding: 1px 6px;">Interactive</span>
-          </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e293b; margin: 0 0 3px 0; line-height: 1.3;">
-            Instant home access to the interactive revision flashcards, self-marking knowledge quizzes, and model answers for this unit:
-          </p>
-          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569;">
-            <span>&bull; <strong>Flashcard Vault:</strong> Early modern vocabulary</span>
-            <span>&bull; <strong>Quiz Bank:</strong> 160 self-marking recall questions</span>
-          </div>
-          <div style="font-family: monospace; font-size: 6.8pt; color: #0284c7; margin-top: 2px;">
-            https://the-history-revision-hub.netlify.app/?view=interactive&amp;unit=early_modern_world
-          </div>
-        </div>
-      </div>
-
-      <!-- Institutional Colophon -->
-      <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 5px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1px;">
-          The History Portal &bull; Department of History
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b;">
-          Stubbington, Fareham, Hampshire &bull; Academic Year 2025–2026
-        </div>
-      </div>
-    </div>
-
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-      <span>Departmental Marking Policy &bull; Year 8 History</span>
-      <span>Page 20 (Outside Back Cover)</span>
-    </div>
-  </div>
-  `;
+  html += renderKs3BackCover({
+    unitId: 'early_modern_world',
+    unitTitle: 'The Early Modern World (1450–1750)',
+    yearGroup: 'Year 8',
+    trackerTitle: 'Progress & Assessment Record',
+    trackerSubtitle: 'Key Stage 3 Historical Studies • Termly Evidence Ledger',
+    lessons: lessonConfigs.map((cfg, i) => ({
+      num: i + 1,
+      title: cfg.enquiryQuestion.replace(/^Enquiry:\s*/i, '').split(':')[0] || `Enquiry ${i + 1}`,
+      skill: cfg.skill || 'Historical Analysis',
+      doNowMax: 5,
+      taskMax: 'Grade',
+      feedbackHint:
+        i === 0
+          ? 'Ottomans vs Europe periphery'
+          : i === 1
+            ? 'Papal Bull vs Hakluyt motives'
+            : i === 2
+              ? 'EIC trade to territorial rule'
+              : i === 3
+                ? 'Recusancy & surveillance state'
+                : i === 4
+                  ? 'Divine Right vs Civil War regicide'
+                  : i === 5
+                    ? '1688 Settlement & Bank of England'
+                    : i === 6
+                      ? 'Brookes plan & Middle Passage'
+                      : 'Queen Nanny & Maroon resistance',
+    })),
+    qrLessons: lessonConfigs.map((cfg, i) => ({
+      label: `L${i + 1}`,
+      title: `Lesson ${i + 1}`,
+      url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=early_modern_world&lesson=${i + 1}`,
+    })),
+    totalPageCount: 20,
+    footerQuip: 'Permanent Scholarship Record • Retain for Synoptic Revision & GCSE Foundation',
+  });
 
   html += `
 </body>
