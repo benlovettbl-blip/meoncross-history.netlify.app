@@ -20,6 +20,7 @@
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
+const QRCode = require('qrcode');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const dataPath = path.join(ROOT_DIR, 'units', 'great_war', 'data.js');
@@ -69,6 +70,21 @@ function getBase64Image(relPath) {
 function formatText(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+}
+
+function generateQrSvg(url) {
+  const qr = QRCode.create(url, { margin: 1 });
+  const size = qr.modules.size;
+  const data = qr.modules.data;
+  let pathD = '';
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (data[r * size + c]) {
+        pathD += `M${c},${r}h1v1h-1z `;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#0f172a" d="${pathD.trim()}"/></svg>`;
 }
 
 // High-Yield Component Bank for Great War Right-Hand Pages (P3, P5, P7, P9, P11, P13)
@@ -1021,6 +1037,56 @@ async function buildPublisherTextbookHtmlGreatWar() {
     `;
   });
 
+  const qrLessons = [
+    {
+      num: 'Lesson 1',
+      title: 'Imperial Rivalry & Alsace',
+      url: 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=0',
+    },
+    {
+      num: 'Lesson 2',
+      title: 'The Alliance System',
+      url: 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=1',
+    },
+    {
+      num: 'Lesson 3',
+      title: 'Naval Race & Arms Race',
+      url: 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=2',
+    },
+    {
+      num: 'Lesson 4',
+      title: 'The Moroccan Crises',
+      url: 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=3',
+    },
+    {
+      num: 'Lesson 5',
+      title: 'Balkan Powder Keg',
+      url: 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=4',
+    },
+    {
+      num: 'Lesson 6',
+      title: 'July Crisis & Assassination',
+      url: 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=5',
+    },
+  ];
+
+  const qrCardsHtml = qrLessons
+    .map(
+      (l) => `
+    <div class="bqr-card">
+      <div class="bqr-header">
+        <span class="bqr-num">${l.num}</span>
+        <span class="bqr-title">${l.title}</span>
+      </div>
+      <div class="bqr-code-box">
+        ${generateQrSvg(l.url)}
+      </div>
+      <div class="bqr-footer">Interactive Hub &bull; Quiz</div>
+    </div>
+  `,
+    )
+    .join('');
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1691,33 +1757,41 @@ async function buildPublisherTextbookHtmlGreatWar() {
       flex-direction: column;
       justify-content: space-between;
       border: 2px solid #0f172a;
-      padding: 14px 18px;
+      padding: 16px 20px 14px 20px;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
+    }
+    .back-body-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .back-header-strip {
       text-align: center;
       margin-bottom: 6px;
-      border-bottom: 2px solid #1e3a8a;
-      padding-bottom: 4px;
+      border-bottom: 2.5px solid #1e3a8a;
+      padding-bottom: 5px;
     }
     .back-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 14pt;
+      font-size: 15.5pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
       margin: 0;
       line-height: 1.15;
+      letter-spacing: 0.02em;
     }
     .back-subtitle {
-      font-size: 7.2pt;
-      color: #64748b;
+      font-size: 7.6pt;
+      color: #475569;
       margin-top: 2px;
       font-style: italic;
+      font-weight: 500;
     }
     .back-section-title {
-      font-size: 7.4pt;
+      font-size: 8.0pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -1725,13 +1799,22 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border-bottom: 1.5px solid #0f172a;
       padding-bottom: 2px;
       margin: 5px 0 3px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .back-section-tag {
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      letter-spacing: 0.03em;
     }
     .back-timeline-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.4pt;
-      line-height: 1.25;
+      font-size: 6.6pt;
+      line-height: 1.28;
     }
     .bt-card {
       background: #f8fafc;
@@ -1740,28 +1823,28 @@ async function buildPublisherTextbookHtmlGreatWar() {
       padding: 3.5px 5px;
       border-radius: 0 2px 2px 0;
     }
-    .bt-card strong { color: #1e3a8a; }
+    .bt-card strong { color: #1e3a8a; font-weight: 800; }
     
     .back-main-matrix-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 5px;
-      font-size: 6.4pt;
-      line-height: 1.25;
-      margin-bottom: 5px;
+      font-size: 6.7pt;
+      line-height: 1.28;
     }
     .bmm-col {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-top: 2.5px solid #1e3a8a;
-      padding: 4px 6px;
+      padding: 4.5px 6px;
       border-radius: 2px;
     }
     .bmm-col strong {
       display: block;
       color: #1e3a8a;
       text-transform: uppercase;
-      font-size: 6.2pt;
+      font-size: 6.8pt;
+      font-weight: 800;
       margin-bottom: 2px;
     }
     
@@ -1769,45 +1852,112 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.4pt;
-      line-height: 1.25;
-      margin-bottom: 5px;
+      font-size: 6.7pt;
+      line-height: 1.28;
     }
     .bh-card {
       background: #fdfaf6;
       border: 1px solid #fed7aa;
       border-left: 2.5px solid #b45309;
-      padding: 4px 6px;
+      padding: 4.5px 6px;
       border-radius: 2px;
     }
     .bh-card strong {
       display: block;
       color: #92400e;
       text-transform: uppercase;
-      font-size: 6.0pt;
-      margin-bottom: 1px;
+      font-size: 6.8pt;
+      font-weight: 800;
+      margin-bottom: 2px;
     }
 
     .back-writing-scaffold-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.4pt;
-      line-height: 1.25;
+      font-size: 6.7pt;
+      line-height: 1.28;
     }
     .bws-col {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-top: 2.5px solid #2563eb;
-      padding: 4px 6px;
+      padding: 4.5px 6px;
       border-radius: 2px;
     }
     .bws-col strong {
       display: block;
       color: #1e40af;
       text-transform: uppercase;
-      font-size: 6.0pt;
-      margin-bottom: 1px;
+      font-size: 6.8pt;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    /* Section 5: QR Quick-Launch Grid */
+    .back-qr-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 5px;
+      margin-top: 3px;
+    }
+    .bqr-card {
+      background: #ffffff;
+      border: 1.2px solid #cbd5e1;
+      border-top: 2.5px solid #1e3a8a;
+      border-radius: 3px;
+      padding: 5px 3px 4px 3px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .bqr-header {
+      width: 100%;
+      margin-bottom: 2px;
+    }
+    .bqr-num {
+      display: block;
+      font-size: 6.5pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .bqr-title {
+      display: block;
+      font-size: 5.6pt;
+      font-weight: 700;
+      color: #334155;
+      line-height: 1.15;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .bqr-code-box {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 2px;
+      box-sizing: border-box;
+      border-radius: 2px;
+    }
+    .bqr-footer {
+      font-size: 5.0pt;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 3px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 2px;
+      width: 100%;
     }
   </style>
 </head>
@@ -1897,13 +2047,16 @@ async function buildPublisherTextbookHtmlGreatWar() {
   <!-- PAGE 14: Master Revision Back Cover -->
   <div class="textbook-page" data-page="14">
     <div class="back-container">
-      <div>
+      <div class="back-body-content">
         <div class="back-header-strip">
           <h2 class="back-title">Causes of the Great War (1871–1914) &bull; Master Revision Index</h2>
           <div class="back-subtitle">Comprehensive Chronological Sequence, M-A-I-N Causal Matrix, Academic Historiography &amp; Disciplinary Writing Scaffold</div>
         </div>
 
-        <div class="back-section-title">1. Master Chronological Sequence (1871–1914)</div>
+        <div class="back-section-title">
+          <span>1. Master Chronological Sequence (1871–1914)</span>
+          <span class="back-section-tag">Key Turning Points</span>
+        </div>
         <div class="back-timeline-grid">
           <div class="bt-card"><strong>18 Jan 1871:</strong> German Empire proclaimed at Versailles; France cedes Alsace-Lorraine.</div>
           <div class="bt-card"><strong>1882:</strong> Triple Alliance formalized between Germany, Austria-Hungary, and Italy.</div>
@@ -1919,13 +2072,16 @@ async function buildPublisherTextbookHtmlGreatWar() {
           <div class="bt-card"><strong>1911:</strong> Second Moroccan Crisis (Agadir); <em>SMS Panther</em> provokes British response.</div>
           <div class="bt-card"><strong>1912–13:</strong> Balkan Wars; Ottoman retreat leaves Serbia as an aggressive regional power.</div>
           <div class="bt-card"><strong>28 Jun 1914:</strong> Archduke Franz Ferdinand assassinated in Sarajevo by Gavrilo Princip.</div>
-          <div class="bt-card"><strong>5–6 Jul 1914:</strong> Germany issues the unconditional "Blank Cheque" to Austria-Hungary.</div>
+          <div class="bt-card"><strong>5–6 Jul 1914:</strong> Germany issues unconditional "Blank Cheque" to Austria-Hungary.</div>
           <div class="bt-card"><strong>23 Jul 1914:</strong> Austria delivers harsh 48-hour ultimatum designed for Serbian rejection.</div>
           <div class="bt-card"><strong>28 Jul 1914:</strong> Austria-Hungary declares war on Serbia; Belgrade bombarded by artillery.</div>
           <div class="bt-card"><strong>1–4 Aug 1914:</strong> General mobilizations; Germany invades Belgium; Britain declares war.</div>
         </div>
 
-        <div class="back-section-title" style="margin-top: 6px;">2. The M-A-I-N Causal Matrix for Extended Writing</div>
+        <div class="back-section-title">
+          <span>2. The M-A-I-N Causal Matrix for Extended Writing</span>
+          <span class="back-section-tag">Analytical Categories</span>
+        </div>
         <div class="back-main-matrix-grid">
           <div class="bmm-col">
             <strong>M &bull; Militarism</strong>
@@ -1941,11 +2097,14 @@ async function buildPublisherTextbookHtmlGreatWar() {
           </div>
           <div class="bmm-col">
             <strong>N &bull; Nationalism</strong>
-            French revanchism (*la revanche*) over Alsace-Lorraine, Serbian Pan-Slavic ambitions in the Balkans, and Austro-Hungarian fear of internal multi-ethnic collapse.
+            French revanchism (<em>la revanche</em>) over Alsace-Lorraine, Serbian Pan-Slavic ambitions in the Balkans, and Austro-Hungarian fear of internal multi-ethnic collapse.
           </div>
         </div>
 
-        <div class="back-section-title">3. Key Historiographical Perspectives on 1914</div>
+        <div class="back-section-title">
+          <span>3. Key Historiographical Perspectives on 1914</span>
+          <span class="back-section-tag">Academic Interpretations</span>
+        </div>
         <div class="back-historiography-grid">
           <div class="bh-card">
             <strong>Fritz Fischer (German War Aims &bull; 1961)</strong>
@@ -1961,7 +2120,10 @@ async function buildPublisherTextbookHtmlGreatWar() {
           </div>
         </div>
 
-        <div class="back-section-title">4. Master Disciplinary Writing Framework</div>
+        <div class="back-section-title">
+          <span>4. Master Disciplinary Writing Framework</span>
+          <span class="back-section-tag">Evaluative Argumentation</span>
+        </div>
         <div class="back-writing-scaffold-grid">
           <div class="bws-col">
             <strong>Point &amp; Evidence Stems</strong>
@@ -1976,9 +2138,17 @@ async function buildPublisherTextbookHtmlGreatWar() {
             "While [Factor A] provided the underlying combustible material, [Factor B] served as the indispensable spark because without..."
           </div>
         </div>
+
+        <div class="back-section-title">
+          <span>5. Interactive Revision Hub &bull; Lesson QR Quick-Launch</span>
+          <span class="back-section-tag">Digital Retrieval &amp; Audio</span>
+        </div>
+        <div class="back-qr-grid">
+          ${qrCardsHtml}
+        </div>
       </div>
 
-      <div class="cover-footer" style="margin-top: 5px;">
+      <div class="cover-footer" style="margin-top: 6px;">
         <span>Causes of the Great War (1871–1914) &bull; Master Specification Review Index</span>
         <span>Page 14 of 14</span>
       </div>
