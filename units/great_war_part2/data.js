@@ -1175,7 +1175,7 @@ export const unitData = {
             descriptor:
               'Sustained, balanced historiographical judgement weighing both interpretations against criteria such as technological constraints, strategic necessity, and operational evolution.',
             exemplar:
-              'While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s orthodox critique correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal "learning curve", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing.',
+              'While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s traditional criticism correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal "learning curve", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing.',
           },
         },
       },
@@ -1189,13 +1189,13 @@ export const unitData = {
             'How far do you agree with Interpretation 1 that General Haig was an incompetent "donkey" who senselessly slaughtered his troops?',
           interp1: {
             title: 'Interpretation 1: Alan Clark, The Donkeys (1961)',
-            badge: 'The Orthodox Critique: Incompetent Donkeys',
+            badge: 'The Traditional View: "Lions Led by Donkeys"',
             text: '“British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman who lived in distant comfort in French châteaux, completely out of touch with the frontline slaughter. On 1 July 1916, his stubborn refusal to change tactics condemned 57,470 men to death or injury on a single morning.”',
             author: 'Alan Clark (British Military Historian & Politician, 1961)',
           },
           interp2: {
             title: 'Interpretation 2: Professor Gary Sheffield, Forgotten Victory (2001)',
-            badge: 'The Revisionist Defence: The Learning Curve',
+            badge: 'The Modern View: Trapped in a Tactical "Learning Curve"',
             text: "“Haig was neither a butcher nor a bungler. He was trapped in an unprecedented industrial war where defense dominated attack. The British Army underwent a massive 'Learning Curve'. By 1918, Haig had mastered combined-arms warfare—using tanks, creeping barrages, and aircraft to smash the German Army.”",
             author: 'Prof. Gary Sheffield (Modern Military Historian, 2001)',
           },
@@ -1214,14 +1214,14 @@ export const unitData = {
             },
           ],
           connectives: [
-            'Interpretation 1 contends that Haig was...',
-            'Evidence supporting this critique includes...',
+            'Interpretation 1 argues that Haig was...',
+            'Evidence supporting this criticism includes...',
             'In sharp contrast, Interpretation 2 argues that Haig...',
-            'This is corroborated by...',
+            'This is supported by...',
             'Weighing both interpretations against historical evidence, I conclude that...',
           ],
           model_answer:
-            'While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s orthodox critique correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal "learning curve", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing.',
+            'While Interpretation 1 powerfully captures the immediate human tragedy of 1 July 1916, Interpretation 2 provides a far more historically rigorous and balanced assessment of Haig’s leadership. Clark’s traditional criticism correctly identifies Haig’s tactical errors: overestimating the 7-day artillery bombardment, clinging to dreams of cavalry breakthroughs, and ordering burdened infantry to advance in rigid lines into surviving German machine guns. However, Clark completely ignores the strategic context. Haig was under relentless pressure from the French to launch an offensive to relieve the catastrophic bloodletting at Verdun. Furthermore, as Sheffield rightly argues, in 1916 no commander on earth possessed the tactical doctrine or technology—such as man-portable radios or reliable tanks—to overcome industrial defense. Haig was forced to climb a brutal "learning curve", eventually pioneering all-arms combined warfare (integrating aircraft, tanks, creeping barrages, and sound-ranging artillery) to achieve the decisive Hundred Days victories of 1918. Therefore, Interpretation 2 is substantially more convincing.',
         },
       ],
       vocab_cloze_text:

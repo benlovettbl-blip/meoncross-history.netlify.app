@@ -350,4 +350,17 @@ All Key Stage 3 units (Years 7, 8, and 9: `early_modern_world`, `industrialisati
    - `node scripts/generate_ks3_workbook.cjs <unit_id>` (compiles declarative workbook and synchronizes to `public/pdfs/`, `dist/pdfs/`, and `G:\My Drive\AAMX\Dep File\Year <N>\<Unit Name>\`).
    - `node scripts/sync_unit.cjs <unit_id>` (executes full safe sync pipeline).
 
+## KS3 Age-Appropriate Disciplinary Phrasing (14-Year-Old Friendly)
+In KS3 workbooks, pupil tasks, and classroom worksheets (Years 7–9 / 11–14 year olds):
+1. **No Intimidating Academic Jargon in Pupil Prompts:** Strictly avoid overly dense, abstract historiographical labels such as "orthodox critique" and "revisionist defense" in pupil-facing prompts, badges, and structure strips.
+2. **Ground in Accessible Terminology:** Model historiographical debates on the pupil-friendly phrasing established in Year 8 (e.g., use "The Traditional Criticism / The Traditional View" vs "The Modern Defence / The Modern View").
+3. **Preserve Disciplinary Rigor:** Keep the high-level historical arguments, causal reasoning, and primary evidence fully intact while ensuring that the framing language is clear, accessible, and motivating for 11–14 year old pupils.
 
+## Edexcel GCSE Paper 2: Early Elizabethan England Exam Architecture (100% Factual Recall)
+For Edexcel GCSE Paper 2, Section B (Early Elizabethan England, 1558–88):
+1. **100% Factual Recall & Explanation (AO1 & AO2):** There are **ZERO contemporary primary sources** and **ZERO historical interpretations** on this paper (unlike Paper 1 Western Front or Paper 3 Weimar/USA). All questions assess pure historical recall, causation, and evaluation.
+2. **Three Question Types Only:**
+   - **Q1(a) & Q1(b): Two 2-Mark Feature Questions:** `Describe one key feature of...` [2 marks each = 4 marks total]. Requires 1 specific identified feature [1 mark] and 1 supporting factual detail [1 mark].
+   - **Q2: One 12-Mark Causation Question:** `Explain why...` [12 marks]. Requires 3 detailed PEEL paragraphs explaining distinct causes (2 provided stimulus points + 1 required own-knowledge point).
+   - **Q3: One 16-Mark Evaluative Essay:** Choice of Q3(a) or Q3(b): `"Statement." How far do you agree? Explain your answer.` [16 marks + 4 marks SPaG = 20 marks]. Requires a balanced, criteria-led argument weighing factors with a sustained, justified conclusion (2 provided stimulus points + additional own knowledge).
+3. **Consolidated 16-Page Double-Page Spread Architecture:** All Early Elizabethan England revision and pupil workbooks must follow the unified 16-page double-page architecture established in `cme_new` KT2 (Cover, Living Timeline, 5 Double-Page Enquiry Spreads, Master Knowledge Organiser, Grade 9 Masterclass, and Assessment Tracker / Back Cover).

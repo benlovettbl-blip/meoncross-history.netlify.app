@@ -110,13 +110,13 @@ const lessonConfigs = [
       'Enquiry: How far do you agree with Interpretation 1 that General Haig was a callous and incompetent commander?',
     interp1: {
       title: 'Interpretation 1: Alan Clark, The Donkeys (1961)',
-      badge: 'The Orthodox Critique: Incompetent Donkeys',
+      badge: 'The Traditional View: "Lions Led by Donkeys"',
       text: '“British soldiers were lions led by donkeys. Haig was an unimaginative cavalryman who lived in distant comfort in French châteaux, completely out of touch with the frontline slaughter. On 1 July 1916, his stubborn refusal to change tactics condemned 57,470 men to death or injury on a single morning.”',
       author: 'Alan Clark (British Military Historian & Politician, 1961)',
     },
     interp2: {
       title: 'Interpretation 2: Professor Gary Sheffield, Forgotten Victory (2001)',
-      badge: 'The Revisionist Defence: The Learning Curve',
+      badge: 'The Modern View: Trapped in a Tactical "Learning Curve"',
       text: "“Haig was neither a butcher nor a bungler. He was trapped in an unprecedented industrial war where defense dominated attack. The British Army underwent a massive 'Learning Curve'. By 1918, Haig had mastered combined-arms warfare—using tanks, creeping barrages, and aircraft to smash the German Army.”",
       author: 'Prof. Gary Sheffield (Modern Military Historian, 2001)',
     },
@@ -135,7 +135,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Interpretation 1 contends that Haig was... Evidence supporting this critique includes... • In sharp contrast, Interpretation 2 argues that Haig... This is corroborated by... • Weighing both interpretations against historical evidence, I conclude that...',
+      'Interpretation 1 argues that Haig was... Evidence supporting this criticism includes... • In sharp contrast, Interpretation 2 argues that Haig... This is supported by... • Weighing both interpretations against historical evidence, I conclude that...',
     vocabTask: {
       type: 'mapping',
       termA: 'War of Attrition',
