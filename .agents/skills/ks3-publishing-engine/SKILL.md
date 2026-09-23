@@ -70,7 +70,29 @@ All KS3 pupil workbooks must strictly enforce the 2-page double-page spread arch
    - **PEEL Mastery Writing Strip:** Point, Evidence, Explanation, Link stems.
    - **Dynamic Auto-Lines Flex Target (`data-auto-lines="true"`):** Measured client-side in Puppeteer before printing to fill available height with 7.8mm ruled lines (capped at 17 lines), eliminating underflow gaps while guaranteeing 0px overflow.
    - **Teacher Assessment Rubric & Timeline Mission Signpost:** Quick marking checklist and page reference back to the Pages 2–3 sketchpad.
-5. **Page 20: Universal KS3 Outside Back Cover:**
+5. **Spiral Curriculum Thematic Strands (Single Source of Truth):**
+   - Centrally defined in `src/curriculum_strands.cjs` (`MASTER_DISCIPLINARY_STRANDS` & `UNIT_THEMATIC_STRANDS`).
+   - Every KS3 workbook automatically queries `getThematicStrandsForUnit(unitId)` and renders the **"The 4 Big Storylines to Track"** panel on the Page 1 Front Cover:
+     1. *Sovereignty, State & Power* (e.g. Divine Right → Civil War, Regicide & Parliamentary Settlement)
+     2. *Trade, Technology & Empire* (e.g. Trade Enclaves → Maritime Mercantilism → Corporate Armies)
+     3. *Ideology, Faith & Causation* (e.g. Religious Volatility → Reformation Zeal → Counter-Espionage)
+     4. *Resistance, Agency & Rights* (e.g. Everyday Resistance → Armed Insurrection → Sovereign Treaties)
+
+6. **Rotating Historical Skills Spiral System (Second-Order Disciplinary Rotation):**
+   - The 8 enquiries across each KS3 unit dynamically rotate through discrete historical skills, preventing pupil fatigue and building balanced disciplinary mastery:
+     * **Enquiry 1:** *Change & Continuity* (Macro geopolitical balance, periodisation, baseline reality)
+     * **Enquiry 2:** *Dual-Source Utility* (Provenance, perspective, author motive, corroboration)
+     * **Enquiry 3:** *Causation & Transformation* (Structural causes vs triggers, balance sheets)
+     * **Enquiry 4:** *Historical Significance* (Immediate crisis vs long-term institutional legacy)
+     * **Enquiry 5:** *Historiographical Debate* (Contrasting academic interpretations, e.g. Macaulay vs Russell)
+     * **Enquiry 6:** *Turning Point Analysis* (Decisive shifts, constitutional/financial revolutions)
+     * **Enquiry 7:** *Historical Evidence & Forensic Extraction* (Material records, dispatches, human cost)
+     * **Enquiry 8:** *Agency & Historical Significance* (Subjugated voices, resistance, long-term impact)
+   - **Enquiry Verso Header:** Automatically stamps `<span class="badge">${l.skill}</span>`.
+   - **Task 3 Evidence Workspace:** Tailored specifically to the skill (e.g. Interpretation Matrix for historiography, Source Analysis for utility, Balance Sheet for causation).
+   - **Page 20 Assessment Progress Ledger:** Automatically tracks and grades the exact assigned historical skill per enquiry.
+
+7. **Page 20: Universal KS3 Outside Back Cover:**
    - Assessment Progress Ledger tracking marks across all enquiries.
    - Mobile QR Matrix linking directly to the online Interactive Revision Hub lessons.
 
