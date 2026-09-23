@@ -476,7 +476,7 @@ function renderKs3BackCover({
             1 &bull; 2 &bull; 3 &bull; 4 &bull; 5
           </td>
           <td style="padding: 2.2px 4px; font-size: 6.6pt; color: #334155;">
-            ${l.feedbackHint || ''}
+            &nbsp;
           </td>
         </tr>`;
     })
@@ -487,12 +487,12 @@ function renderKs3BackCover({
     : `
       <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 2px;">
         <span>The History Department &bull; KS3 Assessment Record &bull; ${yearGroup}</span>
-        <span>Page ${totalPageCount} (Outside Back Cover)</span>
+        <span>Page ${totalPageCount}</span>
       </div>`;
 
   return `
   <!-- ====================================================================
-       PAGE ${totalPageCount}: OUTSIDE BACK COVER (KS3 Assessment Record & Digital Quizzing Hub)
+       PAGE ${totalPageCount}: BACK COVER (KS3 Assessment Record & Digital Quizzing Hub)
        ==================================================================== -->
   <div class="page page-container verso-page" id="page-${totalPageCount}" style="padding: 10px 14px; display: flex; flex-direction: column; justify-content: space-between; height: 256mm; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; box-sizing: border-box;">
     
@@ -504,7 +504,6 @@ function renderKs3BackCover({
       </div>
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #cbd5e1; padding-top: 2px;">
         <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #1e3a8a;">UNIT: ${unitTitle.toUpperCase()}</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f172a;">OUTSIDE BACK COVER</span>
       </div>
     </div>
 
@@ -520,10 +519,6 @@ function renderKs3BackCover({
         <div style="display: flex; align-items: center; gap: 4px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">Target Level:</span>
           <span style="border: 1.2px solid #000; border-radius: 2px; padding: 1px 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; min-width: 55px; text-align: center;">&nbsp;</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 4px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">GCSE Forecast:</span>
-          <span style="border: 1.2px solid #000; border-radius: 2px; padding: 1px 6px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; min-width: 32px; text-align: center;">&nbsp;</span>
         </div>
       </div>
     </div>
@@ -561,14 +556,14 @@ function renderKs3BackCover({
             <th style="padding: 2.5px 4px; width: 50px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Do Now</th>
             <th style="padding: 2.5px 4px; width: 65px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Task 4 Grade</th>
             <th style="padding: 2.5px 4px; width: 58px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Effort</th>
-            <th style="padding: 2.5px 6px; text-align: left; font-weight: 900; text-transform: uppercase;">Teacher Formative Feedback &amp; Next Steps</th>
+            <th style="padding: 2.5px 6px; text-align: left; font-weight: 900; text-transform: uppercase;">Teacher Feedback</th>
           </tr>
         </thead>
         <tbody>
           ${lessonRowsHtml}
           <tr style="background: #e2e8f0; font-weight: 900; border-top: 1.5px solid #0f172a; font-size: 7.1pt;">
             <td colspan="3" style="padding: 2.5px 6px; border-right: 1px solid #94a3b8; text-transform: uppercase; color: #0f172a;">
-              Unit Summative Outcome &bull; Synoptic Target Met?
+              Unit Summative Outcome
             </td>
             <td style="padding: 2.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff; color: #1e3a8a;">[ &nbsp; / 40 ]</td>
             <td style="padding: 2.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</td>
