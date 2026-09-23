@@ -81,7 +81,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 1 on Page 2: Sketch the Ottoman siege cannon, Mehmed II’s overland galleys, or Constantinople.',
     enquiryQuestion:
-      'Enquiry: Who held true global power in 1450, and why was Europe on the geographic periphery?',
+      'Enquiry: Who held true global power in 1450, and why was Europe trapped on the edge of the world?',
     doNow: [
       {
         q: 'Which catastrophic pandemic struck Europe in 1348, killing roughly half its population?',
@@ -154,7 +154,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 2 on Page 2: Sketch the 1494 Tordesillas meridian dividing the Atlantic, or Drake’s fireships scattering the Armada.',
     enquiryQuestion:
-      'Enquiry: How useful are Sources A and B for an enquiry into why European powers engaged in global oceanic expansion between 1494 and 1588?',
+      'Enquiry: How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
     sourceA: {
       title: 'Source A: Papal Bull Inter Caetera & Treaty of Tordesillas (1493–1494)',
       shelfmark: 'ARCHIVO GENERAL DE INDIAS • SEVILLE • PATRONATO 1',
@@ -239,7 +239,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 3 on Page 2: Sketch Sir Thomas Roe before Emperor Jahangir, or a fortified coastal trading factory at Surat.',
     enquiryQuestion:
-      'Enquiry: Trade or takeover: How did early commercial trading posts transform into colonial empires?',
+      'Enquiry: Trade or takeover: How did humble English trading posts turn into a corporate empire?',
     doNow: [
       {
         q: 'What 1494 treaty between Spain and Portugal divided newly discovered lands?',
@@ -312,7 +312,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 4 on Page 2: Sketch the 36 barrels in the Parliament undercroft, the Monteagle letter, or Guy Fawkes’ lantern.',
     enquiryQuestion:
-      'Enquiry: Why was religious division so volatile and dangerous under King James I?',
+      'Enquiry: Why was religious division such an explosive threat under King James I?',
     doNow: [
       {
         q: 'What type of commercial company allowed English investors to pool risk and capital?',
@@ -385,7 +385,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 5 on Page 3: Sketch Charles I raising his standard at Nottingham, or the execution scaffold outside Whitehall.',
     enquiryQuestion:
-      'Enquiry: How far do you agree with Interpretation 1 that the English Civil War was an inevitable constitutional battle for parliamentary liberty?',
+      'Enquiry: How far do you agree with Interpretation 1 that the Civil War was an unavoidable fight against royal tyranny?',
     interp1: {
       title: 'Interpretation 1: Lord Macaulay & G.M. Trevelyan, The Whig Orthodoxy (1848 / 1926)',
       badge: 'The Whig View: Inevitable March of Parliamentary Liberty',
@@ -471,7 +471,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 6 on Page 3: Sketch the 1689 Bill of Rights parchment, or the founding charter and gold vaults of the Bank of England.',
     enquiryQuestion:
-      'Enquiry: How did the 1688 Glorious Revolution and the creation of the Bank of England transform British state power?',
+      'Enquiry: How did a Dutch invasion and the Bank of England turn Britain into a global superpower?',
     doNow: [
       {
         q: 'What illegal coastal tax did Charles I extend inland during his Personal Rule?',
@@ -544,7 +544,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 7 on Page 3: Sketch the brutal plan of the slave ship Brookes, or the triangular flow of goods, captives, and sugar.',
     enquiryQuestion:
-      'Enquiry: What were the systematic mechanics, commercial scale, and human cost of the Transatlantic Slave Trade?',
+      'Enquiry: What was the true human cost and commercial scale of the Transatlantic Slave Trade?',
     doNow: [
       {
         q: 'What 1689 statute permanently subordinated royal prerogative to Parliament?',
@@ -617,7 +617,7 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 8 on Page 3: Sketch Queen Nanny’s Blue Mountain fighters, or the signing of the 1739 Maroon Peace Treaty.',
     enquiryQuestion:
-      'Enquiry: How did enslaved Africans actively resist, undermine, and dismantle the Transatlantic slave system?',
+      'Enquiry: How did enslaved Africans fight back and dismantle the plantation system from within?',
     doNow: [
       {
         q: 'What three-cornered oceanic trade route linked Britain, West Africa, and the Americas?',
@@ -1288,23 +1288,28 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <!-- Full-Width Synthesis & Disciplinary Argument Workspace -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a; text-transform: uppercase;">
-              ✍️ Task 3 Synthesis &amp; Disciplinary Argument (Bridge to Task 4):
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #475569;">
-              ${cfg.bridgeTask.synthesisPrompt || 'Synthesise both perspectives in 3–4 developed sentences using precise causal evidence:'}
-            </span>
+        <!-- Task 3 Argument Box with Ruled Lines (Accessible Year 8 Language, 0 Synthesis Jargon) -->
+        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+            ✍️ Task 3: Developing Your Argument: ${(
+              cfg.bridgeTask.synthesisPrompt ||
+              'Combine your findings into a reasoned historical argument:'
+            )
+              .replace(/^Synthesise\s+whether\s+/i, 'Explain whether ')
+              .replace(/^Synthesise\s+how\s+/i, 'Explain how ')
+              .replace(/^Synthesise\s+why\s+/i, 'Explain why ')
+              .replace(/^Synthesise\s+the\s+/i, 'Explain the ')
+              .replace(/^Synthesise\s+/i, 'Explain ')
+              .replace(/synthesis/gi, 'argument')}
           </div>
           <div style="display: flex; flex-direction: column; gap: 0;">
-            <div class="task-line-dotted" style="height: 7.8mm;"></div>
-            <div class="task-line-dotted" style="height: 7.8mm;"></div>
-            <div class="task-line-dotted" style="height: 7.8mm;"></div>
-            <div class="task-line-dotted" style="height: 7.8mm;"></div>
-            <div class="task-line-dotted" style="height: 7.8mm;"></div>
-            <div class="task-line-dotted" style="height: 7.8mm;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
           </div>
         </div>
 

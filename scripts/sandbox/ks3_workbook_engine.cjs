@@ -178,106 +178,87 @@ function buildKs3WorkbookHtml(unitConfig) {
   // PAGE 1: FRONT COVER
   // ==========================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 14px 16px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: space-between;">
+  <div class="page page-container" id="page-1" style="padding: 12px 14px; border: 1.5px solid #0f172a; border-radius: 4px; justify-content: space-between;">
     <div>
-        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 3px;" data-department-name="The History Department">
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 4px;" data-department-name="The History Department">
           <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;">The History Department</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #475569;">Key Stage 3 History • ${yearGroup} Workbook</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #cbd5e1; padding-top: 2px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #1e3a8a;">UNIT: ${unitTitle.toUpperCase()}</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b;">DEPARTMENTAL STANDARD EDITION</span>
+            <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11.5pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;">The History Department</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #475569;">Key Stage 3 Historical Studies</span>
           </div>
         </div>
 
-        <div style="border: 1.8px solid #0f172a; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 3px;">
+        <!-- Pupil Information Strip (At Top under Department Header, No Target Field) -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 3.5px 8px; background: #ffffff; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="display: flex; align-items: baseline; flex: 2;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 42px;">Name:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; flex: 1.2;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 40px;">Class:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; flex: 1.6;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 52px;">Teacher:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <!-- Micro QR Hub Badge -->
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+            <div style="width: 26px; height: 26px; flex-shrink: 0; border: 1px solid #0f172a; border-radius: 2px; padding: 1px; background: #ffffff;">
+              ${microQrSvg}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; text-align: left; line-height: 1.1;">
+              <span style="display: block; font-size: 5.5pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.3px;">Revision Hub</span>
+              <span style="display: block; font-size: 4.8pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Scan To Launch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unit Title & Overarching Enquiry Box -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 4px;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
-            <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
               ${yearGroup} Enquiry
             </span>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #334155;">
               ${unitConfig.subtitle || 'Global Encounters, Reformation, Civil War & The Transatlantic Slave Trade'}
             </span>
           </div>
-          <h1 style="font-family: 'Playfair Display', serif; font-size: 15pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 14.5pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
             ${unitTitle.toUpperCase()}
           </h1>
-          <div style="font-family: 'Georgia', serif; font-size: 8.4pt; color: #1e293b; font-style: italic; line-height: 1.25;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #1e293b; font-style: italic; line-height: 1.22;">
             Overarching Enquiry: “${overarchingEnquiry}”
           </div>
         </div>
 
         <!-- Hero Photo Plate (Full Uncropped Primary Source Presentation) -->
-        <div style="border: 1.8px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px; display: flex; flex-direction: column;">
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 4px; display: flex; flex-direction: column;">
           <div style="height: 52mm; background: #0f172a; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 2px 0;">
             <img src="${coverImgData}" alt="Cover Image" style="width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block;">
           </div>
-          <div style="border-top: 1.5px solid #0f172a; padding: 2px 8px; background: #f8fafc;">
+          <div style="border-top: 1.2px solid #0f172a; padding: 2px 8px; background: #f8fafc;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a;">
                 ${coverPlate.tag || 'Primary Historical Source'}
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
                 ${coverPlate.shelfmark || 'HISTORICAL ARCHIVE'}
               </span>
             </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
               ${coverPlate.title || 'Primary Source Evidence'}
             </div>
-            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #334155; line-height: 1.18;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.7pt; color: #334155; line-height: 1.16;">
               ${coverPlate.description || ''}
             </div>
           </div>
         </div>
 
-        <!-- Pupil Information Card with Micro QR Code -->
-        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 3px 8px 3px 10px; background: #ffffff; margin-bottom: 3px; display: flex; align-items: center; gap: 10px;">
-          <div style="flex: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2.5px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.8px; color: #0f172a;">
-                Pupil Workbook &amp; Academic Record
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #64748b;">
-                ${yearGroup} History • ${unitConfig.termCode || 'Unit 2'}
-              </span>
-            </div>
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
-              <div style="display: flex; align-items: baseline;">
-                <strong style="text-transform: uppercase; width: 44px; font-size: 7pt; color: #0f172a;">Name:</strong>
-                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
-              </div>
-              <div style="display: flex; align-items: baseline;">
-                <strong style="text-transform: uppercase; width: 40px; font-size: 7pt; color: #0f172a;">Class:</strong>
-                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
-              </div>
-              <div style="display: flex; align-items: baseline;">
-                <strong style="text-transform: uppercase; width: 50px; font-size: 7pt; color: #0f172a;">Teacher:</strong>
-                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
-              </div>
-              <div style="display: flex; align-items: baseline;">
-                <strong style="text-transform: uppercase; width: 42px; font-size: 7pt; color: #0f172a;">Target:</strong>
-                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
-              </div>
-            </div>
-          </div>
-          <!-- Micro QR Hub Badge -->
-          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
-            <div style="width: 32px; height: 32px; flex-shrink: 0; border: 1px solid #0f172a; border-radius: 2px; padding: 1px; background: #ffffff;">
-              ${microQrSvg}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; text-align: left; line-height: 1.15;">
-              <span style="display: block; font-size: 5.8pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.3px;">Revision Hub</span>
-              <span style="display: block; font-size: 5.0pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Scan To Launch</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- The 8 Historical Enquiries (GCSE Specification-Style Curriculum Roadmap) -->
-        <div style="border: 1.5px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
-          <div style="background: #0f172a; color: #ffffff; padding: 2.5px 10px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+        <!-- The 8 Historical Enquiries (Curriculum Roadmap, 0 Audit Boxes) -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 4px;">
+          <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
             <span>The 8 Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
-            <span style="font-size: 6.8pt; letter-spacing: 0.5px; color: #94a3b8;">Curriculum Progression &bull; 1450–1750</span>
+            <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">1450–1750</span>
           </div>
           <div style="padding: 4px 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 8px; font-family: 'Inter', sans-serif; background: #ffffff;">
             ${lessons
@@ -292,18 +273,14 @@ function buildKs3WorkbookHtml(unitConfig) {
                 return `
               <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: 3px 5px; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between;">
                 <div style="margin-bottom: 1.5px;">
-                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                    <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
-                    <span style="display: inline-flex; align-items: center; gap: 3px; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.3px;">
-                      <span>AUDIT</span>
-                      <span style="width: 10.5px; height: 10.5px; border: 1.3px solid #0f172a; border-radius: 2px; background: #ffffff; display: inline-block;"></span>
-                    </span>
+                  <div style="display: flex; align-items: center; margin-bottom: 1.5px;">
+                    <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
                   </div>
-                  <strong style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #0f172a; line-height: 1.18; display: block; margin-bottom: 2px;">
+                  <strong style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #0f172a; line-height: 1.18; display: block; margin-bottom: 1.5px;">
                     ${cleanEnquiry}
                   </strong>
                 </div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #334155; line-height: 1.2; padding-left: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #334155; line-height: 1.18; padding-left: 2px;">
                   ${bullets.map((b) => `<div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 6.0pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
                 </div>
               </div>
@@ -313,18 +290,18 @@ function buildKs3WorkbookHtml(unitConfig) {
           </div>
         </div>
 
-        <!-- Lower Section: Pupil-Friendly "How to Write Like a Historian" + "The Big Storylines" -->
+        <!-- Lower Section: "How to Write Like a Historian" + "The Big Storylines" -->
         <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-bottom: 3px;">
-          <!-- Left Box: How to Write Like a Historian (Pupil-Friendly Literacy Toolkit) -->
-          <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
-            <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+          <!-- Left Box: How to Write Like a Historian -->
+          <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+            <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
               <span>How to Write Like a Historian</span>
-              <span style="color: #94a3b8; font-size: 6.4pt;">4 Golden Rules &amp; Connectives</span>
+              <span style="color: #94a3b8; font-size: 6.2pt;">4 Golden Rules &amp; Connectives</span>
             </div>
-            <div style="padding: 4px 7px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            <div style="padding: 3.5px 7px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
               <div>
-                <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.6pt;">The 4 Golden Rules of Extended Writing:</strong>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 5px; margin-top: 1px; font-size: 6.5pt; color: #334155;">
+                <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.5pt;">The 4 Golden Rules of Extended Writing:</strong>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 5px; margin-top: 1px; font-size: 6.4pt; color: #334155;">
                   <span><strong>1. Direct Thesis:</strong> Clear answer in sentence 1.</span>
                   <span><strong>2. Specific Evidence:</strong> Names, dates, acts &amp; data.</span>
                   <span><strong>3. Causal Mechanics:</strong> Explain <em>why</em> &amp; <em>how</em>.</span>
@@ -332,8 +309,8 @@ function buildKs3WorkbookHtml(unitConfig) {
                 </div>
               </div>
               <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; margin-top: 1px;">
-                <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.6pt;">High-Impact Analytical Connectives:</strong>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.22; margin-top: 1px;">
+                <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.5pt;">High-Impact Analytical Connectives:</strong>
+                <div style="font-size: 6.3pt; color: #475569; line-height: 1.2; margin-top: 1px;">
                   <strong style="color: #0f172a;">Causation:</strong> <em>Consequently &bull; Precipitated by &bull; Directly resulted in</em><br>
                   <strong style="color: #0f172a;">Nuance &amp; Evaluation:</strong> <em>Conversely &bull; While ostensibly... in reality &bull; Decisively</em>
                 </div>
@@ -341,13 +318,13 @@ function buildKs3WorkbookHtml(unitConfig) {
             </div>
           </div>
 
-          <!-- Right Box: Thematic Strands (Single Source of Truth across Schemes of Work) -->
-          <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
-            <div style="background: #1e3a8a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+          <!-- Right Box: Thematic Strands (Single Source of Truth) -->
+          <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+            <div style="background: #1e3a8a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
               <span>The ${thematicStrands.length} Big Storylines to Track</span>
-              <span style="color: #bfdbfe; font-size: 6.4pt;">Core Historical Themes</span>
+              <span style="color: #bfdbfe; font-size: 6.2pt;">Core Historical Themes</span>
             </div>
-            <div style="padding: 4px 7px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.22; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            <div style="padding: 3.5px 7px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 1.5px;">
               ${thematicStrands
                 .map(
                   (strand, sIdx) => `
@@ -363,11 +340,12 @@ function buildKs3WorkbookHtml(unitConfig) {
       </div>
 
       <!-- Page 1 Footer Strip -->
-      <div style="border-top: 1.2px solid #0f172a; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #475569;">
-        <span><strong>Term:</strong> ${unitConfig.termName || 'Spring Term • ' + yearGroup + ' History'}</span>
+      <div style="border-top: 1.2px solid #0f172a; padding-top: 2.5px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569;">
+        <span>The History Department &bull; ${unitTitle}</span>
         <span style="font-style: italic; color: #64748b;">Permanent Academic Record &bull; Retain for Synoptic Revision</span>
-        <span><strong>Edition:</strong> 2026.1 Publisher Standard</span>
       </div>
+    </div>
+  </div>
     </div>
   </div>
 `;
@@ -423,12 +401,9 @@ function buildKs3WorkbookHtml(unitConfig) {
             ${m.summary}
           </p>
           <!-- Open Visual Dual-Coding Canvas (Unboxed, freeform sketching & concept mapping) -->
-          <div style="flex: 1; min-height: 26mm; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 2px 2px 2px; border-top: 1px dashed #cbd5e1; margin-top: 2px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-style: italic; font-weight: 600;">
-                ${m.sketchPrompt || '✎ Visual Dual-Coding: Sketch key symbol, causal link, or concept diagram:'}
-              </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #1e3a8a;">
+          <div style="flex: 1; min-height: 29mm; display: flex; flex-direction: column; justify-content: space-between; padding: 2px 2px 2px 2px; border-top: 1px dashed #cbd5e1; margin-top: 2px;">
+            <div style="display: flex; justify-content: flex-end; align-items: baseline; margin-bottom: 2px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #1e3a8a;">
                 ${m.exactDate || m.date} &bull; ${m.keyTerm || ''}
               </span>
             </div>
@@ -616,7 +591,7 @@ function buildKs3WorkbookHtml(unitConfig) {
         </div>
 
         <!-- Task 3 Argument Box with Ruled Lines (Accessible Year 8 Language, 0 Synthesis Jargon) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 2px;">
+        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 2px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
             ✍️ Task 3: Developing Your Argument: ${(
               l.bridgeTask?.synthesisPrompt ||
@@ -630,13 +605,13 @@ function buildKs3WorkbookHtml(unitConfig) {
               .replace(/synthesis/gi, 'argument')}
           </div>
           <div style="display: flex; flex-direction: column; gap: 0;">
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
           </div>
         </div>
 

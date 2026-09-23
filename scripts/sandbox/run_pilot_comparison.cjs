@@ -174,11 +174,54 @@ const pilotConfig = {
       'Triangular Trade, The Brookes & The Middle Passage.',
       'Queen Nanny of the Maroons, Tacky’s Revolt & Abolition Agency.',
     ];
+    const specBullets = [
+      [
+        '1453 Fall of Constantinople & Ottoman Silk Road taxes',
+        'Ming China’s maritime retreat & Asian economic dominance',
+        'European peripheral isolation & quest for spice routes',
+      ],
+      [
+        '1494 Treaty of Tordesillas: Papal division of the globe',
+        'Protestant privateering: Drake & Hawkins raid bullion',
+        '1588 Spanish Armada defeat: English oceanic ambitions',
+      ],
+      [
+        '1600 East India Company charter & Sir Thomas Roe in Agra',
+        'Fortified coastal trading factories (Surat, Madras, Calcutta)',
+        'EIC corporate armies & transition to territorial rule',
+      ],
+      [
+        '1605 Gunpowder Plot: 36 barrels beneath Parliament',
+        'Recusancy fines & James I’s Divine Right of Kings',
+        'Robert Cecil’s surveillance network & Protestant identity',
+      ],
+      [
+        'Divine Right vs Parliament: Ship Money & Personal Rule',
+        '1642 Civil War outbreak & Cromwell’s New Model Army',
+        '1649 Regicide of Charles I & the Puritan Republic',
+      ],
+      [
+        '1688 Glorious Revolution & 1689 Bill of Rights',
+        '1694 Bank of England & National Debt fund the Navy',
+        'Britain’s transformation into a fiscal-military power',
+      ],
+      [
+        'Triangular Trade architecture: outward, middle & homeward',
+        'Horrors of Middle Passage & 1788 Brookes ship diagram',
+        'Chattel slavery, sugar estates & human commodification',
+      ],
+      [
+        'Covert resistance: sabotage, culture & work slowdowns',
+        'Armed insurrections: 1760 Tacky’s Revolt in Jamaica',
+        'Queen Nanny & Maroons win 1739 Sovereign Peace Treaty',
+      ],
+    ];
     return {
       ...cfg,
       shortTitle: subLabels[i] || `Lesson ${i + 1}`,
       overviewTitle: overviewTitles[i] || `Lesson ${i + 1}`,
       syllabusTopic: syllabusTopics[i] || '',
+      specBullets: specBullets[i] || [],
       questionCount: 20,
     };
   }),
@@ -242,6 +285,10 @@ async function runPilot() {
   if (p2) await p2.screenshot({ path: path.join(outputDir, 'pilot_page2.png') });
   const p3 = await page.$('#page-3');
   if (p3) await p3.screenshot({ path: path.join(outputDir, 'pilot_page3.png') });
+  const p4 = await page.$('#page-4');
+  if (p4) await p4.screenshot({ path: path.join(outputDir, 'pilot_page4.png') });
+  const p5 = await page.$('#page-5');
+  if (p5) await p5.screenshot({ path: path.join(outputDir, 'pilot_page5.png') });
   const p6 = await page.$('#page-6');
   if (p6) await p6.screenshot({ path: path.join(outputDir, 'pilot_page6.png') });
   const p7 = await page.$('#page-7');
