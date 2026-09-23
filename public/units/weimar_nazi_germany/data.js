@@ -476,6 +476,7 @@ const weimar_nazi_germany = {
         {
           question:
             'Causal Linkage: Write a short paragraph explaining how the conditions described in Source C directly led to the events in Source D.',
+          provenance: '★ High-Yield Forecast (Q1 Inference)',
           model:
             "The extreme starvation and desperation described in Source C (caused by the Allied naval blockade) triggered massive social unrest and mutinies, such as the Kiel Mutiny. This desperation caused the 'revolution of empty stomachs,' forcing the Kaiser to abdicate and threatening a full communist takeover. To prevent this communist threat and restore order, Chancellor Ebert was forced to make a desperate deal with the old Imperial Army, as shown in Source D. Ebert agreed to rely on the army to crush left-wing revolts (like the Spartacists) in exchange for the army's loyalty to the new Republic.",
         },
@@ -516,6 +517,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: '★ High-Yield Forecast (Q1 Inference)',
         stimulus: [
           {
             title:
@@ -548,6 +550,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: '★ High-Yield Forecast (Q1 Inference)',
             question:
               '1. Give two things you can infer from Source A about the establishment of the Weimar Republic in November 1918. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -1038,6 +1041,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson's narrative, explaining the cause-and-effect relationships:\n1. The Treaty of Versailles was deeply unpopular in Germany, BUT...\n2. The Weimar Republic faced numerous challenges from both the left and the right BECAUSE...\n3. The Ruhr Crisis and the policy of Passive Resistance led to Hyperinflation, SO...",
+          provenance: 'Edexcel November 2021 (Q2 Causation)',
           model:
             '1. The Treaty of Versailles was deeply unpopular in Germany, BUT it was signed by the new Weimar government, who were then blamed for its harsh terms, undermining their legitimacy from the start.\n2. The Weimar Republic faced numerous challenges from both the left and the right BECAUSE it was seen as weak and illegitimate by many, especially for signing the "Diktat" of Versailles, which emboldened extremist groups like the Spartacists and Freikorps to attempt to overthrow it.\n3. The Ruhr Crisis and the policy of Passive Resistance led to Hyperinflation, SO the German economy collapsed, wiping out savings and causing immense hardship for ordinary Germans, further destabilizing the Republic.',
         },
@@ -1061,6 +1065,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel November 2021 (Q2 Causation)',
         stimulus: [
           {
             title:
@@ -1093,6 +1098,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel November 2021 (Q2 Causation)',
             question:
               '1. Give two things you can infer from Source A about Allied attitudes towards Germany at the Versailles Peace Conference. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -1537,6 +1543,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson: 1) Germany's economy experienced a period of recovery and stability between 1924 and 1929, BUT... 2) Gustav Stresemann was a pivotal figure in Germany's recovery BECAUSE... 3) Germany regained significant international standing SO...",
+          provenance: 'Edexcel November 2020 (Q2) / June 2026 Specimen (Q3a)',
           model:
             "1) Germany's economy experienced a period of recovery and stability between 1924 and 1929, BUT this stability was heavily reliant on foreign loans, particularly from the USA, making it vulnerable to external economic shocks. 2) Gustav Stresemann was a pivotal figure in Germany's recovery BECAUSE he implemented crucial economic reforms like the Rentenmark and negotiated key agreements such as the Dawes Plan and Locarno Pact, which stabilized the economy and restored Germany's international reputation. 3) Germany regained significant international standing SO it was admitted into the League of Nations as a permanent member of the Council and became a signatory to the Kellogg-Briand Pact, demonstrating its reintegration into the global community.",
         },
@@ -1560,6 +1567,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel November 2020 (Q2) / June 2026 Specimen (Q3a)',
         stimulus: [
           {
             title: 'Source A: Gustav Stresemann speaking to the League of Nations, 1926.',
@@ -1591,6 +1599,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel November 2020 (Q2) / June 2026 Specimen (Q3a)',
             question:
               "1. Give two things you can infer from Source A about Gustav Stresemann's foreign policy goals in the 1920s. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:",
             model:
@@ -2025,18 +2034,21 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the provided text: 1) The standard of living generally improved in Germany between 1924-1929 BUT... 2) The 'New Woman' became a prominent figure in Weimar society BECAUSE... 3) Weimar culture saw an explosion of avant-garde movements SO...",
+          provenance: 'Edexcel June 2019 (Q3b Interpretation Difference)',
           model:
             '1) ...BUT this improvement was not universal, with farmers and some sections of the middle class still struggling, and traditional gender roles still largely persisted despite new freedoms. 2) ...BECAUSE economic stability offered women more employment opportunities, Article 109 of the Weimar Constitution guaranteed legal equality, and cultural shifts encouraged greater independence and public presence. 3) ...SO it reflected and challenged the rapid social changes, urbanisation, and new freedoms, often through critical realism, functional design, and explorations of modern identity and sexuality.',
         },
         {
           question:
             'Vocabulary in Context: Using at least FOUR of the provided keywords (Standard of Living, Unemployment Insurance Act (1927), New Woman (Neue Frau), Article 109, Avant-garde, New Objectivity (Neue Sachlichkeit), Bauhaus), write a short paragraph (approx. 70-100 words) explaining how society changed in Weimar Germany between 1924 and 1929.',
+          provenance: 'Edexcel June 2019 (Q3c Interpretation Why)',
           model:
             'The period 1924-1929 saw significant shifts in German society. The **Standard of Living** generally improved due to economic stability, supported by social welfare measures like the **Unemployment Insurance Act (1927)**. This era also witnessed the rise of the **New Woman (Neue Frau)**, who, empowered by **Article 109** and increased economic independence, challenged traditional gender roles. Culturally, an **Avant-garde** explosion occurred, with movements like **New Objectivity (Neue Sachlichkeit)** in art and the **Bauhaus** school in design pushing boundaries and reflecting the modern, urbanised society.',
         },
         {
           question:
             "Causal Linkage: Explain the causal links between Germany's economic stability (1924-1929), the emergence of the 'New Woman', and the flourishing of avant-garde culture. How did these three elements influence each other?",
+          provenance: 'Edexcel June 2019 (Q3d Interpretation Evaluation)',
           model:
             "Germany's economic stability between 1924 and 1929 was a foundational cause for many societal changes. Improved wages and lower unemployment raised the **Standard of Living**, providing greater financial independence, particularly for women. This economic freedom, coupled with legal equality enshrined in **Article 109**, directly contributed to the emergence of the **New Woman (Neue Frau)**, who pursued education, careers, and a more public life. The rise of the New Woman, with her challenge to traditional norms, in turn, fueled and was reflected by the **Avant-garde** cultural movements. Artists of **New Objectivity (Neue Sachlichkeit)** and designers at **Bauhaus** explored themes of modernity, urban life, and changing gender roles, often satirising or celebrating these shifts. Thus, economic stability enabled social change, which in turn provided rich subject matter and an audience for a vibrant, challenging culture.",
         },
@@ -2048,6 +2060,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2019 (Q3b-d Interpretations)',
         stimulus: [
           {
             title:
@@ -2080,6 +2093,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2019 (Q3b Interpretation Difference)',
             question:
               '1. Give two things you can infer from Source A about changes in the lives of women in Weimar Germany during the 1920s. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -2088,12 +2102,14 @@ const weimar_nazi_germany = {
             type: '4-mark',
           },
           {
+            provenance: 'Edexcel June 2019 (Q3c Interpretation Why)',
             question:
               '2. Explain why there were significant changes in German society between 1924 and 1929 (12 marks).<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>the new constitution</li><li>economic recovery</li></ul>You must also use information of your own.',
             model:
               '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One significant reason for changes in German society was the progressive nature of the Weimar Constitution, particularly its impact on women\'s rights.</strong></span> 🔵 <span style="color: #2563eb;">The new constitution, established in 1919, legally guaranteed equality between men and women, including the right to vote (female suffrage) and equal opportunities in employment. This led to a dramatic increase in female participation in politics, with women holding 112 seats in the Reichstag by 1926, the highest proportion globally at the time.</span> 🟢 <span style="color: #16a34a;">This legal framework provided the foundation for women to challenge traditional gender roles and enter public life, as highlighted by Source B, which notes, \'The new constitution has legally guaranteed our equality with men, and we are entering work and politics in unprecedented numbers.\' This shift was particularly evident in urban areas, fostering the image of the \'New Woman\' who was more independent and visible in society.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the constitutional changes were a fundamental catalyst for the social transformation experienced by women during the Golden Years.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Another crucial factor was the period of economic recovery and stability from 1924 to 1929, often referred to as the \'Golden Years\'.</strong></span> 🔵 <span style="color: #2563eb;">The introduction of the Rentenmark in 1923 and the Dawes Plan in 1924 stabilized the currency and brought in significant American loans, leading to industrial growth and new job opportunities. This economic stability meant that more people had disposable income and leisure time, which fueled a vibrant cultural scene.</span> 🟢 <span style="color: #16a34a;">The growth of white-collar jobs, particularly in offices and shops, provided women with financial independence, allowing them to pursue careers outside the home and enjoy new forms of leisure, as described in Source B. This economic prosperity also supported the flourishing of modernist art, architecture (like the Bauhaus movement), cinema (e.g., Fritz Lang\'s Metropolis), and cabaret culture, which challenged traditional values and embraced experimentation.</span> 🟡 <span style="color: #d97706;"><strong>Thus, economic recovery provided the material conditions necessary for the social and cultural changes to take root and flourish across Germany.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Finally, the removal of pre-war censorship and the embrace of artistic freedom significantly contributed to the cultural changes of the period.</strong></span> 🔵 <span style="color: #2563eb;">Unlike the restrictive Imperial era, the Weimar Republic fostered an environment of artistic experimentation and intellectual freedom. This led to the rise of Expressionism in painting (e.g., Otto Dix, George Grosz), which often depicted the harsh realities of post-war Germany, and groundbreaking theatre that explored controversial social issues.</span> 🟢 <span style="color: #16a34a;">This cultural revolution was seen by many as a sign of progress and democratic freedom, allowing artists to reflect the complex realities of modern industrial society and challenge outdated, authoritarian values, as highlighted by Interpretation 1 (Modernist Progress View). However, this also provoked a strong backlash from conservative elements, who viewed it as \'decadent decay,\' as seen in Source C\'s concerns about \'immoral leisure\' and the \'assault on the traditional family.\'</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the liberal cultural policies of the Weimar Republic were instrumental in shaping the distinct and often controversial social landscape of the mid-1920s.</strong></span></p>',
           },
           {
+            provenance: 'Edexcel June 2019 (Q3d Interpretation Evaluation)',
             question:
               '3a. How useful are Sources B and C for an enquiry into changes in society, 1924–1929? (8 marks)',
             model:
@@ -2485,6 +2501,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the provided narrative: 1) Hitler joined the DAP in 1919 BUT... 2) The DAP changed its name to NSDAP in 1920 BECAUSE... 3) The SA was formed in 1921 SO...",
+          provenance: 'Edexcel June 2024 (Q1 Inference)',
           model:
             "1) Hitler joined the DAP in 1919 BUT he quickly transformed it from a small discussion group into a highly organised political party with a clear ideology and growing public profile. 2) The DAP changed its name to NSDAP in 1920 BECAUSE they wanted to broaden their appeal beyond just workers and incorporate a more nationalistic and socialist identity, as reflected in their new 25-Point Programme. 3) The SA was formed in 1921 SO it could protect Nazi meetings from political opponents, intimidate rivals, and project an image of strength and order, becoming a key instrument of the party's early expansion.",
         },
@@ -2508,6 +2525,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2024 (Q1 Inference)',
         stimulus: [
           {
             title: 'Source A: Point 4 of the 25-Point Programme, published in February 1920.',
@@ -2537,6 +2555,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2024 (Q1 Inference)',
             question:
               '1. Give two things you can infer from Source A about the core beliefs of the Nazi Party in 1920. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -3107,6 +3126,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson narrative:\n1. Hitler's Munich Putsch failed to seize power in 1923, BUT...\n2. Hitler received a lenient sentence for treason BECAUSE...\n3. During his time in Landsberg Prison, Hitler wrote *Mein Kampf*, SO...",
+          provenance: 'Edexcel June 2023 (Q2 Causation)',
           model:
             "1. Hitler's Munich Putsch failed to seize power in 1923, BUT it provided him with a national platform and significant publicity for his ideas and the Nazi Party.\n2. Hitler received a lenient sentence for treason BECAUSE the judges were sympathetic to his nationalist aims and shared some of his anti-Weimar sentiments, viewing him more as a misguided patriot than a dangerous revolutionary.\n3. During his time in Landsberg Prison, Hitler wrote *Mein Kampf*, SO he was able to articulate his core ideology, including the Führerprinzip and his racial theories, which would become the foundational text for the Nazi movement and guide its future actions.",
         },
@@ -3130,6 +3150,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2023 (Q2 Causation)',
         stimulus: [
           {
             title: 'Source A: Adolf Hitler speaking at his trial for treason, February 1924.',
@@ -3159,6 +3180,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2023 (Q2 Causation)',
             question:
               "1. Give two things you can infer from Source A about Adolf Hitler's attitude towards the Weimar government during his 1924 trial. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:",
             model:
@@ -3744,6 +3766,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson narrative: 1) The Grand Coalition government under Hermann Müller collapsed BUT... 2) Heinrich Brüning increasingly relied on Article 48 BECAUSE... 3) Nazi support grew dramatically between 1929 and 1932 SO...",
+          provenance: 'Edexcel November 2021 (Q3a Utility)',
           model:
             '1) The Grand Coalition government under Hermann Müller collapsed BUT it could not agree on how to fund unemployment benefits, specifically between the SPD and DVP. 2) Heinrich Brüning increasingly relied on Article 48 BECAUSE he led a minority government and lacked sufficient support in the Reichstag to pass his unpopular deflationary policies. 3) Nazi support grew dramatically between 1929 and 1932 SO they became the largest party in the Reichstag by July 1932, exploiting widespread economic hardship and political instability.',
         },
@@ -3767,6 +3790,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel November 2021 (Q3a Utility)',
         stimulus: [
           {
             title: 'Source A: A diary entry by a German middle-class teacher, 1931.',
@@ -3798,6 +3822,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel November 2021 (Q3a Utility)',
             question:
               '1. Give two things you can infer from Source A about the impact of the Great Depression on ordinary Germans. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -4402,18 +4427,21 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson:\n1. Kurt von Schleicher became Chancellor in December 1932, BUT...\n2. Franz von Papen wanted to get back into power BECAUSE...\n3. President Hindenburg ultimately appointed Hitler as Chancellor SO...",
+          provenance: 'Edexcel June 2022 (Q3b Interpretation Difference)',
           model:
             "1. Kurt von Schleicher became Chancellor in December 1932, BUT he lacked a stable Reichstag majority and Hindenburg's full trust, leading to his quick downfall.\n2. Franz von Papen wanted to get back into power BECAUSE he felt humiliated by Schleicher, who had engineered his removal from the Chancellorship, and sought revenge and a return to influence.\n3. President Hindenburg ultimately appointed Hitler as Chancellor SO he was convinced by Papen and The Camarilla that Hitler could be controlled within a nationalist coalition, underestimating Hitler's ambition and power.",
         },
         {
           question:
             'Vocabulary in Context: Write a short paragraph (5-7 sentences) explaining how Hitler became Chancellor, making sure to use ALL the following keywords: Paul von Hindenburg, The Camarilla, Franz von Papen, Kurt von Schleicher, Backstairs Intrigue, Cabinet. You may underline or bold the keywords in your answer.',
+          provenance: 'Edexcel June 2022 (Q3c Interpretation Why)',
           model:
             'Following the failure of **Kurt von Schleicher** to form a stable government and his loss of **Paul von Hindenburg\'s** trust, **Franz von Papen**, seeking revenge, engaged in **Backstairs Intrigue** with Hitler. Papen then used his influence within **The Camarilla**, a group of advisors including Hindenburg\'s son, to persuade the aging President that Hitler could be controlled. They proposed a new **Cabinet** where Hitler would be Chancellor but surrounded by conservative ministers, with Papen as Vice-Chancellor. This conspiracy ultimately led to Hindenburg appointing Hitler as Chancellor on January 30, 1933, under the misguided belief he could be "boxed in."',
         },
         {
           question:
             'Prioritising Causes: Of the factors described in the lesson, which do you think was the *most* important in Hitler becoming Chancellor? Explain your reasoning. Then, identify one *other* important factor and explain its significance.',
+          provenance: 'Edexcel June 2022 (Q3d Interpretation Evaluation)',
           model:
             "The most important factor was arguably the **Backstairs Intrigue** orchestrated by Franz von Papen and The Camarilla. Without their persistent efforts to undermine Schleicher and convince Hindenburg that Hitler could be controlled, Hindenburg would likely not have appointed Hitler. Papen's personal vendetta and his access to Hindenburg were crucial in creating the political environment for Hitler's ascent.\n\nAnother important factor was **Kurt von Schleicher's failure to gain a stable majority and Hindenburg's trust**. His inability to govern effectively and his attempts to split the Nazi party alienated Hindenburg and provided the opening that Papen exploited. Had Schleicher been more successful or had Hindenburg retained faith in him, the path for Papen's intrigue would have been much harder.",
         },
@@ -4425,6 +4453,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2022 (Q3b-d Interpretations)',
         stimulus: [
           {
             title:
@@ -4457,6 +4486,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2022 (Q3b Interpretation Difference)',
             question:
               '1. Give two things you can infer from Source A about how conservative politicians viewed Adolf Hitler in January 1933. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -4465,12 +4495,14 @@ const weimar_nazi_germany = {
             type: '4-mark',
           },
           {
+            provenance: 'Edexcel June 2022 (Q3c Interpretation Why)',
             question:
               '2. Explain why Hitler became Chancellor in January 1933. (12 marks)<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>The political instability of the Weimar Republic</li><li>The role of conservative elites</li></ul>You must also use information of your own.',
             model:
               '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One significant reason Hitler became Chancellor was the profound political instability and collapse of the Weimar democratic system.</strong></span> 🔵 <span style="color: #2563eb;">The Great Depression, which began in 1929, plunged Germany into an economic crisis, leading to mass unemployment exceeding 6 million by 1932. This economic distress paralyzed the Reichstag, as coalition governments failed to agree on solutions, leading to a succession of chancellors (Brüning, Papen, Schleicher) who ruled primarily by presidential emergency decree under Article 48. Source C, from an American journalist in December 1932, vividly describes this, stating, "The political gridlock is absolute... The public has completely lost faith in democracy. The government rules solely through unpopular emergency decrees."</span> 🟢 <span style="color: #16a34a;">This reliance on presidential power undermined democratic legitimacy, making the Reichstag irrelevant and creating a power vacuum. The public, disillusioned by the government\'s inability to solve the crisis and the constant political infighting, became increasingly open to radical alternatives, including the Nazis, who promised strong leadership and decisive action.</span> 🟡 <span style="color: #d97706;"><strong>Thus, the breakdown of parliamentary democracy created the fertile ground for Hitler\'s ascent.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Another crucial factor was the cynical political intrigue and miscalculation of conservative elites, particularly Franz von Papen.</strong></span> 🔵 <span style="color: #2563eb;">After being dismissed as Chancellor by President Hindenburg in December 1932, Papen harbored a deep resentment towards his successor, Kurt von Schleicher. Papen, along with Hindenburg\'s son Oskar and State Secretary Otto Meissner, formed a \'Camarilla\' that actively worked to undermine Schleicher and persuade the aging President to appoint Hitler. Source B, a letter from Papen to Hindenburg in January 1933, directly illustrates this intrigue, with Papen assuring Hindenburg that Hitler could be controlled "like a puppet" within a conservative-dominated cabinet.</span> 🟢 <span style="color: #16a34a;">These conservative elites, many of whom were anti-democratic and desired a return to authoritarian rule, believed they could use Hitler\'s mass appeal to stabilize the country and then sideline him. They underestimated Hitler\'s ruthlessness and political skill, failing to recognize that he would not be content with being a mere figurehead. Their ambition and misjudgment directly paved the way for his appointment.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the deliberate actions of these elites, driven by personal vendettas and political opportunism, were instrumental in Hitler becoming Chancellor.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Finally, the continued, albeit declining, mass support for the Nazi Party and Hitler\'s unwavering demand for the Chancellorship played a vital role.</strong></span> 🔵 <span style="color: #2563eb;">Despite a drop in votes in the November 1932 Reichstag elections, the Nazis remained the largest single party, holding 33.1% of the seats. This gave them a significant parliamentary presence that could not be ignored. Furthermore, the SA, the Nazi paramilitary force, continued to engage in violent street battles with communists, as noted in Source C, contributing to the sense of chaos and the need for a strong hand. Hitler himself refused to accept any position less than Chancellor, rejecting Papen\'s earlier offer of Vice-Chancellor.</span> 🟢 <span style="color: #16a34a;">The conservative elites, needing a party with mass appeal to form a government that could command some legitimacy and control the escalating street violence, eventually saw Hitler as the only viable option. His insistence on the top job, combined with the party\'s organizational strength and continued, if reduced, popular backing, meant that any government seeking stability had to contend with the Nazis.</span> 🟡 <span style="color: #d97706;"><strong>Consequently, the Nazi Party\'s electoral strength and Hitler\'s strategic intransigence forced the elites to concede the Chancellorship to him.</strong></span></p>',
           },
           {
+            provenance: 'Edexcel June 2022 (Q3d Interpretation Evaluation)',
             question:
               '3a. How useful are Sources B and C for an enquiry into how Hitler became Chancellor in 1932–33? (8 marks)',
             model:
@@ -5048,6 +5080,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson narrative:\n1. In January 1933, Hitler became Chancellor BUT...\n2. The Enabling Act was passed in March 1933 BECAUSE...\n3. The Night of the Long Knives occurred in June 1934 SO...",
+          provenance: 'Edexcel November 2021 (Q1 Inference)',
           model:
             '1. In January 1933, Hitler became Chancellor BUT he did not yet have total power and had to share authority with President Hindenburg and a coalition cabinet.\n2. The Enabling Act was passed in March 1933 BECAUSE Hitler used the fear generated by the Reichstag Fire and the emergency decree to pressure the Reichstag, securing the necessary two-thirds majority with the support of the Centre Party, allowing him to make laws without parliamentary approval.\n3. The Night of the Long Knives occurred in June 1934 SO Hitler eliminated the leadership of the SA, removing a potential rival force, appeasing the army, and consolidating his personal power by removing other conservative opponents.',
         },
@@ -5071,6 +5104,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel November 2021 (Q1 Inference)',
         stimulus: [
           {
             title:
@@ -5103,6 +5137,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel November 2021 (Q1 Inference)',
             question:
               '1. Give two things you can infer from Source A about how the Nazi government used the Reichstag Fire. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -5521,6 +5556,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete these sentences based on the lesson narrative: 1) Hitler signed the Concordat with the Catholic Church in 1933 BUT... 2) Hitler attempted to create a unified 'Reich Church' BECAUSE... 3) The Gestapo arrested many priests and pastors SO...",
+          provenance: 'Edexcel June 2019 (Q2 Causation)',
           model:
             "1) Hitler signed the Concordat with the Catholic Church in 1933 BUT he immediately began to violate its terms, dissolving Catholic youth groups, arresting priests, and seizing church property, demonstrating his true intent to control rather than cooperate. 2) Hitler attempted to create a unified 'Reich Church' BECAUSE he sought to bring the diverse Protestant churches under direct Nazi control, align their doctrines with Nazi ideology, and eliminate any independent religious voice that could challenge the regime. 3) The Gestapo arrested many priests and pastors SO religious institutions were significantly weakened, their leaders intimidated, and their ability to openly challenge the regime was severely curtailed, though their moral authority persisted for some.",
         },
@@ -5544,6 +5580,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2019 (Q2 Causation)',
         stimulus: [
           {
             title: 'Source A: A secret report by a Gestapo agent in Leipzig, 1937.',
@@ -5575,6 +5612,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2019 (Q2 Causation)',
             question:
               '1. Give two things you can infer from Source A about how the Nazi police state monitored the public. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -5970,6 +6008,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete these sentences based on the lesson's narrative: \n1) The Nazi regime established the Ministry of Public Enlightenment and Propaganda in March 1933, BUT...\n2) Joseph Goebbels was appointed head of this Ministry BECAUSE...\n3) The Nazis immediately began to control all forms of media, SO...",
+          provenance: 'Edexcel June 2024 (Q3a Utility)',
           model:
             "1) The Nazi regime established the Ministry of Public Enlightenment and Propaganda in March 1933, BUT this was just the beginning of a comprehensive and aggressive campaign to completely dominate all aspects of German public and private life.\n2) Joseph Goebbels was appointed head of this Ministry BECAUSE Hitler trusted him to be the chief architect of the regime's propaganda machine, ensuring that all information disseminated to the public aligned perfectly with Nazi ideology.\n3) The Nazis immediately began to control all forms of media, SO they could systematically eliminate dissenting voices, promote their own worldview, and create a unified national consciousness (Volksgemeinschaft) under their totalitarian rule.",
         },
@@ -5993,6 +6032,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2024 (Q3a Utility)',
         stimulus: [
           {
             title: 'Source A: A speech by Joseph Goebbels to radio directors, March 1933.',
@@ -6022,6 +6062,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2024 (Q3a Utility)',
             question:
               "1. Give two things you can infer from Source A about Joseph Goebbels' aims for state control of the media. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:",
             model:
@@ -6457,18 +6498,21 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson narrative:\n1) Early opposition groups like the SPD and KPD were quickly suppressed BUT...\n2) The Confessional Church and Catholic Church resisted the Nazis BECAUSE...\n3) Most Germans conformed to Nazi rule SO...",
+          provenance: 'Edexcel June 2024 (Q3b Interpretation Difference)',
           model:
             "1) Early opposition groups like the SPD and KPD were quickly suppressed BUT they lacked the widespread public support and organizational capacity to withstand the regime's brutal repression and systematic dismantling of political dissent.\n2) The Confessional Church and Catholic Church resisted the Nazis BECAUSE they saw the regime as a threat to their religious freedoms, moral principles, and the independence of their institutions, though their resistance often focused on specific religious issues rather than overthrowing the state.\n3) Most Germans conformed to Nazi rule SO active and passive resistance, while present, remained a minority response and did not pose a significant, existential threat to the regime's stability before 1939.",
         },
         {
           question:
             'Vocabulary in Context: Write a short paragraph (approximately 100 words) explaining the different forms of opposition to the Nazi regime between 1933-1939, using at least five of the following keywords correctly: Conformity, Passive Resistance, Active Resistance, Sopade Reports, Sabotage, Edelweiss Pirates, Swing Youth.',
+          provenance: 'Edexcel June 2024 (Q3c Interpretation Why)',
           model:
             "While **conformity** was the dominant response to Nazi rule, various forms of opposition existed. Some young people, like the **Edelweiss Pirates**, engaged in small acts of **passive resistance**, such as anti-Nazi graffiti or avoiding Hitler Youth activities, while the **Swing Youth** expressed non-conformity through cultural choices. More widespread was everyday **passive resistance**, including telling anti-Nazi jokes or avoiding salutes. **Active resistance**, though rare and dangerous, involved acts like **sabotage** or assassination attempts, such as Georg Elser's plot. Information about these varied responses, as well as the general public mood, was often documented in sources like the **Sopade Reports**, compiled by the exiled SPD.",
         },
         {
           question:
             'Causal Linkage: Explain how a combination of Nazi policies and the nature of opposition led to widespread conformity rather than successful resistance in Germany between 1933 and 1939.',
+          provenance: 'Edexcel June 2024 (Q3d Interpretation Evaluation)',
           model:
             "Widespread conformity resulted from a powerful combination of Nazi repression and propaganda, alongside the fragmented and limited nature of opposition. The Nazis swiftly dismantled political parties and trade unions, using the Gestapo and concentration camps to instill fear and eliminate active dissent. Propaganda saturated public life, promoting the regime's ideology and creating a sense of national unity and economic recovery that appealed to many. While groups like the Edelweiss Pirates and Swing Youth offered cultural non-conformity, and churches resisted on specific religious grounds, their actions rarely challenged the regime's power directly. Passive resistance was widespread but lacked coordination and revolutionary intent. Active resistance was extremely dangerous, isolated, and often failed, making it an unviable option for most. Thus, fear, genuine belief, economic improvements, and the lack of a unified, powerful opposition movement collectively ensured that conformity remained the dominant response.",
         },
@@ -6480,6 +6524,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2024 (Q3b-d Interpretations)',
         stimulus: [
           {
             title: 'Source A: An extract from a sermon by Pastor Martin Niemöller, 1937.',
@@ -6511,6 +6556,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2024 (Q3b Interpretation Difference)',
             question:
               '1. Give two things you can infer from Source A about religious opposition to the Nazi regime. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -6519,12 +6565,14 @@ const weimar_nazi_germany = {
             type: '4-mark',
           },
           {
+            provenance: 'Edexcel June 2024 (Q3c Interpretation Why)',
             question:
               '2. Explain why there was limited widespread opposition to the Nazi regime in Germany between 1933 and 1939 (12 marks).<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>The effectiveness of the Nazi police state</li><li>The appeal of Nazi policies</li></ul>You must also use information of your own.',
             model:
               '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One significant reason for limited widespread opposition was the pervasive and brutal effectiveness of the Nazi police state.</strong></span> 🔵 <span style="color: #2563eb;">Organisations like the Gestapo (secret state police), the SS, and the SD (security service) systematically identified and crushed any perceived dissent. The Gestapo, though numerically small, created an illusion of omnipresence, relying heavily on public denunciations, as highlighted in Key Topic 3.2. Those arrested faced arbitrary detention in concentration camps without trial, a fate that befell thousands, including political opponents and religious figures like Pastor Martin Niemöller, as implied by Source B\'s reference to pastors being arrested and the threat of concentration camps.</span> 🟢 <span style="color: #16a34a;">This climate of fear and terror meant that even those who privately disagreed with the regime were too intimidated to voice their opposition publicly. The swift and brutal suppression of early political opponents, such as communists and socialists, served as a stark warning to others, making the personal cost of resistance seem overwhelmingly high.</span> 🟡 <span style="color: #d97706;"><strong>Consequently, the fear of the police state was a powerful deterrent, ensuring that most Germans conformed outwardly, even if they harboured private doubts, thus limiting widespread opposition.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Furthermore, the Nazi regime\'s sophisticated use of propaganda and censorship played a crucial role in shaping public attitudes and limiting the spread of dissenting ideas.</strong></span> 🔵 <span style="color: #2563eb;">Joseph Goebbels\' Ministry of Popular Enlightenment and Propaganda controlled all forms of media, including radio, newspapers, and cinema, ensuring that only pro-Nazi messages were disseminated, as discussed in Key Topic 3.3. This meant that alternative viewpoints were suppressed, and the public was constantly exposed to messages glorifying Hitler and the regime\'s achievements. For example, the \'Strength Through Joy\' (KdF) programme, mentioned in Key Topic 4.3, was heavily promoted as evidence of the regime\'s care for workers.</span> 🟢 <span style="color: #16a34a;">By isolating the population from critical information and constantly reinforcing the regime\'s narrative, propaganda fostered a sense of national unity and loyalty among many, while making it difficult for others to articulate or even conceive of effective opposition. The constant repetition of Nazi ideology, coupled with the absence of alternative narratives, dulled critical thinking and encouraged passive acceptance.</span> 🟡 <span style="color: #d97706;"><strong>This effective control over information and public discourse significantly reduced the intellectual and ideological basis for widespread opposition.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Finally, the genuine appeal and perceived success of certain Nazi policies, particularly in the economic sphere, garnered significant public support and reduced the motivation for opposition.</strong></span> 🔵 <span style="color: #2563eb;">Hitler\'s regime successfully tackled the devastating unemployment crisis of the Great Depression through rearmament and public works projects like the autobahns, leading to full employment by 1939. This economic recovery, alongside the restoration of national pride following the perceived humiliation of the Treaty of Versailles, made the regime genuinely popular with many Germans, as explored in Key Topic 4.3. Even if living standards were exploited, as Interpretation 2 of Key Topic 4.3 suggests, the perception of stability and progress was powerful.</span> 🟢 <span style="color: #16a34a;">For millions who had suffered through hyperinflation and mass unemployment, the return to work and a sense of national purpose outweighed concerns about civil liberties or the persecution of minorities. This widespread satisfaction, or at least a sense of relief, meant that many citizens had little personal incentive to oppose the regime, choosing conformity over the risks of resistance.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the perceived benefits and successes of Nazi policies created a broad base of support and passive acceptance, severely limiting the potential for widespread opposition.</strong></span></p>',
           },
           {
+            provenance: 'Edexcel June 2024 (Q3d Interpretation Evaluation)',
             question:
               '3a. How useful are Sources B and C for an enquiry into religious opposition to the Nazi regime? (8 marks)',
             model:
@@ -6915,6 +6963,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete these sentences based on the lesson's core narrative: 1) Nazi policies aimed to confine women to the roles of \"Kinder, Küche, Kirche\" BUT... 2) The Law for the Encouragement of Marriage was introduced BECAUSE... 3) The Nazis created organizations like the NS-Frauenschaft SO...",
+          provenance: 'Edexcel June 2019 (Q1/Q3a Inference)',
           model:
             "1) BUT rearmament later created labour shortages, forcing many women back into factories, contradicting the initial aim of removing them from public employment. 2) BECAUSE the Nazis wanted to increase the Aryan birth rate and encourage traditional family structures, while also reducing female employment. 3) SO they could indoctrinate women with Nazi ideology, promote their domestic roles, and control women's activities under the party's direction.",
         },
@@ -6938,6 +6987,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2019 (Q1/Q3a Inference)',
         stimulus: [
           {
             title:
@@ -6970,6 +7020,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2019 (Q1/Q3a Inference)',
             question:
               '1. Give two things you can infer from Source A about Nazi views on the role of women in German society. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -7360,6 +7411,7 @@ const weimar_nazi_germany = {
         {
           question:
             "The 'But/Because/So' Strategy: Complete the following sentences based on the lesson: 1) The Nazi regime introduced significant changes to the school curriculum BUT... 2) Membership in the Hitlerjugend (HJ) and Bund Deutscher Mädel (BDM) became compulsory BECAUSE... 3) Teachers faced pressure to join the NSLB and swear loyalty to Hitler, SO...",
+          provenance: 'Edexcel June 2022 (Q1) / June 2025 (Q2b Causation)',
           model:
             '1) The Nazi regime introduced significant changes to the school curriculum BUT these changes were not aimed at academic excellence but rather at political indoctrination and preparing children for specific roles in the Nazi state. 2) Membership in the Hitlerjugend (HJ) and Bund Deutscher Mädel (BDM) became compulsory BECAUSE the Nazis wanted to ensure total control over the minds and activities of young people, preventing alternative influences and ensuring their complete indoctrination into Nazi ideology. 3) Teachers faced pressure to join the NSLB and swear loyalty to Hitler, SO the education system became a powerful tool for spreading Nazi propaganda, with teachers acting as agents of the regime rather than independent educators.',
         },
@@ -7383,6 +7435,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2022 (Q1) / June 2025 (Q2b Causation)',
         stimulus: [
           {
             title:
@@ -7415,6 +7468,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2022 (Q1) / June 2025 (Q2b Causation)',
             question:
               '1. Give two things you can infer from Source A about the appeal of the Hitler Youth to young Germans in the 1930s. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -7846,6 +7900,7 @@ const weimar_nazi_germany = {
         {
           question:
             'True/False/Justify: Read the following statements. For each, state whether it is True or False, and then justify your answer using specific evidence from the lesson narrative. \n\n1. Nazi Germany completely eliminated unemployment by 1939 through genuine, sustainable economic growth.\n2. The Four Year Plan, led by Hermann Goering, aimed to make Germany economically self-sufficient and prepare for war.\n3. Living standards for most Germans significantly improved between 1933 and 1939, with an abundance of consumer goods.',
+          provenance: 'Edexcel June 2018 (Q2) / June 2025 (Q3a Utility)',
           model:
             "1. **False.** While official unemployment figures dropped dramatically to 0.5 million by 1939, this was largely due to 'invisible unemployment'. This included removing women from the workforce, dismissing Jews, imprisoning political opponents, conscription into the armed forces, and counting part-time workers as full-time. This masked the true extent of unemployment and was not solely due to genuine, sustainable economic growth.\n2. **True.** Hermann Goering was indeed put in charge of the Four Year Plan in 1936. Its primary goal was to prepare Germany for war within four years by making the country economically self-sufficient (autarky) in raw materials and food, reducing reliance on imports, and boosting rearmament.\n3. **False.** While initial employment gains and propaganda efforts (like KdF and SdA) created an illusion of improvement, actual living standards for most Germans declined by 1939. The focus on rearmament and autarky led to shortages of consumer goods, increased working hours, compulsory deductions from wages (e.g., for DAF and KdF), and the widespread use of inferior 'Ersatz' (substitute) products. Food rationing was also introduced by 1939.",
         },
@@ -7869,6 +7924,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel June 2018 (Q2) / June 2025 (Q3a Utility)',
         stimulus: [
           {
             title:
@@ -7900,6 +7956,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel June 2018 (Q2) / June 2025 (Q3a Utility)',
             question:
               "1. Give two things you can infer from Source A about workers' living standards in Nazi Germany by 1938. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:",
             model:
@@ -8337,18 +8394,21 @@ const weimar_nazi_germany = {
         {
           question:
             "True/False/Justify: Read the following statements. For each, state whether it is True or False, and then justify your answer using specific information from the lesson narrative.\n\n1. The Nuremberg Laws primarily targeted 'asocials' and homosexuals, stripping them of their citizenship.\n2. Kristallnacht was a spontaneous, unorganised outburst of public anger against Jewish businesses and synagogues.\n3. The Nazi concept of 'Volksgemeinschaft' aimed to create a unified German society that embraced all citizens, regardless of their background or perceived deficiencies.",
+          provenance: 'Edexcel November 2020 (Q3b Interpretation Difference)',
           model:
             "1. False. The Nuremberg Laws (Reich Citizenship Law and Law for the Protection of German Blood and German Honour) specifically targeted Jewish people, defining who was considered Jewish, forbidding intermarriage and sexual relations between Jews and Germans, and stripping Jews of their German citizenship. While 'asocials' and homosexuals were persecuted, these specific laws were not directed at them.\n2. False. Kristallnacht (the Night of Broken Glass) in November 1938 was a state-sponsored pogrom. It was orchestrated by the Nazi regime, involving the SA and Hitler Youth, who destroyed Jewish synagogues and businesses, and arrested thousands of Jewish men. It was not a spontaneous event.\n3. False. The Nazi concept of 'Volksgemeinschaft' (people's community) was based on racial purity and social conformity. It sought to create a unified German society by *excluding* and persecuting those deemed 'racially impure', 'hereditarily diseased', or 'asocial', rather than embracing all citizens.",
         },
         {
           question:
             'Vocabulary in Context: Using at least THREE of the keywords (Volksgemeinschaft, Social Darwinism, Untermenschen, Asocials, Anti-Semitism, Eugenics, Aryanisation), explain how the Nazi regime justified and implemented its persecution of *Jewish people* between 1933 and 1939.',
+          provenance: 'Edexcel November 2020 (Q3c Interpretation Why)',
           model:
             "The Nazi regime's persecution of Jewish people from 1933-1939 was deeply rooted in its ideology, heavily influenced by **Anti-Semitism**. This long-standing hatred was intensified by the Nazi belief in **Social Darwinism**, which posited a struggle between 'superior' and 'inferior' races, with Jews explicitly categorised as **Untermenschen** (sub-humans) who threatened the purity and strength of the 'Aryan' race. To achieve their vision of a racially pure **Volksgemeinschaft** (people's community), the Nazis systematically excluded Jews. This exclusion was implemented through policies like the Nuremberg Laws and culminated in the economic stripping of Jewish wealth and property through **Aryanisation**, where Jewish businesses and assets were confiscated and transferred to 'Aryan' control. This process aimed to eliminate Jewish influence from German society and consolidate resources for the 'racially pure' community.",
         },
         {
           question:
             "Causal Linkage: Explain the causal link between core Nazi ideological concepts (such as 'Social Darwinism' and the idea of 'Untermenschen') and the specific policies of persecution enacted against *both* disabled individuals and Roma/Sinti people between 1933 and 1939.",
+          provenance: 'Edexcel November 2020 (Q3d Interpretation Evaluation)',
           model:
             "The core Nazi ideological concepts of 'Social Darwinism' and the categorisation of certain groups as 'Untermenschen' provided the fundamental justification for the persecution of both disabled individuals and Roma/Sinti people. 'Social Darwinism' suggested that only the 'fittest' should survive and reproduce, leading to the belief that those with disabilities were a genetic burden on the 'Aryan' race and the **Volksgemeinschaft**. This directly led to policies of **Eugenics**, such as the 1933 Law for the Prevention of Hereditarily Diseased Offspring, which mandated forced sterilisation for hundreds of thousands of disabled individuals to prevent the perceived 'degeneration' of the gene pool. Similarly, Roma and Sinti people were deemed 'racially impure' and 'alien' to the German nation, fitting the 'Untermenschen' label. This racial classification, combined with the Social Darwinist drive for racial purity, justified their forced sterilisation, segregation, and eventual internment in concentration camps, as they were seen as a threat to the racial health and social order of the envisioned 'Volksgemeinschaft'. In both cases, the ideology provided the 'scientific' and moral framework for systematic state-sponsored persecution.",
         },
@@ -8360,6 +8420,7 @@ const weimar_nazi_germany = {
         },
       ],
       exam_practice: {
+        provenance: 'Edexcel November 2020 (Q3b-d Interpretations)',
         stimulus: [
           {
             title: 'Source A: An extract from the Nuremberg Laws, 15 September 1935.',
@@ -8391,6 +8452,7 @@ const weimar_nazi_germany = {
         ],
         questions: [
           {
+            provenance: 'Edexcel November 2020 (Q3b Interpretation Difference)',
             question:
               '1. Give two things you can infer from Source A about Nazi policy towards Jewish people in 1935. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
             model:
@@ -8399,12 +8461,14 @@ const weimar_nazi_germany = {
             type: '4-mark',
           },
           {
+            provenance: 'Edexcel November 2020 (Q3c Interpretation Why)',
             question:
               '2. Explain why the Nazis persecuted minorities in Germany between 1933 and 1939 (12 marks).<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>Nazi ideology</li><li>Consolidation of power</li></ul>You must also use information of your own.',
             model:
               '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One significant reason for the Nazi persecution of minorities was their core racial ideology, which aimed to create a \'Volksgemeinschaft\' (people\'s community) based on Aryan supremacy.</strong></span> 🔵 <span style="color: #2563eb;">Central to Nazi belief, as outlined in Hitler\'s \'Mein Kampf\', was the concept of \'Untermenschen\' (sub-humans) and the scapegoating of Jews as the ultimate enemy, blamed for Germany\'s defeat in WWI and economic problems. This ideology led to the systematic stripping of Jewish rights, beginning with the boycott of Jewish businesses in 1933 and culminating in the Nuremberg Laws of 1935, which deprived Jews of German citizenship and forbade marriage or sexual relations between Jews and Germans.</span> 🟢 <span style="color: #16a34a;">This racial doctrine provided the fundamental justification for the systematic persecution, from legal discrimination to physical violence, as the Nazis sought to \'purify\' the German nation and remove all \'undesirable\' elements. The persecution was not merely opportunistic but deeply rooted in their worldview.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, Nazi racial ideology was the primary, underlying cause for the persecution of minorities, as it defined who was to be targeted and why.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Another crucial reason was the Nazi regime\'s desire to consolidate its power and eliminate all forms of real or perceived opposition.</strong></span> 🔵 <span style="color: #2563eb;">Initially, political opponents such as Communists, Social Democrats, and trade unionists were among the first groups to be rounded up and sent to concentration camps like Dachau, established in 1933. Beyond political enemies, other groups deemed \'undesirable\' or a threat to the \'racial hygiene\' of the state, such as the Roma, homosexuals, and the mentally or physically disabled, were also targeted. For instance, the Roma were subjected to forced sterilisation and eventually internment.</span> 🟢 <span style="color: #16a34a;">By persecuting these diverse groups, the Nazis not only removed direct political threats but also created a climate of fear and conformity. This systematic targeting reinforced the regime\'s authority, deterred dissent, and ensured that the population understood the severe consequences of deviating from Nazi norms, thereby strengthening their grip on power.</span> 🟡 <span style="color: #d97706;"><strong>Thus, the persecution of minorities was a vital tool in consolidating the Nazi dictatorship and ensuring unquestioning obedience across society.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Furthermore, economic motives played a significant role in driving the persecution of minorities, particularly the Jewish population.</strong></span> 🔵 <span style="color: #2563eb;">From 1933 onwards, the regime systematically implemented policies of \'Aryanisation\', which involved the confiscation and transfer of Jewish-owned businesses, property, and assets to \'Aryan\' Germans. This process intensified after events like Kristallnacht in November 1938, where Jewish communities were collectively fined 1 billion Reichsmarks for the damage, and their insurance payouts were confiscated by the state. Additionally, Jews attempting to emigrate were forced to pay exorbitant \'flight taxes\', effectively enriching the state.</span> 🟢 <span style="color: #16a34a;">This economic plunder served multiple purposes: it provided significant funds for the regime\'s rearmament programmes, rewarded loyal Nazi Party members and supporters with lucrative assets, and further impoverished and isolated the Jewish community, making their eventual forced emigration or extermination seem more \'justified\' to some.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the economic benefits derived from the systematic theft of minority wealth were a powerful incentive for the escalating persecution, particularly as Germany prepared for war.</strong></span></p>',
           },
           {
+            provenance: 'Edexcel November 2020 (Q3d Interpretation Evaluation)',
             question:
               '3a. How useful are Sources B and C for an enquiry into the events of Kristallnacht? (8 marks)',
             model:

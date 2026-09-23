@@ -1624,7 +1624,18 @@ allDirs.forEach((unitId) => {
       const isAssessment = l.title && l.title.startsWith('End of Unit Assessment');
       const label = isAssessment ? `Assessment: ${l.title}` : `L${i + 1}: ${l.title}`;
       const bg = isAssessment ? '' : 'background-color: #f1f5f9;';
-      progressTrackerRows += `<tr style="${bg}"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">${label}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
+      let provHtml = '';
+      if (unitId === 'weimar_nazi_germany' && l.exam_practice) {
+        const prov =
+          l.exam_practice.provenance ||
+          (l.exam_practice.questions &&
+            l.exam_practice.questions[0] &&
+            l.exam_practice.questions[0].provenance);
+        if (prov) {
+          provHtml = `<div style="font-size: 7.2pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; margin-top: 2px;">Official Exam Series: ${prov}</div>`;
+        }
+      }
+      progressTrackerRows += `<tr style="${bg}"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">${label}${provHtml}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
     });
 
     let imageToUse =
@@ -4361,7 +4372,11 @@ allDirs.forEach((unitId) => {
             }
 
             let _tInfo3 = processTaskTextWithTariff(rawQText, true);
-            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${'Q' + globalQNum++}. ${_tInfo3.cleanText}</strong></div>`;
+            let provBadge =
+              unitId === 'weimar_nazi_germany' && ep.provenance
+                ? ` <span style="display: inline-block; background-color: #f8fafc; border: 1.2px solid #000000; color: #000000; font-size: 7.4pt; font-weight: 800; padding: 1px 6px; border-radius: 3px; vertical-align: middle; margin-left: 8px; text-transform: uppercase;">${ep.provenance}</span>`
+                : '';
+            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${'Q' + globalQNum++}. ${_tInfo3.cleanText}</strong>${provBadge}</div>`;
             if (_tInfo3.badgeHtml) {
               questionHtml += _tInfo3.badgeHtml.replace(
                 '<div style="margin-top: 5px; margin-bottom: 15px;">',
