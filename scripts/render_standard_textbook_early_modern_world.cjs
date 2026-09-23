@@ -767,7 +767,7 @@ const EARLY_MODERN_LEFT_SOURCES = {
       badge: 'SOURCE A',
       type: 'Historical Primary Cartography',
       title: 'The Silk Roads and Maritime Eurasian Trade Networks (c. 1450)',
-      image: getBase64Image('/images/silk_road.jpg'),
+      image: getBase64Image('/images/silk_route_colored_map.jpg'),
       context:
         'Before European ocean navigation, Eurasian commerce flowed along ancient Silk Roads connecting China, India, and Persia to Mediterranean ports. Goods passed through dozens of middlemen and were heavily taxed by Islamic empires, making Asian luxuries rare and expensive in Europe.',
       hingeQuestion:

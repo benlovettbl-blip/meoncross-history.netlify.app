@@ -741,7 +741,7 @@ const early_modern_world = {
         {
           letter: 'A',
           title: 'Source A: The Silk Road & Trade Bottleneck (1450)',
-          src: '/images/silk_road.jpg',
+          src: '/images/silk_route_colored_map.jpg',
           caption:
             'Contemporary map illustrating the historic overland Silk Road caravan routes linking China and Europe, which were heavily taxed and blocked after the Ottoman conquest of Constantinople in 1453.',
           shelfmark: 'Imperial Cartographic Archive (Shelfmark: ICA-SILK-1450)',
@@ -778,7 +778,7 @@ const early_modern_world = {
           source: {
             letter: 'A',
             title: 'Source A: The Silk Road & Trade Bottleneck (1450)',
-            src: '/images/silk_road.jpg',
+            src: '/images/silk_route_colored_map.jpg',
             caption:
               'Contemporary map illustrating the historic overland Silk Road caravan routes linking China and Europe, which were heavily taxed and blocked after the Ottoman conquest of Constantinople in 1453.',
             shelfmark: 'Imperial Cartographic Archive (Shelfmark: ICA-SILK-1450)',
