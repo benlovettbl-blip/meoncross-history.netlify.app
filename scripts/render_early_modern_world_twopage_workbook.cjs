@@ -75,15 +75,30 @@ function getBase64Image(relPath) {
 // 8 Bespoke Double-Page Enquiry Configurations for Year 8 Early Modern World
 const lessonConfigs = [
   {
-    // Lesson 1: Global Power in 1450
     taskType: 'extended_writing',
-    genre: 'Genre 1: Global Encounter & Change',
+    genre: 'Disciplinary Focus: Change & Continuity',
     skill: 'Change & Continuity',
-    genreNum: 1,
     timelineMission:
       'Illustrate Milestone 1 on Page 2: Sketch the Ottoman siege cannon, Mehmed II’s overland galleys, or Constantinople.',
     enquiryQuestion:
       'Enquiry: Who held true global power in 1450, and why was Europe on the geographic periphery?',
+    doNow: [
+      {
+        q: 'Which catastrophic pandemic struck Europe in 1348, killing roughly half its population?',
+      },
+      {
+        q: 'What overland trade network historically linked China and the Mediterranean across Asia?',
+      },
+      {
+        q: 'Which Christian empire, centered at Constantinople, fell to the Ottomans in 1453?',
+      },
+      {
+        q: 'What was the primary source of wealth and power for medieval European feudal barons?',
+      },
+      {
+        q: 'Which religious figure in Rome held supreme spiritual authority over Western Europe?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -109,6 +124,8 @@ const lessonConfigs = [
         'Completely dependent on Muslim Venetian middlemen for eastern luxuries.',
         'Blocked from eastern overland routes, forcing dangerous oceanic navigation.',
       ],
+      synthesisPrompt:
+        'Synthesise why Ottoman dominance and European weakness forced oceanic exploration:',
       clue: '<em>Low-Floor Clue:</em> In 1450, Europe was not the centre of the world; it was a fractured, impoverished peninsula desperate to find a sea route to Asian wealth.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does Janet Abu-Lughod’s concept of a "thirteenth-century world system" disprove the traditional Eurocentric myth of inevitable Western supremacy?',
@@ -131,11 +148,9 @@ const lessonConfigs = [
       'In 1450, global power was concentrated in... • Crucially, the Ottoman capture of Constantinople meant that... • In stark contrast, European monarchies were... • This imbalance directly forced explorers like Columbus and da Gama to... • Ultimately, European expansion was born not of strength, but of desperation to...',
   },
   {
-    // Lesson 2: Religious Conflict & Global Exploration (DUAL-SOURCE UTILITY)
     taskType: 'source_utility',
-    genre: 'Genre 1: Source Utility & Imperial Zeal',
+    genre: 'Source Analysis: Dual-Source Utility',
     skill: 'Dual-Source Utility',
-    genreNum: 1,
     timelineMission:
       'Illustrate Milestone 2 on Page 2: Sketch the 1494 Tordesillas meridian dividing the Atlantic, or Drake’s fireships scattering the Armada.',
     enquiryQuestion:
@@ -168,6 +183,23 @@ const lessonConfigs = [
     ],
     connectives:
       'Source A is useful for proving that initial oceanic claims were legitimized by... • However, its utility is limited because as an official papal bull it conceals Spain’s desire for... • In contrast, Source B provides insider insight into England’s strategic ambition to... • Cross-referencing both sources demonstrates that exploration was driven by a volatile mix of... • On balance, Source [A/B] is more valuable for this enquiry because...',
+    doNow: [
+      {
+        q: 'Which Chinese imperial dynasty deployed massive treasure fleets under Zheng He?',
+      },
+      {
+        q: 'What city did Ottoman Sultan Mehmed II conquer in 1453, ending the Byzantine Empire?',
+      },
+      {
+        q: 'Why did Ottoman control of eastern routes force Europeans to seek oceanic sea routes?',
+      },
+      {
+        q: 'What disciplined standing elite infantry formed the core of the Ottoman military?',
+      },
+      {
+        q: 'Why was 15th-century Europe described as economically and geographically peripheral?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -193,21 +225,38 @@ const lessonConfigs = [
         'English privateers (Drake and Hawkins) plundering Spanish treasure galleons.',
         'Mercantilist doctrine: wealth is finite and must be captured from rivals.',
       ],
+      synthesisPrompt:
+        'Synthesise whether religious zeal or commercial greed was the primary driver of oceanic expansion:',
       clue: '<em>Low-Floor Clue:</em> In the Tudor era, religion and profit were inextricably linked: Queen Elizabeth I sponsored privateers like Francis Drake to strike at Catholic Spain while enriching her royal treasury.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does the Armada Portrait of 1588 visually combine Protestant religious providence with global imperial ownership?',
     },
   },
   {
-    // Lesson 3: Trade or Takeover: Mughal India & Native America
     taskType: 'extended_writing',
-    genre: 'Genre 2: Causation & Imperial Encounter',
+    genre: 'Causal Analysis: Trade to Empire',
     skill: 'Causation & Consequence',
-    genreNum: 2,
     timelineMission:
       'Illustrate Milestone 3 on Page 2: Sketch Sir Thomas Roe before Emperor Jahangir, or a fortified coastal trading factory at Surat.',
     enquiryQuestion:
       'Enquiry: Trade or takeover: How did early commercial trading posts transform into colonial empires?',
+    doNow: [
+      {
+        q: 'What 1494 treaty between Spain and Portugal divided newly discovered lands?',
+      },
+      {
+        q: 'Which English monarch licensed privateers like Drake to plunder Spanish bullion?',
+      },
+      {
+        q: 'In what year did the Spanish Armada fail to invade Tudor England?',
+      },
+      {
+        q: 'What German monk initiated the Protestant Reformation in 1517?',
+      },
+      {
+        q: 'What precious metal mined at Potosí funded Spanish imperial armies across Europe?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -233,6 +282,8 @@ const lessonConfigs = [
         'Virginia tobacco plantations expand violently, displacing indigenous Algonquin tribes.',
         'Joint-stock corporations command private armies larger than sovereign European states.',
       ],
+      synthesisPrompt:
+        'Synthesise how private commercial trade depots transformed into coercive colonial empires:',
       clue: '<em>Low-Floor Clue:</em> The East India Company was not a government; it was a private profit-making corporation that built a private army of 260,000 men to control an empire.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does William Dalrymple’s concept of "The Anarchy" characterize the EIC’s transition from merchant traders to corporate pillagers?',
@@ -255,15 +306,30 @@ const lessonConfigs = [
       'Initially, European encounters in India and the Americas were characterised by... • However, as corporate profits grew, merchant companies began to... • The turning point occurred when... • This resulted in the catastrophic transformation of... • Ultimately, commercial trade evolved into imperial takeover because...',
   },
   {
-    // Lesson 4: Gunpowder Plot & Religious Volatility
     taskType: 'extended_writing',
-    genre: 'Genre 2: Religious Volatility & State Security',
+    genre: 'Historical Significance: 1605 Crisis',
     skill: 'Historical Significance',
-    genreNum: 2,
     timelineMission:
       'Illustrate Milestone 4 on Page 2: Sketch the 36 barrels in the Parliament undercroft, the Monteagle letter, or Guy Fawkes’ lantern.',
     enquiryQuestion:
       'Enquiry: Why was religious division so volatile and dangerous under King James I?',
+    doNow: [
+      {
+        q: 'What type of commercial company allowed English investors to pool risk and capital?',
+      },
+      {
+        q: 'What was the first permanent English colony in North America, founded in 1607?',
+      },
+      {
+        q: 'Which Indian Islamic empire did ambassador Sir Thomas Roe visit in 1615?',
+      },
+      {
+        q: 'What agricultural cash crop saved the Jamestown settlement from economic ruin?',
+      },
+      {
+        q: 'What term described an armed coastal trading depot built by the East India Company?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -289,6 +355,8 @@ const lessonConfigs = [
         'Discovery of Guy Fawkes with fuses and match in the Parliament cellar on 4 November.',
         'Public executions, enhanced Penal Laws, and the Popish Recusants Act of 1606.',
       ],
+      synthesisPrompt:
+        'Synthesise why religious division threatened state security and royal authority under James I:',
       clue: '<em>Low-Floor Clue:</em> The Gunpowder Plot shocked contemporaries because it targeted the entire political establishment—the King, his heirs, Lords, and Commons—in a single explosion.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How did Robert Cecil weaponize the Gunpowder Plot to forge an enduring British national identity rooted in militant anti-Catholicism?',
@@ -311,11 +379,9 @@ const lessonConfigs = [
       'Religious division under James I was profoundly volatile because... • Specifically, the anger of Catholic gentry like Catesby was triggered by... • The discovery of the cellar plot demonstrated that... • Consequently, the Jacobean state responded with... • Therefore, the Gunpowder Plot was historically significant because...',
   },
   {
-    // Lesson 5: The English Civil War & Charles I (HISTORIOGRAPHICAL DEBATE)
     taskType: 'historical_interpretations',
-    genre: 'Genre 3: Historiographical Debate & Revolution',
+    genre: 'Historiographical Debate: Civil War',
     skill: 'Historical Interpretations',
-    genreNum: 3,
     timelineMission:
       'Illustrate Milestone 5 on Page 3: Sketch Charles I raising his standard at Nottingham, or the execution scaffold outside Whitehall.',
     enquiryQuestion:
@@ -349,6 +415,23 @@ const lessonConfigs = [
     ],
     connectives:
       'Interpretation 1 argues that the Civil War was an inevitable result of... • This is supported by evidence such as Charles I’s eleven years of Personal Rule and... • However, Interpretation 2 directly challenges this Whig orthodoxy, maintaining that... • Russell’s thesis is reinforced by the fact that in 1640 MPs like Pym were terrified of... • On balance, Interpretation [1/2] offers a more convincing historical explanation because...',
+    doNow: [
+      {
+        q: 'What political doctrine stated that kings answer solely to God, not to Parliament?',
+      },
+      {
+        q: 'Who was the militant Catholic mastermind who led the Gunpowder Plot in 1605?',
+      },
+      {
+        q: 'How many barrels of gunpowder were concealed beneath the House of Lords?',
+      },
+      {
+        q: 'What was the crime of refusing to attend compulsory Church of England services?',
+      },
+      {
+        q: 'What anonymous letter warned Lord Monteagle not to attend Parliament on 5 November?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -374,21 +457,38 @@ const lessonConfigs = [
         'Charles I entering the House of Commons with 400 soldiers to arrest the Five Members (1642).',
         'Charles I’s fatal character: inflexible, secretive, and widely perceived as untrustworthy.',
       ],
+      synthesisPrompt:
+        'Synthesise whether structural friction or Charles I’s personal blunders triggered the Civil War:',
       clue: '<em>Low-Floor Clue:</em> In January 1642, Charles I committed the unthinkable blunder of storming the House of Commons with armed troops to arrest five MPs; Speaker Lenthall famously defied him, declaring he served Parliament, not the King.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does John Morrill’s famous description of 1642 as "not England\'s first modern revolution, but her last war of religion" undermine Macaulay’s Victorian Whig myth?',
     },
   },
   {
-    // Lesson 6: The Economic Shift & Glorious Revolution
     taskType: 'extended_writing',
-    genre: 'Genre 3: Constitutional Turning Points',
+    genre: 'Turning Point: Financial Revolution',
     skill: 'Turning Point Analysis',
-    genreNum: 3,
     timelineMission:
       'Illustrate Milestone 6 on Page 3: Sketch the 1689 Bill of Rights parchment, or the founding charter and gold vaults of the Bank of England.',
     enquiryQuestion:
       'Enquiry: How did the 1688 Glorious Revolution and the creation of the Bank of England transform British state power?',
+    doNow: [
+      {
+        q: 'What illegal coastal tax did Charles I extend inland during his Personal Rule?',
+      },
+      {
+        q: 'In what year was King Charles I publicly executed outside Whitehall Banqueting House?',
+      },
+      {
+        q: 'What disciplined parliamentary army was established by Fairfax and Cromwell in 1645?',
+      },
+      {
+        q: 'What title did Oliver Cromwell assume as head of the Commonwealth in 1653?',
+      },
+      {
+        q: 'What legal term defines the formal judicial execution of a reigning monarch?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -414,6 +514,8 @@ const lessonConfigs = [
         'Government able to borrow millions at low interest rates from City of London merchants.',
         'Massive naval expansion: Royal Navy becomes the dominant fighting force in Europe.',
       ],
+      synthesisPrompt:
+        'Synthesise how the 1688 settlement and the Financial Revolution created a modern superpower:',
       clue: '<em>Low-Floor Clue:</em> The Glorious Revolution was not just about religion; by guaranteeing that Parliament controlled taxes, it allowed Britain to borrow money cheaply and build the world’s greatest navy.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How did John Brewer’s concept of the "Fiscal-Military State" explain Britain’s ability to defeat much larger continental rivals like France after 1688?',
@@ -436,15 +538,30 @@ const lessonConfigs = [
       'The Glorious Revolution of 1688 marked a decisive turning point because... • The immediate catalyst was James II’s attempt to... • Consequently, the 1689 Bill of Rights established that... • Furthermore, the founding of the Bank of England in 1694 revolutionised... • Ultimately, Britain emerged as a global superpower because...',
   },
   {
-    // Lesson 7: Mechanics of the Transatlantic Slave Trade
     taskType: 'extended_writing',
-    genre: 'Genre 4: Historical Evidence & Chattel Slavery',
+    genre: 'Historical Evidence: Middle Passage',
     skill: 'Historical Evidence & Cause',
-    genreNum: 4,
     timelineMission:
       'Illustrate Milestone 7 on Page 3: Sketch the brutal plan of the slave ship Brookes, or the triangular flow of goods, captives, and sugar.',
     enquiryQuestion:
       'Enquiry: What were the systematic mechanics, commercial scale, and human cost of the Transatlantic Slave Trade?',
+    doNow: [
+      {
+        q: 'What 1689 statute permanently subordinated royal prerogative to Parliament?',
+      },
+      {
+        q: 'What central bank was founded in 1694 to manage national borrowing and fund the Navy?',
+      },
+      {
+        q: 'What Dutch ruler was invited by Parliament to replace James II in the Glorious Revolution?',
+      },
+      {
+        q: 'What economic doctrine held that national power required hoarding silver and gold bullion?',
+      },
+      {
+        q: 'What financial innovation allowed the British government to borrow money cheaply?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -470,6 +587,8 @@ const lessonConfigs = [
         'Branding with red-hot irons and physical shackling in darkness below deck for 6–12 weeks.',
         'Olaudah Equiano’s testimony: the stench, shrieks of the dying, and unbearable claustrophobia.',
       ],
+      synthesisPrompt:
+        'Synthesise the contradiction between British domestic wealth and the inhumanity of the Middle Passage:',
       clue: '<em>Low-Floor Clue:</em> In 1788, the Abolition Society published a technical architectural plan of the slave ship Brookes; its chilling diagram showed human beings stacked like cargo in the hold.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does Eric Williams’s landmark "Capitalism and Slavery" thesis argue that the profits of Atlantic slavery directly financed Britain’s Industrial Revolution?',
@@ -492,15 +611,30 @@ const lessonConfigs = [
       'The Transatlantic Slave Trade functioned as a ruthless commercial machine because... • On the Outward Leg, British merchants traded... • During the harrowing Middle Passage, enslaved Africans endured... • Primary evidence from the Brookes architectural plan demonstrates that... • Consequently, British economic prosperity in the eighteenth century was inextricably built upon...',
   },
   {
-    // Lesson 8: Resistance to the Slave Trade: Maroons & Rebellion
     taskType: 'extended_writing',
-    genre: 'Genre 4: Agency & Historical Resistance',
+    genre: 'Historical Agency: Maroon Resistance',
     skill: 'Agency & Historical Significance',
-    genreNum: 4,
     timelineMission:
       'Illustrate Milestone 8 on Page 3: Sketch Queen Nanny’s Blue Mountain fighters, or the signing of the 1739 Maroon Peace Treaty.',
     enquiryQuestion:
       'Enquiry: How did enslaved Africans actively resist, undermine, and dismantle the Transatlantic slave system?',
+    doNow: [
+      {
+        q: 'What three-cornered oceanic trade route linked Britain, West Africa, and the Americas?',
+      },
+      {
+        q: 'What was the harrowing middle leg transporting captured Africans called?',
+      },
+      {
+        q: 'What 1788 architectural plan exposed over 450 enslaved people crammed into a ship’s hold?',
+      },
+      {
+        q: 'Which two British ports expanded dramatically from trading slave-produced sugar and tobacco?',
+      },
+      {
+        q: 'What legal classification treated enslaved human beings as personal property?',
+      },
+    ],
     vocabTask: {
       type: 'distinction',
       prompt:
@@ -526,6 +660,8 @@ const lessonConfigs = [
         'Queen Nanny of the Maroons: brilliant tactical general defeating British redcoat regiments.',
         'The 1739 Maroon Treaty: forced the British Empire to sign a peace treaty recognizing Maroon freedom.',
       ],
+      synthesisPrompt:
+        'Synthesise how everyday resistance and armed insurrections actively challenged chattel slavery:',
       clue: '<em>Low-Floor Clue:</em> In 1739, after decades of guerilla war in the Jamaican mountains, the mighty British Empire was forced to negotiate a formal peace treaty with Queen Nanny, granting her people 1,500 acres of sovereign land.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does highlighting African agency and rebellion correct the flawed traditional narrative that abolition was solely the charitable gift of white politicians like William Wilberforce?',
@@ -1048,47 +1184,37 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </ul>
         </div>
 
-        <!-- Do Now Recall Strip -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; background: #ffffff;">
+        <!-- Do Now Recall Strip (Task 1) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #ffffff;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Task 1: 'Do Now' Retrieval Practice</strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
           </div>
           <div style="grid-template-columns: repeat(5, 1fr); gap: 5px; display: grid;">
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q1 (Last)</div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q2 (Last)</div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q3 (2 Ago)</div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q4 (Unit)</div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q5 (Synoptic)</div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-              <div class="task-line-dotted" style="height: 5.4mm;"></div>
-            </div>
+            ${(cfg.doNow || [])
+              .map(
+                (item, qIdx) => `
+              <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 4px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.18; color: #0f172a; margin-bottom: 2px;">
+                  <strong style="color: #1e3a8a;">Q${qIdx + 1}:</strong> ${item.q}
+                </div>
+                <div>
+                  <div class="task-line-dotted" style="height: 5.2mm;"></div>
+                  <div class="task-line-dotted" style="height: 5.2mm;"></div>
+                </div>
+              </div>
+            `,
+              )
+              .join('')}
           </div>
         </div>
 
-        <!-- Core Vocabulary -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; background: #fdfbf7;">
+        <!-- Task 2: Core Disciplinary Vocabulary -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #fdfbf7;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.9pt; color: #334155; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; margin-bottom: 2px;">
             ${cfg.vocabTask.prompt}
           </div>
           <div class="auto-fill-lines">
@@ -1114,46 +1240,50 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <div class="auto-fill-ledger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 3px; flex: 1;">
-          <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">${cfg.bridgeTask.col1Title}</strong>
-              <ul style="margin: 0 0 3px 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; line-height: 1.25;">
-                ${cfg.bridgeTask.col1Prompts.map((p) => `<li>${p}</li>`).join('')}
-              </ul>
-            </div>
-            <div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 2px 0 1px 0;">
-                ✍️ Synthesise their perspective in 2 sentences:
-              </div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-            </div>
+        <!-- Dual Evidence Columns (Side-by-Side) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
+          <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #0369a1; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; text-transform: uppercase;">
+              ${cfg.bridgeTask.col1Title}
+            </strong>
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; line-height: 1.32;">
+              ${cfg.bridgeTask.col1Prompts.map((p) => `<li style="margin-bottom: 2px;">${p}</li>`).join('')}
+            </ul>
           </div>
-          <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">${cfg.bridgeTask.col2Title}</strong>
-              <ul style="margin: 0 0 3px 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; line-height: 1.25;">
-                ${cfg.bridgeTask.col2Prompts.map((p) => `<li>${p}</li>`).join('')}
-              </ul>
-            </div>
-            <div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 2px 0 1px 0;">
-                ✍️ Synthesise their perspective in 2 sentences:
-              </div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-            </div>
+          <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 4px 6px; background: #fffaf0;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; text-transform: uppercase;">
+              ${cfg.bridgeTask.col2Title}
+            </strong>
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; line-height: 1.32;">
+              ${cfg.bridgeTask.col2Prompts.map((p) => `<li style="margin-bottom: 2px;">${p}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Full-Width Synthesis & Disciplinary Argument Workspace -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 3px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a; text-transform: uppercase;">
+              ✍️ Task 3 Synthesis &amp; Disciplinary Argument (Bridge to Task 4):
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #475569;">
+              ${cfg.bridgeTask.synthesisPrompt || 'Synthesise both perspectives in 3–4 developed sentences using precise causal evidence:'}
+            </span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: space-around;">
+            <div class="task-line-dotted" style="height: 5.6mm;"></div>
+            <div class="task-line-dotted" style="height: 5.6mm;"></div>
+            <div class="task-line-dotted" style="height: 5.6mm;"></div>
+            <div class="task-line-dotted" style="height: 5.6mm;"></div>
+            <div class="task-line-dotted" style="height: 5.6mm;"></div>
           </div>
         </div>
 
         <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b; margin-top: 1px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; margin-top: 1px;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.9pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
         </div>
