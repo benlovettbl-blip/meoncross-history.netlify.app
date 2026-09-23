@@ -328,3 +328,26 @@ Whenever authoring, compiling, or refactoring publisher-standard textbooks (such
 9. **Automated Verification Pipeline:**
    - All textbooks must be audited using `node scripts/auto_balance_textbook.cjs <topicId>` to enforce 0px overflow and pass the automated Disciplinary Quality & Anti-Duplication Gate.
 
+## Key Stage 3 Universal Publishing Standard: Master Textbook & Declarative Workbook Pipeline
+All Key Stage 3 units (Years 7, 8, and 9: `early_modern_world`, `industrialisation_and_empire`, `great_war`, `great_war_part2`, `water_and_sanitation`, `medieval_england`, `the_shoah`, `cold_war`, `post_war_britain`, `australia`) must strictly adhere to the unified publisher-grade standard established in *Causes of the Great War* and *The Early Modern World*:
+1. **Retirement of Legacy Multi-Page Scripts:** The legacy 4-page workbook generator (`generate_pupil_workbooks.cjs`) is permanently retired for all KS3 units. All KS3 workbooks must be generated strictly via the Universal KS3 Declarative Workbook Engine (`scripts/ks3_workbook_engine.cjs` / `scripts/generate_ks3_workbook.cjs <unit_id>`).
+2. **20-Page A4 Double-Page Spread Architecture (Exact 5 A3 Folded Spreads):**
+   - **Page 1: Master Front Cover:** Customizer `data-department-name="The History Department"` enclosing `<span class="school-brand-target">The History Department</span>`, pupil info strip (`Name`, `Class`, `Teacher` — strictly NO target grade fields on KS3 covers), 52mm primary image plate with archival shelfmark, 8-enquiry roadmap grid, and "How to Write Like a Historian" anchor box.
+   - **Pages 2–3: Living Timeline & Panoramic Dual-Coding Spread:** 8 milestone anchors with 48mm sketch canvases and retrieval check questions.
+   - **Pages 4–19: 8x Double-Page Enquiry Spreads:**
+     - **Verso (Left Page):** 5-question Do Now retrieval grid (strictly prior knowledge, never current lesson), Task 1 rotating disciplinary vocabulary (Contextual Cloze, Vocabulary Mapping, Dual-Term Analytical Distinction) or Domino Flowchart, and Task 2 Archival Forensic Interrogation with ruled response lines.
+     - **Recto (Right Page):** Act 4 Extended Analytical Writing. Prominent blue banner displaying the Enquiry Question verbatim, 3-column disciplinary structure strip, PEEL writing framework, dynamic flexbox auto-filling ruled lines (`data-auto-lines="true"`, capped at 17 lines, zero underflow, zero overflow), teacher assessment rubric, and timeline mission signpost.
+   - **Page 20: Universal KS3 Outside Back Cover:** Comprehensive pupil assessment record and mobile QR quizzing matrix linking directly to app lessons.
+3. **Master Publisher Companion Textbook Standard:**
+   - **Front Cover:** Series masthead `Key Stage 3 Master Curriculum Series`, poetic subtitle, authentic historical artwork, and publisher imprint `The History Revision Hub • Student Textbook Edition`.
+   - **Verso (Left Pages):** Curated Archival Core with 2x primary sources, repository shelfmark stamps, category meta-tags, `.archival-context-box`, and targeted italicized `.archival-hinge-q` (Hinge Question).
+   - **Recto (Right Pages):** Section A: Key Disciplinary Terminology; Section B: Key Individual Profile with **authentic, non-AI primary portrait**; Section C: Core Historical Prose with Pure PEEL paragraph numbering (`<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[1.2]</span>`, `<span class="para-ref">[2.1]</span>`); Section D: Historiographical Spotlight / Disciplinary Mechanism.
+   - **Zero Facing-Page Duplications:** Never display duplicate portraits or images on facing verso/recto pages.
+   - **Back Cover ($\ge 90\%$ Page Budget):** 16–18 event visual chronology, analytical framework matrix, historiographical debate summary, and PEEL criteria writing scaffold.
+4. **Mandatory Automated Verification Pipeline:**
+   Whenever modifying, developing, or syncing any KS3 unit, you MUST automatically run:
+   - `node scripts/auto_balance_textbook.cjs <unit_id>` (guarantees 0 duplicate images, 100% context blurbs & hinge questions, 100% PEEL indexing, 0px overflow).
+   - `node scripts/generate_ks3_workbook.cjs <unit_id>` (compiles declarative workbook and synchronizes to `public/pdfs/`, `dist/pdfs/`, and `G:\My Drive\AAMX\Dep File\Year <N>\<Unit Name>\`).
+   - `node scripts/sync_unit.cjs <unit_id>` (executes full safe sync pipeline).
+
+

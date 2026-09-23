@@ -147,7 +147,7 @@ async function runSync() {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
-        execSync(`node scripts/sandbox/run_pilot_comparison.cjs`, {
+        execSync(`node scripts/generate_ks3_workbook.cjs early_modern_world`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });

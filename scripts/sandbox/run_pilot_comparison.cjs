@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const { renderKs3WorkbookToPdf } = require('./ks3_workbook_engine.cjs');
+const { renderKs3WorkbookToPdf } = require('../ks3_workbook_engine.cjs');
 const { lessonConfigs } = require('../render_early_modern_world_twopage_workbook.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..', '..');
