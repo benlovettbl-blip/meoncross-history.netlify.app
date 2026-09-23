@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const { PATHS } = require('./config.cjs');
+const { getThematicStrandsForUnit } = require('../src/curriculum_strands.cjs');
 
 const publicDir = PATHS.PUBLIC;
 const pdfsDir = PATHS.PDFS;
@@ -588,6 +589,157 @@ function extractLessonThreeTier(lesson, uid, unitData, idx) {
   };
 }
 
+function extractHistoricalSkill(lesson, uid, idx) {
+  if (lesson.skill) return lesson.skill;
+  if (lesson.disciplinary_focus) return lesson.disciplinary_focus;
+  if (lesson.historical_concept) return lesson.historical_concept;
+  if (lesson.disciplinary_concept) return lesson.disciplinary_concept;
+
+  const curatedSkills = {
+    early_modern_world: {
+      0: 'Change & Continuity',
+      1: 'Source Utility & Provenance',
+      2: 'Causation & Consequence',
+      3: 'Historical Significance',
+      4: 'Historiographical Debate',
+      5: 'Turning Point Analysis',
+      6: 'Historical Evidence & Commodification',
+      7: 'Agency & Resistance',
+      8: 'Synoptic Assessment & Synthesis',
+    },
+    water_and_sanitation: {
+      0: 'Change & Continuity',
+      1: 'Historical Evidence & Monastic Life',
+      2: 'Causation & Etiological Beliefs',
+      3: 'Historical Significance & State Intervention',
+      4: 'Source Utility & Epidemiological Mapping',
+      5: 'Turning Point Analysis & Civil Engineering',
+    },
+    medieval_england: {
+      0: 'Causation (1066 Succession Crisis)',
+      1: 'Historical Evidence (Bayeux Tapestry)',
+      2: 'Significance & State Control (Domesday Book)',
+      3: 'Change & Continuity (Feudal Structure)',
+      4: 'Interpretations & Constitutional Law (Magna Carta)',
+      5: 'Causation & Consequence (The Black Death)',
+    },
+    great_war: {
+      0: 'Causation (M-A-I-N Long-Term Causes)',
+      1: 'Imperial Rivalry & Consequence',
+      2: 'Alliances & Balance of Power',
+      3: 'Technological Change & Arms Races',
+      4: 'Short-Term Catalyst & War Plans',
+      5: 'Source Utility & Trench Conditions',
+      6: 'Historical Evidence & Morale',
+    },
+    great_war_part2: {
+      0: 'Tactical Evolution & Military Command',
+      1: 'Historical Significance (Battle of the Somme)',
+      2: 'Total War & The Home Front',
+      3: 'Naval Blockade & Submarine Warfare',
+      4: 'Catalysts of Collapse (1917–1918)',
+      5: 'Consequence & Armistice Terms',
+    },
+    industrialisation_and_empire: {
+      0: 'Technological Innovation & Economic Transformation',
+      1: 'Change & Continuity in Agrarian Society',
+      2: 'Source Utility & Working-Class Conditions',
+      3: 'Causation & Imperial Expansion',
+      4: 'Resistance & Labor Movements',
+      5: 'Historical Significance (Fareham & Portsmouth)',
+    },
+    the_shoah: {
+      0: 'Change & Continuity / Ideological Roots',
+      1: 'Causation & Escalation of Persecution',
+      2: 'Source Utility (Ghetto Archives & Diaries)',
+      3: 'Historical Significance & Industrialised Murder',
+      4: 'Historiographical Debate (Intentionalist vs Functionalist)',
+    },
+    cold_war: {
+      0: 'Causation & Ideological Collision',
+      1: 'Historical Significance (Containment & Berlin Airlift)',
+      2: 'Crisis Decision-Making & Causation (Cuban Missile Crisis)',
+      3: 'Consequence & Diplomatic Treaties (Détente)',
+      4: 'Historiographical Debate (End of USSR)',
+    },
+    second_world_war: {
+      0: 'Tactical Doctrine & Causation (Blitzkrieg & Dunkirk)',
+      1: 'Source Utility & Civilian Morale (The Blitz)',
+      2: 'Turning Point Analysis (Barbarossa & Stalingrad)',
+      3: 'Historical Significance (Total War & Empire Troops)',
+      4: 'Historiographical Debate (Atomic Bomb Decision)',
+    },
+    post_war_britain: {
+      0: 'Causation & Social Reform (Birth of NHS)',
+      1: 'Source Utility & Lived Experience (Empire Windrush)',
+      2: 'Historical Significance & Civil Rights (Bristol Bus Boycott)',
+      3: 'Causation & Economic Crisis (Winter of Discontent)',
+      4: 'Historiographical Evaluation (Thatcherism)',
+    },
+    cme_new: {
+      0: 'Historical Significance (1947 UN Partition)',
+      1: 'Causation & Consequence (1948 Arab-Israeli War)',
+      2: 'Source Utility & Provenance (1956 Suez Crisis)',
+      3: 'Consequence & Territorial Shift (1967 Six-Day War)',
+      4: 'Historical Interpretations (1973 Yom Kippur War)',
+      5: 'Significance & Diplomacy (1978–79 Camp David Accords)',
+      6: 'Resistance & Insurgency (First Intifada 1987)',
+      7: 'Historiographical Evaluation (1993–95 Oslo Accords)',
+    },
+    edexcel_medicine: {
+      0: 'Change & Continuity (Medieval Etiology & Galen)',
+      1: 'Source Utility & Clinical Observation (Renaissance)',
+      2: 'Turning Point Analysis (Germ Theory & Antiseptics)',
+      3: 'Causation & Scientific Discovery (Antibiotics & NHS)',
+      4: 'Historical Environment (Western Front Medical Logistics)',
+    },
+    weimar_nazi_germany: {
+      0: 'Causation (Treaty of Versailles & Weimar Constitution)',
+      1: 'Turning Point Analysis (1923 Hyperinflation & Munich Putsch)',
+      2: 'Historical Significance (Golden Twenties & Depression)',
+      3: 'Causation & Autocracy (Reichstag Fire & Enabling Act)',
+      4: 'Interpretations (Nazi Police State, Youth & Women)',
+    },
+    eee: {
+      0: 'Historical Significance (Elizabethan Settlement 1559)',
+      1: 'Causation & Religious Volatility (Papal Bull & Plots)',
+      2: 'Source Utility & Foreign Policy (Armada 1588)',
+      3: 'Change & Continuity (Elizabethan Society & Poor Laws)',
+    },
+  };
+
+  if (curatedSkills[uid] && curatedSkills[uid][idx]) {
+    return curatedSkills[uid][idx];
+  }
+
+  const title = (lesson.title || '').toLowerCase();
+  if (
+    title.includes('cause') ||
+    title.includes('why') ||
+    title.includes('how did') ||
+    title.includes('trigger')
+  )
+    return 'Causation & Consequence';
+  if (title.includes('consequence') || title.includes('impact') || title.includes('effect'))
+    return 'Historical Consequence';
+  if (title.includes('source') || title.includes('evidence') || title.includes('useful'))
+    return 'Source Utility & Evidence';
+  if (
+    title.includes('significan') ||
+    title.includes('important') ||
+    title.includes('turning point')
+  )
+    return 'Historical Significance';
+  if (title.includes('change') || title.includes('continuity') || title.includes('transform'))
+    return 'Change & Continuity';
+  if (title.includes('debate') || title.includes('interpret') || title.includes('view'))
+    return 'Historiographical Interpretation';
+  if (title.includes('resist') || title.includes('rebell') || title.includes('agency'))
+    return 'Agency & Resistance';
+
+  return 'Historical Enquiry & Analysis';
+}
+
 function generateOverviewHTML(db) {
   let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
 
@@ -811,6 +963,30 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                 `;
     }
 
+    const thematicStrands = getThematicStrandsForUnit(uid);
+    if (thematicStrands && thematicStrands.length > 0) {
+      html += `
+        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 10px; margin-bottom: 12px; page-break-inside: avoid;">
+          <div style="font-family: 'Outfit', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+            <span>🌀 Spiral Curriculum Thematic Strands (Vertical Disciplinary Progression)</span>
+            <span style="color: #64748b; font-weight: 600; font-size: 6.5pt;">Christine Counsell Curricular Threads</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+            ${thematicStrands
+              .map(
+                (s) => `
+              <div style="border-left: 3px solid ${s.color || '#1e3a8a'}; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
+                <div style="font-size: 6.8pt; font-weight: 800; color: ${s.color || '#1e3a8a'}; text-transform: uppercase;">${s.title || s.name}</div>
+                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">${s.trajectory || s.description}</div>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>
+      `;
+    }
+
     const outlineLessons = unitCurriculumOutlines[uid];
 
     if (unitData.lessons && unitData.lessons.length > 0) {
@@ -901,12 +1077,16 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         }
 
         const tier = extractLessonThreeTier(lesson, uid, unitData, idx);
+        const skill = extractHistoricalSkill(lesson, uid, idx);
 
         html += `
                         <tr>
                             <td>
                                 <div class="lesson-num">Lesson ${idx + 1}</div>
                                 <div class="lesson-title">${lesson.title || 'Untitled Lesson'}</div>
+                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
+                                    🎯 ${skill}
+                                </div>
                             </td>
                             <td>
                                 ${objsHTML}
@@ -947,11 +1127,15 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                         <tbody>
                 `;
       outlineLessons.forEach((l, lIdx) => {
+        const skill = extractHistoricalSkill(l, uid, lIdx);
         html += `
                         <tr>
                             <td>
                                 <div class="lesson-num">Lesson ${lIdx + 1}</div>
                                 <div class="lesson-title">${l.title}</div>
+                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
+                                    🎯 ${skill}
+                                </div>
                             </td>
                             <td>
                                 <ul class="obj-list"><li>${l.obj}</li></ul>
@@ -1040,34 +1224,66 @@ function generateSOWHTML(db, yearGroup, unitIds) {
     }
   }
 
-  console.log('Generating HTML templates...');
-  const overviewHtmlPath = generateOverviewHTML(db);
+  const targetArg = process.argv[2] ? process.argv[2].toLowerCase().trim() : 'all';
+  let targetYearGroup = null;
+  if (targetArg !== 'all') {
+    if (['year_7', 'year 7', 'y7', '7'].includes(targetArg)) targetYearGroup = 'Year 7';
+    else if (['year_8', 'year 8', 'y8', '8'].includes(targetArg)) targetYearGroup = 'Year 8';
+    else if (['year_9', 'year 9', 'y9', '9'].includes(targetArg)) targetYearGroup = 'Year 9';
+    else if (['year_10', 'year 10', 'y10', '10'].includes(targetArg)) targetYearGroup = 'Year 10';
+    else if (['year_11', 'year 11', 'y11', '11'].includes(targetArg)) targetYearGroup = 'Year 11';
+    else {
+      for (const [stage, stageMap] of Object.entries(fullCurriculumMap)) {
+        for (const [yg, unitIds] of Object.entries(stageMap)) {
+          if (unitIds.includes(targetArg)) {
+            targetYearGroup = yg;
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  if (targetYearGroup) {
+    console.log(
+      `🎯 Targeted Scheme of Work build for: [${targetYearGroup}] (filtered by "${targetArg}")`,
+    );
+  }
 
   console.log('Launching Puppeteer to create PDFs...');
   const browser = await puppeteer.launch({ headless: 'new' });
 
-  // 1. Generate Overview PDF
-  console.log('Rendering Curriculum Overview PDF...');
-  const page1 = await browser.newPage();
-  await page1.goto(require('url').pathToFileURL(overviewHtmlPath).href, {
-    waitUntil: 'networkidle0',
-  });
-  const overviewPdfPath = path.join(pdfsDir, 'whole_school_curriculum_overview.pdf');
-  await page1.pdf({
-    path: overviewPdfPath,
-    format: 'A4',
-    printBackground: true,
-    displayHeaderFooter: true,
-    headerTemplate: '<div></div>',
-    footerTemplate:
-      '<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">The History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
-    margin: { top: '8mm', right: '10mm', bottom: '12mm', left: '10mm' },
-  });
-  console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
+  // 1. Generate Overview PDF (Only if full build or overview requested)
+  if (!targetYearGroup || targetArg === 'all' || targetArg === 'overview') {
+    console.log('Generating HTML templates...');
+    const overviewHtmlPath = generateOverviewHTML(db);
 
-  // 2. Generate SOW PDFs per Year Group
+    console.log('Rendering Curriculum Overview PDF...');
+    const page1 = await browser.newPage();
+    await page1.goto(require('url').pathToFileURL(overviewHtmlPath).href, {
+      waitUntil: 'networkidle0',
+    });
+    const overviewPdfPath = path.join(pdfsDir, 'whole_school_curriculum_overview.pdf');
+    await page1.pdf({
+      path: overviewPdfPath,
+      format: 'A4',
+      printBackground: true,
+      displayHeaderFooter: true,
+      headerTemplate: '<div></div>',
+      footerTemplate:
+        '<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">The History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+      margin: { top: '8mm', right: '10mm', bottom: '12mm', left: '10mm' },
+    });
+    console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
+    await page1.close();
+  }
+
+  // 2. Generate SOW PDFs per Year Group (or targeted Year Group)
   for (const [stage, stageMap] of Object.entries(fullCurriculumMap)) {
     for (const [yearGroup, unitIds] of Object.entries(stageMap)) {
+      if (targetYearGroup && yearGroup !== targetYearGroup) {
+        continue;
+      }
       const safeYearName = yearGroup.toLowerCase().replace(' ', '_');
       const htmlPath = generateSOWHTML(db, yearGroup, unitIds);
 

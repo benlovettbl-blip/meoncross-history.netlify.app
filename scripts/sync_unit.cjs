@@ -190,6 +190,18 @@ async function runSync() {
     console.warn(`⚠️ Warning: Pedagogical standards audit encountered an issue:`, err.message);
   }
 
+  // Step 5c: Synchronize Year Group Scheme of Work (Reflecting latest lessons, themes & historical skills)
+  console.log(`\n[Step 5c/6] 📋 Synchronizing Year Group Scheme of Work for ${unitId}...`);
+  try {
+    execSync(`node scripts/generate_scheme_of_work.cjs ${unitId}`, {
+      stdio: 'inherit',
+      cwd: ROOT_DIR,
+    });
+    console.log(`✅ Scheme of Work updated with latest lessons, themes & skills.`);
+  } catch (err) {
+    console.warn(`⚠️ Warning: Scheme of Work sync encountered an issue:`, err.message);
+  }
+
   // Step 6: Google Drive Department File Synchronization (School Laptop Access)
   console.log(
     `\n[Step 6/6] 📂 Mirroring PDFs to Google Drive Department File (School Laptop Access)...`,
