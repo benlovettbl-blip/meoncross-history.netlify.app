@@ -202,6 +202,14 @@ async function runSync() {
     console.warn(`⚠️ Warning: Google Drive Department File sync had issues:`, err.message);
   }
 
+  // Step 6b: Auto-Update Master Curriculum Roadmap Word Document on User Desktop
+  try {
+    execSync(`node scripts/export_curriculum_roadmap_docx.cjs`, { stdio: 'pipe', cwd: ROOT_DIR });
+    console.log(`✅ Master Curriculum Roadmap Word Document updated on Desktop.`);
+  } catch (err) {
+    // Non-fatal if document is currently locked by Microsoft Word
+  }
+
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`\n======================================================`);
   console.log(`🎉 100% SUCCESS: Unit [${unitId}] is fully synchronized in ${duration}s!`);
