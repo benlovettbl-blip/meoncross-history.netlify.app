@@ -1037,27 +1037,28 @@ async function buildPublisherTextbookHtmlWater() {
           </div>
         </div>
 
-        <!-- 2-Column Core Prose Measure -->
-        <div class="two-column-prose">
-          
-          <!-- Act 1 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 1</span>
-            <span class="sb-title">${sec1.title}</span>
+        <!-- 2-Column Core Prose Grid -->
+        <div class="two-column-grid">
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 1</span>
+                <span class="sb-title">${sec1.title}</span>
+              </div>
+              ${formatBlockParas(sec1)}
+            </div>
+            ${renderArchivalSourceBox(leftSources.sourceA)}
           </div>
-          ${formatBlockParas(sec1)}
-
-          ${renderArchivalSourceBox(leftSources.sourceA)}
-
-          <!-- Act 2 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 2</span>
-            <span class="sb-title">${sec2.title}</span>
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 2</span>
+                <span class="sb-title">${sec2.title}</span>
+              </div>
+              ${formatBlockParas(sec2)}
+            </div>
+            ${renderArchivalSourceBox(leftSources.sourceB)}
           </div>
-          ${formatBlockParas(sec2)}
-
-          ${renderArchivalSourceBox(leftSources.sourceB)}
-
         </div>
 
         <!-- Full-Width Bottom Vocabulary Deck -->
@@ -1104,54 +1105,61 @@ async function buildPublisherTextbookHtmlWater() {
           </div>
         </div>
 
-        <!-- 2-Column Extended Prose Measure -->
-        <div class="two-column-prose">
-          
-          <!-- Act 3 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 3</span>
-            <span class="sb-title">${sec3.title}</span>
-          </div>
-          ${formatBlockParas(sec3)}
-
-          <!-- Key Figure Card -->
-          ${
-            bank.keyFigure
-              ? `
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
-              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
-            </div>
-            <div class="kf-identity-row">
-              ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
-              <div class="kf-identity-text">
-                <div class="kf-name">${bank.keyFigure.name}</div>
-                <div class="kf-role">${bank.keyFigure.role}</div>
+        <!-- Right Page Content Layout -->
+        <div class="right-page-content">
+          <div class="right-upper-grid">
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 3</span>
+                  <span class="sb-title">${sec3.title}</span>
+                </div>
+                ${formatBlockParas(sec3)}
               </div>
+              ${
+                bank.keyFigure
+                  ? `
+              <div class="key-figure-box">
+                <div class="kf-header">
+                  <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
+                  <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+                </div>
+                <div class="kf-identity-row">
+                  ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
+                  <div class="kf-identity-text">
+                    <div class="kf-name">${bank.keyFigure.name}</div>
+                    <div class="kf-role">${bank.keyFigure.role}</div>
+                  </div>
+                </div>
+                <div class="kf-significance">${bank.keyFigure.significance}</div>
+                <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+                <ul class="kf-actions-list">
+                  ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+                </ul>
+              </div>`
+                  : ''
+              }
             </div>
-            <div class="kf-significance">${bank.keyFigure.significance}</div>
-            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-            <ul class="kf-actions-list">
-              ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-            </ul>
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 4</span>
+                  <span class="sb-title">${sec4.title}</span>
+                </div>
+                ${formatBlockParas(sec4)}
+              </div>
+              ${bank.conceptSpotlight || ''}
+            </div>
+          </div>
+
+          ${
+            bank.archivalDispatch
+              ? `
+          <div class="fullwidth-dispatch-wrap">
+            ${bank.archivalDispatch}
           </div>`
               : ''
           }
-
-          <!-- Act 4 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 4</span>
-            <span class="sb-title">${sec4.title}</span>
-          </div>
-          ${formatBlockParas(sec4)}
-
-          <!-- Concept Spotlight Box -->
-          ${bank.conceptSpotlight || ''}
-
-          <!-- Archival Dispatch Box -->
-          ${bank.archivalDispatch || ''}
-
         </div>
 
         <!-- Bottom Enquiry Deck (Full-Width Outside Columns) -->
@@ -1261,8 +1269,8 @@ async function buildPublisherTextbookHtmlWater() {
       padding: 0;
       background: #e2e8f0;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.85pt;
-      line-height: 1.48;
+      font-size: 9.80pt;
+      line-height: 1.44;
       color: #1e293b;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -1360,7 +1368,55 @@ async function buildPublisherTextbookHtmlWater() {
       line-height: 1.18;
     }
 
-    /* 2-Column Prose Container */
+    /* Balanced 2-Column Grid Layout (Left Page) */
+    .two-column-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
+      flex: 1;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      overflow: hidden;
+    }
+    .col-top-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .col-side .archival-source-box {
+      margin: 0;
+    }
+
+    /* Right Page 2-Tier Balanced Layout */
+    .right-page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .right-upper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
+      flex: 1;
+      overflow: hidden;
+    }
+    .fullwidth-dispatch-wrap {
+      flex-shrink: 0;
+      margin: 2.5px 0 1px 0;
+    }
+    .fullwidth-dispatch-wrap .archival-source-box {
+      margin: 0;
+    }
+
+    /* Legacy support */
     .two-column-prose {
       column-count: 2;
       column-gap: 5mm;
@@ -1400,7 +1456,7 @@ async function buildPublisherTextbookHtmlWater() {
 
     /* Narrative Paragraphs */
     .narrative-p {
-      margin: 0 0 5.5px 0;
+      margin: 0 0 4.5px 0;
       text-align: justify;
       hyphens: auto;
     }
@@ -1490,10 +1546,10 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .archival-body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.5pt;
+      font-size: 8.3pt;
       font-style: italic;
       color: #1e293b;
-      line-height: 1.40;
+      line-height: 1.36;
       margin-bottom: 3.5px;
       padding: 3.5px 6px;
       background: #ffffff;
@@ -1509,16 +1565,16 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .archival-context-text {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       color: #334155;
-      line-height: 1.36;
+      line-height: 1.32;
       margin: 0 0 2.5px 0;
     }
     .archival-hinge-q {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       color: #0369a1;
-      line-height: 1.36;
+      line-height: 1.32;
       border-top: 1px dashed #cbd5e1;
       padding-top: 2.5px;
     }
@@ -1545,8 +1601,8 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 3.5px 5.5px;
-      margin: 2.5px 0 3px 0;
+      padding: 4px 6px;
+      margin: 0;
       break-inside: avoid;
       box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
@@ -1598,7 +1654,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .fieldwork-image {
       width: 100%;
-      height: 88px;
+      height: 84px;
       object-fit: cover;
       object-position: center;
       border-radius: 2px;
@@ -1621,32 +1677,32 @@ async function buildPublisherTextbookHtmlWater() {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 2px;
-      padding: 3px 5px;
+      padding: 2.5px 4.5px;
       margin-bottom: 2px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 1.5px;
     }
     .fieldwork-row {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      line-height: 1.30;
+      font-size: 7.7pt;
+      line-height: 1.28;
       color: #334155;
     }
     .fw-label {
       font-weight: 800;
       color: #0369a1;
       margin-right: 3px;
-      font-size: 7.8pt;
+      font-size: 7.7pt;
     }
     .fw-desc {
       color: #1e293b;
-      font-size: 7.8pt;
+      font-size: 7.7pt;
     }
     .fieldwork-hinge-box {
       font-family: 'Inter', sans-serif;
       font-size: 7.6pt;
-      line-height: 1.30;
+      line-height: 1.28;
       color: #0369a1;
       background: #f0f9ff;
       border: 1px solid #bae6fd;
@@ -1668,7 +1724,7 @@ async function buildPublisherTextbookHtmlWater() {
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
       padding: 4.5px 6.5px;
-      margin: 3px 0 3.5px 0;
+      margin: 0;
       break-inside: avoid;
     }
     .kf-header {
@@ -1697,8 +1753,8 @@ async function buildPublisherTextbookHtmlWater() {
       margin-bottom: 2.5px;
     }
     .kf-portrait {
-      width: 44px;
-      height: 50px;
+      width: 48px;
+      height: 54px;
       object-fit: cover;
       object-position: top center;
       border-radius: 2px;
@@ -1710,28 +1766,28 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 10.2pt;
+      font-size: 10.6pt;
       font-weight: 700;
       color: #0f172a;
       line-height: 1.15;
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7.6pt;
       font-weight: 600;
       color: #475569;
       line-height: 1.20;
     }
     .kf-significance {
       font-size: 8.0pt;
-      line-height: 1.34;
+      line-height: 1.30;
       color: #334155;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
+      font-size: 6.8pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -1742,9 +1798,9 @@ async function buildPublisherTextbookHtmlWater() {
       margin: 0;
       padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.5pt;
       color: #1e293b;
-      line-height: 1.30;
+      line-height: 1.26;
     }
     .kf-actions-list li {
       margin-bottom: 1px;
@@ -1757,7 +1813,7 @@ async function buildPublisherTextbookHtmlWater() {
       border-top: 2.5px solid #16a34a;
       border-radius: 3px;
       padding: 4.5px 6.5px;
-      margin: 3px 0 3.5px 0;
+      margin: 0;
       break-inside: avoid;
     }
     .csb-header {
@@ -1781,7 +1837,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.6pt;
+      font-size: 9.8pt;
       font-weight: 700;
       color: #0f172a;
       margin: 0 0 2px 0;
@@ -1789,7 +1845,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .csb-body {
       font-size: 8.0pt;
-      line-height: 1.34;
+      line-height: 1.30;
       color: #1e293b;
       margin-bottom: 2.5px;
       text-align: justify;
@@ -1800,9 +1856,9 @@ async function buildPublisherTextbookHtmlWater() {
       color: #14532d;
       background: #dcfce7;
       border: 1px solid #86efac;
-      padding: 2.5px 4.5px;
+      padding: 2px 4.5px;
       border-radius: 2px;
-      line-height: 1.28;
+      line-height: 1.26;
     }
 
     /* Full-Width Bottom Vocabulary Deck (Left Page) */
@@ -1811,7 +1867,7 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 4.5px 7px;
+      padding: 5px 7px;
       margin-top: 3.5px;
       flex-shrink: 0;
     }
@@ -1823,14 +1879,14 @@ async function buildPublisherTextbookHtmlWater() {
       font-family: 'Inter', sans-serif;
     }
     .bvb-title {
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .bvb-tag {
-      font-size: 6.8pt;
+      font-size: 7.0pt;
       font-weight: 700;
       color: #64748b;
     }
@@ -1841,17 +1897,17 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .bvb-card {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       line-height: 1.35;
       color: #334155;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      padding: 4px 6px;
+      padding: 4.5px 6.5px;
       border-radius: 2px;
     }
     .bvb-card strong {
       color: #0284c7;
-      font-size: 7.6pt;
+      font-size: 7.8pt;
     }
 
     /* Full-Width Bottom Enquiry Deck (Right Page) */
@@ -1860,7 +1916,7 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #bfdbfe;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 4.5px 7px;
+      padding: 5px 7px;
       margin-top: 3.5px;
       flex-shrink: 0;
     }
@@ -1872,14 +1928,14 @@ async function buildPublisherTextbookHtmlWater() {
       font-family: 'Inter', sans-serif;
     }
     .beb-title {
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .beb-badge {
-      font-size: 6.8pt;
+      font-size: 7.0pt;
       font-weight: 700;
       color: #1d4ed8;
       background: #dbeafe;
@@ -1893,12 +1949,12 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .beb-col {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       line-height: 1.35;
       color: #1e293b;
       background: #ffffff;
       border: 1px solid #dbeafe;
-      padding: 4px 6px;
+      padding: 4.5px 6.5px;
       border-radius: 2px;
     }
     .beb-col strong {
@@ -1965,7 +2021,7 @@ async function buildPublisherTextbookHtmlWater() {
       background: #f0f9ff;
       border: 1.5px solid #0284c7;
       border-radius: 4px;
-      padding: 3.5mm 5mm;
+      padding: 4mm 6mm;
       max-width: 175mm;
       margin: 0 auto;
     }
@@ -1980,7 +2036,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .ceb-text {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 13.5pt;
+      font-size: 14pt;
       font-style: italic;
       font-weight: 700;
       color: #0f172a;
@@ -2001,10 +2057,10 @@ async function buildPublisherTextbookHtmlWater() {
       align-items: center;
     }
     .cover-hero-img {
-      max-height: 80mm;
+      max-height: 100mm;
       max-width: 100%;
       width: auto;
-      height: 80mm;
+      height: 100mm;
       object-fit: contain;
       object-position: center;
       display: block;
@@ -2029,23 +2085,23 @@ async function buildPublisherTextbookHtmlWater() {
       margin: 0 auto;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 6.7pt;
+      font-size: 7.6pt;
       border: 1.2px solid #cbd5e1;
     }
     .cover-matrix-table th {
       background: #0284c7;
       color: #ffffff;
-      padding: 2.2mm 2mm;
+      padding: 2.6mm 2.2mm;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       border: 1px solid #0369a1;
     }
     .cover-matrix-table td {
-      padding: 1.8mm 2mm;
+      padding: 2.5mm 2.2mm;
       border: 1px solid #e2e8f0;
       text-align: left;
-      line-height: 1.22;
+      line-height: 1.25;
     }
     .cover-matrix-table tr:nth-child(even) {
       background: #f8fafc;
@@ -2085,8 +2141,8 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .back-header-strip {
       border-bottom: 2px solid #0284c7;
-      padding-bottom: 2mm;
-      margin-bottom: 2.5mm;
+      padding-bottom: 1.5mm;
+      margin-bottom: 2mm;
     }
     .back-title {
       font-family: 'Playfair Display', Georgia, serif;
@@ -2107,16 +2163,16 @@ async function buildPublisherTextbookHtmlWater() {
       align-items: center;
       background: #0284c7;
       color: #ffffff;
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       font-weight: 800;
-      padding: 1.8mm 3.5mm;
+      padding: 2.2mm 3.5mm;
       border-radius: 2px;
-      margin: 2.5mm 0 2mm 0;
+      margin: 1.8mm 0 1.5mm 0;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .back-section-tag {
-      font-size: 6.4pt;
+      font-size: 6.8pt;
       font-weight: 700;
       color: #e0f2fe;
     }
@@ -2125,20 +2181,20 @@ async function buildPublisherTextbookHtmlWater() {
     .back-timeline-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      font-size: 7.2pt;
-      line-height: 1.30;
+      gap: 4.5px;
+      font-size: 7.5pt;
+      line-height: 1.32;
     }
     .bt-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #0284c7;
-      padding: 3.5px 5.5px;
+      padding: 4px 6px;
       border-radius: 2px;
     }
     .bt-card strong {
       color: #0284c7;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
     }
 
     /* Section 2: Four Progression Pillars */
@@ -2146,21 +2202,21 @@ async function buildPublisherTextbookHtmlWater() {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 4.5px;
-      font-size: 7.2pt;
-      line-height: 1.30;
+      font-size: 7.5pt;
+      line-height: 1.32;
     }
     .bmm-col {
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
       border-top: 2.5px solid #16a34a;
-      padding: 4px 5.5px;
+      padding: 4.5px 6px;
       border-radius: 2px;
     }
     .bmm-col strong {
       display: block;
       color: #15803d;
       text-transform: uppercase;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -2170,21 +2226,21 @@ async function buildPublisherTextbookHtmlWater() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 4.5px;
-      font-size: 7.2pt;
-      line-height: 1.30;
+      font-size: 7.5pt;
+      line-height: 1.32;
     }
     .bh-card {
       background: #fdfbf7;
       border: 1px solid #fed7aa;
       border-top: 2.5px solid #f97316;
-      padding: 4px 5.5px;
+      padding: 4.5px 6px;
       border-radius: 2px;
     }
     .bh-card strong {
       display: block;
       color: #c2410c;
       text-transform: uppercase;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -2194,21 +2250,21 @@ async function buildPublisherTextbookHtmlWater() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 4.5px;
-      font-size: 7.2pt;
-      line-height: 1.30;
+      font-size: 7.5pt;
+      line-height: 1.32;
     }
     .bws-col {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-top: 2.5px solid #2563eb;
-      padding: 4px 5.5px;
+      padding: 4.5px 6px;
       border-radius: 2px;
     }
     .bws-col strong {
       display: block;
       color: #1e40af;
       text-transform: uppercase;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -2225,7 +2281,7 @@ async function buildPublisherTextbookHtmlWater() {
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #0284c7;
       border-radius: 3px;
-      padding: 3.5px 2px 3px 2px;
+      padding: 4px 3px 3.5px 3px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -2239,7 +2295,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .bqr-num {
       display: block;
-      font-size: 6.6pt;
+      font-size: 7.0pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -2247,7 +2303,7 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .bqr-title {
       display: block;
-      font-size: 6.0pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #334155;
       line-height: 1.20;
@@ -2268,14 +2324,14 @@ async function buildPublisherTextbookHtmlWater() {
       border-radius: 2px;
     }
     .bqr-footer {
-      font-size: 5.2pt;
+      font-size: 5.6pt;
       font-weight: 800;
       color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      margin-top: 1.5px;
+      margin-top: 2px;
       border-top: 1px solid #f1f5f9;
-      padding-top: 1.5px;
+      padding-top: 2px;
       width: 100%;
     }
   </style>

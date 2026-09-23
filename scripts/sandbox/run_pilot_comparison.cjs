@@ -119,6 +119,29 @@ const pilotConfig = {
     description:
       'Spiridione Roma’s 1778 ceiling fresco commissioned for the East India Company House in Leadenhall Street, London, allegorically visualising the colonial extraction and transfer of Asian wealth to Britannia.',
   },
+  thematicStrands: [
+    {
+      title: 'Sovereignty & Power',
+      color: '#1e3a8a',
+      trajectory: 'Divine Right → Civil War, Regicide & 1689 Settlement (L4–L6)',
+    },
+    {
+      title: 'Exploration & Trade',
+      color: '#0369a1',
+      trajectory: 'Ottoman fall → Tordesillas → East India Co (L1–L3)',
+    },
+    {
+      title: 'Religious Volatility',
+      color: '#b91c1c',
+      trajectory: 'Reformation → Gunpowder Plot & Puritan State (L2, L4, L5)',
+    },
+    {
+      title: 'Enslaved Resistance',
+      color: '#15803d',
+      trajectory: 'Triangular Trade → The Brookes → Maroons & Nanny (L7, L8)',
+    },
+  ],
+  hubUrl: 'https://the-history-revision-hub.netlify.app/?unit=early_modern_world',
   milestones: timelineMilestones,
   lessons: lessonConfigs.map((cfg, i) => {
     const subLabels = [
@@ -213,6 +236,8 @@ async function runPilot() {
     if (typeof autoFillWritingLines === 'function') autoFillWritingLines();
   });
 
+  const p1 = await page.$('#page-1');
+  if (p1) await p1.screenshot({ path: path.join(outputDir, 'pilot_page1.png') });
   const p2 = await page.$('#page-2');
   if (p2) await p2.screenshot({ path: path.join(outputDir, 'pilot_page2.png') });
   const p3 = await page.$('#page-3');
@@ -230,6 +255,35 @@ async function runPilot() {
 
   await browser.close();
   console.log(`🎉 Pilot comparison snapshots saved to ${outputDir}`);
+
+  // Synchronize compiled PDF and HTML to primary public/pdfs and unit folders
+  const prodPdfPath = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    'early_modern_world_pupil_workbook.pdf',
+  );
+  const prodPdfV17 = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    'early_modern_world_pupil_workbook_FINAL_V17.pdf',
+  );
+  const prodHtml1 = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'early_modern_world',
+    'pupil_workbook.html',
+  );
+  const prodHtml2 = path.join(ROOT_DIR, 'units', 'early_modern_world', 'pupil_workbook.html');
+
+  fs.copyFileSync(pdfPath, prodPdfPath);
+  fs.copyFileSync(pdfPath, prodPdfV17);
+  fs.copyFileSync(htmlPath, prodHtml1);
+  fs.copyFileSync(htmlPath, prodHtml2);
+  console.log(`✅ Synchronized to production PDF: ${prodPdfPath}`);
+  console.log(`✅ Synchronized to production V17 PDF: ${prodPdfV17}`);
 }
 
 runPilot().catch((err) => {

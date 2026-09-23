@@ -13,6 +13,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 const { renderKs3BackCover, generateQrSvg } = require('../components/render_standard_cover.cjs');
+const { getThematicStrandsForUnit } = require('../../src/curriculum_strands.js');
 
 const ROOT_DIR = path.join(__dirname, '..', '..');
 
@@ -164,6 +165,15 @@ function buildKs3WorkbookHtml(unitConfig) {
 <body>
 `;
 
+  const thematicStrands =
+    unitConfig.thematicStrands && unitConfig.thematicStrands.length > 0
+      ? unitConfig.thematicStrands
+      : getThematicStrandsForUnit(unitId);
+
+  const hubUrl =
+    unitConfig.hubUrl || `https://the-history-revision-hub.netlify.app/?unit=${unitId}`;
+  const microQrSvg = generateQrSvg(hubUrl);
+
   // ==========================================
   // PAGE 1: FRONT COVER
   // ==========================================
@@ -198,10 +208,10 @@ function buildKs3WorkbookHtml(unitConfig) {
           </div>
         </div>
 
-        <!-- Hero Photo Plate -->
+        <!-- Hero Photo Plate (Full Uncropped Primary Source Presentation) -->
         <div style="border: 1.8px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px; display: flex; flex-direction: column;">
-          <div style="height: 52mm; background: #ffffff; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-            <img src="${coverImgData}" alt="Cover Image" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;">
+          <div style="height: 52mm; background: #0f172a; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 2px 0;">
+            <img src="${coverImgData}" alt="Cover Image" style="width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block;">
           </div>
           <div style="border-top: 1.5px solid #0f172a; padding: 2px 8px; background: #f8fafc;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -221,32 +231,44 @@ function buildKs3WorkbookHtml(unitConfig) {
           </div>
         </div>
 
-        <!-- Pupil Information Card -->
-        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 3.5px 12px; background: #ffffff; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2.5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.8px; color: #0f172a;">
-              Pupil Workbook &amp; Academic Record
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #64748b;">
-              ${yearGroup} History • ${unitConfig.termCode || 'Unit 2'}
-            </span>
+        <!-- Pupil Information Card with Micro QR Code -->
+        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 3px 8px 3px 10px; background: #ffffff; margin-bottom: 3px; display: flex; align-items: center; gap: 10px;">
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2.5px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.8px; color: #0f172a;">
+                Pupil Workbook &amp; Academic Record
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #64748b;">
+                ${yearGroup} History • ${unitConfig.termCode || 'Unit 2'}
+              </span>
+            </div>
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+              <div style="display: flex; align-items: baseline;">
+                <strong style="text-transform: uppercase; width: 44px; font-size: 7pt; color: #0f172a;">Name:</strong>
+                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
+              </div>
+              <div style="display: flex; align-items: baseline;">
+                <strong style="text-transform: uppercase; width: 40px; font-size: 7pt; color: #0f172a;">Class:</strong>
+                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
+              </div>
+              <div style="display: flex; align-items: baseline;">
+                <strong style="text-transform: uppercase; width: 50px; font-size: 7pt; color: #0f172a;">Teacher:</strong>
+                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
+              </div>
+              <div style="display: flex; align-items: baseline;">
+                <strong style="text-transform: uppercase; width: 42px; font-size: 7pt; color: #0f172a;">Target:</strong>
+                <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 12px;"></div>
+              </div>
+            </div>
           </div>
-          <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
-            <div style="display: flex; align-items: baseline;">
-              <strong style="text-transform: uppercase; width: 48px; font-size: 7pt; color: #0f172a;">Name:</strong>
-              <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 13px;"></div>
+          <!-- Micro QR Hub Badge -->
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+            <div style="width: 32px; height: 32px; flex-shrink: 0; border: 1px solid #0f172a; border-radius: 2px; padding: 1px; background: #ffffff;">
+              ${microQrSvg}
             </div>
-            <div style="display: flex; align-items: baseline;">
-              <strong style="text-transform: uppercase; width: 44px; font-size: 7pt; color: #0f172a;">Class:</strong>
-              <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 13px;"></div>
-            </div>
-            <div style="display: flex; align-items: baseline;">
-              <strong style="text-transform: uppercase; width: 56px; font-size: 7pt; color: #0f172a;">Teacher:</strong>
-              <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 13px;"></div>
-            </div>
-            <div style="display: flex; align-items: baseline;">
-              <strong style="text-transform: uppercase; width: 44px; font-size: 7pt; color: #0f172a;">Target:</strong>
-              <div style="flex: 1; border-bottom: 1.2px solid #0f172a; height: 13px;"></div>
+            <div style="font-family: 'Inter', sans-serif; text-align: left; line-height: 1.15;">
+              <span style="display: block; font-size: 5.8pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.3px;">Revision Hub</span>
+              <span style="display: block; font-size: 5.0pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Scan To Launch</span>
             </div>
           </div>
         </div>
@@ -270,15 +292,19 @@ function buildKs3WorkbookHtml(unitConfig) {
                 return `
               <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: 3px 5px; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between;">
                 <div style="margin-bottom: 1.5px;">
-                  <div style="display: flex; align-items: baseline; gap: 4px;">
-                    <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; padding: 0.5px 3.5px; border-radius: 2px; flex-shrink: 0;">L${idx + 1}</span>
-                    <strong style="font-family: 'Playfair Display', serif; font-size: 7.4pt; color: #0f172a; line-height: 1.15;">
-                      ${cleanEnquiry}
-                    </strong>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                    <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
+                    <span style="display: inline-flex; align-items: center; gap: 3px; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.3px;">
+                      <span>AUDIT</span>
+                      <span style="width: 10.5px; height: 10.5px; border: 1.3px solid #0f172a; border-radius: 2px; background: #ffffff; display: inline-block;"></span>
+                    </span>
                   </div>
+                  <strong style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #0f172a; line-height: 1.18; display: block; margin-bottom: 2px;">
+                    ${cleanEnquiry}
+                  </strong>
                 </div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.7pt; color: #334155; line-height: 1.22; padding-left: 2px;">
-                  ${bullets.map((b) => `<div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 6.2pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #334155; line-height: 1.2; padding-left: 2px;">
+                  ${bullets.map((b) => `<div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 6.0pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
                 </div>
               </div>
               `;
@@ -287,7 +313,7 @@ function buildKs3WorkbookHtml(unitConfig) {
           </div>
         </div>
 
-        <!-- Lower Section: Pupil-Friendly "How to Write Like a Historian" + "The 4 Big Storylines" -->
+        <!-- Lower Section: Pupil-Friendly "How to Write Like a Historian" + "The Big Storylines" -->
         <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-bottom: 3px;">
           <!-- Left Box: How to Write Like a Historian (Pupil-Friendly Literacy Toolkit) -->
           <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
@@ -315,25 +341,22 @@ function buildKs3WorkbookHtml(unitConfig) {
             </div>
           </div>
 
-          <!-- Right Box: The 4 Big Storylines to Track (Pupil-Friendly Thematic Strands) -->
+          <!-- Right Box: Thematic Strands (Single Source of Truth across Schemes of Work) -->
           <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
             <div style="background: #1e3a8a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
-              <span>The 4 Big Storylines to Track</span>
+              <span>The ${thematicStrands.length} Big Storylines to Track</span>
               <span style="color: #bfdbfe; font-size: 6.4pt;">Core Historical Themes</span>
             </div>
             <div style="padding: 4px 7px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.22; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+              ${thematicStrands
+                .map(
+                  (strand, sIdx) => `
               <div>
-                <strong style="color: #1e3a8a;">1. Sovereignty &amp; Power:</strong> <span style="color: #475569;">Divine Right &rarr; Civil War, Regicide &amp; 1689 Settlement (L4–L6)</span>
+                <strong style="color: ${strand.color || '#1e3a8a'};">${sIdx + 1}. ${strand.title}:</strong> <span style="color: #475569;">${strand.trajectory}</span>
               </div>
-              <div>
-                <strong style="color: #0369a1;">2. Exploration &amp; Trade:</strong> <span style="color: #475569;">Ottoman fall &rarr; Tordesillas &rarr; East India Co (L1–L3)</span>
-              </div>
-              <div>
-                <strong style="color: #b91c1c;">3. Religious Volatility:</strong> <span style="color: #475569;">Reformation &rarr; Gunpowder Plot &amp; Puritan State (L2, L4, L5)</span>
-              </div>
-              <div>
-                <strong style="color: #15803d;">4. Enslaved Resistance:</strong> <span style="color: #475569;">Triangular Trade &rarr; The Brookes &rarr; Maroons &amp; Nanny (L7, L8)</span>
-              </div>
+              `,
+                )
+                .join('')}
             </div>
           </div>
         </div>
