@@ -2186,7 +2186,7 @@ const early_modern_world = {
       enquiry_question:
         'How did religious division and the Divine Right of Kings make early Stuart Britain so volatile in 1605?',
       cover_image: '/images/gunpowder_conspirators.jpg',
-      banner: '/images/gunpowder_conspirators.jpg',
+      banner: '/images/gunpowder_conspirators_banner.jpg',
       learning_objectives: [
         'Explain the religious tensions in England following the 1603 accession of King James I and the enforcement of recusancy fines',
         'Detail the conspiracy of Robert Catesby and Guy Fawkes to blow up the Houses of Parliament on 5 November 1605',
@@ -5503,33 +5503,7 @@ const early_modern_world = {
     },
   ],
   description:
-    'Study the four sources on the cover. How did an isolated island in 1450 become the center of global trade by 1750? This unit explores the rapid transformation of Britain through exploration, trade, empire, and slavery.',
-  cover_sources: [
-    {
-      image: '/images/global_britannia.jpg',
-      title: 'The East Offering its Riches to Britannia (1778)',
-      description:
-        'A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House in London (now held by the British Library). It is an allegorical painting showing Britannia receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of the empire.',
-    },
-    {
-      image: '/images/global_canton.jpg',
-      title: 'Foreign Trading Factories at Canton (Guangzhou)',
-      description:
-        'A reverse glass painting by an unknown Chinese artist (c. 1805) currently held by the Peabody Essex Museum. It depicts the highly regulated district in Qing China where European companies operated, proving that Asian empires held immense global economic power.',
-    },
-    {
-      image: '/images/royal_exchange_courtyard.jpg',
-      title: 'The Financial Hub of London',
-      description:
-        'An engraving of the Second Royal Exchange in London by Wenceslaus Hollar (1644), now held by the Metropolitan Museum of Art. By 1750, London was crowded with merchant ships and transformed into the financial center of global maritime trade.',
-    },
-    {
-      image: '/images/global_mercator.jpg',
-      title: 'Nautical Planisphere World Map',
-      description:
-        'A world map created by Flemish cartographer Gerardus Mercator in 1569. Early modern maps revolutionized travel by introducing new projections for navigation, showing the massive ocean trade routes and the terrifying scale of global exploration.',
-    },
-  ],
+    'How did an isolated island in 1450 become the center of global trade by 1750? This unit explores the rapid transformation of Britain through exploration, trade, empire, and slavery.',
   key_individuals: [
     {
       name: 'Niccolò Barbaro',
