@@ -307,6 +307,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between the monarch’s supreme legal right to make foreign policy and religion decisions alone (<strong>Royal Prerogative</strong>) and the granting of titles, lands, and monopolies to secure political loyalty (<strong>Crown Patronage</strong>):',
         featureA: {
+          provenance: 'Edexcel June 2018 (Q1a)',
           ref: '[Textbook §1.1]',
           stem: 'Describe one key feature of the role of the Privy Council in 1558.',
           guidance:
@@ -315,6 +316,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was that the Privy Council... Specifically, led by Sir William Cecil, they...',
         },
         featureB: {
+          provenance: 'Edexcel June 2022 (Q1b)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of the financial weaknesses Elizabeth faced in 1558.',
           guidance:
@@ -323,6 +325,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the massive Crown debt inherited from Mary I... Specifically, the debt stood at...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2018 (Q2)',
           type: 'explain_why_12',
           tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
           stem: 'Explain why Elizabeth’s legitimacy was questioned when she became queen in 1558.',
@@ -410,6 +413,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between the constitutional law establishing the monarch’s control over church leadership (<strong>Act of Supremacy</strong>) and the liturgical law governing church services and prayer books (<strong>Act of Uniformity</strong>):',
         featureA: {
+          provenance: 'Edexcel SAMs (Q1a)',
           ref: '[Textbook §1.1]',
           stem: 'Describe one key feature of the Act of Supremacy (1559).',
           guidance:
@@ -418,6 +422,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was that Elizabeth took the title of Supreme Governor... Specifically, this required all clergy to...',
         },
         featureB: {
+          provenance: 'Edexcel June 2023 (Q1a)',
           ref: '[Textbook §2.1]',
           stem: 'Describe one key feature of the Royal Injunctions of 1559.',
           guidance:
@@ -426,6 +431,7 @@ const KEY_TOPICS_DATA = {
             'One key feature of the Royal Injunctions was to enforce uniform Protestant practice... Specifically, they ordered that...',
         },
         rightExam: {
+          provenance: 'Edexcel SAMs (Q3)',
           type: 'essay_16',
           tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
           stem: '‘Elizabeth’s religious settlement of 1559 was completely successful in pleasing all religious groups.’ How far do you agree? Explain your answer.',
@@ -513,6 +519,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between Protestant clergy refusing to obey royal rules on vestments and ornaments (<strong>Puritan Nonconformity</strong>) and Catholic believers refusing to attend Anglican Sunday church services (<strong>Catholic Recusancy</strong>):',
         featureA: {
+          provenance: 'Edexcel November 2020 (Q1a)',
           ref: '[Textbook §1.2]',
           stem: 'Describe one key feature of the Vestments Controversy (1566).',
           guidance:
@@ -521,6 +528,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the clash over clerical dress... Specifically, Archbishop Parker insisted on the surplice, but 37 London clergy...',
         },
         featureB: {
+          provenance: 'Edexcel June 2024 (Q1b)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of recusancy in early Elizabethan England.',
           guidance:
@@ -529,6 +537,7 @@ const KEY_TOPICS_DATA = {
             'One key feature of recusancy was refusal to attend the new Anglican church... Specifically, recusants held secret Latin masses and paid...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2019 (Q2)',
           type: 'explain_why_12',
           tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
           stem: 'Explain why the Puritans challenged Elizabeth’s religious settlement between 1559 and 1566.',
@@ -616,6 +625,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between the sacred legal principle that anointed monarchs cannot be tried by courts (<strong>Sovereign Immunity</strong>) and the controversial intercepted casket documents used to discredit Mary Stuart (<strong>Casket Letters</strong>):',
         featureA: {
+          provenance: 'Edexcel November 2021 (Q1a)',
           ref: '[Textbook §1.1]',
           stem: 'Describe one key feature of Mary, Queen of Scots’ claim to the English throne.',
           guidance:
@@ -624,6 +634,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was Mary’s legitimate Tudor bloodline... Specifically, as great-granddaughter of Henry VII, English Catholics viewed her as...',
         },
         featureB: {
+          provenance: '★ High-Yield Forecast (Q1b)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of the inquiry into the Casket Letters (1568–69).',
           guidance:
@@ -632,6 +643,7 @@ const KEY_TOPICS_DATA = {
             'One key feature of the Casket Letters inquiry was to determine Mary’s guilt... Specifically, the inquiry concluded with a verdict of...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2022 (Q3a)',
           type: 'essay_16',
           tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
           stem: '‘The arrival of Mary, Queen of Scots in England in 1568 was the main cause of instability in Elizabethan government.’ How far do you agree? Explain your answer.',
@@ -814,6 +826,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between the Pope’s official decree casting Elizabeth out of the Church and freeing subjects from obedience (<strong>Papal Excommunication</strong>) and a secret government spy who encourages suspects to commit treason to gather proof (<strong>Agent Provocateur</strong>):',
         featureA: {
+          provenance: 'Edexcel June 2018 (Q1b)',
           ref: '[Textbook §1.2]',
           stem: 'Describe one key feature of the Revolt of the Northern Earls (1569).',
           guidance:
@@ -822,6 +835,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the northern Catholic nobles’ attempt to overthrow Protestantism... Specifically, they captured Durham Cathedral and...',
         },
         featureB: {
+          provenance: 'Edexcel June 2023 (Q1b)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of Sir Francis Walsingham’s spy network.',
           guidance:
@@ -830,6 +844,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was Walsingham’s systematic interception of secret communications... Specifically, his cryptographer Thomas Phelippes...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2018 (Q2)',
           type: 'explain_why_12',
           tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
           stem: 'Explain why Mary, Queen of Scots was executed in 1587.',
@@ -916,6 +931,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between state-sanctioned commerce raiding against Spanish treasure shipping (<strong>Privateering</strong>) and Philip II’s imperial ambition to dominate European politics and religion (<strong>Sovereign Hegemony</strong>):',
         featureA: {
+          provenance: 'Edexcel June 2019 (Q1a)',
           ref: '[Textbook §1.2]',
           stem: 'Describe one key feature of commercial rivalry between England and Spain in the New World.',
           guidance:
@@ -924,6 +940,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was Spanish trade restrictions in the Caribbean... Specifically, Spain banned English merchants, prompting privateers like Drake to...',
         },
         featureB: {
+          provenance: 'Edexcel November 2021 (Q1b)',
           ref: '[Textbook §2.2]',
           stem: 'Describe one key feature of Sir Francis Drake’s raid on the Cacafuego (1579).',
           guidance:
@@ -932,6 +949,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the colossal value of the treasure seized... Specifically, Drake intercepted the treasure ship off Ecuador and took...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2023 (Q3a)',
           type: 'essay_16',
           tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
           stem: '‘Commercial rivalry in the Americas was the main cause of worsening relations between England and Spain between 1569 and 1585.’ How far do you agree? Explain your answer.',
@@ -1019,6 +1037,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between an official defensive military alliance deploying standing troops to foreign soil (<strong>Treaty of Nonsuch</strong>) and an offensive tactical maritime strike designed to destroy enemy invasion shipping in harbour (<strong>Pre-Emptive Raid</strong>):',
         featureA: {
+          provenance: 'Edexcel June 2022 (Q1a)',
           ref: '[Textbook §1.2]',
           stem: 'Describe one key feature of the Treaty of Nonsuch (1585).',
           guidance:
@@ -1027,6 +1046,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was England’s formal military commitment to the Dutch rebels... Specifically, Elizabeth agreed to send...',
         },
         featureB: {
+          provenance: 'Edexcel June 2019 (Q1b)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of Francis Drake’s raid on Cadiz in 1587.',
           guidance:
@@ -1035,6 +1055,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the devastating destruction of Spanish naval shipping... Specifically, Drake sailed directly into Cadiz harbour and...',
         },
         rightExam: {
+          provenance: 'Edexcel November 2020 (Q2)',
           type: 'explain_why_12',
           tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
           stem: 'Explain why Elizabeth signed the Treaty of Nonsuch with Dutch rebels in 1585.',
@@ -1122,6 +1143,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between John Hawkins’ agile English warship design built for speed and long-range culverin broadsides (<strong>Race-Built Galleon</strong>) and Medina Sidonia’s defensive naval convoy designed to protect supply carracks and facilitate grappling (<strong>Crescent Formation</strong>):',
         featureA: {
+          provenance: 'Edexcel November 2020 (Q1b)',
           ref: '[Textbook §1.2]',
           stem: 'Describe one key feature of the Spanish invasion plan of 1588.',
           guidance:
@@ -1130,6 +1152,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the coordination required between fleet and army... Specifically, Medina Sidonia was ordered to rendezvous with Parma at...',
         },
         featureB: {
+          provenance: 'Edexcel June 2024 (Q1a)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of the English fireship attack at Calais (7 August 1588).',
           guidance:
@@ -1138,6 +1161,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the psychological panic caused by the fireships... Specifically, Spanish captains cut their anchors and broke...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2019 (Q3b)',
           type: 'essay_16',
           tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
           stem: '‘The English defeated the Spanish Armada mainly because of superior English naval tactics and technology.’ How far do you agree? Explain your answer.',
@@ -1320,6 +1344,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between the Renaissance classical education in Latin, history, and rhetoric taught in grammar schools (<strong>Humanist Curriculum</strong>) and the unroofed standing floor in public playhouses where ordinary commoners watched plays for one penny (<strong>Groundlings Pit</strong>):',
         featureA: {
+          provenance: 'Edexcel June 2018 (Q1a)',
           ref: '[Textbook §1.2]',
           stem: 'Describe one key feature of education in Elizabethan Grammar Schools.',
           guidance:
@@ -1328,6 +1353,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the intense focus on Latin and classical literature... Specifically, boys spent ten hours a day studying...',
         },
         featureB: {
+          provenance: 'Edexcel June 2019 (Q1a)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of the Elizabethan theatre.',
           guidance:
@@ -1336,6 +1362,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was that public playhouses attracted all social classes... Specifically, poor groundlings stood in the yard for 1 penny, while wealthy gentry...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2022 (Q2)',
           type: 'explain_why_12',
           tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
           stem: 'Explain why there was a significant expansion in education in Elizabethan England.',
@@ -1423,6 +1450,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between the conversion of shared arable land into private sheep pasture that dispossessed peasant farmers (<strong>Agricultural Enclosure</strong>) and municipal workhouses established by the 1576 Poor Act to punish vagrants (<strong>Houses of Correction</strong>):',
         featureA: {
+          provenance: 'Edexcel November 2021 (Q1a)',
           ref: '[Textbook §1.1]',
           stem: 'Describe one key feature of the enclosure of land in Elizabethan England.',
           guidance:
@@ -1431,6 +1459,7 @@ const KEY_TOPICS_DATA = {
             'One key feature of enclosure was the conversion of farmland to sheep pasture... Specifically, landlords replaced crops with sheep because wool was profitable, which left...',
         },
         featureB: {
+          provenance: 'Edexcel June 2023 (Q1a)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of the 1576 Act for the Relief of the Poor.',
           guidance:
@@ -1439,6 +1468,7 @@ const KEY_TOPICS_DATA = {
             'One key feature of the 1576 Poor Act was distinguishing between the unemployed and the lazy... Specifically, it forced towns to provide raw materials like wool and build...',
         },
         rightExam: {
+          provenance: 'Edexcel November 2020 (Q3b)',
           type: 'essay_16',
           tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
           stem: '‘The enclosure of land was the main reason for the dramatic increase in poverty in Elizabethan England.’ How far do you agree? Explain your answer.',
@@ -1526,6 +1556,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between calculating a ship’s position at sea using astrolabes and star quadrants (<strong>Celestial Navigation</strong>) and sailing completely around the earth’s globe on a continuous voyage (<strong>Circumnavigation</strong>):',
         featureA: {
+          provenance: 'Edexcel June 2022 (Q1b)',
           ref: '[Textbook §1.1]',
           stem: 'Describe one key feature of the new navigational technology used by Elizabethan explorers.',
           guidance:
@@ -1534,6 +1565,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the technological advance in navigation instruments... Specifically, devices like the astrolabe allowed navigators to...',
         },
         featureB: {
+          provenance: 'Edexcel June 2024 (Q1b)',
           ref: '[Textbook §2.2]',
           stem: 'Describe one key feature of Francis Drake’s circumnavigation (1577–80).',
           guidance:
@@ -1542,6 +1574,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the immense geographical and financial success of the voyage... Specifically, Drake sailed into the Pacific and returned with...',
         },
         rightExam: {
+          provenance: 'Edexcel November 2021 (Q2)',
           type: 'explain_why_12',
           tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
           stem: 'Explain why English exploration by sea increased so rapidly between 1558 and 1588.',
@@ -1629,6 +1662,7 @@ const KEY_TOPICS_DATA = {
         vocabPrompt:
           'Distinguish between a royal charter granting exclusive commercial and territorial rights to colonise lands (<strong>Colonial Patent</strong>) and the fortified defensive wooden enclosure erected on Roanoke Island (<strong>Roanoke Palisade</strong>):',
         featureA: {
+          provenance: '★ High-Yield Forecast (Q1a)',
           ref: '[Textbook §1.1]',
           stem: 'Describe one key feature of Sir Walter Raleigh’s royal patent for Virginia (1584).',
           guidance:
@@ -1637,6 +1671,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the royal authorization to establish an overseas empire... Specifically, Elizabeth granted Raleigh ownership of Virginia, provided he gave the Crown...',
         },
         featureB: {
+          provenance: 'Edexcel June 2023 (Q1b)',
           ref: '[Textbook §3.1]',
           stem: 'Describe one key feature of the failure of the first Roanoke colony (1585–86).',
           guidance:
@@ -1645,6 +1680,7 @@ const KEY_TOPICS_DATA = {
             'One key feature was the rapid collapse of food supplies and local relations... Specifically, after the *Tiger* flooded their seeds, the colonists angered Chief Wingina and were rescued by...',
         },
         rightExam: {
+          provenance: 'Edexcel June 2018 (Q3a)',
           type: 'essay_16',
           tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
           stem: '‘Poor planning and unsuitable colonists were the main reasons why the attempt to colonise Virginia failed in 1585–86.’ How far do you agree? Explain your answer.',
@@ -1992,7 +2028,9 @@ function buildEeeKeyTopicWorkbook(ktId) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(a): Describe One Key Feature [2 marks &bull; 3 mins]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">EDEXCEL PAPER 2</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc; color: #000000;">
+            ${enq.featureA.provenance || 'EDEXCEL PAPER 2'}
+          </span>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${enq.featureA.stem}
@@ -2014,7 +2052,9 @@ function buildEeeKeyTopicWorkbook(ktId) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(b): Describe One Key Feature [2 marks &bull; 3 mins]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">EDEXCEL PAPER 2</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc; color: #000000;">
+            ${enq.featureB.provenance || 'EDEXCEL PAPER 2'}
+          </span>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${enq.featureB.stem}
@@ -2040,9 +2080,14 @@ function buildEeeKeyTopicWorkbook(ktId) {
       
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 0; font-weight: 800;">
-          ${rx.tariff}
-        </h2>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 0; font-weight: 800;">
+            ${rx.tariff}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
+            ${rx.provenance || 'EDEXCEL PAPER 2'}
+          </span>
+        </div>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
           Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${rx.type === 'explain_why_12' ? '12' : '20'} ]
         </span>
@@ -2629,7 +2674,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase;">
             1. The 2/2 Mark Formula: Describe One Feature [2 Marks &bull; 3 Mins]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TARGET: 2 / 2</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">EDEXCEL JUNE 2018 &bull; TARGET: 2 / 2</span>
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.22;">
           <strong>Mark Scheme Law:</strong> 1 mark for identifying a valid feature + 1 mark for supporting historical detail.<br>
@@ -2645,7 +2690,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase;">
             2. The 12/12 Mark Formula: Explain Why [12 Marks &bull; 18 Mins]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TARGET: 11–12 / 12 (LEVEL 4)</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">EDEXCEL JUNE 2019 &bull; TARGET: 11–12 / 12 (LEVEL 4)</span>
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.22;">
           <strong>Three PEEL Paragraphs:</strong> Use both provided stimulus points + introduce at least ONE distinct self-selected knowledge point. Every paragraph must feature explicit causal reasoning words (<em>Consequently, As a direct result, This meant that</em>).<br>
@@ -2661,7 +2706,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase;">
             3. The 16/16 Mark Formula: Evaluative Essay [16 Marks + 4 SPaG &bull; 25 Mins]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TARGET: 15–16 / 16 (LEVEL 4)</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">EDEXCEL JUNE 2022 &bull; TARGET: 15–16 / 16 (LEVEL 4)</span>
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.22;">
           <strong>Criteria-Led Judgment Architecture:</strong><br>
@@ -2687,6 +2732,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
   if (ktId === 'KT1') {
     synopticPrompt = {
       title: 'Key Topic 1 Synoptic Examination Assessment',
+      provenance: 'Edexcel June 2023 (Q2)',
       tariff: 'Section B: Question 2 &bull; Explain Why [12 Marks &bull; 18 Mins]',
       question:
         'Explain why Elizabeth’s religious settlement of 1559 faced opposition in the years 1559–1568.',
@@ -2696,6 +2742,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
   } else if (ktId === 'KT2') {
     synopticPrompt = {
       title: 'Key Topic 2 Synoptic Examination Assessment',
+      provenance: 'Edexcel June 2022 (Q3b)',
       tariff: 'Section B: Question 3 &bull; Evaluative Essay [16 Marks + 4 SPaG &bull; 25 Mins]',
       question:
         '‘The main reason for the defeat of the Spanish Armada was poor Spanish leadership.’ How far do you agree? Explain your answer.',
@@ -2705,6 +2752,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
   } else {
     synopticPrompt = {
       title: 'Key Topic 3 Synoptic Examination Assessment',
+      provenance: 'Edexcel June 2024 (Q2)',
       tariff: 'Section B: Question 2 &bull; Explain Why [12 Marks &bull; 18 Mins]',
       question:
         'Explain why poverty and vagabondage increased significantly in Elizabethan England between 1558 and 1588.',
@@ -2720,9 +2768,14 @@ function buildEeeKeyTopicWorkbook(ktId) {
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 5px; border-radius: 2px;">
-            ${synopticPrompt.title}
-          </span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 5px; border-radius: 2px;">
+              ${synopticPrompt.title}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px; background: #f8fafc;">
+              ${synopticPrompt.provenance}
+            </span>
+          </div>
           <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 2px 0 0 0; font-weight: 800;">
             ${synopticPrompt.tariff}
           </h2>
