@@ -268,6 +268,378 @@ const UNIT_REGISTRY = {
       ],
     };
   },
+
+  great_war_part2: () => {
+    const { lessonConfigs } = require('./render_great_war_part2_twopage_workbook.cjs');
+    const timelineMilestones = [
+      {
+        date: 'August 1914',
+        title: 'Milestone 1: The Rush to the Colours & Lord Kitchener’s Appeal',
+        lesson: 'Lesson 1',
+        summary:
+          'Following the German invasion of neutral Belgium, Lord Kitchener issues his call for 500,000 volunteers. Over 750,000 enlist in 8 weeks; Hampshire men flock to the Portsmouth Town Hall to form the 14th and 15th "Pompey Pals" Battalions.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch Lord Kitchener’s pointing finger, the Pompey Pals crest, or lines of volunteers outside Portsmouth Town Hall.',
+        keyTerm: 'Pals Battalions & Civic Duty',
+        exactDate: 'August 1914',
+      },
+      {
+        date: 'Oct–Nov 1914',
+        title: 'Milestone 2: First Battle of Ypres & The Arrival of the Indian Corps',
+        lesson: 'Lesson 3',
+        summary:
+          'As the German Schlieffen Plan stalls, the British Expeditionary Force faces annihilation at Ypres. 1.5 million Indian troops deploy to France; Sepoy Khudadad Khan wins the Victoria Cross at Hollebeke, plugging the Allied frontline at catastrophic cost.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch Khudadad Khan holding his machine-gun post at Hollebeke, or Indian sepoys arriving at Marseille.',
+        keyTerm: 'Imperial Mobilisation & The BEF',
+        exactDate: 'October 1914',
+      },
+      {
+        date: 'May 1915',
+        title: 'Milestone 3: The Shell Scandal & Women’s Industrial Mobilisation',
+        lesson: 'Lesson 4',
+        summary:
+          'Acute shortage of high-explosive artillery shells on the Western Front exposes peacetime industrial paralysis. David Lloyd George establishes the Ministry of Munitions; over 1 million women ("Canary Girls") enter projectile factories to manufacture 76% of British shells.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch a Canary Girl packing TNT shells in a munitions factory, or the yellowing effects of toxic powder.',
+        keyTerm: 'Total War & Canary Girls',
+        exactDate: 'May 1915',
+      },
+      {
+        date: '1 July 1916',
+        title: 'Milestone 4: The First Day on the Somme & The Attrition Crisis',
+        lesson: 'Lesson 2',
+        summary:
+          'Following a seven-day artillery bombardment of 1.5 million shells that fails to cut German barbed wire, British infantry advance into interlocking machine-gun fire. The British Army suffers 57,470 casualties on day one, decimating civilian Pals Battalions.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch uncut German barbed wire belts, Maxim machine-gun posts, or the cratered wasteland of No Man’s Land.',
+        keyTerm: 'War of Attrition & Maxim Gun',
+        exactDate: '1 July 1916',
+      },
+      {
+        date: '1916–1917',
+        title: 'Milestone 5: Conscription, Conscientious Objection & State Powers',
+        lesson: 'Lesson 4',
+        summary:
+          'As voluntary recruitment dries up after the Somme, Asquith passes the 1916 Military Service Act introducing universal conscription. 16,000 conscientious objectors face military tribunals and hard labour, while DORA expands state control over daily civilian life.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch an absolutist conscientious objector before a military tribunal, or DORA curfew and rationing stamps.',
+        keyTerm: 'Conscription & DORA Autocracy',
+        exactDate: 'March 1916',
+      },
+      {
+        date: 'Aug–Nov 1918',
+        title: 'Milestone 6: The Hundred Days Offensive & All-Arms Warfare',
+        lesson: 'Lesson 2',
+        summary:
+          'Following Germany’s failed Spring Offensive, Sir Douglas Haig orchestrates the Hundred Days Offensive. Integrating creeping barrages, Mark V tanks, aircraft reconnaissance, and elite Dominion assault corps, Allied forces breach the Hindenburg Line and force the 11 November Armistice.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch a Mark V tank breaking the Hindenburg Line, or coordinating aircraft and creeping artillery barrages.',
+        keyTerm: 'All-Arms Combined Warfare',
+        exactDate: '11 Nov 1918',
+      },
+      {
+        date: '28 June 1919',
+        title: 'Milestone 7: The Hall of Mirrors & The Treaty of Versailles',
+        lesson: 'Lesson 5',
+        summary:
+          'The Allied Big Three (Clemenceau, Lloyd George, Wilson) impose harsh peace terms on the defeated German Republic. Article 231 forces Germany to accept total War Guilt, alongside £6.6 billion in reparations, disarmament (100,000 army, zero tanks), and territorial amputations.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch the Hall of Mirrors at Versailles, the signing of Article 231, or the German delegate pen.',
+        keyTerm: 'Article 231 & Reparations',
+        exactDate: '28 June 1919',
+      },
+      {
+        date: '1922',
+        title: 'Milestone 8: Village Mourning & The Stubbington War Memorial',
+        lesson: 'Lesson 6',
+        summary:
+          'In Stubbington, Hampshire, the local community erects a unique wooden shelter over the village pump on the green. Designed by the mother of local VAD volunteer Nancy Lowry, the shelter commemorates 67 local soldiers and civilians lost to the industrial slaughter of the Great War.',
+        sketchPrompt:
+          '✎ Dual-Coding Sketchpad: Sketch the wooden memorial shelter over the village green pump, Nancy Lowry’s nursing cross, or the bronze plaque.',
+        keyTerm: 'Memorialisation & Lost Generation',
+        exactDate: '1922',
+      },
+    ];
+
+    const subLabels = [
+      'Enlistment 1914',
+      'Trench Warfare & Haig',
+      'Empire Troops',
+      'Home Front & DORA',
+      'Versailles Peace 1919',
+      'Stubbington & Lost Gen',
+      'Capstone Assessment',
+    ];
+
+    const overviewTitles = [
+      'Why did men volunteer in 1914?',
+      'Did generals make trench horror worse?',
+      'Why were colonial troops forgotten?',
+      'How did war control daily British life?',
+      'Did Versailles solve or create problems?',
+      'How did the Lost Generation impact Stubbington?',
+      'Capstone Synthesis: The Great War',
+    ];
+
+    const syllabusTopics = [
+      'Lord Kitchener’s Recruitment Campaign, Pals Battalions & Domestic Coercion.',
+      'Trench Architecture, Military Attrition & The Historiographical Haig Debate.',
+      'The Imperial War Machine, Colonial Mobilisation & Postwar Erasure.',
+      'Defence of the Realm Act (DORA), Conscription & The Female Home Front.',
+      'The Paris Peace Conference, Article 231 & The Legacy of Versailles.',
+      'Micro-History, Local Bereavement & The Stubbington War Memorial.',
+      'Synoptic Capstone Assessment: Total War, Global Scope & Disciplinary Synthesis.',
+    ];
+
+    const specBullets = [
+      [
+        '1914 British voluntary mobilisation: Kitchener’s Call for 500,000 men',
+        'Pals Battalions: Pompey Pals (14th & 15th Hampshire) & civic peer pressure',
+        'Domestic coercion: White Feather movement, propaganda & Belgian atrocity stories',
+      ],
+      [
+        'Trench system engineering: firebays, traverses, dugouts & machine-gun vectors',
+        '1916 Battle of the Somme: 57,470 first-day casualties & defensive fire dominance',
+        'Historians’ debate: "Butcher of the Somme" (Clark) vs "Technological Learner" (Terraine)',
+      ],
+      [
+        '1.5 million Indian troops: Khudadad Khan VC & stabilizing Ypres in 1914',
+        'BWIR munitions carriers & 140,000 Chinese Labour Corps logistic workers',
+        'Imperial racial hierarchies, frontline restrictions & postwar memorial erasure',
+      ],
+      [
+        'August 1914 DORA powers: press censorship, curfew, licensing & requisitioning',
+        '1916 Military Service Act: conscription tribunals & conscientious objectors',
+        '1 million "Canary Girls" in munitions factories & 1918 Representation of the People Act',
+      ],
+      [
+        'The Big Three collision: Clemenceau (security) vs Lloyd George vs Wilson (14 Points)',
+        'Treaty terms: Article 231 War Guilt, £6.6bn reparations & 100,000-man military limit',
+        'Historiographical verdict: Keynes’ "Carthaginian Peace" vs modern revisionist balance',
+      ],
+      [
+        'Demographic shock of the "Lost Generation" on small English agricultural villages',
+        'The Stubbington Memorial Shelter (1922): unique village green pump architecture',
+        'Micro-case study: Nancy Lowry (VAD nurse) & the 67 local fallen men on the memorial',
+      ],
+      [
+        'Evaluating the four thematic strands across the 1914–1919 conflict',
+        'Synthesis of military, domestic, imperial, and local evidence in extended writing',
+        'Mastery of Edexcel criteria: direct answering, precise evidence, causation & sustained judgement',
+      ],
+    ];
+
+    const doNows = [
+      [
+        { q: 'Which three nations formed the Triple Entente in 1907?' },
+        {
+          q: 'What revolutionary British battleship was launched in 1906, rendering older warships obsolete?',
+        },
+        {
+          q: 'What was Kaiser Wilhelm II’s aggressive foreign policy aiming for a "place in the sun" called?',
+        },
+        { q: 'Where was Archduke Franz Ferdinand assassinated on 28 June 1914?' },
+        {
+          q: 'Which 1839 treaty guaranteeing Belgian neutrality did Germany violate, prompting Britain to declare war?',
+        },
+      ],
+      [
+        {
+          q: 'How many men volunteered to join the British Army within the first eight weeks of August 1914?',
+        },
+        {
+          q: 'What name was given to volunteer units allowing workmates and friends to enlist together?',
+        },
+        {
+          q: 'Which local Hampshire Pals battalion was raised from dockers and clerks in Portsmouth?',
+        },
+        { q: 'What civilian organisation handed out symbols of cowardice to men not in uniform?' },
+        {
+          q: 'Which military plan did Germany use in 1914 aiming to defeat France in six weeks before fighting Russia?',
+        },
+      ],
+      [
+        {
+          q: 'Why were trenches dug in a zigzag pattern with traverses rather than straight lines?',
+        },
+        {
+          q: 'What lethal defensive weapon could fire up to 500 rounds per minute on the Western Front?',
+        },
+        {
+          q: 'How many casualties did the British Army suffer on the first day of the Somme (1 July 1916)?',
+        },
+        { q: 'Who was the British Commander-in-Chief during the Battle of the Somme?' },
+        {
+          q: 'What military term describes wearing down an enemy through continuous losses until physical collapse?',
+        },
+      ],
+      [
+        { q: 'How many soldiers did the British Indian Army mobilise during the First World War?' },
+        { q: 'Who was the first South Asian soldier to be awarded the Victoria Cross in 1914?' },
+        {
+          q: 'Which non-combat unit of 140,000 workers handled railway repairs and supply unloading in France?',
+        },
+        {
+          q: 'Why were non-white colonial troops barred from combat on European frontlines by 1915?',
+        },
+        {
+          q: 'What 1914 battle saw the Indian Corps plug critical gaps to prevent the fall of the Channel ports?',
+        },
+      ],
+      [
+        {
+          q: 'What emergency act passed in August 1914 gave the British government sweeping autocratic powers?',
+        },
+        {
+          q: 'What nickname was given to female munitions workers whose skin turned yellow from toxic TNT?',
+        },
+        {
+          q: 'In what year did the British government introduce compulsory military conscription for single men?',
+        },
+        {
+          q: 'What term describes men who refused to fight in the war on moral or religious grounds?',
+        },
+        {
+          q: 'Which 1918 legislation granted the vote to women over 30 who met property qualifications?',
+        },
+      ],
+      [
+        {
+          q: 'Which three Allied leaders dominated the 1919 Paris Peace Conference ("The Big Three")?',
+        },
+        {
+          q: 'Which controversial clause in the Treaty of Versailles forced Germany to accept sole War Guilt?',
+        },
+        {
+          q: 'How much money in war reparations was Germany ordered to pay to the Allies in 1921?',
+        },
+        {
+          q: 'What was the maximum size allowed for the German Army under the disarmament terms of Versailles?',
+        },
+        {
+          q: 'Which demilitarised zone was established along Germany’s western border with France?',
+        },
+      ],
+      [
+        {
+          q: 'What local memorial shelter in Hampshire commemorates 67 fallen villagers from the Great War?',
+        },
+        {
+          q: 'Who was the local VAD nurse commemorated on the Stubbington memorial whose mother designed the shelter?',
+        },
+        {
+          q: 'In what month and year did the First World War end with the signing of the Armistice?',
+        },
+        {
+          q: 'What term describes the total mobilisation of a society’s economy, industry, and civilians for war?',
+        },
+        {
+          q: 'Which British economist warned in 1919 that Versailles would cause European economic ruin?',
+        },
+      ],
+    ];
+
+    const timelineMissions = [
+      'Illustrate Milestone 1 on Page 2: Sketch Lord Kitchener’s appeal, the Pompey Pals crest, or lines of volunteers.',
+      'Illustrate Milestone 4 on Page 2: Sketch uncut German barbed wire, Maxim machine-gun posts, or the Somme wasteland.',
+      'Illustrate Milestone 2 on Page 2: Sketch Sepoy Khudadad Khan holding his machine-gun post at Hollebeke.',
+      'Illustrate Milestone 3 on Page 2: Sketch a Canary Girl packing TNT shells, or Milestone 5 on Page 3 (tribunal).',
+      'Illustrate Milestone 7 on Page 3: Sketch the Hall of Mirrors at Versailles, or the signing of Article 231.',
+      'Illustrate Milestone 8 on Page 3: Sketch the wooden memorial shelter over the village pump, or Nancy Lowry’s nursing cross.',
+      'Review all 8 Milestones across Pages 2–3 to synthesize your overarching historical argument.',
+    ];
+
+    return {
+      unitId: 'great_war_part2',
+      unitTitle: 'THE GREAT WAR (1914–1919)',
+      yearGroup: 'Year 9',
+      yearNumber: 9,
+      gDriveFolderName: 'The Great War Part 2',
+      subtitle: 'Voluntary Enlistment, Trench Warfare, Global Empire & The Peace of Versailles',
+      dateRange: '1914–1919',
+      overarchingEnquiry:
+        'How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?',
+      coverImage: 'images/stubbington_memorial_1.jpg',
+      coverPlate: {
+        tag: 'Local Archival Primary Record • Memorialisation (1922)',
+        shelfmark: 'FAREHAM ARCHIVES • HAMPSHIRE RECORD OFFICE',
+        title: 'The Stubbington War Memorial Shelter on the Village Green',
+        description:
+          'Erected in 1922 over the historic village water pump, designed by the mother of VAD nurse Nancy Lowry, commemorating the 67 local soldiers and civilians lost to the industrial slaughter of the Great War.',
+      },
+      thematicStrands: [
+        {
+          title: 'State Control, Conscription & Versailles',
+          color: '#1e3a8a',
+          trajectory:
+            'Voluntary enlistment → DORA autocracy & 1916 conscription → 1919 Versailles breakdown (L1, L2, L4, L5)',
+        },
+        {
+          title: 'Industrialised Slaughter & Global Resources',
+          color: '#0369a1',
+          trajectory:
+            'Trench engineering & Maxim guns → Munitions Shell Crisis → Imperial logistics & 1918 tanks (L2, L3, L4, L7)',
+        },
+        {
+          title: 'Propaganda, War Guilt & Haig Revisionism',
+          color: '#b91c1c',
+          trajectory:
+            'Kitchener jingoism → Attrition mindset & Haig debate → Article 231 War Guilt Clause (L1, L2, L5)',
+        },
+        {
+          title: 'Conscientious Dissent, Munitions & Colonial Agency',
+          color: '#15803d',
+          trajectory:
+            'Sepoy battlefield agency → Canary Girls industrial mobilization → Taranto mutiny & objectors (L3, L4, L6)',
+        },
+      ],
+      hubUrl: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2',
+      milestones: timelineMilestones,
+      lessons: lessonConfigs.map((cfg, i) => ({
+        ...cfg,
+        shortTitle: subLabels[i] || `Lesson ${i + 1}`,
+        overviewTitle: overviewTitles[i] || `Lesson ${i + 1}`,
+        syllabusTopic: syllabusTopics[i] || '',
+        specBullets: specBullets[i] || [],
+        doNow: doNows[i] || [],
+        timelineMission:
+          timelineMissions[i] ||
+          'Illustrate the milestone sketchpad on Pages 2–3 with your visual symbol.',
+        questionCount: 20,
+      })),
+      timelineCheckP2:
+        'Why did the failure of the Schlieffen Plan and the introduction of machine guns force armies into the trenches by winter 1914?',
+      timelineCheckP3:
+        'How did total home front mobilisation and combined-arms tactics in 1918 break the four-year deadlock of the Western Front?',
+      timelinePart1Title:
+        'Living Unit Timeline • Part 1: Outbreak, Mobilisation & The Attrition Deadlock (1914–1916)',
+      timelinePart2Title:
+        'Living Unit Timeline • Part 2: Conscription, Victory, Versailles & Remembrance (1916–1922)',
+      quips: [
+        'The History Department • Key Stage 3 Historical Studies • Year 9',
+        'Industrialisation transformed war into a catastrophic clash of machinery, artillery, and chemical weapons.',
+        'Lord Kitchener’s recruitment campaign mobilized 2.5 million voluntary British soldiers by late 1915.',
+        'Pals Battalions harnessed intense local solidarity, but led to concentrated community devastation.',
+        'Defensive technology—machine guns and barbed wire—dominated offensive infantry tactics in 1914–1917.',
+        'The Battle of the Somme remains the bloodiest day in British military history (57,470 casualties).',
+        'Historiographical interpretations of General Haig range from "Butcher" to "Technological Innovator".',
+        'Over 4 million soldiers and non-combat labourers from across the British Empire served in the Great War.',
+        'Indian soldiers plugged crucial frontline gaps at Ypres and Neuve Chapelle in autumn 1914.',
+        '140,000 Chinese labourers sustained Allied logistics under hazardous conditions in northern France.',
+        'DORA granted the British government unprecedented emergency powers over daily civilian life.',
+        'Over 1 million female "Canary Girls" manufactured 76% of all British shells and munitions.',
+        'The 1916 Military Service Act introduced compulsory conscription, opposed by 16,000 conscientious objectors.',
+        'The Big Three at Versailles clashed over whether to crush, disarm, or rehabilitate post-war Germany.',
+        'Article 231 forced Germany to accept sole moral and legal responsibility for Allied war losses.',
+        'The "Lost Generation" left an indelible mark of bereavement on thousands of British towns and villages.',
+        'The 1922 Stubbington War Memorial Shelter stands over the village pump as a unique community tribute.',
+        'Historical sources must be interrogated for provenance, contemporary audience, and underlying motive.',
+        'Connectives build disciplined historical analysis: Consequently, This directly resulted in, On balance...',
+        'Key Stage 3 Historical Studies • Pupil Assessment Record',
+      ],
+    };
+  },
 };
 
 async function main() {

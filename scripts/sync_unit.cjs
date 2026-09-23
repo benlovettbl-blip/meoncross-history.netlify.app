@@ -152,6 +152,15 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'great_war_part2') {
+        console.log(
+          `\n📚 Compiling 20-page universal KS3 engine workbook for [great_war_part2]...`,
+        );
+        execSync(`node scripts/generate_ks3_workbook.cjs great_war_part2`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

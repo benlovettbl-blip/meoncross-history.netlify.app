@@ -1622,4 +1622,5 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
 
 module.exports = {
   buildGreatWarPart2TwoPageWorkbook,
+  lessonConfigs,
 };

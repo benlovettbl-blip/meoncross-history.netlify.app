@@ -68,11 +68,17 @@ function buildKs3WorkbookHtml(unitConfig) {
     milestones = [],
     lessons = [],
     quips = [],
+    capstoneSpread = null,
+    hasCapstoneSpread: explicitHasCapstone = null,
     pageHeight = '256mm',
     pageMargin = '10mm 12mm 10mm 12mm',
   } = unitConfig;
 
-  const totalPages = lessons.length * 2 + 4; // Cover (1) + Timeline (2-3) + Spreads (lessons*2) + Back Cover (1)
+  const hasCapstoneSpread =
+    explicitHasCapstone !== null
+      ? explicitHasCapstone
+      : Boolean(capstoneSpread || lessons.length === 7);
+  const totalPages = lessons.length * 2 + 4 + (hasCapstoneSpread ? 2 : 0); // Cover (1) + Timeline (2-3) + Spreads (lessons*2) + Capstone (18-19 if 7 lessons) + Back Cover (1)
   const coverImgData = getBase64Image(coverImage);
 
   let html = `<!DOCTYPE html>
@@ -257,8 +263,8 @@ function buildKs3WorkbookHtml(unitConfig) {
         <!-- The 8 Historical Enquiries (Curriculum Roadmap, 0 Audit Boxes) -->
         <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 4px;">
           <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
-            <span>The 8 Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
-            <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">1450–1750</span>
+            <span>The ${lessons.length} Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
+            <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">${unitConfig.dateRange || (lessons.length === 7 ? '1914–1919' : '1450–1750')}</span>
           </div>
           <div style="padding: 4px 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 8px; font-family: 'Inter', sans-serif; background: #ffffff;">
             ${lessons
@@ -878,6 +884,223 @@ function buildKs3WorkbookHtml(unitConfig) {
   </div>
 `;
   });
+
+  // ==========================================
+  // PAGES 18–19: SYNOPTIC CAPSTONE SPREAD (7-Lesson Units)
+  // ==========================================
+  if (hasCapstoneSpread) {
+    const capLeftPageNum = lessons.length * 2 + 4;
+    const capRightPageNum = lessons.length * 2 + 5;
+
+    const concepts = capstoneSpread?.concepts || [
+      {
+        term: 'Total War',
+        def: "A conflict demanding complete mobilization of an entire society's civilian workforce, industry, agriculture, and military resources, eliminating the distinction between combatant and civilian.",
+      },
+      {
+        term: 'Pals Battalions',
+        def: 'Volunteer military units recruited under Lord Kitchener allowing workmates, football teams, and neighbours to serve together; suffered catastrophic concentrated local losses on the Somme.',
+      },
+      {
+        term: 'War of Attrition',
+        def: "A military strategy aiming to wear down the enemy's manpower, reserves, and industrial supplies through sustained slaughter until total physical collapse.",
+      },
+      {
+        term: 'Defence of the Realm Act (DORA)',
+        def: 'Emergency British legislation passed in August 1914 granting the government sweeping autocratic powers to censor the press, requisition property, and control daily civilian habits.',
+      },
+      {
+        term: 'Conscription & Conscientious Objection',
+        def: 'Compulsory military call-up introduced in 1916; opposed by conscientious objectors on moral or religious grounds, who faced harsh military tribunals and imprisonment.',
+      },
+      {
+        term: 'Canary Girls (Munitionettes)',
+        def: 'Over 1 million women who machined artillery shells in national projectile factories; nicknamed for their yellowing skin caused by toxic TNT jaundice.',
+      },
+      {
+        term: 'Article 231 (The War Guilt Clause)',
+        def: 'The controversial clause in the 1919 Treaty of Versailles forcing Germany to accept sole moral and legal responsibility for causing all Allied damage, justifying £6.6bn reparations.',
+      },
+      {
+        term: 'Lost Generation & Memorialisation',
+        def: 'The generation of young men decimated by industrialized combat; commemorated through stone monuments, war memorial shelters, and annual remembrance rituals across Britain.',
+      },
+    ];
+
+    const challenge =
+      capstoneSpread?.challenge ||
+      'Select any two concepts above and explain in a single complex analytical sentence how they directly influenced each other during the 1914–1919 conflict:';
+
+    const wwwPrompt =
+      capstoneSpread?.wwwPrompt ||
+      'Which Great War enquiry, primary source (e.g. Wilfred Owen, sepoy letters, or local records), or extended writing skill did you find most compelling or master most successfully?';
+    const ebiPrompt =
+      capstoneSpread?.ebiPrompt ||
+      'Which historical concept (e.g. military attrition, conflicting interpretations of Haig, or the economic impact of Versailles) did you find most challenging?';
+    const coachingPrompt =
+      capstoneSpread?.coachingPrompt ||
+      'Teacher feedback confirming unit mastery, validating reflection, and setting next unit targets:';
+
+    // LEFT PAGE (VERSO): Synoptic Concept Vault
+    html += `
+  <div class="page page-container verso-page" id="page-${capLeftPageNum}">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; font-weight: 800;">
+              KS3 ${unitTitle.toUpperCase()} &bull; SYNOPTIC CONCEPT VAULT
+            </div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
+              Disciplinary &amp; Substantive Concept Vault
+            </h2>
+          </div>
+          <span class="badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Mastery</span>
+        </div>
+
+        <p style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; margin: 0 0 4px 0; line-height: 1.25;">
+          Mastery of these high-yield disciplinary and substantive concepts is essential for achieving Grade 6–9 in KS3 History extended writing:
+        </p>
+
+        <!-- 8 Concept Cards (2-Column Grid) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 4px;">
+          ${concepts
+            .map(
+              (c) => `
+            <div style="border: 1.2px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; border-radius: 4px; padding: 4px 7px; background: #f8fafc;">
+              <strong style="color: #1e3a8a; font-family: 'Inter', sans-serif; font-size: 7.8pt; display: block; margin-bottom: 1px;">
+                ${c.term}:
+              </strong>
+              <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; margin: 0; line-height: 1.25;">
+                ${c.def}
+              </p>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+
+      <!-- Synoptic Challenge Workspace -->
+      <div style="border: 1.3px solid #0f172a; border-radius: 4px; padding: 4px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f172a;">
+              ✍️ Task: Synoptic Disciplinary Synthesis
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">Disciplinary Synthesis</span>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; margin-bottom: 3px; line-height: 1.25;">
+            ${challenge}
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: space-around;">
+          <div class="task-line" style="height: 5.6mm; border-bottom: 1.5px solid #0f172a;"></div>
+          <div class="task-line" style="height: 5.6mm; border-bottom: 1.5px solid #0f172a;"></div>
+          <div class="task-line" style="height: 5.6mm; border-bottom: 1.5px solid #0f172a;"></div>
+          <div class="task-line" style="height: 5.6mm; border-bottom: 1.5px solid #0f172a;"></div>
+          <div class="task-line" style="height: 5.6mm; border-bottom: 1.5px solid #0f172a;"></div>
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.0pt; color: #64748b; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
+          ★ Scholar’s Tip: Use explicit causal connectives (e.g. <em>Consequently, This directly forced...</em>) to articulate the relationship between concepts.
+        </div>
+      </div>
+
+      <!-- Verso Footer -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
+        <span style="font-weight: 800; color: #0f172a;">Page ${capLeftPageNum} (Facing Spread Left)</span>
+        <span>The History Department &bull; Disciplinary Concept Vault</span>
+      </div>
+    </div>
+  </div>
+`;
+
+    // RIGHT PAGE (RECTO): Pupil Voice & Reflection
+    html += `
+  <div class="page page-container recto-page" id="page-${capRightPageNum}">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 2px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: baseline;">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; font-weight: 800;">
+              KS3 ${unitTitle.toUpperCase()} &bull; PUPIL VOICE &amp; EVALUATION
+            </div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 1px 0 0 0; font-weight: 900; line-height: 1.15;">
+              End of Unit Reflection &amp; Pupil Voice
+            </h2>
+          </div>
+          <span class="badge" style="background: #fdf2f8; color: #9d174d; border-color: #fbcfe8;">Pupil Voice</span>
+        </div>
+
+        <!-- 1. WWW -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #1e3a8a; text-transform: uppercase;">
+              1. What Went Well (WWW) &bull; Strengths &amp; Insights
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">Pupil Self-Audit</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; margin: 0 0 2px 0; line-height: 1.25;">
+            ${wwwPrompt}
+          </p>
+          <div class="task-line" style="height: 5.5mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.5mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.5mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+        </div>
+
+        <!-- 2. EBI -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #b91c1c; text-transform: uppercase;">
+              2. Even Better If (EBI) &bull; Areas for Growth
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b;">Target Setting</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; margin: 0 0 2px 0; line-height: 1.25;">
+            ${ebiPrompt}
+          </p>
+          <div class="task-line" style="height: 5.5mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.5mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.5mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+        </div>
+      </div>
+
+      <!-- 3. Teacher Formative Coaching Dialogue -->
+      <div style="border: 1.4px solid #f59e0b; border-radius: 4px; padding: 5px 9px; background: #fffbeb; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #92400e; text-transform: uppercase;">
+              Teacher Formative Coaching Dialogue &amp; Next Steps
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #b45309; font-style: italic;">Completed Post-Assessment</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #78350f; margin: 0 0 2px 0; line-height: 1.25;">
+            ${coachingPrompt}
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: space-around;">
+          <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #b45309;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #b45309;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #b45309;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #b45309;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #b45309;"></div>
+          <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #b45309;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #92400e; margin-top: 2px; border-top: 1px dashed #fcd34d; padding-top: 2px;">
+          <span><strong>Target Correction Code:</strong> [ Sp &bull; Gr &bull; // &bull; [?] &bull; Ev &bull; Ex &bull; J ]</span>
+          <span>Teacher Signature: __________________ &bull; Date: ___/___/2026</span>
+        </div>
+      </div>
+
+      <!-- Recto Footer -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
+        <span>Pupil Voice Reflection &bull; The History Department</span>
+        <span style="font-weight: 800; color: #0f172a;">Page ${capRightPageNum} (Facing Spread Right)</span>
+      </div>
+    </div>
+  </div>
+`;
+  }
 
   // ==========================================
   // PAGE 20: OUTSIDE BACK COVER (Universal Component)

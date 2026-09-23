@@ -141,6 +141,41 @@ const UNIT_THEMATIC_STRANDS = {
     },
   ],
 
+  great_war_part2: [
+    {
+      id: 'sovereignty_state_power',
+      title: 'State Control, Conscription & Versailles',
+      color: '#1e3a8a',
+      trajectory:
+        'Voluntary enlistment → DORA autocracy & 1916 conscription → 1919 Versailles breakdown (L1, L2, L4, L5)',
+      lessonsCovered: [1, 2, 4, 5],
+    },
+    {
+      id: 'trade_technology_empire',
+      title: 'Industrialised Slaughter & Global Resources',
+      color: '#0369a1',
+      trajectory:
+        'Trench engineering & Maxim guns → Munitions Shell Crisis → Imperial logistics & 1918 tanks (L2, L3, L4, L7)',
+      lessonsCovered: [2, 3, 4, 7],
+    },
+    {
+      id: 'ideology_faith_causation',
+      title: 'Propaganda, War Guilt & Haig Revisionism',
+      color: '#b91c1c',
+      trajectory:
+        'Kitchener jingoism → Attrition mindset & Haig debate → Article 231 War Guilt Clause (L1, L2, L5)',
+      lessonsCovered: [1, 2, 5],
+    },
+    {
+      id: 'resistance_agency_rights',
+      title: 'Conscientious Dissent, Munitions & Colonial Agency',
+      color: '#15803d',
+      trajectory:
+        'Sepoy battlefield agency → Canary Girls industrial mobilization → Taranto mutiny & objectors (L3, L4, L6)',
+      lessonsCovered: [3, 4, 6],
+    },
+  ],
+
   // -------------------------------------------------------------
   // KEY STAGE 4 / GCSE SPECIFICATION UNITS
   // -------------------------------------------------------------
