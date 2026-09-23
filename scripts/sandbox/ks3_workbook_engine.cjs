@@ -384,32 +384,31 @@ function buildKs3WorkbookHtml(unitConfig) {
       </div>
     </div>
 
-    <!-- Milestones Container -->
+    <!-- Milestones Container (Unboxed Timeline Spreads: Clean, Full-Page Canvas for Pupil Concept Mapping) -->
     <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 2px 0;">
       ${mList
         .map(
-          (m) => `
-        <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">${m.date}</span>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a;">${m.title}</strong>
+          (m, mIdx) => `
+        <div style="padding: 2px 4px 4px 4px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; ${mIdx < mList.length - 1 ? 'border-bottom: 1px dashed #cbd5e1;' : ''} margin-bottom: 2px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="background: #1e3a8a; color: #ffffff; font-family: monospace; font-size: 7.6pt; font-weight: 800; padding: 1px 5px; border-radius: 2px;">${m.date}</span>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #0f172a;">${m.title}</strong>
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #1e3a8a;">
+                  ${m.exactDate || m.date} &bull; ${m.keyTerm || ''}
+                </span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">${m.lesson}</span>
+              </div>
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 2px;">${m.lesson}</span>
+            <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 2px 0; line-height: 1.25;">
+              ${m.summary}
+            </p>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; margin: 0 0 3px 0; line-height: 1.25;">
-            ${m.summary}
-          </p>
-          <!-- Open Visual Dual-Coding Canvas (Unboxed, freeform sketching & concept mapping) -->
-          <div style="flex: 1; min-height: 29mm; display: flex; flex-direction: column; justify-content: space-between; padding: 2px 2px 2px 2px; border-top: 1px dashed #cbd5e1; margin-top: 2px;">
-            <div style="display: flex; justify-content: flex-end; align-items: baseline; margin-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #1e3a8a;">
-                ${m.exactDate || m.date} &bull; ${m.keyTerm || ''}
-              </span>
-            </div>
-            <!-- Completely unboxed free canvas for student drawing, arrows, and dual-coding -->
-            <div style="flex: 1;"></div>
-          </div>
+          <!-- Completely unboxed free canvas for student drawing, arrows, and dual-coding across the page -->
+          <div style="flex: 1; min-height: 34mm;"></div>
         </div>
       `,
         )

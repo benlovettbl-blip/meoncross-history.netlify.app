@@ -293,17 +293,27 @@ async function runPilot() {
   if (p6) await p6.screenshot({ path: path.join(outputDir, 'pilot_page6.png') });
   const p7 = await page.$('#page-7');
   if (p7) await p7.screenshot({ path: path.join(outputDir, 'pilot_page7.png') });
+  const p8 = await page.$('#page-8');
+  if (p8) await p8.screenshot({ path: path.join(outputDir, 'pilot_page8.png') });
   const p10 = await page.$('#page-10');
   if (p10) await p10.screenshot({ path: path.join(outputDir, 'pilot_page10.png') });
   const p11 = await page.$('#page-11');
   if (p11) await p11.screenshot({ path: path.join(outputDir, 'pilot_page11.png') });
+  const p12 = await page.$('#page-12');
+  if (p12) await p12.screenshot({ path: path.join(outputDir, 'pilot_page12.png') });
+  const p14 = await page.$('#page-14');
+  if (p14) await p14.screenshot({ path: path.join(outputDir, 'pilot_page14.png') });
+  const p16 = await page.$('#page-16');
+  if (p16) await p16.screenshot({ path: path.join(outputDir, 'pilot_page16.png') });
+  const p18 = await page.$('#page-18');
+  if (p18) await p18.screenshot({ path: path.join(outputDir, 'pilot_page18.png') });
   const p20 = await page.$('#page-20');
   if (p20) await p20.screenshot({ path: path.join(outputDir, 'pilot_page20.png') });
 
   await browser.close();
   console.log(`🎉 Pilot comparison snapshots saved to ${outputDir}`);
 
-  // Synchronize compiled PDF and HTML to primary public/pdfs and unit folders
+  // Synchronize compiled PDF and HTML to primary public/pdfs, dist, unit folders, and Google Drive
   const prodPdfPath = path.join(
     ROOT_DIR,
     'public',
@@ -316,6 +326,13 @@ async function runPilot() {
     'pdfs',
     'early_modern_world_pupil_workbook_FINAL_V17.pdf',
   );
+  const distPdfV17 = path.join(
+    ROOT_DIR,
+    'dist',
+    'pdfs',
+    'early_modern_world_pupil_workbook_FINAL_V17.pdf',
+  );
+  const distPdf = path.join(ROOT_DIR, 'dist', 'pdfs', 'early_modern_world_pupil_workbook.pdf');
   const prodHtml1 = path.join(
     ROOT_DIR,
     'public',
@@ -325,12 +342,36 @@ async function runPilot() {
   );
   const prodHtml2 = path.join(ROOT_DIR, 'units', 'early_modern_world', 'pupil_workbook.html');
 
+  fs.mkdirSync(path.dirname(distPdfV17), { recursive: true });
   fs.copyFileSync(pdfPath, prodPdfPath);
   fs.copyFileSync(pdfPath, prodPdfV17);
+  fs.copyFileSync(pdfPath, distPdfV17);
+  fs.copyFileSync(pdfPath, distPdf);
   fs.copyFileSync(htmlPath, prodHtml1);
   fs.copyFileSync(htmlPath, prodHtml2);
   console.log(`✅ Synchronized to production PDF: ${prodPdfPath}`);
   console.log(`✅ Synchronized to production V17 PDF: ${prodPdfV17}`);
+  console.log(`✅ Synchronized to dist PDF: ${distPdfV17}`);
+
+  // Google Drive Department File synchronization (if connected)
+  const gDriveFolder = 'G:\\My Drive\\AAMX\\Dep File\\Year 8\\Early Modern World';
+  if (fs.existsSync(gDriveFolder)) {
+    try {
+      const gDriveFile1 = path.join(gDriveFolder, 'Early Modern World Pupil Workbook.pdf');
+      const gDriveFile2 = path.join(
+        gDriveFolder,
+        'early_modern_world_pupil_workbook_FINAL_V17.pdf',
+      );
+      fs.copyFileSync(pdfPath, gDriveFile1);
+      fs.copyFileSync(pdfPath, gDriveFile2);
+      console.log(`✅ Synchronized to Google Drive Department File: ${gDriveFile1}`);
+    } catch (gErr) {
+      console.warn(
+        `⚠️ Warning: Could not write directly to Google Drive (file may be open):`,
+        gErr.message,
+      );
+    }
+  }
 }
 
 runPilot().catch((err) => {
