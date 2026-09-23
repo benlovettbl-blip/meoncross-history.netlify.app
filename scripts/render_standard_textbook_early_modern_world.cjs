@@ -908,32 +908,32 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     let sourceAImg = null;
     let sourceBImg = null;
     if (lessonNum === 1) {
-      sourceAImg = getBase64Image('/images/mansa_musa_catalan.jpg');
-      sourceBImg = getBase64Image('/images/silk_road.jpg');
+      sourceAImg = getBase64Image('/images/silk_road.jpg');
+      sourceBImg = getBase64Image('/images/mansa_musa_catalan.jpg');
     } else if (lessonNum === 2) {
-      sourceAImg = getBase64Image('/images/armada_portrait.jpg');
-      sourceBImg = getBase64Image('/images/spanish_armada.jpg');
+      sourceAImg = getBase64Image('/images/tordesillas_map.png');
+      sourceBImg = getBase64Image('/images/armada_portrait.jpg');
     } else if (lessonNum === 3) {
-      sourceAImg = getBase64Image('/images/benin_bronze.jpg');
-      sourceBImg = getBase64Image('/images/early_mod_l3_banner.jpg');
+      sourceAImg = getBase64Image('/images/jamestown_fort.jpg');
+      sourceBImg = getBase64Image('/images/sir_thomas_roe.jpg');
     } else if (lessonNum === 4) {
       sourceAImg = getBase64Image('/images/gunpowder_conspirators.jpg');
-      sourceBImg = getBase64Image('/images/gunpowder.jpg');
+      sourceBImg = getBase64Image('/images/monteagle_letter.jpeg');
     } else if (lessonNum === 5) {
-      sourceAImg = getBase64Image('/images/charles_first.jpg');
-      sourceBImg = getBase64Image('/images/charles_i_execution.jpg');
+      sourceAImg = getBase64Image('/images/charles_i_execution.jpg');
+      sourceBImg = getBase64Image('/images/great_seal_1651.png');
     } else if (lessonNum === 6) {
-      sourceAImg = getBase64Image('/images/oliver_cromwell.jpg');
+      sourceAImg = getBase64Image('/images/royal_exchange_courtyard.jpg');
       sourceBImg = getBase64Image('/images/early_mod_l6_banner.jpg');
     } else if (lessonNum === 7) {
-      sourceAImg = getBase64Image('/images/brookes.jpg');
+      sourceAImg = getBase64Image('/images/triangular_trade.png');
       sourceBImg = getBase64Image('/images/brookes_ship.jpg');
     } else if (lessonNum === 8) {
-      sourceAImg = getBase64Image('/images/olaudah_equiano.jpg');
+      sourceAImg = getBase64Image('/images/jamaica_maroons.jpg');
       sourceBImg = getBase64Image('/images/equiano.jpg');
     } else if (lessonNum === 9) {
-      sourceAImg = getBase64Image('/images/early_mod_l5_banner.jpg');
-      sourceBImg = getBase64Image('/images/early_mod_l1_banner.jpg');
+      sourceAImg = getBase64Image('/images/east_offering.jpg');
+      sourceBImg = getBase64Image('/images/gin_lane.jpg');
     }
 
     // LEFT PAGE (Verso)

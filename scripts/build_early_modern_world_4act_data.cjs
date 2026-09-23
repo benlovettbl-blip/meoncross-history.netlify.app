@@ -118,16 +118,16 @@ const early_modern_lessons = [
     sources: [
       {
         letter: 'A',
-        title: 'Source A: Stone Inscription of Admiral Zheng He at Changle, Fujian (1431)',
-        src: '/images/zheng_he.gif',
+        title: 'Source A: The Silk Road & Trade Bottleneck (1450)',
+        src: '/images/silk_road.jpg',
         caption:
-          'Carved stone pillar commemorating the voyages of Admiral Zheng He’s imperial treasure fleet across the Indian Ocean to Arabia and Africa.',
-        shelfmark: 'Imperial Ming Epigraphic Archive (Shelfmark: MEA-ZHENG-1431)',
-        citation: 'National Museum of China, Beijing.',
+          'Contemporary map illustrating the historic overland Silk Road caravan routes linking China and Europe, which were heavily taxed and blocked after the Ottoman conquest of Constantinople in 1453.',
+        shelfmark: 'Imperial Cartographic Archive (Shelfmark: ICA-SILK-1450)',
+        citation: 'British Library, London.',
         context:
-          'Between 1405 and 1433, Admiral Zheng He commanded seven expeditions comprising over 300 ships and 28,000 men. Before his final voyage, he erected this stone stele in Fujian. **Hinge Question:** Does Zheng He’s inscription portray China as an aggressive conqueror seeking land, or as a benevolent supreme empire demanding tribute and respect?',
+          'For centuries, silk, porcelain, and spices moved across Central Asia along the Silk Road. In 1453, the Ottoman Empire seized Constantinople and imposed crushing tariffs on Christian traders. **Hinge Question:** Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
         hinge_question:
-          'Does Zheng He’s inscription portray China as an aggressive conqueror seeking land, or as a benevolent supreme empire demanding tribute and respect?',
+          'Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
       },
       {
         letter: 'B',
@@ -153,25 +153,38 @@ const early_modern_lessons = [
         act: 2,
         title:
           'Act 2: Escalation & Conflict (The Giants of the East: Ming China & The Ottoman Blitz)',
-        text: '<span class="para-ref">[2.1]</span> The undisputed economic and technological superpower of the fifteenth century was <strong>Ming Dynasty China</strong>. Ruling over 100 million citizens, China was an urban, bureaucratic, and industrial giant. Between 1405 and 1433, Emperor Yongle dispatched seven monumental naval expeditions commanded by <strong>Admiral Zheng He</strong>. Zheng He’s fleets were staggering: over 300 ships carrying 28,000 men, featuring nine-masted "Treasure Ships" (*baochuan*) up to 400 feet long with watertight bulkheads and magnetic compasses. These fleets sailed effortlessly across the Indian Ocean to India, the Persian Gulf, and the East African coast, distributing silks and blue-and-white porcelain to awe foreign rulers into paying tribute.<br><br><span class="para-ref">[2.2]</span> Meanwhile, on Europe’s immediate eastern doorstep, a formidable new Islamic superpower was rising: the <strong>Ottoman Empire</strong>. In May 1453, twenty-one-year-old Sultan <strong>Mehmed II</strong> deployed gigantic bronze super-cannons and 80,000 soldiers to besiege Constantinople, the ancient capital of the Byzantine Empire. The city fell on 29 May 1453, ending over 1,100 years of Roman imperial continuity. Mehmed transformed the city into Istanbul, the glittering seat of Ottoman power. Crucially for Europe, the Ottomans now controlled the Bosporus and Mediterranean trade terminals, imposing hefty customs tariffs and blocking European merchants from accessing the Silk Roads.',
+        source: {
+          letter: 'A',
+          title: 'Source A: The Silk Road & Trade Bottleneck (1450)',
+          src: '/images/silk_road.jpg',
+          caption:
+            'Contemporary map illustrating the historic overland Silk Road caravan routes linking China and Europe, which were heavily taxed and blocked after the Ottoman conquest of Constantinople in 1453.',
+          shelfmark: 'Imperial Cartographic Archive (Shelfmark: ICA-SILK-1450)',
+          citation: 'British Library, London.',
+          context:
+            'For centuries, silk, porcelain, and spices moved across Central Asia along the Silk Road. In 1453, the Ottoman Empire seized Constantinople and imposed crushing tariffs on Christian traders. **Hinge Question:** Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
+          hinge_question:
+            'Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
+        },
+        text: '<span class="para-ref">[2.1]</span> The undisputed economic and technological superpower of the fifteenth century was <strong>Ming Dynasty China</strong>. Ruling over 100 million citizens, China was an urban, bureaucratic, and industrial giant. Between 1405 and 1433, Emperor Yongle dispatched seven monumental naval expeditions commanded by <strong>Admiral Zheng He</strong>. Zheng He’s fleets were staggering: over 300 ships carrying 28,000 men, featuring nine-masted "Treasure Ships" (*baochuan*) up to 400 feet long with watertight bulkheads and magnetic compasses. These fleets sailed effortlessly across the Indian Ocean to India, the Persian Gulf, and the East African coast, distributing silks and blue-and-white porcelain to awe foreign rulers into paying tribute.<br><br><span class="para-ref">[2.2]</span> Meanwhile, on Europe’s immediate eastern doorstep, a formidable new Islamic superpower was rising: the <strong>Ottoman Empire</strong>. In May 1453, twenty-one-year-old Sultan <strong>Mehmed II</strong> deployed gigantic bronze super-cannons and 80,000 soldiers to besiege Constantinople, the ancient capital of the Byzantine Empire. The city fell on 29 May 1453, ending over 1,100 years of Roman imperial continuity. Mehmed transformed the city into Istanbul, the glittering seat of Ottoman power. Crucially for Europe, the Ottomans now controlled the Bosporus and Mediterranean trade terminals, imposing hefty customs tariffs and blocking European merchants from accessing the Silk Roads (Source A).',
       },
       {
         act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Gold of Mali & Zheng He’s Arrogance)',
+        title: 'Act 3: Forensic Archival Evidence (The Gold of Mali & Mansa Musa’s Riches)',
         source: {
-          letter: 'A',
-          title: 'Source A: Stone Inscription of Admiral Zheng He at Changle, Fujian (1431)',
-          src: '/images/zheng_he.gif',
+          letter: 'B',
+          title: 'Source B: The Catalan Atlas Depiction of Mansa Musa of Mali (1375)',
+          src: '/images/mansa_musa_catalan.jpg',
           caption:
-            'Carved stone pillar commemorating the voyages of Admiral Zheng He’s imperial treasure fleet across the Indian Ocean to Arabia and Africa.',
-          shelfmark: 'Imperial Ming Epigraphic Archive (Shelfmark: MEA-ZHENG-1431)',
-          citation: 'National Museum of China, Beijing.',
+            'Illuminated maritime map by Majorcan Jewish cartographer Cresques Abraham, depicting the Emperor of Mali seated upon a golden throne holding a massive gold nugget.',
+          shelfmark: 'Bibliothèque nationale de France (Shelfmark: MS Espagnol 30)',
+          citation: 'Département des Manuscrits, BnF, Paris.',
           context:
-            'Between 1405 and 1433, Admiral Zheng He commanded seven expeditions comprising over 300 ships and 28,000 men. Before his final voyage, he erected this stone stele in Fujian. **Hinge Question:** Does Zheng He’s inscription portray China as an aggressive conqueror seeking land, or as a benevolent supreme empire demanding tribute and respect?',
+            'The Catalan Atlas was the most sophisticated map of the medieval Mediterranean world. It placed Emperor Mansa Musa at the center of the Sahara, describing him as the richest lord in all the earth. **Hinge Question:** Why did 14th-century European monarchs view West Africa as an unimaginable reservoir of bullion rather than a region to be dominated?',
           hinge_question:
-            'Does Zheng He’s inscription portray China as an aggressive conqueror seeking land, or as a benevolent supreme empire demanding tribute and respect?',
+            'Why did 14th-century European monarchs view West Africa as an unimaginable reservoir of bullion rather than a region to be dominated?',
         },
-        text: '<span class="para-ref">[3.1]</span> Forensic examination of primary artifacts demonstrates how self-assured the great non-European empires were. In his 1431 Fujian stone inscription (Source A), Zheng He recorded that China had <em>"traversed more than one hundred thousand li of immense waters"</em> to treat distant barbarians with kindness and display <em>"the transforming power of imperial virtue."</em> China had no desire to conquer foreign lands or establish overseas settler colonies because Chinese emperors believed their Middle Kingdom already possessed everything under heaven. Consequently, when Confucian court officials judged the voyages too expensive, the fleet was ordered to rot at anchor and foreign voyages were outlawed in 1433.<br><br><span class="para-ref">[3.2]</span> Similarly, in West Africa, the Mali and Songhai empires commanded immense commercial wealth. The legendary 1324 pilgrimage to Mecca by Emperor <strong>Mansa Musa</strong> had introduced so much pure gold into Cairo’s economy that the metal’s value was depressed for twelve years! European cartographers in Majorca drew the famous Catalan Atlas of 1375 (Source B) showing Mansa Musa crowned in gold, brandishing an enormous gold nugget like an apple. African kingdoms like the Kingdom of Benin cast intricate brass and bronze sculptures displaying sophisticated metallurgical mastery that rivaled anything produced in Renaissance Italy.',
+        text: '<span class="para-ref">[3.1]</span> Forensic examination of primary artifacts demonstrates how self-assured the great non-European empires were. In Ming China, Zheng He recorded that imperial fleets had <em>"traversed more than one hundred thousand li of immense waters"</em> to treat distant barbarians with kindness and display <em>"the transforming power of imperial virtue."</em> China had no desire to conquer foreign lands or establish overseas settler colonies because Chinese emperors believed their Middle Kingdom already possessed everything under heaven. Consequently, when Confucian court officials judged the voyages too expensive, the fleet was ordered to rot at anchor and foreign voyages were outlawed in 1433.<br><br><span class="para-ref">[3.2]</span> In West Africa, the Mali and Songhai empires commanded immense commercial wealth. The legendary 1324 pilgrimage to Mecca by Emperor <strong>Mansa Musa</strong> had introduced so much pure gold into Cairo’s economy that the metal’s value was depressed for twelve years! European cartographers in Majorca drew the famous Catalan Atlas of 1375 (Source B) showing Mansa Musa crowned in gold, brandishing an enormous gold nugget like an apple. African kingdoms like the Kingdom of Benin cast intricate brass and bronze sculptures displaying sophisticated metallurgical mastery that rivaled anything produced in Renaissance Italy.',
       },
       {
         act: 4,
@@ -249,8 +262,8 @@ const early_modern_lessons = [
     title: 'How did religious conflict trigger global exploration (1517–1588)?',
     enquiry_question:
       'Why did the Protestant Reformation turn the Atlantic Ocean into a violent battleground for European empires?',
-    cover_image: '/images/armada_portrait.jpg',
-    banner: '/images/armada_portrait.jpg',
+    cover_image: '/images/early_mod_l2_banner.jpg',
+    banner: '/images/early_mod_l2_banner.jpg',
     learning_objectives: [
       'Explain how Martin Luther’s Protestant Reformation of 1517 shattered Catholic religious unity across Europe',
       'Describe how Spain and Portugal used the Treaty of Tordesillas (1494) to claim a global monopoly on trade and souls',
@@ -357,16 +370,6 @@ const early_modern_lessons = [
       {
         act: 1,
         title: 'Act 1: Context & Catalyst (Luther’s Hammer & The Papal Monopoly)',
-        text: '<span class="para-ref">[1.1]</span> In October 1517, an obscure German monk named <strong>Martin Luther</strong> nailed ninety-five theses to the church door in Wittenberg, attacking the corruption of the Catholic papacy. Luther argued that salvation was achieved through personal faith alone, not by purchasing papal indulgences or submitting to Roman hierarchy. Luther’s protest ignited the **Protestant Reformation**, tearing Europe into two violently hostile religious camps: Catholic kingdoms loyal to the Pope (led by the mighty Habsburg superpower of Spain), and Protestant states (eventually including England, Scotland, the Netherlands, and northern Germany) who viewed the Pope as the Antichrist.<br><br><span class="para-ref">[1.2]</span> Meanwhile, Spain and Portugal had already struck maritime gold. In 1494, Pope Alexander VI mediated the **Treaty of Tordesillas** (Source A), audaciously drawing an imaginary meridian line down the Atlantic Ocean: all non-Christian lands discovered to the west belonged exclusively to Spain, while everything to the east belonged to Portugal. Spanish conquistadors like Cortés and Pizarro annihilated the Aztec and Inca empires, establishing a colossal silver-mining empire in Mexico and Peru. To Spanish King Philip II, this tidal wave of silver was not merely cash: it was divine funding provided by God to build invincible armies and crush Protestant heretics worldwide.',
-      },
-      {
-        act: 2,
-        title: 'Act 2: Escalation & Conflict (The Sea Dogs: Piracy in God’s Name)',
-        text: '<span class="para-ref">[2.1]</span> In England, King Henry VIII broke with Rome in 1534 to secure a divorce, declaring himself Supreme Head of the Church of England. By the time his daughter <strong>Elizabeth I</strong> ascended the throne in 1558, England was a vulnerable Protestant island surrounded by powerful Catholic enemies. Excommunicated by Pope Pius V in 1570—who commanded English Catholics to depose their "heretic queen"—Elizabeth could not afford a full-scale war against Spain’s legendary infantry, the *tercios*. Instead, she turned to state-sponsored maritime piracy.<br><br><span class="para-ref">[2.2]</span> Elizabeth secretly licensed audacious Devon sea captains—the infamous **"Sea Dogs"**, including <strong>Sir Francis Drake</strong> and <strong>Sir John Hawkins</strong>. Armed with royal letters of marque, Drake ambushed Spanish treasure galleons in the Caribbean, looted silver mule-trains in Panama, and between 1577 and 1580 became the first Englishman to circumnavigate the globe in the *Golden Hind*. When Drake returned to Plymouth laden with tons of looted Spanish silver—yielding an astonishing 4,700 percent return on investment—Philip II furiously demanded his head. Instead, Elizabeth brazenly boarded Drake’s ship in London and knighted him on his own quarterdeck, openly mocking the Spanish superpower!',
-      },
-      {
-        act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Armada Portrait & The Protestant Wind)',
         source: {
           letter: 'A',
           title: 'Source A: Map of the Treaty of Tordesillas Meridian Line (1494)',
@@ -379,6 +382,29 @@ const early_modern_lessons = [
             'Pope Alexander VI, a Spaniard by birth, decreed that all newly discovered lands west of a line 370 leagues west of Cape Verde belonged to Spain, while lands east belonged to Portugal. England, France, and other nations were completely excluded. **Hinge Question:** Why did French King Francis I famously demand to see "the clause in Adam’s will" that excluded his nation from dividing the earth?',
           hinge_question:
             'Why did French King Francis I famously demand to see "the clause in Adam’s will" that excluded his nation from dividing the earth?',
+        },
+        text: '<span class="para-ref">[1.1]</span> In October 1517, an obscure German monk named <strong>Martin Luther</strong> nailed ninety-five theses to the church door in Wittenberg, attacking the corruption of the Catholic papacy. Luther argued that salvation was achieved through personal faith alone, not by purchasing papal indulgences or submitting to Roman hierarchy. Luther’s protest ignited the **Protestant Reformation**, tearing Europe into two violently hostile religious camps: Catholic kingdoms loyal to the Pope (led by the mighty Habsburg superpower of Spain), and Protestant states (eventually including England, Scotland, the Netherlands, and northern Germany) who viewed the Pope as the Antichrist.<br><br><span class="para-ref">[1.2]</span> Meanwhile, Spain and Portugal had already struck maritime gold. In 1494, Pope Alexander VI mediated the **Treaty of Tordesillas** (Source A), audaciously drawing an imaginary meridian line down the Atlantic Ocean: all non-Christian lands discovered to the west belonged exclusively to Spain, while everything to the east belonged to Portugal. Spanish conquistadors like Cortés and Pizarro annihilated the Aztec and Inca empires, establishing a colossal silver-mining empire in Mexico and Peru. To Spanish King Philip II, this tidal wave of silver was not merely cash: it was divine funding provided by God to build invincible armies and crush Protestant heretics worldwide.',
+      },
+      {
+        act: 2,
+        title: 'Act 2: Escalation & Conflict (The Sea Dogs: Piracy in God’s Name)',
+        text: '<span class="para-ref">[2.1]</span> In England, King Henry VIII broke with Rome in 1534 to secure a divorce, declaring himself Supreme Head of the Church of England. By the time his daughter <strong>Elizabeth I</strong> ascended the throne in 1558, England was a vulnerable Protestant island surrounded by powerful Catholic enemies. Excommunicated by Pope Pius V in 1570—who commanded English Catholics to depose their "heretic queen"—Elizabeth could not afford a full-scale war against Spain’s legendary infantry, the *tercios*. Instead, she turned to state-sponsored maritime piracy.<br><br><span class="para-ref">[2.2]</span> Elizabeth secretly licensed audacious Devon sea captains—the infamous **"Sea Dogs"**, including <strong>Sir Francis Drake</strong> and <strong>Sir John Hawkins</strong>. Armed with royal letters of marque, Drake ambushed Spanish treasure galleons in the Caribbean, looted silver mule-trains in Panama, and between 1577 and 1580 became the first Englishman to circumnavigate the globe in the *Golden Hind*. When Drake returned to Plymouth laden with tons of looted Spanish silver—yielding an astonishing 4,700 percent return on investment—Philip II furiously demanded his head. Instead, Elizabeth brazenly boarded Drake’s ship in London and knighted him on his own quarterdeck, openly mocking the Spanish superpower!',
+      },
+      {
+        act: 3,
+        title: 'Act 3: Forensic Archival Evidence (The Armada Portrait & The Protestant Wind)',
+        source: {
+          letter: 'B',
+          title: 'Source B: The Armada Portrait of Queen Elizabeth I (1588)',
+          src: '/images/armada_portrait.jpg',
+          caption:
+            'Masterpiece attributed to George Gower commemorating the English defeat of the Spanish Armada, depicting Elizabeth with her hand resting upon the globe.',
+          shelfmark: 'Woburn Abbey Collection (Shelfmark: WOB-ARM-1588)',
+          citation: 'The Duke of Bedford and the Trustees of the Bedford Estates.',
+          context:
+            'In the painting, the sunlit English fleet sails peacefully on the left, while on the right, the Catholic Spanish Armada is dashed against the rocks by violent storms. Elizabeth’s hand rests firmly upon the Americas. **Hinge Question:** How does this portrait communicate that God personally favored Protestant England over Catholic Spain?',
+          hinge_question:
+            'How does this portrait communicate that God personally favored Protestant England over Catholic Spain?',
         },
         text: '<span class="para-ref">[3.1]</span> Enraged by English piracy, Elizabeth’s military support for Dutch Protestant rebels, and the execution of Catholic Mary Queen of Scots in 1587, Philip II launched his "Enterprise of England" in July 1588: the <strong>Spanish Armada</strong>. A colossal fleet of 130 warships carrying 30,000 soldiers sailed up the English Channel in an unbreakable crescent formation, intending to ferry an invasion army across from Flanders and restore Catholicism to England at sword-point. But off Calais on 7 August, English commanders launched eight blazing hellburner fireships into the anchored Armada, throwing the Spanish galleons into midnight panic and scattering their formations.<br><br><span class="para-ref">[3.2]</span> The next day at the Battle of Gravelines, faster English race-built galleons pounded the disorganized Spanish ships at long range. Battered and blown northward by ferocious North Sea gales, the Armada was forced to attempt a catastrophic voyage home around the rocky coasts of Scotland and Ireland, where dozens of ships were smashed to kindling on the Atlantic rocks. The triumphant English struck a commemorative medal reading: <em>"God blew, and they were scattered."</em> In the famous **Armada Portrait** (Source B), Elizabeth is immortalized surrounded by royal pearls, her hand resting upon the global Americas while the shattered Spanish fleet flounders in tempestuous seas behind her.',
       },
@@ -458,8 +484,8 @@ const early_modern_lessons = [
     title: 'Trade or takeover: How did early encounters turn into empire?',
     enquiry_question:
       'To what extent did early English commercial trade missions accidentally transform into territorial colonization?',
-    cover_image: '/images/jamestown_fort.jpg',
-    banner: '/images/jamestown_fort.jpg',
+    cover_image: '/images/early_mod_l3_banner.jpg',
+    banner: '/images/early_mod_l3_banner.jpg',
     learning_objectives: [
       'Explain how the joint-stock company model revolutionized English commercial expansion in America and Asia',
       'Contrast the precarious survival of the Jamestown Virginia settlement (1607) with the East India Company’s mission to Mughal India (1615)',
@@ -564,16 +590,6 @@ const early_modern_lessons = [
       {
         act: 1,
         title: 'Act 1: Context & Catalyst (The Joint-Stock Innovation & The London Merchants)',
-        text: '<span class="para-ref">[1.1]</span> At the turn of the seventeenth century, English overseas expansion underwent an institutional revolution. Monarchs like Elizabeth I and James I were chronically broke; they could never finance state-run fleets like the Spanish Crown. Instead, London merchants pioneered a radical capitalist financial vehicle: the <strong>joint-stock company</strong>. Rather than a single merchant risking his entire fortune on a perilous three-year oceanic voyage, hundreds of investors bought transferable company shares. If a ship sank or was seized by pirates, an investor lost only what they had invested; if the ship returned laden with cloves, nutmeg, or silk, the profits were divided proportionally. This spread of financial risk unlocked immense pools of private capital.<br><br><span class="para-ref">[1.2]</span> On New Year’s Eve 1600, Elizabeth I signed a royal charter creating <em>"The Governor and Company of Merchants of London trading into the East Indies"</em>—the **East India Company (EIC)**. Granted a royal monopoly on all English trade east of the Cape of Good Hope, the EIC sailed into the Indian Ocean not with royal armies, but with ledgers, silver coins, and cargo manifests. Six years later in 1606, King James I chartered the **Virginia Company of London** to establish private profitable colonies along the North American Atlantic coast.',
-      },
-      {
-        act: 2,
-        title: 'Act 2: Escalation & Conflict (Jamestown’s Starvation & The Mughal Colossus)',
-        text: '<span class="para-ref">[2.1]</span> England’s initial colonial venture was an unmitigated disaster. In May 1607, three small Virginia Company ships landed 104 wealthy gentlemen, jewelers, and servants in Virginia, founding <strong>Jamestown</strong>. Expecting to discover gold and rubies like Spanish conquistadors, the pampered gentlemen refused to plant crops or dig wells. By winter, over half had perished from dysentery and starvation. During the horrific "Starving Time" of 1609–1610, desperate settlers ate roots, rats, their own leather boots, and in one gruesome instance, a settler reportedly cannibalized his deceased wife! The colony was saved from total annihilation only when John Rolfe crossbred a sweet Caribbean tobacco strain, sparking an addictive European cash-crop craze that turned Virginia into an agrarian boomtown hungry for indigenous land.<br><br><span class="para-ref">[2.2]</span> Meanwhile on the other side of the planet, the East India Company encountered a civilization that made London look like a village: the **Mughal Empire** in India. Ruling over 150 million subjects—a fifth of humanity—the Mughal Empire commanded an economy generating 25 percent of the world’s industrial output, famous for exquisite calico cottons, raw silk, and indigo. When English ships arrived off Gujarat, local governors viewed the newcomers as ragged coastal peddlers. To secure permanent trading footholds, King James I dispatched an aristocratic ambassador, <strong>Sir Thomas Roe</strong>, in 1615 to the glittering imperial court at Agra.',
-      },
-      {
-        act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Triangular Fort & The Agra Audience)',
         source: {
           letter: 'A',
           title: 'Source A: Contemporary Plan of the Jamestown Triangular Fort (1607)',
@@ -586,6 +602,29 @@ const early_modern_lessons = [
             'In May 1607, 104 English settlers established Jamestown in Virginia. Half died within six months from starvation and malaria. The triangular fort was heavily palisaded against indigenous Powhatan archers and Spanish warships. **Hinge Question:** Why does the defensive design of the fort prove that the English felt vulnerable and surrounded, rather than dominant?',
           hinge_question:
             'Why does the defensive design of the fort prove that the English felt vulnerable and surrounded, rather than dominant?',
+        },
+        text: '<span class="para-ref">[1.1]</span> At the turn of the seventeenth century, English overseas expansion underwent an institutional revolution. Monarchs like Elizabeth I and James I were chronically broke; they could never finance state-run fleets like the Spanish Crown. Instead, London merchants pioneered a radical capitalist financial vehicle: the <strong>joint-stock company</strong>. Rather than a single merchant risking his entire fortune on a perilous three-year oceanic voyage, hundreds of investors bought transferable company shares. If a ship sank or was seized by pirates, an investor lost only what they had invested; if the ship returned laden with cloves, nutmeg, or silk, the profits were divided proportionally. This spread of financial risk unlocked immense pools of private capital.<br><br><span class="para-ref">[1.2]</span> On New Year’s Eve 1600, Elizabeth I signed a royal charter creating <em>"The Governor and Company of Merchants of London trading into the East Indies"</em>—the **East India Company (EIC)**. Granted a royal monopoly on all English trade east of the Cape of Good Hope, the EIC sailed into the Indian Ocean not with royal armies, but with ledgers, silver coins, and cargo manifests. Six years later in 1606, King James I chartered the **Virginia Company of London** to establish private profitable colonies along the North American Atlantic coast, erecting the fortified settlement at Jamestown (Source A).',
+      },
+      {
+        act: 2,
+        title: 'Act 2: Escalation & Conflict (Jamestown’s Starvation & The Mughal Colossus)',
+        text: '<span class="para-ref">[2.1]</span> England’s initial colonial venture was an unmitigated disaster. In May 1607, three small Virginia Company ships landed 104 wealthy gentlemen, jewelers, and servants in Virginia, founding <strong>Jamestown</strong>. Expecting to discover gold and rubies like Spanish conquistadors, the pampered gentlemen refused to plant crops or dig wells. By winter, over half had perished from dysentery and starvation. During the horrific "Starving Time" of 1609–1610, desperate settlers ate roots, rats, their own leather boots, and in one gruesome instance, a settler reportedly cannibalized his deceased wife! The colony was saved from total annihilation only when John Rolfe crossbred a sweet Caribbean tobacco strain, sparking an addictive European cash-crop craze that turned Virginia into an agrarian boomtown hungry for indigenous land.<br><br><span class="para-ref">[2.2]</span> Meanwhile on the other side of the planet, the East India Company encountered a civilization that made London look like a village: the **Mughal Empire** in India. Ruling over 150 million subjects—a fifth of humanity—the Mughal Empire commanded an economy generating 25 percent of the world’s industrial output, famous for exquisite calico cottons, raw silk, and indigo. When English ships arrived off Gujarat, local governors viewed the newcomers as ragged coastal peddlers. To secure permanent trading footholds, King James I dispatched an aristocratic ambassador, <strong>Sir Thomas Roe</strong>, in 1615 to the glittering imperial court at Agra.',
+      },
+      {
+        act: 3,
+        title: 'Act 3: Forensic Archival Evidence (The Triangular Fort & The Agra Audience)',
+        source: {
+          letter: 'B',
+          title: 'Source B: Sir Thomas Roe at the Imperial Court of Mughal Emperor Jahangir (1615)',
+          src: '/images/sir_thomas_roe.jpg',
+          caption:
+            'Mughal miniature painting depicting King James I’s ambassador Sir Thomas Roe presenting credentials and gifts to Emperor Jahangir in Agra.',
+          shelfmark: 'Imperial Mughal Collection (Shelfmark: IMC-JAH-ROE-1615)',
+          citation: 'Victoria and Albert Museum, London.',
+          context:
+            'In 1615, Sir Thomas Roe spent three years at the Mughal court seeking trading concessions for the East India Company. Jahangir was unimpressed by English gifts (woollen cloth and clocks), but granted permission to establish trading "factories" at Surat. **Hinge Question:** Why did the Mughal Emperor treat the English ambassador as a minor supplicant rather than an equal superpower?',
+          hinge_question:
+            'Why did the Mughal Emperor treat the English ambassador as a minor supplicant rather than an equal superpower?',
         },
         text: '<span class="para-ref">[3.1]</span> Primary documents expose the immense vulnerability of early English expansion. The original architectural blueprint of Jamestown (Source A) shows a rigid triangular fort bristling with artillery bastions at each corner. This was not a monument to imperial conquest, but a desperate panic shelter: surrounded by the powerful Powhatan Confederacy and terrified of Catholic Spanish galleons, English settlers lived locked behind wooden palisades, dependent on trading copper kettles and glass beads to Chief Powhatan for baskets of life-saving corn.<br><br><span class="para-ref">[3.2]</span> An even sharper contrast is documented in Sir Thomas Roe’s journals from the court of Mughal Emperor <strong>Jahangir</strong> (Source B). Roe was stunned by the unimaginable luxury of the Mughal court: Jahangir sat upon golden thrones encrusted with diamonds and emeralds, surrounded by thousands of courtiers. Roe’s English gifts—heavy woollen cloth and a clockwork coach—were regarded by the Emperor with mild amusement as primitive curiosities. Jahangir eventually granted the Company an imperial *farman* (decree) allowing them to construct a "factory" (a fortified trading warehouse) at Surat, not out of fear, but because the Mughals welcomed foreign silver bullion into their treasury.',
       },
@@ -665,8 +704,8 @@ const early_modern_lessons = [
     title: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
     enquiry_question:
       'How did religious division and the Divine Right of Kings make early Stuart Britain so volatile in 1605?',
-    cover_image: '/images/gunpowder_conspirators.jpg',
-    banner: '/images/gunpowder_conspirators.jpg',
+    cover_image: '/images/gunpowder_conspirators_banner.jpg',
+    banner: '/images/gunpowder_conspirators_banner.jpg',
     learning_objectives: [
       'Explain the religious tensions in England following the 1603 accession of King James I and the enforcement of recusancy fines',
       'Detail the conspiracy of Robert Catesby and Guy Fawkes to blow up the Houses of Parliament on 5 November 1605',
@@ -743,7 +782,20 @@ const early_modern_lessons = [
     sources: [
       {
         letter: 'A',
-        title: 'Source A: The Anonymous Monteagle Warning Letter (October 1605)',
+        title: 'Source A: Contemporary Engraving of the Gunpowder Plot Conspirators (1605)',
+        src: '/images/gunpowder_conspirators.jpg',
+        caption:
+          'Dutch engraving by Crispijn van de Passe the Elder showing the Gunpowder Plot conspirators, including Robert Catesby, Guy Fawkes, and Thomas Winter, plotting in secret.',
+        shelfmark: 'National Portrait Gallery Prints & Drawings (Shelfmark: NPG-D1078)',
+        citation: 'National Portrait Gallery, London.',
+        context:
+          'Printed across Europe immediately after the plot’s discovery, this engraving shows the conspirators in huddle, scheming to blow up Parliament. **Hinge Question:** How does this contemporary engraving portray the Catholic conspirators as secretive, dangerous subversives?',
+        hinge_question:
+          'How does this contemporary engraving portray the Catholic conspirators as secretive, dangerous subversives?',
+      },
+      {
+        letter: 'B',
+        title: 'Source B: The Anonymous Monteagle Warning Letter (October 1605)',
         src: '/images/monteagle_letter.jpeg',
         caption:
           'Anonymous letter delivered to Catholic peer Lord Monteagle on 26 October 1605, warning him to avoid Parliament because "they shall receive a terrible blow."',
@@ -754,25 +806,25 @@ const early_modern_lessons = [
         hinge_question:
           'Why did the author of the letter warn Monteagle, and how did this single letter destroy the entire conspiracy?',
       },
-      {
-        letter: 'B',
-        title: 'Source B: Guy Fawkes’ Signatures Before and After Torture (November 1605)',
-        src: '/images/fawkes_signatures.png',
-        caption:
-          'Official interrogation documents showing Guy Fawkes’ steady initial signature using his alias "John Johnson", compared with his faint, trembling signature after eight days on the rack.',
-        shelfmark: 'State Papers Gunpowder Plot Book (Shelfmark: SP 14/216/54)',
-        citation: 'The National Archives, Kew.',
-        context:
-          'King James personally authorized the use of torture on the rack in the Tower of London: <em>"The gentler tortures are to be first used unto him... and so by degrees proceeding to the worst."</em> After his limbs were dislocated, Fawkes broke and confessed. **Hinge Question:** How does this primary document serve as forensic proof of state brutality during the Jacobean era?',
-        hinge_question:
-          'How does this primary document serve as forensic proof of state brutality during the Jacobean era?',
-      },
     ],
     narrative_blocks: [
       {
         act: 1,
-        title: 'Act 1: Context & Catalyst (The Scottish King & The Crushed Catholic Hopes)',
-        text: '<span class="para-ref">[1.1]</span> In March 1603, Queen Elizabeth I died without leaving an heir, ending the Tudor dynasty. The English crown passed peacefully to her cousin, King <strong>James VI of Scotland</strong>, who became King <strong>James I of England</strong>, uniting the two crowns in personal union. English Roman Catholics—who had suffered decades of persecution, secret masses in priest holes, and crippling recusancy fines under Elizabeth—greeted James’s arrival with cautious optimism. After all, James’s own mother, Mary Queen of Scots, had been a devout Catholic martyr beheaded by Elizabeth.<br><br><span class="para-ref">[1.2]</span> However, Catholic hopes were swiftly and brutally dashed. James was an intellectual who believed passionately in the **Divine Right of Kings**—the theological doctrine that monarchs were appointed directly by God Almighty and answered to no earthly authority, least of all the Pope. Terrified that tolerating Catholics would provoke powerful Puritan MPs in Parliament, James cracked down hard in 1604: he ordered all Catholic priests expelled from England and strictly enforced the ruinous twenty-pound monthly fine on families who refused to attend Protestant church services.',
+        title: 'Act 1: Context & Catalyst (The Scottish King & Catholic Alienation)',
+        source: {
+          letter: 'A',
+          title: 'Source A: Contemporary Engraving of the Gunpowder Plot Conspirators (1605)',
+          src: '/images/gunpowder_conspirators.jpg',
+          caption:
+            'Dutch engraving by Crispijn van de Passe the Elder showing the Gunpowder Plot conspirators, including Robert Catesby, Guy Fawkes, and Thomas Winter, plotting in secret.',
+          shelfmark: 'National Portrait Gallery Prints & Drawings (Shelfmark: NPG-D1078)',
+          citation: 'National Portrait Gallery, London.',
+          context:
+            'Printed across Europe immediately after the plot’s discovery, this engraving shows the conspirators in huddle, scheming to blow up Parliament. **Hinge Question:** How does this contemporary engraving portray the Catholic conspirators as secretive, dangerous subversives?',
+          hinge_question:
+            'How does this contemporary engraving portray the Catholic conspirators as secretive, dangerous subversives?',
+        },
+        text: '<span class="para-ref">[1.1]</span> In March 1603, Queen Elizabeth I died without leaving an heir, ending the Tudor dynasty. The English crown passed peacefully to her cousin, King <strong>James VI of Scotland</strong>, who became King <strong>James I of England</strong>, uniting the two crowns in personal union. English Roman Catholics—who had suffered decades of persecution, secret masses in priest holes, and crippling recusancy fines under Elizabeth—greeted James’s arrival with cautious optimism. After all, James’s own mother, Mary Queen of Scots, had been a devout Catholic martyr beheaded by Elizabeth.<br><br><span class="para-ref">[1.2]</span> However, Catholic hopes were swiftly and brutally dashed. James believed passionately in the **Divine Right of Kings**—that monarchs answered only to God Almighty. Terrified that tolerating Catholics would provoke Puritan MPs, James cracked down in 1604, ordering all Catholic priests expelled and strictly enforcing ruinous recusancy fines. Driven to fury, Robert Catesby gathered a tight-knit circle of gentlemen conspirators (Source A) to strike a lethal blow against the state.',
       },
       {
         act: 2,
@@ -781,10 +833,10 @@ const early_modern_lessons = [
       },
       {
         act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Monteagle Betrayal & The Agony of the Rack)',
+        title: 'Act 3: Forensic Archival Evidence (The Monteagle Warning & The Agony of the Rack)',
         source: {
-          letter: 'A',
-          title: 'Source A: The Anonymous Monteagle Warning Letter (October 1605)',
+          letter: 'B',
+          title: 'Source B: The Anonymous Monteagle Warning Letter (October 1605)',
           src: '/images/monteagle_letter.jpeg',
           caption:
             'Anonymous letter delivered to Catholic peer Lord Monteagle on 26 October 1605, warning him to avoid Parliament because "they shall receive a terrible blow."',
@@ -795,7 +847,7 @@ const early_modern_lessons = [
           hinge_question:
             'Why did the author of the letter warn Monteagle, and how did this single letter destroy the entire conspiracy?',
         },
-        text: '<span class="para-ref">[3.1]</span> The conspiracy unraveled through a single fatal letter. Several conspirators worried that innocent Catholic peers would be incinerated in the blast. On 26 October 1605, an anonymous warning letter (Source A) was delivered to Catholic Lord Monteagle, advising him to stay away because Parliament would receive <em>"a terrible blow."</em> Monteagle immediately handed the letter to the King’s chief spymaster, Robert Cecil. At midnight on 4 November, royal guards raided the cellar, catching Guy Fawkes red-handed dressed in a cloak, boots, and spurs, carrying a dark lantern and slow-match fuses ready to ignite the powder.<br><br><span class="para-ref">[3.2]</span> Fawkes was dragged before King James, coolly boasting that his intention was <em>"to blow you Scotch beggars back to your native mountains!"</em> James ordered him taken to the Tower of London to face the rack. Primary archival interrogation records (Source B) reveal the gruesome physical toll: on his first day, Fawkes boldly signed his alias "John Johnson" in a firm hand; after eight agonizing days having his joints dislocated on the rack, he scribbled a barely legible, broken signature "Guido", collapsing before he could finish his surname. Fawkes and his surviving co-conspirators were sentenced to be hanged, drawn, and quartered in January 1606.',
+        text: '<span class="para-ref">[3.1]</span> The conspiracy unraveled through a single fatal letter. Several conspirators worried that innocent Catholic peers would be incinerated in the blast. On 26 October 1605, an anonymous warning letter (Source B) was delivered to Catholic Lord Monteagle, advising him to stay away because Parliament would receive <em>"a terrible blow."</em> Monteagle immediately handed the letter to the King’s chief spymaster, Robert Cecil. At midnight on 4 November, royal guards raided the cellar, catching Guy Fawkes red-handed dressed in a cloak, boots, and spurs, carrying a dark lantern and slow-match fuses ready to ignite the powder.<br><br><span class="para-ref">[3.2]</span> Fawkes was dragged before King James, coolly boasting that his intention was <em>"to blow you Scotch beggars back to your native mountains!"</em> James ordered him taken to the Tower of London to face the rack. Interrogation records reveal the gruesome physical toll: on his first day, Fawkes boldly signed his alias "John Johnson" in a firm hand; after eight agonizing days having his joints dislocated on the rack, he scribbled a barely legible, broken signature "Guido", collapsing before he could finish his surname. Fawkes and his surviving co-conspirators were sentenced to be hanged, drawn, and quartered in January 1606.',
       },
       {
         act: 4,
@@ -873,8 +925,8 @@ const early_modern_lessons = [
     title: 'Who controlled Britain? The Ideological Battle',
     enquiry_question:
       'Why did the ideological clash between Charles I and Parliament culminate in regicide and the Commonwealth?',
-    cover_image: '/images/charles_i_execution.jpg',
-    banner: '/images/charles_i_execution.jpg',
+    cover_image: '/images/early_mod_l4_banner.jpg',
+    banner: '/images/early_mod_l4_banner.jpg',
     learning_objectives: [
       'Explain how King Charles I’s belief in the Divine Right of Kings and eleven years of Personal Rule (1629–1640) alienated Parliament',
       'Analyze the outbreak of the English Civil War (1642) and the trial and public execution of King Charles I in January 1649',
@@ -983,12 +1035,7 @@ const early_modern_lessons = [
       },
       {
         act: 2,
-        title: 'Act 2: Escalation & Conflict (The Kingdom in Blood & The Trial of the Century)',
-        text: '<span class="para-ref">[2.1]</span> War became unavoidable in January 1642 when Charles stormed into the House of Commons with 400 armed guards to arrest five leading MPs for treason—only to find that "the birds had flown." In August 1642, Charles raised his royal standard at Nottingham, plunging England into seven years of horrific Civil War. The nation fractured: **Cavaliers** (Royalists supporting the Crown and Church of England) fought **Roundheads** (Parliamentarians and Puritans fighting for liberty and parliamentary supremacy). Over 200,000 Englishmen died from combat and disease—a higher proportion of the population than Britain lost in World War I.<br><br><span class="para-ref">[2.2]</span> Parliament triumphed through military innovation: <strong>Oliver Cromwell</strong> created the **New Model Army**, a professional, disciplined force of godly soldiers promoted on merit rather than aristocratic birth. The New Model Army crushed the Royalists at Naseby (1645). When Charles secretly plotted with Scottish invaders to start a second civil war, Cromwell and hardline army officers decided that peace was impossible while the King lived. In December 1648, Colonel Pride barred moderate MPs from Parliament ("Pride’s Purge"), leaving a radical "Rump Parliament" that created a High Court of Justice to put Charles I on trial for high treason against his own people.',
-      },
-      {
-        act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Axe Falls & The Seal of the Commonwealth)',
+        title: 'Act 2: Escalation & Conflict (The Kingdom in Blood & The Trial of the Tyrant)',
         source: {
           letter: 'A',
           title: 'Source A: Contemporary Engraving of the Execution of King Charles I (1649)',
@@ -1001,6 +1048,24 @@ const early_modern_lessons = [
             'On a freezing morning on 30 January 1649, Charles I was led onto a scaffold. The executioner severed his head with a single axe blow and held it up to the stunned crowd, provoking a collective groan. **Hinge Question:** Why did the execution of Charles I send shockwaves of terror across the royal courts of Europe?',
           hinge_question:
             'Why did the execution of Charles I send shockwaves of terror across the royal courts of Europe?',
+        },
+        text: '<span class="para-ref">[2.1]</span> War became unavoidable in January 1642 when Charles stormed into the House of Commons with 400 armed guards to arrest five leading MPs for treason—only to find that "the birds had flown." In August 1642, Charles raised his royal standard at Nottingham, plunging England into seven years of horrific Civil War. The nation fractured: **Cavaliers** (Royalists supporting the Crown and Church of England) fought **Roundheads** (Parliamentarians and Puritans fighting for liberty and parliamentary supremacy). Over 200,000 Englishmen died from combat and disease—a higher proportion of the population than Britain lost in World War I.<br><br><span class="para-ref">[2.2]</span> Parliament triumphed through military innovation: <strong>Oliver Cromwell</strong> created the **New Model Army**, a professional, disciplined force of godly soldiers promoted on merit rather than aristocratic birth. The New Model Army crushed the Royalists at Naseby (1645). When Charles secretly plotted with Scottish invaders to start a second civil war, Cromwell and hardline army officers decided that peace was impossible while the King lived. In December 1648, Colonel Pride barred moderate MPs from Parliament ("Pride’s Purge"), leaving a radical "Rump Parliament" that created a High Court of Justice to put Charles I on trial for high treason, sentencing the King to be beheaded outside Whitehall (Source A).',
+      },
+      {
+        act: 3,
+        title: 'Act 3: Forensic Archival Evidence (The Axe Falls & The Seal of the Commonwealth)',
+        source: {
+          letter: 'B',
+          title: 'Source B: The Great Seal of the Commonwealth of England (1651)',
+          src: '/images/great_seal_1651.png',
+          caption:
+            'The official state seal designed by Thomas Simon for the English Republic, depicting the House of Commons in active debate instead of a monarch.',
+          shelfmark: 'National Archives Seal Collection (Shelfmark: SC 13/F112)',
+          citation: 'The National Archives, Kew.',
+          context:
+            'Following the abolition of the monarchy, the Commonwealth rejected traditional royal seals depicting the King on horseback. Instead, the seal showed the House of Commons with the inscription: <em>"In the third year of freedom by God’s blessing restored, 1651."</em> **Hinge Question:** How does this visual artifact symbolize that political sovereignty had shifted from a royal person to an elected assembly?',
+          hinge_question:
+            'How does this visual artifact symbolize that political sovereignty had shifted from a royal person to an elected assembly?',
         },
         text: '<span class="para-ref">[3.1]</span> At his trial in Westminster Hall, Charles refused to remove his hat or enter a plea, haughtily demanding: <em>"By what lawful authority am I brought hither? No earthly power can justly call me, who am your King, to account."</em> But the court declared him a <em>"tyrant, traitor, murderer, and public enemy."</em> On 30 January 1649, Charles was marched onto a scaffold outside the Banqueting House at Whitehall (Source A). Showing dignified courage, Charles requested two shirts because the morning was freezing: <em>"The season is so sharp as probably may make me shake, which some observers will imagine proceeds from fear. I would have no such imputation!"</em> The masked executioner severed his head with one clean blow.<br><br><span class="para-ref">[3.2]</span> For the next eleven years, England was a republic: the **Commonwealth**. As captured in the Great Seal of 1651 (Source B), royal symbols were systematically obliterated: the seal depicted the House of Commons in session rather than a monarch on horseback. But liberty proved elusive. Cromwell dismissed Parliament by military force in 1653, declaring himself **Lord Protector**—ruling as a military dictator, dividing England into eleven military districts governed by puritan Major-Generals who banned Christmas, horse racing, and theatre.',
       },
@@ -1158,7 +1223,7 @@ const early_modern_lessons = [
     sources: [
       {
         letter: 'A',
-        title: 'Source A: The Courtyard of the Royal Exchange, London (c. 1670)',
+        title: 'Source A: The Courtyard of the Second Royal Exchange, London (c. 1670)',
         src: '/images/royal_exchange_courtyard.jpg',
         caption:
           'Contemporary engraving showing merchants from Turkey, Holland, the West Indies, and Venice conducting international transactions in the pillared quadrangle of the Royal Exchange.',
@@ -1171,16 +1236,16 @@ const early_modern_lessons = [
       },
       {
         letter: 'B',
-        title: 'Source B: William Hogarth’s "Industry and Idleness" (1747)',
-        src: '/images/industry_idleness.png',
+        title: 'Source B: Claude de Jongh’s View of London Bridge on the Thames (1632)',
+        src: '/images/early_mod_l6_banner.jpg',
         caption:
-          'Engraving contrasting the industrious apprentice Francis Goodchild, who works hard and becomes Lord Mayor of London, with the idle apprentice Tom Idle, who ends on the gallows.',
-        shelfmark: 'Hogarth Moral Series Collection (Shelfmark: BM-HOG-1747-01)',
-        citation: 'Department of Prints and Drawings, British Museum.',
+          'Oil painting by Dutch master Claude de Jongh showing the dense maritime shipping, merchant warehouses, and waterborne commerce along the River Thames at the entrance to the City of London.',
+        shelfmark: 'Kenwood House Collection (Shelfmark: KH-DJ-1632)',
+        citation: 'English Heritage, Kenwood House, London.',
         context:
-          'Hogarth’s famous series captured the moral ideology of Britain’s ascending merchant class. Power and social status were no longer defined purely by noble blood, but by commercial diligence, sober thrift, and financial accumulation. **Hinge Question:** Why did the rising merchant class celebrate the values of hard work and trade over aristocratic leisure?',
+          'London’s transformation into a global financial powerhouse was carried upon the waters of the Thames. Thousands of merchant vessels, colliers, and barges unloaded sugar, tobacco, spices, and timber along custom quays. **Hinge Question:** Why was maritime river access to the Port of London essential for Britain’s commercial transformation?',
         hinge_question:
-          'Why did the rising merchant class celebrate the values of hard work and trade over aristocratic leisure?',
+          'Why did maritime river access to the Port of London essential for Britain’s commercial transformation?',
       },
     ],
     narrative_blocks: [
@@ -1191,15 +1256,10 @@ const early_modern_lessons = [
       },
       {
         act: 2,
-        title: 'Act 2: Escalation & Conflict (The Financial Revolution & The Coffee Houses)',
-        text: '<span class="para-ref">[2.1]</span> Between 1688 and 1720, Britain experienced a **Financial Revolution** that laid the groundwork for modern capitalism. In 1694, when King William III needed millions of pounds to wage war against the superpower of France, Scottish merchant William Paterson devised a brilliant solution: the creation of the <strong>Bank of England</strong>. Rather than kings begging private moneylenders for extortionate short-term loans, a chartered corporation of wealthy merchants loaned £1.2 million directly to the government at a modest eight percent interest. In return, the Bank was granted the right to issue banknotes and manage the **National Debt**. This guaranteed that Britain could borrow enormous sums of money cheaply and reliably, funding a colossal navy that rival nations could never match.<br><br><span class="para-ref">[2.2]</span> Meanwhile, the daily deal-making of capitalism unfolded not in royal palaces, but in the smoky, caffeine-fueled atmosphere of **London coffee houses**. Introductions like coffee and tea were new and fashionable; for the admission fee of one penny, merchants, sea captains, and investors packed into coffee houses like Garraway’s, Jonathan’s, and Edward Lloyd’s. Nicknamed **"Penny Universities"**, these bustling spaces democratized information: sea captains traded shipping intelligence, merchants formed joint-stock companies, Jonathan’s Coffee House evolved into the London Stock Exchange, and Lloyd’s Coffee House transformed into the world’s greatest maritime insurance market.',
-      },
-      {
-        act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Royal Exchange & Hogarth’s Morality)',
+        title: 'Act 2: Escalation & Conflict (The Financial Revolution & The City of London)',
         source: {
           letter: 'A',
-          title: 'Source A: The Courtyard of the Royal Exchange, London (c. 1670)',
+          title: 'Source A: The Courtyard of the Second Royal Exchange, London (c. 1670)',
           src: '/images/royal_exchange_courtyard.jpg',
           caption:
             'Contemporary engraving showing merchants from Turkey, Holland, the West Indies, and Venice conducting international transactions in the pillared quadrangle of the Royal Exchange.',
@@ -1210,7 +1270,25 @@ const early_modern_lessons = [
           hinge_question:
             'How does this image prove that London was evolving into the financial capital of the world?',
         },
-        text: '<span class="para-ref">[3.1]</span> Archival records reveal how global commerce remade London’s physical and social geography. In the vast pillared quadrangle of the rebuilt **Royal Exchange** (Source A), the world was literally divided into commercial zones: beneath stone arches, London brokers in woollen coats haggled with merchants in Ottoman turbans, Dutch trading agents, and Caribbean plantation factors. Here, fortunes were made and lost on the fluctuating prices of Virginia tobacco, Jamaican sugar, and Bengal calico. A new social class—the **bourgeoisie** (commercial middle class)—rose to challenge the ancient supremacy of the landed aristocracy.<br><br><span class="para-ref">[3.2]</span> This cultural triumph of merchant values was captured with biting moral clarity by artist William Hogarth in his 1747 engraving series <em>Industry and Idleness</em> (Source B). In the prints, nobility of blood is made completely irrelevant: the industrious merchant apprentice Francis Goodchild works diligently at his loom, marries his master’s daughter, accumulates wealth, and rises to become Lord Mayor of London; meanwhile, the idle apprentice who wastes time gambling ends his life on the gallows at Tyburn. The message to eighteenth-century Britons was undeniable: wealth and power now belonged to those who commanded commercial capital.',
+        text: '<span class="para-ref">[2.1]</span> Between 1688 and 1720, Britain experienced a **Financial Revolution** that laid the groundwork for modern capitalism. In 1694, when King William III needed millions of pounds to wage war against France, a chartered corporation of wealthy merchants created the <strong>Bank of England</strong>, loaning £1.2 million directly to the government in return for the right to issue banknotes and manage the National Debt. This guaranteed that Britain could borrow vast sums cheaply to fund an unbeatable global navy.<br><br><span class="para-ref">[2.2]</span> Meanwhile, global commerce remade London’s physical and commercial geography. In the vast pillared quadrangle of the rebuilt **Royal Exchange** (Source A), the world was literally divided into trade walks where merchants negotiated contracts for Virginia tobacco, Jamaican sugar, and Bengal calico. Nearby, coffee houses like Lloyd’s and Jonathan’s democratized financial intelligence, birthing the London Stock Exchange and maritime insurance.',
+      },
+      {
+        act: 3,
+        title: 'Act 3: Forensic Archival Evidence (The Maritime Thames & Global Shipping)',
+        source: {
+          letter: 'B',
+          title: 'Source B: Claude de Jongh’s View of London Bridge on the Thames (1632)',
+          src: '/images/early_mod_l6_banner.jpg',
+          caption:
+            'Oil painting by Dutch master Claude de Jongh showing the dense maritime shipping, merchant warehouses, and waterborne commerce along the River Thames at the entrance to the City of London.',
+          shelfmark: 'Kenwood House Collection (Shelfmark: KH-DJ-1632)',
+          citation: 'English Heritage, Kenwood House, London.',
+          context:
+            'London’s transformation into a global financial powerhouse was carried upon the waters of the Thames. Thousands of merchant vessels, colliers, and barges unloaded sugar, tobacco, spices, and timber along custom quays. **Hinge Question:** Why was maritime river access to the Port of London essential for Britain’s commercial transformation?',
+          hinge_question:
+            'Why was maritime river access to the Port of London essential for Britain’s commercial transformation?',
+        },
+        text: '<span class="para-ref">[3.1]</span> The lifeblood of Britain’s commercial revolution was maritime transport along the River Thames. As captured in Claude de Jongh’s panoramic view of London Bridge (Source B), the Pool of London was crammed with oceanic merchantmen, barges, and wharves handling cargo from every corner of the earth. London Bridge was not merely a crossing, but the gateway separating ocean-going vessels from river traffic.<br><br><span class="para-ref">[3.2]</span> Through these maritime docks flowed the immense profits of mercantilist trade. A new social class—the **bourgeoisie** (commercial middle class)—rose to challenge the ancient supremacy of the landed aristocracy. Power and social status were no longer defined purely by noble blood, but by commercial diligence, shipping tonnage, and financial capital.',
       },
       {
         act: 4,
@@ -1365,20 +1443,7 @@ const early_modern_lessons = [
     sources: [
       {
         letter: 'A',
-        title: 'Source A: Diagram of the Slave Ship Brookes (1788)',
-        src: '/images/brookes_ship.jpg',
-        caption:
-          'Forensic architectural cross-section of the Liverpool slave ship Brookes, published by the Abolition Society, illustrating 454 enslaved Africans packed into its lower decks.',
-        shelfmark: 'Abolitionist Print Archives (Shelfmark: APA-BRK-1788)',
-        citation: 'The British Library, London (Add MS 21256).',
-        context:
-          'Under the 1788 Dolben Act, the Brookes was legally permitted to carry 454 captives, allocating a space measuring six feet by sixteen inches per man. On previous voyages before regulation, the captain had crammed over 600 human beings into the sweltering, airless hold. **Hinge Question:** Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
-        hinge_question:
-          'Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
-      },
-      {
-        letter: 'B',
-        title: 'Source B: Schematic Map of the Transatlantic Triangular Trade Network',
+        title: 'Source A: Schematic Map of the Transatlantic Triangular Trade Network',
         src: '/images/triangular_trade.png',
         caption:
           'Cartographic diagram illustrating the prevailing Atlantic wind currents and the three commercial legs connecting Britain, West Africa, and the Caribbean plantations.',
@@ -1389,25 +1454,51 @@ const early_modern_lessons = [
         hinge_question:
           'How did the geography of Atlantic trade winds and ocean currents dictate the three legs of the trade?',
       },
+      {
+        letter: 'B',
+        title: 'Source B: Diagram of the Slave Ship Brookes (1788)',
+        src: '/images/brookes_ship.jpg',
+        caption:
+          'Forensic architectural cross-section of the Liverpool slave ship Brookes, published by the Abolition Society, illustrating 454 enslaved Africans packed into its lower decks.',
+        shelfmark: 'Abolitionist Print Archives (Shelfmark: APA-BRK-1788)',
+        citation: 'The British Library, London (Add MS 21256).',
+        context:
+          'Under the 1788 Dolben Act, the Brookes was legally permitted to carry 454 captives, allocating a space measuring six feet by sixteen inches per man. On previous voyages before regulation, the captain had crammed over 600 human beings into the sweltering, airless hold. **Hinge Question:** Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
+        hinge_question:
+          'Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
+      },
     ],
     narrative_blocks: [
       {
         act: 1,
         title: 'Act 1: Context & Catalyst (The Hunger for Sweet Gold & The Royal African Company)',
+        source: {
+          letter: 'A',
+          title: 'Source A: Schematic Map of the Transatlantic Triangular Trade Network',
+          src: '/images/triangular_trade.png',
+          caption:
+            'Cartographic diagram illustrating the prevailing Atlantic wind currents and the three commercial legs connecting Britain, West Africa, and the Caribbean plantations.',
+          shelfmark: 'Maritime Historical Cartography (Shelfmark: MHC-TRI-1750)',
+          citation: 'National Maritime Museum, Greenwich, London.',
+          context:
+            'The Triangular Trade operated on a self-reinforcing financial cycle. British manufactured goods bought human captives in West Africa; captive labor produced sugar, tobacco, and rum in the Americas; and raw colonial commodities were shipped back to Britain to feed domestic consumption and manufacturing. **Hinge Question:** How did the geography of Atlantic trade winds and ocean currents dictate the three legs of the trade?',
+          hinge_question:
+            'How did the geography of Atlantic trade winds and ocean currents dictate the three legs of the trade?',
+        },
         text: '<span class="para-ref">[1.1]</span> In the late seventeenth century, British consumer culture was radically transformed by imported imperial luxuries: tea, coffee, chocolate, and above all, **sugar**. Sugar was no longer a rare medicine for royalty; it became a staple food for the working class, sweetening bitter tea to provide quick calories for long factory shifts. But sugarcane was an exceptionally grueling, lethal crop: canes had to be planted, harvested with machetes in tropical heat, crushed in heavy iron mills, and boiled in toxic, bubbling copper vats. When indigenous populations were annihilated by Eurasian disease and European indentured servants proved unable to survive the brutal labor regime, plantation owners turned to the forced labor of enslaved Africans.<br><br><span class="para-ref">[1.2]</span> In 1672, King Charles II granted a royal charter creating the **Royal African Company**, headed by his brother James, Duke of York. The company was granted a state monopoly to capture and transport enslaved human beings from West Africa to English colonies in Jamaica, Barbados, and Virginia. The Duke of York personally ordered company captives branded on the chest with the letters "DoY" or "RAC" using red-hot irons, cementing the horrific reality of chattel slavery: human beings were legally transformed into commercial commodities to be bought, insured, and worked to death for British profit.',
       },
       {
         act: 2,
         title:
           'Act 2: Escalation & Conflict (The Triangular Machine & The Horror of the Middle Passage)',
-        text: '<span class="para-ref">[2.1]</span> By the eighteenth century, British merchants had perfected the **Triangular Trade** (Source B)—a self-reinforcing oceanic machinery operating across three continents. On the **First Leg (Outward Passage)**, ships sailed from Bristol and Liverpool laden with British manufactured goods: flintlock muskets from Birmingham, iron bars, brass pans, gun flints, and Manchester cotton textiles. Arriving at fortified West African slave forts like Cape Coast Castle and Elmina, captains traded these goods to local African monarchs and warlords in exchange for war captives and kidnapped families.<br><br><span class="para-ref">[2.2]</span> The **Second Leg (The Middle Passage)** was the most concentrated theatre of human terror in history. Stripped naked and shaved, enslaved men were chained together in pairs by their ankles and wrists and crammed into sweltering, lightless decks beneath the waterline. Captains practiced "tight packing": stacking human bodies side-by-side on tiered wooden shelves with barely eighteen inches of vertical headroom. Chained in pools of blood, vomit, and human excrement, captives endured six to twelve weeks of horrific torment. Dysentery (the "bloody flux"), smallpox, and ophthalmia raged through the hold; those who went insane were flogged, and those who attempted suicide by starvation were force-fed using the <em>speculum oris</em>, a horrific iron screw device that prized open jaws. Between ten and fifteen percent of all captives died before reaching America, their bodies thrown overboard to following sharks.',
+        text: '<span class="para-ref">[2.1]</span> By the eighteenth century, British merchants had perfected the **Triangular Trade** (Source A)—a self-reinforcing oceanic machinery operating across three continents. On the **First Leg (Outward Passage)**, ships sailed from Bristol and Liverpool laden with British manufactured goods: flintlock muskets from Birmingham, iron bars, brass pans, gun flints, and Manchester cotton textiles. Arriving at fortified West African slave forts like Cape Coast Castle and Elmina, captains traded these goods to local African monarchs and warlords in exchange for war captives and kidnapped families.<br><br><span class="para-ref">[2.2]</span> The **Second Leg (The Middle Passage)** was the most concentrated theatre of human terror in history. Stripped naked and shaved, enslaved men were chained together in pairs by their ankles and wrists and crammed into sweltering, lightless decks beneath the waterline. Captains practiced "tight packing": stacking human bodies side-by-side on tiered wooden shelves with barely eighteen inches of vertical headroom. Chained in pools of blood, vomit, and human excrement, captives endured six to twelve weeks of horrific torment. Dysentery (the "bloody flux"), smallpox, and ophthalmia raged through the hold; those who went insane were flogged, and those who attempted suicide by starvation were force-fed using the <em>speculum oris</em>, a horrific iron screw device that prized open jaws. Between ten and fifteen percent of all captives died before reaching America, their bodies thrown overboard to following sharks.',
       },
       {
         act: 3,
         title: 'Act 3: Forensic Archival Evidence (The Geometry of the Brookes & The Sugar Ports)',
         source: {
-          letter: 'A',
-          title: 'Source A: Diagram of the Slave Ship Brookes (1788)',
+          letter: 'B',
+          title: 'Source B: Diagram of the Slave Ship Brookes (1788)',
           src: '/images/brookes_ship.jpg',
           caption:
             'Forensic architectural cross-section of the Liverpool slave ship Brookes, published by the Abolition Society, illustrating 454 enslaved Africans packed into its lower decks.',
@@ -1418,7 +1509,7 @@ const early_modern_lessons = [
           hinge_question:
             'Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
         },
-        text: '<span class="para-ref">[3.1]</span> The cold, calculated cruelty of the trade is permanently captured in the famous architectural diagram of the slave ship **Brookes** (Source A). Published in 1788 by abolitionist campaigner Thomas Clarkson, this clinical technical drawing shocked the public conscience: it depicted 454 human beings stowed in precise rows like logs of timber or barrels of rum, allocating a space six feet long by sixteen inches wide for an adult male—literally less room than a corpse inside a wooden coffin. On earlier voyages, the captain admitted to packing over 600 captives into the same hull, proving that human life was treated entirely as disposable cargo.<br><br><span class="para-ref">[3.2]</span> Surviving captives who survived the Middle Passage were auctioned like livestock in Kingston, Bridgetown, or Charleston. On the **Third Leg (Home Passage)**, slave ships returned to Britain packed with the raw fruits of unfree labor: hogsheads of raw brown muscovado sugar, barrels of Jamaican rum, crates of Virginian tobacco, and bales of Carolina cotton. The profits flowed directly into British port cities: Liverpool grew from a fishing village of 5,000 in 1700 into Europe’s premier slave-trading port by 1795, launching over 100 slave ships annually and controlling eighty percent of Britain’s slave trade.',
+        text: '<span class="para-ref">[3.1]</span> The cold, calculated cruelty of the trade is permanently captured in the famous architectural diagram of the slave ship **Brookes** (Source B). Published in 1788 by abolitionist campaigner Thomas Clarkson, this clinical technical drawing shocked the public conscience: it depicted 454 human beings stowed in precise rows like logs of timber or barrels of rum, allocating a space six feet long by sixteen inches wide for an adult male—literally less room than a corpse inside a wooden coffin. On earlier voyages, the captain admitted to packing over 600 captives into the same hull, proving that human life was treated entirely as disposable cargo.<br><br><span class="para-ref">[3.2]</span> Surviving captives who survived the Middle Passage were auctioned like livestock in Kingston, Bridgetown, or Charleston. On the **Third Leg (Home Passage)**, slave ships returned to Britain packed with the raw fruits of unfree labor: hogsheads of raw brown muscovado sugar, barrels of Jamaican rum, crates of Virginian tobacco, and bales of Carolina cotton. The profits flowed directly into British port cities: Liverpool grew from a fishing village of 5,000 in 1700 into Europe’s premier slave-trading port by 1795, launching over 100 slave ships annually and controlling eighty percent of Britain’s slave trade.',
       },
       {
         act: 4,
@@ -1496,8 +1587,8 @@ const early_modern_lessons = [
     title: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
     enquiry_question:
       'What strategies did enslaved Africans use to fight against enslavement, from ship rebellions to Maroon resistance and political abolition?',
-    cover_image: '/images/jamaica_maroons.jpg',
-    banner: '/images/jamaica_maroons.jpg',
+    cover_image: '/images/brookes_ship.jpg',
+    banner: '/images/brookes_ship.jpg',
     learning_objectives: [
       'Describe the diverse spectrum of resistance used by enslaved Africans, from everyday sabotage to armed rebellion',
       'Analyze the guerrilla tactics of the Jamaican Maroons led by Queen Nanny in the Blue Mountains',
@@ -1607,11 +1698,6 @@ const early_modern_lessons = [
       {
         act: 2,
         title: 'Act 2: Escalation & Conflict (The Spectrum of Resistance & The Maroon Guerrillas)',
-        text: '<span class="para-ref">[2.1]</span> Once sold onto American and Caribbean plantations, enslaved people engaged in a continuous **spectrum of resistance**. Subtle daily resistance was universal: laborers worked slowly, feigned illness, deliberately broke expensive sugarcane machetes, sabotaged sugar boiling houses, and preserved banned African languages, drumming, and religious traditions like Obeah. Women used herbal knowledge to administer secret abortifacients rather than bear children into lifelong chattel bondage. On a more dangerous level, enslaved rebels plotted armed uprisings, such as the **Stono Rebellion** in South Carolina (1739), where eighty enslaved men marched toward Spanish Florida beating drums and shouting for liberty.<br><br><span class="para-ref">[2.2]</span> The most formidable armed resistance emerged in Jamaica among the **Maroons**—communities of self-liberated Africans who fled into the impenetrable limestone ravines of the Cockpit Country and the misty heights of the Blue Mountains. Led by a brilliant military and spiritual leader named <strong>Queen Nanny</strong>, the Windward Maroons waged a savage guerrilla war against the British military throughout the 1730s. Disguising themselves with leafy branches, ambushing redcoats from mountain ledges, and communicating across valleys using a cow horn called the *abeng*, Nanny’s warriors slaughtered British regiments sent to re-enslave them.',
-      },
-      {
-        act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The 1739 Treaty & Equiano’s Bestselling Weapon)',
         source: {
           letter: 'A',
           title:
@@ -1625,6 +1711,24 @@ const early_modern_lessons = [
             'Escaped Africans established independent mountain communities known as Maroons. Led by Queen Nanny, they used guerrilla warfare and camouflage so effectively that the British military surrendered and signed a treaty granting them land and total autonomy in 1739. **Hinge Question:** Why did the British Empire choose to sign a formal peace treaty with escaped slaves rather than continuing the war?',
           hinge_question:
             'Why did the British Empire choose to sign a formal peace treaty with escaped slaves rather than continuing the war?',
+        },
+        text: '<span class="para-ref">[2.1]</span> Once sold onto American and Caribbean plantations, enslaved people engaged in a continuous **spectrum of resistance**. Subtle daily resistance was universal: laborers worked slowly, feigned illness, deliberately broke expensive sugarcane machetes, sabotaged sugar boiling houses, and preserved banned African languages, drumming, and religious traditions like Obeah. Women used herbal knowledge to administer secret abortifacients rather than bear children into lifelong chattel bondage. On a more dangerous level, enslaved rebels plotted armed uprisings, such as the **Stono Rebellion** in South Carolina (1739), where eighty enslaved men marched toward Spanish Florida beating drums and shouting for liberty.<br><br><span class="para-ref">[2.2]</span> The most formidable armed resistance emerged in Jamaica among the **Maroons**—communities of self-liberated Africans who fled into the impenetrable limestone ravines of the Cockpit Country and the misty heights of the Blue Mountains (Source A). Led by a brilliant military and spiritual leader named <strong>Queen Nanny</strong>, the Windward Maroons waged a savage guerrilla war against the British military throughout the 1730s. Disguising themselves with leafy branches, ambushing redcoats from mountain ledges, and communicating across valleys using a cow horn called the *abeng*, Nanny’s warriors slaughtered British regiments sent to re-enslave them.',
+      },
+      {
+        act: 3,
+        title: 'Act 3: Forensic Archival Evidence (The 1739 Treaty & Equiano’s Bestselling Weapon)',
+        source: {
+          letter: 'B',
+          title: 'Source B: Frontispiece Portrait of Olaudah Equiano from his 1789 Autobiography',
+          src: '/images/equiano.jpg',
+          caption:
+            'Engraved portrait of Olaudah Equiano (Gustavus Vassa) holding an open Bible, published as the frontispiece to his bestselling 1789 autobiography.',
+          shelfmark: 'Rare Books Collection (Shelfmark: RB-EQUI-1789)',
+          citation: 'The British Library, London (General Reference Collection 1478.b.11).',
+          context:
+            'Kidnapped as a boy in West Africa, Equiano survived the Middle Passage, purchased his freedom in 1766, and moved to London. In 1789, he published *The Interesting Narrative of the Life of Olaudah Equiano*, exposing the horrors of the trade to hundreds of thousands of readers. **Hinge Question:** How did Equiano’s formal Georgian dress and open Bible directly challenge racist pro-slavery stereotypes?',
+          hinge_question:
+            'How did Equiano’s formal Georgian dress and open Bible directly challenge racist pro-slavery stereotypes?',
         },
         text: '<span class="para-ref">[3.1]</span> Primary documents reveal the humiliating retreat of British imperial power in the face of Maroon warfare. By 1739, colonial governor Edward Trelawny realized the British army could never defeat Queen Nanny’s guerrilla fighters. In the landmark **Treaty of 1739** (Source A), the British Crown formally recognized the Maroons as free people, granting them 1,500 acres of sovereign land and total autonomy—nearly a century before the abolition of slavery in the British Empire! Queen Nanny is celebrated today as Jamaica’s only female National Hero.<br><br><span class="para-ref">[3.2]</span> In Britain, the weapon of resistance was the pen. In 1789, <strong>Olaudah Equiano</strong>—a former enslaved Igbo man who had survived the Middle Passage and bought his freedom—published his bestselling autobiography: <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (Source B). Depicted on the frontispiece dressed in fine Georgian attire holding a Bible, Equiano delivered a devastating blow to pro-slavery propagandists who claimed Africans were subhuman. Equiano joined the **Sons of Africa**, a political group of free Black Londoners that included Ottobah Cugoano, traveling across Britain giving fiery public lectures and personally lobbying Parliament.',
       },
@@ -1704,8 +1808,8 @@ const early_modern_lessons = [
     title: "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
     enquiry_question:
       'To what extent was Britain in 1750 a truly "modern" society, or an empire built upon extreme domestic inequality and colonial exploitation?',
-    cover_image: '/images/east_offering.jpg',
-    banner: '/images/east_offering.jpg',
+    cover_image: '/images/early_mod_l6_banner.jpg',
+    banner: '/images/early_mod_l6_banner.jpg',
     learning_objectives: [
       'Synthesize Britain’s 300-year transformation from a peripheral medieval island in 1450 to a global commercial empire in 1750',
       'Analyze the stark contrast between imperial luxury and domestic urban destitution during London’s "Gin Craze"',
@@ -1813,12 +1917,7 @@ const early_modern_lessons = [
       },
       {
         act: 2,
-        title: 'Act 2: Escalation & Conflict (The Dual Reality: Imperial Wealth vs. Urban Hell)',
-        text: '<span class="para-ref">[2.1]</span> Yet beneath this glittering veneer of Georgian enlightenment lay a dark, deeply divided society. Britain’s dazzling commercial wealth was concentrated in the hands of a tiny oligarchy of landed aristocrats, London bankers, and Caribbean plantation owners. For the vast majority of ordinary working people, life was a desperate, unceasing struggle for survival. Enclosure acts had driven hundreds of thousands of landless agricultural laborers off common village greens and into squalid urban slums like St Giles and Whitechapel, where whole families were packed into damp, airless cellar dwellings without running water, sewers, or sanitation.<br><br><span class="para-ref">[2.2]</span> The psychological despair of the urban poor exploded in the catastrophic **"Gin Craze"** of the 1730s and 1740s. Unregulated corn spirits—cheap, potent, and often adulterated with sulfuric acid and turpentine—flooded the capital: Londoners consumed over eleven million gallons of gin a year. In squalid alleyways, "dram shops" advertised that customers could get <em>"Drunk for a penny, dead drunk for twopence, with straw for nothing!"</em> Infant mortality soared: in the poorest London parishes, three out of four children died before their fifth birthday, their bodies unceremoniously dumped in lime pits.',
-      },
-      {
-        act: 3,
-        title: 'Act 3: Forensic Archival Evidence (The Leadenhall Ceiling vs. Gin Lane)',
+        title: 'Act 2: Escalation & Conflict (The Dual Reality: Imperial Wealth Allegory)',
         source: {
           letter: 'A',
           title: 'Source A: The East Offering its Riches to Britannia (1778) by Spiridione Roma',
@@ -1832,7 +1931,25 @@ const early_modern_lessons = [
           hinge_question:
             'How does this painting serve as an idealized, whitewashed advertisement for corporate imperial exploitation?',
         },
-        text: '<span class="para-ref">[3.1]</span> The striking contradiction of 1750 Britain is captured when comparing two famous primary artworks. In Spiridione Roma’s grandiose ceiling painting for the East India Company, <em>The East Offering its Riches to Britannia</em> (Source A), Britain is depicted as a serene classical goddess receiving the voluntary homage of the world: female personifications of India and China kneel humbly before her, pouring out baskets of pearls, jewels, and tea chests. It was the ultimate corporate propaganda: an image of benign, peaceful commerce that erased the brutal realities of naval cannon, military coercion, and colonial famine.<br><br><span class="para-ref">[3.2]</span> The brutal reality of domestic Britain is captured in William Hogarth’s searing 1751 masterpiece <em>Gin Lane</em> (Source B). Set in the notorious St Giles slum, Hogarth depicts an apocalyptic scene of social disintegration: in the foreground, an intoxicated mother drops her baby from a staircase to its death, while a skeletal ballad singer starves and an impoverished soldier pawns his sword for one more dram of liquor. Far from an enlightened modern paradise, 1750 Britain was a society of grotesque extremes: colossal imperial fortunes built alongside desperate domestic destitution and human degradation.',
+        text: '<span class="para-ref">[2.1]</span> The ascending wealth of the British Empire was celebrated through grandiose allegorical art. In Spiridione Roma’s ceiling painting for the East India Company, <em>The East Offering its Riches to Britannia</em> (Source A), Britain is depicted as a regal classical goddess receiving the voluntary homage of the world: personifications of India and China kneel humbly, pouring out pearls, jewels, and tea chests. It was the ultimate corporate propaganda: an image of benign, peaceful commerce that completely erased the brutal realities of naval cannon, military coercion, and colonial famine.<br><br><span class="para-ref">[2.2]</span> Yet beneath this glittering veneer of Georgian enlightenment lay a dark, deeply divided society. Britain’s commercial wealth was concentrated in the hands of a tiny oligarchy of landed aristocrats, London bankers, and Caribbean plantation owners. Enclosure acts had driven hundreds of thousands of landless agricultural laborers into squalid urban slums like St Giles, where whole families were packed into damp, airless cellar dwellings without running water or sanitation.',
+      },
+      {
+        act: 3,
+        title: 'Act 3: Forensic Archival Evidence (The Squalor of Gin Lane & Domestic Inequality)',
+        source: {
+          letter: 'B',
+          title: 'Source B: Gin Lane (1751) by William Hogarth',
+          src: '/images/gin_lane.jpg',
+          caption:
+            'Engraving depicting the social collapse, starvation, and despair caused by unregulated gin drinking in the squalid London slum of St Giles.',
+          shelfmark: 'Hogarth Engraving Collection (Shelfmark: BM-HOG-GIN-1751)',
+          citation: 'Department of Prints and Drawings, British Museum.',
+          context:
+            'In 1750, London consumed over eleven million gallons of cheap, rotgut gin annually. Hogarth’s shocking print shows an intoxicated mother dropping her infant child from a staircase while a pawnbroker, an undertaker, and a starving distiller prosper in the background. **Hinge Question:** What does Gin Lane reveal about the brutal living conditions of ordinary working-class Londoners at the peak of Britain’s imperial wealth?',
+          hinge_question:
+            'What does Gin Lane reveal about the brutal living conditions of ordinary working-class Londoners at the peak of Britain’s imperial wealth?',
+        },
+        text: '<span class="para-ref">[3.1]</span> The psychological despair of the urban poor exploded in the catastrophic **"Gin Craze"** of the 1730s and 1740s. Unregulated corn spirits flooded the capital: Londoners consumed over eleven million gallons of gin a year. In squalid alleyways, "dram shops" advertised that customers could get <em>"Drunk for a penny, dead drunk for twopence, with straw for nothing!"</em> Infant mortality soared: in the poorest London parishes, three out of four children died before their fifth birthday.<br><br><span class="para-ref">[3.2]</span> The brutal reality of domestic Britain is permanently recorded in William Hogarth’s searing 1751 masterpiece <em>Gin Lane</em> (Source B). Set in the notorious St Giles slum, Hogarth depicts an apocalyptic scene of social disintegration: an intoxicated mother drops her baby from a staircase to its death, while a skeletal ballad singer starves and an impoverished soldier pawns his sword for one more dram of liquor. Far from an enlightened modern paradise, 1750 Britain was a society of grotesque extremes: colossal imperial fortunes built alongside desperate domestic destitution.',
       },
       {
         act: 4,
@@ -1917,18 +2034,23 @@ const updatedUnitData = {
   timeline: baseUnit.timeline || [],
   lessons: early_modern_lessons,
   portraits: baseUnit.portraits || [],
-  description: baseUnit.description || '',
-  cover_sources: baseUnit.cover_sources || [],
+  description:
+    'A rigorous Key Stage 3 enquiry exploring early modern global encounters, trade networks, religious conflicts, constitutional revolutions, and the transatlantic slave trade (1450–1750).',
   key_individuals: baseUnit.key_individuals || [],
   geographical_locations: baseUnit.geographical_locations || [],
   is_ks3: true,
 };
 
-// Write output file
+// Write output files: BOTH data.js AND data_v2_4act.js
 const codeContent = `const early_modern_world = ${JSON.stringify(updatedUnitData, null, 2)};\n\nexport const unitData = early_modern_world;\nexport default early_modern_world;\n`;
 fs.writeFileSync(targetFile, codeContent, 'utf8');
 console.log(`✅ Successfully authored 9 Christine Counsell 4-Act Lessons in ${targetFile}!`);
 
-// Verify syntax
+const v2TargetFile = path.join(ROOT_DIR, 'units', 'early_modern_world', 'data_v2_4act.js');
+fs.writeFileSync(v2TargetFile, codeContent, 'utf8');
+console.log(`✅ Successfully synchronized 9 Christine Counsell 4-Act Lessons in ${v2TargetFile}!`);
+
+// Verify syntax for both
 execSync(`node --check "${targetFile}"`, { stdio: 'inherit' });
-console.log('✅ Syntax validation passed cleanly.');
+execSync(`node --check "${v2TargetFile}"`, { stdio: 'inherit' });
+console.log('✅ Syntax validation passed cleanly for both files.');
