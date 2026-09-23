@@ -538,51 +538,51 @@ function buildKs3WorkbookHtml(unitConfig) {
           </div>
 
           <!-- Dual Evidence Columns (Moved UP directly under instruction line) -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 3px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 2px;">
             <!-- Left Column (Blue) -->
-            <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #0369a1; border-radius: 4px; padding: 4px 7px 5px 7px; background: #f8fafc;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; text-transform: uppercase;">
+            <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #0369a1; border-radius: 4px; padding: 3px 6px 4px 6px; background: #f8fafc;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">
                 ${l.bridgeTask?.col1Title || 'Column 1 Evidence'}
               </strong>
-              <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div style="display: flex; flex-direction: column; gap: 2px;">
                 <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #0369a1;">Point 1:</strong>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #0369a1;">Point 1:</strong>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
                 </div>
                 <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #0369a1;">Point 2:</strong>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #0369a1;">Point 2:</strong>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
                 </div>
                 <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #0369a1;">Point 3:</strong>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #0369a1;">Point 3:</strong>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
                 </div>
               </div>
             </div>
 
             <!-- Right Column (Crimson) -->
-            <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 4px 7px 5px 7px; background: #fffaf0;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #b91c1c; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 2px; margin-bottom: 3px; text-transform: uppercase;">
+            <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 3px 6px 4px 6px; background: #fffaf0;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">
                 ${l.bridgeTask?.col2Title || 'Column 2 Evidence'}
               </strong>
-              <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div style="display: flex; flex-direction: column; gap: 2px;">
                 <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #b91c1c;">Point 1:</strong>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #b91c1c;">Point 1:</strong>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
                 </div>
                 <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #b91c1c;">Point 2:</strong>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #b91c1c;">Point 2:</strong>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
                 </div>
                 <div>
-                  <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #b91c1c;">Point 3:</strong>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-                  <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #b91c1c;">Point 3:</strong>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+                  <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
                 </div>
               </div>
             </div>
@@ -590,7 +590,7 @@ function buildKs3WorkbookHtml(unitConfig) {
         </div>
 
         <!-- Task 3 Argument Box with Ruled Lines (Accessible Year 8 Language, 0 Synthesis Jargon) -->
-        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 2px;">
+        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 3px 7px; background: #ffffff; margin-bottom: 2px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
             ✍️ Task 3: Developing Your Argument: ${(
               l.bridgeTask?.synthesisPrompt ||
@@ -604,22 +604,24 @@ function buildKs3WorkbookHtml(unitConfig) {
               .replace(/synthesis/gi, 'argument')}
           </div>
           <div style="display: flex; flex-direction: column; gap: 0;">
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
           </div>
         </div>
 
         <!-- Clue & Scholar's Edge -->
         <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; margin-top: 1px; line-height: 1.2;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #64748b; margin-top: 1px; line-height: 1.15;">
             ${l.bridgeTask?.clue || ''}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 1px; margin-top: 1px; line-height: 1.2;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 1px; margin-top: 1px; line-height: 1.15;">
             ${l.bridgeTask?.scholarsEdge || ''}
           </div>
         </div>

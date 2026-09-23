@@ -59,7 +59,13 @@ window.openInPagePreview = function (url, title, pdfUrl, options = {}) {
     fullTabBtn.href = url;
   }
 
-  iframe.src = url;
+  const bustUrl = (u) => {
+    if (!u) return u;
+    const sep = u.includes('?') ? '&' : '?';
+    return `${u}${sep}v=${Date.now()}`;
+  };
+
+  iframe.src = bustUrl(url);
 
   consoleEl.style.display = 'flex';
   setTimeout(() => {
@@ -73,15 +79,21 @@ window.switchPreviewConsoleTab = function (tab) {
   const titleEl = document.getElementById('previewConsoleTitle');
   const fullTabBtn = document.getElementById('btnPreviewFullTab');
 
+  const bustUrl = (u) => {
+    if (!u) return u;
+    const sep = u.includes('?') ? '&' : '?';
+    return `${u}${sep}v=${Date.now()}`;
+  };
+
   if (tab === 'qp' && currentPreviewState.qpUrl) {
     currentPreviewState.activeTab = 'qp';
-    if (iframe) iframe.src = currentPreviewState.qpUrl;
+    if (iframe) iframe.src = bustUrl(currentPreviewState.qpUrl);
     if (titleEl) titleEl.textContent = currentPreviewState.title + ' (Question Paper)';
     if (fullTabBtn) fullTabBtn.href = currentPreviewState.qpUrl;
     window.updatePreviewConsoleTabs('qp');
   } else if (tab === 'ms' && currentPreviewState.msUrl) {
     currentPreviewState.activeTab = 'ms';
-    if (iframe) iframe.src = currentPreviewState.msUrl;
+    if (iframe) iframe.src = bustUrl(currentPreviewState.msUrl);
     if (titleEl) titleEl.textContent = currentPreviewState.title + ' (Mark Scheme)';
     if (fullTabBtn) fullTabBtn.href = currentPreviewState.msUrl;
     window.updatePreviewConsoleTabs('ms');

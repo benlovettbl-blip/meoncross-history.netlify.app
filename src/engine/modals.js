@@ -2781,7 +2781,7 @@ window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
           <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: #38bdf8;"></i>
           <span>Rendering high-fidelity print layout...</span>
         </div>
-        <iframe id="teacherPreviewIframe" src="${htmlUrl}" style="width: 100%; height: 100%; border: none; background: #ffffff; position: relative; z-index: 2; opacity: 0; transition: opacity 0.2s ease;"></iframe>
+        <iframe id="teacherPreviewIframe" src="${htmlUrl ? `${htmlUrl}${htmlUrl.includes('?') ? '&' : '?'}v=${Date.now()}` : htmlUrl}" style="width: 100%; height: 100%; border: none; background: #ffffff; position: relative; z-index: 2; opacity: 0; transition: opacity 0.2s ease;"></iframe>
       </div>
 
       <!-- Footer Bar with Teacher Print Instructions -->

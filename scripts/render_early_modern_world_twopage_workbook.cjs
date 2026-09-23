@@ -1289,7 +1289,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         </div>
 
         <!-- Task 3 Argument Box with Ruled Lines (Accessible Year 8 Language, 0 Synthesis Jargon) -->
-        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 2px;">
+        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 3px 7px; background: #ffffff; margin-bottom: 2px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
             ✍️ Task 3: Developing Your Argument: ${(
               cfg.bridgeTask.synthesisPrompt ||
@@ -1303,21 +1303,23 @@ function buildEarlyModernWorldTwoPageWorkbook() {
               .replace(/synthesis/gi, 'argument')}
           </div>
           <div style="display: flex; flex-direction: column; gap: 0;">
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 6.2mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
           </div>
         </div>
 
         <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; margin-top: 1px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #64748b; margin-top: 1px; line-height: 1.15;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.9pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 1px; margin-top: 1px; line-height: 1.15;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
         </div>
