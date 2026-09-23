@@ -17,7 +17,7 @@
  *     Lesson 2 (Pages 6–7):   Religious Conflict & Global Exploration (Dual-Source Utility — Template A: Tordesillas vs Hakluyt)
  *     Lesson 3 (Pages 8–9):   Trade to Empire: Mughal India & Native America (Causation — Extended Writing)
  *     Lesson 4 (Pages 10–11): Gunpowder Plot & Religious Volatility (Historical Significance — Extended Writing)
- *     Lesson 5 (Pages 12–13): The English Civil War & Execution of Charles I (Historiographical Debate — Template B: Whig vs Revisionist)
+ *     Lesson 5 (Pages 12–13): The English Civil War & Execution of Charles I (Historiographical Debate — Template B: Fight Against Tyranny vs Accidental Disaster)
  *     Lesson 6 (Pages 14–15): The Economic Shift & Glorious Revolution (Turning Point Analysis — Extended Writing)
  *     Lesson 7 (Pages 16–17): Mechanics of Transatlantic Slave Trade (Historical Evidence — Extended Writing)
  *     Lesson 8 (Pages 18–19): Resistance to Slave Trade: Maroons & Rebellion (Agency & Significance — Extended Writing)
@@ -387,26 +387,27 @@ const lessonConfigs = [
     enquiryQuestion:
       'Enquiry: How far do you agree with Interpretation 1 that the Civil War was an unavoidable fight against royal tyranny?',
     interp1: {
-      title: 'Interpretation 1: Lord Macaulay & G.M. Trevelyan, The Whig Orthodoxy (1848 / 1926)',
-      badge: 'The Whig View: Inevitable March of Parliamentary Liberty',
+      title:
+        'Interpretation 1: Lord Macaulay & G.M. Trevelyan (Traditional View: Fight Against Tyranny)',
+      badge: 'The Traditional View: Inevitable Fight for Parliamentary Freedom',
       text: '“The clash between King and Parliament was the grand heroic struggle of English history. Charles I was an unbending tyrant who sought to extinguish ancient liberties through illegal taxes like Ship Money and eleven years of Personal Rule. The Civil War was the inevitable, necessary triumph of parliamentary freedom, rule of law, and Protestant democracy over royal absolutism.”',
-      author: 'Lord Macaulay (Whig Historian & Statesman)',
+      author: 'Lord Macaulay (19th-Century Historian & Statesman)',
     },
     interp2: {
       title:
-        'Interpretation 2: Professor Conrad Russell & John Morrill, The Revisionist View (1990 / 1993)',
-      badge: 'The Revisionist View: An Unforced Accident & War of Religion',
+        'Interpretation 2: Professor Conrad Russell & John Morrill (Modern View: An Accidental War)',
+      badge: 'The Modern View: An Accidental Disaster of Panic & Mistrust',
       text: '“The Civil War was neither inevitable nor primarily about modern constitutional liberty. It was a tragic, unforced breakdown caused by the personal untrustworthiness of Charles I and explosive religious fear. In 1640, nobody wanted war; England stumbled into disaster because the King failed to govern three distinct kingdoms—England, Scotland, and Ireland—simultaneously.”',
       author: "Conrad Russell (Professor of Commonwealth History, King's College London)",
     },
     matrix: [
       {
         col: '1. INTERPRETATION 1 CLAIMS',
-        text: 'Analyse Macaulay’s Whig argument that tyranny and Ship Money made parliamentary conflict inevitable.',
+        text: 'Analyse Macaulay’s argument that Charles I’s tyranny and illegal taxes made war unavoidable.',
       },
       {
         col: '2. INTERPRETATION 2 CRITIQUE',
-        text: 'Evaluate Russell’s Revisionist counter-argument that war was an accidental crisis of religion and personal mistrust.',
+        text: 'Evaluate Russell’s modern counter-argument that war was an accidental disaster caused by religious fear and royal blunders.',
       },
       {
         col: '3. HISTORIOGRAPHICAL VERDICT',
@@ -414,7 +415,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Interpretation 1 argues that the Civil War was an inevitable result of... • This is supported by evidence such as Charles I’s eleven years of Personal Rule and... • However, Interpretation 2 directly challenges this Whig orthodoxy, maintaining that... • Russell’s thesis is reinforced by the fact that in 1640 MPs like Pym were terrified of... • On balance, Interpretation [1/2] offers a more convincing historical explanation because...',
+      'Interpretation 1 argues that the Civil War was an unavoidable fight against royal tyranny because... • This is supported by evidence such as Charles I’s eleven years of Personal Rule and... • However, Interpretation 2 challenges this view, arguing instead that war was an accidental disaster caused by... • This is shown by the fact that in 1640 MPs wanted peace, but Charles I... • On balance, I find Interpretation [1/2] more convincing because...',
     doNow: [
       {
         q: 'What political doctrine stated that kings answer solely to God, not to Parliament?',
@@ -443,14 +444,14 @@ const lessonConfigs = [
       title: 'Task 3: Long-Term Constitutional Friction vs Short-Term Royal Blunders',
       instruction:
         'Examine whether the English Civil War was caused by deep-seated institutional friction or Charles I’s immediate miscalculations:',
-      col1Title: 'Long-Term Structural Causes (The Whig Case)',
+      col1Title: 'Long-Term Causes: King Charles I’s Tyranny & The Fight for Liberty',
       col1Prompts: [
         'James I and Charles I asserting absolute Divine Right rule over Parliament.',
         'Eleven Years of Personal Rule (1629–1640): governing without calling Parliament.',
         'Illegal imposition of Ship Money tax on inland counties to fund royal finances.',
         'Archbishop Laud’s "Arminian" church reforms perceived as sneaking Catholicism back.',
       ],
-      col2Title: 'Short-Term Triggers & Royal Blunders (The Revisionist Case)',
+      col2Title: 'Short-Term Triggers: Royal Blunders, Mistrust & Religious Panic',
       col2Prompts: [
         'Attempting to impose the English Prayer Book on Presbyterian Scotland (Bishops’ Wars 1639).',
         'The Irish Rebellion of 1641: panic over who should command the army to suppress it.',
@@ -458,10 +459,10 @@ const lessonConfigs = [
         'Charles I’s fatal character: inflexible, secretive, and widely perceived as untrustworthy.',
       ],
       synthesisPrompt:
-        'Synthesise whether structural friction or Charles I’s personal blunders triggered the Civil War:',
+        'Explain whether King Charles I’s long-term tyranny or his short-term blunders caused the Civil War:',
       clue: '<em>Low-Floor Clue:</em> In January 1642, Charles I committed the unthinkable blunder of storming the House of Commons with armed troops to arrest five MPs; Speaker Lenthall famously defied him, declaring he served Parliament, not the King.',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> How does John Morrill’s famous description of 1642 as "not England\'s first modern revolution, but her last war of religion" undermine Macaulay’s Victorian Whig myth?',
+        '<strong>★ Scholar’s Edge:</strong> How does John Morrill’s famous description of 1642 as "not England\'s first modern revolution, but her last war of religion" challenge the idea that the Civil War was simply a fight for modern democracy?',
     },
   },
   {
