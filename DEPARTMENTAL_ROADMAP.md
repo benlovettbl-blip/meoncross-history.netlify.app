@@ -31,6 +31,10 @@
    - **Status: 🟩 GREEN (100% GOLD & COMPLETED).** All 8 lessons upgraded with 2-Lesson Enquiry Delivery Plans (50m+50m), 4-Card Chronology Spines, 20-page double-page master workbook (`pupil_workbook.html`), and companion textbook verified with 0px overflow.
 4. **Year 8: The Early Modern World (`early_modern_world`):**
    - **Status: 🟩 GREEN (100% GOLD & COMPLETED).** Upgraded to Universal KS3 Declarative Workbook Engine (20 pages, dynamic ruled lines, 0 underflow/overflow) and Master Publisher Textbook (20 pages, 0 facing duplicates, 100% primary source context blurbs & hinge questions, 0px overflow). Synchronized directly to Google Drive Department File (`Early Modern World Pupil Workbook (V18 - Ruled Lines Fixed).pdf` and `Early Modern World Master Textbook.pdf`).
+5. **Year 9: The Great War: Western Front & Aftermath (`great_war_part2`):**
+   - **Status: 🟩 GREEN (100% GOLD & COMPLETED).** Upgraded to Universal KS3 20-page declarative workbook engine (`render_great_war_part2_twopage_workbook.cjs`), Capstone Evaluation Spread, 4-Card Living Chronology, 14-year-old friendly historiographical phrasing, and verified with 0px overflow across all 20 pages.
+6. **Edexcel Paper 2: Early Elizabethan England (`eee`):**
+   - **Status: 🟩 GREEN (100% GOLD & COMPLETED).** Consolidated from fragmented sub-units into 3 unified 16-page double-page spread booklets (`pupil_workbook_KT1.html`, `KT2`, `KT3`), matching the flagship `cme_new` specification with 100% AO1/AO2 factual recall architecture (Q1 Features, Q2 Explain Why, Q3 Evaluative Essay), 0 sources/interpretations, Grade 9 masterclass, synoptic exam challenges, and verified 0px overflow across all 48 pages.
 
 ---
 
@@ -44,11 +48,11 @@
 | `water_and_sanitation` | Year 7 | Water and Sanitation Through Time | 🟨 **AMBER** (Partial 4-Act Narrative) | 🟥 **RED** (Legacy 4-Page Layout) | 🔒 **PROTECTED / FROZEN** (Printed in pupils' hands) | 🛡️ **CLASSROOM PROTECTED:** Frozen mid-term; staged in `data_v2_4act.js` & branch `feat/4act-v2-reprint` for reprint. |
 | `early_modern_world` | Year 8 | Early Modern World & Global Encounters | 🟩 **GREEN** (8 Enquiries 🌟 GOLD) | 🟩 **GREEN** (20-Page Declarative Master) | Production Ready (Term 2) / V18 Fixed | **COMPLETE:** Master Publisher Textbook and Universal Engine Workbook compiled with 0px overflow and synced to Google Drive. |
 | `great_war` | Year 9 | Causes of the Great War (1870–1914) | 🟨 **AMBER** (Narrative Complete) | 🟨 **AMBER** (Legacy Mastery Standard) | 🔒 **PROTECTED / FROZEN** (Printed in pupils' hands) | 🛡️ **CLASSROOM PROTECTED:** Frozen mid-term; staged in `data_v2_4act.js` & branch `feat/4act-v2-reprint` for reprint. |
-| `great_war_part2` | Year 9 | The Great War: Western Front & Aftermath | 🟩 **GREEN** (9 Lessons 4-Act Complete) | 🟨 **AMBER** (Pending 2-Page Migration) | Upcoming Unit (Not Yet Printed) | 🟡 **PRIORITY #3:** Migrate to 2-page double-page spread booklet before printing. |
-| `medieval_england` | Year 7 | Medieval England & Power (1066–1485) | 🟩 **GREEN** (38 Lessons 4-Act Complete) | 🟨 **AMBER** (Pending 2-Page Migration) | Upcoming Unit (Not Yet Printed) | Migrate comprehension questions to 2-page evidence launch/writing spread. |
-| `eee` | GCSE | Early Elizabethan England, 1558–1588 | 🟨 **AMBER** (22 Lessons Authored) | 🟨 **AMBER** (Split in 3 Booklets) | Scheduled for GCSE Term 2 | 🚨 **PRIORITY #1:** Consolidate to single 36-page master volume & 16-page double-page booklets. |
+| `great_war_part2` | Year 9 | The Great War: Western Front & Aftermath | 🟩 **GREEN** (7 In-Depth Enquiries 🌟 GOLD) | 🟩 **GREEN** (20-Page Declarative Master) | Production Ready (Term 2) | **COMPLETE:** 20-page Universal Engine workbook with Capstone spread verified 0px overflow. |
+| `medieval_england` | Year 7 | Medieval England & Power (1066–1485) | 🟩 **GREEN** (38 Lessons 4-Act Complete) | 🟨 **AMBER** (Pending 2-Page Migration) | Upcoming Unit (Not Yet Printed) | 🟡 **PRIORITY #1 (KS3):** Migrate comprehension questions to 20-page declarative double-page spread. |
+| `eee` | GCSE | Early Elizabethan England, 1558–1588 | 🟩 **GREEN** (12 Enquiries across KT1–3 🌟 GOLD) | 🟩 **GREEN** (3x 16-Page Double-Page Booklets) | Production Ready / Active | **COMPLETE:** 3 unified 16-page double-page spread booklets (KT1, KT2, KT3) verified 0px overflow. |
 | `usa` | GCSE | The USA, 1954–75: Conflict at Home & Abroad | 🟨 **AMBER** (Core Specification Complete) | 🟩 **GREEN** (16 Spreads, 4-4-4-4 Matrix) | Production Ready / Active | Master 3-pillar volumes compiled. Ongoing exam coaching. |
-| `weimar_nazi_germany` | GCSE | Weimar and Nazi Germany, 1918–1939 | 🟨 **AMBER** (24 Lessons Authored) | 🟥 **RED** (Split in 4 Separate Booklets) | Scheduled for GCSE Year 11 | 🟡 **PRIORITY #2:** Scheduled for 16-page double-page spread and 4-4-4-4 visual guide conversion. |
+| `weimar_nazi_germany` | GCSE | Weimar and Nazi Germany, 1918–1939 | 🟨 **AMBER** (24 Lessons Authored) | 🟥 **RED** (Split in 4 Separate Booklets) | Scheduled for GCSE Year 11 | 🚨 **PRIORITY #2 (GCSE):** Author 16-spread 4-4-4-4 Visual Revision Guide & 16-page double-page spread booklets. |
 | `the_shoah` | Year 9 | The Shoah (Holocaust Education) | 🟥 **RED** (Core Text Drafted) | 🟥 **RED** (Legacy Standalone Format) | Queued for Year 9 Term 2/3 | Scheduled for 4-Act refactoring. |
 | `cold_war` | Year 9 | The Cold War (1945–1991) | 🟥 **RED** (Prose Drafted) | 🟥 **RED** (Legacy Standalone Format) | Queued for Year 9 Term 3 | Scheduled for 4-Act refactoring. |
 | `post_war_britain` | Year 9 | Rights, Protest, and Post-War Britain | 🟥 **RED** (Prose Drafted) | 🟥 **RED** (Legacy Standalone Format) | Queued for Year 9 Term 3 | Scheduled for 4-Act refactoring. |
@@ -58,8 +62,8 @@
 ---
 
 ## ⚡ Immediate Next Steps & Action Plan
-1. **Next GCSE Rollout (Priority #1):** Consolidate Early Elizabethan England (`eee`) from 3 split booklets into the standardized 16-page double-page spread architecture per Key Topic.
-2. **Next Year 11 Rollout (Priority #2):** Author the 16-spread 4-4-4-4 Visual Revision Guide and 16-page booklets for *Weimar and Nazi Germany* (`weimar_nazi_germany`).
-3. **Next KS3 Rollout (Priority #3):** Migrate *The Great War: Part 2* (`great_war_part2`) to the 2-page double-page spread workbook format before printing.
-4. **Reprographics Shield Guarantee:** Ensure `scripts/sync_unit.cjs` and PDF generators strictly preserve the active classroom booklets for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Great War.
-5. **Per-Turn Agent Check:** Every future agent turn will inspect this document and prompt the user on the next priority item.
+1. **Next GCSE Rollout (Priority #1):** Author the 16-spread (36-page) 4-4-4-4 Visual Revision Guide and 16-page double-page spread booklets for *Weimar and Nazi Germany* (`weimar_nazi_germany`).
+2. **Next KS3 Rollout (Priority #2):** Migrate *Medieval England & Power* (`medieval_england`) into the 20-page double-page spread Universal KS3 Workbook architecture.
+3. **Reprographics Shield Guarantee:** Ensure `scripts/sync_unit.cjs` and PDF generators strictly preserve the active classroom booklets for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Great War.
+4. **Per-Turn Agent Check:** Every future agent turn will inspect this document and prompt the user on the next priority item.
+

@@ -161,6 +161,13 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'eee') {
+        console.log(`\n📚 Compiling 16-page double-page workbooks for [eee]...`);
+        execSync(`node scripts/render_eee_twopage_workbook.cjs all`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);
