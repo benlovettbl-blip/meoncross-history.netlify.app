@@ -13,7 +13,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 const { renderKs3BackCover, generateQrSvg } = require('../components/render_standard_cover.cjs');
-const { getThematicStrandsForUnit } = require('../../src/curriculum_strands.js');
+const { getThematicStrandsForUnit } = require('../../src/curriculum_strands.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..', '..');
 
