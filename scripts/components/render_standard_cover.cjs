@@ -427,6 +427,7 @@ function renderKs3BackCover({
   qrLessons = [],
   footerQuip = '',
   totalPageCount = 20,
+  pageHeight = '256mm',
   renderFooterStrip = null,
 }) {
   const qrColumnCount = qrLessons.length > 6 ? 8 : qrLessons.length || 6;
@@ -434,48 +435,53 @@ function renderKs3BackCover({
   const qrCardsHtml = qrLessons
     .map((qrItem, idx) => {
       const qrSvg = generateQrSvg(qrItem.url);
+      const subLabelHtml = qrItem.subLabel
+        ? `<div style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 600; color: #475569; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; margin-top: -1px; margin-bottom: 1px;">${qrItem.subLabel}</div>`
+        : '';
       return `
         <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-width: 0;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #0f172a; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
             ${qrItem.label || `L${idx + 1}`}
           </div>
-          <div style="width: 16mm; height: 16mm; margin: 1px auto;">
+          ${subLabelHtml}
+          <div style="width: 15mm; height: 15mm; margin: 1px auto;">
             ${qrSvg}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #1e3a8a; line-height: 1;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 700; color: #1e3a8a; line-height: 1;">
             Scan to Quiz
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f172a; margin-top: 1px; white-space: nowrap;">
-            [ &nbsp; <strong>/ 20</strong> ]
+            [ &nbsp; <strong>/ ${qrItem.questionCount || 20}</strong> ]
           </div>
         </div>`;
     })
     .join('\n');
 
+  const padY = lessons.length <= 6 ? '3.5px' : '2.8px';
   const lessonRowsHtml = lessons
     .map((l, idx) => {
       const isEven = idx % 2 === 1;
       return `
-        <tr style="border-bottom: 1px solid #cbd5e1; background: ${isEven ? '#f8fafc' : '#ffffff'}; font-size: 6.9pt;">
-          <td style="padding: 2.2px 3px; border-right: 1px solid #94a3b8; text-align: center; font-weight: 800; color: #1e3a8a;">
+        <tr style="border-bottom: 1px solid #cbd5e1; background: ${isEven ? '#f8fafc' : '#ffffff'}; font-size: 7.6pt;">
+          <td style="padding: ${padY} 4px; border-right: 1px solid #94a3b8; text-align: center; font-weight: 800; color: #1e3a8a; font-size: 7.8pt;">
             L${l.num || idx + 1}
           </td>
-          <td style="padding: 2.2px 5px; border-right: 1px solid #94a3b8; font-weight: 600; line-height: 1.15; color: #0f172a;">
+          <td style="padding: ${padY} 6px; border-right: 1px solid #94a3b8; font-weight: 700; line-height: 1.2; color: #0f172a; font-size: 7.8pt;">
             ${l.title || `Enquiry ${idx + 1}`}
           </td>
-          <td style="padding: 2.2px 4px; border-right: 1px solid #94a3b8; text-align: center; color: #475569; font-size: 6.6pt;">
+          <td style="padding: ${padY} 4px; border-right: 1px solid #94a3b8; text-align: center; color: #334155; font-size: 7.3pt; font-weight: 600;">
             ${l.skill || 'Analysis'}
           </td>
-          <td style="padding: 2.2px 3px; border-right: 1px solid #94a3b8; text-align: center; font-weight: 700; color: #1e3a8a;">
-            [ &nbsp; / 5 ]
+          <td style="padding: ${padY} 4px; border-right: 1px solid #94a3b8; text-align: center; font-weight: 800; color: #1e3a8a; font-size: 8.0pt; white-space: nowrap;">
+            [ &nbsp;&nbsp; <strong>/ 5</strong> ]
           </td>
-          <td style="padding: 2.2px 3px; border-right: 1px solid #94a3b8; text-align: center; font-weight: 700;">
+          <td style="padding: ${padY} 4px; border-right: 1px solid #94a3b8; text-align: center; font-weight: 800; font-size: 8.0pt; white-space: nowrap;">
             [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
           </td>
-          <td style="padding: 2.2px 3px; border-right: 1px solid #94a3b8; text-align: center; font-size: 6.5pt; color: #64748b;">
+          <td style="padding: ${padY} 4px; border-right: 1px solid #94a3b8; text-align: center; font-size: 7.2pt; color: #475569; font-weight: 600; white-space: nowrap;">
             1 &bull; 2 &bull; 3 &bull; 4 &bull; 5
           </td>
-          <td style="padding: 2.2px 4px; font-size: 6.6pt; color: #334155;">
+          <td style="padding: ${padY} 6px; font-size: 7.2pt; color: #334155;">
             &nbsp;
           </td>
         </tr>`;
@@ -494,7 +500,7 @@ function renderKs3BackCover({
   <!-- ====================================================================
        PAGE ${totalPageCount}: BACK COVER (KS3 Assessment Record & Digital Quizzing Hub)
        ==================================================================== -->
-  <div class="page page-container verso-page" id="page-${totalPageCount}" style="padding: 10px 14px; display: flex; flex-direction: column; justify-content: space-between; height: 256mm; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; box-sizing: border-box;">
+  <div class="page page-container verso-page" id="page-${totalPageCount}" style="padding: 10px 14px; display: flex; flex-direction: column; justify-content: space-between; height: ${pageHeight}; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; box-sizing: border-box;">
     
     <!-- Top Branding Strip -->
     <div style="border-bottom: 2px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
@@ -507,40 +513,40 @@ function renderKs3BackCover({
       </div>
     </div>
 
-    <!-- Header & Target Grade Strip -->
-    <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 3px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-      <div style="display: flex; align-items: baseline; gap: 8px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
-        <span style="border-bottom: 1.2px solid #000; width: 130px; display: inline-block;"></span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; margin-left: 6px;">Class:</span>
-        <span style="border-bottom: 1.2px solid #000; width: 55px; display: inline-block;"></span>
+    <!-- Pupil Name, Class & Target Level (Open & Spacious for Large Handwriting - No Restrictive Box) -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 4px 2px 5px 2px; margin-bottom: 3px;">
+      <div style="display: flex; align-items: baseline; flex: 2; margin-right: 20px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; margin-right: 6px; white-space: nowrap;">Pupil Name:</strong>
+        <span style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 16px; display: inline-block;"></span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <div style="display: flex; align-items: center; gap: 4px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">Target Level:</span>
-          <span style="border: 1.2px solid #000; border-radius: 2px; padding: 1px 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; min-width: 55px; text-align: center;">&nbsp;</span>
-        </div>
+      <div style="display: flex; align-items: baseline; flex: 1; margin-right: 20px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; margin-right: 6px; white-space: nowrap;">Class:</strong>
+        <span style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 16px; display: inline-block;"></span>
+      </div>
+      <div style="display: flex; align-items: baseline; width: 140px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; margin-right: 6px; white-space: nowrap;">Target Level:</strong>
+        <span style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 16px; display: inline-block;"></span>
       </div>
     </div>
 
     <!-- KS3 Attainment Criteria & Effort Scale Box -->
-    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.15; margin-bottom: 3px; border: 1.2px solid #0f172a;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.2; margin-bottom: 3px; border: 1.2px solid #0f172a;">
       <tbody>
         <tr style="background: #1e3a8a; color: #fff;">
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; font-weight: 800; width: 11%; text-transform: uppercase;">KS3 Pathway</td>
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; width: 17.8%; background: #f8fafc; color: #0f172a;"><strong>Emerging (1–2):</strong> Isolated facts; basic descriptive recall.</td>
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; width: 17.8%; background: #ffffff; color: #0f172a;"><strong>Developing (3):</strong> Identifies causes &amp; features with simple explanation.</td>
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; width: 17.8%; background: #f8fafc; color: #0f172a;"><strong>Secure (4–5):</strong> Structured PEEL arguments with precise facts.</td>
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; width: 17.8%; background: #ffffff; color: #0f172a;"><strong>Advanced (6–7):</strong> Evaluates competing causes; nuanced explanation.</td>
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; width: 17.8%; background: #f8fafc; color: #0f172a;"><strong>Mastery (8–9):</strong> Sustained historical criteria &amp; historiographical verdicts.</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; font-weight: 800; width: 11%; text-transform: uppercase;">KS3 Pathway</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; width: 17.8%; background: #f8fafc; color: #0f172a;"><strong>Emerging (1–2):</strong> Isolated facts; basic descriptive recall.</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; width: 17.8%; background: #ffffff; color: #0f172a;"><strong>Developing (3):</strong> Identifies causes &amp; features with simple explanation.</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; width: 17.8%; background: #f8fafc; color: #0f172a;"><strong>Secure (4–5):</strong> Structured PEEL arguments with precise facts.</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; width: 17.8%; background: #ffffff; color: #0f172a;"><strong>Advanced (6–7):</strong> Evaluates competing causes; nuanced explanation.</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; width: 17.8%; background: #f8fafc; color: #0f172a;"><strong>Mastery (8–9):</strong> Sustained historical criteria &amp; historiographical verdicts.</td>
         </tr>
         <tr style="background: #0f172a; color: #fff;">
-          <td style="border: 1px solid #0f172a; padding: 2px 4px; font-weight: 800; text-transform: uppercase;">Effort Rubric</td>
-          <td style="border: 1px solid #0f172a; padding: 1.5px 4px; background: #fff; color: #111;"><strong>1 &bull; Concern:</strong> Incomplete work.</td>
-          <td style="border: 1px solid #0f172a; padding: 1.5px 4px; background: #fafafa; color: #111;"><strong>2 &bull; Inconsistent:</strong> Needs prompts.</td>
-          <td style="border: 1px solid #0f172a; padding: 1.5px 4px; background: #fff; color: #111;"><strong>3 &bull; Satisfactory:</strong> Meets baseline.</td>
-          <td style="border: 1px solid #0f172a; padding: 1.5px 4px; background: #fafafa; color: #111;"><strong>4 &bull; Good:</strong> Thoughtful scholar.</td>
-          <td style="border: 1px solid #0f172a; padding: 1.5px 4px; background: #fff; color: #111;"><strong>5 &bull; Exemplary:</strong> Exceptional pride.</td>
+          <td style="border: 1px solid #0f172a; padding: 2.5px 5px; font-weight: 800; text-transform: uppercase;">Effort Rubric</td>
+          <td style="border: 1px solid #0f172a; padding: 2px 5px; background: #fff; color: #111;"><strong>1 &bull; Concern:</strong> Incomplete work.</td>
+          <td style="border: 1px solid #0f172a; padding: 2px 5px; background: #fafafa; color: #111;"><strong>2 &bull; Inconsistent:</strong> Needs prompts.</td>
+          <td style="border: 1px solid #0f172a; padding: 2px 5px; background: #fff; color: #111;"><strong>3 &bull; Satisfactory:</strong> Meets baseline.</td>
+          <td style="border: 1px solid #0f172a; padding: 2px 5px; background: #fafafa; color: #111;"><strong>4 &bull; Good:</strong> Thoughtful scholar.</td>
+          <td style="border: 1px solid #0f172a; padding: 2px 5px; background: #fff; color: #111;"><strong>5 &bull; Exemplary:</strong> Exceptional pride.</td>
         </tr>
       </tbody>
     </table>
@@ -549,26 +555,26 @@ function renderKs3BackCover({
     <div style="border: 1.3px solid #0f172a; border-radius: 4px; overflow: hidden; margin-bottom: 3px;">
       <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
         <thead>
-          <tr style="background: #1e3a8a; color: #ffffff; font-size: 7.1pt;">
-            <th style="padding: 2.5px 4px; width: 22px; text-align: center; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">#</th>
-            <th style="padding: 2.5px 6px; text-align: left; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4); width: 38%;">Enquiry Title</th>
-            <th style="padding: 2.5px 4px; width: 68px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Historical Skill</th>
-            <th style="padding: 2.5px 4px; width: 50px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Do Now</th>
-            <th style="padding: 2.5px 4px; width: 65px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Task 4 Grade</th>
-            <th style="padding: 2.5px 4px; width: 58px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Effort</th>
-            <th style="padding: 2.5px 6px; text-align: left; font-weight: 900; text-transform: uppercase;">Teacher Feedback</th>
+          <tr style="background: #1e3a8a; color: #ffffff; font-size: 7.6pt;">
+            <th style="padding: 3.5px 4px; width: 24px; text-align: center; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">#</th>
+            <th style="padding: 3.5px 6px; text-align: left; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4); width: 38%;">Enquiry Title</th>
+            <th style="padding: 3.5px 4px; width: 72px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Historical Skill</th>
+            <th style="padding: 3.5px 4px; width: 54px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Do Now</th>
+            <th style="padding: 3.5px 4px; width: 70px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Task 4 Grade</th>
+            <th style="padding: 3.5px 4px; width: 62px; text-align: center; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4);">Effort</th>
+            <th style="padding: 3.5px 6px; text-align: left; font-weight: 900; text-transform: uppercase;">Teacher Feedback</th>
           </tr>
         </thead>
         <tbody>
           ${lessonRowsHtml}
-          <tr style="background: #e2e8f0; font-weight: 900; border-top: 1.5px solid #0f172a; font-size: 7.1pt;">
-            <td colspan="3" style="padding: 2.5px 6px; border-right: 1px solid #94a3b8; text-transform: uppercase; color: #0f172a;">
+          <tr style="background: #e2e8f0; font-weight: 900; border-top: 1.5px solid #0f172a; font-size: 7.6pt;">
+            <td colspan="3" style="padding: 3.5px 6px; border-right: 1px solid #94a3b8; text-transform: uppercase; color: #0f172a;">
               Unit Summative Outcome
             </td>
-            <td style="padding: 2.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff; color: #1e3a8a;">[ &nbsp; / 40 ]</td>
-            <td style="padding: 2.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</td>
-            <td style="padding: 2.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff;">[ 1 2 3 4 5 ]</td>
-            <td style="padding: 2.5px 6px; background: #ffffff; font-size: 6.8pt; color: #334155;">
+            <td style="padding: 3.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff; color: #1e3a8a; font-size: 8.2pt;">[ &nbsp; / ${lessons.length * 5} ]</td>
+            <td style="padding: 3.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff; font-size: 8.2pt;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</td>
+            <td style="padding: 3.5px 3px; border-right: 1px solid #94a3b8; text-align: center; background: #ffffff; font-size: 7.4pt;">[ 1 2 3 4 5 ]</td>
+            <td style="padding: 3.5px 6px; background: #ffffff; font-size: 7.2pt; color: #334155;">
               Signed: __________________________ &bull; Date: ___/___/2026
             </td>
           </tr>
@@ -589,15 +595,15 @@ function renderKs3BackCover({
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #1e3a8a; display: block; margin-bottom: 1px;">
             What Went Well (WWW):
           </strong>
-          <div class="task-line" style="height: 5.4mm;"></div>
-          <div class="task-line" style="height: 5.4mm;"></div>
+          <div class="task-line" style="height: 6.0mm;"></div>
+          <div class="task-line" style="height: 6.0mm;"></div>
         </div>
         <div>
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #b91c1c; display: block; margin-bottom: 1px;">
             Even Better If (EBI):
           </strong>
-          <div class="task-line" style="height: 5.4mm;"></div>
-          <div class="task-line" style="height: 5.4mm;"></div>
+          <div class="task-line" style="height: 6.0mm;"></div>
+          <div class="task-line" style="height: 6.0mm;"></div>
         </div>
       </div>
     </div>
@@ -606,7 +612,7 @@ function renderKs3BackCover({
     <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 3px 6px; background: #fdfbf7; margin-bottom: 2px;">
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f172a; padding-bottom: 1px; margin-bottom: 3px;">
         <strong style="font-family: 'Inter', sans-serif; font-size: 7.3pt; text-transform: uppercase; color: #0f172a;">
-          📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Self-Marking Quizzes (${qrLessons.length} Lessons &bull; ${qrLessons.length * 20} Questions)
+          📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Self-Marking Quizzes (${qrLessons.length} Lessons &bull; ${qrLessons.length * (qrLessons[0]?.questionCount || 20)} Questions)
         </strong>
         <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #475569;">Instant Recall Practice</span>
       </div>
@@ -615,14 +621,31 @@ function renderKs3BackCover({
       </div>
     </div>
 
-    <!-- Institutional Colophon -->
-    <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 2px; margin-top: 1px;" data-department-name="The History Department">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px;">
-        <span class="school-brand-target">The History Department</span> &bull; Curriculum Standard
+    <!-- Summer Assessment Revision Protocol: Cognitive Science & Retrieval Techniques -->
+    <div style="border: 1.3px solid #1e3a8a; border-radius: 4px; padding: 4px 8px; background: #f0fdf4; margin-bottom: 2px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #bbf7d0; padding-bottom: 2px; margin-bottom: 3px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #166534; letter-spacing: 0.5px;">
+          🎯 Summer Assessment Revision Protocol &bull; 4 Evidence-Based Retrieval Techniques
+        </strong>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #15803d; text-transform: uppercase;">Cognitive Science in Practice</span>
       </div>
-      <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b; line-height: 1.2;">
-        Key Stage 3 Historical Studies &bull; Academic Year 2025–2026 &bull; Independent Commercial Standard Edition<br>
-        <em>Preservation Notice: This workbook is an official pupil scholarship record. Retain for KS3 synoptic review and GCSE foundation study.</em>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-family: 'Inter', sans-serif;">
+        <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3px 5px;">
+          <strong style="font-size: 7.1pt; color: #166534; display: block; margin-bottom: 1px;">1. Spaced Flash Quizzing</strong>
+          <span style="font-size: 6.5pt; color: #334155; line-height: 1.22; display: block;">Scan each QR code weekly. Retest until you score 100% on factual recall before checking your workbook notes.</span>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3px 5px;">
+          <strong style="font-size: 7.1pt; color: #166534; display: block; margin-bottom: 1px;">2. Dual-Coding Timeline Walk</strong>
+          <span style="font-size: 6.5pt; color: #334155; line-height: 1.22; display: block;">Turn to Pages 2–3. Cover the written text and narrate the historical story aloud using only your sketchpad symbols.</span>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3px 5px;">
+          <strong style="font-size: 7.1pt; color: #166534; display: block; margin-bottom: 1px;">3. 5-Minute Brain Dumps</strong>
+          <span style="font-size: 6.5pt; color: #334155; line-height: 1.22; display: block;">Pick an enquiry question. Spend 5 uninterrupted minutes writing every name, date, and cause from memory.</span>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3px 5px;">
+          <strong style="font-size: 7.1pt; color: #166534; display: block; margin-bottom: 1px;">4. Causal Connective Drills</strong>
+          <span style="font-size: 6.5pt; color: #334155; line-height: 1.22; display: block;">Draft 3 PEEL sentences explaining <em>why</em> an event happened using: <em>Consequently... This directly resulted in...</em></span>
+        </div>
       </div>
     </div>
 

@@ -730,13 +730,13 @@ function buildEarlyModernWorldTwoPageWorkbook() {
     }
     .task-line {
       border-bottom: 1.2px solid #475569;
-      height: 7.0mm;
+      height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #475569;
-      height: 5.4mm;
+      height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
     }
@@ -1225,43 +1225,71 @@ function buildEarlyModernWorldTwoPageWorkbook() {
       </div>
 
       <!-- Task 3 Preparation Bridge Container (Expanded to absorb vertical space) -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 9px; background: #ffffff; margin-bottom: 3px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 8px; background: #ffffff; margin-bottom: 2px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 3px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
               ${cfg.bridgeTask.title}
             </strong>
-            <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; font-size: 6.8pt; padding: 1px 5px;">
-              ${cfg.bridgeTask.badge}
-            </span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.9pt; color: #334155; margin-bottom: 4px;">
-            ${cfg.bridgeTask.instruction}
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; margin-bottom: 4px;">
+            ${cfg.bridgeTask.instruction} <strong style="color: #1e3a8a;">Extract 3 key pieces of factual evidence from the lesson narrative into each column, then synthesise below:</strong>
           </div>
         </div>
 
-        <!-- Dual Evidence Columns (Side-by-Side) -->
+        <!-- Dual Evidence Columns (Side-by-Side Active Extraction with Ruled Writing Lines) -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
+          <!-- Column 1 -->
           <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #0369a1; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; text-transform: uppercase;">
               ${cfg.bridgeTask.col1Title}
             </strong>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; line-height: 1.32;">
-              ${cfg.bridgeTask.col1Prompts.map((p) => `<li style="margin-bottom: 2px;">${p}</li>`).join('')}
-            </ul>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0369a1;">Point 1:</strong>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #94a3b8;"></div>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #94a3b8;"></div>
+              </div>
+              <div>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0369a1;">Point 2:</strong>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #94a3b8;"></div>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #94a3b8;"></div>
+              </div>
+              <div>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0369a1;">Point 3:</strong>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #94a3b8;"></div>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #94a3b8;"></div>
+              </div>
+            </div>
           </div>
+
+          <!-- Column 2 -->
           <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 4px 6px; background: #fffaf0;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; text-transform: uppercase;">
               ${cfg.bridgeTask.col2Title}
             </strong>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; line-height: 1.32;">
-              ${cfg.bridgeTask.col2Prompts.map((p) => `<li style="margin-bottom: 2px;">${p}</li>`).join('')}
-            </ul>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #b91c1c;">Point 1:</strong>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #fca5a5;"></div>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #fca5a5;"></div>
+              </div>
+              <div>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #b91c1c;">Point 2:</strong>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #fca5a5;"></div>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #fca5a5;"></div>
+              </div>
+              <div>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #b91c1c;">Point 3:</strong>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #fca5a5;"></div>
+                <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #fca5a5;"></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Full-Width Synthesis & Disciplinary Argument Workspace -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 3px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 3px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #1e3a8a; text-transform: uppercase;">
               ✍️ Task 3 Synthesis &amp; Disciplinary Argument (Bridge to Task 4):
@@ -1270,12 +1298,13 @@ function buildEarlyModernWorldTwoPageWorkbook() {
               ${cfg.bridgeTask.synthesisPrompt || 'Synthesise both perspectives in 3–4 developed sentences using precise causal evidence:'}
             </span>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: space-around;">
-            <div class="task-line-dotted" style="height: 5.6mm;"></div>
-            <div class="task-line-dotted" style="height: 5.6mm;"></div>
-            <div class="task-line-dotted" style="height: 5.6mm;"></div>
-            <div class="task-line-dotted" style="height: 5.6mm;"></div>
-            <div class="task-line-dotted" style="height: 5.6mm;"></div>
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            <div class="task-line-dotted" style="height: 7.8mm;"></div>
+            <div class="task-line-dotted" style="height: 7.8mm;"></div>
+            <div class="task-line-dotted" style="height: 7.8mm;"></div>
+            <div class="task-line-dotted" style="height: 7.8mm;"></div>
+            <div class="task-line-dotted" style="height: 7.8mm;"></div>
+            <div class="task-line-dotted" style="height: 7.8mm;"></div>
           </div>
         </div>
 
@@ -1374,13 +1403,13 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (14 Lines at 7.0mm line-height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.0" style="width: 100%; margin-bottom: 3px;">
-          ${Array(14).fill('<div class="task-line" style="height: 7.0mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (14 Lines at 7.8mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.8" style="width: 100%; margin-bottom: 3px;">
+          ${Array(14).fill('<div class="task-line" style="height: 7.8mm;"></div>').join('')}
         </div>
       </div>
 
-      <!-- Teacher Grading & Assessment Footer (Utility-Specific Rubric) -->
+      <!-- Footer Section: Strictly Timeline Mission Box & Page Footer -->
       <div>
         <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
         <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
@@ -1395,18 +1424,6 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">
             Pages 2–3 &rarr;
           </span>
-        </div>
-
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; white-space: nowrap;">
-          <div style="display: flex; gap: 8px; align-items: center;">
-            <strong>Teacher Assessment:</strong>
-            <span>Content/Inference: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-            <span>Provenance/NOP: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-            <span>Context: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-          </div>
-          <div style="font-weight: 700; color: #1e3a8a;">
-            Utility Grade: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
-          </div>
         </div>
 
         <!-- Right Page Footer -->
@@ -1491,13 +1508,13 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (14 Lines at 7.0mm Line Height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.0" style="width: 100%; margin-bottom: 3px;">
-          ${Array(14).fill('<div class="task-line" style="height: 7.0mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (14 Lines at 7.8mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.8" style="width: 100%; margin-bottom: 3px;">
+          ${Array(14).fill('<div class="task-line" style="height: 7.8mm;"></div>').join('')}
         </div>
       </div>
 
-      <!-- Teacher Grading & Assessment Footer (Interpretations Rubric) -->
+      <!-- Footer Section: Strictly Timeline Mission Box & Page Footer -->
       <div>
         <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
         <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
@@ -1512,18 +1529,6 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">
             Pages 2–3 &rarr;
           </span>
-        </div>
-
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; white-space: nowrap;">
-          <div style="display: flex; gap: 8px; align-items: center;">
-            <strong>Teacher Assessment:</strong>
-            <span>Comprehension: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-            <span>Own Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-            <span>Evaluation: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-          </div>
-          <div style="font-weight: 700; color: #b91c1c;">
-            Debate Grade: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
-          </div>
         </div>
 
         <!-- Right Page Footer -->
@@ -1582,13 +1587,13 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           <span><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluative conclusion.</span>
         </div>
 
-        <!-- Ruled Writing Lines (18 Lines at 7.0mm Line Height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.0" style="width: 100%; margin-bottom: 3px;">
-          ${Array(18).fill('<div class="task-line" style="height: 7.0mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (17 Lines at 7.8mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.8" style="width: 100%; margin-bottom: 3px;">
+          ${Array(17).fill('<div class="task-line" style="height: 7.8mm;"></div>').join('')}
         </div>
       </div>
 
-      <!-- Teacher Grading & Assessment Footer -->
+      <!-- Footer Section: Strictly Timeline Mission Box & Page Footer -->
       <div>
         <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
         <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
@@ -1603,18 +1608,6 @@ function buildEarlyModernWorldTwoPageWorkbook() {
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; white-space: nowrap; margin-left: 8px;">
             Pages 2–3 &rarr;
           </span>
-        </div>
-
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; white-space: nowrap;">
-          <div style="display: flex; gap: 8px; align-items: center;">
-            <strong>Teacher Assessment:</strong>
-            <span>Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ]</span>
-            <span>Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-            <span>Analysis: [ 1 &bull; 2 &bull; 3 &bull; 4 ]</span>
-          </div>
-          <div style="font-weight: 700; color: #1e3a8a;">
-            PEEL: [ P ] &bull; [ E ] &bull; [ E ] &bull; [ L ]
-          </div>
         </div>
 
         <!-- Right Page Footer -->
@@ -1660,11 +1653,24 @@ function buildEarlyModernWorldTwoPageWorkbook() {
                       ? 'Brookes plan & Middle Passage'
                       : 'Queen Nanny & Maroon resistance',
     })),
-    qrLessons: lessonConfigs.map((cfg, i) => ({
-      label: `L${i + 1}`,
-      title: `Lesson ${i + 1}`,
-      url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=early_modern_world&lesson=${i + 1}`,
-    })),
+    qrLessons: lessonConfigs.map((cfg, i) => {
+      const subLabels = [
+        'Ottoman Power',
+        'Early Empire',
+        'Mughal India',
+        'Jacobean State',
+        'Civil War',
+        'Glorious Rev.',
+        'Atlantic Slave',
+        'Resistance',
+      ];
+      return {
+        label: `L${i + 1}`,
+        subLabel: subLabels[i] || `Lesson ${i + 1}`,
+        title: `Lesson ${i + 1}`,
+        url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=early_modern_world&lesson=${i + 1}`,
+      };
+    }),
     totalPageCount: 20,
     footerQuip: 'Permanent Scholarship Record • Retain for Synoptic Revision & GCSE Foundation',
   });
@@ -1674,12 +1680,16 @@ function buildEarlyModernWorldTwoPageWorkbook() {
 </html>
 `;
 
-  return html;
+  const { buildKs3WorkbookHtml } = require('./sandbox/ks3_workbook_engine.cjs');
+  const { getEarlyModernConfig } = require('./early_modern_world_config.cjs');
+  return buildKs3WorkbookHtml(getEarlyModernConfig(lessonConfigs));
 }
 
 async function renderEarlyModernWorldWorkbook() {
   console.log('Rendering Year 8 Early Modern World Two-Page Spread Workbook (20 Pages)...');
-  const html = buildEarlyModernWorldTwoPageWorkbook();
+  const { buildKs3WorkbookHtml } = require('./sandbox/ks3_workbook_engine.cjs');
+  const { getEarlyModernConfig } = require('./early_modern_world_config.cjs');
+  const html = buildKs3WorkbookHtml(getEarlyModernConfig(lessonConfigs));
 
   const outHtmlPath1 = path.join(
     ROOT_DIR,
@@ -1690,23 +1700,49 @@ async function renderEarlyModernWorldWorkbook() {
   );
   const outHtmlPath2 = path.join(ROOT_DIR, 'units', 'early_modern_world', 'pupil_workbook.html');
   const outPdfPath = path.join(ROOT_DIR, 'public', 'pdfs', 'early_modern_world_pupil_workbook.pdf');
+  const outPdfPathV17 = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    'early_modern_world_pupil_workbook_FINAL_V17.pdf',
+  );
+  const outPdfPathDist = path.join(
+    ROOT_DIR,
+    'dist',
+    'pdfs',
+    'early_modern_world_pupil_workbook_FINAL_V17.pdf',
+  );
 
   fs.mkdirSync(path.dirname(outHtmlPath1), { recursive: true });
   fs.mkdirSync(path.dirname(outHtmlPath2), { recursive: true });
   fs.mkdirSync(path.dirname(outPdfPath), { recursive: true });
+  fs.mkdirSync(path.dirname(outPdfPathDist), { recursive: true });
 
   fs.writeFileSync(outHtmlPath1, html, 'utf8');
   fs.writeFileSync(outHtmlPath2, html, 'utf8');
-  console.log(`✅ Saved HTML to ${outHtmlPath1} and ${outHtmlPath2}`);
 
-  console.log('Compiling PDF via Puppeteer...');
+  console.log('Compiling PDF via Puppeteer with auto-line measurement...');
   const browser = await puppeteer.launch({
     headless: 'new',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
   const page = await browser.newPage();
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
   await page.setContent(html, { waitUntil: 'networkidle0' });
+
+  // Evaluate lines in-browser so all writing lines are dynamically populated
+  await page.evaluate(() => {
+    if (typeof autoFillWritingLines === 'function') {
+      autoFillWritingLines();
+    }
+  });
+
+  // Save the populated HTML back to file so static HTML viewers have pre-rendered lines
+  const populatedHtml = await page.content();
+  fs.writeFileSync(outHtmlPath1, populatedHtml, 'utf8');
+  fs.writeFileSync(outHtmlPath2, populatedHtml, 'utf8');
+  console.log(`✅ Saved pre-populated HTML to ${outHtmlPath1} and ${outHtmlPath2}`);
 
   await page.pdf({
     path: outPdfPath,
@@ -1720,8 +1756,13 @@ async function renderEarlyModernWorldWorkbook() {
     },
   });
 
+  // Also update V17 and dist copies so any legacy/alternate links match
+  fs.copyFileSync(outPdfPath, outPdfPathV17);
+  fs.copyFileSync(outPdfPath, outPdfPathDist);
+
   await browser.close();
   console.log(`✅ Compiled 20-Page PDF to ${outPdfPath}`);
+  console.log(`✅ Synchronized PDF to ${outPdfPathV17} and ${outPdfPathDist}`);
 }
 
 if (require.main === module) {
@@ -1734,4 +1775,5 @@ if (require.main === module) {
 module.exports = {
   buildEarlyModernWorldTwoPageWorkbook,
   renderEarlyModernWorldWorkbook,
+  lessonConfigs,
 };
