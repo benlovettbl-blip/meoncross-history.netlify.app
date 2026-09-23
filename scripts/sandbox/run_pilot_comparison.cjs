@@ -362,9 +362,15 @@ async function runPilot() {
         gDriveFolder,
         'early_modern_world_pupil_workbook_FINAL_V17.pdf',
       );
+      const gDriveFile3 = path.join(
+        gDriveFolder,
+        'Early Modern World Pupil Workbook (V18 - Ruled Lines Fixed).pdf',
+      );
       fs.copyFileSync(pdfPath, gDriveFile1);
       fs.copyFileSync(pdfPath, gDriveFile2);
+      fs.copyFileSync(pdfPath, gDriveFile3);
       console.log(`✅ Synchronized to Google Drive Department File: ${gDriveFile1}`);
+      console.log(`✅ Synchronized to Google Drive Department File: ${gDriveFile3}`);
     } catch (gErr) {
       console.warn(
         `⚠️ Warning: Could not write directly to Google Drive (file may be open):`,

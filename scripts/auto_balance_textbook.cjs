@@ -211,7 +211,7 @@ async function auditTextbook(config, browser) {
         .filter((src) => src && !src.includes('logo') && !src.includes('seal'));
 
       // Source exercises only exist on left-hand (verso) pages
-      const isLeftPage = pageNum % 2 === 0 && pageNum > 1 && pageNum < 14;
+      const isLeftPage = pageNum % 2 === 0 && pageNum > 1 && pageNum < pageEls.length;
       const sourceBoxes = isLeftPage ? Array.from(p.querySelectorAll('.archival-source-box')) : [];
       const missingContextCount = sourceBoxes.filter(
         (box) =>

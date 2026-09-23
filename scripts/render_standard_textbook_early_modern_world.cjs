@@ -101,7 +101,7 @@ const EARLY_MODERN_COMPONENT_BANK = {
         'Transported Ottoman warships overland on greased logs into the Golden Horn to bypass the Byzantine harbour chain barrier.',
         'Transformed Constantinople into the imperial capital Istanbul and established commercial dominance over the Eastern Mediterranean trade nexus.',
       ],
-      image: getBase64Image('/images/silk_road.jpg'),
+      image: getBase64Image('/images/mehmed_ii.jpg'),
     },
     conceptSpotlight: `
       <div class="concept-spotlight-box">
@@ -157,7 +157,7 @@ const EARLY_MODERN_COMPONENT_BANK = {
         'Knighted by Queen Elizabeth I aboard his flagship *The Golden Hind* at Deptford in 1581, defying Spanish demands for his execution as a pirate.',
         'Executed the daring fire-ship attack against the Spanish Armada at Gravelines in 1588, scattering the Spanish crescent formation.',
       ],
-      image: getBase64Image('/images/armada_portrait.jpg'),
+      image: getBase64Image('/images/sir_francis_drake.jpg'),
     },
     conceptSpotlight: `
       <div class="concept-spotlight-box">
@@ -270,7 +270,7 @@ const EARLY_MODERN_COMPONENT_BANK = {
         'Conspired to place King James’s nine-year-old daughter Princess Elizabeth on the throne as a puppet Catholic queen following the explosion.',
         'Fled London following Fawkes’s arrest, making a defiant final armed stand with fellow conspirators at Holbeche House in Staffordshire, where he was shot dead in battle.',
       ],
-      image: getBase64Image('/images/gunpowder_conspirators.jpg'),
+      image: getBase64Image('/images/catesby.jpg'),
     },
     conceptSpotlight: `
       <div class="concept-spotlight-box">
@@ -428,17 +428,17 @@ const EARLY_MODERN_COMPONENT_BANK = {
   // Page 15: Lesson 7 (Mechanics of the Transatlantic Slave Trade)
   p15: {
     keyFigure: {
-      name: 'Alexander Falconbridge',
-      lifespan: 'c. 1760–1792',
-      role: 'British Slave Ship Surgeon & Abolitionist Whistleblower',
+      name: 'Thomas Clarkson & Alexander Falconbridge',
+      lifespan: '1760–1846 / c. 1760–1792',
+      role: 'Leading British Abolitionist Organizers & Eyewitness Authors',
       significance:
-        'Served on four slave voyages before publishing a graphic 1788 exposé of the atrocities committed aboard British slave ships during the Middle Passage.',
+        "Clarkson gathered forensic instruments (manacles, thumbscrews) across British ports, publishing surgeon Falconbridge's devastating 1788 eyewitness testimony on the Middle Passage.",
       actions: [
-        'Documented the systematic overcrowding, shackling, forced dancing, and dysentery epidemics in the suffocating holds of Liverpool and Bristol vessels.',
-        'Testified before the Privy Council and House of Commons in 1789, providing crucial primary forensic evidence to William Wilberforce and Thomas Clarkson.',
-        'Assisted in founding the free settlement of Freetown in Sierra Leone for liberated Africans and Black Loyalists.',
+        'Clarkson traveled 35,000 miles riding across Britain collecting testimonies from sailors, surgeons, and African survivors.',
+        'Falconbridge documented the systematic overcrowding, shackling, forced dancing, and lethal dysentery in ship holds.',
+        'Testified before the Privy Council in 1789, providing the empirical foundation for parliamentary abolition debates.',
       ],
-      image: getBase64Image('/images/brookes.jpg'),
+      image: getBase64Image('/images/thomas_clarkson.jpg'),
     },
     conceptSpotlight: `
       <div class="concept-spotlight-box">
@@ -494,7 +494,7 @@ const EARLY_MODERN_COMPONENT_BANK = {
         'Employed expert camouflage, ambush tactics, and acoustic communication via cow-horn (*abeng*) to defeat superior British regular regiments.',
         'Secured the 1739 British-Maroon Treaty granting the Windward Maroons 500 acres of autonomous land and permanent freedom from enslavement.',
       ],
-      image: getBase64Image('/images/olaudah_equiano.jpg'),
+      image: getBase64Image('/images/queen_nanny.jpg'),
     },
     conceptSpotlight: `
       <div class="concept-spotlight-box">
@@ -550,7 +550,7 @@ const EARLY_MODERN_COMPONENT_BANK = {
         'Appointed Master of the Royal Mint in 1699, aggressively prosecuting counterfeiters and reforming English gold and silver coinage.',
         'Served as President of the Royal Society for twenty-four years, establishing London as Europe’s capital of scientific experimentation and technological enquiry.',
       ],
-      image: getBase64Image('/images/early_mod_l5_banner.jpg'),
+      image: getBase64Image('/images/isaac_newton.jpg'),
     },
     conceptSpotlight: `
       <div class="concept-spotlight-box">
@@ -760,6 +760,244 @@ const EARLY_MODERN_LEFT_VOCAB = {
   ],
 };
 
+// Rich Disciplinary Primary Source Bank for Left-Hand Pages (P2, P4, P6, P8, P10, P12, P14, P16, P18)
+const EARLY_MODERN_LEFT_SOURCES = {
+  p2: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Historical Primary Cartography',
+      title: 'The Silk Roads and Maritime Eurasian Trade Networks (c. 1450)',
+      image: getBase64Image('/images/silk_road.jpg'),
+      context:
+        'Before European ocean navigation, Eurasian commerce flowed along ancient Silk Roads connecting China, India, and Persia to Mediterranean ports. Goods passed through dozens of middlemen and were heavily taxed by Islamic empires, making Asian luxuries rare and expensive in Europe.',
+      hingeQuestion:
+        'Why did Ottoman control of eastern trade terminals force Western European kingdoms to take terrifying risks on the Atlantic Ocean?',
+      shelfmark: 'Bibliothèque nationale de France &bull; Cartographic Department',
+      footer: 'Department Cartographic Collection &bull; Eurasian Trade Archive',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Contemporary Majorcan Manuscript',
+      title: 'Abraham Cresques: The Catalan Atlas (1375) — Mansa Musa of Mali',
+      image: getBase64Image('/images/mansa_musa_catalan.jpg'),
+      context:
+        'Created by Jewish cartographer Abraham Cresques, this masterpiece depicts West African Emperor Mansa Musa of Mali holding a massive golden orb. The Latin inscription describes him as "the richest and most noble king in all this region, by reason of the abundance of gold which is found in his lands."',
+      hingeQuestion:
+        "How does Cresques' depiction of Mansa Musa challenge Eurocentric myths about African civilization before colonization?",
+      shelfmark: 'Bibliothèque nationale de France, Paris &bull; MS Espagnol 30',
+      footer: 'Western Islamic & African Imperial Collection',
+    },
+  },
+  p4: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Diplomatic Imperial Treaty Map',
+      title: 'The Treaty of Tordesillas Papal Meridian Line (1494)',
+      image: getBase64Image('/images/tordesillas_map.png'),
+      context:
+        'Brokered by Pope Alexander VI in 1494, the Treaty of Tordesillas divided the non-Christian world between Spain and Portugal along a meridian 370 leagues west of Cape Verde, granting Spain the Americas and Portugal Brazil, Africa, and the Indian Ocean trade.',
+      hingeQuestion:
+        'Why did Protestant monarchs like Elizabeth I view the papal partition of the world as illegitimate and an act of war?',
+      shelfmark: 'General Archive of the Indies, Seville &bull; Patronato 1-1-1',
+      footer: 'Iberian Maritime & Imperial Treaties Collection',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Contemporary Propaganda Portrait',
+      title: 'George Gower: The Armada Portrait of Elizabeth I (1588)',
+      image: getBase64Image('/images/armada_portrait.jpg'),
+      context:
+        'Painted to commemorate the defeat of the Spanish Armada in 1588, Elizabeth I rests her right hand authoritatively upon the globe, her fingers covering North America. Behind her right shoulder, the English fleet sails out; behind her left, the Catholic Spanish Armada is wrecked on the rocks.',
+      hingeQuestion:
+        "How does Elizabeth's posture over the globe signal England's emerging imperial ambitions against Catholic Spain?",
+      shelfmark: 'National Maritime Museum, Greenwich &bull; BHC2678',
+      footer: 'Tudor Royal Portrait Collection',
+    },
+  },
+  p6: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Archaeological Military Survey',
+      title: 'Archaeological Plan of James Fort, Virginia (1607)',
+      image: getBase64Image('/images/jamestown_fort.jpg'),
+      context:
+        'England’s first permanent North American settlement was built as a triangular palisade fort armed with artillery at each corner on the James River. The settlers faced disease, drought, and conflict with the Powhatan confederacy, barely surviving until commercial tobacco cultivation brought stability.',
+      hingeQuestion:
+        'How does the military design of James Fort prove that English colonization relied on armed defense rather than peaceful trade?',
+      shelfmark: 'Virginia Historical Society Archives',
+      footer: 'Colonial Jamestown Archaeological Record',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Contemporary Diplomatic Court Painting',
+      title: 'Sir Thomas Roe at the Court of Mughal Emperor Jahangir (1615–1619)',
+      image: getBase64Image('/images/sir_thomas_roe.jpg'),
+      context:
+        'Dispatched by King James I as royal ambassador, Sir Thomas Roe spent four years at the court of Emperor Jahangir seeking trade rights for the East India Company. In 1615, the Mughal Empire had a population of 150 million and 25% of global GDP, while England had barely 5 million souls.',
+      hingeQuestion:
+        'Why was the English East India Company treated as a humble petitioner rather than an imperial conqueror in 17th-century India?',
+      shelfmark: 'British Library &bull; India Office Records',
+      footer: 'East India Company Diplomatic Archive',
+    },
+  },
+  p8: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Contemporary Dutch Engraving',
+      title: 'Crispijn van de Passe: The Gunpowder Plot Conspirators (1605)',
+      image: getBase64Image('/images/gunpowder_conspirators.jpg'),
+      context:
+        "This 1605 print depicts Robert Catesby, Guy Fawkes, Thomas Percy, and fellow conspirators plotting in secret. Disillusioned by King James I's continuation of Elizabethan anti-Catholic penal laws, the conspirators smuggled thirty-six barrels of gunpowder beneath the House of Lords.",
+      hingeQuestion:
+        'Does this engraving present the conspirators as desperate religious martyrs or dangerous traitors to the state?',
+      shelfmark: 'National Portrait Gallery, London &bull; NPG D25492',
+      footer: 'Jacobean State Trials & Treason Archive',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Primary Holograph Manuscript',
+      title: 'The Anonymous Monteagle Letter (October 1605)',
+      image: getBase64Image('/images/monteagle_letter.jpeg'),
+      context:
+        'Delivered to Catholic peer Lord Monteagle warning him to "devise some excuse to shift of your attendance at this Parliament... for God and man hath concurred to punish the wickedness of this time", this anonymous letter enabled Robert Cecil\'s search party to catch Guy Fawkes on 4 November.',
+      hingeQuestion:
+        "Why do modern historians debate whether the Monteagle letter was a genuine tip-off or a setup by Cecil's spy network?",
+      shelfmark: 'The National Archives, Kew &bull; SP 14/216/2',
+      footer: 'State Papers Domestic &bull; Gunpowder Plot Records',
+    },
+  },
+  p10: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Contemporary Eyewitness Engraving',
+      title: 'Contemporary German Engraving: The Execution of Charles I (1649)',
+      image: getBase64Image('/images/charles_i_execution.jpg'),
+      context:
+        'On 30 January 1649, King Charles I was beheaded on a scaffold outside the Banqueting House in Whitehall before a stunned crowd. Condemned by Parliament\'s High Court of Justice as a "tyrant, traitor, murderer, and public enemy", his death ended the absolute Divine Right of Kings.',
+      hingeQuestion:
+        'How did the public execution of a crowned monarch destroy the concept of the Divine Right of Kings forever?',
+      shelfmark: 'British Museum &bull; Department of Prints & Drawings',
+      footer: 'Civil War & Regicide Collection &bull; 1649',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Official Commonwealth State Artifact',
+      title: 'Thomas Simon: The Great Seal of the Commonwealth of England (1651)',
+      image: getBase64Image('/images/great_seal_1651.png'),
+      context:
+        'Commissioned by the Rump Parliament, this official seal replaced the traditional royal head of the monarch with an aerial map of England and Ireland, and the House of Commons in session on the reverse, inscribed: "In the Third Year of Freedom by God\'s Blessing Restored."',
+      hingeQuestion:
+        'Why did the Commonwealth replace royal imagery with an image of Parliament in session on its official state seal?',
+      shelfmark: 'The National Archives, Kew &bull; Seal Collection',
+      footer: 'Parliamentary Republic State Papers &bull; 1651',
+    },
+  },
+  p12: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Contemporary Architectural Etching',
+      title: 'Wenceslaus Hollar: The Royal Exchange Courtyard, London (1644)',
+      image: getBase64Image('/images/royal_exchange_courtyard.jpg'),
+      context:
+        "Hollar's detailed etching shows merchants, ship captains, and brokers congregating in the central courtyard of the Royal Exchange in the City of London, negotiating contracts for tobacco, sugar, textiles, and maritime credit that transformed London into Europe's financial capital.",
+      hingeQuestion:
+        "How did commercial institutions like the Royal Exchange lay the foundation for Britain's global financial supremacy?",
+      shelfmark: 'Folger Shakespeare Library &bull; Hollar Collection',
+      footer: 'City of London Historical Commerce Archive',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Contemporary Oil Painting',
+      title: 'King William III Landing at Torbay, The Glorious Revolution (1688)',
+      image: getBase64Image('/images/early_mod_l6_banner.jpg'),
+      context:
+        'In November 1688, Dutch Stadtholder William of Orange landed at Torbay with 463 ships and 15,000 soldiers. Invited by Protestant politicians to depose Catholic King James II, William accepted the 1689 Bill of Rights, establishing a permanent constitutional monarchy.',
+      hingeQuestion:
+        'Was the Glorious Revolution a peaceful popular rebellion or a successful foreign Dutch military invasion?',
+      shelfmark: 'Rijksmuseum, Amsterdam &bull; SK-A-1750',
+      footer: 'Dutch-British Maritime History Archive',
+    },
+  },
+  p14: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Historical Commercial Cartography',
+      title: 'Diagram of the Atlantic Triangular Trade System (18th Century)',
+      image: getBase64Image('/images/triangular_trade.png'),
+      context:
+        'British manufactured goods (guns, textiles, metalware) were shipped to West Africa; captured enslaved Africans were forced across the Atlantic via the catastrophic Middle Passage; slave-produced sugar, tobacco, and cotton returned to British ports, enriching merchants and funding the Industrial Revolution.',
+      hingeQuestion:
+        'How did British domestic manufacturing and global maritime commerce depend entirely on the exploitation of enslaved labour?',
+      shelfmark: 'National Maritime Museum Cartographic Archive',
+      footer: 'Transatlantic Commerce & Plantation Record',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Abolitionist Architectural Plan',
+      title: 'The Stowage Plan of the Slave Ship Brookes (1788)',
+      image: getBase64Image('/images/brookes_ship.jpg'),
+      context:
+        "Published by the Plymouth Abolition Committee in 1788, this cross-section diagram exposed how 454 enslaved human beings were chained in spaces measuring 6 feet by 16 inches. The diagram caused outrage across Britain and became history's first viral human rights campaign image.",
+      hingeQuestion:
+        'Why was this technical architectural diagram far more effective in turning British public opinion against the trade than written descriptions?',
+      shelfmark: 'British Library &bull; Add MS 49308',
+      footer: 'Society for the Abolition of the Slave Trade Records',
+    },
+  },
+  p16: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Contemporary Military Engraving',
+      title: 'Abraham Brunias: Leonard Parkinson, Captain of the Maroons (1796)',
+      image: getBase64Image('/images/jamaica_maroons.jpg'),
+      context:
+        'Engraved during the Second Maroon War in Jamaica, this print shows Leonard Parkinson, a Maroon guerrilla commander, armed with a cutlass and brace of pistols. Jamaican Maroons defeated British regular armies, forcing the Crown to sign treaties recognizing Maroon freedom.',
+      hingeQuestion:
+        'How did Jamaican Maroon resistance prove that freedom was seized by Africans through combat rather than granted by British politicians?',
+      shelfmark: 'National Library of Jamaica Archives',
+      footer: 'Caribbean Resistance & Emancipation Papers',
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Contemporary Author Portrait',
+      title: 'Frontispiece of The Interesting Narrative of the Life of Olaudah Equiano (1789)',
+      image: getBase64Image('/images/equiano.jpg'),
+      context:
+        "Published in London in 1789, Olaudah Equiano's best-selling autobiography provided the British public with its first widely read first-person account of capture, the Middle Passage, and enslavement. Equiano toured Britain lecturing against slavery, personally lobbying Members of Parliament.",
+      hingeQuestion:
+        "Why was Equiano's firsthand testimony so devastating to the pro-slavery lobby's economic arguments in Parliament?",
+      shelfmark: 'British Library &bull; General Reference Collection 1489.g.50',
+      footer: 'African Disciplinary Authorship Archive',
+    },
+  },
+  p18: {
+    sourceA: {
+      badge: 'SOURCE A',
+      type: 'Imperial Ceiling Painting',
+      title: 'Spiridione Roma: The East Offering Its Riches to Britannia (1778)',
+      image: getBase64Image('/images/east_offering.jpg'),
+      context:
+        "Commissioned for the East India Company's headquarters in London, Roma's painting depicts kneeling Asian figures presenting pearls, tea, and jewels to Britannia, projecting an image of voluntary tribute and benevolent British rule while concealing military plunder.",
+      hingeQuestion:
+        "How does this artwork reflect Britain's self-image as a benevolent civilizing power while concealing the violence of colonial conquest?",
+      shelfmark: 'Foreign and Commonwealth Office Collection, London',
+      footer: "East India Company Directors' Archive",
+    },
+    sourceB: {
+      badge: 'SOURCE B',
+      type: 'Satirical Social Engraving',
+      title: 'William Hogarth: "Gin Lane" (1751)',
+      image: getBase64Image('/images/gin_lane.jpg'),
+      context:
+        'Hogarth\'s engraving exposed the destitution, infant mortality, and social decay in London\'s St Giles parish during the "Gin Craze". Published alongside "Beer Street", Hogarth highlighted how rapid urban growth and commercial capitalism created extreme wealth alongside desperate poverty.',
+      hingeQuestion:
+        "Does Hogarth's Gin Lane prove that economic modernity brought widespread destitution rather than genuine social progress?",
+      shelfmark: 'British Museum &bull; Department of Prints and Drawings 1868,0808.3905',
+      footer: 'Georgian Urban History Archive &bull; 1751',
+    },
+  },
+};
+
 function getLessonSections(lesson, idx) {
   // Lesson 4: Gunpowder Plot (Idx 3) - dedicated balanced narrative
   if (idx === 3) {
@@ -879,8 +1117,10 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     const rightPageNum = lessonNum * 2 + 1;
     const bankKey = `p${rightPageNum}`;
     const leftVocabKey = `p${leftPageNum}`;
+    const leftSrcKey = `p${leftPageNum}`;
     const bank = EARLY_MODERN_COMPONENT_BANK[bankKey] || {};
     const vocabTerms = EARLY_MODERN_LEFT_VOCAB[leftVocabKey] || [];
+    const leftSources = EARLY_MODERN_LEFT_SOURCES[leftSrcKey] || {};
 
     const secList = getLessonSections(lesson, idx);
     const sec1 = secList[0];
@@ -888,53 +1128,62 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     const sec3 = secList[2];
     const sec4 = secList[3];
 
-    const formatBlockParas = (block) => {
+    const formatBlockParas = (block, secNum) => {
       if (!block || !block.text) {
-        return '<p class="narrative-p">Historical analysis examining key archival mechanisms and economic transformations during this era.</p>';
+        return `<p class="narrative-p"><span class="para-ref">[${secNum}.1]</span>Historical analysis examining key archival mechanisms and economic transformations during this era.</p>`;
       }
       const raw = block.text;
+      let paras = [];
       if (Array.isArray(raw)) {
-        return raw.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('');
+        paras = raw;
+      } else if (raw.includes('<br><br>')) {
+        paras = raw
+          .split('<br><br>')
+          .map((p) => p.trim())
+          .filter(Boolean);
+      } else {
+        paras = String(raw)
+          .split(/\n\s*\n/)
+          .map((p) => p.trim())
+          .filter(Boolean);
       }
-      return String(raw)
-        .split(/\n\s*\n/)
-        .map((p) => p.trim())
-        .filter(Boolean)
-        .map((p) => `<p class="narrative-p">${formatText(p)}</p>`)
+      return paras
+        .map((p, pIdx) => {
+          if (p.includes('para-ref')) {
+            return `<p class="narrative-p">${formatText(p)}</p>`;
+          }
+          return `<p class="narrative-p"><span class="para-ref">[${secNum}.${pIdx + 1}]</span>${formatText(p)}</p>`;
+        })
         .join('');
     };
 
-    // Images for left page
-    let sourceAImg = null;
-    let sourceBImg = null;
-    if (lessonNum === 1) {
-      sourceAImg = getBase64Image('/images/silk_road.jpg');
-      sourceBImg = getBase64Image('/images/mansa_musa_catalan.jpg');
-    } else if (lessonNum === 2) {
-      sourceAImg = getBase64Image('/images/tordesillas_map.png');
-      sourceBImg = getBase64Image('/images/armada_portrait.jpg');
-    } else if (lessonNum === 3) {
-      sourceAImg = getBase64Image('/images/jamestown_fort.jpg');
-      sourceBImg = getBase64Image('/images/sir_thomas_roe.jpg');
-    } else if (lessonNum === 4) {
-      sourceAImg = getBase64Image('/images/gunpowder_conspirators.jpg');
-      sourceBImg = getBase64Image('/images/monteagle_letter.jpeg');
-    } else if (lessonNum === 5) {
-      sourceAImg = getBase64Image('/images/charles_i_execution.jpg');
-      sourceBImg = getBase64Image('/images/great_seal_1651.png');
-    } else if (lessonNum === 6) {
-      sourceAImg = getBase64Image('/images/royal_exchange_courtyard.jpg');
-      sourceBImg = getBase64Image('/images/early_mod_l6_banner.jpg');
-    } else if (lessonNum === 7) {
-      sourceAImg = getBase64Image('/images/triangular_trade.png');
-      sourceBImg = getBase64Image('/images/brookes_ship.jpg');
-    } else if (lessonNum === 8) {
-      sourceAImg = getBase64Image('/images/jamaica_maroons.jpg');
-      sourceBImg = getBase64Image('/images/equiano.jpg');
-    } else if (lessonNum === 9) {
-      sourceAImg = getBase64Image('/images/east_offering.jpg');
-      sourceBImg = getBase64Image('/images/gin_lane.jpg');
-    }
+    const renderArchivalSourceBox = (src) => {
+      if (!src) return '';
+      return `
+        <div class="archival-source-box">
+          <div class="archival-header">
+            <div class="source-identity">
+              <span class="source-badge">${src.badge}</span>
+              <span class="source-type">${src.type}</span>
+            </div>
+            <span class="source-date-micro">${src.shelfmark || ''}</span>
+          </div>
+          <div class="archival-title">${src.title}</div>
+          ${src.image ? `<img class="archival-image" src="${src.image}" alt="${src.title}">` : ''}
+          ${src.text ? `<div class="archival-body">${src.text}</div>` : ''}
+          <div class="archival-context-box">
+            <p class="archival-context-text">${src.context}</p>
+            <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>${src.hingeQuestion}</em></div>
+          </div>
+          <div class="archival-footer">
+            <span>${src.shelfmark || 'Historical Archive Collection'}</span>
+            <span>${src.footer || 'Curriculum Archival Record'}</span>
+          </div>
+        </div>
+      `;
+    };
+
+    // Using EARLY_MODERN_LEFT_SOURCES for rich primary sources
 
     // LEFT PAGE (Verso)
     lessonsHtml += `
@@ -962,52 +1211,18 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
             <span class="sb-num">SECTION 1</span>
             <span class="sb-title">${(sec1.title || 'Context').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec1)}
+          ${formatBlockParas(sec1, 1)}
 
-          ${
-            sourceAImg
-              ? `
-          <div class="archival-source-box">
-            <div class="archival-header">
-              <div class="source-identity">
-                <span class="source-badge">SOURCE A</span>
-                <span class="source-type">Primary Cartography / Artifact</span>
-              </div>
-            </div>
-            <img class="archival-image" src="${sourceAImg}" alt="Source A Evidence">
-            <div class="archival-footer">
-              <span>Historical Primary Collection</span>
-              <span>National Maritime Museum / British Library</span>
-            </div>
-          </div>`
-              : ''
-          }
+          ${renderArchivalSourceBox(leftSources.sourceA)}
 
           <!-- Section 2 -->
           <div class="section-banner">
             <span class="sb-num">SECTION 2</span>
             <span class="sb-title">${(sec2.title || 'Escalating Factor').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec2)}
+          ${formatBlockParas(sec2, 2)}
 
-          ${
-            sourceBImg
-              ? `
-          <div class="archival-source-box">
-            <div class="archival-header">
-              <div class="source-identity">
-                <span class="source-badge">SOURCE B</span>
-                <span class="source-type">Contemporary Engraving / Map</span>
-              </div>
-            </div>
-            <img class="archival-image" src="${sourceBImg}" alt="Source B Evidence">
-            <div class="archival-footer">
-              <span>Contemporary Archive Record</span>
-              <span>Circa 1450–1750</span>
-            </div>
-          </div>`
-              : ''
-          }
+          ${renderArchivalSourceBox(leftSources.sourceB)}
 
         </div>
 
@@ -1061,7 +1276,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
             <span class="sb-num">SECTION 3</span>
             <span class="sb-title">${(sec3.title || 'Strategic Developments').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec3)}
+          ${formatBlockParas(sec3, 3)}
 
           <!-- Key Figure Card -->
           ${
@@ -1093,7 +1308,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
             <span class="sb-num">SECTION 4</span>
             <span class="sb-title">${(sec4.title || 'Geopolitical Outcome').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec4)}
+          ${formatBlockParas(sec4, 4)}
 
           <!-- Concept Spotlight Box -->
           ${bank.conceptSpotlight || ''}
@@ -1312,8 +1527,25 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
 
     .narrative-p {
-      margin: 0 0 6px 0;
-      text-indent: 1.2em;
+      margin: 0 0 5px 0;
+      text-indent: 1.0em;
+    }
+    .narrative-p:first-of-type, .section-banner + .narrative-p {
+      text-indent: 0;
+    }
+
+    .para-ref {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 0.5px 3.5px;
+      border-radius: 2px;
+      margin-right: 4px;
+      vertical-align: baseline;
+      letter-spacing: 0.02em;
     }
     .narrative-p:first-of-type, .section-banner + .narrative-p {
       text-indent: 0;
@@ -1366,7 +1598,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .archival-image {
       width: 100%;
-      max-height: 180px;
+      max-height: 105px;
       object-fit: contain;
       border-radius: 2px;
       margin-bottom: 3px;
@@ -1374,11 +1606,41 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       background: #fafaf9;
     }
     .archival-body {
-      font-size: 7.8pt;
-      line-height: 1.35;
+      font-size: 7.4pt;
+      line-height: 1.32;
       color: #292524;
       font-style: italic;
       margin-bottom: 3px;
+    }
+    .archival-context-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 2.5px solid #0284c7;
+      padding: 3px 5px;
+      margin: 3px 0 2px 0;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+    }
+    .archival-context-text {
+      font-size: 6.0pt;
+      line-height: 1.25;
+      color: #334155;
+      margin: 0 0 2px 0;
+    }
+    .archival-hinge-q {
+      font-size: 6.0pt;
+      line-height: 1.25;
+      color: #0f172a;
+      background: #f0f9ff;
+      padding: 2px 4px;
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+    .archival-hinge-q strong {
+      color: #0369a1;
+      text-transform: uppercase;
+      font-size: 5.6pt;
+      letter-spacing: 0.04em;
     }
     .archival-footer {
       border-top: 1px dashed #d6d3d1;
@@ -2030,6 +2292,52 @@ async function runEarlyModernWorld() {
 
   await page.close();
   await browser.close();
+
+  // Synchronize HTML companion to standard unit textbook.html paths
+  const prodHtml1 = path.join(ROOT_DIR, 'public', 'units', 'early_modern_world', 'textbook.html');
+  const prodHtml2 = path.join(ROOT_DIR, 'units', 'early_modern_world', 'textbook.html');
+  fs.writeFileSync(prodHtml1, htmlContent, 'utf8');
+  fs.writeFileSync(prodHtml2, htmlContent, 'utf8');
+  console.log(`✅ Synchronized to production textbook HTML: ${prodHtml1}`);
+
+  // Synchronize PDF outputs
+  const prodPdfV17 = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    'early_modern_world_textbook_FINAL_V17.pdf',
+  );
+  const prodPdf = path.join(ROOT_DIR, 'public', 'pdfs', 'early_modern_world_textbook.pdf');
+  const distPdfV17 = path.join(
+    ROOT_DIR,
+    'dist',
+    'pdfs',
+    'early_modern_world_textbook_FINAL_V17.pdf',
+  );
+  const distPdf = path.join(ROOT_DIR, 'dist', 'pdfs', 'early_modern_world_textbook.pdf');
+
+  fs.mkdirSync(path.dirname(distPdfV17), { recursive: true });
+  fs.copyFileSync(pdfPath, prodPdfV17);
+  fs.copyFileSync(pdfPath, prodPdf);
+  fs.copyFileSync(pdfPath, distPdfV17);
+  fs.copyFileSync(pdfPath, distPdf);
+  console.log(`✅ Synchronized to production V17 PDF: ${prodPdfV17}`);
+  console.log(`✅ Synchronized to dist PDF: ${distPdfV17}`);
+
+  // Synchronize to Google Drive Department File (if connected)
+  const gDriveFolder = 'G:\\My Drive\\AAMX\\Dep File\\Year 8\\Early Modern World';
+  if (fs.existsSync(gDriveFolder)) {
+    try {
+      const gDriveMaster = path.join(gDriveFolder, 'Early Modern World Master Textbook.pdf');
+      fs.copyFileSync(pdfPath, gDriveMaster);
+      console.log(`✅ Synchronized to Google Drive: ${gDriveMaster}`);
+    } catch (gErr) {
+      console.warn(
+        `⚠️ Warning: Could not write Master Textbook to Google Drive (file may be open):`,
+        gErr.message,
+      );
+    }
+  }
 }
 
 if (require.main === module) {

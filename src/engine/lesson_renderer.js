@@ -4379,11 +4379,37 @@ export function renderLesson(lesson) {
           if (task.type === 'extended_writing' && task.scaffolding) {
             const ansId = `ans-emb-${index}-${tIdx}`;
             const scaf = task.scaffolding || {};
-            const structureStrip = scaf.structure_strip || [];
+            const structureStrip =
+              scaf.structure_strip && scaf.structure_strip.length > 0
+                ? scaf.structure_strip
+                : (scaf.matrix || []).map((m) => ({ col: m.col, prompt: m.text || m.prompt }));
             const starters = scaf.sentence_starters || [];
-            const connectives = scaf.connective_bank || [];
+            const rawConnectives = scaf.connective_bank || scaf.causal_connectives || [];
+            const connectives = Array.isArray(rawConnectives)
+              ? rawConnectives
+              : typeof rawConnectives === 'string'
+                ? rawConnectives
+                    .split('•')
+                    .map((s) => s.trim())
+                    .filter(Boolean)
+                : [];
             const words = scaf.word_bank || [];
-            const questionTitle = task.question || task.text || 'Extended Analytical Writing';
+            const criteria = scaf.evaluative_criteria || [];
+            const isKs3 =
+              window.currentUnitId === 'early_modern_world' ||
+              window.currentUnitId === 'water_and_sanitation' ||
+              window.currentUnitId === 'great_war' ||
+              window.currentUnitId === 'great_war_part2' ||
+              window.currentUnitId === 'medieval_england' ||
+              window.currentUnitId === 'industrialisation_and_empire' ||
+              (typeof unit !== 'undefined' && unit && unit.is_ks3);
+            const badgeText = isKs3 ? 'KS3 Analytical Masterclass' : 'GCSE Analytical Masterclass';
+            const vocabBadgeText = isKs3
+              ? 'Core Disciplinary Vocabulary'
+              : 'GCSE Key Vocabulary Bank';
+            const questionTitle =
+              task.title || task.question || task.text || 'Extended Analytical Writing';
+            const actualPrompt = task.prompt || task.question || task.text || '';
 
             extrasHtml += `
               <div class="task-box extended-writing-box" style="margin-bottom: 25px; background: #ffffff; padding: 22px; border-radius: 10px; border: 2px solid #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);">
@@ -4392,8 +4418,20 @@ export function renderLesson(lesson) {
                     <i class="fa-solid fa-feather-pointed" style="color: #0284c7;"></i>
                     <span>${window.formatBold ? window.formatBold(questionTitle) : questionTitle}</span>
                   </h4>
-                  <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Analytical Masterclass</span>
+                  <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">${badgeText}</span>
                 </div>
+
+                ${
+                  actualPrompt
+                    ? `
+                  <div class="extended-writing-prompt" style="font-size: 1.08rem; font-weight: 700; color: #0f172a; margin-bottom: 16px; line-height: 1.5; background: #f0f9ff; padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 6px;">
+                    <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #0284c7; margin-bottom: 4px; font-weight: 800;">Enquiry Question:</span>
+                    ${window.formatBold ? window.formatBold(actualPrompt) : actualPrompt}
+                  </div>
+                `
+                    : ''
+                }
+
                 ${scaf.guidance ? `<p style="font-size: 0.95rem; color: #334155; margin-top: 0; margin-bottom: 16px; line-height: 1.5;">${scaf.guidance}</p>` : ''}
 
                 ${
@@ -4424,7 +4462,7 @@ export function renderLesson(lesson) {
                                 ${step.col}
                               </div>
                               <div style="font-size: 0.84rem; color: #1e293b; line-height: 1.4; margin-bottom: 8px;">
-                                ${step.prompt}
+                                ${step.prompt || step.text}
                               </div>
                             </div>
                             ${
@@ -4447,6 +4485,21 @@ export function renderLesson(lesson) {
                 }
 
                 ${
+                  criteria.length > 0
+                    ? `
+                  <div style="margin-bottom: 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px;">
+                    <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; margin-bottom: 6px;">
+                      <i class="fa-solid fa-scale-balanced" style="color: #0284c7; margin-right: 6px;"></i> Evaluative Criteria &amp; Evidence Checklist
+                    </strong>
+                    <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: #334155; line-height: 1.5;">
+                      ${criteria.map((c) => `<li style="margin-bottom: 4px;">${window.formatBold ? window.formatBold(c) : c}</li>`).join('')}
+                    </ul>
+                  </div>
+                `
+                    : ''
+                }
+
+                ${
                   starters.length > 0 || connectives.length > 0 || words.length > 0
                     ? `
                   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px;">
@@ -4455,7 +4508,7 @@ export function renderLesson(lesson) {
                         ? `
                       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px;">
                         <strong style="display: block; font-size: 0.75rem; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; margin-bottom: 6px;">
-                          GCSE Key Vocabulary Bank
+                          ${vocabBadgeText}
                         </strong>
                         <div style="display: flex; flex-wrap: wrap; gap: 5px;">
                           ${words.map((w) => `<span style="background: #e2e8f0; color: #1e293b; font-size: 0.74rem; font-weight: 600; padding: 2px 7px; border-radius: 4px;">${w}</span>`).join('')}

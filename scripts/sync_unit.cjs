@@ -139,6 +139,19 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'early_modern_world') {
+        console.log(
+          `\n📚 Compiling 20-page publisher textbook & universal KS3 engine workbook for [early_modern_world]...`,
+        );
+        execSync(`node scripts/render_standard_textbook_early_modern_world.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        execSync(`node scripts/sandbox/run_pilot_comparison.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

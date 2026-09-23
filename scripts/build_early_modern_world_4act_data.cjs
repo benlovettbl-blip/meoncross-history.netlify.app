@@ -37,9 +37,10 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_1',
-    title: 'Who held global power in 1450?',
+    title:
+      'Who held true global power in 1450, and why was Europe trapped on the edge of the world?',
     enquiry_question:
-      'To what extent was Europe a peripheral backwater compared to the Ming, Ottoman, and Songhai empires in 1450?',
+      'Who held true global power in 1450, and why was Europe trapped on the edge of the world?',
     cover_image: '/images/silk_route_colored_map.jpg',
     banner: '/images/silk_route_colored_map.jpg',
     learning_objectives: [
@@ -194,7 +195,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'To what extent was Europe a peripheral backwater compared to the Ming, Ottoman, and Songhai empires in 1450?',
+              'Who held true global power in 1450, and why was Europe trapped on the edge of the world?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -226,7 +227,7 @@ const early_modern_lessons = [
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
       prompt:
-        'To what extent was Europe a peripheral backwater compared to the Ming, Ottoman, and Songhai empires in 1450?',
+        'Who held true global power in 1450, and why was Europe trapped on the edge of the world?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -259,9 +260,10 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_2',
-    title: 'How did religious conflict trigger global exploration (1517–1588)?',
+    title:
+      'How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
     enquiry_question:
-      'Why did the Protestant Reformation turn the Atlantic Ocean into a violent battleground for European empires?',
+      'How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
     cover_image: '/images/early_mod_l2_banner.jpg',
     banner: '/images/early_mod_l2_banner.jpg',
     learning_objectives: [
@@ -416,7 +418,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'Why did the Protestant Reformation turn the Atlantic Ocean into a violent battleground for European empires?',
+              'How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -448,7 +450,7 @@ const early_modern_lessons = [
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
       prompt:
-        'Why did the Protestant Reformation turn the Atlantic Ocean into a violent battleground for European empires?',
+        'How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -481,9 +483,9 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_3',
-    title: 'Trade or takeover: How did early encounters turn into empire?',
+    title: 'Trade or takeover: How did humble English trading posts turn into a corporate empire?',
     enquiry_question:
-      'To what extent did early English commercial trade missions accidentally transform into territorial colonization?',
+      'Trade or takeover: How did humble English trading posts turn into a corporate empire?',
     cover_image: '/images/early_mod_l3_banner.jpg',
     banner: '/images/early_mod_l3_banner.jpg',
     learning_objectives: [
@@ -636,7 +638,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'To what extent did early English commercial trade missions accidentally transform into territorial colonization?',
+              'Trade or takeover: How did humble English trading posts turn into a corporate empire?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -668,7 +670,7 @@ const early_modern_lessons = [
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
       prompt:
-        'To what extent did early English commercial trade missions accidentally transform into territorial colonization?',
+        'Trade or takeover: How did humble English trading posts turn into a corporate empire?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -701,9 +703,8 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_4',
-    title: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
-    enquiry_question:
-      'How did religious division and the Divine Right of Kings make early Stuart Britain so volatile in 1605?',
+    title: 'Why was religious division such an explosive threat under King James I?',
+    enquiry_question: 'Why was religious division such an explosive threat under King James I?',
     cover_image: '/images/gunpowder_conspirators_banner.jpg',
     banner: '/images/gunpowder_conspirators_banner.jpg',
     learning_objectives: [
@@ -856,8 +857,7 @@ const early_modern_lessons = [
         tasks: [
           {
             title: 'Master Disciplinary Enquiry Task',
-            prompt:
-              'How did religious division and the Divine Right of Kings make early Stuart Britain so volatile in 1605?',
+            prompt: 'Why was religious division such an explosive threat under King James I?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -888,8 +888,7 @@ const early_modern_lessons = [
     ],
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
-      prompt:
-        'How did religious division and the Divine Right of Kings make early Stuart Britain so volatile in 1605?',
+      prompt: 'Why was religious division such an explosive threat under King James I?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -922,9 +921,10 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_5',
-    title: 'Who controlled Britain? The Ideological Battle',
+    title:
+      'How far do you agree with Interpretation 1 that the Civil War was an unavoidable fight against royal tyranny?',
     enquiry_question:
-      'Why did the ideological clash between Charles I and Parliament culminate in regicide and the Commonwealth?',
+      'How far do you agree with Interpretation 1 that the Civil War was an unavoidable fight against royal tyranny?',
     cover_image: '/images/early_mod_l4_banner.jpg',
     banner: '/images/early_mod_l4_banner.jpg',
     learning_objectives: [
@@ -1077,7 +1077,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'Why did the ideological clash between Charles I and Parliament culminate in regicide and the Commonwealth?',
+              'How far do you agree with Interpretation 1 that the Civil War was an unavoidable fight against royal tyranny?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -1109,7 +1109,7 @@ const early_modern_lessons = [
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
       prompt:
-        'Why did the ideological clash between Charles I and Parliament culminate in regicide and the Commonwealth?',
+        'How far do you agree with Interpretation 1 that the Civil War was an unavoidable fight against royal tyranny?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -1142,9 +1142,10 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_6',
-    title: 'Who controlled Britain? The Economic Shift',
+    title:
+      'How did a Dutch invasion and the Bank of England turn Britain into a global superpower?',
     enquiry_question:
-      'How did financial revolution, agrarian capitalism, and the merchant elite eclipse traditional aristocratic power by 1700?',
+      'How did a Dutch invasion and the Bank of England turn Britain into a global superpower?',
     cover_image: '/images/royal_exchange.jpg',
     banner: '/images/royal_exchange.jpg',
     learning_objectives: [
@@ -1298,7 +1299,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'How did financial revolution, agrarian capitalism, and the merchant elite eclipse traditional aristocratic power by 1700?',
+              'How did a Dutch invasion and the Bank of England turn Britain into a global superpower?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -1330,7 +1331,7 @@ const early_modern_lessons = [
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
       prompt:
-        'How did financial revolution, agrarian capitalism, and the merchant elite eclipse traditional aristocratic power by 1700?',
+        'How did a Dutch invasion and the Bank of England turn Britain into a global superpower?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -1363,9 +1364,9 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_7',
-    title: 'What were the mechanics of the Transatlantic Slave Trade?',
+    title: 'What was the true human cost and commercial scale of the Transatlantic Slave Trade?',
     enquiry_question:
-      'How did British ports, shipping networks, and colonial plantations orchestrate the brutal machinery of the Transatlantic Slave Trade?',
+      'What was the true human cost and commercial scale of the Transatlantic Slave Trade?',
     cover_image: '/images/cape_coast_castle.jpg',
     banner: '/images/cape_coast_castle.jpg',
     learning_objectives: [
@@ -1519,7 +1520,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'How did British ports, shipping networks, and colonial plantations orchestrate the brutal machinery of the Transatlantic Slave Trade?',
+              'What was the true human cost and commercial scale of the Transatlantic Slave Trade?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -1550,8 +1551,7 @@ const early_modern_lessons = [
     ],
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
-      prompt:
-        'How did British ports, shipping networks, and colonial plantations orchestrate the brutal machinery of the Transatlantic Slave Trade?',
+      prompt: 'What was the true human cost and commercial scale of the Transatlantic Slave Trade?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
@@ -1584,9 +1584,9 @@ const early_modern_lessons = [
   // ==========================================
   {
     id: 'lesson_8',
-    title: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
+    title: 'How did enslaved Africans fight back and dismantle the plantation system from within?',
     enquiry_question:
-      'What strategies did enslaved Africans use to fight against enslavement, from ship rebellions to Maroon resistance and political abolition?',
+      'How did enslaved Africans fight back and dismantle the plantation system from within?',
     cover_image: '/images/brookes_ship.jpg',
     banner: '/images/brookes_ship.jpg',
     learning_objectives: [
@@ -1740,7 +1740,7 @@ const early_modern_lessons = [
           {
             title: 'Master Disciplinary Enquiry Task',
             prompt:
-              'What strategies did enslaved Africans use to fight against enslavement, from ship rebellions to Maroon resistance and political abolition?',
+              'How did enslaved Africans fight back and dismantle the plantation system from within?',
             type: 'extended_writing',
             scaffolding: {
               sentence_starters: [
@@ -1772,7 +1772,7 @@ const early_modern_lessons = [
     enquiry_task: {
       title: 'Master Disciplinary Enquiry Task',
       prompt:
-        'What strategies did enslaved Africans use to fight against enslavement, from ship rebellions to Maroon resistance and political abolition?',
+        'How did enslaved Africans fight back and dismantle the plantation system from within?',
       type: 'extended_writing',
       scaffolding: {
         sentence_starters: [
