@@ -260,26 +260,101 @@ function renderStandardBackCover({
     )
     .join('\n');
 
+  const isWeimar = unitId === 'weimar_nazi_germany';
+  const qrSvgSize = isWeimar ? '20mm' : '24mm';
+  const teacherLineHeight = isWeimar ? '5.4mm' : '7.2mm';
+  const teacherLineCount = isWeimar ? 3 : 4;
+  const teacherLinesHtml = Array(teacherLineCount)
+    .fill(`<div class="task-line" style="height: ${teacherLineHeight};"></div>`)
+    .join('');
+
   const qrCardsHtml = qrLessons
     .map((qrItem, idx) => {
       const qrSvg = generateQrSvg(qrItem.url);
       return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between; flex: 1;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; color: #000000; margin-bottom: 2px; text-transform: uppercase;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: ${isWeimar ? '3px' : '4px'}; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between; flex: 1;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000; margin-bottom: 1px; text-transform: uppercase;">
               ${qrItem.label || `KT ${keyTopicNum}.${idx + 1}`}
             </div>
-            <div style="width: 24mm; height: 24mm; margin: 2px auto;">
+            <div style="width: ${qrSvgSize}; height: ${qrSvgSize}; margin: 1px auto;">
               ${qrSvg}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000; margin-top: 2px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #000000; margin-top: 1px;">
               Scan to Quiz
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
               Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]
             </div>
           </div>`;
     })
     .join('\n');
+
+  const diagnosticChecklistHtml = isWeimar
+    ? `
+      <!-- Edexcel Paper 3 Mastery Diagnostic Checklist (Option A: Student Self-Audit) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #000000; letter-spacing: 0.5px;">
+            🎯 Edexcel Paper 3 Mastery Diagnostic Checklist &bull; Student Disciplinary Self-Audit
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #222222;">
+            Target: Secure all 5 Disciplinary Exam Thresholds
+          </span>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; font-family: 'Inter', sans-serif;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 4px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+              <span style="width: 10px; height: 10px; border: 1.2px solid #000; border-radius: 2px; display: inline-block; background: #fff; flex-shrink: 0;"></span>
+              <strong style="font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">Q1: Inference</strong>
+            </div>
+            <div style="font-size: 6.0pt; line-height: 1.15; color: #334155;">
+              2 valid deductions supported by direct quotes from Source A [4m]
+            </div>
+          </div>
+
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 4px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+              <span style="width: 10px; height: 10px; border: 1.2px solid #000; border-radius: 2px; display: inline-block; background: #fff; flex-shrink: 0;"></span>
+              <strong style="font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">Q2: Causation</strong>
+            </div>
+            <div style="font-size: 6.0pt; line-height: 1.15; color: #334155;">
+              Explain why using PEEL, 2 stimulus points + own knowledge [12m]
+            </div>
+          </div>
+
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 4px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+              <span style="width: 10px; height: 10px; border: 1.2px solid #000; border-radius: 2px; display: inline-block; background: #fff; flex-shrink: 0;"></span>
+              <strong style="font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">Q3(a): Utility</strong>
+            </div>
+            <div style="font-size: 6.0pt; line-height: 1.15; color: #334155;">
+              Assess utility using Content, Provenance (NOP), &amp; Context [8m]
+            </div>
+          </div>
+
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 4px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+              <span style="width: 10px; height: 10px; border: 1.2px solid #000; border-radius: 2px; display: inline-block; background: #fff; flex-shrink: 0;"></span>
+              <strong style="font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">Q3(b/c): Views</strong>
+            </div>
+            <div style="font-size: 6.0pt; line-height: 1.15; color: #334155;">
+              Explain how &amp; why views differ using companion Sources B/C [8m]
+            </div>
+          </div>
+
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 4px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+              <span style="width: 10px; height: 10px; border: 1.2px solid #000; border-radius: 2px; display: inline-block; background: #fff; flex-shrink: 0;"></span>
+              <strong style="font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">Q3(d): Verdict</strong>
+            </div>
+            <div style="font-size: 6.0pt; line-height: 1.15; color: #334155;">
+              Criteria-led judgment on which view is more convincing [16m+4]
+            </div>
+          </div>
+        </div>
+      </div>`
+    : '';
 
   const footerHtml = renderFooterStrip
     ? renderFooterStrip(totalPageCount, footerQuip, totalPageCount)
@@ -297,7 +372,7 @@ function renderStandardBackCover({
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       
       <!-- Top Departmental Header Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Pupil Assessment Record</span>
@@ -309,110 +384,106 @@ function renderStandardBackCover({
       </div>
 
       <!-- Header Block -->
-      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; margin: 0 0 2px 0; font-weight: 900; text-transform: uppercase;">
+      <div style="text-align: center; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; margin: 0 0 1px 0; font-weight: 900; text-transform: uppercase;">
           ${trackerTitle}
         </h2>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #222222; font-weight: 700; letter-spacing: 0.5px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #222222; font-weight: 700; letter-spacing: 0.5px;">
           ${trackerSubtitle}
         </div>
       </div>
 
       <!-- Target Grade & Pupil Information Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 14px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 12px; align-items: center; margin-bottom: 6px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 12px; align-items: center; margin-bottom: 4px;">
         <div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
-          <div style="border-bottom: 1.5px solid #000000; height: 16px; margin-top: 1px;"></div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
+          <div style="border-bottom: 1.5px solid #000000; height: 14px; margin-top: 1px;"></div>
         </div>
         <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
-          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase;">Target Grade:</span>
+          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 34px; height: 22px; margin: 1px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 10.5pt; font-weight: 900; line-height: 20px;"></div>
         </div>
         <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
-          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 36px; height: 24px; margin: 2px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; line-height: 22px;"></div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase;">Predicted:</span>
+          <div style="border: 1.5px solid #000000; border-radius: 3px; width: 34px; height: 22px; margin: 1px auto 0 auto; font-family: 'Inter', sans-serif; font-size: 10.5pt; font-weight: 900; line-height: 20px;"></div>
         </div>
         <div style="text-align: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase;">Attitude:</span>
-          <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 800; margin-top: 4px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase;">Attitude:</span>
+          <div style="font-family: 'Inter', sans-serif; font-size: 9.0pt; font-weight: 800; margin-top: 3px;">
             1 &bull; 2 &bull; 3 &bull; 4 &bull; 5
           </div>
         </div>
       </div>
 
       <!-- Assessment Progress Ledger Table (Expanded Spacing & Clear 26m Totals) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 5px 4px; width: 26px; text-align: center; font-size: 8.5pt; font-weight: 900; border-right: 1px solid #000000;">#</th>
-              <th style="padding: 5px 8px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Enquiry / Lesson Assessment</th>
-              <th style="padding: 5px 4px; width: 80px; text-align: center; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Do Now (10m)</th>
-              <th style="padding: 5px 4px; width: 78px; text-align: center; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1(a) (4m)</th>
-              <th style="padding: 5px 4px; width: 78px; text-align: center; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1(b) (4m)</th>
-              <th style="padding: 5px 4px; width: 80px; text-align: center; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Extended (8m)</th>
-              <th style="padding: 5px 6px; width: 82px; text-align: center; font-size: 8.5pt; font-weight: 900; text-transform: uppercase;">Lesson Total</th>
+              <th style="padding: 4px 4px; width: 26px; text-align: center; font-size: 8.2pt; font-weight: 900; border-right: 1px solid #000000;">#</th>
+              <th style="padding: 4px 8px; text-align: left; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Enquiry / Lesson Assessment</th>
+              <th style="padding: 4px 4px; width: 80px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Do Now (10m)</th>
+              <th style="padding: 4px 4px; width: 78px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1(a) (4m)</th>
+              <th style="padding: 4px 4px; width: 78px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Q1(b) (4m)</th>
+              <th style="padding: 4px 4px; width: 80px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Extended (8m)</th>
+              <th style="padding: 4px 6px; width: 82px; text-align: center; font-size: 8.2pt; font-weight: 900; text-transform: uppercase;">Lesson Total</th>
             </tr>
           </thead>
           <tbody>
             ${enquiriesRowsHtml}
-            <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 5px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8.0pt;">Key Topic ${keyTopicNum} Cumulative Assessment Totals</td>
-              <td style="padding: 5px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Do Now: <span style="font-size: 9pt; font-weight: 900;">[ &nbsp; <strong>/ 50</strong> ]</span></td>
-              <td style="padding: 5px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Q1(a): <span style="font-size: 9pt; font-weight: 900;">[ &nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 5px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Q1(b): <span style="font-size: 9pt; font-weight: 900;">[ &nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 5px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Ext: <span style="font-size: 9pt; font-weight: 900;">[ &nbsp; <strong>/ 40</strong> ]</span></td>
-              <td style="padding: 5px 6px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 130</strong> ]</td>
+            <tr style="background: #ffffff; font-weight: 900; border-top: 1.5px solid #000000;">
+              <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 7.8pt;">Key Topic ${keyTopicNum} Cumulative Assessment Totals</td>
+              <td style="padding: 4px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Do Now: <span style="font-size: 8.8pt; font-weight: 900;">[ &nbsp; <strong>/ 50</strong> ]</span></td>
+              <td style="padding: 4px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Q1(a): <span style="font-size: 8.8pt; font-weight: 900;">[ &nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 4px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Q1(b): <span style="font-size: 8.8pt; font-weight: 900;">[ &nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 4px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">Ext: <span style="font-size: 8.8pt; font-weight: 900;">[ &nbsp; <strong>/ 40</strong> ]</span></td>
+              <td style="padding: 4px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 130</strong> ]</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback Section (WWW & EBI 4 lines each at 7.2mm) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; color: #000000;">
+      <!-- Teacher Feedback Section -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
             Teacher Formative Assessment &bull; WWW / EBI Feedback
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #222222; font-weight: 700;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #222222; font-weight: 700;">
             Effort Grade: [ &nbsp;&nbsp;&nbsp;&nbsp; ]
           </span>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
               What Went Well (WWW):
             </span>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
+            ${teacherLinesHtml}
           </div>
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; display: block; margin-bottom: 1px;">
               Even Better If (EBI):
             </span>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
-            <div class="task-line" style="height: 7.2mm;"></div>
+            ${teacherLinesHtml}
           </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; margin-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt;">
           <span><strong>Teacher Signature:</strong> ${feedback.signature || '____________________________'}</span>
           <span><strong>Date:</strong> ${feedback.date || '____________________'}</span>
         </div>
       </div>
 
+      ${diagnosticChecklistHtml}
+
       <!-- Interactive Quizzing & Revision QR Hub (Absorbs Vertical Space to Eliminate Footer Gaps) -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; color: #000000;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant 20-Question Retrieval Practice
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #222222; font-weight: 700;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #222222; font-weight: 700;">
             Scan with smartphone camera to open live interactive 20-question self-marking quizzes
           </span>
         </div>

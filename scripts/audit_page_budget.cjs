@@ -144,9 +144,15 @@ async function auditPageBudget(page, options = {}) {
           const totalOverflow = Math.max(overflow, childOverflow);
 
           // 3. Gap Above Footer & Page Bottom Underflow Audit
-          const footer = p.querySelector(
-            '.page-footer-strip, .page-footer, .footer-strip, .grading-footer, .footer, [class*="footer"]',
-          );
+          const footer =
+            p.querySelector('.page-footer-strip') ||
+            p.querySelector('.page-footer') ||
+            p.querySelector('.footer-strip') ||
+            p.querySelector('.grading-footer') ||
+            p.querySelector('.cover-footer') ||
+            p.querySelector(
+              '.footer, [class*="footer"]:not(.archival-footer):not(.bqr-footer):not(.source-footer)',
+            );
           let unusedBottom = 0;
           let gapAboveFooter = 0;
 
