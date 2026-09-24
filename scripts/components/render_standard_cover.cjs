@@ -60,22 +60,33 @@ function renderStandardFrontCover({
   totalPageCount = 16,
   renderFooterStrip = null,
 }) {
-  const photoHeight = heroImage.heightMm || 120;
+  const isWeimar = unitId === 'weimar_nazi_germany';
+  const photoHeight = isWeimar ? Math.min(heroImage.heightMm || 92, 92) : heroImage.heightMm || 120;
   const objectPos = heroImage.objectPosition || 'center 36%';
+
+  // Dynamic specification font scaling to guarantee zero cut-off
+  const maxItems = Math.max(...(specBox.subtopics || []).map((s) => (s.items || []).length), 1);
+  const specFontSize = isWeimar || maxItems > 3 ? '6.8pt' : '8.8pt';
+  const specLineHeight = isWeimar || maxItems > 3 ? '1.20' : '1.5';
+  const specTitleSize = isWeimar || maxItems > 3 ? '7.2pt' : '8.8pt';
 
   const subtopicsHtml = (specBox.subtopics || [])
     .map((sub, idx) => {
       const isLast = idx === specBox.subtopics.length - 1;
-      const borderStyle = isLast ? '' : 'border-right: 1.2px solid #e2e8f0; padding-right: 12px;';
-      const itemsHtml = (sub.items || []).map((item) => `<div>&bull; ${item}</div>`).join('\n');
+      const borderStyle = isLast ? '' : 'border-right: 1.2px solid #e2e8f0; padding-right: 10px;';
+      const itemsHtml = (sub.items || [])
+        .map((item) => `<div style="margin-bottom: 2px;">&bull; ${item}</div>`)
+        .join('\n');
 
       return `
           <!-- Subtopic ${idx + 1} -->
-          <div style="${borderStyle} display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <strong style="font-size: 8.8pt; text-transform: uppercase; color: #000; border-bottom: 1.5px solid #000; padding-bottom: 3px; display: block;">
+          <div style="${borderStyle} display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
+            <strong style="font-size: ${specTitleSize}; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px; display: block; letter-spacing: 0.3px;">
               ${sub.title}
             </strong>
-            ${itemsHtml}
+            <div style="font-size: ${specFontSize}; line-height: ${specLineHeight}; color: #111;">
+              ${itemsHtml}
+            </div>
           </div>`;
     })
     .join('\n');
@@ -86,6 +97,75 @@ function renderStandardFrontCover({
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${footerQuip}</span>
         <span class="footer-page-num">1/${totalPageCount}</span>
+      </div>`;
+
+  // Pupil Workbook Card
+  const pupilCardHtml = `
+      <!-- Pupil Workbook & Assessment Card (Spanning Across the Page) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4.5px 12px; background: #fff; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.8px;">
+            Pupil Workbook &amp; Assessment
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #222;">
+            ${paperTitle} &bull; Key Topic ${keyTopicNum}
+          </span>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr; gap: 16px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 48px; font-size: 7.0pt;">Name:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 13px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 44px; font-size: 7.0pt;">Class:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 13px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 56px; font-size: 7.0pt;">Teacher:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 13px;"></div>
+          </div>
+        </div>
+      </div>`;
+
+  // Master Wide Photographic Plate
+  const photoPlateHtml = `
+      <!-- Master Wide Photographic Plate (Full Width Hero Layout) -->
+      <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
+        
+        <!-- Wide Photo Frame: 3:2 Landscape Photograph -->
+        <div style="height: ${photoHeight}mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+          <img src="${heroImage.src}" alt="${heroImage.alt}" style="width: 100%; height: 100%; object-fit: cover; object-position: ${objectPos}; display: block; filter: grayscale(100%) contrast(115%);">
+        </div>
+
+        <!-- Archival Provenance Plate Underneath Photo -->
+        <div style="border-top: 1.5px solid #000; padding: 3px 8px; background: #fff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #222;">
+              Historical Primary Record &bull; ${heroImage.date}
+            </span>
+            ${
+              isWeimar
+                ? ''
+                : `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">${heroImage.shelfmark}</span>`
+            }
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; line-height: 1.15; margin: 1px 0;">
+            ${heroImage.title}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.0pt; color: #111; line-height: 1.22;">
+            ${heroImage.caption}
+          </div>
+          ${
+            isWeimar
+              ? ''
+              : `<div style="margin-top: 2px; padding-top: 2px; border-top: 1px dashed #999; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; text-transform: uppercase; color: #333;">
+                  <span>${heroImage.sourceTag || 'Historical Primary Source'}</span>
+                  <span>${heroImage.archiveTag || 'Edexcel Paper 2 Master Archive'}</span>
+                </div>`
+          }
+        </div>
+
       </div>`;
 
   return `
@@ -117,7 +197,7 @@ function renderStandardFrontCover({
             Chronological Enquiry Sequence &bull; ${dateRange}
           </span>
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #000;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 13.5pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #000;">
           ${title}
         </h1>
         <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #222; font-style: italic; line-height: 1.2;">
@@ -125,73 +205,17 @@ function renderStandardFrontCover({
         </div>
       </div>
 
-      <!-- Master Wide Photographic Plate (Full Width Hero Layout) -->
-      <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
-        
-        <!-- Wide Photo Frame: 3:2 Landscape Photograph -->
-        <div style="height: ${photoHeight}mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-          <img src="${heroImage.src}" alt="${heroImage.alt}" style="width: 100%; height: 100%; object-fit: cover; object-position: ${objectPos}; display: block; filter: grayscale(100%) contrast(115%);">
-        </div>
-
-        <!-- Archival Provenance Plate Underneath Photo -->
-        <div style="border-top: 1.5px solid #000; padding: 3.5px 8px; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-              Archival Primary Record &bull; ${heroImage.date}
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">
-              ${heroImage.shelfmark}
-            </span>
-          </div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; line-height: 1.15; margin: 1px 0;">
-            ${heroImage.title}
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.0pt; color: #111; line-height: 1.22;">
-            ${heroImage.caption}
-          </div>
-          <div style="margin-top: 2px; padding-top: 2px; border-top: 1px dashed #999; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; text-transform: uppercase; color: #333;">
-            <span>${heroImage.sourceTag || 'Historical Primary Source'}</span>
-            <span>${heroImage.archiveTag || 'Edexcel Paper 2 Master Archive'}</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Pupil Workbook & Assessment Card (Spanning Across the Page) -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 6px 12px; background: #fff; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 5px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.8px;">
-            Pupil Workbook &amp; Assessment
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #222;">
-            ${paperTitle} &bull; Key Topic ${keyTopicNum}
-          </span>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr; gap: 16px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
-          <div style="display: flex; align-items: baseline;">
-            <strong style="text-transform: uppercase; width: 48px; font-size: 7.0pt;">Name:</strong>
-            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
-          </div>
-          <div style="display: flex; align-items: baseline;">
-            <strong style="text-transform: uppercase; width: 44px; font-size: 7.0pt;">Class:</strong>
-            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
-          </div>
-          <div style="display: flex; align-items: baseline;">
-            <strong style="text-transform: uppercase; width: 56px; font-size: 7.0pt;">Teacher:</strong>
-            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
-          </div>
-        </div>
-      </div>
+      <!-- Hero Photo and Pupil Card Order (Weimar: Pupil Card above Photo; Others: Photo above Pupil Card) -->
+      ${isWeimar ? `${pupilCardHtml}\n${photoPlateHtml}` : `${photoPlateHtml}\n${pupilCardHtml}`}
 
       <!-- Pearson Edexcel Specification Word-For-Word (Spanning Across the Page) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
-        <div style="background: #000; color: #fff; padding: 4px 12px; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
           <span>${specBox.title}</span>
-          <span style="font-size: 7.0pt; letter-spacing: 0.5px;">Official Specification Content</span>
+          <span style="font-size: 6.8pt; letter-spacing: 0.5px;">Official Specification Content</span>
         </div>
 
-        <div style="padding: 10px 14px; display: grid; grid-template-columns: repeat(${specBox.subtopics.length || 3}, 1fr); gap: 14px; font-family: 'Inter', sans-serif; font-size: 8.8pt; line-height: 1.5; color: #111; flex: 1;">
+        <div style="padding: 6px 10px; display: grid; grid-template-columns: repeat(${specBox.subtopics.length || 3}, 1fr); gap: 10px; font-family: 'Inter', sans-serif; flex: 1;">
           ${subtopicsHtml}
         </div>
       </div>
