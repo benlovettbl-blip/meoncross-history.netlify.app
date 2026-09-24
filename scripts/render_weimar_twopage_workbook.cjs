@@ -443,41 +443,59 @@ function buildWeimarKeyTopicWorkbook(ktId) {
 
       versoExamComponentHtml = `
       <!-- Question 1: Inference [4 marks] & Source A -->
-      <div class="archival-box">
-        <div class="archival-header">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
-            HISTORICAL PRIMARY SOURCE
-          </span>
-          <span class="archival-shelfmark">BA-KOBLENZ • ACCESSION RECORD</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin: 1px 0 2px 0;">
-          <strong>Provenance:</strong> ${sourceTitle}
-        </p>
-        <p style="font-family: 'Georgia', serif; font-size: 8.6pt; line-height: 1.22; color: #000000; margin: 0;">
-          ${sourceText}
-        </p>
-      </div>
-
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
-            &bull; Question 1: Inference from Source A [4 marks &bull; 5 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-            ${enq.exam.provenance}
-          </span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-          Give two things you can infer from Source A about ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}.
-        </p>
-        <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 5px; background: #f8fafc; margin-bottom: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.16;">
-            <strong>(i) What I can infer:</strong> ____________________________________________________________________<br>
-            <strong>Details in Source A that tell me this:</strong> ____________________________________________________
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
+        <div class="archival-box" style="margin-bottom: 2px;">
+          <div class="archival-header">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
+              HISTORICAL PRIMARY SOURCE
+            </span>
+            <span class="archival-shelfmark">BA-KOBLENZ • ACCESSION RECORD</span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.16; margin-top: 2px;">
-            <strong>(ii) What I can infer:</strong> ___________________________________________________________________<br>
-            <strong>Details in Source A that tell me this:</strong> ____________________________________________________
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin: 1px 0 2px 0;">
+            <strong>Provenance:</strong> ${sourceTitle}
+          </p>
+          <p style="font-family: 'Georgia', serif; font-size: 8.4pt; line-height: 1.2; color: #000000; margin: 0;">
+            ${sourceText}
+          </p>
+        </div>
+
+        <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
+                &bull; Question 1: Inference from Source A [4 marks &bull; 5 mins]
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+                ${enq.exam.provenance}
+              </span>
+            </div>
+            <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+              Give two things you can infer from Source A about ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}.
+            </p>
+          </div>
+          
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 3px; justify-content: space-between;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 6px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000;">
+                (i) What I can infer:
+              </div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000; margin-top: 1px;">
+                Details in Source A that tell me this:
+              </div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+            </div>
+
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 6px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000;">
+                (ii) What I can infer:
+              </div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000; margin-top: 1px;">
+                Details in Source A that tell me this:
+              </div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -499,41 +517,47 @@ function buildWeimarKeyTopicWorkbook(ktId) {
             ];
 
       versoExamComponentHtml = `
-      <!-- Chronological Causal Domino & Section A Practice -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-            &bull; Forensic Causation Domino: Chronological Sequence
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-            HISTORICAL CAUSALITY
-          </span>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
+        <!-- Chronological Causal Domino & Section A Practice -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
+              &bull; Forensic Causation Domino: Chronological Sequence
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+              HISTORICAL CAUSALITY
+            </span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.18;">
+            ${items.map((it) => `<div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.5px 5px; border-radius: 2px;"><strong>&bull;</strong> ${it}</div>`).join('')}
+          </div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.18;">
-          ${items.map((it) => `<div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.5px 5px; border-radius: 2px;"><strong>&bull;</strong> ${it}</div>`).join('')}
-        </div>
-      </div>
 
-      <!-- Section A Calibrated Causal Task [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
-            &bull; Section A Causal Anchor: Turning Point Assessment [4 marks &bull; 5 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-            EDEXCEL PAPER 3
-          </span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-          Explain why this sequence represented a decisive turning point in ${ktMeta.title}.
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
-          <strong>Target Guidance:</strong> Point (Identify the decisive catalyst) &bull; Fact (Deploy precise dates, figures, and groups) &bull; Explanation (Explain the lasting structural impact).<br>
-          <strong>Sentence Stems:</strong> One major reason this was a turning point was... Specifically, when [event/pact]... Consequently, this directly transformed Germany because...
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.25;">
-          <strong>Point &amp; Evidence:</strong> ____________________________________________________________________________________<br>
-          <strong>Explanation &amp; Causal Link:</strong> ____________________________________________________________________________
+        <!-- Section A Calibrated Causal Task [4 marks] -->
+        <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
+                &bull; Section A Causal Anchor: Turning Point Assessment [4 marks &bull; 5 mins]
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+                EDEXCEL PAPER 3
+              </span>
+            </div>
+            <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+              Explain why this sequence represented a decisive turning point in ${ktMeta.title}.
+            </p>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
+              <strong>Target Guidance:</strong> Point (Identify the decisive catalyst) &bull; Fact (Deploy precise dates, figures, and groups) &bull; Explanation (Explain the lasting structural impact).<br>
+              <strong>Sentence Stems:</strong> One major reason this was a turning point was... Specifically, when [event/pact]... Consequently, this directly transformed Germany because...
+            </div>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
+          </div>
         </div>
       </div>
       `;
@@ -552,51 +576,79 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       };
 
       versoExamComponentHtml = `
-      <!-- Dual Primary Sources B & C -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
-        <div class="archival-box" style="margin-bottom: 0;">
-          <div class="archival-header">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-              SOURCE B (PRIMARY)
-            </span>
-            <span class="archival-shelfmark">BA 183-RECORD</span>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
+        <!-- Dual Primary Sources B & C -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
+          <div class="archival-box" style="margin-bottom: 0;">
+            <div class="archival-header">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+                SOURCE B (PRIMARY)
+              </span>
+              <span class="archival-shelfmark">BA 183-RECORD</span>
+            </div>
+            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0;">
+              ${srcB.title.slice(0, 75)}...
+            </p>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
+              "${srcB.content.replace(/^"|"$/g, '').slice(0, 220)}..."
+            </p>
           </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0;">
-            ${srcB.title.slice(0, 75)}...
-          </p>
-          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
-            "${srcB.content.replace(/^"|"$/g, '').slice(0, 220)}..."
-          </p>
+
+          <div class="archival-box" style="margin-bottom: 0;">
+            <div class="archival-header">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+                SOURCE C (PRIMARY)
+              </span>
+              <span class="archival-shelfmark">GStA-RECORD</span>
+            </div>
+            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0;">
+              ${srcC.title.slice(0, 75)}...
+            </p>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
+              "${srcC.content.replace(/^"|"$/g, '').slice(0, 220)}..."
+            </p>
+          </div>
         </div>
 
-        <div class="archival-box" style="margin-bottom: 0;">
-          <div class="archival-header">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-              SOURCE C (PRIMARY)
-            </span>
-            <span class="archival-shelfmark">GStA-RECORD</span>
+        <!-- Section B Question 3(a) Utility Preparation (COP Analysis) -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
+                &bull; Question 3(a) Utility Preparation: Content &amp; Provenance (COP) Analysis
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px;">EDEXCEL PAPER 3</span>
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.16; color: #111111; margin-top: 1px;">
+              <strong>Sentence Stems:</strong> <em>"Source B is useful because it reveals... From own knowledge, I know... The provenance (author/motive) makes it valuable because..."</em>
+            </div>
           </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0;">
-            ${srcC.title.slice(0, 75)}...
-          </p>
-          <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
-            "${srcC.content.replace(/^"|"$/g, '').slice(0, 220)}..."
-          </p>
-        </div>
-      </div>
 
-      <!-- Provenance / Utility Scaffolding Strip -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #f8fafc;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-            &bull; Section B Exam Anchor: Question 3(a) Utility Scaffolding [8 marks &bull; 12 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px;">COP TECHNIQUE</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18; color: #111111; margin-top: 1px;">
-          <strong>Content (C):</strong> Interrogate what each source reveals using specific historical knowledge.<br>
-          <strong>Origin &amp; Purpose (OP):</strong> Evaluate who created it, when, and their underlying motive. Explain why partiality makes it useful!<br>
-          <strong>Sentence Stems:</strong> <em>"Source B is useful because it reveals... From my own knowledge, I know that... The provenance of Source B makes it valuable because..."</em>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; flex: 1;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+                Source B Utility Breakdown:
+              </strong>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Content reveals:</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Own knowledge link:</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Provenance (Author/Purpose):</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+            </div>
+
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+                Source C Utility Breakdown:
+              </strong>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Content reveals:</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Own knowledge link:</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Provenance (Author/Purpose):</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+            </div>
+          </div>
         </div>
       </div>
       `;
@@ -615,56 +667,69 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       };
 
       versoExamComponentHtml = `
-      <!-- Dual Interpretations Plate -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-            ${int1.title.slice(0, 50)}...
-          </strong>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; line-height: 1.18; color: #000000; margin: 0;">
-            "${int1.content.replace(/^"|"$/g, '').slice(0, 240)}..."
-          </p>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
+        <!-- Dual Interpretations Plate -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+              ${int1.title.slice(0, 50)}...
+            </strong>
+            <p style="font-family: 'Georgia', serif; font-size: 8.0pt; line-height: 1.18; color: #000000; margin: 0;">
+              "${int1.content.replace(/^"|"$/g, '').slice(0, 240)}..."
+            </p>
+          </div>
+
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+              ${int2.title.slice(0, 50)}...
+            </strong>
+            <p style="font-family: 'Georgia', serif; font-size: 8.0pt; line-height: 1.18; color: #000000; margin: 0;">
+              "${int2.content.replace(/^"|"$/g, '').slice(0, 240)}..."
+            </p>
+          </div>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-            ${int2.title.slice(0, 50)}...
-          </strong>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; line-height: 1.18; color: #000000; margin: 0;">
-            "${int2.content.replace(/^"|"$/g, '').slice(0, 240)}..."
-          </p>
-        </div>
-      </div>
+        <!-- Question 3(b) & Question 3(c) Structured Writing Frames -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 3px; justify-content: space-between;">
+          <!-- Question 3(b): Difference in Views [4 marks] -->
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
+                  &bull; Question 3(b): Difference in Views [4 marks &bull; 5 mins]
+                </strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px;">EDEXCEL PAPER 3</span>
+              </div>
+              <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 1px 0;">
+                Study Interpretations 1 and 2. They give different views on ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}. What is the main difference between the views?
+              </p>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 4px; border-radius: 2px; margin-bottom: 1px;">
+                <strong>Sentence Stem:</strong> The main difference is that Interpretation 1 stresses... whereas Interpretation 2 argues that... Specifically, Interpretation 1 notes "..." while Interpretation 2 suggests "...".
+              </div>
+            </div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+          </div>
 
-      <!-- Question 3(b): Difference in Views [4 marks] -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; background: #ffffff; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-            &bull; Question 3(b): Difference in Views [4 marks &bull; 5 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px;">EDEXCEL PAPER 3</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 0 0 1px 0;">
-          Study Interpretations 1 and 2. They give different views on ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}. What is the main difference between the views?
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px;">
-          <strong>Sentence Stems:</strong> The main difference is that Interpretation 1 views... as... whereas Interpretation 2 argues that... Specifically, Interpretation 1 notes "..." while Interpretation 2 suggests "...".
-        </div>
-      </div>
-
-      <!-- Question 3(c): Reasons for Difference [4 marks] -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-            &bull; Question 3(c): Reason for Difference [4 marks &bull; 5 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px;">EDEXCEL PAPER 3</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 0 0 1px 0;">
-          Suggest one reason why Interpretations 1 and 2 give different views. (Refer to Sources B &amp; C or historians' focus).
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px;">
-          <strong>Sentence Stems:</strong> One reason why they differ is because the historians relied on different evidence... Interpretation 1 draws on evidence matching Source B (which stresses...), whereas Interpretation 2 reflects Source C (which highlights...).
+          <!-- Question 3(c): Reasons for Difference [4 marks] -->
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
+                  &bull; Question 3(c): Reason for Difference [4 marks &bull; 5 mins]
+                </strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px;">EDEXCEL PAPER 3</span>
+              </div>
+              <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 1px 0;">
+                Suggest one reason why Interpretations 1 and 2 give different views. (Refer to Sources B &amp; C or historians' focus).
+              </p>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 4px; border-radius: 2px; margin-bottom: 1px;">
+                <strong>Sentence Stem:</strong> One reason they differ is because the historians relied on different evidence... Interpretation 1 draws on evidence matching Source B (which stresses...), whereas Interpretation 2 reflects Source C (which highlights...).
+              </div>
+            </div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+          </div>
         </div>
       </div>
       `;
