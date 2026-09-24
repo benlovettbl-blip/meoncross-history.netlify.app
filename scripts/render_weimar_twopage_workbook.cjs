@@ -499,7 +499,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
             ];
 
       versoExamComponentHtml = `
-      <!-- Chronological Domino & Causal Chain -->
+      <!-- Chronological Causal Domino & Section A Practice -->
       <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
@@ -514,16 +514,27 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
+      <!-- Section A Calibrated Causal Task [4 marks] -->
       <div class="task-section">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
-          &bull; Forensic Causal Task: Explain the turning point
-        </strong>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
+            &bull; Section A Causal Anchor: Turning Point Assessment [4 marks &bull; 5 mins]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+            EDEXCEL PAPER 3
+          </span>
+        </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           Explain why this sequence represented a decisive turning point in ${ktMeta.title}.
         </p>
-        <div class="task-line" style="height: 6mm;"></div>
-        <div class="task-line" style="height: 6mm;"></div>
-        <div class="task-line" style="height: 6mm;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
+          <strong>Target Guidance:</strong> Point (Identify the decisive catalyst) &bull; Fact (Deploy precise dates, figures, and groups) &bull; Explanation (Explain the lasting structural impact).<br>
+          <strong>Sentence Stems:</strong> One major reason this was a turning point was... Specifically, when [event/pact]... Consequently, this directly transformed Germany because...
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.25;">
+          <strong>Point &amp; Evidence:</strong> ____________________________________________________________________________________<br>
+          <strong>Explanation &amp; Causal Link:</strong> ____________________________________________________________________________
+        </div>
       </div>
       `;
     } else if (idx === 2) {
@@ -574,17 +585,18 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <!-- Provenance / Utility Prompt -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 6px; background: #f8fafc;">
+      <!-- Provenance / Utility Scaffolding Strip -->
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #f8fafc;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-            &bull; Section B Exam Anchor: Question 3(a) Utility Formula [8 marks &bull; 12 mins]
+            &bull; Section B Exam Anchor: Question 3(a) Utility Scaffolding [8 marks &bull; 12 mins]
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px;">COP TECHNIQUE</span>
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18; color: #111111; margin-top: 1px;">
           <strong>Content (C):</strong> Interrogate what each source reveals using specific historical knowledge.<br>
-          <strong>Origin &amp; Purpose (OP):</strong> Evaluate who created it, when, and their underlying motive. Explain why partiality makes it useful!
+          <strong>Origin &amp; Purpose (OP):</strong> Evaluate who created it, when, and their underlying motive. Explain why partiality makes it useful!<br>
+          <strong>Sentence Stems:</strong> <em>"Source B is useful because it reveals... From my own knowledge, I know that... The provenance of Source B makes it valuable because..."</em>
         </div>
       </div>
       `;
@@ -635,8 +647,9 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 0 0 1px 0;">
           Study Interpretations 1 and 2. They give different views on ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}. What is the main difference between the views?
         </p>
-        <div class="task-line" style="height: 5.5mm;"></div>
-        <div class="task-line" style="height: 5.5mm;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px;">
+          <strong>Sentence Stems:</strong> The main difference is that Interpretation 1 views... as... whereas Interpretation 2 argues that... Specifically, Interpretation 1 notes "..." while Interpretation 2 suggests "...".
+        </div>
       </div>
 
       <!-- Question 3(c): Reasons for Difference [4 marks] -->
@@ -650,8 +663,9 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 0 0 1px 0;">
           Suggest one reason why Interpretations 1 and 2 give different views. (Refer to Sources B &amp; C or historians' focus).
         </p>
-        <div class="task-line" style="height: 5.5mm;"></div>
-        <div class="task-line" style="height: 5.5mm;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px;">
+          <strong>Sentence Stems:</strong> One reason why they differ is because the historians relied on different evidence... Interpretation 1 draws on evidence matching Source B (which stresses...), whereas Interpretation 2 reflects Source C (which highlights...).
+        </div>
       </div>
       `;
     }
@@ -751,7 +765,10 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000;">
             <strong>Task:</strong> In one historically precise analytical sentence, explain how <em>${enq.vocab.term1.term}</em> directly influenced or contrasted with <em>${enq.vocab.term2.term}</em>:
           </div>
-          <div class="task-line" style="height: 6mm;"></div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; line-height: 1.2; margin-top: 1px;">
+            <strong>Sentence Stem:</strong> <em>While ${enq.vocab.term1.term} meant that..., this directly influenced / conflicted with ${enq.vocab.term2.term} because...</em>
+          </div>
+          <div style="border-bottom: 1.4px solid #000000; height: 5.5mm; margin-top: 1px;"></div>
         </div>
       </div>
 
