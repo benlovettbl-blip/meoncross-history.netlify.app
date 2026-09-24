@@ -143,6 +143,47 @@ async function auditPageBudget(page, options = {}) {
           });
           const totalOverflow = Math.max(overflow, childOverflow);
 
+          // 2b. Internal Container Text Clipping & Truncation Audit
+          // Inspects all cards, boxes, and sub-elements with overflow: hidden or restricted height
+          const clippedElements = [];
+          children.forEach((el) => {
+            if (
+              el.style.display === 'none' ||
+              el.tagName === 'SCRIPT' ||
+              el.tagName === 'STYLE' ||
+              el.tagName === 'LINK'
+            ) {
+              return;
+            }
+            if (
+              el.matches(
+                '.page, .a5-page, .page-landscape, .a4-page, .sheet-page, .textbook-page, .page-container',
+              )
+            ) {
+              return;
+            }
+
+            const style = window.getComputedStyle(el);
+            const isHiddenY = style.overflowY === 'hidden' || style.overflow === 'hidden';
+            if (isHiddenY) {
+              const diff = el.scrollHeight - el.clientHeight;
+              // Tolerance of 2px accounts for sub-pixel anti-aliasing / border rasterization
+              if (diff > 2 && el.clientHeight > 0) {
+                const text = (el.innerText || el.textContent || '')
+                  .replace(/\s+/g, ' ')
+                  .trim()
+                  .slice(0, 45);
+                clippedElements.push({
+                  tag: el.tagName.toLowerCase(),
+                  className: el.className ? `.${el.className.split(' ').join('.')}` : '',
+                  clippedPx: Math.round(diff),
+                  textSnippet: text,
+                });
+              }
+            }
+          });
+          const isTextClipped = clippedElements.length > 0;
+
           // 3. Gap Above Footer & Page Bottom Underflow Audit
           const footer =
             p.querySelector('.page-footer-strip') ||
@@ -155,31 +196,50 @@ async function auditPageBudget(page, options = {}) {
             );
           let unusedBottom = 0;
           let gapAboveFooter = 0;
+          let footerCollisionPx = 0;
+          let collidingElementDesc = '';
 
           if (footer) {
             const fRect = footer.getBoundingClientRect();
             unusedBottom = Math.max(0, Math.round(pRect.bottom - fRect.bottom));
 
-            // Measure gap between footer top and the lowest content element above it
-            const contentElements = Array.from(p.querySelectorAll('*')).filter((el) => {
+            // Inspect all content elements for footer collision or overlap
+            const allContentElements = Array.from(p.querySelectorAll('*')).filter((el) => {
               if (el === footer || footer.contains(el)) return false;
+              if (el.contains(footer)) return false;
               if (['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)) return false;
               if (el.style.display === 'none') return false;
-              // Exclude pure layout containers with children so empty flex space is not masked
               if (
                 el.matches(
-                  '.back-body-content, .back-container, .page-inner, .page-body-full, .page-flex-full, .page-body-stretch, .two-column-prose',
+                  '.page, .page-container, .a4-page, .a5-page, .page-landscape, .sheet-page, .textbook-page, .back-body-content, .back-container, .page-inner, .page-body-full, .page-flex-full, .page-body-stretch, .two-column-prose',
                 )
               ) {
                 return false;
               }
               const r = el.getBoundingClientRect();
-              return r.width > 0 && r.height > 0 && r.bottom <= fRect.top + 2;
+              return r.width > 0 && r.height > 0;
             });
 
-            if (contentElements.length > 0) {
+            allContentElements.forEach((el) => {
+              const r = el.getBoundingClientRect();
+              if (r.bottom > fRect.top + 1.5) {
+                const diff = Math.round(r.bottom - fRect.top);
+                if (diff > footerCollisionPx) {
+                  footerCollisionPx = diff;
+                  collidingElementDesc = `<${el.tagName.toLowerCase()}${el.className ? '.' + el.className.split(' ').join('.') : ''}> "${(el.textContent || '').trim().slice(0, 35)}"`;
+                }
+              }
+            });
+
+            // Measure gap between footer top and the lowest content element above it
+            const contentElementsAboveFooter = allContentElements.filter((el) => {
+              const r = el.getBoundingClientRect();
+              return r.bottom <= fRect.top + 2;
+            });
+
+            if (contentElementsAboveFooter.length > 0) {
               const maxContentBottomAboveFooter = Math.max(
-                ...contentElements.map((el) => el.getBoundingClientRect().bottom),
+                ...contentElementsAboveFooter.map((el) => el.getBoundingClientRect().bottom),
               );
               gapAboveFooter = Math.max(0, Math.round(fRect.top - maxContentBottomAboveFooter));
             }
@@ -261,7 +321,8 @@ async function auditPageBudget(page, options = {}) {
               ? Math.min(100, Math.max(0, Math.round(((clientH - unusedBottom) / clientH) * 100)))
               : 100;
 
-          const isOverflow = totalOverflow > 0;
+          const isFooterCollision = footerCollisionPx > 0;
+          const isOverflow = totalOverflow > 0 || isFooterCollision;
           const isUnderflow =
             !isOverflow &&
             unusedBottom > underflowThresholdPx &&
@@ -275,12 +336,14 @@ async function auditPageBudget(page, options = {}) {
 
           if (
             isOverflow ||
+            isFooterCollision ||
             isClutterError ||
             isVoidFooter ||
             isVoidInterTask ||
             isVoidInternalProse ||
             isVoidSection ||
-            isVoidBackCover
+            isVoidBackCover ||
+            isTextClipped
           ) {
             hasErrors = true;
           }
@@ -292,7 +355,10 @@ async function auditPageBudget(page, options = {}) {
             pageNum,
             clientH,
             scrollH,
-            overflow: totalOverflow,
+            overflow: Math.max(totalOverflow, footerCollisionPx),
+            footerCollisionPx,
+            collidingElementDesc,
+            isFooterCollision,
             unusedBottom,
             gapAboveFooter,
             maxInterTaskGap,
@@ -309,6 +375,8 @@ async function auditPageBudget(page, options = {}) {
             isVoidBackCover,
             isClutterError,
             clutterViolations,
+            isTextClipped,
+            clippedElements,
             pageId: p.id || `Page ${pageNum}`,
           });
         });
@@ -369,8 +437,18 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
     if (res.isClutterError) {
       issues.push(`❌ CLUTTER [${res.clutterViolations.join(', ')}]`);
     }
-    if (res.isOverflow) {
+    if (res.isFooterCollision) {
+      issues.push(
+        `❌ FOOTER COLLISION (+${res.footerCollisionPx}px into footer by ${res.collidingElementDesc})`,
+      );
+    } else if (res.isOverflow) {
       issues.push(`❌ OVERFLOW (+${res.overflow}px)`);
+    }
+    if (res.isTextClipped) {
+      const snippets = res.clippedElements
+        .map((c) => `"${c.textSnippet}" (-${c.clippedPx}px)`)
+        .join(', ');
+      issues.push(`❌ TEXT CLIPPED [${snippets}]`);
     }
     if (res.isVoidFooter) {
       issues.push(`❌ VOID FOOTER (${res.gapAboveFooter}px > 25px max)`);

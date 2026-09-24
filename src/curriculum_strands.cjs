@@ -46,6 +46,41 @@ const UNIT_THEMATIC_STRANDS = {
   // -------------------------------------------------------------
   // KEY STAGE 3 UNITS
   // -------------------------------------------------------------
+  medieval_england: [
+    {
+      id: 'sovereignty_state_power',
+      title: 'Monarchy, Law & State Power',
+      color: '#1e3a8a',
+      trajectory:
+        'Norman conquest autocracy → Royal justice & Clarendon → Magna Carta & Dynastic collapse (L1–L4, L8)',
+      lessonsCovered: [1, 2, 3, 4, 8],
+    },
+    {
+      id: 'trade_technology_empire',
+      title: 'Feudal Economy & Military Tech',
+      color: '#0369a1',
+      trajectory:
+        'Motte-and-bailey engineering → Domesday land audit → Post-plague market economy (L1, L2, L5, L6)',
+      lessonsCovered: [1, 2, 5, 6],
+    },
+    {
+      id: 'ideology_faith_causation',
+      title: 'Catholic Hegemony & Ideology',
+      color: '#b91c1c',
+      trajectory:
+        'Papal supremacy & Becket martyrdom → Doom paintings & tithes → Divine plague etiology (L3, L5, L6)',
+      lessonsCovered: [3, 5, 6],
+    },
+    {
+      id: 'resistance_agency_rights',
+      title: 'Popular & Baronial Resistance',
+      color: '#15803d',
+      trajectory:
+        'Saxon rebellions & Hereward → Runnymede baronial revolt → 1381 Peasants’ March on London (L2, L4, L7)',
+      lessonsCovered: [2, 4, 7],
+    },
+  ],
+
   early_modern_world: [
     {
       id: 'sovereignty_state_power',

@@ -1384,42 +1384,20 @@ allDirs.forEach((unitId) => {
 `;
 
   workbooksToGenerate.forEach((period) => {
-    if (unitId === 'industrialisation_and_empire') {
-      const {
-        buildIndustrialisationTwoPageWorkbook,
-      } = require('./render_industrialisation_twopage_workbook.cjs');
-      let customHtml = buildIndustrialisationTwoPageWorkbook(unitData, period);
-      const filename =
-        period.name === 'full' ? 'pupil_workbook.html' : `pupil_workbook_${period.name}.html`;
-      const outPath = path.join(publicUnitsDir, unitId, filename);
+    if (
+      unitId === 'medieval_england' ||
+      unitId === 'early_modern_world' ||
+      unitId === 'industrialisation_and_empire'
+    ) {
+      const { execSync } = require('child_process');
       try {
-        fs.writeFileSync(outPath, customHtml);
-        const altUnitsPath = path.join(PATHS.ROOT, 'units', unitId, filename);
-        if (fs.existsSync(path.dirname(altUnitsPath))) {
-          fs.writeFileSync(altUnitsPath, customHtml);
-        }
-        console.log(`Generated 2-page spread workbook for ${unitId}: ${filename}`);
+        execSync(`node scripts/generate_ks3_workbook.cjs ${unitId}`, {
+          stdio: 'inherit',
+          cwd: PATHS.ROOT,
+        });
+        console.log(`Generated 2-page spread workbook for ${unitId} via Universal KS3 Engine.`);
       } catch (err) {
-        console.error(`❌ Failed to write workbook for ${unitId}: ${filename}`, err.message);
-      }
-      return;
-    }
-
-    if (unitId === 'medieval_england') {
-      const { buildMedievalTwoPageWorkbook } = require('./render_medieval_twopage_workbook.cjs');
-      let customHtml = buildMedievalTwoPageWorkbook(unitData, period);
-      const filename =
-        period.name === 'full' ? 'pupil_workbook.html' : `pupil_workbook_${period.name}.html`;
-      const outPath = path.join(publicUnitsDir, unitId, filename);
-      try {
-        fs.writeFileSync(outPath, customHtml);
-        const altUnitsPath = path.join(PATHS.ROOT, 'units', unitId, filename);
-        if (fs.existsSync(path.dirname(altUnitsPath))) {
-          fs.writeFileSync(altUnitsPath, customHtml);
-        }
-        console.log(`Generated 2-page spread workbook for ${unitId}: ${filename}`);
-      } catch (err) {
-        console.error(`❌ Failed to write workbook for ${unitId}: ${filename}`, err.message);
+        console.error(`❌ Failed to compile Universal KS3 workbook for ${unitId}:`, err.message);
       }
       return;
     }

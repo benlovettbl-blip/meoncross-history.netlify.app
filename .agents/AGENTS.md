@@ -31,6 +31,22 @@ When creating or modifying curriculum data (such as `data.js`), you must automat
 2. **Pedagogical Recall (Do Nows):** Ensure that all "Do Now" or bell-ringer activities *strictly* ask recall questions from *previous* lessons. They must never ask about content from the current lesson.
 3. **Model Answers:** Verify that all generic placeholder model answers are replaced with historically accurate, detailed models.
 
+## Zero AI Educational Jargon & Authentic Classroom Standard
+STRICT RULE: You are STRICTLY FORBIDDEN from generating or including AI-generated corporate buzzwords, educational marketing puffery, or synthetic filler in ANY master textbooks, pupil workbooks, lesson materials, revision guides, cover pages, or back cover spreads.
+1. **Prohibited Jargon & Buzzwords:** Never use terms such as:
+   - "Specification Mastery & Synthesis"
+   - "Disciplinary Synthesis" / "Holistic Framework" / "Four Core Pillars" / "Analytical Framework"
+   - "Timeline Mastery" / "Mastery Quizzes"
+   - "Synergistic Learning" / "Deep-Dive Paradigm" / "Pedagogical Ecosystem"
+2. **Approved Classroom & Exam Terminology:** Always use clear, authentic, and subject-specific terminology used in secondary classrooms and exam boards:
+   - Use: "Revision Spine: Core Knowledge & Exam Strategy" instead of "Mastery & Synthesis".
+   - Use: "Key Chronology & Causal Turning Points" instead of "Timeline Mastery".
+   - Use: "Core Specification Themes" instead of "4 Core Pillars" or "Disciplinary Synthesis".
+   - Use: "Historiographical Debate & Edexcel Paper 3 Examination Strategy" (with specific exam codes like Q1 Inference, Q2 Causation, Q3(a) Utility, Q3(b/c) Views, Q3(d) Verdict).
+   - Use: "Synoptic Assessment & Historical Verdict" instead of corporate evaluation labels.
+   - Use: "20-Question Practice Quizzes" instead of "Instant 20-Question Mastery Quizzes".
+3. **Classroom Authenticity Principle:** Every heading, badge, label, and instructional stem must sound as if written by a veteran classroom teacher and experienced examiner preparing students for real historical thinking and authentic exam papers, completely devoid of corporate AI fluff.
+
 ## Prevent Data Loss
 Before running destructive commands (like `git reset --hard` or `git clean`) or running automated parsing scripts (like `extract_units.js`) that will completely overwrite major curriculum files (such as `app.js`, `index.html`, or `data.js`), you MUST:
 1. Stop and ask the user for explicit permission to overwrite their files.

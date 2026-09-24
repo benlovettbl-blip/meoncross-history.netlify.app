@@ -91,14 +91,44 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
 
       const audit = await auditPageBudget(page, {
         underflowThresholdPx: docName.includes('quiz_pack') ? 35 : 60,
-        pageSelector: '.a5-page, .page, .page-landscape, .a4-page, .sheet-page',
+        pageSelector: '.a5-page, .page, .page-landscape, .a4-page, .sheet-page, .textbook-page',
       });
 
       printSpaceAuditReport(audit, docName);
 
-      if (audit.hasErrors) {
-        totalErrors += audit.results.filter((r) => r.isOverflow).length;
+      const overflowPages = audit.results.filter((r) => r.isOverflow);
+      const textClippedPages = audit.results.filter((r) => r.isTextClipped);
+      const backCoverVoidPages = audit.results.filter((r) => r.isVoidBackCover);
+      const criticalErrors = audit.results.filter(
+        (r) =>
+          r.isOverflow ||
+          r.isTextClipped ||
+          r.isVoidBackCover ||
+          (isStrict &&
+            (r.isVoidSection ||
+              r.isVoidInternalProse ||
+              r.isVoidFooter ||
+              r.isVoidInterTask ||
+              r.isClutterError)),
+      );
+
+      if (textClippedPages.length > 0) {
+        textClippedPages.forEach((p) => {
+          console.error(
+            `  ❌ Text Clipping / Container Truncation Gate: ${p.pageId} has ${p.clippedElements.length} internal clipped element(s)!`,
+          );
+        });
       }
+
+      if (backCoverVoidPages.length > 0) {
+        backCoverVoidPages.forEach((p) => {
+          console.error(
+            `  ❌ Back Cover Bottom Void Gate: ${p.pageId} has excessive dead void (${p.backCoverBottomVoid}px > 35px limit)!`,
+          );
+        });
+      }
+
+      totalErrors += criticalErrors.length;
 
       // Automated Space Budget Gate: dead space > maxAllowedDeadSpace (150px)
       const deadSpaceViolations = audit.results.filter(
@@ -122,7 +152,7 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
   await browser.close();
 
   if (totalErrors > 0) {
-    console.error(`\n❌ Layout Overflows detected! Total overflow errors: ${totalErrors}`);
+    console.error(`\n❌ Layout Overflows or Critical Voids detected! Total errors: ${totalErrors}`);
     process.exit(1);
   }
 

@@ -184,9 +184,10 @@ function buildKs3WorkbookHtml(unitConfig) {
   // PAGE 1: FRONT COVER
   // ==========================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 12px 14px; border: 1.5px solid #0f172a; border-radius: 4px; justify-content: space-between;">
-    <div>
-        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 4px;" data-department-name="The History Department">
+  <div class="page page-container" id="page-1" style="padding: 10px 14px 10px 14px; border: 1.5px solid #0f172a; border-radius: 4px; justify-content: space-between;">
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+      <div>
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
           <div style="display: flex; justify-content: space-between; align-items: baseline;">
             <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11.5pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;">The History Department</span>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #475569;">Key Stage 3 Historical Studies</span>
@@ -194,7 +195,7 @@ function buildKs3WorkbookHtml(unitConfig) {
         </div>
 
         <!-- Pupil Information Strip (At Top under Department Header, No Target Field) -->
-        <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 3.5px 8px; background: #ffffff; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 2.5px 8px; background: #ffffff; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
           <div style="display: flex; align-items: baseline; flex: 2;">
             <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 42px;">Name:</strong>
             <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
@@ -220,8 +221,8 @@ function buildKs3WorkbookHtml(unitConfig) {
         </div>
 
         <!-- Unit Title & Overarching Enquiry Box -->
-        <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 4px;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 3px 8px; background: #ffffff; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1.5px;">
             <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
               ${yearGroup} Enquiry
             </span>
@@ -229,17 +230,17 @@ function buildKs3WorkbookHtml(unitConfig) {
               ${unitConfig.subtitle || 'Global Encounters, Reformation, Civil War & The Transatlantic Slave Trade'}
             </span>
           </div>
-          <h1 style="font-family: 'Playfair Display', serif; font-size: 14.5pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
             ${unitTitle.toUpperCase()}
           </h1>
-          <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #1e293b; font-style: italic; line-height: 1.22;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #1e293b; font-style: italic; line-height: 1.2;">
             Overarching Enquiry: “${overarchingEnquiry}”
           </div>
         </div>
 
         <!-- Hero Photo Plate (Full Uncropped Primary Source Presentation) -->
-        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 4px; display: flex; flex-direction: column;">
-          <div style="height: 52mm; background: #0f172a; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 2px 0;">
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px; display: flex; flex-direction: column;">
+          <div style="height: ${unitConfig.heroPhotoHeightMm || 52}mm; background: #0f172a; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 2px 0;">
             <img src="${coverImgData}" alt="Cover Image" style="width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block;">
           </div>
           <div style="border-top: 1.2px solid #0f172a; padding: 2px 8px; background: #f8fafc;">
@@ -251,22 +252,22 @@ function buildKs3WorkbookHtml(unitConfig) {
                 ${coverPlate.shelfmark || 'HISTORICAL ARCHIVE'}
               </span>
             </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
               ${coverPlate.title || 'Primary Source Evidence'}
             </div>
-            <div style="font-family: 'Georgia', serif; font-size: 6.7pt; color: #334155; line-height: 1.16;">
+            <div style="font-family: 'Georgia', serif; font-size: 6.6pt; color: #334155; line-height: 1.15;">
               ${coverPlate.description || ''}
             </div>
           </div>
         </div>
 
         <!-- The 8 Historical Enquiries (Curriculum Roadmap, 0 Audit Boxes) -->
-        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 4px;">
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
           <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
             <span>The ${lessons.length} Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
             <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">${unitConfig.dateRange || (lessons.length === 7 ? '1914–1919' : '1450–1750')}</span>
           </div>
-          <div style="padding: 4px 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 8px; font-family: 'Inter', sans-serif; background: #ffffff;">
+          <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 6px; font-family: 'Inter', sans-serif; background: #ffffff;">
             ${lessons
               .map((l, idx) => {
                 const cleanEnquiry = getEnquiryQuestion(l);
@@ -277,17 +278,17 @@ function buildKs3WorkbookHtml(unitConfig) {
                       ? l.syllabusTopic.split(/,\s*|\.\s*/).filter(Boolean)
                       : [];
                 return `
-              <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: 3px 5px; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="margin-bottom: 1.5px;">
-                  <div style="display: flex; align-items: center; margin-bottom: 1.5px;">
+              <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: 2.5px 4.5px; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="margin-bottom: 1px;">
+                  <div style="display: flex; align-items: center; margin-bottom: 1px;">
                     <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
                   </div>
-                  <strong style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #0f172a; line-height: 1.18; display: block; margin-bottom: 1.5px;">
+                  <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
                     ${cleanEnquiry}
                   </strong>
                 </div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #334155; line-height: 1.18; padding-left: 2px;">
-                  ${bullets.map((b) => `<div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 6.0pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                  ${bullets.map((b) => `<div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
                 </div>
               </div>
               `;
@@ -295,63 +296,61 @@ function buildKs3WorkbookHtml(unitConfig) {
               .join('')}
           </div>
         </div>
+      </div>
 
-        <!-- Lower Section: "How to Write Like a Historian" + "The Big Storylines" -->
-        <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-bottom: 3px;">
-          <!-- Left Box: How to Write Like a Historian -->
-          <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
-            <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
-              <span>How to Write Like a Historian</span>
-              <span style="color: #94a3b8; font-size: 6.2pt;">4 Golden Rules &amp; Connectives</span>
-            </div>
-            <div style="padding: 3.5px 7px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
-              <div>
-                <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.5pt;">The 4 Golden Rules of Extended Writing:</strong>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 5px; margin-top: 1px; font-size: 6.4pt; color: #334155;">
-                  <span><strong>1. Direct Thesis:</strong> Clear answer in sentence 1.</span>
-                  <span><strong>2. Specific Evidence:</strong> Names, dates, acts &amp; data.</span>
-                  <span><strong>3. Causal Mechanics:</strong> Explain <em>why</em> &amp; <em>how</em>.</span>
-                  <span><strong>4. Evaluative Balance:</strong> Weighted judgement.</span>
-                </div>
-              </div>
-              <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; margin-top: 1px;">
-                <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.5pt;">High-Impact Analytical Connectives:</strong>
-                <div style="font-size: 6.3pt; color: #475569; line-height: 1.2; margin-top: 1px;">
-                  <strong style="color: #0f172a;">Causation:</strong> <em>Consequently &bull; Precipitated by &bull; Directly resulted in</em><br>
-                  <strong style="color: #0f172a;">Nuance &amp; Evaluation:</strong> <em>Conversely &bull; While ostensibly... in reality &bull; Decisively</em>
-                </div>
-              </div>
-            </div>
+      <!-- Lower Section: "How to Write Like a Historian" + "The Big Storylines" -->
+      <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-top: auto; margin-bottom: 8px;">
+        <!-- Left Box: How to Write Like a Historian -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+          <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>How to Write Like a Historian</span>
+            <span style="color: #94a3b8; font-size: 6.2pt;">4 Golden Rules &amp; Connectives</span>
           </div>
-
-          <!-- Right Box: Thematic Strands (Single Source of Truth) -->
-          <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
-            <div style="background: #1e3a8a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
-              <span>The ${thematicStrands.length} Big Storylines to Track</span>
-              <span style="color: #bfdbfe; font-size: 6.2pt;">Core Historical Themes</span>
-            </div>
-            <div style="padding: 3.5px 7px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 1.5px;">
-              ${thematicStrands
-                .map(
-                  (strand, sIdx) => `
-              <div>
-                <strong style="color: ${strand.color || '#1e3a8a'};">${sIdx + 1}. ${strand.title}:</strong> <span style="color: #475569;">${strand.trajectory}</span>
+          <div style="padding: 3px 7px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            <div>
+              <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.5pt;">The 4 Golden Rules of Extended Writing:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 6px; margin-top: 1px; font-size: 6.3pt; color: #334155;">
+                <span><strong>1. Direct Thesis:</strong> Clear answer in sentence 1.</span>
+                <span><strong>2. Specific Evidence:</strong> Names, dates, acts &amp; data.</span>
+                <span><strong>3. Causal Mechanics:</strong> Explain <em>why</em> &amp; <em>how</em>.</span>
+                <span><strong>4. Evaluative Balance:</strong> Weighted judgement.</span>
               </div>
-              `,
-                )
-                .join('')}
+            </div>
+            <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; margin-top: 1px;">
+              <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.5pt;">High-Impact Analytical Connectives:</strong>
+              <div style="font-size: 6.2pt; color: #475569; line-height: 1.2; margin-top: 1px;">
+                <strong style="color: #0f172a;">Causation:</strong> <em>Consequently &bull; Precipitated by &bull; Directly resulted in</em><br>
+                <strong style="color: #0f172a;">Nuance &amp; Evaluation:</strong> <em>Conversely &bull; While ostensibly... in reality &bull; Decisively</em>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Page 1 Footer Strip -->
-      <div style="border-top: 1.2px solid #0f172a; padding-top: 2.5px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569;">
-        <span>The History Department &bull; ${unitTitle}</span>
-        <span style="font-style: italic; color: #64748b;">Permanent Academic Record &bull; Retain for Synoptic Revision</span>
+        <!-- Right Box: Thematic Strands (Single Source of Truth) -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+          <div style="background: #1e3a8a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>The ${thematicStrands.length} Big Storylines to Track</span>
+            <span style="color: #bfdbfe; font-size: 6.2pt;">Core Historical Themes</span>
+          </div>
+          <div style="padding: 3px 7px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            ${thematicStrands
+              .map(
+                (strand, sIdx) => `
+            <div>
+              <strong style="color: ${strand.color || '#1e3a8a'};">${sIdx + 1}. ${strand.title}:</strong> <span style="color: #475569;">${strand.trajectory}</span>
+            </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Page 1 Footer Strip -->
+    <div class="cover-footer page-footer-strip" style="border-top: 1.2px solid #0f172a; padding-top: 2.5px; margin-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569;">
+      <span>The History Department &bull; ${unitTitle}</span>
+      <span style="font-style: italic; color: #64748b;">Permanent Academic Record &bull; Retain for Synoptic Revision</span>
     </div>
   </div>
 `;
@@ -514,23 +513,74 @@ function buildKs3WorkbookHtml(unitConfig) {
         </div>
 
         <!-- Task 2: Core Disciplinary Vocabulary Container -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #fdfbf7;">
+        ${(() => {
+          const vt = l.vocabTask || {};
+          const isCloze = vt.type === 'cloze' || Boolean(vt.passage || vt.clozeText);
+          const isMapping = vt.type === 'mapping';
+          const isDistinction = vt.type === 'distinction';
+          const badgeText = 'Historical Literacy';
+
+          if (isCloze) {
+            const rawPassage = vt.passage || vt.clozeText || '';
+            const clozeHtml = rawPassage.replace(/\[(\d+)\]/g, (match, num) => {
+              return `<span style="display: inline-flex; align-items: baseline; margin: 0 3px;"><sup style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; color: #475569; margin-right: 2px;">(${num})</sup><span style="display: inline-block; min-width: 76px; border-bottom: 1.4px solid #0f172a; height: 1em;">&nbsp;</span></span>`;
+            });
+            return `
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3.5px 8px; margin-bottom: 3px; background: #fdfbf7;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #64748b;">Historical Literacy</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #64748b;">${badgeText}</span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; margin-bottom: 2px; line-height: 1.2;">
-            ${l.vocabPrompt || (l.vocabTask && l.vocabTask.prompt) || l.vocabTask || ''}
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; margin-bottom: 2px; line-height: 1.2;">
+            ${vt.prompt || 'Complete the sentences using the core terms:'}
           </div>
-          <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
-          <div class="task-line" style="height: 6.0mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.5; color: #1e293b; background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; margin-top: 2px;">
+            ${clozeHtml}
+          </div>
         </div>
+            `;
+          }
+
+          if (isDistinction) {
+            return `
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3.5px 8px; margin-bottom: 3px; background: #fdfbf7;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #64748b;">${badgeText}</span>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; margin-bottom: 2px; line-height: 1.2;">
+            ${vt.prompt || l.vocabPrompt || l.vocabTask || ''}
+          </div>
+          <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+        </div>
+            `;
+          }
+
+          // Mapping or Default
+          return `
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 3.5px 8px; margin-bottom: 3px; background: #fdfbf7;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #64748b;">${badgeText}</span>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; margin-bottom: 2px; line-height: 1.2;">
+            ${vt.prompt || l.vocabPrompt || l.vocabTask || ''}
+          </div>
+          <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+          <div class="task-line" style="height: 5.4mm; border-bottom: 1.5px solid #0f172a; margin-top: 1px;"></div>
+        </div>
+          `;
+        })()}
       </div>
 
       <!-- Task 3: Dual-Column Extraction & Argument Workspace -->
       <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 4px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px; min-height: 0;">
-        <!-- Grouped Header + Instruction + Dual Columns (Tucked directly underneath first line) -->
-        <div>
+        <!-- Top Workspace: Dual Table + Argument Box Pushed Up Beneath Table -->
+        <div style="display: flex; flex-direction: column; flex: 1; justify-content: flex-start; min-height: 0;">
+          <!-- Header + Instruction -->
           <div style="border-bottom: 1.2px solid #0f172a; padding-bottom: 2px; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a; text-transform: uppercase;">
               ${l.bridgeTask?.title ? l.bridgeTask.title.replace(/\[.*?\]\s*/g, '') : 'Task 3: Dual-Column Knowledge Extraction'}
@@ -543,7 +593,7 @@ function buildKs3WorkbookHtml(unitConfig) {
             ).replace(/then synthesise below:?/gi, 'then develop your argument below:')}
           </div>
 
-          <!-- Dual Evidence Columns (Moved UP directly under instruction line) -->
+          <!-- Dual Evidence Columns -->
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 2px;">
             <!-- Left Column (Blue) -->
             <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #0369a1; border-radius: 4px; padding: 3px 6px 4px 6px; background: #f8fafc;">
@@ -593,48 +643,47 @@ function buildKs3WorkbookHtml(unitConfig) {
               </div>
             </div>
           </div>
+
+          <!-- Task 3 Argument Box (Pushed up directly beneath table, 8 Thick Ruled Lines, Expands to Fill) -->
+          <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 3px 7px 4px 7px; background: #ffffff; margin-top: 2px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; flex-shrink: 0;">
+              ✍️ Task 3: Developing Your Argument: ${(
+                l.bridgeTask?.synthesisPrompt ||
+                'Combine your findings into a reasoned historical argument:'
+              )
+                .replace(/^Synthesise\s+whether\s+/i, 'Explain whether ')
+                .replace(/^Synthesise\s+how\s+/i, 'Explain how ')
+                .replace(/^Synthesise\s+why\s+/i, 'Explain why ')
+                .replace(/^Synthesise\s+the\s+/i, 'Explain the ')
+                .replace(/^Synthesise\s+/i, 'Explain ')
+                .replace(/synthesis/gi, 'argument')}
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+              <div class="task-line" style="flex: 1; min-height: 4.8mm; border-bottom: 1.6px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
+            </div>
+          </div>
         </div>
 
-        <!-- Task 3 Argument Box with Ruled Lines (Accessible Year 8 Language, 0 Synthesis Jargon) -->
-        <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 3px 7px; background: #ffffff; margin-bottom: 2px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
-            ✍️ Task 3: Developing Your Argument: ${(
-              l.bridgeTask?.synthesisPrompt ||
-              'Combine your findings into a reasoned historical argument:'
-            )
-              .replace(/^Synthesise\s+whether\s+/i, 'Explain whether ')
-              .replace(/^Synthesise\s+how\s+/i, 'Explain how ')
-              .replace(/^Synthesise\s+why\s+/i, 'Explain why ')
-              .replace(/^Synthesise\s+the\s+/i, 'Explain the ')
-              .replace(/^Synthesise\s+/i, 'Explain ')
-              .replace(/synthesis/gi, 'argument')}
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 0;">
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-            <div class="task-line" style="height: 5.8mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; margin-top: 1px;"></div>
-          </div>
-        </div>
-
-        <!-- Clue & Scholar's Edge -->
-        <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #64748b; margin-top: 1px; line-height: 1.15;">
+        <!-- Clue & Scholar's Edge (Pinned cleanly at bottom above footer) -->
+        <div style="border-top: 1.2px solid #e2e8f0; padding-top: 2.5px; margin-top: 3px; flex-shrink: 0;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #64748b; margin-top: 1px; line-height: 1.15;">
             ${l.bridgeTask?.clue || ''}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 1px; margin-top: 1px; line-height: 1.15;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 1px; margin-top: 1px; line-height: 1.15;">
             ${l.bridgeTask?.scholarsEdge || ''}
           </div>
         </div>
       </div>
 
       <!-- Verso Footer Strip -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
+      <div class="page-footer-strip" style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #cbd5e1; padding-top: 3px; margin-top: 3px;">
         <span style="font-weight: 800; color: #0f172a;">Page ${leftPageNum} (Facing Spread Left)</span>
         <span>The History Department &bull; ${yearGroup} Enquiry Spreads</span>
       </div>
@@ -840,8 +889,8 @@ function buildKs3WorkbookHtml(unitConfig) {
     html += `
       </div>
 
-      <!-- AUTO-FILL WRITING LINES (Engine flex calculation target, capped at 17 lines) -->
-      <div class="auto-lines-target" data-auto-lines="true" data-max-lines="17" data-line-height="7.8" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; justify-content: flex-start; margin-bottom: 3px;">
+      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
+      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-bottom: 2px;">
         <!-- Filled dynamically by engine measurement script -->
       </div>
 
@@ -1135,13 +1184,12 @@ function buildKs3WorkbookHtml(unitConfig) {
       document.querySelectorAll('[data-auto-lines]').forEach(el => {
         el.innerHTML = '';
         const availablePx = el.clientHeight;
-        const lineHMm = parseFloat(el.dataset.lineHeight || '7.8');
-        const maxLines = parseInt(el.dataset.maxLines || '17', 10);
+        const lineHMm = parseFloat(el.dataset.lineHeight || '7.5');
         // Standard 96 DPI: 1 inch = 25.4mm = 96px => 1mm = 3.779527559px
         const lineHPx = lineHMm * (96 / 25.4);
-        const count = Math.min(maxLines, Math.max(1, Math.floor(availablePx / lineHPx)));
+        const count = Math.max(1, Math.round(availablePx / lineHPx));
         el.innerHTML = Array(count).fill(
-          '<div class="task-line" style="height: ' + lineHMm + 'mm; border-bottom: 1.5px solid #0f172a; box-sizing: border-box; flex-shrink: 0;"></div>'
+          '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.6px solid #0f172a; box-sizing: border-box;"></div>'
         ).join('');
       });
     }
