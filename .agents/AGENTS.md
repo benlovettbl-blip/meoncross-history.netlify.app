@@ -144,12 +144,13 @@ Restrict FontAwesome / decorative icon usage strictly to high-level UI controls 
 ## Archival Watermark & Seal Styling
 In place of colored icons, use a faint, subtle monochrome archival shelfmark stamp (`.archival-shelfmark-stamp`) or simple hairline dividers (`.archival-hairline`) for official school documentation boxes, family archives, and provenance containers to give them an understated, authentic institutional look. For official institutional provenance, use the `.archival-seal` micro-stamp badge.
 
-## Primary Source Citation Box Standard
-Formalize all primary historical excerpts across all units (including Medicine Through Time, Weimar Germany, and the Great War) into the reusable `.archival-source-box` pattern. Each citation box must feature:
-1. An `.archival-source-header` with an `.archival-meta-tag` category label on the left and a boxed `.archival-shelfmark-stamp` (repository and accession shelfmark/gazette issue) on the right.
-2. An `.archival-source-title` with serif styling.
-3. An `.archival-source-body` rendering verbatim primary text in an authentic historical serif face (`Georgia` or `Playfair Display`) with subtle warm archival parchment background.
-4. An `.archival-citation-footer` separated by a 1px hairline divider detailing historical provenance, combat action, date, and publication volume.
+## Primary Source Citation Box Standard (Zero Archival Clutter Policy)
+Formalize all primary historical excerpts across all units (including Medicine Through Time, Weimar Germany, and the Great War) into the clean, accessible `.archival-source-box` pattern. Each citation box must feature:
+1. An `.archival-source-header` with an `.archival-meta-tag` category label (e.g. `SOURCE A • Official Proclamation`) on the left and a clean, concise historical date/origin (e.g. `9 November 1918`) on the right.
+2. An `.archival-source-title` with clear serif styling.
+3. An `.archival-source-body` rendering verbatim primary text in an authentic historical serif face (`Newsreader`, `Georgia`, or `Playfair Display`) with subtle warm archival parchment background.
+4. An `.archival-context-box` providing concise contextual grounding and concluding with a targeted Hinge Question to spark historical enquiry.
+5. **Zero Mock Accession Clutter:** STRICT RULE: Never inject fake or obscure archival accession shelfmarks, document references, or museum codes (`FO 93/36/78`, `RS-1918-SCH`, `BA 183-B0527`, etc.) into student-facing documents or source footers. Provenance must remain clean, authentic, and pedagogically focused for secondary school pupils and teachers.
 
 ## Family Archive Hero Banners: Aspect Ratio & Artifact Standard
 Whenever generating, selecting, or updating hero banners for pupil family heroes (such as local soldiers researched by pupils, the Crummack archive, or the Lowry brothers at Manor Way Grange):

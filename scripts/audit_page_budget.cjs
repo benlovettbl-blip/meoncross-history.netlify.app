@@ -183,7 +183,9 @@ async function auditPageBudget(page, options = {}) {
           // 4. Inter-Task Void Audit (Measure vertical distance between consecutive task blocks)
           let maxInterTaskGap = 0;
           const bodyContainer =
-            p.querySelector('.page-body-full, .page-flex-full, .page-body-stretch') || p;
+            p.querySelector(
+              '.page-body-full, .page-flex-full, .page-body-stretch, .page-inner, .back-body-content',
+            ) || p;
           const directChildren = Array.from(bodyContainer.children).filter((el) => {
             if (['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)) return false;
             if (el.style.display === 'none') return false;
@@ -203,6 +205,42 @@ async function auditPageBudget(page, options = {}) {
             maxInterTaskGap = Math.max(maxInterTaskGap, vGap);
           }
 
+          // 5. Internal Multi-Column Prose Void Audit
+          let internalProseGap = 0;
+          const prose = p.querySelector('.two-column-prose');
+          if (prose) {
+            const proseRect = prose.getBoundingClientRect();
+            const nextSection = prose.nextElementSibling;
+            const leaves = Array.from(prose.querySelectorAll('*')).filter(
+              (el) =>
+                !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName) &&
+                el.style.display !== 'none' &&
+                el.children.length === 0 &&
+                el.getBoundingClientRect().height > 0,
+            );
+            if (leaves.length > 0) {
+              const maxLeafBottom = Math.max(
+                ...leaves.map((el) => el.getBoundingClientRect().bottom),
+              );
+              const nextTop = nextSection
+                ? nextSection.getBoundingClientRect().top
+                : proseRect.bottom;
+              internalProseGap = Math.max(0, Math.round(nextTop - maxLeafBottom));
+            }
+          }
+
+          // 6. Back Cover Inter-Section Gap Audit
+          let maxSectionGap = 0;
+          const backSections = Array.from(p.querySelectorAll('.back-body-content > div'));
+          if (backSections.length > 1) {
+            for (let s = 0; s < backSections.length - 1; s++) {
+              const r1 = backSections[s].getBoundingClientRect();
+              const r2 = backSections[s + 1].getBoundingClientRect();
+              const sGap = Math.max(0, Math.round(r2.top - r1.bottom));
+              maxSectionGap = Math.max(maxSectionGap, sGap);
+            }
+          }
+
           const utilizationPct =
             clientH > 0
               ? Math.min(100, Math.max(0, Math.round(((clientH - unusedBottom) / clientH) * 100)))
@@ -215,9 +253,18 @@ async function auditPageBudget(page, options = {}) {
             utilizationPct < minUtilizationPct;
           const isVoidFooter = gapAboveFooter > maxGapAboveFooterPx;
           const isVoidInterTask = maxInterTaskGap > maxInterTaskGapPx;
+          const isVoidInternalProse = internalProseGap > 35;
+          const isVoidSection = maxSectionGap > 25;
           const isClutterError = clutterViolations.length > 0;
 
-          if (isOverflow || isClutterError || isVoidFooter || isVoidInterTask) {
+          if (
+            isOverflow ||
+            isClutterError ||
+            isVoidFooter ||
+            isVoidInterTask ||
+            isVoidInternalProse ||
+            isVoidSection
+          ) {
             hasErrors = true;
           }
           if (isUnderflow) {
@@ -232,11 +279,15 @@ async function auditPageBudget(page, options = {}) {
             unusedBottom,
             gapAboveFooter,
             maxInterTaskGap,
+            internalProseGap,
+            maxSectionGap,
             utilizationPct,
             isOverflow,
             isUnderflow,
             isVoidFooter,
             isVoidInterTask,
+            isVoidInternalProse,
+            isVoidSection,
             isClutterError,
             clutterViolations,
             pageId: p.id || `Page ${pageNum}`,
@@ -307,6 +358,12 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
     }
     if (res.isVoidInterTask) {
       issues.push(`❌ INTER-TASK VOID (${res.maxInterTaskGap}px > 35px max)`);
+    }
+    if (res.isVoidInternalProse) {
+      issues.push(`❌ INTERNAL PROSE VOID (${res.internalProseGap}px > 35px max)`);
+    }
+    if (res.isVoidSection) {
+      issues.push(`❌ SECTION GAP (${res.maxSectionGap}px > 25px max)`);
     }
     if (res.isUnderflow && !res.isVoidFooter) {
       issues.push(`⚠️ UNDERFLOW (${res.utilizationPct}% utilized, ${res.unusedBottom}px gap)`);

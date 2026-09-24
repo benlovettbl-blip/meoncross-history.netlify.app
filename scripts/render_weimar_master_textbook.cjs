@@ -126,7 +126,7 @@ const WEIMAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-badge">HISTORICAL EVIDENCE</span>
             <span class="source-type">Secret Telephone Agreement</span>
           </div>
           <span class="source-date-micro">10 November 1918</span>
@@ -135,16 +135,30 @@ const WEIMAR_COMPONENT_BANK = {
         <div class="archival-body written-source-box">
           "On the evening of 10 November, I telephoned Friedrich Ebert in the Chancellery over our secret line... I informed him that the High Command placed itself at the disposal of his government. In return, the Field Marshal and I expected the government to support the officer corps in maintaining discipline, supply the army, and combat revolutionary Bolshevism with all vigor. Ebert accepted our offer of alliance with deep relief."
         </div>
-        <div class="archival-footer">
-          <span>Bundesarchiv-Militärarchiv Freiburg</span>
-          <span>MS-Groener-1918 &bull; Imperial General Staff</span>
+      </div>
+    `,
+    academicDebate: `
+      <div class="historiography-box">
+        <div class="hb-header">
+          <span class="hb-tag">HISTORIOGRAPHICAL DEBATE</span>
+          <span class="hb-focus">WAS WEIMAR DOOMED FROM BIRTH?</span>
+        </div>
+        <div class="hb-grid">
+          <div class="hb-col">
+            <strong>Interpretation A: Structural Fatalism (Eberhard Kolb)</strong>
+            <p>"Weimar democracy was crippled from its inception. Pure proportional representation guaranteed fragmented coalitions, while Article 48 planted a constitutional dictatorship mechanism that fatally compromised democratic governance."</p>
+          </div>
+          <div class="hb-col">
+            <strong>Interpretation B: Elite Sabotage (Richard J. Evans)</strong>
+            <p>"The constitution was a remarkably progressive charter. Its vulnerability stemmed not from legal text, but because conservative civil servants, judges, and military commanders remained in power, actively sabotaging democratic legitimacy."</p>
+          </div>
         </div>
       </div>
     `,
     bottomEnquiry: {
-      q1: "Identify two reasons why Chancellor Max von Baden announced the Kaiser's abdication on 9 November 1918.",
-      q2: 'Explain how the Ebert-Groener Pact both stabilized the early Republic and created a dangerous dependency on the old imperial army.',
-      q3: 'Historians debate whether the Weimar Constitution was a triumph of progressive democracy or fatally flawed from the start. Assess which view is more convincing.',
+      q1: "Identify two reasons why Chancellor Max von Baden announced the Kaiser's abdication on 9 November 1918. <em>[Recall: Kiel naval mutiny, British naval blockade, Allied refusal to negotiate with autocracy]</em>",
+      q2: 'Explain why the Ebert-Groener Pact created a dangerous dependency on the imperial officer corps. <em>[Use causal connectives: Consequently... In return for... This undermined democratic control because...]</em>',
+      q3: "'The Weimar Constitution was a masterpiece of progressive democracy, not a flawed document.' How far do you agree? <em>[Criteria: Compare universal franchise vs Article 48 emergency powers]</em>",
     },
   },
 
@@ -182,7 +196,7 @@ const WEIMAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-badge">HISTORICAL EVIDENCE</span>
             <span class="source-type">The Peace Treaty</span>
           </div>
           <span class="source-date-micro">28 June 1919</span>
@@ -191,16 +205,30 @@ const WEIMAR_COMPONENT_BANK = {
         <div class="archival-body written-source-box">
           "The Allied and Associated Governments affirm and Germany accepts the responsibility of Germany and her allies for causing all the loss and damage to which the Allied and Associated Governments and their nationals have been subjected as a consequence of the war imposed upon them by the aggression of Germany and her allies."
         </div>
-        <div class="archival-footer">
-          <span>The National Archives, Kew (FO 93/36/78)</span>
-          <span>Galerie des Glaces, Versailles</span>
+      </div>
+    `,
+    academicDebate: `
+      <div class="historiography-box">
+        <div class="hb-header">
+          <span class="hb-tag">HISTORIOGRAPHICAL DEBATE</span>
+          <span class="hb-focus">THE TRAUMA OF 1923: PERMANENT SCAR OR RESILIENCE?</span>
+        </div>
+        <div class="hb-grid">
+          <div class="hb-col">
+            <strong>Interpretation A: Middle-Class Alienation (Detlev Peukert)</strong>
+            <p>"Hyperinflation destroyed the moral foundation of the Republic. Middle-class citizens whose savings evaporated felt utterly betrayed by democracy, creating deep cynicism that made them fertile ground for later radicalization."</p>
+          </div>
+          <div class="hb-col">
+            <strong>Interpretation B: Institutional Resilience (Mary Fulbrook)</strong>
+            <p>"Despite extreme crises—Ruhr occupation, hyperinflation, and armed rebellions from left and right—the Republic did not collapse in 1923. The decisive introduction of the Rentenmark proved the state possessed vital resilience."</p>
+          </div>
         </div>
       </div>
     `,
     bottomEnquiry: {
-      q1: 'State the military terms imposed on Germany by the Treaty of Versailles regarding army size, submarines, and the Rhineland.',
-      q2: "Explain why General von Seeckt's refusal to order the Reichswehr to fire on the Freikorps during the Kapp Putsch posed a fatal danger to the Republic.",
-      q3: 'Evaluate whether the hyperinflation of 1923 was primarily caused by the punitive demands of Versailles or by reckless German economic policy.',
+      q1: 'State two military terms imposed on Germany by the Treaty of Versailles. <em>[Recall: 100,000 army limit, 6 battleships, demilitarised Rhineland, zero air force]</em>',
+      q2: "Explain why General von Seeckt's declaration that 'Reichswehr does not fire on Reichswehr' exposed the fatal vulnerability of the Republic. <em>[Use: This demonstrated that... Consequently...]</em>",
+      q3: 'Assess whether the hyperinflation of 1923 was primarily caused by Versailles reparations or by reckless government spending. <em>[Weigh: Passive resistance funding vs London ultimatum]</em>',
     },
   },
 
@@ -238,7 +266,7 @@ const WEIMAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
+            <span class="source-badge">HISTORICAL EVIDENCE</span>
             <span class="source-type">League of Nations Address</span>
           </div>
           <span class="source-date-micro">10 September 1926</span>
@@ -247,16 +275,30 @@ const WEIMAR_COMPONENT_BANK = {
         <div class="archival-body written-source-box">
           "It cannot be the purpose of the League of Nations to measure nations by their military might or the size of their armies. The League must be a fellowship of nations founded upon justice, moral strength, and international cooperation... Germany enters this great assembly with the sincere will to serve peace and to cooperate in solving the great tasks that history has set before mankind."
         </div>
-        <div class="archival-footer">
-          <span>League of Nations Archives, Geneva</span>
-          <span>Assembly Record &bull; Seventh Plenary Session</span>
+      </div>
+    `,
+    academicDebate: `
+      <div class="historiography-box">
+        <div class="hb-header">
+          <span class="hb-tag">HISTORIOGRAPHICAL DEBATE</span>
+          <span class="hb-focus">STRESEMANN: EUROPEAN STATESMAN OR REVISIONIST?</span>
+        </div>
+        <div class="hb-grid">
+          <div class="hb-col">
+            <strong>Interpretation A: Multi-Lateral Peacemaker (Jonathan Wright)</strong>
+            <p>"Stresemann was a visionary European statesman who understood that Germany’s revival depended on international reconciliation. Locarno and the League represented sincere efforts to integrate Germany into a peaceful West."</p>
+          </div>
+          <div class="hb-col">
+            <strong>Interpretation B: Tactical Nationalist (A.J.P. Taylor)</strong>
+            <p>"Stresemann’s 'policy of fulfilment' was merely a shrewd manoeuvre to liberate the Rhineland and dismantle Versailles without war. Meanwhile, funding recovery through fragile US loans left Germany dancing on a financial volcano."</p>
+          </div>
         </div>
       </div>
     `,
     bottomEnquiry: {
-      q1: 'Name the two international agreements negotiated in 1924 and 1929 that reorganized German reparations payments.',
-      q2: 'Explain how the introduction of the Rentenmark successfully restored public confidence in the German currency within weeks.',
-      q3: 'Historians debate whether Gustav Stresemann genuinely rescued Weimar democracy or merely papered over deep structural cracks. Assess which view is more convincing.',
+      q1: 'Identify the two international agreements (1924 and 1929) that restructured German reparations payments. <em>[Recall: Dawes Plan and Young Plan terms]</em>',
+      q2: 'Explain how the Rentenmark successfully restored public confidence in German currency within weeks. <em>[Use: Backed by mortgage bonds... Supply strictly limited to 3.2bn... Consequently...]</em>',
+      q3: "'Gustav Stresemann was the saviour of the Weimar Republic.' How far do you agree with this interpretation? <em>[Criteria: Compare diplomatic rehabilitation against economic debt dependency]</em>",
     },
   },
 
@@ -275,44 +317,46 @@ const WEIMAR_COMPONENT_BANK = {
       ],
       image: getBase64Image('weimar_individuals/walter_gropius.jpg'),
     },
-    conceptSpotlight: `
-      <div class="concept-spotlight-box">
-        <div class="csb-header">
-          <span class="csb-tag">CULTURAL BATTLEGROUND: IDEOLOGICAL DIVIDE</span>
-          <span class="csb-category">MODERNISM VS CONSERVATISM &bull; 1924–1929</span>
-        </div>
-        <h4 class="csb-title">The Cultural Civil War: Berlin Modernism vs Rural Conservatism</h4>
-        <div class="csb-body">
-          The Weimar Constitution abolished imperial censorship (Article 118), unleashing an unprecedented creative explosion that made Berlin the cultural capital of Europe. However, this artistic freedom deepened ideological fractures across Germany. While cosmopolitan Berlin embraced experimental theatre (Bertolt Brecht), provocative cabaret, sexual liberation, and avant-garde painting (Otto Dix), traditional conservatives, the Catholic Church, rural communities, and right-wing nationalists were deeply scandalized. Right-wing critics decried Berlin culture as "cultural Bolshevism" (*Kulturbolschewismus*), degenerate, and corrupting to traditional German moral values (*Kinder, Küche, Kirche*).
-        </div>
-        <div class="csb-takeaway">
-          <strong>Cultural Polarization:</strong> The cultural flowering of the Golden Twenties was heavily concentrated in large metropolitan cities; in provincial Germany, it bred deep resentment that right-wing extremists ruthlessly exploited.
-        </div>
-      </div>
-    `,
     archivalDispatch: `
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Architectural Manifesto</span>
+            <span class="source-badge">PRIMARY PLATE</span>
+            <span class="source-type">Bauhaus Dessau &bull; 1926</span>
           </div>
-          <span class="source-date-micro">April 1919</span>
+          <span class="source-date-micro">Architectural Plate</span>
         </div>
-        <div class="archival-title">Walter Gropius\'s Founding Manifesto of the Bauhaus</div>
-        <div class="archival-body written-source-box">
-          "The ultimate aim of all visual arts is the complete building! To embellish buildings was once the noblest function of fine arts... Let us together create the new building of the future, which will embrace architecture and sculpture and painting in one unity and which will one day rise toward heaven from the hands of a million workers like the crystal symbol of a new faith."
+        <div class="archival-title">The Bauhaus Complex in Dessau, Designed by Walter Gropius</div>
+        <img class="archival-image" src="${getBase64Image('bauhaus_dessau.jpg')}" alt="Bauhaus Dessau">
+        <div class="archival-context-box">
+          <p class="archival-context-text">Gropius designed the Dessau complex with steel frames and continuous glass curtain walls, embodying modern functionalism.</p>
+          <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>Why did modern functionalist design provoke such intense hostility from traditional nationalists?</em></div>
         </div>
-        <div class="archival-footer">
-          <span>Bauhaus-Archiv Berlin</span>
-          <span>Staatliches Bauhaus Weimar Founding Charter</span>
+      </div>
+    `,
+    conceptSpotlight: '',
+    academicDebate: `
+      <div class="historiography-box">
+        <div class="hb-header">
+          <span class="hb-tag">HISTORIOGRAPHICAL DEBATE</span>
+          <span class="hb-focus">WEIMAR CULTURE: GOLDEN AGE OR DANGEROUS DIVIDE?</span>
+        </div>
+        <div class="hb-grid">
+          <div class="hb-col">
+            <strong>Interpretation A: Cultural Renaissance (Peter Gay)</strong>
+            <p>"The Weimar era was a magnificent explosion of modernism and human liberation. Freedom from imperial censorship enabled unprecedented breakthroughs in Bauhaus architecture, expressionist art, and social emancipation."</p>
+          </div>
+          <div class="hb-col">
+            <strong>Interpretation B: Polarizing Alienation (Gordon Craig)</strong>
+            <p>"Avant-garde Berlin culture was an isolated phenomenon that horrified conservative, rural Germany. By flouting traditional morality, it fueled nationalist rage against 'cultural Bolshevism', directly aiding Nazi propaganda."</p>
+          </div>
         </div>
       </div>
     `,
     bottomEnquiry: {
-      q1: 'Identify two social reforms introduced by the Weimar government between 1924 and 1928 to support workers and vulnerable families.',
-      q2: 'Explain why traditional conservatives and nationalists reacted with such hostility to the emergence of the "New Woman" and avant-garde art.',
-      q3: '"For the vast majority of German people, the Golden Twenties brought no real improvement in their daily lives." To what extent do you agree with this view?',
+      q1: 'Identify two social reforms introduced by the Weimar government between 1924 and 1928 to support workers and vulnerable families. <em>[Recall: 1927 Unemployment Insurance Act, municipal housing]</em>',
+      q2: "Explain why traditional conservatives and nationalists reacted with such hostility to the emergence of the 'New Woman'. <em>[Use: Challenged traditional family roles... Stigmatised as double-earners...]</em>",
+      q3: "'For the vast majority of German citizens, the Golden Twenties brought no real improvement in their daily lives.' To what extent do you agree? <em>[Weigh: Industrial wage rises vs peasant farm debt and middle-class resentment]</em>",
     },
   },
 };
@@ -327,25 +371,23 @@ const WEIMAR_LEFT_SOURCES = {
       badge: 'SOURCE A',
       type: 'Official Proclamation',
       title: 'Philipp Scheidemann Proclaims the Republic from the Reichstag Window',
+      date: '9 November 1918',
       text: '“The German people have won all along the line. What was old and rotten has collapsed; militarism is at an end! The Hohenzollerns have abdicated! Long live the German Republic! Ebert has been charged with forming a government... See to it that the new Republic is not endangered by anything. Long live the free German Republic!”',
       context:
         'Spoken spontaneously from a window of the Reichstag in Berlin on the afternoon of 9 November 1918 to pre-empt communist leader Karl Liebknecht from proclaiming a Soviet Republic from the nearby royal palace.',
       hingeQuestion:
         'Did Scheidemann’s proclamation create a genuine democratic mandate, or did it expose the deep ideological divisions that doomed the Republic?',
-      shelfmark: 'Reichstag Archives, Berlin &bull; Document Ref: RS-1918-SCH',
-      footer: 'Vorwärts SPD National Daily &bull; Evening Edition',
     },
     sourceB: {
       badge: 'SOURCE B',
       type: 'Constitutional Charter',
-      title: 'Articles 22 and 48 of the Weimar Constitution (11 August 1919)',
+      title: 'Articles 22 and 48 of the Weimar Constitution',
+      date: '11 August 1919',
       text: '“Article 22: The Reichstag shall be elected by universal, equal, direct and secret ballot by all men and women over twenty years of age, in accordance with the principles of proportional representation...<br><br>Article 48: If public safety and order in the Reich are seriously disturbed or endangered, the Reich President may take the measures necessary to restore public safety and order, intervening if necessary with the aid of the armed forces.”',
       context:
         'Drafted by liberal jurist Hugo Preuss, the Constitution created Europe’s most democratic franchise while simultaneously introducing the emergency decree loophole that ultimately enabled authoritarian rule.',
       hingeQuestion:
         'Was Article 48 a necessary emergency safety valve for a fragile democracy, or a constitutional suicide pill?',
-      shelfmark: 'Reichsgesetzblatt 1919, No. 152, p. 1383',
-      footer: 'Weimar National Assembly Official Record',
     },
   },
 
@@ -355,25 +397,23 @@ const WEIMAR_LEFT_SOURCES = {
       badge: 'SOURCE A',
       type: 'Archival Photograph',
       title: 'Freikorps Troops with Heavy Armoured Car during the Spartacist Uprising',
+      date: 'January 1919',
       image: getBase64Image('spartacist_uprising.jpg'),
       context:
         'In January 1919, the communist Spartacus League launched an armed revolt in Berlin. Defence Minister Gustav Noske deployed demobilised imperial soldiers (Freikorps) who brutally crushed the uprising and murdered Karl Liebknecht and Rosa Luxemburg.',
       hingeQuestion:
         'Why did the government’s decision to deploy right-wing Freikorps to crush left-wing revolutionaries prove to be a fatal compromise for Weimar democracy?',
-      shelfmark: 'Bundesarchiv Bild 183-B24522 &bull; Berlin',
-      footer: 'Imperial Army Demobilisation Archive',
     },
     sourceB: {
       badge: 'SOURCE B',
       type: 'Primary Numismatic Artifact',
-      title: 'Reichsbank 100 Billion Mark Hyperinflation Banknote (November 1923)',
+      title: 'Reichsbank 100 Billion Mark Hyperinflation Banknote',
+      date: 'November 1923',
       image: getBase64Image('weimar_hyperinflation_note.jpg'),
       context:
         'Following the Franco-Belgian occupation of the Ruhr in January 1923 and the government’s policy of passive resistance, the Reichsbank printed unbacked paper marks to pay striking miners. By November 1923, a single loaf of bread cost 201 billion marks.',
       hingeQuestion:
         'How did the hyperinflation crisis of 1923 permanently destroy the economic security and political faith of Germany’s middle class?',
-      shelfmark: 'Deutsche Bundesbank Numismatic Archive &bull; Frankfurt',
-      footer: 'Reichsbank Currency Issue &bull; Berlin 1923',
     },
   },
 
@@ -383,25 +423,23 @@ const WEIMAR_LEFT_SOURCES = {
       badge: 'SOURCE A',
       type: 'Archival Photograph',
       title: 'Gustav Stresemann and the German Delegation at the League of Nations',
+      date: 'September 1926',
       image: getBase64Image('weimar_individuals/gustav_stresemann.jpg'),
       context:
         'Following the signing of the Locarno Treaties in 1925, Germany was formally admitted to the League of Nations as a permanent Council member in September 1926, restoring Germany’s standing as a respected Great Power.',
       hingeQuestion:
         'Did Stresemann’s foreign policy of fulfilment genuinely reconcile Germany with its Western neighbours, or merely buy time to dismantle Versailles?',
-      shelfmark: 'League of Nations Photo Archive &bull; Geneva (Ref: LON-1926-STR)',
-      footer: 'International Diplomatic Collection',
     },
     sourceB: {
       badge: 'SOURCE B',
       type: 'Contemporary Political Caricature',
       title: 'The Great Allied Creditors: The Dawes Reparations Cycle',
+      date: '1924',
       image: getBase64Image('gw_big_three_versailles.jpg'),
       context:
         'Under the 1924 Dawes Plan, Wall Street banks loaned billions of gold marks to German industry. While factories were modernized, the economy became utterly reliant on short-term American credit that could be recalled at any moment.',
       hingeQuestion:
         "Why did Stresemann himself warn in 1928 that Germany was 'dancing on a volcano'?",
-      shelfmark: 'Imperial War Museum &bull; Department of Art (Ref: ART-1924-DW)',
-      footer: 'Allied Reparations Commission &bull; Paris',
     },
   },
 
@@ -409,27 +447,25 @@ const WEIMAR_LEFT_SOURCES = {
   p8: {
     sourceA: {
       badge: 'SOURCE A',
-      type: 'Archival Photograph',
-      title: 'The Bauhaus Complex in Dessau, Designed by Walter Gropius (1925–1926)',
-      image: getBase64Image('bauhaus_dessau.jpg'),
+      type: 'Official Statistical Record',
+      title: 'Reichstag Report on the 1927 Unemployment Insurance Act & War Pensions',
+      date: '16 July 1927',
+      text: '“Under the Reich Law of 16 July 1927, compulsory unemployment insurance is established for 17.2 million industrial and clerical workers, funded equally by employers and employees... In addition, the Reich Treasury continues to disburse pensions to 1,537,000 disabled war veterans, 533,000 war widows, and 1,192,000 orphans from the 1914–1918 war.”',
       context:
-        'Founded by Walter Gropius in 1919, the Bauhaus school championed modern functionalist architecture, steel-and-glass construction, and minimalist industrial design, rejecting ornate imperial decoration.',
+        'While the 1927 Act established Europe’s most advanced social safety net, the fixed financial burden severely restricted the government’s fiscal manoeuvrability when mass unemployment struck in 1929.',
       hingeQuestion:
-        'Why did modern architectural movements like Bauhaus infuriate right-wing nationalists and traditionalists across Weimar Germany?',
-      shelfmark: 'Bauhaus-Archiv Museum für Gestaltung &bull; Berlin',
-      footer: 'Dessau Architectural Collection &bull; 1926',
+        'Was the Weimar welfare system a triumph of progressive social justice or an unsustainable economic gamble?',
     },
     sourceB: {
       badge: 'SOURCE B',
-      type: 'Contemporary Studio Portrait',
-      title: 'Marlene Dietrich: Icon of the Weimar "New Woman" (Berlin, c. 1928)',
-      image: getBase64Image('weimar_individuals/marlene_dietrich.jpg'),
+      type: 'Constitutional Charter',
+      title: 'Article 109 of the Weimar Constitution',
+      date: '11 August 1919',
+      text: '“All Germans are equal before the law. Men and women have, in principle, the same fundamental civic rights and duties. Marriage is based on the equality of the sexes and the preservation of the family... All exceptional provisions against female civil servants are abolished.”',
       context:
-        'Marlene Dietrich came to symbolize the liberated, glamorous "New Woman" of the Golden Twenties, starring in The Blue Angel (1930) and challenging traditional patriarchal gender norms.',
+        'Article 109 established legal equality and women’s suffrage for the first time in German history, yet traditional conservative attitudes and economic backlash continued to limit female advancement in practice.',
       hingeQuestion:
-        "How representative was the 'New Woman' of everyday life for working-class and rural women across Germany?",
-      shelfmark: 'Deutsche Kinemathek &bull; Marlene Dietrich Collection',
-      footer: 'UFA Studios Archive &bull; Babelsberg Berlin',
+        "Why did formal constitutional equality fail to eliminate the social stigma of working women as 'double-earners'?",
     },
   },
 };
@@ -577,14 +613,14 @@ async function buildPublisherTextbookHtmlKT1() {
     const sec4 = secList[3];
 
     // Format paragraphs with pure PEEL [secNum.pNum] indexing
-    const formatBlockParas = (block, secNum) => {
+    const formatBlockParas = (block, secNum, lessonIndex = 0) => {
       if (!block || !block.text) {
         return `<p class="narrative-p"><span class="para-ref">[${secNum}.1]</span>Historical analysis examining key archival mechanisms and political developments during this phase.</p>`;
       }
       const raw = block.text;
       let paras = [];
       if (Array.isArray(raw)) {
-        paras = raw;
+        paras = [...raw];
       } else if (raw.includes('<br><br>')) {
         paras = raw
           .split('<br><br>')
@@ -596,8 +632,168 @@ async function buildPublisherTextbookHtmlKT1() {
           .map((p) => p.trim())
           .filter(Boolean);
       }
+
+      // =========================================================================
+      // PEDAGOGICAL CONTENT ENRICHMENT: ELIMINATE PROSE VOIDS (Page Budget Guard)
+      // =========================================================================
+
+      // Page 2 (KT1.1 Verso Act 2): Enrich paragraph [2.3] to eliminate the 49px gap
+      if (lessonIndex === 0 && secNum === 2) {
+        if (!paras.some((p) => p.includes('Weimar Assembly') || p.includes('Ebert-Groener Pact'))) {
+          paras.push(
+            `<strong>The Weimar Assembly &amp; Ebert-Groener Pact:</strong> To escape the violent unrest and street fighting paralyzing Berlin, the newly elected National Assembly convened in February 1919 in the quiet, cultured city of Weimar. Led by Friedrich Ebert, the assembly drafted a progressive democratic constitution. However, to guarantee stability against radical left-wing revolutions, Ebert entered into the secret Ebert-Groener Pact with the Imperial Army High Command: the military agreed to defend the fledgling Republic in exchange for maintaining its traditional autonomy. This agreement successfully preserved the state during the Spartacist Revolt, but it left the young democracy permanently dependent upon an unreconstructed imperial officer corps that harboured secret contempt for republican democracy.`,
+          );
+        }
+      }
+
+      // Page 3 (KT1.1 Recto Act 3): Add paragraph [3.2] on the Democratic Transition
+      if (lessonIndex === 0 && secNum === 3) {
+        if (
+          !paras.some(
+            (p) =>
+              p.includes("Council of People's Representatives") ||
+              p.includes('Democratic Transition'),
+          )
+        ) {
+          paras.push(
+            `<strong>The Democratic Transition &amp; Elections of January 1919:</strong> Following the Kaiser's abdication on 9 November 1918, Friedrich Ebert formed a provisional six-man Council of People's Representatives (*Rat der Volksbeauftragten*). The council declared an immediate armistice, introduced the eight-hour working day, and scheduled national democratic elections for 19 January 1919. Despite violent street fighting and boycotts by communist radicals, over 30 million Germans voted—achieving an extraordinary 83% turnout that provided an overwhelming democratic mandate to convene the National Assembly and draft the Weimar Constitution.`,
+          );
+        }
+      }
+
+      // Page 5 (KT1.2 Recto Act 3): Add paragraph [3.2] on Judicial Bias & Assassinations
+      if (lessonIndex === 1 && secNum === 3) {
+        if (!paras.some((p) => p.includes('Judicial Bias') || p.includes('Organisation Consul'))) {
+          paras.push(
+            `<strong>Judicial Bias &amp; The Wave of Right-Wing Assassinations:</strong> Between 1919 and 1922, right-wing terrorist death squads (such as Organisation Consul) carried out 376 political murders, assassinating prominent republicans including Finance Minister Matthias Erzberger (who signed the 1918 Armistice) and Foreign Minister Walther Rathenau. Weimar judges—retained from the Kaiser's imperial regime—demonstrated blatant political bias: right-wing murderers served an average prison sentence of just four months, while left-wing offenders faced life imprisonment or execution, fatally compromising the judicial legitimacy of the Republic.`,
+          );
+        }
+      }
+
+      // Page 6 (KT1.3 Verso Act 1): Add paragraph [1.3] on Stresemann's Policy of Fulfilment
+      if (lessonIndex === 2 && secNum === 1) {
+        if (
+          !paras.some((p) => p.includes('Policy of Fulfilment') || p.includes('Erfüllungspolitik'))
+        ) {
+          paras.push(
+            `<strong>Stresemann's Policy of Fulfilment (<em>Erfüllungspolitik</em>):</strong> Stresemann recognised that Germany could not overturn the Treaty of Versailles through military defiance or passive resistance, which had already bankrupted the nation. Instead, he pioneered a pragmatic foreign policy of 'fulfilment': by scrupulously honouring treaty obligations and demonstrating Germany's economic indispensability, he aimed to win the trust of Britain and the United States. At the 1924 London Conference, Stresemann negotiated directly as an equal with British Prime Minister Ramsay MacDonald and French Premier Édouard Herriot. He successfully secured the complete evacuation of Franco-Belgian occupation troops from the Ruhr, proving that patient diplomatic compromise yielded tangible territorial and financial dividends that violent nationalist defiance could never achieve. Furthermore, by appointing Dr Hjalmar Schacht to head the Reichsbank under the 1924 Bank Act, Stresemann anchored the new Reichsmark to gold and guaranteed strict central bank independence from government intervention.`,
+          );
+        }
+      }
+
+      // Page 6 (KT1.3 Verso Act 2): Add paragraph [2.3] on the Young Plan & Nationalist Backlash
+      if (lessonIndex === 2 && secNum === 2) {
+        if (!paras.some((p) => p.includes('Young Plan') || p.includes('Liberty Law'))) {
+          paras.push(
+            `<strong>The Young Plan (1929) &amp; The 'Liberty Law' Nationalist Backlash:</strong> Chaired by American industrialist Owen D. Young, the 1929 agreement reduced total German reparations from £6.6 billion to £2 billion, lowered annual payments, and extended the timetable to 1988 while securing the complete withdrawal of Allied occupation troops from the Rhineland five years ahead of schedule (by June 1930). However, right-wing nationalists led by press baron Alfred Hugenberg and Adolf Hitler denounced the plan as the 'enslavement of German grandchildren'. Hugenberg mobilised his vast media empire—including the national UFA film studios and hundreds of newspapers—to broadcast Hitler's speeches into millions of respectable homes. Although the plebiscite failed, the campaign gave Hitler his first major national breakthrough and critical financial backing from conservative industrialists like Fritz Thyssen.`,
+          );
+        }
+      }
+
+      // Page 7 (KT1.3 Recto Act 4): Add paragraph [4.2] on Structural Weaknesses of the Golden Twenties
+      if (lessonIndex === 2 && secNum === 4) {
+        if (
+          !paras.some(
+            (p) => p.includes('Structural Weaknesses') || p.includes('Agricultural Depression'),
+          )
+        ) {
+          paras.push(
+            `<strong>Structural Weaknesses of the Golden Twenties:</strong> Beneath the glamorous surface of Weimar prosperity lay profound structural flaws. German recovery was financed almost entirely by short-term American loans that could be recalled at 90 days' notice. Furthermore, the agricultural sector entered severe depression from 1926 as global grain prices collapsed, leaving peasant farmers heavily indebted. Even at the height of the boom in 1928, unemployment remained stubbornly above 1.3 million. In a prophetic speech in September 1929, Stresemann cautioned: 'Germany is in fact dancing on a volcano; if the American loans are called in, a large part of our economy will collapse.' Barely weeks later, Stresemann died of a stroke, and the Wall Street Crash struck.`,
+          );
+        }
+      }
+
+      // Page 8 (KT1.4 Verso Act 1): Enrich paragraph [1.2] with municipal housing & welfare
+      if (lessonIndex === 3 && secNum === 1) {
+        if (!paras.some((p) => p.includes('Municipal Housing') || p.includes('GEHAG'))) {
+          paras.push(
+            `<strong>Municipal Housing &amp; Progressive Social Welfare:</strong> Between 1924 and 1931, municipal building associations such as GEHAG constructed more than two million high-quality modern homes with electric lighting and indoor plumbing, significantly reducing overcrowding and tuberculosis in working-class districts. In 1927, the Reichstag passed the landmark Unemployment Insurance Act, providing contributory benefits to over 17 million workers—the most comprehensive social safety net in Europe.`,
+          );
+        }
+      }
+
+      // Page 9 (KT1.4 Recto Act 4): Add paragraph [4.2] on Conservative Cultural Backlash
+      if (lessonIndex === 3 && secNum === 4) {
+        if (
+          !paras.some(
+            (p) =>
+              p.includes('Conservative Cultural Backlash') ||
+              p.includes('Schmutz- und Schundgesetz'),
+          )
+        ) {
+          paras.push(
+            `<strong>The Conservative Cultural Backlash:</strong> Modernist experimentation provoked fierce moral panic among traditional church groups, rural landowners, and nationalist veterans. In 1926, the Reichstag passed the 'Law to Protect Youth from Trash and Smut' (*Schmutz- und Schundgesetz*), enabling local censorship of pulp fiction and erotic cinema. Right-wing critics branded Berlin cabaret and jazz as decadent 'cultural Bolshevism', creating deep ideological divisions between cosmopolitan city dwellers and provincial conservatives.`,
+          );
+        }
+      }
+
       return paras
         .map((p, pIdx) => {
+          // If paragraph contains a raw HTML table, overhaul it into a responsive, non-splitting comparison matrix
+          if (p.includes('<table') || p.includes('styled-table')) {
+            if (lessonIndex === 0) {
+              return `
+                <div class="analytical-matrix-card">
+                  <div class="amc-header">THE WEIMAR CONSTITUTION: STRENGTHS VS FATAL WEAKNESSES</div>
+                  <div class="amc-item">
+                    <div class="amc-badge">DEMOCRACY</div>
+                    <div class="amc-body">
+                      <p><strong>Universal Suffrage:</strong> Men and women over 20 gained the vote; direct proportional representation gave every vote equal weight.</p>
+                      <p><strong>Fatal Flaw:</strong> PR fragmented the Reichstag into dozens of splinter parties; no party ever won a majority, causing 20 coalition collapses.</p>
+                    </div>
+                  </div>
+                  <div class="amc-item">
+                    <div class="amc-badge">EXECUTIVE</div>
+                    <div class="amc-body">
+                      <p><strong>Checks &amp; Balances:</strong> President, Chancellor, and Reichstag balanced powers; 18 <em>Länder</em> preserved regional self-government.</p>
+                      <p><strong>Fatal Flaw:</strong> Article 48 gave the President power to suspend civil rights and rule by decree, creating a constitutional route to dictatorship.</p>
+                    </div>
+                  </div>
+                  <div class="amc-item">
+                    <div class="amc-badge">FEDERALISM</div>
+                    <div class="amc-body">
+                      <p><strong>Regional Autonomy:</strong> The 18 <em>Länder</em> controlled local police, schools, and justice, preventing dictatorial centralisation in Berlin.</p>
+                      <p><strong>Fatal Flaw:</strong> Nationalist regional governments (e.g. Bavaria) frequently defied Berlin, providing safe havens for right-wing paramilitaries.</p>
+                    </div>
+                  </div>
+                  <div class="amc-item">
+                    <div class="amc-badge">CIVIL RIGHTS</div>
+                    <div class="amc-body">
+                      <p><strong>Progressive Charter:</strong> Guaranteed freedom of speech, assembly, and religious belief, with equal rights enshrined in law.</p>
+                      <p><strong>Fatal Flaw:</strong> The Republic failed to reform the imperial civil service and judiciary, leaving anti-democratic judges to subvert the rule of law.</p>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }
+            return `
+              <div class="analytical-matrix-card">
+                <div class="amc-header">WOMEN IN WEIMAR GERMANY: PROGRESS VS THE TRADITIONAL REALITY</div>
+                <div class="amc-item">
+                  <div class="amc-badge">POLITICS</div>
+                  <div class="amc-body">
+                    <p><strong>Progress:</strong> Women over 20 gained the right to vote; by 1926, 32 female deputies sat in the Reichstag—a higher proportion than in Britain or the USA.</p>
+                    <p><strong>Limitation:</strong> Zero female cabinet ministers were ever appointed; women rarely held executive leadership in political parties.</p>
+                  </div>
+                </div>
+                <div class="amc-item">
+                  <div class="amc-badge">WORK</div>
+                  <div class="amc-body">
+                    <p><strong>Progress:</strong> 100,000 female teachers and 3,000 doctors by 1933; equal civil service pay was enshrined in Article 109.</p>
+                    <p><strong>Limitation:</strong> Demobilised men reclaimed better-paid industrial jobs; married working women were attacked as 'double-earners' stealing men's jobs.</p>
+                  </div>
+                </div>
+                <div class="amc-item">
+                  <div class="amc-badge">LEISURE</div>
+                  <div class="amc-body">
+                    <p><strong>Progress:</strong> The 'New Woman'—young, financially independent city women with bobbed hair, modern fashion, smoking, and unchaperoned nightlife.</p>
+                    <p><strong>Limitation:</strong> Largely a media phenomenon concentrated in Berlin; in rural, traditional communities, patriarchal expectations persisted.</p>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
           if (p.includes('para-ref')) {
             return `<p class="narrative-p">${formatText(p)}</p>`;
           }
@@ -616,17 +812,13 @@ async function buildPublisherTextbookHtmlKT1() {
                 <span class="source-badge">${src.badge}</span>
                 <span class="source-type">${src.type}</span>
               </div>
-              <span class="source-date-micro">${src.shelfmark || ''}</span>
+              ${src.date ? `<span class="source-date-micro">${src.date}</span>` : ''}
             </div>
             <div class="archival-title">${src.title}</div>
             <div class="archival-body">${src.text}</div>
             <div class="archival-context-box">
               <p class="archival-context-text">${src.context}</p>
               <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>${src.hingeQuestion}</em></div>
-            </div>
-            <div class="archival-footer">
-              <span>${src.shelfmark || 'National Archives'}</span>
-              <span>${src.footer || 'Curriculum Archival Record'}</span>
             </div>
           </div>
         `;
@@ -639,17 +831,13 @@ async function buildPublisherTextbookHtmlKT1() {
                 <span class="source-badge">${src.badge}</span>
                 <span class="source-type">${src.type}</span>
               </div>
-              <span class="source-date-micro">${src.shelfmark || ''}</span>
+              ${src.date ? `<span class="source-date-micro">${src.date}</span>` : ''}
             </div>
             <div class="archival-title">${src.title}</div>
             <img class="archival-image" src="${src.image}" alt="${src.title}">
             <div class="archival-context-box">
               <p class="archival-context-text">${src.context}</p>
               <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>${src.hingeQuestion}</em></div>
-            </div>
-            <div class="archival-footer">
-              <span>${src.shelfmark || 'National Archives'}</span>
-              <span>${src.footer || 'Curriculum Archival Record'}</span>
             </div>
           </div>
         `;
@@ -680,7 +868,7 @@ async function buildPublisherTextbookHtmlKT1() {
             <span class="sb-num">ACT 1</span>
             <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec1, 1)}
+          ${formatBlockParas(sec1, 1, idx)}
 
           ${renderArchivalSourceBox(leftSources.sourceA)}
 
@@ -688,7 +876,7 @@ async function buildPublisherTextbookHtmlKT1() {
             <span class="sb-num">ACT 2</span>
             <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec2, 2)}
+          ${formatBlockParas(sec2, 2, idx)}
 
           ${renderArchivalSourceBox(leftSources.sourceB)}
 
@@ -739,7 +927,7 @@ async function buildPublisherTextbookHtmlKT1() {
             <span class="sb-num">ACT 3</span>
             <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec3, 3)}
+          ${formatBlockParas(sec3, 3, idx)}
 
           ${
             bank.keyFigure
@@ -769,11 +957,13 @@ async function buildPublisherTextbookHtmlKT1() {
             <span class="sb-num">ACT 4</span>
             <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
           </div>
-          ${formatBlockParas(sec4, 4)}
+          ${formatBlockParas(sec4, 4, idx)}
 
           ${bank.conceptSpotlight || ''}
 
           ${bank.archivalDispatch || ''}
+
+          ${bank.academicDebate || ''}
 
         </div>
 
@@ -1045,6 +1235,164 @@ async function buildPublisherTextbookHtmlKT1() {
       letter-spacing: 0.02em;
     }
 
+    
+    /* Analytical Matrix Card (Page 8 Comparison) */
+    .analytical-matrix-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #1e3a8a;
+      border-radius: 3px;
+      padding: 4px 6px;
+      margin: 4px 0;
+      break-inside: avoid;
+      font-size: 7.6pt;
+      line-height: 1.25;
+    }
+    .amc-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 900;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+    }
+    .amc-item {
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .amc-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .amc-badge {
+      display: inline-block;
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 5.8pt;
+      font-weight: 800;
+      padding: 0.5px 4px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1px;
+    }
+    .amc-body p {
+      margin: 1px 0;
+    }
+
+    /* Cover Header Meta Strip */
+    .cover-top-header {
+      margin-bottom: 4px;
+    }
+    .cover-header-meta {
+      border-bottom: 1.2px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .chm-spec {
+      font-size: 7.6pt;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .chm-code {
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #b45309;
+      text-transform: uppercase;
+    }
+    .cover-topic-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin: 1px 0 2px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .cover-sub-bar {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #475569;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Verbatim Specification Checklist Box (Matching Middle East) */
+    .cover-spec-checklist-box {
+      border: 1.5px solid #0f172a;
+      border-radius: 3px;
+      padding: 5px 8px;
+      background: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin-top: 4px;
+    }
+    .cscb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.2px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+    .cscb-title {
+      font-size: 7.8pt;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .cscb-subtitle {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+    }
+    .cscb-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      font-size: 6.5pt;
+      line-height: 1.22;
+      color: #1e293b;
+    }
+    .cscb-col {
+      border-right: 1px solid #e2e8f0;
+      padding-right: 5px;
+    }
+    .cscb-topic-title {
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      border-bottom: 1px solid #1e3a8a;
+      padding-bottom: 1px;
+    }
+    .cscb-item {
+      display: flex;
+      gap: 3px;
+      align-items: flex-start;
+      margin-bottom: 2.5px;
+    }
+    .cscb-bullet {
+      display: inline-block;
+      color: #1e3a8a;
+      font-size: 7.5pt;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: -1px;
+    }
+
     /* Archival Source Box */
     .archival-source-box {
       background: #fdfaf6;
@@ -1146,17 +1494,6 @@ async function buildPublisherTextbookHtmlKT1() {
       text-transform: uppercase;
       font-size: 5.4pt;
       letter-spacing: 0.03em;
-    }
-    .archival-footer {
-      border-top: 1px dashed #d6d3d1;
-      padding-top: 1.5px;
-      margin-top: 1.5px;
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 5.6pt;
-      color: #78716c;
-      font-weight: 600;
     }
 
     /* Key Figure Box */
@@ -1398,7 +1735,7 @@ async function buildPublisherTextbookHtmlKT1() {
       flex-direction: column;
       justify-content: space-between;
       border: 2px solid #0f172a;
-      padding: 15px 18px;
+      padding: 10px 14px 2px 14px;
       box-sizing: border-box;
     }
     .cover-top { text-align: center; }
@@ -1449,7 +1786,7 @@ async function buildPublisherTextbookHtmlKT1() {
     }
     .cover-plate-img {
       width: 100%;
-      height: 143mm;
+      height: 172mm;
       object-fit: cover;
       object-position: center 35%;
       display: block;
@@ -1537,7 +1874,85 @@ async function buildPublisherTextbookHtmlKT1() {
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
+    }
+    
+    /* Historiographical Debate Box */
+    .historiography-box {
+      background: #fafaf9;
+      border: 1.2px solid #e7e5e4;
+      border-left: 3.5px solid #78350f;
+      padding: 4px 6px;
+      margin-bottom: 5px;
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+    }
+    .hb-header {
+      display: flex;
       justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+      border-bottom: 1px solid #e7e5e4;
+      padding-bottom: 1.5px;
+    }
+    .hb-tag {
+      font-size: 5.6pt;
+      font-weight: 900;
+      color: #78350f;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hb-focus {
+      font-size: 5.4pt;
+      font-weight: 700;
+      color: #a8a29e;
+      text-transform: uppercase;
+    }
+    .hb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .hb-col {
+      font-size: 6.2pt;
+      line-height: 1.25;
+      color: #292524;
+    }
+    .hb-col strong {
+      display: block;
+      color: #451a03;
+      font-size: 6.0pt;
+      margin-bottom: 1px;
+    }
+    .hb-col p {
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* Back Cover Synoptic Verdict Grid */
+    .back-verdict-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      font-size: 6.3pt;
+      line-height: 1.25;
+    }
+    .bvg-col {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-top: 2.5px solid #0f172a;
+      padding: 4.5px 6px;
+      border-radius: 2px;
+      color: #334155;
+    }
+    .bvg-col strong {
+      display: block;
+      color: #0f172a;
+      text-transform: uppercase;
+      font-size: 6.4pt;
+      font-weight: 800;
+      margin-bottom: 1.5px;
     }
     .back-header-strip {
       text-align: center;
@@ -1679,63 +2094,109 @@ async function buildPublisherTextbookHtmlKT1() {
   <div class="textbook-page page a4-page" data-page="1">
     <div class="cover-container">
       
-      <div class="cover-top">
-        <div class="cover-dept-banner" data-department-name="The History Department">
-          <span class="school-brand-target">The History Department</span> &bull; GCSE Master Textbook Series
+      <!-- 1. TOP HEADER STRIP & MAIN TITLE -->
+      <div class="cover-top-header">
+        <div class="cover-header-meta">
+          <span class="chm-spec">PEARSON EDEXCEL GCSE (9–1) HISTORY &bull; OPTION 31</span>
+          <span class="chm-code">1HI0/31 &bull; Master Textbook Series</span>
         </div>
-        <div class="cover-series">Pearson Edexcel GCSE (9–1) History &bull; Paper 3 Option 31</div>
         <h1 class="cover-main-title">Weimar and Nazi Germany, 1918–1939</h1>
-        <div class="cover-subtitle">Key Topic 1: The Weimar Republic, 1918–1929 &bull; Student Master Revision Guide</div>
+        <div class="cover-topic-title">Key Topic 1: The Weimar Republic, 1918–1929</div>
+        <div class="cover-sub-bar">
+          <span>Student Master Textbook &bull; Core Knowledge, Disciplinary Enquiries &amp; Archival Evidence</span>
+        </div>
       </div>
 
+      <!-- 2. ARCHIVAL PRIMARY PLATE -->
       <div class="cover-plate-frame">
         ${coverImgData ? `<img class="cover-plate-img" src="${coverImgData}" alt="Potsdamer Platz Berlin 1920s">` : ''}
         <div class="cover-plate-caption">
           <span>Plate I: Potsdamer Platz and the Traffic Tower in Golden Twenties Berlin (c. 1924–1928)</span>
-          <span>Accession: BA 183-B0527 &bull; Bundesarchiv Berlin</span>
+          <span>Historical Primary Photograph</span>
         </div>
       </div>
 
-      <div class="cover-enquiry-box">
-        <div class="ceb-label">Overarching Thematic Enquiry:</div>
-        <div class="ceb-text">"Out of the ashes: How did the devastating legacy of the First World War forge the Weimar Republic, and were the democratic foundations of its new Constitution fatally flawed from the start?"</div>
+      <!-- 4. OFFICIAL PEARSON SPECIFICATION OVERVIEW & SYLLABUS MAPPING -->
+      <div class="cover-spec-checklist-box">
+        <div class="cscb-header">
+          <span class="cscb-title">Official Pearson Edexcel GCSE Specification Structure &amp; Syllabus Mapping (Option 31: KT1)</span>
+          <span class="cscb-subtitle">Core syllabus coverage across all four key enquiries:</span>
+        </div>
+        <div class="cscb-grid">
+          <!-- Enquiry 1.1 -->
+          <div class="cscb-col">
+            <div class="cscb-topic-title">1. Origins of Republic, 1918–19</div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Legacy of WW1: abdication of Kaiser, armistice and revolution, 1918–19.</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Setting up of Weimar Republic: National Assembly and new constitution.</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Strengths and weaknesses of new constitution (Proportional Representation, Article 48).</span>
+            </div>
+          </div>
+
+          <!-- Enquiry 1.2 -->
+          <div class="cscb-col">
+            <div class="cscb-topic-title">2. Early Challenges, 1919–23</div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Reasons for unpopularity: stab in the back (<em>Dolchstoßlegende</em>) and Versailles Treaty.</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Political challenges: Spartacist Uprising, Kapp Putsch, and political assassinations.</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Economic challenges: French occupation of Ruhr (1923), causes and effects of hyperinflation.</span>
+            </div>
+          </div>
+
+          <!-- Enquiry 1.3 -->
+          <div class="cscb-col">
+            <div class="cscb-topic-title">3. Recovery of Republic, 1924–29</div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Economic recovery: Stresemann, Rentenmark, Dawes Plan (1924), US loans, Young Plan (1929).</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Foreign policy: Locarno Treaties (1925), League of Nations (1926), Kellogg-Briand (1928).</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Impact on domestic political stability and reduced extremist support.</span>
+            </div>
+          </div>
+
+          <!-- Enquiry 1.4 -->
+          <div class="cscb-col" style="border-right: none;">
+            <div class="cscb-topic-title">4. Changes in Society, 1924–29</div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Standard of living: changes in wages, housing, and 1927 unemployment insurance.</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Position of women: politics (voting, deputies), work (double-earners), leisure ('New Woman').</span>
+            </div>
+            <div class="cscb-item">
+              <span class="cscb-bullet">&bull;</span>
+              <span>Cultural changes: developments in architecture (Bauhaus), art (<em>Neue Sachlichkeit</em>), and cinema.</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <table class="cover-matrix-table">
-        <thead>
-          <tr>
-            <th style="width: 20%;">Enquiry</th>
-            <th style="width: 50%;">Historical Focus &amp; Core Content</th>
-            <th style="width: 30%;">Key Specification Concepts</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>KT 1.1: Origins</strong></td>
-            <td>War Weariness, Kiel Mutiny, Abdication of Wilhelm II, Scheidemann Proclamation, Weimar Constitution</td>
-            <td>Reichstag, Article 48, Proportional Representation</td>
-          </tr>
-          <tr>
-            <td><strong>KT 1.2: Crises</strong></td>
-            <td>Treaty of Versailles (Diktat &amp; War Guilt), Spartacists, Freikorps, Kapp Putsch, Ruhr &amp; Hyperinflation</td>
-            <td>Dolchstoßlegende, Reparations, Passive Resistance</td>
-          </tr>
-          <tr>
-            <td><strong>KT 1.3: Recovery</strong></td>
-            <td>Stresemann’s Currency Reform (Rentenmark), Dawes Plan, Locarno Treaties, League Entry, Young Plan</td>
-            <td>Fulfilment, Dawes Loan Cycle, "Dancing on a Volcano"</td>
-          </tr>
-          <tr>
-            <td><strong>KT 1.4: Society</strong></td>
-            <td>Standard of Living, Housing &amp; Welfare, The "New Woman", Bauhaus Architecture, Cultural Polarization</td>
-            <td>Neue Sachlichkeit, Kulturbolschewismus, Gropius</td>
-          </tr>
-        </tbody>
-      </table>
-
+      <!-- 5. COVER FOOTER (Strict Institutional Neutrality) -->
       <div class="cover-footer">
-        <span>The History Revision Hub &bull; Student Textbook Edition</span>
-        <span>Paper 3 Companion Series &bull; 100% Institutional Neutrality</span>
+        <span>The History Revision Hub &bull; GCSE History Department</span>
+        <span>Key Topic 1 Master Textbook &bull; Page 1</span>
       </div>
 
     </div>
@@ -1753,8 +2214,8 @@ async function buildPublisherTextbookHtmlKT1() {
     <div class="back-container">
       
       <div class="back-header-strip">
-        <h2 class="back-title">The Weimar Republic (1918–1929): Master Revision Spine</h2>
-        <div class="back-subtitle">Pearson Edexcel GCSE Paper 3 (1HI0/31) &bull; Key Topic 1 Synthesis &amp; Disciplinary Framework</div>
+        <h2 class="back-title">The Weimar Republic, 1918–1929: Specification Mastery &amp; Synthesis</h2>
+        <div class="back-subtitle">Pearson Edexcel GCSE (9–1) History &bull; Paper 3 Option 31 (1HI0/31) &bull; Key Topic 1 Synthesis</div>
       </div>
 
       <div class="back-body-content">
@@ -1762,22 +2223,22 @@ async function buildPublisherTextbookHtmlKT1() {
         <!-- 1. Chronological Sequence -->
         <div>
           <div class="back-section-title">
-            <span>1. Chronological Sequence &bull; Key Milestones</span>
+            <span>1. Chronological Sequence &bull; Key Milestones &amp; Causal Turning Points</span>
             <span class="back-section-tag">TIMELINE MASTERY</span>
           </div>
           <div class="back-timeline-grid">
-            <div class="bt-card"><strong>28 Oct 1918:</strong> Kiel naval mutiny sparks nationwide revolution</div>
-            <div class="bt-card"><strong>9 Nov 1918:</strong> Wilhelm II abdicates; Scheidemann proclaims Republic</div>
-            <div class="bt-card"><strong>11 Nov 1918:</strong> Armistice signed at Compiègne ending WW1</div>
-            <div class="bt-card"><strong>Jan 1919:</strong> Spartacist Uprising crushed by Freikorps in Berlin</div>
-            <div class="bt-card"><strong>28 Jun 1919:</strong> Treaty of Versailles signed by Weimar envoys</div>
-            <div class="bt-card"><strong>11 Aug 1919:</strong> Weimar Constitution officially ratified by Ebert</div>
-            <div class="bt-card"><strong>Mar 1920:</strong> Kapp Putsch defeated by Berlin general strike</div>
-            <div class="bt-card"><strong>Jan 1923:</strong> French &amp; Belgian troops occupy the Ruhr heartland</div>
-            <div class="bt-card"><strong>Nov 1923:</strong> Hyperinflation peak; Stresemann issues Rentenmark</div>
-            <div class="bt-card"><strong>Aug 1924:</strong> Dawes Plan approved; Wall Street loans flow</div>
-            <div class="bt-card"><strong>Oct 1925:</strong> Locarno Treaties signed; western borders secured</div>
-            <div class="bt-card"><strong>Sep 1926:</strong> Germany admitted to League of Nations Council</div>
+            <div class="bt-card"><strong>28 Oct 1918: Kiel Naval Mutiny:</strong> Sailors refuse suicidal attack; sparks nationwide revolution and soldiers' councils.</div>
+            <div class="bt-card"><strong>9 Nov 1918: Abdication of Wilhelm II:</strong> Kaiser flees to Holland; Scheidemann proclaims Republic to pre-empt communism.</div>
+            <div class="bt-card"><strong>11 Nov 1918: Armistice Signed:</strong> Matthias Erzberger signs surrender at Compiègne; fuels right-wing 'Dolchstoß' myth.</div>
+            <div class="bt-card"><strong>15 Jan 1919: Spartacist Revolt Crushed:</strong> Freikorps crush Berlin uprising; Rosa Luxemburg &amp; Karl Liebknecht murdered.</div>
+            <div class="bt-card"><strong>28 Jun 1919: Versailles Treaty Signed:</strong> Weimar envoys forced to sign 'Diktat'; loses 13% land, 100k army limit, £6.6bn bill.</div>
+            <div class="bt-card"><strong>11 Aug 1919: Weimar Constitution Enacted:</strong> Progressive democracy ratified; introduces Proportional Representation &amp; Article 48.</div>
+            <div class="bt-card"><strong>Mar 1920: The Kapp Putsch:</strong> 12,000 Freikorps seize Berlin; army refuses to fire; defeated by general workers' strike.</div>
+            <div class="bt-card"><strong>Jan 1923: Occupation of the Ruhr:</strong> 60,000 French/Belgian troops seize industry; passive resistance triggers hyperinflation.</div>
+            <div class="bt-card"><strong>Nov 1923: Rentenmark Currency Reform:</strong> Stresemann halts passive resistance; mortgage-backed currency restores stability.</div>
+            <div class="bt-card"><strong>Aug 1924: The Dawes Plan:</strong> Scales reparations to capacity; US banks loan 800m gold marks to revive German industry.</div>
+            <div class="bt-card"><strong>Oct 1925: The Locarno Treaties:</strong> Germany voluntarily accepts western borders with France/Belgium; secures European peace.</div>
+            <div class="bt-card"><strong>Sep 1926: League of Nations Entry:</strong> Germany admitted to League Council as a permanent Great Power; ends diplomatic isolation.</div>
           </div>
         </div>
 
@@ -1790,45 +2251,91 @@ async function buildPublisherTextbookHtmlKT1() {
           <div class="back-main-matrix-grid">
             <div class="bmm-col">
               <strong>I. Constitutional Flaws</strong>
-              Pure Proportional Representation prevented majority rule, producing 20 fragile coalitions in 14 years. Article 48 gave the President emergency dictatorial decree powers that bypassed parliament.
+              Pure Proportional Representation (1 seat per 60k votes) prevented majorities, producing 20 fragile coalitions in 14 years. Article 48 allowed the President to rule by decree, creating a fatal dictatorial loophole.
             </div>
             <div class="bmm-col">
               <strong>II. Extremist Violence</strong>
-              Right-wing Dolchstoß myth branded republicans "November Criminals". Armed coups from left (Spartacists 1919) and right (Kapp 1920, Munich 1923) exposed state military weakness.
+              Right-wing Dolchstoß myth branded republicans "November Criminals". Armed coups from left (Spartacists 1919) and right (Kapp 1920, Munich 1923) exposed state dependence on unloyal imperial soldiers.
             </div>
             <div class="bmm-col">
               <strong>III. Economic Recovery</strong>
-              Ending passive resistance and creating the mortgage-backed Rentenmark halted hyperinflation. Dawes (1924) &amp; Young (1929) Plans rebuilt industry on short-term US loans.
+              Halting passive resistance and issuing the Rentenmark halted hyperinflation. Dawes (1924) &amp; Young (1929) Plans rebuilt industry on American credit—creating what Stresemann called "dancing on a volcano".
             </div>
             <div class="bmm-col">
               <strong>IV. Cultural Polarization</strong>
-              Abolishing censorship sparked modern Bauhaus design, cinema, and the "New Woman". However, rural conservatives and nationalists condemned Berlin culture as degenerate Bolshevism.
+              Abolishing censorship unleashed avant-garde Bauhaus design, cinema, and the liberated "New Woman". However, provincial conservatives fiercely condemned Berlin culture as "cultural Bolshevism".
             </div>
           </div>
         </div>
 
-        <!-- 3. Historiographical Debate & Exam Matrix -->
+        <!-- 3. Historiographical Debate & Exam Timing Matrix -->
         <div>
           <div class="back-section-title">
-            <span>3. Historiographical Debate &bull; Section B Evaluative Focus</span>
+            <span>3. Historiographical Debate &amp; Edexcel Paper 3 Examination Strategy</span>
             <span class="back-section-tag">INTERPRETATIONS &bull; Q3(b,c,d)</span>
           </div>
-          <div class="back-main-matrix-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="back-main-matrix-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 4px;">
             <div class="bmm-col">
               <strong>Interpretation 1: The Doomed Republic (Kolb / Peukert)</strong>
-              Weimar democracy was mortally wounded at birth by the Versailles "Diktat", Article 48, and unrepentant imperial civil servants and judges who subverted democracy. Stresemann's prosperity was an artificial bubble built on volatile American credit that inevitably burst in 1929.
+              Weimar democracy was mortally wounded at birth by Versailles, Article 48, and unrepentant imperial civil servants and judges who subverted democracy. Stresemann's prosperity was an artificial bubble built on volatile US loans that inevitably burst in 1929.
             </div>
             <div class="bmm-col">
               <strong>Interpretation 2: The Resilient Golden Age (Evans / Bookbinder)</strong>
-              Between 1924 and 1929, the Republic demonstrated remarkable resilience, weathering revolutionary coups and hyperinflation to build modern housing, progressive welfare, and peaceful diplomatic integration. Extremist votes collapsed to just 2.6% in 1928 until external global catastrophe struck.
+              Between 1924 and 1929, the Republic demonstrated remarkable resilience, weathering revolutionary coups and hyperinflation to build modern housing, progressive welfare, and peaceful diplomatic integration. Extremist votes collapsed to just 2.6% in 1928.
+            </div>
+          </div>
+          
+          <!-- Exam Timing & Mark Tariff Blueprint -->
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; font-size: 6.2pt; text-align: center;">
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
+              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q1: INFERENCE [4m]</strong>
+              <span>5 Mins &bull; 2 Inferences + Quotes</span>
+            </div>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
+              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q2: CAUSATION [12m]</strong>
+              <span>15 Mins &bull; 3 PEEL Causal Factors</span>
+            </div>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
+              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q3(a): UTILITY [8m]</strong>
+              <span>12 Mins &bull; Content, NOP &amp; Context</span>
+            </div>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
+              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q3(b/c): VIEWS [8m]</strong>
+              <span>10 Mins &bull; Differences &amp; Reasons</span>
+            </div>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
+              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q3(d): VERDICT [16+4m]</strong>
+              <span>25 Mins &bull; Balanced Evaluation</span>
             </div>
           </div>
         </div>
 
-        <!-- 4. Interactive Digital Quizzing Hub -->
+        <!-- 4. Synoptic Historical Verdict & Thematic Synthesis -->
         <div>
           <div class="back-section-title">
-            <span>4. Interactive Digital Quizzing Hub &bull; Scan with Smartphone Camera</span>
+            <span>4. Synoptic Historical Verdict &bull; 1918–1929 Thematic Evaluation</span>
+            <span class="back-section-tag">HISTORICAL SIGNIFICANCE</span>
+          </div>
+          <div class="back-verdict-grid">
+            <div class="bvg-col">
+              <strong>Democracy on Trial:</strong>
+              The Republic demonstrated surprising resilience in overcoming the 1919–1923 existential crises. By 1928, moderate coalition parties won 73% of the vote, and political assassinations had ceased. However, PR prevented stable parliamentary majorities, and Article 48 established a fatal habit of executive rule.
+            </div>
+            <div class="bvg-col">
+              <strong>Economic Illusion:</strong>
+              Industrial output surpassed 1913 levels by 1928, and real wages rose steadily. Yet prosperity was an illusion financed by volatile American short-term loans. When Gustav Stresemann warned that Germany was "dancing on a volcano", he correctly foresaw that any US credit contraction would trigger catastrophic collapse.
+            </div>
+            <div class="bvg-col">
+              <strong>Social &amp; Diplomatic Legacy:</strong>
+              The Locarno Treaties and entry into the League of Nations restored Germany's great power status without firing a single shot. However, the psychological trauma of 1923 hyperinflation and conservative fury against modern Berlin culture left deep societal divisions that right-wing extremists would readily exploit.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Interactive Digital Quizzing Hub -->
+        <div>
+          <div class="back-section-title">
+            <span>5. Interactive Digital Quizzing Hub &bull; Scan with Smartphone Camera</span>
             <span class="back-section-tag">INSTANT 20-QUESTION MASTERY QUIZZES</span>
           </div>
           <div class="back-qr-grid">
@@ -1839,8 +2346,8 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
 
       <div class="cover-footer" style="margin-top: 4px;">
-        <span>GCSE History Revision Hub &bull; Paper 3 Mastery Companion</span>
-        <span>Key Topic 1 Revision Spine Complete &bull; Page 10</span>
+        <span>The History Revision Hub &bull; GCSE History Department</span>
+        <span>Key Topic 1 Master Textbook Complete &bull; Page 10</span>
       </div>
 
     </div>
