@@ -419,28 +419,27 @@ function buildWeimarKeyTopicWorkbook(ktId) {
     // Verso Bottom Component based on enquiry index (0=Inference, 1=Causation Check, 2=Dual Sources Utility, 3=Dual Interpretations)
     let versoExamComponentHtml = '';
     if (idx === 0) {
-      // Enquiry 1: Section A Source A & Question 1 Inference [4m] + Causation Practice [4m]
-      const stimulusSource =
-        enq.exam.stimulus && enq.exam.stimulus[0] ? enq.exam.stimulus[0] : null;
-      const sourceTitle = stimulusSource
-        ? stimulusSource.title
-        : `Source A: Primary dispatch relating to ${enq.enquiryQuestion}`;
-      const sourceText = stimulusSource
-        ? stimulusSource.content
+      // Enquiry 1: Source A Inference Table [4m] & Source A Provenance Evaluation [4m]
+      const stim = enq.exam.stimulus || [];
+      const sourceObj = stim[0] || {};
+      const sourceTitle =
+        sourceObj.title || 'Source A: Contemporary record of conditions and reactions in Germany.';
+      const sourceText = sourceObj.content
+        ? `"${sourceObj.content.replace(/^"|"$/g, '').slice(0, 310)}..."`
         : 'Surviving archival dispatch documenting the political and social conditions in Germany.';
 
       const cfgItem =
         (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][0]) || {};
       const inferenceFocus = cfgItem.q1Focus || 'the political conditions in Germany';
-      const versoWhyStem =
-        cfgItem.versoWhyStem ||
-        `Explain one reason why ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}. [4 marks]`;
-      const versoWhyGuidance =
-        cfgItem.versoWhyGuidance ||
-        'Point (State cause clearly) &bull; Evidence (Deploy specific historical facts) &bull; Explanation (Explain the causal mechanism).';
-      const versoWhyStems =
-        cfgItem.versoWhyStems ||
-        'One key reason was... Specifically, in... Consequently, this directly resulted in...';
+      const provenancePrompt =
+        cfgItem.provenancePrompt ||
+        `How does the provenance (Nature, Origin, Purpose) of Source A influence how valuable it is to an historian investigating ${inferenceFocus}? [4 marks]`;
+      const provenanceGuidance =
+        cfgItem.provenanceGuidance ||
+        'Evaluate the nature (type of source), origin (author, date), and purpose (intent to inform, convince, or satirise).';
+      const provenanceStems =
+        cfgItem.provenanceStems ||
+        'The nature of this source means... Its origin in this period gives it value because... However, the purpose means we must consider...';
 
       versoExamComponentHtml = `
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
@@ -451,7 +450,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
               Source A
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-              PRIMARY EVIDENCE
+              EDEXCEL PAPER 3
             </span>
           </div>
           <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin: 1px 0 2px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
@@ -526,23 +525,23 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           </div>
         </div>
 
-        <!-- Question: Explain One Reason [4 marks] -->
+        <!-- Source A Provenance & Historical Value Check [4 marks] -->
         <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-                &bull; Question: Explain One Reason [4 marks &bull; 5 mins]
+                &bull; Source A Evaluation: Provenance &amp; Historical Value [4 marks &bull; 5 mins]
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
                 EDEXCEL PAPER 3
               </span>
             </div>
             <p style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-              ${versoWhyStem}
+              ${provenancePrompt}
             </p>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target Guidance:</strong> ${versoWhyGuidance}<br>
-              <strong>Sentence Stems:</strong> <em>${versoWhyStems}</em>
+              <strong>Target Guidance:</strong> ${provenanceGuidance}<br>
+              <strong>Sentence Stems:</strong> <em>${provenanceStems}</em>
             </div>
           </div>
           <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.8" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
@@ -550,90 +549,77 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       </div>
       `;
     } else if (idx === 1) {
-      // Enquiry 2: Chronological Sequence & Causation Check [4m]
-      const blocks = enq.narrativeBlocks.slice(0, 4);
-      const items =
-        blocks.length > 0
-          ? blocks.map(
-              (b, bIdx) =>
-                `<strong>Phase ${bIdx + 1}:</strong> ${(b.theme_heading || b.title || 'Historical mechanism').replace(/^\\d+\\.\\s*/, '')}`,
-            )
-          : [
-              '<strong>Phase 1:</strong> Deep structural discontent builds under political instability.',
-              '<strong>Phase 2:</strong> Decisive catalyst triggers acute geopolitical and economic crisis.',
-              '<strong>Phase 3:</strong> Strategic intervention by authorities reshapes institutional power.',
-              '<strong>Phase 4:</strong> Lasting consequence transforms the trajectory of the German state.',
-            ];
-
+      // Enquiry 2: Chronological Milestones & Single-Source Utility & Corroboration [6m]
       const cfgItem =
         (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][1]) || {};
-      const turningPointStem =
-        cfgItem.versoTurningPointStem ||
-        `Explain why this sequence represented a decisive turning point in ${ktMeta.title}. [4 marks]`;
-      const turningPointGuidance =
-        cfgItem.versoTurningPointGuidance ||
-        'Point (Identify the decisive catalyst) &bull; Evidence (Deploy precise dates, figures, and groups) &bull; Explanation (Explain the lasting structural impact).';
-      const turningPointStems =
-        cfgItem.versoTurningPointStems ||
-        'One major reason this was a turning point was... Specifically, when... Consequently, this directly transformed Germany because...';
+      const phases = cfgItem.chronologyPhases || [
+        '<strong>Phase 1:</strong> Deep structural discontent builds under political instability.',
+        '<strong>Phase 2:</strong> Decisive catalyst triggers acute geopolitical and economic crisis.',
+        '<strong>Phase 3:</strong> Strategic intervention by authorities reshapes institutional power.',
+        '<strong>Phase 4:</strong> Lasting consequence transforms the trajectory of the German state.',
+      ];
+      const singleSrc = cfgItem.singleSourceB || {
+        provenance: 'From an official report or contemporary account.',
+        content: 'Historical testimony documenting conditions and turning points of the crisis.',
+        stem: `How useful is Source B for an enquiry into the key turning points of ${ktMeta.title}? [6 marks]`,
+        guidance:
+          'Content Deduction &bull; Own Knowledge Corroboration &bull; Provenance Value (Nature, Origin, Purpose).',
+        stems:
+          'Source B is useful because it reveals that... From my own knowledge, I know that... The provenance makes this account valuable because...',
+      };
 
       versoExamComponentHtml = `
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
-        <!-- Chronological Sequence -->
+        <!-- Chronological Sequence (4 Milestones) -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 3px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-              &bull; Chronology: Key Turning Points &amp; Events
+              &bull; Chronology: Key Turning Points &amp; Milestones
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
               KEY TOPIC ${ktNum}
             </span>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 6px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2;">
-            ${items.map((it) => `<div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 3px 5px; border-radius: 2px;">${it}</div>`).join('')}
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 6px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.2;">
+            ${phases.map((it) => `<div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 2.5px 5px; border-radius: 2px;">${it}</div>`).join('')}
           </div>
         </div>
 
-        <!-- Turning Point Analytical Framework (2-Column) -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 3px;">
-            &bull; Turning Point Analysis: Immediate Catalyst vs Structural Impact
-          </strong>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #f8fafc;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #1e3a8a; display: block;">
-                Immediate Shock / Trigger:
-              </span>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-            </div>
-            <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #f8fafc;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #1e3a8a; display: block;">
-                Lasting Structural Impact:
-              </span>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-            </div>
+        <!-- Primary Source B Box -->
+        <div class="archival-box" style="margin-bottom: 3px; padding: 4px 6px;">
+          <div class="archival-header">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase;">
+              Source B
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+              EDEXCEL PAPER 3
+            </span>
           </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #333333; margin: 1px 0 2px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+            ${singleSrc.provenance}
+          </p>
+          <p style="font-family: 'Georgia', serif; font-size: 8.4pt; line-height: 1.22; color: #000000; margin: 0;">
+            "${singleSrc.content}"
+          </p>
         </div>
 
-        <!-- Question: Explain One Reason [4 marks] -->
+        <!-- Single-Source Utility & Corroboration [6 marks] -->
         <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
-                &bull; Question: Explain One Reason [4 marks &bull; 5 mins]
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
+                &bull; Section B Skill Practice: Single-Source Utility &amp; Corroboration [6 marks &bull; 8 mins]
               </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
                 EDEXCEL PAPER 3
               </span>
             </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-              ${turningPointStem}
+            <p style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+              ${singleSrc.stem}
             </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target Guidance:</strong> ${turningPointGuidance}<br>
-              <strong>Sentence Stems:</strong> <em>${turningPointStems}</em>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
+              <strong>Target Guidance:</strong> ${singleSrc.guidance}<br>
+              <strong>Sentence Stems:</strong> <em>${singleSrc.stems}</em>
             </div>
           </div>
           <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.8" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
@@ -649,9 +635,9 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           'Primary testimony detailing conditions, political tensions, and eyewitness accounts from the period.',
       };
       const srcC = stim[1] || {
-        title: 'Source C: Contemporary diary entry or public commentary.',
+        title: 'Source C: Eyewitness diary entry, newspaper article, or memoir.',
         content:
-          'Secondary contemporary observation reflecting public anxiety and political division.',
+          'Personal perspective highlighting social reality, public opinion, and popular reactions.',
       };
 
       versoExamComponentHtml = `
@@ -664,7 +650,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
                 Source B
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
-                CONTEMPORARY RECORD
+                EDEXCEL PAPER 3
               </span>
             </div>
             <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
@@ -681,7 +667,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
                 Source C
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
-                CONTEMPORARY RECORD
+                EDEXCEL PAPER 3
               </span>
             </div>
             <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
@@ -708,45 +694,45 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; flex: 1;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 1px;">
                 Source B Utility Breakdown:
               </strong>
-              <div>
+              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">1. Content Deduction &amp; Quote:</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
               </div>
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; margin-top: 2px;">2. Historical Context (Own Knowledge):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">2. Historical Context (Own Knowledge):</div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
               </div>
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; margin-top: 2px;">3. Provenance (Author, Motive, Date):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">3. Provenance (Nature, Origin, Purpose):</div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
               </div>
             </div>
 
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 1px;">
                 Source C Utility Breakdown:
               </strong>
-              <div>
+              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">1. Content Deduction &amp; Quote:</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
               </div>
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; margin-top: 2px;">2. Historical Context (Own Knowledge):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">2. Historical Context (Own Knowledge):</div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
               </div>
-              <div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; margin-top: 2px;">3. Provenance (Author, Motive, Date):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">3. Provenance (Nature, Origin, Purpose):</div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
               </div>
             </div>
           </div>
@@ -758,7 +744,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       </div>
       `;
     } else {
-      // Enquiry 4: Dual Interpretations 1 & 2 Plate and Q3b/Q3c Tasks
+      // Enquiry 4: Dual Interpretations 1 & 2 Plate and Q3b/Q3c Tasks with Companion Sources
       const stim = enq.exam.stimulus || [];
       const int1 = stim[0] || {
         title: 'Interpretation 1: From a modern academic study of the period.',
@@ -774,27 +760,75 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       const cfgItem =
         (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][3]) || {};
       const interpFocus = cfgItem.interpFocus || 'the historical development of the period';
+      const compSources = cfgItem.companionSources || {
+        sourceB: {
+          provenance: 'From contemporary evidence supporting the first view.',
+          content: 'Details supporting Interpretation 1.',
+        },
+        sourceC: {
+          provenance: 'From contemporary evidence supporting the second view.',
+          content: 'Details supporting Interpretation 2.',
+        },
+      };
 
       versoExamComponentHtml = `
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
-        <!-- Dual Interpretations Plate -->
+        <!-- Dual Interpretations & Supporting Sources Plate -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
+          <!-- Left Column: Source B + Interpretation 1 -->
           <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-              ${int1.title.slice(0, 50)}...
-            </strong>
-            <p style="font-family: 'Georgia', serif; font-size: 8.2pt; line-height: 1.20; color: #000000; margin: 0;">
-              "${int1.content.replace(/^"|"$/g, '').slice(0, 260)}..."
-            </p>
+            <!-- Companion Source B -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 2px 4px; margin-bottom: 3px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">
+                  Source B (Supporting Evidence)
+                </strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b;">Primary Record</span>
+              </div>
+              <p style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; color: #475569; margin: 1px 0;">
+                ${compSources.sourceB.provenance}
+              </p>
+              <p style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.18; color: #000000; margin: 0;">
+                "${compSources.sourceB.content}"
+              </p>
+            </div>
+            <!-- Interpretation 1 -->
+            <div>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+                ${int1.title.slice(0, 50)}...
+              </strong>
+              <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
+                "${int1.content.replace(/^"|"$/g, '').slice(0, 240)}..."
+              </p>
+            </div>
           </div>
 
+          <!-- Right Column: Source C + Interpretation 2 -->
           <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-              ${int2.title.slice(0, 50)}...
-            </strong>
-            <p style="font-family: 'Georgia', serif; font-size: 8.2pt; line-height: 1.20; color: #000000; margin: 0;">
-              "${int2.content.replace(/^"|"$/g, '').slice(0, 260)}..."
-            </p>
+            <!-- Companion Source C -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 2px 4px; margin-bottom: 3px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a;">
+                  Source C (Supporting Evidence)
+                </strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #64748b;">Primary Record</span>
+              </div>
+              <p style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; color: #475569; margin: 1px 0;">
+                ${compSources.sourceC.provenance}
+              </p>
+              <p style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.18; color: #000000; margin: 0;">
+                "${compSources.sourceC.content}"
+              </p>
+            </div>
+            <!-- Interpretation 2 -->
+            <div>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+                ${int2.title.slice(0, 50)}...
+              </strong>
+              <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
+                "${int2.content.replace(/^"|"$/g, '').slice(0, 240)}..."
+              </p>
+            </div>
           </div>
         </div>
 
@@ -829,10 +863,10 @@ function buildWeimarKeyTopicWorkbook(ktId) {
                 <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px;">EDEXCEL PAPER 3</span>
               </div>
               <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 1px 0;">
-                Suggest one reason why Interpretations 1 and 2 give different views on ${interpFocus}. (Refer to Sources B &amp; C or historians' focus).
+                Suggest one reason why Interpretations 1 and 2 give different views on ${interpFocus}. You may use Sources B and C to help explain your answer.
               </p>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 4px; border-radius: 2px; margin-bottom: 1px;">
-                <strong>Sentence Stem:</strong> One reason they differ is because the historians relied on different evidence... Interpretation 1 draws on evidence matching Source B (which stresses...), whereas Interpretation 2 reflects Source C (which highlights...).
+                <strong>Sentence Stem:</strong> One reason they differ is because the historians gave weight to different sources of evidence. Interpretation 1 is supported by Source B (which shows that...), whereas Interpretation 2 is supported by Source C (which shows that...).
               </div>
             </div>
             <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.0" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>

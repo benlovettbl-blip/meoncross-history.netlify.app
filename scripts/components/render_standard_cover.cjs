@@ -164,7 +164,7 @@ function renderStandardFrontCover({
             Pupil Workbook &amp; Assessment
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #222;">
-            Paper 2: Conflict in the Middle East, 1945–1995 &bull; Key Topic ${keyTopicNum}
+            ${paperTitle} &bull; Key Topic ${keyTopicNum}
           </span>
         </div>
         
