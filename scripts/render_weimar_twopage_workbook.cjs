@@ -239,18 +239,6 @@ function buildWeimarKeyTopicWorkbook(ktId) {
     .task-section {
       margin-bottom: 2px;
     }
-    .textbook-cite-badge {
-      display: inline-block;
-      font-family: 'Inter', monospace, sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      color: #000000;
-      background: #f1f5f9;
-      border: 1px solid #000000;
-      padding: 0.5px 4px;
-      border-radius: 2px;
-      letter-spacing: 0.02em;
-    }
     .task-line {
       border-bottom: 1.2px solid #000000;
       margin: 0;
@@ -458,15 +446,17 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
         <div class="archival-box" style="margin-bottom: 2px;">
           <div class="archival-header">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
-              HISTORICAL PRIMARY SOURCE
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">
+              Source A
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+              PRIMARY EVIDENCE
             </span>
-            <span class="archival-shelfmark">BA-KOBLENZ • ACCESSION RECORD</span>
           </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin: 1px 0 2px 0;">
-            <strong>Provenance:</strong> ${sourceTitle}
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin: 1px 0 2px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+            ${sourceTitle.startsWith('Source A:') ? sourceTitle : `From: ${sourceTitle}`}
           </p>
-          <p style="font-family: 'Georgia', serif; font-size: 8.4pt; line-height: 1.2; color: #000000; margin: 0;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.4pt; line-height: 1.22; color: #000000; margin: 0;">
             ${sourceText}
           </p>
         </div>
@@ -513,10 +503,10 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-                &bull; Section A Causation Bridge: Archival Context &amp; Significance
+                &bull; Section A Causation Analysis: Context &amp; Significance
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-                EXAM MASTERY
+                EDEXCEL PAPER 3
               </span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.2; color: #000000; margin: 1px 0;">
@@ -552,10 +542,10 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-              &bull; Forensic Causation Domino: Chronological Sequence
+              &bull; Chronological Sequence: Key Turning Points
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-              HISTORICAL CAUSALITY
+              KEY TOPIC ${ktNum}
             </span>
           </div>
           <div style="display: flex; flex-direction: column; gap: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.18;">
@@ -606,13 +596,15 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
           <div class="archival-box" style="margin-bottom: 0;">
             <div class="archival-header">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-                SOURCE B (PRIMARY)
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; text-transform: uppercase;">
+                Source B
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
+                CONTEMPORARY RECORD
               </span>
-              <span class="archival-shelfmark">BA 183-RECORD</span>
             </div>
-            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0;">
-              ${srcB.title.slice(0, 75)}...
+            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
+              ${srcB.title.startsWith('Source B:') ? srcB.title.slice(0, 85) : `From: ${srcB.title.slice(0, 80)}`}
             </p>
             <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
               "${srcB.content.replace(/^"|"$/g, '').slice(0, 220)}..."
@@ -621,13 +613,15 @@ function buildWeimarKeyTopicWorkbook(ktId) {
 
           <div class="archival-box" style="margin-bottom: 0;">
             <div class="archival-header">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-                SOURCE C (PRIMARY)
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; text-transform: uppercase;">
+                Source C
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
+                CONTEMPORARY RECORD
               </span>
-              <span class="archival-shelfmark">GStA-RECORD</span>
             </div>
-            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0;">
-              ${srcC.title.slice(0, 75)}...
+            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
+              ${srcC.title.startsWith('Source C:') ? srcC.title.slice(0, 85) : `From: ${srcC.title.slice(0, 80)}`}
             </p>
             <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
               "${srcC.content.replace(/^"|"$/g, '').slice(0, 220)}..."
@@ -841,26 +835,26 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <!-- Key Disciplinary Vocabulary (Analytical Distinction / Dynamic Rotation) -->
+      <!-- Key Disciplinary Vocabulary -->
       <div class="task-section" style="margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-            2. Core Disciplinary Vocabulary <span class="textbook-cite-badge">(P1–P3)</span>
+            2. Core Disciplinary Vocabulary
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569;">
-            ${idx % 2 === 0 ? 'Analytical Distinction' : 'Vocabulary Mapping & Causation'}
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #475569;">
+            Analytical Application &bull; [2 marks]
           </span>
         </div>
         <div style="border: 1px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18; margin-bottom: 1px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18; margin-bottom: 1px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 2px 5px; border-radius: 2px;">
             <strong>${enq.vocab.term1.term}:</strong> ${enq.vocab.term1.definition} &nbsp;|&nbsp;
             <strong>${enq.vocab.term2.term}:</strong> ${enq.vocab.term2.definition}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; margin-top: 1px;">
             <strong>Task:</strong> In one historically precise analytical sentence, explain how <em>${enq.vocab.term1.term}</em> directly influenced or contrasted with <em>${enq.vocab.term2.term}</em>:
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; line-height: 1.2; margin-top: 1px;">
-            <strong>Sentence Stem:</strong> <em>While ${enq.vocab.term1.term} meant that..., this directly influenced / conflicted with ${enq.vocab.term2.term} because...</em>
+            <strong>Sentence Starter:</strong> <em>While ${enq.vocab.term1.term} meant that..., this directly influenced / conflicted with ${enq.vocab.term2.term} because...</em>
           </div>
           <div style="border-bottom: 1.2px solid #000000; height: 5.4mm; margin-top: 1.5px;"></div>
           <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
@@ -914,7 +908,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
               ${idx === 2 ? '1. Content Utility (B)' : idx === 3 ? '1. Thesis & Criteria' : '1. Factor 1: Catalyst'}
             </strong>
-            <span class="textbook-cite-badge">(P1.2)</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">${idx === 2 ? 'SOURCE B' : idx === 3 ? 'THESIS' : 'FACTOR 1'}</span>
           </div>
           <p style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #111111; margin: 0; line-height: 1.16;">
             ${idx === 2 ? 'Analyse what Source B reveals; deploy precise historical facts to substantiate.' : idx === 3 ? 'Establish clear evaluative criteria to judge the validity of both interpretations.' : 'State the first core cause clearly; deploy specific dates, statistics, and figures.'}
@@ -926,7 +920,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
               ${idx === 2 ? '2. Content Utility (C)' : idx === 3 ? '2. Support Interp 1' : '2. Factor 2: Mechanism'}
             </strong>
-            <span class="textbook-cite-badge">(P2.1)</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">${idx === 2 ? 'SOURCE C' : idx === 3 ? 'INTERP 1' : 'FACTOR 2'}</span>
           </div>
           <p style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #111111; margin: 0; line-height: 1.16;">
             ${idx === 2 ? 'Analyse Source C; corroborate with own knowledge; evaluate author provenance.' : idx === 3 ? 'Support Interpretation 1 using specific facts and contextual historical reality.' : 'Explain the causal chain: how the mechanism directly produced escalation.'}
@@ -938,7 +932,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
               ${idx === 2 ? '3. Provenance & COP' : idx === 3 ? '3. Evaluate Interp 2' : '3. Factor 3: Own Knowledge'}
             </strong>
-            <span class="textbook-cite-badge">(P3.2)</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">${idx === 2 ? 'SYNTHESIS' : idx === 3 ? 'EVALUATION' : 'FACTOR 3'}</span>
           </div>
           <p style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #111111; margin: 0; line-height: 1.16;">
             ${idx === 2 ? 'Explain why the motive and date make both sources useful when read together.' : idx === 3 ? 'Counter-balance with Interpretation 2 and deliver a justified final conclusion.' : 'Introduce your self-selected third factor; deliver a sustained analytical link.'}

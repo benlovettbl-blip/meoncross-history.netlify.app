@@ -1778,21 +1778,9 @@ function buildEeeKeyTopicWorkbook(ktId) {
     .task-section {
       margin-bottom: 2px;
     }
-    .textbook-cite-badge {
-      display: inline-block;
-      font-family: 'Inter', monospace, sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      color: #000000;
-      background: #f1f5f9;
-      border: 1px solid #000000;
-      padding: 0.5px 4px;
-      border-radius: 2px;
-      letter-spacing: 0.02em;
-    }
     .task-line {
       border-bottom: 1.5px solid #000000;
-      height: 7.0mm;
+      height: 9.0mm;
       margin: 0;
       box-sizing: border-box;
     }
@@ -2006,20 +1994,28 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <!-- Key Disciplinary Vocabulary (Analytical Distinction) -->
+      <!-- Key Disciplinary Vocabulary -->
       <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Core Disciplinary Vocabulary <span class="textbook-cite-badge">${enq.vocabRef}</span>
+            &bull; Core Disciplinary Vocabulary
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-          ${enq.vocabPrompt}
-        </p>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.18; margin-bottom: 2px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 2px 6px; border-radius: 2px;">
+            <strong>${enq.vocabTermA}:</strong> Key Disciplinary Concept &nbsp;|&nbsp; <strong>${enq.vocabTermB}:</strong> Key Disciplinary Concept
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; line-height: 1.18;">
+            ${enq.vocabPrompt}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; line-height: 1.2; margin-top: 1px;">
+            <strong>Sentence Starter:</strong> <em>While ${enq.vocabTermA} established that..., ${enq.vocabTermB} operated differently because...</em>
+          </div>
+          <div class="task-line" style="height: 6.0mm; margin-top: 2px;"></div>
+          <div class="task-line" style="height: 6.0mm;"></div>
+          <div class="task-line" style="height: 6.0mm;"></div>
+        </div>
       </div>
 
       <!-- Question 1(a): Describe One Key Feature [2 marks] -->
@@ -2110,13 +2106,13 @@ function buildEeeKeyTopicWorkbook(ktId) {
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 2px;">
         ${rx.structureStrip
           .map(
-            (col) => `
+            (col, cIdx) => `
         <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
               ${col.col}
             </strong>
-            <span class="textbook-cite-badge">${col.ref}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">POINT ${cIdx + 1}</span>
           </div>
           <p style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #111111; margin: 0; line-height: 1.16;">
             ${col.text}
@@ -2138,24 +2134,9 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <strong>Timeline Mission:</strong> ${rx.timelineMission}
       </div>
 
-      <!-- Full-Page Ruled Lines (16 Lines) -->
-      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; margin-top: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
+      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px; margin-bottom: 0;">
+        <!-- Filled dynamically by engine measurement script -->
       </div>
 
       ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 16)}
@@ -2806,24 +2787,9 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <strong>Quick PEEL Plan:</strong> Point 1: _____________________ | Point 2: _____________________ | Point 3 (Own Knowledge): _____________________
       </div>
 
-      <!-- 16 Ruled Lines for Timed Writing -->
-      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; margin-top: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
+      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px; margin-bottom: 0;">
+        <!-- Filled dynamically by engine measurement script -->
       </div>
 
       ${renderFooterStrip(15, footers[14], 16)}
@@ -2897,14 +2863,14 @@ function buildEeeKeyTopicWorkbook(ktId) {
     .map((item) => {
       const qrSvg = generateQrSvg(item.url);
       return `
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 3px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between; flex: 1;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">
           ${item.label}
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 5.6pt; color: #475569; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
           ${item.subLabel}
         </div>
-        <div style="width: 16mm; height: 16mm; margin: 1px auto;">
+        <div style="width: 22mm; height: 22mm; margin: 1px auto;">
           ${qrSvg}
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 6pt; font-weight: 700; color: #000000;">
@@ -3038,8 +3004,8 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <!-- Interactive Quizzing & Revision QR Hub -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff;">
+      <!-- Interactive Quizzing & Revision QR Hub (Flex Absorbs Vertical Space) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant 20-Question Retrieval Practice
@@ -3048,7 +3014,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
             Scan with smartphone camera to launch live self-marking quizzes
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center; flex: 1;">
           ${qrCardsHtml}
         </div>
       </div>
@@ -3059,6 +3025,24 @@ function buildEeeKeyTopicWorkbook(ktId) {
 `;
 
   html += `
+  <!-- Client-Side Auto-Lines Calculator (Evaluated in Puppeteer before PDF print) -->
+  <script>
+    function autoFillWritingLines() {
+      document.querySelectorAll('[data-auto-lines]').forEach(el => {
+        el.innerHTML = '';
+        const availablePx = el.clientHeight;
+        const lineHMm = parseFloat(el.dataset.lineHeight || '7.5');
+        // Standard 96 DPI: 1 inch = 25.4mm = 96px => 1mm = 3.779527559px
+        const lineHPx = lineHMm * (96 / 25.4);
+        const count = Math.max(1, Math.round(availablePx / lineHPx));
+        el.innerHTML = Array(count).fill(
+          '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>'
+        ).join('');
+      });
+    }
+    window.addEventListener('DOMContentLoaded', autoFillWritingLines);
+    if (document.readyState !== 'loading') autoFillWritingLines();
+  </script>
 </body>
 </html>
 `;
@@ -3076,6 +3060,13 @@ async function compilePdf(htmlPath, pdfPath, v17Path) {
   });
   const page = await browser.newPage();
   await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
+
+  // Evaluate dynamic lines calculation client-side in Puppeteer
+  await page.evaluate(() => {
+    if (typeof autoFillWritingLines === 'function') {
+      autoFillWritingLines();
+    }
+  });
 
   // Space audit before PDF compilation
   const audit = await auditPageBudget(page);

@@ -1,3 +1,4 @@
 node scripts/verify_sanitization.cjs
+node scripts/audit_page_budget.cjs --clutter-only
 npm run test:qa
 npx lint-staged

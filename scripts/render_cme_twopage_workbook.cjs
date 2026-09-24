@@ -657,18 +657,6 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     .task-section {
       margin-bottom: 2px;
     }
-    .textbook-cite-badge {
-      display: inline-block;
-      font-family: 'Inter', monospace, sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      color: #000000;
-      background: #f1f5f9;
-      border: 1px solid #000000;
-      padding: 0.5px 4px;
-      border-radius: 2px;
-      letter-spacing: 0.02em;
-    }
     /* Thick Black Writing Lines for Accessibility & Special Needs */
     .task-line {
       border-bottom: 1.5px solid #000000;
@@ -1019,7 +1007,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <div class="task-section" style="margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary <span class="textbook-cite-badge">${cfg.vocabRef}</span>
+            &bull; Key Vocabulary
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
         </div>
@@ -1037,10 +1025,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(a): Explain One Consequence [4 marks]
           </strong>
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <span class="textbook-cite-badge">${cfg.consequenceA.ref}</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
@@ -1063,10 +1048,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 1(b): Explain One Consequence [4 marks]
           </strong>
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <span class="textbook-cite-badge">${cfg.consequenceB.ref}</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
         </div>
         <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
           ${cfg.consequenceB.question}
@@ -1099,12 +1081,9 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${rx.tariff}
         </h2>
-        <div style="display: flex; align-items: center; gap: 4px;">
-          <span class="textbook-cite-badge">${rx.ref}</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-            Extended Writing Assessment &bull; 8 Marks
-          </span>
-        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing Assessment &bull; 8 Marks
+        </span>
       </div>
 
       <!-- Unified 3-Row Scaffolding Block (Zero Inter-Row Gaps • Docked Directly Below Header) -->
@@ -1138,7 +1117,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
           <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; display: flex; justify-content: space-between; align-items: center; line-height: 1.1; margin-bottom: 1px;">
               <span>${strip.col}</span>
-              ${strip.ref ? `<span class="textbook-cite-badge" style="font-size: 6.0pt; padding: 0 3px;">${strip.ref}</span>` : ''}
+              <span style="font-size: 6.0pt; border: 1px solid #000; padding: 0 3px; border-radius: 2px; background: #ffffff;">SECTION ${sIdx + 1}</span>
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
@@ -1161,21 +1140,19 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        ${Array.from({ length: 27 })
-          .map(() => '<div class="task-line"></div>')
-          .join('\n        ')}
-      </div>
-
-      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
+      <!-- Timeline Mission Box -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 1.5px 6px; background: #fdfdfd; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; line-height: 1.18;">
           ${rx.timelineMission}
         </div>
+      </div>
+
+      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
+      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-bottom: 0;">
+        <!-- Filled dynamically by engine measurement script -->
       </div>
 
       ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 16)}
@@ -1458,12 +1435,12 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Section 4: Pupil Extended Writing Self-Audit Checklist -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #fafafa;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 8px; background: #fafafa; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #000; padding-bottom: 2px;">
           <span>4. Pupil Extended Writing Self-Audit Checklist (The Grade 9 Polish)</span>
           <span>Tick Before Handing In</span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.25; flex: 1; align-content: space-between;">
           <div>&bull; &#9633; Did I name at least 3 specific historical proper nouns per paragraph?</div>
           <div>&bull; &#9633; Did I frame my opening line to echo the exact words of the exam question?</div>
           <div>&bull; &#9633; Did I explain <strong>HOW</strong> event A caused event B rather than just stating it?</div>
@@ -1577,11 +1554,96 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
   });
 
   html += `
+  <!-- Client-Side Auto-Lines Calculator (Evaluated in Puppeteer before PDF print) -->
+  <script>
+    function autoFillWritingLines() {
+      document.querySelectorAll('[data-auto-lines]').forEach(el => {
+        el.innerHTML = '';
+        const availablePx = el.clientHeight;
+        const lineHMm = parseFloat(el.dataset.lineHeight || '7.5');
+        // Standard 96 DPI: 1 inch = 25.4mm = 96px => 1mm = 3.779527559px
+        const lineHPx = lineHMm * (96 / 25.4);
+        const count = Math.max(1, Math.round(availablePx / lineHPx));
+        el.innerHTML = Array(count).fill(
+          '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>'
+        ).join('');
+      });
+    }
+    window.addEventListener('DOMContentLoaded', autoFillWritingLines);
+    if (document.readyState !== 'loading') autoFillWritingLines();
+  </script>
 </body>
 </html>
 `;
 
   return html;
+}
+
+// ============================================================================
+// PDF COMPILER HELPER (WITH AUDIT)
+// ============================================================================
+async function compilePdf(htmlPath, pdfPath, v17Path) {
+  const puppeteer = require('puppeteer');
+  const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+  const page = await browser.newPage();
+  await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
+
+  // Evaluate dynamic lines calculation client-side in Puppeteer
+  await page.evaluate(() => {
+    if (typeof autoFillWritingLines === 'function') {
+      autoFillWritingLines();
+    }
+  });
+
+  // Space audit before PDF compilation
+  const audit = await auditPageBudget(page);
+  printSpaceAuditReport(audit, path.basename(htmlPath));
+
+  await page.pdf({
+    path: pdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
+  });
+
+  if (v17Path) {
+    fs.copyFileSync(pdfPath, v17Path);
+  }
+
+  await browser.close();
+}
+
+// CLI runner
+if (require.main === module) {
+  (async () => {
+    const rootDir = path.join(__dirname, '..');
+    const html = buildCmeKt2TwoPageWorkbook({}, { name: 'KT2' });
+    const publicHtml = path.join(rootDir, 'public', 'units', 'cme_new', 'pupil_workbook_KT2.html');
+    const unitHtml = path.join(rootDir, 'units', 'cme_new', 'pupil_workbook_KT2.html');
+    fs.mkdirSync(path.dirname(publicHtml), { recursive: true });
+    fs.mkdirSync(path.dirname(unitHtml), { recursive: true });
+    fs.writeFileSync(publicHtml, html, 'utf8');
+    fs.writeFileSync(unitHtml, html, 'utf8');
+    console.log(`✅ Saved HTML: ${publicHtml}`);
+
+    const pdfPath = path.join(rootDir, 'public', 'pdfs', 'cme_new_pupil_workbook_KT2.pdf');
+    const v17Path = path.join(
+      rootDir,
+      'public',
+      'pdfs',
+      'cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
+    );
+    console.log(`🖨️ Compiling PDF with Puppeteer & Dynamic Auto-Lines...`);
+    await compilePdf(publicHtml, pdfPath, v17Path);
+    console.log(`✅ Compiled PDF: ${v17Path}`);
+  })().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }
 
 module.exports = { buildCmeKt2TwoPageWorkbook };

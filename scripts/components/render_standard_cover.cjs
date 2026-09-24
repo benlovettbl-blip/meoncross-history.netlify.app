@@ -240,11 +240,11 @@ function renderStandardBackCover({
     .map((qrItem, idx) => {
       const qrSvg = generateQrSvg(qrItem.url);
       return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between; flex: 1;">
             <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; color: #000000; margin-bottom: 2px; text-transform: uppercase;">
               ${qrItem.label || `KT ${keyTopicNum}.${idx + 1}`}
             </div>
-            <div style="width: 20mm; height: 20mm; margin: 2px auto;">
+            <div style="width: 24mm; height: 24mm; margin: 2px auto;">
               ${qrSvg}
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000; margin-top: 2px;">
@@ -382,9 +382,9 @@ function renderStandardBackCover({
         </div>
       </div>
 
-      <!-- Interactive Quizzing & Revision QR Hub -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+      <!-- Interactive Quizzing & Revision QR Hub (Absorbs Vertical Space to Eliminate Footer Gaps) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; color: #000000;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant 20-Question Retrieval Practice
           </strong>
@@ -392,7 +392,7 @@ function renderStandardBackCover({
             Scan with smartphone camera to open live interactive 20-question self-marking quizzes
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(${qrLessons.length || 5}, 1fr); gap: 6px; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(${qrLessons.length || 5}, 1fr); gap: 6px; text-align: center; flex: 1;">
           ${qrCardsHtml}
         </div>
       </div>
