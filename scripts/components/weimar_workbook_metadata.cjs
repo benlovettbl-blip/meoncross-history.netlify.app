@@ -925,4 +925,520 @@ module.exports = {
       lessons: ['lesson_4_1', 'lesson_4_2', 'lesson_4_3', 'lesson_4_4'],
     },
   },
+  WEIMAR_ENQUIRY_EXAM_CONFIG: {
+    KT1: [
+      {
+        q1Focus: 'the establishment of the Weimar Republic in November 1918',
+        versoWhyStem:
+          'Explain one reason why Kaiser Wilhelm II was forced to abdicate in November 1918. [4 marks]',
+        versoWhyGuidance:
+          'Point (Identify the decisive catalyst) &bull; Evidence (Kiel mutiny, naval blockade, Berlin general strike) &bull; Explanation (Why imperial authority collapsed).',
+        versoWhyStems:
+          'One key reason Kaiser Wilhelm II had to abdicate was... Specifically, in late 1918... Consequently, this forced the abdication because...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why Kaiser Wilhelm II was forced to abdicate in November 1918. [12 marks]',
+        rectoStimulus: [
+          'The Kiel mutiny and German Revolution',
+          'The British naval blockade and military defeat',
+        ],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: '1. Kiel Mutiny & Revolution',
+            tag: 'STIMULUS 1',
+            guidance:
+              "Explain how sailors at Kiel mutinied (28 Oct) and workers' & soldiers' councils seized cities (e.g. Kurt Eisner in Bavaria), destroying imperial authority.",
+          },
+          {
+            title: '2. Blockade & Military Defeat',
+            tag: 'STIMULUS 2',
+            guidance:
+              'Explain how 750,000 starvation deaths from the British naval blockade and the failed 1918 Spring Offensive convinced military leaders the war was lost.',
+          },
+          {
+            title: '3. Loss of Army Support & Strike',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              "Explain how General Groener told Wilhelm the army wouldn't fight for him, while an SPD general strike in Berlin forced Prince Max to announce abdication.",
+          },
+        ],
+      },
+      {
+        versoTurningPointStem:
+          'Explain why the political and economic crises of 1919–1923 brought the Weimar Republic to the brink of collapse. [4 marks]',
+        versoTurningPointGuidance:
+          'Point (Identify the structural crisis) &bull; Evidence (Reparations, Ruhr invasion, hyperinflation, extremist putsches) &bull; Explanation (Why democratic legitimacy nearly collapsed).',
+        versoTurningPointStems:
+          'One major reason these crises threatened Weimar was... Specifically, in 1923... Consequently, this brought collapse because...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why the Treaty of Versailles caused significant challenges for the Weimar Republic in the years 1919–1923. [12 marks]',
+        rectoStimulus: ['Reparations', "The 'stab-in-the-back' myth (Dolchstoßlegende)"],
+        rectoProvenance: 'Edexcel June 2019 (Q2)',
+        rectoPlan: [
+          {
+            title: '1. Reparations & Ruhr Crisis',
+            tag: 'STIMULUS 1',
+            guidance:
+              'Explain how the £6.6bn debt led to defaults, French occupation of the Ruhr (1923), passive resistance, and catastrophic hyperinflation.',
+          },
+          {
+            title: '2. The Dolchstoßlegende',
+            tag: 'STIMULUS 2',
+            guidance:
+              "Explain how right-wing nationalists branded politicians 'November Criminals', permanently undermining Weimar's democratic legitimacy.",
+          },
+          {
+            title: '3. Extremist Uprisings',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              'Explain how demobilised soldiers and anger at military cuts (100k cap) triggered the Spartacist Uprising (1919), Kapp Putsch (1920), and Munich Putsch (1923).',
+          },
+        ],
+      },
+      {
+        rectoTariff: 'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+        rectoScoreMax: '8',
+        rectoStem:
+          'How useful are Sources B and C for an enquiry into the economic recovery of the Weimar Republic in the years 1924–1929? [8 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Source B Content & Context',
+            tag: 'SOURCE B',
+            guidance:
+              'Analyse what Source B reveals about industrial revival; substantiate using facts on the Rentenmark and Dawes Plan loans (800m gold marks).',
+          },
+          {
+            title: '2. Source C Content & Context',
+            tag: 'SOURCE C',
+            guidance:
+              "Analyse Source C on hidden economic weaknesses; substantiate using Stresemann's warning of 'dancing on a volcano' and peasant debt.",
+          },
+          {
+            title: '3. Provenance & Synthesis',
+            tag: 'SYNTHESIS',
+            guidance:
+              'Interrogate author motives and dates: evaluate how contemporary optimism vs insider economic caution complement each other to give a full picture.',
+          },
+        ],
+      },
+      {
+        interpFocus: 'the position of women in the Weimar Republic',
+        rectoTariff:
+          'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+        rectoScoreMax: '16 (+4)',
+        rectoStem:
+          'How far do you agree with Interpretation 2 about the position of women in the Weimar Republic? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Support Interpretation 1',
+            tag: 'INTERP 1',
+            guidance:
+              "Deploy evidence supporting liberation: equal voting rights in Article 109, rising female Reichstag deputies, and the urban 'New Woman'.",
+          },
+          {
+            title: '2. Support Interpretation 2',
+            tag: 'INTERP 2',
+            guidance:
+              'Deploy evidence supporting limitations: lower pay for women, conservative backlash against working wives, and the persistence of Kinder, Küche, Kirche.',
+          },
+          {
+            title: '3. Criteria & Sustained Verdict',
+            tag: 'EVALUATION',
+            guidance:
+              "Weigh legal breakthroughs against social reality: conclude whether constitutional equality genuinely transformed women's lives outside major cities.",
+          },
+        ],
+      },
+    ],
+    KT2: [
+      {
+        q1Focus: 'the core beliefs of the Nazi Party in 1920',
+        versoWhyStem:
+          "Explain one reason why the German Workers' Party (DAP) attracted new members like Adolf Hitler in 1919–1920. [4 marks]",
+        versoWhyGuidance:
+          "Point (Fierce opposition to the Treaty of Versailles and Weimar democracy) &bull; Evidence (Drexler's beer hall meetings, anti-Marxist speeches) &bull; Explanation (Offered scapegoats to disillusioned ex-soldiers).",
+        versoWhyStems:
+          'One key reason the DAP attracted new members was... Specifically, in 1919... Consequently, this appealed to ex-soldiers because...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why the Nazi Party gained support in Munich in the years 1919–1922. [12 marks]',
+        rectoStimulus: ['The 25-Point Programme', 'The SA (Sturmabteilung)'],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: '1. The 25-Point Programme',
+            tag: 'STIMULUS 1',
+            guidance:
+              "Explain how Hitler and Drexler's 1920 manifesto appealed to nationalists by demanding the scrapping of Versailles and denying Jewish citizenship.",
+          },
+          {
+            title: '2. The SA (Brownshirts)',
+            tag: 'STIMULUS 2',
+            guidance:
+              "Explain how Röhm's paramilitary force protected Nazi meetings, intimidated rival left-wing parties, and projected an image of disciplined strength.",
+          },
+          {
+            title: "3. Hitler's Oratory & Beer Halls",
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              "Explain how Hitler's charismatic speaking in Munich beer halls tapped into Bavarian anti-Weimar anger, turning the NSDAP into a mass local movement.",
+          },
+        ],
+      },
+      {
+        versoTurningPointStem:
+          'Explain why the Munich Putsch of November 1923 was a decisive turning point for Hitler and the Nazi Party. [4 marks]',
+        versoTurningPointGuidance:
+          'Point (Shift from armed rebellion to democratic election strategy) &bull; Evidence (Trial publicity, Landsberg Prison, writing Mein Kampf) &bull; Explanation (Realisation that power had to be won through votes).',
+        versoTurningPointStems:
+          'One major reason the Munich Putsch was a turning point was... Specifically, during his 1924 trial... Consequently, this transformed Nazi strategy because...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          "Explain why the Nazi Party experienced the 'Lean Years' between 1924 and 1928. [12 marks]",
+        rectoStimulus: ["Stresemann's economic policies", "Hitler's reorganization of the party"],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: "1. Stresemann's Prosperity",
+            tag: 'STIMULUS 1',
+            guidance:
+              'Explain how the Rentenmark, Dawes Plan loans, and Locarno Pact restored stability, causing voters to abandon extremist protest parties.',
+          },
+          {
+            title: '2. Party Reorganisation',
+            tag: 'STIMULUS 2',
+            guidance:
+              'Explain how Hitler used the Bamberg Conference (1926) to assert Führerprinzip, establish the SS, and build national Gaue networks.',
+          },
+          {
+            title: '3. Post-Putsch Ban & Defeat',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              "Explain how the failed 1923 Munich Putsch led to Hitler's speaking ban until 1927 and reduced the Nazis to just 12 Reichstag seats in 1928.",
+          },
+        ],
+      },
+      {
+        rectoTariff: 'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+        rectoScoreMax: '8',
+        rectoStem:
+          'How useful are Sources B and C for an enquiry into the reasons for the growth of Nazi support in the years 1929–1932? [8 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Source B Content & Context',
+            tag: 'SOURCE B',
+            guidance:
+              "Analyse what Source B reveals about economic despair; substantiate with 6 million unemployed after Wall Street Crash and Brüning's welfare cuts.",
+          },
+          {
+            title: '2. Source C Content & Context',
+            tag: 'SOURCE C',
+            guidance:
+              "Analyse what Source C reveals about propaganda appeal; substantiate with Goebbels' modern campaign methods ('Hitler over Germany' flights).",
+          },
+          {
+            title: '3. Provenance & Synthesis',
+            tag: 'SYNTHESIS',
+            guidance:
+              'Evaluate author viewpoints, election timings, and motives: explain how combining economic misery with targeted propaganda explains the 230 seats won in July 1932.',
+          },
+        ],
+      },
+      {
+        interpFocus: 'how Hitler became Chancellor in 1932–33',
+        rectoTariff:
+          'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+        rectoScoreMax: '16 (+4)',
+        rectoStem:
+          'How far do you agree with Interpretation 2 about how Hitler became Chancellor in 1932–33? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Support Interpretation 1',
+            tag: 'INTERP 1',
+            guidance:
+              'Deploy evidence that popular mass support was decisive: Nazi electoral surges, SA street dominance, and middle-class fear of Communism (KPD).',
+          },
+          {
+            title: '2. Support Interpretation 2',
+            tag: 'INTERP 2',
+            guidance:
+              "Deploy evidence that backstairs intrigue was decisive: Papen and Hindenburg's conspiracy to hire Hitler as puppet Chancellor ('pushed into a corner').",
+          },
+          {
+            title: '3. Criteria & Sustained Verdict',
+            tag: 'EVALUATION',
+            guidance:
+              'Judge whether elite intrigue could have functioned without mass Nazi votes: conclude which factor was the indispensable catalyst for 30 Jan 1933.',
+          },
+        ],
+      },
+    ],
+    KT3: [
+      {
+        q1Focus: 'how the Nazi government used the Reichstag Fire',
+        versoWhyStem:
+          'Explain one reason why the Reichstag Fire enabled Hitler to weaken his political opponents in February 1933. [4 marks]',
+        versoWhyGuidance:
+          'Point (Used as a pretext to eliminate civil liberties) &bull; Evidence (Decree for Protection of People and State, arrest of 4,000 Communists) &bull; Explanation (Crushed KPD election campaigning and created panic).',
+        versoWhyStems:
+          'One key reason the Reichstag Fire weakened opponents was... Specifically, on 28 February 1933... Consequently, this enabled Hitler to...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why Hitler was able to establish a dictatorship in Germany in the years 1933–1934. [12 marks]',
+        rectoStimulus: ['The Reichstag Fire Decree', 'The Enabling Act'],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: '1. Reichstag Fire Decree',
+            tag: 'STIMULUS 1',
+            guidance:
+              'Explain how the 27 Feb 1933 fire was blamed on Communists, allowing Hindenburg to suspend civil liberties and arrest 4,000 KPD leaders.',
+          },
+          {
+            title: '2. The Enabling Act',
+            tag: 'STIMULUS 2',
+            guidance:
+              'Explain how SA intimidation of the Reichstag on 23 March 1933 gave Hitler power to pass laws without parliament, ending democracy.',
+          },
+          {
+            title: '3. Night of the Long Knives',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              "Explain how the purge of Röhm and the SA (June 1934) secured the loyalty of the German Army, culminating in the soldier's personal oath.",
+          },
+        ],
+      },
+      {
+        versoTurningPointStem:
+          'Explain why the creation of the police state allowed the Nazi regime to eliminate opposition between 1933 and 1939. [4 marks]',
+        versoTurningPointGuidance:
+          'Point (Pervasive terror and surveillance silenced dissent) &bull; Evidence (SS, Gestapo phone-tapping, Dachau, Block Wardens) &bull; Explanation (Fear of denunciation prevented organized resistance).',
+        versoTurningPointStems:
+          'One major reason the police state eliminated opposition was... Specifically, the Gestapo used... Consequently, citizens were terrified to speak out because...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why the Nazi police state was able to maintain control in Germany between 1933 and 1939. [12 marks]',
+        rectoStimulus: ['The Gestapo', 'Block Wardens'],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: '1. The Gestapo & SS Terror',
+            tag: 'STIMULUS 1',
+            guidance:
+              "Explain how Himmler's SS and the plainclothes Gestapo used phone-tapping, informants, and fear of Dachau to crush organized resistance.",
+          },
+          {
+            title: '2. Block Wardens & Surveillance',
+            tag: 'STIMULUS 2',
+            guidance:
+              'Explain how local Blockleiters monitored every apartment block, checking for loyalty, radio listening, and failure to fly Nazi flags.',
+          },
+          {
+            title: '3. Control of the Legal System',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              "Explain how judges swore oaths to Hitler, joined the Nazi Lawyers' League, and the People's Court abolished fair trials for political treason.",
+          },
+        ],
+      },
+      {
+        rectoTariff: 'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+        rectoScoreMax: '8',
+        rectoStem:
+          'How useful are Sources B and C for an enquiry into Nazi methods of controlling and influencing attitudes in the years 1933–1939? [8 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Source B Content & Context',
+            tag: 'SOURCE B',
+            guidance:
+              "Analyse what Source B reveals about Goebbels' propaganda; substantiate using the Reich Press Law, Volksempfänger radios, and Nuremberg Rallies.",
+          },
+          {
+            title: '2. Source C Content & Context',
+            tag: 'SOURCE C',
+            guidance:
+              'Analyse what Source C reveals about censorship and cultural control; substantiate using book burnings, Reich Chamber of Culture, and Degenerate Art.',
+          },
+          {
+            title: '3. Provenance & Synthesis',
+            tag: 'SYNTHESIS',
+            guidance:
+              'Evaluate official propaganda claims against underground reality: explain how matching overt spectacles with strict censorship explains thought control.',
+          },
+        ],
+      },
+      {
+        interpFocus: 'religious opposition to the Nazi regime',
+        rectoTariff:
+          'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+        rectoScoreMax: '16 (+4)',
+        rectoStem:
+          'How far do you agree with Interpretation 2 about religious opposition to the Nazi regime? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Support Interpretation 1',
+            tag: 'INTERP 1',
+            guidance:
+              'Deploy evidence that churches largely conformed: the 1933 Concordat with the Pope, the Reich Church, and widespread Protestant support for anti-Communism.',
+          },
+          {
+            title: '2. Support Interpretation 2',
+            tag: 'INTERP 2',
+            guidance:
+              "Deploy evidence of brave religious resistance: Niemöller's Confessional Church, Pope Pius XI's 'With Burning Anxiety' encyclical, and Galen's sermons.",
+          },
+          {
+            title: '3. Criteria & Sustained Verdict',
+            tag: 'EVALUATION',
+            guidance:
+              'Assess whether opposition challenged the regime or merely defended church independence: conclude how far religious dissent threatened Hitler.',
+          },
+        ],
+      },
+    ],
+    KT4: [
+      {
+        q1Focus: 'Nazi views on the role of women in German society',
+        versoWhyStem:
+          'Explain one reason why the Nazi regime prioritised increasing the German birth rate after 1933. [4 marks]',
+        versoWhyGuidance:
+          "Point (Racial ideology and future military expansion) &bull; Evidence (Law for Encouragement of Marriage 1,000-mark loans, Mother's Cross) &bull; Explanation (Believed a larger Aryan population was vital for imperial conquest and Lebensraum).",
+        versoWhyStems:
+          'One key reason the Nazi regime prioritized the birth rate was... Specifically, after 1933... Consequently, this was vital for the regime because...',
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why Nazi policies towards women were implemented in the years 1933–1939. [12 marks]',
+        rectoStimulus: [
+          'The Law for the Encouragement of Marriage',
+          "The Mother's Cross (Mutterkreuz)",
+        ],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: '1. Marriage Loans & Domesticity',
+            tag: 'STIMULUS 1',
+            guidance:
+              'Explain how 1,000-mark loans encouraged marriage, cleared women from the workforce, and were paid off by having four children.',
+          },
+          {
+            title: "2. The Mother's Cross",
+            tag: 'STIMULUS 2',
+            guidance:
+              'Explain how bronze (4), silver (6), and gold (8+) medals elevated childbearing to heroic status to expand the Aryan population for future war.',
+          },
+          {
+            title: '3. 1937 Rearmament Reversal',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              'Explain how the Four-Year Plan and rearmament labour shortages forced the regime to recruit women back into munitions factories from 1937.',
+          },
+        ],
+      },
+      {
+        versoTurningPointStem:
+          'Explain why controlling youth and education was essential for the survival of the Nazi regime between 1933 and 1939. [4 marks]',
+        versoTurningPointGuidance:
+          'Point (Creating unquestioning soldiers and mothers) &bull; Evidence (Hitler Youth compulsory 1939, race studies, domestic science) &bull; Explanation (Ensured the next generation was loyal only to Hitler).',
+        versoTurningPointStems:
+          "One major reason youth control was essential was... Specifically, schools taught... Consequently, this secured the regime's future because...",
+        rectoTariff: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+        rectoScoreMax: '12',
+        rectoStem:
+          'Explain why Nazi policies towards the young were implemented, 1933–1939. [12 marks]',
+        rectoStimulus: ['The Hitler Youth', 'Nazi control of the school curriculum'],
+        rectoProvenance: 'Edexcel Paper 3 • Section A',
+        rectoPlan: [
+          {
+            title: '1. Hitler Youth (HJ & BDM)',
+            tag: 'STIMULUS 1',
+            guidance:
+              'Explain how compulsory membership by 1939 indoctrinated boys for military combat and trained girls (BDM) for motherhood and domestic duty.',
+          },
+          {
+            title: '2. Curriculum Nazification',
+            tag: 'STIMULUS 2',
+            guidance:
+              'Explain how Race Studies, rewritten History, and military Maths problems subordinated education to racial supremacy and war preparation.',
+          },
+          {
+            title: '3. Breaking Family & Church Bonds',
+            tag: 'OWN KNOWLEDGE',
+            guidance:
+              'Explain how youth activities were deliberately scheduled on Sundays to displace Christian influence and create total loyalty to the Führer alone.',
+          },
+        ],
+      },
+      {
+        rectoTariff: 'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+        rectoScoreMax: '8',
+        rectoStem:
+          'How useful are Sources B and C for an enquiry into employment and living standards in Nazi Germany between 1933 and 1939? [8 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Source B Content & Context',
+            tag: 'SOURCE B',
+            guidance:
+              'Analyse what Source B reveals about falling unemployment; substantiate using the RAD (Labour Service), Autobahn construction, and rearmament.',
+          },
+          {
+            title: '2. Source C Content & Context',
+            tag: 'SOURCE C',
+            guidance:
+              'Analyse what Source C reveals about worker exploitation; substantiate with the ban on trade unions (DAF), longer working hours, and hidden unemployment.',
+          },
+          {
+            title: '3. Provenance & Synthesis',
+            tag: 'SYNTHESIS',
+            guidance:
+              "Interrogate official KdF (Strength Through Joy) propaganda vs workers' real purchasing power: assess how the sources balance appearance and reality.",
+          },
+        ],
+      },
+      {
+        interpFocus: 'the events of Kristallnacht in November 1938',
+        rectoTariff:
+          'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+        rectoScoreMax: '16 (+4)',
+        rectoStem:
+          'How far do you agree with Interpretation 2 about the events of Kristallnacht? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+        rectoProvenance: 'Edexcel Paper 3 • Section B',
+        rectoPlan: [
+          {
+            title: '1. Support Interpretation 1',
+            tag: 'INTERP 1',
+            guidance:
+              "Deploy evidence that it was portrayed as spontaneous public anger: vom Rath's assassination in Paris used as a pretext for popular outrage.",
+          },
+          {
+            title: '2. Support Interpretation 2',
+            tag: 'INTERP 2',
+            guidance:
+              "Deploy evidence that it was state-orchestrated terror: Goebbels' orders to SA/SS in plain clothes, police instructed not to stop arson, 1,000 synagogues destroyed.",
+          },
+          {
+            title: '3. Criteria & Sustained Verdict',
+            tag: 'EVALUATION',
+            guidance:
+              'Weigh regime planning against public complicity: conclude whether Kristallnacht represented planned state persecution or chaotic mob violence.',
+          },
+        ],
+      },
+    ],
+  },
 };
