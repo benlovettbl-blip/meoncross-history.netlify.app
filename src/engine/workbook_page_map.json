@@ -846,37 +846,37 @@
   },
   "weimar_nazi_germany": {
     "lesson_1_1": {
-      "page": 3,
+      "page": 16,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 0
     },
     "lesson_1_2": {
-      "page": 10,
+      "page": 16,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 1
     },
     "lesson_1_3": {
-      "page": 17,
+      "page": 16,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 2
     },
     "lesson_1_4": {
-      "page": 24,
+      "page": 21,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 3
     },
     "lesson_2_1": {
-      "page": 3,
+      "page": 16,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 4
     },
     "lesson_2_2": {
-      "page": 9,
+      "page": 16,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 5
@@ -888,7 +888,7 @@
       "lessonIndex": 6
     },
     "lesson_2_4": {
-      "page": 23,
+      "page": 16,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 7
@@ -906,13 +906,13 @@
       "lessonIndex": 9
     },
     "lesson_3_3": {
-      "page": 16,
+      "page": 15,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 10
     },
     "lesson_3_4": {
-      "page": 23,
+      "page": 21,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 11
@@ -930,13 +930,13 @@
       "lessonIndex": 13
     },
     "lesson_4_3": {
-      "page": 16,
+      "page": 15,
       "booklet": "Key Topic 4 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 14
     },
     "lesson_4_4": {
-      "page": 24,
+      "page": 21,
       "booklet": "Key Topic 4 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 15
