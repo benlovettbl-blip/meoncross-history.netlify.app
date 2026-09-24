@@ -1874,8 +1874,8 @@ async function buildPublisherTextbookHtmlKT1() {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 6px;
+      justify-content: space-between;
+      gap: 8px;
     }
     
     /* Historiographical Debate Box */
@@ -1930,39 +1930,15 @@ async function buildPublisherTextbookHtmlKT1() {
       font-style: italic;
     }
 
-    /* Back Cover Synoptic Verdict Grid */
-    .back-verdict-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      font-size: 6.3pt;
-      line-height: 1.25;
-    }
-    .bvg-col {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-top: 2.5px solid #0f172a;
-      padding: 4.5px 6px;
-      border-radius: 2px;
-      color: #334155;
-    }
-    .bvg-col strong {
-      display: block;
-      color: #0f172a;
-      text-transform: uppercase;
-      font-size: 6.4pt;
-      font-weight: 800;
-      margin-bottom: 1.5px;
-    }
     .back-header-strip {
       text-align: center;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       border-bottom: 2.5px solid #1e3a8a;
       padding-bottom: 4px;
     }
     .back-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 14.5pt;
+      font-size: 15pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
@@ -1978,14 +1954,14 @@ async function buildPublisherTextbookHtmlKT1() {
       font-weight: 500;
     }
     .back-section-title {
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 1.5px;
-      margin: 4px 0 2.5px 0;
+      padding-bottom: 2px;
+      margin: 0 0 3px 0;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -1999,15 +1975,15 @@ async function buildPublisherTextbookHtmlKT1() {
     .back-timeline-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      font-size: 6.4pt;
-      line-height: 1.25;
+      gap: 5px;
+      font-size: 6.8pt;
+      line-height: 1.34;
     }
     .bt-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #1e3a8a;
-      padding: 3px 4.5px;
+      padding: 6.5px 7px;
       border-radius: 0 2px 2px 0;
     }
     .bt-card strong { color: #1e3a8a; font-weight: 800; }
@@ -2015,37 +1991,62 @@ async function buildPublisherTextbookHtmlKT1() {
     .back-main-matrix-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      font-size: 6.4pt;
-      line-height: 1.25;
+      gap: 5px;
+      font-size: 6.8pt;
+      line-height: 1.34;
     }
     .bmm-col {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-top: 2.5px solid #1e3a8a;
-      padding: 4px 5px;
+      padding: 8px 8px;
       border-radius: 2px;
     }
     .bmm-col strong {
       display: block;
       color: #1e3a8a;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 6.8pt;
       font-weight: 800;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
+    }
+
+    /* Back Cover Synoptic Verdict Grid */
+    .back-verdict-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      font-size: 6.8pt;
+      line-height: 1.34;
+    }
+    .bvg-col {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-top: 2.5px solid #0f172a;
+      padding: 8px 8px;
+      border-radius: 2px;
+      color: #334155;
+    }
+    .bvg-col strong {
+      display: block;
+      color: #0f172a;
+      text-transform: uppercase;
+      font-size: 6.8pt;
+      font-weight: 800;
+      margin-bottom: 2px;
     }
 
     .back-qr-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-      margin-top: 3px;
+      gap: 6px;
+      margin-top: 2px;
     }
     .bqr-card {
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 3px;
-      padding: 4px;
+      padding: 9px 6px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -2059,28 +2060,28 @@ async function buildPublisherTextbookHtmlKT1() {
     }
     .bqr-num {
       display: block;
-      font-size: 6.0pt;
+      font-size: 6.8pt;
       font-weight: 900;
       color: #1e3a8a;
       text-transform: uppercase;
     }
     .bqr-title {
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       color: #475569;
-      font-weight: 600;
+      font-weight: 700;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       display: block;
     }
     .bqr-code-box {
-      width: 44px;
-      height: 44px;
-      margin: 1px 0;
+      width: 62px;
+      height: 62px;
+      margin: 4px 0;
     }
     .bqr-footer {
-      font-size: 5.2pt;
-      font-weight: 700;
+      font-size: 5.6pt;
+      font-weight: 800;
       color: #64748b;
       text-transform: uppercase;
     }
@@ -2274,7 +2275,7 @@ async function buildPublisherTextbookHtmlKT1() {
             <span>3. Historiographical Debate &amp; Edexcel Paper 3 Examination Strategy</span>
             <span class="back-section-tag">INTERPRETATIONS &bull; Q3(b,c,d)</span>
           </div>
-          <div class="back-main-matrix-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 4px;">
+          <div class="back-main-matrix-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 5px;">
             <div class="bmm-col">
               <strong>Interpretation 1: The Doomed Republic (Kolb / Peukert)</strong>
               Weimar democracy was mortally wounded at birth by Versailles, Article 48, and unrepentant imperial civil servants and judges who subverted democracy. Stresemann's prosperity was an artificial bubble built on volatile US loans that inevitably burst in 1929.
@@ -2286,25 +2287,25 @@ async function buildPublisherTextbookHtmlKT1() {
           </div>
           
           <!-- Exam Timing & Mark Tariff Blueprint -->
-          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; font-size: 6.2pt; text-align: center;">
-            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
-              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q1: INFERENCE [4m]</strong>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; text-align: center;">
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 4.5px 3px; border-radius: 2px; font-size: 6.6pt; line-height: 1.25;">
+              <strong style="display: block; color: #0f172a; font-size: 6.6pt;">Q1: INFERENCE [4m]</strong>
               <span>5 Mins &bull; 2 Inferences + Quotes</span>
             </div>
-            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
-              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q2: CAUSATION [12m]</strong>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 4.5px 3px; border-radius: 2px; font-size: 6.6pt; line-height: 1.25;">
+              <strong style="display: block; color: #0f172a; font-size: 6.6pt;">Q2: CAUSATION [12m]</strong>
               <span>15 Mins &bull; 3 PEEL Causal Factors</span>
             </div>
-            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
-              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q3(a): UTILITY [8m]</strong>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 4.5px 3px; border-radius: 2px; font-size: 6.6pt; line-height: 1.25;">
+              <strong style="display: block; color: #0f172a; font-size: 6.6pt;">Q3(a): UTILITY [8m]</strong>
               <span>12 Mins &bull; Content, NOP &amp; Context</span>
             </div>
-            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
-              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q3(b/c): VIEWS [8m]</strong>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 4.5px 3px; border-radius: 2px; font-size: 6.6pt; line-height: 1.25;">
+              <strong style="display: block; color: #0f172a; font-size: 6.6pt;">Q3(b/c): VIEWS [8m]</strong>
               <span>10 Mins &bull; Differences &amp; Reasons</span>
             </div>
-            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2px solid #0f172a; padding: 2.5px; border-radius: 2px;">
-              <strong style="display: block; color: #0f172a; font-size: 6.4pt;">Q3(d): VERDICT [16+4m]</strong>
+            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 4.5px 3px; border-radius: 2px; font-size: 6.6pt; line-height: 1.25;">
+              <strong style="display: block; color: #0f172a; font-size: 6.6pt;">Q3(d): VERDICT [16+4m]</strong>
               <span>25 Mins &bull; Balanced Evaluation</span>
             </div>
           </div>

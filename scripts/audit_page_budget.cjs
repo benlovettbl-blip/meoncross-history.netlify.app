@@ -165,6 +165,14 @@ async function auditPageBudget(page, options = {}) {
               if (el === footer || footer.contains(el)) return false;
               if (['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)) return false;
               if (el.style.display === 'none') return false;
+              // Exclude pure layout containers with children so empty flex space is not masked
+              if (
+                el.matches(
+                  '.back-body-content, .back-container, .page-inner, .page-body-full, .page-flex-full, .page-body-stretch, .two-column-prose',
+                )
+              ) {
+                return false;
+              }
               const r = el.getBoundingClientRect();
               return r.width > 0 && r.height > 0 && r.bottom <= fRect.top + 2;
             });
@@ -229,8 +237,9 @@ async function auditPageBudget(page, options = {}) {
             }
           }
 
-          // 6. Back Cover Inter-Section Gap Audit
+          // 6. Back Cover Inter-Section Gap & Bottom Void Audit
           let maxSectionGap = 0;
+          let backCoverBottomVoid = 0;
           const backSections = Array.from(p.querySelectorAll('.back-body-content > div'));
           if (backSections.length > 1) {
             for (let s = 0; s < backSections.length - 1; s++) {
@@ -239,6 +248,12 @@ async function auditPageBudget(page, options = {}) {
               const sGap = Math.max(0, Math.round(r2.top - r1.bottom));
               maxSectionGap = Math.max(maxSectionGap, sGap);
             }
+          }
+          if (backSections.length > 0 && footer) {
+            const lastSection = backSections[backSections.length - 1];
+            const rLast = lastSection.getBoundingClientRect();
+            const rFooter = footer.getBoundingClientRect();
+            backCoverBottomVoid = Math.max(0, Math.round(rFooter.top - rLast.bottom));
           }
 
           const utilizationPct =
@@ -255,6 +270,7 @@ async function auditPageBudget(page, options = {}) {
           const isVoidInterTask = maxInterTaskGap > maxInterTaskGapPx;
           const isVoidInternalProse = internalProseGap > 35;
           const isVoidSection = maxSectionGap > 25;
+          const isVoidBackCover = backCoverBottomVoid > 35;
           const isClutterError = clutterViolations.length > 0;
 
           if (
@@ -263,7 +279,8 @@ async function auditPageBudget(page, options = {}) {
             isVoidFooter ||
             isVoidInterTask ||
             isVoidInternalProse ||
-            isVoidSection
+            isVoidSection ||
+            isVoidBackCover
           ) {
             hasErrors = true;
           }
@@ -281,6 +298,7 @@ async function auditPageBudget(page, options = {}) {
             maxInterTaskGap,
             internalProseGap,
             maxSectionGap,
+            backCoverBottomVoid,
             utilizationPct,
             isOverflow,
             isUnderflow,
@@ -288,6 +306,7 @@ async function auditPageBudget(page, options = {}) {
             isVoidInterTask,
             isVoidInternalProse,
             isVoidSection,
+            isVoidBackCover,
             isClutterError,
             clutterViolations,
             pageId: p.id || `Page ${pageNum}`,
@@ -364,6 +383,9 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
     }
     if (res.isVoidSection) {
       issues.push(`❌ SECTION GAP (${res.maxSectionGap}px > 25px max)`);
+    }
+    if (res.isVoidBackCover) {
+      issues.push(`❌ BACK COVER BOTTOM VOID (${res.backCoverBottomVoid}px > 35px max)`);
     }
     if (res.isUnderflow && !res.isVoidFooter) {
       issues.push(`⚠️ UNDERFLOW (${res.utilizationPct}% utilized, ${res.unusedBottom}px gap)`);
