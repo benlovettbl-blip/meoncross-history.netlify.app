@@ -159,6 +159,7 @@ function extractEnquiryData(lesson, ktNum, enquiryNum) {
       tariff: epQ.tariff || ep.tariff || '12 marks',
       type: epQ.type || '12-mark',
     },
+    sourceContext: (lesson.teacher_notes && lesson.teacher_notes.source_context) || '',
     narrativeBlocks: lesson.narrative_blocks || [],
   };
 }
@@ -251,8 +252,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       letter-spacing: 0.02em;
     }
     .task-line {
-      border-bottom: 1.5px solid #000000;
-      height: 7.5mm;
+      border-bottom: 1.2px solid #000000;
       margin: 0;
       box-sizing: border-box;
     }
@@ -441,6 +441,18 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         ? stimulusSource.content
         : 'Surviving archival dispatch documenting the political and social conditions in Germany.';
 
+      // Extract context and hinge question if present
+      const rawContext = enq.sourceContext || '';
+      let contextBlurb =
+        'Primary documentation recording the acute crisis in Germany during this critical turning point.';
+      let hingeQ =
+        'Explain one way the conditions shown directly threatened the stability of the new Republic:';
+      if (rawContext) {
+        const parts = rawContext.split(/\*\*Hinge Question:\*\*/i);
+        contextBlurb = parts[0].trim();
+        if (parts[1]) hingeQ = parts[1].trim();
+      }
+
       versoExamComponentHtml = `
       <!-- Question 1: Inference [4 marks] & Source A -->
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
@@ -459,44 +471,62 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           </p>
         </div>
 
-        <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase;">
-                &bull; Question 1: Inference from Source A [4 marks &bull; 5 mins]
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-                ${enq.exam.provenance}
-              </span>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-              Give two things you can infer from Source A about ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}.
-            </p>
+        <!-- Question 1: Inference from Source A (Compact 2-Column Format: Half the space) -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; margin-bottom: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase;">
+              &bull; Question 1: Inference from Source A [4 marks &bull; 5 mins]
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+              EDEXCEL PAPER 3
+            </span>
           </div>
-          
-          <div style="flex: 1; display: flex; flex-direction: column; gap: 3px; justify-content: space-between;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 6px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            Give two things you can infer from Source A about ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 5px; background: #f8fafc;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
                 (i) What I can infer:
               </div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000; margin-top: 1px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000; margin-top: 1px;">
                 Details in Source A that tell me this:
               </div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
             </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 6px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 2px 5px; background: #f8fafc;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
                 (ii) What I can infer:
               </div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #000000; margin-top: 1px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000; margin-top: 1px;">
                 Details in Source A that tell me this:
               </div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
             </div>
           </div>
+        </div>
+
+        <!-- Section A Causation Bridge & Context Anchor (Absorbing the remaining space) -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
+                &bull; Section A Causation Bridge: Archival Context &amp; Significance
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+                EXAM MASTERY
+              </span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.2; color: #000000; margin: 1px 0;">
+              ${contextBlurb.slice(0, 230)}...
+            </p>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e3a8a; line-height: 1.18; margin-top: 1px;">
+              <strong>Causation Link:</strong> ${hingeQ}
+            </div>
+          </div>
+          <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.2" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
         </div>
       </div>
       `;
@@ -552,12 +582,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
               <strong>Sentence Stems:</strong> One major reason this was a turning point was... Specifically, when [event/pact]... Consequently, this directly transformed Germany because...
             </div>
           </div>
-          <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.5mm;"></div>
-          </div>
+          <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.2" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
         </div>
       </div>
       `;
@@ -631,9 +656,12 @@ function buildWeimarKeyTopicWorkbook(ktId) {
               </strong>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Content reveals:</div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Own knowledge link:</div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Provenance (Author/Purpose):</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
             </div>
 
@@ -643,9 +671,12 @@ function buildWeimarKeyTopicWorkbook(ktId) {
               </strong>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Content reveals:</div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Own knowledge link:</div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
               <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">Provenance (Author/Purpose):</div>
+              <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
               <div style="border-bottom: 1.2px solid #000000; height: 5.0mm;"></div>
             </div>
           </div>
@@ -707,8 +738,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
                 <strong>Sentence Stem:</strong> The main difference is that Interpretation 1 stresses... whereas Interpretation 2 argues that... Specifically, Interpretation 1 notes "..." while Interpretation 2 suggests "...".
               </div>
             </div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+            <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.0" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
           </div>
 
           <!-- Question 3(c): Reasons for Difference [4 marks] -->
@@ -727,8 +757,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
                 <strong>Sentence Stem:</strong> One reason they differ is because the historians relied on different evidence... Interpretation 1 draws on evidence matching Source B (which stresses...), whereas Interpretation 2 reflects Source C (which highlights...).
               </div>
             </div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-            <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
+            <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.0" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
           </div>
         </div>
       </div>
@@ -833,7 +862,9 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; line-height: 1.2; margin-top: 1px;">
             <strong>Sentence Stem:</strong> <em>While ${enq.vocab.term1.term} meant that..., this directly influenced / conflicted with ${enq.vocab.term2.term} because...</em>
           </div>
-          <div style="border-bottom: 1.4px solid #000000; height: 5.5mm; margin-top: 1px;"></div>
+          <div style="border-bottom: 1.2px solid #000000; height: 5.4mm; margin-top: 1.5px;"></div>
+          <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
+          <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
         </div>
       </div>
 
@@ -930,7 +961,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       </div>
 
       <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
-      <div class="auto-lines-target" data-auto-lines="true" data-max-lines="17" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; justify-content: flex-start; margin-bottom: 2px;">
+      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-bottom: 0;">
         <!-- Filled dynamically by engine measurement script -->
       </div>
 
@@ -1209,8 +1240,8 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <!-- Dynamic Auto-Lines Target (Capped at 20 lines) -->
-      <div class="auto-lines-target" data-auto-lines="true" data-max-lines="20" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; justify-content: flex-start; margin-bottom: 2px;">
+      <!-- Dynamic Auto-Lines Target (Fills all available space to grading box) -->
+      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-bottom: 0;">
         <!-- Filled dynamically by engine measurement script -->
       </div>
 
@@ -1270,12 +1301,11 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         el.innerHTML = '';
         const availablePx = el.clientHeight;
         const lineHMm = parseFloat(el.dataset.lineHeight || '7.5');
-        const maxLines = parseInt(el.dataset.maxLines || '17', 10);
         // Standard 96 DPI: 1 inch = 25.4mm = 96px => 1mm = 3.779527559px
         const lineHPx = lineHMm * (96 / 25.4);
-        const count = Math.min(maxLines, Math.max(1, Math.floor(availablePx / lineHPx)));
+        const count = Math.max(1, Math.round(availablePx / lineHPx));
         el.innerHTML = Array(count).fill(
-          '<div class="task-line" style="height: ' + lineHMm + 'mm; border-bottom: 1.5px solid #000000; box-sizing: border-box; flex-shrink: 0;"></div>'
+          '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>'
         ).join('');
       });
     }
