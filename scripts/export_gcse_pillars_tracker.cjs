@@ -261,10 +261,10 @@ const htmlContent = `<!DOCTYPE html>
           <div class="kpi-val" style="font-size: 11pt;">Early Elizabethan</div>
           <span class="kpi-sub">Paper 2 (1HI0/B4) &bull; Next in Queue</span>
         </div>
-        <div class="kpi-card">
-          <span class="kpi-label">Roadmap Phase 2</span>
+        <div class="kpi-card" style="border-left: 4px solid #16a34a;">
+          <span class="kpi-label">Pillar 1 Complete</span>
           <div class="kpi-val" style="font-size: 11pt;">Weimar Germany</div>
-          <span class="kpi-sub">Paper 3 (1HI0/31) &bull; 4-4-4-4 Matrix</span>
+          <span class="kpi-sub">36-Page Visual Guide (0 Overflows)</span>
         </div>
       </div>
 
@@ -482,13 +482,14 @@ const htmlContent = `<!DOCTYPE html>
             </td>
             <td>
               <div class="pillar-box">
-                <span class="pillar-title">⚪ Scheduled in Roadmap</span>
+                <span class="pillar-title">✅ 36-Page Masterclass Playbook</span>
                 <span class="pillar-details">
-                  &bull; Scheduled for 36-page 4-4-4-4 Visual Revision Guide<br>
                   &bull; 16 double-page spreads across KT1–KT4<br>
-                  &bull; Strictly enforce Paper 3 4-4-4-4 question matrix
+                  &bull; Dual contrasting primary plates (Weimar vs Nazi)<br>
+                  &bull; Standardized typography &bull; High-contrast monochrome<br>
+                  &bull; Strictly enforces Paper 3 4-4-4-4 question matrix
                 </span>
-                <span class="file-tag" style="border-style: dashed;">weimar_revision_guide.pdf (TBC)</span>
+                <span class="file-tag">weimar_revision_guide.pdf</span>
               </div>
             </td>
             <td>
