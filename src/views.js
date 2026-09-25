@@ -41,99 +41,51 @@ export function getUnits() {
 export function renderDashboard() {
   const container = document.getElementById('main-content');
   const contentArea = document.getElementById('content-area');
-  if (contentArea) contentArea.style.paddingTop = '2rem'; // Restore gap for dashboard
-  const profile = getProfile();
-
-  // Calculate general stats
-  const totalQuestions = state.allQuestions ? state.allQuestions.length : 0;
-  let masteredCount = 0;
-  let securedCount = 0;
-  const boxes = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-
-  if (state.mastery) {
-    Object.values(state.mastery).forEach((entry) => {
-      if (entry.status === 'mastered') masteredCount++;
-      else if (entry.status === 'secured') securedCount++;
-      const b = entry.leitnerBox || 1;
-      if (boxes[b] !== undefined) boxes[b]++;
-    });
-  }
+  if (contentArea) contentArea.style.paddingTop = '1.75rem';
 
   let html = `
-    <div style="max-width: 1150px; margin: 0 auto; padding: 0 20px;">
-      <!-- Pupil Welcome & Study Progress Strip -->
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--bg-card, #ffffff); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 12px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(59, 130, 246, 0.1); color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 20px 60px 20px;">
+      
+      <!-- Institutional Masthead & Stage Filters -->
+      <div class="homepage-masthead" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; background: var(--bg-card, #ffffff); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 14px; padding: 16px 22px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #1e3a8a, #2563eb); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);">
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
           <div>
-            <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main, #0f172a);">The History Revision Hub</div>
-            <div style="font-size: 0.76rem; color: var(--text-muted, #64748b);">KS3 &amp; GCSE Active Revision Workspace</div>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <h1 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--text-main, #0f172a); letter-spacing: -0.01em;">The History Revision Hub</h1>
+              <span style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Curriculum Workspace</span>
+            </div>
+            <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-muted, #64748b);">
+              Key Stage 3 &amp; Edexcel GCSE (9–1) History • Disciplinary Knowledge, Primary Evidence &amp; Visual Culture
+            </p>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <span style="background: #fef3c7; color: #d97706; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-fire"></i> <span class="xp-display-counter">${state.dailyXp || 0} XP</span></span>
-          <span style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #bbf7d0; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> ${masteredCount} Mastered</span>
-          <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #bae6fd; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-shield-halved"></i> ${securedCount} Secured</span>
+
+        <!-- Stage Filter Pills -->
+        <div class="stage-filter-group" style="display: inline-flex; align-items: center; gap: 6px; background: #f8fafc; border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 30px; padding: 4px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);">
+          <button class="stage-filter-btn active" data-stage="all" style="background: #1e3a8a; color: #ffffff; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);">All Syllabuses</button>
+          <button class="stage-filter-btn" data-stage="ks3" style="background: transparent; color: #64748b; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">Key Stage 3</button>
+          <button class="stage-filter-btn" data-stage="gcse" style="background: transparent; color: #64748b; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">GCSE (9–1)</button>
+          <button class="stage-filter-btn" data-stage="fieldwork" style="background: transparent; color: #64748b; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">Fieldwork</button>
         </div>
       </div>
-  `;
 
-  // Co-Curricular & Enrichment Dual Spotlight (Competitions + Chess Club)
-  html += `
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 24px;">
-      
-      <!-- Competition Spotlight -->
-      <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.09); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
-        <div style="display: flex; align-items: center; gap: 12px; min-width: 220px; flex: 1;">
-          <div style="width: 44px; height: 44px; border-radius: 10px; background: #f59e0b; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);">
-            <i class="fa-solid fa-trophy"></i>
-          </div>
-          <div>
-            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
-              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #d97706; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Enrichment</span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #92400e;">History Awards &amp; Essay Competitions</span>
-            </div>
-            <div style="font-size: 0.92rem; font-weight: 700; color: #78350f;">
-              Explore Opportunities
-            </div>
-          </div>
-        </div>
-        <button class="btn-pedagogy-primary" onclick="window.switchView('competitions')" style="background: #d97706; border-color: #b45309; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
-          <span>Explore</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
+      <!-- Historical Art of the Week Strip (Prestige Academic Marquee) -->
+      <div id="masterpiece-starter-strip-root" style="margin-bottom: 22px;">
+        ${getMasterpieceStarterStripHtml()}
       </div>
 
-      <!-- Chess Club Spotlight -->
-      <div style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1.5px solid #ddd6fe; border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 14px rgba(139, 92, 246, 0.09); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
-        <div style="display: flex; align-items: center; gap: 12px; min-width: 220px; flex: 1;">
-          <div style="width: 44px; height: 44px; border-radius: 10px; background: #8b5cf6; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);">
-            <i class="fa-solid fa-chess-knight"></i>
-          </div>
-          <div>
-            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
-              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #7c3aed; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Co-Curricular</span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9;">Chess Club</span>
-            </div>
-            <div style="font-size: 0.92rem; font-weight: 700; color: #4c1d95;">
-              Strategy League · Every Game Earns Points
-            </div>
-          </div>
-        </div>
-        <button class="btn-pedagogy-primary" onclick="window.switchView('chess')" style="background: #7c3aed; border-color: #6d28d9; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
-          <span>Chess Hub</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Masterpiece of the Week: Classroom Starter Strip -->
-    <div id="masterpiece-starter-strip-root" style="margin-bottom: 24px;">
-      ${getMasterpieceStarterStripHtml()}
-    </div>
+      <!-- Year Quick Jump Sub-Navigation -->
+      <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <a href="#year7-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 7</a>
+        <a href="#year8-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year8-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 8</a>
+        <a href="#year9-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 9</a>
+        <a href="#year10-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year10-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s; cursor: pointer;">Year 10 — GCSE</a>
+        <a href="#year11-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year11-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s; cursor: pointer;">Year 11 — GCSE</a>
+        <a href="#gcse-trip-section" class="jump-chip jump-fieldwork" onclick="event.preventDefault(); window.scrollToSection('gcse-trip-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #ede9fe; color: #5b21b6; border: 1.5px solid #ddd6fe; transition: all 0.2s; cursor: pointer;"><i class="fa-solid fa-compass" style="margin-right:5px;"></i> Ypres Tour (Fieldwork)</a>
+      </nav>
   `;
 
   const units = getUnits();
@@ -150,13 +102,12 @@ export function renderDashboard() {
     .filter((u) => year8Order.includes(u.id))
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
-  // Year 9 Grouping — great_war and great_war_part2 are ready; remaining 3 under construction
+  // Year 9 Grouping
   const underConstructionIds = ['the_shoah', 'cold_war', 'post_war_britain'];
   const year9Order = ['great_war', 'great_war_part2', 'the_shoah', 'cold_war', 'post_war_britain'];
   const year9Units = units
     .filter((u) => year9Order.includes(u.id) && !underConstructionIds.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
-  // Names of coming-soon units for the strip
   const comingSoonNames = [
     'KS3: The Shoah & World War II',
     'KS3: The Cold War',
@@ -182,14 +133,9 @@ export function renderDashboard() {
     .sort((a, b) => tripOrder.indexOf(a.id) - tripOrder.indexOf(b.id));
 
   const renderUnitCard = (unit, index) => {
-    const isUnlocked = true; // Unlocked all topics for developer/admin preview
-    const icon = unit.icon || 'fa-book-open';
-    const color = unit.color || 'var(--primary)';
-    const bg = unit.bg || 'var(--border-glass)';
+    const isUnlocked = true;
     const title = unit.title || unit.id;
     const desc = unit.desc || unit.enquiry || 'Historical enquiry.';
-    const category = unit.category || 'History';
-    const yearGroup = unit.yearGroup || 'All';
     const imageUrl = unit.homepage_background || unit.cover_image || '';
 
     let displayTitle = title;
@@ -200,7 +146,6 @@ export function renderDashboard() {
       displayDesc = title;
     }
 
-    // cover_image_position: pulled from unit data first, then a per-unit fallback map
     const positionFallbacks = {
       edexcel_medicine: 'center 10%',
       eee: 'center 10%',
@@ -218,7 +163,6 @@ export function renderDashboard() {
       ? `<span style="position:absolute; top:10px; left:10px; z-index:10; background:#f59e0b; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:3px 9px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">GCSE</span>`
       : '';
 
-    // Derive a short, friendly label for the CTA button
     const unitShortNames = {
       water_and_sanitation: 'Water & Sanitation',
       medieval_england: 'Medieval England',
@@ -240,12 +184,11 @@ export function renderDashboard() {
     const ctaLabel = unitShortNames[unit.id] || title;
 
     html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.08}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
         ${gcseBadge}
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="module-header" style="margin-bottom: 8px;">
-          </div>
+          <div class="module-header" style="margin-bottom: 8px;"></div>
           <div style="display: flex; gap: 14px; align-items: flex-start; flex-grow: 1;">
             <div style="flex-grow: 1; min-width: 0;">
               <h4 style="margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 600; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">${displayTitle}</h4>
@@ -264,78 +207,40 @@ export function renderDashboard() {
     `;
   };
 
-  // ── Year-jump quick-nav strip ──────────────────────────────────────────
-  html += `
-    <nav aria-label="Jump to year group" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem;">
-      <a href="#year7-section" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#1d4ed8';this.style.color='#fff'" onmouseout="this.style.background='#eff6ff';this.style.color='#1d4ed8'">Year 7</a>
-      <a href="#year8-section" onclick="event.preventDefault(); window.scrollToSection('year8-section');" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#1d4ed8';this.style.color='#fff'" onmouseout="this.style.background='#eff6ff';this.style.color='#1d4ed8'">Year 8</a>
-      <a href="#year9-section" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#1d4ed8';this.style.color='#fff'" onmouseout="this.style.background='#eff6ff';this.style.color='#1d4ed8'">Year 9</a>
-      <a href="#year10-section" onclick="event.preventDefault(); window.scrollToSection('year10-section');" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#92400e';this.style.color='#fff'" onmouseout="this.style.background='#fef3c7';this.style.color='#92400e'">Year 10 — GCSE</a>
-      <a href="#year11-section" onclick="event.preventDefault(); window.scrollToSection('year11-section');" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#92400e';this.style.color='#fff'" onmouseout="this.style.background='#fef3c7';this.style.color='#92400e'">Year 11 — GCSE</a>
-      <a href="#gcse-trip-section" onclick="event.preventDefault(); window.scrollToSection('gcse-trip-section');" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #ede9fe; color: #5b21b6; border: 1.5px solid #ddd6fe; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#5b21b6';this.style.color='#fff'" onmouseout="this.style.background='#ede9fe';this.style.color='#5b21b6'"><i class="fa-solid fa-compass" style="margin-right:5px;"></i> Ypres Tour (GCSE)</a>
-    </nav>
-  `;
-
-  if (tripUnits.length > 0) {
-    tripUnits.forEach((unit, index) => {
-      const imageUrl =
-        unit.homepage_background || unit.cover_image || 'images/stubbington_memorial.jpg';
-      const title = 'GCSE Battlefield Tour: Ypres & The Salient';
-
-      html += `
-        <div id="gcse-trip-section" class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 0; margin-bottom: 2rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-          <div style="flex: 3; min-width: 260px; padding: 22px 32px; display: flex; flex-direction: column; justify-content: center;">
-            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
-              <span style="background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; white-space:nowrap; border: 1px solid #fde68a;"><i class="fa-solid fa-graduation-cap"></i> GCSE Years 10–11</span>
-              <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> Autumn Term GCSE Fieldwork Study</span>
-              <span style="background: #ede9fe; color: #6d28d9; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-notes-medical"></i> Paper 1: Western Front Historic Environment</span>
-            </div>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary, #1e3a8a); margin: 0 0 6px 0; line-height: 1.2;">${title}</h2>
-            <p style="margin: 0 0 12px 0; font-size: 0.85rem; color: var(--text-muted, #64748b); line-height: 1.4;">
-              On-site historic environment study investigating the British sector of the Western Front, casualty evacuation chains (dressing stations, clearing stations), and local Fallen commemorations.
-            </p>
-            <div style="display: flex; gap: 10px; align-items:center; flex-wrap: wrap;">
-              <span style="background: rgba(16,185,129,0.1); color: #059669; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
-              <span style="background: rgba(245,158,11,0.1); color: #d97706; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-suitcase-rolling"></i> Prep Pack</span>
-              <span style="background: rgba(139,92,246,0.1); color: #7c3aed; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
-              <button class="btn-pedagogy-primary" style="padding: 8px 20px; font-size: 0.95rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; margin-left:auto;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
-                <i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Launch Tour App
-              </button>
-            </div>
-          </div>
-          <div style="flex: 1; min-width: 200px; min-height: 130px; max-height: 160px; background-image: url('${imageUrl}'); background-position: center; background-size: cover; border-left: 3px solid var(--primary, #1e3a8a);"></div>
-        </div>
-      `;
-    });
-  }
-
+  // Year 7 Section
   if (year7Units.length > 0) {
     html += `
-      <h3 class="section-title" id="year7-section">Year 7</h3>
-      <div class="modules-grid" style="margin-bottom: 2rem;">
+      <div class="dashboard-curriculum-block stage-block-ks3" id="block-year7">
+        <h3 class="section-title" id="year7-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">Year 7: Medieval Realms &amp; Foundations</h3>
+        <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year7Units.forEach(renderUnitCard);
-    html += `</div>`;
+    html += `</div></div>`;
   }
 
+  // Year 8 Section
   if (year8Units.length > 0) {
     html += `
-      <h3 class="section-title" id="year8-section">Year 8</h3>
-      <div class="modules-grid" style="margin-bottom: 2rem;">
+      <div class="dashboard-curriculum-block stage-block-ks3" id="block-year8">
+        <h3 class="section-title" id="year8-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">Year 8: Early Modern Transitions &amp; Empire</h3>
+        <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year8Units.forEach(renderUnitCard);
-    html += `</div>`;
+    html += `</div></div>`;
   }
 
-  html += `<h3 class="section-title" id="year9-section">Year 9</h3>`;
-
+  // Year 9 Section
+  html += `
+    <div class="dashboard-curriculum-block stage-block-ks3" id="block-year9">
+      <h3 class="section-title" id="year9-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">Year 9: The Modern World &amp; Global Conflict</h3>
+  `;
   if (year9Units.length > 0) {
     html += `<div class="modules-grid" style="margin-bottom: 1rem;">`;
     year9Units.forEach(renderUnitCard);
     html += `</div>`;
   }
 
-  // Coming-soon strip for Year 9 units still in development
+  // Coming-soon strip for Year 9 units
   if (comingSoonNames.length > 0) {
     const pills = comingSoonNames
       .map(
@@ -345,29 +250,144 @@ export function renderDashboard() {
       .join('');
     html += `
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:10px;margin-bottom:2rem;">
-        <span style="font-size:0.8rem;font-weight:700;color:#94a3b8;white-space:nowrap;"><i class="fa-solid fa-circle-info"></i> Coming Soon:</span>
+        <span style="font-size:0.8rem;font-weight:700;color:#94a3b8;white-space:nowrap;"><i class="fa-solid fa-circle-info"></i> In Development:</span>
         ${pills}
       </div>
     `;
   }
+  html += `</div>`;
 
+  // Year 10 Section
   if (year10Units.length > 0) {
     html += `
-      <h3 class="section-title" id="year10-section">Year 10 <span style="font-size:0.7em;font-weight:600;background:#fef3c7;color:#92400e;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span></h3>
-      <div class="modules-grid" style="margin-bottom: 2rem;">
+      <div class="dashboard-curriculum-block stage-block-gcse" id="block-year10">
+        <h3 class="section-title" id="year10-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">
+          Year 10: Edexcel GCSE History (9–1)
+          <span style="font-size:0.68em;font-weight:700;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span>
+        </h3>
+        <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year10Units.forEach(renderUnitCard);
-    html += `</div>`;
+    html += `</div></div>`;
   }
 
+  // Year 11 Section
   if (year11Units.length > 0) {
     html += `
-      <h3 class="section-title" id="year11-section">Year 11 <span style="font-size:0.7em;font-weight:600;background:#fef3c7;color:#92400e;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span></h3>
-      <div class="modules-grid">
+      <div class="dashboard-curriculum-block stage-block-gcse" id="block-year11">
+        <h3 class="section-title" id="year11-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">
+          Year 11: Edexcel GCSE History (9–1)
+          <span style="font-size:0.68em;font-weight:700;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span>
+        </h3>
+        <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year11Units.forEach(renderUnitCard);
-    html += `</div>`;
+    html += `</div></div>`;
   }
+
+  // Trips & Tours Grouping
+  if (tripUnits.length > 0) {
+    tripUnits.forEach((unit) => {
+      const imageUrl =
+        unit.homepage_background || unit.cover_image || 'images/stubbington_memorial.jpg';
+      const title = 'GCSE Battlefield Tour: Ypres &amp; The Salient';
+
+      html += `
+        <div class="dashboard-curriculum-block stage-block-gcse stage-block-fieldwork" id="block-trip">
+          <h3 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">
+            Historic Environment &amp; Fieldwork
+            <span style="font-size:0.68em;font-weight:700;background:#ede9fe;color:#5b21b6;border:1px solid #ddd6fe;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">On-Site Study</span>
+          </h3>
+          <div id="gcse-trip-section" class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 0; margin-bottom: 2rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="flex: 3; min-width: 260px; padding: 22px 32px; display: flex; flex-direction: column; justify-content: center;">
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
+                <span style="background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; white-space:nowrap; border: 1px solid #fde68a;"><i class="fa-solid fa-graduation-cap"></i> GCSE Years 10–11</span>
+                <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> Autumn Term GCSE Fieldwork Study</span>
+                <span style="background: #ede9fe; color: #6d28d9; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-notes-medical"></i> Paper 1: Western Front Historic Environment</span>
+              </div>
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary, #1e3a8a); margin: 0 0 6px 0; line-height: 1.2;">${title}</h2>
+              <p style="margin: 0 0 12px 0; font-size: 0.85rem; color: var(--text-muted, #64748b); line-height: 1.4;">
+                On-site historic environment study investigating the British sector of the Western Front, casualty evacuation chains (dressing stations, clearing stations), and local Fallen commemorations.
+              </p>
+              <div style="display: flex; gap: 10px; align-items:center; flex-wrap: wrap;">
+                <span style="background: rgba(16,185,129,0.1); color: #059669; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
+                <span style="background: rgba(245,158,11,0.1); color: #d97706; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-suitcase-rolling"></i> Prep Pack</span>
+                <span style="background: rgba(139,92,246,0.1); color: #7c3aed; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
+                <button class="btn-pedagogy-primary" style="padding: 8px 20px; font-size: 0.95rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; margin-left:auto;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                  <i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Launch Tour App
+                </button>
+              </div>
+            </div>
+            <div style="flex: 1; min-width: 200px; min-height: 130px; max-height: 160px; background-image: url('${imageUrl}'); background-position: center; background-size: cover; border-left: 3px solid var(--primary, #1e3a8a);"></div>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  // Academic Enrichment & Co-Curricular Section (Bottom Tier)
+  html += `
+    <div id="enrichment-section" style="margin-top: 36px; padding-top: 26px; border-top: 1.5px solid var(--border-glass, #e2e8f0);">
+      <div style="margin-bottom: 16px;">
+        <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.22rem; font-weight: 700; color: var(--text-main, #0f172a); display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-award" style="color: #f59e0b;"></i>
+          <span>Co-Curricular &amp; Academic Enrichment</span>
+        </h3>
+        <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-muted, #64748b);">
+          Beyond the specification: external essay competitions, historical writing awards, and house strategic tournaments
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+        
+        <!-- Competition Spotlight -->
+        <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px; min-width: 220px; flex: 1;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: #f59e0b; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
+                <span style="font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #d97706; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Enrichment</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #92400e;">History Awards &amp; Essay Prizes</span>
+              </div>
+              <div style="font-size: 0.92rem; font-weight: 700; color: #78350f;">
+                National Historical Competitions
+              </div>
+            </div>
+          </div>
+          <button class="btn-pedagogy-primary" onclick="window.switchView('competitions')" style="background: #d97706; border-color: #b45309; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
+            <span>Explore Prizes</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Chess Club Spotlight -->
+        <div style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1.5px solid #ddd6fe; border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 14px rgba(139, 92, 246, 0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px; min-width: 220px; flex: 1;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: #8b5cf6; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.25);">
+              <i class="fa-solid fa-chess-knight"></i>
+            </div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
+                <span style="font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #7c3aed; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Co-Curricular</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9;">House Strategy League</span>
+              </div>
+              <div style="font-size: 0.92rem; font-weight: 700; color: #4c1d95;">
+                Chess &amp; Tactical Analysis
+              </div>
+            </div>
+          </div>
+          <button class="btn-pedagogy-primary" onclick="window.switchView('chess')" style="background: #7c3aed; border-color: #6d28d9; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
+            <span>Strategy Hub</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+
   html += `</div>`;
   container.innerHTML = html;
 
@@ -375,6 +395,68 @@ export function renderDashboard() {
   if (stripRoot) {
     attachStarterStripEvents(stripRoot);
   }
+
+  // Attach Stage Filter interactivity
+  attachDashboardStageFilter(container);
+}
+
+function attachDashboardStageFilter(container) {
+  if (!container) return;
+  const filterBtns = container.querySelectorAll('.stage-filter-btn');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach((btn) => {
+    btn.onclick = () => {
+      const stage = btn.dataset.stage;
+      filterBtns.forEach((b) => {
+        b.classList.remove('active');
+        b.style.background = 'transparent';
+        b.style.color = '#64748b';
+        b.style.boxShadow = 'none';
+      });
+      btn.classList.add('active');
+      btn.style.background = '#1e3a8a';
+      btn.style.color = '#ffffff';
+      btn.style.boxShadow = '0 2px 6px rgba(30, 58, 138, 0.25)';
+
+      const ks3Blocks = container.querySelectorAll('.stage-block-ks3');
+      const gcseBlocks = container.querySelectorAll('.stage-block-gcse');
+      const jumpKs3 = container.querySelectorAll('.jump-ks3');
+      const jumpGcse = container.querySelectorAll('.jump-gcse');
+      const jumpFieldwork = container.querySelectorAll('.jump-fieldwork');
+      const tripBlock = container.querySelector('#block-trip');
+
+      if (stage === 'all') {
+        ks3Blocks.forEach((el) => (el.style.display = ''));
+        gcseBlocks.forEach((el) => (el.style.display = ''));
+        jumpKs3.forEach((el) => (el.style.display = ''));
+        jumpGcse.forEach((el) => (el.style.display = ''));
+        jumpFieldwork.forEach((el) => (el.style.display = ''));
+      } else if (stage === 'ks3') {
+        ks3Blocks.forEach((el) => (el.style.display = ''));
+        gcseBlocks.forEach((el) => (el.style.display = 'none'));
+        jumpKs3.forEach((el) => (el.style.display = ''));
+        jumpGcse.forEach((el) => (el.style.display = 'none'));
+        jumpFieldwork.forEach((el) => (el.style.display = 'none'));
+      } else if (stage === 'gcse') {
+        ks3Blocks.forEach((el) => (el.style.display = 'none'));
+        gcseBlocks.forEach((el) => (el.style.display = ''));
+        jumpKs3.forEach((el) => (el.style.display = 'none'));
+        jumpGcse.forEach((el) => (el.style.display = ''));
+        jumpFieldwork.forEach((el) => (el.style.display = ''));
+      } else if (stage === 'fieldwork') {
+        ks3Blocks.forEach((el) => (el.style.display = 'none'));
+        gcseBlocks.forEach((el) => (el.style.display = 'none'));
+        jumpKs3.forEach((el) => (el.style.display = 'none'));
+        jumpGcse.forEach((el) => (el.style.display = 'none'));
+        jumpFieldwork.forEach((el) => (el.style.display = ''));
+        if (tripBlock) {
+          tripBlock.style.display = '';
+          window.scrollToSection('gcse-trip-section');
+        }
+      }
+    };
+  });
 }
 
 export function renderMasterpieceView() {

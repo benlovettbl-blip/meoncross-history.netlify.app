@@ -1054,51 +1054,61 @@ function attachProjectorEvents() {
 }
 
 /**
- * Generate Compact 75px Classroom Starter Strip HTML for the Homepage Dashboard
+ * Generate Compact 72px Historical Art of the Week Strip HTML for the Homepage Dashboard
  */
 export function getMasterpieceStarterStripHtml() {
   const item =
     MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
 
+  const cleanTitle = item.title.split('(')[0].trim();
+  const hookText = item.curatorHook
+    ? item.curatorHook.length > 130
+      ? item.curatorHook.slice(0, 127) + '...'
+      : item.curatorHook
+    : 'Primary visual source analysis: historical iconography, political patronage & symbolism.';
+
   return `
-    <div class="masterpiece-starter-strip" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1.5px solid var(--border-glass, #e2e8f0); border-left: 4.5px solid #f59e0b; border-radius: 14px; padding: 10px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 75px; box-sizing: border-box; flex-wrap: wrap;">
+    <div class="masterpiece-starter-strip" style="background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%); border: 1.5px solid var(--border-glass, #e2e8f0); border-left: 4.5px solid #d97706; border-radius: 14px; padding: 10px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; box-sizing: border-box; flex-wrap: wrap;">
       
       <!-- Left Thumbnail & Centre Info -->
       <div style="display: flex; align-items: center; gap: 14px; min-width: 280px; flex: 1;">
         <!-- Left: Small thumbnail preview of the artwork -->
-        <div class="masterpiece-strip-thumb-wrap" data-action="launch-masterpiece-projector" style="position: relative; flex-shrink: 0; cursor: pointer;" title="Click artwork to launch Whiteboard Projector">
-          <img src="${item.image}" alt="${item.title}" data-action="launch-masterpiece-projector" class="masterpiece-strip-thumb" style="width: 62px; height: 52px; object-fit: cover; border-radius: 8px; border: 1.5px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: block; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" />
+        <div class="masterpiece-strip-thumb-wrap" data-action="open-masterpiece-studio" style="position: relative; flex-shrink: 0; cursor: pointer;" title="Explore artwork in the Historical Gallery">
+          <img src="${item.image}" alt="${item.title}" class="masterpiece-strip-thumb" style="width: 62px; height: 52px; object-fit: cover; border-radius: 8px; border: 1.5px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: block; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" />
           <span style="position: absolute; bottom: 2px; right: 2px; background: rgba(15, 23, 42, 0.85); color: #38bdf8; font-size: 0.6rem; padding: 1px 4px; border-radius: 3px; pointer-events: none; border: 1px solid rgba(255,255,255,0.2);">
-            <i class="fa-solid fa-expand"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
           </span>
         </div>
 
-        <!-- Centre: Masterpiece of the Week: Title (Artist) with badge -->
-        <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+        <!-- Centre: Historical Art of the Week: Title (Artist) with badge -->
+        <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0;">
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <span style="font-size: 0.68rem; font-weight: 800; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 5px; text-transform: uppercase; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-stopwatch-20"></i> 3-Min Whiteboard Starter
+            <span style="font-size: 0.67rem; font-weight: 800; background: #fffbeb; color: #b45309; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-palette"></i> Historical Art of the Week
             </span>
-            <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted, #64748b); text-transform: uppercase; letter-spacing: 0.05em;">
-              Masterpiece of the Week
+            <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-muted, #64748b); text-transform: uppercase; letter-spacing: 0.05em;">
+              Visual Culture &amp; Primary Record
             </span>
           </div>
-          <div style="font-size: 1.02rem; font-weight: 700; color: var(--text-main, #0f172a); line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-            <span style="font-family: 'Playfair Display', serif;">${item.title.split('(')[0].trim()}</span>
-            <span style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-muted, #64748b); margin-left: 6px;">(${item.artist})</span>
+          <div style="font-size: 1rem; font-weight: 700; color: var(--text-main, #0f172a); line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+            <span style="font-family: 'Playfair Display', serif;">${cleanTitle}</span>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--text-muted, #64748b); margin-left: 6px;">(${item.artist}${item.date ? ', ' + item.date : ''})</span>
+          </div>
+          <div style="font-size: 0.77rem; color: #475569; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 650px; line-height: 1.3;">
+            <span style="font-weight: 700; color: #0f172a;">Iconography Clue:</span> ${hookText}
           </div>
         </div>
       </div>
 
       <!-- Right: Two quick tap buttons -->
-      <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0; flex-wrap: wrap;">
-        <button class="btn-pedagogy-secondary masterpiece-strip-open-btn" data-action="open-masterpiece-studio" style="background: var(--bg-card, #ffffff); border: 1.5px solid #cbd5e1; color: var(--text-main, #1e293b); padding: 9px 14px; border-radius: 8px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s ease;">
-          <i class="fa-solid fa-play" style="color: #2563eb; font-size: 0.75rem;"></i>
-          <span>Open Starter Studio</span>
+      <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap;">
+        <button class="btn-pedagogy-secondary masterpiece-strip-open-btn" data-action="open-masterpiece-studio" style="background: var(--bg-card, #ffffff); border: 1.5px solid #cbd5e1; color: var(--text-main, #1e293b); padding: 8px 13px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s ease;">
+          <i class="fa-solid fa-magnifying-glass" style="color: #2563eb; font-size: 0.75rem;"></i>
+          <span>Explore Artwork &amp; Analysis</span>
         </button>
-        <button class="btn-pedagogy-primary masterpiece-strip-projector-btn" data-action="launch-masterpiece-projector" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1.5px solid #334155; color: #ffffff; padding: 9px 16px; border-radius: 8px; font-weight: 800; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25); transition: all 0.2s ease;">
-          <i class="fa-solid fa-expand" style="color: #38bdf8;"></i>
-          <span>Launch Whiteboard Projector</span>
+        <button class="btn-pedagogy-primary masterpiece-strip-projector-btn" data-action="launch-masterpiece-projector" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1.5px solid #334155; color: #ffffff; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25); transition: all 0.2s ease;">
+          <i class="fa-solid fa-chalkboard-user" style="color: #38bdf8;"></i>
+          <span>Whiteboard Projector</span>
         </button>
       </div>
 
@@ -1107,7 +1117,7 @@ export function getMasterpieceStarterStripHtml() {
 }
 
 /**
- * Attach Event Listeners to the Classroom Starter Strip
+ * Attach Event Listeners to the Historical Art of the Week Strip
  */
 export function attachStarterStripEvents(container) {
   if (!container) return;
@@ -1116,7 +1126,9 @@ export function attachStarterStripEvents(container) {
   if (thumbWrap) {
     thumbWrap.onclick = (e) => {
       e.stopPropagation();
-      openProjectorMode();
+      if (typeof window.switchView === 'function') {
+        window.switchView('masterpiece');
+      }
     };
   }
 
