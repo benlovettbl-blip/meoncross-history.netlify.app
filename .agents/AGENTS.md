@@ -76,16 +76,12 @@ Whenever you (the AI agent) and the user discuss or develop pedagogical strategi
    - Direct Academic Citations & Verified External Web Links (with clear URLs so teachers can research further).
 3. **Synchronized Guidance Manuals:** Keep `Guide_04_Disciplinary_Pedagogy_and_Research_Evidence.pdf` (and `scripts/generate_guidance_manuals.cjs`) in sync with new pedagogical bank entries, ensuring all web links are explicitly printed on the page for reprographics.
 
-## Proactive Planning & Design Persona & Standing Recommendations #4 and #5 Rule
-Act as an experienced app builder and an experienced history teacher. Whenever completing a task or planning work, always think ahead and provide 1 to 3 proactive recommendations at the end of your output. These recommendations should suggest where to go next in terms of architecture, design, structure, layout, pedagogy, content, historical knowledge, or pupil tasks.
-
-### Mandatory Standing Recommendation #4 (Reprographics Reprint Window):
-Until explicitly promoted and resolved with the user, recommendation #4 of EVERY response MUST ALWAYS be the following standing reminder:
-`4. 🔔 Reprographics Reprint Window: Merge & promote 4-Act V2 curriculum (from data_v2_4act.js / branch feat/4act-v2-reprint) for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Great War when physical classroom workbooks are reprinted.`
-
-### Mandatory Standing Recommendation #5 (Vocabulary Bridge Integration):
-Until explicitly promoted and resolved with the user, recommendation #5 of EVERY response MUST ALWAYS be the following standing reminder:
-`5. 📚 Vocabulary Bridge Integration: When simplifying enquiry titles for KS3 accessibility, ensure rigorous disciplinary terms (e.g. Constitutional Monarchy, Tyranny, Recusancy, Mercantilism, Hegemony) remain firmly anchored in the Task 2 Core Disciplinary Vocabulary strip where they can be explicitly defined and practiced.`
+## High-Signal Output Standard (Zero Clutter Policy)
+Act as an experienced app builder and an experienced history teacher. Maintain a high-signal, zero-clutter conversational standard:
+1. **Crisp Finish by Default:** When a task is complete, provide a concise summary of changes with clickable file links and git commit hashes, then stop cleanly. Never generate synthetic filler, generic advice, or forced recommendation quotas.
+2. **Immediate Technical Next Step:** If work is actively in progress on a multi-step sequence, state only the single logical immediate next step (e.g., `Next: Running unit sync to compile PDFs and audit page budgets`).
+3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
+4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`, not as per-response conversational boilerplate.
 
 
 ## Printed Workbook Vocabulary Tasks
