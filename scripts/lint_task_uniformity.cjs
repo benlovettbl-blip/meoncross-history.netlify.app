@@ -123,6 +123,10 @@ async function runLinter() {
       errors.push(
         `[L${lessonNum}] Dual-location source residency violation: Lesson contains BOTH a root 'sources: []' array (${lesson.sources.length} items) AND inline 'act.source' objects. Enforce single-location source residency to eliminate layout duplication and prevent narrative spoilers!`,
       );
+    } else if (isFourActTarget && hasRootSources) {
+      errors.push(
+        `[L${lessonNum}] 4-Act Source Dump Violation: Lesson contains a root 'sources: []' array (${lesson.sources.length} items). In 4-Act architecture, root sources arrays are strictly forbidden because they dump sources above the narrative, spoiling dramatic tension. Move all sources inline to 'act.source' or 'narrative_blocks[].source'!`,
+      );
     } else if (
       lesson.sources &&
       Array.isArray(lesson.sources) &&

@@ -9,7 +9,10 @@ const { pathToFileURL } = require('url');
  * with a matching source letter.
  */
 async function runAudit() {
-  const targetUnitArg = process.argv[2];
+  const args = process.argv.slice(2);
+  const isV2 = args.includes('--v2');
+  const targetUnitArg = args.find((a) => !a.startsWith('--'));
+  const targetFileName = isV2 ? 'data_v2_4act.js' : 'data.js';
   const unitsDir = path.resolve(__dirname, '../units');
 
   const defaultUnits = [
@@ -28,10 +31,10 @@ async function runAudit() {
 
   const unitsToAudit = targetUnitArg
     ? [targetUnitArg]
-    : defaultUnits.filter((u) => fs.existsSync(path.join(unitsDir, u, 'data.js')));
+    : defaultUnits.filter((u) => fs.existsSync(path.join(unitsDir, u, targetFileName)));
 
   console.log('====================================================');
-  console.log('🔍 SOURCE-TO-ACT ALIGNMENT AUDITOR');
+  console.log(`🔍 SOURCE-TO-ACT ALIGNMENT AUDITOR${isV2 ? ' (4-Act V2)' : ''}`);
   console.log('====================================================');
   console.log(`Auditing units: ${unitsToAudit.join(', ')}\n`);
 
@@ -40,7 +43,7 @@ async function runAudit() {
   let totalBlocksChecked = 0;
 
   for (const unitId of unitsToAudit) {
-    const dataPath = path.join(unitsDir, unitId, 'data.js');
+    const dataPath = path.join(unitsDir, unitId, targetFileName);
     if (!fs.existsSync(dataPath)) {
       continue;
     }

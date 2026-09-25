@@ -96,39 +96,23 @@ const great_war = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Map A: The German Empire in Central Europe (1871)',
-          src: '/images/german_empire_1871.png',
-          caption:
-            'Geopolitical map showing the unification of thirty-nine sovereign German states into the German Empire under Prussian leadership in 1871.',
-          shelfmark: 'Imperial Cartographic Archive, Berlin (Shelfmark: ICA-1871-DE)',
-          citation: 'Prussian State Library • Map Department (1871).',
-          context:
-            'Following the 1871 Treaty of Frankfurt, thirty-nine previously independent German states united under Prussian leadership to form the German Empire, creating an economic and military powerhouse in the center of Europe. **Hinge Question:** How did the sudden emergence of a unified German Empire fundamentally shatter the European balance of power?',
-          hinge_question:
-            'How did the sudden emergence of a unified German Empire fundamentally shatter the European balance of power?',
-        },
-        {
-          letter: 'B',
-          title: 'Map B: Modern European Boundaries vs 1871 Frontiers',
-          src: '/images/modern_germany_map.png',
-          caption:
-            'Comparative cartography overlaying 1871 German imperial boundaries onto modern sovereign European borders.',
-          shelfmark: 'Curriculum Comparative Cartography (Shelfmark: CCC-MAP-MOD1871)',
-          citation: 'Department Cartographic Collection.',
-          context:
-            "Comparing nineteenth-century borders with modern Europe reveals how the massive German Empire occupied the territories of several modern sovereign nations, generating continuous friction with neighbouring empires. **Hinge Question:** Why would Germany's geographical position between France and Russia cause German military planners permanent strategic anxiety?",
-          hinge_question:
-            "Why would Germany's geographical position between France and Russia cause German military planners permanent strategic anxiety?",
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: Context & Catalyst (The Fragmented Chessboard & The Zollverein)',
-          text: '<span class="para-ref">[1.1]</span> For centuries following the 1648 Peace of Westphalia, Central Europe remained a politically fragmented patchwork of hundreds of small, independent German-speaking principalities, duchies, and bishoprics. In 1815, the Congress of Vienna consolidated these territories into a loose confederation of thirty-nine sovereign states, within which two Great Powers fiercely competed for continental pre-eminence: the Catholic Austrian Empire and the Protestant military Kingdom of Prussia. While Austria remained an agrarian, multi-ethnic empire preoccupied with holding together its restive nationalities, Prussia underwent an explosive industrial transformation fueled by the rich coal and iron deposits of the Ruhr Valley and Silesia.<br><br><span class="para-ref">[1.2]</span> In 1834, Prussia secured a decisive geopolitical masterstroke by establishing the <em>Zollverein</em> (Customs Union). By dismantling internal tariffs between German states while erecting protective customs walls against foreign imports, the *Zollverein* bound the economies of northern and central Germany inexorably to Berlin. Austria, crippled by its protectionist economic model, was deliberately excluded. Through the rapid construction of an integrated railway network, Prussia proved that industrial efficiency, economic prosperity, and modernized communication belonged to Berlin, establishing the economic foundation for political unification.',
+          text: '<span class="para-ref">[1.1]</span> For centuries following the 1648 Peace of Westphalia, Central Europe remained a politically fragmented patchwork of hundreds of small, independent German-speaking principalities, duchies, and bishoprics. In 1815, the Congress of Vienna consolidated these territories into a loose confederation of thirty-nine sovereign states (<span class="archival-meta-tag">Source A</span>), within which two Great Powers fiercely competed for continental pre-eminence: the Catholic Austrian Empire and the Protestant military Kingdom of Prussia. While Austria remained an agrarian, multi-ethnic empire preoccupied with holding together its restive nationalities, Prussia underwent an explosive industrial transformation fueled by the rich coal and iron deposits of the Ruhr Valley and Silesia.<br><br><span class="para-ref">[1.2]</span> In 1834, Prussia secured a decisive geopolitical masterstroke by establishing the <em>Zollverein</em> (Customs Union). By dismantling internal tariffs between German states while erecting protective customs walls against foreign imports, the *Zollverein* bound the economies of northern and central Germany inexorably to Berlin. Austria, crippled by its protectionist economic model, was deliberately excluded. Through the rapid construction of an integrated railway network, Prussia proved that industrial efficiency, economic prosperity, and modernized communication belonged to Berlin, establishing the economic foundation for political unification.',
+          source: {
+            letter: 'A',
+            title: 'Source A (Cartographic Record): The German Empire in Central Europe (1871)',
+            image: '/images/german_empire_1871.png',
+            caption:
+              'Geopolitical map showing the unification of thirty-nine sovereign German states into the German Empire under Prussian leadership in 1871.',
+            citation: 'Prussian State Library, Map Department (1871).',
+            context:
+              'Following the 1871 Treaty of Frankfurt, thirty-nine previously independent German states united under Prussian leadership to form the German Empire, creating an economic and military powerhouse in the center of Europe.',
+            hinge_question:
+              'How did the sudden emergence of a unified German Empire fundamentally shatter the European balance of power?',
+          },
         },
         {
           act: 2,
@@ -139,7 +123,20 @@ const great_war = {
           act: 3,
           title:
             'Act 3: Forensic Archival Evidence (The Proclamation at Versailles & Cartographic Shifts)',
-          text: '<span class="para-ref">[3.1]</span> On 18 January 1871, inside the sacred heart of French monarchical grandeur—the <strong>Hall of Mirrors at the Palace of Versailles</strong>—Bismarck staged the supreme coronation. Amidst a sea of Prussian helmets and military banners, King Wilhelm I was proclaimed the first German Emperor (Kaiser). The location was a calculated act of psychological subjugation: German princes cheered the birth of the Kaiserreich while German artillery shells were actively bombarding Paris just twelve miles away. Under the 1871 Treaty of Frankfurt, the defeated French Republic was forced to pay a punitive indemnity of five billion gold francs and surrender the vital industrial provinces of Alsace and northern Lorraine.<br><br><span class="para-ref">[3.2]</span> Forensic cartographic analysis (Source A) reveals the monumental scale of the new Empire. Spanning over 540,000 square kilometers with 41 million citizens, the German Empire instantly formed the demographic and industrial colossus of continental Europe. Yet comparative modern cartography (Source B) highlights Germany’s profound geographic vulnerability: positioned squarely in the center of Europe with few natural frontiers, Germany was permanently vulnerable to simultaneous assault from the west (France) and the east (Russia).',
+          text: '<span class="para-ref">[3.1]</span> On 18 January 1871, inside the sacred heart of French monarchical grandeur—the <strong>Hall of Mirrors at the Palace of Versailles</strong>—Bismarck staged the supreme coronation. Amidst a sea of Prussian helmets and military banners, King Wilhelm I was proclaimed the first German Emperor (Kaiser). The location was a calculated act of psychological subjugation: German princes cheered the birth of the Kaiserreich while German artillery shells were actively bombarding Paris just twelve miles away. Under the 1871 Treaty of Frankfurt, the defeated French Republic was forced to pay a punitive indemnity of five billion gold francs and surrender the vital industrial provinces of Alsace and northern Lorraine.<br><br><span class="para-ref">[3.2]</span> Forensic analysis of the 1871 imperial frontiers reveals the monumental scale of the new Empire. Spanning over 540,000 square kilometers with 41 million citizens, the German Empire instantly formed the demographic and industrial colossus of continental Europe. Yet comparative modern cartography (<span class="archival-meta-tag">Source B</span>) highlights Germany’s profound geographic vulnerability: positioned squarely in the center of Europe with few natural frontiers, Germany was permanently vulnerable to simultaneous assault from the west (France) and the east (Russia).',
+          source: {
+            letter: 'B',
+            title:
+              'Source B (Comparative Cartography): Modern European Boundaries vs 1871 Frontiers',
+            image: '/images/modern_germany_map.png',
+            caption:
+              'Comparative cartography overlaying 1871 German imperial boundaries onto modern sovereign European borders.',
+            citation: 'Department Cartographic Collection.',
+            context:
+              'Comparing nineteenth-century borders with modern Europe reveals how the massive German Empire occupied the territories of several modern sovereign nations, generating continuous friction with neighbouring empires.',
+            hinge_question:
+              "Why would Germany's geographical position between France and Russia cause German military planners permanent strategic anxiety?",
+          },
         },
         {
           act: 4,
@@ -460,39 +457,23 @@ const great_war = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Albert Bettannier: "La Tache Noire" (The Black Spot, 1887)',
-          src: '/great_war/assets/la_tache_noire_1887.jpg',
-          caption:
-            'Contemporary French painting depicting a classroom where the lost provinces of Alsace and Lorraine are shaded in mourning black on the national map.',
-          shelfmark: 'Musée des Beaux-Arts, Mulhouse (Accession No. 1887-BN)',
-          citation: 'French Third Republic Education Archive • Albert Bettannier (1887).',
-          context:
-            'In French schools after 1871, maps showed the lost provinces of Alsace and Lorraine shaded in mourning black. French schoolboys were systematically taught that their sacred patriotic duty was to prepare for revenge (*la revanche*). **Hinge Question:** How does this painting prove that the loss of Alsace-Lorraine poisoned Franco-German relations for over forty years?',
-          hinge_question:
-            'How does this painting prove that the loss of Alsace-Lorraine poisoned Franco-German relations for over forty years?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Alsace-Lorraine & The Fortified German Glacis (1871)',
-          src: '/units/great_war/assets/alsace_lorraine_1871_map.png',
-          caption:
-            'Military annexation map showing the 14,000 square kilometers of French territory ceded to Germany under the Treaty of Frankfurt.',
-          shelfmark: 'Reichsland Elsaß-Lothringen Cadastral Survey (Shelfmark: RL-EL-1871)',
-          citation: 'Strasbourg Regional Archive • Cartographic Department.',
-          context:
-            'Germany annexed 14,000 square kilometres of territory rich in iron ore and coal, alongside 1.5 million French subjects, establishing a fortified defensive barrier against future French attacks. **Hinge Question:** Did annexing Alsace-Lorraine provide Germany with military security, or did it guarantee a catastrophic two-front war?',
-          hinge_question:
-            'Did annexing Alsace-Lorraine provide Germany with military security, or did it guarantee a catastrophic two-front war?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: Context & Catalyst (The Spanish Throne & The Ems Telegram)',
           text: '<span class="para-ref">[1.1]</span> In the late 1860s, Emperor Napoleon III of France watched with growing anxiety as Prussia eclipsed Austrian influence and unified northern Germany. When Queen Isabella II of Spain was deposed in 1868, the vacant Spanish crown was offered to Prince Leopold of Hohenzollern-Sigmaringen, a distant cousin of the Prussian King. The prospect of a Hohenzollern monarch reigning on both the Rhine and the Pyrenees provoked hysterical outrage in Paris, where French politicians decried the encirclement of France. Under intense diplomatic pressure from Paris, Leopold prudently withdrew his candidacy, achieving a bloodless diplomatic triumph for France.<br><br><span class="para-ref">[1.2]</span> However, the ambitious French foreign minister overplayed his hand by demanding a personal guarantee from King Wilhelm I of Prussia at the spa town of Bad Ems that a Hohenzollern would never again seek the Spanish throne. King Wilhelm politely refused and sent a factual telegraphic dispatch of the encounter to Chancellor Bismarck in Berlin. Bismarck recognized a golden historic opportunity: he condensed and edited the telegram so that the Prussian King and French ambassador appeared to have mutually insulted each other, then leaked the <strong>Ems Telegram</strong> to the press on Bastille Day. French national pride erupted in fury; on 19 July 1870, France declared war on Prussia, walking directly into Bismarck’s diplomatic trap as the apparent aggressor.',
+          source: {
+            letter: 'A',
+            title: 'Source A (Cartographic Record): The Annexation of Alsace-Lorraine (1871)',
+            image: '/units/great_war/assets/alsace_lorraine_1871_map.png',
+            caption:
+              'Border survey showing the strategic provinces of Alsace and northern Lorraine seized by Germany in 1871.',
+            citation: 'Imperial Border Commission Survey (1871).',
+            context:
+              'Following their victory in 1871, Germany annexed Alsace-Lorraine for its rich iron ore deposits and strategic fortress at Metz, leaving France humiliated and hungry for revenge (Revanche).',
+            hinge_question:
+              'Did annexing Alsace-Lorraine provide Germany with military security, or did it guarantee a catastrophic two-front war?',
+          },
         },
         {
           act: 2,
@@ -503,6 +484,19 @@ const great_war = {
           act: 3,
           title: 'Act 3: Forensic Archival Evidence (The Black Spot & Fortified Frontier)',
           text: '<span class="para-ref">[3.1]</span> The Treaty of Frankfurt, signed in May 1871, exacted a severe retribution upon France. Germany annexed 14,000 square kilometers of territory encompassing <strong>Alsace and northern Lorraine</strong> (Source B), seizing 1.5 million French citizens and 80% of France’s iron ore reserves. German military engineers fortified the fortress cities of Metz and Strasbourg, transforming the region into an impenetrable military glacis protecting the Rhineland. In addition, an army of occupation remained on French soil until an astronomical indemnity of five billion gold francs was paid in full.<br><br><span class="para-ref">[3.2]</span> In France, the territorial amputations produced an intense, institutionalized national trauma known as <em>la revanche</em> (revenge). In public classrooms across the Third Republic, educational paintings such as Albert Bettannier’s *La Tache Noire* (Source A) portrayed solemn schoolmasters pointing to maps where Alsace-Lorraine was shaded in mourning black. Generations of French schoolchildren were raised on the sacred duty to reclaim their stolen brothers, epitomized by politician Léon Gambetta’s famous maxim: <em>"Think of it always; speak of it never."</em>',
+          source: {
+            letter: 'B',
+            title:
+              'Source B (Visual Record): Albert Bettannier, La Tache Noire (The Black Spot, 1887)',
+            image: '/units/great_war/assets/la_tache_noire_1887.jpg',
+            caption:
+              'A French teacher pointing to the black patch of Alsace-Lorraine on a classroom map, teaching young boys that it is their patriotic duty to reclaim the lost provinces.',
+            citation: 'Musée des Beaux-Arts, Mulhouse.',
+            context:
+              'Painted sixteen years after the war, this image shows how French schools systematically prepared a generation of young boys for a war of revenge to liberate their lost provinces.',
+            hinge_question:
+              'How does this painting demonstrate that the roots of the First World War were cultivated in European classrooms decades before 1914?',
+          },
         },
         {
           act: 4,
@@ -823,39 +817,23 @@ const great_war = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: The Partition of Africa by 1914',
-          src: '/public/great_war/assets/partition_of_africa_1914.png',
-          caption:
-            'Geopolitical map showing the division of the African continent among European colonial empires following the 1884–85 Berlin Conference.',
-          shelfmark: 'Royal Geographical Society Map Collection (Shelfmark: RGS-AF-1914)',
-          citation: 'War Office Geographical Section • General Staff (1914).',
-          context:
-            'By 1914, Britain and France had colonized over two-thirds of Africa, securing valuable mineral resources and trade routes. German colonial acquisitions in Namibia, Cameroon, and East Africa were largely arid territories acquired late, fueling the Kaiser’s grievance that Germany had been denied its rightful share. **Hinge Question:** Did the Scramble for Africa relieve European tensions by providing a distant colonial outlet, or did it export European national rivalries across the globe?',
-          hinge_question:
-            'Did the Scramble for Africa relieve European tensions by providing a distant colonial outlet, or did it export European national rivalries across the globe?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Gunboat Diplomacy: The SMS Panther at Agadir (1911)',
-          src: '/public/great_war/assets/sms_panther_agadir_1911.jpg',
-          caption:
-            'Archival photograph of the German Imperial Navy gunboat SMS Panther, dispatched by the Kaiser to the Moroccan port of Agadir on 1 July 1911.',
-          shelfmark: 'Federal Archives, Koblenz (Bundesarchiv Bild 134-C0812)',
-          citation: 'Imperial German Naval Command • Agadir Mission Photographic Record.',
-          context:
-            'In July 1911, Germany dispatched the gunboat SMS Panther to the Moroccan port of Agadir, ostensibly to protect German commercial interests during a local rebellion, but actually to challenge French dominance and demand colonial compensation in the Congo. **Hinge Question:** Why did Britain view Germany’s naval presence in Morocco as an unacceptable threat to British maritime supremacy?',
-          hinge_question:
-            'Why did Britain view Germany’s naval presence in Morocco as an unacceptable threat to British maritime supremacy?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: Context & Catalyst (Bismarck’s Caution vs. Wilhelm’s Weltpolitik)',
           text: '<span class="para-ref">[1.1]</span> Throughout his tenure as Chancellor, Otto von Bismarck fiercely opposed acquiring overseas colonies, famously declaring: <em>"My map of Africa lies in Europe. Here is Russia, and here is France, and we are in the middle; that is my map of Africa."</em> Bismarck recognized that overseas adventures would inevitably provoke friction with Great Britain, whose global empire and naval supremacy guarded the world’s maritime trade routes. To regulate imperial claims and prevent European warfare, Bismarck hosted the 1884–85 <strong>Berlin Conference</strong>, where European powers partitioned the African continent into colonial spheres without a single African leader present.<br><br><span class="para-ref">[1.2]</span> However, when the ambitious and bellicose young Kaiser Wilhelm II ascended the throne in 1888, he chafed under Bismarck’s cautious diplomacy. In 1890, Wilhelm forced Bismarck to resign and proclaimed a new, aggressive foreign policy: <strong>Weltpolitik</strong> (World Policy). Wilhelm declared that Germany’s explosive industrial growth entitled the Reich to a <em>"Platz an der Sonne"</em> (a place in the sun)—a global colonial empire matching that of Britain and France. For Wilhelm, colonies were not merely economic assets, but the ultimate symbol of Great Power status.',
+          source: {
+            letter: 'A',
+            title: 'Source A (Cartographic Record): The Partition of Africa by 1914',
+            image: '/units/great_war/assets/map_lesson2.png',
+            caption:
+              'Map showing how European imperial powers divided the African continent by 1914, with Britain and France holding the largest territories.',
+            citation: 'Royal Geographical Society Map Collection.',
+            context:
+              'At the 1884–85 Berlin Conference, European powers carved up Africa to exploit its rubber, gold, and mineral wealth. Germany arrived late and acquired only marginal colonies, fueling Kaiser Wilhelm II’s demands for a "place in the sun".',
+            hinge_question:
+              'Did the Scramble for Africa relieve European tensions by providing a distant colonial outlet, or did it export European national rivalries across the globe?',
+          },
         },
         {
           act: 2,
@@ -867,6 +845,18 @@ const great_war = {
           title:
             'Act 3: Forensic Archival Evidence (The Panther at Agadir & The Mansion House Warning)',
           text: '<span class="para-ref">[3.1]</span> Five years later, imperial rivalry flared into open confrontation during the <strong>Second Moroccan Crisis (1911)</strong>. When Moroccan tribes rebelled against the Sultan, France dispatched troops to occupy the capital, Fez. Accusing France of violating the Algeciras agreements, the German government dispatched the imperial gunboat <em>SMS Panther</em> (Source B) to the Atlantic port of Agadir. This heavy-handed demonstration of "gunboat diplomacy" was intended to intimidate France into ceding the entire French Congo to Germany in exchange for accepting French control of Morocco.<br><br><span class="para-ref">[3.2]</span> The arrival of a German warship on the Atlantic coast of Africa provoked panic and fury in London. British military strategists feared Germany intended to construct a fortified naval base at Agadir, threatening vital British sea routes to India and South Africa. Chancellor of the Exchequer David Lloyd George delivered the famous <strong>Mansion House Speech</strong>, warning that Britain would not tolerate German intimidation: <em>"If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won... then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure."</em> Backed by British resolve, France held firm; Germany was forced to back down and accept a sliver of swampy Congolese land.',
+          source: {
+            letter: 'B',
+            title: 'Source B (Visual Record): Gunboat Diplomacy: The SMS Panther at Agadir (1911)',
+            image: '/units/great_war/assets/map_lesson2_b.png',
+            caption:
+              'Map detail and record of the colonial flashpoints in North Africa where German gunboat diplomacy challenged French control.',
+            citation: 'Imperial German Naval Command, Agadir Mission Photographic Record.',
+            context:
+              'Twice (in 1905 at Tangier and 1911 at Agadir), Germany provoked international crises in Morocco to test the Anglo-French Entente, but succeeded only in driving Britain and France into closer military coordination.',
+            hinge_question:
+              'Why did Britain view Germany’s naval presence in Morocco as an unacceptable threat to British maritime supremacy?',
+          },
         },
         {
           act: 4,
@@ -1169,34 +1159,6 @@ const great_war = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Admiral Sir John Fisher: Confidential Admiralty Memorandum (1906)',
-          text: '“My principles are: Speed is armor. Hit first, hit hard, and keep on hitting... The Dreadnought has rendered all existing battleships obsolete. If Germany builds one, we must build two. The Empire floats upon the Royal Navy; if the navy is defeated, we are starved into surrender in three weeks. We cannot afford sentiment or hesitation.”',
-          caption:
-            'Extract from Admiral Sir John Fisher’s secret memorandum to the Board of Admiralty outlining the strategic philosophy of HMS Dreadnought.',
-          shelfmark: 'The National Archives, Kew (Admiralty Papers ADM 1/7892)',
-          citation: 'First Sea Lord Secret Policy Papers • Board of Admiralty Records (1906).',
-          context:
-            'In 1906, First Sea Lord Admiral Sir John "Jackie" Fisher launched HMS Dreadnought, rendering all existing battleships obsolete and initiating a furious construction race with Germany. **Hinge Question:** Why did Admiral Fisher’s technological revolution accidentally give Imperial Germany an opportunity to catch up with the Royal Navy?',
-          hinge_question:
-            'Why did Admiral Fisher’s technological revolution accidentally give Imperial Germany an opportunity to catch up with the Royal Navy?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Puck Magazine: "The Armaments Race" (1909)',
-          src: '/great_war/assets/puck_naval_race_1909.jpg',
-          caption:
-            'Contemporary American political cartoon showing John Bull (Britain) and Kaiser Wilhelm II pouring gold sovereigns and marks into an insatiable furnace of battleship construction.',
-          shelfmark: 'Library of Congress Prints & Photographs Division (LC-DIG-ppmsca-0182)',
-          citation: 'Puck Magazine (New York) • Vol. 65, No. 1678 (April 1909).',
-          context:
-            'By 1909, naval spending was consuming massive proportions of both British and German national budgets, sparking intense taxpayer anxiety and patriotic navalist leagues. **Hinge Question:** How does this cartoon illustrate the economic futility and mounting paranoia of the Anglo-German naval arms race?',
-          hinge_question:
-            'How does this cartoon illustrate the economic futility and mounting paranoia of the Anglo-German naval arms race?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -1207,12 +1169,35 @@ const great_war = {
           act: 2,
           title: 'Act 2: Escalation & Conflict (The Dreadnought Revolution of 1906)',
           text: '<span class="para-ref">[2.1]</span> The rapid growth of German dockyards on the North Sea struck terror into the British Admiralty. In October 1904, a brilliant, eccentric reformer named <strong>Admiral Sir John "Jackie" Fisher</strong> was appointed First Sea Lord. Fisher recognized that incremental improvements were futile; Britain required a technological leap that would paralyze all rivals. In 1906, Fisher unveiled <strong>HMS Dreadnought</strong>, a revolutionary leviathan that transformed naval warfare overnight. Armed with ten 12-inch guns (compared to the four carried by traditional pre-dreadnoughts) and powered by revolutionary Parsons steam turbines capable of twenty-one knots, *Dreadnought* was faster and boasted two and a half times the broadside firepower of any ship afloat.<br><br><span class="para-ref">[2.2]</span> Yet Fisher’s masterpiece was a dangerous double-edged sword. By rendering every existing battleship instantly obsolete, *Dreadnought* wiped out Britain’s enormous numerical advantage in pre-dreadnought battleships. The naval race was effectively reset to zero: Germany could now compete on equal terms by building its own dreadnoughts. Tirpitz immediately widened the Kiel Canal at immense expense and laid down the *Nassau*-class dreadnoughts. The arms race became an industrial sprint.',
+          source: {
+            letter: 'A',
+            title: 'Source A (Satirical Record): Puck Magazine: "The Armaments Race" (1909)',
+            image: '/units/great_war/assets/map_lesson3.png',
+            caption:
+              'Contemporary chart and cartoon illustrating the escalating dreadnought battleship building race between the Royal Navy and the Imperial German Navy between 1906 and 1914.',
+            citation: 'Puck Magazine (New York), Vol. 65, No. 1678 (April 1909).',
+            context:
+              'When Britain launched HMS Dreadnought in 1906, it rendered all earlier warships obsolete. Both Britain and Germany poured immense national fortunes into building rival fleets of dreadnoughts.',
+            hinge_question:
+              'How does this illustration demonstrate the economic futility and mounting paranoia of the Anglo-German naval arms race?',
+          },
         },
         {
           act: 3,
           title:
             'Act 3: Forensic Archival Evidence (Fisher’s Memorandum & The Public Panic of 1909)',
           text: '<span class="para-ref">[3.1]</span> In his confidential 1906 policy memorandum (Source A), Fisher outlined his ruthless doctrine of deterrent power: <em>"Speed is armor. Hit first, hit hard, and keep on hitting... If Germany builds one, we must build two."</em> Fisher even privately proposed to King Edward VII that the Royal Navy should "Copenhagan" the German fleet—launching a surprise pre-emptive strike to annihilate the German ships in their harbors before they could be completed. While British politicians rejected unprovoked war, the Admiralty escalated construction to astronomical levels.<br><br><span class="para-ref">[3.2]</span> By 1909, false rumors that Germany was secretly accelerating construction provoked widespread public panic in Great Britain. Supported by the Conservative opposition and the powerful Navy League, British citizens marched in the streets chanting the famous jingle: <strong>"We want eight and we won’t wait!"</strong>—demanding eight new dreadnoughts in a single budgetary year. Satirical publications (Source B) depicted Britain and Germany as crazed gamblers pouring their national wealth into steel furnaces, crippling domestic social reform programs to fund floating dreadnought fortresses.',
+          source: {
+            letter: 'B',
+            title:
+              'Source B (Written Archival Record): Admiral Sir John Fisher: Confidential Admiralty Memorandum (1906)',
+            text: '“My principles are: Speed is armor. Hit first, hit hard, and keep on hitting. The British Empire floats upon the British Navy. An island people, dependent upon foreign food supplies, must maintain supreme command of the seas or starve. If Germany acquires a fleet capable of defeating our Channel Fleet, our empire dissolves and Britain ceases to exist as a Great Power.”',
+            citation: 'First Sea Lord Secret Policy Papers, Board of Admiralty Records (1906).',
+            context:
+              'In this confidential 1906 policy memorandum, Admiral Sir John Fisher explained why Britain could never compromise on naval supremacy.',
+            hinge_question:
+              'Why did Admiral Fisher’s technological revolution accidentally give Imperial Germany an opportunity to catch up with the Royal Navy?',
+          },
         },
         {
           act: 4,
@@ -1533,40 +1518,24 @@ const great_war = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: The Armed Camps: Central Powers vs Triple Entente (1914)',
-          src: '/public/great_war/assets/map_lesson4.png',
-          caption:
-            'Geopolitical map showing the division of Europe into two opposing armed alliances: the Central Powers surrounded by the Triple Entente.',
-          shelfmark: 'War Office Intelligence Department (Shelfmark: WO-ID-EUR1914)',
-          citation: 'Historical Atlas of Modern Europe • British General Staff (1914).',
-          context:
-            'By 1914, Europe was split into two hostile armed camps: the Central Powers (Germany and Austria-Hungary) surrounded on both sides by the Triple Entente (Britain, France, and Russia). **Hinge Question:** Why did the geopolitical encirclement of Germany make German military generals panic and favor preventative war?',
-          hinge_question:
-            'Why did the geopolitical encirclement of Germany make German military generals panic and favor preventative war?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: The Schlieffen Plan: The German Great General Staff Offensive',
-          src: '/public/great_war/assets/schlieffen_plan_simple_map.png',
-          caption:
-            'Military operational map illustrating Count Alfred von Schlieffen’s 1905 strategy to rapidly defeat France through neutral Belgium before pivoting to face Russia.',
-          shelfmark:
-            'Imperial German General Staff Archives, Potsdam (Militärarchiv BA-MA RH 61/v. 92)',
-          citation: 'Großer Generalstab • Operationsabteilung (Potsdam, 1905).',
-          context:
-            'Devised in 1905, the plan aimed to avoid a two-front war by invading through neutral Belgium to encircle and crush the French army in 39 days before turning to face slowly mobilizing Russia. **Hinge Question:** How did the rigid railway timetables of the Schlieffen Plan make diplomatic compromise impossible in August 1914?',
-          hinge_question:
-            'How did the rigid railway timetables of the Schlieffen Plan make diplomatic compromise impossible in August 1914?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: Context & Catalyst (Bismarck’s Web & The Reinsurance Lapse)',
           text: '<span class="para-ref">[1.1]</span> Following the unification of Germany in 1871, Chancellor Otto von Bismarck lived in terror of *la revanche*—the prospect of France forging a military alliance with another Great Power to wage a two-front war of retribution. To prevent this encirclement, Bismarck spun an intricate diplomatic web. In 1879, Germany concluded the <strong>Dual Alliance</strong> with Austria-Hungary, pledging mutual defence against any Russian attack. In 1882, this pact expanded into the <strong>Triple Alliance</strong> when Italy joined, motivated by colonial grievances against France. Crucially, Bismarck maintained a secret <strong>Reinsurance Treaty</strong> with Tsarist Russia in 1887, ensuring that as long as Bismarck was Chancellor, St. Petersburg and Berlin remained tied together, leaving France completely isolated.<br><br><span class="para-ref">[1.2]</span> However, when Kaiser Wilhelm II dismissed Bismarck in 1890, the young emperor recklessly dismantled this delicate diplomatic machinery. Viewing the secret treaty with Russia as overly complicated and conflicting with Germany’s Austrian alliance, Wilhelm allowed the Reinsurance Treaty to lapse. St. Petersburg felt betrayed and vulnerable. Despite their profound ideological differences—revolutionary republican France and reactionary, autocratic Tsarist Russia—the two isolated powers recognized their shared peril. In 1894, they concluded the formal <strong>Franco-Russian Military Alliance</strong>. Bismarck’s ultimate nightmare had become reality: Germany was encircled by hostile powers on its eastern and western frontiers.',
+          source: {
+            letter: 'A',
+            title:
+              'Source A (Geopolitical Record): The Armed Camps: Central Powers vs Triple Entente (1914)',
+            image: '/units/great_war/assets/map_lesson4.png',
+            caption:
+              'Geopolitical map showing the division of Europe into two opposing alliance blocs: the Triple Entente and the Central Powers.',
+            citation: 'Historical Atlas of Modern Europe (1914).',
+            context:
+              'By 1914, Europe was split into two hostile armed camps bound together by mutual defense treaties, ensuring that a localized border dispute would instantly pull every Great Power into total war.',
+            hinge_question:
+              'Why did the geopolitical encirclement of Germany make German military generals panic and favor preventative war?',
+          },
         },
         {
           act: 2,
@@ -1577,6 +1546,19 @@ const great_war = {
           act: 3,
           title: 'Act 3: Forensic Archival Evidence (Encirclement & The Schlieffen Plan)',
           text: '<span class="para-ref">[3.1]</span> Forensic military maps (Source A) expose the terrifying geopolitical trap confronting Imperial Germany. Sandwiched between the massive, modernizing peasant army of the Russian Empire (1.4 million men under arms) and the heavily fortified frontier of France (800,000 men), German military planners concluded that time was running out. German Chief of the General Staff, Helmuth von Moltke (the Younger), warned the Kaiser in 1912: <em>"War is inevitable, and the sooner the better."</em> German planners feared that once Russian railways across Poland were completed in 1917, the Tsarist steamroller could mobilize in days, rendering Germany completely indefensible.<br><br><span class="para-ref">[3.2]</span> To escape this strategic cage, the German General Staff staked its survival upon the <strong>Schlieffen Plan</strong> (Source B), drafted in 1905 by Count Alfred von Schlieffen. Assuming that Russia’s vast distances and primitive infrastructure would require six weeks (forty-two days) to mobilize its forces, Germany would deploy ninety percent of its army in a massive right-wing sweep through neutral Belgium and northern France. Encircling Paris from the west within thirty-nine days, the German army would crush French resistance before wheeling east via specialized railways to confront the slowly mobilizing Russian giant. Crucially, the Schlieffen Plan was entirely dependent on rigid, unalterable railway timetables: once the mobilization button was pushed, diplomacy had to stop.',
+          source: {
+            letter: 'B',
+            title:
+              'Source B (Military Strategy Record): The Alliance Network & The Schlieffen Plan',
+            image: '/units/great_war/assets/alliance_system.svg',
+            caption:
+              'Diagram illustrating how interlocking treaty obligations and rigid military mobilization timetables escalated a regional crisis into continental war.',
+            citation: 'Department Military Studies Collection.',
+            context:
+              'Terrified of fighting Russia and France simultaneously, the German General Staff created the Schlieffen Plan: a rigid, 39-day mobilization timetable requiring an immediate invasion of neutral Belgium.',
+            hinge_question:
+              'How did the rigid railway timetables of the Schlieffen Plan make diplomatic compromise impossible in August 1914?',
+          },
         },
         {
           act: 4,
@@ -1902,50 +1884,56 @@ const great_war = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Sarajevo Police Map: Appel Quay & Franz Josef Street (28 June 1914)',
-          src: '/public/great_war/assets/map_sarajevo_route.jpg',
-          caption:
-            'Police forensic sketch showing the fatal wrong turn taken by Archduke Franz Ferdinand’s motorcade onto Franz Josef Street, where the car stalled in front of Gavrilo Princip.',
-          shelfmark:
-            'Sarajevo Police Directorate Forensic Archives (Shelfmark: SPD-CRIME-1914-0628)',
-          citation: 'State Archive of Bosnia and Herzegovina • Legal Directorate Records.',
-          context:
-            'Police sketch showing the fatal wrong turn taken by Archduke Franz Ferdinand’s motorcade onto Franz Josef Street, where the car stalled directly in front of nineteen-year-old Gavrilo Princip. **Hinge Question:** How does this route map illustrate the role of pure chance versus meticulous planning in the assassination?',
-          hinge_question:
-            'How does this route map illustrate the role of pure chance versus meticulous planning in the assassination?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: The Secret Constitution & Blood Oath of the "Black Hand" (1911)',
-          text: '“Article 1: This organization is created for the purpose of realizing the national ideal: the union of all Serbs... Article 2: This organization prefers terrorist action to ideological propaganda. It must therefore remain absolutely secret from the non-initiated.<br><br><strong>The Sacred Oath:</strong> ‘I, in joining the organization Union or Death, do swear by the sun that warms me, by the earth that nourishes me, before God, by the blood of my ancestors, on my honor and life, that from this moment until my death I will faithfully serve this organization, and that I will be prepared to endure all sacrifices for it. If I break this oath, let God and my comrades judge me.’”',
-          caption:
-            'Extracts from the founding constitution and sacred initiation oath of the clandestine Serbian terrorist society "Union or Death" (The Black Hand), Belgrade, 1911.',
-          shelfmark: 'Military Intelligence Archive, Belgrade (Doc. No. 1911-BH)',
-          citation: 'State Archives of Serbia • Royal Serbian Army Records (1911).',
-          context:
-            'Founded in Belgrade in 1911 by Serbian military intelligence officer Dragutin Dimitrijević (‘Apis’), the Black Hand trained and armed Gavrilo Princip and his fellow conspirators with Belgian FN Browning semi-automatic pistols and cyanide capsules. **Hinge Question:** Does the Black Hand constitution prove that Princip was a lone nationalist fanatic or the agent of a state-backed conspiracy?',
-          hinge_question:
-            'Does the Black Hand constitution prove that Princip was a lone nationalist fanatic or the agent of a state-backed conspiracy?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: Context & Catalyst (The Balkan Powder Keg & The Black Hand)',
           text: '<span class="para-ref">[1.1]</span> In the early twentieth century, southeastern Europe was universally recognized as the <strong>Powder Keg of Europe</strong>. As the Ottoman Empire ("The Sick Man of Europe") steadily retreated from the Balkan peninsula, rival nationalist passions and Great Power ambitions filled the vacuum. The Kingdom of Serbia, backed by Tsarist Russia under the banner of Pan-Slavism, dreamed of liberating all South Slavs from foreign imperial rule to create a united "Yugoslavia". Standing directly in the path of this ambition was the multinational Austro-Hungarian Empire, which ruled over millions of discontented Croats, Slovenes, and Bosnians. Vienna viewed Serbian nationalism as an existential cancer that threatened to tear its fragile empire apart.<br><br><span class="para-ref">[1.2]</span> In 1911, radical Serbian officers founded a clandestine terrorist society named <em>Ujedinjenje ili Smrt</em> ("Union or Death"), popularly known as the <strong>Black Hand</strong> (Source B). Commanded by the head of Serbian Military Intelligence, Colonel Dragutin Dimitrijević (code-named "Apis"), the organization operated secret training camps, smuggled weapons, and coordinated assassinations. When it was announced that <strong>Archduke Franz Ferdinand</strong>, heir to the Austro-Hungarian throne, would inspect military maneuvers in Sarajevo, Bosnia, in June 1914, Apis recognized a supreme target. The Archduke was a moderate reformer who advocated granting Slavs equal political status inside the Austro-Hungarian Empire—a reform Serbian extremists terrified would satisfy Bosnian Slavs and destroy dreams of a Greater Serbia.',
+          source: {
+            letter: 'A',
+            title: 'Source A (Cartographic Record): The Balkan Powder Keg (1914)',
+            image: '/units/great_war/assets/balkans_1914_simple_map.png',
+            caption:
+              'Map showing the competing ethnic, imperial, and territorial rivalries in the Balkan Peninsula before the outbreak of war.',
+            citation: 'Balkan Historical Archive.',
+            context:
+              'Known as the "powder keg of Europe," the Balkans was a volatile region where the declining Ottoman Empire, expansionist Austria-Hungary, and Slavic Serbia backed by Russia clashed continuously.',
+            hinge_question:
+              'Why was the Balkans more dangerous to European peace than imperial rivalries in Africa or Asia?',
+          },
         },
         {
           act: 2,
           title: 'Act 2: Escalation & Conflict (The Fatal Wrong Turn at Sarajevo)',
-          text: '<span class="para-ref">[2.1]</span> On Sunday, 28 June 1914—the sacred anniversary of the 1389 Battle of Kosovo, a day of intense Serbian national mourning and defiance—Archduke Franz Ferdinand and his pregnant wife Sophie arrived in Sarajevo. Security was extraordinarily lax: the local governor had refused to deploy regular troops along the route, leaving the royal couple in an open-topped Graf & Stift cabriolet protected by only a handful of police officers. Six teenage Bosnian Serb conspirators, armed by the Black Hand with Belgian semi-automatic pistols, hand bombs, and cyanide capsules, stationed themselves along the Appel Quay boulevard bordering the Miljacka River.<br><br><span class="para-ref">[2.2]</span> The initial assassination attempt was a fiasco. Conspirator Nedeljko Čabrinović threw a bomb that bounced off the folded roof of the royal car and exploded beneath the vehicle behind, wounding twenty bystanders. The Archduke drove on to the Town Hall, furiously rebuking the mayor: <em>"So this is how you welcome your guests—with bombs!"</em> After the reception, the Archduke decided to visit the wounded officers in the hospital. However, his drivers were never informed of the altered route. Turning off Appel Quay onto Franz Josef Street (Source A), the lead car realized its mistake and stopped. The royal driver applied the brakes and attempted to reverse, stalling the open cabriolet directly outside Schiller’s Delicatessen—barely five feet from nineteen-year-old <strong>Gavrilo Princip</strong>. Princip drew his pistol and fired two shots at point-blank range, fatally severing the Archduke’s jugular vein and striking Sophie in the abdomen.',
+          text: '<span class="para-ref">[2.1]</span> On Sunday, 28 June 1914—the sacred anniversary of the 1389 Battle of Kosovo, a day of intense Serbian national mourning and defiance—Archduke Franz Ferdinand and his pregnant wife Sophie arrived in Sarajevo. Security was extraordinarily lax: the local governor had refused to deploy regular troops along the route, leaving the royal couple in an open-topped Graf & Stift cabriolet protected by only a handful of police officers. Six teenage Bosnian Serb conspirators, armed by the Black Hand with Belgian semi-automatic pistols, hand bombs, and cyanide capsules, stationed themselves along the Appel Quay boulevard bordering the Miljacka River.<br><br><span class="para-ref">[2.2]</span> The initial assassination attempt was a fiasco. Conspirator Nedeljko Čabrinović threw a bomb that bounced off the folded roof of the royal car and exploded beneath the vehicle behind, wounding twenty bystanders. The Archduke drove on to the Town Hall, furiously rebuking the mayor: <em>"So this is how you welcome your guests—with bombs!"</em> After the reception, the Archduke decided to visit the wounded officers in the hospital. However, his drivers were never informed of the altered route. Turning off Appel Quay onto Franz Josef Street (Source A), the lead car realized its mistake and stopped. The royal driver applied the brakes and attempted to reverse, stalling the open cabriolet directly outside Schiller’s Delicatessen (<span class="archival-meta-tag">Source B</span>)—barely five feet from nineteen-year-old <strong>Gavrilo Princip</strong>. Princip drew his pistol and fired two shots at point-blank range, fatally severing the Archduke’s jugular vein and striking Sophie in the abdomen.',
+          source: {
+            letter: 'B',
+            title: 'Source B (Forensic Police Map): Appel Quay & Franz Josef Street (28 June 1914)',
+            image: '/units/great_war/assets/map_sarajevo_route.jpg',
+            caption:
+              'Forensic street map of Sarajevo showing the motorcade route along the Appel Quay, the site of the failed grenade attack, and the fatal wrong turn outside Schiller’s Delicatessen.',
+            citation: 'State Archive of Bosnia and Herzegovina.',
+            context:
+              'After a failed bomb attack earlier in the morning, Archduke Franz Ferdinand’s motorcade took an unplanned route. The chauffeur made an accidental wrong turn, stalling the car directly in front of Gavrilo Princip.',
+            hinge_question:
+              'How does this route map illustrate the role of pure chance versus meticulous planning in the assassination?',
+          },
         },
         {
           act: 3,
           title: 'Act 3: Forensic Archival Evidence (The Blank Cheque & The Dominoes Fall)',
           text: '<span class="para-ref">[3.1]</span> While the world mourned a royal tragedy, hawks in Vienna saw a golden opportunity to crush Serbia once and for all. However, terrified that attacking Serbia would provoke Tsarist Russia into war, Austria sought guarantees from Berlin. On 5 July 1914, Kaiser Wilhelm II issued the fateful <strong>Blank Cheque</strong>: Germany promised unconditional military backing to Austria-Hungary, urging Vienna to act swiftly while world sympathy remained on its side. Emboldened by this ironclad German pledge, Austria delivered a deliberately unacceptable ten-point <strong>Ultimatum</strong> to Serbia on 23 July, giving Belgrade just forty-eight hours to accept. Despite Serbia accepting eight of the ten demands, Austria severed diplomatic relations and declared war on Serbia on 28 July 1914, bombarding Belgrade across the Danube.<br><br><span class="para-ref">[3.2]</span> The declaration triggered the fatal domino effect of European mobilization timetables. Russia, determined never to repeat the humiliation of the 1908 Bosnian Crisis, ordered general mobilization on 30 July to defend Serbia. In Berlin, German military planners panicked: under the Schlieffen Plan, every hour Russia mobilized without German action brought disaster. Germany issued an ultimatum demanding Russia demobilize within twelve hours; when St. Petersburg refused, Germany declared war on Russia on 1 August and on France on 3 August. When German troops stormed into neutral Belgium on 4 August to enact the Schlieffen Plan, Great Britain honored the 1839 Treaty of London and declared war on Germany. Within thirty days of madness, the assassination of one man had plunged seventy million soldiers into world war.',
+          source: {
+            letter: 'C',
+            title:
+              'Source C (Primary Archival Document): The Secret Constitution & Blood Oath of the "Black Hand" (1911)',
+            text: '“Article 1: This organization is created for the purpose of realizing the national ideal: the unification of all Serbs. Article 2: This organization prefers revolutionary struggle to cultural and diplomatic work. It shall therefore remain entirely secret from the official authorities. Article 33: Members must swear an unconditional oath: to carry to the grave all secrets of this organization, knowing that treason is punishable by immediate death.”',
+            citation: 'State Archives of Serbia, Royal Serbian Army Records (1911).',
+            context:
+              'Formed by Serbian army officers, the Black Hand trained Gavrilo Princip and supplied the Browning semi-automatic pistols and cyanide capsules used in the Sarajevo plot.',
+            hinge_question:
+              'Does the Black Hand constitution prove that Princip was a lone nationalist fanatic or the agent of a state-backed conspiracy?',
+          },
         },
         {
           act: 4,
@@ -2190,4 +2178,3 @@ const great_war = {
 };
 
 export default great_war;
-if (typeof module !== 'undefined') module.exports = great_war;
