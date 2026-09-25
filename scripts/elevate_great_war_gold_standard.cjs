@@ -275,6 +275,7 @@ const TASK_4_ENQUIRIES = [
   // Lesson 0
   {
     type: 'extended_writing',
+    topic: 'Task 4: Analytical Synthesis & Historical Essay',
     question:
       'Explain how Otto von Bismarck used "blood and iron" and diplomatic calculation to forge the German Empire in 1871.',
     hints: [
@@ -289,6 +290,7 @@ const TASK_4_ENQUIRIES = [
   // Lesson 1
   {
     type: 'extended_writing',
+    topic: 'Task 4: Analytical Synthesis & Historical Essay',
     question:
       'Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.',
     hints: [
@@ -303,6 +305,7 @@ const TASK_4_ENQUIRIES = [
   // Lesson 2
   {
     type: 'extended_writing',
+    topic: 'Task 4: Analytical Synthesis & Historical Essay',
     question:
       'Explain how Kaiser Wilhelm II’s policy of Weltpolitik and the Moroccan Crises drove Britain and France into a united diplomatic alliance against Germany.',
     hints: [
@@ -317,6 +320,7 @@ const TASK_4_ENQUIRIES = [
   // Lesson 3
   {
     type: 'extended_writing',
+    topic: 'Task 4: Analytical Synthesis & Historical Essay',
     question:
       'Explain why the Anglo-German naval arms race destroyed diplomatic trust between Great Britain and Germany between 1898 and 1914.',
     hints: [
@@ -331,6 +335,7 @@ const TASK_4_ENQUIRIES = [
   // Lesson 4
   {
     type: 'extended_writing',
+    topic: 'Task 4: Analytical Synthesis & Historical Essay',
     question:
       'Explain how the division of Europe into the Triple Alliance and Triple Entente transformed minor regional disputes into a continental crisis.',
     hints: [
@@ -345,6 +350,7 @@ const TASK_4_ENQUIRIES = [
   // Lesson 5
   {
     type: 'extended_writing',
+    topic: 'Task 4: Analytical Synthesis & Historical Essay',
     question:
       'Explain why the assassination of Archduke Franz Ferdinand in Sarajevo led directly to the outbreak of the First World War in August 1914.',
     hints: [

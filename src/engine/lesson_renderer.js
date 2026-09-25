@@ -2664,7 +2664,7 @@ export function renderLesson(lesson) {
       htmlNarrative += `
         <div class="historical-hook-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-left: 4px solid #0284c7; border-radius: 8px; padding: 20px 24px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: #0369a1; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">
-            <i class="fa-solid fa-compass" style="color: #0284c7;"></i> The Historical Hook &bull; Enquiry Prologue
+            <i class="fa-solid fa-compass" style="color: #0284c7;"></i> The Historical Setting
           </div>
           <p style="margin: 0; font-size: 1.08rem; line-height: 1.7; color: #1e293b; font-style: italic; font-family: 'Georgia', serif;">
             "${prologueText}"
@@ -3222,12 +3222,24 @@ export function renderLesson(lesson) {
       }
 
       let themeHeadingHtml = '';
-      if (block.theme_heading) {
-        const headingId = block.theme_heading
+      const rawHeading = block.theme_heading || block.title;
+      if (rawHeading) {
+        let displayHeading = rawHeading;
+        const bracketMatch = rawHeading.match(/\(([^)]+)\)/);
+        if (bracketMatch) {
+          // Extract clean historical title from brackets (e.g. "The Spanish Vacancy & Bismarck's Pencil")
+          displayHeading = bracketMatch[1].trim();
+        } else {
+          // If no brackets, strip internal curriculum "Act X: ..." prefix
+          displayHeading = displayHeading
+            .replace(/^Act\s*\d+\s*:\s*[^:\-–—]+[:\-–—]\s*/i, '')
+            .trim();
+        }
+        const headingId = displayHeading
           .toLowerCase()
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/(^-|-$)/g, '');
-        themeHeadingHtml = `<h4 id="${headingId}" style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${block.theme_heading}</h4><br/>`;
+        themeHeadingHtml = `<h4 id="${headingId}" style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${displayHeading}</h4><br/>`;
       }
 
       let imageHtml = '';
@@ -4589,7 +4601,16 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'two_sided_argument') {
-            const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+            const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
+            const isKs3 =
+              window.currentUnitId === 'early_modern_world' ||
+              window.currentUnitId === 'water_and_sanitation' ||
+              window.currentUnitId === 'great_war' ||
+              window.currentUnitId === 'great_war_part2' ||
+              window.currentUnitId === 'medieval_england' ||
+              window.currentUnitId === 'industrialisation_and_empire' ||
+              (typeof unit !== 'undefined' && unit && unit.is_ks3);
+            const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
             const adv = task.advancement || {};
             const lim = task.limitations || {};
             const advTitle = adv.title || 'Advancement & Progress (Change)';
@@ -4601,7 +4622,7 @@ export function renderLesson(lesson) {
             const synthesisPrompt =
               task.synthesis_prompt ||
               task.question ||
-              'Write a balanced GCSE exam paragraph evaluating both sides.';
+              'Write a balanced analytical paragraph evaluating both sides.';
             const connectives = task.synthesis_connectives || [
               'On the one hand...',
               'For example...',
@@ -4610,12 +4631,21 @@ export function renderLesson(lesson) {
               'Overall, while...',
             ];
             const modelAnswer = task.model_answer || task.model || '';
+            const targetBadge = isKs3
+              ? `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bridge" style="color: #5eead4;"></i> Planning Bridge &bull; Evidence Extraction</span>`
+              : `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>`;
+            const synthesisTitle = isKs3
+              ? `<i class="fa-solid fa-pen-nib"></i> Paragraph Builder &bull; Evaluative Synthesis`
+              : `<i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis`;
+            const placeholderText = isKs3
+              ? 'Combine the evidence and counter-evidence above to write your complex, balanced analytical paragraph...'
+              : 'Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph...';
 
             htmlTasks += `
               <div class="task-box two-sided-argument-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f766e; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 10px;">
                   <h4 style="margin: 0; color: #0f766e; font-size: 1.15rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
-                  <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>
+                  ${targetBadge}
                 </div>
                 ${task.question ? `<div style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.5; padding: 10px 14px; background: #f0fdf4; border-left: 4px solid #0f766e; border-radius: 0 6px 6px 0;"><strong>Question:</strong> ${task.question}</div>` : ''}
                 ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
@@ -4644,10 +4674,10 @@ export function renderLesson(lesson) {
                   </div>
                 </div>
 
-                <!-- Synthesis: GCSE Paragraph Builder -->
+                <!-- Synthesis: Paragraph Builder -->
                 <div style="background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 8px; padding: 14px;">
                   <h5 style="margin: 0 0 8px 0; color: #92400e; font-size: 1rem; display: flex; align-items: center; gap: 6px;">
-                    <i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis
+                    ${synthesisTitle}
                   </h5>
                   <p style="font-size: 0.92rem; color: #78350f; font-weight: 600; margin: 0 0 10px 0;">${synthesisPrompt}</p>
                   
@@ -4656,7 +4686,7 @@ export function renderLesson(lesson) {
                     ${connectives.map((c) => `<button type="button" class="connective-chip" data-connective="${c.replace(/"/g, '&quot;')}" style="background: #ffffff; border: 1px solid #fde68a; color: #b45309; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;" title="Click to insert at cursor">${c}</button>`).join('')}
                   </div>
 
-                  <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.92rem; font-family: inherit; resize: vertical;" placeholder="Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph..."></textarea>
+                  <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.92rem; font-family: inherit; resize: vertical;" placeholder="${placeholderText}"></textarea>
 
                   ${
                     modelAnswer
@@ -4664,6 +4694,143 @@ export function renderLesson(lesson) {
                     <details class="model-paragraph-reveal" style="margin-top: 12px; border: 1px dashed #d97706; border-radius: 6px; padding: 8px 12px; background: #fffbeb;">
                       <summary style="cursor: pointer; color: #b45309; font-weight: 700; font-size: 0.88rem; outline: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Paragraph ]</summary>
                       <div class="scaffold-box model-box" style="margin-top: 10px; padding: 12px 15px; background: #ffffff; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.92rem; color: #78350f; line-height: 1.6; border: 1px solid #fde68a;">
+                        ${modelAnswer}
+                      </div>
+                    </details>
+                  `
+                      : ''
+                  }
+                </div>
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'extended_writing') {
+            const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
+            const isKs3 =
+              window.currentUnitId === 'early_modern_world' ||
+              window.currentUnitId === 'water_and_sanitation' ||
+              window.currentUnitId === 'great_war' ||
+              window.currentUnitId === 'great_war_part2' ||
+              window.currentUnitId === 'medieval_england' ||
+              window.currentUnitId === 'industrialisation_and_empire' ||
+              (typeof unit !== 'undefined' && unit && unit.is_ks3);
+            const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
+            const taskTitle = task.topic || 'Task 4: Analytical Synthesis & Historical Essay';
+            const badgeText = isKs3
+              ? 'KS3 Enquiry Essay &bull; Disciplinary Synthesis'
+              : 'GCSE Analytical Masterclass';
+            const questionPrompt = task.question || task.text || task.prompt || '';
+            const hints = Array.isArray(task.hints) ? task.hints : [];
+            const modelAnswer = task.model_answer || task.model || '';
+            const essayConnectives = [
+              'On the one hand...',
+              'For example...',
+              'Consequently...',
+              'Furthermore...',
+              'In contrast...',
+              'As a result...',
+              'Ultimately...',
+            ];
+
+            let peelHtml = '';
+            if (hints.length > 0) {
+              const peelColors = [
+                { letter: 'P', label: 'Point', bg: '#eff6ff', border: '#93c5fd', text: '#1e40af' },
+                {
+                  letter: 'E',
+                  label: 'Evidence',
+                  bg: '#f0fdf4',
+                  border: '#86efac',
+                  text: '#166534',
+                },
+                {
+                  letter: 'E',
+                  label: 'Explanation',
+                  bg: '#fefce8',
+                  border: '#fde047',
+                  text: '#854d0e',
+                },
+                { letter: 'L', label: 'Link', bg: '#faf5ff', border: '#d8b4fe', text: '#6b21a8' },
+              ];
+              peelHtml = `
+                <div style="margin-bottom: 16px;">
+                  <div style="font-size: 0.85rem; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-layer-group" style="color: #0284c7;"></i> PEEL Analytical Scaffolding &bull; Sentence Stems
+                  </div>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
+                    ${hints
+                      .map((hint, hIdx) => {
+                        const cfg = peelColors[hIdx % peelColors.length];
+                        let cleanHint = hint;
+                        let label = cfg.label;
+                        const splitMatch = hint.match(
+                          /^(Point|Evidence|Explanation|Link):\s*(.*)/i,
+                        );
+                        if (splitMatch) {
+                          label = splitMatch[1];
+                          cleanHint = splitMatch[2];
+                        }
+                        return `
+                        <div style="background: ${cfg.bg}; border: 1.5px solid ${cfg.border}; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;">
+                          <div style="display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 0.82rem; color: ${cfg.text}; text-transform: uppercase;">
+                            <span style="background: ${cfg.text}; color: #ffffff; width: 18px; height: 18px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem;">${cfg.letter}</span>
+                            ${label}
+                          </div>
+                          <div style="font-size: 0.88rem; color: #1e293b; line-height: 1.45;">
+                            ${cleanHint}
+                          </div>
+                        </div>
+                      `;
+                      })
+                      .join('')}
+                  </div>
+                </div>
+              `;
+            }
+
+            htmlTasks += `
+              <div class="task-box extended-writing-task-card" style="margin-bottom: 25px; background: #ffffff; padding: 22px; border-radius: 10px; border: 2px solid #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 2px solid #e0f2fe; padding-bottom: 12px;">
+                  <h4 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-feather-pointed" style="color: #0284c7;"></i>
+                    <span>${qNumPrefix}${taskTitle}</span>
+                  </h4>
+                  <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-graduation-cap"></i> ${badgeText}
+                  </span>
+                </div>
+
+                ${
+                  questionPrompt
+                    ? `
+                  <div class="extended-writing-prompt" style="font-size: 1.08rem; font-weight: 700; color: #0f172a; margin-bottom: 16px; line-height: 1.5; background: #f0f9ff; padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
+                    <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #0284c7; margin-bottom: 4px; font-weight: 800;">Enquiry Question:</span>
+                    ${questionPrompt}
+                  </div>
+                `
+                    : ''
+                }
+
+                ${peelHtml}
+
+                <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 12px;">
+                  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0369a1; text-transform: uppercase;">Analytical Connectives (Click to Insert):</span>
+                    ${essayConnectives.map((c) => `<button type="button" class="connective-chip" data-connective="${c.replace(/"/g, '&quot;')}" style="background: #ffffff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;" title="Click to insert at cursor">${c}</button>`).join('')}
+                  </div>
+
+                  <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Student Response &bull; Structured Historical Argument:</label>
+                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 140px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="Using the PEEL structure and historical evidence above, write your analytical essay paragraph..." oninput="window.updateProgress()"></textarea>
+
+                  ${
+                    modelAnswer
+                      ? `
+                    <details class="model-paragraph-reveal" style="margin-top: 14px; border: 1px dashed #0284c7; border-radius: 8px; padding: 10px 14px; background: #ffffff;">
+                      <summary style="cursor: pointer; color: #0369a1; font-weight: 700; font-size: 0.9rem; outline: none; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Response ]
+                      </summary>
+                      <div class="scaffold-box model-box" style="margin-top: 12px; padding: 14px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 4px; font-size: 0.95rem; color: #1e293b; line-height: 1.65; border: 1px solid #e2e8f0; font-family: 'Georgia', serif;">
                         ${modelAnswer}
                       </div>
                     </details>
@@ -5327,17 +5494,14 @@ export function renderLesson(lesson) {
       htmlExamPractice +
       htmlVocabDeck +
       htmlExtended;
-  } else if (unitId === 'great_war') {
+  } else if (unitId === 'great_war' || unitId === 'great_war_part2') {
     html +=
       htmlDoNow +
       htmlNarrative +
       htmlPrimary +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
-      htmlVideo +
       htmlTasks +
-      htmlHistorian +
-      htmlPairShare +
-      htmlExamPractice +
+      htmlVideo +
       htmlVocabDeck +
       htmlExtended;
   } else {
