@@ -237,12 +237,31 @@
     }
     .archival-image {
       width: 100%;
-      max-height: 125px;
+      height: 100px;
       object-fit: contain;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 2px;
       margin-bottom: 3px;
       display: block;
-      background: #fafaf9;
+    }
+    .archival-source-box.expand-sm .archival-image {
+      height: 80px;
+    }
+    .archival-source-box.expand-md .archival-image {
+      height: 125px;
+    }
+    .archival-source-box.expand-lg .archival-image {
+      height: 145px;
+    }
+    .archival-source-box.panoramic-source {
+      column-span: all;
+      margin: 4px 0 5px 0;
+    }
+    .archival-source-box.panoramic-source .archival-image {
+      height: 115px;
+      width: 100%;
+      object-fit: contain;
     }
     .archival-body {
       font-size: 7.4pt;

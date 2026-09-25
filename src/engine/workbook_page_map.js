@@ -152,13 +152,13 @@ export const WORKBOOK_PAGE_MAP = {
   },
   early_modern_world: {
     lesson_1: {
-      page: 4,
+      page: 3,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 0,
     },
     lesson_2: {
-      page: 6,
+      page: 9,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 1,
@@ -170,36 +170,30 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 2,
     },
     lesson_4: {
-      page: 10,
+      page: 27,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 3,
     },
     lesson_5: {
-      page: 12,
-      booklet: 'Pupil Workbook',
-      unitId: 'early_modern_world',
-      lessonIndex: 4,
-    },
-    lesson_6: {
-      page: 14,
+      page: 33,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 5,
     },
-    lesson_7: {
-      page: 16,
+    lesson_6: {
+      page: 39,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 6,
     },
-    lesson_8: {
+    lesson_7: {
       page: 18,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 7,
     },
-    lesson_9: {
+    lesson_8: {
       page: 51,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
@@ -452,25 +446,25 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 1,
     },
     lesson_2: {
-      page: 14,
+      page: 13,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 2,
     },
     lesson_3: {
-      page: 20,
+      page: 18,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 3,
     },
     lesson_4: {
-      page: 26,
+      page: 23,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 4,
     },
     lesson_5: {
-      page: 33,
+      page: 29,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 5,
@@ -522,43 +516,43 @@ export const WORKBOOK_PAGE_MAP = {
   },
   industrialisation_and_empire: {
     lesson_1: {
-      page: 4,
+      page: 3,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 0,
     },
     lesson_2: {
-      page: 6,
+      page: 9,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 1,
     },
     lesson_3: {
-      page: 8,
+      page: 15,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 2,
     },
     lesson_4: {
-      page: 10,
+      page: 21,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 3,
     },
     lesson_5: {
-      page: 12,
+      page: 27,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 4,
     },
     lesson_6: {
-      page: 14,
+      page: 33,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 5,
     },
     lesson_7: {
-      page: 16,
+      page: 39,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 6,
@@ -571,56 +565,56 @@ export const WORKBOOK_PAGE_MAP = {
     },
   },
   medieval_england: {
-    lesson_1_hastings: {
-      page: 4,
+    lesson_1: {
+      page: 3,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 0,
     },
-    lesson_2_castles_terror_domesday: {
-      page: 6,
+    lesson_2: {
+      page: 9,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 1,
     },
-    lesson_3_crown_vs_church: {
-      page: 8,
+    lesson_3: {
+      page: 15,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 2,
     },
-    lesson_4_magna_carta: {
-      page: 10,
+    lesson_4: {
+      page: 21,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 3,
     },
-    lesson_5_doom_paintings_village: {
-      page: 12,
+    lesson_5: {
+      page: 27,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 4,
     },
-    lesson_6_black_death: {
-      page: 14,
+    lesson_6: {
+      page: 33,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 5,
     },
-    lesson_7_peasants_revolt: {
-      page: 16,
+    lesson_7: {
+      page: 39,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 6,
     },
-    lesson_8_wars_of_the_roses: {
-      page: 18,
+    lesson_8: {
+      page: 45,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 7,
     },
-    lesson_9_capstone_monarchy: {
-      page: 20,
+    lesson_9: {
+      page: 51,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 8,
