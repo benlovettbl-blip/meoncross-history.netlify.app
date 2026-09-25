@@ -337,6 +337,23 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
 
           ${renderConceptSpotlightBox(bank.conceptSpotlight)}
 
+          ${
+            bank.archivalOddity
+              ? `
+          <div class="archival-oddity-box">
+            <div class="aob-header">
+              <div class="aob-identity">
+                <span class="aob-badge">${bank.archivalOddity.badge || 'ARCHIVAL ODDITY & CURIOUS REALITY'}</span>
+                <span class="aob-date">${bank.archivalOddity.date || ''}</span>
+              </div>
+              <span class="aob-shelfmark">${bank.archivalOddity.shelfmark || ''}</span>
+            </div>
+            <h4 class="aob-title">${bank.archivalOddity.title || ''}</h4>
+            <div class="aob-body">${formatText(bank.archivalOddity.text || '')}</div>
+          </div>`
+              : ''
+          }
+
         </div>
 
         ${
@@ -411,8 +428,8 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       padding: 0;
       background: #e2e8f0;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.35pt;
-      line-height: 1.44;
+      font-size: 9.45pt;
+      line-height: 1.49;
       color: #1e293b;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -538,8 +555,8 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       background: #eff6ff;
       border-left: 3.5px solid #1e3a8a;
       border-bottom: 1px solid #bfdbfe;
-      padding: 1.5px 6px;
-      margin: 4px 0 3px 0;
+      padding: 2.5px 6px;
+      margin: 5px 0 3px 0;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -566,10 +583,13 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
 
     .narrative-p {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.4pt;
-      line-height: 1.34;
-      margin: 0 0 4px 0;
+      font-size: 9.45pt;
+      line-height: 1.49;
+      margin: 0 0 5px 0;
       color: #1e293b;
+      text-indent: 0.9em;
+    }
+    .narrative-p:first-of-type, .section-banner + .narrative-p {
       text-indent: 0;
     }
     .para-ref {
@@ -586,14 +606,66 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       letter-spacing: 0.02em;
     }
 
+    
+    /* Archival Oddity Box */
+    .archival-oddity-box {
+      background: #fdfaf6;
+      border: 1px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      border-radius: 3px;
+      padding: 5px 8px;
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+    .aob-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+      border-bottom: 1px solid #ffedd5;
+      padding-bottom: 1px;
+      font-family: 'Inter', sans-serif;
+    }
+    .aob-badge {
+      font-size: 5.6pt;
+      font-weight: 800;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .aob-date {
+      font-size: 5.4pt;
+      font-weight: 600;
+      color: #78716c;
+    }
+    .aob-shelfmark {
+      font-size: 5.2pt;
+      font-weight: 700;
+      color: #b45309;
+      text-transform: uppercase;
+    }
+    .aob-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #7c2d12;
+      margin: 1px 0;
+      line-height: 1.15;
+    }
+    .aob-body {
+      font-size: 7.0pt;
+      line-height: 1.26;
+      color: #1e293b;
+    }
+
     /* Primary Source Citation Box */
     .archival-source-box {
       background: #fdfaf6;
       border: 1.2px solid #fed7aa;
       border-left: 3.5px solid #b45309;
       border-radius: 3px;
-      padding: 4px 6px;
-      margin: 4px 0;
+      padding: 5px 7px;
+      margin: 5px 0;
       break-inside: avoid;
     }
     .archival-header {
@@ -642,7 +714,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .archival-image {
       width: 100%;
-      height: 70px;
+      max-height: 115px;
       object-fit: cover;
       border: 1px solid #d97706;
       border-radius: 2px;
@@ -710,8 +782,8 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #bfdbfe;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 4px 7px;
-      margin: 4px 0;
+      padding: 5px 8px;
+      margin: 5px 0;
       break-inside: avoid;
     }
     .kf-header {
@@ -793,8 +865,8 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       border-radius: 3px;
-      padding: 5px 7px;
-      margin: 4px 0;
+      padding: 5px 8px;
+      margin: 5px 0;
       break-inside: avoid;
     }
     .csb-header {
@@ -855,7 +927,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #cbd5e1;
       border-top: 2.5px solid #1e3a8a;
       border-radius: 2px;
-      padding: 4px 6px;
+      padding: 7px 10px;
       margin-top: 4px;
       flex-shrink: 0;
       font-family: 'Inter', sans-serif;
@@ -906,7 +978,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #cbd5e1;
       border-top: 2.5px solid #0f172a;
       border-radius: 2px;
-      padding: 4px 6px;
+      padding: 7px 10px;
       margin-top: 4px;
       flex-shrink: 0;
       font-family: 'Inter', sans-serif;

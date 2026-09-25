@@ -21,27 +21,84 @@ module.exports = function getEarlyModernData(helpers = {}) {
     imprint: 'The History Revision Hub • Verified Disciplinary Curriculum',
     syllabusTopics: [
       {
-        title: 'Topic 1: Global Horizons',
+        num: 1,
+        title: '1. True Global Power in 1450',
         bullets: [
-          '1450 World Balance: Ottoman Superpower & Ming Fleets',
-          'European Isolation & The Fall of Constantinople (1453)',
-          'Pre-Colonial Wealth: Mansa Musa & The Mali Empire',
+          'The Eurocentric myth: Ming Chinese industrial wealth & Zheng He’s fleets.',
+          'Ottoman imperial expansion & the traumatic fall of Constantinople in 1453.',
+          'Mansa Musa, the Mali gold trade & European geographic isolation.',
         ],
       },
       {
-        title: 'Topic 2: Faith & Revolution',
+        num: 2,
+        title: '2. Reformation & Ocean Conquest',
         bullets: [
-          'Martin Luther (1517) & The Protestant Reformation',
-          'Silver Mountains of Potosí & The Spanish Armada (1588)',
-          'The Gunpowder Plot (1605) & Anti-Catholic Penal Laws',
+          'Martin Luther (1517), papal corruption & the fracture of Christendom.',
+          'Treaty of Tordesillas & Spanish silver extraction at Potosí (1545).',
+          'Francis Drake, Elizabethan privateering & defeat of the Armada (1588).',
         ],
       },
       {
-        title: 'Topic 3: Sovereignty & Empire',
+        num: 3,
+        title: '3. Global Trade & First Encounters',
         bullets: [
-          'Charles I, Civil War & The Regicide of 1649',
-          'Glorious Revolution (1688) & The Bill of Rights',
-          'Transatlantic Slave Trade, Middle Passage & Resistance',
+          'The East India Company charter (1600) & Sir Thomas Roe at Mughal court.',
+          'Diplomacy & metallurgy in the Kingdom of Benin: Oba vs English merchants.',
+          'The fragile settlement of Jamestown (1607) & tobacco cash crops.',
+        ],
+      },
+      {
+        num: 4,
+        title: '4. Gunpowder, Treason & Plot (1605)',
+        bullets: [
+          'James I, Catholic persecution & the breach of promised toleration.',
+          'Robert Catesby, Guy Fawkes & the 36 barrels in the Lords undercroft.',
+          'The Monteagle Letter, Cecil’s spy network & harsh anti-Catholic penal laws.',
+        ],
+      },
+      {
+        num: 5,
+        title: '5. Civil War & Regicide (1649)',
+        bullets: [
+          'Charles I, the Divine Right of Kings, Ship Money & 11 Years Personal Rule.',
+          'The New Model Army, Oliver Cromwell & total defeat of Royalists at Naseby.',
+          'The High Court of Justice, trial of Charles I & public beheading in Whitehall.',
+        ],
+      },
+      {
+        num: 6,
+        title: '6. The Glorious Revolution of 1688',
+        bullets: [
+          'Cromwell’s Protectorate, the 1660 Restoration & Catholic succession panic.',
+          'The 1688 Dutch invasion of William of Orange & flight of James II.',
+          'The 1689 Bill of Rights, Constitutional Monarchy & Bank of England.',
+        ],
+      },
+      {
+        num: 7,
+        title: '7. The Transatlantic Slave Trade',
+        bullets: [
+          'The Triangular Trade: manufactured goods, captive labour & plantation sugar.',
+          'The Middle Passage: horrific mortality, branding & the slave ship Brookes.',
+          'Plantation capitalism: chattel slavery financing British banking & industry.',
+        ],
+      },
+      {
+        num: 8,
+        title: '8. Enslaved Resistance & Abolition',
+        bullets: [
+          'The spectrum of resistance: daily sabotage, work slowdowns & survival.',
+          'Armed rebellion: shipboard mutinies, Stono (1739) & Queen Nanny’s Maroons.',
+          'Olaudah Equiano’s autobiography & the crusade of Black abolitionists.',
+        ],
+      },
+      {
+        num: 9,
+        title: "9. How 'Modern' Was Britain by 1750?",
+        bullets: [
+          'The Scientific Revolution: Isaac Newton, Royal Society & empirical enquiry.',
+          'The Financial Revolution: joint-stock companies, Lloyd’s & Royal Exchange.',
+          'Class inequality, Gin Lane squalor & the synoptic verdict on early modernity.',
         ],
       },
     ],
@@ -80,6 +137,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">29 May 1453</span>
           </div>
           <div class="archival-title">Niccolò Barbaro: The Final Assault on Constantinople</div>
+          <img class="archival-image" src="${getBase64Image('/images/silk_road.jpg')}" alt="The Silk Road Trade Network">
           <div class="archival-body">
             "The blood flowed in the city like rainwater in the gutters after a sudden storm. The Turks spared no one, killing women, children, and old men without pity. Then their soldiers took down our banners and raised the standard of Sultan Mehmed upon the highest towers, crying out that the city of the Caesars was conquered."
           </div>
@@ -93,6 +151,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The Greased Warships of Galata Hill',
+        date: '22 April 1453',
+        shelfmark: 'KRITOBOULOS OF IMBROS • HISTORY OF MEHMED THE CONQUEROR',
+        text: 'When the Byzantine defenders blocked the Golden Horn harbor with an impenetrable iron boom chain, Sultan Mehmed II engineered an astonishing feat of logistical deception. In total secrecy overnight, thousands of Ottoman soldiers constructed a road of greased timber logs across the steep hills of Galata, stretching two and a half miles behind the Genoese quarter. Dragged by teams of oxen and hundreds of sweating soldiers with sails unfurled and trumpets blaring, seventy Ottoman warships were hauled up the ridge and rolled down into the inner harbor. At sunrise, the terrified defenders atop the walls of Constantinople looked down in utter disbelief to find an entire enemy fleet afloat inside their supposedly secure harbor.',
+      },
       bottomEnquiry: {
         q1: 'Why did the Ottoman capture of Constantinople in 1453 force European nations to look to the Atlantic Ocean?',
         q2: 'Explain why Ming China was far wealthier and more technologically advanced than any European state in 1450.',
@@ -132,6 +197,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">March 1579</span>
           </div>
           <div class="archival-title">The Log of the Golden Hind: Ambushing the Spanish Silver Ship</div>
+          <img class="archival-image" src="${getBase64Image('/images/spanish_armada_battle.jpg')}" alt="The Battle of Gravelines (1588)">
           <div class="archival-body">
             "We found in her great riches: eighty pounds weight of gold, twenty-six tons of uncoined silver bullion, thirteen chests of silver reals, and great store of pearls and precious stones. The captain of the vessel was astonished that an English ship could appear in the South Sea, where no heretic had ever dared to sail."
           </div>
@@ -145,6 +211,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The Unfinished Game of Bowls on Plymouth Hoe',
+        date: '19 July 1588',
+        shelfmark: 'WILLIAM CAMDEN • ANNALES RERUM ANGLICARUM (1615)',
+        text: 'On the afternoon of 19 July 1588, a breathless Scottish privateer captain dashed onto the bowling green at Plymouth Hoe, shouting that the Spanish Armada had been sighted off the Lizard. Panic rippled through the gathered English naval captains, who urged an immediate rush to the harbor. Vice-Admiral Sir Francis Drake casually held up his wooden bowling wood and famously retorted: "There is plenty of time to win this game, and to thrash the Spaniards too!" Drake’s swagger was not reckless bravado, but cool-headed maritime calculation: the ferocious incoming ebb tide pinned English warships inside Plymouth Sound until nightfall, meaning any panicked rush would have achieved nothing except chaos.',
+      },
       bottomEnquiry: {
         q1: 'How did the discovery of silver at Potosí transform Spain into Europe’s dominant military superpower?',
         q2: 'Explain why Queen Elizabeth I officially denied backing the Sea Dogs while privately funding their privateering voyages.',
@@ -164,7 +237,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Established royal monopolies over brass-casting guilds, creating the world-famous Benin Bronzes to celebrate ancestral kings.',
           'Negotiated the first diplomatic and commercial treaties with Portuguese merchants, strictly controlling European access to the interior.',
         ],
-        image: getBase64Image('/images/benin_bronzes.jpg'),
+        image: getBase64Image('/images/benin_bronze.jpg'),
       },
       conceptSpotlight: {
         tag: 'ARCHAEOLOGICAL REVALUATION',
@@ -184,6 +257,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">Published 1668</span>
           </div>
           <div class="archival-title">Olfert Dapper: Description of the Great City of Benin</div>
+          <img class="archival-image" src="${getBase64Image('/images/secoton.jpg')}" alt="Secotan Indigenous Coastal Town">
           <div class="archival-body">
             "The town seems very great. Entering it on horseback, I found a broad street, which was at least seven or eight times broader than the Warmoes street in Amsterdam. The houses stand in good order, one close to the other, like houses in Holland... The King’s palace occupies as much space as the town of Haarlem."
           </div>
@@ -197,6 +271,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The Emperor’s Ruby Cup & The English Coach',
+        date: '10 January 1616',
+        shelfmark: 'THE EMBASSY OF SIR THOMAS ROE • BRITISH LIBRARY ADD. MS 6115',
+        text: 'When King James I’s ambassador Sir Thomas Roe arrived at the glittering Mughal court of Emperor Jahangir in Ajmer, he carried an English carriage upholstered in crimson velvet as a royal gift. Jahangir was so captivated by the mechanical springs of the European carriage that he had it dismantled by court craftsmen to inspect every wheel, then paraded inside it surrounded by hundreds of war elephants. In return, Jahangir presented Roe with a drinking vessel carved from a single colossal ruby and guaranteed trading privileges at Surat. Yet Roe recorded in his journal with cool English mercantile calculation: "The Mughal looks upon us as mere peddlers; our success here will depend not on our swords, but on our cloth and silver."',
+      },
       bottomEnquiry: {
         q1: 'What evidence proves that early English trade with the Kingdom of Benin was conducted on terms of mutual equality?',
         q2: 'How did the East India Company transform from a humble commercial trading syndicate into a sovereign colonial ruler?',
@@ -236,6 +317,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">9 November 1605</span>
           </div>
           <div class="archival-title">The Torture Confession of Guido Fawkes</div>
+          <img class="archival-image" src="${getBase64Image('/images/monteagle_letter.jpeg')}" alt="The Monteagle Letter (November 1605)">
           <div class="archival-body">
             "He confesseth that he meant to have blown up the King, Queen, and Prince with the Nobility and Commons assembled in Parliament... And being demanded who supplied him with the thirty-six barrels of powder, he refused to utter any name, crying out upon God for mercy."
           </div>
@@ -249,6 +331,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The Agonized Signature: Guido Fawkes on the Rack',
+        date: '9 November 1605',
+        shelfmark: 'THE NATIONAL ARCHIVES, KEW • SP 14/216/87 (GUNPOWDER CONFESSIONS)',
+        text: 'Following his arrest beneath the House of Lords alongside thirty-six barrels of gunpowder, Guy Fawkes defiantly refused to reveal his co-conspirators, boasting that he intended "to blow the Scots back into Scotland." King James I issued personal written authorization for the Tower lieutenant to apply "the gentler tortures first, et sic per gradus ad ima tendatur" (proceeding step-by-step to the worst). Fawkes was strapped to the dreaded rack. When he finally broke after four days of systematic bone-stretching, he could barely lift a quill. His first confession was signed in a firm Latin script, "Guido". His final signature, preserved in the National Archives, is a heartbreaking, trembling scrawl that trails off into an illegible ink-scratch.',
+      },
       bottomEnquiry: {
         q1: 'Why were English Catholics so bitter about King James I’s failure to relax the Elizabethan penal laws?',
         q2: 'How did Robert Cecil’s spy network use the Gunpowder Plot to justify harsh new laws against all British Catholics?',
@@ -268,7 +357,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Attempted to arrest five Members of Parliament inside the House of Commons chamber in January 1642, igniting armed civil conflict.',
           'Stood trial in Westminster Hall in January 1649, refusing to recognize the authority of the court before being beheaded outside Whitehall.',
         ],
-        image: getBase64Image('/images/charles_i_execution.jpg'),
+        image: getBase64Image('/images/charles_first.jpg'),
       },
       conceptSpotlight: {
         tag: 'CONSTITUTIONAL DOCTRINE',
@@ -288,6 +377,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">29 January 1649</span>
           </div>
           <div class="archival-title">The Death Warrant of King Charles I</div>
+          <img class="archival-image" src="${getBase64Image('/images/charles_i_execution.jpg')}" alt="The Execution of King Charles I (January 1649)">
           <div class="archival-body">
             "Whereas Charles Stuart, King of England, is and standeth convicted, attainted and condemned of High Treason and other high Crimes... These are therefore to will and require you to see the said sentence executed in the open street before Whitehall, upon the morrow, being the thirtieth day of this instant month of January."
           </div>
@@ -301,6 +391,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The King’s Two Shirts: Defiance at the Whitehall Scaffold',
+        date: '30 January 1649',
+        shelfmark: 'MEMOIRS OF SIR THOMAS HERBERT • GROOM OF THE ROYAL BEDCHAMBER',
+        text: 'On the bitter, freezing morning of 30 January 1649, King Charles I prepared to walk out of the Banqueting House onto the public execution scaffold. His faithful attendant Sir Thomas Herbert handed him his clothes, but the King insisted on wearing two heavy linen shirts. Charles calmly explained: "The season is so sharp as probably may make me shake, which some observers will imagine proceeds from fear. I would have no such imputation. I fear not death; I have no cause to tremble." As the executioner’s axe fell and severed his neck, contemporary eyewitnesses recorded that a deep, collective groan arose from the thousands gathered in Whitehall—a sound unlike anything ever heard in England.',
+      },
       bottomEnquiry: {
         q1: 'Why did King Charles I’s belief in the Divine Right of Kings make compromise with Parliament impossible?',
         q2: 'How did the New Model Army’s discipline and religious zeal turn the tide of the Civil War at the Battle of Naseby?',
@@ -320,7 +417,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Led devastating military campaigns in Ireland and Scotland to crush royalist opposition, leaving a bitter historical legacy.',
           'Passed the Navigation Act of 1651, challenging Dutch naval power and initiating aggressive English mercantilist expansion.',
         ],
-        image: getBase64Image('/images/great_seal_1651.png'),
+        image: getBase64Image('/images/oliver_cromwell.jpg'),
       },
       conceptSpotlight: {
         tag: 'IMPERIAL MERCANTILISM',
@@ -340,6 +437,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">16 December 1689</span>
           </div>
           <div class="archival-title">The Bill of Rights: Restraining the Sovereign Power</div>
+          <img class="archival-image" src="${getBase64Image('/images/royal_exchange.jpg')}" alt="The Royal Exchange London">
           <div class="archival-body">
             "That the pretended power of suspending of laws or the execution of laws by regall authority without consent of Parlyament is illegall... That levying money for or to the use of the Crowne by pretence of prerogative without grant of Parlyament is illegall... That the raising or keeping a standing army within the kingdome in time of peace unless it be with consent of Parlyament is against law."
           </div>
@@ -353,6 +451,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The Wine-Flowing Conduits of Cheapside',
+        date: '11 April 1689',
+        shelfmark: 'CORPORATION OF LONDON RECORDS OFFICE • CORONATION ACCOUNTS 1689',
+        text: 'To celebrate the joint coronation of William of Orange and Mary II following the bloodless flight of Catholic James II, the City of London transformed its municipal plumbing into an engine of public revelry. The Great Conduit in Cheapside and the Little Conduit in Fleet Street were shut off from the city’s freshwater springs and hooked directly to subterranean cisterns of claret and canary sack wine. For twelve continuous hours, thousands of apprentices, soldiers, and citizens filled tankards, bowls, and leather boots directly from the municipal bronze taps with free red wine. The jubilant London mob was placated with alcohol while Parliament quietly enacted the Bill of Rights, establishing the supremacy of law over royal power.',
+      },
       bottomEnquiry: {
         q1: 'How did the Navigation Act of 1651 challenge Dutch maritime supremacy and expand English naval power?',
         q2: 'Explain why the Glorious Revolution of 1688 is regarded as a decisive turning point in British constitutional history.',
@@ -372,7 +477,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Testified extensively before a parliamentary committee led by William Wilberforce, providing incontrovertible medical proof of abuse.',
           'Appointed commercial agent to the newly established Sierra Leone colony for freed enslaved people in West Africa.',
         ],
-        image: getBase64Image('/images/brookes_ship.jpg'),
+        image: getBase64Image('/images/thomas_clarkson.jpg'),
       },
       conceptSpotlight: {
         tag: 'COMMODIFICATION OF HUMANS',
@@ -392,6 +497,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">Published 1788</span>
           </div>
           <div class="archival-title">Alexander Falconbridge: Account of the Slave Trade</div>
+          <img class="archival-image" src="${getBase64Image('/images/brookes_ship.jpg')}" alt="The Slave Ship Brookes Stowage Plan (1788)">
           <div class="archival-body">
             "The hardships and inconveniences suffered by the negroes during the passage are scarcely to be conceived... The floor of their rooms was so covered with blood and mucus which had proceeded from them in consequence of the flux, that it resembled a slaughter-house. The surgeon is often obliged to crawl on his hands and knees."
           </div>
@@ -405,6 +511,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'The Zong Trial: Human Cargo and Marine Insurance',
+        date: '21 May 1783',
+        shelfmark: 'GREGSON V. GILBERT • ENGLISH REPORTS (1783) 3 DOUG KB 232',
+        text: 'In November 1781, Captain Luke Collingwood of the Liverpool slave ship Zong threw 133 living, chained Africans into the Caribbean Sea to drown. His chilling motive was purely financial: if enslaved people died of thirst or sickness on board, the loss fell upon the shipowners; but if they were thrown overboard to "save the ship", insurance underwriters were legally obliged to pay thirty pounds sterling per head for "jettisoned cargo". When the case reached the Court of King’s Bench in London, Lord Chief Justice Mansfield ruled: "The case of slaves was the same as if horses had been thrown overboard." The callousness of the verdict galvanized Olaudah Equiano and Granville Sharp, igniting Britain’s national abolitionist crusade.',
+      },
       bottomEnquiry: {
         q1: 'How did the triangular trade system connect British factory manufacturing, African human capture, and Caribbean plantations?',
         q2: 'Explain why the 1788 Stowage Plan of the Slave Ship Brookes became history’s first viral human rights campaign image.',
@@ -444,6 +557,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">Published 1789</span>
           </div>
           <div class="archival-title">The Interesting Narrative of the Life of Olaudah Equiano</div>
+          <img class="archival-image" src="${getBase64Image('/images/equiano.jpg')}" alt="Olaudah Equiano Frontispiece Portrait">
           <div class="archival-body">
             "The stench of the hold while we were on the coast was so intolerably loathsome, that it was dangerous to remain there for any time... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable. I often wished for the last friend, death, to relieve me."
           </div>
@@ -457,6 +571,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'Queen Nanny and the Camouflage Warriors of Blue Mountain',
+        date: 'c. 1730s',
+        shelfmark: 'COLONIAL OFFICE ARCHIVES • CO 137/21 (JAMAICAN COUNCIL DISPATCHES)',
+        text: 'In the rugged Cockpit Country of Jamaica, escaped African Maroons waged a thirty-year guerrilla war against heavily armed British regiments under the military leadership of Queen Nanny, an Ashanti spiritual elder. Maroon scouts developed extraordinary bush-warfare tactics, dressing in living palm branches and vines so convincingly that British redcoats marched right past them without noticing. At the blast of an abeng (cow horn), the forest itself seemed to erupt in musket fire. British soldiers reported with terror that Nanny possessed supernatural powers and could catch British musket balls in her apron. Unable to conquer the Maroons militarily, British Governor Edward Trelawny was forced in 1739 to sign a formal peace treaty conceding autonomy and 1,500 acres of land to Nanny Town.',
+      },
       bottomEnquiry: {
         q1: 'Explain the difference between overt resistance and covert resistance on 18th-century slave plantations.',
         q2: 'How did Queen Nanny and the Jamaican Maroons exploit their geography to defeat British colonial armies?',
@@ -496,6 +617,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
             <span class="source-date-micro">Published 1724</span>
           </div>
           <div class="archival-title">Daniel Defoe: A Tour Through the Whole Island of Great Britain</div>
+          <img class="archival-image" src="${getBase64Image('/images/hooke_micrographia_flea.jpg')}" alt="Robert Hooke Micrographia Flea (1665)">
           <div class="archival-body">
             "Trade in England neither arranges nor degrades, but ennobles the practitioner... The commerce of this island is an inexhaustible fund of wealth; it supplies the fleets, it pays the armies, and it makes the British nation feared and respected throughout the habitable globe."
           </div>
@@ -509,6 +631,13 @@ module.exports = function getEarlyModernData(helpers = {}) {
           </div>
         </div>
       `,
+      archivalOddity: {
+        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
+        title: 'Sir Isaac Newton: The Secret Detective of the Royal Mint',
+        date: 'c. 1696–1699',
+        shelfmark: 'MINT PAPERS • THE NATIONAL ARCHIVES, KEW • MINT 1/14-16',
+        text: 'In 1696, the world’s greatest mathematician left the serene cloisters of Trinity College, Cambridge, to become Warden of the Royal Mint in the Tower of London. London’s economy was on the verge of collapse due to "clippers" who shaved edges off silver coins and counterfeiters who flooded taverns with lead counterfeits. Rather than treating the post as an easy sinecure, Newton conducted forensic experiments on silver purity and created a clandestine intelligence network of paid informers. Disguised in heavy cloaks, Newton personally visited filthy London taverns and the grim dungeons of Newgate Prison, interrogating criminal suspects across over two hundred secret depositions. He prosecuted twenty-eight counterfeiters to the gallows at Tyburn, securing Britain’s financial currency.',
+      },
       bottomEnquiry: {
         q1: 'How did the foundation of the Bank of England in 1694 transform British military and naval power?',
         q2: 'Explain why William Hogarth’s "Gin Lane" (1751) illustrates both the prosperity and social misery of modernizing London.',
@@ -700,7 +829,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         badge: 'SOURCE B',
         type: 'Contemporary Ottoman Miniature',
         title: 'The Ottoman Imperial Army at the Siege of Constantinople (1453)',
-        image: getBase64Image('/images/fall_of_constantinople.jpg'),
+        image: getBase64Image('/images/ottoman_1453.jpg'),
         context:
           'Painted to commemorate Sultan Mehmed II’s triumph, this illustration shows Ottoman janissaries and massive bronze bombards bombarding the walls of Constantinople. The capture of the city shattered European overland trade routes to Asia.',
         hingeQuestion:
@@ -714,7 +843,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         badge: 'SOURCE A',
         type: 'Papal Diplomatic Parchment',
         title: 'The Treaty of Tordesillas: Dividing the Globe (1494)',
-        image: getBase64Image('/images/tordesillas.jpg'),
+        image: getBase64Image('/images/tordesillas_map.jpg'),
         context:
           'Brokered by Pope Alexander VI, this treaty drew an imaginary meridian 370 leagues west of the Cape Verde islands. Spain received exclusive sovereign rights to conquer all lands west of the line, while Portugal claimed everything to the east.',
         hingeQuestion:
@@ -1089,17 +1218,17 @@ module.exports = function getEarlyModernData(helpers = {}) {
       act3: {
         title: 'The Trial of the Tyrant & The Axe Falls',
         paras: [
-          'Even in defeat, Charles refused to compromise, secretly encouraging a Scottish royalist invasion to spark the Second Civil War in 1648. Convinced that the King was a "man of blood" who had brought death to his own people, radical army officers purged moderate MPs from Parliament, leaving a militant "Rump Parliament" determined to bring the monarch to justice.',
-          'In January 1649, Charles stood trial in Westminster Hall before the High Court of Justice—history’s first public trial of an anointed European monarch. Refusing to remove his hat or enter a plea, Charles boldly questioned the court’s lawful authority. Court president John Bradshaw countered that kings are entrusted with power by the people and subject to the law.',
-          'Condemned as a "tyrant, traitor, murderer, and public enemy", Charles was sentenced to death. On 30 January 1649, wearing two shirts so he would not shiver in the winter cold and appear frightened, Charles was beheaded on a scaffold outside the Banqueting House in Whitehall before a silent, horrified crowd. The Divine Right of Kings died with him.',
+          'Even in decisive military defeat, Charles refused to compromise, secretly negotiating with Presbyterian Scots to spark the bloody Second Civil War in 1648. Convinced that the unrepentant King was a "man of blood" who had brought senseless slaughter to his own subjects, radical army officers led by Colonel Pride purged moderate members from Westminster, leaving a militant "Rump Parliament" fiercely resolved to bring the sovereign monarch to judicial trial.',
+          'In January 1649, Charles stood trial in Westminster Hall before an extraordinary High Court of Justice—marking history’s first formal judicial trial of an anointed European monarch. Refusing to remove his hat or enter a formal plea, Charles haughtily questioned the court’s constitutional authority, demanding by what lawful power he was summoned. Court president John Bradshaw firmly answered that English monarchs were merely entrusted magistrates subject to law.',
+          'Condemned by Bradshaw as a "tyrant, traitor, murderer, and public enemy", Charles was sentenced to public beheading. On 30 January 1649, wearing two heavy shirts so he would not shiver in the bitter winter frost and appear frightened to spectators, Charles laid his head upon the Whitehall block before a vast, stunned crowd. As the executioner’s axe fell, the doctrine of Divine Right perished.',
         ],
       },
       act4: {
         title: 'The Commonwealth & The Restoration Reality',
         paras: [
-          'Following the regicide, Parliament abolished the monarchy and House of Lords, declaring England a "Commonwealth and Free State"—Europe’s first major republic. The 1651 Great Seal of England pointedly replaced the monarch’s head with an image of the House of Commons in session, inscribed: "In the Third Year of Freedom by God’s Blessing Restored."',
-          'However, republican governance proved deeply unstable. Fractured by radical religious sects like the Levellers and Diggers, the Rump Parliament was dissolved by Cromwell in 1653. Ruling as Lord Protector, Cromwell imposed military rule through Major-Generals, banning Christmas celebrations, theater, and gambling. Following Cromwell’s death, the Commonwealth collapsed in economic chaos and political exhaustion.',
-          'In May 1660, Parliament invited Charles’s exiled son to return as King Charles II, restoring the Stuart monarchy amidst national celebrations. Yet the Restoration could not turn back the clock. The royal prerogative courts of Star Chamber were gone forever; the Crown was permanently dependent on parliamentary taxation, establishing that English monarchs could never govern by divine decree alone.',
+          'Following the unprecedented regicide, Parliament abolished the English monarchy and House of Lords, officially declaring England a "Commonwealth and Free State"—Western Europe’s first major republican government. The 1651 Great Seal of England emphatically replaced the monarch’s sovereign portrait with an aerial relief map of the British Isles and the House of Commons in debate, stamped with the republican motto: "In the Third Year of Freedom Restored."',
+          'However, republican rule proved profoundly unstable and fractured by ideological division. Challenged by radical religious reformers like the Levellers and Diggers, the contentious Rump Parliament was forcibly expelled by Cromwell’s musketeers in 1653. Ruling as Lord Protector, Cromwell instituted puritanical military districts administered by Major-Generals, suppressing traditional festivals, stage plays, and church sports. When Cromwell died, his fragile Commonwealth descended rapidly into fiscal insolvency and political anarchy.',
+          'In May 1660, a desperate Convention Parliament invited the late King’s exiled son to return as King Charles II, restoring the Stuart dynasty amid widespread popular celebration. Yet this Stuart Restoration could never resurrect absolute royal supremacy. Prerogative courts like Star Chamber were permanently erased, and the Crown remained irreversibly dependent on parliamentary taxation, ensuring future British sovereigns could never again govern without the consent of the realm.',
         ],
       },
     },

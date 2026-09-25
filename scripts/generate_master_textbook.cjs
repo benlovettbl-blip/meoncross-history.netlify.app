@@ -114,7 +114,23 @@ UNIT_REGISTRY['industrialisation'] = UNIT_REGISTRY['industrialisation_and_empire
 UNIT_REGISTRY['weimar'] = UNIT_REGISTRY['weimar_nazi_germany'];
 
 async function main() {
-  const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+  const allArgs = process.argv.slice(2);
+  if (allArgs.includes('--help') || allArgs.includes('-h') || allArgs.includes('help')) {
+    console.log(`\n=============================================================`);
+    console.log(`📚 THE HISTORY REVISION HUB — MASTER TEXTBOOK PUBLISHING REGISTRY`);
+    console.log(`=============================================================`);
+    console.log(`Usage: node scripts/generate_master_textbook.cjs <unit_id> [sub_arg]\n`);
+    console.log(`Available units:`);
+    console.log(`  - medieval_england           (Year 7: 20-page A4 Master Textbook)`);
+    console.log(`  - early_modern_world         (Year 8: 20-page A4 Master Textbook)`);
+    console.log(`  - industrialisation_and_empire (Year 8: 18-page A4 Master Textbook)`);
+    console.log(`  - great_war                  (Year 9: 14-page A4 Master Textbook)`);
+    console.log(`  - weimar_nazi_germany        (GCSE Paper 3: 10-page A4 Master Textbooks)`);
+    console.log(`  - all                        (Sequential batch compile of all units)\n`);
+    return;
+  }
+
+  const args = allArgs.filter((a) => !a.startsWith('--'));
   const rawTarget = args[0] || 'medieval_england';
   const subArg = args[1];
 
