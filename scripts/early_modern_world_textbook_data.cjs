@@ -347,17 +347,18 @@ module.exports = function getEarlyModernData(helpers = {}) {
 
     p11: {
       keyFigure: {
-        name: 'King Charles I',
-        lifespan: '1600–1649',
-        role: 'King of England, Scotland, and Ireland (Reigned 1625–1649)',
+        name: 'The New Model Army Agitator',
+        lifespan: 'fl. 1647',
+        role: 'Elected Soldier Representative & Leveller Spokesman',
         significance:
-          'Believed fervently in the Divine Right of Kings; his conflict with Parliament triggered the English Civil War, culminating in his public execution.',
+          'Elected by ordinary rank-and-file soldiers to represent regimental grievances, debating Oliver Cromwell at the Putney Debates for universal male suffrage.',
         actions: [
-          'Governed for eleven years without summoning Parliament (1629–1640), levying controversial taxes such as coastal Ship Money on inland counties.',
-          'Attempted to arrest five Members of Parliament inside the House of Commons chamber in January 1642, igniting armed civil conflict.',
-          'Stood trial in Westminster Hall in January 1649, refusing to recognize the authority of the court before being beheaded outside Whitehall.',
+          'Drafted and presented *The Agreement of the People* (1647), demanding that political sovereignty derive from the consent of all freeborn Englishmen.',
+          'Debated General Henry Ireton at Putney, asserting that "the poorest he that is in England hath a life to live as the greatest he."',
+          'Organized soldier resistance against parliamentary attempts to disband the New Model Army without arrears of pay or indemnity.',
         ],
-        image: getBase64Image('/images/charles_first.jpg'),
+        image: 'monogram',
+        monogram: 'NA',
       },
       conceptSpotlight: {
         tag: 'CONSTITUTIONAL DOCTRINE',
@@ -474,10 +475,11 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Served as surgeon on four slave voyages before becoming an outspoken abolitionist, publishing firsthand testimony exposing the brutality of the Middle Passage.',
         actions: [
           'Published *An Account of the Slave Trade on the Coast of Africa* in 1788, detailing horrific overcrowding and disease aboard slave ships.',
-          'Testified extensively before a parliamentary committee led by William Wilberforce, providing incontrovertible medical proof of abuse.',
+          'Testified extensively before a parliamentary committee led by William Wilberforce, providing processing medical proof of abuse.',
           'Appointed commercial agent to the newly established Sierra Leone colony for freed enslaved people in West Africa.',
         ],
-        image: getBase64Image('/images/thomas_clarkson.jpg'),
+        image: 'monogram',
+        monogram: 'AF',
       },
       conceptSpotlight: {
         tag: 'COMMODIFICATION OF HUMANS',
@@ -537,7 +539,8 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Pioneered ingenious camouflage and guerrilla ambushes, routing heavily armed British regiments through jungle mountain passes.',
           'Honored today as a National Hero of Jamaica for her military brilliance and unwavering defense of African sovereignty.',
         ],
-        image: getBase64Image('/images/jamaica_maroons.jpg'),
+        image: 'monogram',
+        monogram: 'QN',
       },
       conceptSpotlight: {
         tag: 'AGENCY & RESISTANCE',
@@ -587,17 +590,18 @@ module.exports = function getEarlyModernData(helpers = {}) {
 
     p19: {
       keyFigure: {
-        name: 'Sir Isaac Newton',
-        lifespan: '1642–1727',
-        role: 'Physicist, Mathematician, President of the Royal Society & Master of the Mint',
+        name: 'The Enclosure Freeholder',
+        lifespan: 'fl. 1720–1750',
+        role: 'Dispossessed Yeoman & Independent Commoner',
         significance:
-          'Formulated the laws of universal gravitation and motion, anchoring the Scientific Revolution and modern empirical rationalism.',
+          'Represented the millions of rural smallholders whose communal farming and grazing rights were extinguished by parliamentary enclosure acts during the Agricultural Revolution.',
         actions: [
-          'Published the *Principia Mathematica* (1687), demonstrating that the physical universe was governed by predictable mathematical laws.',
-          'Served as Master of the Royal Mint from 1699, reforming English gold and silver coinage and aggressively prosecuting counterfeiters.',
-          'Elected President of the Royal Society in 1703, establishing London as Europe’s premier center of scientific experimentation and technological enquiry.',
+          'Customarily farmed open-field strips and grazed livestock on village common lands before parliamentary enclosure awarded titles exclusively to wealthy landlords.',
+          'Faced financial ruin from the legal costs of surveying, hedging, and ditching newly allocated plots, forcing the sale of ancestral land to neighbouring estates.',
+          'Migrated to burgeoning manufacturing towns or London slums like St Giles, transforming from an independent food producer into a waged factory labourer.',
         ],
-        image: getBase64Image('/images/isaac_newton.jpg'),
+        image: 'monogram',
+        monogram: 'EF',
       },
       conceptSpotlight: {
         tag: 'INSTITUTIONAL FINANCE',

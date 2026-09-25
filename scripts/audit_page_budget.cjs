@@ -377,6 +377,8 @@ async function auditPageBudget(page, options = {}) {
             hasWarnings = true;
           }
 
+          const hasArchivalImage = p.querySelector('.archival-image') !== null;
+
           results.push({
             pageNum,
             clientH,
@@ -389,6 +391,7 @@ async function auditPageBudget(page, options = {}) {
             gapAboveFooter,
             maxInterTaskGap,
             internalProseGap,
+            hasArchivalImage,
             maxSectionGap,
             backCoverBottomVoid,
             utilizationPct,
@@ -491,7 +494,11 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
       issues.push(`❌ INTER-TASK VOID (${res.maxInterTaskGap}px > 35px max)`);
     }
     if (res.isVoidInternalProse) {
-      issues.push(`❌ INTERNAL PROSE VOID (${res.internalProseGap}px > 35px max)`);
+      let voidMsg = `❌ INTERNAL PROSE VOID (${res.internalProseGap}px > 35px max)`;
+      if (res.hasArchivalImage && res.internalProseGap >= 40 && res.internalProseGap <= 80) {
+        voidMsg += ` | 💡 Hint: Consider adding expand: 'md' or 'lg' to the enquiry's visual source to absorb this ${res.internalProseGap}px void.`;
+      }
+      issues.push(voidMsg);
     }
     if (res.isVoidSection) {
       issues.push(`❌ SECTION GAP (${res.maxSectionGap}px > 25px max)`);

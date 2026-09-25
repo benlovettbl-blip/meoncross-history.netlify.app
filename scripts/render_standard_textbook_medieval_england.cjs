@@ -217,6 +217,9 @@ async function buildPublisherTextbookHtmlMedieval() {
     const bank = MEDIEVAL_COMPONENT_BANK[bankKey] || {};
     const vocabTerms = MEDIEVAL_LEFT_VOCAB[leftVocabKey] || [];
     const sources = MEDIEVAL_LEFT_SOURCES[leftSrcKey] || {};
+    if (leftPageNum === 2 && sources.sourceA) {
+      sources.sourceA.panoramic = true;
+    }
 
     const act1 = lesson.act1 || { title: 'Context & Catalyst', paras: [] };
     const act2 = lesson.act2 || { title: 'Escalation & Conflict', paras: [] };
@@ -251,9 +254,9 @@ async function buildPublisherTextbookHtmlMedieval() {
           </div>
           ${act1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
 
-          ${renderArchivalSourceBox(sources.sourceA)}
-
           ${renderKeyFigureBox(bank.keyFigure)}
+
+          ${renderArchivalSourceBox(sources.sourceA)}
 
           <div class="section-banner">
             <span class="sb-num">ACT 2</span>
@@ -615,6 +618,17 @@ async function renderMedievalMasterTextbook() {
 
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`HTML saved to: ${outHtmlPath}`);
+
+  const legacyHtmlPath1 = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'medieval_england',
+    'textbook.html',
+  );
+  const legacyHtmlPath2 = path.join(ROOT_DIR, 'units', 'medieval_england', 'textbook.html');
+  fs.writeFileSync(legacyHtmlPath1, html, 'utf8');
+  fs.writeFileSync(legacyHtmlPath2, html, 'utf8');
 
   console.log('Launching Puppeteer to compile PDF...');
   const browser = await puppeteer.launch({

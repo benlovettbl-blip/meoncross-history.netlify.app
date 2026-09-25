@@ -275,7 +275,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
               ${
                 bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
                   ? `<img class="kf-portrait" src="${bank.keyFigure.image.startsWith('data:') ? bank.keyFigure.image : getBase64Image(bank.keyFigure.image) || bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
-                  : `<div class="kf-portrait kf-monogram" title="${bank.keyFigure.name}"><span class="kf-monogram-initials">${getMonogramInitials(bank.keyFigure.name)}</span><span class="kf-monogram-tag">ARCHIVE</span></div>`
+                  : `<div class="kf-portrait kf-monogram" title="${bank.keyFigure.name}"><span class="kf-monogram-initials">${bank.keyFigure.monogram || getMonogramInitials(bank.keyFigure.name)}</span><span class="kf-monogram-tag">ARCHIVE</span></div>`
               }
               <div class="kf-identity-text">
                 <div class="kf-name">${bank.keyFigure.name}</div>

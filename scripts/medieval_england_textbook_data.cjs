@@ -38,26 +38,26 @@ module.exports = function getMedievalData(helpers = {}) {
         shelfmark: 'ORDERIC VITALIS • ECCLESIASTICAL HISTORY (BOOK III)',
       },
       archivalDispatch: `
-      <div class="archival-source-box">
+      <div class="archival-source-box expand-lg">
         <div class="archival-header">
           <div class="source-identity">
             <span class="source-badge">SOURCE C</span>
-            <span class="source-type">Visual Forensic Artifact</span>
+            <span class="source-type">Contemporary Norman Chronicle</span>
           </div>
-          <span class="source-date-micro">c. 1070s</span>
+          <span class="source-date-micro">Written c. 1071</span>
         </div>
-        <div class="archival-title">The Bayeux Tapestry: The Fatal Arrow &amp; Senlac Chaos</div>
-        <img class="archival-image" src="${getBase64Image('/images/battle_of_hastings_bayeux.jpg')}" alt="Bayeux Tapestry Harold Death">
+        <div class="archival-title">William of Poitiers: The Feigned Flight at Senlac Hill</div>
+        <img class="archival-image" src="${getBase64Image('/images/battle_of_hastings_painting.jpg')}" alt="Battle of Hastings Norman Cavalry Clash">
         <div class="archival-body">
-          "Here King Harold is slain: stitched in dyed wool, the tapestry captures the pivotal turning point on Senlac Hill. While nineteenth-century historians insisted Harold was blinded by an arrow through the eye, forensic textile analysis reveals the figure pulling an arrow from his helmet was heavily repaired in Victorian times. Whether struck by an arrow or hacked to pieces by Norman cavalry, the death of Harold decapitated Saxon command and doomed the kingdom."
+          "The Normans and their allies turned their backs and fled, apparently in panic... The barbarian English, believing the battle won, leapt down from the ridge in disorderly pursuit. Then Duke William and his horsemen wheeled round, hemmed them in on every side, and slaughtered the pursuers without mercy. Thus repeated stratagems wore down the Saxon resistance."
         </div>
         <div class="archival-context-box">
-          <p class="archival-context-text">Commissioned by William's half-brother, Bishop Odo of Bayeux, to celebrate Norman legitimacy while honoring the ferocious courage of English housecarls.</p>
-          <div class="archival-hinge-q"><strong>Hinge Question:</strong> Why did the Norman conquerors choose to depict King Harold fighting bravely rather than cowering as a coward?</div>
+          <p class="archival-context-text">Written by William of Poitiers, Duke William’s personal chaplain and military panegyrist, celebrating Norman tactical ingenuity.</p>
+          <div class="archival-hinge-q"><strong>Hinge Question:</strong> How does William of Poitiers’ account highlight the contrast between Norman mounted flexibility and Saxon infantry immobility?</div>
         </div>
         <div class="archival-footer">
-          <span>Bayeux Museum • Normandy, France</span>
-          <span>Anglo-Norman Romanesque Embroidery</span>
+          <span>Gesta Guillelmi • Normandy, France</span>
+          <span>Norman Chaplain Panegyric Record</span>
         </div>
       </div>
     `,
@@ -663,6 +663,19 @@ module.exports = function getMedievalData(helpers = {}) {
     p2: {
       sourceA: {
         badge: 'SOURCE A',
+        type: 'Visual Forensic Artifact',
+        date: 'c. 1070s • Romanesque Embroidery',
+        title: 'The Bayeux Tapestry: Harold’s Demise & Senlac Ridge',
+        image: getBase64Image('/images/battle_of_hastings_bayeux.jpg'),
+        panoramic: true,
+        text: '"Here King Harold is slain: stitched in dyed wool, the tapestry captures the pivotal turning point on Senlac Hill. While nineteenth-century historians insisted Harold was blinded by an arrow through the eye, forensic textile analysis reveals the figure pulling an arrow from his helmet was heavily repaired in Victorian times. Whether struck by an arrow or hacked to pieces by Norman cavalry, Harold\'s death decapitated Saxon command and doomed the kingdom."',
+        context:
+          "Commissioned by William's half-brother, Bishop Odo of Bayeux, to celebrate Norman legitimacy while honoring the ferocious courage of English housecarls.",
+        hingeQuestion:
+          'Why did the Norman conquerors choose to depict King Harold fighting bravely rather than cowering as a coward?',
+      },
+      sourceB: {
+        badge: 'SOURCE B',
         type: 'Primary Monastic Chronicle',
         date: 'Written c. 1066–1067',
         title: 'The Anglo-Saxon Chronicle: The Calamity at Hastings',
@@ -671,17 +684,6 @@ module.exports = function getMedievalData(helpers = {}) {
           'Recorded by English monks shortly after the battle, capturing the shock and despair of the defeated Anglo-Saxon population.',
         hingeQuestion:
           'Why did the Saxon chronicler emphasize that William attacked "unawares, before his people were set in order"?',
-      },
-      sourceB: {
-        badge: 'SOURCE B',
-        type: 'Contemporary Norman Chronicle',
-        date: 'Written c. 1071',
-        title: 'William of Poitiers: The Feigned Flight at Senlac Hill',
-        text: '"The Normans and their allies turned their backs and fled, apparently in panic... The barbarian English, believing the battle won, leapt down from the ridge in disorderly pursuit. Then Duke William and his horsemen wheeled round, hemmed them in on every side, and slaughtered the pursuers without mercy. Thus repeated stratagems wore down the Saxon resistance."',
-        context:
-          'Written by William of Poitiers, Duke William’s personal chaplain and military panegyrist, celebrating Norman tactical ingenuity.',
-        hingeQuestion:
-          'How does William of Poitiers’ account highlight the contrast between Norman mounted flexibility and Saxon infantry immobility?',
       },
     },
     p4: {
