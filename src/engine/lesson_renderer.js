@@ -548,6 +548,15 @@ window.syncWhiteboardButtons = function (isActive) {
         'Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)';
     }
   });
+  const wbTags = document.querySelectorAll('.wb-status-tag');
+  wbTags.forEach((tag) => {
+    tag.textContent = isActive ? 'ON' : 'OFF';
+    tag.style.background = isActive ? '#dcfce7' : '#f1f5f9';
+    tag.style.color = isActive ? '#15803d' : '#475569';
+  });
+  if (typeof window.updateClassroomToolsBadge === 'function') {
+    window.updateClassroomToolsBadge();
+  }
 };
 
 window.toggleTeacherMode = function (forceState) {
@@ -579,7 +588,46 @@ window.syncTeacherButtons = function (isActive) {
       btn.title = 'Click to show Teacher Guidance & Delivery Roadmap';
     }
   });
+  const teacherTags = document.querySelectorAll('.teacher-status-tag');
+  teacherTags.forEach((tag) => {
+    tag.textContent = isActive ? 'ON' : 'OFF';
+    tag.style.background = isActive ? '#dcfce7' : '#f1f5f9';
+    tag.style.color = isActive ? '#15803d' : '#475569';
+  });
+  if (typeof window.updateClassroomToolsBadge === 'function') {
+    window.updateClassroomToolsBadge();
+  }
 };
+
+window.updateClassroomToolsBadge = function () {
+  const badge = document.getElementById('classroom-tools-active-badge');
+  if (!badge) return;
+  const isTeacher = document.body && document.body.classList.contains('teacher-mode-active');
+  const isWb = document.body && document.body.classList.contains('whiteboard-mode-active');
+  badge.style.display = isTeacher || isWb ? 'inline-block' : 'none';
+};
+
+window.toggleLessonToolsMenu = function (e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  const popover = document.getElementById('classroom-tools-popover');
+  if (!popover) return;
+  const isVisible = popover.style.display === 'block';
+  popover.style.display = isVisible ? 'none' : 'block';
+};
+
+window.closeLessonToolsMenu = function () {
+  const popover = document.getElementById('classroom-tools-popover');
+  if (popover) popover.style.display = 'none';
+};
+
+if (typeof document !== 'undefined' && !window.__classroomToolsGlobalBound) {
+  window.__classroomToolsGlobalBound = true;
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.classroom-tools-dropdown-wrap')) {
+      window.closeLessonToolsMenu();
+    }
+  });
+}
 
 if (typeof localStorage !== 'undefined' && localStorage.getItem('teacherMode') === 'true') {
   if (typeof document !== 'undefined' && document.body) {
@@ -1112,6 +1160,9 @@ export function renderSourceUtilityTaskHTML(task, lessonIndex, tIdx, unitId) {
         </h4>
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Dual-Source Utility [8 Marks]</span>
+          <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #1e3a8a; border: 1.5px solid #93c5fd; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Open structured class debate protocol with sentence starters">
+            <i class="fa-solid fa-comments" style="color: #2563eb;"></i> Class Debate
+          </button>
           <button type="button" class="btn btn-pedagogy-primary btn-launch-task4" data-action="launch-task4-workspace" data-task-id="${taskId}" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;" title="Open distraction-free fullscreen writing workspace with 15m timer">
             <i class="fa-solid fa-rocket"></i> Launch Task 4
           </button>
@@ -1271,6 +1322,9 @@ export function renderHistoricalInterpretationsTaskHTML(task, lessonIndex, tIdx,
         </h4>
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="background: #7c3aed; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Historiographical Debate [16+4 Marks]</span>
+          <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #6d28d9; border: 1.5px solid #c4b5fd; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Open structured class debate protocol with sentence starters">
+            <i class="fa-solid fa-comments" style="color: #7c3aed;"></i> Class Debate
+          </button>
           <button type="button" class="btn btn-pedagogy-primary btn-launch-task4" data-action="launch-task4-workspace" data-task-id="${taskId}" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(124, 58, 237, 0.25); transition: all 0.2s;" title="Open distraction-free fullscreen writing workspace with 15m timer">
             <i class="fa-solid fa-rocket"></i> Launch Task 4
           </button>
@@ -1531,17 +1585,7 @@ export function renderLesson(lesson) {
   if (targetText && targetText.length > 90) {
     targetText = lesson.title || targetText;
   }
-  let stickyHeaderText = '';
-
-  if (isTrip) {
-    stickyHeaderText = `${lessonPrefix}: ${lesson.title.split('(')[0].trim()}`;
-  } else if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(targetText)) {
-    stickyHeaderText = targetText;
-  } else {
-    stickyHeaderText = `${lessonPrefix}: ${targetText}`;
-  }
-
-  // Sticky Header (No visible background, but opaque to hide scrolling text)
+  // Sticky Header (Clean spatial curriculum anchor with streamlined Classroom Tools)
   const allUnitLessons =
     (appStore.state.activeUnitData && appStore.state.activeUnitData.lessons) ||
     (window.currentUnitData && window.currentUnitData.lessons) ||
@@ -1554,23 +1598,63 @@ export function renderLesson(lesson) {
     ((window.currentUnitData && window.currentUnitData.guided_reading) || []).find(
       (gr) => gr.lesson_index === currentIndex,
     );
+
+  const isTeacherActive =
+    typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active');
+  const isWbActive =
+    typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active');
+  const hasActiveTool = isTeacherActive || isWbActive;
+
+  const stickyAnchorText = isTrip
+    ? `${lessonPrefix}: ${lesson.title.split('(')[0].trim()}`
+    : `<span class="sticky-lesson-prefix" style="color: #1e3a8a; font-weight: 800; font-family: 'Inter', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">${lessonPrefix}</span> <span style="color: #94a3b8; margin: 0 4px;">&bull;</span> <span class="sticky-lesson-enquiry-count" style="color: #475569; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 0.92rem;">${allUnitLessons.length > 0 ? `Enquiry ${currentIndex + 1} of ${allUnitLessons.length}` : lesson.title || ''}</span>`;
+
   html += `
       <div class="sticky-lesson-header">
-          <h4 class="sticky-lesson-title">
-            ${stickyHeaderText}
-            <span class="edition-badge" title="Curriculum Edition" style="display: inline-block; font-size: 0.72rem; font-weight: 600; vertical-align: middle; margin-left: 8px; padding: 2px 7px; border-radius: 10px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; letter-spacing: 0.5px;">Edition ${activeUnit.edition || '2026.1'}</span>
+          <h4 class="sticky-lesson-title" title="${(lesson.title || '').replace(/"/g, '&quot;')}">
+            ${stickyAnchorText}
+            <span class="edition-badge" title="Curriculum Edition" style="display: inline-block; font-size: 0.72rem; font-weight: 600; vertical-align: middle; margin-left: 8px; padding: 2px 7px; border-radius: 10px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; letter-spacing: 0.5px; font-family: 'Inter', sans-serif;">Edition ${activeUnit.edition || '2026.1'}</span>
           </h4>
           <div class="sticky-lesson-actions">
           ${
             isTrip
               ? `
-              <button class="btn btn-whiteboard-toggle ${typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active') ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" title="Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)"><i class="fa-solid fa-chalkboard"></i> <span class="wb-btn-label">Whiteboard View</span></button>
-              <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.88rem; background: white; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); cursor: pointer;" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'trip_ypres'}"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Itinerary</button>
+              <div class="classroom-tools-dropdown-wrap" style="position: relative; display: inline-block;">
+                <button type="button" class="btn btn-classroom-tools" id="btn-classroom-tools-toggle" onclick="event.stopPropagation(); window.toggleLessonToolsMenu();" style="padding: 6px 13px; font-size: 0.88rem; background: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: all 0.15s ease;" title="Expedition presentation & whiteboard tools">
+                  <i class="fa-solid fa-chalkboard-user" style="color: #2563eb;"></i>
+                  <span>Classroom Tools</span>
+                  <i class="fa-solid fa-chevron-down" style="font-size: 0.72rem; color: #64748b; margin-left: 2px;"></i>
+                  <span class="classroom-tools-badge" id="classroom-tools-active-badge" style="display: ${hasActiveTool ? 'inline-block' : 'none'}; width: 7px; height: 7px; border-radius: 50%; background: #10b981; margin-left: -2px;"></span>
+                </button>
+                <div class="classroom-tools-popover" id="classroom-tools-popover" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); width: 290px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15), 0 4px 6px -2px rgba(0,0,0,0.05); z-index: 1050; padding: 6px; overflow: hidden;">
+                  <div style="padding: 6px 10px 8px; border-bottom: 1px solid #f1f5f9; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b;">Classroom Delivery &amp; Tools</span>
+                    <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 600;">Trip Guide</span>
+                  </div>
+                  <button type="button" class="classroom-tool-item btn-whiteboard-toggle ${isWbActive ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
+                    <i class="fa-solid fa-chalkboard" style="color: #2563eb; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <div style="flex: 1;">
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Smartboard Projector View</span>
+                        <span class="wb-status-tag" style="font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: ${isWbActive ? '#dcfce7' : '#f1f5f9'}; color: ${isWbActive ? '#15803d' : '#475569'};">${isWbActive ? 'ON' : 'OFF'}</span>
+                      </div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Collapses hero banner &amp; optimizes layout for projection</div>
+                    </div>
+                  </button>
+                  <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openTaskWhiteboard();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
+                    <i class="fa-solid fa-person-chalkboard" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <div style="flex: 1;">
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Interactive Drawing Board</div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Full-screen sketch canvas for live annotation &amp; modeling</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
             `
               : `
               ${
                 grEntry
-                  ? `<button class="btn btn-guided-reading-launcher" style="padding: 6px 12px; font-size: 0.88rem; background: #fdf2f8; color: #9d174d; border: 1.5px solid #fbcfe8; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" data-action="open-guided-reading-modal" data-lesson-index="${currentIndex}" title="Open Guided Reading Extract: ${grEntry.book_title}"><i class="fa-solid fa-book-open-reader" style="color: #be185d;"></i> Guided Reading: ${grEntry.book_title}</button>`
+                  ? `<button class="btn btn-guided-reading-launcher" style="padding: 6px 12px; font-size: 0.88rem; background: #fdf2f8; color: #9d174d; border: 1.5px solid #fbcfe8; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" data-action="open-guided-reading-modal" data-lesson-index="${currentIndex}" title="Open Guided Reading Extract: ${grEntry.book_title}"><i class="fa-solid fa-book-open-reader" style="color: #be185d;"></i> Guided Reading</button>`
                   : ''
               }
               ${
@@ -1583,11 +1667,62 @@ export function renderLesson(lesson) {
                   ? `<a href="/units/cme_new/visual_revision_guide.html#page_${4 + currentIndex * 2}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #f0f9ff; color: #0369a1; border: 1.5px solid #bae6fd; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's visual revision spread in the Masterclass Guide"><i class="fa-solid fa-book-open"></i> Revision Masterclass (Spread ${currentIndex + 1})</a>`
                   : ''
               }
-              <button class="btn btn-whiteboard-toggle ${typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active') ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" title="Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)"><i class="fa-solid fa-chalkboard"></i> <span class="wb-btn-label">Whiteboard View</span></button>
-              <button class="btn btn-secondary btn-teacher-mode-toggle ${typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active') ? 'active' : ''}" id="teacher-mode-btn" data-action="toggle-teacher-mode" onclick="event.stopPropagation(); window.toggleTeacherMode();" title="${typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active') ? 'Teacher Mode is ON (Click to hide teacher guidance)' : 'Click to show Teacher Guidance & Delivery Roadmap'}"><i class="fa-solid fa-user-tie"></i> <span class="teacher-btn-label">${typeof document !== 'undefined' && document.body.classList.contains('teacher-mode-active') ? 'Teacher Mode: ON' : 'Teacher Mode'}</span></button>
-              <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
-              <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-task-whiteboard" title="Teacher Whiteboard / Live Marking"><i class="fa-solid fa-person-chalkboard" style="color: #0284c7;"></i> Whiteboard</button>
-              <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'gcse_usa_1954_1975'}"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+              <div class="classroom-tools-dropdown-wrap" style="position: relative; display: inline-block;">
+                <button type="button" class="btn btn-classroom-tools" id="btn-classroom-tools-toggle" onclick="event.stopPropagation(); window.toggleLessonToolsMenu();" style="padding: 6px 13px; font-size: 0.88rem; background: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: all 0.15s ease;" title="Classroom delivery, whiteboard and teacher guidance tools">
+                  <i class="fa-solid fa-chalkboard-user" style="color: #2563eb;"></i>
+                  <span>Classroom Tools</span>
+                  <i class="fa-solid fa-chevron-down" style="font-size: 0.72rem; color: #64748b; margin-left: 2px;"></i>
+                  <span class="classroom-tools-badge" id="classroom-tools-active-badge" style="display: ${hasActiveTool ? 'inline-block' : 'none'}; width: 7px; height: 7px; border-radius: 50%; background: #10b981; margin-left: -2px;"></span>
+                </button>
+                <div class="classroom-tools-popover" id="classroom-tools-popover" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); width: 295px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15), 0 4px 6px -2px rgba(0,0,0,0.05); z-index: 1050; padding: 6px; overflow: hidden;">
+                  <div style="padding: 6px 10px 8px; border-bottom: 1px solid #f1f5f9; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b;">Classroom Delivery &amp; Tools</span>
+                    <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 600;">Edition ${activeUnit.edition || '2026.1'}</span>
+                  </div>
+
+                  <!-- Tool 1: Smartboard Projector View -->
+                  <button type="button" class="classroom-tool-item btn-whiteboard-toggle ${isWbActive ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
+                    <i class="fa-solid fa-chalkboard" style="color: #2563eb; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <div style="flex: 1;">
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Smartboard Projector View</span>
+                        <span class="wb-status-tag" style="font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: ${isWbActive ? '#dcfce7' : '#f1f5f9'}; color: ${isWbActive ? '#15803d' : '#475569'};">${isWbActive ? 'ON' : 'OFF'}</span>
+                      </div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Collapses hero banner &amp; optimizes layout for projection</div>
+                    </div>
+                  </button>
+
+                  <!-- Tool 2: Interactive Drawing Board -->
+                  <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openTaskWhiteboard();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
+                    <i class="fa-solid fa-person-chalkboard" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <div style="flex: 1;">
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Interactive Drawing Board</div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Full-screen sketch canvas for live annotation &amp; modeling</div>
+                    </div>
+                  </button>
+
+                  <!-- Tool 3: Teacher Guidance & Roadmap -->
+                  <button type="button" class="classroom-tool-item btn-teacher-mode-toggle ${isTeacherActive ? 'active' : ''}" id="teacher-mode-btn" data-action="toggle-teacher-mode" onclick="event.stopPropagation(); window.toggleTeacherMode();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
+                    <i class="fa-solid fa-user-tie" style="color: #7c3aed; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <div style="flex: 1;">
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Teacher Guidance &amp; Notes</span>
+                        <span class="teacher-status-tag" style="font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: ${isTeacherActive ? '#dcfce7' : '#f1f5f9'}; color: ${isTeacherActive ? '#15803d' : '#475569'};">${isTeacherActive ? 'ON' : 'OFF'}</span>
+                      </div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Reveals pedagogical primers, hinge questions &amp; lesson roadmap</div>
+                    </div>
+                  </button>
+
+                  <!-- Tool 4: Class Debate Protocol -->
+                  <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openDebateModal();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
+                    <i class="fa-solid fa-comments" style="color: #059669; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <div style="flex: 1;">
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Class Debate Protocol</div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Launch structured debate prompt &amp; sentence starters</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
             `
           }
         </div>
@@ -5024,9 +5159,14 @@ export function renderLesson(lesson) {
     if (epQuestions.length > 0 || epStimulus.length > 0) {
       htmlExamPractice += `
           <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
-            <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
-              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
-              <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
+            <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #1e3a8a; border: 1.5px solid #93c5fd; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Launch structured class debate protocol with debate prompts and sentence starters">
+                  <i class="fa-solid fa-comments" style="color: #2563eb;"></i> Class Debate
+                </button>
+                <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
+              </div>
             </div>
         `;
       const renderQuestion = (q, qIdx) => {
@@ -5507,9 +5647,14 @@ export function renderLesson(lesson) {
   ) {
     let gcseHtml = `
         <div class="phase-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${lesson.extended && lesson.extended.title ? lesson.extended.title : 'Assessment Practice'}</div>
-            <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #b45309; border: 1.5px solid #fde68a; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Launch structured class debate protocol with debate prompts and sentence starters">
+                <i class="fa-solid fa-comments" style="color: #d97706;"></i> Class Debate
+              </button>
+              <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
+            </div>
           </div>
       `;
 

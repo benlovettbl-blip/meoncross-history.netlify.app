@@ -28,10 +28,10 @@ import { renderDepartmentPortal } from './department_portal.js';
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
   appStore.subscribe('currentView', (viewName) => {
-    // Manage Back Button
+    // Manage Back Button (suppressed on dashboard and lessons view where breadcrumbs handle navigation)
     const backBtn = document.getElementById('header-back-btn');
     if (backBtn) {
-      if (viewName === 'dashboard') {
+      if (viewName === 'dashboard' || viewName === 'lessons') {
         backBtn.style.display = 'none';
       } else {
         backBtn.style.display = 'flex';

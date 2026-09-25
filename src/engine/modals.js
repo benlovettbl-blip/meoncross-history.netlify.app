@@ -1310,6 +1310,36 @@ window.openAnthologyModal = async function () {
   document.body.appendChild(overlay);
 };
 
+window.currentDebateIndex = window.currentDebateIndex || 0;
+
+window.injectDebateModalIfNeeded = function () {
+  if (document.getElementById('debateModal')) return;
+  const html = `
+  <div id="debateModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeDebateModal()">
+    <div class="modal-content" style="background: white; border: 3px solid #dc2626; border-radius: 12px; padding: 30px; max-width: 700px; width: 90%; color: #0f172a; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button onclick="window.closeDebateModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <i class="fa-solid fa-scale-balanced" style="font-size: 32pt; color: #dc2626;"></i>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 10px 0 0 0; color: #1e3a8a; text-transform: uppercase;">Classroom Oracy &amp; Debate</h2>
+        <h3 style="font-family: 'Inter', sans-serif; font-size: 1.05rem; margin: 5px 0 0 0; color: #475569;" id="debateTopicSubtitle">Structured Debate Prompt</h3>
+      </div>
+      <div id="debateModalContent" style="font-size: 1.15rem; line-height: 1.6; text-align: center; background: #faf9f6; padding: 25px; border-radius: 8px; border: 1px solid #cbd5e1; margin-bottom: 20px; color: #1e293b;">
+        <!-- Content dynamically populated -->
+      </div>
+      <div id="debateSentenceStarterContainer" style="display: none; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin-bottom: 20px; border-radius: 4px; text-align: left;">
+        <strong style="color: #d97706; font-size: 0.85rem; text-transform: uppercase; display: block; margin-bottom: 5px;"><i class="fa-solid fa-lightbulb"></i> Disciplinary Sentence Starter</strong>
+        <span id="debateSentenceStarterText" style="font-size: 1rem; color: #451a03; font-style: italic;"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <button class="btn btn-secondary" onclick="window.cycleDebatePrompt(-1)" style="padding: 8px 16px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+        <button id="btn-show-starter" class="btn" style="background: transparent; border: 2px dashed #cbd5e1; color: #64748b; border-radius: 6px; padding: 8px 15px; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;" onclick="window.toggleDebateStarter()">Show Hint</button>
+        <button class="btn btn-primary" onclick="window.cycleDebatePrompt(1)" style="padding: 8px 16px; border-radius: 6px; cursor: pointer; background: #1e3a8a; color: white;">Next Prompt <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
 window.openDebateModal = function () {
   window.injectDebateModalIfNeeded();
   const modal = document.getElementById('debateModal');
@@ -1333,21 +1363,33 @@ window.closeDebateModal = function () {
 };
 
 window.renderDebatePrompt = function () {
-  if (
-    !window.currentUnitData ||
-    !window.currentUnitData.debatePrompts ||
-    window.currentUnitData.debatePrompts.length === 0
-  ) {
+  const unitData =
+    (window.appStore && window.appStore.state && window.appStore.state.activeUnitData) ||
+    window.currentUnitData ||
+    {};
+  let prompts = unitData.debatePrompts || [];
+  if (prompts.length === 0 && window.currentLesson) {
+    const l = window.currentLesson;
+    prompts = [
+      {
+        title: l.key_topic || l.title || 'Lesson Enquiry Debate',
+        prompt: l.enquiry || l.enquiry_question || l.title,
+        sentence_starter: 'I argue that the primary turning point was...',
+      },
+    ];
+  }
+
+  if (prompts.length === 0) {
     document.getElementById('debateTopicSubtitle').innerText = 'No prompts available';
     document.getElementById('debateModalContent').innerHTML =
       'No debate prompts found for this unit.';
     document.getElementById('btn-show-starter').style.display = 'none';
     return;
   }
-  const prompts = window.currentUnitData.debatePrompts;
-  const promptData = prompts[window.currentDebateIndex];
-  document.getElementById('debateTopicSubtitle').innerText = promptData.title;
-  document.getElementById('debateModalContent').innerHTML = promptData.prompt;
+  const promptData = prompts[window.currentDebateIndex % prompts.length];
+  document.getElementById('debateTopicSubtitle').innerText = promptData.title || 'Debate Motion';
+  document.getElementById('debateModalContent').innerHTML =
+    promptData.prompt || promptData.text || '';
 
   const starterContainer = document.getElementById('debateSentenceStarterContainer');
   const starterBtn = document.getElementById('btn-show-starter');
@@ -1377,11 +1419,14 @@ window.toggleDebateStarter = function () {
 };
 
 window.cycleDebatePrompt = function (direction) {
-  if (!window.currentUnitData || !window.currentUnitData.debatePrompts) return;
-  const prompts = window.currentUnitData.debatePrompts;
-  window.currentDebateIndex += direction;
-  if (window.currentDebateIndex < 0) window.currentDebateIndex = prompts.length - 1;
-  if (window.currentDebateIndex >= prompts.length) window.currentDebateIndex = 0;
+  const unitData =
+    (window.appStore && window.appStore.state && window.appStore.state.activeUnitData) ||
+    window.currentUnitData ||
+    {};
+  const prompts = unitData.debatePrompts || [];
+  if (prompts.length === 0) return;
+  window.currentDebateIndex =
+    (window.currentDebateIndex + direction + prompts.length) % prompts.length;
   window.renderDebatePrompt();
 };
 

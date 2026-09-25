@@ -1126,9 +1126,7 @@ export function attachStarterStripEvents(container) {
   if (thumbWrap) {
     thumbWrap.onclick = (e) => {
       e.stopPropagation();
-      if (typeof window.switchView === 'function') {
-        window.switchView('masterpiece');
-      }
+      openProjectorMode();
     };
   }
 
