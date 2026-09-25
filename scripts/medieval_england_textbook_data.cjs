@@ -5,6 +5,12 @@
  * Audited: Exactly 3 discrete paragraphs of 60–80 words per Act (108 paragraphs total).
  */
 
+const {
+  CONCEPT_SPOTLIGHTS,
+  LEFT_ANALYTICAL_MATRICES,
+} = require('./medieval_england_spotlights_and_matrices.cjs');
+const { PARAGRAPH_ENRICHMENTS } = require('./medieval_england_paragraph_enrichments.cjs');
+
 module.exports = function getMedievalData(helpers = {}) {
   const getBase64Image = helpers.getBase64Image || ((p) => p);
 
@@ -195,22 +201,23 @@ module.exports = function getMedievalData(helpers = {}) {
         <div class="archival-header">
           <div class="source-identity">
             <span class="source-badge">SOURCE C</span>
-            <span class="source-type">Constitutional Statute</span>
+            <span class="source-type">Constitutional Parchment Artifact</span>
           </div>
           <span class="source-date-micro">15 June 1215</span>
         </div>
-        <div class="archival-title">Magna Carta: Clauses 39 &amp; 40 (The Foundation of Liberty)</div>
+        <div class="archival-title">The British Library Magna Carta: Cotton MS Augustus II.106</div>
+        <img class="archival-image" src="${getBase64Image('/images/magna_carta_1215.jpg')}" alt="Magna Carta Original 1215 Manuscript">
         <div class="archival-body">
-          "Clause 39: No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled... except by the lawful judgement of his equals or by the law of the land.<br>
+          "Clause 39: No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled... except by the lawful judgment of his equals or by the law of the land.<br>
           Clause 40: To no one will we sell, to no one will we deny or delay right or justice."
         </div>
         <div class="archival-context-box">
-          <p class="archival-context-text">Drafted in formal Latin on sheepskin parchment at Runnymede; of its 63 clauses, only three remain on the British statute book today.</p>
-          <div class="archival-hinge-q"><strong>Hinge Question:</strong> Who did the barons mean by "free men" in 1215, and how did this exclude 80% of England's population?</div>
+          <p class="archival-context-text">One of four surviving exemplars issued from the Runnymede chancery under King John's Great Seal, establishing the immortal principle that the monarch is subject to the law.</p>
+          <div class="archival-hinge-q"><strong>Hinge Question:</strong> Why was written Latin parchment on sheepskin necessary to bind the king rather than a sacred spoken oath?</div>
         </div>
         <div class="archival-footer">
-          <span>The British Library • Cotton MS Augustus ii. 106</span>
-          <span>The Great Charter of Liberties</span>
+          <span>The British Library • London • Cotton MS Augustus ii. 106</span>
+          <span>Primary 1215 Chancery Exemplar</span>
         </div>
       </div>
     `,
@@ -346,7 +353,7 @@ module.exports = function getMedievalData(helpers = {}) {
         badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
         title: 'A Severed Head at the Tower & A 14-Year-Old’s Cynical Oath',
         date: '14–15 June 1381 • London',
-        text: 'When the peasant army flooded London, they bypassed the royal guards at the Tower of London and dragged out Archbishop Sudbury (who was also the King’s Chancellor responsible for the hated Poll Tax). Taking eight messy axe blows to sever his head, the rebels paraded it through Cheapside on a pike before supposedly playing a game of football with it in the gutter. The next afternoon at Smithfield, fourteen-year-old King Richard II faced Wat Tyler. Tyler, emboldened by power, rode up, spat water at the King’s feet, and washed his mouth in beer. London Mayor William Walworth, furious at such peasant disrespect, drew his baselard dagger and slashed Tyler across the neck. As the peasant archers notched their arrows to slaughter the royal party, young Richard galloped alone toward the angry rebels, shouting: "I am your king! I will be your captain! Follow me into the field!" The peasants cheered, believed him, and went home in peace. Within a month, Richard sent royal judges and soldiers to hang 1,500 rebels, delivering his infamous verdict: "Villeins you were, and villeins you shall remain."',
+        text: 'When the peasant army flooded London, they bypassed the royal guards at the Tower of London and dragged out Archbishop Sudbury (who was also the King’s Chancellor responsible for the hated Poll Tax). Taking eight messy axe blows to sever his head, the rebels paraded it through Cheapside on a pike before supposedly playing a game of football with it in the gutter. The next afternoon at Smithfield, fourteen-year-old King Richard II faced Wat Tyler. Tyler, emboldened by power, rode up, spat water at the King’s feet, and washed his mouth in beer. London Mayor William Walworth, furious at such peasant disrespect, drew his baselard dagger and slashed Tyler across the neck. As the peasant archers notched their arrows to slaughter the royal party, young Richard galloped alone toward the angry rebels, shouting: "I am your king! I will be your captain! Follow me into the field!" The peasants cheered, believed him, and went home in peace. Within a month, Richard sent royal judges and soldiers to hang 1,500 rebels, delivering his infamous verdict: "Villeins you were, and villeins you shall remain." The severed head of Wat Tyler was promptly displayed upon London Bridge, starkly warning all commoners of the lethal cost of challenging the social hierarchy.',
         shelfmark: 'THE ANONIMALLE CHRONICLE OF ST MARY’S • YORK (c. 1390)',
       },
       archivalDispatch: `
@@ -465,6 +472,7 @@ module.exports = function getMedievalData(helpers = {}) {
           <span class="source-date-micro">Written c. 1471</span>
         </div>
         <div class="archival-title">Sir John Fortescue: The Governance of England</div>
+        <img class="archival-image" src="${getBase64Image('/images/portchester_castle.jpg')}" alt="Portchester Castle Royal Fortress">
         <div class="archival-body">
           "The King of England cannot rule his people by other laws than such as they themselves assent unto... He cannot at his pleasure lay taxes upon them, nor alter their laws, without the consent of the whole realm in Parliament assembled. This is a political and royal dominion, far superior to absolute tyranny."
         </div>
@@ -666,29 +674,27 @@ module.exports = function getMedievalData(helpers = {}) {
       },
       sourceB: {
         badge: 'SOURCE B',
-        type: 'Visual Forensic Artifact',
-        date: 'Commissioned c. 1070s',
-        title: 'The Bayeux Tapestry: The Saxon Shield Wall at Senlac Hill',
-        image: '/images/battle_of_hastings_bayeux.jpg',
-        text: '"Here the English and French fight together in battle: Anglo-Saxon housecarls stand shoulder-to-shoulder behind locked limewood shields, cutting down charging Norman cavalry with two-handed Danish battleaxes while arrows shatter on shields."',
+        type: 'Contemporary Norman Chronicle',
+        date: 'Written c. 1071',
+        title: 'William of Poitiers: The Feigned Flight at Senlac Hill',
+        text: '"The Normans and their allies turned their backs and fled, apparently in panic... The barbarian English, believing the battle won, leapt down from the ridge in disorderly pursuit. Then Duke William and his horsemen wheeled round, hemmed them in on every side, and slaughtered the pursuers without mercy. Thus repeated stratagems wore down the Saxon resistance."',
         context:
-          'Embroidered in colored wool on linen, commissioned by Bishop Odo of Bayeux to commemorate the Norman victory while honoring Saxon valour.',
+          'Written by William of Poitiers, Duke William’s personal chaplain and military panegyrist, celebrating Norman tactical ingenuity.',
         hingeQuestion:
-          'How does the tapestry illustrate the formidable defensive strength of the Anglo-Saxon shield wall before it broke?',
+          'How does William of Poitiers’ account highlight the contrast between Norman mounted flexibility and Saxon infantry immobility?',
       },
     },
     p4: {
       sourceA: {
         badge: 'SOURCE A',
-        type: 'Primary Forensic Architecture',
-        date: 'Constructed late 11th Century',
-        title: 'Portchester Castle Keep: The Norman Stone Bastion',
-        image: '/images/portchester_castle.jpg',
-        text: '"Constructed in the corner of a former Roman Saxon Shore fort on Portsmouth Harbour, the massive limestone keep of Portchester Castle dominated the southern coastline, securing the sea lanes back to Normandy and intimidating the surrounding Hampshire countryside."',
+        type: 'Primary Monastic Chronicle',
+        date: 'Written 1087',
+        title: 'The Anglo-Saxon Chronicle: Castles & Royal Oppression',
+        text: '"King William had castles built, and miserably oppressed the poor people. The King was so very stern, and took from his subjects many marks of gold and many hundreds of pounds of silver... Earls who acted against his will he cast into bonds; bishops he deprived of their sees, and abbots of their abbacies... So stern and relentless was he, that no one dared do anything against his will."',
         context:
-          'A prime example of Norman military architecture, combining defensive isolation with sweeping administrative control.',
+          'Written in 1087 as an obituary annal of William I, reflecting the bitter resentment of English monks against Norman military dominance.',
         hingeQuestion:
-          'Why were coastal castles like Portchester vital for William’s ability to rule both England and Normandy simultaneously?',
+          'Why did the Saxon chronicler link the construction of castles directly with the oppressive taxation and terror of the Norman kings?',
       },
       sourceB: {
         badge: 'SOURCE B',
@@ -1521,6 +1527,25 @@ module.exports = function getMedievalData(helpers = {}) {
     ],
   };
 
+  // Apply enrichments to MEDIEVAL_ACT_NARRATIVES to achieve 100% optimal page balance
+  Object.keys(PARAGRAPH_ENRICHMENTS).forEach((enqNum) => {
+    const lesson = MEDIEVAL_ACT_NARRATIVES[parseInt(enqNum, 10) - 1];
+    const e = PARAGRAPH_ENRICHMENTS[enqNum];
+    if (!lesson) return;
+    if (e.act1_p1) lesson.act1.paras[0] = e.act1_p1;
+    if (e.act1_p2) lesson.act1.paras[1] = e.act1_p2;
+    if (e.act1_p3) lesson.act1.paras[2] = e.act1_p3;
+    if (e.act2_p1) lesson.act2.paras[0] = e.act2_p1;
+    if (e.act2_p2) lesson.act2.paras[1] = e.act2_p2;
+    if (e.act2_p3) lesson.act2.paras[2] = e.act2_p3;
+    if (e.act3_p1) lesson.act3.paras[0] = e.act3_p1;
+    if (e.act3_p2) lesson.act3.paras[1] = e.act3_p2;
+    if (e.act3_p3) lesson.act3.paras[2] = e.act3_p3;
+    if (e.act4_p1) lesson.act4.paras[0] = e.act4_p1;
+    if (e.act4_p2) lesson.act4.paras[1] = e.act4_p2;
+    if (e.act4_p3) lesson.act4.paras[2] = e.act4_p3;
+  });
+
   return {
     COVER_CONFIG,
     MEDIEVAL_COMPONENT_BANK,
@@ -1528,5 +1553,7 @@ module.exports = function getMedievalData(helpers = {}) {
     MEDIEVAL_LEFT_SOURCES,
     MEDIEVAL_ACT_NARRATIVES,
     BACK_COVER_DATA,
+    CONCEPT_SPOTLIGHTS,
+    LEFT_ANALYTICAL_MATRICES,
   };
 };

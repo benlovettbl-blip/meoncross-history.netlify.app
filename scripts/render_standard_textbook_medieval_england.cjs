@@ -7,13 +7,14 @@
  *
  * Architectural Standards Enforced:
  * 1. Commercial Independence: Strict institutional neutrality; 0 prohibited school identifiers.
- * 2. Weimar Dual-Column Master Architecture:
- *    - .two-column-prose with column-span: all Act banners
+ * 2. Symmetric Dual-Column Master Architecture:
+ *    - Verso (Left Page): Act 1 (Source A + Key Figure) & Act 2 (Source B + Analytical Matrix) + Vocab Strip
+ *    - Recto (Right Page): Act 3 (Archival Dispatch Source C) & Act 4 (Concept Spotlight + Archival Oddity) + Assessment Grid
  *    - Pure PEEL paragraph referencing with .para-ref micro-badges ([1.1], [1.2], etc.)
- *    - Audited paragraph density: 2 to 3 discrete paragraphs of 60–80 words per Act
+ *    - Audited paragraph density: Exactly 3 discrete paragraphs of 60–80 words per Act
  * 3. Exact 20-Page Budget:
  *    - Page 1:  Master Front Cover (98mm uncropped photographic plate, 9-enquiry syllabus matrix)
- *    - Pages 2–19: 9 Double-Page Enquiry Spreads (Verso Acts 1 & 2 + Sources A & B; Recto Acts 3 & 4 + Key Figure + Archival Oddity)
+ *    - Pages 2–19: 9 Double-Page Enquiry Spreads (Verso Acts 1 & 2; Recto Acts 3 & 4)
  *    - Page 20: Master Back Cover (1066–1485 Chronological Spine, Themes Matrix, Historiography, PEEL Scaffold & QR Matrix)
  * 4. Base64 Image Inlining for 100% offline and Puppeteer fidelity.
  */
@@ -77,16 +78,6 @@ function generateQrSvg(url) {
 
 // Load data module
 const getMedievalData = require('./medieval_england_textbook_data.cjs');
-const medievalData = getMedievalData({ getBase64Image });
-
-const {
-  COVER_CONFIG,
-  MEDIEVAL_COMPONENT_BANK,
-  MEDIEVAL_LEFT_VOCAB,
-  MEDIEVAL_LEFT_SOURCES,
-  MEDIEVAL_ACT_NARRATIVES,
-  BACK_COVER_DATA,
-} = medievalData;
 
 function renderArchivalSourceBox(src) {
   if (!src) return '';
@@ -120,7 +111,79 @@ function renderArchivalSourceBox(src) {
   `;
 }
 
+function renderConceptSpotlightBox(csb) {
+  if (!csb) return '';
+  return `
+    <div class="concept-spotlight-box">
+      <div class="csb-header">
+        <span class="csb-tag">${csb.tag || 'CONCEPT SPOTLIGHT'}</span>
+        <span class="csb-category">${csb.category || ''}</span>
+      </div>
+      <h4 class="csb-title">${csb.title || ''}</h4>
+      <div class="csb-body">${formatText(csb.body || '')}</div>
+      ${csb.takeaway ? `<div class="csb-takeaway"><strong>Key Historical Insight:</strong> ${formatText(csb.takeaway.replace(/^Key Historical Insight:\s*/i, ''))}</div>` : ''}
+    </div>
+  `;
+}
+
+function renderAnalyticalMatrixCard(matrix) {
+  if (!matrix) return '';
+  return `
+    <div class="analytical-matrix-card">
+      <div class="amc-header">${matrix.header}</div>
+      <div class="amc-grid">
+        ${matrix.items
+          .map(
+            (it) => `
+          <div class="amc-col">
+            <strong>${it.title}:</strong>
+            <p>${formatText(it.text)}</p>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderKeyFigureBox(keyFigure) {
+  if (!keyFigure) return '';
+  return `
+    <div class="key-figure-box">
+      <div class="kf-header">
+        <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
+        <span class="kf-lifespan">${keyFigure.lifespan}</span>
+      </div>
+      <div class="kf-identity-row">
+        ${keyFigure.image ? `<img class="kf-portrait" src="${keyFigure.image.startsWith('data:') ? keyFigure.image : getBase64Image(keyFigure.image) || keyFigure.image}" alt="${keyFigure.name}">` : ''}
+        <div class="kf-identity-text">
+          <div class="kf-name">${keyFigure.name}</div>
+          <div class="kf-role">${keyFigure.role}</div>
+        </div>
+      </div>
+      <div class="kf-significance">${formatText(keyFigure.significance)}</div>
+      <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+      <ul class="kf-actions-list">
+        ${keyFigure.actions.map((a) => `<li>${formatText(a)}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+}
+
 async function buildPublisherTextbookHtmlMedieval() {
+  const medievalData = getMedievalData({ getBase64Image });
+  const {
+    COVER_CONFIG,
+    MEDIEVAL_COMPONENT_BANK,
+    MEDIEVAL_LEFT_VOCAB,
+    MEDIEVAL_LEFT_SOURCES,
+    MEDIEVAL_ACT_NARRATIVES,
+    BACK_COVER_DATA,
+    CONCEPT_SPOTLIGHTS,
+    LEFT_ANALYTICAL_MATRICES,
+  } = medievalData;
+
   const coverImgData =
     getBase64Image(COVER_CONFIG.coverImage) || getBase64Image('/images/portchester_keep.jpg');
 
@@ -142,6 +205,9 @@ async function buildPublisherTextbookHtmlMedieval() {
     const act2 = lesson.act2 || { title: 'Escalation & Conflict', paras: [] };
     const act3 = lesson.act3 || { title: 'Forensic Archival Evidence', paras: [] };
     const act4 = lesson.act4 || { title: 'The Historical Verdict', paras: [] };
+
+    const spotlight = CONCEPT_SPOTLIGHTS[bankKey];
+    const matrix = LEFT_ANALYTICAL_MATRICES[leftSrcKey];
 
     // LEFT PAGE (Verso)
     lessonsHtml += `
@@ -170,29 +236,7 @@ async function buildPublisherTextbookHtmlMedieval() {
 
           ${renderArchivalSourceBox(sources.sourceA)}
 
-          ${
-            bank.keyFigure
-              ? `
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
-              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
-            </div>
-            <div class="kf-identity-row">
-              ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image.startsWith('data:') ? bank.keyFigure.image : getBase64Image(bank.keyFigure.image) || bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
-              <div class="kf-identity-text">
-                <div class="kf-name">${bank.keyFigure.name}</div>
-                <div class="kf-role">${bank.keyFigure.role}</div>
-              </div>
-            </div>
-            <div class="kf-significance">${formatText(bank.keyFigure.significance)}</div>
-            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-            <ul class="kf-actions-list">
-              ${bank.keyFigure.actions.map((a) => `<li>${formatText(a)}</li>`).join('')}
-            </ul>
-          </div>`
-              : ''
-          }
+          ${renderKeyFigureBox(bank.keyFigure)}
 
           <div class="section-banner">
             <span class="sb-num">ACT 2</span>
@@ -201,6 +245,8 @@ async function buildPublisherTextbookHtmlMedieval() {
           ${act2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
 
           ${renderArchivalSourceBox(sources.sourceB)}
+
+          ${renderAnalyticalMatrixCard(matrix)}
 
         </div>
 
@@ -258,6 +304,8 @@ async function buildPublisherTextbookHtmlMedieval() {
             <span class="sb-title">${act4.title}</span>
           </div>
           ${act4.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
+
+          ${renderConceptSpotlightBox(spotlight)}
 
           ${
             bank.archivalOddity
@@ -331,6 +379,11 @@ async function buildPublisherTextbookHtmlMedieval() {
     )
     .join('');
 
+  const textbookCss = fs.readFileSync(
+    path.join(__dirname, 'medieval_england_textbook.css'),
+    'utf8',
+  );
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -338,943 +391,7 @@ async function buildPublisherTextbookHtmlMedieval() {
   <title>${COVER_CONFIG.title} — Master Textbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <style>
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
-    *, *:before, *:after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      background: #e2e8f0;
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.35pt;
-      line-height: 1.44;
-      color: #1e293b;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-
-    .textbook-page {
-      width: 210mm;
-      height: 297mm;
-      box-sizing: border-box;
-      padding: 10mm 12mm 8mm 12mm;
-      background: #ffffff;
-      margin: 0 auto 10mm auto;
-      page-break-after: always;
-      break-after: always;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-    @media print {
-      body { background: #ffffff; }
-      .textbook-page { margin: 0; }
-    }
-
-    .page-inner {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-    }
-
-    /* Lesson Header */
-    .lesson-header {
-      border-bottom: 2px solid #831843;
-      padding-bottom: 3px;
-      margin-bottom: 5px;
-      flex-shrink: 0;
-    }
-    .lesson-badge-strip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 2px;
-      font-family: 'Inter', sans-serif;
-    }
-    .topic-badge {
-      background: #831843;
-      color: #ffffff;
-      font-size: 6.6pt;
-      font-weight: 800;
-      padding: 1.5px 5px;
-      border-radius: 2px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .spec-ref-badge {
-      font-size: 6.6pt;
-      font-weight: 700;
-      color: #9d174d;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .lesson-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 11.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 1px 0;
-      line-height: 1.15;
-    }
-    .lesson-spec-anchor {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      color: #334155;
-      line-height: 1.25;
-      background: #fdf2f8;
-      border-left: 3px solid #831843;
-      padding: 1.5px 5px;
-      border-radius: 0 2px 2px 0;
-    }
-
-    /* Right Page Header */
-    .right-page-header {
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 3px;
-      margin-bottom: 5px;
-      flex-shrink: 0;
-    }
-    .rph-meta {
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1px;
-    }
-    .rph-tag { color: #831843; }
-    .rph-lesson { color: #64748b; }
-    .rph-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 11.0pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0;
-      line-height: 1.15;
-    }
-
-    /* 2-Column Reading Measure */
-    .two-column-prose {
-      column-count: 2;
-      column-gap: 14px;
-      column-rule: 1px solid #e2e8f0;
-      text-align: justify;
-      flex: 1;
-      overflow: hidden;
-    }
-
-    .section-banner {
-      column-span: all;
-      background: #fdf2f8;
-      border-left: 3.5px solid #831843;
-      border-bottom: 1px solid #fbcfe8;
-      padding: 2px 5px;
-      border-radius: 0 2px 2px 0;
-      margin: 4px 0 2px 0;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-family: 'Inter', sans-serif;
-    }
-    .sb-num {
-      font-size: 6.0pt;
-      font-weight: 900;
-      color: #ffffff;
-      background: #831843;
-      padding: 1px 4px;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-    }
-    .sb-title {
-      font-size: 7.2pt;
-      font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .narrative-p {
-      margin: 0 0 4px 0;
-      text-indent: 0.9em;
-    }
-    .narrative-p:first-of-type, .section-banner + .narrative-p {
-      text-indent: 0;
-    }
-
-    .para-ref {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
-      font-weight: 800;
-      color: #831843;
-      background: #fce7f3;
-      border: 1px solid #fbcfe8;
-      padding: 0.5px 3px;
-      border-radius: 2px;
-      margin-right: 3px;
-      vertical-align: baseline;
-      letter-spacing: 0.02em;
-    }
-
-    /* Archival Source Box */
-    .archival-source-box {
-      background: #fdfaf6;
-      border: 1px solid #e7e5e4;
-      border-left: 3px solid #78716c;
-      border-radius: 3px;
-      padding: 4px 6px;
-      margin: 4px 0;
-      break-inside: avoid;
-    }
-    .archival-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1px;
-      font-family: 'Inter', sans-serif;
-    }
-    .source-badge {
-      font-size: 5.8pt;
-      font-weight: 900;
-      color: #fff;
-      background: #0f172a;
-      padding: 1px 3.5px;
-      border-radius: 2px;
-    }
-    .source-type {
-      font-size: 5.8pt;
-      font-weight: 700;
-      color: #78716c;
-      text-transform: uppercase;
-      margin-left: 3px;
-    }
-    .source-date-micro {
-      font-size: 5.6pt;
-      font-weight: 600;
-      color: #78716c;
-    }
-    .archival-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 7.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 1px;
-      line-height: 1.15;
-    }
-    .archival-image {
-      width: 100%;
-      max-height: 100px;
-      object-fit: cover;
-      border-radius: 2px;
-      margin-bottom: 2px;
-      display: block;
-      background: #fafaf9;
-    }
-    .archival-body {
-      font-size: 7.2pt;
-      line-height: 1.28;
-      color: #292524;
-      font-style: italic;
-      margin-bottom: 2px;
-    }
-    .written-source-box {
-      background: #fafaf9;
-      border-left: 2px solid #78716c;
-      padding: 3px 5px;
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.0pt;
-      line-height: 1.26;
-      color: #1c1917;
-      font-style: italic;
-      margin-bottom: 2px;
-    }
-    .archival-context-box {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-left: 2.5px solid #0284c7;
-      padding: 2.5px 4.5px;
-      margin: 2px 0 1px 0;
-      border-radius: 2px;
-      font-family: 'Inter', sans-serif;
-    }
-    .archival-context-text {
-      font-size: 5.8pt;
-      line-height: 1.22;
-      color: #334155;
-      margin: 0 0 1px 0;
-    }
-    .archival-hinge-q {
-      font-size: 5.8pt;
-      line-height: 1.22;
-      color: #0f172a;
-      background: #f0f9ff;
-      padding: 1.5px 3.5px;
-      border-radius: 2px;
-      margin-top: 1px;
-    }
-    .archival-hinge-q strong {
-      color: #0369a1;
-      text-transform: uppercase;
-      font-size: 5.4pt;
-      letter-spacing: 0.03em;
-    }
-
-    /* Key Figure Box */
-    .key-figure-box {
-      background: #fdf2f8;
-      border: 1px solid #fbcfe8;
-      border-left: 3.5px solid #831843;
-      border-radius: 3px;
-      padding: 4px 7px;
-      margin: 4px 0;
-      break-inside: avoid;
-    }
-    .kf-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1px;
-      font-family: 'Inter', sans-serif;
-    }
-    .kf-tag {
-      font-size: 5.8pt;
-      font-weight: 800;
-      color: #831843;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .kf-lifespan {
-      font-size: 5.6pt;
-      color: #64748b;
-      font-weight: 600;
-    }
-    .kf-identity-row {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      margin-bottom: 2px;
-    }
-    .kf-portrait {
-      width: 40px;
-      height: 48px;
-      object-fit: cover;
-      border-radius: 2px;
-      border: 1px solid #94a3b8;
-      flex-shrink: 0;
-    }
-    .kf-identity-text { flex: 1; }
-    .kf-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0;
-      line-height: 1.12;
-    }
-    .kf-role {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
-      font-weight: 700;
-      color: #475569;
-      text-transform: uppercase;
-      line-height: 1.15;
-    }
-    .kf-significance {
-      font-size: 7.0pt;
-      font-style: italic;
-      color: #334155;
-      line-height: 1.25;
-      margin-bottom: 2px;
-    }
-    .kf-actions-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
-      font-weight: 800;
-      color: #831843;
-      text-transform: uppercase;
-      margin: 1.5px 0 1px 0;
-    }
-    .kf-actions-list {
-      margin: 0;
-      padding-left: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      line-height: 1.24;
-      color: #1e293b;
-    }
-    .kf-actions-list li { margin-bottom: 1px; }
-
-    /* Archival Oddity Box */
-    .archival-oddity-box {
-      background: #fdfaf6;
-      border: 1px solid #fed7aa;
-      border-left: 3.5px solid #b45309;
-      border-radius: 3px;
-      padding: 4px 7px;
-      margin: 4px 0;
-      break-inside: avoid;
-    }
-    .aob-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1px;
-      border-bottom: 1px solid #ffedd5;
-      padding-bottom: 1px;
-      font-family: 'Inter', sans-serif;
-    }
-    .aob-badge {
-      font-size: 5.6pt;
-      font-weight: 800;
-      color: #92400e;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .aob-date {
-      font-size: 5.4pt;
-      font-weight: 600;
-      color: #78716c;
-    }
-    .aob-shelfmark {
-      font-size: 5.2pt;
-      font-weight: 700;
-      color: #b45309;
-      text-transform: uppercase;
-    }
-    .aob-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
-      font-weight: 800;
-      color: #7c2d12;
-      margin: 1px 0;
-      line-height: 1.15;
-    }
-    .aob-body {
-      font-size: 7.0pt;
-      line-height: 1.26;
-      color: #1e293b;
-    }
-
-    /* Bottom Decks */
-    .bottom-vocab-box, .bottom-enquiry-box {
-      width: 100%;
-      box-sizing: border-box;
-      flex-shrink: 0;
-      margin-top: auto;
-      margin-bottom: 1px;
-      padding: 5px 8px;
-      border-radius: 3px;
-      font-family: 'Inter', sans-serif;
-    }
-    .bottom-vocab-box {
-      background: #fdf2f8;
-      border: 1.2px solid #fbcfe8;
-      border-top: 2.5px solid #831843;
-    }
-    .bvb-header, .beb-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1.5px;
-    }
-    .bvb-title {
-      font-size: 6.4pt;
-      font-weight: 900;
-      color: #831843;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .bvb-badge, .beb-badge {
-      font-size: 5.4pt;
-      font-weight: 800;
-      background: #0f172a;
-      color: #fff;
-      padding: 1px 3.5px;
-      border-radius: 2px;
-      text-transform: uppercase;
-    }
-    .bvb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 6px;
-      font-size: 6.4pt;
-      line-height: 1.25;
-      color: #334155;
-    }
-    .bvb-col strong, .beb-col strong {
-      display: block;
-      color: #0f172a;
-      margin-bottom: 1px;
-      text-transform: uppercase;
-      font-size: 5.8pt;
-    }
-
-    .bottom-enquiry-box {
-      background: #f8fafc;
-      border: 1.2px solid #cbd5e1;
-      border-top: 2.5px solid #831843;
-    }
-    .beb-title {
-      font-size: 6.4pt;
-      font-weight: 900;
-      color: #831843;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .beb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      font-size: 6.4pt;
-      line-height: 1.26;
-      color: #334155;
-    }
-
-    .page-footer {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 2px;
-      margin-top: 2px;
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 5.8pt;
-      color: #64748b;
-      font-weight: 600;
-      flex-shrink: 0;
-    }
-
-    /* Cover Page */
-    .cover-container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 2px solid #0f172a;
-      padding: 8px 12px 2px 12px;
-      box-sizing: border-box;
-    }
-    .cover-top { text-align: center; }
-    .cover-dept-banner {
-      display: inline-block;
-      background: #0f172a;
-      color: #ffffff;
-      padding: 2px 10px;
-      border-radius: 2px;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .cover-series {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      font-weight: 700;
-      color: #831843;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 2px;
-    }
-    .cover-main-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0 0 2px 0;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-    }
-    .cover-subtitle {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.2pt;
-      font-style: italic;
-      color: #475569;
-      margin-bottom: 6px;
-    }
-    .cover-plate-frame {
-      border: 1px solid #cbd5e1;
-      padding: 3px;
-      background: #ffffff;
-      margin-bottom: 4px;
-    }
-    .cover-plate-img {
-      width: 100%;
-      height: 139mm;
-      object-fit: cover;
-      object-position: center 40%;
-      display: block;
-    }
-    .cover-plate-caption {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
-      color: #64748b;
-      margin-top: 2px;
-      text-align: right;
-    }
-    .cover-enquiry-box {
-      background: #fdf2f8;
-      border: 1.5px solid #831843;
-      border-left: 4px solid #831843;
-      padding: 4px 8px;
-      margin-bottom: 4px;
-      font-family: 'Inter', sans-serif;
-      text-align: left;
-    }
-    .ceb-label {
-      font-size: 6.2pt;
-      font-weight: 800;
-      color: #831843;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .ceb-text {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.8pt;
-      font-style: italic;
-      color: #0f172a;
-      margin-top: 1px;
-    }
-
-    /* Cover Syllabus Checklist Box */
-    .cover-spec-checklist-box {
-      border: 1.5px solid #0f172a;
-      border-radius: 3px;
-      padding: 4px 6px;
-      background: #ffffff;
-      font-family: 'Inter', sans-serif;
-      margin-top: 2px;
-    }
-    .cscb-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1.2px solid #0f172a;
-      padding-bottom: 2px;
-      margin-bottom: 3px;
-    }
-    .cscb-title {
-      font-size: 7.4pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .cscb-subtitle {
-      font-size: 6.4pt;
-      font-weight: 700;
-      color: #475569;
-    }
-    .cscb-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
-      font-size: 6.2pt;
-      line-height: 1.22;
-      color: #1e293b;
-    }
-    .cscb-col {
-      border-right: 1px solid #e2e8f0;
-      padding-right: 4px;
-    }
-    .cscb-col:last-child {
-      border-right: none;
-    }
-    .cscb-topic-title {
-      font-size: 6.8pt;
-      font-weight: 900;
-      color: #831843;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-      border-bottom: 1px solid #fbcfe8;
-      padding-bottom: 1px;
-    }
-    .cscb-item {
-      display: flex;
-      gap: 3px;
-      align-items: flex-start;
-      margin-bottom: 2px;
-    }
-    .cscb-bullet {
-      color: #831843;
-      font-size: 7.0pt;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .cover-footer {
-      border-top: 1.5px solid #0f172a;
-      padding-top: 3px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      color: #475569;
-    }
-
-    /* Back Cover */
-    .bc-container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 2px solid #0f172a;
-      padding: 16px 14px 12px 14px;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    .back-body-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 6px;
-      margin: 3px 0;
-    }
-    .bc-header {
-      border-bottom: 2px solid #831843;
-      padding-bottom: 2px;
-      margin-bottom: 4px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .bc-title {
-      font-size: 9.6pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .bc-tag {
-      font-size: 6.4pt;
-      font-weight: 800;
-      color: #831843;
-      text-transform: uppercase;
-    }
-
-    /* Timeline Grid */
-    .bc-timeline-box {
-      background: #fdf2f8;
-      border: 1px solid #fbcfe8;
-      border-left: 3.5px solid #831843;
-      border-radius: 3px;
-      padding: 8px 10px;
-      margin-bottom: 0;
-    }
-    .bct-header {
-      font-size: 7.0pt;
-      font-weight: 900;
-      color: #831843;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 3px;
-      border-bottom: 1px solid #fbcfe8;
-      padding-bottom: 1px;
-    }
-    .bct-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4px 8px;
-      font-size: 6.4pt;
-      line-height: 1.30;
-      color: #1e293b;
-    }
-    .bct-item {
-      display: flex;
-      gap: 4px;
-    }
-    .bct-date {
-      font-weight: 800;
-      color: #831843;
-      flex-shrink: 0;
-      width: 58px;
-    }
-
-    /* Themes Grid */
-    .bc-themes-box {
-      border: 1px solid #cbd5e1;
-      border-radius: 3px;
-      padding: 10px 10px;
-      background: #f8fafc;
-      margin-bottom: 0;
-    }
-    .bth-header {
-      font-size: 7.0pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 3px;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 1px;
-    }
-    .bth-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      font-size: 6.6pt;
-      line-height: 1.32;
-    }
-    .bth-col strong {
-      display: block;
-      color: #831843;
-      font-size: 6.4pt;
-      margin-bottom: 1px;
-      text-transform: uppercase;
-    }
-
-    /* Historiography Box */
-    .bc-hist-box {
-      background: #ffffff;
-      border: 1px solid #fed7aa;
-      border-left: 3.5px solid #b45309;
-      border-radius: 3px;
-      padding: 10px 10px;
-      margin-bottom: 0;
-    }
-    .bch-header {
-      font-size: 7.0pt;
-      font-weight: 900;
-      color: #92400e;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 2px;
-    }
-    .bch-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      font-size: 6.6pt;
-      line-height: 1.34;
-      color: #1e293b;
-    }
-    .bch-col strong {
-      display: block;
-      color: #78350f;
-      margin-bottom: 1px;
-    }
-
-    /* Synoptic Verdict Grid */
-    .bc-verdict-box {
-      border: 1px solid #cbd5e1;
-      border-radius: 3px;
-      padding: 10px 10px;
-      background: #f8fafc;
-      margin-bottom: 0;
-    }
-    .bcv-header {
-      font-size: 7.0pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 3px;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 1px;
-    }
-    .bcv-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      font-size: 6.6pt;
-      line-height: 1.32;
-      color: #334155;
-    }
-    .bcv-col strong {
-      display: block;
-      color: #0f172a;
-      font-size: 6.4pt;
-      margin-bottom: 1px;
-      text-transform: uppercase;
-    }
-
-    /* Disciplinary Writing Framework */
-    .bc-writing-box {
-      border: 1px solid #cbd5e1;
-      border-radius: 3px;
-      padding: 10px 10px;
-      background: #ffffff;
-      margin-bottom: 0;
-    }
-    .bcw-header {
-      font-size: 7.0pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 3px;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 1px;
-    }
-    .bcw-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      font-size: 6.6pt;
-      line-height: 1.32;
-      color: #334155;
-    }
-    .bcw-col strong {
-      display: block;
-      color: #831843;
-      font-size: 6.4pt;
-      margin-bottom: 1px;
-      text-transform: uppercase;
-    }
-
-    /* QR Matrix */
-    .bc-qr-strip {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 3px;
-    }
-    .bqr-grid {
-      display: grid;
-      grid-template-columns: repeat(9, 1fr);
-      gap: 4px;
-    }
-    .bqr-card {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 2px;
-      padding: 8px 2px;
-      text-align: center;
-    }
-    .bqr-header {
-      font-size: 4.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .bqr-num {
-      display: block;
-      font-weight: 900;
-      color: #831843;
-      font-size: 5.2pt;
-    }
-    .bqr-code-box {
-      width: 62px;
-      height: 62px;
-      margin: 3px auto;
-    }
-    .bqr-footer {
-      font-size: 4.2pt;
-      color: #64748b;
-      text-transform: uppercase;
-    }
+    ${textbookCss}
   </style>
 </head>
 <body>
@@ -1536,9 +653,12 @@ async function renderMedievalMasterTextbook() {
   const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\Year 7\\Medieval England';
   if (fs.existsSync(driveDir)) {
     try {
-      const targetPdf = path.join(driveDir, 'Medieval England Master Textbook.pdf');
-      fs.copyFileSync(outPdfPath, targetPdf);
-      console.log(`Mirrored to Google Drive: ${targetPdf}`);
+      const targetPdf1 = path.join(driveDir, 'Medieval England Master Textbook.pdf');
+      const targetPdf2 = path.join(driveDir, 'medieval_england_textbook_PUBLISHER.pdf');
+      fs.copyFileSync(outPdfPath, targetPdf1);
+      fs.copyFileSync(outPdfPath, targetPdf2);
+      console.log(`Mirrored to Google Drive: ${targetPdf1}`);
+      console.log(`Mirrored to Google Drive: ${targetPdf2}`);
     } catch (e) {
       console.warn('Could not mirror to Google Drive:', e.message);
     }
