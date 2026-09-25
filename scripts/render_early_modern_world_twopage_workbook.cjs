@@ -154,15 +154,16 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 2 on Page 2: Sketch the 1494 Tordesillas meridian dividing the Atlantic, or Drake’s fireships scattering the Armada.',
     enquiryQuestion:
-      'Enquiry: How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
+      'Enquiry: How useful are Source A (Visual: Tordesillas Map) and Source B (Textual: Hakluyt’s Discourse) for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
     sourceA: {
-      title: 'Source A: Papal Bull Inter Caetera & Treaty of Tordesillas (1493–1494)',
-      shelfmark: 'ARCHIVO GENERAL DE INDIAS • SEVILLE • PATRONATO 1',
-      text: '“We assign to you, Catholic Kings of Castile and Leon, all islands and mainlands discovered westward of the meridian line. We strictly command you to lead the inhabitants to embrace the Christian faith, so that the Holy Roman Catholic Church may be exalted and barbarous nations brought to the salvation of Christ.”',
-      clue: 'Provenance Clue: Official papal decree by Pope Alexander VI; reveals how Spanish imperial claims were justified by divine mandate and religious zeal.',
+      title: 'Source A (Visual): Map of the Treaty of Tordesillas Meridian Line (1494)',
+      image: '/images/tordesillas_map.png',
+      shelfmark: 'GENERAL ARCHIVE OF THE INDIES • SEVILLE • PATRONATO 1',
+      text: 'Contemporary cartographic record illustrating the papal meridian line agreed at Tordesillas in 1494, awarding all lands west to Spain and east to Portugal, legally barring England and France from the New World.',
+      clue: 'Provenance Clue: Official cartographic treaty endorsed by the Pope; visually reveals Spain’s claim to a complete monopoly over Atlantic waters and American territory.',
     },
     sourceB: {
-      title: 'Source B: Richard Hakluyt, Discourse on Western Planting (1584)',
+      title: 'Source B (Textual): Richard Hakluyt, Discourse on Western Planting (1584)',
       shelfmark: 'BRITISH LIBRARY • LONDON • COTTON MS TITUS B.XIII',
       text: '“This western enterprise will yield great profit unto our realm: providing naval timber and pitch, venting our woollen cloth, and employing our idle poor. Crucially, it will check the pride of King Philip of Spain, whose gold mines in the West Indies feed his war against Protestant England.”',
       clue: 'Provenance Clue: Secret strategic briefing for Queen Elizabeth I; emphasizes commercial profit, domestic unemployment, and geopolitical rivalry with Catholic Spain.',
@@ -170,19 +171,19 @@ const lessonConfigs = [
     matrix: [
       {
         col: '1. CONTENT & DETAIL',
-        text: 'Analyse what each source reveals about imperial motives (Catholic evangelism vs English trade profit and naval rivalry).',
+        text: 'Analyse what Source A (visual meridian line) and Source B (written colonial proposal) reveal about Catholic monopoly vs English commercial ambition.',
       },
       {
         col: '2. PROVENANCE & MOTIVE',
-        text: 'Evaluate how the authorship and purpose of each document (papal decree vs secret royal briefing) affects its historical reliability.',
+        text: 'Evaluate how the nature of each medium (official cartographic treaty vs secret royal intelligence briefing) shapes its historical utility.',
       },
       {
         col: '3. HISTORICAL JUDGEMENT',
-        text: 'Reach a reasoned conclusion: which source is more useful for understanding why European nations took to the Atlantic Ocean?',
+        text: 'Weigh both sources: which provides superior insight into the religious, economic, and geopolitical drivers of oceanic expansion?',
       },
     ],
     connectives:
-      'Source A is useful for proving that initial oceanic claims were legitimized by... • However, its utility is limited because as an official papal bull it conceals Spain’s desire for... • In contrast, Source B provides insider insight into England’s strategic ambition to... • Cross-referencing both sources demonstrates that exploration was driven by a volatile mix of... • On balance, Source [A/B] is more valuable for this enquiry because...',
+      'Source A (Visual: Tordesillas Map) is useful for showing how Spain claimed divine and legal ownership over... • However, as a map it does not reveal the violent resistance or economic greed behind... • In contrast, Source B (Textual: Hakluyt’s Discourse) provides insider strategic insight into England’s desire to... • Cross-referencing both visual and textual sources demonstrates that exploration was driven by... • Overall, Source [A/B] is more valuable for this enquiry because...',
     doNow: [
       {
         q: 'Which Chinese imperial dynasty deployed massive treasure fleets under Zheng He?',
@@ -1393,9 +1394,22 @@ function buildEarlyModernWorldTwoPageWorkbook() {
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e3a8a; text-transform: uppercase;">${cfg.sourceA.title}</strong>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
-              ${cfg.sourceA.text}
-            </p>
+            ${
+              cfg.sourceA.image
+                ? `
+              <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 2px;">
+                <img src="${cfg.sourceA.image}" style="width: 68px; height: 46px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1; flex-shrink: 0;" alt="Source Visual" />
+                <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e293b; font-style: italic; margin: 0; line-height: 1.2;">
+                  ${cfg.sourceA.text}
+                </p>
+              </div>
+            `
+                : `
+              <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
+                ${cfg.sourceA.text}
+              </p>
+            `
+            }
             <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
               <strong>Record:</strong> ${cfg.sourceA.shelfmark}
             </div>
@@ -1409,9 +1423,22 @@ function buildEarlyModernWorldTwoPageWorkbook() {
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #0369a1; text-transform: uppercase;">${cfg.sourceB.title}</strong>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
-              ${cfg.sourceB.text}
-            </p>
+            ${
+              cfg.sourceB.image
+                ? `
+              <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 2px;">
+                <img src="${cfg.sourceB.image}" style="width: 68px; height: 46px; object-fit: cover; border-radius: 2px; border: 1px solid #cbd5e1; flex-shrink: 0;" alt="Source Visual" />
+                <p style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e293b; font-style: italic; margin: 0; line-height: 1.2;">
+                  ${cfg.sourceB.text}
+                </p>
+              </div>
+            `
+                : `
+              <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; margin: 0 0 3px 0; line-height: 1.25;">
+                ${cfg.sourceB.text}
+              </p>
+            `
+            }
             <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-bottom: 2px;">
               <strong>Record:</strong> ${cfg.sourceB.shelfmark}
             </div>

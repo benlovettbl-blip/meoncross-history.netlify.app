@@ -250,27 +250,36 @@ async function auditPageBudget(page, options = {}) {
 
           // 4. Inter-Task Void Audit (Measure vertical distance between consecutive task blocks)
           let maxInterTaskGap = 0;
-          const bodyContainer =
-            p.querySelector(
-              '.page-body-full, .page-flex-full, .page-body-stretch, .page-inner, .back-body-content',
-            ) || p;
-          const directChildren = Array.from(bodyContainer.children).filter((el) => {
-            if (['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)) return false;
-            if (el.style.display === 'none') return false;
-            const r = el.getBoundingClientRect();
-            return r.width > 0 && r.height > 0;
-          });
+          const isCover =
+            p.classList.contains('cover-page') ||
+            p.querySelector('.cover-footer') ||
+            p.querySelector('.cover-container') ||
+            p.querySelector('[data-department-name]') ||
+            p.querySelector('.cover-banner');
 
-          for (let i = 0; i < directChildren.length - 1; i++) {
-            const current = directChildren[i];
-            const next = directChildren[i + 1];
-            // If next element is the footer, it is handled by gapAboveFooter
-            if (next === footer || (footer && footer.contains(next))) continue;
+          if (!isCover) {
+            const bodyContainer =
+              p.querySelector(
+                '.page-body-full, .page-flex-full, .page-body-stretch, .page-inner, .back-body-content',
+              ) || p;
+            const directChildren = Array.from(bodyContainer.children).filter((el) => {
+              if (['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)) return false;
+              if (el.style.display === 'none') return false;
+              const r = el.getBoundingClientRect();
+              return r.width > 0 && r.height > 0;
+            });
 
-            const rCurrent = current.getBoundingClientRect();
-            const rNext = next.getBoundingClientRect();
-            const vGap = Math.max(0, Math.round(rNext.top - rCurrent.bottom));
-            maxInterTaskGap = Math.max(maxInterTaskGap, vGap);
+            for (let i = 0; i < directChildren.length - 1; i++) {
+              const current = directChildren[i];
+              const next = directChildren[i + 1];
+              // If next element is the footer, it is handled by gapAboveFooter
+              if (next === footer || (footer && footer.contains(next))) continue;
+
+              const rCurrent = current.getBoundingClientRect();
+              const rNext = next.getBoundingClientRect();
+              const vGap = Math.max(0, Math.round(rNext.top - rCurrent.bottom));
+              maxInterTaskGap = Math.max(maxInterTaskGap, vGap);
+            }
           }
 
           // 5. Internal Multi-Column Prose Void Audit

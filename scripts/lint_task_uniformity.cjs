@@ -18,7 +18,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const unitId = process.argv[2];
+const args = process.argv.slice(2);
+const isV2 = args.includes('--v2');
+const unitId = args.find((a) => !a.startsWith('--'));
 
 if (!unitId) {
   console.error('❌ Error: Please provide a unit ID to lint.');
@@ -26,7 +28,8 @@ if (!unitId) {
 }
 
 const ROOT_DIR = path.join(__dirname, '..');
-const dataJsPath = path.join(ROOT_DIR, 'units', unitId, 'data.js');
+const targetFileName = isV2 ? 'data_v2_4act.js' : 'data.js';
+const dataJsPath = path.join(ROOT_DIR, 'units', unitId, targetFileName);
 
 if (!fs.existsSync(dataJsPath)) {
   console.error(`❌ Error: Unit data file not found at: ${dataJsPath}`);
@@ -66,7 +69,9 @@ const NON_PROSE_TYPES = new Set([
 
 async function runLinter() {
   console.log(`\n======================================================`);
-  console.log(`🔍 TASK UNIFORMITY & ANTI-DUPLICATION LINTER: [${unitId}]`);
+  console.log(
+    `🔍 TASK UNIFORMITY & ANTI-DUPLICATION LINTER: [${unitId}${isV2 ? ' (4-Act V2)' : ''}]`,
+  );
   console.log(`======================================================`);
 
   let unitData;
@@ -82,17 +87,17 @@ async function runLinter() {
 
   const lessons = Array.isArray(unitData) ? unitData : unitData.lessons || [];
   if (lessons.length === 0) {
-    console.warn(`⚠️ Warning: No lessons found in ${unitId}/data.js.`);
+    console.warn(`⚠️ Warning: No lessons found in ${unitId}/${targetFileName}.`);
     process.exit(0);
   }
 
-  // For great_war, check if it has been migrated to 4-act architecture or is operating in active September print edition mode
-  const isGreatWarPrintEdition =
-    unitId === 'great_war' &&
+  // Check if unit has been migrated to 4-act architecture or is operating in active September print edition mode
+  const isPrintEdition =
+    !isV2 &&
     !lessons.some(
       (l) => l.acts || (l.narrative_blocks && l.narrative_blocks.some((b) => b.act !== undefined)),
     );
-  const isFourActTarget = FOUR_ACT_UNITS.includes(unitId) && !isGreatWarPrintEdition;
+  const isFourActTarget = (FOUR_ACT_UNITS.includes(unitId) && !isPrintEdition) || isV2;
   const errors = [];
   const warnings = [];
 
@@ -100,12 +105,41 @@ async function runLinter() {
     const lessonNum = lIdx + 1;
     const lTitle = lesson.title || `Lesson ${lessonNum}`;
 
-    // 1. Check for rogue source.question in sources array (prohibited across ALL units except deliberate GCSE Paper 2 cme_new and legacy great_war print edition)
+    // 1. Check for Dual-Location Source Residency (prohibit simultaneous root sources: [] and inline act.source)
+    const hasRootSources = Array.isArray(lesson.sources) && lesson.sources.length > 0;
+    const hasInlineSources =
+      (Array.isArray(lesson.narrative_blocks) &&
+        lesson.narrative_blocks.some(
+          (b) =>
+            b &&
+            (b.source || (Array.isArray(b.sources) && b.sources.length > 0) || b.archival_source),
+        )) ||
+      (Array.isArray(lesson.acts) &&
+        lesson.acts.some(
+          (a) => a && (a.source || (Array.isArray(a.sources) && a.sources.length > 0)),
+        ));
+
+    if (hasRootSources && hasInlineSources) {
+      errors.push(
+        `[L${lessonNum}] Dual-location source residency violation: Lesson contains BOTH a root 'sources: []' array (${lesson.sources.length} items) AND inline 'act.source' objects. Enforce single-location source residency to eliminate layout duplication and prevent narrative spoilers!`,
+      );
+    } else if (
+      lesson.sources &&
+      Array.isArray(lesson.sources) &&
+      lesson.sources.length === 0 &&
+      hasInlineSources
+    ) {
+      warnings.push(
+        `[L${lessonNum}] Redundant empty root 'sources: []' array found alongside inline 'act.source' objects. Remove root 'sources' property.`,
+      );
+    }
+
+    // 1a. Check for rogue source.question in sources array (prohibited across ALL units except deliberate GCSE Paper 2 cme_new and legacy print edition)
     if (
       lesson.sources &&
       Array.isArray(lesson.sources) &&
       unitId !== 'cme_new' &&
-      !isGreatWarPrintEdition
+      !isPrintEdition
     ) {
       lesson.sources.forEach((src, sIdx) => {
         if (src && src.question) {

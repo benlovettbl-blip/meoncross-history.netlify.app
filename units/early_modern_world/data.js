@@ -2532,25 +2532,6 @@ const early_modern_world = {
         ],
       },
       banner: '/images/early_mod_l4_banner.jpg',
-      sources: [
-        {
-          title: 'The East Offering its Riches to Britannia (1778)',
-          src: '/images/global_britannia.jpg',
-          caption:
-            "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
-          content:
-            "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
-          question:
-            "How useful is this painting as evidence of Britain's global power and ideology in 1778?",
-        },
-        {
-          type: 'source_analysis',
-          question:
-            'Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?',
-          model_answer:
-            'The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain.',
-        },
-      ],
       lesson_assessment: {
         question:
           'How did the English Civil War and the execution of Charles I change the balance of power?',
@@ -2874,32 +2855,6 @@ const early_modern_world = {
         ],
       },
       banner: '/images/early_mod_l4_banner.jpg',
-      sources: [
-        {
-          title: 'The East Offering its Riches to Britannia (1778)',
-          src: '/images/global_britannia.jpg',
-          caption:
-            "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
-          content:
-            "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
-          question:
-            "How useful is this painting as evidence of Britain's global power and ideology in 1778?",
-        },
-        {
-          question:
-            'Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?',
-          model_answer:
-            'The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the "Commonwealth", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch.',
-        },
-        {
-          type: 'source_analysis',
-          question:
-            "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-          model_answer:
-            'By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.',
-          text: "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-        },
-      ],
       lesson_assessment: {
         question:
           "Explain how the 'Financial Revolution' (like the Bank of England) helped Britain build a modern empire.",

@@ -1198,11 +1198,11 @@ const early_modern_world = {
           },
           {
             objective:
-              'Evaluate the symbolism of the Armada Portrait and the defeat of the Spanish Armada in 1588.',
+              'Evaluate Richard Hakluyt’s strategic blueprint (Source B) and the significance of the 1588 Armada defeat.',
             primer:
-              'Examine Source B and paragraphs [3.1]–[4.2]. Focus on Elizabeth’s hand resting on the globe and the shipwrecked Spanish fleet in the background.',
+              'Examine Source B and paragraphs [3.1]–[4.2]. Focus on Hakluyt’s arguments for naval power, domestic employment, and checking Spanish Catholic power.',
             question:
-              'How does the Armada Portrait function as both religious propaganda and an imperial declaration of England’s global ambitions?',
+              'Why did Hakluyt argue that planting English colonies in North America was the best way to defend Protestant England against Spanish invasion?',
           },
         ],
       },
@@ -1212,7 +1212,7 @@ const early_modern_world = {
           title: 'Act 1: Context & Catalyst (Luther’s Hammer & The Papal Monopoly)',
           source: {
             letter: 'A',
-            title: 'Source A: Map of the Treaty of Tordesillas Meridian Line (1494)',
+            title: 'Source A (Visual): Map of the Treaty of Tordesillas Meridian Line (1494)',
             src: '/images/tordesillas_map.png',
             caption:
               'Papal meridian line drawn by Pope Alexander VI in 1493 and finalized at Tordesillas in 1494, dividing the entire non-European globe between Spain and Portugal.',
@@ -1232,21 +1232,24 @@ const early_modern_world = {
         },
         {
           act: 3,
-          title: 'Act 3: Forensic Archival Evidence (The Armada Portrait & The Protestant Wind)',
+          title:
+            'Act 3: Forensic Archival Evidence (Hakluyt’s Geopolitical Blueprint & The Armada)',
           source: {
             letter: 'B',
-            title: 'Source B: The Armada Portrait of Queen Elizabeth I (1588)',
-            src: '/images/armada_portrait.jpg',
-            caption:
-              'Masterpiece attributed to George Gower commemorating the English defeat of the Spanish Armada, depicting Elizabeth with her hand resting upon the globe.',
-            shelfmark: 'Woburn Abbey Collection (Shelfmark: WOB-ARM-1588)',
-            citation: 'The Duke of Bedford and the Trustees of the Bedford Estates.',
+            title: 'Source B (Textual): Richard Hakluyt, Discourse on Western Planting (1584)',
+            type: 'written',
+            text: '“This western enterprise will yield great profit unto our realm: providing naval timber and pitch, venting our woollen cloth, and employing our idle poor. Crucially, it will check the pride of King Philip of Spain, whose gold mines in the West Indies feed his war against Protestant England.”',
+            shelfmark: 'British Library, London • Cotton MS Titus B.XIII',
+            citation: 'British Library, London (Cotton MS Titus B.XIII).',
             context:
-              'In the painting, the sunlit English fleet sails peacefully on the left, while on the right, the Catholic Spanish Armada is dashed against the rocks by violent storms. Elizabeth’s hand rests firmly upon the Americas. **Hinge Question:** How does this portrait communicate that God personally favored Protestant England over Catholic Spain?',
+              'In 1584, geographer Richard Hakluyt presented a secret 21-chapter policy memorandum to Queen Elizabeth I, arguing why Protestant England had to colonize North America immediately. Hakluyt argued that colonies would create jobs for vagrants, open new markets for English wool, provide timber for warships, and break Spain’s Catholic monopoly on American wealth. **Hinge Question:** Why did Hakluyt argue that planting English colonies in North America was the best way to defend Protestant England against Spanish invasion?',
             hinge_question:
-              'How does this portrait communicate that God personally favored Protestant England over Catholic Spain?',
+              'Why did Hakluyt argue that planting English colonies in North America was the best way to defend Protestant England against Spanish invasion?',
           },
-          text: '<span class="para-ref">[3.1]</span> Enraged by English piracy, Elizabeth’s military support for Dutch Protestant rebels, and the execution of Catholic Mary Queen of Scots in 1587, Philip II launched his "Enterprise of England" in July 1588: the <strong>Spanish Armada</strong>. A colossal fleet of 130 warships carrying 30,000 soldiers sailed up the English Channel in an unbreakable crescent formation, intending to ferry an invasion army across from Flanders and restore Catholicism to England at sword-point. But off Calais on 7 August, English commanders launched eight blazing hellburner fireships into the anchored Armada, throwing the Spanish galleons into midnight panic and scattering their formations.<br><br><span class="para-ref">[3.2]</span> The next day at the Battle of Gravelines, faster English race-built galleons pounded the disorganized Spanish ships at long range. Battered and blown northward by ferocious North Sea gales, the Armada was forced to attempt a catastrophic voyage home around the rocky coasts of Scotland and Ireland, where dozens of ships were smashed to kindling on the Atlantic rocks. The triumphant English struck a commemorative medal reading: <em>"God blew, and they were scattered."</em> In the famous **Armada Portrait** (Source B), Elizabeth is immortalized surrounded by royal pearls, her hand resting upon the global Americas while the shattered Spanish fleet flounders in tempestuous seas behind her.',
+          image: '/images/armada_portrait.jpg',
+          image_caption:
+            'The Armada Portrait of Queen Elizabeth I (1588, Woburn Abbey Collection). Elizabeth’s right hand rests upon the globe over the Americas, while the defeated Spanish Armada flounders in stormy seas behind her.',
+          text: '<span class="para-ref">[3.1]</span> In 1584, Oxford geographer <strong>Richard Hakluyt</strong> presented a confidential 21-chapter strategic memorandum to Queen Elizabeth I entitled <em>Discourse on Western Planting</em> (Source B). Hakluyt outlined the urgent geopolitical case for English oceanic colonization: North American outposts would provide naval timber and pitch, create vent markets for English woollen cloth, employ the realm’s destitute "idle poor," and above all, establish a forward raiding base to intercept Spanish silver galleons and "check the pride of King Philip." Hakluyt’s treatise became the intellectual blueprint for English imperial expansion.<br><br><span class="para-ref">[3.2]</span> Four years later, Philip II launched his "Enterprise of England": the <strong>Spanish Armada</strong> of 1588. A colossal fleet of 130 warships sailed up the English Channel to ferry an invasion army across and re-impose Roman Catholicism at sword-point. But off Calais on 7 August, English commanders launched eight blazing hellburner fireships into the anchored Armada, throwing the Spanish galleons into panic. Driven northward by ferocious Atlantic gales, dozens of Spanish ships were wrecked on the rocky coasts of Scotland and Ireland. The triumphant English struck a commemorative medal reading: <em>"God blew, and they were scattered."</em> In the famous <strong>Armada Portrait</strong>, Elizabeth is immortalized with her hand resting firmly upon the globe over the Americas, signaling that Catholic Spain’s oceanic monopoly had been broken forever.',
         },
         {
           act: 4,
@@ -1256,30 +1259,31 @@ const early_modern_world = {
             {
               title: 'Master Disciplinary Enquiry Task',
               prompt:
-                'How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
+                'How useful are Source A (Visual: Tordesillas Map) and Source B (Textual: Hakluyt’s Discourse) for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
               type: 'extended_writing',
               scaffolding: {
                 sentence_starters: [
-                  'Following Martin Luther’s 1517 Reformation, European conflict spread to the oceans because...',
-                  'Spain used the papal Treaty of Tordesillas to justify...',
-                  'Protestant England challenged this Catholic monopoly through...',
-                  'Ultimately, the clash between Spain and England was driven by both...',
+                  'Source A (Visual: Tordesillas Map) is useful for revealing how Spain and Portugal used papal authority to...',
+                  'However, the utility of Source A is limited because as a formal map it conceals...',
+                  'In contrast, Source B (Textual: Hakluyt’s Discourse) provides confidential strategic insight into...',
+                  'Hakluyt’s primary focus is useful for showing how Protestant England was driven by...',
+                  'Ultimately, cross-referencing both visual and textual sources proves that European exploration was driven by...',
                 ],
                 causal_connectives: [
                   'Consequently',
                   'Furthermore',
-                  'In direct retaliation',
-                  'This meant that',
-                  'Crucially, this resulted in',
+                  'In direct contrast',
+                  'This demonstrates that',
+                  'Crucially, this reveals that',
                 ],
                 evaluative_criteria: [
-                  'Explain the connection between religious ideology (Catholic vs Protestant) and oceanic exploration.',
-                  'Analyze the role of Spanish silver bullion in funding European religious wars.',
-                  'Evaluate the strategic significance of the privateers and the 1588 Armada defeat.',
+                  'Evaluate what the visual meridian of Source A proves about Catholic legal monopoly and divine entitlement.',
+                  'Analyze what Hakluyt’s secret memorandum (Source B) reveals about English economic motives, naval timber, and anti-Spanish strategy.',
+                  'Weigh the strengths and limitations of cartographic propaganda versus confidential political intelligence.',
                 ],
               },
               model_answer:
-                'The Protestant Reformation turned the Atlantic Ocean into a ferocious global battleground because it transformed oceanic exploration from a commercial race for trade routes into an existential holy war between rival Christian ideologies. When Martin Luther fractured Western Christendom in 1517, Europe split into bitter Catholic and Protestant factions. Catholic Spain, having established an American silver-mining monopoly backed by the Pope’s 1494 Treaty of Tordesillas, viewed its oceanic empire as divine confirmation of its holy mission to conquer lands and eradicate Protestant heresy. In contrast, Protestant England under Elizabeth I found itself commercially and spiritually boxed out of the New World. Consequently, religious hatred directly fueled state-sponsored privateering: English captains like Francis Drake attacked Spanish silver galleons not merely for personal plunder, but to starve Catholic King Philip II of the bullion required to fund his armies in Europe. Furthermore, oceanic expeditions were framed as Protestant crusades against Catholic tyranny. When Philip launched the Spanish Armada in 1588 to depose Elizabeth and reimpose Roman Catholicism, the conflict reached its climax: England’s victory, memorialized in the Armada Portrait, broke the myth of Spanish naval invincibility. Ultimately, the Atlantic became a battlefield because religious ideology provided moral justification for commercial piracy, ensuring that the struggle for global empire was fought as a war for the salvation of human souls.',
+                'Source A (Visual: Tordesillas Map) and Source B (Textual: Hakluyt’s Discourse) are exceptionally valuable in combination because together they provide a complementary dual-medium window into the evolving motives behind European oceanic exploration: the visual assertion of Catholic divine monopoly versus the pragmatic textual strategy of Protestant imperial rivalry.<br><br>Source A is a primary cartographic artifact of high utility for demonstrating how the Catholic superpowers legitimized their global dominance. Drawn under the authority of Pope Alexander VI in 1494, the visual map reveals the audacious division of the entire non-Christian world between Spain and Portugal along a single oceanic meridian line. Visually, it reveals that early exploration was driven by divine entitlement and papal mandate, treating newly encountered continents as empty prizes to be partitioned between two Catholic crowns while legally excluding rival European nations. However, the utility of Source A is limited by its medium and origin: as a formal diplomatic document, it conceals the brutal economic reality of silver-mining exploitation in Mexico and Peru, and sheds no light on how excluded nations like England or France planned to respond.<br><br>In contrast, Source B provides superior insider utility for understanding Protestant England’s calculated strategic retaliation. Written in 1584 by geographer Richard Hakluyt as a confidential briefing for Queen Elizabeth I, this textual source exposes the complex secular and economic pressures driving English colonization. Hakluyt candidly lists domestic economic motives—venting English woollen cloth, acquiring naval timber, and employing the "idle poor"—alongside the overarching geopolitical imperative to "check the pride of King Philip" by starving Spain of American silver. Because Source B was a private state memorandum rather than public propaganda, Hakluyt speaks with unfiltered strategic honesty about England’s geopolitical vulnerability and oceanic ambitions.<br><br>Ultimately, both sources achieve maximum utility when evaluated in conjunction. Source A illustrates the rigid Catholic monopoly that provoked European conflict, while Source B articulates the mercantilist and strategic rationale that drove Protestant England to challenge that monopoly on the high seas. Together, they prove that European oceanic exploration was fueled by a potent convergence of religious crusading, national survival, and commercial greed.',
             },
           ],
           text: '<span class="para-ref">[4.1]</span> Historians debate whether the Elizabethan naval struggle was primarily motivated by genuine religious zeal or by naked financial greed. Victorian historians painted Elizabeth’s Sea Dogs as Protestant freedom fighters standing bravely against Spanish Catholic tyranny. However, modern economic historians point out that Drake and Hawkins were primarily commercial opportunists and slave traders whose religious rhetoric conveniently justified ruthless robbery on the high seas.<br><br><span class="para-ref">[4.2]</span> Nevertheless, the psychological impact of 1588 was profound. The defeat of the Armada shattered the aura of Spanish naval invincibility and proved to English merchants that the Atlantic was open. For the first time, English investors began to dream of establishing permanent overseas colonies, laying the ideological and commercial foundations for what would become the British Empire.',
@@ -1288,30 +1292,31 @@ const early_modern_world = {
       enquiry_task: {
         title: 'Master Disciplinary Enquiry Task',
         prompt:
-          'How useful are Sources A and B for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
+          'How useful are Source A (Visual: Tordesillas Map) and Source B (Textual: Hakluyt’s Discourse) for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
         type: 'extended_writing',
         scaffolding: {
           sentence_starters: [
-            'Following Martin Luther’s 1517 Reformation, European conflict spread to the oceans because...',
-            'Spain used the papal Treaty of Tordesillas to justify...',
-            'Protestant England challenged this Catholic monopoly through...',
-            'Ultimately, the clash between Spain and England was driven by both...',
+            'Source A (Visual: Tordesillas Map) is useful for revealing how Spain and Portugal used papal authority to...',
+            'However, the utility of Source A is limited because as a formal map it conceals...',
+            'In contrast, Source B (Textual: Hakluyt’s Discourse) provides confidential strategic insight into...',
+            'Hakluyt’s primary focus is useful for showing how Protestant England was driven by...',
+            'Ultimately, cross-referencing both visual and textual sources proves that European exploration was driven by...',
           ],
           causal_connectives: [
             'Consequently',
             'Furthermore',
-            'In direct retaliation',
-            'This meant that',
-            'Crucially, this resulted in',
+            'In direct contrast',
+            'This demonstrates that',
+            'Crucially, this reveals that',
           ],
           evaluative_criteria: [
-            'Explain the connection between religious ideology (Catholic vs Protestant) and oceanic exploration.',
-            'Analyze the role of Spanish silver bullion in funding European religious wars.',
-            'Evaluate the strategic significance of the privateers and the 1588 Armada defeat.',
+            'Evaluate what the visual meridian of Source A proves about Catholic legal monopoly and divine entitlement.',
+            'Analyze what Hakluyt’s secret memorandum (Source B) reveals about English economic motives, naval timber, and anti-Spanish strategy.',
+            'Weigh the strengths and limitations of cartographic propaganda versus confidential political intelligence.',
           ],
         },
         model_answer:
-          'The Protestant Reformation turned the Atlantic Ocean into a ferocious global battleground because it transformed oceanic exploration from a commercial race for trade routes into an existential holy war between rival Christian ideologies. When Martin Luther fractured Western Christendom in 1517, Europe split into bitter Catholic and Protestant factions. Catholic Spain, having established an American silver-mining monopoly backed by the Pope’s 1494 Treaty of Tordesillas, viewed its oceanic empire as divine confirmation of its holy mission to conquer lands and eradicate Protestant heresy. In contrast, Protestant England under Elizabeth I found itself commercially and spiritually boxed out of the New World. Consequently, religious hatred directly fueled state-sponsored privateering: English captains like Francis Drake attacked Spanish silver galleons not merely for personal plunder, but to starve Catholic King Philip II of the bullion required to fund his armies in Europe. Furthermore, oceanic expeditions were framed as Protestant crusades against Catholic tyranny. When Philip launched the Spanish Armada in 1588 to depose Elizabeth and reimpose Roman Catholicism, the conflict reached its climax: England’s victory, memorialized in the Armada Portrait, broke the myth of Spanish naval invincibility. Ultimately, the Atlantic became a battlefield because religious ideology provided moral justification for commercial piracy, ensuring that the struggle for global empire was fought as a war for the salvation of human souls.',
+          'Source A (Visual: Tordesillas Map) and Source B (Textual: Hakluyt’s Discourse) are exceptionally valuable in combination because together they provide a complementary dual-medium window into the evolving motives behind European oceanic exploration: the visual assertion of Catholic divine monopoly versus the pragmatic textual strategy of Protestant imperial rivalry.<br><br>Source A is a primary cartographic artifact of high utility for demonstrating how the Catholic superpowers legitimized their global dominance. Drawn under the authority of Pope Alexander VI in 1494, the visual map reveals the audacious division of the entire non-Christian world between Spain and Portugal along a single oceanic meridian line. Visually, it reveals that early exploration was driven by divine entitlement and papal mandate, treating newly encountered continents as empty prizes to be partitioned between two Catholic crowns while legally excluding rival European nations. However, the utility of Source A is limited by its medium and origin: as a formal diplomatic document, it conceals the brutal economic reality of silver-mining exploitation in Mexico and Peru, and sheds no light on how excluded nations like England or France planned to respond.<br><br>In contrast, Source B provides superior insider utility for understanding Protestant England’s calculated strategic retaliation. Written in 1584 by geographer Richard Hakluyt as a confidential briefing for Queen Elizabeth I, this textual source exposes the complex secular and economic pressures driving English colonization. Hakluyt candidly lists domestic economic motives—venting English woollen cloth, acquiring naval timber, and employing the "idle poor"—alongside the overarching geopolitical imperative to "check the pride of King Philip" by starving Spain of American silver. Because Source B was a private state memorandum rather than public propaganda, Hakluyt speaks with unfiltered strategic honesty about England’s geopolitical vulnerability and oceanic ambitions.<br><br>Ultimately, both sources achieve maximum utility when evaluated in conjunction. Source A illustrates the rigid Catholic monopoly that provoked European conflict, while Source B articulates the mercantilist and strategic rationale that drove Protestant England to challenge that monopoly on the high seas. Together, they prove that European oceanic exploration was fueled by a potent convergence of religious crusading, national survival, and commercial greed.',
       },
       quiz: [
         {
