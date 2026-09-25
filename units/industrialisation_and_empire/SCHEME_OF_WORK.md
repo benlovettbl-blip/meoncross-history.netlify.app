@@ -32,25 +32,24 @@ Every enquiry explicitly traces four continuous thematic threads mapped across K
 
 To build balanced second-order historical competence and prevent pupil fatigue, the 8 enquiries rotate across discrete disciplinary skills:
 
-| Enquiry | Lesson Title | Disciplinary Focus / Second-Order Concept | Core Archival Sources | Key Historical Actor / Voice | Taxonomy Category | Key Disciplinary Terms |
+| Enquiry | Lesson Title | Disciplinary Focus / Second-Order Concept | Core Archival Sources | Key Historical Figure | Role / Distinction | Key Disciplinary Terms |
 |---|---|---|---|---|---|---|
-| **1** | **The Dawn of Steam & Iron Revolution** | *Technological Causation & National Security* | De Loutherbourg (*Coalbrookdale by Night*); Henry Cort Patent Drawings (1783–84) | Henry Cort | `KEY HISTORICAL INDIVIDUAL` | *Pig Iron, Wrought Iron, Puddling Process, Reverberatory Furnace, Domestic System, Grooved Rollers* |
-| **2** | **Factory Work & Child Labour** | *Evidence & Forensic Interrogation* | Allom (*Powerloom Weaving Shed*); 1832 Sadler Committee (Matthew Crabtree) | The Child Factory Apprentice | `REPRESENTATIVE HISTORICAL VOICE` | *Factory System, Laissez-Faire, Scavenger, Piecer, Overlooker, Ten Hours Act* |
-| **3** | **Urban Slums & Public Health** | *Causation & Consequence / Public Policy* | Doré (*Over London by Rail*); John Leech (*A Court for King Cholera*, 1852) | Sir Edwin Chadwick | `KEY HISTORICAL INDIVIDUAL` | *Miasma Theory, Back-to-Backs, Cesspool, Great Stink of 1858, Arterial Sewers, Public Health Act* |
-| **4** | **Empire Building & Naval Supremacy** | *Historical Utility & Imperial Extraction* | Walter Crane (*Imperial Federation Map*); HMS Warrior; 1840 Bengal Handloom Report | Isambard Kingdom Brunel | `KEY HISTORICAL INDIVIDUAL` | *Gunboat Diplomacy, Coaling Stations, Free Trade Imperialism, Mercantilism, Naval Hegemony, Deindustrialisation* |
-| **5** | **The 1857 Indian Rebellion** | *Historiographical Debate & Causation* | Illustrated London News (Meerut Outbreak); 1857 Azamgarh Rebel Proclamation | Rani Lakshmibai of Jhansi | `KEY HISTORICAL INDIVIDUAL` | *Doctrine of Lapse, Sepoy Mutiny, East India Company, Crown Raj, Princely States, Anti-Colonial Resistance* |
-| **6** | **Radical Protest & Chartism** | *Historical Significance & Resistance Strategies* | Kennington Common Photograph (1848); "Captain Swing" Hampshire Threat Letter | The Luddite Weaver | `REPRESENTATIVE HISTORICAL VOICE` | *Chartism, People’s Charter, Moral Force, Physical Force, Universal Suffrage, Swing Riots* |
-| **7** | **The Road to Democracy** | *Change & Continuity / Political Transformation* | 1832 Rotten Boroughs Map; Cruikshank (*The Reform Tree*); 1869 Bribery Evidence | Charles Grey, 2nd Earl Grey | `KEY HISTORICAL INDIVIDUAL` | *Rotten Borough, Hustings, Great Reform Act 1832, Secret Ballot Act 1872, Franchise, Oligarchy* |
-| **8** | **The Imperial & Industrial Verdict** | *Synoptic Evaluation & Historiographical Debate* | Leech (*Capital and Labour*, 1843); 1851 Great Exhibition Official Catalogue | Queen Victoria | `KEY HISTORICAL INDIVIDUAL` | *Workshop of the World, Optimist School, Pessimist School, Drain of Wealth, Standard of Living, Victorian Era* |
+| **1** | **The Dawn of Steam & Iron Revolution** | *Technological Causation & National Security* | De Loutherbourg (*Coalbrookdale by Night*); Henry Cort Patent Drawings (1783–84) | Henry Cort | *Fareham Ironmaster & Inventor* | *Pig Iron, Wrought Iron, Puddling Process, Reverberatory Furnace, Domestic System, Grooved Rollers* |
+| **2** | **Factory Work & Child Labour** | *Evidence & Forensic Interrogation* | Allom (*Powerloom Weaving Shed*); 1832 Sadler Committee (Matthew Crabtree) | Matthew Crabtree | *Former Child Worker & Parliamentary Witness* | *Factory System, Laissez-Faire, Scavenger, Piecer, Overlooker, Ten Hours Act* |
+| **3** | **Urban Slums & Public Health** | *Causation & Consequence / Public Policy* | Doré (*Over London by Rail*); John Leech (*A Court for King Cholera*, 1852) | Sir Edwin Chadwick | *Poor Law Commissioner & Sanitarian* | *Miasma Theory, Back-to-Backs, Cesspool, Great Stink of 1858, Arterial Sewers, Public Health Act* |
+| **4** | **Empire Building & Naval Supremacy** | *Historical Utility & Imperial Extraction* | Walter Crane (*Imperial Federation Map*); HMS Warrior; 1840 Bengal Handloom Report | Isambard Kingdom Brunel | *Imperial Engineer & Steamship Builder* | *Gunboat Diplomacy, Coaling Stations, Free Trade Imperialism, Mercantilism, Naval Hegemony, Deindustrialisation* |
+| **5** | **The 1857 Indian Rebellion** | *Historiographical Debate & Causation* | Illustrated London News (Meerut Outbreak); 1857 Azamgarh Rebel Proclamation | Rani Lakshmibai of Jhansi | *Sovereign Ruler & Rebel General* | *Doctrine of Lapse, Sepoy Mutiny, East India Company, Crown Raj, Princely States, Anti-Colonial Resistance* |
+| **6** | **Radical Protest & Chartism** | *Historical Significance & Resistance Strategies* | Kennington Common Photograph (1848); "Captain Swing" Hampshire Threat Letter | George Mellor | *Cloth Cropper & Yorkshire Luddite Leader* | *Chartism, People’s Charter, Moral Force, Physical Force, Universal Suffrage, Swing Riots* |
+| **7** | **The Road to Democracy** | *Change & Continuity / Political Transformation* | 1832 Rotten Boroughs Map; Cruikshank (*The Reform Tree*); 1869 Bribery Evidence | Charles Grey, 2nd Earl Grey | *Whig Prime Minister & Reformer* | *Rotten Borough, Hustings, Great Reform Act 1832, Secret Ballot Act 1872, Franchise, Oligarchy* |
+| **8** | **The Imperial & Industrial Verdict** | *Synoptic Evaluation & Historiographical Debate* | Leech (*Capital and Labour*, 1843); 1851 Great Exhibition Official Catalogue | Queen Victoria | *Constitutional Monarch & Empress* | *Workshop of the World, Optimist School, Pessimist School, Drain of Wealth, Standard of Living, Victorian Era* |
 
 ---
 
-### Scheme of Work Document Key & Historical Figure Taxonomy
+### Key Historical Figures & Eyewitness Curriculum Standard
 
-To ensure balanced classroom parity between top-down political state actors and bottom-up collective social movements, our Key Stage 3 curriculum enforces a rigorous bipartite taxonomy:
-
-* **`KEY HISTORICAL INDIVIDUAL`**: Specific named historical figures, monarchs, statesmen, chroniclers, and radical leaders who exercised executive authority, recorded firsthand witness testimony, or led decisive political actions. Rendered in textbook spreads with authenticated primary portrait miniatures, lifespan markers, and decisive actions.
-* **`REPRESENTATIVE HISTORICAL VOICE`**: Composite historical archetypes representing broader social classes, labour forces, and collective resistance movements (e.g. *The Child Factory Apprentice*, *The Luddite Weaver*). Rendered in textbook spreads as clean, full-width typographical feature cards without artificial stock imagery, giving equal academic dignity and analytical focus to ordinary working people.
+To maintain rigorous historical authenticity and student engagement, every enquiry pairs high-level political and technological developments with real, named historical individuals:
+* **Real Eyewitness Testimony:** Working-class experiences are anchored in real individuals who left primary testimony (such as 22-year-old Matthew Crabtree testifying to Parliament about his labour at age eight, and George Mellor leading the Yorkshire croppers).
+* **Zero Jargon & Zero AI Imagery:** Every figure is presented in student materials under the clean, standard badge **`KEY FIGURE`**, supported strictly by authenticated primary documents and historical records.
 
 ---
 
@@ -60,7 +59,7 @@ To ensure balanced classroom parity between top-down political state actors and 
 * **Enquiry Question:** *How did Henry Cort’s puddling process at Funtley eliminate Britain’s strategic vulnerability and power the Industrial Revolution?*
 * **Historical Core:** The transition from charcoal to coal; the limits of brittle pig iron; Britain’s dangerous reliance on Baltic naval iron on the eve of the French Revolutionary Wars; Henry Cort’s double breakthrough at Funtley Ironworks in Hampshire: the reverberatory puddling furnace (1783) deflecting coal flames to burn off carbon, and grooved rollers (1784) squeezing out slag; trials at Portsmouth Royal Dockyard (1787); the cheap, unbreakable wrought iron that made steam boilers, iron rails, and naval hulls possible.
 * **Disciplinary Skill:** *Technological Causation & National Security* — Understanding how metallurgical breakthroughs solved acute geopolitical bottlenecks.
-* **Key Historical Actor:** Henry Cort (`KEY HISTORICAL INDIVIDUAL`).
+* **Key Figure:** Henry Cort (*Fareham Ironmaster & Metallurgical Pioneer*).
 
 ---
 
@@ -68,7 +67,7 @@ To ensure balanced classroom parity between top-down political state actors and 
 * **Enquiry Question:** *Why did early Victorian mill masters defend fourteen-hour child labour, and how was state regulation finally won?*
 * **Historical Core:** The shift from the domestic artisan system to steam-powered centralized textile mills; the strict discipline of the factory clock; the exploitation of parish workhouse apprentice children; roles of scavengers (crawling under moving mules) and piecers (tying broken threads); overlooker corporal punishment and workplace injuries; the doctrine of *laissez-faire* and freedom of contract; evangelical reform campaigns led by Lord Shaftesbury; Matthew Crabtree and Robert Blincoe's testimonies to the 1832 Sadler Committee; the 1833 Factory Act establishing state factory inspectors.
 * **Disciplinary Skill:** *Evidence & Forensic Interrogation* — Evaluating parliamentary testimonies and identifying the ideological resistance to state intervention.
-* **Key Historical Voice:** The Child Factory Apprentice (`REPRESENTATIVE HISTORICAL VOICE`).
+* **Key Figure:** Matthew Crabtree (*Former Child Labourer, Blanket Mill Apprentice & Parliamentary Witness*).
 
 ---
 
@@ -100,7 +99,7 @@ To ensure balanced classroom parity between top-down political state actors and 
 * **Enquiry Question:** *Why did working-class Britons demand the People's Charter, and why did elites refuse to grant it in the 1840s?*
 * **Historical Core:** Post-Napoleonic distress and the 1819 Peterloo Massacre; the Luddite movement (1811–1816): nocturnal machine-breaking raids to preserve artisan wage contracts; the agricultural Swing Riots of 1830 in Hampshire; disillusionment with the 1832 Reform Act; the London Working Men's Association launches the People's Charter in 1838 (the Six Points: universal male suffrage, equal constituencies, secret ballot, no property qualification for MPs, salaries for MPs, annual parliaments); the tactical split: William Lovett's "Moral Force" vs Feargus O'Connor's "Physical Force"; the Kennington Common demonstration of 1848; long-term legacy: five of six points achieved by 1918.
 * **Disciplinary Skill:** *Historical Significance & Resistance Strategies* — Analysing why mass popular political movements frightened ruling elites and how reform was delayed.
-* **Key Historical Voice:** The Luddite Weaver (`REPRESENTATIVE HISTORICAL VOICE`).
+* **Key Figure:** George Mellor (*Artisan Cloth Cropper & Leader of the Yorkshire Luddites*).
 
 ---
 

@@ -13,8 +13,10 @@
 import { switchView } from './navigation.js';
 import { DISCIPLINARY_STRANDS, YEAR_GROUPS_PROGRESSION } from './disciplinary_skills_data.js';
 import { PEDAGOGY_RESEARCH_BANK } from './pedagogy_data.js';
+import { SCHEMES_OF_WORK_DATA } from './scheme_of_work_data.js';
 
-let activePortalTab = 'tracker';
+let activePortalTab = 'curriculum';
+let selectedSowUnit = 'medieval_england';
 let guidanceSearchQuery = '';
 let pedagogyCategoryFilter = 'all';
 let pedagogySearchQuery = '';
@@ -89,6 +91,41 @@ const FIELD_MANUALS = [
       'Alex Quigley Tier-2/3 explicit vocabulary instruction, Golden Sentences, and Odd-One-Out clustering.',
       'The Writing Revolution (TWR) sentence-level causal connectives (Because / But / So).',
       'Cognitive Load Theory: 2-column measure (50–65 chars) & margin line numbering to eliminate eye-sweep fatigue.',
+    ],
+  },
+];
+
+const DEPARTMENT_POLICIES = [
+  {
+    id: 'policy_01',
+    num: '01',
+    title: 'History Marking & Formative Feedback Policy (v2)',
+    subtitle: 'Workload-Efficient, High-Impact Formative Feedback Routines',
+    category: 'Assessment & Feedback',
+    badgeClass: 'badge-blue',
+    summary:
+      'Establishes workload-efficient, high-impact feedback routines. Eliminates excessive margin scribbling in favour of structured WWW/EBI formative grids and whole-class feedback debriefs.',
+    pdfUrl: '/pdfs/history_marking_and_feedback_policy_v2.pdf',
+    keyPoints: [
+      'Formal formative assessment on every 16-page workbook back cover (/26 marks).',
+      'Live marking using yellow highlighter for vocabulary precision.',
+      'Dedicated pupil DIRT (Dedicated Improvement & Reflection Time) routines.',
+    ],
+  },
+  {
+    id: 'policy_02',
+    num: '02',
+    title: 'Fieldwork, Primary Archives & Visits Protocol',
+    subtitle: 'Primary Archival Fieldwork, Memorial Conduct & Safety Standards',
+    category: 'Fieldwork & Enrichment',
+    badgeClass: 'badge-emerald',
+    summary:
+      'Governs on-site primary archival fieldwork, battlefield study visits (such as the Ypres Salient Field Guide), local history heritage enquiries, and student safety.',
+    pdfUrl: '/pdfs/Ypres trip 2026 Code of Conduct.pdf',
+    keyPoints: [
+      'Primary source handling protocols in local archives.',
+      'Fieldwork companion packs and respectful memorial conduct.',
+      'Integration of local soldier archives into the curriculum.',
     ],
   },
 ];
@@ -336,12 +373,49 @@ const UNIT_HEALTH_DATA = [
   },
 ];
 
-export async function renderDepartmentPortal(targetTab = 'tracker') {
-  activePortalTab = targetTab;
+export async function renderDepartmentPortal(targetTab = 'curriculum') {
+  if (targetTab === 'guidance' || targetTab === 'policies') {
+    activePortalTab = 'governance';
+  } else {
+    activePortalTab = targetTab;
+  }
   const container = document.getElementById('main-content');
   if (!container) return;
 
   container.innerHTML = `
+    <style>
+      .portal-nav-tab {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 8px 8px 0 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        border: 1.5px solid transparent;
+        border-bottom: none;
+        background: transparent;
+        color: #64748b;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        position: relative;
+        bottom: -2px;
+        white-space: nowrap;
+      }
+      .portal-nav-tab:hover {
+        color: #1e3a8a;
+        background: rgba(241, 245, 249, 0.8);
+      }
+      .portal-nav-tab.active {
+        color: #1e3a8a;
+        background: #ffffff;
+        border-color: #cbd5e1;
+        border-bottom: 2px solid #ffffff;
+        box-shadow: 0 -2px 6px rgba(0,0,0,0.03);
+      }
+    </style>
+
     <div class="department-portal-wrapper" style="padding: 24px 32px; max-width: 1400px; margin: 0 auto;">
       
       <!-- Top Command Header -->
@@ -408,7 +482,7 @@ export async function renderDepartmentPortal(targetTab = 'tracker') {
 
         <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
           <div style="font-size: 0.75rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
-            Pre-Commit Quality Shield
+            Cognitive Space Budget
           </div>
           <div style="font-size: 1.85rem; font-weight: 900; color: #059669; font-family: 'Inter', sans-serif;">
             0px Overflow
@@ -419,22 +493,19 @@ export async function renderDepartmentPortal(targetTab = 'tracker') {
         </div>
       </div>
 
-      <!-- Navigation Tabs Bar -->
+      <!-- Navigation Tabs Bar (4 Clean Pillars) -->
       <div style="display: flex; gap: 8px; border-bottom: 2px solid #cbd5e1; margin-bottom: 24px; overflow-x: auto; padding-bottom: 2px;">
-        <button type="button" class="portal-nav-tab ${activePortalTab === 'tracker' ? 'active' : ''}" onclick="window.switchPortalTab('tracker')">
-          <i class="fa-solid fa-chart-line"></i> Masterplan Health Tracker
+        <button type="button" data-tab="curriculum" class="portal-nav-tab ${activePortalTab === 'curriculum' ? 'active' : ''}" onclick="window.switchPortalTab('curriculum')">
+          <i class="fa-solid fa-map-location-dot"></i> 1. Curriculum Intent &amp; SOWs
         </button>
-        <button type="button" class="portal-nav-tab ${activePortalTab === 'guidance' ? 'active' : ''}" onclick="window.switchPortalTab('guidance')">
-          <i class="fa-solid fa-book-bookmark"></i> Revision Hub Field Manuals
+        <button type="button" data-tab="pedagogy" class="portal-nav-tab ${activePortalTab === 'pedagogy' ? 'active' : ''}" onclick="window.switchPortalTab('pedagogy')">
+          <i class="fa-solid fa-microscope"></i> 2. Disciplinary Pedagogy &amp; Evidence
         </button>
-        <button type="button" class="portal-nav-tab ${activePortalTab === 'pedagogy' ? 'active' : ''}" onclick="window.switchPortalTab('pedagogy')">
-          <i class="fa-solid fa-microscope"></i> Pedagogical Research Hub
+        <button type="button" data-tab="tracker" class="portal-nav-tab ${activePortalTab === 'tracker' ? 'active' : ''}" onclick="window.switchPortalTab('tracker')">
+          <i class="fa-solid fa-chart-line"></i> 3. Curriculum Coverage &amp; Standards
         </button>
-        <button type="button" class="portal-nav-tab ${activePortalTab === 'curriculum' ? 'active' : ''}" onclick="window.switchPortalTab('curriculum')">
-          <i class="fa-solid fa-map-location-dot"></i> Curriculum &amp; SOWs
-        </button>
-        <button type="button" class="portal-nav-tab ${activePortalTab === 'policies' ? 'active' : ''}" onclick="window.switchPortalTab('policies')">
-          <i class="fa-solid fa-clipboard-check"></i> Department Policies
+        <button type="button" data-tab="governance" class="portal-nav-tab ${activePortalTab === 'governance' ? 'active' : ''}" onclick="window.switchPortalTab('governance')">
+          <i class="fa-solid fa-book-bookmark"></i> 4. Department Governance &amp; Field Manuals
         </button>
       </div>
 
@@ -450,16 +521,18 @@ function renderActivePortalTab() {
   const contentEl = document.getElementById('portal-tab-content');
   if (!contentEl) return;
 
-  if (activePortalTab === 'tracker') {
-    renderTrackerTab(contentEl);
-  } else if (activePortalTab === 'guidance') {
-    renderGuidanceTab(contentEl);
+  if (activePortalTab === 'curriculum') {
+    renderCurriculumTab(contentEl);
   } else if (activePortalTab === 'pedagogy') {
     renderPedagogyTab(contentEl);
-  } else if (activePortalTab === 'curriculum') {
-    renderCurriculumTab(contentEl);
-  } else if (activePortalTab === 'policies') {
-    renderPoliciesTab(contentEl);
+  } else if (activePortalTab === 'tracker') {
+    renderTrackerTab(contentEl);
+  } else if (
+    activePortalTab === 'governance' ||
+    activePortalTab === 'guidance' ||
+    activePortalTab === 'policies'
+  ) {
+    renderGovernanceTab(contentEl);
   }
 }
 
@@ -557,11 +630,11 @@ function renderTrackerTab(container) {
 }
 
 // -------------------------------------------------------------
-// TAB 2: FIELD MANUALS (WITH SEARCH BAR)
+// TAB 4: DEPARTMENT GOVERNANCE & FIELD MANUALS (SOPS + POLICIES)
 // -------------------------------------------------------------
-function renderGuidanceTab(container) {
+function renderGovernanceTab(container) {
   const query = guidanceSearchQuery.toLowerCase().trim();
-  const filtered = FIELD_MANUALS.filter((m) => {
+  const filteredManuals = FIELD_MANUALS.filter((m) => {
     return (
       !query ||
       m.title.toLowerCase().includes(query) ||
@@ -572,70 +645,153 @@ function renderGuidanceTab(container) {
     );
   });
 
+  const filteredPolicies = DEPARTMENT_POLICIES.filter((p) => {
+    return (
+      !query ||
+      p.title.toLowerCase().includes(query) ||
+      p.subtitle.toLowerCase().includes(query) ||
+      p.summary.toLowerCase().includes(query) ||
+      p.category.toLowerCase().includes(query) ||
+      p.keyPoints.some((kp) => kp.toLowerCase().includes(query))
+    );
+  });
+
   container.innerHTML = `
-    <!-- Search Bar & Filtering Bar -->
+    <!-- Search Bar & Header -->
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
       <div style="position: relative; flex: 1; max-width: 500px;">
         <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
-        <input type="text" id="guidance-search-input" value="${guidanceSearchQuery}" placeholder="Search guidance manuals (e.g. 'saddle stitch', 'front covers', 'sync')..." 
+        <input type="text" id="guidance-search-input" value="${guidanceSearchQuery}" placeholder="Search SOPs and policies (e.g. 'marking', 'fieldwork', 'saddle stitch')..." 
                oninput="window.updateGuidanceSearch(this.value)"
                style="width: 100%; padding: 12px 16px 12px 44px; border-radius: 10px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; outline: none; transition: border-color 0.2s;"
                onfocus="this.style.borderColor='#1e3a8a'" onblur="this.style.borderColor='#cbd5e1'">
       </div>
       <div style="font-size: 0.85rem; color: #64748b; font-weight: 600;">
-        Showing ${filtered.length} of ${FIELD_MANUALS.length} Standard Operating Procedures
+        Showing ${filteredManuals.length + filteredPolicies.length} Governance &amp; Operational Documents
       </div>
     </div>
 
-    <!-- Manual Cards Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px;">
-      ${filtered
-        .map(
-          (m) => `
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.03)';">
-          <div style="padding: 22px 24px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-              <span style="font-family: monospace; font-size: 0.8rem; font-weight: 800; background: #0f172a; color: #fff; padding: 2px 8px; border-radius: 4px;">
-                SOP-${m.num}
-              </span>
-              <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #1e3a8a; background: #eff6ff; padding: 2px 8px; border-radius: 12px; border: 1px solid #bfdbfe;">
-                ${m.category}
-              </span>
+    <!-- Section 1: Standard Operating Procedures (SOPs) -->
+    <div style="margin-bottom: 36px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+        <span style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #0f172a; color: #ffffff; padding: 4px 10px; border-radius: 4px;">
+          SOP Library
+        </span>
+        <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: #0f172a; font-weight: 800;">
+          Revision Hub Field Manuals &amp; Operational SOPs
+        </h3>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px;">
+        ${filteredManuals
+          .map(
+            (m) => `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.03)';">
+            <div style="padding: 22px 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-family: monospace; font-size: 0.8rem; font-weight: 800; background: #0f172a; color: #fff; padding: 2px 8px; border-radius: 4px;">
+                  SOP-${m.num}
+                </span>
+                <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #1e3a8a; background: #eff6ff; padding: 2px 8px; border-radius: 12px; border: 1px solid #bfdbfe;">
+                  ${m.category}
+                </span>
+              </div>
+
+              <h4 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; line-height: 1.3;">
+                ${m.title}
+              </h4>
+              <div style="font-size: 0.85rem; font-style: italic; color: #64748b; margin-bottom: 14px;">
+                ${m.subtitle}
+              </div>
+              
+              <p style="font-size: 0.88rem; color: #334155; line-height: 1.5; margin-bottom: 16px;">
+                ${m.summary}
+              </p>
+
+              <div style="background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 10px;">
+                <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.05em; margin-bottom: 4px;">Key Protocol Elements:</strong>
+                <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #475569; line-height: 1.45;">
+                  ${m.keyPoints.map((kp) => `<li style="margin-bottom: 3px;">${kp}</li>`).join('')}
+                </ul>
+              </div>
             </div>
 
-            <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; line-height: 1.3;">
-              ${m.title}
-            </h3>
-            <div style="font-size: 0.85rem; font-style: italic; color: #64748b; margin-bottom: 14px;">
-              ${m.subtitle}
-            </div>
-            
-            <p style="font-size: 0.88rem; color: #334155; line-height: 1.5; margin-bottom: 16px;">
-              ${m.summary}
-            </p>
-
-            <div style="background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 10px;">
-              <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.05em; margin-bottom: 4px;">Key Protocol Elements:</strong>
-              <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #475569; line-height: 1.45;">
-                ${m.keyPoints.map((kp) => `<li style="margin-bottom: 3px;">${kp}</li>`).join('')}
-              </ul>
+            <div style="padding: 14px 24px; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+              <a href="${m.htmlUrl}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #475569; text-decoration: none; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff;">
+                <i class="fa-solid fa-desktop"></i> Read Web Version
+              </a>
+              <a href="${m.pdfUrl}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #ffffff; text-decoration: none; padding: 6px 14px; border-radius: 6px; background: #1e3a8a; box-shadow: 0 2px 6px rgba(30,58,138,0.2);">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF
+              </a>
             </div>
           </div>
+        `,
+          )
+          .join('')}
+      </div>
+    </div>
 
-          <div style="padding: 14px 24px; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-            <a href="${m.htmlUrl}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #475569; text-decoration: none; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff;">
-              <i class="fa-solid fa-desktop"></i> Read Web Version
-            </a>
-            <a href="${m.pdfUrl}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #ffffff; text-decoration: none; padding: 6px 14px; border-radius: 6px; background: #1e3a8a; box-shadow: 0 2px 6px rgba(30,58,138,0.2);">
-              <i class="fa-solid fa-file-pdf"></i> Download PDF
-            </a>
+    <!-- Section 2: Department Policies -->
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+        <span style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #166534; color: #ffffff; padding: 4px 10px; border-radius: 4px;">
+          Statutory Policies
+        </span>
+        <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: #0f172a; font-weight: 800;">
+          Department Pedagogical &amp; Operational Policies
+        </h3>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px;">
+        ${filteredPolicies
+          .map(
+            (p) => `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.03)';">
+            <div style="padding: 22px 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-family: monospace; font-size: 0.8rem; font-weight: 800; background: #166534; color: #fff; padding: 2px 8px; border-radius: 4px;">
+                  POL-${p.num}
+                </span>
+                <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #065f46; background: #ecfdf5; padding: 2px 8px; border-radius: 12px; border: 1px solid #a7f3d0;">
+                  ${p.category}
+                </span>
+              </div>
+
+              <h4 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; line-height: 1.3;">
+                ${p.title}
+              </h4>
+              <div style="font-size: 0.85rem; font-style: italic; color: #64748b; margin-bottom: 14px;">
+                ${p.subtitle}
+              </div>
+
+              <p style="font-size: 0.88rem; color: #334155; line-height: 1.5; margin-bottom: 16px;">
+                ${p.summary}
+              </p>
+
+              <div style="background: #f8fafc; border-left: 3px solid #166534; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 10px;">
+                <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: #166534; letter-spacing: 0.05em; margin-bottom: 4px;">Statutory Requirements:</strong>
+                <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #475569; line-height: 1.45;">
+                  ${p.keyPoints.map((kp) => `<li style="margin-bottom: 3px;">${kp}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <div style="padding: 14px 24px; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; align-items: center;">
+              <a href="${p.pdfUrl}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #ffffff; text-decoration: none; padding: 6px 14px; border-radius: 6px; background: #166534; box-shadow: 0 2px 6px rgba(22,101,52,0.2);">
+                <i class="fa-solid fa-file-pdf"></i> Download Policy PDF
+              </a>
+            </div>
           </div>
-        </div>
-      `,
-        )
-        .join('')}
+        `,
+          )
+          .join('')}
+      </div>
     </div>
   `;
+}
+
+function renderGuidanceTab(container) {
+  renderGovernanceTab(container);
 }
 
 // -------------------------------------------------------------
@@ -869,19 +1025,177 @@ function renderPedagogyTab(container) {
 }
 
 // -------------------------------------------------------------
-// TAB 4: CURRICULUM MAPPING & SOWs
+// TAB 1: CURRICULUM INTENT & SCHEMES OF WORK (INTERACTIVE MATRIX)
 // -------------------------------------------------------------
 function renderCurriculumTab(container) {
+  const availableUnits = Object.values(SCHEMES_OF_WORK_DATA);
+  const currentUnit = SCHEMES_OF_WORK_DATA[selectedSowUnit] || availableUnits[0];
+
   container.innerHTML = `
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-      <!-- SOW PDF Direct Download Bar -->
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      
+      <!-- Unit Selection Bar & Header Banner -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 18px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
+          <div>
+            <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #1e3a8a; background: #eff6ff; padding: 3px 10px; border-radius: 4px; border: 1px solid #bfdbfe;">
+              Interactive Syllabus Explorer
+            </span>
+            <h3 style="margin: 6px 0 2px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #0f172a; font-weight: 800;">
+              8-Enquiry Disciplinary Schemes of Work (KS3)
+            </h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #64748b;">
+              Select a Key Stage 3 unit to inspect the enquiry sequence, core disciplinary vocabulary, primary archival records, and authentic historical individuals.
+            </p>
+          </div>
+
+          <!-- Unit Selector Switcher Buttons -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            ${availableUnits
+              .map((u) => {
+                const isActive = u.unitId === currentUnit.unitId;
+                return `
+                <button type="button" 
+                  onclick="window.selectSowUnit('${u.unitId}')"
+                  style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-size: 0.84rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease; border: 1.5px solid ${isActive ? '#1e3a8a' : '#cbd5e1'}; background: ${isActive ? '#1e3a8a' : '#ffffff'}; color: ${isActive ? '#ffffff' : '#334155'}; box-shadow: ${isActive ? '0 2px 6px rgba(30,58,138,0.25)' : 'none'};">
+                  <span>${u.yearGroup}: ${u.title.split('&')[0].trim()}</span>
+                  ${isActive ? '<i class="fa-solid fa-circle-check" style="font-size: 0.75rem;"></i>' : ''}
+                </button>
+              `;
+              })
+              .join('')}
+          </div>
+        </div>
+
+        <!-- Selected Unit Hero Details & Document Quick Access -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 20px;">
+          <div style="flex: 1; min-width: 300px;">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: #059669; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 4px;">
+                ${currentUnit.yearGroup} &bull; ${currentUnit.keyStage}
+              </span>
+              <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">
+                8 Enquiries &bull; 16 Hours Curriculum Time
+              </span>
+            </div>
+            <h4 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: #0f172a; font-weight: 800;">
+              ${currentUnit.title}
+            </h4>
+            <div style="font-size: 0.88rem; color: #475569; font-style: italic; margin-bottom: 8px;">
+              ${currentUnit.subtitle}
+            </div>
+            <div style="background: #ffffff; border-left: 3px solid #1e3a8a; padding: 8px 14px; border-radius: 0 6px 6px 0; font-size: 0.86rem; color: #1e3a8a; line-height: 1.45;">
+              <strong>Overarching Historical Enquiry:</strong> &ldquo;${currentUnit.overarchingEnquiry}&rdquo;
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+            <a href="${currentUnit.textbookPdf}" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: #ffffff; border: 1.5px solid #1e3a8a; color: #1e3a8a; border-radius: 6px; font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: background 0.15s ease;">
+              <i class="fa-solid fa-book-open"></i> Master Textbook (PDF)
+            </a>
+            <a href="${currentUnit.workbookPdf}" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: #1e3a8a; color: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 6px; font-size: 0.82rem; font-weight: 700; text-decoration: none; box-shadow: 0 2px 6px rgba(30,58,138,0.2);">
+              <i class="fa-solid fa-file-pen"></i> Pupil Workbook (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOW Interactive 8-Enquiry Matrix Table -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div style="padding: 16px 20px; background: #0f172a; color: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase;">
+            <i class="fa-solid fa-table-list" style="margin-right: 8px; color: #60a5fa;"></i>
+            Enquiry Syllabus &amp; Disciplinary Architecture Matrix
+          </div>
+          <div style="font-size: 0.78rem; color: #94a3b8; font-weight: 600;">
+            100% Christine Counsell 4-Act Framework
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.86rem;">
+            <thead>
+              <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #475569; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em;">
+                <th style="padding: 12px 16px; width: 60px;">Enq</th>
+                <th style="padding: 12px 16px; width: 220px;">Enquiry Title &amp; Question</th>
+                <th style="padding: 12px 16px; width: 170px;">Disciplinary Focus</th>
+                <th style="padding: 12px 16px; width: 230px;">Primary Archival Sources</th>
+                <th style="padding: 12px 16px; width: 200px;">Authentic Key Figure</th>
+                <th style="padding: 12px 16px;">Core Disciplinary Vocabulary</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${currentUnit.enquiries
+                .map((enq, idx) => {
+                  const bg = idx % 2 === 0 ? '#ffffff' : '#f8fafc';
+                  return `
+                  <tr style="background: ${bg}; border-bottom: 1px solid #e2e8f0; vertical-align: top; transition: background 0.15s ease;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='${bg}'">
+                    <td style="padding: 14px 16px; font-weight: 900; color: #1e3a8a; font-size: 1rem; text-align: center;">
+                      ${enq.num}
+                    </td>
+                    <td style="padding: 14px 16px;">
+                      <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 0.92rem;">
+                        ${enq.title}
+                      </div>
+                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.4; font-style: italic;">
+                        &ldquo;${enq.enquiryQuestion}&rdquo;
+                      </div>
+                    </td>
+                    <td style="padding: 14px 16px;">
+                      <span style="display: inline-block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; line-height: 1.3;">
+                        ${enq.disciplinaryFocus}
+                      </span>
+                    </td>
+                    <td style="padding: 14px 16px; color: #334155; line-height: 1.45; font-size: 0.82rem;">
+                      ${enq.sources
+                        .split(';')
+                        .map(
+                          (s) =>
+                            `<div style="margin-bottom: 4px;"><i class="fa-solid fa-scroll" style="color: #94a3b8; font-size: 0.72rem; margin-right: 6px;"></i>${s.trim()}</div>`,
+                        )
+                        .join('')}
+                    </td>
+                    <td style="padding: 14px 16px;">
+                      <div style="display: inline-flex; align-items: center; gap: 4px; background: #0f172a; color: #ffffff; padding: 1px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">
+                        KEY FIGURE
+                      </div>
+                      <div style="font-weight: 800; color: #0f172a; font-size: 0.88rem;">
+                        ${enq.keyFigure}
+                      </div>
+                      <div style="font-size: 0.75rem; color: #64748b; line-height: 1.35;">
+                        ${enq.figureRole}
+                      </div>
+                    </td>
+                    <td style="padding: 14px 16px;">
+                      <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                        ${enq.vocabulary
+                          .map(
+                            (v) => `
+                          <span style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">
+                            ${v}
+                          </span>
+                        `,
+                          )
+                          .join('')}
+                      </div>
+                    </td>
+                  </tr>
+                `;
+                })
+                .join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Whole-School Schemes of Work Download Bar -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
         <div>
           <h3 style="margin: 0 0 4px 0; font-size: 1.15rem; color: #0f172a; font-weight: 800;">
             Downloadable Schemes of Work &amp; Whole-School Overviews
           </h3>
           <p style="margin: 0; font-size: 0.85rem; color: #64748b;">
-            Official curriculum documentation for department inspections and curriculum leaders.
+            Official curriculum documentation for department inspections, external verification, and curriculum leaders.
           </p>
         </div>
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -896,11 +1210,14 @@ function renderCurriculumTab(container) {
         </div>
       </div>
 
-      <!-- Skills Matrix Overview -->
+      <!-- Disciplinary Skills Progression Matrix -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-        <h3 style="margin: 0 0 16px 0; font-size: 1.25rem; font-weight: 800; color: #0f172a;">
+        <h3 style="margin: 0 0 4px 0; font-size: 1.25rem; font-weight: 800; color: #0f172a;">
           Disciplinary Skills Progression Matrix (Years 7–11)
         </h3>
+        <p style="margin: 0 0 16px 0; font-size: 0.88rem; color: #64748b;">
+          Vertical disciplinary continuum mapping progression across 6 core historical thinking concepts.
+        </p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
           ${Object.entries(DISCIPLINARY_STRANDS)
             .map(
@@ -921,81 +1238,46 @@ function renderCurriculumTab(container) {
             .join('')}
         </div>
       </div>
+
     </div>
   `;
 }
 
-// -------------------------------------------------------------
-// TAB 5: DEPARTMENT POLICIES
-// -------------------------------------------------------------
 function renderPoliciesTab(container) {
-  container.innerHTML = `
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px;">
-      
-      <!-- Marking Policy -->
-      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #1e3a8a; background: #eff6ff; padding: 2px 8px; border-radius: 4px;">
-            Department Policy 01
-          </span>
-          <a href="/pdfs/history_marking_and_feedback_policy_v2.pdf" target="_blank" style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-decoration: none;">
-            <i class="fa-solid fa-file-pdf"></i> Download PDF
-          </a>
-        </div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 0 0 10px 0; color: #0f172a;">
-          History Marking &amp; Formative Feedback Policy (v2)
-        </h3>
-        <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin-bottom: 14px;">
-          Establishes workload-efficient, high-impact feedback routines. Eliminates excessive margin scribbling in favour of structured WWW/EBI formative grids and whole-class feedback debriefs.
-        </p>
-        <ul style="margin: 0; padding-left: 18px; font-size: 0.82rem; color: #334155; line-height: 1.5;">
-          <li>Formal formative assessment on every 16-page workbook back cover (/26 marks).</li>
-          <li>Live marking using yellow highlighter for vocabulary precision.</li>
-          <li>Dedicated pupil DIRT (Dedicated Improvement &amp; Reflection Time) routines.</li>
-        </ul>
-      </div>
-
-      <!-- Fieldwork & Educational Visits -->
-      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #065f46; background: #ecfdf5; padding: 2px 8px; border-radius: 4px;">
-            Department Policy 02
-          </span>
-          <a href="/pdfs/Ypres trip 2026 Code of Conduct.pdf" target="_blank" style="font-size: 0.8rem; font-weight: 700; color: #059669; text-decoration: none;">
-            <i class="fa-solid fa-file-pdf"></i> Download PDF
-          </a>
-        </div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 0 0 10px 0; color: #0f172a;">
-          Fieldwork, Primary Archives &amp; Visits Protocol
-        </h3>
-        <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin-bottom: 14px;">
-          Governs on-site primary archival fieldwork, battlefield study visits (such as the Ypres Salient Field Guide), local history heritage enquiries, and student safety.
-        </p>
-        <ul style="margin: 0; padding-left: 18px; font-size: 0.82rem; color: #334155; line-height: 1.5;">
-          <li>Primary source handling protocols in local archives.</li>
-          <li>Fieldwork companion packs and respectful memorial conduct.</li>
-          <li>Integration of local soldier archives into the curriculum.</li>
-        </ul>
-      </div>
-
-    </div>
-  `;
+  renderGovernanceTab(container);
 }
 
-// Global window hooks for tab switching & search
+// Global window hooks for tab switching, unit selection & search
 if (typeof window !== 'undefined') {
   window.switchPortalTab = function (tab) {
-    activePortalTab = tab;
-    document.querySelectorAll('.portal-nav-tab').forEach((t) => t.classList.remove('active'));
+    if (tab === 'guidance' || tab === 'policies') {
+      activePortalTab = 'governance';
+    } else {
+      activePortalTab = tab;
+    }
+    document.querySelectorAll('.portal-nav-tab').forEach((t) => {
+      if (t.dataset.tab === activePortalTab) {
+        t.classList.add('active');
+      } else {
+        t.classList.remove('active');
+      }
+    });
     renderActivePortalTab();
+  };
+
+  window.selectSowUnit = function (unitId) {
+    selectedSowUnit = unitId;
+    const contentEl = document.getElementById('portal-tab-content');
+    if (contentEl && activePortalTab === 'curriculum') {
+      renderCurriculumTab(contentEl);
+    }
   };
 
   window.updateGuidanceSearch = function (q) {
     guidanceSearchQuery = q;
     const contentEl = document.getElementById('portal-tab-content');
-    if (contentEl && activePortalTab === 'guidance') {
-      renderGuidanceTab(contentEl);
-      // Keep input focused
+    if (contentEl && (activePortalTab === 'governance' || activePortalTab === 'guidance')) {
+      renderGovernanceTab(contentEl);
       const input = document.getElementById('guidance-search-input');
       if (input) {
         input.focus();
@@ -1009,7 +1291,6 @@ if (typeof window !== 'undefined') {
     const contentEl = document.getElementById('portal-tab-content');
     if (contentEl && activePortalTab === 'pedagogy') {
       renderPedagogyTab(contentEl);
-      // Keep input focused
       const input = document.getElementById('pedagogy-search-input');
       if (input) {
         input.focus();

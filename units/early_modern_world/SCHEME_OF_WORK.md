@@ -32,26 +32,25 @@ Every enquiry explicitly traces four continuous thematic threads mapped across K
 
 To build balanced second-order historical competence and prevent pupil fatigue, the 8 enquiries rotate across discrete disciplinary skills:
 
-| Enquiry | Lesson Title | Disciplinary Focus / Second-Order Concept | Core Archival Sources | Key Historical Actor / Voice | Taxonomy Category | Key Disciplinary Terms |
+| Enquiry | Lesson Title | Disciplinary Focus / Second-Order Concept | Core Archival Sources | Key Historical Figure | Role / Distinction | Key Disciplinary Terms |
 |---|---|---|---|---|---|---|
-| **1** | **Constantinople 1453 & The Spice Routes** | *Causation & Consequence / Geopolitics* | Catalan Atlas (Mansa Musa); Kritovoulos Chronicle on Mehmed II | Sultan Mehmed II | `KEY HISTORICAL INDIVIDUAL` | *Ottoman Empire, Levant, Spice Routes, Geopolitical Choke-Point, Fall of Constantinople, Renaissance* |
-| **2** | **The Age of Discovery & Spanish Silver** | *Change & Continuity / Economic Causation* | Cantino Planisphere / Treaty of Tordesillas; Armada Portrait of Elizabeth I | Sir Francis Drake | `KEY HISTORICAL INDIVIDUAL` | *Treaty of Tordesillas, Bullion, Privateering, Spanish Armada, Global Hegemony, Potosí Silver* |
-| **3** | **The Kingdom of Benin & West African Trade** | *Historical Diversity & Mutual Diplomacy* | Benin Bronze Court Plaques; Sir Thomas Roe Embassy Journal | Oba Ewuare II of Benin | `KEY HISTORICAL INDIVIDUAL` | *Kingdom of Benin, Brass Casting, Oba, Diplomatic Parity, Mughal Empire, Pre-Colonial Sovereignty* |
-| **4** | **The Gunpowder Plot (1605): Faith & Terror** | *Evidence & Forensic Interrogation* | Monteagle Letter; Guy Fawkes Confession; Crispijn van de Passe Print | Robert Catesby | `KEY HISTORICAL INDIVIDUAL` | *Recusancy, Jesuit Underground, Divine Right of Kings, State Surveillance, Treason, Anti-Catholic Penal Laws* |
-| **5** | **The Civil War & The Trial of Charles I** | *Significance & Constitutional Transformation* | Putney Debates Record; King Charles I Death Warrant (1649) | The New Model Army Agitator | `REPRESENTATIVE HISTORICAL VOICE` | *New Model Army, Putney Debates, Regicide, Parliamentary Sovereignty, Levellers, Absolute Monarchy* |
-| **6** | **The Commonwealth & Navigation Acts** | *Causation & Imperial Commercial Strategy* | 1651 Navigation Act Text; 1651 Great Seal of the Commonwealth | Oliver Cromwell | `KEY HISTORICAL INDIVIDUAL` | *Commonwealth, Protectorate, Western Design, Navigation Acts, Mercantilism, Naval Monopolies* |
-| **7** | **The Transatlantic Slave Trade** | *Historical Evidence & Forensic Extraction* | Alexander Falconbridge Account; Stowage Plan of the Brookes (1788) | Alexander Falconbridge | `KEY HISTORICAL INDIVIDUAL` | *Middle Passage, Triangular Trade, Chattel Slavery, Dehumanization, Commodification, Factory Forts* |
-| **8** | **Resistance, Maroons & Abolition** | *Historical Agency & Interpretations* | 1739 British-Maroon Treaty; Olaudah Equiano Autobiography (1789) | Queen Nanny of the Maroons | `KEY HISTORICAL INDIVIDUAL` | *Maroons, Guerrilla Ambushes, Plantation Sabotage, Abolition, Olaudah Equiano, Sovereign Autonomy* |
-| **Capstone** | **Enclosure, The Bank & The Fiscal-Military State** | *Synoptic Evaluation & Socioeconomic Analysis* | Daniel Defoe (*Tour of Great Britain*); 1694 Bank of England Charter | The Enclosure Freeholder | `REPRESENTATIVE HISTORICAL VOICE` | *Enclosure Acts, Open-Field System, Fiscal-Military State, Bank of England, National Debt, Agrarian Capitalism* |
+| **1** | **Constantinople 1453 & The Spice Routes** | *Causation & Consequence / Geopolitics* | Catalan Atlas (Mansa Musa); Kritovoulos Chronicle on Mehmed II | Sultan Mehmed II | *Ottoman Sultan & Conqueror* | *Ottoman Empire, Levant, Spice Routes, Geopolitical Choke-Point, Fall of Constantinople, Renaissance* |
+| **2** | **The Age of Discovery & Spanish Silver** | *Change & Continuity / Economic Causation* | Cantino Planisphere / Treaty of Tordesillas; Armada Portrait of Elizabeth I | Sir Francis Drake | *Naval Commander & Circumnavigator* | *Treaty of Tordesillas, Bullion, Privateering, Spanish Armada, Global Hegemony, Potosí Silver* |
+| **3** | **The Kingdom of Benin & West African Trade** | *Historical Diversity & Mutual Diplomacy* | Benin Bronze Court Plaques; Sir Thomas Roe Embassy Journal | Oba Ewuare II of Benin | *King of Benin (Edo Empire)* | *Kingdom of Benin, Brass Casting, Oba, Diplomatic Parity, Mughal Empire, Pre-Colonial Sovereignty* |
+| **4** | **The Gunpowder Plot (1605): Faith & Terror** | *Evidence & Forensic Interrogation* | Monteagle Letter; Guy Fawkes Confession; Crispijn van de Passe Print | Robert Catesby | *Conspirator & Gentleman Rebel* | *Recusancy, Jesuit Underground, Divine Right of Kings, State Surveillance, Treason, Anti-Catholic Penal Laws* |
+| **5** | **The Civil War & The Trial of Charles I** | *Significance & Constitutional Transformation* | Putney Debates Record; King Charles I Death Warrant (1649) | Edward Sexby | *New Model Army Agitator & Leveller* | *New Model Army, Putney Debates, Regicide, Parliamentary Sovereignty, Levellers, Absolute Monarchy* |
+| **6** | **The Commonwealth & Navigation Acts** | *Causation & Imperial Commercial Strategy* | 1651 Navigation Act Text; 1651 Great Seal of the Commonwealth | Oliver Cromwell | *Lord Protector & General* | *Commonwealth, Protectorate, Western Design, Navigation Acts, Mercantilism, Naval Monopolies* |
+| **7** | **The Transatlantic Slave Trade** | *Historical Evidence & Forensic Extraction* | Alexander Falconbridge Account; Stowage Plan of the Brookes (1788) | Alexander Falconbridge | *Slave Ship Surgeon & Abolitionist* | *Middle Passage, Triangular Trade, Chattel Slavery, Dehumanization, Commodification, Factory Forts* |
+| **8** | **Resistance, Maroons & Abolition** | *Historical Agency & Interpretations* | 1739 British-Maroon Treaty; Olaudah Equiano Autobiography (1789) | Queen Nanny of the Maroons | *Jamaican Maroon Leader & General* | *Maroons, Guerrilla Ambushes, Plantation Sabotage, Abolition, Olaudah Equiano, Sovereign Autonomy* |
+| **Capstone** | **Enclosure, The Bank & The Fiscal-Military State** | *Synoptic Evaluation & Socioeconomic Analysis* | Daniel Defoe (*Tour of Great Britain*); 1694 Bank of England Charter | Gerrard Winstanley | *Digger Leader & Common Land Activist* | *Enclosure Acts, Open-Field System, Fiscal-Military State, Bank of England, National Debt, Agrarian Capitalism* |
 
 ---
 
-### Scheme of Work Document Key & Historical Figure Taxonomy
+### Key Historical Figures & Eyewitness Curriculum Standard
 
-To ensure balanced classroom parity between top-down political state actors and bottom-up collective social movements, our Key Stage 3 curriculum enforces a rigorous bipartite taxonomy:
-
-* **`KEY HISTORICAL INDIVIDUAL`**: Specific named historical figures, monarchs, statesmen, chroniclers, and radical leaders who exercised executive authority, recorded firsthand witness testimony, or led decisive political actions. Rendered in textbook spreads with authenticated primary portrait miniatures, lifespan markers, and decisive actions.
-* **`REPRESENTATIVE HISTORICAL VOICE`**: Composite historical archetypes representing broader social classes, labour forces, and collective resistance movements (e.g. *The New Model Army Agitator*, *The Enclosure Freeholder*). Rendered in textbook spreads as clean, full-width typographical feature cards without artificial stock imagery, giving equal academic dignity and analytical focus to ordinary working people.
+To maintain rigorous historical authenticity and student engagement, every enquiry pairs high-level political and technological developments with real, named historical individuals:
+* **Real Eyewitness Testimony:** Soldiers and working people who fought for civil liberties and land rights are anchored in real individuals who left primary testimony (such as cavalry trooper Edward Sexby at the 1647 Putney Debates, and Gerrard Winstanley defending common land at St George's Hill).
+* **Zero Jargon & Zero AI Imagery:** Every figure is presented in student materials under the clean, standard badge **`KEY FIGURE`**, supported strictly by authenticated primary documents and historical records.
 
 ---
 
@@ -93,7 +92,7 @@ To ensure balanced classroom parity between top-down political state actors and 
 * **Enquiry Question:** *Why did the struggle between King and Parliament lead to the unprecedented trial and public execution of Charles I in 1649?*
 * **Historical Core:** Charles I and the Divine Right of Kings; eleven years of Personal Rule (1629–1640) and arbitrary Ship Money taxes; the Bishop’s Wars and the Long Parliament; outbreak of civil war in 1642; Oliver Cromwell and the creation of the disciplined New Model Army; the radicalization of ordinary soldiers: the 1647 Putney Debates (*"The poorest he that is in England hath a life to live as the greatest he"*); Pride’s Purge and the Rump Parliament; the trial of Charles I in Westminster Hall; the historic regicide on 30 January 1649.
 * **Disciplinary Skill:** *Significance & Constitutional Transformation* — Tracing the radical ideological shift from Divine Right to Parliamentary sovereignty.
-* **Key Historical Voice:** The New Model Army Agitator (`REPRESENTATIVE HISTORICAL VOICE`).
+* **Key Figure:** Edward Sexby (*New Model Army Trooper, Elected Agitator & Leveller Spokesman*).
 
 ---
 
@@ -125,11 +124,11 @@ To ensure balanced classroom parity between top-down political state actors and 
 * **Enquiry Question:** *“Britain became a global superpower because of its financial and parliamentary institutions, not merely its military bravery.” How far do you agree?*
 * **Historical Core:** The Glorious Revolution of 1688 and the 1689 Bill of Rights; the foundation of the Bank of England (1694) and the creation of the National Debt; institutional borrowing at low interest rates enabling continuous naval expansion; the parliamentary Enclosure Acts: dispossessing independent yeomen and commoners, commercializing agriculture, and generating an urban wage-labour force; Daniel Defoe’s social survey of burgeoning British commerce.
 * **Disciplinary Skill:** *Synoptic Evaluation & Socioeconomic Analysis* — Synthesizing agrarian transformation, institutional finance, and imperial expansion.
-* **Key Historical Voice:** The Enclosure Freeholder (`REPRESENTATIVE HISTORICAL VOICE`).
+* **Key Figure:** Gerrard Winstanley (*Digger Leader, Common Land Activist & Political Pamphleteer*).
 
 ---
 
 ## Pedagogical Priming & Quality Gates
 1. **Strict School Anonymity:** 0 instances of prohibited school identifiers; use "The History Revision Hub • Student Curriculum Edition" or "The History Department".
 2. **Authentic Primary Evidence:** 100% authentic archival records, treaties, and primary portraits; zero AI imagery.
-3. **Parity of Historical Agency:** Equal disciplinary status accorded to named political leaders (`KEY HISTORICAL INDIVIDUAL`) and collective working people (`REPRESENTATIVE HISTORICAL VOICE`).
+3. **Parity of Historical Agency:** Equal disciplinary status accorded to state rulers and working people who fought for civil liberties and land rights.

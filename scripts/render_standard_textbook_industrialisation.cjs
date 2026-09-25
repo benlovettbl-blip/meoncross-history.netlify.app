@@ -107,7 +107,7 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       name: 'Henry Cort',
       lifespan: '1741–1800',
       role: 'Fareham Ironmaster & Metallurgical Pioneer',
-      category: 'KEY HISTORICAL INDIVIDUAL',
+      category: 'KEY FIGURE',
       significance:
         'Invented the reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks in Hampshire, liberating Britain from foreign Baltic iron imports and providing the structural metal for the Royal Navy and railways.',
       actions: [
@@ -161,16 +161,16 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
   // Page 5: Lesson 2 (Factory Work & Child Labour)
   p5: {
     keyFigure: {
-      name: 'The Child Factory Apprentice',
-      lifespan: 'c. 1780–1850',
-      role: 'Pauper Apprentice, Scavenger & Cotton Mill Labourer',
-      category: 'REPRESENTATIVE HISTORICAL VOICE',
+      name: 'Matthew Crabtree',
+      lifespan: 'b. 1810',
+      role: 'Former Child Labourer, Blanket Mill Apprentice & Parliamentary Witness',
+      category: 'KEY FIGURE',
       significance:
-        'Represented the tens of thousands of parish apprentice children bound from London workhouses to northern textile mills, enduring fourteen-hour shifts under the brutal discipline of the factory clock.',
+        'Bound as a factory child at age eight in Dewsbury, Yorkshire, his harrowing firsthand testimony to the 1832 Sadler Committee exposed the brutality of child labour and compelled the passage of the landmark 1833 Factory Act.',
       actions: [
-        'Laboured as scavengers and piecers crawling beneath operating spinning mules to sweep flammable lint and tie broken threads while machinery remained in full motion.',
-        'Endured severe corporal punishment from overlookers wielding leather straps and suffered extreme physical exhaustion that led to fatal gear crushes and permanent spinal deformities.',
-        'Gave harrowing eyewitness evidence to parliamentary inquiries—such as the 1832 Sadler Committee—compelling the passage of the landmark 1833 Factory Act.',
+        'Laboured fourteen-hour shifts (from 6:00 am to 9:00 pm) in a Yorkshire blanket mill, enduring severe exhaustion on factory floors.',
+        'Frequently beaten with leather straps by mill overlookers for arriving mere minutes late after walking miles to work.',
+        'Gave fearless sworn evidence before the 1832 Parliamentary Committee in Westminster, refuting mill owners’ claims that child labour was harmless.',
       ],
       image: null,
     },
@@ -221,7 +221,7 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       name: 'Edwin Chadwick',
       lifespan: '1800–1890',
       role: 'Social Reformer & Secretary to the Poor Law Commission',
-      category: 'KEY HISTORICAL INDIVIDUAL',
+      category: 'KEY FIGURE',
       significance:
         'Pioneered quantitative epidemiological investigation in Britain. His 1842 Sanitary Report proved that disease and premature death in industrial slums were directly caused by environmental squalor and contaminated water, compelling the birth of state public health.',
       actions: [
@@ -278,7 +278,7 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       name: 'Isambard Kingdom Brunel',
       lifespan: '1806–1859',
       role: 'Civil & Mechanical Engineer & Imperial Innovator',
-      category: 'KEY HISTORICAL INDIVIDUAL',
+      category: 'KEY FIGURE',
       significance:
         'The preeminent engineering genius of Victorian Britain. Brunel designed the Great Western Railway, revolutionary suspension bridges, and colossal iron steamships that physically bound Britain’s global trading empire across oceans.',
       actions: [
@@ -335,7 +335,7 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       name: 'Rani Lakshmibai of Jhansi',
       lifespan: '1828–1858',
       role: 'Rani of the Princely State of Jhansi & Rebel General',
-      category: 'KEY HISTORICAL INDIVIDUAL',
+      category: 'KEY FIGURE',
       significance:
         'The foremost military and symbolic icon of armed Indian resistance against British East India Company rule during the 1857 Rebellion, fighting to defend her sovereign state after its illegal seizure under Dalhousie’s Doctrine of Lapse.',
       actions: [
@@ -389,16 +389,16 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
   // Page 13: Lesson 6 (Radical Protest & Chartism)
   p13: {
     keyFigure: {
-      name: 'The Luddite Weaver',
-      lifespan: 'fl. 1811–1816',
-      role: 'Artisan Cloth Dresser, Handloom Weaver & Framework Knitter',
-      category: 'REPRESENTATIVE HISTORICAL VOICE',
+      name: 'George Mellor',
+      lifespan: '1789–1813',
+      role: 'Artisan Cloth Cropper & Leader of the Yorkshire Luddites',
+      category: 'KEY FIGURE',
       significance:
-        'Represented the highly skilled domestic textile artisans across Yorkshire, Lancashire, and Nottinghamshire who organized nocturnal machine-breaking raids under the mythical name "General Ned Ludd" to protect their wages, craft dignity, and families from starvation.',
+        'A skilled cloth dresser from Huddersfield who led the Yorkshire Luddites under the secret name "General Ned Ludd" to defend artisan wages and customary trade rights against automated shearing frames.',
       actions: [
-        'Smashed automated shearing frames and power looms with heavy sledgehammers ("Great Enoch") to halt wage reductions and the destruction of customary artisan contracts.',
-        'Operated through secret nocturnal oathed brotherhoods across the Pennines, evading thousands of British troops deployed to the north of England.',
-        'Resisted the 1812 Frame Breaking Act which made machine wrecking a capital crime punishable by hanging, inspiring subsequent working-class resistance movements from Peterloo to Chartism.',
+        'Organized nocturnal secret societies bound by solemn oaths to smash power shearing frames that undercut artisan craft wages.',
+        'Commanded over a hundred armed croppers in the famous night assault on William Horsfall’s fortified Rawfolds Mill in April 1812.',
+        'Arrested and tried under the 1812 Frame Breaking Act at York Castle, refusing to betray his fellow weavers before his execution in January 1813.',
       ],
       image: null,
     },
@@ -449,7 +449,7 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       name: 'Charles Grey, 2nd Earl Grey',
       lifespan: '1764–1845',
       role: 'Whig Prime Minister of the United Kingdom (1830–1834)',
-      category: 'KEY HISTORICAL INDIVIDUAL',
+      category: 'KEY FIGURE',
       significance:
         'The aristocratic statesman who steered the landmark 1832 Great Reform Act through the House of Commons and House of Lords, averting threatened violent revolution by enfranchising the industrial middle class and eliminating corrupt rotten boroughs.',
       actions: [
@@ -506,7 +506,7 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       name: 'Queen Victoria',
       lifespan: '1819–1901',
       role: 'Queen of the United Kingdom & Empress of India',
-      category: 'KEY HISTORICAL INDIVIDUAL',
+      category: 'KEY FIGURE',
       significance:
         'The constitutional monarch whose sixty-three-year reign defined the "Victorian Era", presiding over the high-water mark of British industrial manufacturing supremacy, global imperial expansion, and profound domestic political transformation.',
       actions: [
@@ -1208,7 +1208,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
               ? `
           <div class="key-figure-box">
             <div class="kf-header">
-              <span class="kf-tag">${bank.keyFigure.category || bank.keyFigure.badge || 'KEY HISTORICAL INDIVIDUAL'}</span>
+              <span class="kf-tag">${bank.keyFigure.badge || bank.keyFigure.category || 'KEY FIGURE'}</span>
               <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
             </div>
             <div class="kf-identity-row">

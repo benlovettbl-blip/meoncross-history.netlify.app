@@ -114,7 +114,7 @@ export function renderDashboard() {
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
-              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #7c3aed; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Thursdays P6</span>
+              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #7c3aed; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Co-Curricular</span>
               <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9;">Chess Club</span>
             </div>
             <div style="font-size: 0.92rem; font-weight: 700; color: #4c1d95;">

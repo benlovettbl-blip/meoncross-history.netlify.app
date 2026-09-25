@@ -700,13 +700,14 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     return;
   }
 
-  // Standard Curriculum Unit: Configure applicable tabs
+  // Standard Curriculum Unit: Configure consolidated tabs
   if (navLessons) {
     navLessons.style.display = 'flex';
     navLessons.dataset.action = 'switch-view';
     navLessons.dataset.view = 'lessons';
     navLessons.dataset.unit = unitId;
-    if (navLessonsLabel) navLessonsLabel.textContent = 'Study Lessons';
+    if (navLessonsLabel)
+      navLessonsLabel.textContent = isTrip ? 'Tour Itinerary' : 'Enquiry Lessons';
     navLessons.onclick = () => switchView('lessons', unitId);
   }
 
@@ -717,40 +718,24 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navInteractive.dataset.view = 'interactive';
     navInteractive.dataset.unit = unitId;
     navInteractive.innerHTML =
-      '<i class="fa-solid fa-circle-question" style="color: #f59e0b;"></i><span>Interactive Quizzing</span>';
+      '<i class="fa-solid fa-brain" style="color: #f59e0b;"></i><span>Retrieval &amp; Revision</span>';
     navInteractive.onclick = () => switchView('interactive', unitId);
   } else if (navInteractive) {
     navInteractive.style.display = 'none';
   }
 
-  // Unit Printable Booklet (nested inside Unit Workspace)
+  // Unit Printable Booklet & Textbook
   if (navUnitBooklet) {
     navUnitBooklet.style.display = 'flex';
     navUnitBooklet.dataset.action = 'switch-view';
     navUnitBooklet.dataset.view = 'booklet';
     navUnitBooklet.dataset.unit = unitId;
     navUnitBooklet.innerHTML =
-      '<i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Printable Unit Booklet</span>';
+      '<i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Workbooks &amp; Textbooks</span>';
     navUnitBooklet.onclick = () => switchView('booklet', unitId);
   }
 
-  const hasTimeline =
-    (unitData.timelineEvents && unitData.timelineEvents.length > 0) ||
-    (unitData.timeline && unitData.timeline.length > 0) ||
-    unitId === 'cme_new' ||
-    unitId === 'gcse_middle_east_1945_1995';
-  if (navTimeline && hasTimeline) {
-    navTimeline.style.display = 'flex';
-    navTimeline.dataset.action = 'switch-view';
-    navTimeline.dataset.view = 'timeline';
-    navTimeline.dataset.unit = unitId;
-    navTimeline.innerHTML =
-      '<i class="fa-solid fa-timeline" style="color: #6366f1;"></i><span>Living Timeline</span>';
-    navTimeline.onclick = () => switchView('timeline', unitId);
-  } else if (navTimeline) {
-    navTimeline.style.display = 'none';
-  }
-
+  // GCSE Exam Practice (visible only on GCSE assessment units)
   const hasMockExams = Boolean(
     unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0,
   );
@@ -759,60 +744,19 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navMockExams.dataset.action = 'switch-view';
     navMockExams.dataset.view = 'mock-exams';
     navMockExams.dataset.unit = unitId;
+    navMockExams.innerHTML =
+      '<i class="fa-solid fa-file-signature" style="color: #6366f1;"></i><span>GCSE Exam Practice</span>';
     navMockExams.onclick = () => switchView('mock-exams', unitId);
   } else if (navMockExams) {
     navMockExams.style.display = 'none';
   }
 
-  const keyIndividualsData = unitData.key_individuals || unitData.biographies;
-  if (navIndividuals && keyIndividualsData && keyIndividualsData.length > 0) {
-    navIndividuals.style.display = 'flex';
-    navIndividuals.dataset.action = 'switch-view';
-    navIndividuals.dataset.view = 'individuals';
-    navIndividuals.dataset.unit = unitId;
-    navIndividuals.onclick = () => switchView('individuals', unitId);
-  } else if (navIndividuals) {
-    navIndividuals.style.display = 'none';
-  }
-
-  if (navReading && unitData.guided_reading && unitData.guided_reading.length > 0) {
-    navReading.style.display = 'flex';
-    navReading.dataset.action = 'switch-view';
-    navReading.dataset.view = 'reading';
-    navReading.dataset.unit = unitId;
-    navReading.onclick = () => switchView('reading', unitId);
-  } else if (navReading) {
-    navReading.style.display = 'none';
-  }
-
-  if (navDecisions && navTaboo) {
-    if (
-      unitId.startsWith('gcse_') ||
-      unitId === 'edexcel_medicine' ||
-      unitId === 'eee' ||
-      unitId === 'cme_new' ||
-      unitId === 'weimar_nazi_germany' ||
-      unitId === 'usa'
-    ) {
-      if (unitId === 'gcse_elizabethan_england' || unitId === 'eee') {
-        navDecisions.style.display = 'none';
-      } else {
-        navDecisions.style.display = 'flex';
-        navDecisions.dataset.action = 'switch-view';
-        navDecisions.dataset.view = 'decisions';
-        navDecisions.dataset.unit = unitId;
-        navDecisions.onclick = () => switchView('decisions', unitId);
-      }
-      navTaboo.style.display = 'flex';
-      navTaboo.dataset.action = 'switch-view';
-      navTaboo.dataset.view = 'taboo';
-      navTaboo.dataset.unit = unitId;
-      navTaboo.onclick = () => switchView('taboo', unitId);
-    } else {
-      navDecisions.style.display = 'none';
-      navTaboo.style.display = 'none';
-    }
-  }
+  // Hide secondary / fragmented tabs to preserve clean 3/4-tab hierarchy
+  if (navTimeline) navTimeline.style.display = 'none';
+  if (navIndividuals) navIndividuals.style.display = 'none';
+  if (navReading) navReading.style.display = 'none';
+  if (navDecisions) navDecisions.style.display = 'none';
+  if (navTaboo) navTaboo.style.display = 'none';
 
   // Highlight active unit in lower sidebar tree
   if (typeof window.highlightActiveSidebarUnit === 'function') {

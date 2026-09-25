@@ -110,7 +110,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Sultan Mehmed II (The Conqueror)',
         lifespan: '1432–1481',
         role: 'Sultan of the Ottoman Empire (Reigned 1451–1481)',
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
         significance:
           'Captured Constantinople in 1453, ending the Byzantine Empire and placing overland trade routes between Europe and Asia under Ottoman control.',
         actions: [
@@ -171,7 +171,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Sir Francis Drake',
         lifespan: 'c. 1540–1596',
         role: 'Naval Commander, Privateer & Circumnavigator',
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
         significance:
           'First Englishman to circumnavigate the globe (1577–1580); vice-admiral of the English fleet that defeated the Spanish Armada in 1588.',
         actions: [
@@ -232,7 +232,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Oba Ewuare II of Benin',
         lifespan: 'c. 1440–1473',
         role: 'Oba (King) of the Kingdom of Benin (Edo Empire)',
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
         significance:
           'Transformed Benin from a city-state into a vast, fortified pre-colonial West African empire renowned for monumental earthworks and brass casting.',
         actions: [
@@ -293,7 +293,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Robert Catesby',
         lifespan: 'c. 1572–1605',
         role: 'Mastermind of the Gunpowder Plot',
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
         significance:
           'Charismatic Warwickshire Catholic gentleman who orchestrated the 1605 conspiracy to blow up the House of Lords and assassinate King James I.',
         actions: [
@@ -351,17 +351,17 @@ module.exports = function getEarlyModernData(helpers = {}) {
 
     p11: {
       keyFigure: {
-        name: 'The New Model Army Agitator',
-        lifespan: 'fl. 1647',
-        role: 'Elected Soldier Representative & Leveller Spokesman',
+        name: 'Edward Sexby',
+        lifespan: 'c. 1616–1658',
+        role: 'New Model Army Trooper, Elected Agitator & Leveller Spokesman',
         significance:
-          'Elected by ordinary rank-and-file soldiers to represent regimental grievances, debating Oliver Cromwell at the Putney Debates for universal male suffrage.',
+          'A Suffolk cavalry trooper elected by his fellow soldiers to represent regimental grievances, who famously represented the rank-and-file at the 1647 Putney Debates to demand parliamentary franchise for all free Englishmen.',
         actions: [
-          'Drafted and presented *The Agreement of the People* (1647), demanding that political sovereignty derive from the consent of all freeborn Englishmen.',
-          'Debated General Henry Ireton at Putney, asserting that "the poorest he that is in England hath a life to live as the greatest he."',
-          'Organized soldier resistance against parliamentary attempts to disband the New Model Army without arrears of pay or indemnity.',
+          'Elected by Fairfax’s troopers as an Army Agitator to present *The Agreement of the People* demanding supreme power belong to the commons.',
+          'Debated Henry Ireton and Oliver Cromwell inside St Mary’s Church at Putney, warning that ordinary soldiers would not be denied their civil liberties after shedding their blood in the Civil War.',
+          'Authored the famous radical anti-tyranny pamphlet *Killing No Murder* (1657) defying Oliver Cromwell’s military protectorate.',
         ],
-        category: 'REPRESENTATIVE HISTORICAL VOICE',
+        category: 'KEY FIGURE',
       },
       conceptSpotlight: {
         tag: 'CONSTITUTIONAL DOCTRINE',
@@ -414,7 +414,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Oliver Cromwell',
         lifespan: '1599–1658',
         role: 'Lord Protector of the Commonwealth of England, Scotland & Ireland',
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
         significance:
           'Commander of the New Model Army; ruled Britain as Lord Protector during the republican Commonwealth era (1653–1658).',
         actions: [
@@ -482,7 +482,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Testified extensively before a parliamentary committee led by William Wilberforce, providing processing medical proof of abuse.',
           'Appointed commercial agent to the newly established Sierra Leone colony for freed enslaved people in West Africa.',
         ],
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
       },
       conceptSpotlight: {
         tag: 'COMMODIFICATION OF HUMANS',
@@ -542,7 +542,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Pioneered ingenious camouflage and guerrilla ambushes, routing heavily armed British regiments through jungle mountain passes.',
           'Honored today as a National Hero of Jamaica for her military brilliance and unwavering defense of African sovereignty.',
         ],
-        category: 'KEY HISTORICAL INDIVIDUAL',
+        category: 'KEY FIGURE',
       },
       conceptSpotlight: {
         tag: 'AGENCY & RESISTANCE',
@@ -592,17 +592,17 @@ module.exports = function getEarlyModernData(helpers = {}) {
 
     p19: {
       keyFigure: {
-        name: 'The Enclosure Freeholder',
-        lifespan: 'fl. 1720–1750',
-        role: 'Dispossessed Yeoman & Independent Commoner',
+        name: 'Gerrard Winstanley',
+        lifespan: '1609–1676',
+        role: 'Digger Leader, Common Land Activist & Political Pamphleteer',
         significance:
-          'Represented the millions of rural smallholders whose communal farming and grazing rights were extinguished by parliamentary enclosure acts during the Agricultural Revolution.',
+          'Founded the "True Levellers" or Diggers, advocating for communal ownership of land and resisting the privatization of English commons during the Commonwealth era.',
         actions: [
-          'Customarily farmed open-field strips and grazed livestock on village common lands before parliamentary enclosure awarded titles exclusively to wealthy landlords.',
-          'Faced financial ruin from the legal costs of surveying, hedging, and ditching newly allocated plots, forcing the sale of ancestral land to neighbouring estates.',
-          'Migrated to burgeoning manufacturing towns or London slums like St Giles, transforming from an independent food producer into a waged factory labourer.',
+          'Led a community of impoverished commoners to peacefully occupy and cultivate waste land at St George’s Hill in Surrey in April 1649.',
+          'Penned radical pamphlets arguing that the earth was made to be "a common treasury for all" and that enclosure dispossessed ordinary families.',
+          'Resisted harassment, violent assaults, and legal prosecution from local landowners who destroyed the Diggers’ crops and cottages.',
         ],
-        category: 'REPRESENTATIVE HISTORICAL VOICE',
+        category: 'KEY FIGURE',
       },
       conceptSpotlight: {
         tag: 'INSTITUTIONAL FINANCE',
