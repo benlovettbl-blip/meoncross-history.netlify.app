@@ -79,15 +79,27 @@ function generateQrSvg(url) {
 // Load data module
 const getMedievalData = require('./medieval_england_textbook_data.cjs');
 
+function getMonogramInitials(name) {
+  if (!name) return 'KF';
+  const clean = name.replace(/^(The|Sir|Lord|Dr|King|Queen|Prior|Sultan)\s+/i, '').trim();
+  const parts = clean.split(/\s+/).filter(Boolean);
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return clean.slice(0, 2).toUpperCase();
+}
+
 function renderArchivalSourceBox(src) {
   if (!src) return '';
+  const isPanoramic =
+    src.isPanoramic || src.panoramic || (src.aspectRatio && src.aspectRatio === 'panoramic');
+  const sizeClass = src.expand ? ` expand-${src.expand}` : '';
+  const panoramicClass = isPanoramic ? ' panoramic-source' : '';
   const imgHtml = src.image
     ? `<img class="archival-image" src="${src.image.startsWith('data:') ? src.image : getBase64Image(src.image) || src.image}" alt="${src.title || 'Source'}">`
     : '';
   const bodyClass = src.image ? 'archival-body' : 'archival-body written-source-box';
 
   return `
-    <div class="archival-source-box">
+    <div class="archival-source-box${sizeClass}${panoramicClass}">
       <div class="archival-header">
         <div class="source-identity">
           <span class="source-badge">${src.badge || 'SOURCE'}</span>
@@ -149,6 +161,11 @@ function renderAnalyticalMatrixCard(matrix) {
 
 function renderKeyFigureBox(keyFigure) {
   if (!keyFigure) return '';
+  const portraitHtml =
+    keyFigure.image && keyFigure.image !== 'monogram'
+      ? `<img class="kf-portrait" src="${keyFigure.image.startsWith('data:') ? keyFigure.image : getBase64Image(keyFigure.image) || keyFigure.image}" alt="${keyFigure.name}">`
+      : `<div class="kf-portrait kf-monogram" title="${keyFigure.name}"><span class="kf-monogram-initials">${getMonogramInitials(keyFigure.name)}</span><span class="kf-monogram-tag">RECORD</span></div>`;
+
   return `
     <div class="key-figure-box">
       <div class="kf-header">
@@ -156,7 +173,7 @@ function renderKeyFigureBox(keyFigure) {
         <span class="kf-lifespan">${keyFigure.lifespan}</span>
       </div>
       <div class="kf-identity-row">
-        ${keyFigure.image ? `<img class="kf-portrait" src="${keyFigure.image.startsWith('data:') ? keyFigure.image : getBase64Image(keyFigure.image) || keyFigure.image}" alt="${keyFigure.name}">` : ''}
+        ${portraitHtml}
         <div class="kf-identity-text">
           <div class="kf-name">${keyFigure.name}</div>
           <div class="kf-role">${keyFigure.role}</div>

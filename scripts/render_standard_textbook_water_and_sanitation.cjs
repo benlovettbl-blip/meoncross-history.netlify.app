@@ -925,13 +925,25 @@ async function buildPublisherTextbookHtmlWater() {
       return paras.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('');
     };
 
+    const getMonogramInitials = (name) => {
+      if (!name) return 'KF';
+      const clean = name.replace(/^(The|Sir|Lord|Dr|King|Queen|Prior|Sultan)\s+/i, '').trim();
+      const parts = clean.split(/\s+/).filter(Boolean);
+      if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+      return clean.slice(0, 2).toUpperCase();
+    };
+
     // Helper to render Left-Hand Archival Sources (with Context & Hinge Question)
     const renderArchivalSourceBox = (src) => {
       if (!src) return '';
+      const isPanoramic =
+        src.isPanoramic || src.panoramic || (src.aspectRatio && src.aspectRatio === 'panoramic');
+      const sizeClass = src.expand ? ` expand-${src.expand}` : '';
+      const panoramicClass = isPanoramic ? ' panoramic-source' : '';
       if (src.isFieldwork) {
         // Prominent Hampshire Local Fieldwork Primary Record Card (Spreads 1, 2, 5)
         return `
-          <div class="archival-source-box fieldwork-source-card">
+          <div class="archival-source-box fieldwork-source-card${sizeClass}${panoramicClass}">
             <div class="fieldwork-header-strip">
               <div class="fieldwork-badge-group">
                 <span class="source-badge fieldwork-badge">${src.badge}</span>
@@ -971,7 +983,7 @@ async function buildPublisherTextbookHtmlWater() {
       if (src.text) {
         // Written Primary Document
         return `
-          <div class="archival-source-box written-source-box">
+          <div class="archival-source-box written-source-box${sizeClass}${panoramicClass}">
             <div class="archival-header">
               <div class="source-identity">
                 <span class="source-badge">${src.badge}</span>
@@ -995,7 +1007,7 @@ async function buildPublisherTextbookHtmlWater() {
       if (src.image) {
         // Image Primary Document
         return `
-          <div class="archival-source-box">
+          <div class="archival-source-box${sizeClass}${panoramicClass}">
             <div class="archival-header">
               <div class="source-identity">
                 <span class="source-badge">${src.badge}</span>
@@ -1125,7 +1137,11 @@ async function buildPublisherTextbookHtmlWater() {
                   <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
                 </div>
                 <div class="kf-identity-row">
-                  ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
+                  ${
+                    bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
+                      ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
+                      : `<div class="kf-portrait kf-monogram" title="${bank.keyFigure.name}"><span class="kf-monogram-initials">${getMonogramInitials(bank.keyFigure.name)}</span><span class="kf-monogram-tag">RECORD</span></div>`
+                  }
                   <div class="kf-identity-text">
                     <div class="kf-name">${bank.keyFigure.name}</div>
                     <div class="kf-role">${bank.keyFigure.role}</div>
@@ -1536,13 +1552,28 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .archival-image {
       width: 100%;
-      height: 120px;
-      object-fit: cover;
-      object-position: center;
+      height: 100px;
+      object-fit: contain;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 2px;
-      border: 1px solid #cbd5e1;
       display: block;
       margin-bottom: 3.5px;
+    }
+    .archival-source-box.expand-md .archival-image {
+      height: 125px;
+    }
+    .archival-source-box.expand-lg .archival-image {
+      height: 145px;
+    }
+    .archival-source-box.panoramic-source {
+      column-span: all;
+      margin: 4px 0 5px 0;
+    }
+    .archival-source-box.panoramic-source .archival-image {
+      height: 115px;
+      width: 100%;
+      object-fit: contain;
     }
     .archival-body {
       font-family: 'Newsreader', Georgia, serif;
@@ -1760,6 +1791,36 @@ async function buildPublisherTextbookHtmlWater() {
       border-radius: 2px;
       border: 1px solid #cbd5e1;
       flex-shrink: 0;
+    }
+    .kf-portrait.kf-monogram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 35% 35%, #1e293b 0%, #0f172a 100%);
+      border: 1px solid #64748b;
+      border-radius: 2px;
+      color: #f8fafc;
+      text-align: center;
+      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+      user-select: none;
+    }
+    .kf-monogram-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 14pt;
+      font-weight: 800;
+      line-height: 1;
+      color: #f8fafc;
+      letter-spacing: 0.5px;
+    }
+    .kf-monogram-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 4.5pt;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 2px;
     }
     .kf-identity-text {
       flex: 1;

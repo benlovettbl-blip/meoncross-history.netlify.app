@@ -237,12 +237,28 @@
     }
     .archival-image {
       width: 100%;
-      max-height: 108px;
+      height: 100px;
       object-fit: contain;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 2px;
       margin-bottom: 3px;
       display: block;
-      background: #fafaf9;
+    }
+    .archival-source-box.expand-md .archival-image {
+      height: 125px;
+    }
+    .archival-source-box.expand-lg .archival-image {
+      height: 145px;
+    }
+    .archival-source-box.panoramic-source {
+      column-span: all;
+      margin: 4px 0 5px 0;
+    }
+    .archival-source-box.panoramic-source .archival-image {
+      height: 115px;
+      width: 100%;
+      object-fit: contain;
     }
     .archival-body {
       font-size: 7.8pt;
@@ -345,6 +361,36 @@
       border-radius: 2px;
       border: 1px solid #94a3b8;
       flex-shrink: 0;
+    }
+    .kf-portrait.kf-monogram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 35% 35%, #1e293b 0%, #0f172a 100%);
+      border: 1px solid #64748b;
+      border-radius: 2px;
+      color: #f8fafc;
+      text-align: center;
+      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+      user-select: none;
+    }
+    .kf-monogram-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 14pt;
+      font-weight: 800;
+      line-height: 1;
+      color: #f8fafc;
+      letter-spacing: 0.5px;
+    }
+    .kf-monogram-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 4.5pt;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 2px;
     }
     .kf-identity-text { flex: 1; }
     .kf-name {

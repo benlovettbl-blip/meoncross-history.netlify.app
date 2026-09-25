@@ -385,13 +385,18 @@ For Edexcel GCSE Paper 2, Section B (Early Elizabethan England, 1558–88):
 ## Universal Archival Source Framing Standard (Zero-Crop Primary Evidence Standard)
 STRICT RULE: All primary historical sources rendered with `.archival-image` or inside archival citation boxes across all master textbooks, workbooks, and curriculum pages MUST strictly use `object-fit: contain;` (NEVER `object-fit: cover;`).
 1. **Zero-Crop Primary Evidence Standard:** Primary historical sources (tapestries, illuminated manuscripts, frescoes, charters, treaties, photographs) represent irreplaceable forensic visual evidence. They must NEVER be cropped, sliced, or zoomed in a manner that truncates historical figures, inscriptions, marginal annotations, or context.
-2. **Archival Mounting Backing:** All `.archival-image` containers must enforce a neutral archival backing (`background: #f8fafc;` or `#fafaf9;` with `border: 1px solid #e2e8f0;` and calibrated `height: 100px;` or `height: 105px;`) so that letterboxing or pillarboxing appears intentional, dignified, and museum-grade.
-3. **Automated Audit Enforcement:** `scripts/audit_page_budget.cjs` and `scripts/check_overflows.cjs` automatically inspect every `.archival-image` element. Any computed `object-fit: cover` will immediately fail the build with a hard `isCroppedSource` violation.
+2. **Archival Mounting Backing:** All `.archival-image` containers must enforce a neutral archival backing (`background: #f8fafc;` with `border: 1px solid #e2e8f0;` and calibrated `height: 100px;`) so that letterboxing or pillarboxing appears intentional, dignified, and museum-grade.
+3. **Primary Source Sizing Tiers & Aspect Ratio Hints:**
+   - **Baseline (Default):** Standard `.archival-image` (`height: 100px; object-fit: contain;`) for standard 60–80 word narrative acts.
+   - **Expanded Single-Column (`.expand-md` / `.expand-lg`):** Applied to `.archival-source-box` (`height: 125px` / `height: 145px`) when primary sources have vertical portrait aspect ratios or when surrounding prose is concise, absorbing internal page voids cleanly.
+   - **Cross-Column Panoramic (`.panoramic-source`):** For unusually wide panoramas (e.g. the Bayeux Tapestry, Great Fire panoramas, or panoramic trench maps), apply `.panoramic-source` to `.archival-source-box` (`column-span: all; margin: 4px 0 5px 0;`) with `.archival-image` (`height: 115px; width: 100%; object-fit: contain;`). This breaks across both columns to give wide sources magnificent full-page measure without disrupting vertical column flow.
+4. **Automated Audit Enforcement:** `scripts/audit_page_budget.cjs` and `scripts/check_overflows.cjs` automatically inspect every `.archival-image` element. Any computed `object-fit: cover` will immediately fail the build with a hard `isCroppedSource` violation.
 
-## Key Historical Individual Portrait Standard (Portrait-Only or Pure Typography Policy)
-STRICT RULE: In the `.key-figure-box` component (`.kf-portrait` container, 40x48px):
+## Key Historical Individual Portrait Standard (Portrait-Only or Wax Seal Monogram Policy)
+STRICT RULE: In the `.key-figure-box` component (`.kf-portrait` container, 40x48px or 44x54px):
 1. **Head-and-Shoulders Portrait Mandate:** Only authentic head-and-shoulders portraits, illuminated portrait busts, or close-up coin/seal profiles of the named individual (e.g. William I, Thomas Becket, King John, Richard III, Edward I) may be displayed in `.kf-portrait`.
 2. **No Landscapes, Castles, Battles, or Text Folios:** Never inject castle photos, battlefield panoramas, multi-figure crowd paintings, or full manuscript pages into the 40x48px thumbnail. In a 40x48px container, wide scenes are completely illegible and visually counterproductive.
-3. **Pure Typography Fallback for Abstract or Missing Figures:** When an authentic contemporary portrait does not exist or the figure represents a composite social role, either:
-   - Provide an authentic, close-up medieval illumination representing the specific vocation (e.g. a 14th-century monastic scribe for a chronicler, or the Ellesmere Reeve for a bailiff).
-   - Or omit the image entirely (`image: null`), allowing `.kf-identity-text` to expand to 100% width with clean, authoritative typography.
+3. **Wax Seal Monogram Typographic Standard for Abstract or Composite Figures:**
+   - For abstract, composite historical archetypes (such as "The Tudor Yeoman", "The Industrial Mill Overseer", or figures where no contemporary likeness survives), STRICTLY FORBIDDEN from using modern stock models or landscape photographs.
+   - Render the deliberate visual badge or wax seal monogram: `<div class="kf-portrait kf-monogram" title="${name}"><span class="kf-monogram-initials">${initials}</span><span class="kf-monogram-tag">RECORD</span></div>`.
+   - Styled with a deep archival wax seal gradient (`radial-gradient(circle at 35% 35%, #1e293b 0%, #0f172a 100%)`), classical serif monogram (`Playfair Display`), and micro archival tag (`RECORD` or `ARCHIVE`), creating a distinguished museum-grade identity without anachronisms.
