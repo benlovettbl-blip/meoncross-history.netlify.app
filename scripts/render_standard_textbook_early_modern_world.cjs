@@ -229,6 +229,11 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
           <div class="lesson-badge-strip">
             <span class="topic-badge">KS3 HISTORY &bull; UNIT 2</span>
             <span class="spec-ref-badge">ENQUIRY ${lessonNum} OF 9</span>
+            ${
+              lessonNum === 9
+                ? `<span class="workbook-sync-badge">📝 Standalone Assessment Sheet (Enquiry 9)</span>`
+                : `<span class="workbook-sync-badge">📝 Pupil Workbook: Pages ${lessonNum * 2 + 2}–${lessonNum * 2 + 3}</span>`
+            }
           </div>
           <h2 class="lesson-title">${cfg.title}</h2>
           <div class="lesson-spec-anchor">
@@ -314,7 +319,14 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
         <div class="right-page-header">
           <div class="rph-meta">
             <span class="rph-tag">PRIMARY ARCHIVE &amp; HISTORICAL VERDICT &bull; KS3 MASTER CURRICULUM</span>
-            <span class="rph-lesson">ENQUIRY ${lessonNum} OF 9: ACTS 3 &amp; 4</span>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="rph-lesson">ENQUIRY ${lessonNum} OF 9: ACTS 3 &amp; 4</span>
+              ${
+                lessonNum === 9
+                  ? `<span class="workbook-sync-badge">📝 Standalone Assessment Sheet (Enquiry 9)</span>`
+                  : `<span class="workbook-sync-badge">📝 Pupil Workbook: Pages ${lessonNum * 2 + 2}–${lessonNum * 2 + 3}</span>`
+              }
+            </div>
           </div>
           <h3 class="rph-title">${cfg.title}</h3>
         </div>
@@ -492,6 +504,17 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       color: #1e40af;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+    }
+    .workbook-sync-badge {
+      font-size: 6.3pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 2px;
+      padding: 1px 5px;
+      letter-spacing: 0.02em;
+      margin-left: auto;
     }
     .lesson-title {
       font-family: 'Playfair Display', Georgia, serif;
