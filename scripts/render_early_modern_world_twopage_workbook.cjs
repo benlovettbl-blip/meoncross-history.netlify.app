@@ -109,39 +109,39 @@ const lessonConfigs = [
       badge: 'Geopolitical Hegemony Matrix',
       title: 'Task 3: Global Power Balance: Ottoman Dominance vs European Fragmentation (1450)',
       instruction:
-        'Balance the formidable geopolitical advantages of the Islamic and Asian worlds against the vulnerabilities of medieval Europe using textbook paragraphs [1.1]–[4.3]:',
+        'Balance the formidable geopolitical advantages of the Islamic and Asian worlds against the vulnerabilities of medieval Europe:',
       col1Title: 'Ottoman & Asian Dominance (The Epicentre)',
       col1Prompts: [
-        '[3.1] Conquest of Constantinople (1453): control of the Bosphorus and Silk Road tariffs.',
-        '[2.3] Superior Ottoman siege artillery and disciplined Janissary standing infantry.',
-        '[2.1]–[2.2] Ming Dynasty tribute system: massive population, paper money, and Zheng He’s fleets.',
-        '[1.3] Islamic world controls global spice, silk, and porcelain maritime trade routes.',
+        'Conquest of Constantinople (1453): control of the Bosphorus and Silk Road.',
+        'Superior Ottoman siege artillery and disciplined Janissary standing infantry.',
+        'Ming Dynasty tribute system: massive population, paper money, and naval mastery.',
+        'Islamic world controls global spice, silk, and porcelain maritime trade routes.',
       ],
       col2Title: 'European Peripheral Fragility (The Outpost)',
       col2Prompts: [
-        "[1.1]–[1.2] Exhausted by the Hundred Years' War (1337–1453) and Black Death losses.",
-        '[1.2] Divided into rival Catholic kingdoms lacking unified military command or industrial output.',
-        '[1.3] Completely dependent on Muslim Venetian middlemen for eastern luxury imports.',
-        '[4.1]–[4.2] Frankopan thesis: geographic isolation and acute desperation forced oceanic navigation.',
+        "Exhausted by the Hundred Years' War (1337–1453) and Black Death losses.",
+        'Divided into rival Catholic kingdoms lacking unified military commands.',
+        'Completely dependent on Muslim Venetian middlemen for eastern luxuries.',
+        'Blocked from eastern overland routes, forcing dangerous oceanic navigation.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [3.1] and [4.2], synthesise why Ottoman dominance and European weakness forced oceanic exploration:',
+        'Synthesise why Ottoman dominance and European weakness forced oceanic exploration:',
       clue: '<em>Low-Floor Clue:</em> In 1450, Europe was not the centre of the world; it was a fractured, impoverished peninsula desperate to find a sea route to Asian wealth.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does Janet Abu-Lughod’s concept of a "thirteenth-century world system" disprove the traditional Eurocentric myth of inevitable Western supremacy?',
     },
     structureStrip: [
       {
-        col: '1. OTTOMAN EXPANSION [3.1]',
-        text: 'Explain using [3.1] how the fall of Constantinople in 1453 secured Ottoman dominance over global trade.',
+        col: '1. OTTOMAN EXPANSION',
+        text: 'Explain how the fall of Constantinople in 1453 secured Ottoman dominance over global trade.',
       },
       {
-        col: '2. MING ISOLATION [2.1]',
-        text: 'Analyse using [2.1]–[2.2] why Ming China retreated from oceanic voyages despite possessing superior maritime fleets.',
+        col: '2. MING ISOLATION',
+        text: 'Analyse why Ming China retreated from oceanic voyages despite possessing superior maritime fleets.',
       },
       {
-        col: '3. EUROPEAN PERIPHERY [1.1, 4.2]',
-        text: 'Formulate a sustained conclusion using [1.1] and [4.2] explaining why peripheral weakness forced European exploration.',
+        col: '3. EUROPEAN PERIPHERY',
+        text: 'Formulate a sustained conclusion explaining why peripheral weakness forced European exploration.',
       },
     ],
     connectives:
@@ -169,16 +169,16 @@ const lessonConfigs = [
     },
     matrix: [
       {
-        col: '1. CONTENT & DETAIL [1.3, 3.2]',
-        text: 'Analyse what each source reveals about imperial motives: papal mandate [1.3] vs English trade profit and naval rivalry [3.2].',
+        col: '1. CONTENT & DETAIL',
+        text: 'Analyse what each source reveals about imperial motives (Catholic evangelism vs English trade profit and naval rivalry).',
       },
       {
         col: '2. PROVENANCE & MOTIVE',
-        text: 'Evaluate how the authorship of each document (papal decree vs secret royal briefing) affects its historical reliability.',
+        text: 'Evaluate how the authorship and purpose of each document (papal decree vs secret royal briefing) affects its historical reliability.',
       },
       {
-        col: '3. HISTORICAL JUDGEMENT [4.1]',
-        text: 'Reach a reasoned conclusion using [4.1]: which motive was more decisive in driving nations across the Atlantic?',
+        col: '3. HISTORICAL JUDGEMENT',
+        text: 'Reach a reasoned conclusion: which source is more useful for understanding why European nations took to the Atlantic Ocean?',
       },
     ],
     connectives:
@@ -210,23 +210,23 @@ const lessonConfigs = [
       badge: 'Imperial Motivation Balance Sheet',
       title: 'Task 3: The Exploration Balance Sheet: Religious Zeal vs Commercial Wealth',
       instruction:
-        'Balance the religious justifications for global expansion against the commercial and strategic incentives driving European crowns using textbook paragraphs [1.1]–[4.3]:',
+        'Balance the religious justifications for global expansion against the commercial and strategic incentives driving European crowns:',
       col1Title: 'Religious Zeal & Catholic Monopoly (God)',
       col1Prompts: [
-        '[1.3] Papal decrees granting exclusive dominion to convert native peoples to Christianity.',
-        '[1.2] Counter-Reformation mission to spread Catholicism and eradicate Protestant heresy.',
-        '[1.3] Spanish conquistadors accompanied by friars converting indigenous populations.',
-        '[1.1] Religious polarization: Protestant England and Catholic Spain view each other as evil.',
+        'Papal decrees granting exclusive dominion to convert native peoples.',
+        'Counter-Reformation mission to spread Catholicism before Protestantism.',
+        'Spanish conquistadors accompanied by Franciscan and Dominican friars.',
+        'Belief that monarchs had a divine duty to expand Christ’s kingdom.',
       ],
       col2Title: 'Commercial Wealth & Strategic Rivalry (Gold & Glory)',
       col2Prompts: [
-        '[1.3] Desire to bypass Ottoman trade tariffs on Asian silk and spices.',
-        "[2.1] Vast silver extraction at Potosí (1545) funding King Philip II's imperial armies.",
-        '[2.2] English privateers (Drake and Hawkins) plundering Spanish treasure fleets.',
-        "[2.3, 3.2] Defeat of the Armada (1588) and Hakluyt's strategic plea for American colonies.",
+        'Desire to bypass Ottoman trade tariffs on Asian silk and spices.',
+        'Vast silver deposits discovered at Potosí and Zacatecas funding imperial armies.',
+        'English privateers (Drake and Hawkins) plundering Spanish treasure galleons.',
+        'Mercantilist doctrine: wealth is finite and must be captured from rivals.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [1.2, 1.3] and [2.1, 2.2], synthesise whether religious zeal or commercial greed was the primary driver of oceanic expansion:',
+        'Synthesise whether religious zeal or commercial greed was the primary driver of oceanic expansion:',
       clue: '<em>Low-Floor Clue:</em> In the Tudor era, religion and profit were inextricably linked: Queen Elizabeth I sponsored privateers like Francis Drake to strike at Catholic Spain while enriching her royal treasury.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does the Armada Portrait of 1588 visually combine Protestant religious providence with global imperial ownership?',
@@ -267,39 +267,39 @@ const lessonConfigs = [
       badge: 'Encounter Transformation Matrix',
       title: 'Task 3: Commercial Enclaves vs Territorial Subjugation (Mughal India & America)',
       instruction:
-        'Examine how humble merchant companies evolved into ruthless colonial rulers using textbook paragraphs [1.1]–[4.3]:',
+        'Examine how humble merchant companies evolved into ruthless colonial rulers through military force and political manipulation:',
       col1Title: 'Phase 1: Humble Commercial Enclaves (1600–1650)',
       col1Prompts: [
-        '[1.1]–[1.3] East India Company (EIC) establishes tiny coastal factories at Surat and Madras.',
-        '[2.1]–[2.2] English merchants bow before Mughal Emperor Jahangir seeking trade firmans.',
-        '[3.1]–[3.2] Kingdom of Benin: Oba trades pepper and cloth as an equal diplomatic partner.',
-        '[3.3] Jamestown (1607): precarious settlers depend entirely on Powhatan maize to survive.',
+        'East India Company (EIC) establishes tiny coastal factories at Surat and Madras.',
+        'English merchants bow before Mughal Emperor Jahangir seeking trade firmans (royal decrees).',
+        'Jamestown (1607): precarious settlers depend entirely on Powhatan maize to survive.',
+        'Strict royal charters restricting companies to commercial exchange, not conquest.',
       ],
       col2Title: 'Phase 2: Military Takeover & Territorial Sovereignty (1700–1757)',
       col2Prompts: [
-        '[4.1]–[4.2] Transition from commerce to conquest: EIC builds private corporate armies.',
-        '[4.2] Dalrymple’s Anarchy thesis: EIC commands 260,000 troops, exceeding the British Army.',
-        '[3.3] Virginia tobacco plantations expand violently, displacing indigenous Algonquin tribes.',
-        '[4.1] Extracting the Diwani (1765): corporation seizes sovereign tax collection rights.',
+        'Battle of Plassey (1757): Robert Clive uses private army and bribes to seize Bengal.',
+        'Treaty of Allahabad (1765): EIC extracts the Diwani (right to collect all land taxes).',
+        'Virginia tobacco plantations expand violently, displacing indigenous Algonquin tribes.',
+        'Joint-stock corporations command private armies larger than sovereign European states.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [1.3, 2.1] and [4.1, 4.2], synthesise how private commercial trade depots transformed into coercive colonial empires:',
+        'Synthesise how private commercial trade depots transformed into coercive colonial empires:',
       clue: '<em>Low-Floor Clue:</em> The East India Company was not a government; it was a private profit-making corporation that built a private army of 260,000 men to control an empire.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does William Dalrymple’s concept of "The Anarchy" characterize the EIC’s transition from merchant traders to corporate pillagers?',
     },
     structureStrip: [
       {
-        col: '1. COMMERCIAL ORIGINS [1.1, 2.1]',
-        text: 'Explain using [1.1] and [2.1] why European companies originally operated as humble supplicants to Asian rulers.',
+        col: '1. COMMERCIAL ORIGINS',
+        text: 'Explain why European companies originally operated as humble supplicants to powerful Asian rulers.',
       },
       {
-        col: '2. MILITARY LEVERAGE [4.1, 4.2]',
-        text: 'Analyse using [4.1] and [4.2] how private company armies and political alliances turned trade into military takeover.',
+        col: '2. MILITARY LEVERAGE',
+        text: 'Analyse how private company armies and political alliances turned commercial rivalry into military takeover.',
       },
       {
-        col: '3. INDIGENOUS IMPACT [3.3, 4.1]',
-        text: 'Evaluate using [3.3] and [4.1] how corporate expansion destroyed local sovereignty and native autonomy.',
+        col: '3. INDIGENOUS IMPACT',
+        text: 'Evaluate how taxation rights (Diwani) and territorial conquest destroyed local sovereignty and economies.',
       },
     ],
     connectives:
@@ -340,39 +340,39 @@ const lessonConfigs = [
       badge: 'Jacobean Security Audit',
       title: 'Task 3: Religious Radicalism vs State Surveillance: The 1605 Crisis',
       instruction:
-        'Analyse the escalating tensions between disillusioned Catholic conspirators and Robert Cecil’s surveillance network using textbook paragraphs [1.1]–[4.3]:',
+        'Analyse the escalating tensions between disillusioned Catholic conspirators and Robert Cecil’s surveillance network:',
       col1Title: 'Catholic Disillusionment & Militant Plotting',
       col1Prompts: [
-        '[1.1]–[1.2] James I promises religious tolerance but reinstates harsh anti-Catholic recusancy fines.',
-        '[1.3] Robert Catesby and conspirators resolve to assassinate King, Prince, and Parliament.',
-        '[2.1]–[2.2] 36 barrels of gunpowder hidden beneath the House of Lords by Guy Fawkes.',
-        '[2.3] Intended blast to decapitate the Protestant state and trigger a Catholic uprising.',
+        'James I promises religious tolerance but reinstates harsh anti-Catholic recusancy fines.',
+        'Robert Catesby and conspirators resolve to assassinate King, Prince, and Parliament.',
+        '36 barrels of gunpowder hidden beneath the House of Lords to trigger Catholic uprising.',
+        'Belief that violent regicide was morally justified to end the persecution of true believers.',
       ],
       col2Title: 'Jacobean Counter-Espionage & State Retribution',
       col2Prompts: [
-        '[3.1] Robert Cecil operates an extensive network of informers, intercepts, and cryptographers.',
-        '[3.1] The Monteagle Letter: anonymous tip-off warning Lord Monteagle away from Parliament.',
-        '[3.2] Discovery of Guy Fawkes on 4 November; brutal interrogation under rack torture.',
-        '[4.1]–[4.2] Popish Recusants Act (1606) and annual 5th November state thanksgiving sermons.',
+        'Robert Cecil operates an extensive network of informers, intercepts, and cryptographers.',
+        'The mysterious Monteagle Letter warning Lord Monteagle not to attend Parliament.',
+        'Discovery of Guy Fawkes with fuses and match in the Parliament cellar on 4 November.',
+        'Public executions, enhanced Penal Laws, and the Popish Recusants Act of 1606.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [1.2, 2.3] and [4.1, 4.2], synthesise why religious division threatened state security under James I:',
+        'Synthesise why religious division threatened state security and royal authority under James I:',
       clue: '<em>Low-Floor Clue:</em> The Gunpowder Plot shocked contemporaries because it targeted the entire political establishment—the King, his heirs, Lords, and Commons—in a single explosion.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How did Robert Cecil weaponize the Gunpowder Plot to forge an enduring British national identity rooted in militant anti-Catholicism?',
     },
     structureStrip: [
       {
-        col: '1. VOLATILE CONTEXT [1.1, 1.2]',
-        text: 'Explain using [1.1] and [1.2] how broken promises of tolerance created radicalized Catholic conspirators.',
+        col: '1. VOLATILE CONTEXT',
+        text: 'Explain how broken promises of religious tolerance created radicalized Jacobean Catholic conspirators.',
       },
       {
-        col: '2. TERRORIST CRISIS [2.1, 2.3]',
-        text: 'Analyse using [2.1] and [2.3] the catastrophic intended scale of the 36-barrel gunpowder plot beneath Parliament.',
+        col: '2. TERRORIST CRISIS',
+        text: 'Analyse the catastrophic intended scale of the 36-barrel gunpowder plot beneath Parliament.',
       },
       {
-        col: '3. LONG-TERM LEGACY [4.1, 4.2]',
-        text: 'Evaluate using [4.1] and [4.2] how state retribution and anti-popery laws entrenched religious division for centuries.',
+        col: '3. LONG-TERM LEGACY',
+        text: 'Evaluate how state retribution and anti-popery laws entrenched religious division for centuries.',
       },
     ],
     connectives:
@@ -402,16 +402,16 @@ const lessonConfigs = [
     },
     matrix: [
       {
-        col: '1. INTERPRETATION 1 CLAIMS [1.1–1.3]',
-        text: 'Analyse Macaulay’s argument using [1.1]–[1.3] that Charles I’s tyranny and illegal taxes made war unavoidable.',
+        col: '1. INTERPRETATION 1 CLAIMS',
+        text: 'Analyse Macaulay’s argument that Charles I’s tyranny and illegal taxes made war unavoidable.',
       },
       {
-        col: '2. INTERPRETATION 2 CRITIQUE [2.1]',
-        text: 'Evaluate Russell’s modern counter-argument using [2.1] that war was an accidental disaster caused by religious panic and royal blunders.',
+        col: '2. INTERPRETATION 2 CRITIQUE',
+        text: 'Evaluate Russell’s modern counter-argument that war was an accidental disaster caused by religious fear and royal blunders.',
       },
       {
-        col: '3. HISTORIOGRAPHICAL VERDICT [3.3, 4.3]',
-        text: 'Weigh both interpretations against factual evidence from [3.3] and [4.3] to reach an independent verdict.',
+        col: '3. HISTORIOGRAPHICAL VERDICT',
+        text: "Weigh both interpretations against factual evidence (1642 Militia Ordinance, Bishops' Wars) to reach an independent verdict.",
       },
     ],
     connectives:
@@ -443,23 +443,23 @@ const lessonConfigs = [
       badge: 'Civil War Causation Audit',
       title: 'Task 3: Long-Term Constitutional Friction vs Short-Term Royal Blunders',
       instruction:
-        'Examine whether the English Civil War was caused by deep-seated institutional friction or Charles I’s immediate miscalculations using textbook paragraphs [1.1]–[4.3]:',
+        'Examine whether the English Civil War was caused by deep-seated institutional friction or Charles I’s immediate miscalculations:',
       col1Title: 'Long-Term Causes: King Charles I’s Tyranny & The Fight for Liberty',
       col1Prompts: [
-        '[1.1] James I and Charles I asserting absolute Divine Right rule over Parliament.',
-        '[1.2] Eleven Years of Personal Rule (1629–1640): governing without calling Parliament.',
-        '[1.3] Illegal imposition of Ship Money tax on inland counties to fund royal finances.',
-        '[1.2] Archbishop Laud’s High Church reforms perceived as sneaking Catholicism back.',
+        'James I and Charles I asserting absolute Divine Right rule over Parliament.',
+        'Eleven Years of Personal Rule (1629–1640): governing without calling Parliament.',
+        'Illegal imposition of Ship Money tax on inland counties to fund royal finances.',
+        'Archbishop Laud’s "Arminian" church reforms perceived as sneaking Catholicism back.',
       ],
       col2Title: 'Short-Term Triggers: Royal Blunders, Mistrust & Religious Panic',
       col2Prompts: [
-        '[2.1] Imposing English Prayer Book on Presbyterian Scotland (Bishops’ Wars 1639).',
-        '[2.1] The Irish Rebellion of 1641: panic over who should command the army.',
-        '[2.1] Charles I storming House of Commons with 400 soldiers to arrest Five Members (1642).',
-        "[2.3, 3.1] New Model Army victory at Naseby (1645) and Pride's Purge (1648).",
+        'Attempting to impose the English Prayer Book on Presbyterian Scotland (Bishops’ Wars 1639).',
+        'The Irish Rebellion of 1641: panic over who should command the army to suppress it.',
+        'Charles I entering the House of Commons with 400 soldiers to arrest the Five Members (1642).',
+        'Charles I’s fatal character: inflexible, secretive, and widely perceived as untrustworthy.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [1.1–1.3] and [2.1, 2.3], explain whether Charles I’s long-term tyranny or short-term blunders caused the Civil War:',
+        'Explain whether King Charles I’s long-term tyranny or his short-term blunders caused the Civil War:',
       clue: '<em>Low-Floor Clue:</em> In January 1642, Charles I committed the unthinkable blunder of storming the House of Commons with armed troops to arrest five MPs; Speaker Lenthall famously defied him, declaring he served Parliament, not the King.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does John Morrill’s famous description of 1642 as "not England\'s first modern revolution, but her last war of religion" challenge the idea that the Civil War was simply a fight for modern democracy?',
@@ -500,39 +500,39 @@ const lessonConfigs = [
       badge: 'Constitutional Transformation Matrix',
       title: 'Task 3: Stuart Catholic Absolutism vs The 1688 Constitutional Settlement',
       instruction:
-        'Analyse how the replacement of James II with William III and Mary II established a modern fiscal-military state using textbook paragraphs [1.1]–[4.3]:',
+        'Analyse how the replacement of James II with William III and Mary II established a modern fiscal-military state:',
       col1Title: 'Stuart Catholic Autocracy (Pre-1688 Crisis)',
       col1Prompts: [
-        '[1.3] Stuart absolutism: James II uses royal dispensing power to appoint Catholic officers.',
-        '[2.1] Birth of Catholic male heir in June 1688 raises prospect of permanent Catholic dynasty.',
-        '[2.1] Seven leading Protestant politicians invite Dutch leader William of Orange to intervene.',
-        '[2.2] November 1688: William lands at Torbay with 15,000 troops; James II flees to France.',
+        'James II uses the royal dispensing power to appoint Catholic officers illegally.',
+        'Birth of a Catholic male heir in June 1688 raises the prospect of a Catholic dynasty.',
+        'The Trial of the Seven Bishops for refusing to read the Declaration of Indulgence.',
+        'Crown reliant on irregular French subsidies from King Louis XIV.',
       ],
       col2Title: 'The 1688 Settlement & Fiscal-Military Power',
       col2Prompts: [
-        '[2.3] Bill of Rights (1689): Parliament controls taxation, elections, and standing armies.',
-        '[3.1] Founding of the Bank of England (1694): institutionalizing the National Debt.',
-        '[3.2] Government borrows millions at low 3–4% interest, while French absolutism pays 8–10%.',
-        "[3.3, 4.1] Brewer's Fiscal-Military State: commercial credit funds Europe's supreme Royal Navy.",
+        'Bill of Rights (1689): Parliament controls taxation, elections, and standing armies.',
+        'Founding of the Bank of England (1694): institutionalizing the National Debt.',
+        'Government able to borrow millions at low interest rates from City of London merchants.',
+        'Massive naval expansion: Royal Navy becomes the dominant fighting force in Europe.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [2.3] and [3.1, 3.2], synthesise how the 1688 settlement and the Financial Revolution created a modern superpower:',
+        'Synthesise how the 1688 settlement and the Financial Revolution created a modern superpower:',
       clue: '<em>Low-Floor Clue:</em> The Glorious Revolution was not just about religion; by guaranteeing that Parliament controlled taxes, it allowed Britain to borrow money cheaply and build the world’s greatest navy.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How did John Brewer’s concept of the "Fiscal-Military State" explain Britain’s ability to defeat much larger continental rivals like France after 1688?',
     },
     structureStrip: [
       {
-        col: '1. RELIGIOUS CRISIS [2.1, 2.2]',
-        text: 'Explain using [2.1] and [2.2] why James II’s pro-Catholic policies provoked the invitation to William of Orange.',
+        col: '1. RELIGIOUS CRISIS',
+        text: 'Explain why James II’s pro-Catholic policies provoked the Immortal Seven to invite William of Orange.',
       },
       {
-        col: '2. BILL OF RIGHTS [2.3]',
-        text: 'Analyse using [2.3] how the 1689 constitutional settlement permanently subordinated royal prerogative to Parliament.',
+        col: '2. BILL OF RIGHTS',
+        text: 'Analyse how the 1689 constitutional settlement permanently subordinated royal prerogative to Parliament.',
       },
       {
-        col: '3. FINANCIAL REVOLUTION [3.1, 4.1]',
-        text: 'Evaluate using [3.1] and [4.1] how the Bank of England and National Debt enabled global military power.',
+        col: '3. FINANCIAL REVOLUTION',
+        text: 'Evaluate how the Bank of England and National Debt enabled Britain to project global military power.',
       },
     ],
     connectives:
@@ -573,39 +573,39 @@ const lessonConfigs = [
       badge: 'Transatlantic Trade Architecture',
       title: 'Task 3: Commercial Profit Architecture vs The Reality of the Middle Passage',
       instruction:
-        'Examine the brutal contradiction between British commercial enrichment and the industrial dehumanization of African captives using textbook paragraphs [1.1]–[4.3]:',
+        'Examine the brutal contradiction between British commercial enrichment and the industrial dehumanization of African captives:',
       col1Title: 'Commercial Machine & British Ports (The Outward & Homeward Legs)',
       col1Prompts: [
-        '[1.1]–[1.3] Outward Leg: British manufactured goods (guns, brass, cloth) shipped to West Africa.',
-        '[2.1]–[2.3] Homeward Leg: slave-grown plantation produce (sugar, tobacco, cotton) imported to Britain.',
-        '[3.2] Vast municipal wealth built in Liverpool and Bristol from slave trade financing and refining.',
-        '[4.1]–[4.2] Eric Williams thesis: slave trade profits directly capitalized British industrialization.',
+        'Outward Leg: British manufactured goods (guns, brass, textiles) shipped to West Africa.',
+        'Homeward Leg: slave-grown plantation produce (sugar, tobacco, cotton) imported to Britain.',
+        'Vast municipal wealth built in Liverpool, Bristol, and London from slave trade financing.',
+        'British banks and insurance syndicates (e.g. Barclays, Lloyd’s) underwrite slaving voyages.',
       ],
       col2Title: 'Dehumanization of the Middle Passage (The Inward Leg)',
       col2Prompts: [
-        '[2.2] Middle Passage: 12.5m captive Africans shackled in darkness below deck for 6–12 weeks.',
-        '[2.3] Horrific mortality: over 1.8 million Africans died of dehydration, dysentery, fever, and suicide.',
-        '[3.1] The Slave Ship Brookes (1788): 454 men, women, and children packed onto 14-inch shelves.',
-        '[3.3] Chattel slavery: legal dehumanisation of Africans as saleable commercial property on sugar estates.',
+        'The Slave Ship Brookes (1788): 454 men, women, and children packed into 14-inch shelves.',
+        'Horrific mortality rates: over 1.8 million Africans died of dysentery, fever, and suicide.',
+        'Branding with red-hot irons and physical shackling in darkness below deck for 6–12 weeks.',
+        'Olaudah Equiano’s testimony: the stench, shrieks of the dying, and unbearable claustrophobia.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [1.1, 3.2] and [2.2, 3.1], synthesise the contradiction between British domestic wealth and the inhumanity of the Middle Passage:',
+        'Synthesise the contradiction between British domestic wealth and the inhumanity of the Middle Passage:',
       clue: '<em>Low-Floor Clue:</em> In 1788, the Abolition Society published a technical architectural plan of the slave ship Brookes; its chilling diagram showed human beings stacked like cargo in the hold.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does Eric Williams’s landmark "Capitalism and Slavery" thesis argue that the profits of Atlantic slavery directly financed Britain’s Industrial Revolution?',
     },
     structureStrip: [
       {
-        col: '1. TRIANGULAR SYSTEM [1.1, 2.1]',
-        text: 'Explain using [1.1] and [2.1] how the three legs of the triangular trade operated to maximize European mercantile profits.',
+        col: '1. TRIANGULAR SYSTEM',
+        text: 'Explain how the three legs of the triangular trade operated to maximize European mercantile profits.',
       },
       {
-        col: '2. MIDDLE PASSAGE [2.2, 3.1]',
-        text: 'Deploy primary evidence from [2.2] and the Brookes diagram [3.1] to analyse the horrors of the crossing.',
+        col: '2. MIDDLE PASSAGE',
+        text: 'Deploy primary evidence from Equiano and the Brookes diagram to analyse the horrors of the crossing.',
       },
       {
-        col: '3. ECONOMIC IMPACT [3.2, 4.1]',
-        text: 'Evaluate using [3.2] and [4.1] how British cities, industries, and financial institutions became deeply entangled with slavery.',
+        col: '3. ECONOMIC IMPACT',
+        text: 'Evaluate how British cities, industries, and financial institutions became deeply entangled with slavery.',
       },
     ],
     connectives:
@@ -646,39 +646,39 @@ const lessonConfigs = [
       badge: 'Resistance & Agency Audit',
       title: 'Task 3: Everyday Covert Resistance vs Militant Guerilla Insurrection',
       instruction:
-        'Assess the multifaceted ways enslaved people asserted their humanity and fought for freedom using textbook paragraphs [1.1]–[4.3]:',
+        'Assess the multifaceted ways enslaved people asserted their humanity and fought for freedom against overwhelming colonial force:',
       col1Title: 'Everyday Covert Resistance (Plantation Agency)',
       col1Prompts: [
-        '[1.1]–[1.2] Disproving passivity: enslaved people resisted daily from the moment of capture.',
-        '[2.1] Deliberate work slowdowns, feigning illness, and breaking harvesting tools.',
-        '[2.1] Preserving African linguistic roots, drumming, spirituals, and ancestral religious rituals.',
-        '[2.1] Covert sabotage: poisoning livestock, setting fire to cane fields, and clandestine literacy.',
+        'Deliberate work slowdowns, feigning illness, and breaking harvesting tools.',
+        'Preserving African linguistic roots, drumming, spirituals, and ancestral religious rituals.',
+        'Poisoning livestock, setting fire to sugarcane fields, and clandestine literacy learning.',
+        'Maintaining family ties and cultural dignity despite horrific physical punishments.',
       ],
       col2Title: 'Militant Armed Insurrection & Maroon Sovereignty',
       col2Prompts: [
-        "[1.2]–[1.3] Armed oceanic mutinies on 10% of slave voyages; Lloyd's insurance against insurrection.",
-        '[2.2] Jamaican Maroons: escaped communities in the Blue Mountains fighting guerilla campaigns.',
-        '[2.2] Queen Nanny: brilliant tactical general defeating British redcoat regiments.',
-        '[2.3, 3.1] 1739 Maroon Peace Treaty recognizes sovereignty; Tacky’s 1760 rebellion in Jamaica.',
+        'Shipboard uprisings: documented revolts on over 10% of all transatlantic slaving voyages.',
+        'Jamaican Maroons: escaped communities in the Blue Mountains fighting guerilla campaigns.',
+        'Queen Nanny of the Maroons: brilliant tactical general defeating British redcoat regiments.',
+        'The 1739 Maroon Treaty: forced the British Empire to sign a peace treaty recognizing Maroon freedom.',
       ],
       synthesisPrompt:
-        'Using evidence from paragraphs [2.1] and [1.2, 2.2, 2.3], synthesise how everyday resistance and armed insurrections actively challenged chattel slavery:',
+        'Synthesise how everyday resistance and armed insurrections actively challenged chattel slavery:',
       clue: '<em>Low-Floor Clue:</em> In 1739, after decades of guerilla war in the Jamaican mountains, the mighty British Empire was forced to negotiate a formal peace treaty with Queen Nanny, granting her people 1,500 acres of sovereign land.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How does highlighting African agency and rebellion correct the flawed traditional narrative that abolition was solely the charitable gift of white politicians like William Wilberforce?',
     },
     structureStrip: [
       {
-        col: '1. COVERT RESISTANCE [2.1]',
-        text: 'Explain using [2.1] how everyday acts of sabotage and cultural preservation resisted chattel dehumanization.',
+        col: '1. COVERT RESISTANCE',
+        text: 'Explain how everyday acts of sabotage and cultural preservation resisted chattel dehumanization.',
       },
       {
-        col: '2. ARMED INSURRECTION [1.2, 3.1]',
-        text: 'Analyse using [1.2] and [3.1] the military impact of shipboard revolts and Tacky’s 1760 rebellion in Jamaica.',
+        col: '2. ARMED INSURRECTION',
+        text: 'Analyse the military impact of shipboard revolts and Tacky’s 1760 rebellion in Jamaica.',
       },
       {
-        col: '3. MAROON VICTORY [2.2, 2.3]',
-        text: 'Evaluate using [2.2] and [2.3] how Queen Nanny and the Maroons forced the British state into recognizing autonomous freedom.',
+        col: '3. MAROON VICTORY',
+        text: 'Evaluate how Queen Nanny and the Maroons forced the British state into recognizing autonomous freedom.',
       },
     ],
     connectives:
@@ -1383,10 +1383,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
               ${cfg.enquiryQuestion}
             </h3>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0;">
-            <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; font-size: 7pt;">Edexcel Paper 1 &amp; 3 Prep</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #ffffff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 1px 5px;">📖 Cite Evidence: Paragraphs [1.1]–[4.3]</span>
-          </div>
+          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0; font-size: 7pt;">Edexcel Paper 1 &amp; 3 Prep</span>
         </div>
 
         <!-- Dual Primary Sources Box (Side-by-Side) -->
@@ -1491,10 +1488,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
               ${cfg.enquiryQuestion}
             </h3>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0;">
-            <span class="archival-badge" style="background: #fef2f2; color: #b91c1c; border-color: #fecaca; font-size: 7pt;">Edexcel Paper 3 Prep</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #ffffff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 1px 5px;">📖 Cite Evidence: Paragraphs [1.1]–[4.3]</span>
-          </div>
+          <span class="archival-badge" style="background: #fef2f2; color: #b91c1c; border-color: #fecaca; flex-shrink: 0; font-size: 7pt;">Edexcel Paper 3 Prep</span>
         </div>
 
         <!-- Dual Interpretations Box (Side-by-Side) -->
@@ -1599,10 +1593,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
               ${cfg.enquiryQuestion}
             </h3>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0;">
-            <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; font-size: 7pt;">Independent Argument</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #ffffff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 1px 5px;">📖 Cite Evidence: Paragraphs [1.1]–[4.3]</span>
-          </div>
+          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0; font-size: 7pt;">Independent Argument</span>
         </div>
 
         <!-- Bespoke Disciplinary Structure Strip (3-Columns, 8.0pt) -->
