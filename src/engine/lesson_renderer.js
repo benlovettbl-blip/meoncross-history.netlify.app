@@ -734,6 +734,71 @@ if (typeof window !== 'undefined' && !window.switchVideoTab) {
   };
 }
 
+// Register global whiteboard reveal handlers for Task 3 & Task 4
+if (typeof window !== 'undefined' && !window.toggleSingleEvidence) {
+  window.toggleSingleEvidence = function (el) {
+    const prompt = el.querySelector('.t3-evidence-prompt');
+    const revealed = el.querySelector('.t3-evidence-revealed');
+    if (revealed && prompt) {
+      const isHidden = revealed.style.display === 'none' || !revealed.style.display;
+      revealed.style.display = isHidden ? 'block' : 'none';
+      prompt.style.display = isHidden ? 'none' : 'flex';
+      el.style.borderColor = isHidden ? '#10b981' : '#86efac';
+    }
+  };
+
+  window.toggleSingleStarter = function (el) {
+    const prompt = el.querySelector('.t3-starter-prompt');
+    const revealed = el.querySelector('.t3-starter-revealed');
+    if (revealed && prompt) {
+      const isHidden = revealed.style.display === 'none' || !revealed.style.display;
+      revealed.style.display = isHidden ? 'inline' : 'none';
+      prompt.style.display = isHidden ? 'none' : 'flex';
+    }
+  };
+
+  window.toggleTask3Mask = function (btn) {
+    const taskBox = btn.closest('.two-sided-argument-interactive');
+    if (!taskBox) return;
+    const isRevealing = !btn.classList.contains('is-all-revealed');
+    const evidenceItems = taskBox.querySelectorAll('.t3-evidence-item');
+    const starters = taskBox.querySelectorAll('.t3-starter-box');
+
+    evidenceItems.forEach(function (el) {
+      const prompt = el.querySelector('.t3-evidence-prompt');
+      const revealed = el.querySelector('.t3-evidence-revealed');
+      if (revealed && prompt) {
+        revealed.style.display = isRevealing ? 'block' : 'none';
+        prompt.style.display = isRevealing ? 'none' : 'flex';
+      }
+    });
+
+    starters.forEach(function (el) {
+      const prompt = el.querySelector('.t3-starter-prompt');
+      const revealed = el.querySelector('.t3-starter-revealed');
+      if (revealed && prompt) {
+        revealed.style.display = isRevealing ? 'inline' : 'none';
+        prompt.style.display = isRevealing ? 'none' : 'flex';
+      }
+    });
+
+    if (isRevealing) {
+      btn.classList.add('is-all-revealed');
+      btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> <span>Mask Whiteboard Clues</span>';
+      btn.style.background = '#fef2f2';
+      btn.style.borderColor = '#fca5a5';
+      btn.style.color = '#991b1b';
+    } else {
+      btn.classList.remove('is-all-revealed');
+      btn.innerHTML =
+        '<i class="fa-solid fa-chalkboard-user"></i> <span>Teacher Whiteboard Key</span>';
+      btn.style.background = '#ecfdf5';
+      btn.style.borderColor = '#6ee7b7';
+      btn.style.color = '#065f46';
+    }
+  };
+}
+
 function parseDurationMinutes(durationStr) {
   if (!durationStr || typeof durationStr !== 'string') return 0;
   const colonMatch = durationStr.match(/(?:(\d+):)?(\d+):(\d+)/);
@@ -999,15 +1064,15 @@ function renderLessonVideos(videos, lesson, unitId) {
   }
 
   return `
-    <div id="${videoSectionId}" class="phase-card archival-media-phase" style="margin-top: 24px; margin-bottom: 24px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
-      <!-- Streamlined Archival Header Bar (Option 4) -->
-      <div style="background: #0f172a; color: #ffffff; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid #334155;">
+    <details id="${videoSectionId}" class="phase-card archival-media-phase no-print" style="margin-top: 10px; margin-bottom: 16px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.04);" closed>
+      <!-- Streamlined Archival Header Bar acting as Summary -->
+      <summary style="background: #0f172a; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; cursor: pointer; list-style: none; user-select: none;">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-film" style="color: #f87171; font-size: 0.85rem;"></i>
-          <span style="font-size: 0.88rem; font-weight: 700; color: #f8fafc; font-family: 'Playfair Display', serif; letter-spacing: 0.02em;">
-            Archival Video Evidence
+          <i class="fa-solid fa-film" style="color: #f87171; font-size: 0.88rem;"></i>
+          <span style="font-size: 0.92rem; font-weight: 700; color: #f8fafc; font-family: 'Playfair Display', serif; letter-spacing: 0.02em;">
+            Archival Video Footage &bull; Contextual Documentary Evidence
           </span>
-          <span class="no-print" style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">&bull; Act 2 Audio-Visual Bridge</span>
+          <span class="no-print" style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">(Optional Starter / Hook)</span>
         </div>
         <div style="display: flex; align-items: center; gap: 8px;">
           ${
@@ -1019,20 +1084,20 @@ function renderLessonVideos(videos, lesson, unitId) {
           `
               : ''
           }
-          <span class="archival-shelfmark-stamp" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1; font-size: 0.72rem; padding: 2px 7px; border-radius: 3px; font-family: monospace;">
-            MEDIA // ${(unitId || 'HIST').toUpperCase()}
+          <span style="font-size: 0.78rem; color: #38bdf8; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fa-solid fa-play" style="font-size: 0.7rem;"></i> Watch Video <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
           </span>
         </div>
-      </div>
+      </summary>
 
       <!-- Inner Content Area -->
-      <div style="padding: 12px 16px; background: #f8fafc;">
+      <div style="padding: 14px 16px; background: #f8fafc; border-top: 1px solid #334155;">
         ${tabBarHtml}
         <div class="video-cards-container">
           ${videoCardsHtml}
         </div>
       </div>
-    </div>
+    </details>
   `;
 }
 
@@ -4643,9 +4708,14 @@ export function renderLesson(lesson) {
 
             htmlTasks += `
               <div class="task-box two-sided-argument-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f766e; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                   <h4 style="margin: 0; color: #0f766e; font-size: 1.15rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
-                  ${targetBadge}
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <button type="button" class="btn-reveal-all-t3 no-print" onclick="window.toggleTask3Mask && window.toggleTask3Mask(this)" style="background: #ecfdf5; border: 1.5px solid #6ee7b7; color: #065f46; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+                      <i class="fa-solid fa-chalkboard-user"></i> <span>Teacher Whiteboard Key</span>
+                    </button>
+                    ${targetBadge}
+                  </div>
                 </div>
                 ${task.question ? `<div style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.5; padding: 10px 14px; background: #f0fdf4; border-left: 4px solid #0f766e; border-radius: 0 6px 6px 0;"><strong>Question:</strong> ${task.question}</div>` : ''}
                 ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
@@ -4653,24 +4723,92 @@ export function renderLesson(lesson) {
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 16px;">
                   <!-- Side 1: Advancement / Progress -->
                   <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 14px;">
-                    <h5 style="margin: 0 0 10px 0; color: #166534; font-size: 1rem; border-bottom: 2px solid #86efac; padding-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-                      <i class="fa-solid fa-arrow-trend-up"></i> ${advTitle}
-                    </h5>
-                    <ul style="margin: 0 0 12px 0; padding-left: 18px; color: #1e293b; font-size: 0.9rem; line-height: 1.45;">
-                      ${advPoints.map((pt) => `<li style="margin-bottom: 6px;">${pt}</li>`).join('')}
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #86efac; padding-bottom: 6px; margin-bottom: 10px;">
+                      <h5 style="margin: 0; color: #166534; font-size: 1rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-arrow-trend-up"></i> ${advTitle}
+                      </h5>
+                      <span style="font-size: 0.72rem; color: #15803d; font-weight: 700; text-transform: uppercase;">Tap to Reveal</span>
+                    </div>
+                    <ul style="margin: 0 0 12px 0; padding: 0; list-style: none;">
+                      ${advPoints
+                        .map(
+                          (pt, pIdx) => `
+                        <li class="t3-evidence-item" onclick="window.toggleSingleEvidence && window.toggleSingleEvidence(this)" style="margin-bottom: 8px; cursor: pointer; transition: all 0.15s ease;">
+                          <div style="background: #ffffff; border: 1.5px dashed #86efac; border-radius: 6px; padding: 8px 10px; display: flex; align-items: flex-start; gap: 8px;">
+                            <span style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 800; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${pIdx + 1}</span>
+                            <div style="flex: 1;">
+                              <span class="t3-evidence-prompt" style="font-size: 0.85rem; font-weight: 700; color: #15803d; display: flex; align-items: center; justify-content: space-between;">
+                                <span>Evidence Point ${pIdx + 1} &bull; Click to Reveal</span>
+                                <i class="fa-solid fa-eye" style="font-size: 0.8rem; opacity: 0.7;"></i>
+                              </span>
+                              <div class="t3-evidence-revealed" style="display: none; font-size: 0.9rem; color: #1e293b; line-height: 1.45;">
+                                ${pt}
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      `,
+                        )
+                        .join('')}
                     </ul>
-                    ${advStarter ? `<div style="padding: 8px 10px; background: #ffffff; border-left: 3px solid #22c55e; border-radius: 4px; font-size: 0.85rem; color: #15803d; font-style: italic;"><strong>Evidence Stem:</strong> &ldquo;${advStarter}&rdquo;</div>` : ''}
+                    ${
+                      advStarter
+                        ? `
+                      <div class="t3-starter-box" onclick="window.toggleSingleStarter && window.toggleSingleStarter(this)" style="cursor: pointer; padding: 8px 10px; background: #ffffff; border-left: 3px solid #22c55e; border-radius: 4px; font-size: 0.85rem; color: #15803d; font-style: italic; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                        <span class="t3-starter-prompt" style="font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
+                          <span><i class="fa-solid fa-pen"></i> Evidence Sentence Stem (Click to Reveal)</span>
+                          <i class="fa-solid fa-eye" style="font-size: 0.8rem;"></i>
+                        </span>
+                        <span class="t3-starter-revealed" style="display: none;"><strong>Evidence Stem:</strong> &ldquo;${advStarter}&rdquo;</span>
+                      </div>
+                    `
+                        : ''
+                    }
                   </div>
 
                   <!-- Side 2: Limitations / Continuity -->
                   <div style="background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 8px; padding: 14px;">
-                    <h5 style="margin: 0 0 10px 0; color: #9f1239; font-size: 1rem; border-bottom: 2px solid #fecdd3; padding-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-                      <i class="fa-solid fa-hand"></i> ${limTitle}
-                    </h5>
-                    <ul style="margin: 0 0 12px 0; padding-left: 18px; color: #1e293b; font-size: 0.9rem; line-height: 1.45;">
-                      ${limPoints.map((pt) => `<li style="margin-bottom: 6px;">${pt}</li>`).join('')}
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #fecdd3; padding-bottom: 6px; margin-bottom: 10px;">
+                      <h5 style="margin: 0; color: #9f1239; font-size: 1rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-hand"></i> ${limTitle}
+                      </h5>
+                      <span style="font-size: 0.72rem; color: #be123c; font-weight: 700; text-transform: uppercase;">Tap to Reveal</span>
+                    </div>
+                    <ul style="margin: 0 0 12px 0; padding: 0; list-style: none;">
+                      ${limPoints
+                        .map(
+                          (pt, pIdx) => `
+                        <li class="t3-evidence-item" onclick="window.toggleSingleEvidence && window.toggleSingleEvidence(this)" style="margin-bottom: 8px; cursor: pointer; transition: all 0.15s ease;">
+                          <div style="background: #ffffff; border: 1.5px dashed #fecdd3; border-radius: 6px; padding: 8px 10px; display: flex; align-items: flex-start; gap: 8px;">
+                            <span style="background: #ffe4e6; color: #9f1239; font-size: 0.75rem; font-weight: 800; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${pIdx + 1}</span>
+                            <div style="flex: 1;">
+                              <span class="t3-evidence-prompt" style="font-size: 0.85rem; font-weight: 700; color: #be123c; display: flex; align-items: center; justify-content: space-between;">
+                                <span>Counter-Evidence ${pIdx + 1} &bull; Click to Reveal</span>
+                                <i class="fa-solid fa-eye" style="font-size: 0.8rem; opacity: 0.7;"></i>
+                              </span>
+                              <div class="t3-evidence-revealed" style="display: none; font-size: 0.9rem; color: #1e293b; line-height: 1.45;">
+                                ${pt}
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      `,
+                        )
+                        .join('')}
                     </ul>
-                    ${limStarter ? `<div style="padding: 8px 10px; background: #ffffff; border-left: 3px solid #f43f5e; border-radius: 4px; font-size: 0.85rem; color: #be123c; font-style: italic;"><strong>Counter-Stem:</strong> &ldquo;${limStarter}&rdquo;</div>` : ''}
+                    ${
+                      limStarter
+                        ? `
+                      <div class="t3-starter-box" onclick="window.toggleSingleStarter && window.toggleSingleStarter(this)" style="cursor: pointer; padding: 8px 10px; background: #ffffff; border-left: 3px solid #f43f5e; border-radius: 4px; font-size: 0.85rem; color: #be123c; font-style: italic; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                        <span class="t3-starter-prompt" style="font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
+                          <span><i class="fa-solid fa-pen"></i> Counter-Sentence Stem (Click to Reveal)</span>
+                          <i class="fa-solid fa-eye" style="font-size: 0.8rem;"></i>
+                        </span>
+                        <span class="t3-starter-revealed" style="display: none;"><strong>Counter-Stem:</strong> &ldquo;${limStarter}&rdquo;</span>
+                      </div>
+                    `
+                        : ''
+                    }
                   </div>
                 </div>
 
@@ -4754,37 +4892,30 @@ export function renderLesson(lesson) {
                 { letter: 'L', label: 'Link', bg: '#faf5ff', border: '#d8b4fe', text: '#6b21a8' },
               ];
               peelHtml = `
-                <div style="margin-bottom: 16px;">
-                  <div style="font-size: 0.85rem; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-                    <i class="fa-solid fa-layer-group" style="color: #0284c7;"></i> PEEL Analytical Scaffolding &bull; Sentence Stems
-                  </div>
-                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
-                    ${hints
-                      .map((hint, hIdx) => {
-                        const cfg = peelColors[hIdx % peelColors.length];
-                        let cleanHint = hint;
-                        let label = cfg.label;
-                        const splitMatch = hint.match(
-                          /^(Point|Evidence|Explanation|Link):\s*(.*)/i,
-                        );
-                        if (splitMatch) {
-                          label = splitMatch[1];
-                          cleanHint = splitMatch[2];
-                        }
-                        return `
-                        <div style="background: ${cfg.bg}; border: 1.5px solid ${cfg.border}; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;">
-                          <div style="display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 0.82rem; color: ${cfg.text}; text-transform: uppercase;">
-                            <span style="background: ${cfg.text}; color: #ffffff; width: 18px; height: 18px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem;">${cfg.letter}</span>
-                            ${label}
-                          </div>
-                          <div style="font-size: 0.88rem; color: #1e293b; line-height: 1.45;">
-                            ${cleanHint}
-                          </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
+                  ${hints
+                    .map((hint, hIdx) => {
+                      const cfg = peelColors[hIdx % peelColors.length];
+                      let cleanHint = hint;
+                      let label = cfg.label;
+                      const splitMatch = hint.match(/^(Point|Evidence|Explanation|Link):\s*(.*)/i);
+                      if (splitMatch) {
+                        label = splitMatch[1];
+                        cleanHint = splitMatch[2];
+                      }
+                      return `
+                      <div style="background: ${cfg.bg}; border: 1.5px solid ${cfg.border}; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;">
+                        <div style="display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 0.82rem; color: ${cfg.text}; text-transform: uppercase;">
+                          <span style="background: ${cfg.text}; color: #ffffff; width: 18px; height: 18px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem;">${cfg.letter}</span>
+                          ${label}
                         </div>
-                      `;
-                      })
-                      .join('')}
-                  </div>
+                        <div style="font-size: 0.88rem; color: #1e293b; line-height: 1.45;">
+                          ${cleanHint}
+                        </div>
+                      </div>
+                    `;
+                    })
+                    .join('')}
                 </div>
               `;
             }
@@ -4812,7 +4943,26 @@ export function renderLesson(lesson) {
                     : ''
                 }
 
-                ${peelHtml}
+                ${
+                  peelHtml
+                    ? `
+                  <details class="peel-scaffolding-drawer no-print" style="margin-bottom: 16px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden;" closed>
+                    <summary style="padding: 10px 14px; cursor: pointer; font-size: 0.88rem; font-weight: 800; color: #0369a1; background: #f1f5f9; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+                      <span style="display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-chalkboard-user" style="color: #0284c7;"></i>
+                        <span>PEEL Analytical Writing Scaffolds &bull; Sentence Stems</span>
+                      </span>
+                      <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
+                        <i class="fa-solid fa-eye"></i> Click to Reveal Scaffolding
+                      </span>
+                    </summary>
+                    <div style="padding: 14px; background: #ffffff;">
+                      ${peelHtml}
+                    </div>
+                  </details>
+                `
+                    : ''
+                }
 
                 <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 12px;">
                   <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center;">
@@ -5496,12 +5646,12 @@ export function renderLesson(lesson) {
       htmlExtended;
   } else if (unitId === 'great_war' || unitId === 'great_war_part2') {
     html +=
+      htmlVideo +
       htmlDoNow +
       htmlNarrative +
       htmlPrimary +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlTasks +
-      htmlVideo +
       htmlVocabDeck +
       htmlExtended;
   } else {

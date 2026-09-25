@@ -39074,40 +39074,30 @@
             "lines": 15
           },
           "do_now": {
-            "type": "timeline",
-            "events": [
+            "title": "Do Now: Retrieval from Prior Learning (German Unification & Balance of Power)",
+            "type": "mixed",
+            "items": [
               {
-                "year": "1871",
-                "title": "The Unification of Germany",
-                "detail": "The Franco-Prussian War",
-                "img": "assets/was_germany_unification.png"
+                "question": "How many sovereign states formed the German Confederation established at the Congress of Vienna in 1815?",
+                "answer": "39 states"
               },
               {
-                "year": "1897",
-                "title": "Imperial Rivalries",
-                "detail": "The Place in the Sun speech",
-                "img": "assets/was_greedy_boy.png"
+                "question": "What was the name of the Prussian-led customs union established in 1834 that economically united the German states while excluding Austria?",
+                "answer": "The Zollverein"
               },
               {
-                "year": "1906",
-                "title": "The Naval Arms Race",
-                "detail": "The Launch of HMS Dreadnought",
-                "img": "assets/was_dreadnought_blueprint.png"
+                "question": "Which Chancellor of Prussia declared in 1862 that the great questions of the day would be decided by \"blood and iron\"?",
+                "answer": "Otto von Bismarck"
               },
               {
-                "year": "1907",
-                "title": "Encirclement & Alliances",
-                "detail": "The Triple Entente System",
-                "img": "assets/was_military_matrix.png"
+                "question": "Which rival Great Power did the modernized Prussian army decisively defeat in the Seven Weeks' War of 1866?",
+                "answer": "Austria (Austrian Empire)"
               },
               {
-                "year": "June 1914",
-                "title": "The Spark in Sarajevo",
-                "detail": "The Assassination of the Archduke",
-                "img": "assets/was_boiling_point.png"
+                "question": "What is meant by the historical diplomatic term \"Balance of Power\"?",
+                "answer": "An international system where military and political power is distributed roughly equally among nations, preventing any single Great Power from dominating the continent."
               }
-            ],
-            "prediction_question": "Predict: Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?"
+            ]
           },
           "flashcards": [
             {

@@ -453,28 +453,33 @@ const great_war = {
         ],
       },
       do_now: {
-        title: 'Do Now: Retrieval from Lesson 0 (Creation of the German Empire)',
+        title: 'Do Now: Retrieval from Prior Learning (German Unification & Balance of Power)',
         type: 'mixed',
         items: [
           {
             question:
-              'What famous phrase did Otto von Bismarck use in 1862 to describe how Germany would be unified?',
-            answer: '"Blood and iron" (Eisen und Blut).',
-          },
-          {
-            question: 'Which economic customs union created by Prussia in 1834 excluded Austria?',
-            answer: 'The Zollverein.',
+              'How many sovereign states formed the German Confederation established at the Congress of Vienna in 1815?',
+            answer: '39 states',
           },
           {
             question:
-              'In what grand French palace was King Wilhelm I proclaimed German Emperor in January 1871?',
-            answer: 'The Hall of Mirrors at the Palace of Versailles.',
+              'What was the name of the Prussian-led customs union established in 1834 that economically united the German states while excluding Austria?',
+            answer: 'The Zollverein',
           },
           {
             question:
-              'Why did the unification of Germany shatter the traditional European balance of power?',
+              'Which Chancellor of Prussia declared in 1862 that the great questions of the day would be decided by "blood and iron"?',
+            answer: 'Otto von Bismarck',
+          },
+          {
+            question:
+              "Which rival Great Power did the modernized Prussian army decisively defeat in the Seven Weeks' War of 1866?",
+            answer: 'Austria (Austrian Empire)',
+          },
+          {
+            question: 'What is meant by the historical diplomatic term "Balance of Power"?',
             answer:
-              'It created a massive, militaristic, and heavily industrialized superpower with 41 million people in the center of Europe.',
+              'An international system where military and political power is distributed roughly equally among nations, preventing any single Great Power from dominating the continent.',
           },
         ],
       },
