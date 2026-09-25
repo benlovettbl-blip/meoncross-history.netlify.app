@@ -446,4 +446,54 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'wiliam_eef_workload_assessment',
+    author: 'Dylan Wiliam & Daisy Christodoulou',
+    affiliation: 'UCL Institute of Education / Education Endowment Foundation (EEF)',
+    category: 'Assessment & Teacher Workload',
+    categoryBadge: 'badge-emerald',
+    title:
+      'Sustainable Summative Assessment: The 75-Second Marking Protocol & In-Class Knowledge Audits',
+    subtitle:
+      'Eliminating Teacher Marking Burnout through Self-Audited Knowledge Engines, Pre-Printed Diagnostic Checkboxes, and Pupil-Led DIRT Actions',
+    overview:
+      'Traditional multi-page assessment marking places an unsustainable workload burden on history teachers (up to 15 hours per assessment cycle), while empirical research demonstrates that extensive teacher-written comments have negligible impact on student progression. Dylan Wiliam and the Education Endowment Foundation (EEF) establish the core principle that assessment feedback must generate more cognitive work for the pupil than for the teacher. By splitting assessments into an objective, in-class self-audited knowledge engine (Page 1) and a single teacher-evaluated extended writing task with pre-coded diagnostic rubrics (Page 2), whole-class marking is compressed to under 45 minutes.',
+    analysisHeading: 'The Workload Dilemma & The Written Feedback Paradox',
+    analysisText:
+      'When teachers spend 10–12 minutes per script writing individual narrative comments across multi-part tests, fatigue rapidly sets in, feedback quality degrades, and turnaround times stretch to weeks. Furthermore, the EEF report "A Marked Improvement" proved that pupils rarely read or act upon extensive handwritten teacher prose. Sustainable assessment requires removing the teacher from marking objective factual recall, reserving teacher expertise strictly for diagnosing extended historical argumentation.',
+    evidenceHeading: 'Cognitive Science & Formative Feedback Evidence',
+    evidenceText:
+      'Hattie and Timperley demonstrate that immediate feedback on factual knowledge and misconceptions has a profound effect size (d=0.73) compared to delayed feedback. Self-auditing or peer-auditing factual recall against animated exemplar slides immediately following an assessment consolidates schema while memory traces are fresh. For extended disciplinary writing, Daisy Christodoulou proves that comparative, rubric-coded diagnostic scoring is vastly more reliable and time-efficient than narrative commenting.',
+    applicationHeading: 'Departmental & Platform Implementation',
+    implementation: [
+      'The Split Assessment Architecture: Page 1 (Substantive Knowledge & Chronology) is formatted for instant in-class peer/self-auditing using standardized margin response boxes, requiring 0 minutes of teacher marking outside of lessons.',
+      'The Single Focal Task Rule: The teacher marks only Page 2 (the Capstone Evaluative Enquiry Essay), standardizing reading time to 45–60 seconds per pupil.',
+      'Pre-Printed Diagnostic Feedback Ledger: Eliminates handwritten teacher prose. Teachers assign marks by circling a 4-level mastery band and ticking pre-printed diagnostic WWW and EBI checkboxes in under 15 seconds.',
+      'Dedicated Pupil DIRT Action: Page 2 includes a pre-printed 3-line pupil improvement space where students must rewrite or expand an argument in purple pen during the feedback lesson, ensuring pupils do the cognitive work.',
+    ],
+    protocolHeading: 'Classroom Protocol for History Teachers',
+    teacherProtocols: [
+      'Launch the post-assessment feedback lesson with a 8-minute peer-audit of Page 1 using the provided animated answer slide.',
+      'Mark only Page 2 at home or during PPA: read the essay, circle the mastery band, and tick one WWW and one EBI checkbox (target 75 seconds per script).',
+      'During DIRT time, project model EBI paragraph upgrades on the board and require pupils to complete their targeted correction in purple pen before filing the assessment.',
+    ],
+    citations: [
+      'Wiliam, D. (2011). "Embedded Formative Assessment", Solution Tree Press.',
+      'Education Endowment Foundation (2016). "A Marked Improvement? A Review of the Evidence on Written Marking", EEF.',
+      'Christodoulou, D. (2016). "Making Good Progress? The Future of Assessment for Learning", Oxford University Press.',
+      'Hattie, J. & Timperley, H. (2007). "The Power of Feedback", Review of Educational Research, 77(1), pp. 81–112.',
+    ],
+    links: [
+      {
+        title: 'EEF Review: A Marked Improvement (Marking & Workload)',
+        url: 'https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/feedback',
+        displayText: 'educationendowmentfoundation.org.uk/guidance-reports/feedback',
+      },
+      {
+        title: 'Dylan Wiliam: Assessment for Learning Resources',
+        url: 'https://www.dylanwiliam.org/',
+        displayText: 'www.dylanwiliam.org',
+      },
+    ],
+  },
 ];
