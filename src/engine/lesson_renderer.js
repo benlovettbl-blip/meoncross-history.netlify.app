@@ -1160,9 +1160,6 @@ export function renderSourceUtilityTaskHTML(task, lessonIndex, tIdx, unitId) {
         </h4>
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Dual-Source Utility [8 Marks]</span>
-          <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #1e3a8a; border: 1.5px solid #93c5fd; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Open structured class debate protocol with sentence starters">
-            <i class="fa-solid fa-comments" style="color: #2563eb;"></i> Class Debate
-          </button>
           <button type="button" class="btn btn-pedagogy-primary btn-launch-task4" data-action="launch-task4-workspace" data-task-id="${taskId}" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;" title="Open distraction-free fullscreen writing workspace with 15m timer">
             <i class="fa-solid fa-rocket"></i> Launch Task 4
           </button>
@@ -1322,9 +1319,6 @@ export function renderHistoricalInterpretationsTaskHTML(task, lessonIndex, tIdx,
         </h4>
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="background: #7c3aed; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Historiographical Debate [16+4 Marks]</span>
-          <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #6d28d9; border: 1.5px solid #c4b5fd; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Open structured class debate protocol with sentence starters">
-            <i class="fa-solid fa-comments" style="color: #7c3aed;"></i> Class Debate
-          </button>
           <button type="button" class="btn btn-pedagogy-primary btn-launch-task4" data-action="launch-task4-workspace" data-task-id="${taskId}" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(124, 58, 237, 0.25); transition: all 0.2s;" title="Open distraction-free fullscreen writing workspace with 15m timer">
             <i class="fa-solid fa-rocket"></i> Launch Task 4
           </button>
@@ -1715,14 +1709,6 @@ export function renderLesson(lesson) {
                     </div>
                   </button>
 
-                  <!-- Tool 4: Class Debate Protocol -->
-                  <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openDebateModal();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-comments" style="color: #059669; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
-                    <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Class Debate Protocol</div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Launch structured debate prompt &amp; sentence starters</div>
-                    </div>
-                  </button>
                 </div>
               </div>
             `
@@ -5164,9 +5150,6 @@ export function renderLesson(lesson) {
             <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
               <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
               <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #1e3a8a; border: 1.5px solid #93c5fd; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Launch structured class debate protocol with debate prompts and sentence starters">
-                  <i class="fa-solid fa-comments" style="color: #2563eb;"></i> Class Debate
-                </button>
                 <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
               </div>
             </div>
@@ -5652,9 +5635,6 @@ export function renderLesson(lesson) {
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${lesson.extended && lesson.extended.title ? lesson.extended.title : 'Assessment Practice'}</div>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <button type="button" class="btn" data-action="open-debate-modal" style="background: #ffffff; color: #b45309; border: 1.5px solid #fde68a; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" title="Launch structured class debate protocol with debate prompts and sentence starters">
-                <i class="fa-solid fa-comments" style="color: #d97706;"></i> Class Debate
-              </button>
               <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
             </div>
           </div>
