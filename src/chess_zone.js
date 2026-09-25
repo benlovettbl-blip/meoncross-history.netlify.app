@@ -623,11 +623,15 @@ if (typeof window !== 'undefined' && !window.__historyKeydownBound) {
     const tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : '';
     if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
 
+    const isChessActive =
+      document.getElementById('chess-hub-root') ||
+      (window.state && window.state.currentView === 'chess') ||
+      (window.appStore && window.appStore.state && window.appStore.state.currentView === 'chess');
+    if (!isChessActive) return;
+
     if (e.key === 'w' || e.key === 'W') {
       if (typeof window.toggleChessWhiteboardMode === 'function') {
         window.toggleChessWhiteboardMode();
-      } else if (typeof window.toggleWhiteboardMode === 'function') {
-        window.toggleWhiteboardMode();
       }
     } else if (e.key === 'Escape' && chessState && chessState.whiteboardMode) {
       if (chessState.showAdjudicationModal) {
@@ -637,8 +641,6 @@ if (typeof window !== 'undefined' && !window.__historyKeydownBound) {
       }
       if (typeof window.toggleChessWhiteboardMode === 'function') {
         window.toggleChessWhiteboardMode(false);
-      } else if (typeof window.toggleWhiteboardMode === 'function') {
-        window.toggleWhiteboardMode(false);
       }
     }
   });
@@ -5975,7 +5977,6 @@ export function toggleChessWhiteboardMode(forceState) {
 }
 window.toggleChessWhiteboardMode = toggleChessWhiteboardMode;
 window.toggleChessProjectorMode = toggleChessWhiteboardMode;
-window.toggleWhiteboardMode = toggleChessWhiteboardMode;
 
 window.openAdjudicationModal = function () {
   chessState.showAdjudicationModal = true;

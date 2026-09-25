@@ -1641,11 +1641,12 @@ export function renderLesson(lesson) {
                       <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Collapses hero banner &amp; optimizes layout for projection</div>
                     </div>
                   </button>
+                  <!-- Tool 2: Task Live Marking & Models -->
                   <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openTaskWhiteboard();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-person-chalkboard" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <i class="fa-solid fa-list-check" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
                     <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Interactive Drawing Board</div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Full-screen sketch canvas for live annotation &amp; modeling</div>
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Live Marking &amp; Models</div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Whole-class question cards with click-to-reveal model answers</div>
                     </div>
                   </button>
                 </div>
@@ -1693,11 +1694,12 @@ export function renderLesson(lesson) {
                   </button>
 
                   <!-- Tool 2: Interactive Drawing Board -->
+                  <!-- Tool 2: Task Live Marking & Models -->
                   <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openTaskWhiteboard();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-person-chalkboard" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
+                    <i class="fa-solid fa-list-check" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
                     <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Interactive Drawing Board</div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Full-screen sketch canvas for live annotation &amp; modeling</div>
+                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Live Marking &amp; Models</div>
+                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Whole-class question cards with click-to-reveal model answers</div>
                     </div>
                   </button>
 
