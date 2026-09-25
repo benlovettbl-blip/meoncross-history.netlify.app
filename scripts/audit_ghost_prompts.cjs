@@ -104,9 +104,13 @@ async function scanGhostPrompts() {
     }
   }
 
-  console.log(`\n======================================================`);
-  console.log(`Total ghost source references across all GCSE units: ${totalGhosts}`);
-  console.log(`======================================================\n`);
+  if (totalGhosts > 0) {
+    console.error(`❌ Audit failed: ${totalGhosts} ghost source prompt(s) detected!`);
+    process.exit(1);
+  } else {
+    console.log(`🎉 100% CLEAN: All GCSE tasks and exam questions have valid source residency.`);
+    process.exit(0);
+  }
 }
 
 scanGhostPrompts();
