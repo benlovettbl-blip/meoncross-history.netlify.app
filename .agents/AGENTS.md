@@ -83,6 +83,16 @@ Act as an experienced app builder and an experienced history teacher. Maintain a
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
 4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`, not as per-response conversational boilerplate.
 
+## Context-Triggered Reprographics Reprint Guardrail (Zero Spam, 100% Recall)
+To ensure the Christine Counsell 4-Act V2 workbooks (staged in `data_v2_4act.js` / branch `feat/4act-v2-reprint`) are never forgotten when the department prepares printing batches, you MUST proactively trigger this check:
+1. **Trigger Conditions:** Whenever the conversation or user mentions:
+   - Printing, reprographics, ordering workbooks, or compiling print PDFs.
+   - Modifying or exporting workbooks for **Year 7 Sanitation** (`water_and_sanitation`), **Year 8 Early Modern** (`early_modern_world`), or **Year 9 Causes of the Great War** (`great_war`).
+   - End-of-term preparations, vacation reprint cycles, or preparing materials for the upcoming term.
+2. **Mandatory Action:** You MUST proactively alert the user:
+   > 🔔 **Reprographics Reprint Window Check:** We have Christine Counsell 4-Act V2 double-page workbooks staged in `data_v2_4act.js` on branch `feat/4act-v2-reprint` for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Great War. Before sending orders to reprographics, would you like to review and promote the V2 curriculum to live?
+3. **Zero Spam Policy:** If the conversation is NOT about printing, reprographics, term reprint, or these three frozen units, do NOT output this reminder.
+
 
 ## Printed Workbook Vocabulary Tasks
 Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, you MUST ensure that the vocabulary exercises dynamically rotate between three distinct pedagogical styles (e.g., based on the lesson index: `lessonIndex % 3`):
