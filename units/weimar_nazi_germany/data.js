@@ -439,33 +439,9 @@ export default {
       tasks: [
         {
           question:
-            'Causal Linkage: Write a short paragraph explaining how the conditions described in Source C directly led to the events in Source D.',
-          provenance: '★ High-Yield Forecast (Q1 Inference)',
+            "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details:\n1) Proportional Representation was highly democratic, BUT...\n2) Philipp Scheidemann rushed to declare a Republic BECAUSE...\n3) The army felt betrayed by the Armistice, SO...",
           model:
-            "The extreme starvation and desperation described in Source C (caused by the Allied naval blockade) triggered massive social unrest and mutinies, such as the Kiel Mutiny. This desperation caused the 'revolution of empty stomachs,' forcing the Kaiser to abdicate and threatening a full communist takeover. To prevent this communist threat and restore order, Chancellor Ebert was forced to make a desperate deal with the old Imperial Army, as shown in Source D. Ebert agreed to rely on the army to crush left-wing revolts (like the Spartacists) in exchange for the army's loyalty to the new Republic.",
-        },
-        {
-          question:
-            'Constrained Summary: Summarize the potential danger of Source E (Article 48) in exactly 12 words.',
-          model: 'It allowed the President to become a dictator during times of crisis.',
-        },
-        {
-          question:
-            "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) Proportional Representation was highly democratic, BUT... 2) Philipp Scheidemann rushed to declare a Republic BECAUSE... 3) The army felt betrayed by the Armistice, SO...",
-          model:
-            "1) BUT it allowed tiny extremist parties into the Reichstag and forced weak, unstable coalition governments. 2) BECAUSE he wanted to prevent a violent communist revolution by the radical Spartacists. 3) SO they created the 'Stab-in-the-back' myth, blaming the 'November Criminals' for the defeat.",
-        },
-        {
-          question:
-            "Causal Linkage: Write a short paragraph explaining exactly how the British Naval Blockade eventually led to the Abdication of the Kaiser. You must explain the chain reaction of events (the 'domino effect') that connects them.",
-          model:
-            'The British Naval Blockade caused mass starvation in Germany, leading to severe desperation and a collapse in morale on the home front. When the naval command ordered a final, suicidal attack in October 1918, the starving, exhausted sailors at Kiel refused and mutinied. This mutiny sparked a nationwide revolution as workers and soldiers set up their own councils. Realizing he had lost control of the country and the army, Kaiser Wilhelm II was forced to abdicate to prevent a full civil war.',
-        },
-        {
-          question:
-            'Transforming Information: Imagine you are an advisor to President Ebert in 1919. Write a short, urgent memo to him explaining which specific weakness of the new Constitution (Article 48, Proportional Representation, or Coalitions) poses the greatest threat to the Republic, and why.',
-          model:
-            'President Ebert, I must urgently warn you about Article 48. While Proportional Representation will cause weak coalitions, Article 48 is a fatal flaw. By allowing the President to bypass the Reichstag in an emergency, it creates a legal loophole for a dictator to take absolute power and destroy our democracy from within.',
+            "1) BUT it allowed tiny extremist parties into the Reichstag and forced weak, unstable coalition governments.\n2) BECAUSE he wanted to prevent a violent communist revolution by the radical Spartacists.\n3) SO they created the 'Stab-in-the-back' myth, blaming the 'November Criminals' for the defeat.",
         },
         {
           question:
@@ -475,7 +451,13 @@ export default {
         },
         {
           question:
-            'The \'Diamond Ranking\' Challenge: You have been given four reasons why the Weimar Republic was highly unstable in 1919: <ol style="margin-top: 5px; margin-bottom: 10px;"><li>The legacy of the First World War</li><li>The \'Stab-in-the-back\' myth</li><li>Proportional Representation</li><li>Article 48</li></ol>Rank these four causes in order of importance. Write a persuasive, open-ended paragraph justifying your #1 choice over your #2 choice.<br><br><span style="color: #ea580c; font-weight: bold;">Level 9 Challenge:</span> <em>In your paragraph, use complex causal reasoning to explicitly explain how your #1 cause directly triggered or worsened your #2 cause.</em>',
+            "Causal Linkage: Write a short paragraph explaining exactly how the British Naval Blockade eventually led to the Abdication of the Kaiser. You must explain the chain reaction of events (the 'domino effect') that connects them.",
+          model:
+            'The British Naval Blockade caused mass starvation in Germany, leading to severe desperation and a collapse in morale on the home front. When the naval command ordered a final, suicidal attack in October 1918, the starving, exhausted sailors at Kiel refused and mutinied. This mutiny sparked a nationwide revolution as workers and soldiers set up their own councils. Realizing he had lost control of the country and the army, Kaiser Wilhelm II was forced to abdicate to prevent a full civil war.',
+        },
+        {
+          question:
+            'Prioritising Causes (The Diamond Ranking Challenge): You have been given four reasons why the Weimar Republic was highly unstable in 1919: <ol style="margin-top: 5px; margin-bottom: 10px;"><li>The legacy of the First World War</li><li>The \'Stab-in-the-back\' myth</li><li>Proportional Representation</li><li>Article 48</li></ol>Rank these four causes in order of importance. Write a persuasive, open-ended paragraph justifying your #1 choice over your #2 choice.<br><br><span style="color: #ea580c; font-weight: bold;">Level 9 Challenge:</span> <em>In your paragraph, use complex causal reasoning to explicitly explain how your #1 cause directly triggered or worsened your #2 cause.</em>',
           model:
             "Student answers will vary. A top-level answer might argue: 'The legacy of the First World War was the most important cause of instability because it acted as the primary trigger for all subsequent crises. Without the desperation caused by the blockade and military defeat, there would have been no need for an Armistice. Using complex causal reasoning, we can see this directly triggered my second most important cause, the Stab-in-the-back myth, because the sudden, shocking defeat allowed right-wing nationalists to falsely claim the new democratic politicians were traitors, fundamentally poisoning the Republic's reputation from day one.'",
         },

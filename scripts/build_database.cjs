@@ -12,8 +12,18 @@ async function buildDatabase() {
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
 
+  const isV2 = process.argv.includes('--v2');
+  if (isV2) {
+    console.log(
+      '📌 Running in V2 4-Act Reprint Mode (preferring data_v2_4act.js where present)...',
+    );
+  }
+
   for (const unitId of dirs) {
-    const dataPath = path.join(unitsDir, unitId, 'data.js');
+    let dataPath = path.join(unitsDir, unitId, isV2 ? 'data_v2_4act.js' : 'data.js');
+    if (isV2 && !fs.existsSync(dataPath)) {
+      dataPath = path.join(unitsDir, unitId, 'data.js');
+    }
     if (fs.existsSync(dataPath)) {
       try {
         const fileUrl = 'file:///' + dataPath.replace(/\\/g, '/');
