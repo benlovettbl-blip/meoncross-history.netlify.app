@@ -180,7 +180,11 @@ body {
 }
 
 .narrative-p {
-  margin: 0 0 5.5px 0;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 9.4pt;
+  line-height: 1.38;
+  color: #0f172a;
+  margin: 0 0 4.5px 0;
   text-indent: 0.9em;
 }
 .narrative-p:first-of-type,
@@ -256,6 +260,9 @@ body {
   display: block;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
+}
+.archival-source-box.expand-sm .archival-image {
+  height: 80px;
 }
 .archival-source-box.expand-md .archival-image {
   height: 125px;
@@ -364,36 +371,6 @@ body {
   border: 1px solid #94a3b8;
   flex-shrink: 0;
   background: #f8fafc;
-}
-.kf-portrait.kf-monogram {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 35% 35%, #1e293b 0%, #0f172a 100%);
-  border: 1px solid #64748b;
-  border-radius: 2px;
-  color: #f8fafc;
-  text-align: center;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
-  user-select: none;
-}
-.kf-monogram-initials {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 13pt;
-  font-weight: 800;
-  line-height: 1;
-  color: #f8fafc;
-  letter-spacing: 0.5px;
-}
-.kf-monogram-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 4.2pt;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  color: #94a3b8;
-  margin-top: 2px;
 }
 .kf-identity-text {
   flex: 1;
@@ -1424,7 +1401,7 @@ body {
   
 
           
-    <div class="archival-source-box panoramic-source">
+    <div class="archival-source-box expand-sm">
       <div class="archival-header">
         <div class="source-identity">
           <span class="source-badge">SOURCE A</span>
@@ -1460,40 +1437,11 @@ body {
       </div>
       <div class="archival-title">The Anglo-Saxon Chronicle: The Calamity at Hastings</div>
       
-      <div class="archival-body written-source-box">"Then Count William came from Normandy into Pevensey... and as soon as they were fit, made a castle at Hastings port. This was made known to King Harold, and he gathered a great army, and came to meet him at the hoary apple tree. And William came against him unawares, before his people were set in order. But the king nevertheless firmly fought against him... There was slain King Harold, and Leofwine the earl, and Gyrth the earl; and the French had possession of the place of slaughter."</div>
+      <div class="archival-body written-source-box">"Then Count William came from Normandy into Pevensey and made a castle at Hastings port. This was made known to King Harold, and he gathered a great army, coming to meet him at the hoary apple tree. And William came against him unawares, before his army was set in order. But the king firmly fought against him... There was slain King Harold, and the French held the place of slaughter."</div>
       
       <div class="archival-context-box">
         <p class="archival-context-text">Recorded by English monks shortly after the battle, capturing the shock and despair of the defeated Anglo-Saxon population.</p>
         <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>Why did the Saxon chronicler emphasize that William attacked "unawares, before his people were set in order"?</em></div>
-      </div>
-    </div>
-  
-
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">THE FOUR CLAIMANTS TO THE ENGLISH THRONE (1066)</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Harold Godwinson (Earl of Wessex):</strong>
-            <p>Claimed deathbed nomination by Edward; supported by the Saxon Witan; commanded veteran housecarl infantry.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>William, Duke of Normandy:</strong>
-            <p>Claimed prior promise by Edward in 1051 and Harold's sacred oath; backed by papal crusade banner; cavalry.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Harald Hardrada (King of Norway):</strong>
-            <p>Claimed secret 1038 agreement with King Harthacnut; backed by Tostig; veteran Viking berserker fleet.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Edgar the Atheling:</strong>
-            <p>True biological great-nephew of Edward; direct House of Wessex royal bloodline; bypassed due to youth and lack of armies.</p>
-          </div>
-        
       </div>
     </div>
   
@@ -1559,7 +1507,7 @@ body {
           <p class="narrative-p"><span class="para-ref">[3.1]</span>Harold marched his exhausted army 250 miles back south in under two weeks, arriving at Senlac Hill near Hastings on 14 October 1066. The battle represented a clash between two fundamentally distinct military systems. Harold deployed his troops at the ridge crest, locking heavy lime-wood shields into an impenetrable defensive wall. William commanded a combined-arms force of archers, armored infantry, and devastating heavy cavalry, yet for hours Norman uphill charges broke against the ferocious wall of swinging Danish axes.</p><p class="narrative-p"><span class="para-ref">[3.2]</span>In the afternoon, panic erupted across the Norman ranks when a rumor spread that Duke William was dead. Norman infantry fled down the slope, and undisciplined Saxon soldiers broke ranks to pursue them. William dramatically pushed back his nasal helmet, shouting: "Look at me! I live, and with God’s help I will conquer!" The rallied Norman knights turned and slaughtered the exposed Saxons, exposing the fatal weakness of the stationary Saxon formation.</p><p class="narrative-p"><span class="para-ref">[3.3]</span>The Saxon shield wall had held firm throughout the morning because the veteran housecarls maintained unbreakable tactical discipline. However, inexperienced peasant fyrdmen could not resist the temptation to chase fleeing enemies down the muddy slope. By breaking ranks, they created fatal gaps in the defensive perimeter. William immediately grasped this tactical vulnerability, ordering his cavalry commanders to repeat the retreat intentionally to dismantle the English defensive formation piecemeal and slaughter the exposed Saxon infantry in the marshy valley below.</p>
 
           
-      <div class="archival-source-box expand-lg">
+      <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
             <span class="source-badge">SOURCE C</span>
@@ -1732,25 +1680,6 @@ body {
       <div class="archival-context-box">
         <p class="archival-context-text">Written by an Anglo-Norman monk of Saint-Évroul, whose mixed English-Norman heritage gave him a unique moral perspective on Norman brutality.</p>
         <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>Why did Orderic Vitalis—a loyal churchman—break with official Norman propaganda to condemn the Harrying as a monstrous sin?</em></div>
-      </div>
-    </div>
-  
-
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">MECHANISMS OF SUBJUGATION: CASTLES VS THE DOMESDAY AUDIT</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Motte-and-Bailey Castles (Physical Terror):</strong>
-            <p>Constructed within 8 days using forced Saxon labor. Provided permanent military garrisons to dominate strategic river crossings and crush revolts.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>The Domesday Survey (Bureaucratic Audit):</strong>
-            <p>Comprehensive assessment of national wealth and tax dues. Eliminated Saxon tax exemptions and legally bound every tenant to royal fiscal control.</p>
-          </div>
-        
       </div>
     </div>
   
@@ -1993,25 +1922,6 @@ body {
     </div>
   
 
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">DUAL JURISDICTIONS: KING'S COMMON LAW VS PAPAL CANON LAW</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Royal Courts (King Henry II):</strong>
-            <p>Administered by itinerant royal justices. Secular penalties: execution, hanging, and land forfeiture. Centralized state sovereignty across England.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Ecclesiastical Courts (Archbishop Becket):</strong>
-            <p>Administered under Roman canon law. Bloodless penalties: defrocking, fines, and penance. Created "benefit of clergy" for criminous clerks.</p>
-          </div>
-        
-      </div>
-    </div>
-  
-
         </div>
 
         <div class="bottom-vocab-box">
@@ -2246,25 +2156,6 @@ body {
       <div class="archival-context-box">
         <p class="archival-context-text">From the Chronicle of the Kings of France, detailing the decisive battle that destroyed John’s military prestige and triggered Magna Carta.</p>
         <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>Why did a military defeat in northern France immediately provoke an armed baronial rebellion in England?</em></div>
-      </div>
-    </div>
-  
-
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">THE STRUGGLE OVER RUNNYMEDE: BARONIAL DEMANDS VS ROYAL PREROGATIVE</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>The Baronial Demands (1215):</strong>
-            <p>Demanded fixed limits on feudal inheritance fines (relief), an end to arbitrary scutage taxes, and protection against arbitrary royal imprisonment.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>King John & The Papacy:</strong>
-            <p>John surrendered England to Pope Innocent III as a papal fief to secure papal annulment; declared Magna Carta illegal and extracted civil war.</p>
-          </div>
-        
       </div>
     </div>
   
@@ -2508,30 +2399,6 @@ body {
     </div>
   
 
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">THE THREE ESTATES OF MEDIEVAL SOCIETY (TRIPARTITE ORDER)</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Bellatores (Those Who Fight):</strong>
-            <p>Feudal nobility (barons, knights); held land in exchange for military knight service.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Oratores (Those Who Pray):</strong>
-            <p>Catholic clergy (bishops, monks); held spiritual monopoly on salvation and tithes.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Laboratores (Those Who Work):</strong>
-            <p>Peasant majority (villeins, serfs); bound to compulsory agricultural corvée labour.</p>
-          </div>
-        
-      </div>
-    </div>
-  
-
         </div>
 
         <div class="bottom-vocab-box">
@@ -2766,25 +2633,6 @@ body {
       <div class="archival-context-box">
         <p class="archival-context-text">Written by an Augustinian canon at Leicester Abbey, documenting the immediate agricultural collapse and peasant empowerment.</p>
         <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>How does Knighton’s description show that the Black Death damaged the authority of both manorial lords and the Catholic Church?</em></div>
-      </div>
-    </div>
-  
-
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">SOCIOECONOMIC IMPACT OF THE BLACK DEATH (1348–1351)</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Demographic Collapse & Labor Scarcity:</strong>
-            <p>Between 35% and 50% of England's population died. Surviving agricultural laborers demanded double or triple wages, abandoning feudal estates.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>The Landlords' Legislative Backlash:</strong>
-            <p>Parliament enacted the 1351 Statute of Labourers, freezing wages at 1346 levels and outlawing peasant travel, sparking furious class hostility.</p>
-          </div>
-        
       </div>
     </div>
   
@@ -3027,25 +2875,6 @@ body {
     </div>
   
 
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">RADICAL DEMANDS OF THE 1381 REBELS AT MILE END & SMITHFIELD</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Abolition of Feudal Serfdom:</strong>
-            <p>Wat Tyler demanded that all men in England be free from bondage, that land rents be capped at 4 pence per acre, and all manor rolls burned.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Eradication of Church Hierarchy:</strong>
-            <p>John Ball demanded the confiscation of all monastic estates, the division of Church wealth among peasants, and only one bishop in England.</p>
-          </div>
-        
-      </div>
-    </div>
-  
-
         </div>
 
         <div class="bottom-vocab-box">
@@ -3284,25 +3113,6 @@ body {
     </div>
   
 
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">THE RIVAL HOUSES: LANCASTER VS YORK (1455–1485)</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>The House of Lancaster (Red Rose):</strong>
-            <p>Descendants of John of Gaunt (Henry IV, V, VI). Beset by Henry VI's mental catatonia and disastrous military losses in France.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>The House of York (White Rose):</strong>
-            <p>Descendants of Lionel of Antwerp and Edmund of Langley (Richard Duke of York, Edward IV, Richard III). Claimed superior hereditary legitimacy.</p>
-          </div>
-        
-      </div>
-    </div>
-  
-
         </div>
 
         <div class="bottom-vocab-box">
@@ -3537,25 +3347,6 @@ body {
       <div class="archival-context-box">
         <p class="archival-context-text">Written by a royal justice of King Henry III, providing the classical legal definition of limited, lawful English monarchy.</p>
         <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>How does Bracton’s maxim "law makes the King" contrast with the idea of unchecked Divine Right absolutism?</em></div>
-      </div>
-    </div>
-  
-
-          
-    <div class="analytical-matrix-card">
-      <div class="amc-header">THE BALANCE OF POWER: ARBITRARY RULE VS PARLIAMENTARY CONSENT</div>
-      <div class="amc-grid">
-        
-          <div class="amc-col">
-            <strong>Royal Prerogative & Feudal Autocracy:</strong>
-            <p>Monarchs claimed divine appointment, total military command, and the right to declare foreign wars, appoint bishops, and issue royal proclamations.</p>
-          </div>
-        
-          <div class="amc-col">
-            <strong>Statute Law & Common Counsel:</strong>
-            <p>The Commons and Lords controlled taxation; by 1485, no English king could levy direct taxes without the formal consent of Parliament.</p>
-          </div>
-        
       </div>
     </div>
   

@@ -746,36 +746,6 @@ async function buildPublisherTextbookHtml() {
       background: #ffffff;
       flex-shrink: 0;
     }
-    .kf-portrait.kf-monogram {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 35% 35%, #1e293b 0%, #0f172a 100%);
-      border: 1px solid #64748b;
-      border-radius: 3px;
-      color: #f8fafc;
-      text-align: center;
-      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
-      user-select: none;
-    }
-    .kf-monogram-initials {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 14pt;
-      font-weight: 800;
-      line-height: 1;
-      color: #f8fafc;
-      letter-spacing: 0.5px;
-    }
-    .kf-monogram-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 4.5pt;
-      font-weight: 800;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: #94a3b8;
-      margin-top: 2px;
-    }
     .kf-identity-text {
       flex: 1;
       min-width: 0;
@@ -1286,7 +1256,7 @@ async function buildPublisherTextbookHtml() {
         keyIndividualCardHtml = `
         <div class="key-figure-box">
           <div class="kf-header">
-            <span class="kf-tag">KEY FIGURE</span>
+            <span class="kf-tag">${ki.category || ki.badge || 'KEY FIGURE'}</span>
             <span class="kf-lifespan">${ki.lifespan || ''}</span>
           </div>
           <div class="kf-identity-row">

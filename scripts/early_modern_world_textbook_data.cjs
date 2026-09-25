@@ -357,8 +357,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Debated General Henry Ireton at Putney, asserting that "the poorest he that is in England hath a life to live as the greatest he."',
           'Organized soldier resistance against parliamentary attempts to disband the New Model Army without arrears of pay or indemnity.',
         ],
-        image: 'monogram',
-        monogram: 'NA',
+        category: 'REPRESENTATIVE HISTORICAL VOICE',
       },
       conceptSpotlight: {
         tag: 'CONSTITUTIONAL DOCTRINE',
@@ -478,8 +477,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Testified extensively before a parliamentary committee led by William Wilberforce, providing processing medical proof of abuse.',
           'Appointed commercial agent to the newly established Sierra Leone colony for freed enslaved people in West Africa.',
         ],
-        image: 'monogram',
-        monogram: 'AF',
+        category: 'KEY HISTORICAL INDIVIDUAL',
       },
       conceptSpotlight: {
         tag: 'COMMODIFICATION OF HUMANS',
@@ -539,8 +537,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Pioneered ingenious camouflage and guerrilla ambushes, routing heavily armed British regiments through jungle mountain passes.',
           'Honored today as a National Hero of Jamaica for her military brilliance and unwavering defense of African sovereignty.',
         ],
-        image: 'monogram',
-        monogram: 'QN',
+        category: 'KEY HISTORICAL INDIVIDUAL',
       },
       conceptSpotlight: {
         tag: 'AGENCY & RESISTANCE',
@@ -600,8 +597,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
           'Faced financial ruin from the legal costs of surveying, hedging, and ditching newly allocated plots, forcing the sale of ancestral land to neighbouring estates.',
           'Migrated to burgeoning manufacturing towns or London slums like St Giles, transforming from an independent food producer into a waged factory labourer.',
         ],
-        image: 'monogram',
-        monogram: 'EF',
+        category: 'REPRESENTATIVE HISTORICAL VOICE',
       },
       conceptSpotlight: {
         tag: 'INSTITUTIONAL FINANCE',

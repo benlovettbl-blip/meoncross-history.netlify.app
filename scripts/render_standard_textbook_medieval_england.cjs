@@ -164,12 +164,12 @@ function renderKeyFigureBox(keyFigure) {
   const portraitHtml =
     keyFigure.image && keyFigure.image !== 'monogram'
       ? `<img class="kf-portrait" src="${keyFigure.image.startsWith('data:') ? keyFigure.image : getBase64Image(keyFigure.image) || keyFigure.image}" alt="${keyFigure.name}">`
-      : `<div class="kf-portrait kf-monogram" title="${keyFigure.name}"><span class="kf-monogram-initials">${getMonogramInitials(keyFigure.name)}</span><span class="kf-monogram-tag">RECORD</span></div>`;
+      : '';
 
   return `
     <div class="key-figure-box">
       <div class="kf-header">
-        <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
+        <span class="kf-tag">${keyFigure.category || keyFigure.badge || 'KEY HISTORICAL INDIVIDUAL'}</span>
         <span class="kf-lifespan">${keyFigure.lifespan}</span>
       </div>
       <div class="kf-identity-row">
@@ -217,9 +217,6 @@ async function buildPublisherTextbookHtmlMedieval() {
     const bank = MEDIEVAL_COMPONENT_BANK[bankKey] || {};
     const vocabTerms = MEDIEVAL_LEFT_VOCAB[leftVocabKey] || [];
     const sources = MEDIEVAL_LEFT_SOURCES[leftSrcKey] || {};
-    if (leftPageNum === 2 && sources.sourceA) {
-      sources.sourceA.panoramic = true;
-    }
 
     const act1 = lesson.act1 || { title: 'Context & Catalyst', paras: [] };
     const act2 = lesson.act2 || { title: 'Escalation & Conflict', paras: [] };
@@ -265,8 +262,6 @@ async function buildPublisherTextbookHtmlMedieval() {
           ${act2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
 
           ${renderArchivalSourceBox(sources.sourceB)}
-
-          ${renderAnalyticalMatrixCard(matrix)}
 
         </div>
 

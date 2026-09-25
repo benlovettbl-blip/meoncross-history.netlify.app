@@ -38,7 +38,7 @@ module.exports = function getMedievalData(helpers = {}) {
         shelfmark: 'ORDERIC VITALIS • ECCLESIASTICAL HISTORY (BOOK III)',
       },
       archivalDispatch: `
-      <div class="archival-source-box expand-lg">
+      <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
             <span class="source-badge">SOURCE C</span>
@@ -667,7 +667,7 @@ module.exports = function getMedievalData(helpers = {}) {
         date: 'c. 1070s • Romanesque Embroidery',
         title: 'The Bayeux Tapestry: Harold’s Demise & Senlac Ridge',
         image: getBase64Image('/images/battle_of_hastings_bayeux.jpg'),
-        panoramic: true,
+        expand: 'sm',
         text: '"Here King Harold is slain: stitched in dyed wool, the tapestry captures the pivotal turning point on Senlac Hill. While nineteenth-century historians insisted Harold was blinded by an arrow through the eye, forensic textile analysis reveals the figure pulling an arrow from his helmet was heavily repaired in Victorian times. Whether struck by an arrow or hacked to pieces by Norman cavalry, Harold\'s death decapitated Saxon command and doomed the kingdom."',
         context:
           "Commissioned by William's half-brother, Bishop Odo of Bayeux, to celebrate Norman legitimacy while honoring the ferocious courage of English housecarls.",
@@ -679,7 +679,7 @@ module.exports = function getMedievalData(helpers = {}) {
         type: 'Primary Monastic Chronicle',
         date: 'Written c. 1066–1067',
         title: 'The Anglo-Saxon Chronicle: The Calamity at Hastings',
-        text: '"Then Count William came from Normandy into Pevensey... and as soon as they were fit, made a castle at Hastings port. This was made known to King Harold, and he gathered a great army, and came to meet him at the hoary apple tree. And William came against him unawares, before his people were set in order. But the king nevertheless firmly fought against him... There was slain King Harold, and Leofwine the earl, and Gyrth the earl; and the French had possession of the place of slaughter."',
+        text: '"Then Count William came from Normandy into Pevensey and made a castle at Hastings port. This was made known to King Harold, and he gathered a great army, coming to meet him at the hoary apple tree. And William came against him unawares, before his army was set in order. But the king firmly fought against him... There was slain King Harold, and the French held the place of slaughter."',
         context:
           'Recorded by English monks shortly after the battle, capturing the shock and despair of the defeated Anglo-Saxon population.',
         hingeQuestion:

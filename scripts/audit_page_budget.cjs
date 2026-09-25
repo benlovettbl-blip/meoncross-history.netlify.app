@@ -121,6 +121,8 @@ async function auditPageBudget(page, options = {}) {
           let overflow = scrollH > clientH + 4 ? scrollH - clientH : 0;
           let maxChildBottom = pRect.top;
           let childOverflow = 0;
+          let horizontalSpillPx = 0;
+          let spillElementDesc = '';
           const children = p.querySelectorAll('*');
           children.forEach((el) => {
             if (
@@ -136,12 +138,20 @@ async function auditPageBudget(page, options = {}) {
               if (r.bottom > pRect.bottom + 4) {
                 childOverflow = Math.max(childOverflow, Math.round(r.bottom - pRect.bottom));
               }
+              if (r.right > pRect.right + 4) {
+                const spill = Math.round(r.right - pRect.right);
+                if (spill > horizontalSpillPx) {
+                  horizontalSpillPx = spill;
+                  spillElementDesc = `${el.tagName.toLowerCase()}${el.className ? `.${el.className.split(' ').filter(Boolean).join('.')}` : ''}`;
+                }
+              }
               if (r.bottom <= pRect.bottom + 2 && r.bottom > maxChildBottom) {
                 maxChildBottom = r.bottom;
               }
             }
           });
-          const totalOverflow = Math.max(overflow, childOverflow);
+          const isPhantomColumnSpill = horizontalSpillPx > 0;
+          const totalOverflow = Math.max(overflow, childOverflow, horizontalSpillPx);
 
           // 2b. Internal Container Text Clipping & Truncation Audit
           // Inspects all cards, boxes, and sub-elements with overflow: hidden or restricted height
@@ -347,7 +357,7 @@ async function auditPageBudget(page, options = {}) {
               : 100;
 
           const isFooterCollision = footerCollisionPx > 0;
-          const isOverflow = totalOverflow > 0 || isFooterCollision;
+          const isOverflow = totalOverflow > 0 || isFooterCollision || isPhantomColumnSpill;
           const isUnderflow =
             !isOverflow &&
             unusedBottom > underflowThresholdPx &&
@@ -384,6 +394,9 @@ async function auditPageBudget(page, options = {}) {
             clientH,
             scrollH,
             overflow: Math.max(totalOverflow, footerCollisionPx),
+            horizontalSpillPx,
+            isPhantomColumnSpill,
+            spillElementDesc,
             footerCollisionPx,
             collidingElementDesc,
             isFooterCollision,
@@ -471,6 +484,10 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
     if (res.isFooterCollision) {
       issues.push(
         `❌ FOOTER COLLISION (+${res.footerCollisionPx}px into footer by ${res.collidingElementDesc})`,
+      );
+    } else if (res.isPhantomColumnSpill) {
+      issues.push(
+        `❌ PHANTOM COLUMN OVERFLOW (+${res.horizontalSpillPx}px right spill: ${res.spillElementDesc})`,
       );
     } else if (res.isOverflow) {
       issues.push(`❌ OVERFLOW (+${res.overflow}px)`);
