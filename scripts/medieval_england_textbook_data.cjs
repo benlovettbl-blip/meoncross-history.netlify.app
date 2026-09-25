@@ -21,6 +21,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'Duke William of Normandy ("The Conqueror")',
         lifespan: 'c. 1028–1087',
         role: 'Duke of Normandy (1035–1087) & King of England (1066–1087)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Conquered England at Hastings, ending 600 years of Anglo-Saxon rule and establishing a centralized Anglo-Norman feudal state.',
         actions: [
@@ -74,6 +75,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'Orderic Vitalis',
         lifespan: '1075–c. 1142',
         role: 'Anglo-Norman Monk, Chronicler & Historian',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Authored the *Ecclesiastical History*, providing our most searing, vivid critique of Norman brutality and the human toll of the Harrying of the North.',
         actions: [
@@ -127,6 +129,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'Thomas Becket',
         lifespan: '1119/20–1170',
         role: 'Lord Chancellor of England (1155–1162) & Archbishop of Canterbury (1162–1170)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Defended ecclesiastical autonomy against Henry II’s legal centralization; his dramatic assassination transformed him into Europe’s most revered martyr.',
         actions: [
@@ -180,6 +183,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'King John ("Lackland" / "Softsword")',
         lifespan: '1166–1216',
         role: 'King of England, Duke of Normandy & Lord of Ireland (1199–1216)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'His catastrophic military defeats in France and ruthless fiscal extortion provoked the baronial rebellion that forced the sealing of Magna Carta.',
         actions: [
@@ -234,6 +238,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'The Manorial Reeve',
         lifespan: '13th–14th Century',
         role: 'Peasant Supervisor & Village Foreman of the Lord’s Demesne',
+        category: 'REPRESENTATIVE HISTORICAL VOICE',
         significance:
           'Elected by his fellow serfs but answerable to the bailiff, the reeve balanced the daily survival of villagers against the lord’s demands.',
         actions: [
@@ -287,6 +292,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'Henry Knighton',
         lifespan: 'Died c. 1396',
         role: 'Augustinian Canon of St Mary de Pratis Abbey, Leicester',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Eyewitness chronicler of the Black Death; recorded both the horrifying mortality rate and the sudden economic empowerment of surviving labourers.',
         actions: [
@@ -340,6 +346,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'Wat Tyler & John Ball',
         lifespan: 'Tyler (d. 1381) • Ball (c. 1338–1381)',
         role: 'Leaders of the 1381 Great Uprising',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Led England’s first major popular revolution, capturing London and demanding the total abolition of serfdom and equality under the law.',
         actions: [
@@ -393,6 +400,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'King Richard III',
         lifespan: '1452–1485',
         role: 'Last Plantagenet King of England (Reigned 1483–1485)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'His usurpation of the throne and the mysterious disappearance of the Princes in the Tower alienated Yorkist allies, leading to his dramatic death at Bosworth.',
         actions: [
@@ -446,6 +454,7 @@ module.exports = function getMedievalData(helpers = {}) {
         name: 'King Edward I ("Longshanks")',
         lifespan: '1239–1307',
         role: 'King of England, Lord of Ireland & Duke of Aquitaine (1272–1307)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'The archetype of a successful medieval monarch; combined ferocious military power with regular parliamentary taxation to build English statehood.',
         actions: [

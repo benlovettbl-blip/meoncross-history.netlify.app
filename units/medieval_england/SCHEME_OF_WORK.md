@@ -32,17 +32,26 @@ Every enquiry explicitly traces four continuous thematic threads mapped across K
 
 To build balanced second-order historical competence and prevent pupil fatigue, the 8 enquiries rotate across discrete disciplinary skills:
 
-| Enquiry | Lesson Title | Disciplinary Focus / Second-Order Concept | Core Archival Sources | Key Disciplinary Terms |
-|---|---|---|---|---|
-| **1** | **1066 & The Battle of Hastings** | *Change & Continuity / Causal Interaction* | Bayeux Tapestry; Anglo-Saxon Chronicle (MS C); William of Poitiers | *Housecarl, Fyrd, Witan, Feigned Retreat, Succession Crisis, Shield Wall* |
-| **2** | **Castles, Terror & Domesday** | *Dual-Source Utility & Provenance* | Bayeux Tapestry (Hastings motte); Orderic Vitalis; Domesday Book (Portchester/Fareham) | *Motte-and-Bailey, Castellan, Harrying of the North, Domesday Book, Subjugation, Feudal Tenure* |
-| **3** | **Crown vs Church: Henry II & Becket** | *Causation & Transformation* | Clause 3 Constitutions of Clarendon (1164); Edward Grim Eyewitness Account (1170) | *Benefit of Clergy, Criminous Clerks, Excommunication, Martyrdom, Papal Supremacy, Penance* |
-| **4** | **Magna Carta (1215): Liberty or Grab?** | *Historical Significance & Anachronism* | Roger of Wendover (Extortions); Magna Carta Clauses 12, 39, 61; Papal Annulment Bull | *Scutage, Baronial Oligarchy, Due Process, Habeas Corpus, Annulment, Constitutional Monarchy* |
-| **5** | **Doom Paintings, Tithes & Village Life** | *Historiographical Debate & Social Structure* | Luttrell Psalter (1330); Bishop’s Waltham Pipe Rolls (1210); Parish Doom Fresco | *Villein / Serf, Tithe, Manorialism, Open-Field System, Doom Painting, Corvée Labour* |
-| **6** | **1348: Black Death & Social Shatter** | *Turning Point Analysis & Demography* | Henry Knighton (Leicester Chronicle); Bishop Ralph of Shrewsbury (1349); Statute of Labourers (1351) | *Bubonic Plague, Pneumonic Plague, Miasma, Flagellant, Flagrant Scarcity, Labourer Wage-Bargaining* |
-| **7** | **1381: The Peasants' Revolt** | *Historical Evidence & Forensic Extraction* | Jean Froissart (John Ball’s Sermon); Anonimalle Chronicle (Tower execution & Smithfield) | *Poll Tax, Serfdom Abolition, Radical Egalitarianism, Charter Revocation, Smithfield Climax* |
-| **8** | **Wars of the Roses & Bosworth (1455–1485)** | *Agency, Causation & Long-Term Legacy* | Crowland Chronicle; Chronicle of the Brut (Towton); Polydore Vergil (*Anglica Historia*) | *Bastard Feudalism, Dynastic Factionalism, Usurpation, Retinue, Bosworth Field, Tudor Settlement* |
-| **Capstone** | **Synoptic Monarchy Assessment** | *Synoptic Evaluation & Argumentation* | William I Obituary (1087); Henry de Bracton; John Gower (*Vox Clamantis*); 1485 Confirmation | *Autocracy, Absolute Monarchy, Divine Right, Institutional Restraint, Rule of Law* |
+| Enquiry | Lesson Title | Disciplinary Focus / Second-Order Concept | Core Archival Sources | Key Historical Actor / Voice | Taxonomy Category | Key Disciplinary Terms |
+|---|---|---|---|---|---|---|
+| **1** | **1066 & The Battle of Hastings** | *Change & Continuity / Causal Interaction* | Bayeux Tapestry; Anglo-Saxon Chronicle (MS C); William of Poitiers | Duke William of Normandy | `KEY HISTORICAL INDIVIDUAL` | *Housecarl, Fyrd, Witan, Feigned Retreat, Succession Crisis, Shield Wall* |
+| **2** | **Castles, Terror & Domesday** | *Dual-Source Utility & Provenance* | Bayeux Tapestry (Hastings motte); Orderic Vitalis; Domesday Book (Portchester/Fareham) | Orderic Vitalis | `KEY HISTORICAL INDIVIDUAL` | *Motte-and-Bailey, Castellan, Harrying of the North, Domesday Book, Subjugation, Feudal Tenure* |
+| **3** | **Crown vs Church: Henry II & Becket** | *Causation & Transformation* | Clause 3 Constitutions of Clarendon (1164); Edward Grim Eyewitness Account (1170) | Thomas Becket | `KEY HISTORICAL INDIVIDUAL` | *Benefit of Clergy, Criminous Clerks, Excommunication, Martyrdom, Papal Supremacy, Penance* |
+| **4** | **Magna Carta (1215): Liberty or Grab?** | *Historical Significance & Anachronism* | Roger of Wendover (Extortions); Magna Carta Clauses 12, 39, 61; Papal Annulment Bull | King John ("Lackland") | `KEY HISTORICAL INDIVIDUAL` | *Scutage, Baronial Oligarchy, Due Process, Habeas Corpus, Annulment, Constitutional Monarchy* |
+| **5** | **Doom Paintings, Tithes & Village Life** | *Historiographical Debate & Social Structure* | Luttrell Psalter (1330); Bishop’s Waltham Pipe Rolls (1210); Parish Doom Fresco | The Manorial Reeve | `REPRESENTATIVE HISTORICAL VOICE` | *Villein / Serf, Tithe, Manorialism, Open-Field System, Doom Painting, Corvée Labour* |
+| **6** | **1348: Black Death & Social Shatter** | *Turning Point Analysis & Demography* | Henry Knighton (Leicester Chronicle); Bishop Ralph of Shrewsbury (1349); Statute of Labourers (1351) | Henry Knighton | `KEY HISTORICAL INDIVIDUAL` | *Bubonic Plague, Pneumonic Plague, Miasma, Flagellant, Flagrant Scarcity, Labourer Wage-Bargaining* |
+| **7** | **1381: The Peasants' Revolt** | *Historical Evidence & Forensic Extraction* | Jean Froissart (John Ball’s Sermon); Anonimalle Chronicle (Tower execution & Smithfield) | Wat Tyler & John Ball | `KEY HISTORICAL INDIVIDUAL` | *Poll Tax, Serfdom Abolition, Radical Egalitarianism, Charter Revocation, Smithfield Climax* |
+| **8** | **Wars of the Roses & Bosworth (1455–1485)** | *Agency, Causation & Long-Term Legacy* | Crowland Chronicle; Chronicle of the Brut (Towton); Polydore Vergil (*Anglica Historia*) | King Richard III | `KEY HISTORICAL INDIVIDUAL` | *Bastard Feudalism, Dynastic Factionalism, Usurpation, Retinue, Bosworth Field, Tudor Settlement* |
+| **Capstone** | **Synoptic Monarchy Assessment** | *Synoptic Evaluation & Argumentation* | William I Obituary (1087); Henry de Bracton; John Gower (*Vox Clamantis*); 1485 Confirmation | King Edward I ("Longshanks") | `KEY HISTORICAL INDIVIDUAL` | *Autocracy, Absolute Monarchy, Divine Right, Institutional Restraint, Rule of Law* |
+
+---
+
+### Scheme of Work Document Key & Historical Figure Taxonomy
+
+To ensure balanced classroom parity between top-down political state actors and bottom-up collective social movements, our Key Stage 3 curriculum enforces a rigorous bipartite taxonomy:
+
+* **`KEY HISTORICAL INDIVIDUAL`**: Specific named historical figures, monarchs, statesmen, chroniclers, and radical leaders who exercised executive authority, recorded firsthand witness testimony, or led decisive political actions. Rendered in textbook spreads with authenticated primary portrait miniatures, lifespan markers, and decisive actions.
+* **`REPRESENTATIVE HISTORICAL VOICE`**: Composite historical archetypes representing broader social classes, labour forces, and collective resistance movements (e.g. *The Manorial Reeve*, *The New Model Army Agitator*, *The Enclosure Freeholder*, *The Child Factory Apprentice*, *The Luddite Weaver*). Rendered in textbook spreads as clean, full-width typographical feature cards without artificial stock imagery, giving equal academic dignity and analytical focus to ordinary working people.
 
 ---
 

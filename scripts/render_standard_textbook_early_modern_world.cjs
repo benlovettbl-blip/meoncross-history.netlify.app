@@ -761,6 +761,9 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       margin: 2px 0;
       display: block;
     }
+    .archival-source-box.expand-sm .archival-image {
+      height: 80px;
+    }
     .archival-source-box.expand-md .archival-image {
       height: 125px;
     }

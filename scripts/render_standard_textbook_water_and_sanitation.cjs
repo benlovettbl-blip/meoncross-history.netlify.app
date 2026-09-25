@@ -1560,6 +1560,9 @@ async function buildPublisherTextbookHtmlWater() {
       display: block;
       margin-bottom: 3.5px;
     }
+    .archival-source-box.expand-sm .archival-image {
+      height: 80px;
+    }
     .archival-source-box.expand-md .archival-image {
       height: 125px;
     }

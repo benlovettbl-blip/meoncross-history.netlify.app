@@ -110,6 +110,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Sultan Mehmed II (The Conqueror)',
         lifespan: '1432–1481',
         role: 'Sultan of the Ottoman Empire (Reigned 1451–1481)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Captured Constantinople in 1453, ending the Byzantine Empire and placing overland trade routes between Europe and Asia under Ottoman control.',
         actions: [
@@ -170,6 +171,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Sir Francis Drake',
         lifespan: 'c. 1540–1596',
         role: 'Naval Commander, Privateer & Circumnavigator',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'First Englishman to circumnavigate the globe (1577–1580); vice-admiral of the English fleet that defeated the Spanish Armada in 1588.',
         actions: [
@@ -230,6 +232,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Oba Ewuare II of Benin',
         lifespan: 'c. 1440–1473',
         role: 'Oba (King) of the Kingdom of Benin (Edo Empire)',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Transformed Benin from a city-state into a vast, fortified pre-colonial West African empire renowned for monumental earthworks and brass casting.',
         actions: [
@@ -290,6 +293,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Robert Catesby',
         lifespan: 'c. 1572–1605',
         role: 'Mastermind of the Gunpowder Plot',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Charismatic Warwickshire Catholic gentleman who orchestrated the 1605 conspiracy to blow up the House of Lords and assassinate King James I.',
         actions: [
@@ -410,6 +414,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         name: 'Oliver Cromwell',
         lifespan: '1599–1658',
         role: 'Lord Protector of the Commonwealth of England, Scotland & Ireland',
+        category: 'KEY HISTORICAL INDIVIDUAL',
         significance:
           'Commander of the New Model Army; ruled Britain as Lord Protector during the republican Commonwealth era (1653–1658).',
         actions: [
@@ -844,6 +849,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         type: 'Papal Diplomatic Parchment',
         title: 'The Treaty of Tordesillas: Dividing the Globe (1494)',
         image: getBase64Image('/images/tordesillas_map.jpg'),
+        expand: 'sm',
         context:
           'Brokered by Pope Alexander VI, this treaty drew an imaginary meridian 370 leagues west of the Cape Verde islands. Spain received exclusive sovereign rights to conquer all lands west of the line, while Portugal claimed everything to the east.',
         hingeQuestion:
@@ -986,6 +992,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         type: 'Abolitionist Architectural Plan',
         title: 'The Stowage Plan of the Slave Ship Brookes (1788)',
         image: getBase64Image('/images/brookes_ship.jpg'),
+        expand: 'sm',
         context:
           'Published by the Plymouth Abolition Committee in 1788, this cross-section diagram exposed how 454 enslaved human beings were chained in spaces measuring 6 feet by 16 inches. The diagram caused outrage across Britain as history’s first viral campaign image.',
         hingeQuestion:

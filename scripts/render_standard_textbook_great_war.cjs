@@ -1350,6 +1350,9 @@ async function buildPublisherTextbookHtmlGreatWar() {
       margin-bottom: 3px;
       display: block;
     }
+    .archival-source-box.expand-sm .archival-image {
+      height: 80px;
+    }
     .archival-source-box.expand-md .archival-image {
       height: 125px;
     }
