@@ -2153,15 +2153,15 @@ img::after {
     margin-left: -1rem !important;
     margin-right: -1rem !important;
     margin-top: -1rem !important;
-    height: 220px !important;
+    height: 120px !important;
   }
 
   .lesson-hero > div:last-child {
-    padding: 1.5rem 1rem !important;
+    padding: 0.85rem 1rem !important;
   }
 
   .lesson-hero h2 {
-    font-size: 1.6rem !important;
+    font-size: 1.25rem !important;
   }
 
   .content-container,
@@ -4304,8 +4304,8 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
 .lesson-hero.family-archive-hero,
 .lesson-hero.panoramic-hero {
   aspect-ratio: 16 / 4;
-  min-height: 260px;
-  max-height: 360px;
+  min-height: 130px;
+  max-height: 150px;
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -4315,7 +4315,7 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
   .lesson-hero.family-archive-hero,
   .lesson-hero.panoramic-hero {
     aspect-ratio: auto;
-    height: 240px;
+    height: 120px;
     background-position: right center;
   }
 }

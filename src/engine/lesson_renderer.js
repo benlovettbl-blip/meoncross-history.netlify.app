@@ -599,35 +599,9 @@ window.syncTeacherButtons = function (isActive) {
   }
 };
 
-window.updateClassroomToolsBadge = function () {
-  const badge = document.getElementById('classroom-tools-active-badge');
-  if (!badge) return;
-  const isTeacher = document.body && document.body.classList.contains('teacher-mode-active');
-  const isWb = document.body && document.body.classList.contains('whiteboard-mode-active');
-  badge.style.display = isTeacher || isWb ? 'inline-block' : 'none';
-};
-
-window.toggleLessonToolsMenu = function (e) {
-  if (e && e.stopPropagation) e.stopPropagation();
-  const popover = document.getElementById('classroom-tools-popover');
-  if (!popover) return;
-  const isVisible = popover.style.display === 'block';
-  popover.style.display = isVisible ? 'none' : 'block';
-};
-
-window.closeLessonToolsMenu = function () {
-  const popover = document.getElementById('classroom-tools-popover');
-  if (popover) popover.style.display = 'none';
-};
-
-if (typeof document !== 'undefined' && !window.__classroomToolsGlobalBound) {
-  window.__classroomToolsGlobalBound = true;
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.classroom-tools-dropdown-wrap')) {
-      window.closeLessonToolsMenu();
-    }
-  });
-}
+window.updateClassroomToolsBadge = function () {};
+window.toggleLessonToolsMenu = function () {};
+window.closeLessonToolsMenu = function () {};
 
 if (typeof localStorage !== 'undefined' && localStorage.getItem('teacherMode') === 'true') {
   if (typeof document !== 'undefined' && document.body) {
@@ -1612,40 +1586,7 @@ export function renderLesson(lesson) {
           <div class="sticky-lesson-actions">
           ${
             isTrip
-              ? `
-              <div class="classroom-tools-dropdown-wrap" style="position: relative; display: inline-block;">
-                <button type="button" class="btn btn-classroom-tools" id="btn-classroom-tools-toggle" onclick="event.stopPropagation(); window.toggleLessonToolsMenu();" style="padding: 6px 13px; font-size: 0.88rem; background: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: all 0.15s ease;" title="Expedition presentation & whiteboard tools">
-                  <i class="fa-solid fa-chalkboard-user" style="color: #2563eb;"></i>
-                  <span>Classroom Tools</span>
-                  <i class="fa-solid fa-chevron-down" style="font-size: 0.72rem; color: #64748b; margin-left: 2px;"></i>
-                  <span class="classroom-tools-badge" id="classroom-tools-active-badge" style="display: ${hasActiveTool ? 'inline-block' : 'none'}; width: 7px; height: 7px; border-radius: 50%; background: #10b981; margin-left: -2px;"></span>
-                </button>
-                <div class="classroom-tools-popover" id="classroom-tools-popover" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); width: 290px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15), 0 4px 6px -2px rgba(0,0,0,0.05); z-index: 1050; padding: 6px; overflow: hidden;">
-                  <div style="padding: 6px 10px 8px; border-bottom: 1px solid #f1f5f9; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b;">Classroom Delivery &amp; Tools</span>
-                    <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 600;">Trip Guide</span>
-                  </div>
-                  <button type="button" class="classroom-tool-item btn-whiteboard-toggle ${isWbActive ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-chalkboard" style="color: #2563eb; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
-                    <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center;">
-                        <span>Smartboard Projector View</span>
-                        <span class="wb-status-tag" style="font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: ${isWbActive ? '#dcfce7' : '#f1f5f9'}; color: ${isWbActive ? '#15803d' : '#475569'};">${isWbActive ? 'ON' : 'OFF'}</span>
-                      </div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Collapses hero banner &amp; optimizes layout for projection</div>
-                    </div>
-                  </button>
-                  <!-- Tool 2: Task Live Marking & Models -->
-                  <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openTaskWhiteboard();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-list-check" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
-                    <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Live Marking &amp; Models</div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Whole-class question cards with click-to-reveal model answers</div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            `
+              ? ''
               : `
               ${
                 grEntry
@@ -1662,55 +1603,6 @@ export function renderLesson(lesson) {
                   ? `<a href="/units/cme_new/visual_revision_guide.html#page_${4 + currentIndex * 2}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #f0f9ff; color: #0369a1; border: 1.5px solid #bae6fd; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's visual revision spread in the Masterclass Guide"><i class="fa-solid fa-book-open"></i> Revision Masterclass (Spread ${currentIndex + 1})</a>`
                   : ''
               }
-              <div class="classroom-tools-dropdown-wrap" style="position: relative; display: inline-block;">
-                <button type="button" class="btn btn-classroom-tools" id="btn-classroom-tools-toggle" onclick="event.stopPropagation(); window.toggleLessonToolsMenu();" style="padding: 6px 13px; font-size: 0.88rem; background: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: all 0.15s ease;" title="Classroom delivery, whiteboard and teacher guidance tools">
-                  <i class="fa-solid fa-chalkboard-user" style="color: #2563eb;"></i>
-                  <span>Classroom Tools</span>
-                  <i class="fa-solid fa-chevron-down" style="font-size: 0.72rem; color: #64748b; margin-left: 2px;"></i>
-                  <span class="classroom-tools-badge" id="classroom-tools-active-badge" style="display: ${hasActiveTool ? 'inline-block' : 'none'}; width: 7px; height: 7px; border-radius: 50%; background: #10b981; margin-left: -2px;"></span>
-                </button>
-                <div class="classroom-tools-popover" id="classroom-tools-popover" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); width: 295px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15), 0 4px 6px -2px rgba(0,0,0,0.05); z-index: 1050; padding: 6px; overflow: hidden;">
-                  <div style="padding: 6px 10px 8px; border-bottom: 1px solid #f1f5f9; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b;">Classroom Delivery &amp; Tools</span>
-                    <span style="font-size: 0.68rem; color: #94a3b8; font-weight: 600;">Edition ${activeUnit.edition || '2026.1'}</span>
-                  </div>
-
-                  <!-- Tool 1: Smartboard Projector View -->
-                  <button type="button" class="classroom-tool-item btn-whiteboard-toggle ${isWbActive ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-chalkboard" style="color: #2563eb; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
-                    <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center;">
-                        <span>Smartboard Projector View</span>
-                        <span class="wb-status-tag" style="font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: ${isWbActive ? '#dcfce7' : '#f1f5f9'}; color: ${isWbActive ? '#15803d' : '#475569'};">${isWbActive ? 'ON' : 'OFF'}</span>
-                      </div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Collapses hero banner &amp; optimizes layout for projection</div>
-                    </div>
-                  </button>
-
-                  <!-- Tool 2: Interactive Drawing Board -->
-                  <!-- Tool 2: Task Live Marking & Models -->
-                  <button type="button" class="classroom-tool-item" onclick="event.stopPropagation(); window.closeLessonToolsMenu(); window.openTaskWhiteboard();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-list-check" style="color: #0284c7; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
-                    <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a;">Live Marking &amp; Models</div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Whole-class question cards with click-to-reveal model answers</div>
-                    </div>
-                  </button>
-
-                  <!-- Tool 3: Teacher Guidance & Roadmap -->
-                  <button type="button" class="classroom-tool-item btn-teacher-mode-toggle ${isTeacherActive ? 'active' : ''}" id="teacher-mode-btn" data-action="toggle-teacher-mode" onclick="event.stopPropagation(); window.toggleTeacherMode();" style="width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border: none; background: transparent; border-radius: 6px; cursor: pointer; text-align: left; transition: background 0.15s;">
-                    <i class="fa-solid fa-user-tie" style="color: #7c3aed; font-size: 1rem; margin-top: 2px; width: 18px; text-align: center;"></i>
-                    <div style="flex: 1;">
-                      <div style="font-weight: 700; font-size: 0.86rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center;">
-                        <span>Teacher Guidance &amp; Notes</span>
-                        <span class="teacher-status-tag" style="font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: ${isTeacherActive ? '#dcfce7' : '#f1f5f9'}; color: ${isTeacherActive ? '#15803d' : '#475569'};">${isTeacherActive ? 'ON' : 'OFF'}</span>
-                      </div>
-                      <div style="font-size: 0.76rem; color: #64748b; line-height: 1.35; margin-top: 2px;">Reveals pedagogical primers, hinge questions &amp; lesson roadmap</div>
-                    </div>
-                  </button>
-
-                </div>
-              </div>
             `
           }
         </div>
@@ -1727,13 +1619,13 @@ export function renderLesson(lesson) {
   const existingFloatingBtn = document.getElementById('floating-stop-navigator-btn');
   if (existingFloatingBtn) existingFloatingBtn.remove();
 
-  // Full-Bleed Hero Image
+  // Full-Bleed Hero Image (Calibrated 140px Compact Height for Smartboards)
   html += `
-      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9));"></div>
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 4rem;">
-          <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonPrefix}</span>
-          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 2.5rem; margin: 0.5rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">${lesson.title}</h2>
+      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 140px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.25), rgba(15,23,42,0.85));"></div>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.25rem 4rem;">
+          <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem;">${lessonPrefix}</span>
+          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin: 0.2rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">${lesson.title}</h2>
         </div>
       </div>
     `;
@@ -1817,163 +1709,8 @@ export function renderLesson(lesson) {
     return processedText;
   };
 
-  if (lesson.teacher_notes) {
-    let notesHtml = '';
-    if (
-      lesson.teacher_notes &&
-      !Array.isArray(lesson.teacher_notes) &&
-      typeof lesson.teacher_notes === 'object'
-    ) {
-      const primerText = lesson.teacher_notes.primer
-        ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>`
-        : '';
-      const sourceContextText =
-        typeof lesson.teacher_notes.source_context === 'object' &&
-        lesson.teacher_notes.source_context !== null
-          ? Object.values(lesson.teacher_notes.source_context).join('<br/><br/>')
-          : lesson.teacher_notes.source_context;
-      const sourceContext = sourceContextText
-        ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">Source Context</span></strong><br/>${sourceContextText}</div>`
-        : '';
-      let deliveryPlanHtml = '';
-      if (lesson.teacher_notes.delivery_plan) {
-        const dp = lesson.teacher_notes.delivery_plan;
-        const renderLessonPhases = (lObj, label) => {
-          if (!lObj || !lObj.phases) return '';
-          const phaseItems = lObj.phases
-            .map(
-              (p) => `
-            <div style="display: flex; gap: 12px; margin-bottom: 8px; align-items: flex-start; font-size: 0.9rem;">
-              <span style="display: inline-block; background: #1e3a8a; color: #93c5fd; font-weight: 700; font-size: 0.78rem; padding: 2px 8px; border-radius: 4px; white-space: nowrap; font-family: monospace;">${p.time}</span>
-              <div style="flex: 1;">
-                <strong style="color: #f8fafc; font-size: 0.92rem;">${p.label}:</strong> <span style="color: #cbd5e1;">${p.instruction}</span>
-              </div>
-            </div>
-          `,
-            )
-            .join('');
-
-          return `
-            <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 6px; padding: 14px; flex: 1; min-width: 280px;">
-              <div style="font-weight: bold; color: #38bdf8; margin-bottom: 10px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-regular fa-clock"></i> ${lObj.title || label}
-              </div>
-              ${phaseItems}
-            </div>
-          `;
-        };
-
-        deliveryPlanHtml = `
-          <div style="margin-bottom: 22px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <strong style="color: #facc15; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-timeline"></i> Classroom Delivery Roadmap (${dp.format || '2-Lesson Sequence'})
-              </strong>
-              <span style="font-size: 0.8rem; color: #94a3b8; background: rgba(0,0,0,0.3); padding: 3px 8px; border-radius: 4px;">Departmental Timing Standard</span>
-            </div>
-            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-              ${renderLessonPhases(dp.lesson_1, 'Lesson 1')}
-              ${renderLessonPhases(dp.lesson_2, 'Lesson 2')}
-            </div>
-          </div>
-        `;
-      }
-
-      const objectivesHtml = (lesson.teacher_notes.objectives || [])
-        .map(
-          (note) => `
-          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
-            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><span class="archival-meta-tag" style="color: #facc15; margin-right: 6px;">OBJECTIVE</span> ${note.objective}</div>
-            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
-            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">HINGE QUESTION:</span> ${note.question}</div>` : ''}
-          </div>
-        `,
-        )
-        .join('');
-
-      let modelAnswerKeyHtml = '';
-      if (lesson.teacher_notes && lesson.teacher_notes.model_answer_key) {
-        const mak = lesson.teacher_notes.model_answer_key;
-        const keyId = `mak-rubric-${lesson.id || 'current'}`;
-        modelAnswerKeyHtml = `
-          <div class="teacher-notes-model-key" style="margin-top: 20px; background: rgba(15, 23, 42, 0.6); border: 1.5px solid #f59e0b; border-radius: 8px; padding: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid rgba(245, 158, 11, 0.35); padding-bottom: 8px; flex-wrap: wrap; gap: 8px;">
-              <strong style="color: #facc15; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-award"></i> Exemplar 4-Level Model Answer Key &bull; Whiteboard Feedback Rubric
-              </strong>
-              <button class="btn btn-pedagogy btn-pedagogy-sm" data-action="toggle-element" data-target-id="${keyId}" style="background: #f59e0b; color: #451a03; font-weight: 700; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer;">
-                <i class="fa-solid fa-chalkboard"></i> Toggle Whiteboard Feedback Rubric
-              </button>
-            </div>
-            <div id="${keyId}" style="display: block;">
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-bottom: 12px;">
-                ${['level_1', 'level_2', 'level_3', 'level_4']
-                  .map((lvlKey, idx) => {
-                    const lvl = mak[lvlKey];
-                    if (!lvl) return '';
-                    const borderCol =
-                      idx === 0
-                        ? '#94a3b8'
-                        : idx === 1
-                          ? '#38bdf8'
-                          : idx === 2
-                            ? '#34d399'
-                            : '#f59e0b';
-                    const bgCol =
-                      idx === 3 ? 'rgba(245, 158, 11, 0.12)' : 'rgba(255, 255, 255, 0.05)';
-                    return `
-                    <div style="background: ${bgCol}; border: 1.5px solid ${borderCol}; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
-                      <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                          <strong style="color: ${borderCol}; font-size: 0.85rem; text-transform: uppercase;">Level ${idx + 1} (${lvl.marks || (idx === 0 ? '1–2 Marks' : idx === 1 ? '3–4 Marks' : idx === 2 ? '5–6 Marks' : '7–8 Marks')})</strong>
-                          ${idx === 3 ? '<span style="background: #f59e0b; color: #451a03; font-size: 0.68rem; font-weight: 800; padding: 2px 6px; border-radius: 3px; text-transform: uppercase;">Target Exemplar</span>' : ''}
-                        </div>
-                        <div style="font-weight: 700; color: #f8fafc; font-size: 0.9rem; margin-bottom: 4px;">${lvl.title}</div>
-                        <div style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.35; margin-bottom: 8px;">${lvl.descriptor}</div>
-                      </div>
-                      <div style="background: rgba(0,0,0,0.35); border-left: 3px solid ${borderCol}; padding: 8px 10px; border-radius: 4px; color: #f1f5f9; font-size: 0.82rem; font-style: italic; line-height: 1.4;">
-                        <strong>Whiteboard Model:</strong> &ldquo;${lvl.exemplar}&rdquo;
-                      </div>
-                    </div>
-                  `;
-                  })
-                  .join('')}
-              </div>
-            </div>
-          </div>
-        `;
-      }
-      notesHtml =
-        primerText + deliveryPlanHtml + sourceContext + objectivesHtml + modelAnswerKeyHtml;
-    } else if (Array.isArray(lesson.teacher_notes)) {
-      notesHtml = lesson.teacher_notes
-        .map(
-          (note) => `
-          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
-            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><span class="archival-meta-tag" style="color: #facc15; margin-right: 6px;">OBJECTIVE</span> ${note.objective}</div>
-            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
-            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">HINGE QUESTION:</span> ${note.question}</div>` : ''}
-          </div>
-        `,
-        )
-        .join('');
-    } else {
-      notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
-    }
-
-    if (!isTrip) {
-      html += `
-          <div class="teacher-note">
-            <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
-            ${notesHtml}
-          </div>
-        `;
-    }
-  } else {
-    // If no teacher notes but we somehow had objectives elsewhere (fallback)
-    if (!isTrip) {
-    }
-  }
+  // Note: Teacher Guidance, Pedagogical Primers, and Hinge Questions
+  // are routed to the Departmental Portal (?view=department-portal) for staff lesson planning.
 
   if (
     lesson.sources &&

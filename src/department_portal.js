@@ -1137,9 +1137,12 @@ function renderCurriculumTab(container) {
                       <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 0.92rem;">
                         ${enq.title}
                       </div>
-                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.4; font-style: italic;">
+                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.4; font-style: italic; margin-bottom: 8px;">
                         &ldquo;${enq.enquiryQuestion}&rdquo;
                       </div>
+                      <button type="button" class="btn-sow-guide-toggle" onclick="window.toggleSowEnquiryDetails('${currentUnit.unitId}', ${idx})" style="font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid #93c5fd; background: #eff6ff; color: #1e40af; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
+                        <i class="fa-solid fa-chalkboard-user"></i> <span id="sow-toggle-label-${idx}">Teacher Guidance &amp; Hinge Questions</span>
+                      </button>
                     </td>
                     <td style="padding: 14px 16px;">
                       <span style="display: inline-block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; line-height: 1.3;">
@@ -1178,6 +1181,11 @@ function renderCurriculumTab(container) {
                           )
                           .join('')}
                       </div>
+                    </td>
+                  </tr>
+                  <tr id="sow-drawer-${idx}" style="display: none; background: #f8fafc;">
+                    <td colspan="6" style="padding: 16px 20px; border-bottom: 2px solid #cbd5e1;">
+                      <div id="sow-drawer-content-${idx}"></div>
                     </td>
                   </tr>
                 `;
@@ -1306,4 +1314,149 @@ if (typeof window !== 'undefined') {
       renderPedagogyTab(contentEl);
     }
   };
+
+  window.toggleSowEnquiryDetails = function (unitId, lessonIndex) {
+    const drawer = document.getElementById(`sow-drawer-${lessonIndex}`);
+    const label = document.getElementById(`sow-toggle-label-${lessonIndex}`);
+    if (!drawer) return;
+    const isVisible = drawer.style.display !== 'none';
+    if (isVisible) {
+      drawer.style.display = 'none';
+      if (label) label.textContent = 'Teacher Guidance & Hinge Questions';
+    } else {
+      drawer.style.display = 'table-row';
+      if (label) label.textContent = 'Hide Teacher Guidance';
+      const content = document.getElementById(`sow-drawer-content-${lessonIndex}`);
+      if (content) {
+        renderSowEnquiryGuidance(content, unitId, lessonIndex);
+      }
+    }
+  };
+}
+
+async function renderSowEnquiryGuidance(container, unitId, lessonIndex) {
+  let db = (typeof window !== 'undefined' && window.db) || {};
+  if ((!db || Object.keys(db).length === 0) && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch('/database.json');
+      db = await res.json();
+      if (typeof window !== 'undefined') window.db = db;
+    } catch (e) {
+      console.warn('Failed to load database.json:', e);
+    }
+  }
+  const unit = (db && db[unitId]) || {};
+  const lessons = (unit.data && unit.data.lessons) || unit.lessons || [];
+  const lesson = lessons[lessonIndex] || {};
+  const tn = lesson.teacher_notes || {};
+
+  let primerHtml = '';
+  if (tn.primer) {
+    primerHtml = `
+      <div style="background: #ffffff; border: 1px solid #bfdbfe; border-left: 4px solid #1e3a8a; border-radius: 6px; padding: 14px 18px; margin-bottom: 14px;">
+        <div style="font-weight: 800; font-size: 0.78rem; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.06em; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-graduation-cap"></i> Pedagogical Primer &amp; Disciplinary Intent
+        </div>
+        <div style="font-size: 0.88rem; color: #1e293b; line-height: 1.55;">
+          ${tn.primer}
+        </div>
+      </div>
+    `;
+  }
+
+  let objectivesHtml = '';
+  if (Array.isArray(tn.objectives) && tn.objectives.length > 0) {
+    objectivesHtml = `
+      <div style="margin-bottom: 14px;">
+        <div style="font-weight: 800; font-size: 0.78rem; text-transform: uppercase; color: #475569; letter-spacing: 0.06em; margin-bottom: 8px;">
+          Learning Objectives &amp; Targeted Diagnostic Hinge Questions
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+          ${tn.objectives
+            .map(
+              (obj, oIdx) => `
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px;">
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.86rem; margin-bottom: 4px;">
+                <span style="background: #eff6ff; color: #1e40af; font-size: 0.72rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-right: 6px;">OBJ ${oIdx + 1}</span>
+                ${obj.objective}
+              </div>
+              <div style="font-size: 0.8rem; color: #475569; line-height: 1.45; margin-bottom: 8px;">
+                ${obj.primer || ''}
+              </div>
+              ${
+                obj.question
+                  ? `
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 8px 10px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+                  <span style="font-weight: 800; text-transform: uppercase; font-size: 0.7rem; color: #059669; display: block; margin-bottom: 2px;">
+                    <i class="fa-solid fa-comments"></i> Hinge Discussion Question:
+                  </span>
+                  ${obj.question}
+                </div>
+              `
+                  : ''
+              }
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  let deliveryHtml = '';
+  if (tn.delivery_plan && (tn.delivery_plan.lesson_1 || tn.delivery_plan.phases)) {
+    const dp = tn.delivery_plan;
+    const renderPhases = (lObj, label) => {
+      if (!lObj || !lObj.phases) return '';
+      return `
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; flex: 1; min-width: 260px;">
+          <div style="font-weight: 800; color: #0284c7; font-size: 0.84rem; margin-bottom: 8px;">
+            <i class="fa-regular fa-clock"></i> ${lObj.title || label}
+          </div>
+          ${(lObj.phases || [])
+            .map(
+              (p) => `
+            <div style="display: flex; gap: 8px; font-size: 0.8rem; margin-bottom: 6px;">
+              <span style="background: #e0f2fe; color: #0369a1; font-weight: 700; padding: 1px 6px; border-radius: 3px; font-family: monospace; white-space: nowrap;">${p.time}</span>
+              <div><strong>${p.label}:</strong> <span style="color: #475569;">${p.instruction}</span></div>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      `;
+    };
+
+    deliveryHtml = `
+      <div style="margin-bottom: 14px;">
+        <div style="font-weight: 800; font-size: 0.78rem; text-transform: uppercase; color: #475569; letter-spacing: 0.06em; margin-bottom: 8px;">
+          Classroom Delivery Roadmap (${dp.format || 'Recommended Timing'})
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          ${dp.lesson_1 ? renderPhases(dp.lesson_1, 'Lesson 1') : ''}
+          ${dp.lesson_2 ? renderPhases(dp.lesson_2, 'Lesson 2') : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  const fallbackNotice =
+    !primerHtml && !objectivesHtml
+      ? `<div style="font-size: 0.85rem; color: #64748b; font-style: italic;">Detailed pedagogical notes are loading from curriculum database.</div>`
+      : '';
+
+  container.innerHTML = `
+    <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 18px 20px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+      ${primerHtml}
+      ${objectivesHtml}
+      ${deliveryHtml}
+      ${fallbackNotice}
+      <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-top: 12px; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+        <a href="/?view=lessons&unit=${unitId}&lesson=${lessonIndex + 1}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #1e3a8a; text-decoration: none; padding: 5px 12px; border: 1.5px solid #1e3a8a; border-radius: 6px; background: #fff;">
+          <span>Open Lesson in Hub</span> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem;"></i>
+        </a>
+      </div>
+    </div>
+  `;
 }
