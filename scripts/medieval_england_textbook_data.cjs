@@ -81,7 +81,7 @@ module.exports = function getMedievalData(helpers = {}) {
           'Wrote candidly that God would punish William for starving 100,000 Yorkshire peasants to death during the Harrying.',
           'Recorded the meticulous administrative terror of William’s tax inquests across the English shires.',
         ],
-        image: getBase64Image('/images/portchester_keep.jpg'),
+        image: getBase64Image('/images/orderic_vitalis_scribe.jpg'),
       },
       archivalOddity: {
         badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
@@ -241,7 +241,7 @@ module.exports = function getMedievalData(helpers = {}) {
           'Inspected tithe deliveries to the parish church, ensuring every tenth sheaf of wheat was delivered to the rector’s barn.',
           'Reported village infractions to the manorial court, from stray pigs rooting in barley to brewers selling sour ale.',
         ],
-        image: getBase64Image('/images/medieval_church_interior.jpg'),
+        image: getBase64Image('/images/manorial_reeve_portrait.jpg'),
       },
       archivalOddity: {
         badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
@@ -294,7 +294,7 @@ module.exports = function getMedievalData(helpers = {}) {
           'Recorded the agricultural standstill: unharvested wheat rotting in rain-soaked fields and cattle wandering through towns.',
           'Wrote indignantly of surviving peasants who refused to work unless paid double or triple their pre-plague wages.',
         ],
-        image: getBase64Image('/images/plague_burial.jpg'),
+        image: getBase64Image('/images/henry_knighton_chronicler.jpg'),
       },
       archivalOddity: {
         badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
@@ -347,7 +347,7 @@ module.exports = function getMedievalData(helpers = {}) {
           'Tyler led 60,000 peasants from Kent and Essex into London, burning the Savoy Palace and executing the King’s treasurer.',
           'Met King Richard II at Mile End and Smithfield, demanding the end of villeinage and freedom of trade across England.',
         ],
-        image: getBase64Image('/images/tyler_death.png'),
+        image: getBase64Image('/images/wat_tyler_john_ball.jpg'),
       },
       archivalOddity: {
         badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
@@ -366,7 +366,7 @@ module.exports = function getMedievalData(helpers = {}) {
           <span class="source-date-micro">c. 1470s</span>
         </div>
         <div class="archival-title">Jean Froissart: The Murder of Wat Tyler at Smithfield</div>
-        <img class="archival-image" src="${getBase64Image('/images/peasants_revolt.jpg')}" alt="Peasants Revolt Froissart">
+        <img class="archival-image" src="${getBase64Image('/images/death_wat_tyler_smithfield.jpg')}" alt="Murder of Wat Tyler Froissart">
         <div class="archival-body">
           "Tyler said to the King: 'Thinkest thou that I will take thy word?' The Mayor of London drew his sword and struck Tyler such a blow on the head that he fell from his horse to the ground... The King said: 'Sirs, will you shoot your King? I am your captain, follow me!'"
         </div>
@@ -453,7 +453,7 @@ module.exports = function getMedievalData(helpers = {}) {
           'Crushed Welsh independence and constructed an "iron ring" of state-of-the-art concentric stone castles (Caernarfon, Conwy, Harlech).',
           'Demonstrated that a king was most powerful not when ruling as a lone tyrant, but when consulting his barons and commons in Parliament.',
         ],
-        image: getBase64Image('/images/portchester_seawards.jpg'),
+        image: getBase64Image('/images/edward_i_sedilia.jpg'),
       },
       archivalOddity: {
         badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',

@@ -184,6 +184,22 @@ async function auditPageBudget(page, options = {}) {
           });
           const isTextClipped = clippedElements.length > 0;
 
+          // 2c. Primary Visual Source Framing Audit (.archival-image object-fit: cover check)
+          const croppedSources = [];
+          const archivalImgs = p.querySelectorAll('.archival-image');
+          archivalImgs.forEach((img) => {
+            const style = window.getComputedStyle(img);
+            if (style.objectFit === 'cover') {
+              const src = img.getAttribute('src') || '';
+              const alt = img.getAttribute('alt') || '';
+              croppedSources.push({
+                alt,
+                src: src.slice(0, 45),
+              });
+            }
+          });
+          const isCroppedSource = croppedSources.length > 0;
+
           // 3. Gap Above Footer & Page Bottom Underflow Audit
           const footer =
             p.querySelector('.page-footer-strip') ||
@@ -352,7 +368,8 @@ async function auditPageBudget(page, options = {}) {
             isVoidInternalProse ||
             isVoidSection ||
             isVoidBackCover ||
-            isTextClipped
+            isTextClipped ||
+            isCroppedSource
           ) {
             hasErrors = true;
           }
@@ -386,6 +403,8 @@ async function auditPageBudget(page, options = {}) {
             clutterViolations,
             isTextClipped,
             clippedElements,
+            isCroppedSource,
+            croppedSources,
             pageId: p.id || `Page ${pageNum}`,
           });
         });
@@ -458,6 +477,12 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
         .map((c) => `"${c.textSnippet}" (-${c.clippedPx}px)`)
         .join(', ');
       issues.push(`❌ TEXT CLIPPED [${snippets}]`);
+    }
+    if (res.isCroppedSource) {
+      const srcList = res.croppedSources.map((c) => `"${c.alt || c.src}"`).join(', ');
+      issues.push(
+        `❌ CROPPED SOURCE [${srcList}] (.archival-image object-fit: cover prohibited; use contain)`,
+      );
     }
     if (res.isVoidFooter) {
       issues.push(`❌ VOID FOOTER (${res.gapAboveFooter}px > 25px max)`);

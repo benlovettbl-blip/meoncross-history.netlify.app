@@ -104,6 +104,7 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
           r.isOverflow ||
           r.isTextClipped ||
           r.isVoidBackCover ||
+          r.isCroppedSource ||
           (isStrict &&
             (r.isVoidSection ||
               r.isVoidInternalProse ||
