@@ -1557,18 +1557,20 @@ export async function renderLessonsView() {
       <div style="padding: 30px; border-top: 1px solid #e2e8f0;">
         ${renderUnitSynopsis(data, unitId)}
         
+        ${renderKeyTopicLessonsHTML(data, unitId, data)}
+
         ${
           isTrip
             ? ''
             : `
-          <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; border-radius: 12px; padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+          <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; border-radius: 12px; padding: 20px 24px; margin-top: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="background: rgba(245, 158, 11, 0.2); color: #fef08a; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
                 <i class="fa-solid fa-circle-question"></i>
               </div>
               <div>
-                <h4 style="margin: 0; font-size: 1.05rem; color: #ffffff; font-family: 'Montserrat', sans-serif;">Interactive Quizzing &amp; Spaced Recall</h4>
-                <p style="margin: 3px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Test your knowledge across all unit questions with timed diagnostic quizzes, 3-Box Leitner flashcards &amp; whiteboard drills.</p>
+                <h4 style="margin: 0; font-size: 1.05rem; color: #ffffff; font-family: 'Montserrat', sans-serif;">Unit Revision: Interactive Quizzing &amp; Spaced Recall</h4>
+                <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Ready to consolidate this unit? Test your knowledge across all unit questions with timed diagnostic quizzes, 3-Box Leitner flashcards &amp; whiteboard drills.</p>
               </div>
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -1580,8 +1582,6 @@ export async function renderLessonsView() {
           </div>
         `
         }
-        
-        ${renderKeyTopicLessonsHTML(data, unitId, data)}
       </div>
     </div>
   `;
