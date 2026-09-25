@@ -2041,16 +2041,22 @@ const updatedUnitData = {
   is_ks3: true,
 };
 
-// Write output files: BOTH data.js AND data_v2_4act.js
-const codeContent = `const early_modern_world = ${JSON.stringify(updatedUnitData, null, 2)};\n\nexport const unitData = early_modern_world;\nexport default early_modern_world;\n`;
-fs.writeFileSync(targetFile, codeContent, 'utf8');
-console.log(`✅ Successfully authored 9 Christine Counsell 4-Act Lessons in ${targetFile}!`);
+// Remove any legacy root sources from lessons to prevent top-of-lesson dump
+early_modern_lessons.forEach((l) => {
+  delete l.sources;
+  l.narrative_blocks.forEach((b) => {
+    if (b.source && b.source.shelfmark && /ICA-|RS-|FO\s*93|BA\s*183/i.test(b.source.shelfmark)) {
+      b.source.shelfmark = 'British Library, London • Cartographic Collection';
+    }
+  });
+});
 
+// Staged output file: data_v2_4act.js ONLY (data.js is protected for classroom workbooks)
 const v2TargetFile = path.join(ROOT_DIR, 'units', 'early_modern_world', 'data_v2_4act.js');
+const codeContent = `const early_modern_world = ${JSON.stringify(updatedUnitData, null, 2)};\n\nexport const unitData = early_modern_world;\nexport default early_modern_world;\n`;
 fs.writeFileSync(v2TargetFile, codeContent, 'utf8');
 console.log(`✅ Successfully synchronized 9 Christine Counsell 4-Act Lessons in ${v2TargetFile}!`);
 
-// Verify syntax for both
-execSync(`node --check "${targetFile}"`, { stdio: 'inherit' });
+// Verify syntax
 execSync(`node --check "${v2TargetFile}"`, { stdio: 'inherit' });
-console.log('✅ Syntax validation passed cleanly for both files.');
+console.log('✅ Syntax validation passed cleanly for data_v2_4act.js.');

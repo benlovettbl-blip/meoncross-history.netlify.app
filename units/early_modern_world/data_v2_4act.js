@@ -737,34 +737,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: The Silk Road & Trade Bottleneck (1450)',
-          src: '/images/silk_route_colored_map.jpg',
-          caption:
-            'Contemporary map illustrating the historic overland Silk Road caravan routes linking China and Europe, which were heavily taxed and blocked after the Ottoman conquest of Constantinople in 1453.',
-          shelfmark: 'Imperial Cartographic Archive (Shelfmark: ICA-SILK-1450)',
-          citation: 'British Library, London.',
-          context:
-            'For centuries, silk, porcelain, and spices moved across Central Asia along the Silk Road. In 1453, the Ottoman Empire seized Constantinople and imposed crushing tariffs on Christian traders. **Hinge Question:** Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
-          hinge_question:
-            'Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: The Catalan Atlas Depiction of Mansa Musa of Mali (1375)',
-          src: '/images/mansa_musa_catalan.jpg',
-          caption:
-            'Illuminated maritime map by Majorcan Jewish cartographer Cresques Abraham, depicting the Emperor of Mali seated upon a golden throne holding a massive gold nugget.',
-          shelfmark: 'Bibliothèque nationale de France (Shelfmark: MS Espagnol 30)',
-          citation: 'Département des Manuscrits, BnF, Paris.',
-          context:
-            'The Catalan Atlas was the most sophisticated map of the medieval Mediterranean world. It placed Emperor Mansa Musa at the center of the Sahara, describing him as the richest lord in all the earth. **Hinge Question:** Why did 14th-century European monarchs view West Africa as an unimaginable reservoir of bullion rather than a region to be dominated?',
-          hinge_question:
-            'Why did 14th-century European monarchs view West Africa as an unimaginable reservoir of bullion rather than a region to be dominated?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -778,10 +750,10 @@ const early_modern_world = {
           source: {
             letter: 'A',
             title: 'Source A: The Silk Road & Trade Bottleneck (1450)',
-            src: '/images/silk_route_colored_map.jpg',
+            src: '/images/silk_road.jpg',
             caption:
               'Contemporary map illustrating the historic overland Silk Road caravan routes linking China and Europe, which were heavily taxed and blocked after the Ottoman conquest of Constantinople in 1453.',
-            shelfmark: 'Imperial Cartographic Archive (Shelfmark: ICA-SILK-1450)',
+            shelfmark: 'British Library, London • Cartographic Collection',
             citation: 'British Library, London.',
             context:
               'For centuries, silk, porcelain, and spices moved across Central Asia along the Silk Road. In 1453, the Ottoman Empire seized Constantinople and imposed crushing tariffs on Christian traders. **Hinge Question:** Why did the Ottoman bottleneck on the Silk Road force European monarchs to look toward the Atlantic Ocean?',
@@ -1234,34 +1206,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Map of the Treaty of Tordesillas Meridian Line (1494)',
-          src: '/images/tordesillas_map.png',
-          caption:
-            'Papal meridian line drawn by Pope Alexander VI in 1493 and finalized at Tordesillas in 1494, dividing the entire non-European globe between Spain and Portugal.',
-          shelfmark: 'General Archive of the Indies (Shelfmark: AGI-PAT-1494-01)',
-          citation: 'Archivo General de Indias, Seville, Spain.',
-          context:
-            'Pope Alexander VI, a Spaniard by birth, decreed that all newly discovered lands west of a line 370 leagues west of Cape Verde belonged to Spain, while lands east belonged to Portugal. England, France, and other nations were completely excluded. **Hinge Question:** Why did French King Francis I famously demand to see "the clause in Adam’s will" that excluded his nation from dividing the earth?',
-          hinge_question:
-            'Why did French King Francis I famously demand to see "the clause in Adam’s will" that excluded his nation from dividing the earth?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: The Armada Portrait of Queen Elizabeth I (1588)',
-          src: '/images/armada_portrait.jpg',
-          caption:
-            'Masterpiece attributed to George Gower commemorating the English defeat of the Spanish Armada, depicting Elizabeth with her hand resting upon the globe.',
-          shelfmark: 'Woburn Abbey Collection (Shelfmark: WOB-ARM-1588)',
-          citation: 'The Duke of Bedford and the Trustees of the Bedford Estates.',
-          context:
-            'In the painting, the sunlit English fleet sails peacefully on the left, while on the right, the Catholic Spanish Armada is dashed against the rocks by violent storms. Elizabeth’s hand rests firmly upon the Americas. **Hinge Question:** How does this portrait communicate that God personally favored Protestant England over Catholic Spain?',
-          hinge_question:
-            'How does this portrait communicate that God personally favored Protestant England over Catholic Spain?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -1730,34 +1674,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Contemporary Plan of the Jamestown Triangular Fort (1607)',
-          src: '/images/jamestown_fort.jpg',
-          caption:
-            'Architectural plan of the fortified settlement built by the Virginia Company along the James River, showing artillery bastions at each triangle corner.',
-          shelfmark: 'Virginia Company Cartographic Records (Shelfmark: VCR-JAM-1607)',
-          citation: 'The National Archives, Kew (CO 1/1).',
-          context:
-            'In May 1607, 104 English settlers established Jamestown in Virginia. Half died within six months from starvation and malaria. The triangular fort was heavily palisaded against indigenous Powhatan archers and Spanish warships. **Hinge Question:** Why does the defensive design of the fort prove that the English felt vulnerable and surrounded, rather than dominant?',
-          hinge_question:
-            'Why does the defensive design of the fort prove that the English felt vulnerable and surrounded, rather than dominant?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Sir Thomas Roe at the Imperial Court of Mughal Emperor Jahangir (1615)',
-          src: '/images/sir_thomas_roe.jpg',
-          caption:
-            'Mughal miniature painting depicting King James I’s ambassador Sir Thomas Roe presenting credentials and gifts to Emperor Jahangir in Agra.',
-          shelfmark: 'Imperial Mughal Collection (Shelfmark: IMC-JAH-ROE-1615)',
-          citation: 'Victoria and Albert Museum, London.',
-          context:
-            'In 1615, Sir Thomas Roe spent three years at the Mughal court seeking trading concessions for the East India Company. Jahangir was unimpressed by English gifts (woollen cloth and clocks), but granted permission to establish trading "factories" at Surat. **Hinge Question:** Why did the Mughal Emperor treat the English ambassador as a minor supplicant rather than an equal superpower?',
-          hinge_question:
-            'Why did the Mughal Emperor treat the English ambassador as a minor supplicant rather than an equal superpower?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -2220,34 +2136,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Contemporary Engraving of the Gunpowder Plot Conspirators (1605)',
-          src: '/images/gunpowder_conspirators.jpg',
-          caption:
-            'Dutch engraving by Crispijn van de Passe the Elder showing the Gunpowder Plot conspirators, including Robert Catesby, Guy Fawkes, and Thomas Winter, plotting in secret.',
-          shelfmark: 'National Portrait Gallery Prints & Drawings (Shelfmark: NPG-D1078)',
-          citation: 'National Portrait Gallery, London.',
-          context:
-            'Printed across Europe immediately after the plot’s discovery, this engraving shows the conspirators in huddle, scheming to blow up Parliament. **Hinge Question:** How does this contemporary engraving portray the Catholic conspirators as secretive, dangerous subversives?',
-          hinge_question:
-            'How does this contemporary engraving portray the Catholic conspirators as secretive, dangerous subversives?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: The Anonymous Monteagle Warning Letter (October 1605)',
-          src: '/images/monteagle_letter.jpeg',
-          caption:
-            'Anonymous letter delivered to Catholic peer Lord Monteagle on 26 October 1605, warning him to avoid Parliament because "they shall receive a terrible blow."',
-          shelfmark: 'State Papers Domestic (Shelfmark: SP 14/216/2)',
-          citation: 'The National Archives, Kew.',
-          context:
-            'Lord Monteagle immediately delivered this mysterious letter to King James’s chief minister, Robert Cecil. The letter warned: <em>"Retire yourself into your country where you may expect the event in safety... for God and man hath concurred to punish the wickedness of this time."</em> **Hinge Question:** Why did the author of the letter warn Monteagle, and how did this single letter destroy the entire conspiracy?',
-          hinge_question:
-            'Why did the author of the letter warn Monteagle, and how did this single letter destroy the entire conspiracy?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -2719,34 +2607,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Contemporary Engraving of the Execution of King Charles I (1649)',
-          src: '/images/charles_i_execution.jpg',
-          caption:
-            'German broadsheet engraving depicting the public beheading of King Charles I upon a black scaffold outside the Banqueting House in Whitehall on 30 January 1649.',
-          shelfmark: 'British Museum Prints & Drawings (Shelfmark: 1856,0712.234)',
-          citation: 'Department of Prints and Drawings, British Museum.',
-          context:
-            'On a freezing morning on 30 January 1649, Charles I was led onto a scaffold. The executioner severed his head with a single axe blow and held it up to the stunned crowd, provoking a collective groan. **Hinge Question:** Why did the execution of Charles I send shockwaves of terror across the royal courts of Europe?',
-          hinge_question:
-            'Why did the execution of Charles I send shockwaves of terror across the royal courts of Europe?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: The Great Seal of the Commonwealth of England (1651)',
-          src: '/images/great_seal_1651.png',
-          caption:
-            'The official state seal designed by Thomas Simon for the English Republic, depicting the House of Commons in active debate instead of a monarch.',
-          shelfmark: 'National Archives Seal Collection (Shelfmark: SC 13/F112)',
-          citation: 'The National Archives, Kew.',
-          context:
-            'Following the abolition of the monarchy, the Commonwealth rejected traditional royal seals depicting the King on horseback. Instead, the seal showed the House of Commons with the inscription: <em>"In the third year of freedom by God’s blessing restored, 1651."</em> **Hinge Question:** How does this visual artifact symbolize that political sovereignty had shifted from a royal person to an elected assembly?',
-          hinge_question:
-            'How does this visual artifact symbolize that political sovereignty had shifted from a royal person to an elected assembly?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -3208,34 +3068,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: The Courtyard of the Second Royal Exchange, London (c. 1670)',
-          src: '/images/royal_exchange_courtyard.jpg',
-          caption:
-            'Contemporary engraving showing merchants from Turkey, Holland, the West Indies, and Venice conducting international transactions in the pillared quadrangle of the Royal Exchange.',
-          shelfmark: 'Guildhall Library Print Collection (Shelfmark: GL-PR-ROY-1670)',
-          citation: 'London Metropolitan Archives, City of London.',
-          context:
-            'Rebuilt after the Great Fire of 1666, the Royal Exchange was the pulsating nervous system of British capitalism. Merchants gathered daily under specific colonnades ("walks") assigned to different global commodities: the Silk Walk, Jamaica Walk, and Virginia Walk. **Hinge Question:** How does this image prove that London was evolving into the financial capital of the world?',
-          hinge_question:
-            'How does this image prove that London was evolving into the financial capital of the world?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Claude de Jongh’s View of London Bridge on the Thames (1632)',
-          src: '/images/early_mod_l6_banner.jpg',
-          caption:
-            'Oil painting by Dutch master Claude de Jongh showing the dense maritime shipping, merchant warehouses, and waterborne commerce along the River Thames at the entrance to the City of London.',
-          shelfmark: 'Kenwood House Collection (Shelfmark: KH-DJ-1632)',
-          citation: 'English Heritage, Kenwood House, London.',
-          context:
-            'London’s transformation into a global financial powerhouse was carried upon the waters of the Thames. Thousands of merchant vessels, colliers, and barges unloaded sugar, tobacco, spices, and timber along custom quays. **Hinge Question:** Why was maritime river access to the Port of London essential for Britain’s commercial transformation?',
-          hinge_question:
-            'Why did maritime river access to the Port of London essential for Britain’s commercial transformation?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -3728,34 +3560,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: Schematic Map of the Transatlantic Triangular Trade Network',
-          src: '/images/triangular_trade.png',
-          caption:
-            'Cartographic diagram illustrating the prevailing Atlantic wind currents and the three commercial legs connecting Britain, West Africa, and the Caribbean plantations.',
-          shelfmark: 'Maritime Historical Cartography (Shelfmark: MHC-TRI-1750)',
-          citation: 'National Maritime Museum, Greenwich, London.',
-          context:
-            'The Triangular Trade operated on a self-reinforcing financial cycle. British manufactured goods bought human captives in West Africa; captive labor produced sugar, tobacco, and rum in the Americas; and raw colonial commodities were shipped back to Britain to feed domestic consumption and manufacturing. **Hinge Question:** How did the geography of Atlantic trade winds and ocean currents dictate the three legs of the trade?',
-          hinge_question:
-            'How did the geography of Atlantic trade winds and ocean currents dictate the three legs of the trade?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Diagram of the Slave Ship Brookes (1788)',
-          src: '/images/brookes_ship.jpg',
-          caption:
-            'Forensic architectural cross-section of the Liverpool slave ship Brookes, published by the Abolition Society, illustrating 454 enslaved Africans packed into its lower decks.',
-          shelfmark: 'Abolitionist Print Archives (Shelfmark: APA-BRK-1788)',
-          citation: 'The British Library, London (Add MS 21256).',
-          context:
-            'Under the 1788 Dolben Act, the Brookes was legally permitted to carry 454 captives, allocating a space measuring six feet by sixteen inches per man. On previous voyages before regulation, the captain had crammed over 600 human beings into the sweltering, airless hold. **Hinge Question:** Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
-          hinge_question:
-            'Why did the Abolition Committee choose a cold, technical engineering blueprint rather than an emotional painting to sway public opinion?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -4230,35 +4034,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title:
-            'Source A: Contemporary Print of the Jamaican Maroons in the Blue Mountains (1739)',
-          src: '/images/jamaica_maroons.jpg',
-          caption:
-            'Engraving depicting armed Jamaican Maroon warriors negotiating the 1739 Peace Treaty with British colonial officers in the rugged Blue Mountains.',
-          shelfmark: 'West India Committee Collection (Shelfmark: WIC-MAR-1739)',
-          citation: 'The National Archives, Kew (CO 137/23).',
-          context:
-            'Escaped Africans established independent mountain communities known as Maroons. Led by Queen Nanny, they used guerrilla warfare and camouflage so effectively that the British military surrendered and signed a treaty granting them land and total autonomy in 1739. **Hinge Question:** Why did the British Empire choose to sign a formal peace treaty with escaped slaves rather than continuing the war?',
-          hinge_question:
-            'Why did the British Empire choose to sign a formal peace treaty with escaped slaves rather than continuing the war?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Frontispiece Portrait of Olaudah Equiano from his 1789 Autobiography',
-          src: '/images/equiano.jpg',
-          caption:
-            'Engraved portrait of Olaudah Equiano (Gustavus Vassa) holding an open Bible, published as the frontispiece to his bestselling 1789 autobiography.',
-          shelfmark: 'Rare Books Collection (Shelfmark: RB-EQUI-1789)',
-          citation: 'The British Library, London (General Reference Collection 1478.b.11).',
-          context:
-            'Kidnapped as a boy in West Africa, Equiano survived the Middle Passage, purchased his freedom in 1766, and moved to London. In 1789, he published *The Interesting Narrative of the Life of Olaudah Equiano*, exposing the horrors of the trade to hundreds of thousands of readers. **Hinge Question:** How did Equiano’s formal Georgian dress and open Bible directly challenge racist pro-slavery stereotypes?',
-          hinge_question:
-            'How did Equiano’s formal Georgian dress and open Bible directly challenge racist pro-slavery stereotypes?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -4747,34 +4522,6 @@ const early_modern_world = {
           },
         ],
       },
-      sources: [
-        {
-          letter: 'A',
-          title: 'Source A: The East Offering its Riches to Britannia (1778) by Spiridione Roma',
-          src: '/images/east_offering.jpg',
-          caption:
-            'Magnificent ceiling painting commissioned by the East India Company for its headquarters in Leadenhall Street, London, depicting India and China kneeling to present pearls and porcelain to Britannia.',
-          shelfmark: 'Foreign and Commonwealth Office Collection (Shelfmark: FCO-EIC-1778)',
-          citation: 'The British Library, London (Foster 245).',
-          context:
-            'Commissioned for the Revenue Committee room of the East India Company, Britannia sits enthroned guarded by a Roman lion and the river god Father Thames. Personified female figures of India and China submissively offer a basket of pearls and tea chests. **Hinge Question:** How does this painting serve as an idealized, whitewashed advertisement for corporate imperial exploitation?',
-          hinge_question:
-            'How does this painting serve as an idealized, whitewashed advertisement for corporate imperial exploitation?',
-        },
-        {
-          letter: 'B',
-          title: 'Source B: Gin Lane (1751) by William Hogarth',
-          src: '/images/gin_lane.jpg',
-          caption:
-            'Engraving depicting the social collapse, starvation, and despair caused by unregulated gin drinking in the squalid London slum of St Giles.',
-          shelfmark: 'Hogarth Engraving Collection (Shelfmark: BM-HOG-GIN-1751)',
-          citation: 'Department of Prints and Drawings, British Museum.',
-          context:
-            'In 1750, London consumed over eleven million gallons of cheap, rotgut gin annually. Hogarth’s shocking print shows an intoxicated mother dropping her infant child from a staircase while a pawnbroker, an undertaker, and a starving distiller prosper in the background. **Hinge Question:** What does Gin Lane reveal about the brutal living conditions of ordinary working-class Londoners at the peak of Britain’s imperial wealth?',
-          hinge_question:
-            'What does Gin Lane reveal about the brutal living conditions of ordinary working-class Londoners at the peak of Britain’s imperial wealth?',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
