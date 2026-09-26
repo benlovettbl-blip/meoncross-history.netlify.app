@@ -541,14 +541,14 @@ function renderKs3FrontCover({
 
   // Dynamic typography & spacing scale based on lesson count
   const isSixLessons = lessons.length <= 6;
-  const photoHeight = heroPhotoHeightMm || (isSixLessons ? 56 : 50);
-  const cardPadding = isSixLessons ? '6px 8px' : '4px 6.5px';
-  const cardTitleSize = isSixLessons ? '9.0pt' : '8.4pt';
-  const bulletSize = isSixLessons ? '7.5pt' : '6.8pt';
-  const bulletLineHeight = isSixLessons ? '1.32' : '1.24';
-  const bottomBoxPad = isSixLessons ? '6.5px 9px' : '4.5px 7.5px';
-  const bottomFontSize = isSixLessons ? '7.5pt' : '6.8pt';
-  const bottomHeaderSize = isSixLessons ? '7.8pt' : '7.2pt';
+  const photoHeight = heroPhotoHeightMm || (isSixLessons ? 48 : 48);
+  const cardPadding = isSixLessons ? '3.5px 6.5px' : '3.5px 6px';
+  const cardTitleSize = isSixLessons ? '8.0pt' : '8.2pt';
+  const bulletSize = isSixLessons ? '6.7pt' : '6.7pt';
+  const bulletLineHeight = isSixLessons ? '1.20' : '1.22';
+  const bottomBoxPad = isSixLessons ? '4px 7px' : '4px 7px';
+  const bottomFontSize = isSixLessons ? '6.7pt' : '6.7pt';
+  const bottomHeaderSize = isSixLessons ? '7.1pt' : '7.1pt';
 
   const footerHtml = renderFooterStrip
     ? renderFooterStrip(
@@ -615,10 +615,10 @@ function renderKs3FrontCover({
               ${subtitle}
             </span>
           </div>
-          <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 13.5pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
             ${unitTitle.toUpperCase()}
           </h1>
-          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #1e293b; font-style: italic; line-height: 1.2;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #1e293b; font-style: italic; line-height: 1.2;">
             Overarching Enquiry: “${overarchingEnquiry}”
           </div>
         </div>
@@ -648,12 +648,12 @@ function renderKs3FrontCover({
       </div>
 
       <!-- The Historical Enquiries (Curriculum Roadmap Checklist) -->
-      <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+      <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
         <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
           <span>The ${lessons.length} Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
           <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">${cleanRange}</span>
         </div>
-        <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; gap: ${isSixLessons ? '4px 6px' : '2.5px 5px'}; font-family: 'Inter', sans-serif; background: #ffffff;">
+        <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; gap: ${isSixLessons ? '3px 6px' : '2.5px 5px'}; font-family: 'Inter', sans-serif; background: #ffffff;">
           ${lessons
             .map((l, idx) => {
               const cleanEnquiry = (
@@ -672,17 +672,17 @@ function renderKs3FrontCover({
                     ? l.syllabusTopic.split(/,\s*|\.\s*/).filter(Boolean)
                     : [];
               return `
-            <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: ${cardPadding}; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: ${cardPadding}; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; overflow: hidden;">
               <div style="margin-bottom: 1.5px;">
                 <div style="display: flex; align-items: center; margin-bottom: 1px;">
-                  <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; padding: 0.5px 4.5px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
+                  <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4.5px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
                 </div>
-                <strong style="font-family: 'Playfair Display', serif; font-size: ${cardTitleSize}; font-weight: 800; color: #0f172a; line-height: 1.18; display: block; margin-bottom: 1px;">
+                <strong style="font-family: 'Playfair Display', serif; font-size: ${cardTitleSize}; font-weight: 800; color: #0f172a; line-height: 1.15; display: block; margin-bottom: 1px;">
                   ${cleanEnquiry}
                 </strong>
               </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: ${bulletSize}; color: #334155; line-height: ${bulletLineHeight}; padding-left: 2px;">
-                ${bullets.map((b) => `<div style="display: flex; gap: 3.5px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 6.0pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
+              <div style="font-family: 'Inter', sans-serif; font-size: ${bulletSize}; color: #334155; line-height: ${bulletLineHeight}; padding-left: 2px; padding-bottom: 2px;">
+                ${bullets.map((b) => `<div style="display: flex; gap: 3.5px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
               </div>
             </div>
             `;

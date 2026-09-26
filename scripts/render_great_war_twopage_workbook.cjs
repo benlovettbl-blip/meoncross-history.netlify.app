@@ -192,7 +192,7 @@ const lessonConfigs = [
     connectives:
       'Before 1871, European peace rested on... • However, the creation of the German Empire was a turning point because... • On the other hand, certain continuities remained, such as... • In conclusion, 1871 was...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 1: 1871). In the sketchpad, draw Bismarck’s Prussian helmet or the German imperial eagle, and label the proclamation at Versailles.',
+      'Turn to Pages 2–3 (Milestone 1: 1871). On the timeline, record your notes or draw Bismarck’s Prussian helmet and note the proclamation at Versailles.',
   },
 
   {
@@ -269,7 +269,7 @@ const lessonConfigs = [
     connectives:
       'Source A is useful for investigating French attitudes because... • However, its value is limited because it represents... • In contrast, Source B is valuable for understanding German strategy because... • Together, both sources prove...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 2: 1871). In the sketchpad, sketch the map of France with the shaded black border provinces of Alsace and Lorraine.',
+      'Turn to Pages 2–3 (Milestone 2: 1871). On the timeline, record your notes or sketch the map of France with the lost provinces of Alsace and Lorraine.',
   },
 
   {
@@ -349,7 +349,7 @@ const lessonConfigs = [
     connectives:
       'View A argues that imperial clashes were driven by economic competition because... • In contrast, View B emphasizes national pride, arguing that... • Evidence supporting View B includes... • In conclusion, I find View [A/B] more convincing because...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 3: 1898–1904). In the sketchpad, sketch the African continent with British and French flags overshadowing Germany’s tiny colonies.',
+      'Turn to Pages 2–3 (Milestone 3: 1898–1904). On the timeline, record your notes or sketch the African continent with British and French colonial flags.',
   },
 
   {
@@ -442,7 +442,7 @@ const lessonConfigs = [
     connectives:
       'The most critical factor pushing Britain away from isolation was... • For example, the naval challenge... • However, other factors also alarmed Britain, including... • In conclusion, I judge that the naval race was [primary / secondary] because...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 4: 1906). In the sketchpad, draw the silhouette of HMS Dreadnought with its big gun turrets pointing forward.',
+      'Turn to Pages 2–3 (Milestone 4: 1906). On the timeline, record your notes or draw the silhouette of HMS Dreadnought with its heavy gun turrets.',
   },
 
   {
@@ -453,9 +453,9 @@ const lessonConfigs = [
     inquiryQuestion:
       'Did the European alliance system preserve peace between the Great Powers, or make a general war inevitable?',
     specBullets: [
-      'The armed camps: Triple Alliance (1882) vs Dual Alliance (1894) & Triple Entente (1907)',
-      'Secret military protocols, automatic mutual defence triggers & rigid railway timetables',
-      'The "Willy-Nicky" telegrams: royal cousins powerless to halt military mobilisation',
+      'Triple Alliance (1882) vs Dual Alliance (1894) & Triple Entente (1907)',
+      'Secret military protocols, automatic mutual defence triggers & rigid timetables',
+      'Willy-Nicky telegrams: royal cousins powerless to halt military mobilisation',
     ],
     doNow: [
       { q: 'Which three nations formed the Triple Alliance in 1882?' },
@@ -517,7 +517,7 @@ const lessonConfigs = [
     connectives:
       'Defenders of the alliance system argue that it kept the peace because... • However, critics argue it acted as an inevitable tripwire because... • The Willy-Nicky telegrams prove that... • Therefore, I conclude that...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 5: 1908–1914). In the sketchpad, draw the two opposing flags (Union Jack / Tricolour vs German Eagle) connected by chains.',
+      'Turn to Pages 2–3 (Milestone 5: 1908–1914). On the timeline, record your notes or draw the two opposing alliance flags connected by chains.',
   },
 
   {
@@ -528,9 +528,9 @@ const lessonConfigs = [
     inquiryQuestion:
       'Could the First World War have been avoided after the shots in Sarajevo, or had decades of M-A-I-N tension made conflict inevitable?',
     specBullets: [
-      '28 June 1914: Gavrilo Princip and the Black Hand assassinate Franz Ferdinand in Sarajevo',
-      'The July Crisis: Germany’s "Blank Cheque", the Austrian ultimatum & Russian mobilisation',
-      'The Schlieffen Plan: German invasion of neutral Belgium triggers British declaration (4 August)',
+      '28 June 1914: Princip and the Black Hand assassinate Franz Ferdinand in Sarajevo',
+      'The July Crisis: Germany’s "Blank Cheque", Austrian ultimatum & Russian mobilisation',
+      'Schlieffen Plan: German invasion of neutral Belgium brings Britain into the war',
     ],
     doNow: [
       { q: 'In which Bosnian city was Archduke Franz Ferdinand assassinated on 28 June 1914?' },
@@ -600,7 +600,7 @@ const lessonConfigs = [
     connectives:
       'The immediate trigger occurred when... • However, this localized crisis escalated because... • Without the Blank Cheque... • Ultimately...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 6: 1914). In the sketchpad, sketch Gavrilo Princip’s Browning pistol, the royal car, or a row of falling dominoes.',
+      'Turn to Pages 2–3 (Milestone 6: 1914). On the timeline, record your notes or sketch Gavrilo Princip’s Browning pistol and the royal car.',
   },
 ];
 
@@ -804,7 +804,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
     overarchingEnquiry:
       'How did decades of imperial rivalry, dreadnoughts, and alliances culminate in thirty-seven days of madness?',
     coverImgData: coverImg,
-    heroPhotoHeightMm: 56,
+    heroPhotoHeightMm: 48,
     coverPlate: {
       tag: 'Primary Naval Plate • 1906',
       shelfmark: 'IMPERIAL WAR MUSEUM • LONDON',
@@ -835,7 +835,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
           <span class="badge">Pages 2–3 Facing Spread</span>
         </div>
         <div style="border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #333; display: flex; justify-content: space-between;">
-          <span><strong>How to use this timeline:</strong> As you study each lesson, illustrate the milestone sketchpad with your visual symbol and key notes.</span>
+          <span><strong>How to use this timeline:</strong> Record your key notes, evidence, and causal links for each milestone as you progress through the unit.</span>
           <span style="font-weight: 700; color: #1e3a8a;">Spine • Facing Left</span>
         </div>
       </div>
@@ -860,10 +860,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
               ${m.summary}
             </p>
           </div>
-          <!-- Full-Width Open Sketchpad Canvas -->
-          <div style="border: 1.2px dashed #94a3b8; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 4px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
-            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #64748b; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
-          </div>
+          <!-- Clean Open Canvas for Student Notes & Drawings -->
+          <div style="min-height: 44mm; flex: 1;"></div>
         </div>
     `;
     });
@@ -892,7 +890,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
           <span class="badge">Pages 2–3 Facing Spread</span>
         </div>
         <div style="border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #333; display: flex; justify-content: space-between;">
-          <span><strong>How to use this timeline:</strong> As you study each lesson, illustrate the milestone sketchpad with your visual symbol and key notes.</span>
+          <span><strong>How to use this timeline:</strong> Record your key notes, evidence, and causal links for each milestone as you progress through the unit.</span>
           <span style="font-weight: 700; color: #1e3a8a;">Spine • Facing Right</span>
         </div>
       </div>
@@ -917,10 +915,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
               ${m.summary}
             </p>
           </div>
-          <!-- Full-Width Open Sketchpad Canvas -->
-          <div style="border: 1.2px dashed #94a3b8; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 4px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
-            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #64748b; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
-          </div>
+          <!-- Clean Open Canvas for Student Notes & Drawings -->
+          <div style="min-height: 44mm; flex: 1;"></div>
         </div>
     `;
     });
