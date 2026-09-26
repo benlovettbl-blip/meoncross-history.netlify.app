@@ -136,8 +136,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Admiralty Trial Record</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Admiralty Trial Record &bull; 1787</span>
           </div>
           <span class="source-date-micro">March 1787</span>
         </div>
@@ -193,8 +193,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Parliamentary Evidence</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Parliamentary Testimony &bull; 1832</span>
           </div>
           <span class="source-date-micro">Sadler Committee &bull; 1832</span>
         </div>
@@ -250,8 +250,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Sanitary Report</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Sanitary Investigation &bull; 1842</span>
           </div>
           <span class="source-date-micro">July 1842</span>
         </div>
@@ -307,8 +307,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Parliamentary Evidence</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Parliamentary Evidence &bull; 1840</span>
           </div>
           <span class="source-date-micro">Hansard &bull; 1840</span>
         </div>
@@ -364,8 +364,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Rebel Proclamation</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Rebel Proclamation &bull; 1857</span>
           </div>
           <span class="source-date-micro">August 1857</span>
         </div>
@@ -421,8 +421,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">The People’s Charter</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">The People’s Charter &bull; 1838</span>
           </div>
           <span class="source-date-micro">Published May 1838</span>
         </div>
@@ -478,8 +478,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Parliamentary Inquiry</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Parliamentary Inquiry &bull; 1869</span>
           </div>
           <span class="source-date-micro">Select Committee &bull; 1869</span>
         </div>
@@ -535,8 +535,8 @@ const INDUSTRIALISATION_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Social Investigation</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Social Investigation &bull; 1845</span>
           </div>
           <span class="source-date-micro">Published 1845</span>
         </div>
@@ -930,80 +930,183 @@ const INDUSTRIALISATION_LEFT_SOURCES = {
  * ensuring exact paragraph indexing [1.1], [1.2], [2.1], etc. perfectly matching the Pupil Workbook.
  */
 function getLessonSections(lesson, idx) {
-  const blocks = (lesson.narrative_blocks || []).filter(
-    (b) =>
-      b &&
-      b.text &&
-      b.text.trim() &&
-      b.title !== 'Consolidation Task' &&
-      b.theme_heading !== 'Consolidation Task',
-  );
-
-  // Helper to extract paragraphs from block text
-  const extractCleanParas = (rawText) => {
-    if (!rawText) return [];
-    let split = [];
-    if (rawText.includes('<p>')) {
-      split = rawText
-        .split(/<\/p>\s*<p>|<p>|<\/p>/)
-        .map((p) => p.trim())
-        .filter(Boolean);
-    } else {
-      split = rawText
-        .split(/<br\s*\/?>\s*<br\s*\/?>|\n\s*\n/)
-        .map((p) => p.trim())
-        .filter(Boolean);
-    }
-    return split.filter((p) => p.length > 20 && !p.startsWith('<div class="scaffold'));
-  };
-
-  if (blocks.length >= 4) {
-    // Select the primary 4 narrative acts
-    const rawActs = [blocks[0], blocks[1], blocks[blocks.length - 2], blocks[blocks.length - 1]];
-    return rawActs.map((b, actIdx) => {
-      const actNum = actIdx + 1;
-      const cleanTitle = (b.title || `Act ${actNum}`)
-        .replace(/^Act\s*\d+:\s*/i, '')
-        .replace(/^\d+\.\s*/, '');
-      const paras = extractCleanParas(b.text);
-
-      // Calibrate paragraph count: exactly 2 rich, cohesive paragraphs per act ([Act.1] and [Act.2])
-      // This matches the Great War standard (4 paragraphs per page + source/individual box)
-      // guaranteeing 100% sentence completion with zero overflow or clipping.
-      const curatedParas = paras.slice(0, 2);
-
-      // Ensure paragraphs have explicit [Act.P] tag
-      const formatted = curatedParas.map((p, pIdx) => {
-        const cleanP = p.replace(/<span class=['"]para-ref['"]>\[\d+\.\d+\]<\/span>\s*/g, '');
-        return `<span class="para-ref">[${actNum}.${pIdx + 1}]</span> ${cleanP}`;
-      });
-
-      return {
-        title: cleanTitle,
-        text: formatted.join('\n\n'),
-      };
-    });
+  if (idx === 0) {
+    // Lesson 1: Henry Cort & Metallurgy
+    return [
+      {
+        title: 'The Rotten Secret: Britain’s Pig Iron Crisis (1750–1780)',
+        text: `<span class="para-ref">[1.1]</span> Before the mid-eighteenth century, Britain's iron industry was paralyzed by a critical technological crisis. Smelting iron ore with wood charcoal had devastated English forests, forcing manufacturers to rely on expensive iron imports from Sweden and Russia. Although Abraham Darby smelted iron using coke in 1709, the resulting "pig iron" remained brittle, weak, and contaminated with sulphur.\n\n<span class="para-ref">[1.2]</span> This chemical weakness directly threatened national survival. The Royal Navy required immense quantities of malleable, high-tensile wrought iron for anchors, cannon fittings, and ship bolts. When the Baltic trade was imperilled during the American Revolutionary War, Britain faced an acute naval crisis. Without a domestic method to produce pure wrought iron at scale, industrial expansion was crippled.`,
+      },
+      {
+        title: 'The Breakthrough at Funtley Ironworks (1775–1784)',
+        text: `<span class="para-ref">[2.1]</span> In Hampshire, former Royal Navy pay agent Henry Cort leased the Funtley Ironworks near Fareham to solve this metallurgical puzzle. Recognizing that coal fumes contaminated molten iron, Cort constructed an innovative reverberatory furnace. By deflecting flame and heat over the iron from an arched roof without physical contact with the coal fuel, he burned away impurities through oxidation.\n\n<span class="para-ref">[2.2]</span> Inside the inferno, workmen stirred the molten mass with iron rods in an exhausting process known as "puddling." As carbon burned away, pure iron coalesced into spongy balls. Cort immediately transferred the white-hot metal to steam-powered grooved rollers. The rollers compressed the iron and squeezed out remaining slag, boosting production fifteen-fold over traditional smithing hammers.`,
+      },
+      {
+        title: 'Forensic Evidence: The Portsmouth Navy Trials (1787)',
+        text: `<span class="para-ref">[3.1]</span> In 1787, the Admiralty subjected Cort’s Funtley iron to rigorous comparative testing at Portsmouth Royal Dockyard. Master shipwrights and naval smiths tested anchors, chains, and ordnance against premier Swedish "Orgrounds" iron. Cort’s puddling iron withstood extreme tensile stresses and sledgehammer impacts, prompting dockyard officials to certify it superior to foreign imports.\n\n<span class="para-ref">[3.2]</span> Archival test certificates held at Portsmouth confirm that Cort’s domestic wrought iron immediately replaced Baltic shipments across British naval dockyards. By supplying the Royal Navy with superior structural iron on the eve of the French Revolutionary Wars, the Funtley works delivered the naval supremacy that underpinned Britain's maritime empire.`,
+      },
+      {
+        title: 'The Historical Verdict: Location vs. Innovation',
+        text: `<span class="para-ref">[4.1]</span> Historians debate whether Cort’s breakthrough was primarily driven by individual genius or strategic geography. Technological historians highlight his metallurgical persistence, filing revolutionary patents in 1783 and 1784. Conversely, economic historians emphasize Funtley’s direct river access to Portsmouth Dockyard and access to Admiralty capital as the decisive catalysts.\n\n<span class="para-ref">[4.2]</span> Cort himself was financially ruined after his business partner Adam Jellicoe died, having embezzled Admiralty naval funds to finance the works. While the Crown seized Cort’s patents, his puddling process spread rapidly across South Wales and the Black Country, transforming Britain into the workshop of the world and the world's leading exporter of structural iron.`,
+      },
+    ];
   }
 
-  // Fallback if blocks are missing
-  return [
-    {
-      title: 'Context & Catalyst',
-      text: '<span class="para-ref">[1.1]</span> Historical context establishing baseline reality.',
-    },
-    {
-      title: 'Escalation & Conflict',
-      text: '<span class="para-ref">[2.1]</span> Technological mechanisms driving historical transformation.',
-    },
-    {
-      title: 'Forensic Archival Evidence',
-      text: '<span class="para-ref">[3.1]</span> Primary dispatches and archival investigations.',
-    },
-    {
-      title: 'The Historical Verdict',
-      text: '<span class="para-ref">[4.1]</span> Historiographical debate and academic interpretations.',
-    },
-  ];
+  if (idx === 1) {
+    // Lesson 2: Industrial Work: Progress or Punishment?
+    return [
+      {
+        title: 'The Baseline: Workshop Craft to the Factory Clock (1750–1830)',
+        text: `<span class="para-ref">[1.1]</span> The Industrial Revolution fundamentally dismantled the traditional rhythm of British labour. Under the domestic system, rural families spun yarn and wove cloth at home, controlling their own working hours and observing "Saint Monday" as customary leisure. Work was dictated by natural daylight, seasonal cycles, and individual pace rather than mechanical supervision.\n\n<span class="para-ref">[1.2]</span> The introduction of Arkwright’s water frame and Watt’s rotary steam engine concentrated workers into multi-storey urban mills. In these mechanized workspaces, the merciless factory clock replaced natural time. Operatives worked fourteen-hour shifts under strict overseers, facing immediate fines or corporal punishment for speaking, opening windows, or falling seconds behind the machines.`,
+      },
+      {
+        title: 'The Local Catalyst: The Fareham Red Brick Boom (1800–1880)',
+        text: `<span class="para-ref">[2.1]</span> Industrialisation transformed regional landscapes far beyond northern textile towns. In south Hampshire, the extraction of London Clay around Fareham created a massive brickmaking industry. Fareham "Red" bricks were celebrated nationwide for their flawless colour and exceptional compressive strength, providing the structural fabric for London’s Victorian expansion.\n\n<span class="para-ref">[2.2]</span> Hampshire clay pits relied heavily on exhausting seasonal child labour. Young boys known as "clay-puggers" and "barrow-runners" hauled hundreds of wet clay bricks through unpaved brickfields for penny wages. Over 2.5 million Fareham bricks were shipped via railway and coastal barges to build the Royal Albert Hall and St Pancras railway terminal.`,
+      },
+      {
+        title: 'Forensic Evidence: Factory Reports & Parliamentary Commissions (1832–1842)',
+        text: `<span class="para-ref">[3.1]</span> Parliamentary commissions during the 1830s unmasked the horrific human toll of unbridled industrial capitalism. The Sadler Report (1832) documented child operatives suffering spine deformities, crushed limbs in unshielded machinery, and deadly exhaustion. Medical inspectors testified that textile dust produced chronic lung disease and widespread physical stunting.\n\n<span class="para-ref">[3.2]</span> Primary depositions from child miners revealed young "trappers" sitting for twelve hours in total subterranean darkness opening ventilation doors, while young girls hauled heavy coal carts through low seams. These shocking testimonies galvanized public moral outrage and provoked fierce political debates over state intervention in the free market.`,
+      },
+      {
+        title: 'The Historical Verdict: Capitalist Exploitation or Economic Progress?',
+        text: `<span class="para-ref">[4.1]</span> Social historians like E.P. Thompson argue that early industrialisation immiserated the working class, trading human health, domestic dignity, and customary freedoms for capitalist profit. They demonstrate that statutory reforms like the Ten Hours Act (1847) were resisted by factory owners claiming limits on child labour would bankrupt British commerce.\n\n<span class="para-ref">[4.2]</span> In contrast, optimist historians emphasize that industrial factory wages steadily outpaced rural agricultural labour, eventually purchasing cheaper food, cotton clothing, and consumer goods. While child labour was harsh, state regulation, compulsory schooling, and mass production ultimately lifted millions out of subsistence poverty by the late nineteenth century.`,
+      },
+    ];
+  }
+
+  if (idx === 2) {
+    // Lesson 3: Did Industrialisation Make British Towns Unlivable?
+    return [
+      {
+        title: 'The Baseline: Rapid Urbanisation & The Slum Environment (1800–1840)',
+        text: `<span class="para-ref">[1.1]</span> Between 1800 and 1850, British cities experienced unprecedented, uncontrolled population explosion. As rural labourers fled declining farm employment, manufacturing hubs like Manchester, Leeds, and Birmingham tripled in size. Because no building regulations or municipal authorities existed, speculative builders threw up cramped back-to-back slum terraces across unpaved yards.\n\n<span class="para-ref">[1.2]</span> Entire working-class families lived packed into single damp cellars lacking fresh air or drainage. Without municipal sewerage, domestic waste pooled in open court cesspools, seeping directly into shallow drinking water wells. In working-class Manchester districts, life expectancy plummeted to just nineteen years, compared to forty in surrounding agricultural districts.`,
+      },
+      {
+        title: 'The Catalyst: King Cholera, Miasma & The Great Stink (1848–1858)',
+        text: `<span class="para-ref">[2.1]</span> In 1831, waterborne Asiatic cholera struck Britain, killing tens of thousands in terrifying, rapid epidemics. Prevailing medical opinion attributed the disease to "miasma"—poisonous atmospheric gases arising from decomposing filth. While scientifically incorrect, the miasma theory focused public attention upon the appalling squalor of urban cesspools and open sewers.\n\n<span class="para-ref">[2.2]</span> In 1858, an unprecedented summer heatwave caused the heavily polluted River Thames to ferment, producing "The Great Stink." The overwhelming stench invaded the Palace of Westminster, forcing Parliament to soak window curtains in chloride of lime. Fearing for their own lives, politicians finally abandoned laissez-faire dogma and authorized vast public expenditure on urban sanitation.`,
+      },
+      {
+        title: 'Forensic Evidence: Chadwick’s Sanitary Report & Bazalgette’s Sewers (1842–1865)',
+        text: `<span class="para-ref">[3.1]</span> Social reformer Edwin Chadwick’s monumental 1842 <em>Report on the Sanitary Condition of the Labouring Population</em> proved scientifically that filth and pestilence directly bred pauperism and economic ruin. Chadwick advocated for constant pressurized clean water piped into every home and an arterial underground network of self-flushing glazed sewers.\n\n<span class="para-ref">[3.2]</span> Civil engineer Joseph Bazalgette designed London’s revolutionary underground drainage network between 1859 and 1865. Constructing 1,100 miles of street sewers and 82 miles of subterranean brick interceptors, Bazalgette diverted billions of gallons of raw sewage east of the capital. The system permanently eradicated cholera and established modern municipal infrastructure.`,
+      },
+      {
+        title: 'The Historical Verdict: Death Traps or Engines of Modernity?',
+        text: `<span class="para-ref">[4.1]</span> Historians remain divided over Victorian urbanisation. The "Pessimist School" contends that 19th-century towns were lethal disease factories where rampant industrial profits were purchased at the price of human degradation, infant mortality rates exceeding thirty percent, and pervasive atmospheric pollution.\n\n<span class="para-ref">[4.2]</span> Conversely, urban historians highlight that Victorian cities fostered civic pride, magnificent town halls, public parks, libraries, and tram networks. Through Chadwick's Public Health Acts and municipal socialism, British cities pioneered the modern public health state, ultimately conquering infectious epidemics and elevating urban living standards.`,
+      },
+    ];
+  }
+
+  if (idx === 3) {
+    // Lesson 4: How was the British Empire Built and Sustained?
+    return [
+      {
+        title: 'The Baseline: Mercantilism, Triangular Trade & The Royal Navy (1750–1815)',
+        text: `<span class="para-ref">[1.1]</span> Britain’s 18th-century imperial expansion was anchored in mercantilist economics and maritime warfare. Under the Navigation Acts, colonial possessions existed solely to supply Britain with raw commodities—sugar, tobacco, timber, and cotton—while consuming finished British manufactured goods carried exclusively aboard British-flagged ships.\n\n<span class="para-ref">[1.2]</span> This Atlantic commercial network was fundamentally entwined with the Transatlantic Slave Trade. British merchants shipped manufactured goods to West Africa, transported enslaved Africans across the Middle Passage to Caribbean plantations, and imported slave-grown sugar into Bristol and Liverpool. Profits from this brutal trade provided critical capital for early industrial mechanisation.`,
+      },
+      {
+        title: 'The Local Imperial Engine: Portsmouth Royal Dockyard & Steam Power (1803–1860)',
+        text: `<span class="para-ref">[2.1]</span> Portsmouth Royal Dockyard stood at the heart of British naval supremacy, serving as the largest industrial enterprise in the world. In 1803, Marc Brunel and Henry Maudslay installed the revolutionary Portsmouth Block Mills—the world’s first steam-powered, automated assembly line, mass-producing 130,000 rigging blocks annually for Royal Navy warships.\n\n<span class="para-ref">[2.2]</span> In 1860, Portsmouth launched <strong>HMS Warrior</strong>, the world’s first iron-hulled, armour-plated, steam-powered battleship. Powered by ten boilers driving a massive screw propeller, Warrior’s impenetrable 4.5-inch wrought iron armour rendered every wooden warship obsolete overnight, establishing undisputed British naval dominance across global maritime trade routes.`,
+      },
+      {
+        title: 'Forensic Evidence: The East India Company & Imperial Cartography (1765–1886)',
+        text: `<span class="para-ref">[3.1]</span> In India, British imperial power was exercised not by the Crown, but by the commercial East India Company. Following the 1765 Treaty of Allahabad, the Company secured the <em>Diwani</em> (tax-collecting rights) over wealthy Bengal. Backed by private mercenary armies and Indian sepoys, the Company systematically extracted agricultural wealth, de-industrialized native cotton weaving, and enforced opium production.\n\n<span class="para-ref">[3.2]</span> Walter Crane’s famous 1886 <em>Imperial Federation Map</em> visualized Britain’s global supremacy, showing one-quarter of the world’s landmass coloured imperial red. The map linked distant territories via Royal Navy steamship routes and undersea telegraph cables, projecting an idealized image of imperial unity, civilising duty, and commercial prosperity.`,
+      },
+      {
+        title: 'The Historical Verdict: Civilising Mission or Exploitative Coercion?',
+        text: `<span class="para-ref">[4.1]</span> Imperial historians like Niall Ferguson argue that the British Empire pioneered global free trade, introducing parliamentary law, railway networks, and postal systems that modernized developing continents. They argue that British naval power maintained global peace (<em>Pax Britannica</em>) and actively suppressed the international slave trade.\n\n<span class="para-ref">[4.2]</span> Post-colonial historians like Shashi Tharoor present a devastating counter-verdict, showing that imperial conquest was driven by racial subjugation, economic drain, and military violence. British rule systematically exploited Indian and African resources, triggered catastrophic engineered famines, and repressed indigenous independence movements through overwhelming military firepower.`,
+      },
+    ];
+  }
+
+  if (idx === 4) {
+    // Lesson 5: The 1857 Indian Rebellion: Sepoy Mutiny or National War?
+    return [
+      {
+        title: 'The Baseline: Structural Grievances & Company Annexation (1848–1857)',
+        text: `<span class="para-ref">[1.1]</span> By 1857, deep resentment against the British East India Company had reached a combustible crisis across northern India. Governor-General Lord Dalhousie’s aggressive "Doctrine of Lapse" enabled the Company to confiscate autonomous princely states whenever a ruler died without a direct male heir, abruptly dispossessing sovereign royal houses like Awadh, Satara, and Jhansi.\n\n<span class="para-ref">[1.2]</span> Simultaneously, high land revenue taxes ruined traditional peasant cultivators, while British missionary societies openly proselytized among native populations. For the 300,000 Indian sepoys who constituted ninety percent of the Company’s armed forces, these political and economic grievances generated profound suspicion that their ancient religious identities were marked for systematic destruction.`,
+      },
+      {
+        title: 'The Escalation: Meerut, Delhi & Rani Lakshmibai (May–September 1857)',
+        text: `<span class="para-ref">[2.1]</span> In early 1857, the introduction of the new Enfield rifle provided the volatile spark. Rumours spread rapidly that cartridges were coated with beef and pork fat—sacrilegious to both Hindus and Muslims—requiring soldiers to bite them open. When eighty-five sepoys at Meerut were court-martialled and shackled for refusing the cartridges, their comrades rose in open mutiny on 10 May 1857.\n\n<span class="para-ref">[2.2]</span> The rebels marched to Delhi, capturing the city and proclaiming the aged Mughal Emperor Bahadur Shah II sovereign ruler of Hindustan. Across northern and central India, civil rebellion erupted. In Jhansi, the twenty-nine-year-old Rani Lakshmibai donned combat armour, leading rebel forces in desperate defense of her besieged city before dying in combat at Gwalior.`,
+      },
+      {
+        title: 'Forensic Evidence: Rebel Manifestos vs. The Crown Raj (1857–1858)',
+        text: `<span class="para-ref">[3.1]</span> Primary sources like the 1857 <em>Azamgarh Proclamation</em> reveal that the rebellion was far more than an army mutiny. Issued by rebel leaders, the manifesto explicitly called on Hindu and Muslim artisans, landowners, and clerics to unite against British economic exploitation, ruinous taxes, and cultural oppression, seeking the complete restoration of indigenous rule.\n\n<span class="para-ref">[3.2]</span> British retaliation was merciless and indiscriminate. Entire villages were razed, and captured rebels were executed en masse without trial. In the aftermath, Parliament passed the Government of India Act 1858, dissolving the East India Company. Queen Victoria issued a royal proclamation promising religious tolerance, placing India under direct Crown governance (<em>the Raj</em>).`,
+      },
+      {
+        title: 'The Historical Verdict: Military Mutiny or First War of Independence?',
+        text: `<span class="para-ref">[4.1]</span> Colonial British historiography dismissed the uprising as a localized "Sepoy Mutiny"—a reactionary military revolt driven by religious superstition and treacherous officers. Imperial writers emphasized the massacre of British civilians at Cawnpore to justify subsequent colonial authoritarianism and racial segregation.\n\n<span class="para-ref">[4.2]</span> Indian nationalist historians like V.D. Savarkar reinterpreted 1857 as India's "First War of Independence." Modern consensus views the rebellion as a multifaceted anti-colonial coalition where religious anxieties, peasant tax rebellions, and dispossessed royalty fused into a massive, desperate struggle against foreign imperial domination.`,
+      },
+    ];
+  }
+
+  if (idx === 5) {
+    // Lesson 6: How Did Ordinary People Fight for a Voice?
+    return [
+      {
+        title: 'The Baseline: Post-War Crucible & The Peterloo Massacre (1815–1819)',
+        text: `<span class="para-ref">[1.1]</span> The conclusion of the Napoleonic Wars in 1815 plunged Britain’s working class into severe economic distress. Demobilized soldiers returned to mass unemployment, while the Tory government passed the Corn Laws, imposing heavy import tariffs on foreign grain to keep bread prices artificially high for wealthy aristocratic landowners.\n\n<span class="para-ref">[1.2]</span> On 16 August 1819, 60,000 peaceful working-class men, women, and children gathered at St Peter’s Field in Manchester to demand parliamentary reform and affordable food. Local magistrates panicked, ordering cavalry sabres to charge into the unarmed crowd. Eighteen protestors were killed and over 650 maimed in what the public furiously condemned as the "Peterloo Massacre."`,
+      },
+      {
+        title: 'The Local Catalyst: Hampshire in Flames & The Swing Riots (1830)',
+        text: `<span class="para-ref">[2.1]</span> In 1830, agricultural distress swept across southern England in the "Captain Swing" riots. Displaced farm labourers faced starvation wages and winter unemployment caused by threshing machines. Rioting farmworkers smashed mechanized threshers, torched hayricks, and sent threatening letters signed by the fictitious avenger "Captain Swing" demanding living wages.\n\n<span class="para-ref">[2.2]</span> Hampshire sat at the epicenter of rural unrest. Crowds attacked poorhouses in Selborne and Headley, destroying agricultural equipment. The government crushed the uprising with harsh judicial vengeance: special commissions in Winchester sentenced three Hampshire men to hang and transported over one hundred agricultural labourers to penal colonies in Australia.`,
+      },
+      {
+        title: 'Forensic Evidence: The Tolpuddle Indictment & The People’s Charter (1834–1848)',
+        text: `<span class="para-ref">[3.1]</span> In 1834, six agricultural labourers in Dorset led by George Loveless formed the Friendly Society of Agricultural Labourers to resist wage cuts. Fearing trade unionism, magistrates prosecuted them under an obscure 1797 naval mutiny statute against "unlawful oaths," sentencing them to seven years' penal transportation. Mass public protests eventually forced a full royal pardon.\n\n<span class="para-ref">[3.2]</span> In 1838, the London Working Men's Association drafted the <strong>People’s Charter</strong>, demanding six fundamental democratic reforms: universal male suffrage, equal constituencies, abolition of property qualifications, annual parliaments, payment for MPs, and the secret ballot. Millions of working-class citizens signed mammoth petitions delivered to Parliament.`,
+      },
+      {
+        title: 'The Historical Verdict: Did Working-Class Resistance Fail?',
+        text: `<span class="para-ref">[4.1]</span> Contemporary critics claimed Chartism was a complete failure. Parliament rejected petitions in 1839, 1842, and 1848 by overwhelming majorities. Tactical divisions between William Lovett’s "Moral Force" Chartists and Feargus O'Connor’s "Physical Force" advocates weakened the movement, while state policing crushed armed risings in Newport and London.\n\n<span class="para-ref">[4.2]</span> Modern historians argue that 19th-century popular protest won profound long-term victories. Chartism trained generations of working-class organizers, fostered democratic literacy, and built the foundations of the trade union movement. By 1918, five of the six Chartist demands had been enshrined into British constitutional law.`,
+      },
+    ];
+  }
+
+  if (idx === 6) {
+    // Lesson 7: The Road to Democracy: Concession or Revolution?
+    return [
+      {
+        title: 'The Baseline: Rotten Boroughs & The Unreformed System (1800–1830)',
+        text: `<span class="para-ref">[1.1]</span> In 1830, Britain’s parliamentary representation was corrupt, archaic, and unrepresentative. Vast industrial cities like Manchester, Birmingham, and Leeds with hundreds of thousands of citizens had zero members of parliament. Power remained monopolized by wealthy aristocratic landowners who dominated rural "pocket boroughs."\n\n<span class="para-ref">[1.2]</span> Notorious "rotten boroughs" with virtually no electors returned multiple MPs: Old Sarum in Wiltshire was a deserted grass mound with seven voters electing two MPs, while Dunwich had eroded into the North Sea. Fewer than 400,000 wealthy men possessed the vote out of a population exceeding twenty million, and open voting invited routine landlord bribery and voter intimidation.`,
+      },
+      {
+        title: 'The Catalyst: The 1832 Reform Act & Days of May (1830–1832)',
+        text: `<span class="para-ref">[2.1]</span> The election of Earl Grey’s Whig government in 1830 brought parliamentary reform to a revolutionary climax. When the Tory-dominated House of Lords repeatedly vetoed Grey’s Reform Bill, the nation erupted in fury. In October 1831, massive riots torched the Bishop's Palace in Bristol and destroyed Nottingham Castle, while reform political unions organized nationwide bank runs.\n\n<span class="para-ref">[2.2]</span> In the "Days of May" 1832, facing the imminent threat of armed revolution and civil war, King William IV agreed to Earl Grey’s demand to create dozens of new Whig peers to overcome the Lords' veto. Terrified of losing their peerages and aristocratic privileges, Tory lords capitulated, passing the landmark Great Reform Act into law in June 1832.`,
+      },
+      {
+        title: 'Forensic Evidence: Rotten Borough Maps & The 1872 Secret Ballot (1832–1872)',
+        text: `<span class="para-ref">[3.1]</span> Primary electoral maps confirm that the 1832 Act disenfranchised 56 rotten boroughs and redistributed 143 parliamentary seats to booming industrial towns. However, the Act was carefully engineered to protect property: by establishing a strict £10 household franchise, it enfranchised the commercial middle class while deliberately excluding the working class.\n\n<span class="para-ref">[3.2]</span> Until 1872, voting took place on public wooden platforms known as "hustings." Voters declared their choices aloud before crowds of partisans, leaving tenants vulnerable to eviction by landlords and workers to immediate dismissal by factory masters. The Ballot Act 1872 finally introduced the secret ballot, severing aristocratic intimidation.`,
+      },
+      {
+        title: 'The Historical Verdict: Won from Below or Granted from Above?',
+        text: `<span class="para-ref">[4.1]</span> Whig historians portrayed the 1832 Reform Act as a triumph of enlightened British statecraft, demonstrating how peaceful constitutional compromise averted the violent revolutions that rocked continental Europe. They argued that Whig aristocrats prudently expanded the political nation to preserve Britain’s stability.\n\n<span class="para-ref">[4.2]</span> Marxist and social historians demonstrate that reform was conceded solely under immense working-class intimidation. Lord Grey privately admitted his goal was "to associate the middle classes with the aristocracy in defence of property." Subsequent expansions—the 1867 and 1884 Reform Acts—were similarly forced by mass working-class agitation and the Reform League.`,
+      },
+    ];
+  }
+
+  if (idx === 7) {
+    // Lesson 8: Who Truly Benefited from 19th-Century Transformation?
+    return [
+      {
+        title: 'The Optimist Case: Industrial Triumph & Rising Prosperity (1815–1880)',
+        text: `<span class="para-ref">[1.1]</span> By 1851, the Great Exhibition inside London's Crystal Palace celebrated Britain as the undisputed "Workshop of the World." Powered by steam engines, railway networks, and vast coal reserves, Britain produced two-thirds of the world's coal, half its iron, and half its commercial cotton textiles, exporting manufactured goods to every corner of the globe.\n\n<span class="para-ref">[1.2]</span> Economic optimists demonstrate that real wages for skilled working-class families increased by over thirty percent after 1850. Cheap factory production made cotton undergarments, tea, soap, and footwear universally affordable. Gas lighting, piped water, public libraries, and statutory weekend half-holidays transformed daily working-class quality of life.`,
+      },
+      {
+        title: 'The Pessimist Case: Human Squalor & Silenced Voices (1800–1880)',
+        text: `<span class="para-ref">[2.1]</span> In stark contrast, social pessimists emphasize that Britain’s staggering wealth was built upon the exploitation of millions. In northern textile mills and Hampshire brickfields, children worked brutal shifts inhaling toxic dust, suffering spine deformities and early death. In back-to-back slum cellars, cholera and typhus epidemics ravaged malnourished families lacking clean water.\n\n<span class="para-ref">[2.2]</span> Industrial capitalism created vast social inequality. While mill barons and railway magnates amassed unprecedented fortunes, agricultural labourers and artisan handloom weavers were reduced to pauperism. Those unable to find employment faced the dreaded New Poor Law workhouse, where families were deliberately separated and subjected to punitive manual labour.`,
+      },
+      {
+        title: 'Forensic Evidence: The Imperial Balance Sheet & Drain of Wealth',
+        text: `<span class="para-ref">[3.1]</span> Global trade records demonstrate that Britain’s industrial supremacy was inextricably linked to imperial extraction. British tariffs systematically crushed India’s traditional textile industry, turning India from the world's leading cotton exporter into an importer of Lancashire cloth. Enslaved labour in the Americas and colonial raw materials financed British industrial capital.\n\n<span class="para-ref">[3.2]</span> When catastrophic famines struck British India in the late 1870s, viceroys adhering to strict free-market economic theory refused to halt grain exports, resulting in the deaths of over six million Indian subjects while British grain markets posted record profits. Imperial prosperity rested heavily upon colonial exploitation.`,
+      },
+      {
+        title: 'The Historical Verdict: Capstone Synoptic Evaluation',
+        text: `<span class="para-ref">[4.1]</span> Evaluating the 19th-century transformation requires weighing profound contradictions. Industrialisation liberated humanity from the ancient limits of animal and water power, laying the foundation for modern democracy, global transport, public health, and technological science that lifted millions out of subsistence poverty.\n\n<span class="para-ref">[4.2]</span> Yet this triumph came at immense human cost: the destruction of customary craft, horrific slum squalor, ruthless capitalist exploitation of working-class families, and the violent subjugation of global colonial empires. The modern world was forged in Britain’s industrial furnace, but the price was paid by ordinary working hands at home and abroad.`,
+      },
+    ];
+  }
+
+  return [];
 }
 
 /**
@@ -1109,6 +1212,28 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       return '';
     };
 
+    const t3PromptMap = {
+      1: 'Examine both historical perspectives on Cort’s puddling breakthrough: individual metallurgical genius vs geographical proximity to Portsmouth Dockyard and Royal Navy demand. Note two key pieces of factual evidence for each side in your workbook.',
+      2: 'Evaluate both historical interpretations of factory conditions: an engine of national economic progress vs an exploitative system of child labour and human punishment. Note two key pieces of factual evidence for each view in your workbook.',
+      3: 'Examine both sides of the urbanisation debate: lethal public health crises and cholera epidemics vs civic sanitary reform and Chadwick’s arterial drainage revolution. Note two key pieces of factual evidence for each side in your workbook.',
+      4: 'Examine the mechanisms sustaining the British Empire: commercial monopolism (East India Company) vs technological superiority (railways, telegraphs, and gunboats). Note two key pieces of factual evidence for each factor in your workbook.',
+      5: 'Analyze both perspectives on the 1857 Indian Rebellion: a mere military "Sepoy Mutiny" over greased cartridges vs a wide-ranging anti-colonial war of national independence. Note two key pieces of factual evidence for each view in your workbook.',
+      6: 'Compare the strategies of the working-class reform movement: William Lovett’s "Moral Force" Chartism vs Feargus O’Connor’s "Physical Force" and the Newport Rising. Note two key pieces of factual evidence for each approach in your workbook.',
+      7: 'Evaluate the motives driving parliamentary reform: genuine Whig and Tory democratic conviction vs elite panic in the face of working-class revolution. Note two key pieces of factual evidence for each motive in your workbook.',
+      8: 'Weigh the balance sheet of 19th-century transformation: bourgeois industrial prosperity and imperial wealth vs working-class immiseration and colonial subjugation. Note two key pieces of factual evidence for each verdict in your workbook.',
+    };
+    const task3Instruction =
+      t3PromptMap[lessonNum] ||
+      (lesson.tasks &&
+        lesson.tasks[0] &&
+        (lesson.tasks[0].instruction || lesson.tasks[0].question)) ||
+      'Prepare factual evidence for both sides of the historical debate in your workbook before writing.';
+    const task4Question =
+      (lesson.tasks && lesson.tasks[1] && lesson.tasks[1].question) ||
+      lesson.enquiry ||
+      lesson.title;
+    const wbPages = `${lessonNum * 2 + 2}&ndash;${lessonNum * 2 + 3}`;
+
     // LEFT PAGE (Verso)
     lessonsHtml += `
     <!-- PAGE ${leftPageNum}: Lesson ${lessonNum} Left Page (Verso) -->
@@ -1127,27 +1252,28 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
           </div>
         </div>
 
-        <!-- 2-Column Core Prose Measure -->
-        <div class="two-column-prose">
-          
-          <!-- Act 1 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 1</span>
-            <span class="sb-title">${sec1.title}</span>
+        <!-- 2-Column Core Prose Grid -->
+        <div class="two-column-grid">
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 1</span>
+                <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+              </div>
+              ${formatBlockParas(sec1)}
+            </div>
+            ${renderArchivalSourceBox(leftSources.sourceA)}
           </div>
-          ${formatBlockParas(sec1)}
-
-          ${renderArchivalSourceBox(leftSources.sourceA)}
-
-          <!-- Act 2 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 2</span>
-            <span class="sb-title">${sec2.title}</span>
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 2</span>
+                <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+              </div>
+              ${formatBlockParas(sec2)}
+            </div>
+            ${renderArchivalSourceBox(leftSources.sourceB)}
           </div>
-          ${formatBlockParas(sec2)}
-
-          ${renderArchivalSourceBox(leftSources.sourceB)}
-
         </div>
 
         <!-- Bottom Fingertip Vocabulary Deck -->
@@ -1192,86 +1318,87 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
           <h3 class="rph-title">${lesson.title}</h3>
         </div>
 
-        <!-- 2-Column Prose Measure -->
-        <div class="two-column-prose">
-          
-          <!-- Act 3 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 3</span>
-            <span class="sb-title">${sec3.title}</span>
-          </div>
-          ${formatBlockParas(sec3)}
-
-          <!-- Key Figure Card -->
-          ${
-            bank.keyFigure
-              ? `
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">${bank.keyFigure.badge || bank.keyFigure.category || 'KEY FIGURE'}</span>
-              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
-            </div>
-            <div class="kf-identity-row">
+        <!-- Right Page Content Layout -->
+        <div class="right-page-content">
+          <div class="right-upper-grid">
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 3</span>
+                  <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+                </div>
+                ${formatBlockParas(sec3)}
+              </div>
               ${
-                bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
-                  ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
+                bank.keyFigure
+                  ? `
+              <div class="key-figure-box">
+                <div class="kf-header">
+                  <span class="kf-tag">${bank.keyFigure.badge || bank.keyFigure.category || 'KEY FIGURE'}</span>
+                  <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+                </div>
+                <div class="kf-identity-row">
+                  ${
+                    bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
+                      ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
+                      : ''
+                  }
+                  <div class="kf-identity-text">
+                    <div class="kf-name">${bank.keyFigure.name}</div>
+                    <div class="kf-role">${bank.keyFigure.role}</div>
+                  </div>
+                </div>
+                <div class="kf-significance">${bank.keyFigure.significance}</div>
+                <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+                <ul class="kf-actions-list">
+                  ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+                </ul>
+              </div>`
                   : ''
               }
-              <div class="kf-identity-text">
-                <div class="kf-name">${bank.keyFigure.name}</div>
-                <div class="kf-role">${bank.keyFigure.role}</div>
-              </div>
             </div>
-            <div class="kf-significance">${bank.keyFigure.significance}</div>
-            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-            <ul class="kf-actions-list">
-              ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-            </ul>
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 4</span>
+                  <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+                </div>
+                ${formatBlockParas(sec4)}
+              </div>
+              ${bank.conceptSpotlight || ''}
+            </div>
+          </div>
+
+          ${
+            bank.archivalDispatch
+              ? `
+          <div class="fullwidth-dispatch-wrap">
+            ${bank.archivalDispatch}
           </div>`
               : ''
           }
-
-          <!-- Act 4 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 4</span>
-            <span class="sb-title">${sec4.title}</span>
-          </div>
-          ${formatBlockParas(sec4)}
-
-          <!-- Concept Spotlight Box -->
-          ${bank.conceptSpotlight || ''}
-
-          <!-- Archival Dispatch Box -->
-          ${bank.archivalDispatch || ''}
-
         </div>
 
-        <!-- Bottom Enquiry Deck (Full-Width Outside Columns) -->
-        ${
-          bank.bottomEnquiry
-            ? `
+        <!-- Lesson Enquiry & Writing Tasks Box -->
         <div class="bottom-enquiry-box">
           <div class="beb-header">
-            <span class="beb-title">HISTORICAL ENQUIRY &amp; DISCIPLINARY ASSESSMENT</span>
-            <span class="beb-badge">LESSON ${lessonNum} SYNTHESIS</span>
+            <span class="beb-title">LESSON ENQUIRY &amp; WRITING TASKS &bull; LESSON ${lessonNum}</span>
+            <span class="beb-badge">${lesson.skill || 'DISCIPLINARY WRITING'}</span>
           </div>
-          <div class="beb-grid">
-            <div class="beb-col">
-              <strong>1. Knowledge Recall &amp; Evidence:</strong>
-              ${bank.bottomEnquiry.q1}
+          <div class="beb-mission-content">
+            <div class="beb-task-row">
+              <span class="beb-task-tag">TASK 3: EVIDENCE PREPARATION</span>
+              <span class="beb-task-text">${task3Instruction}</span>
             </div>
-            <div class="beb-col">
-              <strong>2. Causal Analysis:</strong>
-              ${bank.bottomEnquiry.q2}
+            <div class="beb-task-row">
+              <span class="beb-task-tag">TASK 4: EXTENDED WRITING</span>
+              <span class="beb-task-text"><strong>Enquiry Question:</strong> ${task4Question}</span>
             </div>
-            <div class="beb-col">
-              <strong>3. Historical Evaluation &amp; Debate:</strong>
-              ${bank.bottomEnquiry.q3}
+            <div class="beb-workbook-signpost">
+              <span>&rarr; <strong>Pupil Workbook:</strong> Turn to Lesson ${lessonNum} (pages ${wbPages}) in your Pupil Workbook to complete your Task 3 evidence notes and Task 4 written response.</span>
             </div>
           </div>
-        </div>`
-            : ''
-        }
+        </div>
 
         <!-- Page Footer -->
         <div class="page-footer">
@@ -1475,31 +1602,82 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       line-height: 1.18;
     }
 
-    /* 2-Column Reading Measure */
-    .two-column-prose {
-      column-count: 2;
-      column-gap: 15px;
-      column-rule: 1px solid #e2e8f0;
-      text-align: justify;
+    /* Balanced 2-Column Grid Layout (Left Page) */
+    .two-column-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
+      flex: 1;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      overflow: hidden;
+    }
+    .col-top-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .col-side .archival-source-box {
+      margin: 0;
+    }
+
+    /* Right Page 2-Tier Balanced Layout */
+    .right-page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .right-upper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
       flex: 1;
       overflow: hidden;
     }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 3.5px;
+    }
+    .right-upper-grid .col-side .key-figure-box,
+    .right-upper-grid .col-side .concept-spotlight-box {
+      margin: 0;
+    }
+    .fullwidth-dispatch-wrap {
+      flex-shrink: 0;
+      margin: 2.5px 0 1px 0;
+    }
+    .fullwidth-dispatch-wrap .archival-source-box {
+      margin: 0;
+    }
+
+    /* Legacy fallback */
+    .two-column-prose {
+      display: none;
+    }
 
     .section-banner {
-      column-span: all;
       background: #f8fafc;
       border-left: 3px solid #1e3a8a;
       border-bottom: 1px solid #e2e8f0;
-      padding: 2.5px 6px;
+      padding: 2px 6px;
       border-radius: 0 3px 3px 0;
-      margin: 4px 0 3px 0;
+      margin: 2px 0 2px 0;
       display: flex;
       align-items: center;
       gap: 6px;
       font-family: 'Inter', sans-serif;
+      break-after: avoid;
     }
     .sb-num {
-      font-size: 6.2pt;
+      font-size: 8.0pt;
       font-weight: 900;
       color: #1e3a8a;
       background: #dbeafe;
@@ -1507,7 +1685,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border-radius: 2px;
     }
     .sb-title {
-      font-size: 7.4pt;
+      font-size: 8.4pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
@@ -1515,7 +1693,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
 
     .narrative-p {
-      margin: 0 0 4.5px 0;
+      margin: 0 0 4px 0;
       text-indent: 1.0em;
     }
     .narrative-p:first-of-type, .section-banner + .narrative-p {
@@ -1524,7 +1702,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
 
     .para-ref {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #1e3a8a;
       background: #eff6ff;
@@ -1542,7 +1720,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border: 1px solid #e7e5e4;
       border-left: 3px solid #78716c;
       border-radius: 3px;
-      padding: 4.5px 7px;
+      padding: 4px 6px;
       margin: 4px 0;
       break-inside: avoid;
     }
@@ -1554,7 +1732,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       font-family: 'Inter', sans-serif;
     }
     .source-badge {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       font-weight: 900;
       color: #fff;
       background: #0f172a;
@@ -1562,20 +1740,20 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border-radius: 2px;
     }
     .source-type {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       font-weight: 700;
       color: #78716c;
       text-transform: uppercase;
       margin-left: 4px;
     }
     .source-date-micro {
-      font-size: 5.8pt;
+      font-size: 8.0pt;
       font-weight: 600;
       color: #78716c;
     }
     .archival-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.6pt;
+      font-size: 9.4pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 2px;
@@ -1583,88 +1761,88 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
     .archival-image {
       width: 100%;
-      height: 100px;
+      height: 92px;
       object-fit: contain;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 2px;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       display: block;
     }
     .archival-source-box.expand-sm .archival-image {
-      height: 80px;
+      height: 75px;
     }
     .archival-source-box.expand-md .archival-image {
-      height: 125px;
+      height: 110px;
     }
     .archival-source-box.expand-lg .archival-image {
-      height: 145px;
+      height: 130px;
     }
     .archival-source-box.panoramic-source {
       column-span: all;
-      margin: 4px 0 5px 0;
+      margin: 3px 0 4px 0;
     }
     .archival-source-box.panoramic-source .archival-image {
-      height: 115px;
+      height: 105px;
       width: 100%;
       object-fit: contain;
     }
     .archival-body {
-      font-size: 7.8pt;
+      font-size: 8.8pt;
       line-height: 1.34;
       color: #292524;
       font-style: italic;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .written-source-box .archival-body {
       background: #fafaf9;
       border-left: 2px solid #78716c;
-      padding: 4px 6px;
+      padding: 3.5px 5.5px;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.8pt;
+      font-size: 8.8pt;
       line-height: 1.34;
       color: #1c1917;
       font-style: italic;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .archival-context-box {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #0284c7;
-      padding: 3px 5px;
-      margin: 3px 0 2px 0;
+      padding: 2.5px 4.5px;
+      margin: 2px 0;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
     }
     .archival-context-text {
-      font-size: 6.8pt;
+      font-size: 8.0pt;
       line-height: 1.28;
       color: #334155;
-      margin: 0 0 2px 0;
+      margin: 0 0 1.5px 0;
     }
     .archival-hinge-q {
-      font-size: 7.0pt;
+      font-size: 8.1pt;
       line-height: 1.28;
       color: #0f172a;
       background: #f0f9ff;
-      padding: 2px 4px;
+      padding: 1.5px 3.5px;
       border-radius: 2px;
-      margin-top: 2px;
+      margin-top: 1.5px;
     }
     .archival-hinge-q strong {
       color: #0369a1;
       text-transform: uppercase;
-      font-size: 6.2pt;
-      letter-spacing: 0.04em;
+      font-size: 8.0pt;
+      letter-spacing: 0.03em;
     }
     .archival-footer {
       border-top: 1px dashed #d6d3d1;
-      padding-top: 2px;
-      margin-top: 2px;
+      padding-top: 1.5px;
+      margin-top: 1.5px;
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       color: #78716c;
       font-weight: 600;
     }
@@ -1675,7 +1853,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 5px 8px;
+      padding: 4px 6px;
       margin: 4px 0;
       break-inside: avoid;
     }
@@ -1686,26 +1864,26 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
-      font-size: 6.2pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .kf-lifespan {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       color: #64748b;
       font-weight: 600;
     }
     .kf-identity-row {
       display: flex;
-      gap: 7px;
+      gap: 6px;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .kf-portrait {
-      width: 44px;
-      height: 54px;
+      width: 42px;
+      height: 50px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #94a3b8;
@@ -1714,7 +1892,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     .kf-identity-text { flex: 1; }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.4pt;
+      font-size: 10.4pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
@@ -1722,22 +1900,22 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 8.2pt;
       font-weight: 700;
       color: #475569;
       text-transform: uppercase;
       line-height: 1.2;
     }
     .kf-significance {
-      font-size: 7.6pt;
+      font-size: 8.5pt;
       font-style: italic;
       color: #334155;
-      line-height: 1.34;
-      margin-bottom: 3px;
+      line-height: 1.30;
+      margin-bottom: 2.5px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -1747,11 +1925,11 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       margin: 0;
       padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      line-height: 1.30;
+      font-size: 8.2pt;
+      line-height: 1.28;
       color: #1e293b;
     }
-    .kf-actions-list li { margin-bottom: 1.5px; }
+    .kf-actions-list li { margin-bottom: 1px; }
 
     /* Concept Spotlight Box */
     .concept-spotlight-box {
@@ -1759,7 +1937,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border: 1px solid #fed7aa;
       border-left: 3.5px solid #b45309;
       border-radius: 3px;
-      padding: 5px 8px;
+      padding: 4px 6px;
       margin: 4px 0;
       break-inside: avoid;
     }
@@ -1773,13 +1951,13 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 6.2pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
     }
     .csb-category {
-      font-size: 5.8pt;
+      font-size: 8.0pt;
       font-weight: 700;
       color: #b45309;
       background: #ffedd5;
@@ -1788,26 +1966,26 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.0pt;
+      font-size: 9.5pt;
       font-weight: 800;
       color: #7c2d12;
       margin: 1px 0 2px 0;
       line-height: 1.15;
     }
     .csb-body {
-      font-size: 7.6pt;
-      line-height: 1.34;
+      font-size: 8.8pt;
+      line-height: 1.32;
       color: #1e293b;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 8.2pt;
       font-weight: 600;
       color: #78350f;
       background: #fef3c7;
       border-left: 2px solid #d97706;
-      padding: 2px 5px;
+      padding: 1.5px 4.5px;
       border-radius: 0 2px 2px 0;
     }
 
@@ -1818,7 +1996,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       flex-shrink: 0;
       margin-top: auto;
       margin-bottom: 1px;
-      padding: 6px 8px;
+      padding: 5px 8px;
       border-radius: 3px;
       font-family: 'Inter', sans-serif;
     }
@@ -1831,23 +2009,23 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 2px;
+      padding-bottom: 1.5px;
     }
     .bvb-title {
-      font-size: 6.8pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .bvb-badge, .beb-badge {
-      font-size: 5.8pt;
+      font-size: 8.0pt;
       font-weight: 800;
       background: #0f172a;
       color: #fff;
-      padding: 1px 4px;
+      padding: 1px 5px;
       border-radius: 2px;
       text-transform: uppercase;
     }
@@ -1855,16 +2033,16 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 7px;
-      font-size: 6.8pt;
-      line-height: 1.28;
+      font-size: 8.8pt;
+      line-height: 1.34;
       color: #334155;
     }
-    .bvb-col strong, .beb-col strong {
+    .bvb-col strong {
       display: block;
       color: #0f172a;
       margin-bottom: 1px;
       text-transform: uppercase;
-      font-size: 6.2pt;
+      font-size: 8.8pt;
     }
 
     .bottom-enquiry-box {
@@ -1873,19 +2051,50 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border-top: 2.5px solid #1e3a8a;
     }
     .beb-title {
-      font-size: 6.8pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .beb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 9px;
-      font-size: 6.8pt;
-      line-height: 1.30;
+    .beb-mission-content {
+      padding: 2px 0 1px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+    .beb-task-row {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+    }
+    .beb-task-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .beb-task-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.5pt;
       color: #334155;
+      line-height: 1.28;
+    }
+    .beb-task-text strong {
+      color: #0f172a;
+    }
+    .beb-workbook-signpost {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      color: #475569;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 1.5px;
+      margin-top: 1px;
+    }
+    .beb-workbook-signpost strong {
+      color: #1e3a8a;
     }
 
     .page-footer {
@@ -1895,7 +2104,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
+      font-size: 8.0pt;
       color: #64748b;
       font-weight: 600;
       flex-shrink: 0;
@@ -1955,15 +2164,19 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       margin: 3px 0;
     }
     .cover-plate-img {
-      max-height: 90mm;
+      height: 82mm;
+      max-height: 85mm;
       max-width: 100%;
+      width: auto;
       object-fit: contain;
       border: 1px solid #cbd5e1;
       border-radius: 2px;
+      display: block;
+      margin: 0 auto;
     }
     .cover-plate-caption {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 6.6pt;
       color: #64748b;
       margin-top: 3px;
       font-style: italic;
@@ -1994,23 +2207,25 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       width: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
+      font-size: 7.2pt;
       margin-top: 4px;
     }
     .cover-matrix-table th {
       background: #0f172a;
       color: #ffffff;
-      padding: 3px 6px;
+      padding: 1.8mm 2.2mm;
       text-align: left;
       font-weight: 800;
-      font-size: 6.2pt;
+      font-size: 7.2pt;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .cover-matrix-table td {
       border-bottom: 1px solid #e2e8f0;
-      padding: 2.8px 6px;
+      padding: 1.8mm 2.2mm;
       color: #334155;
+      font-size: 7.2pt;
+      line-height: 1.25;
     }
     .cover-matrix-table tr:nth-child(even) td {
       background: #f8fafc;
@@ -2033,7 +2248,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       flex-direction: column;
       justify-content: space-between;
       border: 2px solid #0f172a;
-      padding: 14px 18px;
+      padding: 16px 20px 14px 20px;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
@@ -2046,12 +2261,12 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     .back-header-strip {
       text-align: center;
       margin-bottom: 5px;
-      border-bottom: 2px solid #1e3a8a;
+      border-bottom: 2.5px solid #1e3a8a;
       padding-bottom: 4px;
     }
     .back-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 13.5pt;
+      font-size: 15.5pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
@@ -2060,14 +2275,14 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       letter-spacing: 0.02em;
     }
     .back-subtitle {
-      font-size: 7.2pt;
+      font-size: 7.8pt;
       color: #475569;
       margin-top: 2px;
       font-style: italic;
       font-weight: 500;
     }
     .back-section-title {
-      font-size: 7.4pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -2080,7 +2295,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       align-items: baseline;
     }
     .back-section-tag {
-      font-size: 6.0pt;
+      font-size: 7.2pt;
       font-weight: 700;
       color: #1e3a8a;
       letter-spacing: 0.03em;
@@ -2088,38 +2303,38 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     .back-timeline-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4.5px;
-      font-size: 6.3pt;
-      line-height: 1.25;
+      gap: 5px;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bt-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #1e3a8a;
-      padding: 3px 5px;
+      padding: 4px 6px;
       border-radius: 0 2px 2px 0;
     }
-    .bt-card strong { color: #1e3a8a; font-weight: 800; }
+    .bt-card strong { color: #1e3a8a; font-weight: 800; font-size: 7.6pt; }
     
     .back-thematic-matrix {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 5px;
-      font-size: 6.3pt;
-      line-height: 1.25;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bmm-col {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-top: 2.5px solid #1e3a8a;
-      padding: 4px 5.5px;
+      padding: 5px 6.5px;
       border-radius: 2px;
     }
     .bmm-col strong {
       display: block;
       color: #1e3a8a;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 7.6pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -2128,21 +2343,21 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.3pt;
-      line-height: 1.25;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bh-card {
       background: #fdfaf6;
       border: 1px solid #fed7aa;
       border-left: 2.5px solid #b45309;
-      padding: 4px 5.5px;
+      padding: 5px 6.5px;
       border-radius: 2px;
     }
     .bh-card strong {
       display: block;
       color: #92400e;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 7.6pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -2151,21 +2366,21 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.3pt;
-      line-height: 1.25;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bws-col {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-top: 2.5px solid #2563eb;
-      padding: 4px 5.5px;
+      padding: 5px 6.5px;
       border-radius: 2px;
     }
     .bws-col strong {
       display: block;
       color: #1e40af;
       text-transform: uppercase;
-      font-size: 6.4pt;
+      font-size: 7.6pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -2174,7 +2389,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     .back-qr-grid {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      gap: 4px;
+      gap: 4.5px;
       margin-top: 2px;
     }
     .bqr-card {
@@ -2196,7 +2411,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
     .bqr-num {
       display: block;
-      font-size: 6.0pt;
+      font-size: 6.8pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -2204,7 +2419,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
     .bqr-title {
       display: block;
-      font-size: 5.2pt;
+      font-size: 5.6pt;
       font-weight: 700;
       color: #334155;
       line-height: 1.15;
@@ -2225,7 +2440,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       border-radius: 2px;
     }
     .bqr-footer {
-      font-size: 4.8pt;
+      font-size: 5.2pt;
       font-weight: 800;
       color: #64748b;
       text-transform: uppercase;

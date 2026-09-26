@@ -218,22 +218,35 @@ async function run() {
         for (let p = 3; p <= pdfRes.numpages; p++) {
           const pText = pdfRes.pageMap[p] || '';
 
-          // Match L{lNum}: or L{relNum}: or Title snippet
+          // Match L{lNum}: or L{relNum}: or ENQUIRY {relNum} or Title snippet
           const matchLFull = pText.includes(`L${lNum}:`);
           const matchLRel = pText.includes(`L${relNum}:`);
+          const matchEnquiry =
+            pText.includes(`ENQUIRY${relNum}`) ||
+            pText.includes(`ENQUIRY${lNum}`) ||
+            pText.includes(`ENQUIRY:${relNum}`) ||
+            pText.includes(`ENQUIRY:${lNum}`);
           const matchTitle = cleanTitle.length > 5 && pText.includes(cleanTitle);
 
-          if ((matchLFull || matchLRel) && matchTitle) {
+          if (
+            (matchLFull || matchLRel || matchEnquiry) &&
+            (matchTitle || pText.includes(`ENQUIRY`))
+          ) {
             foundPage = p;
             break;
           }
         }
 
-        // Fallback: search just L{relNum}: or cleanTitle
+        // Fallback: search just L{relNum}: or ENQUIRY or cleanTitle
         if (!foundPage) {
           for (let p = 3; p <= pdfRes.numpages; p++) {
             const pText = pdfRes.pageMap[p] || '';
-            if (pText.includes(`L${relNum}:`) || pText.includes(`L${lNum}:`)) {
+            if (
+              pText.includes(`L${relNum}:`) ||
+              pText.includes(`L${lNum}:`) ||
+              pText.includes(`ENQUIRY${relNum}`) ||
+              pText.includes(`ENQUIRY${lNum}`)
+            ) {
               foundPage = p;
               break;
             }
@@ -250,9 +263,22 @@ async function run() {
           }
         }
 
+        const isDoublePageKS3 =
+          pdfRes.numpages <= 24 &&
+          (unitId === 'industrialisation_and_empire' ||
+            unitId === 'great_war' ||
+            unitId === 'great_war_part2' ||
+            unitId === 'medieval_england' ||
+            unitId === 'early_modern_world' ||
+            unitId === 'water_and_sanitation' ||
+            unitId === 'post_war_britain' ||
+            unitId === 'the_shoah' ||
+            unitId === 'australia');
+        const fallbackPage = isDoublePageKS3 ? 4 + relIdx * 2 : 3 + relIdx * 6;
+
         const lessonKey = lesson.id || `lesson_${fullIdx + 1}`;
         masterMap[unitId][lessonKey] = {
-          page: foundPage || 3 + relIdx * 6,
+          page: foundPage || fallbackPage,
           booklet: config.booklet,
           unitId: unitId,
           lessonIndex: fullIdx,

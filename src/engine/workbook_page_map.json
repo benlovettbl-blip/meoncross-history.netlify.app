@@ -87,7 +87,7 @@
       "lessonIndex": 8
     },
     "lesson_11": {
-      "page": 3,
+      "page": 15,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 9
@@ -151,13 +151,13 @@
   },
   "early_modern_world": {
     "lesson_1": {
-      "page": 3,
+      "page": 4,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 9,
+      "page": 6,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 1
@@ -169,19 +169,19 @@
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 27,
+      "page": 12,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 3
     },
     "lesson_5": {
-      "page": 33,
+      "page": 14,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 5
     },
     "lesson_6": {
-      "page": 39,
+      "page": 16,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 6
@@ -193,7 +193,7 @@
       "lessonIndex": 7
     },
     "lesson_8": {
-      "page": 51,
+      "page": 20,
       "booklet": "Pupil Workbook",
       "unitId": "early_modern_world",
       "lessonIndex": 8
@@ -471,43 +471,43 @@
   },
   "great_war_part2": {
     "lesson_1_enlistment": {
-      "page": 3,
+      "page": 4,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 0
     },
     "lesson_2_trenches_haig": {
-      "page": 9,
+      "page": 6,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 1
     },
     "lesson_3_empire_troops": {
-      "page": 15,
+      "page": 8,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 2
     },
     "lesson_4_home_front_dora": {
-      "page": 21,
+      "page": 10,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 3
     },
     "lesson_5_versailles": {
-      "page": 27,
+      "page": 12,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 4
     },
     "lesson_6_stubbington_lost_gen": {
-      "page": 33,
+      "page": 14,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 5
     },
     "lesson_7_assessment": {
-      "page": 39,
+      "page": 16,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 6
@@ -515,43 +515,43 @@
   },
   "industrialisation_and_empire": {
     "lesson_1": {
-      "page": 3,
+      "page": 4,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 9,
+      "page": 6,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 1
     },
     "lesson_3": {
-      "page": 15,
+      "page": 8,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 21,
+      "page": 10,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 3
     },
     "lesson_5": {
-      "page": 27,
+      "page": 12,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 4
     },
     "lesson_6": {
-      "page": 33,
+      "page": 14,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 5
     },
     "lesson_7": {
-      "page": 39,
+      "page": 16,
       "booklet": "Pupil Workbook",
       "unitId": "industrialisation_and_empire",
       "lessonIndex": 6
@@ -565,55 +565,55 @@
   },
   "medieval_england": {
     "lesson_1": {
-      "page": 3,
+      "page": 4,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 0
     },
     "lesson_2": {
-      "page": 9,
+      "page": 6,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 1
     },
     "lesson_3": {
-      "page": 15,
+      "page": 8,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 2
     },
     "lesson_4": {
-      "page": 21,
+      "page": 10,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 3
     },
     "lesson_5": {
-      "page": 27,
+      "page": 12,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 4
     },
     "lesson_6": {
-      "page": 33,
+      "page": 14,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 5
     },
     "lesson_7": {
-      "page": 39,
+      "page": 16,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 6
     },
     "lesson_8": {
-      "page": 45,
+      "page": 18,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 7
     },
     "lesson_9": {
-      "page": 51,
+      "page": 20,
       "booklet": "Pupil Workbook",
       "unitId": "medieval_england",
       "lessonIndex": 8
