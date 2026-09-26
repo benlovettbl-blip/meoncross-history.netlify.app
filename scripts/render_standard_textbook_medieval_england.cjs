@@ -367,7 +367,6 @@ async function buildPublisherTextbookHtmlMedieval() {
                   <span class="sb-title">${act3.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
                 </div>
                 ${act3.paras
-                  .slice(0, 2)
                   .map(
                     (p, pIdx) =>
                       `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${formatText(p)}</p>`,
@@ -383,7 +382,6 @@ async function buildPublisherTextbookHtmlMedieval() {
                   <span class="sb-title">${act4.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
                 </div>
                 ${act4.paras
-                  .slice(0, 2)
                   .map(
                     (p, pIdx) =>
                       `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${formatText(p)}</p>`,
@@ -667,9 +665,9 @@ async function buildPublisherTextbookHtmlMedieval() {
       gap: 2.5px;
     }
     .right-upper-grid .narrative-p {
-      font-size: 8.8pt;
-      line-height: 1.24;
-      margin: 0 0 2px 0;
+      font-size: 9.3pt;
+      line-height: 1.28;
+      margin: 0 0 2.5px 0;
     }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
@@ -681,46 +679,46 @@ async function buildPublisherTextbookHtmlMedieval() {
     }
     .fullwidth-dispatch-wrap .archival-source-box {
       margin: 0;
-      padding: 2.5px 5px;
+      padding: 3px 6px;
       background: #fdfaf6;
       border: 1px solid #e7e5e4;
       border-left: 3px solid #78716c;
     }
     .fullwidth-dispatch-wrap .archival-image {
       float: left;
-      max-height: 56px;
+      max-height: 62px;
       width: auto;
-      max-width: 110px;
+      max-width: 120px;
       object-fit: contain !important;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
       margin: 0 6px 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-title {
-      font-size: 8.2pt;
-      margin-bottom: 1px;
-      line-height: 1.12;
+      font-size: 8.6pt;
+      margin-bottom: 1.5px;
+      line-height: 1.15;
     }
     .fullwidth-dispatch-wrap .archival-body {
-      font-size: 7.6pt;
-      line-height: 1.20;
-      margin-bottom: 1px;
+      font-size: 7.8pt;
+      line-height: 1.22;
+      margin-bottom: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-context-box {
       clear: both;
-      padding: 1px 3.5px;
-      margin: 1px 0 0 0;
+      padding: 1.5px 4px;
+      margin: 1.5px 0 0 0;
     }
     .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 7.0pt;
-      line-height: 1.15;
+      font-size: 7.2pt;
+      line-height: 1.18;
       margin: 0;
     }
     .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 7.0pt;
-      line-height: 1.15;
-      padding: 0.5px 2px;
-      margin-top: 1px;
+      font-size: 7.2pt;
+      line-height: 1.18;
+      padding: 1px 3px;
+      margin-top: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-footer {
       display: none;

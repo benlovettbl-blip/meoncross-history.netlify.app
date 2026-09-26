@@ -362,7 +362,6 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
                   <span class="sb-title">${act3.title}</span>
                 </div>
                 ${act3.paras
-                  .slice(0, 2)
                   .map(
                     (p, pIdx) =>
                       `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${formatText(p)}</p>`,
@@ -378,7 +377,6 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
                   <span class="sb-title">${act4.title}</span>
                 </div>
                 ${act4.paras
-                  .slice(0, 2)
                   .map(
                     (p, pIdx) =>
                       `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${formatText(p)}</p>`,
@@ -673,9 +671,9 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       gap: 5px;
     }
     .right-upper-grid .narrative-p {
-      font-size: 8.8pt;
-      line-height: 1.24;
-      margin: 0 0 2px 0;
+      font-size: 9.3pt;
+      line-height: 1.28;
+      margin: 0 0 2.5px 0;
     }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
@@ -687,46 +685,46 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .fullwidth-dispatch-wrap .archival-source-box {
       margin: 0;
-      padding: 2.5px 5px;
+      padding: 3px 6px;
       background: #fdfaf6;
       border: 1px solid #fed7aa;
       border-left: 3px solid #b45309;
     }
     .fullwidth-dispatch-wrap .archival-image {
       float: left;
-      max-height: 56px;
+      max-height: 62px;
       width: auto;
-      max-width: 110px;
+      max-width: 120px;
       object-fit: contain !important;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
       margin: 0 6px 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-title {
-      font-size: 8.2pt;
-      margin-bottom: 1px;
-      line-height: 1.12;
+      font-size: 8.6pt;
+      margin-bottom: 1.5px;
+      line-height: 1.15;
     }
     .fullwidth-dispatch-wrap .archival-body {
-      font-size: 7.6pt;
-      line-height: 1.20;
-      margin-bottom: 1px;
+      font-size: 7.8pt;
+      line-height: 1.22;
+      margin-bottom: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-context-box {
       clear: both;
-      padding: 1px 3.5px;
-      margin: 1px 0 0 0;
+      padding: 1.5px 4px;
+      margin: 1.5px 0 0 0;
     }
     .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 7.0pt;
-      line-height: 1.15;
+      font-size: 7.2pt;
+      line-height: 1.18;
       margin: 0;
     }
     .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 7.0pt;
-      line-height: 1.15;
-      padding: 0.5px 2px;
-      margin-top: 1px;
+      font-size: 7.2pt;
+      line-height: 1.18;
+      padding: 1px 3px;
+      margin-top: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-footer {
       display: none;
@@ -928,37 +926,37 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #bfdbfe;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 2.5px 5px;
+      padding: 3.5px 6px;
       margin: 0;
       break-inside: avoid;
     }
     .kf-header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
-      font-size: 5.8pt;
+      font-size: 6.2pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .kf-lifespan {
-      font-size: 5.6pt;
+      font-size: 6.0pt;
       color: #64748b;
       font-weight: 600;
     }
     .kf-identity-row {
       display: flex;
-      gap: 5px;
+      gap: 6px;
       align-items: center;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
     }
     .kf-portrait {
-      width: 32px;
-      height: 38px;
+      width: 36px;
+      height: 42px;
       object-fit: contain;
       background: #ffffff;
       border-radius: 2px;
@@ -968,7 +966,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     .kf-identity-text { flex: 1; }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
@@ -976,35 +974,35 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.6pt;
       font-weight: 700;
       color: #475569;
       text-transform: uppercase;
       line-height: 1.15;
     }
     .kf-significance {
-      font-size: 7.0pt;
+      font-size: 7.6pt;
       font-style: italic;
       color: #334155;
-      line-height: 1.25;
+      line-height: 1.28;
       margin-bottom: 2px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #1e3a8a;
       letter-spacing: 0.03em;
-      margin-top: 1px;
+      margin-top: 1.5px;
     }
     .kf-actions-list {
       margin: 0;
-      padding-left: 10px;
-      font-size: 6.6pt;
-      line-height: 1.25;
+      padding-left: 11px;
+      font-size: 7.3pt;
+      line-height: 1.28;
       color: #334155;
     }
-    .kf-actions-list li { margin-bottom: 1px; }
+    .kf-actions-list li { margin-bottom: 1.5px; }
 
     /* Concept Spotlight Box */
     .concept-spotlight-box {
@@ -1012,7 +1010,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       border-radius: 3px;
-      padding: 2.5px 5px;
+      padding: 3.5px 6px;
       margin: 0;
       break-inside: avoid;
     }
@@ -1025,47 +1023,47 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 5.8pt;
+      font-size: 6.2pt;
       font-weight: 900;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 5.6pt;
+      font-size: 6.0pt;
       color: #64748b;
       font-weight: 700;
       text-transform: uppercase;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
+      font-size: 9.0pt;
       font-weight: 800;
       color: #0f172a;
       margin: 1px 0 2px 0;
       line-height: 1.15;
     }
     .csb-body {
-      font-size: 6.8pt;
-      line-height: 1.26;
+      font-size: 7.5pt;
+      line-height: 1.28;
       color: #334155;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 5.8pt;
-      line-height: 1.22;
+      font-size: 6.6pt;
+      line-height: 1.24;
       color: #0f172a;
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-radius: 2px;
-      padding: 2px 4px;
+      padding: 2.5px 5px;
       margin-top: 2px;
     }
     .csb-takeaway strong {
       color: #1e3a8a;
       text-transform: uppercase;
-      font-size: 5.4pt;
+      font-size: 6.2pt;
     }
 
     /* Bottom Vocabulary Deck */

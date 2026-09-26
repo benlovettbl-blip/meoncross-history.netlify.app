@@ -175,9 +175,10 @@ module.exports = function getEarlyModernData(helpers = {}) {
         significance:
           'First Englishman to circumnavigate the globe (1577–1580); vice-admiral of the English fleet that defeated the Spanish Armada in 1588.',
         actions: [
-          'Raided the Spanish Caribbean and captured the treasure ship Nuestra Señora de la Concepción, seizing twenty-six tons of silver bullion.',
-          'Knighted by Queen Elizabeth I on the deck of the Golden Hind at Deptford, infuriating Spanish King Philip II.',
+          'Raided the Spanish Main and captured the treasure ship Nuestra Señora de la Concepción, seizing twenty-six tons of silver bullion.',
+          'First Englishman to circumnavigate the globe (1577–1580) aboard the Golden Hind, knighted on his quarterdeck by Queen Elizabeth I.',
           'Executed the daring raid on Cadiz harbor in 1587, destroying over thirty Spanish warships and "singeing the King of Spain’s beard".',
+          'Served as Vice-Admiral during the 1588 Armada crisis, executing the Calais fireship assault and capturing the Spanish flagship Rosario.',
         ],
         image: getBase64Image('/images/francis_drake.jpg'),
       },

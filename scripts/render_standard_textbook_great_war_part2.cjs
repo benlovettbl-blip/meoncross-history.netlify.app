@@ -383,10 +383,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
                   <span class="sb-num">ACT 3</span>
                   <span class="sb-title">${act3.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
                 </div>
-                ${act3.text
-                  .slice(0, 2)
-                  .map((p) => `<p class="narrative-p">${formatText(p)}</p>`)
-                  .join('')}
+                ${act3.text.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('')}
               </div>
               ${renderKeyFigureBox(bank.keyFigure)}
             </div>
@@ -396,10 +393,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
                   <span class="sb-num">ACT 4</span>
                   <span class="sb-title">${act4.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
                 </div>
-                ${act4.text
-                  .slice(0, 2)
-                  .map((p) => `<p class="narrative-p">${formatText(p)}</p>`)
-                  .join('')}
+                ${act4.text.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('')}
               </div>
               ${renderConceptSpotlightBox(bank.conceptSpotlight)}
             </div>
@@ -608,38 +602,38 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       justify-content: space-between;
     }
     .two-column-grid .narrative-p {
-      margin: 0 0 4px 0;
-      line-height: 1.46;
-      font-size: 9.8pt;
+      margin: 0 0 2.5px 0;
+      line-height: 1.28;
+      font-size: 9.3pt;
     }
     .two-column-grid .archival-source-box {
-      padding: 4.5px 6.5px;
+      padding: 3.5px 5.5px;
     }
     .two-column-grid .archival-image {
       max-height: 145px;
-      min-height: 90px;
+      min-height: 80px;
       height: 100%;
       flex: 1;
       object-fit: contain;
     }
     .two-column-grid .archival-body {
-      font-size: 8.3pt;
-      line-height: 1.28;
-      padding: 3px 5.5px;
-      margin-bottom: 2.5px;
+      font-size: 8.0pt;
+      line-height: 1.24;
+      padding: 2.5px 4.5px;
+      margin-bottom: 2px;
     }
     .two-column-grid .archival-context-box {
-      padding: 3px 5px;
-      margin: 2px 0;
+      padding: 2.5px 4.5px;
+      margin: 1.5px 0;
     }
     .two-column-grid .archival-context-text {
-      font-size: 7.6pt;
-      line-height: 1.24;
+      font-size: 7.4pt;
+      line-height: 1.20;
       margin: 0 0 1px 0;
     }
     .two-column-grid .archival-hinge-q {
-      font-size: 7.6pt;
-      line-height: 1.24;
+      font-size: 7.4pt;
+      line-height: 1.20;
       padding: 1.5px 3.5px;
     }
 
@@ -658,19 +652,19 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       column-gap: 5mm;
       flex: 1;
       overflow: hidden;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .right-upper-grid .col-side {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 5px;
+      gap: 3px;
       overflow: hidden;
     }
     .right-upper-grid .narrative-p {
-      font-size: 9.9pt;
-      line-height: 1.48;
-      margin: 0 0 4.5px 0;
+      font-size: 9.3pt;
+      line-height: 1.28;
+      margin: 0 0 2.5px 0;
     }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
@@ -678,50 +672,50 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
-      margin: 3px 0 2px 0;
+      margin: 2px 0 1px 0;
     }
     .fullwidth-dispatch-wrap .archival-source-box {
       margin: 0;
-      padding: 5px 8px;
+      padding: 3.5px 6px;
       background: #fdfaf6;
       border: 1px solid #e7e5e4;
       border-left: 3px solid #78716c;
     }
     .fullwidth-dispatch-wrap .archival-image {
       float: left;
-      max-height: 68px;
+      max-height: 62px;
       width: auto;
-      max-width: 115px;
+      max-width: 120px;
       object-fit: contain !important;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
-      margin: 0 8px 3px 0;
+      margin: 0 6px 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-title {
-      font-size: 9.0pt;
-      margin-bottom: 2px;
+      font-size: 8.6pt;
+      margin-bottom: 1.5px;
       line-height: 1.15;
     }
     .fullwidth-dispatch-wrap .archival-body {
-      font-size: 8.3pt;
-      line-height: 1.28;
-      margin-bottom: 2.5px;
+      font-size: 7.8pt;
+      line-height: 1.22;
+      margin-bottom: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-context-box {
       clear: both;
-      padding: 2.5px 6px;
-      margin: 2.5px 0 0 0;
+      padding: 1.5px 4px;
+      margin: 1.5px 0 0 0;
     }
     .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 7.5pt;
-      line-height: 1.22;
+      font-size: 7.2pt;
+      line-height: 1.18;
       margin: 0;
     }
     .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 7.5pt;
-      line-height: 1.22;
-      padding: 1.5px 4px;
-      margin-top: 2px;
+      font-size: 7.2pt;
+      line-height: 1.18;
+      padding: 1px 3px;
+      margin-top: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-footer {
       display: none;
@@ -915,18 +909,18 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 0 3px 3px 0;
-      padding: 6px 8px;
+      padding: 3px 6px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      gap: 2.5px;
+      gap: 1.5px;
     }
     .kf-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1.5px;
+      padding-bottom: 1px;
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
@@ -944,12 +938,12 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     .kf-identity-row {
       display: flex;
       align-items: center;
-      gap: 7px;
-      margin: 2px 0;
+      gap: 5px;
+      margin: 1px 0;
     }
     .kf-portrait {
-      width: 46px;
-      height: 54px;
+      width: 34px;
+      height: 42px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
@@ -957,7 +951,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.8pt;
+      font-size: 9.4pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.15;
@@ -967,13 +961,13 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       font-size: 7.2pt;
       font-weight: 700;
       color: #1e3a8a;
-      line-height: 1.2;
+      line-height: 1.18;
     }
     .kf-significance {
-      font-size: 8.0pt;
-      line-height: 1.30;
+      font-size: 7.5pt;
+      line-height: 1.18;
       color: #1e293b;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
@@ -982,17 +976,17 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin: 1.5px 0 0.5px 0;
+      margin: 1px 0 0.5px 0;
     }
     .kf-actions-list {
       margin: 0;
-      padding-left: 12px;
-      font-size: 7.8pt;
-      line-height: 1.28;
+      padding-left: 10px;
+      font-size: 7.3pt;
+      line-height: 1.18;
       color: #334155;
     }
     .kf-actions-list li {
-      margin-bottom: 1.5px;
+      margin-bottom: 0.5px;
     }
 
     /* Concept Spotlight Box */
@@ -1001,18 +995,18 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       border: 1px solid #fed7aa;
       border-left: 3.5px solid #b45309;
       border-radius: 0 3px 3px 0;
-      padding: 6px 8px;
+      padding: 3px 6px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      gap: 2.5px;
+      gap: 1.5px;
     }
     .csb-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       border-bottom: 1px solid #fde68a;
-      padding-bottom: 1.5px;
+      padding-bottom: 1px;
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
@@ -1030,27 +1024,28 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.6pt;
+      font-size: 9.0pt;
       font-weight: 800;
       color: #0f172a;
-      margin: 1px 0;
+      margin: 0 0 1px 0;
       line-height: 1.15;
     }
     .csb-body {
-      font-size: 8.2pt;
-      line-height: 1.30;
+      font-size: 7.6pt;
+      line-height: 1.18;
       color: #1e293b;
+      margin-bottom: 1.5px;
     }
     .csb-takeaway {
       background: #fef3c7;
       border-left: 2.5px solid #b45309;
-      padding: 2.5px 5px;
+      padding: 1.5px 4px;
       border-radius: 0 2px 2px 0;
-      font-size: 7.6pt;
-      line-height: 1.24;
+      font-size: 7.4pt;
+      line-height: 1.16;
       color: #78350f;
       font-family: 'Inter', sans-serif;
-      margin-top: 2.5px;
+      margin-top: 1.5px;
     }
 
     /* Bottom Fingertip Vocabulary Deck */
