@@ -146,6 +146,35 @@ function renderConceptSpotlightBox(csb) {
   `;
 }
 
+function renderKeyFigureBox(keyFigure) {
+  if (!keyFigure) return '';
+  const portraitHtml =
+    keyFigure.image && keyFigure.image !== 'monogram'
+      ? `<img class="kf-portrait" src="${keyFigure.image.startsWith('data:') ? keyFigure.image : getBase64Image(keyFigure.image) || keyFigure.image}" alt="${keyFigure.name}">`
+      : '';
+
+  return `
+    <div class="key-figure-box">
+      <div class="kf-header">
+        <span class="kf-tag">${keyFigure.category || keyFigure.badge || 'KEY FIGURE'}</span>
+        <span class="kf-lifespan">${keyFigure.lifespan || ''}</span>
+      </div>
+      <div class="kf-identity-row">
+        ${portraitHtml}
+        <div class="kf-identity-text">
+          <div class="kf-name">${keyFigure.name}</div>
+          <div class="kf-role">${keyFigure.role}</div>
+        </div>
+      </div>
+      <div class="kf-significance">${formatText(keyFigure.significance)}</div>
+      <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+      <ul class="kf-actions-list">
+        ${keyFigure.actions.map((a) => `<li>${formatText(a)}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+}
+
 /**
  * Builds the complete 20-page Early Modern World Master Textbook HTML
  */
@@ -253,52 +282,28 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
           </div>
         </div>
 
-        <div class="two-column-prose">
-          
-          <div class="section-banner">
-            <span class="sb-num">ACT 1</span>
-            <span class="sb-title">${act1.title}</span>
-          </div>
-          ${act1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
-
-          ${renderArchivalSourceBox(sources.sourceA)}
-
-          ${
-            bank.keyFigure
-              ? `
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">${bank.keyFigure.category || bank.keyFigure.badge || 'KEY HISTORICAL INDIVIDUAL'}</span>
-              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
-            </div>
-            <div class="kf-identity-row">
-              ${
-                bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
-                  ? `<img class="kf-portrait" src="${bank.keyFigure.image.startsWith('data:') ? bank.keyFigure.image : getBase64Image(bank.keyFigure.image) || bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
-                  : ''
-              }
-              <div class="kf-identity-text">
-                <div class="kf-name">${bank.keyFigure.name}</div>
-                <div class="kf-role">${bank.keyFigure.role}</div>
+        <!-- 2-Column Core Prose Grid -->
+        <div class="two-column-grid">
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 1</span>
+                <span class="sb-title">${act1.title}</span>
               </div>
+              ${act1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
             </div>
-            <div class="kf-significance">${formatText(bank.keyFigure.significance)}</div>
-            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-            <ul class="kf-actions-list">
-              ${bank.keyFigure.actions.map((a) => `<li>${formatText(a)}</li>`).join('')}
-            </ul>
-          </div>`
-              : ''
-          }
-
-          <div class="section-banner">
-            <span class="sb-num">ACT 2</span>
-            <span class="sb-title">${act2.title}</span>
+            ${renderArchivalSourceBox(sources.sourceA)}
           </div>
-          ${act2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
-
-          ${renderArchivalSourceBox(sources.sourceB)}
-
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 2</span>
+                <span class="sb-title">${act2.title}</span>
+              </div>
+              ${act2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
+            </div>
+            ${renderArchivalSourceBox(sources.sourceB)}
+          </div>
         </div>
 
         <div class="bottom-vocab-box">
@@ -347,41 +352,51 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
           <h3 class="rph-title">${cfg.title}</h3>
         </div>
 
-        <div class="two-column-prose">
-          
-          <div class="section-banner">
-            <span class="sb-num">ACT 3</span>
-            <span class="sb-title">${act3.title}</span>
+        <!-- Right Page Content Layout -->
+        <div class="right-page-content">
+          <div class="right-upper-grid">
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 3</span>
+                  <span class="sb-title">${act3.title}</span>
+                </div>
+                ${act3.paras
+                  .slice(0, 2)
+                  .map(
+                    (p, pIdx) =>
+                      `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${formatText(p)}</p>`,
+                  )
+                  .join('')}
+              </div>
+              ${renderKeyFigureBox(bank.keyFigure)}
+            </div>
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 4</span>
+                  <span class="sb-title">${act4.title}</span>
+                </div>
+                ${act4.paras
+                  .slice(0, 2)
+                  .map(
+                    (p, pIdx) =>
+                      `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${formatText(p)}</p>`,
+                  )
+                  .join('')}
+              </div>
+              ${renderConceptSpotlightBox(bank.conceptSpotlight)}
+            </div>
           </div>
-          ${act3.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
-
-          ${bank.archivalDispatch || ''}
-
-          <div class="section-banner">
-            <span class="sb-num">ACT 4</span>
-            <span class="sb-title">${act4.title}</span>
-          </div>
-          ${act4.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${formatText(p)}</p>`).join('')}
-
-          ${renderConceptSpotlightBox(bank.conceptSpotlight)}
 
           ${
-            bank.archivalOddity
+            bank.archivalDispatch
               ? `
-          <div class="archival-oddity-box">
-            <div class="aob-header">
-              <div class="aob-identity">
-                <span class="aob-badge">${bank.archivalOddity.badge || 'ARCHIVAL ODDITY & CURIOUS REALITY'}</span>
-                <span class="aob-date">${bank.archivalOddity.date || ''}</span>
-              </div>
-              <span class="aob-shelfmark">${bank.archivalOddity.shelfmark || ''}</span>
-            </div>
-            <h4 class="aob-title">${bank.archivalOddity.title || ''}</h4>
-            <div class="aob-body">${formatText(bank.archivalOddity.text || '')}</div>
+          <div class="fullwidth-dispatch-wrap">
+            ${bank.archivalDispatch}
           </div>`
               : ''
           }
-
         </div>
 
         ${
@@ -579,29 +594,158 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       line-height: 1.15;
     }
 
-    /* 2-Column Core Prose Measure */
-    .two-column-prose {
-      column-count: 2;
-      column-gap: 14px;
-      column-rule: 1px solid #e2e8f0;
-      text-align: justify;
+    /* Balanced 2-Column Grid Layout (Left Page) */
+    .two-column-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
+      flex: 1;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
+      height: 100%;
+      overflow: hidden;
+    }
+    .col-top-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .col-side .archival-source-box {
+      margin: 0;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .two-column-grid .narrative-p {
+      margin: 0 0 1.5px 0;
+      line-height: 1.25;
+    }
+    .two-column-grid .archival-source-box {
+      padding: 3px 5px;
+    }
+    .two-column-grid .archival-image {
+      max-height: 145px;
+      min-height: 75px;
+      height: 100%;
+      flex: 1;
+      min-height: 0;
+      object-fit: contain !important;
+    }
+    .two-column-grid .archival-context-box {
+      padding: 2px 4px;
+      margin: 1.5px 0;
+    }
+    .two-column-grid .archival-context-text {
+      font-size: 7.7pt;
+      line-height: 1.22;
+      margin: 0 0 1px 0;
+    }
+    .two-column-grid .archival-hinge-q {
+      font-size: 7.6pt;
+      line-height: 1.22;
+    }
+
+    /* Right Page 2-Tier Balanced Layout */
+    .right-page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .right-upper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
       flex: 1;
       overflow: hidden;
     }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 5px;
+    }
+    .right-upper-grid .narrative-p {
+      font-size: 8.8pt;
+      line-height: 1.24;
+      margin: 0 0 2px 0;
+    }
+    .right-upper-grid .col-side .key-figure-box,
+    .right-upper-grid .col-side .concept-spotlight-box {
+      margin: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .fullwidth-dispatch-wrap {
+      flex-shrink: 0;
+      margin: 2px 0 1px 0;
+    }
+    .fullwidth-dispatch-wrap .archival-source-box {
+      margin: 0;
+      padding: 2.5px 5px;
+      background: #fdfaf6;
+      border: 1px solid #fed7aa;
+      border-left: 3px solid #b45309;
+    }
+    .fullwidth-dispatch-wrap .archival-image {
+      float: left;
+      max-height: 56px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain !important;
+      border-radius: 2px;
+      border: 1px solid #cbd5e1;
+      margin: 0 6px 2px 0;
+    }
+    .fullwidth-dispatch-wrap .archival-title {
+      font-size: 8.2pt;
+      margin-bottom: 1px;
+      line-height: 1.12;
+    }
+    .fullwidth-dispatch-wrap .archival-body {
+      font-size: 7.6pt;
+      line-height: 1.20;
+      margin-bottom: 1px;
+    }
+    .fullwidth-dispatch-wrap .archival-context-box {
+      clear: both;
+      padding: 1px 3.5px;
+      margin: 1px 0 0 0;
+    }
+    .fullwidth-dispatch-wrap .archival-context-text {
+      font-size: 7.0pt;
+      line-height: 1.15;
+      margin: 0;
+    }
+    .fullwidth-dispatch-wrap .archival-hinge-q {
+      font-size: 7.0pt;
+      line-height: 1.15;
+      padding: 0.5px 2px;
+      margin-top: 1px;
+    }
+    .fullwidth-dispatch-wrap .archival-footer {
+      display: none;
+    }
 
     .section-banner {
-      column-span: all;
       background: #eff6ff;
       border-left: 3.5px solid #1e3a8a;
       border-bottom: 1px solid #bfdbfe;
-      padding: 2.5px 6px;
-      margin: 5px 0 3px 0;
+      padding: 2px 6px;
+      border-radius: 0 3px 3px 0;
+      margin: 0 0 2px 0;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-    }
-    .section-banner:first-of-type {
-      margin-top: 0;
     }
     .sb-num {
       font-family: 'Inter', sans-serif;
@@ -624,7 +768,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       font-family: 'Newsreader', Georgia, serif;
       font-size: 9.45pt;
       line-height: 1.49;
-      margin: 0 0 5px 0;
+      margin: 0 0 4px 0;
       color: #1e293b;
       text-indent: 0.9em;
     }
@@ -643,58 +787,6 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       display: inline-block;
       vertical-align: baseline;
       letter-spacing: 0.02em;
-    }
-
-    
-    /* Archival Oddity Box */
-    .archival-oddity-box {
-      background: #fdfaf6;
-      border: 1px solid #fed7aa;
-      border-left: 3.5px solid #b45309;
-      border-radius: 3px;
-      padding: 5px 8px;
-      margin: 5px 0;
-      break-inside: avoid;
-    }
-    .aob-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1px;
-      border-bottom: 1px solid #ffedd5;
-      padding-bottom: 1px;
-      font-family: 'Inter', sans-serif;
-    }
-    .aob-badge {
-      font-size: 5.6pt;
-      font-weight: 800;
-      color: #92400e;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .aob-date {
-      font-size: 5.4pt;
-      font-weight: 600;
-      color: #78716c;
-    }
-    .aob-shelfmark {
-      font-size: 5.2pt;
-      font-weight: 700;
-      color: #b45309;
-      text-transform: uppercase;
-    }
-    .aob-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
-      font-weight: 800;
-      color: #7c2d12;
-      margin: 1px 0;
-      line-height: 1.15;
-    }
-    .aob-body {
-      font-size: 7.0pt;
-      line-height: 1.26;
-      color: #1e293b;
     }
 
     /* Primary Source Citation Box */
@@ -840,8 +932,8 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #bfdbfe;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 5px 8px;
-      margin: 5px 0;
+      padding: 2.5px 5px;
+      margin: 0;
       break-inside: avoid;
     }
     .kf-header {
@@ -864,14 +956,15 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .kf-identity-row {
       display: flex;
-      gap: 6px;
+      gap: 5px;
       align-items: center;
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
     }
     .kf-portrait {
-      width: 40px;
-      height: 48px;
-      object-fit: cover;
+      width: 32px;
+      height: 38px;
+      object-fit: contain;
+      background: #ffffff;
       border-radius: 2px;
       border: 1px solid #94a3b8;
       flex-shrink: 0;
@@ -910,7 +1003,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .kf-actions-list {
       margin: 0;
-      padding-left: 11px;
+      padding-left: 10px;
       font-size: 6.6pt;
       line-height: 1.25;
       color: #334155;
@@ -923,8 +1016,8 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       border-radius: 3px;
-      padding: 5px 8px;
-      margin: 5px 0;
+      padding: 2.5px 5px;
+      margin: 0;
       break-inside: avoid;
     }
     .csb-header {
