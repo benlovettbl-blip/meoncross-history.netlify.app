@@ -123,9 +123,10 @@ const lessonConfigs = [
   {
     // Lesson 1: Creation of German Empire (1871)
     lessonNum: 1,
-    skill: 'Causation',
+    skill: 'Change & Continuity',
     title: 'How was the German Empire created in 1871?',
-    inquiryQuestion: 'Was Germany united mainly by military force or by clever diplomacy?',
+    inquiryQuestion:
+      'To what extent was the creation of the German Empire in 1871 a complete turning point in European peace?',
     doNow: [
       { q: 'What was the "Balance of Power" in 19th-century Europe?' },
       { q: 'Name two major European empires that existed in 1870.' },
@@ -136,13 +137,13 @@ const lessonConfigs = [
     objectives: [
       'Learn how Prussia grew stronger through industry, railways, and army reforms.',
       'Explore how Chancellor Otto von Bismarck used three wars to bring German states together.',
-      'Understand how the new German Empire in 1871 changed the balance of power across Europe.',
+      'Understand how the new German Empire in 1871 shattered the old balance of power.',
     ],
     vocabPrompt:
       'Explain the difference between <strong>Realpolitik</strong> (practical politics based on power) and <strong>Liberalism</strong> (rule of law and elected parliaments):',
     bridgeTask: {
       type: 'source_annotation',
-      title: 'Task 3: Source Investigation — Bismarck’s "Blood and Iron" Speech',
+      title: 'Task 3: Evidence Preparation — Bismarck’s Statecraft & The 1871 Geopolitical Rupture',
       sourceTitle: 'Source A: Bismarck speaks to the Prussian Parliament (September 1862)',
       shelfmark: 'PRUSSIAN STATE ARCHIVES • BERLIN',
       sourceText:
@@ -150,39 +151,39 @@ const lessonConfigs = [
       provenance:
         'Minister-President Otto von Bismarck addressing the Budget Committee in Berlin, 1862.',
       annotations: [
-        '① <strong>Underline:</strong> words showing Bismarck disliked parliamentary debates.',
-        '② <strong>Circle:</strong> the phrase describing the old 1815 borders.',
+        '① <strong>Underline:</strong> words showing Bismarck rejected parliamentary democracy.',
+        '② <strong>Circle:</strong> the phrase describing the old 1815 Vienna borders.',
         '③ <strong>Box:</strong> the two words Bismarck said would decide the future.',
       ],
       questionA:
-        'What does Source A tell us about Bismarck’s attitude towards democracy and military power?',
+        'What does Source A reveal about why Bismarck chose military force over democracy to unify Germany?',
       questionB:
-        'Why did Prussia’s victories between 1864 and 1871 convince Germans that Bismarck’s policy was right?',
-      clue: 'Helpful Clue: Bismarck believed speeches and voting took too long—weapons, factories, and armies were what built nations.',
+        'How did the sudden emergence of a unified, industrialized Germany in 1871 overturn the European balance of power?',
+      clue: 'Helpful Clue: Before 1871, Central Europe was fragmented and weak. Suddenly, 41 million people and Krupp steel formed a dominant military giant.',
       scholarsEdge:
-        'Challenge Question: Did Bismarck’s reliance on the military make the new German Empire distrustful of peace?',
+        'Challenge Question: Did 1871 represent a total break with the past, or was Bismarck continuing long-standing Prussian militarism?',
     },
     structureStrip: [
       {
-        col: '1. MILITARY FORCE',
+        col: '1. PRE-1871 BALANCE',
         prompt:
-          'Prussian army reforms, Krupp artillery, and victories over Austria (1866) and France (1870).',
+          'Fragmented German states, Vienna settlement, and British/French continental security.',
       },
       {
-        col: '2. CLEVER DIPLOMACY',
+        col: '2. THE 1871 RUPTURE',
         prompt:
-          'Bismarck isolating rivals, editing the Ems Telegram, and stirring up German national pride.',
+          'Blood and iron, Krupp artillery, seizing Alsace-Lorraine, and the 41m industrial powerhouse.',
       },
       {
         col: '3. YOUR CONCLUSION',
         prompt:
-          'Weigh both sides: did military strength create Germany, or did Bismarck’s diplomacy make it possible?',
+          'Judge whether 1871 was a total turning point or if monarchical rule and diplomacy continued.',
       },
     ],
     wordBank:
-      'Realpolitik • Blood and Iron • Zollverein • Krupp steel • Needle gun • Ems Telegram • Sedan • Alsace-Lorraine',
+      'Realpolitik • Blood and Iron • Balance of Power • Otto von Bismarck • Franco-Prussian War • Hall of Mirrors • Turning point',
     connectives:
-      'The main military factor was... • However, diplomacy was essential because... • Consequently... • Ultimately, I conclude that...',
+      'Before 1871, European peace rested on... • However, the creation of the German Empire was a turning point because... • On the other hand, certain continuities remained, such as... • In conclusion, 1871 was...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 1: 1871). In the sketchpad, draw Bismarck’s Prussian helmet or the German imperial eagle, and label the proclamation at Versailles.',
   },
@@ -190,10 +191,10 @@ const lessonConfigs = [
   {
     // Lesson 2: Franco-Prussian War & Alsace-Lorraine (1871)
     lessonNum: 2,
-    skill: 'Change & Continuity',
+    skill: 'Dual-Source Utility',
     title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
     inquiryQuestion:
-      'Why did the annexation of Alsace-Lorraine make lasting peace in Europe impossible?',
+      'How useful are Sources A and B for an enquiry into why the annexation of Alsace-Lorraine made lasting peace impossible?',
     doNow: [
       { q: 'Which Prussian minister was famous for his "Blood and Iron" speech?' },
       { q: 'In which grand French palace was the German Empire proclaimed in 1871?' },
@@ -211,46 +212,50 @@ const lessonConfigs = [
       'After the German [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] of Alsace-Lorraine, the French public demanded [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] to reclaim their lost provinces.',
     bridgeTask: {
       type: 'visual_painting',
-      title: 'Task 3: Source Investigation — "The Black Stain" (La Tache Noire, 1887)',
+      title: 'Task 3: Forensic Source Interrogation — French Grief vs German Military Rationale',
       imgSrc: '/images/la_tache_noire_1887.jpg',
-      imgCaption: 'Albert Bettannier, "La Tache Noire" (1887)',
+      imgCaption: 'Source A: Albert Bettannier, "La Tache Noire" (1887)',
       sourceText:
-        '“In French schoolrooms after 1871, teachers pointed to maps where the lost provinces of Alsace and Lorraine were colored black or violet. Boys wore uniforms and were drilled in gymnastics and rifle handling, taught that their duty was to win back the provinces.”',
-      shelfmark: 'FRENCH MINISTRY OF PUBLIC INSTRUCTION • 1882 EDUCATION REPORT',
+        '“In French schoolrooms after 1871, maps showed Alsace-Lorraine shaded black in mourning. Boys were drilled in gymnastics and rifle handling, taught that their sacred duty was to win back the lost provinces.”',
+      shelfmark: 'FRENCH MINISTRY OF EDUCATION • 1882 ARCHIVE',
+      sourceBTitle: 'Source B: Otto von Bismarck on the Annexation (1871)',
+      sourceBShelfmark: 'PRUSSIAN STATE ARCHIVE • BERLIN DISPATCH',
+      sourceBText:
+        '“We take Alsace and northern Lorraine not to add territory, but as a defensive glacis and shield against France. For centuries, French armies have invaded Germany through Metz. By holding these fortresses, we secure our borders against future attack.”',
       annotations: [
-        '① <strong>Underline:</strong> what the teacher is pointing to on the classroom map.',
-        '② <strong>Circle:</strong> the uniform the French schoolboy is wearing.',
-        '③ <strong>Box:</strong> the military skills being taught to the young pupils.',
+        '① <strong>Underline:</strong> in Source A, what the schoolmaster is pointing to on the classroom map.',
+        '② <strong>Circle:</strong> in Source B, the phrase Bismarck uses to justify taking the provinces ("defensive glacis and shield").',
+        '③ <strong>Box:</strong> in Source B, why Prussian generals insisted on holding the border fortresses.',
       ],
       questionA:
-        'What does this painting show about how French children were brought up to feel about Germany?',
+        'What does Source A reveal about how French schoolboys were educated to view Germany after 1871?',
       questionB:
-        'Why did taking Alsace-Lorraine guarantee that France and Germany could never be true friends?',
-      clue: 'Helpful Clue: Notice the cadet belt and drum. French schools were not just teaching reading; they were preparing boys for a future war.',
+        'How does Source B explain Germany’s military justification for seizing the border provinces?',
+      clue: 'Helpful Clue: Source A reveals deep emotional grief and national desire for revenge, while Source B shows cold military calculation and strategic fear.',
       scholarsEdge:
-        'Challenge Question: Was taking Alsace-Lorraine Bismarck’s greatest strategic mistake?',
+        'Challenge Question: How do both sources together prove that neither France nor Germany could ever feel truly secure after 1871?',
     },
     structureStrip: [
       {
-        col: '1. FRENCH HUMILIATION',
+        col: '1. SOURCE A UTILITY',
         prompt:
-          'The Siege of Paris, German troops marching on the Champs-Élysées, and the £200m indemnity.',
+          'What Source A shows (revanche, mourning maps, military drills), who created it, and its value/limits.',
       },
       {
-        col: '2. LOST PROVINCES',
+        col: '2. SOURCE B UTILITY',
         prompt:
-          'Losing 1.5 million French citizens, iron mines in Lorraine, and the rise of revanche.',
+          'What Source B reveals (Bismarck’s defensive buffer, fear of French invasion), and its value/limits.',
       },
       {
-        col: '3. YOUR CONCLUSION',
+        col: '3. EVALUATIVE VERDICT',
         prompt:
-          'Explain why taking land guaranteed that any future European crisis would involve France attacking Germany.',
+          'Conclude: how useful are both sources together in explaining why lasting peace became impossible?',
       },
     ],
     wordBank:
-      'Revanche • Alsace-Lorraine • Treaty of Frankfurt • Siege of Paris • indemnity • Albert Bettannier • patriotism • buffer zone',
+      'Revanche • Alsace-Lorraine • Treaty of Frankfurt • Siege of Paris • indemnity • Albert Bettannier • buffer zone • utility',
     connectives:
-      'The immediate shock was... • Furthermore, in French society... • This meant that whenever a crisis arose... • In conclusion...',
+      'Source A is useful for investigating French attitudes because... • However, its value is limited because it represents... • In contrast, Source B is valuable for understanding German strategy because... • Together, both sources prove...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 2: 1871). In the sketchpad, sketch the map of France with the shaded black border provinces of Alsace and Lorraine.',
   },
@@ -258,9 +263,10 @@ const lessonConfigs = [
   {
     // Lesson 3: The Scramble for Africa & Weltpolitik
     lessonNum: 3,
-    skill: 'Causation & Empire',
+    skill: 'Historical Interpretations',
     title: 'How did imperialism and the "Scramble for Africa" fuel European rivalry?',
-    inquiryQuestion: 'Did the race for overseas empires make war in Europe more likely?',
+    inquiryQuestion:
+      'Which interpretation gives a more convincing explanation of why European powers clashed over Africa between 1884 and 1911?',
     doNow: [
       { q: 'Which new Kaiser dismissed Bismarck in 1890?' },
       { q: 'What German phrase described Kaiser Wilhelm’s aggressive world policy (Weltpolitik)?' },
@@ -276,48 +282,55 @@ const lessonConfigs = [
     vocabPrompt:
       'Explain the difference between <strong>Imperialism</strong> (building an overseas empire) and <strong>Weltpolitik</strong> (Germany’s aggressive drive for world influence):',
     bridgeTask: {
-      type: 'visual_map',
-      title: 'Task 3: Source Investigation — The Partition of Africa (1914)',
-      imgSrc: '/images/map_africa_1914.png',
-      imgCaption: 'Primary Map: European Possessions in Africa (1914)',
-      sourceText:
-        '“By 1914, only Liberia and Ethiopia remained independent. Britain held a continuous corridor from Cairo to Cape Town; France held vast areas of West Africa. Germany arrived late and gained only scattered territories (Togo, Cameroon, South-West Africa, German East Africa), convincing the Kaiser that Germany had been cheated of its rightful share.”',
-      shelfmark: 'BERLIN CONFERENCE MAP ARCHIVES • 1885–1914',
+      type: 'dual_written_sources',
+      title:
+        'Task 3: Historiographical Analysis — View A (Economic Greed) vs View B (National Status)',
+      sourceATitle: 'Interpretation 1: View A (Economic Greed & Resource Clashes)',
+      sourceAShelfmark: 'HISTORICAL PERSPECTIVE • ECONOMIC COMPETITION',
+      sourceAText:
+        '“European powers carved up Africa primarily out of economic greed. As factories expanded in Britain, France, and Germany, industrialists desperately needed raw materials—rubber, copper, cotton, and palm oil—that Europe could not produce. Clashes like the Moroccan crises occurred because capitalist rivals fought to monopolize overseas markets and mineral wealth.”',
+      sourceAProvenance:
+        'Economic interpretation focusing on industrial resource hunger and trade competition.',
+      sourceBTitle: 'Interpretation 2: View B (National Status, Pride & Diplomacy)',
+      sourceBShelfmark: 'HISTORICAL PERSPECTIVE • DIPLOMACY & STATUS',
+      sourceBText:
+        '“The scramble for Africa was driven by prestige and Great Power diplomacy rather than financial profit. Most colonies cost far more to govern than they ever made in trade. For Kaiser Wilhelm II, demanding a ‘place in the sun’ was about national pride—proving that Germany was a world superpower. Clashes in Africa were diplomatic tests of European alliances.”',
+      sourceBProvenance:
+        'Diplomatic interpretation focusing on imperial prestige, national pride, and testing alliances.',
       annotations: [
-        '① <strong>Underline:</strong> in the text excerpt, the two powers that held the vast majority of African land.',
-        '② <strong>Circle:</strong> in the text excerpt, how the Kaiser felt about Germany’s share of colonies.',
-        '③ <strong>Box:</strong> in the text excerpt, the two independent African nations.',
-        '④ <strong>Map Action:</strong> on the map, visually trace Britain’s corridor from Cairo to Cape Town.',
+        '① <strong>Underline:</strong> in View A, the raw materials European factories desperately needed.',
+        '② <strong>Circle:</strong> in View B, what Kaiser Wilhelm II demanded for Germany ("place in the sun").',
+        '③ <strong>Box:</strong> in View B, why colonies often lost money rather than returning a profit.',
       ],
       questionA:
-        'What does this map show about why Germany was jealous of the British and French empires?',
+        'Using View A, explain why economic competition for raw materials made European rivals clash:',
       questionB:
-        'How did German attempts to interfere in Morocco (1905 and 1911) backfire and strengthen Britain and France?',
-      clue: 'Helpful Clue: Look at how much territory Britain and France controlled compared to Germany’s small, isolated patches.',
+        'Using View B, explain why national prestige and testing alliances were more important than profit:',
+      clue: 'Helpful Clue: Notice that most German colonies lost money, yet Kaiser Wilhelm still provoked crises in Morocco to prove Germany was a great power.',
       scholarsEdge:
-        'Challenge Question: Did imperial clashes cause the Great War, or did they simply make European powers suspicious of each other?',
+        'Challenge Question: Can economic greed and national prestige be separated, or did European leaders use national pride to disguise commercial greed?',
     },
     structureStrip: [
       {
-        col: '1. THE RACE FOR LAND',
+        col: '1. VIEW A: ECONOMIC GREED',
         prompt:
-          'Raw materials (rubber, copper, oil), markets, and national prestige driving European conquest.',
+          'Raw materials (rubber, copper, oil), industrial factory needs, and commercial trade rivalry.',
       },
       {
-        col: '2. GERMAN JEALOUSY',
+        col: '2. VIEW B: NATIONAL STATUS',
         prompt:
-          'Wilhelm II demanding a "place in the sun" and challenging French control in Morocco.',
+          'Wilhelm II demanding a "place in the sun", national pride, and testing the Entente in Morocco.',
       },
       {
-        col: '3. YOUR CONCLUSION',
+        col: '3. EVALUATIVE VERDICT',
         prompt:
-          'Judge whether colonial rivalry was a direct cause of war or just worsened existing European fears.',
+          'Which interpretation provides a more convincing explanation of imperial tension and why?',
       },
     ],
     wordBank:
-      'Imperialism • Scramble for Africa • Weltpolitik • "Place in the Sun" • Berlin Conference • Morocco Crises • Panther gunboat',
+      'Imperialism • Scramble for Africa • Weltpolitik • "Place in the Sun" • raw materials • national prestige • Moroccan Crises • interpretation',
     connectives:
-      'Imperialism heightened tensions because... • In particular, Germany felt... • This backfired when... • Overall, I judge that...',
+      'View A argues that imperial clashes were driven by economic competition because... • In contrast, View B emphasizes national pride, arguing that... • Evidence supporting View B includes... • In conclusion, I find View [A/B] more convincing because...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 3: 1898–1904). In the sketchpad, sketch the African continent with British and French flags overshadowing Germany’s tiny colonies.',
   },
@@ -325,9 +338,10 @@ const lessonConfigs = [
   {
     // Lesson 4: HMS Dreadnought & The Naval Arms Race
     lessonNum: 4,
-    skill: 'Technology & Rivalry',
+    skill: 'Causation & Causal Hierarchy',
     title: 'How did the launch of HMS Dreadnought trigger a naval arms race?',
-    inquiryQuestion: 'Was the naval arms race the main reason Britain turned against Germany?',
+    inquiryQuestion:
+      'Was the naval arms race the primary reason Britain ended its "Splendid Isolation" to ally with France and Russia?',
     doNow: [
       {
         q: 'What British policy said the Royal Navy must equal the next two biggest navies combined?',
@@ -348,7 +362,7 @@ const lessonConfigs = [
       'Explain the difference between the British <strong>Two-Power Standard</strong> (naval safety policy) and the German <strong>Risk Theory</strong> (building enough ships to frighten Britain):',
     bridgeTask: {
       type: 'technical_table',
-      title: 'Task 3: Source Investigation — The Battleship Revolution (1906)',
+      title: 'Task 3: Evidence Preparation — The Battleship Revolution & Naval Construction (1906)',
       sourceTitle: 'Source A: Admiral Sir John Fisher explains the Dreadnought revolution (1906)',
       shelfmark: 'BRITISH ADMIRALTY RECORDS • PORTSMOUTH DOCKYARD',
       sourceText:
@@ -377,34 +391,34 @@ const lessonConfigs = [
         '③ <strong>Box:</strong> what happened to all previous battleships.',
       ],
       questionA:
-        'Using the table, explain why HMS Dreadnought was described as an engineering revolution:',
+        'Using the table, explain why HMS Dreadnought gave Germany a chance to challenge British naval supremacy:',
       questionB:
-        'Why did building Dreadnought accidentally help Germany by wiping out Britain’s huge numerical lead?',
-      clue: 'Helpful Clue: Because all older ships were now useless, both Britain and Germany started from zero in the dreadnought race.',
+        'Why did Britain view Germany’s battle fleet construction as a deadly threat to its national survival?',
+      clue: 'Helpful Clue: Britain is an island reliant on imported food; a hostile fleet in the North Sea could starve Britain within weeks, whereas Germany was a land power.',
       scholarsEdge:
-        'Challenge Question: Why did the German fleet threaten Britain’s very survival, while the British fleet did not threaten Germany’s survival?',
+        'Challenge Question: Did Tirpitz’s Risk Theory work, or did it make Germany’s nightmare of British hostility come true?',
     },
     structureStrip: [
       {
-        col: '1. THE WEAPON',
+        col: '1. THE NAVAL THREAT',
         prompt:
-          'Ten 12-inch guns, steam turbines, thick Krupp armour, and revolution in naval warfare.',
+          'Dreadnought, Tirpitz’s Risk Fleet, British food imports, and invasion panic ("We want eight!").',
       },
       {
-        col: '2. THE RIVALRY',
+        col: '2. OTHER PRESSURES',
         prompt:
-          'Tirpitz building German dreadnoughts, British public panic ("We want eight and we won’t wait!").',
+          'German industrial export boom, Berlin-to-Baghdad railway, and bullying tactics in Morocco.',
       },
       {
-        col: '3. YOUR CONCLUSION',
+        col: '3. CAUSAL HIERARCHY',
         prompt:
-          'Did building battleships make war inevitable, or did it push Britain into France and Russia’s arms?',
+          'Judge whether the naval race was the primary cause of Britain allying with France/Russia, or a secondary factor.',
       },
     ],
     wordBank:
-      'HMS Dreadnought • Two-Power Standard • Admiral Fisher • Admiral Tirpitz • steam turbine • 12-inch guns • naval arms race',
+      'HMS Dreadnought • Two-Power Standard • Admiral Fisher • Admiral Tirpitz • Risk Theory • Splendid Isolation • Entente Cordiale • naval arms race',
     connectives:
-      'Dreadnought transformed naval power because... • However, for Britain, the German challenge was... • Consequently... • Ultimately...',
+      'The most critical factor pushing Britain away from isolation was... • For example, the naval challenge... • However, other factors also alarmed Britain, including... • In conclusion, I judge that the naval race was [primary / secondary] because...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 4: 1906). In the sketchpad, draw the silhouette of HMS Dreadnought with its big gun turrets pointing forward.',
   },
@@ -412,10 +426,10 @@ const lessonConfigs = [
   {
     // Lesson 5: The Alliance System & Willy-Nicky Telegrams
     lessonNum: 5,
-    skill: 'Diplomacy & Evidence',
+    skill: 'Significance & Inevitability',
     title: 'How did rival alliances and secret treaties divide Europe into two armed camps?',
     inquiryQuestion:
-      'Was the European alliance system meant to prevent war, or did it make war inevitable?',
+      'Did the European alliance system preserve peace between the Great Powers, or make a general war inevitable?',
     doNow: [
       { q: 'Which three nations formed the Triple Alliance in 1882?' },
       { q: 'Which three nations formed the Triple Entente by 1907?' },
@@ -432,7 +446,7 @@ const lessonConfigs = [
       'Explain the difference between a <strong>Defensive Alliance</strong> (promising mutual help if attacked) and <strong>Military Mobilization</strong> (calling up millions of soldiers ready for war):',
     bridgeTask: {
       type: 'willy_nicky_telegrams',
-      title: 'Task 3: Source Investigation — The "Willy-Nicky" Telegrams (July 1914)',
+      title: 'Task 3: Archival Interrogation — The "Willy-Nicky" Telegrams & Alliance Clauses',
       sourceATitle: 'TELEGRAM 1: Tsar Nicholas II to Kaiser Wilhelm II (29 July 1914)',
       sourceAText:
         '“To try and avoid such a calamity as a European war, I beg you in the name of our old friendship to do what you can to stop your ally [Austria] from going too far. An ignominious war has been declared on a weak country [Serbia]. — NICKY”',
@@ -456,25 +470,25 @@ const lessonConfigs = [
     },
     structureStrip: [
       {
-        col: '1. TWO ARMED CAMPS',
+        col: '1. THE PEACEKEEPER CASE',
         prompt:
-          'Triple Alliance (Germany, Austria, Italy) vs Triple Entente (Britain, France, Russia).',
+          'Deterrence, balance of power for over twenty years, and leaders using diplomacy during crises.',
       },
       {
-        col: '2. THE TRIPWIRE',
+        col: '2. THE INEVITABLE TRIPWIRE',
         prompt:
-          'Secret agreements, military staff talks, and the domino effect if one ally was attacked.',
+          'Secret agreements, military staff talks, and the domino effect of rigid railway mobilization plans.',
       },
       {
-        col: '3. YOUR CONCLUSION',
+        col: '3. EVALUATIVE VERDICT',
         prompt:
-          'Did alliances keep peace for twenty years, or did they turn a small Balkan dispute into a world war?',
+          'Did alliances successfully keep peace for decades, or did they make a general world war unavoidable?',
       },
     ],
     wordBank:
-      'Triple Alliance • Triple Entente • Willy-Nicky telegrams • Entente Cordiale • mobilization • tripwire • balance of power',
+      'Triple Alliance • Triple Entente • Willy-Nicky telegrams • Entente Cordiale • mobilization • tripwire • balance of power • deterrence',
     connectives:
-      'The alliance system was intended to... • However, in reality, it acted as... • The Willy-Nicky telegrams prove that... • Therefore...',
+      'Defenders of the alliance system argue that it kept the peace because... • However, critics argue it acted as an inevitable tripwire because... • The Willy-Nicky telegrams prove that... • Therefore, I conclude that...',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 5: 1908–1914). In the sketchpad, draw the two opposing flags (Union Jack / Tricolour vs German Eagle) connected by chains.',
   },
@@ -482,10 +496,10 @@ const lessonConfigs = [
   {
     // Lesson 6: The Spark — Sarajevo & The July Crisis (1914)
     lessonNum: 6,
-    skill: 'Chronology & Causation',
+    skill: 'Synoptic Causation',
     title: 'How did an assassination in Sarajevo trigger the outbreak of the First World War?',
     inquiryQuestion:
-      'Could the First World War have been avoided after the shots in Sarajevo, or was it inevitable?',
+      'Could the First World War have been avoided after the shots in Sarajevo, or had decades of M-A-I-N tension made conflict inevitable?',
     doNow: [
       { q: 'In which Bosnian city was Archduke Franz Ferdinand assassinated on 28 June 1914?' },
       { q: 'Name the 19-year-old Bosnian Serb student who fired the fatal shots.' },
@@ -506,7 +520,7 @@ const lessonConfigs = [
       'Explain the difference between the <strong>Sarajevo Spark</strong> (the immediate trigger) and the <strong>Blank Cheque</strong> (Germany’s promise of unconditional military backing):',
     bridgeTask: {
       type: 'dual_written_sources',
-      title: 'Task 3: Source Investigation — Eyewitness in Sarajevo & The Kaiser’s Telegram',
+      title: 'Task 3: Dual Evidence — Eyewitness in Sarajevo & The German Blank Cheque',
       sourceATitle: 'Source A: Eyewitness Account of Count Franz von Harrach (28 June 1914)',
       sourceAShelfmark: 'AUSTRIAN MILITARY ARCHIVES • VIENNA',
       sourceAText:
@@ -534,17 +548,17 @@ const lessonConfigs = [
     },
     structureStrip: [
       {
-        col: '1. THE WRONG TURN',
+        col: '1. THE SARAJEVO SPARK',
         prompt:
           'Princip, the Black Hand, the failed bomb, and the stalled car outside Schiller’s Delicatessen.',
       },
       {
-        col: '2. THE JULY CRISIS',
+        col: '2. THE JULY CRISIS & M-A-I-N',
         prompt:
           'The Blank Cheque (5 July), Austria’s harsh ultimatum to Serbia, and Russia mobilizing to protect Slavs.',
       },
       {
-        col: '3. YOUR CONCLUSION',
+        col: '3. SYNOPTIC VERDICT',
         prompt:
           'Judge whether the spark in Sarajevo created the war, or if decades of M-A-I-N tension made an explosion inevitable.',
       },
@@ -554,7 +568,7 @@ const lessonConfigs = [
     connectives:
       'The immediate trigger occurred when... • However, this localized crisis escalated because... • Without the Blank Cheque... • Ultimately...',
     timelineMission:
-      'Turn to Pages 2–3 (Milestone 6: 28 June – Aug 1914). In the sketchpad, sketch the stalled open-top royal car or the dominoes tumbling into war.',
+      'Turn to Pages 2–3 (Milestone 6: 1914). In the sketchpad, sketch Gavrilo Princip’s Browning pistol, the royal car, or a row of falling dominoes.',
   },
 ];
 
@@ -634,7 +648,7 @@ const timelineMilestones = [
  * Builds the complete Master HTML for Great War V2 Pupil Workbook
  */
 function buildGreatWarTwoPageWorkbookHtml() {
-  const coverImg = getBase64Image('/images/cover_great_war.jpg');
+  const coverImg = getBase64Image('/images/great_war_cover.jpg');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -883,7 +897,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
     .filter((m) => m.page === 2)
     .forEach((m) => {
       html += `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
+        <div style="border-bottom: 1px solid #cbd5e1; padding: 2px 0 6px 0; flex: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 9.4pt; color: #000000;">
@@ -896,8 +910,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
             </p>
           </div>
           <!-- Full-Width Open Sketchpad Canvas -->
-          <div style="border-top: 1.2px dashed #000000; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 2px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
-            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #777; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
+          <div style="border: 1.2px dashed #94a3b8; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 4px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #64748b; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
           </div>
         </div>
     `;
@@ -940,7 +954,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
     .filter((m) => m.page === 3)
     .forEach((m) => {
       html += `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
+        <div style="border-bottom: 1px solid #cbd5e1; padding: 2px 0 6px 0; flex: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 9.4pt; color: #000000;">
@@ -953,8 +967,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
             </p>
           </div>
           <!-- Full-Width Open Sketchpad Canvas -->
-          <div style="border-top: 1.2px dashed #000000; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 2px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
-            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #777; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
+          <div style="border: 1.2px dashed #94a3b8; min-height: 44mm; flex: 1; background: #fafafa; border-radius: 4px; margin-top: 3px; padding: 4px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <span style="font-family: 'Georgia', serif; font-size: 7pt; color: #64748b; font-style: italic; text-align: right;">${m.sketchPrompt}</span>
           </div>
         </div>
     `;
@@ -1097,7 +1111,54 @@ function buildGreatWarTwoPageWorkbookHtml() {
       `;
     } else if (cfg.bridgeTask.type === 'visual_painting') {
       const b64 = getBase64Image(cfg.bridgeTask.imgSrc);
-      html += `
+      if (cfg.bridgeTask.sourceBText) {
+        html += `
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+              <!-- Source A Card -->
+              <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #fdfbf7; padding: 3px 5px; border-radius: 3px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+                    <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">${cfg.bridgeTask.imgCaption}</strong>
+                  </div>
+                  <div style="height: 60px; border: 1px solid #000; overflow: hidden; background: #000; margin-bottom: 2px;">
+                    <img src="${b64}" style="width: 100%; height: 100%; object-fit: cover;" alt="La Tache Noire">
+                  </div>
+                  <p style="font-family: 'Georgia', serif; font-size: 7.3pt; font-style: italic; color: #111; margin: 1px 0; line-height: 1.22;">
+                    ${cfg.bridgeTask.sourceText}
+                  </p>
+                </div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #444; border-top: 1px dotted #999; padding-top: 1px;">
+                  <strong>Record:</strong> ${cfg.bridgeTask.shelfmark}
+                </div>
+              </div>
+
+              <!-- Source B Card -->
+              <div style="border: 1.2px solid #000; border-left: 3.5px solid #000; background: #fffaf0; padding: 3px 5px; border-radius: 3px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+                    <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">${cfg.bridgeTask.sourceBTitle}</strong>
+                  </div>
+                  <p style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #111; margin: 2px 0 1px 0; line-height: 1.25;">
+                    ${cfg.bridgeTask.sourceBText}
+                  </p>
+                </div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #444; border-top: 1px dotted #999; padding-top: 1px; margin-top: 2px;">
+                  <strong>Record:</strong> ${cfg.bridgeTask.sourceBShelfmark}
+                </div>
+              </div>
+            </div>
+
+            <div style="background: #f0f9ff; border: 1px solid #000; border-radius: 3px; padding: 2px 6px; margin-bottom: 3px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Reading Clues:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111; line-height: 1.2;">
+                <div>${cfg.bridgeTask.annotations[0]}</div>
+                <div>${cfg.bridgeTask.annotations[1]}</div>
+                <div>${cfg.bridgeTask.annotations[2]}</div>
+              </div>
+            </div>
+        `;
+      } else {
+        html += `
             <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; border: 1.2px solid #000; border-radius: 3px; padding: 4px; background: #fdfbf7; margin-bottom: 3px;">
               <div style="height: 95px; border: 1px solid #000; overflow: hidden; background: #000;">
                 <img src="${b64}" style="width: 100%; height: 100%; object-fit: cover;" alt="La Tache Noire">
@@ -1123,7 +1184,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
                 <div>${cfg.bridgeTask.annotations[2]}</div>
               </div>
             </div>
-      `;
+        `;
+      }
     } else if (cfg.bridgeTask.type === 'visual_map') {
       const b64Map = getBase64Image(cfg.bridgeTask.imgSrc);
       html += `
