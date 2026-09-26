@@ -1383,7 +1383,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
           The History Portal &bull; Department of History
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">
-          Stubbington, Fareham, Hampshire &bull; Academic Year 2025–2026
+          Key Stage 3 Historical Studies &bull; Academic Year 2026–2027
         </div>
       </div>
     </div>
