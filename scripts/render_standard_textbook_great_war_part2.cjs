@@ -663,8 +663,8 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     .right-upper-grid .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+      justify-content: flex-start;
+      gap: 5px;
       overflow: hidden;
     }
     .right-upper-grid .narrative-p {
@@ -672,17 +672,9 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       line-height: 1.48;
       margin: 0 0 4.5px 0;
     }
-    .right-upper-grid .col-side {
-      justify-content: flex-start;
-      gap: 5px;
-    }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
       margin: 0;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;

@@ -1435,10 +1435,6 @@ async function buildPublisherTextbookHtmlWater() {
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
       margin: 0;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
