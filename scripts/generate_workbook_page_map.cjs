@@ -84,7 +84,14 @@ const unitPdfConfigs = {
       filter: (l, i) => i >= 8,
     },
   ],
-  great_war: [{ booklet: 'Pupil Workbook', file: 'great_war_pupil_workbook_FINAL_V17.pdf' }],
+  great_war: [
+    {
+      booklet: 'Pupil Workbook',
+      file: fs.existsSync(path.join(pdfsDir, 'great_war_pupil_workbook_V2.pdf'))
+        ? 'great_war_pupil_workbook_V2.pdf'
+        : 'great_war_pupil_workbook_FINAL_V17.pdf',
+    },
+  ],
   great_war_part2: [
     { booklet: 'Pupil Workbook', file: 'great_war_part2_pupil_workbook_FINAL_V17.pdf' },
   ],
