@@ -11,10 +11,10 @@
  *    - Verso (Left Page): Act 1 (3 paras + Source A) & Act 2 (3 paras + Source B) + 4-Term Vocab Deck
  *    - Recto (Right Page): Upper Grid [Act 3 (2 paras + Key Figure) | Act 4 (2 paras + Concept Spotlight)] + Source C Archival Dispatch + Bottom Enquiry & Workbook Signpost
  *    - Pure PEEL paragraph referencing with .para-ref micro-badges ([1.1], [1.2], etc.)
- * 3. Exact 20-Page Budget:
+ * 3. Exact 18-Page Budget:
  *    - Page 1:  Master Front Cover (4-column syllabus matrix with "Disciplinary Skill & Assessment Focus")
- *    - Pages 2–19: 9 Double-Page Enquiry Spreads (Verso Acts 1 & 2; Recto Acts 3 & 4)
- *    - Page 20: Master Back Cover (1066–1485 Chronological Spine, Themes Matrix, Historiography, PEEL Scaffold & QR Matrix)
+ *    - Pages 2–17: 8 Double-Page Enquiry Spreads (Verso Acts 1 & 2; Recto Acts 3 & 4)
+ *    - Page 18: Master Back Cover (1066–1485 Chronological Spine, Themes Matrix, Historiography, PEEL Scaffold & QR Matrix)
  * 4. Zero multi-column prose voids (completely eliminates legacy CSS column-count: 2).
  * 5. Base64 Image Inlining for 100% offline and Puppeteer fidelity.
  */
@@ -220,7 +220,6 @@ async function buildPublisherTextbookHtmlMedieval() {
     6: 'Assess the transformative impact of the Black Death: immediate demographic and social devastation vs the long-term empowerment of surviving peasants and the decay of feudal serfdom. Note two key pieces of factual evidence for each consequence in your workbook.',
     7: 'Evaluate both historical interpretations of the 1381 Peasants’ Revolt: an unruly, chaotic outburst of working-class violence vs a sophisticated, coordinated political movement demanding legal equality and an end to feudal serfdom. Note two key pieces of factual evidence for each view in your workbook.',
     8: 'Weigh the causes behind the collapse of the Plantagenet dynasty during the Wars of the Roses: structural corruption through Bastard Feudalism and private noble armies vs personal ambition, dynastic usurpation, and Richard III’s loss of legitimacy. Note two key pieces of factual evidence for each factor in your workbook.',
-    9: 'Synthesize the historical evidence across 1066–1485: Did the power of medieval English monarchs increase through administrative centralization, or decline under baronial, parliamentary, and religious constraints? Note two arguments for each conclusion in your workbook.',
   };
 
   const disciplinarySkillsMap = {
@@ -232,7 +231,6 @@ async function buildPublisherTextbookHtmlMedieval() {
     6: 'Turning Point Analysis & The Demographic Crisis',
     7: 'Historical Evidence & Working-Class Insurrection',
     8: 'Agency & The Collapse of Bastard Feudalism',
-    9: 'Synoptic Evaluation & Medieval Monarchical Power',
   };
 
   const wbPagesMap = {
@@ -244,7 +242,6 @@ async function buildPublisherTextbookHtmlMedieval() {
     6: '14–15',
     7: '16–17',
     8: '18–19',
-    9: 'Folio / End of Unit',
   };
 
   let lessonsHtml = '';
@@ -1222,8 +1219,8 @@ async function buildPublisherTextbookHtmlMedieval() {
       margin: 3px 0;
     }
     .cover-plate-img {
-      height: 84mm;
-      max-height: 87mm;
+      height: 88mm;
+      max-height: 90mm;
       max-width: 100%;
       width: auto;
       object-fit: contain;
@@ -1280,7 +1277,7 @@ async function buildPublisherTextbookHtmlMedieval() {
     }
     .cover-matrix-table td {
       border-bottom: 1px solid #e2e8f0;
-      padding: 1.8mm 2.0mm;
+      padding: 2.1mm 2.0mm;
       color: #334155;
       font-size: 7.0pt;
       line-height: 1.22;
@@ -1434,7 +1431,7 @@ async function buildPublisherTextbookHtmlMedieval() {
     }
     .bqr-grid {
       display: grid;
-      grid-template-columns: repeat(9, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       gap: 3px;
       margin-top: 2px;
     }
@@ -1582,12 +1579,6 @@ async function buildPublisherTextbookHtmlMedieval() {
             <td>Agency &amp; The Collapse of Bastard Feudalism</td>
             <td>pp. 16–17</td>
           </tr>
-          <tr>
-            <td><strong>Enquiry 9</strong></td>
-            <td>Synoptic Assessment: The Dynamics of Medieval Power (1066–1485)</td>
-            <td>Synoptic Evaluation &amp; Medieval Monarchical Power</td>
-            <td>pp. 18–19</td>
-          </tr>
         </tbody>
       </table>
 
@@ -1599,14 +1590,14 @@ async function buildPublisherTextbookHtmlMedieval() {
   </div>
 
   <!-- ========================================== -->
-  <!-- PAGES 2–19: 9 CORE ENQUIRY LESSONS         -->
+  <!-- PAGES 2–17: 8 CORE ENQUIRY LESSONS         -->
   <!-- ========================================== -->
   ${lessonsHtml}
 
   <!-- ========================================== -->
-  <!-- PAGE 20: MASTER REVISION BACK COVER        -->
+  <!-- PAGE 18: MASTER REVISION BACK COVER        -->
   <!-- ========================================== -->
-  <div class="textbook-page" data-page="20">
+  <div class="textbook-page" data-page="18">
     <div class="bc-container">
       <div class="bc-header">
         <h2 class="bc-title">${BACK_COVER_DATA.title}</h2>
@@ -1715,7 +1706,7 @@ async function buildPublisherTextbookHtmlMedieval() {
       <div class="page-footer" style="margin-top: 2px;">
         <span>${COVER_CONFIG.imprint}</span>
         <span>Medieval England (1066–1485) &bull; Master Revision Guide</span>
-        <span>Page 20</span>
+        <span>Page 18</span>
       </div>
     </div>
   </div>
@@ -1725,7 +1716,7 @@ async function buildPublisherTextbookHtmlMedieval() {
 }
 
 async function renderMedievalMasterTextbook() {
-  console.log('Building 20-page Medieval England Master Textbook HTML...');
+  console.log('Building 18-page Medieval England Master Textbook HTML...');
   const html = await buildPublisherTextbookHtmlMedieval();
 
   const outHtmlPath = path.join(

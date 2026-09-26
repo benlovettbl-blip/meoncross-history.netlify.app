@@ -72,14 +72,6 @@ const CONCEPT_SPOTLIGHTS = {
     takeaway:
       "Key Historical Insight: Bastard feudalism privatized military violence, proving that monarchy collapses whenever private aristocratic wealth overpowers the Crown's monopoly on justice.",
   },
-  p19: {
-    tag: 'CONSTITUTIONAL SYNTHESIS: MEDIEVAL MONARCHY',
-    category: 'INSTITUTIONAL EVOLUTION • 1066–1485',
-    title: 'From Feudal Autocracy to Parliamentary Limitation',
-    body: "Between William I's absolute military conquest in 1066 and Henry VII's accession on Bosworth Field in 1485, the nature of English royal sovereignty underwent a profound transformation. Early Norman monarchs exercised near-total autocracy backed by timber keeps, military terror, and personal whim. Yet repeated political crises—Becket's martyrdom, Magna Carta, the Model Parliament of 1295, the deposition of Edward II and Richard II, and the carnage of Towton—gradually subordinated the Crown to the Rule of Law. By 1485, no English king could legally levy taxes without parliamentary consent, establishing the institutional foundations of constitutional monarchy.",
-    takeaway:
-      'Key Historical Insight: The struggle for power in medieval England demonstrated that royal authority was only durable when exercised within institutional and legal constraints.',
-  },
 };
 
 const LEFT_ANALYTICAL_MATRICES = {
@@ -196,19 +188,6 @@ const LEFT_ANALYTICAL_MATRICES = {
       {
         title: 'The House of York (White Rose)',
         text: 'Descendants of Lionel of Antwerp and Edmund of Langley (Richard Duke of York, Edward IV, Richard III). Claimed superior hereditary legitimacy.',
-      },
-    ],
-  },
-  p18: {
-    header: 'THE BALANCE OF POWER: ARBITRARY RULE VS PARLIAMENTARY CONSENT',
-    items: [
-      {
-        title: 'Royal Prerogative & Feudal Autocracy',
-        text: 'Monarchs claimed divine appointment, total military command, and the right to declare foreign wars, appoint bishops, and issue royal proclamations.',
-      },
-      {
-        title: 'Statute Law & Common Counsel',
-        text: 'The Commons and Lords controlled taxation; by 1485, no English king could levy direct taxes without the formal consent of Parliament.',
       },
     ],
   },

@@ -447,60 +447,6 @@ module.exports = function getMedievalData(helpers = {}) {
         q3: 'Why is the Battle of Bosworth Field (1485) considered by historians to mark the end of the Middle Ages in England?',
       },
     },
-
-    // Page 19: Lesson 9 (Assessment: How Powerful was a Monarch?)
-    p19: {
-      keyFigure: {
-        name: 'King Edward I ("Longshanks")',
-        lifespan: '1239–1307',
-        role: 'King of England, Lord of Ireland & Duke of Aquitaine (1272–1307)',
-        category: 'KEY FIGURE',
-        significance:
-          'The archetype of a successful medieval monarch; combined ferocious military power with regular parliamentary taxation to build English statehood.',
-        actions: [
-          'Summoned the "Model Parliament" in 1295, declaring: "What touches all should be approved by all" to raise taxes for his wars.',
-          'Crushed Welsh independence and constructed an "iron ring" of state-of-the-art concentric stone castles (Caernarfon, Conwy, Harlech).',
-          'Demonstrated that a king was most powerful not when ruling as a lone tyrant, but when consulting his barons and commons in Parliament.',
-        ],
-        image: getBase64Image('/images/edward_i_sedilia.jpg'),
-      },
-      archivalOddity: {
-        badge: 'ARCHIVAL ODDITY & CURIOUS REALITY',
-        title: 'The Crown on a Tightrope: Divine Right on an Empty Stomach',
-        date: '1066–1485 Historical Synthesis',
-        text: 'The greatest irony of medieval English history is that monarchs claimed to rule by absolute Divine Right—anointed with holy oils by the Archbishop as God’s representative on earth—yet spent their entire lives walking an impossible political tightrope. A medieval king had no permanent police force, no standing professional army, and no modern central bank. If he ran out of money, he had to beg his barons for cash; if he fought a war, he had to rely on knights who might decide mid-battle to switch sides (as Lord Stanley did to Richard III at Bosworth). Kings who forgot this reality and acted like absolute tyrants (John, Edward II, Richard II) ended up cornered in muddy meadows, deposed, starved in dungeon basements, or murdered with red-hot pokers. Successful kings (William I, Edward I, Henry V) realized that real power was not about being feared in isolation, but about forging a ruthless partnership with the Church and the nobility.',
-        shelfmark: 'HENRY DE BRACTON • DE LEGIBUS ET CONSUETUDINIBUS ANGLIAE (c. 1235)',
-      },
-      archivalDispatch: `
-      <div class="archival-source-box">
-        <div class="archival-header">
-          <div class="source-identity">
-            <span class="source-badge">SOURCE C</span>
-            <span class="source-type">Constitutional Treatise</span>
-          </div>
-          <span class="source-date-micro">Written c. 1471</span>
-        </div>
-        <div class="archival-title">Sir John Fortescue: The Governance of England</div>
-        <img class="archival-image" src="${getBase64Image('/images/portchester_castle.jpg')}" alt="Portchester Castle Royal Fortress">
-        <div class="archival-body">
-          "The King of England cannot rule his people by other laws than such as they themselves assent unto... He cannot at his pleasure lay taxes upon them, nor alter their laws, without the consent of the whole realm in Parliament assembled. This is a political and royal dominion, far superior to absolute tyranny."
-        </div>
-        <div class="archival-context-box">
-          <p class="archival-context-text">Written by the former Lord Chief Justice of the King's Bench during the Wars of the Roses, contrasting English limited monarchy against French royal absolutism.</p>
-          <div class="archival-hinge-q"><strong>Hinge Question:</strong> How does Fortescue's fifteenth-century view of monarchy differ from William the Conqueror's rule in 1066?</div>
-        </div>
-        <div class="archival-footer">
-          <span>Sir John Fortescue • Chief Justice of the King's Bench</span>
-          <span>Constitutional Analysis of the English Crown</span>
-        </div>
-      </div>
-    `,
-      bottomEnquiry: {
-        q1: 'Compare how William I maintained royal control in 1066 with how King John lost control in 1215.',
-        q2: 'Which social group posed the greatest continuous threat to royal power: the Catholic Church, the Barons, or the Peasantry?',
-        q3: '"A medieval monarch was only as powerful as their barons allowed them to be." Reach a final reasoned historical judgement.',
-      },
-    },
   };
 
   const MEDIEVAL_LEFT_VOCAB = {
@@ -646,24 +592,6 @@ module.exports = function getMedievalData(helpers = {}) {
       {
         term: 'Tudor Settlement',
         def: 'The political compromise in 1485 where Henry VII married Elizabeth of York, combining the rival roses and ending civil war.',
-      },
-    ],
-    p18: [
-      {
-        term: 'Royal Prerogative',
-        def: 'The traditional discretionary rights and powers possessed exclusively by the monarch without parliamentary consent.',
-      },
-      {
-        term: 'Feudal Inquest',
-        def: 'A formal royal investigation into the wealth, property rights, and military obligations of subjects across the realm.',
-      },
-      {
-        term: 'Constitutional Monarchy',
-        def: 'A system of government where the sovereign monarch’s power is strictly limited by the rule of law and parliamentary consent.',
-      },
-      {
-        term: 'Sovereignty',
-        def: 'The supreme, ultimate authority to govern, enact laws, levy taxes, and wage war within a territorial state.',
       },
     ],
   };
@@ -859,30 +787,6 @@ module.exports = function getMedievalData(helpers = {}) {
           'From the second continuation of the Crowland Abbey Chronicle, recording the horrific human cost of bastard feudalism and civil war.',
         hingeQuestion:
           'Why does the chronicler specifically emphasize that "twenty-eight thousand Christian Englishmen lay unburied"?',
-      },
-    },
-    p18: {
-      sourceA: {
-        badge: 'SOURCE A',
-        type: 'Primary Feudal Oath',
-        date: 'August 1086 • Salisbury Plain',
-        title: 'The Anglo-Saxon Chronicle: The Oath of Salisbury',
-        text: '"After this King William came to Salisbury, and there came to him all his witan, and all the landowning men of property from all over England, whosesoever men they were. And they all submitted to him, and became his men, and swore oaths of fealty to him, that they would be faithful to him against all other men without exception."',
-        context:
-          'Recording the historic gathering where William forced every significant tenant to swear primary allegiance directly to the Crown.',
-        hingeQuestion:
-          'How did the Oath of Salisbury establish the principle that loyalty to the King outweighed loyalty to any individual feudal lord?',
-      },
-      sourceB: {
-        badge: 'SOURCE B',
-        type: 'Primary Legal Treatise',
-        date: 'Written c. 1235',
-        title: 'Henry de Bracton: On the Laws and Customs of England',
-        text: '"The King must not be under man, but under God and under the law, because law makes the King (<em>lex facit regem</em>). Let him therefore bestow upon the law what the law bestows upon him, namely rule and power. For there is no King where will rules and not law... If the King is unbridled, his barons and the people must put a bridle upon him."',
-        context:
-          'Written by a royal justice of King Henry III, providing the classical legal definition of limited, lawful English monarchy.',
-        hingeQuestion:
-          'How does Bracton’s maxim "law makes the King" contrast with the idea of unchecked Divine Right absolutism?',
       },
     },
   };
@@ -1189,44 +1093,6 @@ module.exports = function getMedievalData(helpers = {}) {
         ],
       },
     },
-    {
-      lessonNum: 9,
-      title: 'Synoptic Assessment: How Powerful was a Medieval Monarch?',
-      enquiry:
-        'Was royal power an absolute sovereign dominance or a fragile tightrope dependent upon consent?',
-      act1: {
-        title: 'The Feudal Sovereign: Castles, Law & Divine Right',
-        paras: [
-          'Throughout the four centuries between 1066 and 1485, English monarchs laid claim to immense sovereign authority. Anointed with holy oils by the Archbishop of Canterbury during sacred coronation rituals, kings claimed to rule by Divine Right as God’s appointed representatives on earth. In the Norman era, William the Conqueror proved that a ruthless sovereign could dispossess an entire native nobility, build an inescapable fortress network, and audit national wealth through Domesday surveillance.',
-          'Subsequent monarchs expanded this royal supremacy. Henry II established the Common Law and regularized royal judicial eyres, demonstrating that royal justice superseded baronial jurisdiction. Edward I constructed colossal concentric stone castles across Wales and conquered Scotland, proving that an energetic, feared warrior-king could command national military manpower, levy sweeping taxes, and project royal authority across the British archipelago with devastating military effectiveness.',
-          'Monarchs commanded sweeping feudal prerogatives that no subject could legally dispute. The King held the supreme power to wage war, conclude treaties, bestow aristocratic titles, and pardon condemned criminals. Landholders who resisted royal authority faced trial for high treason, forfeiture of all ancestral estates, and the extinction of their family line, ensuring that the Crown remained the undisputed apex of medieval feudal society.',
-        ],
-      },
-      act2: {
-        title: 'The Baronial Check: Magna Carta & Dynastic Treason',
-        paras: [
-          'Yet the historical record reveals that royal authority was permanently constrained by aristocratic power. A medieval king had no standing army, no national police force, and no modern central bank. If a monarch acted like an arbitrary tyrant—imposing unbearable taxation, abusing royal wardships, or losing foreign wars—the baronage possessed the collective military strength to resist, capture the capital, and enforce strict legal boundaries upon the sovereign.',
-          'King John’s humiliation at Runnymede in 1215 proved that the Crown was legally subordinate to the rule of law. When monarchs proved disastrously weak or obstinate, the nobility went far beyond charters: Edward II was deposed and murdered in 1327; Richard II was overthrown and starved in Pontefract Castle in 1399; and the Wars of the Roses demonstrated that private noble armies under bastard feudalism could slaughter royal dynasties at will.',
-          'Overmighty subjects like Richard Neville, Earl of Warwick ("The Kingmaker") demonstrated that baronial fortunes could rival the Crown itself. Armed with private liveried retainers, ambitious magnates treated kings as pawn pieces on a political chessboard. A king could rule effectively only so long as he maintained the active military and financial support of his leading noble families.',
-        ],
-      },
-      act3: {
-        title: 'The Spiritual Bastion: Rome & The Catholic Church',
-        paras: [
-          'The second profound constraint on medieval kingship was the universal Catholic Church. As the gatekeeper of eternal salvation, the Church wielded spiritual weapons that could paralyze royal governance. When King John quarreled with Pope Innocent III over the appointment of Stephen Langton, the Pope imposed a six-year Interdict on England, closing all churches and threatening to release English subjects from their feudal oaths of allegiance.',
-          'Henry II discovered the lethal boundaries of ecclesiastical confrontation when four knights assassinated Thomas Becket in Canterbury Cathedral. Far from breaking Church autonomy, Becket’s murder forced Henry into humiliating public penance and cemented Benefit of Clergy for centuries. Monasteries controlled one-third of England’s agricultural wealth and answered ultimately to Rome, ensuring that the medieval English Crown could never claim undisputed total sovereignty.',
-          'Ecclesiastical independence placed a permanent legal ceiling on royal ambition. Canon law was administered in Church courts answerable to the Papacy, beyond the reach of the King’s writs. Bishops and abbots sat alongside earls in the King’s council, acting as a powerful moral and political brake against arbitrary taxation and royal encroachment upon ancient Church liberties.',
-        ],
-      },
-      act4: {
-        title: 'The Rise of Parliament & The Verdict on Power',
-        paras: [
-          'The ultimate reality of medieval English governance was that a king was most powerful when ruling through institutional consent rather than lone despotism. Edward I acknowledged this fundamental truth when summoning the Model Parliament in 1295, proclaiming: "What touches all should be approved by all." To wage expensive foreign wars, kings were forced to consult the elected knights of the shires and burgesses of the towns in Parliament to secure taxation.',
-          'Ultimately, medieval English monarchy was not an absolute dictatorship, but a delicate, perpetual political tightrope. Kings who governed through consultation, respected common law, and maintained the confidence of barons and Parliament flourished. Those who mistook royal majesty for unchecked absolute power ended up cornered in muddy meadows, deposed in dungeon basements, or butchered upon the battlefield.',
-          'When Henry VII picked up Richard III’s crown from the hawthorn bush at Bosworth in 1485, he understood the lesson of four centuries of medieval struggle. Absolute royal power was a dangerous fantasy. True sovereignty in England required a working partnership between the Crown, the rule of law, and the representative assembly of the realm—a constitutional legacy that still defines modern British governance.',
-        ],
-      },
-    },
   ];
 
   const COVER_CONFIG = {
@@ -1311,15 +1177,6 @@ module.exports = function getMedievalData(helpers = {}) {
           'Henry VI mental collapse and the rise of private noble armies (Bastard Feudalism).',
           'The bloodbath at Towton (1461) and the disappearance of the Princes in the Tower.',
           'Bosworth Field (1485): Richard III killed and Henry VII establishes the Tudor dynasty.',
-        ],
-      },
-      {
-        num: 9,
-        title: '9. Assessment: Medieval Power',
-        bullets: [
-          'Synoptic evaluation: comparing monarchical strength from 1066 to 1485.',
-          'Weighing the power of the Crown against the Church, Barons, and Peasantry.',
-          'Extended essay synthesis: Reach a supported historical judgement.',
         ],
       },
     ],
@@ -1526,12 +1383,6 @@ module.exports = function getMedievalData(helpers = {}) {
         code: 'ENQ 8',
         title: 'Wars of the Roses',
         url: 'https://history-revision-hub.netlify.app/units/medieval_england/lesson8.html',
-      },
-      {
-        num: 9,
-        code: 'ENQ 9',
-        title: 'Synoptic Assessment',
-        url: 'https://history-revision-hub.netlify.app/units/medieval_england/lesson9.html',
       },
     ],
   };

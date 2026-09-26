@@ -144,6 +144,19 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'medieval_england') {
+        console.log(
+          `\n📚 Compiling 18-page publisher textbook & universal KS3 engine workbook for [medieval_england]...`,
+        );
+        execSync(`node scripts/render_standard_textbook_medieval_england.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        execSync(`node scripts/generate_ks3_workbook.cjs medieval_england`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       if (unitId === 'early_modern_world') {
         console.log(
           `\n📚 Compiling 20-page publisher textbook & universal KS3 engine workbook for [early_modern_world]...`,
