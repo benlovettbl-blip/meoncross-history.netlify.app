@@ -125,7 +125,7 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Primary Proclamation &bull; 1871</span>
           </div>
           <span class="source-date-micro">18 January 1871</span>
@@ -183,18 +183,18 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
-            <span class="source-type">Primary School Reader &bull; 1887</span>
+            <span class="source-badge">SOURCE C</span>
+            <span class="source-type">Prussian Reichstag Address &bull; 1871</span>
           </div>
-          <span class="source-date-micro">Circa 1887</span>
+          <span class="source-date-micro">2 May 1871</span>
         </div>
-        <div class="archival-title">Excerpt from G. Bruno’s 'Le Tour de la France par deux enfants'</div>
+        <div class="archival-title">Otto von Bismarck on the Annexation of Alsace-Lorraine</div>
         <div class="archival-body">
-          "Do you see those two provinces shaded across the Rhine? They are Alsace and Lorraine, torn violently from our motherland. Never forget our brothers who weep under the Prussian helmet. Work, study, and grow strong so that one day justice and the tricolour shall return to Metz and Strasbourg."
+          "We take Alsace and northern Lorraine not to add territory, but as a defensive glacis and shield against France. For centuries, French armies have invaded Germany through Metz. By holding these fortresses, we secure our borders against future attack."
         </div>
         <div class="archival-footer">
-          <span>Bibliothèque Nationale de France</span>
-          <span>Paris Primary Education Curriculum (1887)</span>
+          <span>Prussian State Archive, Berlin</span>
+          <span>Imperial Reichstag Record (1871)</span>
         </div>
       </div>
     `,
@@ -241,7 +241,7 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Primary Political Speech &bull; 1911</span>
           </div>
           <span class="source-date-micro">21 July 1911</span>
@@ -300,7 +300,7 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Primary Parliamentary Hansard &bull; 1909</span>
           </div>
           <span class="source-date-micro">16 March 1909</span>
@@ -359,7 +359,7 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Primary Military Treaty &bull; 1894</span>
           </div>
           <span class="source-date-micro">17 August 1892</span>
@@ -417,7 +417,7 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">SOURCE B</span>
+            <span class="source-badge">SOURCE C</span>
             <span class="source-type">Primary Diplomatic Dispatch &bull; 1914</span>
           </div>
           <span class="source-date-micro">6 July 1914</span>
@@ -1053,7 +1053,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
 
     const t3PromptMap = {
       1: 'Examine both interpretations of Otto von Bismarck’s statecraft: pragmatic diplomacy vs provoked "blood and iron". Note two key pieces of factual evidence for each interpretation in your workbook.',
-      2: 'Examine both perspectives on the 1871 annexation: Albert Bettannier’s <em>La Tache Noire</em> (Source A) vs Prussian military strategy (Source B). Note two key pieces of factual evidence for each side in your workbook.',
+      2: 'Examine both perspectives on the 1871 annexation: French revanchism (Source A) vs Prussian defensive strategy (Sources B & C). Note two key pieces of factual evidence for each side in your workbook.',
       3: 'Evaluate both historical perspectives on imperial conflict during the Scramble for Africa: economic greed vs national prestige. Note two key pieces of factual evidence for each view in your workbook.',
       4: 'Examine the causal factors driving Great Britain out of isolation: maritime naval security vs continental balance of power. Note two key pieces of factual evidence for each factor in your workbook.',
       5: 'Analyze both sides of the historical debate on the alliance systems: deterrence peacekeeping vs an inflexible secret treaty trap. Note two key pieces of factual evidence for each side in your workbook.',

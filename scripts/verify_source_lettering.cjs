@@ -209,6 +209,75 @@ async function runLinter() {
     }
   }
 
+  // ====================================================
+  // 2. COMPILED TEXTBOOK SPREAD SOURCE AUDIT
+  // ====================================================
+  console.log('\n====================================================');
+  console.log('📖 COMPILED TEXTBOOK SPREAD SOURCE LETTERING AUDIT');
+  console.log('====================================================');
+
+  const publicUnitsDir = path.resolve(__dirname, '../public/units');
+  for (const unitId of unitsToAudit) {
+    const textbookHtmlPath = path.join(publicUnitsDir, unitId, 'textbook_PUBLISHER.html');
+    if (!fs.existsSync(textbookHtmlPath)) {
+      continue;
+    }
+
+    const tbHtml = fs.readFileSync(textbookHtmlPath, 'utf8');
+    const pageMatches = [...tbHtml.matchAll(/data-page="(\d+)"/g)];
+    const maxPages =
+      pageMatches.length > 0 ? Math.max(...pageMatches.map((m) => parseInt(m[1], 10))) : 14;
+
+    for (let pLeft = 2; pLeft < maxPages; pLeft += 2) {
+      const pRight = pLeft + 1;
+      const lessonNum = pLeft / 2;
+      const spreadChunk =
+        (tbHtml.split(`data-page="${pLeft}"`)[1] || '').split(`data-page="${pRight + 1}"`)[0] || '';
+
+      const badges = [
+        ...spreadChunk.matchAll(/<span class="[^"]*source-badge[^"]*">([\s\S]*?)<\/span>/gi),
+      ]
+        .map((m) =>
+          m[1]
+            .replace(/<[^>]+>/g, '')
+            .trim()
+            .toUpperCase(),
+        )
+        .filter((b) => b.startsWith('SOURCE '));
+
+      if (badges.length > 0) {
+        const letters = badges.map((b) => b.replace('SOURCE ', '').trim());
+        const seen = new Set();
+        const duplicates = [];
+        letters.forEach((l) => {
+          if (seen.has(l)) duplicates.push(l);
+          seen.add(l);
+        });
+
+        if (duplicates.length > 0) {
+          console.error(
+            `  ❌ [${unitId} Textbook Pages ${pLeft}–${pRight} / L${lessonNum}] Duplicate source letter on facing spread: [${duplicates.join(', ')}]! Full spread badges: [${badges.join(', ')}]`,
+          );
+          totalErrors++;
+        }
+
+        const distinctLetters = Array.from(seen).sort();
+        distinctLetters.forEach((letter, idx) => {
+          const expected = String.fromCharCode(65 + idx);
+          if (letter !== expected) {
+            console.error(
+              `  ❌ [${unitId} Textbook Pages ${pLeft}–${pRight} / L${lessonNum}] Broken letter sequence on spread! Expected 'Source ${expected}', but found 'Source ${letter}'. Full list: [${distinctLetters.join(', ')}]`,
+            );
+            totalErrors++;
+          }
+        });
+      }
+    }
+    console.log(
+      `  ✅ [${unitId}] Textbook facing spreads audited for 0 duplicates and sequential lettering.`,
+    );
+  }
+
   console.log('\n====================================================');
   console.log(`Audited ${totalLessonsAudited} lessons across ${unitsToAudit.length} units.`);
   console.log(`Total source elements examined: ${totalSourcesAudited}`);
