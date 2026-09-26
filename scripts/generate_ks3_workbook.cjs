@@ -1252,7 +1252,6 @@ const UNIT_REGISTRY = {
       'Home Front & DORA',
       'Versailles Peace 1919',
       'Stubbington & Lost Gen',
-      'Capstone Assessment',
     ];
 
     const overviewTitles = [
@@ -1262,7 +1261,6 @@ const UNIT_REGISTRY = {
       'How did war control daily British life?',
       'Did Versailles solve or create problems?',
       'How did the Lost Generation impact Stubbington?',
-      'Capstone Synthesis: The Great War',
     ];
 
     const syllabusTopics = [
@@ -1272,7 +1270,6 @@ const UNIT_REGISTRY = {
       'Defence of the Realm Act (DORA), Conscription & The Female Home Front.',
       'The Paris Peace Conference, Article 231 & The Legacy of Versailles.',
       'Micro-History, Local Bereavement & The Stubbington War Memorial.',
-      'Synoptic Capstone Assessment: Total War, Global Scope & Disciplinary Synthesis.',
     ];
 
     const specBullets = [
@@ -1305,11 +1302,6 @@ const UNIT_REGISTRY = {
         'Demographic shock of the "Lost Generation" on small English agricultural villages',
         'The Stubbington Memorial Shelter (1922): unique village green pump architecture',
         'Micro-case study: Nurse Nita King, the three Lowry brothers & the 67 local fallen carved on the memorial beams',
-      ],
-      [
-        'Evaluating the four thematic strands across the 1914–1919 conflict',
-        'Synthesis of military, domestic, imperial, and local evidence in extended writing',
-        'Mastery of Edexcel criteria: direct answering, precise evidence, causation & sustained judgement',
       ],
     ];
 
@@ -1430,7 +1422,6 @@ const UNIT_REGISTRY = {
       'Illustrate Milestone 3 on Page 2: Sketch a Canary Girl packing TNT shells, or Milestone 5 on Page 3 (tribunal).',
       'Illustrate Milestone 7 on Page 3: Sketch the Hall of Mirrors at Versailles, or the signing of Article 231.',
       'Illustrate Milestone 8 on Page 3: Sketch the wooden memorial shelter over the village pump, or Nurse Nita King’s Red Cross emblem.',
-      'Review all 8 Milestones across Pages 2–3 to synthesize your overarching historical argument.',
     ];
 
     return {
@@ -1547,7 +1538,11 @@ async function main() {
 
   const unitConfig = UNIT_REGISTRY[unitId]();
   const outputDir = path.join(ROOT_DIR, 'public', 'pdfs');
-  console.log(`Compiling 20-page A4 workbook for ${unitConfig.unitTitle}...`);
+  const pageCount =
+    unitConfig.lessons.length * 2 +
+    4 +
+    (unitConfig.hasCapstoneSpread || unitConfig.capstoneSpread ? 2 : 0);
+  console.log(`Compiling ${pageCount}-page A4 workbook for ${unitConfig.unitTitle}...`);
   const { htmlPath, pdfPath } = await renderKs3WorkbookToPdf(unitConfig, outputDir);
 
   // Synchronize to standard production destinations (Canonical Single Source of Truth)

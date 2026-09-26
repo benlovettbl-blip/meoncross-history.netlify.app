@@ -653,10 +653,12 @@ function renderKs3FrontCover({
           <span>The ${lessons.length} Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
           <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">${cleanRange}</span>
         </div>
-        <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; gap: ${isSixLessons ? '3px 6px' : '2.5px 5px'}; font-family: 'Inter', sans-serif; background: #ffffff;">
+        <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; ${isSixLessons ? 'grid-template-rows: repeat(3, 1fr);' : ''} gap: ${isSixLessons ? '3px 6px' : '2.5px 5px'}; font-family: 'Inter', sans-serif; background: #ffffff;">
           ${lessons
             .map((l, idx) => {
-              const cleanEnquiry = (
+              // Guardrail A: Prefer concise overview title and clamp length to avoid card overflow
+              let cardTitle = (
+                l.overviewTitle ||
                 l.enquiryQuestion ||
                 l.inquiryQuestion ||
                 l.question ||
@@ -665,6 +667,15 @@ function renderKs3FrontCover({
               )
                 .replace(/^Enquiry:\s*/i, '')
                 .trim();
+              if (cardTitle.length > 70) {
+                if (l.overviewTitle && l.overviewTitle.length <= 70) {
+                  cardTitle = l.overviewTitle.replace(/^Enquiry:\s*/i, '').trim();
+                } else if (l.shortTitle && l.shortTitle.length <= 70) {
+                  cardTitle = l.shortTitle.replace(/^Enquiry:\s*/i, '').trim();
+                } else {
+                  cardTitle = cardTitle.substring(0, 67).trim() + '…';
+                }
+              }
               const bullets =
                 l.specBullets && l.specBullets.length > 0
                   ? l.specBullets
@@ -678,7 +689,7 @@ function renderKs3FrontCover({
                   <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4.5px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
                 </div>
                 <strong style="font-family: 'Playfair Display', serif; font-size: ${cardTitleSize}; font-weight: 800; color: #0f172a; line-height: 1.15; display: block; margin-bottom: 1px;">
-                  ${cleanEnquiry}
+                  ${cardTitle}
                 </strong>
               </div>
               <div style="font-family: 'Inter', sans-serif; font-size: ${bulletSize}; color: #334155; line-height: ${bulletLineHeight}; padding-left: 2px; padding-bottom: 2px;">

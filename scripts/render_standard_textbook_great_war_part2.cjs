@@ -11,10 +11,10 @@
  *    - Verso (Left Page): Act 1 (3 paras + Source A) & Act 2 (3 paras + Source B) + 4-Term Vocab Deck
  *    - Recto (Right Page): Upper Grid [Act 3 (2 paras + Key Figure) | Act 4 (2 paras + Concept Spotlight)] + Source C Archival Dispatch + Bottom Enquiry & Workbook Signpost
  *    - Pure PEEL paragraph referencing with .para-ref micro-badges ([1.1], [1.2], etc.)
- * 3. Exact 16-Page Budget:
+ * 3. Exact 14-Page Budget:
  *    - Page 1:  Master Front Cover (4-column syllabus matrix with "Disciplinary Skill & Assessment Focus")
- *    - Pages 2–15: 7 Double-Page Enquiry Spreads (Verso Acts 1 & 2; Recto Acts 3 & 4)
- *    - Page 16: Master Revision Back Cover (1914–1922 Chronological Spine, Themes Matrix, Historiography, PEEL Scaffold & QR Matrix)
+ *    - Pages 2–13: 6 Double-Page Enquiry Spreads (Verso Acts 1 & 2; Recto Acts 3 & 4)
+ *    - Page 14: Master Revision Back Cover (1914–1922 Chronological Spine, Themes Matrix, Historiography, PEEL Scaffold & QR Matrix)
  * 4. Zero multi-column prose voids (completely eliminates legacy CSS column-count: 2; uses flex .two-column-grid).
  * 5. Base64 Image Inlining for 100% offline and Puppeteer fidelity.
  */
@@ -213,7 +213,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
   const coverImgData =
     getBase64Image(heroImage) || getBase64Image('/images/stubbington_memorial_1.jpg');
 
-  // Back cover practice quiz cards for 7 lessons
+  // Back cover practice quiz cards for 6 enquiries
   const qrLessons = [
     {
       num: 'Enquiry 1',
@@ -244,11 +244,6 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       num: 'Enquiry 6',
       title: 'Lost Gen & Village',
       url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=6',
-    },
-    {
-      num: 'Enquiry 7',
-      title: 'Synoptic Assessment',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=7',
     },
   ];
 
@@ -305,7 +300,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
         <div class="lesson-header">
           <div class="lesson-badge-strip">
             <span class="topic-badge">KEY STAGE 3 MASTER CURRICULUM &bull; YEAR 9</span>
-            <span class="spec-ref-badge">THE GREAT WAR (1914–1919) &bull; ENQUIRY ${lessonNum} OF 7</span>
+            <span class="spec-ref-badge">THE GREAT WAR (1914–1919) &bull; ENQUIRY ${lessonNum} OF 6</span>
           </div>
           <h2 class="lesson-title">${syl.title}</h2>
           <div class="lesson-spec-anchor">
@@ -374,7 +369,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
         <div class="right-page-header">
           <div class="rph-meta">
             <span class="rph-tag">PRIMARY ARCHIVE &amp; HISTORICAL VERDICT &bull; KS3 MASTER CURRICULUM</span>
-            <span class="rph-lesson">ENQUIRY ${lessonNum} OF 7: ACTS 3 &amp; 4</span>
+            <span class="rph-lesson">ENQUIRY ${lessonNum} OF 6: ACTS 3 &amp; 4</span>
           </div>
           <h3 class="rph-title">${syl.title}</h3>
         </div>
@@ -1250,8 +1245,8 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     }
     .cover-plate-img {
       width: 100%;
-      height: 104mm;
-      max-height: 106mm;
+      height: 108mm;
+      max-height: 110mm;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
@@ -1305,7 +1300,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       border: 1px solid #0f172a;
     }
     .cover-matrix-table td {
-      padding: 2.9mm 2.6mm;
+      padding: 3.2mm 2.6mm;
       border: 1px solid #cbd5e1;
       color: #1e293b;
     }
@@ -1464,7 +1459,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     }
     .bqr-grid {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 3px;
       margin-top: 2px;
     }
@@ -1587,14 +1582,14 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
   </div>
 
   <!-- ========================================== -->
-  <!-- PAGES 2–15: 7 CORE ENQUIRY LESSONS         -->
+  <!-- PAGES 2–13: 6 CORE ENQUIRY LESSONS         -->
   <!-- ========================================== -->
   ${lessonsHtml}
 
   <!-- ========================================== -->
-  <!-- PAGE 16: MASTER REVISION BACK COVER        -->
+  <!-- PAGE 14: MASTER REVISION BACK COVER        -->
   <!-- ========================================== -->
-  <div class="textbook-page" data-page="16">
+  <div class="textbook-page" data-page="14">
     <div class="bc-container">
       <div class="bc-header">
         <h2 class="bc-title">${unitTitle}</h2>
@@ -1705,7 +1700,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       <div class="page-footer" style="margin-top: 2px;">
         <span>The History Revision Hub &bull; Independent Educational Publishing</span>
         <span>The Great War (1914–1919) &bull; Master Revision Guide</span>
-        <span>Page 16</span>
+        <span>Page 14</span>
       </div>
     </div>
   </div>
@@ -1715,7 +1710,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
 }
 
 async function renderGreatWarPart2MasterTextbook() {
-  console.log('Building 16-page Great War Part 2 Master Textbook HTML...');
+  console.log('Building 14-page Great War Part 2 Master Textbook HTML...');
   const html = await buildPublisherTextbookHtmlGreatWarPart2();
 
   const outHtmlPath = path.join(

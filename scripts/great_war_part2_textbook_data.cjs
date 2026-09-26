@@ -2,7 +2,7 @@
  * great_war_part2_textbook_data.cjs
  * Canonical Master Textbook Data Module for KS3 Year 9 The Great War Part 2 (1914–1919)
  * Dual-Column Publisher Grid Engine • 4-Act Christine Counsell Structure
- * Audited: 7 Double-Page Enquiry Spreads (Pages 2–15) + Front & Back Covers = Exact 16-Page Budget.
+ * Audited: 6 Double-Page Enquiry Spreads (Pages 2–13) + Front & Back Covers = Exact 14-Page Budget.
  */
 
 module.exports = function getGreatWarPart2Data(helpers = {}) {
@@ -84,22 +84,10 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         'Nurse Nita King, the Lowry brothers & 67 local fallen on the green',
       ],
     },
-    {
-      num: 7,
-      title: 'Synoptic Assessment: The Great War (1914–1919)',
-      enquiry: 'How far did the First World War transform the modern world?',
-      skill: 'Synoptic Assessment & Historical Verdict',
-      assessmentFocus: 'Synoptic Assessment & Historical Verdict',
-      bullets: [
-        'Evaluating the 4 thematic strands across the 1914–1919 conflict',
-        'Synthesising military, domestic, imperial & local archival evidence',
-        'Edexcel criteria: sustained thesis, precise data & weighted judgement',
-      ],
-    },
   ];
 
   // -------------------------------------------------------------
-  // LEFT-HAND PAGES (Verso: P2, P4, P6, P8, P10, P12, P14)
+  // LEFT-HAND PAGES (Verso: P2, P4, P6, P8, P10, P12)
   // Sources A & B and Core Disciplinary Vocabulary (4 Terms per Page)
   // -------------------------------------------------------------
   const LEFT_SOURCES = {
@@ -261,34 +249,6 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         footer: 'Community War Memorial Inventory &bull; Hampshire',
       },
     },
-    p14: {
-      sourceA: {
-        badge: 'SOURCE A',
-        type: 'Historical Photographic Record',
-        title: 'London Celebrations on Armistice Day (11 November 1918)',
-        image: getBase64Image('/images/armistice_1918.jpg'),
-        context:
-          'When the Armistice took effect at 11:00 am on 11 November 1918, vast crowds flooded Trafalgar Square and Whitehall. Joy at the end of slaughter was immediately mingled with profound collective bereavement.',
-        hingeQuestion:
-          'Why was the emotional relief of Armistice Day accompanied by lasting social grief and disillusionment across Britain?',
-        shelfmark: 'Imperial War Museum, London &bull; Q 80112',
-        footer: 'Press Association Photographic Archive &bull; Armistice Series',
-      },
-      sourceB: {
-        badge: 'SOURCE B',
-        type: 'Cartographic Transformation Plate',
-        title: 'The Geopolitical Reordering of Europe after the Treaties of 1919–1920',
-        image:
-          getBase64Image('/units/great_war_part2/assets/map_postwar_europe.jpg') ||
-          getBase64Image('/units/great_war/assets/map_prewar_europe.jpg'),
-        context:
-          'Following the Paris peace treaties, four historic empires (German, Austro-Hungarian, Russian, and Ottoman) vanished from the map, replaced by newly independent nation-states across Central and Eastern Europe.',
-        hingeQuestion:
-          'How did redrawing European borders along national lines create new ethnic minority tensions that persisted into the 1930s?',
-        shelfmark: 'League of Nations Cartographic Office &bull; Geneva',
-        footer: 'Curriculum Comparative Cartography &bull; Department Archive',
-      },
-    },
   };
 
   const LEFT_VOCAB = {
@@ -400,28 +360,10 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         def: 'Historical investigation focused on an individual village or family to illuminate broad national patterns.',
       },
     ],
-    p14: [
-      {
-        term: 'Geopolitical Hegemony',
-        def: 'The political, military, and economic dominance of one nation or alliance over global diplomatic affairs.',
-      },
-      {
-        term: 'Armistice',
-        def: 'A formal agreement between warring nations to halt active combat, enacted on 11 November 1918.',
-      },
-      {
-        term: 'Historical Synthesis',
-        def: 'Combining diverse strands of evidence (military, social, local, imperial) into a unified, balanced argument.',
-      },
-      {
-        term: 'Evaluative Balance',
-        def: 'Weighing opposing historical interpretations against primary evidence to reach a nuanced final judgement.',
-      },
-    ],
   };
 
   // -------------------------------------------------------------
-  // RIGHT-HAND PAGES (Recto: P3, P5, P7, P9, P11, P13, P15)
+  // RIGHT-HAND PAGES (Recto: P3, P5, P7, P9, P11, P13)
   // Key Figures, Concept Spotlights, Source C Archival Dispatches & Tasks
   // -------------------------------------------------------------
   const COMPONENT_BANK = {
@@ -778,65 +720,6 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         'How useful are Sources A, B, and C for an enquiry into the impact of the "Lost Generation" on local English communities? (12 marks)',
       wbPages: '14–15',
     },
-
-    p15: {
-      keyFigure: {
-        name: 'Sir Fabian Ware',
-        lifespan: '1869–1949',
-        role: 'Founder of the Imperial War Graves Commission (IWGC)',
-        significance:
-          'Revolutionised military commemoration by establishing the universal principle of equality in death: every fallen soldier received an identical headstone regardless of rank or wealth.',
-        actions: [
-          'Led a Red Cross ambulance unit in 1914, appalled that soldiers were being buried in unmarked, scattered shell holes along the Western Front.',
-          'Founded the Imperial War Graves Commission in 1917, outlawing the repatriation of bodies so that rich and poor lay side by side in cemetery grounds.',
-          'Commissioned renowned architects (Lutyens, Blomfield) to create peaceful cemetery gardens featuring the Cross of Sacrifice and Stone of Remembrance.',
-        ],
-        image: getBase64Image('/images/fabian_ware.jpg'),
-      },
-      conceptSpotlight: `
-        <div class="concept-spotlight-box">
-          <div class="csb-header">
-            <span class="csb-tag">EXAMINATION STRATEGY: CAUSAL HIERARCHY</span>
-            <span class="csb-category">CORE SPECIFICATION THEMES &bull; 1914–1919</span>
-          </div>
-          <h4 class="csb-title">Causal Hierarchy: Immediate Triggers vs Structural Catalysts</h4>
-          <div class="csb-body">
-            Excellence in Edexcel GCSE History requires distinguishing between immediate triggers (the Sarajevo assassination, the German invasion of Belgium) and deep structural currents (militarism, imperial rivalry, naval competition). In extended writing, the highest marks are awarded to students who establish a clear hierarchy: explaining why secondary triggers could only ignite war because structural friction had already built an unstable powder keg. Furthermore, students must weigh how military deadlock in the trenches interacted dynamically with home front industrial exhaustion and global imperial supply lines.
-          </div>
-          <div class="csb-takeaway">
-            <strong>Key Causation:</strong> Outstanding historical writing avoids listing narrative facts; it proves *why* one causal factor carried greater explanatory weight than others across the period.
-          </div>
-        </div>
-      `,
-      archivalDispatch: `
-        <div class="archival-source-box">
-          <div class="archival-header">
-            <div class="source-identity">
-              <span class="source-badge">SOURCE C</span>
-              <span class="source-type">Retrospective Political Memoir &bull; 1923</span>
-            </div>
-            <span class="source-date-micro">Published 1923</span>
-          </div>
-          <div class="archival-title">Winston S. Churchill: The World Crisis (Synoptic Verdict)</div>
-          <div class="archival-body">
-            "The events of the Great War were not created by kings or statesmen alone, but by the accumulation of destructive forces that modern science had placed in human hands. When the collision came, it tore through the fabric of ancient empires, consumed a generation of youth, and left mankind stranded upon the shores of an uncertain new world."
-          </div>
-          <div class="archival-context-box">
-            <p class="archival-context-text">Reflective philosophical verdict from Winston Churchill’s multi-volume history of the First World War.</p>
-            <div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>How does Churchill’s assessment illustrate that the Great War was as much a catastrophe of modern industrial technology as a failure of diplomacy?</em></div>
-          </div>
-          <div class="archival-footer">
-            <span>The World Crisis (Vol. I) &bull; Thornton Butterworth, London</span>
-            <span>Churchill College Archive &bull; Cambridge</span>
-          </div>
-        </div>
-      `,
-      task3Instruction:
-        'Synthesise evidence across all four thematic strands: State Control, Industrial Slaughter, Propaganda & War Guilt, and Dissent & Agency. Prepare your extended writing thesis and causal hierarchy in your workbook.',
-      task4Question:
-        'To what extent was the First World War a total turning point in British and European history? (16 marks + 4 SPaG)',
-      wbPages: '16–17',
-    },
   };
 
   // -------------------------------------------------------------
@@ -1046,44 +929,10 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         ],
       },
     ],
-
-    // Lesson 7: Synoptic Assessment: The Great War (1914–1919)
-    [
-      {
-        title: 'Act 1: The Nature of Total War: Military, Domestic & Imperial Forces',
-        text: [
-          '<span class="para-ref">[1.1]</span> Investigating the First World War between 1914 and 1919 demonstrates that battlefield outcomes cannot be understood in isolation from civilian home fronts and global imperial supply lines. Victory on the Western Front was achieved because British domestic industry mobilised over one million female workers and imperial supply chains delivered food, munitions, and raw materials under Allied naval supremacy.',
-          '<span class="para-ref">[1.2]</span> The conflict permanently dismantled Victorian political assumptions regarding state intervention, social class, and gender roles. The British state assumed unprecedented administrative powers under DORA, taking control of mines, railways, and factories, while the sacrifices of working-class men and women dismantled traditional resistance to universal adult democratic suffrage, culminating in the 1918 and 1928 Representation of the People Acts.',
-          '<span class="para-ref">[1.3]</span> Globally, the mobilisation of over four million colonial soldiers and non-combatant labourers cracked the foundations of European imperial prestige. Despite wartime promises, post-war imperial amnesia and repression in India and the Caribbean accelerated anti-colonial nationalist movements, initiating the eventual decline of the British Empire.',
-        ],
-      },
-      {
-        title: 'Act 2: The Shifting Balance of Global Hegemony',
-        text: [
-          '<span class="para-ref">[2.1]</span> Geopolitically, the Great War marked the end of the Eurocentric world order that had dominated global affairs since the Industrial Revolution. Great Britain emerged victorious but financially depleted, transitioning from the world’s pre-eminent creditor nation into a debtor nation dependent on American financial capital.',
-          '<span class="para-ref">[2.2]</span> The collapse of the Hohenzollern, Habsburg, Romanov, and Ottoman empires created an unstable cordon of newly formed nation-states across Central and Eastern Europe. The refusal of the United States Senate to ratify the Treaty of Versailles or join the League of Nations left post-war collective security in European hands without the military or financial backing of the world’s greatest economic power.',
-          '<span class="para-ref">[2.3]</span> In Germany, the combination of punitive financial reparations, territorial amputation, and the toxic <em>Dolchstoßlegende</em> (stab-in-the-back myth) poisoned the democratic Weimar Republic. Right-wing extremists and Adolf Hitler exploited this deep revanchist bitterness, transforming the grievances of 1919 into the aggressive expansionism of the 1930s.',
-        ],
-      },
-      {
-        title: 'Act 3: Examination Strategy: Constructing Sustained Historical Judgements',
-        text: [
-          '<span class="para-ref">[3.1]</span> High-level historical analysis requires progressing beyond chronological narrative to construct sustained, analytical arguments. When evaluating causation, significance, or utility, historians establish a clear causal hierarchy: distinguishing between immediate triggers (such as the Sarajevo assassination) and profound structural causes (militarism, imperial rivalry, and alliance webs). Students must prove why certain factors carried decisive weight.',
-          '<span class="para-ref">[3.2]</span> In extended writing assessments, students must deploy precise contextual evidence (treaty articles, specific Acts of Parliament, casualty figures, and regimental records) to substantiate a weighted, evaluative thesis. The strongest arguments demonstrate how military developments interact dynamically with political decisions, industrial capacity, and social changes over time to reach a synoptic historical verdict.',
-        ],
-      },
-      {
-        title: 'Act 4: Causation, Consequence & The Long Shadow of 1914–1919',
-        text: [
-          '<span class="para-ref">[4.1]</span> Ultimately, the First World War was not merely a tragic conflict; it was the foundational catalyst of the modern twentieth century. The ideological struggles that defined the modern era—Fascism, Soviet Communism, liberal democracy, and anti-colonial self-determination—were forged in the trenches and peace conferences of 1914–1919, redrawing borders and destroying traditional dynastic legitimacy.',
-          '<span class="para-ref">[4.2]</span> As Sir Fabian Ware’s Commonwealth War Graves Commission cemeteries and functional village memorials like the Stubbington pump shelter demonstrate, the profound trauma of 1914–1919 transformed collective memory, leaving an enduring historical legacy that continues to shape modern international relations, civic identity, and society today.',
-        ],
-      },
-    ],
   ];
 
   // -------------------------------------------------------------
-  // BACK COVER REVISION SPINE (Page 16)
+  // BACK COVER REVISION SPINE (Page 14)
   // -------------------------------------------------------------
   const CHRONOLOGY = [
     {

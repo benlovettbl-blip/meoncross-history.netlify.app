@@ -78,10 +78,8 @@ function buildKs3WorkbookHtml(unitConfig) {
   } = unitConfig;
 
   const hasCapstoneSpread =
-    explicitHasCapstone !== null
-      ? explicitHasCapstone
-      : Boolean(capstoneSpread || lessons.length === 7);
-  const totalPages = lessons.length * 2 + 4 + (hasCapstoneSpread ? 2 : 0); // Cover (1) + Timeline (2-3) + Spreads (lessons*2) + Capstone (18-19 if 7 lessons) + Back Cover (1)
+    explicitHasCapstone !== null ? explicitHasCapstone : Boolean(capstoneSpread);
+  const totalPages = lessons.length * 2 + 4 + (hasCapstoneSpread ? 2 : 0); // Cover (1) + Timeline (2-3) + Spreads (lessons*2) + Optional Capstone (2) + Back Cover (1)
   const coverImgData = getBase64Image(coverImage);
 
   let html = `<!DOCTYPE html>

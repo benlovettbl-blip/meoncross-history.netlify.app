@@ -159,8 +159,12 @@ async function runSync() {
       }
       if (unitId === 'great_war_part2') {
         console.log(
-          `\n📚 Compiling 20-page universal KS3 engine workbook for [great_war_part2]...`,
+          `\n📚 Compiling 14-page publisher-grade textbook & 16-page workbook for [great_war_part2]...`,
         );
+        execSync(`node scripts/render_standard_textbook_great_war_part2.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
         execSync(`node scripts/generate_ks3_workbook.cjs great_war_part2`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,

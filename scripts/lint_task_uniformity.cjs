@@ -101,6 +101,23 @@ async function runLinter() {
   const errors = [];
   const warnings = [];
 
+  // Guardrail B: Standard KS3 Lesson Budget Enforcement
+  const HALF_TERM_KS3 = ['great_war', 'great_war_part2', 'water_and_sanitation'];
+  const FULL_TERM_KS3 = ['medieval_england', 'industrialisation_and_empire', 'early_modern_world'];
+  if (HALF_TERM_KS3.includes(unitId)) {
+    if (lessons.length !== 6) {
+      errors.push(
+        `[Standard KS3 Budget Violation] Half-term unit '${unitId}' must have strictly 6 substantive enquiries (16-page workbook / 14-page textbook budget). Found: ${lessons.length} lessons.`,
+      );
+    }
+  } else if (FULL_TERM_KS3.includes(unitId)) {
+    if (lessons.length !== 8 && lessons.length !== 9) {
+      errors.push(
+        `[Standard KS3 Budget Violation] Full-term unit '${unitId}' must have strictly 8 substantive enquiries. Found: ${lessons.length} lessons.`,
+      );
+    }
+  }
+
   lessons.forEach((lesson, lIdx) => {
     const lessonNum = lIdx + 1;
     const lTitle = lesson.title || `Lesson ${lessonNum}`;

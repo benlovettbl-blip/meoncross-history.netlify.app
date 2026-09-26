@@ -507,12 +507,6 @@ export const WORKBOOK_PAGE_MAP = {
       unitId: 'great_war_part2',
       lessonIndex: 5,
     },
-    lesson_7_assessment: {
-      page: 16,
-      booklet: 'Pupil Workbook',
-      unitId: 'great_war_part2',
-      lessonIndex: 6,
-    },
   },
   industrialisation_and_empire: {
     lesson_1: {

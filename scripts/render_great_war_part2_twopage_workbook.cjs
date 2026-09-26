@@ -22,7 +22,7 @@ function formatText(txt) {
   return txt;
 }
 
-// Bespoke Bridge Tasks, Disciplinary Vocabulary Tasks, and Writing Frameworks for all 7 Great War Part 2 lessons
+// Bespoke Bridge Tasks, Disciplinary Vocabulary Tasks, and Writing Frameworks for all 6 Great War Part 2 lessons
 // Implements the 4-Skill Disciplinary Spiral:
 // - Lesson 1: Dual-Source Utility (Edexcel Paper 1 & 3 Prep)
 // - Lesson 2: Historical Interpretations Debate (Edexcel Paper 3 Prep)
@@ -30,7 +30,6 @@ function formatText(txt) {
 // - Lesson 4: Change & Continuity Matrix
 // - Lesson 5: Causation & Analytical Narrative
 // - Lesson 6: Local Archival Dual-Source Utility (Stubbington)
-// - Lesson 7: Synoptic Capstone Synthesis
 const lessonConfigs = [
   {
     // Lesson 1: Recruitment & The Rush to the Colours (1914)
@@ -404,73 +403,6 @@ const lessonConfigs = [
         '<strong>★ Scholar’s Edge:</strong> How does the Lowry family’s donation of the Holy Rood memorial lychgate demonstrate how the landed gentry used religious architecture to cope with the extinction of their family line?',
     },
   },
-  {
-    // Lesson 7: Capstone Assessment: The Great War (1914–1919)
-    taskType: 'extended_writing',
-    genre: 'Genre 4: Synoptic Historical Synthesis (Capstone Essay)',
-    skill: 'Synoptic Historical Synthesis',
-    genreNum: 4,
-    enquiryQuestion:
-      'Enquiry: “The First World War was a total war that completely transformed the modern world.” How far do you agree? (1914–1919)',
-    structureStrip: [
-      {
-        col: '1. MILITARY & GEOPOLITICAL REVOLUTION',
-        text: 'Explain how the war destroyed 4 historic empires (German, Russian, Austro-Hungarian, Ottoman), created modern industrialised warfare (tanks, planes, poison gas), and made the USA a global superpower.',
-      },
-      {
-        col: '2. SOCIAL & IMPERIAL TRANSFORMATION',
-        text: 'Explain the transformation of civil society: DORA, women’s industrial mobilisation and the 1918 vote, the mobilization of 4 million colonial troops, and the collapse of Victorian class deference.',
-      },
-      {
-        col: '3. SYNOPTIC HISTORICAL JUDGEMENT',
-        text: 'Formulate your sustained thesis: did the war genuinely build a progressive new world, or did it primarily bequeath trauma, economic exhaustion, and the seeds of another catastrophic conflict in 1939?',
-      },
-    ],
-    connectives:
-      'In assessing the transformative scale of the Great War... • Militarily and geopolitically, the conflict revolutionized the world through... • Concurrently, social and imperial structures were reshaped by... • However, this transformation was fundamentally compromised by... • In conclusion, I judge that...',
-    vocabTask: {
-      type: 'distinction',
-      termA: 'Limited Warfare',
-      termB: 'Total War',
-      prompt:
-        'Distinguish between 19th-century battles fought strictly between professional armies (<strong>limited warfare</strong>) and 20th-century conflicts mobilising entire civilian economies and populations (<strong>total war</strong>):',
-    },
-    bridgeTask: {
-      type: 'matrix',
-      badge: 'Synoptic Crucible & Master Synthesis',
-      title: 'Task 3: Synoptic Master Matrix: The Four Turning Points (1914–1919)',
-      instruction:
-        'Synthesise the four decisive vectors that reshaped global history between 1914 and 1919:',
-      boxes: [
-        {
-          title: '1. Industrialized Military Attrition',
-          evidence:
-            'Trench warfare, machine guns, heavy artillery, creeping barrages, and tanks transformed combat from heroic cavalry charges into mechanized industrial slaughter claiming 20 million lives.',
-        },
-        {
-          title: '2. The Imperial & Global Dimension',
-          evidence:
-            '4 million non-white colonial troops and labourers mobilized across Europe and Africa, shattering the myth of European racial superiority and igniting global anti-colonial movements.',
-        },
-        {
-          title: '3. Total War & Domestic Mobilisation',
-          evidence:
-            'State intervention exploded via DORA, national conscription, and food rationing; over 1 million women entered heavy industry, paving the way for the 1918 voting reform.',
-        },
-        {
-          title: '4. The Flawed Geopolitical Settlement',
-          evidence:
-            'Fall of 4 empires (Romanov, Hohenzollern, Habsburg, Ottoman); fragile League of Nations established; Article 231 and reparations fostered bitter German resentment.',
-        },
-      ],
-      prompt:
-        'Evaluate which of these four vectors produced the most permanent structural change in the modern world:',
-      lines: 7,
-      clue: '<em>Low-Floor Clue:</em> Notice how total war required governments to control every factory, newspaper, and meal, permanently ending the Victorian era of small government.',
-      scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> How does historian Eric Hobsbawm’s concept of the "Age of Extremes" argue that 1914 marked the true birth of the 20th century?',
-    },
-  },
 ];
 
 function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
@@ -603,7 +535,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1; padding: 4.5px 6px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569;">
       <span><strong>Term:</strong> Autumn Term &bull; Year 9</span>
       <span><strong>Edition:</strong> 2026.1 Departmental Standard</span>
-      <span><strong>Format:</strong> 20-Page Double-Page Spread (5 A3 Sheets)</span>
+      <span><strong>Format:</strong> 16-Page Double-Page Spread (4 A3 Sheets)</span>
     </div>
 
     <!-- Disciplinary Genres Ribbon -->
@@ -1337,159 +1269,10 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
   });
 
   // ==========================================
-  // PAGE 18: VOCABULARY MASTERY VAULT (Verso, Left Page)
+  // PAGE 16: OUTSIDE BACK COVER (Departmental Marking Policy)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-18" style="padding: 12px 16px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
-    <div>
-      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline;">
-        <div>
-          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 15pt; color: #0f172a; text-transform: uppercase;">
-            Vocabulary Mastery Vault &bull; The Great War
-          </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #64748b; margin-top: 1px;">
-            KS3 Disciplinary &amp; Substantive Concepts &bull; Year 9 History
-          </div>
-        </div>
-        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Mastery</span>
-      </div>
-
-      <p style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #475569; margin: 0 0 8px 0;">
-        Mastery of these high-yield disciplinary and substantive concepts is essential for achieving Grade 6–9 in KS3 History extended writing:
-      </p>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px;">
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Total War:</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            A conflict demanding complete mobilization of an entire society's civilian workforce, industry, agriculture, and military resources, eliminating the distinction between combatant and civilian.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Pals Battalions (1914):</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            Volunteer military units recruited under Lord Kitchener allowing workmates, football teams, and neighbours to serve together; suffered catastrophic concentrated local losses on the Somme.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">War of Attrition:</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            A military strategy aiming to wear down the enemy's manpower, reserves, and industrial supplies through sustained slaughter until total physical collapse.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Defence of the Realm Act (DORA):</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            Emergency British legislation passed in August 1914 granting the government sweeping autocratic powers to censor the press, requisition property, and control daily civilian habits.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Conscription &amp; Conscientious Objection:</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            Compulsory military call-up introduced in 1916; opposed by conscientious objectors on moral or religious grounds, who faced harsh military tribunals and imprisonment.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Canary Girls (Munitionettes):</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            Over 1 million women who machined artillery shells in national projectile factories; nicknamed for their yellowing skin caused by toxic TNT jaundice.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Article 231 (The War Guilt Clause):</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            The controversial clause in the 1919 Treaty of Versailles forcing Germany to accept sole moral and legal responsibility for causing all Allied damage, justifying £6.6bn reparations.
-          </p>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
-          <strong style="color: #1e3a8a; font-size: 8.5pt;">Lost Generation &amp; Memorialisation:</strong>
-          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
-            The generation of young men decimated by industrialized combat; commemorated through stone monuments, war memorial shelters, and annual remembrance rituals across Britain.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-      <span>Vocabulary Vault &bull; Disciplinary Literacy</span>
-      <span>Page 18 (Facing Spread Left)</span>
-    </div>
-  </div>
-  `;
-
-  // ==========================================
-  // PAGE 19: PUPIL VOICE & REFLECTION (Recto, Right Page)
-  // ==========================================
-  html += `
-  <div class="page page-container" id="page-19" style="padding: 12px 16px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
-    <div>
-      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline;">
-        <div>
-          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 15pt; color: #0f172a; text-transform: uppercase;">
-            End of Unit Reflection &amp; Pupil Voice
-          </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #64748b; margin-top: 1px;">
-            Unit: The Great War (1914–1919) &bull; Year 9 History
-          </div>
-        </div>
-        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Pupil Voice</span>
-      </div>
-
-      <!-- 1. WWW -->
-      <div style="margin-bottom: 9px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase;">
-            1. What Went Well (WWW)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">Key Strengths &amp; Insights</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; margin: 0 0 3px 0;">
-          Which Great War enquiry, primary source (e.g. Wilfred Owen, sepoy letters, Stubbington names), or extended writing skill did you find most compelling or master most successfully?
-        </p>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; height: 50px; background: #f8fafc;"></div>
-      </div>
-
-      <!-- 2. EBI -->
-      <div style="margin-bottom: 9px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase;">
-            2. Even Better If (EBI)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">Areas for Growth</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; margin: 0 0 3px 0;">
-          Which historical concept (e.g. military attrition, evaluating conflicting historical interpretations of Haig, or the economic impact of Versailles) did you find most challenging?
-        </p>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; height: 50px; background: #f8fafc;"></div>
-      </div>
-
-      <!-- 3. Teacher Coaching Dialogue -->
-      <div style="border: 1.5px solid #fcd34d; border-radius: 5px; padding: 8px 12px; background: #fffbeb;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #92400e; text-transform: uppercase;">
-            Teacher Formative Coaching &amp; Next Steps
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #b45309; font-style: italic;">Completed post-assessment</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #78350f; margin: 0 0 6px 0;">
-          Teacher feedback confirming unit mastery, validating reflection, and setting next unit targets:
-        </p>
-        <div style="height: 180px; border-radius: 4px; background: #ffffff; border: 1.2px solid #fde68a;"></div>
-      </div>
-    </div>
-
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-      <span>Pupil Voice Reflection &bull; Year 9 History</span>
-      <span>Page 19 (Facing Spread Right)</span>
-    </div>
-  </div>
-  `;
-
-  // ==========================================
-  // PAGE 20: OUTSIDE BACK COVER (Departmental Marking Policy)
-  // ==========================================
-  html += `
-  <div class="page page-container" id="page-20" style="padding: 14px 18px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
+  <div class="page page-container" id="page-16" style="padding: 14px 18px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
     <div>
       <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline;">
         <div>
@@ -1607,7 +1390,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
 
     <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
       <span>Departmental Marking Policy &bull; Year 9 History</span>
-      <span>Page 20 (Outside Back Cover)</span>
+      <span>Page 16 (Outside Back Cover)</span>
     </div>
   </div>
   `;
