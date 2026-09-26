@@ -6,8 +6,6 @@ const { PATHS } = require('./config.cjs');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 const ROOT_DIR = path.join(__dirname, '..');
 
-require('./generate_textbooks.cjs');
-require('./generate_pupil_workbooks.cjs');
 require('./generate_timelines.cjs');
 
 const publicDir = PATHS.PUBLIC;
@@ -73,6 +71,14 @@ function getFileHash(filePath) {
       files = files.filter((f) =>
         allowedPrefixes.some((prefix) => f.startsWith(prefix) && f.endsWith('.html')),
       );
+
+      // Exclude legacy continuous files to eliminate wasted compilation time
+      if (files.includes('textbook_PUBLISHER.html')) {
+        files = files.filter((f) => f !== 'textbook.html');
+      }
+      if (files.includes('pupil_workbook_v2.html')) {
+        files = files.filter((f) => f !== 'pupil_workbook.html');
+      }
 
       if (targetFile) {
         files = files.filter((f) => f === targetFile);

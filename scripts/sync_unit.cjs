@@ -107,29 +107,34 @@ async function runSync() {
   } else {
     console.log(`\n[Step 3/6] 📄 Compiling fresh HTML workbooks & PDFs with Puppeteer...`);
     try {
-      execSync(`node scripts/generate_textbooks.cjs ${unitId}`, {
-        stdio: 'inherit',
-        cwd: ROOT_DIR,
-      });
-      execSync(`node scripts/generate_pupil_workbooks.cjs ${unitId}`, {
-        stdio: 'inherit',
-        cwd: ROOT_DIR,
-      });
-      execSync(`node scripts/export_pdfs.cjs ${unitId}`, { stdio: 'inherit', cwd: ROOT_DIR });
-      if (unitId === 'cme_new') {
-        console.log(`\n📚 Compiling 12-page publisher-grade textbooks for [cme_new]...`);
-        execSync(`node scripts/render_standard_textbook.cjs all`, {
-          stdio: 'inherit',
-          cwd: ROOT_DIR,
-        });
-      }
       if (unitId === 'great_war') {
-        console.log(`\n📚 Compiling 14-page publisher-grade textbook for [great_war]...`);
+        console.log(
+          `\n📚 Compiling 14-page publisher-grade textbook & V2 workbook for [great_war]...`,
+        );
         execSync(`node scripts/render_standard_textbook_great_war.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
+        execSync(`node scripts/render_great_war_twopage_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      } else if (unitId === 'water_and_sanitation') {
+        console.log(
+          `\n📚 Compiling 14-page publisher-grade textbook & V2 workbook for [water_and_sanitation]...`,
+        );
+        execSync(`node scripts/render_standard_textbook_water_and_sanitation.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        execSync(`node scripts/render_water_and_sanitation_twopage_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      } else {
+        // For unmigrated units, fallback to standard PDF export without regenerating legacy continuous files
       }
+      execSync(`node scripts/export_pdfs.cjs ${unitId}`, { stdio: 'inherit', cwd: ROOT_DIR });
       if (unitId === 'industrialisation_and_empire') {
         console.log(
           `\n📚 Compiling 18-page publisher-grade textbook for [industrialisation_and_empire]...`,

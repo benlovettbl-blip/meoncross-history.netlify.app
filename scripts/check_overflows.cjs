@@ -60,7 +60,14 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
     if (fs.existsSync(unitFolder)) {
       const candidates = fs.readdirSync(unitFolder).filter((f) => f.endsWith('.html'));
       const priorityPrefixes = ['pupil_workbook', 'quiz_pack', 'mastery_pack', 'textbook'];
-      const matched = candidates.filter((f) => priorityPrefixes.some((p) => f.startsWith(p)));
+      let matched = candidates.filter((f) => priorityPrefixes.some((p) => f.startsWith(p)));
+      // Exclude legacy continuous files if modern publisher/V2 exists
+      if (candidates.includes('pupil_workbook_v2.html')) {
+        matched = matched.filter((f) => f !== 'pupil_workbook.html');
+      }
+      if (candidates.includes('textbook_PUBLISHER.html')) {
+        matched = matched.filter((f) => f !== 'textbook.html');
+      }
       if (matched.length > 0) {
         matched.forEach((f) => targetFiles.push(path.join(unitFolder, f)));
       } else {
