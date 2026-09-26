@@ -5127,3 +5127,25 @@ details.cme-source-drawer[open] {
     0 0 0 2px rgba(245, 158, 11, 0.3),
     0 6px 16px rgba(0, 0, 0, 0.08) !important;
 }
+
+/* --- Textbook Spotlight Drawers --- */
+details.spotlight-drawer summary::-webkit-details-marker {
+  display: none;
+}
+
+details.spotlight-drawer summary {
+  list-style: none;
+  transition: background-color 0.15s ease;
+}
+
+details.spotlight-drawer summary:hover {
+  background-color: #f8fafc;
+}
+
+details.spotlight-drawer summary i.fa-chevron-down {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+details.spotlight-drawer[open] summary i.fa-chevron-down {
+  transform: rotate(180deg);
+}

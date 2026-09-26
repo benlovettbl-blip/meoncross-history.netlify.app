@@ -1430,6 +1430,175 @@ export function renderHistoricalInterpretationsTaskHTML(task, lessonIndex, tIdx,
   `;
 }
 
+export function renderTextbookSpotlightDrawers(lesson) {
+  if (!lesson || (!lesson.key_figure && !lesson.concept_spotlight && !lesson.archival_dispatch)) {
+    return '';
+  }
+
+  const getMonogramInitials = (name) => {
+    if (!name) return 'KF';
+    const clean = name
+      .replace(/^(Prince|Field Marshal|Kaiser|Archduke|Count|Lord|Sir|General|Colonel)\s+/i, '')
+      .trim();
+    const parts = clean.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+    return clean.slice(0, 2).toUpperCase();
+  };
+
+  let html = `
+    <div class="textbook-spotlight-deck" style="margin: 32px 0 24px 0; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 4px;">
+        <span style="font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #334155; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-book-bookmark" style="color: #2563eb;"></i> Textbook Spotlight &amp; Archival Dossiers
+        </span>
+        <span style="font-size: 0.76rem; color: #64748b; font-weight: 600;">
+          Publisher Print Spread Alignment
+        </span>
+      </div>
+  `;
+
+  if (lesson.key_figure) {
+    const kf = lesson.key_figure;
+    const initials = getMonogramInitials(kf.name);
+    html += `
+      <details class="spotlight-drawer spotlight-drawer-figure" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #2563eb; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); overflow: hidden;">
+        <summary style="padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #0f172a; list-style: none; user-select: none;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: #eff6ff; color: #1d4ed8; padding: 3px 8px; border-radius: 4px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Key Figure</span>
+            <span style="font-size: 0.98rem; color: #1e293b; font-weight: 700;">${kf.name} ${kf.lifespan ? `<span style="font-weight: 500; font-size: 0.85rem; color: #64748b;">(${kf.lifespan})</span>` : ''}</span>
+          </div>
+          <span style="font-size: 0.82rem; color: #64748b;"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div style="padding: 16px 20px 20px 20px; border-top: 1px solid #f1f5f9; background: #f8fafc;">
+          <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 12px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: #1e3a8a; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.05rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(30,58,138,0.25);">
+              ${initials}
+            </div>
+            <div style="flex: 1;">
+              ${kf.epithet ? `<div style="font-size: 0.88rem; font-weight: 700; color: #2563eb; margin-bottom: 4px;">${kf.epithet}</div>` : ''}
+              <div style="font-size: 0.92rem; color: #334155; line-height: 1.5;">${kf.significance}</div>
+            </div>
+          </div>
+          ${
+            kf.quote
+              ? `
+            <blockquote style="margin: 0 0 12px 0; padding: 10px 14px; background: #ffffff; border-left: 3px solid #94a3b8; font-style: italic; color: #334155; font-size: 0.92rem; border-radius: 0 4px 4px 0; border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+              "${kf.quote.replace(/^["'“”]+|["'“”]+$/g, '')}"
+            </blockquote>
+          `
+              : ''
+          }
+          ${
+            kf.core_achievement
+              ? `
+            <div style="font-size: 0.9rem; line-height: 1.55; color: #1e293b; margin-bottom: 6px;">
+              <strong style="color: #0f172a;">Core Historical Achievement:</strong> ${kf.core_achievement}
+            </div>
+          `
+              : ''
+          }
+          ${
+            kf.actions && Array.isArray(kf.actions) && kf.actions.length > 0
+              ? `
+            <div style="margin-top: 10px;">
+              <strong style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; color: #475569; display: block; margin-bottom: 4px;">Decisive Actions:</strong>
+              <ul style="margin: 0; padding-left: 20px; font-size: 0.88rem; color: #334155; line-height: 1.5;">
+                ${kf.actions.map((a) => `<li style="margin-bottom: 3px;">${a}</li>`).join('')}
+              </ul>
+            </div>
+          `
+              : ''
+          }
+        </div>
+      </details>
+    `;
+  }
+
+  if (lesson.concept_spotlight) {
+    const cs = lesson.concept_spotlight;
+    html += `
+      <details class="spotlight-drawer spotlight-drawer-concept" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #b45309; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); overflow: hidden;">
+        <summary style="padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #0f172a; list-style: none; user-select: none;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: #fffbeb; color: #92400e; padding: 3px 8px; border-radius: 4px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Concept Spotlight</span>
+            <span style="font-size: 0.98rem; color: #1e293b; font-weight: 700;">${cs.title}</span>
+          </div>
+          <span style="font-size: 0.82rem; color: #64748b;"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div style="padding: 16px 20px 20px 20px; border-top: 1px solid #f1f5f9; background: #fdfcf9;">
+          ${cs.category ? `<div style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: #92400e; margin-bottom: 8px;">${cs.category}</div>` : ''}
+          <div style="margin-bottom: 12px; font-size: 0.92rem; line-height: 1.55; color: #1e293b;">
+            <strong style="color: #0f172a;">Core Definition:</strong> ${cs.definition || cs.body || ''}
+          </div>
+          ${
+            cs.historical_case_study
+              ? `
+            <div style="margin-bottom: 12px; padding: 12px 14px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 6px; font-size: 0.9rem; line-height: 1.55; color: #451a03;">
+              <strong style="color: #92400e; display: block; margin-bottom: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Historical Case Study</strong>
+              ${cs.historical_case_study}
+            </div>
+          `
+              : ''
+          }
+          ${
+            cs.analytical_takeaway || cs.takeaway
+              ? `
+            <div style="font-size: 0.9rem; line-height: 1.55; color: #1e293b;">
+              <strong style="color: #0f172a;">Analytical Takeaway:</strong> ${cs.analytical_takeaway || cs.takeaway}
+            </div>
+          `
+              : ''
+          }
+        </div>
+      </details>
+    `;
+  }
+
+  if (lesson.archival_dispatch) {
+    const ad = lesson.archival_dispatch;
+    html += `
+      <details class="spotlight-drawer spotlight-drawer-dispatch" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #475569; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); overflow: hidden;">
+        <summary style="padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #0f172a; list-style: none; user-select: none;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 4px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Archival Dispatch</span>
+            <span style="font-size: 0.98rem; color: #1e293b; font-weight: 700;">${ad.title}</span>
+          </div>
+          <span style="font-size: 0.82rem; color: #64748b;"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div style="padding: 16px 20px 20px 20px; border-top: 1px solid #f1f5f9; background: #fafaf9;">
+          ${ad.origin_and_date ? `<div style="font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">${ad.origin_and_date}</div>` : ''}
+          <div class="archival-source-box" style="margin: 8px 0 12px 0; background: #fffdfa; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;">
+            <div class="archival-source-body" style="font-family: 'Newsreader', Georgia, serif; font-size: 0.98rem; line-height: 1.65; color: #1e293b; font-style: italic;">
+              "${(ad.excerpt || ad.body || '').replace(/^["'“”]+|["'“”]+$/g, '')}"
+            </div>
+          </div>
+          ${
+            ad.provenance_significance
+              ? `
+            <div style="margin-bottom: 8px; font-size: 0.88rem; line-height: 1.5; color: #334155;">
+              <strong style="color: #0f172a;">Provenance &amp; Context:</strong> ${ad.provenance_significance}
+            </div>
+          `
+              : ''
+          }
+          ${
+            ad.enquiry_connection
+              ? `
+            <div style="font-size: 0.88rem; line-height: 1.5; color: #334155;">
+              <strong style="color: #0f172a;">Enquiry Connection:</strong> ${ad.enquiry_connection}
+            </div>
+          `
+              : ''
+          }
+        </div>
+      </details>
+    `;
+  }
+
+  html += `</div>`;
+  return html;
+}
+
 export function renderLesson(lesson) {
   if (window.doNowTimers) {
     Object.values(window.doNowTimers).forEach((t) => {
@@ -1465,6 +1634,7 @@ export function renderLesson(lesson) {
     htmlPrimary = '',
     htmlSources1 = '',
     htmlNarrative = '',
+    htmlSpotlightDrawers = '',
     htmlVideo = '',
     htmlPairShare = '',
     htmlHistorian = '',
@@ -5592,10 +5762,15 @@ export function renderLesson(lesson) {
     htmlPoetry = renderPoetryDossiersHTML(lesson.poetry_dossiers);
   }
 
+  if (!htmlSpotlightDrawers) {
+    htmlSpotlightDrawers = renderTextbookSpotlightDrawers(lesson);
+  }
+
   if (isTrip) {
     html +=
       htmlCwgc +
       htmlNarrative +
+      htmlSpotlightDrawers +
       htmlVideo +
       htmlPoetry +
       htmlDoNow +
@@ -5606,67 +5781,43 @@ export function renderLesson(lesson) {
       htmlVocabDeck +
       htmlExtended +
       htmlHistorian;
-  } else if (isEarlyModern) {
+  } else if (
+    unitId === 'great_war' ||
+    unitId === 'great_war_part2' ||
+    unitId === 'water_and_sanitation' ||
+    unitId === 'early_modern_world' ||
+    unitId === 'medieval_england' ||
+    unitId === 'industrialisation_and_empire' ||
+    Boolean(typeof unit !== 'undefined' && unit && unit.is_ks3)
+  ) {
+    // Universal KS3 Unified Engine Layout
     html +=
-      htmlDoNow +
-      htmlPrimary +
-      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
-      htmlNarrative +
       htmlVideo +
-      htmlPairShare +
-      htmlExamPractice +
-      htmlVocabDeck +
-      htmlExtended +
-      htmlHistorian +
-      htmlTasks;
-  } else if (unitId === 'water_and_sanitation') {
-    html +=
-      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
-      htmlPrimary +
       htmlDoNow +
       htmlNarrative +
-      htmlVideo +
-      htmlPairShare +
-      htmlExamPractice +
-      htmlVocabDeck +
-      htmlExtended +
+      htmlSpotlightDrawers +
+      htmlPrimary +
+      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlTasks +
+      htmlVocabDeck +
+      htmlExtended +
+      htmlPairShare +
       htmlHistorian;
-  } else if (unitId === 'cme_new') {
-    html +=
-      htmlPrimary +
-      htmlDoNow +
-      htmlNarrative +
-      htmlVideo +
-      htmlPairShare +
-      htmlTasks +
-      htmlHistorian +
-      htmlExamPractice +
-      htmlVocabDeck +
-      htmlExtended;
-  } else if (unitId === 'great_war' || unitId === 'great_war_part2') {
-    html +=
-      htmlVideo +
-      htmlDoNow +
-      htmlNarrative +
-      htmlPrimary +
-      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
-      htmlTasks +
-      htmlVocabDeck +
-      htmlExtended;
   } else {
+    // Universal GCSE Unified Layout
     html +=
-      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
-      htmlPrimary +
+      htmlVideo +
       htmlDoNow +
       htmlNarrative +
-      htmlVideo +
+      htmlSpotlightDrawers +
+      htmlPrimary +
+      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlTasks +
-      htmlHistorian +
-      htmlPairShare +
       htmlExamPractice +
       htmlVocabDeck +
-      htmlExtended;
+      htmlExtended +
+      htmlPairShare +
+      htmlHistorian;
   }
 
   if (

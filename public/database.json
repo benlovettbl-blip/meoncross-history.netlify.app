@@ -38920,7 +38920,7 @@
             {
               "act": 2,
               "title": "Act 2: Escalation & Conflict (Blood and Iron: The Three Decisive Wars)",
-              "text": "<span class=\"para-ref\">[2.1]</span> In 1862, King Wilhelm I of Prussia appointed a ruthless, arch-conservative Junker nobleman named <strong>Otto von Bismarck</strong> as Minister President. Bismarck possessed an unyielding contempt for parliamentary liberalism and democratic debate. In his maiden address to the Prussian budget committee, he issued a stark manifesto that would define the era: <em>\"The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**.\"</em> By \"blood,\" Bismarck meant the sacrifice of conscripted soldiers; by \"iron,\" he meant the devastating technological superiority of Prussian Krupp steel artillery, breech-loading Dreyse needle-guns, and precise military railway timetables.<br><br><span class=\"para-ref\">[2.2]</span> Bismarck orchestrated three short, ruthlessly calculated diplomatic and military campaigns. In 1864, Prussia allied with Austria to defeat Denmark, securing Schleswig-Holstein. In 1866, Bismarck turned upon Austria in the Seven Weeks’ War; the modernized Prussian army under General Helmuth von Moltke annihilated Austrian forces at Königgrätz, expelling Austria permanently from German affairs and forming the North German Confederation. Finally, to unite the hesitant, Catholic southern German kingdoms (Bavaria, Württemberg, and Baden), Bismarck provoked France into declaring war in 1870. The Franco-Prussian War saw Prussian forces crush the French army at Sedan, capture Emperor Napoleon III, and advance to besiege Paris.",
+              "text": "<span class=\"para-ref\">[2.1]</span> In 1862, King Wilhelm I of Prussia appointed a ruthless, arch-conservative Junker nobleman named <strong>Otto von Bismarck</strong> as Minister President. When the liberal Prussian parliament (the <em>Landtag</em>) refused to approve military tax reforms, King Wilhelm contemplated abdication. Bismarck rallied the wavering monarch with theatrical defiance, reportedly threatening emotional tantrums or leaping from palace windows if the King surrendered his crown to elected liberals. Assuming dictatorial control, Bismarck collected taxes unconstitutionally without parliamentary approval for four years (1862–1866) to modernize the Prussian army with Krupp cast-steel cannons, breech-loading Dreyse needle-guns, and dedicated military railway networks. In his maiden address to the budget committee, he issued a stark manifesto that would define the era: <em>\"The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**.\"</em><br><br><span class=\"para-ref\">[2.2]</span> Bismarck orchestrated three short, ruthlessly calculated diplomatic and military campaigns. In 1864, Prussia allied with Austria to defeat Denmark, securing Schleswig-Holstein. In 1866, Bismarck turned upon Austria in the Seven Weeks’ War; the modernized Prussian army under General Helmuth von Moltke annihilated Austrian forces at Königgrätz. Following this triumph, Bismarck prudently restrained his generals and monarch, adamantly refusing to march on Vienna or impose a humiliating peace upon Austria, deliberately preserving Vienna as a prospective future ally while expelling it permanently from German affairs to form the North German Confederation. Finally, to unite the hesitant, Catholic southern German kingdoms (Bavaria, Württemberg, and Baden), Bismarck provoked France into declaring war in 1870. The Franco-Prussian War saw Prussian forces crush the French army at Sedan, capture Emperor Napoleon III, and advance to besiege Paris.",
               "tasks": []
             },
             {
@@ -39008,7 +39008,34 @@
               ],
               "model_answer": "Otto von Bismarck forged the German Empire through a ruthless synthesis of diplomatic deception and military calculation. Recognizing that liberal speeches would never overcome the jealous independence of the German states, he declared in 1862 that the great questions of the day would be resolved by \"blood and iron.\" He modernized the Prussian army with Krupp cast-steel cannons and dedicated military railways, then conducted three lightning wars against Denmark (1864), Austria (1866), and France (1870). His masterpiece of manipulation was the 1870 Ems Telegram: by subtly editing King Wilhelm's polite words, he baited France into declaring war, which automatically triggered mutual defense treaties with the southern German states. When the unified German Empire was proclaimed in the Hall of Mirrors at Versailles on 18 January 1871, Bismarck had realized his vision—not through popular revolution, but from above through Prussian steel and calculated realpolitik."
             }
-          ]
+          ],
+          "key_figure": {
+            "name": "Prince Otto von Bismarck",
+            "lifespan": "1815–1898",
+            "role": "Minister President of Prussia & First Imperial Chancellor of Germany",
+            "significance": "Masterminded the three wars of German unification and established Prussian dominance across Central Europe through ruthless Realpolitik.",
+            "actions": [
+              "Declared in 1862 that the great questions of the age would be decided not by speeches but by \"blood and iron\" (Eisen und Blut).",
+              "Engineered swift, decisive military victories against Denmark (1864), Austria (1866), and France (1870–1871).",
+              "Proclaimed the German Empire in the Hall of Mirrors at Versailles, annexing Alsace-Lorraine and forging the dominant continental powerhouse."
+            ],
+            "image": "/images/otto_von_bismarck_portrait.jpg"
+          },
+          "concept_spotlight": {
+            "tag": "HISTORICAL DEEP DIVE: CRITICAL MECHANISM",
+            "category": "THE VIENNA SETTLEMENT & REALPOLITIK • 1871",
+            "title": "Realpolitik & Shattering the European Balance of Power",
+            "body": "For centuries after the 1648 Peace of Westphalia, Central Europe was fragmented into dozens of small, weak German principalities, allowing Britain, France, Austria, and Russia to maintain a stable European balance of power. Bismarck's unification fused thirty-nine separate states into a single economic colossus of 41 million people possessing Europe's most efficient rail network, advanced chemical and steel industries, and an invincible Prussian army. British statesman Benjamin Disraeli warned Parliament: \"The balance of power has been entirely destroyed; you have a new world, new influences, and new dangers.\"",
+            "takeaway": "The sudden emergence of a unified, industrialized Germany created an unresolved security dilemma: Germany felt vulnerable to encirclement, while its neighbors feared German continental hegemony."
+          },
+          "archival_dispatch": {
+            "badge": "ARCHIVAL DISPATCH",
+            "type": "Imperial Proclamation",
+            "date": "18 January 1871",
+            "title": "Proclamation of the German Empire at Versailles",
+            "body": "\"We, Wilhelm, by the grace of God King of Prussia, hereby announce that we assume the Imperial dignity... We accept it in the hope that it may be granted to the German people to enjoy the reward of its ardent and self-sacrificing struggles in lasting peace, within borders which guarantee to the Fatherland security against renewed attacks from France.\"",
+            "footer": "Imperial Chancellery Archive, Berlin • Galerie des Glaces, Versailles"
+          }
         },
         {
           "id": "lesson_2",
@@ -39466,7 +39493,34 @@
               ],
               "model_answer": "The Franco-Prussian War created a lasting legacy of hatred for three interconnected reasons. First, the Treaty of Frankfurt deeply humiliated France by annexing Alsace and northern Lorraine, demanding an astronomical indemnity of 5 billion gold francs, and stationing German occupation troops on French soil. Second, proclaiming the German Empire inside the French royal Palace of Versailles wounded French national honor at its most sacred core. Third, this trauma institutionalized the cult of revanche (revenge): generations of French schoolchildren were taught to gaze upon the black-bordered lost provinces, as immortalized in Albert Bettannier's \"La Tache Noire\", and prepare for a war of liberation. As historian Gordon Craig argued, annexing Alsace-Lorraine gave Germany a tactical border cushion at the cost of creating an incurable enemy, forcing Bismarck to weave the complex alliances that ultimately polarized Europe into two armed camps."
             }
-          ]
+          ],
+          "key_figure": {
+            "name": "Field Marshal Helmuth von Moltke (The Elder)",
+            "lifespan": "1800–1891",
+            "role": "Chief of the Prussian & German Great General Staff (1857–1888)",
+            "significance": "Pioneered modern staff planning, mobilization via military railways, and telegram communication to encircle French armies at Sedan.",
+            "actions": [
+              "Transformed the Prussian General Staff into the world’s most formidable military planning organization.",
+              "Exploited Prussian Krupp breech-loading steel artillery to annihilate French Emperor Napoleon III’s army at Sedan (September 1870).",
+              "Warned in his final Reichstag speech in 1890 that the next European war could last seven or thirty years, bringing total ruin."
+            ],
+            "image": "/images/helmuth_von_moltke_elder.jpg"
+          },
+          "concept_spotlight": {
+            "tag": "HISTORICAL SPOTLIGHT: THE OPEN WOUND",
+            "category": "TERRITORIAL CONFLICT • 1871–1914",
+            "title": "Alsace-Lorraine: The Open Wound of French Revanchism",
+            "body": "Under the Treaty of Frankfurt (May 1871), Germany annexed the French border provinces of Alsace and northern Lorraine, alongside a punishing indemnity of five billion gold francs. While Prussian generals insisted on the territory as a protective defensive glacis against future French invasions, the annexation poisoned European diplomacy for forty-three years. In French classrooms, maps showed the lost provinces shaded in mourning black (la tache noire), and generation after generation of French schoolchildren were taught: \"Think of it always, speak of it never.\"",
+            "takeaway": "Annexing Alsace-Lorraine guaranteed that France would never permanently accept peace with Germany, forcing German planners into permanent two-front war anxieties."
+          },
+          "archival_dispatch": {
+            "badge": "ARCHIVAL DISPATCH",
+            "type": "French Primary School Primer",
+            "date": "Circa 1887",
+            "title": "Excerpt from G. Bruno’s \"Le Tour de la France par deux enfants\"",
+            "body": "\"Do you see those two provinces shaded across the Rhine? They are Alsace and Lorraine, torn violently from our motherland. Never forget our brothers who weep under the Prussian helmet. Work, study, and grow strong so that one day justice and the tricolour shall return to Metz and Strasbourg.\"",
+            "footer": "Bibliothèque Nationale de France • Paris Primary Education Curriculum"
+          }
         },
         {
           "id": "lesson_3",
@@ -39663,7 +39717,7 @@
             {
               "act": 1,
               "title": "Act 1: Context & Catalyst (Bismarck’s Caution vs. Wilhelm’s Weltpolitik)",
-              "text": "<span class=\"para-ref\">[1.1]</span> Throughout his tenure as Chancellor, Otto von Bismarck fiercely opposed acquiring overseas colonies, famously declaring: <em>\"My map of Africa lies in Europe. Here is Russia, and here is France, and we are in the middle; that is my map of Africa.\"</em> Bismarck recognized that overseas adventures would inevitably provoke friction with Great Britain, whose global empire and naval supremacy guarded the world’s maritime trade routes. To regulate imperial claims and prevent European warfare, Bismarck hosted the 1884–85 <strong>Berlin Conference</strong>, where European powers partitioned the African continent into colonial spheres without a single African leader present.<br><br><span class=\"para-ref\">[1.2]</span> However, when the ambitious and bellicose young Kaiser Wilhelm II ascended the throne in 1888, he chafed under Bismarck’s cautious diplomacy. In 1890, Wilhelm forced Bismarck to resign and proclaimed a new, aggressive foreign policy: <strong>Weltpolitik</strong> (World Policy). Wilhelm declared that Germany’s explosive industrial growth entitled the Reich to a <em>\"Platz an der Sonne\"</em> (a place in the sun)—a global colonial empire matching that of Britain and France. For Wilhelm, colonies were not merely economic assets, but the ultimate symbol of Great Power status.",
+              "text": "<span class=\"para-ref\">[1.1]</span> Throughout his tenure as Chancellor, Otto von Bismarck fiercely opposed acquiring overseas colonies, famously declaring: <em>\"My map of Africa lies in Europe. Here is Russia, and here is France, and we are in the middle; that is my map of Africa.\"</em> Bismarck recognized that overseas adventures would inevitably provoke friction with Great Britain, whose global empire and naval supremacy guarded the world’s maritime trade routes. To regulate imperial claims and prevent European warfare, Bismarck hosted the 1884–85 <strong>Berlin Conference</strong>, where European powers partitioned the African continent into colonial spheres without a single African leader present (<span class=\"archival-meta-tag\">Source A</span>).<br><br><span class=\"para-ref\">[1.2]</span> However, when the ambitious and bellicose young Kaiser Wilhelm II ascended the throne in 1888, he chafed under Bismarck’s cautious diplomacy. In 1890, Wilhelm forced Bismarck to resign and proclaimed a new, aggressive foreign policy: <strong>Weltpolitik</strong> (World Policy). Wilhelm declared that Germany’s explosive industrial growth entitled the Reich to a <em>\"Platz an der Sonne\"</em> (a place in the sun)—a global colonial empire matching that of Britain and France. For Wilhelm, colonies were not merely economic assets, but the ultimate symbol of Great Power status.",
               "source": {
                 "letter": "A",
                 "title": "Source A (Cartographic Record): The Partition of Africa by 1914",
@@ -39678,13 +39732,13 @@
             {
               "act": 2,
               "title": "Act 2: Escalation & Conflict (The Tangier Challenge & The Algeciras Shock)",
-              "text": "<span class=\"para-ref\">[2.1]</span> By the turn of the twentieth century, the vast majority of fertile African territory had been seized by Britain and France (Source A). Germany was left with arid, unprofitable colonies in Southwest Africa, Cameroon, and German East Africa. Feeling cheated, the Kaiser sought to exploit weak points in European colonial agreements. In 1904, Britain and France signed the <strong>Entente Cordiale</strong>, a diplomatic agreement resolving long-standing imperial disputes: France recognized British control of Egypt, while Britain accepted French dominance over the independent Sultanate of Morocco.<br><br><span class=\"para-ref\">[2.2]</span> Determined to shatter this newfound Anglo-French friendship, Kaiser Wilhelm landed at the Moroccan port of Tangier in March 1905 riding a white charger. He publicly proclaimed his support for the Sultan’s complete sovereignty and demanded an international conference to review Morocco’s status. The gamble backfired catastrophically. At the 1906 <strong>Algeciras Conference</strong>, Britain, Russia, Italy, and the United States backed France; only Austria-Hungary supported Germany. Instead of driving a wedge between London and Paris, German posturing solidified the Entente Cordiale into a robust diplomatic partnership and initiated secret Anglo-French military staff talks.",
+              "text": "<span class=\"para-ref\">[2.1]</span> By the turn of the twentieth century, the vast majority of fertile African territory had been seized by Britain and France. Germany was left with arid, unprofitable colonies in Southwest Africa, Cameroon, and German East Africa. Yet colonial friction did not inevitably lead to war. In 1898, British and French expeditionary forces confronted each other at <strong>Fashoda</strong> on the Upper Nile, bringing the two empires to the brink of armed conflict; yet imperial statesmen resolved the crisis peacefully through diplomatic compromise. Building on this rapprochement, Britain and France signed the 1904 <strong>Entente Cordiale</strong>, settling long-standing colonial disputes: France recognized British control over Egypt, while Britain accepted French dominance over the independent Sultanate of Morocco.<br><br><span class=\"para-ref\">[2.2]</span> Determined to test and shatter this newfound Anglo-French friendship, Kaiser Wilhelm landed at the Moroccan port of Tangier in March 1905 riding a white charger. He publicly proclaimed his support for the Sultan’s complete sovereignty and demanded an international conference to review Morocco’s status. The gamble backfired catastrophically. At the 1906 <strong>Algeciras Conference</strong>, Britain, Russia, Italy, and the United States backed France; only Austria-Hungary supported Germany. Instead of driving a wedge between London and Paris, German posturing solidified the Entente Cordiale into a robust diplomatic partnership and initiated secret Anglo-French military staff talks.",
               "tasks": []
             },
             {
               "act": 3,
               "title": "Act 3: Forensic Archival Evidence (The Panther at Agadir & The Mansion House Warning)",
-              "text": "<span class=\"para-ref\">[3.1]</span> Five years later, imperial rivalry flared into open confrontation during the <strong>Second Moroccan Crisis (1911)</strong>. When Moroccan tribes rebelled against the Sultan, France dispatched troops to occupy the capital, Fez. Accusing France of violating the Algeciras agreements, the German government dispatched the imperial gunboat <em>SMS Panther</em> (Source B) to the Atlantic port of Agadir. This heavy-handed demonstration of \"gunboat diplomacy\" was intended to intimidate France into ceding the entire French Congo to Germany in exchange for accepting French control of Morocco.<br><br><span class=\"para-ref\">[3.2]</span> The arrival of a German warship on the Atlantic coast of Africa provoked panic and fury in London. British military strategists feared Germany intended to construct a fortified naval base at Agadir, threatening vital British sea routes to India and South Africa. Chancellor of the Exchequer David Lloyd George delivered the famous <strong>Mansion House Speech</strong>, warning that Britain would not tolerate German intimidation: <em>\"If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won... then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.\"</em> Backed by British resolve, France held firm; Germany was forced to back down and accept a sliver of swampy Congolese land.",
+              "text": "<span class=\"para-ref\">[3.1]</span> Five years later, imperial rivalry flared into open confrontation during the <strong>Second Moroccan Crisis (1911)</strong>. When Moroccan tribes rebelled against the Sultan, France dispatched troops to occupy the capital, Fez. Accusing France of violating the Algeciras agreements, the German government dispatched the imperial gunboat <em>SMS Panther</em> (<span class=\"archival-meta-tag\">Source B</span>) to the Atlantic port of Agadir. This heavy-handed demonstration of \"gunboat diplomacy\" was intended to intimidate France into ceding the entire French Congo to Germany in exchange for accepting French control of Morocco.<br><br><span class=\"para-ref\">[3.2]</span> The arrival of a German warship on the Atlantic coast of Africa provoked panic and fury in London. British military strategists feared Germany intended to construct a fortified naval base at Agadir, threatening vital British sea routes to India and South Africa. Chancellor of the Exchequer David Lloyd George delivered the famous <strong>Mansion House Speech</strong>, warning that Britain would not tolerate German intimidation: <em>\"If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won... then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.\"</em> Backed by British resolve, France held firm; Germany was forced to back down and accept a sliver of swampy Congolese land.",
               "source": {
                 "letter": "B",
                 "title": "Source B (Visual Record): Gunboat Diplomacy: The SMS Panther at Agadir (1911)",
@@ -39699,7 +39753,7 @@
             {
               "act": 4,
               "title": "Act 4: The Historical Verdict & Historiographical Debate (Imperialism as War Catalyst)",
-              "text": "<span class=\"para-ref\">[4.1]</span> Historiographers have long debated the role of colonial expansion in causing the Great War. Marxist-Leninist historians argued that imperialism was the primary driver of the conflict, asserting that capitalist monopolies inevitably competed for raw materials and colonial markets until war was inevitable. Conversely, modern historians such as Margaret MacMillan argue that imperial crises actually acted as safety valves for decades, allowing Great Powers to compete in distant territories without directly clashing in Europe.<br><br><span class=\"para-ref\">[4.2]</span> However, Kaiser Wilhelm’s clumsy pursuit of *Weltpolitik* transformed colonial squabbles into existential European showdowns. The Moroccan Crises achieved the exact opposite of German strategic intentions: they drove Britain out of \"Splendid Isolation,\" cemented the Anglo-French Entente, spurred joint military planning, and deepened Germany’s paranoid fear of encirclement (*Einkreisung*). By 1911, German military leaders concluded that diplomacy was bankrupt and that only a European war could break their diplomatic isolation.",
+              "text": "<span class=\"para-ref\">[4.1]</span> Historians debate whether the Scramble for Africa was the fundamental cause of the Great War or merely a diplomatic sideshow. Marxist-Leninist historians argued that imperialism was the inevitable final stage of monopoly capitalism, driving rival European cartels to fight over African raw materials and captive consumer markets. Conversely, revisionist historians point out that colonial quarrels were repeatedly resolved without war through international conferences—such as the 1884 Berlin Conference and the 1906 Algeciras Conference—or bilateral agreements like the 1898 settlement following Fashoda.<br><br><span class=\"para-ref\">[4.2]</span> Nevertheless, Wilhelm II’s aggressive \"gunboat diplomacy\" during the Moroccan Crises fundamentally polarized European diplomacy. By attempting to bully France and test British resolve with the gunboat <em>Panther</em>, Germany transformed a loose colonial understanding into an unyielding anti-German military partnership. Furthermore, while colonial disputes in Africa were settled without bloodshed, they poisoned the European atmosphere with profound paranoia: when war finally erupted in 1914, the fatal catalyst emerged not from distant African colonial soil, but from the volatile nationalist powder keg of the <strong>Balkans</strong> in southeastern Europe.",
               "tasks": []
             }
           ],
@@ -39862,7 +39916,34 @@
               ],
               "model_answer": "Kaiser Wilhelm II’s pursuit of Weltpolitik and his reckless interventions in Morocco decisively accelerated European polarization by transforming a fragile diplomatic agreement into an unshakeable anti-German alliance. When Wilhelm landed at Tangier in 1905 riding a skittish stallion to champion Moroccan independence, his strategic goal was to test and shatter the newly signed Anglo-French Entente Cordiale. The maneuver backfired catastrophically: at the 1906 Algeciras Conference, Britain backed France unreservedly, leaving Germany humiliated and isolated with only Austria-Hungary. When Germany reignited the conflict in 1911 by sending the gunboat SMS Panther to Agadir, British Chancellor David Lloyd George delivered the Mansion House speech, warning that Britain would fight rather than see France bullied. Far from securing Germany a \"Place in the Sun\", the Moroccan Crises proved to Britain that Germany was a rogue power, leading directly to joint Anglo-French naval planning and cementing the very encirclement Berlin feared."
             }
-          ]
+          ],
+          "key_figure": {
+            "name": "Kaiser Wilhelm II",
+            "lifespan": "1859–1941",
+            "role": "German Emperor & King of Prussia (Reigned 1888–1918)",
+            "significance": "Dismissed Bismarck in 1890, abandoned cautious continental diplomacy, and aggressively pursued global empire (Weltpolitik) and naval expansion.",
+            "actions": [
+              "Demanded for Germany a \"place in the sun\" (Platz an der Sonne) commensurate with its booming industrial strength.",
+              "Sparked the First Moroccan Crisis (1905) by riding through Tangier on a white stallion to challenge French imperial hegemony.",
+              "Dispatched the gunboat SMS Panther to Agadir in 1911, provoking British intervention and solidifying Anglo-French naval cooperation."
+            ],
+            "image": "/units/great_war/assets/card_wilhelm.png"
+          },
+          "concept_spotlight": {
+            "tag": "FLASHPOINT IN FOCUS: GUNBOAT CRISIS",
+            "category": "DIPLOMATIC BRINKMANSHIP • 1905–1911",
+            "title": "The Moroccan Crises & The Entente Cordiale",
+            "body": "In 1904, Britain and France resolved their colonial disputes by signing the Entente Cordiale, recognizing British dominance in Egypt and French influence in Morocco. Seeking to test and rupture this fledgling partnership, Kaiser Wilhelm II engineered the First Moroccan Crisis (1905) and Second Moroccan Crisis (Agadir, 1911). Wilhelm's aggressive gunboat diplomacy backfired catastrophically: at the 1906 Algeciras Conference, only Austria-Hungary supported Germany. Instead of shattering the Anglo-French friendship, German threats drove Britain and France to initiate secret military staff talks and divide naval patrol responsibilities.",
+            "takeaway": "German attempts to bully France in Africa convinced British statesmen that Germany was an unpredictable, expansionist menace, transforming a loose colonial agreement into a binding de facto alliance."
+          },
+          "archival_dispatch": {
+            "badge": "ARCHIVAL DISPATCH",
+            "type": "The Mansion House Speech",
+            "date": "21 July 1911",
+            "title": "Chancellor of the Exchequer David Lloyd George Warns Germany",
+            "body": "\"If Britain is to be treated where her interests are vitally affected as if she were of no account in the Cabinet of nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.\"",
+            "footer": "The National Archives, Kew (FO 371/1160) • London, Mansion House Address"
+          }
         },
         {
           "id": "lesson_4",
@@ -40065,7 +40146,7 @@
             {
               "act": 2,
               "title": "Act 2: Escalation & Conflict (The Dreadnought Revolution of 1906)",
-              "text": "<span class=\"para-ref\">[2.1]</span> The rapid growth of German dockyards on the North Sea struck terror into the British Admiralty. In October 1904, a brilliant, eccentric reformer named <strong>Admiral Sir John \"Jackie\" Fisher</strong> was appointed First Sea Lord. Fisher recognized that incremental improvements were futile; Britain required a technological leap that would paralyze all rivals. In 1906, Fisher unveiled <strong>HMS Dreadnought</strong>, a revolutionary leviathan that transformed naval warfare overnight. Armed with ten 12-inch guns (compared to the four carried by traditional pre-dreadnoughts) and powered by revolutionary Parsons steam turbines capable of twenty-one knots, *Dreadnought* was faster and boasted two and a half times the broadside firepower of any ship afloat.<br><br><span class=\"para-ref\">[2.2]</span> Yet Fisher’s masterpiece was a dangerous double-edged sword. By rendering every existing battleship instantly obsolete, *Dreadnought* wiped out Britain’s enormous numerical advantage in pre-dreadnought battleships. The naval race was effectively reset to zero: Germany could now compete on equal terms by building its own dreadnoughts. Tirpitz immediately widened the Kiel Canal at immense expense and laid down the *Nassau*-class dreadnoughts. The arms race became an industrial sprint.",
+              "text": "<span class=\"para-ref\">[2.1]</span> In London, Germany's naval ambition triggered existential panic. Britain was an island nation that imported over 60% of its food and raw materials by sea; an enemy fleet capable of defeating the Royal Navy in the North Sea could starve the British population into surrender or strike London within hours. For generations, Britain had enforced the <strong>Two-Power Standard</strong>: maintaining a navy larger than the combined fleets of the world's next two largest naval powers. In Berlin, Grand Admiral Alfred von Tirpitz devised the \"Risk Theory\" (<em>Risikogedanke</em>): building a fleet so formidable that even if the Royal Navy defeated it, Britain's global naval supremacy would be destroyed. Germany defended its naval program on legitimate grounds: having overtaken Britain as continental Europe's leading industrial exporter, Berlin claimed an undisputed sovereign right to protect its booming merchant fleet and overseas maritime trade.",
               "source": {
                 "letter": "A",
                 "title": "Source A (Satirical Record): Puck Magazine: \"The Armaments Race\" (1909)",
@@ -40257,7 +40338,35 @@
               ],
               "model_answer": "The Anglo-German naval arms race destroyed diplomatic trust because it touched the vital nerve of British national existence. For over a century, Great Britain relied on undisputed command of the sea, adhering to the \"Two-Power Standard\" to protect its global trade routes and feed its island population, which held only six weeks of grain reserves. When Admiral Alfred von Tirpitz began constructing a massive German battle fleet in the North Sea under the Navy Laws, British planners recognized that a high-seas fleet concentrated so close to English shores could only have one target: the Royal Navy. When the brilliant, eccentric Admiral \"Jackie\" Fisher launched the turbine-powered, all-big-gun HMS Dreadnought in 1906, he rendered all existing battleships obsolete and triggered an intense construction frenzy. In Britain, fear of invasion generated public panic (\"We want eight and we won't wait!\"). Although Britain won the race by 1912 with 29 dreadnoughts to Germany's 17, the contest caused irreparable psychological damage, permanently aligning Britain with France and Russia."
             }
-          ]
+          ],
+          "key_figure": {
+            "name": "Admiral Sir John \"Jackie\" Fisher",
+            "lifespan": "1841–1920",
+            "role": "First Sea Lord of the Royal Navy (1904–1910, 1914–1915)",
+            "significance": "Revolutionized naval architecture, scrapped obsolete warships, and commissioned HMS Dreadnought in 1906 to preserve British naval supremacy.",
+            "actions": [
+              "Recognized that naval combat was being revolutionized by steam turbines, long-range heavy guns, and torpedoes.",
+              "Built HMS Dreadnought in Portsmouth Dockyard in a record 366 days, armed exclusively with ten 12-inch heavy guns.",
+              "Ruthlessly modernized the British fleet and concentrated Royal Navy capital ships in home waters facing the North Sea.",
+              "Pioneered the development of high-speed battlecruisers and converted the Royal Navy fuel supply from Welsh coal to oil to achieve decisive tactical speed."
+            ],
+            "image": "/images/jackie_fisher_portrait.jpg"
+          },
+          "concept_spotlight": {
+            "tag": "HISTORICAL SPOTLIGHT: NAVAL DOCTRINE",
+            "category": "TIRPITZ'S RISK THEORY • 1906–1914",
+            "title": "Tirpitz’s Risk Theory & The Two-Power Standard",
+            "body": "Britain’s defense policy rested upon the Two-Power Standard: the Royal Navy had to maintain a fleet of battleships at least equal to the combined strength of the world’s next two largest navies. In Berlin, Grand Admiral Alfred von Tirpitz devised the \"Risk Theory\" (Risikogedanke): building a German High Seas Fleet so formidable that even if the Royal Navy defeated it in battle, British naval power would be so severely crippled that Britain would lose its global empire. However, the launch of HMS Dreadnought in 1906 wiped the slate clean by making all pre-dreadnoughts obsolete, sparking an intense industrial building race. Between 1906 and 1914, Britain laid down twenty-nine dreadnought super-battleships to Germany’s seventeen, establishing insurmountable British naval dominance in the North Sea.",
+            "takeaway": "Germany could never outbuild Britain’s superior shipbuilding yards. The naval race failed to win concessions and turned Britain from an uncommitted neutral into Germany’s fiercest adversary."
+          },
+          "archival_dispatch": {
+            "badge": "ARCHIVAL DISPATCH",
+            "type": "Parliamentary Hansard",
+            "date": "16 March 1909",
+            "title": "First Lord of the Admiralty Reginald McKenna on German Naval Expansion",
+            "body": "\"The difficulty in which the government finds itself arises not from what Germany has completed, but from the enormous speed and scale with which she is now producing capital ships. We cannot afford to gamble with national security. The safety of the Empire depends entirely upon our supremacy upon the sea.\"",
+            "footer": "Hansard Parliamentary Debates, 5th Series • House of Commons, Westminster"
+          }
         },
         {
           "id": "lesson_5",
@@ -40478,7 +40587,7 @@
             {
               "act": 4,
               "title": "Act 4: The Historical Verdict & Historiographical Debate (Deterrent or Doomsday Machine?)",
-              "text": "<span class=\"para-ref\">[4.1]</span> For decades following the war, revisionist historians such as Sidney Fay argued that the alliance system was the primary structural cause of the catastrophe. In this view, secret, entangling alliances acted as an automatic doomsday machine: when Austria quarreled with Serbia, the interlocking treaty commitments inexorably dragged Germany, Russia, France, and Britain into a world war that none of their leaders genuinely wanted or anticipated.<br><br><span class=\"para-ref\">[4.2]</span> Modern historiography, led by Christopher Clark (*The Sleepwalkers*) and Margaret MacMillan, offers a far more nuanced verdict. Alliances had successfully preserved European peace for over thirty years; they were intended as defensive deterrents, not offensive mandates. What caused the war in 1914 was not the treaties themselves, but the militarization of European statecraft and the fatal illusion among military staffs that striking first was the only guarantee of survival. By subordinating diplomatic negotiations to rigid military railway timetables, European leaders transformed defensive pacts into inescapable traps.",
+              "text": "<span class=\"para-ref\">[4.1]</span> For decades following the war, revisionist historians such as Sidney Fay argued that the alliance system was the primary structural cause of the catastrophe. In this view, secret, entangling alliances acted as an automatic doomsday machine: when Austria quarreled with Serbia, the interlocking treaty commitments inexorably dragged Germany, Russia, France, and Britain into a world war that none of their leaders genuinely wanted or anticipated.<br><br><span class=\"para-ref\">[4.2]</span> Modern historiography, led by Christopher Clark (*The Sleepwalkers*) and Margaret MacMillan, offers a far more nuanced verdict. The balance of power and alliance diplomacy had successfully maintained major European peace for over forty years following the 1871 Franco-Prussian War; they were intended as defensive deterrents, not offensive mandates. What caused the war in 1914 was not the treaties themselves, but the militarization of European statecraft and the fatal illusion among military staffs that striking first was the only guarantee of survival. By subordinating diplomatic negotiations to rigid military railway timetables, European leaders transformed defensive pacts into inescapable traps.",
               "tasks": []
             }
           ],
@@ -40641,7 +40750,35 @@
               ],
               "model_answer": "The division of Europe into the Triple Alliance and Triple Entente transformed minor regional disputes into a continental crisis by removing diplomatic flexibility and replacing it with an automatic military tripwire. Following Bismarck’s dismissal in 1890, Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse, allowing Republican France to forge a military alliance with Tsarist Russia in 1894. When Britain joined with France (1904) and Russia (1907) to form the Triple Entente, Europe became polarized into two rival coalitions. Crucially, these alliances bound major empires to the unpredictable actions of volatile client states in the Balkans. Germany lived in terrified anticipation of Russian industrialization and adopted the rigid Schlieffen Plan, which required immediate war against France the moment Russia mobilized. Consequently, when the July Crisis erupted in Sarajevo, diplomacy was subordinated to railway timetables: no power dared delay mobilization lest their ally be crushed, ensuring that a localized Balkan quarrel detonated an inevitable world war."
             }
-          ]
+          ],
+          "key_figure": {
+            "name": "Count Alfred von Schlieffen",
+            "lifespan": "1833–1913",
+            "role": "Chief of the Imperial German General Staff (1891–1906)",
+            "significance": "Authored the operational war plan designed to knock France out of a two-front war in six weeks by invading through neutral Belgium.",
+            "actions": [
+              "Observed that the Franco-Russian Alliance (1894) encircled Germany with hostile armies to the west and east.",
+              "Calculated that Russia’s vast geographic expanse and primitive railways would require six weeks to mobilize its army.",
+              "Devised the Schlieffen Plan: massing 90% of German combat strength on the right wing to swing through Belgium, envelop Paris, and defeat France before turning east.",
+              "Warned on his deathbed in 1913: \"Keep the right wing strong!\"—a strategic principle fatally diluted by Helmuth von Moltke the Younger in August 1914."
+            ],
+            "image": "/units/great_war/assets/alfred_von_schlieffen.jpg"
+          },
+          "concept_spotlight": {
+            "tag": "HISTORICAL DEEP DIVE: THE ALLIANCE TRAP",
+            "category": "RAILWAY MOBILIZATION • 1882–1914",
+            "title": "Secret Military Conventions & Railway Mobilization Timetables",
+            "body": "European alliances were not merely defensive statements of intent; they were accompanied by rigid, top-secret military conventions with exact timetables for mobilization. In the era before mass motorized transport, moving millions of conscripts, horses, artillery, and ammunition required strict control of national railway networks. German, Russian, and French railway staff spent decades designing mobilization timetables where trains were timetabled down to the exact minute. Once a Great Power ordered general mobilization, it was virtually impossible to cancel or alter the train schedules without plunging the nation's military defenses into total chaos. The secret treaties chained the Great Powers together: an Austrian attack on Belgrade inevitably triggered Russian mobilization, which automatically triggered the Schlieffen Plan.",
+            "takeaway": "Military mobilization was viewed as equivalent to a declaration of war. Once Russia mobilized its trains to protect Serbia, German generals insisted they had to attack France immediately under the Schlieffen Plan."
+          },
+          "archival_dispatch": {
+            "badge": "ARCHIVAL DISPATCH",
+            "type": "Secret Military Convention",
+            "date": "17 August 1892",
+            "title": "Franco-Russian Military Convention (Ratified 1894)",
+            "body": "\"Clause 1: If France is attacked by Germany, or by Italy supported by Germany, Russia shall employ all her available forces to attack Germany. Clause 2: If Russia is attacked by Germany, or by Austria supported by Germany, France shall employ all her available forces to attack Germany.\"",
+            "footer": "Archives Diplomatiques du Ministère des Affaires Étrangères • Quai d’Orsay, Paris / St Petersburg"
+          }
         },
         {
           "id": "lesson_6",
@@ -40848,7 +40985,7 @@
             {
               "act": 3,
               "title": "Act 3: Forensic Archival Evidence (The Blank Cheque & The Dominoes Fall)",
-              "text": "<span class=\"para-ref\">[3.1]</span> While the world mourned a royal tragedy, hawks in Vienna saw a golden opportunity to crush Serbia once and for all. However, terrified that attacking Serbia would provoke Tsarist Russia into war, Austria sought guarantees from Berlin. On 5 July 1914, Kaiser Wilhelm II issued the fateful <strong>Blank Cheque</strong>: Germany promised unconditional military backing to Austria-Hungary, urging Vienna to act swiftly while world sympathy remained on its side. Emboldened by this ironclad German pledge, Austria delivered a deliberately unacceptable ten-point <strong>Ultimatum</strong> to Serbia on 23 July, giving Belgrade just forty-eight hours to accept. Despite Serbia accepting eight of the ten demands, Austria severed diplomatic relations and declared war on Serbia on 28 July 1914, bombarding Belgrade across the Danube.<br><br><span class=\"para-ref\">[3.2]</span> The declaration triggered the fatal domino effect of European mobilization timetables. Russia, determined never to repeat the humiliation of the 1908 Bosnian Crisis, ordered general mobilization on 30 July to defend Serbia. In Berlin, German military planners panicked: under the Schlieffen Plan, every hour Russia mobilized without German action brought disaster. Germany issued an ultimatum demanding Russia demobilize within twelve hours; when St. Petersburg refused, Germany declared war on Russia on 1 August and on France on 3 August. When German troops stormed into neutral Belgium on 4 August to enact the Schlieffen Plan, Great Britain honored the 1839 Treaty of London and declared war on Germany. Within thirty days of madness, the assassination of one man had plunged seventy million soldiers into world war.",
+              "text": "<span class=\"para-ref\">[3.1]</span> While the world mourned a royal tragedy, hawks in Vienna saw a golden opportunity to crush Serbia once and for all. However, terrified that attacking Serbia would provoke Tsarist Russia into war, Austria sought guarantees from Berlin. On 5 July 1914, Kaiser Wilhelm II issued the fateful <strong>Blank Cheque</strong>: Germany promised unconditional military backing to Austria-Hungary, urging Vienna to act swiftly while world sympathy remained on its side. Emboldened by this ironclad German pledge, Austria delivered a deliberately unacceptable ten-point <strong>Ultimatum</strong> to Serbia on 23 July, giving Belgrade just forty-eight hours to accept. Despite Serbia accepting eight of the ten demands, Austria severed diplomatic relations and declared war on Serbia on 28 July 1914, bombarding Belgrade across the Danube.<br><br><span class=\"para-ref\">[3.2]</span> The declaration triggered the fatal domino effect of European mobilization timetables. Tsarist Russia, humiliated in 1908 when forced to back down during the Bosnian Crisis, resolved that its national prestige could not survive another defeat in the Balkans, ordering general mobilization on 30 July. In Berlin, the German General Staff under Helmuth von Moltke the Younger pressed urgently for war: Moltke calculated that if war with Russia was inevitable, it was far better to fight in 1914 than to wait until 1917, when French-financed Russian strategic railway construction would be completed and make the Schlieffen Plan unworkable. Germany demanded Russian demobilization within twelve hours; when St. Petersburg refused, Germany declared war on Russia on 1 August and France on 3 August, invading neutral Belgium on 4 August and drawing Great Britain into the conflict.",
               "source": {
                 "letter": "C",
                 "title": "Source C (Primary Archival Document): The Secret Constitution & Blood Oath of the \"Black Hand\" (1911)",
@@ -40862,7 +40999,7 @@
             {
               "act": 4,
               "title": "Act 4: The Historical Verdict & Historiographical Debate (Guilt vs. The Sleepwalkers)",
-              "text": "<span class=\"para-ref\">[4.1]</span> For over a century, the question of war guilt has stood at the absolute center of modern historical debate. In 1919, the victorious Allies forced Germany to sign Article 231 of the Treaty of Versailles—the \"War Guilt Clause\"—declaring that Germany alone was responsible for unleashing the war. In the 1960s, prominent German historian <strong>Fritz Fischer</strong> created an academic earthquake by arguing, using newly opened imperial archives, that German imperial leaders deliberately exploited the Sarajevo crisis to engineer a pre-emptive European war to achieve continental hegemony and break out of British encirclement.<br><br><span class=\"para-ref\">[4.2]</span> Conversely, modern historiography has challenged the Fischer thesis. In his landmark 2012 study *The Sleepwalkers*, historian <strong>Christopher Clark</strong> demonstrates that no single Great Power planned a general war. Instead, European leaders were \"sleepwalkers, watchful but unseeing, blind to the reality of the horror they were about to bring into the world.\" The catastrophe of August 1914 was not the product of a single aggressive conspiracy, but the tragic culmination of interlocking alliance commitments, reckless brinkmanship, military paranoia, and the fatal failure of diplomatic imagination.",
+              "text": "<span class=\"para-ref\">[4.1]</span> For over a century, the question of war guilt has stood at the absolute center of modern historical debate. In 1919, the victorious Allies forced Germany to sign Article 231 of the Treaty of Versailles—the \"War Guilt Clause\"—declaring that Germany alone was responsible for unleashing the war. In the 1960s, prominent German historian <strong>Fritz Fischer</strong> created an academic earthquake by arguing, using newly opened imperial archives, that German imperial leaders deliberately exploited the Sarajevo crisis to engineer a pre-emptive European war to achieve continental hegemony and break out of British encirclement.<br><br><span class=\"para-ref\">[4.2]</span> Conversely, modern historiography has challenged the Fischer thesis. In his landmark 2012 study *The Sleepwalkers*, historian <strong>Christopher Clark</strong> demonstrates that no single Great Power planned a general war. Instead, European leaders were \"sleepwalkers, watchful but unseeing, blind to the reality of the horror they were about to bring into the world.\" The catastrophe of August 1914 was not the product of a single aggressive conspiracy, but the tragic culmination of four long-term systemic pressures: <strong>Militarism, Alliances, Imperialism, and Nationalism (M-A-I-N)</strong>. Decades of imperial friction, an uncontrollable naval arms race, interlocking treaty commitments, and rampant ethnic nationalism had wound the European spring to breaking point.",
               "tasks": []
             }
           ],
@@ -41025,7 +41162,34 @@
               ],
               "model_answer": "The assassination of Archduke Franz Ferdinand led directly to the outbreak of the First World War because it was seized upon by European leaders as an opportunity to resolve long-standing geopolitical conflicts by force. When 19-year-old Bosnian Serb Gavrilo Princip shot the Austrian heir in Sarajevo on 28 June 1914, hawks in Vienna such as General Conrad von Hötzendorf saw a golden opportunity to eliminate Serbia as a regional threat. Crucially, Kaiser Wilhelm II issued the fateful \"Blank Cheque\" on 5 July, guaranteeing unconditional German military support. Emboldened by Berlin, Austria-Hungary delivered an intentionally unacceptable ten-point ultimatum to Belgrade, declaring war on 28 July. Having endured humiliating diplomatic retreats in 1908 and 1912, Russia refused to abandon its fellow Slavic ally and ordered general mobilization. This movement activated the German Schlieffen Plan, which required Germany to knock out France within six weeks before turning to face Russia. When German troops violated Belgian neutrality to bypass French fortresses, Great Britain entered the war on 4 August. Thus, a botched political murder in Bosnia ignited the structural powder keg of alliances, militarism, and imperial fear, plunging humanity into four years of industrial slaughter."
             }
-          ]
+          ],
+          "key_figure": {
+            "name": "Gavrilo Princip",
+            "lifespan": "1894–1918",
+            "role": "Bosnian Serb Nationalist Militant & Member of Young Bosnia / Black Hand",
+            "significance": "Assassinated Archduke Franz Ferdinand in Sarajevo on 28 June 1914, triggering the July Crisis and World War I.",
+            "actions": [
+              "Recruited, armed with Belgian Browning semi-automatic pistols, and trained in Belgrade by the Serbian military intelligence network (The Black Hand).",
+              "Stood outside Schiller’s Delicatessen on Franz Josef Street when the Archduke’s chauffeur took a wrong turn and stalled the car.",
+              "Fired two shots at point-blank range, fatally severing the Archduke’s jugular vein and mortally wounding Duchess Sophie."
+            ],
+            "image": "/images/gw_gavrilo_princip.jpg"
+          },
+          "concept_spotlight": {
+            "tag": "HISTORICAL SPOTLIGHT: THE SARAJEVO SPARK",
+            "category": "THE BALKAN POWDER KEG • JULY 1914",
+            "title": "The \"Blank Cheque\" & The Austrian Ultimatum",
+            "body": "Following the assassination of heir apparent Franz Ferdinand on 28 June 1914, Austro-Hungarian Chief of Staff Conrad von Hötzendorf saw a long-awaited opportunity to crush the Serbian kingdom once and for all. Before acting, Austria sent envoy Count Hoyos to Berlin. On 5–6 July, Kaiser Wilhelm II and Chancellor Bethmann-Hollweg issued the infamous \"Blank Cheque\" (carte blanche), promising unconditional German military support even if war with Russia resulted. Emboldened by German backing, Vienna issued a draconian 48-hour ultimatum to Serbia designed to be rejected, setting off thirty days of diplomatic miscalculation.",
+            "takeaway": "The Blank Cheque transformed a local Balkan clash into a general European conflagration by guaranteeing German military intervention if Russia defended Serbia."
+          },
+          "archival_dispatch": {
+            "badge": "ARCHIVAL DISPATCH",
+            "type": "Imperial Diplomatic Telegram",
+            "date": "6 July 1914",
+            "title": "The German \"Blank Cheque\" to Austria-Hungary",
+            "body": "\"His Majesty the Emperor Wilhelm authorizes me to inform Your Apostolic Majesty that Austria-Hungary may rely upon the full support of Germany as an ally. In the present crisis, Germany will stand loyally by Austria's side, even if grave European complications should arise.\"",
+            "footer": "Haus-, Hof- und Staatsarchiv, Vienna • Imperial Chancery, Berlin (Telegram No. 128)"
+          }
         }
       ],
       "quizPack": [

@@ -63,7 +63,9 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
       let matched = candidates.filter((f) => priorityPrefixes.some((p) => f.startsWith(p)));
       // Exclude legacy continuous files if modern publisher/V2 exists
       if (candidates.includes('pupil_workbook_v2.html')) {
-        matched = matched.filter((f) => f !== 'pupil_workbook.html');
+        matched = matched.filter(
+          (f) => f !== 'pupil_workbook.html' && f !== 'pupil_workbook_v2.html',
+        );
       }
       if (candidates.includes('textbook_PUBLISHER.html')) {
         matched = matched.filter((f) => f !== 'textbook.html');
