@@ -935,11 +935,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Rotten Secret: Britain’s Pig Iron Crisis (1750–1780)',
-        text: `<span class="para-ref">[1.1]</span> Before the mid-eighteenth century, Britain's iron industry was paralyzed by a critical technological crisis. Smelting iron ore with wood charcoal had devastated English forests, forcing manufacturers to rely on expensive iron imports from Sweden and Russia. Although Abraham Darby smelted iron using coke in 1709, the resulting "pig iron" remained brittle, weak, and contaminated with sulphur.\n\n<span class="para-ref">[1.2]</span> This chemical weakness directly threatened national survival. The Royal Navy required immense quantities of malleable, high-tensile wrought iron for anchors, cannon fittings, and ship bolts. When the Baltic trade was imperilled during the American Revolutionary War, Britain faced an acute naval crisis. Without a domestic method to produce pure wrought iron at scale, industrial expansion was crippled.`,
+        text: `<span class="para-ref">[1.1]</span> Before the mid-eighteenth century, Britain's iron industry was paralyzed by a critical technological crisis. Smelting iron ore with wood charcoal had devastated English forests, forcing manufacturers to rely on expensive iron imports from Sweden and Russia. Although Abraham Darby smelted iron using coke in 1709, the resulting "pig iron" remained brittle, weak, and contaminated with sulphur.\n\n<span class="para-ref">[1.2]</span> This chemical weakness directly threatened national survival. The Royal Navy required immense quantities of malleable, high-tensile wrought iron for anchors, cannon fittings, and ship bolts. When the Baltic trade was imperilled during the American Revolutionary War, Britain faced an acute naval crisis. Without a domestic method to produce pure wrought iron at scale, industrial expansion was crippled.\n\n<span class="para-ref">[1.3]</span> To break free from Baltic dependency, British ironmasters experimented desperately with coal smelting. Yet because coal contained destructive sulphur, pig iron cast in standard blast furnaces shattered under tensile stress. Without an affordable domestic technique to refine brittle pig iron into tough, malleable bar iron, Britain remained dangerously exposed.`,
       },
       {
         title: 'The Breakthrough at Funtley Ironworks (1775–1784)',
-        text: `<span class="para-ref">[2.1]</span> In Hampshire, former Royal Navy pay agent Henry Cort leased the Funtley Ironworks near Fareham to solve this metallurgical puzzle. Recognizing that coal fumes contaminated molten iron, Cort constructed an innovative reverberatory furnace. By deflecting flame and heat over the iron from an arched roof without physical contact with the coal fuel, he burned away impurities through oxidation.\n\n<span class="para-ref">[2.2]</span> Inside the inferno, workmen stirred the molten mass with iron rods in an exhausting process known as "puddling." As carbon burned away, pure iron coalesced into spongy balls. Cort immediately transferred the white-hot metal to steam-powered grooved rollers. The rollers compressed the iron and squeezed out remaining slag, boosting production fifteen-fold over traditional smithing hammers.`,
+        text: `<span class="para-ref">[2.1]</span> In Hampshire, former Royal Navy pay agent Henry Cort leased the Funtley Ironworks near Fareham to solve this metallurgical puzzle. Recognizing that coal fumes contaminated molten iron, Cort constructed an innovative reverberatory furnace. By deflecting flame and heat over the iron from an arched roof without physical contact with the coal fuel, he burned away impurities through oxidation.\n\n<span class="para-ref">[2.2]</span> Inside the inferno, workmen stirred the molten mass with iron rods in an exhausting process known as "puddling." As carbon burned away, pure iron coalesced into spongy balls. Cort immediately transferred the white-hot metal to steam-powered grooved rollers. The rollers compressed the iron and squeezed out remaining slag, boosting production fifteen-fold over traditional smithing hammers.\n\n<span class="para-ref">[2.3]</span> Cort's patented innovation conquered both chemical contamination and physical bottlenecks. By substituting coal for scarce timber and mechanising the rolling process, Funtley could roll fifteen tons of refined wrought iron in the twelve hours formerly required to forge a single ton under water hammers.`,
       },
       {
         title: 'Forensic Evidence: The Portsmouth Navy Trials (1787)',
@@ -957,11 +957,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Baseline: Workshop Craft to the Factory Clock (1750–1830)',
-        text: `<span class="para-ref">[1.1]</span> The Industrial Revolution fundamentally dismantled the traditional rhythm of British labour. Under the domestic system, rural families spun yarn and wove cloth at home, controlling their own working hours and observing "Saint Monday" as customary leisure. Work was dictated by natural daylight, seasonal cycles, and individual pace rather than mechanical supervision.\n\n<span class="para-ref">[1.2]</span> The introduction of Arkwright’s water frame and Watt’s rotary steam engine concentrated workers into multi-storey urban mills. In these mechanized workspaces, the merciless factory clock replaced natural time. Operatives worked fourteen-hour shifts under strict overseers, facing immediate fines or corporal punishment for speaking, opening windows, or falling seconds behind the machines.`,
+        text: `<span class="para-ref">[1.1]</span> The Industrial Revolution fundamentally dismantled the traditional rhythm of British labour. Under the domestic system, rural families spun yarn and wove cloth at home, controlling their own working hours and observing "Saint Monday" as customary leisure. Work was dictated by natural daylight, seasonal cycles, and individual pace rather than mechanical supervision.\n\n<span class="para-ref">[1.2]</span> The introduction of Arkwright’s water frame and Watt’s rotary steam engine concentrated workers into multi-storey urban mills. In these mechanized workspaces, the merciless factory clock replaced natural time. Operatives worked fourteen-hour shifts under strict overseers, facing immediate fines or corporal punishment for speaking, opening windows, or falling seconds behind the machines.\n\n<span class="para-ref">[1.3]</span> Steam-driven mechanisation severed operatives from direct ownership of tools and output. Mill discipline enforced obedience through fines, closed factory gates, and locked windows. Workers who had controlled their family hearth were transformed into wage-dependent hands dictated by the rhythmic turn of the steam shaft.`,
       },
       {
         title: 'The Local Catalyst: The Fareham Red Brick Boom (1800–1880)',
-        text: `<span class="para-ref">[2.1]</span> Industrialisation transformed regional landscapes far beyond northern textile towns. In south Hampshire, the extraction of London Clay around Fareham created a massive brickmaking industry. Fareham "Red" bricks were celebrated nationwide for their flawless colour and exceptional compressive strength, providing the structural fabric for London’s Victorian expansion.\n\n<span class="para-ref">[2.2]</span> Hampshire clay pits relied heavily on exhausting seasonal child labour. Young boys known as "clay-puggers" and "barrow-runners" hauled hundreds of wet clay bricks through unpaved brickfields for penny wages. Over 2.5 million Fareham bricks were shipped via railway and coastal barges to build the Royal Albert Hall and St Pancras railway terminal.`,
+        text: `<span class="para-ref">[2.1]</span> Industrialisation transformed regional landscapes far beyond northern textile towns. In south Hampshire, the extraction of London Clay around Fareham created a massive brickmaking industry. Fareham "Red" bricks were celebrated nationwide for their flawless colour and exceptional compressive strength, providing the structural fabric for London’s Victorian expansion.\n\n<span class="para-ref">[2.2]</span> Hampshire clay pits relied heavily on exhausting seasonal child labour. Young boys known as "clay-puggers" and "barrow-runners" hauled hundreds of wet clay bricks through unpaved brickfields for penny wages. Over 2.5 million Fareham bricks were shipped via railway and coastal barges to build the Royal Albert Hall and St Pancras railway terminal.\n\n<span class="para-ref">[2.3]</span> The clay pits and brick kilns of Fareham operated on an industrial scale matching northern mills. Boys trod raw clay barefoot in open pits from dawn until dusk, enduring freezing mud and blistering kiln heat to ensure a continuous stream of building materials for Victorian infrastructure.`,
       },
       {
         title: 'Forensic Evidence: Factory Reports & Parliamentary Commissions (1832–1842)',
@@ -979,11 +979,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Baseline: Rapid Urbanisation & The Slum Environment (1800–1840)',
-        text: `<span class="para-ref">[1.1]</span> Between 1800 and 1850, British cities experienced unprecedented, uncontrolled population explosion. As rural labourers fled declining farm employment, manufacturing hubs like Manchester, Leeds, and Birmingham tripled in size. Because no building regulations or municipal authorities existed, speculative builders threw up cramped back-to-back slum terraces across unpaved yards.\n\n<span class="para-ref">[1.2]</span> Entire working-class families lived packed into single damp cellars lacking fresh air or drainage. Without municipal sewerage, domestic waste pooled in open court cesspools, seeping directly into shallow drinking water wells. In working-class Manchester districts, life expectancy plummeted to just nineteen years, compared to forty in surrounding agricultural districts.`,
+        text: `<span class="para-ref">[1.1]</span> Between 1800 and 1850, British cities experienced unprecedented, uncontrolled population explosion. As rural labourers fled declining farm employment, manufacturing hubs like Manchester, Leeds, and Birmingham tripled in size. Because no building regulations or municipal authorities existed, speculative builders threw up cramped back-to-back slum terraces across unpaved yards.\n\n<span class="para-ref">[1.2]</span> Entire working-class families lived packed into single damp cellars lacking fresh air or drainage. Without municipal sewerage, domestic waste pooled in open court cesspools, seeping directly into shallow drinking water wells. In working-class Manchester districts, life expectancy plummeted to just nineteen years, compared to forty in surrounding agricultural districts.\n\n<span class="para-ref">[1.3]</span> Rampant urban expansion outpaced basic sanitation. Landlords divided existing tenements into windowless cellar dwellings, while communal privies overflowed into unpaved courts. In the absence of building codes, thousands of families lived without clean running water, disposing of household nightsoil into stagnant gutters outside their doors.`,
       },
       {
         title: 'The Catalyst: King Cholera, Miasma & The Great Stink (1848–1858)',
-        text: `<span class="para-ref">[2.1]</span> In 1831, waterborne Asiatic cholera struck Britain, killing tens of thousands in terrifying, rapid epidemics. Prevailing medical opinion attributed the disease to "miasma"—poisonous atmospheric gases arising from decomposing filth. While scientifically incorrect, the miasma theory focused public attention upon the appalling squalor of urban cesspools and open sewers.\n\n<span class="para-ref">[2.2]</span> In 1858, an unprecedented summer heatwave caused the heavily polluted River Thames to ferment, producing "The Great Stink." The overwhelming stench invaded the Palace of Westminster, forcing Parliament to soak window curtains in chloride of lime. Fearing for their own lives, politicians finally abandoned laissez-faire dogma and authorized vast public expenditure on urban sanitation.`,
+        text: `<span class="para-ref">[2.1]</span> In 1831, waterborne Asiatic cholera struck Britain, killing tens of thousands in terrifying, rapid epidemics. Prevailing medical opinion attributed the disease to "miasma"—poisonous atmospheric gases arising from decomposing filth. While scientifically incorrect, the miasma theory focused public attention upon the appalling squalor of urban cesspools and open sewers.\n\n<span class="para-ref">[2.2]</span> In 1858, an unprecedented summer heatwave caused the heavily polluted River Thames to ferment, producing "The Great Stink." The overwhelming stench invaded the Palace of Westminster, forcing Parliament to soak window curtains in chloride of lime. Fearing for their own lives, politicians finally abandoned laissez-faire dogma and authorized vast public expenditure on urban sanitation.\n\n<span class="para-ref">[2.3]</span> The miasma doctrine dominated medical thought, with physicians attributing cholera outbreaks to foul airborne vapors rather than contaminated drinking water. This conviction paradoxically spurred civic cleanup campaigns, compelling middle-class ratepayers to acknowledge that slum filth presented a mortal contagion to the entire city.`,
       },
       {
         title: 'Forensic Evidence: Chadwick’s Sanitary Report & Bazalgette’s Sewers (1842–1865)',
@@ -1001,11 +1001,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Baseline: Mercantilism, Triangular Trade & The Royal Navy (1750–1815)',
-        text: `<span class="para-ref">[1.1]</span> Britain’s 18th-century imperial expansion was anchored in mercantilist economics and maritime warfare. Under the Navigation Acts, colonial possessions existed solely to supply Britain with raw commodities—sugar, tobacco, timber, and cotton—while consuming finished British manufactured goods carried exclusively aboard British-flagged ships.\n\n<span class="para-ref">[1.2]</span> This Atlantic commercial network was fundamentally entwined with the Transatlantic Slave Trade. British merchants shipped manufactured goods to West Africa, transported enslaved Africans across the Middle Passage to Caribbean plantations, and imported slave-grown sugar into Bristol and Liverpool. Profits from this brutal trade provided critical capital for early industrial mechanisation.`,
+        text: `<span class="para-ref">[1.1]</span> Britain’s 18th-century imperial expansion was anchored in mercantilist economics and maritime warfare. Under the Navigation Acts, colonial possessions existed solely to supply Britain with raw commodities—sugar, tobacco, timber, and cotton—while consuming finished British manufactured goods carried exclusively aboard British-flagged ships.\n\n<span class="para-ref">[1.2]</span> This Atlantic commercial network was fundamentally entwined with the Transatlantic Slave Trade. British merchants shipped manufactured goods to West Africa, transported enslaved Africans across the Middle Passage to Caribbean plantations, and imported slave-grown sugar into Bristol and Liverpool. Profits from this brutal trade provided critical capital for early industrial mechanisation.\n\n<span class="para-ref">[1.3]</span> Mercantile trade was fiercely shielded by naval violence. The Royal Navy patrolled global sea lanes, establishing fortified bases at Gibraltar, Malta, and the Cape of Good Hope. Colonial ports functioned as exclusive commercial depots, ensuring that colonial wealth flowed directly into British counting houses.`,
       },
       {
         title: 'The Local Imperial Engine: Portsmouth Royal Dockyard & Steam Power (1803–1860)',
-        text: `<span class="para-ref">[2.1]</span> Portsmouth Royal Dockyard stood at the heart of British naval supremacy, serving as the largest industrial enterprise in the world. In 1803, Marc Brunel and Henry Maudslay installed the revolutionary Portsmouth Block Mills—the world’s first steam-powered, automated assembly line, mass-producing 130,000 rigging blocks annually for Royal Navy warships.\n\n<span class="para-ref">[2.2]</span> In 1860, Portsmouth launched <strong>HMS Warrior</strong>, the world’s first iron-hulled, armour-plated, steam-powered battleship. Powered by ten boilers driving a massive screw propeller, Warrior’s impenetrable 4.5-inch wrought iron armour rendered every wooden warship obsolete overnight, establishing undisputed British naval dominance across global maritime trade routes.`,
+        text: `<span class="para-ref">[2.1]</span> Portsmouth Royal Dockyard stood at the heart of British naval supremacy, serving as the largest industrial enterprise in the world. In 1803, Marc Brunel and Henry Maudslay installed the revolutionary Portsmouth Block Mills—the world’s first steam-powered, automated assembly line, mass-producing 130,000 rigging blocks annually for Royal Navy warships.\n\n<span class="para-ref">[2.2]</span> In 1860, Portsmouth launched <strong>HMS Warrior</strong>, the world’s first iron-hulled, armour-plated, steam-powered battleship. Powered by ten boilers driving a massive screw propeller, Warrior’s impenetrable 4.5-inch wrought iron armour rendered every wooden warship obsolete overnight, establishing undisputed British naval dominance across global maritime trade routes.\n\n<span class="para-ref">[2.3]</span> Steam propulsion freed maritime commerce and military expeditions from the tyranny of ocean winds. With coaling stations dotting the globe, British steamships carried mail, cargo, and soldiers across oceans in weeks rather than months, projecting British industrial power to the furthest limits of the empire.`,
       },
       {
         title: 'Forensic Evidence: The East India Company & Imperial Cartography (1765–1886)',
@@ -1023,11 +1023,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Baseline: Structural Grievances & Company Annexation (1848–1857)',
-        text: `<span class="para-ref">[1.1]</span> By 1857, deep resentment against the British East India Company had reached a combustible crisis across northern India. Governor-General Lord Dalhousie’s aggressive "Doctrine of Lapse" enabled the Company to confiscate autonomous princely states whenever a ruler died without a direct male heir, abruptly dispossessing sovereign royal houses like Awadh, Satara, and Jhansi.\n\n<span class="para-ref">[1.2]</span> Simultaneously, high land revenue taxes ruined traditional peasant cultivators, while British missionary societies openly proselytized among native populations. For the 300,000 Indian sepoys who constituted ninety percent of the Company’s armed forces, these political and economic grievances generated profound suspicion that their ancient religious identities were marked for systematic destruction.`,
+        text: `<span class="para-ref">[1.1]</span> By 1857, deep resentment against the British East India Company had reached a combustible crisis across northern India. Governor-General Lord Dalhousie’s aggressive "Doctrine of Lapse" enabled the Company to confiscate autonomous princely states whenever a ruler died without a direct male heir, abruptly dispossessing sovereign royal houses like Awadh, Satara, and Jhansi.\n\n<span class="para-ref">[1.2]</span> Simultaneously, high land revenue taxes ruined traditional peasant cultivators, while British missionary societies openly proselytized among native populations. For the 300,000 Indian sepoys who constituted ninety percent of the Company’s armed forces, these political and economic grievances generated profound suspicion that their ancient religious identities were marked for systematic destruction.\n\n<span class="para-ref">[1.3]</span> British rule alienated every stratum of Indian society. Respected princely families were abruptly deposed, feudal landlords lost traditional estates to Company tax collectors, and Hindu and Muslim soldiers witnessed European officers openly supporting aggressive Christian missionary societies throughout the northern garrisons.`,
       },
       {
         title: 'The Escalation: Meerut, Delhi & Rani Lakshmibai (May–September 1857)',
-        text: `<span class="para-ref">[2.1]</span> In early 1857, the introduction of the new Enfield rifle provided the volatile spark. Rumours spread rapidly that cartridges were coated with beef and pork fat—sacrilegious to both Hindus and Muslims—requiring soldiers to bite them open. When eighty-five sepoys at Meerut were court-martialled and shackled for refusing the cartridges, their comrades rose in open mutiny on 10 May 1857.\n\n<span class="para-ref">[2.2]</span> The rebels marched to Delhi, capturing the city and proclaiming the aged Mughal Emperor Bahadur Shah II sovereign ruler of Hindustan. Across northern and central India, civil rebellion erupted. In Jhansi, the twenty-nine-year-old Rani Lakshmibai donned combat armour, leading rebel forces in desperate defense of her besieged city before dying in combat at Gwalior.`,
+        text: `<span class="para-ref">[2.1]</span> In early 1857, the introduction of the new Enfield rifle provided the volatile spark. Rumours spread rapidly that cartridges were coated with beef and pork fat—sacrilegious to both Hindus and Muslims—requiring soldiers to bite them open. When eighty-five sepoys at Meerut were court-martialled and shackled for refusing the cartridges, their comrades rose in open mutiny on 10 May 1857.\n\n<span class="para-ref">[2.2]</span> The rebels marched to Delhi, capturing the city and proclaiming the aged Mughal Emperor Bahadur Shah II sovereign ruler of Hindustan. Across northern and central India, civil rebellion erupted. In Jhansi, the twenty-nine-year-old Rani Lakshmibai donned combat armour, leading rebel forces in desperate defense of her besieged city before dying in combat at Gwalior.\n\n<span class="para-ref">[2.3]</span> The uprising spread with remarkable speed as sepoys and civilian populations joined forces across northern India. In rural villages, peasants torched court records and moneylenders' ledgers, while dispossessed talukdars mobilized armed retainers to overthrow British commercial authority and restore indigenous governance.`,
       },
       {
         title: 'Forensic Evidence: Rebel Manifestos vs. The Crown Raj (1857–1858)',
@@ -1045,11 +1045,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Baseline: Post-War Crucible & The Peterloo Massacre (1815–1819)',
-        text: `<span class="para-ref">[1.1]</span> The conclusion of the Napoleonic Wars in 1815 plunged Britain’s working class into severe economic distress. Demobilized soldiers returned to mass unemployment, while the Tory government passed the Corn Laws, imposing heavy import tariffs on foreign grain to keep bread prices artificially high for wealthy aristocratic landowners.\n\n<span class="para-ref">[1.2]</span> On 16 August 1819, 60,000 peaceful working-class men, women, and children gathered at St Peter’s Field in Manchester to demand parliamentary reform and affordable food. Local magistrates panicked, ordering cavalry sabres to charge into the unarmed crowd. Eighteen protestors were killed and over 650 maimed in what the public furiously condemned as the "Peterloo Massacre."`,
+        text: `<span class="para-ref">[1.1]</span> The conclusion of the Napoleonic Wars in 1815 plunged Britain’s working class into severe economic distress. Demobilized soldiers returned to mass unemployment, while the Tory government passed the Corn Laws, imposing heavy import tariffs on foreign grain to keep bread prices artificially high for wealthy aristocratic landowners.\n\n<span class="para-ref">[1.2]</span> On 16 August 1819, 60,000 peaceful working-class men, women, and children gathered at St Peter’s Field in Manchester to demand parliamentary reform and affordable food. Local magistrates panicked, ordering cavalry sabres to charge into the unarmed crowd. Eighteen protestors were killed and over 650 maimed in what the public furiously condemned as the "Peterloo Massacre."\n\n<span class="para-ref">[1.3]</span> The Peterloo Massacre sent shockwaves through working communities across Britain. In response to the Manchester killings, Lord Liverpool’s government passed the draconian Six Acts, banning unauthorised military drilling, taxing radical publications, and outlawing public political meetings of more than fifty persons.`,
       },
       {
         title: 'The Local Catalyst: Hampshire in Flames & The Swing Riots (1830)',
-        text: `<span class="para-ref">[2.1]</span> In 1830, agricultural distress swept across southern England in the "Captain Swing" riots. Displaced farm labourers faced starvation wages and winter unemployment caused by threshing machines. Rioting farmworkers smashed mechanized threshers, torched hayricks, and sent threatening letters signed by the fictitious avenger "Captain Swing" demanding living wages.\n\n<span class="para-ref">[2.2]</span> Hampshire sat at the epicenter of rural unrest. Crowds attacked poorhouses in Selborne and Headley, destroying agricultural equipment. The government crushed the uprising with harsh judicial vengeance: special commissions in Winchester sentenced three Hampshire men to hang and transported over one hundred agricultural labourers to penal colonies in Australia.`,
+        text: `<span class="para-ref">[2.1]</span> In 1830, agricultural distress swept across southern England in the "Captain Swing" riots. Displaced farm labourers faced starvation wages and winter unemployment caused by threshing machines. Rioting farmworkers smashed mechanized threshers, torched hayricks, and sent threatening letters signed by the fictitious avenger "Captain Swing" demanding living wages.\n\n<span class="para-ref">[2.2]</span> Hampshire sat at the epicenter of rural unrest. Crowds attacked poorhouses in Selborne and Headley, destroying agricultural equipment. The government crushed the uprising with harsh judicial vengeance: special commissions in Winchester sentenced three Hampshire men to hang and transported over one hundred agricultural labourers to penal colonies in Australia.\n\n<span class="para-ref">[2.3]</span> Rural protest exposed the desperate poverty of the southern countryside. Farmworkers demanding living wages faced ruthless repression from county magistrates. The severe sentences handed down at Winchester demonstrated the government's resolve to crush agricultural trade unionism and protect landlord property.`,
       },
       {
         title: 'Forensic Evidence: The Tolpuddle Indictment & The People’s Charter (1834–1848)',
@@ -1067,11 +1067,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Baseline: Rotten Boroughs & The Unreformed System (1800–1830)',
-        text: `<span class="para-ref">[1.1]</span> In 1830, Britain’s parliamentary representation was corrupt, archaic, and unrepresentative. Vast industrial cities like Manchester, Birmingham, and Leeds with hundreds of thousands of citizens had zero members of parliament. Power remained monopolized by wealthy aristocratic landowners who dominated rural "pocket boroughs."\n\n<span class="para-ref">[1.2]</span> Notorious "rotten boroughs" with virtually no electors returned multiple MPs: Old Sarum in Wiltshire was a deserted grass mound with seven voters electing two MPs, while Dunwich had eroded into the North Sea. Fewer than 400,000 wealthy men possessed the vote out of a population exceeding twenty million, and open voting invited routine landlord bribery and voter intimidation.`,
+        text: `<span class="para-ref">[1.1]</span> In 1830, Britain’s parliamentary representation was corrupt, archaic, and unrepresentative. Vast industrial cities like Manchester, Birmingham, and Leeds with hundreds of thousands of citizens had zero members of parliament. Power remained monopolized by wealthy aristocratic landowners who dominated rural "pocket boroughs."\n\n<span class="para-ref">[1.2]</span> Notorious "rotten boroughs" with virtually no electors returned multiple MPs: Old Sarum in Wiltshire was a deserted grass mound with seven voters electing two MPs, while Dunwich had eroded into the North Sea. Fewer than 400,000 wealthy men possessed the vote out of a population exceeding twenty million, and open voting invited routine landlord bribery and voter intimidation.\n\n<span class="para-ref">[1.3]</span> The unreformed House of Commons represented landed wealth rather than people. While depopulated hamlets sent two members to Westminster, expanding industrial cities like Manchester, Birmingham, and Sheffield with hundreds of thousands of inhabitants possessed no parliamentary voice whatsoever.`,
       },
       {
         title: 'The Catalyst: The 1832 Reform Act & Days of May (1830–1832)',
-        text: `<span class="para-ref">[2.1]</span> The election of Earl Grey’s Whig government in 1830 brought parliamentary reform to a revolutionary climax. When the Tory-dominated House of Lords repeatedly vetoed Grey’s Reform Bill, the nation erupted in fury. In October 1831, massive riots torched the Bishop's Palace in Bristol and destroyed Nottingham Castle, while reform political unions organized nationwide bank runs.\n\n<span class="para-ref">[2.2]</span> In the "Days of May" 1832, facing the imminent threat of armed revolution and civil war, King William IV agreed to Earl Grey’s demand to create dozens of new Whig peers to overcome the Lords' veto. Terrified of losing their peerages and aristocratic privileges, Tory lords capitulated, passing the landmark Great Reform Act into law in June 1832.`,
+        text: `<span class="para-ref">[2.1]</span> The election of Earl Grey’s Whig government in 1830 brought parliamentary reform to a revolutionary climax. When the Tory-dominated House of Lords repeatedly vetoed Grey’s Reform Bill, the nation erupted in fury. In October 1831, massive riots torched the Bishop's Palace in Bristol and destroyed Nottingham Castle, while reform political unions organized nationwide bank runs.\n\n<span class="para-ref">[2.2]</span> In the "Days of May" 1832, facing the imminent threat of armed revolution and civil war, King William IV agreed to Earl Grey’s demand to create dozens of new Whig peers to overcome the Lords' veto. Terrified of losing their peerages and aristocratic privileges, Tory lords capitulated, passing the landmark Great Reform Act into law in June 1832.\n\n<span class="para-ref">[2.3]</span> Tory resistance brought Britain to the verge of open insurrection. Political unions organized nationwide runs on the Bank of England under the slogan "Stop the Duke, go for gold," while armed working-class clubs drilled in the streets, convincing Whig leaders that moderate reform was essential to prevent revolution.`,
       },
       {
         title: 'Forensic Evidence: Rotten Borough Maps & The 1872 Secret Ballot (1832–1872)',
@@ -1089,11 +1089,11 @@ function getLessonSections(lesson, idx) {
     return [
       {
         title: 'The Optimist Case: Industrial Triumph & Rising Prosperity (1815–1880)',
-        text: `<span class="para-ref">[1.1]</span> By 1851, the Great Exhibition inside London's Crystal Palace celebrated Britain as the undisputed "Workshop of the World." Powered by steam engines, railway networks, and vast coal reserves, Britain produced two-thirds of the world's coal, half its iron, and half its commercial cotton textiles, exporting manufactured goods to every corner of the globe.\n\n<span class="para-ref">[1.2]</span> Economic optimists demonstrate that real wages for skilled working-class families increased by over thirty percent after 1850. Cheap factory production made cotton undergarments, tea, soap, and footwear universally affordable. Gas lighting, piped water, public libraries, and statutory weekend half-holidays transformed daily working-class quality of life.`,
+        text: `<span class="para-ref">[1.1]</span> By 1851, the Great Exhibition inside London's Crystal Palace celebrated Britain as the undisputed "Workshop of the World." Powered by steam engines, railway networks, and vast coal reserves, Britain produced two-thirds of the world's coal, half its iron, and half its commercial cotton textiles, exporting manufactured goods to every corner of the globe.\n\n<span class="para-ref">[1.2]</span> Economic optimists demonstrate that real wages for skilled working-class families increased by over thirty percent after 1850. Cheap factory production made cotton undergarments, tea, soap, and footwear universally affordable. Gas lighting, piped water, public libraries, and statutory weekend half-holidays transformed daily working-class quality of life.\n\n<span class="para-ref">[1.3]</span> The Great Exhibition of 1851 showcased Britain's technological supremacy to the world. Over six million visitors marveled at locomotive engines, precision machine tools, and manufactured textiles, cementing the perception of Victorian Britain as the prosperous workshop of the civilized world.`,
       },
       {
         title: 'The Pessimist Case: Human Squalor & Silenced Voices (1800–1880)',
-        text: `<span class="para-ref">[2.1]</span> In stark contrast, social pessimists emphasize that Britain’s staggering wealth was built upon the exploitation of millions. In northern textile mills and Hampshire brickfields, children worked brutal shifts inhaling toxic dust, suffering spine deformities and early death. In back-to-back slum cellars, cholera and typhus epidemics ravaged malnourished families lacking clean water.\n\n<span class="para-ref">[2.2]</span> Industrial capitalism created vast social inequality. While mill barons and railway magnates amassed unprecedented fortunes, agricultural labourers and artisan handloom weavers were reduced to pauperism. Those unable to find employment faced the dreaded New Poor Law workhouse, where families were deliberately separated and subjected to punitive manual labour.`,
+        text: `<span class="para-ref">[2.1]</span> In stark contrast, social pessimists emphasize that Britain’s staggering wealth was built upon the exploitation of millions. In northern textile mills and Hampshire brickfields, children worked brutal shifts inhaling toxic dust, suffering spine deformities and early death. In back-to-back slum cellars, cholera and typhus epidemics ravaged malnourished families lacking clean water.\n\n<span class="para-ref">[2.2]</span> Industrial capitalism created vast social inequality. While mill barons and railway magnates amassed unprecedented fortunes, agricultural labourers and artisan handloom weavers were reduced to pauperism. Those unable to find employment faced the dreaded New Poor Law workhouse, where families were deliberately separated and subjected to punitive manual labour.\n\n<span class="para-ref">[2.3]</span> Yet behind the gilded facade of imperial triumph lay deep systemic deprivation. Industrial progress enriched capital owners while leaving millions of factory hands, domestic servants, and agricultural labourers vulnerable to cyclical unemployment, debilitating illness, and the humiliation of the workhouse.`,
       },
       {
         title: 'Forensic Evidence: The Imperial Balance Sheet & Drain of Wealth',
@@ -1625,6 +1625,29 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     .col-side .archival-source-box {
       margin: 0;
     }
+    .two-column-grid .narrative-p {
+      margin: 0 0 2px 0;
+      line-height: 1.30;
+    }
+    .two-column-grid .archival-source-box {
+      padding: 3px 5px;
+    }
+    .two-column-grid .archival-image {
+      height: 110px;
+    }
+    .two-column-grid .archival-context-box {
+      padding: 2px 4px;
+      margin: 1.5px 0;
+    }
+    .two-column-grid .archival-context-text {
+      font-size: 7.7pt;
+      line-height: 1.22;
+      margin: 0 0 1px 0;
+    }
+    .two-column-grid .archival-hinge-q {
+      font-size: 7.6pt;
+      line-height: 1.22;
+    }
 
     /* Right Page 2-Tier Balanced Layout */
     .right-page-content {
@@ -1761,7 +1784,7 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
     }
     .archival-image {
       width: 100%;
-      height: 92px;
+      height: 125px;
       object-fit: contain;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -1770,20 +1793,20 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
       display: block;
     }
     .archival-source-box.expand-sm .archival-image {
-      height: 75px;
+      height: 95px;
     }
     .archival-source-box.expand-md .archival-image {
-      height: 110px;
+      height: 135px;
     }
     .archival-source-box.expand-lg .archival-image {
-      height: 130px;
+      height: 145px;
     }
     .archival-source-box.panoramic-source {
       column-span: all;
       margin: 3px 0 4px 0;
     }
     .archival-source-box.panoramic-source .archival-image {
-      height: 105px;
+      height: 120px;
       width: 100%;
       object-fit: contain;
     }
@@ -2482,58 +2505,58 @@ async function buildPublisherTextbookHtmlIndustrialisation() {
         <thead>
           <tr>
             <th style="width: 12%;">Lesson</th>
-            <th style="width: 48%;">Historical Enquiry &amp; Narrative Focus</th>
-            <th style="width: 25%;">Primary Source Core</th>
-            <th style="width: 15%;">Page Ref</th>
+            <th style="width: 46%;">Historical Enquiry &amp; Narrative Focus</th>
+            <th style="width: 30%;">Disciplinary Skill &amp; Assessment Focus</th>
+            <th style="width: 12%;">Page Ref</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Lesson 1</strong></td>
             <td>What powered the Industrial Revolution? Henry Cort, Puddling &amp; The Iron Revolution</td>
-            <td>Loutherbourg Coalbrookdale &amp; Cort 1784 Patent</td>
+            <td>Causal Explanation &amp; Technological Catalysts</td>
             <td>pp. 2–3</td>
           </tr>
           <tr>
             <td><strong>Lesson 2</strong></td>
             <td>Was industrial work progress or punishment? Child Labour, Mills &amp; Brickworks</td>
-            <td>Textile Loom Engraving &amp; Royal Albert Hall</td>
+            <td>Source Utility &amp; Evaluating Workplace Conditions</td>
             <td>pp. 4–5</td>
           </tr>
           <tr>
             <td><strong>Lesson 3</strong></td>
             <td>Did industrialisation make British towns unlivable? Slum Squalor, Cholera &amp; Sewers</td>
-            <td>Doré London Slums &amp; Leech King Cholera</td>
+            <td>Historical Interpretations &amp; Public Health Reform</td>
             <td>pp. 6–7</td>
           </tr>
           <tr>
             <td><strong>Lesson 4</strong></td>
             <td>How was the British Empire built and sustained? Royal Navy, Steam &amp; Extraction</td>
-            <td>1886 Crane Map &amp; HMS Warrior (1860)</td>
+            <td>Historical Consequence &amp; Commercial Monopoly</td>
             <td>pp. 8–9</td>
           </tr>
           <tr>
             <td><strong>Lesson 5</strong></td>
             <td>How did the Empire strike back? The 1857 Indian Rebellion &amp; Fall of the Company</td>
-            <td>Meerut Sepoy Mutiny &amp; Delhi Combat Lithograph</td>
+            <td>Historical Significance &amp; Anti-Colonial Resistance</td>
             <td>pp. 10–11</td>
           </tr>
           <tr>
             <td><strong>Lesson 6</strong></td>
             <td>How did ordinary people fight for a voice? Peterloo, Tolpuddle &amp; Chartism</td>
-            <td>1848 Kennington Common &amp; Swing Letter</td>
+            <td>Change &amp; Continuity &amp; Working-Class Agitation</td>
             <td>pp. 12–13</td>
           </tr>
           <tr>
             <td><strong>Lesson 7</strong></td>
             <td>How did the road to democracy expand? Rotten Boroughs, 1832 &amp; Secret Ballot</td>
-            <td>1832 Rotten Boroughs &amp; Cruikshank Reform Tree</td>
+            <td>Causation &amp; The Extension of the Franchise</td>
             <td>pp. 14–15</td>
           </tr>
           <tr>
             <td><strong>Lesson 8</strong></td>
             <td>Who truly benefited from 19th-century transformation? The Historical Verdict</td>
-            <td>Leech Capital &amp; Labour &amp; 1851 Crystal Palace</td>
+            <td>Synoptic Evaluation &amp; Historiographical Debate</td>
             <td>pp. 16–17</td>
           </tr>
         </tbody>

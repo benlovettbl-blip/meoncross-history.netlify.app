@@ -21,6 +21,7 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const dataPath = path.join(ROOT_DIR, 'units', 'great_war', 'data.js');
@@ -726,11 +727,11 @@ function getGreatWarLessonSections(lesson, idx) {
     return [
       {
         title: 'The Fragmented Chessboard & The Zollverein',
-        text: `<span class="para-ref">[1.1]</span> After 1815, Central Europe remained a fragmented patchwork of thirty-nine sovereign German-speaking states within the loose German Confederation. Two rival Great Powers competed for continental dominance: the Catholic, multi-ethnic Austrian Empire and the Protestant military Kingdom of Prussia. While Austria remained an agrarian empire preoccupied with internal ethnic unrest, Prussia underwent rapid industrial expansion powered by the rich coal and iron mines of the Ruhr Valley and Silesia.\n\n<span class="para-ref">[1.2]</span> In 1834, Prussia secured a decisive economic masterstroke by establishing the <em>Zollverein</em> (Customs Union). By dismantling internal trade tariffs across northern and central Germany while excluding protectionist Austria, Prussia bound the German economies inexorably to Berlin. The rapid construction of state-funded railway networks proved that industrial modernization, economic efficiency, and German unity belonged under Prussian leadership.`,
+        text: `<span class="para-ref">[1.1]</span> After 1815, Central Europe remained a fragmented patchwork of thirty-nine sovereign German-speaking states within the loose German Confederation. Two rival Great Powers competed for continental dominance: the Catholic, multi-ethnic Austrian Empire and the Protestant military Kingdom of Prussia. While Austria remained an agrarian empire preoccupied with internal ethnic unrest, Prussia underwent rapid industrial expansion powered by the rich coal and iron mines of the Ruhr Valley and Silesia.\n\n<span class="para-ref">[1.2]</span> In 1834, Prussia secured a decisive economic masterstroke by establishing the <em>Zollverein</em> (Customs Union). By dismantling internal trade tariffs across northern and central Germany while excluding protectionist Austria, Prussia bound the German economies inexorably to Berlin. The rapid construction of state-funded railway networks proved that industrial modernization, economic efficiency, and German unity belonged under Prussian leadership.\n\n<span class="para-ref">[1.3]</span> Prussia's economic ascendancy coincided with rapid urban expansion. As coal foundries multiplied along the Ruhr, thousands of workers migrated into industrial hubs, forging an economic interdependence that rendered old confederate boundaries obsolete under Prussian leadership.`,
       },
       {
         title: 'Blood & Iron: Bismarck’s Three Decisive Wars',
-        text: `<span class="para-ref">[2.1]</span> In 1862, King Wilhelm I appointed Otto von Bismarck as Minister President. When parliament refused military funding, Bismarck governed unconstitutionally, collecting taxes to equip the Prussian army with Krupp cast-steel cannons and Dreyse needle-guns. He famously declared: <em>"The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**."</em>\n\n<span class="para-ref">[2.2]</span> Bismarck orchestrated three short, calculated wars to achieve unification. In 1864, Prussia and Austria defeated Denmark over Schleswig-Holstein. In 1866, Prussia crushed Austria at Königgrätz, expelling Vienna from German affairs. Finally, in 1870, Bismarck provoked France into declaring war, uniting the southern German states and routing French armies at Sedan.`,
+        text: `<span class="para-ref">[2.1]</span> In 1862, King Wilhelm I appointed Otto von Bismarck as Minister President. When parliament refused military funding, Bismarck governed unconstitutionally, collecting taxes to equip the Prussian army with Krupp cast-steel cannons and Dreyse needle-guns. He famously declared: <em>"The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**."</em>\n\n<span class="para-ref">[2.2]</span> Bismarck orchestrated three short, calculated wars to achieve unification. In 1864, Prussia and Austria defeated Denmark over Schleswig-Holstein. In 1866, Prussia crushed Austria at Königgrätz, expelling Vienna from German affairs. Finally, in 1870, Bismarck provoked France into declaring war, uniting the southern German states and routing French armies at Sedan.\n\n<span class="para-ref">[2.3]</span> The crushing Prussian victory at Sedan unseated Emperor Napoleon III and demolished French military dominance. By uniting the northern and southern German confederations under Prussian military command, Bismarck forged a unified military empire that fundamentally altered the European balance of power.`,
       },
       {
         title: 'Forensic Evidence: The Proclamation at Versailles',
@@ -748,11 +749,11 @@ function getGreatWarLessonSections(lesson, idx) {
     return [
       {
         title: 'The Spanish Vacancy & The Ems Telegram',
-        text: `<span class="para-ref">[1.1]</span> In early 1870, the vacant Spanish throne ignited a diplomatic crisis when the candidacy of Prince Leopold of Hohenzollern-Sigmaringen was proposed. French Emperor Napoleon III felt mortally threatened by the prospect of Prussian royal encirclement on both the Rhine and the Pyrenees. France demanded an unconditional Prussian pledge never to renew the candidacy.\n\n<span class="para-ref">[1.2]</span> When King Wilhelm I politely declined further concessions at the spa town of Bad Ems, Bismarck saw his opportunity. He deliberately edited the King's telegraphic dispatch to make the French ambassador and the Prussian monarch appear mutually insulting before releasing it to the international press. Outraged by the public snub, France declared war on 19 July 1870, walking straight into Bismarck's trap.`,
+        text: `<span class="para-ref">[1.1]</span> In early 1870, the vacant Spanish throne ignited a diplomatic crisis when the candidacy of Prince Leopold of Hohenzollern-Sigmaringen was proposed. French Emperor Napoleon III felt mortally threatened by the prospect of Prussian royal encirclement on both the Rhine and the Pyrenees. France demanded an unconditional Prussian pledge never to renew the candidacy.\n\n<span class="para-ref">[1.2]</span> When King Wilhelm I politely declined further concessions at the spa town of Bad Ems, Bismarck saw his opportunity. He deliberately edited the King's telegraphic dispatch to make the French ambassador and the Prussian monarch appear mutually insulting before releasing it to the international press. Outraged by the public snub, France declared war on 19 July 1870, walking straight into Bismarck's trap.\n\n<span class="para-ref">[1.3]</span> The edited telegram provoked fierce chauvinistic demonstrations across Paris and Berlin. Convinced of an easy victory and fearing domestic political collapse, French ministers rushed headlong into mobilization, while Bismarck had already mobilized German railway networks to assemble overwhelming firepower on the frontier.`,
       },
       {
         title: 'Krupp Steel, Sedan & The Fall of Paris',
-        text: `<span class="para-ref">[2.1]</span> The Prussian military machine, organized by General Helmuth von Moltke, moved with lethal speed. Utilizing six specialized railway trunk lines, the German states mobilized 380,000 troops to the frontier in eighteen days. At the decisive Battle of Sedan in September 1870, massed Krupp breech-loading artillery shattered French lines, forcing Napoleon III to surrender with 104,000 soldiers.\n\n<span class="para-ref">[2.2]</span> While the Second Empire collapsed, the newly proclaimed French Third Republic fought on with desperate defiance. German armies advanced rapidly to encircle Paris, subjecting the capital to a brutal four-month winter siege. Freezing temperatures and starvation forced Paris to capitulate in January 1871, leaving French national pride permanently traumatized.`,
+        text: `<span class="para-ref">[2.1]</span> The Prussian military machine, organized by General Helmuth von Moltke, moved with lethal speed. Utilizing six specialized railway trunk lines, the German states mobilized 380,000 troops to the frontier in eighteen days. At the decisive Battle of Sedan in September 1870, massed Krupp breech-loading artillery shattered French lines, forcing Napoleon III to surrender with 104,000 soldiers.\n\n<span class="para-ref">[2.2]</span> While the Second Empire collapsed, the newly proclaimed French Third Republic fought on with desperate defiance. German armies advanced rapidly to encircle Paris, subjecting the capital to a brutal four-month winter siege. Freezing temperatures and starvation forced Paris to capitulate in January 1871, leaving French national pride permanently traumatized.\n\n<span class="para-ref">[2.3]</span> The prolonged siege devastated Parisian civilian morale and hardened German diplomatic demands. Starving citizens consumed zoo animals and sewer vermin while Prussian shells rained onto historic monuments, instilling a profound mutual enmity that endured for generations.`,
       },
       {
         title: 'Annexation Cartography & "La Tache Noire"',
@@ -770,11 +771,11 @@ function getGreatWarLessonSections(lesson, idx) {
     return [
       {
         title: 'The 1884 Berlin Conference & Late Arrival',
-        text: `<span class="para-ref">[1.1]</span> Between 1881 and 1914, European imperial powers engaged in a frantic race to carve up the African continent, known as the "Scramble for Africa". Seeking rubber, copper, cotton, and captive markets, European nations expanded their colonial control from ten percent of Africa to over ninety percent in barely three decades.\n\n<span class="para-ref">[1.2]</span> To prevent imperial rivalry from sparking European wars, Chancellor Bismarck hosted the 1884–85 Berlin Conference. Fourteen European nations established the principle of "effective occupation", requiring powers to demonstrate administrative control before claiming territory. However, having unified late in 1871, Germany received only disconnected territories in South-West Africa, Cameroon, and Tanganyika.`,
+        text: `<span class="para-ref">[1.1]</span> Between 1881 and 1914, European imperial powers engaged in a frantic race to carve up the African continent, known as the "Scramble for Africa". Seeking rubber, copper, cotton, and captive markets, European nations expanded their colonial control from ten percent of Africa to over ninety percent in barely three decades.\n\n<span class="para-ref">[1.2]</span> To prevent imperial rivalry from sparking European wars, Chancellor Bismarck hosted the 1884–85 Berlin Conference. Fourteen European nations established the principle of "effective occupation", requiring powers to demonstrate administrative control before claiming territory. However, having unified late in 1871, Germany received only disconnected territories in South-West Africa, Cameroon, and Tanganyika.\n\n<span class="para-ref">[1.3]</span> The arbitrary borders drawn across maps of Africa ignored established ethnic and linguistic communities, locking indigenous populations into colonial exploitation. Meanwhile, German colonial enthusiasts grew increasingly resentful that Britain and France held the most fertile and strategically vital territories across the continent.`,
       },
       {
         title: 'Wilhelm II, Weltpolitik & "A Place in the Sun"',
-        text: `<span class="para-ref">[2.1]</span> In 1890, Kaiser Wilhelm II dismissed Bismarck and abandoned cautious continental diplomacy in favour of <em>Weltpolitik</em> (World Policy). Wilhelm believed that Germany's booming industrial strength and demographic growth entitled it to global imperial status, demanding for Germany its rightful "place in the sun".\n\n<span class="para-ref">[2.2]</span> Wilhelm's aggressive colonial ambitions directly alarmed Britain and France. Britain viewed German colonial overtures as threats to vital sea routes to India, while France fiercely protected its North African sphere of influence. Rather than winning international prestige, German diplomatic bullying fostered deep international suspicion and colonial friction.`,
+        text: `<span class="para-ref">[2.1]</span> In 1890, Kaiser Wilhelm II dismissed Bismarck and abandoned cautious continental diplomacy in favour of <em>Weltpolitik</em> (World Policy). Wilhelm believed that Germany's booming industrial strength and demographic growth entitled it to global imperial status, demanding for Germany its rightful "place in the sun".\n\n<span class="para-ref">[2.2]</span> Wilhelm's aggressive colonial ambitions directly alarmed Britain and France. Britain viewed German colonial overtures as threats to vital sea routes to India, while France fiercely protected its North African sphere of influence. Rather than winning international prestige, German diplomatic bullying fostered deep international suspicion and colonial friction.\n\n<span class="para-ref">[2.3]</span> German attempts to challenge French hegemony in North Africa through aggressive theatrical diplomacy backfired. Rather than isolating France, German saber-rattling convinced British foreign ministers that Germany was an unpredictable imperial rival determined to dismantle established international treaties.`,
       },
       {
         title: 'The First Moroccan Crisis: Tangier (1905)',
@@ -792,11 +793,11 @@ function getGreatWarLessonSections(lesson, idx) {
     return [
       {
         title: 'The Two-Power Standard & The Island Empire',
-        text: `<span class="para-ref">[1.1]</span> For centuries, Great Britain's global security, commercial empire, and domestic survival depended upon unassailable naval supremacy. As an island nation that imported over sixty percent of its food supply and raw materials, Britain maintained the strict "Two-Power Standard"—a parliamentary policy requiring the Royal Navy to be as large as the next two rival navies combined.\n\n<span class="para-ref">[1.2]</span> In 1898 and 1900, German Admiral Alfred von Tirpitz, enthusiastically backed by Kaiser Wilhelm II, steered monumental Navy Laws through the Reichstag. Tirpitz initiated the rapid construction of a high-seas battlefleet directly across the North Sea, sparking an intense naval arms race with Great Britain.`,
+        text: `<span class="para-ref">[1.1]</span> For centuries, Great Britain's global security, commercial empire, and domestic survival depended upon unassailable naval supremacy. As an island nation that imported over sixty percent of its food supply and raw materials, Britain maintained the strict "Two-Power Standard"—a parliamentary policy requiring the Royal Navy to be as large as the next two rival navies combined.\n\n<span class="para-ref">[1.2]</span> In 1898 and 1900, German Admiral Alfred von Tirpitz, enthusiastically backed by Kaiser Wilhelm II, steered monumental Navy Laws through the Reichstag. Tirpitz initiated the rapid construction of a high-seas battlefleet directly across the North Sea, sparking an intense naval arms race with Great Britain.\n\n<span class="para-ref">[1.3]</span> The German Navy Laws allocated vast imperial resources to construct high-seas battleships within hours of the English coast. For British naval planners, this proximity was intolerable: while a continental army protected Germany from invasion, a rival high-seas fleet could only be intended to contest British maritime sovereignty.`,
       },
       {
         title: 'Tirpitz’s Risk Theory & The Strategic Threat',
-        text: `<span class="para-ref">[2.1]</span> Admiral von Tirpitz justified German naval expansion through his famous "Risk Theory" (<em>Risikogedanke</em>). He argued that if Germany possessed a fleet so formidable that even the mighty Royal Navy could not attack it without sustaining catastrophic losses, Britain would be compelled to grant Germany diplomatic concessions and colonial territory worldwide.\n\n<span class="para-ref">[2.2]</span> The strategy backfired catastrophically. Instead of intimidating Britain, Tirpitz's naval build-up was perceived by London as a direct existential threat. British military planners concluded that while a merchant navy was a necessity for Britain, a German battlefleet was a luxury designed solely for aggressive war.`,
+        text: `<span class="para-ref">[2.1]</span> Admiral von Tirpitz justified German naval expansion through his famous "Risk Theory" (<em>Risikogedanke</em>). He argued that if Germany possessed a fleet so formidable that even the mighty Royal Navy could not attack it without sustaining catastrophic losses, Britain would be compelled to grant Germany diplomatic concessions and colonial territory worldwide.\n\n<span class="para-ref">[2.2]</span> The strategy backfired catastrophically. Instead of intimidating Britain, Tirpitz's naval build-up was perceived by London as a direct existential threat. British military planners concluded that while a merchant navy was a necessity for Britain, a German battlefleet was a luxury designed solely for aggressive war.\n\n<span class="para-ref">[2.3]</span> The British Admiralty retaliated by redeploying capital ships from Mediterranean and Asian stations into domestic home waters. By concentrating the fleet in the North Sea and expanding North Sea destroyer patrols, Britain transformed German naval ambition into an unsustainable financial and diplomatic burden.`,
       },
       {
         title: 'Fisher’s Revolution: HMS Dreadnought (1906)',
@@ -814,11 +815,11 @@ function getGreatWarLessonSections(lesson, idx) {
     return [
       {
         title: 'Bismarck’s Web & The Reinsurance Treaty',
-        text: `<span class="para-ref">[1.1]</span> Following the unification of Germany in 1871, Chancellor Bismarck's paramount foreign policy priority was preserving the newly created Reich by keeping defeated France diplomatically isolated. In 1882, Bismarck concluded the Triple Alliance with Austria-Hungary and Italy, creating a defensive bulwark across Central Europe.\n\n<span class="para-ref">[1.2]</span> Bismarck's masterstroke was the 1887 secret Reinsurance Treaty with Russia, ensuring Russian neutrality if France attacked Germany. Bismarck recognized that Germany could not survive a two-front war against both France and Russia simultaneously. His intricate diplomatic web required immense skill, maintaining friendship with autocratic Russia while allied to Russia's Balkan rival, Austria-Hungary.`,
+        text: `<span class="para-ref">[1.1]</span> Following the unification of Germany in 1871, Chancellor Bismarck's paramount foreign policy priority was preserving the newly created Reich by keeping defeated France diplomatically isolated. In 1882, Bismarck concluded the Triple Alliance with Austria-Hungary and Italy, creating a defensive bulwark across Central Europe.\n\n<span class="para-ref">[1.2]</span> Bismarck's masterstroke was the 1887 secret Reinsurance Treaty with Russia, ensuring Russian neutrality if France attacked Germany. Bismarck recognized that Germany could not survive a two-front war against both France and Russia simultaneously. His intricate diplomatic web required immense skill, maintaining friendship with autocratic Russia while allied to Russia's Balkan rival, Austria-Hungary.\n\n<span class="para-ref">[1.3]</span> Bismarck understood that Germany's exposed central European geography created acute vulnerabilities. By maintaining simultaneous diplomatic understandings with Petersburg, Vienna, and Rome, Bismarck constructed a web of mutual commitments that discouraged any single power from launching an unprovoked war.`,
       },
       {
         title: 'The Lapse of Treaty & The Franco-Russian Entente',
-        text: `<span class="para-ref">[2.1]</span> In 1890, the arrogant young Kaiser Wilhelm II dismissed Bismarck and allowed the vital Reinsurance Treaty with Russia to lapse, dismissively believing that the ideological gulf between autocratic Russia and republican France would prevent any alliance between them.\n\n<span class="para-ref">[2.2]</span> Wilhelm miscalculated disastrously. Starved of foreign loans to industrialize, Tsarist Russia turned to Paris. In 1894, republican France and autocratic Russia ratified the Franco-Russian Alliance, binding both powers to mobilize immediately if either was attacked by Germany. Bismarck's worst strategic nightmare—hostile encirclement on two fronts—was now reality.`,
+        text: `<span class="para-ref">[2.1]</span> In 1890, the arrogant young Kaiser Wilhelm II dismissed Bismarck and allowed the vital Reinsurance Treaty with Russia to lapse, dismissively believing that the ideological gulf between autocratic Russia and republican France would prevent any alliance between them.\n\n<span class="para-ref">[2.2]</span> Wilhelm miscalculated disastrously. Starved of foreign loans to industrialize, Tsarist Russia turned to Paris. In 1894, republican France and autocratic Russia ratified the Franco-Russian Alliance, binding both powers to mobilize immediately if either was attacked by Germany. Bismarck's worst strategic nightmare—hostile encirclement on two fronts—was now reality.\n\n<span class="para-ref">[2.3]</span> The Franco-Russian convention promised automatic military mobilization if either signatory was attacked by a member of the Triple Alliance. This rigid, binding treaty transformed European diplomacy: any confrontation between Austria and Russia in the Balkans would now automatically drag France and Germany into armed conflict.`,
       },
       {
         title: 'Encirclement & The Triple Entente (1904–1907)',
@@ -836,11 +837,11 @@ function getGreatWarLessonSections(lesson, idx) {
     return [
       {
         title: 'The Balkan Powder Keg & The Annexation Crisis',
-        text: `<span class="para-ref">[1.1]</span> As the Ottoman Empire steadily disintegrated in southeastern Europe, the Balkan peninsula became known as the "Powder Keg of Europe". Small Slavic nations, particularly ambitious Serbia, sought to expand their borders and liberate ethnic Slavs living under foreign imperial rule, strongly backed by Tsarist Russia under the banner of Pan-Slavism.\n\n<span class="para-ref">[1.2]</span> In 1908, Austria-Hungary triggered the Bosnian Crisis by formally annexing the Slav province of Bosnia-Herzegovina. Enraged Serbian nationalists demanded war, but Russia was forced to back down when Germany threatened military intervention. Serbia vowed revenge, while Russia resolved never to suffer diplomatic humiliation in the Balkans again.`,
+        text: `<span class="para-ref">[1.1]</span> As the Ottoman Empire steadily disintegrated in southeastern Europe, the Balkan peninsula became known as the "Powder Keg of Europe". Small Slavic nations, particularly ambitious Serbia, sought to expand their borders and liberate ethnic Slavs living under foreign imperial rule, strongly backed by Tsarist Russia under the banner of Pan-Slavism.\n\n<span class="para-ref">[1.2]</span> In 1908, Austria-Hungary triggered the Bosnian Crisis by formally annexing the Slav province of Bosnia-Herzegovina. Enraged Serbian nationalists demanded war, but Russia was forced to back down when Germany threatened military intervention. Serbia vowed revenge, while Russia resolved never to suffer diplomatic humiliation in the Balkans again.\n\n<span class="para-ref">[1.3]</span> The Balkan Wars of 1912–1913 further inflamed regional hatreds, doubling Serbia's territory and convincing military leaders in Belgrade that Austrian rule over South Slavs was doomed, while Austro-Hungarian generals concluded that only a preemptive war could crush the Serbian threat.`,
       },
       {
         title: 'The Black Hand & The Shots at Sarajevo',
-        text: `<span class="para-ref">[2.1]</span> On Sunday 28 June 1914, Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, arrived in Sarajevo, the capital of Bosnia. Serbian nationalist society <em>The Black Hand</em>, covertly led by Serbian military intelligence chief Dragutin Dimitrijević ("Apis"), smuggled seven young Bosnian Serb assassins equipped with bombs and pistols into the city.\n\n<span class="para-ref">[2.2]</span> After an initial bomb bounced off the royal motorcade, the Archduke's driver took a wrong turn into Franz Josef Street. Nineteen-year-old assassin Gavrilo Princip stepped forward and fired two fatal shots, killing Franz Ferdinand and his wife Sophie at point-blank range, detonating the explosive fuse of European diplomacy.`,
+        text: `<span class="para-ref">[2.1]</span> On Sunday 28 June 1914, Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, arrived in Sarajevo, the capital of Bosnia. Serbian nationalist society <em>The Black Hand</em>, covertly led by Serbian military intelligence chief Dragutin Dimitrijević ("Apis"), smuggled seven young Bosnian Serb assassins equipped with bombs and pistols into the city.\n\n<span class="para-ref">[2.2]</span> After an initial bomb bounced off the royal motorcade, the Archduke's driver took a wrong turn into Franz Josef Street. Nineteen-year-old assassin Gavrilo Princip stepped forward and fired two fatal shots, killing Franz Ferdinand and his wife Sophie at point-blank range, detonating the explosive fuse of European diplomacy.\n\n<span class="para-ref">[2.3]</span> The assassination triggered immediate anti-Serb riots across Sarajevo and Vienna. Discovering that Princip's weapons originated in Serbian arsenals, Austro-Hungarian hawks seized the long-sought pretext to crush their southern neighbour once and for all.`,
       },
       {
         title: 'The Blank Cheque & The Austrian Ultimatum',
@@ -1380,6 +1381,29 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .col-side .archival-source-box {
       margin: 0;
+    }
+    .two-column-grid .narrative-p {
+      margin: 0 0 2px 0;
+      line-height: 1.30;
+    }
+    .two-column-grid .archival-source-box {
+      padding: 3px 5px;
+    }
+    .two-column-grid .archival-image {
+      height: 110px;
+    }
+    .two-column-grid .archival-context-box {
+      padding: 2px 4px;
+      margin: 1.5px 0;
+    }
+    .two-column-grid .archival-context-text {
+      font-size: 7.7pt;
+      line-height: 1.22;
+      margin: 0 0 1px 0;
+    }
+    .two-column-grid .archival-hinge-q {
+      font-size: 7.6pt;
+      line-height: 1.22;
     }
 
     /* Right Page 2-Tier Balanced Layout */
@@ -2235,47 +2259,47 @@ async function buildPublisherTextbookHtmlGreatWar() {
       <table class="cover-matrix-table">
         <thead>
           <tr>
-            <th style="width: 15%;">Lesson</th>
-            <th style="width: 45%;">Historical Enquiry &amp; Narrative Focus</th>
-            <th style="width: 25%;">Primary Source Core</th>
-            <th style="width: 15%;">Page Ref</th>
+            <th style="width: 14%;">Lesson</th>
+            <th style="width: 44%;">Historical Enquiry &amp; Narrative Focus</th>
+            <th style="width: 30%;">Disciplinary Skill &amp; Assessment Focus</th>
+            <th style="width: 12%;">Page Ref</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Lesson 1</strong></td>
             <td>The Creation of the German Empire: Bismarck, Blood &amp; Iron, and 1871</td>
-            <td>German Empire (1871) Boundary Map</td>
+            <td>Causal Explanation &amp; Diplomatic Realpolitik</td>
             <td>pp. 2–3</td>
           </tr>
           <tr>
             <td><strong>Lesson 2</strong></td>
             <td>The Franco-Prussian War: Alsace-Lorraine and the Legacy of Hatred</td>
-            <td><em>La Tache Noire</em> &amp; Annexation Cartography</td>
+            <td>Historical Consequence &amp; French Revanchism</td>
             <td>pp. 4–5</td>
           </tr>
           <tr>
             <td><strong>Lesson 3</strong></td>
             <td>The 'Scramble for Africa': Berlin Conference and the Moroccan Crises</td>
-            <td>1914 Partition of Africa &amp; Agadir Dispatches</td>
+            <td>Source Utility &amp; Imperial Colonial Rivalry</td>
             <td>pp. 6–7</td>
           </tr>
           <tr>
             <td><strong>Lesson 4</strong></td>
             <td>The Battleship Contest: HMS Dreadnought and the Anglo-German Naval Race</td>
-            <td>Fisher Secret Memo &amp; 1909 Satirical Press</td>
+            <td>Historical Causation &amp; The Naval Arms Race</td>
             <td>pp. 8–9</td>
           </tr>
           <tr>
             <td><strong>Lesson 5</strong></td>
             <td>The Alliance System: Triple Alliance, Triple Entente &amp; The Schlieffen Plan</td>
-            <td>Alliance Map &amp; Schlieffen Offensive Plan</td>
+            <td>Historical Interpretations &amp; Alliance Systems</td>
             <td>pp. 10–11</td>
           </tr>
           <tr>
             <td><strong>Lesson 6</strong></td>
             <td>The Assassination in Sarajevo: The Black Hand, Blank Cheque &amp; July Crisis</td>
-            <td>Sarajevo Route Map &amp; Black Hand Constitution</td>
+            <td>Multi-Causal Synthesis &amp; The July Crisis</td>
             <td>pp. 12–13</td>
           </tr>
         </tbody>
@@ -2421,6 +2445,10 @@ async function runGreatWar() {
   fs.writeFileSync(htmlPath, htmlContent, 'utf8');
   console.log(`✅ Saved HTML companion to: ${htmlPath}`);
 
+  const unitHtmlPath = path.join(ROOT_DIR, 'units', 'great_war', 'textbook.html');
+  fs.writeFileSync(unitHtmlPath, htmlContent, 'utf8');
+  console.log(`✅ Updated unit textbook.html: ${unitHtmlPath}`);
+
   // Compile PDF with Puppeteer
   const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
   if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
@@ -2446,6 +2474,21 @@ async function runGreatWar() {
 
     console.log(`🎉 Masterpiece PDF Textbook Great War successfully compiled!`);
     console.log(`📄 PDF Output: ${pdfPath}`);
+
+    // Audit page budget
+    console.log('\nAuditing Page Budget...');
+    try {
+      const report = await auditPageBudget(page, {
+        pageSelector: '.textbook-page, .page, .a4-page',
+        underflowThresholdPx: 40,
+        minUtilizationPct: 85,
+        maxGapAboveFooterPx: 25,
+        maxInterTaskGapPx: 35,
+      });
+      printSpaceAuditReport(report, path.basename(htmlPath));
+    } catch (auditErr) {
+      console.warn('⚠️ Page budget audit error:', auditErr.message);
+    }
 
     await page.close();
     await browser.close();
