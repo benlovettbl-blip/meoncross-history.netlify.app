@@ -1809,6 +1809,10 @@ async function renderMedievalMasterTextbook() {
   await browser.close();
   console.log(`Master Textbook PDF compiled to: ${outPdfPath}`);
 
+  const v17Path = path.join(ROOT_DIR, 'public', 'pdfs', 'medieval_england_textbook_FINAL_V17.pdf');
+  fs.copyFileSync(outPdfPath, v17Path);
+  console.log(`Synchronized to production V17: ${v17Path}`);
+
   // Mirror to G: Drive if available
   const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\Year 7\\Medieval England';
   if (fs.existsSync(driveDir)) {

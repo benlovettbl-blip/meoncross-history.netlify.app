@@ -11,10 +11,10 @@ const CONCEPT_SPOTLIGHTS = {
   p3: {
     tag: 'TACTICAL MECHANISM: THE SHIELD WALL',
     category: 'BATTLEFIELD CAUSATION • 14 OCTOBER 1066',
-    title: 'The Feigned Retreat: Breaking the Anglo-Saxon Shield Wall',
-    body: "The Anglo-Saxon shield wall was an impenetrable defensive barrier, but lacked tactical mobility. When Duke William ordered his cavalry to feign retreat, undisciplined Saxon fyrd troops broke ranks down Senlac Hill. The Norman cavalry wheeled around, encircled the scattered infantry, and cut them down, exposing King Harold's elite housecarls and turning a stalemate into a rout.",
+    title: 'The Feigned Retreat: Breaking the Shield Wall',
+    body: 'The Saxon shield wall was an impenetrable barrier but lacked tactical mobility. When Duke William ordered his cavalry to feign retreat, undisciplined Saxon troops broke ranks down Senlac Hill. The Normans wheeled around, encircled the scattered infantry, and slaughtered them—exposing King Harold and turning stalemate into rout.',
     takeaway:
-      'Key Insight: Hastings was decided not by individual bravery, but by Norman combined-arms flexibility exploiting the rigid immobility of the Saxon shield wall.',
+      'Key Insight: Hastings was decided by Norman combined-arms flexibility exploiting the rigid immobility of the Saxon shield wall.',
   },
   p5: {
     tag: 'INSTITUTIONAL MECHANISM: FEUDAL TENURE',

@@ -154,13 +154,13 @@ const lessonConfigs = [
     timelineMission:
       'Illustrate Milestone 2 on Page 2: Sketch the 1494 Tordesillas meridian dividing the Atlantic, or Drake’s fireships scattering the Armada.',
     enquiryQuestion:
-      'Enquiry: How useful are Source A (Visual: Tordesillas Map) and Source B (Textual: Hakluyt’s Discourse) for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
+      'Enquiry: How useful are Source A (Visual: The Treaty of Tordesillas) and Source B (Textual: Hakluyt’s Discourse) for investigating why European rulers risked everything to cross the oceans (1494–1588)?',
     sourceA: {
-      title: 'Source A (Visual): Map of the Treaty of Tordesillas Meridian Line (1494)',
-      image: '/images/tordesillas_map.png',
-      shelfmark: 'GENERAL ARCHIVE OF THE INDIES • SEVILLE • PATRONATO 1',
-      text: 'Contemporary cartographic record illustrating the papal meridian line agreed at Tordesillas in 1494, awarding all lands west to Spain and east to Portugal, legally barring England and France from the New World.',
-      clue: 'Provenance Clue: Official cartographic treaty endorsed by the Pope; visually reveals Spain’s claim to a complete monopoly over Atlantic waters and American territory.',
+      title: 'Source A (Visual): The Treaty of Tordesillas (1494)',
+      image: '/images/tordesillas_treaty_parchment.jpg',
+      shelfmark: 'GENERAL ARCHIVE OF THE INDIES • SEVILLE • PATRONATO 1-1-1',
+      text: 'Original papal diplomatic parchment agreed at Tordesillas in 1494, awarding all lands west to Spain and east to Portugal, legally barring England and France from the New World.',
+      clue: 'Provenance Clue: Official diplomatic treaty endorsed by the Pope; reveals how Spain claimed divine and legal ownership over newly encountered oceans and continents.',
     },
     sourceB: {
       title: 'Source B (Textual): Richard Hakluyt, Discourse on Western Planting (1584)',
@@ -175,7 +175,7 @@ const lessonConfigs = [
       },
       {
         col: '2. PROVENANCE & MOTIVE',
-        text: 'Evaluate how the nature of each medium (official cartographic treaty vs secret royal intelligence briefing) shapes its historical utility.',
+        text: 'Evaluate how the nature of each medium (official diplomatic parchment vs secret royal intelligence briefing) shapes its historical utility.',
       },
       {
         col: '3. HISTORICAL JUDGEMENT',
@@ -183,7 +183,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Source A (Visual: Tordesillas Map) is useful for showing how Spain claimed divine and legal ownership over... • However, as a map it does not reveal the violent resistance or economic greed behind... • In contrast, Source B (Textual: Hakluyt’s Discourse) provides insider strategic insight into England’s desire to... • Cross-referencing both visual and textual sources demonstrates that exploration was driven by... • Overall, Source [A/B] is more valuable for this enquiry because...',
+      'Source A (Visual: The Treaty of Tordesillas) is useful for showing how Spain claimed divine and legal ownership over... • However, as a formal diplomatic document it does not reveal the violent resistance or economic greed behind... • In contrast, Source B (Textual: Hakluyt’s Discourse) provides insider strategic insight into England’s desire to... • Cross-referencing both visual and textual sources demonstrates that exploration was driven by... • Overall, Source [A/B] is more valuable for this enquiry because...',
     doNow: [
       {
         q: 'Which Chinese imperial dynasty deployed massive treasure fleets under Zheng He?',

@@ -849,7 +849,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         badge: 'SOURCE A',
         type: 'Papal Diplomatic Parchment',
         title: 'The Treaty of Tordesillas: Dividing the Globe (1494)',
-        image: getBase64Image('/images/tordesillas_map.jpg'),
+        image: getBase64Image('/images/tordesillas_treaty_parchment.jpg'),
         expand: 'sm',
         context:
           'Brokered by Pope Alexander VI, this treaty drew an imaginary meridian 370 leagues west of the Cape Verde islands. Spain received exclusive sovereign rights to conquer all lands west of the line, while Portugal claimed everything to the east.',
