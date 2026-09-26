@@ -128,7 +128,8 @@
     .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6px;
       height: 100%;
       overflow: hidden;
     }
@@ -138,6 +139,11 @@
     }
     .col-side .archival-source-box {
       margin: 0;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* Right Page 2-Tier Balanced Layout */
@@ -155,6 +161,18 @@
       column-gap: 5mm;
       flex: 1;
       overflow: hidden;
+    }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 5px;
+    }
+    .right-upper-grid .col-side .key-figure-box,
+    .right-upper-grid .col-side .concept-spotlight-box {
+      margin: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
@@ -282,15 +300,23 @@
       margin-bottom: 3px;
       line-height: 1.22;
     }
+    .two-column-grid .archival-image,
     .archival-image {
       width: 100%;
-      height: 100px;
-      object-fit: contain;
+      max-height: 145px;
+      min-height: 75px;
+      height: 100%;
+      flex: 1;
+      min-height: 0;
+      object-fit: contain !important;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 2px;
       display: block;
       margin-bottom: 3.5px;
+    }
+    .archival-source-box.expand-sm .archival-image {
+      height: 80px;
     }
     .archival-source-box.expand-md .archival-image {
       height: 125px;
@@ -523,36 +549,6 @@
       border-radius: 2px;
       border: 1px solid #cbd5e1;
       flex-shrink: 0;
-    }
-    .kf-portrait.kf-monogram {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 35% 35%, #1e293b 0%, #0f172a 100%);
-      border: 1px solid #64748b;
-      border-radius: 2px;
-      color: #f8fafc;
-      text-align: center;
-      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
-      user-select: none;
-    }
-    .kf-monogram-initials {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 14pt;
-      font-weight: 800;
-      line-height: 1;
-      color: #f8fafc;
-      letter-spacing: 0.5px;
-    }
-    .kf-monogram-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 4.5pt;
-      font-weight: 800;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: #94a3b8;
-      margin-top: 2px;
     }
     .kf-identity-text {
       flex: 1;
@@ -2236,7 +2232,7 @@
             <span class="topic-badge">KS3 HISTORY &bull; UNIT 2</span>
             <span class="spec-ref-badge">LESSON 5 OF 6</span>
           </div>
-          <h2 class="lesson-title">Why did it take the 'Great Stink' to finally clean up Britain's streets?</h2>
+          <h2 class="lesson-title">Why did it take the "Great Stink" to finally clean up Britain's streets?</h2>
           <div class="lesson-spec-anchor">
             <strong>Key Enquiry:</strong> “Why did it take so long to clean up Britain?” &bull; <em>Sections 1 &amp; 2: Context, Catalysts &amp; Primary Evidence</em>
           </div>
@@ -2368,7 +2364,7 @@
             <span class="topic-badge right-topic-badge">ENQUIRY ANALYSIS &bull; ACTS 3 &amp; 4</span>
             <span class="spec-ref-badge">PAGE 11 &bull; FORENSIC CORE</span>
           </div>
-          <h3 class="right-header-title">Why did it take the 'Great Stink' to finally clean up Britain's streets?</h3>
+          <h3 class="right-header-title">Why did it take the "Great Stink" to finally clean up Britain's streets?</h3>
           <div class="lesson-spec-anchor">
             <strong>Key Evidence &amp; Enquiries:</strong> Primary Sources, Key Individuals, Turning Points &amp; How Historians Debate
           </div>
@@ -2497,7 +2493,7 @@
             <span class="topic-badge">KS3 HISTORY &bull; UNIT 2</span>
             <span class="spec-ref-badge">LESSON 6 OF 6</span>
           </div>
-          <h2 class="lesson-title">End of Unit Assessment: Cholera Investigation</h2>
+          <h2 class="lesson-title">Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?</h2>
           <div class="lesson-spec-anchor">
             <strong>Key Enquiry:</strong> “Why did it take so long to clean up Britain?” &bull; <em>Sections 1 &amp; 2: Context, Catalysts &amp; Primary Evidence</em>
           </div>
@@ -2613,7 +2609,7 @@
             <span class="topic-badge right-topic-badge">ENQUIRY ANALYSIS &bull; ACTS 3 &amp; 4</span>
             <span class="spec-ref-badge">PAGE 13 &bull; FORENSIC CORE</span>
           </div>
-          <h3 class="right-header-title">End of Unit Assessment: Cholera Investigation</h3>
+          <h3 class="right-header-title">Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?</h3>
           <div class="lesson-spec-anchor">
             <strong>Key Evidence &amp; Enquiries:</strong> Primary Sources, Key Individuals, Turning Points &amp; How Historians Debate
           </div>

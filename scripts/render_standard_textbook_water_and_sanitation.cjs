@@ -34,11 +34,9 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-// Parse units/water_and_sanitation/data.js
-const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
+// Load units/water_and_sanitation/data.js
+const imported = require(dataPath);
+const unitData = imported.water_and_sanitation || imported.default || imported;
 
 const lessons = unitData.lessons || [];
 console.log(`Loaded ${lessons.length} Water & Sanitation lessons for publisher textbook.`);
@@ -1396,7 +1394,8 @@ async function buildPublisherTextbookHtmlWater() {
     .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6px;
       height: 100%;
       overflow: hidden;
     }
@@ -1406,6 +1405,11 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .col-side .archival-source-box {
       margin: 0;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* Right Page 2-Tier Balanced Layout */
@@ -1423,6 +1427,18 @@ async function buildPublisherTextbookHtmlWater() {
       column-gap: 5mm;
       flex: 1;
       overflow: hidden;
+    }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 5px;
+    }
+    .right-upper-grid .col-side .key-figure-box,
+    .right-upper-grid .col-side .concept-spotlight-box {
+      margin: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
@@ -1550,10 +1566,15 @@ async function buildPublisherTextbookHtmlWater() {
       margin-bottom: 3px;
       line-height: 1.22;
     }
+    .two-column-grid .archival-image,
     .archival-image {
       width: 100%;
-      height: 100px;
-      object-fit: contain;
+      max-height: 145px;
+      min-height: 75px;
+      height: 100%;
+      flex: 1;
+      min-height: 0;
+      object-fit: contain !important;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 2px;

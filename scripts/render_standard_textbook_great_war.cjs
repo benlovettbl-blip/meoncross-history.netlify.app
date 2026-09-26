@@ -1371,7 +1371,8 @@ async function buildPublisherTextbookHtmlGreatWar() {
     .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6px;
       height: 100%;
       overflow: hidden;
     }
@@ -1381,6 +1382,11 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .col-side .archival-source-box {
       margin: 0;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .two-column-grid .narrative-p {
       margin: 0 0 2px 0;
@@ -1390,7 +1396,12 @@ async function buildPublisherTextbookHtmlGreatWar() {
       padding: 3px 5px;
     }
     .two-column-grid .archival-image {
-      height: 110px;
+      max-height: 145px;
+      min-height: 75px;
+      height: 100%;
+      flex: 1;
+      min-height: 0;
+      object-fit: contain !important;
     }
     .two-column-grid .archival-context-box {
       padding: 2px 4px;
@@ -1424,11 +1435,15 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .right-upper-grid .col-side {
       justify-content: flex-start;
-      gap: 3.5px;
+      gap: 5px;
     }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
       margin: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
