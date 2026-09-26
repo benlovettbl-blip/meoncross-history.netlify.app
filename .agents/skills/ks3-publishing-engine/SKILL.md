@@ -39,7 +39,17 @@ All KS3 companion textbooks must strictly enforce the following architecture:
    - Section B: Key Individual Profile Card with an **authentic, non-AI primary portrait** (never an oil painting when a photo exists; never hardware/ships replacing a human face).
    - Section C: Core Historical Prose with **Pure PEEL Paragraph Referencing** (`<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[1.2]</span>`, `<span class="para-ref">[2.1]</span>`). Only index paragraphs; never index individual sentences.
    - Section D: Historiographical Spotlight or Turning Point Mechanism.
-5. **Master Revision Back Cover ($\ge 90\%$ Page Budget):**
+5. **The Two-Pillar Master Textbook Standard (Eliminating Dead Chasms & Overflows):**
+   To permanently eliminate floating dead chasms (40px–130px voids between narrative prose and primary sources) while strictly guaranteeing 0px page overflow and $\ge 95\%$ page budget efficiency, every master textbook must enforce:
+   - **Pillar 1: Upstream Golden Word Budget:**
+     * **Verso (Left Page) Acts (Act 1 & Act 2):** Target **180–205 words** per act across 3 paragraphs (`[1.1]`, `[1.2]`, `[1.3]` and `[2.1]`, `[2.2]`, `[2.3]`). Embed authentic primary statistics, troop movements, shell totals, casualties, and demographic figures directly in the prose.
+     * **Recto (Right Page) Acts (Act 3 & Act 4):** Target **120–145 words** per act across 2 dense paragraphs (`[3.1]`, `[3.2]` and `[4.1]`, `[4.2]`). This accommodates the Key Figure Card, Concept Spotlight, Fullwidth Archival Dispatch, and Enquiry Writing Box without vertical clipping.
+   - **Pillar 2: Layout Engine Architecture (Grounded Flexbox & Dynamic Sizing):**
+     * **Verso Grid Flow:** Replace `justify-content: space-between` with `.col-side { display: flex; flex-direction: column; justify-content: flex-start; gap: 6px; height: 100%; overflow: hidden; }`.
+     * **Dynamic Source Box Expansion:** Set `.col-side .archival-source-box { flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 0; }`.
+     * **Dynamic Primary Image Scaling:** Replace hardcoded `height: 110px` or `122px` with `max-height: 145px; min-height: 90px; height: 100%; flex: 1; object-fit: contain;`. The primary source image dynamically absorbs column slack, eliminating dead voids.
+     * **Recto Baseline Alignment:** In `.right-upper-grid .col-side`, use `justify-content: flex-start; gap: 5px;` and set `.key-figure-box, .concept-spotlight-box { flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 0; }`. Both boxes start immediately below the narrative text and ground to the exact same baseline above the Archival Dispatch.
+6. **Master Revision Back Cover ($\ge 90\%$ Page Budget):**
    - 16–18 event visual chronological spine across the period.
    - Analytical framework matrix (e.g. M-A-I-N or Causal Progression).
    - Historiographical debate summary contrasting rival academic interpretations.

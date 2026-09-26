@@ -590,16 +590,22 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6px;
       height: 100%;
       overflow: hidden;
     }
     .col-top-group {
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
     }
     .col-side .archival-source-box {
       margin: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .two-column-grid .narrative-p {
       margin: 0 0 4px 0;
@@ -610,7 +616,10 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       padding: 4.5px 6.5px;
     }
     .two-column-grid .archival-image {
-      height: 122px;
+      max-height: 145px;
+      min-height: 90px;
+      height: 100%;
+      flex: 1;
       object-fit: contain;
     }
     .two-column-grid .archival-body {
@@ -647,14 +656,15 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 5mm;
-      flex-shrink: 0;
+      flex: 1;
       overflow: hidden;
+      margin-bottom: 4px;
     }
     .right-upper-grid .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 7px;
+      justify-content: space-between;
+      height: 100%;
       overflow: hidden;
     }
     .right-upper-grid .narrative-p {
@@ -662,13 +672,21 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       line-height: 1.48;
       margin: 0 0 4.5px 0;
     }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 5px;
+    }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
       margin: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
-      margin: 4px 0 2px 0;
+      margin: 3px 0 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-source-box {
       margin: 0;
