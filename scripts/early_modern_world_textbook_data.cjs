@@ -356,7 +356,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         lifespan: 'c. 1616–1658',
         role: 'New Model Army Trooper, Elected Agitator & Leveller Spokesman',
         significance:
-          'A Suffolk cavalry trooper elected by his fellow soldiers to represent regimental grievances, who famously represented the rank-and-file at the 1647 Putney Debates to demand parliamentary franchise for all free Englishmen.',
+          'Suffolk cavalry trooper elected as an Army Agitator; represented the rank-and-file at the 1647 Putney Debates to demand democratic franchise for free Englishmen.',
         actions: [
           'Elected by Fairfax’s troopers as an Army Agitator to present *The Agreement of the People* demanding supreme power belong to the commons.',
           'Debated Henry Ireton and Oliver Cromwell inside St Mary’s Church at Putney, warning that ordinary soldiers would not be denied their civil liberties after shedding their blood in the Civil War.',
@@ -368,7 +368,7 @@ module.exports = function getEarlyModernData(helpers = {}) {
         tag: 'CONSTITUTIONAL DOCTRINE',
         category: 'THE TRIAL OF A KING • JANUARY 1649',
         title: 'Divine Right vs. Parliamentary Supremacy: The Great Legal Clash',
-        body: 'The English Civil War was fundamentally an ideological clash over the ultimate source of political sovereignty. Charles I defended the Divine Right of Kings, asserting that monarchs derived their power directly from God and were answerable to no earthly court. Parliament, led by radical lawyers like John Bradshaw, argued that sovereignty resided in the people, who entrusted it to Parliament. When Charles stood trial in Westminster Hall in January 1649, he repeatedly challenged the court: "I would know by what authority, I mean lawful, I was brought here?" Bradshaw countered that the king was not sovereign above the law, but a public servant bound to uphold the welfare of the commonwealth.',
+        body: 'The English Civil War was an ideological clash over political sovereignty. Charles I defended the Divine Right of Kings, claiming monarchs were answerable only to God. Parliament, led by lawyer John Bradshaw, argued sovereignty resided in the people. When Charles challenged the Westminster court: "I would know by what authority, I mean lawful, I was brought here?", Bradshaw countered that the king was not above the law, but a public servant bound to uphold the commonwealth.',
         takeaway:
           'Key Historical Insight: The regicide of Charles I shattered the divine aura of European kingship forever, establishing the revolutionary principle that rulers are accountable to the law and their subjects.',
       },

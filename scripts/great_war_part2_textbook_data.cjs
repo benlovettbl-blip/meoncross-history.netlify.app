@@ -171,6 +171,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
     },
     p8: {
       sourceA: {
+        expand: 'lg',
         badge: 'SOURCE A',
         type: 'Official Wartime Decree',
         title: 'Defence of the Realm Act (DORA) Proclamation Notice (August 1914)',
@@ -183,6 +184,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         footer: 'Official Parliamentary Record &bull; London',
       },
       sourceB: {
+        expand: 'lg',
         badge: 'SOURCE B',
         type: 'Contemporary Photographic Record',
         title: 'Munitionettes: "Canary Girls" Packing TNT Shells (1916)',
@@ -432,11 +434,11 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
         lifespan: '1861–1928',
         role: 'Commander-in-Chief of the British Expeditionary Force (1915–1918)',
         significance:
-          'Orchestrated the Somme, Passchendaele, and the victorious 1918 Hundred Days Offensive; historically polarising between "Butcher" and "Technological Learner".',
+          'Commander of the BEF on the Western Front; intensely debated between "The Butcher" and "Technological Learner".',
         actions: [
-          'Commanded British forces during the catastrophic 1 July 1916 offensive on the Somme, suffering 57,470 casualties on day one.',
-          'Maintained that continuous attritional pressure was the only viable method to break the deeply fortified German military front.',
-          'Pioneered the innovative integration of tanks, creeping artillery barrages, and aircraft reconnaissance during the 1918 Hundred Days.',
+          'Commanded British forces during the 1916 Somme offensive, sustaining 57,470 casualties on the opening day.',
+          'Insisted continuous attritional pressure was the only method to break German fortified trench lines.',
+          'Pioneered combined-arms warfare using tanks, creeping barrages, and aircraft in the victorious 1918 Hundred Days.',
         ],
         image: getBase64Image('/images/gw_douglas_haig.jpg'),
       },
@@ -487,17 +489,17 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
 
     p7: {
       keyFigure: {
-        name: 'Sepoy Khudadad Khan VC',
-        lifespan: '1888–1971',
-        role: 'Machine Gunner, 129th Duke of Connaught’s Own Baluchis',
+        name: '2nd Lt. Walter Tull',
+        lifespan: '1888–1918',
+        role: 'Combat Officer, 23rd Battalion, Middlesex Regiment',
         significance:
-          'First South Asian recipient of the Victoria Cross; his heroism at Hollebeke symbolised the decisive contribution of 1.5 million Indian soldiers on the Western Front.',
+          'Grandson of an enslaved man and pioneering Black professional footballer; broke the military colour bar to become the first Black British combat officer to lead white troops in battle.',
         actions: [
-          'Deployed to the freezing trenches of Flanders in October 1914 as part of the Lahore Division to reinforce the depleted British Expeditionary Force.',
-          'Manned his Maxim gun alone at Hollebeke after his team was overrun by Bavarian infantry, holding the line until gravely wounded.',
-          'Feigned death among fallen comrades before crawling through mud back to Allied lines, personally decorated with the VC by King George V.',
+          'Enlisted in the 17th (Footballers’) Battalion of the Middlesex Regiment in 1914, surviving heavy combat on the Somme before being selected for officer training.',
+          'Commissioned as a 2nd Lieutenant in May 1917, directly overcoming the 1914 Military Manual rule barring men of non-European descent from officer rank.',
+          'Commended for "gallantry and coolness" leading 26 soldiers across the freezing Piave River in Italy without loss, before being killed in action at Favreuil in March 1918.',
         ],
-        image: getBase64Image('/images/gw_khudadad_khan.jpg'),
+        image: getBase64Image('/images/gw_walter_tull.jpg'),
       },
       conceptSpotlight: `
         <div class="concept-spotlight-box">

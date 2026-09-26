@@ -662,12 +662,12 @@ async function buildPublisherTextbookHtmlMedieval() {
     }
     .right-upper-grid .col-side {
       justify-content: flex-start;
-      gap: 2.5px;
+      gap: 2px;
     }
     .right-upper-grid .narrative-p {
-      font-size: 9.3pt;
-      line-height: 1.28;
-      margin: 0 0 2.5px 0;
+      font-size: 9.15pt;
+      line-height: 1.22;
+      margin: 0 0 1.5px 0;
     }
     .right-upper-grid .col-side .key-figure-box,
     .right-upper-grid .col-side .concept-spotlight-box {
@@ -695,29 +695,29 @@ async function buildPublisherTextbookHtmlMedieval() {
       margin: 0 6px 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-title {
-      font-size: 8.6pt;
-      margin-bottom: 1.5px;
-      line-height: 1.15;
+      font-size: 9.2pt;
+      margin-bottom: 2px;
+      line-height: 1.18;
     }
     .fullwidth-dispatch-wrap .archival-body {
-      font-size: 7.8pt;
-      line-height: 1.22;
-      margin-bottom: 1.5px;
+      font-size: 8.4pt;
+      line-height: 1.28;
+      margin-bottom: 2px;
     }
     .fullwidth-dispatch-wrap .archival-context-box {
       clear: both;
-      padding: 1.5px 4px;
-      margin: 1.5px 0 0 0;
+      padding: 2.5px 5px;
+      margin: 2px 0 0 0;
     }
     .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 7.2pt;
-      line-height: 1.18;
-      margin: 0;
+      font-size: 8.0pt;
+      line-height: 1.22;
+      margin: 0 0 1px 0;
     }
     .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 7.2pt;
-      line-height: 1.18;
-      padding: 1px 3px;
+      font-size: 8.0pt;
+      line-height: 1.22;
+      padding: 1.5px 4px;
       margin-top: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-footer {
@@ -942,42 +942,43 @@ async function buildPublisherTextbookHtmlMedieval() {
     .kf-identity-text { flex: 1; }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.2pt;
+      font-size: 9.8pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
-      line-height: 1.12;
+      line-height: 1.14;
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      font-weight: 700;
-      color: #475569;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #831843;
       text-transform: uppercase;
-      line-height: 1.15;
+      line-height: 1.18;
     }
     .kf-significance {
-      font-size: 7.5pt;
+      font-size: 8.0pt;
       font-style: italic;
       color: #334155;
-      line-height: 1.18;
+      line-height: 1.22;
       margin-bottom: 1px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
+      font-size: 7.6pt;
+      font-weight: 900;
       color: #831843;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
       margin: 1px 0 0.5px 0;
     }
     .kf-actions-list {
       margin: 0;
       padding-left: 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.8pt;
       color: #1e293b;
-      line-height: 1.16;
+      line-height: 1.22;
     }
     .kf-actions-list li {
       margin-bottom: 0.5px;
@@ -1000,46 +1001,46 @@ async function buildPublisherTextbookHtmlMedieval() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 6.8pt;
-      font-weight: 800;
+      font-size: 7.6pt;
+      font-weight: 900;
       color: #9d174d;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       color: #64748b;
-      font-weight: 600;
+      font-weight: 700;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.6pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0 0 1px 0;
-      line-height: 1.15;
+      line-height: 1.16;
     }
     .csb-body {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.6pt;
-      line-height: 1.18;
+      font-size: 8.0pt;
+      line-height: 1.20;
       color: #1e293b;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .csb-takeaway {
       background: #ffffff;
-      border-left: 2px solid #9d174d;
+      border-left: 2.5px solid #9d174d;
       padding: 1.5px 3.5px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
-      line-height: 1.16;
+      font-size: 7.8pt;
+      line-height: 1.18;
       color: #0f172a;
       border-radius: 0 2px 2px 0;
     }
     .csb-takeaway strong {
       color: #9d174d;
       text-transform: uppercase;
-      font-size: 7.2pt;
+      font-size: 7.6pt;
     }
 
     /* Bottom Vocabulary Box */

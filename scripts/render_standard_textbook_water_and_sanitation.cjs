@@ -1824,21 +1824,21 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
-      font-weight: 600;
-      color: #475569;
+      font-size: 8.0pt;
+      font-weight: 700;
+      color: #0369a1;
       line-height: 1.20;
     }
     .kf-significance {
       font-size: 8.0pt;
-      line-height: 1.30;
+      line-height: 1.28;
       color: #334155;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -1849,9 +1849,9 @@ async function buildPublisherTextbookHtmlWater() {
       margin: 0;
       padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7.8pt;
       color: #1e293b;
-      line-height: 1.26;
+      line-height: 1.24;
     }
     .kf-actions-list li {
       margin-bottom: 1px;
@@ -1875,14 +1875,14 @@ async function buildPublisherTextbookHtmlWater() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 6.6pt;
+      font-size: 7.4pt;
       font-weight: 800;
       color: #16a34a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 6.6pt;
+      font-size: 7.0pt;
       font-weight: 700;
       color: #475569;
     }
@@ -1896,20 +1896,20 @@ async function buildPublisherTextbookHtmlWater() {
     }
     .csb-body {
       font-size: 8.0pt;
-      line-height: 1.30;
+      line-height: 1.28;
       color: #1e293b;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       color: #14532d;
       background: #dcfce7;
       border: 1px solid #86efac;
       padding: 2px 4.5px;
       border-radius: 2px;
-      line-height: 1.26;
+      line-height: 1.24;
     }
 
     /* Full-Width Bottom Vocabulary Deck (Left Page) */

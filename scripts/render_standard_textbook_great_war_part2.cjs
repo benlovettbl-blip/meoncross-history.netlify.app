@@ -599,7 +599,8 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 3px;
     }
     .two-column-grid .narrative-p {
       margin: 0 0 2.5px 0;
@@ -609,32 +610,105 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     .two-column-grid .archival-source-box {
       padding: 3.5px 5.5px;
     }
+    .two-column-grid .archival-title {
+      font-size: 8.8pt;
+      margin: 1px 0 2.5px 0;
+      line-height: 1.16;
+    }
     .two-column-grid .archival-image {
-      max-height: 145px;
-      min-height: 80px;
+      max-height: 160px;
+      min-height: 85px;
       height: 100%;
       flex: 1;
       object-fit: contain;
     }
     .two-column-grid .archival-body {
-      font-size: 8.0pt;
-      line-height: 1.24;
-      padding: 2.5px 4.5px;
+      font-size: 8.4pt;
+      line-height: 1.26;
+      padding: 3px 5px;
       margin-bottom: 2px;
     }
     .two-column-grid .archival-context-box {
-      padding: 2.5px 4.5px;
-      margin: 1.5px 0;
+      padding: 3px 5px;
+      margin: 2px 0;
     }
     .two-column-grid .archival-context-text {
-      font-size: 7.4pt;
-      line-height: 1.20;
-      margin: 0 0 1px 0;
+      font-size: 7.9pt;
+      line-height: 1.22;
+      margin: 0 0 1.5px 0;
     }
     .two-column-grid .archival-hinge-q {
-      font-size: 7.4pt;
-      line-height: 1.20;
-      padding: 1.5px 3.5px;
+      font-size: 7.9pt;
+      line-height: 1.22;
+      padding: 1.5px 4px;
+    }
+    .two-column-grid .written-source-box {
+      padding: 4px 6.5px;
+    }
+    .two-column-grid .written-source-box .archival-title {
+      font-size: 9.6pt;
+      margin: 2px 0 3px 0;
+      line-height: 1.18;
+    }
+    .two-column-grid .written-source-box .archival-body {
+      font-size: 10.2pt;
+      line-height: 1.34;
+      padding: 5px 8px;
+      margin: 3px 0 4px 0;
+      background: #fafaf9;
+      border-left: 3.5px solid #1e3a8a;
+      border-radius: 2px;
+    }
+    .two-column-grid .written-source-box .archival-context-box {
+      padding: 3px 5px;
+      margin: 2px 0;
+    }
+    .two-column-grid .written-source-box .archival-context-text {
+      font-size: 8.0pt;
+      line-height: 1.24;
+      margin-bottom: 1.5px;
+    }
+    .two-column-grid .written-source-box .archival-hinge-q {
+      font-size: 8.0pt;
+      line-height: 1.24;
+      padding: 1.5px 4px;
+    }
+    .two-column-grid .written-source-box.expand-lg .archival-body {
+      font-size: 11.0pt;
+      line-height: 1.44;
+      padding: 7px 11px;
+      margin: 5px 0 7px 0;
+    }
+    .two-column-grid .written-source-box.expand-lg .archival-context-box {
+      padding: 4px 6px;
+      margin: 3px 0;
+    }
+    .two-column-grid .written-source-box.expand-lg .archival-context-text {
+      font-size: 8.3pt;
+      line-height: 1.28;
+      margin-bottom: 2px;
+    }
+    .two-column-grid .written-source-box.expand-lg .archival-hinge-q {
+      font-size: 8.3pt;
+      line-height: 1.28;
+      padding: 2.5px 5px;
+    }
+    .two-column-grid .archival-source-box.expand-lg .archival-image {
+      max-height: 205px;
+    }
+    .two-column-grid .archival-source-box.expand-lg .archival-context-box {
+      padding: 4px 6px;
+      margin: 3px 0;
+    }
+    .two-column-grid .archival-source-box.expand-lg .archival-context-text {
+      font-size: 8.3pt;
+      line-height: 1.28;
+      margin-bottom: 2px;
+    }
+    .two-column-grid .archival-source-box.expand-lg .archival-hinge-q {
+      font-size: 8.3pt;
+      line-height: 1.28;
+      padding: 2.5px 5px;
     }
 
     /* Right Page 2-Tier Balanced Layout */
@@ -692,28 +766,30 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       margin: 0 6px 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-title {
-      font-size: 8.6pt;
-      margin-bottom: 1.5px;
-      line-height: 1.15;
+      font-size: 9.2pt;
+      margin-bottom: 2px;
+      line-height: 1.18;
     }
     .fullwidth-dispatch-wrap .archival-body {
-      font-size: 7.8pt;
-      line-height: 1.22;
-      margin-bottom: 1.5px;
+      font-size: 8.4pt;
+      line-height: 1.28;
+      margin-bottom: 2px;
     }
     .fullwidth-dispatch-wrap .archival-context-box {
       clear: both;
-      padding: 1.5px 4px;
-      margin: 1.5px 0 0 0;
+      padding: 2.5px 5px;
+      margin: 2px 0 0 0;
     }
     .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 7.2pt;
-      line-height: 1.18;
-      margin: 0;
+      font-size: 8.0pt;
+      line-height: 1.22;
+      margin: 0 0 1px 0;
     }
     .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 7.2pt;
-      line-height: 1.18;
+      font-size: 8.0pt;
+      line-height: 1.22;
+      padding: 1.5px 4px;
+    }
       padding: 1px 3px;
       margin-top: 1.5px;
     }
@@ -898,7 +974,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       color: #64748b;
       border-top: 1px solid #e2e8f0;
       padding-top: 1.5px;
-      margin-top: 2px;
+      margin-top: auto;
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
@@ -931,7 +1007,7 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       letter-spacing: 0.05em;
     }
     .kf-lifespan {
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       font-weight: 700;
       color: #64748b;
     }
@@ -942,8 +1018,8 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       margin: 1px 0;
     }
     .kf-portrait {
-      width: 34px;
-      height: 42px;
+      width: 36px;
+      height: 45px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
@@ -951,27 +1027,27 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.4pt;
+      font-size: 9.8pt;
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.15;
+      line-height: 1.16;
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      font-weight: 700;
+      font-size: 8.2pt;
+      font-weight: 800;
       color: #1e3a8a;
-      line-height: 1.18;
+      line-height: 1.20;
     }
     .kf-significance {
-      font-size: 7.5pt;
-      line-height: 1.18;
+      font-size: 8.0pt;
+      line-height: 1.22;
       color: #1e293b;
       margin-bottom: 1px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.4pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -981,8 +1057,8 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
     .kf-actions-list {
       margin: 0;
       padding-left: 10px;
-      font-size: 7.3pt;
-      line-height: 1.18;
+      font-size: 7.8pt;
+      line-height: 1.22;
       color: #334155;
     }
     .kf-actions-list li {
@@ -1010,39 +1086,39 @@ async function buildPublisherTextbookHtmlGreatWarPart2() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 7.2pt;
+      font-size: 7.6pt;
       font-weight: 900;
       color: #b45309;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .csb-category {
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       font-weight: 700;
       color: #92400e;
       text-transform: uppercase;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.0pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0 0 1px 0;
-      line-height: 1.15;
+      line-height: 1.16;
     }
     .csb-body {
-      font-size: 7.6pt;
-      line-height: 1.18;
+      font-size: 8.0pt;
+      line-height: 1.22;
       color: #1e293b;
       margin-bottom: 1.5px;
     }
     .csb-takeaway {
       background: #fef3c7;
       border-left: 2.5px solid #b45309;
-      padding: 1.5px 4px;
+      padding: 2px 4.5px;
       border-radius: 0 2px 2px 0;
-      font-size: 7.4pt;
-      line-height: 1.16;
+      font-size: 7.8pt;
+      line-height: 1.20;
       color: #78350f;
       font-family: 'Inter', sans-serif;
       margin-top: 1.5px;

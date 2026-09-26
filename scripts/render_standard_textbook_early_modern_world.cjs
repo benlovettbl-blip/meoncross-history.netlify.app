@@ -701,29 +701,29 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       margin: 0 6px 2px 0;
     }
     .fullwidth-dispatch-wrap .archival-title {
-      font-size: 8.6pt;
-      margin-bottom: 1.5px;
-      line-height: 1.15;
+      font-size: 9.2pt;
+      margin-bottom: 2px;
+      line-height: 1.18;
     }
     .fullwidth-dispatch-wrap .archival-body {
-      font-size: 7.8pt;
-      line-height: 1.22;
-      margin-bottom: 1.5px;
+      font-size: 8.4pt;
+      line-height: 1.28;
+      margin-bottom: 2px;
     }
     .fullwidth-dispatch-wrap .archival-context-box {
       clear: both;
-      padding: 1.5px 4px;
-      margin: 1.5px 0 0 0;
+      padding: 2.5px 5px;
+      margin: 2px 0 0 0;
     }
     .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 7.2pt;
-      line-height: 1.18;
-      margin: 0;
+      font-size: 8.0pt;
+      line-height: 1.22;
+      margin: 0 0 1px 0;
     }
     .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 7.2pt;
-      line-height: 1.18;
-      padding: 1px 3px;
+      font-size: 8.0pt;
+      line-height: 1.22;
+      padding: 1.5px 4px;
       margin-top: 1.5px;
     }
     .fullwidth-dispatch-wrap .archival-footer {
@@ -974,35 +974,34 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      font-weight: 700;
-      color: #475569;
-      text-transform: uppercase;
-      line-height: 1.15;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 1.20;
     }
     .kf-significance {
-      font-size: 7.6pt;
-      font-style: italic;
-      color: #334155;
-      line-height: 1.28;
+      font-size: 8.0pt;
+      line-height: 1.24;
+      color: #1e293b;
       margin-bottom: 2px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      font-weight: 800;
-      color: #1e3a8a;
-      letter-spacing: 0.03em;
+      font-size: 7.6pt;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       margin-top: 1.5px;
     }
     .kf-actions-list {
       margin: 0;
       padding-left: 11px;
-      font-size: 7.3pt;
-      line-height: 1.28;
+      font-size: 7.8pt;
+      line-height: 1.22;
       color: #334155;
     }
-    .kf-actions-list li { margin-bottom: 1.5px; }
+    .kf-actions-list li { margin-bottom: 1px; }
 
     /* Concept Spotlight Box */
     .concept-spotlight-box {
@@ -1023,36 +1022,36 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 6.2pt;
+      font-size: 7.6pt;
       font-weight: 900;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 6.0pt;
+      font-size: 7.2pt;
       color: #64748b;
       font-weight: 700;
       text-transform: uppercase;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.0pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #0f172a;
       margin: 1px 0 2px 0;
-      line-height: 1.15;
+      line-height: 1.16;
     }
     .csb-body {
-      font-size: 7.5pt;
-      line-height: 1.28;
-      color: #334155;
+      font-size: 8.0pt;
+      line-height: 1.24;
+      color: #1e293b;
       margin-bottom: 2.5px;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      line-height: 1.24;
+      font-size: 7.8pt;
+      line-height: 1.22;
       color: #0f172a;
       background: #eff6ff;
       border: 1px solid #bfdbfe;
@@ -1063,7 +1062,7 @@ async function buildPublisherTextbookHtmlEarlyModernWorld() {
     .csb-takeaway strong {
       color: #1e3a8a;
       text-transform: uppercase;
-      font-size: 6.2pt;
+      font-size: 7.6pt;
     }
 
     /* Bottom Vocabulary Deck */
