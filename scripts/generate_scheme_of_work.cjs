@@ -375,38 +375,34 @@ function extractLessonThreeTier(lesson, uid, unitData, idx) {
     },
     great_war: {
       0: [
-        'Source A: Map of the newly created German Empire (1871)',
-        "Bismarck's 'Blood and Iron' speech transcript (1862)",
+        'Source A: Map of the German Empire in Central Europe (1871)',
+        'Source B: Modern European Boundaries vs 1871 Frontiers',
+        "Otto von Bismarck's 'Blood and Iron' address (1862)",
       ],
       1: [
-        'Map A: The Annexation of Alsace-Lorraine (Treaty of Frankfurt, 1871)',
-        'Source B: The Black Spot (La Tache Noire) by Albert Bettannier (1887)',
-        "Source A: Anton von Werner's Proclamation of the German Empire at Versailles",
+        "Source A: Albert Bettannier, 'La Tache Noire' (The Black Spot, 1887)",
+        'Source B: Primary School Reader excerpt, G. Bruno (1887)',
+        'The edited Ems Telegram & Treaty of Frankfurt terms (1871)',
       ],
       2: [
-        'Source A: The 1879 Dual Alliance Treaty between Germany and Austria-Hungary',
-        "Punch Cartoon 'Dropping the Pilot' (1890)",
-        "Kaiser Wilhelm II's 'Place in the Sun' declaration",
+        "Source A: Punch Cartoon, 'The Colossus of Rhodes' (1892)",
+        'Source B: Imperial Proclamation, Kaiser Wilhelm II in Tangier (1905)',
+        'David Lloyd George, The Mansion House Speech (1911)',
       ],
       3: [
-        'Source A: Blueprint of HMS Dreadnought (1906)',
-        'German Navy Laws propaganda poster (Tirpitz)',
-        "British Daily Mail 'We Want Eight and We Won't Wait' articles",
+        "Source A: British War Propaganda Map, 'The Balance of Power'",
+        'Source B: Dual Alliance Treaty text (1879) & Franco-Russian Military Convention (1894)',
+        "Kaiser Wilhelm II's 'Blank Cheque' dispatch (5 July 1914)",
       ],
       4: [
-        'Source A: Map of European Strategic Railway Timetables (1914)',
-        "Source B: General Alfred von Schlieffen's war memorandum (1905)",
-        'Belgian diplomatic protest over violation of neutrality',
+        'Source A: German Naval Race Postcard, SMS Nassau vs HMS Dreadnought',
+        'Source B: Admiral Alfred von Tirpitz, Naval Memorandum (1897)',
+        'Official Memorandum on the Schlieffen Plan (Alfred von Schlieffen, 1905)',
       ],
       5: [
-        'Source A: Trench map of the Ypres Salient (1914)',
-        'Private soldier field postcards & 1st Battalion Hampshire Regiment war diaries',
-        'Contemporary aerial reconnaissance photography of trench systems',
-      ],
-      6: [
-        'Source A: The Western Mail front page on the Christmas Truce (1914)',
-        'Letter from Captain Sir Edward Hulse (Scots Guards, 1914)',
-        'Imperial War Museum oral history recordings of Saxon and British soldiers',
+        'Source A: Photograph of the arrest of Gavrilo Princip at Sarajevo (28 June 1914)',
+        'Source B: Austro-Hungarian Ten-Point Ultimatum to Serbia (23 July 1914)',
+        "Sir Edward Grey's address to the House of Commons (3 August 1914)",
       ],
     },
   };
@@ -493,10 +489,22 @@ function extractLessonThreeTier(lesson, uid, unitData, idx) {
       4: 'The Great Stink of 1858: Parliamentary self-interest and physical stench vs municipal laissez-faire ideology',
       5: "Snow's empirical epidemiological mapping vs the entrenched medical establishment and Board of Health",
     },
+    great_war: {
+      0: "Pragmatic Bismarckian statesmanship vs provoked 'blood and iron': Did Bismarck unify Germany through calculated moderation or cynical militarism?",
+      1: "Strategic border necessity vs catastrophic diplomatic blunder: Gordon Craig's paradox and the unhealed wound of Alsace-Lorraine.",
+      2: 'Economic imperialism vs great power status: Did the Moroccan Crises make Anglo-French military commitment inevitable?',
+      3: 'Deterrent peace mechanism vs catastrophic chain reaction: Did the secret alliance web preserve peace or turn a local crisis into a world war?',
+      4: 'Defensive maritime security vs deliberate global confrontation: Did the Tirpitz Risk Fleet force Britain into anti-German containment?',
+      5: "Calculated aggression vs structural tragedy: Fritz Fischer's 'Grab for World Power' vs Christopher Clark's 'Sleepwalkers' thesis.",
+    },
   };
 
   if (curatedDebates[uid] && curatedDebates[uid][idx]) {
     debate = curatedDebates[uid][idx];
+  } else if (lesson.tasks && Array.isArray(lesson.tasks) && lesson.tasks[0]?.question) {
+    debate = cleanText(lesson.tasks[0].question);
+  } else if (lesson.tasks && Array.isArray(lesson.tasks) && lesson.tasks[0]?.topic) {
+    debate = cleanText(lesson.tasks[0].topic.replace(/^Task\s*\d+:\s*/i, ''));
   } else if (lesson.historians_corner?.title) {
     debate =
       `${cleanText(lesson.historians_corner.title)}: ${cleanText(lesson.historians_corner.text || '')}`.slice(
@@ -538,7 +546,15 @@ function extractLessonThreeTier(lesson, uid, unitData, idx) {
   // 3. Core Written Assessment
   let assessment = '';
 
-  if (lesson.extended?.question) {
+  if (lesson.tasks && Array.isArray(lesson.tasks) && lesson.tasks.length > 0) {
+    const ext =
+      lesson.tasks.find(
+        (t) => t.type === 'extended_writing' || t.type === 'capstone_enquiry' || t.type === 'essay',
+      ) || lesson.tasks[lesson.tasks.length - 1];
+    if (ext?.question) {
+      assessment = `[Evaluative Enquiry] ${cleanText(ext.question)}`;
+    }
+  } else if (lesson.extended?.question) {
     assessment = cleanText(lesson.extended.question);
   } else if (lesson.gcse_task?.topic) {
     assessment = `[8 Marks] How useful are Sources A and B for an enquiry into ${cleanText(lesson.gcse_task.topic)}?`;
@@ -1008,6 +1024,18 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         let hinge = '';
 
         if (
+          lesson.teacher_notes?.objectives &&
+          Array.isArray(lesson.teacher_notes.objectives) &&
+          lesson.teacher_notes.objectives.length > 0
+        ) {
+          // Christine Counsell 4-Act schema
+          objsHTML =
+            `<ul class="obj-list">` +
+            lesson.teacher_notes.objectives
+              .map((o) => `<li>${cleanText(o.objective || o)}</li>`)
+              .join('') +
+            `</ul>`;
+        } else if (
           lesson.learning_objectives &&
           Array.isArray(lesson.learning_objectives) &&
           lesson.learning_objectives.length > 0
@@ -1015,7 +1043,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
           // Flat array of strings (Year 8+ format)
           objsHTML =
             `<ul class="obj-list">` +
-            lesson.learning_objectives.map((o) => `<li>${o}</li>`).join('') +
+            lesson.learning_objectives.map((o) => `<li>${cleanText(o)}</li>`).join('') +
             `</ul>`;
         } else if (
           lesson.learning_objectives &&
@@ -1025,19 +1053,29 @@ function generateSOWHTML(db, yearGroup, unitIds) {
           // Nested object with scaffolded array (Year 7 / legacy format)
           objsHTML =
             `<ul class="obj-list">` +
-            lesson.learning_objectives.scaffolded.map((o) => `<li>${o}</li>`).join('') +
+            lesson.learning_objectives.scaffolded.map((o) => `<li>${cleanText(o)}</li>`).join('') +
             `</ul>`;
         } else if (lesson.intent && Array.isArray(lesson.intent) && lesson.intent.length > 0) {
           objsHTML =
-            `<ul class="obj-list">` + lesson.intent.map((o) => `<li>${o}</li>`).join('') + `</ul>`;
+            `<ul class="obj-list">` +
+            lesson.intent.map((o) => `<li>${cleanText(o)}</li>`).join('') +
+            `</ul>`;
         } else if (lesson.learning_objective) {
-          objsHTML = `<ul class="obj-list"><li>${lesson.learning_objective}</li></ul>`;
+          objsHTML = `<ul class="obj-list"><li>${cleanText(lesson.learning_objective)}</li></ul>`;
         } else {
           objsHTML = '<span style="color:#94a3b8; font-style:italic;">Historical Enquiry</span>';
         }
 
-        // Extract Hinge Question from teacher_notes if available
-        if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
+        // Extract Hinge Question from lesson.teacher_notes or unitData.teacher_notes
+        if (lesson.teacher_notes?.objectives && Array.isArray(lesson.teacher_notes.objectives)) {
+          const hingeObj = lesson.teacher_notes.objectives.find((o) => o.question);
+          if (hingeObj) hinge = hingeObj.question;
+        }
+        if (!hinge && lesson.teacher_notes?.source_context) {
+          const m = lesson.teacher_notes.source_context.match(/\*\*Hinge Question:\*\*\s*(.*)/i);
+          if (m) hinge = m[1].trim();
+        }
+        if (!hinge && unitData.teacher_notes && unitData.teacher_notes.objectives) {
           const lessonObjs = unitData.teacher_notes.objectives.filter(
             (o) =>
               (lesson.learning_objective && o.objective === lesson.learning_objective) ||

@@ -125,8 +125,8 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Imperial Proclamation</span>
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary Proclamation &bull; 1871</span>
           </div>
           <span class="source-date-micro">18 January 1871</span>
         </div>
@@ -183,8 +183,8 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">French Primary School Primer</span>
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary School Reader &bull; 1887</span>
           </div>
           <span class="source-date-micro">Circa 1887</span>
         </div>
@@ -241,8 +241,8 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">The Mansion House Speech</span>
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary Political Speech &bull; 1911</span>
           </div>
           <span class="source-date-micro">21 July 1911</span>
         </div>
@@ -300,8 +300,8 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Parliamentary Hansard</span>
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary Parliamentary Hansard &bull; 1909</span>
           </div>
           <span class="source-date-micro">16 March 1909</span>
         </div>
@@ -359,8 +359,8 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Secret Military Convention</span>
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary Military Treaty &bull; 1894</span>
           </div>
           <span class="source-date-micro">17 August 1892</span>
         </div>
@@ -417,8 +417,8 @@ const GREAT_WAR_COMPONENT_BANK = {
       <div class="archival-source-box">
         <div class="archival-header">
           <div class="source-identity">
-            <span class="source-badge">ARCHIVAL DISPATCH</span>
-            <span class="source-type">Imperial Diplomatic Telegram</span>
+            <span class="source-badge">SOURCE B</span>
+            <span class="source-type">Primary Diplomatic Dispatch &bull; 1914</span>
           </div>
           <span class="source-date-micro">6 July 1914</span>
         </div>
@@ -1049,7 +1049,28 @@ async function buildPublisherTextbookHtmlGreatWar() {
 
       </div>
     </div>
+    `;
 
+    const t3PromptMap = {
+      1: 'Examine both interpretations of Otto von Bismarck’s statecraft: pragmatic diplomacy vs provoked "blood and iron". Note two key pieces of factual evidence for each interpretation in your workbook.',
+      2: 'Examine both perspectives on the 1871 annexation: Albert Bettannier’s <em>La Tache Noire</em> (Source A) vs Prussian military strategy (Source B). Note two key pieces of factual evidence for each side in your workbook.',
+      3: 'Evaluate both historical perspectives on imperial conflict during the Scramble for Africa: economic greed vs national prestige. Note two key pieces of factual evidence for each view in your workbook.',
+      4: 'Examine the causal factors driving Great Britain out of isolation: maritime naval security vs continental balance of power. Note two key pieces of factual evidence for each factor in your workbook.',
+      5: 'Analyze both sides of the historical debate on the alliance systems: deterrence peacekeeping vs an inflexible secret treaty trap. Note two key pieces of factual evidence for each side in your workbook.',
+      6: 'Compare the short-term catalyst of the Sarajevo assassination with the long-term structural pressures of M-A-I-N. Note two key pieces of factual evidence for each view in your workbook.',
+    };
+    const task3Instruction =
+      t3PromptMap[lessonNum] ||
+      (lesson.tasks &&
+        lesson.tasks[0] &&
+        (lesson.tasks[0].instruction || lesson.tasks[0].question)) ||
+      'Prepare factual evidence for both sides of the historical debate in your workbook before writing.';
+    const task4Question =
+      (lesson.tasks && lesson.tasks[1] && lesson.tasks[1].question) || lesson.title;
+    const wbPages = `${lessonNum * 2 + 2}&ndash;${lessonNum * 2 + 3}`;
+
+    // RIGHT PAGE (Recto)
+    lessonsHtml += `
     <!-- PAGE ${rightPageNum}: Lesson ${lessonNum} Right Page (Recto) -->
     <div class="textbook-page" data-page="${rightPageNum}">
       <div class="page-inner">
@@ -1124,23 +1145,23 @@ async function buildPublisherTextbookHtmlGreatWar() {
           }
         </div>
 
-        <!-- Disciplinary Enquiry Mission Box (Zero Scaffolding Standard) -->
+        <!-- Lesson Enquiry & Writing Tasks Box -->
         <div class="bottom-enquiry-box">
           <div class="beb-header">
-            <span class="beb-title">DISCIPLINARY ENQUIRY MISSION &bull; LESSON ${lessonNum}</span>
+            <span class="beb-title">LESSON ENQUIRY &amp; WRITING TASKS &bull; LESSON ${lessonNum}</span>
             <span class="beb-badge">${lesson.skill || 'DISCIPLINARY WRITING'}</span>
           </div>
           <div class="beb-mission-content">
-            <div class="beb-lens-row">
-              <span class="beb-mission-tag">PLANNING LENS (TASK 3):</span>
-              <span class="beb-lens-text">${(lesson.tasks && lesson.tasks[0] && (lesson.tasks[0].topic || lesson.tasks[0].question)) || 'Prepare historical evidence and evaluate competing perspectives across both sides of the debate.'}</span>
+            <div class="beb-task-row">
+              <span class="beb-task-tag">TASK 3: EVIDENCE PREPARATION</span>
+              <span class="beb-task-text">${task3Instruction}</span>
             </div>
-            <div class="beb-capstone-row">
-              <span class="beb-mission-tag">CAPSTONE ENQUIRY (TASK 4):</span>
-              <span class="beb-capstone-text">${(lesson.tasks && lesson.tasks[1] && lesson.tasks[1].question) || lesson.title}</span>
+            <div class="beb-task-row">
+              <span class="beb-task-tag">TASK 4: EXTENDED WRITING</span>
+              <span class="beb-task-text"><strong>Enquiry Question:</strong> ${task4Question}</span>
             </div>
             <div class="beb-workbook-signpost">
-              <span>&rarr; <strong>Consumable Workbook Mission:</strong> Turn to Lesson ${lessonNum} in your Pupil Workbook to complete Task 3 evidence preparation and Task 4 extended writing.</span>
+              <span>&rarr; <strong>Pupil Workbook:</strong> Turn to Lesson ${lessonNum} (pages ${wbPages}) in your Pupil Workbook to complete your Task 3 evidence notes and Task 4 written response.</span>
             </div>
           </div>
         </div>
@@ -1376,6 +1397,14 @@ async function buildPublisherTextbookHtmlGreatWar() {
       column-gap: 5mm;
       flex: 1;
       overflow: hidden;
+    }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 3.5px;
+    }
+    .right-upper-grid .col-side .key-figure-box,
+    .right-upper-grid .col-side .concept-spotlight-box {
+      margin: 0;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
@@ -1788,14 +1817,14 @@ async function buildPublisherTextbookHtmlGreatWar() {
       padding: 2px 0 1px 0;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2.5px;
     }
-    .beb-lens-row, .beb-capstone-row {
+    .beb-task-row {
       display: flex;
       gap: 6px;
       align-items: baseline;
     }
-    .beb-mission-tag {
+    .beb-task-tag {
       font-family: 'Inter', sans-serif;
       font-size: 8.0pt;
       font-weight: 800;
@@ -1803,27 +1832,25 @@ async function buildPublisherTextbookHtmlGreatWar() {
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .beb-lens-text {
+    .beb-task-text {
       font-family: 'Inter', sans-serif;
       font-size: 8.5pt;
       color: #334155;
-      line-height: 1.30;
+      line-height: 1.28;
     }
-    .beb-capstone-text {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.0pt;
-      font-weight: 700;
+    .beb-task-text strong {
       color: #0f172a;
-      line-height: 1.30;
     }
     .beb-workbook-signpost {
       font-family: 'Inter', sans-serif;
       font-size: 8.0pt;
-      color: #64748b;
-      font-style: italic;
+      color: #475569;
       border-top: 1px dashed #cbd5e1;
-      padding-top: 2px;
+      padding-top: 1.5px;
       margin-top: 1px;
+    }
+    .beb-workbook-signpost strong {
+      color: #1e3a8a;
     }
 
     .page-footer {
