@@ -536,9 +536,7 @@ const TASK_4_ESSAYS = [
 // Read existing live unitData to extract vocabulary and ensure full fidelity
 console.log('Loading live data.js for vocabulary extraction...');
 const rawLive = fs.readFileSync(filePathLive, 'utf8');
-const liveClean = rawLive
-  .replace(/export\s+default\s+[^;]+;?/, '')
-  .replace(/export\s+{[^}]+};?/, '');
+const liveClean = rawLive.replace(/export\s+[^;]+;?/g, '');
 const liveObj = new Function(
   liveClean +
     '; return (typeof water_and_sanitation !== "undefined" ? water_and_sanitation : unitData);',
@@ -547,7 +545,7 @@ const liveObj = new Function(
 // Read existing v2 4-act data
 console.log('Loading staged data_v2_4act.js for 4-Act narrative extraction...');
 const rawV2 = fs.readFileSync(filePathV2, 'utf8');
-const v2Clean = rawV2.replace(/export\s+default\s+[^;]+;?/, '').replace(/export\s+{[^}]+};?/, '');
+const v2Clean = rawV2.replace(/export\s+[^;]+;?/g, '');
 const v2Obj = new Function(
   v2Clean +
     '; return (typeof water_and_sanitation !== "undefined" ? water_and_sanitation : unitData);',
@@ -582,6 +580,9 @@ v2Obj.lessons.forEach((lesson, idx) => {
       delete block.comprehension_questions;
     });
   }
+
+  // Enforce single-location source residency (inline inside Act 3 narrative block)
+  delete lesson.sources;
 
   // 6. Structured Assessment Zone: Task 3 (Dual-Column Planning Bridge) + Task 4 (Master Enquiry Essay)
   lesson.tasks = [TASK_3_BRIDGES[idx], TASK_4_ESSAYS[idx]];
