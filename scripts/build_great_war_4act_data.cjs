@@ -57,10 +57,10 @@ const great_war_4act = {
   ],
   lessons: [
     // ==========================================
-    // LESSON 0: UNIFICATION OF GERMANY (1871)
+    // LESSON 1: UNIFICATION OF GERMANY (1871)
     // ==========================================
     {
-      id: 'lesson_0',
+      id: 'lesson_1',
       title: 'How was the German Empire created in 1871?',
       enquiry_question:
         'How did Otto von Bismarck use "blood and iron" and diplomatic calculation to forge the German Empire in 1871?',
@@ -393,7 +393,7 @@ const great_war_4act = {
     // LESSON 1: FRANCO-PRUSSIAN WAR & ALSACE-LORRAINE
     // ==========================================
     {
-      id: 'lesson_1',
+      id: 'lesson_2',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
       enquiry_question:
         'How did the Franco-Prussian War and the annexation of Alsace-Lorraine poison European diplomacy for over forty years?',
@@ -427,7 +427,7 @@ const great_war_4act = {
         ],
       },
       do_now: {
-        title: 'Do Now: Retrieval from Lesson 0 (Creation of the German Empire)',
+        title: 'Do Now: Retrieval from Lesson 1 (Creation of the German Empire)',
         type: 'mixed',
         items: [
           {
@@ -719,7 +719,7 @@ const great_war_4act = {
     // LESSON 2: SCRAMBLE FOR AFRICA & WELTPOLITIK
     // ==========================================
     {
-      id: 'lesson_2',
+      id: 'lesson_3',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
       enquiry_question:
         'How did Kaiser Wilhelm II’s pursuit of "Weltpolitik" and a "Place in the Sun" ignite imperial crises in Africa?',
@@ -1028,7 +1028,7 @@ const great_war_4act = {
     // LESSON 3: ANGLO-GERMAN NAVAL ARMS RACE
     // ==========================================
     {
-      id: 'lesson_3',
+      id: 'lesson_4',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       enquiry_question:
         'Why did the Anglo-German battleship race transform diplomatic rivalry into an existential security crisis?',
@@ -1357,7 +1357,7 @@ const great_war_4act = {
     // LESSON 4: THE ALLIANCE SYSTEM
     // ==========================================
     {
-      id: 'lesson_4',
+      id: 'lesson_5',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
       enquiry_question:
         'How did the division of Europe into two armed camps turn a localized Balkan crisis into an inevitable world war?',
@@ -1691,7 +1691,7 @@ const great_war_4act = {
     // LESSON 5: SARAJEVO & THE JULY CRISIS
     // ==========================================
     {
-      id: 'lesson_5',
+      id: 'lesson_6',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
       enquiry_question:
         'How did thirty days of diplomatic brinkmanship turn the assassination of Archduke Franz Ferdinand into a global conflict?',

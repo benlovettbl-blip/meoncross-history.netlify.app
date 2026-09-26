@@ -239,7 +239,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   switchView(view, unit, true).then(() => {
     if (view === 'lessons' && initialLesson !== null) {
-      let targetIdx = !isNaN(parseInt(initialLesson, 10)) ? parseInt(initialLesson, 10) : -1;
+      let targetIdx = !isNaN(parseInt(initialLesson, 10))
+        ? parseInt(initialLesson, 10) >= 1
+          ? parseInt(initialLesson, 10) - 1
+          : parseInt(initialLesson, 10)
+        : -1;
       const unitDataObj =
         window.currentUnitData ||
         (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
@@ -269,7 +273,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (isQuizRequested && typeof window.startQuiz === 'function') {
       let lessonIdx =
         initialLesson !== null && !isNaN(parseInt(initialLesson, 10))
-          ? parseInt(initialLesson, 10)
+          ? parseInt(initialLesson, 10) >= 1
+            ? parseInt(initialLesson, 10) - 1
+            : parseInt(initialLesson, 10)
           : quizParam === 'kt2'
             ? 4
             : quizParam === 'kt3'
@@ -280,7 +286,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
       const targetLesson =
         unitData && unitData.lessons ? unitData.lessons[lessonIdx] || unitData.lessons[0] : null;
-      const lessonId = targetLesson ? targetLesson.id : `lesson_${lessonIdx}`;
+      const lessonId = targetLesson ? targetLesson.id : `lesson_${lessonIdx + 1}`;
 
       setTimeout(() => {
         window.startQuiz(lessonId, true);
@@ -353,7 +359,9 @@ window.addEventListener('DOMContentLoaded', async () => {
         e.state && e.state.lessonIndex !== undefined
           ? e.state.lessonIndex
           : urlLesson !== null && !isNaN(parseInt(urlLesson, 10))
-            ? parseInt(urlLesson, 10)
+            ? parseInt(urlLesson, 10) >= 1
+              ? parseInt(urlLesson, 10) - 1
+              : parseInt(urlLesson, 10)
             : null;
 
       if (targetView === 'lessons') {

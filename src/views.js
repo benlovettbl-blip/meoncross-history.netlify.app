@@ -1406,7 +1406,7 @@ export async function renderLessonsView() {
         const url = new URL(window.location);
         url.searchParams.set('view', 'lessons');
         url.searchParams.set('unit', unitId);
-        url.searchParams.set('lesson', index);
+        url.searchParams.set('lesson', index + 1);
         window.history.pushState(
           {
             view: 'lessons',
@@ -1471,7 +1471,7 @@ export async function renderLessonsView() {
     let targetIndex = -1;
     const parsed = parseInt(requestedLesson, 10);
     if (!isNaN(parsed) && String(parsed) === requestedLesson.trim()) {
-      targetIndex = parsed;
+      targetIndex = parsed >= 1 ? parsed - 1 : parsed;
     } else {
       targetIndex = lessonsList.findIndex(
         (l) =>

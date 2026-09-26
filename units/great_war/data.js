@@ -32,7 +32,7 @@ const great_war = {
   ],
   lessons: [
     {
-      id: 'lesson_0',
+      id: 'lesson_1',
       title: 'How was the German Empire created in 1871?',
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
       teacher_notes: {
@@ -353,7 +353,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_1',
+      id: 'lesson_2',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
       video: [
         {
@@ -810,7 +810,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_2',
+      id: 'lesson_3',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
       vocab: [
         {
@@ -1274,7 +1274,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_3',
+      id: 'lesson_4',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       vocab: [
         {
@@ -1735,7 +1735,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_4',
+      id: 'lesson_5',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
       vocab: [
         {
@@ -2175,7 +2175,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_5',
+      id: 'lesson_6',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
       video: [
         {

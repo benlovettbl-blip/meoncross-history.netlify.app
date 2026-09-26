@@ -507,7 +507,7 @@ async function loadUnit(unitId) {
       const extractedQuizData = [];
       const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
       lessonsList.forEach((lesson, lIdx) => {
-        const baseId = lesson.id || `lesson_${lIdx}`;
+        const baseId = lesson.id || `lesson_${lIdx + 1}`;
         const rawQuizzes = lesson.quiz || lesson.quick_quiz || lesson.quiz_questions;
         if (rawQuizzes && Array.isArray(rawQuizzes)) {
           rawQuizzes.forEach((q, idx) => {

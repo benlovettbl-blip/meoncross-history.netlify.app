@@ -637,7 +637,7 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
 
         const url = new URL(window.location);
         url.searchParams.set('view', 'lessons');
-        url.searchParams.set('lesson', index);
+        url.searchParams.set('lesson', index + 1);
         if (unitId) url.searchParams.set('unit', unitId);
         window.history.pushState(
           {

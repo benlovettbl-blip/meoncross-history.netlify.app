@@ -882,7 +882,7 @@ export function initializeApp(unitData) {
         if (!skipHistory) {
           try {
             const url = new URL(window.location);
-            url.searchParams.set('lesson', index);
+            url.searchParams.set('lesson', index + 1);
             history.pushState({ lessonIndex: index }, '', url);
           } catch (e) {
             console.warn('History routing disabled (e.g. file:// protocol):', e);
@@ -1050,7 +1050,8 @@ export function initializeApp(unitData) {
       const urlParams = new URLSearchParams(window.location.search);
       const lessonIdx = urlParams.get('lesson');
       if (lessonIdx !== null && !isNaN(lessonIdx)) {
-        window.renderLessonByIndex(parseInt(lessonIdx), true);
+        const parsed = parseInt(lessonIdx, 10);
+        window.renderLessonByIndex(parsed >= 1 ? parsed - 1 : parsed, true);
       } else {
         renderHomepage();
       }
