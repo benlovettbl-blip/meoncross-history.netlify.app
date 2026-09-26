@@ -62,6 +62,7 @@ for (const relPath of allFiles) {
   const ext = path.extname(relPath).toLowerCase();
   if (SKIP_EXTS.has(ext)) continue;
   if (!TEXT_EXTS.has(ext)) continue;
+  if (!fs.existsSync(relPath)) continue;
 
   try {
     const lines = fs.readFileSync(relPath, 'utf8').split('\n');

@@ -199,7 +199,7 @@ const UNIT_REGISTRY = {
       overarchingEnquiry:
         'How was power won, maintained, contested, and transformed in Medieval England (1066–1485)?',
       coverImage: 'images/battle_of_hastings_painting.jpg',
-      heroPhotoHeightMm: 42,
+      heroPhotoHeightMm: 48,
       coverPlate: {
         tag: 'Primary Oil Plate • Frank Wilkin (1820)',
         shelfmark: 'BATTLE ABBEY • EAST SUSSEX • ENGLISH HERITAGE',
@@ -1550,29 +1550,34 @@ async function main() {
   console.log(`Compiling 20-page A4 workbook for ${unitConfig.unitTitle}...`);
   const { htmlPath, pdfPath } = await renderKs3WorkbookToPdf(unitConfig, outputDir);
 
-  // Synchronize to standard production destinations
-  const prodPdfPath = path.join(ROOT_DIR, 'public', 'pdfs', `${unitId}_pupil_workbook.pdf`);
-  const prodPdfV17 = path.join(
-    ROOT_DIR,
-    'public',
-    'pdfs',
-    `${unitId}_pupil_workbook_FINAL_V17.pdf`,
-  );
+  // Synchronize to standard production destinations (Canonical Single Source of Truth)
   const distPdfV17 = path.join(ROOT_DIR, 'dist', 'pdfs', `${unitId}_pupil_workbook_FINAL_V17.pdf`);
-  const distPdf = path.join(ROOT_DIR, 'dist', 'pdfs', `${unitId}_pupil_workbook.pdf`);
-  const prodHtml1 = path.join(ROOT_DIR, 'public', 'units', unitId, 'pupil_workbook.html');
   const prodHtml2 = path.join(ROOT_DIR, 'units', unitId, 'pupil_workbook.html');
 
-  fs.mkdirSync(path.dirname(distPdfV17), { recursive: true });
-  fs.copyFileSync(pdfPath, prodPdfPath);
-  fs.copyFileSync(pdfPath, prodPdfV17);
-  fs.copyFileSync(pdfPath, distPdfV17);
-  fs.copyFileSync(pdfPath, distPdf);
-  fs.copyFileSync(htmlPath, prodHtml1);
-  fs.copyFileSync(htmlPath, prodHtml2);
-  console.log(`✅ Synchronized to production PDF: ${prodPdfPath}`);
-  console.log(`✅ Synchronized to production V17 PDF: ${prodPdfV17}`);
-  console.log(`✅ Synchronized to dist PDF: ${distPdfV17}`);
+  if (fs.existsSync(path.dirname(distPdfV17))) {
+    fs.mkdirSync(path.dirname(distPdfV17), { recursive: true });
+    fs.copyFileSync(pdfPath, distPdfV17);
+    console.log(`✅ Synchronized to dist PDF: ${distPdfV17}`);
+  }
+  if (fs.existsSync(path.dirname(prodHtml2))) {
+    fs.copyFileSync(htmlPath, prodHtml2);
+  }
+  console.log(`✅ Canonical Masterpiece PDF compiled: ${pdfPath}`);
+
+  // Clean up legacy redundant files if they exist in public/pdfs
+  const redundantFiles = [
+    path.join(ROOT_DIR, 'public', 'pdfs', `${unitId}_pupil_workbook_pilot.pdf`),
+    path.join(ROOT_DIR, 'public', 'pdfs', `${unitId}_pupil_workbook.pdf`),
+    path.join(ROOT_DIR, 'public', 'pdfs', 'pupil_workbook_pilot.html'),
+  ];
+  for (const rf of redundantFiles) {
+    if (fs.existsSync(rf)) {
+      try {
+        fs.unlinkSync(rf);
+        console.log(`🧹 Cleaned up redundant file: ${rf}`);
+      } catch (e) {}
+    }
+  }
 
   // Synchronize to Google Drive Department File (if connected)
   const candidateFolders = [

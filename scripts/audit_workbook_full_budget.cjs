@@ -168,7 +168,7 @@ async function auditWorkbook(htmlRelativePath) {
 }
 
 if (require.main === module) {
-  const target = process.argv[2] || 'public/units/great_war/pupil_workbook_v2.html';
+  const target = process.argv[2] || 'public/units/great_war/pupil_workbook.html';
   auditWorkbook(target).then((success) => {
     if (!success) process.exit(1);
   });

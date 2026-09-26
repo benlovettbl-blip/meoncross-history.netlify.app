@@ -1056,9 +1056,10 @@ function buildKs3WorkbookHtml(unitConfig) {
  */
 async function renderKs3WorkbookToPdf(unitConfig, outputDir) {
   fs.mkdirSync(outputDir, { recursive: true });
-  const htmlPath = path.join(outputDir, 'pupil_workbook_pilot.html');
-  const pdfPath = path.join(outputDir, `${unitConfig.unitId}_pupil_workbook_pilot.pdf`);
+  const htmlPath = path.join(ROOT_DIR, 'public', 'units', unitConfig.unitId, 'pupil_workbook.html');
+  const pdfPath = path.join(outputDir, `${unitConfig.unitId}_pupil_workbook_FINAL_V17.pdf`);
 
+  fs.mkdirSync(path.dirname(htmlPath), { recursive: true });
   const html = buildKs3WorkbookHtml(unitConfig);
   fs.writeFileSync(htmlPath, html, 'utf8');
 

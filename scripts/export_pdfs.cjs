@@ -41,6 +41,7 @@ function getFileHash(filePath) {
     args: ['--allow-file-access-from-files', '--disable-web-security'],
   });
   const page = await browser.newPage();
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
   page.setDefaultNavigationTimeout(300000);
 
   const unitArg = process.argv[2] || 'all';
@@ -78,6 +79,11 @@ function getFileHash(filePath) {
       }
       if (files.includes('pupil_workbook_v2.html')) {
         files = files.filter((f) => f !== 'pupil_workbook.html');
+      }
+
+      // Exclude workbooks with dedicated high-performance compilers (already compiled by sync_unit)
+      if (unit === 'great_war' || unit === 'water_and_sanitation') {
+        files = files.filter((f) => !f.startsWith('pupil_workbook'));
       }
 
       if (targetFile) {
