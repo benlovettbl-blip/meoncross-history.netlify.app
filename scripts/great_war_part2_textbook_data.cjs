@@ -81,7 +81,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       bullets: [
         'Demographic shock of the "Lost Generation" on rural communities',
         'The Stubbington Memorial Shelter (1922) over the village pump',
-        'Nancy Lowry (VAD nurse) & 67 local fallen commemorated on green',
+        'Nurse Nita King, the Lowry brothers & 67 local fallen on the green',
       ],
     },
     {
@@ -125,36 +125,34 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           'Private Arthur Green, a Portsmouth naval dockyard apprentice, recorded his reasons for volunteering in August 1914 alongside fellow workmates in the 14th (Portsmouth) Battalion, Hampshire Regiment.',
         hingeQuestion:
           'Why did the communal solidarity of Pals Battalions make men eager to volunteer in 1914, but devastate whole towns later in 1916?',
-        shelfmark: 'Hampshire Record Office, Winchester &bull; 42M78/P12',
-        footer: 'Hampshire Regimental Archive &bull; Diary Collection',
+        shelfmark: 'Portsmouth Town Hall &bull; August 1914 Enlistment',
+        footer: 'Hampshire Regimental Archive &bull; Pompey Pals Record',
       },
     },
     p4: {
       sourceA: {
         badge: 'SOURCE A',
-        type: 'Military Field Engineering Diagram',
-        title: 'British Army Trench System Architecture (1916)',
-        image: getBase64Image('/images/gw_trench_diagram.jpg'),
+        type: 'Aerial Reconnaissance Photograph',
+        title: 'Aerial Reconnaissance of Western Front Trenches (1916)',
+        image: getBase64Image('/images/aerial_trench_ypres.jpg'),
         context:
-          'British army diagrams revealed the complex three-line defence: frontline, support, and reserve trenches connected by zig-zag communication trenches designed to prevent enemy machine-gunners firing down straight corridors.',
+          'Aerial reconnaissance photographs taken by the Royal Flying Corps over the Western Front revealed the complex three-line defence: front, support, and reserve trenches with interlocking communication alleys separated by shell-cratered No Man’s Land.',
         hingeQuestion:
           'How did the physical layout of trench systems make defensive firepower far superior to offensive infantry charges?',
-        shelfmark: 'War Office Field Service Regulations &bull; London',
-        footer: 'National Archives, Kew &bull; WO 33/712',
+        shelfmark: 'Royal Flying Corps &bull; Western Front Reconnaissance',
+        footer: 'Aerial Photographic Archive &bull; Somme Sector',
       },
       sourceB: {
         badge: 'SOURCE B',
-        type: 'Aerial Reconnaissance Photograph',
-        title: 'Interlocking Barbed Wire & Cratered No Man’s Land (1916)',
-        image:
-          getBase64Image('/images/aerial_trench_ypres.jpg') ||
-          getBase64Image('/images/cheshire_regiment_trench.png'),
+        type: 'Eyewitness Primary Account',
+        title: 'Private Arthur Savage on Trench Rats and Artillery Shelling (1915)',
+        text: '“Trench rats were as big as cats. They were bold, vicious brutes that ate the dead and ran across your face while you tried to sleep. But the bombardment was the true terror: days on end of deafening concussions that drove men out of their minds until they clawed at the mud screaming like infants.”',
         context:
-          'Aerial reconnaissance photographs taken by the Royal Flying Corps over the Western Front showed deep belts of German barbed wire up to forty yards wide that British artillery shrapnel shells failed to sever.',
+          'Private Arthur Savage of the 20th Battalion, Durham Light Infantry, recorded the daily sensory horror of trench life, where soldiers lived in constant proximity to vermin and endured persistent artillery barrages.',
         hingeQuestion:
-          'Why did British artillery barrages fail to destroy German underground dugouts, leaving infantry vulnerable to machine guns?',
-        shelfmark: 'Royal Flying Corps Archive &bull; Photographic Section',
-        footer: 'Imperial War Museum, London &bull; Aerial Reconnaissance Collection',
+          'What does Arthur Savage’s account reveal about the psychological toll of trench warfare compared to its physical hazards?',
+        shelfmark: 'Durham Light Infantry &bull; Personal Wartime Diary',
+        footer: 'Primary Eyewitness Record &bull; Western Front',
       },
     },
     p6: {
@@ -179,8 +177,8 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           'British War Office records document the indispensable role of non-combatant colonial and foreign labourers who maintained Allied military supply lines under strict racial segregation.',
         hingeQuestion:
           'Why were colonial and Chinese support corps marginalized in post-war European commemorations despite being vital to military victory?',
-        shelfmark: 'British War Cabinet Records &bull; Labour Directorate',
-        footer: 'National Archives, Kew &bull; CAB 24/14',
+        shelfmark: 'War Cabinet Records &bull; Labour Directorate',
+        footer: 'Primary Logistic Record &bull; Imperial Labour Corps',
       },
     },
     p8: {
@@ -193,8 +191,8 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           'Passed on 8 August 1914 without parliamentary debate, DORA gave the British government sweeping emergency powers over the press, industry, working hours, and everyday civilian behaviour.',
         hingeQuestion:
           'How did DORA permanently alter the relationship between British citizens and the state during the First World War?',
-        shelfmark: 'Statute Book of Great Britain &bull; 4 & 5 Geo. 5 c. 29',
-        footer: 'Parliamentary Archives, London &bull; Official Acts Series',
+        shelfmark: 'Statute Book of Great Britain &bull; August 1914',
+        footer: 'Official Parliamentary Record &bull; London',
       },
       sourceB: {
         badge: 'SOURCE B',
@@ -253,15 +251,15 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       sourceB: {
         badge: 'SOURCE B',
         type: 'Material Artifact & Primary Roll of Honour',
-        title: 'The Bronze Plaque: 67 Local Names on the Stubbington Memorial',
+        title: 'The Inscribed Beams: 67 Local Fallen of Stubbington & Hill Head',
         image:
           getBase64Image('/images/stubbington_names_1.jpg') ||
           getBase64Image('/images/stubbington_memorial.jpg'),
         context:
-          'The bronze plaque inside the Stubbington memorial lists sixty-seven names from the tiny village community, including brothers William, Cyril, and Auriol Lowry, and Sister Nancy Lowry.',
+          'Carved into the oak beams of the 1922 shelter by village carpenter Arthur Tribbeck are sixty-seven local casualties, including his own son Harold, the three Lowry brothers, and VAD nurse Nita Madeline King.',
         hingeQuestion:
           'What does the presence of multiple sons from single families reveal about the demographic trauma of the "Lost Generation" on small English villages?',
-        shelfmark: 'Stubbington Memorial Plaque &bull; The Green, Stubbington',
+        shelfmark: 'Stubbington Memorial Inscription &bull; The Green, Stubbington',
         footer: 'Community War Memorial Inventory &bull; Hampshire',
       },
     },
@@ -726,17 +724,17 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
 
     p13: {
       keyFigure: {
-        name: 'Sister Nancy Lowry',
-        lifespan: '1892–1918',
-        role: 'Voluntary Aid Detachment (VAD) Nurse, Manor Way Grange',
+        name: 'Major Auriol "Eric" Lowry DSO, MC',
+        lifespan: '1893–1918',
+        role: 'Battalion Commander, 2nd Bn West Yorkshire Regiment',
         significance:
-          'Sole woman commemorated on the Stubbington War Memorial; symbolises female volunteer sacrifice and the profound bereavement suffered by Hampshire families.',
+          'Commanding officer from Manor Way Grange, Stubbington; his death weeks before the Armistice completed the extinction of all three Lowry brothers.',
         actions: [
-          'Volunteered as a young VAD nurse, tending to severely wounded soldiers suffering from mustard gas exposure and gangrene in military convalescent wards.',
-          'Contracted fatal illness in service shortly before the Armistice, dying in November 1918 alongside thousands of service personnel during the Spanish Flu pandemic.',
-          'Her grieving mother, Mrs. Lowry of Stubbington, designed the unique wooden memorial shelter over the village pump to preserve her memory.',
+          'Awarded the Distinguished Service Order (DSO) and Military Cross (MC) for conspicuous gallantry under heavy artillery fire on the Western Front.',
+          'Commanded the battalion in which his younger brother Patrick served, witnessing Patrick killed in action during the 1918 German Spring Offensive.',
+          'Killed by a machine-gun bullet near Epéhy on 23 September 1918 (aged 25); in their grief, his parents built the Lowry Memorial Hall in Lee-on-the-Solent.',
         ],
-        image: getBase64Image('/images/lowry_william.png'),
+        image: getBase64Image('/images/lowry_auriol.png'),
       },
       conceptSpotlight: `
         <div class="concept-spotlight-box">
@@ -1030,16 +1028,16 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 2: The Stubbington Shelter & The Village Green Pump',
         text: [
-          '<span class="para-ref">[2.1]</span> In response to this universal grief, over 100,000 local war memorials were erected across Great Britain between 1919 and 1925, funded entirely by public subscriptions raised in individual neighbourhoods, clubs, and villages. Each memorial reflected the unique architectural choices of the community it served.',
-          '<span class="para-ref">[2.2]</span> In the Hampshire village of Stubbington, the community rejected a conventional stone obelisk or imperial cross. Instead, the village erected a unique, open-timbered memorial shelter directly over the historic village water pump on the green. Designed as an everyday sanctuary, it provided shade and rest for working parishioners while memorialising sixty-seven local fallen.',
-          '<span class="para-ref">[2.3]</span> The Stubbington shelter was designed by Mrs. Lowry of Manor Way Grange, whose family exemplified the devastating personal cost of the conflict. The memorial was officially unveiled on 4 June 1922 by the local vicar, dedicating the structure to the eternal memory of the village youth.',
+          '<span class="para-ref">[2.1]</span> In response to this universal grief, over 100,000 local war memorials were erected across Great Britain between 1919 and 1925, funded entirely by public subscriptions raised in individual neighbourhoods, clubs, and parishes. Each memorial reflected the unique architectural choices of the community it served.',
+          '<span class="para-ref">[2.2]</span> In the Hampshire parish of Stubbington and Hill Head, the community deliberately rejected an aloof, militaristic stone obelisk. Instead, the village resolved to erect a functional, open-timbered memorial shelter directly over the historic village water pump in the centre of Stubbington Green, providing a peaceful resting sanctuary where residents gathered daily.',
+          '<span class="para-ref">[2.3]</span> The construction was entrusted to local master wheelwright and carpenter Arthur Tribbeck. Working with seasoned English oak, Tribbeck carved sixty-seven local casualties into the high roof beams, enduring the unbearable personal agony of chiseling the name of his own 21-year-old son, Harold Tribbeck, who died of gangrene in October 1918. Major financial funding and design guidance came from Mrs. Lydia King of Seabank, Hill Head, whose daughter was the only woman commemorated among the fallen.',
         ],
       },
       {
-        title: 'Act 3: Nancy Lowry & The VAD Frontline Experience',
+        title: 'Act 3: The Extinction of Lineages: The Lowry Brothers & Nurse Nita King',
         text: [
-          '<span class="para-ref">[3.1]</span> The Stubbington bronze plaque contains sixty-six male soldiers alongside a single female name: Sister Nancy Lowry. Nancy volunteered as a Voluntary Aid Detachment (VAD) nurse, tending severely wounded soldiers in military hospitals under hazardous, infection-prone conditions throughout the conflict.',
-          '<span class="para-ref">[3.2]</span> Nancy died in service in November 1918 shortly before the Armistice, contracting fatal illness while treating casualties during the catastrophic Spanish Flu pandemic. Her three brothers—William, Cyril, and Auriol Lowry—also served overseas, illustrating the profound multi-generational toll borne by single family households.',
+          '<span class="para-ref">[3.1]</span> Behind the sixty-seven names lay catastrophic domestic bereavements. At Manor Way Grange, prominent local benefactors William and Annie Lowry sent all three of their sons to the front: William "Harper" was killed at Gallipoli in 1915; Cyril "Patrick" fell on the Somme in March 1918 in full view of his older brother; and Major Auriol "Eric" Lowry DSO, MC was shot by a machine gun just seven weeks before the Armistice, completely extinguishing the family line. In their grief, the parents built the Lowry Memorial Hall in Lee-on-the-Solent.',
+          '<span class="para-ref">[3.2]</span> Alongside sixty-six men, the memorial commemorates a single female casualty: 29-year-old Voluntary Aid Detachment (VAD) nurse Nita Madeline King. Deployed to the vast tented Allied military hospital at Wimereux in France, Nita contracted cerebrospinal meningitis while treating wounded troops and died on active service on 25 May 1917. In her honour, her devastated mother Lydia funded the village shelter and endowed the Nita King Research Scholarship at Cambridge University.',
         ],
       },
       {
@@ -1228,7 +1226,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
     dateRange: '1914–1919',
     heroImage: '/images/stubbington_memorial_1.jpg',
     heroCaption:
-      'The Stubbington War Memorial Shelter, erected in 1922 over the village green water pump, designed by the mother of VAD nurse Nancy Lowry, commemorating the sixty-seven local fallen.',
+      'The Stubbington War Memorial Shelter, erected in 1922 over the village green water pump, built by Arthur Tribbeck and funded by the mother of VAD nurse Nita Madeline King, commemorating the sixty-seven local fallen.',
     syllabusMatrix: SYLLABUS_MATRIX,
     leftSources: LEFT_SOURCES,
     leftVocab: LEFT_VOCAB,

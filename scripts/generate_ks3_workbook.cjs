@@ -1237,9 +1237,9 @@ const UNIT_REGISTRY = {
         title: 'Milestone 8: Village Mourning & The Stubbington War Memorial',
         lesson: 'Lesson 6',
         summary:
-          'In Stubbington, Hampshire, the local community erects a unique wooden shelter over the village pump on the green. Designed by the mother of local VAD volunteer Nancy Lowry, the shelter commemorates 67 local soldiers and civilians lost to the industrial slaughter of the Great War.',
+          'In Stubbington, Hampshire, the local community erects a unique wooden shelter over the village pump on the green. Built by carpenter Arthur Tribbeck and funded by the mother of VAD nurse Nita Madeline King, the shelter commemorates 67 local fallen, including the three Lowry brothers.',
         sketchPrompt:
-          '✎ Dual-Coding Sketchpad: Sketch the wooden memorial shelter over the village green pump, Nancy Lowry’s nursing cross, or the bronze plaque.',
+          '✎ Dual-Coding Sketchpad: Sketch the wooden memorial shelter over the village green pump, the carved oak beam, or Nurse Nita King’s Red Cross emblem.',
         keyTerm: 'Memorialisation & Lost Generation',
         exactDate: '1922',
       },
@@ -1304,7 +1304,7 @@ const UNIT_REGISTRY = {
       [
         'Demographic shock of the "Lost Generation" on small English agricultural villages',
         'The Stubbington Memorial Shelter (1922): unique village green pump architecture',
-        'Micro-case study: Nancy Lowry (VAD nurse) & the 67 local fallen men on the memorial',
+        'Micro-case study: Nurse Nita King, the three Lowry brothers & the 67 local fallen carved on the memorial beams',
       ],
       [
         'Evaluating the four thematic strands across the 1914–1919 conflict',
@@ -1429,7 +1429,7 @@ const UNIT_REGISTRY = {
       'Illustrate Milestone 2 on Page 2: Sketch Sepoy Khudadad Khan holding his machine-gun post at Hollebeke.',
       'Illustrate Milestone 3 on Page 2: Sketch a Canary Girl packing TNT shells, or Milestone 5 on Page 3 (tribunal).',
       'Illustrate Milestone 7 on Page 3: Sketch the Hall of Mirrors at Versailles, or the signing of Article 231.',
-      'Illustrate Milestone 8 on Page 3: Sketch the wooden memorial shelter over the village pump, or Nancy Lowry’s nursing cross.',
+      'Illustrate Milestone 8 on Page 3: Sketch the wooden memorial shelter over the village pump, or Nurse Nita King’s Red Cross emblem.',
       'Review all 8 Milestones across Pages 2–3 to synthesize your overarching historical argument.',
     ];
 
@@ -1449,7 +1449,7 @@ const UNIT_REGISTRY = {
         shelfmark: 'FAREHAM ARCHIVES • HAMPSHIRE RECORD OFFICE',
         title: 'The Stubbington War Memorial Shelter on the Village Green',
         description:
-          'Erected in 1922 over the historic village water pump, designed by the mother of VAD nurse Nancy Lowry, commemorating the 67 local soldiers and civilians lost to the industrial slaughter of the Great War.',
+          'Erected in 1922 over the historic village water pump, built by village carpenter Arthur Tribbeck and funded by the mother of VAD nurse Nita Madeline King, commemorating the 67 local fallen carved into its oak beams.',
       },
       thematicStrands: [
         {
