@@ -60,9 +60,9 @@ const CONCEPT_SPOTLIGHTS = {
     tag: 'POLITICAL CATALYST: FISCAL EXTORTION',
     category: 'THE 1381 MARCH ON LONDON',
     title: 'The Three Poll Taxes & The Demand for Freedom',
-    body: "Between 1377 and 1380, the royal government levied three unprecedented Poll Taxes to finance the disastrous Hundred Years' War in France. Unlike traditional taxes on movable property, the 1380 Poll Tax was a flat regressive charge of twelve pence (three groats) on every person over fifteen, equating to two weeks' wages for poor laborers. Across southeastern England, communities concealed 450,000 taxpayers in massive tax evasion. When royal commissioners used sexual assault to verify the age of peasant girls, rebellion exploded. Led by Wat Tyler and the radical priest John Ball, the rebels marched on London demanding the complete abolition of serfdom and the eradication of the aristocratic hierarchy. The rebellion proved that fourteenth-century peasants understood national tax law and were prepared to use armed collective force against royal fiscal tyranny.",
+    body: "Between 1377 and 1380, the royal government levied three unprecedented Poll Taxes to finance the Hundred Years' War. Unlike taxes on property, the 1380 Poll Tax was a flat regressive charge of twelve pence on every person over fifteen—equating to two weeks' wages for poor laborers. Across the southeast, communities concealed 450,000 taxpayers in massive tax evasion. When royal commissioners used coercive enforcement, rebellion exploded. Led by Wat Tyler and radical priest John Ball, 60,000 peasants marched on London demanding the complete abolition of serfdom and equality under the law.",
     takeaway:
-      "Key Historical Insight: The Peasants' Revolt proved that the post-plague English peasantry possessed sophisticated regional political coordination, understood statutory law, and would not tolerate feudal re-enslavement by an extractive aristocracy.",
+      "Key Historical Insight: The Peasants' Revolt proved that the post-plague English peasantry understood statutory law and would not tolerate feudal re-enslavement by an extractive aristocracy.",
   },
   p17: {
     tag: 'STRUCTURAL MECHANISM: BASTARD FEUDALISM',

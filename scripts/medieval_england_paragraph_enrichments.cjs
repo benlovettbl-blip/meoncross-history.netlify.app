@@ -79,7 +79,7 @@ const PARAGRAPH_ENRICHMENTS = {
     act2_p2:
       'The catastrophic mortality produced an unprecedented economic shockwave across the kingdom. With nearly half the agricultural workforce dead, England faced an acute, desperate shortage of human labour. Thousands of acres of ripe wheat rotted in rain-drenched fields; herds of cattle wandered unmilked across weed-choked meadows, and manorial lords faced total financial ruin. Surviving peasants suddenly realized their labor was in immense demand, transforming the balance of economic power overnight.',
     act2_p3:
-      'Traditional authority fractured under the strain of sudden mortality. Monasteries lost whole communities of monks, while hundreds of parish priests abandoned their dying flocks in terror or perished administering last rites. In the countryside, surviving serfs looked upon empty manors and recognized that the feudal monopoly was broken. Land without labor was worthless, giving the humblest ploughman unprecedented bargaining leverage over proud aristocratic landlords across England, forever ending compulsory feudal serfdom.',
+      'Traditional authority fractured under the strain of sudden mortality. Monasteries lost whole communities of monks, while hundreds of parish priests abandoned their dying flocks in terror or perished administering last rites. In the countryside, surviving serfs recognized that land without labor was worthless, giving humble ploughmen unprecedented bargaining leverage over proud landlords and fatally undermining compulsory feudal serfdom.',
   },
 
   // Enquiry 7: P14 (OPTIMAL 35px), P15 (OPTIMAL 24px)

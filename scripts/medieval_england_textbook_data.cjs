@@ -676,8 +676,6 @@ module.exports = function getMedievalData(helpers = {}) {
         date: 'c. 1070s • Romanesque Embroidery',
         title: 'The Bayeux Tapestry: Harold’s Demise & Senlac Ridge',
         image: getBase64Image('/images/battle_of_hastings_bayeux.jpg'),
-        expand: 'sm',
-        text: '"Here King Harold is slain: stitched in dyed wool, the tapestry captures the pivotal turning point on Senlac Hill. While nineteenth-century historians insisted Harold was blinded by an arrow through the eye, forensic textile analysis reveals the figure pulling an arrow from his helmet was heavily repaired in Victorian times. Whether struck by an arrow or hacked to pieces by Norman cavalry, Harold\'s death decapitated Saxon command and doomed the kingdom."',
         context:
           "Commissioned by William's half-brother, Bishop Odo of Bayeux, to celebrate Norman legitimacy while honoring the ferocious courage of English housecarls.",
         hingeQuestion:
