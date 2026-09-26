@@ -21,9 +21,11 @@ const fs = require('fs');
   const tempDir = path.join(__dirname, '..', '.temp_screenshots');
   if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir);
 
-  for (let i = 0; i < Math.min(6, pageEls.length); i++) {
-    await pageEls[i].screenshot({ path: path.join(tempDir, `page_${i + 1}.png`) });
-    console.log(`Saved page_${i + 1}.png`);
+  for (let i = 0; i < pageEls.length; i++) {
+    if (i < 6 || i >= 11) {
+      await pageEls[i].screenshot({ path: path.join(tempDir, `page_${i + 1}.png`) });
+      console.log(`Saved page_${i + 1}.png`);
+    }
   }
 
   // Also screenshot great_war part 1
@@ -46,7 +48,11 @@ const fs = require('fs');
     console.log('Saved gw_part1_page_2.png and gw_part1_page_3.png');
   }
 
-  // Inspect vertical distribution of elements on page 2 and page 3
+  // Measure great_war_part2 layout
+  await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'load' });
+  await page.evaluateHandle('document.fonts.ready');
+
+  // Inspect vertical distribution of elements across all enquiry spreads
   const layoutAnalysis = await page.evaluate(() => {
     return Array.from(document.querySelectorAll('.textbook-page')).map((p, idx) => {
       const pRect = p.getBoundingClientRect();
@@ -60,22 +66,22 @@ const fs = require('fs');
         const bbRect = bottomBox ? bottomBox.getBoundingClientRect() : null;
         const gap = tgRect && bbRect ? bbRect.top - tgRect.bottom : null;
         return {
-          colHeight: csRect.height,
-          topGroupHeight: tgRect ? tgRect.height : 0,
-          bottomBoxHeight: bbRect ? bbRect.height : 0,
-          gapBetween: gap,
+          colHeight: Math.round(csRect.height),
+          topGroupHeight: tgRect ? Math.round(tgRect.height) : 0,
+          bottomBoxHeight: bbRect ? Math.round(bbRect.height) : 0,
+          gapBetween: gap !== null ? Math.round(gap) : null,
         };
       });
       return {
         page: idx + 1,
-        pageHeight: pRect.height,
+        pageHeight: Math.round(pRect.height),
         colSides,
       };
     });
   });
 
-  console.log('Layout Analysis:');
-  console.log(JSON.stringify(layoutAnalysis.slice(1, 5), null, 2));
+  console.log('Great War Part 2 Layout Analysis:');
+  console.log(JSON.stringify(layoutAnalysis.slice(1, 15), null, 2));
 
   await browser.close();
 })();

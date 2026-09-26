@@ -87,13 +87,13 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
     {
       num: 7,
       title: 'Synoptic Assessment: The Great War (1914–1919)',
-      enquiry: 'Capstone Synthesis: The Great War',
-      skill: 'Synoptic Capstone Synthesis',
+      enquiry: 'How far did the First World War transform the modern world?',
+      skill: 'Synoptic Assessment & Historical Verdict',
       assessmentFocus: 'Synoptic Assessment & Historical Verdict',
       bullets: [
         'Evaluating the 4 thematic strands across the 1914–1919 conflict',
         'Synthesising military, domestic, imperial & local archival evidence',
-        'Mastery of Edexcel criteria: direct thesis & weighted judgement',
+        'Edexcel criteria: sustained thesis, precise data & weighted judgement',
       ],
     },
   ];
@@ -222,17 +222,15 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       },
       sourceB: {
         badge: 'SOURCE B',
-        type: 'Contemporary Political Satire',
-        title: 'German Satirical Cartoon: "The Dictated Peace" (*Simplicissimus*, 1919)',
-        image:
-          getBase64Image('/images/gw_versailles_cartoon_german.jpg') ||
-          getBase64Image('/images/gw_versailles_cartoon.jpg'),
+        type: 'Contemporary Satirical Cartoon',
+        title: 'Political Cartoon: "Peace and Future Cannon Fodder" (13 May 1919)',
+        image: getBase64Image('/images/gw_weeping_child.jpg'),
         context:
-          'German political cartoons portrayed Germany as a bound prisoner led to the guillotine by Clemenceau and Lloyd George, expressing widespread German fury that the treaty was an unnegotiated *Diktat*.',
+          'Drawn by Australian war artist Will Dyson for the London Daily Herald as the Big Three concluded treaty negotiations, showing Clemenceau, Lloyd George, and Wilson exiting while a naked child labelled "1940 Class" weeps behind a pillar.',
         hingeQuestion:
-          'Why did the German public react with such intense shock and betrayal to the terms of the Treaty of Versailles in June 1919?',
-        shelfmark: 'Simplicissimus Archive &bull; Munich, Germany',
-        footer: 'German Historical Museum, Berlin &bull; Cartoon Collection',
+          'Why did Will Dyson prophetically predict that children born in 1919 would become "cannon fodder" in another European war around 1940?',
+        shelfmark: 'Daily Herald Archive &bull; 13 May 1919 Edition',
+        footer: 'British Cartoon Archive &bull; University of Kent',
       },
     },
     p12: {
@@ -567,7 +565,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           </div>
           <h4 class="csb-title">Postwar Imperial Erasure &amp; Disciplinary Recovery</h4>
           <div class="csb-body">
-            Over four million colonial soldiers and non-combatant labourers from India, Africa, the West Indies, and China sustained the British war effort. Over 74,000 Indian troops died overseas. Yet in post-war commemorations, their vital role was largely excised from public monuments, textbooks, and popular mythology, reflecting imperial racial hierarchies and colonial amnesia that modern historians now actively dismantle.
+            Over four million colonial soldiers and non-combatant labourers from India, Africa, the West Indies, and China sustained the Allied war effort. Over 74,000 Indian troops died overseas, holding the line in Flanders and Mesopotamia. Yet in post-war commemorations, their vital contributions were largely excised from public monuments, school textbooks, and national ceremonies. Black soldiers of the British West Indies Regiment, despite facing heavy artillery bombardments, were denied equal pay, barred from combat promotion, and excluded from the 1919 victory parades, reflecting deep imperial hierarchies that modern historians now actively dismantle.
           </div>
           <div class="csb-takeaway">
             <strong>Key Causation:</strong> Without the prompt arrival of the Indian Corps in autumn 1914, Allied frontline defences in Flanders would have collapsed before Britain’s volunteer armies were even trained.
@@ -616,7 +614,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           'Introduced universal military conscription through the 1916 Military Service Act to replace volunteer recruitment after Somme casualties.',
           'Ousted Asquith in December 1916 to establish a streamlined five-man War Cabinet exercising direct executive control over the wartime economy.',
         ],
-        image: getBase64Image('/images/gw_kitchener_portrait.jpg'),
+        image: getBase64Image('/images/gw_lloyd_george.jpg'),
       },
       conceptSpotlight: `
         <div class="concept-spotlight-box">
@@ -626,7 +624,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           </div>
           <h4 class="csb-title">The Rise of the Modern Leviathan: Total State Control</h4>
           <div class="csb-body">
-            Before 1914, Britain operated on classical *laissez-faire* principles: minimal government interference in private business, trade, and daily civilian life. By 1918, DORA regulations controlled food rationing, beer strength, railway transit, press reports, lighting curfews, and working conditions. The British state became a centralised managerial machine, fundamentally destroying Victorian concepts of individual liberty.
+            Before 1914, Great Britain operated on classical *laissez-faire* principles: minimal government interference in private industry, commercial trade, and daily civilian life. By 1918, DORA regulations micro-managed food rationing, industrial production, railway transit, press reports, lighting curfews, and working hours. The Ministry of Munitions nationalised over 250 factories and directly commanded four million workers, fundamentally destroying Victorian concepts of individual liberty and establishing the modern centralised state.
           </div>
           <div class="csb-takeaway">
             <strong>Key Causation:</strong> Total war required total state mobilisation; the unprecedented expansion of government authority between 1914 and 1918 laid the foundation for modern 20th-century state governance.
@@ -675,7 +673,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           'Resisted Woodrow Wilson’s idealistic Fourteen Points, declaring: "Mr. Wilson bores me with his Fourteen Points; why, Almighty God has only ten!"',
           'Insisted on regaining Alsace-Lorraine, demilitarising the Rhineland, and inserting the punitive Article 231 War Guilt clause.',
         ],
-        image: getBase64Image('/images/gw_big_three_versailles.jpg'),
+        image: getBase64Image('/images/gw_clemenceau.jpg'),
       },
       conceptSpotlight: `
         <div class="concept-spotlight-box">
@@ -685,7 +683,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           </div>
           <h4 class="csb-title">The "Stab-in-the-Back" Myth (*Dolchstoßlegende*)</h4>
           <div class="csb-body">
-            Because German armies were still fighting on French and Belgian soil when the 1918 Armistice was signed, German military commanders (Ludendorff and Hindenburg) propagated the toxic falsehood that the army had not been defeated militarily, but "stabbed in the back" by democratic politicians, socialists, and Jews at home. This propaganda poisoned the Weimar Republic and made Versailles appear as an illegitimate humiliation.
+            Because German armies were still fighting on French and Belgian soil when the 1918 Armistice was signed, military commanders (Paul von Hindenburg and Erich Ludendorff) propagated the toxic falsehood that the army was never defeated militarily, but "stabbed in the back" by democratic politicians, socialists, and Jews at home. When Hindenburg testified before the Weimar National Assembly in November 1919, this myth provided reactionary nationalists with a ready-made scapegoat, branding the signatories as the "November Criminals" and fatally delegitimising the democratic republic.
           </div>
           <div class="csb-takeaway">
             <strong>Key Causation:</strong> Article 231 was intended by the Allies as a legal basis for reparations, but became the primary psychological weapon used by right-wing nationalists to undermine European democracy.
@@ -798,12 +796,12 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       conceptSpotlight: `
         <div class="concept-spotlight-box">
           <div class="csb-header">
-            <span class="csb-tag">SYNOPTIC MASTERY: CAUSAL HIERARCHY</span>
-            <span class="csb-category">DISCIPLINARY SYNTHESIS &bull; 1914–1919</span>
+            <span class="csb-tag">EXAMINATION STRATEGY: CAUSAL HIERARCHY</span>
+            <span class="csb-category">CORE SPECIFICATION THEMES &bull; 1914–1919</span>
           </div>
           <h4 class="csb-title">Causal Hierarchy: Immediate Triggers vs Structural Catalysts</h4>
           <div class="csb-body">
-            Mastery of Edexcel history requires distinguishing between immediate triggers (Sarajevo spark, German invasion of Belgium) and deep structural currents (militarism, imperial rivalry, naval competition). In extended writing, the highest marks are awarded to students who establish a clear hierarchy: explaining why secondary triggers could only ignite war because structural friction had already built an unstable powder keg.
+            Excellence in Edexcel GCSE History requires distinguishing between immediate triggers (the Sarajevo assassination, the German invasion of Belgium) and deep structural currents (militarism, imperial rivalry, naval competition). In extended writing, the highest marks are awarded to students who establish a clear hierarchy: explaining why secondary triggers could only ignite war because structural friction had already built an unstable powder keg. Furthermore, students must weigh how military deadlock in the trenches interacted dynamically with home front industrial exhaustion and global imperial supply lines.
           </div>
           <div class="csb-takeaway">
             <strong>Key Causation:</strong> Outstanding historical writing avoids listing narrative facts; it proves *why* one causal factor carried greater explanatory weight than others across the period.
@@ -850,31 +848,31 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 1: The Rush to the Colours & Kitchener’s Appeal',
         text: [
-          '<span class="para-ref">[1.1]</span> When Great Britain declared war on Germany at midnight on 4 August 1914 following the invasion of neutral Belgium, the nation possessed a small, highly trained professional army of barely 250,000 men. Unlike continental rivals who had relied on compulsory universal conscription for decades, Britain possessed no statutory mechanism to compel civilian men into military service.',
-          '<span class="para-ref">[1.2]</span> Appointed Secretary of State for War, Field Marshal Lord Kitchener immediately recognised that the conflict would not end by Christmas, but would require millions of soldiers sustained over multiple years. In late August 1914, Kitchener issued an unprecedented appeal for 500,000 volunteers, inaugurating the New Armies ("Kitchener’s Mob"). Over 750,000 men enlisted in the first eight weeks alone.',
-          '<span class="para-ref">[1.3]</span> Men flooded recruitment depots driven by a mixture of genuine moral outrage over German atrocities in Belgium, imperial patriotism, and economic necessity. For thousands of working-class labourers enduring pre-war poverty, the army offered guaranteed daily meals, warm woollen uniforms, and regular pay.',
+          '<span class="para-ref">[1.1]</span> When Great Britain declared war on Germany at midnight on 4 August 1914 following the invasion of neutral Belgium (violating the 1839 Treaty of London), the nation possessed a small professional army of barely 247,000 regular soldiers. Unlike continental rivals who relied on peacetime conscription, Britain possessed no legal mechanism to compel civilian men into military service, relying entirely on voluntary enlistment.',
+          '<span class="para-ref">[1.2]</span> Appointed Secretary of State for War, Field Marshal Lord Kitchener predicted a multi-year war of attrition requiring millions of soldiers. In late August 1914, Kitchener launched an unprecedented appeal for 500,000 volunteers, creating the New Armies ("Kitchener’s Mob"). Over 750,000 men enlisted in the first eight weeks alone, completely swamping recruitment depots, drill halls, and medical inspection boards across Great Britain.',
+          '<span class="para-ref">[1.3]</span> Men rushed to enlist driven by genuine moral indignation over reported German atrocities in Belgium ("The Rape of Belgium"), deep Edwardian patriotism, and economic necessity. For thousands of working-class men enduring low wages and unstable casual employment, the army offered guaranteed daily meals, solid woollen uniforms, regular pay of one shilling a day, and the thrilling prospect of overseas adventure before the conflict concluded.',
         ],
       },
       {
         title: 'Act 2: Pals Battalions & The Portsmouth Town Hall Enlistment',
         text: [
-          '<span class="para-ref">[2.1]</span> To accelerate voluntary recruitment, Lord Derby conceived the innovative scheme of "Pals Battalions". The War Office promised that men who enlisted together would be trained, billeted, and deployed side by side in the field, harnessing existing civic, corporate, and sporting solidarity.',
-          '<span class="para-ref">[2.2]</span> Across the country, railway clerks, stockbrokers, miners, and football teams formed distinct fighting units. In Portsmouth, civic leaders and dockyard managers raised the 14th and 15th (Portsmouth) Battalions of the Hampshire Regiment, known colloquially as the "Pompey Pals". Men queued outside the Town Hall to join alongside their shop-floor apprentices and childhood neighbours.',
-          '<span class="para-ref">[2.3]</span> The intense local pride of the Pals Battalions initially created an extraordinary spirit of camaraderie and mutual trust. However, military planners failed to foresee the devastating consequence: if a single battalion encountered concentrated artillery or machine-gun fire, an entire town’s youth would be wiped out simultaneously.',
+          '<span class="para-ref">[2.1]</span> To accelerate voluntary recruitment and prevent recruits from feeling isolated, Lord Derby conceived the innovative scheme of "Pals Battalions". The War Office pledged that friends, workmates, and neighbours who enlisted together would train, live, and fight side by side in the field, converting existing civic, industrial, and sporting solidarity into cohesive military units.',
+          '<span class="para-ref">[2.2]</span> Across Britain, clerks, miners, tram drivers, and church congregations formed distinct fighting units. In Portsmouth, civic leaders and naval dockyard managers raised the 14th and 15th (Portsmouth) Battalions of the Hampshire Regiment, known colloquially as the "Pompey Pals". Men queued outside the Town Hall to enlist alongside their fellow shipyard apprentices, boilermaker colleagues, and childhood neighbours, eager to represent their hometown.',
+          '<span class="para-ref">[2.3]</span> The intense communal pride of the Pals Battalions initially generated extraordinary morale, camaraderie, and mutual trust during basic training. However, military planners failed to foresee a devastating demographic consequence: when a tightly-knit local unit encountered concentrated machine-gun or artillery fire in combat, the young male population of an entire town, parish, or workplace would be wiped out in a single morning.',
         ],
       },
       {
         title: 'Act 3: Propaganda, Peer Pressure & The White Feather Campaign',
         text: [
-          '<span class="para-ref">[3.1]</span> As the initial euphoric rush of August volunteers began to slacken in 1915, the British government escalated psychological pressure through the Parliamentary Recruiting Committee. Thousands of posters were printed, shifting from patriotic appeals to direct emotional coercion that exploited domestic relationships and filial shame.',
-          '<span class="para-ref">[3.2]</span> Meanwhile, civilian organisations unleashed aggressive social shaming tactics. Admiral Charles Penrose Fitzgerald founded the Order of the White Feather, encouraging women to present white feathers—a traditional symbol of cowardice—to any young man seen in civilian dress, ruthlessly compelling thousands of reluctant workers into uniform.',
+          '<span class="para-ref">[3.1]</span> As the initial romantic rush of August volunteers began to slacken during 1915, the British government intensified psychological pressure through the Parliamentary Recruiting Committee. Over fifty million posters were printed, shifting from patriotic appeals to direct emotional coercion that exploited domestic family guilt and filial shame, asking pointed questions such as Savile Lumley’s famous poster: "Daddy, what did YOU do in the Great War?". Public rallies featured fiery speeches urging men to do their duty.',
+          '<span class="para-ref">[3.2]</span> Concurrently, civilian organisations unleashed aggressive social shaming tactics to coerce reluctant young men into uniform. Admiral Charles Penrose Fitzgerald founded the Order of the White Feather, encouraging women to publicly present white feathers—a traditional symbol of cowardice—to any man of military age seen in civilian clothes. Baroness Orczy formed the Active Service League, ruthlessly humiliating thousands of eligible men into enlistment offices regardless of vital industrial exemptions.',
         ],
       },
       {
         title: 'Act 4: The Tragic Flaw: Concentrated Community Grief',
         text: [
-          '<span class="para-ref">[4.1]</span> By late 1915, over 2.4 million British men had volunteered voluntarily, representing the largest unforced military mobilisation in world history. Yet this volunteer system contained an inherent disciplinary and social flaw: it stripped essential skilled workers from munitions factories and coal mines, sparking catastrophic industrial shortages.',
-          '<span class="para-ref">[4.2]</span> Worse still, the concentration of local men in single battalions ensured that when the New Armies were deployed into combat on the Western Front, the demographic devastation fell not randomly across the nation, but like an executioner’s axe on specific streets, parishes, and villages across the British Isles.',
+          '<span class="para-ref">[4.1]</span> By late 1915, over 2.4 million British men had volunteered freely, representing the largest unforced military mobilisation in world history. Yet this volunteer system caused severe industrial disruption: thousands of skilled coal miners, shipbuilders, and munitions engineers had joined the ranks, causing acute manufacturing deficits that precipitated the disastrous May 1915 Shell Crisis on the Western Front, forcing Lloyd George to restructure factory production.',
+          '<span class="para-ref">[4.2]</span> More tragically still, when the New Armies marched into combat on the Western Front, the grim mechanics of industrial firepower fell upon specific geographic communities. The slaughter fell not evenly across Britain, but struck concentrated blows against individual streets, factories, and villages, leaving thousands of neighbourhoods simultaneously bereaved and forever altering British social history and collective remembrance.',
         ],
       },
     ],
@@ -884,31 +882,31 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 1: Trench Architecture & Defensive Superiority',
         text: [
-          '<span class="para-ref">[1.1]</span> By late autumn 1914, following the Battle of the Marne and the "Race to the Sea", the fluid war of movement ground to an exhausted halt. Across 400 miles from the Swiss frontier to the North Sea coast, opposing armies dug thousands of miles of earthworks, establishing the Western Front.',
-          '<span class="para-ref">[1.2]</span> The rapid defensive dominance was dictated by revolutionary industrial technology: rapid-firing Maxim machine guns, clip-fed magazine rifles, and heavy field artillery. Against these weapons, exposed infantry charging across open ground faced almost certain annihilation. Earth, sandbags, and deep timber dugouts offered the only survival.',
-          '<span class="para-ref">[1.3]</span> Trenches were constructed in a disciplined zig-zag layout with firebays and traverses to restrict shrapnel blasts and prevent enemy raiders from firing down straight corridors. Between the lines lay No Man’s Land: a shattered wasteland of shell craters, rotting corpses, and deep belts of barbed wire up to forty yards deep.',
+          '<span class="para-ref">[1.1]</span> Following the Battle of the Marne and the frantic "Race to the Sea" in autumn 1914, mobile warfare ground to an exhausted halt. Across four hundred continuous miles from the Swiss frontier to the Belgian coast at Nieuwpoort, opposing armies dug thousands of miles of fortified earthworks, establishing the deadlock of the Western Front.',
+          '<span class="para-ref">[1.2]</span> This static deadlock was dictated by the total dominance of defensive industrial technology: rapid-firing Maxim and Vickers machine guns (firing 500 rounds per minute), magazine-fed Lee-Enfield rifles, and massed artillery. Against these defensive vectors, infantry charging across open ground faced certain destruction. Earthworks, sandbag parapets, and timber-reinforced dugouts provided the only sanctuary against lethal high-explosive shrapnel.',
+          '<span class="para-ref">[1.3]</span> Frontline trenches were engineered in disciplined zig-zag patterns with alternating firebays and defensive traverses to localise shell blasts and prevent enemy raiders from firing down entire trenches. Between opposing positions lay No Man’s Land: a lethal wasteland of shell craters, unburied corpses, and deep belts of barbed wire up to forty yards deep, illuminated at night by magnesium flares and swept continuously by machine-gun fire.',
         ],
       },
       {
         title: 'Act 2: 1 July 1916: The Catastrophe on the Somme',
         text: [
-          '<span class="para-ref">[2.1]</span> In the summer of 1916, British Commander-in-Chief Sir Douglas Haig launched a massive joint offensive alongside the French along the River Somme. The primary strategic objective was to relieve catastrophic German pressure on the French army at Verdun, while exhausting German military reserves through attrition.',
-          '<span class="para-ref">[2.2]</span> To ensure victory, British artillery unleashed a seven-day preliminary bombardment, firing over 1.5 million shells intended to pulverise German frontline trenches, destroy machine-gun nests, and cut the barbed wire. British infantry were assured that they would simply walk across No Man’s Land to occupy abandoned ruins.',
-          '<span class="para-ref">[2.3]</span> The bombardment failed disastrously. Shrapnel shells could not sever thick wire belts, and German soldiers sheltered safely in fortified dugouts thirty feet underground. When the barrage lifted at 7:30 am on 1 July 1916, German machine-gunners rushed to the parapet, inflicting 57,470 British casualties on the single bloodiest day in British military history.',
+          '<span class="para-ref">[2.1]</span> In summer 1916, British Commander-in-Chief Sir Douglas Haig launched a massive joint offensive alongside French forces along the River Somme in Picardy. The primary strategic objective was to relieve catastrophic German pressure on the French fortress city of Verdun, while wearing down German reserves through sustained attritional pressure.',
+          '<span class="para-ref">[2.2]</span> To ensure a decisive infantry breakthrough, British artillery unleashed a seven-day preliminary bombardment, firing over 1.5 million shells designed to pulverise German frontline trenches, obliterate machine-gun redoubts, and sever the barbed wire. British infantry were assured that the bombardment would leave no enemy alive, allowing them to advance walking in orderly waves with sixty-pound packs to occupy German ruins.',
+          '<span class="para-ref">[2.3]</span> The bombardment proved a catastrophic failure: over a third of the shells were duds, shrapnel failed to cut the thick wire entanglements, and German soldiers sheltered safely in reinforced concrete dugouts thirty feet underground. When the barrage lifted at 7:30 am on 1 July 1916, German machine gunners rushed to the parapet, mowing down advancing British troops and inflicting 57,470 casualties on the bloodiest single day in British military history.',
         ],
       },
       {
         title: 'Act 3: Industrialized Attrition & Artillery Dominance',
         text: [
-          '<span class="para-ref">[3.1]</span> Despite the catastrophic initial losses, the Battle of the Somme dragged on for 141 days until November 1916, costing over one million Allied and German casualties. Warfare on the Western Front ceased to be a clash of maneuver and bravery; it became a contest of industrial production and human endurance.',
-          '<span class="para-ref">[3.2]</span> Artillery caused over 70% of all battlefield casualties, raining millions of high-explosive and poisonous gas shells onto soldiers huddled in waterlogged mud. Men endured trench foot, body lice, and the debilitating psychological trauma of "shell shock", where the nervous system shattered under relentless acoustic bombardment.',
+          '<span class="para-ref">[3.1]</span> Despite the catastrophic first day, the Battle of the Somme raged for 141 days until mid-November 1916, costing over 420,000 British, 200,000 French, and 450,000 German casualties. Warfare on the Western Front ceased to be a heroic contest of manoeuvre; it became an industrial war of attrition (<em>Materialschlacht</em>) in which victory was calculated by which nation could endure the greatest consumption of men and munitions. Heavy howitzers dominated combat.',
+          '<span class="para-ref">[3.2]</span> Artillery fire caused over 70% of all battlefield wounds, raining millions of high-explosive and gas shells onto soldiers trapped in waterlogged, rat-infested mud. Beyond trench foot and lice, soldiers suffered acute psychological destruction termed "shell shock", where the nervous system shattered under relentless acoustic concussions, leading harsh military authorities to court-martial hundreds for desertion.',
         ],
       },
       {
         title: 'Act 4: The Haig Historiographical Debate: "Butcher" vs "Learner"',
         text: [
-          '<span class="para-ref">[4.1]</span> In the decades following the armistice, Field Marshal Haig was castigated by politicians like David Lloyd George and historians like Alan Clark as the archetypal "Butcher of the Somme"—an obstinate, out-of-touch general who squandered a generation of civilian volunteers in futile frontal assaults.',
-          '<span class="para-ref">[4.2]</span> Modern revisionist historians (Terraine, Sheffield) challenge this simplistic verdict, arguing that Haig faced an unprecedented technological impasse where defensive firepower overwhelmed communication systems. Furthermore, the relentless pressure on the Somme wore down the veteran German army, forcing their retreat to the Hindenburg Line and laying the foundation for Allied victory in 1918.',
+          '<span class="para-ref">[4.1]</span> Post-war traditionalist historians (such as Alan Clark in <em>The Donkeys</em>, 1961) and wartime politicians like David Lloyd George castigated Field Marshal Haig as an obstinate, unimaginative cavalry officer who detached himself from trench reality and squandered hundreds of thousands of citizen volunteers in futile frontal assaults against fortified machine guns, earning the pejorative label "The Butcher of the Somme".',
+          '<span class="para-ref">[4.2]</span> In contrast, modern revisionist historians (John Terraine, Gary Sheffield) argue Haig was trapped by contemporary technological limitations: telephone lines were severed by artillery and wireless radio was too heavy for infantry. Furthermore, revisionists highlight that the attritional pressure of the Somme severely degraded the veteran German army, forcing their 1917 retreat to the Hindenburg Line and enabling the pioneering combined-arms victories of 1918.',
         ],
       },
     ],
@@ -918,31 +916,31 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 1: Imperial Mobilisation: The Indian Corps at Ypres',
         text: [
-          '<span class="para-ref">[1.1]</span> Although popular memory frequently portrays the Western Front as an exclusively European conflict, the British Empire was an inherently global war machine. Britain commanded the manpower and industrial resources of over 400 million imperial subjects across Asia, Africa, Australasia, and the Caribbean.',
-          '<span class="para-ref">[1.2]</span> In autumn 1914, with the original British Expeditionary Force decimated at Mons and the Marne, Britain turned desperately to its colonial territories. The British Indian Army mobilised with extraordinary speed, deploying the Lahore and Meerut divisions across the Mediterranean to France within weeks of the outbreak of hostilities.',
-          '<span class="para-ref">[1.3]</span> Arriving in the soaking rains of October 1914 wearing lightweight tropical khaki, Indian soldiers were rushed directly into the frozen mud of the Ypres Salient. At Neuve Chapelle and Hollebeke, Indian sepoys plugged critical gaps in Allied trench lines, suffering catastrophic casualties but holding the line against veteran German corps.',
+          '<span class="para-ref">[1.1]</span> Popular memory often portrays the Western Front as an exclusively European conflict between Britain, France, and Germany. In reality, Great Britain operated as an imperial superpower commanding the manpower and resources of over 400 million subjects across South Asia, Africa, Australasia, and the Caribbean, without whom the Allied war effort would have collapsed.',
+          '<span class="para-ref">[1.2]</span> In autumn 1914, when the original British Expeditionary Force was virtually wiped out at Mons, the Marne, and Ypres, Britain desperately summoned colonial reinforcements. The British Indian Army mobilised with extraordinary speed, transporting the Lahore and Meerut divisions across the Mediterranean to arrive at Marseille in September and October 1914, bringing over 130,000 disciplined frontline soldiers.',
+          '<span class="para-ref">[1.3]</span> Clad in thin tropical cotton khaki wholly unsuitable for European winter, Indian soldiers were rushed directly into the freezing mud of the Ypres Salient. At Neuve Chapelle and Hollebeke, Indian sepoys plugged critical breaches in Allied trenches, enduring frostbite, chemical gas attacks, and relentless shellfire, sustaining thousands of casualties while holding the line until Kitchener’s volunteers were trained.',
         ],
       },
       {
         title: 'Act 2: Global Logistics: Chinese Labour Corps & BWIR',
         text: [
-          '<span class="para-ref">[2.1]</span> Beyond frontline infantry, modern industrial warfare required an immense logistical infrastructure. To free British soldiers for combat, the Allied High Command recruited over 140,000 non-combatant Chinese labourers into the Chinese Labour Corps (CLC), alongside 16,000 volunteers from the British West Indies Regiment (BWIR).',
-          '<span class="para-ref">[2.2]</span> Chinese workers unloaded transport ships, laid hundreds of miles of military railways, handled live chemical munitions, and retrieved corpses from No Man’s Land under relentless German shellfire. Despite their indispensable service, they were housed in heavily guarded barbed-wire compounds and subjected to strict military discipline.',
-          '<span class="para-ref">[2.3]</span> West Indian volunteers, eager to prove their citizenship and military worth, faced pervasive imperial racism. British military authorities initially restricted Black soldiers to heavy manual labour, ammunition carrying, and digging latrines, refusing to permit Black officers to command combat troops.',
+          '<span class="para-ref">[2.1]</span> Beyond frontline combat, modern industrial warfare required vast supply networks. To release British troops for the frontline, the War Office recruited over 140,000 Chinese non-combatant workers into the Chinese Labour Corps (CLC), alongside 16,000 volunteers from the British West Indies Regiment (BWIR) and thousands from South Africa and Egypt.',
+          '<span class="para-ref">[2.2]</span> Chinese labourers performed gruelling physical tasks under constant German artillery fire: unloading cargo at Channel ports, laying military railways, assembling ammunition depots, and retrieving corpses and unexploded shells from No Man’s Land. Despite their vital contribution, they were confined to guarded camps behind barbed wire and subjected to severe military curfews and restricted movement.',
+          '<span class="para-ref">[2.3]</span> West Indian volunteers, motivated by deep imperial loyalty and eager to prove their equal citizenship, encountered pervasive racial discrimination. British authorities initially barred Black soldiers from combat roles, relegating them to digging trenches, carrying heavy artillery shells, and cleaning latrines under harsh white officers, denying Black officers command authority and paying lower allowances.',
         ],
       },
       {
         title: 'Act 3: Frontline Heroism & The Hollebeke Stand',
         text: [
-          '<span class="para-ref">[3.1]</span> Frontline colonial troops proved their gallantry repeatedly under terrifying conditions. On 31 October 1914, Sepoy Khudadad Khan of the 129th Baluchis stood alone at his Maxim machine-gun post near Hollebeke after his British officer was wounded and the rest of his gun team was killed, preventing a disastrous German breakthrough.',
-          '<span class="para-ref">[3.2]</span> Severely wounded, Khudadad Khan crawled back to safety and became the first native South Asian soldier awarded the Victoria Cross. Over the course of the war, 1.5 million Indian personnel served overseas, winning eleven Victoria Crosses and proving their courage in France, Mesopotamia, Gallipoli, and East Africa.',
+          '<span class="para-ref">[3.1]</span> Colonial troops repeatedly demonstrated exceptional heroism in the face of annihilation. On 31 October 1914 at Hollebeke during the First Battle of Ypres, Sepoy Khudadad Khan of the 129th Duke of Connaught’s Own Baluchis stood alone at his Maxim machine-gun post after his British officer was wounded and the rest of his gun team was killed by advancing Bavarian infantry.',
+          '<span class="para-ref">[3.2]</span> Gravely wounded, Khudadad Khan maintained sustained fire that halted the German assault, feigned death until nightfall, and crawled back to British lines. He became the first native South Asian soldier awarded the Victoria Cross, presented personally by King George V. Over 1.5 million Indian personnel served overseas during the war, earning eleven Victoria Crosses across France, Mesopotamia, Gallipoli, and East Africa.',
         ],
       },
       {
         title: 'Act 4: Imperial Hierarchies & Postwar Memorial Amnesia',
         text: [
-          '<span class="para-ref">[4.1]</span> When the conflict ended in November 1918, imperial promises of enhanced political rights and self-governance dissolved into betrayal. In India, wartime loyalty was rewarded with the repressive Rowlatt Acts and the horrific 1919 Jallianwala Bagh (Amritsar) Massacre, fueling Mahatma Gandhi’s non-cooperation movement.',
-          '<span class="para-ref">[4.2]</span> In Britain, imperial and Black contributions were systematically erased from collective memory. Non-white troops were excluded from the 1919 London Victory Parade, and colonial casualties in Africa were frequently buried in unmarked mass graves without individual headstones, establishing an institutional amnesia that historians have only recently begun to overturn.',
+          '<span class="para-ref">[4.1]</span> When the war ended in November 1918, imperial promises of enhanced political rights and self-governance dissolved into betrayal. In India, wartime sacrifice was answered with the draconian 1919 Rowlatt Acts and the horrific Jallianwala Bagh (Amritsar) Massacre, where General Dyer ordered troops to fire on peaceful demonstrators, killing hundreds and igniting Mahatma Gandhi’s nationwide non-cooperation movement.',
+          '<span class="para-ref">[4.2]</span> In Britain, non-white imperial troops were systematically marginalised from post-war commemorations: colonial units were largely excluded from the 1919 London Victory Parade, and the Imperial War Graves Commission frequently buried African and Asian labourers in unmarked communal graves without individual headstones, institutionalising an imperial amnesia that historians have only recently overturned.',
         ],
       },
     ],
@@ -952,31 +950,31 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 1: The Defence of the Realm Act (DORA) & State Autocracy',
         text: [
-          '<span class="para-ref">[1.1]</span> The First World War was the first true "Total War" in modern history: a conflict in which the boundary between military battlefields and civilian society completely vanished. Winning required not merely armies in the field, but the complete national mobilization of factories, farms, transport, and daily civilian habits.',
-          '<span class="para-ref">[1.2]</span> On 8 August 1914, Parliament passed the Defence of the Realm Act (DORA) without debate. DORA granted the government unprecedented executive powers to requisition private land, nationalise railways, censor newspapers, and arrest citizens without trial under martial law regulations.',
-          '<span class="para-ref">[1.3]</span> Daily life was subjected to micro-regulation. DORA prohibited lighting bonfires, flying kites, melting gold coins, buying binoculars, and discussing military movements. Opening hours for public houses were drastically slashed, and beer was watered down to prevent industrial drunkenness from impeding factory output.',
+          '<span class="para-ref">[1.1]</span> The First World War was the first true "Total War" in modern history: a conflict in which the boundary between military battlefields and civilian society completely dissolved. Victory depended not merely on soldiers in the trenches, but on the total mobilisation of factories, farms, transport, and civilian labour across the entire Home Front.',
+          '<span class="para-ref">[1.2]</span> On 8 August 1914, Parliament passed the Defence of the Realm Act (DORA) without debate. DORA granted the government sweeping executive authority to requisition private land, take direct operational control of coal mines and railways, censor newspapers, and arrest citizens without trial under military regulations, ending Victorian <em>laissez-faire</em> governance and establishing state direction.',
+          '<span class="para-ref">[1.3]</span> Daily civilian habits were subjected to rigorous micro-regulation. DORA prohibited lighting bonfires, flying kites, keeping carrier pigeons, melting gold coins, and discussing military affairs. To curb industrial absenteeism caused by alcohol, pub opening hours were slashed, beer was diluted with water, and the "no-treating" rule made it illegal to buy a drink for someone else under heavy fine.',
         ],
       },
       {
         title: 'Act 2: The Shell Crisis & The "Canary Girls"',
         text: [
-          '<span class="para-ref">[2.1]</span> In May 1915, British newspapers exposed the "Shell Scandal": an acute shortage of high-explosive artillery ammunition on the Western Front that crippled Allied attacks. The scandal brought down the Liberal government and prompted newly appointed Minister of Munitions David Lloyd George to nationalise the arms industry.',
-          '<span class="para-ref">[2.2]</span> With millions of men deployed overseas, Lloyd George recruited over one million women into heavy industry and munitions factories. Handling toxic chemical powders like TNT and cordite, female workers endured yellowing of the skin and hair, severe lung damage, and fatal factory explosions, proudly adopting the title "Canary Girls".',
-          '<span class="para-ref">[2.3]</span> Women drove ambulances, staffed railway stations, worked in civil service departments, and formed the Women’s Land Army to safeguard domestic food production against German U-boat blockades. Their vital economic contribution decisively dismantled Victorian arguments that women were unfit for civic and political responsibility.',
+          '<span class="para-ref">[2.1]</span> In May 1915, British newspapers exposed the "Shell Scandal": an acute shortage of high-explosive artillery shells on the Western Front that crippled British attacks and caused needless casualties. The scandal brought down Asquith’s Liberal government, leading to a coalition and the creation of the Ministry of Munitions under David Lloyd George.',
+          '<span class="para-ref">[2.2]</span> Lloyd George nationalised armament manufacturing and recruited over one million women into heavy industry and munitions factories. Handling toxic chemicals like TNT and cordite, female workers endured severe jaundice that turned their skin and hair bright yellow, leading to the nickname "Canary Girls". Despite the constant danger of fatal factory explosions (such as the 1917 Silvertown blast), women produced 80% of British munitions.',
+          '<span class="para-ref">[2.3]</span> Women also drove omnibuses, staffed postal routes, served in police patrols, and formed the Women’s Land Army to safeguard food production against German U-boat blockades. Their vital economic contribution decisively shattered Victorian prejudices that women were emotionally and physically incapable of handling civic and industrial responsibilities, shifting public attitudes toward female political equality.',
         ],
       },
       {
         title: 'Act 3: 1916 Conscription & Military Service Tribunals',
         text: [
-          '<span class="para-ref">[3.1]</span> By late 1915, the devastating attrition of the Western Front exhausted voluntary enlistment. Faced with an acute manpower deficit, Prime Minister Asquith introduced the Military Service Act in January 1916, enforcing compulsory conscription for all unmarried men aged 18 to 41, later extended to married men and older ages.',
-          '<span class="para-ref">[3.2]</span> Around 16,000 British men refused to fight on religious, political, or moral grounds as "Conscientious Objectors". They were forced to appear before hostile local military tribunals. While some accepted non-combatant roles (stretcher-bearers, ambulance drivers), over 1,500 "absolutists" who refused all war work were imprisoned under brutal hard-labour conditions.',
+          '<span class="para-ref">[3.1]</span> By late 1915, the relentless attrition on the Western Front exhausted the voluntary enlistment system. Facing a severe manpower deficit, Prime Minister Asquith passed the Military Service Act in January 1916, introducing compulsory conscription for all unmarried men aged 18 to 41, later extended to married men and men up to age 51 to sustain army divisions.',
+          '<span class="para-ref">[3.2]</span> Around 16,000 British men refused military service on religious, moral, or political grounds as "Conscientious Objectors". They were forced to plead their case before hostile local military tribunals. While some accepted non-combatant roles such as stretcher-bearers or ambulance drivers, over 1,500 "absolutists" who refused all war work were imprisoned under brutal hard-labour conditions in places like Dyce camp and Richmond Castle.',
         ],
       },
       {
         title: 'Act 4: Female Suffrage & The Transformation of British Society',
         text: [
-          '<span class="para-ref">[4.1]</span> The total mobilization of the Home Front permanently altered the social landscape of Great Britain. Food shortages and the German submarine campaign forced the introduction of compulsory national rationing for sugar, butter, and meat in early 1918, leveling social classes under universal state allowances.',
-          '<span class="para-ref">[4.2]</span> In February 1918, recognizing the indispensable contribution of working women and working-class soldiers who previously lacked property qualifications, Parliament passed the Representation of the People Act. The act granted the vote to all men aged 21 and women over 30 with property, marking a critical leap toward full democratic equality.',
+          '<span class="para-ref">[4.1]</span> Total war permanently transformed British society. German submarine warfare sank one in four merchant ships approaching Britain in 1917, triggering acute food shortages and forcing the government to introduce national rationing for sugar, meat, butter, and jam in early 1918, equalising consumption across social classes and establishing official coupon books for every household.',
+          '<span class="para-ref">[4.2]</span> In February 1918, recognising that working-class soldiers without property could not vote and acknowledging women’s wartime service, Parliament passed the Representation of the People Act. The act abolished property qualifications for men aged 21 and granted the vote to women over 30 who met property requirements, tripling the electorate and taking a decisive stride toward universal adult democracy.',
         ],
       },
     ],
@@ -986,31 +984,31 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 1: The Big Three Clashing in the Hall of Mirrors',
         text: [
-          '<span class="para-ref">[1.1]</span> In January 1919, delegates from thirty-two victorious nations gathered at the Paris Peace Conference to redraw the map of the world following the collapse of the German, Austro-Hungarian, Russian, and Ottoman empires. The negotiations were dominated by the "Big Three": Clemenceau of France, Lloyd George of Britain, and Wilson of the United States.',
-          '<span class="para-ref">[1.2]</span> The leaders held irreconcilable visions for post-war Europe. French Prime Minister Georges Clemenceau, whose country had suffered 1.4 million military deaths and widespread devastation, demanded that Germany be permanently crippled, disarmed, and burdened with massive financial reparations to guarantee French border security.',
-          '<span class="para-ref">[1.3]</span> Conversely, US President Woodrow Wilson advocated an idealistic Fourteen Points, including self-determination for European peoples and the creation of a League of Nations to resolve disputes peacefully. British Prime Minister David Lloyd George occupied the middle ground, seeking to punish Germany for British voters while preserving German trade and preventing continental revolution.',
+          '<span class="para-ref">[1.1]</span> In January 1919, delegates from thirty-two victorious nations convened at the Paris Peace Conference to redraw the world map following the collapse of four European empires (German, Austro-Hungarian, Russian, and Ottoman). Negotiations were dominated by the "Big Three": Prime Minister Georges Clemenceau of France, Prime Minister David Lloyd George of Britain, and President Woodrow Wilson of the United States.',
+          '<span class="para-ref">[1.2]</span> The leaders pursued deeply conflicting geopolitical agendas. French Premier Clemenceau ("The Tiger"), whose country had suffered 1.4 million military deaths and widespread northern industrial devastation, demanded that Germany be permanently disarmed, territorially partitioned, and crippled with punitive financial reparations to protect French borders from future invasion.',
+          '<span class="para-ref">[1.3]</span> Conversely, US President Woodrow Wilson advocated an idealistic peace based on his Fourteen Points, championing national self-determination for European peoples and the establishment of a League of Nations to resolve disputes without war. British Prime Minister David Lloyd George occupied a pragmatic middle position: pressured by British voters demanding to "Hang the Kaiser", but privately eager to preserve Germany as a trading partner and bulwark against Russian Bolshevism.',
         ],
       },
       {
         title: 'Act 2: The Terms: Disarmament, Reparations & Amputation',
         text: [
-          '<span class="para-ref">[2.1]</span> The resulting Treaty of Versailles, signed on 28 June 1919 in the Hall of Mirrors—the exact room where the German Empire had been proclaimed in 1871—represented a volatile and contradictory compromise. Defeated Germany was excluded from discussions and forced to accept the treaty under threat of immediate military invasion.',
-          '<span class="para-ref">[2.2]</span> Militarily, the German army was slashed to 100,000 volunteers with no conscription; the navy was stripped of submarines and battleships; and the air force, tanks, and heavy artillery were banned. The Rhineland was permanently demilitarised to provide a defensive buffer for France.',
-          '<span class="para-ref">[2.3]</span> Territorially, Germany lost 13% of its European land and six million citizens. Alsace-Lorraine was returned to France; the Polish Corridor separated East Prussia from the rest of Germany; Danzig became a Free City; and all German overseas colonies in Africa and the Pacific were confiscated as League of Nations mandates.',
+          '<span class="para-ref">[2.1]</span> Signed on 28 June 1919 in the Hall of Mirrors at Versailles—where the German Empire had been proclaimed in 1871—the Treaty of Versailles was a volatile compromise. The defeated German delegation was excluded from negotiations, locked behind barbed wire at their hotel, and forced to sign under threat of immediate Allied military invasion and the reimposition of the naval starvation blockade.',
+          '<span class="para-ref">[2.2]</span> Militarily, the treaty slashed the German army to 100,000 volunteers, outlawed conscription, and banned tanks, military aircraft, heavy artillery, and submarines. The German navy was limited to six pre-dreadnought battleships, leading German sailors to scuttle their own High Seas Fleet at Scapa Flow, while the Rhineland was permanently demilitarised to create a strategic buffer zone for France.',
+          '<span class="para-ref">[2.3]</span> Territorially, Germany lost 13% of its European land and six million citizens. Alsace-Lorraine was returned to France; the Polish Corridor was carved out to grant Poland Baltic Sea access, severing East Prussia from Germany; the Saar coalfields were placed under League of Nations control; and all overseas colonies were confiscated as Allied mandates.',
         ],
       },
       {
         title: 'Act 3: Article 231 War Guilt & The German Trauma',
         text: [
-          '<span class="para-ref">[3.1]</span> The most psychologically toxic clause of the treaty was Article 231, the "War Guilt" clause. To establish a legal justification for demanding compensation, the Allies compelled Germany to accept sole moral responsibility for causing all loss and damage suffered by Allied governments and their peoples.',
-          '<span class="para-ref">[3.2]</span> In 1921, the Inter-Allied Reparations Commission set Germany’s financial liability at £6.6 billion (132 billion gold marks). The German delegation signed under protest, denouncing the settlement as an illegitimate *Diktat* that punished a starving civilian population for the actions of the Kaiser’s collapsed autocracy.',
+          '<span class="para-ref">[3.1]</span> The most psychologically toxic clause of the settlement was Article 231, the "War Guilt Clause". To establish a legal framework justifying financial compensation, the Allies compelled Germany to accept sole moral responsibility for causing all loss and damage suffered by the Allied powers during the war, provoking outrage from German delegate Count Brockdorff-Rantzau.',
+          '<span class="para-ref">[3.2]</span> In 1921, the Inter-Allied Reparations Commission set Germany’s financial indemnity at an astronomical £6.6 billion (132 billion gold marks) under the London Ultimatum. The German public, who believed they had fought a defensive war against Russian encirclement, universally condemned the treaty as an illegitimate, humiliating <em>Diktat</em> (dictated peace), fostering revanchist bitterness across Weimar Germany.',
         ],
       },
       {
         title: 'Act 4: Historiographical Debate: "Carthaginian Peace" vs "Fragile Compromise"',
         text: [
-          '<span class="para-ref">[4.1]</span> Contemporary economist John Maynard Keynes famously condemned Versailles in 1919 as a "Carthaginian Peace"—an economically illiterate settlement designed to crush Germany that would inevitably destabilize European trade and ignite future continental conflict.',
-          '<span class="para-ref">[4.2]</span> Modern revisionist historians (Margaret MacMillan, Sally Marks) offer a more nuanced verdict: Versailles was neither harsh enough to permanently crush German power nor generous enough to reconcile German democracy to defeat. Left geographically intact with its industrial core undamaged, Germany remained the most populous and potentially dominant economic power in Central Europe.',
+          '<span class="para-ref">[4.1]</span> In 1919, British economist John Maynard Keynes famously condemned Versailles in <em>The Economic Consequences of the Peace</em> as a vindictive "Carthaginian Peace" that would starve Germany, destroy European trade networks, and inevitably provoke future continental war. Keynes’ critique shaped inter-war British guilt and encouraged the appeasement policies of the 1930s.',
+          '<span class="para-ref">[4.2]</span> Modern revisionist historians (Margaret MacMillan, Sally Marks) challenge Keynes, arguing Versailles was a viable compromise that was neither excessively harsh nor impossible to fulfill. Germany remained territorially unified with its industrial core intact; revisionists argue the failure lay not in the treaty’s terms, but in the Allies’ subsequent refusal to enforce them during the rise of Adolf Hitler.',
         ],
       },
     ],
@@ -1020,65 +1018,65 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
       {
         title: 'Act 1: Demographic Devastation: The Missing Generation',
         text: [
-          '<span class="para-ref">[1.1]</span> When the guns fell silent on 11 November 1918, the British Empire mourned over 900,000 military fatalities, with over 722,000 from the British Isles alone. One in eight British men who enlisted was killed, and over 1.6 million returned home bearing permanent physical disabilities, amputations, facial disfigurements, or chronic pulmonary damage from poison gas.',
-          '<span class="para-ref">[1.2]</span> This demographic catastrophe gave rise to the concept of the "Lost Generation". The mortality was acutely felt across the nation: among young men aged 20 to 24 in 1914, over 20% were killed in action. Millions of women were denied husbands, creating a society of bereaved widows, mothers, and single women known as "surplus women".',
-          '<span class="para-ref">[1.3]</span> The tragedy was magnified by the British government’s policy prohibiting the repatriation of war dead. To ensure equality in death, every fallen soldier was buried overseas where they fell. Denied physical graves to visit, grieving families faced profound psychological distress, desperately seeking local physical anchors for collective mourning.',
+          '<span class="para-ref">[1.1]</span> When the Armistice took effect on 11 November 1918, the British Empire mourned over 900,000 military fatalities, with over 722,000 from the British Isles alone. One in eight British men who enlisted was killed, and more than 1.6 million returned home bearing permanent physical wounds: amputations, severe facial trauma, blindness, and chronic respiratory illness caused by mustard gas.',
+          '<span class="para-ref">[1.2]</span> This catastrophe gave rise to the poignant concept of the "Lost Generation". The demographic impact was devastating: among British men aged 20 to 24 in 1914, over 20% were killed. In peacetime society, millions of women were left without husbands, creating a generation of bereaved widows, grieving mothers, and single women whom contemporary newspapers patronisingly labeled "surplus women".',
+          '<span class="para-ref">[1.3]</span> Grief was intensified by the government’s policy prohibiting the repatriation of war dead. To enforce equality in death, every fallen soldier was buried near the battlefield where they fell. Denied graves to visit, bereaved families endured immense psychological distress, driving local communities across Britain to construct physical memorials as communal focal points for grief.',
         ],
       },
       {
         title: 'Act 2: The Stubbington Shelter & The Village Green Pump',
         text: [
-          '<span class="para-ref">[2.1]</span> In response to this universal grief, over 100,000 local war memorials were erected across Great Britain between 1919 and 1925, funded entirely by public subscriptions raised in individual neighbourhoods, clubs, and parishes. Each memorial reflected the unique architectural choices of the community it served.',
-          '<span class="para-ref">[2.2]</span> In the Hampshire parish of Stubbington and Hill Head, the community deliberately rejected an aloof, militaristic stone obelisk. Instead, the village resolved to erect a functional, open-timbered memorial shelter directly over the historic village water pump in the centre of Stubbington Green, providing a peaceful resting sanctuary where residents gathered daily.',
-          '<span class="para-ref">[2.3]</span> The construction was entrusted to local master wheelwright and carpenter Arthur Tribbeck. Working with seasoned English oak, Tribbeck carved sixty-seven local casualties into the high roof beams, enduring the unbearable personal agony of chiseling the name of his own 21-year-old son, Harold Tribbeck, who died of gangrene in October 1918. Major financial funding and design guidance came from Mrs. Lydia King of Seabank, Hill Head, whose daughter was the only woman commemorated among the fallen.',
+          '<span class="para-ref">[2.1]</span> Between 1919 and 1925, over 100,000 war memorials were erected across Great Britain, funded entirely by public subscriptions raised within individual parishes, schools, and workplaces. While most towns chose classical stone crosses or soldier statues, the Hampshire parish of Stubbington and Hill Head chose a unique architectural design.',
+          '<span class="para-ref">[2.2]</span> The community resolved to build an open-timbered oak memorial shelter directly over the historic village water pump in the centre of Stubbington Green. Rather than an aloof stone obelisk, the village created a functional sanctuary that provided shade, shelter, and seating for residents gathering to collect their daily water, seamlessly weaving remembrance into daily village life.',
+          '<span class="para-ref">[2.3]</span> The construction was entrusted to master village carpenter Arthur Tribbeck. Using seasoned English oak, Tribbeck carved the names of sixty-seven local casualties into the roof beams, enduring the heartbreak of chiseling the name of his own 21-year-old son, Harold Tribbeck, who died of gangrene in October 1918. Major funding was provided by Mrs. Lydia King of Seabank, Hill Head, whose daughter was the only woman commemorated among the fallen.',
         ],
       },
       {
         title: 'Act 3: The Extinction of Lineages: The Lowry Brothers & Nurse Nita King',
         text: [
-          '<span class="para-ref">[3.1]</span> Behind the sixty-seven names lay catastrophic domestic bereavements. At Manor Way Grange, prominent local benefactors William and Annie Lowry sent all three of their sons to the front: William "Harper" was killed at Gallipoli in 1915; Cyril "Patrick" fell on the Somme in March 1918 in full view of his older brother; and Major Auriol "Eric" Lowry DSO, MC was shot by a machine gun just seven weeks before the Armistice, completely extinguishing the family line. In their grief, the parents built the Lowry Memorial Hall in Lee-on-the-Solent.',
-          '<span class="para-ref">[3.2]</span> Alongside sixty-six men, the memorial commemorates a single female casualty: 29-year-old Voluntary Aid Detachment (VAD) nurse Nita Madeline King. Deployed to the vast tented Allied military hospital at Wimereux in France, Nita contracted cerebrospinal meningitis while treating wounded troops and died on active service on 25 May 1917. In her honour, her devastated mother Lydia funded the village shelter and endowed the Nita King Research Scholarship at Cambridge University.',
+          '<span class="para-ref">[3.1]</span> Behind the sixty-seven names lay catastrophic domestic bereavement. At Manor Way Grange, prominent residents William and Annie Lowry sent all three sons to the front: 2nd Lt William "Harper" Lowry was killed at Gallipoli in 1915; 2nd Lt Cyril "Patrick" Lowry was killed on the Somme in March 1918; and Major Auriol "Eric" Lowry DSO, MC was killed by machine-gun fire just seven weeks before the Armistice, extinguishing the family lineage. In their sorrow, the parents erected the Lowry Memorial Hall in Lee-on-the-Solent.',
+          '<span class="para-ref">[3.2]</span> Alongside sixty-six men, the memorial commemorates a single woman: 29-year-old Voluntary Aid Detachment (VAD) nurse Nita Madeline King. Stationed at the tented Allied hospital in Wimereux, France, Nita died of cerebrospinal meningitis contracted while nursing wounded soldiers in May 1917. In her memory, her mother Lydia funded the village shelter and endowed the Nita King Research Scholarship at Cambridge University.',
         ],
       },
       {
         title: 'Act 4: Collective Memory & The Architecture of Mourning',
         text: [
-          '<span class="para-ref">[4.1]</span> Micro-history—the focused study of a single village, street, or family—provides an invaluable pedagogical lens for understanding national trauma. Behind the monumental national statistics of the Great War lay thousands of intimate local tragedies: local blacksmiths, apprentices, and farmhands who vanished from village life forever.',
-          '<span class="para-ref">[4.2]</span> By integrating the memorial shelter into the functional village water supply, the citizens of Stubbington ensured that remembrance became an inseparable element of daily survival. Each time a villager collected water, they encountered the names of the lost generation, transforming mourning into a living community covenant.',
+          '<span class="para-ref">[4.1]</span> Micro-history—the detailed investigation of a single parish, street, or family—provides an essential historical lens for comprehending national trauma. Behind abstract national casualty figures lay the intimate destruction of rural English community life: blacksmiths, agricultural labourers, and shop apprentices who vanished from village greens forever, leaving grieving families to cope without breadwinners.',
+          '<span class="para-ref">[4.2]</span> By building their war memorial over the community water pump, the residents of Stubbington ensured that remembrance became part of everyday survival. Each time a villager pumped water, they looked up at the names carved into the beams, transforming the memorial from a monument of war into a living covenant of shared community grief and enduring gratitude.',
         ],
       },
     ],
 
-    // Lesson 7: Synoptic Capstone Synthesis: Total War & Disciplinary Mastery
+    // Lesson 7: Synoptic Assessment: The Great War (1914–1919)
     [
       {
-        title: 'Act 1: The Anatomy of Total War: Military, Domestic & Imperial Synthesis',
+        title: 'Act 1: The Nature of Total War: Military, Domestic & Imperial Forces',
         text: [
-          '<span class="para-ref">[1.1]</span> Investigating the First World War between 1914 and 1919 reveals that military outcomes cannot be understood in isolation from civilian home fronts or imperial logistics. Victory on the Western Front was achieved only because British domestic industry mobilised millions of female workers and imperial supply lines sustained Allied food, steel, and fuel.',
-          '<span class="para-ref">[1.2]</span> The conflict shattered pre-war Victorian certainties regarding social hierarchy, imperial invulnerability, and *laissez-faire* economics. The British state assumed permanent administrative powers, while the sacrifice of working-class men and women dismantled traditional resistance to universal democratic suffrage.',
-          '<span class="para-ref">[1.3]</span> At the same time, the participation of over four million colonial personnel ignited anti-colonial nationalism across India, Africa, and the Caribbean, initiating the slow, irreversible disintegration of the British Empire over the subsequent four decades.',
+          '<span class="para-ref">[1.1]</span> Investigating the First World War between 1914 and 1919 demonstrates that battlefield outcomes cannot be understood in isolation from civilian home fronts and global imperial supply lines. Victory on the Western Front was achieved because British domestic industry mobilised over one million female workers and imperial supply chains delivered food, munitions, and raw materials under Allied naval supremacy.',
+          '<span class="para-ref">[1.2]</span> The conflict permanently dismantled Victorian political assumptions regarding state intervention, social class, and gender roles. The British state assumed unprecedented administrative powers under DORA, taking control of mines, railways, and factories, while the sacrifices of working-class men and women dismantled traditional resistance to universal adult democratic suffrage, culminating in the 1918 and 1928 Representation of the People Acts.',
+          '<span class="para-ref">[1.3]</span> Globally, the mobilisation of over four million colonial soldiers and non-combatant labourers cracked the foundations of European imperial prestige. Despite wartime promises, post-war imperial amnesia and repression in India and the Caribbean accelerated anti-colonial nationalist movements, initiating the eventual decline of the British Empire.',
         ],
       },
       {
         title: 'Act 2: The Shifting Balance of Global Hegemony',
         text: [
-          '<span class="para-ref">[2.1]</span> Geopolitically, the Great War marked the end of the Eurocentric world order that had dominated the globe since the Industrial Revolution. Great Britain emerged from the conflict victorious but financially exhausted, transformed from the world’s leading creditor nation into a debtor heavily reliant on American financial capital.',
-          '<span class="para-ref">[2.2]</span> The collapse of four autocratic dynasties (Hohenzollern, Habsburg, Romanov, and Ottoman) created an unstable cordon of fragile new nation-states across Central and Eastern Europe. The failure of the United States to join the newly formed League of Nations left post-war collective security in European hands without American enforcement.',
-          '<span class="para-ref">[2.3]</span> In Germany, the combination of economic reparations, military disarmament, and the toxic *Dolchstoßlegende* myth created an embittered, revisionist political climate that extremist demagogues would ruthlessly exploit during the economic turmoil of the 1930s.',
+          '<span class="para-ref">[2.1]</span> Geopolitically, the Great War marked the end of the Eurocentric world order that had dominated global affairs since the Industrial Revolution. Great Britain emerged victorious but financially depleted, transitioning from the world’s pre-eminent creditor nation into a debtor nation dependent on American financial capital.',
+          '<span class="para-ref">[2.2]</span> The collapse of the Hohenzollern, Habsburg, Romanov, and Ottoman empires created an unstable cordon of newly formed nation-states across Central and Eastern Europe. The refusal of the United States Senate to ratify the Treaty of Versailles or join the League of Nations left post-war collective security in European hands without the military or financial backing of the world’s greatest economic power.',
+          '<span class="para-ref">[2.3]</span> In Germany, the combination of punitive financial reparations, territorial amputation, and the toxic <em>Dolchstoßlegende</em> (stab-in-the-back myth) poisoned the democratic Weimar Republic. Right-wing extremists and Adolf Hitler exploited this deep revanchist bitterness, transforming the grievances of 1919 into the aggressive expansionism of the 1930s.',
         ],
       },
       {
-        title: 'Act 3: Disciplinary Mastery: Constructing Sustained Historical Arguments',
+        title: 'Act 3: Examination Strategy: Constructing Sustained Historical Judgements',
         text: [
-          '<span class="para-ref">[3.1]</span> True historical scholarship requires moving beyond the chronological recounting of facts to construct disciplined, analytical arguments. When evaluating questions of causation, utility, or significance, historians deploy specific primary evidence to substantiate a weighted, evaluative thesis statement.',
-          '<span class="para-ref">[3.2]</span> In extended writing assessments, students must master the Edexcel criteria: opening with a direct answer in sentence one, deploying precise contextual data (dates, acts, casualty figures), explaining the causal mechanics linking factors, and concluding with a justified, sustained historical judgement.',
+          '<span class="para-ref">[3.1]</span> High-level historical analysis requires progressing beyond chronological narrative to construct sustained, analytical arguments. When evaluating causation, significance, or utility, historians establish a clear causal hierarchy: distinguishing between immediate triggers (such as the Sarajevo assassination) and profound structural causes (militarism, imperial rivalry, and alliance webs). Students must prove why certain factors carried decisive weight.',
+          '<span class="para-ref">[3.2]</span> In extended writing assessments, students must deploy precise contextual evidence (treaty articles, specific Acts of Parliament, casualty figures, and regimental records) to substantiate a weighted, evaluative thesis. The strongest arguments demonstrate how military developments interact dynamically with political decisions, industrial capacity, and social changes over time to reach a synoptic historical verdict.',
         ],
       },
       {
         title: 'Act 4: Causation, Consequence & The Long Shadow of 1914–1919',
         text: [
-          '<span class="para-ref">[4.1]</span> Ultimately, the First World War was not merely a tragic historical episode; it was the foundational catalyst of the modern twentieth century. The ideological conflicts of the modern world—Fascism, Communism, democratic self-determination, and total warfare—were all born in the mud and trenches of 1914–1918.',
-          '<span class="para-ref">[4.2]</span> As Sir Fabian Ware’s Imperial War Graves Commission headstones and village pump shelters like Stubbington attest, the trauma of the conflict permanently reshaped British collective memory, reminding subsequent generations that peace is an active covenant requiring eternal vigilance.',
+          '<span class="para-ref">[4.1]</span> Ultimately, the First World War was not merely a tragic conflict; it was the foundational catalyst of the modern twentieth century. The ideological struggles that defined the modern era—Fascism, Soviet Communism, liberal democracy, and anti-colonial self-determination—were forged in the trenches and peace conferences of 1914–1919, redrawing borders and destroying traditional dynastic legitimacy.',
+          '<span class="para-ref">[4.2]</span> As Sir Fabian Ware’s Commonwealth War Graves Commission cemeteries and functional village memorials like the Stubbington pump shelter demonstrate, the profound trauma of 1914–1919 transformed collective memory, leaving an enduring historical legacy that continues to shape modern international relations, civic identity, and society today.',
         ],
       },
     ],
