@@ -1524,7 +1524,6 @@ const UNIT_REGISTRY = {
     };
   },
 };
-UNIT_REGISTRY.great_war = UNIT_REGISTRY.great_war_part2;
 
 async function main() {
   console.log(`\n======================================================`);

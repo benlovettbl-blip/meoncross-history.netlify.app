@@ -266,7 +266,7 @@ const lessonConfigs = [
     skill: 'Historical Interpretations',
     title: 'How did imperialism and the "Scramble for Africa" fuel European rivalry?',
     inquiryQuestion:
-      'Which interpretation gives a more convincing explanation of why European powers clashed over Africa between 1884 and 1911?',
+      'Which interpretation better explains why European powers clashed over Africa between 1884 and 1911?',
     doNow: [
       { q: 'Which new Kaiser dismissed Bismarck in 1890?' },
       { q: 'What German phrase described Kaiser Wilhelm’s aggressive world policy (Weltpolitik)?' },
@@ -576,7 +576,7 @@ const lessonConfigs = [
 // Verso: Q1 = 4 lines; Q2 fills remaining height to clue footer (gap <= 20px)
 const versoQ2Lines = [14, 12, 12, 12, 12, 10];
 // Recto: Essay writing lines docking directly above Timeline Mission box (gap <= 20px)
-const rectoWritingLines = [27, 27, 26, 27, 27, 26];
+const rectoWritingLines = [27, 27, 27, 27, 27, 26];
 
 // Timeline Milestones across Pages 2 & 3 (3 Milestones per page, 100% full-width cards)
 const timelineMilestones = [
@@ -765,105 +765,251 @@ function buildGreatWarTwoPageWorkbookHtml() {
   // PAGE 1: OUTSIDE FRONT COVER
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-1">
-    <div class="page-body-full" style="justify-content: space-between;">
-      
-      <!-- Top Branding -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Key Stage 3 History • Year 9 Workbook</span>
+  <div class="page page-container" id="page-1" style="padding: 10px 14px 10px 14px; border: 1.5px solid #0f172a; border-radius: 4px; justify-content: space-between;">
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+      <div>
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11.5pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;">The History Department</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #475569;">Key Stage 3 Historical Studies</span>
+          </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">UNIT 9: THE OUTBREAK OF THE FIRST WORLD WAR (1871–1914)</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">STAGED V2 EDITION</span>
-        </div>
-      </div>
 
-      <!-- Title Banner -->
-      <div style="border: 1.8px solid #000; border-radius: 4px; padding: 4px 8px; background: #fff; margin-bottom: 3px;">
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1px;">
-          <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
-            Year 9 Enquiry
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #222;">
-            M-A-I-N Causes &amp; The July Crisis • 1871–1914
-          </span>
+        <!-- Pupil Information Strip (At Top under Department Header, with Micro QR Hub Badge) -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 2.5px 8px; background: #ffffff; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="display: flex; align-items: baseline; flex: 2;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 42px;">Name:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; flex: 1.2;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 40px;">Class:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; flex: 1.6;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 52px;">Teacher:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <!-- Micro QR Hub Badge -->
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+            <div style="width: 26px; height: 26px; flex-shrink: 0; border: 1px solid #0f172a; border-radius: 2px; padding: 1px; background: #ffffff;">
+              ${generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=great_war')}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; text-align: left; line-height: 1.1;">
+              <span style="display: block; font-size: 5.5pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.3px;">Revision Hub</span>
+              <span style="display: block; font-size: 4.8pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Scan To Launch</span>
+            </div>
+          </div>
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #000;">
-          CAUSES OF THE GREAT WAR
-        </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; color: #222; font-style: italic; line-height: 1.2;">
-          Overarching Enquiry: "How did decades of imperial rivalry, dreadnoughts, and alliances culminate in thirty-seven days of madness?"
-        </div>
-      </div>
 
-      <!-- Hero Photo Plate -->
-      <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
-        <div style="height: 118mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-          <img src="${coverImg}" alt="Causes of the Great War" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; filter: grayscale(100%) contrast(110%);">
-        </div>
-        <div style="border-top: 1.5px solid #000; padding: 3px 8px; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase;">
-              Primary Visual Plate • 28 June 1914
+        <!-- Unit Title & Overarching Enquiry Box -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 3px 8px; background: #ffffff; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1.5px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
+              Year 9 Enquiry
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">
-              AUSTRIAN STATE ARCHIVES • SARAJEVO
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #334155;">
+              M-A-I-N CAUSES, IMPERIAL CRISES, NAVAL ARMS RACE &amp; THE JULY CRISIS
             </span>
           </div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; line-height: 1.15; margin: 1px 0;">
-            The Arrest of Gavrilo Princip Moments After Firing the Fatal Shots
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
+            CAUSES OF THE GREAT WAR (1871–1914)
+          </h1>
+          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #1e293b; font-style: italic; line-height: 1.2;">
+            Overarching Enquiry: “How did decades of imperial rivalry, dreadnoughts, and alliances culminate in thirty-seven days of madness?”
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.0pt; color: #222; line-height: 1.2;">
-            Austrian gendarmes struggle with 19-year-old Serbian nationalist Gavrilo Princip outside Schiller's Delicatessen on Franz Josef Street, Sarajevo.
+        </div>
+
+        <!-- Hero Photo Plate (Full Uncropped Primary Source Presentation) -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px; display: flex; flex-direction: column;">
+          <div style="height: 48mm; background: #0f172a; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 2px 0;">
+            <img src="${coverImg}" alt="Causes of the Great War" style="width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block;">
+          </div>
+          <div style="border-top: 1.2px solid #0f172a; padding: 2px 8px; background: #f8fafc;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a;">
+                Primary Visual Plate &bull; 28 June 1914
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
+                AUSTRIAN STATE ARCHIVES &bull; SARAJEVO
+              </span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
+              The Arrest of Gavrilo Princip Moments After Firing the Fatal Shots
+            </div>
+            <div style="font-family: 'Georgia', serif; font-size: 6.6pt; color: #334155; line-height: 1.15;">
+              Austrian gendarmes struggle with 19-year-old Serbian nationalist Gavrilo Princip outside Schiller's Delicatessen on Franz Josef Street, Sarajevo, moments after the fatal shots that ignited the July Crisis.
+            </div>
+          </div>
+        </div>
+
+        <!-- The 6 Historical Enquiries (Curriculum Roadmap) -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
+          <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+            <span>The 6 Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
+            <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">1871–1914</span>
+          </div>
+          <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 6px; font-family: 'Inter', sans-serif; background: #ffffff;">
+            <!-- Enquiry 1 -->
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; border-radius: 3px; padding: 2.5px 4.5px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                  <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY 1</span>
+                </div>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                  To what extent was the creation of the German Empire in 1871 a complete turning point in European peace?
+                </strong>
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Prussian military victory &amp; 1871 proclamation in the Hall of Mirrors at Versailles</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Otto von Bismarck’s Realpolitik, Krupp industrial steel &amp; 'Iron and Blood' statecraft</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Disruption of the 1815 Congress of Vienna balance of power by a unified giant</span></div>
+              </div>
+            </div>
+
+            <!-- Enquiry 2 -->
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; border-radius: 3px; padding: 2.5px 4.5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                  <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY 2</span>
+                </div>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                  How useful are Sources A and B for an enquiry into why the annexation of Alsace-Lorraine made lasting peace impossible?
+                </strong>
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>1871 Treaty of Frankfurt: 5 billion franc war indemnity &amp; loss of border fortresses</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>French revanchism: classroom maps shaded in black (*La Tache Noire*) &amp; youth rifle drills</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Bismarck’s strategic glacis buffer vs German fear of a vengeful two-front encirclement</span></div>
+              </div>
+            </div>
+
+            <!-- Enquiry 3 -->
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; border-radius: 3px; padding: 2.5px 4.5px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                  <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY 3</span>
+                </div>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                  Explain why Kaiser Wilhelm II’s policy of Weltpolitik caused serious international tension between 1890 and 1911.
+                </strong>
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Kaiser Wilhelm II dismisses Bismarck (1890) and demands Germany’s "Place in the Sun"</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>First Moroccan Crisis (1905): Kaiser lands at Tangier to test the new Anglo-French Entente</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Second Moroccan Crisis (1911): SMS Panther gunboat at Agadir and Lloyd George's warning</span></div>
+              </div>
+            </div>
+
+            <!-- Enquiry 4 -->
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid #0369a1; border-radius: 3px; padding: 2.5px 4.5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                  <span style="background: #0369a1; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY 4</span>
+                </div>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                  Explain why Britain viewed the German naval build-up as a direct threat to its national security.
+                </strong>
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>1906 launch of HMS Dreadnought in Portsmouth: turbine speed &amp; ten 12-inch heavy guns</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Admiral von Tirpitz’s German Navy Laws &amp; 'Risk Theory' challenging British North Sea control</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>British Two-Power Standard, island food import vulnerability &amp; the "We want eight!" campaign</span></div>
+              </div>
+            </div>
+
+            <!-- Enquiry 5 -->
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid #0369a1; border-radius: 3px; padding: 2.5px 4.5px; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                  <span style="background: #0369a1; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY 5</span>
+                </div>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                  Did the European alliance system preserve peace between the Great Powers, or make a general war inevitable?
+                </strong>
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>The armed camps: Triple Alliance (1882) vs Dual Alliance (1894) &amp; Triple Entente (1907)</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>Secret military protocols, automatic mutual defence triggers &amp; rigid railway timetables</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>The "Willy-Nicky" telegrams: royal cousins powerless to halt military mobilisation</span></div>
+              </div>
+            </div>
+
+            <!-- Enquiry 6 -->
+            <div style="border: 1px solid #cbd5e1; border-left: 3px solid #0369a1; border-radius: 3px; padding: 2.5px 4.5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                  <span style="background: #0369a1; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY 6</span>
+                </div>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                  How far do you agree that the assassination of Franz Ferdinand was the main cause of the First World War?
+                </strong>
+              </div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>28 June 1914: Gavrilo Princip and the Black Hand assassinate Franz Ferdinand in Sarajevo</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>The July Crisis: Germany’s "Blank Cheque", the Austrian ultimatum &amp; Russian mobilisation</span></div>
+                <div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #0369a1; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>The Schlieffen Plan: German invasion of neutral Belgium triggers British declaration (4 August)</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Pupil Information Card -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 5px 12px; background: #fff; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.8px;">
-            Pupil Workbook &amp; Academic Record
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #333;">
-            Year 9 History • Unit 9
-          </span>
+      <!-- Lower Section: "How to Write Like a Historian" + "The Big Storylines" -->
+      <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-top: auto; margin-bottom: 8px;">
+        <!-- Left Box: How to Write Like a Historian -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+          <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>How to Write Like a Historian</span>
+            <span style="color: #94a3b8; font-size: 6.2pt;">4 Golden Rules &amp; Connectives</span>
+          </div>
+          <div style="padding: 3px 7px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            <div>
+              <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.5pt;">The 4 Golden Rules of Extended Writing:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 6px; margin-top: 1px; font-size: 6.3pt; color: #334155;">
+                <span><strong>1. Direct Thesis:</strong> Clear answer in sentence 1.</span>
+                <span><strong>2. Specific Evidence:</strong> Names, dates, acts &amp; data.</span>
+                <span><strong>3. Causal Mechanics:</strong> Explain <em>why</em> &amp; <em>how</em>.</span>
+                <span><strong>4. Evaluative Balance:</strong> Weighted judgement.</span>
+              </div>
+            </div>
+            <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; margin-top: 1px;">
+              <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.5pt;">High-Impact Analytical Connectives:</strong>
+              <div style="font-size: 6.2pt; color: #475569; line-height: 1.2; margin-top: 1px;">
+                <strong style="color: #0f172a;">Causation:</strong> <em>Consequently &bull; Precipitated by &bull; Directly resulted in</em><br>
+                <strong style="color: #0f172a;">Nuance &amp; Evaluation:</strong> <em>Conversely &bull; While ostensibly... in reality &bull; Decisively</em>
+              </div>
+            </div>
+          </div>
         </div>
-        <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr; gap: 14px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
-          <div style="display: flex; align-items: baseline;">
-            <strong style="text-transform: uppercase; width: 48px; font-size: 7pt;">Name:</strong>
-            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
+
+        <!-- Right Box: Thematic Strands (Single Source of Truth) -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+          <div style="background: #1e3a8a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>The 4 Big Storylines to Track</span>
+            <span style="color: #bfdbfe; font-size: 6.2pt;">Core Historical Themes</span>
           </div>
-          <div style="display: flex; align-items: baseline;">
-            <strong style="text-transform: uppercase; width: 44px; font-size: 7pt;">Class:</strong>
-            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
-          </div>
-          <div style="display: flex; align-items: baseline;">
-            <strong style="text-transform: uppercase; width: 56px; font-size: 7pt;">Teacher:</strong>
-            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 14px;"></div>
+          <div style="padding: 3px 7px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            <div>
+              <strong style="color: #1e3a8a;">1. Imperial Alliances &amp; State Control:</strong> <span style="color: #475569;">Balance of power collapse &rarr; Secret protocols &rarr; July Crisis chain reaction (L1, L2, L5)</span>
+            </div>
+            <div>
+              <strong style="color: #0369a1;">2. Industrialised Warfare &amp; Naval Race:</strong> <span style="color: #475569;">Krupp artillery &rarr; HMS Dreadnought &rarr; Tirpitz Risk Fleet (L1, L4)</span>
+            </div>
+            <div>
+              <strong style="color: #b91c1c;">3. Militarism, Imperialism &amp; Weltpolitik:</strong> <span style="color: #475569;">Alsace-Lorraine revanche &rarr; Tangier &amp; Agadir &rarr; Pan-Slavic nationalism (L2, L3, L6)</span>
+            </div>
+            <div>
+              <strong style="color: #15803d;">4. Diplomatic Breakdown &amp; Alliances:</strong> <span style="color: #475569;">Bismarckian treaties &rarr; Triple Entente &rarr; Blank Cheque &amp; Schlieffen Plan (L4, L5, L6)</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Syllabus Enquiry Overview (Spanning Across the Page, 0 dead void) -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 2px;">
-        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
-          <span>The 6 Historical Enquiries Across This Unit</span>
-          <span style="font-size: 6.8pt; letter-spacing: 0.5px;">Curriculum Progression</span>
-        </div>
-        <div style="padding: 6px 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.25; color: #111; flex: 1; align-content: space-around;">
-          <div><strong>L1: Creation of German Empire (1871):</strong> Bismarck, Realpolitik, and Prussian military power.</div>
-          <div><strong>L4: Dreadnought &amp; Naval Race:</strong> The Portsmouth revolution and Anglo-German naval fear.</div>
-          <div><strong>L2: Franco-Prussian War &amp; Alsace-Lorraine:</strong> French revanche and European division.</div>
-          <div><strong>L5: The Rival Alliance System:</strong> Triple Alliance, Triple Entente, and Willy-Nicky cables.</div>
-          <div><strong>L3: Scramble for Africa &amp; Weltpolitik:</strong> Imperial rivalry, Morocco crises, and German jealousy.</div>
-          <div><strong>L6: The Spark — Sarajevo &amp; July Crisis:</strong> Princip, the Black Hand, and the fatal wrong turn.</div>
-        </div>
-      </div>
-
-      ${renderFooterStrip(1, revisionQuips[0], 16)}
+    <!-- Page 1 Footer Strip -->
+    <div class="cover-footer page-footer-strip" style="border-top: 1.2px solid #0f172a; padding-top: 2.5px; margin-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569;">
+      <span>The History Department &bull; CAUSES OF THE GREAT WAR (1871–1914)</span>
+      <span style="font-style: italic; color: #64748b;">Permanent Academic Record &bull; Retain for Synoptic Revision</span>
     </div>
   </div>
 `;
@@ -1677,6 +1823,15 @@ async function renderGreatWarTwoPageWorkbook() {
   console.log(
     `🎉 Masterpiece Staged PDF successfully compiled: ${outPdfPath} (${(pdfStats.size / 1024).toFixed(1)} KB)`,
   );
+
+  const standardTargets = [
+    path.join(ROOT_DIR, 'public', 'pdfs', 'great_war_pupil_workbook_FINAL_V17.pdf'),
+    path.join(ROOT_DIR, 'public', 'pdfs', 'great_war_pupil_workbook.pdf'),
+  ];
+  for (const target of standardTargets) {
+    fs.copyFileSync(outPdfPath, target);
+    console.log(`📋 Synchronized copy: ${target}`);
+  }
 }
 
 if (require.main === module) {

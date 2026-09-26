@@ -498,6 +498,240 @@ function renderStandardBackCover({
 }
 
 /**
+ * Renders the Standard Outside Front Cover for Key Stage 3 Pupil Workbooks (Page 1)
+ * - Strict institutional neutrality (data-department-name customizer standard)
+ * - Top Department Strip + Key Stage 3 Subheading
+ * - Single-line Pupil Info Strip (Name, Class, Teacher) + Micro QR Hub Badge
+ * - Master Unit Title & Overarching Enquiry Box
+ * - Hero Photo Plate (100% uncropped object-fit: contain on dark background + provenance metadata)
+ * - The Historical Enquiries Knowledge Checklist Grid (2 columns of enquiry questions + spec bullets)
+ * - Disciplinary Matrix (4 Golden Rules of Historical Writing + Core Historical Thematic Strands)
+ * - Academic Colophon & Footer Strip
+ */
+function renderKs3FrontCover({
+  unitId = 'medieval_england',
+  unitTitle = 'MEDIEVAL ENGLAND (1066–1485)',
+  yearGroup = 'Year 7',
+  subtitle = 'Norman Conquest, Plantagenet Power, Magna Carta & The Black Death',
+  overarchingEnquiry = '',
+  coverImgData = '',
+  heroPhotoHeightMm = 52,
+  coverPlate = {
+    tag: 'Primary Historical Source',
+    shelfmark: 'HISTORICAL ARCHIVE',
+    title: 'Primary Source Evidence',
+    description: '',
+  },
+  lessons = [],
+  thematicStrands = [],
+  hubUrl = null,
+  microQrSvg = null,
+  dateRange = null,
+  departmentName = 'The History Department',
+  keyStage = 'Key Stage 3 Historical Studies',
+  footerQuip = null,
+  totalPageCount = 20,
+  renderFooterStrip = null,
+}) {
+  const targetHubUrl = hubUrl || `https://the-history-revision-hub.netlify.app/?unit=${unitId}`;
+  const qrSvg = microQrSvg || generateQrSvg(targetHubUrl);
+  const cleanRange =
+    dateRange ||
+    (lessons.length === 6 ? '1871–1914' : lessons.length === 7 ? '1914–1919' : '1066–1485');
+
+  const footerHtml = renderFooterStrip
+    ? renderFooterStrip(
+        1,
+        footerQuip || `${departmentName} • ${unitTitle} • ${yearGroup} Workbook`,
+        totalPageCount,
+      )
+    : `
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; display: flex; justify-content: space-between; border-top: 1.2px solid #0f172a; padding-top: 3px; margin-top: 2px;">
+        <span style="font-weight: 800; color: #0f172a;">1/${totalPageCount}</span>
+        <span style="font-style: italic; color: #475569;">${footerQuip || `${departmentName} • ${unitTitle} • ${yearGroup} Workbook`}</span>
+        <span style="font-weight: 700; color: #0f172a; text-transform: uppercase;">Official Departmental Record</span>
+      </div>`;
+
+  return `
+  <!-- ====================================================================
+       PAGE 1: OUTSIDE FRONT COVER (KS3 Gold Standard Masterpiece)
+       ==================================================================== -->
+  <div class="page page-container" id="page-1" style="padding: 10px 14px 10px 14px; border: 1.5px solid #0f172a; border-radius: 4px; justify-content: space-between;">
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+      <div>
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="${departmentName}">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11.5pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;">${departmentName}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #475569;">${keyStage}</span>
+          </div>
+        </div>
+
+        <!-- Pupil Information Strip (At Top under Department Header, with Micro QR Hub Badge) -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; padding: 2.5px 8px; background: #ffffff; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="display: flex; align-items: baseline; flex: 2;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 42px;">Name:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; flex: 1.2;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 40px;">Class:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; flex: 1.6;">
+            <strong style="font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 7.2pt; color: #0f172a; width: 52px;">Teacher:</strong>
+            <div style="flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px;"></div>
+          </div>
+          <!-- Micro QR Hub Badge -->
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+            <div style="width: 26px; height: 26px; flex-shrink: 0; border: 1px solid #0f172a; border-radius: 2px; padding: 1px; background: #ffffff;">
+              ${qrSvg}
+            </div>
+            <div style="font-family: 'Inter', sans-serif; text-align: left; line-height: 1.1;">
+              <span style="display: block; font-size: 5.5pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.3px;">Revision Hub</span>
+              <span style="display: block; font-size: 4.8pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Scan To Launch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unit Title & Overarching Enquiry Box -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; padding: 3px 8px; background: #ffffff; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1.5px;">
+            <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
+              ${yearGroup} Enquiry
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #334155;">
+              ${subtitle}
+            </span>
+          </div>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 14pt; margin: 1px 0; font-weight: 900; line-height: 1.15; color: #0f172a;">
+            ${unitTitle.toUpperCase()}
+          </h1>
+          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #1e293b; font-style: italic; line-height: 1.2;">
+            Overarching Enquiry: “${overarchingEnquiry}”
+          </div>
+        </div>
+
+        <!-- Hero Photo Plate (Full Uncropped Primary Source Presentation) -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px; display: flex; flex-direction: column;">
+          <div style="height: ${heroPhotoHeightMm}mm; background: #0f172a; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 2px 0;">
+            <img src="${coverImgData}" alt="Cover Image" style="width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block;">
+          </div>
+          <div style="border-top: 1.2px solid #0f172a; padding: 2px 8px; background: #f8fafc;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #1e3a8a;">
+                ${coverPlate.tag || 'Primary Historical Source'}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
+                ${coverPlate.shelfmark || 'HISTORICAL ARCHIVE'}
+              </span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; line-height: 1.15; margin: 1px 0; color: #0f172a;">
+              ${coverPlate.title || 'Primary Source Evidence'}
+            </div>
+            <div style="font-family: 'Georgia', serif; font-size: 6.6pt; color: #334155; line-height: 1.15;">
+              ${coverPlate.description || ''}
+            </div>
+          </div>
+        </div>
+
+        <!-- The Historical Enquiries (Curriculum Roadmap Checklist) -->
+        <div style="border: 1.4px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
+          <div style="background: #0f172a; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+            <span>The ${lessons.length} Historical Enquiries Across This Unit &bull; Knowledge Checklist</span>
+            <span style="font-size: 6.6pt; letter-spacing: 0.5px; color: #94a3b8;">${cleanRange}</span>
+          </div>
+          <div style="padding: 3px 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 6px; font-family: 'Inter', sans-serif; background: #ffffff;">
+            ${lessons
+              .map((l, idx) => {
+                const cleanEnquiry = (
+                  l.enquiryQuestion ||
+                  l.inquiryQuestion ||
+                  l.question ||
+                  l.title ||
+                  ''
+                )
+                  .replace(/^Enquiry:\s*/i, '')
+                  .trim();
+                const bullets =
+                  l.specBullets && l.specBullets.length > 0
+                    ? l.specBullets
+                    : l.syllabusTopic
+                      ? l.syllabusTopic.split(/,\s*|\.\s*/).filter(Boolean)
+                      : [];
+                return `
+              <div style="border: 1px solid #cbd5e1; border-left: 3px solid ${idx < 4 ? '#1e3a8a' : '#0369a1'}; border-radius: 3px; padding: 2.5px 4.5px; background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="margin-bottom: 1px;">
+                  <div style="display: flex; align-items: center; margin-bottom: 1px;">
+                    <span style="background: ${idx < 4 ? '#1e3a8a' : '#0369a1'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; flex-shrink: 0; letter-spacing: 0.3px;">ENQUIRY ${idx + 1}</span>
+                  </div>
+                  <strong style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.16; display: block; margin-bottom: 1px;">
+                    ${cleanEnquiry}
+                  </strong>
+                </div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #334155; line-height: 1.16; padding-left: 2px;">
+                  ${bullets.map((b) => `<div style="display: flex; gap: 3px; align-items: baseline;"><span style="color: #1e3a8a; font-weight: 700; font-size: 5.8pt;">&bull;</span><span>${b.trim()}</span></div>`).join('')}
+                </div>
+              </div>
+              `;
+              })
+              .join('')}
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower Section: "How to Write Like a Historian" + "The Big Storylines" -->
+      <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 6px; margin-top: auto; margin-bottom: 8px;">
+        <!-- Left Box: How to Write Like a Historian -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+          <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>How to Write Like a Historian</span>
+            <span style="color: #94a3b8; font-size: 6.2pt;">4 Golden Rules &amp; Connectives</span>
+          </div>
+          <div style="padding: 3px 7px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            <div>
+              <strong style="color: #1e3a8a; text-transform: uppercase; font-size: 6.5pt;">The 4 Golden Rules of Extended Writing:</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 6px; margin-top: 1px; font-size: 6.3pt; color: #334155;">
+                <span><strong>1. Direct Thesis:</strong> Clear answer in sentence 1.</span>
+                <span><strong>2. Specific Evidence:</strong> Names, dates, acts &amp; data.</span>
+                <span><strong>3. Causal Mechanics:</strong> Explain <em>why</em> &amp; <em>how</em>.</span>
+                <span><strong>4. Evaluative Balance:</strong> Weighted judgement.</span>
+              </div>
+            </div>
+            <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; margin-top: 1px;">
+              <strong style="color: #0369a1; text-transform: uppercase; font-size: 6.5pt;">High-Impact Analytical Connectives:</strong>
+              <div style="font-size: 6.2pt; color: #475569; line-height: 1.2; margin-top: 1px;">
+                <strong style="color: #0f172a;">Causation:</strong> <em>Consequently &bull; Precipitated by &bull; Directly resulted in</em><br>
+                <strong style="color: #0f172a;">Nuance &amp; Evaluation:</strong> <em>Conversely &bull; While ostensibly... in reality &bull; Decisively</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Box: Thematic Strands (Single Source of Truth) -->
+        <div style="border: 1.2px solid #0f172a; border-radius: 4px; overflow: hidden; background: #ffffff;">
+          <div style="background: #1e3a8a; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>The ${thematicStrands.length} Big Storylines to Track</span>
+            <span style="color: #bfdbfe; font-size: 6.2pt;">Core Historical Themes</span>
+          </div>
+          <div style="padding: 3px 7px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.2; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
+            ${thematicStrands
+              .map(
+                (strand, sIdx) => `
+            <div>
+              <strong style="color: ${strand.color || '#1e3a8a'};">${sIdx + 1}. ${strand.title}:</strong> <span style="color: #475569;">${strand.trajectory}</span>
+            </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    ${footerHtml}
+  </div>`;
+}
+
+/**
  * Renders the Standard Outside Back Cover for Key Stage 3 Workbooks (Page 16, 20, or 24)
  * - Strict institutional neutrality (data-department-name customizer standard)
  * - Target Grade, Class, and Target Level header strip
@@ -751,6 +985,7 @@ function renderKs3BackCover({
 module.exports = {
   renderStandardFrontCover,
   renderStandardBackCover,
+  renderKs3FrontCover,
   renderKs3BackCover,
   generateQrSvg,
 };
