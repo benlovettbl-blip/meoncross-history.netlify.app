@@ -289,10 +289,10 @@ const GREAT_WAR_COMPONENT_BANK = {
         </div>
         <h4 class="csb-title">Tirpitz’s Risk Theory &amp; The Two-Power Standard</h4>
         <div class="csb-body">
-          Britain’s defense policy rested upon the Two-Power Standard: the Royal Navy had to maintain a fleet of battleships at least equal to the combined strength of the world’s next two largest navies. In Berlin, Grand Admiral Alfred von Tirpitz devised the "Risk Theory" (<em>Risikogedanke</em>): building a German High Seas Fleet so formidable that even if the Royal Navy defeated it in battle, British naval power would be so severely crippled that Britain would lose its global empire. However, the launch of *HMS Dreadnought* in 1906 wiped the slate clean by making all pre-dreadnoughts obsolete, sparking an intense industrial building race. Between 1906 and 1914, Britain laid down twenty-nine dreadnought super-battleships to Germany’s seventeen, establishing insurmountable British naval dominance in the North Sea. Fisher's radical motto—"Build fast, hit hard, and keep on hitting"—transformed modern naval architecture, ensuring the Royal Navy retained strategic control throughout the war.
+          Britain’s naval defense rested on the Two-Power Standard: the Royal Navy had to equal the combined strength of the next two rival navies. In Berlin, Grand Admiral Alfred von Tirpitz devised the "Risk Theory" (<em>Risikogedanke</em>): building a battlefleet so formidable that even if Britain defeated it, British naval losses would leave its global empire vulnerable. However, launching *HMS Dreadnought* in 1906 restarted the contest on equal terms, prompting an intense industrial building race where Britain consistently outbuilt Germany in the North Sea.
         </div>
         <div class="csb-takeaway">
-          <strong>Fatal Strategic Error:</strong> Germany could never outbuild Britain’s superior shipbuilding yards. The naval race failed to win concessions and turned Britain from an uncommitted neutral into Germany’s fiercest adversary.
+          <strong>Fatal Strategic Error:</strong> Germany could never outbuild Britain’s superior shipyards. The naval race failed to win concessions and turned Britain from an uncommitted neutral into Germany’s fiercest adversary.
         </div>
       </div>
     `,
@@ -348,10 +348,10 @@ const GREAT_WAR_COMPONENT_BANK = {
         </div>
         <h4 class="csb-title">Secret Military Conventions &amp; Railway Mobilization Timetables</h4>
         <div class="csb-body">
-          European alliances were not merely defensive statements of intent; they were accompanied by rigid, top-secret military conventions with exact timetables for mobilization. In the era before mass motorized transport, moving millions of conscripts, horses, artillery, and ammunition required strict control of national railway networks. German, Russian, and French railway staff spent decades designing mobilization timetables where trains were timetabled down to the exact minute. Once a Great Power ordered general mobilization, it was virtually impossible to cancel or alter the train schedules without plunging the nation's military defenses into total chaos. The secret treaties chained the Great Powers together: an Austrian attack on Belgrade inevitably triggered Russian mobilization, which automatically triggered the Schlieffen Plan. When Kaiser Wilhelm II desperately attempted to halt the German western deployment in August 1914, General von Moltke wept, protesting that the railway timetables could not be stopped.
+          European alliances were reinforced by top-secret military conventions with rigid railway mobilization timetables. In the era before motorized transport, moving millions of conscripts, artillery, and ammunition required orchestrating national railway networks down to the exact minute. Once a Great Power declared mobilization, train schedules could not be canceled without risking defensive collapse. When the July Crisis erupted, the domino effect was automatic: Russian mobilization triggered the German Schlieffen Plan, leaving zero time for diplomacy.
         </div>
         <div class="csb-takeaway">
-          <strong>The Fatal Trap:</strong> Military mobilization was viewed as equivalent to a declaration of war. Once Russia mobilized its trains to protect Serbia, German generals insisted they had to attack France immediately under the Schlieffen Plan.
+          <strong>The Fatal Trap:</strong> Mobilization was treated as equivalent to war. Once Russia mobilized its trains to protect Serbia, German generals insisted they must attack France through Belgium immediately.
         </div>
       </div>
     `,
@@ -720,39 +720,140 @@ const GREAT_WAR_LEFT_SOURCES = {
   },
 };
 
-function getLessonSections(lesson, idx) {
-  const blocks = (lesson.narrative_blocks || []).filter(
-    (b) => b && b.title !== 'Consolidation Task' && b.theme_heading !== 'Consolidation Task',
-  );
-
-  if (blocks.length === 4) {
-    return blocks.map((b) => ({
-      title: b.title || `Act ${b.act}`,
-      text: b.text || b.content || '',
-    }));
+function getGreatWarLessonSections(lesson, idx) {
+  if (idx === 0) {
+    // Lesson 1: Bismarck, Blood & Iron, and 1871 Unification
+    return [
+      {
+        title: 'The Fragmented Chessboard & The Zollverein',
+        text: `<span class="para-ref">[1.1]</span> After 1815, Central Europe remained a fragmented patchwork of thirty-nine sovereign German-speaking states within the loose German Confederation. Two rival Great Powers competed for continental dominance: the Catholic, multi-ethnic Austrian Empire and the Protestant military Kingdom of Prussia. While Austria remained an agrarian empire preoccupied with internal ethnic unrest, Prussia underwent rapid industrial expansion powered by the rich coal and iron mines of the Ruhr Valley and Silesia.\n\n<span class="para-ref">[1.2]</span> In 1834, Prussia secured a decisive economic masterstroke by establishing the <em>Zollverein</em> (Customs Union). By dismantling internal trade tariffs across northern and central Germany while excluding protectionist Austria, Prussia bound the German economies inexorably to Berlin. The rapid construction of state-funded railway networks proved that industrial modernization, economic efficiency, and German unity belonged under Prussian leadership.`,
+      },
+      {
+        title: 'Blood & Iron: Bismarck’s Three Decisive Wars',
+        text: `<span class="para-ref">[2.1]</span> In 1862, King Wilhelm I appointed Otto von Bismarck as Minister President. When parliament refused military funding, Bismarck governed unconstitutionally, collecting taxes to equip the Prussian army with Krupp cast-steel cannons and Dreyse needle-guns. He famously declared: <em>"The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**."</em>\n\n<span class="para-ref">[2.2]</span> Bismarck orchestrated three short, calculated wars to achieve unification. In 1864, Prussia and Austria defeated Denmark over Schleswig-Holstein. In 1866, Prussia crushed Austria at Königgrätz, expelling Vienna from German affairs. Finally, in 1870, Bismarck provoked France into declaring war, uniting the southern German states and routing French armies at Sedan.`,
+      },
+      {
+        title: 'Forensic Evidence: The Proclamation at Versailles',
+        text: `<span class="para-ref">[3.1]</span> On 18 January 1871, inside the historic Hall of Mirrors at the Palace of Versailles, King Wilhelm I was proclaimed the first German Emperor (Kaiser). Staging the ceremony inside France's royal palace while Prussian artillery shelled Paris was a deliberate act of psychological subjugation. Under the Treaty of Frankfurt, defeated France ceded Alsace-Lorraine and paid a punitive five-billion-franc indemnity.\n\n<span class="para-ref">[3.2]</span> Forensic cartographic evidence demonstrates the immense geopolitical shift. Spanning 540,000 square kilometres with 41 million citizens, the German Empire instantly formed Europe's demographic and military colossus. Yet Germany's central geographical position with exposed frontiers left military planners permanently anxious about encirclement by hostile neighbours.`,
+      },
+      {
+        title: 'The Historical Verdict: Shattered Balance of Power',
+        text: `<span class="para-ref">[4.1]</span> Historians remain divided over Bismarck’s statecraft. Traditional accounts celebrated him as a master of *Realpolitik* executing a grand blueprint for national unity. Conversely, modern historians like A.J.P. Taylor demonstrate that Bismarck was a pragmatic opportunist, exploiting diplomatic crises to preserve Prussian aristocratic power against rising liberal democracy.\n\n<span class="para-ref">[4.2]</span> The geopolitical consequences were profound. As British statesman Benjamin Disraeli observed, unification destroyed the European balance of power. By annexing Alsace-Lorraine and humiliating France, Bismarck created an irreconcilable western adversary, ensuring that European diplomacy for the next four decades would be haunted by fear of a general European war.`,
+      },
+    ];
   }
 
-  const n = blocks.length;
-  const q1 = blocks.slice(0, Math.ceil(n / 4));
-  const q2 = blocks.slice(Math.ceil(n / 4), Math.ceil(n / 2));
-  const q3 = blocks.slice(Math.ceil(n / 2), Math.ceil((3 * n) / 4));
-  const q4 = blocks.slice(Math.ceil((3 * n) / 4));
+  if (idx === 1) {
+    // Lesson 2: The Franco-Prussian War & Alsace-Lorraine
+    return [
+      {
+        title: 'The Spanish Vacancy & The Ems Telegram',
+        text: `<span class="para-ref">[1.1]</span> In early 1870, the vacant Spanish throne ignited a diplomatic crisis when the candidacy of Prince Leopold of Hohenzollern-Sigmaringen was proposed. French Emperor Napoleon III felt mortally threatened by the prospect of Prussian royal encirclement on both the Rhine and the Pyrenees. France demanded an unconditional Prussian pledge never to renew the candidacy.\n\n<span class="para-ref">[1.2]</span> When King Wilhelm I politely declined further concessions at the spa town of Bad Ems, Bismarck saw his opportunity. He deliberately edited the King's telegraphic dispatch to make the French ambassador and the Prussian monarch appear mutually insulting before releasing it to the international press. Outraged by the public snub, France declared war on 19 July 1870, walking straight into Bismarck's trap.`,
+      },
+      {
+        title: 'Krupp Steel, Sedan & The Fall of Paris',
+        text: `<span class="para-ref">[2.1]</span> The Prussian military machine, organized by General Helmuth von Moltke, moved with lethal speed. Utilizing six specialized railway trunk lines, the German states mobilized 380,000 troops to the frontier in eighteen days. At the decisive Battle of Sedan in September 1870, massed Krupp breech-loading artillery shattered French lines, forcing Napoleon III to surrender with 104,000 soldiers.\n\n<span class="para-ref">[2.2]</span> While the Second Empire collapsed, the newly proclaimed French Third Republic fought on with desperate defiance. German armies advanced rapidly to encircle Paris, subjecting the capital to a brutal four-month winter siege. Freezing temperatures and starvation forced Paris to capitulate in January 1871, leaving French national pride permanently traumatized.`,
+      },
+      {
+        title: 'Annexation Cartography & "La Tache Noire"',
+        text: `<span class="para-ref">[3.1]</span> Under the harsh terms of the 1871 Treaty of Frankfurt, victorious Germany annexed the provinces of Alsace and northern Lorraine. Beyond acquiring rich iron ore basins and textile factories, the German General Staff gained the strategic fortress cities of Metz and Strasbourg, establishing a formidable military buffer against future French counter-attacks.\n\n<span class="para-ref">[3.2]</span> For the 1.5 million annexed French citizens, German rule felt like alien military occupation. Across French schools, classroom maps systematically depicted the lost provinces shaded in mourning black—*la tache noire*. Generations of French schoolchildren were taught that their sacred patriotic duty was to prepare for revenge (*la revanche*).`,
+      },
+      {
+        title: 'The Historical Verdict: The Legacy of Hatred',
+        text: `<span class="para-ref">[4.1]</span> Military historians argue that annexing Alsace-Lorraine was Bismarck's greatest strategic blunder. While it provided a defensible frontier, it poisoned Franco-German relations for over forty years. Bismarck himself privately acknowledged that seizing French-speaking Metz would permanently alienate France, but bowed to pressure from Field Marshal Moltke and Prussian generals.\n\n<span class="para-ref">[4.2]</span> The annexation transformed European diplomacy into a zero-sum contest. France could never forgive the loss of its territorial integrity, forcing Germany into continuous diplomatic acrobatics to keep Paris isolated. The bitter legacy of 1871 guaranteed that any future European crisis would inevitably pull France and Germany into catastrophic conflict.`,
+      },
+    ];
+  }
 
-  const formatQuarter = (quarter, fallbackTitle) => {
-    const title = quarter[0]?.theme_heading || quarter[0]?.title || fallbackTitle;
-    const paras = quarter.map((b) => b.text || b.content || '').filter(Boolean);
-    return {
-      title,
-      text: paras.join('\n\n'),
-    };
-  };
+  if (idx === 2) {
+    // Lesson 3: The Scramble for Africa & The Moroccan Crises
+    return [
+      {
+        title: 'The 1884 Berlin Conference & Late Arrival',
+        text: `<span class="para-ref">[1.1]</span> Between 1881 and 1914, European imperial powers engaged in a frantic race to carve up the African continent, known as the "Scramble for Africa". Seeking rubber, copper, cotton, and captive markets, European nations expanded their colonial control from ten percent of Africa to over ninety percent in barely three decades.\n\n<span class="para-ref">[1.2]</span> To prevent imperial rivalry from sparking European wars, Chancellor Bismarck hosted the 1884–85 Berlin Conference. Fourteen European nations established the principle of "effective occupation", requiring powers to demonstrate administrative control before claiming territory. However, having unified late in 1871, Germany received only disconnected territories in South-West Africa, Cameroon, and Tanganyika.`,
+      },
+      {
+        title: 'Wilhelm II, Weltpolitik & "A Place in the Sun"',
+        text: `<span class="para-ref">[2.1]</span> In 1890, Kaiser Wilhelm II dismissed Bismarck and abandoned cautious continental diplomacy in favour of <em>Weltpolitik</em> (World Policy). Wilhelm believed that Germany's booming industrial strength and demographic growth entitled it to global imperial status, demanding for Germany its rightful "place in the sun".\n\n<span class="para-ref">[2.2]</span> Wilhelm's aggressive colonial ambitions directly alarmed Britain and France. Britain viewed German colonial overtures as threats to vital sea routes to India, while France fiercely protected its North African sphere of influence. Rather than winning international prestige, German diplomatic bullying fostered deep international suspicion and colonial friction.`,
+      },
+      {
+        title: 'The First Moroccan Crisis: Tangier (1905)',
+        text: `<span class="para-ref">[3.1]</span> In March 1905, Kaiser Wilhelm II staged a provocative intervention in Tangier, riding through the streets on a white horse to declare support for Moroccan independence. His strategic objective was to test and humiliate the newly signed 1904 Anglo-French Entente Cordiale, expecting Britain to abandon France during a colonial dispute.\n\n<span class="para-ref">[3.2]</span> The gambit proved an unmitigated disaster for Berlin. At the 1906 Algeciras Conference, only Austria-Hungary supported the German position. Britain stood resolutely beside France, while British and French military staffs quietly initiated secret joint planning talks, tightening the very alliance Germany sought to destroy.`,
+      },
+      {
+        title: 'The Second Moroccan Crisis: Agadir (1911)',
+        text: `<span class="para-ref">[4.1]</span> In July 1911, imperial tensions erupted again when Germany dispatched the gunboat <em>SMS Panther</em> to the Moroccan port of Agadir, ostensibly to protect German commercial interests after French troops occupied Fez. Germany demanded the entire French Congo in compensation for recognizing a French protectorate in Morocco.\n\n<span class="para-ref">[4.2]</span> Britain reacted with decisive fury. Chancellor David Lloyd George delivered his famous Mansion House speech, warning that Britain would fight rather than see its allies bullied. Humiliated, Germany backed down in exchange for slivers of marshland, leaving the German public bitter, isolated, and increasingly convinced that only military force could secure Germany's global destiny.`,
+      },
+    ];
+  }
 
-  return [
-    formatQuarter(q1, 'Act 1: Context & Catalyst'),
-    formatQuarter(q2, 'Act 2: Escalation & Conflict'),
-    formatQuarter(q3, 'Act 3: Forensic Archival Evidence'),
-    formatQuarter(q4, 'Act 4: The Historical Verdict'),
-  ];
+  if (idx === 3) {
+    // Lesson 4: HMS Dreadnought & The Anglo-German Naval Race
+    return [
+      {
+        title: 'The Two-Power Standard & The Island Empire',
+        text: `<span class="para-ref">[1.1]</span> For centuries, Great Britain's global security, commercial empire, and domestic survival depended upon unassailable naval supremacy. As an island nation that imported over sixty percent of its food supply and raw materials, Britain maintained the strict "Two-Power Standard"—a parliamentary policy requiring the Royal Navy to be as large as the next two rival navies combined.\n\n<span class="para-ref">[1.2]</span> In 1898 and 1900, German Admiral Alfred von Tirpitz, enthusiastically backed by Kaiser Wilhelm II, steered monumental Navy Laws through the Reichstag. Tirpitz initiated the rapid construction of a high-seas battlefleet directly across the North Sea, sparking an intense naval arms race with Great Britain.`,
+      },
+      {
+        title: 'Tirpitz’s Risk Theory & The Strategic Threat',
+        text: `<span class="para-ref">[2.1]</span> Admiral von Tirpitz justified German naval expansion through his famous "Risk Theory" (<em>Risikogedanke</em>). He argued that if Germany possessed a fleet so formidable that even the mighty Royal Navy could not attack it without sustaining catastrophic losses, Britain would be compelled to grant Germany diplomatic concessions and colonial territory worldwide.\n\n<span class="para-ref">[2.2]</span> The strategy backfired catastrophically. Instead of intimidating Britain, Tirpitz's naval build-up was perceived by London as a direct existential threat. British military planners concluded that while a merchant navy was a necessity for Britain, a German battlefleet was a luxury designed solely for aggressive war.`,
+      },
+      {
+        title: 'Fisher’s Revolution: HMS Dreadnought (1906)',
+        text: `<span class="para-ref">[3.1]</span> In 1906, Britain's visionary First Sea Lord, Sir John Fisher, revolutionized modern naval warfare by launching <strong>HMS Dreadnought</strong>. Built in a record 366 days, Dreadnought featured ten 12-inch heavy guns and revolutionary steam turbine engines, rendering all previous pre-dreadnought battleships obsolete overnight.\n\n<span class="para-ref">[3.2]</span> Paradoxically, Fisher’s technological triumph wiped out Britain’s enormous numerical lead in older battleships. Because older vessels were now helpless targets, Germany could begin building dreadnoughts on equal terms. German shipyards immediately widened the Kiel Canal and laid down rival Nassau-class dreadnoughts, accelerating the arms race.`,
+      },
+      {
+        title: 'The Public Frenzy & The Naval Arms Verdict',
+        text: `<span class="para-ref">[4.1]</span> By 1909, British public anxiety peaked amid rumours of secret German shipbuilding. The British press and public launched a fervent patriotic campaign, coining the famous slogan: <em>"We want eight and we won't wait!"</em> The Liberal government bowed to public pressure, laying down eight super-dreadnoughts in a single budgetary year.\n\n<span class="para-ref">[4.2]</span> By 1912, Britain had definitively won the naval race, possessing twenty-nine dreadnoughts to Germany's seventeen. Acknowledging that it could not outspend Britain, Germany diverted its military budget back to its army. However, the naval race left deep scars: it drove Britain firmly into diplomatic alignment with France and Russia, cementing the hostile camps that would clash in 1914.`,
+      },
+    ];
+  }
+
+  if (idx === 4) {
+    // Lesson 5: The Alliance System & The Schlieffen Plan
+    return [
+      {
+        title: 'Bismarck’s Web & The Reinsurance Treaty',
+        text: `<span class="para-ref">[1.1]</span> Following the unification of Germany in 1871, Chancellor Bismarck's paramount foreign policy priority was preserving the newly created Reich by keeping defeated France diplomatically isolated. In 1882, Bismarck concluded the Triple Alliance with Austria-Hungary and Italy, creating a defensive bulwark across Central Europe.\n\n<span class="para-ref">[1.2]</span> Bismarck's masterstroke was the 1887 secret Reinsurance Treaty with Russia, ensuring Russian neutrality if France attacked Germany. Bismarck recognized that Germany could not survive a two-front war against both France and Russia simultaneously. His intricate diplomatic web required immense skill, maintaining friendship with autocratic Russia while allied to Russia's Balkan rival, Austria-Hungary.`,
+      },
+      {
+        title: 'The Lapse of Treaty & The Franco-Russian Entente',
+        text: `<span class="para-ref">[2.1]</span> In 1890, the arrogant young Kaiser Wilhelm II dismissed Bismarck and allowed the vital Reinsurance Treaty with Russia to lapse, dismissively believing that the ideological gulf between autocratic Russia and republican France would prevent any alliance between them.\n\n<span class="para-ref">[2.2]</span> Wilhelm miscalculated disastrously. Starved of foreign loans to industrialize, Tsarist Russia turned to Paris. In 1894, republican France and autocratic Russia ratified the Franco-Russian Alliance, binding both powers to mobilize immediately if either was attacked by Germany. Bismarck's worst strategic nightmare—hostile encirclement on two fronts—was now reality.`,
+      },
+      {
+        title: 'Encirclement & The Triple Entente (1904–1907)',
+        text: `<span class="para-ref">[3.1]</span> Alarmed by Germany's aggressive naval build-up and erratic colonial diplomacy, Great Britain abandoned its traditional policy of "splendid isolation". In 1904, Britain settled century-old colonial disputes with France by signing the Entente Cordiale, formalizing diplomatic friendship.\n\n<span class="para-ref">[3.2]</span> In 1907, Britain negotiated the Anglo-Russian Convention, resolving rivalries in Persia and Central Asia. Together, these agreements created the Triple Entente between Britain, France, and Russia. Europe was now divided into two heavily armed, suspicious alliances, meaning any regional crisis could trigger a catastrophic continent-wide conflagration.`,
+      },
+      {
+        title: 'The Schlieffen Plan & The War Timetables',
+        text: `<span class="para-ref">[4.1]</span> Trapped between hostile armies in France and Russia, German Chief of Staff Alfred von Schlieffen drafted an audaciously risky operational war plan. Assuming Russia's vast army would take six weeks to mobilize, Schlieffen planned to deploy ninety percent of Germany's forces in a massive hammer-blow through neutral Belgium to encircle and crush Paris in forty days.\n\n<span class="para-ref">[4.2]</span> Once France was eliminated, German armies would rush east by railway to defeat the lumbering Russian army. The Schlieffen Plan was rigidly tied to railway mobilization timetables. Crucially, it left zero room for diplomatic negotiation: once Russia mobilized, German generals insisted they must attack France through Belgium immediately, guaranteeing world war.`,
+      },
+    ];
+  }
+
+  if (idx === 5) {
+    // Lesson 6: The Assassination in Sarajevo & The July Crisis
+    return [
+      {
+        title: 'The Balkan Powder Keg & The Annexation Crisis',
+        text: `<span class="para-ref">[1.1]</span> As the Ottoman Empire steadily disintegrated in southeastern Europe, the Balkan peninsula became known as the "Powder Keg of Europe". Small Slavic nations, particularly ambitious Serbia, sought to expand their borders and liberate ethnic Slavs living under foreign imperial rule, strongly backed by Tsarist Russia under the banner of Pan-Slavism.\n\n<span class="para-ref">[1.2]</span> In 1908, Austria-Hungary triggered the Bosnian Crisis by formally annexing the Slav province of Bosnia-Herzegovina. Enraged Serbian nationalists demanded war, but Russia was forced to back down when Germany threatened military intervention. Serbia vowed revenge, while Russia resolved never to suffer diplomatic humiliation in the Balkans again.`,
+      },
+      {
+        title: 'The Black Hand & The Shots at Sarajevo',
+        text: `<span class="para-ref">[2.1]</span> On Sunday 28 June 1914, Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, arrived in Sarajevo, the capital of Bosnia. Serbian nationalist society <em>The Black Hand</em>, covertly led by Serbian military intelligence chief Dragutin Dimitrijević ("Apis"), smuggled seven young Bosnian Serb assassins equipped with bombs and pistols into the city.\n\n<span class="para-ref">[2.2]</span> After an initial bomb bounced off the royal motorcade, the Archduke's driver took a wrong turn into Franz Josef Street. Nineteen-year-old assassin Gavrilo Princip stepped forward and fired two fatal shots, killing Franz Ferdinand and his wife Sophie at point-blank range, detonating the explosive fuse of European diplomacy.`,
+      },
+      {
+        title: 'The Blank Cheque & The Austrian Ultimatum',
+        text: `<span class="para-ref">[3.1]</span> In Vienna, Austro-Hungarian military leaders resolved to crush Serbia once and for all. On 5–6 July, Kaiser Wilhelm II issued the fateful "Blank Cheque", pledging unconditional German military backing even if Austrian retaliation against Serbia provoked war with Russia.\n\n<span class="para-ref">[3.2]</span> Emboldened by German support, Austria delivered a deliberately unacceptable 48-hour ultimatum to Serbia on 23 July, demanding Austrian officials conduct police investigations inside Serbian territory. Although Serbia accepted almost all demands, Austria rejected the reply and declared war on 28 July, bombarding Belgrade with heavy artillery.`,
+      },
+      {
+        title: 'The Sleepwalkers: The Cascading Mobilizations',
+        text: `<span class="para-ref">[4.1]</span> The alliance dominoes collapsed with terrifying speed. On 30 July, Tsar Nicholas II ordered general mobilization to protect Slavic Serbia. Germany demanded Russia halt within twelve hours; when Russia refused, Germany declared war on 1 August and activated the Schlieffen Plan, invading neutral Belgium on 3–4 August to attack France.\n\n<span class="para-ref">[4.2]</span> German violation of the 1839 Treaty of London compelled Great Britain to declare war at midnight on 4 August. As Sir Edward Grey famously observed: <em>"The lamps are going out all over Europe; we shall not see them lit again in our lifetime."</em> Decades of militarism, alliances, imperialism, and nationalism had culminated in thirty days of madness.`,
+      },
+    ];
+  }
+
+  return [];
 }
 
 /**
@@ -776,11 +877,11 @@ async function buildPublisherTextbookHtmlGreatWar() {
     const leftSources = GREAT_WAR_LEFT_SOURCES[leftSrcKey] || {};
 
     // Extract lesson blocks into 4 coherent sections
-    const secList = getLessonSections(lesson, idx);
-    const sec1 = secList[0];
-    const sec2 = secList[1];
-    const sec3 = secList[2];
-    const sec4 = secList[3];
+    const secList = getGreatWarLessonSections(lesson, idx);
+    const sec1 = secList[0] || {};
+    const sec2 = secList[1] || {};
+    const sec3 = secList[2] || {};
+    const sec4 = secList[3] || {};
 
     // Format paragraphs with pure PEEL [secNum.pNum] indexing
     const formatBlockParas = (block, secNum) => {
@@ -896,27 +997,28 @@ async function buildPublisherTextbookHtmlGreatWar() {
           </div>
         </div>
 
-        <!-- 2-Column Core Prose Measure -->
-        <div class="two-column-prose">
-          
-          <!-- Act 1 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 1</span>
-            <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+        <!-- 2-Column Core Prose Grid -->
+        <div class="two-column-grid">
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 1</span>
+                <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+              </div>
+              ${formatBlockParas(sec1, 1)}
+            </div>
+            ${renderArchivalSourceBox(leftSources.sourceA)}
           </div>
-          ${formatBlockParas(sec1, 1)}
-
-          ${renderArchivalSourceBox(leftSources.sourceA)}
-
-          <!-- Act 2 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 2</span>
-            <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+          <div class="col-side">
+            <div class="col-top-group">
+              <div class="section-banner">
+                <span class="sb-num">ACT 2</span>
+                <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+              </div>
+              ${formatBlockParas(sec2, 2)}
+            </div>
+            ${renderArchivalSourceBox(leftSources.sourceB)}
           </div>
-          ${formatBlockParas(sec2, 2)}
-
-          ${renderArchivalSourceBox(leftSources.sourceB)}
-
         </div>
 
         <!-- Bottom Vocabulary Deck -->
@@ -961,86 +1063,87 @@ async function buildPublisherTextbookHtmlGreatWar() {
           <h3 class="rph-title">${lesson.title}</h3>
         </div>
 
-        <!-- 2-Column Prose Measure -->
-        <div class="two-column-prose">
-          
-          <!-- Act 3 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 3</span>
-            <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-          </div>
-          ${formatBlockParas(sec3, 3)}
-
-          <!-- Key Figure Card -->
-          ${
-            bank.keyFigure
-              ? `
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">${bank.keyFigure.category || bank.keyFigure.badge || 'KEY HISTORICAL INDIVIDUAL'}</span>
-              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
-            </div>
-            <div class="kf-identity-row">
+        <!-- Right Page Content Layout -->
+        <div class="right-page-content">
+          <div class="right-upper-grid">
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 3</span>
+                  <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+                </div>
+                ${formatBlockParas(sec3, 3)}
+              </div>
               ${
-                bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
-                  ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
+                bank.keyFigure
+                  ? `
+              <div class="key-figure-box">
+                <div class="kf-header">
+                  <span class="kf-tag">${bank.keyFigure.category || bank.keyFigure.badge || 'KEY HISTORICAL INDIVIDUAL'}</span>
+                  <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+                </div>
+                <div class="kf-identity-row">
+                  ${
+                    bank.keyFigure.image && bank.keyFigure.image !== 'monogram'
+                      ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">`
+                      : ''
+                  }
+                  <div class="kf-identity-text">
+                    <div class="kf-name">${bank.keyFigure.name}</div>
+                    <div class="kf-role">${bank.keyFigure.role}</div>
+                  </div>
+                </div>
+                <div class="kf-significance">${bank.keyFigure.significance}</div>
+                <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+                <ul class="kf-actions-list">
+                  ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+                </ul>
+              </div>`
                   : ''
               }
-              <div class="kf-identity-text">
-                <div class="kf-name">${bank.keyFigure.name}</div>
-                <div class="kf-role">${bank.keyFigure.role}</div>
-              </div>
             </div>
-            <div class="kf-significance">${bank.keyFigure.significance}</div>
-            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-            <ul class="kf-actions-list">
-              ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-            </ul>
+            <div class="col-side">
+              <div class="col-top-group">
+                <div class="section-banner">
+                  <span class="sb-num">ACT 4</span>
+                  <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+                </div>
+                ${formatBlockParas(sec4, 4)}
+              </div>
+              ${bank.conceptSpotlight || ''}
+            </div>
+          </div>
+
+          ${
+            bank.archivalDispatch
+              ? `
+          <div class="fullwidth-dispatch-wrap">
+            ${bank.archivalDispatch}
           </div>`
               : ''
           }
-
-          <!-- Act 4 -->
-          <div class="section-banner">
-            <span class="sb-num">ACT 4</span>
-            <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-          </div>
-          ${formatBlockParas(sec4, 4)}
-
-          <!-- Concept Spotlight Box -->
-          ${bank.conceptSpotlight || ''}
-
-          <!-- Archival Dispatch Box -->
-          ${bank.archivalDispatch || ''}
-
         </div>
 
-        <!-- Bottom Enquiry Deck -->
-        ${
-          bank.bottomEnquiry
-            ? `
+        <!-- Disciplinary Enquiry Mission Box (Zero Scaffolding Standard) -->
         <div class="bottom-enquiry-box">
           <div class="beb-header">
-            <span class="beb-title">HISTORICAL ENQUIRY &amp; DISCIPLINARY ASSESSMENT</span>
-            <span class="beb-badge">LESSON ${lessonNum} SYNTHESIS</span>
+            <span class="beb-title">DISCIPLINARY ENQUIRY MISSION &bull; LESSON ${lessonNum}</span>
+            <span class="beb-badge">${lesson.skill || 'DISCIPLINARY WRITING'}</span>
           </div>
-          <div class="beb-grid">
-            <div class="beb-col">
-              <strong>1. Knowledge Recall &amp; Evidence:</strong>
-              ${bank.bottomEnquiry.q1}
+          <div class="beb-mission-content">
+            <div class="beb-lens-row">
+              <span class="beb-mission-tag">PLANNING LENS (TASK 3):</span>
+              <span class="beb-lens-text">${(lesson.tasks && lesson.tasks[0] && (lesson.tasks[0].topic || lesson.tasks[0].question)) || 'Prepare historical evidence and evaluate competing perspectives across both sides of the debate.'}</span>
             </div>
-            <div class="beb-col">
-              <strong>2. Causal Analysis:</strong>
-              ${bank.bottomEnquiry.q2}
+            <div class="beb-capstone-row">
+              <span class="beb-mission-tag">CAPSTONE ENQUIRY (TASK 4):</span>
+              <span class="beb-capstone-text">${(lesson.tasks && lesson.tasks[1] && lesson.tasks[1].question) || lesson.title}</span>
             </div>
-            <div class="beb-col">
-              <strong>3. Historical Evaluation &amp; Debate:</strong>
-              ${bank.bottomEnquiry.q3}
+            <div class="beb-workbook-signpost">
+              <span>&rarr; <strong>Consumable Workbook Mission:</strong> Turn to Lesson ${lessonNum} in your Pupil Workbook to complete Task 3 evidence preparation and Task 4 extended writing.</span>
             </div>
           </div>
-        </div>`
-            : ''
-        }
+        </div>
 
         <!-- Page Footer -->
         <div class="page-footer">
@@ -1122,8 +1225,8 @@ async function buildPublisherTextbookHtmlGreatWar() {
       padding: 0;
       background: #e2e8f0;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.55pt;
-      line-height: 1.46;
+      font-size: 10.2pt;
+      line-height: 1.48;
       color: #1e293b;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -1133,7 +1236,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
       width: 210mm;
       height: 297mm;
       box-sizing: border-box;
-      padding: 11mm 13mm 9mm 13mm;
+      padding: 10mm 12mm 8mm 12mm;
       background: #ffffff;
       margin: 0 auto 10mm auto;
       page-break-after: always;
@@ -1159,8 +1262,8 @@ async function buildPublisherTextbookHtmlGreatWar() {
     /* Lesson Header */
     .lesson-header {
       border-bottom: 2px solid #1e3a8a;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      padding-bottom: 3px;
+      margin-bottom: 4px;
       flex-shrink: 0;
     }
     .lesson-badge-strip {
@@ -1173,23 +1276,23 @@ async function buildPublisherTextbookHtmlGreatWar() {
     .topic-badge {
       background: #1e3a8a;
       color: #ffffff;
-      font-size: 6.8pt;
+      font-size: 8.0pt;
       font-weight: 800;
-      padding: 2px 6px;
+      padding: 1.5px 6px;
       border-radius: 3px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .spec-ref-badge {
-      font-size: 6.8pt;
+      font-size: 8.0pt;
       font-weight: 700;
       color: #b45309;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
     }
     .lesson-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 12.8pt;
+      font-size: 13.0pt;
       font-weight: 800;
       color: #0f172a;
       margin: 2px 0 2px 0;
@@ -1197,9 +1300,9 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .lesson-spec-anchor {
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 8.0pt;
       color: #334155;
-      line-height: 1.3;
+      line-height: 1.28;
       background: #f8fafc;
       border-left: 3px solid #1e3a8a;
       padding: 2px 6px;
@@ -1209,56 +1312,99 @@ async function buildPublisherTextbookHtmlGreatWar() {
     /* Right Page Header */
     .right-page-header {
       border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      padding-bottom: 3px;
+      margin-bottom: 4px;
       flex-shrink: 0;
     }
     .rph-meta {
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
+      font-size: 8.0pt;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       margin-bottom: 2px;
     }
     .rph-tag { color: #1e3a8a; }
     .rph-lesson { color: #64748b; }
     .rph-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 11.2pt;
+      font-size: 11.8pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
       line-height: 1.18;
     }
 
-    /* 2-Column Reading Measure */
-    .two-column-prose {
-      column-count: 2;
-      column-gap: 15px;
-      column-rule: 1px solid #e2e8f0;
-      text-align: justify;
+    /* Balanced 2-Column Grid Layout (Left Page) */
+    .two-column-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
+      flex: 1;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      overflow: hidden;
+    }
+    .col-top-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .col-side .archival-source-box {
+      margin: 0;
+    }
+
+    /* Right Page 2-Tier Balanced Layout */
+    .right-page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .right-upper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5mm;
       flex: 1;
       overflow: hidden;
     }
+    .fullwidth-dispatch-wrap {
+      flex-shrink: 0;
+      margin: 2.5px 0 1px 0;
+    }
+    .fullwidth-dispatch-wrap .archival-source-box {
+      margin: 0;
+    }
+
+    /* Legacy support */
+    .two-column-prose {
+      display: none;
+    }
 
     .section-banner {
-      column-span: all;
       background: #f8fafc;
       border-left: 3px solid #1e3a8a;
       border-bottom: 1px solid #e2e8f0;
-      padding: 2.5px 6px;
+      padding: 2px 6px;
       border-radius: 0 3px 3px 0;
-      margin: 5px 0 3px 0;
+      margin: 2px 0 2px 0;
       display: flex;
       align-items: center;
       gap: 6px;
       font-family: 'Inter', sans-serif;
+      break-after: avoid;
     }
     .sb-num {
-      font-size: 6.2pt;
+      font-size: 8.0pt;
       font-weight: 900;
       color: #1e3a8a;
       background: #dbeafe;
@@ -1266,7 +1412,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border-radius: 2px;
     }
     .sb-title {
-      font-size: 7.4pt;
+      font-size: 8.4pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
@@ -1274,7 +1420,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
 
     .narrative-p {
-      margin: 0 0 5px 0;
+      margin: 0 0 4px 0;
       text-indent: 1.0em;
     }
     .narrative-p:first-of-type, .section-banner + .narrative-p {
@@ -1283,7 +1429,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
 
     .para-ref {
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #1e3a8a;
       background: #eff6ff;
@@ -1301,8 +1447,8 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border: 1px solid #e7e5e4;
       border-left: 3px solid #78716c;
       border-radius: 3px;
-      padding: 5px 7px;
-      margin: 5px 0;
+      padding: 4px 6px;
+      margin: 4px 0;
       break-inside: avoid;
     }
     .archival-header {
@@ -1313,7 +1459,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
       font-family: 'Inter', sans-serif;
     }
     .source-badge {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       font-weight: 900;
       color: #fff;
       background: #0f172a;
@@ -1321,20 +1467,20 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border-radius: 2px;
     }
     .source-type {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       font-weight: 700;
       color: #78716c;
       text-transform: uppercase;
       margin-left: 4px;
     }
     .source-date-micro {
-      font-size: 5.8pt;
+      font-size: 8.0pt;
       font-weight: 600;
       color: #78716c;
     }
     .archival-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
+      font-size: 9.4pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 2px;
@@ -1342,88 +1488,88 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .archival-image {
       width: 100%;
-      height: 100px;
+      height: 92px;
       object-fit: contain;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 2px;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       display: block;
     }
     .archival-source-box.expand-sm .archival-image {
-      height: 80px;
+      height: 75px;
     }
     .archival-source-box.expand-md .archival-image {
-      height: 125px;
+      height: 110px;
     }
     .archival-source-box.expand-lg .archival-image {
-      height: 145px;
+      height: 130px;
     }
     .archival-source-box.panoramic-source {
       column-span: all;
-      margin: 4px 0 5px 0;
+      margin: 3px 0 4px 0;
     }
     .archival-source-box.panoramic-source .archival-image {
-      height: 115px;
+      height: 105px;
       width: 100%;
       object-fit: contain;
     }
     .archival-body {
-      font-size: 7.4pt;
-      line-height: 1.32;
+      font-size: 8.8pt;
+      line-height: 1.34;
       color: #292524;
       font-style: italic;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .written-source-box .archival-body {
       background: #fafaf9;
       border-left: 2px solid #78716c;
-      padding: 4px 6px;
+      padding: 3.5px 5.5px;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.2pt;
-      line-height: 1.3;
+      font-size: 8.8pt;
+      line-height: 1.34;
       color: #1c1917;
       font-style: italic;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .archival-context-box {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #0284c7;
-      padding: 3px 5px;
-      margin: 3px 0 2px 0;
+      padding: 2.5px 4.5px;
+      margin: 2px 0;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
     }
     .archival-context-text {
-      font-size: 6.0pt;
-      line-height: 1.25;
+      font-size: 8.0pt;
+      line-height: 1.28;
       color: #334155;
-      margin: 0 0 2px 0;
+      margin: 0 0 1.5px 0;
     }
     .archival-hinge-q {
-      font-size: 6.0pt;
-      line-height: 1.25;
+      font-size: 8.1pt;
+      line-height: 1.28;
       color: #0f172a;
       background: #f0f9ff;
-      padding: 2px 4px;
+      padding: 1.5px 3.5px;
       border-radius: 2px;
-      margin-top: 2px;
+      margin-top: 1.5px;
     }
     .archival-hinge-q strong {
       color: #0369a1;
       text-transform: uppercase;
-      font-size: 5.6pt;
-      letter-spacing: 0.04em;
+      font-size: 8.0pt;
+      letter-spacing: 0.03em;
     }
     .archival-footer {
       border-top: 1px dashed #d6d3d1;
-      padding-top: 2px;
-      margin-top: 2px;
+      padding-top: 1.5px;
+      margin-top: 1.5px;
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 5.8pt;
+      font-size: 8.0pt;
       color: #78716c;
       font-weight: 600;
     }
@@ -1434,8 +1580,8 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 5px 8px;
-      margin: 5px 0;
+      padding: 4px 6px;
+      margin: 4px 0;
       break-inside: avoid;
     }
     .kf-header {
@@ -1445,26 +1591,26 @@ async function buildPublisherTextbookHtmlGreatWar() {
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .kf-lifespan {
-      font-size: 5.8pt;
+      font-size: 8.0pt;
       color: #64748b;
       font-weight: 600;
     }
     .kf-identity-row {
       display: flex;
-      gap: 7px;
+      gap: 6px;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .kf-portrait {
-      width: 44px;
-      height: 54px;
+      width: 42px;
+      height: 50px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #94a3b8;
@@ -1473,7 +1619,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
     .kf-identity-text { flex: 1; }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.2pt;
+      font-size: 10.4pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
@@ -1481,22 +1627,22 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
+      font-size: 8.2pt;
       font-weight: 700;
       color: #475569;
       text-transform: uppercase;
       line-height: 1.2;
     }
     .kf-significance {
-      font-size: 7.4pt;
+      font-size: 8.5pt;
       font-style: italic;
       color: #334155;
-      line-height: 1.3;
-      margin-bottom: 3px;
+      line-height: 1.30;
+      margin-bottom: 2.5px;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -1506,7 +1652,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
       margin: 0;
       padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 8.2pt;
       line-height: 1.28;
       color: #1e293b;
     }
@@ -1518,8 +1664,8 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border: 1px solid #fed7aa;
       border-left: 3.5px solid #b45309;
       border-radius: 3px;
-      padding: 5px 8px;
-      margin: 5px 0;
+      padding: 4px 6px;
+      margin: 4px 0;
       break-inside: avoid;
     }
     .csb-header {
@@ -1532,13 +1678,13 @@ async function buildPublisherTextbookHtmlGreatWar() {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
     }
     .csb-category {
-      font-size: 5.6pt;
+      font-size: 8.0pt;
       font-weight: 700;
       color: #b45309;
       background: #ffedd5;
@@ -1547,26 +1693,26 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
+      font-size: 9.5pt;
       font-weight: 800;
       color: #7c2d12;
       margin: 1px 0 2px 0;
       line-height: 1.15;
     }
     .csb-body {
-      font-size: 7.4pt;
+      font-size: 8.8pt;
       line-height: 1.32;
       color: #1e293b;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 6.3pt;
+      font-size: 8.2pt;
       font-weight: 600;
       color: #78350f;
       background: #fef3c7;
       border-left: 2px solid #d97706;
-      padding: 2px 5px;
+      padding: 1.5px 4.5px;
       border-radius: 0 2px 2px 0;
     }
 
@@ -1577,7 +1723,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
       flex-shrink: 0;
       margin-top: auto;
       margin-bottom: 1px;
-      padding: 7px 9px;
+      padding: 5px 8px;
       border-radius: 3px;
       font-family: 'Inter', sans-serif;
     }
@@ -1590,23 +1736,23 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
       border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 2px;
+      padding-bottom: 1.5px;
     }
     .bvb-title {
-      font-size: 6.6pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .bvb-badge, .beb-badge {
-      font-size: 5.6pt;
+      font-size: 8.0pt;
       font-weight: 800;
       background: #0f172a;
       color: #fff;
-      padding: 1px 4px;
+      padding: 1px 5px;
       border-radius: 2px;
       text-transform: uppercase;
     }
@@ -1614,16 +1760,16 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 7px;
-      font-size: 6.6pt;
-      line-height: 1.28;
+      font-size: 8.8pt;
+      line-height: 1.34;
       color: #334155;
     }
-    .bvb-col strong, .beb-col strong {
+    .bvb-col strong {
       display: block;
       color: #0f172a;
       margin-bottom: 1px;
       text-transform: uppercase;
-      font-size: 6.0pt;
+      font-size: 8.8pt;
     }
 
     .bottom-enquiry-box {
@@ -1632,19 +1778,52 @@ async function buildPublisherTextbookHtmlGreatWar() {
       border-top: 2.5px solid #1e3a8a;
     }
     .beb-title {
-      font-size: 6.6pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .beb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 9px;
-      font-size: 6.6pt;
-      line-height: 1.3;
+    .beb-mission-content {
+      padding: 2px 0 1px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .beb-lens-row, .beb-capstone-row {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+    }
+    .beb-mission-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .beb-lens-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.5pt;
       color: #334155;
+      line-height: 1.30;
+    }
+    .beb-capstone-text {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 9.0pt;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.30;
+    }
+    .beb-workbook-signpost {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      color: #64748b;
+      font-style: italic;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 2px;
+      margin-top: 1px;
     }
 
     .page-footer {
@@ -1654,7 +1833,7 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 8.0pt;
       color: #64748b;
       font-weight: 600;
       flex-shrink: 0;
@@ -1714,15 +1893,19 @@ async function buildPublisherTextbookHtmlGreatWar() {
       margin: 4px 0;
     }
     .cover-plate-img {
-      max-height: 98mm;
+      height: 102mm;
+      max-height: 104mm;
       max-width: 100%;
+      width: auto;
       object-fit: contain;
       border: 1px solid #cbd5e1;
       border-radius: 2px;
+      display: block;
+      margin: 0 auto;
     }
     .cover-plate-caption {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 6.6pt;
       color: #64748b;
       margin-top: 3px;
       font-style: italic;
@@ -1753,34 +1936,36 @@ async function buildPublisherTextbookHtmlGreatWar() {
       width: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       margin-top: 4px;
     }
     .cover-matrix-table th {
       background: #0f172a;
       color: #ffffff;
-      padding: 3px 6px;
+      padding: 2.8mm 2.2mm;
       text-align: left;
       font-weight: 800;
-      font-size: 6.4pt;
+      font-size: 7.6pt;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .cover-matrix-table td {
       border-bottom: 1px solid #e2e8f0;
-      padding: 3px 6px;
+      padding: 2.8mm 2.2mm;
       color: #334155;
+      font-size: 7.6pt;
+      line-height: 1.25;
     }
     .cover-matrix-table tr:nth-child(even) td {
       background: #f8fafc;
     }
     .cover-footer {
       border-top: 1.5px solid #0f172a;
-      padding-top: 4px;
+      padding-top: 2.5mm;
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
+      font-size: 7.0pt;
       color: #475569;
       font-weight: 700;
     }
@@ -1819,27 +2004,27 @@ async function buildPublisherTextbookHtmlGreatWar() {
       letter-spacing: 0.02em;
     }
     .back-subtitle {
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       color: #475569;
       margin-top: 2px;
       font-style: italic;
       font-weight: 500;
     }
     .back-section-title {
-      font-size: 8.0pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       border-bottom: 1.5px solid #0f172a;
       padding-bottom: 2px;
-      margin: 5px 0 3px 0;
+      margin: 4px 0 2px 0;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
     }
     .back-section-tag {
-      font-size: 6.4pt;
+      font-size: 7.2pt;
       font-weight: 700;
       color: #1e3a8a;
       letter-spacing: 0.03em;
@@ -1848,37 +2033,37 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.6pt;
-      line-height: 1.28;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bt-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #1e3a8a;
-      padding: 3.5px 5px;
+      padding: 4px 6px;
       border-radius: 0 2px 2px 0;
     }
-    .bt-card strong { color: #1e3a8a; font-weight: 800; }
+    .bt-card strong { color: #1e3a8a; font-weight: 800; font-size: 7.6pt; }
     
     .back-main-matrix-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 5px;
-      font-size: 6.7pt;
-      line-height: 1.28;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bmm-col {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-top: 2.5px solid #1e3a8a;
-      padding: 4.5px 6px;
+      padding: 5px 6.5px;
       border-radius: 2px;
     }
     .bmm-col strong {
       display: block;
       color: #1e3a8a;
       text-transform: uppercase;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -1887,21 +2072,21 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.7pt;
-      line-height: 1.28;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bh-card {
       background: #fdfaf6;
       border: 1px solid #fed7aa;
       border-left: 2.5px solid #b45309;
-      padding: 4.5px 6px;
+      padding: 5px 6.5px;
       border-radius: 2px;
     }
     .bh-card strong {
       display: block;
       color: #92400e;
       text-transform: uppercase;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -1910,21 +2095,21 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      font-size: 6.7pt;
-      line-height: 1.28;
+      font-size: 7.5pt;
+      line-height: 1.30;
     }
     .bws-col {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-top: 2.5px solid #2563eb;
-      padding: 4.5px 6px;
+      padding: 5px 6.5px;
       border-radius: 2px;
     }
     .bws-col strong {
       display: block;
       color: #1e40af;
       text-transform: uppercase;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       font-weight: 800;
       margin-bottom: 2px;
     }
@@ -1934,14 +2119,14 @@ async function buildPublisherTextbookHtmlGreatWar() {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 5px;
-      margin-top: 3px;
+      margin-top: 2px;
     }
     .bqr-card {
       background: #ffffff;
       border: 1.2px solid #cbd5e1;
       border-top: 2.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 5px 3px 4px 3px;
+      padding: 4px 3px 3px 3px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -1951,11 +2136,11 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .bqr-header {
       width: 100%;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     .bqr-num {
       display: block;
-      font-size: 6.5pt;
+      font-size: 7.0pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -1963,35 +2148,35 @@ async function buildPublisherTextbookHtmlGreatWar() {
     }
     .bqr-title {
       display: block;
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       font-weight: 700;
       color: #334155;
       line-height: 1.15;
-      height: 20px;
+      height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-top: 1px;
     }
     .bqr-code-box {
-      width: 62px;
-      height: 62px;
+      width: 56px;
+      height: 56px;
       margin: 0 auto;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      padding: 2px;
+      padding: 1.5px;
       box-sizing: border-box;
       border-radius: 2px;
     }
     .bqr-footer {
-      font-size: 5.0pt;
+      font-size: 5.6pt;
       font-weight: 800;
       color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      margin-top: 3px;
+      margin-top: 2px;
       border-top: 1px solid #f1f5f9;
-      padding-top: 2px;
+      padding-top: 1.5px;
       width: 100%;
     }
   </style>

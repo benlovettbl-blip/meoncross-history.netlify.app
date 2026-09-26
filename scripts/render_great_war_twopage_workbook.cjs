@@ -576,7 +576,7 @@ const lessonConfigs = [
 // Verso: Q1 = 4 lines; Q2 fills remaining height to clue footer (gap <= 20px)
 const versoQ2Lines = [14, 12, 12, 12, 12, 10];
 // Recto: Essay writing lines docking directly above Timeline Mission box (gap <= 20px)
-const rectoWritingLines = [27, 26, 27, 27, 26, 26];
+const rectoWritingLines = [27, 27, 26, 27, 27, 26];
 
 // Timeline Milestones across Pages 2 & 3 (3 Milestones per page, 100% full-width cards)
 const timelineMilestones = [
@@ -1120,8 +1120,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
                   <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
                     <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">${cfg.bridgeTask.imgCaption}</strong>
                   </div>
-                  <div style="height: 60px; border: 1px solid #000; overflow: hidden; background: #000; margin-bottom: 2px;">
-                    <img src="${b64}" style="width: 100%; height: 100%; object-fit: cover;" alt="La Tache Noire">
+                  <div style="height: 54px; border: 1px solid #000; overflow: hidden; background: #000; margin-bottom: 2px; line-height: 0;">
+                    <img src="${b64}" style="display: block; width: 100%; height: 100%; object-fit: cover;" alt="La Tache Noire">
                   </div>
                   <p style="font-family: 'Georgia', serif; font-size: 7.3pt; font-style: italic; color: #111; margin: 1px 0; line-height: 1.22;">
                     ${cfg.bridgeTask.sourceText}
@@ -1457,7 +1457,7 @@ function buildGreatWarTwoPageWorkbookHtml() {
       </div>
 
       <!-- Header & Target Grade Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
         <div style="display: flex; align-items: baseline; gap: 8px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase;">Pupil:</span>
           <span style="border-bottom: 1.2px solid #000; width: 140px; display: inline-block;"></span>
@@ -1477,37 +1477,37 @@ function buildGreatWarTwoPageWorkbookHtml() {
       </div>
 
       <!-- KS3 Attainment Criteria & Effort Scale Box -->
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.2; margin-bottom: 3px; border: 1.2px solid #000;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.2; margin-bottom: 4px; border: 1.2px solid #000;">
         <tbody>
           <tr style="background: #1e3a8a; color: #fff;">
-            <td style="border: 1px solid #000; padding: 2.5px 5px; font-weight: 800; width: 12%; text-transform: uppercase; letter-spacing: 0.5px;">KS3 Pathway</td>
-            <td style="border: 1px solid #000; padding: 2.5px 5px; width: 17.6%; background: #f8fafc; color: #000;"><strong>Emerging (1–2):</strong> Recalls isolated facts; basic descriptive narrative.</td>
-            <td style="border: 1px solid #000; padding: 2.5px 5px; width: 17.6%; background: #ffffff; color: #000;"><strong>Emerging+ (3):</strong> Identifies causes &amp; features with basic explanation.</td>
-            <td style="border: 1px solid #000; padding: 2.5px 5px; width: 17.6%; background: #f8fafc; color: #000;"><strong>Expected (4–5):</strong> Structured PEEL writing; supports with specific evidence.</td>
-            <td style="border: 1px solid #000; padding: 2.5px 5px; width: 17.6%; background: #ffffff; color: #000;"><strong>Expected+ (6–7):</strong> Detailed causation; balances competing factors.</td>
-            <td style="border: 1px solid #000; padding: 2.5px 5px; width: 17.6%; background: #f8fafc; color: #000;"><strong>Greater Depth (8–9):</strong> Nuanced historical judgements; evaluates provenance &amp; interpretations.</td>
+            <td style="border: 1px solid #000; padding: 2.8px 5px; font-weight: 800; width: 12%; text-transform: uppercase; letter-spacing: 0.5px;">KS3 Pathway</td>
+            <td style="border: 1px solid #000; padding: 2.8px 5px; width: 17.6%; background: #f8fafc; color: #000;"><strong>Emerging (1–2):</strong> Recalls isolated facts; basic descriptive narrative.</td>
+            <td style="border: 1px solid #000; padding: 2.8px 5px; width: 17.6%; background: #ffffff; color: #000;"><strong>Emerging+ (3):</strong> Identifies causes &amp; features with basic explanation.</td>
+            <td style="border: 1px solid #000; padding: 2.8px 5px; width: 17.6%; background: #f8fafc; color: #000;"><strong>Expected (4–5):</strong> Structured PEEL writing; supports with specific evidence.</td>
+            <td style="border: 1px solid #000; padding: 2.8px 5px; width: 17.6%; background: #ffffff; color: #000;"><strong>Expected+ (6–7):</strong> Detailed causation; balances competing factors.</td>
+            <td style="border: 1px solid #000; padding: 2.8px 5px; width: 17.6%; background: #f8fafc; color: #000;"><strong>Greater Depth (8–9):</strong> Nuanced historical judgements; evaluates provenance &amp; interpretations.</td>
           </tr>
           <tr style="background: #0f172a; color: #fff;">
-            <td style="border: 1px solid #000; padding: 2px 5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Effort Rubric</td>
-            <td style="border: 1px solid #000; padding: 2px 5px; background: #fff; color: #111;"><strong>1 • Concern:</strong> Disengaged or incomplete work.</td>
-            <td style="border: 1px solid #000; padding: 2px 5px; background: #fafafa; color: #111;"><strong>2 • Inconsistent:</strong> Needs repeated teacher prompts.</td>
-            <td style="border: 1px solid #000; padding: 2px 5px; background: #fff; color: #111;"><strong>3 • Satisfactory:</strong> Meets baseline expectations.</td>
-            <td style="border: 1px solid #000; padding: 2px 5px; background: #fafafa; color: #111;"><strong>4 • Good:</strong> Proactive focus &amp; thoughtful work.</td>
-            <td style="border: 1px solid #000; padding: 2px 5px; background: #fff; color: #111;"><strong>5 • Exemplary:</strong> Exceptional scholarship &amp; pride.</td>
+            <td style="border: 1px solid #000; padding: 2.2px 5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Effort Rubric</td>
+            <td style="border: 1px solid #000; padding: 2.2px 5px; background: #fff; color: #111;"><strong>1 • Concern:</strong> Disengaged or incomplete work.</td>
+            <td style="border: 1px solid #000; padding: 2.2px 5px; background: #fafafa; color: #111;"><strong>2 • Inconsistent:</strong> Needs repeated teacher prompts.</td>
+            <td style="border: 1px solid #000; padding: 2.2px 5px; background: #fff; color: #111;"><strong>3 • Satisfactory:</strong> Meets baseline expectations.</td>
+            <td style="border: 1px solid #000; padding: 2.2px 5px; background: #fafafa; color: #111;"><strong>4 • Good:</strong> Proactive focus &amp; thoughtful work.</td>
+            <td style="border: 1px solid #000; padding: 2.2px 5px; background: #fff; color: #111;"><strong>5 • Exemplary:</strong> Exceptional scholarship &amp; pride.</td>
           </tr>
         </tbody>
       </table>
 
       <!-- Master Assessment Tracking Ledger Table (6 Lessons) -->
-      <div style="border: 1.4px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 3px;">
+      <div style="border: 1.4px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.1pt;">
           <thead>
             <tr style="border-bottom: 1.5px solid #000000; background: #1e3a8a; color: #ffffff;">
-              <th style="padding: 3px 5px; width: 26px; text-align: center; font-size: 7.4pt; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">#</th>
-              <th style="padding: 3px 6px; text-align: left; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4); width: 42%;">Lesson Enquiry Title</th>
-              <th style="padding: 3px 4px; width: 68px; text-align: center; font-size: 7.2pt; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">Effort (1–5)</th>
-              <th style="padding: 3px 4px; width: 85px; text-align: center; font-size: 7.2pt; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">Attainment Level</th>
-              <th style="padding: 3px 6px; text-align: left; font-size: 7.2pt; font-weight: 900; text-transform: uppercase;">Teacher Formative Feedback &amp; Next Steps</th>
+              <th style="padding: 4px 5px; width: 26px; text-align: center; font-size: 7.4pt; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">#</th>
+              <th style="padding: 4px 6px; text-align: left; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.4); width: 42%;">Lesson Enquiry Title</th>
+              <th style="padding: 4px 4px; width: 68px; text-align: center; font-size: 7.2pt; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">Effort (1–5)</th>
+              <th style="padding: 4px 4px; width: 85px; text-align: center; font-size: 7.2pt; font-weight: 900; border-right: 1px solid rgba(255,255,255,0.4);">Attainment Level</th>
+              <th style="padding: 4px 6px; text-align: left; font-size: 7.2pt; font-weight: 900; text-transform: uppercase;">Teacher Formative Feedback &amp; Next Steps</th>
             </tr>
           </thead>
           <tbody>
@@ -1515,24 +1515,24 @@ function buildGreatWarTwoPageWorkbookHtml() {
               .map(
                 (l, idx) => `
               <tr style="border-bottom: 1px solid #000000; background: ${idx % 2 === 1 ? '#f8fafc' : '#ffffff'};">
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800; color: #1e3a8a;">L${l.lessonNum}</td>
-                <td style="padding: 3px 6px; border-right: 1px solid #000; font-weight: 600; line-height: 1.15;">
+                <td style="padding: 11.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 800; color: #1e3a8a;">L${l.lessonNum}</td>
+                <td style="padding: 11.5px 6px; border-right: 1px solid #000; font-weight: 600; line-height: 1.2;">
                   ${l.title}
                 </td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 700;"></td>
-                <td style="padding: 3px 4px; border-right: 1px solid #000; text-align: center; font-weight: 700;"></td>
-                <td style="padding: 3px 6px;"></td>
+                <td style="padding: 11.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 700;"></td>
+                <td style="padding: 11.5px 4px; border-right: 1px solid #000; text-align: center; font-weight: 700;"></td>
+                <td style="padding: 11.5px 6px;"></td>
               </tr>
             `,
               )
               .join('')}
             <tr style="background: #e2e8f0; font-weight: 900; border-top: 1.5px solid #000000;">
-              <td colspan="2" style="padding: 3.5px 6px; border-right: 1px solid #000; text-transform: uppercase; font-size: 7.3pt; color: #0f172a;">
+              <td colspan="2" style="padding: 8.5px 6px; border-right: 1px solid #000; text-transform: uppercase; font-size: 7.3pt; color: #0f172a;">
                 Unit Summative Outcome &bull; Target Standard Met?
               </td>
-              <td style="padding: 3.5px 4px; border-right: 1px solid #000; text-align: center; font-size: 7.4pt; background: #ffffff;"></td>
-              <td style="padding: 3.5px 4px; border-right: 1px solid #000; text-align: center; font-size: 7.4pt; background: #ffffff;"></td>
-              <td style="padding: 3.5px 6px; font-size: 6.8pt; background: #ffffff;">
+              <td style="padding: 8.5px 4px; border-right: 1px solid #000; text-align: center; font-size: 7.4pt; background: #ffffff;"></td>
+              <td style="padding: 8.5px 4px; border-right: 1px solid #000; text-align: center; font-size: 7.4pt; background: #ffffff;"></td>
+              <td style="padding: 8.5px 6px; font-size: 6.8pt; background: #ffffff;">
                 Teacher Sign: ________________________ &bull; Date: ___/___/2026
               </td>
             </tr>
@@ -1540,8 +1540,8 @@ function buildGreatWarTwoPageWorkbookHtml() {
         </table>
       </div>
 
-      <!-- Teacher Feedback: WWW & EBI (Compact 2 Full Lines each) -->
-      <div style="border: 1.4px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff; margin-bottom: 3px;">
+      <!-- Teacher Feedback: WWW & EBI (4 Full Lines each) -->
+      <div style="border: 1.4px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000;">
             Overall Unit Formative Feedback &amp; Academic Guidance
@@ -1553,21 +1553,25 @@ function buildGreatWarTwoPageWorkbookHtml() {
             <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
               What Went Well (WWW):
             </strong>
-            <div class="task-line" style="height: 5.5mm;"></div>
-            <div class="task-line" style="height: 5.5mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
           </div>
           <div>
             <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">
               Even Better If (EBI):
             </strong>
-            <div class="task-line" style="height: 5.5mm;"></div>
-            <div class="task-line" style="height: 5.5mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
+            <div class="task-line" style="height: 7.2mm;"></div>
           </div>
         </div>
       </div>
 
       <!-- Revision QR Hub & Digital Quizzing (6 Individual Lesson QR Cards) -->
-      <div style="border: 1.4px solid #000; border-radius: 4px; padding: 4px 6px; background: #fdfbf7;">
+      <div style="border: 1.4px solid #000; border-radius: 4px; padding: 5px 6px; background: #fdfbf7; margin-bottom: 4px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">
             Digital Revision &amp; Interactive Quizzing Hub &bull; 6 Lesson QR Codes (60 Total Questions)
@@ -1581,10 +1585,10 @@ function buildGreatWarTwoPageWorkbookHtml() {
               const lUrl = `https://the-history-revision-hub.netlify.app/?view=lessons&unit=great_war&lesson=${lNum}`;
               const lQr = generateQrSvg(lUrl);
               return `
-            <div class="qr-card" style="border: 1px solid #000; border-radius: 3px; background: #ffffff; padding: 3px 2px; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between;">
+            <div class="qr-card" style="border: 1px solid #000; border-radius: 3px; background: #ffffff; padding: 4px 2px; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between;">
               <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase;">Lesson ${lNum}</span>
               <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; color: #333; line-height: 1.1; margin-bottom: 2px; font-weight: 600;">${lessonShortTitles[i]}</span>
-              <div style="width: 17mm; height: 17mm; margin: 1px 0;">
+              <div style="width: 22mm; height: 22mm; margin: 1px 0;">
                 ${lQr}
               </div>
               <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; color: #555; text-transform: uppercase; font-weight: 700;">Scan to Quiz</span>
@@ -1595,6 +1599,34 @@ function buildGreatWarTwoPageWorkbookHtml() {
           `;
             })
             .join('')}
+        </div>
+      </div>
+
+      <!-- Revision Strategy Protocol: Cognitive Science & Retrieval Techniques -->
+      <div style="border: 1.2px solid #000; border-radius: 4px; padding: 5px 6px; background: #f0fdf4; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #bbf7d0; padding-bottom: 1px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #166534; letter-spacing: 0.5px;">
+            🎯 Year 9 Revision Protocol &bull; 4 Evidence-Based Retrieval Techniques
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 800; color: #15803d; text-transform: uppercase;">Cognitive Science in Practice</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif;">
+          <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 2px; padding: 4px 4px;">
+            <strong style="font-size: 6.8pt; color: #166534; display: block; margin-bottom: 1px;">1. Spaced Quizzing</strong>
+            <span style="font-size: 6.3pt; color: #334155; line-height: 1.22; display: block;">Scan each QR code weekly. Retest until scoring 10/10 before reviewing your notes.</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 2px; padding: 4px 4px;">
+            <strong style="font-size: 6.8pt; color: #166534; display: block; margin-bottom: 1px;">2. Dual-Coding Walk</strong>
+            <span style="font-size: 6.3pt; color: #334155; line-height: 1.22; display: block;">Turn to Pages 2–3. Cover the text and narrate 1871–1914 using your sketchpad symbols.</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 2px; padding: 4px 4px;">
+            <strong style="font-size: 6.8pt; color: #166534; display: block; margin-bottom: 1px;">3. 5-Min Brain Dumps</strong>
+            <span style="font-size: 6.3pt; color: #334155; line-height: 1.22; display: block;">Pick one enquiry. Write every date, treaty, and battle from memory in 5 minutes.</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 2px; padding: 4px 4px;">
+            <strong style="font-size: 6.8pt; color: #166534; display: block; margin-bottom: 1px;">4. Causal Connectives</strong>
+            <span style="font-size: 6.3pt; color: #334155; line-height: 1.22; display: block;">Draft PEEL sentences explaining causation: <em>Consequently... This directly resulted in...</em></span>
+          </div>
         </div>
       </div>
 

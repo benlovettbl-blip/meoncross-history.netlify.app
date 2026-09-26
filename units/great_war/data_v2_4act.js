@@ -33,6 +33,7 @@ const great_war = {
   lessons: [
     {
       id: 'lesson_1',
+      skill: 'Change & Continuity',
       title: 'How was the German Empire created in 1871?',
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
       teacher_notes: {
@@ -320,7 +321,8 @@ const great_war = {
       tasks: [
         {
           type: 'two_sided_argument',
-          topic: "Task 3: Bismarck's Legacy: Master Diplomat vs Ruthless Warmonger",
+          topic:
+            "Task 3: Evidence Preparation — Bismarck's Statecraft & The 1871 Geopolitical Rupture",
           question:
             'Was the German Empire forged through master diplomacy or ruthless military aggression?',
           instruction:
@@ -359,17 +361,17 @@ const great_war = {
         },
         {
           type: 'extended_writing',
-          topic: 'Task 4: Analytical Synthesis & Historical Essay',
+          topic: 'Task 4: Extended Writing — Change & Continuity Evaluation',
           question:
-            'Explain how Otto von Bismarck used "blood and iron" and diplomatic calculation to forge the German Empire in 1871.',
+            'To what extent was the creation of the German Empire in 1871 a complete turning point in European peace?',
           hints: [
-            'Point: Bismarck understood that speeches and parliamentary votes would never unite Germany; only military force and shared enemies could overcome regional division.',
-            'Evidence: Bypassed the Prussian parliament to collect taxes for Krupp artillery and railway mobilization, then engineered three decisive wars against Denmark, Austria, and France.',
-            'Explanation: By provoking France through the edited Ems Telegram, Bismarck forced the independent southern German kingdoms to unite under Prussian arms.',
-            'Link: Consequently, on 18 January 1871, the German Empire was proclaimed at Versailles, fundamentally shattering the European balance of power.',
+            'Point: The sudden emergence of a unified, industrialized German Empire in 1871 radically transformed European geopolitics, shattering the old balance of power.',
+            'Evidence: Bismarck bypassed parliament to unleash "blood and iron", deployed Krupp steel and railways across three swift wars, annexed Alsace-Lorraine, and united 41 million people under Prussian militarism.',
+            'Explanation: Whereas Central Europe had previously been a fragmented buffer of small states, Germany instantly became the dominant military giant, generating a permanent security dilemma for France and Britain.',
+            'Link: However, continuities also persisted: traditional monarchical autocracy remained intact and Bismarck used cautious balance-of-power diplomacy to avoid war for twenty years.',
           ],
           model_answer:
-            'Otto von Bismarck forged the German Empire through a ruthless synthesis of diplomatic deception and military calculation. Recognizing that liberal speeches would never overcome the jealous independence of the German states, he declared in 1862 that the great questions of the day would be resolved by "blood and iron." He modernized the Prussian army with Krupp cast-steel cannons and dedicated military railways, then conducted three lightning wars against Denmark (1864), Austria (1866), and France (1870). His masterpiece of manipulation was the 1870 Ems Telegram: by subtly editing King Wilhelm\'s polite words, he baited France into declaring war, which automatically triggered mutual defense treaties with the southern German states. When the unified German Empire was proclaimed in the Hall of Mirrors at Versailles on 18 January 1871, Bismarck had realized his vision—not through popular revolution, but from above through Prussian steel and calculated realpolitik.',
+            'The creation of the German Empire on 18 January 1871 represented a profound geopolitical turning point, though critical diplomatic and structural continuities endured. For centuries after Westphalia, Central Europe had been a fragmented mosaic of small states, enabling Britain, France, Austria, and Russia to preserve a delicate balance of power. Bismarck shattered this equilibrium: by harnessing Prussian militarism, Krupp steel artillery, and extensive railway mobilization, he unconstitutionally bypassed parliament and orchestrated three decisive wars against Denmark, Austria, and France. Annexing Alsace-Lorraine and proclaiming the Kaiserreich at Versailles united 41 million people into Europe’s preeminent industrial colossus, leaving France burning for revanche and permanently destabilizing European security. Nevertheless, significant continuities persisted: Bismarck spent the next two decades preserving the status quo through cautious defensive alliances, while Europe’s traditional dynastic empires still governed international relations. Ultimately, 1871 was a structural turning point that transformed the nature of continental power and set Europe on the long road to 1914.',
         },
       ],
       key_figure: {
@@ -404,6 +406,7 @@ const great_war = {
     },
     {
       id: 'lesson_2',
+      skill: 'Dual-Source Utility',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
       video: [
         {
@@ -812,56 +815,58 @@ const great_war = {
       tasks: [
         {
           type: 'two_sided_argument',
-          topic: 'Task 3: Annexing Alsace-Lorraine: Strategic Shield or Catastrophic Blunder?',
+          topic:
+            'Task 3: Forensic Source Interrogation — French Grief vs German Military Rationale',
           question:
-            'Did the annexation of Alsace-Lorraine protect Germany or make a future European war inevitable?',
+            'How do French emotional grief and German military calculation reveal why the annexation of Alsace-Lorraine made lasting peace impossible?',
           instruction:
-            'Contrast the Prussian military justification for seizing the border provinces against the long-term diplomatic fallout:',
+            'Examine both perspectives on the 1871 annexation: Albert Bettannier’s "La Tache Noire" (Source A) vs Bismarck’s defensive dispatch (Source B):',
           advancement: {
-            title: 'Prussian Military Justification (The Defensive Shield)',
+            title: 'Source A: French National Mourning & Revanche (Bettannier)',
             points: [
-              'Field Marshal von Moltke insisted that the fortress of Metz provided an indispensable military shield protecting the Rhineland.',
-              "Deprived France of 1.5 million citizens and 80% of its domestic iron ore, weakening France's industrial capacity for war.",
-              'Imposed a 5-billion-franc indemnity and occupation to ensure France remained economically paralyzed.',
+              'Classroom maps displayed Alsace-Lorraine shaded black in national mourning, visible to every pupil.',
+              'French schoolboys were drilled in rifle handling and gymnastics, taught that winning back the provinces was a sacred duty.',
+              'Created an irreconcilable emotional wound, ensuring French public opinion would never accept permanent German rule.',
             ],
             starter:
-              'Prussian military planners justified the annexation as an essential defensive buffer, arguing that...',
+              'Source A is valuable for revealing the deep emotional trauma and cultivated culture of revanche in French society, because...',
           },
           limitations: {
-            title: "Diplomatic Fallout (Gordon Craig's Paradox)",
+            title: 'Source B: Prussian Military Strategy & Defensive Glacis (Bismarck)',
             points: [
-              'Created a permanent, unhealable wound in French society, giving birth to the fanatical cult of revanche (revenge).',
-              'Immortalized in French schools via Bettannier\'s "La Tache Noire", training generations of boys to prepare for a war of liberation.',
-              'Forced Germany into the permanent nightmare of a "two-front war", driving France directly into alliance with Russia in 1894.',
+              'Prussian generals insisted on holding the fortress of Metz as an indispensable defensive shield against French invasion.',
+              'Deprived France of 1.5 million people and 80% of its domestic iron ore, attempting to cripple France as a military threat.',
+              'Bismarck treated the territory as a strategic buffer rather than an act of aggression, prioritizing military geography over reconciliation.',
             ],
             starter:
-              'In contrast, diplomatic historians emphasize that seizing the provinces was a fatal strategic blunder, because...',
+              'In contrast, Source B is valuable for understanding cold Prussian military calculation, showing that...',
           },
           synthesis_prompt:
-            'Explain whether the Treaty of Frankfurt strengthened or permanently endangered the security of the German Empire.',
+            'Evaluate how Sources A and B together demonstrate that the annexation made lasting European peace impossible.',
           synthesis_connectives: [
-            'Although Prussia gained...',
-            'From a purely tactical perspective...',
-            'However, politically...',
-            'As Gordon Craig argued...',
-            'In the final analysis...',
+            'Source A demonstrates...',
+            'In contrast, Source B exposes...',
+            'Taken together, both sources reveal...',
+            'Consequently...',
+            'Ultimately, this proves that...',
           ],
           model_answer:
-            'Although annexing Alsace-Lorraine provided Imperial Germany with a formidable tactical shield anchored on the fortress of Metz and rich iron deposits, it proved to be a catastrophic strategic blunder. As historian Gordon Craig identified, by prioritizing military geography over political reconciliation, Bismarck created an irreconcilable enemy. The burning French desire for revanche (revenge) ensured that France would seek allies at any cost, ultimately forging the 1894 Franco-Russian alliance that trapped Germany in the very two-front war Bismarck spent his career dreading.',
+            'Taken together, Sources A and B explain why lasting Franco-German peace became impossible after 1871. Source A captures the profound emotional trauma of the French nation, where generations of schoolboys were systematically conditioned through "La Tache Noire" to prepare for revanche (revenge). Conversely, Source B reveals the unyielding military calculation of Berlin, where Bismarck and Prussian generals prioritized tactical geography—holding Metz as a defensive glacis—over political reconciliation. By creating a physical border shield at the cost of creating an incurable national enemy, the annexation locked both empires into permanent mutual terror, directly paving the way for the 1894 Franco-Russian Alliance and the two-front crisis of 1914.',
         },
         {
           type: 'extended_writing',
-          topic: 'Task 4: Analytical Synthesis & Historical Essay',
+          topic: 'Task 4: Extended Writing — Dual-Source Utility Evaluation',
           question:
-            'Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.',
+            'How useful are Sources A and B for an enquiry into why the annexation of Alsace-Lorraine made lasting peace impossible?',
           hints: [
-            'Point: The peace terms imposed upon France in 1871 were designed to humiliate and permanently cripple the French nation.',
-            'Evidence: Under the Treaty of Frankfurt, Germany annexed Alsace and northern Lorraine, extracted a crushing 5-billion-franc indemnity, and proclaimed the Kaiserreich in the Palace of Versailles.',
-            'Explanation: The loss of 1.5 million citizens and vital iron reserves created the cult of revanche (revenge), vividly captured in Albert Bettannier\'s painting "La Tache Noire".',
-            'Link: To protect Germany from French vengeance, Bismarck constructed the Triple Alliance, ultimately locking Europe into the rigid two-front trap of 1914.',
+            'Point: Source A is exceptionally useful for revealing the emotional atmosphere of revanche and patriotic indoctrination in post-1871 France.',
+            'Evidence: Bettannier’s "La Tache Noire" depicts a French schoolmaster pointing to the black-shaded lost provinces, while students are drilled in patriotic duty.',
+            'Point: Source B is equally valuable for demonstrating German strategic calculations and fear of French invasion.',
+            'Evidence: Bismarck explicitly justifies the annexation not for imperial expansion, but as a "defensive glacis and shield" anchored on border fortresses like Metz.',
+            'Synthesis: Together, both sources provide a comprehensive insight into why peace failed: Germany’s search for military security created France’s permanent thirst for vengeance.',
           ],
           model_answer:
-            'The Franco-Prussian War created a lasting legacy of hatred for three interconnected reasons. First, the Treaty of Frankfurt deeply humiliated France by annexing Alsace and northern Lorraine, demanding an astronomical indemnity of 5 billion gold francs, and stationing German occupation troops on French soil. Second, proclaiming the German Empire inside the French royal Palace of Versailles wounded French national honor at its most sacred core. Third, this trauma institutionalized the cult of revanche (revenge): generations of French schoolchildren were taught to gaze upon the black-bordered lost provinces, as immortalized in Albert Bettannier\'s "La Tache Noire", and prepare for a war of liberation. As historian Gordon Craig argued, annexing Alsace-Lorraine gave Germany a tactical border cushion at the cost of creating an incurable enemy, forcing Bismarck to weave the complex alliances that ultimately polarized Europe into two armed camps.',
+            'Sources A and B are exceptionally useful when evaluated together for an enquiry into why the annexation of Alsace-Lorraine made lasting European peace impossible. Source A—Albert Bettannier’s 1887 painting "La Tache Noire"—is profoundly valuable for understanding French domestic sentiment and the institutionalization of revanche (revenge). Created during the height of Third Republic patriotic education, it vividly depicts schoolboys being taught that reclaiming the black-shaded provinces was their sacred patriotic duty, demonstrating how an entire generation was culturally conditioned for future conflict. However, Source A reflects artistic and patriotic propaganda, focusing purely on emotional grief rather than diplomatic reality. In contrast, Source B provides the indispensable German strategic rationale: Bismarck’s 1871 dispatch proves that Prussian high command annexed Alsace and northern Lorraine as a cold, calculated "defensive glacis and shield" to protect the Rhineland against centuries of French invasion. Its limitation lies in downplaying the political catastrophe of seizing 1.5 million unwilling French citizens. Combined, the sources reveal the fatal paradox identified by historian Gordon Craig: Germany’s pursuit of tactical military borders rendered diplomatic peace with France impossible, ensuring France would seek allies at all costs and polarize Europe into two armed camps.',
         },
       ],
       key_figure: {
@@ -896,6 +901,7 @@ const great_war = {
     },
     {
       id: 'lesson_3',
+      skill: 'Historical Interpretations',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
       vocab: [
         {
@@ -1287,56 +1293,58 @@ const great_war = {
       tasks: [
         {
           type: 'two_sided_argument',
-          topic: 'Task 3: Imperial Rivalry: Core Cause of War or Secondary Safety Valve?',
+          topic:
+            'Task 3: Historiographical Analysis — View A (Economic Greed) vs View B (National Status)',
           question:
-            'To what extent did the Scramble for Africa and the Moroccan Crises make war in Europe more likely?',
+            'Which interpretation gives a more convincing explanation of why European powers clashed over Africa: economic greed or national prestige?',
           instruction:
-            'Evaluate both historical perspectives on the impact of imperial competition on European stability:',
+            'Evaluate both historical perspectives on the causes of imperial conflict during the Scramble for Africa:',
           advancement: {
-            title: 'Interpretation 1: Catalyst for Polarization & Mistrust',
+            title: 'Interpretation 1: View A (Economic Greed & Resource Clashes)',
             points: [
-              "Kaiser Wilhelm II's aggressive Tangier visit (1905) and the Agadir gunboat crisis (1911) shocked European chancelleries.",
-              'Transformed the 1904 Anglo-French Entente Cordiale from a friendly colonial agreement into a firm, anti-German military partnership.',
-              'Left Germany feeling bitterly humiliated and diplomatically encircled after being outvoted 11 to 2 at the Algeciras Conference.',
+              'European industrial factories desperately required raw materials (rubber, copper, cotton, palm oil) that Europe could not produce.',
+              'European factory owners and trading firms pressured governments to establish closed imperial monopolies over overseas mineral wealth.',
+              'Imperial disputes in Morocco and southern Africa were driven by fierce commercial competition over mining concessions and trading rights.',
             ],
             starter:
-              'Imperial disputes significantly accelerated the drift toward world war because...',
+              'Proponents of View A argue that imperial rivalry was fundamentally driven by commercial and industrial greed, because...',
           },
           limitations: {
-            title: 'Interpretation 2: Imperial Safety Valve & Settled Disputes',
+            title: 'Interpretation 2: View B (National Status, Pride & Diplomacy)',
             points: [
-              'Colonial disputes in Africa were repeatedly resolved without war through international conferences (Berlin 1884, Algeciras 1906).',
-              'Britain and France had nearly gone to war over Fashoda in 1898, yet settled all their imperial quarrels peacefully in the Entente.',
-              'When war finally erupted in 1914, the trigger was a Balkan national dispute in southeastern Europe, not an African colony.',
+              'Most colonies cost far more to garrison and govern than they ever yielded in trade or raw material profits.',
+              'For Kaiser Wilhelm II, demanding a "place in the sun" was about national pride and proving Germany was a respected world superpower.',
+              'Imperial confrontations (such as Tangier 1905 and Agadir 1911) were diplomatic power-plays designed to test and break rival European alliances.',
             ],
             starter:
-              'On the other hand, revisionist historians argue that imperial rivalry was merely a symptom rather than the primary cause, because...',
+              'Conversely, advocates of View B argue that imperial clashes were primarily matters of national prestige and Great Power diplomacy, because...',
           },
           synthesis_prompt:
-            'Evaluate whether imperial competition caused the First World War or merely reflected existing European rivalries.',
+            'Judge which historical interpretation offers a more convincing explanation of imperial rivalry.',
           synthesis_connectives: [
-            'While imperial clashes...',
-            'For example, at Tangier and Agadir...',
-            'However, colonial disputes were ultimately...',
-            'Consequently...',
-            'Overall, the main danger of imperialism was...',
+            'While View A correctly identifies...',
+            'Nevertheless, View B offers a more persuasive argument because...',
+            'Evidence demonstrates that most German colonies...',
+            'Furthermore, the Moroccan crises were...',
+            'In conclusion, imperial tension was primarily...',
           ],
           model_answer:
-            "While imperial rivalry rarely led to direct military conflict in Africa itself—disputes were consistently resolved at conference tables—Kaiser Wilhelm II's theatrical interventions in Morocco profoundly destabilized Europe. By challenging France at Tangier with gunboat diplomacy, the Kaiser intended to break the Anglo-French Entente; instead, his bullying tactics had the opposite effect, cementing British-French military solidarity and leaving Germany dangerously isolated with only Austria-Hungary as a reliable ally.",
+            'While View A correctly identifies that the Industrial Revolution created an insatiable demand for rubber, oil, and mineral wealth, View B offers a significantly more convincing explanation for why Great Powers clashed over Africa. As economic historians have proven, most African colonies—especially Germany\'s territories in South-West Africa and Togoland—represented immense financial liabilities that cost far more to administer than they ever returned in trade. The driving engine of imperialism was political prestige and diplomatic posturing. Kaiser Wilhelm II’s aggressive Weltpolitik was explicitly designed to secure Germany\'s "place in the sun" as a global superpower, and his provocative challenges in Morocco were diplomatic tests aimed at shattering the Anglo-French Entente. Therefore, national status and imperial pride were far more influential than financial profit.',
         },
         {
           type: 'extended_writing',
-          topic: 'Task 4: Analytical Synthesis & Historical Essay',
+          topic: 'Task 4: Extended Writing — Evaluating Historical Interpretations',
           question:
-            'Explain how Kaiser Wilhelm II’s policy of Weltpolitik and the Moroccan Crises drove Britain and France into a united diplomatic alliance against Germany.',
+            'Which interpretation gives a more convincing explanation of why European powers clashed over Africa between 1884 and 1911?',
           hints: [
-            'Point: Kaiser Wilhelm II abandoned Bismarck\'s cautious European diplomacy in favor of Weltpolitik, demanding a "Place in the Sun" for Germany.',
-            'Evidence: In 1905, the Kaiser staged a provocative visit to Tangier, and in 1911 dispatched the gunboat SMS Panther to Agadir to demand colonial concessions.',
-            'Explanation: Rather than dividing Britain and France, German bullying alarmed the British Admiralty, leading to the Algeciras Conference where Germany was outvoted 11 to 2.',
-            'Link: Consequently, the Entente Cordiale evolved from a colonial agreement into a binding military partnership, leaving Germany encircled and bitter.',
+            'Point: View A provides a persuasive materialist explanation, showing that industrialization forced European nations to secure raw materials and captive export markets.',
+            'Evidence: Factory economies in Britain, France, and Germany depended upon overseas supplies of rubber, copper, cotton, and palm oil, sparking intense commercial rivalry.',
+            'Point: View B provides a compelling diplomatic and psychological explanation, demonstrating that imperial expansion was driven by national prestige and Great Power rivalry.',
+            'Evidence: Kaiser Wilhelm II demanded a "place in the sun" to validate German status; his theatrical interventions at Tangier (1905) and Agadir (1911) were diplomatic probes to test the Anglo-French Entente.',
+            'Verdict: Judge which view is more convincing, noting that most African colonies ran at a heavy financial loss, proving that national status outweighed economic return.',
           ],
           model_answer:
-            'Kaiser Wilhelm II’s pursuit of Weltpolitik and his reckless interventions in Morocco decisively accelerated European polarization by transforming a fragile diplomatic agreement into an unshakeable anti-German alliance. When Wilhelm landed at Tangier in 1905 riding a skittish stallion to champion Moroccan independence, his strategic goal was to test and shatter the newly signed Anglo-French Entente Cordiale. The maneuver backfired catastrophically: at the 1906 Algeciras Conference, Britain backed France unreservedly, leaving Germany humiliated and isolated with only Austria-Hungary. When Germany reignited the conflict in 1911 by sending the gunboat SMS Panther to Agadir, British Chancellor David Lloyd George delivered the Mansion House speech, warning that Britain would fight rather than see France bullied. Far from securing Germany a "Place in the Sun", the Moroccan Crises proved to Britain that Germany was a rogue power, leading directly to joint Anglo-French naval planning and cementing the very encirclement Berlin feared.',
+            'When evaluating the causes of imperial conflict between 1884 and 1911, View B (National Status, Pride & Diplomacy) provides a far more convincing explanation than View A (Economic Greed & Resource Clashes). View A offers valuable context: the rapid expansion of European manufacturing after 1870 created an undeniable appetite for raw materials like rubber, copper, and petroleum, leading industrialists to lobby for protected overseas markets. However, the economic argument fails to explain why governments expended vast military resources on territories of negligible financial value. As historical balance sheets demonstrate, Germany’s African empire absorbed substantial taxpayer subsidies while generating less than one percent of total German foreign trade. Instead, as View B demonstrates, imperialism was an arena of competitive nationalism and diplomatic brinkmanship. For Kaiser Wilhelm II, pursuing Weltpolitik and demanding a "place in the sun" was driven by dynastic insecurity and a desperate desire for international recognition. When the Kaiser rode into Tangier in 1905 or dispatched the gunboat Panther to Agadir in 1911, his objective was not commercial mining rights, but testing the solidarity of the 1904 Anglo-French Entente Cordiale. Because these clashes consistently arose from prestige and great power diplomacy rather than balance-sheet economics, View B is the superior historical interpretation.',
         },
       ],
       key_figure: {
@@ -1371,6 +1379,7 @@ const great_war = {
     },
     {
       id: 'lesson_4',
+      skill: 'Causation & Causal Hierarchy',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       vocab: [
         {
@@ -1757,56 +1766,58 @@ const great_war = {
       tasks: [
         {
           type: 'two_sided_argument',
-          topic: 'Task 3: The Naval Race: Legitimate Defense vs Dangerous Provocation',
+          topic:
+            'Task 3: Evidence Preparation — The Battleship Revolution & Naval Construction (1906)',
           question:
-            'Why did the building of Dreadnought battleships destroy Anglo-German relations?',
+            'Was the naval arms race the primary reason Britain abandoned its "Splendid Isolation" to ally with France and Russia?',
           instruction:
-            'Contrast the competing strategic realities of the German Empire and the British Empire before 1914:',
+            'Examine the causal factors driving Great Britain out of isolation into the Triple Entente:',
           advancement: {
-            title: 'The British Perspective (Existential Survival)',
+            title: 'Factor 1: The German Naval Challenge (Existential Maritime Threat)',
             points: [
-              'As an island nation with a global empire, Britain depended on maritime trade to feed its population, holding only 6 weeks of food reserves.',
-              'The Royal Navy enforced the "Two-Power Standard", viewing any North Sea challenge within hours of London as a lethal existential threat.',
-              'The British public was gripped by intense invasion hysteria in 1909, demanding: "We want eight, and we won\'t wait!"',
+              'As an island nation with only six weeks of food reserves, Britain relied entirely on Royal Navy supremacy to prevent starvation and invasion.',
+              "Admiral von Tirpitz's Navy Laws built a massive high-seas battle fleet directly across the North Sea, aimed squarely at Britain.",
+              'Fisher’s HMS Dreadnought (1906) sparked an all-out construction frenzy, fueling public panic ("We want eight and we won\'t wait!").',
             ],
             starter:
-              'From the British perspective, the German naval expansion was viewed as a mortal threat because...',
+              'Historians ranking the naval race as the primary cause argue that Germany threatened Britain’s existential lifeline, because...',
           },
           limitations: {
-            title: "The German Perspective (Tirpitz's Risk Theory)",
+            title: 'Factor 2: Wider Geopolitical & Continental Pressures (Secondary Drivers)',
             points: [
-              "Imperial Germany had become Europe's leading industrial exporter and claimed a legitimate right to protect its overseas merchant trade.",
-              'Admiral von Tirpitz argued that building a "Risk Fleet" would force Britain to respect Germany as an equal global partner.',
-              "Kaiser Wilhelm II had a personal obsession with naval power, admiring his grandmother Queen Victoria's fleet while resenting British naval supremacy.",
+              'German industrial steel exports and expanding manufacturing directly challenged British global trade dominance.',
+              'The Kaiser and German diplomats convinced the British government that Germany intended to dominate continental Europe.',
+              'Britain realized it could no longer defend its global empire without settling imperial disputes through agreements with France and Russia.',
             ],
             starter:
-              "From Berlin's viewpoint, Germany was entitled to build a world-class fleet because...",
+              'Conversely, other historians argue that the naval race was merely one symptom of wider geopolitical encirclement, because...',
           },
           synthesis_prompt:
-            'Explain why the naval construction race made diplomatic reconciliation between Britain and Germany impossible.',
+            'Establish a causal hierarchy explaining whether naval fear was the primary or secondary factor behind the British diplomatic revolution.',
           synthesis_connectives: [
-            'While Germany claimed...',
-            'In reality, for Great Britain...',
-            'The launch of HMS Dreadnought in 1906...',
-            'Consequently...',
-            'Ultimately, the naval race...',
+            'Undoubtedly, the naval arms race was...',
+            'However, other significant pressures included...',
+            'In terms of causal hierarchy...',
+            'Because naval defeat meant immediate national ruin...',
+            'Therefore, the naval challenge must be judged as...',
           ],
           model_answer:
-            'The naval arms race destroyed Anglo-German relations because it transformed a political rivalry into an existential security crisis. For Germany, a battle fleet was a luxury designed to extract diplomatic respect; for Britain, naval supremacy was a matter of national life and death, as an island that could be starved into submission within weeks. Although Britain decisively won the construction race by 1912, the contest permanently poisoned public trust and pushed Great Britain into an unwritten alliance with France and Russia.',
+            'In establishing a causal hierarchy for Britain’s abandonment of "Splendid Isolation," the German naval challenge must be ranked as the primary catalyst. While German industrial competition and aggressive posturing in Morocco generated severe diplomatic friction, neither threatened Britain’s physical existence. By contrast, an island nation holding only six weeks of grain reserves could not tolerate a rival battle fleet massing hours from London. When Admiral Tirpitz challenged the Two-Power Standard and Jackie Fisher launched HMS Dreadnought, naval security ceased to be an ordinary diplomatic dispute and became a matter of national survival. Consequently, the naval race was the decisive factor that forced Britain into the Triple Entente.',
         },
         {
           type: 'extended_writing',
-          topic: 'Task 4: Analytical Synthesis & Historical Essay',
+          topic: 'Task 4: Extended Writing — Causal Hierarchy & National Security',
           question:
-            'Explain why the Anglo-German naval arms race destroyed diplomatic trust between Great Britain and Germany between 1898 and 1914.',
+            'Was the naval arms race the primary reason Britain ended its "Splendid Isolation" to ally with France and Russia?',
           hints: [
-            "Point: Britain's survival as an island empire depended on absolute naval dominance, enforced through the Two-Power Standard.",
-            "Evidence: Admiral von Tirpitz's Navy Laws built a German battle fleet in the North Sea, prompting Britain's Admiral Fisher to launch the revolutionary HMS Dreadnought in 1906.",
-            'Explanation: While Germany viewed a fleet as a luxury of world power, Britain held only six weeks of food reserves; a German battle fleet across the North Sea was seen as a dagger pointed at London.',
-            'Link: The race provoked public hysteria in Britain ("We want eight and we won\'t wait!"), convincing British leaders that Germany intended to dominate Europe.',
+            'Point: Identify the German naval challenge as the primary existential threat to British survival.',
+            'Evidence: Explain the Two-Power Standard, Admiral Tirpitz’s Risk Fleet in the North Sea, and the launch of HMS Dreadnought in 1906.',
+            'Point: Evaluate secondary factors, including German economic rivalry and diplomatic bullying in Morocco.',
+            'Evidence: Detail the Berlin-to-Baghdad railway, trade competition, and the 1905/1911 Moroccan crises that pushed the British Foreign Office into continental alignment.',
+            'Causal Hierarchy: Conclude decisively whether the naval race was primary or secondary, weighing national survival against general diplomatic rivalry.',
           ],
           model_answer:
-            'The Anglo-German naval arms race destroyed diplomatic trust because it touched the vital nerve of British national existence. For over a century, Great Britain relied on undisputed command of the sea, adhering to the "Two-Power Standard" to protect its global trade routes and feed its island population, which held only six weeks of grain reserves. When Admiral Alfred von Tirpitz began constructing a massive German battle fleet in the North Sea under the Navy Laws, British planners recognized that a high-seas fleet concentrated so close to English shores could only have one target: the Royal Navy. When the brilliant, eccentric Admiral "Jackie" Fisher launched the turbine-powered, all-big-gun HMS Dreadnought in 1906, he rendered all existing battleships obsolete and triggered an intense construction frenzy. In Britain, fear of invasion generated public panic ("We want eight and we won\'t wait!"). Although Britain won the race by 1912 with 29 dreadnoughts to Germany\'s 17, the contest caused irreparable psychological damage, permanently aligning Britain with France and Russia.',
+            'The Anglo-German naval arms race was the primary reason Great Britain abandoned its nineteenth-century policy of "Splendid Isolation" and aligned with France and Russia. For over a century, Britain maintained global imperial dominance by avoiding continental alliances, relying instead upon the Royal Navy’s "Two-Power Standard"—a policy ensuring the fleet was stronger than any two rival navies combined. When Admiral Alfred von Tirpitz passed the German Navy Laws to construct a High Seas Fleet across the North Sea, British planners recognized an existential peril. As an island nation with an expanding industrial population holding only six weeks of food reserves, a lost naval battle meant immediate starvation and national subjugation. The commissioning of the revolutionary turbine-powered HMS Dreadnought in 1906, while technically brilliant, wiped out Britain’s existing numerical superiority and prompted a desperate building contest ("We want eight and we won\'t wait!"). Secondary factors undoubtedly contributed: booming German industrial exports rivalled British steel, and Kaiser Wilhelm’s clumsy aggression during the 1905 and 1911 Moroccan crises alarmed the British Foreign Office. However, in any causal hierarchy, these commercial and imperial disputes were secondary: Britain had coexisted with imperial rivals for decades. It was the naval arms race alone that transformed a manageable political rivalry into a mortal threat to national survival, making alliance with France and Russia an imperative.',
         },
       ],
       key_figure: {
@@ -1842,6 +1853,7 @@ const great_war = {
     },
     {
       id: 'lesson_5',
+      skill: 'Significance & Inevitability',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
       vocab: [
         {
@@ -2217,56 +2229,57 @@ const great_war = {
       tasks: [
         {
           type: 'two_sided_argument',
-          topic: 'Task 3: The Alliance Web: Peacekeeper or Inflexible Doomsday Machine?',
+          topic: 'Task 3: Archival Interrogation — The "Willy-Nicky" Telegrams & Alliance Clauses',
           question:
-            'Did the alliance system preserve the peace of Europe or make a continental war inevitable?',
+            'Did the European alliance system preserve peace between the Great Powers, or make a general war inevitable?',
           instruction:
-            'Analyze both sides of the historiographical debate surrounding the pre-1914 alliance systems:',
+            'Analyze both sides of the historical debate surrounding the pre-1914 alliance systems and the Willy-Nicky telegrams:',
           advancement: {
-            title: 'Interpretation 1: The Alliances as a Stabilising Deterrent',
+            title: 'Interpretation 1: The Alliances as a Stabilising Deterrent (Peacekeeper)',
             points: [
               'The balance of power maintained major European peace for over forty years following the 1871 Franco-Prussian War.',
-              'The Triple Alliance (1882) and Franco-Russian Alliance (1894) were strictly defensive pacts that discouraged unilateral aggression.',
-              'Great powers repeatedly restrained their allies during crises (such as France restraining Russia during the 1908 Bosnian Crisis).',
+              'Defensive treaties discouraged unilateral aggression by ensuring any attacker would face a formidable multi-nation coalition.',
+              'Great Powers repeatedly restrained their allies during crises (such as Britain and France restraining Russia in 1908).',
             ],
             starter:
-              'Defenders of the alliance system argue that it successfully maintained European stability because...',
+              'Defenders of the alliance system argue that it successfully preserved peace through mutual deterrence, because...',
           },
           limitations: {
-            title: 'Interpretation 2: The Inflexible Doomsday Machine',
+            title: 'Interpretation 2: The Inflexible Tripwire & Doomsday Machine (Inevitability)',
             points: [
-              'Split Europe into two armed, deeply suspicious camps, making any regional diplomatic dispute a potential world war.',
-              'German military panic over Russian industrial rearmament produced the Schlieffen Plan—an inflexible timetable requiring war on two fronts.',
-              'Bound major empires to the reckless ambitions of unstable junior partners (such as Austria-Hungary and Serbia in the Balkans).',
+              'Secret military conventions tied political alliances to rigid, minute-by-minute railway mobilization timetables (Schlieffen Plan).',
+              'Bound major empires to the reckless ambitions of unstable client states in the volatile Balkan powder keg.',
+              'German railway mobilization timetables meant that European diplomacy was powerless once the military machine began.',
             ],
             starter:
-              'Conversely, critics argue that the rigid alliance treaties acted as an explosive tripwire because...',
+              'Conversely, critics argue that the alliance system made a general European war virtually inevitable, because...',
           },
           synthesis_prompt:
-            'Evaluate whether the alliance system prevented conflict or guaranteed that any crisis would become global.',
+            'Evaluate whether alliances preserved stability or functioned as an unavoidable tripwire to world war.',
           synthesis_connectives: [
-            'Although defensive alliances were intended to...',
-            'In practice, they created a climate of...',
-            'When combined with rigid railway mobilization...',
-            'Consequently...',
-            'Overall, the alliance system...',
+            'While defensive coalitions preserved peace for decades...',
+            'Their structural flaw was...',
+            'As demonstrated by the Willy-Nicky correspondence...',
+            'Once military mobilization commenced...',
+            'Therefore, the alliance system ultimately proved...',
           ],
           model_answer:
-            'While the alliance system succeeded in maintaining peace for four decades through mutual deterrence, its fatal flaw was its total inflexibility. Once Europe was divided into the Triple Alliance and Triple Entente, any regional spark in the Balkans ceased to be a localized dispute. Combined with military mobilization plans like the German Schlieffen Plan—which treated mobilization as an act of war—the alliances acted as a giant set of falling dominoes, dragging six great powers into catastrophe within ten days.',
+            'While the European alliance system successfully maintained peace for four decades through mutual deterrence, its fundamental inflexibility made a general war inevitable once a Great Power was attacked. The fatal flaw was that political treaties had become chained to rigid military mobilization timetables, such as Germany’s Schlieffen Plan. As the July 1914 "Willy-Nicky" telegrams tragically revealed, even the personal pleas of the Kaiser and Tsar could not stop the momentum of army railway schedules. Rather than localized deterrence, the alliances operated as a lethal chain reaction: an Austrian conflict with Serbia automatically dragged in Russia, Germany, France, and Britain.',
         },
         {
           type: 'extended_writing',
-          topic: 'Task 4: Analytical Synthesis & Historical Essay',
+          topic: 'Task 4: Extended Writing — Significance & The Inevitability Debate',
           question:
-            'Explain how the division of Europe into the Triple Alliance and Triple Entente transformed minor regional disputes into a continental crisis.',
+            'Did the European alliance system preserve peace between the Great Powers, or make a general war inevitable?',
           hints: [
-            'Point: The secret treaties and military coalitions divided Europe into two rigid, armed blocs with zero diplomatic flexibility.',
-            'Evidence: Germany, Austria-Hungary, and Italy formed the Triple Alliance (1882), while France and Russia (1894) and Britain (1904/1907) formed the Triple Entente.',
-            'Explanation: The alliances bound great powers to the recklessness of minor allies; when combined with military mobilization timetables (like the Schlieffen Plan), war could not be delayed.',
-            'Link: As a result, when Austria-Hungary declared war on Serbia in July 1914, the alliance commitments acted as falling dominoes, dragging all six great powers into conflict within ten days.',
+            'Point: Acknowledge the deterrent function of the Triple Alliance and Triple Entente in maintaining European peace from 1871 to 1914.',
+            'Evidence: Bipolar balance of power, mutual defense clauses, and diplomatic restraint exercised during the 1908 Bosnian and 1912–13 Balkan crises.',
+            'Point: Contrast with the fatal structural mechanisms that made war inevitable once a crisis erupted.',
+            'Evidence: Secret military protocols, rigid railway mobilization timetables, the Schlieffen Plan, and the "Blank Cheque".',
+            'Historical Verdict: Evaluate whether the system preserved peace or guaranteed that any localized dispute would explode into world war.',
           ],
           model_answer:
-            'The division of Europe into the Triple Alliance and Triple Entente transformed minor regional disputes into a continental crisis by removing diplomatic flexibility and replacing it with an automatic military tripwire. Following Bismarck’s dismissal in 1890, Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse, allowing Republican France to forge a military alliance with Tsarist Russia in 1894. When Britain joined with France (1904) and Russia (1907) to form the Triple Entente, Europe became polarized into two rival coalitions. Crucially, these alliances bound major empires to the unpredictable actions of volatile client states in the Balkans. Germany lived in terrified anticipation of Russian industrialization and adopted the rigid Schlieffen Plan, which required immediate war against France the moment Russia mobilized. Consequently, when the July Crisis erupted in Sarajevo, diplomacy was subordinated to railway timetables: no power dared delay mobilization lest their ally be crushed, ensuring that a localized Balkan quarrel detonated an inevitable world war.',
+            'The European alliance system functioned effectively as a peacekeeper for over forty years, yet paradoxically constructed the very mechanism that made a general continental war inevitable in 1914. Between 1871 and the early 1900s, the emergence of the Triple Alliance (Germany, Austria-Hungary, Italy) and the Triple Entente (Britain, France, Russia) established a bipolar balance of power. The sheer destructive potential of confronting a rival coalition acted as a powerful deterrent: during the 1908 Bosnian Crisis and the 1912–1913 Balkan Wars, Great Powers actively restrained their allies from escalating localized clashes into general conflict. However, this stability concealed a catastrophic structural defect: the militarization of alliances through rigid railway mobilization schedules. Military staff talks transformed defensive political promises into automated war plans. In Germany, fear of encirclement generated the Schlieffen Plan, which dictated that any Russian mobilization required an immediate German assault through neutral Belgium to defeat France within six weeks. When the July Crisis erupted, the desperate "Willy-Nicky" telegrams between Kaiser Wilhelm II and Tsar Nicholas II proved completely useless against the momentum of the military machine: General von Moltke insisted that railway schedules could not be altered. Consequently, while alliances prevented small wars between Great Powers for decades, they guaranteed that when conflict finally came, it could not be contained.',
         },
       ],
       key_figure: {
@@ -2303,6 +2316,7 @@ const great_war = {
     },
     {
       id: 'lesson_6',
+      skill: 'Synoptic Causation',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
       video: [
         {
