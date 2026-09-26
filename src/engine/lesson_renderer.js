@@ -3623,12 +3623,32 @@ export function renderLesson(lesson) {
       }
 
       if (rawSource) {
-        const isWrittenSource =
-          rawSource.type === 'written' ||
-          (rawSource.content && !rawSource.source && !rawSource.src && !rawSource.image);
+        const rawImgSrc =
+          (typeof rawSource.src === 'string' &&
+          rawSource.src.trim() &&
+          rawSource.src !== 'undefined'
+            ? rawSource.src.trim()
+            : '') ||
+          (typeof rawSource.image === 'string' &&
+          rawSource.image.trim() &&
+          rawSource.image !== 'undefined'
+            ? rawSource.image.trim()
+            : '') ||
+          (typeof rawSource.source === 'string' &&
+          rawSource.source.trim() &&
+          rawSource.source !== 'undefined'
+            ? rawSource.source.trim()
+            : '') ||
+          '';
 
-        const bLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z])/i);
-        const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : '';
+        const sourceText = (rawSource.content || rawSource.text || '').trim();
+        const hasImage = Boolean(rawImgSrc);
+
+        const isWrittenSource =
+          rawSource.type === 'written' || (!hasImage && Boolean(sourceText)) || !hasImage;
+
+        const bLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
+        const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : rawSource.letter || '';
         const bCardIdAttr =
           bLetter && window.currentUnitId === 'cme_new'
             ? `id="source-card-${bLetter}" data-source-letter="${bLetter}"`
@@ -3642,10 +3662,14 @@ export function renderLesson(lesson) {
             ? `data-target-source="${bLetter}" title="Hover or click to highlight Source ${bLetter}"`
             : '';
 
-        const sourceTitle = rawSource.title || rawSource.caption || '';
-        const sourceAudioBtnHtml = isWrittenSource
-          ? renderAudioPlaybackBar('Read Aloud Primary Source Excerpt', 'source-audio-bar')
-          : '';
+        const sourceTitle =
+          rawSource.title ||
+          rawSource.caption ||
+          (bLetter ? `Source ${bLetter}: Archival Record` : '');
+        const sourceAudioBtnHtml =
+          isWrittenSource && sourceText
+            ? renderAudioPlaybackBar('Read Aloud Primary Source Excerpt', 'source-audio-bar')
+            : '';
 
         const sourceHeaderHtml = sourceTitle
           ? `
@@ -3654,7 +3678,7 @@ export function renderLesson(lesson) {
               ${sourceAudioBtnHtml}
             </div>
           `
-          : isWrittenSource
+          : isWrittenSource && sourceAudioBtnHtml
             ? `
             <div class="archival-source-header" style="display: flex; justify-content: flex-end;">
               ${sourceAudioBtnHtml}
@@ -3665,26 +3689,30 @@ export function renderLesson(lesson) {
         let sourceBodyHtml = '';
         if (isWrittenSource) {
           sourceBodyHtml = `
-            <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px;">
-              ${rawSource.content}
-            </div>
             ${
-              rawSource.citation
-                ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
-                    <strong>Provenance:</strong> ${rawSource.citation}
+              sourceText
+                ? `<div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px;">
+                    ${sourceText}
                   </div>`
                 : ''
             }
             ${
-              window.currentUnitId === 'cme_new' && rawSource.title && rawSource.caption
-                ? `<div style="font-size: 0.95rem; color: #475569; margin-top: -5px; margin-bottom: 15px; font-style: italic;">${rawSource.caption}</div>`
+              rawSource.caption && !sourceTitle.includes(rawSource.caption)
+                ? `<div style="font-size: 0.95rem; color: #475569; margin-top: 8px; margin-bottom: 8px; font-style: italic;">${rawSource.caption}</div>`
                 : ''
             }
             ${
-              rawSource.source_context
+              rawSource.citation || rawSource.provenance
+                ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
+                    <strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}
+                  </div>`
+                : ''
+            }
+            ${
+              rawSource.source_context || rawSource.context
                 ? `
               <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context)}
+                <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.source_context || rawSource.context) : rawSource.source_context || rawSource.context}
               </div>
             `
                 : ''
@@ -3694,14 +3722,14 @@ export function renderLesson(lesson) {
                 ? `
               <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
                 <strong style="color: #166534; display: block; margin-bottom: 5px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
-                <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(rawSource.provenance_clue)}</span>
+                <span style="color: #15803d; font-size: 0.95rem;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.provenance_clue) : rawSource.provenance_clue}</span>
               </div>
             `
                 : ''
             }
           `;
         } else {
-          const rawSourceImgUrl = getAssetUrl(rawSource.src || rawSource.source || rawSource.image);
+          const rawSourceImgUrl = getAssetUrl(rawImgSrc);
           sourceBodyHtml = `
             <div class="archival-source-split-layout">
               <div class="archival-source-media-col">
@@ -3725,18 +3753,22 @@ export function renderLesson(lesson) {
               <div class="archival-source-details-col">
                 <div>
                   ${
-                    (window.currentUnitId === 'cme_new' ||
-                      window.currentUnitId === 'water_and_sanitation' ||
-                      rawSource.caption) &&
                     rawSource.caption
                       ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 12px; font-style: italic;">${rawSource.caption}</div>`
+                      : ''
+                  }
+                  ${
+                    sourceText
+                      ? `<div class="archival-source-body" style="width: 100%; max-height: 250px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 0.95rem; line-height: 1.6; color: #1e293b; background: #fffdfa; padding: 10px 14px; border-left: 3px solid #1e3a8a; border-radius: 4px; margin-bottom: 12px;">
+                          ${sourceText}
+                        </div>`
                       : ''
                   }
                   ${
                     rawSource.source_context || rawSource.context
                       ? `
                     <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                      <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context || rawSource.context)}
+                      <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.source_context || rawSource.context) : rawSource.source_context || rawSource.context}
                     </div>
                   `
                       : ''
@@ -3746,7 +3778,7 @@ export function renderLesson(lesson) {
                       ? `
                     <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 12px 15px; margin-bottom: 12px;">
                       <strong style="color: #166534; display: block; margin-bottom: 4px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
-                      <span style="color: #15803d; font-size: 0.92rem;">${window.formatBold(rawSource.provenance_clue)}</span>
+                      <span style="color: #15803d; font-size: 0.92rem;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.provenance_clue) : rawSource.provenance_clue}</span>
                     </div>
                   `
                       : ''
@@ -3786,12 +3818,12 @@ export function renderLesson(lesson) {
                 ${sourceHeaderHtml}
                 ${sourceBodyHtml}
                 ${
-                  rawSource.hinge_question || rawSource.question
+                  rawSource.hinge_question || rawSource.question || rawSource.source_question
                     ? `
                   <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                    <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;"><i class="fa-solid fa-comments"></i> Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
+                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
                     <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.hinge_question || rawSource.question)) : cleanQuestionText(rawSource.hinge_question || rawSource.question)}
+                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.hinge_question || rawSource.question || rawSource.source_question)) : cleanQuestionText(rawSource.hinge_question || rawSource.question || rawSource.source_question)}
                     </div>
                   </div>
                 `
@@ -3806,11 +3838,12 @@ export function renderLesson(lesson) {
                   ${sourceHeaderHtml}
                   ${sourceBodyHtml}
                   ${
-                    rawSource.question || rawSource.hinge_question
+                    rawSource.question || rawSource.hinge_question || rawSource.source_question
                       ? `
                     <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+                      <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
                       <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                        ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question)}
+                        ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question || rawSource.source_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question || rawSource.source_question)}
                       </div>
                     </div>
                   `
