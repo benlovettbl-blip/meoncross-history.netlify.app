@@ -606,14 +606,7 @@ module.exports = function getKt3Data(helpers) {
 
   const paragraphEnrichments = {
     enrichParas(lessonIndex, secNum, paras) {
-      // Page 2 (KT3.1 Verso Act 2): Close void
-      if (lessonIndex === 0 && secNum === 2) {
-        if (!paras.some((p) => p.includes('Garrison Church Spectacle'))) {
-          paras.push(
-            `<strong>The Potsdam Garrison Church Spectacle &amp; Totalitarian State:</strong> On 21 March 1933, Goebbels staged the theatrical 'Potsdam Day' at the Garrison Church, where Hitler bowed before the aging President von Hindenburg above Frederick the Great's tomb, reassuring conservative traditionalists. Two days later at the Kroll Opera House, with armed stormtroopers chanting intimidatory death threats, the Reichstag passed the Enabling Act by 444 votes to 94. Hitler immediately unleashed <em>Gleichschaltung</em> ('coordination'): the civil service was purged of non-Aryans, state parliaments were dissolved, free trade unions were replaced by the German Labour Front, and by July 1933, all opposition parties were banned under the Law Against the Establishment of Parties, formally establishing the single-party Nazi dictatorship. Furthermore, the Reich Concordat signed with the Vatican in July 1933 eliminated the Catholic Centre Party, while the January 1934 Law for the Reconstruction of the Reich abolished all state parliaments, completing the total destruction of German federalism. By concentrating supreme legislative and administrative authority directly within the Reich Chancellery, Hitler dismantled regional autonomy and established an unchallengeable unitary dictatorship.`,
-          );
-        }
-      }
+      // Page 2 (KT3.1 Verso Act 1 & 2): Fully calibrated in render script mapping
       // Page 3 (KT3.1 Recto Act 4): Synthesize Night of the Long Knives and Army Oath so Column 2 fits perfectly with Concept Spotlight and Historiography
       if (lessonIndex === 0 && secNum === 4) {
         paras = [

@@ -300,7 +300,21 @@ module.exports = function getKt1Data(helpers) {
         </div>
       </div>
     `,
-      conceptSpotlight: '',
+      conceptSpotlight: `
+        <div class="concept-spotlight-box">
+          <div class="csb-header">
+            <span class="csb-tag">POLARIZATION: KULTURBOLSCHEWISMUS</span>
+            <span class="csb-category">THE CULTURAL BACKLASH &bull; 1924–1929</span>
+          </div>
+          <h4 class="csb-title">The Nationalist War on 'Cultural Bolshevism'</h4>
+          <div class="csb-body">
+            While international visitors celebrated Berlin as the glittering capital of modernism, provincial and conservative Germans viewed Weimar culture with visceral horror. Traditionalists, the Catholic and Protestant churches, and right-wing nationalist groups (such as the DNVP and NSDAP) denounced modern art, cabaret, Bauhaus functionalism, and women's liberation as <em>Kulturbolschewismus</em> ("Cultural Bolshevism")—a degenerate conspiracy allegedly orchestrated by communists and Jews to destroy German moral values. In 1926, the Reichstag passed the 'Law to Protect Youth from Trash and Smut' to censor modern literature and art.
+          </div>
+          <div class="csb-takeaway">
+            <strong>The Cultural Schism:</strong> Weimar culture did not unite the nation; it created an irreconcilable chasm between cosmopolitan, progressive Berlin and traditional, conservative rural Germany that right-wing extremists exploited to delegitimize the Republic.
+          </div>
+        </div>
+      `,
       academicDebate: `
       <div class="historiography-box">
         <div class="hb-header">
@@ -687,7 +701,7 @@ module.exports = function getKt1Data(helpers) {
         paras = paras.filter((p) => !p.includes('Inflation King') && !p.includes('Munich Putsch'));
       }
 
-      // Page 6 (KT1.3 Verso Act 1): Add paragraph [1.3] on Stresemann's Policy of Fulfilment
+      // Page 6 (KT1.3 Verso Act 1): Add paragraph [1.3] on Stresemann's Policy of Fulfilment & Locarno
       if (lessonIndex === 2 && secNum === 1) {
         if (
           !paras.some((p) => p.includes('Policy of Fulfilment') || p.includes('Erfüllungspolitik'))
@@ -696,13 +710,25 @@ module.exports = function getKt1Data(helpers) {
             `<strong>Stresemann's Policy of Fulfilment (<em>Erfüllungspolitik</em>):</strong> Stresemann recognised that Germany could not overturn Versailles through military defiance. Instead, he pioneered a pragmatic foreign policy of 'fulfilment': by scrupulously honouring treaty obligations, he won the trust of Britain and the US. At the 1924 London Conference, he secured the evacuation of Franco-Belgian occupation troops from the Ruhr. By appointing Dr Hjalmar Schacht to head the Reichsbank under the 1924 Bank Act, Stresemann anchored the new Reichsmark to gold and guaranteed strict central bank independence.`,
           );
         }
+        if (!paras.some((p) => p.includes('Locarno Treaties') || p.includes('League of Nations'))) {
+          paras.push(
+            `<strong>The Locarno Treaties (1925) &amp; League of Nations (1926):</strong> Stresemann's crowning diplomatic triumphs restored Germany as an equal Great Power. In the 1925 Locarno Treaties, Germany voluntarily accepted its western frontiers with France and Belgium, securing peace in Western Europe and winning the 1926 Nobel Peace Prize. In September 1926, Germany was formally admitted to the League of Nations as a permanent Council member, ending its post-war diplomatic isolation.`,
+          );
+        }
       }
 
-      // Page 6 (KT1.3 Verso Act 2): Add paragraph [2.3] on the Young Plan & Nationalist Backlash
+      // Page 6 (KT1.3 Verso Act 2): Add paragraph [2.3] on Young Plan & US Credit Fragility
       if (lessonIndex === 2 && secNum === 2) {
         if (!paras.some((p) => p.includes('Young Plan') || p.includes('Liberty Law'))) {
           paras.push(
             `<strong>The Young Plan (1929) &amp; The 'Liberty Law' Nationalist Backlash:</strong> Chaired by American industrialist Owen D. Young, the 1929 agreement reduced total German reparations from £6.6 billion to £2 billion, lowered annual payments, and extended the timetable to 1988 while securing the complete withdrawal of Allied occupation troops from the Rhineland five years ahead of schedule. However, right-wing nationalists led by Alfred Hugenberg and Adolf Hitler fiercely denounced the plan, mobilising press networks to campaign against the 'enslavement of German grandchildren'.`,
+          );
+        }
+        if (
+          !paras.some((p) => p.includes('Dancing on a Volcano') || p.includes('American Credit'))
+        ) {
+          paras.push(
+            `<strong>Dancing on a Volcano: The Fragility of American Loans:</strong> Beneath the surface of prosperity lay acute economic vulnerability. Germany borrowed nearly 25 billion marks from Wall Street between 1924 and 1929, largely in callable short-term loans. While cities built schools and parks, Germany ran a constant trade deficit, and agriculture remained in severe depression. Stresemann himself issued a prophetic warning in late 1928: "Germany is dancing on a volcano. If American short-term loans are called in, our entire economy will collapse."`,
           );
         }
       }
@@ -712,6 +738,15 @@ module.exports = function getKt1Data(helpers) {
         if (!paras.some((p) => p.includes('Municipal Housing') || p.includes('GEHAG'))) {
           paras.push(
             `<strong>Municipal Housing &amp; Progressive Social Welfare:</strong> Between 1924 and 1931, municipal building associations such as GEHAG constructed more than two million high-quality modern homes with electric lighting and indoor plumbing, significantly reducing overcrowding and tuberculosis in working-class districts. In 1927, the Reichstag passed the landmark Unemployment Insurance Act, providing contributory benefits to over 17 million workers—the most comprehensive social safety net in Europe.`,
+          );
+        }
+      }
+
+      // Page 8 (KT1.4 Verso Act 2): Add patriarchal backlash against 'double-earners'
+      if (lessonIndex === 3 && secNum === 2) {
+        if (!paras.some((p) => p.includes('Double-Earners') || p.includes('Doppelverdiener'))) {
+          paras.push(
+            `<strong>The Patriarchal Backlash &amp; 'Double-Earners' (<em>Doppelverdiener</em>):</strong> Despite constitutional protections under Article 109, women encountered fierce institutional resistance. Conservative political parties, the Catholic and Lutheran churches, and the national civil service association fiercely attacked married working women as 'double-earners' (*Doppelverdiener*) who were accused of stealing jobs from demobilised war veterans. By 1932, Chancellor Heinrich Brüning passed emergency decrees enabling the dismissal of married female civil servants if their husbands were employed. Outside cosmopolitan Berlin, traditional patriarchal expectations remained deeply entrenched: the vast majority of provincial women remained full-time domestic homemakers, while abortion remained heavily criminalised under Section 218.`,
           );
         }
       }

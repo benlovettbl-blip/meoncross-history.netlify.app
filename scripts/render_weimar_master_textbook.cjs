@@ -91,23 +91,93 @@ function getLessonSections(lesson, idx) {
     return fallback;
   };
 
-  if (lesson && lesson.id === 'lesson_3_1' && blocks.length >= 8) {
+  if (lesson && lesson.id === 'lesson_2_1') {
     return [
       {
-        title: extractTitle(blocks[0], 'Act 1: The Reichstag Fire & Emergency Decrees'),
-        text: [blocks[0].text || '', blocks[1].text || ''].filter(Boolean).join('\n\n'),
+        title: 'Act 1: The Origins: Anton Drexler, The DAP & Hitler’s Oratory',
+        text: `**The Foundation of the DAP & Hitler's Recruitment:** In January 1919, in the turbulent aftermath of the First World War, railway mechanic Anton Drexler founded the German Workers' Party (*Deutsche Arbeiterpartei*, DAP) in Munich. Bitterly opposing the Weimar Republic, the Treaty of Versailles, and Marxism, Drexler advocated an extreme blend of pan-German nationalism and working-class protectionism. In September 1919, the Bavarian army dispatched intelligence agent Adolf Hitler to spy on a DAP beer hall meeting. Impressed by Hitler's fiery interjection in a political debate, Drexler recruited him as the party's 55th member, quickly appointing him director of propaganda.
+
+**Hitler's Demagogic Star Power & Beer Hall Mass Rallies:** Hitler rapidly transformed the obscure fringe group through theatrical public speaking. Rehearsing gestures and dramatic pauses, he began speeches in a quiet conversational tone before building to a crescendo of fanatical rage. He offered simple, visceral scapegoats for Germany's post-war collapse: the 'November Criminals', communist traitors, and international Jewish finance. Drawing thousands of paying spectators into Munich beer halls, Hitler raised vital admission revenues, winning fierce personal loyalty and making himself indispensable to the party's survival.
+
+**Staging the Beer Hall Spectacle & The Bavarian Appeal:** Hitler perfected the theatrical staging of party meetings. Arriving deliberately late to build tension, he entered large beer halls flanked by swastika flags, martial music, and armed stewards. In the smoke-filled halls of Munich, Hitler tapped into deep Bavarian grievances: hatred of the socialist republic in Berlin, outrage over the Versailles "war guilt" clause, and fears of a Bolshevik revolution. His impassioned delivery and radical anti-establishment stance transformed the DAP from a tiny tavern debating circle into a magnet for embittered veterans and extreme nationalists.`,
       },
       {
-        title: extractTitle(blocks[2], 'Act 2: The Enabling Act & Legal Dictatorship'),
-        text: [blocks[2].text || '', blocks[3].text || ''].filter(Boolean).join('\n\n'),
+        title: 'Act 2: The 25-Point Programme, Rebranding & The SA (1920–1921)',
+        text: `**The 25-Point Programme & Party Rebranding:** In February 1920, Hitler and Drexler unveiled the 25-Point Programme at the Hofbräuhaus beer hall before two thousand supporters. Designed as a populist manifesto to recruit across social classes, it blended nationalist demands (revoking Versailles, uniting all Germans in a Greater Reich, denying Jews citizenship) with socialist appeals (abolishing unearned income, profit-sharing in heavy industry, expanding pensions). In August 1920, Hitler rebranded the party as the National Socialist German Workers' Party (*NSDAP*), adopting the swastika emblem and the newspaper *Völkischer Beobachter*.
+
+**The Führer Principle & Founding the Sturmabteilung (SA):** By July 1921, Hitler used his oratorical indispensability to confront Drexler. Threatening to resign, he forced the committee to grant him absolute dictatorial powers as sole Party Chairman (*Führer*). In August 1921, he organized the *Sturmabteilung* (SA, or 'Brownshirts') under Ernst Röhm. Recruited largely from ex-soldiers and demobilised Freikorps fighters, the SA served as a violent paramilitary squad tasked with protecting Nazi speakers, assaulting rival communist rallies, and terrorising political opponents through disciplined street violence.
+
+**The 1921 Führer Takeover & The Swastika Emblem:** To consolidate total personal control, Hitler resigned in July 1921, demanding absolute dictatorial authority as Party Chairman (*Führer*). Realizing the party would collapse without his star appeal, the committee capitulated, granting him supreme leadership. Hitler introduced military discipline, the Roman arm salute, and designed the party banner: a black hooked cross (*Hakenkreuz*) on a white circle surrounded by revolutionary red. With the SA terrorising political rivals, the rebranded NSDAP stood ready to launch its bid for state power.`,
+      },
+      {
+        title: 'Act 3: Blood and Iron: The Paramilitary Muscle of the SA',
+        text: blocks[4] ? blocks[4].text || blocks[4].content || '' : '',
+      },
+      {
+        title: 'Act 4: Historical Evaluation: A Regional Bavarian Fringe Party',
+        text: blocks[5] ? blocks[5].text || blocks[5].content || '' : '',
+      },
+    ];
+  }
+
+  if (lesson && lesson.id === 'lesson_2_4') {
+    return [
+      {
+        title: 'Act 1: The Fall of Brüning, Economic Despair & The Death of Democracy',
+        text: `**Brüning's Austerity & The Collapse of Parliamentary Rule:** By the spring of 1932, parliamentary democracy in Weimar Germany had completely collapsed. Unable to maintain a coalition majority in the Reichstag, Chancellor Heinrich Brüning relied entirely on President Paul von Hindenburg to govern through Article 48 emergency decrees. Brüning’s relentless deflationary austerity—slashing unemployment benefits, cutting civil service wages, and raising taxes—worsened the Great Depression, driving unemployment past 6 million and earning him the bitter title of the 'Hunger Chancellor'.
+
+**The Ban on the SA and the Fatal Agrarian Miscalculation:** In April 1932, attempting to quell escalating street warfare, Brüning banned the SA and SS, provoking outrage from right-wing nationalists and conservative army generals led by Kurt von Schleicher. Simultaneously, Brüning proposed breaking up bankrupt aristocratic estates in East Prussia to settle unemployed workers. Hindenburg, himself a wealthy Junker landlord, was outraged by this plan, condemning it as "agrarian Bolshevism". Betrayed by Schleicher and abandoned by the President, Brüning was forced to resign on 30 May 1932.
+
+**The Preussenschlag & The Summer of Paramilitary Terror:** The lifting of the SA ban in June 1932 triggered widespread political violence, resulting in over 100 street murders in five weeks. In Hamburg, the 'Altona Bloody Sunday' left 18 dead. Papen cynically exploited this disorder to execute the *Preussenschlag* (Prussian coup), declaring martial law and unconstitutionally removing the democratically elected SPD state government of Prussia. By dismantling Prussia's independent police force, Papen destroyed the strongest remaining democratic bulwark against National Socialism.`,
+      },
+      {
+        title: 'Act 2: The 1932 Elections & The Backstairs Intrigue',
+        text: `**The 'Cabinet of Barons' and the July 1932 Electoral Triumph:** Hindenburg appointed conservative aristocrat Franz von Papen as Chancellor, heading an unelected aristocratic ministry nicknamed the 'Cabinet of Barons'. Lacking Reichstag support, Papen lifted the ban on the SA and dissolved parliament to hold fresh elections in July 1932. The election was a stunning triumph for the NSDAP: winning 230 seats (37.3% of the vote), the Nazis became the largest party in the Reichstag. Hitler immediately demanded the Chancellorship. However, President Hindenburg, deeply contemptuous of the Austrian-born "Bohemian corporal", flatly refused.
+
+**The November 1932 Crisis & Papen's Fatal Deal:** Refusing to cooperate, the Nazis and Communists paralysed parliament, forcing another election in November 1932. Nazi support dropped to 196 seats, while communist votes surged. Terrified of civil war, General Schleicher persuaded Hindenburg to sack Papen and make Schleicher Chancellor in December. Determined to seek revenge, Papen struck a secret deal with Hitler in January 1933: Hitler would become Chancellor in a coalition cabinet where only three of eleven ministers were Nazis, with Papen as Vice-Chancellor with personal right of access to Hindenburg. Papen boastfully assured traditional conservatives: "Within two months, we will have pushed Hitler so far into a corner that he'll squeak!" On 30 January 1933, Hindenburg appointed Adolf Hitler Chancellor of Germany.
+
+**The Cologne Villa Deal & Schleicher's Humiliation:** General Schleicher's tenure as Chancellor was brief and disastrous: his attempts to split the Nazi party by offering Gregor Strasser the Vice-Chancellorship collapsed, alienating both Hitler and trade unions. Meanwhile, Papen met Hitler secretly on 4 January 1933 at the Cologne villa of banker Kurt von Schröder. Backed by wealthy industrialists and Hindenburg's inner circle (including the President's son Oskar), Papen persuaded Hindenburg that Hitler could be tightly controlled in a cabinet with only two other Nazis (Göring and Frick), sealing the fate of the Republic.`,
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: Forensic Archival Evidence'),
+        text: blocks[3] ? blocks[3].text || blocks[3].content || '' : '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: The Historical Verdict'),
+        text: blocks[4] ? blocks[4].text || blocks[4].content || '' : '',
+      },
+    ];
+  }
+
+  if (lesson && lesson.id === 'lesson_3_1') {
+    return [
+      {
+        title: 'Act 1: The Reichstag Fire & Emergency Decrees (Feb 1933)',
+        text: `**The Reichstag Arson & The Dutch Communist:** When Hitler became Chancellor in January 1933, his power was extremely limited: the Nazis held only three cabinet seats, lacked a Reichstag majority, and could be dismissed by President Hindenburg at any moment. On the night of 27 February 1933, six days before fresh elections, the Reichstag building was consumed by fire. A young Dutch communist, Marinus van der Lubbe, was caught at the scene with matches. Hitler and Hermann Göring instantly capitalized on the blaze, declaring it the signal for a nationwide communist revolution.
+
+**The Decree for the Protection of the People and the State:** On 28 February 1933, Hitler persuaded the terrified 85-year-old President Hindenburg to sign the Reichstag Fire Decree under Article 48. The decree permanently suspended all fundamental constitutional civil liberties: freedom of speech, assembly, privacy of postal communications, and freedom of the press. Empowered by emergency authority, Göring unleashed 50,000 auxiliary police (SA and SS), arresting over 4,000 communist leaders and banning all opposition newspapers, effectively paralyzing anti-Nazi campaigning.
+
+**The Anti-Communist Terror & The Leipzig Trial:** Following the decree, Hermann Göring drafted 50,000 SA and SS men as auxiliary police to crush left-wing resistance. Over 4,000 communists were detained, beaten in unofficial cellars, and sent to early makeshift concentration camps like Dachau. In late 1933, the regime staged the Leipzig Trial to convict communist leaders. However, Bulgarian communist Georgi Dimitrov mounted a brilliant courtroom defence, humiliating Göring and forcing the court to acquit him. Enraged by this judicial independence, Hitler resolved to bypass the standard courts altogether.`,
+      },
+      {
+        title: 'Act 2: The Enabling Act & Legal Dictatorship (March 1933)',
+        text: `**The March 1933 Elections & The Kroll Opera House:** Despite violent intimidation, the Nazis failed to secure an outright majority in the 5 March 1933 elections, winning 288 seats (43.9%). To alter the constitution and achieve absolute dictatorial power, Hitler introduced the Enabling Act (*Ermächtigungsgesetz*), requiring a two-thirds parliamentary majority. Hitler banned all 81 elected Communist deputies from attending. Meeting in the Kroll Opera House on 23 March 1933, flanked by armed SA stormtroopers chanting intimidatory death threats, the Catholic Centre Party was persuaded to support the bill after Hitler promised to protect Catholic schools.
+
+**Democracy Votes Itself Out of Existence:** The Enabling Act passed by an overwhelming margin of 444 votes to 94, with only Otto Wels' Social Democrats (SPD) having the courage to vote against it. The act transferred complete legislative and budgetary power to Adolf Hitler's cabinet for four years without Reichstag or presidential consent. By signing away parliamentary authority, the Reichstag formally dissolved German democracy, giving Hitler the legal foundation to coordinate the state under *Gleichschaltung* and establish an unchallengeable totalitarian dictatorship.
+
+**Gleichschaltung: Crushing Unions & Federalism:** Armed with dictatorial decree powers, Hitler systematically destroyed all independent centres of political and civic power. On 2 May 1933, SA stormtroopers raided and shut down all free trade union headquarters, arresting leaders and forcing millions of workers into the Nazi German Labour Front (*DAF*). In July 1933, the Law Against the Formation of Parties made the NSDAP the only legal political organisation in Germany. By January 1934, regional state parliaments were abolished, completing the total destruction of German federalism.`,
       },
       {
         title: extractTitle(blocks[4], 'Act 3: Gleichschaltung: Coordination of the State'),
-        text: blocks[4].text || '',
+        text: blocks[4] ? blocks[4].text || '' : '',
       },
       {
         title: extractTitle(blocks[5], 'Act 4: Night of the Long Knives & The Army Oath'),
-        text: [blocks[5].text || '', blocks[6].text || '', blocks[7].text || '']
+        text: [
+          blocks[5] ? blocks[5].text || '' : '',
+          blocks[6] ? blocks[6].text || '' : '',
+          blocks[7] ? blocks[7].text || '' : '',
+        ]
           .filter(Boolean)
           .join('\n\n'),
       },

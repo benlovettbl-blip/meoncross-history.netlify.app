@@ -344,17 +344,6 @@ module.exports = function getKt2Data(helpers) {
     p2: {
       sourceA: {
         badge: 'SOURCE A',
-        type: 'Foundational Manifesto',
-        title: 'Points 1, 2, and 4 of the Nazi 25-Point Programme',
-        date: '24 February 1920',
-        text: '“1. We demand the unification of all Germans in the Greater Germany on the basis of the right of self-determination of peoples.<br><br>2. We demand equality of rights for the German people in respect to the other nations; revocation of the peace treaties of Versailles and St Germain.<br><br>4. None but members of the nation may be citizens of the state. None but those of German blood, whatever their creed, may be members of the nation. No Jew, therefore, may be a member of the nation.”',
-        context:
-          'Proclaimed by Adolf Hitler to over two thousand people at the Hofbräuhaus beer hall in Munich, establishing the core tenets of Nazi ideology: pan-German expansion, destruction of Versailles, and racial antisemitism.',
-        hingeQuestion:
-          'Did the 25-Point Programme represent a coherent political ideology, or a contradictory collection of populist grievances designed to attract maximum support?',
-      },
-      sourceB: {
-        badge: 'SOURCE B',
         type: 'Police Intelligence Report',
         title: 'Bavarian Police Surveillance Report on Hitler’s Early Speeches',
         date: 'Munich, 15 February 1921',
@@ -363,6 +352,17 @@ module.exports = function getKt2Data(helpers) {
           'Confidential Bavarian political police dossier assessing Hitler’s rapid emergence as the primary public draw and propaganda chief for the fledgling NSDAP in Munich.',
         hingeQuestion:
           'How does the police report explain Hitler’s ability to transform a tiny fringe party into a mass movement in post-war Munich?',
+      },
+      sourceB: {
+        badge: 'SOURCE B',
+        type: 'Foundational Manifesto',
+        title: 'Points 1, 2, and 4 of the Nazi 25-Point Programme',
+        date: '24 February 1920',
+        text: '“1. We demand the unification of all Germans in the Greater Germany on the basis of the right of self-determination of peoples.<br><br>2. We demand equality of rights for the German people in respect to the other nations; revocation of the peace treaties of Versailles and St Germain.<br><br>4. None but members of the nation may be citizens of the state. None but those of German blood, whatever their creed, may be members of the nation. No Jew, therefore, may be a member of the nation.”',
+        context:
+          'Proclaimed by Adolf Hitler to over two thousand people at the Hofbräuhaus beer hall in Munich, establishing the core tenets of Nazi ideology: pan-German expansion, destruction of Versailles, and racial antisemitism.',
+        hingeQuestion:
+          'Did the 25-Point Programme represent a coherent political ideology, or a contradictory collection of populist grievances designed to attract maximum support?',
       },
     },
 
@@ -614,11 +614,24 @@ module.exports = function getKt2Data(helpers) {
           );
         }
       }
+      // KT2.2 (Index 1) Recto Act 3: Professionalising the Party & SS
+      if (lessonIndex === 1 && secNum === 3) {
+        if (!paras.some((p) => p.includes('Julius Schreck') || p.includes('Gauleiter of Berlin'))) {
+          paras.push(
+            `<strong>Paramilitary Reorganisation: Founding the SS and Hitler Youth:</strong> Following the Bamberg Conference of February 1926, Hitler consolidated his absolute authority. In 1925, he established the *Schutzstaffel* (SS) as an elite, fanatically obedient black-shirted personal bodyguard to counterbalance the unruly SA. In 1926, the party created the Hitler Youth (*Hitlerjugend*) to recruit teenage boys, alongside professional leagues for doctors, lawyers, and teachers. Recognizing the power of modern propaganda, Hitler appointed Dr Joseph Goebbels as Gauleiter of Berlin in 1926, tasking him with capturing the working-class capital through relentless provocation.`,
+          );
+        }
+      }
       // KT2.3 (Index 2) Verso Act 1: Ensure full height
       if (lessonIndex === 2 && secNum === 1) {
         if (!paras.some((p) => p.includes('Industrial Collapse') || p.includes('Kreditanstalt'))) {
           paras.push(
             `<strong>The Banking Crisis &amp; Industrial Collapse:</strong> The disaster deepened in 1931 when Austria's Creditanstalt and Germany's Danat Bank failed, forcing Chancellor Brüning to declare a nationwide bank holiday. Over 50,000 German businesses went bankrupt between 1930 and 1932. Industrial production plunged by 42%, while middle-class savers saw their deposits frozen once again. Desperate families lined the streets of major cities, where over 600,000 people were registered homeless.`,
+          );
+        }
+        if (!paras.some((p) => p.includes('Human Cost') || p.includes('Zeltstädte'))) {
+          paras.push(
+            `<strong>The Human Cost: Shantytowns, Breadlines and Social Despair:</strong> By 1932, over 6 million Germans were officially registered as unemployed, though real numbers exceeded 8 million when uncounted women and youths were included. In Berlin, thousands of evicted families lived in squalid shantytowns named 'Tent Cities' (*Zeltstädte*). Impoverished war veterans and fathers queued for hours outside municipal soup kitchens, wearing cardboard placards that read: "I will take any work, even the hardest." This pervasive poverty shattered faith in democracy.`,
           );
         }
       }

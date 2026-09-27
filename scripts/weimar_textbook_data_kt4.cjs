@@ -615,6 +615,14 @@ module.exports = function getKt4Data(helpers) {
       if (lessonIndex === 0 && secNum === 2) {
         // Native text is well balanced
       }
+      // KT4.2 (Index 1) Verso Act 1: Ensure full height and balance with Source A
+      if (lessonIndex === 1 && secNum === 1) {
+        if (!paras.some((p) => p.includes('Teachers League') || p.includes('NSLB'))) {
+          paras.push(
+            `<strong>The Nazi Teachers' League &amp; Purging the Classrooms:</strong> To enforce total ideological compliance, the regime established the National Socialist Teachers' League (*NSLB*). By 1937, over 97% of all German schoolteachers had joined the league, having attended compulsory four-week paramilitary camps emphasizing racial biology, obedience, and physical endurance. Under the Civil Service Law of April 1933, all Jewish, communist, and pacifist educators were dismissed from schools and universities. Teachers were required to begin and end every lesson with the Hitler salute and ensure that classrooms displayed portraits of the Führer, swastika banners, and ideological slogans.`,
+          );
+        }
+      }
       // KT4.2 (Index 1) Recto Act 4: Fill Column 1 so components balance into Column 2
       if (lessonIndex === 1 && secNum === 4) {
         if (!paras.some((p) => p.includes('Anti-Indoctrination Backlash'))) {
