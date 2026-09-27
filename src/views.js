@@ -1554,7 +1554,7 @@ export async function renderLessonsView() {
     <div class="card" style="animation: fadeInUp 0.3s ease-out; padding: 0; overflow: hidden; background: white;">
       ${headerHtml}
       
-      <div style="padding: 30px; border-top: 1px solid #e2e8f0;">
+      <div class="lessons-view-body" style="padding: 30px; border-top: 1px solid #e2e8f0; max-width: 100%; box-sizing: border-box;">
         ${renderUnitSynopsis(data, unitId)}
         
         ${renderKeyTopicLessonsHTML(data, unitId, data)}

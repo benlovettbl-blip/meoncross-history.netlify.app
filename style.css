@@ -1904,20 +1904,72 @@ img::after {
 @media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .app-header,
   .main-header {
-    padding: 1rem !important;
-    gap: 10px;
+    padding: 0.75rem 1rem !important;
+    gap: 8px !important;
     height: auto !important;
-    flex-wrap: nowrap;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
     max-width: 100vw !important;
-    overflow-x: hidden !important;
+    width: 100% !important;
+    overflow: hidden !important;
     box-sizing: border-box !important;
   }
 
-  .header-right,
-  .school-tag {
+  .header-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
+
+  /* Breadcrumbs take too much horizontal space on mobile and push tools off-screen */
+  #header-breadcrumbs,
+  .breadcrumbs {
     display: none !important;
   }
 
+  .header-mobile-brand {
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .back-btn {
+    padding: 5px 10px !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header-accessibility-bar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Make header tool buttons ultra-compact on mobile: icons only, minimal padding */
+  .header-tool-btn,
+  #theme-toggle-btn {
+    padding: 6px 8px !important;
+    font-size: 0.78rem !important;
+    gap: 4px !important;
+    border-radius: 6px !important;
+  }
+
+  .header-tool-btn .btn-text,
+  #theme-toggle-btn #theme-toggle-label {
+    display: none !important; /* Hide text, keep crisp accessible icon */
+  }
+
+  .header-right,
+  .school-tag,
   .header-actions {
     display: none !important;
   }
@@ -1927,6 +1979,163 @@ img::after {
     font-size: 1.1rem !important;
     white-space: normal !important;
     line-height: 1.3 !important;
+  }
+}
+
+/* --- Mobile Classroom Masterpiece Strip & Dashboard Enhancements --- */
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+  .masterpiece-starter-strip {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 12px 14px !important;
+    gap: 12px !important;
+    min-height: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .masterpiece-strip-info {
+    min-width: 0 !important;
+    width: 100% !important;
+    flex: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .masterpiece-strip-btn-group {
+    width: 100% !important;
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    box-sizing: border-box !important;
+  }
+
+  .masterpiece-strip-open-btn,
+  .masterpiece-strip-projector-btn {
+    flex: 1 1 calc(50% - 4px) !important;
+    min-width: 120px !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 9px 10px !important;
+    font-size: 0.78rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .stage-filter-group {
+    display: flex !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    padding: 3px !important;
+    scrollbar-width: none !important;
+  }
+  .stage-filter-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stage-filter-btn {
+    padding: 5px 12px !important;
+    font-size: 0.76rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  #year-quick-jump-nav {
+    display: flex !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: none !important;
+  }
+  #year-quick-jump-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .jump-chip {
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .masterpiece-strip-open-btn,
+  .masterpiece-strip-projector-btn {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* --- Mobile Trip Hub, Crummack Archive & Lesson Body Enhancements --- */
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+  .lessons-view-body {
+    padding: 16px 12px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  .trip-hub-tab-bar {
+    display: flex !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 20px !important;
+    scrollbar-width: thin !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .trip-hub-tab-btn {
+    flex-shrink: 0 !important;
+    padding: 8px 14px !important;
+    font-size: 0.84rem !important;
+    white-space: nowrap !important;
+  }
+
+  .crummack-spotlight-card,
+  .prep-pack-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 14px 14px !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  .crummack-spotlight-card > div,
+  .prep-pack-card > div {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .crummack-spotlight-card h3,
+  .prep-pack-card h3 {
+    font-size: 1.05rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.3 !important;
+  }
+
+  .crummack-spotlight-card p,
+  .prep-pack-card p {
+    font-size: 0.84rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.45 !important;
+  }
+
+  .crummack-spotlight-card button,
+  .prep-pack-card button,
+  .prep-pack-card a {
+    font-size: 0.8rem !important;
+    padding: 7px 12px !important;
+    box-sizing: border-box !important;
   }
 }
 

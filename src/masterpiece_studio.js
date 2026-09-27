@@ -1071,7 +1071,7 @@ export function getMasterpieceStarterStripHtml() {
     <div class="masterpiece-starter-strip" style="background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%); border: 1.5px solid var(--border-glass, #e2e8f0); border-left: 4.5px solid #d97706; border-radius: 14px; padding: 10px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; box-sizing: border-box; flex-wrap: wrap;">
       
       <!-- Left Thumbnail & Centre Info -->
-      <div style="display: flex; align-items: center; gap: 14px; min-width: 280px; flex: 1;">
+      <div class="masterpiece-strip-info" style="display: flex; align-items: center; gap: 14px; min-width: 0; flex: 1;">
         <!-- Left: Small thumbnail preview of the artwork -->
         <div class="masterpiece-strip-thumb-wrap" data-action="open-masterpiece-studio" style="position: relative; flex-shrink: 0; cursor: pointer;" title="Explore artwork in the Historical Gallery">
           <img src="${item.image}" alt="${item.title}" class="masterpiece-strip-thumb" style="width: 62px; height: 52px; object-fit: cover; border-radius: 8px; border: 1.5px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: block; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" />
@@ -1081,7 +1081,7 @@ export function getMasterpieceStarterStripHtml() {
         </div>
 
         <!-- Centre: Historical Art of the Week: Title (Artist) with badge -->
-        <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0;">
+        <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1;">
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             <span style="font-size: 0.67rem; font-weight: 800; background: #fffbeb; color: #b45309; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 5px;">
               <i class="fa-solid fa-palette"></i> Historical Art of the Week
@@ -1101,7 +1101,7 @@ export function getMasterpieceStarterStripHtml() {
       </div>
 
       <!-- Right: Two quick tap buttons -->
-      <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap;">
+      <div class="masterpiece-strip-btn-group" style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap;">
         <button class="btn-pedagogy-secondary masterpiece-strip-open-btn" data-action="open-masterpiece-studio" style="background: var(--bg-card, #ffffff); border: 1.5px solid #cbd5e1; color: var(--text-main, #1e293b); padding: 8px 13px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s ease;">
           <i class="fa-solid fa-magnifying-glass" style="color: #2563eb; font-size: 0.75rem;"></i>
           <span>Explore Artwork &amp; Analysis</span>

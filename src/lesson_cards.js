@@ -355,7 +355,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     lessonsHTML += `
       <div id="trip-hub-container" style="margin-top: 25px;">
         <!-- Three-Tab Switcher Bar -->
-        <div style="display: flex; gap: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 14px; margin-bottom: 25px; flex-wrap: wrap;">
+        <div class="trip-hub-tab-bar" style="display: flex; gap: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 14px; margin-bottom: 25px; flex-wrap: wrap;">
           <button class="btn trip-hub-tab-btn active" data-action="switch-trip-hub-tab" data-tab="itinerary" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; border: 1.5px solid #1e3a8a; background: #1e3a8a; color: #ffffff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;">
             <i class="fa-solid fa-route" style="font-size: 1rem;"></i>
             <span>3-Day Field Itinerary</span>
@@ -380,15 +380,15 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     if (prepPack) {
       lessonsHTML += `
         <div style="margin-bottom: 25px;">
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <div style="flex: 1; min-width: 280px; cursor: pointer;" data-action="view-lesson-detail" data-index="${prepPack.index}">
+          <div class="prep-pack-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; box-sizing: border-box; max-width: 100%;">
+            <div style="flex: 1; min-width: 0; width: 100%; cursor: pointer;" data-action="view-lesson-detail" data-index="${prepPack.index}">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 3px; flex-wrap: wrap;">
-                <h3 style="margin: 0; color: #0369a1; font-size: 1.18rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Parental Briefing</h3>
+                <h3 style="margin: 0; color: #0369a1; font-size: 1.18rem; font-family: 'Playfair Display', serif; word-break: break-word; overflow-wrap: break-word;">Pre-Trip Information &amp; Parental Briefing</h3>
                 <span style="background: #eff6ff; color: #0284c7; border: 1px solid #bfdbfe; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Thu 10 Sep · 16:15 Briefing</span>
               </div>
-              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Fieldwork study expedition led by Department Lead &amp; Humanities Staff. Packing checklist, catering, itinerary, and preparation guidance.</p>
+              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4; word-break: break-word; overflow-wrap: break-word;">Fieldwork study expedition led by Department Lead &amp; Humanities Staff. Packing checklist, catering, itinerary, and preparation guidance.</p>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; max-width: 100%;">
               <a href="/pdfs/ypres_tour_leader_companion_a4.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#ede9fe';" onmouseout="this.style.background='#f5f3ff';">
                 <i class="fa-solid fa-compass" style="color: #7c3aed;"></i> Tour Companion (A4 PDF)
               </a>
@@ -409,17 +409,17 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
 
     if (crummackHero) {
       lessonsHTML += `
-        <div style="margin-bottom: 25px; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          <div style="flex: 1; min-width: 280px; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
+        <div class="crummack-spotlight-card" style="margin-bottom: 25px; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; box-sizing: border-box; max-width: 100%;">
+          <div style="flex: 1; min-width: 0; width: 100%; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;">
               <span style="background: #b45309; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Fieldwork Archive · Western Front</span>
-              <h3 style="margin: 0; color: #78350f; font-size: 1.18rem; font-family: 'Playfair Display', serif;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h3>
+              <h3 style="margin: 0; color: #78350f; font-size: 1.18rem; font-family: 'Playfair Display', serif; word-break: break-word; overflow-wrap: break-word;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h3>
             </div>
-            <p style="margin: 0; color: #451a03; font-size: 0.88rem; line-height: 1.4;">
+            <p style="margin: 0; color: #451a03; font-size: 0.88rem; line-height: 1.4; word-break: break-word; overflow-wrap: break-word;">
               Fieldwork archive commemorating 2nd Lieutenant Ernest Edward Crummack MC, DCM, researched by the family archive researcher. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
             </p>
           </div>
-          <div style="display: flex; gap: 8px; align-items: center;">
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
             <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 8px 16px; font-size: 0.82rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(217, 119, 6, 0.25);">
               <i class="fa-solid fa-medal"></i> Read Full Dossier &rarr;
             </button>
