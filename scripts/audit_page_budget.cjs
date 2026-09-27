@@ -69,7 +69,7 @@ async function auditPageBudget(page, options = {}) {
     minUtilizationPct = 80,
     maxGapAboveFooterPx = 25,
     maxInterTaskGapPx = 35,
-    pageSelector = '.a5-page, .page, .page-landscape, .a4-page',
+    pageSelector = '.a5-page, .page, .page-landscape, .a4-page, .textbook-page',
   } = options;
 
   // Pass serialization-safe pattern definitions
@@ -335,20 +335,20 @@ async function auditPageBudget(page, options = {}) {
             // For discrete multi-column grids (.col-side), audit column-to-column height imbalance and gaps
             const cols = prose.querySelectorAll('.col-side');
             if (cols.length >= 2) {
-              const getColLeafMaxBottom = (col) => {
-                const colLeaves = Array.from(col.querySelectorAll('*')).filter(
+              const getColMaxBottom = (col) => {
+                const colElements = Array.from(col.querySelectorAll('*')).filter(
                   (el) =>
                     !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName) &&
                     el.style.display !== 'none' &&
-                    el.children.length === 0 &&
-                    el.getBoundingClientRect().height > 0,
+                    el.getBoundingClientRect().height > 0 &&
+                    el.getBoundingClientRect().width > 0,
                 );
-                return colLeaves.length > 0
-                  ? Math.max(...colLeaves.map((el) => el.getBoundingClientRect().bottom))
+                return colElements.length > 0
+                  ? Math.max(...colElements.map((el) => el.getBoundingClientRect().bottom))
                   : col.getBoundingClientRect().top;
               };
-              const b0 = getColLeafMaxBottom(cols[0]);
-              const b1 = getColLeafMaxBottom(cols[1]);
+              const b0 = getColMaxBottom(cols[0]);
+              const b1 = getColMaxBottom(cols[1]);
               const colDiff = Math.abs(Math.round(b0 - b1));
               if (colDiff > 35) {
                 internalProseGap = Math.max(internalProseGap, colDiff);

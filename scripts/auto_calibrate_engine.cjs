@@ -80,48 +80,67 @@ async function autoCalibrateTextbook(page, options = {}) {
       });
 
       // 3. Resolve Page Overflow / Footer Collision
-      const layout = p.querySelector('.masterclass-page-layout, .page-inner, .page-container');
-      const footer = p.querySelector(
-        '.running-footer, .page-footer, .disciplinary-assessment-footer, .bottom-vocab-box, .bottom-enquiry-box, .exam-strategy-fullwidth-box, .timeline-strip-4col',
-      );
+      const pRect = p.getBoundingClientRect();
+      const allEls = Array.from(p.querySelectorAll('*'));
+      const getChildOverflow = () => {
+        let maxB = pRect.bottom;
+        for (const el of allEls) {
+          const r = el.getBoundingClientRect();
+          if (r.width > 0 && r.height > 0 && r.bottom > maxB) {
+            maxB = r.bottom;
+          }
+        }
+        return Math.round(maxB - pRect.bottom);
+      };
 
-      if (
-        !isCover &&
-        (p.scrollHeight > p.clientHeight || (layout && layout.scrollHeight > layout.clientHeight))
-      ) {
+      const layout = p.querySelector(
+        '.masterclass-page-layout, .page-inner, .page-container, .narrative-page-layout',
+      );
+      let childOver = getChildOverflow();
+      const hasDirectOverflow =
+        p.scrollHeight > p.clientHeight + 2 ||
+        (layout && layout.scrollHeight > layout.clientHeight + 2);
+
+      if (!isCover && (hasDirectOverflow || childOver > 2)) {
         let step = 0;
-        while (
-          (p.scrollHeight > p.clientHeight ||
-            (layout && layout.scrollHeight > layout.clientHeight)) &&
-          step < 15
-        ) {
+        while ((p.scrollHeight > p.clientHeight + 2 || childOver > 2) && step < 20) {
           step++;
-          p.querySelectorAll('.narrative-p, p, li').forEach((child) => {
+          p.querySelectorAll(
+            '.numbered-para, .narrative-p, p, li, .csb-body, .kf-significance, .kf-actions-list li, .archival-body',
+          ).forEach((child) => {
             const fs = parseFloat(window.getComputedStyle(child).fontSize);
             const lh = parseFloat(window.getComputedStyle(child).lineHeight);
-            if (fs > 7.5) child.style.fontSize = (fs * 0.98).toFixed(2) + 'px';
-            if (lh > 11) child.style.lineHeight = (lh * 0.97).toFixed(2) + 'px';
+            if (fs > 6.8) child.style.fontSize = (fs * 0.98).toFixed(2) + 'px';
+            if (lh > 10.0) child.style.lineHeight = (lh * 0.97).toFixed(2) + 'px';
           });
-          p.querySelectorAll('.archival-source-box, .section-banner, .lesson-hero, div').forEach(
-            (child) => {
-              const mb = parseFloat(window.getComputedStyle(child).marginBottom);
-              if (mb > 2) child.style.marginBottom = Math.max(1, mb - 0.75) + 'px';
-            },
-          );
+          p.querySelectorAll(
+            '.archival-source-box, .section-banner, .lesson-hero, .key-figure-box, .concept-spotlight-box, .bottom-enquiry-box, .bottom-vocab-box',
+          ).forEach((child) => {
+            const mb = parseFloat(window.getComputedStyle(child).marginBottom);
+            if (mb > 1) child.style.marginBottom = Math.max(1, mb - 0.75) + 'px';
+            const pTop = parseFloat(window.getComputedStyle(child).paddingTop);
+            const pBottom = parseFloat(window.getComputedStyle(child).paddingBottom);
+            if (pTop > 3) child.style.paddingTop = Math.max(2, pTop - 0.5) + 'px';
+            if (pBottom > 3) child.style.paddingBottom = Math.max(2, pBottom - 0.5) + 'px';
+          });
           p.querySelectorAll('img').forEach((img) => {
             const h = img.offsetHeight;
-            if (h > 90) img.style.maxHeight = h - 5 + 'px';
+            if (h > 70) img.style.maxHeight = h - 6 + 'px';
           });
+          childOver = getChildOverflow();
         }
         log.push({
           page: pageNum,
           type: 'PAGE_OVERFLOW_RESOLVED',
           stepsTaken: step,
-          finalOverflow: p.scrollHeight - p.clientHeight,
+          finalOverflow: childOver,
         });
       }
 
       // 4. Ensure safe gap above footer
+      const footer = p.querySelector(
+        '.running-footer, .page-footer, .disciplinary-assessment-footer, .bottom-vocab-box, .bottom-enquiry-box, .exam-strategy-fullwidth-box, .timeline-strip-4col',
+      );
       if (footer) {
         const fRect = footer.getBoundingClientRect();
         const prevEl = footer.previousElementSibling;

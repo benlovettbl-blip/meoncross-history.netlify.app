@@ -30,6 +30,9 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
+const { JSDOM } = require('jsdom');
+const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -64,6 +67,93 @@ function getBase64Image(relPath) {
 function formatText(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+}
+
+function transformHtmlKT1(rawHtml) {
+  const dom = new JSDOM(rawHtml);
+  const doc = dom.window.document;
+
+  const pages = doc.querySelectorAll('.textbook-page');
+  pages.forEach((p, pIdx) => {
+    const pageNum = pIdx + 1;
+    const oldProse = p.querySelector('.two-column-prose');
+    if (!oldProse) return;
+
+    const newGrid = doc.createElement('div');
+    newGrid.className = 'two-column-prose-grid';
+
+    const col1 = doc.createElement('div');
+    col1.className = 'col-side';
+
+    const col2 = doc.createElement('div');
+    col2.className = 'col-side';
+
+    const children = Array.from(oldProse.children);
+
+    if (pageNum % 2 === 0) {
+      // Even page (Verso)
+      if (pageNum === 4) {
+        // Page 4: Col 1 has Banner 1 & Banner 2; Col 2 starts at Acre Prison Breakout
+        let inCol2 = false;
+        children.forEach((c) => {
+          if (
+            c.classList.contains('section-banner') &&
+            c.textContent.includes('Acre Prison Breakout')
+          ) {
+            inCol2 = true;
+          }
+          if (inCol2) col2.appendChild(c);
+          else col1.appendChild(c);
+        });
+
+        p.querySelectorAll('.archival-image').forEach((img) => {
+          img.style.maxHeight = '125px';
+        });
+      } else {
+        // Regular Even Page: 1st banner in col1, 2nd banner in col2
+        let bannerCount = 0;
+        children.forEach((c) => {
+          if (c.classList.contains('section-banner')) bannerCount++;
+          if (bannerCount >= 2) col2.appendChild(c);
+          else col1.appendChild(c);
+        });
+      }
+    } else {
+      // Odd page (Recto)
+      let bannerCount = 0;
+      const col1Items = [];
+      const col2Items = [];
+
+      children.forEach((c) => {
+        if (c.classList.contains('section-banner')) bannerCount++;
+
+        const isArchivalDispatch =
+          c.classList.contains('archival-source-box') &&
+          c.textContent.includes('ARCHIVAL DISPATCH');
+        const isKeyFigure = c.classList.contains('key-figure-box');
+        const isSpotlight = c.classList.contains('concept-spotlight-box');
+
+        if (isArchivalDispatch) {
+          col1Items.push(c);
+        } else if (isKeyFigure || isSpotlight) {
+          col2Items.push(c);
+        } else if (bannerCount >= 2) {
+          col2Items.push(c);
+        } else {
+          col1Items.push(c);
+        }
+      });
+
+      col1Items.forEach((c) => col1.appendChild(c));
+      col2Items.forEach((c) => col2.appendChild(c));
+    }
+
+    newGrid.appendChild(col1);
+    newGrid.appendChild(col2);
+    oldProse.replaceWith(newGrid);
+  });
+
+  return dom.serialize();
 }
 
 async function buildPublisherTextbookHtmlKT1() {
@@ -110,7 +200,7 @@ async function buildPublisherTextbookHtmlKT1() {
   const suezCampaignMap = getBase64Image('images/cme_suez_1956_campaign_map.jpg');
   const cardEden = getBase64Image('units/cme_new/assets/card_eden.png');
 
-  return `<!DOCTYPE html>
+  const rawHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -238,6 +328,23 @@ async function buildPublisherTextbookHtmlKT1() {
       border-radius: 0 4px 4px 0;
     }
 
+    /* 2-Column Deterministic Grid */
+    .two-column-prose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 3.5px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
     /* 2-Column Cambridge / OUP Reading Prose Measure */
     .two-column-prose {
       column-count: 2;
@@ -250,13 +357,12 @@ async function buildPublisherTextbookHtmlKT1() {
 
     /* Chapter Section Heading */
     .section-banner {
-      column-span: all;
       background: #f8fafc;
       border-left: 3.5px solid #1e3a8a;
       border-bottom: 1px solid #e2e8f0;
       padding: 3.5px 8px;
       border-radius: 0 3px 3px 0;
-      margin: 7px 0 5px 0;
+      margin: 4px 0 5px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1327,7 +1433,7 @@ async function buildPublisherTextbookHtmlKT1() {
       </div>
       <div class="numbered-para">
         <span class="para-ref-pill">[2.10]</span>
-        The UN created the <strong>United Nations Special Committee on Palestine (UNSCOP)</strong>, composed of eleven neutral nations (including Sweden, Canada, and Guatemala) to guarantee impartiality. UNSCOP toured the country for five weeks, witnessed firsthand the violent interception of the SS Exodus in Haifa harbor, and conducted extensive interviews with Jewish Agency leaders David Ben-Gurion and Moshe Sharett. The Arab Higher Committee completely boycotted the inquiry, arguing that Palestine's indigenous Arab majority possessed an inherent democratic right to self-determination and that European crimes against Jews could not justly be compensated with Arab ancestral land. In August 1947, UNSCOP published its report: a unanimous recommendation to terminate the British Mandate, and a majority recommendation (7 to 3) to partition Palestine into independent Arab and Jewish states with international trusteeship over Jerusalem. In September, Britain announced it would reject enforcing any partition opposed by either party, setting a rigid, unilateral evacuation deadline of 15 May 1948.
+        The UN created the <strong>United Nations Special Committee on Palestine (UNSCOP)</strong>, composed of eleven neutral nations to ensure impartiality. UNSCOP toured the country, witnessed the interception of the SS Exodus in Haifa, and interviewed Jewish Agency leaders. The Arab Higher Committee boycotted the inquiry, arguing that European persecution could not justly be compensated with Arab land. In August 1947, UNSCOP recommended terminating the Mandate and partitioning Palestine into independent Arab and Jewish states with international status for Jerusalem. Britain refused to enforce partition, setting a unilateral evacuation deadline of 15 May 1948.
       </div>
 
       <!-- Key Figure Box: Clement Attlee -->
@@ -1362,10 +1468,10 @@ async function buildPublisherTextbookHtmlKT1() {
         </div>
         <h4 class="csb-title">The Economic Drain: 100,000 British Troops &amp; Post-War Austerity</h4>
         <div class="csb-body">
-          By early 1947, Great Britain was gripped by severe economic strain: devastating coal shortages during the freeze of 1946–47, strict bread rationing at home, and heavy war debts owed to Washington. Deploying 100,000 soldiers in Palestine cost £40 million annually (£1.8 billion today). Clement Attlee's Cabinet realized Britain could no longer sustain costly imperial policing while constructing the National Health Service and Welfare State at home.
+          Deploying 100,000 soldiers in Palestine cost £40 million annually (£1.8 billion today) amidst the brutal winter freeze of 1946–47, strict bread rationing, and heavy American war debts. Clement Attlee's Cabinet recognized that Britain could no longer sustain costly imperial policing overseas while establishing the National Health Service and Welfare State at home.
         </div>
         <div class="csb-takeaway">
-          <strong>Key Causation:</strong> Domestic economic exhaustion—not military collapse—forced Britain's historic decision to hand the Palestine Mandate to the United Nations.
+          <strong>Key Causation:</strong> Domestic economic exhaustion—not military collapse—forced Britain's historic decision to surrender the Palestine Mandate to the United Nations.
         </div>
       </div>
 
@@ -2349,9 +2455,11 @@ async function buildPublisherTextbookHtmlKT1() {
 
 </body>
 </html>`;
+
+  return transformHtmlKT1(rawHtml);
 }
 
-async function run() {
+async function runKT1() {
   console.log('🚀 Compiling Publisher-Level Standard Textbook for Middle East Key Topic 1...');
 
   const htmlContent = await buildPublisherTextbookHtmlKT1();
@@ -2360,13 +2468,16 @@ async function run() {
   const htmlOutputDir = path.join(ROOT_DIR, 'public', 'units', 'cme_new');
   if (!fs.existsSync(htmlOutputDir)) fs.mkdirSync(htmlOutputDir, { recursive: true });
   const htmlPath = path.join(htmlOutputDir, 'textbook_KT1_PUBLISHER.html');
+  const pilotHtmlPath = path.join(htmlOutputDir, 'textbook_KT1_PUBLISHER_PILOT.html');
   fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-  console.log(`✅ Saved HTML companion to: ${htmlPath}`);
+  fs.writeFileSync(pilotHtmlPath, htmlContent, 'utf8');
+  console.log(`✅ Saved HTML companions to: ${htmlPath} and ${pilotHtmlPath}`);
 
   // Compile PDF with Puppeteer
   const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
   if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
   const pdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT1_PUBLISHER.pdf');
+  const pilotPdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT1_PUBLISHER_PILOT.pdf');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -2376,6 +2487,32 @@ async function run() {
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
+  console.log('⚡ Running Automated Typographical & Layout Balancer...');
+  const calibrationResults = await autoCalibrateTextbook(page);
+  if (calibrationResults && calibrationResults.length > 0) {
+    console.log(
+      `   ✅ Auto-Calibrator resolved ${calibrationResults.length} potential layout/overflow issues in memory.`,
+    );
+  }
+
+  // Space Budget & Clutter Audit
+  const auditResults = await auditPageBudget(page, {
+    pageSelector: '.textbook-page, .page, .a4-page',
+    maxPageHeightPx: 1123,
+    underflowThresholdPx: 40,
+    minUtilizationPct: 85,
+    maxGapAboveFooterPx: 25,
+    maxInterTaskGapPx: 35,
+  });
+
+  printSpaceAuditReport(auditResults, 'cme_new_textbook_KT1_PUBLISHER.html');
+
+  if (auditResults.hasErrors) {
+    console.warn('⚠️ Warning: Some layout tolerances exceeded; review audit report above.');
+  } else {
+    console.log('🎉 AUDIT PASSED: 100% clean across all 12 pages in A4!');
+  }
+
   await page.pdf({
     path: pdfPath,
     format: 'A4',
@@ -2383,18 +2520,34 @@ async function run() {
     margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
 
+  // Sync to standard aliases so all links in web app and drive update seamlessly
+  fs.copyFileSync(pdfPath, pilotPdfPath);
+  const aliasLegacy1 = path.join(pdfOutputDir, 'cme_textbook_KT1_PUBLISHER.pdf');
+  const aliasLegacy2 = path.join(pdfOutputDir, 'cme_new_textbook_KT1.pdf');
+  const aliasLegacy3 = path.join(pdfOutputDir, 'cme_textbook_KT1.pdf');
+  const aliasFinalV17 = path.join(pdfOutputDir, 'cme_new_textbook_KT1_FINAL_V17.pdf');
+  fs.copyFileSync(pdfPath, aliasLegacy1);
+  fs.copyFileSync(pdfPath, aliasLegacy2);
+  fs.copyFileSync(pdfPath, aliasLegacy3);
+  fs.copyFileSync(pdfPath, aliasFinalV17);
+
   console.log(`🎉 Masterpiece PDF Textbook KT1 successfully compiled!`);
   console.log(`📄 PDF Output: ${pdfPath}`);
+  console.log(`✅ Synchronized aliases:`);
+  console.log(`   - ${aliasLegacy1}`);
+  console.log(`   - ${aliasLegacy2}`);
+  console.log(`   - ${aliasLegacy3}`);
+  console.log(`   - ${aliasFinalV17}`);
 
   await page.close();
   await browser.close();
 }
 
 if (require.main === module) {
-  run().catch((err) => {
+  runKT1().catch((err) => {
     console.error('Fatal compilation error:', err);
     process.exit(1);
   });
 }
 
-module.exports = { buildPublisherTextbookHtmlKT1, run };
+module.exports = { buildPublisherTextbookHtmlKT1, runKT1, run: runKT1 };

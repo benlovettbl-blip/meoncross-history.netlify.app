@@ -107,11 +107,62 @@ const UNIT_REGISTRY = {
     ),
     pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'weimar_textbook_kt1_PUBLISHER.pdf'),
   },
+  early_elizabethan_england: {
+    title: 'Early Elizabethan England (1558–1588) [GCSE Paper 2]',
+    year: 11,
+    compile: async (subArg) => {
+      const { run } = require('./render_eee_master_textbook.cjs');
+      await run(subArg);
+    },
+    htmlPath: path.join(
+      ROOT_DIR,
+      'public',
+      'units',
+      'early_elizabethan_england',
+      'textbook_KT1_PUBLISHER.html',
+    ),
+    pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'eee_textbook_KT1_PUBLISHER.pdf'),
+  },
+  conflict_middle_east: {
+    title: 'Conflict in the Middle East (1945–1995) [GCSE Paper 2]',
+    year: 11,
+    compile: async (subArg) => {
+      const { run } = require('./render_cme_master_textbook.cjs');
+      await run(subArg);
+    },
+    htmlPath: path.join(ROOT_DIR, 'public', 'units', 'cme_new', 'textbook_KT1_PUBLISHER.html'),
+    pdfPath: path.join(ROOT_DIR, 'public', 'pdfs', 'cme_new_textbook_KT1_PUBLISHER.pdf'),
+  },
+  edexcel_medicine: {
+    title: 'Medicine in Britain (c1250–present) & Western Front [GCSE Paper 1]',
+    year: 11,
+    compile: async (subArg) => {
+      const { run } = require('./render_medicine_master_textbook.cjs');
+      await run(subArg);
+    },
+    htmlPath: path.join(
+      ROOT_DIR,
+      'public',
+      'units',
+      'edexcel_medicine',
+      'textbook_medieval_PUBLISHER.html',
+    ),
+    pdfPath: path.join(
+      ROOT_DIR,
+      'public',
+      'pdfs',
+      'edexcel_medicine_textbook_medieval_PUBLISHER.pdf',
+    ),
+  },
 };
 
 // Aliases for convenience
 UNIT_REGISTRY['industrialisation'] = UNIT_REGISTRY['industrialisation_and_empire'];
 UNIT_REGISTRY['weimar'] = UNIT_REGISTRY['weimar_nazi_germany'];
+UNIT_REGISTRY['eee'] = UNIT_REGISTRY['early_elizabethan_england'];
+UNIT_REGISTRY['cme'] = UNIT_REGISTRY['conflict_middle_east'];
+UNIT_REGISTRY['cme_new'] = UNIT_REGISTRY['conflict_middle_east'];
+UNIT_REGISTRY['medicine'] = UNIT_REGISTRY['edexcel_medicine'];
 
 async function main() {
   const allArgs = process.argv.slice(2);
@@ -126,6 +177,11 @@ async function main() {
     console.log(`  - industrialisation_and_empire (Year 8: 18-page A4 Master Textbook)`);
     console.log(`  - great_war                  (Year 9: 14-page A4 Master Textbook)`);
     console.log(`  - weimar_nazi_germany        (GCSE Paper 3: 10-page A4 Master Textbooks)`);
+    console.log(`  - early_elizabethan_england  (GCSE Paper 2: 12-page A4 Master Textbooks KT1–3)`);
+    console.log(`  - conflict_middle_east       (GCSE Paper 2: 12-page A4 Master Textbooks KT1–3)`);
+    console.log(
+      `  - edexcel_medicine           (GCSE Paper 1: 12/14-page A4 Master Textbooks 5 Eras)`,
+    );
     console.log(`  - all                        (Sequential batch compile of all units)\n`);
     return;
   }

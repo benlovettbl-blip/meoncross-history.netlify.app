@@ -33,6 +33,8 @@ const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 
 const ROOT_DIR = path.join(__dirname, '..');
+const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 const dataPath = path.join(ROOT_DIR, 'units', 'cme_new', 'data.js');
 
 if (!fs.existsSync(dataPath)) {
@@ -690,6 +692,23 @@ async function buildPublisherTextbookHtmlKT2() {
       border-radius: 0 4px 4px 0;
     }
 
+    /* 2-Column Deterministic Grid */
+    .two-column-prose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 3.5px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
     /* 2-Column Cambridge / OUP Reading Prose Measure */
     .two-column-prose {
       column-count: 2;
@@ -702,13 +721,12 @@ async function buildPublisherTextbookHtmlKT2() {
 
     /* Chapter Section Heading */
     .section-banner {
-      column-span: all;
       background: #f8fafc;
       border-left: 3.5px solid #1e3a8a;
       border-bottom: 1px solid #e2e8f0;
       padding: 3.5px 8px;
       border-radius: 0 3px 3px 0;
-      margin: 7px 0 5px 0;
+      margin: 4px 0 5px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -807,8 +825,8 @@ async function buildPublisherTextbookHtmlKT2() {
       width: 100%;
       height: auto;
       max-height: 155px;
-      object-fit: cover;
-      object-position: top;
+      object-fit: contain;
+      background: #f8fafc;
       border-radius: 2px;
       margin-bottom: 4px;
       display: block;
@@ -817,8 +835,8 @@ async function buildPublisherTextbookHtmlKT2() {
       width: 100%;
       height: auto;
       max-height: 160px;
-      object-fit: cover;
-      object-position: center 25%;
+      object-fit: contain;
+      background: #f8fafc;
       border-radius: 2px;
       margin-bottom: 4px;
       display: block;
@@ -1594,9 +1612,14 @@ async function buildPublisherTextbookHtmlKT2() {
           </div>
         </div>
 
-        <!-- Two-Column Prose for Sections 1 & 2 -->
-        <div class="two-column-prose">
-          ${acts1And2.map((b, idx) => renderActBlock(b, idx + 1)).join('')}
+        <!-- Two-Column Deterministic Grid for Sections 1 & 2 -->
+        <div class="two-column-prose-grid">
+          <div class="col-side">
+            ${renderActBlock(acts1And2[0], 1)}
+          </div>
+          <div class="col-side">
+            ${renderActBlock(acts1And2[1], 2)}
+          </div>
         </div>
 
         ${vocabDeckHtml}
@@ -1618,12 +1641,17 @@ async function buildPublisherTextbookHtmlKT2() {
           <span>ENQUIRY: ${enquiryShort}</span>
         </div>
 
-        <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box & Component Bank -->
-        <div class="two-column-prose">
-          ${acts3And4.map((b, idx) => renderActBlock(b, idx + 3)).join('')}
-          ${keyIndividualCardHtml}
-          ${conceptSpotlightHtml}
-          ${archivalDispatchHtml}
+        <!-- Two-Column Deterministic Grid for Sections 3 & 4 with Key Figure & Component Bank -->
+        <div class="two-column-prose-grid">
+          <div class="col-side">
+            ${renderActBlock(acts3And4[0], 3)}
+            ${archivalDispatchHtml}
+          </div>
+          <div class="col-side">
+            ${renderActBlock(acts3And4[1], 4)}
+            ${keyIndividualCardHtml}
+            ${conceptSpotlightHtml}
+          </div>
         </div>
 
         ${enquiryDeckHtml}
@@ -1821,6 +1849,32 @@ async function runKT2() {
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
+  console.log('⚡ Running Automated Typographical & Layout Balancer...');
+  const calibrationResults = await autoCalibrateTextbook(page);
+  if (calibrationResults && calibrationResults.length > 0) {
+    console.log(
+      `   ✅ Auto-Calibrator resolved ${calibrationResults.length} potential layout/overflow issues in memory.`,
+    );
+  }
+
+  // 2. Space Budget & Clutter Audit
+  const auditResults = await auditPageBudget(page, {
+    pageSelector: '.textbook-page, .page, .a4-page',
+    maxPageHeightPx: 1123,
+    underflowThresholdPx: 40,
+    minUtilizationPct: 85,
+    maxGapAboveFooterPx: 25,
+    maxInterTaskGapPx: 35,
+  });
+
+  printSpaceAuditReport(auditResults, 'cme_new_textbook_KT2_PUBLISHER.html');
+
+  if (auditResults.hasErrors) {
+    console.warn('⚠️ Warning: Some layout tolerances exceeded; review audit report above.');
+  } else {
+    console.log('🎉 AUDIT PASSED: 100% clean across all 12 pages in A4!');
+  }
+
   await page.pdf({
     path: pdfPath,
     format: 'A4',
@@ -1828,11 +1882,24 @@ async function runKT2() {
     margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
 
-  // Also copy to pilot path for backwards compatibility
+  // Sync to standard aliases so all links in web app and drive update seamlessly
   fs.copyFileSync(pdfPath, pilotPdfPath);
+  const aliasLegacy1 = path.join(pdfOutputDir, 'cme_textbook_KT2_PUBLISHER.pdf');
+  const aliasLegacy2 = path.join(pdfOutputDir, 'cme_new_textbook_KT2.pdf');
+  const aliasLegacy3 = path.join(pdfOutputDir, 'cme_textbook_KT2.pdf');
+  const aliasFinalV17 = path.join(pdfOutputDir, 'cme_new_textbook_KT2_FINAL_V17.pdf');
+  fs.copyFileSync(pdfPath, aliasLegacy1);
+  fs.copyFileSync(pdfPath, aliasLegacy2);
+  fs.copyFileSync(pdfPath, aliasLegacy3);
+  fs.copyFileSync(pdfPath, aliasFinalV17);
 
   console.log(`🎉 Masterpiece PDF Textbook KT2 successfully compiled!`);
   console.log(`📄 PDF Output: ${pdfPath}`);
+  console.log(`✅ Synchronized aliases:`);
+  console.log(`   - ${aliasLegacy1}`);
+  console.log(`   - ${aliasLegacy2}`);
+  console.log(`   - ${aliasLegacy3}`);
+  console.log(`   - ${aliasFinalV17}`);
 
   await page.close();
   await browser.close();

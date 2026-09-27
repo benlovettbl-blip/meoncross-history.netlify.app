@@ -30,6 +30,9 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
+const { JSDOM } = require('jsdom');
+const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -64,6 +67,92 @@ function getBase64Image(relPath) {
 function formatText(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+}
+
+function transformHtmlKT3(rawHtml) {
+  const dom = new JSDOM(rawHtml);
+  const doc = dom.window.document;
+
+  const pages = doc.querySelectorAll('.textbook-page');
+  pages.forEach((p, pIdx) => {
+    const pageNum = pIdx + 1;
+    const oldProse = p.querySelector('.two-column-prose');
+    if (!oldProse) return;
+
+    const newGrid = doc.createElement('div');
+    newGrid.className = 'two-column-prose-grid';
+
+    const col1 = doc.createElement('div');
+    col1.className = 'col-side';
+
+    const col2 = doc.createElement('div');
+    col2.className = 'col-side';
+
+    const children = Array.from(oldProse.children);
+
+    if (pageNum % 2 === 0) {
+      // Even page (Verso)
+      // Regular Even Page: 1st banner in col1, 2nd banner in col2
+      let bannerCount = 0;
+      children.forEach((c) => {
+        if (c.classList.contains('section-banner')) bannerCount++;
+        if (bannerCount >= 2) col2.appendChild(c);
+        else col1.appendChild(c);
+      });
+    } else {
+      // Odd page (Recto)
+      if (pageNum === 7) {
+        // Page 7: 3 banners. Col 1 gets Banner 1 & Banner 2 + Source C; Col 2 gets Banner 3 + Key Figure + Archival Dispatch
+        let bannerCount = 0;
+        children.forEach((c) => {
+          if (c.classList.contains('section-banner')) bannerCount++;
+          if (bannerCount >= 3 || c.classList.contains('key-figure-box')) {
+            col2.appendChild(c);
+          } else {
+            col1.appendChild(c);
+          }
+        });
+      } else {
+        // Col 1: Banner 1 + Source C + Archival Dispatch
+        // Col 2: Banner 2 + Key Figure + Concept Spotlight
+        let bannerCount = 0;
+        const col1Items = [];
+        const col2Items = [];
+
+        children.forEach((c) => {
+          if (c.classList.contains('section-banner')) bannerCount++;
+
+          const isArchivalDispatch =
+            c.classList.contains('archival-source-box') &&
+            c.textContent.includes('ARCHIVAL DISPATCH');
+          const isKeyFigure = c.classList.contains('key-figure-box');
+          const isSpotlight = c.classList.contains('concept-spotlight-box');
+
+          if (isArchivalDispatch) {
+            col1Items.push(c);
+          } else if (isSpotlight && pageNum === 9) {
+            // On Page 9, col2 has 3 long paragraphs + key figure, so spotlight balances col1 perfectly!
+            col1Items.push(c);
+          } else if (isKeyFigure || isSpotlight) {
+            col2Items.push(c);
+          } else if (bannerCount >= 2) {
+            col2Items.push(c);
+          } else {
+            col1Items.push(c);
+          }
+        });
+
+        col1Items.forEach((c) => col1.appendChild(c));
+        col2Items.forEach((c) => col2.appendChild(c));
+      }
+    }
+
+    newGrid.appendChild(col1);
+    newGrid.appendChild(col2);
+    oldProse.replaceWith(newGrid);
+  });
+
+  return dom.serialize();
 }
 
 async function buildPublisherTextbookHtmlKT3() {
@@ -115,7 +204,7 @@ async function buildPublisherTextbookHtmlKT3() {
     getBase64Image('units/cme_new/assets/cme_oslo_ii_official_map.jpg');
   const cardRabin = getBase64Image('units/cme_new/assets/card_rabin.png');
 
-  return `<!DOCTYPE html>
+  const rawHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -241,6 +330,23 @@ async function buildPublisherTextbookHtmlKT3() {
       border-left: 3px solid #1e3a8a;
       padding: 4px 8px;
       border-radius: 0 4px 4px 0;
+    }
+
+    /* 2-Column Deterministic Grid */
+    .two-column-prose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 3.5px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
     }
 
     /* 2-Column Cambridge / OUP Reading Prose Measure */
@@ -1501,7 +1607,7 @@ async function buildPublisherTextbookHtmlKT3() {
           While the 1979 treaty eliminated conventional warfare between armies and established official embassies, true social and cultural reconciliation never developed. Egyptian professional syndicates (lawyers, doctors, engineers) expelled members who visited Israel, tourism was one-way, and popular anger erupted following Israel's 1982 invasion of Lebanon. The treaty created peace between states, but not peace between peoples.
         </div>
         <div class="csb-takeaway">
-          <strong>Analytical Distinction:</strong> Distinguish strategic military non-belligerency (the treaty) from grassroots cultural normalization ('cold peace').
+          <strong>Key Historical Distinction:</strong> Distinguish strategic military non-belligerency (the treaty) from grassroots cultural normalization ('cold peace').
         </div>
       </div>
     </div>
@@ -2490,9 +2596,11 @@ async function buildPublisherTextbookHtmlKT3() {
 
 </body>
 </html>`;
+
+  return transformHtmlKT3(rawHtml);
 }
 
-async function run() {
+async function runKT3() {
   console.log('🚀 Compiling Publisher-Level Standard Textbook for Middle East Key Topic 3...');
 
   const htmlContent = await buildPublisherTextbookHtmlKT3();
@@ -2501,13 +2609,16 @@ async function run() {
   const htmlOutputDir = path.join(ROOT_DIR, 'public', 'units', 'cme_new');
   if (!fs.existsSync(htmlOutputDir)) fs.mkdirSync(htmlOutputDir, { recursive: true });
   const htmlPath = path.join(htmlOutputDir, 'textbook_KT3_PUBLISHER.html');
+  const pilotHtmlPath = path.join(htmlOutputDir, 'textbook_KT3_PUBLISHER_PILOT.html');
   fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-  console.log(`✅ Saved HTML companion to: ${htmlPath}`);
+  fs.writeFileSync(pilotHtmlPath, htmlContent, 'utf8');
+  console.log(`✅ Saved HTML companions to: ${htmlPath} and ${pilotHtmlPath}`);
 
   // Compile PDF with Puppeteer
   const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
   if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
   const pdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT3_PUBLISHER.pdf');
+  const pilotPdfPath = path.join(pdfOutputDir, 'cme_new_textbook_KT3_PUBLISHER_PILOT.pdf');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -2517,6 +2628,32 @@ async function run() {
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
+  console.log('⚡ Running Automated Typographical & Layout Balancer...');
+  const calibrationResults = await autoCalibrateTextbook(page);
+  if (calibrationResults && calibrationResults.length > 0) {
+    console.log(
+      `   ✅ Auto-Calibrator resolved ${calibrationResults.length} potential layout/overflow issues in memory.`,
+    );
+  }
+
+  // Space Budget & Clutter Audit
+  const auditResults = await auditPageBudget(page, {
+    pageSelector: '.textbook-page, .page, .a4-page',
+    maxPageHeightPx: 1123,
+    underflowThresholdPx: 40,
+    minUtilizationPct: 85,
+    maxGapAboveFooterPx: 25,
+    maxInterTaskGapPx: 35,
+  });
+
+  printSpaceAuditReport(auditResults, 'cme_new_textbook_KT3_PUBLISHER.html');
+
+  if (auditResults.hasErrors) {
+    console.warn('⚠️ Warning: Some layout tolerances exceeded; review audit report above.');
+  } else {
+    console.log('🎉 AUDIT PASSED: 100% clean across all 12 pages in A4!');
+  }
+
   await page.pdf({
     path: pdfPath,
     format: 'A4',
@@ -2524,18 +2661,34 @@ async function run() {
     margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
 
+  // Sync to standard aliases so all links in web app and drive update seamlessly
+  fs.copyFileSync(pdfPath, pilotPdfPath);
+  const aliasLegacy1 = path.join(pdfOutputDir, 'cme_textbook_KT3_PUBLISHER.pdf');
+  const aliasLegacy2 = path.join(pdfOutputDir, 'cme_new_textbook_KT3.pdf');
+  const aliasLegacy3 = path.join(pdfOutputDir, 'cme_textbook_KT3.pdf');
+  const aliasFinalV17 = path.join(pdfOutputDir, 'cme_new_textbook_KT3_FINAL_V17.pdf');
+  fs.copyFileSync(pdfPath, aliasLegacy1);
+  fs.copyFileSync(pdfPath, aliasLegacy2);
+  fs.copyFileSync(pdfPath, aliasLegacy3);
+  fs.copyFileSync(pdfPath, aliasFinalV17);
+
   console.log(`🎉 Masterpiece PDF Textbook KT3 successfully compiled!`);
   console.log(`📄 PDF Output: ${pdfPath}`);
+  console.log(`✅ Synchronized aliases:`);
+  console.log(`   - ${aliasLegacy1}`);
+  console.log(`   - ${aliasLegacy2}`);
+  console.log(`   - ${aliasLegacy3}`);
+  console.log(`   - ${aliasFinalV17}`);
 
   await page.close();
   await browser.close();
 }
 
 if (require.main === module) {
-  run().catch((err) => {
+  runKT3().catch((err) => {
     console.error('Fatal compilation error:', err);
     process.exit(1);
   });
 }
 
-module.exports = { buildPublisherTextbookHtmlKT3, run };
+module.exports = { buildPublisherTextbookHtmlKT3, runKT3, run: runKT3 };
