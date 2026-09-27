@@ -11,6 +11,66 @@ const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
+const { WEIMAR_TIMELINES } = require('./components/weimar_timeline_metadata.cjs');
+const { WEIMAR_ENQUIRY_EXAM_CONFIG } = require('./components/weimar_workbook_metadata.cjs');
+
+function getWeimarExamStrategy(coverConfig, lesson, idx) {
+  const ktKey = coverConfig.ktId || `KT${coverConfig.topicNumber}`;
+  const config = WEIMAR_ENQUIRY_EXAM_CONFIG[ktKey] ? WEIMAR_ENQUIRY_EXAM_CONFIG[ktKey][idx] : null;
+
+  // 4-phase Edexcel Paper 3 cycle across each Key Topic:
+  // Lesson 1: Question 1 • Inference from Source A [4 Marks]
+  // Lesson 2: Question 2 • Causation / Explain Why [12 Marks]
+  // Lesson 3: Question 3(a) • Utility of Sources B & C [8 Marks]
+  // Lesson 4: Question 3(d) • Historiographical Interpretation Essay [16 Marks + 4 SPaG]
+  if (idx === 0) {
+    const focus = (config && config.q1Focus) || lesson.title;
+    return {
+      badge: 'EDEXCEL PAPER 3 EXAMINATION STRATEGY &bull; SECTION A',
+      tariff: 'QUESTION 1 &bull; 4 MARKS &bull; 5 MINS',
+      stem: `Give two things you can infer from Source A about ${focus}. [4 marks]`,
+      guidance: `<span><strong>Specification Technique:</strong> State 2 distinct historical inferences directly supported by explicit quotes or visual evidence from Source A.</span>`,
+      target: 'GRADE 9 ACCURACY',
+    };
+  } else if (idx === 1) {
+    const stem =
+      (config && config.rectoStem) ||
+      `Explain why the Treaty of Versailles caused significant challenges for the Weimar Republic in the years 1919–1923. [12 marks]`;
+    const stimulus = (config && config.rectoStimulus) || [
+      'Reparations',
+      "The 'stab-in-the-back' myth (Dolchstoßlegende)",
+    ];
+    return {
+      badge: 'EDEXCEL PAPER 3 EXAMINATION STRATEGY &bull; SECTION A',
+      tariff: 'QUESTION 2 &bull; 12 MARKS &bull; 18 MINS',
+      stem: stem.replace(/^2\.\s*/, ''),
+      guidance: `<span><strong>Specification Stimulus:</strong> (1) ${stimulus[0]} &bull; (2) ${stimulus[1]} &bull; <em>Deploy 3 PEEL paragraphs with precise causal evidence.</em></span>`,
+      target: 'GRADE 9 CAUSATION',
+    };
+  } else if (idx === 2) {
+    const stem =
+      (config && config.rectoStem) ||
+      `How useful are Sources B and C for an enquiry into ${lesson.title}? [8 marks]`;
+    return {
+      badge: 'EDEXCEL PAPER 3 EXAMINATION STRATEGY &bull; SECTION B',
+      tariff: 'QUESTION 3(a) &bull; 8 MARKS &bull; 12 MINS',
+      stem: stem.replace(/^3a\.\s*/, ''),
+      guidance: `<span><strong>Specification Technique:</strong> Interrogate Content, Provenance (Nature, Origin, Purpose), and Context for both sources before reaching a weighed judgment.</span>`,
+      target: 'GRADE 9 UTILITY',
+    };
+  } else {
+    const stem =
+      (config && config.rectoStem) ||
+      `How far do you agree with Interpretation 2 about ${lesson.title}? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]`;
+    return {
+      badge: 'EDEXCEL PAPER 3 EXAMINATION STRATEGY &bull; SECTION B',
+      tariff: 'QUESTION 3(d) &bull; 16 MARKS + 4 SPaG &bull; 25 MINS',
+      stem: stem.replace(/^3d\.\s*/, ''),
+      guidance: `<span><strong>Specification Technique:</strong> Weigh Interpretation 1 against Interpretation 2; deploy precise contextual evidence; sustain a criteria-led historical verdict.</span>`,
+      target: 'GRADE 9 VERDICT',
+    };
+  }
+}
 
 const ROOT_DIR = path.join(__dirname, '..');
 const dataPath = path.join(ROOT_DIR, 'units', 'weimar_nazi_germany', 'data.js');
@@ -460,6 +520,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     const bank = componentBank[bankKey] || {};
     const vocabTerms = leftVocab[leftVocabKey] || [];
     const sources = leftSources[leftSrcKey] || {};
+    const timeline = WEIMAR_TIMELINES[lesson.id] || bank.timeline || [];
+    const rightExam = getWeimarExamStrategy(coverConfig, lesson, idx);
 
     const secList = getLessonSections(lesson, idx);
     const sec1 = secList[0];
@@ -719,32 +781,6 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
               <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
             </div>
             ${formatBlockParas(sec3, 3, idx)}
-
-            ${bank.archivalDispatch || ''}
-
-            ${
-              bank.keyFigure
-                ? `
-            <div class="key-figure-box">
-              <div class="kf-header">
-                <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
-                <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
-              </div>
-              <div class="kf-identity-row">
-                ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
-                <div class="kf-identity-text">
-                  <div class="kf-name">${bank.keyFigure.name}</div>
-                  <div class="kf-role">${bank.keyFigure.role}</div>
-                </div>
-              </div>
-              <div class="kf-significance">${bank.keyFigure.significance}</div>
-              <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-              <ul class="kf-actions-list">
-                ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-              </ul>
-            </div>`
-                : ''
-            }
           </div>
 
           <div class="col-side">
@@ -753,34 +789,45 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
               <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
             </div>
             ${formatBlockParas(sec4, 4, idx)}
-
-            ${bank.conceptSpotlight || ''}
-
-            ${bank.academicDebate || ''}
           </div>
         </div>
 
         ${
-          bank.bottomEnquiry
+          timeline && timeline.length
             ? `
-        <div class="bottom-enquiry-box">
-          <div class="beb-header">
-            <span class="beb-title">HISTORICAL ENQUIRY &amp; DISCIPLINARY ASSESSMENT</span>
-            <span class="beb-badge">ENQUIRY ${coverConfig.topicNumber}.${lessonNum} SYNTHESIS</span>
+        <div class="timeline-strip-4col">
+          <div class="timeline-strip-header">
+            <span>KEY CHRONOLOGY &bull; FOUR CAUSAL TURNING POINTS</span>
+            <span style="font-size: 6.2pt; color: #93c5fd;">ENQUIRY ${coverConfig.topicNumber}.${lessonNum} SEQUENCE</span>
           </div>
-          <div class="beb-grid">
-            <div class="beb-col">
-              <strong>1. Knowledge Recall &amp; Evidence:</strong>
-              ${bank.bottomEnquiry.q1}
-            </div>
-            <div class="beb-col">
-              <strong>2. Causal Analysis (PEEL):</strong>
-              ${bank.bottomEnquiry.q2}
-            </div>
-            <div class="beb-col">
-              <strong>3. Historical Evaluation &amp; Debate:</strong>
-              ${bank.bottomEnquiry.q3}
-            </div>
+          <div class="timeline-strip-grid">
+            ${timeline
+              .map(
+                (t) => `
+              <div class="timeline-card">
+                <strong class="timeline-card-title">${t.date} &bull; ${t.title}</strong>
+                ${t.text}
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>`
+            : ''
+        }
+
+        ${
+          rightExam
+            ? `
+        <div class="exam-strategy-fullwidth-box">
+          <div class="esfb-header">
+            <span class="esfb-badge">${rightExam.badge}</span>
+            <span class="esfb-tariff">${rightExam.tariff}</span>
+          </div>
+          <div class="esfb-stem"><strong>Exam Challenge:</strong> ${rightExam.stem}</div>
+          <div class="esfb-guidance">
+            ${rightExam.guidance}
+            <span class="esfb-target">${rightExam.target}</span>
           </div>
         </div>`
             : ''
@@ -1503,25 +1550,111 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       font-size: 6.6pt;
     }
 
-    .bottom-enquiry-box {
-      background: #f8fafc;
-      border: 1.2px solid #cbd5e1;
-      border-top: 2.5px solid #1e3a8a;
+    /* 4-Box Horizontal Timeline Strip (Recto Bottom Deck) */
+    .timeline-strip-4col {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1.2px solid #0f172a;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: auto;
+      margin-bottom: 2.5px;
+      background: #ffffff;
+      flex-shrink: 0;
     }
-    .beb-title {
+    .timeline-strip-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1.8px 6px;
+      font-family: 'Inter', sans-serif;
       font-size: 6.8pt;
-      font-weight: 900;
-      color: #1e3a8a;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .beb-grid {
+    .timeline-strip-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      font-size: 6.8pt;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      padding: 3px 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.9pt;
       line-height: 1.25;
-      color: #334155;
+    }
+    .timeline-card {
+      background: #f8fafc;
+      border-left: 2.5px solid #1e3a8a;
+      padding: 2.5px 4.5px;
+      border-radius: 1px;
+    }
+    .timeline-card-title {
+      color: #1e3a8a;
+      display: block;
+      font-size: 6.8pt;
+      font-weight: 800;
+      margin-bottom: 1px;
+    }
+
+    /* Full-Width Exam Strategy Box (Recto Bottom Deck) */
+    .exam-strategy-fullwidth-box {
+      width: 100%;
+      box-sizing: border-box;
+      background: #fdfaf6;
+      border: 1.2px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      padding: 3.5px 6.5px;
+      margin-bottom: 1.5px;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+    .esfb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #fed7aa;
+      padding-bottom: 1.5px;
+      margin-bottom: 2px;
+    }
+    .esfb-badge {
+      font-size: 6.8pt;
+      font-weight: 900;
+      color: #9a3412;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .esfb-tariff {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+    .esfb-stem {
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+    .esfb-guidance {
+      font-size: 6.8pt;
+      color: #78350f;
+      line-height: 1.25;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed #fed7aa;
+      padding-top: 2px;
+    }
+    .esfb-target {
+      font-size: 6.4pt;
+      font-weight: 800;
+      color: #9a3412;
     }
 
     .page-footer {

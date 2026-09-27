@@ -82,7 +82,7 @@ async function autoCalibrateTextbook(page, options = {}) {
       // 3. Resolve Page Overflow / Footer Collision
       const layout = p.querySelector('.masterclass-page-layout, .page-inner, .page-container');
       const footer = p.querySelector(
-        '.running-footer, .page-footer, .disciplinary-assessment-footer, .bottom-vocab-box, .bottom-enquiry-box',
+        '.running-footer, .page-footer, .disciplinary-assessment-footer, .bottom-vocab-box, .bottom-enquiry-box, .exam-strategy-fullwidth-box, .timeline-strip-4col',
       );
 
       if (
