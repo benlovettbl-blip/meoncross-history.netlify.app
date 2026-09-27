@@ -521,7 +521,7 @@ module.exports = function getKt3Data(helpers) {
   };
 
   const backCoverData = {
-    title: 'Nazi Control and Dictatorship, 1933–1939: Specification Mastery & Synthesis',
+    title: 'Nazi Control and Dictatorship, 1933–1939: Core Knowledge & Revision Spine',
     subtitle:
       'Pearson Edexcel GCSE (9–1) History &bull; Paper 3 Option 31 (1HI0/31) &bull; Key Topic 3 Synthesis',
     timelineCards: [
@@ -614,27 +614,18 @@ module.exports = function getKt3Data(helpers) {
           );
         }
       }
+      // Page 3 (KT3.1 Recto Act 4): Synthesize Night of the Long Knives and Army Oath so Column 2 fits perfectly with Concept Spotlight and Historiography
+      if (lessonIndex === 0 && secNum === 4) {
+        paras = [
+          `<strong>The Night of the Long Knives (30 June 1934):</strong> By early 1934, Ernst Röhm's 3-million-strong SA demanded a 'second socialist revolution' and absorption of the regular army (*Reichswehr*). Conservative generals and industrialists warned Hitler they would overthrow him unless the SA was crushed. Allied with Himmler's SS, Hitler launched a ruthless purge: Röhm and hundreds of SA leaders were executed without trial alongside political rivals including Gregor Strasser, former Chancellor Kurt von Schleicher, and Gustav von Kahr. Approximately 400 people were murdered, with Hitler retroactively declaring the killings legal state defence.`,
+          `<strong>The Death of Hindenburg &amp; The Sacred Army Oath:</strong> On 2 August 1934, President von Hindenburg died at age 86. Hitler immediately merged the Chancellorship and Presidency into supreme executive office as <em>Führer und Reichskanzler</em>. On the exact same day, every German soldier and officer swore an unconditional sacred oath of obedience not to the constitution or nation, but personally to Adolf Hitler. A national plebiscite on 19 August approved Hitler's absolute powers by 89.9%, eliminating the final constitutional check on single-party totalitarian dictatorship.`,
+        ];
+      }
       // Page 4 (KT3.2 Verso Act 2): Trim 115 chars so Source B fits in Column 2
       if (lessonIndex === 1 && secNum === 2) {
         if (!paras.some((p) => p.includes('Freisler Arbitrary Terror'))) {
           paras.push(
             `<strong>The People's Court &amp; Freisler Arbitrary Terror:</strong> In April 1934, Hitler established the People's Court (*Volksgerichtshof*) to handle political treason outside the constitutional judiciary. Defendants had no right to choose counsel, proceedings were secret, and verdicts could not be appealed. Chaired by the fanatical Roland Freisler, the court functioned purely as an instrument of terror, handing down over 5,000 death sentences for defeatist remarks or distributing anti-Nazi leaflets.`,
-          );
-        }
-      }
-      // Page 6 (KT3.3 Verso Act 2): Add 30 chars to close 39px void
-      if (lessonIndex === 2 && secNum === 2) {
-        if (!paras.some((p) => p.includes('Editorial Directives Regulated'))) {
-          paras.push(
-            `<strong>The Editorial Law (<em>Schriftleitergesetz</em>):</strong> In October 1933, Goebbels passed the Editorial Law, classifying all journalists as state servants required to prove Aryan ancestry and political loyalty. Every morning, the Propaganda Ministry issued secret daily directives dictating mandatory headlines, approved phraseology, and forbidden topics. Furthermore, the official Nazi publishing monopoly Eher Verlag acquired over 80% of German newspapers, purging independent editors and transforming the national press into an uncritical, heavily censored instrument of state propaganda.`,
-          );
-        }
-      }
-      // Page 7 (KT3.3 Recto Act 4): Add 30 chars to close 41px void
-      if (lessonIndex === 2 && secNum === 4) {
-        if (!paras.some((p) => p.includes('Sterile Cultural Monopoly'))) {
-          paras.push(
-            `<strong>The Reich Chamber of Culture &amp; Sterile Cultural Monopoly:</strong> Established in September 1933 under Joseph Goebbels, this overarching body regulated all aspects of German creative life through seven dedicated chambers: literature, press, radio, theatre, music, visual arts, and cinema. Membership was compulsory for any practising artist, writer, musician, or filmmaker. Non-Aryans, political dissidents, and modernists were summarily expelled, effectively barring them from exhibiting or earning a living. Over 2,500 leading intellectuals and writers—including Thomas Mann, Bertolt Brecht, and Albert Einstein—fled into foreign exile, creating an intellectual void dominated exclusively by neo-classical propaganda, anti-Semitic censorship, blood-and-soil agrarian mythologies, and military glorification.`,
           );
         }
       }
@@ -645,14 +636,6 @@ module.exports = function getKt3Data(helpers) {
           `<strong>Elite Army Discontent:</strong> General Ludwig Beck, Chief of Staff of the German Army, actively opposed Hitler's aggressive expansionist foreign policy, fearing it would drag Germany into a catastrophic world war. In 1938, Beck resigned in protest and began covertly organising anti-Nazi military conspiracies with conservative diplomats and intelligence officers.`,
           `<strong>The Confessional Church &amp; Papal Encyclical:</strong> In 1934, Pastor Martin Niemöller and Dietrich Bonhoeffer founded the <strong>Confessional Church</strong> to defy Nazi control and the 'Aryan Paragraph' in religion. Despite the arrest of over 800 pastors, churchmen continued preaching against state paganism. In March 1937, Pope Pius XI issued the encyclical <em>'Mit brennender Sorge'</em> ('With Burning Anxiety'), smuggled into Germany and read from Catholic pulpits nationwide to openly condemn racial idolatry, neo-pagan state myths, and systematic Gestapo terror against believers. Protestant martyrs like Paul Schneider were tortured to death in Buchenwald for refusing to salute the swastika, proving that religious convictions represented an unbreakable barrier against absolute totalitarian control.`,
         ];
-      }
-      // Page 9 (KT3.4 Recto Act 4): Add 35 chars to close 47px void
-      if (lessonIndex === 3 && secNum === 4) {
-        if (!paras.some((p) => p.includes('Cologne Public Executions 1944'))) {
-          paras.push(
-            `<strong>The Escalation to Terror: Cologne Public Executions 1944:</strong> As wartime strain deepened from 1939 onwards, Nazi tolerance for non-conformist youth dissolved entirely. Heinrich Himmler ordered the Gestapo to ruthlessly crush any ideological defiance. In November 1944, thirteen members of the Ehrenfeld resistance group in Cologne—including six teenage Edelweiss Pirates—were publicly hanged without trial from railway girders before hundreds of horrified citizens. Despite this lethal brutality, arbitrary Gestapo arrests, and brutal concentration camp sentences, persistent youth non-conformity exposed the totalitarian regime's ultimate failure to indoctrinate, regiment, and subjugate the minds of the entire rising German generation. Their refusal to submit proved that ideological conformity remained an illusion even under total police terror.`,
-          );
-        }
       }
       return paras;
     },

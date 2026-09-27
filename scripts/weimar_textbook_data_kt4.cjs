@@ -360,7 +360,7 @@ module.exports = function getKt4Data(helpers) {
         date: 'Nuremberg Rally, September 1935',
         text: '“We German women see our highest mission in being the companions, mothers, and domestic guardians of our menfolk. We do not envy men their roles in the military or the government; our battlefield is the nursery and the family hearth. It is our holy duty to bear healthy, pure-blooded children for the Führer and to instil in them the sacred love of the Fatherland from their very first breath.”',
         context:
-          'Speech by the Reich Women’s Leader reinforcing the regime’s core ideology that a woman’s biological duty was the reproduction of the Aryan racial community. Scholtz-Klink mobilized millions of wives and mothers behind state eugenics, domestic economy drives, and child welfare programs. Her propaganda elevated domestic self-sacrifice into an act of patriotic duty.',
+          'Speech by the Reich Women’s Leader reinforcing the regime’s core ideology that a woman’s primary duty was the biological reproduction of the Aryan racial community, elevating domestic self-sacrifice into patriotic service.',
         hingeQuestion:
           'Why did many German women enthusiastically support policies that stripped them of professional careers and political power?',
       },
@@ -521,7 +521,7 @@ module.exports = function getKt4Data(helpers) {
   };
 
   const backCoverData = {
-    title: 'Life in Nazi Germany, 1933–1939: Specification Mastery & Synthesis',
+    title: 'Life in Nazi Germany, 1933–1939: Core Knowledge & Revision Spine',
     subtitle:
       'Pearson Edexcel GCSE (9–1) History &bull; Paper 3 Option 31 (1HI0/31) &bull; Key Topic 4 Synthesis',
     timelineCards: [
@@ -611,23 +611,9 @@ module.exports = function getKt4Data(helpers) {
       if (lessonIndex === 0 && secNum === 1) {
         // No extra push needed
       }
-      // KT4.1 (Index 0) Verso Act 2: Close gap to optimal
+      // KT4.1 (Index 0) Verso Act 1 & 2: Native text fits naturally
       if (lessonIndex === 0 && secNum === 2) {
-        if (!paras.some((p) => p.includes('Lebensborn Maternity Homes'))) {
-          paras.push(
-            `<strong>The Lebensborn Programme (1935):</strong> Founded by Heinrich Himmler, the <em>Lebensborn</em> ('Fount of Life') initiative established secret maternity homes for unmarried racially 'pure' women impregnated by SS officers, aggressively expanding the Aryan birth rate beyond conventional marriage institutions. These clinics provided state-funded prenatal care and infant adoption services, institutionalising state-directed human breeding to forge an elite Aryan ruling class for the future Reich.`,
-          );
-        }
-      }
-      // KT4.2 (Index 1) Verso Act 2: Ensure full height
-      if (lessonIndex === 1 && secNum === 2) {
-        if (
-          !paras.some((p) => p.includes('Teacher Indoctrination Camps') || p.includes('NSLB Camps'))
-        ) {
-          paras.push(
-            `<strong>Compulsory Indoctrination Camps for Educators:</strong> To ensure that teachers actively promoted Nazi doctrine in the classroom, the NSLB established compulsory ideological training camps (*Schulungslager*). Teachers had to spend several weeks in uniform under military discipline, sleeping in barracks, marching in formation, and attending lectures on racial biology and Nordic supremacy. Jewish teachers were dismissed immediately in April 1933, while those suspected of socialist sympathies were transferred to remote rural schools or reported to the Gestapo by fanatical pupils who belonged to the Hitler Youth. Headteachers had to be active Nazi Party members, and all classrooms were required to display portraits of Hitler and swastika flags.`,
-          );
-        }
+        // Native text is well balanced
       }
       // KT4.2 (Index 1) Recto Act 4: Fill Column 1 so components balance into Column 2
       if (lessonIndex === 1 && secNum === 4) {
@@ -650,14 +636,6 @@ module.exports = function getKt4Data(helpers) {
         if (paras.length > 0 && !paras[paras.length - 1].includes('Reckless Deficit Spending')) {
           paras[paras.length - 1] +=
             ` While Schacht warned that reckless military deficit spending would trigger catastrophic inflation, Göring dismissed orthodox financial warnings, insisting that military expansion would pay off all state debts through conquest.`;
-        }
-      }
-      // KT4.3 (Index 2) Recto Act 4: Close gap on Page 7
-      if (lessonIndex === 2 && secNum === 4) {
-        if (!paras.some((p) => p.includes('Volkswagen Beetle Savings Scheme'))) {
-          paras.push(
-            `<strong>The Volkswagen Scheme &amp; Consumer Realities:</strong> Goebbels and the DAF promised ordinary workers a personal motorcar through the *KdF-Wagen* (the precursor to the Volkswagen Beetle) savings scheme. Over 330,000 workers paid five Reichsmarks a week into state stamp books. In reality, not a single car was ever delivered to a German civilian; in 1939, the newly built Wolfsburg factory was immediately converted to military production for the Kubelwagen jeep, and all worker savings were confiscated by the Reich to fund rearmament. Ordinary families who sacrificed weekly food budgets for the dream of personal mobility received only propaganda brochures, while the regime appropriated their pooled capital into secret armaments accounts. This systematic fraud symbolized how the promised consumer paradise was subordinate to the insatiable demands of total war mobilisation.`,
-          );
         }
       }
       // KT4.4 (Index 3) Verso Act 1: Ensure full height

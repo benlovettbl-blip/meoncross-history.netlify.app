@@ -276,10 +276,9 @@ module.exports = function getKt1Data(helpers) {
         lifespan: '1883–1969',
         role: 'Pioneer Modernist Architect & Founder of the Bauhaus School (1919–1928)',
         significance:
-          'Revolutionized twentieth-century architecture and industrial design by uniting fine art with modern industrial technology, creating the iconic aesthetic of Weimar modernism.',
+          'Revolutionized modern architecture and industrial design by uniting fine art with modern industrial technology, creating the iconic Weimar aesthetic.',
         actions: [
-          'Founded the Bauhaus in Weimar in 1919, issuing a radical manifesto proclaiming the unity of all visual arts.',
-          'Relocated the school to Dessau in 1925, designing the world-famous glass-and-steel Bauhaus complex.',
+          'Founded the Bauhaus in 1919 and designed the iconic glass-and-steel Dessau complex in 1925.',
           'Pioneered functionalist design ("form follows function"), championing accessible, mass-produced housing and furniture for modern industrial society.',
         ],
         image: getBase64Image('weimar_individuals/walter_gropius.jpg'),
@@ -652,15 +651,6 @@ module.exports = function getKt1Data(helpers) {
       // PEDAGOGICAL CONTENT ENRICHMENT: ELIMINATE PROSE VOIDS (Page Budget Guard)
       // =========================================================================
 
-      // Page 2 (KT1.1 Verso Act 2): Enrich paragraph [2.3] to eliminate the 49px gap
-      if (lessonIndex === 0 && secNum === 2) {
-        if (!paras.some((p) => p.includes('Weimar Assembly') || p.includes('Ebert-Groener Pact'))) {
-          paras.push(
-            `<strong>The Weimar Assembly &amp; Ebert-Groener Pact:</strong> To escape the violent unrest and street fighting paralyzing Berlin, the newly elected National Assembly convened in February 1919 in the quiet, cultured city of Weimar. Led by Friedrich Ebert, the assembly drafted a progressive democratic constitution. However, to guarantee stability against radical left-wing revolutions, Ebert entered into the secret Ebert-Groener Pact with the Imperial Army High Command: the military agreed to defend the fledgling Republic in exchange for maintaining its traditional autonomy. This agreement successfully preserved the state during the Spartacist Revolt, but it left the young democracy permanently dependent upon an unreconstructed imperial officer corps that harboured secret contempt for republican democracy.`,
-          );
-        }
-      }
-
       // Page 3 (KT1.1 Recto Act 3): Add paragraph [3.2] on the Democratic Transition
       if (lessonIndex === 0 && secNum === 3) {
         if (
@@ -676,13 +666,25 @@ module.exports = function getKt1Data(helpers) {
         }
       }
 
-      // Page 5 (KT1.2 Recto Act 3): Add paragraph [3.2] on Judicial Bias & Assassinations
+      // Page 4 (KT1.2 Verso Act 2): Filter out Right-Wing Terrorism paragraph from Act 2 (covered in Act 3)
+      if (lessonIndex === 1 && secNum === 2) {
+        paras = paras.filter(
+          (p) => !p.includes('Right-Wing Terrorism') && !p.includes('376 political assassinations'),
+        );
+      }
+
+      // Page 5 (KT1.2 Recto Act 3): Add concise paragraph on Judicial Bias & Assassinations
       if (lessonIndex === 1 && secNum === 3) {
         if (!paras.some((p) => p.includes('Judicial Bias') || p.includes('Organisation Consul'))) {
           paras.push(
-            `<strong>Judicial Bias &amp; The Wave of Right-Wing Assassinations:</strong> Between 1919 and 1922, right-wing terrorist death squads (such as Organisation Consul) carried out 376 political murders, assassinating prominent republicans including Finance Minister Matthias Erzberger (who signed the 1918 Armistice) and Foreign Minister Walther Rathenau. Weimar judges—retained from the Kaiser's imperial regime—demonstrated blatant political bias: right-wing murderers served an average prison sentence of just four months, while left-wing offenders faced life imprisonment or execution, fatally compromising the judicial legitimacy of the Republic.`,
+            `<strong>Judicial Bias &amp; The Wave of Right-Wing Assassinations:</strong> Between 1919 and 1922, right-wing terrorist death squads (such as Organisation Consul) carried out 376 political murders, assassinating prominent republicans including Finance Minister Matthias Erzberger and Foreign Minister Walther Rathenau. Weimar judges demonstrated blatant political bias: right-wing murderers served an average prison sentence of just four months, while left-wing offenders faced life imprisonment or execution, fatally compromising judicial legitimacy.`,
           );
         }
+      }
+
+      // Page 5 (KT1.2 Recto Act 4): Filter out Munich Putsch preview to let Act 4 + Spotlight fit within budget
+      if (lessonIndex === 1 && secNum === 4) {
+        paras = paras.filter((p) => !p.includes('Inflation King') && !p.includes('Munich Putsch'));
       }
 
       // Page 6 (KT1.3 Verso Act 1): Add paragraph [1.3] on Stresemann's Policy of Fulfilment
@@ -691,7 +693,7 @@ module.exports = function getKt1Data(helpers) {
           !paras.some((p) => p.includes('Policy of Fulfilment') || p.includes('Erfüllungspolitik'))
         ) {
           paras.push(
-            `<strong>Stresemann's Policy of Fulfilment (<em>Erfüllungspolitik</em>):</strong> Stresemann recognised that Germany could not overturn the Treaty of Versailles through military defiance or passive resistance, which had already bankrupted the nation. Instead, he pioneered a pragmatic foreign policy of 'fulfilment': by scrupulously honouring treaty obligations and demonstrating Germany's economic indispensability, he aimed to win the trust of Britain and the United States. At the 1924 London Conference, Stresemann negotiated directly as an equal with British Prime Minister Ramsay MacDonald and French Premier Édouard Herriot. He successfully secured the complete evacuation of Franco-Belgian occupation troops from the Ruhr, proving that patient diplomatic compromise yielded tangible territorial and financial dividends that violent nationalist defiance could never achieve. Furthermore, by appointing Dr Hjalmar Schacht to head the Reichsbank under the 1924 Bank Act, Stresemann anchored the new Reichsmark to gold and guaranteed strict central bank independence from government intervention.`,
+            `<strong>Stresemann's Policy of Fulfilment (<em>Erfüllungspolitik</em>):</strong> Stresemann recognised that Germany could not overturn Versailles through military defiance. Instead, he pioneered a pragmatic foreign policy of 'fulfilment': by scrupulously honouring treaty obligations, he won the trust of Britain and the US. At the 1924 London Conference, he secured the evacuation of Franco-Belgian occupation troops from the Ruhr. By appointing Dr Hjalmar Schacht to head the Reichsbank under the 1924 Bank Act, Stresemann anchored the new Reichsmark to gold and guaranteed strict central bank independence.`,
           );
         }
       }
@@ -700,20 +702,7 @@ module.exports = function getKt1Data(helpers) {
       if (lessonIndex === 2 && secNum === 2) {
         if (!paras.some((p) => p.includes('Young Plan') || p.includes('Liberty Law'))) {
           paras.push(
-            `<strong>The Young Plan (1929) &amp; The 'Liberty Law' Nationalist Backlash:</strong> Chaired by American industrialist Owen D. Young, the 1929 agreement reduced total German reparations from £6.6 billion to £2 billion, lowered annual payments, and extended the timetable to 1988 while securing the complete withdrawal of Allied occupation troops from the Rhineland five years ahead of schedule (by June 1930). However, right-wing nationalists led by press baron Alfred Hugenberg and Adolf Hitler denounced the plan as the 'enslavement of German grandchildren'. Hugenberg mobilised his vast media empire—including the national UFA film studios and hundreds of newspapers—to broadcast Hitler's speeches into millions of respectable homes. Although the plebiscite failed, the campaign gave Hitler his first major national breakthrough and critical financial backing from conservative industrialists like Fritz Thyssen.`,
-          );
-        }
-      }
-
-      // Page 7 (KT1.3 Recto Act 4): Add paragraph [4.2] on Structural Weaknesses of the Golden Twenties
-      if (lessonIndex === 2 && secNum === 4) {
-        if (
-          !paras.some(
-            (p) => p.includes('Structural Weaknesses') || p.includes('Agricultural Depression'),
-          )
-        ) {
-          paras.push(
-            `<strong>Structural Weaknesses of the Golden Twenties:</strong> Beneath the glamorous surface of Weimar prosperity lay profound structural flaws. German recovery was financed almost entirely by short-term American loans that could be recalled at 90 days' notice. Furthermore, the agricultural sector entered severe depression from 1926 as global grain prices collapsed, leaving peasant farmers heavily indebted. Even at the height of the boom in 1928, unemployment remained stubbornly above 1.3 million. In a prophetic speech in September 1929, Stresemann cautioned: 'Germany is in fact dancing on a volcano; if the American loans are called in, a large part of our economy will collapse.' Barely weeks later, Stresemann died of a stroke, and the Wall Street Crash struck.`,
+            `<strong>The Young Plan (1929) &amp; The 'Liberty Law' Nationalist Backlash:</strong> Chaired by American industrialist Owen D. Young, the 1929 agreement reduced total German reparations from £6.6 billion to £2 billion, lowered annual payments, and extended the timetable to 1988 while securing the complete withdrawal of Allied occupation troops from the Rhineland five years ahead of schedule. However, right-wing nationalists led by Alfred Hugenberg and Adolf Hitler fiercely denounced the plan, mobilising press networks to campaign against the 'enslavement of German grandchildren'.`,
           );
         }
       }
@@ -727,20 +716,6 @@ module.exports = function getKt1Data(helpers) {
         }
       }
 
-      // Page 9 (KT1.4 Recto Act 4): Add paragraph [4.2] on Conservative Cultural Backlash
-      if (lessonIndex === 3 && secNum === 4) {
-        if (
-          !paras.some(
-            (p) =>
-              p.includes('Conservative Cultural Backlash') ||
-              p.includes('Schmutz- und Schundgesetz'),
-          )
-        ) {
-          paras.push(
-            `<strong>The Conservative Cultural Backlash:</strong> Modernist experimentation provoked fierce moral panic among traditional church groups, rural landowners, and nationalist veterans. In 1926, the Reichstag passed the 'Law to Protect Youth from Trash and Smut' (*Schmutz- und Schundgesetz*), enabling local censorship of pulp fiction and erotic cinema. Right-wing critics branded Berlin cabaret and jazz as decadent 'cultural Bolshevism', creating deep ideological divisions between cosmopolitan city dwellers and provincial conservatives.`,
-          );
-        }
-      }
       return paras;
     },
   };

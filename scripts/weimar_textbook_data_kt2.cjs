@@ -135,11 +135,11 @@ module.exports = function getKt2Data(helpers) {
         lifespan: '1865–1937',
         role: 'Imperial Quartermaster General & Nationalist Leader of the Munich Putsch',
         significance:
-          "Celebrated First World War military commander who lent immense national prestige to Hitler's abortive November 1923 putsch, marching at the front of the armed column.",
+          "Celebrated First World War commander who lent immense national prestige to Hitler's 1923 putsch, marching at the front of the column.",
         actions: [
-          "Led the German military effort alongside Hindenburg in WWI, later promoting the malicious 'Dolchstoß' myth.",
-          'Joined Hitler in the Bürgerbräukeller on 8 November 1923, coercing Bavarian leaders Kahr and Lossow at gunpoint.',
-          'Marched unarmed toward the Munich police cordon at the Feldherrnhalle; acquitted of high treason by sympathetic right-wing judges.',
+          "Promoted the 'stab-in-the-back' myth after WWI, blaming democratic politicians for defeat.",
+          'Joined Hitler in the Bürgerbräukeller on 8 November 1923, coercing Bavarian leaders at gunpoint.',
+          'Marched unarmed through police fire at the Feldherrnhalle; acquitted by sympathetic right-wing judges.',
         ],
         image: getBase64Image('weimar_individuals/general_erich_ludendorff.jpg'),
       },
@@ -151,10 +151,10 @@ module.exports = function getKt2Data(helpers) {
           </div>
           <h4 class="csb-title">The 'Legal Strategy' &amp; Party Restructuring</h4>
           <div class="csb-body">
-            While serving nine months in Landsberg Prison, Hitler dictated <em>Mein Kampf</em> and reached a crucial strategic realization: armed insurrection (*Putschismus*) against the German military was impossible. Instead, the Nazis had to destroy democracy from within: "If outvoting them takes longer than outshooting them, at least the results are guaranteed by their own constitution." After his release, Hitler refounded the party in February 1925, divided Germany into 35 administrative districts (*Gaue*) led by loyal *Gauleiters*, and established national affiliate bodies (Hitler Youth, Nazi Teachers' League, and the SS).
+            In Landsberg Prison, Hitler dictated <em>Mein Kampf</em> and reached a crucial strategic realization: armed insurrection was impossible. Instead, the Nazis had to destroy democracy from within: "If outvoting them takes longer than outshooting them, the results are guaranteed by their own constitution." Hitler refounded the party in 1925, divided Germany into 35 administrative regions (*Gaue*) under loyal *Gauleiters*, and established affiliate bodies including the SS and Hitler Youth.
           </div>
           <div class="csb-takeaway">
-            <strong>The Structural Springboard:</strong> Although the Nazis won only 12 seats (2.6%) in the 1928 election, this nationwide organizational machinery gave them an instantly deployable propaganda network when economic disaster struck in 1929.
+            <strong>The Structural Springboard:</strong> Although the Nazis won only 12 seats (2.6%) in 1928, this nationwide organizational machinery gave them an instantly deployable propaganda network when crisis struck in 1929.
           </div>
         </div>
       `,
@@ -182,11 +182,11 @@ module.exports = function getKt2Data(helpers) {
           <div class="hb-grid">
             <div class="hb-col">
               <strong>Interpretation A: Essential Reorganisation (Dietrich Orlow)</strong>
-              <p>"The lean years were the decisive crucible of the Nazi movement. Under the guise of legality, Hitler constructed a totalitarian shadow bureaucracy, disciplined Gauleiters, and professionalized propaganda that made subsequent triumph possible."</p>
+              <p>"The lean years were decisive. Under the guise of legality, Hitler constructed a shadow bureaucracy and disciplined Gauleiters that made subsequent triumph possible."</p>
             </div>
             <div class="hb-col">
               <strong>Interpretation B: Irrelevant Fringe (Richard J. Evans)</strong>
-              <p>"By 1928, the Nazi Party was a bankrupt, squabbling extremist sect rejected by 97.4% of German voters. Without the catastrophic external shock of the Great Depression, Hitler's movement would have dissolved into total obscurity."</p>
+              <p>"By 1928, the Nazi Party was a bankrupt, squabbling extremist sect rejected by 97.4% of voters. Without the Depression, it would have dissolved into total obscurity."</p>
             </div>
           </div>
         </div>
@@ -521,7 +521,7 @@ module.exports = function getKt2Data(helpers) {
   };
 
   const backCoverData = {
-    title: "Hitler's Rise to Power, 1919–1933: Specification Mastery & Synthesis",
+    title: "Hitler's Rise to Power, 1919–1933: Core Knowledge & Revision Spine",
     subtitle:
       'Pearson Edexcel GCSE (9–1) History &bull; Paper 3 Option 31 (1HI0/31) &bull; Key Topic 2 Synthesis',
     timelineCards: [
@@ -606,19 +606,11 @@ module.exports = function getKt2Data(helpers) {
 
   const paragraphEnrichments = {
     enrichParas(lessonIndex, secNum, paras) {
-      // KT2.1 (Index 0) Verso Act 1: Ensure full height
-      if (lessonIndex === 0 && secNum === 1) {
-        if (!paras.some((p) => p.includes('Karl Mayr') || p.includes('Infiltration'))) {
-          paras.push(
-            `<strong>Reichswehr Surveillance &amp; Hitler's Discovery:</strong> Following the armistice, Adolf Hitler remained in the Bavarian Army as an intelligence agent (*Verbindungsmann*) assigned by Captain Karl Mayr to monitor radical political groups. In September 1919, Mayr dispatched Hitler to investigate Anton Drexler's German Workers' Party meeting in the Sterneckerbräu beer hall. When a visitor argued that Bavaria should secede from Germany, Hitler rose and launched an impromptu, venomous tirade defending pan-German unity. Deeply impressed by his oratorical passion, Drexler gave Hitler a copy of his pamphlet <em>My Political Awakening</em> and invited him to join the executive committee as member 555. Hitler resigned from the army in March 1920 to dedicate himself full-time to expanding the party.`,
-          );
-        }
-      }
       // KT2.2 (Index 1) Verso Act 2: Ensure full height
       if (lessonIndex === 1 && secNum === 2) {
         if (!paras.some((p) => p.includes('Feldherrnhalle') || p.includes('Police Fire'))) {
           paras.push(
-            `<strong>The Climax at the Feldherrnhalle:</strong> On the morning of 9 November 1923, Hitler and Ludendorff led 2,000 armed stormtroopers through the streets of Munich toward the Bavarian War Ministry. At the narrow Residenzstrasse leading into the Odeonsplatz, they were confronted by a heavily armed detachment of state police. A shot was fired—it remains unknown from which side—triggering an immediate volley of police gunfire. Sixteen Nazis and four police officers were killed within seconds. Göring was shot in the groin, Hitler suffered a dislocated shoulder when his bodyguard Ulrich Graf threw himself on top of him, and Ludendorff marched straight through the police line alone. Within hours, the putsch collapsed in utter humiliation, and Hitler fled to Uffing where he was arrested two days later.`,
+            `<strong>The Climax at the Feldherrnhalle:</strong> On the morning of 9 November 1923, Hitler and Ludendorff led 2,000 armed stormtroopers through Munich toward the Bavarian War Ministry. At the narrow Residenzstrasse leading into the Odeonsplatz, a detachment of armed police opened fire. Sixteen Nazis and four police officers were killed within seconds. Göring was wounded, Hitler suffered a dislocated shoulder, and Ludendorff marched straight through the police line alone. Within hours, the putsch collapsed, and Hitler fled to Uffing where he was arrested two days later.`,
           );
         }
       }
@@ -626,37 +618,7 @@ module.exports = function getKt2Data(helpers) {
       if (lessonIndex === 2 && secNum === 1) {
         if (!paras.some((p) => p.includes('Industrial Collapse') || p.includes('Kreditanstalt'))) {
           paras.push(
-            `<strong>The Banking Crisis &amp; Industrial Collapse:</strong> The disaster deepened in May 1931 when Austria's largest bank, the Creditanstalt, collapsed, triggering panic across Central Europe. Two months later, the major German Danat Bank failed, forcing Chancellor Brüning to declare a nationwide bank holiday. Over 50,000 German businesses went bankrupt between 1930 and 1932. Industrial production plunged by 42%, while five leading steelworks in the Ruhr shut their blast furnaces. Middle-class savers who had painstakingly rebuilt modest bank accounts after the 1923 hyperinflation saw their deposits frozen once again, creating visceral hatred of the democratic republic. Desperate families lined the streets of major cities, where over 600,000 people were registered homeless and makeshift shantytowns sprang up on the outskirts of Berlin.`,
-          );
-        }
-      }
-      // KT2.3 (Index 2) Recto Act 4: Ensure full height
-      if (lessonIndex === 2 && secNum === 4) {
-        if (
-          !paras.some(
-            (p) => p.includes('Goebbels Propaganda Machine') || p.includes('Hitler over Germany'),
-          )
-        ) {
-          paras.push(
-            `<strong>The Modern Propaganda Machine &amp; 'Hitler over Germany':</strong> Joseph Goebbels transformed political campaigning by employing cutting-edge commercial advertising techniques. In the 1932 presidential campaign, Hitler chartered a modern passenger airplane to fly to five cities in a single day—a tour titled 'Hitler over Germany' (*Hitler über Deutschland*). This presented Hitler as a dynamic, godlike modern leader arriving from the clouds to rescue the nation. Simultaneously, the party distributed thousands of phonograph records of Hitler's speeches, produced coordinated slide shows for rural beer halls, and published targeted pamphlets tailored specifically to farmers, small artisans, civil servants, and women. By speaking directly to specific social grievances rather than abstract ideology, Goebbels engineered a broad cross-class coalition of despair that carried the party to electoral victory. Furthermore, party parades, dynamic swastika banners, and martial music created an irresistible aura of youthful energy and disciplined national order that contrasting sharply with Weimar's exhausted democratic politicians.`,
-          );
-        }
-      }
-      // KT2.4 (Index 3) Verso Act 1: Ensure full height
-      // bypassed Preussenschlag
-      // KT2.4 (Index 3) Verso Act 2: Ensure full height
-      if (lessonIndex === 3 && secNum === 2) {
-        if (!paras.some((p) => p.includes('Gregor Strasser') || p.includes('November Decline'))) {
-          paras.push(
-            `<strong>The November 1932 Crisis &amp; Strasser's Resignation:</strong> In the November 1932 elections, Nazi support declined by 2 million votes (slipping to 33.1%), severely depleting party funds. Desperate to divide the movement, Chancellor Schleicher offered the vice-chancellorship to Gregor Strasser. Hitler furiously accused Strasser of treason, forcing his resignation. Simultaneously, former Reichsbank President Hjalmar Schacht organised the <em>Industrielleneingabe</em> petition signed by major corporate leaders urging Hindenburg to appoint Hitler. On 4 January 1933, Papen met Hitler secretly at banker Kurt von Schröder's villa in Cologne, securing crucial financial guarantees from steel baron Fritz Thyssen and Rhenish industrial magnates to eliminate the party's debts. With the decisive backing of the aristocratic camarilla and corporate elites, Papen persuaded the reluctant President Hindenburg to appoint Hitler Chancellor on 30 January 1933, smugly boasting that conservative ministers had engaged Hitler 'for our own purposes' and would easily tame him within a <em>conservative-dominated cabinet</em>.`,
-          );
-        }
-      }
-      // KT2.4 (Index 3) Recto Act 4: Ensure full height
-      if (lessonIndex === 3 && secNum === 4) {
-        if (!paras.some((p) => p.includes('Torchlight Procession'))) {
-          paras.push(
-            `<strong>The Torchlight Procession &amp; The Fatal Miscalculation:</strong> On the evening of 30 January 1933, over 25,000 uniformed SA and SS men staged an enormous, choreographed torchlight procession through the Brandenburg Gate and past the Reich Chancellery on the Wilhelmstrasse. From a first-floor window, Adolf Hitler stood for hours taking their salutes, while down the corridor, the ailing 85-year-old President von Hindenburg watched, murmuring confusedly to his aides that his troops had captured Russian prisoners. Franz von Papen smugly assured conservative doubters: 'We have engaged him for our own purposes... within two months we will have pushed Hitler into a corner until he squeaks!' Papen's delusion that aristocratic amateurs could control a totalitarian demagogue armed with millions of paramilitary fighters proved to be the most catastrophic miscalculation in modern German history, delivering absolute executive power into the hands of a totalitarian dictator. Within twenty-four hours of taking office, Hitler persuaded Hindenburg to dissolve the Reichstag and call new elections for March 1933, unleashing the full coercive machinery of the state and SA terror to eradicate democracy once and for all.`,
+            `<strong>The Banking Crisis &amp; Industrial Collapse:</strong> The disaster deepened in 1931 when Austria's Creditanstalt and Germany's Danat Bank failed, forcing Chancellor Brüning to declare a nationwide bank holiday. Over 50,000 German businesses went bankrupt between 1930 and 1932. Industrial production plunged by 42%, while middle-class savers saw their deposits frozen once again. Desperate families lined the streets of major cities, where over 600,000 people were registered homeless.`,
           );
         }
       }

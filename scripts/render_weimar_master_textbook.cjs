@@ -91,11 +91,145 @@ function getLessonSections(lesson, idx) {
     return fallback;
   };
 
+  if (lesson && lesson.id === 'lesson_3_1' && blocks.length >= 8) {
+    return [
+      {
+        title: extractTitle(blocks[0], 'Act 1: The Reichstag Fire & Emergency Decrees'),
+        text: [blocks[0].text || '', blocks[1].text || ''].filter(Boolean).join('\n\n'),
+      },
+      {
+        title: extractTitle(blocks[2], 'Act 2: The Enabling Act & Legal Dictatorship'),
+        text: [blocks[2].text || '', blocks[3].text || ''].filter(Boolean).join('\n\n'),
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 3: Gleichschaltung: Coordination of the State'),
+        text: blocks[4].text || '',
+      },
+      {
+        title: extractTitle(blocks[5], 'Act 4: Night of the Long Knives & The Army Oath'),
+        text: [blocks[5].text || '', blocks[6].text || '', blocks[7].text || '']
+          .filter(Boolean)
+          .join('\n\n'),
+      },
+    ];
+  }
+
+  if (lesson && lesson.id === 'lesson_3_2' && blocks.length >= 6) {
+    return [
+      {
+        title: extractTitle(blocks[0], 'Act 1: The Machinery of Terror: SS, SD & Gestapo'),
+        text: [blocks[0].text || '', blocks[1].text || ''].filter(Boolean).join('\n\n'),
+      },
+      {
+        title: 'Act 2: The Co-opted Courts & Concentration Camps',
+        text: [blocks[2].text || '', blocks[3].text || ''].filter(Boolean).join('\n\n'),
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 3: Controlling the Catholic Church & The Concordat'),
+        text: blocks[4].text || '',
+      },
+      {
+        title: extractTitle(blocks[5], 'Act 4: The Protestant Divide & Confessional Church'),
+        text: blocks[5].text || '',
+      },
+    ];
+  }
+
+  if (lesson && lesson.id === 'lesson_3_3' && blocks.length >= 5) {
+    return [
+      {
+        title: 'Act 1: The Ministry of Propaganda & Press Censorship',
+        text: [blocks[0].text || '', blocks[1].text || ''].filter(Boolean).join('\n\n'),
+      },
+      {
+        title: 'Act 2: Mass Mobilisation: Radio, Rallies & Cinema',
+        text: blocks[2].text || '',
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: The 1936 Berlin Olympic Games'),
+        text: blocks[3].text || '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: Regulating Culture, Architecture & The Arts'),
+        text: blocks[4].text || '',
+      },
+    ];
+  }
+
+  if (lesson && lesson.id === 'lesson_4_2' && blocks.length >= 5) {
+    return [
+      {
+        title: 'Act 1: The Thousand-Year Reich & Indoctrinating Educators',
+        text: [blocks[0].text || '', blocks[1].text || ''].filter(Boolean).join('\n\n'),
+      },
+      {
+        title: extractTitle(blocks[2], 'Act 2: Nazifying the Curriculum & Classrooms'),
+        text: blocks[2].text || '',
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: Extracurricular Control: The Youth Movements'),
+        text: blocks[3].text || '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: Success or Failure: The Historical Verdict'),
+        text: blocks[4].text || '',
+      },
+    ];
+  }
+
   if (blocks.length === 4) {
     return blocks.map((b, i) => ({
       title: extractTitle(b, `Act ${i + 1}`),
       text: b.text || b.content || '',
     }));
+  }
+
+  if (blocks.length === 5) {
+    return [
+      {
+        title: extractTitle(blocks[0], 'Act 1: Context & Catalyst'),
+        text: blocks[0].text || blocks[0].content || '',
+      },
+      {
+        title: extractTitle(blocks[1], 'Act 2: Escalation & Conflict'),
+        text: [blocks[1].text || blocks[1].content || '', blocks[2].text || blocks[2].content || '']
+          .filter(Boolean)
+          .join('\n\n'),
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: Forensic Archival Evidence'),
+        text: blocks[3].text || blocks[3].content || '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: The Historical Verdict'),
+        text: blocks[4].text || blocks[4].content || '',
+      },
+    ];
+  }
+
+  if (blocks.length === 6) {
+    return [
+      {
+        title: extractTitle(blocks[0], 'Act 1: Context & Catalyst'),
+        text: [blocks[0].text || blocks[0].content || '', blocks[1].text || blocks[1].content || '']
+          .filter(Boolean)
+          .join('\n\n'),
+      },
+      {
+        title: extractTitle(blocks[2], 'Act 2: Escalation & Conflict'),
+        text: blocks[2].text || blocks[2].content || '',
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: Forensic Archival Evidence'),
+        text: blocks[3].text || blocks[3].content || '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: The Historical Verdict'),
+        text: [blocks[4].text || blocks[4].content || '', blocks[5].text || blocks[5].content || '']
+          .filter(Boolean)
+          .join('\n\n'),
+      },
+    ];
   }
 
   const n = blocks.length;
@@ -175,17 +309,22 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       let paras = [];
       if (Array.isArray(raw)) {
         paras = [...raw];
-      } else if (raw.includes('<br><br>')) {
-        paras = raw
-          .split('<br><br>')
-          .map((p) => p.trim())
-          .filter(Boolean);
       } else {
         paras = String(raw)
+          .replace(/<br\s*\/?>\s*<br\s*\/?>/gi, '\n\n')
           .split(/\n\s*\n/)
           .map((p) => p.trim())
           .filter(Boolean);
       }
+
+      // Filter out unrendered markdown blockquotes (e.g. > **Lived Experience...)
+      paras = paras.filter(
+        (p) =>
+          !p.startsWith('>') &&
+          !p.startsWith('&gt;') &&
+          !p.includes('Lived Experience:') &&
+          p.length > 5,
+      );
 
       if (paragraphEnrichments && typeof paragraphEnrichments.enrichParas === 'function') {
         paras = paragraphEnrichments.enrichParas(lessonIndex, secNum, paras);
@@ -262,6 +401,25 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
           if (p.includes('para-ref')) {
             return `<p class="narrative-p">${formatText(p)}</p>`;
           }
+
+          if (p.includes('<ul>')) {
+            const ulMatch = p.match(/^(.*?)<ul>(.*?)<\/ul>(.*)$/s);
+            if (ulMatch) {
+              const before = ulMatch[1].trim();
+              const ulContent = ulMatch[2].trim();
+              const after = ulMatch[3].trim();
+              let res = '';
+              if (before) {
+                res += `<p class="narrative-p"><span class="para-ref">[${secNum}.${pIdx + 1}]</span>${formatText(before)}</p>`;
+              }
+              res += `<ul class="prose-bullet-list">${formatText(ulContent)}</ul>`;
+              if (after) {
+                res += `<p class="narrative-p">${formatText(after)}</p>`;
+              }
+              return res;
+            }
+          }
+
           return `<p class="narrative-p"><span class="para-ref">[${secNum}.${pIdx + 1}]</span>${formatText(p)}</p>`;
         })
         .join('');
@@ -327,24 +485,26 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
           </div>
         </div>
 
-        <div class="two-column-prose">
-          
-          <div class="section-banner">
-            <span class="sb-num">ACT 1</span>
-            <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+        <div class="two-column-prose-grid">
+          <div class="col-side">
+            <div class="section-banner">
+              <span class="sb-num">ACT 1</span>
+              <span class="sb-title">${(sec1.title || 'Context & Catalyst').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+            </div>
+            ${formatBlockParas(sec1, 1, idx)}
+
+            ${renderArchivalSourceBox(sources.sourceA)}
           </div>
-          ${formatBlockParas(sec1, 1, idx)}
 
-          ${renderArchivalSourceBox(sources.sourceA)}
+          <div class="col-side">
+            <div class="section-banner">
+              <span class="sb-num">ACT 2</span>
+              <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+            </div>
+            ${formatBlockParas(sec2, 2, idx)}
 
-          <div class="section-banner">
-            <span class="sb-num">ACT 2</span>
-            <span class="sb-title">${(sec2.title || 'Escalation & Conflict').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+            ${renderArchivalSourceBox(sources.sourceB)}
           </div>
-          ${formatBlockParas(sec2, 2, idx)}
-
-          ${renderArchivalSourceBox(sources.sourceB)}
-
         </div>
 
         <div class="bottom-vocab-box">
@@ -386,50 +546,52 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
           <h3 class="rph-title">${lesson.title}</h3>
         </div>
 
-        <div class="two-column-prose">
-          
-          <div class="section-banner">
-            <span class="sb-num">ACT 3</span>
-            <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-          </div>
-          ${formatBlockParas(sec3, 3, idx)}
-
-          ${
-            bank.keyFigure
-              ? `
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
-              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+        <div class="two-column-prose-grid">
+          <div class="col-side">
+            <div class="section-banner">
+              <span class="sb-num">ACT 3</span>
+              <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
             </div>
-            <div class="kf-identity-row">
-              ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
-              <div class="kf-identity-text">
-                <div class="kf-name">${bank.keyFigure.name}</div>
-                <div class="kf-role">${bank.keyFigure.role}</div>
+            ${formatBlockParas(sec3, 3, idx)}
+
+            ${bank.archivalDispatch || ''}
+
+            ${
+              bank.keyFigure
+                ? `
+            <div class="key-figure-box">
+              <div class="kf-header">
+                <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
+                <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
               </div>
-            </div>
-            <div class="kf-significance">${bank.keyFigure.significance}</div>
-            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-            <ul class="kf-actions-list">
-              ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-            </ul>
-          </div>`
-              : ''
-          }
-
-          <div class="section-banner">
-            <span class="sb-num">ACT 4</span>
-            <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+              <div class="kf-identity-row">
+                ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
+                <div class="kf-identity-text">
+                  <div class="kf-name">${bank.keyFigure.name}</div>
+                  <div class="kf-role">${bank.keyFigure.role}</div>
+                </div>
+              </div>
+              <div class="kf-significance">${bank.keyFigure.significance}</div>
+              <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+              <ul class="kf-actions-list">
+                ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+              </ul>
+            </div>`
+                : ''
+            }
           </div>
-          ${formatBlockParas(sec4, 4, idx)}
 
-          ${bank.conceptSpotlight || ''}
+          <div class="col-side">
+            <div class="section-banner">
+              <span class="sb-num">ACT 4</span>
+              <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
+            </div>
+            ${formatBlockParas(sec4, 4, idx)}
 
-          ${bank.archivalDispatch || ''}
+            ${bank.conceptSpotlight || ''}
 
-          ${bank.academicDebate || ''}
-
+            ${bank.academicDebate || ''}
+          </div>
         </div>
 
         ${
@@ -508,8 +670,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       padding: 0;
       background: #e2e8f0;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.35pt;
-      line-height: 1.44;
+      font-size: 8.85pt;
+      line-height: 1.34;
       color: #1e293b;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -620,7 +782,22 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       line-height: 1.15;
     }
 
-    /* 2-Column Reading Measure */
+    /* 2-Column Deterministic Grid */
+    .two-column-prose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 3px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
     .two-column-prose {
       column-count: 2;
       column-gap: 14px;
@@ -631,20 +808,20 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     }
 
     .section-banner {
-      column-span: all;
       background: #f8fafc;
       border-left: 3px solid #1e3a8a;
       border-bottom: 1px solid #e2e8f0;
       padding: 2px 5px;
       border-radius: 0 2px 2px 0;
-      margin: 4px 0 2px 0;
+      margin: 2px 0 2.5px 0;
       display: flex;
       align-items: center;
       gap: 5px;
       font-family: 'Inter', sans-serif;
+      break-inside: avoid;
     }
     .sb-num {
-      font-size: 6.0pt;
+      font-size: 6.2pt;
       font-weight: 900;
       color: #1e3a8a;
       background: #dbeafe;
@@ -660,16 +837,35 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     }
 
     .narrative-p {
-      margin: 0 0 4px 0;
-      text-indent: 0.9em;
+      margin: 0 0 3px 0;
+      text-indent: 0.85em;
+      font-size: 8.85pt;
+      line-height: 1.34;
+      text-align: justify;
     }
     .narrative-p:first-of-type, .section-banner + .narrative-p {
       text-indent: 0;
     }
 
+    .two-column-prose-grid ul,
+    ul.prose-bullet-list {
+      margin: 2px 0 3px 12px;
+      padding: 0;
+      font-size: 8.5pt;
+      line-height: 1.28;
+    }
+    .two-column-prose-grid li,
+    ul.prose-bullet-list li {
+      margin: 0 0 2px 0;
+      padding: 0;
+      font-size: 8.5pt;
+      line-height: 1.28;
+      text-align: justify;
+    }
+
     .para-ref {
       font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
+      font-size: 6.2pt;
       font-weight: 800;
       color: #1e3a8a;
       background: #eff6ff;
@@ -845,35 +1041,35 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       border: 1px solid #e7e5e4;
       border-left: 3px solid #78716c;
       border-radius: 3px;
-      padding: 4px 6px;
-      margin: 4px 0;
+      padding: 3.5px 5.5px;
+      margin: 2.5px 0;
       break-inside: avoid;
     }
     .archival-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
       font-family: 'Inter', sans-serif;
     }
     .source-badge {
-      font-size: 5.8pt;
+      font-size: 6.2pt;
       font-weight: 900;
       color: #fff;
       background: #0f172a;
-      padding: 1px 3.5px;
+      padding: 1px 4px;
       border-radius: 2px;
     }
     .source-type {
-      font-size: 5.8pt;
+      font-size: 6.2pt;
       font-weight: 700;
       color: #78716c;
       text-transform: uppercase;
       margin-left: 3px;
     }
     .source-date-micro {
-      font-size: 5.6pt;
-      font-weight: 600;
+      font-size: 6.0pt;
+      font-weight: 700;
       color: #78716c;
     }
     .archival-title {
@@ -886,7 +1082,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     }
     .archival-image {
       width: 100%;
-      max-height: 110px;
+      height: 68px;
+      max-height: 68px;
       object-fit: contain;
       border-radius: 2px;
       margin-bottom: 2px;
@@ -894,8 +1091,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       background: #fafaf9;
     }
     .archival-body {
-      font-size: 7.2pt;
-      line-height: 1.28;
+      font-size: 7.4pt;
+      line-height: 1.30;
       color: #292524;
       font-style: italic;
       margin-bottom: 2px;
@@ -905,8 +1102,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       border-left: 2px solid #78716c;
       padding: 3px 5px;
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.0pt;
-      line-height: 1.26;
+      font-size: 7.4pt;
+      line-height: 1.30;
       color: #1c1917;
       font-style: italic;
       margin-bottom: 2px;
@@ -915,30 +1112,30 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-left: 2.5px solid #0284c7;
-      padding: 2.5px 4.5px;
+      padding: 2.5px 5px;
       margin: 2px 0 1px 0;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
     }
     .archival-context-text {
-      font-size: 5.8pt;
-      line-height: 1.22;
+      font-size: 6.8pt;
+      line-height: 1.25;
       color: #334155;
-      margin: 0 0 1px 0;
+      margin: 0 0 1.5px 0;
     }
     .archival-hinge-q {
-      font-size: 5.8pt;
-      line-height: 1.22;
+      font-size: 6.8pt;
+      line-height: 1.25;
       color: #0f172a;
       background: #f0f9ff;
-      padding: 1.5px 3.5px;
+      padding: 1.5px 4px;
       border-radius: 2px;
       margin-top: 1px;
     }
     .archival-hinge-q strong {
       color: #0369a1;
       text-transform: uppercase;
-      font-size: 5.4pt;
+      font-size: 6.2pt;
       letter-spacing: 0.03em;
     }
 
@@ -948,8 +1145,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 4px 7px;
-      margin: 4px 0;
+      padding: 3.5px 6px;
+      margin: 2.5px 0;
       break-inside: avoid;
     }
     .kf-header {
@@ -959,16 +1156,16 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       font-family: 'Inter', sans-serif;
     }
     .kf-tag {
-      font-size: 5.8pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .kf-lifespan {
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       color: #64748b;
-      font-weight: 600;
+      font-weight: 700;
     }
     .kf-identity-row {
       display: flex;
@@ -977,8 +1174,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       margin-bottom: 2px;
     }
     .kf-portrait {
-      width: 40px;
-      height: 48px;
+      width: 38px;
+      height: 46px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #94a3b8;
@@ -987,7 +1184,7 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     .kf-identity-text { flex: 1; }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
+      font-size: 8.5pt;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
@@ -995,7 +1192,7 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #475569;
       text-transform: uppercase;
@@ -1010,17 +1207,17 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.2pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
-      margin: 1.5px 0 1px 0;
+      margin: 1px 0;
     }
     .kf-actions-list {
       margin: 0;
       padding-left: 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
+      font-size: 6.6pt;
       line-height: 1.24;
       color: #1e293b;
     }
@@ -1032,8 +1229,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       border: 1px solid #fed7aa;
       border-left: 3.5px solid #b45309;
       border-radius: 3px;
-      padding: 4px 7px;
-      margin: 4px 0;
+      padding: 3.5px 6px;
+      margin: 2.5px 0;
       break-inside: avoid;
     }
     .csb-header {
@@ -1046,13 +1243,13 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 5.8pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
     }
     .csb-category {
-      font-size: 5.4pt;
+      font-size: 6.2pt;
       font-weight: 700;
       color: #b45309;
       background: #ffedd5;
@@ -1068,14 +1265,14 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       line-height: 1.12;
     }
     .csb-body {
-      font-size: 7.1pt;
-      line-height: 1.28;
+      font-size: 7.2pt;
+      line-height: 1.26;
       color: #1e293b;
       margin-bottom: 2px;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.8pt;
       font-weight: 600;
       color: #78350f;
       background: #fef3c7;
@@ -1091,7 +1288,7 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       flex-shrink: 0;
       margin-top: auto;
       margin-bottom: 1px;
-      padding: 6px 8px;
+      padding: 5px 7px;
       border-radius: 3px;
       font-family: 'Inter', sans-serif;
     }
@@ -1109,18 +1306,18 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       padding-bottom: 1.5px;
     }
     .bvb-title {
-      font-size: 6.4pt;
+      font-size: 6.8pt;
       font-weight: 900;
       color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .bvb-badge, .beb-badge {
-      font-size: 5.4pt;
+      font-size: 6.2pt;
       font-weight: 800;
       background: #0f172a;
       color: #fff;
-      padding: 1px 3.5px;
+      padding: 1px 4px;
       border-radius: 2px;
       text-transform: uppercase;
     }
@@ -1128,7 +1325,7 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 6px;
-      font-size: 6.4pt;
+      font-size: 6.8pt;
       line-height: 1.25;
       color: #334155;
     }
@@ -1137,7 +1334,7 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       color: #0f172a;
       margin-bottom: 1px;
       text-transform: uppercase;
-      font-size: 5.8pt;
+      font-size: 6.6pt;
     }
 
     .bottom-enquiry-box {
@@ -1146,7 +1343,7 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       border-top: 2.5px solid #1e3a8a;
     }
     .beb-title {
-      font-size: 6.4pt;
+      font-size: 6.8pt;
       font-weight: 900;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -1156,8 +1353,8 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 8px;
-      font-size: 6.4pt;
-      line-height: 1.26;
+      font-size: 6.8pt;
+      line-height: 1.25;
       color: #334155;
     }
 
@@ -1329,30 +1526,31 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       background: #fafaf9;
       border: 1.2px solid #e7e5e4;
       border-left: 3.5px solid #78350f;
-      padding: 4px 6px;
-      margin-bottom: 5px;
+      padding: 3.5px 6px;
+      margin-bottom: 3px;
       font-family: 'Inter', sans-serif;
       box-sizing: border-box;
+      break-inside: avoid;
     }
     .hb-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       border-bottom: 1px solid #e7e5e4;
-      padding-bottom: 1.5px;
+      padding-bottom: 1px;
     }
     .hb-tag {
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 900;
       color: #78350f;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
     .hb-focus {
-      font-size: 5.4pt;
+      font-size: 6.2pt;
       font-weight: 700;
-      color: #a8a29e;
+      color: #78716c;
       text-transform: uppercase;
     }
     .hb-grid {
@@ -1361,14 +1559,14 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
       gap: 6px;
     }
     .hb-col {
-      font-size: 6.2pt;
+      font-size: 6.8pt;
       line-height: 1.25;
       color: #292524;
     }
     .hb-col strong {
       display: block;
       color: #451a03;
-      font-size: 6.0pt;
+      font-size: 6.6pt;
       margin-bottom: 1px;
     }
     .hb-col p {
@@ -1769,6 +1967,18 @@ async function renderTextbookPdf(targetKt = 'kt1') {
     'pdfs',
     `weimar_nazi_germany_textbook_${targetKt.toUpperCase()}_PUBLISHER.pdf`,
   );
+  const pdfPathLegacy = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    `weimar_nazi_germany_textbook_${targetKt.toUpperCase()}.pdf`,
+  );
+  const pdfPathFinalV17 = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    `weimar_nazi_germany_textbook_${targetKt.toUpperCase()}_FINAL_V17.pdf`,
+  );
 
   fs.writeFileSync(htmlPathUnit, htmlContent, 'utf8');
   console.log(`✅ Saved HTML: ${htmlPathUnit}`);
@@ -1876,8 +2086,24 @@ async function renderTextbookPdf(targetKt = 'kt1') {
   });
 
   fs.copyFileSync(pdfPathUnit, pdfPathPdfs);
+  fs.copyFileSync(pdfPathUnit, pdfPathLegacy);
+  fs.copyFileSync(pdfPathUnit, pdfPathFinalV17);
   console.log(`✅ Compiled Master PDF: ${pdfPathUnit}`);
-  console.log(`✅ Mirrored to Public PDFs: ${pdfPathPdfs}`);
+  console.log(`✅ Mirrored to Public PDFs:`);
+  console.log(`   - ${pdfPathPdfs}`);
+  console.log(`   - ${pdfPathLegacy}`);
+  console.log(`   - ${pdfPathFinalV17}`);
+
+  // Synchronize to Google Drive Department File if available
+  const driveDest = `G:\\My Drive\\AAMX\\Dep File\\02. GCSE (Years 10-11)\\Paper 3 - Weimar and Nazi Germany\\Weimar and Nazi Germany Master Textbook (${targetKt.toUpperCase()}).pdf`;
+  if (fs.existsSync(path.dirname(driveDest))) {
+    try {
+      fs.copyFileSync(pdfPathUnit, driveDest);
+      console.log(`✅ Synchronized directly to Google Drive Department File: ${driveDest}`);
+    } catch (e) {
+      console.warn(`  ⚠️ Could not copy to Drive: ${e.message}`);
+    }
+  }
 
   await browser.close();
 }
