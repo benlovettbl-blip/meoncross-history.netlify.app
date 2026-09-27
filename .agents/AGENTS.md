@@ -130,7 +130,8 @@ Whenever you need to add an image from Wikimedia Commons for a historical figure
 ## Edexcel GCSE Exam Specification: Feature Questions
 Whenever generating or evaluating Edexcel GCSE History exam questions specifically for Paper 1 (Medicine) or Early Elizabethan England, remember the question structure and format changes:
 1. **Paper 1 (Medicine):** The 'feature' questions appear **ONLY in Section A (The British Sector of the Western Front, 1914–18)**, structured as two separate 2-mark questions: Q1(a) 'Describe one feature of...' [2 marks] and Q1(b) 'Describe one feature of...' [2 marks]. Section B (the thematic study: Medieval to Modern) does NOT have feature questions (it consists of Q3 similarity/difference [4 marks], Q4 explain why [12 marks], and Q5/Q6 essay [16 marks]).
-2. **Early Elizabethan England (Paper 2):** 'Describe one feature of...' appears twice as two separate 2-mark questions (Q1(a) and Q1(b)).
+2. **Early Elizabethan England (Paper 2):** 'Describe one feature of...' appears twice as two separate 2-mark questions (Q1(a) [2m] and Q1(b) [2m]).
+3. **Paper 1 (Medicine) Western Front Follow-Up Question:** In Section A of Paper 1, question Q2(b) is ALWAYS the 4-mark follow-up question: 'How could you follow up Source X to find out more about...' [4 marks], structured across the 4 official Edexcel prompts (Detail in Source X, Question I would ask, Type of source I would use, How this would help me find out more). Never omit this follow-up question when generating Paper 1 assessment blueprints.
 Ensure all exam practice forms, UI templates, and generated assessments reflect this specification.
 
 ### Fallback for Hotlink-Protected Images
