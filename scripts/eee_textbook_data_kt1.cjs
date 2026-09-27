@@ -19,9 +19,9 @@ module.exports = function getKt1Data(helpers) {
       'Pearson Edexcel GCSE (9–1) History &bull; Paper 2 Option B4 (1HI0/B4) &bull; Key Topic 1 Master Textbook',
     enquiry:
       'How did an inexperienced, contested queen establish her royal authority, construct a religious compromise, and secure an isolated England between 1558 and 1569?',
-    coverImage: 'images/armada_portrait.jpg',
+    coverImage: 'images/elizabeth_coronation_robes.jpg',
     caption:
-      'Plate I: The Armada Portrait of Queen Elizabeth I (c. 1588), commemorating the defence of the realm and the triumph of the Elizabethan Protestant settlement.',
+      'Plate I: Queen Elizabeth I in Coronation Robes (c. 1559), enthroned in cloth of gold bearing the orb and sceptre, symbolising sovereign majesty and the restoration of royal independence.',
     specTopics: [
       {
         num: 1,

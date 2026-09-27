@@ -1,509 +1,418 @@
-// scripts/eee_textbook_data_kt3.cjs
-// Publisher-Grade Master Curriculum Content for Early Elizabethan England (1558-88)
-// Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88
-// Grounded 100% in Edexcel 9-1 Specification and Pearson Student Book
+/**
+ * eee_textbook_data_kt3.cjs
+ *
+ * Publisher-Grade Textbook Data Module for Early Elizabethan England (1558–1588)
+ * Key Topic 3: Elizabethan Society in the Age of Exploration, 1558–1588
+ *
+ * Grounded in the official Pearson Edexcel GCSE (9–1) History Specification (1HI0/B4)
+ * and extracted directly from the Pearson Student Book and Revision Guide.
+ */
 
-module.exports = {
-  unitId: 'eee',
-  keyTopicId: 'KT3',
-  keyTopicNumber: 3,
-  period: '1558–88',
-  title: 'Paper 2: Early Elizabethan England, 1558–88',
-  topicTitle: 'Key Topic 3: Elizabethan society in the Age of Exploration, 1558–88',
-  enquiryQuestion:
-    'How did expanding humanist education, the crisis of rural vagrancy, and audacious global voyages transform domestic society and project English power onto the world stage?',
-  coverImage: '/images/roanoke_colony.jpg',
-  coverCaption:
-    'Source A: Governor John White discovers the deserted settlement of Roanoke Island in August 1590, finding the single word ‘CROATOAN’ carved upon a wooden palisade post—the enduring enigma of the ‘Lost Colony’.',
+module.exports = function getKt3Data(helpers) {
+  const { getBase64Image } = helpers;
 
-  specMatrix: [
-    {
-      code: 'KT3.1',
-      title: 'Education and Leisure',
-      spec: 'Expansion of grammar & petty schools; University education; Elite & popular sports (hunting, football, bear-baiting); Rise of public theatre (Burbage, Globe).',
-    },
-    {
-      code: 'KT3.2',
-      title: 'The Problem of the Poor',
-      spec: 'Causes of poverty: population growth, enclosure, rack-renting & Antwerp cloth collapse; Deserving vs Idle Poor; 1572 & 1576 Poor Relief legislation.',
-    },
-    {
-      code: 'KT3.3',
-      title: 'Exploration & Voyages of Discovery',
-      spec: 'Motives for exploration & joint-stock trade; Navigational advances (astrolabes, Mercator map, galleons); Drake’s circumnavigation (1577–80).',
-    },
-    {
-      code: 'KT3.4',
-      title: 'Raleigh and Virginia',
-      spec: 'Walter Raleigh’s colonisation vision; 1584 reconnaissance; Failure of 1585 Roanoke colony (Lane); The 1587 ‘Lost Colony’ (White); Significance of early empire.',
-    },
-  ],
-
-  enquiries: [
-    // -------------------------------------------------------------
-    // ENQUIRY 3.1
-    // -------------------------------------------------------------
-    {
-      id: 'lesson_3_1',
-      number: '3.1',
-      title: 'Education and Leisure in Elizabethan England, 1558–88',
-      focus:
-        'How did Renaissance humanism reshape schooling and university education, and why did the emergence of the public theatre democratise popular culture?',
-      sideImage: '/images/swan_theatre.jpg',
-      sideImageCaption:
-        'Contemporary sketch of The Swan Theatre in Southwark (1596), illustrating the open-air thrust stage, tiered seating galleries, and the groundling pit.',
-      paragraphs: [
-        `During the reign of Elizabeth I, Renaissance humanist philosophy fundamentally transformed English attitudes toward education. Education was increasingly prized not merely for religious training, but as the essential vehicle for civic duty, social mobility, and effective state administration. Although no universal state schooling system existed, opportunities expanded significantly across the social spectrum. For young boys aged four to seven, 'petty schools' (often run in private homes by literate women or parish clerics) provided foundational instruction in reading, writing English, and basic arithmetic. Bright boys from merchant, yeoman, and gentry backgrounds then progressed to grammar schools, where 72 new institutions were founded under Elizabeth. The grammar school regimen was intensely demanding: pupils attended from 6:00 am to 5:30 pm six days a week, subjected to strict discipline and corporal punishment via the birch. The curriculum focused almost exclusively on classical languages: Latin grammar, Greek, rhetoric, and classical literature (Cicero, Seneca, Virgil), instilling intellectual rigor and Christian morality. Girls from wealthy noble families were educated privately at home by tutors in needlework, music, French, and estate management, while ordinary girls received minimal formal instruction.`,
-
-        `Higher education expanded concurrently to supply the Tudor state with trained lawyers, administrators, and clergymen. Oxford and Cambridge universities grew, with new colleges founded under royal patronage, including Jesus College, Oxford (1571), endowed specifically to educate Welsh Protestant scholars. At the same time, thousands of young gentlemen attended the Inns of Court in London to study English common law, preparing for service as members of Parliament or regional Justices of the Peace. Although literacy remained socially stratified—rising to approximately 30% of men and 10% of women in London, but remaining far lower in rural counties—the growth of schooling cultivated a thriving, ambitious 'middling sort' capable of critical thought and administrative responsibility.`,
-
-        `Leisure pursuits mirrored the rigid hierarchy of Elizabethan society while fostering new commercial entertainment. The nobility engaged in refined pastimes such as hunting deer, hawking, fencing, and real tennis. The lower orders engaged in boisterous folk football—often bloody contests between rival parishes with no referee, rules, or pitch boundaries—as well as brutal blood sports such as bear-baiting, bull-baiting, and cock-fighting. Specially constructed baiting amphitheatres in Southwark attracted thousands of spectators from all social classes, including Queen Elizabeth herself. The supreme cultural achievement was the rapid development of the secular public theatre. Previously, travelling troupes performed mystery plays in inn-yards, but Puritan authorities condemned them as breeding grounds for crime, plague transmission, and Catholic superstition. The 1572 Vagabonds Act required actors to obtain licenses from noble patrons. In response, permanent commercial playhouses were erected outside London’s city jurisdiction: James Burbage built *The Theatre* in 1576, followed by *The Curtain* (1577), *The Rose* (1587), and *The Globe* (1599). Featuring the brilliant plays of Christopher Marlowe and William Shakespeare, the theatre democratised entertainment: 'groundlings' paid one penny to stand in the open pit, while affluent citizens paid twopence for tiered gallery seats, bringing disparate social classes together into a shared national culture.`,
-      ],
-      keyFigures: [
-        {
-          name: 'William Shakespeare',
-          role: 'Playwright & Actor',
-          desc: 'Crafted masterpieces reflecting Tudor political order, human nature, and national identity; part-owner of the Globe Theatre.',
-        },
-        {
-          name: 'James Burbage',
-          role: 'Actor & Master Builder',
-          desc: 'Constructed London’s first permanent commercial playhouse, *The Theatre* (1576), establishing professional English drama.',
-        },
-        {
-          name: 'John Stockwood',
-          role: 'Puritan Cleric & Preacher',
-          desc: 'Preached fiercely against public theatres, warning that playhouses diverted Christians from divine worship into secular sin.',
-        },
-      ],
-      spotlight: {
-        title: 'The Architecture of the Elizabethan Playhouse',
-        desc: 'Built in polygonal timber frames holding up to 3,000 spectators, playhouses featured a raised thrust stage, a trapdoor (‘Hell’), and an overhanging painted canopy (‘The Heavens’) equipped with pulleys for dramatic descents of gods and apparitions.',
-      },
-      source: {
-        meta: 'SOURCE B • Primary Sermon: Puritan Opposition to Drama',
-        date: '1578',
-        title: 'John Stockwood’s Sermon at Paul’s Cross, London',
-        body: '‘...Will not a filthy play, with the blast of a trumpet, sooner call a thousand unto a theatrical show than the ringing of an hundred bells into the church to hear the word of God? The cause of plagues is sin, and the cause of sin are these public stage plays.’',
-        hingeQuestion:
-          'How does Stockwood’s moral condemnation of the playhouses illustrate the deep religious and civic anxiety that secular mass entertainment generated among Elizabethan authorities?',
-      },
-      vocab: [
-        {
-          term: 'Humanism',
-          def: 'Renaissance intellectual movement emphasising classical literature, logic, and human potential.',
-        },
-        {
-          term: 'Grammar School',
-          def: 'Secondary school providing fee-paying classical Latin education to boys from the gentry and middling sort.',
-        },
-        {
-          term: 'Groundlings',
-          def: 'Common spectators who paid one penny to stand in the uncovered pit surrounding the theatre stage.',
-        },
-        {
-          term: 'Inns of Court',
-          def: 'London legal institutions where young gentlemen studied English common law and governance.',
-        },
-      ],
-    },
-
-    // -------------------------------------------------------------
-    // ENQUIRY 3.2
-    // -------------------------------------------------------------
-    {
-      id: 'lesson_3_2',
-      number: '3.2',
-      title: 'The Problem of the Poor and Vagrancy, 1558–88',
-      focus:
-        'Why did rural pauperism reach unprecedented crisis levels under Elizabeth, and how did state legislation transition from brutal punishment to structured social welfare?',
-      sideImage: '/images/caveat_for_cursitors.png',
-      sideImageCaption:
-        'Title page of Thomas Harman’s A Caveat or Warning for Common Cursitors (1567), depicting a vagrant being whipped at the cart’s tail through the town.',
-      paragraphs: [
-        `Throughout the Elizabethan era, England experienced an alarming surge in poverty and vagrancy, driven by compounding economic pressures far beyond the control of individual citizens. England’s population grew by over 35%, soaring from 2.8 million in 1558 to over 4 million by 1603. Because agricultural productivity failed to keep pace with demographic expansion, food prices skyrocketed: grain prices doubled, triggering severe cost-of-living crises for ordinary labourers whose real wages fell by up to 50%. A succession of catastrophic bad harvests in the 1570s and 1580s caused widespread rural famine. Furthermore, Henry VIII’s earlier debasement of the coinage had sparked structural inflation, while the collapse of the European wool and cloth trade through Antwerp in the 1560s left thousands of English spinners, weavers, and clothiers without employment.`,
-
-        `These economic strains were exacerbated by the rapid growth of agrarian 'enclosure'. Landowners increasingly combined scattered medieval open-field strips into unified, fenced fields, converting traditional arable crop land into lucrative sheep pastures. Wool was far more profitable than cereal crops and required substantially less manual labour: a single shepherd and his dogs could oversee a flock of 2,000 sheep on acreage that had previously provided livelihoods for dozens of peasant tenant families. Enclosing common land deprived poor cottagers of essential grazing rights for their livestock, while landowners engaged in 'rack-renting'—drastically hiking rents to force customary peasant farmers off their land. Evicted families were cast adrift, wandering the countryside in search of subsistence as 'vagabonds', swelling the slums of London and major provincial towns.`,
-
-        `Tudor authorities viewed vagrancy not merely as an economic problem, but as an existential threat to public order and social hierarchy. Elizabethan society drew a rigid moral distinction between the 'Deserving' or 'Impotent Poor' (the elderly, sick, orphans, and disabled who were physically incapable of labour) and the 'Undeserving' or 'Idle Poor' (able-bodied vagrants and rogues who were viewed as lazy, deceitful, and prone to crime). Sensational pamphlets like Thomas Harman’s *A Caveat for Common Cursitors* (1567) terrified the public by claiming vagabonds belonged to organised criminal guilds of 'Counterfeit Cranks' (beggars pretending to have epilepsy) and 'Hookers' (thieves using poles to steal goods through open windows). Pioneer municipal schemes in Norwich, Ipswich, and London led Parliament to enact landmark national statutes. The **1572 Vagabonds Act** imposed severe corporal punishments on vagrants (whipped and bored through the ear with a hot iron for a first offence; executed as felons for a third offence) while mandating that local Justices of the Peace collect compulsory weekly poor rates to relieve the impotent. The **1576 Act for the Relief of the Poor** introduced rehabilitation: local authorities were ordered to provide raw materials (wool, hemp, flax) to put the able-bodied poor to work, and to establish 'Houses of Correction' (Bridewells) to punish those who refused employment. This established the permanent principle of state responsibility for poverty relief.`,
-      ],
-      keyFigures: [
-        {
-          name: 'Thomas Harman',
-          role: 'Magistrate & Pamphleteer',
-          desc: 'Author of *A Caveat for Common Cursitors* (1567); popularised the taxonomy of dishonest rogues, stoking anti-vagrant panic.',
-        },
-        {
-          name: 'William Cecil',
-          role: 'Chief Minister & Social Planner',
-          desc: 'Drafted economic legislation and supervised poor relief statutes, balancing severe social control with municipal welfare.',
-        },
-        {
-          name: 'Justice of the Peace',
-          role: 'Local Magistrate',
-          desc: 'Unpaid local gentry responsible for collecting poor rates, setting local wages, and punishing vagrants in the parish.',
-        },
-      ],
-      spotlight: {
-        title: 'Impotent vs. Idle: The Tudor Welfare Divide',
-        desc: 'The crucial shift in Elizabethan policy was recognising that unemployment was not solely moral failing but structural misfortune. While ‘impotent’ poor received parish pensions, the ‘idle’ poor were subjected to forced labour in Bridewell houses of correction.',
-      },
-      source: {
-        meta: 'SOURCE C • Statutory Statute: Penalties for Vagrancy',
-        date: '1572',
-        title: 'Extract from the 1572 Act for the Punishment of Vagabonds',
-        body: '‘...Any person declared a rogue or vagabond shall, upon conviction, be grievously whipped and burnt through the gristle of the right ear with an hot iron of the compass of an inch about, unless some honest person will take him into service for one whole year.’',
-        hingeQuestion:
-          'Why did the Elizabethan state simultaneously deploy brutal physical mutilation against vagrants while legally mandating municipal poor relief for the impotent?',
-      },
-      vocab: [
-        {
-          term: 'Enclosure',
-          def: 'Fencing in common land and open fields to create consolidated estates, often converting arable land to sheep pasture.',
-        },
-        {
-          term: 'Rack-renting',
-          def: 'Landlords aggressively increasing rents on agricultural tenants, forcing impoverished peasants off ancestral land.',
-        },
-        {
-          term: 'Impotent Poor',
-          def: 'Paupers physically incapable of work (the aged, sick, orphaned), deemed deserving of financial relief.',
-        },
-        {
-          term: 'House of Correction',
-          def: 'Workhouses (Bridewells) established under the 1576 Act to provide forced labour for the able-bodied idle.',
-        },
-      ],
-    },
-
-    // -------------------------------------------------------------
-    // ENQUIRY 3.3
-    // -------------------------------------------------------------
-    {
-      id: 'lesson_3_3',
-      number: '3.3',
-      title: 'Exploration and Voyages of Discovery, 1558–88',
-      focus:
-        'How did navigational innovations and commercial rivalry shatter Iberian dominance and inspire Drake’s historic circumnavigation of the globe?',
-      sideImage: '/images/sir_john_hawkins.JPG',
-      sideImageCaption:
-        'Sir John Hawkins, innovative naval commander and shipbuilder, who pioneered English triangular slave trade voyages and designed the agile race-built galleons.',
-      paragraphs: [
-        `Elizabethan voyages of exploration were driven by a convergence of commercial crisis, imperial rivalry, and navigational curiosity. The sudden closure of the lucrative Antwerp cloth market in the 1560s threatened England’s economic stability, forcing merchant adventurers to establish new global trade routes. To finance high-risk oceanic voyages, English investors pioneered chartered joint-stock companies, where capital was pooled and liability shared. These included the Muscovy Company (trading timber, furs, and hemp with Russia), the Eastland Company (securing Baltic naval stores), and the Levant Company (trading English wool for Mediterranean silks and spices). Explorers also sought the elusive 'North-West Passage'—a hypothetical northern sea route around North America to China and the Far East—championed by Martin Frobisher (1576–78) and John Davis. Furthermore, Protestant England was determined to challenge the maritime monopoly of Catholic Spain and Portugal, whose empires extracted vast treasures from the Americas under the Papal Treaty of Tordesillas.`,
-
-        `These daring voyages were enabled by revolutionary advances in maritime technology and cartography. Traditional navigational guesswork was replaced by astronomical science: navigators used the **astrolabe**, **quadrant**, and **cross-staff** to measure the precise angular elevation of the sun and the Pole Star, allowing them to calculate latitude at sea. Magnetic compasses became more reliable, while the log-and-line allowed crews to calculate their speed in knots. In 1569, Flemish cartographer Gerardus Mercator introduced the **Mercator projection map**, creating ocean charts with straight lines of latitude and longitude that enabled navigators to plot accurate compass bearings across vast ocean expanses. Concurrently, English shipbuilders pioneered the 'race-built galleon': longer, sleeker vessels with streamlined forecastles and lateen sails that could tack closer to the wind, carry heavier payloads, and withstand perilous Atlantic weather.`,
-
-        `The crowning achievement of Elizabethan exploration was Sir Francis Drake’s historic global circumnavigation between 1577 and 1580. In December 1577, Drake sailed from Plymouth with five ships, secretly backed by Elizabeth and Privy Councillors with a mission to plunder Spanish colonies along the Pacific coast of the Americas and seek potential territories for English colonisation. After enduring deadly mutiny and terrifying storms in the Strait of Magellan, four vessels were destroyed or returned to England, leaving only Drake’s flagship, the *Pelican* (renamed the *Golden Hind*). Drake sailed up the undefended Pacific coastline of Chile and Peru, sacking Spanish settlements and capturing the great treasure ship *Nuestra Señora de la Concepción* (the *Cacafuego*). In June 1579, Drake landed in northern California, claiming the territory for Elizabeth as *Nova Albion* ('New England'). He then sailed across the uncharted Pacific to the Moluccas (the Spice Islands), establishing a trade alliance with the Sultan of Ternate and loading his hull with six tons of precious cloves. Sailing across the Indian Ocean and around the Cape of Good Hope, Drake returned to Plymouth in September 1580 after a 36,000-mile voyage. He was the first Englishman to circumnavigate the earth. The voyage yielded £400,000 in treasure (delivering an astronomical 4,700% return to investors), shattered the myth of Spanish maritime invincibility, and established England as a formidable naval power.`,
-      ],
-      keyFigures: [
-        {
-          name: 'Sir Francis Drake',
-          role: 'Navigator & Privateer',
-          desc: 'Commander of the *Golden Hind*; first Englishman to circumnavigate the globe (1577–80), bringing home immense wealth and glory.',
-        },
-        {
-          name: 'Sir John Hawkins',
-          role: 'Naval Commander & Treasurer of the Navy',
-          desc: 'Pioneered early Atlantic slave voyages; redesigned the royal fleet with fast, heavily armed race-built galleons.',
-        },
-        {
-          name: 'Gerardus Mercator',
-          role: 'Cartographer & Geographer',
-          desc: 'Created the 1569 Mercator projection map, revolutionising maritime navigation by rendering constant compass bearings as straight lines.',
-        },
-      ],
-      spotlight: {
-        title: 'Nova Albion: The First English Claim in North America',
-        desc: 'In June 1579, Drake repaired the *Golden Hind* in modern-day California, erecting a brass plate claiming ‘Nova Albion’ for Queen Elizabeth. While never permanently settled, it demonstrated England’s emerging ambition to rival the Spanish Empire in the New World.',
-      },
-      source: {
-        meta: 'SOURCE D • Primary Chronicle: Drake’s Return to Plymouth',
-        date: '1580',
-        title: 'Account of Drake’s Welcome by Chronicler John Stow',
-        body: '‘...The Queen’s Majesty, well pleased with Drake’s profitable return and great voyage, went aboard his ship at Deptford, where she conferred upon him the honour of knighthood, causing his ship to be preserved as a monument to English valour and enterprise.’',
-        hingeQuestion:
-          'How did Drake’s claim of ‘Nova Albion’ and royal knighting at Deptford reflect England’s emerging geopolitical ambition to establish a Protestant global empire?',
-      },
-      vocab: [
-        {
-          term: 'Joint-Stock Company',
-          def: 'A commercial enterprise where investors pool capital, share profits, and limit individual financial liability.',
-        },
-        {
-          term: 'Astrolabe',
-          def: 'Navigational instrument used by mariners to calculate latitude by measuring the angle of the sun and stars.',
-        },
-        {
-          term: 'Mercator Projection',
-          def: 'Map projection representing lines of constant compass direction as straight lines, revolutionising ocean navigation.',
-        },
-        {
-          term: 'Nova Albion',
-          def: '‘New England’—the Californian territory claimed for Queen Elizabeth by Sir Francis Drake in June 1579.',
-        },
-      ],
-    },
-
-    // -------------------------------------------------------------
-    // ENQUIRY 3.4
-    // -------------------------------------------------------------
-    {
-      id: 'lesson_3_4',
-      number: '3.4',
-      title: 'Raleigh and the Colonisation of Virginia, 1584–90',
-      focus:
-        'Why did Walter Raleigh’s ambitious attempts to establish an English colony on Roanoke Island end in catastrophic failure and the mystery of the ‘Lost Colony’?',
-      sideImage: '/images/sir_walter_raleigh.jpg',
-      sideImageCaption:
-        'Sir Walter Raleigh, courtier, explorer, and author, who secured a royal patent from Elizabeth to finance and organise the colonisation of Virginia.',
-      paragraphs: [
-        `In the 1580s, English imperial ambitions crystallised around Sir Walter Raleigh, a dashing Devon courtier and royal favourite. Raleigh recognised that founding permanent colonies in North America would provide England with profound geopolitical and economic advantages: securing naval bases to launch privateering raids against Spanish treasure fleets, developing new export markets for English cloth, acquiring vital supplies of timber, tar, and hemp to free England from dependence on Baltic naval stores, and planting a Protestant empire to counterbalance Catholic Spain. In March 1584, Queen Elizabeth granted Raleigh a royal patent conferring exclusive rights to discover, settle, and govern any 'remote, heathen and barbarous lands' not possessed by Christian monarchs. Raleigh dispatched a reconnaissance voyage led by Philip Amadas and Arthur Barlowe in April 1584. They surveyed the Outer Banks of present-day North Carolina, finding fertile land, excellent timber, and friendly native inhabitants. Barlowe returned with two Algonquian Indians—Manteo and Wanchese—who learned English and helped Thomas Harriot compile a phonetic language guide. Delighted by Barlowe’s glowing reports, Raleigh named the territory 'Virginia' in honour of Elizabeth, the Virgin Queen, and was knighted by the monarch in 1585.`,
-
-        `In April 1585, Raleigh launched England’s first colonisation expedition: a fleet of seven ships carrying 108 male settlers under the naval command of Sir Richard Grenville, with Ralph Lane appointed governor. The settlement was established on Roanoke Island. However, the colony was crippled by catastrophic errors from the outset. Crucially, the expedition’s flagship, the *Tiger*, ran aground on a treacherous sandbar, flooding its hold and destroying nearly all the colonists’ seed grain and food provisions. The colonists themselves were poorly selected: predominantly wealthy 'gentlemen' who refused manual labor, and discharged mercenary soldiers accustomed to violence who lacked farming and hunting skills. Grenville departed for England to procure fresh supplies, leaving Lane in charge of an increasingly desperate outpost. Relations with the local Secotan tribe deteriorated rapidly when English soldiers burned an entire native village over an alleged stolen silver cup. When Chief Wingina recognised English dependence on native food supplies and planned to expel them, Lane launched a pre-emptive strike, assassinating Wingina. Facing imminent starvation and surrounded by hostile tribes, the colonists abandoned Roanoke in June 1586, taking passage home on Sir Francis Drake’s fleet, which arrived unexpectedly after raiding the Spanish Caribbean.`,
-
-        `Undeterred, Raleigh organised a second colonisation effort in 1587, led by artist John White. Crucially, this second venture was designed as a permanent agrarian community: it comprised 117 settlers, including 89 men, 17 women, and 11 children, who were promised 500 acres of land each. In August 1587, White’s daughter Eleanor gave birth to Virginia Dare, the first child born of English parents in North America. However, the settlers arrived too late in the agricultural season to plant crops, and native relations remained hostile following the murder of an English colonist. At the colonists’ desperate urging, Governor White returned to England in late 1587 to secure emergency provisions. Upon reaching London, White found England facing the impending Spanish Armada crisis; Elizabeth placed an immediate embargo on all ocean-going ships for national defence. Trapped in England, White was unable to sail for three agonizing years. When he finally returned to Roanoke in August 1590, the settlement was completely deserted: the palisade was intact, but houses had been dismantled, and the single word 'CROATOAN' was carved into a palisade post, alongside 'CRO' on a nearby tree. No Maltese cross (the pre-arranged distress signal) had been carved. Bad weather and mutinous sailors prevented White from searching Croatoan Island, forcing him to return home. The fate of the 117 settlers remains one of history’s greatest unsolved mysteries. Despite total operational collapse, the Roanoke voyages established vital precedents in funding, logistics, and indigenous relations that enabled the permanent founding of Jamestown in 1607.`,
-      ],
-      keyFigures: [
-        {
-          name: 'Sir Walter Raleigh',
-          role: 'Courtier & Colonisation Sponsor',
-          desc: 'Conceived and financed the Virginia expeditions; granted royal patent in 1584, though forbidden by Elizabeth from sailing himself.',
-        },
-        {
-          name: 'Ralph Lane',
-          role: 'Governor of 1585 Colony',
-          desc: 'Military officer whose heavy-handed brutality toward Chief Wingina provoked native warfare and led to Roanoke’s abandonment in 1586.',
-        },
-        {
-          name: 'John White',
-          role: 'Governor of 1587 Colony & Artist',
-          desc: 'Painted stunning watercolours of Native Americans; returned in 1590 to discover the colony deserted with the word ‘CROATOAN’.',
-        },
-      ],
-      spotlight: {
-        title: 'The Anatomy of Colonial Failure: Why Did Roanoke Collapse?',
-        desc: 'Roanoke failed due to five fatal factors: disastrous timing (arriving too late to plant crops), poor colonist composition (gentlemen refusing manual labour), loss of seed supplies when the *Tiger* grounded, heavy-handed violence alienating native tribes, and the 1588 Armada embargo stranding settlers without supplies for three years.',
-      },
-      source: {
-        meta: 'SOURCE E • Primary Chronicle: The Deserted Palisade',
-        date: 'August 1590',
-        title: 'Governor John White’s Journal upon Returning to Roanoke Island',
-        body: '‘...We found the houses taken down, and the place very strongly enclosed with a high palisade of great trees, very fort-like; and upon one of the chief trees, in fair capital letters, was graven CROATOAN without any cross or sign of distress...’',
-        hingeQuestion:
-          'Why did the operational necessity of national defence during the 1588 Armada directly seal the fate of the English settlers stranded at Roanoke Island?',
-      },
-      vocab: [
-        {
-          term: 'Royal Patent',
-          def: 'Official royal charter granting exclusive rights to explore, settle, and govern foreign territories.',
-        },
-        {
-          term: 'Outer Banks',
-          def: 'String of barrier islands off North Carolina where Roanoke Island provided a concealed privateer haven.',
-        },
-        {
-          term: 'Secotan Tribe',
-          def: 'Local Algonquian Native American tribe led by Chief Wingina, alienated by English military brutality.',
-        },
-        {
-          term: 'Croatoan',
-          def: 'Neighbouring island inhabited by friendly Native Americans; the solitary word carved at the deserted 1590 site.',
-        },
-      ],
-    },
-  ],
-
-  // -------------------------------------------------------------
-  // SYNTHESIS & EXAM MASTERCLASS (PAGES 10-11)
-  // -------------------------------------------------------------
-  examMasterclass: {
-    overview:
-      'Key Topic 3 examines domestic social transformation (humanist education, urban leisure, and rising poverty) alongside maritime expansion (Drake’s circumnavigation and Raleigh’s Roanoke colonies). In Edexcel Paper 2, Section B assesses feature descriptions (Q1 [4 marks]), causal explanation (Q2 [12 marks]), and sustained essay judgment (Q3 [16 marks]).',
-    q1: {
-      question: 'Describe two features of Elizabethan grammar schools. [4 marks]',
-      structure:
-        'Identify feature 1 + supporting precise factual detail. Identify feature 2 + supporting precise factual detail. Zero evaluation or comparison needed.',
-      modelAnswer:
-        'One feature of Elizabethan grammar schools was their rigorous classical curriculum. Pupils were taught Latin grammar, Greek, classical rhetoric, and works by Roman authors such as Cicero and Seneca, preparing boys for university, law, or public administration.\n\nA second feature was the strict regimen and harsh corporal punishment. The school day was exceptionally long, typically running from 6:00 am to 5:30 pm six days a week, and teachers made frequent use of the birch to punish academic errors or misbehaviour.',
-    },
-    q2: {
-      question:
-        'Explain why the problem of poverty and vagrancy increased during the reign of Elizabeth I. [12 marks]',
-      stimulus: ['Enclosure', 'Population growth'],
-      paragraphs: [
-        {
-          point: 'Rapid demographic expansion and inflation',
-          evidence:
-            'England’s population surged by over 35%, growing from 2.8 million in 1558 to over 4 million by 1603. Because agricultural output failed to keep pace, bread prices doubled, while wages fell in real terms by nearly 50%, forcing marginal families into destitution.',
-          explanation:
-            'This demographic pressure created widespread rural unemployment and food shortages, compounding poverty beyond personal control.',
-        },
-        {
-          point: 'Agrarian enclosure, rack-renting, and sheep farming',
-          evidence:
-            'Landowners increasingly enclosed open medieval fields and converted arable crop farming into sheep pastures. Sheep farming required far less manual labour than growing wheat—one shepherd could manage 2,000 sheep—while rack-renting forced customary tenants off their holdings.',
-          explanation:
-            'This evicted thousands of rural peasant families from ancestral lands, forcing them to migrate as vagabonds to seek urban charity.',
-        },
-        {
-          point: 'Collapse of the European cloth trade and catastrophic harvests',
-          evidence:
-            'The collapse of the Antwerp cloth trade in the 1560s threw thousands of domestic spinners and weavers out of work. Concurrently, a series of bad harvests in the 1570s and 1580s caused severe food crises and price spikes.',
-          explanation:
-            'The sudden loss of export markets combined with crop failures pushed previously self-sufficient labourers into absolute pauperism.',
-        },
-      ],
-    },
-    q3: {
-      question:
-        '‘The main reason for the failure of the Virginia colonies in the 1580s was poor relations with the Native Americans.’ How far do you agree? Explain your answer. [16 marks + 4 SPaG]',
-      stimulus: ['The role of Ralph Lane', 'Supplies and farming skills'],
-      verdictStructure:
-        'Agree (Lane’s brutality, burning villages, and killing Chief Wingina alienated the Secotan tribe who controlled food sources) vs Disagree (the fundamental cause was poor planning: the grounding of the Tiger destroying seed grain, aristocratic colonists refusing manual labour, and the 1588 Armada embargo stranding White in England for 3 years). Conclude that lack of food self-sufficiency forced reliance on natives, making conflict fatal, but structural planning failures were the root cause.',
-    },
-  },
-
-  // -------------------------------------------------------------
-  // BACK COVER (PAGE 12)
-  // -------------------------------------------------------------
-  backCover: {
-    knowledgeOrganiser: [
+  const coverConfig = {
+    ktId: 'KT3',
+    topicNumber: 3,
+    title: 'Elizabethan Society in the Age of Exploration, 1558–1588',
+    subtitle:
+      'Pearson Edexcel GCSE (9–1) History &bull; Paper 2 Option B4 (1HI0/B4) &bull; Key Topic 3 Master Textbook',
+    enquiry:
+      'How did expanding humanist education, the crisis of rural vagrancy, and audacious global voyages transform domestic society and project English power onto the world stage?',
+    coverImage: 'images/roanoke_colony.jpg',
+    caption:
+      'Plate I: Governor John White discovers the deserted settlement of Roanoke Island in August 1590, finding the single word ‘CROATOAN’ carved upon a wooden palisade post—the enduring enigma of the ‘Lost Colony’.',
+    specTopics: [
       {
-        date: '1567',
-        event:
-          'Thomas Harman publishes A Caveat for Common Cursitors, stoking anti-vagrancy panic.',
+        num: 1,
+        title: '1. Education and Leisure',
+        bullets: [
+          'Expansion of education: petty schools, grammar schools (Latin, Greek, rhetoric), university growth, and the Inns of Court.',
+          'Gender and class stratification: education of noble girls at home vs limited schooling for ordinary labourers.',
+          'Leisure pursuits: noble hunting and hawking, popular football and bear-baiting; the rise of purpose-built public theatres.',
+        ],
+        seq: 'Petty Schools &bull; Grammar School Latin &bull; Inns of Court &bull; 1576 The Theatre Built',
+        focus: 'Humanist Learning & Secular Theatre',
       },
       {
-        date: '1569',
-        event:
-          'Gerardus Mercator publishes his revolutionary conformal map projection for navigation.',
+        num: 2,
+        title: '2. The Problem of the Poor',
+        bullets: [
+          'Causes of poverty: population boom (2.8m to 4m), bad harvests, rising food prices, coin debasement, and Antwerp cloth collapse.',
+          'Agrarian change: enclosure of common land, rack-renting, and conversion from arable farming to sheep pasture.',
+          'Attitudes and legislation: Impotent vs Idle Poor; Thomas Harman’s Caveat; 1572 Vagabonds Act and 1576 Poor Relief Act.',
+        ],
+        seq: 'Population Boom &bull; Enclosure &bull; 1572 Ear Boring/Rates &bull; 1576 Bridewells',
+        focus: 'Agrarian Dislocation & State Welfare',
       },
       {
-        date: '1571',
-        event:
-          'Jesus College, Oxford founded under royal charter to educate Welsh Protestant scholars.',
+        num: 3,
+        title: '3. Exploration & Discovery',
+        bullets: [
+          'Commercial drivers: collapse of Antwerp trade, joint-stock companies (Muscovy, Levant), and search for the North-West Passage.',
+          'Navigational advances: magnetic compass, astrolabe, quadrant, 1569 Mercator projection map, and race-built galleons.',
+          'Drake’s global circumnavigation (1577–80): Pacific plunder, Cacafuego haul, claiming Nova Albion, and spice trade at Ternate.',
+        ],
+        seq: 'Joint-Stock Trade &bull; Mercator Map &bull; 1579 Cacafuego &bull; 1580 Circumnavigation',
+        focus: 'Scientific Navigation & Global Trade',
       },
       {
-        date: '1572',
-        event: 'Vagabonds Act: ear-boring for beggars; compulsory local poor rates established.',
-      },
-      {
-        date: '1576',
-        event: 'Act for Relief of Poor (Houses of Correction); James Burbage builds The Theatre.',
-      },
-      {
-        date: '1577–80',
-        event: 'Francis Drake circumnavigates the globe in the Golden Hind, claiming Nova Albion.',
-      },
-      {
-        date: 'Apr 1581',
-        event:
-          'Elizabeth knights Drake at Deptford; £400,000 Spanish treasure haul secures Crown debt.',
-      },
-      {
-        date: 'Mar 1584',
-        event: 'Walter Raleigh granted royal patent to explore and colonise North American lands.',
-      },
-      {
-        date: '1585',
-        event: 'First Roanoke colony established under Richard Grenville and Governor Ralph Lane.',
-      },
-      {
-        date: 'Jun 1586',
-        event:
-          'First colony collapses due to starvation and native conflict; settlers evacuated by Drake.',
-      },
-      {
-        date: '1587',
-        event: 'Second Roanoke colony founded by John White; birth of Virginia Dare.',
-      },
-      {
-        date: 'Aug 1590',
-        event:
-          'White returns after 3-year Armada delay; finds Roanoke deserted with ‘CROATOAN’ carved.',
+        num: 4,
+        title: '4. Raleigh & Virginia',
+        bullets: [
+          'Walter Raleigh’s colonial vision: royal patent (1584), trade benefits, bases against Spanish treasure, and 1584 reconnaissance.',
+          'The 1585 Roanoke colony: Ralph Lane, grounding of the Tiger, food shortages, conflict with Secotan tribe, and Wingina’s murder.',
+          'The 1587 ‘Lost Colony’: John White, families and Virginia Dare, delayed return due to 1588 Armada, and the ‘CROATOAN’ mystery.',
+        ],
+        seq: '1584 Patent &bull; 1585 Lane’s Colony &bull; 1587 White’s Settlement &bull; 1590 Croatoan',
+        focus: 'Early Empire & Strategic Foundations',
       },
     ],
-    vocabulary: [
+  };
+
+  const EEE_COMPONENT_BANK = {
+    // Page 3: KT 3.1 (Education and Leisure)
+    p3: {
+      keyFigure: {
+        name: 'James Burbage',
+        lifespan: '1531–1597',
+        role: 'Actor, Joiner & Master Builder of *The Theatre* (1576)',
+        significance:
+          "Pioneer of the professional English commercial theatre. He built London's first purpose-built public playhouse in Shoreditch in 1576, establishing the physical foundation for the golden age of Elizabethan drama.",
+        actions: [
+          "Secured patronage under the Earl of Leicester's Men to protect his acting company from anti-vagrant licensing laws.",
+          "Constructed *The Theatre* outside the City of London's jurisdiction in 1576, bypassing Puritan civic bans on drama.",
+          'Dismantled *The Theatre* in 1598, using its oak timbers to construct the world-famous *Globe Theatre* on Bankside.',
+        ],
+        image: getBase64Image('images/theatre.jpg') || getBase64Image('images/swan_theatre.jpg'),
+      },
+      conceptSpotlight: `
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">CORE STRATEGIC MECHANISM</span>
+          <span class="csb-category">POPULAR CULTURE &bull; 1576–1599</span>
+        </div>
+        <h4 class="csb-title">The Architecture of the Elizabethan Playhouse</h4>
+        <div class="csb-body">
+          Built in polygonal open-air timber frames holding up to 3,000 spectators, playhouses democratized English culture across classes:
+          <ul style="margin: 3px 0 3px 14px; padding: 0; font-size: 7.1pt; line-height: 1.3;">
+            <li><strong>Cross-Class Assembly:</strong> 'Groundlings' paid one penny to stand in the uncovered central pit, while affluent merchants and nobles paid twopence or threepence for tiered, roofed gallery seats.</li>
+            <li><strong>Staging &amp; Symbolism:</strong> A large thrust stage featured a trapdoor ('Hell') for apparitions, a rear discovery space, and a painted roof canopy ('The Heavens') equipped with pulleys for descending gods.</li>
+            <li><strong>Puritan Civic Anxiety:</strong> London's Puritan magistrates condemned playhouses as hotbeds of sin, crime, Catholic allegory, and plague transmission, forcing theatres into suburban liberties like Southwark.</li>
+          </ul>
+        </div>
+        <div class="csb-takeaway">
+          <strong>Strategic Legacy:</strong> The theatre created a shared secular national consciousness, celebrating Tudor political order while reflecting the anxieties and aspirations of an expanding empire.
+        </div>
+      </div>
+      `,
+      bottomEnquiry: {
+        q1: 'State two subjects that dominated the academic curriculum in Elizabethan grammar schools.',
+        q2: 'Explain why Puritan civic authorities in London strongly opposed public theatrical performances.',
+        q3: '‘The rise of the public theatre was the most significant cultural development in Elizabethan England.’ How far do you agree?',
+      },
+    },
+
+    // Page 5: KT 3.2 (The Problem of the Poor)
+    p5: {
+      keyFigure: {
+        name: 'Thomas Harman',
+        lifespan: 'c. 1510–1572',
+        role: 'Kent Magistrate & Social Pamphleteer',
+        significance:
+          'Author of the sensational 1567 pamphlet *A Caveat or Warning for Common Cursitors*. His vivid taxonomy of dishonest rogues inflamed Tudor public panic over vagrancy and influenced statutory poor relief legislation.',
+        actions: [
+          "Interrogated dozens of vagrants passing through his Kent estate to document their slang ('canting') and criminal tricks.",
+          "Categorised beggars into 23 distinct types, including 'Counterfeit Cranks' (fake epileptics) and 'Hookers' (thieves).",
+          "Dedicated his work to the Countess of Shrewsbury, urging magistrates to adopt severe corporal punishment for the 'idle'.",
+        ],
+        image: getBase64Image('images/caveat_for_cursitors.png'),
+      },
+      conceptSpotlight: `
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">CORE STRATEGIC MECHANISM</span>
+          <span class="csb-category">SOCIAL LEGISLATION &bull; 1572–76</span>
+        </div>
+        <h4 class="csb-title">Impotent vs. Idle: The Tudor Welfare Divide</h4>
+        <div class="csb-body">
+          The decisive evolution in Elizabethan social policy was distinguishing misfortune from moral deviance:
+          <ul style="margin: 3px 0 3px 14px; padding: 0; font-size: 7.1pt; line-height: 1.3;">
+            <li><strong>The Impotent (Deserving) Poor:</strong> Those physically unable to work (the aged, sick, lame, and orphans) were granted parish licenses to beg and regular financial relief funded by mandatory local rates.</li>
+            <li><strong>The Idle (Undeserving) Poor:</strong> Able-bodied vagrants who refused work were viewed as dangerous criminals, subject to whipping, ear boring (1572 Act), and execution for repeat offences.</li>
+            <li><strong>Rehabilitation &amp; Work:</strong> The 1576 Act ordered towns to stockpile wool, hemp, and flax to put the able-bodied to work, establishing 'Houses of Correction' (Bridewells) to discipline the recalcitrant.</li>
+          </ul>
+        </div>
+        <div class="csb-takeaway">
+          <strong>Strategic Legacy:</strong> The Acts of 1572 and 1576 established the enduring constitutional principle that the secular state was legally responsible for administering nationwide poor relief.
+        </div>
+      </div>
+      `,
+      bottomEnquiry: {
+        q1: 'Identify two corporal punishments inflicted on vagrants under the 1572 Vagabonds Act.',
+        q2: 'Explain why agricultural enclosure caused an increase in rural vagrancy between 1558 and 1588.',
+        q3: '‘Population growth was the main cause of rising poverty in Elizabethan England.’ How far do you agree?',
+      },
+    },
+
+    // Page 7: KT 3.3 (Exploration and Discovery)
+    p7: {
+      keyFigure: {
+        name: 'Sir John Hawkins',
+        lifespan: '1532–1595',
+        role: 'Naval Commander, Shipbuilder & Treasurer of the Navy',
+        significance:
+          "Pioneered early transatlantic triangular trade voyages and completely rebuilt the royal navy as Treasurer from 1577. His innovative 'race-built' galleons provided England with the naval agility required to defeat the Spanish Armada.",
+        actions: [
+          'Organised three commercial voyages to West Africa and the Caribbean in the 1560s, trading goods for enslaved Africans.',
+          'Survived the Spanish ambush at San Juan de Ulúa (1568), returning to England committed to modernising naval warfare.',
+          'Redesigned English royal warships with lowered forecastles, longer keels, and four-wheeled truck-mounted culverin batteries.',
+        ],
+        image: getBase64Image('images/sir_john_hawkins.JPG'),
+      },
+      conceptSpotlight: `
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">CORE STRATEGIC MECHANISM</span>
+          <span class="csb-category">IMPERIAL EXPANSION &bull; 1579</span>
+        </div>
+        <h4 class="csb-title">Nova Albion: The First English Claim in North America</h4>
+        <div class="csb-body">
+          In June 1579, during his global circumnavigation, Francis Drake sailed the *Golden Hind* onto the coast of modern-day California:
+          <ul style="margin: 3px 0 3px 14px; padding: 0; font-size: 7.1pt; line-height: 1.3;">
+            <li><strong>Sovereignty Proclaimed:</strong> Drake beached his ship near Point Reyes to caulk leaking seams, met the local Miwok people, and claimed the vast territory for Queen Elizabeth, naming it *Nova Albion* ('New England').</li>
+            <li><strong>The Brass Plate:</strong> Drake nailed a brass plate to a wooden post inscribed with the date, Elizabeth's name, and a silver sixpence displaying the Queen's portrait as formal legal notice of English possession.</li>
+            <li><strong>Challenging the Papacy:</strong> By claiming land bordering the Pacific, Drake directly rejected the 1494 Papal Bull *Inter Caetera* granting the entire Americas to Spain and Portugal.</li>
+          </ul>
+        </div>
+        <div class="csb-takeaway">
+          <strong>Strategic Legacy:</strong> Nova Albion established the ideological precedent that Protestant England had a divine right to settle North American lands unoccupied by European Christian princes.
+        </div>
+      </div>
+      `,
+      bottomEnquiry: {
+        q1: 'Describe one navigational instrument that helped Elizabethan sailors calculate latitude at sea.',
+        q2: 'Explain why English merchants established joint-stock companies in the 1560s and 1570s.',
+        q3: '‘Francis Drake’s global circumnavigation was motivated more by privateering plunder than geographical exploration.’ How far do you agree?',
+      },
+    },
+
+    // Page 9: KT 3.4 (Raleigh and Virginia)
+    p9: {
+      keyFigure: {
+        name: 'Sir Walter Raleigh',
+        lifespan: '1554–1618',
+        role: 'Courtier, Explorer, Author & Colonisation Sponsor',
+        significance:
+          'Visionary sponsor of English colonisation in North America. Granted a royal patent by Elizabeth in 1584, he planned and financed the pioneering expeditions to Roanoke Island, popularising tobacco and the concept of an English overseas empire.',
+        actions: [
+          'Secured a six-year royal patent in 1584 granting exclusive rights to settle lands in North America not held by Christians.',
+          "Financed the 1584 reconnaissance voyage, naming the territory 'Virginia' in tribute to Elizabeth, the Virgin Queen.",
+          'Organised the 1585 military outpost under Ralph Lane and the 1587 permanent family settlement under Governor John White.',
+        ],
+        image: getBase64Image('images/sir_walter_raleigh.jpg'),
+      },
+      conceptSpotlight: `
+      <div class="concept-spotlight-box">
+        <div class="csb-header">
+          <span class="csb-tag">CORE STRATEGIC MECHANISM</span>
+          <span class="csb-category">COLONIAL FAILURE &bull; 1585–1590</span>
+        </div>
+        <h4 class="csb-title">The Logistical Anatomy of the Roanoke Failure</h4>
+        <div class="csb-body">
+          The collapse of Raleigh's colonial ventures on Roanoke Island resulted from five compounding structural errors:
+          <ul style="margin: 3px 0 3px 14px; padding: 0; font-size: 7.1pt; line-height: 1.3;">
+            <li><strong>Loss of Supplies:</strong> The flagship *Tiger* ran aground on a sandbar in 1585, flooding the hold and destroying virtually all the colonists' seed grain and food provisions.</li>
+            <li><strong>Inappropriate Personnel:</strong> The 1585 expedition comprised wealthy gentlemen who refused manual labor and discharged soldiers who used violence instead of farming or fishing.</li>
+            <li><strong>Indigenous Hostility:</strong> Ralph Lane burned an entire Secotan village over a stolen silver cup and assassinated Chief Wingina, destroying all local food cooperation.</li>
+            <li><strong>Armada Interruption:</strong> The 1587 settlement under John White was starved of relief supplies for three years because Elizabeth banned all ocean-going ships for defence against the Armada.</li>
+          </ul>
+        </div>
+        <div class="csb-takeaway">
+          <strong>Strategic Legacy:</strong> Despite total operational collapse, Roanoke provided indispensable lessons in funding, diplomacy, and logistics that ensured the successful founding of Jamestown in 1607.
+        </div>
+      </div>
+      `,
+      bottomEnquiry: {
+        q1: 'Name the English flagship whose grounding destroyed the 1585 colonists’ food supplies on Roanoke Island.',
+        q2: 'Explain why Governor John White was unable to return to Roanoke Island with supplies until 1590.',
+        q3: '‘Poor leadership was the main reason for the failure of the Virginia colonies in the 1580s.’ How far do you agree?',
+      },
+    },
+  };
+
+  const leftSources = {
+    // Page 2: KT 3.1 (Education and Leisure)
+    p2: {
+      sourceA: {
+        type: 'PURITAN SERMON',
+        date: '1578',
+        title: 'John Stockwood’s Sermon at Paul’s Cross, London',
+        image: getBase64Image('images/swan_theatre.jpg') || getBase64Image('images/theatre.jpg'),
+        context:
+          'Delivered by prominent Puritan preacher John Stockwood, denouncing public playhouses as sinks of moral corruption and arguing that theatrical performances provoked God into punishing London with bubonic plague.',
+        hingeQuestion:
+          'How does Stockwood’s sermon illustrate why London civic and religious authorities viewed secular public theatre as an intolerable threat to public order and Christian morality?',
+      },
+      sourceB: {
+        type: 'SCHOOL REGULATIONS',
+        date: 'c. 1560',
+        title: 'Statutes of an Elizabethan Grammar School',
+        image: null,
+        context:
+          'Statutory rules prescribing the daily routine at a grammar school: lessons starting at 6:00 am, mandatory spoken Latin conversation among pupils, daily religious prayers, and strict corporal punishment via the birch rod.',
+        hingeQuestion:
+          'Why did Elizabethan grammar schools prioritise classical Latin rhetoric and severe corporal discipline over practical commercial or vocational instruction?',
+      },
+    },
+
+    // Page 4: KT 3.2 (The Problem of the Poor)
+    p4: {
+      sourceA: {
+        type: 'CONTEMPORARY PAMPHLET',
+        date: '1567',
+        title: 'Extract from Thomas Harman’s *A Caveat for Common Cursitors*',
+        image: getBase64Image('images/caveat_for_cursitors.png'),
+        context:
+          'From Harman’s wildly popular pamphlet detailing the tricks of vagabonds, warning honest citizens against ‘Counterfeit Cranks’ who rubbed soap into their mouths to produce foam and feign epileptic fits to extract charitable alms.',
+        hingeQuestion:
+          'How does Harman’s sensational account reveal why the Elizabethan landed gentry viewed roaming vagabonds not as victims of poverty, but as an organised criminal conspiracy?',
+      },
+      sourceB: {
+        type: 'STATUTORY LEGISLATION',
+        date: '1572',
+        title: 'Extract from the 1572 Act for the Punishment of Vagabonds',
+        image: null,
+        context:
+          'The landmark statute establishing severe corporal punishment for rogues and vagrants (whipped and bored through the gristle of the right ear with a hot iron), while legally obliging local Justices of the Peace to collect compulsory weekly poor rates.',
+        hingeQuestion:
+          'Why did the Elizabethan state simultaneously deploy brutal physical mutilation against vagrants while establishing the principle of compulsory public taxation to relieve the impotent poor?',
+      },
+    },
+
+    // Page 6: KT 3.3 (Exploration and Discovery)
+    p6: {
+      sourceA: {
+        type: 'NAVIGATIONAL TREATISE',
+        date: '1569',
+        title: 'Gerardus Mercator’s Introduction to his World Map',
+        image: null,
+        context:
+          'Flemish cartographer Gerardus Mercator’s explanation of his groundbreaking projection, which rendered lines of latitude and longitude at right angles so that straight lines on the chart represented lines of constant compass bearing.',
+        hingeQuestion:
+          'How did Mercator’s projection map transform ocean navigation from perilous guesswork into an accurate, predictable mathematical science for Elizabethan mariners?',
+      },
+      sourceB: {
+        type: 'CONTEMPORARY CHRONICLE',
+        date: 'April 1581',
+        title: 'Account of Drake’s Knighting by Chronicler John Stow',
+        image: null,
+        context:
+          'Description of Queen Elizabeth boarding the Golden Hind at Deptford on 4 April 1581 to dine with Francis Drake and confer upon him the honour of knighthood, ordering his ship to be preserved as a national monument to English naval valour.',
+        hingeQuestion:
+          'Why was Elizabeth’s public knighting of Drake aboard the Golden Hind viewed across Europe as an open declaration of England’s ambition to become an oceanic superpower?',
+      },
+    },
+
+    // Page 8: KT 3.4 (Raleigh and Virginia)
+    p8: {
+      sourceA: {
+        type: 'EXPLORATION REPORT',
+        date: '1584',
+        title: 'Arthur Barlowe’s Reconnaissance Report to Sir Walter Raleigh',
+        image: null,
+        context:
+          'Report submitted by Captain Arthur Barlowe following his survey of the Outer Banks of North Carolina, describing the soil as the most plentiful in the world and the indigenous Secotan people as gentle, loving, and faithful.',
+        hingeQuestion:
+          'How did Barlowe’s glowing, romanticized account of North America contribute directly to the disastrous under-preparation and subsequent collapse of the 1585 Roanoke colony?',
+      },
+      sourceB: {
+        type: 'EXPEDITION JOURNAL',
+        date: '17 August 1590',
+        title: 'Governor John White’s Journal on Returning to Roanoke Island',
+        image: null,
+        context:
+          'John White’s eyewitness record of walking through the deserted Roanoke settlement in 1590, finding the houses dismantled, rusty iron cannon lying about, and the single word ‘CROATOAN’ carved into a wooden palisade post without a cross of distress.',
+        hingeQuestion:
+          'What does the absence of an engraved cross of distress alongside the word ‘CROATOAN’ suggest about the circumstances under which the 117 English colonists abandoned their settlement?',
+      },
+    },
+  };
+
+  const leftVocab = {
+    p2: [
       {
         term: 'Humanism',
-        def: 'Renaissance philosophy prioritising classical learning, logic, and civic service.',
+        def: 'Renaissance intellectual movement emphasising classical literature, logic, and human potential.',
       },
       {
         term: 'Grammar School',
-        def: 'Fee-paying school teaching Latin grammar and rhetoric to boys aged 7–14.',
+        def: 'Fee-paying secondary schools providing classical Latin, Greek, and rhetoric to boys of the middling sort.',
       },
       {
         term: 'Groundlings',
-        def: 'Common spectators who paid one penny to stand in the uncovered theatre pit.',
+        def: 'Common theatregoers who paid one penny to stand in the open pit surrounding the thrust stage.',
       },
       {
+        term: 'Inns of Court',
+        def: 'Four London legal societies where young gentlemen studied English common law and statecraft.',
+      },
+    ],
+    p4: [
+      {
         term: 'Enclosure',
-        def: 'Consolidating open-field strips into hedged fields, replacing arable crops with sheep.',
+        def: 'Fencing off open communal fields and wastes, converting arable farming into lucrative sheep pasture.',
       },
       {
         term: 'Rack-renting',
-        def: 'Drastic rent increases by landlords that evicted customary peasant tenants.',
+        def: 'Landlords aggressively hiking rents on peasant tenants, forcing impoverished families into vagrancy.',
       },
       {
         term: 'Impotent Poor',
-        def: 'Paupers unable to work due to age, illness, or disability; entitled to parish relief.',
+        def: 'Paupers physically incapable of work (the aged, sick, lame, and orphans), deemed deserving of relief.',
       },
       {
         term: 'House of Correction',
-        def: 'Workhouses (Bridewells) set up to provide forced labour for able-bodied vagrants.',
+        def: 'Workhouses (Bridewells) established under the 1576 Act to provide forced labour for the able-bodied idle.',
       },
+    ],
+    p6: [
       {
         term: 'Joint-Stock Company',
-        def: 'Business enterprise where investors pool capital and share oceanic trading risks.',
+        def: 'Commercial enterprise where investors pool capital, share risks, and receive dividends from trade.',
       },
       {
         term: 'Astrolabe',
-        def: 'Navigational tool calculating latitude by measuring celestial angular height.',
+        def: 'Navigational brass instrument used by mariners to calculate latitude by measuring the angle of stars.',
       },
       {
         term: 'Mercator Projection',
-        def: 'Map with straight lines of longitude and latitude, aiding ocean navigation.',
+        def: 'Map projection representing constant compass bearings as straight lines, revolutionising ocean voyages.',
       },
       {
         term: 'Nova Albion',
-        def: 'Californian territory claimed for Queen Elizabeth by Francis Drake in June 1579.',
+        def: '‘New England’—the Californian territory claimed for Queen Elizabeth by Sir Francis Drake in June 1579.',
+      },
+    ],
+    p8: [
+      {
+        term: 'Royal Patent',
+        def: 'A formal royal charter granting an individual exclusive legal rights to explore, govern, and trade in a territory.',
+      },
+      {
+        term: 'Secotan Tribe',
+        def: 'Algonquian-speaking Native Americans inhabiting the Roanoke region, initially friendly but alienated by English brutality.',
       },
       {
         term: 'Lost Colony',
-        def: 'The 1587 Roanoke settlement found deserted in 1590 with the word ‘CROATOAN’.',
+        def: 'The 1587 settlement of 117 English men, women, and children that vanished mysteriously from Roanoke Island by 1590.',
+      },
+      {
+        term: 'Cash Crop',
+        def: 'Agricultural produce grown exclusively for commercial sale and export profit, notably Virginia tobacco.',
       },
     ],
-    qrCards: [
-      {
-        code: 'Q1',
-        title: 'Elizabethan Education & Leisure',
-        desc: 'Revise grammar schools, petty schools, humanist curricula, and the rise of playhouses.',
-      },
-      {
-        code: 'Q2',
-        title: 'The Problem of the Poor',
-        desc: 'Master causes of poverty (population, enclosure), Harman’s rogues, and 1572/1576 Acts.',
-      },
-      {
-        code: 'Q3',
-        title: 'Voyages & Drake’s Circumnavigation',
-        desc: 'Test knowledge on joint-stock companies, astrolabes, Mercator maps, and the Golden Hind.',
-      },
-      {
-        code: 'Q4',
-        title: 'Raleigh & the Roanoke Colonies',
-        desc: 'Revise Raleigh’s patent, Lane’s 1585 failure, White’s 1587 Lost Colony, and long-term impact.',
-      },
-    ],
-    checklist: [
-      'I can explain how Renaissance humanism influenced the expansion of grammar schools and universities.',
-      'I can describe popular Elizabethan sports and explain why public theatres emerged after 1576.',
-      'I can evaluate the economic causes of poverty: population growth, inflation, enclosure, and cloth collapse.',
-      'I can distinguish between the Impotent Poor and Idle Poor and explain the 1572 and 1576 Poor Laws.',
-      'I can assess the technological breakthroughs in navigation (astrolabe, compass, Mercator map, galleons).',
-      'I can explain the significance of Sir Francis Drake’s circumnavigation (1577–80) for England and Spain.',
-      'I can explain why Walter Raleigh organised the colonisation of Virginia and the 1584 reconnaissance.',
-      'I can evaluate why both the 1585 and 1587 Roanoke colonies failed, leading to the ‘Lost Colony’.',
-    ],
-  },
+  };
+
+  return { coverConfig, componentBank: EEE_COMPONENT_BANK, leftSources, leftVocab };
 };
