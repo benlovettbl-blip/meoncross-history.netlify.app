@@ -33,6 +33,8 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
+const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -2246,38 +2248,31 @@ async function runKT3() {
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: 'networkidle0' });
 
-  // Page Height & Overflow Audit
-  const audit = await page.evaluate(() => {
-    const pages = document.querySelectorAll('.textbook-page');
-    const results = [];
-    pages.forEach((p, idx) => {
-      const pageNum = idx + 1;
-      const scrollH = p.scrollHeight;
-      const clientH = p.clientHeight;
-      const overflow = scrollH > clientH + 2;
-      results.push({ pageNum, scrollH, clientH, overflow });
-    });
-    return results;
-  });
-
-  console.log('\n📊 Page Height & Overflow Audit (Target: 12 Pages, Max 297mm):');
-  let hasOverflow = false;
-  audit.forEach((r) => {
-    const status = r.overflow
-      ? `⚠️ OVERFLOW (+${r.scrollH - r.clientH}px)`
-      : '✅ OPTIMAL (0px overflow)';
+  // 1. Run Automated In-Memory Layout & Typographical Balancing Engine
+  console.log('⚡ Running Automated Typographical & Layout Balancer...');
+  const calibrationResults = await autoCalibrateTextbook(page);
+  if (calibrationResults && calibrationResults.length > 0) {
     console.log(
-      `   Page ${r.pageNum.toString().padStart(2, ' ')}: ${r.scrollH}px / ${r.clientH}px | ${status}`,
+      `   ✅ Auto-Calibrator resolved ${calibrationResults.length} potential layout/overflow issues in memory.`,
     );
-    if (r.overflow) hasOverflow = true;
+  }
+
+  // 2. Comprehensive Space Budget & Clutter Audit
+  const auditResults = await auditPageBudget(page, {
+    pageSelector: '.textbook-page, .page, .a4-page',
+    maxPageHeightPx: 1123,
+    underflowThresholdPx: 40,
+    minUtilizationPct: 85,
+    maxGapAboveFooterPx: 25,
+    maxInterTaskGapPx: 35,
   });
 
-  if (hasOverflow) {
-    console.warn(
-      '\n⚠️ WARNING: Detected page overflow! Adjusting typography or image heights required.',
-    );
+  printSpaceAuditReport(auditResults, 'eee_textbook_KT3_PUBLISHER.html');
+
+  if (auditResults.hasErrors) {
+    console.warn('⚠️ Warning: Some layout tolerances exceeded; review audit report above.');
   } else {
-    console.log('\n🎉 AUDIT PASSED: Perfect 0px overflow across all 12 pages in A4!');
+    console.log('🎉 AUDIT PASSED: 100% clean across all 12 pages in A4!');
   }
 
   await page.pdf({

@@ -10,6 +10,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
+const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const dataPath = path.join(ROOT_DIR, 'units', 'weimar_nazi_germany', 'data.js');
@@ -2191,6 +2192,14 @@ async function renderTextbookPdf(targetKt = 'kt1') {
   } else {
     console.log(
       `  ✅ Pre-Flight Height Check Passed: All containers occupy >= 85% vertical budget.`,
+    );
+  }
+
+  // 1.5. Automated Typographical & Layout Balancer
+  const calibrationResults = await autoCalibrateTextbook(page);
+  if (calibrationResults && calibrationResults.length > 0) {
+    console.log(
+      `  ⚡ Auto-Calibrator resolved ${calibrationResults.length} potential layout/overflow issues in memory.`,
     );
   }
 
