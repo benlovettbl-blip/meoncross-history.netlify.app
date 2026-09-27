@@ -24,29 +24,29 @@ module.exports = function renderPage4(assets) {
 
       <!-- 3 Lowry Brothers Photos -->
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        <div class="photo-card" style="padding: 6px;">
-          <img src="${assets.lowryWilliam}" alt="Lieut. William Lowry" style="height: 135px; object-fit: contain; background: #ffffff;">
-          <div style="font-weight: 800; font-size: 8.5pt; color: #1e3a8a; margin-top: 3px;">Lieut. William Lowry</div>
-          <div style="font-size: 7.6pt; color: #b45309; font-weight: 700;">8th Gurkha Rifles (Age 25)</div>
-          <div style="font-size: 7.4pt; color: #475569; line-height: 1.25; margin-top: 2px;">
+        <div class="photo-card" style="padding: 5px;">
+          <img src="${assets.lowryWilliam}" alt="Lieut. William Lowry" style="height: 122px; object-fit: contain; background: #ffffff;">
+          <div style="font-weight: 800; font-size: 9.0pt; color: #1e3a8a; margin-top: 3px;">Lieut. William Lowry</div>
+          <div style="font-size: 8.2pt; color: #b45309; font-weight: 700;">8th Gurkha Rifles (Age 25)</div>
+          <div style="font-size: 8.0pt; color: #475569; line-height: 1.28; margin-top: 2px;">
             Killed 4 June 1915, Gallipoli charge up Gully Ravine. Helles Memorial.
           </div>
         </div>
 
-        <div class="photo-card" style="padding: 6px;">
-          <img src="${assets.lowryCyril}" alt="Capt. Cyril Lowry" style="height: 135px; object-fit: contain; background: #ffffff;">
-          <div style="font-weight: 800; font-size: 8.5pt; color: #1e3a8a; margin-top: 3px;">Capt. Cyril Lowry</div>
-          <div style="font-size: 7.6pt; color: #b45309; font-weight: 700;">2nd West Yorks (Age 20)</div>
-          <div style="font-size: 7.4pt; color: #475569; line-height: 1.25; margin-top: 2px;">
+        <div class="photo-card" style="padding: 5px;">
+          <img src="${assets.lowryCyril}" alt="Capt. Cyril Lowry" style="height: 122px; object-fit: contain; background: #ffffff;">
+          <div style="font-weight: 800; font-size: 9.0pt; color: #1e3a8a; margin-top: 3px;">Capt. Cyril Lowry</div>
+          <div style="font-size: 8.2pt; color: #b45309; font-weight: 700;">2nd West Yorks (Age 20)</div>
+          <div style="font-size: 8.0pt; color: #475569; line-height: 1.28; margin-top: 2px;">
             Killed 25 Mar 1918, Somme counter-attack in front of Eric. Pozi&egrave;res Memorial.
           </div>
         </div>
 
-        <div class="photo-card" style="padding: 6px;">
-          <img src="${assets.lowryEric}" alt="Lt. Col. Eric Lowry" style="height: 135px; object-fit: contain; background: #ffffff;">
-          <div style="font-weight: 800; font-size: 8.5pt; color: #1e3a8a; margin-top: 3px;">Lt. Col. Eric Lowry DSO MC</div>
-          <div style="font-size: 7.6pt; color: #b45309; font-weight: 700;">2nd West Yorks (Age 25)</div>
-          <div style="font-size: 7.4pt; color: #475569; line-height: 1.25; margin-top: 2px;">
+        <div class="photo-card" style="padding: 5px;">
+          <img src="${assets.lowryEric}" alt="Lt. Col. Eric Lowry" style="height: 122px; object-fit: contain; background: #ffffff;">
+          <div style="font-weight: 800; font-size: 9.0pt; color: #1e3a8a; margin-top: 3px;">Lt. Col. Eric Lowry DSO MC</div>
+          <div style="font-size: 8.2pt; color: #b45309; font-weight: 700;">2nd West Yorks (Age 25)</div>
+          <div style="font-size: 8.0pt; color: #475569; line-height: 1.28; margin-top: 2px;">
             Killed 23 Sep 1918, Arras outpost inspection. La Targette Cemetery.
           </div>
         </div>
@@ -114,7 +114,7 @@ module.exports = function renderPage4(assets) {
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 4 of 16</span>
+      <span class="page-number">Page 4 of 24</span>
     </div>
   </div>
   `;

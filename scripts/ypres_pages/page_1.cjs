@@ -66,15 +66,15 @@ module.exports = function renderPage1(assets) {
       </div>
 
       <!-- Booklet Format Badge -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: #475569;">
-        <span><strong>Format:</strong> 16-Page A4 Master Field Companion (Saddle-Stitch / Binder Ready)</span>
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; color: #475569;">
+        <span><strong>Format:</strong> 24-Page A4 Master Field Companion (Large Print Edition · Binder Ready)</span>
         <span><strong>Curriculum:</strong> Edexcel GCSE History Paper 1 (Western Front) &amp; Key Stage 3</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 1 of 16</span>
+      <span class="page-number">Page 1 of 24</span>
     </div>
   </div>
   `;

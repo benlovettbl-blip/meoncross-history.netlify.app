@@ -1,108 +1,83 @@
 module.exports = function renderPage10(assets) {
   return `
-  <!-- ================= PAGE 10: SANCTUARY WOOD ================= -->
+  <!-- ================= PAGE 10: HOOGE CRATER MUSEUM ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Day 2 &middot; Stop 6: Sanctuary Wood (Hill 62)</div>
-        <div class="school-sub">10:00 &middot; Preserved British Frontline Trenches, Shell Holes &amp; Mud</div>
+        <div class="school-title">Day 1 &middot; Stop 4: Hooge Crater Museum &amp; Menin Road</div>
+        <div class="school-sub">17:00 &middot; Bellewaerde Ridge &middot; 1915 Mine Crater &amp; Flammenwerfer Debut</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Stop 6</div>
-        <div class="lead">Original Frontline</div>
+        <div class="brand">Stop 4</div>
+        <div class="lead">Crater &amp; Flame Attack</div>
       </div>
     </div>
 
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Bitter Irony of "Sanctuary"</div>
+        <div class="box-header">60-Second Teacher Pitch: The Menin Road Bloodbath</div>
         <p>
-          "In late 1914, British soldiers retreating from First Ypres found shelter in this dense woodland and gratefully named it 'Sanctuary Wood'. The name became a bitter, cruel irony. By June 1916, during the Battle of Mount Sorrel, German artillery rained over 100,000 high-explosive shells onto Hill 62 in a matter of hours, splintering every tree into jagged stumps and churning the forest floor into a moonscape of craters. The farmer who owned this land, the Schier family, preserved this section of frontline trenches exactly as it lay in 1918, refusing to fill the craters or flatten the parapets. As pupils walk through these unpaved, mud-slicked trenches, point out the original rusted corrugated iron revetments, the flooded sump pits, and the deep shell holes that demonstrate why survival on the Western Front was largely a matter of chance."
+          "We are standing on the infamous Menin Road, the single most dangerous highway in military history. Hooge Chateau, positioned on a low crest commanding the road into Ypres, changed hands dozens of times in savage hand-to-hand fighting. On 19 July 1915, British tunnelling companies detonated a massive subterranean mine packed with 1,700 pounds of ammonal directly beneath German positions, blowing a crater 120 feet wide and 20 feet deep. Eleven days later, on 30 July, the German army struck back with terrifying shock technology: the world debut of the <em>Flammenwerfer</em> (flamethrower). German shock-troops sprayed jets of burning oil over the British parapets, incinerating men alive and capturing the crater rim. The museum houses an unrivaled collection of authentic weapons, trench armor, and primary battlefield artifacts recovered from these fields."
         </p>
       </div>
 
-      <!-- Preserved Trench Archaeology -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="context-box">
-          <div class="box-header">Living Conditions in the Frontline</div>
-          <p>
-            Men spent 4&ndash;6 days in frontline firebays without sleep, washing, or warm food. Infested with body lice that transmitted trench fever, plagued by bold trench rats feeding on corpses, and standing in icy, fecal-contaminated water that induced painful <strong>trench foot</strong> (fungal rot that could lead to gangrene and amputation), soldiers endured physical misery as intense as artillery terror.
+      <!-- Photo Card -->
+      <div class="photo-card" style="padding: 4px;">
+        <img src="${assets.hoogeCrater}" alt="Hooge Crater" style="height: 115px; object-fit: cover;">
+        <div class="caption">
+          The Hooge Crater basin and reconstructed trenches: Scene of the 19 July 1915 mine blast and first liquid flame attack.
+        </div>
+      </div>
+
+      <!-- Subterranean Warfare & Evening Routine 2-Col Grid -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div class="context-box" style="padding: 6px 10px;">
+          <div class="box-header">Subterranean Mine Warfare</div>
+          <p style="font-size: 9.8pt; line-height: 1.38;">
+            When surface assaults stalled against machine guns, both armies burrowed deep underground. Specialist miners ('clay kickers') dug silent shafts through clay to detonate ammonal charges, sparking savage 'crater fights' to seize the lip.
           </p>
         </div>
 
-        <div class="context-box">
-          <div class="box-header">Hill 62 Strategic Vantage</div>
-          <p>
-            Hill 62 rises barely 62 metres above sea level, yet in this low terrain, that modest elevation afforded total optical dominance over the approaches to Ypres. The Canadian counter-attack on 13 June 1916 recaptured the ridge in a torrential downpour, suffering 8,430 casualties to deny German artillery forward observation.
+        <div class="context-box" style="padding: 6px 10px;">
+          <div class="box-header">Evening Routine at Peace Village</div>
+          <p style="font-size: 9.8pt; line-height: 1.38;">
+            Following Hooge, the coach transfers directly to Peace Village Hostel in Mesen (18:00 check-in). After dinner at 18:30, tour leaders convene in the seminar room at 19:30 for a 45-minute debrief and fieldwork review.
           </p>
         </div>
       </div>
 
       <!-- Look-fors -->
-      <div class="look-fors-box">
+      <div class="look-fors-box" style="padding: 6px 11px;">
         <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
-        <ul class="look-fors-list">
-          <li><strong>Original Corrugated Iron Sheet Revetments:</strong> Rusted British iron and timber retaining walls surviving in the soil since 1918.</li>
-          <li><strong>Mud &amp; Sump Drainage Channels:</strong> Notice how water collects immediately in low firebays, demonstrating why duckboards were essential.</li>
-          <li><strong>Preserved Splintered Tree Stumps:</strong> Fossilized oak and beech tree bases blasted apart by high-explosive shellfire.</li>
-          <li><strong>Forward Sap Entrances:</strong> Shallow forward trenches leading out towards No Man's Land for listening posts and nighttime wiring parties.</li>
+        <ul class="look-fors-list" style="font-size: 9.8pt; line-height: 1.38;">
+          <li><strong>The Preserved Crater Depression:</strong> Walk the perimeter path of the water-filled mine crater behind the museum.</li>
+          <li><strong>Museum Trench Armor Collection:</strong> Examine the heavy steel <em>Grabenpanzer</em> breastplates worn by sentries.</li>
+          <li><strong>Reconstructed Frontline Firebays:</strong> Step through preserved trenches behind the museum to inspect wooden revetments.</li>
+          <li><strong>Original Battlefield Periscopes:</strong> View optical mirrors allowing sentries to observe No Man's Land safely.</li>
         </ul>
       </div>
 
-      <!-- Poem Box -->
-      <div class="poem-box" style="padding: 5px 10px;">
-        <div class="poem-header">
-          <div>
-            <span class="poem-title">Break of Day in the Trenches</span>
-            <span class="poem-meta">&middot; Isaac Rosenberg (Killed in action 1 April 1918, Age 27)</span>
-          </div>
-          <img src="${assets.rosenbergImg}" alt="Isaac Rosenberg" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1.2px solid #cbd5e1;">
-        </div>
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; align-items: start;">
-          <div class="poem-lines" style="font-size: 8.2pt; line-height: 1.28;">
-The darkness crumbles away.
-It is the same old druid Time as ever,
-Only a live thing leaps my hand,
-A queer sardonic rat,
-As I pull the parapet's poppy
-To stick behind my ear.
-Droll rat, they would shoot you if they knew
-Your cosmopolitan sympathies,
-Now you have touched this English hand
-You will have the same chance to touch
-A German one, though the thought
-Would make you shudder, perhaps...
-What do you see in our eyes
-At the shrieking iron and flame
-Hurled through still heavens?
-          </div>
-          <div style="font-size: 8.1pt; line-height: 1.28; color: #475569; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 8px;">
-            <strong style="color: #1e293b; display: block; margin-bottom: 2px;">The Sardonic Rat &amp; Absurdity:</strong>
-            Rosenberg, an impoverished Jewish private and talented painter from Whitechapel, eschewed both martial glory and moralizing. By depicting the trench rat roaming freely between British and German lines, he exposes the supreme irony of the war: vermin enjoy total freedom and survival, while civilized men are condemned to slaughter one another in the mud.
-          </div>
-        </div>
-      </div>
-
       <!-- Hinge Questions -->
-      <div class="hinge-box">
+      <div class="hinge-box" style="padding: 6px 11px;">
         <div class="box-header">? Targeted Enquiry Hinge Questions</div>
-        <p>
-          1. "Why does Isaac Rosenberg select a 'queer sardonic rat' as the central observer of the battlefield rather than a heroic soldier or general? What does this say about the human condition in the trenches?"
+        <p style="font-size: 10pt; line-height: 1.38;">
+          1. "Why did both armies invest vast manpower in subterranean mine warfare rather than surface infantry assaults? What does this reveal about defensive technology?"
         </p>
-        <p>
-          2. "How does walking through authentic, unpaved muddy trenches at Sanctuary Wood alter our historical perception compared to looking at clean diagrams in a revision textbook?"
+        <p style="font-size: 10pt; line-height: 1.38;">
+          2. "Did the introduction of the flamethrower at Hooge alter the moral boundary of civilized warfare, or was it an extension of industrial artillery terror?"
         </p>
       </div>
 
+      <!-- Transit Bar -->
       <div class="transit-bar">
-        <span>&rarr; <strong>Transit Guidance:</strong> 15-minute coach transit into Ypres town centre for supervised supermarket lunch stop (Aldi) before afternoon cemeteries.</span>
+        <span>&rarr; <strong>Transit Guidance:</strong> 25-minute coach transit south along the N365 to Peace Village Base Camp, Nieuwkerkestraat 9, Mesen.</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 10 of 16</span>
+      <span class="page-number">Page 10 of 24</span>
     </div>
   </div>
   `;

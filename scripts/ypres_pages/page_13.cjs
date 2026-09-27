@@ -1,90 +1,69 @@
 module.exports = function renderPage13(assets) {
   return `
-  <!-- ================= PAGE 13: PASSCHENDAELE MUSEUM ================= -->
+  <!-- ================= PAGE 13: SANCTUARY WOOD (SITE & TRENCH ARCHAEOLOGY) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Day 2 &middot; Stop 9: Passchendaele 1917 Museum &amp; Dugouts</div>
-        <div class="school-sub">16:00 &middot; Zonnebeke Chateau &middot; 20-Foot Subterranean Dugout Labyrinth &amp; Trench Network</div>
+        <div class="school-title">Day 2 &middot; Stop 6: Sanctuary Wood (Hill 62)</div>
+        <div class="school-sub">10:00 &middot; Preserved British Frontline Trenches, Shell Holes &amp; Mud</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Stop 9</div>
-        <div class="lead">Underground Dugouts</div>
+        <div class="brand">Stop 6</div>
+        <div class="lead">Original Frontline</div>
       </div>
     </div>
 
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Subterranean Labyrinth of Zonnebeke</div>
+        <div class="box-header">60-Second Teacher Pitch: The Bitter Irony of "Sanctuary"</div>
         <p>
-          "Beneath the grounds of Zonnebeke Chateau, we descend into an authentic, full-scale reconstruction of a British underground dugout complex built 20 feet beneath the surface. As high-explosive artillery fire obliterated every tree, trench, and building above ground in 1917, armies burrowed into the damp clay to survive. In these cramped timber galleries, over 200 men lived like moles in cold, airless conditions for weeks on end. Notice the narrow bunk beds stacked three high, the pump sumps struggling against groundwater, and the candlebox air tests: if a candle flame flickered out from lack of oxygen, men knew carbon dioxide was rising and had to crank manual ventilation fans to survive. Outside, the museum's reconstructed British and German trench systems offer pupils a direct, side-by-side physical comparison of opposing defensive philosophies."
+          "In late 1914, British soldiers retreating from First Ypres found shelter in this dense woodland and gratefully named it 'Sanctuary Wood'. The name became a bitter, cruel irony. By June 1916, during the Battle of Mount Sorrel, German artillery rained over 100,000 high-explosive shells onto Hill 62 in a matter of hours, splintering every tree into jagged stumps and churning the forest floor into a moonscape of craters. The farmer who owned this land, the Schier family, preserved this section of frontline trenches exactly as it lay in 1918, refusing to fill the craters or flatten the parapets. As pupils walk through these unpaved, mud-slicked trenches, point out the original rusted corrugated iron revetments, the flooded sump pits, and the deep shell holes that demonstrate why survival on the Western Front was largely a matter of chance."
         </p>
       </div>
 
-      <!-- Dual Photo Grid -->
+      <!-- Preserved Trench Conditions 2-Col Grid -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="photo-card" style="padding: 4px;">
-          <img src="${assets.passchendaeleDugout}" alt="Passchendaele Dugout" style="height: 135px; object-fit: cover;">
-          <div class="caption">
-            Passchendaele Dugout: 20-foot subterranean timber galleries and aid post.
-          </div>
-        </div>
-        <div class="photo-card" style="padding: 4px;">
-          <img src="${assets.stretcherMud}" alt="Stretcher Bearers in Mud" style="height: 135px; object-fit: cover;">
-          <div class="caption">
-            Passchendaele Liquid Mud (1917): Six bearers hauling a wounded soldier.
-          </div>
-        </div>
-      </div>
-
-      <!-- Tactical Deep-Dive -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="context-box" style="padding: 6px 11px;">
-          <div class="box-header">The Failure of Artillery at Third Ypres</div>
-          <p style="font-size: 8.3pt; line-height: 1.32;">
-            Field Marshal Haig's offensive opened on 31 July 1917 preceded by a colossal 10-day preliminary bombardment: 3,000 guns fired 4.5 million shells onto a narrow front. Rather than destroying German pillboxes, the barrage shattered the intricate drainage system of Flanders just as unseasonal autumn rains broke. The battlefield became a liquid swamp that swallowed men, pack mules, and 18-pounder artillery guns whole.
+        <div class="context-box">
+          <div class="box-header">Living Conditions in the Frontline</div>
+          <p>
+            Men spent 4&ndash;6 days in frontline firebays without sleep, washing, or warm rations. Infested with body lice that transmitted trench fever, plagued by bold trench rats feeding on unburied corpses, and standing in icy water that induced crippling <strong>trench foot</strong>, soldiers endured relentless physical misery alongside artillery terror.
           </p>
         </div>
 
-        <div class="context-box" style="padding: 6px 11px;">
-          <div class="box-header">Stretcher Bearing in the Passchendaele Mud</div>
-          <p style="font-size: 8.3pt; line-height: 1.32;">
-            In normal conditions, two men carried a stretcher. In the Passchendaele mud, it required relays of <strong>six to eight men</strong> per casualty. Bearers waded waist-deep through slime, taking four to six hours to move a single wounded soldier one mile back from the line. Slipping off the wooden duckboards often meant drowning in liquid mud beneath the weight of heavy wool overcoats and kit.
+        <div class="context-box">
+          <div class="box-header">Hill 62 Strategic Vantage</div>
+          <p>
+            Hill 62 rises barely 62 metres above sea level, yet in this low terrain, that modest elevation afforded optical dominance over the approaches to Ypres. The Canadian counter-attack on 13 June 1916 recaptured the ridge in a torrential downpour, suffering 8,430 casualties to deny German artillery forward observation.
           </p>
         </div>
       </div>
 
       <!-- Look-fors -->
-      <div class="look-fors-box" style="padding: 6px 11px;">
+      <div class="look-fors-box">
         <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
-        <ul class="look-fors-list" style="font-size: 8.3pt; line-height: 1.32;">
-          <li><strong>Subterranean Timber Framing:</strong> Touch the heavy wooden baulks holding back tons of wet Flemish clay inside the dugout gallery.</li>
-          <li><strong>Dugout Regimental Aid Post:</strong> Observe the underground triage station with stretchers, morphine bottles, and surgical instruments.</li>
-          <li><strong>Comparative Trench Construction:</strong> Contrast the British deep sandbag trench with the German reinforced concrete pillbox network.</li>
-          <li><strong>Original German A-Frames:</strong> View original preserved artifacts in the museum galleries showing captured field equipment.</li>
+        <ul class="look-fors-list">
+          <li><strong>Original Corrugated Iron Sheet Revetments:</strong> Rusted British iron and timber retaining walls surviving in the soil since 1918.</li>
+          <li><strong>Mud &amp; Sump Drainage Channels:</strong> Notice how water collects immediately in low firebays, demonstrating why duckboards were essential.</li>
+          <li><strong>Preserved Splintered Tree Stumps:</strong> Fossilized oak and beech tree bases blasted apart by high-explosive shellfire.</li>
+          <li><strong>Forward Sap Entrances:</strong> Shallow forward trenches leading out towards No Man's Land for listening posts and nighttime wiring parties.</li>
         </ul>
       </div>
 
-      <!-- Hinge Questions -->
-      <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
-        <p>
-          1. "How did subterranean dugout systems alter the psychological endurance of troops subjected to relentless week-long artillery bombardments?"
+      <!-- Field Directive -->
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 8px 13px;">
+        <div style="font-size: 9.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+          Tour Leader Field Directive: Mud Terrain Experience
+        </div>
+        <p style="font-size: 10.2pt; color: #1e293b; line-height: 1.42; margin: 0;">
+          Warn pupils regarding slick mud and uneven wooden steps. Have students feel the heavy clay underfoot before assembling for Isaac Rosenberg's poem on the facing page.
         </p>
-        <p>
-          2. "Was Field Marshal Haig justified in continuing the Passchendaele offensive into November 1917 after the weather and drainage dykes broke, or did it represent operational blindness?"
-        </p>
-      </div>
-
-      <div class="transit-bar">
-        <span>&rarr; <strong>Transit Guidance:</strong> 15-minute coach transit into central Ypres for evening meal and Menin Gate Last Post ceremony (arrive 19:20).</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 13 of 16</span>
+      <span class="page-number">Page 13 of 24</span>
     </div>
   </div>
   `;

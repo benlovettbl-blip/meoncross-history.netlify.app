@@ -19,14 +19,14 @@ module.exports = `
       background: #ffffff;
       margin: 0;
       padding: 0;
-      font-size: 9.3pt;
-      line-height: 1.44;
+      font-size: 10.2pt;
+      line-height: 1.45;
     }
 
     .page {
       width: 210mm;
       height: 297mm;
-      padding: 10mm 12mm 9mm 12mm;
+      padding: 9.5mm 12mm 8.5mm 12mm;
       position: relative;
       background: #ffffff;
       overflow: hidden;
@@ -53,7 +53,7 @@ module.exports = `
     }
 
     .school-title {
-      font-size: 11.5pt;
+      font-size: 12.2pt;
       font-weight: 800;
       letter-spacing: 0.04em;
       color: #1e3a8a;
@@ -63,7 +63,7 @@ module.exports = `
     }
 
     .school-sub {
-      font-size: 8.2pt;
+      font-size: 8.8pt;
       color: #475569;
       font-weight: 600;
       margin-top: 1.5px;
@@ -72,7 +72,7 @@ module.exports = `
     .partner-pill {
       background: #f1f5f9;
       border: 1.2px solid #cbd5e1;
-      padding: 2.5px 8px;
+      padding: 3px 9px;
       border-radius: 5px;
       text-align: right;
     }
@@ -80,12 +80,12 @@ module.exports = `
     .partner-pill .brand {
       font-weight: 800;
       color: #b45309;
-      font-size: 8.2pt;
+      font-size: 8.8pt;
       text-transform: uppercase;
     }
 
     .partner-pill .lead {
-      font-size: 7.2pt;
+      font-size: 7.8pt;
       color: #334155;
       font-weight: 600;
     }
@@ -102,38 +102,38 @@ module.exports = `
       flex-direction: column;
       justify-content: space-between;
       padding: 3px 0;
-      gap: 6px;
+      gap: 7px;
     }
 
     .pitch-box {
       background: #eff6ff;
       border: 1.5px solid #bfdbfe;
-      border-left: 5px solid #1e3a8a;
-      border-radius: 6px;
-      padding: 8px 12px;
+      border-left: 5.5px solid #1e3a8a;
+      border-radius: 7px;
+      padding: 10px 14px;
     }
 
     .pitch-box .box-header {
-      font-size: 8.8pt;
+      font-size: 9.8pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .pitch-box p {
       margin: 0;
-      font-size: 8.8pt;
+      font-size: 11pt;
       color: #1e293b;
-      line-height: 1.40;
+      line-height: 1.48;
     }
 
     .pitch-box p + p {
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .context-box {
@@ -141,27 +141,27 @@ module.exports = `
       border: 1.5px solid #e2e8f0;
       border-left: 5px solid #334155;
       border-radius: 6px;
-      padding: 7px 12px;
+      padding: 8.5px 13px;
     }
 
     .context-box .box-header {
-      font-size: 8.8pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #334155;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
     }
 
     .context-box p {
       margin: 0;
-      font-size: 8.6pt;
+      font-size: 10.2pt;
       color: #334155;
-      line-height: 1.38;
+      line-height: 1.42;
     }
 
     .context-box p + p {
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .look-fors-box {
@@ -169,28 +169,28 @@ module.exports = `
       border: 1.5px solid #cbd5e1;
       border-left: 5px solid #059669;
       border-radius: 6px;
-      padding: 7px 12px;
+      padding: 8.5px 13px;
     }
 
     .look-fors-box .box-header {
-      font-size: 8.8pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #065f46;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
     }
 
     .look-fors-list {
       margin: 0;
-      padding-left: 16px;
-      font-size: 8.6pt;
+      padding-left: 18px;
+      font-size: 10.2pt;
       color: #334155;
-      line-height: 1.38;
+      line-height: 1.42;
     }
 
     .look-fors-list li {
-      margin-bottom: 2.5px;
+      margin-bottom: 3.5px;
     }
 
     .look-fors-list li:last-child {
@@ -200,58 +200,58 @@ module.exports = `
     .hinge-box {
       background: #fffbeb;
       border: 1.5px solid #fde68a;
-      border-left: 5px solid #d97706;
-      border-radius: 6px;
-      padding: 7px 12px;
+      border-left: 5.5px solid #d97706;
+      border-radius: 7px;
+      padding: 9px 14px;
     }
 
     .hinge-box .box-header {
-      font-size: 8.6pt;
+      font-size: 9.6pt;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .hinge-box p {
       margin: 0;
-      font-size: 8.5pt;
+      font-size: 10.4pt;
       color: #451a03;
-      line-height: 1.38;
+      line-height: 1.42;
       font-style: italic;
     }
 
     .hinge-box p + p {
-      margin-top: 3.5px;
+      margin-top: 4.5px;
     }
 
     .poem-box {
       background: #fafaf9;
       border: 1.5px solid #e7e5e4;
-      border-left: 4.5px solid #78716c;
-      border-radius: 6px;
-      padding: 7.5px 12px;
+      border-left: 5px solid #78716c;
+      border-radius: 7px;
+      padding: 10px 14px;
     }
 
     .poem-box .poem-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3.5px;
-      border-bottom: 1px dashed #d6d3d1;
-      padding-bottom: 2.5px;
+      margin-bottom: 5px;
+      border-bottom: 1.5px dashed #d6d3d1;
+      padding-bottom: 4px;
     }
 
     .poem-box .poem-title {
       font-family: 'Playfair Display', serif;
-      font-size: 10.2pt;
+      font-size: 12pt;
       font-weight: 700;
       color: #292524;
     }
 
     .poem-box .poem-meta {
-      font-size: 7.6pt;
+      font-size: 8.6pt;
       color: #78716c;
       font-weight: 700;
       text-transform: uppercase;
@@ -260,9 +260,9 @@ module.exports = `
     .poem-box .poem-lines {
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: 8.7pt;
+      font-size: 11.2pt;
       color: #292524;
-      line-height: 1.38;
+      line-height: 1.44;
       white-space: pre-line;
     }
 
@@ -276,30 +276,30 @@ module.exports = `
 
     .photo-card img {
       width: 100%;
-      border-radius: 3px;
+      border-radius: 4px;
       object-fit: cover;
       display: block;
     }
 
     .photo-card .caption {
-      font-size: 7.6pt;
+      font-size: 8.6pt;
       color: #475569;
       font-style: italic;
-      margin-top: 3px;
-      line-height: 1.25;
+      margin-top: 3.5px;
+      line-height: 1.30;
     }
 
     .transit-bar {
       background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      padding: 4px 9px;
-      font-size: 7.9pt;
+      border: 1.2px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 5px 11px;
+      font-size: 9.4pt;
       color: #475569;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
     }
 
     .footer-bar {
@@ -309,7 +309,7 @@ module.exports = `
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 7.6pt;
+      font-size: 8.2pt;
       color: #64748b;
       font-weight: 600;
       flex-shrink: 0;
@@ -319,7 +319,7 @@ module.exports = `
       font-weight: 700;
       color: #1e3a8a;
       background: #eff6ff;
-      padding: 1.5px 7px;
+      padding: 2px 8px;
       border-radius: 4px;
       border: 1px solid #bfdbfe;
     }
@@ -327,25 +327,25 @@ module.exports = `
     table.data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 8.2pt;
+      font-size: 9.2pt;
     }
 
     table.data-table th {
       background: #0f172a;
       color: #ffffff;
       text-align: left;
-      padding: 4px 7px;
+      padding: 5px 8px;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 7.4pt;
+      font-size: 8.4pt;
       letter-spacing: 0.04em;
     }
 
     table.data-table td {
-      padding: 4px 7px;
+      padding: 4.8px 8px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
-      line-height: 1.30;
+      line-height: 1.35;
     }
 
     table.data-table tr:nth-child(even) td {

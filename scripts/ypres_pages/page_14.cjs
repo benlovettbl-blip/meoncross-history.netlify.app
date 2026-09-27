@@ -1,110 +1,78 @@
 module.exports = function renderPage14(assets) {
   return `
-  <!-- ================= PAGE 14: MENIN GATE MEMORIAL ================= -->
+  <!-- ================= PAGE 14: SANCTUARY WOOD (LITERATURE & REFLECTION) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Day 2 &middot; Stop 10: Menin Gate Memorial to the Missing</div>
-        <div class="school-sub">19:20 &middot; The Ramparts of Ypres &middot; The Last Post Ceremony &amp; 54,000 Unreturned Dead</div>
+        <div class="school-title">Day 2 &middot; Stop 6: Disciplinary Voice &amp; Trench Satire</div>
+        <div class="school-sub">Isaac Rosenberg &middot; Whitechapel Modernism &amp; The Cosmopolitan Rat</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Stop 10</div>
-        <div class="lead">The Last Post</div>
+        <div class="brand">Stop 6</div>
+        <div class="lead">Wartime Poetry</div>
       </div>
     </div>
 
     <div class="page-body">
-      <!-- Pitch -->
-      <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Great Hall of Memory</div>
-        <p>
-          "We are standing beneath the triumphal barrel-vaulted arch of the Menin Gate, designed by Sir Reginald Blomfield and unveiled in 1927. Through this very portal in the ancient ramparts, hundreds of thousands of British and Commonwealth soldiers marched out along the Menin Road towards the frontline trenches—many never to return. Carved into the Portland stone walls are the names of <strong>54,395 Commonwealth soldiers</strong> who died in the Ypres Salient before 16 August 1917 and have no known grave. When Blomfield designed the memorial, he believed the vast arch could accommodate every missing man; to the horror of the Imperial War Graves Commission, space ran out, forcing the remaining 34,984 names of later casualties to be carved at Tyne Cot. Every evening at exactly 20:00, the local volunteer Fire Brigade buglers sound the Last Post in solemn gratitude. Tonight, our school laying party lays our official wreath."
-        </p>
-      </div>
-
-      <!-- Photo Card -->
-      <div class="photo-card" style="padding: 4px;">
-        <img src="${assets.meninGate}" alt="Menin Gate Memorial" style="height: 140px; object-fit: cover;">
-        <div class="caption">
-          The Menin Gate Memorial on the eastern ramparts of Ypres: Blomfield's classical triumphal arch inscribed with 54,000 names of the missing.
-        </div>
-      </div>
-
-      <!-- Local Parish Search & Protocol -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="context-box" style="padding: 6px 11px;">
-          <div class="box-header">Local Parish Search: Panel 35</div>
-          <p style="font-size: 8.4pt; line-height: 1.34;">
-            Lead pupils along the south interior staircase to <strong>Panel 35 (Hampshire Regiment)</strong>. Here are carved the names of two young men from our home parish: <strong>Pte. Thomas Franklin</strong> (age 23, killed during Second Ypres) and <strong>Pte. William Ayling</strong> (age 20, killed by a trench mortar at Potijze). Have designated pupils hold our wreath reverently until 19:55.
-          </p>
-        </div>
-
-        <div class="context-box" style="padding: 6px 11px;">
-          <div class="box-header">Ceremony Conduct &amp; Silence Protocol</div>
-          <p style="font-size: 8.4pt; line-height: 1.34;">
-            The Last Post ceremony attracts thousands of international pilgrims. Pupils assemble on the north pavement by 19:20. Instruct pupils that absolute silence must be observed from 19:55 until bugles conclude. All heads uncovered, phones silent, and eyes directed towards the central vault.
-          </p>
-        </div>
-      </div>
-
-      <!-- Look-fors -->
-      <div class="look-fors-box" style="padding: 6px 11px;">
-        <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
-        <ul class="look-fors-list" style="font-size: 8.4pt; line-height: 1.34;">
-          <li><strong>Panel 35 (Hampshire Regiment):</strong> Trace the carved names of our parish boys Thomas Franklin and William Ayling.</li>
-          <li><strong>The Couchant Lion Statues:</strong> The sculpted British lions guarding the eastern and western facades looking toward the battlefields.</li>
-          <li><strong>1940 Shrapnel &amp; Bullet Scars:</strong> Examine the stone pillars for bullet damage sustained during the May 1940 stand.</li>
-          <li><strong>Acoustic Vault Resonance:</strong> Listen to the extraordinary reverberation of the bugle notes beneath the 130-foot stone arch.</li>
-        </ul>
-      </div>
-
       <!-- Poem Box -->
-      <div class="poem-box" style="padding: 6px 11px;">
+      <div class="poem-box">
         <div class="poem-header">
           <div>
-            <span class="poem-title">On Passing the New Menin Gate</span>
-            <span class="poem-meta">&middot; Siegfried Sassoon (1927)</span>
+            <span class="poem-title">Break of Day in the Trenches</span>
+            <span class="poem-meta">&middot; Isaac Rosenberg (Killed in action 1 April 1918, Age 27)</span>
           </div>
-          <img src="${assets.sassoonImg}" alt="Siegfried Sassoon" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1.2px solid #cbd5e1;">
+          <img src="${assets.rosenbergImg}" alt="Isaac Rosenberg" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #cbd5e1;">
         </div>
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; align-items: start;">
-          <div class="poem-lines" style="font-size: 8.2pt; line-height: 1.28;">
-Who will remember, passing through this Gate,
-The unheroic Dead who fed the guns?
-Who shall absolve the foulness of their fate,&mdash;
-Those doomed, conscripted, unvictorious ones?
-Crudely renewed, the Salient holds its own.
-Paid are its dim defenders by this pomp;
 
-Here was the world’s worst wound. And here with pride
-‘Their name liveth for evermore’ the Gateway claims.
-Was ever an immolation so belied
-As these intolerably nameless names?
-Well might the Dead who struggled in the slime
-Rise and deride this sepulchre of crime.
+        <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 14px; align-items: start;">
+          <div class="poem-lines" style="font-size: 11pt; line-height: 1.44;">
+The darkness crumbles away.
+It is the same old druid Time as ever,
+Only a live thing leaps my hand,
+A queer sardonic rat,
+As I pull the parapet's poppy
+To stick behind my ear.
+Droll rat, they would shoot you if they knew
+Your cosmopolitan sympathies,
+Now you have touched this English hand
+You will have the same chance to touch
+A German one, though the thought
+Would make you shudder, perhaps...
+What do you see in our eyes
+At the shrieking iron and flame
+Hurled through still heavens?
+What quaver—what heart ague has stunned you,
+Leaping on the sinister wire?
           </div>
-          <div style="font-size: 8.1pt; line-height: 1.28; color: #475569; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 8px;">
-            <strong style="color: #1e293b; display: block; margin-bottom: 2px;">The Anti-Monument Critique:</strong>
-            Attending the opening of the Menin Gate in July 1927, Sassoon was horrified by the imperial pomp and triumphalism. He condemned the Portland arch as an attempt by the British political establishment to whitewash the industrial slaughter of conscripts, urging students to contrast official architectural commemoration with frontline reality.
+
+          <div style="font-size: 10pt; line-height: 1.42; color: #475569; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px;">
+            <strong style="color: #1e293b; display: block; font-size: 10.4pt; margin-bottom: 4px;">The Sardonic Rat as Universal Observer:</strong>
+            Rosenberg, an impoverished Jewish private and gifted Slade painter from London's East End, eschewed both patriotic posturing and self-pity.<br><br>
+            By depicting a trench rat roaming freely between British and German barbed wire, Rosenberg exposes the grotesque absurdity of the war: vermin enjoy total freedom of movement and international brotherhood, while civilized European men crouch in mud condemned to slaughter each other.
           </div>
         </div>
       </div>
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
+        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
-          1. "Why was Siegfried Sassoon so bitterly enraged by Blomfield's grand classical arch, dismissing it as a 'sepulchre of crime'? Is his critique justified?"
+          1. "Why does Isaac Rosenberg select a 'queer sardonic rat' as the central observer of the battlefield rather than a heroic comrade or general? What does this say about the human condition in the trenches?"
         </p>
         <p>
-          2. "What is the cultural and moral significance of the town of Ypres maintaining the Last Post ceremony every single evening for nearly a century?"
+          2. "How does walking through authentic, unpaved muddy trenches at Sanctuary Wood alter our historical perception compared to looking at clean diagrams in a revision textbook?"
         </p>
+      </div>
+
+      <!-- Transit Bar -->
+      <div class="transit-bar">
+        <span>&rarr; <strong>Transit Guidance:</strong> 15-minute coach transit into central Ypres for supervised supermarket lunch stop (Aldi) before afternoon cemeteries.</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 14 of 16</span>
+      <span class="page-number">Page 14 of 24</span>
     </div>
   </div>
   `;

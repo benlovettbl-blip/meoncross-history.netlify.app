@@ -546,15 +546,6 @@ function getHtmlContent() {
           </div>
         </div>
       </div>
-
-      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 8px 12px;">
-        <div style="font-size: 8.2pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-     Coach Pacing, Parking Directives &amp; Driver Hours
-        </div>
-        <div style="font-size: 7.7pt; color: #475569; line-height: 1.38;">
-          Our Jet Connect coach driver operates under strict EU tachograph driving hours. Please ensure prompt group boarding 10 minutes prior to scheduled departure times. Designated parking at Ypres is at the Lille Gate coach bays; Poperinge drop-off is near the Grote Markt.
-        </div>
-      </div>
     </div>
 
     <div class="footer-bar">

@@ -1,109 +1,77 @@
 module.exports = function renderPage11(assets) {
   return `
-  <!-- ================= PAGE 11: TYNE COT CEMETERY ================= -->
+  <!-- ================= PAGE 11: VANCOUVER CORNER (SITE & GAS WARFARE) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Day 2 &middot; Stop 7: Tyne Cot British Military Cemetery</div>
-        <div class="school-sub">13:00 &middot; Passchendaele Ridge &middot; Largest CWGC Cemetery on Earth &amp; 34,984 Missing</div>
+        <div class="school-title">Day 2 &middot; Stop 5: Vancouver Corner &amp; The Brooding Soldier</div>
+        <div class="school-sub">09:15 &middot; St Julien Sector &middot; Second Ypres &amp; The First Lethal Gas Attack</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Stop 7</div>
-        <div class="lead">Tyne Cot &amp; Missing</div>
+        <div class="brand">Stop 5</div>
+        <div class="lead">Chemical Warfare</div>
       </div>
     </div>
 
     <div class="page-body">
       <!-- Pitch -->
-      <div class="pitch-box" style="padding: 7px 11px;">
-        <div class="box-header">60-Second Teacher Pitch: The Great City of the Silent</div>
+      <div class="pitch-box">
+        <div class="box-header">60-Second Teacher Pitch: 22 April 1915 &mdash; The First Lethal Gas Cloud</div>
         <p>
-          "We are standing in Tyne Cot, the largest Commonwealth war cemetery in the world. Spread across this gentle slope lie <strong>11,961 soldiers</strong> of the British Empire. Look closely at the headstones: an astonishing <strong>8,369 of them&mdash;nearly 70%&mdash;are unidentified</strong>, marked only with Kipling's words: <em>'A Soldier of the Great War &mdash; Known unto God.'</em> This ground was captured by the Australian 3rd Division on 4 October 1917 during the Battle of Broodseinde. Notice the massive Cross of Sacrifice standing in the centre: architect Sir Herbert Baker deliberately encased a captured German reinforced concrete pillbox inside its stone base, cutting an aperture so the machine-gun firing slit remains visible beneath the cross. At the rear, the semi-circular Memorial to the Missing bears the carved names of <strong>34,984 soldiers</strong> who vanished in the mud of the Salient between August 1917 and the Armistice."
+          "Stand looking north-east across this flat, open farmland. On the afternoon of 22 April 1915, at exactly 17:00, German engineers opened the valves on 5,730 pressurized steel cylinders buried along a four-mile frontline, releasing 168 tons of liquified <strong>chlorine gas</strong>. Carried by a gentle north-easterly breeze, a sinister greenish-yellow cloud rolled across No Man's Land toward the French Algerian and territorial division on the Canadian left. Unprepared and without respirators, soldiers suffocated as chlorine dissolved their lung tissue. Thousands broke in absolute panic, opening a four-mile gap in the Allied line. The raw, untested 1st Canadian Division held the right flank. Canadian medical officer Captain Francis Scrimger VC recognized the gas as chlorine and ordered men to urinate on handkerchiefs and socks, pressing them to their faces&mdash;ammonia in urine neutralized the acid. For three desperate days, the Canadians held the line, preventing the collapse of Ypres."
         </p>
       </div>
 
       <!-- Photo Card -->
-      <div class="photo-card" style="padding: 4px;">
-        <img src="${assets.tyneCot}" alt="Tyne Cot Cemetery" style="height: 125px; object-fit: cover;">
+      <div class="photo-card" style="padding: 5px;">
+        <img src="${assets.broodingSoldier}" alt="The Brooding Soldier" style="height: 165px; object-fit: cover;">
         <div class="caption">
-          Tyne Cot Cemetery on the Passchendaele slope: The Great Cross of Sacrifice built over a German machine-gun pillbox, with 12,000 Portland headstones.
+          The Brooding Soldier Memorial (Frederick Clemesha): 33-foot granite monolith honoring 2,000 Canadians who fell holding the line against chlorine gas.
         </div>
       </div>
 
-      <!-- Architecture & Local Parish -->
+      <!-- Gas Mechanics & Evolution 2-Col Grid -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="context-box" style="padding: 5px 10px;">
-          <div class="box-header">Baker's Classical Landscape Design</div>
-          <p style="font-size: 8.3pt; line-height: 1.32;">
-            Architect Sir Herbert Baker designed Tyne Cot as a classical terraced city. Flint stones from English chalk downs were embedded in the walls to evoke English parish church masonry. Clustered around the central Cross are the original battlefield burials made by soldiers during the fighting; the outer concentric arcs were concentrated after 1918.
+        <div class="context-box">
+          <div class="box-header">Physiology of Chlorine Poisoning</div>
+          <p>
+            Chlorine gas is 2.5 times denser than air; it hugged ground depressions and rolled down into firebays. Inhaled, it reacted with water in the lungs to produce hydrochloric acid, destroying lung alveoli and causing drowning in internal secretions within minutes.
           </p>
         </div>
 
-        <div class="context-box" style="padding: 5px 10px;">
-          <div class="box-header">Local Parish Search: Panels 88&ndash;90</div>
-          <p style="font-size: 8.3pt; line-height: 1.32;">
-            Lead pupils along the rear memorial wall to <strong>Panels 88&ndash;90 (Hampshire Regiment)</strong>. Here are carved three of our parish boys: <strong>Pte. Sydney Muckett</strong> (killed at Menin Road, age 21), <strong>Pte. Arthur Rye</strong> (killed at Polygon Wood, age 21), and <strong>L/Cpl. Archibald Ward</strong> (killed advancing through morning mist at Gheluwe, age 23).
+        <div class="context-box">
+          <div class="box-header">Evolution of British Gas Defense</div>
+          <p>
+            Improvised urine cloths quickly gave way to the 'Black Veil' pad (soaked in sodium thiosulfate), followed by the flannel 'Hypo Helmet' (1915), the Phenate Hexamine helmet, and finally the 1916 Small Box Respirator (SBR) using active coconut charcoal filters.
           </p>
         </div>
       </div>
 
       <!-- Look-fors -->
-      <div class="look-fors-box" style="padding: 5px 10px;">
+      <div class="look-fors-box">
         <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
-        <ul class="look-fors-list" style="font-size: 8.3pt; line-height: 1.32;">
-          <li><strong>The German Pillbox Aperture:</strong> Walk behind the Cross of Sacrifice to look through the concrete slit where German gunners fired.</li>
-          <li><strong>Disordered Cluster of Field Graves:</strong> Compare the chaotic, non-linear headstones near the central pillbox with the neat postwar outer rows.</li>
-          <li><strong>Panels 88&ndash;90 (Hampshire Regiment):</strong> Locate our local parish names on the rear memorial wall.</li>
-          <li><strong>Victoria Cross Graves:</strong> Locate the graves of Capt. Clarence Smith Jeffries VC (40th Australian Bn) and Sgt. Lewis McGee VC.</li>
+        <ul class="look-fors-list">
+          <li><strong>Clemesha's 33-Foot Granite Monolith:</strong> Notice the Canadian soldier's head bowed over arms rested on his reversed rifle in mourning posture.</li>
+          <li><strong>Canadian Red Cedar &amp; Maple Gardens:</strong> The formal geometric park planting brought over from Canada to surround their fallen sons.</li>
+          <li><strong>Directional Battle Direction Arrows:</strong> Stone plaques indicating the direction of the German gas release and Canadian counter-attacks.</li>
+          <li><strong>Flat Open Farmland Vista:</strong> Notice the absence of high ground&mdash;explaining why poison gas drifted unimpeded across the salient.</li>
         </ul>
       </div>
 
-      <!-- Poem Box -->
-      <div class="poem-box" style="padding: 5px 10px;">
-        <div class="poem-header">
-          <div>
-            <span class="poem-title">For the Fallen</span>
-            <span class="poem-meta">&middot; Laurence Binyon (September 1914)</span>
-          </div>
-          <img src="${assets.binyonImg}" alt="Laurence Binyon" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1.2px solid #cbd5e1;">
+      <!-- Field Directive -->
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 8px 13px;">
+        <div style="font-size: 9.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+          Tour Leader Field Directive: The Canadian Line
         </div>
-        <div class="poem-lines" style="font-size: 8.2pt; line-height: 1.28;">
-With proud thanksgiving, a mother for her children,
-England mourns for her dead across the sea.
-Flesh of her flesh they were, spirit of her spirit,
-Fallen in the cause of the free.
-
-They went with songs to the battle, they were young,
-Straight of limb, true of eye, steady and aglow.
-They were staunch to the end against odds uncounted;
-They fell with their faces to the foe.
-
-They shall grow not old, as we that are left grow old:
-Age shall not weary them, nor the years condemn.
-At the going down of the sun and in the morning
-We will remember them.
-        </div>
-      </div>
-
-      <!-- Hinge Questions -->
-      <div class="hinge-box" style="padding: 5px 10px;">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
-        <p>
-          1. "Why did Sir Herbert Baker choose to incorporate a captured enemy pillbox directly into the foundation of the Cross of Sacrifice rather than bulldozing it away? What symbolic message does this convey?"
+        <p style="font-size: 10.2pt; color: #1e293b; line-height: 1.42; margin: 0;">
+          Gather pupils at the base of the monument. Point north-east toward Poelcappelle to trace the path of the gas cloud before opening the Owen reading on the facing page.
         </p>
-        <p>
-          2. "What does the overwhelming proportion of unknown dead (nearly 70%) at Tyne Cot reveal about the physical nature of high-explosive artillery warfare during the Third Battle of Ypres?"
-        </p>
-      </div>
-
-      <div class="transit-bar">
-        <span>&rarr; <strong>Transit Guidance:</strong> 20-minute coach transit south-west around Ypres to Lijssenthoek Military Cemetery near Poperinge.</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 11 of 16</span>
+      <span class="page-number">Page 11 of 24</span>
     </div>
   </div>
   `;

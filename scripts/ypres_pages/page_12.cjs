@@ -1,100 +1,80 @@
 module.exports = function renderPage12(assets) {
   return `
-  <!-- ================= PAGE 12: LIJSSENTHOEK CEMETERY ================= -->
+  <!-- ================= PAGE 12: VANCOUVER CORNER (LITERATURE & REFLECTION) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Day 2 &middot; Stop 8: Lijssenthoek Military Cemetery &amp; CCS</div>
-        <div class="school-sub">14:30 &middot; The Evacuation Chain, 44th Casualty Clearing Station &amp; Nellie Spindler</div>
+        <div class="school-title">Day 2 &middot; Stop 5: Literature &amp; Medical Reality</div>
+        <div class="school-sub">Wilfred Owen &middot; The Trauma of Gas Warfare &amp; The Old Lie</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Stop 8</div>
-        <div class="lead">Hospital Base &amp; CCS</div>
+        <div class="brand">Stop 5</div>
+        <div class="lead">Wartime Poetry</div>
       </div>
     </div>
 
     <div class="page-body">
-      <!-- Pitch -->
-      <div class="pitch-box" style="padding: 7px 11px;">
-        <div class="box-header">60-Second Teacher Pitch: The Hospital City in the Hop Fields</div>
-        <p>
-          "We have moved behind the frontline into the peaceful hop fields of Lijssenthoek. During the war, this was the site of the largest Casualty Clearing Station (CCS) hospital complex in the Salient, housing British 44 CCS, 10 CCS, and later French field hospitals. Positioned directly alongside the Ypres-Poperinge-Hazebrouck railway line, over <strong>300,000 wounded men</strong> passed through this hospital hub. Motor ambulances rushed the severely wounded here from frontline dressing stations. Surgeons operated around the clock in canvas marquees and wooden huts, performing emergency amputations and abdominal surgery before loading stabilized patients onto 30-carriage hospital trains bound for base hospitals in Boulogne and Le Havre. The <strong>10,755 graves</strong> surrounding us are the men who could not be saved."
-        </p>
-      </div>
-
-      <!-- Photo & Medical Advancements 2-Col Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 10px; align-items: stretch;">
-        <div class="photo-card" style="padding: 4px; display: flex; flex-direction: column; justify-content: space-between;">
-          <img src="${assets.xrayFieldHospital}" alt="Mobile X-Ray Field Hospital" style="height: 125px; object-fit: cover; border-radius: 3px;">
-          <div class="caption">
-            Mobile Field Radiology (1917): X-ray van and operating table triaging wounded outside a hospital tent.
-          </div>
-        </div>
-
-        <div class="context-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 6px 11px;">
+      <!-- Poem Box -->
+      <div class="poem-box">
+        <div class="poem-header">
           <div>
-            <div class="box-header">Crucible of Modern Trauma Medicine</div>
-            <p style="font-size: 8.3pt; line-height: 1.32; margin-bottom: 4px;">
-              Surgeons at Lijssenthoek pioneered the <strong>Carrel-Dakin technique</strong>, continuously irrigating deep, ragged shrapnel wounds with sodium hypochlorite antiseptic solution to prevent fatal gas gangrene.
-            </p>
-            <div class="box-header" style="margin-top: 4px;">The Thomas Splint &amp; Transfusion Revolution</div>
-            <p style="font-size: 8.3pt; line-height: 1.32;">
-              The introduction of the <strong>Thomas Splint</strong> in 1916 pulled compound fracture femur mortality down from 80% to under 20%. Mobile refrigeration units enabled citrated whole blood transfusions directly at the operating table.
-            </p>
+            <span class="poem-title">Dulce et Decorum Est</span>
+            <span class="poem-meta">&middot; Wilfred Owen (Written at Craiglockhart, 1917)</span>
+          </div>
+          <img src="${assets.owenImg}" alt="Wilfred Owen" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #cbd5e1;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 14px; align-items: start;">
+          <div class="poem-lines" style="font-size: 11pt; line-height: 1.44;">
+Gas! GAS! Quick, boys!&mdash;An ecstasy of fumbling,
+Fitting the clumsy helmets just in time;
+But someone still was yelling out and stumbling,
+And flound'ring like a man in fire or lime...
+Dim, through the misty panes and thick green light,
+As under a green sea, I saw him drowning.
+
+In all my dreams, before my helpless sight,
+He plunges at me, guttering, choking, drowning.
+
+If in some smothering dreams you too could pace
+Behind the wagon that we flung him in,
+And watch the white eyes writhing in his face,
+His hanging face, like a devil's sick of sin;
+If you could hear, at every jolt, the blood
+Come gargling from the froth-corrupted lungs...
+My friend, you would not tell with such high zest
+To children ardent for some desperate glory,
+The old Lie: <em>Dulce et decorum est / Pro patria mori.</em>
+          </div>
+
+          <div style="font-size: 10pt; line-height: 1.42; color: #475569; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px;">
+            <strong style="color: #1e293b; display: block; font-size: 10.4pt; margin-bottom: 4px;">The Dismantling of Martial Glory:</strong>
+            Composed while recovering from shell shock at Craiglockhart War Hospital under Siegfried Sassoon's mentorship, Owen directly addresses civilian propagandists (such as Jessie Pope) who urged young boys to enlist.<br><br>
+            By describing the grotesque physical agony of a soldier dying of fluid-choked lungs, Owen strips away all classical romance from warfare. The Latin quote from the Roman poet Horace&mdash;<em>"It is sweet and fitting to die for one's fatherland"</em>&mdash;is exposed as an unforgivable lie.
           </div>
         </div>
-      </div>
-
-      <!-- Case Study & Triage Protocol Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="context-box" style="border-left: 5px solid #0284c7; padding: 6px 11px;">
-          <div class="box-header" style="color: #0369a1;">Case Study: Staff Nurse Nellie Spindler (Plot XVI. A. 3)</div>
-          <p style="font-size: 8.3pt; line-height: 1.32;">
-            Locate <strong>Plot XVI. A. 3</strong> to find 26-year-old Staff Nurse Nellie Spindler (QAIMNS). A specialist in abdominal wounds from Wakefield, Spindler was operating on casualties on 21 August 1917 when a German long-range 210mm high-explosive shell struck the hospital marquee, mortally wounding her. She died in the matron's arms and was buried with full military honours&mdash;the <strong>only woman buried among over 10,000 men</strong> here.
-          </p>
-        </div>
-
-        <div class="context-box" style="padding: 6px 11px;">
-          <div class="box-header">The Ruthless Tripartite Triage Protocol</div>
-          <p style="font-size: 8.3pt; line-height: 1.32;">
-            Arriving stretcher bearers were sorted instantly by experienced Medical Officers into three stark categories:
-            <br>&bull; <strong>Walking Wounded:</strong> Minor flesh injuries; patched and sent back to duty.
-            <br>&bull; <strong>Immediate Surgery:</strong> Abdominal trauma, head injuries, chest wounds with hope.
-            <br>&bull; <strong>Moribund:</strong> Hopeless cases; placed in comfort tents with palliative morphine.
-          </p>
-        </div>
-      </div>
-
-      <!-- Look-fors -->
-      <div class="look-fors-box" style="padding: 6px 11px;">
-        <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
-        <ul class="look-fors-list" style="font-size: 8.3pt; line-height: 1.32;">
-          <li><strong>Grave of Staff Nurse Nellie Spindler (Plot XVI. A. 3):</strong> Notice the QAIMNS badge and floral tributes left at her headstone.</li>
-          <li><strong>The Visitor Centre Casualty Timeline:</strong> Examine the glass timeline wall correlating daily burials with specific offensive battles (Third Ypres peaks).</li>
-          <li><strong>Old Railway Siding Alignment:</strong> Trace the path of the wartime trackbed where hospital trains pulled up directly beside the hospital tents.</li>
-          <li><strong>Allied &amp; Enemy Plots:</strong> Observe the French, Belgian, Chinese Labour Corps, and German prisoners buried alongside Commonwealth troops.</li>
-        </ul>
       </div>
 
       <!-- Hinge Questions -->
-      <div class="hinge-box" style="padding: 6px 11px;">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
+      <div class="hinge-box">
+        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
-          1. "Why were Casualty Clearing Stations positioned along railway spurs just outside field artillery range rather than safe on the French coast? What medical gamble did this represent?"
+          1. "Why did the German high command fail to exploit the four-mile gap opened by the chlorine gas cloud on 22 April 1915? What does this reveal about military skepticism toward technological weapons?"
         </p>
         <p>
-          2. "How does the burial of Staff Nurse Nellie Spindler challenge traditional school textbook narratives concerning gender roles and the physical dangers of the Western Front?"
+          2. "How does Owen's visceral medical imagery of gas suffocation dismantle centuries of classical and Victorian heroic tradition?"
         </p>
       </div>
 
+      <!-- Transit Bar -->
       <div class="transit-bar">
-        <span>&rarr; <strong>Transit Guidance:</strong> 20-minute coach transit east to Passchendaele 1917 Memorial Museum in Zonnebeke Chateau.</span>
+        <span>&rarr; <strong>Transit Guidance:</strong> 15-minute coach transit south-west to Sanctuary Wood (Hill 62) along the Meenseweg.</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 12 of 16</span>
+      <span class="page-number">Page 12 of 24</span>
     </div>
   </div>
   `;

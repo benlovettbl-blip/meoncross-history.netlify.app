@@ -1,11 +1,11 @@
 module.exports = function renderPage5(assets) {
   return `
-  <!-- ================= PAGE 5: ESSEX FARM ADS ================= -->
+  <!-- ================= PAGE 5: ESSEX FARM ADS (SITE & LOOK-FORS) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
         <div class="school-title">Day 1 &middot; Stop 1: Essex Farm ADS &amp; Canal Bank</div>
-        <div class="school-sub">14:30 &middot; Yser Canal Embankment &middot; John McCrae &amp; Valentine Strudwick</div>
+        <div class="school-sub">14:30 &middot; Yser Canal Embankment &middot; Medical Evacuation Chain &amp; Valentine Strudwick</div>
       </div>
       <div class="partner-pill">
         <div class="brand">Stop 1</div>
@@ -22,7 +22,7 @@ module.exports = function renderPage5(assets) {
         </p>
       </div>
 
-      <!-- Case Study & Medical Analysis -->
+      <!-- Case Study & Medical Evacuation 2-Col Grid -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
         <div class="context-box" style="border-left: 5px solid #dc2626;">
           <div class="box-header" style="color: #991b1b;">Case Study: Private Valentine Strudwick (Plot I. U. 8)</div>
@@ -34,7 +34,7 @@ module.exports = function renderPage5(assets) {
         <div class="context-box">
           <div class="box-header">Medical Evacuation Chain at Essex Farm</div>
           <p>
-            An Advanced Dressing Station (ADS) was the second tier of the evacuation chain, positioned 1&ndash;2 miles behind the front. Stretcher bearers brought wounded from battalion Regimental Aid Posts (RAPs). Doctors performed emergency triage: bandaging, morphine injections, anti-tetanus serum, and limb splinting before moving patients by motor ambulance to Casualty Clearing Stations (CCS).
+            An Advanced Dressing Station (ADS) was the second tier of the evacuation chain, positioned 1&ndash;2 miles behind the front line. Stretcher bearers brought wounded from battalion Regimental Aid Posts (RAPs). Doctors performed emergency triage: bandaging, morphine injections, anti-tetanus serum, and limb splinting before moving patients by motor ambulance to Casualty Clearing Stations (CCS).
           </p>
         </div>
       </div>
@@ -50,61 +50,20 @@ module.exports = function renderPage5(assets) {
         </ul>
       </div>
 
-      <!-- Poem Box -->
-      <div class="poem-box" style="padding: 5px 10px;">
-        <div class="poem-header">
-          <div>
-            <span class="poem-title">In Flanders Fields</span>
-            <span class="poem-meta">&middot; Lt. Col. John McCrae (Canadian AMC) &middot; 3 May 1915</span>
-          </div>
-          <img src="${assets.mccraeImg}" alt="John McCrae" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1.2px solid #cbd5e1;">
+      <!-- On-Site Pupil Guidance -->
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 9px 13px;">
+        <div style="font-size: 9.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
+          Tour Leader Field Directive: Student Journal Task
         </div>
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; align-items: start;">
-          <div class="poem-lines" style="font-size: 8.2pt; line-height: 1.30;">
-In Flanders fields the poppies blow
-Between the crosses, row on row,
-That mark our place; and in the sky
-The larks, still bravely singing, fly
-Scarce heard amid the guns below.
-
-We are the Dead. Short days ago
-We lived, felt dawn, saw sunset glow,
-Loved and were loved, and now we lie,
-In Flanders fields.
-
-Take up our quarrel with the foe:
-To you from failing hands we throw
-The torch; be yours to hold it high.
-If ye break faith with us who die
-We shall not sleep, though poppies grow
-In Flanders fields.
-          </div>
-          <div style="font-size: 8.1pt; line-height: 1.28; color: #475569; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 8px;">
-            <strong style="color: #1e293b; display: block; margin-bottom: 2px;">The Red Poppy &amp; Recruitment Symbol:</strong>
-            Written on the back step of an ambulance after McCrae buried his young friend Alexis Helmer, the poem personifies the dead speaking to the living. While the first two stanzas lament loss, the final stanza was swiftly adopted by Allied governments to drive enlistment campaigns, demanding that new recruits take up the torch against the foe.
-          </div>
-        </div>
-      </div>
-
-      <!-- Hinge Questions -->
-      <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
-        <p>
-          1. "How did McCrae's poem transform a common weed growing in disturbed agricultural soil into a sacred global symbol of remembrance&mdash;and does the final stanza glorify continuous warfare?"
+        <p style="font-size: 10.2pt; color: #1e293b; line-height: 1.42; margin: 0;">
+          Direct pupils to gather outside Bunker 4. Have students sketch the triage entrance and record Private Valentine Strudwick's details (age 15) in their fieldwork guides before moving to the McCrae memorial for the reading on the opposite page.
         </p>
-        <p>
-          2. "What does Valentine Strudwick's grave reveal about the effectiveness of British Army enlistment age checks during the recruiting rush of 1914&ndash;15?"
-        </p>
-      </div>
-
-      <div class="transit-bar">
-        <span>&rarr; <strong>Transit Guidance:</strong> Reboard coach for a 10-minute drive north-east along the Diksmuidseweg to Yorkshire Trench (Boezinge).</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 5 of 16</span>
+      <span class="page-number">Page 5 of 24</span>
     </div>
   </div>
   `;

@@ -42,6 +42,14 @@ const renderPage13 = require('./ypres_pages/page_13.cjs');
 const renderPage14 = require('./ypres_pages/page_14.cjs');
 const renderPage15 = require('./ypres_pages/page_15.cjs');
 const renderPage16 = require('./ypres_pages/page_16.cjs');
+const renderPage17 = require('./ypres_pages/page_17.cjs');
+const renderPage18 = require('./ypres_pages/page_18.cjs');
+const renderPage19 = require('./ypres_pages/page_19.cjs');
+const renderPage20 = require('./ypres_pages/page_20.cjs');
+const renderPage21 = require('./ypres_pages/page_21.cjs');
+const renderPage22 = require('./ypres_pages/page_22.cjs');
+const renderPage23 = require('./ypres_pages/page_23.cjs');
+const renderPage24 = require('./ypres_pages/page_24.cjs');
 
 function getHtmlContent() {
   const assets = {
@@ -97,13 +105,21 @@ ${renderPage13(assets)}
 ${renderPage14(assets)}
 ${renderPage15(assets)}
 ${renderPage16(assets)}
+${renderPage17(assets)}
+${renderPage18(assets)}
+${renderPage19(assets)}
+${renderPage20(assets)}
+${renderPage21(assets)}
+${renderPage22(assets)}
+${renderPage23(assets)}
+${renderPage24(assets)}
 </body>
 </html>
 `;
 }
 
 async function generatePdf() {
-  console.log('Generating Ypres Tour Leader A4 Master Field Companion (16 Pages)...');
+  console.log('Generating Ypres Tour Leader A4 Master Field Companion (24 Pages Large Print)...');
   const browser = await puppeteer.launch({
     headless: 'new',
     args: ['--allow-file-access-from-files', '--disable-web-security', '--no-sandbox'],
@@ -135,7 +151,7 @@ async function generatePdf() {
   if (totalOverflow > 0) {
     console.warn(`⚠️ Warning: Detected ${totalOverflow}px overflow across pages!`);
   } else {
-    console.log('✅ Perfect 0px overflow across all 16 pages in A4!');
+    console.log('✅ Perfect 0px overflow across all 24 pages in A4!');
   }
 
   // Generate primary A4 PDF

@@ -1,111 +1,77 @@
 module.exports = function renderPage15(assets) {
   return `
-  <!-- ================= PAGE 15: DAY 3 STOPS ================= -->
+  <!-- ================= PAGE 15: TYNE COT CEMETERY (SITE & LOOK-FORS) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Day 3 &middot; Stops 11, 12, 13: Rebirth, Haven &amp; Justice</div>
-        <div class="school-sub">Ypres Cloth Hall, Talbot House (Poperinge) &amp; The Execution Cells</div>
+        <div class="school-title">Day 2 &middot; Stop 7: Tyne Cot British Military Cemetery</div>
+        <div class="school-sub">13:00 &middot; Passchendaele Ridge &middot; Largest CWGC Cemetery on Earth &amp; 34,984 Missing</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Stops 11&ndash;13</div>
-        <div class="lead">Civic Rebirth &amp; Toc H</div>
+        <div class="brand">Stop 7</div>
+        <div class="lead">Tyne Cot &amp; Missing</div>
       </div>
     </div>
 
     <div class="page-body">
-      <!-- Dual Photo Grid -->
+      <!-- Pitch -->
+      <div class="pitch-box">
+        <div class="box-header">60-Second Teacher Pitch: The Great City of the Silent</div>
+        <p>
+          "We are standing in Tyne Cot, the largest Commonwealth war cemetery in the world. Spread across this gentle slope lie <strong>11,961 soldiers</strong> of the British Empire. Look closely at the headstones: an astonishing <strong>8,369 of them&mdash;nearly 70%&mdash;are unidentified</strong>, marked only with Kipling's words: <em>'A Soldier of the Great War &mdash; Known unto God.'</em> This ground was captured by the Australian 3rd Division on 4 October 1917 during the Battle of Broodseinde. Notice the massive Cross of Sacrifice standing in the centre: architect Sir Herbert Baker deliberately encased a captured German reinforced concrete pillbox inside its stone base, cutting an aperture so the machine-gun firing slit remains visible beneath the cross. At the rear, the semi-circular Memorial to the Missing bears the carved names of <strong>34,984 soldiers</strong> who vanished in the mud of the Salient between August 1917 and the Armistice."
+        </p>
+      </div>
+
+      <!-- Photo Card -->
+      <div class="photo-card" style="padding: 5px;">
+        <img src="${assets.tyneCot}" alt="Tyne Cot Cemetery" style="height: 165px; object-fit: cover;">
+        <div class="caption">
+          Tyne Cot Cemetery on the Passchendaele slope: The Great Cross of Sacrifice built over a German machine-gun pillbox, with 12,000 Portland headstones.
+        </div>
+      </div>
+
+      <!-- Architecture & Local Parish 2-Col Grid -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="photo-card" style="padding: 4px;">
-          <img src="${assets.clothHallRestored}" alt="Ypres Cloth Hall Restored" style="height: 120px; object-fit: cover;">
-          <div class="caption">
-            Ypres Cloth Hall: Rebuilt stone-by-stone from medieval blueprints (1928&ndash;1967).
-          </div>
+        <div class="context-box">
+          <div class="box-header">Baker's Classical Landscape Design</div>
+          <p>
+            Architect Sir Herbert Baker designed Tyne Cot as a classical terraced city. Flint stones from English chalk downs were embedded in the boundary walls to evoke English church masonry. The inner cluster preserves original wartime battlefield burials; outer arcs were concentrated postwar.
+          </p>
         </div>
-        <div class="photo-card" style="padding: 4px;">
-          <img src="${assets.talbotHouse}" alt="Talbot House Poperinge" style="height: 120px; object-fit: cover;">
-          <div class="caption">
-            Talbot House ('Toc H'), Poperinge: The everyman rest sanctuary for all ranks.
-          </div>
-        </div>
-      </div>
 
-      <!-- Stop 11: Cloth Hall -->
-      <div class="context-box" style="padding: 6px 11px;">
-        <div class="box-header">Stop 11: Ypres Cloth Hall &amp; Grote Markt (Civic Rebirth)</div>
-        <p style="font-size: 8.3pt; line-height: 1.32;">
-          In 1914, Ypres' 13th-century Cloth Hall was reduced to a blackened stump by German incendiary shells. Winston Churchill argued the entire city should be preserved as a permanent ruin as a memorial to British sacrifice. The Belgian citizens fiercely rejected this, choosing to rebuild their city stone by stone from original medieval blueprints in an epic 50-year restoration. Notice the blend of original scorched stones and reconstructed limestone.
-        </p>
-      </div>
-
-      <!-- Stop 12: Talbot House -->
-      <div class="pitch-box" style="padding: 7px 11px;">
-        <div class="box-header">Stop 12: Talbot House ("Toc H"), Poperinge &mdash; The Everyman Sanctuary</div>
-        <p style="font-size: 8.3pt; line-height: 1.32;">
-          "In late 1915, Army Chaplain Rev. Philip 'Tubby' Clayton opened this four-story townhouse as a rest house for soldiers in Poperinge ('Pop'), the bustling railhead six miles behind the front. Clayton established an extraordinary, revolutionary rule: <em>'All rank abandon ye who enter here.'</em> Inside, generals and teenage privates drank tea together, played piano, read books in the peaceful garden, and checked their weapons at the door. Up in the attic hop-loft, Tubby built a chapel where a simple carpenter's workbench served as the altar. In an army strictly segregated by class and military discipline, Talbot House provided humanity, laughter, and spiritual refuge."
-        </p>
-      </div>
-
-      <!-- Stop 13: Poperinge Death Cells -->
-      <div class="context-box" style="border-left: 5px solid #dc2626; padding: 6px 11px;">
-        <div class="box-header" style="color: #991b1b;">Stop 13: Poperinge Town Hall Execution Cells &amp; Shot at Dawn</div>
-        <p style="font-size: 8.3pt; line-height: 1.32;">
-          In the courtyard of Poperinge Town Hall stand the preserved execution cells and wooden post where soldiers condemned by British Court Martial were executed by firing squad. Across the war, <strong>306 British and Commonwealth soldiers</strong> were executed for desertion or cowardice. Most were suffering from severe combat fatigue and shell shock (PTSD), then unrecognised as a medical illness. In 2006, the British government granted a statutory pardon to all 306 men, recognising their tragic plight.
-        </p>
-      </div>
-
-      <!-- Poem & Analysis Grid -->
-      <div class="poem-box" style="padding: 6px 11px;">
-        <div class="poem-header">
-          <div>
-            <span class="poem-title">The Soldier</span>
-            <span class="poem-meta">&middot; Rupert Brooke (Written 1914 &mdash; The Georgian Ideal)</span>
-          </div>
-          <img src="${assets.brookeImg}" alt="Rupert Brooke" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1.2px solid #cbd5e1;">
-        </div>
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; align-items: start;">
-          <div class="poem-lines" style="font-size: 8.1pt; line-height: 1.26;">
-If I should die, think only this of me:
-That there's some corner of a foreign field
-That is for ever England. There shall be
-In that rich earth a richer dust concealed;
-A dust whom England bore, shaped, made aware,
-Gave, once, her flowers to love, her ways to roam;
-A body of England's, breathing English air,
-Washed by the rivers, blest by suns of home.
-And think, this heart, all evil shed away,
-A pulse in the eternal mind, no less
-Gives somewhere back the thoughts by England given;
-Her sights and sounds; dreams happy as her day;
-And laughter, learnt of friends; and gentleness,
-In hearts at peace, under an English heaven.
-          </div>
-          <div style="font-size: 8.1pt; line-height: 1.28; color: #475569; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 8px;">
-            <strong style="color: #1e293b; display: block; margin-bottom: 2px;">The 1914 Romantic Arc vs 1917 Reality:</strong>
-            Brooke captured the innocent, patriotic idealism of August 1914 before the mechanized slaughter of the Western Front shattered Victorian illusions. Contrast Brooke's gentle "English heaven" with Owen's choking "green sea" at Vancouver Corner or Sassoon's fury at the Menin Gate.
-          </div>
+        <div class="context-box">
+          <div class="box-header">Local Parish Search: Panels 88&ndash;90</div>
+          <p>
+            Lead pupils along the rear memorial wall to <strong>Panels 88&ndash;90 (Hampshire Regiment)</strong> to locate our three parish boys: <strong>Pte. Sydney Muckett</strong> (Menin Road, age 21), <strong>Pte. Arthur Rye</strong> (Polygon Wood, age 21), and <strong>L/Cpl. Archibald Ward</strong> (Gheluwe, age 23).
+          </p>
         </div>
       </div>
 
-      <!-- Hinge Questions -->
-      <div class="hinge-box" style="padding: 5px 10px;">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
-        <p>
-          1. "How did Talbot House's deliberate abolition of military hierarchy provide psychological survival for frontline soldiers, and why did high command tolerate it?"
-        </p>
-        <p>
-          2. "Was the execution of soldiers suffering from acute shell shock a military necessity to maintain combat discipline, or a tragic failure of medical understanding?"
-        </p>
+      <!-- Look-fors -->
+      <div class="look-fors-box">
+        <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
+        <ul class="look-fors-list">
+          <li><strong>The German Pillbox Aperture:</strong> Walk behind the Cross of Sacrifice to look through the concrete slit where German gunners fired.</li>
+          <li><strong>Disordered Cluster of Field Graves:</strong> Compare the chaotic, non-linear headstones near the central pillbox with the neat postwar outer rows.</li>
+          <li><strong>Panels 88&ndash;90 (Hampshire Regiment):</strong> Locate our local parish names on the rear memorial wall.</li>
+          <li><strong>Victoria Cross Graves:</strong> Locate the graves of Capt. Clarence Smith Jeffries VC (40th Australian Bn) and Sgt. Lewis McGee VC.</li>
+        </ul>
       </div>
 
-      <div class="transit-bar">
-        <span>&rarr; <strong>Expedition Conclusion:</strong> Depart Poperinge at 14:30 for Calais Eurotunnel (17:50 crossing); return to school approx. 20:00.</span>
+      <!-- Field Directive -->
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 8px 13px;">
+        <div style="font-size: 9.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
+          Tour Leader Field Directive: Memorial Wall Search
+        </div>
+        <p style="font-size: 10.2pt; color: #1e293b; line-height: 1.42; margin: 0;">
+          Guide students along the curving apse to Panels 88&ndash;90. Have them record the names before assembling at the central Cross for Laurence Binyon's ode on the facing page.
+        </p>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 15 of 16</span>
+      <span class="page-number">Page 15 of 24</span>
     </div>
   </div>
   `;

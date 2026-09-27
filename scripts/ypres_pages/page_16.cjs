@@ -1,114 +1,80 @@
 module.exports = function renderPage16(assets) {
   return `
-  <!-- ================= PAGE 16: BACK COVER & DIRECTORY ================= -->
+  <!-- ================= PAGE 16: TYNE COT (LITERATURE & REFLECTION) ================= -->
   <div class="page">
     <div class="header-bar">
       <div>
-        <div class="school-title">Field Reference Directory &amp; Master Glossary</div>
-        <div class="school-sub">Staff Protocols, Critical Contacts &amp; Tactical Vocabulary</div>
+        <div class="school-title">Day 2 &middot; Stop 7: The National Ode of Remembrance</div>
+        <div class="school-sub">Laurence Binyon &middot; September 1914 &amp; The Eternal Liturgy of Remembrance</div>
       </div>
       <div class="partner-pill">
-        <div class="brand">Field Reference</div>
-        <div class="lead">Staff Protocols</div>
+        <div class="brand">Stop 7</div>
+        <div class="lead">Wartime Poetry</div>
       </div>
     </div>
 
     <div class="page-body">
-      <!-- 24/7 Contacts Box -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 3px;">
-          24/7 Fieldwork Emergency Contacts &amp; Incident Escalation Tree
-        </div>
-        <div style="font-size: 8.3pt; line-height: 1.44; color: #1e293b; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <!-- Poem Box -->
+      <div class="poem-box">
+        <div class="poem-header">
           <div>
-            <strong>Base Camp:</strong> Peace Village Hostel (+32 57 226 040)<br>
-            <strong>Universal European Emergency:</strong> 112<br>
-            <strong>Local Belgian Police (Zone Arro Ieper):</strong> +32 57 230 500<br>
-            <strong>British Embassy Brussels (Consular):</strong> +32 2 287 6211
+            <span class="poem-title">For the Fallen</span>
+            <span class="poem-meta">&middot; Laurence Binyon (Written September 1914)</span>
           </div>
-          <div>
-            <strong>Regional Hospital:</strong> Jan Yperman Ziekenhuis, Briekestraat 12, Ypres (+32 57 353 535)<br>
-            <strong>24/7 School Emergency Incident Base:</strong> +44 (0)1329 662182 / 07825 297749<br>
-            <strong>Coach Dispatch (Jet Connect):</strong> Operational Operations Lead
+          <img src="${assets.binyonImg}" alt="Laurence Binyon" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #cbd5e1;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 14px; align-items: start;">
+          <div class="poem-lines" style="font-size: 11pt; line-height: 1.44;">
+With proud thanksgiving, a mother for her children,
+England mourns for her dead across the sea.
+Flesh of her flesh they were, spirit of her spirit,
+Fallen in the cause of the free.
+
+They went with songs to the battle, they were young,
+Straight of limb, true of eye, steady and aglow.
+They were staunch to the end against odds uncounted;
+They fell with their faces to the foe.
+
+They shall grow not old, as we that are left grow old:
+Age shall not weary them, nor the years condemn.
+At the going down of the sun and in the morning
+We will remember them.
+
+As the stars that shall be bright when we are dust,
+Moving in marches upon the heavenly plain;
+As the stars that are starry in the time of our darkness,
+To the end, to the end, they remain.
+          </div>
+
+          <div style="font-size: 10pt; line-height: 1.42; color: #475569; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px;">
+            <strong style="color: #1e293b; display: block; font-size: 10.4pt; margin-bottom: 4px;">From the British Museum to Global Remembrance:</strong>
+            Sitting on the cliffs of North Cornwall in the opening weeks of the war, Binyon—an assistant keeper of prints at the British Museum too old for military service—composed these verses in response to the retreat from Mons.<br><br>
+            The fourth stanza, known as 'The Ode of Remembrance', has become the universal liturgy recited at Remembrance Day ceremonies, military funerals, and nightly at the Menin Gate. Standing among 12,000 graves at Tyne Cot, its solemn cadence transforms individual grief into eternal collective reverence.
           </div>
         </div>
       </div>
 
-      <!-- Terminology Glossary -->
-      <div class="context-box" style="padding: 8px 12px;">
-        <div class="box-header">Master Tactical &amp; Battlefield Terminology Glossary</div>
-        <div style="font-size: 8.2pt; line-height: 1.38; color: #334155; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-          <div>
-            <strong>RAP (Regimental Aid Post):</strong> First aid station 200m behind frontline manned by battalion medical officer.<br>
-            <strong>ADS (Advanced Dressing Station):</strong> Triage facility 1&ndash;2 miles behind line (e.g. Essex Farm).<br>
-            <strong>CCS (Casualty Clearing Station):</strong> Major surgical hospital hub outside artillery range (e.g. Lijssenthoek).<br>
-            <strong>Enfilade Fire:</strong> Gunfire directed down the length of a trench, causing devastating casualties.<br>
-            <strong>Sap:</strong> Narrow, shallow trench dug forward into No Man's Land for listening or wire maintenance.
-          </div>
-          <div>
-            <strong>Salient:</strong> A battlefield bulge projecting into enemy territory, exposed to artillery fire from three sides.<br>
-            <strong>Traverse:</strong> 90-degree earth baffle in a trench containing high-explosive shell fragments.<br>
-            <strong>Duckboards:</strong> Wooden slats laid above water sumps to keep soldiers' feet dry.<br>
-            <strong>Whizz-Bang:</strong> British slang for high-velocity German 77mm shell that arrived before its sound.<br>
-            <strong>Trench Foot:</strong> Fungal rot caused by prolonged immersion in cold, unsanitary water.
-          </div>
-        </div>
-      </div>
-
-      <!-- Flemish Toponyms -->
-      <div class="look-fors-box" style="padding: 7px 11px;">
-        <div class="box-header">Flemish Toponym Pronunciation &amp; Historical Equivalents</div>
-        <div style="font-size: 8.2pt; line-height: 1.38; color: #334155;">
-          <strong>Ieper</strong> (Flemish) = <strong>Ypres</strong> (French / British 'Wipers') &middot; 
-          <strong>Poperinge</strong> = British 'Pop' &middot; 
-          <strong>Mesen</strong> = <strong>Messines</strong> &middot; 
-          <strong>Zonnebeke</strong> = Pronounced 'Zon-neh-bay-kuh' &middot; 
-          <strong>Diksmuide</strong> = <strong>Dixmude</strong> &middot; 
-          <strong>Menen</strong> = <strong>Menin</strong> (destination of the Menin Road).
-        </div>
-      </div>
-
-      <!-- CWGC Sacred Ground Protocol & Supervisory Roster Grid -->
-      <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px;">
-        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #059669; border-radius: 6px; padding: 7px 11px;">
-          <div style="font-size: 8.4pt; font-weight: 800; color: #065f46; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-            CWGC Sacred Ground Protocol &amp; Pupil Decorum
-          </div>
-          <p style="font-size: 8.0pt; line-height: 1.32; color: #334155; margin: 0;">
-            All CWGC cemeteries and memorials are consecrated international war graves. Pupils must maintain solemn decorum, walking strictly along turf pathways without stepping across headstone borders. Absolute silence is observed during the Menin Gate Last Post ceremony. Fieldwork sketchbooks must be used respectfully at all stops.
-          </p>
-        </div>
-
-        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #d97706; border-radius: 6px; padding: 7px 11px;">
-          <div style="font-size: 8.4pt; font-weight: 800; color: #92400e; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-            Coach Logistics &amp; Buddy Supervision
-          </div>
-          <p style="font-size: 8.0pt; line-height: 1.32; color: #334155; margin: 0;">
-            Staff maintain a 1:10 buddy supervision roster. Headcounts are conducted before every coach departure. EU driver tachograph limits are strictly enforced (maximum 4.5 hours continuous driving). Meeting point for separated pupils: Peace Village Hostel reception desk.
-          </p>
-        </div>
-      </div>
-
-      <!-- Dedication Banner -->
-      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 9px 14px; text-align: center;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">
-          The History Department &middot; Pilgrimage of Remembrance
-        </div>
-        <p style="font-size: 8.4pt; color: #1e293b; line-height: 1.38; margin: 0; font-style: italic;">
-          "Dedicated to the memory of the fallen of our home parish of Holy Rood and the countless thousands who lie in the quiet earth of Flanders. We will remember them."
+      <!-- Hinge Questions -->
+      <div class="hinge-box">
+        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
+        <p>
+          1. "Why did Sir Herbert Baker choose to incorporate a captured enemy pillbox directly into the foundation of the Cross of Sacrifice rather than bulldozing it away? What symbolic message does this convey?"
+        </p>
+        <p>
+          2. "What does the overwhelming proportion of unknown dead (nearly 70%) at Tyne Cot reveal about the physical nature of high-explosive artillery warfare during the Third Battle of Ypres?"
         </p>
       </div>
 
-      <!-- Accreditations & Commercial Neutrality Banner -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 7.8pt; color: #475569;">
-        <span><strong>Publisher:</strong> The History Revision Hub &middot; Complete Commercial Neutrality</span>
-        <span><strong>Specification:</strong> Edexcel GCSE History Paper 1 &amp; Key Stage 3</span>
+      <!-- Transit Bar -->
+      <div class="transit-bar">
+        <span>&rarr; <strong>Transit Guidance:</strong> 20-minute coach transit south-west around Ypres to Lijssenthoek Military Cemetery near Poperinge.</span>
       </div>
     </div>
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 16 of 16</span>
+      <span class="page-number">Page 16 of 24</span>
     </div>
   </div>
   `;

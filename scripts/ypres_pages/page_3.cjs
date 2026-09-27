@@ -25,8 +25,8 @@ module.exports = function renderPage3(assets) {
       <!-- 2-Col CWGC Anatomy -->
       <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; align-items: stretch;">
         <div class="photo-card" style="text-align: left; padding: 7px; display: flex; flex-direction: column; justify-content: space-between;">
-          <img src="${assets.headstoneImg}" alt="CWGC Headstone" style="height: 195px; object-fit: cover; border-radius: 4px; margin-bottom: 5px;">
-          <div style="font-size: 8.4pt; color: #334155; line-height: 1.38;">
+          <img src="${assets.headstoneImg}" alt="CWGC Headstone" style="height: 190px; object-fit: cover; border-radius: 4px; margin-bottom: 5px;">
+          <div style="font-size: 9.6pt; color: #334155; line-height: 1.40;">
             <strong style="color: #1e3a8a;">CWGC Portland Stone Dimensions:</strong> 81cm high &times; 38cm wide &times; 7.5cm thick.<br>
             <strong>1. Regimental Badge:</strong> Identical size for privates and generals (absolute equality in death).<br>
             <strong>2. Service Details:</strong> Number, rank, name, honours, battalion, regiment.<br>
@@ -40,16 +40,16 @@ module.exports = function renderPage3(assets) {
         <div class="context-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 9px 12px;">
           <div>
             <div class="box-header">Sir Fabian Ware's Founding Philosophy</div>
-            <p style="font-size: 8.6pt; line-height: 1.40; color: #334155; margin-bottom: 6px;">
+            <p style="font-size: 9.8pt; line-height: 1.42; color: #334155; margin-bottom: 6px;">
               In 1917, Red Cross commander Sir Fabian Ware established the Imperial War Graves Commission with three radical, non-negotiable principles:
             </p>
-            <p style="font-size: 8.5pt; line-height: 1.38; color: #334155; margin-bottom: 6px;">
-              <strong>1. Radical Equality:</strong> Every soldier, whether field marshal or teenage private, receives an identical Portland headstone. No family could purchase an elaborate marble mausoleum or private monument.
+            <p style="font-size: 9.8pt; line-height: 1.40; color: #334155; margin-bottom: 6px;">
+              <strong>1. Radical Equality:</strong> Every soldier, whether field marshal or teenage private, receives an identical Portland headstone. No family could purchase an elaborate marble mausoleum.
             </p>
-            <p style="font-size: 8.5pt; line-height: 1.38; color: #334155; margin-bottom: 6px;">
-              <strong>2. No Repatriation:</strong> The British government strictly forbade the repatriation of corpses to Britain. Wealthy families could not bring their sons home while working-class families grieved across the Channel.
+            <p style="font-size: 9.8pt; line-height: 1.40; color: #334155; margin-bottom: 6px;">
+              <strong>2. No Repatriation:</strong> The British government strictly forbade the repatriation of corpses to Britain. Wealthy families could not bring their sons home while others grieved abroad.
             </p>
-            <p style="font-size: 8.5pt; line-height: 1.38; color: #334155;">
+            <p style="font-size: 9.8pt; line-height: 1.40; color: #334155;">
               <strong>3. Permanence &amp; Identity:</strong> Each grave is maintained in perpetuity, set within perennial English cottage gardens symbolizing rebirth amidst destruction.
             </p>
           </div>
@@ -59,7 +59,7 @@ module.exports = function renderPage3(assets) {
       <!-- Inscription Typologies -->
       <div class="context-box">
         <div class="box-header">Deciphering Family Inscription Typologies</div>
-        <p style="font-size: 8.6pt; line-height: 1.40; color: #334155;">
+        <p style="font-size: 9.8pt; line-height: 1.42; color: #334155;">
           Have pupils inspect headstones and categorize family epitaphs into four distinct emotional registers:<br>
           &bull; <strong>Christian Resignation &amp; Faith:</strong> <em>"Thy Will Be Done"</em> &middot; <em>"Until The Day Break And The Shadows Flee Away"</em><br>
           &bull; <strong>Classical Duty &amp; Patriotism:</strong> <em>"For King And Country"</em> &middot; <em>"He Died That We Might Live In Peace"</em><br>
@@ -79,7 +79,7 @@ module.exports = function renderPage3(assets) {
 
     <div class="footer-bar">
       <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
-      <span class="page-number">Page 3 of 16</span>
+      <span class="page-number">Page 3 of 24</span>
     </div>
   </div>
   `;
