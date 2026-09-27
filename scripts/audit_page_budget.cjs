@@ -310,7 +310,7 @@ async function auditPageBudget(page, options = {}) {
 
           // 5. Internal Multi-Column Prose Void Audit
           let internalProseGap = 0;
-          const prose = p.querySelector('.two-column-prose');
+          const prose = p.querySelector('.two-column-prose, .two-column-prose-grid');
           if (prose) {
             const proseRect = prose.getBoundingClientRect();
             const nextSection = prose.nextElementSibling;
@@ -328,7 +328,37 @@ async function auditPageBudget(page, options = {}) {
               const nextTop = nextSection
                 ? nextSection.getBoundingClientRect().top
                 : proseRect.bottom;
-              internalProseGap = Math.max(0, Math.round(nextTop - maxLeafBottom));
+              const gapToNext = Math.max(0, Math.round(nextTop - maxLeafBottom));
+              internalProseGap = Math.max(internalProseGap, gapToNext);
+            }
+
+            // For discrete multi-column grids (.col-side), audit column-to-column height imbalance and gaps
+            const cols = prose.querySelectorAll('.col-side');
+            if (cols.length >= 2) {
+              const getColLeafMaxBottom = (col) => {
+                const colLeaves = Array.from(col.querySelectorAll('*')).filter(
+                  (el) =>
+                    !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName) &&
+                    el.style.display !== 'none' &&
+                    el.children.length === 0 &&
+                    el.getBoundingClientRect().height > 0,
+                );
+                return colLeaves.length > 0
+                  ? Math.max(...colLeaves.map((el) => el.getBoundingClientRect().bottom))
+                  : col.getBoundingClientRect().top;
+              };
+              const b0 = getColLeafMaxBottom(cols[0]);
+              const b1 = getColLeafMaxBottom(cols[1]);
+              const colDiff = Math.abs(Math.round(b0 - b1));
+              if (colDiff > 35) {
+                internalProseGap = Math.max(internalProseGap, colDiff);
+              }
+              const nextTop = nextSection
+                ? nextSection.getBoundingClientRect().top
+                : proseRect.bottom;
+              const gap0 = Math.max(0, Math.round(nextTop - b0));
+              const gap1 = Math.max(0, Math.round(nextTop - b1));
+              internalProseGap = Math.max(internalProseGap, gap0, gap1);
             }
           }
 

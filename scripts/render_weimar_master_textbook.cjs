@@ -781,6 +781,32 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
               <span class="sb-title">${(sec3.title || 'Forensic Archival Evidence').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
             </div>
             ${formatBlockParas(sec3, 3, idx)}
+
+            ${bank.archivalDispatch || ''}
+
+            ${
+              bank.keyFigure
+                ? `
+            <div class="key-figure-box">
+              <div class="kf-header">
+                <span class="kf-tag">KEY HISTORICAL INDIVIDUAL</span>
+                <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+              </div>
+              <div class="kf-identity-row">
+                ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
+                <div class="kf-identity-text">
+                  <div class="kf-name">${bank.keyFigure.name}</div>
+                  <div class="kf-role">${bank.keyFigure.role}</div>
+                </div>
+              </div>
+              <div class="kf-significance">${bank.keyFigure.significance}</div>
+              <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+              <ul class="kf-actions-list">
+                ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+              </ul>
+            </div>`
+                : ''
+            }
           </div>
 
           <div class="col-side">
@@ -789,6 +815,10 @@ async function buildPublisherTextbookHtml(targetKt = 'kt1') {
               <span class="sb-title">${(sec4.title || 'The Historical Verdict & Historiographical Debate').replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
             </div>
             ${formatBlockParas(sec4, 4, idx)}
+
+            ${coverConfig.ktId === 'KT1' && idx === 0 ? '' : bank.conceptSpotlight || ''}
+
+            ${bank.academicDebate || ''}
           </div>
         </div>
 

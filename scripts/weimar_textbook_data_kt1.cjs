@@ -665,7 +665,7 @@ module.exports = function getKt1Data(helpers) {
       // PEDAGOGICAL CONTENT ENRICHMENT: ELIMINATE PROSE VOIDS (Page Budget Guard)
       // =========================================================================
 
-      // Page 3 (KT1.1 Recto Act 3): Add paragraph [3.2] on the Democratic Transition
+      // Page 3 (KT1.1 Recto Act 3): Add concise paragraph [3.2] on the Democratic Transition
       if (lessonIndex === 0 && secNum === 3) {
         if (
           !paras.some(
@@ -675,7 +675,45 @@ module.exports = function getKt1Data(helpers) {
           )
         ) {
           paras.push(
-            `<strong>The Democratic Transition &amp; Elections of January 1919:</strong> Following the Kaiser's abdication on 9 November 1918, Friedrich Ebert formed a provisional six-man Council of People's Representatives (*Rat der Volksbeauftragten*). The council declared an immediate armistice, introduced the eight-hour working day, and scheduled national democratic elections for 19 January 1919. Despite violent street fighting and boycotts by communist radicals, over 30 million Germans voted—achieving an extraordinary 83% turnout that provided an overwhelming democratic mandate to convene the National Assembly and draft the Weimar Constitution.`,
+            `<strong>The Democratic Transition &amp; Elections of January 1919:</strong> Friedrich Ebert formed the Council of People's Representatives, declared an armistice, and scheduled national elections for 19 January 1919. Despite radical communist boycotts, 30 million Germans voted—an extraordinary 83% turnout providing an overwhelming democratic mandate for the National Assembly to convene at Weimar.`,
+          );
+        }
+      }
+
+      // Page 3 (KT1.1 Recto Act 4): Add concise paragraphs on the National Assembly at Weimar
+      if (lessonIndex === 0 && secNum === 4) {
+        if (
+          !paras.some(
+            (p) => p.includes('National Assembly at Weimar') || p.includes('Democratic Compromise'),
+          )
+        ) {
+          paras.push(
+            `<strong>The National Assembly at Weimar &amp; The Democratic Compromise:</strong> Meeting in the peaceful cultural city of Weimar to escape Berlin's street riots, delegates drafted Germany's first parliamentary constitution. Ratified on 11 August 1919, the document balanced progressive universal suffrage with traditional federal structures, establishing a republic amid revolutionary turmoil.`,
+          );
+        }
+        if (
+          !paras.some((p) => p.includes('Hugo Preuss') || p.includes('Constitutional Architecture'))
+        ) {
+          paras.push(
+            `<strong>Constitutional Architecture &amp; The Preuss Compromise:</strong> Lead architect Hugo Preuss sought to dismantle imperial Prussian dominance, though conservative delegates successfully preserved traditional regional prerogatives.`,
+          );
+        }
+      }
+
+      // Page 4 (KT1.2 Verso Act 1): Enrich with diplomatic outrage & economic amputation
+      if (lessonIndex === 1 && secNum === 1) {
+        if (
+          !paras.some((p) => p.includes('Brockdorff-Rantzau') || p.includes('Economic Amputation'))
+        ) {
+          paras.push(
+            `<strong>The Diplomatic Outrage &amp; Economic Amputation:</strong> When the treaty draft was presented at Versailles on 7 May 1919, Foreign Minister Count Ulrich von Brockdorff-Rantzau fiercely declared: "We know the impact of the hate that faces us here... The demand that we alone should confess to war guilt is an outrage." Beyond territorial amputations, Germany lost 75% of its zinc and iron ore deposits in Upper Silesia and Lorraine, 26% of coal production, and 15% of agricultural output. Stripped of merchant shipping, overseas colonies, and economic resources, the infant republic was plunged into chronic fiscal instability.`,
+          );
+        }
+        if (
+          !paras.some((p) => p.includes('Dolchstoßlegende') || p.includes('November Criminals'))
+        ) {
+          paras.push(
+            `<strong>The Stab-in-the-Back Myth (<em>Dolchstoßlegende</em>):</strong> Right-wing nationalists and imperial military commanders deliberately deflected blame for the catastrophe by claiming the army had been 'stabbed in the back' by democratic politicians on the home front. By signing the treaty under the threat of Allied invasion, Weimar's leaders were permanently branded the 'November Criminals' (*Novemberverbrecher*), saddling the regime with an intractable crisis of political legitimacy.`,
           );
         }
       }
@@ -687,18 +725,34 @@ module.exports = function getKt1Data(helpers) {
         );
       }
 
-      // Page 5 (KT1.2 Recto Act 3): Add concise paragraph on Judicial Bias & Assassinations
+      // Page 5 (KT1.2 Recto Act 3): Add concise paragraphs on Judicial Bias & Rathenau
       if (lessonIndex === 1 && secNum === 3) {
         if (!paras.some((p) => p.includes('Judicial Bias') || p.includes('Organisation Consul'))) {
           paras.push(
-            `<strong>Judicial Bias &amp; The Wave of Right-Wing Assassinations:</strong> Between 1919 and 1922, right-wing terrorist death squads (such as Organisation Consul) carried out 376 political murders, assassinating prominent republicans including Finance Minister Matthias Erzberger and Foreign Minister Walther Rathenau. Weimar judges demonstrated blatant political bias: right-wing murderers served an average prison sentence of just four months, while left-wing offenders faced life imprisonment or execution, fatally compromising judicial legitimacy.`,
+            `<strong>Judicial Bias &amp; The Wave of Right-Wing Assassinations:</strong> Between 1919 and 1922, right-wing terrorist death squads (such as Organisation Consul) committed 376 political murders, assassinating Finance Minister Matthias Erzberger and Foreign Minister Walther Rathenau. Weimar judges demonstrated blatant political bias: right-wing murderers served an average of four months in prison, while left-wing offenders faced life imprisonment or execution, fatally compromising judicial legitimacy.`,
+          );
+        }
+        if (
+          !paras.some(
+            (p) => p.includes('Rathenau Assassination') || p.includes('Republic Protection Act'),
+          )
+        ) {
+          paras.push(
+            `<strong>National Outrage &amp; Republic Protection Act:</strong> Rathenau's murder provoked mass grief, driving 700,000 citizens into Berlin's streets. Chancellor Joseph Wirth enacted the Law for the Protection of the Republic to dissolve extremist leagues, but nationalist regional courts continually undermined its enforcement.`,
           );
         }
       }
 
-      // Page 5 (KT1.2 Recto Act 4): Filter out Munich Putsch preview to let Act 4 + Spotlight fit within budget
+      // Page 5 (KT1.2 Recto Act 4): Filter out Munich Putsch preview and add barter economy paragraph
       if (lessonIndex === 1 && secNum === 4) {
         paras = paras.filter((p) => !p.includes('Inflation King') && !p.includes('Munich Putsch'));
+        if (
+          !paras.some((p) => p.includes('Barter Economy') || p.includes('Wheelbarrows of Cash'))
+        ) {
+          paras.push(
+            `<strong>The Barter Economy &amp; Everyday Chaos:</strong> By late 1923, money lost all function: workers were paid twice daily in wheelbarrows of cash to purchase bread before prices doubled by lunchtime. Commerce reverted to crude bartering of coal, shoes, and sausages.`,
+          );
+        }
       }
 
       // Page 6 (KT1.3 Verso Act 1): Add paragraph [1.3] on Stresemann's Policy of Fulfilment & Locarno
@@ -708,6 +762,16 @@ module.exports = function getKt1Data(helpers) {
         ) {
           paras.push(
             `<strong>Stresemann's Policy of Fulfilment (<em>Erfüllungspolitik</em>):</strong> Stresemann recognised that Germany could not overturn Versailles through military defiance. Instead, he pioneered a pragmatic foreign policy of 'fulfilment': by scrupulously honouring treaty obligations, he won the trust of Britain and the US. At the 1924 London Conference, he secured the evacuation of Franco-Belgian occupation troops from the Ruhr. By appointing Dr Hjalmar Schacht to head the Reichsbank under the 1924 Bank Act, Stresemann anchored the new Reichsmark to gold and guaranteed strict central bank independence.`,
+          );
+        }
+        if (
+          !paras.some(
+            (p) =>
+              p.includes('Rentenmark Miracle') || p.includes('mortgage on all German agricultural'),
+          )
+        ) {
+          paras.push(
+            `<strong>The Rentenmark Miracle &amp; Currency Stabilization:</strong> In November 1923, Stresemann appointed currency commissioner Hjalmar Schacht to introduce the Rentenmark, backed by a mortgage on all German agricultural and industrial land. By strictly limiting the money supply to 3.2 billion Rentenmarks, Schacht restored public confidence, permanently ending hyperinflation. In August 1924, the permanent Reichsmark backed by gold reserves replaced it under the Dawes Plan reforms.`,
           );
         }
         if (!paras.some((p) => p.includes('Locarno Treaties') || p.includes('League of Nations'))) {
@@ -733,6 +797,34 @@ module.exports = function getKt1Data(helpers) {
         }
       }
 
+      // Page 7 (KT1.3 Recto Act 3): Add foreign policy achievements
+      if (lessonIndex === 2 && secNum === 3) {
+        if (!paras.some((p) => p.includes('Treaty of Berlin') || p.includes('Eastern Frontiers'))) {
+          paras.push(
+            `<strong>The Treaty of Berlin (1926) &amp; Eastern Foreign Policy:</strong> While securing peace in the west via Locarno, Stresemann deliberately refused to guarantee Germany's eastern borders with Poland and Czechoslovakia. To maintain diplomatic leverage against Britain and France, he signed the Treaty of Berlin in April 1926 with the Soviet Union, reaffirming mutual neutrality and covert military cooperation initiated under the 1922 Rapallo Pact.`,
+          );
+        }
+        if (!paras.some((p) => p.includes('Kellogg-Briand') || p.includes('Outlawing War'))) {
+          paras.push(
+            `<strong>The Kellogg-Briand Pact (1928) &amp; Diplomatic Reintegration:</strong> In 1928, Germany was among the first nations to sign the Kellogg-Briand Pact, renouncing war as an instrument of national policy. Stresemann's diplomatic prestige secured the early withdrawal of Allied military oversight commissions, restoring German sovereignty and international respectability.`,
+          );
+        }
+      }
+
+      // Page 7 (KT1.3 Recto Act 4): Add structural vulnerabilities paragraph
+      if (lessonIndex === 2 && secNum === 4) {
+        if (
+          !paras.some(
+            (p) =>
+              p.includes('Agricultural Depression') || p.includes('Structural Vulnerabilities'),
+          )
+        ) {
+          paras.push(
+            `<strong>Structural Flaws: Agriculture &amp; Unemployment:</strong> German agriculture entered deep depression from 1927 due to falling grain prices, fueling rural discontent. Crucially, even during the peak boom of 1928–29, unemployment never dropped below 1.3 million workers.`,
+          );
+        }
+      }
+
       // Page 8 (KT1.4 Verso Act 1): Enrich paragraph [1.2] with municipal housing & welfare
       if (lessonIndex === 3 && secNum === 1) {
         if (!paras.some((p) => p.includes('Municipal Housing') || p.includes('GEHAG'))) {
@@ -749,6 +841,24 @@ module.exports = function getKt1Data(helpers) {
             `<strong>The Patriarchal Backlash &amp; 'Double-Earners' (<em>Doppelverdiener</em>):</strong> Despite constitutional protections under Article 109, women encountered fierce institutional resistance. Conservative political parties, the Catholic and Lutheran churches, and the national civil service association fiercely attacked married working women as 'double-earners' (*Doppelverdiener*) who were accused of stealing jobs from demobilised war veterans. By 1932, Chancellor Heinrich Brüning passed emergency decrees enabling the dismissal of married female civil servants if their husbands were employed. Outside cosmopolitan Berlin, traditional patriarchal expectations remained deeply entrenched: the vast majority of provincial women remained full-time domestic homemakers, while abortion remained heavily criminalised under Section 218.`,
           );
         }
+      }
+
+      // Page 9 (KT1.4 Recto Act 3): Streamline Literature & Theatre paragraph to fit with Bauhaus image + Walter Gropius card
+      if (lessonIndex === 3 && secNum === 3) {
+        paras = paras.map((p) => {
+          if (p.includes('All Quiet on the Western Front')) {
+            return p
+              .replace(
+                /<br\s*\/?>\s*<strong>Literature and Theatre<\/strong>[\s\S]*$/i,
+                '\n\n<strong>Literature &amp; Theatre:</strong> Erich Maria Remarque published <em>All Quiet on the Western Front</em> (1929), challenging militarist heroic myths, while avant-garde playwrights developed <em>Zeittheater</em> to dramatise contemporary political conflicts.',
+              )
+              .replace(
+                /<strong>Literature and Theatre<\/strong>[\s\S]*$/i,
+                '<strong>Literature &amp; Theatre:</strong> Erich Maria Remarque published <em>All Quiet on the Western Front</em> (1929), challenging militarist heroic myths, while avant-garde playwrights developed <em>Zeittheater</em> to dramatise contemporary political conflicts.',
+              );
+          }
+          return p;
+        });
       }
 
       return paras;
