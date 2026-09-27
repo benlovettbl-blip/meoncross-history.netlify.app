@@ -156,6 +156,31 @@ function getLessonSections(lesson, idx) {
     ];
   }
 
+  if (lesson && lesson.id === 'lesson_4_1') {
+    return [
+      {
+        title: 'Act 1: The Ideological Shift & Incentives for Motherhood',
+        text: `**Reversing Weimar Emancipation and the 'Three Ks':** During the Weimar Republic (1919–1933), German women achieved advanced democratic rights: Article 109 guaranteed legal equality, female suffrage was granted at age 20, and over 100,000 women entered teaching, medicine, and the civil service. The Nazi regime regarded female emancipation as a moral and demographic disaster that caused the national birth rate to collapse to under one million births annually by 1933. In Adolf Hitler's racial ideology, gender roles were biologically predetermined: men were warriors and breadwinners; women were domestic guardians tasked with breeding the Aryan racial community (*Volksgemeinschaft*). The Weimar ideal of the independent, professional 'New Woman' was repudiated in favor of the traditional mother devoted to the 'Three Ks': *Kinder, Küche, Kirche* (Children, Kitchen, Church). Nazi regulations dictated female appearance: women were pressured to abandon makeup, hair dye, smoking, and trousers in favor of traditional dirndl dresses, plaited hair, and flat shoes.
+
+**Financial Bribes: Marriage Loans and the Mother's Cross:** To reverse demographic decline and breed future soldiers for imperial expansion, the regime instituted financial incentives and state honours. Under the Law for the Encouragement of Marriage (June 1933), newlywed Aryan couples received an interest-free state loan of 1,000 Reichsmarks (equivalent to roughly nine months' average wages). Crucially, the loan was only granted if the bride agreed to leave her job, freeing employment for men. For each live child born, 25% of the loan was permanently cancelled; producing four children wiped out the debt entirely. Motherhood was glorified as combat service on the home front. On 16 December 1938, Hitler established the Cross of Honour of the German Mother (*Ehrenkreuz der Deutschen Mutter*), presented annually on 12 August (his mother's birthday): Bronze for four or five children, Silver for six or seven, and Gold for eight or more. Wearing the medal carried immense privilege: Hitler Youth members were required to salute recipients, and mothers received priority in food queues and reserved seats on public transit.`,
+      },
+      {
+        title: 'Act 2: The Racial State: Eugenics, Sterilisation & Lebensborn',
+        text: `**Racial Hygiene and Compulsory Surgical Sterilisation:** Beneath the propaganda glorification of motherhood lay the brutal reality of Nazi eugenics. The regime only encouraged breeding among citizens deemed "genetically sound" and racially pure Aryan. Under the Law for the Prevention of Hereditarily Diseased Offspring (*Erbgesundheitsgesetz*, July 1933), over 200 Hereditary Health Courts (*Erbgesundheitsgerichte*) were established. Composed of two doctors and a party judge, these tribunals ordered the compulsory surgical sterilisation of anyone diagnosed with hereditary illnesses, including schizophrenia, manic depression, epilepsy, blindness, deafness, and alleged "feeblemindedness". Between 1933 and 1939, over 400,000 citizens—the vast majority working-class women—were forcibly sterilised under armed escort. In October 1935, the Marriage Health Law made marriage conditional on securing an official Certificate of Fitness to Marry (*Ehetauglichkeitszeugnis*), while the Nuremberg Laws outlawed sexual relations or marriage between Jews and German citizens.
+
+**Divorce Laws, The SS Lebensborn Programme & Party Coordination:** State intervention extended deeply into the private sphere to maximize the output of Aryan children. Under the revised Marriage Act of 1938, infertility, refusal to bear children, or having an abortion were made statutory grounds for a husband to immediately divorce his wife. For unwed mothers meeting strict racial criteria, Heinrich Himmler established the SS *Lebensborn* (Fount of Life) programme in 1935. Initially designed as maternity homes for pregnant SS partners, it evolved into a state-run selective breeding system where single Aryan women were encouraged to mate with SS officers to produce racially pure children for state adoption. Simultaneously, all 230 independent Weimar women’s organisations were dissolved or forcibly integrated into the German Women's Enterprise (*Deutsches Frauenwerk*) and the *NS-Frauenschaft*. Led by Reich Women's Leader Gertrud Scholtz-Klink, these bodies operated Motherhood Schools (*Mütterschulen*) training 1.7 million women by 1939 to subordinate their lives to the Führer.`,
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: Controlling Appearance, Daily Life, and Education'),
+        text: blocks[3].text || blocks[3].content || '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: Success or Failure: The Historical Verdict'),
+        text: blocks[4].text || blocks[4].content || '',
+      },
+    ];
+  }
+
   if (lesson && lesson.id === 'lesson_4_2' && blocks.length >= 5) {
     return [
       {
