@@ -148,14 +148,14 @@ const UNITS_DATA = [
     year: 'Year 11 (GCSE)',
     title: 'Early Elizabethan England, 1558–1588',
     fourAct: 'Complete (3 Key Topics / 12 Enquiries)',
-    textbook: 'Amber (Legacy Hybrid - Needs 12p Publisher Suite)',
+    textbook: 'Gold (3x 12p Publisher Suite KT1–3, 0px Overflow)',
     workbook: 'Gold (3x 16p Double-Page Booklets KT1–3)',
     themes: 'Mapped (Government, Religion, Conflict, Society)',
     skills: 'Active (Q1 Features, Q2 Explain Why, Q3 Essay)',
-    status: 'AMBER',
-    statusLabel: 'TEXTBOOK AUDIT REQ',
+    status: 'GREEN',
+    statusLabel: '100% COMPLETE',
     guidance:
-      'Workbooks modern (3x 16p), but textbooks currently use legacy hybrid sheets with severe narrative gaps across Plots, Dutch campaign, and Roanoke. Needs 12p publisher master textbook engine matching cme_new.',
+      'Complete & Production Ready. All 3 Key Topics feature 12-page publisher master textbooks grounded directly in Pearson specification prose with 0px overflow and synced to Department File.',
   },
   {
     id: 'great_war_part2',
