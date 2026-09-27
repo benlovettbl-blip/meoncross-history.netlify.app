@@ -91,6 +91,35 @@ function getLessonSections(lesson, idx) {
     return fallback;
   };
 
+  if (lesson && lesson.id === 'lesson_1_1') {
+    return [
+      {
+        title: 'Act 1: The Legacy of the First World War: A Nation on the Brink',
+        text: `**The Military Collapse & The Autumn Crisis:** By late September 1918, Germany's imperial military leadership realized the First World War was utterly lost. General Erich Ludendorff informed Kaiser Wilhelm II that the German army could no longer withstand the Allied Hundred Days Offensive. Fearing an imminent military rout and hoping for lenient peace terms based on US President Woodrow Wilson's Fourteen Points, the High Command urgently advised the creation of a civilian parliamentary government. The human and economic devastation was staggering: over two million German soldiers had been killed, four million were wounded (representing a 55% casualty rate), and imperial debt had surged from 50 billion to 150 billion marks.
+
+**The Starving Home Front & The Royal Navy Blockade:** Behind the crumbling battle lines, civilian society was fracturing under acute deprivation. The British Royal Navy’s tight naval blockade choked off essential imports of food, fertilizers, and medical supplies. During the freezing 'Turnip Winter' of 1916–17 and throughout 1918, over 750,000 German civilians died from starvation, hypothermia, and malnutrition-related illnesses, compounded by the lethal Spanish Influenza pandemic. Bitter civilian resentment erupted into mass strikes across Berlin, Essen, and Munich, as industrial workers protested against starvation rations, war profiteering, and the military regime.
+
+**The Kiel Mutiny & The Spread of Soldiers' Councils:** The final spark ignited on 28 October 1918 at the naval base of Wilhelmshaven. Ordered by admiral commanders to embark on a suicidal "death voyage" against the British Grand Fleet, naval crews refused orders and extinguished boiler fires. When officers arrested hundreds of mutineers, 40,000 armed sailors seized the port of Kiel on 3 November, forming revolutionary Sailors' and Workers' Councils (*Räte*). Within days, the revolt spread across northern Germany: soldiers refused to fire on demonstrators, and in Bavaria on 7 November, socialist Kurt Eisner proclaimed a People's State, overthrowing the Wittelsbach monarchy.`,
+      },
+      {
+        title: 'Act 2: Revolution from Below: Mutiny & Abdication',
+        text: `**The Kaiser's Abdication & Flight to Holland:** On 9 November 1918, revolutionary turmoil engulfed the capital. In Berlin, general strikes brought industrial production to a complete standstill, while armed workers and mutinous soldiers marched toward the government quarter. Recognizing that the army would no longer obey the crown, Chancellor Prince Max von Baden took decisive action without royal consent: he publicly announced the abdication of Kaiser Wilhelm II. Stripped of imperial command, Wilhelm II fled his military headquarters at Spa, boarding an armored train into permanent exile at Amerongen in the Netherlands, ending five centuries of Hohenzollern rule.
+
+**Proclaiming the Republic & The Dual Balcony Threat:** Desperate to forestall a violent Bolshevik-style insurrection, Prince Max handed the Chancellorship to Friedrich Ebert, leader of the moderate Social Democratic Party (SPD). At 2:00 PM on 9 November, SPD deputy Philipp Scheidemann leaned from a Reichstag window and proclaimed a democratic German Republic to cheering crowds. Two hours later, radical communist leader Karl Liebknecht appeared on a balcony of the former imperial palace and declared a "Free Socialist Republic". Ebert's provisional government immediately established the six-man Council of People's Representatives to govern through the dangerous vacuum.
+
+**The Ebert-Groener Pact & The Stinnes-Legien Compromise:** Facing immediate armed threats from communist revolutionaries, Ebert concluded a secret telephone pact with General Wilhelm Groener on 10 November 1918. The Imperial Army promised loyalty to the new socialist-led republic in exchange for Ebert's guarantee that traditional military command structures would remain untouched and revolutionary councils suppressed. On 11 November, civilian politician Matthias Erzberger signed the Armistice in the Compiègne forest. However, right-wing nationalists immediately weaponized this surrender to forge the toxic *Dolchstoßlegende* ('stab-in-the-back' myth), branding democratic politicians 'November Criminals'.`,
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: Forging a New Democracy: The Weimar Constitution'),
+        text: blocks[3] ? blocks[3].text || blocks[3].content || '' : '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: Evaluating the Constitution: A Flawed Masterpiece?'),
+        text: blocks[4] ? blocks[4].text || blocks[4].content || '' : '',
+      },
+    ];
+  }
+
   if (lesson && lesson.id === 'lesson_2_1') {
     return [
       {
@@ -111,11 +140,15 @@ function getLessonSections(lesson, idx) {
       },
       {
         title: 'Act 3: Blood and Iron: The Paramilitary Muscle of the SA',
-        text: blocks[4] ? blocks[4].text || blocks[4].content || '' : '',
+        text: `**Paramilitary Discipline & The Freikorps Recruits:** Under the command of Captain Ernst Röhm, the *Sturmabteilung* (SA, or 'Brownshirts') underwent rapid expansion between 1921 and 1922. Recruited heavily from demobilized soldiers, unemployed youth, and violent Freikorps paramilitaries, the SA provided young men with military discipline, uniforms, free meals, and an outlet for violent anti-socialist hatred. By 1922, the SA operated as a private army of over 6,000 brawlers, marching in strict military formations and staging intimidating torchlight parades across Bavaria.
+
+**Street Warfare & Intimidation as Political Theatre:** The primary function of the SA was the violent monopolisation of public spaces. In November 1921, during the infamous 'Hofbräuhaus Battle', fifty SA stormtroopers assaulted hundreds of socialists attempting to disrupt a Hitler rally, beating them with beer mugs and table legs. However, recognizing that the SA retained strong personal loyalty to Röhm, Hitler established a dedicated personal bodyguard unit in 1923: the *Stosstrupp Adolf Hitler*, the forerunner of the SS. For Hitler, paramilitary violence was essential theatre: it created an aura of invincible power that appealed to Germans terrified of Bolshevik revolution.`,
       },
       {
         title: 'Act 4: Historical Evaluation: A Regional Bavarian Fringe Party',
-        text: blocks[5] ? blocks[5].text || blocks[5].content || '' : '',
+        text: `**Regional Containment & The Bavarian Sanctuary:** While the creation of the 25-Point Programme and the *Völkischer Beobachter* demonstrated remarkable zeal, the early Nazi Party remained strictly confined to Bavaria. In the aftermath of the 1919 Bavarian Soviet Republic, Munich had become an ultra-conservative, anti-socialist sanctuary ruled by right-wing Commissioner Gustav von Kahr. Under Kahr's protection, the Bavarian police and judiciary turned a blind eye to right-wing violence, shielding the NSDAP from federal intervention and allowing Hitler to operate with impunity.
+
+**Bavarian Defiance & The 1922 Status:** Following the June 1922 assassination of Foreign Minister Walther Rathenau, the Reichstag passed the Law for the Protection of the Republic, banning radical paramilitary groups. However, the Bavarian government openly defied Berlin, refusing to enforce the ban against the NSDAP. Despite having roughly 20,000 members and filling Munich beer halls, the NSDAP remained virtually unknown outside Bavaria. The party did not hold a single Reichstag seat, and industrial workers backed the SPD or KPD. Nevertheless, Hitler had built a disciplined machine that only awaited an economic crisis to break out nationally.`,
       },
     ];
   }
@@ -251,23 +284,60 @@ function getLessonSections(lesson, idx) {
     ];
   }
 
-  if (lesson && lesson.id === 'lesson_4_2' && blocks.length >= 5) {
+  if (lesson && lesson.id === 'lesson_4_2') {
     return [
       {
         title: 'Act 1: The Thousand-Year Reich & Indoctrinating Educators',
-        text: [blocks[0].text || '', blocks[1].text || ''].filter(Boolean).join('\n\n'),
+        text: `**The Totalitarian Objective: Shaping the 'Thousand-Year Reich':** In Adolf Hitler's vision, adults who had been raised in imperial or Weimar democracy were contaminated by democratic ideals. In *Mein Kampf*, Hitler declared: *"He alone, who owns the youth, gains the future."* The overriding objective of Nazi education was total ideological capture: converting impressionable German schoolchildren into fanatically obedient, racially conscious Aryan fanatics. Boys were to be hardened into fearless frontline soldiers who welcomed death for the Fatherland, while girls were conditioned to become fertile, domestic mothers dedicated to bearing pure Aryan offspring.
+
+**Purging the Profession: The National Socialist Teachers' League:** Education Minister Bernhard Rust systematically nazified the teaching profession. Under the April 1933 Law for the Restoration of the Professional Civil Service, all Jewish teachers and educators with suspected socialist or communist sympathies were instantly dismissed. To retain their livelihoods, remaining teachers were forced to join the National Socialist Teachers' League (*NSLB*). By 1939, over 97% of all German teachers had enrolled. Educators were required to attend compulsory six-week ideological and physical training camps at Bayreuth, swore a personal oath of loyalty to Adolf Hitler, and were instructed to weave Nazi racial doctrine into every single academic discipline.
+
+**Classroom Denunciation & The Destruction of Parental Authority:** The classroom environment was transformed into a surveillance panopticon. Teachers who hesitated to use the Hitler salute or displayed insufficiently fanatical enthusiasm were routinely reported to the Gestapo by their own pupils. Textbooks were thoroughly purged of liberal or pacifist ideas, and portraits of the Führer hung in every classroom. By encouraging children to view loyalty to Hitler as superior to loyalty to their own families, the regime systematically drove a wedge between generations, destroying the authority of parents and the Christian church over Germany's youth.`,
       },
       {
-        title: extractTitle(blocks[2], 'Act 2: Nazifying the Curriculum & Classrooms'),
-        text: blocks[2].text || '',
+        title: 'Act 2: Nazifying the Curriculum & Classrooms',
+        text: `**Rewriting the Curriculum: Physical Education & Race Science:** The school timetable was overhauled to reflect Nazi priorities. Physical Education was dramatically expanded, occupying at least 15% of total school hours, with daily cross-country marches, boxing, and gymnastics designed to weed out the weak and prepare boys for military service. Academic subjects were weaponized: Biology was replaced by *Rassenkunde* (Race Studies), where children were taught pseudo-scientific craniometry, skull-measuring, and the alleged biological superiority of Aryans over Slavic and Jewish "parasites". History was rewritten to glorify Germanic warriors and depict the Weimar Republic as a Jewish-led betrayal.
+
+**Weaponizing Mathematics and German Literature:** Even exact sciences were turned into ideological weapons. Mathematics word problems asked students to calculate ballistic flight paths for bombers, artillery angles, and the exact financial burden imposed on the state by keeping hereditary asylum patients alive compared to building social housing. In German literature, classical humanism was replaced by militaristic Nordic sagas and Hitler’s autobiography, *Mein Kampf*, which became a mandatory school text. By 1938, all Jewish children were legally barred from attending German schools, cementing total racial segregation.
+
+**Elite Cadre Schools: Napolas and Adolf Hitler Schools:** For boys identified as the racial and physical elite, the regime established specialized boarding schools to breed future commanders. The National Political Institutes of Education (*Napolas*), supervised by the SS, were run on strict Prussian military lines with rigorous combat drills and ideological indoctrination. The Adolf Hitler Schools (*AHS*), operated by the Hitler Youth, accepted boys from age twelve for six years of intensive physical hardening without formal examinations. The most fanatical graduates were earmarked for the *Ordensburgen* (Castle Schools) to become the totalitarian governing elite of the Reich.`,
       },
       {
         title: extractTitle(blocks[3], 'Act 3: Extracurricular Control: The Youth Movements'),
-        text: blocks[3].text || '',
+        text: blocks[3] ? blocks[3].text || blocks[3].content || '' : '',
       },
       {
         title: extractTitle(blocks[4], 'Act 4: Success or Failure: The Historical Verdict'),
-        text: blocks[4].text || '',
+        text: blocks[4] ? blocks[4].text || blocks[4].content || '' : '',
+      },
+    ];
+  }
+
+  if (lesson && lesson.id === 'lesson_4_4') {
+    return [
+      {
+        title: 'Act 1: The Foundation: Nazi Racial Ideology',
+        text: `**Social Darwinism & The Aryan Racial Hierarchy:** Adolf Hitler’s worldview rested upon an extreme pseudo-scientific interpretation of Social Darwinism. He argued that human history was a brutal biological struggle between competing races, in which the German Aryans were the *Herrenvolk* ('Master Race') destined to conquer and rule Europe. Below the Aryans sat "sub-humans" (*Untermenschen*), encompassing Slavic peoples and the Roma. At the absolute base sat Jews, whom Hitler characterized not merely as a religious minority, but as an existential biological parasite (*Schmarotzer*) actively poisoning the German bloodline through cultural subversion and race-mixing.
+
+**Hereditary Health Courts & Compulsory Surgical Sterilisation:** To guarantee biological purity, the regime targeted Germans deemed genetically or mentally "unfit". Barely six months after taking power, Hitler enacted the Law for the Prevention of Hereditarily Diseased Offspring (*Erbgesundheitsgesetz*, July 1933), establishing over 200 Hereditary Health Courts (*Erbgesundheitsgerichte*) staffed by doctors and party magistrates. Based on reports from physicians and asylum directors, these courts ordered the compulsory surgical sterilisation of anyone diagnosed with hereditary blindness, deafness, schizophrenia, epilepsy, or alleged "feeblemindedness". Over 400,000 Germans—primarily young working-class women—were forcibly sterilised.
+
+**The T4 Euthanasia Programme & Secret Medical Murder:** By 1939, the regime escalated to systematic murder under the secret *Aktion T4* euthanasia programme. Directed by Philipp Bouhler and Dr Karl Brandt, doctors were authorized to administer a "mercy death" (*Gnadentod*) to infants and children born with severe disabilities. Parents were deceived into surrendering children to clinics like Spiegelgrund, where they were murdered by lethal injection or starvation. The programme later expanded to disabled adults using carbon monoxide gas chambers camouflaged as showers, murdering over 70,000 citizens before public outcry forced it underground.`,
+      },
+      {
+        title: 'Act 2: The Persecution of the Disabled & Minorities',
+        text: `**The Persecution of the Roma, Sinti & 'Asocials':** The regime ruthlessly purged anyone failing to contribute to the racial community. Germany's 30,000 Roma and Sinti were branded genetically criminal and work-shy. Ahead of the 1936 Berlin Olympics, police forced hundreds of Roma into a squalid internment camp at Marzahn. Dr Robert Ritter compiled genealogical registries, culminating in Himmler's 1938 Decree for the Fight Against the Gypsy Nuisance, mandating total racial registration prior to mass deportation to concentration camps.
+
+**The Criminalisation of Homosexuality & The Pink Triangle:** The Nazi state viewed homosexual men as biological traitors who failed to father children for the Reich. In 1935, Paragraph 175 was expanded to criminalise all male intimacy, and Himmler created the Reich Central Office for the Combating of Homosexuality and Abortion. Over 100,000 men were interrogated and 50,000 imprisoned. Around 15,000 were deported to concentration camps wearing pink triangles (*Rosa Winkel*), subjected to brutal forced labour and horrific medical experiments.
+
+**Cleansing the Streets: Beggars, Tramps & 'Work-Shy' Citizens:** In September 1933, the regime swept beggars, vagrants, and the unemployed into compulsory labour battalions; those branded 'work-shy' were sent to camps wearing black triangles. Under the 1938 Operation Work-Shy Reich (*Aktion Arbeitsscheu Reich*), the Gestapo arrested over 10,000 beggars, alcoholics, and unemployed men, deporting them to Buchenwald, Sachsenhausen, and Dachau to ruthlessly cleanse German public spaces of anyone outside the totalitarian mold.`,
+      },
+      {
+        title: extractTitle(blocks[3], 'Act 3: The Escalation of Anti-Semitic Persecution'),
+        text: blocks[3] ? blocks[3].text || blocks[3].content || '' : '',
+      },
+      {
+        title: extractTitle(blocks[4], 'Act 4: Kristallnacht & Total Exclusion'),
+        text: blocks[4] ? blocks[4].text || blocks[4].content || '' : '',
       },
     ];
   }

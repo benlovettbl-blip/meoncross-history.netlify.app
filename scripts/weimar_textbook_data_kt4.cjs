@@ -646,22 +646,12 @@ module.exports = function getKt4Data(helpers) {
             ` While Schacht warned that reckless military deficit spending would trigger catastrophic inflation, Göring dismissed orthodox financial warnings, insisting that military expansion would pay off all state debts through conquest.`;
         }
       }
-      // KT4.4 (Index 3) Verso Act 1: Ensure full height
+      // KT4.4 (Index 3) Verso Act 1 & 2: Text is already complete and balanced in render script; no extra paragraphs needed
       if (lessonIndex === 3 && secNum === 1) {
-        if (
-          !paras.some((p) => p.includes('Racial Hygiene Courts') || p.includes('Genetic Courts'))
-        ) {
-          paras.push(
-            `<strong>Hereditary Health Courts &amp; Compulsory Sterilisation:</strong> Enacted barely six months after taking power, the Law for the Prevention of Hereditarily Diseased Offspring (*Erbgesundheitsgesetz*) created over 200 special Hereditary Health Courts (*Erbgesundheitsgerichte*). Composed of two doctors and a Nazi district judge, these tribunals held arbitrary hearings based on reports submitted by local physicians and social workers. Citizens diagnosed with schizophrenia, manic depression, hereditary blindness or deafness, severe physical deformity, chronic alcoholism, or "feeblemindedness" were forcibly taken to state hospitals and surgically sterilized. Between 1933 and 1939, more than 400,000 Germans—approximately 1 in every 100 individuals of reproductive age—were subjected to compulsory sterilisation, resulting in the deaths of over 5,000 women from surgical complications.`,
-          );
-        }
+        // Native text fits naturally
       }
-      // KT4.4 (Index 3) Verso Act 2: Expand Act 2 to close void
       if (lessonIndex === 3 && secNum === 2) {
-        if (paras.length > 0 && !paras[paras.length - 1].includes('Curfew and Civil Death')) {
-          paras[paras.length - 1] +=
-            ` By late 1938, German Jews endured total 'civil death': excluded from parks, public transit, and higher education, stripped of state passports, and forced to adopt middle names ('Israel' or 'Sara') to ensure instant identification.`;
-        }
+        // Native text fits naturally
       }
       return paras;
     },
