@@ -15,6 +15,7 @@ Always proactively audit documents for page overflows, spilling text, and dead u
    - `.page-body-stretch`: Applied to central content sections (`flex: 1; display: flex; flex-direction: column; justify-content: space-between;`) to ensure even vertical distribution and eliminate dead bottom gaps.
    - `.content-stretch`: Flex child expanding to absorb available vertical room.
 3. **Automated Audit Pipeline:** All PDF compilation pipelines (`scripts/export_pdfs.cjs`, `scripts/generate_all_standalone_cover_packs.cjs`) and unit sync workflows (`scripts/sync_unit.cjs`) automatically execute `scripts/audit_page_budget.cjs` to guarantee 0px overflow and optimal (>85%) space utilization.
+4. **Mandatory In-Memory Layout & Typographical Balancing Engine:** All master textbook, booklet, and workbook PDF compilation pipelines MUST automatically execute `scripts/auto_calibrate_engine.cjs` inside Puppeteer before running `scripts/audit_page_budget.cjs` and capturing the PDF. Never manually tweak text strings, word counts, or paragraph counts to resolve micro-clipping or column voids; the automated balancing engine must automatically self-heal containers, baseline flex distributions, and typographical budgets in memory.
 
 ## New Unit Creation
 When the user asks to build, add, or create a new unit:
