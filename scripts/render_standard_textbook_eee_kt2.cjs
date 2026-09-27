@@ -73,6 +73,8 @@ function formatText(text) {
 }
 
 async function buildPublisherTextbookHtmlKT2() {
+  const { KEY_TOPICS_DATA } = require('./render_eee_twopage_workbook.cjs');
+  const ktWorkbookData = KEY_TOPICS_DATA.KT2;
   const getKt2Data = require('./eee_textbook_data_kt2.cjs');
   const ktData = getKt2Data({ getBase64Image });
   const { coverConfig, componentBank, leftSources, leftVocab } = ktData;
@@ -87,7 +89,7 @@ async function buildPublisherTextbookHtmlKT2() {
   const coverImgData =
     getBase64Image(coverConfig.coverImage) || getBase64Image('images/armada_portrait.jpg');
 
-  // Helper for rendering Archival Source Boxes
+  // Helper for rendering Archival Source Boxes (Paper 2 authentic primary written records)
   const renderArchivalSourceBox = (src) => {
     if (!src || !src.title) return '';
     return `
@@ -100,6 +102,15 @@ async function buildPublisherTextbookHtmlKT2() {
           <span class="source-date-micro">${src.date}</span>
         </div>
         <div class="archival-title">${src.title}</div>
+        ${
+          src.quote
+            ? `
+          <div class="archival-source-quote">
+            &ldquo;${src.quote}&rdquo;
+          </div>
+        `
+            : ''
+        }
         ${src.image ? `<img class="archival-image" src="${src.image}" alt="${src.title}">` : ''}
         <div class="archival-context-box">
           <p class="archival-context-text">${src.context}</p>
@@ -123,9 +134,9 @@ async function buildPublisherTextbookHtmlKT2() {
         num: 1,
         title: 'The Feudal Uprising: The Northern Earls & Catholic Rebellion, 1569',
         paras: [
-          `In the freezing damp of November 1569, royal messengers dashed into Whitehall bearing catastrophic news: the ancient Catholic north had risen in armed rebellion. Led by <strong>Charles Neville, Earl of Westmorland</strong>, and <strong>Thomas Percy, Earl of Northumberland</strong>, the Catholic nobility had mobilized 4,600 armed horsemen. The earls were fiercely disaffected by Elizabeth’s centralizing Protestant government. Under William Cecil’s direction, the Crown had systematically stripped northern lords of their traditional border offices, handing royal patronage and strategic governorships to Protestant southern 'new men'. When Elizabeth appointed the aggressive Protestant James Pilkington as Bishop of Durham and placed the Earl of Sussex over the Council of the North, the northern magnates felt their feudal independence and ancient Catholic faith under mortal assault.`,
-          `On 14 November 1569, the rebels burst into <strong>Durham Cathedral</strong>. In a scene of charged defiance, they tore the English Book of Common Prayer into shreds, overturned the communion table, and knelt in solemn reverence as traditional Latin Catholic Mass was sung. The rebellion was not merely a local protest; it was a dynastic conspiracy. The earls planned to march south, capture the fortified manor at Tutbury, liberate the captive <strong>Mary, Queen of Scots</strong>, and marry her to England’s premier peer, Thomas Howard, 4th Duke of Norfolk. They anticipated military reinforcement from the Spanish Duke of Alba's veteran tercios in the Netherlands.`,
-          `However, the rebellion collapsed under strategic isolation. Crucially, the Spanish invasion fleet failed to materialize, and northern towns like York and Newcastle closed their gates, remaining steadfastly loyal to the Crown. As the Earl of Sussex advanced northwards with a royal army of 14,000 men, the rebel earls panicked and disbanded their forces at Bramham Moor, fleeing across the snowbound Scottish border. Elizabeth’s retribution was merciless: Northumberland was betrayed, extradited, and publicly beheaded at York, while royal provost marshals summarily executed over <strong>450 ordinary rebels</strong> across northern villages, stringing up bodies on village greens to ensure the lesson of Tudor sovereign vengeance was never forgotten.`,
+          `In November 1569, royal messengers dashed into Whitehall bearing catastrophic news: the Catholic north had risen in armed rebellion. Led by <strong>Charles Neville, Earl of Westmorland</strong>, and <strong>Thomas Percy, Earl of Northumberland</strong>, the Catholic nobility mobilized 4,600 armed horsemen. The earls were alienated by Elizabeth’s centralizing Protestant government. Under Cecil, the Crown stripped northern lords of traditional border offices, granting royal patronage to southern 'new men'. The appointment of Protestant James Pilkington as Bishop of Durham and Sussex over the Council of the North left northern magnates feeling their feudal power and ancient faith under mortal assault.`,
+          `On 14 November 1569, rebels burst into <strong>Durham Cathedral</strong>, tearing the English Prayer Book to shreds and celebrating Latin Mass. The rebellion was a dynastic conspiracy: the earls planned to march south, liberate <strong>Mary, Queen of Scots</strong> from Tutbury, and marry her to England’s premier peer, Thomas Howard, Duke of Norfolk, expecting Spanish reinforcement from Alba's tercios in the Netherlands. The rebellion exposed the deep sectarian rift in English society, proving that despite ten years of the Elizabethan Settlement, Catholic loyalties remained entrenched across Yorkshire, Durham, and Northumberland.`,
+          `However, the rebellion collapsed under strategic isolation. Spanish troops never arrived, and towns like York and Newcastle closed their gates. As Sussex advanced with 14,000 royal troops, the earls disbanded at Bramham Moor and fled into Scotland. Elizabeth’s retribution was merciless: Northumberland was extradited and beheaded at York, while provost marshals executed over <strong>450 ordinary rebels</strong> across northern villages, ensuring the lesson of Tudor sovereign vengeance was never forgotten.`,
         ],
       },
       sec2: {
@@ -151,8 +162,8 @@ async function buildPublisherTextbookHtmlKT2() {
         title: 'Walsingham’s Cipher Sting & The Fotheringhay Execution, 1586–1587',
         paras: [
           `The existential crisis reached its dramatic climax in the summer of 1586 with the <strong>Babington Plot</strong>. Anthony Babington, a wealthy Derbyshire Catholic gentleman, organized a circle of Catholic conspirators committed to murdering Elizabeth and rescuing Mary from captivity. Unknown to the conspirators, Sir Francis Walsingham had constructed a masterly counter-espionage trap. Walsingham turned a Catholic courier, <strong>Gilbert Gifford</strong>, into a double-agent. Gifford arranged for Mary’s letters to be smuggled in and out of her secure quarters at Chartley Manor hidden inside watertight beer barrels.`,
-          `Every single dispatch was intercepted, deciphered, and copied by Walsingham’s chief cryptographer, <strong>Thomas Phelippes</strong>, using letter-frequency analysis. When Mary fatally penned a response on 17 July 1586 explicitly endorsing the assassination of Elizabeth with the instructions <em>"set the six gentlemen to work"</em>, Phelippes forged a postscript asking for the names of the conspirators, stamping it with a sinister gallows emblem. Armed with incontrovertible cryptographic proof of regicide, Walsingham struck: Babington and his accomplices were arrested, tortured, and publicly hanged, drawn, and quartered in St Giles' Fields.`,
-          `In October 1586, Mary Stuart was brought to trial before forty-six commissioners at Fotheringhay Castle. Convicted under the Act for the Queen's Safety, she was sentenced to death. Elizabeth agonized for four agonizing months, terrified of the constitutional precedent of executing an anointed cousin and monarch. Finally, pressured by Cecil and Parliament, Elizabeth signed the death warrant on 1 February 1587. The Privy Council secretly dispatched it without her final word. On <strong>8 February 1587</strong>, dressed in the liturgical red of Catholic martyrdom, Mary was beheaded at Fotheringhay. The domestic Catholic figurehead was eliminated forever, but in Madrid, Philip II resolved upon total invasion.`,
+          `Dispatches were intercepted and decoded by Walsingham’s cryptographer, <strong>Thomas Phelippes</strong>. When Mary replied on 17 July 1586 approving assassination (<em>"set the six gentlemen to work"</em>), Phelippes drew a gallows emblem. Armed with cryptographic proof, Walsingham struck: Babington and conspirators were arrested, racked, and executed in St Giles' Fields.`,
+          `In October 1586, Mary was convicted at Fotheringhay Castle under the Act for the Queen's Safety. Elizabeth hesitated for four months over executing an anointed queen before signing the warrant. The Privy Council dispatched it secretly, and on <strong>8 February 1587</strong>, Mary was beheaded. Her execution eliminated the domestic Catholic figurehead, but in Madrid, Philip II resolved upon total invasion. The execution also removed the prospect of a French-allied Catholic queen ruling England, giving Philip II undisputed papal justification to launch the Armada.`,
         ],
       },
     },
@@ -198,7 +209,7 @@ async function buildPublisherTextbookHtmlKT2() {
         paras: [
           `By 1584, Elizabeth’s delicate policy of proxy warfare collapsed catastrophically. In July 1584, the charismatic leader of the Dutch Revolt, <strong>William of Orange ('William the Silent')</strong>, was shot dead in his home at Delft by a Catholic fanatic, Balthasar Gérard. Philip II had publicly placed a bounty of 25,000 crowns on William's head, proving that a Protestant head of state could be assassinated by Catholic agents. William’s death left the Dutch rebellion leaderless and facing immediate destruction at the hands of the brilliant Spanish commander, Alexander Farnese, Duke of Parma.`,
           `Weeks earlier, Elizabeth’s French proxy, the Duke of Alençon (brother of the French King), died of fever. His death extinguished French military opposition to Spain in the Low Countries and threw France into a dynastic succession crisis, as the heir to the French throne was now the Protestant Henry of Navarre. Philip II moved ruthlessly to exploit this power vacuum, sealing a diplomatic masterstroke that isolated England completely.`,
-          `In December 1584, Philip II signed the secret <strong>Treaty of Joinville</strong> with the French Catholic League, led by the Duke of Guise. Philip agreed to finance Guise’s private army to wage war against French Protestants and block Henry of Navarre's accession. In return, Guise guaranteed that France would not oppose Spanish military operations in the Netherlands. For England, the Treaty of Joinville was a terrifying geopolitical nightmare: Europe’s two Catholic superpowers were now united in a religious crusade, with England left utterly isolated. Strategic ambiguity was no longer an option: Elizabeth was forced to choose between direct military intervention or absolute Spanish subjugation of Western Europe.`,
+          `In December 1584, Philip II signed the secret <strong>Treaty of Joinville</strong> with the French Catholic League, led by the Duke of Guise. Philip agreed to finance Guise’s private army to wage war against French Protestants and block Henry of Navarre's accession. In return, Guise guaranteed that France would not oppose Spanish military operations in the Netherlands. For England, the Treaty of Joinville was a terrifying geopolitical nightmare: Europe’s two Catholic superpowers were now united in a religious crusade, with England left utterly isolated. Strategic ambiguity was no longer an option: Elizabeth was forced to choose between direct military intervention or absolute Spanish subjugation of Western Europe. The secret pact neutralized French interference in the Low Countries, leaving the English realm with no continental buffer against Parma's veteran tercios.`,
         ],
       },
     },
@@ -244,7 +255,7 @@ async function buildPublisherTextbookHtmlKT2() {
         paras: [
           `By the spring of 1587, Walsingham’s intelligence agents confirmed that Philip II had assembled a massive invasion armada in Spanish and Portuguese ports. Recognizing that defensive waiting would prove fatal, Elizabeth dispatched Francis Drake with four royal galleons and twenty armed merchantmen with orders to <em>"impeach the gathering of the King of Spain's fleet"</em>. On <strong>19 April 1587</strong>, Drake sailed boldly into the heavily defended inner harbour of <strong>Cadiz</strong>.`,
           `Over the next thirty-six hours, Drake executed a masterclass in naval daring. Bombarding shore batteries, Drake’s ships maneuvered through the harbour, sinking, burning, or capturing between <strong>24 and 36 major Spanish vessels</strong>, including massive merchantmen loaded with naval ordnance and food supplies. Drake then sailed along the Portuguese coast, capturing the fortress of Sagres and destroying coastal fishing fleets before intercepting the huge Portuguese carrack <em>San Felipe</em> off the Azores, capturing £108,000 in rich spices and silk.`,
-          `Drake famously boasted that he had <em>"singed the King of Spain's beard"</em>. The raid was a logistical catastrophe for Philip II. Drake burned over <strong>1,700 tons of seasoned oak barrel staves</strong> on Cadiz wharves. Philip was forced to construct replacement casks from unseasoned green wood, which leaked fresh water and rotted food during the 1588 campaign. Crucially, the Cadiz raid delayed the launch of the Armada by more than twelve months, granting England a vital year to build warships, train county militias, and construct channel beacons.`,
+          `Drake famously boasted that he had <em>"singed the King of Spain's beard"</em>. The raid was a logistical catastrophe for Philip II. Drake burned over <strong>1,700 tons of seasoned oak barrel staves</strong> on Cadiz wharves. Philip was forced to construct replacement casks from unseasoned green wood, which leaked fresh water and rotted food during the 1588 campaign. Crucially, the Cadiz raid delayed the launch of the Armada by more than twelve months, granting England a vital year to build warships, train county militias, and construct channel beacons. By intercepting the San Felipe, Drake also captured navigational secrets and Portuguese merchant cargo that financed English mobilization throughout 1587.`,
         ],
       },
     },
@@ -290,7 +301,7 @@ async function buildPublisherTextbookHtmlKT2() {
         paras: [
           `With the Channel blocked by English ships and south-westerly winds blowing relentlessly, Medina Sidonia faced catastrophe. An invasion was impossible: Parma could not embark, the fleet lacked anchors, and ammunition was spent. Medina Sidonia ordered the fleet to flee north into the North Sea, sailing around the wild, stormy coasts of Scotland and Ireland to return to Spain.`,
           `The retreat became an agonizing nightmare. In the North Atlantic, the fleeing fleet was battered by violent gales—hailed in England as the <strong>'Protestant Wind'</strong>. Short of food, drinking putrid water from unseasoned casks, and lacking anchors cut at Calais, ship after ship was hurled onto the jagged rocks of the Hebrides and the western coast of Ireland. Over twenty-five vessels were wrecked along the coasts of Antrim, Sligo, and Kerry; thousands of shipwrecked Spanish survivors were slaughtered by English garrisons or drowned in the pounding surf.`,
-          `Barely <strong>65 battered ships and fewer than 10,000 starving, diseased men</strong> limped back into Santander. In London, Queen Elizabeth rode to Tilbury on a white horse, famously declaring to her troops: <em>"I know I have the body but of a weak and feeble woman, but I have the heart and stomach of a king, and of a king of England too!"</em> Elizabeth ordered a victory medal struck with the words <strong><em>Flavit Deus et Dissipati Sunt</em></strong> ('God blew, and they were scattered'). The defeat of the Armada saved English Protestantism, shattered Spain's reputation of invincibility, and announced England's arrival as a global naval power.`,
+          `Barely <strong>65 battered ships and fewer than 10,000 starving, diseased men</strong> limped back into Santander. In London, Queen Elizabeth rode to Tilbury on a white horse, famously declaring to her troops: <em>"I know I have the body but of a weak and feeble woman, but I have the heart and stomach of a king, and of a king of England too!"</em> Elizabeth ordered a victory medal struck with the words <strong><em>Flavit Deus et Dissipati Sunt</em></strong> ('God blew, and they were scattered'). The defeat of the Armada saved English Protestantism, shattered Spain's reputation of invincibility, and announced England's arrival as a global naval power. England established mastery of long-range standoff artillery tactics, forever changing the nature of naval warfare across the Atlantic and North Sea.`,
         ],
       },
     },
@@ -345,7 +356,7 @@ async function buildPublisherTextbookHtmlKT2() {
       position: relative;
     }
 
-    /* Page Padding Standards */
+    /* Page Layout Containers */
     .cover-page-layout {
       padding: 9mm 12mm 7mm 12mm;
       height: 297mm;
@@ -362,13 +373,20 @@ async function buildPublisherTextbookHtmlKT2() {
       justify-content: space-between;
     }
 
+    .synoptic-page-layout {
+      padding: 8.5mm 12mm 6.5mm 12mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     .masterclass-page-layout {
       padding: 8.5mm 12mm 6.5mm 12mm;
       height: 297mm;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 3.5px;
+      justify-content: space-between;
     }
 
     .back-cover-layout {
@@ -376,8 +394,7 @@ async function buildPublisherTextbookHtmlKT2() {
       height: 297mm;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 3.5px;
+      justify-content: space-between;
     }
 
     /* Running Header */
@@ -405,7 +422,7 @@ async function buildPublisherTextbookHtmlKT2() {
     .running-footer {
       border-top: 1px solid #cbd5e1;
       padding-top: 2.5px;
-      margin-top: 4px;
+      margin-top: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -493,7 +510,21 @@ async function buildPublisherTextbookHtmlKT2() {
       margin: 0;
     }
 
-    /* 2-Column Cambridge / OUP Reading Prose Measure */
+    /* 2-Column Deterministic Grid */
+    .two-column-prose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 3.5px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+    }
+
     .two-column-prose {
       column-count: 2;
       column-gap: 15px;
@@ -511,39 +542,40 @@ async function buildPublisherTextbookHtmlKT2() {
       background: #0f172a;
       color: #ffffff;
       padding: 2.5px 6px;
-      margin: 0 0 4px 0;
+      margin: 0 0 3.5px 0;
       font-family: 'Inter', sans-serif;
       break-inside: avoid;
     }
     .sb-num {
       background: #b45309;
       color: #ffffff;
-      font-size: 6.0pt;
+      font-size: 6.6pt;
       font-weight: 900;
-      padding: 0.5px 4px;
+      padding: 0.5px 4.5px;
       border-radius: 2px;
       letter-spacing: 0.04em;
     }
     .sb-title {
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
 
     .narrative-p {
-      margin: 0 0 5px 0;
+      margin: 0 0 3.5px 0;
       text-indent: 9px;
       font-size: 8.85pt;
-      line-height: 1.36;
+      line-height: 1.34;
       color: #1e293b;
+      text-align: justify;
     }
     .narrative-p:first-of-type {
       text-indent: 0;
     }
     .para-ref {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.2pt;
       font-weight: 800;
       color: #1e3a8a;
       background: #eff6ff;
@@ -556,13 +588,13 @@ async function buildPublisherTextbookHtmlKT2() {
       vertical-align: baseline;
     }
 
-    /* Archival Source Box */
+    /* Primary Archival Source Box (Verso) */
     .archival-source-box {
       background: #fafaf9;
       border: 1.2px solid #d6d3d1;
       border-top: 2.5px solid #44403c;
-      padding: 4px 6px;
-      margin: 4px 0 5px 0;
+      padding: 3px 5.5px;
+      margin: 2px 0 3px 0;
       break-inside: avoid;
       font-family: 'Inter', sans-serif;
     }
@@ -578,33 +610,45 @@ async function buildPublisherTextbookHtmlKT2() {
     .source-badge {
       background: #0f172a;
       color: #fff;
-      font-size: 5.4pt;
+      font-size: 5.8pt;
       font-weight: 800;
-      padding: 1px 3.5px;
+      padding: 1px 4px;
       border-radius: 2px;
       text-transform: uppercase;
     }
     .source-type {
-      font-size: 5.4pt;
+      font-size: 6.0pt;
       font-weight: 700;
       color: #78350f;
       text-transform: uppercase;
     }
     .source-date-micro {
-      font-size: 5.4pt;
+      font-size: 5.8pt;
       color: #78716c;
       font-weight: 700;
     }
     .archival-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 7.8pt;
+      font-size: 8.2pt;
       font-weight: 800;
       color: #1c1917;
       margin: 1px 0;
     }
+    .archival-source-quote {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      font-size: 7.4pt;
+      line-height: 1.34;
+      color: #1c1917;
+      background: #faf8f5;
+      border-left: 2.5px solid #0f172a;
+      padding: 3.5px 6px;
+      margin: 2px 0;
+      border-radius: 2px;
+    }
     .archival-image {
       width: 100%;
-      height: 72px;
+      height: 75px;
       object-fit: contain;
       background: #ffffff;
       border: 1px solid #e7e5e4;
@@ -612,8 +656,8 @@ async function buildPublisherTextbookHtmlKT2() {
       display: block;
     }
     .archival-context-box {
-      font-size: 6.6pt;
-      line-height: 1.26;
+      font-size: 7.0pt;
+      line-height: 1.28;
       color: #44403c;
       border-left: 2px solid #a8a29e;
       padding-left: 4px;
@@ -622,10 +666,11 @@ async function buildPublisherTextbookHtmlKT2() {
     .archival-context-text { margin: 0 0 2px 0; }
     .archival-hinge-q {
       background: #f5f5f4;
-      padding: 1.5px 4px;
+      padding: 2px 5px;
       border-radius: 2px;
       color: #1c1917;
-      font-size: 6.2pt;
+      font-size: 6.8pt;
+      line-height: 1.24;
     }
 
     /* Key Figure Profile Box */
@@ -633,8 +678,8 @@ async function buildPublisherTextbookHtmlKT2() {
       background: #f8fafc;
       border: 1.2px solid #cbd5e1;
       border-top: 3px solid #1e3a8a;
-      padding: 5px 7px;
-      margin: 4px 0 6px 0;
+      padding: 4px 6px;
+      margin: 3px 0 4px 0;
       break-inside: avoid;
       font-family: 'Inter', sans-serif;
     }
@@ -645,14 +690,14 @@ async function buildPublisherTextbookHtmlKT2() {
       margin-bottom: 2px;
     }
     .kf-tag {
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .kf-lifespan {
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #64748b;
     }
@@ -663,56 +708,57 @@ async function buildPublisherTextbookHtmlKT2() {
       margin-bottom: 3px;
     }
     .kf-portrait {
-      width: 44px;
-      height: 52px;
+      width: 36px;
+      height: 44px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
-      background: #e2e8f0;
+      background: #ffffff;
+      flex-shrink: 0;
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
+      font-size: 9.0pt;
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.15;
+      margin: 0;
     }
     .kf-role {
       font-size: 6.4pt;
       font-weight: 700;
-      color: #b45309;
-      line-height: 1.2;
+      color: #475569;
+      text-transform: uppercase;
     }
     .kf-significance {
-      font-size: 6.5pt;
-      line-height: 1.27;
+      font-size: 7.2pt;
+      line-height: 1.28;
       color: #334155;
       margin-bottom: 3px;
     }
     .kf-actions-title {
-      font-size: 5.8pt;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-size: 6.4pt;
+      font-weight: 900;
       color: #0f172a;
+      text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .kf-actions-list {
       margin: 0;
-      padding-left: 11px;
-      font-size: 6.2pt;
-      line-height: 1.25;
-      color: #475569;
+      padding-left: 12px;
+      font-size: 7.0pt;
+      line-height: 1.26;
+      color: #1e293b;
     }
-    .kf-actions-list li { margin-bottom: 1.5px; }
+    .kf-actions-list li { margin-bottom: 1px; }
 
     /* Concept Spotlight Box */
     .concept-spotlight-box {
-      background: #fdfaf6;
-      border: 1.2px solid #fed7aa;
-      border-left: 3.5px solid #ea580c;
-      padding: 4.5px 6.5px;
-      margin: 4px 0 5px 0;
+      background: #fffbeb;
+      border: 1.2px solid #fde68a;
+      border-left: 3.5px solid #d97706;
+      padding: 3.5px 6px;
+      margin: 3px 0 4px 0;
       break-inside: avoid;
       font-family: 'Inter', sans-serif;
     }
@@ -720,135 +766,233 @@ async function buildPublisherTextbookHtmlKT2() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .csb-tag {
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       font-weight: 800;
-      color: #c2410c;
+      color: #92400e;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
     .csb-category {
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       font-weight: 700;
-      color: #9a3412;
-      text-transform: uppercase;
+      color: #b45309;
+      background: #ffedd5;
+      padding: 1px 4px;
+      border-radius: 2px;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
+      font-size: 8.4pt;
       font-weight: 800;
       color: #7c2d12;
-      margin: 1px 0 2px 0;
+      margin: 1px 0;
+      line-height: 1.15;
     }
     .csb-body {
-      font-size: 6.6pt;
-      line-height: 1.27;
-      color: #431407;
+      font-size: 7.2pt;
+      line-height: 1.28;
+      color: #1e293b;
+      margin-bottom: 2px;
     }
     .csb-takeaway {
-      background: #ffedd5;
-      padding: 1.5px 4.5px;
-      border-radius: 2px;
-      font-size: 6.0pt;
-      color: #7c2d12;
-      margin-top: 2px;
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: #78350f;
+      background: #fef3c7;
+      border-left: 2px solid #d97706;
+      padding: 2px 5px;
+      border-radius: 0 2px 2px 0;
     }
 
-    /* Bottom Vocabulary Bar (Verso) */
-    .bottom-vocab-box {
-      border: 1.2px solid #0f172a;
-      border-radius: 3px;
-      background: #ffffff;
-      padding: 3.5px 7px;
-      margin-top: 2px;
+    /* Bottom Decks */
+    .bottom-vocab-box, .bottom-enquiry-box {
+      width: 100%;
+      box-sizing: border-box;
       flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 1px;
+      padding: 4.5px 7px;
+      border-radius: 3px;
       font-family: 'Inter', sans-serif;
     }
-    .bvb-header {
+    .bottom-vocab-box {
+      background: #fdfaf6;
+      border: 1.2px solid #fed7aa;
+      border-top: 2.5px solid #b45309;
+    }
+    .bvb-header, .beb-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1.5px;
       margin-bottom: 2px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1px;
     }
     .bvb-title {
-      font-size: 6.2pt;
+      font-size: 6.8pt;
       font-weight: 900;
-      color: #0f172a;
+      color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .bvb-badge {
-      font-size: 5.6pt;
+    .bvb-badge, .beb-badge {
+      font-size: 5.8pt;
       font-weight: 800;
       background: #0f172a;
       color: #fff;
-      padding: 0.5px 4px;
+      padding: 1px 4px;
       border-radius: 2px;
+      text-transform: uppercase;
     }
     .bvb-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 6px;
-      font-size: 6.1pt;
-      line-height: 1.25;
+      font-size: 6.8pt;
+      line-height: 1.28;
       color: #334155;
     }
-    .bvb-col strong {
+    .bvb-col strong, .beb-col strong {
       display: block;
-      color: #1e3a8a;
-      font-size: 6.3pt;
+      color: #0f172a;
+      margin-bottom: 1px;
       text-transform: uppercase;
+      font-size: 6.4pt;
     }
-
-    /* Bottom Enquiry Bar (Recto) */
     .bottom-enquiry-box {
-      border: 1.2px solid #b45309;
-      border-radius: 3px;
-      background: #fffbeb;
-      padding: 3.5px 7px;
-      margin-top: 2px;
-      flex-shrink: 0;
-      font-family: 'Inter', sans-serif;
-    }
-    .beb-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #fde68a;
-      padding-bottom: 1.5px;
+      background: #f8fafc;
+      border: 1.2px solid #cbd5e1;
+      border-top: 2.5px solid #1e3a8a;
+      padding: 7px 9px;
       margin-bottom: 2px;
     }
     .beb-title {
-      font-size: 6.2pt;
+      font-size: 6.8pt;
       font-weight: 900;
-      color: #78350f;
+      color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .beb-badge {
-      font-size: 5.6pt;
-      font-weight: 800;
-      background: #b45309;
-      color: #fff;
-      padding: 0.5px 4px;
-      border-radius: 2px;
-    }
     .beb-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      font-size: 6.1pt;
-      line-height: 1.25;
-      color: #451a03;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      font-size: 6.8pt;
+      line-height: 1.32;
+      color: #334155;
     }
     .beb-col strong {
+      font-size: 6.4pt;
+      margin-bottom: 2px;
+    }
+
+    /* 4-Box Horizontal Timeline Strip (Recto Bottom Deck) */
+    .timeline-strip-4col {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1.2px solid #0f172a;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: auto;
+      margin-bottom: 2.5px;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .timeline-strip-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1.8px 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .timeline-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      padding: 3px 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.9pt;
+      line-height: 1.25;
+    }
+    .timeline-card {
+      background: #f8fafc;
+      border-left: 2.5px solid #1e3a8a;
+      padding: 2.5px 4.5px;
+      border-radius: 1px;
+    }
+    .timeline-card-title {
+      color: #1e3a8a;
       display: block;
-      color: #92400e;
-      font-size: 6.3pt;
+      font-size: 6.8pt;
+      font-weight: 800;
+      margin-bottom: 1px;
+    }
+
+    /* Full-Width Exam Strategy Box (Recto Bottom Deck) */
+    .exam-strategy-fullwidth-box {
+      width: 100%;
+      box-sizing: border-box;
+      background: #fdfaf6;
+      border: 1.2px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      padding: 3.5px 6.5px;
+      margin-bottom: 1.5px;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+    .esfb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #fed7aa;
+      padding-bottom: 1.5px;
+      margin-bottom: 2px;
+    }
+    .esfb-badge {
+      font-size: 6.8pt;
+      font-weight: 900;
+      color: #9a3412;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .esfb-tariff {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+    .esfb-stem {
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+    .esfb-guidance {
+      font-size: 6.8pt;
+      color: #78350f;
+      line-height: 1.25;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed #fed7aa;
+      padding-top: 2px;
+    }
+    .esfb-target {
+      font-size: 6.4pt;
+      font-weight: 800;
+      color: #9a3412;
     }
 
     /* Master Front Cover Styles */
@@ -1095,29 +1239,141 @@ async function buildPublisherTextbookHtmlKT2() {
         </div>
       </div>
 
-      <!-- Official 4-Column Pearson Edexcel Specification Coverage Matrix -->
-      <div class="cover-spec-matrix">
-        ${coverConfig.specTopics
-          .map(
-            (t) => `
-          <div class="csm-card">
-            <div class="csm-header">${t.title}</div>
-            <ul class="csm-bullets">
-              ${t.bullets.map((b) => `<li>${formatText(b)}</li>`).join('')}
-            </ul>
-            <div class="csm-seq">
-              <strong>Causal Sequence:</strong><br>${t.seq}
+      <!-- Pearson Edexcel Specification Coverage (Official 4-Column Matrix with 4-Stage Causal Chronology) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column; margin-bottom: 2px;">
+        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Pearson Edexcel GCSE (9–1) History Specification Content</span>
+          <span style="font-size: 6.8pt; letter-spacing: 0.5px;">Key Topic 2 Coverage Matrix</span>
+        </div>
+
+        <div style="padding: 5px 8px 6px 8px; display: flex; flex-direction: column; gap: 4px;">
+          <!-- Row 1: 4-Column Specification Content -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.32; color: #111;">
+            <!-- 2.1 -->
+            <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                2.1 Plots and Revolts
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; 1569 <strong>Revolt of Northern Earls</strong> (Northumberland &amp; Westmorland).</div>
+              <div style="margin-bottom: 2px;">&bull; 1570 Papal Bull <strong>Regnans in Excelsis</strong>: excommunication of Queen.</div>
+              <div style="margin-bottom: 2px;">&bull; 1571 <strong>Ridolfi Plot</strong>, Norfolk's execution &amp; 1571 Treasons Act.</div>
+              <div style="margin-bottom: 2px;">&bull; 1583 <strong>Throckmorton Plot</strong>, Mendoza expelled &amp; 1584 Bond of Association.</div>
+              <div>&bull; 1586 <strong>Babington Plot</strong>, Walsingham's cipher sting &amp; 1587 execution of Mary.</div>
             </div>
-            <div class="csm-focus">${t.focus}</div>
+
+            <!-- 2.2 -->
+            <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                2.2 Relations with Spain
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; Commercial rivalry: Spanish monopoly &amp; 1568 <strong>San Juan de Ulúa</strong>.</div>
+              <div style="margin-bottom: 2px;">&bull; Drake's privateering: Panama (1572) &amp; <strong>Golden Hind circumnavigation</strong>.</div>
+              <div style="margin-bottom: 2px;">&bull; Netherlands crisis: 1576 <strong>Spanish Fury</strong> &amp; Pacification of Ghent.</div>
+              <div style="margin-bottom: 2px;">&bull; Elizabeth knights Drake at <strong>Deptford (1581)</strong> in defiance of Spain.</div>
+              <div>&bull; 1584 <strong>Treaty of Joinville</strong>: France &amp; Spain unite; English isolation.</div>
+            </div>
+
+            <!-- 2.3 -->
+            <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                2.3 Outbreak of War
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; 1585 <strong>Treaty of Nonsuch</strong>: 7,400 troops sent; Flushing &amp; Brill.</div>
+              <div style="margin-bottom: 2px;">&bull; <strong>Leicester's Dutch campaign</strong>: Governor-General blunder &amp; desertions.</div>
+              <div style="margin-bottom: 2px;">&bull; 1586 Battle of Zutphen &amp; death of Sir Philip Sidney; Stanley's treason.</div>
+              <div style="margin-bottom: 2px;">&bull; Drake's 1585–86 Caribbean raid: sacks Santo Domingo &amp; Cartagena.</div>
+              <div>&bull; Drake's 1587 <strong>Cadiz raid</strong>: singeing the King's beard; delays Armada.</div>
+            </div>
+
+            <!-- 2.4 -->
+            <div>
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                2.4 The Spanish Armada
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; Philip II's invasion plan: 130 ships under <strong>Duke of Medina Sidonia</strong>.</div>
+              <div style="margin-bottom: 2px;">&bull; Strategic flaws: shallow Flemish ports &amp; Parma's stranded 27,000 veterans.</div>
+              <div style="margin-bottom: 2px;">&bull; English tactical superiority: <strong>race-built galleons</strong> &amp; culverin cannons.</div>
+              <div style="margin-bottom: 2px;">&bull; <strong>Calais fireships (7 Aug)</strong> break crescent; Battle of Gravelines (8 Aug).</div>
+              <div>&bull; <strong>Protestant Wind</strong>, shipwreck on Irish coast &amp; destruction of fleet.</div>
+            </div>
           </div>
-        `,
-          )
-          .join('')}
+
+          <!-- Row 2: 4-Column Causal Sequences (4 Vertical Stages per Column with Arrows) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px;">
+            <!-- Col 1 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #1e3a8a; text-transform: uppercase; display: block; margin-bottom: 1px;">2.1 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">Nov 1569:</strong> Northern Earls Seize Durham</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Feb 1570:</strong> Bull <em>Regnans in Excelsis</em></div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1571:</strong> Ridolfi Plot Intercepted</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Feb 1587:</strong> Mary Beheaded at Fotheringhay</div>
+            </div>
+
+            <!-- Col 2 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #1e3a8a; text-transform: uppercase; display: block; margin-bottom: 1px;">2.2 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">1568:</strong> San Juan de Ulúa Ambush</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1577–80:</strong> Drake Circumnavigates Globe</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Apr 1581:</strong> Drake Knighted at Deptford</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Dec 1584:</strong> Secret Treaty of Joinville</div>
+            </div>
+
+            <!-- Col 3 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #b45309; text-transform: uppercase; display: block; margin-bottom: 1px;">2.3 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">Aug 1585:</strong> Treaty of Nonsuch Signed</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Jan 1586:</strong> Leicester Governor-General Error</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Apr 1587:</strong> Drake Raids Cadiz Harbour</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1587–88:</strong> Green Staves Spoil Provisions</div>
+            </div>
+
+            <!-- Col 4 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #991b1b; text-transform: uppercase; display: block; margin-bottom: 1px;">2.4 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">May 1588:</strong> Armada Departs Lisbon</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">29 Jul 1588:</strong> Fleet Sighted off Cornwall</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">7 Aug 1588:</strong> Calais Fireship Night Attack</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Aug–Sep 1588:</strong> Protestant Wind Ruins Fleet</div>
+            </div>
+          </div>
+
+          <!-- Row 3: Enquiry Disciplinary Focus & Exam Blueprint -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.24;">
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #cbd5e1;">
+              <strong style="color: #1e3a8a; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Dynastic Regicide vs Counter-Espionage &bull; <em>Exam: Q1 Feature / Q2 Causation</em>
+            </div>
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #cbd5e1;">
+              <strong style="color: #1e3a8a; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Atlantic Piracy &amp; Geopolitics &bull; <em>Exam: Q2 Causation / Q3 Essay</em>
+            </div>
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #b45309;">
+              <strong style="color: #b45309; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Treaty of Nonsuch &amp; Cadiz Raid &bull; <em>Exam: Q1 Feature / Q2 Causation</em>
+            </div>
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #991b1b;">
+              <strong style="color: #991b1b; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Race-Built Naval Gunnery &amp; Strategy &bull; <em>Exam: Q2 Causation / Q3 Essay</em>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Running Footer -->
-      <div class="running-footer">
-        <span>GCSE History Revision Hub &bull; The History Department</span>
+      <!-- Cover Running Footer -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #333; font-weight: 700;">
+        <span>The History Department &bull; GCSE History Revision Hub</span>
         <span>Key Topic 2 &bull; 12-Page Complete Master Volume</span>
       </div>
 
@@ -1129,12 +1385,16 @@ async function buildPublisherTextbookHtmlKT2() {
   // ====================================================================
   // PAGES 2–9: ENQUIRIES 1 TO 4 (2-PAGE SPREAD PER ENQUIRY)
   // ====================================================================
-  lessons.forEach((l) => {
+  lessons.forEach((l, idx) => {
     const leftPageNum = l.num * 2;
     const rightPageNum = l.num * 2 + 1;
     const bank = componentBank[`p${rightPageNum}`] || {};
     const sources = leftSources[`p${leftPageNum}`] || {};
     const vocabList = leftVocab[`p${leftPageNum}`] || [];
+    const rightExam =
+      ktWorkbookData && ktWorkbookData.enquiries && ktWorkbookData.enquiries[idx]
+        ? ktWorkbookData.enquiries[idx].rightExam
+        : null;
 
     // LEFT PAGE (VERSO: Sections 1 & 2 + Sources + Vocab)
     html += `
@@ -1156,22 +1416,26 @@ async function buildPublisherTextbookHtmlKT2() {
         </div>
       </div>
 
-      <div class="two-column-prose">
-        <div class="section-banner">
-          <span class="sb-num">SECTION 1</span>
-          <span class="sb-title">${l.sec1.title}</span>
+      <div class="two-column-prose-grid">
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 1</span>
+            <span class="sb-title">${l.sec1.title}</span>
+          </div>
+          ${l.sec1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${p}</p>`).join('')}
+
+          ${renderArchivalSourceBox(sources.sourceA)}
         </div>
-        ${l.sec1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${p}</p>`).join('')}
 
-        ${renderArchivalSourceBox(sources.sourceA)}
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 2</span>
+            <span class="sb-title">${l.sec2.title}</span>
+          </div>
+          ${l.sec2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${p}</p>`).join('')}
 
-        <div class="section-banner">
-          <span class="sb-num">SECTION 2</span>
-          <span class="sb-title">${l.sec2.title}</span>
+          ${renderArchivalSourceBox(sources.sourceB)}
         </div>
-        ${l.sec2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${p}</p>`).join('')}
-
-        ${renderArchivalSourceBox(sources.sourceB)}
       </div>
 
       <div class="bottom-vocab-box">
@@ -1218,67 +1482,86 @@ async function buildPublisherTextbookHtmlKT2() {
         <h3 class="rph-title">${l.title} (Continued)</h3>
       </div>
 
-      <div class="two-column-prose">
-        <div class="section-banner">
-          <span class="sb-num">SECTION 3</span>
-          <span class="sb-title">${l.sec3.title}</span>
-        </div>
-        ${l.sec3.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${p}</p>`).join('')}
-
-        ${
-          bank.keyFigure
-            ? `
-        <div class="key-figure-box">
-          <div class="kf-header">
-            <span class="kf-tag">KEY HISTORICAL FIGURE</span>
-            <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+      <div class="two-column-prose-grid">
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 3</span>
+            <span class="sb-title">${l.sec3.title}</span>
           </div>
-          <div class="kf-identity-row">
-            ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
-            <div>
-              <div class="kf-name">${bank.keyFigure.name}</div>
-              <div class="kf-role">${bank.keyFigure.role}</div>
+          ${l.sec3.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${p}</p>`).join('')}
+
+          ${
+            bank.keyFigure
+              ? `
+          <div class="key-figure-box">
+            <div class="kf-header">
+              <span class="kf-tag">KEY HISTORICAL FIGURE</span>
+              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
             </div>
-          </div>
-          <div class="kf-significance">${bank.keyFigure.significance}</div>
-          <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-          <ul class="kf-actions-list">
-            ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-          </ul>
-        </div>`
-            : ''
-        }
-
-        <div class="section-banner">
-          <span class="sb-num">SECTION 4</span>
-          <span class="sb-title">${l.sec4.title}</span>
+            <div class="kf-identity-row">
+              ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
+              <div>
+                <div class="kf-name">${bank.keyFigure.name}</div>
+                <div class="kf-role">${bank.keyFigure.role}</div>
+              </div>
+            </div>
+            <div class="kf-significance">${bank.keyFigure.significance}</div>
+            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+            <ul class="kf-actions-list">
+              ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+            </ul>
+          </div>`
+              : ''
+          }
         </div>
-        ${l.sec4.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${p}</p>`).join('')}
 
-        ${bank.conceptSpotlight || ''}
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 4</span>
+            <span class="sb-title">${l.sec4.title}</span>
+          </div>
+          ${l.sec4.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${p}</p>`).join('')}
+
+          ${bank.conceptSpotlight || ''}
+        </div>
       </div>
 
       ${
-        bank.bottomEnquiry
+        bank.timeline
           ? `
-      <div class="bottom-enquiry-box">
-        <div class="beb-header">
-          <span class="beb-title">HISTORICAL ENQUIRY &amp; DISCIPLINARY ASSESSMENT</span>
-          <span class="beb-badge">${l.code} SYNTHESIS</span>
+      <div class="timeline-strip-4col">
+        <div class="timeline-strip-header">
+          <span>KEY CHRONOLOGY &bull; FOUR CAUSAL TURNING POINTS</span>
+          <span style="font-size: 6.2pt; color: #93c5fd;">${l.code} SEQUENCE</span>
         </div>
-        <div class="beb-grid">
-          <div class="beb-col">
-            <strong>1. Knowledge Recall:</strong>
-            ${bank.bottomEnquiry.q1}
-          </div>
-          <div class="beb-col">
-            <strong>2. Causal Analysis:</strong>
-            ${bank.bottomEnquiry.q2}
-          </div>
-          <div class="beb-col">
-            <strong>3. Historical Evaluation:</strong>
-            ${bank.bottomEnquiry.q3}
-          </div>
+        <div class="timeline-strip-grid">
+          ${bank.timeline
+            .map(
+              (t) => `
+            <div class="timeline-card">
+              <strong class="timeline-card-title">${t.date} &bull; ${t.title}</strong>
+              ${t.text}
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>`
+          : ''
+      }
+
+      ${
+        rightExam
+          ? `
+      <div class="exam-strategy-fullwidth-box">
+        <div class="esfb-header">
+          <span class="esfb-badge">EXAM STRATEGY &bull; EDEXCEL PAPER 2 (OPTION B4)</span>
+          <span class="esfb-tariff">${rightExam.tariff}</span>
+        </div>
+        <div class="esfb-stem"><strong>Exam Challenge:</strong> ${rightExam.stem}</div>
+        <div class="esfb-guidance">
+          <span><strong>Specification Stimulus:</strong> ${rightExam.stimulus && rightExam.stimulus.length ? `(1) ${rightExam.stimulus[0]} &bull; (2) ${rightExam.stimulus[1]}` : 'Independent historical knowledge'} &bull; <em>Construct 3 PEEL paragraphs using precise factual evidence.</em></span>
+          <span class="esfb-target">GRADE 9 STANDARD</span>
         </div>
       </div>`
           : ''
@@ -1306,77 +1589,127 @@ async function buildPublisherTextbookHtmlKT2() {
       </div>
 
       <!-- Lesson Banner -->
-      <div class="lesson-hero" style="margin-bottom: 2px; padding-bottom: 2px;">
+      <div class="lesson-hero" style="margin-bottom: 3.5px; padding-bottom: 3px;">
         <div class="lesson-badge-strip">
           <span class="topic-badge">SYNOPTIC OVERVIEW</span>
           <span class="spec-ref-badge">KEY TOPIC 2 MASTER SYNTHESIS &bull; 1569–1588</span>
         </div>
         <h2 class="lesson-title" style="font-size: 11.5pt; margin: 1px 0;">Key Topic 2: Thematic Synoptic Matrix &amp; Historiographical Debate</h2>
-        <div class="lesson-spec-anchor" style="padding: 2px 6px;">
+        <div class="lesson-spec-anchor" style="padding: 2.5px 6px;">
           <strong>Disciplinary Synthesis:</strong> Evaluating the escalation from covert domestic conspiracies and cold war piracy into total naval invasion in 1588.
         </div>
       </div>
 
       <!-- Thematic Comparative Matrix (6 Key Specification Pillars) -->
-      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff;">
-        <div style="background: #0f172a; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff; margin-bottom: 6px;">
+        <div style="background: #0f172a; color: #fff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
           <span>THEMATIC COMPARATIVE MATRIX &bull; SIX SPECIFICATION PILLARS</span>
           <span>1569 CRISIS VS. 1588 REALITY</span>
         </div>
-        <table class="master-chron-table" style="font-size: 6.5pt; line-height: 1.25;">
+        <table class="master-chron-table" style="font-size: 6.5pt; line-height: 1.26;">
           <thead>
             <tr style="background: #1e293b; color: #ffffff;">
-              <th style="width: 20%; padding: 2.5px 6px;">Thematic Dimension</th>
-              <th style="width: 27%; padding: 2.5px 6px;">The Crisis in 1569–70</th>
-              <th style="width: 28%; padding: 2.5px 6px;">Elizabeth's Strategic Mechanism</th>
-              <th style="width: 25%; padding: 2.5px 6px;">The Balance Sheet by 1588</th>
+              <th style="width: 20%; padding: 3px 6px;">Thematic Dimension</th>
+              <th style="width: 27%; padding: 3px 6px;">The Crisis in 1569–70</th>
+              <th style="width: 28%; padding: 3px 6px;">Elizabeth's Strategic Mechanism</th>
+              <th style="width: 25%; padding: 3px 6px;">The Balance Sheet by 1588</th>
             </tr>
           </thead>
           <tbody>
             <tr style="background: #ffffff;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">1. Catholic Dynastic Threat</td>
-              <td style="padding: 2.5px 6px;">Mary Stuart alive in England; magnetic figurehead for Ridolfi, Throckmorton, and Babington assassination plots.</td>
-              <td style="padding: 2.5px 6px;">Constructed Walsingham's cipher-cracking sting; passed 1584 Bond of Association; executed Mary in Feb 1587.</td>
-              <td style="padding: 2.5px 6px;">Domestic Catholic figurehead eliminated forever; but execution triggered Philip II's immediate invasion crusade.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">1. Catholic Dynastic Threat</td>
+              <td style="padding: 3.5px 6px;">Mary Stuart alive in England; magnetic figurehead for Ridolfi, Throckmorton, and Babington assassination plots.</td>
+              <td style="padding: 3.5px 6px;">Constructed Walsingham's cipher-cracking sting; passed 1584 Bond of Association; executed Mary in Feb 1587.</td>
+              <td style="padding: 3.5px 6px;">Domestic Catholic figurehead eliminated forever; but execution triggered Philip II's immediate invasion crusade.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">2. Commercial Cold War</td>
-              <td style="padding: 2.5px 6px;">Spanish trade monopoly barred English merchants from Americas; Hawkins betrayed at San Juan de Ulúa (1568).</td>
-              <td style="padding: 2.5px 6px;">State-sanctioned privateering: Drake's 1572 Nombre de Dios raid and 1577–80 circumnavigation; £400k Cacafuego haul.</td>
-              <td style="padding: 2.5px 6px;">English Crown debt cleared; Spanish Atlantic prestige shattered; Philip II bankrupted, driving him to war.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">2. Commercial Cold War</td>
+              <td style="padding: 3.5px 6px;">Spanish trade monopoly barred English merchants from Americas; Hawkins betrayed at San Juan de Ulúa (1568).</td>
+              <td style="padding: 3.5px 6px;">State-sanctioned privateering: Drake's 1572 Nombre de Dios raid and 1577–80 circumnavigation; £400k Cacafuego haul.</td>
+              <td style="padding: 3.5px 6px;">English Crown debt cleared; Spanish Atlantic prestige shattered; Philip II bankrupted, driving him to war.</td>
             </tr>
             <tr style="background: #ffffff;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">3. The Netherlands Crisis</td>
-              <td style="padding: 2.5px 6px;">Alba's veteran army on Channel coast; Spanish Fury at Antwerp (1576); William the Silent assassinated (1584).</td>
-              <td style="padding: 2.5px 6px;">Signed 1585 Treaty of Nonsuch; sent 7,400 troops under Leicester; seized cautionary towns Flushing and Brill.</td>
-              <td style="padding: 2.5px 6px;">Leicester failed tactically; but English presence tied down Parma and preserved Dutch Protestant resistance.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">3. The Netherlands Crisis</td>
+              <td style="padding: 3.5px 6px;">Alba's veteran army on Channel coast; Spanish Fury at Antwerp (1576); William the Silent assassinated (1584).</td>
+              <td style="padding: 3.5px 6px;">Signed 1585 Treaty of Nonsuch; sent 7,400 troops under Leicester; seized cautionary towns Flushing and Brill.</td>
+              <td style="padding: 3.5px 6px;">Leicester failed tactically; but English presence tied down Parma and preserved Dutch Protestant resistance.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">4. Counter-Espionage Machine</td>
-              <td style="padding: 2.5px 6px;">Papal Bull *Regnans in Excelsis* (1570) ordered subjects to depose Queen; Jesuit missionaries entering secretly.</td>
-              <td style="padding: 2.5px 6px;">Walsingham built European spy ring; employed cryptographer Phelippes; beer-barrel sting trapped Babington.</td>
-              <td style="padding: 2.5px 6px;">All four major assassination plots unmasked; Jesuit networks disrupted; Queen protected without civil war.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">4. Counter-Espionage Machine</td>
+              <td style="padding: 3.5px 6px;">Papal Bull *Regnans in Excelsis* (1570) ordered subjects to depose Queen; Jesuit missionaries entering secretly.</td>
+              <td style="padding: 3.5px 6px;">Walsingham built European spy ring; employed cryptographer Phelippes; beer-barrel sting trapped Babington.</td>
+              <td style="padding: 3.5px 6px;">All four major assassination plots unmasked; Jesuit networks disrupted; Queen protected without civil war.</td>
             </tr>
             <tr style="background: #ffffff;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">5. Pre-Emptive Naval Power</td>
-              <td style="padding: 2.5px 6px;">Royal Navy small and defensive; reliance on merchant conversions; coastal fortifications decaying.</td>
-              <td style="padding: 2.5px 6px;">Hawkins built race-built galleons; Drake's 1587 Cadiz raid burned 30+ ships and 1,700 tons of barrel staves.</td>
-              <td style="padding: 2.5px 6px;">Armada delayed by over a year; Spanish water casks spoiled; naval initiative seized permanently.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">5. Pre-Emptive Naval Power</td>
+              <td style="padding: 3.5px 6px;">Royal Navy small and defensive; reliance on merchant conversions; coastal fortifications decaying.</td>
+              <td style="padding: 3.5px 6px;">Hawkins built race-built galleons; Drake's 1587 Cadiz raid burned 30+ ships and 1,700 tons of barrel staves.</td>
+              <td style="padding: 3.5px 6px;">Armada delayed by over a year; Spanish water casks spoiled; naval initiative seized permanently.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">6. Naval Tactical Supremacy</td>
-              <td style="padding: 2.5px 6px;">Spanish naval reputation invincible; reliance on heavy troop transports and close hand-to-hand boarding.</td>
-              <td style="padding: 2.5px 6px;">Fireships at Calais scattered Spanish crescent; long-range culverin gunnery raked hulls at Gravelines.</td>
-              <td style="padding: 2.5px 6px;">Armada routed with half fleet destroyed; England emerged as paramount Protestant naval superpower.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">6. Naval Tactical Supremacy</td>
+              <td style="padding: 3.5px 6px;">Spanish naval reputation invincible; reliance on heavy troop transports and close hand-to-hand boarding.</td>
+              <td style="padding: 3.5px 6px;">Fireships at Calais scattered Spanish crescent; long-range culverin gunnery raked hulls at Gravelines.</td>
+              <td style="padding: 3.5px 6px;">Armada routed with half fleet destroyed; England emerged as paramount Protestant naval superpower.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Secondary Contextual Matrix: The Catholic Plots & Anti-Catholic Penal Legislation Matrix (1569–1587) -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff; margin-bottom: 6px;">
+        <div style="background: #1e293b; color: #fff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
+          <span>THE CATHOLIC PLOTS &amp; ANTI-CATHOLIC PENAL LEGISLATION MATRIX (1569–1587)</span>
+          <span>DOMESTIC &amp; DYNASTIC CONSPIRACIES</span>
+        </div>
+        <table class="master-chron-table" style="font-size: 6.4pt; line-height: 1.26;">
+          <thead>
+            <tr style="background: #0f172a; color: #ffffff;">
+              <th style="width: 20%; padding: 2.5px 5px;">Conspiracy / Statute</th>
+              <th style="width: 27%; padding: 2.5px 5px;">Key Conspirators &amp; Foreign Backing</th>
+              <th style="width: 28%; padding: 2.5px 5px;">Objectives &amp; Papal / Spanish Plot</th>
+              <th style="width: 25%; padding: 2.5px 5px;">Outcome &amp; Legislative Retaliation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">1. Northern Revolt (1569)</td>
+              <td style="padding: 3px 5px;">Earls of Northumberland &amp; Westmorland; backed by Duke of Norfolk; vague Spanish promises.</td>
+              <td style="padding: 3px 5px;">Restore Catholicism, marry Norfolk to Mary Stuart, overthrow Cecil, and restore northern regional autonomy.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #991b1b;">Revolt crushed; 450 rebels executed; 1570 Papal Bull <em>Regnans in Excelsis</em> excommunicates Elizabeth.</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">2. Ridolfi Plot (1571)</td>
+              <td style="padding: 3px 5px;">Roberto Ridolfi (banker), Duke of Norfolk, Mary Stuart, Pope Pius V, King Philip II.</td>
+              <td style="padding: 3px 5px;">Assassinate Elizabeth; invade England with 10,000 Spanish troops under Alba; place Mary on throne.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #991b1b;">Plot uncovered by Cecil; Norfolk beheaded (1572); 1571 Treason Act makes questioning Queen's legitimacy treason.</td>
+            </tr>
+            <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">3. Throckmorton Plot (1583)</td>
+              <td style="padding: 3px 5px;">Francis Throckmorton, French Catholic Duke of Guise, Spanish Ambassador Mendoza, Papacy.</td>
+              <td style="padding: 3px 5px;">French army funded by Philip II and Pope to invade Sussex, liberate Mary, and spark Catholic uprising.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #991b1b;">Walsingham broke cipher; Mendoza expelled; Bond of Association (1584) drafted; Throckmorton executed.</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">4. Babington Plot (1586)</td>
+              <td style="padding: 3px 5px;">Anthony Babington, Mary Stuart, Jesuit priest John Ballard, Spanish Ambassador Mendoza.</td>
+              <td style="padding: 3px 5px;">Murder Elizabeth, rescue Mary from Chartley Hall, and launch simultaneous Spanish-French invasion.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #991b1b;">Walsingham's double-agent beer-barrel trap; cipher decoded; Mary Stuart tried and executed (Feb 1587).</td>
+            </tr>
+            <tr style="background: #ffffff;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">5. Anti-Catholic Statutes (1571–85)</td>
+              <td style="padding: 3px 5px;">Parliament, Privy Council, Cecil, Walsingham responding to seminary priests &amp; Jesuits.</td>
+              <td style="padding: 3px 5px;">Criminalise incoming Jesuit missionaries (Campion/Persons) and punish Catholic recusancy systematically.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #1e3a8a;">1581 Act: recusancy fine raised to £20/mo (treason to convert); 1585 Act: death penalty for ordained priests in England.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- The Historiographical Debate & Scholarship (3 Perspectives) -->
-      <div style="background: #fdfcfb; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; padding: 4px 8px; border-radius: 3px; font-family: 'Inter', sans-serif;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2.5px;">
-          <span style="font-size: 6.8pt; font-weight: 900; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em;">
+      <div style="background: #fdfcfb; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; padding: 5px 8px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
+          <span style="font-size: 6.9pt; font-weight: 900; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em;">
             THE HISTORIOGRAPHICAL DEBATE &bull; THREE INTERPRETATIONS OF THE ARMADA DEFEAT
           </span>
           <span style="font-size: 6.0pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 1px 5px; border-radius: 2px;">
@@ -1384,96 +1717,52 @@ async function buildPublisherTextbookHtmlKT2() {
           </span>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 6.4pt; line-height: 1.27; color: #1e293b;">
-          <div style="background: #eff6ff; padding: 3px 5px; border: 1px solid #bfdbfe; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.1pt;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 6.5pt; line-height: 1.28; color: #1e293b;">
+          <div style="background: #eff6ff; padding: 4.5px 6px; border: 1px solid #bfdbfe; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.2pt;">
               1. Traditional Whig (Garrett Mattingly, 1959):
             </strong>
             The Armada was an epic ideological clash between liberty and Counter-Reformation tyranny. English victory was driven by superior naval commanders (Drake, Howard) and tactical gunnery, completed by the 'Protestant Wind' validating God's favour on England.
           </div>
-          <div style="background: #fdf2f8; padding: 3px 5px; border: 1px solid #fbcfe8; border-radius: 2px;">
-            <strong style="color: #9d174d; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.1pt;">
+          <div style="background: #fdf2f8; padding: 4.5px 6px; border: 1px solid #fbcfe8; border-radius: 2px;">
+            <strong style="color: #9d174d; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.2pt;">
               2. Revisionist (Geoffrey Parker, 1988):
             </strong>
             The Armada was doomed by Philip II's impossible grand strategy rather than English brilliance. Requiring Medina Sidonia to rendezvous with Parma without a deep-water port, while Dutch flyboats blockaded Flemish harbours, was an insurmountable logistical error.
           </div>
-          <div style="background: #f0fdf4; padding: 3px 5px; border: 1px solid #bbf7d0; border-radius: 2px;">
-            <strong style="color: #166534; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.1pt;">
+          <div style="background: #f0fdf4; padding: 4.5px 6px; border: 1px solid #bbf7d0; border-radius: 2px;">
+            <strong style="color: #166534; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.2pt;">
               3. Post-Revisionist (Colin Martin &amp; Peter Pierson, 1999):
             </strong>
             Underwater archaeological recovery of Spanish wrecks proves Spanish gun carriages were unsuited to rapid reloading at sea. The fireships at Calais broke the crescent, and Gravelines proved English culverin superiority, but unseasoned barrels and weather sealed Spain's doom.
           </div>
         </div>
 
-        <div style="margin-top: 2.5px; background: #f8fafc; border-left: 2px solid #b45309; padding: 2px 6px; font-size: 6.2pt; color: #78350f;">
+        <div style="margin-top: 3px; background: #f8fafc; border-left: 2px solid #b45309; padding: 2.5px 6px; font-size: 6.3pt; color: #78350f;">
           <strong>Hinge Question for Class Discussion:</strong> <em>Was the defeat of the Spanish Armada primarily the result of English tactical and naval brilliance, or was Philip II's invasion plan doomed from the outset by fatal logistical flaws?</em>
         </div>
       </div>
 
-      <!-- Key Chronology: Eight Causal Turning Points (1569–1588) -->
-      <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 1.5px; margin-bottom: 2px; font-family: 'Inter', sans-serif;">
-          <span style="font-size: 6.8pt; font-weight: 900; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em;">
-            KEY CHRONOLOGY: EIGHT CAUSAL TURNING POINTS (1569–1588)
-          </span>
-          <span style="font-size: 6.0pt; font-weight: 700; color: #1e3a8a;">CRITICAL PROGRESSION</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.23;">
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">Nov 1569 &bull; Northern Revolt</strong>
-            Earls of Northumberland &amp; Westmorland seize Durham; Catholic feudal rebellion.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">25 Feb 1570 &bull; Regnans in Excelsis</strong>
-            Pius V excommunicates Elizabeth; frees subjects from loyalty; Catholicism = treason.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">Sep 1580 &bull; Golden Hind Returns</strong>
-            Drake completes circumnavigation with £400k treasure; knighted at Deptford (1581).
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">Dec 1584 &bull; Treaty of Joinville</strong>
-            Philip II &amp; French Catholic League unite; England left completely isolated.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #b45309; display: block;">10 Aug 1585 &bull; Treaty of Nonsuch</strong>
-            England commits 7,400 troops to Netherlands under Leicester; open war with Spain.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #b45309; display: block;">8 Feb 1587 &bull; Execution of Mary Stuart</strong>
-            Mary beheaded at Fotheringhay Castle after Babington cipher sting; removes Philip's French obstacle.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #991b1b; display: block;">19 Apr 1587 &bull; Cadiz Naval Raid</strong>
-            Drake destroys 30+ Spanish ships &amp; 1,700 tons of barrel staves; delays Armada 12 months.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #991b1b; display: block;">8 Aug 1588 &bull; Battle of Gravelines</strong>
-            Calais fireships scatter crescent; culverins batter Armada; Protestant wind forces retreat.
-          </div>
-        </div>
-      </div>
-
       <!-- Comparative Policy Evaluation Matrix (4 Pillars) -->
-      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff;">
-        <div style="background: #1e293b; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; display: flex; justify-content: space-between;">
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff; margin-bottom: 6px;">
+        <div style="background: #1e293b; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; display: flex; justify-content: space-between;">
           <span>COMPARATIVE POLICY SUCCESS EVALUATION &bull; 1569–1588</span>
           <span>CRITERIA-LED VERDICT</span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; padding: 3.5px 6px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.24;">
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; padding: 5px 6px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
             <strong style="color: #16a34a; display: block; text-transform: uppercase;">1. Counter-Espionage: High</strong>
             Walsingham dismantled 4 major assassination plots; cryptographer Phelippes secured legal proof to execute Mary QoS without civil war.
           </div>
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #d97706; border-radius: 2px;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #d97706; border-radius: 2px;">
             <strong style="color: #d97706; display: block; text-transform: uppercase;">2. Dutch Campaign: Low-Mod</strong>
             Leicester's insubordination, desertions, and supply failures damaged trust; but tied down Parma's tercios and prevented Dutch collapse.
           </div>
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
             <strong style="color: #16a34a; display: block; text-transform: uppercase;">3. Naval Defence: High</strong>
             Cadiz raid delayed invasion; race-built galleons, fireships at Calais, and culverin gunnery prevented Parma junction and routed Armada.
           </div>
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #dc2626; border-radius: 2px;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #dc2626; border-radius: 2px;">
             <strong style="color: #dc2626; display: block; text-transform: uppercase;">4. Imperial Finance: Low</strong>
             War in Netherlands and naval mobilization drained Crown reserves, forcing sale of £120,000 Crown lands and renewed reliance on Parliament.
           </div>
@@ -1481,11 +1770,11 @@ async function buildPublisherTextbookHtmlKT2() {
       </div>
 
       <!-- Synoptic Disciplinary Assessment -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0f172a; padding: 3.5px 8px; border-radius: 2px; font-family: 'Inter', sans-serif;">
-        <span style="font-size: 6.4pt; font-weight: 900; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 1px;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0f172a; padding: 6.5px 8px; border-radius: 2px; font-family: 'Inter', sans-serif;">
+        <span style="font-size: 6.6pt; font-weight: 900; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 2px;">
           SYNOPTIC VERDICT &bull; THE ESCALATION TO TOTAL WAR AND ARMADA TRIUMPH
         </span>
-        <p style="font-size: 6.5pt; line-height: 1.26; color: #334155; margin: 0;">
+        <p style="font-size: 6.7pt; line-height: 1.30; color: #334155; margin: 0;">
           Between 1569 and 1588, England was propelled from precarious cold war into total military conflict. While Elizabeth sought for two decades to preserve peace through strategic ambiguity, commercial piracy, and covert Dutch loans, the convergence of papal militancy, Catholic assassination plots around Mary Stuart, and Spain's annexation of Portugal made open war unavoidable. The execution of Mary in 1587 removed the final diplomatic restraint upon Philip II, culminating in the 1588 Armada. England's triumph was neither an accident nor merely a weather miracle: it was the direct product of Walsingham's ruthless intelligence network, Drake's pre-emptive strikes at Cadiz, Hawkins' revolutionary race-built galleons, and superior English standoff gunnery that prevented Parma's veteran army from ever crossing the Channel.
         </p>
       </div>
@@ -1510,19 +1799,63 @@ async function buildPublisherTextbookHtmlKT2() {
       </div>
 
       <!-- Exam Banner -->
-      <div class="lesson-hero" style="margin-bottom: 2px; padding-bottom: 2px;">
+      <div class="lesson-hero" style="margin-bottom: 5px; padding-bottom: 2px;">
         <div class="lesson-badge-strip">
           <span class="topic-badge">EXAM MASTERCLASS</span>
           <span class="spec-ref-badge">EDEXCEL PAPER 2 OPTION B4 &bull; 1HI0/B4</span>
         </div>
         <h2 class="lesson-title" style="font-size: 11.5pt; margin: 1px 0;">Edexcel Paper 2: Examination Strategy &amp; Exemplar Model Answers</h2>
-        <div class="lesson-spec-anchor" style="padding: 2px 6px;">
+        <div class="lesson-spec-anchor" style="padding: 2.5px 6px;">
           <strong>Official Exam Blueprint:</strong> Deconstructing Question 1(a) &amp; 1(b) Features [4m], Question 2 Causation [12m], and Question 3 Evaluative Essay [16m + 4 SPaG].
         </div>
       </div>
 
+      <!-- Key Chronology: Eight Causal Turning Points (1569–1588) -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff; margin-bottom: 5px;">
+        <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif;">
+          <span style="font-size: 6.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
+            KEY CHRONOLOGY: EIGHT CAUSAL TURNING POINTS (1569–1588)
+          </span>
+          <span style="font-size: 5.8pt; font-weight: 700; color: #93c5fd;">SPECIFICATION EVIDENCE RECALL</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 4px 5px; font-family: 'Inter', sans-serif; font-size: 6.0pt; line-height: 1.24;">
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">Nov 1569 &bull; Northern Revolt</strong>
+            Earls of Northumberland &amp; Westmorland seize Durham; Catholic feudal rebellion.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">25 Feb 1570 &bull; Regnans in Excelsis</strong>
+            Pius V excommunicates Elizabeth; frees subjects from loyalty; Catholicism = treason.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">Sep 1580 &bull; Golden Hind Returns</strong>
+            Drake completes circumnavigation with £400k treasure; knighted at Deptford (1581).
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">Dec 1584 &bull; Treaty of Joinville</strong>
+            Philip II &amp; French Catholic League unite; England left completely isolated.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #b45309; display: block;">10 Aug 1585 &bull; Treaty of Nonsuch</strong>
+            England commits 7,400 troops to Netherlands under Leicester; open war with Spain.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #b45309; display: block;">8 Feb 1587 &bull; Execution of Mary Stuart</strong>
+            Mary beheaded at Fotheringhay Castle after Babington cipher sting; removes Philip's French obstacle.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #991b1b; display: block;">19 Apr 1587 &bull; Cadiz Naval Raid</strong>
+            Drake destroys 30+ Spanish ships &amp; 1,700 tons of barrel staves; delays Armada 12 months.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #991b1b; display: block;">8 Aug 1588 &bull; Battle of Gravelines</strong>
+            Calais fireships scatter crescent; culverins batter Armada; Protestant wind forces retreat.
+          </div>
+        </div>
+      </div>
+
       <!-- Question 1(a) & 1(b) Feature Masterclass [4 Marks Total] -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0284c7; padding: 3.5px 7px; border-radius: 3px; font-family: 'Inter', sans-serif;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0284c7; padding: 4px 7px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5px; margin-bottom: 2px;">
           <span style="font-size: 6.8pt; font-weight: 900; color: #0369a1; text-transform: uppercase;">
             QUESTION 1(a) &amp; 1(b): DESCRIBE ONE FEATURE OF... [2 MARKS EACH &bull; 4 MARKS TOTAL &bull; 6 MINS]
@@ -1534,34 +1867,34 @@ async function buildPublisherTextbookHtmlKT2() {
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
           <!-- Q1(a) -->
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <div style="font-weight: 800; color: #0369a1; font-size: 6.3pt; margin-bottom: 1px;">
               Q1(a): Describe one feature of the Duke of Norfolk's plot (Ridolfi Plot) in 1571. [2 marks]
             </div>
-            <div style="font-size: 6.3pt; line-height: 1.26; color: #1e293b;">
+            <div style="font-size: 6.3pt; line-height: 1.28; color: #1e293b;">
               <strong>Model Answer:</strong> One feature was the planned invasion of England by a foreign Catholic army of <strong>10,000 Spanish soldiers</strong> led by the Duke of Alba. <em>[1 mark for valid feature]</em> The conspirators planned for these veteran troops from the Netherlands to land at Harwich, murder Queen Elizabeth, and marry Thomas Howard, Duke of Norfolk, to Mary, Queen of Scots. <em>[1 mark for supporting historical detail]</em>
             </div>
           </div>
 
           <!-- Q1(b) -->
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <div style="font-weight: 800; color: #0369a1; font-size: 6.3pt; margin-bottom: 1px;">
               Q1(b): Describe one feature of the fireship attack at Calais in 1588. [2 marks]
             </div>
-            <div style="font-size: 6.3pt; line-height: 1.26; color: #1e293b;">
+            <div style="font-size: 6.3pt; line-height: 1.28; color: #1e293b;">
               <strong>Model Answer:</strong> One feature was the English use of <strong>eight burning ghost ships</strong> packed with pitch, tar, and loaded cannons, drifted into the Spanish anchorage at midnight. <em>[1 mark for valid feature]</em> This ignited extreme panic among Spanish captains who feared exploding 'hellburners', causing them to cut their anchor cables and permanently break their defensive crescent formation. <em>[1 mark for supporting historical detail]</em>
             </div>
           </div>
         </div>
 
         <!-- Examiner Tip & Warning Box -->
-        <div style="margin-top: 2px; background: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 5px; font-size: 5.9pt; color: #1e40af; border-radius: 2px;">
+        <div style="margin-top: 2.5px; background: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 5px; font-size: 5.9pt; color: #1e40af; border-radius: 2px;">
           <strong>Examiner Warning:</strong> Notice that Edexcel Paper 2 NEVER asks you to 'describe two features' in a single 4-mark question. It strictly divides them into Q1(a) [2m] and Q1(b) [2m]. Keep answers concise: state the feature, add one concrete factual statistic/date/name, and stop immediately. Never write explanations or consequences!
         </div>
       </div>
 
       <!-- Question 2 Masterclass: Causation [12 Marks] -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #b45309; padding: 3.5px 7px; border-radius: 3px; font-family: 'Inter', sans-serif;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #b45309; padding: 4px 7px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5px; margin-bottom: 2px;">
           <span style="font-size: 6.8pt; font-weight: 900; color: #b45309; text-transform: uppercase;">
             QUESTION 2: EXPLAIN WHY... [12 MARKS &bull; 18 MINUTES]
@@ -1573,21 +1906,25 @@ async function buildPublisherTextbookHtmlKT2() {
         <div style="font-size: 6.4pt; font-weight: 800; color: #0f172a; margin-bottom: 2px;">
           Exam Prompt: Explain why war broke out between England and Spain in 1585. You may use: (1) Drake's privateering in the New World, (2) The Treaty of Nonsuch (1585). [12 marks]
         </div>
-        <div style="font-size: 6.2pt; line-height: 1.25; color: #334155; display: flex; flex-direction: column; gap: 2px;">
-          <div style="background: #ffffff; padding: 2.5px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+        <div style="font-size: 6.2pt; line-height: 1.27; color: #334155; display: flex; flex-direction: column; gap: 2.5px;">
+          <div style="background: #ffffff; padding: 3px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <strong style="color: #b45309;">PEEL Paragraph 1 (Commercial Piracy &amp; Imperial Provocation):</strong> One major reason war erupted was English commercial piracy in the Spanish Americas, spearheaded by Sir Francis Drake. Spanish colonial law strictly forbade foreign merchants from trading in the New World, yet English 'sea dogs' repeatedly assaulted Spanish treasure ports. This culminated in Drake’s 1577–1580 circumnavigation, during which he plundered £400,000 in silver and gold from the *Cacafuego*, doubling the Crown's annual income. <em>Consequently,</em> when Elizabeth publicly knighted Drake at Deptford in April 1581 rather than executing him as a pirate, she directly challenged Philip II’s imperial prestige and economic solvency, convincing the Spanish monarch that commercial plundering could only be stopped through armed subjugation.
           </div>
-          <div style="background: #ffffff; padding: 2.5px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <strong style="color: #b45309;">PEEL Paragraph 2 (Direct Military Intervention &amp; Treaty of Nonsuch):</strong> Furthermore, the direct trigger for open warfare was Elizabeth signing the Treaty of Nonsuch in August 1585. Fearing that the fall of Antwerp to the Duke of Parma would leave the Low Countries in total Spanish control directly opposite London, Elizabeth abandoned twenty-seven years of strategic ambiguity. She agreed to finance and deploy 7,400 English soldiers under the Earl of Leicester and garrisoned the deep-water cautionary towns of Flushing and Brill. <em>As a direct result,</em> Philip II regarded this formal military deployment as an overt declaration of war, immediately impounding all English ships in Iberian ports and ordering the mobilization of the Armada.
           </div>
-          <div style="background: #ffffff; padding: 2.5px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <strong style="color: #b45309;">PEEL Paragraph 3 (Own Knowledge: The Assassination of William &amp; Joinville Isolation):</strong> Crucially, the geopolitical crisis in 1584 left England completely isolated and made war unavoidable. In July 1584, Dutch Protestant leader William the Silent was assassinated by a Catholic agent, proving that Protestant leaders could be eliminated. Simultaneously, Philip II signed the secret Treaty of Joinville with the French Catholic League, agreeing to fund the Duke of Guise to keep the Protestant Henry of Navarre off the French throne. <em>Therefore,</em> England was confronted by a united Franco-Spanish Catholic bloc; with France neutralized, Philip had a completely free hand to conquer England, compelling Elizabeth to strike first before Dutch resistance collapsed entirely.
           </div>
+        </div>
+        <div style="margin-top: 2.5px; background: #fffbeb; border: 1px solid #fde68a; padding: 2.5px 6px; font-size: 5.9pt; color: #92400e; border-radius: 2px; display: flex; justify-content: space-between;">
+          <span><strong>Examiner Causation Strategy (Level 4):</strong> Contrast the foundational commercial rivalry (root cause) with the Treaty of Nonsuch and the assassination of William the Silent (immediate triggers). Candidates must explicitly link causes together.</span>
+          <span style="font-weight: 800;">12/12 CRITERIA</span>
         </div>
       </div>
 
       <!-- Question 3 Masterclass: Evaluative Essay [16 Marks + 4 SPaG] -->
-      <div style="background: #fdfaf6; border: 1.2px solid #fed7aa; border-left: 3.5px solid #991b1b; padding: 3.5px 7px; border-radius: 3px; font-family: 'Inter', sans-serif;">
+      <div style="background: #fdfaf6; border: 1.2px solid #fed7aa; border-left: 3.5px solid #991b1b; padding: 4px 7px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #ffedd5; padding-bottom: 1.5px; margin-bottom: 2px;">
           <span style="font-size: 6.8pt; font-weight: 900; color: #991b1b; text-transform: uppercase;">
             QUESTION 3: EVALUATIVE ESSAY [16 MARKS + 4 SPAG &bull; 25 MINUTES]
@@ -1600,30 +1937,62 @@ async function buildPublisherTextbookHtmlKT2() {
           Exam Prompt: "The English use of fireships at Calais was the main reason for the defeat of the Spanish Armada in 1588." How far do you agree? Explain your answer. You may use: (1) Fireships at Calais, (2) English naval gunnery and ship design. [16 marks + 4 SPaG]
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-size: 6.1pt; line-height: 1.24; margin-bottom: 2px;">
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-size: 6.1pt; line-height: 1.25; margin-bottom: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #fed7aa; border-radius: 2px;">
             <strong style="color: #991b1b; display: block; text-transform: uppercase;">Factor 1: Calais Fireships (Agree)</strong>
             Midnight attack on 7 August broke the impenetrable crescent formation; Spanish captains cut anchor cables in panic, preventing re-anchoring and leaving ships scattered for Gravelines.
           </div>
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #fed7aa; border-radius: 2px;">
             <strong style="color: #1e3a8a; display: block; text-transform: uppercase;">Factor 2: English Gunnery &amp; Design (Counter)</strong>
             Hawkins’ race-built galleons were faster and lower; long-range culverins on 4-wheeled truck carriages allowed rapid reloading, battering Spanish hulls while avoiding boarding melee.
           </div>
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #fed7aa; border-radius: 2px;">
             <strong style="color: #0f172a; display: block; text-transform: uppercase;">Factor 3: Spanish Logistical Flaws &amp; Wind (Counter)</strong>
             No deep-water port to join Parma; Dutch flyboat blockade; unseasoned barrel staves rotting food/water; violent Atlantic gale blew scattered fleet onto Irish rocks.
           </div>
         </div>
 
-        <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px; font-size: 6.2pt; line-height: 1.25; color: #1e293b;">
+        <div style="background: #ffffff; padding: 3.5px 6px; border: 1px solid #fed7aa; border-radius: 2px; font-size: 6.2pt; line-height: 1.27; color: #1e293b;">
           <strong style="color: #991b1b; text-transform: uppercase; font-size: 6.2pt; display: block; margin-bottom: 1px;">Exemplar Level 4 Conclusion (Criteria-Led Sustained Judgement):</strong>
           <em>"In conclusion, while the fireships at Calais provided the decisive tactical turning point, fatal structural and logistical flaws in Philip II’s invasion plan were the ultimate cause of the Armada’s defeat. When assessing causality by the criterion of foundational necessity, the fireships were only effective because the Armada was forced to anchor in an exposed roadstead off Calais due to the absence of a deep-water port in Flanders. Medina Sidonia could never successfully embark Parma’s 27,000 soldiers while Dutch Protestant flyboats maintained an unshakeable shallow-water blockade. Furthermore, superior English naval design—Hawkins’ nimble race-built galleons and fast-reloading culverin cannons—had already neutralized Spanish boarding tactics throughout the Channel voyage. The fireships shattered the crescent formation and Gravelines proved English artillery superiority, but the campaign was structurally doomed before departure by Drake's destruction of barrel staves at Cadiz and Philip's impossible coordination demands. The 'Protestant Wind' merely completed the destruction of an already defeated and disorganized fleet."</em>
         </div>
 
         <!-- SPaG Mastery Box -->
-        <div style="margin-top: 2px; background: #fffbeb; border: 1px solid #fde68a; padding: 2px 5px; font-size: 5.9pt; color: #92400e; border-radius: 2px; display: flex; justify-content: space-between;">
+        <div style="margin-top: 2.5px; background: #fffbeb; border: 1px solid #fde68a; padding: 2.5px 5.5px; font-size: 5.9pt; color: #92400e; border-radius: 2px; display: flex; justify-content: space-between;">
           <span><strong>SPaG Masterclass (+4 Marks):</strong> Spell technical terms accurately (<em>recusancy, privateering, culverin, cautionary towns, tercios</em>). Use sophisticated causal links (<em>consequently, fundamentally, precipitated</em>).</span>
           <span style="font-weight: 800;">4/4 SPaG TARGET</span>
+        </div>
+      </div>
+
+      <!-- Examiner Marking Blueprint & Band Descriptors Table -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff;">
+        <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif;">
+          <span style="font-size: 6.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
+            EDEXCEL PAPER 2 EXAMINER MARKING BLUEPRINT &amp; BAND DESCRIPTORS
+          </span>
+          <span style="font-size: 5.8pt; font-weight: 700; color: #93c5fd;">OPTION B4 &bull; 1HI0/B4</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 3.5px 6px; font-family: 'Inter', sans-serif; font-size: 5.9pt; line-height: 1.24;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 2.5px solid #16a34a; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #166534; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 4 (13–16 Marks)</strong>
+            <strong>Criteria-Led Evaluation:</strong> Analytical throughout; deploys line-by-line precise factual evidence; sustained judgement weighing root vs catalytic causes.
+          </div>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 2.5px solid #2563eb; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #1e40af; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 3 (9–12 Marks)</strong>
+            <strong>Explanatory &amp; Balanced:</strong> Explains both stimulus points plus own knowledge; links factors to prompt, but conclusion summarizes rather than synthesizes.
+          </div>
+          <div style="background: #fffbeb; border: 1px solid #fde68a; border-left: 2.5px solid #d97706; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #92400e; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 2 (5–8 Marks)</strong>
+            <strong>Descriptive Narrative:</strong> Recounts narrative events without explicit analytical focus; unbalanced or lacks independent own knowledge beyond stimulus.
+          </div>
+          <div style="background: #fef2f2; border: 1px solid #fecaca; border-left: 2.5px solid #dc2626; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #991b1b; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 1 (1–4 Marks)</strong>
+            <strong>Basic Statements:</strong> Generalized historical assertions with significant inaccuracies; offers simple assertions without supporting factual detail.
+          </div>
+        </div>
+        <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 3.5px 6px; font-family: 'Inter', sans-serif; font-size: 5.8pt; line-height: 1.22; display: flex; justify-content: space-between; align-items: center; color: #475569;">
+          <span><strong>Exam Timing Allocation (50 Mins):</strong> Q1(a) 3 mins [2m] &bull; Q1(b) 3 mins [2m] &bull; Q2 Causation 18 mins [12m] &bull; Q3 Essay 25 mins [16+4m] &bull; Review 1 min</span>
+          <span style="font-weight: 800; color: #0f172a;">PEARSON EDEXCEL SPECIFICATION TARGET</span>
         </div>
       </div>
 

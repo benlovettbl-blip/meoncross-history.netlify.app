@@ -73,6 +73,8 @@ function formatText(text) {
 }
 
 async function buildPublisherTextbookHtmlKT3() {
+  const { KEY_TOPICS_DATA } = require('./render_eee_twopage_workbook.cjs');
+  const ktWorkbookData = KEY_TOPICS_DATA.KT3;
   const getKt3Data = require('./eee_textbook_data_kt3.cjs');
   const ktData = getKt3Data({ getBase64Image });
   const { coverConfig, componentBank, leftSources, leftVocab } = ktData;
@@ -87,7 +89,7 @@ async function buildPublisherTextbookHtmlKT3() {
   const coverImgData =
     getBase64Image(coverConfig.coverImage) || getBase64Image('images/roanoke_colony.jpg');
 
-  // Helper for rendering Archival Source Boxes
+  // Helper for rendering Archival Source Boxes (Paper 2 authentic primary written records)
   const renderArchivalSourceBox = (src) => {
     if (!src || !src.title) return '';
     return `
@@ -100,6 +102,15 @@ async function buildPublisherTextbookHtmlKT3() {
           <span class="source-date-micro">${src.date}</span>
         </div>
         <div class="archival-title">${src.title}</div>
+        ${
+          src.quote
+            ? `
+          <div class="archival-source-quote">
+            &ldquo;${src.quote}&rdquo;
+          </div>
+        `
+            : ''
+        }
         ${src.image ? `<img class="archival-image" src="${src.image}" alt="${src.title}">` : ''}
         <div class="archival-context-box">
           <p class="archival-context-text">${src.context}</p>
@@ -345,7 +356,7 @@ async function buildPublisherTextbookHtmlKT3() {
       position: relative;
     }
 
-    /* Page Padding Standards */
+    /* Page Layout Containers */
     .cover-page-layout {
       padding: 9mm 12mm 7mm 12mm;
       height: 297mm;
@@ -362,13 +373,20 @@ async function buildPublisherTextbookHtmlKT3() {
       justify-content: space-between;
     }
 
+    .synoptic-page-layout {
+      padding: 8.5mm 12mm 6.5mm 12mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     .masterclass-page-layout {
       padding: 8.5mm 12mm 6.5mm 12mm;
       height: 297mm;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 3.5px;
+      justify-content: space-between;
     }
 
     .back-cover-layout {
@@ -376,8 +394,7 @@ async function buildPublisherTextbookHtmlKT3() {
       height: 297mm;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 3.5px;
+      justify-content: space-between;
     }
 
     /* Running Header */
@@ -493,7 +510,21 @@ async function buildPublisherTextbookHtmlKT3() {
       margin: 0;
     }
 
-    /* 2-Column Cambridge / OUP Reading Prose Measure */
+    /* 2-Column Deterministic Grid */
+    .two-column-prose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 3.5px;
+    }
+    .col-side {
+      display: flex;
+      flex-direction: column;
+    }
+
     .two-column-prose {
       column-count: 2;
       column-gap: 15px;
@@ -511,39 +542,40 @@ async function buildPublisherTextbookHtmlKT3() {
       background: #0f172a;
       color: #ffffff;
       padding: 2.5px 6px;
-      margin: 0 0 4px 0;
+      margin: 0 0 3.5px 0;
       font-family: 'Inter', sans-serif;
       break-inside: avoid;
     }
     .sb-num {
       background: #b45309;
       color: #ffffff;
-      font-size: 6.0pt;
+      font-size: 6.6pt;
       font-weight: 900;
-      padding: 0.5px 4px;
+      padding: 0.5px 4.5px;
       border-radius: 2px;
       letter-spacing: 0.04em;
     }
     .sb-title {
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
 
     .narrative-p {
-      margin: 0 0 5px 0;
+      margin: 0 0 3.5px 0;
       text-indent: 9px;
       font-size: 8.85pt;
-      line-height: 1.36;
+      line-height: 1.34;
       color: #1e293b;
+      text-align: justify;
     }
     .narrative-p:first-of-type {
       text-indent: 0;
     }
     .para-ref {
       font-family: 'Inter', sans-serif;
-      font-size: 6.0pt;
+      font-size: 6.2pt;
       font-weight: 800;
       color: #1e3a8a;
       background: #eff6ff;
@@ -556,13 +588,13 @@ async function buildPublisherTextbookHtmlKT3() {
       vertical-align: baseline;
     }
 
-    /* Archival Source Box */
+    /* Primary Archival Source Box (Verso) */
     .archival-source-box {
       background: #fafaf9;
       border: 1.2px solid #d6d3d1;
       border-top: 2.5px solid #44403c;
-      padding: 4px 6px;
-      margin: 4px 0 5px 0;
+      padding: 3px 5.5px;
+      margin: 2px 0 3px 0;
       break-inside: avoid;
       font-family: 'Inter', sans-serif;
     }
@@ -578,33 +610,45 @@ async function buildPublisherTextbookHtmlKT3() {
     .source-badge {
       background: #0f172a;
       color: #fff;
-      font-size: 5.4pt;
+      font-size: 5.8pt;
       font-weight: 800;
-      padding: 1px 3.5px;
+      padding: 1px 4px;
       border-radius: 2px;
       text-transform: uppercase;
     }
     .source-type {
-      font-size: 5.4pt;
+      font-size: 6.0pt;
       font-weight: 700;
       color: #78350f;
       text-transform: uppercase;
     }
     .source-date-micro {
-      font-size: 5.4pt;
+      font-size: 5.8pt;
       color: #78716c;
       font-weight: 700;
     }
     .archival-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 7.8pt;
+      font-size: 8.2pt;
       font-weight: 800;
       color: #1c1917;
       margin: 1px 0;
     }
+    .archival-source-quote {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      font-size: 7.4pt;
+      line-height: 1.34;
+      color: #1c1917;
+      background: #faf8f5;
+      border-left: 2.5px solid #0f172a;
+      padding: 3.5px 6px;
+      margin: 2px 0;
+      border-radius: 2px;
+    }
     .archival-image {
       width: 100%;
-      height: 72px;
+      height: 75px;
       object-fit: contain;
       background: #ffffff;
       border: 1px solid #e7e5e4;
@@ -612,8 +656,8 @@ async function buildPublisherTextbookHtmlKT3() {
       display: block;
     }
     .archival-context-box {
-      font-size: 6.6pt;
-      line-height: 1.26;
+      font-size: 7.0pt;
+      line-height: 1.28;
       color: #44403c;
       border-left: 2px solid #a8a29e;
       padding-left: 4px;
@@ -622,10 +666,11 @@ async function buildPublisherTextbookHtmlKT3() {
     .archival-context-text { margin: 0 0 2px 0; }
     .archival-hinge-q {
       background: #f5f5f4;
-      padding: 1.5px 4px;
+      padding: 2px 5px;
       border-radius: 2px;
       color: #1c1917;
-      font-size: 6.2pt;
+      font-size: 6.8pt;
+      line-height: 1.24;
     }
 
     /* Key Figure Profile Box */
@@ -633,8 +678,8 @@ async function buildPublisherTextbookHtmlKT3() {
       background: #f8fafc;
       border: 1.2px solid #cbd5e1;
       border-top: 3px solid #1e3a8a;
-      padding: 5px 7px;
-      margin: 4px 0 6px 0;
+      padding: 4px 6px;
+      margin: 3px 0 4px 0;
       break-inside: avoid;
       font-family: 'Inter', sans-serif;
     }
@@ -645,14 +690,14 @@ async function buildPublisherTextbookHtmlKT3() {
       margin-bottom: 2px;
     }
     .kf-tag {
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .kf-lifespan {
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #64748b;
     }
@@ -663,56 +708,57 @@ async function buildPublisherTextbookHtmlKT3() {
       margin-bottom: 3px;
     }
     .kf-portrait {
-      width: 44px;
-      height: 52px;
+      width: 36px;
+      height: 44px;
       object-fit: cover;
       border-radius: 2px;
       border: 1px solid #cbd5e1;
-      background: #e2e8f0;
+      background: #ffffff;
+      flex-shrink: 0;
     }
     .kf-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
+      font-size: 9.0pt;
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.15;
+      margin: 0;
     }
     .kf-role {
       font-size: 6.4pt;
       font-weight: 700;
-      color: #b45309;
-      line-height: 1.2;
+      color: #475569;
+      text-transform: uppercase;
     }
     .kf-significance {
-      font-size: 6.5pt;
-      line-height: 1.27;
+      font-size: 7.2pt;
+      line-height: 1.28;
       color: #334155;
       margin-bottom: 3px;
     }
     .kf-actions-title {
-      font-size: 5.8pt;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-size: 6.4pt;
+      font-weight: 900;
       color: #0f172a;
+      text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .kf-actions-list {
       margin: 0;
-      padding-left: 11px;
-      font-size: 6.2pt;
-      line-height: 1.25;
-      color: #475569;
+      padding-left: 12px;
+      font-size: 7.0pt;
+      line-height: 1.26;
+      color: #1e293b;
     }
-    .kf-actions-list li { margin-bottom: 1.5px; }
+    .kf-actions-list li { margin-bottom: 1px; }
 
     /* Concept Spotlight Box */
     .concept-spotlight-box {
-      background: #fdfaf6;
-      border: 1.2px solid #fed7aa;
-      border-left: 3.5px solid #ea580c;
-      padding: 4.5px 6.5px;
-      margin: 4px 0 5px 0;
+      background: #fffbeb;
+      border: 1.2px solid #fde68a;
+      border-left: 3.5px solid #d97706;
+      padding: 3.5px 6px;
+      margin: 3px 0 4px 0;
       break-inside: avoid;
       font-family: 'Inter', sans-serif;
     }
@@ -720,135 +766,233 @@ async function buildPublisherTextbookHtmlKT3() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .csb-tag {
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       font-weight: 800;
-      color: #c2410c;
+      color: #92400e;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
     .csb-category {
-      font-size: 5.6pt;
+      font-size: 6.2pt;
       font-weight: 700;
-      color: #9a3412;
-      text-transform: uppercase;
+      color: #b45309;
+      background: #ffedd5;
+      padding: 1px 4px;
+      border-radius: 2px;
     }
     .csb-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.2pt;
+      font-size: 8.4pt;
       font-weight: 800;
       color: #7c2d12;
-      margin: 1px 0 2px 0;
+      margin: 1px 0;
+      line-height: 1.15;
     }
     .csb-body {
-      font-size: 6.6pt;
-      line-height: 1.27;
-      color: #431407;
+      font-size: 7.2pt;
+      line-height: 1.28;
+      color: #1e293b;
+      margin-bottom: 2px;
     }
     .csb-takeaway {
-      background: #ffedd5;
-      padding: 1.5px 4.5px;
-      border-radius: 2px;
-      font-size: 6.0pt;
-      color: #7c2d12;
-      margin-top: 2px;
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: #78350f;
+      background: #fef3c7;
+      border-left: 2px solid #d97706;
+      padding: 2px 5px;
+      border-radius: 0 2px 2px 0;
     }
 
-    /* Bottom Vocabulary Bar (Verso) */
-    .bottom-vocab-box {
-      border: 1.2px solid #0f172a;
-      border-radius: 3px;
-      background: #ffffff;
-      padding: 3.5px 7px;
-      margin-top: 2px;
+    /* Bottom Decks */
+    .bottom-vocab-box, .bottom-enquiry-box {
+      width: 100%;
+      box-sizing: border-box;
       flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 1px;
+      padding: 4.5px 7px;
+      border-radius: 3px;
       font-family: 'Inter', sans-serif;
     }
-    .bvb-header {
+    .bottom-vocab-box {
+      background: #fdfaf6;
+      border: 1.2px solid #fed7aa;
+      border-top: 2.5px solid #b45309;
+    }
+    .bvb-header, .beb-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1.5px;
       margin-bottom: 2px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1px;
     }
     .bvb-title {
-      font-size: 6.2pt;
+      font-size: 6.8pt;
       font-weight: 900;
-      color: #0f172a;
+      color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .bvb-badge {
-      font-size: 5.6pt;
+    .bvb-badge, .beb-badge {
+      font-size: 5.8pt;
       font-weight: 800;
       background: #0f172a;
       color: #fff;
-      padding: 0.5px 4px;
+      padding: 1px 4px;
       border-radius: 2px;
+      text-transform: uppercase;
     }
     .bvb-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 6px;
-      font-size: 6.1pt;
-      line-height: 1.25;
+      font-size: 6.8pt;
+      line-height: 1.28;
       color: #334155;
     }
-    .bvb-col strong {
+    .bvb-col strong, .beb-col strong {
       display: block;
-      color: #1e3a8a;
-      font-size: 6.3pt;
+      color: #0f172a;
+      margin-bottom: 1px;
       text-transform: uppercase;
+      font-size: 6.4pt;
     }
-
-    /* Bottom Enquiry Bar (Recto) */
     .bottom-enquiry-box {
-      border: 1.2px solid #b45309;
-      border-radius: 3px;
-      background: #fffbeb;
-      padding: 3.5px 7px;
-      margin-top: 2px;
-      flex-shrink: 0;
-      font-family: 'Inter', sans-serif;
-    }
-    .beb-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #fde68a;
-      padding-bottom: 1.5px;
+      background: #f8fafc;
+      border: 1.2px solid #cbd5e1;
+      border-top: 2.5px solid #1e3a8a;
+      padding: 7px 9px;
       margin-bottom: 2px;
     }
     .beb-title {
-      font-size: 6.2pt;
+      font-size: 6.8pt;
       font-weight: 900;
-      color: #78350f;
+      color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .beb-badge {
-      font-size: 5.6pt;
-      font-weight: 800;
-      background: #b45309;
-      color: #fff;
-      padding: 0.5px 4px;
-      border-radius: 2px;
-    }
     .beb-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      font-size: 6.1pt;
-      line-height: 1.25;
-      color: #451a03;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      font-size: 6.8pt;
+      line-height: 1.32;
+      color: #334155;
     }
     .beb-col strong {
+      font-size: 6.4pt;
+      margin-bottom: 2px;
+    }
+
+    /* 4-Box Horizontal Timeline Strip (Recto Bottom Deck) */
+    .timeline-strip-4col {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1.2px solid #0f172a;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: auto;
+      margin-bottom: 2.5px;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .timeline-strip-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1.8px 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .timeline-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      padding: 3px 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.9pt;
+      line-height: 1.25;
+    }
+    .timeline-card {
+      background: #f8fafc;
+      border-left: 2.5px solid #1e3a8a;
+      padding: 2.5px 4.5px;
+      border-radius: 1px;
+    }
+    .timeline-card-title {
+      color: #1e3a8a;
       display: block;
-      color: #92400e;
-      font-size: 6.3pt;
+      font-size: 6.8pt;
+      font-weight: 800;
+      margin-bottom: 1px;
+    }
+
+    /* Full-Width Exam Strategy Box (Recto Bottom Deck) */
+    .exam-strategy-fullwidth-box {
+      width: 100%;
+      box-sizing: border-box;
+      background: #fdfaf6;
+      border: 1.2px solid #fed7aa;
+      border-left: 3.5px solid #b45309;
+      padding: 3.5px 6.5px;
+      margin-bottom: 1.5px;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+    .esfb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #fed7aa;
+      padding-bottom: 1.5px;
+      margin-bottom: 2px;
+    }
+    .esfb-badge {
+      font-size: 6.8pt;
+      font-weight: 900;
+      color: #9a3412;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .esfb-tariff {
+      font-size: 6.2pt;
+      font-weight: 800;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+    .esfb-stem {
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+    .esfb-guidance {
+      font-size: 6.8pt;
+      color: #78350f;
+      line-height: 1.25;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed #fed7aa;
+      padding-top: 2px;
+    }
+    .esfb-target {
+      font-size: 6.4pt;
+      font-weight: 800;
+      color: #9a3412;
     }
 
     /* Master Front Cover Styles */
@@ -1095,29 +1239,141 @@ async function buildPublisherTextbookHtmlKT3() {
         </div>
       </div>
 
-      <!-- Official 4-Column Pearson Edexcel Specification Coverage Matrix -->
-      <div class="cover-spec-matrix">
-        ${coverConfig.specTopics
-          .map(
-            (t) => `
-          <div class="csm-card">
-            <div class="csm-header">${t.title}</div>
-            <ul class="csm-bullets">
-              ${t.bullets.map((b) => `<li>${formatText(b)}</li>`).join('')}
-            </ul>
-            <div class="csm-seq">
-              <strong>Causal Sequence:</strong><br>${t.seq}
+      <!-- Pearson Edexcel Specification Coverage (Official 4-Column Matrix with 4-Stage Causal Chronology) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column; margin-bottom: 2px;">
+        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Pearson Edexcel GCSE (9–1) History Specification Content</span>
+          <span style="font-size: 6.8pt; letter-spacing: 0.5px;">Key Topic 3 Coverage Matrix</span>
+        </div>
+
+        <div style="padding: 5px 8px 6px 8px; display: flex; flex-direction: column; gap: 4px;">
+          <!-- Row 1: 4-Column Specification Content -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.32; color: #111;">
+            <!-- 3.1 -->
+            <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                3.1 Education &amp; Leisure
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; <strong>Grammar schools:</strong> 72 founded; Latin, Greek &amp; rhetoric.</div>
+              <div style="margin-bottom: 2px;">&bull; Petty schools &amp; dame schools; girls educated in domestic skills.</div>
+              <div style="margin-bottom: 2px;">&bull; Elite education: private tutors, universities &amp; <strong>Inns of Court</strong>.</div>
+              <div style="margin-bottom: 2px;">&bull; Pastimes: noble hunting/hawking, folk football &amp; bear-baiting.</div>
+              <div>&bull; <strong>The Theatre (1576):</strong> Burbage, groundlings &amp; Puritan civic opposition.</div>
             </div>
-            <div class="csm-focus">${t.focus}</div>
+
+            <!-- 3.2 -->
+            <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                3.2 The Problem of the Poor
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; Population boom (2.8m to 4m), food price inflation &amp; bad harvests.</div>
+              <div style="margin-bottom: 2px;">&bull; Agrarian change: <strong>sheep enclosure</strong>, rack-renting &amp; peasant eviction.</div>
+              <div style="margin-bottom: 2px;">&bull; Social panic: Thomas Harman’s <strong>Caveat for Common Cursitors (1567)</strong>.</div>
+              <div style="margin-bottom: 2px;">&bull; <strong>1572 Vagabonds Act:</strong> ear-boring &amp; compulsory weekly poor rates.</div>
+              <div>&bull; <strong>1576 Poor Act:</strong> raw materials stockpiled &amp; Bridewells created.</div>
+            </div>
+
+            <!-- 3.3 -->
+            <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                3.3 Exploration &amp; Discovery
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; Antwerp trade collapse; rise of <strong>joint-stock companies</strong> (Muscovy, Levant).</div>
+              <div style="margin-bottom: 2px;">&bull; Navigational tech: astrolabe, quadrant &amp; <strong>1569 Mercator projection</strong>.</div>
+              <div style="margin-bottom: 2px;">&bull; Hawkins' <strong>race-built galleons</strong> with lower forecastles and culverins.</div>
+              <div style="margin-bottom: 2px;">&bull; Drake’s 1577–80 circumnavigation; sacking of the <strong>Cacafuego</strong> (£400k).</div>
+              <div>&bull; <strong>Nova Albion (1579):</strong> Drake’s brass plate &amp; Pacific spice trade.</div>
+            </div>
+
+            <!-- 3.4 -->
+            <div>
+              <strong style="font-size: 7.3pt; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 1px; display: block; margin-bottom: 3px;">
+                3.4 Raleigh &amp; Virginia
+              </strong>
+              <div style="margin-bottom: 2px;">&bull; Walter Raleigh’s <strong>1584 royal patent</strong>; Amadas &amp; Barlowe reconnaissance.</div>
+              <div style="margin-bottom: 2px;">&bull; Manteo &amp; Wanchese brought to England; territory named Virginia.</div>
+              <div style="margin-bottom: 2px;">&bull; <strong>1585 Lane colony:</strong> <em>Tiger</em> grounding, lost food seeds &amp; Wingina’s murder.</div>
+              <div style="margin-bottom: 2px;">&bull; <strong>1587 White settlement:</strong> 117 men, women &amp; children; Virginia Dare.</div>
+              <div>&bull; 1588 Armada embargo delays White; 1590 discovery of <strong>'CROATOAN'</strong>.</div>
+            </div>
           </div>
-        `,
-          )
-          .join('')}
+
+          <!-- Row 2: 4-Column Causal Sequences (4 Vertical Stages per Column with Arrows) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px;">
+            <!-- Col 1 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #1e3a8a; text-transform: uppercase; display: block; margin-bottom: 1px;">3.1 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">1560s:</strong> 72 Grammar Schools Endowed</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1571:</strong> Jesus College Oxford Founded</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1572:</strong> Vagabonds Act Licenses Players</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1576:</strong> Burbage Builds *The Theatre*</div>
+            </div>
+
+            <!-- Col 2 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #1e3a8a; text-transform: uppercase; display: block; margin-bottom: 1px;">3.2 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">1558–88:</strong> Population Booms to 4m</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1567:</strong> Harman Publishes *Caveat*</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1572:</strong> Ear Boring &amp; Compulsory Rates</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1576:</strong> Bridewell Workhouses Mandated</div>
+            </div>
+
+            <!-- Col 3 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #b45309; text-transform: uppercase; display: block; margin-bottom: 1px;">3.3 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">1568:</strong> San Juan de Ulúa Ambush</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1569:</strong> Mercator Projection Published</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1579:</strong> Drake Plunders *Cacafuego*</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Apr 1581:</strong> Drake Knighted at Deptford</div>
+            </div>
+
+            <!-- Col 4 Sequence -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+              <span style="font-weight: 800; color: #991b1b; text-transform: uppercase; display: block; margin-bottom: 1px;">3.4 Chronological Causal Flow</span>
+              <div><strong style="color: #0f172a;">Mar 1584:</strong> Raleigh Granted Royal Patent</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1585:</strong> *Tiger* Grounds; Lane at Roanoke</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">1587:</strong> White Colony &amp; Virginia Dare</div>
+              <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
+              <div><strong style="color: #0f172a;">Aug 1590:</strong> White Discovers 'CROATOAN'</div>
+            </div>
+          </div>
+
+          <!-- Row 3: Enquiry Disciplinary Focus & Exam Blueprint -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.24;">
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #cbd5e1;">
+              <strong style="color: #1e3a8a; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Humanist Schooling &amp; Secular Theatre &bull; <em>Exam: Q1 Feature / Q2 Causation</em>
+            </div>
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #cbd5e1;">
+              <strong style="color: #1e3a8a; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Agrarian Crisis &amp; Tudor Welfare &bull; <em>Exam: Q1 Feature / Q3 Essay</em>
+            </div>
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #b45309;">
+              <strong style="color: #b45309; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Scientific Navigation &amp; Global Trade &bull; <em>Exam: Q1 Feature / Q2 Causation</em>
+            </div>
+            <div style="background: #f1f5f9; padding: 2px 4px; border-radius: 2px; border: 1px solid #991b1b;">
+              <strong style="color: #991b1b; display: block;">CORE DISCIPLINARY FOCUS</strong>
+              Colonial Logistics &amp; The Lost Colony &bull; <em>Exam: Q1 Feature / Q3 Essay</em>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Running Footer -->
-      <div class="running-footer">
-        <span>GCSE History Revision Hub &bull; The History Department</span>
+      <!-- Cover Running Footer -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #333; font-weight: 700;">
+        <span>The History Department &bull; GCSE History Revision Hub</span>
         <span>Key Topic 3 &bull; 12-Page Complete Master Volume</span>
       </div>
 
@@ -1129,12 +1385,16 @@ async function buildPublisherTextbookHtmlKT3() {
   // ====================================================================
   // PAGES 2–9: ENQUIRIES 1 TO 4 (2-PAGE SPREAD PER ENQUIRY)
   // ====================================================================
-  lessons.forEach((l) => {
+  lessons.forEach((l, idx) => {
     const leftPageNum = l.num * 2;
     const rightPageNum = l.num * 2 + 1;
     const bank = componentBank[`p${rightPageNum}`] || {};
     const sources = leftSources[`p${leftPageNum}`] || {};
     const vocabList = leftVocab[`p${leftPageNum}`] || [];
+    const rightExam =
+      ktWorkbookData && ktWorkbookData.enquiries && ktWorkbookData.enquiries[idx]
+        ? ktWorkbookData.enquiries[idx].rightExam
+        : null;
 
     // LEFT PAGE (VERSO: Sections 1 & 2 + Sources + Vocab)
     html += `
@@ -1156,22 +1416,26 @@ async function buildPublisherTextbookHtmlKT3() {
         </div>
       </div>
 
-      <div class="two-column-prose">
-        <div class="section-banner">
-          <span class="sb-num">SECTION 1</span>
-          <span class="sb-title">${l.sec1.title}</span>
+      <div class="two-column-prose-grid">
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 1</span>
+            <span class="sb-title">${l.sec1.title}</span>
+          </div>
+          ${l.sec1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${p}</p>`).join('')}
+
+          ${renderArchivalSourceBox(sources.sourceA)}
         </div>
-        ${l.sec1.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[1.${pIdx + 1}]</span>${p}</p>`).join('')}
 
-        ${renderArchivalSourceBox(sources.sourceA)}
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 2</span>
+            <span class="sb-title">${l.sec2.title}</span>
+          </div>
+          ${l.sec2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${p}</p>`).join('')}
 
-        <div class="section-banner">
-          <span class="sb-num">SECTION 2</span>
-          <span class="sb-title">${l.sec2.title}</span>
+          ${renderArchivalSourceBox(sources.sourceB)}
         </div>
-        ${l.sec2.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[2.${pIdx + 1}]</span>${p}</p>`).join('')}
-
-        ${renderArchivalSourceBox(sources.sourceB)}
       </div>
 
       <div class="bottom-vocab-box">
@@ -1218,67 +1482,86 @@ async function buildPublisherTextbookHtmlKT3() {
         <h3 class="rph-title">${l.title} (Continued)</h3>
       </div>
 
-      <div class="two-column-prose">
-        <div class="section-banner">
-          <span class="sb-num">SECTION 3</span>
-          <span class="sb-title">${l.sec3.title}</span>
-        </div>
-        ${l.sec3.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${p}</p>`).join('')}
-
-        ${
-          bank.keyFigure
-            ? `
-        <div class="key-figure-box">
-          <div class="kf-header">
-            <span class="kf-tag">KEY HISTORICAL FIGURE</span>
-            <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
+      <div class="two-column-prose-grid">
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 3</span>
+            <span class="sb-title">${l.sec3.title}</span>
           </div>
-          <div class="kf-identity-row">
-            ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
-            <div>
-              <div class="kf-name">${bank.keyFigure.name}</div>
-              <div class="kf-role">${bank.keyFigure.role}</div>
+          ${l.sec3.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[3.${pIdx + 1}]</span>${p}</p>`).join('')}
+
+          ${
+            bank.keyFigure
+              ? `
+          <div class="key-figure-box">
+            <div class="kf-header">
+              <span class="kf-tag">KEY HISTORICAL FIGURE</span>
+              <span class="kf-lifespan">${bank.keyFigure.lifespan}</span>
             </div>
-          </div>
-          <div class="kf-significance">${bank.keyFigure.significance}</div>
-          <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-          <ul class="kf-actions-list">
-            ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
-          </ul>
-        </div>`
-            : ''
-        }
-
-        <div class="section-banner">
-          <span class="sb-num">SECTION 4</span>
-          <span class="sb-title">${l.sec4.title}</span>
+            <div class="kf-identity-row">
+              ${bank.keyFigure.image ? `<img class="kf-portrait" src="${bank.keyFigure.image}" alt="${bank.keyFigure.name}">` : ''}
+              <div>
+                <div class="kf-name">${bank.keyFigure.name}</div>
+                <div class="kf-role">${bank.keyFigure.role}</div>
+              </div>
+            </div>
+            <div class="kf-significance">${bank.keyFigure.significance}</div>
+            <div class="kf-actions-title">DECISIVE ACTIONS:</div>
+            <ul class="kf-actions-list">
+              ${bank.keyFigure.actions.map((a) => `<li>${a}</li>`).join('')}
+            </ul>
+          </div>`
+              : ''
+          }
         </div>
-        ${l.sec4.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${p}</p>`).join('')}
 
-        ${bank.conceptSpotlight || ''}
+        <div class="col-side">
+          <div class="section-banner">
+            <span class="sb-num">SECTION 4</span>
+            <span class="sb-title">${l.sec4.title}</span>
+          </div>
+          ${l.sec4.paras.map((p, pIdx) => `<p class="narrative-p"><span class="para-ref">[4.${pIdx + 1}]</span>${p}</p>`).join('')}
+
+          ${bank.conceptSpotlight || ''}
+        </div>
       </div>
 
       ${
-        bank.bottomEnquiry
+        bank.timeline
           ? `
-      <div class="bottom-enquiry-box">
-        <div class="beb-header">
-          <span class="beb-title">HISTORICAL ENQUIRY &amp; DISCIPLINARY ASSESSMENT</span>
-          <span class="beb-badge">${l.code} SYNTHESIS</span>
+      <div class="timeline-strip-4col">
+        <div class="timeline-strip-header">
+          <span>KEY CHRONOLOGY &bull; FOUR CAUSAL TURNING POINTS</span>
+          <span style="font-size: 6.2pt; color: #93c5fd;">${l.code} SEQUENCE</span>
         </div>
-        <div class="beb-grid">
-          <div class="beb-col">
-            <strong>1. Knowledge Recall:</strong>
-            ${bank.bottomEnquiry.q1}
-          </div>
-          <div class="beb-col">
-            <strong>2. Causal Analysis:</strong>
-            ${bank.bottomEnquiry.q2}
-          </div>
-          <div class="beb-col">
-            <strong>3. Historical Evaluation:</strong>
-            ${bank.bottomEnquiry.q3}
-          </div>
+        <div class="timeline-strip-grid">
+          ${bank.timeline
+            .map(
+              (t) => `
+            <div class="timeline-card">
+              <strong class="timeline-card-title">${t.date} &bull; ${t.title}</strong>
+              ${t.text}
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>`
+          : ''
+      }
+
+      ${
+        rightExam
+          ? `
+      <div class="exam-strategy-fullwidth-box">
+        <div class="esfb-header">
+          <span class="esfb-badge">EXAM STRATEGY &bull; EDEXCEL PAPER 2 (OPTION B4)</span>
+          <span class="esfb-tariff">${rightExam.tariff}</span>
+        </div>
+        <div class="esfb-stem"><strong>Exam Challenge:</strong> ${rightExam.stem}</div>
+        <div class="esfb-guidance">
+          <span><strong>Specification Stimulus:</strong> ${rightExam.stimulus && rightExam.stimulus.length ? `(1) ${rightExam.stimulus[0]} &bull; (2) ${rightExam.stimulus[1]}` : 'Independent historical knowledge'} &bull; <em>Construct 3 PEEL paragraphs using precise factual evidence.</em></span>
+          <span class="esfb-target">GRADE 9 STANDARD</span>
         </div>
       </div>`
           : ''
@@ -1306,77 +1589,127 @@ async function buildPublisherTextbookHtmlKT3() {
       </div>
 
       <!-- Lesson Banner -->
-      <div class="lesson-hero" style="margin-bottom: 2px; padding-bottom: 2px;">
+      <div class="lesson-hero" style="margin-bottom: 3.5px; padding-bottom: 3px;">
         <div class="lesson-badge-strip">
           <span class="topic-badge">SYNOPTIC OVERVIEW</span>
           <span class="spec-ref-badge">KEY TOPIC 3 MASTER SYNTHESIS &bull; 1558–1588</span>
         </div>
         <h2 class="lesson-title" style="font-size: 11.5pt; margin: 1px 0;">Key Topic 3: Thematic Synoptic Matrix &amp; Historiographical Debate</h2>
-        <div class="lesson-spec-anchor" style="padding: 2px 6px;">
+        <div class="lesson-spec-anchor" style="padding: 2.5px 6px;">
           <strong>Disciplinary Synthesis:</strong> Evaluating domestic social polarisation, educational humanism, poor relief legislation, and overseas colonial ventures.
         </div>
       </div>
 
       <!-- Thematic Comparative Matrix (6 Key Specification Pillars) -->
-      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff;">
-        <div style="background: #0f172a; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff; margin-bottom: 6px;">
+        <div style="background: #0f172a; color: #fff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
           <span>THEMATIC COMPARATIVE MATRIX &bull; SIX SPECIFICATION PILLARS</span>
           <span>1558 BASELINE VS. 1588 REALITY</span>
         </div>
-        <table class="master-chron-table" style="font-size: 6.5pt; line-height: 1.25;">
+        <table class="master-chron-table" style="font-size: 6.5pt; line-height: 1.26;">
           <thead>
             <tr style="background: #1e293b; color: #ffffff;">
-              <th style="width: 20%; padding: 2.5px 6px;">Thematic Dimension</th>
-              <th style="width: 27%; padding: 2.5px 6px;">The Baseline in 1558</th>
-              <th style="width: 28%; padding: 2.5px 6px;">Elizabethan Policy &amp; Transformation</th>
-              <th style="width: 25%; padding: 2.5px 6px;">The Balance Sheet by 1588</th>
+              <th style="width: 20%; padding: 3px 6px;">Thematic Dimension</th>
+              <th style="width: 27%; padding: 3px 6px;">The Baseline in 1558</th>
+              <th style="width: 28%; padding: 3px 6px;">Elizabethan Policy &amp; Transformation</th>
+              <th style="width: 25%; padding: 3px 6px;">The Balance Sheet by 1588</th>
             </tr>
           </thead>
           <tbody>
             <tr style="background: #ffffff;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">1. Education &amp; Literacy</td>
-              <td style="padding: 2.5px 6px;">Limited monastic schooling; high illiteracy; education reserved strictly for churchmen and aristocracy.</td>
-              <td style="padding: 2.5px 6px;">72 grammar schools founded; humanist Latin curriculum; petty schools and Inns of Court expansion.</td>
-              <td style="padding: 2.5px 6px;">Literate 'middling sort' supplied royal administration; but gender and class divides remained rigid.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">1. Education &amp; Literacy</td>
+              <td style="padding: 3.5px 6px;">Limited monastic schooling; high illiteracy; education reserved strictly for churchmen and aristocracy.</td>
+              <td style="padding: 3.5px 6px;">72 grammar schools founded; humanist Latin curriculum; petty schools and Inns of Court expansion.</td>
+              <td style="padding: 3.5px 6px;">Literate 'middling sort' supplied royal administration; but gender and class divides remained rigid.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">2. Popular &amp; Elite Culture</td>
-              <td style="padding: 2.5px 6px;">Folk mystery plays in inn-yards; brutal folk football and noble field hunting; Catholic church calendar.</td>
-              <td style="padding: 2.5px 6px;">Burbage built *The Theatre* (1576); rise of commercial Bankside playhouses; Shakespeare and Marlowe.</td>
-              <td style="padding: 2.5px 6px;">Secular commercial theatre united classes; but provoked bitter Puritan moral hostility.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">2. Popular &amp; Elite Culture</td>
+              <td style="padding: 3.5px 6px;">Folk mystery plays in inn-yards; brutal folk football and noble field hunting; Catholic church calendar.</td>
+              <td style="padding: 3.5px 6px;">Burbage built *The Theatre* (1576); rise of commercial Bankside playhouses; Shakespeare and Marlowe.</td>
+              <td style="padding: 3.5px 6px;">Secular commercial theatre united classes; but provoked bitter Puritan moral hostility.</td>
             </tr>
             <tr style="background: #ffffff;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">3. Rural Economy &amp; Enclosure</td>
-              <td style="padding: 2.5px 6px;">Traditional open-field strip farming; customary tenancy; self-sufficient subsistence agriculture.</td>
-              <td style="padding: 2.5px 6px;">Landlords converted arable land to sheep pasture; enclosed common waste; imposed rack-renting.</td>
-              <td style="padding: 2.5px 6px;">Wool profits enriched gentry; but caused rural unemployment, peasant evictions, and food inflation.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">3. Rural Economy &amp; Enclosure</td>
+              <td style="padding: 3.5px 6px;">Traditional open-field strip farming; customary tenancy; self-sufficient subsistence agriculture.</td>
+              <td style="padding: 3.5px 6px;">Landlords converted arable land to sheep pasture; enclosed common waste; imposed rack-renting.</td>
+              <td style="padding: 3.5px 6px;">Wool profits enriched gentry; but caused rural unemployment, peasant evictions, and food inflation.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">4. Poverty &amp; Vagrancy Laws</td>
-              <td style="padding: 2.5px 6px;">Reliance on voluntary alms and monastic charity; indiscriminate corporal punishment of beggars.</td>
-              <td style="padding: 2.5px 6px;">Distinguished Impotent from Idle Poor; 1572 ear boring &amp; poor rates; 1576 Houses of Correction (Bridewells).</td>
-              <td style="padding: 2.5px 6px;">Established permanent principle of compulsory state welfare and municipal employment relief.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">4. Poverty &amp; Vagrancy Laws</td>
+              <td style="padding: 3.5px 6px;">Reliance on voluntary alms and monastic charity; indiscriminate corporal punishment of beggars.</td>
+              <td style="padding: 3.5px 6px;">Distinguished Impotent from Idle Poor; 1572 ear boring &amp; poor rates; 1576 Houses of Correction (Bridewells).</td>
+              <td style="padding: 3.5px 6px;">Established permanent principle of compulsory state welfare and municipal employment relief.</td>
             </tr>
             <tr style="background: #ffffff;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">5. Global Trade &amp; Navigation</td>
-              <td style="padding: 2.5px 6px;">Complete dependence on Antwerp cloth market; coastal navigation; reliance on foreign merchant ships.</td>
-              <td style="padding: 2.5px 6px;">Joint-stock companies (Muscovy, Levant); astrolabes, Mercator map (1569); Drake circumnavigation (1577–80).</td>
-              <td style="padding: 2.5px 6px;">Broke Spanish trade monopoly; £400k Cacafuego haul; proved English ocean-going mastery.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">5. Global Trade &amp; Navigation</td>
+              <td style="padding: 3.5px 6px;">Complete dependence on Antwerp cloth market; coastal navigation; reliance on foreign merchant ships.</td>
+              <td style="padding: 3.5px 6px;">Joint-stock companies (Muscovy, Levant); astrolabes, Mercator map (1569); Drake circumnavigation (1577–80).</td>
+              <td style="padding: 3.5px 6px;">Broke Spanish trade monopoly; £400k Cacafuego haul; proved English ocean-going mastery.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 2.5px 6px; font-weight: 800; color: #0f172a;">6. American Colonisation</td>
-              <td style="padding: 2.5px 6px;">Zero English overseas empire; Papal Treaty of Tordesillas divided Americas between Spain and Portugal.</td>
-              <td style="padding: 2.5px 6px;">Raleigh royal patent (1584); 1585 Lane military outpost; 1587 John White family settlement on Roanoke.</td>
-              <td style="padding: 2.5px 6px;">Roanoke collapsed into the 'Lost Colony'; but established blueprint for successful 1607 Jamestown.</td>
+              <td style="padding: 3.5px 6px; font-weight: 800; color: #0f172a;">6. American Colonisation</td>
+              <td style="padding: 3.5px 6px;">Zero English overseas empire; Papal Treaty of Tordesillas divided Americas between Spain and Portugal.</td>
+              <td style="padding: 3.5px 6px;">Raleigh royal patent (1584); 1585 Lane military outpost; 1587 John White family settlement on Roanoke.</td>
+              <td style="padding: 3.5px 6px;">Roanoke collapsed into the 'Lost Colony'; but established blueprint for successful 1607 Jamestown.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Secondary Contextual Matrix: The Elizabethan Social Hierarchy, Poor Law Statutes & Exploration Matrix (1572–1601) -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff; margin-bottom: 6px;">
+        <div style="background: #1e293b; color: #fff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
+          <span>THE ELIZABETHAN SOCIAL HIERARCHY, POOR LAW STATUTES &amp; EXPLORATION MATRIX (1572–1601)</span>
+          <span>SOCIAL ORDER, POOR RELIEF &amp; COLONIAL VENTURES</span>
+        </div>
+        <table class="master-chron-table" style="font-size: 6.4pt; line-height: 1.26;">
+          <thead>
+            <tr style="background: #0f172a; color: #ffffff;">
+              <th style="width: 20%; padding: 2.5px 5px;">Social Rank / Statute / Venture</th>
+              <th style="width: 27%; padding: 2.5px 5px;">Socio-Economic Position &amp; Legal Status</th>
+              <th style="width: 28%; padding: 2.5px 5px;">Key Characteristics, Statutes &amp; Mechanisms</th>
+              <th style="width: 25%; padding: 2.5px 5px;">Historical Significance &amp; Impact on Stability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">1. Nobility &amp; Gentry (Elite)</td>
+              <td style="padding: 3px 5px;">Titled peers, knights, squires, gentlemen (~2% of pop.); held vast landed estates and royal offices.</td>
+              <td style="padding: 3px 5px;">Financed country prodigy houses (Hardwick Hall); enriched by enclosure and wool; served as unpaid JPs.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #1e3a8a;">Administered local justice, poor relief, and militia levies; maintained order without a standing army.</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">2. 'Middling Sort' (Merchants &amp; Yeomen)</td>
+              <td style="padding: 3px 5px;">Yeoman farmers, tenant farmers, urban merchants, lawyers, and master craftsmen.</td>
+              <td style="padding: 3px 5px;">Educated in 72 new grammar schools; literate in Latin; invested in joint-stock ventures (Muscovy, Levant).</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #1e3a8a;">Drove commercial capitalism, global trade, and parish governance; bridged elite and labouring poor.</td>
+            </tr>
+            <tr style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">3. The Impotent Poor (Deserving)</td>
+              <td style="padding: 3px 5px;">Aged, sick, lame, orphans, and widows physically incapable of work through no fault of their own.</td>
+              <td style="padding: 3px 5px;">1572 Vagabonds Act instituted compulsory weekly parish poor rates; 1597/1601 codified overseers and almshouses.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #166534;">Pioneered statutory state welfare; established legal principle that society must care for the vulnerable.</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">4. The Idle Poor (Able-Bodied)</td>
+              <td style="padding: 3px 5px;">Unemployed labourers, evicted peasants, demobilised soldiers roaming as masterless vagrants.</td>
+              <td style="padding: 3px 5px;">1572 Act: whipped &amp; bored through ear; 1576 Act created Bridewell Houses of Correction for forced work.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #991b1b;">Contained fears of social rebellion; combined brutal physical deterrence with corrective employment.</td>
+            </tr>
+            <tr style="background: #ffffff;">
+              <td style="padding: 3px 5px; font-weight: 800; color: #0f172a;">5. Colonial Ventures &amp; Trade</td>
+              <td style="padding: 3px 5px;">Privateers (Drake), courtiers (Raleigh), and speculative colonist parties (Roanoke 1585/1587).</td>
+              <td style="padding: 3px 5px;">Royal patents; Mercator projection; joint-stock funding; 1585 Lane military post &amp; 1587 White family colony.</td>
+              <td style="padding: 3px 5px; font-weight: 700; color: #b45309;">Despite Roanoke's collapse ('Lost Colony'), broke Spanish monopoly and established blueprint for Jamestown (1607).</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- The Historiographical Debate & Scholarship (3 Perspectives) -->
-      <div style="background: #fdfcfb; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; padding: 4px 8px; border-radius: 3px; font-family: 'Inter', sans-serif;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2.5px;">
-          <span style="font-size: 6.8pt; font-weight: 900; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em;">
+      <div style="background: #fdfcfb; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; padding: 5px 8px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
+          <span style="font-size: 6.9pt; font-weight: 900; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em;">
             THE HISTORIOGRAPHICAL DEBATE &bull; THREE PERSPECTIVES ON ELIZABETHAN SOCIETY &amp; EMPIRE
           </span>
           <span style="font-size: 6.0pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 1px 5px; border-radius: 2px;">
@@ -1384,96 +1717,52 @@ async function buildPublisherTextbookHtmlKT3() {
           </span>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 6.4pt; line-height: 1.27; color: #1e293b;">
-          <div style="background: #eff6ff; padding: 3px 5px; border: 1px solid #bfdbfe; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.1pt;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 6.5pt; line-height: 1.28; color: #1e293b;">
+          <div style="background: #eff6ff; padding: 4.5px 6px; border: 1px solid #bfdbfe; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.2pt;">
               1. Traditional Whig (A.L. Rowse, 1950):
             </strong>
             The Elizabethan era was an incandescent 'Golden Age' of patriotic expansion. Humanist education and the secular theatre unleashed creative genius, while sea dogs like Drake and Raleigh gallantly planted the seeds of global British liberty and imperial commerce.
           </div>
-          <div style="background: #fdf2f8; padding: 3px 5px; border: 1px solid #fbcfe8; border-radius: 2px;">
-            <strong style="color: #9d174d; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.1pt;">
+          <div style="background: #fdf2f8; padding: 4.5px 6px; border: 1px solid #fbcfe8; border-radius: 2px;">
+            <strong style="color: #9d174d; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.2pt;">
               2. Social Revisionist (Keith Wrightson, 1982):
             </strong>
             The 'Golden Age' masked profound social polarisation. Population boom and enclosure enriched the landed gentry and 'middling sort' while driving the bottom third of the population into wretched rural vagrancy and starvation, managed by savage ear boring.
           </div>
-          <div style="background: #f0fdf4; padding: 3px 5px; border: 1px solid #bbf7d0; border-radius: 2px;">
-            <strong style="color: #166534; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.1pt;">
+          <div style="background: #f0fdf4; padding: 4.5px 6px; border: 1px solid #bbf7d0; border-radius: 2px;">
+            <strong style="color: #166534; display: block; margin-bottom: 1px; text-transform: uppercase; font-size: 6.2pt;">
               3. Post-Revisionist Imperial (Nicholas Canny, 2001):
             </strong>
             Roanoke and Virginia were not romantic adventures but early experiments in violent colonial subjugation directly linked to Tudor plantations in Ireland. Settlers treated indigenous populations with brutal militarism (Wingina's murder), guaranteeing their own operational doom.
           </div>
         </div>
 
-        <div style="margin-top: 2.5px; background: #f8fafc; border-left: 2px solid #b45309; padding: 2px 6px; font-size: 6.2pt; color: #78350f;">
+        <div style="margin-top: 3px; background: #f8fafc; border-left: 2px solid #b45309; padding: 2.5px 6px; font-size: 6.3pt; color: #78350f;">
           <strong>Hinge Question for Class Discussion:</strong> <em>Was Elizabethan England genuinely a 'Golden Age' of humanist culture and global exploration, or was it a deeply unequal society defined by rural destitution and brutal social control?</em>
         </div>
       </div>
 
-      <!-- Key Chronology: Eight Causal Turning Points (1558–1590) -->
-      <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 1.5px; margin-bottom: 2px; font-family: 'Inter', sans-serif;">
-          <span style="font-size: 6.8pt; font-weight: 900; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em;">
-            KEY CHRONOLOGY: EIGHT CAUSAL TURNING POINTS (1558–1590)
-          </span>
-          <span style="font-size: 6.0pt; font-weight: 700; color: #1e3a8a;">CRITICAL PROGRESSION</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.23;">
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">1567 &bull; Harman's Caveat</strong>
-            Pamphlet exposes vagrant 'Counterfeit Cranks'; stokes anti-vagrant hysteria.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">1569 &bull; Mercator Projection</strong>
-            Map projection revolutionises ocean navigation with straight compass lines.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">1572 &bull; Vagabonds Act</strong>
-            Severe corporal penalties (ear boring) combined with mandatory weekly poor rates.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #1e3a8a; display: block;">1576 &bull; The Theatre Built</strong>
-            Burbage builds first commercial playhouse; 1576 Poor Act creates Bridewells.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #b45309; display: block;">1577–80 &bull; Circumnavigation</strong>
-            Drake navigates globe on *Golden Hind*; claims Nova Albion; returns with £400k.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #b45309; display: block;">1584 &bull; Virginia Patent</strong>
-            Raleigh granted royal patent; Amadas &amp; Barlowe reconnaissance surveys Roanoke.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #991b1b; display: block;">1585–86 &bull; Ralph Lane's Colony</strong>
-            *Tiger* grounding ruins food; Lane assassinates Wingina; colonists evacuate with Drake.
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4.5px; border-radius: 2px;">
-            <strong style="color: #991b1b; display: block;">Aug 1590 &bull; The Lost Colony</strong>
-            White returns after Armada embargo; finds Roanoke deserted with 'CROATOAN'.
-          </div>
-        </div>
-      </div>
-
       <!-- Comparative Policy Evaluation Matrix (4 Pillars) -->
-      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff;">
-        <div style="background: #1e293b; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; display: flex; justify-content: space-between;">
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff; margin-bottom: 6px;">
+        <div style="background: #1e293b; color: #ffffff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; display: flex; justify-content: space-between;">
           <span>COMPARATIVE POLICY SUCCESS EVALUATION &bull; 1558–1588</span>
           <span>CRITERIA-LED VERDICT</span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; padding: 3.5px 6px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.24;">
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; padding: 5px 6px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
             <strong style="color: #16a34a; display: block; text-transform: uppercase;">1. Education: High</strong>
             72 grammar schools and university expansion fostered a skilled, loyal 'middling sort' capable of managing Tudor law and government.
           </div>
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #d97706; border-radius: 2px;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #d97706; border-radius: 2px;">
             <strong style="color: #d97706; display: block; text-transform: uppercase;">2. Poor Laws: Moderate</strong>
             Acts of 1572 and 1576 pioneered compulsory taxation and rehabilitation; but failed to halt structural poverty driven by harvest failures.
           </div>
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #16a34a; border-radius: 2px;">
             <strong style="color: #16a34a; display: block; text-transform: uppercase;">3. Oceanic Exploration: High</strong>
             Scientific navigation, joint-stock companies, and Drake’s circumnavigation broke Iberian monopoly and laid foundations of naval empire.
           </div>
-          <div style="background: #f8fafc; padding: 3px 5px; border-left: 2.5px solid #dc2626; border-radius: 2px;">
+          <div style="background: #f8fafc; padding: 4.5px 6px; border-left: 2.5px solid #dc2626; border-radius: 2px;">
             <strong style="color: #dc2626; display: block; text-transform: uppercase;">4. Colonisation: Failure</strong>
             Both 1585 and 1587 Roanoke ventures collapsed due to food losses, indigenous hostility, and Armada delays; zero permanent settlers by 1590.
           </div>
@@ -1481,11 +1770,11 @@ async function buildPublisherTextbookHtmlKT3() {
       </div>
 
       <!-- Synoptic Disciplinary Assessment -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0f172a; padding: 3.5px 8px; border-radius: 2px; font-family: 'Inter', sans-serif;">
-        <span style="font-size: 6.4pt; font-weight: 900; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 1px;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0f172a; padding: 6.5px 8px; border-radius: 2px; font-family: 'Inter', sans-serif;">
+        <span style="font-size: 6.6pt; font-weight: 900; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 2px;">
           SYNOPTIC VERDICT &bull; DOMESTIC TRANSFORMATION AND THE EMBRYONIC EMPIRE
         </span>
-        <p style="font-size: 6.5pt; line-height: 1.26; color: #334155; margin: 0;">
+        <p style="font-size: 6.7pt; line-height: 1.30; color: #334155; margin: 0;">
           Between 1558 and 1588, Elizabethan England underwent profound domestic and global transformation. The expansion of humanist grammar schools and the emergence of the commercial playhouse fostered a dynamic, literate national culture that democratized entertainment across social ranks. Yet this flourishing Renaissance coincided with severe agrarian crisis: population boom, harvest failure, and sheep enclosure produced mass vagrancy that forced the state to construct Europe's first statutory welfare system. Abroad, bold merchant joint-stock enterprises and Drake's global circumnavigation shattered Iberian maritime supremacy. While Walter Raleigh's attempts to colonize Virginia ended in the tragic enigma of the 'Lost Colony', the financial, logistical, and maritime techniques perfected under Elizabeth directly enabled the permanent birth of the British Empire in the seventeenth century.
         </p>
       </div>
@@ -1510,19 +1799,63 @@ async function buildPublisherTextbookHtmlKT3() {
       </div>
 
       <!-- Exam Banner -->
-      <div class="lesson-hero" style="margin-bottom: 2px; padding-bottom: 2px;">
+      <div class="lesson-hero" style="margin-bottom: 5px; padding-bottom: 2px;">
         <div class="lesson-badge-strip">
           <span class="topic-badge">EXAM MASTERCLASS</span>
           <span class="spec-ref-badge">EDEXCEL PAPER 2 OPTION B4 &bull; 1HI0/B4</span>
         </div>
         <h2 class="lesson-title" style="font-size: 11.5pt; margin: 1px 0;">Edexcel Paper 2: Examination Strategy &amp; Exemplar Model Answers</h2>
-        <div class="lesson-spec-anchor" style="padding: 2px 6px;">
+        <div class="lesson-spec-anchor" style="padding: 2.5px 6px;">
           <strong>Official Exam Blueprint:</strong> Deconstructing Question 1(a) &amp; 1(b) Features [4m], Question 2 Causation [12m], and Question 3 Evaluative Essay [16m + 4 SPaG].
         </div>
       </div>
 
+      <!-- Key Chronology: Eight Causal Turning Points (1558–1590) -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff; margin-bottom: 5px;">
+        <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif;">
+          <span style="font-size: 6.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
+            KEY CHRONOLOGY: EIGHT CAUSAL TURNING POINTS (1558–1590)
+          </span>
+          <span style="font-size: 5.8pt; font-weight: 700; color: #93c5fd;">SPECIFICATION EVIDENCE RECALL</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 4px 5px; font-family: 'Inter', sans-serif; font-size: 6.0pt; line-height: 1.24;">
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">1567 &bull; Harman's Caveat</strong>
+            Pamphlet exposes vagrant 'Counterfeit Cranks'; stokes anti-vagrant hysteria.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">1569 &bull; Mercator Projection</strong>
+            Map projection revolutionises ocean navigation with straight compass lines.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">1572 &bull; Vagabonds Act</strong>
+            Severe corporal penalties (ear boring) combined with mandatory weekly poor rates.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #1e3a8a; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #1e3a8a; display: block;">1576 &bull; The Theatre Built</strong>
+            Burbage builds first commercial playhouse; 1576 Poor Act creates Bridewells.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #b45309; display: block;">1577–80 &bull; Circumnavigation</strong>
+            Drake navigates globe on *Golden Hind*; claims Nova Albion; returns with £400k.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #b45309; display: block;">1584 &bull; Virginia Patent</strong>
+            Raleigh granted royal patent; Amadas &amp; Barlowe reconnaissance surveys Roanoke.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #991b1b; display: block;">1585–86 &bull; Ralph Lane's Colony</strong>
+            *Tiger* grounding ruins food; Lane assassinates Wingina; colonists evacuate with Drake.
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #991b1b; padding: 2.5px 4px; border-radius: 2px;">
+            <strong style="color: #991b1b; display: block;">Aug 1590 &bull; The Lost Colony</strong>
+            White returns after Armada embargo; finds Roanoke deserted with 'CROATOAN'.
+          </div>
+        </div>
+      </div>
+
       <!-- Question 1(a) & 1(b) Feature Masterclass [4 Marks Total] -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0284c7; padding: 3.5px 7px; border-radius: 3px; font-family: 'Inter', sans-serif;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #0284c7; padding: 4px 7px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5px; margin-bottom: 2px;">
           <span style="font-size: 6.8pt; font-weight: 900; color: #0369a1; text-transform: uppercase;">
             QUESTION 1(a) &amp; 1(b): DESCRIBE ONE FEATURE OF... [2 MARKS EACH &bull; 4 MARKS TOTAL &bull; 6 MINS]
@@ -1534,34 +1867,34 @@ async function buildPublisherTextbookHtmlKT3() {
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
           <!-- Q1(a) -->
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <div style="font-weight: 800; color: #0369a1; font-size: 6.3pt; margin-bottom: 1px;">
               Q1(a): Describe one feature of Elizabethan grammar schools. [2 marks]
             </div>
-            <div style="font-size: 6.3pt; line-height: 1.26; color: #1e293b;">
+            <div style="font-size: 6.3pt; line-height: 1.28; color: #1e293b;">
               <strong>Model Answer:</strong> One feature was the academic curriculum focused almost exclusively on classical Latin grammar, Greek, and rhetoric. <em>[1 mark for valid feature]</em> Pupils attended from 6:00 am to 5:30 pm six days a week, memorizing Latin texts from authors such as Cicero and Virgil under the threat of corporal punishment with the birch rod. <em>[1 mark for supporting historical detail]</em>
             </div>
           </div>
 
           <!-- Q1(b) -->
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <div style="font-weight: 800; color: #0369a1; font-size: 6.3pt; margin-bottom: 1px;">
               Q1(b): Describe one feature of the 1572 Vagabonds Act. [2 marks]
             </div>
-            <div style="font-size: 6.3pt; line-height: 1.26; color: #1e293b;">
+            <div style="font-size: 6.3pt; line-height: 1.28; color: #1e293b;">
               <strong>Model Answer:</strong> One feature was the introduction of a compulsory weekly poor rate collected by local Justices of the Peace. <em>[1 mark for valid feature]</em> This statutory tax made property owners legally responsible for funding pensions to support the impotent poor (the aged, sick, and disabled), imprisoning those who refused to pay. <em>[1 mark for supporting historical detail]</em>
             </div>
           </div>
         </div>
 
         <!-- Examiner Tip & Warning Box -->
-        <div style="margin-top: 2px; background: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 5px; font-size: 5.9pt; color: #1e40af; border-radius: 2px;">
+        <div style="margin-top: 2.5px; background: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 5px; font-size: 5.9pt; color: #1e40af; border-radius: 2px;">
           <strong>Examiner Warning:</strong> Notice that Edexcel Paper 2 strictly splits Question 1 into Q1(a) [2m] and Q1(b) [2m]. Keep answers concise: state the feature, provide one precise factual detail/date/statistic, and stop immediately. Never write explanations or consequences!
         </div>
       </div>
 
       <!-- Question 2 Masterclass: Causation [12 Marks] -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #b45309; padding: 3.5px 7px; border-radius: 3px; font-family: 'Inter', sans-serif;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-left: 3.5px solid #b45309; padding: 4px 7px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5px; margin-bottom: 2px;">
           <span style="font-size: 6.8pt; font-weight: 900; color: #b45309; text-transform: uppercase;">
             QUESTION 2: EXPLAIN WHY... [12 MARKS &bull; 18 MINUTES]
@@ -1573,21 +1906,25 @@ async function buildPublisherTextbookHtmlKT3() {
         <div style="font-size: 6.4pt; font-weight: 800; color: #0f172a; margin-bottom: 2px;">
           Exam Prompt: Explain why poverty and vagrancy increased in Elizabethan England between 1558 and 1588. You may use: (1) Enclosure of land, (2) Population growth. [12 marks]
         </div>
-        <div style="font-size: 6.2pt; line-height: 1.25; color: #334155; display: flex; flex-direction: column; gap: 2px;">
-          <div style="background: #ffffff; padding: 2.5px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+        <div style="font-size: 6.2pt; line-height: 1.27; color: #334155; display: flex; flex-direction: column; gap: 2.5px;">
+          <div style="background: #ffffff; padding: 3px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <strong style="color: #b45309;">PEEL Paragraph 1 (Agrarian Enclosure &amp; Sheep Pasture):</strong> One major reason poverty and vagrancy soared was the spread of agricultural enclosure and conversion of arable land to sheep pasture. Traditional open-field arable farming had sustained dozens of peasant families per village, but rising wool prices incentivized landlords to fence off common land and convert fields into pastures, where a single shepherd could tend 2,000 sheep. Furthermore, landlords engaged in rack-renting, drastically hiking rents to evict customary tenants. <em>Consequently,</em> hundreds of tenant families were evicted from their ancestral land with no means of subsistence, forcing them to wander the highways as homeless vagabonds in search of work.
           </div>
-          <div style="background: #ffffff; padding: 2.5px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <strong style="color: #b45309;">PEEL Paragraph 2 (Demographic Growth &amp; Food Price Inflation):</strong> Furthermore, the crisis was driven by explosive population growth across sixteenth-century England. The national population increased by over 35%, expanding from 2.8 million in 1558 to over 4 million by the end of the reign. Because agricultural output failed to keep pace with demographic demand, food supplies grew scarce, causing grain prices to double. <em>As a direct result,</em> ordinary labourers suffered a catastrophic drop in real wages, spending up to 80% of their earnings merely on bread. When poor harvests struck in the 1570s and 1580s, working families who could previously survive were plunged into absolute destitution.
           </div>
-          <div style="background: #ffffff; padding: 2.5px 5px; border: 1px solid #e2e8f0; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3px 5.5px; border: 1px solid #e2e8f0; border-radius: 2px;">
             <strong style="color: #b45309;">PEEL Paragraph 3 (Own Knowledge: Collapse of the Antwerp Cloth Trade):</strong> Crucially, poverty was dramatically exacerbated by the sudden collapse of England's primary overseas export market: the Antwerp cloth trade. English cloth accounted for over 75% of national exports, but when war erupted in the Spanish Netherlands and Philip II placed trade embargoes on English goods in the 1560s, the Antwerp exchange ground to a halt. <em>Therefore,</em> thousands of domestic cloth workers, spinners, and weavers in East Anglia and the West Country lost their employment overnight; unable to find agricultural work due to enclosure, they were forced into urban vagrancy, swelling the slums of London.
           </div>
+        </div>
+        <div style="margin-top: 2.5px; background: #fffbeb; border: 1px solid #fde68a; padding: 2.5px 6px; font-size: 5.9pt; color: #92400e; border-radius: 2px; display: flex; justify-content: space-between;">
+          <span><strong>Examiner Causation Strategy (Level 4):</strong> Contrast long-term demographic and agrarian changes (enclosure, population boom) with the immediate catalytic shock of the Antwerp trade embargoes. Candidates must explicitly link causes together.</span>
+          <span style="font-weight: 800;">12/12 CRITERIA</span>
         </div>
       </div>
 
       <!-- Question 3 Masterclass: Evaluative Essay [16 Marks + 4 SPaG] -->
-      <div style="background: #fdfaf6; border: 1.2px solid #fed7aa; border-left: 3.5px solid #991b1b; padding: 3.5px 7px; border-radius: 3px; font-family: 'Inter', sans-serif;">
+      <div style="background: #fdfaf6; border: 1.2px solid #fed7aa; border-left: 3.5px solid #991b1b; padding: 4px 7px; border-radius: 3px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #ffedd5; padding-bottom: 1.5px; margin-bottom: 2px;">
           <span style="font-size: 6.8pt; font-weight: 900; color: #991b1b; text-transform: uppercase;">
             QUESTION 3: EVALUATIVE ESSAY [16 MARKS + 4 SPAG &bull; 25 MINUTES]
@@ -1600,30 +1937,62 @@ async function buildPublisherTextbookHtmlKT3() {
           Exam Prompt: "The lack of food supplies was the main reason for the failure of the Virginia colonies in the 1580s." How far do you agree? Explain your answer. You may use: (1) The grounding of the Tiger (1585), (2) Relations with Native Americans (Wingina). [16 marks + 4 SPaG]
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-size: 6.1pt; line-height: 1.24; margin-bottom: 2px;">
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-size: 6.1pt; line-height: 1.25; margin-bottom: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #fed7aa; border-radius: 2px;">
             <strong style="color: #991b1b; display: block; text-transform: uppercase;">Factor 1: Food Supplies (Agree)</strong>
             Grounding of the flagship *Tiger* in 1585 ruined almost all seed grain and provisions; colonists arrived too late in season to plant crops in 1587, creating total dependency on relief.
           </div>
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #fed7aa; border-radius: 2px;">
             <strong style="color: #1e3a8a; display: block; text-transform: uppercase;">Factor 2: Indigenous Conflict (Counter)</strong>
             Lane’s heavy-handed military brutality (burning a Secotan village over a stolen cup) and assassination of Chief Wingina turned local tribes hostile, cutting off all trade and food assistance.
           </div>
-          <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px;">
+          <div style="background: #ffffff; padding: 3.5px 5.5px; border: 1px solid #fed7aa; border-radius: 2px;">
             <strong style="color: #0f172a; display: block; text-transform: uppercase;">Factor 3: Poor Personnel &amp; Armada Delay (Counter)</strong>
             Gentlemen refused manual labour; soldiers used violence instead of fishing; 1588 Armada crisis caused a 3-year shipping embargo, stranding the 1587 settlers without relief.
           </div>
         </div>
 
-        <div style="background: #ffffff; padding: 3px 5px; border: 1px solid #fed7aa; border-radius: 2px; font-size: 6.2pt; line-height: 1.25; color: #1e293b;">
+        <div style="background: #ffffff; padding: 3.5px 6px; border: 1px solid #fed7aa; border-radius: 2px; font-size: 6.2pt; line-height: 1.27; color: #1e293b;">
           <strong style="color: #991b1b; text-transform: uppercase; font-size: 6.2pt; display: block; margin-bottom: 1px;">Exemplar Level 4 Conclusion (Criteria-Led Sustained Judgement):</strong>
           <em>"In conclusion, while the catastrophic loss of food supplies caused by the grounding of the Tiger was the immediate physical catalyst for starvation, poor leadership and the breakdown of indigenous relations were the fundamental causes of the Virginia colonies' failure. When assessing causality by the criterion of reversibility, the lack of food was only fatal because the colonists possessed neither the skills to forage for themselves nor the diplomatic goodwill to secure sustenance from the Secotan tribe. Ralph Lane's fatal decision to burn a native village over a stolen cup and assassinate Chief Wingina destroyed any possibility of indigenous agricultural support. Furthermore, the colony's demographic composition—dominated by aristocratic gentlemen who refused manual labour and violent soldiers unsuited to farming—ensured that the 1585 settlement was structurally incapable of self-sufficiency. In 1587, this operational fragility was sealed by the unexpected 1588 Spanish Armada crisis, which prevented John White from returning with relief ships for three critical years. Therefore, food shortages triggered the crises, but flawed colonial planning and toxic indigenous relations made disaster inevitable."</em>
         </div>
 
         <!-- SPaG Mastery Box -->
-        <div style="margin-top: 2px; background: #fffbeb; border: 1px solid #fde68a; padding: 2px 5px; font-size: 5.9pt; color: #92400e; border-radius: 2px; display: flex; justify-content: space-between;">
+        <div style="margin-top: 2.5px; background: #fffbeb; border: 1px solid #fde68a; padding: 2.5px 5.5px; font-size: 5.9pt; color: #92400e; border-radius: 2px; display: flex; justify-content: space-between;">
           <span><strong>SPaG Masterclass (+4 Marks):</strong> Spell technical terms accurately (<em>enclosure, humanism, rack-renting, Roanoke, Croatoan, joint-stock</em>). Use complex analytical evaluative phrases (<em>fundamentally, precipitated, structural constraint</em>).</span>
           <span style="font-weight: 800;">4/4 SPaG TARGET</span>
+        </div>
+      </div>
+
+      <!-- Examiner Marking Blueprint & Band Descriptors Table -->
+      <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #ffffff;">
+        <div style="background: #0f172a; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif;">
+          <span style="font-size: 6.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
+            EDEXCEL PAPER 2 EXAMINER MARKING BLUEPRINT &amp; BAND DESCRIPTORS
+          </span>
+          <span style="font-size: 5.8pt; font-weight: 700; color: #93c5fd;">OPTION B4 &bull; 1HI0/B4</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 3.5px 6px; font-family: 'Inter', sans-serif; font-size: 5.9pt; line-height: 1.24;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 2.5px solid #16a34a; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #166534; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 4 (13–16 Marks)</strong>
+            <strong>Criteria-Led Evaluation:</strong> Analytical throughout; deploys line-by-line precise factual evidence; sustained judgement weighing root vs catalytic causes.
+          </div>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 2.5px solid #2563eb; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #1e40af; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 3 (9–12 Marks)</strong>
+            <strong>Explanatory &amp; Balanced:</strong> Explains both stimulus points plus own knowledge; links factors to prompt, but conclusion summarizes rather than synthesizes.
+          </div>
+          <div style="background: #fffbeb; border: 1px solid #fde68a; border-left: 2.5px solid #d97706; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #92400e; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 2 (5–8 Marks)</strong>
+            <strong>Descriptive Narrative:</strong> Recounts narrative events without explicit analytical focus; unbalanced or lacks independent own knowledge beyond stimulus.
+          </div>
+          <div style="background: #fef2f2; border: 1px solid #fecaca; border-left: 2.5px solid #dc2626; padding: 3px 4.5px; border-radius: 2px;">
+            <strong style="color: #991b1b; display: block; font-size: 6.1pt; text-transform: uppercase;">Level 1 (1–4 Marks)</strong>
+            <strong>Basic Statements:</strong> Generalized historical assertions with significant inaccuracies; offers simple assertions without supporting factual detail.
+          </div>
+        </div>
+        <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 3.5px 6px; font-family: 'Inter', sans-serif; font-size: 5.8pt; line-height: 1.22; display: flex; justify-content: space-between; align-items: center; color: #475569;">
+          <span><strong>Exam Timing Allocation (50 Mins):</strong> Q1(a) 3 mins [2m] &bull; Q1(b) 3 mins [2m] &bull; Q2 Causation 18 mins [12m] &bull; Q3 Essay 25 mins [16+4m] &bull; Review 1 min</span>
+          <span style="font-weight: 800; color: #0f172a;">PEARSON EDEXCEL SPECIFICATION TARGET</span>
         </div>
       </div>
 

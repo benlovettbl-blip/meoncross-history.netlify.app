@@ -106,6 +106,28 @@ module.exports = function getKt3Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'c. 1560s',
+          title: 'Expansion of Grammar Schools',
+          text: 'Boom in fee-paying grammar schools teaching Latin, rhetoric, and classical literature to boys.',
+        },
+        {
+          date: '1572',
+          title: 'Vagabonds & Actors Act',
+          text: 'Acting troupes required aristocratic patronage (e.g. Leicester’s Men) to avoid arrest as vagabonds.',
+        },
+        {
+          date: '1576',
+          title: 'Burbage Builds *The Theatre*',
+          text: 'First permanent public playhouse opens in Shoreditch, outside London’s Puritan civic boundaries.',
+        },
+        {
+          date: '1599',
+          title: 'Construction of *The Globe*',
+          text: 'Timbers of The Theatre dismantled and reassembled on Bankside; London theatre becomes global cultural phenomenon.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'State two subjects that dominated the academic curriculum in Elizabethan grammar schools.',
         q2: 'Explain why Puritan civic authorities in London strongly opposed public theatrical performances.',
@@ -148,6 +170,28 @@ module.exports = function getKt3Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: '1560s',
+          title: 'Enclosure & Population Surge',
+          text: 'Arable land converted to sheep pasture; population rises to 4 million, causing severe rural underemployment.',
+        },
+        {
+          date: '1567',
+          title: 'Harman’s *Caveat for Cursitors*',
+          text: 'Magistrate Thomas Harman publishes sensational taxonomy of fake beggars, inflaming public panic.',
+        },
+        {
+          date: '1572',
+          title: 'Vagabonds Act (Rates & Ear Boring)',
+          text: 'Statute introduces compulsory poor rates for impotent poor; vagabonds whipped and bored through the ear.',
+        },
+        {
+          date: '1576',
+          title: 'Act for Relief of the Poor',
+          text: 'Parishes provide raw wool and hemp for the able-bodied; Houses of Correction (Bridewells) built.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Identify two corporal punishments inflicted on vagrants under the 1572 Vagabonds Act.',
         q2: 'Explain why agricultural enclosure caused an increase in rural vagrancy between 1558 and 1588.',
@@ -190,6 +234,28 @@ module.exports = function getKt3Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: '1569',
+          title: 'Mercator Projection Map',
+          text: 'Gerardus Mercator introduces grid projection allowing mariners to navigate along straight compass courses.',
+        },
+        {
+          date: '1577–80',
+          title: 'Drake’s Global Circumnavigation',
+          text: 'Golden Hind plunders Spanish Pacific settlements; claims Nova Albion; returns with £400,000 treasure.',
+        },
+        {
+          date: 'Mar 1579',
+          title: 'Capture of the *Cacafuego*',
+          text: 'Drake captures Spanish treasure galleon with 26 tons of silver bullion, financing English Crown operations.',
+        },
+        {
+          date: '4 Apr 1581',
+          title: 'Drake Knighted at Deptford',
+          text: 'Queen Elizabeth knights Drake aboard Golden Hind, asserting English oceanic maritime supremacy.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Describe one navigational instrument that helped Elizabethan sailors calculate latitude at sea.',
         q2: 'Explain why English merchants established joint-stock companies in the 1560s and 1570s.',
@@ -233,6 +299,28 @@ module.exports = function getKt3Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'Mar 1584',
+          title: 'Raleigh Granted Royal Patent',
+          text: 'Elizabeth grants Raleigh 6-year exclusive patent to discover and settle non-Christian lands in the New World.',
+        },
+        {
+          date: 'Jul 1585',
+          title: 'Lane Outpost at Roanoke',
+          text: 'Flagship Tiger runs aground, spoiling seeds; Ralph Lane attacks Secotan village; colonists evacuated by Drake.',
+        },
+        {
+          date: 'Jul 1587',
+          title: 'White’s Family Settlement',
+          text: 'Governor John White lands 117 men, women, and children at Roanoke; Virginia Dare born as first English child.',
+        },
+        {
+          date: 'Aug 1590',
+          title: 'The Lost Colony & CROATOAN',
+          text: 'White returns after 3-year Armada delay; settlement deserted; single word CROATOAN carved on palisade.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Name the English flagship whose grounding destroyed the 1585 colonists’ food supplies on Roanoke Island.',
         q2: 'Explain why Governor John White was unable to return to Roanoke Island with supplies until 1590.',
@@ -245,20 +333,22 @@ module.exports = function getKt3Data(helpers) {
     // Page 2: KT 3.1 (Education and Leisure)
     p2: {
       sourceA: {
-        type: 'PURITAN SERMON',
-        date: '1578',
-        title: 'John Stockwood’s Sermon at Paul’s Cross, London',
-        image: getBase64Image('images/swan_theatre.jpg') || getBase64Image('images/theatre.jpg'),
+        title: 'Source A: John Stockwood’s Sermon at Paul’s Cross, London',
+        type: 'Puritan Pulpit Sermon Against Theatres',
+        date: '24 August 1578',
+        quote:
+          'Will not a filthy play, with the blast of a trumpet, sooner call together thousands than an hour’s tolling of a bell bring a hundred to the sermon?... If you resort unto the Theatre and the Curtain, what flocking of young men and wenches, what filthy talk and wickedness is there committed! These playhouses are the sinks of all iniquity, and surely provoke the wrath of God against our city.',
         context:
           'Delivered by prominent Puritan preacher John Stockwood, denouncing public playhouses as sinks of moral corruption and arguing that theatrical performances provoked God into punishing London with bubonic plague.',
         hingeQuestion:
           'How does Stockwood’s sermon illustrate why London civic and religious authorities viewed secular public theatre as an intolerable threat to public order and Christian morality?',
       },
       sourceB: {
-        type: 'SCHOOL REGULATIONS',
+        title: 'Source B: Statutes of an Elizabethan Grammar School',
+        type: 'Official School Foundation Statutes',
         date: 'c. 1560',
-        title: 'Statutes of an Elizabethan Grammar School',
-        image: null,
+        quote:
+          'The scholars shall assemble each morning at six of the clock and depart at five of the afternoon... They shall speak no English within the schoolhouse, nor in the churchyard, nor in playing, but only Latin, on pain of the birch rod. Every scholar shall daily recite the Lord’s Prayer, the Articles of the Christian Faith, and the Ten Commandments in the Latin tongue before departing.',
         context:
           'Statutory rules prescribing the daily routine at a grammar school: lessons starting at 6:00 am, mandatory spoken Latin conversation among pupils, daily religious prayers, and strict corporal punishment via the birch rod.',
         hingeQuestion:
@@ -269,20 +359,22 @@ module.exports = function getKt3Data(helpers) {
     // Page 4: KT 3.2 (The Problem of the Poor)
     p4: {
       sourceA: {
-        type: 'CONTEMPORARY PAMPHLET',
+        title: 'Source A: Thomas Harman’s A Caveat for Common Cursitors',
+        type: 'Social Investigation & Taxonomy of Vagrancy',
         date: '1567',
-        title: 'Extract from Thomas Harman’s *A Caveat for Common Cursitors*',
-        image: getBase64Image('images/caveat_for_cursitors.png'),
+        quote:
+          'The Counterfeit Crank is a rogue that feigneth himself to have the falling sickness... These men will rub their faces with fresh blood from a sheep or bullock, and put a piece of soap into their mouths to make foam, wallowing in the dirt and crying out piteously to deceive honest people of their money. When night comes, they meet at hedge taverns and spend their alms in riot and drunkenness.',
         context:
           'From Harman’s wildly popular pamphlet detailing the tricks of vagabonds, warning honest citizens against ‘Counterfeit Cranks’ who rubbed soap into their mouths to produce foam and feign epileptic fits to extract charitable alms.',
         hingeQuestion:
           'How does Harman’s sensational account reveal why the Elizabethan landed gentry viewed roaming vagabonds not as victims of poverty, but as an organised criminal conspiracy?',
       },
       sourceB: {
-        type: 'STATUTORY LEGISLATION',
-        date: '1572',
-        title: 'Extract from the 1572 Act for the Punishment of Vagabonds',
-        image: null,
+        title: 'Source B: The 1572 Act for the Punishment of Vagabonds',
+        type: 'Enacted Parliamentary Statute (14 Eliz. 1 c. 5)',
+        date: 'June 1572',
+        quote:
+          'Every person that shall be declared a rogue, vagabond, or sturdy beggar, shall upon conviction be grievously whipped and burned through the gristle of the right ear with a hot iron of the compass of an inch... And the Justices of the Peace shall survey all aged, impotent, and lame persons within their divisions, and tax and assess all inhabitants to a weekly payment for their sustenance.',
         context:
           'The landmark statute establishing severe corporal punishment for rogues and vagrants (whipped and bored through the gristle of the right ear with a hot iron), while legally obliging local Justices of the Peace to collect compulsory weekly poor rates.',
         hingeQuestion:
@@ -293,20 +385,22 @@ module.exports = function getKt3Data(helpers) {
     // Page 6: KT 3.3 (Exploration and Discovery)
     p6: {
       sourceA: {
-        type: 'NAVIGATIONAL TREATISE',
+        title: 'Source A: Gerardus Mercator’s World Chart Introduction',
+        type: 'Scientific Navigational Treatise',
         date: '1569',
-        title: 'Gerardus Mercator’s Introduction to his World Map',
-        image: null,
+        quote:
+          'In this chart, we have spread out the surface of the globe upon a plane in such a manner that the degrees of latitude increase towards the poles in the same proportion as the degrees of longitude... By this means, the mariner may lay his ruler upon his chart from port to port, and it shall show him the constant compass bearing that he must sail, without the perilous error of curved rhumb lines.',
         context:
           'Flemish cartographer Gerardus Mercator’s explanation of his groundbreaking projection, which rendered lines of latitude and longitude at right angles so that straight lines on the chart represented lines of constant compass bearing.',
         hingeQuestion:
           'How did Mercator’s projection map transform ocean navigation from perilous guesswork into an accurate, predictable mathematical science for Elizabethan mariners?',
       },
       sourceB: {
-        type: 'CONTEMPORARY CHRONICLE',
+        title: 'Source B: Chronicler John Stow on Drake’s Deptford Knighting',
+        type: 'Contemporary London Historical Chronicle',
         date: 'April 1581',
-        title: 'Account of Drake’s Knighting by Chronicler John Stow',
-        image: null,
+        quote:
+          'On the fourth day of April, Her Majesty did dine on board the ship of Master Francis Drake, lying at Deptford upon the Thames... After dinner, Her Majesty took a sword and conferred the honour of knighthood upon him, rewarding his courage in sailing round the earthly globe. And she did command that his ship should be preserved in perpetual memory of his worthy service, to the great honour of our nation.',
         context:
           'Description of Queen Elizabeth boarding the Golden Hind at Deptford on 4 April 1581 to dine with Francis Drake and confer upon him the honour of knighthood, ordering his ship to be preserved as a national monument to English naval valour.',
         hingeQuestion:
@@ -317,20 +411,22 @@ module.exports = function getKt3Data(helpers) {
     // Page 8: KT 3.4 (Raleigh and Virginia)
     p8: {
       sourceA: {
-        type: 'EXPLORATION REPORT',
-        date: '1584',
-        title: 'Arthur Barlowe’s Reconnaissance Report to Sir Walter Raleigh',
-        image: null,
+        title: 'Source A: Arthur Barlowe’s Reconnaissance Report to Raleigh',
+        type: 'Official First Voyage Exploration Report',
+        date: 'September 1584',
+        quote:
+          'The soil is the most plentiful, sweet, fruitful and wholesome of all the world... We found the people most gentle, loving, and faithful, void of all guile and treason, and such as lived after the manner of the Golden Age. The woods are laden with grapes in such abundance that the very surge of the sea overflowed with them, and cedars taller than any in Bohemia.',
         context:
           'Report submitted by Captain Arthur Barlowe following his survey of the Outer Banks of North Carolina, describing the soil as the most plentiful in the world and the indigenous Secotan people as gentle, loving, and faithful.',
         hingeQuestion:
           'How did Barlowe’s glowing, romanticized account of North America contribute directly to the disastrous under-preparation and subsequent collapse of the 1585 Roanoke colony?',
       },
       sourceB: {
-        type: 'EXPEDITION JOURNAL',
+        title: 'Source B: Governor John White’s Journal on Returning to Roanoke',
+        type: 'Eyewitness Colony Relieving Expedition Journal',
         date: '17 August 1590',
-        title: 'Governor John White’s Journal on Returning to Roanoke Island',
-        image: null,
+        quote:
+          'We found the houses taken down, and the place very strongly enclosed with a high palisade of great trees, very fort-like. And upon one of the chief trees at the entrance, in fair capital letters, was graven CROATOAN, without any cross or sign of distress... We sought along the sandy shore for my daughter and granddaughter Virginia, but found no sign of any Christian living.',
         context:
           'John White’s eyewitness record of walking through the deserted Roanoke settlement in 1590, finding the houses dismantled, rusty iron cannon lying about, and the single word ‘CROATOAN’ carved into a wooden palisade post without a cross of distress.',
         hingeQuestion:

@@ -98,6 +98,28 @@ module.exports = function getKt1Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: '17 Nov 1558',
+          title: 'Accession of Elizabeth I',
+          text: 'Mary I dies; 25-yr-old Elizabeth succeeds at Hatfield; appoints William Cecil Principal Secretary.',
+        },
+        {
+          date: 'Nov 1558',
+          title: 'Sovereign Debt Crisis',
+          text: 'Exchequer inherits £300,000 debt; £100,000 owed to Antwerp financiers at crushing 14% interest.',
+        },
+        {
+          date: '15 Jan 1559',
+          title: 'Westminster Coronation',
+          text: 'Coronation ceremony balances Latin Catholic ritual with English Gospel reading.',
+        },
+        {
+          date: 'Apr 1559',
+          title: 'Peace of Cateau-Cambrésis',
+          text: 'Treaty ends Franco-Spanish war; Calais lost, leaving Protestant England defenceless and isolated.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Identify two reasons why the loss of Calais under the Treaty of Cateau-Cambrésis (1559) was viewed as a national humiliation.',
         q2: "Explain why Henry VIII's divorce from Catherine of Aragon in 1533 created an ongoing crisis of legitimacy for Elizabeth in 1558.",
@@ -151,6 +173,28 @@ module.exports = function getKt1Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'Feb 1559',
+          title: 'Parliamentary Resistance',
+          text: 'Catholic bishops in House of Lords reject initial supremacy bills; Elizabeth prorogues parliament.',
+        },
+        {
+          date: 'Apr 1559',
+          title: 'Settlement Acts Passed',
+          text: 'Acts of Supremacy & Uniformity pass Lords by 3 votes; establishes Supreme Governor & Prayer Book.',
+        },
+        {
+          date: 'Summer 1559',
+          title: 'Royal Visitations',
+          text: 'Royal commissioners tour 9,000 parishes to enforce Oath of Supremacy; ~400 Marian priests deprived.',
+        },
+        {
+          date: 'Dec 1559',
+          title: 'Parker Consecrated',
+          text: "Anne Boleyn's chaplain Matthew Parker consecrated Archbishop of Canterbury to lead Church.",
+        },
+      ],
       bottomEnquiry: {
         q1: 'What specific change in royal title was introduced by the 1559 Act of Supremacy, and why was it significant?',
         q2: 'Explain why the Church of England served as the Crown’s primary instrument of social control in rural parishes.',
@@ -193,6 +237,28 @@ module.exports = function getKt1Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: '1563',
+          title: 'Thirty-Nine Articles',
+          text: 'Convocation codifies national doctrine, fusing Calvinist predestination with traditional bishops.',
+        },
+        {
+          date: 'Mar 1566',
+          title: "Parker's Advertisements",
+          text: 'Archbishop enforces surplice vestments; 37 London Puritan ministers dismissed for non-compliance.',
+        },
+        {
+          date: '1568',
+          title: 'Douai Seminary Founded',
+          text: 'William Allen establishes English Catholic college in Flanders to train missionary priests.',
+        },
+        {
+          date: '25 Feb 1570',
+          title: 'Regnans in Excelsis',
+          text: 'Pope Pius V excommunicates Elizabeth; absolves subjects of allegiance, making Catholicism treason.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'State two features of the 1566 Vestment Controversy between Elizabeth and Puritan clergy.',
         q2: 'Explain why the 1570 Papal Bull fundamentally altered the legal position of English Catholics.',
@@ -236,6 +302,28 @@ module.exports = function getKt1Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: '10 Feb 1567',
+          title: "Kirk o'Field Murder",
+          text: "Mary's husband Lord Darnley murdered; Mary scandalously marries suspected assassin Bothwell.",
+        },
+        {
+          date: '24 Jul 1567',
+          title: 'Lochleven Abdication',
+          text: "Scottish Protestant lords force Mary's abdication in favour of infant son King James VI.",
+        },
+        {
+          date: '16 May 1568',
+          title: 'Flight to Workington',
+          text: 'Mary escapes Lochleven, crosses Solway Firth, and lands in Cumberland seeking English sanctuary.',
+        },
+        {
+          date: 'Dec 1568',
+          title: 'Conference of York',
+          text: "Investigation into Casket Letters; Elizabeth delivers 'not proven' verdict to keep Mary captive.",
+        },
+      ],
       bottomEnquiry: {
         q1: 'State two features of the 1568–69 Conference of York and the investigation into the Casket Letters.',
         q2: 'Explain why Mary Stuart’s arrival in England in May 1568 placed Elizabeth in an impossible diplomatic dilemma.',
@@ -247,90 +335,98 @@ module.exports = function getKt1Data(helpers) {
   const EEE_LEFT_SOURCES = {
     p2: {
       sourceA: {
-        title: 'Source A: The Queen in Parliament',
-        type: 'Sixteenth-Century Engraving',
-        date: 'c. 1580s',
-        image: getBase64Image('units/eee/assets/portraits/elizabeth_i.jpg'),
+        title: 'Source A: Queen Elizabeth’s Hatfield Speech to her Council',
+        type: 'Official Sovereign Address',
+        date: '20 November 1558',
+        quote:
+          'The law of nature moveth me to sorrow for my sister; the burden that is fallen upon me maketh me amazed... I mean to direct all my actions by good advice and counsel. And therefore I shall require of you all nothing more but to be faithful assistants unto me, that I with my ruling and you with your service may make a good account to almighty God and leave some comfort to our posterity on earth.',
         context:
-          'This contemporary engraving illustrates Elizabeth I enthroned above the Lords Spiritual, Lords Temporal, and Commons. While the monarch sat at the apex of government, parliamentary consent was constitutionally mandatory to grant extraordinary subsidies (taxation) and pass enforceable statutes.',
+          'Delivered by the twenty-five-year-old Elizabeth at Hatfield House immediately following Mary I’s death, signaling her intention to govern through broad conciliar consensus rather than autocracy.',
         hingeQuestion:
-          'Why did Elizabeth jealously protect her "Royal Prerogative" against parliamentary debate, and which specific topics did she strictly forbid MPs from discussing?',
+          'How did Elizabeth’s pledge to take "good advice and counsel" help reassure both conservative Catholic and reforming Protestant peers after the instability of Mary I’s reign?',
       },
       sourceB: {
-        title: 'Source B: Religious Geography of Europe (1558)',
-        type: 'Geopolitical Cartographic Map',
-        date: '1558',
-        image: getBase64Image('images/religious_divide.jpg'),
+        title: 'Source B: Spanish Ambassador’s Diplomatic Dispatch',
+        type: 'Confidential Diplomatic Report',
+        date: 'December 1558',
+        quote:
+          'The new Queen is a very vain and clever woman. She must have been thoroughly schooled in the manner in which her father conducted his government... She is determined to be governed by no one. She is very much attached to the common people and is confident that they are all on her side, which is indeed true. The realm is in great debt and defenceless, yet she carries herself with sovereign pride.',
         context:
-          'A strategic overview showing Europe divided into Catholic superpowers (Spain, France, Papal States) and reformed Protestant territories (Scandinavia, German principalities, Switzerland). Following the 1559 Treaty of Cateau-Cambrésis, England stood diplomatically isolated and militarily vulnerable.',
+          'Confidential dispatch from the Count of Feria to King Philip II of Spain, astutely assessing Elizabeth’s intellect, popular support, and determination to maintain English sovereign independence.',
         hingeQuestion:
-          'How did the end of the Habsburg-Valois wars between Spain and France in 1559 dramatically heighten the danger of Catholic invasion facing Elizabeth?',
+          'Why did foreign ambassadors view Elizabeth’s immense popularity among ordinary Englishmen as her greatest shield against aristocratic factionalism?',
       },
     },
     p4: {
       sourceA: {
-        title: 'Source A: The 1559 Act of Supremacy',
-        type: 'Statute Roll & Title Plate',
+        title: 'Source A: From the 1559 Act of Supremacy',
+        type: 'Enacted Parliamentary Statute (1 Eliz. 1 c. 1)',
         date: 'April 1559',
-        image: getBase64Image('images/act_of_supremacy.jpg'),
+        quote:
+          'No foreign prince, person, prelate, state or potentate, spiritual or temporal, shall at any time use, enjoy or exercise any manner of power, jurisdiction, superiority, authority, pre-eminence or privilege, spiritual or ecclesiastical, within this realm... And that your Highness, your heirs and successors, shall be the only Supreme Governor of this realm in all spiritual and ecclesiastical things.',
         context:
-          'The opening declaration of the 1559 Elizabethan settlement. By adopting the style "Supreme Governor of this Realm as well in all Spiritual or Ecclesiastical Things" rather than Henry VIII’s "Supreme Head", Elizabeth offered deliberate conciliation to Catholic consciences while asserting total crown control over the Church.',
+          'The landmark constitutional statute abolishing papal jurisdiction in England and establishing the Queen as "Supreme Governor" rather than "Supreme Head".',
         hingeQuestion:
-          'What practical difference in theological perception was achieved by replacing the word "Head" with "Governor", and why was this crucial for securing moderate Catholic acquiescence?',
+          'What practical theological compromise was achieved by substituting "Supreme Governor" for "Supreme Head", and why was this crucial for securing moderate Catholic acquiescence?',
       },
       sourceB: {
-        title: 'Source B: The 1559 Book of Common Prayer',
-        type: 'Official Liturgical Text',
-        date: '1559',
-        image: getBase64Image('units/eee/assets/banners/kt1_eee_banner.png'),
+        title: 'Source B: From Queen Elizabeth’s Royal Injunctions',
+        type: 'Crown Executive Orders to Clergy',
+        date: 'July 1559',
+        quote:
+          'All monuments of feigned miracles, pilgrimages, idolatry, and superstition shall be utterly taken away and destroyed, so that there remain no memory of the same in walls, glass windows, or elsewhere within their churches... Every parson, vicar, and curate shall provide one book of the whole Bible of the largest volume in English, to be set up in some convenient place within the church.',
         context:
-          'The mandatory prayer book compiled under the Act of Uniformity. It blended Cranmer’s 1552 Protestant words of distribution (*"Take and eat this in remembrance that Christ died for thee"*) with the 1549 Catholic phrasing (*"The body of our Lord Jesus Christ preserve thy body and soul"*), permitting both interpretations.',
+          'Official directives delivered by royal commissioners visiting all 9,000 parish churches to eliminate Catholic superstition while mandating the English Bible.',
         hingeQuestion:
-          'How did deliberate theological ambiguity regarding the Eucharist help prevent an immediate religious civil war in 1559?',
+          'How did the Royal Injunctions balance Protestant demands for vernacular scripture with Elizabeth’s desire to maintain liturgical dignity and avoid violent iconoclasm?',
       },
     },
     p6: {
       sourceA: {
-        title: 'Source A: The Papal Bull Regnans in Excelsis',
-        type: 'Papal Decree & Seal',
+        title: 'Source A: Pope Pius V’s Papal Bull Regnans in Excelsis',
+        type: 'Papal Bull of Excommunication',
         date: '25 February 1570',
-        image: getBase64Image('images/papal_bull.jpg'),
+        quote:
+          'We do out of the fullness of our Apostolic power declare the aforesaid Elizabeth to be a heretic and favourer of heretics... And we declare her to be deprived of her pretended title to the aforesaid crown, and of all lordship, dignity, and privilege. And we also declare all nobles, subjects, and peoples of the said kingdom absolved from any oath of fidelity and obedience to her.',
         context:
-          'The official decree issued by Pope Pius V excommunicating Elizabeth Tudor. The bull declared: "We do out of the fullness of our Apostolic power declare the aforesaid Elizabeth to be a heretic and favourer of heretics... and we also declare her to be deprived of her pretended title to the aforesaid crown."',
+          'The papal decree excommunicating Elizabeth and commanding all Catholic subjects to depose her on pain of anathema, directly triggering the 1571 Treasons Act.',
         hingeQuestion:
-          'Why did Pope Pius V’s release of this bull in 1570 inadvertently undermine English Catholics by making religious loyalty synonymous with treason in the eyes of the Crown?',
+          'Why did Pope Pius V’s release of this bull inadvertently endanger English Catholics by making religious loyalty appear synonymous with treason against the Crown?',
       },
       sourceB: {
-        title: 'Source B: The Elizabethan Clerical Vestments',
-        type: 'Contemporary Woodcut',
-        date: 'c. 1566',
-        image: getBase64Image('units/eee/assets/portraits/henry_viii.jpg'),
+        title: 'Source B: London Puritan Petition Against Clerical Vestments',
+        type: 'Calvinist Clerical Petition to Parliament',
+        date: '1566',
+        quote:
+          'These popish garments, the surplice and the cope, are the badges of idolatry and the livery of the Antichrist. They were invented by the Church of Rome to deck out superstitious priests at their idolatrous Mass. How can a faithful minister of Jesus Christ clothe himself in the defiled garments of the Pope while preaching the pure Gospel of truth to the flock?',
         context:
-          'Illustrating the white linen surplice and outdoor clerical cloak demanded by Archbishop Parker’s 1566 *Book of Advertisements*. Puritans reviled these garments as "popish rags" and "badges of Antichrist", arguing that true ministers required no ceremonial hierarchy.',
+          'Radical Protestant protest against Archbishop Parker’s Book of Advertisements, which mandated that all parish clergy wear the white linen surplice.',
         hingeQuestion:
-          'Why did Elizabeth insist on strict clerical dress conformity when she was willing to tolerate private theological reservations?',
+          'Why was Elizabeth so inflexible on enforcing uniform clerical vestments, even though she was willing to tolerate private theological reservations?',
       },
     },
     p8: {
       sourceA: {
-        title: 'Source A: The Sheffield Portrait of Mary Stuart',
-        type: 'Formal State Portrait in Captivity',
-        date: 'c. 1578',
-        image: getBase64Image('images/mary_qos.jpg'),
+        title: 'Source A: Mary Stuart’s Letter to Elizabeth from Carlisle',
+        type: 'Personal Sovereign Correspondence',
+        date: '28 May 1568',
+        quote:
+          'I entreat you to send for me as soon as possible, for I am in a pitiable condition, not only for a Queen, but for a gentlewoman, having nothing in the world but the clothes on my back in which I escaped... I have fled to you, my nearest kinswoman and fellow sovereign, trusting entirely in your honour and royal promise to aid and restore me to my rightful throne.',
         context:
-          'Painted during Mary’s prolonged captivity in England, showing the Scottish queen dressed in sombre black with an ornate rosary and crucifix prominently displayed at her waist. The portrait deliberately projected pious Catholic royalty, dynastic victimhood, and sovereign innocence.',
+          'Written by Mary Stuart immediately following her escape across the Solway Firth into Cumberland, seeking English military intervention to regain Scotland.',
         hingeQuestion:
-          'How did Mary Stuart’s continuous display of Catholic piety and royal symbols exacerbate the security paranoia of William Cecil and Francis Walsingham?',
+          'Why did Mary Stuart’s status as an anointed, captive monarch make it impossible for Elizabeth to either restore her by armed force or put her on public trial?',
       },
       sourceB: {
-        title: 'Source B: Facsimile of a Casket Letter',
-        type: 'Contested Primary Correspondence',
-        date: 'Presented December 1568',
-        image: getBase64Image('units/eee/assets/portraits/mary_of_guise.jpg'),
+        title: 'Source B: Sir William Cecil’s State Paper on Mary Stuart',
+        type: 'Confidential Privy Council Memorandum',
+        date: 'June 1568',
+        quote:
+          'If she remain in England, she will be a constant firebrand. The papists will flock to her; the disaffected nobility will look to her as their rising sun. While she lives and is present in the realm, Her Majesty cannot be safe from assassination or rebellion, for Mary claims the right to wear the English crown today, not after Her Majesty’s death.',
         context:
-          'A facsimile excerpt of the infamous letters produced by the Scottish Protestant Regent, the Earl of Murray, at the Conference of York. The letters purported to show Mary conspiring with Bothwell to blow up Kirk o’Field and assassinate her husband, Lord Darnley.',
+          'Principal Secretary William Cecil’s urgent warning to the Privy Council that Mary’s physical presence in England would serve as a permanent magnet for Catholic treason.',
         hingeQuestion:
-          'Why did Elizabeth deliberately issue a verdict of "not proven" regarding the Casket Letters rather than declaring Mary guilty or innocent?',
+          'How accurately did Cecil’s prophetic memorandum anticipate the outbreak of the 1569 Revolt of the Northern Earls and subsequent Catholic plots?',
       },
     },
   };

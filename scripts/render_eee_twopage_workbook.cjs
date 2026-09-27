@@ -2040,6 +2040,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
+        <div class="task-line"></div>
       </div>
 
       <!-- Question 1(b): Describe One Key Feature [2 marks] -->
@@ -2061,6 +2062,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; margin-bottom: 1px;">
           <strong>Sentence Stems:</strong> ${enq.featureB.stems}
         </div>
+        <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>

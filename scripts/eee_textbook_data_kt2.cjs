@@ -106,6 +106,28 @@ module.exports = function getKt2Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'Nov 1569',
+          title: 'Revolt of Northern Earls',
+          text: 'Earls seize Durham Cathedral, restore Latin Mass; crushed by royal army; 450 executed.',
+        },
+        {
+          date: 'Feb 1570',
+          title: 'Papal Bull *Regnans in Excelsis*',
+          text: 'Pope Pius V excommunicates Elizabeth; commands subjects to depose her on pain of anathema.',
+        },
+        {
+          date: 'Jul 1586',
+          title: 'Babington Cipher Decrypted',
+          text: 'Phelippes deciphers Mary’s approval to assassinate Elizabeth; conspirators arrested and hanged.',
+        },
+        {
+          date: '8 Feb 1587',
+          title: 'Execution of Mary Stuart',
+          text: 'Mary beheaded at Fotheringhay Castle under Bond of Association, eliminating Catholic figurehead.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Why did Anthony Babington believe his correspondence with Mary, Queen of Scots was secure, and how did Walsingham exploit it?',
         q2: 'Explain why Pope Pius V’s 1570 papal bull transformed Mary Stuart from a troublesome refugee into an existential security threat.',
@@ -148,6 +170,28 @@ module.exports = function getKt2Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'Sep 1568',
+          title: 'Ambush at San Juan de Ulúa',
+          text: 'Spanish warships betray Hawkins and Drake under truce flag; privateering becomes holy vendetta.',
+        },
+        {
+          date: '1577–80',
+          title: 'Global Circumnavigation',
+          text: 'Drake traverses Straits of Magellan on Golden Hind; plunders Pacific coast of Spanish Americas.',
+        },
+        {
+          date: 'Mar 1579',
+          title: 'Capture of the *Cacafuego*',
+          text: 'Drake seizes 26 tons of silver and gold bullion worth £400,000, wiping out English Crown debts.',
+        },
+        {
+          date: '4 Apr 1581',
+          title: 'Drake Knighted at Deptford',
+          text: 'Elizabeth boards Golden Hind, publicly knighting Drake in defiance of King Philip II’s protests.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'State two actions taken by Francis Drake during his 1577–1580 voyage that infuriated King Philip II of Spain.',
         q2: 'Explain why the assassination of William the Silent in July 1584 forced Elizabeth to abandon covert proxy warfare in the Netherlands.',
@@ -190,6 +234,28 @@ module.exports = function getKt2Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'Dec 1584',
+          title: 'Treaty of Joinville',
+          text: 'Secret alliance between Spain and French Catholic League; Elizabeth isolated against Spanish superpower.',
+        },
+        {
+          date: 'Aug 1585',
+          title: 'Treaty of Nonsuch',
+          text: 'Elizabeth signs formal pact with Dutch rebels, dispatching 7,400 English troops under Leicester.',
+        },
+        {
+          date: 'Jan 1586',
+          title: 'Governor-General Clashes',
+          text: 'Leicester accepts executive Dutch title without royal consent; Elizabeth infuriated; campaign founders.',
+        },
+        {
+          date: 'Apr 1587',
+          title: 'Raid on Cadiz Harbour',
+          text: 'Drake destroys 36 Spanish ships and burns seasoned barrel staves, delaying Armada launch by a year.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Identify the two ‘cautionary towns’ handed over by the Dutch under the 1585 Treaty of Nonsuch.',
         q2: 'Explain why Elizabeth was enraged by Leicester accepting the title of ‘Governor-General of the United Provinces’ in January 1586.',
@@ -232,6 +298,28 @@ module.exports = function getKt2Data(helpers) {
         </div>
       </div>
       `,
+      timeline: [
+        {
+          date: 'May 1588',
+          title: 'Armada Departs Lisbon',
+          text: 'Medina Sidonia commands 130 ships and 30,000 men to unite with Parma’s invasion army in Flanders.',
+        },
+        {
+          date: '29 Jul 1588',
+          title: 'Crescent Sighted off Cornwall',
+          text: 'Armada enters English Channel in impenetrable crescent; English race-built galleons shadow from behind.',
+        },
+        {
+          date: '7 Aug 1588',
+          title: 'Calais Fireship Attack',
+          text: 'Eight drifting fireships strike anchored Spanish fleet at midnight; panic scatters defensive formation.',
+        },
+        {
+          date: '8 Aug 1588',
+          title: 'Battle of Gravelines',
+          text: 'English culverins batter isolated Spanish galleons; Protestant wind blows crippled Armada north.',
+        },
+      ],
       bottomEnquiry: {
         q1: 'Describe the tactic used by the English navy on the night of 7 August 1588 to scatter the Spanish fleet anchored at Calais.',
         q2: 'Explain why the Duke of Parma’s invasion army was unable to embark on their barges and meet Medina Sidonia’s fleet.',
@@ -244,22 +332,24 @@ module.exports = function getKt2Data(helpers) {
     // Page 2: KT 2.1 (Plots and Revolts at Home)
     p2: {
       sourceA: {
-        type: 'MANUSCRIPT PROCLAMATION',
-        date: 'November 1569',
-        title: 'Proclamation of the Earls of Northumberland and Westmorland at Durham',
-        image: getBase64Image('images/the_duke_of_norfolk_thomas_howard.jpg'),
+        title: 'Source A: Proclamation of the Earls of Northumberland and Westmorland',
+        type: 'Rebel Manifesto Proclaimed at Durham Cathedral',
+        date: '15 November 1569',
+        quote:
+          'We, Thomas Earl of Northumberland and Charles Earl of Westmorland, the Queen’s true and faithful subjects... have taken upon us to assemble to reform all such disordered doings as have been brought about by certain new set-up nobles about the Queen’s Majesty, who have subverted the ancient nobility and the true ancient Catholic faith of this realm.',
         context:
-          'Proclamation issued by Thomas Percy, Earl of Northumberland, and Charles Neville, Earl of Westmorland, upon storming Durham Cathedral, tearing up the English Book of Common Prayer, and celebrating Latin Catholic mass.',
+          'Proclamation issued by the Northern Earls upon storming Durham Cathedral, tearing up the English Book of Common Prayer, and celebrating Latin Catholic mass.',
         hingeQuestion:
           'How does this proclamation reveal whether the Northern Earls rebelled out of genuine religious devotion or aristocratic resentment against William Cecil’s centralizing Protestant council?',
       },
       sourceB: {
-        type: 'DECRYPTED CIPHER INTERCEPT',
+        title: 'Source B: Mary Stuart’s Fatal Letter to Anthony Babington',
+        type: 'Decrypted Cipher Intercept (Thomas Phelippes)',
         date: '17 July 1586',
-        title: 'Mary, Queen of Scots to Anthony Babington (Decrypted by Thomas Phelippes)',
-        image: null,
+        quote:
+          'When all is prepared both within and without the realm, let the great design be set on foot... Then shall it be time to set the six gentlemen to work, taking order upon the accomplishing of their design, that I may be suddenly transported out of this place before Her Majesty’s forces can assemble.',
         context:
-          'The fatal letter intercepted by Sir Francis Walsingham’s intelligence network, in which Mary endorsed Babington’s plot to assassinate Elizabeth with the words: ‘Set the six gentlemen to work taking order upon the accomplishing of their design.’',
+          'The fatal letter intercepted by Sir Francis Walsingham’s intelligence network, in which Mary endorsed Babington’s plot to assassinate Elizabeth with the words: ‘Set the six gentlemen to work.’',
         hingeQuestion:
           'Why did Mary’s written approval of the ‘six gentlemen’ make her execution an unavoidable legal and political imperative under the 1584 Bond of Association?',
       },
@@ -268,22 +358,24 @@ module.exports = function getKt2Data(helpers) {
     // Page 4: KT 2.2 (Relations with Spain)
     p4: {
       sourceA: {
-        type: 'DIPLOMATIC DISPATCH',
-        date: 'April 1581',
-        title: 'Spanish Ambassador Bernardino de Mendoza’s Furious Dispatch to Philip II',
-        image: getBase64Image('images/king_philip_ii_of_spain.jpg'),
+        title: 'Source A: Ambassador Bernardino de Mendoza’s Dispatch to Philip II',
+        type: 'Confidential Diplomatic Report to the Spanish Crown',
+        date: '6 April 1581',
+        quote:
+          'The Queen has been at Deptford to feast on Drake’s ship... and there conferred upon him the accolade of knighthood, telling him that the King of Spain had demanded his head and she had a gilded sword with which to strike it off. This action is an intolerable insult to Your Majesty and an open defiance of your sovereign authority in the Indies.',
         context:
-          'Written by Mendoza after Queen Elizabeth boarded the Golden Hind at Deptford and publicly knighted Francis Drake, directly rejecting Spanish demands that Drake be executed as an international pirate and his plunder returned.',
+          'Written by Mendoza after Queen Elizabeth boarded the Golden Hind at Deptford and publicly knighted Francis Drake, directly rejecting Spanish demands that Drake be executed as an international pirate.',
         hingeQuestion:
           'Why did Elizabeth’s public knighting of Drake mark an irreversible point of no return in Anglo-Spanish diplomatic relations?',
       },
       sourceB: {
-        type: 'SPANISH VICEREGAL REPORT',
-        date: '1568',
-        title: 'Report of Don Martín Enríquez on the Battle of San Juan de Ulúa',
-        image: null,
+        title: 'Source B: Don Martín Enríquez’s Official Report on San Juan de Ulúa',
+        type: 'Spanish Viceregal Dispatch to Madrid',
+        date: 'September 1568',
+        quote:
+          'Finding these English heretic corsairs anchored insolently in our royal port, I gave orders that our armed galleons should hem them in... Although they pleaded a treaty of replenishment, we fell upon their flagship with artillery and small arms, sinking three of their vessels and slaying many heretics. The pirate Drake and Hawkins escaped by flight in two small barks.',
         context:
-          'Spanish official report describing the surprise naval ambush against John Hawkins and Francis Drake’s fleet in Mexico, where Spanish warships attacked English vessels under a truce flag, sinking four ships and leaving Drake with an unyielding desire for vengeance.',
+          'Spanish official report describing the surprise naval ambush against John Hawkins and Francis Drake’s fleet in Mexico, where Spanish warships attacked English vessels under a truce flag, leaving Drake with an unyielding desire for vengeance.',
         hingeQuestion:
           'How did the Spanish betrayal at San Juan de Ulúa transform English privateering from commercial smuggling into a religious and patriotic vendetta?',
       },
@@ -292,22 +384,24 @@ module.exports = function getKt2Data(helpers) {
     // Page 6: KT 2.3 (Outbreak of War with Spain)
     p6: {
       sourceA: {
-        type: 'ROYAL REPRIMAND',
-        date: 'February 1586',
-        title: 'Queen Elizabeth’s Furious Dispatch to Robert Dudley, Earl of Leicester',
-        image: null,
+        title: 'Source A: Queen Elizabeth’s Royal Reprimand to Leicester',
+        type: 'Crown Royal Dispatch to the Low Countries',
+        date: '10 February 1586',
+        quote:
+          'We could never have imagined that a man raised up by ourself, and extraordinarily favoured by us above any other subject of this land, would in such contempt of our commandment have broken our instructions... Our express pleasure therefore is that all delays set apart, you do upon your allegiance resign that government and title which you have taken upon you.',
         context:
           'Elizabeth’s blistering reprimand to Leicester after he accepted the title of ‘Governor-General of the United Provinces’ from the Dutch rebels, directly defying her strict orders that England was not seeking to seize Dutch sovereignty.',
         hingeQuestion:
           'Why did Leicester’s acceptance of executive power in the Netherlands threaten Elizabeth’s entire diplomatic justification for the 1585 Treaty of Nonsuch?',
       },
       sourceB: {
-        type: 'NAVAL DISPATCH',
+        title: 'Source B: Sir Francis Drake’s Cadiz Dispatch to Walsingham',
+        type: 'Eyewitness Naval Dispatch from Cadiz Harbour',
         date: '27 April 1587',
-        title: 'Sir Francis Drake’s Dispatch to Sir Francis Walsingham from Cadiz Harbour',
-        image: null,
+        quote:
+          'We have sunk, burned, and brought away four and thirty great ships of the King of Spain, laden with provisions and naval munition... We have also burned great stores of seasoned timber and barrel staves prepared for their casks, so that the King of Spain shall have much ado to find water casks for his fleet. Assure Her Majesty that by God’s grace we have singed the King of Spain’s beard.',
         context:
-          'Drake’s celebratory dispatch following his pre-emptive strike on Cadiz, reporting the destruction of thirty-six Spanish warships and the burning of thousands of tons of provisions, delaying the Armada’s departure by over a year.',
+          'Drake’s celebratory dispatch following his pre-emptive strike on Cadiz, reporting the destruction of thirty-four Spanish warships and the burning of thousands of tons of provisions, delaying the Armada’s departure by over a year.',
         hingeQuestion:
           'Why was the destruction of naval barrel staves and food casks at Cadiz more decisive in crippling the Armada than the destruction of Spanish galleons?',
       },
@@ -316,20 +410,22 @@ module.exports = function getKt2Data(helpers) {
     // Page 8: KT 2.4 (The Spanish Armada)
     p8: {
       sourceA: {
-        type: 'SECRET MEMORANDUM',
-        date: 'June 1588',
-        title: 'The Duke of Medina Sidonia’s Secret Letter to King Philip II from Lisbon',
-        image: null,
+        title: 'Source A: Duke of Medina Sidonia’s Secret Letter to Philip II',
+        type: 'Confidential Spanish Flagship Memorandum',
+        date: '24 June 1588',
+        quote:
+          'I must represent to Your Majesty that our fleet is in very bad condition... We are short of experienced mariners and skilled gunners; the provisions of bread and beef are already rotting and spoiled by damp casks, and the water is foul. Furthermore, we have no safe deep-water port in Flanders where our great ships can ride to join with the Prince of Parma. I beseech Your Majesty to consider whether this voyage can succeed.',
         context:
-          'A desperate, candid appeal from Medina Sidonia begging King Philip II to cancel the Armada expedition, warning that the Spanish fleet was short of experienced gunners, lacked fresh provisions, and possessed no deep-water harbour to meet the Duke of Parma.',
+          'A desperate, candid appeal from Medina Sidonia begging King Philip II to reconsider the Armada expedition, warning that the Spanish fleet was short of experienced gunners, lacked fresh provisions, and possessed no deep-water harbour to meet the Duke of Parma.',
         hingeQuestion:
           'How does Medina Sidonia’s private despair reveal the fatal strategic flaws inherent in Philip II’s plan to coordinate an invasion across the English Channel?',
       },
       sourceB: {
-        type: 'OFFICIAL BATTLE REPORT',
+        title: 'Source B: Lord Howard of Effingham’s Post-Gravelines Dispatch',
+        type: 'Official English Admiralty Report to Privy Council',
         date: '8 August 1588',
-        title: 'Lord Howard of Effingham’s Post-Gravelines Dispatch to Sir Francis Walsingham',
-        image: null,
+        quote:
+          'Their force is wonderful great and strong, yet we pluck their feathers by little and little... The fireships put them from their anchors at Calais in great disorder, and this morning we have had a very sharp fight with them off Gravelines, wherein we have battered their great galleons through and through with our culverins, while our agile ships kept their distance and received little hurt.',
         context:
           'Lord Admiral Howard’s dispatch immediately following the Battle of Gravelines, describing how English fireships scattered the Spanish fleet at Calais and allowed English culverin gunners to batter Spanish hulls without boarding.',
         hingeQuestion:
