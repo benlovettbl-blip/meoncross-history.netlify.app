@@ -363,22 +363,22 @@ module.exports = function getKt1Data(helpers) {
       sourceA: {
         badge: 'SOURCE A',
         type: 'Archival Photograph',
-        title: 'Freikorps Troops with Heavy Armoured Car during the Spartacist Uprising',
+        title: 'Government Machine-Gun Post on the Brandenburg Gate (Spartacist Uprising)',
         date: 'January 1919',
         image: getBase64Image('spartacist_uprising.jpg'),
         context:
-          'In January 1919, the communist Spartacus League launched an armed revolt in Berlin. Defence Minister Gustav Noske deployed demobilised imperial soldiers (Freikorps) who brutally crushed the uprising and murdered Karl Liebknecht and Rosa Luxemburg.',
+          'In January 1919, the communist Spartacus League launched an armed revolt in Berlin. Government troops and Freikorps units set up machine-gun positions behind the Quadriga atop the Brandenburg Gate to defend the government district before ruthlessly crushing the uprising and murdering Karl Liebknecht and Rosa Luxemburg.',
         hingeQuestion:
           'Why did the government’s decision to deploy right-wing Freikorps to crush left-wing revolutionaries prove to be a fatal compromise for Weimar democracy?',
       },
       sourceB: {
         badge: 'SOURCE B',
-        type: 'Primary Numismatic Artifact',
-        title: 'Reichsbank 100 Billion Mark Hyperinflation Banknote',
-        date: 'November 1923',
+        type: 'Archival Photograph',
+        title: 'Stacks of Devalued Paper Currency in a Berlin Bank (1923)',
+        date: 'Autumn 1923',
         image: getBase64Image('weimar_hyperinflation_note.jpg'),
         context:
-          'Following the Franco-Belgian occupation of the Ruhr in January 1923 and the government’s policy of passive resistance, the Reichsbank printed unbacked paper marks to pay striking miners. By November 1923, a single loaf of bread cost 201 billion marks.',
+          'Following the Franco-Belgian occupation of the Ruhr in January 1923 and the government’s policy of passive resistance, the Reichsbank printed unbacked paper marks day and night. Here, bank clerks sit behind head-high stacks of bundled notes as a single loaf of bread rose to over 200 billion marks.',
         hingeQuestion:
           'How did the hyperinflation crisis of 1923 permanently destroy the economic security and political faith of Germany’s middle class?',
       },
@@ -388,25 +388,25 @@ module.exports = function getKt1Data(helpers) {
     p6: {
       sourceA: {
         badge: 'SOURCE A',
-        type: 'Archival Photograph',
-        title: 'Gustav Stresemann and the German Delegation at the League of Nations',
-        date: 'September 1926',
-        image: getBase64Image('weimar_individuals/gustav_stresemann.jpg'),
+        type: 'Private Correspondence',
+        title: 'Gustav Stresemann on the Fragility of the Economic Recovery',
+        date: 'September 1928',
+        text: '“Our economic recovery is only flourishing on the surface. Germany is, in fact, dancing on a volcano. If our American creditors should ever decide to call in their short-term loans, a very large section of our industrial and commercial economy will collapse immediately.”',
         context:
-          'Following the signing of the Locarno Treaties in 1925, Germany was formally admitted to the League of Nations as a permanent Council member in September 1926, restoring Germany’s standing as a respected Great Power.',
+          'From a private letter written by Foreign Minister Gustav Stresemann in autumn 1928, candidly acknowledging that Weimar’s apparent golden prosperity was dangerously vulnerable to any sudden recall of Wall Street credit.',
         hingeQuestion:
-          'Did Stresemann’s foreign policy of fulfilment genuinely reconcile Germany with its Western neighbours, or merely buy time to dismantle Versailles?',
+          "Why did Stresemann privately describe Germany's economic position as 'dancing on a volcano' despite rising industrial output?",
       },
       sourceB: {
         badge: 'SOURCE B',
-        type: 'Contemporary Political Caricature',
-        title: 'The Great Allied Creditors: The Dawes Reparations Cycle',
-        date: '1924',
-        image: getBase64Image('gw_big_three_versailles.jpg'),
+        type: 'Press Analysis',
+        title: 'German Financial Press on Industrial Modernisation and the Dawes Plan',
+        date: 'Late 1928',
+        text: '“Our national economy has finally achieved genuine stability. Through the Dawes Plan and massive American investment, our factories have been modernized with advanced assembly-line techniques, causing industrial production to soar. Support for extremist parties has collapsed, proving that our citizens are contented and that the Republic is finally safe.”',
         context:
-          'Under the 1924 Dawes Plan, Wall Street banks loaned billions of gold marks to German industry. While factories were modernized, the economy became utterly reliant on short-term American credit that could be recalled at any moment.',
+          'Article published in a leading German commercial daily newspaper celebrating five years of economic recovery under currency stabilisation, industrial rationalisation, and foreign capital inflows.',
         hingeQuestion:
-          "Why did Stresemann himself warn in 1928 that Germany was 'dancing on a volcano'?",
+          'How does Source B’s optimistic assessment of German industrial stability directly contradict Stresemann’s warning in Source A?',
       },
     },
 

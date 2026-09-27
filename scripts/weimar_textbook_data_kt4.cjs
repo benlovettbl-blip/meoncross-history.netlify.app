@@ -371,13 +371,13 @@ module.exports = function getKt4Data(helpers) {
       sourceA: {
         badge: 'SOURCE A',
         type: 'Archival Photograph',
-        title: 'League of German Girls (BDM) Practicing Domestic Skills',
+        title: 'BDM Girls on Compulsory Agricultural Service (Landdienst)',
         date: 'c. 1936',
         image: getBase64Image('bdm_domestic_skills.jpg'),
         context:
-          'BDM girls being instructed in childcare, infant nursing, and sewing. Alongside physical gymnastics and cross-country marching, girls aged 14 to 18 were rigorously prepared for their future roles as mothers of healthy German soldiers.',
+          'Teenage girls belonging to the League of German Girls (BDM) marching across a farmyard carrying pitchforks during harvest service. Through the Landdienst, urban youth were sent to rural estates to perform manual harvest labor and absorb "blood and soil" agrarian values.',
         hingeQuestion:
-          'How did the BDM successfully combine physical empowerment for young women with conservative domestic subjugation?',
+          'How did compulsory agricultural labor for young women reflect the Nazi regime’s ideological glorification of rural peasant life over urban independence?',
       },
       sourceB: {
         badge: 'SOURCE B',
@@ -397,13 +397,13 @@ module.exports = function getKt4Data(helpers) {
       sourceA: {
         badge: 'SOURCE A',
         type: 'Archival Photograph',
-        title: 'Labourers Constructing the Reichsautobahn',
-        date: 'c. 1935',
+        title: 'The Completed Reichsautobahn Motorway Network',
+        date: 'c. 1937',
         image: getBase64Image('autobahn_construction.jpg'),
         context:
-          'Manual workers excavating and laying concrete on the Frankfurt-Mannheim autobahn. Conceived by Fritz Todt, the motorways were built using labor-intensive pick-and-shovel methods to absorb hundreds of thousands of unemployed men into public work.',
+          'A completed four-lane Reichsautobahn route near Berlin. Although hailed by propaganda as a triumph of civilian employment, few ordinary German workers owned cars, and the network functioned primarily as a rapid strategic transport corridor for military blitzkrieg mobilisations.',
         hingeQuestion:
-          'Were the autobahns primarily an economic project to solve unemployment, or a strategic military infrastructure for future blitzkrieg invasions?',
+          'Did the autobahn project represent a genuine economic improvement for ordinary workers, or state infrastructure built primarily for military expansion?',
       },
       sourceB: {
         badge: 'SOURCE B',
@@ -423,13 +423,13 @@ module.exports = function getKt4Data(helpers) {
       sourceA: {
         badge: 'SOURCE A',
         type: 'Archival Photograph',
-        title: 'Vandalised Jewish Shopfronts Following Kristallnacht',
-        date: 'Berlin, 10 November 1938',
+        title: 'The Ruined Interior of the Fasanenstrasse Synagogue, Berlin',
+        date: '10 November 1938',
         image: getBase64Image('kristallnacht_shop.jpg'),
         context:
-          'A Jewish-owned tailor’s shop in Berlin destroyed during the Night of Broken Glass. Pedestrians walk past shattered display windows and painted antisemitic graffiti ("Jude") under the watchful eye of uniform police who did not intervene.',
+          'The gutted interior and collapsed dome of Berlin’s largest synagogue following the state-orchestrated pogrom of 9–10 November 1938. Over 1,000 synagogues were torched nationwide while German police and fire brigades guarded adjacent properties and allowed the destruction to proceed unimpeded.',
         hingeQuestion:
-          'What does the indifference of ordinary pedestrians in the photograph reveal about the degree of public complicity in antisemitic persecution?',
+          'Why did the Nazi state deliberately orchestrate the burning of sacred synagogues alongside commercial property during the November pogrom?',
       },
       sourceB: {
         badge: 'SOURCE B',

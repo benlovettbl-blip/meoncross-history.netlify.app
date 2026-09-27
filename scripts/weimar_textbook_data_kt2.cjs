@@ -355,14 +355,14 @@ module.exports = function getKt2Data(helpers) {
       },
       sourceB: {
         badge: 'SOURCE B',
-        type: 'Archival Photograph',
-        title: 'Adolf Hitler Addressing Early Nazi Supporters in Munich',
-        date: 'Early 1920s',
-        image: getBase64Image('hitler_munich_1920s.jpg'),
+        type: 'Police Intelligence Report',
+        title: 'Bavarian Police Surveillance Report on Hitler’s Early Speeches',
+        date: 'Munich, 15 February 1921',
+        text: "“The speaker, Adolf Hitler, addressed an audience of over two thousand in the Bürgerbräukeller. He spoke with fanatical energy for two and a half hours, constantly whipping the crowd into frenzy over the 'November criminals', the Versailles treaty, and international Jewish finance... The applause was deafening. He possesses an extraordinary demagogic power over the uneducated masses.”",
         context:
-          'Hitler speaking before a crowded Bavarian tavern beneath the party swastika banner. His theatrical gestures, dramatic pauses, and guttural delivery transformed fringe beer-hall meetings into electrifying political rallies.',
+          'Confidential Bavarian political police dossier assessing Hitler’s rapid emergence as the primary public draw and propaganda chief for the fledgling NSDAP in Munich.',
         hingeQuestion:
-          'How did Hitler’s carefully rehearsed oratorical style allow him to establish absolute personal authority over the early Nazi movement?',
+          'How does the police report explain Hitler’s ability to transform a tiny fringe party into a mass movement in post-war Munich?',
       },
     },
 
@@ -422,14 +422,14 @@ module.exports = function getKt2Data(helpers) {
     p8: {
       sourceA: {
         badge: 'SOURCE A',
-        type: 'Political Caricature',
-        title: 'Franz von Papen and Adolf Hitler: "Boxing Him In"',
-        date: 'January 1933',
+        type: 'Archival Photograph',
+        title: 'Vice-Chancellor Franz von Papen and Chancellor Adolf Hitler on Potsdam Day',
+        date: '21 March 1933',
         image: getBase64Image('papen_hitler_cartoon.jpg'),
         context:
-          'A biting contemporary cartoon satirising Franz von Papen’s arrogant boast that he would control Hitler inside a conservative coalition cabinet, portraying Papen riding a tiger he cannot tame.',
+          'Vice-Chancellor Franz von Papen walking in top hat and tails alongside newly appointed Chancellor Adolf Hitler outside the Potsdam Garrison Church. Papen famously reassured conservative allies: "We have hired him for our own purposes... In two months\' time, we will have pushed Hitler so far into a corner that he\'ll squeak!"',
         hingeQuestion:
-          'Why did Franz von Papen and the conservative establishment so catastrophically underestimate Adolf Hitler’s political ruthlessness?',
+          'How does this photograph and Papen’s private boast demonstrate the fatal miscalculation of Germany’s traditional conservative elites?',
       },
       sourceB: {
         badge: 'SOURCE B',

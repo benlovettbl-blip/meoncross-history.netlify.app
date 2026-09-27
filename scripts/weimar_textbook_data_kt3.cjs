@@ -345,11 +345,11 @@ module.exports = function getKt3Data(helpers) {
       sourceA: {
         badge: 'SOURCE A',
         type: 'Archival Photograph',
-        title: 'The Charred Shell of the Reichstag Debating Chamber',
-        date: '28 February 1933',
+        title: 'The Reichstag Engulfed in Flames on the Night of the Arson',
+        date: '27 February 1933',
         image: getBase64Image('reichstag_fire_ruins.jpg'),
         context:
-          'On the evening of 27 February 1933, the Reichstag building in Berlin was engulfed in flames. Dutch communist Marinus van der Lubbe was found inside and arrested. Hitler immediately claimed the arson was the signal for a nationwide Bolshevik revolution.',
+          'On the evening of 27 February 1933, the German Reichstag was consumed by fire, with flames bursting through the great gilded dome. Hitler and Göring arrived at the scene and immediately claimed the arson was the signal for a nationwide Bolshevik insurrection.',
         hingeQuestion:
           'Did the Reichstag Fire provide Hitler with a genuine security crisis, or an orchestrated pretext to destroy German democracy?',
       },
@@ -422,14 +422,14 @@ module.exports = function getKt3Data(helpers) {
     p8: {
       sourceA: {
         badge: 'SOURCE A',
-        type: 'Primary Resistance Artifact',
-        title: 'Edelweiss Pirates Anti-Nazi Wall Graffiti',
-        date: '1938–1939',
-        image: getBase64Image('edelweiss_pirates_graffiti.jpg'),
+        type: 'Gestapo Intelligence Report',
+        title: 'Gestapo Dossier on the Edelweiss Pirates in Cologne',
+        date: 'Cologne, December 1943',
+        text: '“These adolescents, aged 14 to 17, congregate on street corners and in taverns, openly flouting Hitler Youth discipline. They wear non-regulation clothing—checked shirts and badges with the Edelweiss flower—and sing satirical, filthy parodies of Party hymns. More dangerously, they distribute subversive communist leaflets and have ambushed Hitler Youth patrols after dark. Their insolence is corrupting other youth; rigorous police counter-measures must be enforced immediately.”',
         context:
-          'Graffiti scrawled on railway bridges and factory walls in the Ruhr and Rhineland by working-class youth who rejected Hitler Youth regimentation, singing banned songs and beating up Hitler Youth patrols.',
+          'Internal Gestapo summary of investigations into working-class youth gangs in the Rhineland, documenting how non-conformist adolescents actively resisted Nazi totalitarian control.',
         hingeQuestion:
-          'Did youth rebellion like that of the Edelweiss Pirates constitute genuine political resistance, or merely adolescent non-conformity?',
+          'What does the Gestapo report reveal about the regime’s deep anxiety over youth rebellion even during wartime?',
       },
       sourceB: {
         badge: 'SOURCE B',
