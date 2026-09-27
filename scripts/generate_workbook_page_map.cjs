@@ -273,7 +273,8 @@ async function run() {
             unitId === 'water_and_sanitation' ||
             unitId === 'post_war_britain' ||
             unitId === 'the_shoah' ||
-            unitId === 'australia');
+            unitId === 'australia' ||
+            unitId === 'eee');
         const fallbackPage = isDoublePageKS3 ? 4 + relIdx * 2 : 3 + relIdx * 6;
 
         const lessonKey = lesson.id || `lesson_${fullIdx + 1}`;

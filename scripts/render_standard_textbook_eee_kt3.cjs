@@ -1596,14 +1596,14 @@ async function buildPublisherTextbookHtmlKT3() {
         </div>
         <h2 class="lesson-title" style="font-size: 11.5pt; margin: 1px 0;">Key Topic 3: Thematic Synoptic Matrix &amp; Historiographical Debate</h2>
         <div class="lesson-spec-anchor" style="padding: 2.5px 6px;">
-          <strong>Disciplinary Synthesis:</strong> Evaluating domestic social polarisation, educational humanism, poor relief legislation, and overseas colonial ventures.
+          <strong>Historical Assessment:</strong> Evaluating domestic social polarisation, educational humanism, poor relief legislation, and overseas colonial ventures.
         </div>
       </div>
 
-      <!-- Thematic Comparative Matrix (6 Key Specification Pillars) -->
+      <!-- Thematic Comparative Matrix (Core Specification Themes) -->
       <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff; margin-bottom: 6px;">
         <div style="background: #0f172a; color: #fff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
-          <span>THEMATIC COMPARATIVE MATRIX &bull; SIX SPECIFICATION PILLARS</span>
+          <span>THEMATIC COMPARATIVE MATRIX &bull; CORE SPECIFICATION THEMES</span>
           <span>1558 BASELINE VS. 1588 REALITY</span>
         </div>
         <table class="master-chron-table" style="font-size: 6.5pt; line-height: 1.26;">
@@ -2236,6 +2236,7 @@ async function runKT3() {
   if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
   const pdfPublisherPath = path.join(pdfOutputDir, 'eee_textbook_KT3_PUBLISHER.pdf');
   const pdfLegacyPath = path.join(pdfOutputDir, 'eee_textbook_KT3.pdf');
+  const pdfFinalV17Path = path.join(pdfOutputDir, 'eee_textbook_KT3_FINAL_V17.pdf');
 
   console.log('🚀 Launching Puppeteer for A4 PDF compilation & layout audit...');
   const browser = await puppeteer.launch({
@@ -2289,8 +2290,10 @@ async function runKT3() {
 
   // Sync to standard alias so all links in web app and drive update seamlessly
   fs.copyFileSync(pdfPublisherPath, pdfLegacyPath);
-  console.log('✅ Synchronized active alias:');
+  fs.copyFileSync(pdfPublisherPath, pdfFinalV17Path);
+  console.log('✅ Synchronized active aliases:');
   console.log('   -', pdfLegacyPath);
+  console.log('   -', pdfFinalV17Path);
 
   // Synchronize to Google Drive Department File if available
   const driveDest =

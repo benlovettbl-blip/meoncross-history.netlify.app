@@ -1465,14 +1465,14 @@ async function buildPublisherTextbookHtmlKT1() {
         </div>
         <h2 class="lesson-title" style="font-size: 11.5pt; margin: 1px 0;">Key Topic 1: Thematic Synoptic Matrix &amp; Historiographical Debate</h2>
         <div class="lesson-spec-anchor" style="padding: 2.5px 6px;">
-          <strong>Disciplinary Synthesis:</strong> Evaluating Elizabeth's consolidation of royal authority across government, religious settlement, and dynastic security.
+          <strong>Historical Assessment:</strong> Evaluating Elizabeth's consolidation of royal authority across government, religious settlement, and dynastic security.
         </div>
       </div>
 
-      <!-- Thematic Comparative Matrix (6 Key Specification Pillars) -->
+      <!-- Thematic Comparative Matrix (Core Specification Themes) -->
       <div style="border: 1.2px solid #0f172a; border-radius: 3px; overflow: hidden; background: #fff; margin-bottom: 6px;">
         <div style="background: #0f172a; color: #fff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
-          <span>THEMATIC COMPARATIVE MATRIX &bull; SIX SPECIFICATION PILLARS</span>
+          <span>THEMATIC COMPARATIVE MATRIX &bull; CORE SPECIFICATION THEMES</span>
           <span>1558 CRISIS VS. 1569 REALITY</span>
         </div>
         <table class="master-chron-table" style="font-size: 6.5pt; line-height: 1.28;">

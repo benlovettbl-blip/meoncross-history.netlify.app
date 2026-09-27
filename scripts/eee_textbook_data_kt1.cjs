@@ -145,7 +145,7 @@ module.exports = function getKt1Data(helpers) {
       conceptSpotlight: `
       <div class="concept-spotlight-box">
         <div class="csb-header">
-          <span class="csb-tag">DISCIPLINARY SYNTHESIS</span>
+          <span class="csb-tag">CORE SPECIFICATION THEME</span>
           <span class="csb-category">THE VIA MEDIA &bull; 1559</span>
         </div>
         <h4 class="csb-title">The 1559 Settlement: Strategic Compromise Matrix</h4>

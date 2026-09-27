@@ -98,7 +98,7 @@ const EEE_FOOTERS = {
     '"Via Media: Neither Geneva nor Rome, but an English compromise designed to avoid civil war."', // Page 13
     '"Grade 9 Rule: Q1 requires Feature + Detail. Name the feature, then drop the factual hammer."', // Page 14
     '"Timed Condition Challenge: 12 marks means 3 paragraphs with 3 distinct causal links."', // Page 15
-    'Key Topic 1 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 16
+    'Key Topic 1 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
   ],
   KT2: [
     'Early Elizabethan England Revision Hub • Key Topic 2 • The History Department', // Page 1
@@ -116,7 +116,7 @@ const EEE_FOOTERS = {
     '"The Protestant Wind: God blew and they were scattered, but Hawkins\' ship design won the battle."', // Page 13
     '"Grade 9 Essay: Don\'t just describe the fireships — explain why panic broke the defensive formation."', // Page 14
     '"Timed Condition Challenge: 16 marks means criteria-led evaluation and a sustained, justified verdict."', // Page 15
-    'Key Topic 2 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 16
+    'Key Topic 2 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
   ],
   KT3: [
     'Early Elizabethan England Revision Hub • Key Topic 3 • The History Department', // Page 1
@@ -134,7 +134,7 @@ const EEE_FOOTERS = {
     '"From Deserving Poor to Idle Vagabonds: Elizabethan Poor Laws laid the foundation for 250 years of welfare."', // Page 13
     '"Grade 9 Rule: In 12-mark questions, link your causes! Enclosure caused unemployment, which caused vagrancy."', // Page 14
     '"Timed Condition Challenge: Structure your points with Point, Fact, Explanation, and Causal Link."', // Page 15
-    'Key Topic 3 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 16
+    'Key Topic 3 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
   ],
 };
 
@@ -2893,7 +2893,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
             <span class="school-brand-target">The History Department</span> &bull; Assessment &amp; Progress Record
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; letter-spacing: 0.5px;">
-            KEY TOPIC ${data.keyTopicNum} MASTERY RECORD
+            KEY TOPIC ${data.keyTopicNum} ASSESSMENT &amp; PROGRESS RECORD
           </span>
         </div>
       </div>
