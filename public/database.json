@@ -3497,7 +3497,7 @@
         {
           "id": "lesson_2",
           "key_individual": {
-            "anchor_act": 11,
+            "anchor_act": 12,
             "anchor_title": "The Declaration of the State of Israel (14 May 1948)",
             "anchor_rationale": "Anchored directly adjacent to the 14 May 1948 Declaration of Independence in Tel Aviv and the subsequent consolidation of the IDF.",
             "name": "David Ben-Gurion",
@@ -3668,6 +3668,18 @@
               "source_context": "The British decision to forcibly return Holocaust survivors to camps in Germany was an international public relations disaster that destroyed British diplomatic standing in the US and swayed the UN Partition vote.",
               "question": "How did Source C damage Great Britain’s international standing during the UN debate on Palestine?",
               "model_answer": "Source C severely damaged British standing because forcing Holocaust survivors back into European detention camps appeared callous and cruel, alienating US public opinion and creating irresistible sympathy for a sovereign Jewish state."
+            },
+            {
+              "id": "cme_bengurion_declaration_1948",
+              "title": "Source D: David Ben-Gurion Declaring the State of Israel (14 May 1948)",
+              "date": "14 May 1948",
+              "src": "/images/cme_bengurion_declaration_1948.jpg",
+              "image": "/images/cme_bengurion_declaration_1948.jpg",
+              "caption": "David Ben-Gurion reads the Declaration of Independence at the Tel Aviv Museum beneath Theodor Herzl’s portrait.",
+              "source_context": "David Ben-Gurion proclaimed Israeli statehood on 14 May 1948, hours before the British Mandate formally expired and adjacent to coordinated invasions by five neighboring Arab armies. **Hinge Question:** Why did Ben-Gurion insist on declaring independence immediately rather than waiting for international UN negotiations?",
+              "provenance_clue": "The setting in Tel Aviv beneath Theodor Herzl was designed to establish an unbroken line between political Zionism and sovereign reality.",
+              "question": "Study Source D. Why did David Ben-Gurion choose to declare independence beneath the portrait of Theodor Herzl on the exact afternoon British forces withdrew?",
+              "model_answer": "Ben-Gurion positioned himself beneath the portrait of Theodor Herzl, the father of political Zionism, to establish direct historical legitimacy between Herzl's 1897 vision of a sovereign Jewish homeland and its reality in 1948. Declaring independence on the exact afternoon the British Mandate expired preempted any UN hesitation or British extension, establishing sovereign Israeli statehood hours before the anticipated invasion by five Arab armies."
             }
           ],
           "vocab": [
@@ -3744,13 +3756,6 @@
               }
             ]
           },
-          "primary_source": {
-            "title": "Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)",
-            "src": "/units/cme_new/assets/king_david_ruins.png",
-            "caption": "Primary Photograph: The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation on 22 July 1946, killing 91 British, Arab, and Jewish staff.",
-            "question": "Study Source A. Why did the Irgun target the British administrative and military headquarters at the King David Hotel, and how did this attack convince the British government that maintaining the Mandate was untenable?",
-            "model_answer": "The Irgun targeted the King David Hotel because its south-western wing housed the central Secretariat of the British Mandate government and the headquarters of British armed forces in Palestine. By destroying the nerve centre of colonial administration and killing 91 officials in broad daylight, the Irgun demonstrated that 100,000 British troops could not guarantee security. The massive loss of life shocked the British public and convinced Prime Minister Attlee that policing Palestine was exacting an intolerable financial and human price."
-          },
           "flashcards": [
             {
               "term": "Mandate",
@@ -3819,8 +3824,7 @@
           "narrative_blocks": [
             {
               "text": "**The British Dilemma & The Legacy of the 1939 White Paper:** Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. Under the terms of the Mandate, Britain was bound by a \"dual obligation\": to establish a \"national home\" for the Jewish people (in line with the 1917 Balfour Declaration), while safeguarding the civil and religious rights of the existing Arab majority. Having already rejected the 1937 Peel Commission recommendation for partition, British policy was rigidly anchored to the 1939 MacDonald White Paper, which had capped Jewish immigration at 75,000 over five years and prohibited further entry without Arab consent. As the full horrors of the Nazi Holocaust were revealed, over 250,000 destitute Jewish survivors languished in European Displaced Persons (DP) camps with nowhere to go. In 1945, Zionist leaders gathered in London demanding the immediate admission of 100,000 refugees. British Foreign Secretary Ernest Bevin adamantly refused, strictly enforcing the monthly immigration quota of 1,500 to appease Arab oil-producing nations, sparking fierce international condemnation from US President Harry S. Truman.",
-              "level_4": "Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. In 1945, Zionist leaders gathered at a conference in London to demand the immediate creation of a Jewish state in Palestine, hoping that Britain would facilitate the resettlement of hundreds of thousands of Holocaust survivors currently languishing in European Displaced Persons (DP) camps.",
-              "image": "/units/cme_new/assets/king_david_ruins.png"
+              "level_4": "Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. In 1945, Zionist leaders gathered at a conference in London to demand the immediate creation of a Jewish state in Palestine, hoping that Britain would facilitate the resettlement of hundreds of thousands of Holocaust survivors currently languishing in European Displaced Persons (DP) camps."
             },
             {
               "text": "**Arab Opposition & The Shadow of the 1936–39 Revolt:** The Palestinian Arab population—who formed the clear two-thirds majority of Palestine—vehemently opposed any further Jewish immigration or partition. Having suffered catastrophic losses during the 1936–1939 Arab Revolt, in which British forces had hanged or exiled leading Arab commanders, dismantled militias, and confiscated civilian weapons, the Palestinian community remained politically fractured and militarily weakened. Arab leaders argued that European nations were attempting to solve the moral catastrophe of the Holocaust at the expense of an indigenous Arab population that bore zero responsibility for Nazi crimes. Through the Arab League (founded in Cairo in 1945), neighboring Arab states (Egypt, Syria, Transjordan, Iraq, and Lebanon) warned Britain that any attempt to establish a Jewish state on Arab land would be met with armed resistance across the entire Middle East.",
@@ -3853,8 +3857,21 @@
               ]
             },
             {
-              "text": "**The King David Hotel Bombing (July 1946), UN Referral (Feb 1947) & The Sergeants Affair (July 1947):** The Jewish underground insurgency struck with devastating lethality. On 22 July 1946, the Irgun, commanded by future Prime Minister Menachem Begin, smuggled 225 kilograms of explosives inside milk cans into the basement of the King David Hotel in Jerusalem—the headquarters of the British civil administration and military command. The resulting detonation collapsed the entire south-western wing of the six-storey building, killing 91 British, Arab, and Jewish staff. **The Evacuation Warnings Controversy:** Menachem Begin and the Irgun insisted that three advance telephone warnings were placed 25 minutes prior (to the hotel switchboard, the French Consulate, and the Palestine Post) urging evacuation, but British authorities denied receiving a timely warning and Chief Secretary Sir John Shaw allegedly refused to evacuate the building. Horrified by the 91 deaths, David Ben-Gurion and the Haganah publicly condemned the Irgun, dissolving the unified Hebrew Resistance Movement. By early 1947, deploying **100,000 British soldiers** was costing **£40 million annually** during harsh post-WWII rationing. Facing immense American diplomatic and financial pressure, British Foreign Secretary Ernest Bevin announced to Parliament on 18 February 1947 that the Mandate was unworkable and that Britain was surrendering the problem to the United Nations without recommending any solution. The insurgency culminated in July 1947 in the **Sergeants Affair**: after three Irgun members were sentenced to death at Acre Prison, the Irgun kidnapped two 20-year-old British Army intelligence field sergeants, Clifford Martin and Mervyn Paice, in Netanya. When the British carried out the executions, the Irgun hanged both British sergeants in an orange grove and booby-trapped Martin's body with a landmine. The gruesome incident sparked anti-Jewish riots across major British cities (including London, Liverpool, and Manchester) and destroyed the British public's willingness to sacrifice British soldiers to maintain the Mandate.",
-              "level_4": "In July 1946, the Irgun bombed the King David Hotel in Jerusalem—killing 91 people despite controversial disputed evacuation warnings. Bankrupt from WWII, Britain referred the Mandate to the UN in Feb 1947. In July 1947, during the Sergeants Affair, the Irgun hanged two kidnapped British sergeants, destroying domestic British support for policing the Mandate.",
+              "text": "**The King David Hotel Bombing & UN Referral (July 1946 – February 1947):** The Jewish underground insurgency struck with devastating lethality. On 22 July 1946, the Irgun, commanded by future Prime Minister Menachem Begin, smuggled 225 kilograms of explosives inside milk cans into the basement of the King David Hotel in Jerusalem—the headquarters of the British civil administration and military command. The resulting detonation collapsed the entire south-western wing of the six-storey building, killing 91 British, Arab, and Jewish staff. **The Evacuation Warnings Controversy:** Menachem Begin and the Irgun insisted that three advance telephone warnings were placed 25 minutes prior (to the hotel switchboard, the French Consulate, and the Palestine Post) urging evacuation, but British authorities denied receiving a timely warning and Chief Secretary Sir John Shaw allegedly refused to evacuate the building. Horrified by the 91 deaths, David Ben-Gurion and the Haganah publicly condemned the Irgun, dissolving the unified Hebrew Resistance Movement. By early 1947, deploying **100,000 British soldiers** was costing **£40 million annually** during harsh post-WWII rationing. Facing immense American diplomatic and financial pressure, British Foreign Secretary Ernest Bevin announced to Parliament on 18 February 1947 that the Mandate was unworkable and that Britain was surrendering the problem to the United Nations without recommending any solution.",
+              "level_4": "In July 1946, the Irgun bombed the King David Hotel in Jerusalem—killing 91 people despite controversial disputed evacuation warnings. Bankrupt from WWII, Britain referred the Mandate to the UN in Feb 1947.",
+              "source": {
+                "title": "Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)",
+                "src": "/units/cme_new/assets/king_david_ruins.png",
+                "caption": "Primary Photograph: The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation on 22 July 1946, killing 91 British, Arab, and Jewish staff.",
+                "source_context": "The King David Hotel housed the central Secretariat of the Government of Palestine and the Headquarters of the British Forces in Palestine. The Irgun disguised explosives inside milk churns in the basement. **Hinge Question:** Why did the bombing of the King David Hotel convince the British government that the Mandate was becoming militarily untenable?",
+                "provenance_clue": "Consider the target: this was not a remote outpost, but the fortified administrative and military nerve-centre of the entire British Mandate administration.",
+                "question": "Study Source A. Why did the Irgun target the British administrative and military headquarters at the King David Hotel, and how did this attack convince the British government that maintaining the Mandate was untenable?",
+                "model_answer": "The Irgun targeted the King David Hotel because its south-western wing housed the central Secretariat of the British Mandate government and the headquarters of British armed forces in Palestine. By destroying the nerve centre of colonial administration and killing 91 officials in broad daylight, the Irgun demonstrated that 100,000 British troops could not guarantee security. The massive loss of life shocked the British public and convinced Prime Minister Attlee that policing Palestine was exacting an intolerable financial and human price."
+              }
+            },
+            {
+              "text": "**The Sergeants Affair & Public Backlash in Britain (July 1947):** The insurgency culminated in July 1947 in the **Sergeants Affair**: after three Irgun members were sentenced to death at Acre Prison, the Irgun kidnapped two 20-year-old British Army intelligence field sergeants, Clifford Martin and Mervyn Paice, in Netanya. When the British carried out the executions, the Irgun hanged both British sergeants in an orange grove and booby-trapped Martin's body with a landmine. The gruesome incident sparked anti-Jewish riots across major British cities (including London, Liverpool, and Manchester) and destroyed the British public's willingness to sacrifice British soldiers to maintain the Mandate.",
+              "level_4": "In July 1947, during the Sergeants Affair, the Irgun hanged two kidnapped British sergeants, destroying domestic British support for policing the Mandate.",
               "source": {
                 "title": "Source B: The Sergeants Affair (July 1947)",
                 "src": "/images/cme_sergeants_affair_1947.jpg",

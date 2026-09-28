@@ -1,12 +1,6 @@
 import { getAssetUrl } from './engine/assets.js';
 
 export function generateKeyIndividualEmbedHTML(person) {
-  const hasBackData =
-    person.actions ||
-    person.strategic_actions ||
-    (person.achievements && !Array.isArray(person.achievements)) ||
-    person.limitations;
-
   let imgSrcHtml = '';
   if (person.image || person.image_url) {
     const imgSrc = person.image_url
@@ -15,78 +9,78 @@ export function generateKeyIndividualEmbedHTML(person) {
         ? getAssetUrl(person.image)
         : person.image;
     imgSrcHtml = `
-      <div style="margin-top: 25px; display: flex; justify-content: center; align-items: flex-start;">
-        <img src="${imgSrc}" loading="lazy" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" onerror="this.parentElement.style.display='none'">
+      <div style="flex-shrink: 0; width: 84px; height: 96px; border-radius: 6px; overflow: hidden; background: #ffffff; border: 1.5px solid #cbd5e1; box-shadow: 0 2px 5px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
+        <img src="${imgSrc}" loading="lazy" alt="${person.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none'">
       </div>
     `;
   }
 
-  let basicBio = '';
-  if (person.bio) {
-    basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;">${person.bio}</div>`;
-  } else if (person.significance) {
-    basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;"><strong>Significance:</strong> ${person.significance}`;
-    if (
-      person.achievements &&
-      Array.isArray(person.achievements) &&
-      person.achievements.length > 0
-    ) {
-      basicBio += `<br><br><strong>Achievements:</strong><ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>`;
-    }
-    basicBio += `</div>`;
+  let actionsList = '';
+  if (person.strategic_actions) {
+    const items = Array.isArray(person.strategic_actions)
+      ? person.strategic_actions
+      : [person.strategic_actions];
+    actionsList = `<ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #1e293b; line-height: 1.5;">${items.map((a) => `<li style="margin-bottom: 4px;">${a}</li>`).join('')}</ul>`;
+  } else if (person.actions) {
+    actionsList = `<div style="font-size: 0.88rem; color: #1e293b; line-height: 1.5;">${person.actions}</div>`;
   }
 
-  let backHtml = '';
-  if (hasBackData) {
-    backHtml = `<div style="flex: 1.5; min-width: 350px; display: flex; flex-direction: column; gap: 15px; justify-content: center;">`;
-    if (person.actions) {
-      backHtml += `
-        <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; border-radius: 4px;">
-          <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Core Actions</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.actions}</span>
-        </div>`;
-    }
-    if (person.strategic_actions) {
-      const actionsList = Array.isArray(person.strategic_actions)
-        ? `<ul style="margin-top: 5px; padding-left: 18px; margin-bottom: 0;"><li>${person.strategic_actions.join('</li><li>')}</li></ul>`
-        : person.strategic_actions;
-      backHtml += `
-        <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; border-radius: 4px;">
-          <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Strategic Decisions &amp; Actions</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${actionsList}</span>
-        </div>`;
-    }
-    if (person.achievements && !Array.isArray(person.achievements)) {
-      backHtml += `
-        <div style="background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; padding: 10px; border-radius: 4px;">
-          <strong style="color: #22c55e; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Impact / Achievements</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.achievements}</span>
-        </div>`;
-    }
-    if (person.limitations) {
-      backHtml += `
-        <div style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 10px; border-radius: 4px;">
-          <strong style="color: #ef4444; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Structural Limitations</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.limitations}</span>
-        </div>`;
-    }
-    backHtml += `</div>`;
+  let achievementsList = '';
+  if (person.achievements) {
+    const items = Array.isArray(person.achievements) ? person.achievements : [person.achievements];
+    achievementsList = `<ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #15803d; line-height: 1.5;">${items.map((a) => `<li style="margin-bottom: 4px;">${a}</li>`).join('')}</ul>`;
   }
-
-  let lifespanHtml = person.lifespan
-    ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -5px; margin-bottom: 10px;">${person.lifespan}</p>`
-    : '';
 
   return `
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch; background: var(--bg-card); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glass);">
-      <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column;">
-        <h3 style="margin: 0 0 5px 0; color: var(--primary); font-family: var(--font-heading); font-size: 1.5rem;">${person.name}</h3>
-        ${lifespanHtml}
-        <p style="margin: 0 0 15px 0; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">${person.role || ''}</p>
-        ${basicBio}
+    <div class="key-individual-dossier-card" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #1e40af; border-radius: 8px; padding: 16px 20px; margin: 18px 0; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+      <div style="display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
         ${imgSrcHtml}
+        <div style="flex: 1; min-width: 240px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;">
+            <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #1e40af; background: #eff6ff; padding: 2px 7px; border-radius: 3px; border: 1px solid #bfdbfe;">
+              Historical Figure Dossier
+            </span>
+            ${person.lifespan ? `<span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">(${person.lifespan})</span>` : ''}
+          </div>
+          <h3 style="margin: 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; line-height: 1.3;">
+            ${person.name}
+          </h3>
+          ${person.role ? `<div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 2px;">${person.role}</div>` : ''}
+          ${
+            person.significance || person.bio
+              ? `
+            <div style="margin-top: 8px; font-size: 0.9rem; color: #334155; line-height: 1.5; background: #f8fafc; border-left: 3px solid #3b82f6; padding: 8px 12px; border-radius: 0 4px 4px 0;">
+              <strong>Historical Significance:</strong> ${person.significance || person.bio}
+            </div>
+          `
+              : ''
+          }
+        </div>
       </div>
-      ${backHtml}
+      ${
+        actionsList
+          ? `
+        <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e2e8f0;">
+          <strong style="color: #1e40af; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">
+            Key Strategic Decisions &amp; Actions:
+          </strong>
+          ${actionsList}
+        </div>
+      `
+          : ''
+      }
+      ${
+        achievementsList
+          ? `
+        <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed #e2e8f0;">
+          <strong style="color: #15803d; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">
+            Impact &amp; Achievements:
+          </strong>
+          ${achievementsList}
+        </div>
+      `
+          : ''
+      }
     </div>
   `;
 }

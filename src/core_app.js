@@ -1107,18 +1107,7 @@ function assignQuestionNumbers(lesson, targetUnitId) {
     unit,
   );
   const isGreatWar = unit === 'great_war' || unit === 'great_war_part2';
-
-  // 1. Primary Source
-  if (lesson.primary_source && lesson.primary_source.question) {
-    lesson.primary_source.qNum = globalQNum++;
-  }
-
-  // 2. Sources (non-GCSE units)
-  if (lesson.sources && lesson.sources.length > 0 && !isGCSE) {
-    lesson.sources.forEach((source) => {
-      if (source.question) source.qNum = globalQNum++;
-    });
-  }
+  const hasNarrativeBlocks = Boolean(lesson.narrative_blocks && lesson.narrative_blocks.length > 0);
 
   // 1. Primary Source
   if (lesson.primary_source && lesson.primary_source.question) {

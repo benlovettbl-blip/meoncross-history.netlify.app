@@ -1808,9 +1808,21 @@ export function renderLesson(lesson) {
     typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active');
   const hasActiveTool = isTeacherActive || isWbActive;
 
+  const isGCSEUnit = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany', 'usa'].includes(
+    unitId || (typeof window !== 'undefined' && window.currentUnitId),
+  );
+  let stickyCountLabel = '';
+  if (allUnitLessons.length > 0) {
+    stickyCountLabel = isGCSEUnit
+      ? `Lesson ${currentIndex + 1} of ${allUnitLessons.length}`
+      : `Enquiry ${currentIndex + 1} of ${allUnitLessons.length}`;
+  } else {
+    stickyCountLabel = lesson.title || '';
+  }
+
   const stickyAnchorText = isTrip
     ? `${lessonPrefix}: ${lesson.title.split('(')[0].trim()}`
-    : `<span class="sticky-lesson-prefix" style="color: #1e3a8a; font-weight: 800; font-family: 'Inter', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">${lessonPrefix}</span> <span style="color: #94a3b8; margin: 0 4px;">&bull;</span> <span class="sticky-lesson-enquiry-count" style="color: #475569; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 0.92rem;">${allUnitLessons.length > 0 ? `Enquiry ${currentIndex + 1} of ${allUnitLessons.length}` : lesson.title || ''}</span>`;
+    : `<span class="sticky-lesson-prefix" style="color: #1e3a8a; font-weight: 800; font-family: 'Inter', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">${lessonPrefix}</span> <span style="color: #94a3b8; margin: 0 4px;">&bull;</span> <span class="sticky-lesson-enquiry-count" style="color: #475569; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 0.92rem;">${stickyCountLabel}</span>`;
 
   html += `
       <div class="sticky-lesson-header">
@@ -6149,7 +6161,7 @@ export function renderLesson(lesson) {
       htmlDoNow +
       htmlNarrative +
       htmlSpotlightDrawers +
-      htmlPrimary +
+      (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlTasks +
       htmlVocabDeck +
@@ -6163,7 +6175,7 @@ export function renderLesson(lesson) {
       htmlDoNow +
       htmlNarrative +
       htmlSpotlightDrawers +
-      htmlPrimary +
+      (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlTasks +
       htmlExamPractice +
@@ -7354,6 +7366,7 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
     unit,
   );
   const isGreatWar = unit === 'great_war' || unit === 'great_war_part2';
+  const hasNarrativeBlocks = Boolean(lesson.narrative_blocks && lesson.narrative_blocks.length > 0);
 
   // 1. Primary Source
   if (lesson.primary_source && lesson.primary_source.question) {
