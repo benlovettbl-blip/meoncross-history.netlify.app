@@ -415,12 +415,12 @@ export function renderWorkbooksZone(container, unitData) {
     const cmeBooklets = [
       {
         id: 'PILLAR_1',
-        title: '36-Page Visual Revision Masterclasses & Specification Guide',
-        pages: '36 Pages',
+        title: '20-Page Specification Revision Guide & Cheat Sheets',
+        pages: '20 Pages',
         badge: 'PILLAR 1 • REVISION GUIDE',
         color: '#0284c7',
-        desc: '12 double-page spreads across all 3 Key Topics, 4 full-page cartographic war atlases, word-for-word Pearson specification checklist, and primary archival evidence.',
-        fileBase: '/units/cme_new/revision_guide.html',
+        desc: '12 one-page Specification Cheat Sheets across KT1–KT3, 4 cartographic war atlas plates, verbatim Pearson Edexcel specification targets, memory vaults, and primary archival evidence.',
+        fileBase: '/units/cme_new/visual_revision_guide.html',
         pdfUrl: '/pdfs/cme_revision_guide.pdf',
       },
       {

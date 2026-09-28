@@ -387,7 +387,7 @@ function renderPage1() {
         <!-- 6. FOOTER STRIP -->
         <div style="border-top: 1.5px solid #000000; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; color: #000000;">
           <span><strong>The History Department</strong> &bull; GCSE Revision Series</span>
-          <span style="font-weight: 800; text-transform: uppercase;">Pearson Edexcel 1HI0/P5 &bull; 36-Page Master Revision Guide</span>
+          <span style="font-weight: 800; text-transform: uppercase;">Pearson Edexcel 1HI0/P5 &bull; 20-Page Master Revision Guide</span>
         </div>
 
       </div>
@@ -479,7 +479,7 @@ function renderPage2() {
 
       <div class="page-footer">
         <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Paper 2 Blueprint &bull; Page 2</span>
+        <span>Paper 2 Blueprint &bull; Page 2 of 20</span>
       </div>
     </div>
   `;
@@ -579,7 +579,7 @@ function renderPage3() {
 
       <div class="page-footer">
         <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Thematic Chronology &bull; Page 3</span>
+        <span>Thematic Chronology &bull; Page 3 of 20</span>
       </div>
     </div>
   `;
@@ -633,7 +633,7 @@ function renderPage4() {
       </div>
       <div class="page-footer">
         <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
-        <span style="font-weight: 800; text-transform: uppercase;">Page 4 &bull; Master Cartographic Atlas (1947 Partition)</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 4 of 20 &bull; Master Cartographic Atlas (1947 Partition)</span>
       </div>
     </div>
   `;
@@ -687,13 +687,389 @@ function renderPage5() {
       </div>
       <div class="page-footer">
         <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
-        <span style="font-weight: 800; text-transform: uppercase;">Page 5 &bull; Master Cartographic Atlas (1948–49 War)</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 5 of 20 &bull; Master Cartographic Atlas (1948–49 War)</span>
       </div>
     </div>
   `;
 }
 
-// Spreads 1-12 (Pages 6 to 29)
+// =============================================================================
+// VERBATIM SPECIFICATION TARGETS, MEMORY VAULT STATS & LOWER-ABILITY SCAFFOLDING
+// =============================================================================
+const CME_LESSON_METADATA = {
+  1: {
+    specTarget:
+      'Conflicting interests and demands of Jews and Arabs within the British Mandate • Bombing of the King David Hotel (1946) • Decision to end the British Mandate and refer to the UN (Feb 1947).',
+    stats: [
+      { val: '91 DEAD', label: 'King David Hotel Bombing' },
+      { val: '100,000', label: 'British Troops Deployed' },
+      { val: '£40 MILLION', label: 'Annual Cost to Britain' },
+      { val: '15,000 / YR', label: '1939 White Paper Quota' },
+    ],
+    whyItMatters: [
+      'White Paper immigration limits trapped Holocaust survivors in Europe, triggering armed Aliyah Bet blockade running.',
+      "Irgun's King David Hotel bombing destroyed Britain's military command center and proved the Mandate was ungovernable.",
+      'Massive economic drain (£40m/yr) and US financial pressure forced Britain to surrender the Mandate to the UN in Feb 1947.',
+    ],
+  },
+  2: {
+    specTarget:
+      'UN Resolution 181 partition plan and conflicting reactions • Key events of the Arab-Israeli war (1948–49) • Significance of the Declaration of the State of Israel (14 May 1948).',
+    stats: [
+      { val: '55% vs 45%', label: 'UN Res 181 Land Allocation' },
+      { val: '5 ARMIES', label: 'Arab States Invaded (May 48)' },
+      { val: '107 DEAD', label: 'Deir Yassin Massacre (Apr 48)' },
+      { val: '79% OF LAND', label: 'Israeli Control by 1949' },
+    ],
+    whyItMatters: [
+      'Granted international legitimacy to a Jewish state, but sparked instant armed Palestinian Arab resistance.',
+      'Plan Dalet operations and Deir Yassin triggered mass Palestinian civilian panic and flight before the Arab armies arrived.',
+      'The 4-week June truce allowed Israel to import Czech arms, defeat divided Arab forces, and expand borders to 79%.',
+    ],
+  },
+  3: {
+    specTarget:
+      'Territorial changes and the 1949 Green Line • The refugee status of Palestinian Arabs (Al-Nakba) • Creation of the IDF and the Law of Return (1950) • US aid and relations with Egypt.',
+    stats: [
+      { val: '700,000+', label: 'Palestinian Refugees (Al-Nakba)' },
+      { val: '688,000', label: 'Immigrants Absorbed by 1951' },
+      { val: 'RES 194', label: 'UN Refugee Return Resolution' },
+      { val: '$135 MILLION', label: '1949 US Export-Import Loan' },
+    ],
+    whyItMatters: [
+      'Created a permanent stateless refugee population of 700,000 in squalid UNRWA camps, fueling fedayeen border raids.',
+      'Created the de facto "Green Line" borders with zero permanent peace treaties or Arab recognition of Israel.',
+      "The 1950 Law of Return doubled Israel's population, while US loans and mandatory conscription secured state survival.",
+    ],
+  },
+  4: {
+    specTarget:
+      'Nasser and Egypt’s leadership of the Arab world • Causes, course and consequences of the Suez Crisis (1956) • Superpower intervention and British imperial decline.',
+    stats: [
+      { val: '26 JULY 1956', label: 'Nasser Nationalises Suez' },
+      { val: '48 HOURS', label: 'IDF Reaches Suez (Op Kadesh)' },
+      { val: '100% BLUFF', label: 'US Threat Halts UK Attacks' },
+      { val: 'UNEF FORCE', label: 'UN Troops Deployed to Sinai' },
+    ],
+    whyItMatters: [
+      'The 1955 Czech arms deal and fedayeen raids established Nasser as the unchallenged hero of the Arab world.',
+      'Secret British, French, and Israeli collusion gave Israel a military pretext to destroy fedayeen bases and seize Sinai.',
+      "Eisenhower's financial threat forced humiliating Anglo-French withdrawal, proving the US was now the dominant Middle East power.",
+    ],
+  },
+  5: {
+    specTarget:
+      'Creation of the PLO (1964) and regional tension • Causes of the Six Day War: Straits of Tiran, UNEF expulsion, and Syrian border clashes • Operation Focus and events of 5–10 June 1967.',
+    stats: [
+      { val: '5–10 JUNE', label: '1967 War Duration (6 Days)' },
+      { val: '300+ JETS', label: 'Egyptian Air Force Destroyed' },
+      { val: '350% GAIN', label: 'Israeli Territory Tripled' },
+      { val: '100,000', label: 'Egyptian Troops in Sinai' },
+    ],
+    whyItMatters: [
+      'Border artillery duels over the Jordan River and Palestinian guerrilla raids pushed Israel and Syria to the brink.',
+      "False Soviet intelligence, Nasser's closure of the Straits of Tiran, and UNEF's eviction acted as a direct casus belli.",
+      'Pre-emptive air strikes destroyed Arab air forces on runways in 3 hours, enabling a crushing tri-front victory.',
+    ],
+  },
+  6: {
+    specTarget:
+      'Territorial changes: Sinai, Gaza, West Bank, East Jerusalem, Golan Heights • UN Resolution 242 and "Land for Peace" • The Khartoum Resolution • The War of Attrition (1969–70).',
+    stats: [
+      { val: 'RES 242', label: 'UN "Land for Peace" Formula' },
+      { val: '1 MILLION', label: 'Palestinians Under IDF Rule' },
+      { val: 'THREE NOs', label: 'Khartoum Arab Declaration' },
+      { val: '300,000', label: 'Second-Wave Refugees to Jordan' },
+    ],
+    whyItMatters: [
+      'Established the diplomatic benchmark of exchanging occupied land for peace, but ambiguous wording caused decades of stalemate.',
+      'Israel gained massive strategic depth and holy sites in Jerusalem, but inherited 1 million hostile Palestinian subjects.',
+      '300,000 new refugees destabilised Jordan, while Nasser launched a brutal 18-month artillery War of Attrition across the Suez.',
+    ],
+  },
+  7: {
+    specTarget:
+      'The rise of Palestinian resistance: PLO under Yasser Arafat and militant factions • PFLP aircraft hijackings and Dawson’s Field (1970) • Black September in Jordan • Munich Olympics massacre (1972) and Israeli retaliation.',
+    stats: [
+      { val: '11 ATHLETES', label: 'Killed at Munich Olympics' },
+      { val: '4 AIRLINERS', label: "Dawson's Field Skyjackings" },
+      { val: '1969', label: 'Arafat Takes Control of PLO' },
+      { val: '3,000+ DEAD', label: 'Black September in Jordan' },
+    ],
+    whyItMatters: [
+      'The 1968 Battle of Karameh transformed Arafat into a legend, shifting Palestinian leadership away from Arab states to the PLO.',
+      "PFLP hijackings triggered King Hussein's violent crackdown in Black September, expelling the PLO to Lebanon.",
+      'The Munich massacre put the Palestinian cause on prime-time global television and provoked Mossad\'s "Wrath of God" counter-assassinations.',
+    ],
+  },
+  8: {
+    specTarget:
+      'Causes, events and course of the Yom Kippur War (1973) • Operation Badr, Bar-Lev breach, and Golan battles • Superpower involvement (Airlifts & DEFCON 3) • The 1973 OPEC oil embargo and consequences.',
+    stats: [
+      { val: '6 OCT 1973', label: 'Yom Kippur Surprise Attack' },
+      { val: '80,000 MEN', label: 'Operation Badr Canal Crossing' },
+      { val: '400% HIKE', label: 'OPEC Global Oil Price Shock' },
+      { val: 'DEFCON 3', label: 'US Nuclear Alert vs Soviets' },
+    ],
+    whyItMatters: [
+      'Sadat launched the war not to destroy Israel, but to shatter the status quo and force the US to broker peace negotiations.',
+      'Water-cannons breached the Bar-Lev Line and SAM missiles shattered Israeli air invincibility, inflicting massive IDF casualties.',
+      'US arms resupply saved Israel, but the OPEC oil embargo quadrupled prices, proving the Arab oil weapon could humble Western economies.',
+    ],
+  },
+  9: {
+    specTarget:
+      'Diplomatic negotiations, 1974–77: role of Henry Kissinger and shuttle diplomacy • Reopening of the Suez Canal (1975) • Sadat’s historic visit to Jerusalem and Knesset address (Nov 1977).',
+    stats: [
+      { val: '30+ FLIGHTS', label: 'Kissinger Shuttle Diplomacy' },
+      { val: 'NOV 1977', label: 'Sadat Visits Jerusalem' },
+      { val: '1975', label: 'Suez Canal Reopened' },
+      { val: 'SINAI I & II', label: 'Disengagement Pacts Signed' },
+    ],
+    whyItMatters: [
+      "Kissinger's step-by-step diplomacy disengaged Egyptian and Israeli forces, removing the immediate threat of war.",
+      'Allowed international commerce to resume and bound Egyptian economic self-interest to continued peace with Israel.',
+      "Sadat's dramatic speech to the Knesset shattered 30 years of psychological taboo, demonstrating genuine Egyptian desire for peace.",
+    ],
+  },
+  10: {
+    specTarget:
+      "The Camp David Accords (1978): terms, negotiations, and Carter's role • The Treaty of Washington (1979): peace terms and US aid • Arab backlash, expulsion of Egypt, and Sadat’s assassination (1981).",
+    stats: [
+      { val: '13 DAYS', label: 'Carter at Camp David (1978)' },
+      { val: '26 MAR 1979', label: 'Treaty of Washington Signed' },
+      { val: '$3 BILLION', label: 'Annual US Aid to Egypt/Israel' },
+      { val: '6 OCT 1981', label: 'Sadat Assassinated in Cairo' },
+    ],
+    whyItMatters: [
+      'Carter locked Sadat and Begin together for 13 days, producing two frameworks: Sinai return and Palestinian autonomy.',
+      'Egypt became the first Arab state to recognise Israel, reclaiming Sinai in exchange for permanent peace and billions in US aid.',
+      'Arab states boycotted Egypt and suspended it from the Arab League; Islamic extremists assassinated Sadat on 6 Oct 1981.',
+    ],
+  },
+  11: {
+    specTarget:
+      'The Israeli invasion of Lebanon (1982): causes (Operation Peace for Galilee), siege of Beirut, and Sabra-Shatila massacres • Consequences: Kahan Commission and rise of Hezbollah • The First Intifada (1987–93): causes, stone-throwers, and international impact.',
+    stats: [
+      { val: '6 JUNE 1982', label: 'Invasion of Lebanon Begins' },
+      { val: '14,000', label: 'PLO Fighters Evacuated to Tunis' },
+      { val: '800–3,500', label: 'Sabra & Shatila Refugees Dead' },
+      { val: 'DEC 1987', label: 'First Intifada Uprising Starts' },
+    ],
+    whyItMatters: [
+      'Sharon sought to eradicate the PLO mini-state in Lebanon, driving all the way to Beirut and trapping Arafat.',
+      "The massacre of Palestinian refugees by Phalangist allies led to the Kahan Commission, Sharon's resignation, and the rise of Hezbollah.",
+      'Spontaneous grassroots stone-throwing protests by youth in Gaza and West Bank shattered Israeli control and generated global sympathy.',
+    ],
+  },
+  12: {
+    specTarget:
+      'End of Cold War, Gulf War (1991), and Madrid Conference • Secret Oslo negotiations and Oslo I Accord (1993) • Jordan-Israel Peace Treaty (1994) • Oslo II Accord (1995) dividing West Bank into Areas A, B, and C • Assassination of Yitzhak Rabin (Nov 1995).',
+    stats: [
+      { val: '13 SEPT 1993', label: 'Oslo I White House Handshake' },
+      { val: 'AREAS A, B, C', label: 'Oslo II West Bank Division' },
+      { val: 'OCT 1994', label: 'Jordan-Israel Peace Treaty' },
+      { val: '4 NOV 1995', label: 'Yitzhak Rabin Assassinated' },
+    ],
+    whyItMatters: [
+      'Soviet collapse, US victory in the Gulf War, and Madrid forced the PLO and Israel to negotiate mutual recognition.',
+      'Rabin and Arafat signed the Declaration of Principles, establishing Palestinian self-rule in Gaza and Jericho.',
+      'Fragmented the West Bank into disconnected enclaves (Areas A, B, C); Jewish extremist Yigal Amir assassinated Rabin in Nov 1995.',
+    ],
+  },
+};
+
+// 1-Page Master Specification Cheat Sheet (Pages 6 to 17)
+function renderSpecificationCheatSheet(spread, pageNum) {
+  const left = spread.left;
+  const right = spread.right;
+  const lessonIdx = pageNum - 5; // Page 6 is Lesson 1
+  const meta = CME_LESSON_METADATA[lessonIdx] || {
+    specTarget: spread.title,
+    stats: [
+      { val: 'KEY FACT 1', label: 'Crucial Statistic' },
+      { val: 'KEY FACT 2', label: 'Crucial Statistic' },
+      { val: 'KEY FACT 3', label: 'Crucial Statistic' },
+      { val: 'KEY FACT 4', label: 'Crucial Statistic' },
+    ],
+    whyItMatters: [
+      'Core causal factor for exam answers.',
+      'Crucial turning point in the conflict.',
+      'Long-term consequence for Middle East peace.',
+    ],
+  };
+
+  // Section 1: 3 Pillars (Side-by-Side 3 Columns)
+  const pillarsHtml = left.pillars
+    .map(
+      (p, idx) => `
+    <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 8px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="font-size: 9.6pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 2px;">
+          ${idx + 1}. ${p.title}
+        </div>
+        <div style="font-size: 8.0pt; font-weight: 700; color: #475569; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.2px;">
+          ${p.subtitle}
+        </div>
+        <ul style="margin: 0; padding-left: 13px; font-size: 8.8pt; color: #000; line-height: 1.34;">
+          ${p.bullets
+            .slice(0, 2)
+            .map((b) => `<li style="margin-bottom: 3px;">${formatMd(b)}</li>`)
+            .join('')}
+        </ul>
+      </div>
+      <div style="background: #f8fafc; border-top: 1px dashed #94a3b8; margin-top: 5px; padding-top: 4px; font-size: 8.2pt; line-height: 1.25; color: #0f172a;">
+        <strong>⚡ Why It Matters:</strong> ${meta.whyItMatters[idx] || ''}
+      </div>
+    </div>
+  `,
+    )
+    .join('');
+
+  // Section 2: 4-Step Causal Pathway Ribbon
+  const pathwayHtml = right.causalPathway
+    .map(
+      (p) => `
+    <div style="background: #ffffff; border: 1.2px solid #000; border-radius: 2px; padding: 4px 6px; font-size: 8.0pt; line-height: 1.24;">
+      <strong style="color: #000; display: block; font-size: 8.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 2px;">
+        ${p.stage}
+      </strong>
+      ${formatMd(p.text || p.desc || '')}
+    </div>
+  `,
+    )
+    .join('');
+
+  // Section 3 Left: Memory Vault Stats & 4 Plain-English Vocab Terms
+  const statsHtml = meta.stats
+    .map(
+      (s) => `
+    <div style="background: #f8fafc; border: 1.2px solid #000; border-radius: 2px; padding: 4px 5px; text-align: center;">
+      <div style="font-size: 10.5pt; font-weight: 900; color: #000; line-height: 1.1;">${s.val}</div>
+      <div style="font-size: 7.2pt; font-weight: 700; color: #334155; text-transform: uppercase; line-height: 1.1; margin-top: 2px;">${s.label}</div>
+    </div>
+  `,
+    )
+    .join('');
+
+  const vocabWords = right.masterWordBank.slice(0, 4);
+  const vocabHtml = vocabWords
+    .map(
+      (w) => `
+    <div style="font-size: 8.0pt; line-height: 1.25; color: #000;">
+      <span class="wb-pill" style="font-size: 7.8pt; padding: 0 4px; margin-right: 3px;">${w.term}</span> ${formatMd(w.def)}
+    </div>
+  `,
+    )
+    .join('');
+
+  // Section 3 Right: Primary Evidence & All 4 Key Figures
+  const source = left.archivalSource;
+  const figures = left.keyFigures.slice(0, 4);
+  const figuresHtml = figures
+    .map(
+      (f) => `
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px;">
+      <strong style="color: #000; display: block; font-size: 8.0pt;">${f.name}</strong>
+      <span style="font-size: 7.4pt; color: #334155; line-height: 1.18; display: block;">${f.role}</span>
+    </div>
+  `,
+    )
+    .join('');
+
+  return `
+    <div class="page" id="page_${pageNum}" data-page="${pageNum}">
+      <div>
+        <!-- 1. Header Strip -->
+        <div class="page-header" style="margin-bottom: 5px; padding-bottom: 3px;">
+          <div>
+            <span style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">${spread.topic}</span>
+            <h2 style="font-size: 13.0pt; font-weight: 900; color: #000; margin: 1px 0 0 0; line-height: 1.15; text-transform: uppercase;">${spread.title}</h2>
+          </div>
+          <div style="text-align: right; white-space: nowrap;">
+            <span style="font-size: 8.2pt; font-weight: 800; background: #000; color: #fff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">Specification Cheat Sheet</span>
+            <div style="font-size: 7.8pt; color: #475569; font-weight: 700; margin-top: 1px;">Lesson ${lessonIdx} Revision</div>
+          </div>
+        </div>
+
+        <!-- 2. Verbatim Specification Target Ribbon -->
+        <div style="background: #f1f5f9; border: 1.2px solid #000000; border-left: 4px solid #000000; padding: 4px 8px; font-size: 8.2pt; line-height: 1.26; margin-bottom: 7px;">
+          <strong>📋 OFFICIAL SPECIFICATION FOCUS:</strong> ${meta.specTarget}
+        </div>
+
+        <!-- 3. Three Core Specification Knowledge Pillars (Side-by-Side 3-Col Grid) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 7px;">
+          ${pillarsHtml}
+        </div>
+
+        <!-- 4. Causal Turning Points Sequence (4 Chronological Steps) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #f8fafc; margin-bottom: 7px;">
+          <div style="font-size: 8.2pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
+            <span>🔗 Causal Turning Points Sequence &bull; Narrative Account Flow (Q2 Scaffold)</span>
+            <span style="font-size: 7.8pt; color: #475569;">1. Trigger ➔ 2. Escalation ➔ 3. Action ➔ 4. Outcome</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px;">
+            ${pathwayHtml}
+          </div>
+        </div>
+
+        <!-- 5. Lower-Ability Support Split Container -->
+        <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 7px;">
+          <!-- Left: Memory Vault & Essential Vocab -->
+          <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>🧠 "Need To Know" Memory Vault</span>
+                <span style="font-size: 7.4pt; color: #475569;">Key Numbers &amp; Concepts</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 5px;">
+                ${statsHtml}
+              </div>
+            </div>
+            <div style="border-top: 1px dashed #cbd5e1; padding-top: 4px; display: flex; flex-direction: column; gap: 3px;">
+              ${vocabHtml}
+            </div>
+          </div>
+
+          <!-- Right: Archival Evidence & Protagonists -->
+          <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <!-- Primary Quote -->
+            <div style="background: #fafafa; border: 1px solid #cbd5e1; border-left: 3px solid #000; padding: 4px 7px; margin-bottom: 5px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+                <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000;">📜 PRIMARY EVIDENCE:</strong>
+                <span style="font-size: 7.4pt; color: #475569; font-weight: 700;">${source.citation}</span>
+              </div>
+              <div style="font-family: Georgia, serif; font-style: italic; font-size: 8.2pt; color: #000; line-height: 1.24; margin: 2px 0;">
+                "${source.quote}"
+              </div>
+              <div style="font-size: 7.4pt; color: #0f172a; line-height: 1.20;">
+                <strong>💡 What This Proves:</strong> ${source.significance}
+              </div>
+            </div>
+
+            <!-- Key Protagonists (4 Figures) -->
+            <div>
+              <div style="font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 3px;">
+                👥 Key Specification Figures
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                ${figuresHtml}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Page Footer -->
+      <div class="page-footer" style="padding-top: 2px; margin-top: auto;">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span>Page ${pageNum} of 20 &bull; Specification Cheat Sheet</span>
+      </div>
+    </div>
+  `;
+}
+
+// Spreads 1-12 (Legacy Double-Page Spread Viewers)
 function renderSpreadLeft(spread, pageNum) {
   const left = spread.left;
 
@@ -1373,10 +1749,123 @@ function renderPage36() {
 
       <div class="page-footer">
         <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Historiography &amp; Master Index &bull; Page 36 of 36</span>
+        <span>Historiography &amp; Master Index &bull; Page 20 of 20</span>
       </div>
     </div>
   `;
+}
+
+// Atlas Plate 3 (Page 18)
+function renderPage18() {
+  const mapUri = getImageDataUri('images/palestine_1967_six_day_war_map.png');
+  return `
+    <div class="page" id="page_18" data-page="18">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Six Day War (June 1967)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1967 Six Day War &amp; The Five Occupied Territories
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Atlas Plate 3
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #f8fafc; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1967 Six Day War Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Three Fronts of Blitzkrieg (5–10 June 1967)
+            </div>
+            <div>&bull; <strong>Pre-emptive Air Strike (Operation Focus):</strong> Destroyed 300+ Egyptian aircraft on runways in 3 hours; gained total air supremacy.</div>
+            <div>&bull; <strong>Sinai Front (Tal, Yoffe, Sharon):</strong> Smashed Egyptian defences at Abu Ageila; reached Suez Canal in 4 days, capturing 60,000 km² Sinai.</div>
+            <div>&bull; <strong>Central &amp; Northern Fronts:</strong> Paratroopers took Old City Jerusalem &amp; West Bank (7 June); stormed Golan escarpment (9–10 June).</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Diplomatic &amp; Demographic Consequences
+            </div>
+            <div>&bull; <strong>Territorial Quadrupling:</strong> Israel controlled Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and Syrian Golan Heights.</div>
+            <div>&bull; <strong>UN Resolution 242 (Nov 1967):</strong> "Land for Peace" formula established; withdrawal from territories in exchange for Arab recognition.</div>
+            <div>&bull; <strong>Khartoum Summit (Sept 1967):</strong> Arab League declared "Three No's": No peace, No recognition, No negotiations with Israel.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 18 of 20 &bull; Master Cartographic Atlas (1967 Six Day War)</span>
+      </div>
+    </div>
+  `;
+}
+
+// Atlas Plate 4 (Page 19)
+function renderPage19() {
+  const mapUri = getImageDataUri('images/cme_oslo_areas_map.png');
+  return `
+    <div class="page" id="page_19" data-page="19">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Oslo Accords (1993–1995)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The Oslo II Administrative Division (Areas A, B, and C)
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Atlas Plate 4
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1995 Oslo II Areas A B C Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Three Administrative Zones (Oslo II, 1995)
+            </div>
+            <div>&bull; <strong>Area A (~3% of Land):</strong> Full Palestinian National Authority (PNA) civil and security control. Comprised 8 major urban centres (Ramallah, Nablus, Jenin, Jericho, etc.).</div>
+            <div>&bull; <strong>Area B (~25% of Land):</strong> PNA civil control with joint Israeli military security control. Comprised ~450 Palestinian villages.</div>
+            <div>&bull; <strong>Area C (~72% of Land):</strong> Complete Israeli civil and military control. Encompassed all Israeli settlements, military bases, bypass roads, and Jordan Valley.</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Structural Flaws &amp; Roadblocks to Peace
+            </div>
+            <div>&bull; <strong>Fragmented "Swiss-Cheese" Enclaves:</strong> Area A islands separated by Israeli-controlled Area C roads; Palestinian daily movement choked by military checkpoints.</div>
+            <div>&bull; <strong>Deferred Final Status Questions:</strong> Oslo postponed the 4 most volatile issues: Jerusalem's sovereignty, borders, 1948 refugees' right of return, and Jewish settlements.</div>
+            <div>&bull; <strong>Extremist Backlash:</strong> Hamas suicide bombings (Dizengoff bus) and the assassination of Prime Minister Yitzhak Rabin by Yigal Amir (Nov 1995) derailed the peace process.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 19 of 20 &bull; Master Cartographic Atlas (1995 Oslo Accords)</span>
+      </div>
+    </div>
+  `;
+}
+
+// Historiography & Master Index (Page 20)
+function renderPage20() {
+  return renderPage36();
 }
 
 // Backwards compatibility functions
@@ -1397,6 +1886,10 @@ module.exports = {
   renderPage3,
   renderPage4,
   renderPage5,
+  renderSpecificationCheatSheet,
+  renderPage18,
+  renderPage19,
+  renderPage20,
   renderPage14,
   renderPage15,
   renderPage24,

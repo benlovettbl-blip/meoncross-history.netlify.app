@@ -3,20 +3,20 @@
  *
  * Compiles the complete, print-perfect Pearson Edexcel GCSE (9–1) History Paper 2 (Period Study):
  * "Option P5: Conflict in the Middle East, 1945–1995 (1HI0/P5)"
- * Complete Revision Guide & Cartographic Specification Masterclass (32-Page Master Volume).
+ * Complete Revision Guide & Cartographic Specification Masterclass (20-Page Master Volume).
  *
- * Commercial Saddle-Stitch Format (32 Pages = 8 folded A3 sheets, 0 blank pages, 0 overflows):
+ * Commercial Saddle-Stitch Format (20 Pages = 5 folded A3 sheets, 0 blank pages, 0 overflows):
  * - Page 1: Official Examination Cover with Candidate Box, Photos & Verbatim Spec Checklist
  * - Pages 2 & 3: Period Study Blueprint & 50-Year Master Chronology Matrix (1945–1995)
- * - Pages 4 & 5: Master Cartographic Atlas 1 — 1947 UN Partition (Res 181) vs. 1949 Armistice Green Line
- * - Pages 6–29: 12 Pure Double-Page Revision Spreads (100% core knowledge, causal pathways & GCSE Word Banks)
- * - Pages 30 & 31: Master Cartographic Atlas 2 — 1967 Six Day War (Occupied Territories) vs. 1995 Oslo West Bank
- * - Page 32: Master Historiographical Debates (Traditional vs New Historians) & Final Revision Checklist
+ * - Pages 4 & 5: Master Cartographic Atlas 1 — 1947 UN Partition (Res 181) & 1948–49 War
+ * - Pages 6–17: 12 Single-Page Specification Cheat Sheets (Lessons 1 to 12)
+ * - Pages 18 & 19: Master Cartographic Atlas 2 — 1967 Six Day War (Occupied Territories) & 1995 Oslo II
+ * - Page 20: Master Historiographical Debates (Traditional vs New Historians) & Final Revision Checklist
  *
  * Strict Monochrome / Black & White Styling:
  * - Designed for optimal high-contrast professional printing with zero color reliance.
- * - Enriched with 100% of the facts, metrics, and demographics from the official Pearson Revision Guide.
- * - Zero exam questions, zero model answers.
+ * - 1-Page non-repetitive Specification Cheat Sheets optimized for lower-ability pupils.
+ * - Memory Vault numerical stats, 4-step dual-coded causal sequence ribbons, and plain-English vocabulary.
  */
 
 const fs = require('fs');
@@ -31,15 +31,10 @@ const {
   renderPage3,
   renderPage4,
   renderPage5,
-  renderPage14,
-  renderPage15,
-  renderPage24,
-  renderPage25,
-  renderPage34,
-  renderPage35,
-  renderPage36,
-  renderSpreadLeft,
-  renderSpreadRight,
+  renderSpecificationCheatSheet,
+  renderPage18,
+  renderPage19,
+  renderPage20,
 } = require('./visual_guides/cme/cme_renderers.cjs');
 
 const kt1Spreads = require('./visual_guides/cme/cme_spreads_kt1.cjs');
@@ -112,44 +107,21 @@ function generateFullHTML() {
   pagesHtml += renderPage4();
   pagesHtml += renderPage5();
 
-  // Pages 6–13: Key Topic 1 Spreads (4 Spreads = 8 Pages)
-  kt1Spreads.forEach((spread, idx) => {
-    const leftPageNum = 6 + idx * 2;
-    const rightPageNum = leftPageNum + 1;
-    pagesHtml += renderSpreadLeft(spread, leftPageNum);
-    pagesHtml += renderSpreadRight(spread, rightPageNum);
+  // Pages 6–17: 12 Single-Page Specification Cheat Sheets (Lessons 1 to 12)
+  const allSpreads = [...kt1Spreads, ...kt2Spreads, ...kt3Spreads];
+  allSpreads.forEach((spread, idx) => {
+    const pageNum = 6 + idx;
+    pagesHtml += renderSpecificationCheatSheet(spread, pageNum);
   });
 
-  // Pages 14 & 15: Master Cartographic Atlas 2 (1967 Six Day War vs. 1973 Yom Kippur War)
-  pagesHtml += renderPage14();
-  pagesHtml += renderPage15();
+  // Page 18: Master Cartographic Atlas Plate 3 (1967 Six Day War & Occupied Territories)
+  pagesHtml += renderPage18();
 
-  // Pages 16–23: Key Topic 2 Spreads (4 Spreads = 8 Pages)
-  kt2Spreads.forEach((spread, idx) => {
-    const leftPageNum = 16 + idx * 2;
-    const rightPageNum = leftPageNum + 1;
-    pagesHtml += renderSpreadLeft(spread, leftPageNum);
-    pagesHtml += renderSpreadRight(spread, rightPageNum);
-  });
+  // Page 19: Master Cartographic Atlas Plate 4 (1995 Oslo II Administrative Division)
+  pagesHtml += renderPage19();
 
-  // Pages 24 & 25: Master Cartographic Atlas 3 (1982 Lebanon War vs. 1995 Oslo II)
-  pagesHtml += renderPage24();
-  pagesHtml += renderPage25();
-
-  // Pages 26–33: Key Topic 3 Spreads (4 Spreads = 8 Pages)
-  kt3Spreads.forEach((spread, idx) => {
-    const leftPageNum = 26 + idx * 2;
-    const rightPageNum = leftPageNum + 1;
-    pagesHtml += renderSpreadLeft(spread, leftPageNum);
-    pagesHtml += renderSpreadRight(spread, rightPageNum);
-  });
-
-  // Pages 34 & 35: Master Cartographic Atlas 4 (1949 Green Line vs. Regional Geopolitics)
-  pagesHtml += renderPage34();
-  pagesHtml += renderPage35();
-
-  // Page 36: Master Historiographical Debates & Final Revision Checklist
-  pagesHtml += renderPage36();
+  // Page 20: Master Historiographical Debates & Final Revision Checklist
+  pagesHtml += renderPage20();
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -174,7 +146,7 @@ function generateFullHTML() {
 // =============================================================================
 async function run() {
   console.log('====================================================');
-  console.log('🚀 COMPILING CME REVISION GUIDE (36 PAGES, CARTOGRAPHIC ATLAS, MONOCHROME)');
+  console.log('🚀 COMPILING CME REVISION GUIDE (20 PAGES, SPECIFICATION CHEAT SHEETS, MONOCHROME)');
   console.log('====================================================');
 
   const html = generateFullHTML();
@@ -193,7 +165,7 @@ async function run() {
   await page.goto(pathToFileURL(HTML_OUT_PUBLIC).href, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 
-  // Automated Overflow Check (Strict 1123px Limit across all 36 pages)
+  // Automated Overflow Check (Strict 1123px Limit across all 20 pages)
   const overflowReports = await page.evaluate(() => {
     const pages = Array.from(document.querySelectorAll('.page'));
     const overflows = [];
@@ -223,7 +195,7 @@ async function run() {
     throw new Error(`PDF Generation halted due to page overflow:\n${details}`);
   }
   console.log(
-    '✅ Automated Overflow Check: All 36 pages fit cleanly within 1123px bounds (0 overflows)!',
+    '✅ Automated Overflow Check: All 20 pages fit cleanly within 1123px bounds (0 overflows)!',
   );
 
   // Export PDF to unit directory
@@ -268,7 +240,9 @@ async function run() {
 
   await browser.close();
   console.log('\n====================================================');
-  console.log('🎉 CME 36-PAGE REVISION GUIDE GENERATION COMPLETE (0 OVERFLOWS, 4 MAP ATLASES)');
+  console.log(
+    '🎉 CME 20-PAGE SPECIFICATION REVISION GUIDE GENERATION COMPLETE (0 OVERFLOWS, 4 MAP ATLASES)',
+  );
   console.log('====================================================');
 }
 

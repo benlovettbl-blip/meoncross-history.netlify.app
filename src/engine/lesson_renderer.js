@@ -1847,7 +1847,7 @@ export function renderLesson(lesson) {
               }
               ${
                 unitId === 'cme_new' && currentIndex >= 0
-                  ? `<a href="/units/cme_new/visual_revision_guide.html#page_${4 + currentIndex * 2}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #f0f9ff; color: #0369a1; border: 1.5px solid #bae6fd; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's visual revision spread in the Masterclass Guide"><i class="fa-solid fa-book-open"></i> Revision Masterclass (Spread ${currentIndex + 1})</a>`
+                  ? `<a href="/units/cme_new/visual_revision_guide.html#page_${6 + currentIndex}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #f0f9ff; color: #0369a1; border: 1.5px solid #bae6fd; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's 1-page Specification Cheat Sheet in the Revision Guide"><i class="fa-solid fa-file-lines"></i> Specification Cheat Sheet (Page ${6 + currentIndex})</a>`
                   : ''
               }
             `
