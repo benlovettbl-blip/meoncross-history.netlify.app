@@ -266,13 +266,7 @@ export function openTaskWhiteboard() {
     });
   }
 
-  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
-    addQuestionCard(
-      activeLesson.pair_share.qNum,
-      activeLesson.pair_share.prompt,
-      'Discuss in pairs.',
-    );
-  }
+  // Suppressed Think-Pair-Share
 
   if (activeLesson.tasks) {
     activeLesson.tasks.forEach((task) => {
@@ -5064,24 +5058,13 @@ export function openGuidedReadingModal(lessonIndex) {
               : ''
           }
 
-          <!-- Think-Pair-Share Box -->
-          <div style="background: #fdf2f8; border: 1.5px solid #fbcfe8; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; align-items: center; gap: 8px; color: #be185d; font-weight: 700; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.5px;">
-              <i class="fa-solid fa-users"></i> Think-Pair-Share Challenge
+          <!-- Core Hinge Question Box -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #1e3a8a; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #1e3a8a; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fa-solid fa-compass"></i> Hinge Discussion Question
             </div>
-            <div style="font-size: 0.88rem; color: #831843; line-height: 1.5;">
+            <div style="font-size: 0.9rem; color: #0f172a; line-height: 1.5; font-weight: 500;">
               ${readingData.hinge_question || 'Discuss the core argument made by the author in this primary extract.'}
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 4px;">
-              <div style="background: white; border: 1px solid #fbcfe8; border-radius: 4px; padding: 6px 4px; text-align: center; font-size: 0.75rem; color: #9d174d; font-weight: 600;">
-                <i class="fa-regular fa-lightbulb"></i> 1m Think
-              </div>
-              <div style="background: white; border: 1px solid #fbcfe8; border-radius: 4px; padding: 6px 4px; text-align: center; font-size: 0.75rem; color: #9d174d; font-weight: 600;">
-                <i class="fa-solid fa-user-group"></i> 2m Pair
-              </div>
-              <div style="background: white; border: 1px solid #fbcfe8; border-radius: 4px; padding: 6px 4px; text-align: center; font-size: 0.75rem; color: #9d174d; font-weight: 600;">
-                <i class="fa-solid fa-bullhorn"></i> 2m Share
-              </div>
             </div>
           </div>
 

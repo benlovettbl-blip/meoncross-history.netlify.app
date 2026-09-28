@@ -4286,19 +4286,6 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'think_pair_share') {
-            const tpsPrefix = task.qNum ? `Q${task.qNum}. ` : '';
-            extrasHtml += `<div style="margin-bottom: 20px; background: #ecfdf5; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
-                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> ${tpsPrefix}Think-Pair-Share</h4>
-                 <p style="font-weight:bold; color:#0f172a; font-size:1.1rem;">${task.text || task.question}</p>
-                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:15px;">
-                   <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-brain"></i> My Thoughts</div>
-                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="Jot down your initial ideas..."></textarea>
-                   </div>
-                   <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-comments"></i> Partner's Thoughts</div>
-                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="What did your partner add?..."></textarea>
-                   </div></div></div>`;
             return;
           }
           if (task.type === 'drawing') {
@@ -5574,7 +5561,7 @@ export function renderLesson(lesson) {
     }
   }
 
-  if (lesson.pair_share) {
+  if (false && lesson.pair_share) {
     const ps = lesson.pair_share;
     const thinkText = ps.think || 'Consider the key historical factors discussed in this lesson.';
     const pairText =

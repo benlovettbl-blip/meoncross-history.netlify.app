@@ -1313,13 +1313,7 @@ function openTaskWhiteboard() {
     });
   }
 
-  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
-    addQuestionCard(
-      activeLesson.pair_share.qNum,
-      activeLesson.pair_share.prompt,
-      'Discuss in pairs.',
-    );
-  }
+  // Suppressed Think-Pair-Share
 
   if (activeLesson.tasks) {
     activeLesson.tasks.forEach((task) => {
