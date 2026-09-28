@@ -21327,53 +21327,48 @@
               }
             ]
           },
-          "do_now": {
-            "type": "questions",
-            "title": "Spaced Retrieval Do Now: Foundations of Medicine",
-            "instructions": "Answer the four recall questions below from memory to check your grounding in medieval medical concepts.",
-            "items": [
-              {
-                "question": "Which ancient civilization first introduced the idea of natural, humoural balance?",
-                "answer": "The Ancient Greeks",
-                "options": [
-                  "The Ancient Greeks",
-                  "The Romans",
-                  "The Anglo-Saxons",
-                  "The Normans"
-                ]
-              },
-              {
-                "question": "Name the ancient Roman physician who created the Theory of Opposites.",
-                "answer": "Claudius Galen",
-                "options": [
-                  "Hippocrates",
-                  "Aristotle",
-                  "Roger Bacon",
-                  "Claudius Galen"
-                ]
-              },
-              {
-                "question": "What four bodily fluids did the humoural theory claim dictated human health?",
-                "answer": "Blood, Phlegm, Yellow Bile, Black Bile",
-                "options": [
-                  "Blood, Phlegm, Water, Bile",
-                  "Blood, Phlegm, Yellow Bile, Black Bile",
-                  "Blood, Choler, Urine, Phlegm",
-                  "Blood, Saliva, Sweat, Bile"
-                ]
-              },
-              {
-                "question": "What term was used for corrupt, foul-smelling air believed to cause disease?",
-                "answer": "Miasma",
-                "options": [
-                  "Phlebotomy",
-                  "Teleology",
-                  "Miasma",
-                  "Articella"
-                ]
-              }
-            ]
-          },
+          "do_now": [
+            {
+              "q": "Which ancient Greek physician is known as the ‘Father of Medicine’?",
+              "a": "Hippocrates of Kos"
+            },
+            {
+              "q": "In which century BC did Hippocrates live and teach?",
+              "a": "5th Century BC (c. 460–370 BC)"
+            },
+            {
+              "q": "Name the four bodily humours identified by Hippocrates.",
+              "a": "Blood, Phlegm, Yellow Bile, Black Bile"
+            },
+            {
+              "q": "What term describes Hippocrates’ method of observing symptoms at the bedside?",
+              "a": "Clinical observation"
+            },
+            {
+              "q": "Which ancient Roman physician expanded this into the Theory of Opposites?",
+              "a": "Claudius Galen"
+            },
+            {
+              "q": "In which century AD did Galen live and practise in Rome?",
+              "a": "2nd Century AD (c. 129–216 AD)"
+            },
+            {
+              "q": "Why did Galen dissect pigs and apes instead of human corpses?",
+              "a": "Human dissection was forbidden by Roman law"
+            },
+            {
+              "q": "What Latin term refers to foul-smelling air believed to cause epidemic disease?",
+              "a": "Miasma"
+            },
+            {
+              "q": "What was the ethical pledge written by Hippocrates taken by doctors?",
+              "a": "The Hippocratic Oath"
+            },
+            {
+              "q": "What term describes explaining natural events through God or spirits?",
+              "a": "Supernatural explanation"
+            }
+          ],
           "narrative_blocks": [
             {
               "act": 1,
@@ -21606,7 +21601,28 @@
               "title": "Diagram: The Church Monopolistic Scriptorium",
               "instruction": "Sketch a medieval monk copying an ancient Latin manuscript in a monastery scriptorium, labeling the quill, the Latin parchment, and the Church seal of approval."
             }
-          ]
+          ],
+          "gcse_task": {
+            "title": "Edexcel GCSE (9–1) Paper 1 Section B Practice: Q3 & Q4",
+            "tasks": [
+              {
+                "type": "written",
+                "tariff": "Q3: Explain one way in which ideas were similar [4 marks]",
+                "text": "Explain one way in which ideas about the cause of disease in the Medieval period (c1250–c1500) were similar to ideas in the Renaissance period (c1500–c1700). [4 marks]",
+                "model": "One way in which ideas about the causes of disease were similar in both periods was the enduring belief in **miasma** (poisonous or corrupted air). In the Medieval period, during epidemics like the Black Death (1348), people believed that foul-smelling vapors arising from decaying filth, swamps, and rotting corpses entered the body and caused sickness. Similarly, during the Renaissance, ordinary citizens and physicians continued to blame miasma for outbreaks like the Great Plague of 1665, carrying sweet-smelling pomanders and smoking tobacco to ward off bad air. **This similarity persisted because** although the Renaissance saw major breakthroughs in anatomy and scientific communication, scientists still had no understanding of germs or microorganisms as disease pathogens. Without knowledge of bacteria, bad smells remained the most rational explanation for why disease spread rapidly in crowded urban environments."
+              },
+              {
+                "type": "written",
+                "tariff": "Q4: Explain why the Catholic Church had such influence [12 marks]",
+                "text": "Explain why the Catholic Church had such a major influence on ideas about the causes of disease in the period c1250–c1500. [12 marks]",
+                "stimulus": [
+                  "Monastic scriptoria and book-copying",
+                  "The imprisonment of Roger Bacon (1277)"
+                ],
+                "model": "One major reason why the Catholic Church held such vast influence over ideas about disease causation was its institutional monopoly on education, literacy, and the reproduction of books. In the Middle Ages, books were hand-copied exclusively by Catholic monks in monastic scriptoria. The Church actively censored any ideas that contradicted Scripture, ensuring that classical medical texts were only preserved if they aligned with Christian doctrine. Because Claudius Galen argued that the human body was perfectly designed by a single Creator, the Church adopted his writings as sacred medical canon. Medical students in medieval universities—which were run by clergy—spent years memorizing Galen and Hippocrates rather than observing actual patients, reinforcing ecclesiastical control over medical thought.<br><br>Furthermore, the Church possessed the ecclesiastical and legal authority to punish and suppress intellectual dissent. Clerics taught that disease was sent directly by God as divine retribution (punishment) for human sin, or as a spiritual test of faith. Questioning this supernatural explanation or challenging Galenic dogma was treated as heresy. For example, in 1277 the Franciscan friar Roger Bacon was imprisoned by church authorities for advocating empirical scientific experimentation and suggesting that doctors should investigate nature through observation rather than unquestioning adherence to ancient books. The threat of imprisonment or excommunication effectively terrified scholars and stifled independent medical enquiry for centuries.<br><br>Finally, the Church controlled the physical institutions of society, including hospitals, universities, and social life. Ordinary people attended mass weekly, where priests reinforced the message that epidemics like the Black Death were caused by God’s wrath or planetary conjunctions arranged by God. Monastic hospitals were founded on the principle of ‘care not cure’, prioritizing prayer, confession, and the salvation of the patient’s soul over medical diagnosis or physical remedies. Consequently, the pervasive spiritual worldview promoted by the Church made supernatural explanations of illness virtually impossible for medieval people to challenge."
+              }
+            ]
+          }
         },
         {
           "id": "lesson_1_2",
@@ -21705,53 +21721,48 @@
               }
             ]
           },
-          "do_now": {
-            "type": "questions",
-            "title": "Spaced Retrieval Do Now: Religion & Authority",
-            "instructions": "Answer the four recall questions below based on your prior learning in Lesson 1.1.",
-            "items": [
-              {
-                "question": "Why did the medieval Catholic Church actively promote the medical texts of Galen?",
-                "answer": "Galen taught that the body was created with purpose by a single divine Creator.",
-                "options": [
-                  "Galen taught that the body was created with purpose by a single divine Creator.",
-                  "Galen proved that prayer alone could cure disease.",
-                  "Galen’s treatises were written in medieval English.",
-                  "Galen was a Christian martyr in Rome."
-                ]
-              },
-              {
-                "question": "What punishment did the English friar Roger Bacon receive in 1277 for advocating experiments?",
-                "answer": "He was imprisoned by the Church for heresy.",
-                "options": [
-                  "He was made physician to the King.",
-                  "He was imprisoned by the Church for heresy.",
-                  "He was awarded a royal pension.",
-                  "He was exiled to a remote Scottish monastery."
-                ]
-              },
-              {
-                "question": "Where were leprosy sufferers banished to in medieval society?",
-                "answer": "Lazar houses outside town boundaries.",
-                "options": [
-                  "University medical wards.",
-                  "Royal palaces in Westminster.",
-                  "Monastic infirmaries in London.",
-                  "Lazar houses outside town boundaries."
-                ]
-              },
-              {
-                "question": "What did people believe caused the Black Death in March 1345?",
-                "answer": "A conjunction of Saturn, Jupiter, and Mars in Aquarius.",
-                "options": [
-                  "A severe drought across northern Europe.",
-                  "The arrival of Spanish explorers.",
-                  "A conjunction of Saturn, Jupiter, and Mars in Aquarius.",
-                  "An outbreak of bacteria in Paris water wells."
-                ]
-              }
-            ]
-          },
+          "do_now": [
+            {
+              "q": "Why did the medieval Catholic Church support Galen’s medical writings?",
+              "a": "Galen taught the body was designed by a single Creator (teleology)"
+            },
+            {
+              "q": "Name the Franciscan friar imprisoned in 1277 for advocating scientific experimentation.",
+              "a": "Roger Bacon"
+            },
+            {
+              "q": "Where were all medical books hand-copied during the Middle Ages?",
+              "a": "Monastic scriptoria (by monks)"
+            },
+            {
+              "q": "What was considered the primary supernatural cause of disease in medieval Europe?",
+              "a": "God’s punishment for human sin"
+            },
+            {
+              "q": "What special hospitals were built outside town walls to isolate lepers?",
+              "a": "Lazar houses"
+            },
+            {
+              "q": "What astrological event in 1345 was blamed for corrupting the atmosphere?",
+              "a": "Conjunction of Mars, Jupiter, and Saturn in Aquarius"
+            },
+            {
+              "q": "Which Greek doctor originated the Theory of the Four Humours?",
+              "a": "Hippocrates"
+            },
+            {
+              "q": "Which Roman doctor wrote treatises that became unquestioned Church dogma?",
+              "a": "Claudius Galen"
+            },
+            {
+              "q": "What Latin term was used for religious beliefs that contradicted Church doctrine?",
+              "a": "Heresy"
+            },
+            {
+              "q": "Name the English pilgrimage destination famous for the shrine of Thomas Becket.",
+              "a": "Canterbury Cathedral"
+            }
+          ],
           "narrative_blocks": [
             {
               "act": 1,
@@ -21987,7 +21998,28 @@
               "title": "Diagram: The Four Humours Cross",
               "instruction": "Sketch a diagram of the Four Humours cross, labeling Blood, Phlegm, Yellow Bile, and Black Bile alongside their corresponding seasons and qualities."
             }
-          ]
+          ],
+          "gcse_task": {
+            "title": "Edexcel GCSE (9–1) Paper 1 Section B Practice: Q3 & Q4",
+            "tasks": [
+              {
+                "type": "written",
+                "tariff": "Q3: Explain one way diagnosis was similar [4 marks]",
+                "text": "Explain one way in which diagnosis of disease in the Medieval period was similar to diagnosis in the Renaissance. [4 marks]",
+                "model": "One way in which diagnosis was similar was the continued reliance on **humoural analysis and urine inspection (uroscopy)**. In the Medieval period, physicians used a urine wheel (matula flask) to inspect the color, smell, and sediment of a patient’s urine, alongside checking astrology charts to determine humoural imbalance. Similarly, in the Renaissance, ordinary physicians continued to examine urine and check the balance of the four humours to diagnose disease. This persisted because traditional Galenic diagnosis was deeply entrenched in medical education, and new anatomical discoveries had not yet produced alternative diagnostic techniques."
+              },
+              {
+                "type": "written",
+                "tariff": "Q4: Explain why Galen’s ideas continued to be believed [12 marks]",
+                "text": "Explain why Galen’s medical ideas continued to be believed in the period c1250–c1500. [12 marks]",
+                "stimulus": [
+                  "The Theory of Opposites",
+                  "The Christian Church"
+                ],
+                "model": "One primary reason Galen’s ideas continued to be believed was that his medical framework appeared entirely logical and comprehensive to medieval minds. Galen had expanded Hippocrates’ Four Humours into the **Theory of Opposites**, which offered a practical, common-sense explanation for illness and treatment: if a patient had a cold, wet phlegmatic fever, they were treated with hot, dry remedies like pepper or mustard. This gave both physicians and ordinary people a systematic, reassuring framework for understanding illness, even when treatments failed to cure severe epidemics.<br><br>Furthermore, Galen’s medical writings were actively endorsed and fiercely protected by the medieval Catholic Church. Galen believed that every part of the human body was purposefully crafted by a single divine Creator (teleology), which aligned perfectly with Christian theological doctrine. Because the Church controlled the universities and monastic scriptoria, it declared Galen’s texts infallible. University medical faculties taught Galen as unchallengeable truth; professors sat in an elevated cathedra lecturing from Galen while barber-surgeons dissected animals or criminals. If an anatomical corpse contradicted Galen’s descriptions, professors blamed the imperfection of the human cadaver rather than Galen.<br><br>Finally, there was a total absence of alternative scientific explanations or empirical dissection. Human dissection was strictly restricted by religious authorities, and when dissections did occur, they were demonstrations to confirm Galen rather than investigations to discover new anatomy. Hand-copying errors in monastic manuscripts further locked errors in place. Without microscopes, physiological instruments, or the freedom to conduct empirical research, medieval society had neither the tools nor the intellectual freedom to challenge Galen’s 1,300-year-old authority."
+              }
+            ]
+          }
         },
         {
           "id": "lesson_1_3",
@@ -22086,53 +22118,48 @@
               }
             ]
           },
-          "do_now": {
-            "type": "questions",
-            "title": "Spaced Retrieval Do Now: Humours & Diagnosis",
-            "instructions": "Answer the four recall questions below from memory to test your knowledge of Lesson 1.2.",
-            "items": [
-              {
-                "question": "What Greek physician originally created the Theory of the Four Humours?",
-                "answer": "Hippocrates of Kos",
-                "options": [
-                  "Hippocrates of Kos",
-                  "Claudius Galen",
-                  "Roger Bacon",
-                  "Thomas Sydenham"
-                ]
-              },
-              {
-                "question": "Under Galen’s Theory of Opposites, how would a feverish patient be treated?",
-                "answer": "With cold cucumber, cold baths, and bloodletting.",
-                "options": [
-                  "With hot chilli peppers and hot wine.",
-                  "With cold cucumber, cold baths, and bloodletting.",
-                  "With heavy wool blankets near a fire.",
-                  "With animalcules and microscopic antibiotics."
-                ]
-              },
-              {
-                "question": "What did physicians examine in a glass matula to deduce humoural balance?",
-                "answer": "Patient urine against a 20-shade colour wheel.",
-                "options": [
-                  "Tissue cells under a microscope.",
-                  "Blood platelets and white cells.",
-                  "Patient urine against a 20-shade colour wheel.",
-                  "Stomach bacteria cultures."
-                ]
-              },
-              {
-                "question": "What did people believe corrupt miasma did upon inhalation?",
-                "answer": "It directly poisoned the blood and corrupted internal humours.",
-                "options": [
-                  "It cured smallpox and fevers.",
-                  "It balanced phlegm and choler naturally.",
-                  "It caused lungs to produce excess yellow bile.",
-                  "It directly poisoned the blood and corrupted internal humours."
-                ]
-              }
-            ]
-          },
+          "do_now": [
+            {
+              "q": "Which bodily humour was associated with spring, air, and a warm, moist temperament?",
+              "a": "Blood (Sanguine)"
+            },
+            {
+              "q": "Which bodily humour was associated with winter, water, and a cold, moist temperament?",
+              "a": "Phlegm (Phlegmatic)"
+            },
+            {
+              "q": "According to Galen’s Theory of Opposites, how should a cold, moist fever be treated?",
+              "a": "With hot, dry remedies (e.g. pepper, hot wine)"
+            },
+            {
+              "q": "What glass flask did medieval physicians hold up to the light to examine urine?",
+              "a": "The matula"
+            },
+            {
+              "q": "What chart matched urine colour, sediment, and clarity against 20 shades?",
+              "a": "The urine wheel (uroscopy chart)"
+            },
+            {
+              "q": "What pocket handbook containing medical and astrological charts did physicians carry?",
+              "a": "The Vademecum"
+            },
+            {
+              "q": "What diagram showed which star signs governed different parts of the human body?",
+              "a": "The Zodiac Man (Homo Signorum)"
+            },
+            {
+              "q": "Why did physicians check the moon’s position before performing surgery or bleeding?",
+              "a": "To avoid operating on body parts ruled by unfavourable zodiac signs"
+            },
+            {
+              "q": "Who controlled all medical learning and universities in medieval England?",
+              "a": "The Catholic Church"
+            },
+            {
+              "q": "What Latin medical curriculum was read by university students without patient contact?",
+              "a": "The Articella"
+            }
+          ],
           "narrative_blocks": [
             {
               "act": 1,
@@ -22365,7 +22392,28 @@
               "title": "Diagram: Medieval Phlebotomy Tools",
               "instruction": "Sketch the tools used during bloodletting: a lancet fleam, a cupping glass over a flame, and a medicinal leech in a jar."
             }
-          ]
+          ],
+          "gcse_task": {
+            "title": "Edexcel GCSE (9–1) Paper 1 Section B Practice: Q3 & Q4",
+            "tasks": [
+              {
+                "type": "written",
+                "tariff": "Q3: Explain one way treatments were different [4 marks]",
+                "text": "Explain one way in which treatments for disease in the Medieval period were different from treatments in the Modern period. [4 marks]",
+                "model": "One way in which treatments were different was the medieval reliance on **bloodletting (phlebotomy) and purging to restore humoural balance**, compared to modern targeted pharmaceuticals. In the Medieval period, doctors used leeches, vein-slitting, and laxatives to evacuate excess humours, believing this restored natural health. In contrast, modern medicine uses synthetic antibiotics, antivirals, and chemotherapy specifically designed to destroy microscopic pathogens or diseased cells without draining the patient’s blood. This difference exists because modern science understands that bacteria and viruses cause disease, proving that bloodletting was scientifically useless and often fatal."
+              },
+              {
+                "type": "written",
+                "tariff": "Q4: Explain why treatments focused on humoural balance [12 marks]",
+                "text": "Explain why medieval treatments for disease focused primarily on restoring humoural balance in the period c1250–c1500. [12 marks]",
+                "stimulus": [
+                  "Bloodletting (phlebotomy) and purging",
+                  "The Regimen Sanitatis"
+                ],
+                "model": "One major reason medieval treatments focused on humoural balance was the universal acceptance of the Hippocratic-Galenic medical doctrine. Hippocrates argued that the body contained four vital humours—blood, phlegm, yellow bile, and black bile—which had to remain in harmonious balance for health. If one humour became dominant, illness occurred. Consequently, medieval treatment was designed entirely around evacuative therapies: excess blood was purged through phlebotomy (vein-slitting or leeches), while excess bile was eliminated using violent herbal emetics (vomit-inducing mixtures) and laxatives. Because these procedures produced visible physical results (blood and fluids leaving the body), both physician and patient believed the disease was being physically expelled.<br><br>Furthermore, preventive advice was structured entirely around personal humoural equilibrium, as exemplified by the **Regimen Sanitatis** (Rule of Health). This widely circulated medieval health handbook, written by the medical faculty at Salerno, instructed wealthy nobles to regulate the ‘six non-naturals’—diet, rest, exercise, bathing, air, and emotional state—to prevent humoural corruption. Medieval people believed each person possessed a unique humoural complexion determined by their age, temperament, and astrological birth chart, making customized humoural dieting and bathing the central pillar of daily preventive medicine.<br><br>Finally, there was a total lack of any rival scientific understanding of human physiology or contagion. Because microorganisms, cellular pathology, and biochemical processes were completely invisible and unimaginable without microscopes, humoural imbalance remained the only rational explanation for sickness. Backed by the authority of the Church and medical universities, physicians had no intellectual reason or empirical basis to attempt any treatment other than restoring humoural equilibrium."
+              }
+            ]
+          }
         },
         {
           "id": "lesson_1_4",
@@ -22464,53 +22512,48 @@
               }
             ]
           },
-          "do_now": {
-            "type": "questions",
-            "title": "Spaced Retrieval Do Now: Treatments & Theory",
-            "instructions": "Answer the four recall questions below based on your prior learning in Lesson 1.3.",
-            "items": [
-              {
-                "question": "What surgical treatment involved opening a vein with a fleam or using leeches?",
-                "answer": "Phlebotomy (bloodletting).",
-                "options": [
-                  "Uroscopy.",
-                  "Cauterisation.",
-                  "Phlebotomy (bloodletting).",
-                  "Inoculation."
-                ]
-              },
-              {
-                "question": "What famous herbal cure-all contained over 60 ingredients including crushed viper flesh?",
-                "answer": "Theriac.",
-                "options": [
-                  "Penicillin.",
-                  "Cinchona bark.",
-                  "Laudanum.",
-                  "Theriac."
-                ]
-              },
-              {
-                "question": "Under Galen’s Theory of Opposites, why were emetics administered to feverish patients?",
-                "answer": "To purge excess corrupt yellow bile from the stomach.",
-                "options": [
-                  "To lower blood pressure directly in the brain.",
-                  "To purge excess corrupt yellow bile from the stomach.",
-                  "To disinfect surgical incisions.",
-                  "To test if the patient had asthma."
-                ]
-              },
-              {
-                "question": "What lifestyle handbook advised nobles on diet, sleep, and exercise to prevent illness?",
-                "answer": "The Regimen Sanitatis.",
-                "options": [
-                  "The Regimen Sanitatis.",
-                  "The Vademecum.",
-                  "The Articella.",
-                  "De Fabrica."
-                ]
-              }
-            ]
-          },
+          "do_now": [
+            {
+              "q": "Name three methods used by medieval practitioners to draw blood during phlebotomy.",
+              "a": "Fleams (vein incision), cupping glasses, and live leeches"
+            },
+            {
+              "q": "What ancient herbal compound contained over 60 ingredients including viper flesh?",
+              "a": "Theriac"
+            },
+            {
+              "q": "What Latin lifestyle guide advised medieval elites on diet, sleep, and bathing?",
+              "a": "Regimen Sanitatis"
+            },
+            {
+              "q": "What pointed surgical instrument was used by barber-surgeons to cut into a vein?",
+              "a": "A fleam"
+            },
+            {
+              "q": "What was the function of an emetic in medieval medicine?",
+              "a": "To induce vomiting to clear corrupted humours from the stomach"
+            },
+            {
+              "q": "What long syringe was used by medieval practitioners to administer herbal enemas?",
+              "a": "A clyster"
+            },
+            {
+              "q": "Name two religious treatments medieval people used to seek healing.",
+              "a": "Prayer, fasting, pilgrimages, touching holy relics"
+            },
+            {
+              "q": "What is the difference between humoural imbalance and miasma?",
+              "a": "Humours are internal fluids; miasma is external poisonous bad air"
+            },
+            {
+              "q": "Which ancient Greek doctor developed clinical observation and the Four Humours?",
+              "a": "Hippocrates"
+            },
+            {
+              "q": "Which ancient Roman physician originated the Theory of Opposites?",
+              "a": "Claudius Galen"
+            }
+          ],
           "narrative_blocks": [
             {
               "act": 1,
@@ -22739,7 +22782,28 @@
               "title": "Diagram: The Medieval Medical Hierarchy",
               "instruction": "Sketch a diagram illustrating the hierarchy of healers: Physician at the top (with Latin book and matula), Barber-Surgeon (with razor and fleam), Apothecary (with mortar and pestle), and Wise Woman in the home."
             }
-          ]
+          ],
+          "gcse_task": {
+            "title": "Edexcel GCSE (9–1) Paper 1 Section B Practice: Q3 & Q4",
+            "tasks": [
+              {
+                "type": "written",
+                "tariff": "Q3: Explain one way medical care providers were similar [4 marks]",
+                "text": "Explain one way in which medical care providers in the Medieval period were similar to those in the Renaissance. [4 marks]",
+                "model": "One way in which medical care providers were similar was that **the majority of ordinary sick people were treated at home by women and wise-women**, rather than university-educated physicians. In both the Medieval period and the Renaissance, licensed physicians were extremely expensive and catered almost exclusively to the wealthy elite. Consequently, ordinary peasants and townspeople relied on female relatives, apothecaries, and local herbalists who prepared home remedies from traditional recipe books passed down through generations."
+              },
+              {
+                "type": "written",
+                "tariff": "Q4: Explain why medieval hospitals provided ‘care not cure’ [12 marks]",
+                "text": "Explain why medieval hospitals provided ‘care not cure’ in the period c1250–c1500. [12 marks]",
+                "stimulus": [
+                  "Monastic hospitality and charity",
+                  "The lack of trained physicians and nurses"
+                ],
+                "model": "One fundamental reason medieval hospitals provided ‘care not cure’ was that they were religious foundations rather than medical facilities. Established and financed by the Catholic Church or wealthy benefactors seeking salvation in purgatory, medieval hospitals were run by monks and nuns. The Latin word *hospitium* meant hospitality, and these institutions functioned as shelters for the poor, elderly, travelers, and pilgrims. The primary mission of the religious staff was spiritual: they provided a warm bed, clean food, and a place where the sick could pray, confess their sins, and receive holy communion. Hospital wards were arranged so that patient beds faced directly down the central aisle toward the chapel altar, ensuring patients could witness the elevation of the Host and save their souls before death.<br><br>Furthermore, medieval hospitals deliberately lacked trained medical personnel and curative surgical equipment. University-trained physicians rarely set foot inside ordinary monastic hospitals, as their fees were far too high and hospitals could not afford them. The monks and nuns who cared for patients had no medical training; their duties consisted of nursing care—bathing patients, washing linens, feeding them simple broths, and reading prayers. Moreover, hospitals strictly barred people suffering from contagious diseases like leprosy, smallpox, or the plague to protect the resident community, meaning those who were critically ill with curable conditions were turned away.<br><br>Finally, the prevailing theological doctrine held that physical illness was sent by God to cleanse the soul, making prayer and spiritual repentance far more important than physical medicine. Monks believed that attempting to artificially cure a disease might interfere with God’s divine will. Therefore, the hospital’s purpose was to comfort the body while the Church healed the soul, creating an institutional culture centered entirely on compassionate palliative care rather than medical cure."
+              }
+            ]
+          }
         },
         {
           "id": "lesson_1_5",
@@ -22838,53 +22902,48 @@
               }
             ]
           },
-          "do_now": {
-            "type": "questions",
-            "title": "Spaced Retrieval Do Now: Practitioners & Hospitals",
-            "instructions": "Answer the four recall questions below based on your learning in Lesson 1.4.",
-            "items": [
-              {
-                "question": "What was the primary purpose of a medieval monastic hospital?",
-                "answer": "‘Care not cure’: providing hospitality, warmth, food, and prayer for the soul.",
-                "options": [
-                  "Performing emergency amputations and dissections.",
-                  "Compounding synthetic antibiotic drugs.",
-                  "Training medical students in human surgical anatomy.",
-                  "‘Care not cure’: providing hospitality, warmth, food, and prayer for the soul."
-                ]
-              },
-              {
-                "question": "Which of the following was strictly excluded from medieval monastic hospitals?",
-                "answer": "Infectious patients (lepers, plague victims) and pregnant women.",
-                "options": [
-                  "Traveling religious pilgrims.",
-                  "Catholic monks and nuns.",
-                  "Infectious patients (lepers, plague victims) and pregnant women.",
-                  "Elderly poor citizens."
-                ]
-              },
-              {
-                "question": "What medical practitioners performed practical surgery and bloodletting in medieval England?",
-                "answer": "Guild-trained barber-surgeons.",
-                "options": [
-                  "Guild-trained barber-surgeons.",
-                  "University-trained physicians.",
-                  "Monastic bishops.",
-                  "Royal apothecaries."
-                ]
-              },
-              {
-                "question": "Where did university physicians receive their formal medical education?",
-                "answer": "At ecclesiastical universities like Oxford, Paris, and Bologna studying Latin texts.",
-                "options": [
-                  "Through manual apprenticeships on pirate ships.",
-                  "At ecclesiastical universities like Oxford, Paris, and Bologna studying Latin texts.",
-                  "At military field dressing stations.",
-                  "Inside London craft barber guilds."
-                ]
-              }
-            ]
-          },
+          "do_now": [
+            {
+              "q": "State the motto or philosophy of medieval monastic hospitals regarding patient treatment.",
+              "a": "‘Care not cure’ (hospitality, warmth, food, and prayer)"
+            },
+            {
+              "q": "Name two groups of patients strictly excluded from medieval monastic hospitals.",
+              "a": "Lepers, plague victims, the terminally ill, pregnant women"
+            },
+            {
+              "q": "Which religious figures actually staffed and operated medieval hospitals?",
+              "a": "Monks and Augustinian nuns"
+            },
+            {
+              "q": "Which medical practitioners performed bloodletting, tooth-pulling, and minor surgery?",
+              "a": "Barber-surgeons"
+            },
+            {
+              "q": "Why were university-trained physicians inaccessible to ordinary peasants?",
+              "a": "They were extremely rare, expensive, and lived only in wealthy cities"
+            },
+            {
+              "q": "Where did ordinary villagers turn for herbal salves, charms, and childbirth help?",
+              "a": "Local wise women and housewives"
+            },
+            {
+              "q": "Which medical guild was formally established in London in 1368?",
+              "a": "The Guild of Surgeons"
+            },
+            {
+              "q": "In what year was London’s famous St Bartholomew’s Hospital founded?",
+              "a": "1123"
+            },
+            {
+              "q": "Why were hospital beds arranged to face directly toward the chapel altar?",
+              "a": "So patients could view daily Mass from bed and pray for their souls"
+            },
+            {
+              "q": "In what Dorset port did the Black Death first arrive in England in June 1348?",
+              "a": "Melcombe Regis"
+            }
+          ],
           "narrative_blocks": [
             {
               "act": 1,
@@ -23117,7 +23176,28 @@
               "title": "Diagram: The Two Strains of the Black Death",
               "instruction": "Sketch a comparison diagram of Bubonic plague (rat flea, bubo on groin/armpit) vs Pneumonic plague (airborne cough droplets, lungs)."
             }
-          ]
+          ],
+          "gcse_task": {
+            "title": "Edexcel GCSE (9–1) Paper 1 Section B Practice: Q3 & Q5/Q6",
+            "tasks": [
+              {
+                "type": "written",
+                "tariff": "Q3: Explain one way approaches to epidemics were similar [4 marks]",
+                "text": "Explain one way in which approaches to preventing epidemic disease in the Medieval period (1348 Black Death) were similar to the Renaissance (1665 Great Plague). [4 marks]",
+                "model": "One way in which approaches to preventing epidemics were similar was the widespread use of **quarantine, social isolation, and fleeing infected areas**. In 1348, authorities in cities like Gloucester and London attempted to shut city gates to outsiders, while wealthy lords fled to country estates. Similarly, during the Great Plague of 1665, the Lord Mayor enforced strict quarantine orders: infected houses were locked shut from the outside for 28 days with a red cross painted on the door and watchmen stationed outside, while King Charles II and wealthy citizens fled to the countryside. In both periods, people recognized that physical proximity to infected individuals spread disease, even though they still believed foul miasma or God’s wrath was the ultimate cause."
+              },
+              {
+                "type": "written",
+                "tariff": "Q5/Q6: Evaluative Essay [16+4 marks]",
+                "text": "‘The primary reason people died during the Black Death was the complete failure of public health measures.’ How far do you agree? Explain your answer. [16+4 marks]",
+                "stimulus": [
+                  "Quarantine regulations in Gloucester and London",
+                  "Miasma and religious explanations"
+                ],
+                "model": "To a large extent, I disagree that the primary reason people died was the failure of public health measures; rather, the overwhelming death toll was caused by a total ignorance of the biological causes of the plague, which rendered all medical treatments and public health attempts completely useless. While local authorities in 1348 lacked the administrative infrastructure and legal power to enforce effective sanitation, they could never have stopped the Black Death because they did not know that *Yersinia pestis* was transmitted by rodent fleas.<br><br>On the one hand, public health measures were undeniably weak, fragmented, and late, contributing to the speed of transmission. Medieval towns had no centralized public health departments, sewer networks, or piped clean water. In London, open cesspits and butcher offal piled up in unpaved streets, creating ideal breeding grounds for the black rats (*Rattus rattus*) carrying infected fleas. Although cities like Gloucester attempted quarantine by shutting their town gates to people from Bristol in 1348, surrounding rural communities ignored the ban, and London authorities only began digging emergency plague pits after tens of thousands were already infected. The lack of compulsory national coordination and sanitary enforcement meant town councils were hopelessly overwhelmed.<br><br>However, even the most rigorous public health measures possible in the 14th century would have failed because medieval understanding of disease causation was fundamentally incorrect. People believed the Black Death was caused by divine retribution (God punishing human sin) or corrupted miasma (poisonous air from planetary alignments or volcanic fumes). Consequently, public health responses focused on religious appeasement and sweet smells: town councils organized mass church processions and flagellant rallies, which packed thousands of terrified citizens together in crowded streets, drastically accelerating the spread of pneumonic plague. Similarly, burning aromatic pitch and carrying posies did nothing to repel flea bites.<br><br>Furthermore, medieval medical treatments actively worsened patients’ chances of survival. Physicians relied on Galenic humoural remedies: bleeding patients weakened their immune systems, while lancing buboes exposed open wounds to secondary septic infections. Apothecaries prescribed costly herbal theriacs or mercury that poisoned sufferers. Without knowledge of bacteria, flea vectors, or antibiotic therapies like streptomycin, medical practitioners were completely powerless against a pathogen with a 60–80% bubonic mortality rate and 100% pneumonic mortality rate.<br><br>In conclusion, while public health measures were rudimentary and poorly enforced, they were not the primary reason people died. The primary cause of the catastrophic mortality (which killed 30–45% of England’s population) was the complete absence of scientific knowledge regarding bacteriology and vectors. Even if 14th-century towns had possessed clean streets, their mistaken belief in miasma and divine wrath meant they could never have addressed the real flea-and-rat vector."
+              }
+            ]
+          }
         },
         {
           "id": "lesson_2_1",
@@ -23234,20 +23314,44 @@
           },
           "do_now": [
             {
-              "q": "In what year did the Black Death arrive in England?",
-              "a": "1348"
+              "q": "In what century did Hippocrates live and teach in Ancient Greece?",
+              "a": "5th Century BC (c. 460–370 BC)"
             },
             {
-              "q": "Name the ancient Roman physician who created the Theory of Opposites.",
-              "a": "Claudius Galen"
-            },
-            {
-              "q": "What four bodily fluids did the Hippocratic theory claim must remain balanced for health?",
+              "q": "Name the four bodily fluids identified in Hippocratic medicine.",
               "a": "Blood, Phlegm, Yellow Bile, Black Bile"
             },
             {
-              "q": "State one reason why the medieval Catholic Church actively protected Galen’s medical ideas.",
-              "a": "Galen believed the body was designed by a single Creator, fitting Christian doctrine."
+              "q": "Which ancient Roman physician expanded this into the Theory of Opposites?",
+              "a": "Claudius Galen"
+            },
+            {
+              "q": "Why did the medieval Catholic Church actively protect Galen’s medical ideas?",
+              "a": "Galen believed the body was designed by a single Creator, fitting Christian doctrine"
+            },
+            {
+              "q": "What Latin term refers to foul-smelling air blamed for causing epidemic disease?",
+              "a": "Miasma"
+            },
+            {
+              "q": "In what year did the Black Death first arrive in England?",
+              "a": "1348"
+            },
+            {
+              "q": "Which Franciscan friar was imprisoned in 1277 for urging scientific experiments?",
+              "a": "Roger Bacon"
+            },
+            {
+              "q": "What glass flask was used by medieval physicians to inspect urine?",
+              "a": "The matula (uroscopy)"
+            },
+            {
+              "q": "What was the primary guiding principle of medieval monastic hospitals?",
+              "a": "‘Care not cure’ (spiritual comfort rather than medical treatment)"
+            },
+            {
+              "q": "Name one humoural treatment used by medieval physicians to purge excessive blood.",
+              "a": "Phlebotomy (bloodletting with fleams, cupping, or leeches)"
             }
           ],
           "fun_facts": [
@@ -23833,20 +23937,44 @@
           },
           "do_now": [
             {
+              "q": "In what year did Johannes Gutenberg invent the movable metal type printing press?",
+              "a": "c. 1440"
+            },
+            {
+              "q": "In what year did William Caxton introduce the first printing press to England?",
+              "a": "1476"
+            },
+            {
+              "q": "How did the printing press break the Catholic Church’s clerical monopoly on books?",
+              "a": "Mass-produced identical copies without relying on hand-copying monk scribes"
+            },
+            {
+              "q": "In what year was the Royal Society formally founded in London?",
+              "a": "1660 (Royal Charter granted 1662)"
+            },
+            {
               "q": "What was the Latin motto of the Royal Society, meaning 'Take nobody's word for it'?",
               "a": "Nullius in Verba"
             },
             {
-              "q": "Name the world's first peer-reviewed scientific journal published by the Royal Society in 1665.",
+              "q": "Name the world’s first peer-reviewed scientific journal, published in 1665.",
               "a": "Philosophical Transactions"
             },
             {
-              "q": "What name did Antonie van Leeuwenhoek give to the microscopic organisms he observed in 1676?",
-              "a": "Animalcules (bacteria)"
+              "q": "Who published Micrographia in 1665 featuring detailed microscopic illustrations?",
+              "a": "Robert Hooke"
             },
             {
-              "q": "Who published Micrographia in 1665 featuring a giant fold-out engraving of a flea?",
-              "a": "Robert Hooke"
+              "q": "What term did Antonie van Leeuwenhoek give to microscopic bacteria in 1676?",
+              "a": "‘Animalcules’"
+            },
+            {
+              "q": "Why did optical discoveries of microbes save zero lives in the Renaissance?",
+              "a": "Scientists did not realize that microscopic organisms caused infectious disease"
+            },
+            {
+              "q": "Which ancient Greek physician originated the clinical observation of patients?",
+              "a": "Hippocrates of Kos"
             }
           ],
           "fun_facts": [
@@ -24416,20 +24544,44 @@
           },
           "do_now": [
             {
-              "q": "What nickname was given to Thomas Sydenham because of his emphasis on bedside observation?",
+              "q": "What nickname was given to Thomas Sydenham because of his clinical approach?",
               "a": "The English Hippocrates"
             },
             {
-              "q": "Name the 1676 book in which Sydenham set out his methods of clinical observation.",
+              "q": "In what landmark 1676 book did Sydenham set out his clinical observations?",
               "a": "Observationes Medicae"
             },
             {
-              "q": "What treatment did Sydenham prescribe for malaria fevers, imported from South America?",
-              "a": "Cinchona bark (quinine)"
+              "q": "How did Sydenham view diseases differently from humoural theory?",
+              "a": "As distinct external species (like plants in botany), rather than unique personal imbalances"
             },
             {
               "q": "Which two childhood illnesses did Sydenham successfully prove were separate diseases?",
               "a": "Measles and scarlet fever"
+            },
+            {
+              "q": "What imported South American tree bark did Sydenham prescribe for malaria fevers?",
+              "a": "Cinchona bark (quinine)"
+            },
+            {
+              "q": "What revolutionary cooling treatment did Sydenham prescribe for smallpox patients?",
+              "a": "Open windows, cool bedrooms, and light blankets"
+            },
+            {
+              "q": "In what way did Sydenham’s treatments still show continuity with the Middle Ages?",
+              "a": "He continued prescribing bloodletting and purging to balance humours"
+            },
+            {
+              "q": "What was the Royal Society’s Latin motto promoting empirical evidence?",
+              "a": "Nullius in Verba (Take nobody’s word for it)"
+            },
+            {
+              "q": "Where were medical manuscripts copied prior to the invention of the printing press?",
+              "a": "Monastic scriptoria (by monks)"
+            },
+            {
+              "q": "In what year did William Caxton set up the first printing press in England?",
+              "a": "1476"
             }
           ],
           "fun_facts": [
@@ -25023,12 +25175,36 @@
               "a": "University of Padua"
             },
             {
+              "q": "How did Vesalius’s method of teaching anatomy differ from medieval professors?",
+              "a": "He dissected human cadavers himself rather than lecturing from ancient Galenic texts"
+            },
+            {
               "q": "How many anatomical errors made by Galen did Vesalius identify and correct?",
               "a": "Over 300 errors"
             },
             {
               "q": "State one specific anatomical error of Galen corrected by Vesalius.",
-              "a": "The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7)."
+              "a": "The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7)"
+            },
+            {
+              "q": "Why did Vesalius’s accurate anatomical discoveries fail to cure sick patients?",
+              "a": "Knowing anatomy did not cure internal infections or provide new medicines"
+            },
+            {
+              "q": "Which ancient Roman doctor’s anatomical monopoly was overturned by Vesalius?",
+              "a": "Claudius Galen"
+            },
+            {
+              "q": "What 1676 book did Thomas Sydenham publish on clinical bedside symptoms?",
+              "a": "Observationes Medicae"
+            },
+            {
+              "q": "In what year was the Royal Society granted its Royal Charter by Charles II?",
+              "a": "1662"
+            },
+            {
+              "q": "What was the Royal Society’s motto promoting empirical evidence?",
+              "a": "Nullius in Verba (Take nobody’s word for it)"
             }
           ],
           "fun_facts": [
@@ -25559,16 +25735,40 @@
               "a": "1628"
             },
             {
-              "q": "Which ancient theory of blood production did Harvey disprove through mathematical calculations?",
-              "a": "Galen's theory that the liver constantly manufactures blood from food"
+              "q": "How did Harvey mathematically disprove Galen’s liver theory?",
+              "a": "Showed the heart pumps 540 pints an hour, far more than the body’s weight"
             },
             {
-              "q": "What tiny blood vessels connecting arteries and veins could Harvey NOT see without a microscope?",
+              "q": "What one-way valves in veins did Harvey investigate using his arm ligature experiment?",
+              "a": "Vein valves (discovered by Fabricius)"
+            },
+            {
+              "q": "What microscopic vessels connecting arteries and veins could Harvey not observe?",
               "a": "Capillaries"
             },
             {
-              "q": "Why did Harvey's discovery of blood circulation have NO immediate effect on medical treatment?",
-              "a": "Doctors did not know what caused infection and continued bloodletting to balance humours."
+              "q": "Why did conservative doctors nickname Harvey a ‘circulator’ (quack)?",
+              "a": "They fiercely defended Galen’s 1,400-year anatomical authority"
+            },
+            {
+              "q": "In what year was Vesalius’s De Humani Corporis Fabrica published?",
+              "a": "1543"
+            },
+            {
+              "q": "State one anatomical error of Galen corrected by Vesalius.",
+              "a": "The lower jaw is one bone not two (or the breastbone has 3 parts not 7)"
+            },
+            {
+              "q": "What nickname was given to Thomas Sydenham?",
+              "a": "‘The English Hippocrates’"
+            },
+            {
+              "q": "In what year did the Black Death first strike England?",
+              "a": "1348"
+            },
+            {
+              "q": "Name the imported South American tree bark prescribed by Sydenham for malaria fevers.",
+              "a": "Cinchona bark (quinine)"
             }
           ],
           "fun_facts": [
@@ -26619,35 +26819,35 @@
           "do_now": [
             {
               "q": "In what year did Edward Jenner perform his famous cowpox test on James Phipps?",
-              "a": "1796 (published in 1798)"
+              "a": "1796 (published findings in 1798)"
             },
             {
-              "q": "Who brought smallpox inoculation (variolation) to Britain from the Ottoman Empire in 1721?",
-              "a": "Lady Mary Wortley Montagu"
+              "q": "Who brought the dangerous practice of smallpox inoculation (variolation) to Britain in 1721?",
+              "a": "Lady Mary Wortley Montagu (from the Ottoman Empire / Turkey)"
             },
             {
               "q": "What milder dairy disease gave milkmaids immunity from deadly smallpox?",
               "a": "Cowpox (vaccinia)"
             },
             {
-              "q": "How much money did Parliament grant Jenner in total (1802 and 1807) to fund vaccination?",
-              "a": "£30,000 (£10,000 in 1802 and £20,000 in 1807)"
+              "q": "How much money did Parliament grant Jenner in 1802 and 1807 to support vaccination?",
+              "a": "£30,000 in total (£10,000 in 1802, £20,000 in 1807)"
             },
             {
               "q": "In what year was infant smallpox vaccination made legally compulsory in Britain?",
-              "a": "1852 (with strict registration officers and fines added in 1871)"
+              "a": "1852 (with strict enforcement and fines added in 1871)"
             },
             {
               "q": "Name the protest organisation formed by citizens who opposed mandatory vaccination.",
-              "a": "The Anti-Vaccination League"
+              "a": "The Anti-Vaccination League (formed in London in the 1860s)"
             },
             {
-              "q": "Why did the Royal Society initially refuse to publish Jenner’s 1796 paper?",
+              "q": "Why did the Royal Society initially refuse to publish Jenner’s 1796 findings?",
               "a": "Jenner could not explain the biological mechanism of why cowpox conferred immunity"
             },
             {
               "q": "In what year did the British government formally ban dangerous smallpox inoculation?",
-              "a": "1840 (Vaccination Act of 1840)"
+              "a": "1840 (Vaccination Act of 1840, which also made vaccination free for poor infants)"
             },
             {
               "q": "Which French scientist discovered Germ Theory in 1861, explaining why vaccines worked?",
@@ -27104,44 +27304,44 @@
           },
           "do_now": [
             {
-              "q": "What was the primary function of medieval monastic hospitals (c1250–c1500)?",
-              "a": "‘Care not cure’ (spiritual shelter, warmth, food, and prayer rather than medical treatment)"
+              "q": "In what war did Florence Nightingale serve as superintendent of female nursing from 1854 to 1856?",
+              "a": "The Crimean War (against the Russian Empire)"
             },
             {
-              "q": "What 19th-century war (1854–1856) exposed the horrific sanitary state of British military hospitals?",
-              "a": "The Crimean War"
+              "q": "Name the British military hospital near Constantinople where Nightingale was stationed.",
+              "a": "Scutari Barracks Hospital"
             },
             {
-              "q": "What was the name of the British military barracks hospital near Constantinople where Nightingale worked?",
-              "a": "Scutari Barrack Hospital"
+              "q": "To what percentage did Nightingale’s sanitary reforms reduce the mortality rate at Scutari?",
+              "a": "From approximately 40% down to 2%"
             },
             {
-              "q": "To what percentage did Nightingale and the Sanitary Commission reduce Scutari mortality?",
-              "a": "From approximately 42% down to 2%"
+              "q": "What title was given to Florence Nightingale by the British press during the Crimean War?",
+              "a": "‘The Lady with the Lamp’"
             },
             {
-              "q": "Name the Jamaican doctress who funded her own voyage to the Crimea and set up the British Hotel.",
-              "a": "Mary Seacole"
+              "q": "What landmark book did Nightingale publish in 1859 setting down rules for nurse training?",
+              "a": "Notes on Nursing: What It Is, and What It Is Not (1859)"
             },
             {
-              "q": "What statistical chart did Nightingale invent in 1858 to present army mortality data?",
-              "a": "The Polar Area Diagram (commonly known as the ‘Coxcomb’)"
-            },
-            {
-              "q": "In what year did Nightingale publish Notes on Nursing and Notes on Hospitals?",
-              "a": "Notes on Nursing in 1859; Notes on Hospitals in 1863"
-            },
-            {
-              "q": "At which London hospital did Nightingale establish Europe’s first professional nursing school in 1860?",
+              "q": "Which London hospital housed the first professional Nightingale Training School for Nurses in 1860?",
               "a": "St Thomas’ Hospital"
             },
             {
-              "q": "What architectural hospital design featured separate long wards with facing windows for cross-ventilation?",
-              "a": "The Pavilion Hospital Plan"
+              "q": "What architectural hospital design featured long, narrow wards with large windows for cross-ventilation?",
+              "a": "The Pavilion Hospital Plan (endorsed in Notes on Hospitals, 1863)"
             },
             {
-              "q": "Did Florence Nightingale believe in Pasteur’s Germ Theory or Miasma Theory?",
-              "a": "Miasma Theory (she believed foul air and dirt generated disease)"
+              "q": "What fatal bacterial infection was notoriously spread in pre-1850 unwashed hospital wards?",
+              "a": "Hospital gangrene / sepsis (erysipelas)"
+            },
+            {
+              "q": "What Charles Dickens character typified the drunken, untrained, neglectful pre-reform nurse?",
+              "a": "Sairey Gamp (from Martin Chuzzlewit)"
+            },
+            {
+              "q": "What was the primary function of medieval monastic hospitals in England?",
+              "a": "Providing religious hospitality, shelter, and care rather than surgical treatment (‘care not cure’)"
             }
           ],
           "fun_facts": [
@@ -27589,44 +27789,44 @@
           },
           "do_now": [
             {
-              "q": "What were the three fatal barriers that prevented surgery from developing before 1840?",
-              "a": "Pain, Infection, and Bleeding"
-            },
-            {
-              "q": "Who was the famous London surgeon who could amputate a leg in 28 seconds?",
-              "a": "Robert Liston"
-            },
-            {
-              "q": "Which gas did American dentist William Morton demonstrate as an anaesthetic in 1846?",
-              "a": "Ether"
-            },
-            {
-              "q": "Why was ether unpopular for widespread surgical use?",
-              "a": "It irritated the lungs, caused violent vomiting, and was highly flammable near gaslights"
-            },
-            {
-              "q": "Which Scottish physician discovered the anaesthetic properties of chloroform in 1847?",
+              "q": "What Edinburgh professor of midwifery discovered the anaesthetic properties of chloroform in 1847?",
               "a": "James Young Simpson"
             },
             {
-              "q": "Name the 15-year-old girl who died in 1848 from a chloroform overdose during a toenail operation.",
-              "a": "Hannah Greener"
+              "q": "Which early anaesthetic gas was discovered by Humphry Davy in 1799?",
+              "a": "Nitrous oxide (laughing gas)"
             },
             {
-              "q": "Which British monarch accepted chloroform during childbirth in 1853, making it socially fashionable?",
-              "a": "Queen Victoria (at the birth of Prince Leopold)"
+              "q": "Which monarch famously used chloroform during the birth of Prince Leopold in 1853?",
+              "a": "Queen Victoria"
             },
             {
-              "q": "What was the ‘Black Period’ of surgery (1846–1865)?",
-              "a": "A period when death rates rose because anaesthetized patients were subjected to longer, deeper surgeries with unwashed hands"
+              "q": "Why did death rates from infection increase during the ‘Black Period’ of surgery (1847–1865)?",
+              "a": "Pain-free patients allowed deeper, longer surgeries, but unwashed hands and coats introduced fatal sepsis"
             },
             {
-              "q": "Which chemical antiseptic did Joseph Lister begin using on wounds in 1865?",
-              "a": "Carbolic acid (creosote)"
+              "q": "Which Scottish surgeon pioneered antiseptic surgery using carbolic acid in 1865?",
+              "a": "Joseph Lister"
             },
             {
-              "q": "Whose 1861 paper on wine fermentation inspired Lister to realize germs caused wound sepsis?",
+              "q": "Whose 1861 scientific discovery directly inspired Lister to investigate wound sepsis?",
               "a": "Louis Pasteur (Germ Theory)"
+            },
+            {
+              "q": "To what percentage did Lister’s carbolic acid treatments reduce amputee mortality in Glasgow?",
+              "a": "From 46% down to 15%"
+            },
+            {
+              "q": "What steam-pressure sterilisation machine was invented by Charles Chamberland in 1881?",
+              "a": "The Autoclave"
+            },
+            {
+              "q": "What surgical innovation did William Halsted introduce at Johns Hopkins Hospital in 1890?",
+              "a": "Boiled rubber surgical gloves"
+            },
+            {
+              "q": "Which 16th-century French barber-surgeon famously replaced boiling oil with soothing rose-oil lotion?",
+              "a": "Ambroise Paré (1537)"
             }
           ],
           "fun_facts": [
@@ -28080,44 +28280,44 @@
           },
           "do_now": [
             {
-              "q": "In what year did Asiatic cholera first strike Britain?",
-              "a": "1831 (arriving at the port of Sunderland)"
+              "q": "In what year did the first deadly epidemic of Asiatic cholera arrive in Britain?",
+              "a": "1831 (killing over 31,000 people)"
             },
             {
-              "q": "What ancient theory did most 19th-century doctors believe caused cholera?",
-              "a": "Miasma Theory (foul, poisonous air from rotting filth)"
+              "q": "What government economic philosophy meaning ‘leave alone’ opposed sanitary spending?",
+              "a": "Laissez-faire"
             },
             {
-              "q": "What London district was the center of John Snow’s famous 1854 cholera investigation?",
-              "a": "Soho (Broad Street)"
+              "q": "Whose landmark 1842 report proved poor sanitary conditions caused disease and poverty?",
+              "a": "Edwin Chadwick (Report on the Sanitary Condition of the Labouring Population)"
             },
             {
-              "q": "What physical action did parish officials take on 8 September 1854 to halt the Soho epidemic?",
-              "a": "They removed the handle from the Broad Street water pump"
+              "q": "Why was the 1848 First Public Health Act largely ineffective across Britain?",
+              "a": "It was permissive (optional); local councils refused to raise taxes to build sewers"
             },
             {
-              "q": "Why did no workers at the Broad Street Lion Brewery die of cholera?",
-              "a": "They were given an allowance of free malt beer and never drank pump water"
+              "q": "Which London doctor mapped the 1854 Soho cholera outbreak to the Broad Street water pump?",
+              "a": "Dr John Snow"
             },
             {
-              "q": "What heatwave crisis occurred in July 1858 when the sewage-filled River Thames fermented?",
-              "a": "The ‘Great Stink’"
+              "q": "What physical action halted the cholera epidemic in Soho in September 1854?",
+              "a": "Removing the handle from the Broad Street water pump"
             },
             {
-              "q": "Name the brilliant civil engineer who designed London’s underground intercepting sewer network.",
+              "q": "What environmental crisis in hot summer 1858 forced Parliament to fund London’s sewers?",
+              "a": "The Great Stink (the Thames was an open sewer boiling in the summer heat)"
+            },
+            {
+              "q": "Which civil engineer designed and built London’s revolutionary 82-mile brick sewer network?",
               "a": "Sir Joseph Bazalgette"
             },
             {
-              "q": "What French scientist discovered Germ Theory in 1861, confirming Snow’s water-borne theory?",
-              "a": "Louis Pasteur"
+              "q": "Which political party leader passed the compulsory 1875 Second Public Health Act?",
+              "a": "Benjamin Disraeli (Conservative Prime Minister)"
             },
             {
-              "q": "What political philosophy meant that the government should not interfere in private lives or local taxes?",
-              "a": "Laissez-faire (‘leave alone’)"
-            },
-            {
-              "q": "Was the 1848 Public Health Act permissive (optional) or compulsory (mandatory)?",
-              "a": "Permissive (optional; town councils could choose to ignore it)"
+              "q": "Name one compulsory requirement placed on local town councils by the 1875 Public Health Act.",
+              "a": "Providing clean water, maintaining underground sewers, appointing Medical Officers of Health, or collecting refuse"
             }
           ],
           "fun_facts": [
@@ -28501,48 +28701,6 @@
               "Source B": "In March 1953, James Watson and Francis Crick built their celebrated sheet-metal and brass wire model at the Cavendish Laboratory in Cambridge, demonstrating two antiparallel sugar-phosphate backbones connected by adenine-thymine and cytosine-guanine base pairs. **Hinge Question:** Watson and Crick famously declared in The Eagle pub that they had found \"the secret of life\"—how did the complementary base-pairing rule (A-T, C-G) instantly explain how genetic code replicates during cell division?"
             }
           },
-          "doNow": [
-            {
-              "q": "Which ancient Greek physician created the Theory of the Four Humours?",
-              "a": "Hippocrates (c. 460–370 BC)"
-            },
-            {
-              "q": "Which Roman doctor introduced the Theory of Opposites?",
-              "a": "Claudius Galen (c. 129–216 AD)"
-            },
-            {
-              "q": "What fatal epidemic struck England in 1348, killing approximately one-third of the population?",
-              "a": "The Black Death"
-            },
-            {
-              "q": "In what year did Andreas Vesalius publish De Humani Corporis Fabrica?",
-              "a": "1543"
-            },
-            {
-              "q": "What did William Harvey prove about the heart and blood flow in 1628?",
-              "a": "The heart acts as a pump circulating blood in a continuous one-way closed circuit"
-            },
-            {
-              "q": "Which 17th-century English doctor was nicknamed the ‘English Hippocrates’ for clinical observation?",
-              "a": "Thomas Sydenham (1676)"
-            },
-            {
-              "q": "What vaccine did Edward Jenner develop in 1796 using cowpox lesions?",
-              "a": "The smallpox vaccine"
-            },
-            {
-              "q": "Which French chemist disproved spontaneous generation and published Germ Theory in 1861?",
-              "a": "Louis Pasteur"
-            },
-            {
-              "q": "Which German scientist isolated the specific bacteria causing anthrax (1876) and tuberculosis (1882)?",
-              "a": "Robert Koch"
-            },
-            {
-              "q": "What parliamentary act of 1875 legally compelled British councils to provide clean water and sewers?",
-              "a": "The Public Health Act 1875"
-            }
-          ],
           "fun_facts": [
             "If unwound and tied end-to-end, the DNA inside a single human cell would stretch approximately six feet long, yet it is packed into a nucleus smaller than a pinpoint.",
             "Rosalind Franklin’s Photograph 51 required 62 continuous hours of X-ray radiation in a damp basement room with 75% relative humidity to keep the DNA fibers hydrated.",
@@ -28876,6 +29034,48 @@
               "context": "In March 1953 at the Cavendish Laboratory in Cambridge, James Watson and Francis Crick constructed this three-dimensional molecular model from sheet-metal bases and brass rods, deciphering the complementary base pairing of Adenine-Thymine and Cytosine-Guanine.",
               "hinge_question": "Why was proving the exact base-pairing mechanism (A-T and C-G) the decisive breakthrough in understanding how genetic hereditary information replicates and passes between generations?"
             }
+          ],
+          "do_now": [
+            {
+              "q": "Which ancient Greek physician created the Theory of the Four Humours?",
+              "a": "Hippocrates (c. 460–370 BC)"
+            },
+            {
+              "q": "Which Roman doctor introduced the Theory of Opposites?",
+              "a": "Claudius Galen (c. 129–216 AD)"
+            },
+            {
+              "q": "In what year did Andreas Vesalius publish De Humani Corporis Fabrica?",
+              "a": "1543"
+            },
+            {
+              "q": "What did William Harvey prove about blood flow in 1628?",
+              "a": "Blood circulates in one continuous closed loop pumped by the heart"
+            },
+            {
+              "q": "Which English doctor was nicknamed the ‘English Hippocrates’ for bedside observation?",
+              "a": "Thomas Sydenham (Observationes Medicae, 1676)"
+            },
+            {
+              "q": "What vaccine did Edward Jenner develop in 1796 using cowpox matter?",
+              "a": "The smallpox vaccine"
+            },
+            {
+              "q": "Which French chemist disproved spontaneous generation and published Germ Theory in 1861?",
+              "a": "Louis Pasteur"
+            },
+            {
+              "q": "Which German bacteriologist isolated the bacteria causing anthrax (1876) and tuberculosis (1882)?",
+              "a": "Robert Koch"
+            },
+            {
+              "q": "What anaesthetic did James Simpson discover in Edinburgh in 1847?",
+              "a": "Chloroform"
+            },
+            {
+              "q": "What 1875 Act compelled local councils in Britain to provide clean water and sewers?",
+              "a": "The Public Health Act 1875"
+            }
           ]
         },
         {
@@ -28912,48 +29112,6 @@
               "Source B": "In 1971, British electrical engineer Godfrey Hounsfield built the prototype EMI Computerized Tomography (CT) scanner at Atkinson Morley Hospital, London, combining rotating X-ray beams with computerized slice algorithms. **Hinge Question:** Study the prototype CT scanning apparatus: why was integrating digital computers with rotating X-ray detectors essential before doctors could visualize soft brain tissues without cutting open the skull?"
             }
           },
-          "doNow": [
-            {
-              "q": "What year did Edward Jenner discover the smallpox vaccine?",
-              "a": "1796"
-            },
-            {
-              "q": "What anaesthetic gas was famously inhaled by Queen Victoria in 1853 during childbirth?",
-              "a": "Chloroform (administered by John Snow)"
-            },
-            {
-              "q": "Which Scottish surgeon introduced carbolic acid spray in 1865 to prevent wound sepsis?",
-              "a": "Joseph Lister"
-            },
-            {
-              "q": "What was the title of Louis Pasteur’s famous 1861 publication on microbes?",
-              "a": "Germ Theory (disproving Spontaneous Generation)"
-            },
-            {
-              "q": "Which German bacteriologist used solid agar jelly and aniline dyes to isolate the tuberculosis bacillus?",
-              "a": "Robert Koch (1882)"
-            },
-            {
-              "q": "What did John Snow remove in Soho in 1854 to halt the cholera outbreak?",
-              "a": "The Broad Street water pump handle"
-            },
-            {
-              "q": "What nickname was given to the surgical era between 1847 and 1865 when anaesthetics increased infection deaths?",
-              "a": "The ‘Black Period’ of surgery"
-            },
-            {
-              "q": "Who captured Photograph 51 in May 1952 demonstrating the helical structure of DNA?",
-              "a": "Rosalind Franklin (and Raymond Gosling)"
-            },
-            {
-              "q": "Which two Cambridge scientists built the 1953 double helix model?",
-              "a": "James Watson and Francis Crick"
-            },
-            {
-              "q": "What major project mapped all 3 billion chemical base pairs in human DNA between 1990 and 2003?",
-              "a": "The Human Genome Project"
-            }
-          ],
           "fun_facts": [
             "Wilhelm Röntgen refused to patent X-rays or name them after himself because he believed scientific discoveries belonged freely to all humanity.",
             "The early development of the CT scanner was funded by EMI, the British record label that made vast profits from selling vinyl records of The Beatles.",
@@ -29287,6 +29445,48 @@
               "context": "In 1971 at Atkinson Morley Hospital in Wimbledon, British electrical engineer Godfrey Hounsfield assembled the prototype EMI clinical CT scanner, combining rotating X-ray beams with digital computing algorithms to generate cross-sectional 3D slices of the brain.",
               "hinge_question": "In what way did computerized axial tomography (CT scanning) overcome the fundamental 2D flattening limitation of traditional Röntgen X-rays when diagnosing soft-tissue brain tumours?"
             }
+          ],
+          "do_now": [
+            {
+              "q": "In what year did Wilhelm Röntgen discover X-rays?",
+              "a": "1895"
+            },
+            {
+              "q": "Who operated 20 mobile X-ray vehicles (\"petites Curies\") during WWI?",
+              "a": "Marie Curie"
+            },
+            {
+              "q": "What Scottish surgeon used carbolic acid spray in 1865 to prevent wound sepsis?",
+              "a": "Joseph Lister"
+            },
+            {
+              "q": "What fatal epidemic struck London in 1854, centered on Broad Street?",
+              "a": "Cholera"
+            },
+            {
+              "q": "What doctor used a spot map to identify the contaminated Broad Street pump in 1854?",
+              "a": "Dr John Snow"
+            },
+            {
+              "q": "What chemical base does Adenine pair with in the DNA double helix?",
+              "a": "Thymine"
+            },
+            {
+              "q": "What chemical base does Cytosine pair with in the DNA double helix?",
+              "a": "Guanine"
+            },
+            {
+              "q": "Who captured Photograph 51 in May 1952 using X-ray crystallography?",
+              "a": "Rosalind Franklin (with Raymond Gosling)"
+            },
+            {
+              "q": "What major project mapped all 3 billion base pairs in human DNA (1990–2003)?",
+              "a": "The Human Genome Project"
+            },
+            {
+              "q": "What term describes the shift from infectious diseases to chronic lifestyle conditions?",
+              "a": "The Epidemiological Transition"
+            }
           ]
         },
         {
@@ -29323,48 +29523,6 @@
               "Source B": "The official 1948 Ministry of Health public information leaflet delivered to every household in Britain, declaring: \"The new National Health Service begins on 5th July... It will provide you with all medical, dental, and nursing care. Everyone—rich or poor, man, woman or child—can use it... There are no charges.\" **Hinge Question:** Study the historic 1948 leaflet: why did the government explicitly emphasize that the NHS was \"not a charity\" but a service paid for by taxpayers, and what impact did this have on working-class families?"
             }
           },
-          "doNow": [
-            {
-              "q": "Who wrote Observationes Medicae in 1676, promoting clinical bedside observation?",
-              "a": "Thomas Sydenham"
-            },
-            {
-              "q": "What Latin motto meaning ‘Take nobody’s word for it’ was adopted by the Royal Society in 1662?",
-              "a": "Nullius in Verba"
-            },
-            {
-              "q": "In what year did the Great Plague strike London, killing 100,000 people?",
-              "a": "1665"
-            },
-            {
-              "q": "What fatal lung disease did Robert Koch identify the bacteria for in 1882?",
-              "a": "Tuberculosis (Mycobacterium tuberculosis)"
-            },
-            {
-              "q": "Which nurse transformed hospital sanitation during the Crimean War (1854–56)?",
-              "a": "Florence Nightingale"
-            },
-            {
-              "q": "What 1875 public health law compelled British local authorities to build sewers and inspect food?",
-              "a": "The Public Health Act 1875"
-            },
-            {
-              "q": "Who discovered X-rays in 1895 by observing glowing barium platinocyanide screens?",
-              "a": "Wilhelm Conrad Röntgen"
-            },
-            {
-              "q": "Who took Photograph 51 in 1952 using X-ray crystallography?",
-              "a": "Rosalind Franklin"
-            },
-            {
-              "q": "What year did Watson and Crick discover the double-helix structure of DNA?",
-              "a": "1953"
-            },
-            {
-              "q": "Who developed the first clinical CT scanner in Britain in 1971?",
-              "a": "Godfrey Hounsfield"
-            }
-          ],
           "fun_facts": [
             "Compound 606 (Salvarsan) had actually been tested and discarded as ineffective in 1907; it was only when Sahachiro Hata painstakingly retested every single sample in 1909 that its cure for syphilis was discovered.",
             "Aneurin Bevan famously said of his compromise with wealthy private doctors: \"I stuffed their mouths with gold,\" allowing hospital consultants to continue private fee-paying practice inside NHS hospitals.",
@@ -29698,6 +29856,48 @@
               "context": "In June 1948, Minister of Health Aneurin Bevan distributed this official information booklet to every British household, announcing that from 5 July 1948, comprehensive medical, hospital, dental, and optical care would be provided universally free at the point of delivery.",
               "hinge_question": "How does the universal entitlement outlined in this 1948 leaflet demonstrate a permanent structural rejection of the 19th-century Victorian Poor Law and voluntary hospital system?"
             }
+          ],
+          "do_now": [
+            {
+              "q": "What term did Paul Ehrlich use for chemical compounds that destroy bacteria without harming patient cells?",
+              "a": "Magic bullets (Zauberkugeln)"
+            },
+            {
+              "q": "What disease was cured by Salvarsan 606 in 1909?",
+              "a": "Syphilis"
+            },
+            {
+              "q": "Which Japanese bacteriologist assisted Paul Ehrlich in discovering Salvarsan 606?",
+              "a": "Sahachiro Hata"
+            },
+            {
+              "q": "Who discovered that the red dye Prontosil cured streptococcal blood poisoning in 1932?",
+              "a": "Gerhard Domagk"
+            },
+            {
+              "q": "What active antibacterial chemical group was found inside Prontosil?",
+              "a": "Sulphonamides"
+            },
+            {
+              "q": "Who authored the 1942 social report identifying the \"Five Giant Evils\" in Britain?",
+              "a": "William Beveridge"
+            },
+            {
+              "q": "Who was appointed Minister of Health in 1945 to create the National Health Service?",
+              "a": "Aneurin Bevan"
+            },
+            {
+              "q": "On what exact date was the NHS officially launched in Britain?",
+              "a": "5 July 1948"
+            },
+            {
+              "q": "Which medical organization fiercely resisted state-employed doctors under the NHS?",
+              "a": "The British Medical Association (BMA)"
+            },
+            {
+              "q": "Which British engineer invented the CT scanner at EMI laboratories in 1971?",
+              "a": "Godfrey Hounsfield"
+            }
           ]
         },
         {
@@ -29734,48 +29934,6 @@
               "Source B": "Wartime photograph of penicillin mass production showing hundreds of glass culture bottles stacked on incubator shelves in 1944, before deep-tank fermentation was perfected. **Hinge Question:** Study the labor-intensive racks of culture bottles: why did the transition from shallow glass bottles to American 10,000-gallon deep-tank vats represent a decisive industrial breakthrough for Allied military medicine?"
             }
           },
-          "doNow": [
-            {
-              "q": "What fatal epidemic struck London in 1665, killing over 100,000 citizens?",
-              "a": "The Great Plague"
-            },
-            {
-              "q": "Who proved in 1628 that blood circulates in a continuous circuit around the body?",
-              "a": "William Harvey"
-            },
-            {
-              "q": "What vaccine did Edward Jenner develop in 1796 using cowpox matter?",
-              "a": "The smallpox vaccine"
-            },
-            {
-              "q": "Which French chemist published Germ Theory in 1861 after swan-neck flask experiments?",
-              "a": "Louis Pasteur"
-            },
-            {
-              "q": "What surgical antiseptic did Joseph Lister pioneer in 1865?",
-              "a": "Carbolic acid spray"
-            },
-            {
-              "q": "What was the first synthetic magic bullet, discovered by Paul Ehrlich and Sahachiro Hata in 1909?",
-              "a": "Salvarsan 606 (arsphenamine for syphilis)"
-            },
-            {
-              "q": "What red dye discovered by Gerhard Domagk in 1932 cured blood poisoning?",
-              "a": "Prontosil (sulfonamide)"
-            },
-            {
-              "q": "On what date did the National Health Service begin operating in Britain?",
-              "a": "5 July 1948"
-            },
-            {
-              "q": "Who took Photograph 51 in 1952 demonstrating the double-helix geometry of DNA?",
-              "a": "Rosalind Franklin"
-            },
-            {
-              "q": "What diagnostic scanning machine was invented in 1971 by Godfrey Hounsfield?",
-              "a": "The CT scanner (Computed Tomography)"
-            }
-          ],
           "fun_facts": [
             "Alexander Fleming almost washed the historic penicillin petri dish in lysol disinfectant, but paused to show it to a visiting former assistant, C.J. La Touche.",
             "To produce enough penicillin to treat just one adult patient in 1940, the Oxford team had to ferment over 2,000 liters of mold culture fluid in ceramic bedpans and dairy churns.",
@@ -30109,6 +30267,48 @@
               "context": "In 1943–1944, during Allied preparations for D-Day, Oxford researchers Howard Florey and Ernst Chain collaborated with the US Department of Agriculture in Peoria, Illinois, developing deep-tank corn-steep liquor fermentation to mass-produce pure penicillin.",
               "hinge_question": "Why was the industrial transition from surface culture bottles to 10,000-gallon aerated deep-tank fermentation vats the decisive factor in saving thousands of Allied soldiers in 1944?"
             }
+          ],
+          "do_now": [
+            {
+              "q": "In what year did Alexander Fleming discover penicillin at St Mary’s Hospital?",
+              "a": "1928"
+            },
+            {
+              "q": "What type of bacteria was being cultured when penicillin was discovered?",
+              "a": "Staphylococcus"
+            },
+            {
+              "q": "What was the scientific name of the mold that contaminated Fleming’s dish?",
+              "a": "Penicillium notatum"
+            },
+            {
+              "q": "Which two Oxford scientists reopened penicillin research in 1938?",
+              "a": "Howard Florey and Ernst Chain"
+            },
+            {
+              "q": "What technician built improvised laboratory apparatus using bedpans at Oxford?",
+              "a": "Norman Heatley"
+            },
+            {
+              "q": "What was the name of the Oxford policeman who was the first human patient treated with penicillin in 1941?",
+              "a": "Albert Alexander"
+            },
+            {
+              "q": "Why did Albert Alexander die despite penicillin clearing his infection?",
+              "a": "The Oxford team ran out of penicillin after five days"
+            },
+            {
+              "q": "In what US city did scientists discover that corn steep liquor boosted penicillin yields?",
+              "a": "Peoria, Illinois"
+            },
+            {
+              "q": "How many doses of penicillin were manufactured in time for D-Day in June 1944?",
+              "a": "2.3 million doses"
+            },
+            {
+              "q": "What dangerous consequence of overusing antibiotics did Fleming warn about in 1945?",
+              "a": "Bacterial resistance (superbugs like MRSA)"
+            }
           ]
         },
         {
@@ -30145,48 +30345,6 @@
               "Source B": "A modern standardized plain cigarette packet introduced under UK law in May 2016, stripped of all corporate branding, rendered in drab olive-green (Pantone 448 C), and covered with bold government graphic health warnings (\"Smoking kills\"). **Hinge Question:** Compare Source B with Source A: how does modern plain standardized packaging represent the total, permanent rejection of 19th-century laissez-faire by the British government?"
             }
           },
-          "doNow": [
-            {
-              "q": "Who pioneered antiseptic carbolic acid spray during operations in 1865?",
-              "a": "Joseph Lister"
-            },
-            {
-              "q": "What 1875 Act made it compulsory for local councils in Britain to provide clean water and sewers?",
-              "a": "The Public Health Act 1875"
-            },
-            {
-              "q": "Who discovered X-rays in December 1895?",
-              "a": "Wilhelm Conrad Röntgen"
-            },
-            {
-              "q": "What arsenic-based drug discovered in 1909 was the first synthetic magic bullet for syphilis?",
-              "a": "Salvarsan 606 (Paul Ehrlich and Sahachiro Hata)"
-            },
-            {
-              "q": "What year did Alexander Fleming discover penicillin at St Mary’s Hospital?",
-              "a": "1928"
-            },
-            {
-              "q": "Who was Minister of Health when the National Health Service was established on 5 July 1948?",
-              "a": "Aneurin Bevan"
-            },
-            {
-              "q": "Who captured Photograph 51 in May 1952 using X-ray crystallography?",
-              "a": "Rosalind Franklin"
-            },
-            {
-              "q": "Who built the 1953 Cambridge double helix model of DNA with Watson?",
-              "a": "Francis Crick"
-            },
-            {
-              "q": "What diagnostic machine did Godfrey Hounsfield invent at EMI in 1971?",
-              "a": "The CT scanner (Computed Tomography)"
-            },
-            {
-              "q": "In what year was the international Human Genome Project completed?",
-              "a": "2003"
-            }
-          ],
           "fun_facts": [
             "When epidemiologist Richard Doll began his 1948 study, he was a heavy smoker who assumed tarmac road dust was causing lung cancer; as the statistical data accumulated, he immediately quit smoking and lived to age 92.",
             "Under the 2016 plain packaging legislation, all tobacco products in the UK must be sold in Pantone 448 C—a drab dark olive-brown color scientifically tested to be the most visually repellent color to consumers.",
@@ -30520,6 +30678,48 @@
               "context": "Modern standardized plain cigarette packaging introduced under the UK Children and Families Act and 2016 regulations, eliminating brand typography and corporate logos in favour of prominent photographic health warnings.",
               "hinge_question": "How does the transition from unregulated commercial advertising (Source A) to state-mandated plain packaging (Source B) illustrate the changing role of government intervention in 20th- and 21st-century public health?"
             }
+          ],
+          "do_now": [
+            {
+              "q": "Who were the two British epidemiologists who proved that smoking causes lung cancer in 1950?",
+              "a": "Richard Doll and Austin Bradford Hill"
+            },
+            {
+              "q": "What was the long-term study of over 40,000 doctors launched in 1951 called?",
+              "a": "The British Doctors Study"
+            },
+            {
+              "q": "Why is lung cancer particularly difficult to diagnose in its early stages?",
+              "a": "Lung tissue has no pain nerves, so early tumors grow without symptoms"
+            },
+            {
+              "q": "What type of diagnostic scan uses low-dose radiation to detect small lung tumors early?",
+              "a": "Low-dose helical CT scan"
+            },
+            {
+              "q": "What surgical procedure involves removing an entire cancerous lobe of a lung?",
+              "a": "Lobectomy"
+            },
+            {
+              "q": "What modern cancer treatment uses drugs to train the body’s own immune T-cells to attack tumors?",
+              "a": "Immunotherapy"
+            },
+            {
+              "q": "In what year was cigarette advertising completely banned on British television?",
+              "a": "1965"
+            },
+            {
+              "q": "In what year was smoking banned in all enclosed public places and workplaces in England?",
+              "a": "2007 (The Health Act 2007)"
+            },
+            {
+              "q": "What standardized color (Pantone 448 C) was mandated for UK cigarette packaging in 2016?",
+              "a": "Drab dark olive-brown (plain packaging)"
+            },
+            {
+              "q": "Approximately what percentage of adult British men smoked in 1950 compared to under 13% today?",
+              "a": "65%"
+            }
           ]
         },
         {
@@ -30555,34 +30755,44 @@
           ],
           "do_now": [
             {
-              "q": "Describe one feature of aseptic surgical techniques developed before 1914. [2 marks]",
-              "feature": "The sterilisation of all surgical instruments, gowns, and rubber gloves using high-pressure steam autoclaves before operations began.",
-              "detail": "This created an entirely germ-free operating theatre environment, preventing bacteria from entering open incisions and dramatically reducing post-operative sepsis.",
-              "a": "Feature: The sterilisation of all surgical instruments, gowns, and rubber gloves using high-pressure steam autoclaves before operations began.\nDetail: This created an entirely germ-free operating theatre environment, preventing bacteria from entering open incisions and dramatically reducing post-operative sepsis."
+              "q": "In which century BC did Hippocrates practise clinical observation?",
+              "a": "5th Century BC"
             },
             {
-              "q": "Describe one feature of Wilhelm Röntgen’s discovery of X-rays in 1895. [2 marks]",
-              "feature": "The ability of high-frequency electromagnetic radiation to penetrate human soft tissue and expose photographic plates behind bones.",
-              "detail": "This allowed doctors for the first time to diagnose internal skeletal fractures and locate foreign bodies inside living patients without invasive exploratory surgery.",
-              "a": "Feature: The ability of high-frequency electromagnetic radiation to penetrate human soft tissue and expose photographic plates behind bones.\nDetail: This allowed doctors for the first time to diagnose internal skeletal fractures and locate foreign bodies inside living patients without invasive exploratory surgery."
+              "q": "Name the four bodily fluids in humoural medicine.",
+              "a": "Blood, Phlegm, Yellow Bile, Black Bile"
             },
             {
-              "q": "Describe one feature of Karl Landsteiner’s discovery of human blood groups in 1901. [2 marks]",
-              "feature": "The identification of distinct ABO blood types based on specific antigens present on the surface of red blood cells.",
-              "detail": "This proved that transfusions between incompatible blood groups caused fatal agglutination (clumping) of red cells, establishing the necessity of donor-recipient matching.",
-              "a": "Feature: The identification of distinct ABO blood types based on specific antigens present on the surface of red blood cells.\nDetail: This proved that transfusions between incompatible blood groups caused fatal agglutination (clumping) of red cells, establishing the necessity of donor-recipient matching."
+              "q": "Which Roman physician developed the Theory of Opposites?",
+              "a": "Claudius Galen"
             },
             {
-              "q": "Describe one feature of Florence Nightingale’s pavilion hospital design in the late 19th century. [2 marks]",
-              "feature": "Separate, well-ventilated hospital pavilions with cross-ventilation windows and easily scrubbed, non-porous tiled surfaces.",
-              "detail": "This dispersed airborne foul air and reduced cross-infection between different wards, establishing modern nursing hygiene standards before the war.",
-              "a": "Feature: Separate, well-ventilated hospital pavilions with cross-ventilation windows and easily scrubbed, non-porous tiled surfaces.\nDetail: This dispersed airborne foul air and reduced cross-infection between different wards, establishing modern nursing hygiene standards before the war."
+              "q": "In what year did the Black Death reach England?",
+              "a": "1348"
             },
             {
-              "q": "Describe one feature of the pre-war limitation of blood transfusions in 1914. [2 marks]",
-              "feature": "The inability to store blood outside the human body for more than a few minutes because blood naturally coagulated (clotted).",
-              "detail": "Consequently, transfusions required direct person-to-person connection via tubes, making transfusions impossible to carry out on a chaotic, mass-casualty battlefield.",
-              "a": "Feature: The inability to store blood outside the human body for more than a few minutes because blood naturally coagulated (clotted).\nDetail: Consequently, transfusions required direct person-to-person connection via tubes, making transfusions impossible to carry out on a chaotic, mass-casualty battlefield."
+              "q": "Which Renaissance anatomist published De Fabrica in 1543?",
+              "a": "Andreas Vesalius"
+            },
+            {
+              "q": "Who proved blood circulates through the body in 1628?",
+              "a": "William Harvey"
+            },
+            {
+              "q": "Which physician classified diseases through bedside observation?",
+              "a": "Thomas Sydenham (1676)"
+            },
+            {
+              "q": "In what year was the Royal Society founded?",
+              "a": "1660"
+            },
+            {
+              "q": "What term describes foul air believed to cause disease?",
+              "a": "Miasma"
+            },
+            {
+              "q": "What religious institution monopolized medical copying in the Middle Ages?",
+              "a": "The Catholic Church"
             }
           ],
           "narrative_blocks": [
@@ -30892,34 +31102,44 @@
           ],
           "do_now": [
             {
-              "q": "Describe one feature of the communications trenches in the Western Front trench system. [2 marks]",
-              "feature": "Deep zig-zagging trenches that connected the frontline and support trenches back to reserve lines and medical aid posts.",
-              "detail": "They allowed fresh troops, munitions, and stretcher-borne casualties to move between zones under continuous cover from enemy fire.",
-              "a": "Feature: Deep zig-zagging trenches that connected the frontline and support trenches back to reserve lines and medical aid posts.\nDetail: They allowed fresh troops, munitions, and stretcher-borne casualties to move between zones under continuous cover from enemy fire."
+              "q": "Which French chemist published the Germ Theory of Disease in 1861?",
+              "a": "Louis Pasteur"
             },
             {
-              "q": "Describe one feature of the Ypres Salient as a military battleground. [2 marks]",
-              "feature": "A vulnerable British bulge into German lines surrounded on three sides by German artillery on commanding ridges.",
-              "detail": "This allowed German gunners to fire onto British positions from multiple angles, creating exceptionally high casualty numbers in the low-lying basin.",
-              "a": "Feature: A vulnerable British bulge into German lines surrounded on three sides by German artillery on commanding ridges.\nDetail: This allowed German gunners to fire onto British positions from multiple angles, creating exceptionally high casualty numbers in the low-lying basin."
+              "q": "Which German scientist identified the specific bacteria for anthrax (1876) and TB (1882)?",
+              "a": "Robert Koch"
             },
             {
-              "q": "Describe one feature of the underground tunnel system constructed at Arras in 1916–17. [2 marks]",
-              "feature": "The expansion of ancient chalk quarries by miners into an interconnected subterranean city sheltering 25,000 men.",
-              "detail": "The complex included electric lighting, running water, and an underground 700-bed dressing station (Thompson’s Cave) safe from surface artillery.",
-              "a": "Feature: The expansion of ancient chalk quarries by miners into an interconnected subterranean city sheltering 25,000 men.\nDetail: The complex included electric lighting, running water, and an underground 700-bed dressing station (Thompson’s Cave) safe from surface artillery."
+              "q": "Who discovered the smallpox vaccination in 1796?",
+              "a": "Edward Jenner"
             },
             {
-              "q": "Describe one feature of the zig-zag traverse design used in frontline trenches. [2 marks]",
-              "feature": "Trenches were constructed with sharp right-angled bends (traverses) rather than long, straight ditches.",
-              "detail": "This prevented enemy soldiers from firing down the entire ditch and confined high-explosive shell bursts to a single bay.",
-              "a": "Feature: Trenches were constructed with sharp right-angled bends (traverses) rather than long, straight ditches.\nDetail: This prevented enemy soldiers from firing down the entire ditch and confined high-explosive shell bursts to a single bay."
+              "q": "Which pioneer transformed sanitation at Scutari Hospital in 1854?",
+              "a": "Florence Nightingale"
             },
             {
-              "q": "Describe one feature of the Battle of the Somme (1916) for British medical services. [2 marks]",
-              "feature": "An overwhelming deluge of casualties on 1 July 1916, with 57,470 British soldiers wounded or killed on the first day.",
-              "detail": "This immense volume completely swamped dressing stations and ambulance logistics, leaving thousands of casualties lying unattended for days.",
-              "a": "Feature: An overwhelming deluge of casualties on 1 July 1916, with 57,470 British soldiers wounded or killed on the first day.\nDetail: This immense volume completely swamped dressing stations and ambulance logistics, leaving thousands of casualties lying unattended for days."
+              "q": "Which Scottish doctor discovered the anaesthetic properties of chloroform in 1847?",
+              "a": "James Simpson"
+            },
+            {
+              "q": "Who pioneered antiseptic carbolic acid spray in surgery in 1865?",
+              "a": "Joseph Lister"
+            },
+            {
+              "q": "Who proved cholera was waterborne via the Broad Street pump in 1854?",
+              "a": "Dr John Snow"
+            },
+            {
+              "q": "What year was the Second Public Health Act passed in Britain?",
+              "a": "1875"
+            },
+            {
+              "q": "What was the primary danger of static warfare in the low-lying Ypres Salient?",
+              "a": "High water table and waterlogged trenches"
+            },
+            {
+              "q": "Why were trenches dug in zig-zag traverses rather than straight lines?",
+              "a": "To contain artillery blast and prevent enfilade rifle fire"
             }
           ],
           "narrative_blocks": [
@@ -31229,34 +31449,44 @@
           ],
           "do_now": [
             {
-              "q": "Describe one feature of the medical condition known as trench foot. [2 marks]",
-              "feature": "Severe tissue swelling, numbness, and blue mottling of the feet caused by prolonged standing in cold, damp mud without dry socks.",
-              "detail": "If left untreated, restricted blood circulation caused moist gangrene, requiring surgical amputation of toes or the foot to prevent fatal blood poisoning.",
-              "a": "Feature: Severe tissue swelling, numbness, and blue mottling of the feet caused by prolonged standing in cold, damp mud without dry socks.\nDetail: If left untreated, restricted blood circulation caused moist gangrene, requiring surgical amputation of toes or the foot to prevent fatal blood poisoning."
+              "q": "What percentage of Western Front wounds were caused by artillery shells and shrapnel?",
+              "a": "Approximately 58%"
             },
             {
-              "q": "Describe one feature of the preventive routine enforced by officers against trench foot. [2 marks]",
-              "feature": "Compulsory daily rubbing of bare feet with water-repellent whale oil and the mandatory inspection of every soldier’s feet by NCOs.",
-              "detail": "Soldiers operated in paired \"buddy systems\" to ensure feet were greased and dry socks donned twice daily, slashing case numbers across the British sector.",
-              "a": "Feature: Compulsory daily rubbing of bare feet with water-repellent whale oil and the mandatory inspection of every soldier’s feet by NCOs.\nDetail: Soldiers operated in paired \"buddy systems\" to ensure feet were greased and dry socks donned twice daily, slashing case numbers across the British sector."
+              "q": "Which bacterium in heavily manured Flanders soil caused fatal gas gangrene?",
+              "a": "Clostridium welchii"
             },
             {
-              "q": "Describe one feature of trench fever (Pyrexia of Unknown Origin). [2 marks]",
-              "feature": "An infectious bacterial illness causing severe shivering, splitting headaches, extreme aching in the shins, and recurring high fevers.",
-              "detail": "It was transmitted by the excretions of body lice nesting in uniform seams and incapacitated up to 15% of troops for up to a month at a time.",
-              "a": "Feature: An infectious bacterial illness causing severe shivering, splitting headaches, extreme aching in the shins, and recurring high fevers.\nDetail: It was transmitted by the excretions of body lice nesting in uniform seams and incapacitated up to 15% of troops for up to a month at a time."
+              "q": "In what year was the British pressed-steel Brodie helmet first issued?",
+              "a": "1915"
             },
             {
-              "q": "Describe one feature of the transmission of trench fever. [2 marks]",
-              "feature": "It was spread by the faeces of body lice (*Pediculus humanus corporis*) that infested the seams of woollen service uniforms.",
-              "detail": "When soldiers scratched irritated louse bites, louse excrement containing the bacterium *Bartonella quintana* was rubbed directly into broken skin.",
-              "a": "Feature: It was spread by the faeces of body lice (*Pediculus humanus corporis*) that infested the seams of woollen service uniforms.\nDetail: When soldiers scratched irritated louse bites, louse excrement containing the bacterium *Bartonella quintana* was rubbed directly into broken skin."
+              "q": "By what percentage did the Brodie helmet reduce fatal shrapnel head wounds?",
+              "a": "Estimated 80%"
             },
             {
-              "q": "Describe one feature of water sanitation measures taken to prevent dysentery in the trenches. [2 marks]",
-              "feature": "The mandatory addition of purifying chloride of lime (chlorine) to all drinking water delivered in water-cart tanks.",
-              "detail": "This killed waterborne intestinal bacteria, and the digging of deep latrines treated with quicklime prevented the contamination of food and nearby water sources.",
-              "a": "Feature: The mandatory addition of purifying chloride of lime (chlorine) to all drinking water delivered in water-cart tanks.\nDetail: This killed waterborne intestinal bacteria, and the digging of deep latrines treated with quicklime prevented the contamination of food and nearby water sources."
+              "q": "In which battle did the German Army first deploy chlorine poison gas in April 1915?",
+              "a": "Second Battle of Ypres"
+            },
+            {
+              "q": "What emergency measure did British troops use before gas masks were invented?",
+              "a": "Urine-soaked cloth pads"
+            },
+            {
+              "q": "Which gas introduced in 1917 caused internal and external blistering and blindness?",
+              "a": "Mustard gas"
+            },
+            {
+              "q": "What antiseptic chemical did Joseph Lister pioneer in 1865?",
+              "a": "Carbolic acid"
+            },
+            {
+              "q": "Who proved that cholera was caused by contaminated water rather than miasma?",
+              "a": "Dr John Snow"
+            },
+            {
+              "q": "What was the daily routine used in British trenches to prevent trench foot?",
+              "a": "Rubbing feet with whale oil and changing socks"
             }
           ],
           "narrative_blocks": [
@@ -31566,34 +31796,44 @@
           ],
           "do_now": [
             {
-              "q": "Describe one feature of the wounds caused by high-explosive artillery shells on the Western Front. [2 marks]",
-              "feature": "Jagged steel shell fragments tore large, irregular flesh wounds and shattered bone structures at high velocity.",
-              "detail": "The blast vacuum dragged dirty, bacteria-laden uniform cloth and soil deep into internal wound cavities, creating ideal conditions for infection.",
-              "a": "Feature: Jagged steel shell fragments tore large, irregular flesh wounds and shattered bone structures at high velocity.\nDetail: The blast vacuum dragged dirty, bacteria-laden uniform cloth and soil deep into internal wound cavities, creating ideal conditions for infection."
+              "q": "How many stretcher bearers were assigned to an infantry battalion of 1,000 men?",
+              "a": "16 stretcher bearers"
             },
             {
-              "q": "Describe one feature of gas gangrene in wounded soldiers. [2 marks]",
-              "feature": "A ferocious bacterial infection caused by anaerobic soil microbes (*Clostridium welchii*) that flourished in wounds deprived of oxygen.",
-              "detail": "The bacteria produced gas bubbles under the skin, destroyed muscle tissue with foul-smelling toxins, and could kill a casualty within 24 to 48 hours.",
-              "a": "Feature: A ferocious bacterial infection caused by anaerobic soil microbes (*Clostridium welchii*) that flourished in wounds deprived of oxygen.\nDetail: The bacteria produced gas bubbles under the skin, destroyed muscle tissue with foul-smelling toxins, and could kill a casualty within 24 to 48 hours."
+              "q": "How many bearers were typically required to carry one wounded man in Passchendaele mud?",
+              "a": "4 to 6 bearers"
             },
             {
-              "q": "Describe one feature of the Brodie steel helmet introduced in 1915. [2 marks]",
-              "feature": "A pressed-steel combat helmet with a wide protective brim designed by John Brodie to deflect falling shrapnel and shell fragments.",
-              "detail": "It replaced soft cloth caps and reduced fatal British head wounds by an estimated 80%, although it did not protect against direct high-velocity rifle fire.",
-              "a": "Feature: A pressed-steel combat helmet with a wide protective brim designed by John Brodie to deflect falling shrapnel and shell fragments.\nDetail: It replaced soft cloth caps and reduced fatal British head wounds by an estimated 80%, although it did not protect against direct high-velocity rifle fire."
+              "q": "How far behind the frontline was a Regimental Aid Post (RAP) usually located?",
+              "a": "200 to 300 yards"
             },
             {
-              "q": "Describe one feature of the first German chlorine gas attack at the Second Battle of Ypres in April 1915. [2 marks]",
-              "feature": "The release of a greenish-yellow cloud of toxic chlorine gas carried by the wind across Allied trenches without warning.",
-              "detail": "It destroyed the respiratory lining of the lungs, causing victims to choke and drown in their own bodily fluids, forcing troops to improvise urine pads.",
-              "a": "Feature: The release of a greenish-yellow cloud of toxic chlorine gas carried by the wind across Allied trenches without warning.\nDetail: It destroyed the respiratory lining of the lungs, causing victims to choke and drown in their own bodily fluids, forcing troops to improvise urine pads."
+              "q": "Could major surgery be performed at a Regimental Aid Post?",
+              "a": "No (only first aid and bandaging)"
             },
             {
-              "q": "Describe one feature of the British Small Box Respirator (SBR) issued from 1916. [2 marks]",
-              "feature": "A rubberized face mask with glass goggles connected by a corrugated flexible hose to a chest-mounted filter canister containing charcoal.",
-              "detail": "It provided reliable, air-tight protection against lethal phosgene and chlorine gas clouds, drastically reducing the casualty and mortality rate from gas attacks.",
-              "a": "Feature: A rubberized face mask with glass goggles connected by a corrugated flexible hose to a chest-mounted filter canister containing charcoal.\nDetail: It provided reliable, air-tight protection against lethal phosgene and chlorine gas clouds, drastically reducing the casualty and mortality rate from gas attacks."
+              "q": "Which medical unit operated Advanced and Main Dressing Stations (ADS/MDS)?",
+              "a": "RAMC Field Ambulance"
+            },
+            {
+              "q": "What station in the evacuation chain was the primary surgical center near rail lines?",
+              "a": "Casualty Clearing Station (CCS)"
+            },
+            {
+              "q": "What three triage categories were used at Casualty Clearing Stations?",
+              "a": "The Walking Wounded, Immediate Surgery, The Moribund"
+            },
+            {
+              "q": "What female voluntary organisation drove motor ambulances on the Western Front?",
+              "a": "First Aid Nursing Yeomanry (FANY)"
+            },
+            {
+              "q": "Why were canal barges preferred for transporting chest and brain wound patients?",
+              "a": "Provided smooth, vibration-free travel"
+            },
+            {
+              "q": "Where were large British Base Hospitals located in France?",
+              "a": "Coastal ports (Boulogne, Le Touquet, Calais)"
             }
           ],
           "narrative_blocks": [
@@ -31903,34 +32143,44 @@
           ],
           "do_now": [
             {
-              "q": "Describe one feature of the Regimental Aid Post (RAP) in the Chain of Evacuation. [2 marks]",
-              "feature": "An advanced medical post located within 200 to 300 yards of the frontline trench in a communication trench dugout or cellar.",
-              "detail": "Staffed by the Regimental Medical Officer, its purpose was immediate first aid—applying field dressings, administering morphine, and cleaning superficial wounds.",
-              "a": "Feature: An advanced medical post located within 200 to 300 yards of the frontline trench in a communication trench dugout or cellar.\nDetail: Staffed by the Regimental Medical Officer, its purpose was immediate first aid—applying field dressings, administering morphine, and cleaning superficial wounds."
+              "q": "What was the mortality rate for compound femur fractures in 1914 before the Thomas Splint?",
+              "a": "80%"
             },
             {
-              "q": "Describe one feature of the role of stretcher bearers on the Western Front. [2 marks]",
-              "feature": "Teams of four (or six in deep mud) unarmed soldiers who carried severely wounded casualties across shell-pocked battlefields under fire.",
-              "detail": "They navigated flooded trenches and cratered No Man’s Land day and night, suffering exceptionally high casualty rates while retrieving wounded comrades.",
-              "a": "Feature: Teams of four (or six in deep mud) unarmed soldiers who carried severely wounded casualties across shell-pocked battlefields under fire.\nDetail: They navigated flooded trenches and cratered No Man’s Land day and night, suffering exceptionally high casualty rates while retrieving wounded comrades."
+              "q": "Who introduced the Thomas Splint to frontline medical officers in December 1915?",
+              "a": "Robert Jones"
             },
             {
-              "q": "Describe one feature of the Casualty Clearing Station (CCS) in the Chain of Evacuation. [2 marks]",
-              "feature": "A large, specialized field hospital situated 7 to 12 miles behind the front line beside rail networks and canal junctions.",
-              "detail": "Equipped with sterile operating theatres, X-ray facilities, and trained female nurses, it carried out urgent life-saving surgery on contaminated wounds.",
-              "a": "Feature: A large, specialized field hospital situated 7 to 12 miles behind the front line beside rail networks and canal junctions.\nDetail: Equipped with sterile operating theatres, X-ray facilities, and trained female nurses, it carried out urgent life-saving surgery on contaminated wounds."
+              "q": "To what percentage did the Thomas Splint reduce compound femur mortality by 1916?",
+              "a": "20%"
             },
             {
-              "q": "Describe one feature of the triage system operated at Casualty Clearing Stations. [2 marks]",
-              "feature": "The systematic division of incoming wounded casualties into three strict categories (walking wounded, immediate surgery, and moribund).",
-              "detail": "This ensured that surgical teams prioritized patients with severe internal bleeding or traumatic wounds who had a viable chance of survival if operated on at once.",
-              "a": "Feature: The systematic division of incoming wounded casualties into three strict categories (walking wounded, immediate surgery, and moribund).\nDetail: This ensured that surgical teams prioritized patients with severe internal bleeding or traumatic wounds who had a viable chance of survival if operated on at once."
+              "q": "How did the Thomas Splint prevent fatal internal haemorrhage in fractured thighs?",
+              "a": "Applied mechanical traction to pull bone ends apart"
             },
             {
-              "q": "Describe one feature of the transport methods used between Casualty Clearing Stations and Base Hospitals. [2 marks]",
-              "feature": "Specially converted ambulance trains and canal barges fitted with tiered stretcher racks, operating tables, and medical nursing staff.",
-              "detail": "Canal barges provided a remarkably smooth, vibration-free journey along waterways for soldiers suffering from fragile abdominal wounds or fractured skulls.",
-              "a": "Feature: Specially converted ambulance trains and canal barges fitted with tiered stretcher racks, operating tables, and medical nursing staff.\nDetail: Canal barges provided a remarkably smooth, vibration-free journey along waterways for soldiers suffering from fragile abdominal wounds or fractured skulls."
+              "q": "What surgical term describes cutting away dead, infected tissue from a gunshot wound?",
+              "a": "Wound debridement (wound excision)"
+            },
+            {
+              "q": "What antiseptic irrigation solution was used continuously through perforated rubber tubes?",
+              "a": "Carrel-Dakin solution"
+            },
+            {
+              "q": "Why did Carrel-Dakin solution need to be made fresh in laboratories every 6 hours?",
+              "a": "It degraded quickly and lost antiseptic potency"
+            },
+            {
+              "q": "Who discovered X-rays in Germany in 1895?",
+              "a": "Wilhelm Röntgen"
+            },
+            {
+              "q": "Name one limitation of mobile X-ray units used at Casualty Clearing Stations.",
+              "a": "Could not detect fabric or clothing fragments driven into wounds"
+            },
+            {
+              "q": "What was the role of Marie Curie in mobile radiology during the Great War?",
+              "a": "Equipped mobile X-ray vans (‘Petites Curies’) on the Western Front"
             }
           ],
           "narrative_blocks": [
@@ -32240,34 +32490,44 @@
           ],
           "do_now": [
             {
-              "q": "Describe one feature of the Thomas Splint introduced to the Western Front in December 1915. [2 marks]",
-              "feature": "A rigid metal frame designed by Hugh Owen Thomas with a padded leather groin ring that pulled continuous mechanical traction on the leg.",
-              "detail": "By stabilizing shattered femur bones and stopping muscle spasms, it prevented jagged bone ends from lacerating the femoral artery, slashing mortality from 80% to 20%.",
-              "a": "Feature: A rigid metal frame designed by Hugh Owen Thomas with a padded leather groin ring that pulled continuous mechanical traction on the leg.\nDetail: By stabilizing shattered femur bones and stopping muscle spasms, it prevented jagged bone ends from lacerating the femoral artery, slashing mortality from 80% to 20%."
+              "q": "Who discovered the main ABO blood groups in Vienna in 1901?",
+              "a": "Karl Landsteiner"
             },
             {
-              "q": "Describe one feature of the surgical technique known as wound debridement. [2 marks]",
-              "feature": "The surgical cutting away (excision) of all dead, damaged, and contaminated tissue around a shrapnel wound before infection could spread.",
-              "detail": "Removing necrotic flesh starved anaerobic bacteria of the dead tissue they needed to multiply, preventing the onset of gas gangrene.",
-              "a": "Feature: The surgical cutting away (excision) of all dead, damaged, and contaminated tissue around a shrapnel wound before infection could spread.\nDetail: Removing necrotic flesh starved anaerobic bacteria of the dead tissue they needed to multiply, preventing the onset of gas gangrene."
+              "q": "What chemical was discovered by Albert Hustin in 1914 to prevent blood clotting?",
+              "a": "Sodium citrate"
             },
             {
-              "q": "Describe one feature of the Carrel-Dakin method of treating infected battlefield wounds. [2 marks]",
-              "feature": "The continuous irrigation of open, debrided wound cavities with a dilute sodium hypochlorite (antiseptic bleach) solution via rubber tubing.",
-              "detail": "It neutralized bacterial infection without destroying healthy human tissue cells, though the solution had to be prepared fresh every six hours due to chemical instability.",
-              "a": "Feature: The continuous irrigation of open, debrided wound cavities with a dilute sodium hypochlorite (antiseptic bleach) solution via rubber tubing.\nDetail: It neutralized bacterial infection without destroying healthy human tissue cells, though the solution had to be prepared fresh every six hours due to chemical instability."
+              "q": "What substance did Rous and Turner add in 1916 to preserve blood for up to 4 weeks?",
+              "a": "Glucose (dextrose)"
             },
             {
-              "q": "Describe one feature of mobile X-ray units deployed by the Royal Army Medical Corps. [2 marks]",
-              "feature": "Motorized radiology vans containing portable X-ray generators, darkrooms, and fluoroscopes that traveled directly between Casualty Clearing Stations.",
-              "detail": "They allowed surgeons to pinpoint the exact three-dimensional depth of jagged shrapnel fragments and bullets inside flesh before making deep surgical incisions.",
-              "a": "Feature: Motorized radiology vans containing portable X-ray generators, darkrooms, and fluoroscopes that traveled directly between Casualty Clearing Stations.\nDetail: They allowed surgeons to pinpoint the exact three-dimensional depth of jagged shrapnel fragments and bullets inside flesh before making deep surgical incisions."
+              "q": "Who established the world’s first stored blood depot at the Battle of Cambrai in 1917?",
+              "a": "Captain Oswald Robertson"
             },
             {
-              "q": "Describe one feature of the delayed primary closure technique developed by wartime surgeons. [2 marks]",
-              "feature": "Leaving traumatic shrapnel wounds completely open for 24 to 48 hours after debridement rather than stitching them closed immediately.",
-              "detail": "This allowed trapped anaerobic bacteria to be exposed to air and antiseptic irrigation, preventing the lethal rapid buildup of gas gangrene beneath closed skin.",
-              "a": "Feature: Leaving traumatic shrapnel wounds completely open for 24 to 48 hours after debridement rather than stitching them closed immediately.\nDetail: This allowed trapped anaerobic bacteria to be exposed to air and antiseptic irrigation, preventing the lethal rapid buildup of gas gangrene beneath closed skin."
+              "q": "What blood group was chosen for universal transfusion in Robertson’s blood depot?",
+              "a": "Group O"
+            },
+            {
+              "q": "Which American surgeon pioneered precise neurosurgery using local anaesthetic on the Western Front?",
+              "a": "Harvey Cushing"
+            },
+            {
+              "q": "To what percentage did Harvey Cushing reduce brain surgery mortality in 1917?",
+              "a": "From 54% to 29%"
+            },
+            {
+              "q": "Which New Zealand-born surgeon pioneered facial reconstructive plastic surgery at Sidcup?",
+              "a": "Harold Gillies"
+            },
+            {
+              "q": "What surgical skin-transfer technique did Harold Gillies invent in 1917?",
+              "a": "The tubed pedicle graft"
+            },
+            {
+              "q": "What hospital in Kent became the world centre for British plastic facial reconstruction?",
+              "a": "Queen’s Hospital, Sidcup"
             }
           ],
           "narrative_blocks": [
