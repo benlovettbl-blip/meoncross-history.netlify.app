@@ -395,6 +395,13 @@ export function getPlayerDisplayName(player, context = 'default') {
   return `<span style="font-weight: 700;">${nick}</span>`;
 }
 
+export function renderPlayerNameWithCallsign(player, context = 'default') {
+  return getPlayerDisplayName(player, context);
+}
+if (typeof window !== 'undefined') {
+  window.renderPlayerNameWithCallsign = renderPlayerNameWithCallsign;
+}
+
 export function getPlayerSelectLabel(player) {
   if (!player) return '';
   const h = HOUSES[player.house];
