@@ -182,8 +182,8 @@ const wfConfigs = [
       'Ill health arising from the trench environment: trench foot (pathology, prevention, whale oil); trench fever (body lice, delousing); dysentery (water chlorination, chloride of lime, latrines); underground shelters.',
     sourceIndex: 0,
     sourceBadge: 'SOURCE A',
-    sourceSubtitle: 'Contemporary Visual Evidence • British War Office',
-    sourceDate: '1916',
+    sourceSubtitle: 'Contemporary Photographic Evidence • Western Front',
+    sourceDate: 'July 1916',
     doNow: [
       {
         q: 'Which French chemist published the Germ Theory of Disease in 1861?',
@@ -231,17 +231,17 @@ const wfConfigs = [
     },
     tariff: 'Question 2(b): Follow-Up Enquiry Table [4 marks &bull; 5 mins]',
     examStem:
-      'Study Source A. How could you follow up Source A to find out more about the methods used by the British Army to prevent trench foot on the Western Front?',
+      'Study Source A. How could you follow up Source A to find out more about the living conditions and non-combat illnesses experienced by British soldiers in frontline trenches on the Western Front?',
     q2bData: {
       sourceLetter: 'A',
       detailPrompt:
-        'Soldiers of the Cheshire Regiment rubbing whale oil onto bare feet in a trench buddy-system.',
+        'Soldiers huddled asleep on the damp trench floor wrapped in waterproof groundsheets.',
       questionPrompt:
-        'How effective was the daily application of whale oil in reducing trench foot hospital admissions?',
+        'What proportion of frontline infantry casualties were evacuated due to non-combat illnesses like trench fever and exhaustion rather than enemy action?',
       sourceTypePrompt:
-        'RAMC Divisional Medical Officer monthly casualty logs and hospital admission returns for 1916.',
+        'RAMC Divisional Medical Officer monthly sickness returns and battalion casualty logs for the Somme sector in 1916.',
       helpPrompt:
-        'This would provide statistical proof of whether mandatory oil rubs directly correlated with reduced foot amputations.',
+        'This would provide official statistical data proving how many soldiers were incapacitated by trench living conditions, vermin, and exhaustion compared to battle wounds.',
     },
     connectives:
       'A key detail to follow up is... &bull; The question I would ask is... &bull; The specific historical source type needed is... &bull; This source would help answer my question because...',
@@ -262,8 +262,8 @@ const wfConfigs = [
       'Wounds, injuries and diseases: high-explosive artillery shells, shrapnel fragments; infection (gas gangrene, Clostridium welchii, tetanus); head trauma and the Brodie helmet; chemical gas attacks (chlorine, phosgene, mustard gas) and respirators.',
     sourceIndex: 1, // CRITICAL FIX: Source B is the PH Anti-Gas Helmet, matching the gas exam question
     sourceBadge: 'SOURCE B',
-    sourceSubtitle: 'Contemporary Military Artifact • War Office Standard Issue',
-    sourceDate: '1915–1916',
+    sourceSubtitle: 'Contemporary Photographic Evidence • Machine Gun Corps',
+    sourceDate: 'July 1916',
     doNow: [
       {
         q: 'What percentage of Western Front wounds were caused by artillery shells and shrapnel?',
@@ -350,8 +350,8 @@ const wfConfigs = [
       'The work of the RAMC and FANY: the Chain of Evacuation (stretcher bearers, Regimental Aid Posts, Field Ambulances and Dressing Stations, Casualty Clearing Stations, Base Hospitals); triage systems; transport methods (motor ambulances, ambulance trains, canal barges).',
     sourceIndex: 0,
     sourceBadge: 'SOURCE A',
-    sourceSubtitle: 'Contemporary Visual Evidence • Western Front',
-    sourceDate: '1917',
+    sourceSubtitle: 'Contemporary Photographic Evidence • Western Front',
+    sourceDate: 'August 1917',
     doNow: [
       {
         q: 'How many stretcher bearers were assigned to an infantry battalion of 1,000 men?',
@@ -412,11 +412,11 @@ const wfConfigs = [
     q2bData: {
       sourceLetter: 'A',
       detailPrompt:
-        'Four RAMC bearers struggling waist-deep through Flanders mud with a wooden stretcher at Passchendaele.',
+        'A team of six stretcher bearers struggling through deep, liquid mud to evacuate a wounded soldier on a wooden stretcher near Boesinghe.',
       questionPrompt:
-        'What was the average time taken to evacuate a casualty from the frontline sap to the RAP during 3rd Ypres?',
+        'What was the average time taken to evacuate a casualty from the frontline sap to the RAP and Dressing Station during the Third Battle of Ypres?',
       sourceTypePrompt:
-        'RAMC Battalion Medical Officer war diaries and stretcher bearer logs from the Ypres sector in autumn 1917.',
+        'RAMC Battalion Medical Officer war diaries and Field Ambulance stretcher bearer logs from the Ypres sector in autumn 1917.',
       helpPrompt:
         'This would reveal exact transport durations, bearer casualty rates, and whether delays caused fatal haemorrhagic shock.',
     },
@@ -439,7 +439,7 @@ const wfConfigs = [
       'Medical advances on the Western Front: the Thomas Splint (Hugh Owen Thomas, Robert Jones) reducing compound femur mortality; wound debridement and delayed primary closure; the Carrel-Dakin antiseptic irrigation method; mobile X-ray units and radiology.',
     sourceIndex: 0,
     sourceBadge: 'SOURCE A',
-    sourceSubtitle: 'Contemporary Instructional Evidence • RAMC Archive',
+    sourceSubtitle: 'Contemporary Medical Artifact • Standard Issue',
     sourceDate: 'c.1916',
     doNow: [
       {
@@ -530,7 +530,7 @@ const wfConfigs = [
       'Medical advances on the Western Front: blood transfusions and storage (Landsteiner, Hustin, Rous and Turner, Captain Oswald Robertson and the Cambrai blood bank); specialized neurosurgery (Harvey Cushing); plastic and facial reconstruction (Harold Gillies, Queen’s Hospital Sidcup, tubed pedicle).',
     sourceIndex: 0,
     sourceBadge: 'SOURCE A',
-    sourceSubtitle: 'Contemporary Medical Technology • Battle of Cambrai',
+    sourceSubtitle: 'Primary Medical Artifact • Cambrai Blood Depot',
     sourceDate: '1917',
     doNow: [
       { q: 'Who discovered the main ABO blood groups in Vienna in 1901?', a: 'Karl Landsteiner' },

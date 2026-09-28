@@ -11162,7 +11162,7 @@ export const unitData = {
               'Royal Flying Corps aerial photograph showing the intricate zig-zag traverses of frontline, support, and communication trenches near Ypres, criss-crossed with artillery shell craters.',
             desc: 'Aerial reconnaissance photograph capturing the geometric layout of British trenches and cratered terrain.',
             provenance:
-              'Official military aerial photograph taken by the Royal Flying Corps, British Sector near Ypres, 1917. Imperial War Museum Collection (Shelfmark: Q 42231).',
+              'Official military aerial photograph taken by the Royal Flying Corps, British Sector near Ypres, 1917. Imperial War Museum Collection.',
             citation:
               'Royal Flying Corps Aerial Reconnaissance, British Sector near Ypres, 1917 (Imperial War Museum Q 42231).',
             source_context:
@@ -11219,7 +11219,7 @@ export const unitData = {
             'Royal Flying Corps aerial photograph showing the intricate zig-zag traverses of frontline, support, and communication trenches near Ypres, criss-crossed with artillery shell craters.',
           desc: 'Aerial reconnaissance photograph capturing the geometric layout of British trenches and cratered terrain.',
           provenance:
-            'Official military aerial photograph taken by the Royal Flying Corps, British Sector near Ypres, 1917. Imperial War Museum Collection (Shelfmark: Q 42231).',
+            'Official military aerial photograph taken by the Royal Flying Corps, British Sector near Ypres, 1917. Imperial War Museum Collection.',
           citation:
             'Royal Flying Corps Aerial Reconnaissance, British Sector near Ypres, 1917 (Imperial War Museum Q 42231).',
           source_context:
@@ -11570,23 +11570,23 @@ export const unitData = {
             id: 'source_a_cheshire_regiment_trench',
             letter: 'A',
             title:
-              'Source A: Soldiers of the Cheshire Regiment Greasing Feet in a Reserve Trench (1916)',
+              'Source A: Soldiers of the Cheshire Regiment Resting in a Frontline Trench at Ovillers (1916)',
             src: '/images/cheshire_regiment_trench.png',
             source: '/images/cheshire_regiment_trench.png',
             image: '/images/cheshire_regiment_trench.png',
             caption:
-              'British infantrymen of the 8th Battalion, Cheshire Regiment, seated on the firestep of a trench, removing their boots and rubbing whale oil onto their feet under the supervision of a non-commissioned officer.',
+              'British infantrymen of ‘A’ Company, 11th Battalion, Cheshire Regiment, resting wrapped in waterproof groundsheets on the duckboards and dugouts of a captured trench at Ovillers-la-Boisselle, while a sentry remains on duty on the parapet.',
             desc: 'Primary photograph of British infantrymen performing compulsory foot inspections and greasing boots with whale oil.',
             provenance:
-              'Official British War Office photograph taken on the Western Front, 1916. Imperial War Museum Collection (Shelfmark: Q 5156).',
+              'Official British War Office photograph taken by Lieutenant John Warwick Brooke during the Battle of the Somme, July 1916. Imperial War Museum Collection.',
             citation:
               'Official British War Office Photograph, Western Front, 1916 (Imperial War Museum Q 5156).',
             source_context:
-              'An authentic wartime photograph taken in 1916 showing British infantrymen of the Cheshire Regiment carrying out the mandatory daily foot inspection and greasing routine using whale oil to prevent the onset of trench foot in cold, damp conditions.',
+              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme, capturing the extreme physical exhaustion and cramped living conditions of British infantrymen in frontline trenches. Soldiers spent days without sleep or hot food, sheltering in shallow dugouts and on damp duckboards under waterproof groundsheets, creating conditions where body lice (which transmitted trench fever) and extreme physical exhaustion rapidly spread.',
             context:
-              'An authentic wartime photograph taken in 1916 showing British infantrymen of the Cheshire Regiment carrying out the mandatory daily foot inspection and greasing routine using whale oil to prevent the onset of trench foot in cold, damp conditions.',
+              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme, capturing the extreme physical exhaustion and cramped living conditions of British infantrymen in frontline trenches. Soldiers spent days without sleep or hot food, sheltering in shallow dugouts and on damp duckboards under waterproof groundsheets, creating conditions where body lice (which transmitted trench fever) and extreme physical exhaustion rapidly spread.',
             hinge_question:
-              'Study Source A. How does this photograph demonstrate the organized preventive measures enforced by the British Army to stop soldiers from developing trench foot?',
+              'Study Source A. How does this photograph illustrate the harsh living conditions in frontline trenches that made soldiers vulnerable to physical exhaustion and non-combat illnesses like trench fever?',
           },
         },
         {
@@ -11627,23 +11627,23 @@ export const unitData = {
           id: 'source_a_cheshire_regiment_trench',
           letter: 'A',
           title:
-            'Source A: Soldiers of the Cheshire Regiment Greasing Feet in a Reserve Trench (1916)',
+            'Source A: Soldiers of the Cheshire Regiment Resting in a Frontline Trench at Ovillers (1916)',
           src: '/images/cheshire_regiment_trench.png',
           source: '/images/cheshire_regiment_trench.png',
           image: '/images/cheshire_regiment_trench.png',
           caption:
-            'British infantrymen of the 8th Battalion, Cheshire Regiment, seated on the firestep of a trench, removing their boots and rubbing whale oil onto their feet under the supervision of a non-commissioned officer.',
+            'British infantrymen of ‘A’ Company, 11th Battalion, Cheshire Regiment, resting wrapped in waterproof groundsheets on the duckboards and dugouts of a captured trench at Ovillers-la-Boisselle, while a sentry remains on duty on the parapet.',
           desc: 'Primary photograph of British infantrymen performing compulsory foot inspections and greasing boots with whale oil.',
           provenance:
-            'Official British War Office photograph taken on the Western Front, 1916. Imperial War Museum Collection (Shelfmark: Q 5156).',
+            'Official British War Office photograph taken by Lieutenant John Warwick Brooke during the Battle of the Somme, July 1916. Imperial War Museum Collection.',
           citation:
             'Official British War Office Photograph, Western Front, 1916 (Imperial War Museum Q 5156).',
           source_context:
-            'An authentic wartime photograph taken in 1916 showing British infantrymen of the Cheshire Regiment carrying out the mandatory daily foot inspection and greasing routine using whale oil to prevent the onset of trench foot in cold, damp conditions.',
+            'An authentic wartime photograph taken in July 1916 during the Battle of the Somme, capturing the extreme physical exhaustion and cramped living conditions of British infantrymen in frontline trenches. Soldiers spent days without sleep or hot food, sheltering in shallow dugouts and on damp duckboards under waterproof groundsheets, creating conditions where body lice (which transmitted trench fever) and extreme physical exhaustion rapidly spread.',
           context:
-            'An authentic wartime photograph taken in 1916 showing British infantrymen of the Cheshire Regiment carrying out the mandatory daily foot inspection and greasing routine using whale oil to prevent the onset of trench foot in cold, damp conditions.',
+            'An authentic wartime photograph taken in July 1916 during the Battle of the Somme, capturing the extreme physical exhaustion and cramped living conditions of British infantrymen in frontline trenches. Soldiers spent days without sleep or hot food, sheltering in shallow dugouts and on damp duckboards under waterproof groundsheets, creating conditions where body lice (which transmitted trench fever) and extreme physical exhaustion rapidly spread.',
           hinge_question:
-            'Study Source A. How does this photograph demonstrate the organized preventive measures enforced by the British Army to stop soldiers from developing trench foot?',
+            'Study Source A. How does this photograph illustrate the harsh living conditions in frontline trenches that made soldiers vulnerable to physical exhaustion and non-combat illnesses like trench fever?',
         },
         {
           id: 'source_b_ramparts_ww1',
@@ -12015,23 +12015,23 @@ export const unitData = {
           source: {
             id: 'source_b_british_ph_gas_helmet',
             letter: 'B',
-            title: 'Source B: British Army Phenate-Hexamine (PH) Anti-Gas Helmet (1915–1916)',
+            title: 'Source B: British Machine Gun Crew in Combat Wearing PH Gas Helmets (1916)',
             src: '/images/british_ph_gas_helmet.jpg',
             source: '/images/british_ph_gas_helmet.jpg',
             image: '/images/british_ph_gas_helmet.jpg',
             caption:
-              'An authentic British PH gas helmet manufactured in 1915, featuring chemically treated flannel cloth, mica/glass eyepieces, and a rubberized exhale valve to protect soldiers from chlorine and phosgene gas.',
+              'A British Machine Gun Corps crew operating a Vickers machine gun from an improvised trench position near Ovillers on the Somme while wearing issue Phenate-Hexamine (PH) anti-gas helmets with exhale valves.',
             desc: 'Primary artifact photograph of an issued British Phenate-Hexamine (PH) anti-gas helmet.',
             provenance:
-              'Primary military artifact preserved in the Imperial War Museum Collection, London (Accession: EPH 4220). Manufactured by the British War Office, 1915–1916.',
+              'Official British War Office photograph taken by Lieutenant John Warwick Brooke near Ovillers during the Battle of the Somme, July 1916. Imperial War Museum Collection.',
             citation:
               'British War Office Phenate-Hexamine Gas Helmet, 1915–1916 (Imperial War Museum EPH 4220).',
             source_context:
-              'An authentic surviving example of the British Phenate-Hexamine (PH) anti-gas helmet introduced in late 1915. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and phosgene gas, it was tucked into the collar of the uniform tunic.',
+              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme showing British machine gunners in combat wearing the issue PH anti-gas helmet. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and deadly phosgene gas, the helmet was tucked into the tunic collar. While it prevented fatal lung damage, the mica eyepieces easily misted over and breathing through the tube during active combat was exhausting.',
             context:
-              'An authentic surviving example of the British Phenate-Hexamine (PH) anti-gas helmet introduced in late 1915. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and phosgene gas, it was tucked into the collar of the uniform tunic.',
+              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme showing British machine gunners in combat wearing the issue PH anti-gas helmet. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and deadly phosgene gas, the helmet was tucked into the tunic collar. While it prevented fatal lung damage, the mica eyepieces easily misted over and breathing through the tube during active combat was exhausting.',
             hinge_question:
-              'How does the design of the PH helmet in Source B reflect both the rapid improvisation of the British Army against chemical weapons and its physical limitations compared to later respirators?',
+              'Study Source B. How does this photograph illustrate both the vital protective value of early anti-gas helmets and the severe physical difficulties experienced by soldiers fighting while wearing them?',
           },
         },
         {
@@ -12066,23 +12066,23 @@ export const unitData = {
         {
           id: 'source_b_british_ph_gas_helmet',
           letter: 'B',
-          title: 'Source B: British Army Phenate-Hexamine (PH) Anti-Gas Helmet (1915–1916)',
+          title: 'Source B: British Machine Gun Crew in Combat Wearing PH Gas Helmets (1916)',
           src: '/images/british_ph_gas_helmet.jpg',
           source: '/images/british_ph_gas_helmet.jpg',
           image: '/images/british_ph_gas_helmet.jpg',
           caption:
-            'An authentic British PH gas helmet manufactured in 1915, featuring chemically treated flannel cloth, mica/glass eyepieces, and a rubberized exhale valve to protect soldiers from chlorine and phosgene gas.',
+            'A British Machine Gun Corps crew operating a Vickers machine gun from an improvised trench position near Ovillers on the Somme while wearing issue Phenate-Hexamine (PH) anti-gas helmets with exhale valves.',
           desc: 'Primary artifact photograph of an issued British Phenate-Hexamine (PH) anti-gas helmet.',
           provenance:
-            'Primary military artifact preserved in the Imperial War Museum Collection, London (Accession: EPH 4220). Manufactured by the British War Office, 1915–1916.',
+            'Official British War Office photograph taken by Lieutenant John Warwick Brooke near Ovillers during the Battle of the Somme, July 1916. Imperial War Museum Collection.',
           citation:
             'British War Office Phenate-Hexamine Gas Helmet, 1915–1916 (Imperial War Museum EPH 4220).',
           source_context:
-            'An authentic surviving example of the British Phenate-Hexamine (PH) anti-gas helmet introduced in late 1915. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and phosgene gas, it was tucked into the collar of the uniform tunic.',
+            'An authentic wartime photograph taken in July 1916 during the Battle of the Somme showing British machine gunners in combat wearing the issue PH anti-gas helmet. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and deadly phosgene gas, the helmet was tucked into the tunic collar. While it prevented fatal lung damage, the mica eyepieces easily misted over and breathing through the tube during active combat was exhausting.',
           context:
-            'An authentic surviving example of the British Phenate-Hexamine (PH) anti-gas helmet introduced in late 1915. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and phosgene gas, it was tucked into the collar of the uniform tunic.',
+            'An authentic wartime photograph taken in July 1916 during the Battle of the Somme showing British machine gunners in combat wearing the issue PH anti-gas helmet. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and deadly phosgene gas, the helmet was tucked into the tunic collar. While it prevented fatal lung damage, the mica eyepieces easily misted over and breathing through the tube during active combat was exhausting.',
           hinge_question:
-            'How does the design of the PH helmet in Source B reflect both the rapid improvisation of the British Army against chemical weapons and its physical limitations compared to later respirators?',
+            'Study Source B. How does this photograph illustrate both the vital protective value of early anti-gas helmets and the severe physical difficulties experienced by soldiers fighting while wearing them?',
         },
       ],
       vocab: [
@@ -12410,23 +12410,24 @@ export const unitData = {
           source: {
             id: 'source_a_stretcher_bearers_passchendaele',
             letter: 'A',
-            title: 'Source A: RAMC Stretcher Bearers Carrying a Casualty at Passchendaele (1917)',
+            title:
+              'Source A: RAMC Stretcher Bearers Carrying a Casualty at Boesinghe, Ypres (1917)',
             src: '/images/stretcher_bearers_passchendaele.jpg',
             source: '/images/stretcher_bearers_passchendaele.jpg',
             image: '/images/stretcher_bearers_passchendaele.jpg',
             caption:
-              'Four British stretcher bearers struggling through deep, liquid mud and waterlogged shell craters to evacuate a wounded soldier on a wooden stretcher near Boesinghe during the Third Battle of Ypres.',
+              'A team of six British stretcher bearers struggling through deep, liquid Flanders mud to carry a wounded soldier on a wooden stretcher near Boesinghe during the Third Battle of Ypres.',
             desc: 'Primary photograph of RAMC stretcher bearers carrying a wounded soldier through liquid mud.',
             provenance:
-              'Official British Army photograph taken by Lieutenant Ernest Brooks on the Western Front, Flanders, 1917. Imperial War Museum Collection (Shelfmark: Q 2757).',
+              'Official British Army photograph taken by Lieutenant John Warwick Brooke near Boesinghe during the Third Battle of Ypres, 1 August 1917. Imperial War Museum Collection.',
             citation:
               'Lieut. Ernest Brooks, Official British War Office Photograph, Passchendaele, 1917 (Imperial War Museum Q 2757).',
             source_context:
-              'Official photograph taken by British war photographer Ernest Brooks in 1917 during the Third Battle of Ypres (Passchendaele), capturing the immense physical difficulty experienced by RAMC stretcher bearers navigating devastated, liquid-mud battlefields under continuous fire.',
+              'Official photograph taken by British war photographer Lieutenant John Warwick Brooke on 1 August 1917 during the Third Battle of Ypres (Passchendaele), capturing the grueling physical ordeal experienced by stretcher bearers navigating liquid-mud battlefields under fire, requiring six men rather than four to haul a single stretcher.',
             context:
-              'Official photograph taken by British war photographer Ernest Brooks in 1917 during the Third Battle of Ypres (Passchendaele), capturing the immense physical difficulty experienced by RAMC stretcher bearers navigating devastated, liquid-mud battlefields under continuous fire.',
+              'Official photograph taken by British war photographer Lieutenant John Warwick Brooke on 1 August 1917 during the Third Battle of Ypres (Passchendaele), capturing the grueling physical ordeal experienced by stretcher bearers navigating liquid-mud battlefields under fire, requiring six men rather than four to haul a single stretcher.',
             hinge_question:
-              'Study Source A. How does this photograph illustrate why transporting wounded soldiers from the frontline to dressing stations took many exhausting hours in the Ypres sector?',
+              'Study Source A. How does this photograph illustrate why transporting wounded soldiers across devastated battlefields to dressing stations required up to six bearers and took many exhausting hours?',
           },
         },
         {
@@ -12466,23 +12467,23 @@ export const unitData = {
         {
           id: 'source_a_stretcher_bearers_passchendaele',
           letter: 'A',
-          title: 'Source A: RAMC Stretcher Bearers Carrying a Casualty at Passchendaele (1917)',
+          title: 'Source A: RAMC Stretcher Bearers Carrying a Casualty at Boesinghe, Ypres (1917)',
           src: '/images/stretcher_bearers_passchendaele.jpg',
           source: '/images/stretcher_bearers_passchendaele.jpg',
           image: '/images/stretcher_bearers_passchendaele.jpg',
           caption:
-            'Four British stretcher bearers struggling through deep, liquid mud and waterlogged shell craters to evacuate a wounded soldier on a wooden stretcher near Boesinghe during the Third Battle of Ypres.',
+            'A team of six British stretcher bearers struggling through deep, liquid Flanders mud to carry a wounded soldier on a wooden stretcher near Boesinghe during the Third Battle of Ypres.',
           desc: 'Primary photograph of RAMC stretcher bearers carrying a wounded soldier through liquid mud.',
           provenance:
-            'Official British Army photograph taken by Lieutenant Ernest Brooks on the Western Front, Flanders, 1917. Imperial War Museum Collection (Shelfmark: Q 2757).',
+            'Official British Army photograph taken by Lieutenant John Warwick Brooke near Boesinghe during the Third Battle of Ypres, 1 August 1917. Imperial War Museum Collection.',
           citation:
             'Lieut. Ernest Brooks, Official British War Office Photograph, Passchendaele, 1917 (Imperial War Museum Q 2757).',
           source_context:
-            'Official photograph taken by British war photographer Ernest Brooks in 1917 during the Third Battle of Ypres (Passchendaele), capturing the immense physical difficulty experienced by RAMC stretcher bearers navigating devastated, liquid-mud battlefields under continuous fire.',
+            'Official photograph taken by British war photographer Lieutenant John Warwick Brooke on 1 August 1917 during the Third Battle of Ypres (Passchendaele), capturing the grueling physical ordeal experienced by stretcher bearers navigating liquid-mud battlefields under fire, requiring six men rather than four to haul a single stretcher.',
           context:
-            'Official photograph taken by British war photographer Ernest Brooks in 1917 during the Third Battle of Ypres (Passchendaele), capturing the immense physical difficulty experienced by RAMC stretcher bearers navigating devastated, liquid-mud battlefields under continuous fire.',
+            'Official photograph taken by British war photographer Lieutenant John Warwick Brooke on 1 August 1917 during the Third Battle of Ypres (Passchendaele), capturing the grueling physical ordeal experienced by stretcher bearers navigating liquid-mud battlefields under fire, requiring six men rather than four to haul a single stretcher.',
           hinge_question:
-            'Study Source A. How does this photograph illustrate why transporting wounded soldiers from the frontline to dressing stations took many exhausting hours in the Ypres sector?',
+            'Study Source A. How does this photograph illustrate why transporting wounded soldiers across devastated battlefields to dressing stations required up to six bearers and took many exhausting hours?',
         },
         {
           id: 'source_b_ramc_canal_barge',
@@ -12831,22 +12832,21 @@ export const unitData = {
           source: {
             id: 'source_a_thomas_splint_authentic',
             letter: 'A',
-            title:
-              'Source A: Photograph of the Thomas Splint Applied to a Wounded British Soldier (c.1916)',
+            title: 'Source A: First World War Thomas Splint for Fractured Femurs (c.1916)',
             src: '/images/thomas_splint_authentic.jpg',
             source: '/images/thomas_splint_authentic.jpg',
             image: '/images/thomas_splint_authentic.jpg',
             caption:
-              'A wounded British soldier in an RAMC field hospital with an authentic Thomas Splint applied to his fractured leg, showing the padded leather groin ring, rigid metal side bars, and extension traction cords.',
+              'An authentic surviving British Army Thomas Splint, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones.',
             desc: 'Primary photograph demonstrating the clinical application of the Thomas Splint.',
             provenance:
-              'Official photograph produced for the RAMC Training and Photographic Archive, Western Front, c.1916. Wellcome Collection, London (Shelfmark: RAMC 512/3).',
+              'Original First World War Thomas Splint preserved in the Wellcome Historical Medical Collection, London. Designed by Hugh Owen Thomas and introduced to the Western Front in 1915–1916 by Robert Jones.',
             citation:
               'RAMC Training and Instructional Archive (Wellcome Collection RAMC 512/3), c.1916.',
             source_context:
-              'An official instructional photograph compiled for the Royal Army Medical Corps c.1916, illustrating the precise method of applying the Thomas Splint to a patient with a compound fracture of the femur. The padded ring fits firmly against the pelvis while traction is maintained on the foot, pulling the limb straight to prevent movement of broken bone fragments.',
+              'An authentic surviving artifact of the Thomas Splint championed on the Western Front by Robert Jones from late 1915, which revolutionized battlefield trauma care. Before its widespread introduction, 80% of soldiers suffering compound fractures of the femur died from blood loss, shock, and internal hemorrhage caused by broken bone ends grinding during transit. The rigid splint held the leg taut under traction, stabilizing the limb throughout evacuation and reducing femur mortality to under 20% by 1917.',
             context:
-              'An official instructional photograph compiled for the Royal Army Medical Corps c.1916, illustrating the precise method of applying the Thomas Splint to a patient with a compound fracture of the femur. The padded ring fits firmly against the pelvis while traction is maintained on the foot, pulling the limb straight to prevent movement of broken bone fragments.',
+              'An authentic surviving artifact of the Thomas Splint championed on the Western Front by Robert Jones from late 1915, which revolutionized battlefield trauma care. Before its widespread introduction, 80% of soldiers suffering compound fractures of the femur died from blood loss, shock, and internal hemorrhage caused by broken bone ends grinding during transit. The rigid splint held the leg taut under traction, stabilizing the limb throughout evacuation and reducing femur mortality to under 20% by 1917.',
             hinge_question:
               'Study Source A. How does the mechanical design of the Thomas Splint shown in the photograph explain why survival rates for fractured femurs rose from 20% in 1914 to 80% by 1917?',
           },
@@ -12889,22 +12889,21 @@ export const unitData = {
         {
           id: 'source_a_thomas_splint_authentic',
           letter: 'A',
-          title:
-            'Source A: Photograph of the Thomas Splint Applied to a Wounded British Soldier (c.1916)',
+          title: 'Source A: First World War Thomas Splint for Fractured Femurs (c.1916)',
           src: '/images/thomas_splint_authentic.jpg',
           source: '/images/thomas_splint_authentic.jpg',
           image: '/images/thomas_splint_authentic.jpg',
           caption:
-            'A wounded British soldier in an RAMC field hospital with an authentic Thomas Splint applied to his fractured leg, showing the padded leather groin ring, rigid metal side bars, and extension traction cords.',
+            'An authentic surviving British Army Thomas Splint, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones.',
           desc: 'Primary photograph demonstrating the clinical application of the Thomas Splint.',
           provenance:
-            'Official photograph produced for the RAMC Training and Photographic Archive, Western Front, c.1916. Wellcome Collection, London (Shelfmark: RAMC 512/3).',
+            'Original First World War Thomas Splint preserved in the Wellcome Historical Medical Collection, London. Designed by Hugh Owen Thomas and introduced to the Western Front in 1915–1916 by Robert Jones.',
           citation:
             'RAMC Training and Instructional Archive (Wellcome Collection RAMC 512/3), c.1916.',
           source_context:
-            'An official instructional photograph compiled for the Royal Army Medical Corps c.1916, illustrating the precise method of applying the Thomas Splint to a patient with a compound fracture of the femur. The padded ring fits firmly against the pelvis while traction is maintained on the foot, pulling the limb straight to prevent movement of broken bone fragments.',
+            'An authentic surviving artifact of the Thomas Splint championed on the Western Front by Robert Jones from late 1915, which revolutionized battlefield trauma care. Before its widespread introduction, 80% of soldiers suffering compound fractures of the femur died from blood loss, shock, and internal hemorrhage caused by broken bone ends grinding during transit. The rigid splint held the leg taut under traction, stabilizing the limb throughout evacuation and reducing femur mortality to under 20% by 1917.',
           context:
-            'An official instructional photograph compiled for the Royal Army Medical Corps c.1916, illustrating the precise method of applying the Thomas Splint to a patient with a compound fracture of the femur. The padded ring fits firmly against the pelvis while traction is maintained on the foot, pulling the limb straight to prevent movement of broken bone fragments.',
+            'An authentic surviving artifact of the Thomas Splint championed on the Western Front by Robert Jones from late 1915, which revolutionized battlefield trauma care. Before its widespread introduction, 80% of soldiers suffering compound fractures of the femur died from blood loss, shock, and internal hemorrhage caused by broken bone ends grinding during transit. The rigid splint held the leg taut under traction, stabilizing the limb throughout evacuation and reducing femur mortality to under 20% by 1917.',
           hinge_question:
             'Study Source A. How does the mechanical design of the Thomas Splint shown in the photograph explain why survival rates for fractured femurs rose from 20% in 1914 to 80% by 1917?',
         },
@@ -13264,9 +13263,9 @@ export const unitData = {
               'The authentic wooden ice chest, glass collection flasks, rubber delivery tubing, and sodium citrate solutions utilized by Captain Oswald Robertson to establish the world’s first blood bank during the Battle of Cambrai in November 1917.',
             desc: 'Primary artifact photograph of Captain Oswald Robertson’s blood storage apparatus.',
             provenance:
-              'Primary medical artifact preserved in the Royal Army Medical Corps Museum / Wellcome Historical Medical Collection (Accession: RAMC 628/1).',
+              'Original portable blood transfusion outfit preserved in the Royal Army Medical Corps Historical Collection, London. Utilized during the Battle of Cambrai, November 1917.',
             citation:
-              'Captain Oswald Robertson Blood Depot Apparatus, RAMC Collection (Wellcome RAMC 628/1), November 1917.',
+              'Captain Oswald Robertson Blood Depot Apparatus, RAMC Collection, November 1917.',
             source_context:
               'An authentic surviving artifact photograph of Captain Oswald Robertson’s blood storage and transfusion kit used at the Battle of Cambrai in November 1917. Robertson collected blood in sterile glass bottles containing sodium citrate and dextrose (glucose) and stored them inside an insulated wooden ice chest, enabling stored blood to be transfused up to 26 days after collection.',
             context:
@@ -13320,9 +13319,9 @@ export const unitData = {
             'The authentic wooden ice chest, glass collection flasks, rubber delivery tubing, and sodium citrate solutions utilized by Captain Oswald Robertson to establish the world’s first blood bank during the Battle of Cambrai in November 1917.',
           desc: 'Primary artifact photograph of Captain Oswald Robertson’s blood storage apparatus.',
           provenance:
-            'Primary medical artifact preserved in the Royal Army Medical Corps Museum / Wellcome Historical Medical Collection (Accession: RAMC 628/1).',
+            'Original portable blood transfusion outfit preserved in the Royal Army Medical Corps Historical Collection, London. Utilized during the Battle of Cambrai, November 1917.',
           citation:
-            'Captain Oswald Robertson Blood Depot Apparatus, RAMC Collection (Wellcome RAMC 628/1), November 1917.',
+            'Captain Oswald Robertson Blood Depot Apparatus, RAMC Collection, November 1917.',
           source_context:
             'An authentic surviving artifact photograph of Captain Oswald Robertson’s blood storage and transfusion kit used at the Battle of Cambrai in November 1917. Robertson collected blood in sterile glass bottles containing sodium citrate and dextrose (glucose) and stored them inside an insulated wooden ice chest, enabling stored blood to be transfused up to 26 days after collection.',
           context:
