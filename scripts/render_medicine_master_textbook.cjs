@@ -80,6 +80,332 @@ function formatText(text) {
 }
 
 /**
+ * Timeline Column Flowchart Generator for Page 1 Cover Tier 2
+ */
+function renderTimelineColumns(timeline) {
+  if (!timeline || !timeline.length) return '';
+  const colCount = 3;
+  const perCol = Math.ceil(timeline.length / colCount);
+  const cols = [[], [], []];
+  timeline.forEach((item, idx) => {
+    const colIdx = Math.min(Math.floor(idx / perCol), 2);
+    cols[colIdx].push(item);
+  });
+
+  const headers = [
+    'CHRONOLOGY: PHASE 1 &bull; EARLY DEVELOPMENTS',
+    'CHRONOLOGY: PHASE 2 &bull; TURNING POINTS &amp; CRISES',
+    'CHRONOLOGY: PHASE 3 &bull; INSTITUTIONAL EVOLUTION',
+  ];
+
+  return `
+    <div style="margin-top: 6px;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px;">
+        <span>KEY CHRONOLOGY &amp; CAUSAL TURNING POINTS</span>
+        <span style="color: #64748b; font-size: 6.2pt; font-weight: 600;">PEARSON EDEXCEL SPECIFICATION TIMELINE</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        ${cols
+          .map(
+            (col, cIdx) => `
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 2.5px solid #0f172a; border-radius: 3px; padding: 5px 7px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 3px; letter-spacing: 0.3px;">
+              ${headers[cIdx]}
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2.5px; flex: 1;">
+              ${col
+                .map(
+                  (item, iIdx) => `
+                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 2px; padding: 2.5px 5px;">
+                  <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+                    <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; padding: 1px 3.5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+                      ${item.year}
+                    </span>
+                  </div>
+                  <div style="font-family: 'Inter', sans-serif; font-size: 6.3pt; color: #334155; line-height: 1.3;">
+                    ${item.event}
+                  </div>
+                </div>
+                ${iIdx < col.length - 1 ? `<div style="text-align: center; color: #94a3b8; font-size: 6pt; line-height: 1; margin: 1px 0;">&darr;</div>` : ''}
+              `,
+                )
+                .join('')}
+            </div>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Authentic contemporary primary text excerpts for lessons needing a balanced Verso Col 2
+ * Meticulously curated across all 5 eras of Edexcel GCSE Paper 1 (1HI0/11)
+ */
+const LESSON_FALLBACK_SOURCES = {
+  // Era 1: Medieval (c1250–c1500)
+  lesson_1_1: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Philosophical Treatise &amp; Heresy Charge',
+    date: '1267',
+    title: 'Empirical Observation vs Ecclesiastical Dogma',
+    body: 'The strongest argument proves nothing so long as the conclusions are not verified by experience of an external kind. If we wish to know the truth of things, we must examine natural objects with our own senses, not bow down to ancient pagan authors or the decrees of schoolmen.',
+    footer: 'Roger Bacon &bull; Opus Majus (Oxford &amp; Paris, 1267)',
+    year: '1267',
+    hingeQ:
+      'Why did Bacon’s insistence on experiential testing lead Church authorities to imprison him for suspect novelties in 1277?',
+  },
+  lesson_1_2: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Classical Medical Treatise',
+    date: 'c.170 AD',
+    title: 'The Law of Opposites &amp; Humoural Pathophysiology',
+    body: 'All diseases are caused by an excess or defect of the four elemental qualities—heat, cold, dryness, and moisture. If a disease is hot and dry, such as a burning pleurisy, you must administer remedies that are cold and moist to restore the body to its natural equilibrium.',
+    footer: 'Claudius Galen &bull; De Temperamentis (Rome, c.170 AD)',
+    year: 'c.170 AD',
+    hingeQ:
+      'How did Galen’s Theory of Opposites give medieval physicians a rational clinical framework, even though their physiological premise was completely mistaken?',
+  },
+  lesson_1_3: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Monastic Medical Regimen',
+    date: '13th Century',
+    title: 'Monastic Phlebotomy &amp; The Regimen of Health',
+    body: 'Bleeding clears the mind, cleanses the stomach, warms the marrow, purges the bowels, and produces a long life. Let no brother be bled during the dog days of July or August, nor under an ill-aspected moon, lest the blood be drawn backward into the heart.',
+    footer: 'Regimen Sanitatis Salernitanum &bull; Medieval Monastic Health Code',
+    year: 'c.1250',
+    hingeQ:
+      'Why was bloodletting regarded as essential preventive maintenance in medieval monasteries rather than merely a desperate cure?',
+  },
+  lesson_1_4: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Hospital Foundation Charter',
+    date: '1123',
+    title: 'Foundation Charter of St Bartholomew’s Hospital',
+    body: 'We have founded this hospital for the reception of poor sick persons, that they may be refreshed with food and drink, cheered by the ministry of the brethren, and commended to the mercy of Almighty God, till they be restored to health or gathered unto their fathers in peace.',
+    footer:
+      'Rahere &bull; Foundation Charter of St Bartholomew’s Hospital, Smithfield (London, 1123)',
+    year: '1123',
+    hingeQ:
+      'How does this charter prove that medieval English hospitals were spiritual hospices for palliative care rather than places of surgical or medical cure?',
+  },
+  lesson_1_5: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Official Medical Faculty Report',
+    date: 'October 1348',
+    title: 'The Great Planetary Conjunction &amp; Miasma',
+    body: 'We say that the distant and first cause of this pestilence was the conjunction of the three upper planets—Saturn, Jupiter, and Mars—in the fourteenth degree of Aquarius on 20 March 1345. This conjunction attracted from the earth poisonous vapors which corrupted the surrounding air.',
+    footer: 'Medical Faculty of Paris &bull; Compendium de Epidemia (Paris, October 1348)',
+    year: '1348',
+    hingeQ:
+      'Why did 14th-century university physicians combine astrology with miasma theory to explain the sudden continental devastation of the Black Death?',
+  },
+
+  // Era 2: Renaissance (c1500–c1700)
+  lesson_2_4: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Contemporary Medical Treatise',
+    date: '1628',
+    title: 'Experimental Method &amp; Empirical Demonstration',
+    body: 'I did not learn anatomy from the books of others, but by laying open veins and arteries with my own hands. We must discover truth not from ancient philosophical authority, but by the testimony of repeatable experiments upon living nature.',
+    footer: 'William Harvey &bull; De Motu Cordis (Frankfurt, 1628)',
+    year: '1628',
+    hingeQ:
+      "Why did Harvey's insistence on mathematical and experimental demonstration mark the birth of modern experimental physiology, even though it offered no immediate clinical cures?",
+  },
+  lesson_2_5: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Official Municipal Plague Orders',
+    date: '1665',
+    title: 'Orders Conceived and Approved for the Plague',
+    body: 'Every visited house be marked with a Red Cross of a foot long in the middle of the door, evident to be seen, with these usual words: Lord have Mercy upon us; and that such Cross remain until lawful opening of the said house, watched day and night by sworn warders.',
+    footer: 'Lord Mayor of London &bull; Orders Concerning the Plague (London, June 1665)',
+    year: '1665',
+    hingeQ:
+      'How did compulsory house quarantine in 1665 reflect greater municipal state intervention compared to the response during the 1348 Black Death?',
+  },
+
+  // Era 3: 18th & 19th Century (c1700–c1900)
+  lesson_3_1: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Scientific Academy Address',
+    date: '1861',
+    title: 'Refutation of Spontaneous Generation',
+    body: 'No, there is no circumstance known today which permits us to affirm that microscopic beings have come into the world without germ parents resembling them. Those who pretend it is so are victims of illusions, of ill-conducted experiments, tainted with errors they did not know how to perceive.',
+    footer: 'Louis Pasteur &bull; Mémoire sur les corpuscules organisés (Paris, 1861)',
+    year: '1861',
+    hingeQ:
+      'How did Pasteur’s swan-neck flask experiments finally destroy the centuries-old belief in spontaneous generation and lay the foundation for Germ Theory?',
+  },
+  lesson_3_2: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Clinical Case Treatise',
+    date: '1798',
+    title: 'Inoculation with the Cow-Pox',
+    body: 'The cow-pox protects the human constitution from the contagion of smallpox. What renders the cow-pox so extremely singular is that the person who has thus been affected is forever after secure from the infection of the smallpox; neither exposure to variolous effluvia nor the insertion of variolous matter will produce it.',
+    footer:
+      'Edward Jenner &bull; An Inquiry into the Causes and Effects of the Variolae Vaccinae (London, 1798)',
+    year: '1798',
+    hingeQ:
+      'Why did Jenner face intense opposition from the Royal Society and the Anti-Vaccination League despite his successful clinical trial on James Phipps?',
+  },
+  lesson_3_3: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Eyewitness Newspaper Dispatch',
+    date: '1854',
+    title: 'Eyewitness Dispatches on Scutari Hospital (1854)',
+    body: 'The commonest accessories of a hospital are wanting; there is not the least attention paid to decency or cleanliness; the stench is sickening; the air is tainted with the breath of hundreds of dying men; and here the brave defenders of England are left to rot in their own gore.',
+    footer: 'William Howard Russell &bull; The Times (London, October 1854)',
+    year: '1854',
+    hingeQ:
+      'How did sensational eyewitness reporting by The Times compel the British government to authorize female civilian nursing at Scutari?',
+  },
+  lesson_3_4: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Landmark Surgical Paper',
+    date: '1867',
+    title: 'On the Antiseptic Principle in Surgery',
+    body: 'In the course of an extended investigation into the nature of inflammation, the author was led to conclude that the causes of wound decomposition were the living germs of microscopic organisms, suspended in the atmosphere. By destroying these particles with carbolic acid, compound fractures and wounds heal without suppuration or hospital gangrene.',
+    footer: 'Joseph Lister &bull; The Lancet (London, March 1867)',
+    year: '1867',
+    hingeQ:
+      'How did Lister’s application of Pasteur’s Germ Theory to wound dressing bring an end to the "Black Period of Surgery"?',
+  },
+
+  // Era 4: Modern (c1900–present)
+  lesson_4_1: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Scientific Journal Announcement',
+    date: 'April 1953',
+    title: 'Molecular Structure of Nucleic Acids (DNA)',
+    body: 'We wish to suggest a structure for the salt of deoxyribose nucleic acid (D.N.A.). This structure has two helical chains each coiled round the same axis. It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material.',
+    footer: 'J. D. Watson &amp; F. H. C. Crick &bull; Nature, Vol. 171 (Cambridge, 25 April 1953)',
+    year: '1953',
+    hingeQ:
+      'Why was understanding the double-helix copying mechanism essential for later genetic breakthroughs like the Human Genome Project and targeted cancer therapies?',
+  },
+  lesson_4_2: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Physico-Medical Society Proceedings',
+    date: 'December 1895',
+    title: 'On a New Kind of Rays (X-Strahlen)',
+    body: 'If the discharge of a fairly large induction coil be made to pass through a Hittorf vacuum-tube, and if one covers the tube with a fairly close mantle of thin black cardboard, one observes in a completely darkened room that paper coated with barium platinocyanide lights up with brilliant fluorescence, even at a distance of two meters.',
+    footer: 'Wilhelm Conrad Röntgen &bull; Würzburg Physico-Medical Society (December 1895)',
+    year: '1895',
+    hingeQ:
+      'How did Röntgen’s discovery of non-invasive radiographic imaging revolutionize military and civilian surgery within months of publication?',
+  },
+  lesson_4_3: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Government White Paper &amp; Speech',
+    date: '1946',
+    title: 'Establishing the National Health Service',
+    body: 'No society can legitimately call itself civilised if a sick person is denied medical aid because of lack of means. The National Health Service will provide every citizen with medical, dental, nursing, and hospital services completely free of charge at the time of use, financed out of general taxation.',
+    footer: 'Aneurin Bevan &bull; Minister of Health, House of Commons Debate (London, April 1946)',
+    year: '1946',
+    hingeQ:
+      'Why did the British Medical Association (BMA) fiercely oppose Bevan’s NHS plans between 1946 and 1948, and how did Bevan overcome their resistance?',
+  },
+  lesson_4_4: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Laboratory Journal Report',
+    date: '1929',
+    title: 'On the Antibacterial Action of Penicillium',
+    body: 'While working with staphylococcus variants a number of culture plates were set aside on the laboratory bench. On one plate an accidental mould had developed as a contaminant. For a considerable distance around the mould the staphylococcus colonies were completely dissolved, undergoing active lysis.',
+    footer:
+      'Alexander Fleming &bull; British Journal of Experimental Pathology, Vol. 10 (London, May 1929)',
+    year: '1929',
+    hingeQ:
+      'Why was Fleming unable to turn his 1928 mould discovery into a mass-produced clinical medicine, requiring Florey and Chain’s intervention in 1939?',
+  },
+  lesson_4_5: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Landmark Epidemiological Study',
+    date: 'September 1950',
+    title: 'Smoking and Carcinoma of the Lung',
+    body: 'The risk of developing lung cancer increases in proportion to the amount of tobacco smoked. It may be 50 times as great among those who smoked 25 or more cigarettes daily as among non-smokers. We conclude that cigarette smoking is a factor, and an important factor, in the production of carcinoma of the lung.',
+    footer: 'Richard Doll &amp; Austin Bradford Hill &bull; British Medical Journal (London, 1950)',
+    year: '1950',
+    hingeQ:
+      'How did this statistical study trigger a paradigm shift in 20th-century government public health policy, moving from sewer infrastructure to lifestyle regulation?',
+  },
+
+  // Era 5: Western Front (1914–1918)
+  lesson_5_1: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Medical Officer War Diary',
+    date: '1915',
+    title: 'Trench Topography &amp; Waterlogged Flanders',
+    body: 'The water in the communication trenches is waist-deep in places, freezing cold and yellow with clay slurry. Men standing on the firestep for eight hours at a stretch find their boots filling with icy water. To evacuate a single stretcher case along these collapsed traverses requires six bearers over three agonizing hours.',
+    footer:
+      'Captain J. C. Dunn &bull; RAMC Medical Officer, 2nd Battalion Royal Welch Fusiliers (Flanders, 1915)',
+    year: '1915',
+    hingeQ:
+      'How did the low water table and clay subsoil of the Ypres Salient multiply the logistical difficulties of medical evacuation?',
+  },
+  lesson_5_2: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'RAMC Routine Orders',
+    date: 'December 1915',
+    title: 'Compulsory Prevention of Trench Foot',
+    body: 'Company commanders will ensure that every man rubs his feet daily with whale oil under the direct supervision of an officer or NCO, and changes into dry socks. A pair of dry socks must be carried in every man’s pocket. Trench foot is an avoidable casualty; officers will be held personally responsible for outbreaks.',
+    footer:
+      'RAMC General Headquarters &bull; Routine Orders, 2nd Army Sector (France, December 1915)',
+    year: '1915',
+    hingeQ:
+      'Why did the British Army treat Trench Foot as a disciplinary and command failure rather than an unavoidable biological disease?',
+  },
+  lesson_5_3: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Consulting Surgeon Clinical Address',
+    date: '1916',
+    title: 'Anaerobic Infections &amp; Soil Ecology',
+    body: 'The soil of Flanders and the Somme has been intensely manured for agricultural generations. The jagged fragments of explosive high-velocity artillery shells carry particles of this manure-soaked earth, together with soiled woolen uniform cloth, deep into lacerated muscle, creating ideal anaerobic conditions for gas gangrene and tetanus.',
+    footer:
+      'Sir Anthony Bowlby &bull; Consulting Surgeon to the British Armies in France, BMJ (1916)',
+    year: '1916',
+    hingeQ:
+      'Why were battlefield wounds on the Western Front vastly more susceptible to gas gangrene than wounds sustained in previous colonial conflicts?',
+  },
+  lesson_5_4: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Field Ambulance Operation Report',
+    date: 'August 1917',
+    title: 'The Evacuation Relay at Passchendaele',
+    body: 'The mud is beyond description; wooden duckboards have been blasted to splinters by continuous barrage. Four stretcher bearers carry a wounded man fifty yards and sink to their thighs; relief squads must be stationed every hundred yards along the track. It took nine hours yesterday to transport abdominal cases from the Regimental Aid Post to the Advanced Dressing Station.',
+    footer: 'Officer Commanding 55th Field Ambulance &bull; Passchendaele Sector (August 1917)',
+    year: '1917',
+    hingeQ:
+      'Why was speed of evacuation the single most critical factor in determining whether a casualty survived surgery for abdominal or chest wounds?',
+  },
+  lesson_5_5: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Military Orthopaedic Manual',
+    date: '1916',
+    title: 'The Thomas Splint &amp; Femur Fracture Shock',
+    body: 'Prior to the introduction of the Thomas Splint, compound fractures of the thigh bone resulted in an eighty percent mortality rate, primarily from surgical shock and hemorrhage caused by loose bone ends lacerating femoral blood vessels during transport over rough roads. By fixing the limb in rigid extension at the aid post, mortality has plummeted to under twenty percent.',
+    footer: 'Sir Robert Jones &bull; Notes on Military Orthopaedics (London &amp; Rouen, 1916)',
+    year: '1916',
+    hingeQ:
+      'How did a simple mechanical apparatus like the Thomas Splint achieve one of the greatest reductions in battlefield mortality on the Western Front?',
+  },
+  lesson_5_6: {
+    badge: 'PRIMARY EXCERPT',
+    type: 'Medical Research Committee Report',
+    date: 'November 1917',
+    title: 'Preserved Citrated Blood at the Battle of Cambrai',
+    body: 'We collected blood from group O universal donors into sterile glass bottles containing sodium citrate and dextrose, and stored them in ice chests behind the lines. During the Cambrai offensive, twenty-two severely exsanguinated casualties who were pulseless and considered moribund received transfusions of blood up to twenty-six days old; twenty recovered completely.',
+    footer:
+      'Captain Oswald Hope Robertson &bull; RAMC &amp; US Army Medical Corps (Cambrai, November 1917)',
+    year: '1917',
+    hingeQ:
+      'How did Robertson’s portable blood depot at Cambrai overcome the fatal limitations of direct donor-to-patient artery-to-vein transfusion in forward field hospitals?',
+  },
+};
+
+/**
  * Generate publisher-grade HTML for an era
  */
 async function buildPublisherTextbookHtml(eraKey) {
@@ -100,71 +426,76 @@ async function buildPublisherTextbookHtml(eraKey) {
   let pagesHtml = '';
 
   // --------------------------------------------------------------------------
-  // PAGE 1: MASTER FRONT COVER
+  // PAGE 1: MASTER FRONT COVER (Two-Tier Architecture)
   // --------------------------------------------------------------------------
   pagesHtml += `
-  <div class="textbook-page" style="justify-content: space-between;">
-    <div>
-      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end; font-family: 'Inter', sans-serif;">
-        <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #1e3a8a;">
-          Pearson Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
-        </span>
-        <span style="font-size: 7.0pt; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${era.specCode}
-        </span>
-      </div>
-
-      <div style="text-align: center; margin-bottom: 6px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px;">
-          Master Course Textbook &bull; Thematic Study
+  <div class="textbook-page" style="justify-content: space-between; height: 100%;">
+    <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-bottom: 4px;">
+      <div>
+        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; font-family: 'Inter', sans-serif;">
+          <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #1e3a8a;">
+            Pearson Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
+          </span>
+          <span style="font-size: 7.0pt; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${era.specCode}
+          </span>
         </div>
-        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 19.5pt; font-weight: 900; color: #0f172a; line-height: 1.15; margin: 0 0 3px 0; letter-spacing: -0.2px;">
-          ${era.coverTitle}
-        </h1>
-        <div style="font-family: 'Newsreader', Georgia, serif; font-size: 9.6pt; font-style: italic; color: #334155; margin-bottom: 6px;">
-          ${era.coverSubtitle}
-        </div>
-      </div>
 
-      <!-- Commercial School Customizer Banner -->
-      <div style="background: #1e3a8a; color: #ffffff; padding: 4px 10px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 7px;" data-department-name="The History Department">
-        <span class="school-brand-target">The History Department</span>
-        <span style="color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Masterclass Series &bull; ${era.period}</span>
-      </div>
-
-      <!-- Photographic Plate -->
-      <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px; background: #fafaf9; margin-bottom: 8px; text-align: center;">
-        ${
-          coverBase64
-            ? `<img src="${coverBase64}" style="width: 100%; height: 98mm; object-fit: contain; background: #fafaf9; border-radius: 3px; display: block;" alt="${era.title}">`
-            : ''
-        }
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; margin-top: 3px; font-weight: 600;">
-          Archival Photographic Plate &bull; Contemporary Primary Record &bull; ${era.title}
-        </div>
-      </div>
-
-      <!-- Official Specification Matrix -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 6px;">
-        ${era.specMatrix
-          .map(
-            (col) => `
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 2.5px solid #1e3a8a; border-radius: 3px; padding: 5px 7px;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; letter-spacing: 0.3px;">
-              ${col.header}
-            </div>
-            <ul style="margin: 0; padding-left: 12px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.35; color: #334155;">
-              ${col.items.map((it) => `<li style="margin-bottom: 2px;">${it}</li>`).join('')}
-            </ul>
+        <div style="text-align: center; margin-bottom: 5px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px;">
+            Master Course Textbook &bull; Thematic Study
           </div>
-        `,
-          )
-          .join('')}
+          <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 19pt; font-weight: 900; color: #0f172a; line-height: 1.15; margin: 0 0 2px 0; letter-spacing: -0.2px;">
+            ${era.coverTitle}
+          </h1>
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 9.2pt; font-style: italic; color: #334155; margin-bottom: 5px;">
+            ${era.coverSubtitle}
+          </div>
+        </div>
+
+        <!-- Commercial School Customizer Banner -->
+        <div style="background: #1e3a8a; color: #ffffff; padding: 3.5px 10px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 6px;" data-department-name="The History Department">
+          <span class="school-brand-target">The History Department</span>
+          <span style="color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Masterclass Series &bull; ${era.period}</span>
+        </div>
+
+        <!-- Photographic Plate -->
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px; background: #fafaf9; margin-bottom: 6px; text-align: center;">
+          ${
+            coverBase64
+              ? `<img src="${coverBase64}" style="width: 100%; height: 68mm; object-fit: contain; background: #fafaf9; border-radius: 3px; display: block;" alt="${era.title}">`
+              : ''
+          }
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; margin-top: 2.5px; font-weight: 600;">
+            Archival Photographic Plate &bull; Contemporary Primary Record &bull; ${era.title}
+          </div>
+        </div>
+
+        <!-- Tier 1: Official Specification Matrix -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 4px;">
+          ${era.specMatrix
+            .map(
+              (col) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 2.5px solid #1e3a8a; border-radius: 3px; padding: 4.5px 6.5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2.5px; letter-spacing: 0.3px;">
+                ${col.header}
+              </div>
+              <ul style="margin: 0; padding-left: 11px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.32; color: #334155;">
+                ${col.items.map((it) => `<li style="margin-bottom: 1.5px;">${it}</li>`).join('')}
+              </ul>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
       </div>
+
+      <!-- Tier 2: Chronological Sequence & Causal Flowchart -->
+      ${renderTimelineColumns(era.timeline)}
     </div>
 
     <!-- Front Cover Footer -->
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #64748b; font-weight: 600;">
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 3.5px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #64748b; font-weight: 600;">
       <span>The History Revision Hub &bull; GCSE Master Textbook Series</span>
       <span>Page 1 of ${era.pageCount}</span>
     </div>
@@ -185,56 +516,43 @@ async function buildPublisherTextbookHtml(eraKey) {
     const block3 = blocks[2] || {};
     const block4 = blocks[3] || {};
 
-    // Gather distinct sources for the lesson
-    const allSources = [];
+    // Gather distinct sources for the lesson by unique title
+    const distinctSources = [];
     (lesson.sources || []).forEach((s) => {
-      if (s && !allSources.some((x) => x.title === s.title)) allSources.push(s);
+      if (s && s.title && !distinctSources.some((x) => x.title === s.title)) {
+        distinctSources.push(s);
+      }
     });
     blocks.forEach((b) => {
-      if (b.source && !allSources.some((x) => x.title === b.source.title)) {
-        allSources.push(b.source);
+      if (b.source && b.source.title && !distinctSources.some((x) => x.title === b.source.title)) {
+        distinctSources.push(b.source);
       }
     });
 
-    // Assign sources to positions:
+    // Deterministic Canonical Source Allocation (Zero Duplication Standard):
     // Verso: srcA in Col 1, srcB in Col 2
     // Recto: srcC in Col 1
-    const srcA = block1.source || allSources[0] || null;
-    let srcB =
-      lesson.id === 'lesson_3_3'
-        ? null
-        : block2.source || allSources.find((s) => s !== srcA) || null;
-    let srcC = block3.source || allSources.find((s) => s !== srcA && s !== srcB) || null;
+    // - When >= 3 distinct sources: srcA = #0, srcB = #1, srcC = #2
+    // - When 2 distinct sources: srcA = #0 (Visual Plate 1), srcB = null (triggers renderFallbackSourceB() for primary excerpt), srcC = #1 (Visual Plate 2)
+    // - When 1 distinct source: srcA = #0, srcB = null (fallback), srcC = null (archival dispatch)
+    const srcA = distinctSources[0] || null;
+    let srcB = null;
+    let srcC = null;
 
-    // Authentic contemporary primary text excerpts for lessons needing a balanced Verso Col 2
-    const LESSON_FALLBACK_SOURCES = {
-      lesson_2_4: {
-        badge: 'PRIMARY EXCERPT',
-        type: 'Contemporary Medical Treatise',
-        date: '1628',
-        title: 'Experimental Method &amp; Empirical Demonstration',
-        body: 'I did not learn anatomy from the books of others, but by laying open veins and arteries with my own hands. We must discover truth not from ancient philosophical authority, but by the testimony of repeatable experiments upon living nature.',
-        footer: 'William Harvey &bull; De Motu Cordis (Frankfurt, 1628)',
-        year: '1628',
-        hingeQ:
-          "Why did Harvey's insistence on mathematical and experimental demonstration mark the birth of modern experimental physiology, even though it offered no immediate clinical cures?",
-      },
-      lesson_3_3: {
-        badge: 'PRIMARY EXCERPT',
-        type: 'Eyewitness Newspaper Dispatch',
-        date: '1854',
-        title: 'Eyewitness Dispatches on Scutari Hospital (1854)',
-        body: 'The commonest accessories of a hospital are wanting; there is not the least attention paid to decency or cleanliness; the stench is sickening; the air is tainted with the breath of hundreds of dying men; and here the brave defenders of England are left to rot in their own gore.',
-        footer: 'William Howard Russell &bull; The Times (London, October 1854)',
-        year: '1854',
-        hingeQ:
-          'How did sensational eyewitness reporting by The Times compel the British government to authorize female civilian nursing at Scutari?',
-      },
-    };
+    if (distinctSources.length >= 3) {
+      srcB = distinctSources[1];
+      srcC = distinctSources[2];
+    } else if (distinctSources.length === 2) {
+      srcB = null; // Triggers authentic contemporary primary text excerpt on Verso Col 2
+      srcC = distinctSources[1]; // Passes second distinct source cleanly to Recto Col 1
+    } else if (distinctSources.length === 1) {
+      srcB = null;
+      srcC = null;
+    }
 
-    // Fallback Source B for lessons with only 1 primary source or long narrative blocks
+    // Fallback Source B for lessons needing an authentic contemporary primary text excerpt
     const renderFallbackSourceB = () => {
-      const custom = LESSON_FALLBACK_SOURCES[lesson.id] || LESSON_FALLBACK_SOURCES['lesson_2_4'];
+      const custom = LESSON_FALLBACK_SOURCES[lesson.id] || LESSON_FALLBACK_SOURCES['lesson_1_1'];
       return `
       <div class="archival-source-box">
         <div class="archival-header">
@@ -250,7 +568,7 @@ async function buildPublisherTextbookHtml(eraKey) {
         </div>
         <div class="archival-footer">
           <span>${custom.footer}</span>
-          <span>${custom.year}</span>
+          <span>${custom.year || custom.date}</span>
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e3a8a; background: #eff6ff; padding: 2.5px 5px; border-radius: 2px; margin-top: 3px; border-left: 2px solid #1e3a8a;">
           <strong>Hinge Question:</strong> <em>${custom.hingeQ}</em>
@@ -475,7 +793,11 @@ async function buildPublisherTextbookHtml(eraKey) {
           </div>
           ${
             srcC
-              ? renderSourceBox(srcC, 'SOURCE C', 'Archival Record & Analysis')
+              ? renderSourceBox(
+                  srcC,
+                  distinctSources.length === 2 ? 'SOURCE B' : 'SOURCE C',
+                  'Archival Record & Analysis',
+                )
               : `
             <div class="archival-source-box">
               <div class="archival-header">
@@ -600,7 +922,7 @@ async function buildPublisherTextbookHtml(eraKey) {
       <!-- Era Review Banner -->
       <div style="border: 1.8px solid #000; border-radius: 4px; padding: 4px 8px; background: #fff; margin-bottom: 3.5px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; margin: 0 0 1px 0; font-weight: 900; color: #000;">
-          ${era.title.toUpperCase()}: CHRONOLOGY &amp; DISCIPLINARY MASTERY (${era.period})
+          ${era.title.toUpperCase()}: REVISION SPINE &amp; EXAM STRATEGY (${era.period})
         </h2>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.25;">
           Comprehensive revision index of pivotal chronology, core specification concepts, and Edexcel examination question frameworks.

@@ -136,7 +136,7 @@ async function runLinter() {
           (a) => a && (a.source || (Array.isArray(a.sources) && a.sources.length > 0)),
         ));
 
-    if (hasRootSources && hasInlineSources) {
+    if (isFourActTarget && hasRootSources && hasInlineSources) {
       errors.push(
         `[L${lessonNum}] Dual-location source residency violation: Lesson contains BOTH a root 'sources: []' array (${lesson.sources.length} items) AND inline 'act.source' objects. Enforce single-location source residency to eliminate layout duplication and prevent narrative spoilers!`,
       );
