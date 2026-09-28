@@ -128,8 +128,7 @@
     .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 6px;
+      justify-content: space-between;
       height: 100%;
       overflow: hidden;
     }
@@ -139,11 +138,6 @@
     }
     .col-side .archival-source-box {
       margin: 0;
-      flex: 1;
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     /* Right Page 2-Tier Balanced Layout */
@@ -161,14 +155,6 @@
       column-gap: 5mm;
       flex: 1;
       overflow: hidden;
-    }
-    .right-upper-grid .col-side {
-      justify-content: flex-start;
-      gap: 5px;
-    }
-    .right-upper-grid .col-side .key-figure-box,
-    .right-upper-grid .col-side .concept-spotlight-box {
-      margin: 0;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
@@ -296,38 +282,15 @@
       margin-bottom: 3px;
       line-height: 1.22;
     }
-    .two-column-grid .archival-image,
     .archival-image {
       width: 100%;
-      max-height: 145px;
-      min-height: 75px;
-      height: 100%;
-      flex: 1;
-      min-height: 0;
-      object-fit: contain !important;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      height: 120px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 2px;
+      border: 1px solid #cbd5e1;
       display: block;
       margin-bottom: 3.5px;
-    }
-    .archival-source-box.expand-sm .archival-image {
-      height: 80px;
-    }
-    .archival-source-box.expand-md .archival-image {
-      height: 125px;
-    }
-    .archival-source-box.expand-lg .archival-image {
-      height: 145px;
-    }
-    .archival-source-box.panoramic-source {
-      column-span: all;
-      margin: 4px 0 5px 0;
-    }
-    .archival-source-box.panoramic-source .archival-image {
-      height: 115px;
-      width: 100%;
-      object-fit: contain;
     }
     .archival-body {
       font-family: 'Newsreader', Georgia, serif;
@@ -558,21 +521,21 @@
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 8.0pt;
-      font-weight: 700;
-      color: #0369a1;
+      font-size: 7.6pt;
+      font-weight: 600;
+      color: #475569;
       line-height: 1.20;
     }
     .kf-significance {
       font-size: 8.0pt;
-      line-height: 1.28;
+      line-height: 1.30;
       color: #334155;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 6.8pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -583,9 +546,9 @@
       margin: 0;
       padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 7.5pt;
       color: #1e293b;
-      line-height: 1.24;
+      line-height: 1.26;
     }
     .kf-actions-list li {
       margin-bottom: 1px;
@@ -609,14 +572,14 @@
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 7.4pt;
+      font-size: 6.6pt;
       font-weight: 800;
       color: #16a34a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 7.0pt;
+      font-size: 6.6pt;
       font-weight: 700;
       color: #475569;
     }
@@ -630,20 +593,20 @@
     }
     .csb-body {
       font-size: 8.0pt;
-      line-height: 1.28;
+      line-height: 1.30;
       color: #1e293b;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       color: #14532d;
       background: #dcfce7;
       border: 1px solid #86efac;
       padding: 2px 4.5px;
       border-radius: 2px;
-      line-height: 1.24;
+      line-height: 1.26;
     }
 
     /* Full-Width Bottom Vocabulary Deck (Left Page) */
@@ -2228,7 +2191,7 @@
             <span class="topic-badge">KS3 HISTORY &bull; UNIT 2</span>
             <span class="spec-ref-badge">LESSON 5 OF 6</span>
           </div>
-          <h2 class="lesson-title">Why did it take the "Great Stink" to finally clean up Britain's streets?</h2>
+          <h2 class="lesson-title">Why did it take the 'Great Stink' to finally clean up Britain's streets?</h2>
           <div class="lesson-spec-anchor">
             <strong>Key Enquiry:</strong> “Why did it take so long to clean up Britain?” &bull; <em>Sections 1 &amp; 2: Context, Catalysts &amp; Primary Evidence</em>
           </div>
@@ -2360,7 +2323,7 @@
             <span class="topic-badge right-topic-badge">ENQUIRY ANALYSIS &bull; ACTS 3 &amp; 4</span>
             <span class="spec-ref-badge">PAGE 11 &bull; FORENSIC CORE</span>
           </div>
-          <h3 class="right-header-title">Why did it take the "Great Stink" to finally clean up Britain's streets?</h3>
+          <h3 class="right-header-title">Why did it take the 'Great Stink' to finally clean up Britain's streets?</h3>
           <div class="lesson-spec-anchor">
             <strong>Key Evidence &amp; Enquiries:</strong> Primary Sources, Key Individuals, Turning Points &amp; How Historians Debate
           </div>
@@ -2489,7 +2452,7 @@
             <span class="topic-badge">KS3 HISTORY &bull; UNIT 2</span>
             <span class="spec-ref-badge">LESSON 6 OF 6</span>
           </div>
-          <h2 class="lesson-title">Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?</h2>
+          <h2 class="lesson-title">End of Unit Assessment: Cholera Investigation</h2>
           <div class="lesson-spec-anchor">
             <strong>Key Enquiry:</strong> “Why did it take so long to clean up Britain?” &bull; <em>Sections 1 &amp; 2: Context, Catalysts &amp; Primary Evidence</em>
           </div>
@@ -2605,7 +2568,7 @@
             <span class="topic-badge right-topic-badge">ENQUIRY ANALYSIS &bull; ACTS 3 &amp; 4</span>
             <span class="spec-ref-badge">PAGE 13 &bull; FORENSIC CORE</span>
           </div>
-          <h3 class="right-header-title">Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?</h3>
+          <h3 class="right-header-title">End of Unit Assessment: Cholera Investigation</h3>
           <div class="lesson-spec-anchor">
             <strong>Key Evidence &amp; Enquiries:</strong> Primary Sources, Key Individuals, Turning Points &amp; How Historians Debate
           </div>
