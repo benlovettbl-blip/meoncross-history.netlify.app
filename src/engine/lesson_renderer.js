@@ -5674,6 +5674,19 @@ export function renderLesson(lesson) {
               </div>
             </div>
         `;
+      const formatExamQuestionTitle = (qText, fallbackIdx) => {
+        if (!qText) return '';
+        let str = qText.trim();
+        if (/^Q?\s*1\s*\([a-b]\)/i.test(str)) {
+          str = str.replace(/^Q?\s*1\s*\(([a-b])\)[\.:\s]*/i, 'Q1($1). ');
+        } else if (/^Q?\s*([2-6])[\.:\s]/i.test(str)) {
+          str = str.replace(/^Q?\s*([2-6])[\.:\s]*/i, 'Q$1. ');
+        } else if (!/^(Q\d|Question\s+\d)/i.test(str)) {
+          str = `Q${fallbackIdx + 1}. ${str}`;
+        }
+        return typeof formatBold !== 'undefined' ? formatBold(str) : str;
+      };
+
       const renderQuestion = (q, qIdx) => {
         let scaffoldHtml = '';
         if (q.scaffolding) {
@@ -5799,7 +5812,7 @@ export function renderLesson(lesson) {
         return `
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
             <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-              ${formatQuestion(q.question)}
+              ${formatExamQuestionTitle(q.question, qIdx)}
               <span style="display: inline-flex; vertical-align: middle;">
                 ${q.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="ep-model-${qIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
               </span>
@@ -5813,7 +5826,9 @@ export function renderLesson(lesson) {
         `;
       };
 
-      if (epQuestions.length > 0) {
+      const isPaper3Weimar =
+        typeof unitId !== 'undefined' && (unitId === 'weimar_nazi_germany' || unitId === 'germany');
+      if (epQuestions.length > 0 && isPaper3Weimar) {
         let q2Index = epQuestions.findIndex(
           (q) =>
             q.question &&
@@ -5937,7 +5952,7 @@ export function renderLesson(lesson) {
           let isQ2 =
             q.question &&
             (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
-          if (!isQ2) {
+          if (!isQ2 || !isPaper3Weimar) {
             htmlExamPractice += renderQuestion(q, qIdx);
           }
         });
@@ -6179,8 +6194,17 @@ export function renderLesson(lesson) {
   ) {
     html += htmlSources1;
   }
+  const hasExamPractice = !!(
+    lesson.exam_practice &&
+    (Array.isArray(lesson.exam_practice)
+      ? lesson.exam_practice.length > 0
+      : (lesson.exam_practice.questions && lesson.exam_practice.questions.length > 0) ||
+        (lesson.exam_practice.stimulus && lesson.exam_practice.stimulus.length > 0))
+  );
+  const shouldRenderGcseTask = !!(lesson.gcse_task && !hasExamPractice);
+
   if (
-    lesson.gcse_task ||
+    shouldRenderGcseTask ||
     (lesson.extended && lesson.extended.question) ||
     extractedExamTasks.length > 0
   ) {
@@ -6449,7 +6473,7 @@ export function renderLesson(lesson) {
       `;
     }
 
-    if (lesson.gcse_task) {
+    if (shouldRenderGcseTask) {
       if (lesson.gcse_task.tasks) {
         lesson.gcse_task.tasks.forEach((task, tIdx) => {
           gcseHtml += `
@@ -7394,6 +7418,13 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
         }
       }
     });
+  }
+
+  // 6. Historian's Corner
+  if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
+    if (lesson.historians_corner.stretch_question) {
+      lesson.historians_corner.qNum = globalQNum++;
+    }
   }
 
   // 7. Exam Practice Tasks

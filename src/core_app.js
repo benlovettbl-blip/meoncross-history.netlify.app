@@ -1120,6 +1120,18 @@ function assignQuestionNumbers(lesson, targetUnitId) {
     });
   }
 
+  // 1. Primary Source
+  if (lesson.primary_source && lesson.primary_source.question) {
+    lesson.primary_source.qNum = globalQNum++;
+  }
+
+  // 2. Sources (non-GCSE units)
+  if (lesson.sources && lesson.sources.length > 0 && !isGCSE) {
+    lesson.sources.forEach((source) => {
+      if (source.question) source.qNum = globalQNum++;
+    });
+  }
+
   // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {

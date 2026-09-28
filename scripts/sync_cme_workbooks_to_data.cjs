@@ -266,33 +266,8 @@ mapping.forEach((m) => {
     ],
   };
 
-  // 4. GCSE TASK (Standard interactive task cards)
-  lesson.gcse_task = {
-    title: `Edexcel GCSE Paper 2 Practice: Question 1 & ${rightExam.tariff && rightExam.tariff.includes('Question 2') ? 'Question 2' : 'Question 3'}`,
-    tasks: [
-      {
-        type: 'written',
-        tariff: 'Q1(a): Consequence [4 marks]',
-        text: `Q1(a). ${conAQ} [4 marks]`,
-        model: modelA,
-      },
-      {
-        type: 'written',
-        tariff: 'Q1(b): Consequence [4 marks]',
-        text: `Q1(b). ${conBQ} [4 marks]`,
-        model: modelB,
-      },
-      {
-        type: 'written',
-        tariff: rightExam.tariff
-          ? cleanText(rightExam.tariff).split('•')[0].trim()
-          : 'Q2/Q3 [8 marks]',
-        text: `${rightExam.tariff && rightExam.tariff.includes('Question 2') ? 'Q2. ' : 'Q3. '}${cleanText(rightExam.stem || rightExam.title)}`,
-        stimulus: (rightExam.stimulus || []).map((s) => cleanText(s)),
-        model: modelRight,
-      },
-    ],
-  };
+  // Legacy gcse_task removed to prevent duplicate assessment practice rendering in the app
+  delete lesson.gcse_task;
 });
 
 // Also sanitize any older remaining occurrences in data
@@ -313,6 +288,7 @@ serialized = serialized
 const outputContent = `// Conflict in the Middle East, 1945–95 Unit Data
 const unitData = ${serialized};
 
+export { unitData };
 export default unitData;
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = unitData;
