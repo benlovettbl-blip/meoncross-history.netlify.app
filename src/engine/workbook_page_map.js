@@ -699,19 +699,19 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 0,
     },
     lesson_1_2: {
-      page: 10,
+      page: 9,
       booklet: 'Key Topic 1 Booklet',
       unitId: 'usa',
       lessonIndex: 1,
     },
     lesson_1_3: {
-      page: 17,
+      page: 15,
       booklet: 'Key Topic 1 Booklet',
       unitId: 'usa',
       lessonIndex: 2,
     },
     lesson_1_4: {
-      page: 24,
+      page: 21,
       booklet: 'Key Topic 1 Booklet',
       unitId: 'usa',
       lessonIndex: 3,

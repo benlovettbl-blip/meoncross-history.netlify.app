@@ -10,7 +10,7 @@ async function verifySourceSync() {
   const dataPath = path.resolve(__dirname, '../units/cme_new/data.js');
   const fileUrl = 'file:///' + dataPath.replace(/\\/g, '/');
   const module = await import(fileUrl);
-  const unitData = module.unitData;
+  const unitData = module.unitData || module.default;
 
   let totalErrors = 0;
   let totalSourcesChecked = 0;

@@ -1,5 +1,5 @@
-// Auto-generated Paper 3 USA Unit Data
-export const usa = {
+// USA 1954–75: Conflict at Home and Abroad Unit Data
+const unitData = {
   specification_file: '/data/usa_spec.json',
   title: 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75',
   enquiry_question:
@@ -663,33 +663,57 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
-            question: 'What was the constitutional significance of the 13th Amendment (1865)?',
-            answer:
-              'It officially abolished slavery and involuntary servitude throughout the United States.',
-          },
-          {
-            question: 'What was the purpose of the 14th Amendment to the US Constitution (1868)?',
-            answer:
-              'It guaranteed citizenship and equal protection under the law to all persons born or naturalized in the USA.',
-          },
-          {
-            question: 'What was the constitutional guarantee of the 15th Amendment (1870)?',
-            answer:
-              'It prohibited federal and state governments from denying a citizen the right to vote based on race or color.',
-          },
-          {
-            question: 'What was the post-Civil War Reconstruction era in American history?',
-            answer:
-              'The period from 1865 to 1877 when the federal government attempted to reintegrate Southern states and protect Black civil rights.',
+            question:
+              "What 1896 Supreme Court ruling established the legal doctrine of 'separate but equal'?",
+            answer: 'Plessy v. Ferguson',
           },
           {
             question:
-              'How did Black American military service in the Second World War affect attitudes to civil rights?',
-            answer:
-              'Over 1 million Black Americans served abroad in segregated units; returning veterans demanded full democratic equality at home (the Double V campaign).',
+              'What was the name of the state and local laws enforcing racial segregation in the American South?',
+            answer: 'Jim Crow laws',
+          },
+          {
+            question:
+              'What white supremacist terrorist group used lynching and cross-burnings to intimidate Black Americans?',
+            answer: 'The Ku Klux Klan (KKK)',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in 1909 to fight racial injustice through legal challenges in the courts?',
+            answer: 'The NAACP (National Association for the Advancement of Colored People)',
+          },
+          {
+            question:
+              "Which constitutional amendment, ratified in 1868, guaranteed citizenship and 'equal protection of the laws' to all persons born in the US?",
+            answer: 'The 14th Amendment',
+          },
+          {
+            question:
+              'Which constitutional amendment, ratified in 1870, prohibited denying a citizen the right to vote based on race or color?',
+            answer: 'The 15th Amendment',
+          },
+          {
+            question:
+              'What voting restrictions were commonly used by Southern states to disenfranchise Black voters without naming race?',
+            answer: 'Poll taxes and literacy tests',
+          },
+          {
+            question:
+              'What term describes the mass migration of millions of Black Americans from the rural South to Northern cities between 1916 and 1970?',
+            answer: 'The Great Migration',
+          },
+          {
+            question:
+              'What campaign during World War II called for victory against fascism abroad and victory against racism at home?',
+            answer: 'The Double V Campaign',
+          },
+          {
+            question:
+              'Which US President issued Executive Order 9981 in 1948, desegregating the United States Armed Forces?',
+            answer: 'President Harry S. Truman',
           },
         ],
       },
@@ -1204,6 +1228,48 @@ export const usa = {
             'The Double V campaign was launched by the Pittsburgh Courier in 1942, urging Black Americans to fight for democracy abroad while demanding an end to racial segregation and inequality in the United States.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '4 marks',
+        questions: [
+          {
+            tariff: '4 marks',
+            type: 'inference_4m',
+            marks: 4,
+            question:
+              '1. Give two things you can infer from Source A about racial segregation in the American South in the early 1950s. [4 marks]',
+            stimulus:
+              "Source A: A segregated railway waiting room sign in Jacksonville, Florida, early 1950s reading 'Colored Waiting Room'.",
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that racial segregation was strictly enforced by law and physical barriers in public transport facilities.<br><strong>Details in the source that tell me this:</strong><br>A prominent, permanent metal sign suspended above the doorway explicitly designates the room for 'Colored' passengers only.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that Black Americans were systematically treated as second-class citizens with inferior, segregated public accommodations.<br><strong>Details in the source that tell me this:</strong><br>The separate, isolated entrance reflects the Jim Crow legal doctrine of 'separate but equal', which in practice enforced racial humiliation and public subjugation.</p>",
+            scaffolding: {
+              acronym: 'Point & Detail (4 Marks)',
+              acronym_title: 'Inference Formula: (i) Inference + Detail, (ii) Inference + Detail',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 4 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 1. [4 marks]',
+            text: '1. Give two things you can infer from Source A about racial segregation in the American South in the early 1950s. [4 marks]',
+            stimulus:
+              "Source A: A segregated railway waiting room sign in Jacksonville, Florida, early 1950s reading 'Colored Waiting Room'.",
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that racial segregation was strictly enforced by law and physical barriers in public transport facilities.<br><strong>Details in the source that tell me this:</strong><br>A prominent, permanent metal sign suspended above the doorway explicitly designates the room for 'Colored' passengers only.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that Black Americans were systematically treated as second-class citizens with inferior, segregated public accommodations.<br><strong>Details in the source that tell me this:</strong><br>The separate, isolated entrance reflects the Jim Crow legal doctrine of 'separate but equal', which in practice enforced racial humiliation and public subjugation.</p>",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_1_2',
@@ -1254,7 +1320,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'What was the main purpose of the Jim Crow laws in the Southern states?',
@@ -1276,6 +1342,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'What was the doctrine established by the 1896 Plessy v. Ferguson Supreme Court ruling?',
+            answer: 'Separate but equal',
+          },
+          {
+            question:
+              'Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?',
+            answer: 'Harry S. Truman',
+          },
+          {
+            question:
+              'What tests were designed to prevent Black citizens from registering to vote by asking complex questions?',
+            answer: 'Literacy tests',
+          },
+          {
+            question:
+              'Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?',
+            answer: 'Because white landowners and employers would fire or evict them',
           },
         ],
       },
@@ -1766,6 +1857,46 @@ export const usa = {
             "Psychologists Kenneth and Mamie Clark conducted the 'doll test', showing that racial segregation damaged Black children's self-esteem and internalized feelings of inferiority. Chief Justice Earl Warren cited this psychological harm in the unanimous 1954 ruling.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '12 marks',
+        questions: [
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why it was difficult for Black Americans in the Southern states to register to vote in the early 1950s. [12 marks]',
+            stimulus: ['Literacy tests', 'Ku Klux Klan (KKK)'],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason why it was exceptionally difficult for Black Americans to register to vote was the institutional use of deliberately biased <strong>literacy tests and poll taxes</strong> by white state officials. Southern registrars exercised total discretion over grading these tests, routinely giving Black applicants impossibly complex constitutional questions while exempting illiterate white voters under 'grandfather clauses'. Furthermore, impoverished Black sharecroppers could rarely afford the cumulative poll taxes required before voting, legally barring hundreds of thousands from the ballot box.<br><br>A second decisive reason was the pervasive threat of physical terror and extralegal violence orchestrated by white supremacist groups like the <strong>Ku Klux Klan (KKK)</strong> and local police forces. Black citizens who attempted to register faced beatings, arson, and lynching, while their names were published in local newspapers. Consequently, white employers immediately fired Black workers and landlords evicted tenant farmers who attempted to exercise their constitutional rights, creating an atmosphere of overwhelming terror.<br><br>Finally, an underlying barrier was the absolute <strong>lack of federal intervention or legal protection</strong>. Southern courts, judges, juries, and law enforcement officers were exclusively white and committed to upholding white supremacy. Without federal marshals or voting rights legislation to enforce the 15th Amendment, Black citizens had no legal recourse when local officials illegally denied them the right to vote.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: '3-Paragraph Causal Analysis (PEEL)',
+              sentence_starters: [
+                'One major reason was...',
+                'Furthermore, a second critical factor was...',
+                'Finally, an underlying driver was...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 12 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 2. [12 marks]',
+            text: '2. Explain why it was difficult for Black Americans in the Southern states to register to vote in the early 1950s. [12 marks]',
+            stimulus: ['Literacy tests', 'Ku Klux Klan (KKK)'],
+            model:
+              "One major reason why it was exceptionally difficult for Black Americans to register to vote was the institutional use of deliberately biased <strong>literacy tests and poll taxes</strong> by white state officials. Southern registrars exercised total discretion over grading these tests, routinely giving Black applicants impossibly complex constitutional questions while exempting illiterate white voters under 'grandfather clauses'. Furthermore, impoverished Black sharecroppers could rarely afford the cumulative poll taxes required before voting, legally barring hundreds of thousands from the ballot box.<br><br>A second decisive reason was the pervasive threat of physical terror and extralegal violence orchestrated by white supremacist groups like the <strong>Ku Klux Klan (KKK)</strong> and local police forces. Black citizens who attempted to register faced beatings, arson, and lynching, while their names were published in local newspapers. Consequently, white employers immediately fired Black workers and landlords evicted tenant farmers who attempted to exercise their constitutional rights, creating an atmosphere of overwhelming terror.<br><br>Finally, an underlying barrier was the absolute <strong>lack of federal intervention or legal protection</strong>. Southern courts, judges, juries, and law enforcement officers were exclusively white and committed to upholding white supremacy. Without federal marshals or voting rights legislation to enforce the 15th Amendment, Black citizens had no legal recourse when local officials illegally denied them the right to vote.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_1_3',
@@ -1816,7 +1947,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'What did the Supreme Court decide in Brown v. Board of Education (1954)?',
@@ -1838,6 +1969,32 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'What constitutional amendment, passed in 1868, contains the Equal Protection Clause used by the NAACP to challenge segregation?',
+            answer: '14th Amendment',
+          },
+          {
+            question:
+              'Which of the following best explains why the NAACP focused heavily on legal challenges through the courts in the early 1950s?',
+            answer:
+              'To establish binding legal precedents that could dismantle segregation nationwide.',
+          },
+          {
+            question:
+              'Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?',
+            answer: 'Orval Faubus',
+          },
+          {
+            question:
+              "What was the name of the 1955 Supreme Court order requiring school desegregation 'with all deliberate speed'?",
+            answer: 'Brown II',
           },
         ],
       },
@@ -2300,6 +2457,46 @@ export const usa = {
             "Following the Supreme Court's ruling in Browder v. Gayle, the official federal mandate arrived in Montgomery on 20 December 1956. The next morning, 21 December 1956, Martin Luther King Jr., Ralph Abernathy, and E.D. Nixon boarded the first integrated city bus, bringing the 381-day boycott to a triumphant conclusion.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott (1955–56)? [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into the success of the boycott because it demonstrates the critical role played by grassroots community organisation and alternative transport networks. From my own knowledge, I know that the Montgomery Improvement Association (MIA), led by Martin Luther King Jr., organised an elaborate carpool system involving over 300 private cars and church station wagons to transport 40,000 boycotters daily. The provenance of Source B makes it particularly valuable because, as a contemporary account by an active participant, it reveals the exceptional solidarity, planning, and discipline of the local Black community.<br><br>Source C is useful because it highlights the vital contribution of economic pressure and legal action in securing the boycott's victory. From my own knowledge, I know that Black citizens accounted for over 70% of bus ridership, depriving the Montgomery bus company of over 60% of its revenue, while NAACP lawyers fought the case to the Supreme Court in Browder v. Gayle (1956), which ruled segregated busing unconstitutional. The provenance of Source C adds strong historical value because it provides an analytical record of how local economic boycotts combined with federal judicial rulings to force municipal compliance. Combined, both sources provide high historical utility for understanding both the grassroots mobilization and the constitutional mechanisms that ensured victory.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title: 'Comparative Source Utility (Content, Knowledge, Provenance)',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 8 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(a). [8 marks]',
+            text: '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott (1955–56)? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into the success of the boycott because it demonstrates the critical role played by grassroots community organisation and alternative transport networks. From my own knowledge, I know that the Montgomery Improvement Association (MIA), led by Martin Luther King Jr., organised an elaborate carpool system involving over 300 private cars and church station wagons to transport 40,000 boycotters daily. The provenance of Source B makes it particularly valuable because, as a contemporary account by an active participant, it reveals the exceptional solidarity, planning, and discipline of the local Black community.<br><br>Source C is useful because it highlights the vital contribution of economic pressure and legal action in securing the boycott's victory. From my own knowledge, I know that Black citizens accounted for over 70% of bus ridership, depriving the Montgomery bus company of over 60% of its revenue, while NAACP lawyers fought the case to the Supreme Court in Browder v. Gayle (1956), which ruled segregated busing unconstitutional. The provenance of Source C adds strong historical value because it provides an analytical record of how local economic boycotts combined with federal judicial rulings to force municipal compliance. Combined, both sources provide high historical utility for understanding both the grassroots mobilization and the constitutional mechanisms that ensured victory.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_1_4',
@@ -2351,7 +2548,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'Why was Rosa Parks arrested in Montgomery in December 1955?',
@@ -2375,6 +2572,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              "Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?",
+            answer: 'Smith v. Allwright',
+          },
+          {
+            question:
+              'Which elite military division was deployed by President Eisenhower to protect the Little Rock Nine?',
+            answer: '101st Airborne Division',
+          },
+          {
+            question:
+              'Which of the following best explains why President Eisenhower sent the 101st Airborne Division to Little Rock in 1957?',
+            answer:
+              'To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.',
+          },
+          {
+            question: 'Which 1956 Supreme Court case declared bus segregation unconstitutional?',
+            answer: 'Browder v. Gayle',
           },
         ],
       },
@@ -2837,6 +3059,46 @@ export const usa = {
             "The murder trial of J.W. Milam and Roy Bryant took place in Sumner, Mississippi. Despite eyewitness testimony from Emmett Till's great-uncle Moses Wright, the all-white male jury took just 67 minutes to find the killers not guilty. Months later, the men admitted their guilt in a paid Look magazine interview.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '16 marks (+4 SPaG)',
+        questions: [
+          {
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
+            question:
+              '3(d). How far do you agree with Interpretation 2 about the reasons why Southern states resisted school desegregation after Brown v. Board of Education (1954)? [16 marks + 4 SPaG]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "On the one hand, Interpretation 1 is supported by compelling evidence showing that political leadership and 'Massive Resistance' organised by Southern state governments were fundamental in blocking school desegregation. Following the Brown ruling, 101 Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist desegregation by all legal means. Southern governors like Orval Faubus at Little Rock (1957) actively deployed state National Guardsmen to block Black pupils from entering white schools, giving state-sponsored legitimacy to segregationist defiance.<br><br>On the other hand, Interpretation 2 offers an equally persuasive argument by focusing on the grassroots hostility, cultural racism, and violence organised by White Citizens' Councils and the KKK. White Citizens' Councils grew to over 250,000 members across the South, using economic intimidation, firing Black parents, and closing down public schools entirely (as in Prince Edward County, Virginia) to fund private all-white academies. This demonstrates that resistance was not merely top-down political rhetoric, but deeply embedded in the social fabric of white Southern communities.<br><br>Furthermore, contextual analysis confirms that the Supreme Court's vague wording in Brown II (1955)—ordering desegregation with 'all deliberate speed'—provided Southern school boards with an open invitation to delay integration for years without facing federal legal penalties.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a large extent. While state governors and politicians provided legal cover, it was the deep-seated, community-wide white backlash and economic terror on the ground that made the enforcement of school desegregation so painfully slow and hazardous for Black children.",
+            scaffolding: {
+              acronym: 'Evaluative Verdict Framework',
+              acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
+              sentence_starters: [
+                'On the one hand, Interpretation 1 argues that...',
+                'On the other hand, Interpretation 2 points out that...',
+                'In conclusion, having evaluated both views...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 16 marks (+4 SPaG)',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(d). [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about the reasons why Southern states resisted school desegregation after Brown v. Board of Education (1954)? [16 marks + 4 SPaG]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 is supported by compelling evidence showing that political leadership and 'Massive Resistance' organised by Southern state governments were fundamental in blocking school desegregation. Following the Brown ruling, 101 Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist desegregation by all legal means. Southern governors like Orval Faubus at Little Rock (1957) actively deployed state National Guardsmen to block Black pupils from entering white schools, giving state-sponsored legitimacy to segregationist defiance.<br><br>On the other hand, Interpretation 2 offers an equally persuasive argument by focusing on the grassroots hostility, cultural racism, and violence organised by White Citizens' Councils and the KKK. White Citizens' Councils grew to over 250,000 members across the South, using economic intimidation, firing Black parents, and closing down public schools entirely (as in Prince Edward County, Virginia) to fund private all-white academies. This demonstrates that resistance was not merely top-down political rhetoric, but deeply embedded in the social fabric of white Southern communities.<br><br>Furthermore, contextual analysis confirms that the Supreme Court's vague wording in Brown II (1955)—ordering desegregation with 'all deliberate speed'—provided Southern school boards with an open invitation to delay integration for years without facing federal legal penalties.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a large extent. While state governors and politicians provided legal cover, it was the deep-seated, community-wide white backlash and economic terror on the ground that made the enforcement of school desegregation so painfully slow and hazardous for Black children.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_2_1',
@@ -2888,7 +3150,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question:
@@ -2913,6 +3175,32 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Which of the following best describes the significance of the 1896 Plessy v. Ferguson ruling for the lives of Southern Black Americans in the early 1950s?',
+            answer:
+              "It provided legal constitutional justification for segregation under the 'separate but equal' doctrine.",
+          },
+          {
+            question:
+              'Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?',
+            answer: 'Ruby Bridges',
+          },
+          {
+            question:
+              "What percentage of Montgomery's daily bus passengers were Black before the boycott?",
+            answer: '70%',
+          },
+          {
+            question:
+              'Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?',
+            answer: 'Ku Klux Klan',
           },
         ],
       },
@@ -3443,6 +3731,48 @@ export const usa = {
             'On 1 February 1960, four Black freshmen from North Carolina A&T College (Ezell Blair Jr., David Richmond, Franklin McCain, and Joseph McNeil) sat down at the whites-only lunch counter inside the F.W. Woolworth store in Greensboro, sparking a nationwide sit-in movement.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '4 marks',
+        questions: [
+          {
+            tariff: '4 marks',
+            type: 'inference_4m',
+            marks: 4,
+            question:
+              '1. Give two things you can infer from Source A about the methods used by Southern police against civil rights demonstrators in Birmingham, Alabama (1963). [4 marks]',
+            stimulus:
+              'Source A: Photograph of police dogs and high-pressure fire hoses deployed against young demonstrators in Birmingham, May 1963.',
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that Southern police forces used extreme, disproportionate physical brutality against peaceful protesters.<br><strong>Details in the source that tell me this:</strong><br>Police under Eugene 'Bull' Connor deployed high-pressure fire hoses capable of tearing clothes and knocking demonstrators off their feet.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that authorities were determined to intimidate civil rights activists regardless of their age.<br><strong>Details in the source that tell me this:</strong><br>Attack dogs and aggressive police lines were unleashed directly against young student marchers participating in the Children's Crusade.</p>",
+            scaffolding: {
+              acronym: 'Point & Detail (4 Marks)',
+              acronym_title: 'Inference Formula: (i) Inference + Detail, (ii) Inference + Detail',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 4 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 1. [4 marks]',
+            text: '1. Give two things you can infer from Source A about the methods used by Southern police against civil rights demonstrators in Birmingham, Alabama (1963). [4 marks]',
+            stimulus:
+              'Source A: Photograph of police dogs and high-pressure fire hoses deployed against young demonstrators in Birmingham, May 1963.',
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that Southern police forces used extreme, disproportionate physical brutality against peaceful protesters.<br><strong>Details in the source that tell me this:</strong><br>Police under Eugene 'Bull' Connor deployed high-pressure fire hoses capable of tearing clothes and knocking demonstrators off their feet.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that authorities were determined to intimidate civil rights activists regardless of their age.<br><strong>Details in the source that tell me this:</strong><br>Attack dogs and aggressive police lines were unleashed directly against young student marchers participating in the Children's Crusade.</p>",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_2_2',
@@ -3494,7 +3824,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'What was the purpose of the Greensboro sit-ins in 1960?',
@@ -3516,6 +3846,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?',
+            answer: 'The Little Rock Nine',
+          },
+          {
+            question: 'Whose arrest on 1 December 1955 sparked the Montgomery Bus Boycott?',
+            answer: 'Rosa Parks',
+          },
+          {
+            question:
+              'On what date in December 1956 did Black residents of Montgomery officially end their boycott and return to integrated buses?',
+            answer: '21 December 1956, after the Supreme Court injunction took legal effect.',
+          },
+          {
+            question:
+              "Which of the following was the main cause for the creation of White Citizens' Councils across the South after 1954?",
+            answer:
+              "To organize economic and political resistance to the Supreme Court's school desegregation rulings.",
           },
         ],
       },
@@ -4032,6 +4387,51 @@ export const usa = {
             'Just weeks after the March on Washington, KKK terrorists planted 15 sticks of dynamite beneath the steps of the 16th Street Baptist Church in Birmingham. The explosion killed Addie Mae Collins, Denise McNair, Carole Robertson, and Cynthia Wesley, sparking nationwide outrage and intensifying calls for the 1964 Civil Rights Act.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '12 marks',
+        questions: [
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question: '2. Explain why the Civil Rights Act was passed in 1964. [12 marks]',
+            stimulus: [
+              'The Birmingham Campaign (1963)',
+              'The assassination of President Kennedy (November 1963)',
+            ],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason why the Civil Rights Act was passed was the national and international outrage generated by the <strong>Birmingham Campaign of May 1963</strong>. Televised images of Bull Connor’s police dogs attacking unarmed Black children and fire hoses tearing into demonstrators shocked the American public and deeply embarrassed the US government on the global Cold War stage. President Kennedy went on national television the following month declaring civil rights a 'moral issue', directly compelling the executive branch to draft comprehensive federal desegregation legislation.<br><br>A second decisive factor was the <strong>assassination of President John F. Kennedy in November 1963</strong> and the political skill of President Lyndon B. Johnson. Johnson used the immense wave of national grief to frame the passage of civil rights legislation as a sacred memorial to the fallen president, urging Congress not to let Kennedy's legacy fail. Furthermore, Johnson expertly leveraged his decades of congressional experience to break a record 54-day filibuster by Southern Democrats in the Senate.<br><br>Finally, the massive mobilization of over 250,000 peaceful citizens at the <strong>March on Washington in August 1963</strong> demonstrated unprecedented multiracial support for federal action. Martin Luther King Jr.'s iconic 'I Have a Dream' speech crystallized national moral sentiment, proving to wavering congressional moderates that civil rights could no longer be postponed without triggering catastrophic social unrest.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: '3-Paragraph Causal Analysis (PEEL)',
+              sentence_starters: [
+                'One major reason was...',
+                'Furthermore, a second critical factor was...',
+                'Finally, an underlying driver was...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 12 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 2. [12 marks]',
+            text: '2. Explain why the Civil Rights Act was passed in 1964. [12 marks]',
+            stimulus: [
+              'The Birmingham Campaign (1963)',
+              'The assassination of President Kennedy (November 1963)',
+            ],
+            model:
+              "One major reason why the Civil Rights Act was passed was the national and international outrage generated by the <strong>Birmingham Campaign of May 1963</strong>. Televised images of Bull Connor’s police dogs attacking unarmed Black children and fire hoses tearing into demonstrators shocked the American public and deeply embarrassed the US government on the global Cold War stage. President Kennedy went on national television the following month declaring civil rights a 'moral issue', directly compelling the executive branch to draft comprehensive federal desegregation legislation.<br><br>A second decisive factor was the <strong>assassination of President John F. Kennedy in November 1963</strong> and the political skill of President Lyndon B. Johnson. Johnson used the immense wave of national grief to frame the passage of civil rights legislation as a sacred memorial to the fallen president, urging Congress not to let Kennedy's legacy fail. Furthermore, Johnson expertly leveraged his decades of congressional experience to break a record 54-day filibuster by Southern Democrats in the Senate.<br><br>Finally, the massive mobilization of over 250,000 peaceful citizens at the <strong>March on Washington in August 1963</strong> demonstrated unprecedented multiracial support for federal action. Martin Luther King Jr.'s iconic 'I Have a Dream' speech crystallized national moral sentiment, proving to wavering congressional moderates that civil rights could no longer be postponed without triggering catastrophic social unrest.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_2_3',
@@ -4083,7 +4483,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: "What was 'Project C' in Birmingham designed to achieve?",
@@ -4105,6 +4505,32 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?',
+            answer: 'Thurgood Marshall',
+          },
+          {
+            question:
+              'Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?',
+            answer: 'E.D. Nixon',
+          },
+          {
+            question:
+              'Why did the murder of Emmett Till in 1955 become a major catalyst for the civil rights movement?',
+            answer:
+              'Because his mother held an open-casket funeral to expose the brutality of racism',
+          },
+          {
+            question:
+              'Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?',
+            answer: 'Ella Baker',
           },
         ],
       },
@@ -4629,6 +5055,46 @@ export const usa = {
             'Founded in Oakland in 1966 by Huey Newton and Bobby Seale, the Black Panthers adopted a distinctive uniform of black leather jackets, black berets, and powder-blue shirts, combined with openly carrying firearms under California law to project an image of militant Black self-defence.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the causes of the riots in northern and western cities between 1965 and 1967? [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into the urban riots because it illustrates the profound economic deprivation, de facto segregation, and police brutality experienced by Black Americans in northern ghettos like Watts, Los Angeles. From my own knowledge, I know that while the Civil Rights Act had dismantled legal Jim Crow in the South, it did nothing to resolve northern unemployment (often double the white rate), substandard tenement housing, and aggressive police profiling. The provenance of Source B makes it particularly valuable because, as a contemporary testimony from an inner-city resident, it reveals the deep sense of systemic hopelessness that erupted into spontaneous rebellion.<br><br>Source C is useful because it provides official, data-driven analysis of the structural causes of urban unrest. From my own knowledge, I know that the 1968 Kerner Commission concluded that the riots were caused by white racism, warning that America was 'moving toward two societies, one black, one white—separate and unequal'. The provenance of Source C is valuable because, as an independent federal investigation commissioned by President Johnson, it offers an authoritative, objective assessment of how governmental neglect and institutional discrimination sparked nationwide urban upheaval. Together, both sources provide high historical utility for understanding both the lived frustration on the streets and the macroeconomic failures that caused the riots.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title: 'Comparative Source Utility (Content, Knowledge, Provenance)',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 8 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(a). [8 marks]',
+            text: '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the causes of the riots in northern and western cities between 1965 and 1967? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into the urban riots because it illustrates the profound economic deprivation, de facto segregation, and police brutality experienced by Black Americans in northern ghettos like Watts, Los Angeles. From my own knowledge, I know that while the Civil Rights Act had dismantled legal Jim Crow in the South, it did nothing to resolve northern unemployment (often double the white rate), substandard tenement housing, and aggressive police profiling. The provenance of Source B makes it particularly valuable because, as a contemporary testimony from an inner-city resident, it reveals the deep sense of systemic hopelessness that erupted into spontaneous rebellion.<br><br>Source C is useful because it provides official, data-driven analysis of the structural causes of urban unrest. From my own knowledge, I know that the 1968 Kerner Commission concluded that the riots were caused by white racism, warning that America was 'moving toward two societies, one black, one white—separate and unequal'. The provenance of Source C is valuable because, as an independent federal investigation commissioned by President Johnson, it offers an authoritative, objective assessment of how governmental neglect and institutional discrimination sparked nationwide urban upheaval. Together, both sources provide high historical utility for understanding both the lived frustration on the streets and the macroeconomic failures that caused the riots.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_2_4',
@@ -4679,7 +5145,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: "Why did Malcolm X reject Martin Luther King's non-violent approach?",
@@ -4701,6 +5167,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Who was the first Black student to graduate from Little Rock Central High School?',
+            answer: 'Ernest Green',
+          },
+          {
+            question:
+              'What was the most significant political consequence of the Montgomery Bus Boycott?',
+            answer:
+              'It established non-violent direct action as a viable national tactic and elevated MLK to national leadership.',
+          },
+          {
+            question: 'What was the primary goal of the Freedom Riders in 1961?',
+            answer: 'To test whether Southern interstate bus terminals were actually integrated',
+          },
+          {
+            question:
+              'What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?',
+            answer: 'Edmund Pettus Bridge',
           },
         ],
       },
@@ -5210,6 +5701,46 @@ export const usa = {
             "In the wake of nationwide riots following King's death, President Johnson pressured Congress to pass the Fair Housing Act, which outlawed discrimination in the sale, rental, and financing of housing.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '16 marks (+4 SPaG)',
+        questions: [
+          {
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
+            question:
+              '3(d). How far do you agree with Interpretation 2 about the causes of the split between non-violent civil rights organisations and the Black Power movement? [16 marks + 4 SPaG]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "On the one hand, Interpretation 1 argues that the split was caused primarily by ideological impatience and a fundamental rejection of non-violence by younger militants like Stokely Carmichael and Malcolm X. Younger activists in SNCC and CORE had endured brutal beatings during the Freedom Rides and Mississippi Freedom Summer without seeing tangible economic improvements in poor Black communities. Black Power advocates argued that non-violence was humiliating and ineffective for self-defense, adopting the slogan 'Black Power' and expelling white members to pursue racial self-determination and armed self-defense through groups like the Black Panther Party.<br><br>On the other hand, Interpretation 2 emphasizes that the split was driven by the changing geographical and economic focus of the movement from Southern legal desegregation to Northern urban poverty. When Martin Luther King Jr. brought his non-violent campaign to Chicago in 1966, he faced fierce white working-class hostility and found that moral marches could not resolve deep-rooted problems like housing discrimination, joblessness, and police brutality. Militants correctly recognized that the moderate tactics of the SCLC were ill-equipped to address the structural economic misery of urban ghettos.<br><br>Furthermore, government repression and the FBI’s COINTELPRO operations deliberately exacerbated divisions between civil rights leaders, planting false stories and escalating rivalries between mainstream organizations and radical factions.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Carmichael and Malcolm X provided the radical rhetoric, it was the persistent failure of non-violent legalism to alleviate the crushing economic misery and police brutality in northern urban centres that made the fracture of the civil rights movement inevitable.",
+            scaffolding: {
+              acronym: 'Evaluative Verdict Framework',
+              acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
+              sentence_starters: [
+                'On the one hand, Interpretation 1 argues that...',
+                'On the other hand, Interpretation 2 points out that...',
+                'In conclusion, having evaluated both views...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 16 marks (+4 SPaG)',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(d). [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about the causes of the split between non-violent civil rights organisations and the Black Power movement? [16 marks + 4 SPaG]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 argues that the split was caused primarily by ideological impatience and a fundamental rejection of non-violence by younger militants like Stokely Carmichael and Malcolm X. Younger activists in SNCC and CORE had endured brutal beatings during the Freedom Rides and Mississippi Freedom Summer without seeing tangible economic improvements in poor Black communities. Black Power advocates argued that non-violence was humiliating and ineffective for self-defense, adopting the slogan 'Black Power' and expelling white members to pursue racial self-determination and armed self-defense through groups like the Black Panther Party.<br><br>On the other hand, Interpretation 2 emphasizes that the split was driven by the changing geographical and economic focus of the movement from Southern legal desegregation to Northern urban poverty. When Martin Luther King Jr. brought his non-violent campaign to Chicago in 1966, he faced fierce white working-class hostility and found that moral marches could not resolve deep-rooted problems like housing discrimination, joblessness, and police brutality. Militants correctly recognized that the moderate tactics of the SCLC were ill-equipped to address the structural economic misery of urban ghettos.<br><br>Furthermore, government repression and the FBI’s COINTELPRO operations deliberately exacerbated divisions between civil rights leaders, planting false stories and escalating rivalries between mainstream organizations and radical factions.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Carmichael and Malcolm X provided the radical rhetoric, it was the persistent failure of non-violent legalism to alleviate the crushing economic misery and police brutality in northern urban centres that made the fracture of the civil rights movement inevitable.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_3_1',
@@ -5261,7 +5792,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'What sparked the Watts Riots in Los Angeles in 1965?',
@@ -5283,6 +5814,33 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Who was the local leader of the Arkansas NAACP who guided and supported the Little Rock Nine during the crisis?',
+            answer: 'Daisy Bates',
+          },
+          {
+            question:
+              'What was the main purpose of the Southern Manifesto, signed by over 100 Southern politicians in 1956?',
+            answer:
+              'To oppose school integration and accuse the Supreme Court of abusing its power',
+          },
+          {
+            question:
+              'Which of the following best explains why the Greensboro Sit-ins of 1960 succeeded in desegregating lunch counters?',
+            answer:
+              'The economic impact of the boycotts and the national media coverage of peaceful protestors facing violence.',
+          },
+          {
+            question:
+              'Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?',
+            answer: 'Tommie Smith and John Carlos',
           },
         ],
       },
@@ -5774,6 +6332,48 @@ export const usa = {
             "The program forcibly relocated peasants from their ancestral villages into fortified hamlets to cut them off from the Vietcong. However, the forced movement, poor conditions, and corruption alienated the peasants, turning many against Diem's government.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '4 marks',
+        questions: [
+          {
+            tariff: '4 marks',
+            type: 'inference_4m',
+            marks: 4,
+            question:
+              '1. Give two things you can infer from Source A about the conditions faced by US infantry patrols fighting in South Vietnam (1965–68). [4 marks]',
+            stimulus:
+              "Source A: A soldier's account describing the intense heat, hidden booby traps, and unseen enemy snipers in the jungle.",
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              '<p><strong>(i) What I can infer:</strong><br>I can infer that American soldiers operated in an intensely hazardous, unfamiliar jungle environment where lethal danger was omnipresent.<br><strong>Details in the source that tell me this:</strong><br>The extract highlights soldiers constantly looking down for concealed punji-stick booby traps and tripping wires hidden beneath dense foliage.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that US troops experienced extreme psychological terror because they rarely saw the enemy directly.<br><strong>Details in the source that tell me this:</strong><br>The account describes sudden sniper fire from invisible tree lines, followed by the immediate disappearance of Vietcong fighters into underground tunnel networks.</p>',
+            scaffolding: {
+              acronym: 'Point & Detail (4 Marks)',
+              acronym_title: 'Inference Formula: (i) Inference + Detail, (ii) Inference + Detail',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 4 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 1. [4 marks]',
+            text: '1. Give two things you can infer from Source A about the conditions faced by US infantry patrols fighting in South Vietnam (1965–68). [4 marks]',
+            stimulus:
+              "Source A: A soldier's account describing the intense heat, hidden booby traps, and unseen enemy snipers in the jungle.",
+            model:
+              '<p><strong>(i) What I can infer:</strong><br>I can infer that American soldiers operated in an intensely hazardous, unfamiliar jungle environment where lethal danger was omnipresent.<br><strong>Details in the source that tell me this:</strong><br>The extract highlights soldiers constantly looking down for concealed punji-stick booby traps and tripping wires hidden beneath dense foliage.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that US troops experienced extreme psychological terror because they rarely saw the enemy directly.<br><strong>Details in the source that tell me this:</strong><br>The account describes sudden sniper fire from invisible tree lines, followed by the immediate disappearance of Vietcong fighters into underground tunnel networks.</p>',
+          },
+        ],
+      },
     },
     {
       id: 'lesson_3_2',
@@ -5825,7 +6425,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'Why was Vietnam temporarily divided at the 17th parallel in 1954?',
@@ -5847,6 +6447,32 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              "What was the main consequence of the Supreme Court's 1955 Brown II ruling, which ordered desegregation to proceed 'with all deliberate speed'?",
+            answer:
+              'It allowed Southern authorities to exploit the vague phrasing to delay school integration for years.',
+          },
+          {
+            question:
+              'What term describes the conservative Southern Democrats who organized congressional resistance to civil rights?',
+            answer: 'Dixiecrats',
+          },
+          {
+            question:
+              "Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?",
+            answer: 'Selma, Alabama',
+          },
+          {
+            question:
+              'What was a major consequence of the assassination of Martin Luther King Jr. in 1968?',
+            answer: 'Outbreaks of violent riots in over 100 cities across the United States',
           },
         ],
       },
@@ -6371,6 +6997,52 @@ export const usa = {
             "Westmoreland's strategy focused on body counts to wear the enemy down. However, North Vietnam was willing to absorb massive losses and sent new troops faster than the US could kill them, leading to a bloody stalemate that alienated the US public.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '12 marks',
+        questions: [
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why US involvement in Vietnam escalated under President Johnson between 1964 and 1965. [12 marks]',
+            stimulus: [
+              'The Gulf of Tonkin incident (August 1964)',
+              'The attack on the US base at Pleiku (February 1965)',
+            ],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason why US involvement escalated was the <strong>Gulf of Tonkin incident in August 1964</strong> and the subsequent congressional resolution. Following reports that North Vietnamese torpedo boats had attacked the USS Maddox, President Johnson obtained the Gulf of Tonkin Resolution from Congress with near-unanimous support. This resolution granted the president sweeping executive authority to 'take all necessary measures' to repel armed attacks, effectively providing Johnson with a blank cheque to wage war in Vietnam without a formal congressional declaration.<br><br>A second critical trigger was the <strong>Vietcong attack on the US military base at Pleiku in February 1965</strong>, which killed eight American servicemen and wounded over a hundred. Viewing this as an intolerable direct provocation, Johnson immediately launched Operation Rolling Thunder—a sustained aerial bombing campaign against North Vietnam. To protect the vital US airbases like Da Nang from counter-attack, Johnson made the historic decision in March 1965 to deploy the first 3,500 US ground combat troops, fundamentally transforming the conflict from an advisory mission into a full-scale American ground war.<br><br>Finally, an underlying driver was the pervasive <strong>Cold War Domino Theory</strong> and fear of communist expansion across Southeast Asia. US policymakers feared that if South Vietnam fell to Ho Chi Minh’s forces, neighbouring nations like Laos, Cambodia, Thailand, and Indonesia would inevitably collapse to communism. Furthermore, Johnson was politically determined not to be remembered as the first American president who 'lost' Vietnam to communism.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: '3-Paragraph Causal Analysis (PEEL)',
+              sentence_starters: [
+                'One major reason was...',
+                'Furthermore, a second critical factor was...',
+                'Finally, an underlying driver was...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 12 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 2. [12 marks]',
+            text: '2. Explain why US involvement in Vietnam escalated under President Johnson between 1964 and 1965. [12 marks]',
+            stimulus: [
+              'The Gulf of Tonkin incident (August 1964)',
+              'The attack on the US base at Pleiku (February 1965)',
+            ],
+            model:
+              "One major reason why US involvement escalated was the <strong>Gulf of Tonkin incident in August 1964</strong> and the subsequent congressional resolution. Following reports that North Vietnamese torpedo boats had attacked the USS Maddox, President Johnson obtained the Gulf of Tonkin Resolution from Congress with near-unanimous support. This resolution granted the president sweeping executive authority to 'take all necessary measures' to repel armed attacks, effectively providing Johnson with a blank cheque to wage war in Vietnam without a formal congressional declaration.<br><br>A second critical trigger was the <strong>Vietcong attack on the US military base at Pleiku in February 1965</strong>, which killed eight American servicemen and wounded over a hundred. Viewing this as an intolerable direct provocation, Johnson immediately launched Operation Rolling Thunder—a sustained aerial bombing campaign against North Vietnam. To protect the vital US airbases like Da Nang from counter-attack, Johnson made the historic decision in March 1965 to deploy the first 3,500 US ground combat troops, fundamentally transforming the conflict from an advisory mission into a full-scale American ground war.<br><br>Finally, an underlying driver was the pervasive <strong>Cold War Domino Theory</strong> and fear of communist expansion across Southeast Asia. US policymakers feared that if South Vietnam fell to Ho Chi Minh’s forces, neighbouring nations like Laos, Cambodia, Thailand, and Indonesia would inevitably collapse to communism. Furthermore, Johnson was politically determined not to be remembered as the first American president who 'lost' Vietnam to communism.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_3_3',
@@ -6422,7 +7094,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'What was the Gulf of Tonkin incident in August 1964?',
@@ -6444,6 +7116,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Which young minister was chosen to lead the Montgomery Improvement Association (MIA) during the boycott?',
+            answer: 'Martin Luther King Jr.',
+          },
+          {
+            question: 'In which city did the famous 1960 lunch counter sit-ins begin?',
+            answer: 'Greensboro, North Carolina',
+          },
+          {
+            question:
+              'Which tragic event occurred at the 16th Street Baptist Church in Birmingham, Alabama, on 15 September 1963, killing four young Black girls?',
+            answer: 'A Ku Klux Klan bomb explosion during Sunday church services.',
+          },
+          {
+            question:
+              'What was a major consequence of the Kerner Commission report (1968) on American society?',
+            answer:
+              'It warned that America was moving toward two separate and unequal societies and blamed white racism for inner-city conditions.',
           },
         ],
       },
@@ -6958,6 +7655,46 @@ export const usa = {
             'While intended to strip forest cover and expose enemy routes, the use of Agent Orange and Napalm destroyed crops and caused widespread civilian suffering, severely damaging the moral credibility of the US mission.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the reasons why US military tactics failed to defeat the Vietcong (1965–68)? [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into the failure of US tactics because it reveals the immense counter-productive impact of American heavy firepower on the civilian population. From my own knowledge, I know that tactics like Operation Rolling Thunder, napalm, Agent Orange, and 'Search and Destroy' missions (Zippo raids) destroyed countless peasant villages and poisoned farmland, alienating ordinary South Vietnamese civilians and driving them into supporting the Vietcong. The provenance of Source B makes it particularly valuable because, as a contemporary account by an American war correspondent, it provides an eyewitness record of how brutal pacification tactics destroyed civilian hearts and minds.<br><br>Source C is useful because it highlights the superior guerrilla tactics and resilience of the Vietcong (NLF). From my own knowledge, I know that the Vietcong utilized the Ho Chi Minh Trail to keep supplies flowing, constructed thousands of miles of subterranean tunnels (such as Cu Chi), and practiced 'hanging onto the belts' of American troops—fighting at such close range that US artillery and air strikes could not be used without killing their own men. The provenance of Source C adds strong historical value because it details the disciplined ideological commitment and local geographic mastery that allowed guerrilla forces to survive massive American firepower. Together, both sources provide high historical utility for analyzing both the strategic flaws of US search-and-destroy warfare and the asymmetric superiority of Vietcong guerrilla resistance.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title: 'Comparative Source Utility (Content, Knowledge, Provenance)',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 8 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(a). [8 marks]',
+            text: '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the reasons why US military tactics failed to defeat the Vietcong (1965–68)? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into the failure of US tactics because it reveals the immense counter-productive impact of American heavy firepower on the civilian population. From my own knowledge, I know that tactics like Operation Rolling Thunder, napalm, Agent Orange, and 'Search and Destroy' missions (Zippo raids) destroyed countless peasant villages and poisoned farmland, alienating ordinary South Vietnamese civilians and driving them into supporting the Vietcong. The provenance of Source B makes it particularly valuable because, as a contemporary account by an American war correspondent, it provides an eyewitness record of how brutal pacification tactics destroyed civilian hearts and minds.<br><br>Source C is useful because it highlights the superior guerrilla tactics and resilience of the Vietcong (NLF). From my own knowledge, I know that the Vietcong utilized the Ho Chi Minh Trail to keep supplies flowing, constructed thousands of miles of subterranean tunnels (such as Cu Chi), and practiced 'hanging onto the belts' of American troops—fighting at such close range that US artillery and air strikes could not be used without killing their own men. The provenance of Source C adds strong historical value because it details the disciplined ideological commitment and local geographic mastery that allowed guerrilla forces to survive massive American firepower. Together, both sources provide high historical utility for analyzing both the strategic flaws of US search-and-destroy warfare and the asymmetric superiority of Vietcong guerrilla resistance.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_3_4',
@@ -7009,7 +7746,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: "What was the purpose of 'Search and Destroy' missions?",
@@ -7031,6 +7768,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'What logistics system did the MIA set up to allow boycotters to travel without using buses?',
+            answer: 'Carpool system',
+          },
+          {
+            question:
+              'In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?',
+            answer: 'Anniston',
+          },
+          {
+            question:
+              "What famous book detailing Malcolm X's life was published shortly after his death in 1965?",
+            answer: 'The Autobiography of Malcolm X',
+          },
+          {
+            question:
+              'What was the official name of the political and military organization commonly known as the Vietcong?',
+            answer: 'National Liberation Front (NLF)',
           },
         ],
       },
@@ -7568,6 +8330,46 @@ export const usa = {
             'Nixon wanted to put pressure on North Vietnam during negotiations by destroying their military sanctuaries and the Ho Chi Minh Trail branches inside Cambodia, hoping to show he was willing to escalate the war.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '16 marks (+4 SPaG)',
+        questions: [
+          {
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
+            question:
+              '3(d). How far do you agree with Interpretation 2 about the military and political significance of the Tet Offensive (January 1968)? [16 marks + 4 SPaG]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "On the one hand, Interpretation 1 emphasizes that from a purely military standpoint, the Tet Offensive was an overwhelming, catastrophic defeat for the Vietcong and North Vietnamese Army. Over 84,000 communist troops attacked over 100 South Vietnamese cities and military installations, including the US Embassy in Saigon. However, US and ARVN forces rapidly recaptured every single objective, inflicting devastating casualties—killing an estimated 45,000 communist fighters and permanently crippling the Vietcong's independent military capacity for the remainder of the war.<br><br>On the other hand, Interpretation 2 persuasively argues that the Tet Offensive was a decisive, war-winning political and psychological victory for the communists. For years, General Westmoreland and President Johnson had assured the American public that the war was nearly won and that there was 'light at the end of the tunnel'. Seeing communist commandos breach the US Embassy on television shattered public credibility, creating an unbridgeable 'credibility gap' and convincing influential journalists like Walter Cronkite that the war was un-winnable.<br><br>Furthermore, the political fallout was immediate and catastrophic for the US administration: anti-war demonstrations escalated, public support plummeted, and on 31 March 1968, President Johnson stunned the nation by announcing he would halt bombing and would not seek re-election.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a very large extent. While the US military won the tactical engagements on the battlefield, the Tet Offensive fatally destroyed American political will on the home front, proving that the United States could not achieve total victory and making a negotiated US withdrawal inevitable.",
+            scaffolding: {
+              acronym: 'Evaluative Verdict Framework',
+              acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
+              sentence_starters: [
+                'On the one hand, Interpretation 1 argues that...',
+                'On the other hand, Interpretation 2 points out that...',
+                'In conclusion, having evaluated both views...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 16 marks (+4 SPaG)',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(d). [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about the military and political significance of the Tet Offensive (January 1968)? [16 marks + 4 SPaG]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 emphasizes that from a purely military standpoint, the Tet Offensive was an overwhelming, catastrophic defeat for the Vietcong and North Vietnamese Army. Over 84,000 communist troops attacked over 100 South Vietnamese cities and military installations, including the US Embassy in Saigon. However, US and ARVN forces rapidly recaptured every single objective, inflicting devastating casualties—killing an estimated 45,000 communist fighters and permanently crippling the Vietcong's independent military capacity for the remainder of the war.<br><br>On the other hand, Interpretation 2 persuasively argues that the Tet Offensive was a decisive, war-winning political and psychological victory for the communists. For years, General Westmoreland and President Johnson had assured the American public that the war was nearly won and that there was 'light at the end of the tunnel'. Seeing communist commandos breach the US Embassy on television shattered public credibility, creating an unbridgeable 'credibility gap' and convincing influential journalists like Walter Cronkite that the war was un-winnable.<br><br>Furthermore, the political fallout was immediate and catastrophic for the US administration: anti-war demonstrations escalated, public support plummeted, and on 31 March 1968, President Johnson stunned the nation by announcing he would halt bombing and would not seek re-election.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a very large extent. While the US military won the tactical engagements on the battlefield, the Tet Offensive fatally destroyed American political will on the home front, proving that the United States could not achieve total victory and making a negotiated US withdrawal inevitable.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_4_1',
@@ -7619,7 +8421,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: "What was President Nixon's policy of 'Vietnamization'?",
@@ -7641,6 +8443,32 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'What non-violent strategy did the MIA use to force the bus company to desegregate?',
+            answer: 'Economic boycott',
+          },
+          {
+            question:
+              'What was the primary consequence of the Freedom Rides in 1961 on federal policy?',
+            answer:
+              'It forced the federal government to actively enforce desegregation rulings on interstate buses and terminals.',
+          },
+          {
+            question: 'In which Southern city was Martin Luther King Jr. assassinated in 1968?',
+            answer: 'Memphis, Tennessee',
+          },
+          {
+            question:
+              'Why was the Gulf of Tonkin Resolution (1964) highly significant for US involvement in Vietnam?',
+            answer:
+              'It gave President Johnson the power to escalate military action without a formal declaration of war',
           },
         ],
       },
@@ -8157,6 +8985,48 @@ export const usa = {
             "Vietnam was the first 'television war.' Uncensored news footage showing wounded soldiers and civilian casualties contrasted with positive government reports, leading influential figures like Walter Cronkite to declare the war was in a stalemate, which heavily shifted public opinion.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '4 marks',
+        questions: [
+          {
+            tariff: '4 marks',
+            type: 'inference_4m',
+            marks: 4,
+            question:
+              '1. Give two things you can infer from Source A about the confrontation at Kent State University in May 1970. [4 marks]',
+            stimulus:
+              'Source A: Photograph and report on Ohio National Guardsmen firing into student anti-war demonstrators at Kent State, killing four.',
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that domestic opposition to the Vietnam War had escalated into violent, lethal clashes on American soil.<br><strong>Details in the source that tell me this:</strong><br>National Guardsmen armed with live military ammunition opened fire on an unarmed student anti-war protest on a college campus, killing four students.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that President Nixon's decision to expand the war into Cambodia provoked unprecedented outrage among the younger generation.<br><strong>Details in the source that tell me this:</strong><br>The protest was triggered directly by Nixon's public announcement of the Cambodian incursion, prompting nationwide student strikes that shut down hundreds of universities.</p>",
+            scaffolding: {
+              acronym: 'Point & Detail (4 Marks)',
+              acronym_title: 'Inference Formula: (i) Inference + Detail, (ii) Inference + Detail',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 4 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 1. [4 marks]',
+            text: '1. Give two things you can infer from Source A about the confrontation at Kent State University in May 1970. [4 marks]',
+            stimulus:
+              'Source A: Photograph and report on Ohio National Guardsmen firing into student anti-war demonstrators at Kent State, killing four.',
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that domestic opposition to the Vietnam War had escalated into violent, lethal clashes on American soil.<br><strong>Details in the source that tell me this:</strong><br>National Guardsmen armed with live military ammunition opened fire on an unarmed student anti-war protest on a college campus, killing four students.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that President Nixon's decision to expand the war into Cambodia provoked unprecedented outrage among the younger generation.<br><strong>Details in the source that tell me this:</strong><br>The protest was triggered directly by Nixon's public announcement of the Cambodian incursion, prompting nationwide student strikes that shut down hundreds of universities.</p>",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_4_2',
@@ -8207,7 +9077,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'Why did the My Lai Massacre in 1968 shock the American public?',
@@ -8229,6 +9099,32 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              "Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?",
+            answer: 'Jo Ann Robinson',
+          },
+          {
+            question:
+              "What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?",
+            answer: 'I Have a Dream',
+          },
+          {
+            question:
+              "What was a major reason why MLK's 1966 Chicago Freedom Movement failed to achieve its housing integration goals?",
+            answer:
+              'Northern white politicians and residents put up fierce resistance, and promises were ignored',
+          },
+          {
+            question:
+              'What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?',
+            answer: 'Punji traps',
           },
         ],
       },
@@ -8745,6 +9641,46 @@ export const usa = {
             "By positioning moderate, patriotic Americans as the 'Silent Majority' against radical protestors, Nixon succeeded in marginalising the anti-war movement and winning a landslide re-election victory in 1972.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '12 marks',
+        questions: [
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why President Richard Nixon introduced the policy of Vietnamization in 1969. [12 marks]',
+            stimulus: ['Rising US casualties', 'The impact of the Tet Offensive (1968)'],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason why President Nixon introduced Vietnamization was the unsustainable toll of <strong>rising American military casualties</strong> and the explosive anti-war backlash on the home front. By 1969, over 36,000 American soldiers had been killed, with hundreds dying each week. Draft resistance, student strikes, and veterans returning medals convinced Nixon that the American public would no longer tolerate high US body bags, forcing him to promise 'peace with honour' and begin the phased withdrawal of ground troops.<br><br>A second decisive factor was the <strong>shattering psychological impact of the 1968 Tet Offensive</strong>. Tet had destroyed the credibility of the US government, exposing the reality that 500,000 US soldiers could not secure South Vietnam against communist guerrilla infiltration. Nixon recognized that continuing a direct US ground war was politically suicidal, compelling him to shift the military burden of ground combat entirely onto the South Vietnamese Army (ARVN), supported by US air and naval power.<br><br>Finally, Nixon sought to implement his broader <strong>Nixon Doctrine and diplomatic détente</strong> with the Soviet Union and China. By pursuing diplomatic triangular diplomacy with Beijing and Moscow, Nixon hoped to isolate North Vietnam diplomatically while demonstrating that America’s Asian allies had to take primary responsibility for their own military defense, thereby facilitating an honourable exit for the United States.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: '3-Paragraph Causal Analysis (PEEL)',
+              sentence_starters: [
+                'One major reason was...',
+                'Furthermore, a second critical factor was...',
+                'Finally, an underlying driver was...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 12 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 2. [12 marks]',
+            text: '2. Explain why President Richard Nixon introduced the policy of Vietnamization in 1969. [12 marks]',
+            stimulus: ['Rising US casualties', 'The impact of the Tet Offensive (1968)'],
+            model:
+              "One major reason why President Nixon introduced Vietnamization was the unsustainable toll of <strong>rising American military casualties</strong> and the explosive anti-war backlash on the home front. By 1969, over 36,000 American soldiers had been killed, with hundreds dying each week. Draft resistance, student strikes, and veterans returning medals convinced Nixon that the American public would no longer tolerate high US body bags, forcing him to promise 'peace with honour' and begin the phased withdrawal of ground troops.<br><br>A second decisive factor was the <strong>shattering psychological impact of the 1968 Tet Offensive</strong>. Tet had destroyed the credibility of the US government, exposing the reality that 500,000 US soldiers could not secure South Vietnam against communist guerrilla infiltration. Nixon recognized that continuing a direct US ground war was politically suicidal, compelling him to shift the military burden of ground combat entirely onto the South Vietnamese Army (ARVN), supported by US air and naval power.<br><br>Finally, Nixon sought to implement his broader <strong>Nixon Doctrine and diplomatic détente</strong> with the Soviet Union and China. By pursuing diplomatic triangular diplomacy with Beijing and Moscow, Nixon hoped to isolate North Vietnam diplomatically while demonstrating that America’s Asian allies had to take primary responsibility for their own military defense, thereby facilitating an honourable exit for the United States.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_4_3',
@@ -8796,7 +9732,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: "Who did President Nixon call the 'Silent Majority'?",
@@ -8818,6 +9754,31 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Which of the following best describes the significance of the Montgomery Improvement Association (MIA) in the boycott?',
+            answer:
+              'It coordinated community resources, carpools, and legal representation to sustain the long-term protest.',
+          },
+          {
+            question:
+              'Why was the Selma to Montgomery march in 1965 organized by civil rights leaders?',
+            answer: 'To demand federal legislation protecting Black voting rights',
+          },
+          {
+            question: 'What was the capital city of North Vietnam?',
+            answer: 'Hanoi',
+          },
+          {
+            question:
+              'What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?',
+            answer: 'Peace with Honor',
           },
         ],
       },
@@ -9316,6 +10277,46 @@ export const usa = {
             "Following the controversy over secret bombing in Cambodia and the escalation in Vietnam, Congress overrode Nixon's veto to pass the War Powers Act, declaring that the President must notify Congress within 48 hours of deploying troops and obtain authorization within 60 days.",
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '8 marks',
+        questions: [
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the main reasons for the growth of opposition to the Vietnam War in the USA (1968–71)? [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into the anti-war movement because it reveals the profound moral revulsion triggered by revelations of US military war crimes like the My Lai Massacre (revealed late 1969). From my own knowledge, I know that investigative reporting by Seymour Hersh uncovered that Charlie Company under Lt William Calley had murdered over 500 unarmed South Vietnamese women, children, and elderly villagers. The provenance of Source B makes it particularly valuable because, as a contemporary investigative report, it illustrates how photographic evidence of civilian massacres destroyed the moral justification for American involvement in Vietnam.<br><br>Source C is useful because it highlights the role of television broadcasting and the heavy human cost of the draft in mobilizing mass middle-class resistance. From my own knowledge, I know that Vietnam was America's first 'television war', bringing daily colour footage of burning villages, body bags, and wounded teenagers into living rooms, while draft card burnings and the Vietnam Veterans Against the War (VVAW) showed that ordinary Americans were turning decisively against the conflict. The provenance of Source C adds strong historical value because it details the widespread, multiracial scale of the anti-war coalitions like the Moratorium marchers. Together, both sources provide high historical utility for analyzing the moral, media, and human causes of domestic anti-war sentiment.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title: 'Comparative Source Utility (Content, Knowledge, Provenance)',
+              sentence_starters: [
+                'Source B is useful because...',
+                'Source C is useful because...',
+                'Combined, both sources provide...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 8 marks',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(a). [8 marks]',
+            text: '3(a). Study Sources B and C. How useful are Sources B and C for an enquiry into the main reasons for the growth of opposition to the Vietnam War in the USA (1968–71)? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into the anti-war movement because it reveals the profound moral revulsion triggered by revelations of US military war crimes like the My Lai Massacre (revealed late 1969). From my own knowledge, I know that investigative reporting by Seymour Hersh uncovered that Charlie Company under Lt William Calley had murdered over 500 unarmed South Vietnamese women, children, and elderly villagers. The provenance of Source B makes it particularly valuable because, as a contemporary investigative report, it illustrates how photographic evidence of civilian massacres destroyed the moral justification for American involvement in Vietnam.<br><br>Source C is useful because it highlights the role of television broadcasting and the heavy human cost of the draft in mobilizing mass middle-class resistance. From my own knowledge, I know that Vietnam was America's first 'television war', bringing daily colour footage of burning villages, body bags, and wounded teenagers into living rooms, while draft card burnings and the Vietnam Veterans Against the War (VVAW) showed that ordinary Americans were turning decisively against the conflict. The provenance of Source C adds strong historical value because it details the widespread, multiracial scale of the anti-war coalitions like the Moratorium marchers. Together, both sources provide high historical utility for analyzing the moral, media, and human causes of domestic anti-war sentiment.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_4_4',
@@ -9366,7 +10367,7 @@ export const usa = {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
-        instructions: 'Answer these questions in full sentences to activate prior knowledge.',
+        instructions: 'Answer these questions in full sentences.',
         items: [
           {
             question: 'What did the Paris Peace Accords of 1973 agree?',
@@ -9389,6 +10390,33 @@ export const usa = {
           {
             question: 'What does the abbreviation NAACP stand for?',
             answer: 'National Association for the Advancement of Colored People',
+          },
+          {
+            question:
+              'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+            answer: 'CORE (Congress of Racial Equality)',
+          },
+          {
+            question:
+              'Which segregationist group formed in Mississippi in 1954 to apply economic intimidation against civil rights?',
+            answer: "White Citizens' Councils",
+          },
+          {
+            question:
+              'Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?',
+            answer: 'Malcolm X',
+          },
+          {
+            question:
+              'What was the significance of the Strategic Hamlet Program introduced by Diem and the US in 1962?',
+            answer:
+              'It backfired, increasing peasant resentment and boosting support for the Vietcong.',
+          },
+          {
+            question:
+              "What was the most significant domestic consequence of Nixon's invasion of Cambodia in 1970?",
+            answer:
+              'It triggered massive anti-war protests, including the Kent State shootings, and deep public outrage.',
           },
         ],
       },
@@ -9879,7 +10907,51 @@ export const usa = {
             'Because the draft forced young men (average age 19) to fight an unpopular war, troop morale plummeted, leading to drug abuse and fragging. Meanwhile, the middle-class resentment of draft inequities fueled the domestic anti-war movement that ultimately broke US political will.',
         },
       ],
+      exam_practice: {
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '16 marks (+4 SPaG)',
+        questions: [
+          {
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
+            question:
+              '3(d). How far do you agree with Interpretation 2 about the main reasons why the United States failed to defeat communist forces in Vietnam? [16 marks + 4 SPaG]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "On the one hand, Interpretation 1 argues that the United States lost the war primarily because of military and strategic failures on the battlefield. The US relied on inappropriate conventional tactics—such as heavy artillery, carpet-bombing, and Search and Destroy missions—that were completely unsuited to fighting an elusive guerrilla enemy in dense jungle terrain. Furthermore, the conscription draft system produced low morale, drug abuse, and 'fragging' among inexperienced one-year draftees, while widespread civilian destruction thoroughly alienated the South Vietnamese population.<br><br>On the other hand, Interpretation 2 forcefully argues that the US defeat was decided by the political loss of will on the domestic home front and the collapse of the corrupt, unpopular South Vietnamese regime. The growing anti-war movement, intense media scrutiny, and revelations like the Pentagon Papers made it impossible for US presidents to sustain indefinite military commitments. Simultaneously, the South Vietnamese government under Thieu was plagued by rampant corruption and lacked genuine popular legitimacy, meaning the ARVN collapsed rapidly once US air support and funding were terminated following the 1973 Paris Peace Accords.<br><br>Furthermore, contextual historical analysis confirms that the extraordinary ideological resilience and external superpower support (Soviet and Chinese weaponry) provided to the North Vietnamese allowed Ho Chi Minh's forces to sustain astronomical casualties and outlast American resolve.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a large extent. While US tactical military methods were deeply flawed, military technology alone could never compensate for the absence of political legitimacy in Saigon and the total collapse of public and congressional support in Washington, making an American defeat inevitable.",
+            scaffolding: {
+              acronym: 'Evaluative Verdict Framework',
+              acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
+              sentence_starters: [
+                'On the one hand, Interpretation 1 argues that...',
+                'On the other hand, Interpretation 2 points out that...',
+                'In conclusion, having evaluated both views...',
+              ],
+            },
+          },
+        ],
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: 16 marks (+4 SPaG)',
+        tasks: [
+          {
+            type: 'written',
+            tariff: 'Question 3(d). [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about the main reasons why the United States failed to defeat communist forces in Vietnam? [16 marks + 4 SPaG]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 argues that the United States lost the war primarily because of military and strategic failures on the battlefield. The US relied on inappropriate conventional tactics—such as heavy artillery, carpet-bombing, and Search and Destroy missions—that were completely unsuited to fighting an elusive guerrilla enemy in dense jungle terrain. Furthermore, the conscription draft system produced low morale, drug abuse, and 'fragging' among inexperienced one-year draftees, while widespread civilian destruction thoroughly alienated the South Vietnamese population.<br><br>On the other hand, Interpretation 2 forcefully argues that the US defeat was decided by the political loss of will on the domestic home front and the collapse of the corrupt, unpopular South Vietnamese regime. The growing anti-war movement, intense media scrutiny, and revelations like the Pentagon Papers made it impossible for US presidents to sustain indefinite military commitments. Simultaneously, the South Vietnamese government under Thieu was plagued by rampant corruption and lacked genuine popular legitimacy, meaning the ARVN collapsed rapidly once US air support and funding were terminated following the 1973 Paris Peace Accords.<br><br>Furthermore, contextual historical analysis confirms that the extraordinary ideological resilience and external superpower support (Soviet and Chinese weaponry) provided to the North Vietnamese allowed Ho Chi Minh's forces to sustain astronomical casualties and outlast American resolve.<br><br>In conclusion, having evaluated both interpretations against the historical evidence, I agree with Interpretation 2 to a large extent. While US tactical military methods were deeply flawed, military technology alone could never compensate for the absence of political legitimacy in Saigon and the total collapse of public and congressional support in Washington, making an American defeat inevitable.",
+          },
+        ],
+      },
     },
   ],
 };
-export default usa;
+
+export default unitData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = unitData;
+}

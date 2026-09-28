@@ -1,4 +1,5 @@
-export default {
+// Weimar and Nazi Germany, 1918–39 Unit Data
+const unitData = {
   specification_file: '/data/weimar_nazi_germany_spec.json',
   title: 'Paper 3: Weimar and Nazi Germany, 1918-39',
   enquiry_question: 'From Democracy to Dictatorship: How did Hitler destroy the Weimar Republic?',
@@ -482,7 +483,51 @@ export default {
             tariff: '4 marks',
             type: '4-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why Kaiser Wilhelm II was forced to abdicate in November 1918. [12 marks] [12 marks]',
+            stimulus: [
+              'The Kiel mutiny and German Revolution',
+              'The British naval blockade and military defeat',
+            ],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. kiel mutiny & revolution. Explain how sailors at Kiel mutinied (28 Oct) and workers' & soldiers' councils seized cities (e.g. Kurt Eisner in Bavaria), destroying imperial authority. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. blockade & military defeat. Explain how 750,000 starvation deaths from the British naval blockade and the failed 1918 Spring Offensive convinced military leaders the war was lost. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. loss of army support & strike. Explain how General Groener told Wilhelm the army wouldn't fight for him, while an SPD general strike in Berlin forced Prince Max to announce abdication. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. Kiel Mutiny & Revolution',
+                  prompt:
+                    "Explain how sailors at Kiel mutinied (28 Oct) and workers' & soldiers' councils seized cities (e.g. Kurt Eisner in Bavaria), destroying imperial authority.",
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. Blockade & Military Defeat',
+                  prompt:
+                    'Explain how 750,000 starvation deaths from the British naval blockade and the failed 1918 Spring Offensive convinced military leaders the war was lost.',
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. Loss of Army Support & Strike',
+                  prompt:
+                    "Explain how General Groener told Wilhelm the army wouldn't fight for him, while an SPD general strike in Berlin forced Prince Max to announce abdication.",
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       video: [
         {
@@ -507,6 +552,29 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '1. Give two things you can infer from Source A about the establishment of the Weimar Republic in November 1918. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
+            model:
+              '<p><strong>(i) What I can infer:</strong><br>I can infer that the politicians declaring the Republic wanted to present it as a triumphant, popular victory achieved by ordinary citizens and soldiers.<br><strong>Details in the source that tell me this:</strong><br>Scheidemann calls out to the crowd as "Workers and soldiers!" and proclaims that "The German people have won all along the line!"</p><p><strong>(ii) What I can infer:</strong><br>I can infer that there was deep bitterness and hostility towards the Kaiser and the old autocratic system.<br><strong>Details in the source that tell me this:</strong><br>Scheidemann refers dismissively to imperial rule, announcing that "The old and rotten monarchy has collapsed."',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why Kaiser Wilhelm II was forced to abdicate in November 1918. [12 marks]',
+            stimulus: [
+              'The Kiel mutiny and German Revolution',
+              'The British naval blockade and military defeat',
+            ],
+            model:
+              "One major reason was 1. kiel mutiny & revolution. Explain how sailors at Kiel mutinied (28 Oct) and workers' & soldiers' councils seized cities (e.g. Kurt Eisner in Bavaria), destroying imperial authority. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. blockade & military defeat. Explain how 750,000 starvation deaths from the British naval blockade and the failed 1918 Spring Offensive convinced military leaders the war was lost. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. loss of army support & strike. Explain how General Groener told Wilhelm the army wouldn't fight for him, while an SPD general strike in Berlin forced Prince Max to announce abdication. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
       },
     },
     {
@@ -955,7 +1023,48 @@ export default {
             tariff: '12 marks',
             type: '12-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why the Treaty of Versailles caused significant challenges for the Weimar Republic in the years 1919–1923. [12 marks] [12 marks]',
+            stimulus: ['Reparations', "The 'stab-in-the-back' myth (Dolchstoßlegende)"],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. reparations & ruhr crisis. Explain how the £6.6bn debt led to defaults, French occupation of the Ruhr (1923), passive resistance, and catastrophic hyperinflation. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the dolchstoßlegende. Explain how right-wing nationalists branded politicians 'November Criminals', permanently undermining Weimar's democratic legitimacy. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. extremist uprisings. Explain how demobilised soldiers and anger at military cuts (100k cap) triggered the Spartacist Uprising (1919), Kapp Putsch (1920), and Munich Putsch (1923). Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. Reparations & Ruhr Crisis',
+                  prompt:
+                    'Explain how the £6.6bn debt led to defaults, French occupation of the Ruhr (1923), passive resistance, and catastrophic hyperinflation.',
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. The Dolchstoßlegende',
+                  prompt:
+                    "Explain how right-wing nationalists branded politicians 'November Criminals', permanently undermining Weimar's democratic legitimacy.",
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. Extremist Uprisings',
+                  prompt:
+                    'Explain how demobilised soldiers and anger at military cuts (100k cap) triggered the Spartacist Uprising (1919), Kapp Putsch (1920), and Munich Putsch (1923).',
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       pair_share: {
         prompt:
@@ -963,6 +1072,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '12 marks',
+            text: '2. Explain why the Treaty of Versailles caused significant challenges for the Weimar Republic in the years 1919-1923 (12 marks).<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>Reparations</li><li>The \'stab-in-the-back\' myth</li></ul>You must also use information of your own.',
+            model:
+              '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One significant reason why the Treaty of Versailles caused challenges was the immense economic burden of reparations and territorial losses.</strong></span> 🔵 <span style="color: #2563eb;">The treaty imposed a crushing reparations bill of £6.6 billion on Germany, a sum that many, including the right-wing politician in Source C, deemed \'unpayable\'. Furthermore, Germany lost 13% of its territory, including vital industrial regions like Alsace-Lorraine and the Saar coalfields, as well as all its overseas colonies.</span> 🟢 <span style="color: #16a34a;">These economic penalties severely crippled the young Republic\'s ability to rebuild its economy after the war. The loss of industrial capacity reduced its income, while the reparations payments drained its finances, leading directly to the hyperinflation crisis of 1923 when the government resorted to printing money to pay its debts after the French occupation of the Ruhr. This economic instability made the Weimar government appear incompetent and incapable of protecting its citizens\' livelihoods.</span> 🟡 <span style="color: #d97706;"><strong>Thus, the economic terms of the treaty created profound material hardship and undermined public confidence in the Republic.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Another major challenge stemmed from the deep sense of national humiliation and the \'stab-in-the-back\' myth that the treaty fostered.</strong></span> 🔵 <span style="color: #2563eb;">The German public widely viewed the Treaty of Versailles as a \'Diktat\' – a dictated peace – forced upon them without negotiation, particularly resenting the \'war guilt\' clause (Article 231) and the severe military restrictions. Source B, from the Deutsche Zeitung, vividly captures this sentiment, describing the treaty as \'disgraceful\' and a moment where \'our national honor was dragged to its grave\'. Source C further exemplifies this, with a right-wing politician claiming the military was \'betrayed and stabbed in the back by the cowardly civilian politicians\'.</span> 🟢 <span style="color: #16a34a;">This narrative, propagated by conservative elites and the military, deliberately shifted blame for Germany\'s defeat from the army to the democratic politicians who signed the armistice and the treaty. It delegitimized the new Republic from its inception, branding its leaders as \'November Criminals\' who had betrayed the nation. This psychological blow made it incredibly difficult for the Weimar government to gain popular support and acceptance, as it was permanently associated with national defeat and dishonour.</span> 🟡 <span style="color: #d97706;"><strong>Consequently, the treaty became a powerful weapon for right-wing extremist groups to attack the very foundations of the democratic state.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Finally, the treaty\'s severe military restrictions and the demilitarisation of the Rhineland posed significant security and psychological challenges.</strong></span> 🔵 <span style="color: #2563eb;">The German army was limited to just 100,000 men, the navy was drastically reduced, and Germany was forbidden from having an air force or submarines. The Rhineland, Germany\'s industrial heartland bordering France, was demilitarised, leaving it vulnerable to invasion.</span> 🟢 <span style="color: #16a34a;">These terms were seen as a direct assault on German sovereignty and national pride, leaving the nation feeling defenceless and exposed. For a country with a strong military tradition, this was a profound insult and a constant reminder of their defeat. The inability of the Weimar government to resist these terms, or to protect German territory during the Ruhr occupation, further eroded its authority and credibility in the eyes of the public and the powerful military establishment.</span> 🟡 <span style="color: #d97706;"><strong>This perceived weakness and humiliation fuelled nationalist resentment and contributed to the widespread desire for a stronger, more assertive leadership, directly challenging the Republic\'s stability.</strong></span></p>',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why the Treaty of Versailles caused significant challenges for the Weimar Republic in the years 1919–1923. [12 marks]',
+            stimulus: ['Reparations', "The 'stab-in-the-back' myth (Dolchstoßlegende)"],
+            model:
+              "One major reason was 1. reparations & ruhr crisis. Explain how the £6.6bn debt led to defaults, French occupation of the Ruhr (1923), passive resistance, and catastrophic hyperinflation. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the dolchstoßlegende. Explain how right-wing nationalists branded politicians 'November Criminals', permanently undermining Weimar's democratic legitimacy. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. extremist uprisings. Explain how demobilised soldiers and anger at military cuts (100k cap) triggered the Spartacist Uprising (1919), Kapp Putsch (1920), and Munich Putsch (1923). Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
       },
     },
     {
@@ -1396,7 +1525,49 @@ export default {
             tariff: '8 marks',
             type: '8-mark',
           },
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). How useful are Sources B and C for an enquiry into the economic recovery of the Weimar Republic in the years 1924–1929? [8 marks] [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about industrial revival; substantiate using facts on the Rentenmark and Dawes Plan loans (800m gold marks). From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse Source C on hidden economic weaknesses; substantiate using Stresemann's warning of 'dancing on a volcano' and peasant debt. From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title:
+                'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+              steps: [
+                {
+                  letter: 'SOURCE B',
+                  name: '1. Source B Content & Context',
+                  prompt:
+                    'Analyse what Source B reveals about industrial revival; substantiate using facts on the Rentenmark and Dawes Plan loans (800m gold marks).',
+                  starter: '',
+                },
+                {
+                  letter: 'SOURCE C',
+                  name: '2. Source C Content & Context',
+                  prompt:
+                    "Analyse Source C on hidden economic weaknesses; substantiate using Stresemann's warning of 'dancing on a volcano' and peasant debt.",
+                  starter: '',
+                },
+                {
+                  letter: 'SYNTHESIS',
+                  name: '3. Provenance & Synthesis',
+                  prompt:
+                    'Interrogate author motives and dates: evaluate how contemporary optimism vs insider economic caution complement each other to give a full picture.',
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(a).)',
       },
       video: [
         {
@@ -1410,6 +1581,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '8 marks',
+            text: "3a. How useful are Sources B and C for an enquiry into Stresemann's Recovery? (8 marks)",
+            model:
+              "<p>Source B is highly useful for an enquiry into Stresemann's Recovery because it offers a rare, candid insight into the private concerns of Gustav Stresemann himself, the architect of the recovery. Written in September 1928, a time often considered the peak of the 'Golden Years', Stresemann's private letter reveals his deep apprehension that the economic recovery was 'only flourishing on the surface' and that Germany was 'dancing on a volcano' due to its 'dangerous over-dependence on short-term US loans'. This provenance (a private letter from a key figure) suggests a more honest and less propagandistic view than a public statement, making it valuable for understanding the underlying fragility of the recovery. However, its usefulness is somewhat limited as it represents only one individual's perspective, albeit a highly informed one, and does not provide broader public or economic data.</p><p>Source C is also useful, but in a contrasting way, for an enquiry into Stresemann's Recovery. As an article from a German financial newspaper in late 1928, it provides insight into the prevailing public and business optimism regarding the economy. It highlights the 'genuine stability' achieved through the Dawes Plan and 'massive American investment', leading to modernized factories and soaring industrial production. This source is useful for understanding how the recovery was perceived by some segments of society, particularly those benefiting from the economic boom, and how it was publicly presented. However, its usefulness is limited by its potential bias; a financial newspaper might naturally focus on positive economic indicators and downplay any weaknesses to maintain investor confidence. It also reflects a specific, perhaps elite, perspective that might not represent the experiences of all Germans, such as farmers or the unemployed, as suggested by Interpretation 2.</p>",
+          },
+          {
+            type: 'written',
+            tariff: '3(a). Section B: Question 3(a) [8 marks]',
+            text: '3(a). How useful are Sources B and C for an enquiry into the economic recovery of the Weimar Republic in the years 1924–1929? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about industrial revival; substantiate using facts on the Rentenmark and Dawes Plan loans (800m gold marks). From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse Source C on hidden economic weaknesses; substantiate using Stresemann's warning of 'dancing on a volcano' and peasant debt. From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.",
+          },
+        ],
       },
     },
     {
@@ -1839,24 +2030,48 @@ export default {
             type: '4-mark',
           },
           {
-            provenance: 'Edexcel June 2019 (Q3c Interpretation Why)',
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
             question:
-              '3c. Suggest one reason why Interpretations 1 and 2 give different views about Weimar Women. You may use Sources B and C to help explain your answer. (4 marks)',
+              '3(d). How far do you agree with Interpretation 2 about the position of women in the Weimar Republic? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks] [16 marks (+4 SPaG)]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
             model:
-              "<p>The interpretations may differ because they focus on different aspects of German society and rely on different types of evidence or perspectives. Interpretation 1, which emphasizes 'social liberation,' aligns with the progressive views expressed in Source B, a women's lifestyle magazine from Berlin. Source B highlights the 'new constitution' guaranteeing equality and women 'entering work and politics in unprecedented numbers,' reflecting the optimistic and forward-looking perspective of those embracing change. Conversely, Interpretation 2, which argues the 'New Woman' was an 'urban myth' and provoked a 'traditionalist backlash,' is supported by Source C, a letter from a conservative Protestant group in Hanover. Source C expresses 'deep concern' about women abandoning 'sacred domestic duties' and pursuing 'immoral leisure,' illustrating the strong moral opposition from traditional elements of society. Thus, the interpretations reflect the polarized views present in Weimar Germany itself, with one focusing on the visible, urban, progressive changes and the other on the conservative reaction and the enduring traditional realities for many.</p>",
-            tariff: '4 marks',
-            type: '4-mark',
-          },
-          {
-            provenance: 'Edexcel June 2019 (Q3d Interpretation Evaluation)',
-            question:
-              '3d. How far do you agree with Interpretation 2 about Weimar Women? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)',
-            model:
-              "<p>I largely agree with Interpretation 1 that the Weimar era brought significant social and political liberation for German women, particularly in urban centres, but I also acknowledge the important caveats raised by Interpretation 2 regarding the limitations and backlash against these changes. Interpretation 1 correctly highlights the foundational legal changes and new opportunities that emerged, which were genuinely transformative for many.</p><p>My agreement with Interpretation 1 is strongly supported by historical context. The Weimar Constitution was indeed groundbreaking, granting women universal suffrage in 1918, a right many other European nations had yet to adopt. This led to women actively participating in politics, with high representation in the Reichstag, as mentioned in Interpretation 1. Furthermore, the economic recovery of the mid-1920s, fueled by the Dawes Plan and American loans, created new white-collar job opportunities in offices, shops, and factories. This allowed a generation of women to achieve greater financial independence, challenging the traditional role of women solely as housewives and mothers. Source B, from a progressive women's magazine, perfectly encapsulates this spirit, describing women cutting their hair short, wearing fashionable clothes, and enjoying leisure independently, rejecting 'the old, conservative domestic role.' This 'New Woman' became a powerful symbol of modernity and liberation, especially in cities like Berlin, where cultural experimentation flourished, and women were visible in public life, enjoying new freedoms in fashion, entertainment, and social interaction, including access to birth control and greater sexual freedom.</p><p>However, Interpretation 2 provides a crucial counter-perspective that tempers the extent of this 'liberation.' It argues that the 'New Woman' was an 'urban myth' and that the reality for the 'vast majority' of German women was far less liberated. This is also supported by historical context. Despite constitutional equality, women often faced lower wages than men for the same work, and many remained in low-paid, unskilled agricultural or domestic service, particularly outside the major cities. The traditional family structure and conservative values remained deeply ingrained, especially in rural and religious communities. Source C, from a conservative Protestant group, vividly illustrates the 'massive, hostile traditionalist backlash' against these changes, expressing 'deep concern' about women abandoning 'sacred domestic duties' for 'aimless office work and immoral leisure.' This backlash was a significant factor in the political instability of the Republic, as right-wing groups exploited these moral anxieties to portray Weimar democracy as decadent and un-German. For many working-class women, the 'freedom' often meant working long hours in factories or as domestic servants, with little real improvement in their quality of life or social status.</p><p>In conclusion, while Interpretation 1 accurately identifies the significant legal, political, and social advancements for women in Weimar Germany, particularly for those in urban, middle-class environments, Interpretation 2 rightly points out the limitations of this liberation. The 'New Woman' was a powerful symbol and a reality for some, but it did not represent the universal experience of all German women. The changes were profound but also deeply polarizing, leading to a strong conservative reaction that ultimately contributed to the Republic's fragility. Therefore, I agree with Interpretation 1 in principle, but with the crucial understanding that the liberation was not universal and was met with considerable resistance, making the overall picture more complex and nuanced.</p>",
-            tariff: '16 marks',
-            type: '16-mark',
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence supporting liberation: equal voting rights in Article 109, rising female Reichstag deputies, and the urban 'New Woman'. This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence supporting limitations: lower pay for women, conservative backlash against working wives, and the persistence of Kinder, Küche, Kirche. This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Weigh legal breakthroughs against social reality: conclude whether constitutional equality genuinely transformed women's lives outside major cities.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+            scaffolding: {
+              acronym: 'Interpretation Verdict Framework',
+              acronym_title:
+                'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+              steps: [
+                {
+                  letter: 'INTERP 1',
+                  name: '1. Support Interpretation 1',
+                  prompt:
+                    "Deploy evidence supporting liberation: equal voting rights in Article 109, rising female Reichstag deputies, and the urban 'New Woman'.",
+                  starter: '',
+                },
+                {
+                  letter: 'INTERP 2',
+                  name: '2. Support Interpretation 2',
+                  prompt:
+                    'Deploy evidence supporting limitations: lower pay for women, conservative backlash against working wives, and the persistence of Kinder, Küche, Kirche.',
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATION',
+                  name: '3. Criteria & Sustained Verdict',
+                  prompt:
+                    "Weigh legal breakthroughs against social reality: conclude whether constitutional equality genuinely transformed women's lives outside major cities.",
+                  starter: '',
+                },
+              ],
+            },
           },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(d).)',
       },
       pair_share: {
         prompt:
@@ -1864,6 +2079,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '3b. Study Interpretations 1 and 2. They give different views about Weimar Women. What is the main difference between these views? (4 marks)',
+            model:
+              "<p>The main difference between these interpretations is their assessment of the extent and nature of change for women in Weimar Germany. Interpretation 1 argues that the Weimar era brought a 'profound, lasting social and political liberation' for German women, emphasizing their increased political representation, new job opportunities, and challenge to traditional gender roles. In contrast, Interpretation 2 contends that the 'New Woman' was an 'urban myth' that did not reflect the reality for the 'vast majority' of women, who remained in low-paid work and faced a 'massive, hostile traditionalist backlash'.</p>",
+          },
+          {
+            type: 'written',
+            tariff: '3(d). Section B: Question 3(d) [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about the position of women in the Weimar Republic? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence supporting liberation: equal voting rights in Article 109, rising female Reichstag deputies, and the urban 'New Woman'. This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence supporting limitations: lower pay for women, conservative backlash against working wives, and the persistence of Kinder, Küche, Kirche. This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Weigh legal breakthroughs against social reality: conclude whether constitutional equality genuinely transformed women's lives outside major cities.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+          },
+        ],
       },
     },
     {
@@ -2252,7 +2487,48 @@ export default {
             tariff: '4 marks',
             type: '4-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why the Nazi Party gained support in Munich in the years 1919–1922. [12 marks] [12 marks]',
+            stimulus: ['The 25-Point Programme', 'The SA (Sturmabteilung)'],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. the 25-point programme. Explain how Hitler and Drexler's 1920 manifesto appealed to nationalists by demanding the scrapping of Versailles and denying Jewish citizenship. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the sa (brownshirts). Explain how Röhm's paramilitary force protected Nazi meetings, intimidated rival left-wing parties, and projected an image of disciplined strength. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. hitler's oratory & beer halls. Explain how Hitler's charismatic speaking in Munich beer halls tapped into Bavarian anti-Weimar anger, turning the NSDAP into a mass local movement. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. The 25-Point Programme',
+                  prompt:
+                    "Explain how Hitler and Drexler's 1920 manifesto appealed to nationalists by demanding the scrapping of Versailles and denying Jewish citizenship.",
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. The SA (Brownshirts)',
+                  prompt:
+                    "Explain how Röhm's paramilitary force protected Nazi meetings, intimidated rival left-wing parties, and projected an image of disciplined strength.",
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: "3. Hitler's Oratory & Beer Halls",
+                  prompt:
+                    "Explain how Hitler's charismatic speaking in Munich beer halls tapped into Bavarian anti-Weimar anger, turning the NSDAP into a mass local movement.",
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       video: [
         {
@@ -2266,6 +2542,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '1. Give two things you can infer from Source A about the core beliefs of the Nazi Party in 1920. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
+            model:
+              '<p><strong>(i) What I can infer:</strong><br>I can infer that the Nazi Party defined citizenship strictly by biological ancestry and German blood rather than residence.<br><strong>Details in the source that tell me this:</strong><br>Point 4 states that "None but members of the nation may be citizens of the State" and only those of "German blood, whatever their creed" can qualify.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that antisemitism was central to early Nazi political policy.<br><strong>Details in the source that tell me this:</strong><br>The point explicitly commands that "No Jew therefore may be a member of the nation."',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why the Nazi Party gained support in Munich in the years 1919–1922. [12 marks]',
+            stimulus: ['The 25-Point Programme', 'The SA (Sturmabteilung)'],
+            model:
+              "One major reason was 1. the 25-point programme. Explain how Hitler and Drexler's 1920 manifesto appealed to nationalists by demanding the scrapping of Versailles and denying Jewish citizenship. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the sa (brownshirts). Explain how Röhm's paramilitary force protected Nazi meetings, intimidated rival left-wing parties, and projected an image of disciplined strength. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. hitler's oratory & beer halls. Explain how Hitler's charismatic speaking in Munich beer halls tapped into Bavarian anti-Weimar anger, turning the NSDAP into a mass local movement. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
       },
     },
     {
@@ -2807,7 +3103,48 @@ export default {
             tariff: '12 marks',
             type: '12-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              "2. Explain why the Nazi Party experienced the 'Lean Years' between 1924 and 1928. [12 marks] [12 marks]",
+            stimulus: ["Stresemann's economic policies", "Hitler's reorganization of the party"],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. stresemann's prosperity. Explain how the Rentenmark, Dawes Plan loans, and Locarno Pact restored stability, causing voters to abandon extremist protest parties. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. party reorganisation. Explain how Hitler used the Bamberg Conference (1926) to assert Führerprinzip, establish the SS, and build national Gaue networks. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. post-putsch ban & defeat. Explain how the failed 1923 Munich Putsch led to Hitler's speaking ban until 1927 and reduced the Nazis to just 12 Reichstag seats in 1928. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: "1. Stresemann's Prosperity",
+                  prompt:
+                    'Explain how the Rentenmark, Dawes Plan loans, and Locarno Pact restored stability, causing voters to abandon extremist protest parties.',
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. Party Reorganisation',
+                  prompt:
+                    'Explain how Hitler used the Bamberg Conference (1926) to assert Führerprinzip, establish the SS, and build national Gaue networks.',
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. Post-Putsch Ban & Defeat',
+                  prompt:
+                    "Explain how the failed 1923 Munich Putsch led to Hitler's speaking ban until 1927 and reduced the Nazis to just 12 Reichstag seats in 1928.",
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       video: [
         {
@@ -2824,6 +3161,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '12 marks',
+            text: "2. Explain why the Nazi Party experienced the 'Lean Years' between 1924 and 1928 (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>Stresemann's economic policies</li><li>Hitler's reorganization of the party</li></ul>You must also use information of your own.",
+            model:
+              '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One significant reason for the Nazi Party\'s \'Lean Years\' was the economic stability brought about by Gustav Stresemann\'s policies.</strong></span> 🔵 <span style="color: #2563eb;">After the hyperinflation crisis of 1923, Stresemann introduced the Rentenmark, negotiated the Dawes Plan in 1924, and secured large American loans. These measures stabilized the currency, rescheduled reparations payments, and injected vital capital into the German economy.</span> 🟢 <span style="color: #16a34a;">With the economy recovering, unemployment falling, and industrial production soaring, the widespread discontent that had fueled extremist parties like the Nazis during the crisis years diminished significantly. Ordinary Germans, particularly the middle class who had been devastated by hyperinflation, now felt more secure and less inclined to support radical solutions.</span> 🟡 <span style="color: #d97706;"><strong>This period of relative prosperity directly undermined the Nazi message of national crisis and economic ruin, leading to their \'Lean Years\' of limited public support.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Furthermore, the political stability and restored national prestige achieved by Stresemann\'s foreign policy contributed to the Nazis\' struggles.</strong></span> 🔵 <span style="color: #2563eb;">The Locarno Pact of 1925, which guaranteed Germany\'s western borders, and Germany\'s entry into the League of Nations in 1926, signaled a return to international respectability. The Young Plan of 1929 further reduced reparations and led to the withdrawal of Allied troops from the Rhineland.</span> 🟢 <span style="color: #16a34a;">These diplomatic successes countered the Nazi narrative that the Weimar Republic was weak and had betrayed Germany through the Treaty of Versailles. With national pride partially restored and Germany no longer an international pariah, the appeal of aggressive nationalism and calls for revenge, central to the Nazi platform, lost much of their resonance among the electorate.</span> 🟡 <span style="color: #d97706;"><strong>Consequently, the public felt less need to turn to extremist parties, contributing to the Nazi Party\'s electoral stagnation during these \'Lean Years\'.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Finally, the aftermath of the failed Munich Putsch in 1923 and Hitler\'s subsequent imprisonment also played a role in the party\'s initial weakness, despite his efforts at reorganization.</strong></span> 🔵 <span style="color: #2563eb;">The Putsch\'s failure led to the temporary banning of the Nazi Party and Hitler\'s nine-month imprisonment, during which he wrote *Mein Kampf*. Although he used this time to reflect and shift strategy from violent revolution to legal political struggle, the party was initially fragmented and leaderless.</span> 🟢 <span style="color: #16a34a;">While Hitler did reorganize the party, establishing Gaue and asserting the Führerprinzip as mentioned in Source C, this was an internal process. Externally, the party was still recovering from the blow to its reputation and the loss of its leader. The public, especially after the Putsch\'s failure, viewed the Nazis as a fringe, violent group, making it difficult for them to gain mainstream acceptance even with a more disciplined structure.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the initial disarray and the public\'s negative perception following the Putsch contributed to the party\'s limited appeal during the \'Lean Years\', despite the internal restructuring.</strong></span></p>',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: "2. Explain why the Nazi Party experienced the 'Lean Years' between 1924 and 1928. [12 marks]",
+            stimulus: ["Stresemann's economic policies", "Hitler's reorganization of the party"],
+            model:
+              "One major reason was 1. stresemann's prosperity. Explain how the Rentenmark, Dawes Plan loans, and Locarno Pact restored stability, causing voters to abandon extremist protest parties. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. party reorganisation. Explain how Hitler used the Bamberg Conference (1926) to assert Führerprinzip, establish the SS, and build national Gaue networks. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. post-putsch ban & defeat. Explain how the failed 1923 Munich Putsch led to Hitler's speaking ban until 1927 and reduced the Nazis to just 12 Reichstag seats in 1928. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
       },
     },
     {
@@ -3389,7 +3746,49 @@ export default {
             tariff: '8 marks',
             type: '8-mark',
           },
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). How useful are Sources B and C for an enquiry into the reasons for the growth of Nazi support in the years 1929–1932? [8 marks] [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about economic despair; substantiate with 6 million unemployed after Wall Street Crash and Brüning's welfare cuts. From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse what Source C reveals about propaganda appeal; substantiate with Goebbels' modern campaign methods ('Hitler over Germany' flights). From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title:
+                'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+              steps: [
+                {
+                  letter: 'SOURCE B',
+                  name: '1. Source B Content & Context',
+                  prompt:
+                    "Analyse what Source B reveals about economic despair; substantiate with 6 million unemployed after Wall Street Crash and Brüning's welfare cuts.",
+                  starter: '',
+                },
+                {
+                  letter: 'SOURCE C',
+                  name: '2. Source C Content & Context',
+                  prompt:
+                    "Analyse what Source C reveals about propaganda appeal; substantiate with Goebbels' modern campaign methods ('Hitler over Germany' flights).",
+                  starter: '',
+                },
+                {
+                  letter: 'SYNTHESIS',
+                  name: '3. Provenance & Synthesis',
+                  prompt:
+                    'Evaluate author viewpoints, election timings, and motives: explain how combining economic misery with targeted propaganda explains the 230 seats won in July 1932.',
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(a).)',
       },
       video: [
         {
@@ -3402,6 +3801,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '8 marks',
+            text: '3a. How useful are Sources B and C for an enquiry into the growth of Nazi support, 1929–1932? (8 marks)',
+            model:
+              "<p>Source B is very useful for an enquiry into the growth of Nazi support because it provides a contemporary, personal insight into the charismatic appeal of Adolf Hitler. Written in March 1932 by Luise Solmitz, a schoolteacher, it describes Hitler addressing a massive crowd of 120,000 people 'of all classes and ages' who saw him as their 'helper, their savior, their deliverer from unbearable distress.' This content directly supports the idea that Hitler's personal magnetism was a key driver of support, as argued by Interpretation 2. As a diary entry, it offers a genuine, unfiltered reflection of public sentiment and the emotional impact Hitler had on his audience, which is invaluable for understanding the psychological dimension of his appeal. However, its usefulness is somewhat limited as it represents only one individual's perspective, potentially influenced by the collective emotion of the rally, and does not provide broader statistical or economic data.</p><p>Source C is also very useful, but for a different aspect of the enquiry: the socio-economic conditions that created fertile ground for Nazi growth. This article from 1931 vividly describes the devastating impact of unemployment in Berlin, with municipal lodging houses 'filled to capacity with young, unemployed men' who had 'lost all hope, having been completely abandoned by the Weimar government's welfare cuts.' This content strongly supports Interpretation 1, which argues that economic distress was the 'fundamental' cause of Nazi support. As a contemporary article describing conditions, it provides crucial evidence of the widespread despair and the perceived failure of the Weimar government to address the crisis. This context is essential for understanding why desperate voters might turn to extremist parties. Its usefulness is limited in that it focuses solely on the plight of the unemployed and does not directly address the Nazi Party's actions or Hitler's appeal, nor does it reveal the political leanings of the article's author.</p>",
+          },
+          {
+            type: 'written',
+            tariff: '3(a). Section B: Question 3(a) [8 marks]',
+            text: '3(a). How useful are Sources B and C for an enquiry into the reasons for the growth of Nazi support in the years 1929–1932? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about economic despair; substantiate with 6 million unemployed after Wall Street Crash and Brüning's welfare cuts. From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse what Source C reveals about propaganda appeal; substantiate with Goebbels' modern campaign methods ('Hitler over Germany' flights). From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.",
+          },
+        ],
       },
     },
     {
@@ -3992,24 +4411,48 @@ export default {
             type: '4-mark',
           },
           {
-            provenance: 'Edexcel June 2022 (Q3c Interpretation Why)',
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
             question:
-              '3c. Suggest one reason why Interpretations 1 and 2 give different views about how Hitler became Chancellor in 1932–33. You may use Sources B and C to help explain your answer. (4 marks)',
+              '3(d). How far do you agree with Interpretation 2 about how Hitler became Chancellor in 1932–33? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks] [16 marks (+4 SPaG)]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
             model:
-              '<p>The interpretations may differ because they focus on different aspects of the complex political situation in late 1932 and early 1933, potentially drawing on different types of evidence or prioritizing different factors. For example, Interpretation 1, which emphasizes the "democratic collapse," is strongly supported by Source C. Source C, a journalist\'s dispatch, describes the widespread "political gridlock," "violent battles," and the public\'s lost faith in democracy, suggesting a systemic breakdown that made Hitler\'s rise seem unavoidable. This interpretation might prioritize evidence of economic crisis, parliamentary paralysis, and public disillusionment.</p><p>However, Interpretation 2, which highlights "political intrigue," is directly supported by Source B. Source B, a letter from Franz von Papen, explicitly details his plan to appoint Hitler and his belief that he could be controlled, providing direct evidence of the deliberate, cynical actions of key individuals. This interpretation would likely prioritize personal correspondence, memoirs, and accounts of secret meetings, focusing on the agency and misjudgment of the conservative elites rather than broader societal forces.</p>',
-            tariff: '4 marks',
-            type: '4-mark',
-          },
-          {
-            provenance: 'Edexcel June 2022 (Q3d Interpretation Evaluation)',
-            question:
-              '3d. How far do you agree with Interpretation 2 about how Hitler became Chancellor in 1932–33? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)',
-            model:
-              "<p>I strongly agree with Interpretation 2, which argues that Hitler’s appointment as Chancellor was the direct result of secret political scheming and backstairs intrigue, rather than an inevitable outcome. While the Weimar Republic was undoubtedly in a state of severe crisis, the specific actions and miscalculations of conservative elites were the decisive factor in bringing Hitler to power.</p><p>Interpretation 2 is powerfully supported by contemporary evidence and historical context. By late 1932, the Nazi Party was actually facing significant challenges. Their vote had declined in the November 1932 Reichstag elections, and the party was in severe financial difficulties, on the verge of bankruptcy. Many within the party feared its momentum was waning. This directly contradicts the idea of inevitability and suggests that Hitler's path to power was far from assured. Source B, Franz von Papen's letter to Hindenburg, is crucial here. It explicitly reveals the intrigue, with Papen assuring the President that Hitler could be controlled \"like a puppet.\" This demonstrates the deliberate, cynical decision-making of Papen and other conservative elites, such as Oskar von Hindenburg and State Secretary Meissner (the 'Camarilla'), who actively worked to undermine Chancellor Kurt von Schleicher and install Hitler. Their motivation was not a reluctant acceptance of the largest party, but a desire to use Hitler's mass appeal to establish an authoritarian government that would serve their own interests, underestimating his ruthlessness and ambition.</p><p>However, it is important to acknowledge the context provided by Interpretation 1, which highlights the \"collapse of the Weimar democratic system.\" Source C, from an American journalist in December 1932, vividly describes the \"political gridlock,\" \"violent battles,\" and the public's complete loss of faith in democracy. The Great Depression had indeed paralyzed the Reichstag, forcing successive chancellors to rule by unpopular Article 48 emergency decrees. This created an environment of profound instability and disillusionment, making the public receptive to radical solutions and a 'strong man' leader. The fact that the Nazis, despite their decline, remained the largest party in the Reichstag meant they held significant political leverage that could not be entirely ignored by those seeking to form a stable government.</p><p>Nevertheless, the democratic collapse, while creating the *opportunity* for Hitler, did not make his Chancellorship *inevitable*. Chancellor Schleicher was attempting to form a 'querfront' government, appealing to trade unions and the left, which threatened the conservative elites. It was the fear of Schleicher's potential success, combined with Papen's personal vendetta and the elites' desire for a more authoritarian, right-wing government, that led them to actively choose Hitler. They believed they could contain him within a cabinet dominated by conservatives, with only three Nazis initially appointed. This was a fatal miscalculation, as Hitler swiftly dismantled democratic institutions and consolidated his power, proving Papen's 'puppet' theory utterly wrong.</p><p>In conclusion, while the severe crisis of the Weimar Republic (Interpretation 1) provided the backdrop, it was the specific, deliberate political maneuvering and profound misjudgment of the conservative elites (Interpretation 2) that ultimately placed Hitler in the Chancellor's office. The Nazi Party was in a vulnerable position, and without the active intervention and cynical calculations of Papen and his allies, Hitler's path to power was far from guaranteed. Therefore, Interpretation 2 offers a more accurate and nuanced explanation of the final, decisive steps that led to Hitler becoming Chancellor.</p>",
-            tariff: '16 marks',
-            type: '16-mark',
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence that popular mass support was decisive: Nazi electoral surges, SA street dominance, and middle-class fear of Communism (KPD). This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence that backstairs intrigue was decisive: Papen and Hindenburg's conspiracy to hire Hitler as puppet Chancellor ('pushed into a corner'). This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Judge whether elite intrigue could have functioned without mass Nazi votes: conclude which factor was the indispensable catalyst for 30 Jan 1933.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+            scaffolding: {
+              acronym: 'Interpretation Verdict Framework',
+              acronym_title:
+                'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+              steps: [
+                {
+                  letter: 'INTERP 1',
+                  name: '1. Support Interpretation 1',
+                  prompt:
+                    'Deploy evidence that popular mass support was decisive: Nazi electoral surges, SA street dominance, and middle-class fear of Communism (KPD).',
+                  starter: '',
+                },
+                {
+                  letter: 'INTERP 2',
+                  name: '2. Support Interpretation 2',
+                  prompt:
+                    "Deploy evidence that backstairs intrigue was decisive: Papen and Hindenburg's conspiracy to hire Hitler as puppet Chancellor ('pushed into a corner').",
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATION',
+                  name: '3. Criteria & Sustained Verdict',
+                  prompt:
+                    'Judge whether elite intrigue could have functioned without mass Nazi votes: conclude which factor was the indispensable catalyst for 30 Jan 1933.',
+                  starter: '',
+                },
+              ],
+            },
           },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(d).)',
       },
       video: [
         {
@@ -4050,6 +4493,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '3b. Study Interpretations 1 and 2. They give different views about how Hitler became Chancellor in 1932–33. What is the main difference between these views? (4 marks)',
+            model:
+              '<p>The main difference between Interpretation 1 and Interpretation 2 lies in their explanation of the primary cause of Hitler\'s appointment as Chancellor. Interpretation 1 argues that Hitler\'s rise was an "inevitable result of the collapse of the Weimar democratic system," suggesting a systemic failure where the conservative elites were compelled to hand power to the largest party. In contrast, Interpretation 2 asserts that Hitler\'s appointment was "not inevitable, but was the direct result of secret political scheming and backstairs intrigue," highlighting the deliberate actions and miscalculations of individuals like Franz von Papen and President Hindenburg, even as the Nazi vote was declining.</p>',
+          },
+          {
+            type: 'written',
+            tariff: '3(d). Section B: Question 3(d) [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about how Hitler became Chancellor in 1932–33? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence that popular mass support was decisive: Nazi electoral surges, SA street dominance, and middle-class fear of Communism (KPD). This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence that backstairs intrigue was decisive: Papen and Hindenburg's conspiracy to hire Hitler as puppet Chancellor ('pushed into a corner'). This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Judge whether elite intrigue could have functioned without mass Nazi votes: conclude which factor was the indispensable catalyst for 30 Jan 1933.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+          },
+        ],
       },
     },
     {
@@ -4591,7 +5054,48 @@ export default {
             tariff: '4 marks',
             type: '4-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why Hitler was able to establish a dictatorship in Germany in the years 1933–1934. [12 marks] [12 marks]',
+            stimulus: ['The Reichstag Fire Decree', 'The Enabling Act'],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. reichstag fire decree. Explain how the 27 Feb 1933 fire was blamed on Communists, allowing Hindenburg to suspend civil liberties and arrest 4,000 KPD leaders. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the enabling act. Explain how SA intimidation of the Reichstag on 23 March 1933 gave Hitler power to pass laws without parliament, ending democracy. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. night of the long knives. Explain how the purge of Röhm and the SA (June 1934) secured the loyalty of the German Army, culminating in the soldier's personal oath. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. Reichstag Fire Decree',
+                  prompt:
+                    'Explain how the 27 Feb 1933 fire was blamed on Communists, allowing Hindenburg to suspend civil liberties and arrest 4,000 KPD leaders.',
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. The Enabling Act',
+                  prompt:
+                    'Explain how SA intimidation of the Reichstag on 23 March 1933 gave Hitler power to pass laws without parliament, ending democracy.',
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. Night of the Long Knives',
+                  prompt:
+                    "Explain how the purge of Röhm and the SA (June 1934) secured the loyalty of the German Army, culminating in the soldier's personal oath.",
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       video: [
         {
@@ -4620,6 +5124,26 @@ export default {
       },
       vocab_cloze_text:
         "In February 1933, the Nazi consolidation of absolute power began with [The Reichstag Fire], which Hitler exploited to suspend fundamental civil liberties. Soon after, Hitler bullied the Reichstag into passing [The Enabling Act (1933)], allowing him to rule by decree without parliamentary approval. Through the process of [Gleichschaltung], all German institutions were brought under strict Nazi control. In May 1933, the Nazis abolished independent [Trade Unions] and banned rival political parties. To eliminate internal rivals like Ernst Röhm, Hitler staged a murderous purge during [The Night of the Long Knives (1934)]. Following Hindenburg's death, Hitler merged the offices of Chancellor and President to declare himself supreme [Führer].",
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '1. Give two things you can infer from Source A about how the Nazi government used the Reichstag Fire. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
+            model:
+              '<p><strong>(i) What I can infer:</strong><br>I can infer that the Nazi leadership used the fire as an excuse to immediately suspend all constitutional civil rights in Germany.<br><strong>Details in the source that tell me this:</strong><br>The decree lists the suspension of articles guaranteeing "personal liberty," "freedom of speech," and "the right of assembly."</p><p><strong>(ii) What I can infer:</strong><br>I can infer that the state granted the police unlimited legal power to spy on citizens and raid homes without warrants.<br><strong>Details in the source that tell me this:</strong><br>The text permits the intercepting of telephone calls and mail and authorizes searches of private houses without judicial restriction.',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why Hitler was able to establish a dictatorship in Germany in the years 1933–1934. [12 marks]',
+            stimulus: ['The Reichstag Fire Decree', 'The Enabling Act'],
+            model:
+              "One major reason was 1. reichstag fire decree. Explain how the 27 Feb 1933 fire was blamed on Communists, allowing Hindenburg to suspend civil liberties and arrest 4,000 KPD leaders. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the enabling act. Explain how SA intimidation of the Reichstag on 23 March 1933 gave Hitler power to pass laws without parliament, ending democracy. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. night of the long knives. Explain how the purge of Röhm and the SA (June 1934) secured the loyalty of the German Army, culminating in the soldier's personal oath. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
+      },
     },
     {
       id: 'lesson_3_2',
@@ -4995,7 +5519,48 @@ export default {
             tariff: '12 marks',
             type: '12-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why the Nazi police state was able to maintain control in Germany between 1933 and 1939. [12 marks] [12 marks]',
+            stimulus: ['The Gestapo', 'Block Wardens'],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. the gestapo & ss terror. Explain how Himmler's SS and the plainclothes Gestapo used phone-tapping, informants, and fear of Dachau to crush organized resistance. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. block wardens & surveillance. Explain how local Blockleiters monitored every apartment block, checking for loyalty, radio listening, and failure to fly Nazi flags. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. control of the legal system. Explain how judges swore oaths to Hitler, joined the Nazi Lawyers' League, and the People's Court abolished fair trials for political treason. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. The Gestapo & SS Terror',
+                  prompt:
+                    "Explain how Himmler's SS and the plainclothes Gestapo used phone-tapping, informants, and fear of Dachau to crush organized resistance.",
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. Block Wardens & Surveillance',
+                  prompt:
+                    'Explain how local Blockleiters monitored every apartment block, checking for loyalty, radio listening, and failure to fly Nazi flags.',
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. Control of the Legal System',
+                  prompt:
+                    "Explain how judges swore oaths to Hitler, joined the Nazi Lawyers' League, and the People's Court abolished fair trials for political treason.",
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       video: [
         {
@@ -5022,6 +5587,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '12 marks',
+            text: '2. Explain why the Nazi police state was able to maintain control in Germany between 1933 and 1939 (12 marks).<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>The Gestapo</li><li>Block Wardens</li></ul>You must also use information of your own.',
+            model:
+              '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>The Nazi police state maintained control through the pervasive terror and intimidation tactics of the Gestapo.</strong></span> 🔵 <span style="color: #2563eb;">Interpretation 1 highlights the \'pervasive, terrifying, and all-powerful system of terror\' maintained by the Gestapo, SS, and SD, which bypassed the legal system and used concentration camps. Source B provides a concrete example of this, detailing how a 64-year-old woman was \'immediately alerted by telephone\' and arrested by the Gestapo within five minutes for a minor critical remark, then \'detained under a protective custody warrant (Schutzhaft)\'.</span> 🟢 <span style="color: #16a34a;">This ability of the Gestapo to act outside the normal rule of law, arresting citizens for trivial \'crimes\' and sending them to concentration camps without trial, created an intense climate of fear. People knew that even private criticisms could lead to severe punishment, leading to widespread self-censorship and outward conformity. This fear was a powerful deterrent against any form of open opposition.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, the Gestapo\'s arbitrary power and use of terror were fundamental to the Nazi regime\'s ability to maintain control.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Another crucial factor in maintaining control was the widespread public cooperation and denunciation, often facilitated by party structures like the Block Wardens.</strong></span> 🔵 <span style="color: #2563eb;">Interpretation 2 argues that the Gestapo was \'heavily understaffed\' and \'functioned only because of the voluntary cooperation of ordinary, non-party citizens\', with \'over 80% of political cases\' initiated by public denunciations. Source C illustrates this mechanism through the \'sacred duty\' of the local Block Warden (Blockleiter) to \'monitor every household\', \'listen to the daily gossip\', and \'report immediately\' any residents spreading \'rumors harmful to the party\' or refusing the Hitler salute.</span> 🟢 <span style="color: #16a34a;">This system effectively turned ordinary citizens into an extended surveillance network for the state. People reported neighbours, colleagues, or even family members, either out of genuine ideological conviction, a desire to gain favour, or fear of being denounced themselves. The Block Wardens formalised this process, ensuring that even minor acts of non-conformity were identified and reported to the State Secret Police. This created a society where trust was eroded, and individuals were constantly aware that their actions and words could be reported.</span> 🟡 <span style="color: #d97706;"><strong>This extensive network of public surveillance and denunciation significantly amplified the reach of the police state, making it highly effective in maintaining control despite its limited official personnel.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Furthermore, the Nazi regime maintained control by completely dismantling the independent legal system and replacing it with institutions designed to serve the state\'s will.</strong></span> 🔵 <span style="color: #2563eb;">Beyond the Gestapo, the SS and SD operated with impunity, and the establishment of \'People\'s Courts\' (Volksgerichtshof) under figures like Roland Freisler ensured that political opponents received no fair trial. The Decree for the Protection of People and State, issued immediately after the Reichstag Fire in 1933, effectively suspended all civil liberties, allowing for arbitrary arrests and detention.</span> 🟢 <span style="color: #16a34a;">By removing the traditional checks and balances of a democratic legal system, the Nazis ensured that anyone deemed an \'enemy of the state\' could be swiftly and severely punished without recourse. This institutionalised terror, combined with the visible presence of concentration camps like Dachau, sent a clear message that opposition was futile and would be met with extreme force. The legal system became another tool of repression, reinforcing the power of the police state.</span> 🟡 <span style="color: #d97706;"><strong>This systematic control over justice and punishment was crucial in eliminating dissent and securing the regime\'s absolute authority.</strong></span></p>',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why the Nazi police state was able to maintain control in Germany between 1933 and 1939. [12 marks]',
+            stimulus: ['The Gestapo', 'Block Wardens'],
+            model:
+              "One major reason was 1. the gestapo & ss terror. Explain how Himmler's SS and the plainclothes Gestapo used phone-tapping, informants, and fear of Dachau to crush organized resistance. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. block wardens & surveillance. Explain how local Blockleiters monitored every apartment block, checking for loyalty, radio listening, and failure to fly Nazi flags. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. control of the legal system. Explain how judges swore oaths to Hitler, joined the Nazi Lawyers' League, and the People's Court abolished fair trials for political treason. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
       },
     },
     {
@@ -5385,7 +5970,49 @@ export default {
             tariff: '8 marks',
             type: '8-mark',
           },
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). How useful are Sources B and C for an enquiry into Nazi methods of controlling and influencing attitudes in the years 1933–1939? [8 marks] [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about Goebbels' propaganda; substantiate using the Reich Press Law, Volksempfänger radios, and Nuremberg Rallies. From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse what Source C reveals about censorship and cultural control; substantiate using book burnings, Reich Chamber of Culture, and Degenerate Art. From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.",
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title:
+                'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+              steps: [
+                {
+                  letter: 'SOURCE B',
+                  name: '1. Source B Content & Context',
+                  prompt:
+                    "Analyse what Source B reveals about Goebbels' propaganda; substantiate using the Reich Press Law, Volksempfänger radios, and Nuremberg Rallies.",
+                  starter: '',
+                },
+                {
+                  letter: 'SOURCE C',
+                  name: '2. Source C Content & Context',
+                  prompt:
+                    'Analyse what Source C reveals about censorship and cultural control; substantiate using book burnings, Reich Chamber of Culture, and Degenerate Art.',
+                  starter: '',
+                },
+                {
+                  letter: 'SYNTHESIS',
+                  name: '3. Provenance & Synthesis',
+                  prompt:
+                    'Evaluate official propaganda claims against underground reality: explain how matching overt spectacles with strict censorship explains thought control.',
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(a).)',
       },
       video: [
         {
@@ -5403,6 +6030,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '8 marks',
+            text: '3a. How useful are Sources B and C for an enquiry into controlling and influencing attitudes? (8 marks)',
+            model:
+              "<p>Source B is highly useful for an enquiry into controlling and influencing attitudes because it provides direct insight into the *intentions and methods* of the Nazi propaganda machine from the perspective of its architect, Joseph Goebbels. As a contemporary written instruction from Goebbels himself, it reveals the systematic and pervasive nature of the regime's efforts. For example, it shows the ambition to make propaganda \"invisible, penetrating every cell of life\" and the concrete measures taken, such as mandating the installation of speakers in workplaces for Hitler's speeches. This demonstrates the scale and ambition of the Nazi strategy to saturate public life with their message, offering valuable evidence of *how* they planned to control attitudes. Its origin as an internal directive makes it a reliable indicator of official policy and strategic thinking.</p><p>Source C is also very useful, but for a different aspect of the enquiry: the *reception and impact* of Nazi propaganda on ordinary citizens. As a private letter written by an ordinary citizen in Hamburg in 1937, it offers a rare glimpse into individual attitudes and responses, which are often difficult to ascertain under a totalitarian regime. The writer's comments that their family \"simply turns off the wireless, tired of the endless, mind-numbing propaganda\" and that people \"stand and salute to avoid trouble\" are invaluable. This suggests that propaganda did not always achieve genuine indoctrination, but rather led to cynicism and superficial compliance driven by fear of the Gestapo. This provides a crucial counterpoint to the regime's official narrative and Goebbels' ambitions, highlighting the limitations of propaganda in changing deep-seated beliefs. Its private nature increases its reliability as a genuine expression of personal feeling, unlike public statements.</p><p>Both sources are therefore highly useful, offering complementary perspectives: Source B details the regime's ambitious strategy for control, while Source C provides evidence of the public's actual, often cynical, response to these efforts.</p>",
+          },
+          {
+            type: 'written',
+            tariff: '3(a). Section B: Question 3(a) [8 marks]',
+            text: '3(a). How useful are Sources B and C for an enquiry into Nazi methods of controlling and influencing attitudes in the years 1933–1939? [8 marks]',
+            stimulus: [],
+            model:
+              "Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about Goebbels' propaganda; substantiate using the Reich Press Law, Volksempfänger radios, and Nuremberg Rallies. From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse what Source C reveals about censorship and cultural control; substantiate using book burnings, Reich Chamber of Culture, and Degenerate Art. From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.",
+          },
+        ],
       },
     },
     {
@@ -5815,24 +6462,48 @@ export default {
             type: '4-mark',
           },
           {
-            provenance: 'Edexcel June 2024 (Q3c Interpretation Why)',
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
             question:
-              '3c. Suggest one reason why Interpretations 1 and 2 give different views about religious opposition to the Nazi regime. You may use Sources B and C to help explain your answer. (4 marks)',
+              '3(d). How far do you agree with Interpretation 2 about religious opposition to the Nazi regime? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks] [16 marks (+4 SPaG)]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
             model:
-              "<p>The interpretations may differ because they focus on different aspects or types of religious opposition, or perhaps draw on different evidence. Interpretation 1, which highlights 'brave resistance' and the successful defence of 'theological independence,' is strongly supported by Source B. Source B, a sermon by Pastor Martin Niemöller, explicitly calls for defiance against the 'state-controlled Reich Church' and warns of 'concentration camps,' demonstrating a clear, principled stand against Nazi attempts to co-opt the Church. This type of direct, theological challenge would lead an historian to conclude that resistance was significant and successful in its aims of preserving church autonomy.</p><p>Conversely, Interpretation 2, which argues that opposition was 'extremely limited, narrow,' and silent on 'wider atrocities,' could be informed by evidence like Source C. Source C, a Gestapo report, notes that the Catholic Church's influence remained strong and priests exploited the Concordat to spread 'subtle criticisms.' While this shows continued influence, the term 'subtle criticisms' suggests a cautious, indirect form of opposition, primarily focused on protecting the Church's own position rather than challenging the regime's broader policies or atrocities. An historian focusing on such evidence might conclude that while there was some resistance, it was not widespread or impactful enough to challenge the regime's core actions or prevent its wider crimes.</p>",
-            tariff: '4 marks',
-            type: '4-mark',
-          },
-          {
-            provenance: 'Edexcel June 2024 (Q3d Interpretation Evaluation)',
-            question:
-              '3d. How far do you agree with Interpretation 2 about religious opposition to the Nazi regime? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)',
-            model:
-              "<p>I partially agree with Interpretation 1's 'Brave Resistance View' that the Christian Churches were largely successful in resisting the Nazi regime's attempts to achieve total control over religious life. While there were significant acts of courage and a degree of success in defending theological independence, the overall impact on the wider Nazi state and its atrocities was ultimately limited, as highlighted by Interpretation 2.</p><p>Interpretation 1 is supported by compelling evidence of principled resistance. The formation of the Confessing Church in 1934, led by figures like Martin Niemöller and Dietrich Bonhoeffer, was a direct challenge to the Nazi-backed 'German Christians' and their attempts to Nazify Protestantism. Source B, Niemöller's sermon from 1937, powerfully illustrates this, stating, 'We must obey God rather than men, even if it leads us to the concentration camps.' This demonstrates a clear refusal to compromise core religious beliefs and a willingness to suffer for them. The Confessing Church, despite persecution, maintained its theological integrity and provided an alternative spiritual home for many Protestants. Similarly, the Catholic Church, initially protected by the 1933 Concordat, also showed resistance. Source C, the Gestapo report, notes the 'unbroken' influence of the Catholic Church in Bavaria and how priests 'exploit' the Concordat to spread 'subtle criticisms.' This indicates that the Church retained a degree of autonomy and influence over its followers, preventing total Nazi ideological penetration. Pope Pius XI's 1937 encyclical 'Mit brennender Sorge' (With Burning Concern) was smuggled into Germany and read from pulpits, condemning Nazi ideology as 'pagan' and 'hostile to Christ,' a clear act of defiance against the regime's attempts to control religious thought. Bishop Galen of Münster also famously denounced the Nazi euthanasia programme in 1941, leading to its temporary halt, demonstrating the potential power of church leaders to influence public opinion and even state policy on specific issues.</p><p>However, Interpretation 2 provides a crucial counter-argument that limits the extent of agreement with Interpretation 1. It argues that Christian opposition was 'extremely limited, narrow, and ultimately failed to challenge the wider atrocities of the state.' This is largely true. While the Confessing Church resisted theological interference, its protests rarely extended to the persecution of Jews or the destruction of democracy. Many church leaders, both Protestant and Catholic, shared Hitler's anti-communism and nationalism, and were often willing to accommodate the regime as long as their own institutions were not directly threatened. The 'subtle criticisms' mentioned in Source C, while showing some defiance, also suggest a cautious approach, prioritising the survival of the Church over outright confrontation. The vast majority of church members remained silent on issues like Kristallnacht (1938) and the escalating persecution of Jews. The Concordat, while initially offering some protection, was frequently violated by the Nazis, who closed Catholic schools and youth groups, yet the Vatican's protests remained largely diplomatic rather than confrontational. Ultimately, figures like Niemöller and Bonhoeffer were imprisoned, demonstrating the limits of their 'success' in preventing state control. The fact that the Holocaust proceeded largely unchallenged by the mainstream Churches underscores the narrow scope of their resistance, which primarily focused on defending church administration and doctrine rather than universal human rights.</p><p>In conclusion, while I acknowledge the 'brave resistance' of individuals and groups within the Christian Churches, particularly in defending their theological independence, I only partially agree with Interpretation 1. The Churches did prevent total Nazification of their internal affairs and provided a moral alternative for some. However, as Interpretation 2 rightly points out, this resistance was often limited in scope, failing to challenge the broader, more horrific aspects of the Nazi regime, such as the persecution of minorities and the dismantling of democracy. The fear of the police state, the appeal of Nazi nationalism, and a shared anti-communism meant that widespread, effective opposition from the Churches against the regime's core policies remained tragically limited.</p>",
-            tariff: '16 marks',
-            type: '16-mark',
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence that churches largely conformed: the 1933 Concordat with the Pope, the Reich Church, and widespread Protestant support for anti-Communism. This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence of brave religious resistance: Niemöller's Confessional Church, Pope Pius XI's 'With Burning Anxiety' encyclical, and Galen's sermons. This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Assess whether opposition challenged the regime or merely defended church independence: conclude how far religious dissent threatened Hitler.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+            scaffolding: {
+              acronym: 'Interpretation Verdict Framework',
+              acronym_title:
+                'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+              steps: [
+                {
+                  letter: 'INTERP 1',
+                  name: '1. Support Interpretation 1',
+                  prompt:
+                    'Deploy evidence that churches largely conformed: the 1933 Concordat with the Pope, the Reich Church, and widespread Protestant support for anti-Communism.',
+                  starter: '',
+                },
+                {
+                  letter: 'INTERP 2',
+                  name: '2. Support Interpretation 2',
+                  prompt:
+                    "Deploy evidence of brave religious resistance: Niemöller's Confessional Church, Pope Pius XI's 'With Burning Anxiety' encyclical, and Galen's sermons.",
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATION',
+                  name: '3. Criteria & Sustained Verdict',
+                  prompt:
+                    'Assess whether opposition challenged the regime or merely defended church independence: conclude how far religious dissent threatened Hitler.',
+                  starter: '',
+                },
+              ],
+            },
           },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(d).)',
       },
       video: [
         {
@@ -5849,6 +6520,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '3b. Study Interpretations 1 and 2. They give different views about religious opposition to the Nazi regime. What is the main difference between these views? (4 marks)',
+            model:
+              "<p>The main difference between these interpretations is their assessment of the *success* and *scope* of religious opposition. Interpretation 1 argues that the Christian Churches were 'largely successful in resisting' the Nazi regime, preventing 'total Nazification' and acting as a 'powerful barrier to totalitarian control' by defending 'theological independence.' In contrast, Interpretation 2 contends that Christian opposition was 'extremely limited, narrow, and ultimately failed to challenge the wider atrocities of the state,' suggesting that most leaders conformed and only protested 'strictly limited to defending church administration,' remaining 'entirely silent during the persecution of minorities and the destruction of democracy.'</p>",
+          },
+          {
+            type: 'written',
+            tariff: '3(d). Section B: Question 3(d) [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about religious opposition to the Nazi regime? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence that churches largely conformed: the 1933 Concordat with the Pope, the Reich Church, and widespread Protestant support for anti-Communism. This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence of brave religious resistance: Niemöller's Confessional Church, Pope Pius XI's 'With Burning Anxiety' encyclical, and Galen's sermons. This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Assess whether opposition challenged the regime or merely defended church independence: conclude how far religious dissent threatened Hitler.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+          },
+        ],
       },
     },
     {
@@ -6236,7 +6927,51 @@ export default {
             tariff: '4 marks',
             type: '4-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why Nazi policies towards women were implemented in the years 1933–1939. [12 marks] [12 marks]',
+            stimulus: [
+              'The Law for the Encouragement of Marriage',
+              "The Mother's Cross (Mutterkreuz)",
+            ],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              "One major reason was 1. marriage loans & domesticity. Explain how 1,000-mark loans encouraged marriage, cleared women from the workforce, and were paid off by having four children. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the mother's cross. Explain how bronze (4), silver (6), and gold (8+) medals elevated childbearing to heroic status to expand the Aryan population for future war. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. 1937 rearmament reversal. Explain how the Four-Year Plan and rearmament labour shortages forced the regime to recruit women back into munitions factories from 1937. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. Marriage Loans & Domesticity',
+                  prompt:
+                    'Explain how 1,000-mark loans encouraged marriage, cleared women from the workforce, and were paid off by having four children.',
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: "2. The Mother's Cross",
+                  prompt:
+                    'Explain how bronze (4), silver (6), and gold (8+) medals elevated childbearing to heroic status to expand the Aryan population for future war.',
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. 1937 Rearmament Reversal',
+                  prompt:
+                    'Explain how the Four-Year Plan and rearmament labour shortages forced the regime to recruit women back into munitions factories from 1937.',
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       pair_share: {
         prompt:
@@ -6244,6 +6979,29 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '1. Give two things you can infer from Source A about Nazi views on the role of women in German society. (4 marks)<br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:',
+            model:
+              "<p><strong>(i) What I can infer:</strong><br>I can infer that the Nazi leadership believed men and women had fundamentally separate and biologically determined duties.<br><strong>Details in the source that tell me this:</strong><br>Hitler states that while man's world is the state and struggle, woman's world is her husband, her family, and her children.</p><p><strong>(ii) What I can infer:</strong><br>I can infer that the regime valued motherhood as a national service as crucial as military combat.<br><strong>Details in the source that tell me this:</strong><br>Hitler asserts that every healthy child given to the nation by a mother is a battle won for the continued survival of the German people.",
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why Nazi policies towards women were implemented in the years 1933–1939. [12 marks]',
+            stimulus: [
+              'The Law for the Encouragement of Marriage',
+              "The Mother's Cross (Mutterkreuz)",
+            ],
+            model:
+              "One major reason was 1. marriage loans & domesticity. Explain how 1,000-mark loans encouraged marriage, cleared women from the workforce, and were paid off by having four children. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. the mother's cross. Explain how bronze (4), silver (6), and gold (8+) medals elevated childbearing to heroic status to expand the Aryan population for future war. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. 1937 rearmament reversal. Explain how the Four-Year Plan and rearmament labour shortages forced the regime to recruit women back into munitions factories from 1937. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.",
+          },
+        ],
       },
     },
     {
@@ -6609,7 +7367,48 @@ export default {
             tariff: '12 marks',
             type: '12-mark',
           },
+          {
+            tariff: '12 marks',
+            type: 'explain_why_12',
+            marks: 12,
+            question:
+              '2. Explain why Nazi policies towards the young were implemented, 1933–1939. [12 marks] [12 marks]',
+            stimulus: ['The Hitler Youth', 'Nazi control of the school curriculum'],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              'One major reason was 1. hitler youth (hj & bdm). Explain how compulsory membership by 1939 indoctrinated boys for military combat and trained girls (BDM) for motherhood and domestic duty. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. curriculum nazification. Explain how Race Studies, rewritten History, and military Maths problems subordinated education to racial supremacy and war preparation. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. breaking family & church bonds. Explain how youth activities were deliberately scheduled on Sundays to displace Christian influence and create total loyalty to the Führer alone. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.',
+            scaffolding: {
+              acronym: 'PEEL Structure Strip',
+              acronym_title: 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]',
+              steps: [
+                {
+                  letter: 'STIMULUS 1',
+                  name: '1. Hitler Youth (HJ & BDM)',
+                  prompt:
+                    'Explain how compulsory membership by 1939 indoctrinated boys for military combat and trained girls (BDM) for motherhood and domestic duty.',
+                  starter: '',
+                },
+                {
+                  letter: 'STIMULUS 2',
+                  name: '2. Curriculum Nazification',
+                  prompt:
+                    'Explain how Race Studies, rewritten History, and military Maths problems subordinated education to racial supremacy and war preparation.',
+                  starter: '',
+                },
+                {
+                  letter: 'OWN KNOWLEDGE',
+                  name: '3. Breaking Family & Church Bonds',
+                  prompt:
+                    'Explain how youth activities were deliberately scheduled on Sundays to displace Christian influence and create total loyalty to the Führer alone.',
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 2.)',
       },
       video: [
         {
@@ -6627,6 +7426,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '12 marks',
+            text: '2. Explain why Nazi policies towards the young were implemented, 1933–1939. (12 marks).<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>The Hitler Youth</li><li>Education</li></ul>You must also use information of your own.',
+            model:
+              '<h3 style="margin-top: 15px; margin-bottom: 5px;">Colour Coding Key:</h3><ul style="margin-top: 0; margin-bottom: 15px;"><li>🔴 <span style="color: #dc2626; font-weight: bold;">Point (P):</span> Identifies a distinct, valid cause.</li><li>🔵 <span style="color: #2563eb; font-weight: bold;">Evidence (E):</span> Deploys precise historical knowledge.</li><li>🟢 <span style="color: #16a34a; font-weight: bold;">Explanation (E):</span> Analyzes exactly how and why this factor caused the event.</li><li>🟡 <span style="color: #d97706; font-weight: bold;">Link (L):</span> Connects back to the question.</li></ul><hr style="margin: 20px 0;"><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>One key reason for the implementation of Nazi policies towards the young was to indoctrinate them with Nazi ideology and ensure their absolute loyalty to the Führer and the state.</strong></span> 🔵 <span style="color: #2563eb;">Hitler famously declared, \'He who has the youth, has the future,\' reflecting the Nazi belief that the younger generation was crucial for the survival and expansion of the \'Thousand-Year Reich\'. This was achieved through the complete Nazification of the school curriculum, as mentioned in Interpretation 1, and the establishment of youth organisations like the Hitler Youth and the League of German Girls (BDM).</span> 🟢 <span style="color: #16a34a;">By controlling what children learned and how they spent their leisure time, the Nazis aimed to isolate them from any potentially \'un-German\' influences from family, church, or other social groups. This ensured that children grew up accepting Nazi racial theories, the Führerprinzip (leader principle), and the concept of the Volksgemeinschaft (people\'s community), thereby securing a future generation of fanatically loyal supporters.</span> 🟡 <span style="color: #d97706;"><strong>Therefore, ideological control was a fundamental driver behind these policies.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Another significant reason was to prepare boys for future military service and girls for their roles as mothers, essential for Germany\'s rearmament and expansionist ambitions.</strong></span> 🔵 <span style="color: #2563eb;">The Hitler Youth, which became compulsory in 1936, placed a strong emphasis on physical fitness, discipline, and military training for boys. Source B, from a 15-year-old boy in a Hitler Youth camp in 1936, vividly describes the \'military barrack life\' and \'grueling military drill and exercises in the mud\'. Boys were taught map reading, rifle shooting, and basic combat skills, effectively serving as a pre-military training ground.</span> 🟢 <span style="color: #16a34a;">This was directly linked to Hitler\'s secret rearmament programme and his plans for Lebensraum (living space) in Eastern Europe, which would require a large, well-trained army. Similarly, girls in the BDM were trained in domestic skills, childcare, and physical fitness to prepare them for their \'sacred task\' of motherhood, ensuring a high birth rate for the \'Aryan\' race.</span> 🟡 <span style="color: #d97706;"><strong>Thus, the policies were designed to create a physically robust and ideologically committed population ready to serve the state\'s military and demographic needs.</strong></span></p><p style="margin-bottom: 15px;">🔴 <span style="color: #dc2626;"><strong>Finally, Nazi policies aimed to eliminate any potential sources of opposition or alternative viewpoints among the young, ensuring total social control.</strong></span> 🔵 <span style="color: #2563eb;">The education system was purged of teachers deemed politically unreliable or Jewish, and new textbooks promoted Nazi narratives, including distorted history and \'race studies\'. All other youth organisations, such as scout groups or church youth clubs, were either absorbed into the Hitler Youth or banned outright.</span> 🟢 <span style="color: #16a34a;">This comprehensive control over education and leisure time, as highlighted by Interpretation 1\'s reference to \'coordinating all leisure time\', meant that children had little opportunity to encounter ideas that challenged the Nazi worldview. By isolating them from \'traditional family influences\' that might contradict Nazi teachings, the regime sought to prevent the formation of any dissenting opinions or rebellious tendencies from a young age.</span> 🟡 <span style="color: #d97706;"><strong>This systematic approach was crucial for maintaining the totalitarian nature of the Nazi state.</strong></span></p>',
+          },
+          {
+            type: 'written',
+            tariff: '2. Section A: Question 2 [12 marks]',
+            text: '2. Explain why Nazi policies towards the young were implemented, 1933–1939. [12 marks]',
+            stimulus: ['The Hitler Youth', 'Nazi control of the school curriculum'],
+            model:
+              'One major reason was 1. hitler youth (hj & bdm). Explain how compulsory membership by 1939 indoctrinated boys for military combat and trained girls (BDM) for motherhood and domestic duty. This was crucial because it directly destabilised the existing political order and placed insurmountable pressure on the Weimar leadership.<br><br>Furthermore, a second critical factor was 2. curriculum nazification. Explain how Race Studies, rewritten History, and military Maths problems subordinated education to racial supremacy and war preparation. Consequently, this exacerbated the crisis by alienating key social groups and undermining democratic legitimacy.<br><br>Finally, an underlying reason was 3. breaking family & church bonds. Explain how youth activities were deliberately scheduled on Sundays to displace Christian influence and create total loyalty to the Führer alone. Ultimately, this meant that the situation could not be contained, directly triggering decisive structural change.',
+          },
+        ],
       },
     },
     {
@@ -7045,7 +7864,49 @@ export default {
             tariff: '8 marks',
             type: '8-mark',
           },
+          {
+            tariff: '8 marks',
+            type: 'utility_8m',
+            marks: 8,
+            question:
+              '3(a). How useful are Sources B and C for an enquiry into employment and living standards in Nazi Germany between 1933 and 1939? [8 marks] [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
+            model:
+              'Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about falling unemployment; substantiate using the RAD (Labour Service), Autobahn construction, and rearmament. From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse what Source C reveals about worker exploitation; substantiate with the ban on trade unions (DAF), longer working hours, and hidden unemployment. From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.',
+            scaffolding: {
+              acronym: 'Source Utility Framework',
+              acronym_title:
+                'Section B: Question 3(a) • Utility of Sources B & C [8 Marks • 12 Mins]',
+              steps: [
+                {
+                  letter: 'SOURCE B',
+                  name: '1. Source B Content & Context',
+                  prompt:
+                    'Analyse what Source B reveals about falling unemployment; substantiate using the RAD (Labour Service), Autobahn construction, and rearmament.',
+                  starter: '',
+                },
+                {
+                  letter: 'SOURCE C',
+                  name: '2. Source C Content & Context',
+                  prompt:
+                    'Analyse what Source C reveals about worker exploitation; substantiate with the ban on trade unions (DAF), longer working hours, and hidden unemployment.',
+                  starter: '',
+                },
+                {
+                  letter: 'SYNTHESIS',
+                  name: '3. Provenance & Synthesis',
+                  prompt:
+                    "Interrogate official KdF (Strength Through Joy) propaganda vs workers' real purchasing power: assess how the sources balance appearance and reality.",
+                  starter: '',
+                },
+              ],
+            },
+          },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(a).)',
       },
       video: [
         {
@@ -7059,6 +7920,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '8 marks',
+            text: '3a. How useful are Sources B and C for an enquiry into employment and living standards in Nazi Germany between 1933 and 1939? (8 marks)',
+            model:
+              '<p>Source B is useful as it provides a direct, contemporary account from a German factory worker in 1937, offering a positive perspective on the impact of Nazi policies, specifically the Strength through Joy (KdF) scheme. It highlights a "real sense of comradeship" and the feeling that the government "genuinely values our hard work," suggesting that for some, living standards genuinely improved through access to previously unaffordable leisure activities like "cheap weekly theater trips and even subsidized holidays." This supports the "Better Off" view in Interpretation 1. As a personal letter, it offers an insight into individual experience and sentiment, which can be valuable for understanding the subjective impact of policies. However, its usefulness is limited as it represents only one individual\'s experience and may not be representative of all workers. The worker might also be expressing sentiments that align with Nazi propaganda, or be cautious about expressing dissent, even in a private letter, given the pervasive nature of the police state. It doesn\'t provide details on wages, working hours, or the loss of trade union rights, which are crucial aspects of living standards.</p><p>Source C is highly useful as it offers a contrasting, critical perspective on workers\' living standards, directly challenging the positive narrative. Compiled by an undercover agent of the Social Democratic Party in exile (SOPADE) in 1938, it reports that "The workers are deeply unhappy," citing "wages are frozen and the price of food has risen significantly," "forced to work longer hours," and "heavy deductions." It also dismisses KdF trips as a "propaganda circus," aligning strongly with Interpretation 2\'s "Exploitation View." As a report from an anti-Nazi organisation, it provides a valuable counter-narrative to official Nazi propaganda. The fact that it\'s an "undercover agent" suggests an attempt to gather genuine, unfiltered attitudes from within Germany, which might be more reliable than public statements. However, its usefulness is somewhat limited by its provenance. SOPADE had a clear anti-Nazi agenda, so the report might be selectively highlighting negative aspects to discredit the regime, potentially overemphasising discontent.</p><p>In conclusion, both sources are useful, but in different ways. Source B highlights the positive, propagandistic aspects and the genuine enjoyment for some, while Source C reveals the underlying discontent and exploitation. Together, they provide a more comprehensive, albeit contrasting, picture of employment and living standards, making them both valuable for an enquiry.</p>',
+          },
+          {
+            type: 'written',
+            tariff: '3(a). Section B: Question 3(a) [8 marks]',
+            text: '3(a). How useful are Sources B and C for an enquiry into employment and living standards in Nazi Germany between 1933 and 1939? [8 marks]',
+            stimulus: [],
+            model:
+              'Source B is useful for an enquiry into this topic because it provides valuable contemporary insight into the situation. Analyse what Source B reveals about falling unemployment; substantiate using the RAD (Labour Service), Autobahn construction, and rearmament. From my own knowledge, I know that these developments were central to the contemporary climate. The provenance of Source B makes it particularly valuable as a first-hand account reflecting contemporary attitudes and immediate observations.<br><br>Similarly, Source C is useful because it offers an alternative, critical perspective on the same enquiry. Analyse what Source C reveals about worker exploitation; substantiate with the ban on trade unions (DAF), longer working hours, and hidden unemployment. From my own knowledge, I know that these underlying tensions significantly qualified official claims. When evaluated in light of its provenance and context, Source C provides essential corroborating evidence that reveals the complexities and limitations of the period. Combined, both sources provide high historical utility for understanding this enquiry.',
+          },
+        ],
       },
     },
     {
@@ -7487,24 +8368,48 @@ export default {
             type: '4-mark',
           },
           {
-            provenance: 'Edexcel November 2020 (Q3c Interpretation Why)',
+            tariff: '16 marks (+4 SPaG)',
+            type: 'verdict_16m',
+            marks: 16,
             question:
-              '3c. Suggest one reason why Interpretations 1 and 2 give different views about the events of Kristallnacht. You may use Sources B and C to help explain your answer. (4 marks)',
+              '3(d). How far do you agree with Interpretation 2 about the events of Kristallnacht? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks] [16 marks (+4 SPaG)]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and historical guidance below to structure your response.',
             model:
-              '<p>The interpretations may differ because they are focusing on different aspects of the events of Kristallnacht and potentially prioritising different types of evidence. Interpretation 1, which argues for a "highly coordinated, systematic operation planned and executed entirely from above," aligns closely with the evidence presented in Source C. Source C, from a British diplomat, details the "military precision" and "organized groups of SA men" acting under "strict orders from the Ministry of the Interior," directly supporting the view of a planned state pogrom. Conversely, Interpretation 2, which highlights the "deep alarm, concern, and disapproval" of "many ordinary Germans" who conformed out of "terror," is strongly supported by Source B. Source B, a diary entry from a Berlin citizen, describes a "silent crowd of ordinary citizens watched the devastation from a distance with looks of shock and absolute terror." This suggests that the historians behind the interpretations have chosen to emphasise either the actions of the perpetrators and the state (Interpretation 1) or the reaction and compliance of the general public (Interpretation 2).</p>',
-            tariff: '4 marks',
-            type: '4-mark',
-          },
-          {
-            provenance: 'Edexcel November 2020 (Q3d Interpretation Evaluation)',
-            question:
-              '3d. How far do you agree with Interpretation 2 about the events of Kristallnacht? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)',
-            model:
-              '<p>I strongly agree with Interpretation 1, which asserts that the anti-Semitic violence of Kristallnacht was a "highly coordinated, systematic operation planned and executed entirely from above by Joseph Goebbels and the paramilitary SA." This interpretation is overwhelmingly supported by historical evidence and the sources provided, which demonstrate the deliberate and organised nature of the pogrom.</p><p>Interpretation 1\'s claim of a "highly coordinated, systematic operation" is strongly corroborated by Source C, an eyewitness report from a British diplomat. This source explicitly states that the destruction was "executed with military precision" and carried out by "organized groups of SA men in civilian clothes who arrived in trucks carrying hammers and incendiary devices." This directly refutes any notion of spontaneity and points to central planning. My own knowledge further confirms this: Joseph Goebbels, the Minister of Propaganda, explicitly ordered the events at a meeting of Nazi leaders in Munich on 9 November 1938, using the assassination of Ernst vom Rath by a Jewish teenager as a pretext. He instructed that \'spontaneous\' anti-Jewish demonstrations should not be hindered by the police, effectively giving a green light for violence. The scale of the destruction – over 1,000 synagogues destroyed, 7,500 Jewish businesses looted, and around 30,000 Jewish men arrested and sent to concentration camps across Germany – could only have been achieved through such coordination.</p><p>Furthermore, Interpretation 1 correctly identifies the aim as forcing "Jewish families into absolute economic and physical isolation." This is evident from the immediate aftermath: Jews were collectively fined 1 billion Reichsmarks for the damage, and their insurance payouts were confiscated. This was a clear act of economic plunder designed to impoverish the Jewish community and accelerate their emigration, building upon earlier discriminatory measures like the Nuremberg Laws of 1935 and the Aryanisation of businesses. The arrests and deportations to concentration camps marked a significant escalation in physical persecution, moving beyond legal discrimination to overt state-sanctioned violence.</p><p>While I strongly agree with Interpretation 1, Interpretation 2 offers a valuable, nuanced perspective on the public\'s reaction. Interpretation 2 suggests that "many ordinary Germans watched the destruction with deep alarm, concern, and disapproval," even if they remained silent due to "terror of the Gestapo and fear of immediate arrest." Source B, the diary entry of a Berlin citizen, supports this, describing a "silent crowd of ordinary citizens watched the devastation from a distance with looks of shock and absolute terror." This indicates that while the state orchestrated the violence, public enthusiasm was not universal. Many Germans, even those with latent anti-Semitic views, were reportedly shocked by the brutality and destruction. However, this public disapproval did not translate into active resistance. The pervasive fear of the Gestapo and the consequences of dissent, as highlighted by Interpretation 2, meant that the state-sponsored pogrom proceeded largely unhindered. This passive compliance, born of terror, allowed the regime to achieve its objectives without significant internal opposition.</p><p>In conclusion, Interpretation 1 accurately captures the essence of Kristallnacht as a meticulously planned and executed state pogrom, driven by Nazi ideology and aimed at the systematic isolation and persecution of Jews. The evidence from both sources and my own knowledge overwhelmingly supports this view. Interpretation 2 adds an important layer of understanding by highlighting the public\'s fearful reaction, but this does not diminish the fact that the event itself was a deliberate act of state-sponsored terror. Therefore, I strongly agree with Interpretation 1 as the primary explanation for the events of Kristallnacht, while acknowledging the crucial role of public fear in enabling its execution.</p>',
-            tariff: '16 marks',
-            type: '16-mark',
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence that it was portrayed as spontaneous public anger: vom Rath's assassination in Paris used as a pretext for popular outrage. This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence that it was state-orchestrated terror: Goebbels' orders to SA/SS in plain clothes, police instructed not to stop arson, 1,000 synagogues destroyed. This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Weigh regime planning against public complicity: conclude whether Kristallnacht represented planned state persecution or chaotic mob violence.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+            scaffolding: {
+              acronym: 'Interpretation Verdict Framework',
+              acronym_title:
+                'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG • 25 Mins]',
+              steps: [
+                {
+                  letter: 'INTERP 1',
+                  name: '1. Support Interpretation 1',
+                  prompt:
+                    "Deploy evidence that it was portrayed as spontaneous public anger: vom Rath's assassination in Paris used as a pretext for popular outrage.",
+                  starter: '',
+                },
+                {
+                  letter: 'INTERP 2',
+                  name: '2. Support Interpretation 2',
+                  prompt:
+                    "Deploy evidence that it was state-orchestrated terror: Goebbels' orders to SA/SS in plain clothes, police instructed not to stop arson, 1,000 synagogues destroyed.",
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATION',
+                  name: '3. Criteria & Sustained Verdict',
+                  prompt:
+                    'Weigh regime planning against public complicity: conclude whether Kristallnacht represented planned state persecution or chaotic mob violence.',
+                  starter: '',
+                },
+              ],
+            },
           },
         ],
+        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+        tariff: '20 marks (Q1 & 3(d).)',
       },
       video: [
         {
@@ -7531,6 +8436,26 @@ export default {
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
+      },
+      gcse_task: {
+        title: 'Edexcel GCSE Paper 3 Exam Practice: Section A & Section B',
+        tasks: [
+          {
+            type: 'written',
+            tariff: '4 marks',
+            text: '3b. Study Interpretations 1 and 2. They give different views about the events of Kristallnacht. What is the main difference between these views? (4 marks)',
+            model:
+              '<p>The main difference between Interpretation 1 and Interpretation 2 lies in their focus regarding the nature and public perception of Kristallnacht. Interpretation 1 argues that Kristallnacht was a "highly coordinated, systematic operation planned and executed entirely from above by Joseph Goebbels and the paramilitary SA," emphasising its top-down, state-orchestrated nature. In contrast, Interpretation 2 focuses on the public\'s reaction, suggesting that while the state portrayed it as spontaneous, "many ordinary Germans watched the destruction with deep alarm, concern, and disapproval," conforming only "out of terror of the Gestapo and fear of immediate arrest." Therefore, the core difference is whether the event was primarily a planned state action (Interpretation 1) or if the public\'s fearful, disapproving reaction is the key aspect to understand (Interpretation 2).</p>',
+          },
+          {
+            type: 'written',
+            tariff: '3(d). Section B: Question 3(d) [16 marks (+4 SPaG)]',
+            text: '3(d). How far do you agree with Interpretation 2 about the events of Kristallnacht? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+            stimulus: [],
+            model:
+              "On the one hand, Interpretation 1 is supported by compelling historical evidence. Deploy evidence that it was portrayed as spontaneous public anger: vom Rath's assassination in Paris used as a pretext for popular outrage. This provides strong weight to the view because contemporary developments clearly demonstrate that this factor exerted immense influence over popular attitudes and political outcomes.<br><br>On the other hand, Interpretation 2 offers an equally persuasive counter-perspective that emphasizes alternative structural causes. Deploy evidence that it was state-orchestrated terror: Goebbels' orders to SA/SS in plain clothes, police instructed not to stop arson, 1,000 synagogues destroyed. This demonstrates that the historical process was far more multi-faceted than a single viewpoint suggests, with deeper economic, ideological, and institutional factors driving events.<br><br>Furthermore, contextual historical analysis confirms that Weigh regime planning against public complicity: conclude whether Kristallnacht represented planned state persecution or chaotic mob violence.<br><br>In conclusion, having weighed both interpretations against the historical evidence, I agree with Interpretation 2 to a moderate extent. While Interpretation 1 correctly identifies a prominent catalyst, Interpretation 2 provides a more profound historical explanation because it accounts for the broader structural conditions that ultimately determined the course of German history.",
+          },
+        ],
       },
     },
   ],
@@ -8481,3 +9406,8 @@ export default {
     },
   ],
 };
+
+export default unitData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = unitData;
+}
