@@ -2,6 +2,34 @@ const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
 
+const ROOT_DIR = path.resolve(__dirname, '..');
+
+function getBase64Image(relPath) {
+  if (!relPath) return null;
+  const clean = relPath.replace(/^\//, '');
+  const candidates = [
+    path.join(ROOT_DIR, 'public', clean),
+    path.join(ROOT_DIR, clean),
+    path.join(ROOT_DIR, 'public', 'images', path.basename(clean)),
+    path.join(ROOT_DIR, 'images', path.basename(clean)),
+    path.join(ROOT_DIR, 'units', 'edexcel_medicine', 'assets', path.basename(clean)),
+    path.join(ROOT_DIR, 'public', 'units', 'edexcel_medicine', 'assets', path.basename(clean)),
+  ];
+
+  for (const cand of candidates) {
+    if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+      const ext = path.extname(cand).toLowerCase();
+      let mime = 'image/jpeg';
+      if (ext === '.png') mime = 'image/png';
+      else if (ext === '.webp') mime = 'image/webp';
+      else if (ext === '.svg') mime = 'image/svg+xml';
+      const buf = fs.readFileSync(cand);
+      return `data:${mime};base64,${buf.toString('base64')}`;
+    }
+  }
+  return null;
+}
+
 function generateQrSvg(url) {
   const qr = QRCode.create(url, { margin: 1 });
   const size = qr.modules.size;
@@ -508,6 +536,11 @@ function renderFooterStrip(pageNum, quipText, totalPages = 14) {
 // HTML WORKBOOK GENERATOR FUNCTION (100% Black & White / Master Template)
 // ============================================================================
 function buildModernTwoPageWorkbook(unitData, period) {
+  const coverImgBase64 =
+    getBase64Image('public/images/nhs_established.jpg') ||
+    getBase64Image('/images/nhs_established.jpg') ||
+    '';
+
   let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -571,16 +604,24 @@ function buildModernTwoPageWorkbook(unitData, period) {
     }
     /* Thick Black Writing Lines for Handwriting */
     .task-line {
-      border-bottom: 1.5px solid #000000;
-      height: 7.4mm;
+      border-bottom: 1.2px solid #000000;
+      height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
+      margin: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
-      height: 6.2mm;
+      height: 7.4mm;
       width: 100%;
       box-sizing: border-box;
+      margin: 0;
+    }
+    .ruled-lines-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1px 0;
     }
     /* Clean Footer Strip */
     .page-footer-strip {
@@ -661,12 +702,40 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Centerpiece Primary Archival Image -->
-      <div style="margin: 3px 0 5px 0; text-align: center; background: #ffffff;">
-        <img src="../../images/nhs_established.jpg" alt="Modern Medicine Primary Source" style="width: 100%; max-height: 245px; object-fit: cover; object-position: center 20%; display: block; margin: 0 auto;">
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 4px; border-top: 1px solid #000000; margin-top: 2px; background: #ffffff;">
-          <span><strong>Primary Archival Source:</strong> <em>The Dawn of Free Healthcare: The 1948 National Health Service Leaflet</em></span>
-          <span>Accession Shelfmark: <strong>ARCH-MED-1948</strong></span>
+      <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Authentic Provenance) -->
+      <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <img src="${coverImgBase64}" alt="The Dawn of Free Healthcare: The 1948 National Health Service Leaflet" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 20%; display: block; margin: 0 auto; filter: grayscale(100%);">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
+          <span><strong>Primary Visual Evidence:</strong> <em>The Dawn of Free Healthcare: The 1948 National Health Service Leaflet</em></span>
+          <span style="font-weight: 700;">CONTEMPORARY PRINT ARCHIVE</span>
+        </div>
+      </div>
+
+      <!-- Edexcel Paper 1 Section B Specification Overview & Exam Strategy -->
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 8px; background: #fbfbfb; margin: 4px 0 7px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        <div style="border-right: 1px solid #000000; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+            1. Comparison Drills [4m]
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+            Q3: Explain one similarity or difference between eras. Specific factual detail + direct comparative reasoning (5 mins).
+          </div>
+        </div>
+        <div style="border-right: 1px solid #000000; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+            2. Causal Analysis [12m]
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+            Q4: Explain why change or continuity occurred. 3 structured PEE paragraphs using 2 stimulus points + own knowledge (15 mins).
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+            3. Thematic Essay [16m+4m]
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+            Q5/Q6: 'How far do you agree?' Judgement essay balancing factors across broad time periods + SPaG criteria (25 mins).
+          </div>
         </div>
       </div>
 
@@ -688,7 +757,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.1: Ideas on Causes: Genetics, DNA &amp; The Human Genome Project
                 </div>
@@ -704,7 +773,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.2: Lifestyle Factors &amp; The Technological Revolution in Diagnosis
                 </div>
@@ -720,7 +789,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.3: Magic Bullets, High-Tech Treatments &amp; The Birth of the NHS
                 </div>
@@ -736,7 +805,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey &amp; Chain
                 </div>
@@ -752,7 +821,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.5: Case Study 2: Public Health &amp; The Fight Against Lung Cancer
                 </div>
@@ -989,8 +1058,8 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines) -->
-      <div class="task-section">
+      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
+      <div class="task-section task-section-divider">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Key Vocabulary Task
@@ -1000,13 +1069,15 @@ function buildModernTwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
           ${cfg.vocabPrompt}
         </p>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div class="ruled-lines-block">
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+        </div>
       </div>
 
       <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section">
+      <div class="task-section task-section-divider">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 3(a): Explain One ${cfg.fourMarkA.type} [4 marks]
@@ -1022,10 +1093,13 @@ function buildModernTwoPageWorkbook(unitData, period) {
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Stems:</strong> ${cfg.fourMarkA.stems}
         </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div class="ruled-lines-block">
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+        </div>
       </div>
 
       <!-- Exam Practice Question 3B [4 marks] -->
@@ -1045,10 +1119,14 @@ function buildModernTwoPageWorkbook(unitData, period) {
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Stems:</strong> ${cfg.fourMarkB.stems}
         </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div class="ruled-lines-block">
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+        </div>
+      </div>
       </div>
 
       ${renderFooterStrip(leftPageNum, cfg.leftPageQuip)}
@@ -1114,18 +1192,26 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- 10 Ruled Handwriting Practice Lines -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 5px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- 18 Ruled Extended Handwriting Lines -->
+      <div class="ruled-lines-block" style="margin-bottom: 3px;">
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 9.18mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -1177,45 +1263,45 @@ function buildModernTwoPageWorkbook(unitData, period) {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT4.1:</strong> DNA &amp; Human Genome</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.1:</strong> DNA &amp; Human Genome</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT4.2:</strong> Lifestyle &amp; Diagnosis</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.2:</strong> Lifestyle &amp; Diagnosis</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT4.3:</strong> Magic Bullets &amp; The NHS</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.3:</strong> Magic Bullets &amp; The NHS</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT4.4:</strong> Penicillin Case Study</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.4:</strong> Penicillin Case Study</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 4px 8px; border-right: 1px solid #000000;"><strong>KT4.5:</strong> Lung Cancer Case Study</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.5:</strong> Lung Cancer Case Study</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
             </tr>
             <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
               <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Cumulative Assessment Totals</td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Total: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Extended: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 76</strong> ]</span></td>
-              <td style="padding: 4px 6px; text-align: center; font-size: 10.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Total: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Extended: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 76</strong> ]</span></td>
+              <td style="padding: 7.5px 6px; text-align: center; font-size: 10.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
             </tr>
           </tbody>
         </table>
@@ -1232,24 +1318,28 @@ function buildModernTwoPageWorkbook(unitData, period) {
           </span>
         </div>
 
-        <div style="margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
+        <div style="margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
             What Went Well (WWW):
           </strong>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+          <div class="ruled-lines-block">
+            <div class="task-line" style="height: 12.0mm;"></div>
+            <div class="task-line" style="height: 12.0mm;"></div>
+            <div class="task-line" style="height: 12.0mm;"></div>
+            <div class="task-line" style="height: 12.0mm;"></div>
+          </div>
         </div>
 
-        <div style="margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
+        <div style="margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
             Even Better If (EBI):
           </strong>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+          <div class="ruled-lines-block">
+            <div class="task-line" style="height: 12.0mm;"></div>
+            <div class="task-line" style="height: 12.0mm;"></div>
+            <div class="task-line" style="height: 12.0mm;"></div>
+            <div class="task-line" style="height: 12.0mm;"></div>
+          </div>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt;">
