@@ -32,11 +32,24 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-// Load 4-Act staged data
-const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
+// Load 4-Act staged data safely
+let unitData;
+try {
+  const mod = require(dataPath);
+  unitData = mod.great_war || mod.unitData || mod;
+} catch (e) {
+  const dataContent = fs.readFileSync(dataPath, 'utf8');
+  const startIndex = dataContent.indexOf('{');
+  const endIndex = dataContent.lastIndexOf('};\n');
+  unitData = eval(
+    '(' +
+      dataContent.substring(
+        startIndex,
+        endIndex !== -1 ? endIndex + 1 : dataContent.lastIndexOf('}'),
+      ) +
+      ')',
+  );
+}
 
 const lessons = unitData.lessons || [];
 console.log(`Loaded ${lessons.length} Great War 4-Act lessons for V2 Workbook.`);
