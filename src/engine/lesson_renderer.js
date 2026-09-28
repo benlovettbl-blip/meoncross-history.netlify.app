@@ -3626,6 +3626,80 @@ export function renderLesson(lesson) {
                ${block.images
                  .map((img, idx) => {
                    if (img.image_context) {
+                     const isWeimar =
+                       window.currentUnitId === 'weimar_nazi_germany' ||
+                       unitId === 'weimar_nazi_germany';
+
+                     let contextText = img.image_context || '';
+                     let hingeText = '';
+                     if (contextText.includes('**Hinge Question:**')) {
+                       const parts = contextText.split('**Hinge Question:**');
+                       contextText = parts[0].trim();
+                       hingeText = parts[1].trim();
+                     } else if (contextText.includes('Hinge Question:')) {
+                       const parts = contextText.split('Hinge Question:');
+                       contextText = parts[0].trim();
+                       hingeText = parts[1].trim();
+                     }
+
+                     if (isWeimar) {
+                       const displayCaption =
+                         img.caption || img.image_caption || 'Archival Primary Record';
+                       const imgSrc = getAssetUrl(img.src || img.image);
+                       return `
+                       <div style="width: 100%; grid-column: 1 / -1; margin: 10px 0;">
+                         <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="source-card-A" data-source-letter="A" style="margin: 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+                           <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
+                             <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                               <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;">PRIMARY VISUAL RECORD</span>
+                               <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e293b; font-weight: 700;">${displayCaption}</span>
+                             </div>
+                             <span class="drawer-toggle-indicator" style="font-size: 0.8rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                               Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span>
+                             </span>
+                           </summary>
+                           <div class="weimar-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                             <div class="archival-source-split-layout">
+                               <div class="archival-source-media-col">
+                                 <img src="${imgSrc}" alt="${displayCaption}" style="width: 100%; max-height: 380px; object-fit: contain; background: #fff; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-gallery" data-gallery="${galleryData}" data-index="${idx}">
+                                 <div class="archival-source-inspect-badge">
+                                   <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                                 </div>
+                               </div>
+                               <div class="archival-source-details-col">
+                                 ${displayCaption ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 12px; font-style: italic;">${displayCaption}</div>` : ''}
+                                 ${
+                                   contextText
+                                     ? `
+                                   <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
+                                     <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
+                                   </div>
+                                 `
+                                     : ''
+                                 }
+                                 <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
+                                   <strong>Accession:</strong> Edexcel GCSE Paper 3 Primary Visual Evidence
+                                 </div>
+                               </div>
+                             </div>
+                             ${
+                               hingeText
+                                 ? `
+                               <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+                                 <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
+                                 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
+                                   ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(hingeText)) : cleanQuestionText(hingeText)}
+                                 </div>
+                               </div>
+                             `
+                                 : ''
+                             }
+                           </div>
+                         </details>
+                       </div>
+                       `;
+                     }
+
                      return `
                      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0; width: 100%; grid-column: 1 / -1;">
                        <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
@@ -3777,7 +3851,9 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'edexcel_medicine' ||
           unitId === 'edexcel_medicine' ||
           window.currentUnitId === 'eee' ||
-          unitId === 'eee';
+          unitId === 'eee' ||
+          window.currentUnitId === 'weimar_nazi_germany' ||
+          unitId === 'weimar_nazi_germany';
         const bCardIdAttr =
           bLetter && isInteractiveSourceUnit
             ? `id="source-card-${bLetter}" data-source-letter="${bLetter}"`
@@ -3928,7 +4004,9 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'edexcel_medicine' ||
           unitId === 'edexcel_medicine' ||
           window.currentUnitId === 'eee' ||
-          unitId === 'eee';
+          unitId === 'eee' ||
+          window.currentUnitId === 'weimar_nazi_germany' ||
+          unitId === 'weimar_nazi_germany';
 
         if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
@@ -3938,7 +4016,7 @@ export function renderLesson(lesson) {
             : rawSource.caption || 'Archival Primary Record';
 
           blockSourceHtml = `
-            <details class="cme-source-drawer medicine-source-drawer eee-source-drawer archival-drawer gcse-source-container archival-source-box" ${bCardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+            <details class="cme-source-drawer medicine-source-drawer eee-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" ${bCardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
               <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                   <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;">${sLetter ? `SOURCE ${sLetter}` : 'ARCHIVAL EVIDENCE'}</span>
@@ -5719,7 +5797,7 @@ export function renderLesson(lesson) {
       }
 
       if (epStimulus.length > 0) {
-        htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">`;
+        htmlExamPractice += `<div class="exam-stimulus-container" style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px;">`;
         epStimulus.forEach((stim, sIdx) => {
           let stimTitle = '';
           let stimContent = '';
@@ -5736,14 +5814,70 @@ export function renderLesson(lesson) {
             stimTitle = stim.title || `Interpretation ${sIdx + 1}`;
             stimContent = stim.content || stim.text || '';
           }
-          htmlExamPractice += `
-              <div style="background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                <div style="font-weight: 700; color: #0f172a; margin-bottom: 8px; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                  <i class="fa-solid fa-book-open" style="color: #2563eb;"></i> ${stimTitle}
+
+          const isInterp = /Interpretation\s+([0-9]+)/i.test(stimTitle);
+          const interpMatch = stimTitle.match(/Interpretation\s+([0-9]+)/i);
+          const interpNum = interpMatch ? interpMatch[1] : `${sIdx + 1}`;
+
+          const srcMatch = stimTitle.match(/Source\s+([A-Z0-9]+)/i);
+          const srcLetter = srcMatch ? srcMatch[1].toUpperCase() : String.fromCharCode(65 + sIdx);
+
+          if (isInterp) {
+            const cleanInterpTitle = stimTitle
+              .replace(/^Interpretation\s+[0-9]+[:\s-]*/i, '')
+              .replace(/^\(([^)]+)\)[:\s-]*/i, '$1: ')
+              .trim();
+            const interpCardId = `interpretation-card-${interpNum}`;
+
+            htmlExamPractice += `
+              <details class="cme-source-drawer weimar-source-drawer weimar-interpretation-drawer archival-drawer gcse-source-container archival-source-box" id="${interpCardId}" data-interpretation-num="${interpNum}" style="margin: 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+                <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
+                  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <span class="archival-meta-tag" style="background: #9a3412; color: #ffffff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;">INTERPRETATION ${interpNum}</span>
+                    <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e293b; font-weight: 700;">${cleanInterpTitle || 'Historical View'}</span>
+                  </div>
+                  <span class="drawer-toggle-indicator" style="font-size: 0.8rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                    Historiographical View &bull; Expand <span class="drawer-caret">&#9660;</span>
+                  </span>
+                </summary>
+                <div class="weimar-interpretation-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                  <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.02rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #ea580c; border-radius: 4px;">
+                    ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
+                  </div>
+                  <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Historical Analysis:</strong> Pearson Edexcel GCSE Paper 3 Section B Historical Interpretation</span>
+                    <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">INTERP ${interpNum}</span>
+                  </div>
                 </div>
-                <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: #334155; font-style: italic;">${stimContent}</p>
-              </div>
+              </details>
             `;
+          } else {
+            const cleanSourceTitle = stimTitle.replace(/^Source\s+[A-Z0-9]+[:\s-]*/i, '').trim();
+            const sourceCardId = `source-card-${srcLetter}`;
+
+            htmlExamPractice += `
+              <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="${sourceCardId}" data-source-letter="${srcLetter}" style="margin: 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+                <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
+                  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;">SOURCE ${srcLetter}</span>
+                    <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e293b; font-weight: 700;">${cleanSourceTitle || 'Archival Primary Record'}</span>
+                  </div>
+                  <span class="drawer-toggle-indicator" style="font-size: 0.8rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                    Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span>
+                  </span>
+                </summary>
+                <div class="weimar-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                  <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e40af; border-radius: 4px;">
+                    ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
+                  </div>
+                  <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Provenance:</strong> ${cleanSourceTitle || 'Contemporary Written Record'}</span>
+                    <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">SOURCE ${srcLetter}</span>
+                  </div>
+                </div>
+              </details>
+            `;
+          }
         });
         htmlExamPractice += `</div>`;
       }
@@ -7419,7 +7553,8 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
     if (
       window.currentUnitId !== 'cme_new' &&
       window.currentUnitId !== 'edexcel_medicine' &&
-      window.currentUnitId !== 'eee'
+      window.currentUnitId !== 'eee' &&
+      window.currentUnitId !== 'weimar_nazi_germany'
     )
       return;
     const box = e.target.closest('[data-target-source]');
@@ -7428,12 +7563,19 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
       const card = document.getElementById(`source-card-${letter}`);
       if (card) card.classList.add('source-card-highlighted');
     }
+    const interpBox = e.target.closest('[data-target-interpretation]');
+    if (interpBox) {
+      const num = interpBox.getAttribute('data-target-interpretation');
+      const card = document.getElementById(`interpretation-card-${num}`);
+      if (card) card.classList.add('source-card-highlighted');
+    }
   });
   document.addEventListener('mouseout', (e) => {
     if (
       window.currentUnitId !== 'cme_new' &&
       window.currentUnitId !== 'edexcel_medicine' &&
-      window.currentUnitId !== 'eee'
+      window.currentUnitId !== 'eee' &&
+      window.currentUnitId !== 'weimar_nazi_germany'
     )
       return;
     const box = e.target.closest('[data-target-source]');
@@ -7442,18 +7584,36 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
       const card = document.getElementById(`source-card-${letter}`);
       if (card) card.classList.remove('source-card-highlighted');
     }
+    const interpBox = e.target.closest('[data-target-interpretation]');
+    if (interpBox) {
+      const num = interpBox.getAttribute('data-target-interpretation');
+      const card = document.getElementById(`interpretation-card-${num}`);
+      if (card) card.classList.remove('source-card-highlighted');
+    }
   });
   document.addEventListener('click', (e) => {
     if (
       window.currentUnitId !== 'cme_new' &&
       window.currentUnitId !== 'edexcel_medicine' &&
-      window.currentUnitId !== 'eee'
+      window.currentUnitId !== 'eee' &&
+      window.currentUnitId !== 'weimar_nazi_germany'
     )
       return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');
       const card = document.getElementById(`source-card-${letter}`);
+      if (card) {
+        if (card.tagName === 'DETAILS') card.open = true;
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.classList.add('source-card-highlighted');
+        setTimeout(() => card.classList.remove('source-card-highlighted'), 3000);
+      }
+    }
+    const interpBox = e.target.closest('[data-target-interpretation]');
+    if (interpBox) {
+      const num = interpBox.getAttribute('data-target-interpretation');
+      const card = document.getElementById(`interpretation-card-${num}`);
       if (card) {
         if (card.tagName === 'DETAILS') card.open = true;
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });

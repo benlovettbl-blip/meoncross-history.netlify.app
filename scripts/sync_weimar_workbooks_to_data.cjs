@@ -56,6 +56,7 @@ keyTopicKeys.forEach((kt) => {
       return;
     }
 
+    const enqNum = (globalLessonIndex % 4) + 1;
     const rightModel = generateRightExamModel(e);
     const rightTariff = cleanText(e.rectoTariff).includes('12 Marks')
       ? '12 marks'
@@ -73,21 +74,162 @@ keyTopicKeys.forEach((kt) => {
         ? '3(d). '
         : '3(a). ';
 
-    // 1. ENSURE EXAM PRACTICE HAS BOTH VERSO AND RECTO TASKS
-    if (!lesson.exam_practice) {
-      lesson.exam_practice = {
-        title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
-        questions: [],
+    // 1. BUILD VERSO QUESTION MATCHING WORKBOOK LEFT PAGE
+    let versoQ = null;
+    let lessonStimulus = lesson.exam_practice?.stimulus || [];
+
+    if (enqNum === 1) {
+      // Enquiry 1: Q1 Inference from Source A [4 marks]
+      const q1Focus = e.q1Focus || 'conditions in Germany';
+      versoQ = {
+        tariff: '4 marks',
+        type: '4-mark',
+        question: `1. Give two things you can infer from Source A about ${q1Focus}. [4 marks]`,
+        prompt:
+          'Give two separate inferences. For each inference, provide a clear deduction and support it with a direct quote or detail from Source A.',
+        model: `(i) What I can infer: I can infer that ${q1Focus} caused acute disruption and instability across Germany.<br>Details in Source A that tell me this: The source notes that conditions were deteriorating rapidly.<br><br>(ii) What I can infer: I can infer that the authorities faced severe public pressure and could not rely on standard controls.<br>Details in Source A that tell me this: The author states that popular discontent had spread into open resistance.`,
+        scaffolding: {
+          acronym: 'Inference + Detail Formula (AO3)',
+          acronym_title: 'Deduction & Quote Framework',
+          steps: [
+            {
+              letter: 'I1',
+              name: 'First Inference',
+              prompt: 'State what you can deduce from Source A (do not simply copy a quote).',
+            },
+            {
+              letter: 'Q1',
+              name: 'Supporting Quote',
+              prompt: 'Quote the exact detail from Source A that supports your first inference.',
+            },
+            {
+              letter: 'I2',
+              name: 'Second Inference',
+              prompt: 'State a second, different deduction about the topic.',
+            },
+            {
+              letter: 'Q2',
+              name: 'Supporting Quote',
+              prompt: 'Quote the exact detail from Source A that supports your second inference.',
+            },
+          ],
+        },
+      };
+    } else if (enqNum === 2) {
+      // Enquiry 2: Single Source B Utility [6 marks]
+      const singleSrc = e.singleSourceB || {
+        stem: `How useful is Source B for an enquiry into ${lesson.title}? [6 marks]`,
+        guidance:
+          'Content Deduction • Own Knowledge Corroboration • Provenance Value (Nature, Origin, Purpose).',
+        stems:
+          'Source B is useful because it reveals that... From my own knowledge, I know that... The provenance makes this account valuable because...',
+        content: 'Historical testimony documenting conditions and turning points of the crisis.',
+        provenance: 'From a contemporary record of the period.',
+      };
+
+      versoQ = {
+        tariff: '6 marks',
+        type: 'utility_6m',
+        question: `1. ${singleSrc.stem}`,
+        prompt: cleanText(singleSrc.guidance),
+        model: `Source B is useful for an enquiry into this topic because it reveals direct contemporary insight into the situation. From my own knowledge of this period, I know that these developments were central to the crisis facing Germany. Furthermore, the provenance of Source B as a contemporary account gives it significant value because it reflects immediate observations without the distortion of hindsight.`,
+        scaffolding: {
+          acronym: 'COP Utility Formula',
+          acronym_title: 'Content, Own Knowledge, Provenance',
+          steps: [
+            {
+              letter: 'C',
+              name: 'Content Deduction',
+              prompt: 'Explain what Source B reveals with a direct quote.',
+            },
+            {
+              letter: 'O',
+              name: 'Own Knowledge',
+              prompt: 'Corroborate the source using precise contextual historical facts.',
+            },
+            {
+              letter: 'P',
+              name: 'Provenance',
+              prompt: 'Evaluate how the Nature, Origin, and Purpose affect its value.',
+            },
+          ],
+        },
+      };
+
+      // Ensure singleSourceB is in stimulus if not already present
+      if (!lessonStimulus || lessonStimulus.length === 0) {
+        lessonStimulus = [
+          {
+            title: `Source B (Contemporary Written Source): ${singleSrc.provenance}`,
+            content: singleSrc.content,
+          },
+        ];
+      }
+    } else if (enqNum === 3) {
+      // Enquiry 3: Q3(a) Preparation: Content & Provenance (COP) Analysis [4 marks]
+      versoQ = {
+        tariff: '4 marks',
+        type: '4-mark',
+        question: `3(a) Part 1: Content & Provenance (COP) Comparative Analysis for Sources B & C. [4 marks]`,
+        prompt:
+          'Compare what Sources B and C reveal about the enquiry, and evaluate how their contrasting provenances affect their usefulness.',
+        model: `Source B provides valuable insight into the official or prominent viewpoint, highlighting key achievements and contemporary data. In contrast, Source C reveals an alternative critical perspective, exposing underlying social friction and popular anxieties. When evaluated together, Source B demonstrates what contemporary leadership intended, while Source C captures the reality experienced by ordinary citizens, giving both high historical utility.`,
+        scaffolding: {
+          acronym: 'COP Comparative Formula',
+          acronym_title: 'Dual-Source Evaluation',
+          steps: [
+            {
+              letter: 'B',
+              name: 'Source B Value',
+              prompt: 'Analyse Source B content and provenance strengths.',
+            },
+            {
+              letter: 'C',
+              name: 'Source C Value',
+              prompt: 'Analyse Source C content and provenance strengths.',
+            },
+            {
+              letter: 'S',
+              name: 'Synthesis',
+              prompt: 'Explain how both sources complement each other.',
+            },
+          ],
+        },
+      };
+    } else {
+      // Enquiry 4: Q3(b) Interpretation Difference [4 marks]
+      versoQ = {
+        tariff: '4 marks',
+        type: '4-mark',
+        question: `3(b). Study Interpretations 1 and 2. They give different views about ${e.interpFocus || 'the topic'}. What is the main difference between these views? [4 marks]`,
+        prompt:
+          'Explain the main difference between the two interpretations, quoting details from both to support your answer.',
+        model: `The main difference between these interpretations is their assessment of ${e.interpFocus || 'the period'}. Interpretation 1 argues that the period was characterized by substantial progress and positive transformation, emphasizing that new opportunities genuinely reshaped German society. In contrast, Interpretation 2 contends that these developments were largely superficial or provoked a severe traditionalist backlash, demonstrating that deep structural divisions remained unresolved.`,
+        scaffolding: {
+          acronym: 'Difference + Quotes Formula',
+          acronym_title: 'Historiographical Comparison',
+          steps: [
+            {
+              letter: 'D',
+              name: 'Core Difference',
+              prompt: 'Identify the key conceptual disagreement between both views.',
+            },
+            {
+              letter: 'I1',
+              name: 'Quote Interp 1',
+              prompt: 'Quote and explain a phrase from Interpretation 1.',
+            },
+            {
+              letter: 'I2',
+              name: 'Quote Interp 2',
+              prompt: 'Quote and explain a phrase from Interpretation 2.',
+            },
+          ],
+        },
       };
     }
 
-    const versoQ = (lesson.exam_practice.questions && lesson.exam_practice.questions[0]) || {
-      tariff: '4 marks',
-      type: '4-mark',
-      question: `1. Give two things you can infer from Source A about the topic. (4 marks)`,
-      model: 'I can infer that the situation was critical. Details in the source support this.',
-    };
-
+    // 2. BUILD RECTO QUESTION MATCHING WORKBOOK RIGHT PAGE
     const rectoQ = {
       tariff: rightTariff,
       type: rightType,
@@ -113,17 +255,20 @@ keyTopicKeys.forEach((kt) => {
       },
     };
 
-    lesson.exam_practice.title = 'Edexcel GCSE (9–1) Paper 3 Exam Practice';
-    lesson.exam_practice.tariff = `20 marks (Q1 & ${rightQNum.trim()})`;
-    lesson.exam_practice.questions = [versoQ, rectoQ];
+    lesson.exam_practice = {
+      title: 'Edexcel GCSE (9–1) Paper 3 Exam Practice',
+      tariff: `Section A & Section B (${versoQ.tariff} & ${rightTariff})`,
+      stimulus: lessonStimulus,
+      questions: [versoQ, rectoQ],
+    };
 
-    // 2. GCSE TASK (Standard interactive task cards)
+    // 3. GCSE TASK (Standard interactive task cards)
     lesson.gcse_task = {
       title: `Edexcel GCSE Paper 3 Exam Practice: Section A & Section B`,
       tasks: [
         {
           type: 'written',
-          tariff: versoQ.tariff || 'Q1: Inference [4 marks]',
+          tariff: versoQ.tariff,
           text: versoQ.question,
           model: versoQ.model,
         },
