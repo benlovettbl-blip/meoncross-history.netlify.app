@@ -112,6 +112,10 @@ const unitData = {
     {
       id: 'lesson_1',
       key_individual: {
+        anchor_act: 3,
+        anchor_title: 'The Balfour Declaration & Contradictory Imperial Pledges (1917)',
+        anchor_rationale:
+          'Anchored directly adjacent to the 1917 Balfour Declaration where British imperial diplomacy committed to sponsoring a Jewish national home in Palestine.',
         name: 'Arthur Balfour',
         role: 'British Foreign Secretary (1916–1919)',
         lifespan: '1848–1930',
@@ -1332,6 +1336,10 @@ const unitData = {
     {
       id: 'lesson_2',
       key_individual: {
+        anchor_act: 11,
+        anchor_title: 'The Declaration of the State of Israel (14 May 1948)',
+        anchor_rationale:
+          'Anchored directly adjacent to the 14 May 1948 Declaration of Independence in Tel Aviv and the subsequent consolidation of the IDF.',
         name: 'David Ben-Gurion',
         role: 'First Prime Minister of Israel (1948–1954, 1955–1963)',
         lifespan: '1886–1973',
@@ -2744,6 +2752,10 @@ const unitData = {
     {
       id: 'lesson_3',
       key_individual: {
+        anchor_act: 2,
+        anchor_title: 'West Bank Annexation & Absorption of Palestinian Refugees',
+        anchor_rationale:
+          'Anchored adjacent to the 1950 annexation of the West Bank and granting of Jordanian citizenship to over 400,000 Palestinian refugees.',
         name: 'King Hussein of Jordan',
         role: 'King of the Hashemite Kingdom of Jordan (1952–1999)',
         lifespan: '1935–1999',
@@ -3957,6 +3969,10 @@ const unitData = {
     {
       id: 'lesson_4',
       key_individual: {
+        anchor_act: 5,
+        anchor_title: 'Imperial Outrage & The Secret Sèvres Protocol (October 1956)',
+        anchor_rationale:
+          'Anchored directly adjacent to the secret Sèvres collusion between Britain, France, and Israel orchestrated by Prime Minister Eden.',
         name: 'Anthony Eden',
         role: 'Prime Minister of the United Kingdom (1955–1957)',
         lifespan: '1897–1977',
@@ -5189,6 +5205,10 @@ const unitData = {
     {
       id: 'lesson_6',
       key_individual: {
+        anchor_act: 1,
+        anchor_title: 'Act 1: The 1964 Cairo Conference & The Water Wars',
+        anchor_rationale:
+          'Anchored directly adjacent to Act 1 where Nasser convened Arab heads of state to establish the PLO and divert the River Jordan headwaters.',
         name: 'Gamal Abdel Nasser',
         role: 'President of Egypt (1954–1970)',
         lifespan: '1918–1970',
@@ -6059,6 +6079,10 @@ const unitData = {
     {
       id: 'lesson_7',
       key_individual: {
+        anchor_act: 2,
+        anchor_title: 'Act 2: The Pre-Emptive Dawn Airstrike & Air Dominance (5 June 1967)',
+        anchor_rationale:
+          'Anchored directly adjacent to Act 2 where newly appointed Defence Minister Dayan authorized the pre-emptive air blitz destroying the Egyptian air force in three hours.',
         name: 'Moshe Dayan',
         role: 'Israeli Minister of Defence (1967–1974)',
         lifespan: '1915–1981',
@@ -6867,6 +6891,10 @@ const unitData = {
     {
       id: 'lesson_8',
       key_individual: {
+        anchor_act: 3,
+        anchor_title: 'Act 3: UN Resolution 242 & The Land for Peace Formula',
+        anchor_rationale:
+          'Anchored adjacent to Act 3 where Prime Minister Meir navigated the post-1967 territorial stalemate and rejected withdrawal without formal Arab recognition.',
         name: 'Golda Meir',
         role: 'Prime Minister of Israel (1969–1974)',
         lifespan: '1898–1978',
@@ -7750,6 +7778,11 @@ const unitData = {
     {
       id: 'lesson_9',
       key_individual: {
+        anchor_act: 1,
+        anchor_title:
+          'Act 1: From Dependence to Armed Resistance & The Battle of Karameh (1968–1969)',
+        anchor_rationale:
+          "Anchored directly adjacent to Act 1 where Arafat's Fatah fedayeen fought at Karameh, propelling him to chairmanship of the PLO.",
         name: 'Yasser Arafat',
         role: 'Chairman of the PLO / Leader of Fatah (1969–2004)',
         lifespan: '1929–2004',
@@ -8579,6 +8612,10 @@ const unitData = {
     {
       id: 'lesson_10',
       key_individual: {
+        anchor_act: 1,
+        anchor_title: "Act 1: The Impasse of Attrition & Anwar Sadat's Plan (1969–1973)",
+        anchor_rationale:
+          'Anchored directly adjacent to Act 1 where Sadat formulated his limited-war doctrine, expelled Soviet military advisors, and planned the surprise crossing.',
         name: 'Anwar Sadat',
         role: 'President of Egypt (1970–1981)',
         lifespan: '1918–1981',
@@ -9377,6 +9414,10 @@ const unitData = {
     {
       id: 'lesson_11',
       key_individual: {
+        anchor_act: 6,
+        anchor_title: 'The Historic Election of Menachem Begin & Likud Victory (May 1977)',
+        anchor_rationale:
+          'Anchored adjacent to the historic May 1977 Likud election victory ending 29 years of Labour hegemony and setting the stage for Camp David.',
         name: 'Menachem Begin',
         role: 'Prime Minister of Israel (1977–1983)',
         lifespan: '1913–1992',
@@ -10647,6 +10688,10 @@ const unitData = {
     {
       id: 'lesson_12',
       key_individual: {
+        anchor_act: 9,
+        anchor_title: 'The 10-Week Siege of Beirut & Operation Peace for Galilee (Summer 1982)',
+        anchor_rationale:
+          'Anchored directly adjacent to the 1982 Siege of Beirut where Defence Minister Sharon drove IDF forces past the 40km limit into Lebanon.',
         name: 'Ariel Sharon',
         role: 'Israeli Minister of Defence (1981–1983)',
         lifespan: '1928–2014',
@@ -12029,6 +12074,11 @@ const unitData = {
     {
       id: 'lesson_13',
       key_individual: {
+        anchor_act: 9,
+        anchor_title:
+          'Signing the Oslo I Accords: The Declaration of Principles (13 September 1993)',
+        anchor_rationale:
+          'Anchored directly adjacent to the historic 13 September 1993 White House handshake between Rabin and Arafat signing Oslo I.',
         name: 'Yitzhak Rabin',
         role: 'Prime Minister of Israel (1974–1977, 1992–1995)',
         lifespan: '1922–1995',

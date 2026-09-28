@@ -5413,3 +5413,40 @@ details.spotlight-drawer summary i.fa-chevron-down {
 details.spotlight-drawer[open] summary i.fa-chevron-down {
   transform: rotate(180deg);
 }
+
+/* --- REC-002: Act-Level Anchored Key Figures --- */
+.key-individual-lesson-section {
+  margin: 32px 0 28px 0;
+  position: relative;
+}
+
+.key-individual-anchor-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family:
+    'Inter',
+    -apple-system,
+    sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.key-individual-anchor-badge {
+  background: #1e40af;
+  color: #ffffff;
+  padding: 3px 9px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(30, 64, 175, 0.25);
+}
+
+.key-individual-anchor-text {
+  color: #1e3a8a;
+  font-weight: 700;
+}

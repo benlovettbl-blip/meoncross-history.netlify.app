@@ -39,11 +39,20 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-// Safely parse data.js
+// Safely parse data.js using vm sandbox
+const vm = require('vm');
 const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
+const cleanedCode = dataContent
+  .replace(/export\s+default\s+[^;]+;?/g, '')
+  .replace(/export\s*\{[^}]*\};?/g, '');
+const sandbox = { window: {}, module: { exports: {} } };
+vm.createContext(sandbox);
+vm.runInContext(
+  cleanedCode +
+    '\n; window.unitData = (typeof unitData !== "undefined") ? unitData : (window.unitData || module.exports || null);',
+  sandbox,
+);
+const unitData = sandbox.window.unitData;
 
 // Key Topic 2 lessons: index 4 to 8 (Lessons 6 through 10)
 const kt2Lessons = unitData.lessons.slice(4, 9);
@@ -1362,6 +1371,7 @@ async function buildPublisherTextbookHtml() {
         <!-- Two-Column Prose for Sections 1 & 2 -->
         <div class="two-column-prose">
           ${acts1And2.map((b, idx) => renderActBlock(b, idx + 1)).join('')}
+          ${ki && ki.anchor_act && ki.anchor_act <= 2 ? keyIndividualCardHtml : ''}
         </div>
 
         ${vocabDeckHtml}
@@ -1386,7 +1396,7 @@ async function buildPublisherTextbookHtml() {
         <!-- Two-Column Prose for Sections 3 & 4 with Embedded Key Figure Profile Box -->
         <div class="two-column-prose">
           ${acts3And4.map((b, idx) => renderActBlock(b, idx + 3)).join('')}
-          ${keyIndividualCardHtml}
+          ${ki && (!ki.anchor_act || ki.anchor_act > 2) ? keyIndividualCardHtml : ''}
         </div>
 
         ${enquiryDeckHtml}

@@ -3062,6 +3062,7 @@ export function renderLesson(lesson) {
       `;
     }
 
+    let renderedKeyIndividual = false;
     lesson.narrative_blocks.forEach((block, index) => {
       if (block.type === 'causal_diagram') {
         htmlNarrative += `
@@ -5012,10 +5013,59 @@ export function renderLesson(lesson) {
       }
 
       htmlNarrative += extrasHtml;
+
+      // REC-002: Act-Level Anchoring of Key Figures
+      if (lesson.key_individual && !renderedKeyIndividual) {
+        const ki = lesson.key_individual;
+        const totalBlocks = lesson.narrative_blocks.length;
+        let isAnchor = false;
+        if (
+          ki.anchor_act &&
+          (ki.anchor_act === index + 1 ||
+            (index + 1 === totalBlocks && ki.anchor_act > totalBlocks))
+        ) {
+          isAnchor = true;
+        } else if (ki.anchor_block && ki.anchor_block === index + 1) {
+          isAnchor = true;
+        } else if (
+          ki.anchor_title &&
+          block.title &&
+          block.title.toLowerCase().includes(ki.anchor_title.toLowerCase())
+        ) {
+          isAnchor = true;
+        } else if (index === totalBlocks - 1 && !ki.anchor_act && !ki.anchor_block) {
+          isAnchor = true;
+        }
+
+        if (isAnchor) {
+          const kiCardHtml = generateKeyIndividualEmbedHTML
+            ? generateKeyIndividualEmbedHTML(ki)
+            : `<div>${ki.name}</div>`;
+          const anchorBadge = ki.anchor_title
+            ? `
+              <div class="key-individual-anchor-banner" style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">
+                <span class="key-individual-anchor-badge" style="background: #1e40af; color: #fff; padding: 2px 7px; border-radius: 3px; display: inline-flex; align-items: center; gap: 5px;">
+                  <i class="fa-solid fa-user-tie"></i> Decisive Historical Agent
+                </span>
+                <span class="key-individual-anchor-text" style="color: #1e3a8a;">Anchored to ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(ki.anchor_title) : ki.anchor_title}</span>
+              </div>
+            `
+            : '';
+          htmlNarrative += `
+            <div class="key-individual-lesson-section" data-anchor-act="${index + 1}" style="margin-top: 30px; margin-bottom: 25px;">
+              ${anchorBadge}
+              <div class="key-individual-embed">
+                ${kiCardHtml}
+              </div>
+            </div>
+          `;
+          renderedKeyIndividual = true;
+        }
+      }
     });
     htmlNarrative += '</div>';
 
-    if (lesson.key_individual) {
+    if (lesson.key_individual && !renderedKeyIndividual) {
       const ki = lesson.key_individual;
       const kiCardHtml = generateKeyIndividualEmbedHTML
         ? generateKeyIndividualEmbedHTML(ki)
