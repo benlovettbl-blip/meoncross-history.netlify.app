@@ -1,4 +1,4 @@
-const weimar_nazi_germany = {
+const unitData = {
   specification_file: '/data/weimar_nazi_germany_spec.json',
   title: 'Paper 3: Weimar and Nazi Germany, 1918-39',
   enquiry_question: 'From Democracy to Dictatorship: How did Hitler destroy the Weimar Republic?',
@@ -9470,9 +9470,4 @@ const weimar_nazi_germany = {
   ],
 };
 
-export const unitData = weimar_nazi_germany;
-export default weimar_nazi_germany;
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = weimar_nazi_germany;
-}
+export default unitData;

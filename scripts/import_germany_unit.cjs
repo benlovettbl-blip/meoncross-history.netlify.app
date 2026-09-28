@@ -228,10 +228,32 @@ const EYEWITNESS_QUOTES = {
   },
 };
 
+// Chronological & thematic block target mapping (0-indexed)
+const LESSON_TARGET_MAP = {
+  lesson_1_1: { imageBlock: 2, quoteBlock: 0 },
+  lesson_1_2: { imageBlock: 2, quoteBlock: 4 }, // Kapp Putsch image to block 2, Pustau quote to hyperinflation (block 4)
+  lesson_1_3: { imageBlock: 0, quoteBlock: 4 }, // Stresemann dancing on a volcano to block 4
+  lesson_1_4: { imageBlock: 2, quoteBlock: 2 }, // Bauhaus & Isherwood to culture (block 2)
+  lesson_2_1: { imageBlock: 1, quoteBlock: 1 }, // Hitler portrait & Ludecke to oratory (block 1)
+  lesson_2_2: { imageBlock: 2, quoteBlock: 1 }, // Hanfstaengl to Bürgerbräukeller (block 1), trial image to trial (block 2)
+  lesson_2_3: { imageBlock: 3, quoteBlock: 0 }, // Hauser in block 0, election poster to campaign (block 3)
+  lesson_2_4: { imageBlock: 4, quoteBlock: 4 }, // Papen quote & Hindenburg image to appointment (block 4)
+  lesson_3_1: { imageBlock: 0, quoteBlock: 0 }, // Reichstag fire image & Sternberger quote in block 0
+  lesson_3_2: { imageBlock: 3, quoteBlock: 0 }, // Klemperer in block 0 (Gestapo), Dachau image to Dachau (block 3)
+  lesson_3_3: { imageBlock: 2, quoteBlock: 2 }, // Shirer quote & rally image to Nuremberg Rally (block 2)
+  lesson_3_4: { imageBlock: 3, quoteBlock: 3 }, // Sophie Scholl & Hans Scholl to youth resistance (block 3)
+  lesson_4_1: { imageBlock: 1, quoteBlock: 1 }, // Mother's Cross & Gartner to birth rewards (block 1)
+  lesson_4_2: { imageBlock: 3, quoteBlock: 3 }, // BDM pennant & Heck quote to youth movements (block 3)
+  lesson_4_3: { imageBlock: 0, quoteBlock: 3 }, // Autobahn in block 0, worker DAF quote to DAF (block 3)
+  lesson_4_4: { imageBlock: 4, quoteBlock: 4 }, // Kristallnacht image & Klüger quote to Kristallnacht (block 4)
+};
+
 console.log('--- Step 2: Streamlining all 16 lessons ---');
 
 unitData.lessons.forEach((lesson, index) => {
   console.log(`Processing Lesson ${lesson.id} (${lesson.title})...`);
+
+  const targets = LESSON_TARGET_MAP[lesson.id] || { imageBlock: 0, quoteBlock: 0 };
 
   // 1. Extract visual source from utility_starters if present
   let visualSource = null;
@@ -242,7 +264,7 @@ unitData.lessons.forEach((lesson, index) => {
   // Set utility_starters to null to eliminate top clutter
   lesson.utility_starters = null;
 
-  // 2. Embed visual source into narrative_blocks[0]
+  // 2. Embed visual source into target narrative block
   if (visualSource && lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
     const cleanSrc = visualSource.source.replace(/\?v=\d+/, '');
     const contextText = visualSource.source_context || lesson.teacher_notes?.source_context || '';
@@ -253,7 +275,8 @@ unitData.lessons.forEach((lesson, index) => {
       finalContext += ` **Hinge Question:** Why is this visual source particularly significant for understanding the historical events of this lesson?`;
     }
 
-    lesson.narrative_blocks[0].images = [
+    const imgBlockIdx = Math.min(targets.imageBlock, lesson.narrative_blocks.length - 1);
+    lesson.narrative_blocks[imgBlockIdx].images = [
       {
         src: cleanSrc,
         caption: visualSource.caption || 'Authentic Historical Source',
@@ -267,14 +290,16 @@ unitData.lessons.forEach((lesson, index) => {
     }
   }
 
-  // 3. Embed contemporary eyewitness testimony into narrative_blocks[0].text
+  // 3. Embed contemporary eyewitness testimony into target narrative block text
   const testimony = EYEWITNESS_QUOTES[lesson.id];
   if (testimony && lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
-    let block0Text = lesson.narrative_blocks[0].text || '';
+    const quoteBlockIdx = Math.min(targets.quoteBlock, lesson.narrative_blocks.length - 1);
+    const targetBlock = lesson.narrative_blocks[quoteBlockIdx];
+    let blockText = targetBlock.text || '';
     // Avoid double-injecting
-    if (!block0Text.includes('Lived Experience:')) {
+    if (!blockText.includes('Lived Experience:')) {
       const quoteBlock = `<br><br>> **Lived Experience: ${testimony.speaker} (${testimony.role})**<br>> "${testimony.quote}"`;
-      lesson.narrative_blocks[0].text = block0Text + quoteBlock;
+      targetBlock.text = blockText + quoteBlock;
     }
   }
 
