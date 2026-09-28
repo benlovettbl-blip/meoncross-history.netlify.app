@@ -3649,16 +3649,18 @@ export function renderLesson(lesson) {
 
         const bLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
         const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : rawSource.letter || '';
+        const isInteractiveSourceUnit =
+          window.currentUnitId === 'cme_new' ||
+          window.currentUnitId === 'edexcel_medicine' ||
+          unitId === 'edexcel_medicine';
         const bCardIdAttr =
-          bLetter && window.currentUnitId === 'cme_new'
+          bLetter && isInteractiveSourceUnit
             ? `id="source-card-${bLetter}" data-source-letter="${bLetter}"`
             : '';
         const bQClassAttr =
-          bLetter && window.currentUnitId === 'cme_new'
-            ? 'source-inquiry-box source-inquiry-interactive'
-            : '';
+          bLetter && isInteractiveSourceUnit ? 'source-inquiry-box source-inquiry-interactive' : '';
         const bQDataAttr =
-          bLetter && window.currentUnitId === 'cme_new'
+          bLetter && isInteractiveSourceUnit
             ? `data-target-source="${bLetter}" title="Hover or click to highlight Source ${bLetter}"`
             : '';
 
@@ -3796,7 +3798,12 @@ export function renderLesson(lesson) {
           `;
         }
 
-        if (window.currentUnitId === 'cme_new') {
+        const isAccordionUnit =
+          window.currentUnitId === 'cme_new' ||
+          window.currentUnitId === 'edexcel_medicine' ||
+          unitId === 'edexcel_medicine';
+
+        if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
           const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
           const displayTitle = rawSource.title
@@ -3804,7 +3811,7 @@ export function renderLesson(lesson) {
             : rawSource.caption || 'Archival Primary Record';
 
           blockSourceHtml = `
-            <details class="cme-source-drawer archival-drawer gcse-source-container archival-source-box" ${bCardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+            <details class="cme-source-drawer medicine-source-drawer archival-drawer gcse-source-container archival-source-box" ${bCardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
               <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                   <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;">${sLetter ? `SOURCE ${sLetter}` : 'ARCHIVAL EVIDENCE'}</span>
@@ -7282,7 +7289,7 @@ ${poem.poem_text}
 if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
   window._cmeSourceHighlightBound = true;
   document.addEventListener('mouseover', (e) => {
-    if (window.currentUnitId !== 'cme_new') return;
+    if (window.currentUnitId !== 'cme_new' && window.currentUnitId !== 'edexcel_medicine') return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');
@@ -7291,7 +7298,7 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
     }
   });
   document.addEventListener('mouseout', (e) => {
-    if (window.currentUnitId !== 'cme_new') return;
+    if (window.currentUnitId !== 'cme_new' && window.currentUnitId !== 'edexcel_medicine') return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');
@@ -7300,12 +7307,13 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
     }
   });
   document.addEventListener('click', (e) => {
-    if (window.currentUnitId !== 'cme_new') return;
+    if (window.currentUnitId !== 'cme_new' && window.currentUnitId !== 'edexcel_medicine') return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');
       const card = document.getElementById(`source-card-${letter}`);
       if (card) {
+        if (card.tagName === 'DETAILS') card.open = true;
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         card.classList.add('source-card-highlighted');
         setTimeout(() => card.classList.remove('source-card-highlighted'), 3000);

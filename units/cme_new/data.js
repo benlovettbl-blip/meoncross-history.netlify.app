@@ -4445,22 +4445,11 @@ const unitData = {
           text: '**The Gaza Raid (February 1955) & The Czech Arms Deal:** Tensions escalated on 28 February 1955 when Israeli paratroopers launched a devastating reprisal raid into the **Gaza Strip**, killing **37 Egyptian soldiers** and exposing Egyptian military weakness. Humiliated, Nasser sought modern weapons to defend Egypt. When Western nations refused arms sales without anti-Soviet political conditions, Nasser bypassed them. In September 1955, Nasser stunned the world by signing the **Czech Arms Deal**, purchasing 200 Soviet MiG-15 jet fighters and 300 tanks via Czechoslovakia. This shattered the Western arms monopoly and brought the Cold War directly into the Middle East.',
           level_4:
             'In February 1955, an Israeli raid on Gaza killed 37 Egyptian soldiers, exposing Egypt’s military weakness. Nasser responded with the September 1955 Czech Arms Deal, buying 200 Soviet MiG jets and 300 tanks via Czechoslovakia, shattering the Western arms monopoly.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Why did President Nasser turn to the Soviet Bloc for the 1955 Czech Arms Deal, and how did this upset Western influence in the Middle East? (P3)',
-              starter: 'Nasser negotiated the Czech Arms Deal because...',
-              model:
-                'Following the devastating Israeli raid on Gaza in February 1955 that killed 37 Egyptian soldiers, Western powers refused to sell arms to Egypt unless Nasser joined anti-Soviet alliances. Nasser bypassed Western restrictions by purchasing over 200 MiG fighter jets and tanks from Czechoslovakia with Soviet backing. This shattered the Western monopoly on Middle Eastern weapons and convinced Britain and France that Nasser was an existential threat aligned with Moscow.',
-              model_answer:
-                'Following the devastating Israeli raid on Gaza in February 1955 that killed 37 Egyptian soldiers, Western powers refused to sell arms to Egypt unless Nasser joined anti-Soviet alliances. Nasser bypassed Western restrictions by purchasing over 200 MiG fighter jets and tanks from Czechoslovakia with Soviet backing. This shattered the Western monopoly on Middle Eastern weapons and convinced Britain and France that Nasser was an existential threat aligned with Moscow.',
-            },
-          ],
         },
         {
-          text: '**The Israeli Gaza Raid (February 1955): The Fatal Turning Point:** <img src="/units/cme_new/assets/gaza_raid.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="gaza_raid">',
+          text: '**The Israeli Gaza Raid (February 1955): The Fatal Turning Point:** <img src="/units/cme_new/assets/gaza_raid.svg" class="svg-diagram" style="width: 100%; max-width: 720px; max-height: 180px; display: block; margin: 15px auto; border-radius: 8px;" alt="gaza_raid">',
           level_4:
-            '<img src="/units/cme_new/assets/gaza_raid.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="gaza_raid">',
+            '<img src="/units/cme_new/assets/gaza_raid.svg" class="svg-diagram" style="width: 100%; max-width: 720px; max-height: 180px; display: block; margin: 15px auto; border-radius: 8px;" alt="gaza_raid">',
         },
         {
           text: '**Aswan Dam Cancellation & Canal Nationalisation (26 July 1956):** To finance the Aswan High Dam, the US and Britain initially offered loans. However, alarmed by Nasser\'s Soviet arms deal and recognition of Communist China, US Secretary of State Dulles and British PM Anthony Eden abruptly cancelled all funding on 19 July 1956. Nasser struck back defiantly. On **26 July 1956**, addressing a crowd in Alexandria, Nasser announced the complete **nationalisation** of the Suez Canal Company. He declared that Egypt would seize the canal from foreign shareholders and use its £35 million annual transit tolls to directly fund the Aswan Dam: *\"Today we take back what is rightfully ours!\"*',
@@ -4476,62 +4465,16 @@ const unitData = {
             model_answer:
               "Nasser framed the Suez Canal as Egypt's national property that had been exploited by foreign colonial powers for nearly a century while 120,000 Egyptian workers died digging it. By nationalising the canal, he declared that its annual revenues would be used directly to build the Aswan High Dam after the US and Britain cancelled their promised loans, turning a financial setback into a triumph of Egyptian economic sovereignty.",
           },
-          tasks: [
-            {
-              type: 'written',
-              text: 'Explain why President Nasser nationalised the Suez Canal on 26 July 1956, and why Britain viewed this as an unacceptable threat. (P5)',
-              starter: 'Nasser nationalised the Suez Canal in response to...',
-              model:
-                "When the US and Britain abruptly cancelled funding for the vital Aswan High Dam to punish Egypt for recognizing Communist China, Nasser nationalised the Suez Canal to use its £35 million annual transit tolls to finance dam construction. British Prime Minister Anthony Eden viewed this as an intolerable seizure of imperial property that threatened Britain's economic lifeline—through which two-thirds of Western Europe's oil supplies passed.",
-              model_answer:
-                "When the US and Britain abruptly cancelled funding for the vital Aswan High Dam to punish Egypt for recognizing Communist China, Nasser nationalised the Suez Canal to use its £35 million annual transit tolls to finance dam construction. British Prime Minister Anthony Eden viewed this as an intolerable seizure of imperial property that threatened Britain's economic lifeline—through which two-thirds of Western Europe's oil supplies passed.",
-            },
-          ],
         },
         {
           text: '**Imperial Outrage & The Secret Sèvres Agreement (October 1956):** Canal nationalisation outraged Britain and France. British Prime Minister Anthony Eden viewed Nasser as a dangerous dictator threatening Europe’s oil supplies. France wanted to halt Egyptian support for Algerian rebels, while Israel wanted to crush fedayeen bases and break the blockade of the **Straits of Tiran**. In October 1956, senior leaders secretly met in France and signed the **secret Sèvres agreement** (secret tripartite agreement)—a tripartite conspiracy of deception. Under the plan, Israel would launch a surprise invasion of Sinai on 29 October. Britain and France would then issue an ultimatum commanding both sides to withdraw ten miles from the canal under the guise of "peacekeepers". When Egypt predictably refused to abandon sovereign territory, Anglo-French forces would bomb Egyptian airfields and invade Port Said to seize the canal and overthrow Nasser.',
           level_4:
             'Outraged by the canal nationalisation, Britain, France, and Israel secretly signed the Sèvres agreement in October 1956. Israel would invade Sinai, giving Britain and France the false pretext to intervene as "peacekeepers" to seize the canal and depose Nasser.',
-          tasks: [
-            {
-              type: 'table_planner',
-              title:
-                'Sèvres Protocol Collusion Matrix: Complete the table below analyzing the secret conspiracy forged between Britain, France, and Israel in October 1956:',
-              text: 'Sèvres Protocol Collusion Matrix: Complete the table below analyzing the secret conspiracy forged between Britain, France, and Israel in October 1956:',
-              columns: ['Conspirator Nation', 'Official Public Pretext', 'Secret Real Objective'],
-              rows: 3,
-              model:
-                'Israel: Pretext was stopping fedayeen raids; real goal was capturing Sinai and opening Straits of Tiran. Britain & France: Pretext was separating combatants and protecting the canal; real goal was toppling Nasser and regaining imperial ownership of the Suez Canal.',
-              flowchart: {
-                title: '⚡ Dual-Coding Sequence: The Secret Sèvres Protocol (October 1956)',
-                steps: [
-                  {
-                    num: 1,
-                    badge: 'Pretext Invasion',
-                    title: 'Israel Invades Sinai',
-                    desc: '29 Oct 1956: Israeli paratroopers drop into Mitla Pass and sweep toward the Suez Canal, manufacturing an armed conflict.',
-                  },
-                  {
-                    num: 2,
-                    badge: 'Collusive Ultimatum',
-                    title: "Anglo-French 'Peace' Ultimatum",
-                    desc: '30 Oct 1956: Britain and France feign shock and order both sides to withdraw 10 miles from the Canal, knowing Egypt cannot comply.',
-                  },
-                  {
-                    num: 3,
-                    badge: 'Canal Seizure',
-                    title: 'Anglo-French Invasion',
-                    desc: "5 Nov 1956: Citing Egypt's refusal, British and French troops invade Port Said to 'protect' the Canal and depose Nasser.",
-                  },
-                ],
-              },
-            },
-          ],
         },
         {
-          text: '**The Sèvres Protocol (October 1956): The Secret Tripartite Collusion:** <img src="/units/cme_new/assets/sevres_protocol.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sevres_protocol">',
+          text: '**The Sèvres Protocol (October 1956): The Secret Tripartite Collusion:** <img src="/units/cme_new/assets/sevres_protocol.svg" class="svg-diagram" style="width: 100%; max-width: 720px; max-height: 180px; display: block; margin: 15px auto; border-radius: 8px;" alt="sevres_protocol">',
           level_4:
-            '<img src="/units/cme_new/assets/sevres_protocol.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sevres_protocol">',
+            '<img src="/units/cme_new/assets/sevres_protocol.svg" class="svg-diagram" style="width: 100%; max-width: 720px; max-height: 180px; display: block; margin: 15px auto; border-radius: 8px;" alt="sevres_protocol">',
         },
         {
           text: '**The Tripartite Invasion & Canal Blockade (October–November 1956):** On 29 October 1956, Israel invaded Sinai, sweeping across the desert to Sharm el-Sheikh and lifting the blockade of the Straits of Tiran. Britain and France immediately issued their pre-planned ultimatum. When Egypt refused to withdraw, Anglo-French planes bombed Egyptian airfields on 31 October, and paratroopers landed at Port Said on 5 November to seize the canal. Nasser responded with defiance: Egyptian forces scuttled over 40 merchant ships and cement barges in the waterway, completely blocking the Suez Canal to international shipping.',
@@ -4562,17 +4505,6 @@ const unitData = {
             model_answer:
               'Britain and France claimed they were acting as neutral peacekeepers to protect the canal from the outbreak of fighting between Egypt and Israel. In reality, the Sèvres Protocol proved they had colluded in secret with Israel: Israel agreed to attack Egypt first so Britain and France could intervene under the guise of protecting the canal, with the real objective of overthrowing Nasser and restoring European colonial control over the waterway.',
           },
-          tasks: [
-            {
-              type: 'written',
-              text: "Why did the Anglo-French invasion of Suez collapse in humiliation, and what was its impact on Britain's global standing? (P10)",
-              starter: 'The invasion collapsed because US President Dwight D. Eisenhower...',
-              model:
-                'The invasion collapsed when US President Eisenhower furiously opposed the military action, threatening to dump US holdings of British Sterling and block emergency IMF loans unless British forces withdrew immediately. The Soviet Union also threatened rocket attacks on London and Paris. The humiliating retreat proved that Britain and France could no longer act as independent world superpowers without American approval, accelerating the end of the British Empire.',
-              model_answer:
-                'The invasion collapsed when US President Eisenhower furiously opposed the military action, threatening to dump US holdings of British Sterling and block emergency IMF loans unless British forces withdrew immediately. The Soviet Union also threatened rocket attacks on London and Paris. The humiliating retreat proved that Britain and France could no longer act as independent world superpowers without American approval, accelerating the end of the British Empire.',
-            },
-          ],
         },
         {
           text: '**The Humiliation of Empires & Geopolitical Consequences:** <table style="width:100%; border-collapse: collapse; margin: 15px 0;"> <thead> <tr> <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For Egypt and Nasser</th> <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For Israel’s Security</th> <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For the Cold War</th> </tr> </thead> <tbody> <tr> <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">Nasser emerged from the crisis as an <strong>undisputed Arab folk hero</strong>. Although his army had been defeated on the battlefield, he had successfully stood up to British, French, and Israeli "imperialism" and kept control of the Suez Canal, cementing Egypt’s leadership of the Arab world.</td> <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">Israel scored massive military and strategic benefits. The IDF had proven its <strong>unquestioned military superiority</strong>, routing the Egyptian army in just a few days, which acted as a powerful deterrent against future Arab invasions.</td> <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">The Middle East became a central theater of the Cold War. British and French colonial influence in the region was permanently broken, replaced by direct <strong>US support for Israel</strong> and <strong>Soviet backing for Egypt and Syria</strong>.</td> </tr> </tbody> </table>',

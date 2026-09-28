@@ -5118,26 +5118,38 @@ body.mobile-fullscreen-quiz-active .app-sidebar {
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.35) !important;
 }
 
-/* --- CME Primary Source Archival Drawer --- */
-details.cme-source-drawer {
+/* --- CME & Medicine Primary Source Archival Drawer --- */
+details.cme-source-drawer,
+details.medicine-source-drawer,
+details.archival-drawer {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 details.cme-source-drawer summary::-webkit-details-marker,
-details.cme-source-drawer summary::marker {
+details.cme-source-drawer summary::marker,
+details.medicine-source-drawer summary::-webkit-details-marker,
+details.medicine-source-drawer summary::marker,
+details.archival-drawer summary::-webkit-details-marker,
+details.archival-drawer summary::marker {
   display: none !important;
 }
 
-details.cme-source-drawer summary:hover {
+details.cme-source-drawer summary:hover,
+details.medicine-source-drawer summary:hover,
+details.archival-drawer summary:hover {
   background: #e2e8f0 !important;
 }
 
-details.cme-source-drawer[open] summary {
+details.cme-source-drawer[open] summary,
+details.medicine-source-drawer[open] summary,
+details.archival-drawer[open] summary {
   background: #e2e8f0 !important;
   border-bottom: 1px solid #cbd5e1 !important;
 }
 
-details.cme-source-drawer summary .drawer-caret {
+details.cme-source-drawer summary .drawer-caret,
+details.medicine-source-drawer summary .drawer-caret,
+details.archival-drawer summary .drawer-caret {
   display: inline-block;
   transition: transform 0.25s ease;
   font-size: 0.75rem;
@@ -5145,23 +5157,33 @@ details.cme-source-drawer summary .drawer-caret {
   color: #1e40af;
 }
 
-details.cme-source-drawer[open] summary .drawer-caret {
+details.cme-source-drawer[open] summary .drawer-caret,
+details.medicine-source-drawer[open] summary .drawer-caret,
+details.archival-drawer[open] summary .drawer-caret {
   transform: rotate(180deg);
 }
 
-details.cme-source-drawer[open] {
+details.cme-source-drawer[open],
+details.medicine-source-drawer[open],
+details.archival-drawer[open] {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06) !important;
 }
 
 @media print {
-  details.cme-source-drawer {
+  details.cme-source-drawer,
+  details.medicine-source-drawer,
+  details.archival-drawer {
     display: block !important;
     border: 1px solid #94a3b8 !important;
   }
-  details.cme-source-drawer summary {
+  details.cme-source-drawer summary,
+  details.medicine-source-drawer summary,
+  details.archival-drawer summary {
     background: #f1f5f9 !important;
   }
-  details.cme-source-drawer .cme-source-content {
+  details.cme-source-drawer .cme-source-content,
+  details.medicine-source-drawer .cme-source-content,
+  details.archival-drawer .cme-source-content {
     display: block !important;
   }
 }
