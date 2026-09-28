@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Beyond the Single Story – Deep Roots of Black British History | Assembly Presentation
+    </title>
+    <style>
+      :root {
+        --navy-dark: #0a0f1d;
+        --navy-surface: #131d31;
+        --navy-card: #1e293b;
+        --navy-border: #233554;
+        --gold: #f59e0b;
+        --gold-light: #fde68a;
+        --gold-glow: rgba(245, 158, 11, 0.25);
+        --text-white: #ffffff;
+        --text-soft: #cbd5e1;
+        --text-muted: #94a3b8;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #020617;
+        color: var(--text-white);
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-x: hidden;
+      }
+
+      /* TOP ACTION BAR */
+      .top-bar {
+        background: #0f172a;
+        border-bottom: 1px solid var(--navy-border);
+        padding: 10px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+      .brand-title {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .brand-badge {
+        background: rgba(245, 158, 11, 0.15);
+        border: 1px solid var(--gold);
+        color: var(--gold-light);
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .controls-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .btn-action {
+        background: var(--navy-card);
+        border: 1px solid var(--navy-border);
+        color: var(--text-soft);
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+      }
+      .btn-action:hover {
+        background: #334155;
+        color: var(--text-white);
+        border-color: var(--gold);
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, #d97706, #b45309);
+        border: 1px solid var(--gold);
+        color: #ffffff;
+      }
+      .btn-gold:hover {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        box-shadow: 0 0 12px var(--gold-glow);
+      }
+
+      /* SLIDE STAGE CONTAINER (16:9) */
+      .stage-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .slide-viewport {
+        width: 1000px;
+        height: 562.5px;
+        background: var(--navy-dark);
+        border: 1px solid var(--navy-border);
+        border-radius: 12px;
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.8),
+          0 0 0 1px rgba(245, 158, 11, 0.15);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .slide-panel {
+        display: none;
+        height: 100%;
+        padding: 36px 48px;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .slide-panel.active {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.99);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* SLIDE ELEMENTS */
+      .slide-header {
+        border-bottom: 1px solid var(--navy-border);
+        padding-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .act-tag {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .slide-title {
+        font-family: Georgia, serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--text-white);
+      }
+      .speaker-badge-tag {
+        background: rgba(245, 158, 11, 0.15);
+        border: 1px solid var(--gold);
+        color: var(--gold-light);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .slide-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        flex: 1;
+        margin: 18px 0;
+        align-items: center;
+      }
+      .cards-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .info-card {
+        background: var(--navy-surface);
+        border: 1px solid var(--navy-border);
+        border-radius: 8px;
+        padding: 10px 14px;
+      }
+      .info-card-title {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .info-card-text {
+        font-size: 12.5px;
+        color: var(--text-soft);
+        line-height: 1.45;
+      }
+
+      .takeaway-card {
+        background: var(--navy-card);
+        border: 1px solid var(--gold);
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-top: 4px;
+      }
+      .takeaway-tag {
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+      .takeaway-quote {
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 12px;
+        color: var(--text-white);
+        line-height: 1.4;
+      }
+
+      .media-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: #020617;
+        border-radius: 10px;
+        border: 1px solid var(--navy-border);
+        padding: 12px;
+        text-align: center;
+      }
+      .media-img {
+        max-height: 250px;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      }
+      .media-caption {
+        font-size: 10px;
+        color: var(--text-muted);
+        margin-top: 8px;
+        line-height: 1.35;
+      }
+
+      /* SLIDE 1 CUSTOM */
+      .title-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        padding: 40px 20px;
+      }
+      .hero-tag {
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .hero-main-title {
+        font-family: Georgia, serif;
+        font-size: 42px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+      .hero-subtitle {
+        font-size: 18px;
+        color: var(--text-soft);
+        margin-bottom: 24px;
+      }
+      .hero-message-box {
+        background: var(--navy-surface);
+        border: 1px solid var(--navy-border);
+        border-radius: 10px;
+        padding: 16px 24px;
+        max-width: 780px;
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 15px;
+        color: var(--gold-light);
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+      .presenters-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        width: 100%;
+        max-width: 820px;
+      }
+      .presenter-pill {
+        background: var(--navy-card);
+        border: 1px solid var(--navy-border);
+        border-radius: 8px;
+        padding: 8px;
+        text-align: center;
+      }
+      .presenter-pill .role {
+        color: var(--gold);
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .presenter-pill .desc {
+        color: var(--text-muted);
+        font-size: 10px;
+        margin-top: 2px;
+      }
+
+      /* SLIDE 6 CUSTOM */
+      .reflection-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 16px 0;
+      }
+      .reflection-card {
+        background: var(--navy-surface);
+        border: 1px solid var(--navy-border);
+        border-radius: 8px;
+        padding: 12px 16px;
+      }
+      .reflection-card-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+      .speaker-id {
+        font-weight: 800;
+        font-size: 11px;
+        color: var(--gold);
+      }
+      .speaker-topic {
+        font-size: 10px;
+        color: var(--text-muted);
+      }
+      .reflection-card p {
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 12.5px;
+        color: var(--text-soft);
+        line-height: 1.45;
+      }
+      .silence-box {
+        background: linear-gradient(135deg, #1e1b4b, #0f172a);
+        border: 1.5px solid var(--gold);
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+      }
+      .silence-box h3 {
+        font-size: 14px;
+        color: var(--gold-light);
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 2px;
+      }
+      .silence-box p {
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+
+      /* BOTTOM NAVIGATION BAR */
+      .nav-bar {
+        background: #0f172a;
+        border-top: 1px solid var(--navy-border);
+        padding: 12px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .progress-pills {
+        display: flex;
+        gap: 6px;
+      }
+      .progress-pill {
+        width: 28px;
+        height: 8px;
+        background: #334155;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .progress-pill.active {
+        background: var(--gold);
+        width: 48px;
+      }
+      .nav-buttons {
+        display: flex;
+        gap: 8px;
+      }
+
+      /* SPEAKER NOTES DRAWER */
+      .notes-drawer {
+        background: #090d16;
+        border-top: 1px solid var(--navy-border);
+        padding: 14px 24px;
+        max-height: 130px;
+        overflow-y: auto;
+        font-size: 12px;
+        color: #cbd5e1;
+        line-height: 1.5;
+      }
+      .notes-speaker-name {
+        font-weight: 800;
+        color: var(--gold);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP ACTION BAR -->
+    <div class="top-bar">
+      <div class="brand-title">
+        <span>THE HISTORY REVISION HUB</span>
+        <span class="brand-badge">WHOLE SCHOOL ASSEMBLY</span>
+      </div>
+      <div class="controls-group">
+        <button class="btn-action" onclick="toggleFullscreen()">⛶ Fullscreen (F)</button>
+        <a href="/public/assembly_beyond_the_single_story.pptx" download class="btn-action btn-gold"
+          >📥 Download PPTX</a
+        >
+        <a
+          href="/public/pdfs/assembly_beyond_the_single_story_pupil_script.pdf"
+          download
+          class="btn-action"
+          >📄 2-Page Script PDF</a
+        >
+      </div>
+    </div>
+
+    <!-- SLIDE STAGE -->
+    <div class="stage-container">
+      <div class="slide-viewport" id="slideViewport">
+        <!-- SLIDE 1 -->
+        <div class="slide-panel active" id="slide-1">
+          <div class="title-hero">
+            <div class="hero-tag">Whole School Assembly • Black British History</div>
+            <div class="hero-main-title">BEYOND THE SINGLE STORY</div>
+            <div class="hero-subtitle">
+              Deep Roots of Black British History: Roman York to the Modern Era
+            </div>
+
+            <div class="hero-message-box">
+              "Black British history did not begin with the Windrush generation in 1948—it stretches
+              back nearly two thousand years through the Roman Empire, Tudor royal courts, and the
+              founding of modern Britain."
+            </div>
+
+            <div class="presenters-grid">
+              <div class="presenter-pill">
+                <div class="role">PUPIL 1</div>
+                <div class="desc">Roman York (c. 350 AD)</div>
+              </div>
+              <div class="presenter-pill">
+                <div class="role">PUPIL 2</div>
+                <div class="desc">Tudor Court (1511)</div>
+              </div>
+              <div class="presenter-pill">
+                <div class="role">PUPIL 3</div>
+                <div class="desc">Civil Rights (1931)</div>
+              </div>
+              <div class="presenter-pill">
+                <div class="role">PUPIL 4</div>
+                <div class="desc">Windrush Era (1948)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide-panel" id="slide-2">
+          <div class="slide-header">
+            <div>
+              <div class="act-tag">ACT I: ROMAN BRITAIN • 4th CENTURY YORK</div>
+              <div class="slide-title">The Ivory Bangle Lady: High Status in Roman Britain</div>
+            </div>
+            <div class="speaker-badge-tag">Delivered by: Pupil 1</div>
+          </div>
+
+          <div class="slide-grid">
+            <div class="cards-stack">
+              <div class="info-card">
+                <div class="info-card-title">The Discovery (York, 1901)</div>
+                <div class="info-card-text">
+                  Unearthed in a stone sarcophagus in York dating to c. 350 AD, containing the
+                  skeleton of a wealthy high-status woman.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">Expensive Grave Goods</div>
+                <div class="info-card-text">
+                  Buried with luxury goods: an elephant ivory armlet with rope pattern, jet
+                  bracelets, glass perfume flasks, and fine jewellery.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">Forensic & Isotope Analysis</div>
+                <div class="info-card-text">
+                  Forensic osteoarchaeology and dental isotope testing confirm she was of North
+                  African descent, proving Britain was multicultural long before it was called Great
+                  Britain.
+                </div>
+              </div>
+              <div class="takeaway-card">
+                <div class="takeaway-tag">HISTORICAL SIGNIFICANCE</div>
+                <div class="takeaway-quote">
+                  "She wasn’t an enslaved person or an outsider; she was a wealthy, high-status
+                  member of Roman British society."
+                </div>
+              </div>
+            </div>
+
+            <div class="media-wrapper">
+              <img
+                src="/public/images/assembly/ivory_bangle_lady_reconstruction.jpg"
+                class="media-img"
+                alt="Ivory Bangle"
+              />
+              <div class="media-caption">
+                York Museums Trust: Elephant ivory armlet recovered from the 4th-century York
+                sarcophagus.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide-panel" id="slide-3">
+          <div class="slide-header">
+            <div>
+              <div class="act-tag">ACT II: TUDOR ENGLAND • THE ROYAL COURT</div>
+              <div class="slide-title">John Blanke: Musician at the Heart of the Royal Court</div>
+            </div>
+            <div class="speaker-badge-tag">Delivered by: Pupil 2</div>
+          </div>
+
+          <div class="slide-grid">
+            <div class="cards-stack">
+              <div class="info-card">
+                <div class="info-card-title">Regular Royal Trumpeter</div>
+                <div class="info-card-text">
+                  Served as a retained musician in the royal courts of both King Henry VII and King
+                  Henry VIII, performing at major state ceremonies.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">Westminster Tournament Roll (1511)</div>
+                <div class="info-card-text">
+                  Painted twice on the illuminated 60-foot royal vellum roll celebrating the birth
+                  of Prince Henry, riding on horseback in royal Tudor livery.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">The Royal Pay Petition</div>
+                <div class="info-card-text">
+                  Court records preserve his handwritten petition directly to King Henry VIII
+                  requesting a pay rise to eight pence a day—which the King approved.
+                </div>
+              </div>
+              <div class="takeaway-card">
+                <div class="takeaway-tag">HISTORICAL SIGNIFICANCE</div>
+                <div class="takeaway-quote">
+                  "John Blanke was not an onlooker—he was a respected, skilled professional at the
+                  very centre of royal court ceremony."
+                </div>
+              </div>
+            </div>
+
+            <div class="media-wrapper">
+              <img
+                src="/public/images/assembly/john_blanke.jpg"
+                class="media-img"
+                alt="John Blanke"
+              />
+              <div class="media-caption">
+                The College of Arms: John Blanke on the 1511 Westminster Tournament Roll.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide-panel" id="slide-4">
+          <div class="slide-header">
+            <div>
+              <div class="act-tag">ACT III: EARLY 20th CENTURY • CIVIL RIGHTS</div>
+              <div class="slide-title">Dr. Harold Moody: Medical Pioneer & Campaigner</div>
+            </div>
+            <div class="speaker-badge-tag">Delivered by: Pupil 3</div>
+          </div>
+
+          <div class="slide-grid">
+            <div class="cards-stack">
+              <div class="info-card">
+                <div class="info-card-title">Academic Excellence & Hospital Bans</div>
+                <div class="info-card-text">
+                  Born in Jamaica, studied medicine at King’s College London (1904), graduating top
+                  of his class. Hospital posts were denied due to colour bars.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">Community Doctor in Peckham (1913)</div>
+                <div class="info-card-text">
+                  Opened his own private GP surgery in Peckham, South London, in 1913. Beloved
+                  locally for treating impoverished families free of charge.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">League of Coloured Peoples (1931)</div>
+                <div class="info-card-text">
+                  Founded Britain's first major civil rights organization to challenge
+                  discriminatory housing bans, workplace exclusion, and armed forces color bars.
+                </div>
+              </div>
+              <div class="takeaway-card">
+                <div class="takeaway-tag">HISTORICAL SIGNIFICANCE</div>
+                <div class="takeaway-quote">
+                  "Dr. Moody campaigned tirelessly for decades, laying the direct groundwork for
+                  Britain’s modern race relations laws."
+                </div>
+              </div>
+            </div>
+
+            <div class="media-wrapper">
+              <img
+                src="/public/images/assembly/harold_moody_bust.jpg"
+                class="media-img"
+                alt="Dr Harold Moody"
+              />
+              <div class="media-caption">
+                National Portrait Gallery: Dr Harold Moody (1882–1947), Bronze portrait by Ronald
+                Moody.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide-panel" id="slide-5">
+          <div class="slide-header">
+            <div>
+              <div class="act-tag">ACT IV: POST-WAR BRITAIN • REBUILDING THE NATION</div>
+              <div class="slide-title">The Windrush Generation: Building the Modern Nation</div>
+            </div>
+            <div class="speaker-badge-tag">Delivered by: Pupil 4</div>
+          </div>
+
+          <div class="slide-grid">
+            <div class="cards-stack">
+              <div class="info-card">
+                <div class="info-card-title">The Call to Rebuild (1948)</div>
+                <div class="info-card-text">
+                  Facing post-war devastation and severe labour shortages, the British government
+                  invited Commonwealth citizens to rebuild cities, transport, and industry.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">Backbone of the NHS</div>
+                <div class="info-card-text">
+                  Arriving in the same month the NHS was founded (July 1948), Caribbean men and
+                  women became the vital nurses, doctors, and staff powering our hospitals.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">Vibrant Cultural Contribution</div>
+                <div class="info-card-text">
+                  Enriched British music, literature, cuisine, and founded enduring global cultural
+                  institutions such as London's Notting Hill Carnival.
+                </div>
+              </div>
+              <div class="takeaway-card">
+                <div class="takeaway-tag">HISTORICAL SIGNIFICANCE</div>
+                <div class="takeaway-quote">
+                  "They became the engine room of modern Britain, shaping the public services we all
+                  depend on every single day."
+                </div>
+              </div>
+            </div>
+
+            <div class="media-wrapper">
+              <img
+                src="/public/images/assembly/empire_windrush.jpg"
+                class="media-img"
+                alt="Empire Windrush"
+              />
+              <div class="media-caption">
+                Imperial War Museum: HMT Empire Windrush arriving at Tilbury Docks, 22 June 1948.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 6 -->
+        <div class="slide-panel" id="slide-6">
+          <div class="slide-header">
+            <div>
+              <div class="act-tag">CONCLUSION & WHOLE SCHOOL REFLECTION</div>
+              <div class="slide-title">"How Deep Do Our Shared Roots Go?"</div>
+            </div>
+            <div
+              class="speaker-badge-tag"
+              style="background: rgba(168, 85, 247, 0.15); border-color: #a855f7; color: #d8b4fe"
+            >
+              All 4 Pupils
+            </div>
+          </div>
+
+          <div class="reflection-grid">
+            <div class="reflection-card">
+              <div class="reflection-card-header">
+                <span class="speaker-id">PUPIL 1</span>
+                <span class="speaker-topic">Belonging & Continuity</span>
+              </div>
+              <p>
+                "History is not just about isolated dates; it is about belonging. Black history is
+                not a separate topic tucked away for one month of the year—it is part of the deep,
+                continuous story of Britain itself."
+              </p>
+            </div>
+
+            <div class="reflection-card">
+              <div class="reflection-card-header">
+                <span class="speaker-id">PUPIL 2</span>
+                <span class="speaker-topic">Shared Foundations</span>
+              </div>
+              <p>
+                "As we head into our day, let's remember that Britain’s story has always been built
+                by people from diverse backgrounds working, creating, and standing together."
+              </p>
+            </div>
+
+            <div class="reflection-card">
+              <div class="reflection-card-header">
+                <span class="speaker-id">PUPIL 3</span>
+                <span class="speaker-topic">Moment of Pause</span>
+              </div>
+              <p>
+                "Take ten seconds of quiet now to reflect on how learning our full, shared history
+                helps us build a stronger community today."
+              </p>
+            </div>
+
+            <div class="reflection-card">
+              <div class="reflection-card-header">
+                <span class="speaker-id">PUPIL 4</span>
+                <span class="speaker-topic">Closing the Assembly</span>
+              </div>
+              <p>"Thank you for your attention. Have a great day, everyone."</p>
+            </div>
+          </div>
+
+          <div class="silence-box">
+            <h3>⏱️ WHOLE SCHOOL SILENCE: 10 SECONDS OF QUIET REFLECTION</h3>
+            <p>
+              Reflecting on two thousand years of shared British history and our collective
+              community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEAKER NOTES DRAWER -->
+    <div class="notes-drawer">
+      <div class="notes-speaker-name" id="notesSpeaker">SPEAKER: PUPIL 1</div>
+      <div id="notesText">
+        "Good morning, everyone. When people talk about Black British history, many assume it begins
+        in 1948 with the arrival of the Empire Windrush..."
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="nav-bar">
+      <div class="progress-pills" id="progressPills">
+        <div class="progress-pill active" onclick="goToSlide(1)"></div>
+        <div class="progress-pill" onclick="goToSlide(2)"></div>
+        <div class="progress-pill" onclick="goToSlide(3)"></div>
+        <div class="progress-pill" onclick="goToSlide(4)"></div>
+        <div class="progress-pill" onclick="goToSlide(5)"></div>
+        <div class="progress-pill" onclick="goToSlide(6)"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-action" onclick="prevSlide()">◀ Previous</button>
+        <button class="btn-action btn-gold" onclick="nextSlide()">Next ▶</button>
+      </div>
+    </div>
+
+    <script>
+      let currentSlide = 1;
+      const totalSlides = 6;
+
+      const speakerNotes = {
+        1: {
+          speaker: 'PUPIL 1 (Slide 1)',
+          text: '"Good morning, everyone. When people talk about Black British history, many assume it begins in 1948 with the arrival of the Empire Windrush. We often think of it as a relatively modern story. But history tells a very different tale. Black people have lived, worked, and shaped life on this island for nearly two thousand years." [Advance to Slide 2]',
+        },
+        2: {
+          speaker: 'PUPIL 1 (Slide 2: Ivory Bangle Lady)',
+          text: '"Our first story takes us all the way back to the 4th century, to Roman Britain—in the city of York. In 1901, archaeologists uncovered a stone sarcophagus containing the skeleton of a woman. Along with her remains were expensive bracelets made of jet and elephant ivory, glass perfume bottles, and fine jewellery. Forensic analysis revealed she was of North African descent, and she lived in York around the year 350 AD. She became known as the Ivory Bangle Lady. She wasn’t an enslaved person or an outsider; she was a wealthy, high-status member of Roman British society. Her presence proves that Britain was multicultural long before it was even called Great Britain."',
+        },
+        3: {
+          speaker: 'PUPIL 2 (Slide 3: John Blanke)',
+          text: '"Move forward a thousand years to Tudor England, and we find another remarkable figure: John Blanke. John Blanke was a gifted musician who served as a regular trumpeter in the royal courts of both King Henry VII and King Henry VIII. We don\'t just know about him from written records—we can actually see him. In 1511, Henry VIII held a massive tournament to celebrate the birth of a royal son. An illuminated 60-foot scroll called the Westminster Tournament Roll was created to document the occasion. Twice on that scroll, John Blanke is painted riding a horse, wearing royal Tudor livery and playing his trumpet alongside the other royal musicians. Court records also show something fascinating about his character: he wrote a petition directly to King Henry VIII asking for a pay rise—and the King approved it. John Blanke was a respected professional at the very centre of royal court ceremony."',
+        },
+        4: {
+          speaker: 'PUPIL 3 (Slide 4: Dr. Harold Moody)',
+          text: '"Fast-forward to London in the early 20th century, and meet Dr. Harold Moody. Born in Jamaica, Harold arrived in Britain in 1904 to study medicine at King’s College London. He graduated top of his class and won numerous medical prizes. Yet, when he applied for doctor roles in London hospitals, he was repeatedly turned down simply because of the colour of his skin. Instead of giving up, Dr. Moody opened his own private GP surgery in Peckham, South London, in 1913. He became beloved by the local community because he treated poor families for free when they couldn\'t afford medicine. In 1931, seeing how Black people in Britain faced unfair barriers in finding jobs and renting homes, he founded the League of Coloured Peoples. Dr. Moody campaigned tirelessly for decades, successfully challenging discriminatory housing policies and racist employment bans. He laid the direct groundwork for Britain’s modern race relations laws."',
+        },
+        5: {
+          speaker: 'PUPIL 4 (Slide 5: Empire Windrush)',
+          text: '"That brings us to 1948 and the Empire Windrush. After the Second World War, Britain was devastated by bombing and facing a massive shortage of workers to rebuild towns, run transport systems, and staff hospitals. The British government invited citizens from across the Commonwealth to come and help rebuild the country. Hundreds of Caribbean men, women, and families answered that call. They became the engine room of modern Britain. They drove the buses, laid the railway tracks, and became the backbone of our newly founded National Health Service. They also enriched British music, literature, food, and culture, turning events like the Notting Hill Carnival into celebrations known across the world. Their resilience and contribution shaped the public services we all depend on every single day."',
+        },
+        6: {
+          speaker: 'ALL 4 PUPILS (Slide 6: Conclusion)',
+          text: 'PUPIL 1: "So why does this matter? Because history is not just about isolated dates; it is about belonging. From the Roman streets of York to the Tudor royal court, and from a community doctor’s surgery in South London to the arrival of the Windrush—Black history is not a separate topic tucked away for one month of the year. It is part of the deep, continuous story of Britain itself."\n\nPUPIL 2: "As we head into our day, let\'s remember that Britain’s story has always been built by people from diverse backgrounds working, creating, and standing together."\n\nPUPIL 3: "Take ten seconds of quiet now to reflect on how learning our full, shared history helps us build a stronger community today." [10 SECONDS OF QUIET SILENCE]\n\nPUPIL 4: "Thank you for your attention. Have a great day, everyone."',
+        },
+      };
+
+      function updateView() {
+        document.querySelectorAll('.slide-panel').forEach((p) => p.classList.remove('active'));
+        document.getElementById('slide-' + currentSlide).classList.add('active');
+
+        const pills = document.querySelectorAll('.progress-pill');
+        pills.forEach((p, idx) => {
+          p.classList.toggle('active', idx + 1 === currentSlide);
+        });
+
+        const note = speakerNotes[currentSlide];
+        if (note) {
+          document.getElementById('notesSpeaker').innerText = note.speaker;
+          document.getElementById('notesText').innerText = note.text;
+        }
+      }
+
+      function nextSlide() {
+        if (currentSlide < totalSlides) {
+          currentSlide++;
+          updateView();
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 1) {
+          currentSlide--;
+          updateView();
+        }
+      }
+
+      function goToSlide(n) {
+        currentSlide = n;
+        updateView();
+      }
+
+      function toggleFullscreen() {
+        const el = document.getElementById('slideViewport');
+        if (!document.fullscreenElement) {
+          el.requestFullscreen().catch((err) => alert('Fullscreen error: ' + err.message));
+        } else {
+          document.exitFullscreen();
+        }
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          prevSlide();
+        } else if (e.key === 'f' || e.key === 'F') {
+          toggleFullscreen();
+        }
+      });
+
+      updateView();
+    </script>
+  </body>
+</html>
