@@ -718,15 +718,37 @@ export function renderInteractiveQuiz() {
           <span style="font-size: 0.75rem; color: #cbd5e1;">${data.title || 'Curriculum Revision'}</span>
         </div>
         <h3 style="margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 800; font-family: 'Montserrat', sans-serif;">Revision Mode</h3>
-        <p style="margin: 0 0 14px 0; font-size: 0.84rem; color: #cbd5e1; line-height: 1.4;">
-          Test your recall now with a rapid 10-minute quiz or flip through key retrieval flashcards.
+        <p style="margin: 0 0 12px 0; font-size: 0.84rem; color: #cbd5e1; line-height: 1.4;">
+          Test your recall with a 10-minute exam benchmark or flip through targeted retrieval flashcards.
         </p>
+
+        ${
+          workbooks.length > 1
+            ? `
+        <div style="margin-bottom: 12px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 8px 10px;">
+          <label for="select-recall-deck-mobile" style="display: block; font-size: 0.72rem; font-weight: 700; color: #cbd5e1; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Choose Revision Topic:
+          </label>
+          <select id="select-recall-deck-mobile" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.86rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: #0f172a; color: #ffffff; font-weight: 600;" onchange="window.handleMobileRecallDeckChange('${unitId}', this.value)">
+            ${workbooks
+              .map((wb, i) => {
+                const id = wb.name || wb.id;
+                const isFull = id === 'full';
+                return `<option value="${id}">${isFull ? '⭐ Complete Unit (All Topics)' : `Topic ${i + 1}: ${wb.title || wb.name}`}</option>`;
+              })
+              .join('')}
+          </select>
+        </div>
+        `
+            : ''
+        }
+
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <button onclick="window.startDiagnosticBenchmark('${unitId}')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 18px; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
             <i class="fa-solid fa-bullseye"></i>
             <span>Start 10-Minute Quiz</span>
           </button>
-          <a href="${initialFlashcardUrl}" target="_blank" style="text-decoration: none; background: rgba(255, 255, 255, 0.12); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); font-weight: 700; font-size: 0.92rem; padding: 12px 18px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <a id="btn-start-flashcards-mobile" href="${initialFlashcardUrl}" target="_blank" style="text-decoration: none; background: rgba(255, 255, 255, 0.12); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); font-weight: 700; font-size: 0.92rem; padding: 12px 18px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
             <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
             <span>Practice Flashcards</span>
           </a>
@@ -1023,7 +1045,44 @@ export function renderInteractiveQuiz() {
   `;
 
   container.innerHTML = html;
+
+  // Auto-launch Diagnostic Benchmark if requested via URL param (e.g. from targeted QR code)
+  const urlParams = new URLSearchParams(window.location.search);
+  if (
+    urlParams.get('start') === 'quiz' ||
+    urlParams.get('autostart') === 'quiz' ||
+    urlParams.get('quiz') === '1'
+  ) {
+    setTimeout(() => {
+      if (typeof window.startDiagnosticBenchmark === 'function') {
+        window.startDiagnosticBenchmark(unitId);
+      }
+    }, 150);
+  }
 }
+
+window.handleMobileRecallDeckChange = function (unitId, value) {
+  let wbId = value;
+  let part = null;
+  if (value && value.includes(':')) {
+    const parts = value.split(':');
+    wbId = parts[0];
+    part = parts[1];
+  }
+
+  const mobileBtn = document.getElementById('btn-start-flashcards-mobile');
+  const partParam = part && part !== 'all' ? `&part=${part}` : '';
+  if (mobileBtn) {
+    mobileBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode${partParam}`;
+  }
+
+  // Sync with desktop selector if present
+  const desktopSelect = document.getElementById('select-recall-deck');
+  if (desktopSelect) {
+    desktopSelect.value = value;
+    window.handleRecallDeckChange(unitId, value);
+  }
+};
 
 window.handleRecallDeckChange = function (unitId, value) {
   let wbId = value;
