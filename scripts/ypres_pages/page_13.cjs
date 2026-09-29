@@ -16,7 +16,7 @@ module.exports = function renderPage13(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Bitter Irony of "Sanctuary"</div>
+        <div class="box-header">The Bitter Irony of "Sanctuary"</div>
         <p>
           "In late 1914, British soldiers retreating from First Ypres found shelter in this dense woodland and gratefully named it 'Sanctuary Wood'. The name became a bitter, cruel irony. By June 1916, during the Battle of Mount Sorrel, German artillery rained over 100,000 high-explosive shells onto Hill 62 in a matter of hours, splintering every tree into jagged stumps and churning the forest floor into a moonscape of craters. The farmer who owned this land, the Schier family, preserved this section of frontline trenches exactly as it lay in 1918, refusing to fill the craters or flatten the parapets. As pupils walk through these unpaved, mud-slicked trenches, point out the original rusted corrugated iron revetments, the flooded sump pits, and the deep shell holes that demonstrate why survival on the Western Front was largely a matter of chance."
         </p>

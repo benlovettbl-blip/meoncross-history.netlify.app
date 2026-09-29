@@ -16,7 +16,7 @@ module.exports = function renderPage18(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Subterranean Labyrinth of Zonnebeke</div>
+        <div class="box-header">The Subterranean Labyrinth of Zonnebeke</div>
         <p>
           "Beneath the grounds of Zonnebeke Chateau, we descend into an authentic, full-scale reconstruction of a British underground dugout complex built 20 feet beneath the surface. As high-explosive artillery fire obliterated every tree, trench, and building above ground in 1917, armies burrowed into the damp clay to survive. In these cramped timber galleries, over 200 men lived like moles in cold, airless conditions for weeks on end. Notice the narrow bunk beds stacked three high, the pump sumps struggling against groundwater, and the candlebox air tests: if a candle flame flickered out from lack of oxygen, men knew carbon dioxide was rising and had to crank manual ventilation fans to survive. Outside, the museum's reconstructed British and German trench systems offer pupils a direct, side-by-side physical comparison of opposing defensive philosophies."
         </p>
@@ -68,7 +68,6 @@ module.exports = function renderPage18(assets) {
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
         <p>
           1. "How did subterranean dugout systems alter the psychological endurance of troops subjected to relentless week-long artillery bombardments?"
         </p>

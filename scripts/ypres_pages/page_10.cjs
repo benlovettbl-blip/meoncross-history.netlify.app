@@ -16,7 +16,7 @@ module.exports = function renderPage10(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Menin Road Bloodbath</div>
+        <div class="box-header">The Menin Road Bloodbath</div>
         <p>
           "We are standing on the infamous Menin Road, the single most dangerous highway in military history. Hooge Chateau, positioned on a low crest commanding the road into Ypres, changed hands dozens of times in savage hand-to-hand fighting. On 19 July 1915, British tunnelling companies detonated a massive subterranean mine packed with 1,700 pounds of ammonal directly beneath German positions, blowing a crater 120 feet wide and 20 feet deep. Eleven days later, on 30 July, the German army struck back with terrifying shock technology: the world debut of the <em>Flammenwerfer</em> (flamethrower). German shock-troops sprayed jets of burning oil over the British parapets, incinerating men alive and capturing the crater rim. The museum houses an unrivaled collection of authentic weapons, trench armor, and primary battlefield artifacts recovered from these fields."
         </p>
@@ -60,7 +60,6 @@ module.exports = function renderPage10(assets) {
 
       <!-- Hinge Questions -->
       <div class="hinge-box" style="padding: 6px 11px;">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
         <p style="font-size: 10pt; line-height: 1.38;">
           1. "Why did both armies invest vast manpower in subterranean mine warfare rather than surface infantry assaults? What does this reveal about defensive technology?"
         </p>

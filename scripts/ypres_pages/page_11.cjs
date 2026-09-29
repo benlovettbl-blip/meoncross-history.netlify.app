@@ -16,7 +16,7 @@ module.exports = function renderPage11(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: 22 April 1915 &mdash; The First Lethal Gas Cloud</div>
+        <div class="box-header">22 April 1915 &mdash; The First Lethal Gas Cloud</div>
         <p>
           "Stand looking north-east across this flat, open farmland. On the afternoon of 22 April 1915, at exactly 17:00, German engineers opened the valves on 5,730 pressurized steel cylinders buried along a four-mile frontline, releasing 168 tons of liquified <strong>chlorine gas</strong>. Carried by a gentle north-easterly breeze, a sinister greenish-yellow cloud rolled across No Man's Land toward the French Algerian and territorial division on the Canadian left. Unprepared and without respirators, soldiers suffocated as chlorine dissolved their lung tissue. Thousands broke in absolute panic, opening a four-mile gap in the Allied line. The raw, untested 1st Canadian Division held the right flank. Canadian medical officer Captain Francis Scrimger VC recognized the gas as chlorine and ordered men to urinate on handkerchiefs and socks, pressing them to their faces&mdash;ammonia in urine neutralized the acid. For three desperate days, the Canadians held the line, preventing the collapse of Ypres."
         </p>

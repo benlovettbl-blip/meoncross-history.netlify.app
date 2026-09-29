@@ -16,7 +16,7 @@ module.exports = function renderPage17(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Hospital City in the Hop Fields</div>
+        <div class="box-header">The Hospital City in the Hop Fields</div>
         <p>
           "We have moved behind the frontline into the peaceful hop fields of Lijssenthoek. During the war, this was the site of the largest Casualty Clearing Station (CCS) hospital complex in the Salient, housing British 44 CCS, 10 CCS, and later French field hospitals. Positioned directly alongside the Ypres-Poperinge-Hazebrouck railway line, over <strong>300,000 wounded men</strong> passed through this hospital hub. Motor ambulances rushed the severely wounded here from frontline dressing stations. Surgeons operated around the clock in canvas marquees and wooden huts, performing emergency amputations and abdominal surgery before loading stabilized patients onto 30-carriage hospital trains bound for base hospitals on the coast. The <strong>10,755 graves</strong> surrounding us are the men who could not be saved."
         </p>
@@ -78,7 +78,6 @@ module.exports = function renderPage17(assets) {
 
       <!-- Hinge Questions -->
       <div class="hinge-box" style="padding: 6px 11px;">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
         <p style="font-size: 10pt; line-height: 1.38;">
           1. "Why were Casualty Clearing Stations positioned along railway spurs just outside field artillery range rather than safe on the coast? What medical gamble did this represent?"
         </p>

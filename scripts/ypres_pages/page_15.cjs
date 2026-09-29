@@ -16,7 +16,7 @@ module.exports = function renderPage15(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Great City of the Silent</div>
+        <div class="box-header">The Great City of the Silent</div>
         <p>
           "We are standing in Tyne Cot, the largest Commonwealth war cemetery in the world. Spread across this gentle slope lie <strong>11,961 soldiers</strong> of the British Empire. Look closely at the headstones: an astonishing <strong>8,369 of them&mdash;nearly 70%&mdash;are unidentified</strong>, marked only with Kipling's words: <em>'A Soldier of the Great War &mdash; Known unto God.'</em> This ground was captured by the Australian 3rd Division on 4 October 1917 during the Battle of Broodseinde. Notice the massive Cross of Sacrifice standing in the centre: architect Sir Herbert Baker deliberately encased a captured German reinforced concrete pillbox inside its stone base, cutting an aperture so the machine-gun firing slit remains visible beneath the cross. At the rear, the semi-circular Memorial to the Missing bears the carved names of <strong>34,984 soldiers</strong> who vanished in the mud of the Salient between August 1917 and the Armistice."
         </p>

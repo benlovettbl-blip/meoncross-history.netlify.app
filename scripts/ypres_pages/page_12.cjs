@@ -57,7 +57,6 @@ The old Lie: <em>Dulce et decorum est / Pro patria mori.</em>
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
           1. "Why did the German high command fail to exploit the four-mile gap opened by the chlorine gas cloud on 22 April 1915? What does this reveal about military skepticism toward technological weapons?"
         </p>

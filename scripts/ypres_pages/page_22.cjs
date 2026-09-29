@@ -61,7 +61,6 @@ Her sights and sounds; dreams happy as her day;
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
           1. "Was the execution of soldiers suffering from acute shell shock a military necessity to maintain combat discipline, or a tragic failure of medical compassion?"
         </p>

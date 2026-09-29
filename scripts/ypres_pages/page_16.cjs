@@ -57,7 +57,6 @@ To the end, to the end, they remain.
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
           1. "Why did Sir Herbert Baker choose to incorporate a captured enemy pillbox directly into the foundation of the Cross of Sacrifice rather than bulldozing it away? What symbolic message does this convey?"
         </p>

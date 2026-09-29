@@ -16,7 +16,7 @@ module.exports = function renderPage7(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Discovery of Yorkshire Trench</div>
+        <div class="box-header">The Discovery of Yorkshire Trench</div>
         <p>
           "This site was completely lost to history for 75 years until 1992, when an amateur Belgian archaeological team known as 'The Diggers' investigated land slated for industrial development. Beneath the undisturbed topsoil, they uncovered an intact British frontline system constructed in 1915 by the 49th (West Riding) Division. As you walk through, notice that trenches here were not dug deep into the earth, but built upwards as raised sandbag breastworks. In the low Yser valley, digging down just three feet hits groundwater. Men lived with stagnant water pooling around their boots 24 hours a day. Notice the steel-reinforced entrances leading down to deep subterranean dugouts 30 feet beneath us, where over 200 soldiers huddled in candlelit bunks waiting for the order to go over the top."
         </p>
@@ -60,7 +60,6 @@ module.exports = function renderPage7(assets) {
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions</div>
         <p>
           1. "Looking at the high water table and cramped zig-zag walls, did soldiers in the Salient face a greater daily threat from enemy artillery or from the hostile Flemish environment itself?"
         </p>

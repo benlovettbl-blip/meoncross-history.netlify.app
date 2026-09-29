@@ -55,7 +55,6 @@ We shall not sleep, though poppies grow
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
           1. "How did McCrae's poem transform a common weed growing in disturbed agricultural soil into a sacred global symbol of remembrance&mdash;and does the final stanza glorify continuous warfare?"
         </p>

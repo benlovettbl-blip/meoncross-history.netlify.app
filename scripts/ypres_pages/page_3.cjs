@@ -13,10 +13,10 @@ module.exports = function renderPage3(assets) {
       </div>
     </div>
 
-    <div class="page-body">
+    <div class="page-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Flemish Clay Basin &amp; Ridge Topography</div>
+        <div class="box-header">The Flemish Clay Basin &amp; Ridge Topography</div>
         <p>
           "Look out over the landscape: Flanders appears dead flat, but the Salient is defined by a low, curved clay ridge rising barely 45 metres towards Passchendaele. In 1914, German forces seized that higher ground, wrapping around Ypres on three sides. This formed 'the Salient'—a murderous bulge where German artillery could fire inwards from north, east, and south. The soil beneath our feet is dense, water-impermeable Flemish blue clay. When millions of artillery shells shattered the medieval drainage dykes, the trapped groundwater had nowhere to go, turning the entire battleground into an ocean of liquid mud where men, mules, and guns literally drowned."
         </p>
@@ -40,16 +40,16 @@ module.exports = function renderPage3(assets) {
         <div class="context-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 9px 12px;">
           <div>
             <div class="box-header">Sir Fabian Ware's Founding Philosophy</div>
-            <p style="font-size: 9.8pt; line-height: 1.42; color: #334155; margin-bottom: 6px;">
+            <p style="font-size: 9.6pt; line-height: 1.40; color: #334155; margin-bottom: 6px;">
               In 1917, Red Cross commander Sir Fabian Ware established the Imperial War Graves Commission with three radical, non-negotiable principles:
             </p>
-            <p style="font-size: 9.8pt; line-height: 1.40; color: #334155; margin-bottom: 6px;">
+            <p style="font-size: 9.5pt; line-height: 1.38; color: #334155; margin-bottom: 6px;">
               <strong>1. Radical Equality:</strong> Every soldier, whether field marshal or teenage private, receives an identical Portland headstone. No family could purchase an elaborate marble mausoleum.
             </p>
-            <p style="font-size: 9.8pt; line-height: 1.40; color: #334155; margin-bottom: 6px;">
+            <p style="font-size: 9.5pt; line-height: 1.38; color: #334155; margin-bottom: 6px;">
               <strong>2. No Repatriation:</strong> The British government strictly forbade the repatriation of corpses to Britain. Wealthy families could not bring their sons home while others grieved abroad.
             </p>
-            <p style="font-size: 9.8pt; line-height: 1.40; color: #334155;">
+            <p style="font-size: 9.5pt; line-height: 1.38; color: #334155;">
               <strong>3. Permanence &amp; Identity:</strong> Each grave is maintained in perpetuity, set within perennial English cottage gardens symbolizing rebirth amidst destruction.
             </p>
           </div>
@@ -59,7 +59,7 @@ module.exports = function renderPage3(assets) {
       <!-- Inscription Typologies -->
       <div class="context-box">
         <div class="box-header">Deciphering Family Inscription Typologies</div>
-        <p style="font-size: 9.8pt; line-height: 1.42; color: #334155;">
+        <p style="font-size: 9.6pt; line-height: 1.40; color: #334155; margin: 0;">
           Have pupils inspect headstones and categorize family epitaphs into four distinct emotional registers:<br>
           &bull; <strong>Christian Resignation &amp; Faith:</strong> <em>"Thy Will Be Done"</em> &middot; <em>"Until The Day Break And The Shadows Flee Away"</em><br>
           &bull; <strong>Classical Duty &amp; Patriotism:</strong> <em>"For King And Country"</em> &middot; <em>"He Died That We Might Live In Peace"</em><br>
@@ -68,17 +68,16 @@ module.exports = function renderPage3(assets) {
         </p>
       </div>
 
-      <!-- Hinge Question -->
+      <!-- Hinge Question (Header removed as per Audio 5) -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Question</div>
-        <p>
+        <p style="font-size: 10.2pt; line-height: 1.44; color: #1e3a8a; margin: 0; font-weight: 500;">
           "Why did Fabian Ware insist on uniform Portland stone and ban wealthy families from repatriating bodies, yet allow families to choose and pay for a private inscription? Does this preserve equality or reintroduce class differences?"
         </p>
       </div>
     </div>
 
     <div class="footer-bar">
-      <span>The History Department · Ypres 1914–1918 Tour Leader Companion (A4)</span>
+      <span>The History Department &middot; Ypres 1914–1918 Tour Leader Companion (A4)</span>
       <span class="page-number">Page 3 of 24</span>
     </div>
   </div>

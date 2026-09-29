@@ -16,7 +16,7 @@ module.exports = function renderPage8(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Myth of the Kindermord</div>
+        <div class="box-header">The Myth of the Kindermord</div>
         <p>
           "Step through the heavy red granite blockhouse and notice the instant, somber change of atmosphere: dark oak trees, flat black basalt slabs lying flush with the lawn, and no white Portland crosses. This is Langemarck, known across Germany as the <em>Studentenfriedhof</em> ('Student Cemetery'). In October 1914, during the First Battle of Ypres, thousands of idealistic German schoolboy and university volunteers were thrown into battle here with barely six weeks of drill. German wartime propaganda claimed they linked arms and charged singing the <em>Deutschlandlied</em> ('Song of Germany') before being mown down by experienced British regular rifle fire in what became mythologized as the <em>Kindermord bei Ypern</em> ('Massacre of the Innocents'). In June 1940, Adolf Hitler&mdash;who fought here as a corporal in the 16th Bavarian Reserve Regiment&mdash;visited this site to exploit the dead for Nazi propaganda."
         </p>

@@ -48,7 +48,6 @@ Say only this, “They are dead.” Then add thereto,
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
           1. "Why did the German state choose dark basalt, mass graves, and somber oak trees rather than individual white headstones? How does this reflect differing national psychologies of grief between victor and vanquished?"
         </p>

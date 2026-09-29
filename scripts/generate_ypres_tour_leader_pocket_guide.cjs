@@ -76,6 +76,7 @@ function getHtmlContent() {
     stretcherMud: getBase64Image('images/stretcher_bearers_passchendaele_1917.jpg'),
     clothHallRestored: getBase64Image('images/ypres_cloth_hall.jpg'),
     talbotHouse: getBase64Image('images/talbot_house_relaxing.jpg'),
+    crummackPortrait: getBase64Image('images/crummack/portrait_2nd_lt_ernest_crummack.jpg'),
   };
 
   return `

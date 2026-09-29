@@ -16,7 +16,7 @@ module.exports = function renderPage19(assets) {
     <div class="page-body">
       <!-- Pitch -->
       <div class="pitch-box">
-        <div class="box-header">60-Second Teacher Pitch: The Great Hall of Memory</div>
+        <div class="box-header">The Great Hall of Memory</div>
         <p>
           "We are standing beneath the triumphal barrel-vaulted arch of the Menin Gate, designed by Sir Reginald Blomfield and unveiled in 1927. Through this very portal in the ancient ramparts, hundreds of thousands of British and Commonwealth soldiers marched out along the Menin Road towards the frontline trenches—many never to return. Carved into the Portland stone walls are the names of <strong>54,395 Commonwealth soldiers</strong> who died in the Ypres Salient before 16 August 1917 and have no known grave. When Blomfield designed the memorial, he believed the vast arch could accommodate every missing man; to the horror of the Imperial War Graves Commission, space ran out, forcing the remaining 34,984 names of later casualties to be carved at Tyne Cot. Every evening at exactly 20:00, the local volunteer Fire Brigade buglers sound the Last Post in solemn gratitude. Tonight, our school laying party lays our official wreath."
         </p>

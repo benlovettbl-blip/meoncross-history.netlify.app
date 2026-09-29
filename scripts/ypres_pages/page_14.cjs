@@ -55,7 +55,6 @@ Leaping on the sinister wire?
 
       <!-- Hinge Questions -->
       <div class="hinge-box">
-        <div class="box-header">? Targeted Enquiry Hinge Questions for Group Discussion</div>
         <p>
           1. "Why does Isaac Rosenberg select a 'queer sardonic rat' as the central observer of the battlefield rather than a heroic comrade or general? What does this say about the human condition in the trenches?"
         </p>
