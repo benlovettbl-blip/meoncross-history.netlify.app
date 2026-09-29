@@ -3678,7 +3678,7 @@ export function renderLesson(lesson) {
           .toLowerCase()
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/(^-|-$)/g, '');
-        themeHeadingHtml = `<h4 id="${headingId}" style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${displayHeading}</h4><br/>`;
+        themeHeadingHtml = `<h4 class="narrative-heading" id="${headingId}" style="margin: 0; color: #1e3a8a; font-size: 1.12rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;"><i class="fa-solid fa-bookmark" style="color: #64748b; font-size: 0.95rem;"></i><span>${displayHeading}</span></h4>`;
       }
 
       let imageHtml = '';
@@ -4147,16 +4147,28 @@ export function renderLesson(lesson) {
         }
       }
 
+      const showParaNumber = Boolean(
+        block.text &&
+          block.text.trim() &&
+          !(typeof block.text === 'string' && block.text.includes('side-quest-box')) &&
+          !(block.title && block.title.toLowerCase().includes('lesson reflection')),
+      );
+
       htmlNarrative += `
             <div class="standard-narrative-container">
               ${imageHtml}
               ${blockSourceHtml}
-              <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                ${!block.text || !block.text.trim() || (typeof block.text === 'string' && block.text.includes('side-quest-box')) || (block.title && block.title.toLowerCase().includes('lesson reflection')) ? '' : '<div class="para-number">' + (index + 1) + '</div>'}
-                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
-                <div style="display: flex; align-items: flex-start;">
-                  ${renderAudioPlaybackBar('Read Aloud Paragraph')}
+              <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: 15px; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="narrative-chunk-header" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: ${themeHeadingHtml || showParaNumber ? '10px' : '4px'}; flex-wrap: wrap;">
+                  <div class="narrative-chunk-meta" style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0;">
+                    ${showParaNumber ? '<div class="para-number" style="margin-right: 0;">' + (index + 1) + '</div>' : ''}
+                    ${themeHeadingHtml}
+                  </div>
+                  <div class="narrative-chunk-audio" style="margin-left: auto; flex-shrink: 0;">
+                    ${renderAudioPlaybackBar('Read Aloud Paragraph')}
+                  </div>
                 </div>
+                <div class="narrative-text" style="width: 100%; line-height: 1.65; color: #1e293b; font-size: 1.05rem;">${styledContent}</div>
               </div>
             </div>
           `;
@@ -4165,12 +4177,17 @@ export function renderLesson(lesson) {
       if (block.level_4) {
         extrasHtml += `
             <div class="level4-narrative-container" style="display: none;">
-              <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
-                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
-                <div style="display: flex; align-items: flex-start;">
-                  ${renderAudioPlaybackBar('Read Aloud Paragraph (Level 4)')}
+              <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: 15px; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="narrative-chunk-header" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;">
+                  <div class="narrative-chunk-meta" style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0;">
+                    <div class="para-number" style="background:#ecfdf5; color:#047857; margin-right: 0;">${index + 1}</div>
+                    ${themeHeadingHtml}
+                  </div>
+                  <div class="narrative-chunk-audio" style="margin-left: auto; flex-shrink: 0;">
+                    ${renderAudioPlaybackBar('Read Aloud Paragraph (Level 4)')}
+                  </div>
                 </div>
+                <div class="narrative-text" style="width: 100%; line-height: 1.65; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
               </div>
             </div>
           `;

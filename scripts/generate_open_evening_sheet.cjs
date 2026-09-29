@@ -18,7 +18,7 @@ async function generateOpenEveningSheet() {
   const HUB_BASE_URL = process.env.HUB_URL || 'https://the-history-revision-hub.netlify.app';
   // Explicit unit parameters guarantee instant rendering with zero blank screens on any device
   const portalUrl = `${HUB_BASE_URL}/?view=lessons&unit=edexcel_medicine`;
-  const quizUrl = `${HUB_BASE_URL}/?view=interactive&unit=edexcel_medicine`;
+  const quizUrl = `${HUB_BASE_URL}/?view=interactive&unit=edexcel_medicine&start=quiz`;
 
   // Generate high-resolution QR codes as base64 data URLs (enlarged for instant smartphone scannability)
   const qrPortalDataUrl = await QRCode.toDataURL(portalUrl, {
@@ -1122,13 +1122,13 @@ async function generateOpenEveningSheet() {
           <div class="col-content">
             <!-- QR Code 1: Lesson Portal -->
             <div class="qr-showcase-card">
-              <div class="qr-image-frame">
+              <a href="${portalUrl}" target="_blank" rel="noopener" class="qr-image-frame" style="display: flex; text-decoration: none; cursor: pointer;">
                 <img src="${qrPortalDataUrl}" alt="Scan with your mobile phone to explore interactive lessons">
-              </div>
+              </a>
               <div class="qr-content-pane">
                 <div class="qr-header-row">
                   <span class="qr-meta-badge">📱 Scan on Phone</span>
-                  <span class="qr-url-pill">the-history-revision-hub.netlify.app</span>
+                  <a href="${portalUrl}" target="_blank" rel="noopener" class="qr-url-pill" style="text-decoration: none; cursor: pointer; color: #1e3a8a;">the-history-revision-hub.netlify.app</a>
                 </div>
                 <h3 class="qr-card-title">Explore Live Lessons</h3>
                 <p class="qr-card-desc">
@@ -1144,13 +1144,13 @@ async function generateOpenEveningSheet() {
 
             <!-- QR Code 2: Quizzes -->
             <div class="qr-showcase-card">
-              <div class="qr-image-frame">
+              <a href="${quizUrl}" target="_blank" rel="noopener" class="qr-image-frame" style="display: flex; text-decoration: none; cursor: pointer;">
                 <img src="${qrQuizDataUrl}" alt="Scan with your mobile phone to take the interactive quiz">
-              </div>
+              </a>
               <div class="qr-content-pane">
                 <div class="qr-header-row">
                   <span class="qr-meta-badge">📱 Live Challenge</span>
-                  <span class="qr-url-pill">.../?view=interactive</span>
+                  <a href="${quizUrl}" target="_blank" rel="noopener" class="qr-url-pill" style="text-decoration: none; cursor: pointer; color: #1e3a8a;">.../?view=interactive&amp;start=quiz</a>
                 </div>
                 <h3 class="qr-card-title">Test Your History Knowledge</h3>
                 <p class="qr-card-desc">
