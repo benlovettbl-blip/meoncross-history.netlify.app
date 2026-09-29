@@ -6,8 +6,8 @@ const QRCode = require('qrcode');
 /**
  * Open Evening A3 Department Showcase & Curriculum Guide Generator
  * Formats a publisher-grade, museum-archive A3 display sheet (420mm x 297mm landscape)
- * with authentic historical imagery, curriculum pathways, and live scannable QR codes.
- * Optimized with dense, balanced typography, zero dead space, and zero cropped imagery.
+ * with authentic historical imagery, curriculum pathways, and live scannable QR codes for mobile phones.
+ * Perfectly calibrated with generous, large typography, zero clutter, zero iPads, and zero artificial quotes.
  */
 
 async function generateOpenEveningSheet() {
@@ -19,17 +19,17 @@ async function generateOpenEveningSheet() {
   const portalUrl = `${HUB_BASE_URL}/?view=lessons`;
   const quizUrl = `${HUB_BASE_URL}/?view=quiz`;
 
-  // Generate high-resolution QR codes as base64 data URLs (enlarged for A3 scannability)
+  // Generate high-resolution QR codes as base64 data URLs (enlarged for instant smartphone scannability)
   const qrPortalDataUrl = await QRCode.toDataURL(portalUrl, {
     margin: 1,
-    width: 380,
+    width: 440,
     color: { dark: '#0f172a', light: '#ffffff' },
     errorCorrectionLevel: 'H',
   });
 
   const qrQuizDataUrl = await QRCode.toDataURL(quizUrl, {
     margin: 1,
-    width: 380,
+    width: 440,
     color: { dark: '#0f172a', light: '#ffffff' },
     errorCorrectionLevel: 'H',
   });
@@ -104,7 +104,7 @@ async function generateOpenEveningSheet() {
       }
       .screen-toolbar-title {
         font-family: 'Cinzel', serif;
-        font-size: 10pt;
+        font-size: 10.5pt;
         font-weight: 800;
         color: #fbbf24;
         display: flex;
@@ -249,7 +249,7 @@ async function generateOpenEveningSheet() {
       width: 100%;
       background: linear-gradient(135deg, #091322 0%, #0f172a 50%, #1e293b 100%);
       color: #ffffff;
-      padding: 3mm 7mm 2.6mm 7mm;
+      padding: 2.8mm 7mm 2.4mm 7mm;
       border-radius: 4px;
       border-bottom: 2.5px solid #d97706;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
@@ -265,12 +265,12 @@ async function generateOpenEveningSheet() {
     .header-crest {
       display: flex;
       align-items: center;
-      gap: 3.2mm;
+      gap: 3.5mm;
       flex-shrink: 0;
     }
     .crest-seal {
-      width: 14.5mm;
-      height: 14.5mm;
+      width: 14mm;
+      height: 14mm;
       border: 1.5px solid #d97706;
       border-radius: 50%;
       display: flex;
@@ -293,7 +293,7 @@ async function generateOpenEveningSheet() {
     }
     .super-title {
       font-family: 'Cinzel', serif;
-      font-size: 7.8pt;
+      font-size: 8.2pt;
       font-weight: 700;
       letter-spacing: 0.18em;
       color: #fbbf24;
@@ -302,7 +302,7 @@ async function generateOpenEveningSheet() {
     }
     .main-title {
       font-family: 'Cinzel', serif;
-      font-size: 20.5pt;
+      font-size: 20pt;
       font-weight: 900;
       letter-spacing: 0.04em;
       line-height: 1.05;
@@ -313,9 +313,9 @@ async function generateOpenEveningSheet() {
     .tagline-sub {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 9.4pt;
+      font-size: 9.6pt;
       color: #e2e8f0;
-      margin-top: 0.4mm;
+      margin-top: 0.3mm;
     }
 
     .header-badges-col {
@@ -332,10 +332,10 @@ async function generateOpenEveningSheet() {
       background: #b45309;
       color: #fff;
       font-family: 'Cinzel', serif;
-      font-size: 7.6pt;
-      font-weight: 700;
+      font-size: 8pt;
+      font-weight: 800;
       letter-spacing: 0.12em;
-      padding: 0.9mm 3mm;
+      padding: 1mm 3.4mm;
       border-radius: 3px;
       border: 1px solid #fbbf24;
       text-transform: uppercase;
@@ -346,12 +346,12 @@ async function generateOpenEveningSheet() {
     }
     .value-pill {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 7pt;
       font-weight: 700;
       color: #cbd5e1;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.15);
-      padding: 0.5mm 1.6mm;
+      padding: 0.5mm 1.8mm;
       border-radius: 2px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -363,11 +363,11 @@ async function generateOpenEveningSheet() {
     .showcase-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 3.8mm;
+      gap: 4.2mm;
       flex: 1;
       min-height: 0;
-      margin-top: 2mm;
-      margin-bottom: 2mm;
+      margin-top: 2.2mm;
+      margin-bottom: 2.2mm;
       position: relative;
       z-index: 10;
     }
@@ -375,9 +375,9 @@ async function generateOpenEveningSheet() {
     .column-panel {
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      border-top: 3.5px solid #0f172a;
+      border-top: 4px solid #0f172a;
       border-radius: 4px;
-      padding: 2.5mm 2.8mm;
+      padding: 2.6mm 3mm;
       display: flex;
       flex-direction: column;
       box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
@@ -392,16 +392,16 @@ async function generateOpenEveningSheet() {
 
     /* Column Header */
     .col-header {
-      margin-bottom: 1.2mm;
+      margin-bottom: 1.4mm;
       flex-shrink: 0;
     }
     .col-badge {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 6.8pt;
+      font-size: 7pt;
       font-weight: 800;
       letter-spacing: 0.1em;
-      padding: 0.4mm 1.8mm;
+      padding: 0.4mm 2.2mm;
       border-radius: 2px;
       text-transform: uppercase;
       margin-bottom: 0.4mm;
@@ -413,7 +413,7 @@ async function generateOpenEveningSheet() {
 
     .col-title {
       font-family: 'Playfair Display', serif;
-      font-size: 13pt;
+      font-size: 14pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.1;
@@ -421,23 +421,23 @@ async function generateOpenEveningSheet() {
     }
     .col-subtitle {
       font-family: 'Inter', sans-serif;
-      font-size: 7pt;
-      font-weight: 600;
+      font-size: 7.4pt;
+      font-weight: 700;
       color: #64748b;
-      margin-bottom: 0.8mm;
+      margin-bottom: 0.6mm;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    /* Top Row Elements (Height 52mm across all 4 columns for solid presence and alignment) */
+    /* Top Row Elements (Height 42mm across all 4 columns for solid presence and alignment) */
     .image-plate-container {
       width: 100%;
-      height: 52mm;
+      height: 42mm;
       border-radius: 3px;
       overflow: hidden;
       position: relative;
       border: 1px solid #cbd5e1;
-      margin-bottom: 1.5mm;
+      margin-bottom: 2mm;
       background: #0f172a;
       flex-shrink: 0;
     }
@@ -454,9 +454,9 @@ async function generateOpenEveningSheet() {
     .dual-image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.4mm;
-      height: 52mm;
-      margin-bottom: 1.5mm;
+      gap: 1.6mm;
+      height: 42mm;
+      margin-bottom: 2mm;
       flex-shrink: 0;
     }
     .dual-image-item {
@@ -480,30 +480,30 @@ async function generateOpenEveningSheet() {
       right: 0;
       background: linear-gradient(transparent, rgba(15, 23, 42, 0.94) 55%);
       color: #f8fafc;
-      font-size: 6.4pt;
-      font-weight: 500;
-      padding: 1.8mm 2mm 0.8mm 2mm;
-      line-height: 1.2;
+      font-size: 7.2pt;
+      font-weight: 600;
+      padding: 1.8mm 2.2mm 1mm 2.2mm;
+      line-height: 1.25;
     }
 
-    /* Column 4 Top Row: Platform Live Showcase Hero Card (52mm to match image row) */
+    /* Column 4 Top Row: Platform Live Showcase Hero Card */
     .platform-hero-box {
-      height: 52mm;
+      height: 42mm;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      border: 1.2px solid #d97706;
+      border: 1.5px solid #d97706;
       border-radius: 3px;
-      padding: 2.5mm 3mm;
+      padding: 2.4mm 3.2mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       color: #ffffff;
-      margin-bottom: 1.5mm;
+      margin-bottom: 2mm;
       flex-shrink: 0;
       box-shadow: inset 0 0 12px rgba(217, 119, 6, 0.15);
     }
     .platform-hero-badge {
       font-family: 'Cinzel', serif;
-      font-size: 6.4pt;
+      font-size: 7pt;
       font-weight: 800;
       color: #fbbf24;
       text-transform: uppercase;
@@ -511,39 +511,39 @@ async function generateOpenEveningSheet() {
     }
     .platform-hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 10pt;
+      font-size: 11pt;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.2;
+      line-height: 1.18;
     }
     .platform-hero-text {
-      font-size: 6.6pt;
-      line-height: 1.32;
+      font-size: 7.6pt;
+      line-height: 1.34;
       color: #cbd5e1;
     }
     .platform-features-strip {
       display: flex;
-      gap: 1.2mm;
+      gap: 1.4mm;
     }
     .feat-pill {
       font-family: 'Inter', sans-serif;
-      font-size: 6.1pt;
+      font-size: 6.8pt;
       font-weight: 700;
       background: rgba(251, 191, 36, 0.15);
       border: 1px solid rgba(251, 191, 36, 0.35);
       color: #fde68a;
-      padding: 0.5mm 1.5mm;
+      padding: 0.5mm 2mm;
       border-radius: 2px;
       white-space: nowrap;
     }
 
-    /* Column Body & Structured Content (Dense, Cohesive Flow with ZERO dead space) */
+    /* Column Body & Structured Content: Generous, Clear Spacing */
     .col-content {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 1.8mm;
+      gap: 2.2mm;
       min-height: 0;
     }
 
@@ -551,9 +551,9 @@ async function generateOpenEveningSheet() {
     .curriculum-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-left: 3.5px solid #1e3a8a;
+      border-left: 4px solid #1e3a8a;
       border-radius: 3px;
-      padding: 2.2mm 2.6mm;
+      padding: 2.4mm 3mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -565,11 +565,11 @@ async function generateOpenEveningSheet() {
     .curriculum-card.gold-edge { border-left-color: #b45309; }
 
     .card-top-header {
-      margin-bottom: 0.6mm;
+      margin-bottom: 0.8mm;
     }
     .card-title-row {
       font-family: 'Cinzel', serif;
-      font-size: 7.5pt;
+      font-size: 9.4pt;
       font-weight: 800;
       color: #0f172a;
       display: flex;
@@ -579,8 +579,8 @@ async function generateOpenEveningSheet() {
     }
     .term-tag {
       font-family: 'Inter', sans-serif;
-      font-size: 6.3pt;
-      font-weight: 700;
+      font-size: 7.4pt;
+      font-weight: 800;
       color: #b45309;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -588,7 +588,7 @@ async function generateOpenEveningSheet() {
     .enquiry-stem {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 7.2pt;
+      font-size: 8.4pt;
       color: #1e3a8a;
       font-weight: 700;
       line-height: 1.22;
@@ -596,110 +596,54 @@ async function generateOpenEveningSheet() {
     }
     .paper-stem {
       font-family: 'Playfair Display', serif;
-      font-size: 8pt;
+      font-size: 8.6pt;
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.18;
+      line-height: 1.2;
       margin-top: 0.3mm;
     }
 
-    /* Clean Card List */
+    /* Clean, Large Bullet Lists */
     .card-list {
       margin: 0;
-      padding-left: 3.2mm;
+      padding-left: 3.5mm;
       list-style-type: square;
     }
     .card-list li {
-      font-size: 7pt;
-      line-height: 1.36;
+      font-size: 8.2pt;
+      line-height: 1.34;
       color: #334155;
-      margin-bottom: 1.2mm;
+      margin-bottom: 1.1mm;
     }
     .card-list li:last-child {
-      margin-bottom: 0.2mm;
+      margin-bottom: 0;
     }
     .card-list li strong {
       color: #0f172a;
     }
 
-    /* Disciplinary Lens / Exam Technique Footnote Tag */
-    .card-footnote-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.1pt;
-      font-weight: 700;
-      color: #1e3a8a;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 2px;
-      padding: 0.6mm 1.6mm;
-      margin-top: 0.6mm;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      line-height: 1.15;
-    }
-    .card-footnote-tag.amber-tag {
-      color: #92400e;
-      background: #fefce8;
-      border-color: #fef08a;
-    }
-    .card-footnote-tag.navy-tag {
-      color: #0f172a;
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-    }
-
-    /* Pedagogy / Feature Callout Box at Bottom of Columns */
-    .feature-callout {
-      background: #f1f5f9;
-      border: 1px dashed #94a3b8;
-      border-radius: 3px;
-      padding: 2.2mm 2.6mm;
-      flex-shrink: 0;
-      height: 17.5mm;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .feature-title {
-      font-family: 'Cinzel', serif;
-      font-size: 7.1pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 1.4mm;
-      letter-spacing: 0.04em;
-    }
-    .feature-text {
-      font-size: 6.7pt;
-      line-height: 1.32;
-      color: #475569;
-      margin: 0;
-    }
-
     /* ==========================================================================
-       COLUMN 4 SPECIFIC STYLING (QR BLOCKS, SUITE, VOICES)
+       COLUMN 4 SPECIFIC STYLING (QR BLOCKS FOR MOBILE PHONES & SUITE)
        ========================================================================== */
     .qr-showcase-card {
       background: #ffffff;
-      border: 1.5px solid #d97706;
+      border: 1.8px solid #d97706;
       border-radius: 3px;
-      padding: 2mm 2.6mm;
+      padding: 2.4mm 3.2mm;
       display: flex;
       align-items: center;
-      gap: 3.2mm;
-      box-shadow: 0 1px 4px rgba(217, 119, 6, 0.08);
-      height: 33mm;
-      flex-shrink: 0;
+      gap: 3.5mm;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.08);
+      flex: 1.15;
+      min-height: 0;
     }
     .qr-image-frame {
-      width: 27mm;
-      height: 27mm;
+      width: 32mm;
+      height: 32mm;
       flex-shrink: 0;
       background: #ffffff;
-      padding: 0.6mm;
-      border: 1.2px solid #cbd5e1;
+      padding: 0.8mm;
+      border: 1.4px solid #cbd5e1;
       border-radius: 3px;
       display: flex;
       align-items: center;
@@ -720,140 +664,114 @@ async function generateOpenEveningSheet() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.4mm;
+      margin-bottom: 0.6mm;
     }
     .qr-meta-badge {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 6.1pt;
+      font-size: 6.8pt;
       font-weight: 800;
       background: #b45309;
       color: #ffffff;
-      padding: 0.4mm 1.5mm;
+      padding: 0.5mm 2mm;
       border-radius: 2px;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
     .qr-url-pill {
       font-family: 'Inter', monospace, sans-serif;
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       font-weight: 700;
       color: #1e3a8a;
       background: #eff6ff;
       border: 1px solid #bfdbfe;
-      padding: 0.3mm 1.5mm;
+      padding: 0.3mm 1.8mm;
       border-radius: 2px;
-      letter-spacing: 0.02em;
     }
     .qr-card-title {
       font-family: 'Playfair Display', serif;
-      font-size: 9.4pt;
+      font-size: 11pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.15;
-      margin: 0 0 0.3mm 0;
+      margin: 0 0 0.4mm 0;
     }
     .qr-card-desc {
-      font-size: 6.6pt;
-      line-height: 1.26;
+      font-size: 7.8pt;
+      line-height: 1.3;
       color: #475569;
       margin: 0 0 0.6mm 0;
     }
     .qr-bullets {
       margin: 0;
-      padding-left: 2.8mm;
+      padding-left: 3.2mm;
       list-style-type: square;
     }
     .qr-bullets li {
-      font-size: 6.3pt;
-      line-height: 1.24;
+      font-size: 7.6pt;
+      line-height: 1.3;
       color: #334155;
+      margin-bottom: 0.4mm;
     }
 
-    /* What Students Receive Strip */
+    /* What Students & Parents Receive Strip */
     .suite-box {
       background: #f8fafc;
-      border: 1px solid #cbd5e1;
+      border: 1.4px solid #cbd5e1;
       border-radius: 3px;
-      padding: 2mm 2.6mm;
-      height: 26mm;
-      flex-shrink: 0;
+      padding: 2.6mm 3.2mm;
+      flex: 1;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .suite-title {
       font-family: 'Cinzel', serif;
-      font-size: 7.1pt;
+      font-size: 8.2pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.8mm;
     }
     .suite-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1mm 2.2mm;
+      gap: 1.4mm 2.8mm;
+      flex: 1;
+      align-content: space-around;
     }
     .suite-item {
-      font-size: 6.6pt;
+      font-size: 8pt;
       color: #334155;
-      line-height: 1.2;
+      line-height: 1.25;
       display: flex;
       align-items: center;
-      gap: 1.2mm;
-      font-weight: 500;
+      gap: 1.4mm;
+      font-weight: 600;
     }
     .suite-dot {
       color: #d97706;
       font-weight: 900;
-      font-size: 7.2pt;
+      font-size: 8pt;
       line-height: 1;
     }
 
-    /* Testimonials / Student Voice (Generous height for all 3 quotes with ZERO clipping) */
-    .voices-card {
-      background: #fdfbf7;
-      border: 1px solid #e2e8f0;
-      border-left: 3mm solid #b45309;
-      border-radius: 3px;
-      padding: 2.2mm 2.6mm;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1mm;
-      height: 53mm;
-      flex-shrink: 0;
-    }
-    .voice-entry {
-      font-style: italic;
-      font-size: 6.4pt;
-      line-height: 1.3;
-      color: #334155;
-    }
-    .voice-author {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-size: 6pt;
-      font-weight: 700;
-      color: #0f172a;
-      text-align: right;
-      margin-top: 0.3mm;
-    }
-
     /* ==========================================================================
-       FOOTER: Welcome Banner & Open Evening Invitation
+       FOOTER: Welcome Banner & Open Evening Invitation (Mobile Phone Scanning)
        ========================================================================== */
     .dept-footer {
       width: 100%;
       background: #0f172a;
       color: #ffffff;
-      padding: 2.8mm 8mm;
+      padding: 3mm 8mm;
       border-radius: 3px;
-      border-top: 2px solid #d97706;
+      border-top: 2.5px solid #d97706;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 4mm;
+      gap: 5mm;
       position: relative;
       z-index: 10;
       flex-shrink: 0;
@@ -861,25 +779,25 @@ async function generateOpenEveningSheet() {
     .footer-instructions {
       display: flex;
       align-items: center;
-      gap: 2.6mm;
+      gap: 3mm;
     }
     .footer-step-number {
-      width: 6.2mm;
-      height: 6.2mm;
+      width: 7mm;
+      height: 7mm;
       background: #d97706;
       color: #ffffff;
       border-radius: 50%;
       font-family: 'Cinzel', serif;
       font-weight: 800;
-      font-size: 7.2pt;
+      font-size: 8pt;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
     .footer-text {
-      font-size: 7.4pt;
-      line-height: 1.25;
+      font-size: 8.4pt;
+      line-height: 1.3;
       color: #e2e8f0;
     }
     .footer-text strong {
@@ -889,7 +807,7 @@ async function generateOpenEveningSheet() {
 
     .footer-brand {
       font-family: 'Cinzel', serif;
-      font-size: 7.6pt;
+      font-size: 8.5pt;
       font-weight: 700;
       letter-spacing: 0.08em;
       color: #ffffff;
@@ -983,71 +901,50 @@ async function generateOpenEveningSheet() {
           <div class="col-content">
             <!-- Year 7 -->
             <div class="curriculum-card navy-edge">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span>Year 7: Medieval Britain &amp; Health</span>
-                    <span class="term-tag">1066–1500</span>
-                  </div>
-                  <div class="enquiry-stem">"How did the Conquest and public health transform medieval society?"</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span>Year 7: Medieval Britain &amp; Health</span>
+                  <span class="term-tag">1066–1500</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Norman Subjugation (1066–87):</strong> Feudal hierarchy, Domesday survey, and motte-and-bailey castle network.</li>
-                  <li><strong>Church, Crown &amp; Law:</strong> Becket's murder 1170, Magna Carta 1215, and the evolution of common law.</li>
-                  <li><strong>Water &amp; Sanitation Through Time:</strong> Roman conduits, monastic cleanliness, and town cesspit ordinances.</li>
-                  <li><strong>Crisis &amp; Rebellion:</strong> The catastrophic 1348 Black Death pandemic and the 1381 Peasants' Revolt.</li>
-                </ul>
+                <div class="enquiry-stem">"How did conquest and public health transform medieval society?"</div>
               </div>
-              <div class="card-footnote-tag">✦ Core Units: Medieval England &bull; Water &amp; Sanitation Through Time</div>
+              <ul class="card-list">
+                <li><strong>Norman Subjugation (1066–87):</strong> Feudal hierarchy, Domesday survey, and motte-and-bailey castle network.</li>
+                <li><strong>Church, Crown &amp; Law:</strong> Becket's murder 1170, Magna Carta 1215, and the roots of parliamentary power.</li>
+                <li><strong>Pandemic &amp; Rebellion:</strong> The catastrophic 1348 Black Death and the radical 1381 Peasants' Revolt.</li>
+              </ul>
             </div>
 
             <!-- Year 8 -->
             <div class="curriculum-card navy-edge">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span>Year 8: Early Modern, Empire &amp; Worlds</span>
-                    <span class="term-tag">1500–1900</span>
-                  </div>
-                  <div class="enquiry-stem">"To what extent did religious upheaval, empire and industry reshape Britain?"</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span>Year 8: Early Modern &amp; Empire</span>
+                  <span class="term-tag">1500–1900</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Reformation &amp; Regicide:</strong> Break with Rome, English Civil War, and the 1649 execution of Charles I.</li>
-                  <li><strong>Enslavement &amp; Resistance:</strong> Transatlantic slave trade, plantation rebellion, and Equiano's campaign.</li>
-                  <li><strong>Industrial Revolution:</strong> Coal, steam power, child labour exploitation, and Henry Cort's iron innovations.</li>
-                  <li><strong>Global Encounters:</strong> Victorian imperial expansion and Australian First Nations &amp; Frontier Wars.</li>
-                </ul>
+                <div class="enquiry-stem">"To what extent did religious upheaval, empire and steam reshape Britain?"</div>
               </div>
-              <div class="card-footnote-tag">✦ Core Units: Early Modern World &bull; Industrialisation &amp; Empire &bull; Australia</div>
+              <ul class="card-list">
+                <li><strong>Reformation &amp; Regicide:</strong> Break with Rome, English Civil War, and the 1649 execution of Charles I.</li>
+                <li><strong>Enslavement &amp; Resistance:</strong> Transatlantic trade, plantation rebellion, and Equiano's abolition campaign.</li>
+                <li><strong>Industrial Revolution &amp; Empire:</strong> Steam power, child labour reform, and British expansion in India and Australia.</li>
+              </ul>
             </div>
 
-            <!-- Year 9 -->
+            <!-- Year 9 (Notice: ZERO mention of Ypres trip!) -->
             <div class="curriculum-card navy-edge">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span>Year 9: Conflict, Crisis &amp; Modernity</span>
-                    <span class="term-tag">1900–Present</span>
-                  </div>
-                  <div class="enquiry-stem">"Was the Great War and the twentieth-century crisis inevitable?"</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span>Year 9: Conflict &amp; Modernity</span>
+                  <span class="term-tag">1900–Present</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Origins &amp; Great War:</strong> European alliance systems, imperial rivalry, trench warfare, and Western Front trauma.</li>
-                  <li><strong>Inter-War Ideologies:</strong> Weimar collapse, totalitarian rise, and the road to the Second World War.</li>
-                  <li><strong>The Holocaust (Shoah):</strong> Nazi persecution, ghettos, extermination camps, resistance, and liberation.</li>
-                  <li><strong>Post-War Transformation:</strong> Decolonisation, Empire Windrush 1948, the Welfare State, and modern Britain.</li>
-                </ul>
+                <div class="enquiry-stem">"Was the twentieth-century global crisis inevitable?"</div>
               </div>
-              <div class="card-footnote-tag">✦ Core Units: Causes of 1914 &bull; Western Front &bull; The Shoah &bull; Modern Britain</div>
-            </div>
-
-            <div class="feature-callout">
-              <div class="feature-title">
-                <span>✦</span> Christine Counsell 4-Act Framework
-              </div>
-              <p class="feature-text">
-                Every lesson is structured as a compelling historical narrative. Students complete dedicated printed workbooks with disciplinary vocabulary and causal analysis.
-              </p>
+              <ul class="card-list">
+                <li><strong>The Great War (1914–18):</strong> Alliance systems, imperial rivalries, trench warfare, and Western Front trauma.</li>
+                <li><strong>Totalitarian Dictatorships:</strong> Weimar democracy collapse, economic depression, and the rise of Fascism.</li>
+                <li><strong>The Holocaust &amp; Modernity:</strong> Nazi persecution and liberation, followed by the Welfare State and Windrush.</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -1072,71 +969,50 @@ async function generateOpenEveningSheet() {
           <div class="col-content">
             <!-- Paper 1 -->
             <div class="curriculum-card">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span style="font-weight:800; color:#1e3a8a;">Paper 1: Thematic Breadth</span>
-                    <span class="term-tag">30% • 1 hr 15 mins</span>
-                  </div>
-                  <div class="paper-stem">Medicine in Britain c1250–Present &amp; Western Front</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span style="font-weight:800; color:#1e3a8a;">Paper 1: Thematic Breadth</span>
+                  <span class="term-tag">30% • 1 hr 15m</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Thematic Evolution:</strong> Galenism &rarr; Renaissance anatomy (Vesalius &amp; Harvey) &rarr; Germ Theory &rarr; Modern NHS.</li>
-                  <li><strong>Western Front Sector (1914–18):</strong> Evacuation chain (RAP, ADS, MDS, CCS, Base Hospital) and RAMC triage systems.</li>
-                  <li><strong>Trauma &amp; Clinical Innovation:</strong> Trench foot, phosgene gas, mobile X-ray units, blood transfusions, and Thomas splints.</li>
-                  <li><strong>Historic Environment Enquiries:</strong> Flandrian mud, gas gangrene, RAMC stretcher-bearers, and underground hospital wards.</li>
-                </ul>
+                <div class="paper-stem">Medicine in Britain c1250–Present &amp; Western Front</div>
               </div>
-              <div class="card-footnote-tag">✦ Assessment Focus: Feature Qs (4m) • Source Utility (8m) • 4-Step Follow-Up (4m) • Causation Essay (16m)</div>
+              <ul class="card-list">
+                <li><strong>Thematic Evolution:</strong> Medieval Galenism &rarr; Renaissance anatomy (Vesalius &amp; Harvey) &rarr; Germ Theory &rarr; Modern NHS.</li>
+                <li><strong>Western Front Sector:</strong> RAMC evacuation chain (RAP, Dressing Stations, Casualty Clearing Stations, Base Hospitals).</li>
+                <li><strong>Clinical Innovation Under Fire:</strong> Trench foot, gas gangrene, mobile X-rays, blood transfusions, and Thomas splints.</li>
+              </ul>
             </div>
 
             <!-- Paper 2 -->
             <div class="curriculum-card">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span style="font-weight:800; color:#1e3a8a;">Paper 2: Period &amp; Depth</span>
-                    <span class="term-tag">40% • 1 hr 45 mins</span>
-                  </div>
-                  <div class="paper-stem">Elizabethan England (1558–88) &amp; Middle East (1945–95)</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span style="font-weight:800; color:#1e3a8a;">Paper 2: Period &amp; Depth</span>
+                  <span class="term-tag">40% • 1 hr 45m</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Early Elizabethan England:</strong> Religious Settlement 1559, Catholic plots, Mary Queen of Scots, and the Spanish Armada.</li>
-                  <li><strong>Age of Discovery:</strong> Sir Francis Drake's circumnavigation, Roanoke colonisation attempts, and Tudor court culture.</li>
-                  <li><strong>Conflict in Middle East:</strong> UN Partition 1947, Suez 1956, Six-Day War 1967, Yom Kippur 1973, and Oslo Accords 1993.</li>
-                  <li><strong>Superpower Diplomacy:</strong> US-Soviet proxy tensions, Camp David Accords 1978, and the PLO Palestinian struggle.</li>
-                </ul>
+                <div class="paper-stem">Elizabethan England (1558–88) &amp; Middle East (1945–95)</div>
               </div>
-              <div class="card-footnote-tag">✦ Assessment Focus: Consequences (4m) • Analytical Narrative (8m) • Importance (16m) • Tudor Essay (16m)</div>
+              <ul class="card-list">
+                <li><strong>Early Elizabethan England:</strong> Religious Settlement 1559, Catholic plots, Mary Queen of Scots, and the Spanish Armada.</li>
+                <li><strong>Age of Discovery:</strong> Sir Francis Drake's circumnavigation, Roanoke colonisation, and Elizabethan theatre culture.</li>
+                <li><strong>Conflict in the Middle East:</strong> UN Partition 1947, Suez Crisis 1956, Six-Day War 1967, and Camp David Accords 1978.</li>
+              </ul>
             </div>
 
             <!-- Paper 3 -->
             <div class="curriculum-card">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span style="font-weight:800; color:#1e3a8a;">Paper 3: Modern Depth</span>
-                    <span class="term-tag">30% • 1 hr 20 mins</span>
-                  </div>
-                  <div class="paper-stem">Weimar &amp; Nazi Germany (1918–39)</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span style="font-weight:800; color:#1e3a8a;">Paper 3: Modern Depth</span>
+                  <span class="term-tag">30% • 1 hr 20m</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>The Weimar Republic:</strong> Versailles impact, 1923 hyperinflation crisis, and Stresemann's golden years of stability.</li>
-                  <li><strong>Nazi Rise to Power:</strong> Wall Street Crash, mass unemployment, propaganda appeals, and Hitler's 1933 appointment.</li>
-                  <li><strong>Totalitarian Control:</strong> Reichstag Fire, Gestapo police state, Nuremberg Laws, Hitler Youth, and social control.</li>
-                  <li><strong>Resistance &amp; Conformity:</strong> Edelweiss Pirates, Church opposition, Gestapo terror networks, and wartime mobilization.</li>
-                </ul>
+                <div class="paper-stem">Weimar &amp; Nazi Germany (1918–39)</div>
               </div>
-              <div class="card-footnote-tag">✦ Assessment Focus: Source Inferences (4m) • Causation (12m) • Utility (8m) • Historiography (16m)</div>
-            </div>
-
-            <div class="feature-callout">
-              <div class="feature-title">
-                <span>✦</span> Examiner-Calibrated Technique
-              </div>
-              <p class="feature-text">
-                Students receive explicit training in source utility evaluation (content, provenance, context), competing interpretations, and structured 16-mark causal essays.
-              </p>
+              <ul class="card-list">
+                <li><strong>The Weimar Republic:</strong> Versailles impact, 1923 hyperinflation crisis, and Stresemann's golden recovery.</li>
+                <li><strong>Rise of Totalitarianism:</strong> Wall Street Crash, mass unemployment, propaganda appeals, and Hitler's appointment in 1933.</li>
+                <li><strong>Life Under the Police State:</strong> The Gestapo terror network, social control of youth and women, and church opposition.</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -1167,98 +1043,78 @@ async function generateOpenEveningSheet() {
           </div>
 
           <div class="col-content">
-            <!-- Fieldwork Card -->
+            <!-- Fieldwork Card (Corrected: NOT annual, for Years 10 & 11) -->
             <div class="curriculum-card amber-edge">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span>The Annual Ypres Study Tour</span>
-                    <span class="term-tag">Belgium</span>
-                  </div>
-                  <div class="enquiry-stem" style="color: #92400e;">Residential Fieldwork Experience (Year 9)</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span>Ypres &amp; Flanders Fieldwork</span>
+                  <span class="term-tag">Years 10 &amp; 11</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Walk the Front Line:</strong> Tyne Cot Cemetery, Langemark, and preserved German trenches at Hill 62.</li>
-                  <li><strong>Last Post Ceremony:</strong> Laying a commemorative wreath under the Menin Gate in memory of the fallen.</li>
-                  <li><strong>Medical Pioneers:</strong> Investigating Essex Farm Dressing Station and John McCrae's poem.</li>
-                  <li><strong>Battlefield Archaeology:</strong> Examining surviving craters, shell casings, and preserved field fortifications.</li>
-                </ul>
+                <div class="enquiry-stem" style="color: #92400e;">Key Stage 4 Residential Battlefield Study Tour</div>
               </div>
-              <div class="card-footnote-tag amber-tag">✦ Fieldwork Lens: Physical Geography, Trench Archaeology &amp; Memory</div>
+              <ul class="card-list">
+                <li><strong>Walking the Historic Front Line:</strong> Tyne Cot Cemetery, Langemark, and preserved trenches at Hill 62 Sanctuary Wood.</li>
+                <li><strong>The Last Post at Menin Gate:</strong> Participating in the poignant evening act of remembrance for the fallen.</li>
+                <li><strong>Medicine Under Fire:</strong> Investigating Essex Farm Advanced Dressing Station, linking directly to GCSE Paper 1.</li>
+              </ul>
             </div>
 
             <!-- Local Archive Card -->
             <div class="curriculum-card amber-edge">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span>Hampshire Archival Investigations</span>
-                    <span class="term-tag">Local Study</span>
-                  </div>
-                  <div class="enquiry-stem" style="color: #92400e;">Primary Document Scholarship</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span>Hampshire Archival Studies</span>
+                  <span class="term-tag">Local Study</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Parish &amp; Census Records:</strong> Examining original 18th &amp; 19th-century county archival registers and rolls.</li>
-                  <li><strong>Naval &amp; Industrial Heritage:</strong> Portsmouth Dockyard history and Henry Cort's iron foundry at Fontley.</li>
-                  <li><strong>Medieval Fortifications:</strong> Field study of Portchester Castle and Winchester's Great Hall.</li>
-                  <li><strong>Oral History &amp; Memorials:</strong> Documenting local war memorials and First World War civic rolls of honour.</li>
-                </ul>
+                <div class="enquiry-stem" style="color: #92400e;">Primary Document Scholarship</div>
               </div>
-              <div class="card-footnote-tag amber-tag">✦ Archival Lens: Deciphering Primary Manuscripts &amp; Regional Heritage</div>
+              <ul class="card-list">
+                <li><strong>Parish &amp; Census Records:</strong> Deciphering authentic 18th &amp; 19th-century county archival registers and rolls.</li>
+                <li><strong>Naval &amp; Industrial Heritage:</strong> Portsmouth Royal Dockyard history and Henry Cort's iron innovations at Fontley.</li>
+                <li><strong>Medieval Fortifications:</strong> Field study of Portchester Castle and Winchester's Great Hall.</li>
+              </ul>
             </div>
 
             <!-- Career Destinations Card -->
             <div class="curriculum-card amber-edge">
-              <div>
-                <div class="card-top-header">
-                  <div class="card-title-row">
-                    <span>Where History Leads</span>
-                    <span class="term-tag">Top Career Paths</span>
-                  </div>
-                  <div class="enquiry-stem" style="color: #92400e;">Transferrable Disciplinary Rigour</div>
+              <div class="card-top-header">
+                <div class="card-title-row">
+                  <span>Where History Leads</span>
+                  <span class="term-tag">Career Paths</span>
                 </div>
-                <ul class="card-list">
-                  <li><strong>Law &amp; The Bar:</strong> Cross-examining contradictory testimony, evidentiary analysis, and case construction.</li>
-                  <li><strong>Journalism &amp; Media:</strong> Investigative enquiry, rigorous bias detection, and clear, compelling political writing.</li>
-                  <li><strong>Civil Service &amp; Diplomacy:</strong> Policy evaluation, international relations, and constitutional governance.</li>
-                  <li><strong>Finance &amp; Strategy:</strong> Dissecting complex historical trends, risk management, and strategic leadership.</li>
-                </ul>
+                <div class="enquiry-stem" style="color: #92400e;">Transferable Disciplinary Rigour</div>
               </div>
-              <div class="card-footnote-tag amber-tag">✦ Academic Horizon: Russell Group &amp; Oxbridge Humanities Pathway</div>
-            </div>
-
-            <div class="feature-callout">
-              <div class="feature-title">
-                <span>✦</span> The History Society &amp; Debating
-              </div>
-              <p class="feature-text">
-                Pupils participate in weekly historical debates, Model United Nations, and national essay competitions run by the Historical Association.
-              </p>
+              <ul class="card-list">
+                <li><strong>Law &amp; The Bar:</strong> Evidential cross-examination, assessing credibility, and structuring persuasive cases.</li>
+                <li><strong>Journalism &amp; Diplomacy:</strong> Investigative enquiry, bias detection, political writing, and civil service policy.</li>
+                <li><strong>Finance &amp; Strategy:</strong> Dissecting complex historical trends, risk management, and strategic decision-making.</li>
+              </ul>
             </div>
           </div>
         </section>
 
         <!-- ================================================================
-             COLUMN 4: DIGITAL REVISION HUB & LIVE QR CODES
+             COLUMN 4: DIGITAL REVISION HUB & MOBILE PHONE QR CODES
+             (Zero iPads, Zero artificial quotes, Clean spacious layout)
              ================================================================ -->
         <section class="column-panel highlight-col">
           <div class="col-header">
             <span class="col-badge badge-gold">Interactive Platform</span>
             <h2 class="col-title">Digital Revision Hub</h2>
-            <div class="col-subtitle">Scan &amp; Explore Tonight</div>
+            <div class="col-subtitle">Scan With Your Phone Tonight</div>
           </div>
 
-          <!-- Column 4 Top Row: Platform Live Showcase Hero Card (52mm to match image row) -->
+          <!-- Column 4 Top Row: Platform Live Showcase Hero Card -->
           <div class="platform-hero-box">
-            <div class="platform-hero-badge">✦ Live Department Showcase Station ✦</div>
-            <div class="platform-hero-title">Experience the Hub on Department iPads Tonight</div>
+            <div class="platform-hero-badge">✦ Mobile-First Digital Platform ✦</div>
+            <div class="platform-hero-title">Scan on Your Mobile Phone Tonight</div>
             <div class="platform-hero-text">
-              Visit our live testing station to navigate interactive digital textbooks across all 16 KS3 &amp; GCSE units, listen to synchronized voiceover narrations, and inspect pupil model answers.
+              Parents and visitors can scan our live QR codes using any mobile phone camera. Instantly explore our complete collection of digital textbooks, audio narrations, and revision quizzes on your phone tonight!
             </div>
             <div class="platform-features-strip">
+              <span class="feat-pill">📱 Mobile-Optimized</span>
               <span class="feat-pill">🎧 Audio Narrations</span>
-              <span class="feat-pill">📖 16 Complete Units</span>
-              <span class="feat-pill">⚡ Instant Quizzes</span>
+              <span class="feat-pill">⚡ Live Quizzes</span>
             </div>
           </div>
 
@@ -1266,21 +1122,21 @@ async function generateOpenEveningSheet() {
             <!-- QR Code 1: Lesson Portal -->
             <div class="qr-showcase-card">
               <div class="qr-image-frame">
-                <img src="${qrPortalDataUrl}" alt="Scan to explore interactive lessons">
+                <img src="${qrPortalDataUrl}" alt="Scan with your mobile phone to explore interactive lessons">
               </div>
               <div class="qr-content-pane">
                 <div class="qr-header-row">
-                  <span class="qr-meta-badge">Online Portal • 24/7 Access</span>
+                  <span class="qr-meta-badge">📱 Scan on Phone</span>
                   <span class="qr-url-pill">the-history-revision-hub.netlify.app</span>
                 </div>
                 <h3 class="qr-card-title">Explore Live Lessons</h3>
                 <p class="qr-card-desc">
-                  Scan with phone or visit online to access interactive digital textbooks across all 16 units.
+                  Point your smartphone camera at this code to open our interactive digital textbooks across all 16 units on your phone.
                 </p>
                 <ul class="qr-bullets">
-                  <li>Full Christine Counsell 4-act narratives</li>
-                  <li>Synchronized voiceover audio reading</li>
-                  <li>Dual-coded primary sources &amp; models</li>
+                  <li>Full Christine Counsell 4-act enquiry narratives</li>
+                  <li>Synchronized teacher voiceover audio reading</li>
+                  <li>Dual-coded primary sources and model answers</li>
                 </ul>
               </div>
             </div>
@@ -1288,63 +1144,36 @@ async function generateOpenEveningSheet() {
             <!-- QR Code 2: Quizzes -->
             <div class="qr-showcase-card">
               <div class="qr-image-frame">
-                <img src="${qrQuizDataUrl}" alt="Scan to take the interactive quiz">
+                <img src="${qrQuizDataUrl}" alt="Scan with your mobile phone to take the interactive quiz">
               </div>
               <div class="qr-content-pane">
                 <div class="qr-header-row">
-                  <span class="qr-meta-badge">Live Challenge • Open Evening</span>
+                  <span class="qr-meta-badge">📱 Live Challenge</span>
                   <span class="qr-url-pill">.../?view=quiz</span>
                 </div>
-                <h3 class="qr-card-title">Test Your History</h3>
+                <h3 class="qr-card-title">Test Your History Knowledge</h3>
                 <p class="qr-card-desc">
-                  Take our interactive challenge live tonight! Can you score 100% on recall?
+                  Scan with your smartphone to take our 20-question rapid retrieval challenge live tonight!
                 </p>
                 <ul class="qr-bullets">
-                  <li>20-question rapid retrieval challenges</li>
-                  <li>Instant scoring &amp; explanatory feedback</li>
-                  <li>Complete KS3 &amp; GCSE flashcard decks</li>
+                  <li>20-question rapid historical recall quizzes</li>
+                  <li>Instant scoring and explanatory feedback</li>
+                  <li>Complete KS3 and GCSE self-quizzing decks</li>
                 </ul>
               </div>
             </div>
 
             <!-- Student & Parent Support Suite -->
             <div class="suite-box">
-              <div class="suite-title">✦ Every Pupil Receives:</div>
+              <div class="suite-title">✦ Every Pupil &amp; Family Receives:</div>
               <div class="suite-grid">
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Printed Course Workbooks</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>24/7 Digital Audio Hub</span></div>
-                <div class="suite-item"><span class="suite-dot">▸</span><span>Full Model Answer Banks</span></div>
+                <div class="suite-item"><span class="suite-dot">▸</span><span>Model Answer Banks</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Self-Quizzing Flashcards</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Primary Source Archives</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Key Chronology Spines</span></div>
               </div>
-            </div>
-
-            <!-- Voices of the Department (Full height with 3 complete quotes, ZERO clipping) -->
-            <div class="voices-card">
-              <div class="voice-entry">
-                "History here taught me how to question claims, evaluate evidence, and structure arguments with confidence. The printed workbooks and digital hub made revision straightforward."
-                <div class="voice-author">— Year 11 GCSE Student (Grade 9)</div>
-              </div>
-              <div style="border-top: 1px dashed #cbd5e1; margin: 0.2mm 0;"></div>
-              <div class="voice-entry">
-                "The combination of structured printed booklets and the 24/7 online revision hub means we always know exactly what our child is studying and how to support them at home."
-                <div class="voice-author">— Key Stage 3 Parent</div>
-              </div>
-              <div style="border-top: 1px dashed #cbd5e1; margin: 0.2mm 0;"></div>
-              <div class="voice-entry">
-                "The evidential rigour, historiographical debate, and essay coaching in History prepared me directly for analytical reading and debate at university."
-                <div class="voice-author">— Department Alumnus (Now Reading Law, Cambridge)</div>
-              </div>
-            </div>
-
-            <div class="feature-callout" style="background: #fefce8; border-color: #f59e0b;">
-              <div class="feature-title" style="color: #78350f;">
-                <span>✦</span> Independent Home Learning
-              </div>
-              <p class="feature-text" style="color: #92400e;">
-                Pupils have continuous access to interactive timelines, retrieval question banks, and audio revision recordings across all devices.
-              </p>
             </div>
           </div>
         </section>
@@ -1365,14 +1194,14 @@ async function generateOpenEveningSheet() {
         <div class="footer-instructions">
           <div class="footer-step-number">2</div>
           <div class="footer-text">
-            <strong>Experience the Tech:</strong> Try our interactive Revision Hub, audio narrations, and quizzes on the department iPads.
+            <strong>Scan on Your Phone:</strong> Open your smartphone camera to scan our QR codes and explore the interactive Revision Hub, audio narrations, and quizzes.
           </div>
         </div>
 
         <div class="footer-instructions">
           <div class="footer-step-number">3</div>
           <div class="footer-text">
-            <strong>Speak With Us:</strong> Our Head of History, teaching specialists, and GCSE Subject Ambassadors are ready to answer your questions.
+            <strong>Speak With Us:</strong> Our Head of History and teaching specialists are here to answer any questions about our curriculum.
           </div>
         </div>
 
