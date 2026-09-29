@@ -6087,7 +6087,13 @@
             {
               "text": "**The Rise of Gamal Abdel Nasser & Pan-Arabism (1954):** In July 1952, nationalist army officers overthrew King Farouk, bringing Colonel **Gamal Abdel Nasser** to power as President of Egypt by 1954. Nasser championed **Pan-Arabism**—uniting Arab nations to end Western colonial influence and avenge the 1948 defeat by Israel. He pressured Britain to withdraw all 80,000 British troops stationed in the Suez Canal Zone by June 1956. Domestically, Nasser planned the colossal **Aswan High Dam** on the River Nile to generate electricity, control floods, and irrigate desert land, requiring massive foreign loans.",
               "level_4": "By 1954, Gamal Abdel Nasser became President of Egypt, championing Pan-Arabism to end Western imperialism. He agreed the withdrawal of 80,000 British troops from the Suez Canal Zone and planned the Aswan High Dam to industrialize Egypt.",
-              "image": "/images/cme_nasser_1956.jpg"
+              "source": {
+                "title": "Source A: President Gamal Abdel Nasser (1956)",
+                "src": "/images/cme_nasser_1956.jpg",
+                "caption": "Primary Photograph: President Gamal Abdel Nasser of Egypt, whose nationalisation of the Suez Canal in July 1956 electrified the Arab world.",
+                "question": "Study Source A. Why did Nasser's charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?",
+                "model_answer": "Nasser came to personify Pan-Arab nationalism and defiance against Western colonial domination. By overthrowing the corrupt pro-British monarchy in 1952, purchasing arms from Czechoslovakia in 1955, and boldly nationalising the British-and-French-owned Suez Canal, Nasser proved that an Arab leader could stand up to European imperial powers and defend Arab sovereignty, making him the unchallenged hero of the Arab world."
+              }
             },
             {
               "text": "**The Gaza Raid (February 1955) & The Czech Arms Deal:** Tensions escalated on 28 February 1955 when Israeli paratroopers launched a devastating reprisal raid into the **Gaza Strip**, killing **37 Egyptian soldiers** and exposing Egyptian military weakness. Humiliated, Nasser sought modern weapons to defend Egypt. When Western nations refused arms sales without anti-Soviet political conditions, Nasser bypassed them. In September 1955, Nasser stunned the world by signing the **Czech Arms Deal**, purchasing 200 Soviet MiG-15 jet fighters and 300 tanks via Czechoslovakia. This shattered the Western arms monopoly and brought the Cold War directly into the Middle East.",
@@ -6652,13 +6658,6 @@
               "[10] An Historic Political Triumph: Nasser humiliated Britain and France, kept the canal, and became the undisputed leader of the Arab world."
             ],
             "guidance": "Task: Where on the scale (0 to 10) do you place the outcome for Nasser, and what is your SINGLE decisive piece of historical evidence from today’s lesson justifying your score?"
-          },
-          "primary_source": {
-            "title": "Source A: President Gamal Abdel Nasser (1956)",
-            "src": "/images/cme_nasser_1956.jpg",
-            "caption": "Primary Photograph: President Gamal Abdel Nasser of Egypt, whose nationalisation of the Suez Canal in July 1956 electrified the Arab world.",
-            "question": "Study Source A. Why did Nasser's charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?",
-            "model_answer": "Nasser came to personify Pan-Arab nationalism and defiance against Western colonial domination. By overthrowing the corrupt pro-British monarchy in 1952, purchasing arms from Czechoslovakia in 1955, and boldly nationalising the British-and-French-owned Suez Canal, Nasser proved that an Arab leader could stand up to European imperial powers and defend Arab sovereignty, making him the unchallenged hero of the Arab world."
           },
           "timeline_anchor": [
             {
