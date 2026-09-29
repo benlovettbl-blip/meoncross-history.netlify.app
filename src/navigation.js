@@ -393,6 +393,9 @@ export async function switchView(viewName, param = null, skipHistory = false, op
   if (viewName === 'usa' || viewName === 'gcse_usa' || viewName === 'gcse_usa_1954_1975') {
     viewName = 'lessons';
     param = 'usa';
+  } else if (viewName === 'quiz' || viewName === 'interactive_quiz') {
+    viewName = 'interactive';
+    param = param || state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
   }
 
   // Handle view rendering
@@ -400,8 +403,9 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     renderDashboard();
   } else if (viewName === 'profile') {
     renderProfileView();
-  } else if (viewName === 'interactive') {
-    if (param) await loadUnit(param);
+  } else if (viewName === 'interactive' || viewName === 'quiz') {
+    const targetUnit = param || state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
+    await loadUnit(targetUnit);
     renderInteractiveQuiz();
   } else if (viewName === 'timeline') {
     if (param) await loadUnit(param);
@@ -430,7 +434,8 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     if (param) await loadUnit(param);
     renderTabooView();
   } else if (viewName === 'lessons') {
-    if (param) await loadUnit(param);
+    const targetUnit = param || state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
+    await loadUnit(targetUnit);
     renderLessonsView();
   } else if (viewName === 'individuals') {
     if (param) await loadUnit(param);

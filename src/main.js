@@ -187,6 +187,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (view === 'usa' || view === 'gcse_usa' || view === 'gcse_usa_1954_1975') {
     view = 'lessons';
     unit = 'usa';
+  } else if (view === 'quiz' || view === 'interactive_quiz') {
+    view = 'interactive';
+    unit = unit || 'edexcel_medicine';
+  } else if (view === 'lessons' && !unit) {
+    unit = 'edexcel_medicine';
   } else if (view === 'trend-radar' || view === 'matrix' || view === 'exam-matrix') {
     view = 'mock-exams';
   } else if (!view && unit) {

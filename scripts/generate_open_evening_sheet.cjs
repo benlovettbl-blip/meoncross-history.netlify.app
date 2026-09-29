@@ -7,7 +7,7 @@ const QRCode = require('qrcode');
  * Open Evening A3 Department Showcase & Curriculum Guide Generator
  * Formats a publisher-grade, museum-archive A3 display sheet (420mm x 297mm landscape)
  * with authentic historical imagery, curriculum pathways, and live scannable QR codes for mobile phones.
- * Perfectly calibrated with generous, large typography, zero clutter, zero iPads, and zero artificial quotes.
+ * Perfectly calibrated with generous, large typography, zero clutter, zero iPads, zero fake voiceovers, and zero artificial quotes.
  */
 
 async function generateOpenEveningSheet() {
@@ -16,8 +16,9 @@ async function generateOpenEveningSheet() {
   );
 
   const HUB_BASE_URL = process.env.HUB_URL || 'https://the-history-revision-hub.netlify.app';
-  const portalUrl = `${HUB_BASE_URL}/?view=lessons`;
-  const quizUrl = `${HUB_BASE_URL}/?view=quiz`;
+  // Explicit unit parameters guarantee instant rendering with zero blank screens on any device
+  const portalUrl = `${HUB_BASE_URL}/?view=lessons&unit=edexcel_medicine`;
+  const quizUrl = `${HUB_BASE_URL}/?view=interactive&unit=edexcel_medicine`;
 
   // Generate high-resolution QR codes as base64 data URLs (enlarged for instant smartphone scannability)
   const qrPortalDataUrl = await QRCode.toDataURL(portalUrl, {
@@ -363,7 +364,7 @@ async function generateOpenEveningSheet() {
     .showcase-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4.2mm;
+      gap: 4.5mm;
       flex: 1;
       min-height: 0;
       margin-top: 2.2mm;
@@ -377,7 +378,7 @@ async function generateOpenEveningSheet() {
       border: 1px solid #cbd5e1;
       border-top: 4px solid #0f172a;
       border-radius: 4px;
-      padding: 2.6mm 3mm;
+      padding: 2.8mm 3.2mm;
       display: flex;
       flex-direction: column;
       box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
@@ -398,7 +399,7 @@ async function generateOpenEveningSheet() {
     .col-badge {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 7pt;
+      font-size: 7.2pt;
       font-weight: 800;
       letter-spacing: 0.1em;
       padding: 0.4mm 2.2mm;
@@ -413,7 +414,7 @@ async function generateOpenEveningSheet() {
 
     .col-title {
       font-family: 'Playfair Display', serif;
-      font-size: 14pt;
+      font-size: 14.5pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.1;
@@ -421,7 +422,7 @@ async function generateOpenEveningSheet() {
     }
     .col-subtitle {
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
+      font-size: 7.6pt;
       font-weight: 700;
       color: #64748b;
       margin-bottom: 0.6mm;
@@ -437,7 +438,7 @@ async function generateOpenEveningSheet() {
       overflow: hidden;
       position: relative;
       border: 1px solid #cbd5e1;
-      margin-bottom: 2mm;
+      margin-bottom: 2.2mm;
       background: #0f172a;
       flex-shrink: 0;
     }
@@ -456,7 +457,7 @@ async function generateOpenEveningSheet() {
       grid-template-columns: 1fr 1fr;
       gap: 1.6mm;
       height: 42mm;
-      margin-bottom: 2mm;
+      margin-bottom: 2.2mm;
       flex-shrink: 0;
     }
     .dual-image-item {
@@ -480,13 +481,13 @@ async function generateOpenEveningSheet() {
       right: 0;
       background: linear-gradient(transparent, rgba(15, 23, 42, 0.94) 55%);
       color: #f8fafc;
-      font-size: 7.2pt;
+      font-size: 7.4pt;
       font-weight: 600;
       padding: 1.8mm 2.2mm 1mm 2.2mm;
       line-height: 1.25;
     }
 
-    /* Column 4 Top Row: Platform Live Showcase Hero Card */
+    /* Column 4 Top Row: Platform Live Showcase Hero Card (Zero iPads, Zero fake voiceovers) */
     .platform-hero-box {
       height: 42mm;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -497,13 +498,13 @@ async function generateOpenEveningSheet() {
       flex-direction: column;
       justify-content: space-between;
       color: #ffffff;
-      margin-bottom: 2mm;
+      margin-bottom: 2.2mm;
       flex-shrink: 0;
       box-shadow: inset 0 0 12px rgba(217, 119, 6, 0.15);
     }
     .platform-hero-badge {
       font-family: 'Cinzel', serif;
-      font-size: 7pt;
+      font-size: 7.2pt;
       font-weight: 800;
       color: #fbbf24;
       text-transform: uppercase;
@@ -511,13 +512,13 @@ async function generateOpenEveningSheet() {
     }
     .platform-hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 11pt;
+      font-size: 11.5pt;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.18;
     }
     .platform-hero-text {
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       line-height: 1.34;
       color: #cbd5e1;
     }
@@ -527,7 +528,7 @@ async function generateOpenEveningSheet() {
     }
     .feat-pill {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7pt;
       font-weight: 700;
       background: rgba(251, 191, 36, 0.15);
       border: 1px solid rgba(251, 191, 36, 0.35);
@@ -537,13 +538,13 @@ async function generateOpenEveningSheet() {
       white-space: nowrap;
     }
 
-    /* Column Body & Structured Content: Generous, Clear Spacing */
+    /* Column Body & Structured Content: Generous, Clear Spacing to Fill Gaps Naturally */
     .col-content {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 2.2mm;
+      gap: 2.6mm;
       min-height: 0;
     }
 
@@ -551,9 +552,9 @@ async function generateOpenEveningSheet() {
     .curriculum-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-left: 4px solid #1e3a8a;
+      border-left: 4.5px solid #1e3a8a;
       border-radius: 3px;
-      padding: 2.4mm 3mm;
+      padding: 2.8mm 3.2mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -569,7 +570,7 @@ async function generateOpenEveningSheet() {
     }
     .card-title-row {
       font-family: 'Cinzel', serif;
-      font-size: 9.4pt;
+      font-size: 9.8pt;
       font-weight: 800;
       color: #0f172a;
       display: flex;
@@ -579,7 +580,7 @@ async function generateOpenEveningSheet() {
     }
     .term-tag {
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #b45309;
       text-transform: uppercase;
@@ -588,7 +589,7 @@ async function generateOpenEveningSheet() {
     .enquiry-stem {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 8.4pt;
+      font-size: 8.6pt;
       color: #1e3a8a;
       font-weight: 700;
       line-height: 1.22;
@@ -596,7 +597,7 @@ async function generateOpenEveningSheet() {
     }
     .paper-stem {
       font-family: 'Playfair Display', serif;
-      font-size: 8.6pt;
+      font-size: 8.8pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.2;
@@ -610,10 +611,10 @@ async function generateOpenEveningSheet() {
       list-style-type: square;
     }
     .card-list li {
-      font-size: 8.2pt;
-      line-height: 1.34;
+      font-size: 8.4pt;
+      line-height: 1.36;
       color: #334155;
-      margin-bottom: 1.1mm;
+      margin-bottom: 1.2mm;
     }
     .card-list li:last-child {
       margin-bottom: 0;
@@ -629,17 +630,17 @@ async function generateOpenEveningSheet() {
       background: #ffffff;
       border: 1.8px solid #d97706;
       border-radius: 3px;
-      padding: 2.4mm 3.2mm;
+      padding: 2.6mm 3.4mm;
       display: flex;
       align-items: center;
-      gap: 3.5mm;
+      gap: 3.8mm;
       box-shadow: 0 2px 6px rgba(217, 119, 6, 0.08);
       flex: 1.15;
       min-height: 0;
     }
     .qr-image-frame {
-      width: 32mm;
-      height: 32mm;
+      width: 33mm;
+      height: 33mm;
       flex-shrink: 0;
       background: #ffffff;
       padding: 0.8mm;
@@ -669,7 +670,7 @@ async function generateOpenEveningSheet() {
     .qr-meta-badge {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 6.8pt;
+      font-size: 7pt;
       font-weight: 800;
       background: #b45309;
       color: #ffffff;
@@ -680,7 +681,7 @@ async function generateOpenEveningSheet() {
     }
     .qr-url-pill {
       font-family: 'Inter', monospace, sans-serif;
-      font-size: 6.4pt;
+      font-size: 6.6pt;
       font-weight: 700;
       color: #1e3a8a;
       background: #eff6ff;
@@ -690,15 +691,15 @@ async function generateOpenEveningSheet() {
     }
     .qr-card-title {
       font-family: 'Playfair Display', serif;
-      font-size: 11pt;
+      font-size: 11.2pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.15;
       margin: 0 0 0.4mm 0;
     }
     .qr-card-desc {
-      font-size: 7.8pt;
-      line-height: 1.3;
+      font-size: 8pt;
+      line-height: 1.32;
       color: #475569;
       margin: 0 0 0.6mm 0;
     }
@@ -708,8 +709,8 @@ async function generateOpenEveningSheet() {
       list-style-type: square;
     }
     .qr-bullets li {
-      font-size: 7.6pt;
-      line-height: 1.3;
+      font-size: 7.8pt;
+      line-height: 1.32;
       color: #334155;
       margin-bottom: 0.4mm;
     }
@@ -719,7 +720,7 @@ async function generateOpenEveningSheet() {
       background: #f8fafc;
       border: 1.4px solid #cbd5e1;
       border-radius: 3px;
-      padding: 2.6mm 3.2mm;
+      padding: 2.8mm 3.4mm;
       flex: 1;
       min-height: 0;
       display: flex;
@@ -728,7 +729,7 @@ async function generateOpenEveningSheet() {
     }
     .suite-title {
       font-family: 'Cinzel', serif;
-      font-size: 8.2pt;
+      font-size: 8.4pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
@@ -738,14 +739,14 @@ async function generateOpenEveningSheet() {
     .suite-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.4mm 2.8mm;
+      gap: 1.6mm 2.8mm;
       flex: 1;
       align-content: space-around;
     }
     .suite-item {
-      font-size: 8pt;
+      font-size: 8.2pt;
       color: #334155;
-      line-height: 1.25;
+      line-height: 1.28;
       display: flex;
       align-items: center;
       gap: 1.4mm;
@@ -1095,7 +1096,7 @@ async function generateOpenEveningSheet() {
 
         <!-- ================================================================
              COLUMN 4: DIGITAL REVISION HUB & MOBILE PHONE QR CODES
-             (Zero iPads, Zero artificial quotes, Clean spacious layout)
+             (Zero iPads, Zero fake voiceovers, Zero artificial quotes, Clean spacious layout)
              ================================================================ -->
         <section class="column-panel highlight-col">
           <div class="col-header">
@@ -1109,11 +1110,11 @@ async function generateOpenEveningSheet() {
             <div class="platform-hero-badge">✦ Mobile-First Digital Platform ✦</div>
             <div class="platform-hero-title">Scan on Your Mobile Phone Tonight</div>
             <div class="platform-hero-text">
-              Parents and visitors can scan our live QR codes using any mobile phone camera. Instantly explore our complete collection of digital textbooks, audio narrations, and revision quizzes on your phone tonight!
+              Parents and visitors can scan our live QR codes using any mobile phone camera. Instantly explore our complete collection of digital textbooks, primary source investigations, and revision quizzes on your phone tonight!
             </div>
             <div class="platform-features-strip">
               <span class="feat-pill">📱 Mobile-Optimized</span>
-              <span class="feat-pill">🎧 Audio Narrations</span>
+              <span class="feat-pill">📖 16 Complete Units</span>
               <span class="feat-pill">⚡ Live Quizzes</span>
             </div>
           </div>
@@ -1135,7 +1136,7 @@ async function generateOpenEveningSheet() {
                 </p>
                 <ul class="qr-bullets">
                   <li>Full Christine Counsell 4-act enquiry narratives</li>
-                  <li>Synchronized teacher voiceover audio reading</li>
+                  <li>Digital audio reader &amp; read-aloud accessibility</li>
                   <li>Dual-coded primary sources and model answers</li>
                 </ul>
               </div>
@@ -1149,7 +1150,7 @@ async function generateOpenEveningSheet() {
               <div class="qr-content-pane">
                 <div class="qr-header-row">
                   <span class="qr-meta-badge">📱 Live Challenge</span>
-                  <span class="qr-url-pill">.../?view=quiz</span>
+                  <span class="qr-url-pill">.../?view=interactive</span>
                 </div>
                 <h3 class="qr-card-title">Test Your History Knowledge</h3>
                 <p class="qr-card-desc">
@@ -1168,7 +1169,7 @@ async function generateOpenEveningSheet() {
               <div class="suite-title">✦ Every Pupil &amp; Family Receives:</div>
               <div class="suite-grid">
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Printed Course Workbooks</span></div>
-                <div class="suite-item"><span class="suite-dot">▸</span><span>24/7 Digital Audio Hub</span></div>
+                <div class="suite-item"><span class="suite-dot">▸</span><span>24/7 Digital Textbooks</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Model Answer Banks</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Self-Quizzing Flashcards</span></div>
                 <div class="suite-item"><span class="suite-dot">▸</span><span>Primary Source Archives</span></div>
@@ -1194,7 +1195,7 @@ async function generateOpenEveningSheet() {
         <div class="footer-instructions">
           <div class="footer-step-number">2</div>
           <div class="footer-text">
-            <strong>Scan on Your Phone:</strong> Open your smartphone camera to scan our QR codes and explore the interactive Revision Hub, audio narrations, and quizzes.
+            <strong>Scan on Your Phone:</strong> Open your smartphone camera to scan our QR codes and explore the interactive Revision Hub, digital textbooks, and quizzes.
           </div>
         </div>
 
