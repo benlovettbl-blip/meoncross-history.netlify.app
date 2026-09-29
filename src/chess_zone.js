@@ -26,6 +26,31 @@ import {
 } from './chess_realtime.js';
 import QRCode from 'qrcode';
 
+export function isChessViewActive() {
+  if (typeof window === 'undefined') return false;
+  const currentView =
+    (window.appStore && window.appStore.state && window.appStore.state.currentView) ||
+    (window.state && window.state.currentView);
+  if (currentView === 'chess') return true;
+
+  if (typeof document !== 'undefined') {
+    if (
+      document.getElementById('chess-hub-root') ||
+      document.getElementById('projector-whiteboard-root')
+    ) {
+      return true;
+    }
+  }
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('view') === 'chess') return true;
+  } catch (e) {}
+
+  return false;
+}
+window.isChessViewActive = isChessViewActive;
+
 const STORAGE_KEY = 'history_chess_club_v5';
 const ARCHIVE_KEY = 'history_chess_master_archive';
 const BACKUP_KEY = 'history_chess_backup_snapshot';
@@ -483,9 +508,9 @@ let chessState = {
   whiteboardFitMode: true,
   adjudicationCalc: { white: 0, black: 0 },
   autoRePairEnabled: true,
-  sessionActive: true,
-  sessionTimeRemaining: 3600,
-  sessionTimerRunning: true,
+  sessionActive: false,
+  sessionTimeRemaining: 0,
+  sessionTimerRunning: false,
   activePuzzleBoard: null,
   activePuzzleIndex: 0,
   selectedSquare: null,
@@ -557,6 +582,9 @@ window.showChessToast = showChessToast;
 // Global Session Clock & Auto-Ticker for Period 6
 if (typeof window !== 'undefined' && !window.__historySessionInterval) {
   window.__historySessionInterval = setInterval(() => {
+    // Hard Guardrail: NEVER tick down or conclude session unless chess hub is active
+    if (!isChessViewActive()) return;
+
     if (
       chessState &&
       chessState.sessionActive &&
@@ -838,8 +866,11 @@ function initChessState(forceClean = false) {
         if (remoteData.knockoutBracket !== undefined) {
           chessState.knockoutBracket = remoteData.knockoutBracket;
         }
-        renderChessHubView();
-        showChessToast('⚡ Live update received from teacher!', 'info');
+        // Hard Guardrail: NEVER hijack view or toast if user is on another page
+        if (isChessViewActive()) {
+          renderChessHubView();
+          showChessToast('⚡ Live update received from teacher!', 'info');
+        }
       }
     });
   }
@@ -954,6 +985,11 @@ function calculateHouseTotals() {
 
 // Main View Renderer
 export function renderChessHubView() {
+  // Hard Guardrail: NEVER overwrite the active DOM view unless the user is intentionally on the Chess Club view!
+  if (!isChessViewActive()) {
+    return;
+  }
+
   initChessState();
 
   const container = document.getElementById('main-content');
@@ -1009,7 +1045,7 @@ export function renderChessHubView() {
   }
 
   let html = `
-    <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 16px 60px 16px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif;">
+    <div id="chess-hub-root" style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 16px 60px 16px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif;">
       
       ${
         chessState.isPupilPreview
@@ -5862,11 +5898,13 @@ window.concludePeriod6Session = function () {
   }
 
   saveChessState();
-  renderChessHubView();
-  showChessToast(
-    `🏁 Period 6 Concluded! ${drawCount > 0 ? `${drawCount} active game(s) adjudicated as draws (+2 House points each).` : 'All games finished.'} Standings finalized!`,
-    'success',
-  );
+  if (isChessViewActive()) {
+    renderChessHubView();
+    showChessToast(
+      `🏁 Period 6 Concluded! ${drawCount > 0 ? `${drawCount} active game(s) adjudicated as draws (+2 House points each).` : 'All games finished.'} Standings finalized!`,
+      'success',
+    );
+  }
 };
 
 window.resumePeriod6Session = function () {

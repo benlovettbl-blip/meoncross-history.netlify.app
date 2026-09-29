@@ -171,6 +171,20 @@ export function startPupilRealtimeSync(onUpdateReceived) {
   async function checkRemoteState() {
     if (isPushing) return;
 
+    // Hard Guardrail: Do not poll or fetch if user is not currently in the chess view
+    const isChessActive =
+      (typeof window !== 'undefined' &&
+        window.appStore &&
+        window.appStore.state &&
+        window.appStore.state.currentView === 'chess') ||
+      (typeof window !== 'undefined' &&
+        window.state &&
+        window.state.currentView === 'chess') ||
+      (typeof document !== 'undefined' &&
+        (document.getElementById('chess-hub-root') || document.getElementById('projector-whiteboard-root')));
+
+    if (!isChessActive) return;
+
     try {
       const res = await fetch(SYNC_ENDPOINT, {
         method: 'GET',
