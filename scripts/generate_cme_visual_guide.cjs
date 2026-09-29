@@ -37,6 +37,8 @@ const {
   renderPage20,
 } = require('./visual_guides/cme/cme_renderers.cjs');
 
+const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
+
 const kt1Spreads = require('./visual_guides/cme/cme_spreads_kt1.cjs');
 const kt2Spreads = require('./visual_guides/cme/cme_spreads_kt2.cjs');
 const kt3Spreads = require('./visual_guides/cme/cme_spreads_kt3.cjs');
@@ -165,13 +167,32 @@ async function run() {
   await page.goto(pathToFileURL(HTML_OUT_PUBLIC).href, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 
-  // Automated Overflow Check (Strict 1123px Limit across all 20 pages)
-  const overflowReports = await page.evaluate(() => {
+  // Recommendation 2: Run In-Memory Layout & Typographical Balancing Engine
+  console.log('⚙️ Running in-memory auto-calibration engine before capturing PDF...');
+  const calibLog = await autoCalibrateTextbook(page, { pageSelector: '.page' });
+  if (calibLog && calibLog.length > 0) {
+    console.log(`   ✨ Calibrated ${calibLog.length} element adjustments.`);
+  }
+
+  // Automated Overflow & Dead-Space Void Check (Strict 1123px Limit across all 20 pages)
+  const layoutAudit = await page.evaluate(() => {
     const pages = Array.from(document.querySelectorAll('.page'));
     const overflows = [];
+    const voids = [];
     pages.forEach((p, idx) => {
       const pageNum = p.getAttribute('data-page') || idx + 1;
       const scrollHeight = p.scrollHeight;
+      const footer = p.querySelector('.page-footer');
+      let gapAboveFooter = 0;
+      if (footer) {
+        const prev = footer.previousElementSibling;
+        if (prev) {
+          const prevRect = prev.getBoundingClientRect();
+          const footerRect = footer.getBoundingClientRect();
+          gapAboveFooter = Math.round(footerRect.top - prevRect.bottom);
+        }
+      }
+
       if (scrollHeight > 1124) {
         overflows.push({
           pageNum,
@@ -180,13 +201,19 @@ async function run() {
           overflowBy: scrollHeight - 1123,
         });
       }
+      if (gapAboveFooter > 35 && pageNum > 1) {
+        voids.push({
+          pageNum,
+          gapAboveFooter,
+        });
+      }
     });
-    return { totalPages: pages.length, overflows };
+    return { totalPages: pages.length, overflows, voids };
   });
 
-  console.log(`📐 Page layout report: Total pages rendered = ${overflowReports.totalPages}`);
-  if (overflowReports.overflows.length > 0) {
-    const details = overflowReports.overflows
+  console.log(`📐 Page layout report: Total pages rendered = ${layoutAudit.totalPages}`);
+  if (layoutAudit.overflows.length > 0) {
+    const details = layoutAudit.overflows
       .map(
         (o) =>
           `Page ${o.pageNum} (#${o.id}): ${o.scrollHeight}px (overflows by +${o.overflowBy}px)`,
@@ -197,6 +224,16 @@ async function run() {
   console.log(
     '✅ Automated Overflow Check: All 20 pages fit cleanly within 1123px bounds (0 overflows)!',
   );
+  if (layoutAudit.voids.length > 0) {
+    console.log(
+      `ℹ️ Large dead space report: ${layoutAudit.voids.length} pages have gaps > 35px:`,
+      layoutAudit.voids,
+    );
+  } else {
+    console.log(
+      '✅ Automated Space Utilization: All pages have < 35px dead gap (optimal layout budget)!',
+    );
+  }
 
   // Export PDF to unit directory
   await page.pdf({
