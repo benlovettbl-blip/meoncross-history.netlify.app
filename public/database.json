@@ -2786,14 +2786,22 @@
             ],
             "source_context": "Primary map of the secret Sykes-Picot Agreement signed on 8 May 1916 by Sir Mark Sykes and François Georges-Picot, dividing the Ottoman Middle East into British and French zones, alongside the 1917 Balfour Declaration letter. **Hinge Question:** How did the imperial borders drawn by Britain and France in 1916 set the stage for the collapse of British authority in Palestine by 1945?"
           },
-          "video": {
-            "title": "Vox: The Israel-Palestine conflict: a brief, simple history",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=iRYZjOuUnlU",
-            "duration": "10 mins 19 secs",
-            "viewing_task": "Identify how the collapse of the Ottoman Empire during World War I and British imperial administration shaped modern borders in Palestine, and why contradictory promises caused escalating tension.",
-            "model_answer": "The video demonstrates that following the collapse of the Ottoman Empire in WWI, Britain took control of Palestine under a League of Nations mandate. Britain issued the 1917 Balfour Declaration backing a Jewish national home while having previously offered vague promises of independence to Arab leaders (McMahon-Hussein Correspondence). As Jewish immigration increased, competing nationalisms collided, leading to mutual suspicion and violent clashes, culminating in the 1947 UN Partition Plan."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=iRYZjOuUnlU",
+              "title": "The Sykes-Picot Agreement & The Partition of the Ottoman Empire",
+              "duration": "5 mins 30 secs",
+              "teacher_guidance": "Essential background on conflicting British promises: the McMahon-Hussein Correspondence (1915), the Sykes-Picot Agreement (1916), and the Balfour Declaration (1917)."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kbdvn8QHyX8",
+              "title": "The Balfour Declaration's Impact, 100 Years On",
+              "duration": "8 mins 3 secs",
+              "teacher_guidance": "Analysis of Lord Balfour’s letter promising a \"national home for the Jewish people\" while claiming not to prejudice non-Jewish rights."
+            }
+          ],
           "extra_videos": [
             {
               "title": "The Economist: The Balfour Declaration's impact, 100 years on",
@@ -3512,14 +3520,28 @@
             "significance": "As Israel's paramount founding father, Ben-Gurion declared independence in defiance of international hesitation and coordinated invasions by five Arab armies, securing the state's survival through the 1948–49 War."
           },
           "title": "KT 1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
-          "video": {
-            "type": "era",
-            "url": "https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/",
-            "title": "Twentieth Century History: Israel and the Arab States",
-            "duration": "20 mins 7 secs",
-            "viewing_task": "As you watch the programme, note down three ways in which the creation of the State of Israel in 1948 changed the political geography of the Middle East.",
-            "model_answer": "The creation of Israel fundamentally changed the Middle East by establishing a sovereign Jewish state in Palestine, triggering the First Arab-Israeli War, redrawing borders as Israel expanded its territory, and causing the permanent displacement of over 700,000 Palestinian Arabs (the Nakba)."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=PgnQeDoypO8",
+              "title": "GCSE Revision: Creation of the State of Israel (1945–1949)",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Concise specification summary: King David Hotel bombing, UN Partition Plan (Resolution 181), and the British withdrawal."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=2yBolHdMejM",
+              "title": "1947: Palestine Population & Jewish Immigration",
+              "duration": "7 mins 57 secs",
+              "teacher_guidance": "Demographic breakdown of post-Holocaust immigration, the Exodus ship crisis, and the escalating civil war."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/",
+              "title": "20th Century History: Israel and the Arab States (1948 War)",
+              "duration": "20 mins 0 secs",
+              "teacher_guidance": "BBC archival documentary on Ben-Gurion’s Declaration of Independence and the 1948–49 Arab-Israeli War."
+            }
+          ],
           "extra_videos": [
             {
               "type": "youtube",
@@ -5686,6 +5708,29 @@
               "title": "Unit 101 & The Qibya Massacre",
               "desc": "In retaliation for cross-border Fedayeen guerrilla attacks, Ariel Sharon’s commando Unit 101 dynamites 45 houses in the West Bank village of Qibya, killing 69 civilians."
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=fXk_n_ww6GU",
+              "title": "GCSE Revision: The Reshaping of the Middle East (1948–1949)",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Summarises territorial consequences of the 1949 Armistice: Jordan takes West Bank, Egypt takes Gaza Strip, and Jerusalem is partitioned."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=eTMRMX7Pw5U",
+              "title": "The 1948 Arab-Israeli War and Al-Nakba Explained",
+              "duration": "5 mins 29 secs",
+              "teacher_guidance": "Examines the Palestinian exodus (\"Al-Nakba\" - The Catastrophe), 700,000 refugees, and the enduring Right of Return dispute."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=wjysy7ONisA",
+              "title": "1948: Israel's Battle for Independence",
+              "duration": "6 mins 58 secs",
+              "teacher_guidance": "Israeli perspective on defensive mobilisation, Czech arms shipments, and the founding of the IDF."
+            }
           ]
         },
         {
@@ -6680,6 +6725,22 @@
               "title": "Secret Sevres Protocol Collusion",
               "desc": "Britain, France, and Israel secretly meet outside Paris to orchestrate a tripartite military invasion of Egypt, sparking the 1956 Suez Crisis."
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=PnZ2tG_PYpc",
+              "title": "GCSE Revision: President Nasser & The 1956 Suez Crisis",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Key facts: Aswan Dam funding withdrawn, nationalisation of the Suez Canal, and the secret Protocol of Sèvres."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=fwRFhmcfHgg",
+              "title": "The 1956 Suez Crisis Explained",
+              "duration": "4 mins 12 secs",
+              "teacher_guidance": "Explains Anglo-French-Israeli collusion, US President Eisenhower threatening economic sanctions, and the emergence of the UN Emergency Force."
+            }
           ]
         },
         {
@@ -7441,6 +7502,21 @@
               "a": "It was Israel's primary source of freshwater for agriculture and urban growth",
               "explanation": "Freshwater from the Sea of Galilee and River Jordan was essential to sustain Israeli agriculture and immigration."
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=W7KFi6ZmZdU",
+              "title": "GCSE Revision: Road to the Six-Day War (1964–1967)",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Summarises water disputes on the River Jordan, Syrian artillery on the Golan Heights, and fedayeen border raids."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/s3e6-battle-for-the-holy-city-the-six-day-war-days-that-shook-the-world/",
+              "title": "Days That Shook the World: The Six-Day War (BBC)",
+              "duration": "50 mins 0 secs",
+              "teacher_guidance": "High-production BBC documentary examining the crisis: UNEF expulsion, closing the Straits of Tiran, and Israeli cabinet debates."
+            }
           ]
         },
         {
@@ -8151,6 +8227,22 @@
               "answer": "10 June 1967",
               "a": "10 June 1967",
               "explanation": "The war concluded on Saturday, 10 June 1967, with a UN ceasefire."
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=B60O6Kcijso",
+              "title": "Operation Focus: The Pre-emptive Airstrike (June 1967)",
+              "duration": "6 mins 45 secs",
+              "teacher_guidance": "Military breakdown of the morning of 5 June 1967: Israeli Mirage jets destroying the Egyptian air force on runways within 3 hours."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=F4GGpOxJW7I",
+              "title": "GCSE Revision: The Six-Day War Combat Timeline",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Overview of the three fronts: Sinai captured from Egypt, West Bank & East Jerusalem captured from Jordan, Golan Heights captured from Syria."
             }
           ]
         },
@@ -8909,6 +9001,22 @@
               "a": "It was completely closed to all international shipping until 1975",
               "explanation": "Trapped ships and blockages kept the Suez Canal closed for eight years from 1967 to 1975."
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=hMOIIdnkrDY",
+              "title": "GCSE Revision: Conquered Territories & UN Resolution 242",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Details UN Resolution 242: \"land for peace\", Israeli security borders, and the Khartoum Resolution \"Three No’s\"."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=s7zFGaUPGUA",
+              "title": "UN Resolution 242 and the Occupied Territories",
+              "duration": "5 mins 10 secs",
+              "teacher_guidance": "Explains Jewish religious settlements in the West Bank and Gaza and the transformation of the Palestinian dispute."
+            }
           ]
         },
         {
@@ -9646,6 +9754,21 @@
               "a": "1974",
               "explanation": "Arafat gave his famous \"gun and olive branch\" speech to the UN General Assembly in November 1974."
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/s1e8-black-september-hijackings-days-that-shook-the-world/",
+              "title": "Days That Shook the World: Black September & Dawson’s Field Hijackings",
+              "duration": "50 mins 0 secs",
+              "teacher_guidance": "BBC documentary on the 1970 Dawson’s Field plane hijackings, King Hussein expelling the PLO to Lebanon, and the emergence of Black September."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=SOLg_p4ScAU",
+              "title": "The Munich 1972 Olympics Attack",
+              "duration": "8 mins 20 secs",
+              "teacher_guidance": "Analysis of the massacre of 11 Israeli athletes at the Munich Olympics and global international terrorism."
+            }
           ]
         },
         {
@@ -10357,6 +10480,22 @@
               "answer": "It restored Egyptian pride while proving to Israel that occupying land alone did not guarantee security",
               "a": "It restored Egyptian pride while proving to Israel that occupying land alone did not guarantee security",
               "explanation": "Restored Arab dignity and shattered Israeli complacency opened the political space for Sadat to negotiate."
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=iK729p_-ZRg",
+              "title": "GCSE Revision: The Yom Kippur War (October 1973)",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Core specification recap: Sadat’s goals, the Bar-Lev line crossing, Soviet SAM missiles, and US/Soviet superpower tensions."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1sBdLja2aVs",
+              "title": "The Yom Kippur War (1973): Surprise Attack & Counter-Offensive",
+              "duration": "7 mins 15 secs",
+              "teacher_guidance": "Detailed battle analysis of Syrian tank assaults on the Golan and Sharon’s Suez canal crossing, leading to the OPEC oil embargo."
             }
           ]
         },
@@ -11404,7 +11543,30 @@
                 "Strategic Chokepoint: Guarantees of unhindered Israeli shipping through the Straits of Tiran"
               ]
             }
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=-XkX1UUe7HQ",
+              "title": "GCSE Revision: Shuttle Diplomacy to Camp David (1974–1979)",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Covers Henry Kissinger’s diplomacy, Anwar Sadat’s historic 1977 speech to the Knesset in Jerusalem, and the 1978 Camp David summit."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LYhJOjv0Yc8",
+              "title": "Kissinger's Shuttle Diplomacy & Sadat in Jerusalem",
+              "duration": "6 mins 30 secs",
+              "teacher_guidance": "Archival footage of Sadat breaking Arab taboos and meeting Prime Minister Menachem Begin."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mbc9ElB5vfQ",
+              "title": "The Camp David Accords (1978): Begin, Sadat & Carter",
+              "duration": "8 mins 45 secs",
+              "teacher_guidance": "Examines the 1979 Washington Peace Treaty: Sinai returned to Egypt in exchange for formal recognition of Israel, and Sadat’s 1981 assassination."
+            }
+          ]
         },
         {
           "id": "lesson_12",
@@ -12527,6 +12689,29 @@
               "date": "Dec 1988",
               "title": "Arafat 1988 Speech at Geneva UN Session",
               "desc": "In the historic Arafat 1988 speech, the PLO recognizes Israel’s right to exist, accepts UN Resolutions 242 and 338, and renounces all terrorism."
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=nXddsCeaCDw",
+              "title": "GCSE Revision: The First Intifada & The 1982 Lebanon War",
+              "duration": "2 mins 0 secs",
+              "teacher_guidance": "Covers Operation Peace for Galilee (1982), the siege of Beirut, Sabra and Shatila massacres, and the 1987 grassroots Intifada."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=try3LAQxSAE",
+              "title": "The 1982 Lebanon War & Sabra-Shatila Massacres",
+              "duration": "9 mins 15 secs",
+              "teacher_guidance": "Examines Ariel Sharon, the Christian Phalangist militias, and the Kahan Commission report in Israel."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Azud40CQ3IE",
+              "title": "The First Intifada (1987–1993): The Stone-Throwing Uprising",
+              "duration": "7 mins 40 secs",
+              "teacher_guidance": "Explains civil disobedience, boycotted Israeli goods, stone-throwing youths against IDF soldiers, and the shift of moral sympathy."
             }
           ]
         },
@@ -13674,7 +13859,23 @@
                 "Note the encirclement of East Jerusalem, cutting it off from the West Bank hinterland"
               ]
             }
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=TgFWEVQTeHM",
+              "title": "The 1993 Oslo Accords: Secret Talks & The White House Lawn Handshake",
+              "duration": "6 mins 50 secs",
+              "teacher_guidance": "Examines secret negotiations in Norway, mutual recognition between Yitzhak Rabin and Yasser Arafat, and the establishment of the Palestinian Authority."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=5SIAW4cX62I",
+              "title": "The Assassination of Yitzhak Rabin (1995) & The Fragility of Peace",
+              "duration": "5 mins 40 secs",
+              "teacher_guidance": "Details the November 1995 assassination of Israeli Prime Minister Rabin by Jewish right-wing extremist Yigal Amir at a Tel Aviv peace rally."
+            }
+          ]
         }
       ],
       "exam_blocks": [
@@ -22083,7 +22284,27 @@
                 "model": "One major reason why the Catholic Church held such vast influence over ideas about disease causation was its institutional monopoly on education, literacy, and the reproduction of books. In the Middle Ages, books were hand-copied exclusively by Catholic monks in monastic scriptoria. The Church actively censored any ideas that contradicted Scripture, ensuring that classical medical texts were only preserved if they aligned with Christian doctrine. Because Claudius Galen argued that the human body was perfectly designed by a single Creator, the Church adopted his writings as sacred medical canon. Medical students in medieval universities—which were run by clergy—spent years memorizing Galen and Hippocrates rather than observing actual patients, reinforcing ecclesiastical control over medical thought.<br><br>Furthermore, the Church possessed the ecclesiastical and legal authority to punish and suppress intellectual dissent. Clerics taught that disease was sent directly by God as divine retribution (punishment) for human sin, or as a spiritual test of faith. Questioning this supernatural explanation or challenging Galenic dogma was treated as heresy. For example, in 1277 the Franciscan friar Roger Bacon was imprisoned by church authorities for advocating empirical scientific experimentation and suggesting that doctors should investigate nature through observation rather than unquestioning adherence to ancient books. The threat of imprisonment or excommunication effectively terrified scholars and stifled independent medical enquiry for centuries.<br><br>Finally, the Church controlled the physical institutions of society, including hospitals, universities, and social life. Ordinary people attended mass weekly, where priests reinforced the message that epidemics like the Black Death were caused by God’s wrath or planetary conjunctions arranged by God. Monastic hospitals were founded on the principle of ‘care not cure’, prioritizing prayer, confession, and the salvation of the patient’s soul over medical diagnosis or physical remedies. Consequently, the pervasive spiritual worldview promoted by the Church made supernatural explanations of illness virtually impossible for medieval people to challenge."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/1-medicine-and-religion-history-file/",
+              "title": "History File: Medicine and Religion in the Middle Ages",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Recommended for exploring how the medieval Catholic Church controlled medical ideas, training, and Galenic doctrine."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/1-medicine-religion-and-natural-causes-history-file/",
+              "title": "History File: Medicine, Religion and Natural Causes",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Highlights the tension between supernatural beliefs (punishment from God) and rational natural causes (Four Humours, astrology)."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-pain-message-bbc-four/",
+              "title": "Pain, Pus and Poison: The Search for Modern Medicine – Pain Message (BBC Four)",
+              "duration": "58 mins 0 secs",
+              "teacher_guidance": "BBC documentary context on how early medicine understood pain, suffering, and spiritual trials."
+            }
+          ]
         },
         {
           "id": "lesson_1_2",
@@ -22480,7 +22701,22 @@
                 "model": "One primary reason Galen’s ideas continued to be believed was that his medical framework appeared entirely logical and comprehensive to medieval minds. Galen had expanded Hippocrates’ Four Humours into the **Theory of Opposites**, which offered a practical, common-sense explanation for illness and treatment: if a patient had a cold, wet phlegmatic fever, they were treated with hot, dry remedies like pepper or mustard. This gave both physicians and ordinary people a systematic, reassuring framework for understanding illness, even when treatments failed to cure severe epidemics.<br><br>Furthermore, Galen’s medical writings were actively endorsed and fiercely protected by the medieval Catholic Church. Galen believed that every part of the human body was purposefully crafted by a single divine Creator (teleology), which aligned perfectly with Christian theological doctrine. Because the Church controlled the universities and monastic scriptoria, it declared Galen’s texts infallible. University medical faculties taught Galen as unchallengeable truth; professors sat in an elevated cathedra lecturing from Galen while barber-surgeons dissected animals or criminals. If an anatomical corpse contradicted Galen’s descriptions, professors blamed the imperfection of the human cadaver rather than Galen.<br><br>Finally, there was a total absence of alternative scientific explanations or empirical dissection. Human dissection was strictly restricted by religious authorities, and when dissections did occur, they were demonstrations to confirm Galen rather than investigations to discover new anatomy. Hand-copying errors in monastic manuscripts further locked errors in place. Without microscopes, physiological instruments, or the freedom to conduct empirical research, medieval society had neither the tools nor the intellectual freedom to challenge Galen’s 1,300-year-old authority."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
+              "title": "Medieval Medicine | Secondary History - Medicine Through Time",
+              "duration": "4 mins 20 secs",
+              "teacher_guidance": "Fast-paced curriculum recap of Hippocrates, Galen, the Theory of the Four Humours, and the Theory of Opposites."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-galen-and-leonardo-galenic-anatomy/",
+              "title": "BBC Four: The Beauty of Anatomy – Galen and Leonardo: Galenic Anatomy",
+              "duration": "29 mins 0 secs",
+              "teacher_guidance": "Dr. Adam Rutherford investigates Galen’s anatomical errors from dissecting apes and pigs and why his ideas dominated for 1,400 years."
+            }
+          ]
         },
         {
           "id": "lesson_1_3",
@@ -22874,7 +23110,15 @@
                 "model": "One major reason medieval treatments focused on humoural balance was the universal acceptance of the Hippocratic-Galenic medical doctrine. Hippocrates argued that the body contained four vital humours—blood, phlegm, yellow bile, and black bile—which had to remain in harmonious balance for health. If one humour became dominant, illness occurred. Consequently, medieval treatment was designed entirely around evacuative therapies: excess blood was purged through phlebotomy (vein-slitting or leeches), while excess bile was eliminated using violent herbal emetics (vomit-inducing mixtures) and laxatives. Because these procedures produced visible physical results (blood and fluids leaving the body), both physician and patient believed the disease was being physically expelled.<br><br>Furthermore, preventive advice was structured entirely around personal humoural equilibrium, as exemplified by the **Regimen Sanitatis** (Rule of Health). This widely circulated medieval health handbook, written by the medical faculty at Salerno, instructed wealthy nobles to regulate the ‘six non-naturals’—diet, rest, exercise, bathing, air, and emotional state—to prevent humoural corruption. Medieval people believed each person possessed a unique humoural complexion determined by their age, temperament, and astrological birth chart, making customized humoural dieting and bathing the central pillar of daily preventive medicine.<br><br>Finally, there was a total lack of any rival scientific understanding of human physiology or contagion. Because microorganisms, cellular pathology, and biochemical processes were completely invisible and unimaginable without microscopes, humoural imbalance remained the only rational explanation for sickness. Backed by the authority of the Church and medical universities, physicians had no intellectual reason or empirical basis to attempt any treatment other than restoring humoural equilibrium."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/3-medicine-women-and-society-history-file/",
+              "title": "History File: Medicine, Women and Society in the Middle Ages",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Examines everyday medieval treatments: herbal recipes, bleeding, purging, and the crucial role of local wise women and housewives."
+            }
+          ]
         },
         {
           "id": "lesson_1_4",
@@ -23264,7 +23508,15 @@
                 "model": "One fundamental reason medieval hospitals provided ‘care not cure’ was that they were religious foundations rather than medical facilities. Established and financed by the Catholic Church or wealthy benefactors seeking salvation in purgatory, medieval hospitals were run by monks and nuns. The Latin word *hospitium* meant hospitality, and these institutions functioned as shelters for the poor, elderly, travelers, and pilgrims. The primary mission of the religious staff was spiritual: they provided a warm bed, clean food, and a place where the sick could pray, confess their sins, and receive holy communion. Hospital wards were arranged so that patient beds faced directly down the central aisle toward the chapel altar, ensuring patients could witness the elevation of the Host and save their souls before death.<br><br>Furthermore, medieval hospitals deliberately lacked trained medical personnel and curative surgical equipment. University-trained physicians rarely set foot inside ordinary monastic hospitals, as their fees were far too high and hospitals could not afford them. The monks and nuns who cared for patients had no medical training; their duties consisted of nursing care—bathing patients, washing linens, feeding them simple broths, and reading prayers. Moreover, hospitals strictly barred people suffering from contagious diseases like leprosy, smallpox, or the plague to protect the resident community, meaning those who were critically ill with curable conditions were turned away.<br><br>Finally, the prevailing theological doctrine held that physical illness was sent by God to cleanse the soul, making prayer and spiritual repentance far more important than physical medicine. Monks believed that attempting to artificially cure a disease might interfere with God’s divine will. Therefore, the hospital’s purpose was to comfort the body while the Church healed the soul, creating an institutional culture centered entirely on compassionate palliative care rather than medical cure."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-long-term-change-history-file/",
+              "title": "History File: Medicine and Long Term Change – Monastic Hospitals",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Explores medieval monastic hospitals, showing why their primary mission was hospitality, prayer, and \"care not cure\"."
+            }
+          ]
         },
         {
           "id": "lesson_1_5",
@@ -23658,7 +23910,29 @@
                 "model": "To a large extent, I disagree that the primary reason people died was the failure of public health measures; rather, the overwhelming death toll was caused by a total ignorance of the biological causes of the plague, which rendered all medical treatments and public health attempts completely useless. While local authorities in 1348 lacked the administrative infrastructure and legal power to enforce effective sanitation, they could never have stopped the Black Death because they did not know that *Yersinia pestis* was transmitted by rodent fleas.<br><br>On the one hand, public health measures were undeniably weak, fragmented, and late, contributing to the speed of transmission. Medieval towns had no centralized public health departments, sewer networks, or piped clean water. In London, open cesspits and butcher offal piled up in unpaved streets, creating ideal breeding grounds for the black rats (*Rattus rattus*) carrying infected fleas. Although cities like Gloucester attempted quarantine by shutting their town gates to people from Bristol in 1348, surrounding rural communities ignored the ban, and London authorities only began digging emergency plague pits after tens of thousands were already infected. The lack of compulsory national coordination and sanitary enforcement meant town councils were hopelessly overwhelmed.<br><br>However, even the most rigorous public health measures possible in the 14th century would have failed because medieval understanding of disease causation was fundamentally incorrect. People believed the Black Death was caused by divine retribution (God punishing human sin) or corrupted miasma (poisonous air from planetary alignments or volcanic fumes). Consequently, public health responses focused on religious appeasement and sweet smells: town councils organized mass church processions and flagellant rallies, which packed thousands of terrified citizens together in crowded streets, drastically accelerating the spread of pneumonic plague. Similarly, burning aromatic pitch and carrying posies did nothing to repel flea bites.<br><br>Furthermore, medieval medical treatments actively worsened patients’ chances of survival. Physicians relied on Galenic humoural remedies: bleeding patients weakened their immune systems, while lancing buboes exposed open wounds to secondary septic infections. Apothecaries prescribed costly herbal theriacs or mercury that poisoned sufferers. Without knowledge of bacteria, flea vectors, or antibiotic therapies like streptomycin, medical practitioners were completely powerless against a pathogen with a 60–80% bubonic mortality rate and 100% pneumonic mortality rate.<br><br>In conclusion, while public health measures were rudimentary and poorly enforced, they were not the primary reason people died. The primary cause of the catastrophic mortality (which killed 30–45% of England’s population) was the complete absence of scientific knowledge regarding bacteriology and vectors. Even if 14th-century towns had possessed clean streets, their mistaken belief in miasma and divine wrath meant they could never have addressed the real flea-and-rat vector."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=YhsPPBGtquo",
+              "title": "The Black Death (1348) - Timelines.tv",
+              "duration": "6 mins 33 secs",
+              "viewing_task": "Explain how the Black Death entered Britain in 1348, how it spread, and what medieval people believed caused the disease.",
+              "model_answer": "The Black Death entered southern England through coastal ports (such as Melcombe Regis in Dorset) in the summer of 1348 aboard merchant trade ships. Carried by fleas living on black rats, it spread rapidly along river and road trade networks. Medieval people had no knowledge of bacteria or microbiology, believing the devastating pestilence was caused by divine retribution from God, astrological conjunctions, or corrupting miasma."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-the-symptoms-of-black-death-and-how-it-spread/",
+              "title": "BBC Two: A History of Britain by Simon Schama – King Death: Symptoms & Spread",
+              "duration": "15 mins 0 secs",
+              "teacher_guidance": "Vivid documentary analysis of bubonic and pneumonic plague pathology, swellings (buboes), and catastrophic societal mortality."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-medieval-treatment-and-beliefs-on-the-cause-of-the-black-death/",
+              "title": "BBC Two: A History of Britain by Simon Schama – King Death: Medieval Treatment & Beliefs",
+              "duration": "15 mins 0 secs",
+              "teacher_guidance": "Focuses on flagellants, holy processions, sweet herbs, and the total inability of medieval physicians to halt the epidemic."
+            }
+          ]
         },
         {
           "id": "lesson_2_1",
@@ -24281,6 +24555,14 @@
               "answer": "It allowed rapid, identical duplication of medical textbooks and detailed anatomical illustrations, breaking Church control over knowledge dissemination.",
               "explanation": "Before the printing press, books were laboriously hand-copied by monks who censored ideas contrary to Church dogma. The press allowed medical ideas and accurate anatomical diagrams to spread rapidly across Europe without human copying errors."
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/the-scientific-revolution/",
+              "title": "The Scientific Revolution: The Printing Press and The Royal Society",
+              "duration": "25 mins 0 secs",
+              "teacher_guidance": "Covers Gutenberg’s movable-type press, humanism, and the founding of the Royal Society (1660) with its motto Nullius in verba."
+            }
           ]
         },
         {
@@ -24887,6 +25169,15 @@
               ],
               "answer": "He prescribed fresh cold air, light blankets, and cooling drinks rather than suffocating heat.",
               "explanation": "Sydenham pioneered the \"cool treatment\" for smallpox, opening windows to ventilate sickrooms and removing heavy blankets, which dramatically reduced patient mortality compared to traditional heating regimens."
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
+              "title": "Vesalius and Harvey | Secondary History - Medicine Through Time",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "Core GCSE video detailing Thomas Sydenham’s empirical bedside observation and why new ideas took time to impact treatments."
             }
           ]
         },
@@ -25512,6 +25803,21 @@
               "answer": "He secretly stole corpses from the roadside gallows and raided cemetery burial grounds at night.",
               "explanation": "Driven by a relentless quest for anatomical accuracy, the young Vesalius stole rotting bones from roadside gallows outside Louvain and smuggled executed criminals' corpses into his lodgings to dissect them."
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-andreas-vesalius-the-muscle-men/",
+              "title": "BBC Four: The Beauty of Anatomy – Andreas Vesalius: The Muscle Men",
+              "duration": "29 mins 0 secs",
+              "teacher_guidance": "Essential depth documentary on Andreas Vesalius, his landmark 1543 book De Humani Corporis Fabrica, and his dissection of human corpses disproving Galen."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
+              "title": "Vesalius & Human Dissection | Secondary History Recap",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "Focused curriculum recap highlighting Vesalius proving Galen made over 300 anatomical errors."
+            }
           ]
         },
         {
@@ -26075,6 +26381,22 @@
               ],
               "answer": "King James I and King Charles I",
               "explanation": "As royal physician to King James I and King Charles I, Harvey was granted permission to dissect pregnant deer from Windsor Park to study embryonic development and living heart contractions."
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=w6q50_qNMoA",
+              "title": "Ceaseless Motion: William Harvey's Experiments in Blood Circulation",
+              "duration": "3 mins 18 secs",
+              "teacher_guidance": "Royal College of Physicians visual animation demonstrating Harvey disproving Galen’s liver production theory using valves and ligatures."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LoeAVaM48Y0",
+              "title": "William Harvey – The Theory of Blood Circulation (1628)",
+              "duration": "4 mins 12 secs",
+              "teacher_guidance": "Examines Harvey’s De Motu Cordis (1628), calculating blood volume and proving the heart acts as a mechanical pump."
             }
           ]
         },
@@ -26680,6 +27002,15 @@
               "answer": "Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.",
               "explanation": "The Mayor's 1665 Plague Orders shut down theatres and public gatherings, ordered large fires burned in streets to cleanse miasma, and deployed nocturnal 'dead-carts' accompanied by handbells and cries of 'Bring out your dead!'"
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LoeAVaM48Y0",
+              "title": "The Great Plague of London (1665) | Secondary History",
+              "duration": "4 mins 12 secs",
+              "teacher_guidance": "Compares the 1665 Great Plague with the 1348 Black Death: pest houses, searchers of the dead, quarantine red crosses, and continuing belief in miasma."
+            }
           ]
         },
         {
@@ -27154,6 +27485,20 @@
               "provenance": "Tafel XXVI, Die Aetiologie der Tuberkulose, Dr Robert Koch, Berliner Klinische Wochenschrift, No. 15, 10 April 1882. Wellcome Collection, London (Iconographic Coll. L0022359).",
               "context": "In 1882, Robert Koch announced the discovery of the tuberculosis bacillus to the Berlin Physiological Society. Koch’s microphotographs provided indisputable visual proof that a specific, physical microorganism caused consumption, permanently destroying miasma theory.",
               "hinge_question": "Robert Koch stained Mycobacterium tuberculosis using methyl violet dye and captured these images under a microscope. Why did producing clear, reproducible visual evidence of specific bacteria succeed in convincing skeptical British doctors where Pasteur’s theoretical papers had failed?"
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-medicine-and-science-history-file/",
+              "title": "History File: Medicine and Science – Germ Theory & Bacteriology",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "In-depth documentary tracing the transition from spontaneous generation and miasma to Pasteur’s 1861 Germ Theory and Koch’s pure cultures."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-medical-mavericks-series-1-beating-infection-robert-koch-cholera/",
+              "title": "BBC Four Medical Mavericks: Robert Koch & The Identification of Cholera & TB",
+              "duration": "29 mins 0 secs",
+              "teacher_guidance": "Examines Koch’s revolutionary laboratory methodology: agar jelly in petri dishes, synthetic aniline stains, and photomicrography."
             }
           ]
         },
@@ -27641,6 +27986,20 @@
               "context": "Published in London in 1802, Gillray’s satire reflected fierce public paranoia and medical opposition fueled by commercial inoculators and religious preachers who argued that injecting matter from beasts into humans violated God’s divine law.",
               "hinge_question": "James Gillray satirizes Edward Jenner inoculating a patient while miniature cows sprout from the patients’ limbs and faces. What specific commercial and religious anxieties does this caricature reveal about public opposition to vaccination?"
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/jenners-marvellous-medicine-a-history-of-the-world/",
+              "title": "Jenner's Marvellous Medicine – A History of the World",
+              "duration": "15 mins 0 secs",
+              "teacher_guidance": "Narrative account of Edward Jenner’s 1796 cowpox experiments on James Phipps, replacing dangerous variolation with vaccination."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-true-stories-episode-2-the-life-and-work-of-edward-jenner/",
+              "title": "BBC Two True Stories: The Life and Work of Edward Jenner",
+              "duration": "20 mins 0 secs",
+              "teacher_guidance": "Explores the intense initial opposition to Jenner’s vaccine and the eventual 1853 Compulsory Vaccination Act."
+            }
           ]
         },
         {
@@ -28126,6 +28485,20 @@
               "context": "Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus.",
               "hinge_question": "Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?"
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-diagrams-florence-nightingale-florence-nightingales-rose-diagram/",
+              "title": "BBC Four: The Beauty of Diagrams – Florence Nightingale's Polar Area Rose Diagram",
+              "duration": "29 mins 0 secs",
+              "teacher_guidance": "Mathematical and medical analysis of how Nightingale used statistical polar diagrams to prove that dirt, typhus, and cholera killed more soldiers than combat in the Crimea."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/florence-nightingale-nursing-pioneer/",
+              "title": "Florence Nightingale: Nursing Pioneer & Hospital Architecture",
+              "duration": "15 mins 0 secs",
+              "teacher_guidance": "Covers pavilion-style hospital wards, the 1860 St Thomas’ Hospital nursing school, and Notes on Nursing."
+            }
           ]
         },
         {
@@ -28610,6 +28983,15 @@
               "provenance": "Fig. 23 from Antiseptic Surgery: Its Principles, Practice, History and Results, W. Watson Cheyne, London: Smith, Elder & Co., 1882. Royal College of Surgeons of England (RCS Tracts 2305) / Wellcome Collection L0008892.",
               "context": "Illustrated in W. Watson Cheyne’s Antiseptic Surgery (1882), this plate shows Lister’s complete antiseptic operating technique. Lister used a steam spray to kill airborne microbes in the theatre.",
               "hinge_question": "Joseph Lister and his assistants operate in dark frock coats while a machine pumps a fine cloud of carbolic acid mist over the patient. Why did British surgeons initially object to operating inside this dense carbolic cloud?"
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=7pjAH84f-c0",
+              "title": "18th & 19th Century Medicine & Surgery | Secondary History",
+              "duration": "5 mins 40 secs",
+              "teacher_guidance": "Explains James Simpson’s 1847 discovery of chloroform, the temporary \"Black Period\" of surgery, and Joseph Lister’s 1865 carbolic antiseptic spray."
             }
           ]
         },
@@ -29128,6 +29510,39 @@
               "context": "Constructed between 1859 and 1865, Bazalgette’s London sewer system was one of the largest engineering projects in the Victorian world. It was authorized by Parliament after the Great Stink forced politicians to act.",
               "hinge_question": "Sir Joseph Bazalgette and engineers stand upon the massive brick-arched intercepting sewers under construction in London. Why did it take the political crisis of the Great Stink of 1858 outside Parliament, rather than working-class cholera deaths, to compel the government to fund this civil engineering project?"
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-medicine-public-health-and-government-history-file/",
+              "title": "History File: Medicine, Public Health and Government Intervention",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Traces the collapse of laissez-faire, Edwin Chadwick’s 1842 report, the 1848 permissive Act, and the compulsory 1875 Public Health Act."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/",
+              "title": "The Story of John Snow – Moments of Genius (Broad Street Pump)",
+              "duration": "10 mins 0 secs",
+              "teacher_guidance": "Visual case study on John Snow’s 1854 spot map of Soho, identifying contaminated water as the vector for cholera."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/the-doctor-who-discovered-how-cholera-spread-witness-history/",
+              "title": "The Doctor Who Discovered How Cholera Spread – BBC Witness History",
+              "duration": "9 mins 0 secs",
+              "teacher_guidance": "Audio-visual historical record of Snow removing the pump handle and overcoming the entrenched miasma lobby."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
+              "title": "Chadwick and Snow: Public Health in the 19th Century",
+              "duration": "4 mins 52 secs",
+              "teacher_guidance": "Core recap linking John Snow, Joseph Bazalgette’s London sewer network, and the 1858 Great Stink."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-house-through-time-series-1-episode-2-cholera/",
+              "title": "BBC Two A House Through Time: Cholera Outbreak in 19th Century Slums",
+              "duration": "14 mins 0 secs",
+              "teacher_guidance": "Shows the human reality of cesspits, shared privies, and tainted water supply in Victorian housing."
+            }
           ]
         },
         {
@@ -29536,6 +29951,27 @@
             {
               "q": "What 1875 Act compelled local councils in Britain to provide clean water and sewers?",
               "a": "The Public Health Act 1875"
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-medicine-technology-and-the-individual-history-file/",
+              "title": "History File: Medicine, Technology and the Individual in the 20th Century",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Covers the transition from germ theory to genetic science, X-ray crystallography, and modern diagnosis."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/0-goes-back-in-time-operation-ouch/",
+              "title": "Operation Ouch: Goes Back in Time – Medical Technology & Diagnosis",
+              "duration": "28 mins 0 secs",
+              "teacher_guidance": "Engaging, accessible visual demonstrations of CT scans, MRI, and DNA structures."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=my14ZuzjH5I",
+              "title": "Modern Medicine: DNA, Genetics & Diagnosis | Secondary History",
+              "duration": "5 mins 15 secs",
+              "teacher_guidance": "Curriculum overview of Watson, Crick, Franklin and Wilkins in 1953, the Human Genome Project (1990–2003), and genetic screening."
             }
           ]
         },
@@ -29948,6 +30384,26 @@
               "q": "What term describes the shift from infectious diseases to chronic lifestyle conditions?",
               "a": "The Epidemiological Transition"
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-medicine-and-surgery-history-file/",
+              "title": "History File: Medicine and Surgery – Modern High-Tech Procedures",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Traces modern surgical evolution: blood grouping (Landsteiner 1901), endoscopes, laparoscopy (keyhole surgery), and robotic surgery."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/into-the-brain-blood-and-guts-a-history-of-surgery/",
+              "title": "BBC Four: Into the Brain – Blood and Guts: A History of Surgery",
+              "duration": "58 mins 0 secs",
+              "teacher_guidance": "Michael Mosley explores modern brain surgery, imaging scans, and neurological breakthroughs."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-grays-anatomy-the-beauty-of-anatomy/",
+              "title": "BBC Four: Gray's Anatomy – The Beauty of Anatomy",
+              "duration": "29 mins 0 secs",
+              "teacher_guidance": "Explores Henry Gray and Henry Carter’s 1858 masterpiece and modern anatomical mapping."
+            }
           ]
         },
         {
@@ -30358,6 +30814,32 @@
             {
               "q": "Which British engineer invented the CT scanner at EMI laboratories in 1971?",
               "a": "Godfrey Hounsfield"
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/3-medicine-and-government-history-file/",
+              "title": "History File: Medicine and Government – The Foundation of the NHS",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Covers the Beveridge Report (1942), Aneurin Bevan, and the launch of the National Health Service in July 1948."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/s12e02-health-before-the-nhs-a-medical-revolution-timeshift/",
+              "title": "Timeshift: Health Before the NHS – A Medical Revolution",
+              "duration": "59 mins 0 secs",
+              "teacher_guidance": "Eyewitness accounts of working-class healthcare before 1948: means testing, panel doctors, and crushing medical debt."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-exploring-the-past-post-war-britain-post-war-britain-the-development-of-the-national-health-service-nhs/",
+              "title": "BBC Two: Development of the National Health Service (NHS)",
+              "duration": "18 mins 0 secs",
+              "teacher_guidance": "Focuses on the political struggle between Bevan and the British Medical Association (BMA) and universal free care."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-viruses-and-vaccines-bbc-four/",
+              "title": "BBC Four: Pain, Pus and Poison – Viruses, Magic Bullets & Vaccines",
+              "duration": "58 mins 0 secs",
+              "teacher_guidance": "Examines Paul Ehrlich’s Salvarsan 606 (1909), Domagk’s Prontosil (1932), and nationwide mass vaccination programs."
             }
           ]
         },
@@ -30770,6 +31252,20 @@
               "q": "What dangerous consequence of overusing antibiotics did Fleming warn about in 1945?",
               "a": "Bacterial resistance (superbugs like MRSA)"
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/breaking-the-mould-the-story-of-penicillin/",
+              "title": "Breaking the Mould: The Story of Penicillin (BBC Drama)",
+              "duration": "82 mins 0 secs",
+              "teacher_guidance": "Acclaimed BBC historical drama starring Dominic West as Howard Florey and Denis Lawson as Alexander Fleming, showing the Oxford lab team purifying penicillin and testing on Albert Alexander in 1941."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-discovery-of-penicillin-bbc-four/",
+              "title": "BBC Four: Pain, Pus and Poison – The Discovery and Mass Production of Penicillin",
+              "duration": "22 mins 0 secs",
+              "teacher_guidance": "Focuses on Fleming’s 1928 discovery, Florey and Chain’s freeze-drying breakthrough, and US government wartime mass production using beer vats."
+            }
           ]
         },
         {
@@ -31181,6 +31677,15 @@
               "q": "Approximately what percentage of adult British men smoked in 1950 compared to under 13% today?",
               "a": "65%"
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=tlNtakmOOho",
+              "title": "GCSE History: Modern Medicine – Government & Lung Cancer",
+              "duration": "7 mins 10 secs",
+              "teacher_guidance": "Examines Richard Doll and Austin Bradford Hill’s 1950 epidemiological study linking smoking to lung cancer, followed by government bans, graphic packaging, and the 2007 indoor smoking ban."
+            }
           ]
         },
         {
@@ -31527,6 +32032,14 @@
             {
               "q": "What was the military purpose of constructing trenches in a zigzag pattern with traverses?",
               "a": "To prevent enemy gunfire travelling down the full length of the trench and to contain shell blast fragments."
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-war-history-file/",
+              "title": "History File: Medicine and War – The Western Front Theatre",
+              "duration": "45 mins 0 secs",
+              "teacher_guidance": "Comprehensive overview of the British sector: the Ypres Salient, Somme chalklands, Arras underground tunnels, and Cambrai tank battle."
             }
           ]
         },
@@ -31875,6 +32388,15 @@
               "q": "Why was dysentery widespread in the trenches?",
               "a": "Drinking contaminated shell-hole water and flies spreading bacteria from open latrines to unsealed rations."
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=bSPh5Jgx_wY",
+              "title": "Simple History: Average Day In The Life Of A WW1 Soldier",
+              "duration": "3 mins 32 secs",
+              "teacher_guidance": "Animated visual breakdown of trench rotation: front line, support line, reserve line, communication trenches, mud, rats, and trench hygiene."
+            }
           ]
         },
         {
@@ -32221,6 +32743,15 @@
             {
               "q": "What made mustard gas (introduced 1917) so insidious?",
               "a": "An oily blistering vesicant that penetrated uniforms, burned eyes and moist skin, and contaminated trench soil for days or weeks."
+            }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=x8OazQml0gw",
+              "title": "Infections, Shrapnel & Gas – WW1 Uncut with Dan Snow (BBC)",
+              "duration": "4 mins 45 secs",
+              "teacher_guidance": "Demonstrates the catastrophic blast effects of high-explosive artillery shrapnel, gas gangrene in fertilised soil, and chlorine/phosgene/mustard gas."
             }
           ]
         },
@@ -32569,6 +33100,36 @@
               "q": "What role did the First Aid Nursing Yeomanry (FANY) play on the Western Front?",
               "a": "Female volunteer drivers ran motorized frontline field ambulances, transported wounded troops, and operated mobile soup kitchens."
             }
+          ],
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=4xKWnE63E8U",
+              "title": "How the RAMC Worked in WW1 | Field Ambulance Organisation Explained",
+              "duration": "6 mins 12 secs",
+              "teacher_guidance": "Essential visual walkthrough of the Chain of Evacuation: Stretcher Bearers → Regimental Aid Post (RAP) → Advanced Dressing Station (ADS) → Casualty Clearing Station (CCS) → Base Hospital."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=TTaoz0YVO2Y",
+              "title": "Casualty Clearing Station (CCS) – Historian Andy Robertshaw",
+              "duration": "5 mins 20 secs",
+              "teacher_guidance": "Leading battlefield historian Andy Robertshaw explores the triage system, surgical wards, and nursing sisters at the CCS."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=-jTZ7AwCyug",
+              "title": "Women Medics on the Frontline – WW1 Uncut (BBC)",
+              "duration": "4 mins 10 secs",
+              "teacher_guidance": "Focuses on the First Aid Nursing Yeomanry (FANY) driving motor ambulances and QAIMNS nurses working under fire."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xsz0-8-qAi8",
+              "title": "The Battle of the Somme: Advanced Dressing Station (1916 Archival Film)",
+              "duration": "3 mins 45 secs",
+              "teacher_guidance": "Authentic 1916 Imperial War Museum archival footage showing wounded British soldiers receiving first aid and bandaging in Mindel Trench."
+            }
           ]
         },
         {
@@ -32916,6 +33477,14 @@
               "q": "How did mobile X-ray vans improve surgical survival at Casualty Clearing Stations?",
               "a": "They located embedded shrapnel metal and shattered bone fragments prior to surgery, allowing precise, targeted extraction."
             }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/carrel-dakin-method-the-crimson-field/",
+              "title": "The Crimson Field: Carrel-Dakin Antiseptic Method & Wound Debridement",
+              "duration": "8 mins 0 secs",
+              "teacher_guidance": "Dramatised BBC medical demonstration of sterilised sodium hypochlorite chemical irrigation (Carrel-Dakin method) and excision of infected tissue (debridement)."
+            }
           ]
         },
         {
@@ -33262,6 +33831,14 @@
             {
               "q": "What was Harold Gillies’s “tubed pedicle” technique at Queen’s Hospital in Sidcup?",
               "a": "Rolling a living flap of skin from the chest into a tube to preserve blood supply while migrating it to reconstruct disfigured facial tissue."
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/fixing-faces-blood-and-guts-a-history-of-surgery/",
+              "title": "Blood and Guts: A History of Surgery – Fixing Faces (Harold Gillies at Queen’s Hospital, Sidcup)",
+              "duration": "12 mins 0 secs",
+              "teacher_guidance": "Explores Harold Gillies pioneering plastic surgery using tubed pedicles, alongside blood transfusion breakthroughs (Rous & Turner, Robertson’s 1917 Cambrai blood depot)."
             }
           ]
         }
@@ -34083,14 +34660,15 @@
               }
             ]
           },
-          "video": {
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=OOeal_k4bmE",
-            "title": "Elizabeth I: From Prison to Palace (Episode 1)",
-            "duration": "49 mins 36 secs",
-            "viewing_task": "Watch this overview and note down the key dangers Elizabeth faced before and immediately after becoming queen.",
-            "model_answer": "1. She survived imprisonment in the Tower of London under her sister Mary's reign.\n2. She faced extreme financial debt upon taking the throne.\n3. She was surrounded by Catholic enemies at home and abroad who questioned her legitimacy."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OOeal_k4bmE",
+              "title": "Accession of Elizabeth I (1558): Problems Facing the New Queen",
+              "duration": "4 mins 15 secs",
+              "teacher_guidance": "Explores Elizabeth’s legitimacy question, the £300,000 national debt, and the threat of invasion from France and Scotland."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson establishes the precarious nature of Elizabeth's accession in 1558. It explores the rigid Tudor social hierarchy, the prejudices against female rule, and the immediate crises of state debt and foreign hostility she inherited.",
             "objectives": [
@@ -34642,14 +35220,15 @@
             ],
             "source_context": "This document captures the legislative bedrock of Elizabethan statecraft: the 1559 Act of Supremacy, in which Elizabeth established her authority over the Church of England as 'Supreme Governor' rather than 'Supreme Head'. This deliberate linguistic compromise was intended to appease moderate Catholics who believed only the Pope or Christ could head the Church, while reassuring Protestants that royal authority reigned supreme. **Hinge Question:** Why was the subtle title change from 'Supreme Head' to 'Supreme Governor' such a crucial political concession in preventing rebellion?"
           },
-          "video": {
-            "title": "The History Teacher: The Religious settlement",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=-GbkZ_Y1AeQ",
-            "duration": "5 mins 48 secs",
-            "viewing_task": "Identify the 3 key components of Elizabeth's 1559 Religious Settlement: the Act of Supremacy, the Act of Uniformity, and the Royal Injunctions, and how they formed a 'Middle Way'.",
-            "model_answer": "1) Act of Supremacy established Elizabeth as 'Supreme Governor' of the Church of England and required all clergy and royal officials to take an oath of loyalty. 2) Act of Uniformity made Protestant church services compulsory across England using the 1559 Book of Common Prayer, with shilling fines for recusants. 3) Royal Injunctions enforced Protestant theology (English Bible) while allowing moderate traditional Catholic vestments and decorations to appease moderate conservatives."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=-GbkZ_Y1AeQ",
+              "title": "The Religious Settlement of 1559: The \"Middle Way\"",
+              "duration": "5 mins 02 secs",
+              "teacher_guidance": "Examines the Act of Supremacy, the Act of Uniformity, and the Royal Injunctions."
+            }
+          ],
           "exam_practice": {
             "title": "Edexcel GCSE (9–1) Paper 2 Exam Practice",
             "tariff": "20 marks (Q1 & Q3)",
@@ -35168,14 +35747,15 @@
             ],
             "source_context": "This visual represents the 1570 Papal Bull 'Regnans in Excelsis' issued by Pope Pius V, which formally excommunicated Elizabeth I from the Catholic Church, branded her a heretic, and released all Catholic subjects from their oath of allegiance to the English Crown. This provocative decree turned English Catholics into potential traitors in the eyes of the law and drastically escalated sectarian conflict. **Hinge Question:** How did the Pope's excommunication of Elizabeth paradoxically make life far more dangerous for ordinary, loyal English Catholics?"
           },
-          "video": {
-            "title": "The History Teacher: Threats to Elizabeth's Religious Settlement",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=_tD3KvqCc8g",
-            "duration": "5 mins 37 secs",
-            "viewing_task": "Contrast the Puritan challenge (Vestments and Crucifix controversy) with the Catholic threat (Recusancy, Papal Bull of Excommunication 1570, and foreign powers).",
-            "model_answer": "Puritans challenged Elizabeth from within the Protestant church, refusing to wear Catholic-style surplices (vestment controversy) and demanding the removal of crucifixes. The Catholic threat was more dangerous politically: wealthy Catholic nobles refused to attend Church (recusants), and in 1570 Pope Pius V issued the Papal Bull 'Regnans in Excelsis' excommunicating Elizabeth and releasing her subjects from obedience, transforming Catholic dissent into potential treason."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_tD3KvqCc8g",
+              "title": "Puritan and Catholic Challenges to Elizabeth's Settlement",
+              "duration": "4 mins 48 secs",
+              "teacher_guidance": "Details the Vestments Controversy, the Papal Bull of Excommunication (1570), and Catholic recusancy."
+            }
+          ],
           "exam_practice": {
             "title": "Edexcel GCSE (9–1) Paper 2 Exam Practice",
             "tariff": "16 marks (Q1 & Q2)",
@@ -35689,14 +36269,15 @@
             ],
             "source_context": "This portrait of Mary Stuart, Queen of Scots, presents Elizabeth's cousin in regalia, highlighting her status as a sovereign queen and legitimate great-granddaughter of Henry VII. Mary's Catholic faith and unquestioned dynastic pedigree made her an existential rival to Elizabeth, embodying the hopes of European Catholics seeking to reclaim England for Rome. **Hinge Question:** Why was Mary Stuart's bloodline considered legally and dynastically stronger by European monarchs than Elizabeth Tudor's?"
           },
-          "video": {
-            "title": "The History Teacher: The Problem of Mary Queen of Scots",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=LIZtyIgtVio",
-            "duration": "8 mins 10 secs",
-            "viewing_task": "Explain why Mary Queen of Scots arrived in England in 1568 and why her presence presented an immediate existential threat to Elizabeth I.",
-            "model_answer": "Mary fled Scotland after Scottish Protestant lords revolted following the mysterious murder of Lord Darnley and her marriage to Bothwell. In England, Mary was Elizabeth's legitimate Catholic cousin with a strong hereditary claim to the English throne. For English Catholics and foreign powers (Spain and the Papacy), Mary represented an ideal alternative monarch, making her the natural figurehead and focus for Catholic conspiracies and assassination plots (such as the Northern Rebellion, Ridolfi, Throckmorton, and Babington plots)."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LIZtyIgtVio",
+              "title": "Mary, Queen of Scots: Elizabeth’s Captive Rival (1568–1587)",
+              "duration": "5 mins 25 secs",
+              "teacher_guidance": "Explains Mary’s arrival in England in 1568, her legitimate claim to the English throne, and Elizabeth’s dilemma."
+            }
+          ],
           "exam_practice": {
             "title": "Edexcel GCSE (9–1) Paper 2 Exam Practice",
             "tariff": "20 marks (Q1 & Q3)",
@@ -36186,26 +36767,22 @@
             {
               "type": "youtube",
               "url": "https://www.youtube.com/watch?v=vZRq1fuD4pE",
-              "title": "Rebellion of the Northern Earls, 1569",
-              "duration": "13 mins 12 secs",
-              "viewing_task": "Note down the main causes of the Rebellion of the Northern Earls and why it ultimately failed.",
-              "model_answer": "Causes: Catholic Earls (Northumberland and Westmorland) wanted to restore Catholicism and felt sidelined by Elizabeth's Protestant advisors like Cecil.\nFailure: Lack of widespread support, Elizabeth moved Mary Queen of Scots, and the Earl of Sussex raised a massive royal army."
+              "title": "Revolt of the Northern Earls (1569)",
+              "duration": "4 mins 10 secs",
+              "teacher_guidance": "Covers the Earls of Northumberland and Westmorland, the capture of Durham Cathedral, and Elizabeth’s brutal retaliation."
             },
             {
               "type": "youtube",
               "url": "https://www.youtube.com/watch?v=PbXbn1ppTm0",
-              "title": "The Babington Plot",
-              "duration": "4 mins 37 secs",
-              "viewing_task": "How did Francis Walsingham use the Babington Plot to finally trap Mary, Queen of Scots?",
-              "model_answer": "Walsingham intercepted Mary's letters hidden in beer barrels. He deciphered them and waited until Mary explicitly approved the plot to assassinate Elizabeth, giving him the undeniable treasonous evidence needed to execute her."
+              "title": "The Catholic Plots: Ridolfi, Throckmorton & Babington",
+              "duration": "6 mins 30 secs",
+              "teacher_guidance": "Step-by-step examination of the three plots to assassinate Elizabeth and place Mary on the throne."
             },
             {
-              "type": "era",
               "url": "https://era.org.uk/streaming-service-resource/elizabeth-is-secret-agents/",
-              "title": "Elizabeth I's Secret Agents",
-              "duration": "45 mins 0 secs",
-              "viewing_task": "Describe the methods used by Francis Walsingham's spy network to protect the Queen.",
-              "model_answer": "Walsingham used a vast network of informers, double agents, and codebreakers (like Thomas Phelippes). He intercepted letters, used torture to extract confessions, and employed agents provocateurs to draw out conspirators."
+              "title": "Elizabeth I's Secret Agents: Walsingham's Spy Network (BBC)",
+              "duration": "58 mins 0 secs",
+              "teacher_guidance": "BBC documentary on Sir Francis Walsingham, cipher decoding, double agents, and the entrapment of Mary Queen of Scots."
             }
           ],
           "teacher_notes": {
@@ -36747,14 +37324,22 @@
             ],
             "source_context": "This official portrait of King Philip II of Spain presents the most powerful monarch in Europe, ruler of a global Catholic empire spanning Spain, the Netherlands, parts of Italy, and the silver-rich Americas. Once married to Mary I of England, Philip initially sought an alliance with Elizabeth, but their deep religious divide, commercial conflict in the Caribbean, and the Dutch revolt drove them into an irreconcilable imperial collision. **Hinge Question:** Why did Philip II tolerate English privateering and religious heresy for over twenty years before finally committing to all-out war?"
           },
-          "video": {
-            "title": "The History Teacher: Spain: Political and Religious Rivalry",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=ldZYD51Ohjo",
-            "duration": "4 mins 48 secs",
-            "viewing_task": "Explain how religious division (Catholic Philip II vs Protestant Elizabeth), the Dutch Revolt, and privateering in the New World caused Anglo-Spanish relations to deteriorate.",
-            "model_answer": "Philip II of Spain was a devout Catholic determined to eliminate Protestant heresy in Europe. When Dutch Protestants revolted against Spanish rule in the Netherlands, England secretly assisted the Dutch rebels because the Netherlands was crucial for English cloth trade and close to the English coast. Combined with English privateers raiding Spanish treasure galleons, political and religious tensions brought the two superpowers to the brink of direct military conflict."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ldZYD51Ohjo",
+              "title": "Deteriorating Relations: England, Spain and the Netherlands",
+              "duration": "5 mins 12 secs",
+              "teacher_guidance": "Traces the trade rivalry in the New World, Spanish fury in Antwerp, and English covert support for Dutch Protestant rebels."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xPAKnqCOl_Q",
+              "title": "Sir Francis Drake: Circumnavigation and Spanish Silver (1577–1580)",
+              "duration": "4 mins 55 secs",
+              "teacher_guidance": "Details Drake capturing the Cacafuego silver ship and Elizabeth knighting him on the Golden Hind."
+            }
+          ],
           "extra_videos": [
             {
               "title": "The History Teacher: Spain and England - Commercial Rivalry",
@@ -37283,14 +37868,15 @@
             ],
             "source_context": "This portrait captures Sir Francis Drake, the intrepid English privateer, navigator, and naval commander whom Elizabeth knighted and Philip II reviled as 'El Draque' (The Dragon). Drake's audacious global raids on Spanish bullion fleets, circumnavigation of the globe, and preemptive strike on the port of Cadiz in 1587 embodied England's aggressive challenge to Spain's maritime monopoly. **Hinge Question:** How did Elizabeth's decision to publicly knight Francis Drake on the Golden Hind in 1581 send an unmistakable diplomatic message to King Philip of Spain?"
           },
-          "video": {
-            "title": "The History Teacher: The Netherlands and Cadiz",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=33zs4b3iyyw",
-            "duration": "4 mins 7 secs",
-            "viewing_task": "Explain the significance of the Treaty of Nonsuch (1585) and Drake's daring raid on Cadiz (1587) in delaying the Spanish Armada.",
-            "model_answer": "Under the Treaty of Nonsuch (1585), Elizabeth intervened directly in the Netherlands by sending Robert Dudley with 7,400 troops, placing England officially at war with Spain. In April 1587, Sir Francis Drake sailed into Cadiz harbour in a pre-emptive strike known as the 'Singeing of the King of Spain's Beard', destroying over 30 Spanish naval vessels, massive provisions, and seasoned barrel staves, delaying the launch of the Spanish Armada by more than a full year."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=33zs4b3iyyw",
+              "title": "The Outbreak of War with Spain & The Treaty of Nonsuch (1585)",
+              "duration": "5 mins 18 secs",
+              "teacher_guidance": "Examines the assassination of William the Silent, the Treaty of Joinville, and Leicester’s ill-fated Dutch expedition."
+            }
+          ],
           "learning_objectives": {
             "target": [
               "Understand the reasons for deteriorating relations with Spain, focusing on religious shifts, the Genoese Loan, the assassination of William of Orange, and the Treaty of Joinville.",
@@ -37765,14 +38351,15 @@
               }
             ]
           },
-          "video": {
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=RR-XqmhV1Oc",
-            "title": "The Spanish Defeat Scene (The Golden Age)",
-            "duration": "3 mins 8 secs",
-            "viewing_task": "Watch this cinematic depiction of the Armada's defeat. What tactics and environmental factors are shown destroying the Spanish fleet?",
-            "model_answer": "The English used devastating fireships to scatter the Spanish crescent formation. Following this, the chaotic 'Protestant Wind' and violent storms smashed the fleeing Spanish galleons against the rocky coasts of Scotland and Ireland."
-          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=RR-XqmhV1Oc",
+              "title": "The Spanish Armada (1588): Tactics, Fire Ships and Defeat",
+              "duration": "7 mins 40 secs",
+              "teacher_guidance": "Comprehensive battle breakdown: crescent formation, the Battle of Gravelines, Hellburners (fireships), and the Protestant Wind."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson covers the culmination of Anglo-Spanish tensions: the Armada. The focus is on evaluating the overlapping motivations for the invasion, the logistical flaws in the Spanish plan, and the combination of English tactics and weather that caused its defeat.",
             "objectives": [
@@ -38748,7 +39335,16 @@
                 "model": "One major reason was cause 1: renaissance humanism & trade. Explain that the Renaissance emphasized that education was essential for success; growing international trade and bureaucracy required literate merchants, lawyers, clerks, and estate stewards. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: protestant reformation & bible study. Explain that Protestant theology insisted that every Christian must be able to read the English Bible to achieve personal salvation; literacy was viewed as a sacred religious duty. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: expansion of endowed grammar schools. Explain that wealthy merchants and gentry established over 70 new grammar schools, endowing scholarships so that bright boys from humble backgrounds could attend without paying fees. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OOeal_k4bmE",
+              "title": "Elizabethan Education and Leisure: Grammar Schools, Theatre and Bear Baiting",
+              "duration": "4 mins 15 secs",
+              "teacher_guidance": "Explores changing education for boys and girls, Shakespeare’s Globe Theatre, and blood sports."
+            }
+          ]
         },
         {
           "id": "lesson_3_2",
@@ -39250,7 +39846,16 @@
                 "model": "On the one hand, it can be strongly argued that criteria 1: enclosure & rural evictions was of primary importance. Explain how enclosing common fields for sheep grazing removed arable strip farming; because wool needed few shepherds, whole villages were depopulated, forcing dispossessed cottagers into vagrancy. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: population surge & inflation. Explain that England’s population surged from 3m to over 4m; higher demand drove up food and bread prices (inflation) while creating a labour surplus that depressed wages below subsistence level. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: harvest failures & monastery loss. Explain that the dissolution of monasteries had eliminated traditional Catholic charity networks; when bad harvests struck, famine pushed marginal farmworkers into absolute starvation. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: enclosure & rural evictions was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: population surge & inflation was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ldZYD51Ohjo",
+              "title": "The Problem of Poverty & The Elizabethan Poor Laws",
+              "duration": "5 mins 12 secs",
+              "teacher_guidance": "Distinguishes between the \"deserving\" and \"idle\" poor, enclosure of common land, and the landmark 1601 Poor Relief Act."
+            }
+          ]
         },
         {
           "id": "lesson_3_3",
@@ -39752,7 +40357,16 @@
                 "model": "One major reason was cause 1: economic crisis & new markets. Explain that the collapse of the Antwerp cloth market in the 1550s devastated England’s wool trade, forcing merchants to seek new trade routes to Russia (Muscovy Company), the Mediterranean, and the Americas. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: technological & cartographic advance. Explain that astrolabes, magnetic compasses, Mercator maps, and larger, multi-masted galleons enabled safe transatlantic voyages, transforming open-ocean navigation from suicide into a calculated commercial risk. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: privateering wealth & spanish rivalry. Explain that plundering Spanish bullion ships in the Americas offered astronomical wealth; Elizabeth and courtiers secretly invested in voyages to challenge Philip II’s monopoly and finance the Crown. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xPAKnqCOl_Q",
+              "title": "Elizabethan Exploration & Voyages of Discovery",
+              "duration": "4 mins 55 secs",
+              "teacher_guidance": "Covers advances in navigational science (astrolabes, magnetic compass), galleon shipbuilding, and trade monopolies."
+            }
+          ]
         },
         {
           "id": "lesson_3_4",
@@ -40257,7 +40871,16 @@
                 "model": "On the one hand, it can be strongly argued that criteria 1: unsuitable settlers & poor planning was of primary importance. Explain that the 107 settlers were mostly aristocratic soldiers seeking quick gold rather than farmers; they lacked agricultural skills, refused physical manual labour, and brought inadequate seeds. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: bad luck & voyage accidents. Explain that the flagship *Tiger* ran aground on a sandbank off Roanoke, flooding the hold with seawater and destroying all grain seeds; settlers arrived too late in the season to plant crops before winter. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: hostility with native tribes. Explain that Ralph Lane’s brutal military temperament alienated Chief Wingina’s Secotan tribe; when an English silver cup went missing, settlers burned a village, leading to open war and starvation. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: unsuitable settlers & poor planning was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: bad luck & voyage accidents was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded."
               }
             ]
-          }
+          },
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=33zs4b3iyyw",
+              "title": "Walter Raleigh and the Colonisation of Virginia (1585–1587)",
+              "duration": "5 mins 18 secs",
+              "teacher_guidance": "Details the two expeditions to Roanoke Island, relations with Chief Wingina, and the mystery of the \"Lost Colony\"."
+            }
+          ]
         }
       ],
       "key_individuals": [

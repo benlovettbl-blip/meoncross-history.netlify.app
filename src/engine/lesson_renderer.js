@@ -716,21 +716,32 @@ if (typeof window !== 'undefined' && !window.switchVideoTab) {
     tabBtns.forEach(function (b) {
       b.classList.remove('is-active');
       b.style.background = '#ffffff';
-      b.style.color = '#475569';
+      b.style.color = '#334155';
       b.style.borderColor = '#cbd5e1';
       b.style.fontWeight = '600';
       b.style.boxShadow = '0 1px 2px rgba(0,0,0,0.03)';
-      const icon = b.querySelector('i');
-      if (icon) icon.style.color = '#2563eb';
+      const liveBadge = b.querySelector('.tab-live-badge');
+      if (liveBadge) liveBadge.style.display = 'none';
+      const platformPill = b.querySelector('.tab-platform-pill');
+      if (platformPill) {
+        const isEra = platformPill.getAttribute('data-platform') === 'era';
+        platformPill.style.background = isEra ? '#eff6ff' : '#fef2f2';
+        platformPill.style.color = isEra ? '#1e40af' : '#dc2626';
+      }
     });
     btn.classList.add('is-active');
-    btn.style.background = '#1e40af';
+    btn.style.background = '#0f172a';
     btn.style.color = '#ffffff';
-    btn.style.borderColor = '#1e40af';
+    btn.style.borderColor = '#0f172a';
     btn.style.fontWeight = '700';
-    btn.style.boxShadow = '0 2px 5px rgba(30,64,175,0.25)';
-    const activeIcon = btn.querySelector('i');
-    if (activeIcon) activeIcon.style.color = '#93c5fd';
+    btn.style.boxShadow = '0 3px 8px rgba(15,23,42,0.25)';
+    const activeLiveBadge = btn.querySelector('.tab-live-badge');
+    if (activeLiveBadge) activeLiveBadge.style.display = 'inline-flex';
+    const activePill = btn.querySelector('.tab-platform-pill');
+    if (activePill) {
+      activePill.style.background = 'rgba(255,255,255,0.18)';
+      activePill.style.color = '#ffffff';
+    }
   };
 }
 
@@ -962,6 +973,37 @@ function renderLessonVideos(videos, lesson, unitId) {
           </div>
         </div>
 
+        ${
+          ytId
+            ? `
+          <!-- Direct Embedded YouTube Player with Privacy-Enhanced Mode -->
+          <div class="video-embed-wrapper no-print" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 6px; margin-bottom: 4px; background: #000000; box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
+            <iframe src="https://www.youtube-nocookie.com/embed/${ytId}" title="${(vid.title || 'Video').replace(/"/g, '&quot;')}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        `
+            : isEra
+              ? `
+          <!-- Live ERA Broadcast Portal Card -->
+          <div class="era-portal-preview no-print" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: #ffffff; border-radius: 8px; padding: 14px 18px; margin-top: 6px; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 3px 10px rgba(30,64,175,0.2);">
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; color: #93c5fd; margin-bottom: 3px; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-graduation-cap"></i> BBC &amp; Educational Recording Agency (ERA) Broadcast
+              </div>
+              <div style="font-size: 0.98rem; font-weight: 700; color: #ffffff; font-family: 'Playfair Display', serif;">
+                ${vid.title || 'Curriculum Video Resource'}
+              </div>
+              <div style="font-size: 0.78rem; color: #bfdbfe; margin-top: 3px;">
+                Full broadcast licensed for schools &bull; Authenticate via your school Single Sign-On (SSO)
+              </div>
+            </div>
+            <a href="${vid.url}" target="_blank" rel="noopener noreferrer" style="background: #ffffff; color: #1e40af; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 800; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.15s ease;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#ffffff'; this.style.transform='none'">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Stream on ERA
+            </a>
+          </div>
+        `
+              : ''
+        }
+
         <!-- Side-by-side Teacher Guidance + Active Viewing Task Grid (Option 4) -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 2px;">
           ${
@@ -1029,8 +1071,15 @@ function renderLessonVideos(videos, lesson, unitId) {
   if (videos.length > 1) {
     const tabButtons = videos
       .map((v, i) => {
-        const info = resolveVideoPathway(v);
+        const isYt =
+          v.type === 'youtube' ||
+          (v.url && (v.url.includes('youtube.com') || v.url.includes('youtu.be')));
+        const isEra = v.type === 'era' || (v.url && v.url.includes('era.org.uk'));
+        const platformLabel = isEra ? 'ERA' : isYt ? 'YouTube' : 'Video';
+        const platformIcon = isEra ? 'fa-solid fa-graduation-cap' : 'fa-brands fa-youtube';
+        const platformColor = isEra ? '#1e40af' : '#dc2626';
         const isActive = i === 0;
+
         let shortDur = '';
         if (v.duration) {
           shortDur = v.duration
@@ -1039,25 +1088,44 @@ function renderLessonVideos(videos, lesson, unitId) {
             .replace(/\s+/g, ' ')
             .trim();
         }
+
+        // Clean, readable tab title
+        let displayTitle = v.title || ('Video Option ' + (i + 1));
+        displayTitle = displayTitle
+          .replace(/\s*\|\s*Secondary History.*$/i, '')
+          .replace(/\s*-\s*Medicine Through Time.*$/i, '')
+          .replace(/\s*History File:?\s*/i, '')
+          .replace(/\s*BBC Two:?\s*/i, '')
+          .replace(/\s*BBC Four:?\s*/i, '')
+          .trim();
+        if (displayTitle.length > 36) {
+          displayTitle = displayTitle.substring(0, 34) + '…';
+        }
+
         return `
           <button type="button" 
             class="video-pathway-tab-btn ${isActive ? 'is-active' : ''}" 
             data-target="${videoSectionId}-card-${i}"
             onclick="window.switchVideoTab && window.switchVideoTab(this, '${videoSectionId}', '${videoSectionId}-card-${i}')"
-            style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: ${isActive ? '700' : '600'}; background: ${isActive ? '#1e40af' : '#ffffff'}; color: ${isActive ? '#ffffff' : '#475569'}; border: 1px solid ${isActive ? '#1e40af' : '#cbd5e1'}; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; box-shadow: ${isActive ? '0 2px 5px rgba(30,64,175,0.25)' : '0 1px 2px rgba(0,0,0,0.03)'};"
+            style="display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 6px; font-size: 0.82rem; font-weight: ${isActive ? '700' : '600'}; background: ${isActive ? '#0f172a' : '#ffffff'}; color: ${isActive ? '#ffffff' : '#334155'}; border: 1.5px solid ${isActive ? '#0f172a' : '#cbd5e1'}; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; box-shadow: ${isActive ? '0 3px 8px rgba(15,23,42,0.25)' : '0 1px 2px rgba(0,0,0,0.03)'};"
             onmouseover="if (!this.classList.contains('is-active')) { this.style.background='#f8fafc'; this.style.borderColor='#94a3b8'; }"
             onmouseout="if (!this.classList.contains('is-active')) { this.style.background='#ffffff'; this.style.borderColor='#cbd5e1'; }"
           >
-            <i class="${info.icon}" style="color: ${isActive ? '#93c5fd' : '#2563eb'};"></i>
-            <span>${info.pathway}</span>
-            ${shortDur ? `<span style="font-size: 0.74rem; opacity: 0.85; font-family: monospace;">(${shortDur})</span>` : ''}
+            <span class="tab-platform-pill" data-platform="${isEra ? 'era' : isYt ? 'youtube' : 'other'}" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; border-radius: 4px; font-size: 0.70rem; font-weight: 800; text-transform: uppercase; background: ${isActive ? 'rgba(255,255,255,0.18)' : isEra ? '#eff6ff' : '#fef2f2'}; color: ${isActive ? '#ffffff' : platformColor};">
+              <i class="${platformIcon}"></i> ${platformLabel}
+            </span>
+            <span class="tab-video-name" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">${displayTitle}</span>
+            ${shortDur ? `<span style="font-size: 0.72rem; opacity: 0.8; font-family: monospace;">(${shortDur})</span>` : ''}
+            <span class="tab-live-badge" style="display: ${isActive ? 'inline-flex' : 'none'}; align-items: center; gap: 4px; background: #22c55e; color: #ffffff; font-size: 0.65rem; font-weight: 900; padding: 1px 6px; border-radius: 999px; letter-spacing: 0.04em;">
+              <span style="display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #ffffff;"></span> LIVE
+            </span>
           </button>
         `;
       })
       .join('');
 
     tabBarHtml = `
-      <div class="video-pathway-tabs-bar no-print" style="display: flex; gap: 8px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px; border-bottom: 1px solid #e2e8f0;">
+      <div class="video-pathway-tabs-bar no-print" style="display: flex; gap: 8px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 6px; border-bottom: 1px solid #e2e8f0;">
         ${tabButtons}
       </div>
     `;
