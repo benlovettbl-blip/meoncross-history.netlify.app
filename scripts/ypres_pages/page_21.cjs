@@ -15,16 +15,16 @@ module.exports = function renderPage21(assets) {
 
     <div class="page-body">
       <!-- Dual Photo Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="photo-card" style="padding: 4px;">
-          <img src="${assets.clothHallRestored}" alt="Ypres Cloth Hall Restored" style="height: 135px; object-fit: cover;">
-          <div class="caption">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="photo-card" style="padding: 6px; text-align: center;">
+          <img src="${assets.clothHallRestored}" alt="Ypres Cloth Hall Restored" style="max-height: 140px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
+          <div class="caption" style="font-size: 8.8pt; padding: 4px 2px 0 2px;">
             Ypres Cloth Hall: Rebuilt stone-by-stone from medieval blueprints (1928&ndash;1967).
           </div>
         </div>
-        <div class="photo-card" style="padding: 4px;">
-          <img src="${assets.talbotHouse}" alt="Talbot House Poperinge" style="height: 135px; object-fit: cover;">
-          <div class="caption">
+        <div class="photo-card" style="padding: 6px; text-align: center;">
+          <img src="${assets.talbotHouse}" alt="Talbot House Poperinge" style="max-height: 140px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
+          <div class="caption" style="font-size: 8.8pt; padding: 4px 2px 0 2px;">
             Talbot House ('Toc H'), Poperinge: The everyman rest sanctuary for all military ranks.
           </div>
         </div>

@@ -22,10 +22,10 @@ module.exports = function renderPage10(assets) {
         </p>
       </div>
 
-      <!-- Photo Card -->
-      <div class="photo-card" style="padding: 4px;">
-        <img src="${assets.hoogeCrater}" alt="Hooge Crater" style="height: 115px; object-fit: cover;">
-        <div class="caption">
+      <!-- Photo Card: Uncropped Hooge Crater Source -->
+      <div class="photo-card" style="padding: 4px; background: #f8fafc;">
+        <img src="${assets.hoogeCrater}" alt="Hooge Crater" style="max-height: 135px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: 4px;">
+        <div class="caption" style="margin-top: 3px; font-size: 8.8pt; line-height: 1.25;">
           The Hooge Crater basin and reconstructed trenches: Scene of the 19 July 1915 mine blast and first liquid flame attack.
         </div>
       </div>
@@ -34,14 +34,14 @@ module.exports = function renderPage10(assets) {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
         <div class="context-box" style="padding: 6px 10px;">
           <div class="box-header">Subterranean Mine Warfare</div>
-          <p style="font-size: 9.8pt; line-height: 1.38;">
+          <p style="font-size: 10.4pt; line-height: 1.38;">
             When surface assaults stalled against machine guns, both armies burrowed deep underground. Specialist miners ('clay kickers') dug silent shafts through clay to detonate ammonal charges, sparking savage 'crater fights' to seize the lip.
           </p>
         </div>
 
         <div class="context-box" style="padding: 6px 10px;">
           <div class="box-header">Evening Routine at Peace Village</div>
-          <p style="font-size: 9.8pt; line-height: 1.38;">
+          <p style="font-size: 10.4pt; line-height: 1.38;">
             Following Hooge, the coach transfers directly to Peace Village Hostel in Mesen (18:00 check-in). After dinner at 18:30, tour leaders convene in the seminar room at 19:30 for a 45-minute debrief and fieldwork review.
           </p>
         </div>
@@ -50,7 +50,7 @@ module.exports = function renderPage10(assets) {
       <!-- Look-fors -->
       <div class="look-fors-box" style="padding: 6px 11px;">
         <div class="box-header">4 Physical Forensic Look-Fors on Site</div>
-        <ul class="look-fors-list" style="font-size: 9.8pt; line-height: 1.38;">
+        <ul class="look-fors-list" style="font-size: 10.6pt; line-height: 1.40;">
           <li><strong>The Preserved Crater Depression:</strong> Walk the perimeter path of the water-filled mine crater behind the museum.</li>
           <li><strong>Museum Trench Armor Collection:</strong> Examine the heavy steel <em>Grabenpanzer</em> breastplates worn by sentries.</li>
           <li><strong>Reconstructed Frontline Firebays:</strong> Step through preserved trenches behind the museum to inspect wooden revetments.</li>
@@ -60,10 +60,10 @@ module.exports = function renderPage10(assets) {
 
       <!-- Hinge Questions -->
       <div class="hinge-box" style="padding: 6px 11px;">
-        <p style="font-size: 10pt; line-height: 1.38;">
+        <p style="font-size: 10.6pt; line-height: 1.38;">
           1. "Why did both armies invest vast manpower in subterranean mine warfare rather than surface infantry assaults? What does this reveal about defensive technology?"
         </p>
-        <p style="font-size: 10pt; line-height: 1.38;">
+        <p style="font-size: 10.6pt; line-height: 1.38; margin-top: 3px;">
           2. "Did the introduction of the flamethrower at Hooge alter the moral boundary of civilized warfare, or was it an extension of industrial artillery terror?"
         </p>
       </div>

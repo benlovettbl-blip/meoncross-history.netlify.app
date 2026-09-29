@@ -17,13 +17,13 @@ module.exports = function renderPage23(assets) {
       </div>
     </div>
 
-    <div class="page-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 6px;">
+    <div class="page-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
       <!-- Category 1: The Trench System & Environment -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #1e3a8a; border-radius: 5px; padding: 6px 10px;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #1e3a8a; border-radius: 6px; padding: 9px 13px;">
+        <div style="font-size: 10.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           1. The Trench System &amp; The Flemish Environment (Physical Terrain)
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.28; color: #334155;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 10.2pt; line-height: 1.42; color: #334155;">
           <div>
             &bull; <strong>Front Line Trench:</strong> Firing trench closest to the enemy (60–300m away); built in continuous zig-zags with firebays to contain shell bursts and prevent enfilade machine-gun fire.<br>
             &bull; <strong>Support Trench (80–100m behind front):</strong> Housed secondary garrisons and reserve ammunition to reinforce the front line quickly during enemy assaults.<br>
@@ -40,11 +40,11 @@ module.exports = function renderPage23(assets) {
       </div>
 
       <!-- Category 2: Conditions, Infection & Battle Injuries -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #b45309; border-radius: 5px; padding: 6px 10px;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #b45309; border-radius: 6px; padding: 9px 13px;">
+        <div style="font-size: 10.6pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           2. Ill-Health, Infection &amp; Battle Injuries (Causes, Symptoms &amp; Solutions)
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.28; color: #334155;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 10.2pt; line-height: 1.42; color: #334155;">
           <div>
             &bull; <strong>Trench Foot:</strong> Painful fungal rotting of feet caused by prolonged standing in freezing water/mud; led to gangrene and amputation. <em>Prevention:</em> Whale oil rubs, changing into clean dry socks twice daily, drainage sumps, and buddy checks.<br>
             &bull; <strong>Trench Fever:</strong> Debilitating flu-like pyrexia with severe joint and leg pains, transmitted by body lice living in uniforms. <em>Prevention:</em> Delousing stations, hot showers, and portable steam-fumigation vans.<br>
@@ -59,11 +59,11 @@ module.exports = function renderPage23(assets) {
       </div>
 
       <!-- Category 3: Gas Warfare -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #dc2626; border-radius: 5px; padding: 6px 10px;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #dc2626; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #dc2626; border-radius: 6px; padding: 9px 13px;">
+        <div style="font-size: 10.6pt; font-weight: 800; color: #dc2626; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           3. Chemical Warfare: Poison Gases, Physical Effects &amp; Respirators
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.28; color: #334155;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 10.2pt; line-height: 1.42; color: #334155;">
           <div>
             &bull; <strong>Chlorine Gas (First used 22 April 1915, Second Ypres):</strong> Greenish-yellow cloud that stripped bronchial linings; death by suffocating internal fluid. First neutralized by urine-soaked cloths (ammonia neutralized acid).<br>
             &bull; <strong>Phosgene Gas (First used Dec 1915 at Boezinge):</strong> Colorless gas smelling of musty hay; six times deadlier than chlorine. Symptoms were delayed 24–48 hours, causing sudden fatal lung drowning.
@@ -76,7 +76,7 @@ module.exports = function renderPage23(assets) {
       </div>
 
       <!-- Exam Testing Prompt -->
-      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 5px 10px; font-size: 7.9pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
+      <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 7px 12px; font-size: 9.6pt; color: #475569; display: flex; justify-content: space-between; align-items: center;">
         <span><strong>Exam Focus:</strong> <em>"Describe two features of..."</em> [4 marks] &mdash; 1 mark for each feature + 1 mark for valid supporting historical detail.</span>
         <span style="font-weight: 700; color: #1e3a8a;">Continued on Page 24 &rarr;</span>
       </div>

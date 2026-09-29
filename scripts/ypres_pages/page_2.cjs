@@ -14,21 +14,21 @@ module.exports = function renderPage2(assets) {
     </div>
 
     <div class="page-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 6px;">
-      <!-- Map: Doubled in size for clear tactical navigation -->
-      <div class="photo-card" style="padding: 4px; margin-bottom: 0;">
-        <img src="${assets.salientMap}" alt="Salient Map" style="height: 315px; width: 100%; object-fit: contain; background: #ffffff; display: block;">
-        <div class="caption" style="font-size: 8pt; padding: 2px 4px;">
+      <!-- Map: High-resolution overview for clear tactical navigation -->
+      <div class="photo-card" style="padding: 4px; margin-bottom: 0; text-align: center;">
+        <img src="${assets.salientMap}" alt="Salient Map" style="height: 260px; width: 100%; object-fit: contain; background: #ffffff; display: block; margin: 0 auto;">
+        <div class="caption" style="font-size: 8.8pt; padding: 2px 4px;">
           Strategic Overview of the Ypres Salient (1914–1918): Showing frontlines, allied defense arcs, and all 13 field expedition study stops.
         </div>
       </div>
 
-      <!-- Timetable Table: Compact and streamlined -->
-      <table class="data-table" style="font-size: 7.9pt; line-height: 1.25; margin: 0; width: 100%;">
+      <!-- Timetable Table: High-legibility field schedule -->
+      <table class="data-table" style="font-size: 8.8pt; line-height: 1.28; margin: 0; width: 100%;">
         <thead>
           <tr>
-            <th style="width: 14%; padding: 3px 6px; font-size: 7.6pt;">Time</th>
-            <th style="width: 29%; padding: 3px 6px; font-size: 7.6pt;">Site / Location</th>
-            <th style="padding: 3px 6px; font-size: 7.6pt;">Tour Leader Guidance &amp; Pedagogical Objective</th>
+            <th style="width: 14%; padding: 3px 6px; font-size: 8.4pt;">Time</th>
+            <th style="width: 29%; padding: 3px 6px; font-size: 8.4pt;">Site / Location</th>
+            <th style="padding: 3px 6px; font-size: 8.4pt;">Tour Leader Guidance &amp; Pedagogical Objective</th>
           </tr>
         </thead>
         <tbody>
@@ -115,7 +115,7 @@ module.exports = function renderPage2(assets) {
           <tr>
             <td style="padding: 2.2px 6px;"><strong>D3 &middot; 14:30</strong></td>
             <td style="padding: 2.2px 6px;"><strong>Calais Transit &amp; Return</strong></td>
-            <td style="padding: 2.2px 6px;">Depart Poperinge for Calais; 17:50 Le Shuttle crossing; arrive at school approx 20:00.</td>
+            <td style="padding: 2.2px 6px;">Depart Poperinge for Calais; 17:50 Le Shuttle crossing; arrive at school base approx 20:00.</td>
           </tr>
         </tbody>
       </table>

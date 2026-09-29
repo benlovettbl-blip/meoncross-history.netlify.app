@@ -24,21 +24,21 @@ module.exports = function renderPage17(assets) {
 
       <!-- Photo & Medical Advancements 2-Col Grid -->
       <div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 8px; align-items: stretch;">
-        <div class="photo-card" style="padding: 3px; display: flex; flex-direction: column; justify-content: space-between;">
-          <img src="${assets.xrayFieldHospital}" alt="Mobile X-Ray Field Hospital" style="height: 110px; object-fit: cover; border-radius: 4px;">
-          <div class="caption">
+        <div class="photo-card" style="padding: 4px; display: flex; flex-direction: column; justify-content: space-between; background: #f8fafc;">
+          <img src="${assets.xrayFieldHospital}" alt="Mobile X-Ray Field Hospital" style="max-height: 125px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: 4px;">
+          <div class="caption" style="margin-top: 3px; font-size: 8.6pt; line-height: 1.25;">
             Mobile Field Radiology (1917): X-ray van triaging casualties outside hospital tent.
           </div>
         </div>
 
         <div class="context-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 6px 10px;">
           <div>
-            <div class="box-header">Modern Trauma Medicine</div>
-            <p style="font-size: 9.6pt; line-height: 1.36; margin-bottom: 3px;">
+            <div class="box-header" style="font-size: 9.8pt; margin-bottom: 2px;">Modern Trauma Medicine</div>
+            <p style="font-size: 10.2pt; line-height: 1.36; margin-bottom: 3px;">
               Surgeons pioneered the <strong>Carrel-Dakin technique</strong>, continuously irrigating deep shrapnel wounds with sodium hypochlorite antiseptic solution to prevent fatal gas gangrene.
             </p>
-            <div class="box-header" style="margin-top: 3px;">Thomas Splint &amp; Transfusions</div>
-            <p style="font-size: 9.6pt; line-height: 1.36;">
+            <div class="box-header" style="font-size: 9.8pt; margin-top: 3px; margin-bottom: 2px;">Thomas Splint &amp; Transfusions</div>
+            <p style="font-size: 10.2pt; line-height: 1.36;">
               The <strong>Thomas Splint</strong> (1916) pulled compound femur mortality down from 80% to under 20%. Mobile units enabled citrated whole blood transfusions at the operating table.
             </p>
           </div>
@@ -48,15 +48,15 @@ module.exports = function renderPage17(assets) {
       <!-- Case Study & Triage Protocol Grid -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
         <div class="context-box" style="border-left: 5px solid #0284c7; padding: 6px 10px;">
-          <div class="box-header" style="color: #0369a1;">Case Study: Staff Nurse Nellie Spindler</div>
-          <p style="font-size: 9.6pt; line-height: 1.36;">
+          <div class="box-header" style="color: #0369a1; font-size: 9.8pt; margin-bottom: 2px;">Case Study: Staff Nurse Nellie Spindler</div>
+          <p style="font-size: 10.2pt; line-height: 1.36;">
             Locate <strong>Plot XVI. A. 3</strong> to find 26-year-old Staff Nurse Nellie Spindler (QAIMNS). Operating on casualties on 21 August 1917, a 210mm German shell struck her marquee. She is the <strong>only woman buried among over 10,000 men</strong> here.
           </p>
         </div>
 
         <div class="context-box" style="padding: 6px 10px;">
-          <div class="box-header">Tripartite Triage Protocol</div>
-          <p style="font-size: 9.6pt; line-height: 1.36;">
+          <div class="box-header" style="font-size: 9.8pt; margin-bottom: 2px;">Tripartite Triage Protocol</div>
+          <p style="font-size: 10.2pt; line-height: 1.36;">
             Arriving stretcher cases were sorted into three stark categories:
             <br>&bull; <strong>Walking Wounded:</strong> Patched and returned to unit.
             <br>&bull; <strong>Immediate Surgery:</strong> Abdominal &amp; chest cases with hope.

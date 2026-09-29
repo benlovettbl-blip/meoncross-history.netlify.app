@@ -17,13 +17,13 @@ module.exports = function renderPage24(assets) {
       </div>
     </div>
 
-    <div class="page-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 6px;">
+    <div class="page-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
       <!-- Category 1: The Chain of Evacuation -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #1e3a8a; border-radius: 5px; padding: 6px 10px;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #1e3a8a; border-radius: 6px; padding: 9px 13px;">
+        <div style="font-size: 10.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           1. The Chain of Evacuation &amp; Medical Transport (Route from Trenches to Coast)
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.28; color: #334155;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 10.2pt; line-height: 1.42; color: #334155;">
           <div>
             &bull; <strong>Stretcher Bearers:</strong> Hauled wounded from No Man's Land and firebays to RAPs under fire; only 16 bearers per battalion of 1,000 men; carried basic shell dressings and morphine.<br>
             &bull; <strong>Regimental Aid Post (RAP):</strong> Located 200m behind front line in dugouts or cellars; battalion doctor performed immediate emergency first aid and bandaged wounds.<br>
@@ -40,11 +40,11 @@ module.exports = function renderPage24(assets) {
       </div>
 
       <!-- Category 2: Medical & Surgical Innovations -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #059669; border-radius: 5px; padding: 6px 10px;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #065f46; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #059669; border-radius: 6px; padding: 9px 13px;">
+        <div style="font-size: 10.6pt; font-weight: 800; color: #065f46; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           2. Medical &amp; Surgical Innovations (Pioneered on the Western Front)
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.28; color: #334155;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 10.2pt; line-height: 1.42; color: #334155;">
           <div>
             &bull; <strong>The Thomas Splint (Dec 1915):</strong> Introduced to frontline by Robert Jones; kept fractured femur straight to stop bone ends severing femoral artery; cut compound fracture mortality from 80% to under 20%.<br>
             &bull; <strong>Mobile X-Ray Units:</strong> Installed in motor vans (Marie Curie's 'Petites Curies'); located shrapnel and bullet fragments before surgery to prevent fatal sepsis and gangrene.<br>
@@ -59,22 +59,22 @@ module.exports = function renderPage24(assets) {
       </div>
 
       <!-- Category 3: GCSE Exam Technique: Feature Questions -->
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #b45309; border-radius: 5px; padding: 6px 10px;">
-        <div style="font-size: 8.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4.5px solid #b45309; border-radius: 6px; padding: 8px 13px;">
+        <div style="font-size: 10.6pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
           3. Edexcel Paper 1 Exam Strategy: "Describe Two Features of..." [4 Marks]
         </div>
-        <div style="font-size: 8.0pt; line-height: 1.28; color: #334155;">
+        <div style="font-size: 10.0pt; line-height: 1.40; color: #334155;">
           <strong>Official Marking Formula:</strong> Q1(a) [2m] + Q1(b) [2m]. For each question: State <strong>one valid feature</strong> (1 mark) + Add <strong>specific supporting historical evidence/detail</strong> (1 mark).<br>
           <em>Practice Revision Stems:</em> &bull; Features of an Advanced Dressing Station &bull; Features of the Thomas Splint &bull; Features of blood transfusions at Cambrai &bull; Features of underground dugouts at Zonnebeke &bull; Features of chlorine gas attacks &bull; Features of the Carrel-Dakin method.
         </div>
       </div>
 
       <!-- Dedication Banner (Retained as explicitly requested in Audio 12) -->
-      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 6px; padding: 7px 12px; text-align: center;">
-        <div style="font-size: 9.4pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 6px; padding: 9px 14px; text-align: center;">
+        <div style="font-size: 10.4pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">
           The History Department &middot; Pilgrimage of Remembrance
         </div>
-        <p style="font-size: 8.6pt; color: #1e293b; line-height: 1.35; margin: 0; font-style: italic;">
+        <p style="font-size: 10.0pt; color: #1e293b; line-height: 1.40; margin: 0; font-style: italic;">
           &ldquo;Dedicated to the memory of the fallen of our home parish of Holy Rood and the countless thousands who lie in the quiet earth of Flanders. We will remember them.&rdquo;
         </p>
       </div>

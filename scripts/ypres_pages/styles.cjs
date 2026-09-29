@@ -19,14 +19,14 @@ module.exports = `
       background: #ffffff;
       margin: 0;
       padding: 0;
-      font-size: 10.2pt;
-      line-height: 1.45;
+      font-size: 11pt;
+      line-height: 1.5;
     }
 
     .page {
       width: 210mm;
       height: 297mm;
-      padding: 9.5mm 12mm 8.5mm 12mm;
+      padding: 9mm 12mm 8.5mm 12mm;
       position: relative;
       background: #ffffff;
       overflow: hidden;
@@ -53,7 +53,7 @@ module.exports = `
     }
 
     .school-title {
-      font-size: 12.2pt;
+      font-size: 12.8pt;
       font-weight: 800;
       letter-spacing: 0.04em;
       color: #1e3a8a;
@@ -63,7 +63,7 @@ module.exports = `
     }
 
     .school-sub {
-      font-size: 8.8pt;
+      font-size: 9.4pt;
       color: #475569;
       font-weight: 600;
       margin-top: 1.5px;
@@ -80,12 +80,12 @@ module.exports = `
     .partner-pill .brand {
       font-weight: 800;
       color: #b45309;
-      font-size: 8.8pt;
+      font-size: 9.2pt;
       text-transform: uppercase;
     }
 
     .partner-pill .lead {
-      font-size: 7.8pt;
+      font-size: 8.2pt;
       color: #334155;
       font-weight: 600;
     }
@@ -102,7 +102,7 @@ module.exports = `
       flex-direction: column;
       justify-content: space-between;
       padding: 3px 0;
-      gap: 7px;
+      gap: 8px;
     }
 
     .pitch-box {
@@ -114,7 +114,7 @@ module.exports = `
     }
 
     .pitch-box .box-header {
-      font-size: 9.8pt;
+      font-size: 10.6pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -127,9 +127,9 @@ module.exports = `
 
     .pitch-box p {
       margin: 0;
-      font-size: 11pt;
+      font-size: 11.8pt;
       color: #1e293b;
-      line-height: 1.48;
+      line-height: 1.50;
     }
 
     .pitch-box p + p {
@@ -145,7 +145,7 @@ module.exports = `
     }
 
     .context-box .box-header {
-      font-size: 9.6pt;
+      font-size: 10.2pt;
       font-weight: 800;
       color: #334155;
       text-transform: uppercase;
@@ -155,9 +155,9 @@ module.exports = `
 
     .context-box p {
       margin: 0;
-      font-size: 10.2pt;
+      font-size: 11.2pt;
       color: #334155;
-      line-height: 1.42;
+      line-height: 1.46;
     }
 
     .context-box p + p {
@@ -173,7 +173,7 @@ module.exports = `
     }
 
     .look-fors-box .box-header {
-      font-size: 9.6pt;
+      font-size: 10.2pt;
       font-weight: 800;
       color: #065f46;
       text-transform: uppercase;
@@ -184,9 +184,9 @@ module.exports = `
     .look-fors-list {
       margin: 0;
       padding-left: 18px;
-      font-size: 10.2pt;
+      font-size: 11.2pt;
       color: #334155;
-      line-height: 1.42;
+      line-height: 1.46;
     }
 
     .look-fors-list li {
@@ -206,7 +206,7 @@ module.exports = `
     }
 
     .hinge-box .box-header {
-      font-size: 9.6pt;
+      font-size: 10.2pt;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
@@ -216,9 +216,9 @@ module.exports = `
 
     .hinge-box p {
       margin: 0;
-      font-size: 10.4pt;
+      font-size: 11.2pt;
       color: #451a03;
-      line-height: 1.42;
+      line-height: 1.46;
       font-style: italic;
     }
 
@@ -245,13 +245,13 @@ module.exports = `
 
     .poem-box .poem-title {
       font-family: 'Playfair Display', serif;
-      font-size: 12pt;
+      font-size: 13pt;
       font-weight: 700;
       color: #292524;
     }
 
     .poem-box .poem-meta {
-      font-size: 8.6pt;
+      font-size: 9.4pt;
       color: #78716c;
       font-weight: 700;
       text-transform: uppercase;
@@ -260,9 +260,9 @@ module.exports = `
     .poem-box .poem-lines {
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: 11.2pt;
+      font-size: 12pt;
       color: #292524;
-      line-height: 1.44;
+      line-height: 1.48;
       white-space: pre-line;
     }
 
@@ -270,31 +270,33 @@ module.exports = `
       background: #f8fafc;
       border: 1.2px solid #cbd5e1;
       border-radius: 6px;
-      padding: 5px;
+      padding: 6px;
       text-align: center;
     }
 
     .photo-card img {
-      width: 100%;
+      max-width: 100%;
+      height: auto;
       border-radius: 4px;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
+      margin: 0 auto;
     }
 
     .photo-card .caption {
-      font-size: 8.6pt;
+      font-size: 9.6pt;
       color: #475569;
       font-style: italic;
-      margin-top: 3.5px;
-      line-height: 1.30;
+      margin-top: 4px;
+      line-height: 1.35;
     }
 
     .transit-bar {
       background: #f1f5f9;
       border: 1.2px solid #cbd5e1;
       border-radius: 5px;
-      padding: 5px 11px;
-      font-size: 9.4pt;
+      padding: 6px 12px;
+      font-size: 10.4pt;
       color: #475569;
       font-weight: 600;
       display: flex;
@@ -309,7 +311,7 @@ module.exports = `
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 8.2pt;
+      font-size: 8.8pt;
       color: #64748b;
       font-weight: 600;
       flex-shrink: 0;
@@ -327,25 +329,25 @@ module.exports = `
     table.data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 9.2pt;
+      font-size: 9.8pt;
     }
 
     table.data-table th {
       background: #0f172a;
       color: #ffffff;
       text-align: left;
-      padding: 5px 8px;
+      padding: 6px 8px;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 8.4pt;
+      font-size: 9.2pt;
       letter-spacing: 0.04em;
     }
 
     table.data-table td {
-      padding: 4.8px 8px;
+      padding: 5.5px 8px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
-      line-height: 1.35;
+      line-height: 1.40;
     }
 
     table.data-table tr:nth-child(even) td {
