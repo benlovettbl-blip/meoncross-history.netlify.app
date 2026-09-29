@@ -703,16 +703,38 @@ export function renderInteractiveQuiz() {
         <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.25); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.4); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; backdrop-filter: blur(4px);">
           <i class="fa-solid fa-circle-question" style="color: #fef08a;"></i> Quizzing &amp; Spaced Retrieval
         </div>
-        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 800; color: #ffffff; margin: 0 0 10px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
+        <h1 class="interactive-hub-title" style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 800; color: #ffffff; margin: 0 0 10px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
           Interactive Quizzing &amp; Spaced Recall
         </h1>
-        <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0 auto; max-width: 620px; line-height: 1.5; font-weight: 400; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+        <p class="interactive-hub-subtitle" style="color: #cbd5e1; font-size: 1.05rem; margin: 0 auto; max-width: 620px; line-height: 1.5; font-weight: 400; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
           Strengthen long-term factual memory through daily 5-minute retrieval drills, or benchmark your exam readiness with a 10-minute diagnostic check.
         </p>
       </div>
 
+      <!-- Mobile Quick-Start Hero (Visible on Smartphones) -->
+      <div class="mobile-only-quick-launch">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <span style="background: rgba(245, 158, 11, 0.3); color: #fef08a; padding: 2px 8px; border-radius: 999px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">⚡ Quick Mobile Start</span>
+          <span style="font-size: 0.75rem; color: #cbd5e1;">${data.title || 'Curriculum Revision'}</span>
+        </div>
+        <h3 style="margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 800; font-family: 'Montserrat', sans-serif;">Revision Mode</h3>
+        <p style="margin: 0 0 14px 0; font-size: 0.84rem; color: #cbd5e1; line-height: 1.4;">
+          Test your recall now with a rapid 10-minute quiz or flip through key retrieval flashcards.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button onclick="window.startDiagnosticBenchmark('${unitId}')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 18px; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>Start 10-Minute Quiz</span>
+          </button>
+          <a href="${initialFlashcardUrl}" target="_blank" style="text-decoration: none; background: rgba(255, 255, 255, 0.12); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); font-weight: 700; font-size: 0.92rem; padding: 12px 18px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
+            <span>Practice Flashcards</span>
+          </a>
+        </div>
+      </div>
+
       <!-- Primary Two-Choice Layout -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 22px; margin-bottom: 24px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 22px; margin-bottom: 24px;">
         
         <!-- Choice 1: Daily Recall Practice -->
         <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.2s ease;" onmouseover="this.style.borderColor='#6366f1'; this.style.boxShadow='0 8px 30px rgba(99,102,241,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)';">
@@ -934,21 +956,31 @@ export function renderInteractiveQuiz() {
               let recallPdfUrl = `/pdfs/${unitId}_mastery_pack_${wbId}_FINAL_V17.pdf`;
               let examPdfUrl = null;
 
-              if (unitId === 'cme_new') {
+              if (unitId === 'edexcel_medicine') {
+                recallPdfUrl = '/pdfs/med_recall_quiz_pack_FULL.pdf';
+                examPdfUrl = `/pdfs/edexcel_medicine_pupil_workbook_${wbId}_FINAL_V17.pdf`;
+              } else if (unitId === 'cme_new') {
                 const upperId = wbId.toUpperCase();
-                recallPdfUrl = `/pdfs/cme_recall_quiz_${upperId}.pdf`;
-                examPdfUrl = `/pdfs/cme_new/cme_mastery_pack_${upperId}.pdf`;
+                recallPdfUrl = '/pdfs/cme_recall_quiz_FULL.pdf';
+                examPdfUrl = `/pdfs/cme_new_mastery_pack_${upperId}_FINAL_V17.pdf`;
               } else if (unitId === 'usa') {
                 const upperId = wbId.toUpperCase();
-                recallPdfUrl = `/pdfs/usa_recall_quiz_${upperId}.pdf`;
-                examPdfUrl = `/pdfs/usa/usa_mastery_pack_${upperId}.pdf`;
+                recallPdfUrl = '/pdfs/usa_recall_quiz_FULL.pdf';
+                examPdfUrl = `/pdfs/usa_mastery_pack_${upperId}_FINAL_V17.pdf`;
+              } else if (unitId === 'great_war') {
+                recallPdfUrl = '/pdfs/great_war_recall_quiz_FULL.pdf';
+                examPdfUrl = '/pdfs/great_war_mastery_pack_full_FINAL_V17.pdf';
+              } else if (unitId === 'weimar_nazi_germany' || unitId === 'eee') {
+                const upperId = wbId.toUpperCase();
+                recallPdfUrl = `/pdfs/${unitId}_mastery_pack_${upperId}_FINAL_V17.pdf`;
+                examPdfUrl = `/pdfs/${unitId}_pupil_workbook_${upperId}_FINAL_V17.pdf`;
               }
 
               const examSuiteLabel = isFull
-                ? unitId === 'usa'
-                  ? '48p Exam Suite'
-                  : '36p Exam Suite'
-                : '12p Exam Pack';
+                ? 'Complete Master Pack'
+                : unitId === 'edexcel_medicine'
+                  ? 'Workbook & Tasks'
+                  : 'Topic Exam Pack';
 
               return `
               <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#cbd5e1'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='#f8fafc';">

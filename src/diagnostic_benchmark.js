@@ -388,25 +388,11 @@ function createOrShowDiagnosticModal() {
   if (!modal) {
     modal = document.createElement('div');
     modal.id = 'diagnostic-benchmark-modal';
-    modal.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      box-sizing: border-box;
-      animation: fadeIn 0.2s ease-out;
-    `;
+    modal.className = 'diag-modal-overlay';
     document.body.appendChild(modal);
   }
 
+  modal.className = 'diag-modal-overlay';
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
@@ -506,25 +492,25 @@ function renderDiagnosticQuestion() {
   const formattedTime = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 
   modal.innerHTML = `
-    <div style="background: #ffffff; width: 100%; max-width: 900px; max-height: 94vh; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); display: flex; flex-direction: column; overflow: hidden; font-family: 'Inter', sans-serif;">
+    <div class="diag-benchmark-card">
       
       <!-- Top Header Bar -->
-      <div style="background: #0f172a; color: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #334155; flex-wrap: wrap; gap: 12px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="background: #4f46e5; color: white; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+      <div class="diag-header">
+        <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+          <div style="background: #4f46e5; color: white; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;">
             <i class="fa-solid fa-bullseye"></i>
           </div>
-          <div>
-            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: #f8fafc; font-family: 'Montserrat', sans-serif;">Pre-Exam Readiness Benchmark</h3>
-            <span style="font-size: 0.78rem; color: #94a3b8;">${activeSession.unitData.title || 'Curriculum Unit'} • 20 Balanced Questions</span>
+          <div style="min-width: 0;">
+            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: #f8fafc; font-family: 'Montserrat', sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Pre-Exam Benchmark</h3>
+            <span class="diag-subtitle" style="font-size: 0.78rem; color: #94a3b8; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${activeSession.unitData.title || 'Curriculum Unit'} • 20 Questions</span>
           </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
           <!-- 10-Minute Countdown Clock -->
-          <div style="background: rgba(30, 41, 59, 0.9); border: 1px solid #475569; padding: 6px 14px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 0.95rem;">⏱️</span>
-            <span id="diag-timer-text" style="font-family: 'Courier New', monospace; font-size: 1.15rem; font-weight: 800; color: #38bdf8; letter-spacing: 1px;">
+          <div class="diag-timer-badge" style="background: rgba(30, 41, 59, 0.9); border: 1px solid #475569; padding: 6px 12px; border-radius: 8px; display: flex; align-items: center; gap: 6px;">
+            <span style="font-size: 0.9rem;">⏱️</span>
+            <span id="diag-timer-text" style="font-family: 'Courier New', monospace; font-size: 1.1rem; font-weight: 800; color: #38bdf8; letter-spacing: 1px;">
               ${formattedTime}
             </span>
           </div>
@@ -536,9 +522,9 @@ function renderDiagnosticQuestion() {
       </div>
 
       <!-- Question Progress Pill Track (1–20) -->
-      <div style="background: #f8fafc; padding: 12px 24px; border-bottom: 1px solid #e2e8f0; display: flex; gap: 6px; overflow-x: auto; align-items: center;">
-        <span style="font-size: 0.75rem; font-weight: 700; color: #64748b; margin-right: 6px; white-space: nowrap; text-transform: uppercase;">Questions:</span>
-        <div style="display: flex; gap: 6px; flex-wrap: nowrap;">
+      <div class="diag-progress-track">
+        <span style="font-size: 0.72rem; font-weight: 700; color: #64748b; margin-right: 4px; white-space: nowrap; text-transform: uppercase;">Q:</span>
+        <div style="display: flex; gap: 4px; flex-wrap: nowrap;">
           ${activeSession.questions
             .map((item, idx) => {
               const isAnswered = typeof activeSession.answers[idx] !== 'undefined';
@@ -558,7 +544,7 @@ function renderDiagnosticQuestion() {
               }
 
               return `
-                <button onclick="window.jumpToDiagnosticQuestion(${idx})" style="min-width: 32px; height: 32px; border-radius: 6px; background: ${bg}; color: ${color}; border: ${border}; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease; display: flex; align-items: center; justify-content: center;" title="Jump to Question ${idx + 1} (${item.eraTitle})">
+                <button onclick="window.jumpToDiagnosticQuestion(${idx})" style="min-width: 30px; height: 30px; border-radius: 6px; background: ${bg}; color: ${color}; border: ${border}; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" title="Jump to Question ${idx + 1} (${item.eraTitle})">
                   ${idx + 1}
                 </button>
               `;
@@ -568,53 +554,49 @@ function renderDiagnosticQuestion() {
       </div>
 
       <!-- Main Question Body -->
-      <div style="padding: 28px 32px; overflow-y: auto; flex: 1;">
+      <div class="diag-body">
         <!-- Era & Lesson Badge -->
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="background: #ede9fe; color: #5b21b6; font-size: 0.78rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; text-transform: uppercase;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 6px;">
+          <div style="display: flex; align-items: center; gap: 6px; min-width: 0;">
+            <span style="background: #ede9fe; color: #5b21b6; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; white-space: nowrap;">
               ${q.eraTitle}
             </span>
-            <span style="color: #64748b; font-size: 0.82rem;">
+            <span style="color: #64748b; font-size: 0.78rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
               • ${q.lessonTitle}
             </span>
           </div>
-          <span style="font-size: 0.82rem; font-weight: 700; color: #4f46e5;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: #4f46e5; white-space: nowrap;">
             Question ${activeSession.currentIndex + 1} of ${totalQ}
           </span>
         </div>
 
         <!-- Question Prompt -->
-        <h2 style="margin: 0 0 24px 0; font-size: 1.35rem; color: #0f172a; font-weight: 700; line-height: 1.45;">
+        <h2 class="diag-prompt">
           ${q.prompt}
         </h2>
 
         <!-- 4 Option Cards (A, B, C, D / Hotkeys 1, 2, 3, 4) -->
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+        <div class="diag-options-container">
           ${q.options
             .map((opt, optIdx) => {
               const letter = String.fromCharCode(65 + optIdx);
               const numKey = optIdx + 1;
               const isSelected = selectedOption === opt;
-              const borderStyle = isSelected ? '2px solid #4f46e5' : '1px solid #cbd5e1';
-              const bgStyle = isSelected ? '#f5f3ff' : '#ffffff';
-              const badgeBg = isSelected ? '#4f46e5' : '#f1f5f9';
-              const badgeColor = isSelected ? '#ffffff' : '#475569';
 
               return `
-                <div onclick="window.selectDiagnosticAnswer('${encodeURIComponent(opt)}')" style="background: ${bgStyle}; border: ${borderStyle}; border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; cursor: pointer; transition: all 0.15s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.03);" onmouseover="if(!${isSelected}) this.style.borderColor='#94a3b8';" onmouseout="if(!${isSelected}) this.style.borderColor='#cbd5e1';">
-                  <div style="background: ${badgeBg}; color: ${badgeColor}; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.92rem; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <div class="diag-option-card ${isSelected ? 'selected' : ''}" onclick="window.selectDiagnosticAnswer('${encodeURIComponent(opt)}')">
+                  <div class="diag-option-badge">
                     ${letter}
                   </div>
-                  <div style="font-size: 1rem; color: #1e293b; font-weight: ${isSelected ? '600' : '500'}; flex: 1;">
+                  <div class="diag-option-text">
                     ${opt}
                   </div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <kbd style="background: ${isSelected ? '#ede9fe' : '#f1f5f9'}; border: 1px solid ${isSelected ? '#c4b5fd' : '#cbd5e1'}; color: ${isSelected ? '#4338ca' : '#64748b'}; padding: 2px 7px; border-radius: 5px; font-size: 0.72rem; font-family: monospace; font-weight: 700; display: inline-flex; align-items: center; gap: 3px;" title="Press '${numKey}' or '${letter}'">
+                  <div class="diag-option-kbd" style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                    <kbd style="background: ${isSelected ? '#ede9fe' : '#f1f5f9'}; border: 1px solid ${isSelected ? '#c4b5fd' : '#cbd5e1'}; color: ${isSelected ? '#4338ca' : '#64748b'}; padding: 2px 6px; border-radius: 5px; font-size: 0.72rem; font-family: monospace; font-weight: 700; display: inline-flex; align-items: center; gap: 3px;" title="Press '${numKey}' or '${letter}'">
                       <span>${numKey}</span><span style="opacity: 0.4;">/</span><span>${letter}</span>
                     </kbd>
-                    ${isSelected ? `<i class="fa-solid fa-circle-check" style="color: #4f46e5; font-size: 1.25rem;"></i>` : ''}
                   </div>
+                  ${isSelected ? `<i class="fa-solid fa-circle-check" style="color: #4f46e5; font-size: 1.2rem; flex-shrink: 0;"></i>` : ''}
                 </div>
               `;
             })
@@ -623,28 +605,28 @@ function renderDiagnosticQuestion() {
       </div>
 
       <!-- Navigation & Submission Footer -->
-      <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <div class="diag-footer">
         <div style="display: flex; gap: 8px; align-items: center;">
-          <button onclick="window.prevDiagnosticQuestion()" ${activeSession.currentIndex === 0 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 9px 15px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: ${activeSession.currentIndex === 0 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === 0 ? '0.5' : '1'}; transition: all 0.15s ease;" title="Previous Question (Left Arrow)">
+          <button onclick="window.prevDiagnosticQuestion()" ${activeSession.currentIndex === 0 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 9px 14px; border-radius: 8px; font-weight: 600; font-size: 0.86rem; cursor: ${activeSession.currentIndex === 0 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === 0 ? '0.5' : '1'}; transition: all 0.15s ease;" title="Previous Question (Left Arrow)">
             ⬅️ Prev
           </button>
-          <button onclick="window.nextDiagnosticQuestion()" ${activeSession.currentIndex === totalQ - 1 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 9px 15px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: ${activeSession.currentIndex === totalQ - 1 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === totalQ - 1 ? '0.5' : '1'}; transition: all 0.15s ease;" title="Next Question (Right Arrow or Enter)">
+          <button onclick="window.nextDiagnosticQuestion()" ${activeSession.currentIndex === totalQ - 1 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 9px 14px; border-radius: 8px; font-weight: 600; font-size: 0.86rem; cursor: ${activeSession.currentIndex === totalQ - 1 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === totalQ - 1 ? '0.5' : '1'}; transition: all 0.15s ease;" title="Next Question (Right Arrow or Enter)">
             Next ➡️
           </button>
         </div>
 
-        <!-- Direct Keyboard Hotkey Hint -->
-        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; color: #64748b; background: #ffffff; padding: 5px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
+        <!-- Direct Keyboard Hotkey Hint (Desktop Only) -->
+        <div class="diag-kbd-hint" style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; color: #64748b; background: #ffffff; padding: 5px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
           <i class="fa-solid fa-keyboard" style="color: #4f46e5; font-size: 0.85rem;"></i>
-          <span>Keys: <strong>1–4</strong> / <strong>A–D</strong> select · <strong>Enter/➔</strong> next · <strong>⬅</strong> back · <strong>Esc</strong> exit</span>
+          <span>Keys: <strong>1–4</strong> / <strong>A–D</strong> · <strong>Enter/➔</strong> next · <strong>⬅</strong> back</span>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <span style="font-size: 0.82rem; color: #64748b;">
-            <strong>${answeredCount}</strong> of <strong>${totalQ}</strong>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 0.82rem; color: #64748b; white-space: nowrap;">
+            <strong>${answeredCount}</strong>/${totalQ}
           </span>
 
-          <button onclick="window.submitDiagnosticBenchmark()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
+          <button onclick="window.submitDiagnosticBenchmark()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; padding: 9px 16px; border-radius: 8px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35); transition: all 0.15s ease; white-space: nowrap;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
             <i class="fa-solid fa-flag-checkered"></i>
             <span>Submit</span>
           </button>
@@ -853,15 +835,15 @@ function renderDiagnosticResultsReport(report) {
   }
 
   modal.innerHTML = `
-    <div style="background: #ffffff; width: 100%; max-width: 920px; max-height: 94vh; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); display: flex; flex-direction: column; overflow: hidden; font-family: 'Inter', sans-serif;">
+    <div class="diag-benchmark-card diag-results-card">
       
       <!-- Top Header -->
-      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between;">
+      <div class="diag-header diag-results-header" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white;">
         <div>
           <span style="background: rgba(245, 158, 11, 0.25); color: #fef08a; padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
             Diagnostic Metacognition Report
           </span>
-          <h2 style="margin: 6px 0 0 0; font-size: 1.5rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #ffffff;">
+          <h2 style="margin: 6px 0 0 0; font-size: 1.4rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #ffffff;">
             Readiness Benchmark Results
           </h2>
         </div>
@@ -871,7 +853,7 @@ function renderDiagnosticResultsReport(report) {
       </div>
 
       <!-- Report Body -->
-      <div style="padding: 26px 30px; overflow-y: auto; flex: 1;">
+      <div class="diag-body diag-results-body">
         
         <!-- Score & Readiness Banner -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 24px;">
@@ -1037,7 +1019,7 @@ function renderDiagnosticResultsReport(report) {
       </div>
 
       <!-- Results Footer -->
-      <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 14px 28px; display: flex; align-items: center; justify-content: space-between;">
+      <div class="diag-footer diag-results-footer">
         <button onclick="window.startDiagnosticBenchmark('${report.unitId}')" style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; cursor: pointer;">
           🔄 Retake Benchmark (Fresh Set)
         </button>

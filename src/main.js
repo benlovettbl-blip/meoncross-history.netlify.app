@@ -190,6 +190,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   } else if (view === 'quiz' || view === 'interactive_quiz') {
     view = 'interactive';
     unit = unit || 'edexcel_medicine';
+  } else if (view === 'booklets' || view === 'workbooks' || view === 'workbook' || view === 'pdf' || view === 'pdfs' || view === 'textbook' || view === 'textbooks') {
+    view = 'booklet';
   } else if (view === 'lessons' && !unit) {
     unit = 'edexcel_medicine';
   } else if (view === 'trend-radar' || view === 'matrix' || view === 'exam-matrix') {

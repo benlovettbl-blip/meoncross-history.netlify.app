@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Mastery Pack: Complete Unit</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
@@ -34,12 +35,41 @@
             box-sizing: border-box;
         }
         @media print {
+            @page {
+                size: A4 portrait;
+                margin: 12mm 15mm;
+            }
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
             .page {
-                margin: 0;
-                box-shadow: none;
-                width: 100%;
-                min-height: 100%;
-                padding: 0;
+                margin: 0 !important;
+                box-shadow: none !important;
+                width: 100% !important;
+                min-height: 270mm !important;
+                padding: 0 !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+            .page:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+            .screen-vault-toolbar,
+            .leitner-modal-overlay,
+            .vault-screen-controls,
+            .vault-btn-group,
+            .cover-qr-card {
+                /* ensure clean print output */
+            }
+            .screen-vault-toolbar,
+            .leitner-modal-overlay,
+            .vault-screen-controls {
+                display: none !important;
             }
         }
         
@@ -47,12 +77,13 @@
         .cover {
             background-color: var(--brand-dark);
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             align-items: center;
             text-align: center;
             position: relative;
+            box-sizing: border-box !important;
             background-image: url('/images/john_snow_cholera_map.jpg'); background-size: cover; background-position: center;
         }
         .cover::after {
@@ -67,8 +98,10 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
+            min-height: 240mm;
+            box-sizing: border-box;
         }
         .cover h1 {
             font-family: 'Playfair Display', serif;
@@ -162,6 +195,39 @@
             font-weight: 700;
             color: #2563eb;
             word-break: break-all;
+        }
+
+        /* Strategy Page Styling */
+        .strategy {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .strategy ul {
+            margin: 6px 0;
+            padding-left: 20px;
         }
 
         /* Screen-Only Mobile Toolbar */
@@ -1724,7 +1790,7 @@
             table-layout: fixed;
         }
         th, td {
-            border: 1px solid #ccc;
+            border: 1.2px solid #475569;
             padding: 8px 10px;
             text-align: left;
             vertical-align: top;
@@ -1745,26 +1811,25 @@
         
         .rag-checkbox {
             width: 12px; height: 12px;
-            border: 1px solid #888;
+            border: 1.5px solid #334155;
             margin: 0 auto;
             background: white;
         }
 
         /* Footer Debrief */
         .debrief {
-            margin-top: auto;
+            margin-top: auto !important;
             border: 2px dashed var(--brand-red);
-            padding: 15px;
+            padding: 14px 18px;
             background: #fff;
-            margin-top: 20px;
         }
         .debrief h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--brand-red);
         }
         .debrief p {
-            margin: 5px 0;
+            margin: 4px 0;
             font-weight: 600;
         }
 
@@ -1772,6 +1837,10 @@
         .vault-page {
             background-color: #fffbc8; /* Pastel yellow */
             position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
         }
         .vault-watermark {
             position: absolute;
@@ -1786,6 +1855,10 @@
         .vault-content {
             position: relative;
             z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .vault-page h1 {
             font-family: 'Montserrat', sans-serif;
@@ -1918,20 +1991,29 @@
             }
         }
 
-        /* Tracker Page */
+        /* Tracker Page Flex Distribution */
+        .tracker-page {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
         .tracker-page h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
+            margin-top: 5px;
+            margin-bottom: 4px;
         }
         .tracker-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            margin-bottom: 12px;
         }
         .tracker-table th, .tracker-table td {
-            padding: 15px;
-            font-size: 1.1rem;
-            border: 1px solid #ccc;
+            padding: 16px 12px;
+            font-size: 1.05rem;
+            border: 1.2px solid #cbd5e1;
             text-align: center;
         }
         .tracker-table th {
@@ -2010,9 +2092,34 @@
         }
         .reflection-box {
             border: 2px solid var(--brand-dark);
-            padding: 20px;
-            margin-top: 30px;
-            min-height: 150px;
+            padding: 20px 24px;
+            margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 240px;
+            background: #fdfdfd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .reflection-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .reflection-prompt {
+            margin: 8px 0;
+            font-size: 0.98rem;
+        }
+        .reflection-lines {
+            border-bottom: 1.2px dashed #94a3b8;
+            height: 28px;
+            width: 100%;
+            margin-top: 4px;
         }
 
         /* Print Optimization & Vault Answers Guarantee */
@@ -2086,7 +2193,7 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 126 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
                         <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
                         <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
@@ -2362,7 +2469,7 @@
                 
                 <tr>
                     <td class="col-qnum">22</td>
-                    <td class="col-question">What did Roman bathers experience inside a bathhouse like Bearsden?</td>
+                    <td class="col-question">How did the departure of the Roman legions affect Britain’s sanitation infrastructure?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2371,7 +2478,7 @@
                 
                 <tr>
                     <td class="col-qnum">23</td>
-                    <td class="col-question">Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?</td>
+                    <td class="col-question">Why did medieval towns grow increasingly filthy and unhygienic after 1100?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2380,7 +2487,7 @@
                 
                 <tr>
                     <td class="col-qnum">24</td>
-                    <td class="col-question">On the twelfth-century plans of Canterbury Priory, what did the red lines represent?</td>
+                    <td class="col-question">What was a "gong farmer" (or nightman) in medieval England?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2389,7 +2496,7 @@
                 
                 <tr>
                     <td class="col-qnum">25</td>
-                    <td class="col-question">How did poorer townspeople get their fresh water if they did not own a private well?</td>
+                    <td class="col-question">What common method did medieval town dwellers use to dispose of waste from chamber pots?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2398,7 +2505,7 @@
                 
                 <tr>
                     <td class="col-qnum">26</td>
-                    <td class="col-question">Why were medieval Christian monasteries cleaner and healthier than towns?</td>
+                    <td class="col-question">Why were medieval monasteries typically healthier and more sanitary than ordinary towns?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2407,7 +2514,7 @@
                 
                 <tr>
                     <td class="col-qnum">27</td>
-                    <td class="col-question">What was the primary medieval theory used to explain why diseases like the Black Death spread?</td>
+                    <td class="col-question">What was the Latin term for a medieval communal toilet or latrine, often built over a river or cesspit?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2416,7 +2523,7 @@
                 
                 <tr>
                     <td class="col-qnum">28</td>
-                    <td class="col-question">What medieval occupation involved emptying city cesspits and privy vaults?</td>
+                    <td class="col-question">What was the dominant medieval medical theory explaining how dirty air caused epidemic disease?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2425,7 +2532,7 @@
                 
                 <tr>
                     <td class="col-qnum">29</td>
-                    <td class="col-question">In what year did the catastrophic Black Death first arrive in Britain through the Dorset port of Melcombe Regis?</td>
+                    <td class="col-question">In what year did the devastating bubonic plague pandemic known as the Black Death arrive in England?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2434,7 +2541,7 @@
                 
                 <tr>
                     <td class="col-qnum">30</td>
-                    <td class="col-question">How did medieval town councils like London attempt to combat street filth?</td>
+                    <td class="col-question">What did medieval town councils typically do in an attempt to combat the Black Death?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2443,7 +2550,7 @@
                 
                 <tr>
                     <td class="col-qnum">31</td>
-                    <td class="col-question">Where did most ordinary medieval townspeople obtain their drinking water?</td>
+                    <td class="col-question">Why boundary and ditch laws in medieval towns like London often failed to keep streets clean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2452,7 +2559,7 @@
                 
                 <tr>
                     <td class="col-qnum">32</td>
-                    <td class="col-question">What did medieval people believe caused the Black Death besides miasma?</td>
+                    <td class="col-question">What was the 1388 Parliament Act passed in Cambridge, often called England’s first sanitary law?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2461,7 +2568,7 @@
                 
                 <tr>
                     <td class="col-qnum">33</td>
-                    <td class="col-question">Why did medieval butchers create a major public health nuisance in towns?</td>
+                    <td class="col-question">Why did medieval public health laws often fail to keep towns clean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2470,7 +2577,7 @@
                 
                 <tr>
                     <td class="col-qnum">34</td>
-                    <td class="col-question">What was a medieval "privy"?</td>
+                    <td class="col-question">What was a conduit in medieval London, such as the Great Conduit built at Cheapside in 1245?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2479,7 +2586,7 @@
                 
                 <tr>
                     <td class="col-qnum">35</td>
-                    <td class="col-question">What proportion of the British population is estimated to have died during the 1348–1349 Black Death?</td>
+                    <td class="col-question">What animal was commonly blamed for wallowing in waste and roaming through medieval streets, leading to town bans?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2488,7 +2595,7 @@
                 
                 <tr>
                     <td class="col-qnum">36</td>
-                    <td class="col-question">What did the 1388 Parliament of Cambridge attempt to do regarding public health?</td>
+                    <td class="col-question">Why were butchers and tanners considered the worst polluters in medieval towns?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2497,7 +2604,7 @@
                 
                 <tr>
                     <td class="col-qnum">37</td>
-                    <td class="col-question">Why did the Great Conduit in London (built in 1245) become famous?</td>
+                    <td class="col-question">What was the overarching attitude of medieval people towards disease and dirt?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2577,7 +2684,7 @@
                 
                 <tr>
                     <td class="col-qnum">43</td>
-                    <td class="col-question">What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?</td>
+                    <td class="col-question">Approximately what was London’s population around 1600 under Queen Elizabeth I?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2586,7 +2693,7 @@
                 
                 <tr>
                     <td class="col-qnum">44</td>
-                    <td class="col-question">Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?</td>
+                    <td class="col-question">What major hygiene crisis accompanied the rapid population growth of Early Modern London?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2595,7 +2702,7 @@
                 
                 <tr>
                     <td class="col-qnum">45</td>
-                    <td class="col-question">Why did London's sanitation problems get worse during the Early Modern period?</td>
+                    <td class="col-question">What new home technology was invented by Sir John Harington in 1596, though largely ignored for over a century?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2604,7 +2711,7 @@
                 
                 <tr>
                     <td class="col-qnum">46</td>
-                    <td class="col-question">Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?</td>
+                    <td class="col-question">Who was the eccentric courtier and godson of Queen Elizabeth I who published the first design for a flushing water closet?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2613,7 +2720,7 @@
                 
                 <tr>
                     <td class="col-qnum">47</td>
-                    <td class="col-question">What devastating disease struck London in 1665, killing an estimated 100,000 people?</td>
+                    <td class="col-question">What was the name of the satirical 1596 book in which Sir John Harington described his flushing toilet?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2622,7 +2729,7 @@
                 
                 <tr>
                     <td class="col-qnum">48</td>
-                    <td class="col-question">What preventative measure did London authorities take during the 1665 Great Plague when someone fell ill?</td>
+                    <td class="col-question">What was the New River project, completed in 1613 by Sir Hugh Myddelton?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2631,7 +2738,7 @@
                 
                 <tr>
                     <td class="col-qnum">49</td>
-                    <td class="col-question">What was Sir John Harington’s 1596 invention called in his satirical book?</td>
+                    <td class="col-question">Why did Sir Hugh Myddelton face financial ruin while building the New River?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2640,7 +2747,7 @@
                 
                 <tr>
                     <td class="col-qnum">50</td>
-                    <td class="col-question">Why did London’s rapid population growth between 1500 and 1700 make public health worse?</td>
+                    <td class="col-question">How did Early Modern people explain the recurring outbreaks of plague, such as the Great Plague of 1665?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2649,7 +2756,7 @@
                 
                 <tr>
                     <td class="col-qnum">51</td>
-                    <td class="col-question">What did early modern Londoners believe smoking tobacco would do during the 1665 plague?</td>
+                    <td class="col-question">What did plague searchers and watchmen do during the Great Plague of 1665?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2658,7 +2765,7 @@
                 
                 <tr>
                     <td class="col-qnum">52</td>
-                    <td class="col-question">Who were "searchers of the dead" during early modern plague outbreaks?</td>
+                    <td class="col-question">What did plague doctors wear as personal protective equipment during seventeenth-century outbreaks?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2667,7 +2774,7 @@
                 
                 <tr>
                     <td class="col-qnum">53</td>
-                    <td class="col-question">What happened to London’s hygiene and disease levels after the Great Fire of 1666?</td>
+                    <td class="col-question">How did the Great Fire of London in 1666 inadvertently improve urban public health?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2676,7 +2783,7 @@
                 
                 <tr>
                     <td class="col-qnum">54</td>
-                    <td class="col-question">What were early modern "Bills of Mortality"?</td>
+                    <td class="col-question">Why did piped water in Early Modern London remain unavailable to most ordinary working families?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2685,7 +2792,7 @@
                 
                 <tr>
                     <td class="col-qnum">55</td>
-                    <td class="col-question">What was the Great Conduit water system supplemented by in London in 1613?</td>
+                    <td class="col-question">What was the main source of drinking water for poor Londoners in the seventeenth century?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2694,7 +2801,7 @@
                 
                 <tr>
                     <td class="col-qnum">56</td>
-                    <td class="col-question">Why were early modern London cesspits often built directly underneath house floorboards?</td>
+                    <td class="col-question">What did scavengers (or rakers) do in Stuart London?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2703,7 +2810,7 @@
                 
                 <tr>
                     <td class="col-qnum">57</td>
-                    <td class="col-question">What did early modern physicians wear to protect themselves when examining plague victims?</td>
+                    <td class="col-question">Why did the use of soap remain limited among ordinary people in the seventeenth century?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2712,7 +2819,7 @@
                 
                 <tr>
                     <td class="col-qnum">58</td>
-                    <td class="col-question">How did wealthy early modern citizens protect their drinking water compared to the poor?</td>
+                    <td class="col-question">To what extent did Early Modern public health show genuine progress compared to the Middle Ages?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2792,7 +2899,7 @@
                 
                 <tr>
                     <td class="col-qnum">64</td>
-                    <td class="col-question">Who invented the first water closet (flushing toilet) in Britain in 1596?</td>
+                    <td class="col-question">In what decade did the rapid industrial growth of British manufacturing towns begin to accelerate sharply?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2801,7 +2908,7 @@
                 
                 <tr>
                     <td class="col-qnum">65</td>
-                    <td class="col-question">Why was the 1596 flushing toilet not used by ordinary citizens?</td>
+                    <td class="col-question">What type of housing was rapidly constructed for factory workers in industrial cities like Manchester and Leeds?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2810,7 +2917,7 @@
                 
                 <tr>
                     <td class="col-qnum">66</td>
-                    <td class="col-question">What was a 'water seller's' job in an Early Modern town?</td>
+                    <td class="col-question">Why were "back-to-back" houses notoriously unhealthy for industrial working families?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2819,7 +2926,7 @@
                 
                 <tr>
                     <td class="col-qnum">67</td>
-                    <td class="col-question">By how much did Britain's population grow during the century of industrialisation (1750–1850)?</td>
+                    <td class="col-question">How many families typically had to share a single outdoor privy in crowded industrial courtyards?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2828,7 +2935,7 @@
                 
                 <tr>
                     <td class="col-qnum">68</td>
-                    <td class="col-question">In what year did Asiatic Cholera first arrive on British shores in the port of Sunderland?</td>
+                    <td class="col-question">In what year did cholera first strike Britain, arriving at the port of Sunderland from Europe?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2837,7 +2944,7 @@
                 
                 <tr>
                     <td class="col-qnum">69</td>
-                    <td class="col-question">What nickname did the terrified Victorian public give to cholera because of its horrifying physical symptoms?</td>
+                    <td class="col-question">What terrifying symptom gave cholera its chilling nickname, "The Blue Death"?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2846,7 +2953,7 @@
                 
                 <tr>
                     <td class="col-qnum">70</td>
-                    <td class="col-question">What was the central argument of Edwin Chadwick’s landmark 1842 Sanitary Report?</td>
+                    <td class="col-question">What was the dominant scientific theory among 1830s doctors regarding how cholera spread?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2855,7 +2962,7 @@
                 
                 <tr>
                     <td class="col-qnum">71</td>
-                    <td class="col-question">Why were Victorian "back-to-back" houses so hazardous to public health?</td>
+                    <td class="col-question">What was Edwin Chadwick’s landmark 1842 report that exposed the appalling sanitary conditions of British towns?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2864,7 +2971,7 @@
                 
                 <tr>
                     <td class="col-qnum">72</td>
-                    <td class="col-question">What does the economic and political philosophy of "laissez-faire" mean?</td>
+                    <td class="col-question">What did Chadwick argue was the primary cause of urban poverty and high municipal poor relief rates?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2873,7 +2980,7 @@
                 
                 <tr>
                     <td class="col-qnum">73</td>
-                    <td class="col-question">Why did ratepayers (local taxpayers and landlords) vigorously oppose Chadwick’s sanitation proposals in the 1840s?</td>
+                    <td class="col-question">What public health reform did Edwin Chadwick propose in his 1842 report?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2882,7 +2989,7 @@
                 
                 <tr>
                     <td class="col-qnum">74</td>
-                    <td class="col-question">What was the fatal flaw of the Public Health Act of 1848?</td>
+                    <td class="col-question">What was the main weakness of the landmark Public Health Act passed by Parliament in 1848?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2891,7 +2998,7 @@
                 
                 <tr>
                     <td class="col-qnum">75</td>
-                    <td class="col-question">How quickly could cholera kill a previously healthy Victorian adult?</td>
+                    <td class="col-question">Why did wealthy rate-payers and local town councils fiercely oppose the 1848 Public Health Act?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2900,7 +3007,7 @@
                 
                 <tr>
                     <td class="col-qnum">76</td>
-                    <td class="col-question">What was the average life expectancy for a working-class labourer in industrial Manchester in the 1840s?</td>
+                    <td class="col-question">What was the political philosophy that argued the government should interfere as little as possible in business and daily life?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2909,7 +3016,7 @@
                 
                 <tr>
                     <td class="col-qnum">77</td>
-                    <td class="col-question">Where did human waste go when private flush water closets were installed in wealthy Victorian homes before 1855?</td>
+                    <td class="col-question">What was the average life expectancy for a factory worker in Manchester or Liverpool during the 1840s?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2918,7 +3025,7 @@
                 
                 <tr>
                     <td class="col-qnum">78</td>
-                    <td class="col-question">Why was the 1848 General Board of Health disbanded in 1854?</td>
+                    <td class="col-question">How did industrial water companies obtain and deliver water to poor working-class neighborhoods?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -2927,7 +3034,7 @@
                 
                 <tr>
                     <td class="col-qnum">79</td>
-                    <td class="col-question">What was a "court" or "yard" in an early 19th-century industrial town?</td>
+                    <td class="col-question">Why did the initial response to the 1831–32 cholera epidemic focus on prayer, fasting, and whitewashing streets with lime?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3007,7 +3114,7 @@
                 
                 <tr>
                     <td class="col-qnum">85</td>
-                    <td class="col-question">How did working-class families living in terraced yards usually obtain their water?</td>
+                    <td class="col-question">What environmental catastrophe struck London in the hot summer of June and July 1858?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3016,7 +3123,7 @@
                 
                 <tr>
                     <td class="col-qnum">86</td>
-                    <td class="col-question">What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?</td>
+                    <td class="col-question">What was the historical name given to the overwhelming stench from the River Thames in the summer of 1858?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3025,7 +3132,7 @@
                 
                 <tr>
                     <td class="col-qnum">87</td>
-                    <td class="col-question">What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?</td>
+                    <td class="col-question">What had turned the River Thames into a toxic, fermenting open sewer by the 1850s?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3034,7 +3141,7 @@
                 
                 <tr>
                     <td class="col-qnum">88</td>
-                    <td class="col-question">Why did cesspits under shared yard privies frequently overflow in industrial cities?</td>
+                    <td class="col-question">What extreme measures did Members of Parliament take in June 1858 to try to conduct debates in the House of Commons?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3043,7 +3150,7 @@
                 
                 <tr>
                     <td class="col-qnum">89</td>
-                    <td class="col-question">What famous environmental crisis in London during the blazing summer of 1858 forced politicians to act?</td>
+                    <td class="col-question">Who was the brilliant chief engineer of the Metropolitan Board of Works appointed to solve London’s sewage crisis?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3052,7 +3159,7 @@
                 
                 <tr>
                     <td class="col-qnum">90</td>
-                    <td class="col-question">How did politicians in the Houses of Parliament try to cope with the foul fumes of the Great Stink in 1858?</td>
+                    <td class="col-question">What was the key principle of Joseph Bazalgette’s revolutionary sewer network design?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3061,7 +3168,7 @@
                 
                 <tr>
                     <td class="col-qnum">91</td>
-                    <td class="col-question">Who was appointed chief engineer of the Metropolitan Board of Works to design London’s new sewer system?</td>
+                    <td class="col-question">What durable building material did Bazalgette insist on using, testing every single batch to ensure it survived sewer acids?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3070,7 +3177,7 @@
                 
                 <tr>
                     <td class="col-qnum">92</td>
-                    <td class="col-question">How did Bazalgette’s intercepting sewer system solve London’s sewage crisis?</td>
+                    <td class="col-question">What shape did Bazalgette choose for his underground sewer tunnels to prevent waste from settling and clogging?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3079,7 +3186,7 @@
                 
                 <tr>
                     <td class="col-qnum">93</td>
-                    <td class="col-question">What remarkable design decision did Bazalgette make when sizing his underground sewer tunnels?</td>
+                    <td class="col-question">How long was the total network of main intercepting and local street sewers constructed by Bazalgette across London?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3088,7 +3195,7 @@
                 
                 <tr>
                     <td class="col-qnum">94</td>
-                    <td class="col-question">What type of mortar did Bazalgette use to ensure the brick sewers would not decay from water and waste acids?</td>
+                    <td class="col-question">What major engineering feature did Bazalgette build along the north bank of the Thames, enclosing sewer pipes, an underground railway, and a modern road?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3097,7 +3204,7 @@
                 
                 <tr>
                     <td class="col-qnum">95</td>
-                    <td class="col-question">What major medical breakthrough in 1861 by Louis Pasteur finally discredited the Miasma Theory?</td>
+                    <td class="col-question">What are the three Thames Embankments constructed by Joseph Bazalgette in London?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3106,7 +3213,7 @@
                 
                 <tr>
                     <td class="col-qnum">96</td>
-                    <td class="col-question">Why is the Public Health Act of 1875 considered a massive turning point in British history?</td>
+                    <td class="col-question">Where did Bazalgette’s northern and southern outfall sewers discharge London’s untreated sewage into the Thames?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3115,7 +3222,7 @@
                 
                 <tr>
                     <td class="col-qnum">97</td>
-                    <td class="col-question">What grand public embankments were built in London on top of Bazalgette’s low-level intercepting sewers?</td>
+                    <td class="col-question">What happened during the last major cholera epidemic in London in 1866 that vindicated Bazalgette’s sewer design?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3124,7 +3231,7 @@
                 
                 <tr>
                     <td class="col-qnum">98</td>
-                    <td class="col-question">When cholera struck London for the final time in 1866, what did the health statistics reveal about Bazalgette’s sewers?</td>
+                    <td class="col-question">Why was the 1866 cholera outbreak restricted to the East End of London?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -3447,9 +3554,9 @@
     </div>
             
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg" id="the-vault">
+    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
+        <div class="vault-content page-body-stretch">
             <h1>THE VAULT</h1>
             <p class="vault-subtitle">Restricted Access: Answer Keys</p>
             <div class="vault-screen-controls">
@@ -3568,82 +3675,88 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Washing in sequence through cold, warm, and hot rooms</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Stone conduits collapsed, public baths closed, and towns reverted to timber pits</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The low population density meant waste did not build up enough to contaminate water supplies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rapid population growth inside tight defensive walls overwhelmed inadequate cesspits and ditches</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pipes carrying dirty waste water away to flush the toilets</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A laborer who emptied human excrement from privy cesspits under cover of darkness</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They bought it from water sellers who hauled river water in barrels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Throwing waste directly out of upstairs windows into open gutters in the street</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were built near clean rivers, had running water conduits, and valued cleanliness as a religious duty</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (bad air and poisonous stenches)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Garderobe or reredorter</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gongfermer (or Nightman)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (poisonous foul air)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In the year 1348, arriving through southern ports</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By passing municipal laws fining residents who threw waste into the street and appointing rakers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ordered street cleaning, lit fragrant bonfires, and banned butchers from dumping blood in rivers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From communal public conduits, town wells, or local water carriers called cobs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because butchers, tanners, and householders dumped animal guts, chemicals, and human waste directly into them</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">God’s wrath punishing humanity for sin, and planetary alignments</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A law imposing heavy £20 fines for dumping filth and dung into rivers and ditches</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>How much progress did the Romans make in public health?</h3>
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Town councils lacked professional police forces to enforce regulations, and residents prioritized convenience</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A basic outhouse toilet built over a cesspit or watercourse</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A large lead cistern bringing fresh spring water through underground pipes from Tyburn</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Between 30% and 50%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Stray farm pigs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They produced rotting animal entrails, blood, and foul chemicals like urine used to soften leather</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It carried clean spring water from Tyburn into Cheapside through lead pipes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They viewed disease as divine punishment or miasma, and lacked bacteriological understanding of dirt</div>
                 </div>
                 
                 <div class="answer-item">
@@ -3660,13 +3773,7 @@
                     <div class="answer-num">40.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">To march and fight efficiently across the Empire.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>Why did public health decline during the Middle Ages?</h3>
+                </div><div class="answer-list"><h3>Why did public health decline during the Middle Ages?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Hospitals (Valetudinariums).</div>
@@ -3679,82 +3786,82 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wild moss</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Around 200,000 citizens</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To avoid disrupting the busy town streets with terrible smells and waste carts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Overcrowded timber tenements produced overwhelming refuse, overflowing cesspits into streets</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The population grew rapidly, putting too much pressure on crowded town systems</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A flushing water closet using a raised cistern and valve to wash a pan</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Samuel Pepys</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir John Harington</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Metamorphosis of Ajax</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They quarantined the entire household inside, painting a red cross on the door with "Lord have mercy upon us"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A 38-mile engineered canal bringing fresh spring water from Hertfordshire into North London</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Metamorphosis of Ajax (a pun on "a jakes", meaning a privy)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because construction costs soared and King James I had to step in and fund half the project</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They attributed plague to divine wrath, astrological alignments, and poisonous airborne miasma</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ward off poisonous miasmas and prevent plague infection</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Searchers examined corpses to identify plague tokens; watchmen locked infected families inside houses</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elderly parish women appointed to inspect corpses and report the official cause of death</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A waxed leather coat, wide hat, and a bird beak mask stuffed with sweet herbs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It destroyed dirty wooden slums, wiped out rat populations in warehouses, and led to wider brick streets</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Weekly published parish statistics listing total deaths and their recorded causes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Private water companies charged high subscription fees, and pipes only delivered water for a few hours a week</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Public street conduits, communal water carriers (cobs), and shallow wells contaminated by cesspits</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because urban land was extremely scarce and houses had no gardens or backyards</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were paid parish officials who swept street dust, cleared dung heaps, and carted refuse to dunghills</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Heavy excise taxes made soap an expensive luxury, and medical lore warned hot baths opened pores to plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Projects like the New River provided cleaner water, but overcrowding and miasma theories persisted</div>
                 </div>
                 
                 <div class="answer-item">
@@ -3784,95 +3891,95 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir John Harington</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">During the 1780s, driven by steam-powered cotton textile mills</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>To what extent did towns become filthier during the Early Modern period?</h3>
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Houses lacked running piped water and connections to street sewers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Back-to-back terraced houses built in narrow, unpaved courts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Transporting river water in large barrels on horseback to sell to homes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They had no through-ventilation, little daylight, and lacked private sanitation or drainage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It skyrocketed from 6 million to 21 million.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Up to twenty or thirty families</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1831</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In 1831, carried by Baltic sailors</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Cholera (or the Blue Death)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Severe dehydration and oxygen loss turned the skin of dying patients blue and shrivelled</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (foul air from rotting waste)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Report on the Sanitary Condition of the Labouring Population</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A policy of non-intervention where government leaves trade and public life to private individuals</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Preventable disease caused by filthy living conditions and bad drainage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They did not want their local taxes increased to pay for expensive sewer pipes and drainage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A national network of smooth ceramic sewer pipes flushed with clean water to carry waste away</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was non-compulsory; town councils were only required to act if death rates exceeded 23 per 1,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because setting up boards of health and building sewers required spending high local council tax rates</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Under 20 years (approx. 17–19 years)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Laissez-faire</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Directly into existing cesspools underneath houses or into street gutters flowing into the Thames</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Around 17 to 19 years old</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They pumped untreated river water into shared street standpipes that only flowed for an hour a day</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Medical authorities had no knowledge of waterborne bacteria and blamed miasma and moral sin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Population growth outpaced the ability to dispose of waste.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
+                </div><div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">John Harington.</div>
@@ -3895,72 +4002,78 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From a shared pump in the street or yard that only ran for a few hours.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Stink, when the sewage-filled Thames fermented in extreme summer heat</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cholera</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Stink</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (the belief that disease is spread by bad smells)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The widespread installation of flush toilets that flushed human waste directly into old storm drains</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Landlords refused to pay for them to be emptied, and they were not connected to sewers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They soaked window curtains in chloride of lime to neutralize the river stench</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Stink of the River Thames</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Bazalgette</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They soaked parliamentary window curtains in chloride of lime to neutralize the stench</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To construct underground intercepting sewers running west to east, moving waste far downriver</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Joseph Bazalgette</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Portland cement mortar</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Egg-shaped (oval) cross-section tunnels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He calculated the maximum flow needed, and then doubled the diameter to handle future population growth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Around 82 miles of main intercepting sewers and over 1,100 miles of street sewers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Portland cement, tested rigorously for strength and waterproof durability</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Victoria Embankment</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The publication of Germ Theory, proving microbes cause disease and fermentation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Victoria Embankment, Albert Embankment, and Chelsea Embankment</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Far downstream past London at Beckton and Crossness, where the outgoing tide swept it to sea</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Victoria, Albert, and Chelsea Embankments along the Thames</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cholera struck only the East End, where sewers were not yet finished, sparing connected areas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The East London Waterworks Company still supplied river water contaminated with sewage from the River Lea</div>
                 </div>
                 
                 <div class="answer-item">
@@ -4005,7 +4118,7 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A street map plotting each cholera death as a black bar outside houses near the Broad Street pump</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A street map plotting each cholera death as a black bar outside houses near the pump</div>
                 </div>
                 
                 <div class="answer-item">
@@ -4015,17 +4128,17 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A cracked brick cesspool from house number 40 was leaking baby cholera waste into the well</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They drank only malt liquor and drew water from a private deep well, not the street pump</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because prominent figures like Edwin Chadwick were deeply committed to Miasma Theory</div>
                 </div>
                 
                 <div class="answer-item">
@@ -4035,7 +4148,7 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He showed customers drinking Lambeth water (intake moved upriver) had far lower death rates</div>
                 </div>
                 
                 <div class="answer-item">
@@ -4045,43 +4158,37 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Laissez-faire attitudes, reluctance to pay high local taxes, and stubborn belief in miasma</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Every local council was required to appoint a Medical Officer of Health and Sanitary Inspector</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Romans aimed for civic hygiene without knowing germs; Victorians developed bacteriology and laws</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He proved poor sanitation caused disease and poverty, driving the 1848 Public Health Act</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It eliminated waterborne cholera from London and created drainage infrastructure used today</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It pioneered epidemiology — using data collection, mapping, and deduction to track disease</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>End of Unit Assessment: Cholera Investigation</h3>
+                </div><div class="answer-list"><h3>End of Unit Assessment: Cholera Investigation</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Roman engineering collapsed, urbanisation overwhelmed towns, and false theories delayed science</div>
                 </div>
                 
                 <div class="answer-item">
@@ -4113,22 +4220,23 @@
     </div>
     
     <!-- Tracker Page -->
-    <div class="page tracker-page">
-        <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 126 questions.</p>
-        
-        <table class="tracker-table">
-            <thead>
-                <tr>
-                    <th class="col-attempt">Attempt</th>
-                    <th class="col-date">Date</th>
-                    <th class="col-score">Score (/126)</th>
-                    <th class="col-sig">Parent Validation Stamp</th>
-                    <th class="col-target">Target for Next Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+    <div class="page tracker-page page-flex-full">
+        <div>
+            <h1>Mastery Tracker</h1>
+            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all 126 questions.</p>
+            
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th class="col-attempt">Attempt</th>
+                        <th class="col-date">Date</th>
+                        <th class="col-score">Score (/126)</th>
+                        <th class="col-sig">Parent Validation Stamp</th>
+                        <th class="col-target">Target for Next Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4138,7 +4246,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4148,7 +4256,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4158,13 +4266,28 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 
-        <div class="reflection-box">
-            <h3 style="margin-top: 0;">Operative Reflection</h3>
-            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
-            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        <div class="reflection-box page-body-stretch">
+            <h3>Operative Reflection</h3>
+            <div class="reflection-prompt">
+                <strong>1. My ultimate strength in this unit is...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
         </div>
     </div>
 
@@ -4291,7 +4414,7 @@
     let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
 
-    const RAPID_DECK = [{"id":1,"q":"Why was digging cesspits in the Iron Age a hygienic way to manage waste?","a":"Roundhouse settlements were spread out and temporary pits kept waste away from springs","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":2,"q":"What technology did Roman engineers use to bring fresh water over miles into British towns?","a":"Stone channels called conduits that utilized the natural pull of gravity","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":3,"q":"Which Roman fort on Hadrian's Wall contains Britain's best-preserved communal latrine, with running water channels flushing waste into sewers?","a":"Housesteads Fort on Hadrian's Wall","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":4,"q":"What did Roman soldiers use to wipe themselves in communal latrines?","a":"A wet sponge attached to the end of a shared wooden stick","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":5,"q":"Which Emperor ordered the construction of a famous 73-mile defensive wall with fort bathhouses across northern Britain?","a":"Emperor Hadrian","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":6,"q":"What was the primary purpose of Roman public aqueducts?","a":"To transport clean spring water continuously into towns using gravity","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":7,"q":"In a Roman town, where did wastewater from public baths and latrines drain?","a":"Into underground stone sewers like the Cloaca Maxima that discharged into local rivers","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":8,"q":"What did wealthy Romans use to heat their private villas and bathhouses?","a":"A hypocaust system circulating hot furnace air beneath raised floors","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":9,"q":"Why did the Romans build public bathhouses in almost every military fort and town?","a":"Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":10,"q":"What instrument did Romans use to clean their skin in the bathhouse instead of soap?","a":"A metal scraper called a strigil used with olive oil","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":11,"q":"What happened to Roman water and sanitation infrastructure after the legions left Britain in 410 AD?","a":"Town populations collapsed and stone aqueducts fell into decay and disrepair","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":12,"q":"Why did Iron Age Britons have fewer sanitation crises before the Roman invasion?","a":"Their dispersed, small population meant waste did not build up enough to contaminate water supplies","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":13,"q":"What material was commonly used by Roman engineers to line water conduits and cisterns to make them watertight?","a":"Waterproof hydraulic mortar (opus signinum)","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":14,"q":"What was the caldarium inside a Roman public bathhouse?","a":"The hot, steamy bathing room","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":15,"q":"Who paid for the construction of most public bathhouses and fountains in Roman Britain?","a":"Wealthy local magistrates and benefactors seeking political status","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":16,"q":"What health hazard was unwittingly introduced by Roman plumbing in Britain?","a":"Lead poisoning from lead water pipes and cooking vessels","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":17,"q":"What does AD stand for in historical dates?","a":"Anno Domini (the year of our Lord).","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":18,"q":"What century is the year 1066 in?","a":"The 11th Century.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":19,"q":"Which ancient empire conquered Britain and built Hadrian's Wall?","a":"The Romans.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":20,"q":"What does the word 'Sanitation' mean?","a":"Conditions relating to public health, especially clean drinking water and sewage disposal.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":21,"q":"What is a primary source?","a":"Evidence that was created at the time of the event.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":22,"q":"What did Roman bathers experience inside a bathhouse like Bearsden?","a":"Washing in sequence through cold, warm, and hot rooms","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":23,"q":"Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?","a":"The low population density meant waste did not build up enough to contaminate water supplies","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":24,"q":"On the twelfth-century plans of Canterbury Priory, what did the red lines represent?","a":"Pipes carrying dirty waste water away to flush the toilets","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":25,"q":"How did poorer townspeople get their fresh water if they did not own a private well?","a":"They bought it from water sellers who hauled river water in barrels","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":26,"q":"Why were medieval Christian monasteries cleaner and healthier than towns?","a":"Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":27,"q":"What was the primary medieval theory used to explain why diseases like the Black Death spread?","a":"Miasma Theory (bad air and poisonous stenches)","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":28,"q":"What medieval occupation involved emptying city cesspits and privy vaults?","a":"Gongfermer (or Nightman)","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":29,"q":"In what year did the catastrophic Black Death first arrive in Britain through the Dorset port of Melcombe Regis?","a":"1348","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":30,"q":"How did medieval town councils like London attempt to combat street filth?","a":"By passing municipal laws fining residents who threw waste into the street and appointing rakers","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":31,"q":"Where did most ordinary medieval townspeople obtain their drinking water?","a":"From communal public conduits, town wells, or local water carriers called cobs","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":32,"q":"What did medieval people believe caused the Black Death besides miasma?","a":"God’s wrath punishing humanity for sin, and planetary alignments","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":33,"q":"Why did medieval butchers create a major public health nuisance in towns?","a":"They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":34,"q":"What was a medieval \"privy\"?","a":"A basic outhouse toilet built over a cesspit or watercourse","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":35,"q":"What proportion of the British population is estimated to have died during the 1348–1349 Black Death?","a":"Between 30% and 50%","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":36,"q":"What did the 1388 Parliament of Cambridge attempt to do regarding public health?","a":"It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":37,"q":"Why did the Great Conduit in London (built in 1245) become famous?","a":"It carried clean spring water from Tyburn into Cheapside through lead pipes","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":38,"q":"How did the Romans transport massive amounts of fresh water?","a":"Aqueducts.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":39,"q":"What did the Romans use to flush their public toilets?","a":"Running water from the aqueducts and bathhouses.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":40,"q":"Why did the Roman army need to stay healthy?","a":"To march and fight efficiently across the Empire.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":41,"q":"What did the Romans build in their forts to treat sick soldiers?","a":"Hospitals (Valetudinariums).","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":42,"q":"Did the Romans understand bacteria?","a":"No, they just knew bad smells or swamps were linked to illness.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":43,"q":"What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?","a":"Wild moss","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":44,"q":"Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?","a":"To avoid disrupting the busy town streets with terrible smells and waste carts","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":45,"q":"Why did London's sanitation problems get worse during the Early Modern period?","a":"The population grew rapidly, putting too much pressure on crowded town systems","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":46,"q":"Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?","a":"Samuel Pepys","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":47,"q":"What devastating disease struck London in 1665, killing an estimated 100,000 people?","a":"The Great Plague","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":48,"q":"What preventative measure did London authorities take during the 1665 Great Plague when someone fell ill?","a":"They quarantined the entire household inside, painting a red cross on the door with \"Lord have mercy upon us\"","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":49,"q":"What was Sir John Harington’s 1596 invention called in his satirical book?","a":"The Metamorphosis of Ajax (a pun on \"a jakes\", meaning a privy)","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":50,"q":"Why did London’s rapid population growth between 1500 and 1700 make public health worse?","a":"The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":51,"q":"What did early modern Londoners believe smoking tobacco would do during the 1665 plague?","a":"Ward off poisonous miasmas and prevent plague infection","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":52,"q":"Who were \"searchers of the dead\" during early modern plague outbreaks?","a":"Elderly parish women appointed to inspect corpses and report the official cause of death","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":53,"q":"What happened to London’s hygiene and disease levels after the Great Fire of 1666?","a":"The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":54,"q":"What were early modern \"Bills of Mortality\"?","a":"Weekly published parish statistics listing total deaths and their recorded causes","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":55,"q":"What was the Great Conduit water system supplemented by in London in 1613?","a":"Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":56,"q":"Why were early modern London cesspits often built directly underneath house floorboards?","a":"Because urban land was extremely scarce and houses had no gardens or backyards","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":57,"q":"What did early modern physicians wear to protect themselves when examining plague victims?","a":"Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":58,"q":"How did wealthy early modern citizens protect their drinking water compared to the poor?","a":"They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":59,"q":"Why were medieval towns dangerous for public health?","a":"They were overcrowded, with cesspits leaking into drinking wells.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":60,"q":"What was a Gongfermer?","a":"A medieval worker who cleared human waste from cesspits at night.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":61,"q":"Why did medieval monks build clean water systems?","a":"They believed cleanliness brought them closer to God.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":62,"q":"What is a cesspit?","a":"A pit for the disposal of liquid waste and sewage.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":63,"q":"What did King Edward III order in 1357?","a":"The removal of filth from London's streets to prevent sickness.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":64,"q":"Who invented the first water closet (flushing toilet) in Britain in 1596?","a":"Sir John Harington","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":65,"q":"Why was the 1596 flushing toilet not used by ordinary citizens?","a":"Houses lacked running piped water and connections to street sewers","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":66,"q":"What was a 'water seller's' job in an Early Modern town?","a":"Transporting river water in large barrels on horseback to sell to homes","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":67,"q":"By how much did Britain's population grow during the century of industrialisation (1750–1850)?","a":"It skyrocketed from 6 million to 21 million.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":68,"q":"In what year did Asiatic Cholera first arrive on British shores in the port of Sunderland?","a":"1831","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":69,"q":"What nickname did the terrified Victorian public give to cholera because of its horrifying physical symptoms?","a":"King Cholera (or the Blue Death)","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":70,"q":"What was the central argument of Edwin Chadwick’s landmark 1842 Sanitary Report?","a":"That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":71,"q":"Why were Victorian \"back-to-back\" houses so hazardous to public health?","a":"They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":72,"q":"What does the economic and political philosophy of \"laissez-faire\" mean?","a":"A policy of non-intervention where government leaves trade and public life to private individuals","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":73,"q":"Why did ratepayers (local taxpayers and landlords) vigorously oppose Chadwick’s sanitation proposals in the 1840s?","a":"They did not want their local taxes increased to pay for expensive sewer pipes and drainage","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":74,"q":"What was the fatal flaw of the Public Health Act of 1848?","a":"It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":75,"q":"How quickly could cholera kill a previously healthy Victorian adult?","a":"Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":76,"q":"What was the average life expectancy for a working-class labourer in industrial Manchester in the 1840s?","a":"Under 20 years (approx. 17–19 years)","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":77,"q":"Where did human waste go when private flush water closets were installed in wealthy Victorian homes before 1855?","a":"Directly into existing cesspools underneath houses or into street gutters flowing into the Thames","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":78,"q":"Why was the 1848 General Board of Health disbanded in 1854?","a":"Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":79,"q":"What was a \"court\" or \"yard\" in an early 19th-century industrial town?","a":"A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":80,"q":"Why did rivers in early modern towns become open sewers?","a":"Population growth outpaced the ability to dispose of waste.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":81,"q":"Who invented a working flushing toilet in 1596?","a":"John Harington.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":82,"q":"Why did Harington's flushing toilet fail to catch on for 250 years?","a":"There were no underground sewers to connect it to.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":83,"q":"What does 'urbanisation' mean?","a":"The increase in the proportion of people living in towns and cities.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":84,"q":"How did early modern townspeople get their drinking water?","a":"Buying it from water sellers or sharing local pumps.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":85,"q":"How did working-class families living in terraced yards usually obtain their water?","a":"From a shared pump in the street or yard that only ran for a few hours.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":86,"q":"What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?","a":"Cholera","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":87,"q":"What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?","a":"Miasma Theory (the belief that disease is spread by bad smells)","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":88,"q":"Why did cesspits under shared yard privies frequently overflow in industrial cities?","a":"Landlords refused to pay for them to be emptied, and they were not connected to sewers.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":89,"q":"What famous environmental crisis in London during the blazing summer of 1858 forced politicians to act?","a":"The Great Stink of the River Thames","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":90,"q":"How did politicians in the Houses of Parliament try to cope with the foul fumes of the Great Stink in 1858?","a":"They soaked parliamentary window curtains in chloride of lime to neutralize the stench","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":91,"q":"Who was appointed chief engineer of the Metropolitan Board of Works to design London’s new sewer system?","a":"Sir Joseph Bazalgette","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":92,"q":"How did Bazalgette’s intercepting sewer system solve London’s sewage crisis?","a":"By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":93,"q":"What remarkable design decision did Bazalgette make when sizing his underground sewer tunnels?","a":"He calculated the maximum flow needed, and then doubled the diameter to handle future population growth","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":94,"q":"What type of mortar did Bazalgette use to ensure the brick sewers would not decay from water and waste acids?","a":"Portland cement, tested rigorously for strength and waterproof durability","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":95,"q":"What major medical breakthrough in 1861 by Louis Pasteur finally discredited the Miasma Theory?","a":"The publication of Germ Theory, proving microbes cause disease and fermentation","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":96,"q":"Why is the Public Health Act of 1875 considered a massive turning point in British history?","a":"It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":97,"q":"What grand public embankments were built in London on top of Bazalgette’s low-level intercepting sewers?","a":"The Victoria, Albert, and Chelsea Embankments along the Thames","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":98,"q":"When cholera struck London for the final time in 1866, what did the health statistics reveal about Bazalgette’s sewers?","a":"Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":99,"q":"What Victorian engineering landmarks were constructed by Bazalgette to pump sewage up to river discharge levels?","a":"The Abbey Mills and Crossness Pumping Stations, nicknamed \"Cathedrals of Sewage\"","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":100,"q":"What political change in 1867 helped encourage Parliament to pass stronger public health laws like the 1875 Act?","a":"The Second Reform Act, which gave the vote to urban working-class men","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":101,"q":"What was the 'laissez-faire' attitude?","a":"The government's belief that it shouldn't interfere in people's daily lives or public health.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":102,"q":"What terrifying waterborne disease first struck Britain in 1831?","a":"Cholera.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":103,"q":"What scientific theory did doctors wrongly believe caused disease?","a":"Miasma Theory (bad smells).","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":104,"q":"How did Dr. John Snow prove cholera was waterborne?","a":"By mapping the deaths around the Broad Street water pump.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":105,"q":"Who published a damning report on sanitary conditions in 1842?","a":"Edwin Chadwick.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":106,"q":"What was Dr John Snow’s revolutionary hypothesis regarding how cholera was transmitted in 1849?","a":"It was a waterborne disease transmitted by swallowing invisible contaminated water or food","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":107,"q":"During the September 1854 cholera outbreak in Soho, what specific piece of evidence did John Snow create to prove his theory?","a":"A street map plotting each cholera death as a black bar outside houses near the Broad Street pump","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":108,"q":"What did John Snow convince the parish Board of Guardians to do on 8 September 1854 to halt the Soho epidemic?","a":"Remove the handle from the Broad Street water pump so residents could not drink the water","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":109,"q":"What was discovered when inspectors later excavated the Broad Street pump well?","a":"A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":110,"q":"Why were workers at the nearby Broad Street brewery completely unaffected by the 1854 cholera epidemic?","a":"They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":111,"q":"Why did the British medical establishment and General Board of Health initially reject John Snow’s discovery?","a":"Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":112,"q":"What German bacteriologist finally isolated and proved the cholera bacterium (Vibrio cholerae) under a microscope in 1883?","a":"Robert Koch","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":113,"q":"How did John Snow use the Lambeth Water Company versus Southwark & Vauxhall Water Company data to prove his waterborne theory?","a":"He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":114,"q":"Which historical period made the LEAST progress in public health engineering in Britain?","a":"The Early Middle Ages (500–1000 AD)","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":115,"q":"What was the primary obstacle preventing earlier public health reform throughout British history?","a":"Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":116,"q":"Which of the following was a key feature of the compulsory Public Health Act of 1875?","a":"Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":117,"q":"How did Roman public health differ fundamentally from Victorian public health?","a":"Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":118,"q":"What role did Edwin Chadwick play in the story of British public health?","a":"He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":119,"q":"What was the significance of Joseph Bazalgette’s intercepting sewer system for the city of London?","a":"It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":120,"q":"Why did John Snow’s investigation become famous as a founding moment of modern medical science?","a":"It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":121,"q":"Looking back across all six lessons, why was progress in British public health NOT a simple straight line of improvement?","a":"Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":122,"q":"What Roman engineering structure carried fresh water across valleys into towns?","a":"An aqueduct, using the pull of gravity.","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":123,"q":"What was a medieval worker who cleared cesspits at night called?","a":"A gongfermer (or nightman).","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":124,"q":"What incorrect theory claimed that foul smells and poisonous air caused disease?","a":"The Miasma Theory.","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":125,"q":"In what year did Asiatic cholera first strike Britain?","a":"1831 (in Sunderland).","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":126,"q":"What 1858 environmental crisis forced Parliament to fund London’s new sewer system?","a":"The Great Stink of the River Thames.","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"}];
+    const RAPID_DECK = [{"id":1,"q":"Why was digging cesspits in the Iron Age a hygienic way to manage waste?","a":"Roundhouse settlements were spread out and temporary pits kept waste away from springs","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":2,"q":"What technology did Roman engineers use to bring fresh water over miles into British towns?","a":"Stone channels called conduits that utilized the natural pull of gravity","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":3,"q":"Which Roman fort on Hadrian's Wall contains Britain's best-preserved communal latrine, with running water channels flushing waste into sewers?","a":"Housesteads Fort on Hadrian's Wall","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":4,"q":"What did Roman soldiers use to wipe themselves in communal latrines?","a":"A wet sponge attached to the end of a shared wooden stick","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":5,"q":"Which Emperor ordered the construction of a famous 73-mile defensive wall with fort bathhouses across northern Britain?","a":"Emperor Hadrian","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":6,"q":"What was the primary purpose of Roman public aqueducts?","a":"To transport clean spring water continuously into towns using gravity","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":7,"q":"In a Roman town, where did wastewater from public baths and latrines drain?","a":"Into underground stone sewers like the Cloaca Maxima that discharged into local rivers","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":8,"q":"What did wealthy Romans use to heat their private villas and bathhouses?","a":"A hypocaust system circulating hot furnace air beneath raised floors","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":9,"q":"Why did the Romans build public bathhouses in almost every military fort and town?","a":"Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":10,"q":"What instrument did Romans use to clean their skin in the bathhouse instead of soap?","a":"A metal scraper called a strigil used with olive oil","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":11,"q":"What happened to Roman water and sanitation infrastructure after the legions left Britain in 410 AD?","a":"Town populations collapsed and stone aqueducts fell into decay and disrepair","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":12,"q":"Why did Iron Age Britons have fewer sanitation crises before the Roman invasion?","a":"Their dispersed, small population meant waste did not build up enough to contaminate water supplies","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":13,"q":"What material was commonly used by Roman engineers to line water conduits and cisterns to make them watertight?","a":"Waterproof hydraulic mortar (opus signinum)","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":14,"q":"What was the caldarium inside a Roman public bathhouse?","a":"The hot, steamy bathing room","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":15,"q":"Who paid for the construction of most public bathhouses and fountains in Roman Britain?","a":"Wealthy local magistrates and benefactors seeking political status","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":16,"q":"What health hazard was unwittingly introduced by Roman plumbing in Britain?","a":"Lead poisoning from lead water pipes and cooking vessels","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":17,"q":"What does AD stand for in historical dates?","a":"Anno Domini (the year of our Lord).","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":18,"q":"What century is the year 1066 in?","a":"The 11th Century.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":19,"q":"Which ancient empire conquered Britain and built Hadrian's Wall?","a":"The Romans.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":20,"q":"What does the word 'Sanitation' mean?","a":"Conditions relating to public health, especially clean drinking water and sewage disposal.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":21,"q":"What is a primary source?","a":"Evidence that was created at the time of the event.","topic":"How much progress did the Romans make in public health?","tier":"rapid"},{"id":22,"q":"How did the departure of the Roman legions affect Britain’s sanitation infrastructure?","a":"Stone conduits collapsed, public baths closed, and towns reverted to timber pits","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":23,"q":"Why did medieval towns grow increasingly filthy and unhygienic after 1100?","a":"Rapid population growth inside tight defensive walls overwhelmed inadequate cesspits and ditches","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":24,"q":"What was a \"gong farmer\" (or nightman) in medieval England?","a":"A laborer who emptied human excrement from privy cesspits under cover of darkness","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":25,"q":"What common method did medieval town dwellers use to dispose of waste from chamber pots?","a":"Throwing waste directly out of upstairs windows into open gutters in the street","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":26,"q":"Why were medieval monasteries typically healthier and more sanitary than ordinary towns?","a":"They were built near clean rivers, had running water conduits, and valued cleanliness as a religious duty","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":27,"q":"What was the Latin term for a medieval communal toilet or latrine, often built over a river or cesspit?","a":"Garderobe or reredorter","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":28,"q":"What was the dominant medieval medical theory explaining how dirty air caused epidemic disease?","a":"Miasma Theory (poisonous foul air)","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":29,"q":"In what year did the devastating bubonic plague pandemic known as the Black Death arrive in England?","a":"In the year 1348, arriving through southern ports","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":30,"q":"What did medieval town councils typically do in an attempt to combat the Black Death?","a":"Ordered street cleaning, lit fragrant bonfires, and banned butchers from dumping blood in rivers","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":31,"q":"Why boundary and ditch laws in medieval towns like London often failed to keep streets clean?","a":"Because butchers, tanners, and householders dumped animal guts, chemicals, and human waste directly into them","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":32,"q":"What was the 1388 Parliament Act passed in Cambridge, often called England’s first sanitary law?","a":"A law imposing heavy £20 fines for dumping filth and dung into rivers and ditches","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":33,"q":"Why did medieval public health laws often fail to keep towns clean?","a":"Town councils lacked professional police forces to enforce regulations, and residents prioritized convenience","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":34,"q":"What was a conduit in medieval London, such as the Great Conduit built at Cheapside in 1245?","a":"A large lead cistern bringing fresh spring water through underground pipes from Tyburn","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":35,"q":"What animal was commonly blamed for wallowing in waste and roaming through medieval streets, leading to town bans?","a":"Stray farm pigs","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":36,"q":"Why were butchers and tanners considered the worst polluters in medieval towns?","a":"They produced rotting animal entrails, blood, and foul chemicals like urine used to soften leather","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":37,"q":"What was the overarching attitude of medieval people towards disease and dirt?","a":"They viewed disease as divine punishment or miasma, and lacked bacteriological understanding of dirt","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":38,"q":"How did the Romans transport massive amounts of fresh water?","a":"Aqueducts.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":39,"q":"What did the Romans use to flush their public toilets?","a":"Running water from the aqueducts and bathhouses.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":40,"q":"Why did the Roman army need to stay healthy?","a":"To march and fight efficiently across the Empire.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":41,"q":"What did the Romans build in their forts to treat sick soldiers?","a":"Hospitals (Valetudinariums).","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":42,"q":"Did the Romans understand bacteria?","a":"No, they just knew bad smells or swamps were linked to illness.","topic":"Why did public health decline during the Middle Ages?","tier":"rapid"},{"id":43,"q":"Approximately what was London’s population around 1600 under Queen Elizabeth I?","a":"Around 200,000 citizens","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":44,"q":"What major hygiene crisis accompanied the rapid population growth of Early Modern London?","a":"Overcrowded timber tenements produced overwhelming refuse, overflowing cesspits into streets","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":45,"q":"What new home technology was invented by Sir John Harington in 1596, though largely ignored for over a century?","a":"A flushing water closet using a raised cistern and valve to wash a pan","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":46,"q":"Who was the eccentric courtier and godson of Queen Elizabeth I who published the first design for a flushing water closet?","a":"Sir John Harington","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":47,"q":"What was the name of the satirical 1596 book in which Sir John Harington described his flushing toilet?","a":"The Metamorphosis of Ajax","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":48,"q":"What was the New River project, completed in 1613 by Sir Hugh Myddelton?","a":"A 38-mile engineered canal bringing fresh spring water from Hertfordshire into North London","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":49,"q":"Why did Sir Hugh Myddelton face financial ruin while building the New River?","a":"Because construction costs soared and King James I had to step in and fund half the project","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":50,"q":"How did Early Modern people explain the recurring outbreaks of plague, such as the Great Plague of 1665?","a":"They attributed plague to divine wrath, astrological alignments, and poisonous airborne miasma","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":51,"q":"What did plague searchers and watchmen do during the Great Plague of 1665?","a":"Searchers examined corpses to identify plague tokens; watchmen locked infected families inside houses","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":52,"q":"What did plague doctors wear as personal protective equipment during seventeenth-century outbreaks?","a":"A waxed leather coat, wide hat, and a bird beak mask stuffed with sweet herbs","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":53,"q":"How did the Great Fire of London in 1666 inadvertently improve urban public health?","a":"It destroyed dirty wooden slums, wiped out rat populations in warehouses, and led to wider brick streets","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":54,"q":"Why did piped water in Early Modern London remain unavailable to most ordinary working families?","a":"Private water companies charged high subscription fees, and pipes only delivered water for a few hours a week","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":55,"q":"What was the main source of drinking water for poor Londoners in the seventeenth century?","a":"Public street conduits, communal water carriers (cobs), and shallow wells contaminated by cesspits","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":56,"q":"What did scavengers (or rakers) do in Stuart London?","a":"They were paid parish officials who swept street dust, cleared dung heaps, and carted refuse to dunghills","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":57,"q":"Why did the use of soap remain limited among ordinary people in the seventeenth century?","a":"Heavy excise taxes made soap an expensive luxury, and medical lore warned hot baths opened pores to plague","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":58,"q":"To what extent did Early Modern public health show genuine progress compared to the Middle Ages?","a":"Projects like the New River provided cleaner water, but overcrowding and miasma theories persisted","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":59,"q":"Why were medieval towns dangerous for public health?","a":"They were overcrowded, with cesspits leaking into drinking wells.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":60,"q":"What was a Gongfermer?","a":"A medieval worker who cleared human waste from cesspits at night.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":61,"q":"Why did medieval monks build clean water systems?","a":"They believed cleanliness brought them closer to God.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":62,"q":"What is a cesspit?","a":"A pit for the disposal of liquid waste and sewage.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":63,"q":"What did King Edward III order in 1357?","a":"The removal of filth from London's streets to prevent sickness.","topic":"To what extent did towns become filthier during the Early Modern period?","tier":"rapid"},{"id":64,"q":"In what decade did the rapid industrial growth of British manufacturing towns begin to accelerate sharply?","a":"During the 1780s, driven by steam-powered cotton textile mills","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":65,"q":"What type of housing was rapidly constructed for factory workers in industrial cities like Manchester and Leeds?","a":"Back-to-back terraced houses built in narrow, unpaved courts","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":66,"q":"Why were \"back-to-back\" houses notoriously unhealthy for industrial working families?","a":"They had no through-ventilation, little daylight, and lacked private sanitation or drainage","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":67,"q":"How many families typically had to share a single outdoor privy in crowded industrial courtyards?","a":"Up to twenty or thirty families","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":68,"q":"In what year did cholera first strike Britain, arriving at the port of Sunderland from Europe?","a":"In 1831, carried by Baltic sailors","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":69,"q":"What terrifying symptom gave cholera its chilling nickname, \"The Blue Death\"?","a":"Severe dehydration and oxygen loss turned the skin of dying patients blue and shrivelled","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":70,"q":"What was the dominant scientific theory among 1830s doctors regarding how cholera spread?","a":"Miasma Theory (foul air from rotting waste)","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":71,"q":"What was Edwin Chadwick’s landmark 1842 report that exposed the appalling sanitary conditions of British towns?","a":"The Report on the Sanitary Condition of the Labouring Population","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":72,"q":"What did Chadwick argue was the primary cause of urban poverty and high municipal poor relief rates?","a":"Preventable disease caused by filthy living conditions and bad drainage","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":73,"q":"What public health reform did Edwin Chadwick propose in his 1842 report?","a":"A national network of smooth ceramic sewer pipes flushed with clean water to carry waste away","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":74,"q":"What was the main weakness of the landmark Public Health Act passed by Parliament in 1848?","a":"It was non-compulsory; town councils were only required to act if death rates exceeded 23 per 1,000","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":75,"q":"Why did wealthy rate-payers and local town councils fiercely oppose the 1848 Public Health Act?","a":"Because setting up boards of health and building sewers required spending high local council tax rates","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":76,"q":"What was the political philosophy that argued the government should interfere as little as possible in business and daily life?","a":"Laissez-faire","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":77,"q":"What was the average life expectancy for a factory worker in Manchester or Liverpool during the 1840s?","a":"Around 17 to 19 years old","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":78,"q":"How did industrial water companies obtain and deliver water to poor working-class neighborhoods?","a":"They pumped untreated river water into shared street standpipes that only flowed for an hour a day","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":79,"q":"Why did the initial response to the 1831–32 cholera epidemic focus on prayer, fasting, and whitewashing streets with lime?","a":"Medical authorities had no knowledge of waterborne bacteria and blamed miasma and moral sin","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":80,"q":"Why did rivers in early modern towns become open sewers?","a":"Population growth outpaced the ability to dispose of waste.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":81,"q":"Who invented a working flushing toilet in 1596?","a":"John Harington.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":82,"q":"Why did Harington's flushing toilet fail to catch on for 250 years?","a":"There were no underground sewers to connect it to.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":83,"q":"What does 'urbanisation' mean?","a":"The increase in the proportion of people living in towns and cities.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":84,"q":"How did early modern townspeople get their drinking water?","a":"Buying it from water sellers or sharing local pumps.","topic":"How did the Industrial Revolution lead to a public health crisis?","tier":"rapid"},{"id":85,"q":"What environmental catastrophe struck London in the hot summer of June and July 1858?","a":"The Great Stink, when the sewage-filled Thames fermented in extreme summer heat","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":86,"q":"What was the historical name given to the overwhelming stench from the River Thames in the summer of 1858?","a":"The Great Stink","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":87,"q":"What had turned the River Thames into a toxic, fermenting open sewer by the 1850s?","a":"The widespread installation of flush toilets that flushed human waste directly into old storm drains","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":88,"q":"What extreme measures did Members of Parliament take in June 1858 to try to conduct debates in the House of Commons?","a":"They soaked window curtains in chloride of lime to neutralize the river stench","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":89,"q":"Who was the brilliant chief engineer of the Metropolitan Board of Works appointed to solve London’s sewage crisis?","a":"Joseph Bazalgette","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":90,"q":"What was the key principle of Joseph Bazalgette’s revolutionary sewer network design?","a":"To construct underground intercepting sewers running west to east, moving waste far downriver","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":91,"q":"What durable building material did Bazalgette insist on using, testing every single batch to ensure it survived sewer acids?","a":"Portland cement mortar","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":92,"q":"What shape did Bazalgette choose for his underground sewer tunnels to prevent waste from settling and clogging?","a":"Egg-shaped (oval) cross-section tunnels","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":93,"q":"How long was the total network of main intercepting and local street sewers constructed by Bazalgette across London?","a":"Around 82 miles of main intercepting sewers and over 1,100 miles of street sewers","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":94,"q":"What major engineering feature did Bazalgette build along the north bank of the Thames, enclosing sewer pipes, an underground railway, and a modern road?","a":"The Victoria Embankment","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":95,"q":"What are the three Thames Embankments constructed by Joseph Bazalgette in London?","a":"Victoria Embankment, Albert Embankment, and Chelsea Embankment","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":96,"q":"Where did Bazalgette’s northern and southern outfall sewers discharge London’s untreated sewage into the Thames?","a":"Far downstream past London at Beckton and Crossness, where the outgoing tide swept it to sea","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":97,"q":"What happened during the last major cholera epidemic in London in 1866 that vindicated Bazalgette’s sewer design?","a":"Cholera struck only the East End, where sewers were not yet finished, sparing connected areas","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":98,"q":"Why was the 1866 cholera outbreak restricted to the East End of London?","a":"The East London Waterworks Company still supplied river water contaminated with sewage from the River Lea","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":99,"q":"What Victorian engineering landmarks were constructed by Bazalgette to pump sewage up to river discharge levels?","a":"The Abbey Mills and Crossness Pumping Stations, nicknamed \"Cathedrals of Sewage\"","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":100,"q":"What political change in 1867 helped encourage Parliament to pass stronger public health laws like the 1875 Act?","a":"The Second Reform Act, which gave the vote to urban working-class men","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":101,"q":"What was the 'laissez-faire' attitude?","a":"The government's belief that it shouldn't interfere in people's daily lives or public health.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":102,"q":"What terrifying waterborne disease first struck Britain in 1831?","a":"Cholera.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":103,"q":"What scientific theory did doctors wrongly believe caused disease?","a":"Miasma Theory (bad smells).","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":104,"q":"How did Dr. John Snow prove cholera was waterborne?","a":"By mapping the deaths around the Broad Street water pump.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":105,"q":"Who published a damning report on sanitary conditions in 1842?","a":"Edwin Chadwick.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?","tier":"rapid"},{"id":106,"q":"What was Dr John Snow’s revolutionary hypothesis regarding how cholera was transmitted in 1849?","a":"It was a waterborne disease transmitted by swallowing invisible contaminated water or food","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":107,"q":"During the September 1854 cholera outbreak in Soho, what specific piece of evidence did John Snow create to prove his theory?","a":"A street map plotting each cholera death as a black bar outside houses near the pump","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":108,"q":"What did John Snow convince the parish Board of Guardians to do on 8 September 1854 to halt the Soho epidemic?","a":"Remove the handle from the Broad Street water pump so residents could not drink the water","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":109,"q":"What was discovered when inspectors later excavated the Broad Street pump well?","a":"A cracked brick cesspool from house number 40 was leaking baby cholera waste into the well","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":110,"q":"Why were workers at the nearby Broad Street brewery completely unaffected by the 1854 cholera epidemic?","a":"They drank only malt liquor and drew water from a private deep well, not the street pump","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":111,"q":"Why did the British medical establishment and General Board of Health initially reject John Snow’s discovery?","a":"Because prominent figures like Edwin Chadwick were deeply committed to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":112,"q":"What German bacteriologist finally isolated and proved the cholera bacterium (Vibrio cholerae) under a microscope in 1883?","a":"Robert Koch","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":113,"q":"How did John Snow use the Lambeth Water Company versus Southwark & Vauxhall Water Company data to prove his waterborne theory?","a":"He showed customers drinking Lambeth water (intake moved upriver) had far lower death rates","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":114,"q":"Which historical period made the LEAST progress in public health engineering in Britain?","a":"The Early Middle Ages (500–1000 AD)","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":115,"q":"What was the primary obstacle preventing earlier public health reform throughout British history?","a":"Laissez-faire attitudes, reluctance to pay high local taxes, and stubborn belief in miasma","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":116,"q":"Which of the following was a key feature of the compulsory Public Health Act of 1875?","a":"Every local council was required to appoint a Medical Officer of Health and Sanitary Inspector","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":117,"q":"How did Roman public health differ fundamentally from Victorian public health?","a":"Romans aimed for civic hygiene without knowing germs; Victorians developed bacteriology and laws","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":118,"q":"What role did Edwin Chadwick play in the story of British public health?","a":"He proved poor sanitation caused disease and poverty, driving the 1848 Public Health Act","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":119,"q":"What was the significance of Joseph Bazalgette’s intercepting sewer system for the city of London?","a":"It eliminated waterborne cholera from London and created drainage infrastructure used today","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":120,"q":"Why did John Snow’s investigation become famous as a founding moment of modern medical science?","a":"It pioneered epidemiology — using data collection, mapping, and deduction to track disease","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":121,"q":"Looking back across all six lessons, why was progress in British public health NOT a simple straight line of improvement?","a":"Because Roman engineering collapsed, urbanisation overwhelmed towns, and false theories delayed science","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":122,"q":"What Roman engineering structure carried fresh water across valleys into towns?","a":"An aqueduct, using the pull of gravity.","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":123,"q":"What was a medieval worker who cleared cesspits at night called?","a":"A gongfermer (or nightman).","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":124,"q":"What incorrect theory claimed that foul smells and poisonous air caused disease?","a":"The Miasma Theory.","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":125,"q":"In what year did Asiatic cholera first strike Britain?","a":"1831 (in Sunderland).","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"},{"id":126,"q":"What 1858 environmental crisis forced Parliament to fund London’s new sewer system?","a":"The Great Stink of the River Thames.","topic":"End of Unit Assessment: Cholera Investigation","tier":"rapid"}];
 
     const EXAM_DECK = [];
 

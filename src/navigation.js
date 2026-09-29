@@ -396,6 +396,16 @@ export async function switchView(viewName, param = null, skipHistory = false, op
   } else if (viewName === 'quiz' || viewName === 'interactive_quiz') {
     viewName = 'interactive';
     param = param || state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
+  } else if (
+    viewName === 'booklets' ||
+    viewName === 'workbooks' ||
+    viewName === 'workbook' ||
+    viewName === 'pdf' ||
+    viewName === 'pdfs' ||
+    viewName === 'textbook' ||
+    viewName === 'textbooks'
+  ) {
+    viewName = 'booklet';
   }
 
   // Handle view rendering

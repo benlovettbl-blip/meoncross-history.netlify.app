@@ -5358,3 +5358,296 @@ details.spotlight-drawer summary i.fa-chevron-down {
 details.spotlight-drawer[open] summary i.fa-chevron-down {
   transform: rotate(180deg);
 }
+
+/* ==========================================================================
+   Diagnostic Benchmark Responsive & Mobile Modal Styles
+   ========================================================================== */
+
+#diagnostic-benchmark-modal.diag-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.diag-benchmark-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  max-height: 94vh;
+  max-height: 94dvh;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.diag-header {
+  background: #0f172a;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.diag-progress-track {
+  background: #f8fafc;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  align-items: center;
+  flex-shrink: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.diag-body {
+  padding: 24px 30px;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+.diag-prompt {
+  margin: 0 0 20px 0;
+  font-size: 1.3rem;
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.diag-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.diag-option-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.diag-option-card:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.diag-option-card.selected {
+  border: 2px solid #4f46e5 !important;
+  background: #f5f3ff !important;
+}
+
+.diag-option-badge {
+  background: #f1f5f9;
+  color: #475569;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.92rem;
+  flex-shrink: 0;
+}
+
+.diag-option-card.selected .diag-option-badge {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.diag-option-text {
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 500;
+  flex: 1;
+}
+
+.diag-option-card.selected .diag-option-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.diag-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Mobile full-screen and thumb ergonomics */
+@media (max-width: 768px) {
+  #diagnostic-benchmark-modal.diag-modal-overlay {
+    padding: 0 !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  .diag-benchmark-card {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  .diag-header {
+    padding: 10px 14px !important;
+  }
+
+  .diag-header h3 {
+    font-size: 0.98rem !important;
+  }
+
+  .diag-progress-track {
+    padding: 8px 12px !important;
+    gap: 4px !important;
+  }
+
+  .diag-progress-track button {
+    min-width: 28px !important;
+    height: 28px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .diag-body {
+    padding: 14px 16px !important;
+  }
+
+  .diag-prompt {
+    font-size: 1.08rem !important;
+    margin-bottom: 12px !important;
+    line-height: 1.38 !important;
+  }
+
+  .diag-options-container {
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .diag-option-card {
+    padding: 11px 12px !important;
+    gap: 10px !important;
+    min-height: 48px !important;
+  }
+
+  .diag-option-badge {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .diag-option-text {
+    font-size: 0.92rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .diag-option-kbd,
+  .diag-kbd-hint {
+    display: none !important;
+  }
+
+  .diag-footer {
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)) 14px !important;
+    gap: 8px !important;
+  }
+
+  .diag-footer button {
+    padding: 10px 14px !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Results modal on mobile */
+  .diag-results-card {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+  }
+
+  .diag-results-header {
+    padding: 14px 16px !important;
+  }
+
+  .diag-results-body {
+    padding: 14px 16px !important;
+  }
+
+  .diag-results-footer {
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .diag-results-footer button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* --- Interactive View Responsive Optimizations --- */
+.mobile-only-quick-launch {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-quick-launch {
+    display: block !important;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 18px 16px;
+    margin-bottom: 20px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(49, 46, 129, 0.25);
+  }
+
+  .interactive-hub-title {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .interactive-hub-subtitle {
+    font-size: 0.92rem !important;
+  }
+}
