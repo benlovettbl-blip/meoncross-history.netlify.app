@@ -496,4 +496,65 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'lemov_shanahan_reading_aloud',
+    author: 'Doug Lemov & Timothy Shanahan',
+    affiliation: 'Teach Like a Champion / University of Illinois (Reading Research)',
+    category: 'Disciplinary Reading & Oral Fluency',
+    categoryBadge: 'badge-amber',
+    title: 'Oral Reading Fluency, Control the Conversation & The Anti-Simplification Standard',
+    subtitle:
+      'Replacing Round-Robin Anxiety and Leveled "Dumbed-Down" Texts with Teacher-Modelled Prosody, Spotlight Micro-Turns, and Rehearsed Echo Reading',
+    overview:
+      'Calling upon developing or struggling readers cold in secondary classrooms (popcorn or round-robin reading) induces acute social anxiety and halting, monotonic decoding that fractures comprehension for both the reader and the listening class. However, the common secondary instinct—clicking a "simplify" button to truncate and dumb down the text—is decisively rejected by cognitive research. Timothy Shanahan proves that leveled, simplified texts hold struggling readers back, locking them into a low-vocabulary cycle (the Matthew Effect). Doug Lemov demonstrates that all pupils achieve fluency when the teacher acts as the primary model of expressive prosody, utilizing "Control the Conversation" (frequent, unpredictable, micro-duration turns on authentic text) supported by pre-taught barrier vocabulary and pre-rehearsed oral echo reading.',
+    analysisHeading: 'The Simplification Fallacy & Cold Reading Anxiety',
+    analysisText:
+      'When teachers ask struggling Year 7 pupils to read an entire complex paragraph aloud without preparation, 90% of working memory is consumed by phonemic decoding, leaving zero capacity for historical causal processing. Conversely, providing a "simplified" paragraph creates three fatal dilemmas: (1) Deficit Stigmatization: pupils are publicly labeled in front of peers as needing the "easy" version; (2) Semantic & Disciplinary Loss: simplifying strips out essential Tier-2 analytical connectives (consequently, despite, nevertheless) and Tier-3 historical concepts (contamination, cesspit, filtration), destroying the causal logic of the historical enquiry; and (3) The Double-Reading Logistical Mismatch: having a pupil read a simplified version followed by the teacher reading the complex version doubles reading time and disorients listening pupils.',
+    evidenceHeading: 'Cognitive Science on Text Complexity & Prosody Scaffolding',
+    evidenceText:
+      'Shanahan (Leveled Reading, Leveled Lives, 2025) demonstrates that students make accelerated reading and comprehension gains when instructed on challenging, grade-level text with systematic scaffolding, rather than being protected from it. Quigley (Closing the Reading Gap, 2020) and the EEF Secondary Literacy Guidance establish that reading comprehension is directly anchored in prosody—the musicality, pacing, and syntactical phrasing modeled by an expert adult reader. When teachers model fluent prosody first, struggling pupils internalize where clauses begin and end. Lemov\'s FASE framework (Frequent, Accountable, Scaffolded, Expressive) shows that weak readers build authentic confidence not through reading dumbed-down paragraphs, but through successfully delivering bite-sized "Spotlight Sentences" (1–2 sentences) of authentic academic prose after hearing it modeled.',
+    applicationHeading: 'Revision Hub Platform & Curriculum Architecture',
+    implementation: [
+      'Multi-Tiered Neural Speech Synthesizer (0.85x / 1.0x / 1.15x): Enables pupils to listen with headphones to UK neural voices with synchronized word-by-word karaoke tracking, pre-auditing complex pronunciations before whole-class reading.',
+      'Co-Located Disciplinary Vocabulary Glossaries: Difficult Tier-3 terms (gongfermer, night-soil, filtration, cesspit) are defined immediately adjacent to the narrative with phonetic pronunciation guides, eliminating decoding anxiety without dumbing down the prose.',
+      '4-Act Chunked Narrative Measure (50–65 Characters): Text is strictly calibrated to optimal typographic measure with left-margin line numbering, preventing eye-sweep tracking fatigue during shared reading.',
+      'Single-Enquiry Focus: Eliminates mid-text comprehension trivia, keeping the entire room focused on the overarching disciplinary puzzle.',
+    ],
+    protocolHeading: 'The 4-Step "Control the Conversation" Classroom Protocol',
+    teacherProtocols: [
+      '1. Front-Load Barrier Vocabulary: Explicitly pronounce and define 2–3 polysyllabic barrier words (e.g. gongfermer, contaminated) on the board before anyone reads.',
+      "2. Teacher-Modelled Prosody as Default: The teacher (or the app's 1.0x speech engine) reads the primary narrative aloud with expressive phrasing, pausing at key causal junctions to think aloud.",
+      '3. Deploy "Spotlight Sentences" (Micro-Turns) for Developing Readers: Never call on a struggling reader for a full 120-word paragraph. Instead, model the exposition, then pass the baton to the developing reader for a pre-signposted, punchy 1–2 sentence conclusion ("Johnny, take the final sentence starting with \'Consequently\'"). The pupil achieves 100% fluent success with full curricular dignity.',
+      '4. Paired Whisper-Rehearsal: Give the room 45 seconds to whisper-read an act in pairs before whole-class cold calling. Rehearsal completely eliminates performance anxiety.',
+    ],
+    citations: [
+      'Lemov, D., Driggs, C., & Woolway, E. (2016). Reading Reconsidered: A Practical Guide to Rigorous Literacy Instruction. Jossey-Bass.',
+      "Shanahan, T. (2025). Leveled Reading, Leveled Lives: How Students' Reading Achievement Has Been Held Back and What We Can Do About It. Corwin Literacy.",
+      'Quigley, A. (2020). Closing the Reading Gap. London: Routledge.',
+      'Education Endowment Foundation (EEF) (2019/2021). Improving Literacy in Secondary Schools: Guidance Report.',
+    ],
+    links: [
+      {
+        title: 'Shanahan on Literacy: Research on Text Complexity',
+        url: 'https://www.shanahanonliteracy.com/',
+        displayText: 'www.shanahanonliteracy.com',
+      },
+      {
+        title: 'Teach Like a Champion (Doug Lemov): Reading Reconsidered',
+        url: 'https://teachlikeachampion.org/',
+        displayText: 'teachlikeachampion.org',
+      },
+      {
+        title: 'EEF Guidance: Improving Literacy in Secondary Schools',
+        url: 'https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/literacy-ks3-ks4',
+        displayText:
+          'educationendowmentfoundation.org.uk/education-evidence/guidance-reports/literacy-ks3-ks4',
+      },
+      {
+        title: 'The Confident Teacher: Academic Literacy (Alex Quigley)',
+        url: 'https://www.theconfidentteacher.co.uk/',
+        displayText: 'www.theconfidentteacher.co.uk',
+      },
+    ],
+  },
 ];
