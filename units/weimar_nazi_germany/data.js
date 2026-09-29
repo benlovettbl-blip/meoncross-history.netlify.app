@@ -265,9 +265,9 @@ const unitData = {
         {
           question: "What was the financial impact of WWI on Germany's national debt by 1918?",
           options: [
-            'It halved due to reparations',
-            'It tripled from 50 billion marks to 150 billion marks',
             'It remained stable due to war bonds',
+            'It tripled from 50 billion marks to 150 billion marks',
+            'It halved due to reparations',
             'It doubled to 100 billion marks',
           ],
           answer: 1,
@@ -277,8 +277,8 @@ const unitData = {
             'How many German civilians died from food shortages caused by the British naval blockade?',
           options: [
             'Approximately 750,000',
-            'Approximately 4 million',
             'Approximately 2 million',
+            'Approximately 4 million',
             'Approximately 100,000',
           ],
           answer: 0,
@@ -287,8 +287,8 @@ const unitData = {
           question:
             'What event occurred at a naval base in late October 1918 that sparked a nationwide revolution?',
           options: [
-            'The abdication of the Kaiser',
             'The Spartacist Uprising',
+            'The abdication of the Kaiser',
             'The mutiny of German sailors at Kiel',
             'The signing of the Treaty of Versailles',
           ],
@@ -296,20 +296,20 @@ const unitData = {
         },
         {
           question: 'On what exact date did Kaiser Wilhelm II abdicate?',
-          options: ['11 November 1918', '1 January 1919', '28 June 1919', '9 November 1918'],
+          options: ['28 June 1919', '1 January 1919', '11 November 1918', '9 November 1918'],
           answer: 3,
         },
         {
           question: 'Where did Kaiser Wilhelm II flee to after his abdication?',
-          options: ['Switzerland', 'Austria', 'Holland', 'Britain'],
+          options: ['Austria', 'Switzerland', 'Holland', 'Britain'],
           answer: 2,
         },
         {
           question: 'Who proclaimed the new German Republic from the balcony of the Reichstag?',
           options: [
             'Philipp Scheidemann',
-            'Matthias Erzberger',
             'Friedrich Ebert',
+            'Matthias Erzberger',
             'Kaiser Wilhelm II',
           ],
           answer: 0,
@@ -318,10 +318,10 @@ const unitData = {
           question:
             'Who became the first Chancellor (and later first President) of the Weimar Republic?',
           options: [
-            'Matthias Erzberger',
-            'Friedrich Ebert',
             'Rosa Luxemburg',
+            'Friedrich Ebert',
             'Philipp Scheidemann',
+            'Matthias Erzberger',
           ],
           answer: 1,
         },
@@ -329,23 +329,23 @@ const unitData = {
           question:
             'What was the name of the temporary government set up by Ebert until elections could be held?',
           options: [
-            'The National Assembly',
             'The Reichsrat',
             'The Spartacist League',
+            'The National Assembly',
             "The Council of People's Representatives",
           ],
           answer: 3,
         },
         {
           question: 'On what exact date was the Armistice signed?',
-          options: ['28 June 1919', '11 November 1918', '1 September 1939', '9 November 1918'],
+          options: ['9 November 1918', '11 November 1918', '28 June 1919', '1 September 1939'],
           answer: 1,
         },
         {
           question: 'Which German politician signed the Armistice on behalf of the Republic?',
           options: [
-            'Friedrich Ebert',
             'Philipp Scheidemann',
+            'Friedrich Ebert',
             'Paul von Hindenburg',
             'Matthias Erzberger',
           ],
@@ -355,24 +355,24 @@ const unitData = {
           question:
             'What insulting term was given to the politicians who signed the Armistice by right-wing nationalists?',
           options: [
-            'The Weimar Traitors',
+            'The Spartacists',
             'The Freikorps',
             'The November Criminals',
-            'The Spartacists',
+            'The Weimar Traitors',
           ],
           answer: 2,
         },
         {
           question: "What is the German term for the 'stab-in-the-back' myth?",
-          options: ['Dolchstoßlegende', 'Reichstag', 'Anschluss', 'Lebensraum'],
+          options: ['Dolchstoßlegende', 'Reichstag', 'Lebensraum', 'Anschluss'],
           answer: 0,
         },
         {
           question:
             'Why did the new politicians meet in Weimar in 1919 rather than the capital, Berlin?',
           options: [
-            'Weimar was the traditional home of the Kaiser',
             'Weimar was closer to the French border for negotiations',
+            'Weimar was the traditional home of the Kaiser',
             'Berlin was too violent and unstable due to ongoing political rioting',
             'Berlin had been destroyed by Allied bombing',
           ],
@@ -391,8 +391,8 @@ const unitData = {
         {
           question: 'What was the specific name of the voting system used to elect the Reichstag?',
           options: [
-            'First Past the Post',
             'Absolute Monarchy',
+            'First Past the Post',
             'The Electoral College',
             'Proportional Representation',
           ],
@@ -400,39 +400,39 @@ const unitData = {
         },
         {
           question: 'How frequently was the President of the Weimar Republic elected?',
-          options: ['Every 7 years', 'For life', 'Every 4 years', 'Every 5 years'],
+          options: ['Every 7 years', 'Every 4 years', 'For life', 'Every 5 years'],
           answer: 0,
         },
         {
           question:
             'Under the Constitution, how many votes did a party need to gain exactly one seat in the Reichstag?',
-          options: ['60,000 votes', '10,000 votes', '30,000 votes', '100,000 votes'],
+          options: ['60,000 votes', '100,000 votes', '30,000 votes', '10,000 votes'],
           answer: 0,
         },
         {
           question: 'Why did Proportional Representation create weak governments?',
           options: [
-            'It allowed the army to veto new laws',
+            'It prevented women from voting for mainstream parties',
             "It meant no single party ever won a majority, forcing weak 'coalition' governments",
             'It gave the President too much power over the Chancellor',
-            'It prevented women from voting for mainstream parties',
+            'It allowed the army to veto new laws',
           ],
           answer: 1,
         },
         {
           question: 'What was Article 48?',
           options: [
-            'A clause forcing Germany to pay reparations',
             'A law banning extremist political parties',
-            'A constitutional clause allowing the President to bypass the Reichstag and rule by emergency decree',
             'A clause giving all men and women the right to vote',
+            'A constitutional clause allowing the President to bypass the Reichstag and rule by emergency decree',
+            'A clause forcing Germany to pay reparations',
           ],
           answer: 2,
         },
         {
           question:
             'What was the name of the upper house of parliament that represented the 18 German regions (Länder)?',
-          options: ['The Reichstag', 'The Freikorps', 'The Gestapo', 'The Reichsrat'],
+          options: ['The Gestapo', 'The Freikorps', 'The Reichstag', 'The Reichsrat'],
           answer: 3,
         },
       ],
@@ -845,10 +845,10 @@ const unitData = {
         {
           question: 'What was Article 231 of the Treaty of Versailles?',
           options: [
-            'The clause limiting the German army to 100,000 men',
+            'The clause forcing Germany to pay reparations',
             'The War Guilt Clause, forcing Germany to accept total blame for the war',
             "The clause removing all of Germany's overseas colonies",
-            'The clause forcing Germany to pay reparations',
+            'The clause limiting the German army to 100,000 men',
           ],
           answer: 1,
         },
@@ -860,7 +860,7 @@ const unitData = {
         {
           question:
             'Under the Treaty, what was the maximum number of soldiers allowed in the German army?',
-          options: ['100,000 men', '250,000 men', '50,000 men', '10,000 men'],
+          options: ['100,000 men', '50,000 men', '10,000 men', '250,000 men'],
           answer: 0,
         },
         {
@@ -872,8 +872,8 @@ const unitData = {
         {
           question: 'Who were the two main leaders of the Spartacist League?',
           options: [
-            'Adolf Hitler and Ernst Röhm',
             'Friedrich Ebert and Philipp Scheidemann',
+            'Adolf Hitler and Ernst Röhm',
             'Wolfgang Kapp and Walther von Lüttwitz',
             'Rosa Luxemburg and Karl Liebknecht',
           ],
@@ -882,25 +882,25 @@ const unitData = {
         {
           question: 'What political ideology did the Spartacists follow?',
           options: [
-            'Moderate Left-wing (Social Democracy)',
-            'Extreme Left-wing (Communism)',
             'Extreme Right-wing (Fascism)',
+            'Extreme Left-wing (Communism)',
+            'Moderate Left-wing (Social Democracy)',
             'Centrism',
           ],
           answer: 1,
         },
         {
           question: 'In what month and year did the Spartacist Uprising take place?',
-          options: ['January 1919', 'March 1920', 'January 1923', 'November 1918'],
+          options: ['January 1919', 'January 1923', 'March 1920', 'November 1918'],
           answer: 0,
         },
         {
           question: 'Who did Chancellor Ebert use to violently crush the Spartacist Uprising?',
           options: [
             'The regular army (Reichswehr)',
-            'The French army',
-            'The Freikorps',
             'The SA (Sturmabteilung)',
+            'The Freikorps',
+            'The French army',
           ],
           answer: 2,
         },
@@ -908,23 +908,23 @@ const unitData = {
           question: 'Who were the Freikorps?',
           options: [
             'Right-wing private armies made up of demobilised ex-soldiers',
-            'Politicians who signed the Armistice',
             'Left-wing worker militias',
+            'Politicians who signed the Armistice',
             'The official German state police',
           ],
           answer: 0,
         },
         {
           question: 'In what month and year did the Kapp Putsch take place?',
-          options: ['November 1923', 'January 1919', 'June 1919', 'March 1920'],
+          options: ['November 1923', 'June 1919', 'January 1919', 'March 1920'],
           answer: 3,
         },
         {
           question: 'Why did the Kapp Putsch begin?',
           options: [
-            'The government tried to increase the size of the army',
-            'The government tried to disband Freikorps units to comply with the Treaty of Versailles limits',
             'The communists attempted to seize control of Berlin again',
+            'The government tried to disband Freikorps units to comply with the Treaty of Versailles limits',
+            'The government tried to increase the size of the army',
             'The French invaded the Ruhr',
           ],
           answer: 1,
@@ -932,10 +932,10 @@ const unitData = {
         {
           question: 'Why did the regular German army refuse to stop the Kapp Putsch?',
           options: [
-            'They were severely outnumbered by the Freikorps',
             'They did not have enough weapons',
-            'Because they sympathised with the right-wing rebels',
             'They were ordered not to by the Allies',
+            'Because they sympathised with the right-wing rebels',
+            'They were severely outnumbered by the Freikorps',
           ],
           answer: 2,
         },
@@ -964,17 +964,17 @@ const unitData = {
             'What non-violent tactic did the German government order the Ruhr workers to use against the French?',
           options: [
             'Passive Resistance',
-            'Writing letters of protest to the League of Nations',
-            'Sabotaging the railways',
             'A hunger strike',
+            'Sabotaging the railways',
+            'Writing letters of protest to the League of Nations',
           ],
           answer: 0,
         },
         {
           question: 'Why did the invasion of the Ruhr directly lead to hyperinflation?',
           options: [
-            'The workers demanded higher wages',
             "The French stole all of Germany's gold reserves",
+            'The workers demanded higher wages',
             'The government printed massive amounts of unbacked paper money to pay the striking workers',
             'The price of coal skyrocketed globally',
           ],
@@ -982,15 +982,15 @@ const unitData = {
         },
         {
           question: 'By November 1923, how much did a single loaf of bread cost in Germany?',
-          options: ['201 marks', '201 billion marks', '201 thousand marks', '201 million marks'],
+          options: ['201 marks', '201 billion marks', '201 million marks', '201 thousand marks'],
           answer: 1,
         },
         {
           question: 'Which specific social class was hit the hardest by hyperinflation, and why?',
           options: [
-            'The upper classes, because their land was confiscated',
-            'The working classes, because they lost their jobs',
             'Farmers, because nobody could afford to buy their food',
+            'The working classes, because they lost their jobs',
+            'The upper classes, because their land was confiscated',
             'The middle classes, because their life savings and fixed pensions became completely worthless',
           ],
           answer: 3,
@@ -1357,34 +1357,34 @@ const unitData = {
         {
           question:
             'Who became Chancellor in August 1923 and is widely credited with saving the Weimar Republic?',
-          options: ['Gustav Stresemann', 'Friedrich Ebert', 'Wolfgang Kapp', 'Adolf Hitler'],
+          options: ['Gustav Stresemann', 'Wolfgang Kapp', 'Adolf Hitler', 'Friedrich Ebert'],
           answer: 0,
         },
         {
           question:
             'What was the name of the temporary currency introduced by Stresemann in November 1923?',
-          options: ['The Euro', 'The Reichsmark', 'The Deutschmark', 'The Rentenmark'],
+          options: ['The Deutschmark', 'The Euro', 'The Reichsmark', 'The Rentenmark'],
           answer: 3,
         },
         {
           question:
             'What was the Rentenmark tied to in order to restore public confidence in its value?',
           options: [
-            'American gold reserves',
+            'The value of German coal in the Ruhr',
             'The French Franc',
             'German property / agricultural and industrial land values',
-            'The value of German coal in the Ruhr',
+            'American gold reserves',
           ],
           answer: 2,
         },
         {
           question: 'What permanent, gold-backed currency replaced the temporary one in 1924?',
-          options: ['The Rentenmark', 'The Reichsmark', 'The Ostmark', 'The Deutschmark'],
+          options: ['The Ostmark', 'The Reichsmark', 'The Deutschmark', 'The Rentenmark'],
           answer: 1,
         },
         {
           question: 'In what year was the Dawes Plan agreed?',
-          options: ['1923', '1929', '1922', '1924'],
+          options: ['1923', '1922', '1929', '1924'],
           answer: 3,
         },
         {
@@ -1397,24 +1397,24 @@ const unitData = {
           question:
             'What was the primary economic danger of the Dawes Plan for the Weimar Republic?',
           options: [
-            'It raised taxes for everyone in Germany',
-            'It made the entire German economy reliant on American loans',
-            'It forced Germany to give up the Ruhr permanently',
             'It caused further hyperinflation',
+            'It made the entire German economy reliant on American loans',
+            'It raised taxes for everyone in Germany',
+            'It forced Germany to give up the Ruhr permanently',
           ],
           answer: 1,
         },
         {
           question: 'What was the name of the 1929 economic plan that reduced total reparations?',
-          options: ['The Stresemann Plan', 'The Marshall Plan', 'The Young Plan', 'The Dawes Plan'],
+          options: ['The Marshall Plan', 'The Stresemann Plan', 'The Young Plan', 'The Dawes Plan'],
           answer: 2,
         },
         {
           question: 'How much was the reparations bill reduced to under the Young Plan?',
           options: [
+            'From £6.6 billion to £4 billion',
             'From £10.5 billion to £6.6 billion',
             'It was completely cancelled',
-            'From £6.6 billion to £4 billion',
             'From £6.6 billion to £2 billion',
           ],
           answer: 3,
@@ -1423,10 +1423,10 @@ const unitData = {
           question:
             'What diplomatic treaty did Germany sign in 1925, agreeing to its new western borders?',
           options: [
-            'The Treaty of Brest-Litovsk',
+            'The Kellogg-Briand Pact',
             'The Treaty of Versailles',
             'The Locarno Pact',
-            'The Kellogg-Briand Pact',
+            'The Treaty of Brest-Litovsk',
           ],
           answer: 2,
         },
@@ -1436,14 +1436,14 @@ const unitData = {
           options: [
             'It removed all limits on the size of the German army',
             'Germany was treated as an equal negotiating partner, not dictated to',
-            'It forced France to pay reparations to Germany',
             'It gave Germany its colonies back',
+            'It forced France to pay reparations to Germany',
           ],
           answer: 1,
         },
         {
           question: 'In what year was Germany allowed to join the League of Nations?',
-          options: ['1926', '1925', '1919', '1923'],
+          options: ['1926', '1919', '1925', '1923'],
           answer: 0,
         },
         {
@@ -1451,9 +1451,9 @@ const unitData = {
             "What position was Germany given within the League of Nations to show it was a 'great power' again?",
           options: [
             'Veto power over all League decisions',
-            "Control over the League's armed forces",
-            'A seat on the League of Nations Council',
             'The Presidency of the League',
+            'A seat on the League of Nations Council',
+            "Control over the League's armed forces",
           ],
           answer: 2,
         },
@@ -1461,16 +1461,16 @@ const unitData = {
           question: 'What was the Kellogg-Briand Pact of 1928?',
           options: [
             'An international agreement signed by 65 countries to resolve conflicts peacefully rather than using war',
-            'A trade agreement between Germany and the USA',
             'An agreement to cancel all war debts',
             'An agreement to reduce the size of all European armies',
+            'A trade agreement between Germany and the USA',
           ],
           answer: 0,
         },
         {
           question:
             'How many seats did the Nazi Party win in the 1928 Reichstag election, highlighting the drop in extremist support?',
-          options: ['107 seats', '230 seats', '32 seats', '12 seats'],
+          options: ['32 seats', '230 seats', '107 seats', '12 seats'],
           answer: 3,
         },
         {
@@ -1484,9 +1484,9 @@ const unitData = {
             'Which two groups in German society did not experience prosperity during the Golden Age?',
           options: [
             'Farmers and the middle classes who had lost their savings in 1923',
-            'Teachers and lawyers',
-            'Women and young people',
             'Factory owners and politicians',
+            'Women and young people',
+            'Teachers and lawyers',
           ],
           answer: 0,
         },
@@ -1496,8 +1496,8 @@ const unitData = {
           options: [
             'Unemployment never fell below 6 million',
             'Unemployment never fell below 1.3 million',
-            'Unemployment never fell below 3 million',
             'Unemployment never fell below 500,000',
+            'Unemployment never fell below 3 million',
           ],
           answer: 1,
         },
@@ -1506,9 +1506,9 @@ const unitData = {
             "What was Stresemann's famous quote warning about the fragility of the German economy?",
           options: [
             '"We have nothing to fear but fear itself."',
-            '"Peace in our time."',
-            '"Germany is dancing on a volcano."',
             '"The republic is dead."',
+            '"Germany is dancing on a volcano."',
+            '"Peace in our time."',
           ],
           answer: 2,
         },
@@ -1517,8 +1517,8 @@ const unitData = {
             'What major global economic event happened in October 1929, just weeks after Stresemann died?',
           options: [
             'The Munich Putsch',
-            'The outbreak of World War Two',
             'The French invasion of the Ruhr',
+            'The outbreak of World War Two',
             'The Wall Street Crash',
           ],
           answer: 3,
@@ -1898,15 +1898,15 @@ const unitData = {
         {
           question:
             "By what percentage did 'real wages' for German workers rise between 1925 and 1928?",
-          options: ['25%', '75%', '10%', '50%'],
+          options: ['25%', '50%', '75%', '10%'],
           answer: 0,
         },
         {
           question: 'What major welfare law was passed in 1927 to protect workers?',
           options: [
-            'The Rent Tax Act',
-            'The Unemployment Insurance Act',
             'The Dawes Plan',
+            'The Unemployment Insurance Act',
+            'The Rent Tax Act',
             "The Workers' Rights Bill",
           ],
           answer: 1,
@@ -1920,18 +1920,18 @@ const unitData = {
         {
           question:
             'How many new homes were built between 1925 and 1929 to solve the housing crisis?',
-          options: ['50,000', '10,000', 'Over 100,000', '1 million'],
+          options: ['50,000', '1 million', 'Over 100,000', '10,000'],
           answer: 2,
         },
         {
           question:
             'Which specific clause in the Weimar Constitution guaranteed women equal rights with men?',
-          options: ['Article 1', 'Article 48', 'Article 109', 'Article 231'],
+          options: ['Article 231', 'Article 48', 'Article 109', 'Article 1'],
           answer: 2,
         },
         {
           question: 'How many female deputies were in the Reichstag by 1926?',
-          options: ['32', '107', 'None', '12'],
+          options: ['32', 'None', '12', '107'],
           answer: 0,
         },
         {
@@ -1942,16 +1942,16 @@ const unitData = {
         },
         {
           question: 'By 1933, how many female teachers were there in Germany?',
-          options: ['10,000', '200,000', '50,000', '100,000'],
+          options: ['50,000', '200,000', '10,000', '100,000'],
           answer: 3,
         },
         {
           question:
             'What term was used by the media to describe young, independent, fashion-conscious women in the 1920s?',
           options: [
-            "The 'Liberated Woman'",
-            "The 'Weimar Woman'",
             "The 'Modern Woman'",
+            "The 'Weimar Woman'",
+            "The 'Liberated Woman'",
             "The 'New Woman' (Neue Frau)",
           ],
           answer: 3,
@@ -1960,9 +1960,9 @@ const unitData = {
           question: 'Give two reasons why a cultural explosion occurred in 1920s Germany.',
           options: [
             'The removal of pre-war censorship and economic recovery providing funding',
-            'The Treaty of Versailles and the Locarno Pact',
             'The invasion of the Ruhr and hyperinflation',
             'The creation of the Hitler Youth and Nazi propaganda',
+            'The Treaty of Versailles and the Locarno Pact',
           ],
           answer: 0,
         },
@@ -1970,8 +1970,8 @@ const unitData = {
           question:
             'What was the name of the new movement in art that painted the gritty reality of everyday German life?',
           options: [
-            'Cubism',
             'Expressionism',
+            'Cubism',
             'New Objectivity (Neue Sachlichkeit)',
             'Romanticism',
           ],
@@ -1980,52 +1980,52 @@ const unitData = {
         {
           question: 'Name two famous German artists associated with the New Objectivity movement.',
           options: [
-            'Walter Gropius and Fritz Lang',
-            'George Grosz and Otto Dix',
-            'Gustav Stresemann and Paul von Hindenburg',
             'Marlene Dietrich and Rosa Luxemburg',
+            'George Grosz and Otto Dix',
+            'Walter Gropius and Fritz Lang',
+            'Gustav Stresemann and Paul von Hindenburg',
           ],
           answer: 1,
         },
         {
           question:
             'What was the name of the revolutionary school of design and architecture founded in Weimar Germany?',
-          options: ['The Avant-garde', 'The New Objectivity', 'The Bauhaus', 'The Reichstag'],
+          options: ['The Reichstag', 'The New Objectivity', 'The Bauhaus', 'The Avant-garde'],
           answer: 2,
         },
         {
           question: 'Who was the founder of the Bauhaus movement?',
-          options: ['Walter Gropius', 'Otto Dix', 'Fritz Lang', 'George Grosz'],
+          options: ['Walter Gropius', 'Fritz Lang', 'George Grosz', 'Otto Dix'],
           answer: 0,
         },
         {
           question: 'What was the guiding principle or slogan of the Bauhaus school?',
           options: [
-            '"Form follows emotion"',
+            '"Beauty in nature"',
             '"Art and Technology - a new unity"',
             '"Tradition above all else"',
-            '"Beauty in nature"',
+            '"Form follows emotion"',
           ],
           answer: 1,
         },
         {
           question: 'Who directed the groundbreaking 1927 science-fiction film Metropolis?',
-          options: ['Marlene Dietrich', 'Walter Gropius', 'George Grosz', 'Fritz Lang'],
+          options: ['Walter Gropius', 'George Grosz', 'Marlene Dietrich', 'Fritz Lang'],
           answer: 3,
         },
         {
           question: 'Which German actress became a global film superstar during the Weimar era?',
-          options: ['Leni Riefenstahl', 'Rosa Luxemburg', 'Clara Zetkin', 'Marlene Dietrich'],
+          options: ['Rosa Luxemburg', 'Clara Zetkin', 'Leni Riefenstahl', 'Marlene Dietrich'],
           answer: 3,
         },
         {
           question:
             'Why did right-wing groups and the Nazi Party despise the cultural changes of the 1920s?',
           options: [
-            'They thought it cost too much money to fund',
+            'They believed it was not experimental enough',
             'They believed the new culture was immoral, un-German, and undermined traditional family values',
             'They wanted Berlin to be more like Paris',
-            'They believed it was not experimental enough',
+            'They thought it cost too much money to fund',
           ],
           answer: 1,
         },
@@ -2033,10 +2033,10 @@ const unitData = {
           question:
             'Why did extreme left-wing groups (Communists) criticise the cultural explosion?',
           options: [
-            'They thought it promoted conservative values',
+            'They were unhappy that women were given more freedom',
             'They believed it was too modern and avant-garde',
             'They felt it was an extravagant waste of money when poor workers were still struggling to survive',
-            'They were unhappy that women were given more freedom',
+            'They thought it promoted conservative values',
           ],
           answer: 2,
         },
@@ -2373,15 +2373,15 @@ const unitData = {
       quiz: [
         {
           question: "Who was the original founder of the German Workers' Party (DAP) in 1919?",
-          options: ['Hermann Göring', 'Adolf Hitler', 'Anton Drexler', 'Ernst Röhm'],
+          options: ['Adolf Hitler', 'Ernst Röhm', 'Anton Drexler', 'Hermann Göring'],
           answer: 'Anton Drexler',
         },
         {
           question: 'Why did Adolf Hitler originally attend a DAP meeting in September 1919?',
           options: [
-            'He was invited by Anton Drexler',
             'He was looking for a job as an administrator',
             'He wanted to become the leader of the party',
+            'He was invited by Anton Drexler',
             'He was sent by the army as an intelligence officer to spy on them',
           ],
           answer: 'He was sent by the army as an intelligence officer to spy on them',
@@ -2391,33 +2391,33 @@ const unitData = {
             'What unique talent did Hitler use to captivate audiences and rise to leadership?',
           options: [
             'His powerful, rehearsed, and theatrical public speaking / oratory skills',
-            'His talent for drawing and designing logos',
             'His skill in military strategy and tactics',
             'His ability to write detailed economic policies',
+            'His talent for drawing and designing logos',
           ],
           answer: 'His powerful, rehearsed, and theatrical public speaking / oratory skills',
         },
         {
           question: 'In what year did Hitler and Drexler write the 25-Point Programme?',
-          options: ['1922', '1920', '1919', '1921'],
+          options: ['1922', '1920', '1921', '1919'],
           answer: '1920',
         },
         {
           question: "Name one 'Nationalist' policy from the 25-Point Programme.",
           options: [
             "Scrap the Treaty of Versailles / Expand Germany's borders / Demand Lebensraum",
+            'Expand old-age pensions',
             'Nationalise large industries',
             'Share corporate profits with workers',
-            'Expand old-age pensions',
           ],
           answer: "Scrap the Treaty of Versailles / Expand Germany's borders / Demand Lebensraum",
         },
         {
           question: "Name one 'Socialist' policy from the 25-Point Programme.",
           options: [
-            'Scrap the Treaty of Versailles',
-            'Revoke German citizenship for all Jews',
             "Demand Lebensraum to expand Germany's borders",
+            'Revoke German citizenship for all Jews',
+            'Scrap the Treaty of Versailles',
             'Nationalise large industries / Share corporate profits with workers / Expand pensions',
           ],
           answer:
@@ -2428,9 +2428,9 @@ const unitData = {
             'According to the anti-Semitic points in the Programme, who were the only people allowed to be German citizens?',
           options: [
             'Only members of the Nazi Party',
-            'Anyone who fought in the First World War',
-            "Those of 'German blood' / Jews were to be stripped of citizenship",
             'All people born within the borders of Germany',
+            "Those of 'German blood' / Jews were to be stripped of citizenship",
+            'Anyone who fought in the First World War',
           ],
           answer: "Those of 'German blood' / Jews were to be stripped of citizenship",
         },
@@ -2439,71 +2439,71 @@ const unitData = {
           options: [
             'The KPD / Communist Party of Germany',
             "The NSDAP / National Socialist German Workers' Party",
-            'The SA / Sturmabteilung',
             'The SDP / Social Democratic Party',
+            'The SA / Sturmabteilung',
           ],
           answer: "The NSDAP / National Socialist German Workers' Party",
         },
         {
           question:
             'In what year did Hitler force Drexler out and become the absolute leader of the Nazi Party?',
-          options: ['1921', '1919', '1923', '1920'],
+          options: ['1921', '1923', '1919', '1920'],
           answer: '1921',
         },
         {
           question:
             "Who was appointed as the Nazi Party's first full-time administrator to organise their new Munich headquarters?",
-          options: ['Rudolf Hess', 'Ernst Röhm', 'Hermann Göring', 'Rudolf Schüssler'],
+          options: ['Hermann Göring', 'Ernst Röhm', 'Rudolf Hess', 'Rudolf Schüssler'],
           answer: 'Rudolf Schüssler',
         },
         {
           question: 'What was the name of the official Nazi newspaper purchased in December 1920?',
           options: [
             'Munich Post',
-            'Das Reich',
-            "Völkischer Beobachter / People's Observer",
             'Der Stürmer',
+            "Völkischer Beobachter / People's Observer",
+            'Das Reich',
           ],
           answer: "Völkischer Beobachter / People's Observer",
         },
         {
           question:
             'Name the famous First World War fighter pilot who joined the early Nazi Party, giving it credibility.',
-          options: ['Julius Streicher', 'Hermann Göring', 'Rudolf Hess', 'Ernst Röhm'],
+          options: ['Rudolf Hess', 'Hermann Göring', 'Ernst Röhm', 'Julius Streicher'],
           answer: 'Hermann Göring',
         },
         {
           question: "What ancient symbol did Hitler adopt and redesign to act as the party's logo?",
-          options: ['The Iron Cross', 'The Eagle', 'The Swastika', 'The Fascio'],
+          options: ['The Eagle', 'The Iron Cross', 'The Swastika', 'The Fascio'],
           answer: 'The Swastika',
         },
         {
           question: "What does the abbreviation 'SA' stand for?",
           options: [
-            'Stosstrupp / Shock Troop',
-            'Sturmabteilung / Storm Detachment',
             'Schutzstaffel / Protection Squadron',
+            'Sturmabteilung / Storm Detachment',
+            'Stosstrupp / Shock Troop',
             'Sicherheitsdienst / Security Service',
           ],
           answer: 'Sturmabteilung / Storm Detachment',
         },
         {
           question: 'What was the common nickname for the SA, based on their uniforms?',
-          options: ['The Freikorps', 'The Stormtroopers', 'The Blackshirts', 'The Brownshirts'],
+          options: ['The Blackshirts', 'The Stormtroopers', 'The Freikorps', 'The Brownshirts'],
           answer: 'The Brownshirts',
         },
         {
           question: 'Who was the ex-army captain placed in command of the SA?',
-          options: ['Ernst Röhm', 'Heinrich Himmler', 'Hermann Göring', 'Anton Drexler'],
+          options: ['Ernst Röhm', 'Anton Drexler', 'Heinrich Himmler', 'Hermann Göring'],
           answer: 'Ernst Röhm',
         },
         {
           question: 'What were the two main roles of the SA?',
           options: [
-            'To collect taxes and manage party finances',
+            'To write propaganda and publish the party newspaper',
             'To protect Nazi speakers and to violently disrupt the meetings of political opponents',
             'To spy on the army and report back to Hitler',
-            'To write propaganda and publish the party newspaper',
+            'To collect taxes and manage party finances',
           ],
           answer:
             'To protect Nazi speakers and to violently disrupt the meetings of political opponents',
@@ -2513,26 +2513,26 @@ const unitData = {
             'Why did Hitler form his own personal bodyguard, the Stosstrupp (Shock Troop), out of the SA?',
           options: [
             'Because the regular SA were rowdy and more loyal to Ernst Röhm than they were to Hitler',
+            'Because the SA was too small to protect him effectively',
             'Because he wanted a unit that only consisted of former fighter pilots',
             'Because the SA uniforms were too expensive to produce',
-            'Because the SA was too small to protect him effectively',
           ],
           answer:
             'Because the regular SA were rowdy and more loyal to Ernst Röhm than they were to Hitler',
         },
         {
           question: 'By the end of 1922, roughly how many members did the Nazi Party have?',
-          options: ['50,000', '5,000', '100,000', '20,000'],
+          options: ['100,000', '5,000', '50,000', '20,000'],
           answer: '20,000',
         },
         {
           question:
             'Which specific German region and city was the early Nazi Party entirely based in?',
           options: [
-            'Rhineland / Cologne',
-            'Prussia / Berlin',
-            'Bavaria / Munich',
             'Saxony / Dresden',
+            'Rhineland / Cologne',
+            'Bavaria / Munich',
+            'Prussia / Berlin',
           ],
           answer: 'Bavaria / Munich',
         },
@@ -2822,7 +2822,7 @@ const unitData = {
       quiz: [
         {
           question: 'In what month and year did the Munich Putsch take place?',
-          options: ['November 1923', 'January 1919', 'August 1924', 'October 1929'],
+          options: ['November 1923', 'August 1924', 'January 1919', 'October 1929'],
           answer: 'November 1923',
           q: 'In what month and year did the Munich Putsch take place?',
           a: 'November 1923',
@@ -2856,14 +2856,14 @@ const unitData = {
         {
           question:
             'How many Nazis were killed in the firefight with the police during the Putsch?',
-          options: ['600', '2', '100', '14'],
+          options: ['100', '600', '2', '14'],
           answer: '14',
           q: 'How many Nazis were killed in the firefight with the police during the Putsch?',
           a: '14',
         },
         {
           question: 'What serious criminal charge was Hitler put on trial for in early 1924?',
-          options: ['Theft of government property', 'High Treason', 'Terrorism', 'Murder'],
+          options: ['Terrorism', 'High Treason', 'Murder', 'Theft of government property'],
           answer: 'High Treason',
           q: 'What serious criminal charge was Hitler put on trial for in early 1924?',
           a: 'High Treason',
@@ -2872,8 +2872,8 @@ const unitData = {
           question: 'Why did Hitler receive such a lenient sentence (5 years) at his trial?',
           options: [
             'The Weimar judges were right-wing and sympathised with his nationalist, anti-Weimar views',
-            "He successfully convinced the jury he wasn't there",
             'He bribed the judges with money stolen from the beer hall',
+            "He successfully convinced the jury he wasn't there",
             'The judges were terrified of the SA storming the courtroom',
           ],
           answer:
@@ -2883,7 +2883,7 @@ const unitData = {
         },
         {
           question: 'How long did Hitler actually spend in Landsberg Prison?',
-          options: ['Three years', 'Five years', 'Nine months', 'Two weeks'],
+          options: ['Two weeks', 'Three years', 'Nine months', 'Five years'],
           answer: 'Nine months',
           q: 'How long did Hitler actually spend in Landsberg Prison?',
           a: 'Nine months',
@@ -2913,8 +2913,8 @@ const unitData = {
           options: [
             'Master race - the need to purify German blood',
             "Living space - the need to expand Germany's borders into Eastern Europe",
-            'Living standards - the need to improve factory conditions',
             'Breathing room - the need to eliminate the Treaty of Versailles',
+            'Living standards - the need to improve factory conditions',
           ],
           answer: "Living space - the need to expand Germany's borders into Eastern Europe",
           q: "What does the term 'Lebensraum' mean, as outlined in Mein Kampf?",
@@ -2925,9 +2925,9 @@ const unitData = {
             'What major strategic lesson did Hitler learn from the failure of the Munich Putsch?',
           options: [
             'That the Nazis had to win power legally through elections, not through violent revolution',
+            'That they should have attacked Berlin first instead of Munich',
             'That Ludendorff was a traitor who should be assassinated',
             'That the SA was too weak and needed to be replaced immediately',
-            'That they should have attacked Berlin first instead of Munich',
           ],
           answer:
             'That the Nazis had to win power legally through elections, not through violent revolution',
@@ -2945,10 +2945,10 @@ const unitData = {
         {
           question: "What was the 'Führerprinzip'?",
           options: [
-            'The Future Principle: the idea that children are the key to the Reich',
-            'The Leadership Principle: the idea that the party must be run by one absolute dictator',
-            'The Fighting Principle: the idea that violence is necessary for political change',
             'The Freedom Principle: the idea that all Germans should be equal',
+            'The Leadership Principle: the idea that the party must be run by one absolute dictator',
+            'The Future Principle: the idea that children are the key to the Reich',
+            'The Fighting Principle: the idea that violence is necessary for political change',
           ],
           answer:
             'The Leadership Principle: the idea that the party must be run by one absolute dictator',
@@ -2966,8 +2966,8 @@ const unitData = {
           question: 'Why did Hitler create the SS when he already had the SA?',
           options: [
             'He needed an elite bodyguard that was unquestionably loyal only to him, unlike the SA which was loyal to Ernst Röhm',
-            'Because the SA had all been arrested after the Munich Putsch',
             'Because the SA were seen as too weak and cowardly',
+            'Because the SA had all been arrested after the Munich Putsch',
             'Because the SA was disbanded under the terms of the Dawes Plan',
           ],
           answer:
@@ -2977,14 +2977,14 @@ const unitData = {
         },
         {
           question: 'Who was the ruthless leader who eventually took command of the SS?',
-          options: ['Ernst Röhm', 'Hermann Göring', 'Joseph Goebbels', 'Heinrich Himmler'],
+          options: ['Hermann Göring', 'Ernst Röhm', 'Joseph Goebbels', 'Heinrich Himmler'],
           answer: 'Heinrich Himmler',
           q: 'Who was the ruthless leader who eventually took command of the SS?',
           a: 'Heinrich Himmler',
         },
         {
           question: 'In what year was the Bamberg Conference held?',
-          options: ['1933', '1924', '1926', '1929'],
+          options: ['1929', '1933', '1926', '1924'],
           answer: '1926',
           q: 'In what year was the Bamberg Conference held?',
           a: '1926',
@@ -2992,14 +2992,14 @@ const unitData = {
         {
           question:
             "Which key figure did Hitler successfully win over from the 'socialist' wing at the Bamberg Conference?",
-          options: ['Gregor Strasser', 'Joseph Goebbels', 'Ernst Röhm', 'Heinrich Himmler'],
+          options: ['Ernst Röhm', 'Joseph Goebbels', 'Gregor Strasser', 'Heinrich Himmler'],
           answer: 'Joseph Goebbels',
           q: "Which key figure did Hitler successfully win over from the 'socialist' wing at the Bamberg Conference?",
           a: 'Joseph Goebbels',
         },
         {
           question: 'How many seats did the Nazi Party win in the 1928 Reichstag elections?',
-          options: ['32 seats', '107 seats', '230 seats', '12 seats'],
+          options: ['32 seats', '230 seats', '107 seats', '12 seats'],
           answer: '12 seats',
           q: 'How many seats did the Nazi Party win in the 1928 Reichstag elections?',
           a: '12 seats',
@@ -3009,9 +3009,9 @@ const unitData = {
             'Which two groups in society did the Nazis shift their propaganda to target in the late 1920s when they failed to win over industrial workers?',
           options: [
             'Farmers and the lower-middle classes / Mittelstand',
+            'Women and children',
             'Big business owners and bankers',
             'Aristocrats and the army',
-            'Women and children',
           ],
           answer: 'Farmers and the lower-middle classes / Mittelstand',
           q: 'Which two groups in society did the Nazis shift their propaganda to target in the late 1920s when they failed to win over industrial workers?',
@@ -3466,7 +3466,7 @@ const unitData = {
       quiz: [
         {
           question: 'In what month and year did the Wall Street Crash occur?',
-          options: ['November 1923', 'January 1933', 'August 1924', 'October 1929'],
+          options: ['August 1924', 'January 1933', 'November 1923', 'October 1929'],
           answer: 'October 1929',
           q: 'In what month and year did the Wall Street Crash occur?',
           a: 'October 1929',
@@ -3474,10 +3474,10 @@ const unitData = {
         {
           question: "Why was Germany's economy hit so hard by the Wall Street Crash?",
           options: [
-            'Because the German government had invested all of its gold reserves in the US stock market',
-            'Because their economy relied heavily on US loans from the Dawes Plan, which American banks suddenly demanded back',
             'Because all German factories were physically destroyed by the ensuing riots',
+            'Because their economy relied heavily on US loans from the Dawes Plan, which American banks suddenly demanded back',
             'Because France immediately demanded full payment of all remaining reparations',
+            'Because the German government had invested all of its gold reserves in the US stock market',
           ],
           answer:
             'Because their economy relied heavily on US loans from the Dawes Plan, which American banks suddenly demanded back',
@@ -3494,7 +3494,7 @@ const unitData = {
         {
           question:
             "Which Weimar Chancellor resigned in March 1930 because his 'Grand Coalition' could not agree on how to handle unemployment benefits?",
-          options: ['Hermann Müller', 'Franz von Papen', 'Heinrich Brüning', 'Gustav Stresemann'],
+          options: ['Hermann Müller', 'Gustav Stresemann', 'Franz von Papen', 'Heinrich Brüning'],
           answer: 'Hermann Müller',
           q: "Which Weimar Chancellor resigned in March 1930 because his 'Grand Coalition' could not agree on how to handle unemployment benefits?",
           a: 'Hermann Müller',
@@ -3504,8 +3504,8 @@ const unitData = {
           options: [
             'Adolf Hitler',
             'Heinrich Brüning',
-            'Kurt von Schleicher',
             'Paul von Hindenburg',
+            'Kurt von Schleicher',
           ],
           answer: 'Heinrich Brüning',
           q: 'Who replaced Müller as Chancellor in 1930?',
@@ -3515,9 +3515,9 @@ const unitData = {
           question: 'What bitter nickname was given to Chancellor Brüning by the German public?',
           options: [
             "The 'Hunger Chancellor'",
+            "The 'November Criminal'",
             "The 'Dictator'",
             "The 'Iron Chancellor'",
-            "The 'November Criminal'",
           ],
           answer: "The 'Hunger Chancellor'",
           q: 'What bitter nickname was given to Chancellor Brüning by the German public?',
@@ -3526,8 +3526,8 @@ const unitData = {
         {
           question: 'Why did the public give Brüning this nickname?',
           options: [
-            'Because he deliberately starved communist prisoners',
             "Because he gave all of Germany's food away to France as reparations",
+            'Because he deliberately starved communist prisoners',
             'Because he raised taxes and cut government wages and unemployment benefits',
             'Because he refused to import food from America',
           ],
@@ -3538,7 +3538,7 @@ const unitData = {
         {
           question:
             'Which constitutional clause did Brüning and President Hindenburg use to bypass the Reichstag and rule by decree?',
-          options: ['Article 231', 'The Enabling Act', 'The Dawes Plan', 'Article 48'],
+          options: ['The Enabling Act', 'Article 231', 'The Dawes Plan', 'Article 48'],
           answer: 'Article 48',
           q: 'Which constitutional clause did Brüning and President Hindenburg use to bypass the Reichstag and rule by decree?',
           a: 'Article 48',
@@ -3547,10 +3547,10 @@ const unitData = {
           question:
             'Which extreme left-wing party saw a surge in support from unemployed workers during the Depression?',
           options: [
-            'The Centre Party',
-            'The SPD / Social Democrats',
-            'The KPD / Communist Party',
             'The NSDAP / Nazi Party',
+            'The Centre Party',
+            'The KPD / Communist Party',
+            'The SPD / Social Democrats',
           ],
           answer: 'The KPD / Communist Party',
           q: 'Which extreme left-wing party saw a surge in support from unemployed workers during the Depression?',
@@ -3561,9 +3561,9 @@ const unitData = {
             'Why did wealthy industrialists like Fritz Thyssen and Krupp start giving massive financial backing to the Nazi Party?',
           options: [
             'They were terrified of a Communist takeover where their wealth and factories would be confiscated',
+            'Hitler promised to give them free government land',
             'They wanted to provoke another war with France to boost weapons sales',
             "They strongly believed in Hitler's anti-Semitic policies",
-            'Hitler promised to give them free government land',
           ],
           answer:
             'They were terrified of a Communist takeover where their wealth and factories would be confiscated',
@@ -3572,7 +3572,7 @@ const unitData = {
         },
         {
           question: 'Who did Hitler run against in the 1932 Presidential Election?',
-          options: ['Ernst Thälmann', 'Hermann Müller', 'Heinrich Brüning', 'Paul von Hindenburg'],
+          options: ['Ernst Thälmann', 'Heinrich Brüning', 'Hermann Müller', 'Paul von Hindenburg'],
           answer: 'Paul von Hindenburg',
           q: 'Who did Hitler run against in the 1932 Presidential Election?',
           a: 'Paul von Hindenburg',
@@ -3580,7 +3580,7 @@ const unitData = {
         {
           question:
             'Although he lost, roughly how many votes did Hitler secure in the 1932 Presidential Election?',
-          options: ['5 million votes', '13.4 million votes', '2 million votes', '20 million votes'],
+          options: ['20 million votes', '13.4 million votes', '2 million votes', '5 million votes'],
           answer: '13.4 million votes',
           q: 'Although he lost, roughly how many votes did Hitler secure in the 1932 Presidential Election?',
           a: '13.4 million votes',
@@ -3589,10 +3589,10 @@ const unitData = {
           question:
             'What was the name of the innovative propaganda campaign where Hitler travelled the country by aeroplane?',
           options: [
-            "The 'Skies of the Reich' campaign",
-            "The 'Hitler over Germany' campaign",
             "The 'Eagle of Germany' campaign",
+            "The 'Hitler over Germany' campaign",
             "The 'Flight of the Führer' campaign",
+            "The 'Skies of the Reich' campaign",
           ],
           answer: "The 'Hitler over Germany' campaign",
           q: 'What was the name of the innovative propaganda campaign where Hitler travelled the country by aeroplane?',
@@ -3603,8 +3603,8 @@ const unitData = {
             'What simple, powerful three-word slogan did the Nazis use to appeal to starving, unemployed workers?',
           options: [
             "'Work and Bread'",
-            "'Blood and Iron'",
             "'Peace and Prosperity'",
+            "'Blood and Iron'",
             "'Freedom and Glory'",
           ],
           answer: "'Work and Bread'",
@@ -3626,7 +3626,7 @@ const unitData = {
         },
         {
           question: 'How many members did the SA (Brownshirts) have by 1932?',
-          options: ['100,000', '2 million', '400,000', '1 million'],
+          options: ['1 million', '2 million', '400,000', '100,000'],
           answer: '400,000',
           q: 'How many members did the SA (Brownshirts) have by 1932?',
           a: '400,000',
@@ -3636,9 +3636,9 @@ const unitData = {
             'What was the name of the violent paramilitary wing of the Communist Party that fought the SA in the streets?',
           options: [
             "The Rotfrontkämpferbund / Red Front Fighters' League",
-            'The Stosstrupp',
             'The SS',
             'The Freikorps',
+            'The Stosstrupp',
           ],
           answer: "The Rotfrontkämpferbund / Red Front Fighters' League",
           q: 'What was the name of the violent paramilitary wing of the Communist Party that fought the SA in the streets?',
@@ -3648,10 +3648,10 @@ const unitData = {
           question:
             'Why did the violent street brawls actually help the Nazis win middle-class votes?',
           options: [
-            'Because the police openly joined the SA in every brawl',
-            'Because the middle classes enjoyed watching the violence on the streets',
-            'The disciplined SA marches made the Nazis look like the only force organised and strong enough to crush the communists and restore order',
             'Because the SA successfully assassinated all communist leaders',
+            'Because the police openly joined the SA in every brawl',
+            'The disciplined SA marches made the Nazis look like the only force organised and strong enough to crush the communists and restore order',
+            'Because the middle classes enjoyed watching the violence on the streets',
           ],
           answer:
             'The disciplined SA marches made the Nazis look like the only force organised and strong enough to crush the communists and restore order',
@@ -3675,8 +3675,8 @@ const unitData = {
           question: 'How did the Nazis adapt their propaganda at a local level to maximise votes?',
           options: [
             'They only spoke about anti-Semitism everywhere they went',
-            'They refused to change their message and demanded people agree with them',
             'They completely ignored rural areas and only focused on large cities',
+            'They refused to change their message and demanded people agree with them',
             "They dropped messages that didn't work in specific towns and heavily pushed messages that local people wanted to hear",
           ],
           answer:
@@ -4136,9 +4136,9 @@ const unitData = {
             'Which Chancellor was forced to resign in May 1932 after angering President Hindenburg with his land reform proposals?',
           options: [
             'Heinrich Brüning',
-            'Franz von Papen',
-            'Kurt von Schleicher',
             'Gustav Stresemann',
+            'Kurt von Schleicher',
+            'Franz von Papen',
           ],
           answer: 'Heinrich Brüning',
           q: 'Which Chancellor was forced to resign in May 1932 after angering President Hindenburg with his land reform proposals?',
@@ -4148,10 +4148,10 @@ const unitData = {
           question:
             'What drastic action did Brüning take in 1932 that angered right-wing politicians?',
           options: [
-            'He suspended the Weimar Constitution',
-            'He banned the SA and the SS',
-            'He arrested Adolf Hitler',
             'He banned the Communist Party',
+            'He banned the SA and the SS',
+            'He suspended the Weimar Constitution',
+            'He arrested Adolf Hitler',
           ],
           answer: 'He banned the SA and the SS',
           q: 'What drastic action did Brüning take in 1932 that angered right-wing politicians?',
@@ -4160,14 +4160,14 @@ const unitData = {
         {
           question:
             'What was the name of the small, powerful inner circle of advisors who manipulated the ageing President Hindenburg?',
-          options: ['The Freikorps', 'The Triumvirate', 'The Reichswehr', 'The camarilla'],
+          options: ['The Reichswehr', 'The Freikorps', 'The Triumvirate', 'The camarilla'],
           answer: 'The camarilla',
           q: 'What was the name of the small, powerful inner circle of advisors who manipulated the ageing President Hindenburg?',
           a: 'The camarilla',
         },
         {
           question: 'Who did Hindenburg appoint as Chancellor immediately after Brüning?',
-          options: ['Kurt von Schleicher', 'Adolf Hitler', 'Franz von Papen', 'Hermann Müller'],
+          options: ['Hermann Müller', 'Adolf Hitler', 'Franz von Papen', 'Kurt von Schleicher'],
           answer: 'Franz von Papen',
           q: 'Who did Hindenburg appoint as Chancellor immediately after Brüning?',
           a: 'Franz von Papen',
@@ -4188,7 +4188,7 @@ const unitData = {
         {
           question:
             'How many seats did the Nazi Party win in the July 1932 elections, making them the largest party?',
-          options: ['12 seats', '196 seats', '107 seats', '230 seats'],
+          options: ['107 seats', '12 seats', '196 seats', '230 seats'],
           answer: '230 seats',
           q: 'How many seats did the Nazi Party win in the July 1932 elections, making them the largest party?',
           a: '230 seats',
@@ -4210,9 +4210,9 @@ const unitData = {
           question: 'What insulting term did President Hindenburg use to describe Adolf Hitler?',
           options: [
             'A "Bohemian corporal"',
-            'A "Bavarian peasant"',
-            'An "Austrian traitor"',
             'A "mad dog"',
+            'An "Austrian traitor"',
+            'A "Bavarian peasant"',
           ],
           answer: 'A "Bohemian corporal"',
           q: 'What insulting term did President Hindenburg use to describe Adolf Hitler?',
@@ -4223,9 +4223,9 @@ const unitData = {
             'When Papen called a second election in November 1932, what happened to the Nazi vote?',
           options: [
             'It increased to 250 seats, giving them an absolute majority',
-            'It stayed exactly the same',
-            'It dropped to 196 seats, and the party was running out of money',
             'It collapsed entirely, leaving them with only 12 seats again',
+            'It dropped to 196 seats, and the party was running out of money',
+            'It stayed exactly the same',
           ],
           answer: 'It dropped to 196 seats, and the party was running out of money',
           q: 'When Papen called a second election in November 1932, what happened to the Nazi vote?',
@@ -4236,9 +4236,9 @@ const unitData = {
             'In November 1932, what did wealthy industrialists (like Hjalmar Schacht) send to Hindenburg?',
           options: [
             'A formal petition urging him to appoint Hitler as Chancellor',
-            'A threat to move their factories to France',
             'A massive bribe of two million marks',
             'A letter demanding he ban the Nazi Party',
+            'A threat to move their factories to France',
           ],
           answer: 'A formal petition urging him to appoint Hitler as Chancellor',
           q: 'In November 1932, what did wealthy industrialists (like Hjalmar Schacht) send to Hindenburg?',
@@ -4248,9 +4248,9 @@ const unitData = {
           question:
             'Which army general warned Hindenburg that keeping Papen in power would lead to a civil war?',
           options: [
-            'Erich Ludendorff',
-            'Kurt von Schleicher',
             'Wilhelm Keitel',
+            'Kurt von Schleicher',
+            'Erich Ludendorff',
             'Paul von Lettow-Vorbeck',
           ],
           answer: 'Kurt von Schleicher',
@@ -4259,7 +4259,7 @@ const unitData = {
         },
         {
           question: 'In what month and year did von Schleicher become Chancellor?',
-          options: ['May 1932', 'January 1933', 'October 1929', 'December 1932'],
+          options: ['January 1933', 'May 1932', 'October 1929', 'December 1932'],
           answer: 'December 1932',
           q: 'In what month and year did von Schleicher become Chancellor?',
           a: 'December 1932',
@@ -4268,9 +4268,9 @@ const unitData = {
           question:
             'Who plotted revenge against von Schleicher by secretly meeting with Adolf Hitler?',
           options: [
-            'Heinrich Brüning',
-            'Franz von Papen',
             'Hjalmar Schacht',
+            'Franz von Papen',
+            'Heinrich Brüning',
             'Oskar von Hindenburg',
           ],
           answer: 'Franz von Papen',
@@ -4282,9 +4282,9 @@ const unitData = {
             'What is the historical phrase used to describe the secret deal-making that brought Hitler to power?',
           options: [
             'Backstairs intrigue',
-            'The November Treason',
             'The Shadow Government',
             'The Munich Plot',
+            'The November Treason',
           ],
           answer: 'Backstairs intrigue',
           q: 'What is the historical phrase used to describe the secret deal-making that brought Hitler to power?',
@@ -4294,8 +4294,8 @@ const unitData = {
           question:
             'What position did Franz von Papen demand in the new government in exchange for helping Hitler?',
           options: [
-            'Minister of Defence',
             'Minister of the Interior',
+            'Minister of Defence',
             'President of the Reichstag',
             'Vice-Chancellor',
           ],
@@ -4305,7 +4305,7 @@ const unitData = {
         },
         {
           question: 'On what exact date did Adolf Hitler officially become Chancellor of Germany?',
-          options: ['27 February 1933', '2 August 1934', '30 January 1933', '9 November 1923'],
+          options: ['2 August 1934', '9 November 1923', '30 January 1933', '27 February 1933'],
           answer: '30 January 1933',
           q: 'On what exact date did Adolf Hitler officially become Chancellor of Germany?',
           a: '30 January 1933',
@@ -4314,9 +4314,9 @@ const unitData = {
           question: "How many Nazis were allowed in Hitler's first Cabinet of 12 ministers?",
           options: [
             'Only three: Hitler, Wilhelm Frick, and Hermann Göring',
-            'Six (half the cabinet)',
             'All twelve',
             'None, except for Hitler',
+            'Six (half the cabinet)',
           ],
           answer: 'Only three: Hitler, Wilhelm Frick, and Hermann Göring',
           q: "How many Nazis were allowed in Hitler's first Cabinet of 12 ministers?",
@@ -4339,10 +4339,10 @@ const unitData = {
           question:
             'What famous quote did von Papen say, showing he severely underestimated Hitler?',
           options: [
-            '"The German people will soon wake up from this nightmare"',
+            '"We have hired a clown to run a circus"',
             '"In two months we will have pushed Hitler into a corner so hard that he\'ll be squeaking"',
             '"He is just a passing storm"',
-            '"We have hired a clown to run a circus"',
+            '"The German people will soon wake up from this nightmare"',
           ],
           answer:
             '"In two months we will have pushed Hitler into a corner so hard that he\'ll be squeaking"',
@@ -4352,10 +4352,10 @@ const unitData = {
         {
           question: 'Did Hitler seize the Chancellorship by force, or was he appointed legally?',
           options: [
-            'He assassinated President Hindenburg to take his place',
-            'He seized it by force in a violent revolution',
-            'He was appointed legally / under the rules of the Weimar Constitution',
             'He rigged the 1932 election to win 100% of the vote',
+            'He assassinated President Hindenburg to take his place',
+            'He was appointed legally / under the rules of the Weimar Constitution',
+            'He seized it by force in a violent revolution',
           ],
           answer: 'He was appointed legally / under the rules of the Weimar Constitution',
           q: 'Did Hitler seize the Chancellorship by force, or was he appointed legally?',
@@ -4834,14 +4834,14 @@ const unitData = {
         {
           question:
             'How many communist leaders were arrested immediately after the Reichstag Fire?',
-          options: ['10,000', '400', '4,000', '1,500'],
+          options: ['400', '1,500', '4,000', '10,000'],
           answer: '4,000',
           q: 'How many communist leaders were arrested immediately after the Reichstag Fire?',
           a: '4,000',
         },
         {
           question: 'What percentage of the vote did the Nazis win in the March 1933 election?',
-          options: ['66% / 400 seats', '44% / 288 seats', '55% / 350 seats', '33% / 196 seats'],
+          options: ['55% / 350 seats', '44% / 288 seats', '33% / 196 seats', '66% / 400 seats'],
           answer: '44% / 288 seats',
           q: 'What percentage of the vote did the Nazis win in the March 1933 election?',
           a: '44% / 288 seats',
@@ -4852,8 +4852,8 @@ const unitData = {
           options: [
             'The Enabling Act',
             'The Nuremberg Laws',
-            'The Decree for the Protection of the People',
             'The Law Against the Formation of Parties',
+            'The Decree for the Protection of the People',
           ],
           answer: 'The Enabling Act',
           q: 'What law gave Hitler the power to pass laws without the Reichstag for four years?',
@@ -4863,9 +4863,9 @@ const unitData = {
           question:
             'Which political party did Hitler strike a deal with to ensure the Enabling Act got a two-thirds majority?',
           options: [
-            'The Communist Party (KPD)',
             'The Nationalist Party (DNVP)',
             'The Social Democrats (SPD)',
+            'The Communist Party (KPD)',
             'The Catholic Centre Party / Zentrum',
           ],
           answer: 'The Catholic Centre Party / Zentrum',
@@ -4882,7 +4882,7 @@ const unitData = {
         },
         {
           question: 'In what month and year did Hitler ban all Trade Unions?',
-          options: ['July 1933', 'January 1934', 'May 1933', 'June 1934'],
+          options: ['January 1934', 'July 1933', 'May 1933', 'June 1934'],
           answer: 'May 1933',
           q: 'In what month and year did Hitler ban all Trade Unions?',
           a: 'May 1933',
@@ -4891,8 +4891,8 @@ const unitData = {
           question: 'Why were Trade Unions so dangerous to Hitler?',
           options: [
             'Because they were armed and could start a revolution',
-            'Because they were funded directly by the Soviet Union',
             'Because they had more members than the SA',
+            'Because they were funded directly by the Soviet Union',
             'Because they had the power to coordinate massive strikes and disrupt the economy',
           ],
           answer:
@@ -4903,9 +4903,9 @@ const unitData = {
         {
           question: "In July 1933, what did the 'Law Against the Formation of Parties' achieve?",
           options: [
-            'It banned the Communist Party only',
-            'It banned all other political parties, making Germany a one-party state',
             'It forced all parties to swear an oath to Hitler',
+            'It banned all other political parties, making Germany a one-party state',
+            'It banned the Communist Party only',
             'It banned Jewish people from voting',
           ],
           answer: 'It banned all other political parties, making Germany a one-party state',
@@ -4915,21 +4915,21 @@ const unitData = {
         {
           question:
             'What was the name of the regional state governments that Hitler abolished in January 1934?',
-          options: ['The Länder', 'The Reichswehr', 'The Gauleiters', 'The Bundesrat'],
+          options: ['The Länder', 'The Gauleiters', 'The Reichswehr', 'The Bundesrat'],
           answer: 'The Länder',
           q: 'What was the name of the regional state governments that Hitler abolished in January 1934?',
           a: 'The Länder',
         },
         {
           question: 'By 1934, how many men were in the SA?',
-          options: ['1 million', '5 million', '500,000', '3 million'],
+          options: ['1 million', '500,000', '5 million', '3 million'],
           answer: '3 million',
           q: 'By 1934, how many men were in the SA?',
           a: '3 million',
         },
         {
           question: "Who was the leader of the SA who wanted a 'second revolution'?",
-          options: ['Heinrich Himmler', 'Ernst Röhm', 'Hermann Göring', 'Reinhard Heydrich'],
+          options: ['Heinrich Himmler', 'Ernst Röhm', 'Reinhard Heydrich', 'Hermann Göring'],
           answer: 'Ernst Röhm',
           q: "Who was the leader of the SA who wanted a 'second revolution'?",
           a: 'Ernst Röhm',
@@ -4939,9 +4939,9 @@ const unitData = {
             'Which two powerful groups in Germany hated the SA and pressured Hitler to destroy them?',
           options: [
             'The regular army (Reichswehr) and wealthy industrialists',
+            'The Trade Unions and the Communists',
             'The SS and the Gestapo',
             'The Catholic Church and the middle class',
-            'The Trade Unions and the Communists',
           ],
           answer: 'The regular army (Reichswehr) and wealthy industrialists',
           q: 'Which two powerful groups in Germany hated the SA and pressured Hitler to destroy them?',
@@ -4957,7 +4957,7 @@ const unitData = {
         {
           question:
             'Name the left-wing rival within the Nazi Party who was murdered during the Night of the Long Knives.',
-          options: ['Joseph Goebbels', 'Gregor Strasser', 'Anton Drexler', 'Rudolf Hess'],
+          options: ['Joseph Goebbels', 'Gregor Strasser', 'Rudolf Hess', 'Anton Drexler'],
           answer: 'Gregor Strasser',
           q: 'Name the left-wing rival within the Nazi Party who was murdered during the Night of the Long Knives.',
           a: 'Gregor Strasser',
@@ -4966,10 +4966,10 @@ const unitData = {
           question:
             "Name one of Hitler's old political enemies (not in the Nazi Party) who was murdered during the Night of the Long Knives.",
           options: [
-            'Franz von Papen',
             'Heinrich Brüning',
-            'Kurt von Schleicher or Gustav von Kahr',
             'Paul von Hindenburg',
+            'Kurt von Schleicher or Gustav von Kahr',
+            'Franz von Papen',
           ],
           answer: 'Kurt von Schleicher or Gustav von Kahr',
           q: "Name one of Hitler's old political enemies (not in the Nazi Party) who was murdered during the Night of the Long Knives.",
@@ -4989,8 +4989,8 @@ const unitData = {
           options: [
             'Directly to Adolf Hitler personally, rather than to Germany or the constitution',
             'To the Nazi Party and the Swastika flag',
-            'To the German Republic and its people',
             'To the memory of President Hindenburg',
+            'To the German Republic and its people',
           ],
           answer: 'Directly to Adolf Hitler personally, rather than to Germany or the constitution',
           q: 'Who did the German army swear their new Oath of Allegiance to on the day Hindenburg died?',
@@ -5533,16 +5533,16 @@ const unitData = {
         {
           q: 'Who was the leader of the SS, who eventually took control of all police forces in Germany?',
           a: 'Heinrich Himmler',
-          options: ['Ernst Röhm', 'Hermann Goering', 'Heinrich Himmler', 'Joseph Goebbels'],
+          options: ['Joseph Goebbels', 'Ernst Röhm', 'Heinrich Himmler', 'Hermann Goering'],
         },
         {
           q: "What does the abbreviation 'SD' stand for?",
           a: 'Sicherheitsdienst / Security Service',
           options: [
             'Sicherheitsdienst / Security Service',
-            'Staatspolizei / State Police',
-            'Schutzstaffel / Protection Squadron',
             'Sturmabteilung / Storm Detachment',
+            'Schutzstaffel / Protection Squadron',
+            'Staatspolizei / State Police',
           ],
         },
         {
@@ -5559,8 +5559,8 @@ const unitData = {
           q: 'What was the specific job of the SD?',
           a: 'Intelligence gathering / spying on opponents and keeping index cards on them',
           options: [
-            'Patrolling the streets in uniform to intimidate voters',
             'Guarding the concentration camps',
+            'Patrolling the streets in uniform to intimidate voters',
             'Arresting people in the middle of the night and interrogating them',
             'Intelligence gathering / spying on opponents and keeping index cards on them',
           ],
@@ -5578,7 +5578,7 @@ const unitData = {
         {
           q: "What is the German term for 'Protective Custody', which allowed the Gestapo to arrest people without trial?",
           a: 'Schutzhaft',
-          options: ['Lebensraum', 'Dolchstoß', 'Gleichschaltung', 'Schutzhaft'],
+          options: ['Dolchstoß', 'Gleichschaltung', 'Lebensraum', 'Schutzhaft'],
         },
         {
           q: 'What was the name of the compulsory organisation that all German judges were forced to join?',
@@ -5586,24 +5586,24 @@ const unitData = {
           options: [
             'The National Socialist League for the Maintenance of the Law',
             'The Gestapo Legal Department',
-            'The Reich Judicial Chamber',
             "The People's Court",
+            'The Reich Judicial Chamber',
           ],
         },
         {
           q: 'What was the name of the new court set up in 1934 to hear cases of treason without a jury?',
           a: "The People's Court",
           options: [
-            'The Nuremberg Court',
-            'The Reichstag Tribunal',
-            "The People's Court",
             'The Supreme Court of Justice',
+            'The Nuremberg Court',
+            "The People's Court",
+            'The Reichstag Tribunal',
           ],
         },
         {
           q: 'Name the first concentration camp, opened in Germany in 1933.',
           a: 'Dachau',
-          options: ['Auschwitz', 'Buchenwald', 'Treblinka', 'Dachau'],
+          options: ['Treblinka', 'Buchenwald', 'Auschwitz', 'Dachau'],
         },
         {
           q: 'In the years 1933–39, which specific groups of people made up the vast majority of concentration camp inmates?',
@@ -5618,30 +5618,30 @@ const unitData = {
         {
           q: 'In what month and year did Hitler sign the Concordat with the Catholic Church?',
           a: 'July 1933',
-          options: ['July 1933', 'January 1933', 'November 1938', 'August 1934'],
+          options: ['July 1933', 'November 1938', 'January 1933', 'August 1934'],
         },
         {
           q: 'Under the Concordat, what did the Pope agree to do?',
           a: 'Keep the Catholic Church out of German politics',
           options: [
-            'Support the Nazi Party in all local elections',
-            'Keep the Catholic Church out of German politics',
             'Merge the Catholic Church with the Protestant Reich Church',
+            'Keep the Catholic Church out of German politics',
+            'Support the Nazi Party in all local elections',
             'Allow Catholic schools to teach Nazi Race Studies',
           ],
         },
         {
           q: 'Who was placed in charge of the newly created Ministry of Church Affairs in 1935?',
           a: 'Hanns Kerrl',
-          options: ['Ludwig Müller', 'Hanns Kerrl', 'Dietrich Bonhoeffer', 'Martin Niemöller'],
+          options: ['Martin Niemöller', 'Hanns Kerrl', 'Dietrich Bonhoeffer', 'Ludwig Müller'],
         },
         {
           q: 'Give one example of how Hitler broke the Concordat.',
           a: 'He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests',
           options: [
             'He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests',
-            'He completely banned Catholicism and forced everyone to become Protestant',
             'He forced Catholic priests to wear the swastika during Mass',
+            'He completely banned Catholicism and forced everyone to become Protestant',
             'He ordered the Pope to be arrested during a visit to Berlin',
           ],
         },
@@ -5649,35 +5649,35 @@ const unitData = {
           q: 'What was the title of the angry letter the Pope had smuggled into Germany and read out in 1937?',
           a: "'Mit brennender Sorge' / With Burning Concern",
           options: [
-            "'Mein Kampf' / My Struggle",
+            "'Glaube und Schönheit' / Faith and Beauty",
             "'Dolchstoßlegende' / Stab-in-the-back myth",
             "'Mit brennender Sorge' / With Burning Concern",
-            "'Glaube und Schönheit' / Faith and Beauty",
+            "'Mein Kampf' / My Struggle",
           ],
         },
         {
           q: 'What was the name of the official, Nazified Protestant church set up by the government?',
           a: 'The Reich Church',
           options: [
-            'The Confessional Church',
             'The German Catholic League',
             "The People's Church",
+            'The Confessional Church',
             'The Reich Church',
           ],
         },
         {
           q: "Who was appointed as the 'Reich Bishop' to lead the Nazified Protestant church?",
           a: 'Ludwig Müller',
-          options: ['Hanns Kerrl', 'Martin Niemöller', 'Dietrich Bonhoeffer', 'Ludwig Müller'],
+          options: ['Dietrich Bonhoeffer', 'Hanns Kerrl', 'Martin Niemöller', 'Ludwig Müller'],
         },
         {
           q: 'What did members of the Reich Church proudly call themselves?',
           a: "'German Christians'",
           options: [
-            "'The Pure Christians'",
+            "'Aryan Believers'",
             "'Hitler's Flock'",
             "'German Christians'",
-            "'Aryan Believers'",
+            "'The Pure Christians'",
           ],
         },
         {
@@ -5686,8 +5686,8 @@ const unitData = {
           options: [
             'The Reich Church',
             'The Confessional Church',
-            'The Edelweiss Church',
             'The Free German Church',
+            'The Edelweiss Church',
           ],
         },
         {
@@ -5695,9 +5695,9 @@ const unitData = {
           a: 'Martin Niemöller or Dietrich Bonhoeffer',
           options: [
             'Martin Niemöller or Dietrich Bonhoeffer',
+            'Bernhard Rust',
             'Hanns Kerrl',
             'Ludwig Müller',
-            'Bernhard Rust',
           ],
         },
       ],
@@ -6016,14 +6016,14 @@ const unitData = {
         {
           q: 'Who was appointed as the Minister of Public Enlightenment and Propaganda in 1933?',
           a: 'Joseph Goebbels',
-          options: ['Joseph Goebbels', 'Hermann Goering', 'Albert Speer', 'Heinrich Himmler'],
+          options: ['Joseph Goebbels', 'Heinrich Himmler', 'Hermann Goering', 'Albert Speer'],
         },
         {
           q: "What was the 'Editor's Law' of 1933?",
           a: 'A law making newspaper editors personally responsible for anything printed in their papers',
           options: [
-            'A law making it illegal to own a printing press',
             'A law shutting down all newspapers except the Nazi daily paper',
+            'A law making it illegal to own a printing press',
             'A law making newspaper editors personally responsible for anything printed in their papers',
             'A law forcing editors to write positive reviews of Nazi films',
           ],
@@ -6032,9 +6032,9 @@ const unitData = {
           q: 'What was the name of the Nazi publishing house that bought up 82% of all German newspapers by 1939?',
           a: 'The Eher Verlag',
           options: [
-            'Der Stürmer',
             'The Volksempfänger',
             'The Reich Chamber of Press',
+            'Der Stürmer',
             'The Eher Verlag',
           ],
         },
@@ -6042,10 +6042,10 @@ const unitData = {
           q: 'What happened in Berlin and other university towns in May 1933?',
           a: 'Massive book burnings of works by Jewish and communist authors',
           options: [
-            'A huge strike by university professors protesting the Nazis',
-            'Massive book burnings of works by Jewish and communist authors',
             'The first compulsory Hitler Youth rallies',
+            'Massive book burnings of works by Jewish and communist authors',
             'Jewish students were banned from attending university classes',
+            'A huge strike by university professors protesting the Nazis',
           ],
         },
         {
@@ -6058,8 +6058,8 @@ const unitData = {
           a: 'So Germans could not pick up foreign broadcasts like the BBC',
           options: [
             'To prevent people from communicating with the Edelweiss Pirates',
-            'Because cheap materials were used to keep the price down',
             'So they would break quickly, forcing people to buy replacements',
+            'Because cheap materials were used to keep the price down',
             'So Germans could not pick up foreign broadcasts like the BBC',
           ],
         },
@@ -6067,21 +6067,21 @@ const unitData = {
           q: "How did the Nazis ensure people listened to Hitler's speeches even if they weren't at home?",
           a: 'They put loudspeakers in streets and sounded sirens in factories to stop work',
           options: [
-            'They forced employers to pay workers extra if they listened to speeches',
+            'They delivered printed transcripts of the speech to every house within an hour',
             'They made it illegal to walk on the streets while Hitler was talking',
             'They put loudspeakers in streets and sounded sirens in factories to stop work',
-            'They delivered printed transcripts of the speech to every house within an hour',
+            'They forced employers to pay workers extra if they listened to speeches',
           ],
         },
         {
           q: 'In which city did the Nazis hold their massive, carefully choreographed annual rallies?',
           a: 'Nuremberg',
-          options: ['Munich', 'Nuremberg', 'Weimar', 'Berlin'],
+          options: ['Berlin', 'Nuremberg', 'Weimar', 'Munich'],
         },
         {
           q: "Who was the architect who designed the 'Cathedral of Light' for the Nuremberg Rallies?",
           a: 'Albert Speer',
-          options: ['Heinrich Himmler', 'Joseph Goebbels', 'Albert Speer', 'Walter Gropius'],
+          options: ['Joseph Goebbels', 'Heinrich Himmler', 'Albert Speer', 'Walter Gropius'],
         },
         {
           q: "What was the name of the famous female film director who made 'Triumph of the Will'?",
@@ -6101,22 +6101,22 @@ const unitData = {
         {
           q: 'In what year did Berlin host the Olympic Games?',
           a: '1936',
-          options: ['1938', '1939', '1933', '1936'],
+          options: ['1933', '1938', '1939', '1936'],
         },
         {
           q: 'Give one example of how the Nazis hid their true nature during the Olympics.',
           a: "They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers",
           options: [
-            'They allowed the Communist Party to campaign during the Games',
-            'They allowed all Jewish athletes to compete for the German team',
-            "They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers",
             'Hitler refused to attend the games to avoid controversy',
+            'They allowed the Communist Party to campaign during the Games',
+            "They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers",
+            'They allowed all Jewish athletes to compete for the German team',
           ],
         },
         {
           q: 'Who was the African-American athlete who won four gold medals at the 1936 Olympics?',
           a: 'Jesse Owens',
-          options: ['Jesse Owens', 'Carl Lewis', 'Jackie Robinson', 'Muhammad Ali'],
+          options: ['Jesse Owens', 'Jackie Robinson', 'Carl Lewis', 'Muhammad Ali'],
         },
         {
           q: 'How many gold medals did Germany win at the 1936 Olympics, allowing Goebbels to claim it was a domestic triumph?',
@@ -6127,20 +6127,20 @@ const unitData = {
           q: 'What organisation did all artists, writers, and musicians have to join to get work?',
           a: 'The Reich Chamber of Culture',
           options: [
-            'The German Labour Front',
+            'The Eher Verlag',
             'The Reich Chamber of Culture',
             "The National Socialist Teachers' League",
-            'The Eher Verlag',
+            'The German Labour Front',
           ],
         },
         {
           q: 'What was the Nazi term for modern, abstract art that they completely banned?',
           a: 'Degenerate Art / Entartete Kunst',
           options: [
-            'Jewish Art',
-            'Degenerate Art / Entartete Kunst',
-            'Bolshevik Art',
             'Weimar Art',
+            'Degenerate Art / Entartete Kunst',
+            'Jewish Art',
+            'Bolshevik Art',
           ],
         },
         {
@@ -6148,9 +6148,9 @@ const unitData = {
           a: 'To deliberately display banned modern art so the German public could mock and laugh at it',
           options: [
             'To deliberately display banned modern art so the German public could mock and laugh at it',
-            'To burn all the modern paintings in a massive public bonfire',
             'To sell off the banned paintings to wealthy foreign buyers to raise money',
             'To showcase the new heroic, realistic style of art the Nazis approved of',
+            'To burn all the modern paintings in a massive public bonfire',
           ],
         },
         {
@@ -6158,15 +6158,15 @@ const unitData = {
           a: 'To make the individual feel small and the Nazi State feel eternal and powerful',
           options: [
             'Because they needed massive spaces to hold all the new factory workers',
-            'Because classical Roman architecture was the only style they knew how to design',
-            'To make the individual feel small and the Nazi State feel eternal and powerful',
             'To compete with the skyscrapers being built in New York',
+            'To make the individual feel small and the Nazi State feel eternal and powerful',
+            'Because classical Roman architecture was the only style they knew how to design',
           ],
         },
         {
           q: "Which genre of music did the Nazis ban because they racistly viewed it as 'black music'?",
           a: 'Jazz',
-          options: ['Classical', 'Folk music', 'Opera', 'Jazz'],
+          options: ['Folk music', 'Opera', 'Classical', 'Jazz'],
         },
       ],
       utility_starters: null,
@@ -6496,21 +6496,21 @@ const unitData = {
         {
           q: 'What is the term for low-level, non-violent opposition, such as telling an anti-Nazi joke or working slowly?',
           a: 'Passive Resistance',
-          options: ['Passive Resistance', 'Subversion', 'Active Resistance', 'Gleichschaltung'],
+          options: ['Passive Resistance', 'Active Resistance', 'Subversion', 'Gleichschaltung'],
         },
         {
           q: 'Roughly how many Germans were sent to concentration camps for political offenses between 1933 and 1939?',
           a: '1.3 million',
-          options: ['100,000', '6 million', '500,000', '1.3 million'],
+          options: ['100,000', '500,000', '6 million', '1.3 million'],
         },
         {
           q: 'What was the name of the secret intelligence reports smuggled out of Germany by the exiled SPD?',
           a: 'The Sopade reports',
           options: [
-            'The Edelweiss reports',
-            'The Sopade reports',
-            'The Red Orchestra files',
             'The Munich reports',
+            'The Sopade reports',
+            'The Edelweiss reports',
+            'The Red Orchestra files',
           ],
         },
         {
@@ -6518,19 +6518,19 @@ const unitData = {
           a: 'Sabotaging machinery / absenteeism / working deliberately slowly',
           options: [
             'Going on nationwide strikes / protesting in the streets',
-            'Assassinating their factory managers / setting fire to buildings',
-            'Sabotaging machinery / absenteeism / working deliberately slowly',
             'Printing anti-Nazi newspapers inside the factories / holding union meetings',
+            'Sabotaging machinery / absenteeism / working deliberately slowly',
+            'Assassinating their factory managers / setting fire to buildings',
           ],
         },
         {
           q: 'Who was the German carpenter who planted a time bomb in a Munich beer hall in November 1939?',
           a: 'Georg Elser',
           options: [
-            'Dietrich Bonhoeffer',
+            'Martin Niemöller',
             'Georg Elser',
             'Marinus van der Lubbe',
-            'Martin Niemöller',
+            'Dietrich Bonhoeffer',
           ],
         },
         {
@@ -6548,9 +6548,9 @@ const unitData = {
           a: 'General Ludwig Beck',
           options: [
             'General Ludwig Beck',
-            'General Erich Ludendorff',
-            'General Paul von Hindenburg',
             'General Kurt von Schleicher',
+            'General Paul von Hindenburg',
+            'General Erich Ludendorff',
           ],
         },
         {
@@ -6566,16 +6566,16 @@ const unitData = {
         {
           q: 'In what year did membership of the Hitler Youth become legally compulsory?',
           a: '1936',
-          options: ['1936', '1933', '1939', '1938'],
+          options: ['1936', '1938', '1939', '1933'],
         },
         {
           q: 'Why did some teenagers begin to hate the Hitler Youth by the late 1930s?',
           a: 'It became too strict, militaristic, and focused on boring military drills',
           options: [
-            'It was run entirely by strict school teachers they hated',
             "They weren't allowed to play any sports at all",
-            'It became too strict, militaristic, and focused on boring military drills',
             'They were forced to attend church every Sunday',
+            'It became too strict, militaristic, and focused on boring military drills',
+            'It was run entirely by strict school teachers they hated',
           ],
         },
         {
@@ -6594,8 +6594,8 @@ const unitData = {
           options: [
             'The Red Orchestra / The Kreisau Circle',
             'The Navajos / The Roving Dudes / The Kittelbach Pirates',
-            'The Black Hand / The Wandervogel',
             'The Munich Swingers / The Berlin Jazz Boys',
+            'The Black Hand / The Wandervogel',
           ],
         },
         {
@@ -6604,8 +6604,8 @@ const unitData = {
           options: [
             'A red star',
             'The white edelweiss flower',
-            'A broken swastika',
             'A small silver skull',
+            'A broken swastika',
           ],
         },
         {
@@ -6613,8 +6613,8 @@ const unitData = {
           a: 'They went on hikes / wore checked shirts / beat up Hitler Youth members',
           options: [
             'They went on hikes / wore checked shirts / beat up Hitler Youth members',
-            'They smuggled Jewish families out of the country / forged passports',
             'They bombed Gestapo headquarters / assassinated Nazi officials',
+            'They smuggled Jewish families out of the country / forged passports',
             'They secretly broadcast anti-Nazi radio programs from the woods',
           ],
         },
@@ -6622,9 +6622,9 @@ const unitData = {
           q: 'What was the name of the middle-class youth opposition group found in cities like Berlin and Hamburg?',
           a: 'The Swing Youth',
           options: [
+            'The Edelweiss Pirates',
             'The Wandervogel',
             'The White Rose Group',
-            'The Edelweiss Pirates',
             'The Swing Youth',
           ],
         },
@@ -6652,20 +6652,20 @@ const unitData = {
           q: 'Why did the Nazis hate Jazz music?',
           a: "Because of its African-American origins, they viewed it as racially inferior / 'black music'",
           options: [
-            'Because it was invented by Jewish composers',
-            "Because of its African-American origins, they viewed it as racially inferior / 'black music'",
-            'Because the instruments were too expensive to produce in Germany',
             'Because the lyrics were usually anti-government',
+            "Because of its African-American origins, they viewed it as racially inferior / 'black music'",
+            'Because it was invented by Jewish composers',
+            'Because the instruments were too expensive to produce in Germany',
           ],
         },
         {
           q: 'How did the girls in the Swing Youth rebel against the Nazi ideal of German womanhood?',
           a: "They wore makeup and fashionable clothes, rather than the natural 'peasant' look",
           options: [
-            'They publicly burned their BDM uniforms in the street',
+            'They refused to ever get married or have children',
             'They shaved their heads and dressed entirely in black',
             "They wore makeup and fashionable clothes, rather than the natural 'peasant' look",
-            'They refused to ever get married or have children',
+            'They publicly burned their BDM uniforms in the street',
           ],
         },
         {
@@ -7007,16 +7007,16 @@ const unitData = {
           options: [
             'Kraft, Kultur, Kampf',
             'Kinder, Küche, Kirche',
-            'Krankheit, Kontrolle, Kreuz',
             'Krieg, Kunst, Kaiser',
+            'Krankheit, Kontrolle, Kreuz',
           ],
         },
         {
           q: 'Translate those three words into English.',
           a: 'Children, Kitchen, Church',
           options: [
-            'Sickness, Control, Cross',
             'Strength, Culture, Struggle',
+            'Sickness, Control, Cross',
             'Children, Kitchen, Church',
             'War, Art, Emperor',
           ],
@@ -7026,8 +7026,8 @@ const unitData = {
           a: 'The Law for the Encouragement of Marriage',
           options: [
             'The Law for the Protection of German Blood',
-            'The Nuremberg Laws',
             'The Four Year Plan',
+            'The Nuremberg Laws',
             'The Law for the Encouragement of Marriage',
           ],
         },
@@ -7036,8 +7036,8 @@ const unitData = {
           a: 'She had to quit her job',
           options: [
             'She had to quit her job',
-            'She had to swear loyalty to Hitler',
             'She had to have blonde hair and blue eyes',
+            'She had to swear loyalty to Hitler',
             'She had to join the BDM',
           ],
         },
@@ -7049,17 +7049,17 @@ const unitData = {
         {
           q: "How many children did a woman have to give birth to in order to win the Gold Mother's Cross?",
           a: '8 or more',
-          options: ['6', '8 or more', '4', '10'],
+          options: ['10', '8 or more', '6', '4'],
         },
         {
           q: "What did Hitler Youth members have to do if they saw a woman wearing a Gold Mother's Cross?",
           a: 'Salute her',
-          options: ['Give her money', 'Sing the Nazi anthem', 'Carry her shopping', 'Salute her'],
+          options: ['Sing the Nazi anthem', 'Give her money', 'Carry her shopping', 'Salute her'],
         },
         {
           q: "What was the name of the SS 'Spring of Life' breeding programme started by Heinrich Himmler in 1935?",
           a: 'Lebensborn',
-          options: ['Gleichschaltung', 'Lebensraum', 'Lebensborn', 'Kraft durch Freude'],
+          options: ['Kraft durch Freude', 'Gleichschaltung', 'Lebensborn', 'Lebensraum'],
         },
         {
           q: 'What did the 1933 Sterilisation Law allow the government to do?',
@@ -7085,16 +7085,16 @@ const unitData = {
           q: 'Why were women heavily discouraged from slimming/dieting?',
           a: 'The Nazis believed heavier women had easier childbirths/produced healthier babies',
           options: [
-            'There was a national food shortage',
-            'The Nazis believed heavier women had easier childbirths/produced healthier babies',
             'Hitler personally hated thin women',
+            'The Nazis believed heavier women had easier childbirths/produced healthier babies',
             'It was considered an American capitalist trend',
+            'There was a national food shortage',
           ],
         },
         {
           q: "Who was the 'Reich Women's Leader' in charge of all female organisations?",
           a: 'Gertrud Scholtz-Klink',
-          options: ['Leni Riefenstahl', 'Sophie Scholl', 'Gertrud Scholtz-Klink', 'Eva Braun'],
+          options: ['Eva Braun', 'Leni Riefenstahl', 'Gertrud Scholtz-Klink', 'Sophie Scholl'],
         },
         {
           q: 'What was the difference between the NSF and the DFW?',
@@ -7116,9 +7116,9 @@ const unitData = {
           a: 'Female teachers, doctors, and civil servants',
           options: [
             'Female teachers, doctors, and civil servants',
-            'Female nurses and midwives',
             'Female factory workers and farmers',
             'Female shop assistants and waitresses',
+            'Female nurses and midwives',
           ],
         },
         {
@@ -7135,9 +7135,9 @@ const unitData = {
           q: 'What economic plan, introduced by Göring in 1936, forced the Nazis to change their minds about women working?',
           a: 'The Four Year Plan for rearmament',
           options: [
-            'The New Plan for trade',
-            'The Dawes Plan',
             'The Young Plan',
+            'The Dawes Plan',
+            'The New Plan for trade',
             'The Four Year Plan for rearmament',
           ],
         },
@@ -7145,20 +7145,20 @@ const unitData = {
           q: 'Why did the Four Year Plan mean women had to go back to work?',
           a: 'Men were joining the army, creating a massive labor shortage in factories',
           options: [
-            'Women were protesting in the streets for their jobs back',
-            'Men were joining the army, creating a massive labor shortage in factories',
             'Hitler realised women were better at building weapons',
+            'Men were joining the army, creating a massive labor shortage in factories',
             'The government ran out of money for marriage loans',
+            'Women were protesting in the streets for their jobs back',
           ],
         },
         {
           q: "What was the 'Compulsory Duty Year' introduced in 1937?",
           a: 'A policy forcing young women to work on farms or in factories',
           options: [
-            'A policy forcing young women to attend university',
-            'A policy forcing young women to join the army',
-            'A policy forcing young women to work on farms or in factories',
             'A policy forcing young women to marry SS officers',
+            'A policy forcing young women to attend university',
+            'A policy forcing young women to work on farms or in factories',
+            'A policy forcing young women to join the army',
           ],
         },
         {
@@ -7167,8 +7167,8 @@ const unitData = {
           options: [
             'It went up, rising from 11.6 million to 14.6 million',
             'It dropped to zero by 1939',
-            'It went down, falling from 14.6 million to 11.6 million',
             'It stayed exactly the same',
+            'It went down, falling from 14.6 million to 11.6 million',
           ],
         },
       ],
@@ -7492,8 +7492,8 @@ const unitData = {
           options: [
             'The Gestapo Education Wing',
             "The National Socialist Teachers' League / NSLB",
-            'The German Labour Front / DAF',
             "The Reich Teachers' Chamber",
+            'The German Labour Front / DAF',
           ],
         },
         {
@@ -7501,9 +7501,9 @@ const unitData = {
           a: 'They were sacked or reported to the Gestapo',
           options: [
             'They were sacked or reported to the Gestapo',
-            'They were forced to join the army instead',
-            'They were fined 1,000 marks',
             'They were sent to re-education camps in Switzerland',
+            'They were fined 1,000 marks',
+            'They were forced to join the army instead',
           ],
         },
         {
@@ -7514,16 +7514,16 @@ const unitData = {
         {
           q: 'What percentage of the school timetable was eventually taken up by Physical Education (PE)?',
           a: '15%',
-          options: ['5%', '50%', '30%', '15%'],
+          options: ['30%', '50%', '5%', '15%'],
         },
         {
           q: 'Give an example of how mathematics was used for propaganda.',
           a: 'Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories',
           options: [
-            'Teaching students to calculate the interest on Jewish bank accounts',
-            'Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories',
             'Banning algebra because it was invented in the Middle East',
+            'Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories',
             "Making students memorize the exact dates of all of Hitler's speeches",
+            'Teaching students to calculate the interest on Jewish bank accounts',
           ],
         },
         {
@@ -7531,22 +7531,22 @@ const unitData = {
           a: "Hitler's autobiography, Mein Kampf",
           options: [
             "Hitler's autobiography, Mein Kampf",
-            'The Protocols of the Elders of Zion',
-            'The Communist Manifesto',
             "Grimm's Fairy Tales",
+            'The Communist Manifesto',
+            'The Protocols of the Elders of Zion',
           ],
         },
         {
           q: 'In what year were Jewish children banned from attending German state schools entirely?',
           a: '1938',
-          options: ['1935', '1939', '1938', '1933'],
+          options: ['1933', '1935', '1938', '1939'],
         },
         {
           q: 'Name one of the two types of elite boarding schools set up for the most promising Aryan boys.',
           a: 'Napolas or Adolf Hitler Schools',
           options: [
-            'Schutzstaffel Boarding Schools',
             'Reich Leadership Schools',
+            'Schutzstaffel Boarding Schools',
             'Hitler Youth Academies',
             'Napolas or Adolf Hitler Schools',
           ],
@@ -7554,25 +7554,25 @@ const unitData = {
         {
           q: 'Who was appointed by Hitler in 1933 as the Reich Youth Leader?',
           a: 'Baldur von Schirach',
-          options: ['Heinrich Himmler', 'Ernst Röhm', 'Baldur von Schirach', 'Joseph Goebbels'],
+          options: ['Ernst Röhm', 'Joseph Goebbels', 'Baldur von Schirach', 'Heinrich Himmler'],
         },
         {
           q: 'What was the name of the youth group for boys aged 14-18?',
           a: 'Hitlerjugend / HJ / Hitler Youth',
           options: [
             'Hitlerjugend / HJ / Hitler Youth',
-            'Sturmabteilung / SA',
-            'Wandervogel',
             'Deutsches Jungvolk / DJ',
+            'Wandervogel',
+            'Sturmabteilung / SA',
           ],
         },
         {
           q: 'Give two examples of typical Hitler Youth activities for boys.',
           a: 'Rifle shooting, map reading, hiking, military drill',
           options: [
-            'Reading poetry and painting landscapes',
-            'Rifle shooting, map reading, hiking, military drill',
             'Cooking, sewing, and nursing',
+            'Rifle shooting, map reading, hiking, military drill',
+            'Reading poetry and painting landscapes',
             'Learning foreign languages and studying abroad',
           ],
         },
@@ -7580,10 +7580,10 @@ const unitData = {
           q: 'What was the ultimate goal for boys in the Hitler Youth?',
           a: 'To become soldiers for the army',
           options: [
-            'To become university professors',
-            'To become wealthy businessmen',
-            'To become soldiers for the army',
             'To become politicians in the Reichstag',
+            'To become university professors',
+            'To become soldiers for the army',
+            'To become wealthy businessmen',
           ],
         },
         {
@@ -7591,18 +7591,18 @@ const unitData = {
           a: 'Bund Deutscher Mädel / BDM / League of German Maidens',
           options: [
             'Bund Deutscher Mädel / BDM / League of German Maidens',
-            "National Socialist Women's League",
-            'Jungmädelbund / JM',
             'Faith and Beauty Society',
+            'Jungmädelbund / JM',
+            "National Socialist Women's League",
           ],
         },
         {
           q: 'What was the ultimate goal for girls in the BDM?',
           a: 'To become healthy, racially pure mothers',
           options: [
-            'To become factory managers during wartime',
-            'To become nurses for the army on the front lines',
             'To become female politicians and leaders',
+            'To become nurses for the army on the front lines',
+            'To become factory managers during wartime',
             'To become healthy, racially pure mothers',
           ],
         },
@@ -7610,9 +7610,9 @@ const unitData = {
           q: 'What was the name of the society created in 1938 for young women aged 17-21 to stop them forgetting their domestic training?',
           a: 'The Faith and Beauty Society',
           options: [
-            'The Lebensborn Sisterhood',
-            'The Faith and Beauty Society',
             "The Reich Women's Guild",
+            'The Faith and Beauty Society',
+            'The Lebensborn Sisterhood',
             'The League of German Mothers',
           ],
         },
@@ -7620,8 +7620,8 @@ const unitData = {
           q: 'How did the Nazis use the youth movements to undermine families?',
           a: 'They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime',
           options: [
-            "They paid children a salary so they wouldn't need their parents' money",
             'They forced children to move out of their homes at age 10',
+            "They paid children a salary so they wouldn't need their parents' money",
             'They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime',
             'They banned parents from speaking to their children about politics',
           ],
@@ -7629,7 +7629,7 @@ const unitData = {
         {
           q: 'In what year did the Hitler Youth Law make the youth movements effectively mandatory?',
           a: '1936',
-          options: ['1935', '1936', '1933', '1939'],
+          options: ['1933', '1936', '1939', '1935'],
         },
         {
           q: 'Roughly how many members were in the Nazi youth movements by 1939?',
@@ -7641,8 +7641,8 @@ const unitData = {
           a: 'It became compulsory, too strict, and focused on boring military drill instead of fun',
           options: [
             'It became compulsory, too strict, and focused on boring military drill instead of fun',
-            'They were banned from wearing uniforms',
             'The camping trips were too expensive for working class families',
+            'They were banned from wearing uniforms',
             'It was run by the Catholic Church',
           ],
         },
@@ -7977,7 +7977,7 @@ const unitData = {
         {
           q: 'What was the official unemployment figure reported by the Nazis in 1939?',
           a: 'Approximately 300,000',
-          options: ['1.5 million', 'Approximately 300,000', 'Zero', '6 million'],
+          options: ['6 million', 'Approximately 300,000', 'Zero', '1.5 million'],
         },
         {
           q: 'What do the initials RAD stand for in English?',
@@ -7985,14 +7985,14 @@ const unitData = {
           options: [
             'National Labour Service',
             'National Agricultural Duty',
-            'Reich Aviation Department',
             'Reich Army Division',
+            'Reich Aviation Department',
           ],
         },
         {
           q: 'In what year did the RAD become compulsory for all young men aged 18–25?',
           a: '1935',
-          options: ['1938', '1939', '1933', '1935'],
+          options: ['1939', '1938', '1933', '1935'],
         },
         {
           q: 'How long did young men have to serve in the RAD?',
@@ -8019,9 +8019,9 @@ const unitData = {
           a: 'Jews and Women',
           options: [
             'Jews and Women',
-            'Farmers and Soldiers',
             'SS officers and Gestapo agents',
             'Teachers and Doctors',
+            'Farmers and Soldiers',
           ],
         },
         {
@@ -8029,35 +8029,35 @@ const unitData = {
           a: 'From 100,000 to 1.4 million men',
           options: [
             'From 100,000 to 1.4 million men',
+            'From 10,000 to 100,000 men',
             'From 500,000 to 3 million men',
             'From 1 million to 5 million men',
-            'From 10,000 to 100,000 men',
           ],
         },
         {
           q: "Who was the Minister of Economics responsible for the 'New Plan' (1934-1937)?",
           a: 'Hjalmar Schacht',
-          options: ['Hermann Goering', 'Hjalmar Schacht', 'Joseph Goebbels', 'Robert Ley'],
+          options: ['Robert Ley', 'Hjalmar Schacht', 'Hermann Goering', 'Joseph Goebbels'],
         },
         {
           q: "Who was put in charge of the 'Four Year Plan' in 1936?",
           a: 'Hermann Goering',
-          options: ['Albert Speer', 'Heinrich Himmler', 'Hjalmar Schacht', 'Hermann Goering'],
+          options: ['Heinrich Himmler', 'Albert Speer', 'Hjalmar Schacht', 'Hermann Goering'],
         },
         {
           q: 'What was the ultimate goal of the Four Year Plan?',
           a: 'To prepare the German economy for war within four years',
           options: [
-            "To pay back all of Germany's war debts",
-            'To colonise Eastern Europe',
-            'To prepare the German economy for war within four years',
             'To completely eliminate unemployment',
+            "To pay back all of Germany's war debts",
+            'To prepare the German economy for war within four years',
+            'To colonise Eastern Europe',
           ],
         },
         {
           q: 'What is the term for the economic policy of self-sufficiency?',
           a: 'Autarky',
-          options: ['Gleichschaltung', 'Ersatz', 'Lebensraum', 'Autarky'],
+          options: ['Gleichschaltung', 'Lebensraum', 'Ersatz', 'Autarky'],
         },
         {
           q: 'What is the German word for the artificial substitute goods developed to achieve self-sufficiency?',
@@ -8068,10 +8068,10 @@ const unitData = {
           q: 'Give an example of an Ersatz good.',
           a: 'Making rubber or oil from coal',
           options: [
-            'Making weapons from scrap metal',
-            'Making clothes from paper',
-            'Making rubber or oil from coal',
             'Making bread from sawdust',
+            'Making weapons from scrap metal',
+            'Making rubber or oil from coal',
+            'Making clothes from paper',
           ],
         },
         {
@@ -8085,22 +8085,22 @@ const unitData = {
           options: [
             'The German Labour Front / DAF',
             'National Labour Service / RAD',
-            'Strength Through Joy / KdF',
             'Beauty of Labour / SdA',
+            'Strength Through Joy / KdF',
           ],
         },
         {
           q: 'Who was the leader of the DAF?',
           a: 'Robert Ley',
-          options: ['Hjalmar Schacht', 'Robert Ley', 'Albert Speer', 'Hermann Goering'],
+          options: ['Albert Speer', 'Robert Ley', 'Hermann Goering', 'Hjalmar Schacht'],
         },
         {
           q: 'What did Strength Through Joy (KdF) provide for workers?',
           a: 'Cheap, subsidised leisure activities like theatre tickets and cruises',
           options: [
             'Free housing and healthcare',
-            'Better working conditions in factories',
             'Higher wages and shorter hours',
+            'Better working conditions in factories',
             'Cheap, subsidised leisure activities like theatre tickets and cruises',
           ],
         },
@@ -8113,10 +8113,10 @@ const unitData = {
           q: 'Why was the Volkswagen scheme a massive scam?',
           a: 'Production shifted to military vehicles in 1939; no one got a car and no money was refunded',
           options: [
-            'The cars were badly built and broke down immediately',
-            'Only Nazi Party officials were allowed to buy them',
-            'Production shifted to military vehicles in 1939; no one got a car and no money was refunded',
             'The factory was never actually built',
+            'The cars were badly built and broke down immediately',
+            'Production shifted to military vehicles in 1939; no one got a car and no money was refunded',
+            'Only Nazi Party officials were allowed to buy them',
           ],
         },
         {
@@ -8135,28 +8135,28 @@ const unitData = {
           options: [
             'From 43 hours to 49 hours',
             'It actually decreased to 40 hours',
-            'From 50 hours to 60 hours',
             'From 35 hours to 40 hours',
+            'From 50 hours to 60 hours',
           ],
         },
         {
           q: 'Which phrase describes the tension between military spending and consumer goods?',
           a: "'Guns versus Butter'",
           options: [
-            "'Strength Through Joy'",
+            "'Bread and Work'",
             "'Guns versus Butter'",
             "'Blood and Soil'",
-            "'Bread and Work'",
+            "'Strength Through Joy'",
           ],
         },
         {
           q: "Did 'real wages' (purchasing power) for the average worker improve by 1939?",
           a: 'No, because food prices rose faster than their wages',
           options: [
-            'Yes, they were much richer than before 1933',
-            'No, because food prices rose faster than their wages',
-            'Yes, because taxes were completely abolished',
             'No, because all wages were paid in Ersatz money',
+            'No, because food prices rose faster than their wages',
+            'Yes, they were much richer than before 1933',
+            'Yes, because taxes were completely abolished',
           ],
         },
       ],
@@ -8490,20 +8490,20 @@ const unitData = {
         {
           q: "What twisted biological theory underpinned Hitler's racial ideology?",
           a: 'Social Darwinism',
-          options: ['Capitalism', 'Eugenics', 'Social Darwinism', 'Marxism'],
+          options: ['Eugenics', 'Marxism', 'Social Darwinism', 'Capitalism'],
         },
         {
           q: "What did the term 'Untermenschen' mean?",
           a: 'Sub-humans',
-          options: ['Master Race', 'Traitors', 'Super-humans', 'Sub-humans'],
+          options: ['Super-humans', 'Master Race', 'Traitors', 'Sub-humans'],
         },
         {
           q: "Give two examples of groups the Nazis considered 'Asocials'.",
           a: 'Homosexuals, vagrants, alcoholics',
           options: [
             'Homosexuals, vagrants, alcoholics',
-            'Trade unionists and teachers',
             'Communists and Social Democrats',
+            'Trade unionists and teachers',
             'Jewish people and Roma',
           ],
         },
@@ -8511,45 +8511,45 @@ const unitData = {
           q: 'What was the name of the 1933 law that allowed the government to surgically prevent disabled people from having children?',
           a: 'The Law for the Prevention of Hereditarily Diseased Offspring',
           options: [
-            'The Nuremberg Laws',
             'The Law for the Protection of German Blood',
             'The Sterilisation Act',
+            'The Nuremberg Laws',
             'The Law for the Prevention of Hereditarily Diseased Offspring',
           ],
         },
         {
           q: 'Roughly how many people were forcibly sterilised under this law?',
           a: '400,000',
-          options: ['400,000', '50,000', '10,000', '1.5 million'],
+          options: ['400,000', '10,000', '1.5 million', '50,000'],
         },
         {
           q: 'What was the T4 programme introduced in 1939?',
           a: 'A secret state euthanasia programme killing disabled babies and children',
           options: [
-            'A programme to breed racially pure Aryan children',
-            'A secret state euthanasia programme killing disabled babies and children',
-            'A secret programme to build the atomic bomb',
             'The code name for the invasion of Poland',
+            'A secret state euthanasia programme killing disabled babies and children',
+            'A programme to breed racially pure Aryan children',
+            'A secret programme to build the atomic bomb',
           ],
         },
         {
           q: 'Where were hundreds of Roma and Sinti forced to live ahead of the 1936 Berlin Olympics?',
           a: 'The Marzahn internment camp',
           options: [
-            'The Warsaw Ghetto',
-            'The Munich Olympic Village',
-            'The Marzahn internment camp',
             'Auschwitz concentration camp',
+            'The Warsaw Ghetto',
+            'The Marzahn internment camp',
+            'The Munich Olympic Village',
           ],
         },
         {
           q: 'Why were homosexual men targeted by the Nazis?',
           a: 'They did not fit the traditional family ideal and did not produce children for the Reich',
           options: [
-            "They were considered a threat to Hitler's leadership",
             'They refused to join the army',
-            'They did not fit the traditional family ideal and did not produce children for the Reich',
             'They were usually communists',
+            'They did not fit the traditional family ideal and did not produce children for the Reich',
+            "They were considered a threat to Hitler's leadership",
           ],
         },
         {
@@ -8560,84 +8560,84 @@ const unitData = {
         {
           q: 'In what month and year did the SA lead a one-day boycott of Jewish shops and businesses?',
           a: 'April 1933',
-          options: ['September 1935', 'April 1933', 'January 1933', 'November 1938'],
+          options: ['September 1935', 'April 1933', 'November 1938', 'January 1933'],
         },
         {
           q: 'What 1933 law resulted in Jewish teachers, judges, and government workers losing their jobs?',
           a: 'The Civil Service Act',
           options: [
             'The Nuremberg Laws',
-            'The Law against the Overcrowding of German Schools',
             'The Enabling Act',
+            'The Law against the Overcrowding of German Schools',
             'The Civil Service Act',
           ],
         },
         {
           q: 'In what year were the Nuremberg Laws passed?',
           a: '1935',
-          options: ['1933', '1939', '1938', '1935'],
+          options: ['1938', '1939', '1933', '1935'],
         },
         {
           q: "What did the 'Reich Citizenship Law' do?",
           a: 'Stripped Jewish people of their German citizenship and the right to vote',
           options: [
             'Stripped Jewish people of their German citizenship and the right to vote',
-            'Banned marriage between Jews and Aryans',
             'Banned Jewish people from leaving Germany',
             'Forced all Jewish people to wear the Star of David',
+            'Banned marriage between Jews and Aryans',
           ],
         },
         {
           q: "What did the 'Law for the Protection of German Blood and Honour' forbid?",
           a: 'Marriage and sexual relations between Jews and Aryans',
           options: [
-            'Jewish people attending German state schools',
-            'Marriage and sexual relations between Jews and Aryans',
             'Jewish people working as doctors or lawyers',
+            'Marriage and sexual relations between Jews and Aryans',
             'Jewish people owning businesses',
+            'Jewish people attending German state schools',
           ],
         },
         {
           q: 'In October 1938, what was stamped on the passports of all Jewish people?',
           a: "A large red letter 'J'",
           options: [
-            'A yellow Star of David',
             "The word 'Untermenschen'",
-            "A large red letter 'J'",
             'A black swastika',
+            "A large red letter 'J'",
+            'A yellow Star of David',
           ],
         },
         {
           q: 'What middle names were Jewish men and women forced to adopt in 1938?',
           a: 'Israel for men, Sarah for women',
           options: [
-            'Jacob for men, Ruth for women',
-            'David for men, Rachel for women',
-            'Israel for men, Sarah for women',
             'Abraham for men, Mary for women',
+            'Jacob for men, Ruth for women',
+            'Israel for men, Sarah for women',
+            'David for men, Rachel for women',
           ],
         },
         {
           q: 'What is the exact date of Kristallnacht?',
           a: '9-10 November 1938',
-          options: ['9 November 1923', '9-10 November 1938', '1-2 September 1939', '30 June 1934'],
+          options: ['9 November 1923', '9-10 November 1938', '30 June 1934', '1-2 September 1939'],
         },
         {
           q: "Who orchestrated Kristallnacht to win Hitler's favour?",
           a: 'Joseph Goebbels',
-          options: ['Joseph Goebbels', 'Hermann Goering', 'Reinhard Heydrich', 'Heinrich Himmler'],
+          options: ['Joseph Goebbels', 'Heinrich Himmler', 'Hermann Goering', 'Reinhard Heydrich'],
         },
         {
           q: 'How many Jewish men were arrested and sent to concentration camps following Kristallnacht?',
           a: '30,000',
-          options: ['100,000', '10,000', '50,000', '30,000'],
+          options: ['10,000', '50,000', '100,000', '30,000'],
         },
         {
           q: 'According to Gestapo and Sopade reports, why were many ordinary Germans disgusted by Kristallnacht?',
           a: 'They hated the public disorder and the wasteful destruction of property',
           options: [
-            'They were secretly Jewish sympathisers',
             'They were worried about international retaliation',
+            'They were secretly Jewish sympathisers',
             'They hated the public disorder and the wasteful destruction of property',
             'They were angry that the SA was gaining too much power',
           ],
@@ -8645,21 +8645,21 @@ const unitData = {
         {
           q: 'Who did the Nazi government blame for the destruction of Kristallnacht?',
           a: 'The Jewish community',
-          options: ['Communist agitators', 'The SA', 'British spies', 'The Jewish community'],
+          options: ['Communist agitators', 'British spies', 'The SA', 'The Jewish community'],
         },
         {
           q: 'What was the exact fine placed on the Jewish community to pay for the damage?',
           a: '1 billion marks',
-          options: ['1 billion marks', '500,000 marks', '2 billion marks', '100 million marks'],
+          options: ['1 billion marks', '100 million marks', '500,000 marks', '2 billion marks'],
         },
         {
           q: "What does the term 'Aryanisation' mean in the context of 1938-1939?",
           a: 'The forced transfer of Jewish businesses and property to Aryans',
           options: [
-            'The process of proving your racial purity to the SS',
-            'The forced transfer of Jewish businesses and property to Aryans',
             'The introduction of Race Studies in schools',
+            'The forced transfer of Jewish businesses and property to Aryans',
             'The renaming of streets and cities to sound more German',
+            'The process of proving your racial purity to the SS',
           ],
         },
         {
@@ -8667,9 +8667,9 @@ const unitData = {
           a: 'The Reich Office for Jewish Emigration',
           options: [
             'The Gestapo',
-            'The SD',
-            'The Reich Office for Jewish Emigration',
             'The Einsatzgruppen',
+            'The Reich Office for Jewish Emigration',
+            'The SD',
           ],
         },
         {
@@ -8677,9 +8677,9 @@ const unitData = {
           a: 'To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas',
           options: [
             'To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas',
-            'To oversee the creation of Jewish ghettos in Poland',
             'To transport Jewish people to concentration camps',
             'To negotiate trade deals with other countries',
+            'To oversee the creation of Jewish ghettos in Poland',
           ],
         },
       ],

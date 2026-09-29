@@ -538,8 +538,8 @@ export const unitData = {
           options: [
             'David Lloyd George',
             'Lord Horatio Kitchener',
-            'Winston Churchill',
             'Herbert Asquith',
+            'Winston Churchill',
           ],
           answer: 'Lord Horatio Kitchener',
           a: 'Lord Horatio Kitchener',
@@ -551,9 +551,9 @@ export const unitData = {
             'What was the nickname given to battalions of friends, neighbours, and workmates who enlisted together on the promise of serving side by side?',
           q: 'What was the nickname given to battalions of friends, neighbours, and workmates who enlisted together on the promise of serving side by side?',
           options: [
+            'The Iron Brigades',
             'Kitchener’s Guards',
             'The Territorial Legions',
-            'The Iron Brigades',
             'Pals Battalions',
           ],
           answer: 'Pals Battalions',
@@ -566,9 +566,9 @@ export const unitData = {
           q: 'Which Hampshire regiment battalions were known locally as the "Pompey Pals"?',
           options: [
             'The 14th and 15th Battalions of the Hampshire Regiment',
-            'The 7th and 8th Southampton Rifles',
-            'The 1st and 2nd Royal Marines',
             'The 10th Isle of Wight Volunteers',
+            'The 1st and 2nd Royal Marines',
+            'The 7th and 8th Southampton Rifles',
           ],
           answer: 'The 14th and 15th Battalions of the Hampshire Regiment',
           a: 'The 14th and 15th Battalions of the Hampshire Regiment',
@@ -580,9 +580,9 @@ export const unitData = {
             'What catastrophic casualty rate did the 1st Pompey Pals suffer at the Somme (Hamel sector) on 3 September 1916?',
           q: 'What catastrophic casualty rate did the 1st Pompey Pals suffer at the Somme (Hamel sector) on 3 September 1916?',
           options: [
-            '50 casualties out of 1,000 men',
             'Over 950 casualties out of 1,000 men',
             'Zero casualties because the attack was cancelled',
+            '50 casualties out of 1,000 men',
             '457 casualties out of 587 men who went over the top',
           ],
           answer: '457 casualties out of 587 men who went over the top',
@@ -609,7 +609,7 @@ export const unitData = {
           question:
             'What popular pro-war poet compared the First World War to a sporting contest in the poem "Who’s for the Game?"?',
           q: 'What popular pro-war poet compared the First World War to a sporting contest in the poem "Who’s for the Game?"?',
-          options: ['Wilfred Owen', 'Siegfried Sassoon', 'Jessie Pope', 'Rupert Brooke'],
+          options: ['Rupert Brooke', 'Siegfried Sassoon', 'Jessie Pope', 'Wilfred Owen'],
           answer: 'Jessie Pope',
           a: 'Jessie Pope',
           explanation:
@@ -619,7 +619,7 @@ export const unitData = {
           question:
             'Which famous war poet wrote "Dulce et Decorum Est" to bitterly attack Jessie Pope’s romanticized pro-war poetry?',
           q: 'Which famous war poet wrote "Dulce et Decorum Est" to bitterly attack Jessie Pope’s romanticized pro-war poetry?',
-          options: ['Robert Graves', 'Wilfred Owen', 'Rudyard Kipling', 'John McCrae'],
+          options: ['Rudyard Kipling', 'Wilfred Owen', 'Robert Graves', 'John McCrae'],
           answer: 'Wilfred Owen',
           a: 'Wilfred Owen',
           explanation:
@@ -630,8 +630,8 @@ export const unitData = {
             "Beyond patriotic propaganda, what pragmatic economic benefits ('the King’s Shilling') motivated many impoverished working-class men to volunteer in 1914?",
           q: "Beyond patriotic propaganda, what pragmatic economic benefits ('the King’s Shilling') motivated many impoverished working-class men to volunteer in 1914?",
           options: [
-            'An exemption from paying any domestic taxes for life',
             'A guaranteed seat in the House of Commons',
+            'An exemption from paying any domestic taxes for life',
             'A promise of free farmland in France after the war',
             'Guaranteed regular pay ("the King’s Shilling"), warm clothing, three meals a day, and sturdy leather boots',
           ],
@@ -646,8 +646,8 @@ export const unitData = {
             'Beyond domestic economic pressure, what moral outrage over international law convinced hundreds of thousands of British volunteers to enlist in 1914?',
           q: 'Beyond domestic economic pressure, what moral outrage over international law convinced hundreds of thousands of British volunteers to enlist in 1914?',
           options: [
-            'Fear of an immediate French naval invasion of London',
             'A desire to colonize Germany and seize Berlin’s gold reserves',
+            'Fear of an immediate French naval invasion of London',
             'Genuine moral outrage over the German invasion of neutral Belgium ("the Rape of Belgium") and defense of small nations',
             'A religious crusade to convert European populations to Protestantism',
           ],
@@ -672,10 +672,10 @@ export const unitData = {
             'Approximately how many voluntary recruits had joined the British military by the end of September 1914 during the "Rush to the Colours"?',
           q: 'Approximately how many voluntary recruits had joined the British military by the end of September 1914 during the "Rush to the Colours"?',
           options: [
-            'Over 5 million volunteers',
-            'Over 750,000 volunteers',
             'Barely 25,000 volunteers',
+            'Over 750,000 volunteers',
             'Exactly 150,000 volunteers',
+            'Over 5 million volunteers',
           ],
           answer: 'Over 750,000 volunteers',
           a: 'Over 750,000 volunteers',
@@ -688,8 +688,8 @@ export const unitData = {
           q: 'Which prominent northern politician and later Director-General of Recruiting pioneered the concept of civic battalions in Liverpool?',
           options: [
             'Sir Edward Carson',
-            'Sir Douglas Haig',
             'David Lloyd George',
+            'Sir Douglas Haig',
             'Lord Derby (Edward Stanley)',
           ],
           answer: 'Lord Derby (Edward Stanley)',
@@ -718,10 +718,10 @@ export const unitData = {
             'Which retired British admiral founded the Order of the White Feather in Folkestone in August 1914 to shame men into enlisting?',
           q: 'Which retired British admiral founded the Order of the White Feather in Folkestone in August 1914 to shame men into enlisting?',
           options: [
-            'Admiral David Beatty',
             'Admiral Sir John Jellicoe',
-            'Admiral Charles Penrose Fitzgerald',
             'Admiral Sir John Fisher',
+            'Admiral Charles Penrose Fitzgerald',
+            'Admiral David Beatty',
           ],
           answer: 'Admiral Charles Penrose Fitzgerald',
           a: 'Admiral Charles Penrose Fitzgerald',
@@ -733,10 +733,10 @@ export const unitData = {
             'In Wilfred Owen’s famous poem "Dulce et Decorum Est", what Latin phrase from Horace does he brand as "The old Lie"?',
           q: 'In Wilfred Owen’s famous poem "Dulce et Decorum Est", what Latin phrase from Horace does he brand as "The old Lie"?',
           options: [
-            '"Veni, vidi, vici" (I came, I saw, I conquered)',
+            '"Aut vincere aut mori" (Either conquer or die)',
             '"Dulce et decorum est pro patria mori" (It is sweet and fitting to die for one’s country)',
             '"Si vis pacem, para bellum" (If you want peace, prepare for war)',
-            '"Aut vincere aut mori" (Either conquer or die)',
+            '"Veni, vidi, vici" (I came, I saw, I conquered)',
           ],
           answer:
             '"Dulce et decorum est pro patria mori" (It is sweet and fitting to die for one’s country)',
@@ -749,8 +749,8 @@ export const unitData = {
             'What term describes the intense civilian peer pressure, patriotic fervor, and community expectation that compelled young men to enlist in 1914?',
           q: 'What term describes the intense civilian peer pressure, patriotic fervor, and community expectation that compelled young men to enlist in 1914?',
           options: [
-            'Laissez-faire mobilization',
             'Cosmopolitan pacifism',
+            'Laissez-faire mobilization',
             'Passive resistance',
             'Social jingoism and community coercion',
           ],
@@ -764,9 +764,9 @@ export const unitData = {
             'What physical requirement did British Army recruitment boards initially enforce in August 1914, which was drastically lowered as casualty lists mounted?',
           q: 'What physical requirement did British Army recruitment boards initially enforce in August 1914, which was drastically lowered as casualty lists mounted?',
           options: [
-            'Flawless eyesight without any corrective spectacles',
-            'A minimum height requirement of 5 feet 8 inches (later lowered to 5 feet 3 inches)',
             'A mandatory university degree in classical languages',
+            'A minimum height requirement of 5 feet 8 inches (later lowered to 5 feet 3 inches)',
+            'Flawless eyesight without any corrective spectacles',
             'Ownership of land worth at least £500',
           ],
           answer:
@@ -780,10 +780,10 @@ export const unitData = {
             'Why do social historians challenge the traditional myth that the British public in August 1914 was swept up in hysterical "war enthusiasm"?',
           q: 'Why do social historians challenge the traditional myth that the British public in August 1914 was swept up in hysterical "war enthusiasm"?',
           options: [
-            'The British public was entirely pacifist and rioted against the government',
             'Nobody in Britain knew that war had been declared until December 1914',
-            'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
             'Every single British newspaper opposed the war and refused to print news',
+            'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
+            'The British public was entirely pacifist and rioted against the government',
           ],
           answer:
             'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
@@ -797,9 +797,9 @@ export const unitData = {
           q: 'What major demographic group suffered the highest proportional officer casualty rates during the early campaigns of 1914–1915?',
           options: [
             'Junior subalterns (lieutenants and second lieutenants) recruited from elite public schools and universities',
-            'Naval officers stationed on home dockyard duty in Portsmouth',
-            'Cabinet ministers and members of the House of Lords',
             'Senior staff generals residing in châteaux behind the lines',
+            'Cabinet ministers and members of the House of Lords',
+            'Naval officers stationed on home dockyard duty in Portsmouth',
           ],
           answer:
             'Junior subalterns (lieutenants and second lieutenants) recruited from elite public schools and universities',
@@ -1397,9 +1397,9 @@ export const unitData = {
           q: 'Why were frontline trenches constructed in an intricate zig-zag or traverse pattern rather than straight lines?',
           options: [
             'To prevent enfilading machine-gun fire down the trench and contain artillery blast shockwaves',
+            'Because soldiers did not possess straight measuring ropes',
             'To make it easier for horses and cavalry charges to navigate the trench',
             'To allow rainwater to drain directly into underground rivers',
-            'Because soldiers did not possess straight measuring ropes',
           ],
           answer:
             'To prevent enfilading machine-gun fire down the trench and contain artillery blast shockwaves',
@@ -1422,10 +1422,10 @@ export const unitData = {
             'Which weapon was responsible for approximately 60% of all combat casualties on the Western Front?',
           q: 'Which weapon was responsible for approximately 60% of all combat casualties on the Western Front?',
           options: [
-            'The Lee-Enfield rifle',
-            'Heavy Artillery',
-            'Poison gas',
             'The Vickers machine gun',
+            'Heavy Artillery',
+            'The Lee-Enfield rifle',
+            'Poison gas',
           ],
           answer: 'Heavy Artillery',
           a: 'Heavy Artillery',
@@ -1437,9 +1437,9 @@ export const unitData = {
             'At which battle in April 1915 did the German Army first deploy large-scale lethal chlorine gas warfare?',
           q: 'At which battle in April 1915 did the German Army first deploy large-scale lethal chlorine gas warfare?',
           options: [
+            'The Battle of Verdun',
             'The Battle of Loos',
             'The First Battle of the Marne',
-            'The Battle of Verdun',
             'The Second Battle of Ypres',
           ],
           answer: 'The Second Battle of Ypres',
@@ -1469,8 +1469,8 @@ export const unitData = {
           options: [
             'German troops survived unharmed in deep concrete dugouts, and many shells were duds that failed to cut wire',
             'British shells were made of wood and caused zero damage',
-            'British artillery accidentally fired entirely in the wrong direction',
             'The German army had completely evacuated the Somme days before',
+            'British artillery accidentally fired entirely in the wrong direction',
           ],
           answer:
             'German troops survived unharmed in deep concrete dugouts, and many shells were duds that failed to cut wire',
@@ -1516,8 +1516,8 @@ export const unitData = {
           options: [
             'The Hundred Days Offensive',
             'The Spring Offensive',
-            'The Nivelle Offensive',
             'The Gallipoli Campaign',
+            'The Nivelle Offensive',
           ],
           answer: 'The Hundred Days Offensive',
           a: 'The Hundred Days Offensive',
@@ -1529,9 +1529,9 @@ export const unitData = {
             'What were the three standard parallel trench lines that composed a British defensive sector on the Western Front?',
           q: 'What were the three standard parallel trench lines that composed a British defensive sector on the Western Front?',
           options: [
-            'The Machine-gun trench, Cavalry trench, and Kitchen trench',
             'The Outer trench, Middle trench, and City trench',
             'The Moat, Bastion, and Redoubt',
+            'The Machine-gun trench, Cavalry trench, and Kitchen trench',
             'The Frontline (fire) trench, Support trench, and Reserve trench',
           ],
           answer: 'The Frontline (fire) trench, Support trench, and Reserve trench',
@@ -1574,7 +1574,7 @@ export const unitData = {
           question:
             'Which blistering chemical agent, first deployed by Germany at Third Ypres (Passchendaele) in July 1917, burned skin and lingered in soil for weeks?',
           q: 'Which blistering chemical agent, first deployed by Germany at Third Ypres (Passchendaele) in July 1917, burned skin and lingered in soil for weeks?',
-          options: ['Cyanide gas', 'Phosgene gas', 'Chlorine gas', 'Mustard gas (Yperite)'],
+          options: ['Phosgene gas', 'Cyanide gas', 'Chlorine gas', 'Mustard gas (Yperite)'],
           answer: 'Mustard gas (Yperite)',
           a: 'Mustard gas (Yperite)',
           explanation:
@@ -1586,9 +1586,9 @@ export const unitData = {
           q: 'Which British Commander-in-Chief was appointed in December 1915, orchestrating the massive campaigns at the Somme and Passchendaele?',
           options: [
             'Field Marshal Sir Douglas Haig',
+            'General Sir Horace Smith-Dorrien',
             'General Sir William Robertson',
             'Field Marshal Lord Kitchener',
-            'General Sir Horace Smith-Dorrien',
           ],
           answer: 'Field Marshal Sir Douglas Haig',
           a: 'Field Marshal Sir Douglas Haig',
@@ -1600,10 +1600,10 @@ export const unitData = {
             'Why did British artillery fail to cut the dense German barbed wire entanglements prior to the infantry attack on 1 July 1916?',
           q: 'Why did British artillery fail to cut the dense German barbed wire entanglements prior to the infantry attack on 1 July 1916?',
           options: [
-            'The artillery shells had no gunpowder inside them',
-            'German troops had replaced the barbed wire with rubber ropes',
-            'Gunners fired shrapnel shells instead of high explosives, which lifted and tangled the wire rather than severing it, and one-third of British shells were duds',
             'British artillery guns were forbidden from firing at wire under the Geneva Convention',
+            'The artillery shells had no gunpowder inside them',
+            'Gunners fired shrapnel shells instead of high explosives, which lifted and tangled the wire rather than severing it, and one-third of British shells were duds',
+            'German troops had replaced the barbed wire with rubber ropes',
           ],
           answer:
             'Gunners fired shrapnel shells instead of high explosives, which lifted and tangled the wire rather than severing it, and one-third of British shells were duds',
@@ -1616,10 +1616,10 @@ export const unitData = {
             'What revolutionary new armored weapon was deployed in combat for the first time in world history at Flers-Courcelette on the Somme in September 1916?',
           q: 'What revolutionary new armored weapon was deployed in combat for the first time in world history at Flers-Courcelette on the Somme in September 1916?',
           options: [
-            'The self-propelled howitzer',
-            'The tank (British Mark I)',
-            'The half-track personnel carrier',
             'The armored car',
+            'The tank (British Mark I)',
+            'The self-propelled howitzer',
+            'The half-track personnel carrier',
           ],
           answer: 'The tank (British Mark I)',
           a: 'The tank (British Mark I)',
@@ -1633,8 +1633,8 @@ export const unitData = {
           options: [
             'The "Learning Curve" thesis: British commanders confronted an unprecedented industrial stalemate and successfully adapted tactics, weaponry, and command structures to win in 1918',
             'The claim that British generals deliberately prolonged the war to win medals',
-            'The assertion that trench warfare was a complete military success from day one',
             'The argument that German soldiers were secretly fighting for the British',
+            'The assertion that trench warfare was a complete military success from day one',
           ],
           answer:
             'The "Learning Curve" thesis: British commanders confronted an unprecedented industrial stalemate and successfully adapted tactics, weaponry, and command structures to win in 1918',
@@ -1662,9 +1662,9 @@ export const unitData = {
             'What was the name of the formidable, multi-layered German defensive fortification line on the Western Front that the British Army broke during autumn 1918?',
           q: 'What was the name of the formidable, multi-layered German defensive fortification line on the Western Front that the British Army broke during autumn 1918?',
           options: [
-            'The Mannerheim Line',
             'The Atlantic Wall',
             'The Maginot Line',
+            'The Mannerheim Line',
             'The Hindenburg Line (Siegfriedstellung)',
           ],
           answer: 'The Hindenburg Line (Siegfriedstellung)',
@@ -2162,7 +2162,7 @@ export const unitData = {
           question:
             'Approximately how many Indian soldiers and non-combatant labourers served Great Britain during the First World War?',
           q: 'Approximately how many Indian soldiers and non-combatant labourers served Great Britain during the First World War?',
-          options: ['50,000 men', '5 million men', 'Approximately 1.3 million men', '300,000 men'],
+          options: ['300,000 men', '50,000 men', 'Approximately 1.3 million men', '5 million men'],
           answer: 'Approximately 1.3 million men',
           a: 'Approximately 1.3 million men',
           explanation:
@@ -2174,9 +2174,9 @@ export const unitData = {
           q: 'Who was the first South Asian soldier to be awarded the Victoria Cross (VC) for extraordinary machine-gun valor at First Ypres in October 1914?',
           options: [
             'Sepoy Khudadad Khan VC',
-            'Chatta Singh VC',
             'Subadar Mir Dast VC',
             'Naik Darwan Singh Negi VC',
+            'Chatta Singh VC',
           ],
           answer: 'Sepoy Khudadad Khan VC',
           a: 'Sepoy Khudadad Khan VC',
@@ -2188,9 +2188,9 @@ export const unitData = {
             'Which royal palace in England was famously converted into a showcase military hospital for wounded Indian soldiers between 1914 and 1916?',
           q: 'Which royal palace in England was famously converted into a showcase military hospital for wounded Indian soldiers between 1914 and 1916?',
           options: [
-            'Windsor Castle',
             'Buckingham Palace',
             'Hampton Court Palace',
+            'Windsor Castle',
             'The Royal Pavilion in Brighton',
           ],
           answer: 'The Royal Pavilion in Brighton',
@@ -2218,7 +2218,7 @@ export const unitData = {
           question:
             'How many Chinese civilian contract workers served in the Chinese Labour Corps (CLC) on the Western Front supporting Allied logistics?',
           q: 'How many Chinese civilian contract workers served in the Chinese Labour Corps (CLC) on the Western Front supporting Allied logistics?',
-          options: ['1 million men', '500,000 men', '10,000 men', 'Approximately 140,000 men'],
+          options: ['500,000 men', '10,000 men', '1 million men', 'Approximately 140,000 men'],
           answer: 'Approximately 140,000 men',
           a: 'Approximately 140,000 men',
           explanation:
@@ -2229,9 +2229,9 @@ export const unitData = {
             'What major official celebration in London in July 1919 highlighted the deliberate exclusion of Black colonial troops from British victory?',
           q: 'What major official celebration in London in July 1919 highlighted the deliberate exclusion of Black colonial troops from British victory?',
           options: [
-            'The Peace Thanksgiving Service at St. Paul’s',
-            'The London Victory Parade down Whitehall',
             'The King’s Birthday Review',
+            'The London Victory Parade down Whitehall',
+            'The Peace Thanksgiving Service at St. Paul’s',
             'The Cenotaph Dedication Ceremony',
           ],
           answer: 'The London Victory Parade down Whitehall',
@@ -2246,8 +2246,8 @@ export const unitData = {
           options: [
             'The Jallianwala Bagh (Amritsar) Massacre',
             'The Delhi Uprising',
-            'The Lahore Mutiny',
             'The Rawalpindi Incident',
+            'The Lahore Mutiny',
           ],
           answer: 'The Jallianwala Bagh (Amritsar) Massacre',
           a: 'The Jallianwala Bagh (Amritsar) Massacre',
@@ -2259,10 +2259,10 @@ export const unitData = {
             'What system of military surveillance was strictly applied to letters written home by wounded Indian soldiers convalescing in England?',
           q: 'What system of military surveillance was strictly applied to letters written home by wounded Indian soldiers convalescing in England?',
           options: [
-            'The Defense Mail Quota',
-            'Postal Conscription',
-            'Imperial Censorship',
             'The White Feather Audit',
+            'The Defense Mail Quota',
+            'Imperial Censorship',
+            'Postal Conscription',
           ],
           answer: 'Imperial Censorship',
           a: 'Imperial Censorship',
@@ -2290,9 +2290,9 @@ export const unitData = {
             'Why did colonial veterans across the Caribbean and India organize mutinies and political strikes following the 1918 Armistice?',
           q: 'Why did colonial veterans across the Caribbean and India organize mutinies and political strikes following the 1918 Armistice?',
           options: [
+            'They wanted to abolish all international shipping lanes',
             'They were ordered to conquer South America by the British government',
             'They demanded to be permanently relocated to Germany',
-            'They wanted to abolish all international shipping lanes',
             'They were subjected to institutional racism, denied promised equal pay, and betrayed over political rights and self-rule',
           ],
           answer:
@@ -2306,9 +2306,9 @@ export const unitData = {
             'At which crucial early battle in October 1914 did Indian Expeditionary Force A plug critical gaps in the British frontline, saving the Allied line from collapse?',
           q: 'At which crucial early battle in October 1914 did Indian Expeditionary Force A plug critical gaps in the British frontline, saving the Allied line from collapse?',
           options: [
-            'The Battle of Cambrai',
-            'The First Battle of Ypres',
             'The Battle of the Somme',
+            'The First Battle of Ypres',
+            'The Battle of Cambrai',
             'The Battle of Loos',
           ],
           answer: 'The First Battle of Ypres',
@@ -2321,8 +2321,8 @@ export const unitData = {
             'What military designation was given to the two Indian infantry and cavalry divisions sent to France in autumn 1914?',
           q: 'What military designation was given to the two Indian infantry and cavalry divisions sent to France in autumn 1914?',
           options: [
-            'The Commonwealth Taskforce',
             'The Eastern Corps',
+            'The Commonwealth Taskforce',
             'Indian Expeditionary Force A',
             'The Imperial Vanguard',
           ],
@@ -2337,9 +2337,9 @@ export const unitData = {
           q: 'What racial theory held by British military recruiters dictated which Indian ethnic groups were deemed biologically suited for frontline combat?',
           options: [
             'The "Martial Races" theory (e.g., Sikhs, Gurkhas, and Punjabi Muslims)',
+            'The Imperial Caste Mandate',
             'Social Darwinist Phrenology',
             'The Aryan Hierarchy Doctrine',
-            'The Imperial Caste Mandate',
           ],
           answer: 'The "Martial Races" theory (e.g., Sikhs, Gurkhas, and Punjabi Muslims)',
           a: 'The "Martial Races" theory (e.g., Sikhs, Gurkhas, and Punjabi Muslims)',
@@ -2352,8 +2352,8 @@ export const unitData = {
           q: 'What was the name of the December 1918 mutiny in Italy where Caribbean soldiers revolted against degrading physical tasks and racist abuse?',
           options: [
             'The Kingston Rebellion',
-            'The Naples Uprising',
             'The Port of Spain Riot',
+            'The Naples Uprising',
             'The Taranto Mutiny',
           ],
           answer: 'The Taranto Mutiny',
@@ -2366,10 +2366,10 @@ export const unitData = {
             'Under what strict contractual condition were 140,000 Chinese labourers brought to the Western Front by British authorities?',
           q: 'Under what strict contractual condition were 140,000 Chinese labourers brought to the Western Front by British authorities?',
           options: [
-            'They were employed exclusively as civilian bank clerks in Paris',
+            'They were promised full British citizenship upon arrival',
             'They were classified as non-combatant civilian contract labourers and legally barred from carrying weapons or fighting',
             'They were deployed as frontline elite assault stormtroopers',
-            'They were promised full British citizenship upon arrival',
+            'They were employed exclusively as civilian bank clerks in Paris',
           ],
           answer:
             'They were classified as non-combatant civilian contract labourers and legally barred from carrying weapons or fighting',
@@ -2399,9 +2399,9 @@ export const unitData = {
           q: 'Which famous Indian nationalist leader actively supported British military recruitment in 1914 in the mistaken hope it would earn India dominion self-government?',
           options: [
             'Muhammad Ali Jinnah',
-            'Subhas Chandra Bose',
-            'Mahatma Gandhi',
             'Jawaharlal Nehru',
+            'Mahatma Gandhi',
+            'Subhas Chandra Bose',
           ],
           answer: 'Mahatma Gandhi',
           a: 'Mahatma Gandhi',
@@ -2414,9 +2414,9 @@ export const unitData = {
           q: 'What repressive imperial legislation passed in India in March 1919 extended wartime censorship and detention without trial, sparking massive protests?',
           options: [
             'The Rowlatt Act',
-            'The Defense of India Mandate',
-            'The Government of India Act',
             'The Morley-Minto Regulations',
+            'The Government of India Act',
+            'The Defense of India Mandate',
           ],
           answer: 'The Rowlatt Act',
           a: 'The Rowlatt Act',
@@ -2428,9 +2428,9 @@ export const unitData = {
             'How many gallantry medals were awarded to soldiers of the British West Indies Regiment (BWIR) despite being officially barred from frontline combat?',
           q: 'How many gallantry medals were awarded to soldiers of the British West Indies Regiment (BWIR) despite being officially barred from frontline combat?',
           options: [
-            'Over 10,000 Victoria Crosses',
             'Only 1 medal',
             'Zero decorations',
+            'Over 10,000 Victoria Crosses',
             'Over 80 decorations, including 5 Distinguished Conduct Medals and dozens of Military Medals',
           ],
           answer:
@@ -2446,8 +2446,8 @@ export const unitData = {
           options: [
             'Because the British government ran out of stone to carve non-European names',
             'To preserve the comforting national myth that the Great War was an exclusively white, British sacrifice, thereby reinforcing post-war imperial dominance',
-            'Because no colonial troops were present in Europe during the war',
             'Because colonial governments demanded that all records of their troops be burned',
+            'Because no colonial troops were present in Europe during the war',
           ],
           answer:
             'To preserve the comforting national myth that the Great War was an exclusively white, British sacrifice, thereby reinforcing post-war imperial dominance',
@@ -2948,10 +2948,10 @@ export const unitData = {
             'What sweeping emergency legislation was passed by Parliament on 8 August 1914 to control civilian life and industry in wartime Britain?',
           q: 'What sweeping emergency legislation was passed by Parliament on 8 August 1914 to control civilian life and industry in wartime Britain?',
           options: [
-            'The Representation of the People Act',
+            'The War Measures Mandate',
             'The Emergency Powers Act',
             'The Defence of the Realm Act (DORA)',
-            'The War Measures Mandate',
+            'The Representation of the People Act',
           ],
           answer: 'The Defence of the Realm Act (DORA)',
           a: 'The Defence of the Realm Act (DORA)',
@@ -2964,9 +2964,9 @@ export const unitData = {
           q: 'Which personal habit was strictly regulated under DORA to combat industrial absenteeism among munitions workers?',
           options: [
             'Slashing pub opening hours, watering down beer, and banning buying rounds ("no-treating")',
-            'Making smoking tobacco punishable by immediate execution',
             'Forbidding civilians from eating meals in restaurants on weekends',
             'Banning all consumption of tea and coffee in public places',
+            'Making smoking tobacco punishable by immediate execution',
           ],
           answer:
             'Slashing pub opening hours, watering down beer, and banning buying rounds ("no-treating")',
@@ -2979,9 +2979,9 @@ export const unitData = {
             'Why did the British government introduce British Summer Time (advancing clocks by one hour) in May 1916?',
           q: 'Why did the British government introduce British Summer Time (advancing clocks by one hour) in May 1916?',
           options: [
-            'To confuse German Zeppelin navigators flying over England',
-            'To provide extra evening daylight for munitions manufacturing and conserve domestic coal supplies',
             'To synchronize London time with St. Petersburg time',
+            'To provide extra evening daylight for munitions manufacturing and conserve domestic coal supplies',
+            'To confuse German Zeppelin navigators flying over England',
             'Because King George V personally disliked dark winter mornings',
           ],
           answer:
@@ -2995,9 +2995,9 @@ export const unitData = {
             'What 1916 legislation introduced compulsory military conscription for the first time in modern British history?',
           q: 'What 1916 legislation introduced compulsory military conscription for the first time in modern British history?',
           options: [
+            'The Conscription Declaration',
             'The National Service Mandate',
             'The Armed Forces Recruitment Bill',
-            'The Conscription Declaration',
             'The Military Service Act',
           ],
           answer: 'The Military Service Act',
@@ -3024,10 +3024,10 @@ export const unitData = {
           question: 'Why were female munitions workers given the popular nickname "Canary Girls"?',
           q: 'Why were female munitions workers given the popular nickname "Canary Girls"?',
           options: [
-            'They wore bright yellow feathered hats to show factory solidarity',
-            'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
-            'They were required to sing patriotic songs while assembling artillery shells',
             'They carried pet canaries into factories to detect carbon monoxide leaks',
+            'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
+            'They wore bright yellow feathered hats to show factory solidarity',
+            'They were required to sing patriotic songs while assembling artillery shells',
           ],
           answer: 'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
           a: 'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
@@ -3056,8 +3056,8 @@ export const unitData = {
           options: [
             'The German unrestricted submarine (U-boat) blockade sinking merchant supply ships in the Atlantic',
             'French armies seizing all British grain supplies at gunpoint',
-            'A total collapse of British domestic agriculture due to drought',
             'A nationwide strike by British railway and dock workers',
+            'A total collapse of British domestic agriculture due to drought',
           ],
           answer:
             'The German unrestricted submarine (U-boat) blockade sinking merchant supply ships in the Atlantic',
@@ -3070,9 +3070,9 @@ export const unitData = {
             'Which women were granted the right to vote under the 1918 Representation of the People Act?',
           q: 'Which women were granted the right to vote under the 1918 Representation of the People Act?',
           options: [
+            'Only women who had served in frontline medical units in France',
             'All women aged 18 and over on equal terms with men',
             'Only aristocratic women who owned more than 1,000 acres of land',
-            'Only women who had served in frontline medical units in France',
             'Women aged 30 and over who met property qualifications',
           ],
           answer: 'Women aged 30 and over who met property qualifications',
@@ -3086,8 +3086,8 @@ export const unitData = {
           q: 'What happened to over 750,000 female industrial workers when the war ended in 1919?',
           options: [
             'They were sacked and forced out of heavy industry to restore jobs to demobilized male soldiers',
-            'They were given permanent government pensions equal to full male wages',
             'They were promoted to senior executive management in British engineering firms',
+            'They were given permanent government pensions equal to full male wages',
             'They were conscripted into the peacetime regular army',
           ],
           answer:
@@ -3100,7 +3100,7 @@ export const unitData = {
           question:
             'What traditional Victorian economic doctrine—meaning "leave alone"—was dismantled as the British state took control of mines, railways, and factories?',
           q: 'What traditional Victorian economic doctrine—meaning "leave alone"—was dismantled as the British state took control of mines, railways, and factories?',
-          options: ['Feudalism', 'Mercantilism', 'Laissez-faire', 'Collectivist Anarchism'],
+          options: ['Collectivist Anarchism', 'Mercantilism', 'Laissez-faire', 'Feudalism'],
           answer: 'Laissez-faire',
           a: 'Laissez-faire',
           explanation:
@@ -3111,10 +3111,10 @@ export const unitData = {
             'What political crisis erupted in May 1915 when the British press revealed that frontline artillery was rationed to four shells per gun per day?',
           q: 'What political crisis erupted in May 1915 when the British press revealed that frontline artillery was rationed to four shells per gun per day?',
           options: [
-            'The Marconi Scandal',
+            'The Kitchener Crisis',
             'The "Shell Scandal"',
             'The Dardanelles Inquiry',
-            'The Kitchener Crisis',
+            'The Marconi Scandal',
           ],
           answer: 'The "Shell Scandal"',
           a: 'The "Shell Scandal"',
@@ -3126,8 +3126,8 @@ export const unitData = {
             'Who was appointed Britain’s first Minister of Munitions in May 1915, transforming national industrial production through state regulation?',
           q: 'Who was appointed Britain’s first Minister of Munitions in May 1915, transforming national industrial production through state regulation?',
           options: [
-            'Lord Beaverbrook',
             'Winston Churchill',
+            'Lord Beaverbrook',
             'David Lloyd George',
             'Arthur Henderson',
           ],
@@ -3178,8 +3178,8 @@ export const unitData = {
           q: 'What voluntary civilian organization was created in 1917 to replace male agricultural workers and prevent national starvation by farming the British countryside?',
           options: [
             'The Women’s Land Army',
-            'The Rural Auxiliary Service',
             'The Munitionettes Guild',
+            'The Rural Auxiliary Service',
             'The Home Defense Corps',
           ],
           answer: 'The Women’s Land Army',
@@ -3192,10 +3192,10 @@ export const unitData = {
             'What 1919 legislation legally required employers to dismiss wartime female workers and restore traditional male-only union practices?',
           q: 'What 1919 legislation legally required employers to dismiss wartime female workers and restore traditional male-only union practices?',
           options: [
-            'The Trade Union Restoration Mandate',
             'The Demobilization Bill',
-            'The Restoration of Pre-War Practices Act',
             'The Female Redundancy Act',
+            'The Restoration of Pre-War Practices Act',
+            'The Trade Union Restoration Mandate',
           ],
           answer: 'The Restoration of Pre-War Practices Act',
           a: 'The Restoration of Pre-War Practices Act',
@@ -3206,7 +3206,7 @@ export const unitData = {
           question:
             'In what year did British women finally achieve full, equal voting rights with men on identical terms at age 21?',
           q: 'In what year did British women finally achieve full, equal voting rights with men on identical terms at age 21?',
-          options: ['1918', '1928 (The Equal Franchise Act)', '1924', '1945'],
+          options: ['1924', '1928 (The Equal Franchise Act)', '1918', '1945'],
           answer: '1928 (The Equal Franchise Act)',
           a: '1928 (The Equal Franchise Act)',
           explanation:
@@ -3217,8 +3217,8 @@ export const unitData = {
             'What system of fair food distribution was introduced across Great Britain in early 1918 to eliminate bread queues and combat U-boat shortages?',
           q: 'What system of fair food distribution was introduced across Great Britain in early 1918 to eliminate bread queues and combat U-boat shortages?',
           options: [
-            'National Kitchen Tokens',
             'Voluntary Abstinence Pledges',
+            'National Kitchen Tokens',
             'Price Gouging Fines',
             'Compulsory Rationing (for sugar, butter, meat, and jam)',
           ],
@@ -3724,10 +3724,10 @@ export const unitData = {
             'Which three victorious world leaders were known collectively as "The Big Three" at the Paris Peace Conference in 1919?',
           q: 'Which three victorious world leaders were known collectively as "The Big Three" at the Paris Peace Conference in 1919?',
           options: [
-            'Kaiser Wilhelm II, Tsar Nicholas II, and King George V',
+            'Winston Churchill, Franklin D. Roosevelt, and Joseph Stalin',
             'Georges Clemenceau (France), David Lloyd George (Britain), and Woodrow Wilson (USA)',
             'Vittorio Orlando, Otto von Bismarck, and Lord Kitchener',
-            'Winston Churchill, Franklin D. Roosevelt, and Joseph Stalin',
+            'Kaiser Wilhelm II, Tsar Nicholas II, and King George V',
           ],
           answer:
             'Georges Clemenceau (France), David Lloyd George (Britain), and Woodrow Wilson (USA)',
@@ -3739,7 +3739,7 @@ export const unitData = {
           question:
             'What German term was universally used in Berlin to condemn the Treaty of Versailles as an imposed, dictated peace?',
           q: 'What German term was universally used in Berlin to condemn the Treaty of Versailles as an imposed, dictated peace?',
-          options: ['A "Diktat"', 'A "Reichstag"', 'A "Dolchstoß"', 'A "Kaiserreich"'],
+          options: ['A "Diktat"', 'A "Dolchstoß"', 'A "Reichstag"', 'A "Kaiserreich"'],
           answer: 'A "Diktat"',
           a: 'A "Diktat"',
           explanation:
@@ -3749,7 +3749,7 @@ export const unitData = {
           question:
             'What was the official clause number of the controversial "War Guilt Clause" in the Treaty of Versailles?',
           q: 'What was the official clause number of the controversial "War Guilt Clause" in the Treaty of Versailles?',
-          options: ['Article 14', 'Article 48', 'Article 100', 'Article 231'],
+          options: ['Article 14', 'Article 100', 'Article 48', 'Article 231'],
           answer: 'Article 231',
           a: 'Article 231',
           explanation:
@@ -3759,7 +3759,7 @@ export const unitData = {
           question:
             'What astronomical financial sum was fixed by the Allied Reparations Commission in 1921 for Germany to pay in war damages?',
           q: 'What astronomical financial sum was fixed by the Allied Reparations Commission in 1921 for Germany to pay in war damages?',
-          options: ['£100 million', '£50 billion', '£6.6 billion ($33 billion)', '£1 billion'],
+          options: ['£100 million', '£1 billion', '£6.6 billion ($33 billion)', '£50 billion'],
           answer: '£6.6 billion ($33 billion)',
           a: '£6.6 billion ($33 billion)',
           explanation:
@@ -3770,10 +3770,10 @@ export const unitData = {
             'To what maximum strength was the German army restricted under the disarmament clauses of the Treaty of Versailles?',
           q: 'To what maximum strength was the German army restricted under the disarmament clauses of the Treaty of Versailles?',
           options: [
-            '10,000 men',
+            '500,000 men',
             '1 million men',
             '100,000 volunteers (with military conscription banned)',
-            '500,000 men',
+            '10,000 men',
           ],
           answer: '100,000 volunteers (with military conscription banned)',
           a: '100,000 volunteers (with military conscription banned)',
@@ -3784,7 +3784,7 @@ export const unitData = {
           question:
             'What strip of German territory was granted to the newly re-established state of Poland, cutting off East Prussia from the rest of Germany?',
           q: 'What strip of German territory was granted to the newly re-established state of Poland, cutting off East Prussia from the rest of Germany?',
-          options: ['The Rhineland', 'The Polish Corridor', 'The Sudetenland', 'Alsace-Lorraine'],
+          options: ['The Sudetenland', 'The Polish Corridor', 'The Rhineland', 'Alsace-Lorraine'],
           answer: 'The Polish Corridor',
           a: 'The Polish Corridor',
           explanation:
@@ -3794,7 +3794,7 @@ export const unitData = {
           question:
             'Which famous British economist resigned in protest from the Paris Peace Conference and published "The Economic Consequences of the Peace" (1919)?',
           q: 'Which famous British economist resigned in protest from the Paris Peace Conference and published "The Economic Consequences of the Peace" (1919)?',
-          options: ['John Maynard Keynes', 'Karl Marx', 'Milton Friedman', 'Adam Smith'],
+          options: ['John Maynard Keynes', 'Adam Smith', 'Karl Marx', 'Milton Friedman'],
           answer: 'John Maynard Keynes',
           a: 'John Maynard Keynes',
           explanation:
@@ -3805,9 +3805,9 @@ export const unitData = {
             'In Will Dyson’s famous May 1919 political cartoon, what prophetic label appears above the weeping child behind the pillar?',
           q: 'In Will Dyson’s famous May 1919 political cartoon, what prophetic label appears above the weeping child behind the pillar?',
           options: [
-            '"League of Nations"',
             '"November Criminal"',
             '"Weimar Republic"',
+            '"League of Nations"',
             '"1940 Class"',
           ],
           answer: '"1940 Class"',
@@ -3820,9 +3820,9 @@ export const unitData = {
             'Why do modern historians argue that the failure of the 1919 Paris Peace Conference was due to Allied enforcement rather than the treaty terms alone?',
           q: 'Why do modern historians argue that the failure of the 1919 Paris Peace Conference was due to Allied enforcement rather than the treaty terms alone?',
           options: [
-            'Germany completely ran out of iron and coal reserves',
             'President Woodrow Wilson ordered the destruction of the French army',
             'The treaty was too generous and gave Germany all of Eastern Europe',
+            'Germany completely ran out of iron and coal reserves',
             'The refusal of the victorious Allies to consistently enforce the treaty’s terms during the 1920s and 1930s',
           ],
           answer:
@@ -3838,8 +3838,8 @@ export const unitData = {
           options: [
             'The "Dolchstoßlegende" (stab-in-the-back myth)',
             'The Iron Curtain Legend',
-            'The Blitzkrieg Theory',
             'The Schlieffen Myth',
+            'The Blitzkrieg Theory',
           ],
           answer: 'The "Dolchstoßlegende" (stab-in-the-back myth)',
           a: 'The "Dolchstoßlegende" (stab-in-the-back myth)',
@@ -3866,10 +3866,10 @@ export const unitData = {
             'What was French Prime Minister Georges Clemenceau’s primary diplomatic objective during the Paris Peace Conference?',
           q: 'What was French Prime Minister Georges Clemenceau’s primary diplomatic objective during the Paris Peace Conference?',
           options: [
-            'To restore the Habsburg monarchy in Austria-Hungary',
-            'To permanently cripple Germany militarily and economically to guarantee French national security against future invasion',
             'To help Germany rebuild its High Seas Fleet to challenge Great Britain',
+            'To permanently cripple Germany militarily and economically to guarantee French national security against future invasion',
             'To establish a permanent free-trade union across all of Central Europe',
+            'To restore the Habsburg monarchy in Austria-Hungary',
           ],
           answer:
             'To permanently cripple Germany militarily and economically to guarantee French national security against future invasion',
@@ -3882,9 +3882,9 @@ export const unitData = {
             'What blueprint for global peace and international self-determination was announced by US President Woodrow Wilson in January 1918?',
           q: 'What blueprint for global peace and international self-determination was announced by US President Woodrow Wilson in January 1918?',
           options: [
-            'The Atlantic Charter',
-            'The Fourteen Points',
             'The Marshall Plan',
+            'The Fourteen Points',
+            'The Atlantic Charter',
             'The Truman Doctrine',
           ],
           answer: 'The Fourteen Points',
@@ -3897,8 +3897,8 @@ export const unitData = {
             'What international peacekeeping organization was established in Part I of the Treaty of Versailles, but subsequently rejected by the United States Senate?',
           q: 'What international peacekeeping organization was established in Part I of the Treaty of Versailles, but subsequently rejected by the United States Senate?',
           options: [
-            'The United Nations',
             'The International Court of Justice',
+            'The United Nations',
             'The League of Nations',
             'The Concert of Europe',
           ],
@@ -3911,7 +3911,7 @@ export const unitData = {
           question:
             'What valuable border province, annexed by Germany in 1871, was returned to French sovereignty under the territorial terms of Versailles?',
           q: 'What valuable border province, annexed by Germany in 1871, was returned to French sovereignty under the territorial terms of Versailles?',
-          options: ['Alsace-Lorraine', 'The Ruhr Valley', 'Bavaria', 'The Sudetenland'],
+          options: ['Alsace-Lorraine', 'The Sudetenland', 'The Ruhr Valley', 'Bavaria'],
           answer: 'Alsace-Lorraine',
           a: 'Alsace-Lorraine',
           explanation:
@@ -3922,8 +3922,8 @@ export const unitData = {
             'What was the military status of the German Rhineland under Articles 42 to 44 of the Treaty of Versailles?',
           q: 'What was the military status of the German Rhineland under Articles 42 to 44 of the Treaty of Versailles?',
           options: [
-            'It was annexed permanently into the territory of Belgium',
             'It was ceded to Poland as an industrial mining colony',
+            'It was annexed permanently into the territory of Belgium',
             'It was converted into an independent kingdom ruled by King George V',
             'It was permanently demilitarized, forbidding German fortifications, troops, or military maneuvers within 50 kilometers east of the Rhine',
           ],
@@ -3937,7 +3937,7 @@ export const unitData = {
           question:
             'What coal-rich German industrial territory was placed under League of Nations control for 15 years, with its coal production given directly to France?',
           q: 'What coal-rich German industrial territory was placed under League of Nations control for 15 years, with its coal production given directly to France?',
-          options: ['Pomerania', 'The Black Forest', 'The Saar Basin (Saarland)', 'Silesia'],
+          options: ['The Black Forest', 'Pomerania', 'The Saar Basin (Saarland)', 'Silesia'],
           answer: 'The Saar Basin (Saarland)',
           a: 'The Saar Basin (Saarland)',
           explanation:
@@ -3947,7 +3947,7 @@ export const unitData = {
           question:
             'What derogatory term was used by German nationalists to vilify the Weimar politicians who signed the November 1918 Armistice and Versailles Treaty?',
           q: 'What derogatory term was used by German nationalists to vilify the Weimar politicians who signed the November 1918 Armistice and Versailles Treaty?',
-          options: ['The "November Criminals"', 'The Spartacists', 'The Junkers', 'The Freikorps'],
+          options: ['The "November Criminals"', 'The Freikorps', 'The Junkers', 'The Spartacists'],
           answer: 'The "November Criminals"',
           a: 'The "November Criminals"',
           explanation:
@@ -3958,8 +3958,8 @@ export const unitData = {
             'In what landmark 1919 book did British economist John Maynard Keynes predict that Versailles would cause the economic destruction of Europe?',
           q: 'In what landmark 1919 book did British economist John Maynard Keynes predict that Versailles would cause the economic destruction of Europe?',
           options: [
-            'Das Kapital',
             'The Wealth of Nations',
+            'Das Kapital',
             'General Theory of Employment',
             'The Economic Consequences of the Peace',
           ],
@@ -4561,7 +4561,7 @@ export const unitData = {
           question:
             'How many young men and women from the parish of Stubbington and Hill Head are commemorated on the village war memorial?',
           q: 'How many young men and women from the parish of Stubbington and Hill Head are commemorated on the village war memorial?',
-          options: ['150 names', '67 names', '12 names', '500 names'],
+          options: ['12 names', '67 names', '150 names', '500 names'],
           answer: '67 names',
           a: '67 names',
           explanation:
@@ -4572,9 +4572,9 @@ export const unitData = {
             'What unique architectural feature characterizes the Stubbington War Memorial erected in 1922 on the village green?',
           q: 'What unique architectural feature characterizes the Stubbington War Memorial erected in 1922 on the village green?',
           options: [
+            'It is a marble triumphal archway spanning the main Portsmouth road',
             'It is an underground reinforced concrete bunker',
             'It is a 50-foot bronze statue of an infantry soldier',
-            'It is a marble triumphal archway spanning the main Portsmouth road',
             'It was constructed as an open oak shelter built directly over the historic village water pump',
           ],
           answer:
@@ -4589,9 +4589,9 @@ export const unitData = {
           q: 'Which prominent local Stubbington family of Manor Way Grange tragically lost all three of their sons during the First World War?',
           options: [
             'The Lowry family',
-            'The Asquith family',
-            'The Churchill family',
             'The Kitchener family',
+            'The Churchill family',
+            'The Asquith family',
           ],
           answer: 'The Lowry family',
           a: 'The Lowry family',
@@ -4603,8 +4603,8 @@ export const unitData = {
             'What gallantry medals were awarded to Major Auriol "Eric" Lowry before his tragic death in September 1918?',
           q: 'What gallantry medals were awarded to Major Auriol "Eric" Lowry before his tragic death in September 1918?',
           options: [
-            'The Victoria Cross (VC)',
             'The Iron Cross First Class',
+            'The Victoria Cross (VC)',
             'The Distinguished Service Order (DSO) and Military Cross (MC)',
             'The French Legion of Honour',
           ],
@@ -4617,7 +4617,7 @@ export const unitData = {
           question:
             'Who was the only woman commemorated among the 67 names on the Stubbington War Memorial shelter?',
           q: 'Who was the only woman commemorated among the 67 names on the Stubbington War Memorial shelter?',
-          options: ['Edith Cavell', 'Nita Madeline King', 'Vera Brittain', 'Jessie Pope'],
+          options: ['Jessie Pope', 'Nita Madeline King', 'Vera Brittain', 'Edith Cavell'],
           answer: 'Nita Madeline King',
           a: 'Nita Madeline King',
           explanation:
@@ -4644,10 +4644,10 @@ export const unitData = {
             'What colloquial nickname was given to the bronze Next of Kin Memorial Plaque issued to grieving British families?',
           q: 'What colloquial nickname was given to the bronze Next of Kin Memorial Plaque issued to grieving British families?',
           options: [
-            'The "Widow’s Mite"',
-            'The "Iron Penny"',
-            'The "Dead Man’s Penny"',
             'The "King’s Shilling"',
+            'The "Widow’s Mite"',
+            'The "Dead Man’s Penny"',
+            'The "Iron Penny"',
           ],
           answer: 'The "Dead Man’s Penny"',
           a: 'The "Dead Man’s Penny"',
@@ -4660,8 +4660,8 @@ export const unitData = {
           q: 'What colossal memorial in France, designed by Sir Edwin Lutyens, bears the names of 72,246 British and South African soldiers missing on the Somme?',
           options: [
             'The Thiepval Memorial to the Missing',
-            'The Tyne Cot Memorial',
             'The Cenotaph',
+            'The Tyne Cot Memorial',
             'The Menin Gate',
           ],
           answer: 'The Thiepval Memorial to the Missing',
@@ -4675,9 +4675,9 @@ export const unitData = {
           q: 'Because the British government refused to repatriate the bodies of fallen soldiers, what primary psychological purpose did village war memorials serve for grieving families?',
           options: [
             'They served as "surrogate tombs" where families with no physical bodies to bury could mourn locally',
-            'They were used as town hall voting booths during municipal elections',
             'They were designed to celebrate British imperial conquest and annexations',
             'They were built as military recruitment stations for future conflicts',
+            'They were used as town hall voting booths during municipal elections',
           ],
           answer:
             'They served as "surrogate tombs" where families with no physical bodies to bury could mourn locally',
@@ -4690,9 +4690,9 @@ export const unitData = {
             'What community building in Lee-on-the-Solent was constructed by William Lowry in memory of his three fallen sons?',
           q: 'What community building in Lee-on-the-Solent was constructed by William Lowry in memory of his three fallen sons?',
           options: [
-            'The Royal Naval Hospital',
             'The Solent Aviation Center',
             'The Holy Rood Church Spire',
+            'The Royal Naval Hospital',
             'The Lowry Memorial Hall',
           ],
           answer: 'The Lowry Memorial Hall',
@@ -4705,10 +4705,10 @@ export const unitData = {
             'What was the approximate total population of the combined parish of Stubbington and Hill Head at the outbreak of the First World War in 1914?',
           q: 'What was the approximate total population of the combined parish of Stubbington and Hill Head at the outbreak of the First World War in 1914?',
           options: [
-            'Exactly 5,000 residents',
+            'Over 25,000 residents',
             'Approximately 1,500 residents',
             'Barely 100 people',
-            'Over 25,000 residents',
+            'Exactly 5,000 residents',
           ],
           answer: 'Approximately 1,500 residents',
           a: 'Approximately 1,500 residents',
@@ -4720,8 +4720,8 @@ export const unitData = {
             'At which costly battle in September 1915 was the eldest Lowry brother, Captain Cyril Lowry, killed in action?',
           q: 'At which costly battle in September 1915 was the eldest Lowry brother, Captain Cyril Lowry, killed in action?',
           options: [
-            'The Battle of Passchendaele',
             'The Battle of the Somme',
+            'The Battle of Passchendaele',
             'The Battle of Loos',
             'The Gallipoli Landings',
           ],
@@ -4736,9 +4736,9 @@ export const unitData = {
           q: 'In which branch of the armed forces was the second Lowry brother, William, serving when he was shot down and killed in 1917?',
           options: [
             'The Royal Naval Air Service (RNAS) / Royal Flying Corps',
-            'The Hampshire Yeomanry Cavalry',
-            'The Royal Tank Regiment',
             'The Royal Submarine Service',
+            'The Royal Tank Regiment',
+            'The Hampshire Yeomanry Cavalry',
           ],
           answer: 'The Royal Naval Air Service (RNAS) / Royal Flying Corps',
           a: 'The Royal Naval Air Service (RNAS) / Royal Flying Corps',
@@ -4765,10 +4765,10 @@ export const unitData = {
             'In what auxiliary military corps did Nita Madeline King serve as a motor driver in France before her death from illness in 1918?',
           q: 'In what auxiliary military corps did Nita Madeline King serve as a motor driver in France before her death from illness in 1918?',
           options: [
-            'The Women’s Land Army',
-            'The Queen Mary’s Army Auxiliary Corps (QMAAC)',
-            'The Voluntary Aid Detachment (VAD)',
             'The First Aid Nursing Yeomanry (FANY)',
+            'The Queen Mary’s Army Auxiliary Corps (QMAAC)',
+            'The Women’s Land Army',
+            'The Voluntary Aid Detachment (VAD)',
           ],
           answer: 'The Queen Mary’s Army Auxiliary Corps (QMAAC)',
           a: 'The Queen Mary’s Army Auxiliary Corps (QMAAC)',
@@ -4780,9 +4780,9 @@ export const unitData = {
             'What official royal condolence message accompanied the bronze Next of Kin Memorial Plaque sent to bereaved British families?',
           q: 'What official royal condolence message accompanied the bronze Next of Kin Memorial Plaque sent to bereaved British families?',
           options: [
-            'A medal inscribed: "Victory through Blood and Iron"',
-            'A parchment stating: "Duty fulfilled without complaint"',
             'A letter reading: "Regrettable civilian casualty of war"',
+            'A parchment stating: "Duty fulfilled without complaint"',
+            'A medal inscribed: "Victory through Blood and Iron"',
             'A scroll inscribed: "He died for freedom and honour"',
           ],
           answer: 'A scroll inscribed: "He died for freedom and honour"',
@@ -4795,10 +4795,10 @@ export const unitData = {
             'Which celebrated British architect designed the Cenotaph in Whitehall and the monumental Thiepval Memorial on the Somme?',
           q: 'Which celebrated British architect designed the Cenotaph in Whitehall and the monumental Thiepval Memorial on the Somme?',
           options: [
-            'Sir Christopher Wren',
+            'Gilbert Scott',
             'Sir Edwin Lutyens',
             'Arthur Blomfield',
-            'Gilbert Scott',
+            'Sir Christopher Wren',
           ],
           answer: 'Sir Edwin Lutyens',
           a: 'Sir Edwin Lutyens',
@@ -4811,9 +4811,9 @@ export const unitData = {
           q: 'What best-selling 1933 autobiography by Vera Brittain became the defining literary memoir of the "Lost Generation" and female wartime bereavement?',
           options: [
             'Testament of Youth',
-            'Memoirs of an Infantry Officer',
-            'The Waste Land',
             'Goodbye to All That',
+            'The Waste Land',
+            'Memoirs of an Infantry Officer',
           ],
           answer: 'Testament of Youth',
           a: 'Testament of Youth',
@@ -4825,9 +4825,9 @@ export const unitData = {
             'What counter-interpretation is advanced by historians regarding the dramatic cultural myth of the "Lost Generation"?',
           q: 'What counter-interpretation is advanced by historians regarding the dramatic cultural myth of the "Lost Generation"?',
           options: [
-            'No British soldiers were killed during the First World War',
             'British communities completely forgot about the war by 1920',
             'The war had zero emotional impact on rural English villages',
+            'No British soldiers were killed during the First World War',
             'While bereavement was deep and tragic, British society demonstrated remarkable resilience, recovery, and adaptability rather than succumbing to permanent despair',
           ],
           answer:
