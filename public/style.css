@@ -2565,6 +2565,47 @@ img::after {
     margin-left: auto !important;
   }
 
+  /* Mobile Action Tray & Compact Hero (Recommendation 2) */
+  .sticky-lesson-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    padding: 8px 12px !important;
+  }
+
+  .sticky-lesson-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 2px !important;
+    scrollbar-width: none !important;
+  }
+
+  .sticky-lesson-actions::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .sticky-lesson-actions .btn {
+    font-size: 0.78rem !important;
+    padding: 5px 10px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .lesson-hero {
+    height: 105px !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .lesson-hero h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.25 !important;
+  }
+
   /* --- Responsive Poetry & Eyewitness Cards --- */
   .poet-eyewitness-card {
     padding: 14px 12px !important;
@@ -3091,6 +3132,14 @@ body.sen-mode .narrative-chunk.reading-highlight {
   flex-shrink: 0;
 }
 
+.narrative-chunk .narrative-text {
+  width: 100%;
+  max-width: 82ch;
+  line-height: 1.68;
+  color: #1e293b;
+  font-size: 1.06rem;
+}
+
 /* In-Lesson Audio Playback Bar & Speed Pill */
 .read-aloud-playback-bar {
   display: inline-flex;
@@ -3278,6 +3327,105 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-active {
 body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
   background: #d97706 !important;
   color: #ffffff !important;
+}
+
+/* ==========================================================================
+   STICKY FLOATING MINI-PLAYER FOR LONG NARRATIVES (Recommendation 1)
+   ========================================================================== */
+.speech-floating-player {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.96);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+  pointer-events: none;
+}
+
+.speech-floating-player.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.sfp-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.94);
+  color: #f8fafc;
+  padding: 6px 12px 6px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: 'Inter', -apple-system, sans-serif;
+  user-select: none;
+}
+
+.sfp-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #38bdf8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.sfp-speed-label {
+  background: rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 12px;
+}
+
+.sfp-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sfp-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.06);
+}
+
+.sfp-btn.sfp-stop-btn {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.sfp-btn.sfp-stop-btn:hover {
+  background: rgba(239, 68, 68, 0.45);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .speech-floating-player {
+    bottom: 74px; /* Sits above mobile bottom navigation bar */
+    right: 14px;
+    max-width: calc(100% - 28px);
+  }
+  .sfp-content {
+    padding: 5px 10px 5px 12px;
+    gap: 8px;
+  }
 }
 .sidebar {
   background: #0f172a !important;

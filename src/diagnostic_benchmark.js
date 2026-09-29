@@ -350,6 +350,9 @@ function handleDiagnosticKeydown(e) {
  * Launches the interactive Diagnostic Benchmark Modal.
  */
 export function startDiagnosticBenchmark(unitId) {
+  if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
+    window.cancelSpeech();
+  }
   const unitData = state.activeUnitData || window.currentUnitData || {};
   const questions = sampleDiagnosticQuestions(unitId, unitData);
 

@@ -1959,6 +1959,9 @@ window.closeQuizModal = function () {
 };
 
 window.openModal = function (src, options = {}) {
+  if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
+    window.cancelSpeech();
+  }
   if (
     !src ||
     typeof src !== 'string' ||

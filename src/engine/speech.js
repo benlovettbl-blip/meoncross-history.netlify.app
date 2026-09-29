@@ -467,6 +467,105 @@ function prepareHighlightableText(rootEl) {
   return { spokenText: spokenText.trim(), spans };
 }
 
+// ============================================================================
+// STICKY FLOATING AUDIO MINI-PLAYER CONTROLLER (Recommendation 1)
+// ============================================================================
+let floatingAudioPlayerEl = null;
+let floatingAudioObserver = null;
+
+function updateFloatingAudioPlayerState() {
+  if (!floatingAudioPlayerEl) return;
+  const pauseBtn = floatingAudioPlayerEl.querySelector('#sfp-pause-btn');
+  const speedLabel = floatingAudioPlayerEl.querySelector('.sfp-speed-label');
+  if (pauseBtn) {
+    pauseBtn.innerHTML = isPaused
+      ? '<i class="fa-solid fa-play"></i>'
+      : '<i class="fa-solid fa-pause"></i>';
+    pauseBtn.title = isPaused ? 'Resume Reading' : 'Pause Reading';
+  }
+  if (speedLabel) {
+    speedLabel.textContent = `${currentSpeechRate}x ${currentVoiceGender === 'male' ? '♂' : '♀'}`;
+  }
+}
+
+function showFloatingAudioPlayer() {
+  if (typeof document === 'undefined' || !activeButton) return;
+  if (!floatingAudioPlayerEl) {
+    floatingAudioPlayerEl = document.createElement('div');
+    floatingAudioPlayerEl.id = 'speech-floating-player';
+    floatingAudioPlayerEl.className = 'speech-floating-player no-print';
+    floatingAudioPlayerEl.setAttribute('role', 'region');
+    floatingAudioPlayerEl.setAttribute('aria-label', 'Floating Audio Playback Controller');
+    floatingAudioPlayerEl.innerHTML = `
+      <div class="sfp-content">
+        <span class="sfp-indicator"><i class="fa-solid fa-volume-high fa-beat-fade"></i> <span class="sfp-label">Reading Aloud</span></span>
+        <span class="sfp-speed-label">${currentSpeechRate}x ${currentVoiceGender === 'male' ? '♂' : '♀'}</span>
+        <button type="button" class="sfp-btn sfp-pause-btn" id="sfp-pause-btn" title="Pause Reading">
+          <i class="fa-solid fa-pause"></i>
+        </button>
+        <button type="button" class="sfp-btn sfp-stop-btn" id="sfp-stop-btn" title="Stop Reading">
+          <i class="fa-solid fa-stop"></i>
+        </button>
+      </div>
+    `;
+    document.body.appendChild(floatingAudioPlayerEl);
+
+    floatingAudioPlayerEl.querySelector('#sfp-pause-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (activeButton) {
+        readAloudText(activeButton);
+        updateFloatingAudioPlayerState();
+      }
+    });
+
+    floatingAudioPlayerEl.querySelector('#sfp-stop-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      cancelSpeech();
+    });
+  }
+
+  updateFloatingAudioPlayerState();
+
+  if (window.IntersectionObserver) {
+    if (floatingAudioObserver) floatingAudioObserver.disconnect();
+    floatingAudioObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!activeUtterance && !window.speechSynthesis?.speaking) {
+            hideFloatingAudioPlayer();
+            return;
+          }
+          if (entry.isIntersecting) {
+            floatingAudioPlayerEl?.classList.remove('is-visible');
+          } else {
+            floatingAudioPlayerEl?.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    floatingAudioObserver.observe(activeButton);
+  } else {
+    floatingAudioPlayerEl.classList.add('is-visible');
+  }
+}
+
+function hideFloatingAudioPlayer() {
+  if (floatingAudioObserver) {
+    floatingAudioObserver.disconnect();
+    floatingAudioObserver = null;
+  }
+  if (floatingAudioPlayerEl) {
+    floatingAudioPlayerEl.classList.remove('is-visible');
+    setTimeout(() => {
+      if (floatingAudioPlayerEl && !activeUtterance && !window.speechSynthesis?.speaking) {
+        floatingAudioPlayerEl.remove();
+        floatingAudioPlayerEl = null;
+      }
+    }, 250);
+  }
+}
+
 /**
  * Reset all active reading UI elements across the DOM and restore pristine text HTML.
  */
@@ -479,6 +578,7 @@ export function resetActiveSpeech() {
     clearInterval(softwareTickerTimer);
     softwareTickerTimer = null;
   }
+  hideFloatingAudioPlayer();
 
   // Restore original pristine DOM without leftover spans
   if (activeHighlightContainer && activeHighlightContainer._originalHtml) {
@@ -563,6 +663,7 @@ function resumeSpeechFromCurrentSentence() {
     resetActiveSpeech();
     return;
   }
+  updateFloatingAudioPlayerState();
 
   // Clear active timers
   if (speechHeartbeat) clearInterval(speechHeartbeat);
@@ -609,6 +710,7 @@ function startUtterance(textToSpeak, charOffset, initialSpan) {
 
   lastHardwareBoundaryTime = 0;
   isPaused = false;
+  showFloatingAudioPlayer();
 
   // Immediately focus the initial sentence/word if resuming
   if (initialSpan) {
@@ -754,6 +856,7 @@ export function readAloudText(btnElement) {
       btnElement.classList.add('reading-paused');
       btnElement.innerHTML = '<i class="fa-solid fa-play"></i>';
       btnElement.title = 'Resume Reading';
+      updateFloatingAudioPlayerState();
       return;
     } else {
       // Resume
@@ -762,6 +865,7 @@ export function readAloudText(btnElement) {
       btnElement.classList.remove('reading-paused');
       btnElement.innerHTML = '<i class="fa-solid fa-pause"></i>';
       btnElement.title = 'Pause Reading';
+      updateFloatingAudioPlayerState();
       // Safety guard: if resume stalled, restart cleanly from current sentence
       if (!window.speechSynthesis.speaking) {
         resumeSpeechFromCurrentSentence();
@@ -878,5 +982,13 @@ export function initSpeech() {
     } else {
       attachHeaderVoiceBtn();
     }
+
+    // Auto-suspend speech when any modal dialog or interactive overlay opens (Recommendation 4)
+    document.addEventListener('click', (e) => {
+      const modalTrigger = e.target.closest('[data-action*="modal"], [data-action*="open-"], [data-action*="launch-"], .btn-guided-reading-launcher, #btn-launch-diagnostic, #btn-start-diagnostic');
+      if (modalTrigger && window.speechSynthesis?.speaking) {
+        cancelSpeech();
+      }
+    }, true);
   }
 }
