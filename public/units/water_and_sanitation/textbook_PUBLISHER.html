@@ -128,7 +128,8 @@
     .col-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6px;
       height: 100%;
       overflow: hidden;
     }
@@ -138,6 +139,11 @@
     }
     .col-side .archival-source-box {
       margin: 0;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* Right Page 2-Tier Balanced Layout */
@@ -155,6 +161,14 @@
       column-gap: 5mm;
       flex: 1;
       overflow: hidden;
+    }
+    .right-upper-grid .col-side {
+      justify-content: flex-start;
+      gap: 5px;
+    }
+    .right-upper-grid .col-side .key-figure-box,
+    .right-upper-grid .col-side .concept-spotlight-box {
+      margin: 0;
     }
     .fullwidth-dispatch-wrap {
       flex-shrink: 0;
@@ -282,15 +296,38 @@
       margin-bottom: 3px;
       line-height: 1.22;
     }
+    .two-column-grid .archival-image,
     .archival-image {
       width: 100%;
-      height: 120px;
-      object-fit: cover;
-      object-position: center;
+      max-height: 145px;
+      min-height: 75px;
+      height: 100%;
+      flex: 1;
+      min-height: 0;
+      object-fit: contain !important;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 2px;
-      border: 1px solid #cbd5e1;
       display: block;
       margin-bottom: 3.5px;
+    }
+    .archival-source-box.expand-sm .archival-image {
+      height: 80px;
+    }
+    .archival-source-box.expand-md .archival-image {
+      height: 125px;
+    }
+    .archival-source-box.expand-lg .archival-image {
+      height: 145px;
+    }
+    .archival-source-box.panoramic-source {
+      column-span: all;
+      margin: 4px 0 5px 0;
+    }
+    .archival-source-box.panoramic-source .archival-image {
+      height: 115px;
+      width: 100%;
+      object-fit: contain;
     }
     .archival-body {
       font-family: 'Newsreader', Georgia, serif;
@@ -521,21 +558,21 @@
     }
     .kf-role {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
-      font-weight: 600;
-      color: #475569;
+      font-size: 8.0pt;
+      font-weight: 700;
+      color: #0369a1;
       line-height: 1.20;
     }
     .kf-significance {
       font-size: 8.0pt;
-      line-height: 1.30;
+      line-height: 1.28;
       color: #334155;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .kf-actions-title {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #0284c7;
       text-transform: uppercase;
@@ -546,9 +583,9 @@
       margin: 0;
       padding-left: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7.8pt;
       color: #1e293b;
-      line-height: 1.26;
+      line-height: 1.24;
     }
     .kf-actions-list li {
       margin-bottom: 1px;
@@ -572,14 +609,14 @@
       font-family: 'Inter', sans-serif;
     }
     .csb-tag {
-      font-size: 6.6pt;
+      font-size: 7.4pt;
       font-weight: 800;
       color: #16a34a;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .csb-category {
-      font-size: 6.6pt;
+      font-size: 7.0pt;
       font-weight: 700;
       color: #475569;
     }
@@ -593,20 +630,20 @@
     }
     .csb-body {
       font-size: 8.0pt;
-      line-height: 1.30;
+      line-height: 1.28;
       color: #1e293b;
       margin-bottom: 2.5px;
       text-align: justify;
     }
     .csb-takeaway {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.8pt;
       color: #14532d;
       background: #dcfce7;
       border: 1px solid #86efac;
       padding: 2px 4.5px;
       border-radius: 2px;
-      line-height: 1.26;
+      line-height: 1.24;
     }
 
     /* Full-Width Bottom Vocabulary Deck (Left Page) */
