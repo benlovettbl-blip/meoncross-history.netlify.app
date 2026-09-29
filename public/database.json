@@ -71390,6 +71390,32 @@
               "theme_heading": "Royal Proclamations: King Edward III Demands Clean Streets"
             }
           ],
+          "vocab": [
+            {
+              "term": "Gongfermer",
+              "definition": "A medieval night-soil laborer paid to dig out and remove raw human excrement from domestic cesspits under cover of darkness."
+            },
+            {
+              "term": "Miasma Theory",
+              "definition": "The incorrect medical belief that infectious epidemic diseases were directly caused by breathing poisonous vapors or foul smells."
+            },
+            {
+              "term": "Monastery",
+              "definition": "A religious community of monks or nuns that often maintained the highest medieval hygiene standards, possessing clean leats and stone lavatoria."
+            },
+            {
+              "term": "Leat",
+              "definition": "An artificial water ditch or channel diverted from a clean river to supply fresh running water to a town, mill, or monastery."
+            },
+            {
+              "term": "Privy",
+              "definition": "A simple wooden or stone outhouse toilet built directly over a garden cesspit, a cesspool, or an open drainage ditch."
+            },
+            {
+              "term": "Black Death (1348)",
+              "definition": "A catastrophic bubonic and pneumonic plague epidemic that wiped out roughly one third to one half of the entire population of Britain."
+            }
+          ],
           "flashcards": [
             {
               "term": "Gongfermer",
@@ -71576,32 +71602,6 @@
                 "They deliberately cultivated filth in public squares believing it nourished healthy urban vegetation and fruit trees"
               ],
               "answer": 0
-            }
-          ],
-          "vocab": [
-            {
-              "term": "Gongfermer",
-              "definition": "A medieval night-soil laborer paid to dig out and remove raw human excrement from domestic cesspits under cover of darkness."
-            },
-            {
-              "term": "Miasma Theory",
-              "definition": "The incorrect medical belief that infectious epidemic diseases were directly caused by breathing poisonous vapors or foul smells."
-            },
-            {
-              "term": "Monastery",
-              "definition": "A religious community of monks or nuns that often maintained the highest medieval hygiene standards, possessing clean leats and stone lavatoria."
-            },
-            {
-              "term": "Leat",
-              "definition": "An artificial water ditch or channel diverted from a clean river to supply fresh running water to a town, mill, or monastery."
-            },
-            {
-              "term": "Privy",
-              "definition": "A simple wooden or stone outhouse toilet built directly over a garden cesspit, a cesspool, or an open drainage ditch."
-            },
-            {
-              "term": "Black Death (1348)",
-              "definition": "A catastrophic bubonic and pneumonic plague epidemic that wiped out roughly one third to one half of the entire population of Britain."
             }
           ],
           "vocab_cloze_text": "During the Middle Ages, widespread belief in [Miasma Theory] meant people feared foul air caused deadly plagues like the [Black Death (1348)]. Waste was collected in a simple domestic [Privy], which had to be emptied at night by a [Gongfermer]. The highest hygiene standards were maintained in a religious [Monastery], where fresh running water was supplied through an artificial [Leat].",

@@ -807,6 +807,87 @@ const water_and_sanitation = {
           theme_heading: 'Royal Proclamations: King Edward III Demands Clean Streets',
         },
       ],
+      vocab: [
+        {
+          term: 'Gongfermer',
+          definition:
+            'A medieval night laborer who climbed down into cesspits to shovel out and remove human waste.',
+          syllables: 'gong · fer · mer',
+          phonetic: 'GONG-fer-mer',
+          tier: '3',
+        },
+        {
+          term: 'Cesspit',
+          definition:
+            'An underground pit or dry well used to collect and store human waste beneath an outhouse or latrine.',
+          syllables: 'cess · pit',
+          phonetic: 'SESS-pit',
+          tier: '3',
+        },
+        {
+          term: 'Reredorter',
+          definition:
+            'The communal latrine building of a medieval monastery, typically built directly over a flowing stream to flush waste.',
+          syllables: 're · re · dor · ter',
+          phonetic: 'REER-dor-ter',
+          tier: '3',
+        },
+        {
+          term: 'Miasma',
+          definition:
+            'The medieval medical theory that infectious diseases were directly caused by breathing poisonous vapors or foul smells.',
+          syllables: 'mi · as · ma',
+          phonetic: 'my-AZ-muh',
+          tier: '3',
+        },
+        {
+          term: 'Latrine',
+          definition:
+            'A communal toilet facility, often built over flowing water or stone channels to wash waste away.',
+          syllables: 'la · trine',
+          phonetic: 'luh-TREEN',
+          tier: '3',
+        },
+        {
+          term: 'Lavatorium',
+          definition:
+            'A communal stone washing trough in a monastery cloister where monks washed their hands before meals and prayers.',
+          syllables: 'la · va · to · ri · um',
+          phonetic: 'lav-uh-TOR-ee-um',
+          tier: '3',
+        },
+        {
+          term: 'Filtration',
+          definition:
+            'The process of passing liquid through material (such as soil or sand) to separate and remove impurities.',
+          syllables: 'fil · tra · tion',
+          phonetic: 'fil-TRAY-shun',
+          tier: '2',
+        },
+        {
+          term: 'Unfiltered',
+          definition:
+            'Water or liquid that has not been strained or purified, carrying dirt, parasites, and bacteria.',
+          syllables: 'un · fil · tered',
+          phonetic: 'un-FIL-terd',
+          tier: '2',
+        },
+        {
+          term: 'Intervention',
+          definition:
+            'Direct action taken by an authority or ruler to change an outcome or resolve an escalating crisis.',
+          syllables: 'in · ter · ven · tion',
+          phonetic: 'in-ter-VEN-shun',
+          tier: '2',
+        },
+        {
+          term: 'Accumulated',
+          definition: 'Gradually gathered or piled up in large quantities over a period of time.',
+          syllables: 'ac · cu · mu · la · ted',
+          phonetic: 'uh-KYOO-myuh-lay-tid',
+          tier: '2',
+        },
+      ],
       flashcards: [
         {
           term: 'Gongfermer',

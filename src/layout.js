@@ -151,6 +151,29 @@ export function bindEvents() {
     });
   }
 
+  // Vocabulary Lens Mode Toggle Button in Header
+  const btnVocabLens = document.getElementById('btn-vocab-lens');
+  if (btnVocabLens) {
+    // Restore initial state from localStorage (default: false for pristine reading)
+    const savedVocabLens = localStorage.getItem('vocab_lens_mode') === 'true';
+    if (savedVocabLens) {
+      document.body.classList.add('vocab-lens-active');
+      btnVocabLens.classList.add('active');
+      btnVocabLens.title =
+        'Vocabulary Lens: ACTIVE (Click to hide highlights & pronunciations for clean reading)';
+    }
+
+    btnVocabLens.addEventListener('click', () => {
+      document.body.classList.toggle('vocab-lens-active');
+      const isLens = document.body.classList.contains('vocab-lens-active');
+      localStorage.setItem('vocab_lens_mode', isLens ? 'true' : 'false');
+      btnVocabLens.classList.toggle('active', isLens);
+      btnVocabLens.title = isLens
+        ? 'Vocabulary Lens: ACTIVE (Click to hide highlights & pronunciations for clean reading)'
+        : 'Vocabulary Lens: OFF (Click to highlight barrier words & pronunciations)';
+    });
+  }
+
   // Mobile navigation drawer toggle
   const menuToggle = document.getElementById('sidebar-toggle-btn');
   const sidebar = document.getElementById('app-sidebar');

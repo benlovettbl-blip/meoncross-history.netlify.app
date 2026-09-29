@@ -1090,7 +1090,7 @@ function renderLessonVideos(videos, lesson, unitId) {
         }
 
         // Clean, readable tab title
-        let displayTitle = v.title || ('Video Option ' + (i + 1));
+        let displayTitle = v.title || 'Video Option ' + (i + 1);
         displayTitle = displayTitle
           .replace(/\s*\|\s*Secondary History.*$/i, '')
           .replace(/\s*-\s*Medicine Through Time.*$/i, '')
@@ -1984,40 +1984,94 @@ export function renderLesson(lesson) {
     `;
 
   let vocabDict = {};
-  if (lesson.vocab) {
-    lesson.vocab.forEach((v) => {
-      const termDef = v.definition || v.def || v.desc || '';
-      if (termDef) {
-        vocabDict[v.term.toLowerCase()] = termDef;
+  const allVocabEntries = (lesson.vocab || []).concat(
+    (!lesson.vocab || lesson.vocab.length === 0) && lesson.flashcards ? lesson.flashcards : [],
+  );
+
+  allVocabEntries.forEach((v) => {
+    if (!v || !v.term) return;
+    const baseTerm = v.term.trim();
+    const termKey = baseTerm.toLowerCase();
+    const termDef = v.definition || v.def || v.desc || '';
+    if (termDef && !vocabDict[termKey]) {
+      const vocabMeta = {
+        term: baseTerm,
+        definition: termDef,
+        syllables: v.syllables || '',
+        phonetic: v.phonetic || '',
+        tier: v.tier
+          ? String(v.tier)
+          : [
+                'gongfermer',
+                'cesspit',
+                'reredorter',
+                'miasma',
+                'latrine',
+                'aqueduct',
+                'conduit',
+                'hypocaust',
+                'lavatorium',
+                'strigil',
+              ].some((t) => termKey.includes(t))
+            ? '3'
+            : '2',
+      };
+      vocabDict[termKey] = vocabMeta;
+
+      // Add common plural or stem variations if not already registered
+      if (!termKey.endsWith('s') && !termKey.includes(' ')) {
+        const pluralKey = termKey + 's';
+        if (!vocabDict[pluralKey]) vocabDict[pluralKey] = vocabMeta;
       }
-    });
-  }
+      if (termKey === 'miasma theory' && !vocabDict['miasma']) {
+        vocabDict['miasma'] = vocabMeta;
+      }
+      if (termKey === 'filtration' && !vocabDict['filtered']) {
+        vocabDict['filtered'] = vocabMeta;
+      }
+      if (termKey === 'intervention' && !vocabDict['intervene']) {
+        vocabDict['intervene'] = vocabMeta;
+      }
+    }
+  });
 
   let seenTerms = new Set();
-  const highlightGlossary = (text) => {
+  const highlightGlossary = (text, maxPerBlock = 2) => {
     if (!text || typeof text !== 'string') return text || '';
     if (Object.keys(vocabDict).length === 0) return text;
     let processedText = text;
+    let blockCount = 0;
     const sortedTerms = Object.keys(vocabDict).sort((a, b) => b.length - a.length);
+
     for (const term of sortedTerms) {
-      const def = vocabDict[term];
-      if (!def || typeof def !== 'string') continue;
-      if (!seenTerms.has(term)) {
+      if (blockCount >= maxPerBlock) break;
+      const vocabItem = vocabDict[term];
+      if (!vocabItem || !vocabItem.definition) continue;
+
+      // Check if root term or variant has been seen in this lesson
+      const rootKey = vocabItem.term.toLowerCase();
+      if (!seenTerms.has(rootKey)) {
         // Regex matches HTML tags OR the specific term word boundary
         const regex = new RegExp(`(<[^>]+>)|\\b(${term})\\b`, 'gi');
         let matchedTerm = false;
 
         processedText = processedText.replace(regex, (match, htmlTag, word) => {
           if (htmlTag) return htmlTag; // Skip and preserve anything already in an HTML tag
-          if (word) {
+          if (word && blockCount < maxPerBlock) {
             matchedTerm = true;
-            return `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">${word}</span>`;
+            blockCount++;
+            const safeDef = vocabItem.definition.replace(/"/g, '&quot;');
+            const safeSyllables = (vocabItem.syllables || '').replace(/"/g, '&quot;');
+            const safePhonetic = (vocabItem.phonetic || '').replace(/"/g, '&quot;');
+            const safeTier = vocabItem.tier || '3';
+            const safeTerm = vocabItem.term.replace(/"/g, '&quot;');
+            return `<span class="vocab-word vocab-lens-term" data-term="${safeTerm}" data-definition="${safeDef}" data-syllables="${safeSyllables}" data-phonetic="${safePhonetic}" data-tier="${safeTier}">${word}</span>`;
           }
           return match;
         });
 
         if (matchedTerm) {
-          seenTerms.add(term);
+          seenTerms.add(rootKey);
         }
       }
     }
@@ -4149,9 +4203,9 @@ export function renderLesson(lesson) {
 
       const showParaNumber = Boolean(
         block.text &&
-          block.text.trim() &&
-          !(typeof block.text === 'string' && block.text.includes('side-quest-box')) &&
-          !(block.title && block.title.toLowerCase().includes('lesson reflection')),
+        block.text.trim() &&
+        !(typeof block.text === 'string' && block.text.includes('side-quest-box')) &&
+        !(block.title && block.title.toLowerCase().includes('lesson reflection')),
       );
 
       htmlNarrative += `

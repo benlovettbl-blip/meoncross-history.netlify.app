@@ -2332,9 +2332,28 @@ window.closeQuizModal = function () {
   } catch (e) {}
 };
 
-// --- Glossary Popover Logic ---
+// --- Vocabulary Lens & Glossary Popover Logic ---
 let glossaryPopover = null;
 let activeVocabElement = null;
+
+if (typeof window !== 'undefined' && !window.speakVocabWord) {
+  window.speakVocabWord = function (word) {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+    try {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(word);
+      utter.rate = 0.88;
+      const voices = window.speechSynthesis.getVoices();
+      const ukVoice = voices.find(
+        (v) => (v.lang === 'en-GB' || v.lang === 'en_GB') && !v.name.includes('espeak'),
+      );
+      if (ukVoice) utter.voice = ukVoice;
+      window.speechSynthesis.speak(utter);
+    } catch (err) {
+      console.warn('Speech synthesis error on vocab word:', err);
+    }
+  };
+}
 
 function initGlossaryPopover() {
   if (!document.getElementById('global-glossary-popover')) {
@@ -2345,16 +2364,71 @@ function initGlossaryPopover() {
     glossaryPopover = document.getElementById('global-glossary-popover');
   }
 
+  let hideTimeout = null;
+  const cancelHidePopover = () => {
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+      hideTimeout = null;
+    }
+  };
+  const scheduleHidePopover = () => {
+    cancelHidePopover();
+    hideTimeout = setTimeout(() => {
+      hidePopover();
+    }, 220);
+  };
+
+  glossaryPopover.addEventListener('mouseenter', cancelHidePopover);
+  glossaryPopover.addEventListener('mouseleave', scheduleHidePopover);
+
   const showPopover = (e) => {
-    const target = e.target.closest('.vocab-word');
+    // If Vocabulary Lens is NOT active, do not display popover (Clean Reading Mode)
+    if (!document.body.classList.contains('vocab-lens-active')) return;
+
+    const target = e.target.closest('.vocab-word, .vocab-lens-term');
     if (!target) return;
 
     const definition = target.getAttribute('data-definition');
     if (!definition) return;
 
+    cancelHidePopover();
     activeVocabElement = target;
     target.classList.add('active');
-    glossaryPopover.innerHTML = `<strong style="color: #60a5fa; display: block; margin-bottom: 4px;">${target.textContent}</strong>${definition}`;
+
+    const term = target.getAttribute('data-term') || target.textContent.trim();
+    const syllables = target.getAttribute('data-syllables');
+    const phonetic = target.getAttribute('data-phonetic');
+    const tier = target.getAttribute('data-tier') || '3';
+    const tierBadge =
+      tier === '2'
+        ? '<span style="background: rgba(14, 165, 233, 0.2); color: #38bdf8; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(14, 165, 233, 0.4);">Tier 2 &bull; Academic</span>'
+        : '<span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(245, 158, 11, 0.4);">Tier 3 &bull; Concept</span>';
+
+    const safeWordForAudio = term.replace(/'/g, "\\'");
+
+    let headerHtml = `
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px;">
+        <span style="font-size: 1.05rem; font-weight: 700; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${term}</span>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          ${tierBadge}
+          <button type="button" class="btn-vocab-speak" onclick="event.stopPropagation(); window.speakVocabWord && window.speakVocabWord('${safeWordForAudio}');" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #38bdf8; border-radius: 4px; padding: 2px 7px; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Listen to pronunciation">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+      </div>
+    `;
+
+    let phoneticsHtml = '';
+    if (syllables || phonetic) {
+      phoneticsHtml = `
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #94a3b8; margin-bottom: 8px; background: rgba(255,255,255,0.06); padding: 4px 8px; border-radius: 4px; font-family: 'Inter', sans-serif;">
+          ${syllables ? `<span style="color: #67e8f9; font-weight: 600;">${syllables}</span>` : ''}
+          ${phonetic ? `<span style="color: #cbd5e1; font-style: italic;">[${phonetic}]</span>` : ''}
+        </div>
+      `;
+    }
+
+    glossaryPopover.innerHTML = `${headerHtml}${phoneticsHtml}<div style="color: #cbd5e1; font-size: 0.86rem; line-height: 1.45;">${definition}</div>`;
     glossaryPopover.classList.add('visible');
 
     // Calculate position
@@ -2409,20 +2483,28 @@ function initGlossaryPopover() {
     }
   };
 
-  document.body.addEventListener('mouseover', showPopover);
+  document.body.addEventListener('mouseover', (e) => {
+    if (e.target.closest('.vocab-word, .vocab-lens-term')) {
+      showPopover(e);
+    }
+  });
   document.body.addEventListener('mouseout', (e) => {
-    if (e.target.closest('.vocab-word')) hidePopover(e);
+    if (e.target.closest('.vocab-word, .vocab-lens-term')) {
+      scheduleHidePopover();
+    }
   });
 
   document.body.addEventListener('click', (e) => {
-    if (e.target.closest('.vocab-word')) {
-      if (activeVocabElement === e.target.closest('.vocab-word')) {
+    const vocabTarget = e.target.closest('.vocab-word, .vocab-lens-term');
+    if (vocabTarget) {
+      if (!document.body.classList.contains('vocab-lens-active')) return;
+      if (activeVocabElement === vocabTarget) {
         hidePopover(e);
       } else {
         hidePopover(e);
         showPopover(e);
       }
-    } else {
+    } else if (!e.target.closest('#global-glossary-popover')) {
       hidePopover(e);
     }
   });
