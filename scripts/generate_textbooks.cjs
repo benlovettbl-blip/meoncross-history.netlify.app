@@ -769,7 +769,12 @@ allDirs.forEach((unitId) => {
       // Narrative Blocks & Tasks
       if (lesson.narrative_blocks) {
         lesson.narrative_blocks.forEach((block, bIdx) => {
-          if (unitId === 'cme_new' && block.type === 'photo_slider') {
+          if (
+            (unitId === 'cme_new' ||
+              unitId === 'water_and_sanitation' ||
+              unitId === 'industrialisation_and_empire') &&
+            block.type === 'photo_slider'
+          ) {
             let beforeSrc =
               typeof resolveAssetPath === 'function'
                 ? resolveAssetPath(block.before_image, 2)

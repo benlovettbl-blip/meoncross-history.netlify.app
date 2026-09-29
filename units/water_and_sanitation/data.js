@@ -631,8 +631,9 @@ const water_and_sanitation = {
           {
             objective: 'Explain why Medieval monasteries built complex water systems.',
             primer:
-              'Direct students to the section on monks building their own advanced water pipes.',
-            question: 'Why did monks believe it was their religious duty to stay clean?',
+              'Direct students to the section on monks building their own advanced water pipes and utilize the interactive cartographic map slider to trace the River Meon channels, sluices, and cascading fishponds at Titchfield Abbey.',
+            question:
+              'Why did Premonstratensian canons build their abbey beside the River Meon rather than on higher, drier ground?',
           },
           {
             objective: 'Evaluate the role of gongfermers and night-work in medieval towns.',
@@ -697,13 +698,13 @@ const water_and_sanitation = {
             'Canterbury Cathedral Priory Waterworks Plan, c. 1165, Eadwine Psalter, Trinity College, Cambridge.',
         },
         {
-          image: '/images/water_local_titchfield.jpg',
-          image_alt: 'Titchfield Abbey: Monastic Drainage Channels & River Meon Sluices (1232)',
+          image: '/images/titchfield/titchfield_estate_map_1605.jpg',
+          image_alt: 'Titchfield Abbey & River Meon Estate Map (c. 1605–1610)',
           caption:
-            '<strong>What is this source showing?</strong> Fieldwork survey of the surviving monastic ruins and water management systems at Titchfield Abbey in the River Meon Valley. Premonstratensian canons engineered stone sluices, mill races, and clean-water culverts to divert fresh river water through the cloister lavatorium while continuously flushing the reredorter (latrines).',
+            '<strong>Source B: Archival Estate Map of Titchfield (c. 1605–1610).</strong> This historic survey illustrates "The Place" (the converted Premonstratensian abbey), the meandering River Meon, and the cascading string of monastic fishponds stepping down the hollow towards the river, complete with contemporary illustrations of fish in the ponds.',
           source_letter: 'B',
-          shelfmark: 'Fieldwork Primary Record &bull; Meon Valley Monastic Archive (TA/1232/HYD)',
-          citation: 'English Heritage Historical Records &bull; Hampshire Monastic Survey.',
+          shelfmark: 'Hampshire Record Office &bull; Titchfield Estate Archive (HRO 5M53/1)',
+          citation: 'Hampshire Record Office &bull; Titchfield Estate Survey (c. 1605–1610).',
           tasks: [
             {
               type: 'short_answer',
@@ -716,10 +717,40 @@ const water_and_sanitation = {
                 'The water management system at Titchfield Abbey supports this idea because...',
             },
           ],
-          text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Located right in Fareham, this Premonstratensian abbey relied on the River Meon. Like most monasteries, it had highly advanced water management for the time, including fresh water piped in for washing (the lavatorium) and a reredorter (latrine block) cleverly positioned over a running stream to carry waste away. The impressive stone ruins and medieval floor tiles are still visible today. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
+          text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey & the River Meon\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Founded in 1232 by Peter des Roches (Bishop of Winchester), this Premonstratensian abbey was built directly on the banks of the <strong>River Meon</strong>. Like Canterbury, the "White Canons" engineered a sophisticated hydraulic system: fresh water was diverted from upstream springs for cooking and cloister washing (the <em>lavatorium</em>), while a fast-flowing bypass channel was diverted directly beneath the <strong>reredorter</strong> (communal latrine block) to continuously flush waste downstream back into the river. Upstream in the valley hollow, the monks constructed a flight of four large <strong>stew ponds</strong> (fishponds) to supply fresh carp and pike for Friday fasts. The impressive stone gatehouse, abbey ruins, and medieval encaustic tiles remain preserved today. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
           level_4:
-            '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Located right in Fareham, this Premonstratensian abbey relied on the River Meon. Like most monasteries, it had highly advanced water management for the time, including fresh water piped in for washing (the lavatorium) and a reredorter (latrine block) cleverly positioned over a running stream to carry waste away. The impressive stone ruins and medieval floor tiles are still visible today. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
+            '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey & the River Meon\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Founded in 1232, Titchfield Abbey relied on the River Meon. Like Canterbury, the monks engineered fresh water pipes for washing (the lavatorium) and built their toilets (the reredorter) directly over a flowing stream to carry waste away into the river. Upstream, they built four large fishponds to farm carp for food. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
           theme_heading: "Local Link: Titchfield Abbey's River Meon Channels",
+        },
+        {
+          type: 'photo_slider',
+          tag: 'Hydraulic Landscape Forensics',
+          title: 'Cartographic Forensic Slider: 1890s Ordnance Survey vs. Modern Titchfield Abbey',
+          description:
+            'Slide back and forth to compare the late Victorian Ordnance Survey 25-inch (1:2,500) map against modern satellite and street views of Titchfield Abbey. Observe how the 1890s survey preserves the medieval hydraulic anatomy: the cascading string of monastic stew ponds along Carron Row (top-left), the Abbey precinct (Place House) on plot 347, and the stone sluice gates redirecting the River Meon (right) to continuously flush the reredorter (latrine block) away from the living quarters.',
+          before_image: '/images/titchfield/titchfield_abbey_historic_os_map_1890s.jpg',
+          before_label: '1890s OS 25-Inch Map (Abbey, Ponds & Sluices)',
+          after_image: '/images/titchfield/titchfield_abbey_modern_map.jpg',
+          after_label: 'Modern Street Map (Abbey & Fishpond Hollow)',
+          satellite_image: '/images/titchfield/titchfield_abbey_modern_satellite.jpg',
+          satellite_label: 'Modern Satellite Aerial View',
+          links: [
+            {
+              label: 'NLS Side-by-Side Map Viewer (Full Screen)',
+              url: 'https://maps.nls.uk/geo/explore/side-by-side/#zoom=17.0&lat=50.8558&lon=-1.2332&layers=168&right=osm',
+              icon: 'fa-solid fa-table-columns',
+            },
+            {
+              label: 'NLS Interactive Spyglass Lens',
+              url: 'https://maps.nls.uk/geo/explore/spy/#zoom=17.0&lat=50.8558&lon=-1.2332&layers=168&b=1',
+              icon: 'fa-solid fa-circle-dot',
+            },
+            {
+              label: 'English Heritage: History of Titchfield Abbey',
+              url: 'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/history/',
+              icon: 'fa-solid fa-landmark',
+            },
+          ],
         },
         {
           text: "The most severe and lethal sanitation crises of the era occurred in the rapidly growing and heavily overcrowded medieval towns, such as London and York. The high population density meant that thousands of people were crammed into tightly packed wooden houses lining narrow, unpaved streets. In these conditions, shared communal toilets overflowed rapidly, leaking raw human waste directly into the mud of the streets and seeping into nearby shallow wells. While wealthy merchants could afford to dig deep, private, stone-lined wells in their secure courtyards, poorer citizens faced a daily battle for clean water. They were often forced to buy expensive, unfiltered river water from professional 'water sellers'—laborers who hauled massive wooden barrels through the filthy streets on horseback, shouting to attract customers.",

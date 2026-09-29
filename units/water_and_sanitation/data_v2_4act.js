@@ -606,8 +606,38 @@ const water_and_sanitation = {
         {
           act: 4,
           title:
-            'Act 4: The Historical Verdict & Historiographical Debate (The Myth of the Ignorant Peasant)',
-          text: '<span class="para-ref">[4.1]</span> Modern historical revisionism, pioneered by historians such as Carole Rawcliffe, has dismantled the Victorian stereotype of the ignorant, filthy medieval peasant. Medieval citizens valued bodily cleanliness: wealthy monastic houses (such as Fountains Abbey and Christ Church, Canterbury) engineered sophisticated lead-pipe water networks with clean cloister washing fountains (*lavatoria*), while townspeople regularly visited public steam bathhouses (*stews*) and used tooth powders made from crushed herbs and cuttlefish bone.<br><br><span class="para-ref">[4.2]</span> Why, then, was medieval public health so fragile? The tragedy of the Middle Ages was not a lack of civic hygiene rules, but the insurmountable barrier of scientific ignorance. Adhering to Galenic humoural theory, doctors treated plague with bloodletting, pigeon-clipping, and burning fragrant herbs. Without germ theory, town councils could not comprehend that the real killers were not bad smells, but the microscopic pathogens seeping silently from porous garden cesspits directly into urban drinking wells.',
+            'Act 4: The Historical Verdict & Historiographical Debate (The Myth of the Ignorant Peasant & Monastic Hydraulics)',
+          text: '<span class="para-ref">[4.1]</span> Modern historical revisionism, pioneered by historians such as Carole Rawcliffe, has dismantled the Victorian stereotype of the ignorant, filthy medieval peasant. Medieval citizens valued bodily cleanliness: wealthy monastic houses (such as Fountains Abbey, Christ Church Canterbury, and Hampshire’s Titchfield Abbey on the River Meon) engineered sophisticated lead-pipe water networks with clean cloister washing fountains (*lavatoria*), fast-flushed latrine culverts (*reredorters*), and engineered flights of valley fishponds.<br><br><span class="para-ref">[4.2]</span> Why, then, was medieval public health so fragile? The tragedy of the Middle Ages was not a lack of civic hygiene rules, but the insurmountable barrier of scientific ignorance. Adhering to Galenic humoural theory, doctors treated plague with bloodletting, pigeon-clipping, and burning fragrant herbs. Without germ theory, town councils could not comprehend that the real killers were not bad smells, but the microscopic pathogens seeping silently from porous garden cesspits directly into urban drinking wells.',
+        },
+        {
+          type: 'photo_slider',
+          tag: 'Hydraulic Landscape Forensics',
+          title: 'Cartographic Forensic Slider: 1890s Ordnance Survey vs. Modern Titchfield Abbey',
+          description:
+            'Slide back and forth to compare the late Victorian Ordnance Survey 25-inch (1:2,500) map against modern satellite and street views of Titchfield Abbey. Observe how the 1890s survey preserves the medieval hydraulic anatomy: the cascading string of monastic stew ponds along Carron Row (top-left), the Abbey precinct (Place House) on plot 347, and the stone sluice gates redirecting the River Meon (right) to continuously flush the reredorter (latrine block) away from the living quarters.',
+          before_image: '/images/titchfield/titchfield_abbey_historic_os_map_1890s.jpg',
+          before_label: '1890s OS 25-Inch Map (Abbey, Ponds & Sluices)',
+          after_image: '/images/titchfield/titchfield_abbey_modern_map.jpg',
+          after_label: 'Modern Street Map (Abbey & Fishpond Hollow)',
+          satellite_image: '/images/titchfield/titchfield_abbey_modern_satellite.jpg',
+          satellite_label: 'Modern Satellite Aerial View',
+          links: [
+            {
+              label: 'NLS Side-by-Side Map Viewer (Full Screen)',
+              url: 'https://maps.nls.uk/geo/explore/side-by-side/#zoom=17.0&lat=50.8558&lon=-1.2332&layers=168&right=osm',
+              icon: 'fa-solid fa-table-columns',
+            },
+            {
+              label: 'NLS Interactive Spyglass Lens',
+              url: 'https://maps.nls.uk/geo/explore/spy/#zoom=17.0&lat=50.8558&lon=-1.2332&layers=168&b=1',
+              icon: 'fa-solid fa-circle-dot',
+            },
+            {
+              label: 'English Heritage: History of Titchfield Abbey',
+              url: 'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/history/',
+              icon: 'fa-solid fa-landmark',
+            },
+          ],
         },
       ],
       enquiry_task: {
