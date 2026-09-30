@@ -80,6 +80,66 @@
       gap: 0;
       margin: 1px 0;
     }
+    /* Bespoke Lesson Note Scaffold (Left Page) */
+    .note-scaffold-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 5px;
+      margin-top: 3px;
+    }
+    .note-scaffold-card {
+      border: 1.2px solid #000000;
+      border-radius: 3px;
+      padding: 3.5px 7px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .note-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+      padding-bottom: 1.5px;
+      border-bottom: 1px solid #000000;
+    }
+    .note-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.1px;
+    }
+    .note-card-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .note-card-prompt {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      color: #1e1e1e;
+      line-height: 1.22;
+      margin: 1px 0 2px 0;
+    }
+    .note-card-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .note-card-lines .task-line {
+      height: 7.2mm;
+    }
     /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
     .lined-page-grid {
       display: flex;
@@ -523,7 +583,7 @@
           KT2.1: The New Spirit of Enquiry: Humanism, The Printing Press & The Royal Society
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+          Knowledge Retrieval &bull; Active Lesson Note Scaffold
         </span>
       </div>
 
@@ -612,73 +672,58 @@
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
+      <!-- Stage 2: Bespoke Lesson Note-Taking Scaffold (Replaces vocab & 4-mark drills) -->
+      <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Bespoke Lesson Note-Taking Scaffold
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">ACTIVE READING &bull; 1 A4 SHEET</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          Define <strong>The Royal Society (1660)</strong> and explain how its motto <strong>Nullius in Verba</strong> challenged medieval clerical authority:
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #333333; margin-bottom: 3px; line-height: 1.25;">
+          <strong>Instructions:</strong> As you read the chapter, complete these 3 structured enquiry blocks to map how ideas spread and why clerical authority broke down:
         </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One Similarity [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which ideas about the cause of disease in the Renaissance (c1500–c1700) were similar to ideas in the Medieval period (c1250–c1500). [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Focus on the persistent reliance on miasma (foul air) and God's will among ordinary people, despite elite scientific debates.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way ideas about causes were similar was the continued belief in... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One Difference [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which the communication of medical ideas in the Renaissance was different from the Medieval period. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Contrast the mass-production of identical medical texts on printing presses with hand-copied manuscripts controlled by monks in scriptoria.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way communication differed was... &bull; In the Medieval period, books were... &bull; In contrast, in the Renaissance, the printing press...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div class="note-scaffold-container">
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">1. The Movable Type Printing Press (c. 1440 Gutenberg / 1476 Caxton)</span>
+                <span class="note-card-badge">TECHNOLOGY</span>
+              </div>
+              <div class="note-card-prompt">Explain how mass-producing identical copies broke the Catholic Church’s clerical monopoly on medical textbooks:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">2. The Royal Society & ‘Nullius in Verba’ (1660 / Royal Charter 1662)</span>
+                <span class="note-card-badge">SCIENTIFIC METHOD</span>
+              </div>
+              <div class="note-card-prompt">Explain how peer review and Philosophical Transactions (1665) replaced Galenic authority with laboratory proof:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">3. The Limits of Renaissance Science (Why didn’t this cure sick patients?)</span>
+                <span class="note-card-badge">HISTORICAL PARADOX</span>
+              </div>
+              <div class="note-card-prompt">Explain why ordinary sick people experienced almost zero benefit despite this revolution in printing and elite science:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
 
@@ -1086,7 +1131,7 @@
           KT2.2: Thomas Sydenham & The Art of Bedside Observation (1676)
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+          Knowledge Retrieval &bull; Active Lesson Note Scaffold
         </span>
       </div>
 
@@ -1175,73 +1220,58 @@
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
+      <!-- Stage 2: Bespoke Lesson Note-Taking Scaffold (Replaces vocab & 4-mark drills) -->
+      <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Bespoke Lesson Note-Taking Scaffold
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">ACTIVE READING &bull; 1 A4 SHEET</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          Define <strong>Bedside Observation</strong> and explain how Sydenham’s concept of <strong>Disease Species</strong> differed from humoural theory:
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #333333; margin-bottom: 3px; line-height: 1.25;">
+          <strong>Instructions:</strong> As you read the chapter, complete these 3 structured enquiry blocks to evaluate why Sydenham became ‘The English Hippocrates’:
         </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One Difference [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which Thomas Sydenham's approach to diagnosis was different from medieval physicians. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Contrast Sydenham’s detailed bedside observation of clinical symptoms with medieval reliance on urine flasks (matula) and astrological charts.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way diagnosis differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, Sydenham insisted on...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One Similarity [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which medical treatments prescribed by Thomas Sydenham were similar to medieval treatments. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Focus on his continued reliance on traditional humoural purging and bloodletting (phlebotomy) to deplete patient fluids.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way treatments were similar was the continued use of... &bull; In the Medieval period... &bull; Similarly, Sydenham continued to prescribe...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div class="note-scaffold-container">
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">1. Bedside Observation vs. Book-Learning (Observationes Medicae 1676)</span>
+                <span class="note-card-badge">CLINICAL METHOD</span>
+              </div>
+              <div class="note-card-prompt">Explain how Sydenham’s method of closely monitoring real-time symptoms rejected Galenic library study and astrology:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">2. Classifying Diseases into ‘Distinct Species’ (Like Plants in Botany)</span>
+                <span class="note-card-badge">DIAGNOSIS</span>
+              </div>
+              <div class="note-card-prompt">Explain how Sydenham viewed diseases as separate outside illnesses rather than unique personal fluid imbalances (e.g. scarlet fever vs measles):</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">3. The Sydenham Paradox (Clinical Genius with Medieval Treatments)</span>
+                <span class="note-card-badge">CONTINUITY PARADOX</span>
+              </div>
+              <div class="note-card-prompt">Explain why Sydenham prescribed cinchona bark and fresh air, but still relied heavily on bloodletting and humoural purging:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
 
@@ -1649,7 +1679,7 @@
           KT2.3: Andreas Vesalius & The Anatomical Revolution (1543)
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+          Knowledge Retrieval &bull; Active Lesson Note Scaffold
         </span>
       </div>
 
@@ -1738,73 +1768,58 @@
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
+      <!-- Stage 2: Bespoke Lesson Note-Taking Scaffold (Replaces vocab & 4-mark drills) -->
+      <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Bespoke Lesson Note-Taking Scaffold
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">ACTIVE READING &bull; 1 A4 SHEET</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          Define <strong>Human Dissection</strong> and explain why Vesalius’s corrections of <strong>Galenic Anatomy</strong> met furious resistance:
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #333333; margin-bottom: 3px; line-height: 1.25;">
+          <strong>Instructions:</strong> As you read the chapter, complete these 3 structured enquiry blocks to analyze how direct human dissection overturned 1,400 years of Galenic dogma:
         </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One Difference [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which methods of investigating the human body in the Renaissance were different from methods in the Medieval period. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Contrast medieval professors lecturing from Galenic texts while barbers cut with Vesalius performing human dissections himself at Padua.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way methods of investigation differed was... &bull; In the Medieval period, professors... &bull; In contrast, in the Renaissance, Vesalius...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One Similarity [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which the effectiveness of surgical treatments in the 16th century was similar to the Medieval period. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Focus on the fact that despite accurate anatomical diagrams, surgeons still lacked anesthetics, antiseptics, and effective treatments, leaving surgery agonizing and fatal.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way the effectiveness of surgery was similar was... &bull; In the Medieval period... &bull; Similarly, in the 16th century...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div class="note-scaffold-container">
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">1. Direct Human Dissection & Correcting Galen’s Errors (De Fabrica 1543)</span>
+                <span class="note-card-badge">DISSECTION</span>
+              </div>
+              <div class="note-card-prompt">Detail 2 specific anatomical errors Vesalius corrected by dissecting human criminals rather than Galen’s apes and pigs:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">2. The Fierce Backlash from Conservative Doctors & Universities</span>
+                <span class="note-card-badge">RESISTANCE</span>
+              </div>
+              <div class="note-card-prompt">Explain why professors like Jacobus Sylvius attacked Vesalius and claimed the human body had ‘changed’ since Galen:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">3. The Significance Verdict: Master Anatomist vs Zero Cures</span>
+                <span class="note-card-badge">EVALUATION</span>
+              </div>
+              <div class="note-card-prompt">Explain why De Fabrica transformed surgery and medical training forever, yet failed to cure a single sick patient in 1543:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
 
@@ -2212,7 +2227,7 @@
           KT2.4: William Harvey & The Circulation of the Blood (1628)
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+          Knowledge Retrieval &bull; Active Lesson Note Scaffold
         </span>
       </div>
 
@@ -2301,73 +2316,58 @@
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
+      <!-- Stage 2: Bespoke Lesson Note-Taking Scaffold (Replaces vocab & 4-mark drills) -->
+      <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Bespoke Lesson Note-Taking Scaffold
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">ACTIVE READING &bull; 1 A4 SHEET</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          Define <strong>Circulation of the Blood</strong> and explain how Harvey’s <strong>Mechanical Pump</strong> model overturned Galen’s liver theory:
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #333333; margin-bottom: 3px; line-height: 1.25;">
+          <strong>Instructions:</strong> As you read the chapter, complete these 3 structured enquiry blocks to trace how mechanical physics and mathematics proved circulation:
         </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One Difference [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which William Harvey's understanding of the circulatory system was different from Galen's theories. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Contrast Galen’s idea that blood is constantly manufactured in the liver and burned as fuel with Harvey’s proof of a closed, continuous circulation pumped by the heart.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way Harvey's ideas differed was... &bull; Galen claimed that blood was... &bull; In contrast, Harvey proved that...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One Similarity [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which medical treatments after Harvey’s discovery were similar to treatments in the Medieval period. [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Focus on the fact that physicians continued to practice bloodletting (phlebotomy) to balance humours because Harvey’s discovery offered zero practical cures.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way medical treatments remained similar was... &bull; In the Medieval period... &bull; Similarly, after Harvey’s discovery...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div class="note-scaffold-container">
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">1. The Mechanical Pump & Mathematical Proof (De Motu Cordis 1628)</span>
+                <span class="note-card-badge">MATHEMATICS</span>
+              </div>
+              <div class="note-card-prompt">Explain how Harvey calculated that 540 pints of blood pumped per hour mathematically destroyed Galen’s liver theory:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">2. The Arm Ligature Experiment & One-Way Vein Valves</span>
+                <span class="note-card-badge">EXPERIMENT</span>
+              </div>
+              <div class="note-card-prompt">Explain how tying tight and loose bandages proved arteries carry blood from the heart and vein valves only allow flow back to it:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">3. The 50-Year Delay & Continued Bloodletting</span>
+                <span class="note-card-badge">STAGNATION</span>
+              </div>
+              <div class="note-card-prompt">Explain why doctors called Harvey a ‘circulator’ (quack) and continued phlebotomy (bloodletting) despite knowing blood circulated:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
 
@@ -2775,7 +2775,7 @@
           KT2.5: Continuity in Treatment & The Great Plague of London (1665)
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+          Knowledge Retrieval &bull; Active Lesson Note Scaffold
         </span>
       </div>
 
@@ -2864,73 +2864,58 @@
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
+      <!-- Stage 2: Bespoke Lesson Note-Taking Scaffold (Replaces vocab & 4-mark drills) -->
+      <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Bespoke Lesson Note-Taking Scaffold
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">ACTIVE READING &bull; 1 A4 SHEET</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          Define <strong>Civic Quarantine</strong> and explain how the 1665 response to <strong>Miasma</strong> showed continuity with 1348:
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #333333; margin-bottom: 3px; line-height: 1.25;">
+          <strong>Instructions:</strong> As you read the chapter, complete these 3 structured enquiry blocks to weigh municipal change against medical continuity:
         </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One Similarity [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which attempts to prevent the spread of the Great Plague (1665) were similar to attempts during the Black Death (1348). [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Focus on the continued belief in miasma, leading people to carry pomanders, smoke tobacco, and light street bonfires, alongside prayers to avert God’s wrath.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way attempts to prevent spread were similar was... &bull; During the Black Death in 1348... &bull; Similarly, during the Great Plague of 1665...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One Difference [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          Explain one way in which municipal and civic reactions to the Great Plague (1665) were different from reactions to the Black Death (1348). [4 marks]
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> Contrast the absence of organized municipal quarantine in 1348 with strict 28-day house lock-ins, red crosses on doors, parish watchmen, and Bills of Mortality in 1665.
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> One way civic reactions differed was... &bull; During the Black Death in 1348... &bull; In contrast, during the Great Plague of 1665, the Mayor of London...
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div class="note-scaffold-container">
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">1. Municipal Quarantine & State Enforcement (What Changed since 1348?)</span>
+                <span class="note-card-badge">CIVIC CHANGE</span>
+              </div>
+              <div class="note-card-prompt">Detail how the Mayor of London enforced 28-day house lock-ins, red crosses, parish watchmen, and Bills of Mortality:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">2. Treatments & Beliefs about Cause (What Stayed Exactly the Same?)</span>
+                <span class="note-card-badge">MEDICAL CONTINUITY</span>
+              </div>
+              <div class="note-card-prompt">Explain why ordinary Londoners and plague doctors still blamed miasma and God, relying on smoking tobacco, pomanders, and bleeding:</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">3. The Historical Verdict: Civic Efficiency vs. Biological Helplessness</span>
+                <span class="note-card-badge">VERDICT</span>
+              </div>
+              <div class="note-card-prompt">Evaluate: Did London handle the 1665 plague better than 1348 because of science, or merely because of ruthless municipal policing?</div>
+            </div>
+            <div class="note-card-lines">
+              <div class="task-line"></div><div class="task-line"></div><div class="task-line"></div><div class="task-line"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
 

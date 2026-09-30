@@ -125,23 +125,35 @@ const renaissanceConfigs = [
         a: 'Phlebotomy (bloodletting with fleams, cupping, or leeches)',
       },
     ],
-    vocabPrompt:
-      'Define <strong>The Royal Society (1660)</strong> and explain how its motto <strong>Nullius in Verba</strong> challenged medieval clerical authority:',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which ideas about the cause of disease in the Renaissance (c1500–c1700) were similar to ideas in the Medieval period (c1250–c1500). [4 marks]',
-      hint: "Focus on the persistent reliance on miasma (foul air) and God's will among ordinary people, despite elite scientific debates.",
-      stems:
-        'One way ideas about causes were similar was the continued belief in... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
-    },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which the communication of medical ideas in the Renaissance was different from the Medieval period. [4 marks]',
-      hint: 'Contrast the mass-production of identical medical texts on printing presses with hand-copied manuscripts controlled by monks in scriptoria.',
-      stems:
-        'One way communication differed was... &bull; In the Medieval period, books were... &bull; In contrast, in the Renaissance, the printing press...',
+    noteScaffold: {
+      instruction:
+        'As you read the chapter, complete these 3 structured enquiry blocks to map how ideas spread and why clerical authority broke down:',
+      blocks: [
+        {
+          num: 1,
+          badge: 'TECHNOLOGY',
+          title: '1. The Movable Type Printing Press (c. 1440 Gutenberg / 1476 Caxton)',
+          prompt:
+            'Explain how mass-producing identical copies broke the Catholic Church’s clerical monopoly on medical textbooks:',
+          lines: 4,
+        },
+        {
+          num: 2,
+          badge: 'SCIENTIFIC METHOD',
+          title: '2. The Royal Society & ‘Nullius in Verba’ (1660 / Royal Charter 1662)',
+          prompt:
+            'Explain how peer review and Philosophical Transactions (1665) replaced Galenic authority with laboratory proof:',
+          lines: 4,
+        },
+        {
+          num: 3,
+          badge: 'HISTORICAL PARADOX',
+          title: '3. The Limits of Renaissance Science (Why didn’t this cure sick patients?)',
+          prompt:
+            'Explain why ordinary sick people experienced almost zero benefit despite this revolution in printing and elite science:',
+          lines: 4,
+        },
+      ],
     },
     timelineMission:
       "Turn to Pages 2–3 (Key Topic 2.1). In the drawing box, sketch Gutenberg’s screw press producing identical anatomical plates and annotate the Royal Society's motto: 'Nullius in Verba' (Take nobody's word for it)!",
@@ -225,23 +237,35 @@ const renaissanceConfigs = [
         a: 'Hippocrates of Kos',
       },
     ],
-    vocabPrompt:
-      'Define <strong>Bedside Observation</strong> and explain how Sydenham’s concept of <strong>Disease Species</strong> differed from humoural theory:',
-    fourMarkA: {
-      type: 'Difference',
-      question:
-        "Explain one way in which Thomas Sydenham's approach to diagnosis was different from medieval physicians. [4 marks]",
-      hint: 'Contrast Sydenham’s detailed bedside observation of clinical symptoms with medieval reliance on urine flasks (matula) and astrological charts.',
-      stems:
-        'One way diagnosis differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, Sydenham insisted on...',
-    },
-    fourMarkB: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which medical treatments prescribed by Thomas Sydenham were similar to medieval treatments. [4 marks]',
-      hint: 'Focus on his continued reliance on traditional humoural purging and bloodletting (phlebotomy) to deplete patient fluids.',
-      stems:
-        'One way treatments were similar was the continued use of... &bull; In the Medieval period... &bull; Similarly, Sydenham continued to prescribe...',
+    noteScaffold: {
+      instruction:
+        'As you read the chapter, complete these 3 structured enquiry blocks to evaluate why Sydenham became ‘The English Hippocrates’:',
+      blocks: [
+        {
+          num: 1,
+          badge: 'CLINICAL METHOD',
+          title: '1. Bedside Observation vs. Book-Learning (Observationes Medicae 1676)',
+          prompt:
+            'Explain how Sydenham’s method of closely monitoring real-time symptoms rejected Galenic library study and astrology:',
+          lines: 4,
+        },
+        {
+          num: 2,
+          badge: 'DIAGNOSIS',
+          title: '2. Classifying Diseases into ‘Distinct Species’ (Like Plants in Botany)',
+          prompt:
+            'Explain how Sydenham viewed diseases as separate outside illnesses rather than unique personal fluid imbalances (e.g. scarlet fever vs measles):',
+          lines: 4,
+        },
+        {
+          num: 3,
+          badge: 'CONTINUITY PARADOX',
+          title: '3. The Sydenham Paradox (Clinical Genius with Medieval Treatments)',
+          prompt:
+            'Explain why Sydenham prescribed cinchona bark and fresh air, but still relied heavily on bloodletting and humoural purging:',
+          lines: 4,
+        },
+      ],
     },
     timelineMission:
       "Turn to Pages 2–3 (Key Topic 2.2). In the drawing box, sketch Sydenham recording clinical symptoms at a patient's bedside and annotate his landmark book: Observationes Medicae (1676)!",
@@ -325,23 +349,35 @@ const renaissanceConfigs = [
         a: '1476',
       },
     ],
-    vocabPrompt:
-      'Define <strong>Human Dissection</strong> and explain why Vesalius’s corrections of <strong>Galenic Anatomy</strong> met furious resistance:',
-    fourMarkA: {
-      type: 'Difference',
-      question:
-        'Explain one way in which methods of investigating the human body in the Renaissance were different from methods in the Medieval period. [4 marks]',
-      hint: 'Contrast medieval professors lecturing from Galenic texts while barbers cut with Vesalius performing human dissections himself at Padua.',
-      stems:
-        'One way methods of investigation differed was... &bull; In the Medieval period, professors... &bull; In contrast, in the Renaissance, Vesalius...',
-    },
-    fourMarkB: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which the effectiveness of surgical treatments in the 16th century was similar to the Medieval period. [4 marks]',
-      hint: 'Focus on the fact that despite accurate anatomical diagrams, surgeons still lacked anesthetics, antiseptics, and effective treatments, leaving surgery agonizing and fatal.',
-      stems:
-        'One way the effectiveness of surgery was similar was... &bull; In the Medieval period... &bull; Similarly, in the 16th century...',
+    noteScaffold: {
+      instruction:
+        'As you read the chapter, complete these 3 structured enquiry blocks to analyze how direct human dissection overturned 1,400 years of Galenic dogma:',
+      blocks: [
+        {
+          num: 1,
+          badge: 'DISSECTION',
+          title: '1. Direct Human Dissection & Correcting Galen’s Errors (De Fabrica 1543)',
+          prompt:
+            'Detail 2 specific anatomical errors Vesalius corrected by dissecting human criminals rather than Galen’s apes and pigs:',
+          lines: 4,
+        },
+        {
+          num: 2,
+          badge: 'RESISTANCE',
+          title: '2. The Fierce Backlash from Conservative Doctors & Universities',
+          prompt:
+            'Explain why professors like Jacobus Sylvius attacked Vesalius and claimed the human body had ‘changed’ since Galen:',
+          lines: 4,
+        },
+        {
+          num: 3,
+          badge: 'EVALUATION',
+          title: '3. The Significance Verdict: Master Anatomist vs Zero Cures',
+          prompt:
+            'Explain why De Fabrica transformed surgery and medical training forever, yet failed to cure a single sick patient in 1543:',
+          lines: 4,
+        },
+      ],
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 2.3). In the drawing box, sketch Vesalius dissecting the human muscular system and annotate his landmark masterwork: De Humani Corporis Fabrica (1543)!',
@@ -425,23 +461,35 @@ const renaissanceConfigs = [
         a: 'Nullius in Verba (Take nobody’s word for it)',
       },
     ],
-    vocabPrompt:
-      'Define <strong>Circulation of the Blood</strong> and explain how Harvey’s <strong>Mechanical Pump</strong> model overturned Galen’s liver theory:',
-    fourMarkA: {
-      type: 'Difference',
-      question:
-        "Explain one way in which William Harvey's understanding of the circulatory system was different from Galen's theories. [4 marks]",
-      hint: 'Contrast Galen’s idea that blood is constantly manufactured in the liver and burned as fuel with Harvey’s proof of a closed, continuous circulation pumped by the heart.',
-      stems:
-        "One way Harvey's ideas differed was... &bull; Galen claimed that blood was... &bull; In contrast, Harvey proved that...",
-    },
-    fourMarkB: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which medical treatments after Harvey’s discovery were similar to treatments in the Medieval period. [4 marks]',
-      hint: 'Focus on the fact that physicians continued to practice bloodletting (phlebotomy) to balance humours because Harvey’s discovery offered zero practical cures.',
-      stems:
-        'One way medical treatments remained similar was... &bull; In the Medieval period... &bull; Similarly, after Harvey’s discovery...',
+    noteScaffold: {
+      instruction:
+        'As you read the chapter, complete these 3 structured enquiry blocks to trace how mechanical physics and mathematics proved circulation:',
+      blocks: [
+        {
+          num: 1,
+          badge: 'MATHEMATICS',
+          title: '1. The Mechanical Pump & Mathematical Proof (De Motu Cordis 1628)',
+          prompt:
+            'Explain how Harvey calculated that 540 pints of blood pumped per hour mathematically destroyed Galen’s liver theory:',
+          lines: 4,
+        },
+        {
+          num: 2,
+          badge: 'EXPERIMENT',
+          title: '2. The Arm Ligature Experiment & One-Way Vein Valves',
+          prompt:
+            'Explain how tying tight and loose bandages proved arteries carry blood from the heart and vein valves only allow flow back to it:',
+          lines: 4,
+        },
+        {
+          num: 3,
+          badge: 'STAGNATION',
+          title: '3. The 50-Year Delay & Continued Bloodletting',
+          prompt:
+            'Explain why doctors called Harvey a ‘circulator’ (quack) and continued phlebotomy (bloodletting) despite knowing blood circulated:',
+          lines: 4,
+        },
+      ],
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 2.4). In the drawing box, sketch the famous arm ligature experiment showing vein valves and annotate: De Motu Cordis (1628)!',
@@ -525,23 +573,35 @@ const renaissanceConfigs = [
         a: 'Cinchona bark (quinine)',
       },
     ],
-    vocabPrompt:
-      'Define <strong>Civic Quarantine</strong> and explain how the 1665 response to <strong>Miasma</strong> showed continuity with 1348:',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which attempts to prevent the spread of the Great Plague (1665) were similar to attempts during the Black Death (1348). [4 marks]',
-      hint: 'Focus on the continued belief in miasma, leading people to carry pomanders, smoke tobacco, and light street bonfires, alongside prayers to avert God’s wrath.',
-      stems:
-        'One way attempts to prevent spread were similar was... &bull; During the Black Death in 1348... &bull; Similarly, during the Great Plague of 1665...',
-    },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which municipal and civic reactions to the Great Plague (1665) were different from reactions to the Black Death (1348). [4 marks]',
-      hint: 'Contrast the absence of organized municipal quarantine in 1348 with strict 28-day house lock-ins, red crosses on doors, parish watchmen, and Bills of Mortality in 1665.',
-      stems:
-        'One way civic reactions differed was... &bull; During the Black Death in 1348... &bull; In contrast, during the Great Plague of 1665, the Mayor of London...',
+    noteScaffold: {
+      instruction:
+        'As you read the chapter, complete these 3 structured enquiry blocks to weigh municipal change against medical continuity:',
+      blocks: [
+        {
+          num: 1,
+          badge: 'CIVIC CHANGE',
+          title: '1. Municipal Quarantine & State Enforcement (What Changed since 1348?)',
+          prompt:
+            'Detail how the Mayor of London enforced 28-day house lock-ins, red crosses, parish watchmen, and Bills of Mortality:',
+          lines: 4,
+        },
+        {
+          num: 2,
+          badge: 'MEDICAL CONTINUITY',
+          title: '2. Treatments & Beliefs about Cause (What Stayed Exactly the Same?)',
+          prompt:
+            'Explain why ordinary Londoners and plague doctors still blamed miasma and God, relying on smoking tobacco, pomanders, and bleeding:',
+          lines: 4,
+        },
+        {
+          num: 3,
+          badge: 'VERDICT',
+          title: '3. The Historical Verdict: Civic Efficiency vs. Biological Helplessness',
+          prompt:
+            'Evaluate: Did London handle the 1665 plague better than 1348 because of science, or merely because of ruthless municipal policing?',
+          lines: 4,
+        },
+      ],
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 2.5). In the drawing box, sketch Londoners fleeing the 1665 plague, padlocked houses with red crosses, and the dead-cart collecting bodies. Annotate why treatments showed continuity with 1348!',
@@ -668,6 +728,66 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       gap: 0;
       margin: 1px 0;
+    }
+    /* Bespoke Lesson Note Scaffold (Left Page) */
+    .note-scaffold-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 5px;
+      margin-top: 3px;
+    }
+    .note-scaffold-card {
+      border: 1.2px solid #000000;
+      border-radius: 3px;
+      padding: 3.5px 7px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .note-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+      padding-bottom: 1.5px;
+      border-bottom: 1px solid #000000;
+    }
+    .note-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.1px;
+    }
+    .note-card-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .note-card-prompt {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      color: #1e1e1e;
+      line-height: 1.22;
+      margin: 1px 0 2px 0;
+    }
+    .note-card-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .note-card-lines .task-line {
+      height: 7.2mm;
     }
     /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
     .lined-page-grid {
@@ -1124,7 +1244,7 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
           ${cfg.title}
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
+          Knowledge Retrieval &bull; Active Lesson Note Scaffold
         </span>
       </div>
 
@@ -1154,73 +1274,38 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
+      <!-- Stage 2: Bespoke Lesson Note-Taking Scaffold (Replaces vocab & 4-mark drills) -->
+      <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Bespoke Lesson Note-Taking Scaffold
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">ACTIVE READING &bull; 1 A4 SHEET</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          ${cfg.vocabPrompt}
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #333333; margin-bottom: 3px; line-height: 1.25;">
+          <strong>Instructions:</strong> ${cfg.noteScaffold.instruction}
         </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One ${cfg.fourMarkA.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg.fourMarkA.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkA.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkA.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One ${cfg.fourMarkB.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg.fourMarkB.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkB.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkB.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        <div class="note-scaffold-container">
+          ${cfg.noteScaffold.blocks
+            .map(
+              (block) => `
+          <div class="note-scaffold-card">
+            <div>
+              <div class="note-card-header">
+                <span class="note-card-title">${block.title}</span>
+                <span class="note-card-badge">${block.badge}</span>
+              </div>
+              <div class="note-card-prompt">${block.prompt}</div>
+            </div>
+            <div class="note-card-lines">
+              ${Array(block.lines || 4)
+                .fill('<div class="task-line"></div>')
+                .join('')}
+            </div>
+          </div>
+          `,
+            )
+            .join('')}
         </div>
       </div>
 
