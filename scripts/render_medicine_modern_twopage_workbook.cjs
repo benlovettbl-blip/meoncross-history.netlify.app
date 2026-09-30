@@ -138,6 +138,10 @@ const modernConfigs = [
       'Rosalind Franklin’s 62-hour X-ray photograph revealed the double helix; Watson and Crick celebrated in The Eagle pub.',
     rightPageQuip:
       'Mapping all 3 billion human DNA base pairs took 13 years; now geneticists can read our biological instruction manual.',
+    linedLeftQuip:
+      'X-ray crystallography transformed genetics from abstract heredity into precise molecular biology.',
+    linedRightQuip:
+      'Base pairs A-T and C-G explain both the miracle of human life and the genetic roots of inherited diseases.',
   },
   {
     lessonIndex: 16, // mapped to lesson_4_2 in units/edexcel_medicine/data.js (Lifestyle & Diagnosis)
@@ -222,6 +226,10 @@ const modernConfigs = [
       'Bertha Röntgen cried "I have seen my death!" upon seeing her bones; doctors saw the future of medical diagnosis.',
     rightPageQuip:
       'Godfrey Hounsfield’s CT scanner at EMI combined rotating X-rays with digital computers to slice through soft tissue.',
+    linedLeftQuip:
+      'From Wilhelm Röntgen’s 1895 X-ray to Godfrey Hounsfield’s 1971 CT scanner: imaging banished exploratory surgery.',
+    linedRightQuip:
+      'Evaluating criteria: high-tech diagnosis detects existing damage; state lifestyle campaigns prevent damage occurring.',
   },
   {
     lessonIndex: 17, // mapped to lesson_4_3 in units/edexcel_medicine/data.js (Magic Bullets & The NHS)
@@ -312,6 +320,10 @@ const modernConfigs = [
       'Ehrlich and Hata tested 605 failed arsenic compounds before compound 606 finally cured syphilis in 1909.',
     rightPageQuip:
       'Bevan overcame doctor opposition by "stuffing their mouths with gold," launching the NHS on 5 July 1948.',
+    linedLeftQuip:
+      'Salvarsan 606 and Prontosil proved chemicals could destroy specific internal microbes without destroying the patient.',
+    linedRightQuip:
+      'On 5 July 1948, the NHS made medical care a universal citizenship right rather than a commercial privilege.',
   },
   {
     lessonIndex: 18, // mapped to lesson_4_4 in units/edexcel_medicine/data.js (Penicillin)
@@ -408,6 +420,10 @@ const modernConfigs = [
       'Fleming almost washed his petri dish in lysol, but noticed a clear halo where mold destroyed golden bacteria.',
     rightPageQuip:
       'The Oxford team grew penicillin in ceramic bedpans; American factories in Peoria brewed it in 10,000-gallon deep-tank vats.',
+    linedLeftQuip:
+      'Fleming’s observation in 1928 needed Florey and Chain’s chemical purification in 1940 and US wartime industrial scale in 1944.',
+    linedRightQuip:
+      'By D-Day in June 1944, 2.3 million doses of penicillin transformed military survival and launched the antibiotic age.',
   },
   {
     lessonIndex: 19, // mapped to lesson_4_5 in units/edexcel_medicine/data.js (Lung Cancer)
@@ -507,6 +523,10 @@ const modernConfigs = [
       'Doll and Hill proved smoking caused lung cancer in 1950; Doll immediately extinguished his pipe and lived to age 92.',
     rightPageQuip:
       'From TV ad bans in 1965 to plain olive-green packs in 2016: government compulsion slashed smoking from 65% to 13%.',
+    linedLeftQuip:
+      'Doll and Hill’s statistical epidemiology in 1950 gave the British government the empirical evidence to dismantle tobacco marketing.',
+    linedRightQuip:
+      'Comparing public health legislation in 1875 and 2007 proves that state compulsion consistently outperforms laissez-faire.',
   },
 ];
 
@@ -515,7 +535,7 @@ const modernConfigs = [
 // Even pages (verso/left): Page number on left, quip on right.
 // Odd pages (recto/right): Quip on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 14) {
+function renderFooterStrip(pageNum, quipText, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -622,6 +642,37 @@ function buildModernTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       gap: 0;
       margin: 1px 0;
+    }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
     }
     /* Clean Footer Strip */
     .page-footer-strip {
@@ -1009,12 +1060,14 @@ function buildModernTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGES 4–13: 5 DEDICATED TWO-PAGE SPREADS (LESSONS 4.1 TO 4.5)
+  // PAGES 4–23: 5 DEDICATED FOUR-PAGE SPREADS (LESSONS 4.1 TO 4.5)
   // Matching 100% the Master Medieval, Renaissance & 18th/19th Template
   // ====================================================================
   modernConfigs.forEach((cfg) => {
-    const leftPageNum = cfg.lessonNum * 2 + 2;
-    const rightPageNum = cfg.lessonNum * 2 + 3;
+    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
+    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5;
+    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
+    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
 
     // ------------------------------------------------------------------
     // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
@@ -1192,26 +1245,29 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- 18 Ruled Extended Handwriting Lines -->
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+      </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -1231,13 +1287,95 @@ function buildModernTwoPageWorkbook(unitData, period) {
     </div>
   </div>
 `;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED WRITING & DISCIPLINARY NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedLeftPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedRightPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
+    </div>
+  </div>
+`;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (96-MARK LEDGER, WWW/EBI & 5 QR CODES)
+  // PAGE 24: OUTSIDE BACK COVER (96-MARK LEDGER, WWW/EBI & 5 QR CODES)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Section Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1394,7 +1532,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, 'From DNA to the NHS, state action and laboratory science revolutionized healthcare; revision guarantees your GCSE success.')}
+      ${renderFooterStrip(24, 'From DNA to the NHS, state action and laboratory science revolutionized healthcare; revision guarantees your GCSE success.')}
     </div>
   </div>
 `;

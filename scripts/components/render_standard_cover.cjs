@@ -368,7 +368,7 @@ function renderStandardBackCover({
   <!-- ====================================================================
        PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
        ==================================================================== -->
-  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-${totalPageCount}" style="padding: 4mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       
       <!-- Top Departmental Header Bar -->

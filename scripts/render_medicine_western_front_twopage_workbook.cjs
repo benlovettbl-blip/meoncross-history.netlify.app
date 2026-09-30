@@ -75,7 +75,7 @@ const quipList = [
 // Even pages (verso/left): Page number on left, quip on right.
 // Odd pages (recto/right): Quip on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 16) {
+function renderFooterStrip(pageNum, quipText, totalPages = 28) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -172,6 +172,10 @@ const wfConfigs = [
       'Welcome to Flanders: 500 square miles of fermented pig manure, liquid mud, and artillery with terrifying accuracy.',
     rightPageQuip:
       'Trench drainage tip: If your duckboards are floating, you are no longer in an infantry trench; you are commanding a submarine.',
+    linedLeftQuip:
+      'Ypres Salient: surrounded on three sides by German artillery on Messines Ridge; duckboards were life preservers.',
+    linedRightQuip:
+      'Under Arras, 25,000 British soldiers waited in lit chalk tunnels with running water and electric power.',
   },
   {
     lessonIndex: 21,
@@ -252,6 +256,10 @@ const wfConfigs = [
       'Whale oil smells like dead fish and regrets, but it beats having your toes amputated by an RAMC surgeon with a bone-saw.',
     rightPageQuip:
       "Body lice: The only creatures on the Western Front that didn't care about King, Kaiser, or your personal hygiene.",
+    linedLeftQuip:
+      'Trench foot required 3 pairs of dry socks and rubbing with whale oil; negligence resulted in court martial.',
+    linedRightQuip:
+      'Body lice lived in uniform seams; delousing machines reduced typhus and trench fever across the British Expeditionary Force.',
   },
   {
     lessonIndex: 22,
@@ -340,6 +348,10 @@ const wfConfigs = [
       'The Brodie helmet: Looks like an upside-down soup bowl, but prevents your skull from becoming one.',
     rightPageQuip:
       'Chlorine gas: If it smells like rotten pineapple and bleaches the grass, do NOT inhale—unless you fancy drowning in your own lungs.',
+    linedLeftQuip:
+      'The 1915 Brodie helmet slashed penetrating head wounds by 75%; shrapnel helmets became universal equipment.',
+    linedRightQuip:
+      'Small Box Respirators with charcoal filters neutralized chlorine and phosgene, though mustard gas still blistered through clothing.',
   },
   {
     lessonIndex: 23,
@@ -429,6 +441,10 @@ const wfConfigs = [
       'The Regimental Aid Post: 200 yards from the German front line, lit by candle-ends, and smelling entirely of iodine and panic.',
     rightPageQuip:
       'Motor ambulances: Guaranteed to rattle every uninjured bone in your body while speeding you to the Casualty Clearing Station.',
+    linedLeftQuip:
+      'From Stretcher Bearer to RAP, ADS, and CCS: the 1917 evacuation chain prioritized speed to combat wound sepsis.',
+    linedRightQuip:
+      'Casualty Clearing Stations performed triage and emergency abdominal surgery before infection overwhelmed damaged organs.',
   },
   {
     lessonIndex: 24,
@@ -520,6 +536,10 @@ const wfConfigs = [
       'The Thomas Splint: Before Robert Jones introduced it, an 80% chance of death; after Jones, an 80% chance of living to complain about the food.',
     rightPageQuip:
       'Carrel-Dakin solution: If it burns like liquid fire and smells like a Victorian washhouse, congratulations—it is killing the gas gangrene.',
+    linedLeftQuip:
+      'The Thomas Splint immobilized compound femur fractures; mortality dropped from 80% to 20% in two years.',
+    linedRightQuip:
+      'Mobile X-ray units located shrapnel; Carrel-Dakin saline irrigation prevented anaerobic gas gangrene in massive wounds.',
   },
   {
     lessonIndex: 25,
@@ -607,6 +627,10 @@ const wfConfigs = [
       "Robertson's Blood Depot: Ice chests, sodium citrate, and refrigerated blood at Cambrai—proof that cold beer isn't the only thing worth chilling.",
     rightPageQuip:
       'Harold Gillies at Sidcup: Turning shattered faces into men again with tubed pedicle skin grafts, while patients politely pretended not to notice.',
+    linedLeftQuip:
+      'Oswald Robertson stored blood in iced chests with sodium citrate and glucose at Cambrai in 1917, saving dying men from shock.',
+    linedRightQuip:
+      'At Queen’s Hospital Sidcup, Harold Gillies designed pedicle skin tubes to reconstruct faces shattered by artillery shrapnel.',
   },
 ];
 
@@ -718,6 +742,37 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       gap: 0;
       margin: 1px 0;
+    }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
     }
     /* Single-Line Page Footer with Page Number & Humorous Revision Quip */
     .page-footer-strip {
@@ -970,7 +1025,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
         </table>
       </div>
 
-      ${renderFooterStrip(1, quipList[0], 16)}
+      ${renderFooterStrip(1, quipList[0], 28)}
     </div>
   </div>
 `;
@@ -1047,7 +1102,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, quipList[1], 16)}
+      ${renderFooterStrip(2, quipList[1], 28)}
     </div>
   </div>
 
@@ -1119,18 +1174,20 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, quipList[2], 16)}
+      ${renderFooterStrip(3, quipList[2], 28)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–15: 6 DEDICATED TWO-PAGE SPREADS (LESSONS 5.1 TO 5.6)
+  // PAGES 4–27: 6 DEDICATED FOUR-PAGE SPREADS (LESSONS 5.1 TO 5.6)
   // ====================================================================
   wfConfigs.forEach((cfg) => {
     const lesson = lessons[cfg.lessonIndex];
-    const leftPageNum = cfg.lessonNum * 2 + 2; // Pages 4, 6, 8, 10, 12, 14
-    const rightPageNum = leftPageNum + 1; // Pages 5, 7, 9, 11, 13, 15
+    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4; // Pages 4, 8, 12, 16, 20, 24
+    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5; // Pages 5, 9, 13, 17, 21, 25
+    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6; // Pages 6, 10, 14, 18, 22, 26
+    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7; // Pages 7, 11, 15, 19, 23, 27
 
     // Select the correct primary source for this lesson enquiry
     const sIdx = cfg.sourceIndex !== undefined ? cfg.sourceIndex : 0;
@@ -1279,7 +1336,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(leftPageNum, cfg.leftPageQuip, 16)}
+      ${renderFooterStrip(leftPageNum, cfg.leftPageQuip, 28)}
     </div>
   </div>
 
@@ -1388,7 +1445,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       <!-- Extended Writing Lines for Follow-Up Rationale (Ruled Handwriting Lines at Natural 7.6mm) -->
       <div>
         <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #222222; margin-bottom: 1px;">
-          <strong>Enquiry Rationale:</strong> Explain in full sentences why your chosen source type is historically reliable and superior to alternatives:
+          <strong>Enquiry Rationale:</strong> Explain in full sentences why your chosen source type is historically reliable and superior to alternatives (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full timed response):
         </div>
         <div style="height: 3px;"></div>
         <div class="ruled-lines-block">
@@ -1449,7 +1506,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       <!-- Ruled Task Lines for Extended Utility Writing (12 Natural 7.6mm Ruled Lines) -->
       <div>
         <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #222222; margin-bottom: 1px;">
-          <strong>Task:</strong> Using the structure strip above, write your analytical source utility evaluation below:
+          <strong>Task:</strong> Using the structure strip above, write your analytical source utility evaluation below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full timed assessment):
         </div>
         <div class="ruled-lines-block">
           <div class="task-line"></div>
@@ -1485,17 +1542,99 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
         </span>
       </div>
 
-      ${renderFooterStrip(rightPageNum, cfg.rightPageQuip, 16)}
+      ${renderFooterStrip(rightPageNum, cfg.rightPageQuip, 28)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED WRITING & DISCIPLINARY NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Section A Response &bull; Sustained Source Evaluation / Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Source Evaluation &bull; Disciplinary Notes &bull; Historic Environment
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip, 28)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & TIMED WRITING
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Section A Response Continued &bull; Analytical Conclusion &amp; Historical Context ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Timed Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip, 28)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Target Grade, 96-Mark Ledger, QR Hub)
+  // PAGE 28: OUTSIDE BACK COVER (Target Grade, 96-Mark Ledger, QR Hub)
   // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-28" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Back Cover Header Strip -->
@@ -1674,7 +1813,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(16, quipList[15], 16)}
+      ${renderFooterStrip(28, quipList[15], 28)}
     </div>
   </div>
 </body>

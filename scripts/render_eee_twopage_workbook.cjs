@@ -80,7 +80,7 @@ function getBase64Image(relPath) {
   return relPath;
 }
 
-// Approved Witty Revision Quips (16 Pages per Key Topic)
+// Approved Witty Revision Quips (24 Pages per Key Topic)
 const EEE_FOOTERS = {
   KT1: [
     'Early Elizabethan England Revision Hub • Key Topic 1 • The History Department', // Page 1
@@ -88,17 +88,25 @@ const EEE_FOOTERS = {
     '"Chronology is queen: 1558 Accession before 1559 Settlement, always."', // Page 3
     '"Patronage: Elizabeth gave out titles and monopolies, not marks; write the detail!"', // Page 4
     '"Legitimacy was questioned because of Henry VIII; your explanation must be unquestionable."', // Page 5
-    '"The Middle Way was a compromise: Protestants got English Bibles, Catholics kept vestments."', // Page 6
-    '"Royal Injunctions: All clergy had to teach Royal Supremacy — teach the examiner your knowledge."', // Page 7
-    '"Puritans hated crucifixes and vestments; examiners hate vague assertions."', // Page 8
-    '"Recusancy fines were 1 shilling in 1559, £20 in 1581: precision wins Grade 9."', // Page 9
-    '"Mary, Queen of Scots arrived in 1568 in a fishing boat; don\'t let your essay drift."', // Page 10
-    '"Casket Letters: Love letters or forged gossip? Elizabeth used them to keep Mary under lock and key."', // Page 11
-    '"Visualise the structure: Monarch rules, Privy Council advises, Parliament taxes, JPs enforce."', // Page 12
-    '"Via Media: Neither Geneva nor Rome, but an English compromise designed to avoid civil war."', // Page 13
-    '"Grade 9 Rule: Q1 requires Feature + Detail. Name the feature, then drop the factual hammer."', // Page 14
-    '"Timed Condition Challenge: 12 marks means 3 paragraphs with 3 distinct causal links."', // Page 15
-    'Key Topic 1 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
+    '"Extended writing: develop your 3-paragraph structure with precise evidence on every line."', // Page 6
+    '"Analytical precision: link Crown patronage directly to political stability in the counties."', // Page 7
+    '"The Middle Way was a compromise: Protestants got English Bibles, Catholics kept vestments."', // Page 8
+    '"Royal Injunctions: All clergy had to teach Royal Supremacy — teach the examiner your knowledge."', // Page 9
+    '"Recusancy fines: 1 shilling was a week\'s wage for a labourer; factual depth secures Grade 9."', // Page 10
+    '"Explain why: connect the 1559 Settlement to Marian bishops refusing the Oath of Supremacy."', // Page 11
+    '"Puritans hated crucifixes and vestments; examiners hate vague assertions."', // Page 12
+    '"Vestments crisis: 37 vicars suspended by Parker in 1566 proved Protestant division."', // Page 13
+    '"Disciplinary notes: evaluate Puritan frustration against the Queen\'s demand for uniform order."', // Page 14
+    '"Causal chains: show how Catholic excommunication in 1570 hardened government policy."', // Page 15
+    '"Mary, Queen of Scots arrived in 1568 in a fishing boat; don\'t let your essay drift."', // Page 16
+    '"Casket Letters: Love letters or forged gossip? Elizabeth used them to keep Mary under lock and key."', // Page 17
+    '"Independent practice: forensic analysis of Mary Stuart as an alternative Catholic figurehead."', // Page 18
+    '"Sustained judgment: weigh foreign threat against domestic legitimacy to conclude your essay."', // Page 19
+    '"Visualise the structure: Monarch rules, Privy Council advises, Parliament taxes, JPs enforce."', // Page 20
+    '"Via Media: Neither Geneva nor Rome, but an English compromise designed to avoid civil war."', // Page 21
+    '"Grade 9 Rule: Q1 requires Feature + Detail. Name the feature, then drop the factual hammer."', // Page 22
+    '"Timed Condition Challenge: 12 marks means 3 paragraphs with 3 distinct causal links."', // Page 23
+    'Key Topic 1 Complete • Cumulative Assessment & Digital Practice Hub', // Page 24
   ],
   KT2: [
     'Early Elizabethan England Revision Hub • Key Topic 2 • The History Department', // Page 1
@@ -106,17 +114,25 @@ const EEE_FOOTERS = {
     '"Regnans in Excelsis (1570): The Pope declared Elizabeth a heretic; Elizabeth declared plotters traitors."', // Page 3
     '"Walsingham\'s codebreaker Thomas Phelippes decoded the beer barrel letters: detail matters!"', // Page 4
     '"Ridolfi, Throckmorton, Babington: Three plots, three failures, one execution at Fotheringhay."', // Page 5
-    '"Privateers were legal pirates with a royal license: Drake took Spanish silver for England\'s glory."', // Page 6
-    '"Cacafuego surrendered £140,000 of treasure: Elizabeth paid off the entire national debt."', // Page 7
-    '"The Netherlands was England\'s front door: Elizabeth could not allow Parma to control Dutch deep-water ports."', // Page 8
-    "\"Drake at Cadiz: 'Singeing the King of Spain's Beard' destroyed 30 ships and delayed the Armada by a year.\"", // Page 9
-    '"The Spanish crescent formation held until eight English fireships drifted into Calais Roads at midnight."', // Page 10
-    '"Battle of Gravelines: Agile English galleons with rapid-fire culverins smashed the drifting Spanish fleet."', // Page 11
-    '"Armada Tactics: High Spanish castles for boarding vs low English race-built galleons for gunnery."', // Page 12
-    '"The Protestant Wind: God blew and they were scattered, but Hawkins\' ship design won the battle."', // Page 13
-    '"Grade 9 Essay: Don\'t just describe the fireships — explain why panic broke the defensive formation."', // Page 14
-    '"Timed Condition Challenge: 16 marks means criteria-led evaluation and a sustained, justified verdict."', // Page 15
-    'Key Topic 2 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
+    '"Extended writing: explain how each domestic Catholic plot had direct foreign Spanish backing."', // Page 6
+    '"Forensic detail: the Bond of Association (1584) sealed Mary Stuart\'s fate before Babington wrote."', // Page 7
+    '"Privateers were legal pirates with a royal license: Drake took Spanish silver for England\'s glory."', // Page 8
+    '"Cacafuego surrendered £140,000 of treasure: Elizabeth paid off the entire national debt."', // Page 9
+    '"Sustained response: explain how privateering transformed commercial rivalry into formal war."', // Page 10
+    '"Treaty of Nonsuch (1585): Dudley\'s 7,400 troops in the Netherlands made war with Spain inevitable."', // Page 11
+    '"The Netherlands was England\'s front door: Elizabeth could not allow Parma to control Dutch deep-water ports."', // Page 12
+    "\"Drake at Cadiz: 'Singeing the King of Spain's Beard' destroyed 30 ships and delayed the Armada by a year.\"", // Page 13
+    '"Disciplinary analysis: evaluate the logistical impact of destroying seasoned barrel staves at Cadiz."', // Page 14
+    '"Tactical breakdown: English race-built galleons versus high Spanish castles in the Channel duel."', // Page 15
+    '"The Spanish crescent formation held until eight English fireships drifted into Calais Roads at midnight."', // Page 16
+    '"Battle of Gravelines: Agile English galleons with rapid-fire culverins smashed the drifting Spanish fleet."', // Page 17
+    '"Independent practice: weigh fireship chaos against Medina Sidonia\'s lack of deep-water ports."', // Page 18
+    '"Sustained conclusion: explain why the Protestant Wind finished what English gunnery started."', // Page 19
+    '"Armada Tactics: High Spanish castles for boarding vs low English race-built galleons for gunnery."', // Page 20
+    '"The Protestant Wind: God blew and they were scattered, but Hawkins\' ship design won the battle."', // Page 21
+    '"Grade 9 Essay: Don\'t just describe the fireships — explain why panic broke the defensive formation."', // Page 22
+    '"Timed Condition Challenge: 16 marks means criteria-led evaluation and a sustained, justified verdict."', // Page 23
+    'Key Topic 2 Complete • Cumulative Assessment & Digital Practice Hub', // Page 24
   ],
   KT3: [
     'Early Elizabethan England Revision Hub • Key Topic 3 • The History Department', // Page 1
@@ -124,21 +140,29 @@ const EEE_FOOTERS = {
     '"Grammar schools taught Latin from dawn to dusk; your task is 50 minutes of analytical history."', // Page 3
     '"The Theatre (1576): The first permanent playhouse in London, built outside the city walls in Shoreditch."', // Page 4
     '"Groundlings paid a penny to stand in the rain; the rich paid sixpence for covered gallery seats."', // Page 5
-    '"Poverty grew because population rose from 3m to 4m, while wool enclosure eliminated farm jobs."', // Page 6
-    '"1576 Act for Relief of the Poor: Local parishes provided wool and hemp so the unemployed could work."', // Page 7
-    '"New navigation tech: The astrolabe measured stars, but Drake\'s daring navigated the globe."', // Page 8
-    '"Drake was the first Englishman to circumnavigate the earth, returning in 1580 with 4,700% profit."', // Page 9
-    '"Walter Raleigh planned the Virginia colony from London; he never actually set foot in Roanoke himself."', // Page 10
-    '"Roanoke failed because the Tiger ruined seeds, supplies arrived late, and relations with Wingina collapsed."', // Page 11
-    '"The Globe Theatre Blueprint: The Heavens above, the Pit below, and the Tiring House backstage."', // Page 12
-    '"From Deserving Poor to Idle Vagabonds: Elizabethan Poor Laws laid the foundation for 250 years of welfare."', // Page 13
-    '"Grade 9 Rule: In 12-mark questions, link your causes! Enclosure caused unemployment, which caused vagrancy."', // Page 14
-    '"Timed Condition Challenge: Structure your points with Point, Fact, Explanation, and Causal Link."', // Page 15
-    'Key Topic 3 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
+    '"Extended writing: analyse how Elizabethan education reinforced rigid social class hierarchies."', // Page 6
+    '"Disciplinary notes: compare noble household education with grammar school humanist curricula."', // Page 7
+    '"Poverty grew because population rose from 3m to 4m, while wool enclosure eliminated farm jobs."', // Page 8
+    '"1576 Act for Relief of the Poor: Local parishes provided wool and hemp so the unemployed could work."', // Page 9
+    '"Sustained response: distinguish clearly between the Impotent Poor and Sturdy Beggars."', // Page 10
+    '"Forensic evaluation: explain why local parish rates were revolutionary in replacing monastic charity."', // Page 11
+    '"New navigation tech: The astrolabe measured stars, but Drake\'s daring navigated the globe."', // Page 12
+    '"Drake was the first Englishman to circumnavigate the earth, returning in 1580 with 4,700% profit."', // Page 13
+    '"Disciplinary analysis: assess the geopolitical impact of claiming Nova Albion (California) in 1579."', // Page 14
+    '"Commercial turning point: Drake\'s return proved England could challenge Spain on the world ocean."', // Page 15
+    '"Walter Raleigh planned the Virginia colony from London; he never actually set foot in Roanoke himself."', // Page 16
+    '"Roanoke failed because the Tiger ruined seeds, supplies arrived late, and relations with Wingina collapsed."', // Page 17
+    '"Independent practice: analyse the three core reasons for the collapse of the 1585 Roanoke colony."', // Page 18
+    '"Sustained verdict: explain how Roanoke\'s failure laid the technical groundwork for Jamestown in 1607."', // Page 19
+    '"The Globe Theatre Blueprint: The Heavens above, the Pit below, and the Tiring House backstage."', // Page 20
+    '"From Deserving Poor to Idle Vagabonds: Elizabethan Poor Laws laid the foundation for 250 years of welfare."', // Page 21
+    '"Grade 9 Rule: In 12-mark questions, link your causes! Enclosure caused unemployment, which caused vagrancy."', // Page 22
+    '"Timed Condition Challenge: Structure your points with Point, Fact, Explanation, and Causal Link."', // Page 23
+    'Key Topic 3 Complete • Cumulative Assessment & Digital Practice Hub', // Page 24
   ],
 };
 
-function renderFooterStrip(pageNum, text, totalPages = 16) {
+function renderFooterStrip(pageNum, text, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -1780,7 +1804,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
     }
     .task-line {
       border-bottom: 1.5px solid #000000;
-      height: 9.0mm;
+      height: 7.0mm;
       margin: 0;
       box-sizing: border-box;
     }
@@ -1788,6 +1812,37 @@ function buildEeeKeyTopicWorkbook(ktId) {
       border-bottom: 1.2px dotted #000000;
       height: 6.0mm;
       margin: 0;
+      box-sizing: border-box;
+    }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
       box-sizing: border-box;
     }
     .page-footer-strip {
@@ -1838,7 +1893,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
     heroImage: data.heroImage,
     specBox: data.specBox,
     footerQuip: footers[0],
-    totalPageCount: 16,
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
@@ -1886,7 +1941,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
           .join('')}
       </div>
 
-      ${renderFooterStrip(2, footers[1], 16)}
+      ${renderFooterStrip(2, footers[1], 24)}
     </div>
   </div>
 
@@ -1927,20 +1982,24 @@ function buildEeeKeyTopicWorkbook(ktId) {
           .join('')}
       </div>
 
-      ${renderFooterStrip(3, footers[2], 16)}
+      ${renderFooterStrip(3, footers[2], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–11: 4 DEDICATED TWO-PAGE ENQUIRY SPREADS
+  // PAGES 4–19: 4 DEDICATED FOUR-PAGE ENQUIRY SPREADS (2 SPANNING SPREADS PER LESSON)
   // ====================================================================
   data.enquiries.forEach((enq, idx) => {
-    const leftPageNum = (idx + 1) * 2 + 2; // 4, 6, 8, 10
-    const rightPageNum = leftPageNum + 1; // 5, 7, 9, 11
+    const leftPageNum = 4 + idx * 4; // 4, 8, 12, 16
+    const rightPageNum = leftPageNum + 1; // 5, 9, 13, 17
+    const linedLeftPageNum = leftPageNum + 2; // 6, 10, 14, 18
+    const linedRightPageNum = leftPageNum + 3; // 7, 11, 15, 19
     const rx = enq.rightExam;
 
-    // VERSO PAGE (LEFT)
+    // ------------------------------------------------------------------
+    // SPREAD 1, LEFT PAGE (VERSO): ENQUIRY LAUNCH, DO NOW & 2x Q1 FEATURE [2m+2m]
+    // ------------------------------------------------------------------
     html += `
   <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
@@ -2068,11 +2127,13 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <div class="task-line"></div>
       </div>
 
-      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 16)}
+      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 24)}
     </div>
   </div>
 
-  <!-- RECTO PAGE (RIGHT): EXTENDED EXAM PRACTICE (12m EXPLAIN WHY OR 16m ESSAY) -->
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 1, RIGHT PAGE (RECTO): EXTENDED EXAM PRACTICE (12m/16m)    -->
+  <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
@@ -2131,19 +2192,115 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <div style="margin-top: 1px;"><strong>Word Bank:</strong> ${rx.wordBank}</div>
       </div>
 
-      <!-- Timeline Mission -->
-      <div style="border: 1px solid #000000; border-left: 3px solid #000000; padding: 1.5px 5px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18;">
-        <strong>Timeline Mission:</strong> ${rx.timelineMission}
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
+        ${Array.from({ length: 18 })
+          .map(() => '<div class="task-line"></div>')
+          .join('\n        ')}
       </div>
 
-      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
-      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px; margin-bottom: 0;">
-        <!-- Filled dynamically by engine measurement script -->
+      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
+          Timeline Mission &bull; Pages 2–3
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
+          ${rx.timelineMission}
+        </div>
       </div>
 
-      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 16)}
+      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 24)}
     </div>
   </div>
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES        -->
+  <!-- ------------------------------------------------------------------ -->
+  ${(() => {
+    const linedRowsLeft = Array.from({ length: 28 }, (_, lIdx) => {
+      const isFirst = lIdx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    return `
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, footers[linedLeftPageNum - 1], 24)}
+    </div>
+  </div>
+`;
+  })()}
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION-->
+  <!-- ------------------------------------------------------------------ -->
+  ${(() => {
+    const linedRowsRight = Array.from({ length: 28 }, (_, lIdx) => {
+      const isFirst = lIdx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    return `
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Timed Exam Response &bull; Sustained Verdict
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, footers[linedRightPageNum - 1], 24)}
+    </div>
+  </div>
+`;
+  })()}
 `;
   });
 
@@ -2336,10 +2493,10 @@ function buildEeeKeyTopicWorkbook(ktId) {
   }
 
   html += `
-  <div class="page page-container verso-page" id="page-12" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       ${page12Content}
-      ${renderFooterStrip(12, footers[11], 16)}
+      ${renderFooterStrip(20, footers[19], 24)}
     </div>
   </div>
 `;
@@ -2573,7 +2730,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
   }
 
   html += `
-  <div class="page page-container recto-page" id="page-13" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-21" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
         <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
@@ -2634,16 +2791,16 @@ function buildEeeKeyTopicWorkbook(ktId) {
 
       </div>
 
-      ${renderFooterStrip(13, footers[12], 16)}
+      ${renderFooterStrip(21, footers[20], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 14: GRADE 9 ASSESSMENT MASTERCLASS & BAND 4 RUBRICS (VERSO)
+  // PAGE 22: GRADE 9 ASSESSMENT MASTERCLASS & BAND 4 RUBRICS (VERSO)
   // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-22" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
         <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
@@ -2703,13 +2860,13 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, footers[13], 16)}
+      ${renderFooterStrip(22, footers[21], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 15: TIMED SYNOPTIC EXAM CHALLENGE (RECTO)
+  // PAGE 23: TIMED SYNOPTIC EXAM CHALLENGE (RECTO)
   // ====================================================================
   let synopticPrompt = {};
   if (ktId === 'KT1') {
@@ -2745,7 +2902,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
   }
 
   html += `
-  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-23" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header -->
@@ -2794,13 +2951,13 @@ function buildEeeKeyTopicWorkbook(ktId) {
         <!-- Filled dynamically by engine measurement script -->
       </div>
 
-      ${renderFooterStrip(15, footers[14], 16)}
+      ${renderFooterStrip(23, footers[22], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER
+  // PAGE 24: OUTSIDE BACK COVER
   // ====================================================================
   const enquiriesRows = data.enquiries.map((enq, idx) => {
     return {
@@ -2883,7 +3040,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
     .join('');
 
   html += `
-  <div class="page page-container recto-page" id="page-16" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       
       <!-- Top Department Header -->
@@ -3021,7 +3178,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      ${renderFooterStrip(16, footers[15], 16)}
+      ${renderFooterStrip(24, footers[23], 24)}
     </div>
   </div>
 `;
@@ -3096,12 +3253,12 @@ async function main() {
   const targets = target === 'all' ? ['KT1', 'KT2', 'KT3'] : [target.toUpperCase()];
 
   console.log('======================================================');
-  console.log(`🏰 Early Elizabethan England 16-Page Workbook Engine`);
+  console.log(`🏰 Early Elizabethan England 24-Page Workbook Engine`);
   console.log(`Targeting: ${targets.join(', ')}`);
   console.log('======================================================\n');
 
   for (const kt of targets) {
-    console.log(`\n▶ Generating 16-page workbook for Key Topic ${kt}...`);
+    console.log(`\n▶ Generating 24-page workbook for Key Topic ${kt}...`);
     const html = buildEeeKeyTopicWorkbook(kt);
 
     const publicHtml = path.join(ROOT_DIR, 'public', 'units', 'eee', `pupil_workbook_${kt}.html`);

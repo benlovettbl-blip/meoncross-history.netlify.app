@@ -78,7 +78,7 @@ function getBase64Image(relPath) {
   return relPath;
 }
 
-function renderFooterStrip(pageNum, text, totalPages = 16) {
+function renderFooterStrip(pageNum, text, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -251,6 +251,37 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       margin: 0;
       box-sizing: border-box;
     }
+    /* Ruled paper 28 lines with 22mm margin */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
+    }
     .page-footer-strip {
       border-top: 1.2px solid #000000;
       padding-top: 2px;
@@ -313,7 +344,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
     },
     specBox: ktMeta.specBox,
     footerQuip: footers[0],
-    totalPageCount: 16,
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
@@ -363,7 +394,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           .join('')}
       </div>
 
-      ${renderFooterStrip(2, footers[1], 16)}
+      ${renderFooterStrip(2, footers[1], 24)}
     </div>
   </div>
 
@@ -405,18 +436,20 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           .join('')}
       </div>
 
-      ${renderFooterStrip(3, footers[2], 16)}
+      ${renderFooterStrip(3, footers[2], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–11: 4 ENQUIRIES (VERSO + RECTO SPREADS)
+  // PAGES 4–19: 4 ENQUIRIES (4 PAGES PER ENQUIRY: 2 FACING SPREADS)
   // SOURCED DYNAMICALLY FROM units/weimar_nazi_germany/data.js
   // ====================================================================
   lessons.forEach((enq, idx) => {
-    const leftPageNum = 4 + idx * 2;
-    const rightPageNum = 5 + idx * 2;
+    const leftPageNum = 4 + idx * 4;
+    const rightPageNum = leftPageNum + 1;
+    const linedLeftPageNum = leftPageNum + 2;
+    const linedRightPageNum = leftPageNum + 3;
 
     // Verso Bottom Component based on enquiry index (0=Inference, 1=Causation Check, 2=Dual Sources Utility, 3=Dual Interpretations)
     let versoExamComponentHtml = '';
@@ -901,11 +934,11 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       <!-- Verso Section: Exam Practice / Forensic Evidence -->
       ${versoExamComponentHtml}
 
-      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 16)}
+      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 24)}
     </div>
   </div>
 
-  <!-- RECTO PAGE (RIGHT): EXTENDED DISCIPLINARY WRITING & DYNAMIC AUTO-LINES -->
+  <!-- RECTO PAGE (RIGHT): EXTENDED DISCIPLINARY WRITING & SCAFFOLDING -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
@@ -979,28 +1012,106 @@ function buildWeimarKeyTopicWorkbook(ktId) {
           .join(' • ')}</div>
       </div>
 
-      <!-- Timeline Mission -->
-      <div style="border: 1px solid #000000; border-left: 3px solid #000000; padding: 1.5px 5px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.18;">
-        <strong>Timeline Mission &bull; Pages 2–3:</strong> Illustrate the milestone sketchpad for Enquiry ${ktNum}.${enq.enquiryNum} on Pages 2–3 with your dual-coding visual symbol.
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
+        ${Array.from({ length: 18 })
+          .map(() => '<div class="task-line"></div>')
+          .join('\n        ')}
       </div>
 
-      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
-      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-bottom: 0;">
-        <!-- Filled dynamically by engine measurement script -->
+      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
+          Timeline Mission &bull; Pages 2–3
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
+          Illustrate the milestone sketchpad for Enquiry ${ktNum}.${enq.enquiryNum} on Pages 2–3 with your dual-coding visual symbol.
+        </div>
       </div>
 
-      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 16)}
+      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 24)}
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       ENQUIRY ${ktNum}.${enq.enquiryNum}: SPREAD 2 (FACING EXTENDED WRITING RULED PAPER)
+       ==================================================================== -->
+  
+  <!-- SPREAD 2 VERSO (LEFT): 28 RULED LINES WITH 22mm MARGIN -->
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          Enquiry ${ktNum}.${enq.enquiryNum}: ${enq.enquiryQuestion} &bull; Extended Writing Response
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase; background: #f8fafc;">
+          Assessment Page 1 of 2
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${Array.from({ length: 28 })
+          .map(
+            (_, lineIdx) => `
+          <div class="lined-row">
+            <div class="lined-margin-cell">
+              ${lineIdx === 0 ? '<span style="font-family: \'Inter\', sans-serif; font-size: 6.0pt; font-weight: 800; text-transform: uppercase; color: #475569;">Margin</span>' : ''}
+            </div>
+            <div class="lined-content-cell"></div>
+          </div>`,
+          )
+          .join('')}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, footers[linedLeftPageNum - 1], 24)}
+    </div>
+  </div>
+
+  <!-- SPREAD 2 RECTO (RIGHT): 28 RULED LINES WITH 22mm MARGIN -->
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          Enquiry ${ktNum}.${enq.enquiryNum}: ${enq.enquiryQuestion} &bull; Extended Writing Response
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase; background: #f8fafc;">
+          Assessment Page 2 of 2
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${Array.from({ length: 28 })
+          .map(
+            (_, lineIdx) => `
+          <div class="lined-row">
+            <div class="lined-margin-cell">
+              ${lineIdx === 0 ? '<span style="font-family: \'Inter\', sans-serif; font-size: 6.0pt; font-weight: 800; text-transform: uppercase; color: #475569;">Margin</span>' : ''}
+            </div>
+            <div class="lined-content-cell"></div>
+          </div>`,
+          )
+          .join('')}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, footers[linedRightPageNum - 1], 24)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 12: CARTOGRAPHIC & ARCHIVAL VISUAL BLUEPRINT (VERSO)
+  // PAGE 20: CARTOGRAPHIC & ARCHIVAL VISUAL BLUEPRINT (VERSO)
   // ====================================================================
   const bp = ktMeta.blueprint;
   html += `
-  <div class="page page-container verso-page" id="page-12" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
         <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
@@ -1050,16 +1161,16 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      ${renderFooterStrip(12, footers[11], 16)}
+      ${renderFooterStrip(20, footers[19], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 13: MASTER KNOWLEDGE ORGANISER (RECTO)
+  // PAGE 21: MASTER KNOWLEDGE ORGANISER (RECTO)
   // ====================================================================
   html += `
-  <div class="page page-container recto-page" id="page-13" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-21" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
         <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
@@ -1120,16 +1231,16 @@ function buildWeimarKeyTopicWorkbook(ktId) {
 
       </div>
 
-      ${renderFooterStrip(13, footers[12], 16)}
+      ${renderFooterStrip(21, footers[20], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 14: GRADE 9 ASSESSMENT MASTERCLASS & BAND 4 RUBRICS (VERSO)
+  // PAGE 22: GRADE 9 ASSESSMENT MASTERCLASS & BAND 4 RUBRICS (VERSO)
   // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-22" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
         <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
@@ -1193,17 +1304,17 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, footers[13], 16)}
+      ${renderFooterStrip(22, footers[21], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 15: TIMED SYNOPTIC EXAM CHALLENGE (RECTO)
+  // PAGE 23: TIMED SYNOPTIC EXAM CHALLENGE (RECTO)
   // WITH FULL-PAGE DYNAMIC AUTO-LINES
   // ====================================================================
   html += `
-  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-23" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header -->
@@ -1275,13 +1386,13 @@ function buildWeimarKeyTopicWorkbook(ktId) {
         <div><strong>Teacher Sign-off:</strong> ____________________</div>
       </div>
 
-      ${renderFooterStrip(15, footers[14], 16)}
+      ${renderFooterStrip(23, footers[22], 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 16: MASTER OUTSIDE BACK COVER
+  // PAGE 24: MASTER OUTSIDE BACK COVER
   // ====================================================================
   html += renderStandardBackCover({
     unitId: 'weimar_nazi_germany',
@@ -1312,8 +1423,8 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       title: l.enquiryQuestion,
       url: `https://the-history-revision-hub.netlify.app/?unit=weimar_nazi_germany&lesson=${l.id}`,
     })),
-    footerQuip: footers[15],
-    totalPageCount: 16,
+    footerQuip: footers[23],
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
@@ -1381,12 +1492,12 @@ async function main() {
   const targets = target === 'all' ? ['KT1', 'KT2', 'KT3', 'KT4'] : [target.toUpperCase()];
 
   console.log('======================================================');
-  console.log(`🏰 Weimar & Nazi Germany Declarative 16-Page Engine`);
+  console.log(`🏰 Weimar & Nazi Germany Declarative 24-Page Engine`);
   console.log(`Targeting: ${targets.join(', ')}`);
   console.log('======================================================\n');
 
   for (const kt of targets) {
-    console.log(`\n▶ Generating 16-page workbook for Key Topic ${kt}...`);
+    console.log(`\n▶ Generating 24-page workbook for Key Topic ${kt}...`);
     const html = buildWeimarKeyTopicWorkbook(kt);
 
     const publicHtml = path.join(

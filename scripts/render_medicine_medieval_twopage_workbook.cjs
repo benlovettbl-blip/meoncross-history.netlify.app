@@ -149,6 +149,10 @@ const medievalConfigs = [
       'If you develop a fever in 1300, church logic dictates you definitely committed a sin last Tuesday. Time to buy a pilgrimage badge!',
     rightPageQuip:
       'Galen wrote it, monks copied it, nobody dared question it. Because questioning Galen wasn’t just bad science—it was a heresy trial.',
+    linedLeftQuip:
+      'Questioning Galen or Church doctrine in 1300 was not just bad science — it was an immediate charge of heresy.',
+    linedRightQuip:
+      'Explain the monopoly: monks hand-copied manuscripts in scriptoria, so Christian ideas of divine punishment went unchallenged.',
   },
   {
     lessonIndex: 1,
@@ -242,6 +246,10 @@ const medievalConfigs = [
       '20 shades on the urine wheel, and physicians regularly smelled, held up, and tasted the sample. Truly, the golden age of medical diagnostic dignity.',
     rightPageQuip:
       'Got a cold, wet cough? Eat burning hot red peppers. Burning with a raging fever? Jump in an ice-cold river. What could possibly go wrong?',
+    linedLeftQuip:
+      'The Four Humours endured for 1,400 years because it was rational, comprehensive, and explained every known symptom.',
+    linedRightQuip:
+      'Connect Theory of Opposites to patient symptoms: wet and cold ailments demanded dry and hot opposite treatments.',
   },
   {
     lessonIndex: 2,
@@ -338,6 +346,10 @@ const medievalConfigs = [
       'Whatever is wrong with you, draining two pints of blood with thirty hungry leeches will at least distract you from your runny nose.',
     rightPageQuip:
       'Medieval Theriac contained 64 ingredients, including mashed vipers and raw opium. If it didn’t cure your fever, at least you stopped caring.',
+    linedLeftQuip:
+      'Humoural treatment was entirely about balance: phlebotomy with fleams, cupping, or leeches to purge excess blood.',
+    linedRightQuip:
+      'Herbal Theriac contained up to 64 ingredients — complex recipes gave patients psychological hope even without chemical cures.',
   },
   {
     lessonIndex: 3,
@@ -434,6 +446,10 @@ const medievalConfigs = [
       'Can’t afford 10 gold groats for an Oxford-trained physician? The local wise woman has some mashed cabbage, nettles, and a lucky Latin rhyme.',
     rightPageQuip:
       'Warm broth, clean linen sheets, and non-stop chapel prayers. But if you’re actually contagious, you’re strictly not getting past the door.',
+    linedLeftQuip:
+      'Monastic hospitals prioritized spiritual care over medical cure: patients prayed at the chapel altar rather than seeing a physician.',
+    linedRightQuip:
+      'Barber-surgeons, apothecaries, and wise women treated 99% of ordinary folk who could never afford a university doctor.',
   },
   {
     lessonIndex: 4,
@@ -527,6 +543,10 @@ const medievalConfigs = [
       'Carrying a posy of dried lavender and sniffing vinegar won’t stop flea bites, but at least London streets smelled slightly more tolerable.',
     rightPageQuip:
       'Whipping yourself bloody in flagellant street processions to appease God’s wrath unfortunately just gave the local rat fleas an easier landing pad.',
+    linedLeftQuip:
+      'The Black Death killed 30–45% of England because physicians treated miasma and sin while fleas spread Yersinia pestis.',
+    linedRightQuip:
+      'Weigh causal factors: divine punishment vs miasma — evaluate why neither religious penance nor street cleaning could stop the plague.',
   },
 ];
 
@@ -535,7 +555,7 @@ const medievalConfigs = [
 // Even pages (verso/left): Page number on left, quip on right.
 // Odd pages (recto/right): Quip on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 14) {
+function renderFooterStrip(pageNum, quipText, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -655,6 +675,37 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       gap: 0;
       margin: 1px 0;
+    }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
     }
     /* Single-Line Page Footer with Page Number & Humorous Revision Quip */
     .page-footer-strip {
@@ -1073,11 +1124,13 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGES 4–13: 5 DEDICATED TWO-PAGE SPREADS (LESSONS 1.1 TO 1.5)
+  // PAGES 4–23: 5 DEDICATED 4-PAGE MODULES (SPREAD 1: LESSON, SPREAD 2: LINED EXTENDED WRITING)
   // ====================================================================
   medievalConfigs.forEach((cfg) => {
-    const leftPageNum = cfg.lessonNum * 2 + 2;
-    const rightPageNum = cfg.lessonNum * 2 + 3;
+    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
+    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5;
+    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
+    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
 
     // ------------------------------------------------------------------
     // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
@@ -1256,7 +1309,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       <!-- Ruled Task Lines for Extended Writing -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write 1–2 detailed analytical paragraphs below (continue in your exercise book for full timed paper):
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
@@ -1298,13 +1351,95 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     </div>
   </div>
 `;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED WRITING & DISCIPLINARY NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
+    </div>
+  </div>
+`;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (Target Grade, Wide Ledger, 5 QR Codes)
+  // PAGE 24: OUTSIDE BACK COVER (Target Grade, Wide Ledger, 5 QR Codes)
   // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Back Cover Header Strip (No Redundant 'OUTSIDE BACK COVER' text) -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1474,7 +1609,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, 'Unlike medieval bloodletting, scanning these quiz QR codes is 100% painless and significantly more likely to boost your survival in the exam hall.')}
+      ${renderFooterStrip(24, 'Unlike medieval bloodletting, scanning these quiz QR codes is 100% painless and significantly more likely to boost your survival in the exam hall.', 24)}
     </div>
   </div>
 </body>

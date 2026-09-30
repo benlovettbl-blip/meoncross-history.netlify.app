@@ -68,6 +68,37 @@
       margin: 0;
       box-sizing: border-box;
     }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
+    }
     /* Page Footer Strip */
     .page-footer-strip {
       border-top: 1.2px solid #000000;
@@ -248,8 +279,8 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Remember: In history exams, 'they had a disagreement' is worth 0 marks. Give the dates!"</span>
-        <span class="footer-page-num">1/16</span>
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">Conflict in the Middle East Revision Hub • Key Topic 1 • The History Department</span>
+        <span class="footer-page-num">1/28</span>
       </div>
     </div>
   </div>
@@ -323,7 +354,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">2/16</span>
+        <span class="footer-page-num" style="margin-right: 8px;">2/28</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">"Diplomacy 101: Never promise the exact same slice of land to three different people at once."</span>
       </div>
     </div>
@@ -400,7 +431,7 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Sykes and Picot drew borders with a pencil and a ruler — please be slightly more careful with your map sketches!"</span>
-        <span class="footer-page-num">3/16</span>
+        <span class="footer-page-num">3/28</span>
       </div>
     </div>
   </div>
@@ -580,14 +611,14 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">4/16</span>
+        <span class="footer-page-num" style="margin-right: 8px;">4/28</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">"The 1939 White Paper managed to infuriate absolutely everyone: truly the peak of British compromise."</span>
       </div>
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-5" style="padding: 4mm 6mm;">
     <div class="page-body-full">
@@ -651,17 +682,11 @@
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 6–7 for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -683,7 +708,7 @@
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -695,12 +720,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Saying 'Britain was tired after the war' is true, but the examiner expects 8 marks of depth!"</span>
-        <span class="footer-page-num">5/16</span>
+        <span class="footer-page-num">5/28</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container verso-page" id="page-6" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-6">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.1: Imperial Origins & Contradictory Pledges (1915–1945)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">6/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"Balfour wrote 67 words; you have two full pages of lined paper to explain the consequences."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-7">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.1: Imperial Origins & Contradictory Pledges (1915–1945)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Extended responses win Grade 9: deploy precise statistics and sustain your historical argument."</span>
+        <span class="footer-page-num">7/28</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
@@ -875,16 +1174,16 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">6/16</span>
+        <span class="footer-page-num" style="margin-right: 8px;">8/28</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">"Irgun checked into the King David Hotel with milk churns... and checked Britain out of the Mandate."</span>
       </div>
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container recto-page" id="page-7" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header (Top of Page) -->
@@ -946,17 +1245,11 @@
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 10–11 for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -978,7 +1271,7 @@
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -990,12 +1283,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"UN Resolution 181 gave each side a jigsaw puzzle; neither side liked the picture."</span>
-        <span class="footer-page-num">7/16</span>
+        <span class="footer-page-num">9/28</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-10">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.2: Collapse of the Mandate & UN Partition (1945–1947)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">10/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"Bevingrads and barbed wire: explain how urban insurgency made Palestine ungovernable for Attlee."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-11">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.2: Collapse of the Mandate & UN Partition (1945–1947)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Write with forensic detail: dates, casualties, and causal mechanisms turn notes into top marks."</span>
+        <span class="footer-page-num">11/28</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container verso-page" id="page-12" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
@@ -1170,16 +1737,16 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">8/16</span>
+        <span class="footer-page-num" style="margin-right: 8px;">12/28</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">"Ben-Gurion proclaimed independence in 16 minutes flat: you have 12 minutes for this narrative!"</span>
       </div>
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-13" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header (Top of Page) -->
@@ -1241,17 +1808,11 @@
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 14–15 for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1273,7 +1834,7 @@
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -1285,12 +1846,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Five invading Arab armies, zero unified commanders: coordination counts in war and in paragraphs."</span>
-        <span class="footer-page-num">9/16</span>
+        <span class="footer-page-num">13/28</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container verso-page" id="page-10" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-14">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.3: UN Resolution 181 & The 1948–49 War (1947–1949)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">14/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"Operation Dani and the Haganah: explain the strategic shift from defence to counter-offensive."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-15">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.3: UN Resolution 181 & The 1948–49 War (1947–1949)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Armistice lines drawn in green pencil at Rhodes created 70 years of geopolitical deadlock."</span>
+        <span class="footer-page-num">15/28</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
@@ -1465,16 +2300,16 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">10/16</span>
+        <span class="footer-page-num" style="margin-right: 8px;">16/28</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">"Calling 700,000 displaced refugees 'a minor consequence' is a guaranteed ticket to a Level 1 mark."</span>
       </div>
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container recto-page" id="page-11" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-17" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header (Top of Page) -->
@@ -1536,17 +2371,11 @@
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 18–19 for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1568,7 +2397,7 @@
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -1580,12 +2409,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"The Law of Return opened Israel's gates; you just need to return to your essay plan."</span>
-        <span class="footer-page-num">11/16</span>
+        <span class="footer-page-num">17/28</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container verso-page" id="page-12" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-18">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.4: The Refugee Crisis (Nakba) & New Israeli State (1948–1954)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">18/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"UNRWA camps in Gaza and the West Bank: explain the demographic transformation of the Levant."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-19">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.4: The Refugee Crisis (Nakba) & New Israeli State (1948–1954)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Sustained conclusions: weigh political displacement against military security for Band 4."</span>
+        <span class="footer-page-num">19/28</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
@@ -1760,16 +2863,16 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">12/16</span>
+        <span class="footer-page-num" style="margin-right: 8px;">20/28</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">"Eden thought Nasser was Mussolini on the Nile; Eisenhower promptly reminded Eden what year it was."</span>
       </div>
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container recto-page" id="page-13" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-21" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Exam Header (Top of Page) -->
@@ -1831,17 +2934,11 @@
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 22–23 for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
         <div class="task-line"></div>
         <div class="task-line"></div>
         <div class="task-line"></div>
@@ -1863,7 +2960,7 @@
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -1875,7 +2972,281 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"The Protocol of Sèvres was so top secret the French burnt their copies — don't burn your exam paper!"</span>
-        <span class="footer-page-num">13/16</span>
+        <span class="footer-page-num">21/28</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-22">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.5: Nasser, Border Tension & The 1956 Suez Crisis (1955–1958)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">22/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"100-hour blitzkrieg across the Sinai: Moshe Dayan showed the power of pre-emptive armor."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-23">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT1.5: Nasser, Border Tension & The 1956 Suez Crisis (1955–1958)
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Superpower showdown: US financial threats proved the British Empire was officially over."</span>
+        <span class="footer-page-num">23/28</span>
       </div>
     </div>
   </div>
@@ -1976,13 +3347,13 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">14/16</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;">"If you can't remember whether it was 1948 or 1949, don't write 'sometime in the 20th century'!"</span>
+        <span class="footer-page-num" style="margin-right: 8px;">24/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"Cartographic evidence: chokepoints and armistice lines dictated the rhythm of every Middle East war."</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-25" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
@@ -2075,8 +3446,282 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Examiners read 300 essays a day: write legibly, or they might think Balfour was a French cheese."</span>
-        <span class="footer-page-num">15/16</span>
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Grade 9 formula: Point, Fact, Consequence — never leave an assertion without its factual anchor."</span>
+        <span class="footer-page-num">25/28</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container verso-page" id="page-26" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Key Topic 1 Synoptic Assessment &bull; Timed Exam Practice
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel Paper 2 &bull; Question 2 / Question 3 &bull; Aspect 1 Analysis
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+      <div class="lined-row">
+        <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+        <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice &bull; Aspect 1: Detailed Historical Analysis ]</span></div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">26/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">"Synoptic mastery: connect 1917 British pledges to the 1956 Suez crisis in one causal chain."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container recto-page" id="page-27" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Key Topic 1 Synoptic Assessment &bull; Sustained Analytical Conclusion
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel Paper 2 &bull; Band 4 Evaluative Verdict &bull; Examiner Criteria
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+      <div class="lined-row">
+        <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+        <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice Continued &bull; Aspect 2 &amp; Sustained Evaluative Conclusion ]</span></div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">"Final timed assessment: three sustained paragraphs, zero fluff, maximum historical precision."</span>
+        <span class="footer-page-num">27/28</span>
       </div>
     </div>
   </div>
@@ -2084,7 +3729,7 @@
   <!-- ====================================================================
        PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
        ==================================================================== -->
-  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-28" style="padding: 4mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       
       <!-- Top Departmental Header Bar -->
@@ -2333,8 +3978,8 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">16/16</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;">"You've finished Key Topic 1! Take a deep breath... Key Topic 2 has three more wars waiting for you."</span>
+        <span class="footer-page-num" style="margin-right: 8px;">28/28</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">Key Topic 1 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub</span>
       </div>
     </div>
   </div>

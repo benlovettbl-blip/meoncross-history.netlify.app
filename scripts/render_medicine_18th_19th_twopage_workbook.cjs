@@ -144,6 +144,10 @@ const eighteenthNineteenthConfigs = [
       'Pasteur proved that rotting soup doesn’t spontaneously create germs. It turns out germs come from other germs—mind-blowing for 1861.',
     rightPageQuip:
       'Robert Koch photographed bacteria so clearly that British doctors could no longer blame bad smells for tuberculosis.',
+    linedLeftQuip:
+      'Pasteur proved microbes cause decay (1861); Koch proved specific bacteria cause specific diseases (1876–83).',
+    linedRightQuip:
+      'Structure your causal argument: demonstrate how Koch built directly upon Pasteur’s Germ Theory to revolutionize diagnosis.',
   },
   {
     lessonIndex: 11, // mapped to lesson_3_2 in units/edexcel_medicine/data.js (Jenner)
@@ -240,6 +244,10 @@ const eighteenthNineteenthConfigs = [
       'Inoculators charged fortunes to give healthy people actual smallpox. No wonder they hated Jenner for handing out free cowpox.',
     rightPageQuip:
       'Cartoons showed vaccinated people growing cow heads and horns. Historical proof that anti-vax memes existed long before social media.',
+    linedLeftQuip:
+      'Jenner observed milkmaids who caught cowpox never caught smallpox — empirical observation before germ theory existed.',
+    linedRightQuip:
+      'Explain opposition: inoculators lost fees, anti-vaccination leagues feared infection, yet Parliament made it compulsory in 1853.',
   },
   {
     lessonIndex: 12, // mapped to lesson_3_3 in units/edexcel_medicine/data.js (Nightingale)
@@ -339,6 +347,10 @@ const eighteenthNineteenthConfigs = [
       'Before Nightingale, hospital nurses were notorious for drinking gin and stealing patients’ food. She made nursing so strict even generals were terrified.',
     rightPageQuip:
       'Nightingale believed miasma caused disease, not germs. She was technically wrong about the biology, but opening windows and scrubbing floors saved thousands anyway.',
+    linedLeftQuip:
+      'Nightingale slashed Scutari death rates from 42% to 2% through pure cleanliness, fresh air, and military hospital hygiene.',
+    linedRightQuip:
+      'Evaluate impact: Notes on Nursing (1859) and St Thomas’s Training School elevated nursing into a respected medical profession.',
   },
   {
     lessonIndex: 13, // mapped to lesson_3_4 in units/edexcel_medicine/data.js (Simpson & Lister)
@@ -438,6 +450,10 @@ const eighteenthNineteenthConfigs = [
       'Before anaesthetics, the best surgeons amputated limbs in under 30 seconds. Robert Liston once accidentally cut off his assistant’s fingers in the rush.',
     rightPageQuip:
       'Lister sprayed carbolic acid everywhere until surgeons’ hands cracked and peeled. Harsh on the skin, but great for keeping patients alive.',
+    linedLeftQuip:
+      'Simpson’s chloroform conquered surgical pain (1847); Lister’s carbolic acid conquered surgical gangrene (1867).',
+    linedRightQuip:
+      'Explain the "Black Period of Surgery": anaesthetics initially increased deaths as surgeons cut deeper before antiseptics arrived.',
   },
   {
     lessonIndex: 14, // mapped to lesson_3_5 in units/edexcel_medicine/data.js (Snow & Public Health)
@@ -537,6 +553,10 @@ const eighteenthNineteenthConfigs = [
       'John Snow proved cholera was water-borne because brewery workers in Soho drank only beer and survived. History’s most refreshing scientific discovery.',
     rightPageQuip:
       'Parliament ignored cholera for decades until the Thames smelled so bad in 1858 that MPs couldn’t breathe. Money for sewers was approved immediately.',
+    linedLeftQuip:
+      'Snow removed the Broad Street pump handle in 1854, proving cholera was water-borne seven years before Germ Theory.',
+    linedRightQuip:
+      'The 1875 Public Health Act marked the permanent death of laissez-faire: local councils were compelled to provide clean water and sewers.',
   },
 ];
 
@@ -545,7 +565,7 @@ const eighteenthNineteenthConfigs = [
 // Even pages (verso/left): Page number on left, quip on right.
 // Odd pages (recto/right): Quip on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 14) {
+function renderFooterStrip(pageNum, quipText, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -652,6 +672,37 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       gap: 0;
       margin: 1px 0;
+    }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
     }
     /* Clean Footer Strip */
     .page-footer-strip {
@@ -1039,12 +1090,14 @@ function build18th19thTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGES 4–13: 5 DEDICATED TWO-PAGE SPREADS (LESSONS 3.1 TO 3.5)
+  // PAGES 4–23: 5 DEDICATED 4-PAGE MODULES (SPREAD 1: LESSON, SPREAD 2: LINED EXTENDED WRITING)
   // Matching 100% the Master Medieval & Renaissance Template
   // ====================================================================
   eighteenthNineteenthConfigs.forEach((cfg) => {
-    const leftPageNum = cfg.lessonNum * 2 + 2;
-    const rightPageNum = cfg.lessonNum * 2 + 3;
+    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
+    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5;
+    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
+    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
 
     // ------------------------------------------------------------------
     // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
@@ -1224,9 +1277,10 @@ function build18th19thTwoPageWorkbook(unitData, period) {
 
       <!-- Ruled Task Lines for Extended Writing -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write 1–2 detailed analytical paragraphs below (continue in your exercise book for full timed paper):
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
       </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
+        <div class="task-line" style="height: 8.55mm;"></div>
         <div class="task-line" style="height: 8.55mm;"></div>
         <div class="task-line" style="height: 8.55mm;"></div>
         <div class="task-line" style="height: 8.55mm;"></div>
@@ -1266,13 +1320,95 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     </div>
   </div>
 `;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED WRITING & DISCIPLINARY NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedLeftPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedRightPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
+    </div>
+  </div>
+`;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (96-MARK LEDGER, WWW/EBI & 5 QR CODES)
+  // PAGE 24: OUTSIDE BACK COVER (96-MARK LEDGER, WWW/EBI & 5 QR CODES)
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1447,7 +1583,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, 'Sanitation, antiseptics, and vaccinations conquered disease; retrieval practice will conquer your GCSE exam.')}
+      ${renderFooterStrip(24, 'Sanitation, antiseptics, and vaccinations conquered disease; retrieval practice will conquer your GCSE exam.', 24)}
     </div>
   </div>
 `;

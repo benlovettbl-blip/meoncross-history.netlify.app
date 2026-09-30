@@ -80,6 +80,37 @@
       gap: 0;
       margin: 1px 0;
     }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
+    }
     /* Clean Footer Strip */
     .page-footer-strip {
       display: flex;
@@ -295,7 +326,7 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Personal revision tracking ledger: ensure every specification bullet point is mastered.</em></span>
-        <span class="footer-page-num">1/14</span>
+        <span class="footer-page-num">1/24</span>
       </div>
     </div>
   </div>
@@ -378,7 +409,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">2/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">2/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>The 20th century transformed pharmacology from toxic general poisons into targeted magic bullets.</em></span>
       </div>
     </div>
@@ -463,7 +494,7 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>From the birth of the NHS to the sequencing of the human genome, state action and high-tech science transformed health.</em></span>
-        <span class="footer-page-num">3/14</span>
+        <span class="footer-page-num">3/24</span>
       </div>
     </div>
   </div>
@@ -638,7 +669,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">4/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">4/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>Rosalind Franklin’s 62-hour X-ray photograph revealed the double helix; Watson and Crick celebrated in The Eagle pub.</em></span>
       </div>
     </div>
@@ -709,26 +740,29 @@
         </div>
       </div>
 
-      <!-- 18 Ruled Extended Handwriting Lines -->
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 6–7 for full 3-paragraph timed assessment):
+      </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -747,12 +781,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Mapping all 3 billion human DNA base pairs took 13 years; now geneticists can read our biological instruction manual.</em></span>
-        <span class="footer-page-num">5/14</span>
+        <span class="footer-page-num">5/24</span>
       </div>
     </div>
   </div>
 
   <div class="page page-container" id="page-6">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.1: Ideas on Causes: Genetics, DNA & The Human Genome Project
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">6/24</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;"><em>X-ray crystallography transformed genetics from abstract heredity into precise molecular biology.</em></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-7">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.1: Ideas on Causes: Genetics, DNA & The Human Genome Project
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Base pairs A-T and C-G explain both the miracle of human life and the genetic roots of inherited diseases.</em></span>
+        <span class="footer-page-num">7/24</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-8">
     <div class="page-body-full">
       <!-- Lesson Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -922,7 +1230,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">6/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">8/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>Bertha Röntgen cried "I have seen my death!" upon seeing her bones; doctors saw the future of medical diagnosis.</em></span>
       </div>
     </div>
@@ -931,7 +1239,7 @@
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-7">
+  <div class="page page-container" id="page-9">
     <div class="page-body-full">
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -993,26 +1301,29 @@
         </div>
       </div>
 
-      <!-- 18 Ruled Extended Handwriting Lines -->
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 10–11 for full 3-paragraph timed assessment):
+      </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -1031,12 +1342,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Godfrey Hounsfield’s CT scanner at EMI combined rotating X-rays with digital computers to slice through soft tissue.</em></span>
-        <span class="footer-page-num">7/14</span>
+        <span class="footer-page-num">9/24</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container" id="page-8">
+  <div class="page page-container" id="page-10">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.2: Lifestyle Factors & The Technological Revolution in Diagnosis
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">10/24</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;"><em>From Wilhelm Röntgen’s 1895 X-ray to Godfrey Hounsfield’s 1971 CT scanner: imaging banished exploratory surgery.</em></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-11">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.2: Lifestyle Factors & The Technological Revolution in Diagnosis
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Evaluating criteria: high-tech diagnosis detects existing damage; state lifestyle campaigns prevent damage occurring.</em></span>
+        <span class="footer-page-num">11/24</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-12">
     <div class="page-body-full">
       <!-- Lesson Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1206,7 +1791,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">8/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">12/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>Ehrlich and Hata tested 605 failed arsenic compounds before compound 606 finally cured syphilis in 1909.</em></span>
       </div>
     </div>
@@ -1215,7 +1800,7 @@
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-9">
+  <div class="page page-container" id="page-13">
     <div class="page-body-full">
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1277,26 +1862,29 @@
         </div>
       </div>
 
-      <!-- 18 Ruled Extended Handwriting Lines -->
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 14–15 for full 3-paragraph timed assessment):
+      </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -1315,12 +1903,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Bevan overcame doctor opposition by "stuffing their mouths with gold," launching the NHS on 5 July 1948.</em></span>
-        <span class="footer-page-num">9/14</span>
+        <span class="footer-page-num">13/24</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container" id="page-10">
+  <div class="page page-container" id="page-14">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.3: The Search for Magic Bullets, High-Tech Treatments & The Birth of the NHS
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">14/24</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;"><em>Salvarsan 606 and Prontosil proved chemicals could destroy specific internal microbes without destroying the patient.</em></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-15">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.3: The Search for Magic Bullets, High-Tech Treatments & The Birth of the NHS
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>On 5 July 1948, the NHS made medical care a universal citizenship right rather than a commercial privilege.</em></span>
+        <span class="footer-page-num">15/24</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-16">
     <div class="page-body-full">
       <!-- Lesson Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1490,7 +2352,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">10/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">16/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>Fleming almost washed his petri dish in lysol, but noticed a clear halo where mold destroyed golden bacteria.</em></span>
       </div>
     </div>
@@ -1499,7 +2361,7 @@
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-11">
+  <div class="page page-container" id="page-17">
     <div class="page-body-full">
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1561,26 +2423,29 @@
         </div>
       </div>
 
-      <!-- 18 Ruled Extended Handwriting Lines -->
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 18–19 for full 3-paragraph timed assessment):
+      </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -1599,12 +2464,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>The Oxford team grew penicillin in ceramic bedpans; American factories in Peoria brewed it in 10,000-gallon deep-tank vats.</em></span>
-        <span class="footer-page-num">11/14</span>
+        <span class="footer-page-num">17/24</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container" id="page-12">
+  <div class="page page-container" id="page-18">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey & Chain and Penicillin
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">18/24</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;"><em>Fleming’s observation in 1928 needed Florey and Chain’s chemical purification in 1940 and US wartime industrial scale in 1944.</em></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-19">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey & Chain and Penicillin
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>By D-Day in June 1944, 2.3 million doses of penicillin transformed military survival and launched the antibiotic age.</em></span>
+        <span class="footer-page-num">19/24</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-20">
     <div class="page-body-full">
       <!-- Lesson Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1774,7 +2913,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">12/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">20/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>Doll and Hill proved smoking caused lung cancer in 1950; Doll immediately extinguished his pipe and lived to age 92.</em></span>
       </div>
     </div>
@@ -1783,7 +2922,7 @@
   <!-- ------------------------------------------------------------------ -->
   <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-13">
+  <div class="page page-container" id="page-21">
     <div class="page-body-full">
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1845,26 +2984,29 @@
         </div>
       </div>
 
-      <!-- 18 Ruled Extended Handwriting Lines -->
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages 22–23 for full 3-paragraph timed assessment):
+      </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
-        <div class="task-line" style="height: 9.18mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
+        <div class="task-line" style="height: 8.55mm;"></div>
       </div>
 
       <!-- Living Timeline Drawing & Synthesis Mission -->
@@ -1883,12 +3025,286 @@
       
       <div class="page-footer-strip">
         <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>From TV ad bans in 1965 to plain olive-green packs in 2016: government compulsion slashed smoking from 65% to 13%.</em></span>
-        <span class="footer-page-num">13/14</span>
+        <span class="footer-page-num">21/24</span>
       </div>
     </div>
   </div>
 
-  <div class="page page-container" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-22">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.5: Case Study 2: Public Health & The Fight Against Lung Cancer
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">22/24</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;"><em>Doll and Hill’s statistical epidemiology in 1950 gave the British government the empirical evidence to dismantle tobacco marketing.</em></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-23">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          KT4.5: Case Study 2: Public Health & The Fight Against Lung Cancer
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        
+        <div class="lined-row">
+          <div class="lined-margin-cell"><span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span></div>
+          <div class="lined-content-cell"><span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span></div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+        <div class="lined-row">
+          <div class="lined-margin-cell">&nbsp;</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>
+      </div>
+
+      
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>Comparing public health legislation in 1875 and 2007 proves that state compulsion consistently outperforms laissez-faire.</em></span>
+        <span class="footer-page-num">23/24</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Section Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -2106,7 +3522,7 @@
 
       
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">14/14</span>
+        <span class="footer-page-num" style="margin-right: 8px;">24/24</span>
         <span class="footer-quip" style="text-align: right; flex: 1;"><em>From DNA to the NHS, state action and laboratory science revolutionized healthcare; revision guarantees your GCSE success.</em></span>
       </div>
     </div>

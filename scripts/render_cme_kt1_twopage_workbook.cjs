@@ -21,24 +21,36 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-// Approved Witty Revision Quips for CME Key Topic 1
+// Approved Witty Revision Quips for CME Key Topic 1 (Exact 28 Pages)
 const approvedFunnyFooters = [
-  '"Remember: In history exams, \'they had a disagreement\' is worth 0 marks. Give the dates!"', // Page 1
+  'Conflict in the Middle East Revision Hub • Key Topic 1 • The History Department', // Page 1
   '"Diplomacy 101: Never promise the exact same slice of land to three different people at once."', // Page 2
   '"Sykes and Picot drew borders with a pencil and a ruler — please be slightly more careful with your map sketches!"', // Page 3
   '"The 1939 White Paper managed to infuriate absolutely everyone: truly the peak of British compromise."', // Page 4
   '"Saying \'Britain was tired after the war\' is true, but the examiner expects 8 marks of depth!"', // Page 5
-  '"Irgun checked into the King David Hotel with milk churns... and checked Britain out of the Mandate."', // Page 6
-  '"UN Resolution 181 gave each side a jigsaw puzzle; neither side liked the picture."', // Page 7
-  '"Ben-Gurion proclaimed independence in 16 minutes flat: you have 12 minutes for this narrative!"', // Page 8
-  '"Five invading Arab armies, zero unified commanders: coordination counts in war and in paragraphs."', // Page 9
-  '"Calling 700,000 displaced refugees \'a minor consequence\' is a guaranteed ticket to a Level 1 mark."', // Page 10
-  '"The Law of Return opened Israel\'s gates; you just need to return to your essay plan."', // Page 11
-  '"Eden thought Nasser was Mussolini on the Nile; Eisenhower promptly reminded Eden what year it was."', // Page 12
-  '"The Protocol of Sèvres was so top secret the French burnt their copies — don\'t burn your exam paper!"', // Page 13
-  "\"If you can't remember whether it was 1948 or 1949, don't write 'sometime in the 20th century'!\"", // Page 14
-  '"Examiners read 300 essays a day: write legibly, or they might think Balfour was a French cheese."', // Page 15
-  '"You\'ve finished Key Topic 1! Take a deep breath... Key Topic 2 has three more wars waiting for you."', // Page 16
+  '"Balfour wrote 67 words; you have two full pages of lined paper to explain the consequences."', // Page 6
+  '"Extended responses win Grade 9: deploy precise statistics and sustain your historical argument."', // Page 7
+  '"Irgun checked into the King David Hotel with milk churns... and checked Britain out of the Mandate."', // Page 8
+  '"UN Resolution 181 gave each side a jigsaw puzzle; neither side liked the picture."', // Page 9
+  '"Bevingrads and barbed wire: explain how urban insurgency made Palestine ungovernable for Attlee."', // Page 10
+  '"Write with forensic detail: dates, casualties, and causal mechanisms turn notes into top marks."', // Page 11
+  '"Ben-Gurion proclaimed independence in 16 minutes flat: you have 12 minutes for this narrative!"', // Page 12
+  '"Five invading Arab armies, zero unified commanders: coordination counts in war and in paragraphs."', // Page 13
+  '"Operation Dani and the Haganah: explain the strategic shift from defence to counter-offensive."', // Page 14
+  '"Armistice lines drawn in green pencil at Rhodes created 70 years of geopolitical deadlock."', // Page 15
+  '"Calling 700,000 displaced refugees \'a minor consequence\' is a guaranteed ticket to a Level 1 mark."', // Page 16
+  '"The Law of Return opened Israel\'s gates; you just need to return to your essay plan."', // Page 17
+  '"UNRWA camps in Gaza and the West Bank: explain the demographic transformation of the Levant."', // Page 18
+  '"Sustained conclusions: weigh political displacement against military security for Band 4."', // Page 19
+  '"Eden thought Nasser was Mussolini on the Nile; Eisenhower promptly reminded Eden what year it was."', // Page 20
+  '"The Protocol of Sèvres was so top secret the French burnt their copies — don\'t burn your exam paper!"', // Page 21
+  '"100-hour blitzkrieg across the Sinai: Moshe Dayan showed the power of pre-emptive armor."', // Page 22
+  '"Superpower showdown: US financial threats proved the British Empire was officially over."', // Page 23
+  '"Cartographic evidence: chokepoints and armistice lines dictated the rhythm of every Middle East war."', // Page 24
+  '"Grade 9 formula: Point, Fact, Consequence — never leave an assertion without its factual anchor."', // Page 25
+  '"Synoptic mastery: connect 1917 British pledges to the 1956 Suez crisis in one causal chain."', // Page 26
+  '"Final timed assessment: three sustained paragraphs, zero fluff, maximum historical precision."', // Page 27
+  'Key Topic 1 Mastery Complete • Cumulative Assessment & Digital Quizzing Hub', // Page 28
 ];
 
 // ============================================================================
@@ -46,7 +58,7 @@ const approvedFunnyFooters = [
 // Even pages (verso/left): Page number on left, text on right.
 // Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, text, totalPages = 16) {
+function renderFooterStrip(pageNum, text, totalPages = 28) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -632,6 +644,37 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       margin: 0;
       box-sizing: border-box;
     }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
+    }
     /* Page Footer Strip */
     .page-footer-strip {
       border-top: 1.2px solid #000000;
@@ -749,7 +792,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       ],
     },
     footerQuip: approvedFunnyFooters[0],
-    totalPageCount: 16,
+    totalPageCount: 28,
     renderFooterStrip,
   });
 
@@ -825,7 +868,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, approvedFunnyFooters[1], 16)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 28)}
     </div>
   </div>
 
@@ -897,17 +940,19 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, approvedFunnyFooters[2], 16)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 28)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–13: 5 DEDICATED TWO-PAGE ENQUIRY SPREADS
+  // PAGES 4–23: 5 DEDICATED FOUR-PAGE ENQUIRY SPREADS (2 SPANNING SPREADS PER LESSON)
   // ====================================================================
   kt1Configs.forEach((cfg) => {
-    const leftPageNum = 4 + (cfg.lessonNum - 1) * 2;
+    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4;
     const rightPageNum = leftPageNum + 1;
+    const linedLeftPageNum = leftPageNum + 2;
+    const linedRightPageNum = leftPageNum + 3;
     const rx = cfg.extendedPractice;
 
     // ------------------------------------------------------------------
@@ -1028,12 +1073,12 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         <div class="task-line"></div>
       </div>
 
-      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 16)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
     </div>
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
+  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
@@ -1099,15 +1144,18 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (27 Thick Black Lines) -->
-      <div style="margin-bottom: 2px;">
-        ${Array.from({ length: 27 })
+      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
+        ${Array.from({ length: 18 })
           .map(() => '<div class="task-line"></div>')
           .join('\n        ')}
       </div>
 
       <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-top: auto; margin-bottom: 2px;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
           Timeline Mission &bull; Pages 2–3
         </div>
@@ -1116,7 +1164,89 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 16)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedLeftPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedRightPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
     </div>
   </div>
 `;
@@ -1221,16 +1351,17 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </p>
       </div>
 
-      ${renderFooterStrip(14, approvedFunnyFooters[13], 16)}
+      ${renderFooterStrip(24, approvedFunnyFooters[23], 28)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGE 15: GRADE 9 EXTENDED WRITING MASTERCLASS & BAND 4 RUBRIC
+  // PAGE 25: GRADE 9 EXTENDED WRITING MASTERCLASS & BAND 4 RUBRIC (RECTO)
+  // Facing Page to Cartographic Atlas (Spread 24–25)
   // ====================================================================
   html += `
-  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
+  <div class="page page-container recto-page" id="page-25" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
@@ -1321,12 +1452,92 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(15, approvedFunnyFooters[14], 16)}
+      ${renderFooterStrip(25, approvedFunnyFooters[24], 28)}
     </div>
   </div>
 `;
+
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
+  // PAGES 26–27: SYNOPTIC ASSESSMENT & TIMED EXAM PRACTICE (FACING SPREAD)
+  // ====================================================================
+  const linedRowsSynopticLeft = Array.from({ length: 28 }, (_, idx) => {
+    const isFirst = idx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice &bull; Aspect 1: Detailed Historical Analysis ]</span>`
+      : `&nbsp;`;
+    return `
+      <div class="lined-row">
+        <div class="lined-margin-cell">${marginContent}</div>
+        <div class="lined-content-cell">${linePrompt}</div>
+      </div>`;
+  }).join('');
+
+  html += `
+  <div class="page page-container verso-page" id="page-26" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Key Topic 1 Synoptic Assessment &bull; Timed Exam Practice
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel Paper 2 &bull; Question 2 / Question 3 &bull; Aspect 1 Analysis
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsSynopticLeft}
+      </div>
+
+      ${renderFooterStrip(26, approvedFunnyFooters[25], 28)}
+    </div>
+  </div>
+`;
+
+  const linedRowsSynopticRight = Array.from({ length: 28 }, (_, idx) => {
+    const isFirst = idx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice Continued &bull; Aspect 2 &amp; Sustained Evaluative Conclusion ]</span>`
+      : `&nbsp;`;
+    return `
+      <div class="lined-row">
+        <div class="lined-margin-cell">${marginContent}</div>
+        <div class="lined-content-cell">${linePrompt}</div>
+      </div>`;
+  }).join('');
+
+  html += `
+  <div class="page page-container recto-page" id="page-27" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Key Topic 1 Synoptic Assessment &bull; Sustained Analytical Conclusion
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel Paper 2 &bull; Band 4 Evaluative Verdict &bull; Examiner Criteria
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsSynopticRight}
+      </div>
+
+      ${renderFooterStrip(27, approvedFunnyFooters[26], 28)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGE 28: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
   // ====================================================================
   html += renderStandardBackCover({
     unitId: 'cme_new',
@@ -1418,8 +1629,8 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=4`,
       },
     ],
-    footerQuip: approvedFunnyFooters[15],
-    totalPageCount: 16,
+    footerQuip: approvedFunnyFooters[27],
+    totalPageCount: 28,
     renderFooterStrip,
   });
 

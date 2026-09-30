@@ -21,24 +21,36 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-// Approved Witty Revision Quips for CME Key Topic 3
+// Approved Witty Revision Quips for CME Key Topic 3 (28 Pages)
 const approvedFunnyFooters = [
   'Conflict in the Middle East Revision Hub • Key Topic 3 • The History Department', // Page 1
   "\"'Shuttle diplomacy' wasn't a holiday: Kissinger lived on a Boeing 707 so you could write this essay.\"", // Page 2
   '"Carter spent 13 days in a Maryland cabin without leaving: you only need 45 minutes for Paper 2."', // Page 3
   '"Sadat said \'No more war\': make sure your consequence question has no more blank lines."', // Page 4
   '"Yamit was dismantled house by house: build your narrative paragraph by paragraph."', // Page 5
-  '"Arafat brought an olive branch and a gun in 1974: bring your blue pen and specific dates."', // Page 6
-  '"Operation Litani pushed 25 miles north: push your historical explanation beyond a simple description."', // Page 7
-  '"400,000 Israelis marched in Tel Aviv: evidence and statistics turn a Grade 5 into a Grade 9."', // Page 8
-  '"The Kahan Commission didn\'t accept vague excuses; neither will your Pearson GCSE examiner."', // Page 9
-  '"The Intifada began with stones, but examiners award marks for precise political causes."', // Page 10
-  '"Don\'t confuse the PLO with Hamas: secular nationalism vs Islamic covenant is vital detail."', // Page 11
-  '"Arafat backed Saddam in 1990 and lost his Gulf funding: evaluate that diplomatic disaster."', // Page 12
-  '"Secret talks in a Norwegian farmhouse: Oslo was born in silence, not on social media."', // Page 13
-  '"Oslo II carved the West Bank into Areas A, B, and C: know your jurisdictions and percentages!"', // Page 14
-  '"Rabin paid with his life on 4 November 1995: explain how extremism derailed the peace process."', // Page 15
-  'Key Topic 3 Mastery Complete • Conflict in the Middle East GCSE Certification Hub', // Page 16
+  '"Notes are the fuel of memory: write with precision, proper nouns, and chronological clarity."', // Page 6
+  '"Level 4 examiners look for sustained analysis: explain HOW each event triggered the next."', // Page 7
+  '"Arafat brought an olive branch and a gun in 1974: bring your blue pen and specific dates."', // Page 8
+  '"Operation Litani pushed 25 miles north: push your historical explanation beyond a simple description."', // Page 9
+  '"Disciplinary writing requires evidence: name the treaties, dates, and key political leaders."', // Page 10
+  '"Structure creates clarity: Point, Evidence, Explanation, and Causal Impact."', // Page 11
+  '"400,000 Israelis marched in Tel Aviv: evidence and statistics turn a Grade 5 into a Grade 9."', // Page 12
+  '"The Kahan Commission didn\'t accept vague excuses; neither will your Pearson GCSE examiner."', // Page 13
+  '"Precision separates good from great: cite specific UN resolutions and casualty figures."', // Page 14
+  '"Sustained argument wins the highest band: keep your answer tightly focused on the stem."', // Page 15
+  '"The Intifada began with stones, but examiners award marks for precise political causes."', // Page 16
+  '"Don\'t confuse the PLO with Hamas: secular nationalism vs Islamic covenant is vital detail."', // Page 17
+  '"Clear handwriting and rigorous terminology are the hallmarks of historical scholarship."', // Page 18
+  '"A conclusion is not a summary: provide a substantiated historical verdict on the turning point."', // Page 19
+  '"Arafat backed Saddam in 1990 and lost his Gulf funding: evaluate that diplomatic disaster."', // Page 20
+  '"Secret talks in a Norwegian farmhouse: Oslo was born in silence, not on social media."', // Page 21
+  '"Deep historical knowledge turns complex geopolitics into structured, lucid prose."', // Page 22
+  '"Independent practice builds exam stamina: timing is everything on Edexcel Paper 2."', // Page 23
+  '"Oslo II carved the West Bank into Areas A, B, and C: know your jurisdictions and percentages!"', // Page 24
+  '"Rabin paid with his life on 4 November 1995: explain how extremism derailed the peace process."', // Page 25
+  '"Synoptic mastery: evaluate the interplay between diplomacy, territorial disputes, and ideology."', // Page 26
+  '"Final timed assessment: deploy every proper noun and analytical connective with total command."', // Page 27
+  'Key Topic 3 Mastery Complete • Conflict in the Middle East GCSE Certification Hub', // Page 28
 ];
 
 // ============================================================================
@@ -46,7 +58,7 @@ const approvedFunnyFooters = [
 // Even pages (verso/left): Page number on left, text on right.
 // Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, text, totalPages = 16) {
+function renderFooterStrip(pageNum, text, totalPages = 28) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -700,6 +712,37 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       font-size: 11pt !important;
       letter-spacing: 2px;
     }
+    /* Ruled Paper Geometry (0px Overflow Standard • 28 Lines with 22mm Left Margin) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
@@ -787,7 +830,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       ],
     },
     footerQuip: approvedFunnyFooters[0],
-    totalPageCount: 16,
+    totalPageCount: 28,
     renderFooterStrip,
   });
 
@@ -863,7 +906,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, approvedFunnyFooters[1], 16)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 28)}
     </div>
   </div>
 
@@ -935,17 +978,21 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, approvedFunnyFooters[2], 16)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 28)}
     </div>
   </div>
   `;
 
   // ====================================================================
-  // PAGES 4–13: 5 ENQUIRY LESSON DOUBLE-PAGE SPREADS
+  // PAGES 4–23: 5 DEDICATED FOUR-PAGE LESSONS (KT 3.1 TO 3.5)
+  // Spread 1 (Verso & Recto): Enquiry Lesson + Docked Exam Scaffolding
+  // Spread 2 (Verso & Recto): Facing Ruled Paper for Extended Assessment
   // ====================================================================
-  kt3Configs.forEach((cfg, idx) => {
-    const leftPageNum = 4 + idx * 2;
-    const rightPageNum = leftPageNum + 1;
+  kt3Configs.forEach((cfg) => {
+    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4; // Pages 4, 8, 12, 16, 20
+    const rightPageNum = leftPageNum + 1; // Pages 5, 9, 13, 17, 21
+    const linedLeftPageNum = leftPageNum + 2; // Pages 6, 10, 14, 18, 22
+    const linedRightPageNum = leftPageNum + 3; // Pages 7, 11, 15, 19, 23
 
     // LEFT PAGE (VERSO): Spec Anchor, Do Now, Vocab Check, 2x Q1 Consequence (4 Marks Each)
     html += `
@@ -1048,7 +1095,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 16)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
     </div>
   </div>
   `;
@@ -1155,30 +1202,115 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         <strong style="text-transform: uppercase; font-size: 6pt;">High-Yield Word Bank (Minimum 4 Per Paragraph):</strong> ${cfg.rightExam.wordBank}
       </div>
 
-      <!-- Student Response Ruled Lines (Full Page Budget Fill) -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
-        ${Array(isNarrative ? 14 : 11)
-          .fill('<div class="task-line"></div>')
-          .join('')}
+      <!-- Writing Task Prompt & 18 Handwriting Lines (Style matched to 0px overflow budget) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
+        ${Array.from({ length: 18 })
+          .map(() => '<div class="task-line"></div>')
+          .join('\n        ')}
       </div>
 
       <!-- Timeline Integration Mission -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; background: #fafafa; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2;">
-        <strong>Timeline Mission:</strong> ${cfg.rightExam.timelineMission}
+      <div style="border: 1.2px solid #000000; border-radius: 3px; background: #fafafa; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2; margin-bottom: 2px;">
+        <strong>Timeline Mission &bull; Pages 2–3:</strong> ${cfg.rightExam.timelineMission}
       </div>
 
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 16)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
     </div>
   </div>
   `;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedLeftPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedRightPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
+    </div>
+  </div>
+`;
   });
 
   // ====================================================================
-  // PAGE 14: CARTOGRAPHIC MASTERCLASS & TERRITORIAL REFERENCE
+  // PAGE 24: CARTOGRAPHIC MASTERCLASS & TERRITORIAL REFERENCE (VERSO)
   // ====================================================================
   html += `
-  <!-- PAGE 14: CARTOGRAPHIC MASTERCLASS & TERRITORIAL PARTITION REFERENCE -->
-  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
+  <!-- PAGE 24: CARTOGRAPHIC MASTERCLASS & TERRITORIAL PARTITION REFERENCE -->
+  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Top Title Bar -->
@@ -1260,28 +1392,48 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </p>
       </div>
 
-      ${renderFooterStrip(14, approvedFunnyFooters[13], 16)}
+      ${renderFooterStrip(24, approvedFunnyFooters[23], 28)}
     </div>
   </div>
   `;
 
-  // ====================================================================
-  // PAGE 15: EXAM MASTERCLASS & SYNOPTIC THEMATIC SYNTHESIS
-  // ====================================================================
+  <!-- ==================================================================== -->
+  <!-- PAGE 25: EXAM MASTERCLASS & SYNOPTIC THEMATIC SYNTHESIS (RECTO)      -->
+  <!-- ==================================================================== -->
   html += `
-  <!-- PAGE 15: EXAM MASTERCLASS & SYNOPTIC THEMATIC SYNTHESIS -->
-  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
+  <div class="page page-container recto-page" id="page-25" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
       
-      <!-- Top Title Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+      <!-- Top Departmental Branding -->
+      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
-            Key Topic 3 Exam Masterclass &bull; Synoptic Synthesis (1974–1995)
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Grade 9 Masterclass</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 3 EXAM EXCELLENCE</span>
+        </div>
+      </div>
+
+      <!-- Main Title Header -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1px;">
+            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
+              EXAM ARCHITECTURE
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+              Pearson Edexcel Paper 2 Assessment Rubric
+            </span>
+          </div>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; line-height: 1.15; margin: 0; font-weight: 900;">
+            Grade 9 Extended Writing Masterclass &amp; Mark Scheme Rubric
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
-            Grade 9 Disciplinary Toolkit
-          </span>
+        </div>
+        <div style="text-align: right; border-left: 1.5px solid #000; padding-left: 10px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; display: block;">Target Standard</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900;">GRADE 9 (85%+)</span>
         </div>
       </div>
 
@@ -1404,12 +1556,12 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Section 4: Pupil Extended Writing Self-Audit Checklist -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #fafafa;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 8px; background: #fafafa; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #000; padding-bottom: 2px;">
           <span>4. Pupil Extended Writing Self-Audit Checklist (The Grade 9 Polish)</span>
           <span>Tick Before Handing In</span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.25; flex: 1; align-content: space-between;">
           <div>&bull; &#9633; Did I name at least 3 specific historical proper nouns per paragraph?</div>
           <div>&bull; &#9633; Did I frame my opening line to echo the exact words of the exam question?</div>
           <div>&bull; &#9633; Did I explain <strong>HOW</strong> event A caused event B rather than just stating it?</div>
@@ -1419,13 +1571,92 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(15, approvedFunnyFooters[14], 16)}
+      ${renderFooterStrip(25, approvedFunnyFooters[24], 28)}
     </div>
   </div>
   `;
 
   // ====================================================================
-  // PAGE 16: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
+  // PAGES 26–27: SYNOPTIC ASSESSMENT & TIMED EXAM PRACTICE (FACING SPREAD)
+  // ====================================================================
+  const linedRowsSynopticLeft = Array.from({ length: 28 }, (_, idx) => {
+    const isFirst = idx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice &bull; Aspect 1: Detailed Historical Analysis ]</span>`
+      : `&nbsp;`;
+    return `
+      <div class="lined-row">
+        <div class="lined-margin-cell">${marginContent}</div>
+        <div class="lined-content-cell">${linePrompt}</div>
+      </div>`;
+  }).join('');
+
+  html += `
+  <div class="page page-container verso-page" id="page-26" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Key Topic 3 Synoptic Assessment &bull; Timed Exam Practice
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel Paper 2 &bull; Question 2 / Question 3 &bull; Aspect 1 Analysis
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsSynopticLeft}
+      </div>
+
+      ${renderFooterStrip(26, approvedFunnyFooters[25], 28)}
+    </div>
+  </div>
+`;
+
+  const linedRowsSynopticRight = Array.from({ length: 28 }, (_, idx) => {
+    const isFirst = idx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice Continued &bull; Aspect 2 &amp; Sustained Evaluative Conclusion ]</span>`
+      : `&nbsp;`;
+    return `
+      <div class="lined-row">
+        <div class="lined-margin-cell">${marginContent}</div>
+        <div class="lined-content-cell">${linePrompt}</div>
+      </div>`;
+  }).join('');
+
+  html += `
+  <div class="page page-container recto-page" id="page-27" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Key Topic 3 Synoptic Assessment &bull; Sustained Analytical Conclusion
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel Paper 2 &bull; Band 4 Evaluative Verdict &bull; Examiner Criteria
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsSynopticRight}
+      </div>
+
+      ${renderFooterStrip(27, approvedFunnyFooters[26], 28)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGE 28: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
   // ====================================================================
   html += renderStandardBackCover({
     unitId: 'cme_new',
@@ -1517,8 +1748,8 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=13`,
       },
     ],
-    footerQuip: approvedFunnyFooters[15],
-    totalPageCount: 16,
+    footerQuip: approvedFunnyFooters[27],
+    totalPageCount: 28,
     renderFooterStrip,
   });
 
