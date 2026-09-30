@@ -173,8 +173,8 @@ function renderInPagePreviewConsole() {
           <button id="btnPreviewPrint" type="button" onclick="window.printInPagePreview()" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.76rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37,99,235,0.35);">
             <i class="fa-solid fa-print"></i> Print
           </button>
-          <a id="btnPreviewDownload" href="#" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-            <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+          <a id="btnPreviewDownload" href="#" target="_blank" title="Open compiled PDF in new tab" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-file-pdf"></i> Open PDF
           </a>
           <a id="btnPreviewFullTab" href="#" target="_blank" style="background: rgba(255, 255, 255, 0.08); color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.15); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Tab
@@ -215,20 +215,16 @@ export function renderWorkbooksZone(container, unitData) {
       </div>
     </div>
 
-    <!-- Compact Navigation Tabs (Height: ~30px) -->
+    <!-- Compact Navigation Tabs (Height: ~30px) in Specification Sequence -->
     <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; padding: 3px 6px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
       <span style="font-size: 0.7rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px; padding-left: 2px;">Unit:</span>
       
-      <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${activeUnitId === 'cme_new' ? '#0284c7' : '#ffffff'}; color: ${activeUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'cme_new' ? '#0284c7' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'cme_new' ? '0 1px 3px rgba(2,132,199,0.25)' : 'none'};">
-        <i class="fa-solid fa-dove"></i> ⭐ Middle East (P2)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'usa')" style="background: ${activeUnitId === 'usa' ? '#1e40af' : '#ffffff'}; color: ${activeUnitId === 'usa' ? '#ffffff' : '#1e40af'}; border: 1px solid ${activeUnitId === 'usa' ? '#1e40af' : '#bfdbfe'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'usa' ? '0 1px 3px rgba(30,64,175,0.25)' : 'none'};">
-        <i class="fa-solid fa-flag-usa"></i> USA 1954–75 (P3)
-      </button>
-
       <button type="button" onclick="window.switchView('booklet', 'edexcel_medicine')" style="background: ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#ffffff'}; color: ${activeUnitId === 'edexcel_medicine' ? '#ffffff' : '#0f766e'}; border: 1px solid ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#99f6e4'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'edexcel_medicine' ? '0 1px 3px rgba(15,118,110,0.25)' : 'none'};">
         <i class="fa-solid fa-notes-medical"></i> Medicine (P1)
+      </button>
+
+      <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${activeUnitId === 'cme_new' ? '#0284c7' : '#ffffff'}; color: ${activeUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'cme_new' ? '#0284c7' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'cme_new' ? '0 1px 3px rgba(2,132,199,0.25)' : 'none'};">
+        <i class="fa-solid fa-dove"></i> ⭐ Middle East (P2)
       </button>
 
       <button type="button" onclick="window.switchView('booklet', 'eee')" style="background: ${activeUnitId === 'eee' ? '#b45309' : '#ffffff'}; color: ${activeUnitId === 'eee' ? '#ffffff' : '#b45309'}; border: 1px solid ${activeUnitId === 'eee' ? '#b45309' : '#fde68a'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'eee' ? '0 1px 3px rgba(180,83,9,0.25)' : 'none'};">
@@ -237,6 +233,10 @@ export function renderWorkbooksZone(container, unitData) {
 
       <button type="button" onclick="window.switchView('booklet', 'weimar_nazi_germany')" style="background: ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#ffffff'}; color: ${activeUnitId === 'weimar_nazi_germany' ? '#ffffff' : '#991b1b'}; border: 1px solid ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#fecaca'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'weimar_nazi_germany' ? '0 1px 3px rgba(127,29,29,0.25)' : 'none'};">
         <i class="fa-solid fa-landmark"></i> Weimar (P3)
+      </button>
+
+      <button type="button" onclick="window.switchView('booklet', 'usa')" style="background: ${activeUnitId === 'usa' ? '#1e40af' : '#ffffff'}; color: ${activeUnitId === 'usa' ? '#ffffff' : '#1e40af'}; border: 1px solid ${activeUnitId === 'usa' ? '#1e40af' : '#bfdbfe'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'usa' ? '0 1px 3px rgba(30,64,175,0.25)' : 'none'};">
+        <i class="fa-solid fa-flag-usa"></i> USA 1954–75 (P3)
       </button>
 
       <button type="button" onclick="window.switchView('booklet', 'great_war')" style="background: ${activeUnitId === 'great_war' ? '#4338ca' : '#ffffff'}; color: ${activeUnitId === 'great_war' ? '#ffffff' : '#4338ca'}; border: 1px solid ${activeUnitId === 'great_war' ? '#4338ca' : '#c7d2fe'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'great_war' ? '0 1px 3px rgba(67,56,202,0.25)' : 'none'};">
@@ -281,8 +281,8 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview
             </button>
 
-            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Master PDF">
-              <i class="fa-solid fa-download"></i> PDF
+            <a href="${b.pdfUrl}" target="_blank" style="background: ${b.color}; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Open ${cleanTitle} PDF in new tab">
+              <i class="fa-solid fa-file-pdf"></i> PDF
             </a>
 
             <a href="${b.fileBase}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: background 0.15s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open master booklet in a full browser tab">
@@ -495,13 +495,13 @@ export function renderWorkbooksZone(container, unitData) {
           </button>
 
           <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <a href="/pdfs/cme_new_textbook_${kt.id}_PUBLISHER.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/cme_new_textbook_${kt.id}_PUBLISHER.pdf" target="_blank" title="Open ${kt.id} Publisher Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-book-open"></i> Text
             </a>
-            <a href="/pdfs/cme_new_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/cme_new_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-user-pen"></i> Work
             </a>
-            <a href="/pdfs/cme_new_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/cme_new_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-shield-halved"></i> Master
             </a>
           </div>
@@ -564,6 +564,69 @@ export function renderWorkbooksZone(container, unitData) {
     ];
 
     html += renderThreePillarsGrid(usaBooklets);
+
+    const usaCards = [
+      {
+        id: 'KT1',
+        title: 'KT1: The Civil Rights Movement (1954–65)',
+        desc: 'Brown v Board, Montgomery, Little Rock, sit-ins, Freedom Rides, March on Washington, CRA 1964, VRA 1965.',
+      },
+      {
+        id: 'KT2',
+        title: 'KT2: Black Power & Civil Rights (1965–75)',
+        desc: 'Malcolm X, Nation of Islam, Stokely Carmichael, Black Panthers, 1968 Olympics, riots (Watts), MLK assassination.',
+      },
+      {
+        id: 'KT3',
+        title: 'KT3: Peace Movement & Counterculture (1960–75)',
+        desc: 'Student movement, SDS, anti-war protests, Kent State, Woodstock, Women’s Liberation, Roe v Wade.',
+      },
+      {
+        id: 'KT4',
+        title: 'KT4: The Vietnam War (1954–75)',
+        desc: 'Geneva Accords, Gulf of Tonkin, guerrilla warfare, Tet Offensive (1968), My Lai, Vietnamization & Fall of Saigon.',
+      },
+    ];
+
+    html += `
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px;">
+    `;
+
+    usaCards.forEach((kt) => {
+      html += `
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #1e40af; border-radius: 7px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 165px; box-sizing: border-box;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
+              <span style="font-size: 0.65rem; font-weight: 800; background: #eff6ff; color: #1e40af; padding: 2px 5px; border-radius: 3px; border: 1px solid #bfdbfe;">
+                ${kt.id} • PAPER 3
+              </span>
+              <span style="font-size: 0.68rem; font-weight: 700; color: #64748b;">Complete</span>
+            </div>
+            <h4 style="margin: 0 0 3px 0; color: #0f172a; font-size: 0.82rem; font-weight: 800; line-height: 1.25;">
+              ${kt.title}
+            </h4>
+            <p style="margin: 0; font-size: 0.7rem; color: #64748b; line-height: 1.3;">
+              ${kt.desc}
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 4px; margin-top: 6px;">
+            <a href="/pdfs/usa_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #0284c7; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              Text
+            </a>
+            <a href="/pdfs/usa_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #d97706; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              Work
+            </a>
+            <a href="/pdfs/usa_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #b91c1c; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              Master
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+
     html += renderMockExamsRow(
       'usa',
       unitData.mock_exams || [
@@ -612,6 +675,121 @@ export function renderWorkbooksZone(container, unitData) {
     ];
 
     html += renderThreePillarsGrid(medBooklets);
+
+    // Master 96-Page All-in-One Consumable Pupil Workbook Callout Banner
+    html += `
+      <div style="background: linear-gradient(135deg, #042f2e 0%, #0f766e 100%); border: 1.5px solid #14b8a6; border-radius: 8px; padding: 12px 16px; margin: 10px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 12px rgba(15,118,110,0.25);">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 260px; flex: 1;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.25rem; flex-shrink: 0;">
+            <i class="fa-solid fa-book-bookmark"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+              <span style="font-size: 0.65rem; font-weight: 900; background: #ffffff; color: #0f766e; padding: 1px 6px; border-radius: 3px; text-transform: uppercase;">Complete Master Workbook</span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #ccfbf1;">96 Pages &bull; All 5 Periods Bound</span>
+            </div>
+            <h4 style="margin: 0; color: #ffffff; font-size: 0.95rem; font-weight: 800;">Paper 1: Master All-in-One Pupil Consumable Workbook</h4>
+            <p style="margin: 2px 0 0 0; color: #99f6e4; font-size: 0.74rem;">The definitive photocopier-ready classroom workbook binding Section A (Western Front) and all four Section B chronological eras together.</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="/pdfs/edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf" target="_blank" title="Open 96-Page Master Pupil Workbook PDF in new tab" style="background: #ffffff; color: #0f766e; border: 1.5px solid #ffffff; padding: 7px 14px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 0.15s ease;" onmouseover="this.style.background='#f0fdfa';" onmouseout="this.style.background='#ffffff';">
+            <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Open Master PDF (96 Pages)
+          </a>
+        </div>
+      </div>
+    `;
+
+    // 5 Dedicated Era / Period Suites
+    const medPeriods = [
+      {
+        id: 'medieval',
+        title: 'Medieval Britain (c1250–c1500)',
+        badge: 'SECTION B • ERA 1',
+        desc: 'Four Humours, Galen & Church, medieval hospitals, pilgrimage, Black Death (1348).',
+        textbookPdf: '/pdfs/edexcel_medicine_textbook_medieval_PUBLISHER_FINAL_V17.pdf',
+        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
+        digitalUrl: '/units/edexcel_medicine/pupil_workbook_medieval.html',
+      },
+      {
+        id: 'renaissance',
+        title: 'The Medical Renaissance (c1500–c1700)',
+        badge: 'SECTION B • ERA 2',
+        desc: 'Humanism, printing press, Vesalius (1543), Harvey (1628), Sydenham, Great Plague (1665).',
+        textbookPdf: '/pdfs/edexcel_medicine_textbook_renaissance_PUBLISHER_FINAL_V17.pdf',
+        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
+        digitalUrl: '/units/edexcel_medicine/pupil_workbook_renaissance.html',
+      },
+      {
+        id: '18th_19th',
+        title: '18th & 19th C. Britain (c1700–c1900)',
+        badge: 'SECTION B • ERA 3',
+        desc: 'Jenner (smallpox), Germ Theory (Pasteur/Koch), Nightingale, Simpson, Lister, Public Health.',
+        textbookPdf: '/pdfs/edexcel_medicine_textbook_18th_19th_PUBLISHER_FINAL_V17.pdf',
+        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
+        digitalUrl: '/units/edexcel_medicine/pupil_workbook_18th_19th.html',
+      },
+      {
+        id: 'modern',
+        title: 'Modern Britain (c1900–present)',
+        badge: 'SECTION B • ERA 4',
+        desc: 'Genetics & DNA, magic bullets, Fleming/Florey/Chain (penicillin), NHS (1948), lung cancer.',
+        textbookPdf: '/pdfs/edexcel_medicine_textbook_modern_PUBLISHER_FINAL_V17.pdf',
+        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
+        digitalUrl: '/units/edexcel_medicine/pupil_workbook_modern.html',
+      },
+      {
+        id: 'western_front',
+        title: 'The Western Front (1914–18)',
+        badge: 'SECTION A • HISTORIC ENV.',
+        desc: 'Ypres, Somme, Arras, Cambrai; chain of evacuation (RAP, ADS/MDS, CCS); trench conditions, gas & surgery.',
+        textbookPdf: '/pdfs/edexcel_medicine_textbook_western_front_PUBLISHER_FINAL_V17.pdf',
+        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
+        digitalUrl: '/units/edexcel_medicine/pupil_workbook_western_front.html',
+      },
+    ];
+
+    html += `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 10px;">
+    `;
+
+    medPeriods.forEach((p) => {
+      html += `
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #0f766e; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+              <span style="font-size: 0.66rem; font-weight: 800; background: #f0fdfa; color: #0f766e; padding: 2px 6px; border-radius: 3px; border: 1px solid #99f6e4;">
+                ${p.badge}
+              </span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #64748b;">
+                <i class="fa-solid fa-file-pdf" style="color: #0f766e; margin-right: 3px;"></i>Publisher Set
+              </span>
+            </div>
+            <h3 style="margin: 0 0 4px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25;">
+              ${p.title}
+            </h3>
+            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3;">
+              ${p.desc}
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 5px; margin-top: 8px;">
+            <a href="${p.textbookPdf}" target="_blank" title="Open ${p.title} Publisher Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0f766e; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-book-open"></i> Text
+            </a>
+            <a href="${p.workbookPdf}" target="_blank" title="Open ${p.title} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-user-pen"></i> Work
+            </a>
+            <a href="${p.digitalUrl}" target="_blank" title="Open ${p.title} Digital A4 Workbook in browser" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #2563eb; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-laptop"></i> Digital
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+
     html += renderMockExamsRow(
       'edexcel_medicine',
       unitData.mock_exams || [
@@ -695,8 +873,8 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-eye" style="color: ${c.color};"></i> Preview
             </button>
 
-            <a href="${c.pdfUrl}" target="_blank" download style="background: ${c.color}; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Master PDF">
-              <i class="fa-solid fa-download"></i> PDF
+            <a href="${c.pdfUrl}" target="_blank" style="background: ${c.color}; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Open ${c.title} PDF in new tab">
+              <i class="fa-solid fa-file-pdf"></i> PDF
             </a>
 
             <a href="${c.webUrl}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: background 0.15s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open interactive version">
@@ -716,14 +894,14 @@ export function renderWorkbooksZone(container, unitData) {
           <i class="fa-solid fa-paperclip"></i> Specialized Great War Teacher Packs:
         </span>
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <a href="/pdfs/great_war_guided_reading_workbook_FINAL_V17.pdf" target="_blank" download style="background: #ffffff; color: #0284c7; border: 1px solid #bae6fd; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-book-reader"></i> Guided Reading (PDF)
+          <a href="/pdfs/great_war_guided_reading_workbook_FINAL_V17.pdf" target="_blank" title="Open Guided Reading Workbook PDF in new tab" style="background: #ffffff; color: #0284c7; border: 1px solid #bae6fd; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fa-solid fa-file-pdf"></i> Guided Reading (PDF)
           </a>
-          <a href="/pdfs/great_war_answer_key_FINAL_V17.pdf" target="_blank" download style="background: #ffffff; color: #16a34a; border: 1px solid #bbf7d0; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-key"></i> Teacher Answer Key (PDF)
+          <a href="/pdfs/great_war_answer_key_FINAL_V17.pdf" target="_blank" title="Open Teacher Answer Key PDF in new tab" style="background: #ffffff; color: #16a34a; border: 1px solid #bbf7d0; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fa-solid fa-file-pdf"></i> Teacher Answer Key (PDF)
           </a>
-          <a href="/pdfs/great_war_cheat_sheet_FINAL_V17.pdf" target="_blank" download style="background: #ffffff; color: #d97706; border: 1px solid #fde68a; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-bolt"></i> Revision Cheat Sheet (PDF)
+          <a href="/pdfs/great_war_cheat_sheet_FINAL_V17.pdf" target="_blank" title="Open Revision Cheat Sheet PDF in new tab" style="background: #ffffff; color: #d97706; border: 1px solid #fde68a; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fa-solid fa-file-pdf"></i> Revision Cheat Sheet (PDF)
           </a>
         </div>
       </div>
@@ -774,13 +952,13 @@ export function renderWorkbooksZone(container, unitData) {
           </div>
 
           <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <a href="/pdfs/eee_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/eee_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-book-open"></i> Text
             </a>
-            <a href="/pdfs/eee_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/eee_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-user-pen"></i> Work
             </a>
-            <a href="/pdfs/eee_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/eee_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-shield-halved"></i> Master
             </a>
           </div>
@@ -849,13 +1027,13 @@ export function renderWorkbooksZone(container, unitData) {
           </div>
 
           <div style="display: flex; gap: 4px; margin-top: 6px;">
-            <a href="/pdfs/weimar_nazi_germany_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #0284c7; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/weimar_nazi_germany_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #0284c7; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               Text
             </a>
-            <a href="/pdfs/weimar_nazi_germany_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #d97706; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/weimar_nazi_germany_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #d97706; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               Work
             </a>
-            <a href="/pdfs/weimar_nazi_germany_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" download style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #b91c1c; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+            <a href="/pdfs/weimar_nazi_germany_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #b91c1c; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               Master
             </a>
           </div>
@@ -910,8 +1088,8 @@ export function renderWorkbooksZone(container, unitData) {
               <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/textbook.html', '${cleanUnitTitle} Core Textbook', '/pdfs/${uId}_textbook_FINAL_V17.pdf', { badge: 'TEXTBOOK' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#0284c7';" onmouseout="this.style.borderColor='#cbd5e1';">
                 <i class="fa-solid fa-eye" style="color: #0284c7;"></i> Preview
               </button>
-              <a href="/pdfs/${uId}_textbook_FINAL_V17.pdf" target="_blank" download style="background: #0284c7; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Textbook PDF">
-                <i class="fa-solid fa-download"></i> PDF
+              <a href="/pdfs/${uId}_textbook_FINAL_V17.pdf" target="_blank" title="Open ${cleanUnitTitle} Textbook PDF in new tab" style="background: #0284c7; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+                <i class="fa-solid fa-file-pdf"></i> PDF
               </a>
             </div>
           </div>
@@ -927,8 +1105,8 @@ export function renderWorkbooksZone(container, unitData) {
               <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/pupil_workbook.html', '${cleanUnitTitle} Pupil Workbook', '/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf', { badge: 'WORKBOOK' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#d97706';" onmouseout="this.style.borderColor='#cbd5e1';">
                 <i class="fa-solid fa-eye" style="color: #d97706;"></i> Preview
               </button>
-              <a href="/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf" target="_blank" download style="background: #d97706; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Workbook PDF">
-                <i class="fa-solid fa-download"></i> PDF
+              <a href="/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf" target="_blank" title="Open ${cleanUnitTitle} Pupil Workbook PDF in new tab" style="background: #d97706; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+                <i class="fa-solid fa-file-pdf"></i> PDF
               </a>
             </div>
           </div>
@@ -944,8 +1122,8 @@ export function renderWorkbooksZone(container, unitData) {
               <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/mastery_pack_full.html', '${cleanUnitTitle} Mastery Pack', '/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf', { badge: 'MASTERY' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#b91c1c';" onmouseout="this.style.borderColor='#cbd5e1';">
                 <i class="fa-solid fa-eye" style="color: #b91c1c;"></i> Preview
               </button>
-              <a href="/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf" target="_blank" download style="background: #b91c1c; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Mastery PDF">
-                <i class="fa-solid fa-download"></i> PDF
+              <a href="/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf" target="_blank" title="Open ${cleanUnitTitle} Mastery Pack PDF in new tab" style="background: #b91c1c; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+                <i class="fa-solid fa-file-pdf"></i> PDF
               </a>
             </div>
           </div>
@@ -961,25 +1139,18 @@ export function renderWorkbooksZone(container, unitData) {
   else {
     const gcseUnits = [
       {
-        id: 'cme_new',
-        name: 'Conflict in the Middle East (1945–95)',
-        spec: 'Paper 2 • Option P5',
-        icon: 'fa-dove',
-        color: '#0284c7',
-      },
-      {
-        id: 'usa',
-        name: 'USA: Conflict at Home & Abroad (1954–75)',
-        spec: 'Paper 3 • Option 33',
-        icon: 'fa-flag-usa',
-        color: '#1e40af',
-      },
-      {
         id: 'edexcel_medicine',
         name: 'Medicine in Britain & Western Front',
         spec: 'Paper 1 • Option 11',
         icon: 'fa-notes-medical',
         color: '#0f766e',
+      },
+      {
+        id: 'cme_new',
+        name: 'Conflict in the Middle East (1945–95)',
+        spec: 'Paper 2 • Option P5',
+        icon: 'fa-dove',
+        color: '#0284c7',
       },
       {
         id: 'eee',
@@ -994,6 +1165,13 @@ export function renderWorkbooksZone(container, unitData) {
         spec: 'Paper 3 • Option 31',
         icon: 'fa-landmark',
         color: '#7f1d1d',
+      },
+      {
+        id: 'usa',
+        name: 'USA: Conflict at Home & Abroad (1954–75)',
+        spec: 'Paper 3 • Option 33',
+        icon: 'fa-flag-usa',
+        color: '#1e40af',
       },
     ];
 
