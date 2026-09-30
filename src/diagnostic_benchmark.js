@@ -420,9 +420,10 @@ export function startDiagnosticBenchmark(unitId, topicFilter = null) {
   const questions = sampleDiagnosticQuestions(unitId, unitData, topicFilter);
 
   if (!questions || questions.length === 0) {
-    alert(
-      'No multiple-choice questions found to generate a diagnostic benchmark for this selection.',
-    );
+    console.warn('No multiple-choice questions found for selection:', unitId, topicFilter);
+    if (typeof window !== 'undefined' && typeof window.showXpToast === 'function') {
+      window.showXpToast('No quiz questions found for this topic selection.', 'warning');
+    }
     return;
   }
 
@@ -443,11 +444,39 @@ export function startDiagnosticBenchmark(unitId, topicFilter = null) {
   renderDiagnosticQuestion();
 
   // Attach keyboard shortcuts
-  window.removeEventListener('keydown', handleDiagnosticKeydown);
-  window.addEventListener('keydown', handleDiagnosticKeydown);
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('keydown', handleDiagnosticKeydown);
+    window.addEventListener('keydown', handleDiagnosticKeydown);
+  }
 }
 
-window.startDiagnosticBenchmark = startDiagnosticBenchmark;
+/**
+ * Universal safe launcher for benchmark buttons across mobile and desktop.
+ */
+export function launchUnitBenchmark(unitId) {
+  if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
+    window.cancelSpeech();
+  }
+  const mSel =
+    typeof document !== 'undefined' ? document.getElementById('select-recall-deck-mobile') : null;
+  const dSel =
+    typeof document !== 'undefined' ? document.getElementById('select-recall-deck') : null;
+  let val = null;
+  if (mSel && typeof window !== 'undefined' && window.innerWidth <= 768) {
+    val = mSel.value;
+  } else if (dSel) {
+    val = dSel.value;
+  } else if (mSel) {
+    val = mSel.value;
+  }
+  if (val === 'all' || val === 'full') val = null;
+  startDiagnosticBenchmark(unitId, val);
+}
+
+if (typeof window !== 'undefined') {
+  window.startDiagnosticBenchmark = startDiagnosticBenchmark;
+  window.launchUnitBenchmark = launchUnitBenchmark;
+}
 
 /**
  * Creates and appends the Diagnostic Modal to the document.
@@ -462,7 +491,20 @@ function createOrShowDiagnosticModal() {
   }
 
   modal.className = 'diag-modal-overlay';
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100vw';
+  modal.style.height = '100vh';
+  modal.style.height = '100dvh';
+  modal.style.zIndex = '999999';
+  modal.style.background = 'rgba(15, 23, 42, 0.88)';
+  modal.style.backdropFilter = 'blur(8px)';
+  modal.style.webkitBackdropFilter = 'blur(8px)';
   modal.style.display = 'flex';
+  modal.style.alignItems = 'center';
+  modal.style.justifyContent = 'center';
+  modal.style.boxSizing = 'border-box';
   document.body.style.overflow = 'hidden';
 }
 

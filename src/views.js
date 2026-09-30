@@ -22,7 +22,11 @@ import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js';
 import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
-import { renderDiagnosticLauncherHTML } from './diagnostic_benchmark.js';
+import {
+  renderDiagnosticLauncherHTML,
+  launchUnitBenchmark,
+  startDiagnosticBenchmark,
+} from './diagnostic_benchmark.js';
 import {
   getMasterpieceStarterStripHtml,
   attachStarterStripEvents,
@@ -673,9 +677,10 @@ export function renderInteractiveQuiz() {
     return;
   }
 
-  const workbooks = data.workbooks || [
-    { id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' },
-  ];
+  const workbooks =
+    data.workbooks && data.workbooks.length > 0
+      ? data.workbooks
+      : [{ id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' }];
 
   // Calculate total question count across lessons
   let totalQuestions = 0;
@@ -761,11 +766,13 @@ export function renderInteractiveQuiz() {
             Choose Revision Topic:
           </label>
           <select id="select-recall-deck-mobile" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.86rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: #0f172a; color: #ffffff; font-weight: 600;" onchange="window.handleMobileRecallDeckChange('${unitId}', this.value)">
+            <option value="all">⭐ Complete Course (All Topics / 20 Questions)</option>
             ${workbooks
               .map((wb, i) => {
                 const id = wb.name || wb.id;
                 const isFull = id === 'full';
-                return `<option value="${id}">${isFull ? '⭐ Complete Unit (All Topics)' : `Topic ${i + 1}: ${wb.title || wb.name}`}</option>`;
+                if (isFull) return '';
+                return `<option value="${id}">Topic ${i + 1}: ${wb.title || wb.name}</option>`;
               })
               .join('')}
           </select>
@@ -775,7 +782,7 @@ export function renderInteractiveQuiz() {
         }
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <button onclick="const sel = document.getElementById('select-recall-deck-mobile'); window.startDiagnosticBenchmark('${unitId}', sel ? sel.value : null)" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 18px; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
+          <button id="btn-start-diagnostic-mobile" onclick="window.launchUnitBenchmark('${unitId}')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 18px; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
             <i class="fa-solid fa-bullseye"></i>
             <span>Start 10-Minute Quiz</span>
           </button>
@@ -860,13 +867,17 @@ export function renderInteractiveQuiz() {
                             `;
                           })
                           .join('')
-                      : workbooks
+                      : `
+                        <option value="all">⭐ Complete Course (All Topics / 20 Questions)</option>
+                        ${workbooks
                           .map((wb, i) => {
                             const id = wb.name || wb.id;
                             const isFull = id === 'full';
-                            return `<option value="${id}">${isFull ? 'Comprehensive Unit Deck (All Lessons)' : `Key Topic ${i + 1}: ${wb.title || wb.name}`}</option>`;
+                            if (isFull) return '';
+                            return `<option value="${id}">Key Topic ${i + 1}: ${wb.title || wb.name}</option>`;
                           })
-                          .join('')
+                          .join('')}
+                      `
                   }
                 </select>
               </div>
@@ -939,7 +950,7 @@ export function renderInteractiveQuiz() {
           </div>
 
           <div>
-            <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 20px; border-radius: 10px; border: none; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="const sel = document.getElementById('select-recall-deck'); window.startDiagnosticBenchmark('${unitId}', sel ? sel.value : null)" onmouseover="this.style.filter='brightness(1.08)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.filter='brightness(1)'; this.style.transform='translateY(0)';">
+            <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 20px; border-radius: 10px; border: none; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="window.launchUnitBenchmark('${unitId}')" onmouseover="this.style.filter='brightness(1.08)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.filter='brightness(1)'; this.style.transform='translateY(0)';">
               <i class="fa-solid fa-bullseye"></i>
               <span>Start 10-Min Benchmark</span>
             </button>
@@ -1085,7 +1096,9 @@ export function renderInteractiveQuiz() {
     urlParams.get('quiz') === '1'
   ) {
     setTimeout(() => {
-      if (typeof window.startDiagnosticBenchmark === 'function') {
+      if (typeof window.launchUnitBenchmark === 'function') {
+        window.launchUnitBenchmark(unitId);
+      } else if (typeof window.startDiagnosticBenchmark === 'function') {
         window.startDiagnosticBenchmark(unitId);
       }
     }, 150);
