@@ -902,7 +902,7 @@ function renderCausalDominoSpine(spine) {
   let stagesHtml = stages
     .map((s, idx) => {
       const isLast = idx === stages.length - 1;
-      const connective = !isLast ? connectives[idx] || 'Consequently...' : null;
+      const connective = !isLast ? s.connective || connectives[idx] || 'Consequently...' : null;
 
       return `
       <div class="causal-domino-card" data-stage="${s.step}" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid ${idx === 4 ? '#10b981' : '#0284c7'}; border-radius: 8px; padding: 12px 10px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 6px rgba(0,0,0,0.04); min-width: 0; box-sizing: border-box; position: relative;">
@@ -1164,8 +1164,10 @@ if (typeof window !== 'undefined') {
   window.copyDominoNotes = function () {
     const cards = document.querySelectorAll('.causal-domino-card');
     if (!cards || cards.length === 0) return;
+    const titleEl = document.querySelector('#causal-domino-scaffold h3');
+    const pageTitle = titleEl ? titleEl.textContent.trim() : '5-Stage Causal Domino Chain';
     let out =
-      'The 1956 Suez Crisis: 5-Stage Causal Domino Chain (Edexcel Paper 2)\n' +
+      `${pageTitle} (Edexcel Paper 2)\n` +
       '===================================================================\n\n';
     cards.forEach((c) => {
       const stage = c.dataset.stage || '';
@@ -3518,7 +3520,7 @@ export function renderLesson(lesson) {
               lesson.causal_domino_spine
                 ? `
               <div style="grid-column: 1 / -1; margin-top: 6px; padding-top: 10px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                <span style="font-size: 0.8rem; color: #64748b; font-style: italic;"><i class="fa-solid fa-circle-info" style="color: #0284c7;"></i> Master Chronology: Macro-framework covering 1955–1957 turning points.</span>
+                <span style="font-size: 0.8rem; color: #64748b; font-style: italic;"><i class="fa-solid fa-circle-info" style="color: #0284c7;"></i> Master Chronology: Macro-framework covering key causal turning points.</span>
                 <button type="button" onclick="document.getElementById('causal-domino-scaffold')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 4px 10px; font-size: 0.76rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
                   <i class="fa-solid fa-diagram-project"></i> Jump to 5-Stage Causal Domino Note Scaffold (Pre-Exam Synthesis) &darr;
                 </button>
