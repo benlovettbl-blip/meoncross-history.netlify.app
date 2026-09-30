@@ -67,15 +67,15 @@ const renaissanceConfigs = [
     stimulus: ['The printing press (c1440/1476)', 'The Royal Society (1660/1662)'],
     structureStrip: [
       {
-        col: '1. BREAKING CLERICAL MONOPOLY',
+        col: 'PARAGRAPH 1: PRINTING PRESS [STIMULUS 1]',
         text: 'Explain how Gutenberg’s movable-type press (c1440/Caxton 1476) took book production from Church scribes, ending censorship and hand-copying distortions.',
       },
       {
-        col: '2. THE ROYAL SOCIETY & PEER REVIEW',
+        col: 'PARAGRAPH 2: THE ROYAL SOCIETY [STIMULUS 2]',
         text: 'Explain how the 1662 Royal Charter, motto Nullius in Verba, and Philosophical Transactions (1665) established the empirical scientific method.',
       },
       {
-        col: '3. LIMITS OF CHANGE (CRITERIA)',
+        col: 'PARAGRAPH 3: LIMITS OF SPREAD [OWN KNOWLEDGE]',
         text: 'Evaluate the paradox: books remained Latin luxury items for the wealthy; ordinary people still believed in miasma and the Four Humours.',
       },
     ],
@@ -167,16 +167,16 @@ const renaissanceConfigs = [
     stimulus: ['Observationes Medicae (1676)', 'Classifying diseases into species'],
     structureStrip: [
       {
-        col: '1. BEDSIDE EMPIRICISM',
+        col: 'PARAGRAPH 1: BEDSIDE EMPIRICISM [OWN KNOWLEDGE]',
         text: 'Explain how Sydenham insisted on closely monitoring symptoms at the patient’s bedside, rejecting Galenic book-learning and complex astrological charts.',
       },
       {
-        col: '2. CLASSIFYING DISEASES',
+        col: 'PARAGRAPH 2: CLASSIFYING DISEASES [STIMULUS 2]',
         text: 'Explain how Sydenham argued diseases were distinct species (like plants), successfully distinguishing measles from scarlet fever.',
       },
       {
-        col: '3. TREATMENT & LIMITS',
-        text: 'Explain his practical innovations (cinchona bark for malaria; cool regimes for smallpox) alongside his continued use of bloodletting and purging.',
+        col: 'PARAGRAPH 3: OBSERVATIONES MEDICAE [STIMULUS 1]',
+        text: 'Explain his practical innovations in Observationes Medicae (1676) alongside his continued reliance on bloodletting and humoural purging.',
       },
     ],
     connectives:
@@ -267,15 +267,15 @@ const renaissanceConfigs = [
     stimulus: ['De Humani Corporis Fabrica (1543)', 'Medical treatments in the 16th century'],
     structureStrip: [
       {
-        col: '1. OVERTURNING GALEN (CHANGE)',
+        col: 'PARAGRAPH 1: OVERTURNING GALEN [OWN KNOWLEDGE]',
         text: 'Explain how Vesalius dissected human cadavers himself at Padua, correcting 300+ errors (e.g. human lower jaw is 1 bone not 2; no invisible heart pores).',
       },
       {
-        col: '2. VISUAL MASS COMMUNICATION',
+        col: 'PARAGRAPH 2: MASS COMMUNICATION [STIMULUS 1: DE FABRICA]',
         text: 'Explain the impact of De Fabrica (1543): masterfully illustrated anatomical plates printed identically on printing presses, inspiring a generation of anatomists.',
       },
       {
-        col: '3. LIMITATIONS ON TREATMENT (CRITERIA)',
+        col: 'PARAGRAPH 3: LIMITATIONS [STIMULUS 2: 16TH C. TREATMENTS]',
         text: 'Evaluate: Vesalius created accurate anatomy, but knowing the structure of the body did not cure disease. Doctors remained helpless at the bedside.',
       },
     ],
@@ -367,15 +367,15 @@ const renaissanceConfigs = [
     stimulus: ['Calculating blood volume (540 pints/hr)', 'De Motu Cordis (1628)'],
     structureStrip: [
       {
-        col: '1. THE HEART AS A MECHANICAL PUMP',
+        col: 'PARAGRAPH 1: MECHANICAL PUMP [OWN KNOWLEDGE]',
         text: 'Explain how Harvey proved the heart acts as a pump, circulating blood through a closed one-way system of arteries and veins.',
       },
       {
-        col: '2. MATHEMATICAL CALCULATION',
+        col: 'PARAGRAPH 2: MATHEMATICAL PROOF [STIMULUS 1: 540 PINTS]',
         text: 'Explain how Harvey calculated that the heart pumped 540 pints an hour (more than body weight), disproving Galen’s theory that the liver made blood from food.',
       },
       {
-        col: '3. RESISTANCE & TREATMENT LIMITS',
+        col: 'PARAGRAPH 3: RESISTANCE & LIMITS [STIMULUS 2: DE MOTU CORDIS]',
         text: "Explain why conservative doctors rejected Harvey ('quack') and why his discovery did not change medical treatments or halt bloodletting.",
       },
     ],
@@ -467,15 +467,15 @@ const renaissanceConfigs = [
     stimulus: ['The Four Humours and miasma', 'Quarantine and watchmen'],
     structureStrip: [
       {
-        col: '1. LOCAL CIVIC ACTION (CHANGE)',
+        col: 'PARAGRAPH 1: CIVIC QUARANTINE [STIMULUS 2]',
         text: "Explain how London authorities enforced organized quarantine: padlocking infected houses for 28 days with red crosses ('Lord have mercy upon us'), watchmen, and Bills of Mortality.",
       },
       {
-        col: '2. MEDICAL TREATMENT (CONTINUITY)',
+        col: 'PARAGRAPH 2: MEDICAL CONTINUITY [STIMULUS 1]',
         text: "Explain how doctors still blamed miasma, God, and the Four Humours: smoking tobacco, holding pomanders, bleeding patients, and taking useless quack 'Plague Water'.",
       },
       {
-        col: '3. EVALUATIVE VERDICT (CRITERIA)',
+        col: 'PARAGRAPH 3: OVERALL BALANCE [OWN KNOWLEDGE]',
         text: 'Weigh civic organisation against medical ignorance: government responses became more organized, but medical knowledge of the disease was identical to 1348.',
       },
     ],
@@ -1258,8 +1258,9 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
 
       <!-- 3-Column Planning Structure Strip -->
       <div style="margin-bottom: 5px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Structure Strip &bull; 3-Paragraph Analytical Plan
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px; display: flex; justify-content: space-between; align-items: baseline;">
+          <span>Structure Strip &bull; 3 Distinct Analytical Paragraphs</span>
+          <span style="font-weight: 600; text-transform: none; font-size: 6.8pt; color: #475569;">(1 box = 1 full paragraph: Stimulus 1 + Stimulus 2 + Own Knowledge)</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
           ${cfg.structureStrip
@@ -1289,7 +1290,7 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
 
       <!-- Ruled Task Lines for Extended Writing -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+        <strong>Task:</strong> Write your Paragraph 1 response below, then continue Paragraphs 2, 3, and your final Evaluative Verdict on Pages ${linedLeftPageNum}–${linedRightPageNum}:
       </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
         <div class="task-line" style="height: 8.55mm;"></div>
@@ -1606,3 +1607,27 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
 module.exports = {
   buildRenaissanceTwoPageWorkbook,
 };
+
+if (require.main === module) {
+  const html = buildRenaissanceTwoPageWorkbook();
+  const outPublic = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'edexcel_medicine',
+    'pupil_workbook_renaissance.html',
+  );
+  const outUnits = path.join(
+    ROOT_DIR,
+    'units',
+    'edexcel_medicine',
+    'pupil_workbook_renaissance.html',
+  );
+  fs.writeFileSync(outPublic, html, 'utf8');
+  if (fs.existsSync(path.dirname(outUnits))) {
+    fs.writeFileSync(outUnits, html, 'utf8');
+  }
+  console.log(
+    '✅ Re-rendered Renaissance pupil workbook to public and units folders successfully.',
+  );
+}

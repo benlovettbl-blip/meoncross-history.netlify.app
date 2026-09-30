@@ -287,16 +287,16 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             pdfWorkbookUrl
               ? `
           <div class="premium-banner-actions" style="position: relative; z-index: 5; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto;">
-            <a href="${pdfWorkbookUrl}" target="_blank" download class="btn-banner-pdf" style="text-decoration: none; background: rgba(0, 0, 0, 0.7); color: #ffffff; border: 1.5px solid rgba(255, 255, 255, 0.4); padding: 9px 15px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 7px; backdrop-filter: blur(6px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.95)'; this.style.color='#0f172a'; this.style.borderColor='#ffffff';" onmouseout="this.style.background='rgba(0,0,0,0.7)'; this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)';">
+            <a href="${pdfWorkbookUrl}" target="_blank" class="btn-banner-pdf" title="Open compiled pupil workbook PDF in new tab" style="text-decoration: none; background: rgba(0, 0, 0, 0.7); color: #ffffff; border: 1.5px solid rgba(255, 255, 255, 0.4); padding: 9px 15px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 7px; backdrop-filter: blur(6px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.95)'; this.style.color='#0f172a'; this.style.borderColor='#ffffff';" onmouseout="this.style.background='rgba(0,0,0,0.7)'; this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)';">
               <i class="fa-solid fa-file-pdf" style="color: #ef4444; font-size: 1rem;"></i>
               <span>Pupil Workbook (PDF)</span>
             </a>
             ${
               digitalWorkbookUrl
                 ? `
-            <a href="${digitalWorkbookUrl}" target="_blank" class="btn-banner-web" style="text-decoration: none; background: rgba(255, 255, 255, 0.18); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 9px 13px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.83rem; display: inline-flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.18)';">
+            <a href="${digitalWorkbookUrl}" target="_blank" class="btn-banner-web" title="Open interactive digital A4 workbook in browser" style="text-decoration: none; background: rgba(255, 255, 255, 0.18); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 9px 13px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.83rem; display: inline-flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.18)';">
               <i class="fa-solid fa-book-open" style="color: #93c5fd;"></i>
-              <span>Digital</span>
+              <span>Digital HTML</span>
             </a>
             `
                 : ''

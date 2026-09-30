@@ -446,7 +446,14 @@ export async function switchView(viewName, param = null, skipHistory = false, op
   } else if (viewName === 'lessons') {
     const targetUnit = param || state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
     await loadUnit(targetUnit);
-    renderLessonsView();
+    await renderLessonsView();
+    if (
+      options &&
+      typeof options.lessonIndex === 'number' &&
+      typeof window.viewLessonDetail === 'function'
+    ) {
+      window.viewLessonDetail(options.lessonIndex);
+    }
   } else if (viewName === 'individuals') {
     if (param) await loadUnit(param);
     renderIndividualsView();

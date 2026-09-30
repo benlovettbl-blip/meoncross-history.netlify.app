@@ -449,13 +449,12 @@ window.highlightActiveSidebarUnit = function (unitId, activeLessonIndex = null) 
               typeof window.viewLessonDetail === 'function'
             ) {
               window.viewLessonDetail(idx);
+            } else if (typeof window.switchView === 'function') {
+              window.switchView('lessons', targetId, false, { lessonIndex: idx });
             } else if (typeof window.launchSubApp === 'function') {
               window.launchSubApp(targetId);
-              setTimeout(() => {
-                if (typeof window.viewLessonDetail === 'function') {
-                  window.viewLessonDetail(idx);
-                }
-              }, 320);
+            } else {
+              window.location.href = `/?view=lessons&unit=${targetId}&lesson=${idx + 1}`;
             }
 
             // Mobile drawer auto-close

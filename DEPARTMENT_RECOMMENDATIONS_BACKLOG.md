@@ -1,6 +1,6 @@
 # The History Department: Cumulative Recommendations Backlog & Innovation Tracker
 **Permanent Departmental Innovation Register & Proactive Planning Ledger**  
-*Maintained continuously across all sessions • Last Updated: 28 September 2026*
+*Maintained continuously across all sessions • Last Updated: 30 September 2026*
 
 ---
 
@@ -27,6 +27,7 @@
 | **REC-009** | **Reprographics & Rollout** | **Reprographics Reprint Window (V2 Promotion):**<br>Merge & promote the Christine Counsell 4-Act V2 curriculum (staged in `data_v2_4act.js` / branch `feat/4act-v2-reprint`) for Year 7 Sanitation, Year 8 Early Modern, and Year 9 Causes of the Great War when physical classroom workbooks are reprinted during the vacation/end-of-term reprographics cycle. | 25 Sep 2026 | 🟨 **[PENDING]** | Staged and frozen until physical reprint window opens. |
 | **REC-010** | **Curriculum & Disciplinary Literacy** | **Vocabulary Bridge Integration for KS3:**<br>When simplifying enquiry titles for KS3 accessibility, ensure rigorous disciplinary terms (e.g., *Constitutional Monarchy, Tyranny, Recusancy, Mercantilism, Hegemony*) remain firmly anchored in the Task 2 Core Disciplinary Vocabulary strip where they can be explicitly defined, tested in Do Nows, and practiced. | 25 Sep 2026 | 🟨 **[PENDING]** | Active standard for all KS3 title refinements. |
 | **REC-011** | **Interactive Web App & Paper 3 Exam Engine** | **Paper 3 Archival Drawers & Exam Question Parity for Weimar:**<br>Implement collapsible archival drawers (`.weimar-source-drawer` and `.weimar-interpretation-drawer`) in `src/engine/lesson_renderer.js` for Section B primary sources (Source A/B/C for Q3a Utility) and historical interpretations (Interpretation 1/2 for Q3b/c Views & Q3d Evaluative Verdict). Establish 100% question-and-answer parity between `units/weimar_nazi_germany/data.js` and master workbook renderers with authentic Hinge Discussion prompts on all visual sources. | 28 Sep 2026 | 🟩 **[COMPLETED]** | Collapsible archival drawers implemented with distinct color coding (deep blue `#1e40af` for contemporary sources, deep amber `#9a3412` for interpretations) and interactive bidirectional cross-linking. Synchronized all 32 Weimar exam pairs with authentic Verso & Recto workbook questions, verified 160 Do Nows and 16/16 Hinge questions. |
+| **REC-012** | **Interactive Web App & Disciplinary Pedagogy** | **Unified Chronology & Causal Spine + Active Recall Quiz Mode Rollout:**<br>Roll out the unified 5-in-a-row Chronology & Causal Spine (with collapsible analytical drawers, desktop Domino connector bridges, and interactive 'Active Recall / Self-Quiz Mode' with click-to-reveal motive / consequence masked buttons) across all 12 lessons in Conflict in the Middle East (`cme_new`), followed by systematic evaluation for remaining GCSE units (Paper 1 Medicine, Paper 3 Weimar, Paper 2 Early Elizabethan England / Superpower Relations). | 30 Sep 2026 | 🟨 **[PENDING]** | Pattern validated and operational on CME Lesson 4 (KT 1.3). Awaiting department scheduling to roll out across remaining CME lessons and GCSE units. |
 
 ---
 
