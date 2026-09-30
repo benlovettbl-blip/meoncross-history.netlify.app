@@ -140,12 +140,25 @@
     <div class="app-layout">
       <!-- Sidebar Navigation -->
       <aside class="app-sidebar" id="app-sidebar">
-        <div class="sidebar-logo" id="sidebar-logo" style="cursor: pointer">
-          <i class="fa-solid fa-graduation-cap logo-icon"></i>
-          <div>
+        <div class="sidebar-logo" id="sidebar-logo">
+          <i
+            class="fa-solid fa-graduation-cap logo-icon"
+            onclick="window.switchView('dashboard')"
+            style="cursor: pointer"
+          ></i>
+          <div onclick="window.switchView('dashboard')" style="flex: 1; cursor: pointer">
             <h2>The History Revision Hub</h2>
             <span>History Portal</span>
           </div>
+          <button
+            type="button"
+            id="sidebar-close-btn"
+            class="sidebar-close-btn"
+            aria-label="Close Sidebar"
+            style="display: none"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
         <nav class="sidebar-nav">
@@ -235,7 +248,18 @@
               <i class="fa-solid fa-book-open"></i>
               <span id="nav-lessons-label">Enquiry Lessons</span>
               <span class="unit-lesson-count-pill" id="nav-lessons-count-pill">--</span>
+              <i
+                class="fa-solid fa-chevron-down"
+                id="nav-lessons-chevron"
+                style="
+                  margin-left: auto;
+                  font-size: 0.72rem;
+                  opacity: 0.6;
+                  transition: transform 0.2s;
+                "
+              ></i>
             </div>
+            <div id="sidebar-lessons-tree" class="sidebar-lessons-tree" style="display: none"></div>
             <div class="nav-item" id="nav-interactive" style="display: none">
               <i class="fa-solid fa-brain" style="color: #f59e0b"></i>
               <span>Retrieval &amp; Revision</span>

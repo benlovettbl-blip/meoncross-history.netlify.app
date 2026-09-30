@@ -193,7 +193,15 @@ export function bindEvents() {
     menuToggle.addEventListener('click', toggleSidebar);
     overlay.addEventListener('click', toggleSidebar);
 
-    // Auto-close on mobile when a navigation item is clicked
+    const closeBtn = document.getElementById('sidebar-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+        overlay.classList.remove('active');
+      });
+    }
+
+    // Auto-close on mobile when a navigation item or close button is clicked
     document
       .querySelectorAll('.nav-item, #mob-nav-home, #mob-nav-quizzing, #mob-nav-profile')
       .forEach((item) => {
@@ -367,8 +375,13 @@ export function bindEvents() {
   }
 }
 
-// Active Unit Tree Highlighting and Auto-Expansion in Lower Sidebar
-window.highlightActiveSidebarUnit = function (unitId) {
+// Active Unit Tree Highlighting, Auto-Expansion and Lesson Tree Explorer in Lower Sidebar
+window.highlightActiveSidebarUnit = function (unitId, activeLessonIndex = null) {
+  // Remove existing lesson trees
+  document
+    .querySelectorAll('#sidebar-unit-links .sidebar-lessons-tree')
+    .forEach((el) => el.remove());
+
   if (!unitId) {
     document.querySelectorAll('#sidebar-unit-links .nav-item').forEach((el) => {
       el.classList.remove('active-unit-tree-item');
@@ -398,8 +411,80 @@ window.highlightActiveSidebarUnit = function (unitId) {
           }
         }
       }
+
+      // Build lesson tree explorer under the active unit
+      const unitEntry = window.db && window.db[targetId] && window.db[targetId].data;
+      const unitData = unitEntry || (state && state.activeUnitData);
+      const lessons = (unitData && (unitData.lessons || unitData.subtopics)) || [];
+
+      if (lessons.length > 0) {
+        const tree = document.createElement('div');
+        tree.className = 'sidebar-lessons-tree';
+
+        lessons.forEach((sub, idx) => {
+          const item = document.createElement('div');
+          item.className = 'sidebar-lesson-item';
+          item.setAttribute('data-lesson-index', idx);
+          if (activeLessonIndex !== null && idx === activeLessonIndex) {
+            item.classList.add('active');
+          }
+
+          const rawTitle = sub.title || `Lesson ${idx + 1}`;
+          item.innerHTML = `
+            <span class="sidebar-lesson-badge">${idx + 1}</span>
+            <span class="sidebar-lesson-title-text" title="${rawTitle.replace(/"/g, '&quot;')}">${rawTitle}</span>
+          `;
+
+          item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Highlight this lesson item immediately
+            document
+              .querySelectorAll('.sidebar-lesson-item')
+              .forEach((b) => b.classList.remove('active'));
+            item.classList.add('active');
+
+            if (
+              state &&
+              state.selectedUnitId === targetId &&
+              typeof window.viewLessonDetail === 'function'
+            ) {
+              window.viewLessonDetail(idx);
+            } else if (typeof window.launchSubApp === 'function') {
+              window.launchSubApp(targetId);
+              setTimeout(() => {
+                if (typeof window.viewLessonDetail === 'function') {
+                  window.viewLessonDetail(idx);
+                }
+              }, 320);
+            }
+
+            // Mobile drawer auto-close
+            const sidebar = document.getElementById('app-sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            if (window.innerWidth <= 768 && sidebar && overlay) {
+              sidebar.classList.remove('mobile-open');
+              overlay.classList.remove('active');
+            }
+          });
+
+          tree.appendChild(item);
+        });
+
+        el.after(tree);
+      }
     } else {
       el.classList.remove('active-unit-tree-item');
+    }
+  });
+};
+
+window.highlightActiveSidebarLesson = function (lessonIndex) {
+  document.querySelectorAll('#sidebar-unit-links .sidebar-lesson-item').forEach((el) => {
+    const idx = parseInt(el.getAttribute('data-lesson-index'), 10);
+    if (idx === lessonIndex) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
     }
   });
 };

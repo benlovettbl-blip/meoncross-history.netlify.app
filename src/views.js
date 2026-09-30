@@ -1521,6 +1521,10 @@ export async function renderLessonsView() {
     const sub = lessonsList[index];
     if (!sub) return;
 
+    if (typeof window.highlightActiveSidebarLesson === 'function') {
+      window.highlightActiveSidebarLesson(index);
+    }
+
     // Snapshot scroll on unit menu and push history state for this lesson
     if (!skipPush && typeof window !== 'undefined' && window.history) {
       const currentScroll = window.scrollY || document.documentElement.scrollTop || 0;
