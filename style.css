@@ -5959,3 +5959,51 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
     font-size: 0.92rem !important;
   }
 }
+
+/* --- CME Integrated Chronology & Causal Spine --- */
+.cme-chronology-spine {
+  transition: all 0.2s ease;
+}
+.cme-chronology-spine-grid {
+  display: grid;
+  gap: 10px;
+  background: #ffffff;
+}
+.cme-spine-card {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+.cme-spine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  border-color: #94a3b8 !important;
+}
+.cme-causal-drawer summary {
+  list-style: none;
+}
+.cme-causal-drawer summary::-webkit-details-marker {
+  display: none;
+}
+.cme-causal-drawer[open] .drawer-arrow {
+  transform: rotate(180deg);
+}
+.drawer-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+@media (max-width: 992px) {
+  .cme-chronology-spine-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    padding-bottom: 12px !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cme-spine-card {
+    min-width: 220px !important;
+    flex: 0 0 220px !important;
+    scroll-snap-align: start;
+  }
+}

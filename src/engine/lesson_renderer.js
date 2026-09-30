@@ -1162,48 +1162,76 @@ if (typeof window !== 'undefined') {
   };
 
   window.copyDominoNotes = function () {
-    const cards = document.querySelectorAll('.causal-domino-card');
+    const cards = document.querySelectorAll('.causal-domino-card, .cme-spine-card');
     if (!cards || cards.length === 0) return;
-    const titleEl = document.querySelector('#causal-domino-scaffold h3');
-    const pageTitle = titleEl ? titleEl.textContent.trim() : '5-Stage Causal Domino Chain';
+    const titleEl = document.querySelector(
+      '#causal-domino-scaffold h3, #lesson-chronology-spine summary span',
+    );
+    const rawTitle = titleEl ? titleEl.textContent.trim() : '5-Stage Causal Domino Chain';
+    const pageTitle = rawTitle.replace(/\s+/g, ' ');
     let out =
       `${pageTitle} (Edexcel Paper 2)\n` +
       '===================================================================\n\n';
     cards.forEach((c) => {
       const stage = c.dataset.stage || '';
-      const title = c.querySelector('h4')?.textContent?.trim() || '';
+      const title = c.querySelector('h4, h5')?.textContent?.trim() || '';
       const trigger =
+        c.querySelector('.cme-spine-desc')?.textContent?.trim() ||
         c
           .querySelector('.causal-domino-card > div > div:nth-child(4) > div:last-child')
-          ?.textContent?.trim() || '';
+          ?.textContent?.trim() ||
+        '';
       const because =
-        c.querySelector('.domino-because-box .domino-content-model')?.textContent?.trim() || '';
+        c.querySelector('.cme-drawer-because span')?.textContent?.trim() ||
+        c.querySelector('.domino-because-box .domino-content-model')?.textContent?.trim() ||
+        '';
       const therefore =
-        c.querySelector('.domino-therefore-box .domino-content-model')?.textContent?.trim() || '';
+        c.querySelector('.cme-drawer-therefore span')?.textContent?.trim() ||
+        c.querySelector('.domino-therefore-box .domino-content-model')?.textContent?.trim() ||
+        '';
       const exam =
         c.querySelector('.causal-domino-card > div:last-child span')?.textContent?.trim() || '';
 
       out += `STAGE ${stage}: ${title}\n`;
-      out += `• 1. Action / Trigger: ${trigger}\n`;
-      out += `• 2. Because (Motive): ${because}\n`;
-      out += `• 3. Therefore (Consequence): ${therefore}\n`;
+      if (trigger) out += `• 1. Action / Trigger: ${trigger}\n`;
+      if (because) out += `• 2. Because (Motive): ${because}\n`;
+      if (therefore) out += `• 3. Therefore (Consequence): ${therefore}\n`;
       if (exam) out += `• ${exam}\n`;
       out += '\n';
     });
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(out).then(() => {
-        const btn = document.getElementById('btn-copy-domino');
+        const btn =
+          document.getElementById('btn-copy-domino') ||
+          document.querySelector('.cme-chronology-spine button[onclick*="copyDominoNotes"]');
         if (btn) {
           const orig = btn.innerHTML;
           btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied Notes!';
           btn.style.background = '#16a34a';
+          btn.style.color = '#ffffff';
           setTimeout(() => {
             btn.innerHTML = orig;
-            btn.style.background = '#334155';
+            btn.style.background = '';
+            btn.style.color = '';
           }, 2000);
         }
       });
+    }
+  };
+
+  window.toggleAllCausalSpineDrawers = function () {
+    const drawers = document.querySelectorAll('.cme-causal-drawer');
+    if (!drawers || drawers.length === 0) return;
+    const labelEl = document.getElementById('toggle-causal-label');
+    const anyClosed = Array.from(drawers).some((d) => !d.open);
+    drawers.forEach((d) => {
+      d.open = anyClosed;
+    });
+    if (labelEl) {
+      labelEl.textContent = anyClosed
+        ? 'Collapse Causal Analysis'
+        : 'Expand Causal Links (Because / Therefore)';
     }
   };
 }
@@ -2005,6 +2033,7 @@ export function renderLesson(lesson) {
       : null) ||
     window.currentUnitId;
   const isEarlyModern = unitId === 'early_modern_world';
+  const isCme = unitId === 'cme_new';
   const isGCSE =
     unitId === 'weimar_nazi_germany' ||
     unitId === 'cme_new' ||
@@ -2240,7 +2269,7 @@ export function renderLesson(lesson) {
               }
               ${
                 lesson.causal_domino_spine
-                  ? `<button class="btn btn-causal-spine-jump" onclick="document.getElementById('causal-domino-scaffold')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the 5-Stage Causal Domino Note-Taking Scaffold"><i class="fa-solid fa-diagram-project" style="color: #ca8a04;"></i> Causal Domino Scaffold</button>`
+                  ? `<button class="btn btn-causal-spine-jump" onclick="document.getElementById('${isCme ? 'lesson-chronology-spine' : 'causal-domino-scaffold'}')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Spine"><i class="fa-solid ${isCme ? 'fa-clock-rotate-left' : 'fa-diagram-project'}" style="color: #ca8a04;"></i> ${isCme ? 'Chronology Spine' : 'Causal Domino Scaffold'}</button>`
                   : ''
               }
             `
@@ -3490,7 +3519,137 @@ export function renderLesson(lesson) {
       `;
     }
 
-    if (
+    if (isCme && (lesson.timeline_anchor || lesson.causal_domino_spine)) {
+      const stages =
+        lesson.causal_domino_spine && Array.isArray(lesson.causal_domino_spine.stages)
+          ? lesson.causal_domino_spine.stages
+          : [];
+      const anchors =
+        lesson.timeline_anchor && Array.isArray(lesson.timeline_anchor)
+          ? lesson.timeline_anchor
+          : [];
+
+      // Unify into 5 milestones across 1 single row
+      const count = Math.max(stages.length, anchors.length);
+      const spineItems = [];
+      for (let i = 0; i < count; i++) {
+        const s = stages[i] || {};
+        const a = anchors[i] || {};
+        spineItems.push({
+          step: s.step || i + 1,
+          date: a.date || s.date || '',
+          title: a.title || s.title || '',
+          desc: a.desc || s.trigger || '',
+          actor: s.actor || '',
+          tag: s.tag || '',
+          because: s.because || '',
+          therefore: s.therefore || '',
+          connective: s.connective || '',
+          exam_link: s.exam_link || '',
+        });
+      }
+
+      if (spineItems.length > 0) {
+        htmlNarrative += `
+        <details id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;" open>
+          <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+            <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a;">
+              <i class="fa-solid fa-clock-rotate-left" style="color: #0284c7;"></i> Chronology & Causal Spine &bull; Key Turning Points
+            </span>
+            <div style="display: flex; align-items: center; gap: 10px;" onclick="event.stopPropagation();">
+              <button type="button" id="btn-toggle-all-causal" onclick="window.toggleAllCausalSpineDrawers();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
+                <i class="fa-solid fa-code-branch"></i> <span id="toggle-causal-label">Expand Causal Analysis</span>
+              </button>
+              <span style="font-size: 0.76rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
+            </div>
+          </summary>
+          <div class="cme-chronology-spine-grid" style="padding: 14px 14px 12px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 10px; background: #ffffff; box-sizing: border-box;">
+            ${spineItems
+              .map((item, idx) => {
+                const isLast = idx === spineItems.length - 1;
+                return `
+              <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 3.5px solid ${isLast ? '#10b981' : '#0284c7'}; border-radius: 6px; padding: 10px 9px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
+                    <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 1.5px 5px; border-radius: 3px; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${item.step}</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; color: #0284c7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.date}">${item.date}</span>
+                  </div>
+
+                  ${
+                    item.tag || item.actor
+                      ? `
+                  <div style="font-size: 0.63rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.tag || ''} • ${item.actor || ''}">
+                    ${item.tag ? `${item.tag} &bull; ` : ''}<strong style="color: #334155;">${item.actor || ''}</strong>
+                  </div>`
+                      : ''
+                  }
+
+                  <h5 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.88rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0; line-height: 1.25; min-height: 2.2em;">
+                    ${item.title}
+                  </h5>
+
+                  <div class="cme-spine-desc" style="font-size: 0.74rem; color: #334155; line-height: 1.35; margin-bottom: 8px;">
+                    ${item.desc}
+                  </div>
+                </div>
+
+                ${
+                  item.because || item.therefore
+                    ? `
+                <details class="cme-causal-drawer" style="margin-top: auto; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+                  <summary style="font-size: 0.68rem; font-weight: 700; color: #0369a1; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+                    <span><i class="fa-solid fa-code-branch" style="font-size: 0.62rem;"></i> Causal Link</span>
+                    <span class="drawer-arrow" style="font-size: 0.65rem; color: #64748b;">▾</span>
+                  </summary>
+                  <div style="margin-top: 6px; padding: 6px 7px; background: #f8fafc; border-radius: 4px; border: 1px solid #e2e8f0; font-size: 0.71rem; line-height: 1.35;">
+                    ${
+                      item.because
+                        ? `
+                    <div class="cme-drawer-because" style="margin-bottom: 5px;">
+                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 1px;">2. "Because" (Motive):</strong>
+                      <span style="color: #713f12;">${item.because}</span>
+                    </div>`
+                        : ''
+                    }
+                    ${
+                      item.therefore
+                        ? `
+                    <div class="cme-drawer-therefore" style="margin-bottom: 4px;">
+                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 1px;">3. "Therefore" (Result):</strong>
+                      <span style="color: #14532d;">${item.therefore}</span>
+                    </div>`
+                        : ''
+                    }
+                    ${
+                      !isLast && item.connective
+                        ? `
+                    <div style="font-size: 0.65rem; font-weight: 700; color: #1e40af; border-top: 1px dotted #cbd5e1; padding-top: 3px; margin-top: 4px;">
+                      &darr; ${item.connective}
+                    </div>`
+                        : ''
+                    }
+                  </div>
+                </details>`
+                    : ''
+                }
+              </div>
+              `;
+              })
+              .join('')}
+
+            <div style="grid-column: 1 / -1; margin-top: 6px; padding-top: 8px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.75rem; color: #475569;">
+              <span>
+                <i class="fa-solid fa-graduation-cap" style="color: #0284c7;"></i> <strong>Edexcel Paper 2 Narrative Framework:</strong> Track how each stage's <em>consequence</em> directly sparks the next stage's <em>trigger</em> to write high-scoring 8-mark explanations.
+              </span>
+              <button type="button" onclick="window.copyDominoNotes();" style="padding: 3px 8px; font-size: 0.72rem; font-weight: 700; background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                <i class="fa-solid fa-copy"></i> Copy 5-Stage Causal Notes
+              </button>
+            </div>
+          </div>
+        </details>
+        `;
+      }
+    } else if (
       lesson.timeline_anchor &&
       Array.isArray(lesson.timeline_anchor) &&
       lesson.timeline_anchor.length > 0
@@ -6647,7 +6806,7 @@ export function renderLesson(lesson) {
   } else {
     // Universal GCSE Unified Layout
     let htmlDominoSpine = '';
-    if (lesson.causal_domino_spine) {
+    if (lesson.causal_domino_spine && !isCme) {
       htmlDominoSpine = renderCausalDominoSpine(lesson.causal_domino_spine);
     }
 
