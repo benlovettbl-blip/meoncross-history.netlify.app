@@ -228,29 +228,49 @@ export function initializeApp(unitData) {
       line-height: 1.8;
       font-size: 1.05rem;
     }
-    .vocab-word {
+    /* Dual-Mode Vocabulary Lens: Clean Book Mode by default, interactive highlights when active */
+    body:not(.vocab-lens-active) .vocab-word,
+    body:not(.vocab-lens-active) .vocab-lens-term {
+      border-bottom: none !important;
+      background: transparent !important;
+      color: inherit !important;
+      font-weight: inherit !important;
+      cursor: inherit !important;
+      padding: 0 !important;
+    }
+    body:not(.vocab-lens-active) .vocab-word::after,
+    body:not(.vocab-lens-active) .vocab-word::before,
+    body:not(.vocab-lens-active) .vocab-lens-term::after,
+    body:not(.vocab-lens-active) .vocab-lens-term::before {
+      display: none !important;
+    }
+    body.vocab-lens-active .vocab-word,
+    body.vocab-lens-active .vocab-lens-term {
       position: relative;
-      border-bottom: 2px dashed #3b82f6;
+      border-bottom: 1.5px dotted #94a3b8;
       cursor: pointer;
-      color: #1e3a8a;
-      font-weight: 700;
-      background: rgba(59, 130, 246, 0.1);
-      padding: 0 4px;
-      border-radius: 3px;
+      color: inherit;
+      font-weight: 500;
+      padding: 0 1px;
+      border-radius: 2px;
       transition: all 0.2s ease;
     }
-    .vocab-word:hover, .vocab-word.active {
-      background: rgba(59, 130, 246, 0.25);
-      border-bottom-color: #1e3a8a;
+    body.vocab-lens-active .vocab-word:hover,
+    body.vocab-lens-active .vocab-word.active,
+    body.vocab-lens-active .vocab-lens-term:hover,
+    body.vocab-lens-active .vocab-lens-term.active {
+      border-bottom-color: #0284c7;
+      background-color: rgba(224, 242, 254, 0.5);
+      color: #0369a1;
     }
     #global-glossary-popover {
       position: fixed;
-      background: #1e293b;
+      background: #0f172a;
       color: #ffffff;
       padding: 12px 16px;
       border-radius: 8px;
       width: max-content;
-      max-width: 300px;
+      max-width: 320px;
       font-size: 0.9rem;
       font-weight: 400;
       line-height: 1.5;

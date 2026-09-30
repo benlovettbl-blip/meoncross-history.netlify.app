@@ -10,6 +10,7 @@ import { switchView, initNavigationUI } from './navigation.js';
 import { state } from './state.js';
 import { initEventDelegation } from './engine/events.js';
 import { initSpeech, cancelSpeech } from './engine/speech.js';
+import { initGlossaryPopover } from './engine/modals.js';
 import './langemarck_myth.js';
 import('./digital_textbook_reader.js');
 
@@ -149,6 +150,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   initNavigationUI();
   initEventDelegation();
   initSpeech();
+  initGlossaryPopover();
   initTeacherMode();
 
   // Bind global helper routing
@@ -190,7 +192,15 @@ window.addEventListener('DOMContentLoaded', async () => {
   } else if (view === 'quiz' || view === 'interactive_quiz') {
     view = 'interactive';
     unit = unit || 'edexcel_medicine';
-  } else if (view === 'booklets' || view === 'workbooks' || view === 'workbook' || view === 'pdf' || view === 'pdfs' || view === 'textbook' || view === 'textbooks') {
+  } else if (
+    view === 'booklets' ||
+    view === 'workbooks' ||
+    view === 'workbook' ||
+    view === 'pdf' ||
+    view === 'pdfs' ||
+    view === 'textbook' ||
+    view === 'textbooks'
+  ) {
     view = 'booklet';
   } else if (view === 'lessons' && !unit) {
     unit = 'edexcel_medicine';

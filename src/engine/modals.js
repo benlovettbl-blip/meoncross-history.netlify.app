@@ -785,6 +785,9 @@ export function initGlossaryPopover() {
   }
 
   let hideTimeout = null;
+  let isPinned = false;
+  let openScrollY = 0;
+
   const cancelHidePopover = () => {
     if (hideTimeout) {
       clearTimeout(hideTimeout);
@@ -792,26 +795,45 @@ export function initGlossaryPopover() {
     }
   };
   const scheduleHidePopover = () => {
+    if (isPinned) return;
     cancelHidePopover();
     hideTimeout = setTimeout(() => {
-      hidePopover();
-    }, 220);
+      hidePopover(false);
+    }, 280);
   };
 
   glossaryPopover.addEventListener('mouseenter', cancelHidePopover);
   glossaryPopover.addEventListener('mouseleave', scheduleHidePopover);
 
-  const showPopover = (e) => {
+  const hidePopover = (force = false) => {
+    if (!force && isPinned) return;
+    isPinned = false;
+    if (glossaryPopover && glossaryPopover.classList.contains('visible')) {
+      glossaryPopover.classList.remove('visible');
+      if (activeVocabElement) {
+        activeVocabElement.classList.remove('active');
+        activeVocabElement = null;
+      }
+    }
+  };
+
+  window.hideVocabPopover = hidePopover;
+
+  const showPopover = (e, pinned = false) => {
     // If Vocabulary Lens is NOT active, do not display popover (Clean Reading Mode)
     if (!document.body.classList.contains('vocab-lens-active')) return;
 
-    const target = e.target.closest('.vocab-word, .vocab-lens-term');
+    const target = e.target ? e.target.closest('.vocab-word, .vocab-lens-term') : e;
     if (!target) return;
 
     const definition = target.getAttribute('data-definition');
     if (!definition) return;
 
     cancelHidePopover();
+    if (pinned) {
+      isPinned = true;
+    }
+    openScrollY = window.scrollY || 0;
     activeVocabElement = target;
     target.classList.add('active');
 
@@ -834,6 +856,7 @@ export function initGlossaryPopover() {
           <button type="button" class="btn-vocab-speak" onclick="event.stopPropagation(); window.speakVocabWord && window.speakVocabWord('${safeWordForAudio}');" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #38bdf8; border-radius: 4px; padding: 2px 7px; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Listen to pronunciation">
             <i class="fa-solid fa-volume-high"></i>
           </button>
+          <button type="button" class="btn-vocab-close" onclick="event.stopPropagation(); window.hideVocabPopover && window.hideVocabPopover(true);" style="background: none; border: none; color: #94a3b8; font-size: 1.1rem; cursor: pointer; padding: 0 4px; line-height: 1;" title="Close">&times;</button>
         </div>
       </div>
     `;
@@ -893,23 +916,21 @@ export function initGlossaryPopover() {
     arrowStyle.innerHTML = `#global-glossary-popover::after { left: ${arrowLeft}; }`;
   };
 
-  const hidePopover = (e) => {
-    if (glossaryPopover && glossaryPopover.classList.contains('visible')) {
-      glossaryPopover.classList.remove('visible');
-      if (activeVocabElement) {
-        activeVocabElement.classList.remove('active');
-        activeVocabElement = null;
-      }
-    }
-  };
-
   document.body.addEventListener('mouseover', (e) => {
     if (e.target.closest('.vocab-word, .vocab-lens-term')) {
-      showPopover(e);
+      showPopover(e, false);
     }
   });
   document.body.addEventListener('mouseout', (e) => {
-    if (e.target.closest('.vocab-word, .vocab-lens-term')) {
+    const vocab = e.target.closest('.vocab-word, .vocab-lens-term');
+    if (vocab) {
+      if (
+        e.relatedTarget &&
+        (e.relatedTarget.closest('.vocab-word, .vocab-lens-term') === vocab ||
+          e.relatedTarget.closest('#global-glossary-popover'))
+      ) {
+        return;
+      }
       scheduleHidePopover();
     }
   });
@@ -918,19 +939,42 @@ export function initGlossaryPopover() {
     const vocabTarget = e.target.closest('.vocab-word, .vocab-lens-term');
     if (vocabTarget) {
       if (!document.body.classList.contains('vocab-lens-active')) return;
-      if (activeVocabElement === vocabTarget) {
-        hidePopover(e);
+      if (activeVocabElement === vocabTarget && isPinned) {
+        hidePopover(true);
       } else {
-        hidePopover(e);
-        showPopover(e);
+        showPopover(e, true);
       }
     } else if (!e.target.closest('#global-glossary-popover')) {
-      hidePopover(e);
+      hidePopover(true);
     }
   });
 
-  window.addEventListener('scroll', hidePopover, { passive: true });
-  window.addEventListener('resize', hidePopover, { passive: true });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (isPinned && activeVocabElement) {
+        const rect = activeVocabElement.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) {
+          hidePopover(true);
+        } else {
+          const popoverRect = glossaryPopover.getBoundingClientRect();
+          let top = rect.top - popoverRect.height - 10;
+          let left = rect.left + rect.width / 2 - popoverRect.width / 2;
+          if (top < 10) top = rect.bottom + 10;
+          if (left < 10) left = 10;
+          else if (left + popoverRect.width > window.innerWidth - 10) {
+            left = window.innerWidth - 10 - popoverRect.width;
+          }
+          glossaryPopover.style.top = `${top}px`;
+          glossaryPopover.style.left = `${left}px`;
+        }
+      } else {
+        hidePopover(true);
+      }
+    },
+    { passive: true },
+  );
+  window.addEventListener('resize', () => hidePopover(true), { passive: true });
 }
 
 // --- Historical Figures Popover Cards ---
