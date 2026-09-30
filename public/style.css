@@ -1186,7 +1186,7 @@ html {
 }
 
 /* --- Mobile view responsiveness --- */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .app-sidebar {
     position: fixed;
     z-index: 100;
@@ -1300,7 +1300,7 @@ pre.ascii-diagram {
 }
 
 /* Make the diagrams scale down further on very small screens */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   pre.ascii-diagram {
     font-size: 0.6rem !important;
     padding: 10px !important;
@@ -1783,7 +1783,7 @@ img::after {
 }
 
 /* --- Mobile Responsive Layout --- */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .app-sidebar,
   .sidebar {
     position: fixed !important;
@@ -1849,7 +1849,7 @@ img::after {
 }
 
 /* --- Mobile Header Fixes --- */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .app-header,
   .main-header {
     padding: 0.75rem 1rem !important;
@@ -1931,7 +1931,7 @@ img::after {
 }
 
 /* --- Mobile Classroom Masterpiece Strip & Dashboard Enhancements --- */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .masterpiece-starter-strip {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -2018,7 +2018,7 @@ img::after {
 }
 
 /* --- Mobile Trip Hub, Crummack Archive & Lesson Body Enhancements --- */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .lessons-view-body {
     padding: 16px 12px !important;
     box-sizing: border-box !important;
@@ -2088,7 +2088,7 @@ img::after {
 }
 
 /* --- Mobile Header Fixes Phase 2 --- */
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .app-header,
   .main-header,
   header {
@@ -2130,7 +2130,7 @@ img::after {
   z-index: 90;
 }
 
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .timeline-group-title {
     position: static !important;
     margin-left: 0 !important;
@@ -2170,7 +2170,7 @@ img::after {
   hyphens: none !important; /* explicitly prevent aggressive hyphenation on long words */
   word-wrap: normal !important;
   overflow-wrap: normal !important;
-  flex: 1 1 200px; /* allow title to grow and shrink, with a minimum basis before wrapping */
+  flex: 0 1 auto; /* Prevents 200px vertical gap in column mode */ /* allow title to grow and shrink, with a minimum basis before wrapping */
   min-width: 0; /* prevent flex blowout */
 }
 
@@ -2215,7 +2215,7 @@ img::after {
   background: #e2e8f0 !important;
 }
 
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .sticky-lesson-header {
     margin-top: -1.5rem; /* negate mobile padding-top */
     margin-left: -1rem; /* negate mobile padding-left */
@@ -2282,7 +2282,7 @@ img::after {
   z-index: 2;
 }
 
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   html,
   body {
     max-width: 100% !important;
@@ -2519,6 +2519,14 @@ img::after {
     align-items: stretch !important;
     gap: 6px !important;
     padding: 8px 12px !important;
+  }
+
+  .sticky-lesson-title {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    flex: none !important; /* Prevents flex-basis from creating 200px vertical gap in column mode */
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   .sticky-lesson-actions {
@@ -3944,7 +3952,7 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
   transform: translateY(0);
 }
 
-@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
+@media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   .floating-stop-jump-btn {
     bottom: 18px;
     right: 14px;
