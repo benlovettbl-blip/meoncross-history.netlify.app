@@ -81,13 +81,13 @@
       "lessonIndex": 7
     },
     "lesson_10": {
-      "page": 27,
+      "page": 22,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 8
     },
     "lesson_11": {
-      "page": 15,
+      "page": 25,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "cme_new",
       "lessonIndex": 9
@@ -207,7 +207,7 @@
       "lessonIndex": 0
     },
     "lesson_1_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Medieval Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 1
@@ -219,13 +219,13 @@
       "lessonIndex": 2
     },
     "lesson_1_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Medieval Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 3
     },
     "lesson_1_5": {
-      "page": 12,
+      "page": 20,
       "booklet": "Medieval Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 4
@@ -237,25 +237,25 @@
       "lessonIndex": 5
     },
     "lesson_2_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Renaissance Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 6
     },
     "lesson_2_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "Renaissance Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 7
     },
     "lesson_2_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Renaissance Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 8
     },
     "lesson_2_5": {
-      "page": 12,
+      "page": 20,
       "booklet": "Renaissance Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 9
@@ -267,25 +267,25 @@
       "lessonIndex": 10
     },
     "lesson_3_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "18th & 19th C Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 11
     },
     "lesson_3_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "18th & 19th C Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 12
     },
     "lesson_3_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "18th & 19th C Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 13
     },
     "lesson_3_5": {
-      "page": 12,
+      "page": 20,
       "booklet": "18th & 19th C Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 14
@@ -297,25 +297,25 @@
       "lessonIndex": 15
     },
     "lesson_4_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Modern Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 16
     },
     "lesson_4_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "Modern Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 17
     },
     "lesson_4_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Modern Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 18
     },
     "lesson_4_5": {
-      "page": 12,
+      "page": 20,
       "booklet": "Modern Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 19
@@ -327,31 +327,31 @@
       "lessonIndex": 20
     },
     "lesson_5_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 21
     },
     "lesson_5_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 22
     },
     "lesson_5_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 23
     },
     "lesson_5_5": {
-      "page": 12,
+      "page": 20,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 24
     },
     "lesson_5_6": {
-      "page": 14,
+      "page": 24,
       "booklet": "Western Front Booklet",
       "unitId": "edexcel_medicine",
       "lessonIndex": 25
@@ -828,25 +828,25 @@
   },
   "weimar_nazi_germany": {
     "lesson_1_1": {
-      "page": 4,
+      "page": 6,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 0
     },
     "lesson_1_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 1
     },
     "lesson_1_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 2
     },
     "lesson_1_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Key Topic 1 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 3
@@ -864,13 +864,13 @@
       "lessonIndex": 5
     },
     "lesson_2_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 6
     },
     "lesson_2_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Key Topic 2 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 7
@@ -882,19 +882,19 @@
       "lessonIndex": 8
     },
     "lesson_3_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 9
     },
     "lesson_3_3": {
-      "page": 8,
+      "page": 6,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 10
     },
     "lesson_3_4": {
-      "page": 10,
+      "page": 16,
       "booklet": "Key Topic 3 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 11
@@ -906,19 +906,19 @@
       "lessonIndex": 12
     },
     "lesson_4_2": {
-      "page": 6,
+      "page": 8,
       "booklet": "Key Topic 4 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 13
     },
     "lesson_4_3": {
-      "page": 8,
+      "page": 12,
       "booklet": "Key Topic 4 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 14
     },
     "lesson_4_4": {
-      "page": 10,
+      "page": 6,
       "booklet": "Key Topic 4 Booklet",
       "unitId": "weimar_nazi_germany",
       "lessonIndex": 15
