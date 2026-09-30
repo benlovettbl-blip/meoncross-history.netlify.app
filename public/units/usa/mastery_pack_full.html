@@ -1339,6 +1339,8 @@
             border-radius: 18px;
             padding: 36px 50px;
             box-shadow: 0 16px 50px rgba(0,0,0,0.7);
+            overflow-y: auto;
+            max-height: 100%;
         }
         .leitner-modal-overlay.teacher-mode .leitner-card-front {
             background: #0f172a;
@@ -1362,16 +1364,16 @@
             padding: 5px 12px;
         }
         .leitner-modal-overlay.teacher-mode .card-question-text {
-            font-size: 2.8rem !important;
-            line-height: 1.25 !important;
+            font-size: clamp(1.8rem, 2.8vw, 2.7rem) !important;
+            line-height: 1.3 !important;
             font-weight: 700;
             color: #ffffff !important;
             margin: auto 0;
             text-shadow: 0 2px 14px rgba(0,0,0,0.7);
         }
         .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
-            font-size: 2.8rem !important;
-            line-height: 1.25 !important;
+            font-size: clamp(1.8rem, 2.8vw, 2.7rem) !important;
+            line-height: 1.3 !important;
             font-weight: 700;
             color: #ffffff !important;
             text-shadow: 0 2px 14px rgba(0,0,0,0.7);
@@ -1564,6 +1566,8 @@
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: space-between !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
             }
             .card-question-text {
                 font-size: 1.2rem !important;
@@ -1604,6 +1608,164 @@
             }
             .leitner-nav-btn {
                 padding: 8px 12px !important;
+                font-size: 0.82rem !important;
+            }
+
+            /* High-Specificity Teacher/Whiteboard Mode Overrides for Mobile Phones */
+            .leitner-modal-overlay.teacher-mode {
+                padding: 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-card {
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-header {
+                padding: 8px 12px !important;
+                min-height: 48px !important;
+                flex-shrink: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                gap: 8px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-header-title h3 {
+                font-size: 0.98rem !important;
+                line-height: 1.2 !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-unit-subtitle {
+                font-size: 0.72rem !important;
+                max-width: 135px !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-teacher-btn {
+                padding: 5px 9px !important;
+                font-size: 0.74rem !important;
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .rapid-fire-timer-bar {
+                margin: 4px 10px !important;
+                padding: 6px 12px !important;
+                border-radius: 8px !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .timer-title {
+                font-size: 0.8rem !important;
+            }
+            .leitner-modal-overlay.teacher-mode .timer-countdown {
+                font-size: 1.2rem !important;
+                min-width: 45px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .timer-ctrl-btn {
+                padding: 4px 10px !important;
+                font-size: 0.76rem !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-container {
+                flex: 1 1 auto !important;
+                min-height: 0 !important;
+                padding: 8px 12px 6px 12px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: stretch !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card {
+                flex: 1 1 auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-inner {
+                min-height: 0 !important;
+                height: 100% !important;
+                flex: 1 1 auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-face {
+                min-height: 0 !important;
+                height: 100% !important;
+                border-radius: 14px !important;
+                padding: 16px 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
+                border-width: 2.5px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-meta {
+                font-size: 0.85rem !important;
+                flex-shrink: 0 !important;
+                margin-bottom: 6px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .qnum-badge {
+                font-size: 0.8rem !important;
+                padding: 3px 8px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-question-text,
+            .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+                font-size: clamp(1.15rem, 4.2vw, 1.45rem) !important;
+                line-height: 1.4 !important;
+                font-weight: 700 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+            .leitner-modal-overlay.teacher-mode .exam-card-prompt {
+                font-size: clamp(1.05rem, 3.8vw, 1.3rem) !important;
+                line-height: 1.35 !important;
+                margin: 6px 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-answer-text,
+            .leitner-modal-overlay.teacher-mode .card-main-answer {
+                font-size: clamp(1.15rem, 4.4vw, 1.45rem) !important;
+                line-height: 1.35 !important;
+                font-weight: 800 !important;
+                margin: auto 0 8px 0 !important;
+                text-align: center !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-explanation-box {
+                font-size: 0.85rem !important;
+                padding: 8px 10px !important;
+                line-height: 1.35 !important;
+                max-height: 38vh !important;
+                overflow-y: auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .exam-card-model-answer {
+                font-size: 0.95rem !important;
+                padding: 10px 12px !important;
+                max-height: 35vh !important;
+                overflow-y: auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-prompt-hint {
+                font-size: 0.76rem !important;
+                color: #94a3b8 !important;
+                flex-shrink: 0 !important;
+                margin-top: 6px !important;
+                text-align: center !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-footer {
+                padding: 8px 12px 10px 12px !important;
+                flex-shrink: 0 !important;
+                gap: 6px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-nav-btn {
+                padding: 8px 10px !important;
                 font-size: 0.82rem !important;
             }
         }
@@ -1736,6 +1898,50 @@
                 box-sizing: border-box !important;
             }
             .leitner-nav-btn {
+                padding: 2px 8px !important;
+                font-size: 0.7rem !important;
+            }
+
+            /* Teacher Mode Overrides for Mobile Landscape */
+            .leitner-modal-overlay.teacher-mode .leitner-card-container {
+                padding: 4px 12px 2px 12px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card {
+                min-height: 0 !important;
+                max-height: none !important;
+                height: 100% !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-inner {
+                min-height: 0 !important;
+                height: 100% !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-face {
+                min-height: 0 !important;
+                height: 100% !important;
+                padding: 6px 14px !important;
+                overflow-y: auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-question-text,
+            .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+                font-size: 0.95rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-answer-text,
+            .leitner-modal-overlay.teacher-mode .card-main-answer {
+                font-size: 1.02rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-prompt-hint {
+                display: none !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-footer {
+                height: 28px !important;
+                min-height: 28px !important;
+                padding: 2px 12px 3px 12px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-nav-btn {
                 padding: 2px 8px !important;
                 font-size: 0.7rem !important;
             }
@@ -7838,7 +8044,7 @@
       if (modal) {
         if (isTeacherMode) {
           modal.classList.add('teacher-mode');
-          if (btn) btn.textContent = '✖️ Exit Whiteboard (T)';
+          if (btn) btn.textContent = window.innerWidth <= 600 ? '✖️ Exit (T)' : '✖️ Exit Whiteboard (T)';
           if (titleEl) titleEl.textContent = '⚡ Whiteboard Rapid-Fire Recall';
           if (modal.requestFullscreen) {
             modal.requestFullscreen().catch(() => {});
@@ -7848,7 +8054,7 @@
           resetRapidFireTimer(true);
         } else {
           modal.classList.remove('teacher-mode');
-          if (btn) btn.textContent = '📽️ Teacher Mode';
+          if (btn) btn.textContent = window.innerWidth <= 600 ? '📽️ Teacher' : '📽️ Teacher Mode';
           if (titleEl) {
             titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
           }

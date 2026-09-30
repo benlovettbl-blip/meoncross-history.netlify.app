@@ -16,8 +16,8 @@ async function generateOpenEveningSheet() {
   );
 
   const HUB_BASE_URL = process.env.HUB_URL || 'https://the-history-revision-hub.netlify.app';
-  // Explicit unit parameters guarantee instant rendering with zero blank screens on any device
-  const portalUrl = `${HUB_BASE_URL}/?view=lessons&unit=edexcel_medicine`;
+  // Open Evening QR Codes: Code 1 opens the main Department Revision Hub Home Page; Code 2 launches the interactive quiz challenge
+  const portalUrl = `${HUB_BASE_URL}/`;
   const quizUrl = `${HUB_BASE_URL}/?view=interactive&unit=edexcel_medicine&start=quiz`;
 
   // Generate high-resolution QR codes as base64 data URLs (enlarged for instant smartphone scannability)
@@ -1120,19 +1120,19 @@ async function generateOpenEveningSheet() {
           </div>
 
           <div class="col-content">
-            <!-- QR Code 1: Lesson Portal -->
+            <!-- QR Code 1: Revision Hub Home Page -->
             <div class="qr-showcase-card">
               <a href="${portalUrl}" target="_blank" rel="noopener" class="qr-image-frame" style="display: flex; text-decoration: none; cursor: pointer;">
-                <img src="${qrPortalDataUrl}" alt="Scan with your mobile phone to explore interactive lessons">
+                <img src="${qrPortalDataUrl}" alt="Scan with your mobile phone to explore the Revision Hub">
               </a>
               <div class="qr-content-pane">
                 <div class="qr-header-row">
                   <span class="qr-meta-badge">📱 Scan on Phone</span>
                   <a href="${portalUrl}" target="_blank" rel="noopener" class="qr-url-pill" style="text-decoration: none; cursor: pointer; color: #1e3a8a;">the-history-revision-hub.netlify.app</a>
                 </div>
-                <h3 class="qr-card-title">Explore Live Lessons</h3>
+                <h3 class="qr-card-title">Explore Revision Hub</h3>
                 <p class="qr-card-desc">
-                  Point your smartphone camera at this code to open our interactive digital textbooks across all 16 units on your phone.
+                  Point your smartphone camera at this code to explore our interactive digital platform and complete curriculum across all 16 units on your phone.
                 </p>
                 <ul class="qr-bullets">
                   <li>Full Christine Counsell 4-act enquiry narratives</li>
