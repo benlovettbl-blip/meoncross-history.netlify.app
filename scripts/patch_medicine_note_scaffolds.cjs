@@ -2,9 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const medicineScaffolds = {
-  // -------------------------------------------------------------
-  // KEY TOPIC 1: MEDIEVAL MEDICINE (c.1250–c.1500)
-  // -------------------------------------------------------------
   lesson_1_1: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to analyse medieval religious and supernatural beliefs about illness:',
@@ -20,6 +17,7 @@ const medicineScaffolds = {
           'The Catholic Church held a monopoly over education, scriptoria (manuscript copying), and universities, teaching that challenging scripture was heresy.',
           'Friar Roger Bacon was imprisoned in 1277 for advocating empirical observation rather than blind acceptance of ancient authority.',
         ],
+        key_terms: ['Divine Retribution', 'Monastic Scriptoria'],
       },
       {
         num: 2,
@@ -32,6 +30,7 @@ const medicineScaffolds = {
           'The great planetary conjunction of Mars, Jupiter, and Saturn in Aquarius in 1345 was blamed by Paris physicians for corrupting atmospheric air.',
           "The 'Zodiac Man' diagram instructed doctors which bodily organs corresponded to which constellations before attempting medical interventions.",
         ],
+        key_terms: ['Astrological Almanac', 'Planetary Conjunction'],
       },
       {
         num: 3,
@@ -44,10 +43,10 @@ const medicineScaffolds = {
           "The Church protected Galen's texts because his teleological philosophy argued the human body was designed by a single Creator.",
           'Human dissection was strictly controlled or forbidden, locking anatomy into 1,000-year-old animal-based Galenic theory.',
         ],
+        key_terms: ['Galenic Orthodoxy', 'Heresy'],
       },
     ],
   },
-
   lesson_1_2: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to map rational medieval explanations (Hippocrates, Galen & Miasma):',
@@ -63,6 +62,7 @@ const medicineScaffolds = {
           'A healthy individual had humours in balance; illness occurred when one humour became excessive, deficient, or corrupt.',
           'This was rational because symptoms (e.g. fever = hot/dry; winter cold = wet phlegm) appeared to physically match humoural properties.',
         ],
+        key_terms: ['Four Humours', 'Clinical Observation'],
       },
       {
         num: 2,
@@ -75,6 +75,7 @@ const medicineScaffolds = {
           'Phlebotomy (bloodletting) was prescribed to remove excess hot blood, alongside purging with emetics and laxatives.',
           "Galen believed the human body was purposefully crafted by a single Creator ('teleology'), leading the Catholic Church to adopt his writings as absolute truth.",
         ],
+        key_terms: ['Theory of Opposites', 'Phlebotomy'],
       },
       {
         num: 3,
@@ -87,10 +88,10 @@ const medicineScaffolds = {
           'Inhaling foul air was believed to corrupt the internal humours, causing epidemic diseases like plague.',
           'Miasma led to sensible public health practices (clearing dung, burning fragrant herbs, carrying pomanders), even though the biological mechanism was incorrect.',
         ],
+        key_terms: ['Miasma', 'Pestilential Vapours'],
       },
     ],
   },
-
   lesson_1_3: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate medieval approaches to prevention and treatment:',
@@ -106,6 +107,7 @@ const medicineScaffolds = {
           'Purging cleared the digestive tract using emetics (vomit-inducing hellebore) and strong herbal laxatives (linseed and senna).',
           "The 'Regimen Sanitatis' gave wealthy patients holistic lifestyle guidelines: balanced diet, moderate exercise, regular bathing, and sleep.",
         ],
+        key_terms: ['Purging', 'Regimen Sanitatis'],
       },
       {
         num: 2,
@@ -118,6 +120,7 @@ const medicineScaffolds = {
           'Patients touched saintly relics, lit votive candles, fasted, and prayed for saintly intercession.',
           'During epidemics, religious zealots (Flagellants) whipped themselves publicly to show repentance and avert divine punishment.',
         ],
+        key_terms: ['Pilgrimage to Shrines', 'Flagellants'],
       },
       {
         num: 3,
@@ -130,10 +133,10 @@ const medicineScaffolds = {
           'Wise women in local villages provided practical herbal knowledge (chamomile, mint, willow bark) and delivered babies as midwives.',
           'Ordinary peasants relied almost exclusively on wise women and apothecaries because university physicians charged prohibitive fees.',
         ],
+        key_terms: ['Theriac', 'Wise Woman Healers'],
       },
     ],
   },
-
   lesson_1_4: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to examine medical practitioners and monastic hospitals:',
@@ -149,6 +152,7 @@ const medicineScaffolds = {
           'Barber-surgeons learned via apprenticeships, pulled teeth, set broken bones, lanced buboes, and amputated limbs with boiling oil cautery.',
           'Apothecaries mixed herbal prescriptions, ointments, and poisons; cheaper than physicians, accessible to the urban middle class.',
         ],
+        key_terms: ['University Physician', 'Barber-Surgeon'],
       },
       {
         num: 2,
@@ -161,6 +165,7 @@ const medicineScaffolds = {
           "Their core philosophy was 'care not cure': providing clean bedding, warmth, food, and daily prayer to comfort the soul.",
           'Infectious diseases (plague, leprosy), terminal cases, and pregnant women were rejected to preserve order and spiritual purity.',
         ],
+        key_terms: ['Care not Cure', 'Monastic Infirmary'],
       },
       {
         num: 3,
@@ -173,10 +178,10 @@ const medicineScaffolds = {
           "Sufferers were legally cast out of towns and housed in dedicated 'Lazar houses' located well outside parish boundaries.",
           'Lepers were forced to wear hooded cloaks and ring wooden hand-clappers or bells to warn healthy citizens to keep away.',
         ],
+        key_terms: ['Lazar House', 'Leprosy Quarantine'],
       },
     ],
   },
-
   lesson_1_5: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate contemporary responses to the Black Death (1348–1349):',
@@ -192,6 +197,7 @@ const medicineScaffolds = {
           'Bubonic form caused high fevers, vomiting, and agonizing dark buboes in armpits and groin; pneumonic form attacked lungs via coughing.',
           'Killed 30-45% of the English population within 18 months, causing massive economic disruption and social paralysis.',
         ],
+        key_terms: ['Buboes', 'Bubonic Plague'],
       },
       {
         num: 2,
@@ -204,6 +210,7 @@ const medicineScaffolds = {
           'Environmental causes: poisonous miasma from rotting matter and the 1345 planetary conjunction; people carried sweet herbs and lit fires.',
           'Humoural treatments: bleeding buboes, applying warm pigeon entrails to swellings, drinking crushed emeralds; complete clinical failure.',
         ],
+        key_terms: ['Divine Wrath', 'Planetary Alignment'],
       },
       {
         num: 3,
@@ -216,13 +223,10 @@ const medicineScaffolds = {
           'Quarantine failed because authorities had no concept of Yersinia pestis, rat flea vectors (Xenopsylla cheopis), or airborne droplets.',
           'Civic councils lacked police forces, professional public health departments, or legal powers to enforce strict cordons sanitaires.',
         ],
+        key_terms: ['Quarantine', 'Street Cleaning'],
       },
     ],
   },
-
-  // -------------------------------------------------------------
-  // KEY TOPIC 2: THE MEDICAL RENAISSANCE IN ENGLAND (c.1500–c.1700)
-  // -------------------------------------------------------------
   lesson_2_1: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to map how ideas spread and why clerical authority broke down:',
@@ -238,6 +242,7 @@ const medicineScaffolds = {
           'Weakened Church censorship because thousands of copies circulated faster than inquisitors or bishops could confiscate them.',
           'Enabled humanists to translate and print original ancient Greek manuscripts directly, bypassing medieval Latin corruptions.',
         ],
+        key_terms: ['Humanism', 'Movable-Type Press'],
       },
       {
         num: 2,
@@ -250,6 +255,7 @@ const medicineScaffolds = {
           "Published 'Philosophical Transactions' (1665), the world's first peer-reviewed scientific journal, encouraging open scientific exchange.",
           'Received a Royal Charter from King Charles II (1662), giving secular scientific research royal prestige and state protection.',
         ],
+        key_terms: ['Royal Society', 'Nullius in Verba'],
       },
       {
         num: 3,
@@ -262,10 +268,10 @@ const medicineScaffolds = {
           'University professors, apothecaries, and quacks continued prescribing humoural bleeding, purging, and astrological charms.',
           'Life expectancy and infant mortality remained virtually identical between 1500 and 1700; science understood anatomy, not cures.',
         ],
+        key_terms: ['Medical Continuity', 'Galenic Dogma'],
       },
     ],
   },
-
   lesson_2_2: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate why Sydenham became ‘The English Hippocrates’:',
@@ -281,6 +287,7 @@ const medicineScaffolds = {
           "Refused to check astrology or complex pulse charts, arguing that the patient's physical symptoms were the only true guide to illness.",
           "Encouraged doctors to observe the natural course of a disease and let the body's natural defenses fight it whenever possible.",
         ],
+        key_terms: ['Bedside Observation', 'Observationes Medicae'],
       },
       {
         num: 2,
@@ -293,6 +300,7 @@ const medicineScaffolds = {
           'Successfully proved scarlet fever and measles were two entirely separate illnesses, requiring different clinical responses.',
           "Directly challenged ancient humoural dogma that every patient's illness was a unique personal imbalance of humours.",
         ],
+        key_terms: ['Disease Classification', 'Scarlet Fever'],
       },
       {
         num: 3,
@@ -305,10 +313,10 @@ const medicineScaffolds = {
           'Yet remained humoural at his core, prescribing regular venesection (bloodletting) and purges to expel toxins.',
           'Illustrates the central Renaissance paradox: clinical observation advanced dramatically, but treatments showed deep continuity.',
         ],
+        key_terms: ['Cinchona Bark', 'Venesection'],
       },
     ],
   },
-
   lesson_2_3: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to analyze how direct human dissection overturned 1,400 years of Galenic dogma:',
@@ -324,6 +332,7 @@ const medicineScaffolds = {
           'Proved the breastbone (sternum) has three segments, not seven as Galen described from apes.',
           'Proved the human heart septum had no invisible porous holes for blood to pass directly from the right to left ventricle.',
         ],
+        key_terms: ['Human Dissection', 'De Fabrica (1543)'],
       },
       {
         num: 2,
@@ -336,6 +345,7 @@ const medicineScaffolds = {
           'Conservative medical faculties feared their costly library collections and university degrees would become worthless if Galen fell.',
           'Vesalius faced such intense professional hostility and academic vitriol that he resigned his professorship at Padua in frustration.',
         ],
+        key_terms: ['Jacobus Sylvius', 'Galenic Infallibility'],
       },
       {
         num: 3,
@@ -348,10 +358,10 @@ const medicineScaffolds = {
           'Established anatomy as a primary empirical science, inspiring a generation of pioneering European anatomists.',
           'However, knowing precise bone and muscle structures did not stop blood loss, prevent infection, or cure internal epidemic disease.',
         ],
+        key_terms: ['Anatomical Accuracy', 'Empirical Science'],
       },
     ],
   },
-
   lesson_2_4: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to trace how mechanical physics and mathematics proved circulation:',
@@ -367,6 +377,7 @@ const medicineScaffolds = {
           'Harvey measured heart capacity (2 ounces per beat) and calculated 540 pints pumped per hour (3x the weight of an average human).',
           'Mathematically proved the liver could not possibly manufacture this impossible volume; blood must circulate in a closed loop.',
         ],
+        key_terms: ['Circulation of Blood', 'De Motu Cordis (1628)'],
       },
       {
         num: 2,
@@ -379,6 +390,7 @@ const medicineScaffolds = {
           'Loosening bandage allowed blood into arm via deeper arteries, but blocked superficial veins: veins swelled with trapped blood.',
           'Pushing blood past vein valves proved blood could only travel one way (toward the heart), confirming mechanical circulation.',
         ],
+        key_terms: ['One-Way Valves', 'Mechanical Pump'],
       },
       {
         num: 3,
@@ -391,10 +403,10 @@ const medicineScaffolds = {
           "Capillaries connecting arteries and veins were microscopic; circulation could not be visually completed until Malpighi's microscope (1661).",
           'Knowing blood circulated did not cure disease; physicians continued prescribing phlebotomy (bleeding) to balance humours until the mid-19th century.',
         ],
+        key_terms: ['Capillaries', 'Scientific Revolution'],
       },
     ],
   },
-
   lesson_2_5: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to weigh municipal change against medical continuity during the Great Plague:',
@@ -410,6 +422,7 @@ const medicineScaffolds = {
           'Parish watchmen guarded locked houses 24/7; searchers of the dead inspected corpses; weekly Bills of Mortality tracked deaths by parish.',
           'Theatres, public taverns, and crowded fairs were shut down; street fires burned night and day; stray dogs and cats were exterminated.',
         ],
+        key_terms: ['Tobacco Smoking', 'Pomanders'],
       },
       {
         num: 2,
@@ -422,6 +435,7 @@ const medicineScaffolds = {
           'Plague doctors wore waxed leather cloaks and bird-like beak masks stuffed with camphor and sweet spices to filter air.',
           'Eton schoolboys were whipped if they refused to smoke tobacco each morning; apothecaries sold useless plague waters and crushed gems.',
         ],
+        key_terms: ['Pest House', 'Charity Hospital'],
       },
       {
         num: 3,
@@ -434,13 +448,10 @@ const medicineScaffolds = {
           'Quarantine was a municipal policing measure enforcing isolation, not a biomedical cure; locking infected families with healthy ones increased deaths.',
           'The plague subsided not because of medical science, but because the cold winter suppressed fleas and the Great Fire of 1666 destroyed squalid wooden tenements.',
         ],
+        key_terms: ['Plague Orders (1665)', 'Red Cross Searchers'],
       },
     ],
   },
-
-  // -------------------------------------------------------------
-  // KEY TOPIC 3: MEDICINE IN 18TH- AND 19TH-CENTURY BRITAIN (c.1700–c.1900)
-  // -------------------------------------------------------------
   lesson_3_1: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to trace how Germ Theory overturned miasma:',
@@ -456,6 +467,7 @@ const medicineScaffolds = {
           'Famous swan-neck flask experiments showed sterile broth stayed germ-free indefinitely until airborne dust entered the flask neck.',
           "Published 'Germ Theory' in 1861, proving micro-organisms in air cause decay, directly disproving spontaneous generation and miasma.",
         ],
+        key_terms: ['Spontaneous Generation', 'Swan-Neck Flask'],
       },
       {
         num: 2,
@@ -468,6 +480,7 @@ const medicineScaffolds = {
           'Used synthetic industrial chemical dyes (methyl violet, methylene blue) to stain transparent bacteria so they stood out clearly under microscopes.',
           'Used photomicrography to capture unarguable visual proof; identified specific pathogens: anthrax (1876), tuberculosis (1882), and cholera (1883).',
         ],
+        key_terms: ['Agar Jelly Plates', 'Specific Pathogens'],
       },
       {
         num: 3,
@@ -480,10 +493,10 @@ const medicineScaffolds = {
           'British physicians argued that germs were the *result* or symptom of illness, not its primary *cause*.',
           'Sanitarians like Florence Nightingale resisted Germ Theory because cleaning foul smells (miasma) had already dramatically lowered death rates.',
         ],
+        key_terms: ['Dr Charlton Bastian', 'British Scepticism'],
       },
     ],
   },
-
   lesson_3_2: {
     instruction:
       "As you read the chapter, complete these 3 structured enquiry blocks to examine Jenner's smallpox vaccine and state vaccination mandates:",
@@ -499,6 +512,7 @@ const medicineScaffolds = {
           'Jenner observed Gloucestershire milkmaids never caught smallpox after contracting mild, non-lethal cowpox from cow udders.',
           'In 1796, Jenner inoculated 8-year-old James Phipps with cowpox pus, then exposed him to smallpox; Phipps remained completely healthy.',
         ],
+        key_terms: ['Smallpox Inoculation', 'Cowpox Immunity'],
       },
       {
         num: 2,
@@ -511,6 +525,7 @@ const medicineScaffolds = {
           'Professional inoculators fiercely opposed vaccination because it threatened their highly lucrative private inoculation businesses.',
           "The prestigious Royal Society initially rejected Jenner's paper because he could not explain *why* or *how* cowpox conferred immunity.",
         ],
+        key_terms: ['James Phipps', 'Anti-Vaccine Opposition'],
       },
       {
         num: 3,
@@ -523,10 +538,10 @@ const medicineScaffolds = {
           'In 1840, Parliament banned dangerous inoculation and provided free infant vaccination paid by poor-law unions.',
           'The Compulsory Vaccination Act of 1853 made smallpox vaccination mandatory for all newborn infants, marking a historic public health mandate.',
         ],
+        key_terms: ['National Vaccine Establishment', '1853 Compulsory Vaccination Act'],
       },
     ],
   },
-
   lesson_3_3: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate the transformation of hospitals and nursing in the 19th century:',
@@ -542,6 +557,7 @@ const medicineScaffolds = {
           'Enforced strict hygiene: cleaned drains, scrubbed floors, set up boiling laundries, provided clean bedding and fresh, nutritious meals.',
           'The death rate plummeted from 42% to 2% within six months, demonstrating that hospital filth was killing more soldiers than Russian bullets.',
         ],
+        key_terms: ['Scutari Barrack Hospital', 'Sanitary Hygiene'],
       },
       {
         num: 2,
@@ -554,6 +570,7 @@ const medicineScaffolds = {
           "Built the 'British Hotel' near Balaclava, offering warm food, convalescent shelter, and traditional herbal remedies for cholera and dysentery.",
           'Treated wounded soldiers directly on active battlefields under heavy fire, earning legendary affection from common infantrymen.',
         ],
+        key_terms: ['Mary Seacole', 'British Hotel Balaclava'],
       },
       {
         num: 3,
@@ -566,10 +583,10 @@ const medicineScaffolds = {
           "Founded the Nightingale Training School at St Thomas' Hospital (1860), transforming nursing into an educated, respected, disciplined profession.",
           'Hospitals evolved from dangerous death-houses for the destitute into clean, scientific institutions for medical recovery.',
         ],
+        key_terms: ['Pavilion Plan', 'Notes on Nursing (1859)'],
       },
     ],
   },
-
   lesson_3_4: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to analyze how pain, shock, and sepsis were conquered in surgery:',
@@ -585,6 +602,7 @@ const medicineScaffolds = {
           "Led to the 'Black Period' of surgery: painless patients allowed surgeons to operate deeper and slower, increasing fatal blood loss and infection.",
           "Opposition (religious objections to painless childbirth) collapsed after Queen Victoria used chloroform for Prince Leopold's birth (1853), administered by John Snow's inhaler.",
         ],
+        key_terms: ['James Simpson', 'Chloroform (1847)'],
       },
       {
         num: 2,
@@ -597,6 +615,7 @@ const medicineScaffolds = {
           'Used carbolic acid (used to treat foul town sewage) to sterilize dressings, surgical instruments, and wounds (1865).',
           'Invented the carbolic spray machine to saturate operating theatre air; reduced his surgical ward mortality from 46% to 15%.',
         ],
+        key_terms: ['Joseph Lister', 'Carbolic Acid Spray (1865)'],
       },
       {
         num: 3,
@@ -609,10 +628,10 @@ const medicineScaffolds = {
           'Shifted from antiseptic (killing germs in wounds) to aseptic (preventing any germs from entering the theatre in the first place).',
           'By the 1890s, theatres used steam autoclaves to sterilize metal instruments, wore sterile rubber gloves (Halsted), white surgical gowns, and face masks.',
         ],
+        key_terms: ['Aseptic Surgery', 'Steam Autoclave'],
       },
     ],
   },
-
   lesson_3_5: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to examine John Snow, cholera, and the 1875 Public Health Act:',
@@ -628,6 +647,7 @@ const medicineScaffolds = {
           'Showed deaths clustered precisely around the Broad Street water pump; nearby brewery workers drank beer and suffered zero fatalities.',
           'Removed pump handle, halting the epidemic; proved a cracked underground cesspool was leaking sewage directly into drinking water.',
         ],
+        key_terms: ['John Snow', 'Broad Street Pump (1854)'],
       },
       {
         num: 2,
@@ -640,6 +660,7 @@ const medicineScaffolds = {
           'Parliament immediately passed emergency legislation funding civil engineer Joseph Bazalgette to build a comprehensive sewer system.',
           "Constructed 82 miles of underground intercepting brick sewers and 1,100 miles of street drains, carrying London's sewage east away from drinking intakes.",
         ],
+        key_terms: ['Great Stink (1858)', 'Bazalgette Sewer System'],
       },
       {
         num: 3,
@@ -652,13 +673,10 @@ const medicineScaffolds = {
           'The 1875 Public Health Act made public health compulsory: councils were forced to appoint Medical Officers of Health and sanitary inspectors.',
           'Mandated clean piped water, proper sewage disposal, street paving, street lighting, and food inspection, ending the era of government laissez-faire.',
         ],
+        key_terms: ['Laissez-Faire', '1875 Public Health Act'],
       },
     ],
   },
-
-  // -------------------------------------------------------------
-  // KEY TOPIC 4: MEDICINE IN MODERN BRITAIN (c.1900–present)
-  // -------------------------------------------------------------
   lesson_4_1: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to analyse genetics, DNA, and the Human Genome Project:',
@@ -674,6 +692,7 @@ const medicineScaffolds = {
           'Crick and Watson at Cambridge used her uncredited data to construct the 3D double-helix molecular model of DNA in 1953.',
           'Proved DNA carries the universal genetic code instructing cell growth and transmitting hereditary characteristics across generations.',
         ],
+        key_terms: ['Double Helix (1953)', 'Rosalind Franklin Crystallography'],
       },
       {
         num: 2,
@@ -686,6 +705,7 @@ const medicineScaffolds = {
           "Enabled identification of specific faulty genes responsible for hereditary diseases (cystic fibrosis, Huntington's, BRCA breast cancer).",
           "Paved the way for personalized medicine, carrier screening, and pharmacogenomics (tailoring drug therapies to a patient's genetic profile).",
         ],
+        key_terms: ['Human Genome Project', 'Gene Mapping'],
       },
       {
         num: 3,
@@ -698,10 +718,10 @@ const medicineScaffolds = {
           'However, editing human DNA (gene therapy or CRISPR) inside millions of living body cells remains technically difficult and ethically controversial.',
           'Knowing the genetic cause of a disease does not immediately translate into an affordable, safe, or permanent clinical cure.',
         ],
+        key_terms: ['Genetic Screening', 'Gene Therapy'],
       },
     ],
   },
-
   lesson_4_2: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to examine lifestyle diseases and modern diagnostic technology:',
@@ -717,6 +737,7 @@ const medicineScaffolds = {
           'Average life expectancy climbed past 80, leading to the rise of chronic non-communicable killers: heart disease, stroke, diabetes, and cancers.',
           'Modern illnesses are heavily influenced by voluntary lifestyle factors: cigarette smoking, alcohol abuse, lack of exercise, and processed high-sugar diets.',
         ],
+        key_terms: ['Non-Communicable Diseases', 'Lifestyle Factors'],
       },
       {
         num: 2,
@@ -729,6 +750,7 @@ const medicineScaffolds = {
           'CT scans (1970s Hounsfield) and MRI scans (1970s Mansfield) produced detailed cross-sectional 3D images of soft organs and brain tissue.',
           'Endoscopes allowed optical cameras inside the digestive tract; mass blood chemistry testing detected early organ failure and hormone imbalances.',
         ],
+        key_terms: ['CT and MRI Scans', 'Endoscopy'],
       },
       {
         num: 3,
@@ -741,10 +763,10 @@ const medicineScaffolds = {
           "Public education campaigns: 'Change4Life', 'Stoptober', and '5 A Day' fruit and vegetable nutritional guidance.",
           'Shifted from reactive treatment to proactive prevention, reducing long-term financial pressure on the National Health Service.',
         ],
+        key_terms: ['Public Health Legislation', 'Preventative Campaigns'],
       },
     ],
   },
-
   lesson_4_3: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to trace magic bullets, synthetic drugs, and the foundation of the NHS:',
@@ -760,6 +782,7 @@ const medicineScaffolds = {
           'Tested hundreds of arsenic compounds, discovering Salvarsan 606 (1909), the first effective cure for the deadly venereal disease syphilis.',
           'Gerhard Domagk discovered Prontosil (1932), a red leather dye sulfonamide that killed streptococcus bacteria, saving his own daughter from amputation.',
         ],
+        key_terms: ['Salvarsan 606', 'Prontosil Sulphonamide (1932)'],
       },
       {
         num: 2,
@@ -772,6 +795,7 @@ const medicineScaffolds = {
           'Post-war Labour Health Minister Aneurin Bevan spearheaded the creation of the NHS, launched on 5 July 1948 at Park Hospital, Manchester.',
           'Established healthcare free at the point of delivery, funded through central taxation, ensuring medical treatment was based on clinical need, not wealth.',
         ],
+        key_terms: ['Beveridge Report (1942)', 'Free at Point of Delivery'],
       },
       {
         num: 3,
@@ -784,10 +808,10 @@ const medicineScaffolds = {
           "In early 1948, over 90% of doctors voted against joining Bevan's proposed National Health Service.",
           "Bevan compromised by allowing hospital consultants to retain private fee-paying patients alongside NHS duties ('stuffed their mouths with gold').",
         ],
+        key_terms: ['BMA Resistance', 'National Health Service (1948)'],
       },
     ],
   },
-
   lesson_4_4: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to examine the discovery, purification, and mass production of penicillin:',
@@ -803,6 +827,7 @@ const medicineScaffolds = {
           'Observed a clear bacterial-free halo around the mould where the bacteria had dissolved and been destroyed.',
           'Published his findings in 1929; however, Fleming was a bacteriologist, lacked chemical expertise to purify the unstable mould, and abandoned it.',
         ],
+        key_terms: ['Alexander Fleming', 'Penicillium Notatum (1928)'],
       },
       {
         num: 2,
@@ -815,6 +840,7 @@ const medicineScaffolds = {
           'Tested on eight mice infected with deadly streptococcus (1940): the four treated with penicillin survived; the untreated four died.',
           'Treated policeman Albert Alexander (1941); his fatal facial infection dramatically cleared until the tiny drug supply ran out and he died.',
         ],
+        key_terms: ['Florey and Chain', 'Penicillin Purification'],
       },
       {
         num: 3,
@@ -827,10 +853,10 @@ const medicineScaffolds = {
           'US factories used deep fermentation vats with corn-steep liquor, producing 2.3 million doses in time for the D-Day landings in June 1944.',
           "Modern crisis: widespread over-prescription and livestock feed misuse has caused bacteria to mutate into drug-resistant 'superbugs' (MRSA).",
         ],
+        key_terms: ['Deep Fermentation Vats', 'D-Day Antibiotic Supply'],
       },
     ],
   },
-
   lesson_4_5: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate public health action against the modern epidemic of lung cancer:',
@@ -846,6 +872,7 @@ const medicineScaffolds = {
           'Doll and Hill interviewed 1,465 hospital patients and monitored 40,000 British doctors over decades in a rigorous statistical study.',
           'Proved unarguably that heavy cigarette smokers were up to 50 times more likely to develop lung cancer than non-smokers.',
         ],
+        key_terms: ['Richard Doll (1950)', 'Epidemiological Study'],
       },
       {
         num: 2,
@@ -858,6 +885,7 @@ const medicineScaffolds = {
           'Passed the Health Act 2006 banning smoking in all enclosed workplaces, pubs, and restaurants from July 2007; raised legal buying age to 18.',
           'Enforced standardised plain packaging in 2016 featuring graphic diseased-lung imagery and removed tobacco displays from retail shops.',
         ],
+        key_terms: ['2007 Public Smoking Ban', 'Plain Packaging (2016)'],
       },
       {
         num: 3,
@@ -870,13 +898,10 @@ const medicineScaffolds = {
           'Treatments combine surgical lobectomy (removing lung lobes), targeted beam radiotherapy, and biological immunotherapy drugs.',
           'However, early lung cancer is painless and symptom-free; 70-80% of patients are diagnosed too late (Stage 3 or 4), keeping 5-year survival under 15%.',
         ],
+        key_terms: ['High-Resolution CT Scans', 'Targeted Radiotherapy'],
       },
     ],
   },
-
-  // -------------------------------------------------------------
-  // KEY TOPIC 5: THE BRITISH SECTOR OF THE WESTERN FRONT, 1914–18
-  // -------------------------------------------------------------
   lesson_5_1: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to analyse the strategic geography and battle context of the Western Front:',
@@ -892,6 +917,7 @@ const medicineScaffolds = {
           'The Salient projected dangerously into German lines; German forces held the surrounding high ground (Passchendaele, Messines Ridge) with clear artillery visibility.',
           'The waterlogged Flanders clay soil and broken drainage canals created persistent, deep liquid mud that drowned men, horses, and equipment.',
         ],
+        key_terms: ['Ypres Salient', 'Channel Ports Defence'],
       },
       {
         num: 2,
@@ -904,6 +930,7 @@ const medicineScaffolds = {
           "Arras (1917): British engineers excavated chalk quarries into an underground hospital city (Thompson's Cave) holding 700 hospital beds safely under shellfire.",
           'Cambrai (1917): First mass tank breakthrough and first clinical test of stored refrigerated blood transfusions by Oswald Robertson.',
         ],
+        key_terms: ['Battle of the Somme (1916)', 'Thompson’s Cave Arras'],
       },
       {
         num: 3,
@@ -916,10 +943,10 @@ const medicineScaffolds = {
           'Connected by zig-zag communication trenches designed to prevent shrapnel and gunfire blasting straight down the line.',
           'Zig-zag right angles made carrying rigid 6-foot stretchers round narrow, muddy corners excruciatingly slow, painful, and exhausting.',
         ],
+        key_terms: ['Frontline and Support Trenches', 'Communication Trenches'],
       },
     ],
   },
-
   lesson_5_2: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to examine the medical challenges of the trench environment:',
@@ -935,6 +962,7 @@ const medicineScaffolds = {
           'Required surgical amputation if gangrene took hold, permanently incapacitating thousands of combat troops.',
           "Prevented by rubbing whale oil on feet, changing dry socks 2-3 times daily, installing wooden duckboards, and enforcing the mandatory 'buddy system'.",
         ],
+        key_terms: ['Trench Foot', 'Whale Oil Inspection'],
       },
       {
         num: 2,
@@ -947,6 +975,7 @@ const medicineScaffolds = {
           'Symptoms included agonizing pyrexia (fever), violent shivering, severe headaches, and deep shooting pain in the shins, lasting for weeks.',
           'Combated by setting up mobile divisional bathhouses, washing uniforms in high-temperature steam vans, and burning lice eggs from seams with hot irons.',
         ],
+        key_terms: ['Trench Fever Lice', 'Divisional Bathhouses'],
       },
       {
         num: 3,
@@ -959,10 +988,10 @@ const medicineScaffolds = {
           "Over 80,000 British soldiers suffered; initial military diagnosis was 'NYDN' (Not Yet Diagnosed, Nervous) and often dismissed as cowardice.",
           '306 soldiers were executed by firing squad for desertion; later in the war, specialist psychiatric hospitals (e.g. Craiglockhart) provided rest therapies.',
         ],
+        key_terms: ['Chlorine and Phosgene', 'Mustard Gas (1917)'],
       },
     ],
   },
-
   lesson_5_3: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to analyse battlefield trauma from artillery, infection, and poison gas:',
@@ -978,6 +1007,7 @@ const medicineScaffolds = {
           'Early soldiers wore cloth caps; steel Brodie helmets introduced in late 1915 featured a wide protective rim, reducing fatal head wounds by 80%.',
           'Artillery blasts caused severe compound fractures where broken bones pierced skin, triggering immediate fatal hemorrhage and shock.',
         ],
+        key_terms: ['Regimental Aid Post (RAP)', 'Stretcher Bearers'],
       },
       {
         num: 2,
@@ -990,6 +1020,7 @@ const medicineScaffolds = {
           'Deep shrapnel wounds drove mud and filthy uniform cloth into airless muscle tissue, incubating deadly tetanus and gas gangrene.',
           'Gas gangrene produced gas bubbles in rotting flesh and killed within hours; routine anti-tetanus serum injections at the RAP drastically reduced lockjaw deaths.',
         ],
+        key_terms: ['Casualty Clearing Station (CCS)', 'Triage System'],
       },
       {
         num: 3,
@@ -1002,10 +1033,10 @@ const medicineScaffolds = {
           'Gas masks evolved rapidly: urine-soaked handkerchiefs -> Hypo helmets soaked in chemicals -> British Small Box Respirator (1916) with charcoal filter.',
           'Gas produced psychological terror and clogged evacuation chains, though it caused less than 5% of total war fatalities.',
         ],
+        key_terms: ['Base Hospitals', 'Hospital Trains and Barges'],
       },
     ],
   },
-
   lesson_5_4: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to examine the Chain of Evacuation from frontline to base:',
@@ -1021,6 +1052,7 @@ const medicineScaffolds = {
           'The Regimental Aid Post was located within 200m of the frontline in a dugout, cellar, or trench communication corner.',
           'The Regimental Medical Officer (RMO) bandaged wounds, applied splints, administered anti-tetanus injections, and sorted men for rear evacuation.',
         ],
+        key_terms: ['RAMC', 'Frontline Medical Orderlies'],
       },
       {
         num: 2,
@@ -1033,6 +1065,7 @@ const medicineScaffolds = {
           'CCS operated strict surgical triage: 1) Walking wounded, 2) In urgent need of lifesaving surgery, 3) Hopeless cases (given comfort care).',
           "CCS performed urgent surgeries (amputations, debridement) because operating within the first 12 hours ('golden window') stopped fatal gas gangrene.",
         ],
+        key_terms: ['FANY', 'Ambulance Drivers'],
       },
       {
         num: 3,
@@ -1045,10 +1078,10 @@ const medicineScaffolds = {
           'First Aid Nursing Yeomanry (FANY) were volunteer women who drove motor ambulances, mobile soup kitchens, and canteen vans in hazardous combat zones.',
           "Soldiers with disabling injuries requiring months of rehabilitation were shipped across the Channel on hospital ships for treatment in 'Blighty'.",
         ],
+        key_terms: ['Motorised Ambulances', 'Shell-Torn Terrain'],
       },
     ],
   },
-
   lesson_5_5: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate surgical innovations on the Western Front:',
@@ -1064,6 +1097,7 @@ const medicineScaffolds = {
           "Robert Jones introduced his uncle Hugh Owen Thomas's splint to the Western Front in December 1915.",
           'The rigid metal traction frame locked the leg firmly in tension, reducing compound femur fracture death rates from 80% down to 20%.',
         ],
+        key_terms: ['Thomas Splint (1915)', 'Compound Femur Fractures'],
       },
       {
         num: 2,
@@ -1076,6 +1110,7 @@ const medicineScaffolds = {
           'Six mobile X-ray vans operated across the British sector, moving directly between CCS stations during major military offensives.',
           'Located exact depths and angles of jagged shrapnel fragments and bullets inside muscle before surgery, preventing destructive exploratory probing.',
         ],
+        key_terms: ['Mobile X-Ray Vans', 'Radiographic Shrapnel Location'],
       },
       {
         num: 3,
@@ -1088,10 +1123,10 @@ const medicineScaffolds = {
           "Surgeons developed 'wound debridement' (wound excision): cutting away all dead, damaged, and contaminated tissue to starve bacteria.",
           'The Carrel-Dakin technique inserted rubber tubes into open wounds to continuously flush them with a mild, sterilizing sodium hypochlorite antiseptic solution.',
         ],
+        key_terms: ['Wound Debridement', 'Carrel-Dakin Irrigation'],
       },
     ],
   },
-
   lesson_5_6: {
     instruction:
       'As you read the chapter, complete these 3 structured enquiry blocks to evaluate blood storage, brain surgery, and plastic reconstruction:',
@@ -1107,6 +1142,7 @@ const medicineScaffolds = {
           'Richard Lewisohn (1915) added sodium citrate to prevent blood clotting; Francis Rous and James Turner (1916) added glucose, enabling refrigeration for 4 weeks.',
           "Canadian doctor Oswald Robertson established the world's first mobile blood depot at the Battle of Cambrai (1917), treating 20 casualties in advance.",
         ],
+        key_terms: ['Sodium Citrate Anticoagulant', 'Cambrai Blood Depot (1917)'],
       },
       {
         num: 2,
@@ -1119,6 +1155,7 @@ const medicineScaffolds = {
           'Harvey Cushing pioneered operating under local anaesthetic rather than general, preventing fatal brain swelling and intracranial pressure.',
           'Used delicate surgical magnets, electric cautery, and suction pumps to remove shrapnel and bone; reduced neurosurgical mortality to 28%.',
         ],
+        key_terms: ['Harvey Cushing', 'Local Anaesthetic Brain Surgery'],
       },
       {
         num: 3,
@@ -1131,6 +1168,7 @@ const medicineScaffolds = {
           "New Zealand surgeon Harold Gillies established the Queen's Hospital in Sidcup, Kent (1917), the world's first specialized plastic surgery centre.",
           "Pioneered the 'tubed pedicle' skin-grafting technique: rolling living skin into a tube to maintain blood supply while grafting it onto damaged faces.",
         ],
+        key_terms: ['Harold Gillies', 'Tubed Pedicle Skin Graft'],
       },
     ],
   },

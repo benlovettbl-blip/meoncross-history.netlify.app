@@ -1330,7 +1330,25 @@ function renderLessonNoteScaffold(lesson, unitId) {
       const blockBadge = b.badge || 'ENQUIRY';
       const blockTitle = b.title || `Enquiry ${blockNum}`;
       const blockPrompt = b.prompt || '';
+      const keyTerms = Array.isArray(b.key_terms) ? b.key_terms : [];
       const modelNotes = Array.isArray(b.model_notes) ? b.model_notes : [];
+
+      const keyTermsHtml =
+        keyTerms.length > 0
+          ? `
+          <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 0.67rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.4px;">
+              <i class="fa-solid fa-key" style="color: #64748b; margin-right: 3px;"></i> Must-Use Terms:
+            </span>
+            ${keyTerms
+              .map(
+                (t) =>
+                  `<span style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; font-family: 'Inter', sans-serif;">${t}</span>`,
+              )
+              .join('')}
+          </div>
+        `
+          : '';
 
       return `
       <div class="note-scaffold-card" data-block="${blockNum}" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-width: 0; box-sizing: border-box;">
@@ -1345,25 +1363,19 @@ function renderLessonNoteScaffold(lesson, unitId) {
             ${blockTitle}
           </h4>
 
-          <!-- Prompt Box -->
-          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 0 4px 4px 0; margin-bottom: 10px;">
-            <div style="font-size: 0.65rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
-              <i class="fa-solid fa-pen" style="margin-right: 4px;"></i> Active Note Prompt
-            </div>
-            <div style="font-size: 0.82rem; color: #1e293b; line-height: 1.35; font-weight: 600;">
+          ${keyTermsHtml}
+
+          <!-- Prompt Box (Cleaned - No AI Fluff) -->
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 9px 12px; border-radius: 0 4px 4px 0; margin-bottom: 10px;">
+            <div style="font-size: 0.84rem; color: #1e293b; line-height: 1.45; font-weight: 600;">
               ${blockPrompt}
             </div>
           </div>
 
-          <!-- Pupil Interactive Textarea -->
-          <div style="margin-bottom: 10px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-              <label for="note-text-${lessonId}-${idx}" style="font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">
-                ✍️ My Lesson Notes (Auto-Saved)
-              </label>
-              <span id="note-card-saved-${lessonId}-${idx}" style="font-size: 0.68rem; font-weight: 700; color: #10b981; opacity: 0; transition: opacity 0.2s ease;">✓ Saved</span>
-            </div>
-            <textarea class="note-scaffold-textarea" id="note-text-${lessonId}-${idx}" rows="4" placeholder="Type your summary notes here as you read..." oninput="window.saveNoteScaffoldInput('${lessonId}', ${idx}, this.value);" style="width: 100%; box-sizing: border-box; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; font-family: 'Inter', sans-serif; font-size: 0.82rem; line-height: 1.4; color: #0f172a; resize: vertical; min-height: 85px; background: #ffffff; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='#0284c7';" onblur="this.style.borderColor='#cbd5e1';"></textarea>
+          <!-- Pupil Interactive Textarea (Streamlined - Max Writing Room) -->
+          <div style="margin-bottom: 10px; position: relative;">
+            <textarea class="note-scaffold-textarea" id="note-text-${lessonId}-${idx}" rows="4" placeholder="" oninput="window.saveNoteScaffoldInput('${lessonId}', ${idx}, this.value);" style="width: 100%; box-sizing: border-box; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 9px 11px; font-family: 'Inter', sans-serif; font-size: 0.83rem; line-height: 1.45; color: #0f172a; resize: vertical; min-height: 85px; background: #ffffff; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='#0284c7';" onblur="this.style.borderColor='#cbd5e1';"></textarea>
+            <span id="note-card-saved-${lessonId}-${idx}" style="position: absolute; right: 8px; bottom: 8px; font-size: 0.65rem; font-weight: 700; color: #10b981; opacity: 0; transition: opacity 0.2s ease; background: rgba(255,255,255,0.92); padding: 1px 5px; border-radius: 3px; pointer-events: none; border: 1px solid #bbf7d0;">✓ Saved</span>
           </div>
 
           <!-- Model Exemplar Notes Box -->
@@ -1372,7 +1384,7 @@ function renderLessonNoteScaffold(lesson, unitId) {
               <span style="font-size: 0.68rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">
                 <i class="fa-solid fa-award" style="color: #16a34a; margin-right: 4px;"></i> Core Historical Evidence
               </span>
-              <button type="button" class="btn-reveal-model" id="btn-toggle-model-${lessonId}-${idx}" onclick="window.toggleSingleNoteModel('${lessonId}', ${idx});" style="font-size: 0.68rem; font-weight: 700; color: #15803d; background: #dcfce7; border: 1px solid #86efac; border-radius: 3px; padding: 1px 6px; cursor: pointer;">
+              <button type="button" class="btn-reveal-model" id="btn-toggle-model-${lessonId}-${idx}" onclick="window.toggleSingleNoteModel('${lessonId}', ${idx}, event);" style="font-size: 0.68rem; font-weight: 700; color: #15803d; background: #dcfce7; border: 1px solid #86efac; border-radius: 3px; padding: 1px 6px; cursor: pointer;">
                 Hide Model
               </button>
             </div>
@@ -1380,7 +1392,7 @@ function renderLessonNoteScaffold(lesson, unitId) {
               ${modelNotes.map((m) => `<li style="margin-bottom: 4px;">${m}</li>`).join('')}
             </ul>
             <div class="note-quiz-mask" id="mask-${lessonId}-${idx}" style="display: none; padding: 10px 6px; text-align: center;">
-              <button type="button" onclick="window.revealSingleNoteQuizMask('${lessonId}', ${idx});" style="padding: 5px 10px; font-size: 0.74rem; font-weight: 700; background: #16a34a; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+              <button type="button" onclick="window.revealSingleNoteQuizMask('${lessonId}', ${idx}, event);" style="padding: 5px 10px; font-size: 0.74rem; font-weight: 700; background: #16a34a; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
                 <i class="fa-solid fa-eye"></i> Click to Reveal Model Evidence
               </button>
             </div>
@@ -1392,28 +1404,29 @@ function renderLessonNoteScaffold(lesson, unitId) {
     .join('');
 
   return `
-    <details id="lesson-note-scaffold" class="timeline-anchor-details lesson-note-scaffold-details" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;" open>
-      <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;">
-        <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a;">
-          <i class="fa-solid fa-pen-to-square" style="color: #0284c7;"></i> Active Lesson Note Scaffold &bull; 3 Core Enquiries
+    <details id="lesson-note-scaffold" class="lesson-note-scaffold-details" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+      <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-list-check" style="color: #3b82f6;"></i> Lesson Task
         </span>
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
-          <button type="button" id="btn-note-scaffold-quiz-mode" onclick="window.toggleNoteScaffoldQuizMode('${lessonId}');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
+          <button type="button" id="btn-note-scaffold-quiz-mode" onclick="window.toggleNoteScaffoldQuizMode('${lessonId}', event);" style="font-size: 0.85rem; padding: 3px 8px; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;">
             <i class="fa-solid fa-graduation-cap"></i> <span id="note-scaffold-quiz-label">Self-Quiz Mode</span>
           </button>
-          <button type="button" onclick="window.copyNoteScaffoldToClipboard('${lessonId}');" id="btn-copy-notes-${lessonId}" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Copy your notes and model notes to clipboard">
+          <button type="button" onclick="window.copyNoteScaffoldToClipboard('${lessonId}', event);" id="btn-copy-notes-${lessonId}" style="font-size: 0.85rem; padding: 3px 8px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;" title="Copy notes to clipboard">
             <i class="fa-solid fa-copy"></i> <span id="copy-notes-label-${lessonId}">Copy Notes</span>
           </button>
-          <button type="button" onclick="window.printNoteScaffoldSheet('${lessonId}');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Print clean 1-page A4 note-taking sheet">
+          <button type="button" onclick="window.printNoteScaffoldSheet('${lessonId}', event);" style="font-size: 0.85rem; padding: 3px 8px; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;" title="Print clean 1-page A4 note-taking sheet">
             <i class="fa-solid fa-print"></i> Print A4 Sheet
           </button>
           <span id="note-scaffold-save-indicator-${lessonId}" style="font-size: 0.72rem; font-weight: 700; color: #10b981; opacity: 0; transition: opacity 0.3s ease;">✓ Auto-Saved</span>
+          <i class="fa-solid fa-chevron-down" style="color: #64748b; margin-left: 6px;"></i>
         </div>
       </summary>
 
       <!-- Active Instructions Sub-Bar -->
-      <div style="padding: 10px 18px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155; line-height: 1.45;">
-        <strong style="color: #0f172a;"><i class="fa-solid fa-circle-info" style="color: #0284c7; margin-right: 5px;"></i> Active Reading Instructions:</strong> ${scaffold.instruction}
+      <div style="padding: 8px 15px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; color: #475569; line-height: 1.4;">
+        <strong style="color: #0f172a;"><i class="fa-solid fa-circle-info" style="color: #3b82f6; margin-right: 5px;"></i> Instructions:</strong> ${scaffold.instruction}
       </div>
 
       <!-- 3-Block Grid -->
@@ -1449,11 +1462,13 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  window.toggleSingleNoteModel = function (lessonId, blockIdx) {
+  window.toggleSingleNoteModel = function (lessonId, blockIdx, event) {
+    if (event && event.stopPropagation) event.stopPropagation();
     const bullets = document.getElementById(`bullets-${lessonId}-${blockIdx}`);
     const btn = document.getElementById(`btn-toggle-model-${lessonId}-${blockIdx}`);
     if (!bullets || !btn) return;
-    if (bullets.style.display === 'none') {
+    const isHidden = bullets.style.display === 'none';
+    if (isHidden) {
       bullets.style.display = 'block';
       btn.textContent = 'Hide Model';
     } else {
@@ -1462,7 +1477,8 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  window.toggleNoteScaffoldQuizMode = function (lessonId) {
+  window.toggleNoteScaffoldQuizMode = function (lessonId, event) {
+    if (event && event.stopPropagation) event.stopPropagation();
     window.noteScaffoldQuizActive = !window.noteScaffoldQuizActive;
     const label = document.getElementById('note-scaffold-quiz-label');
     const btn = document.getElementById('btn-note-scaffold-quiz-mode');
@@ -1504,21 +1520,27 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  window.revealSingleNoteQuizMask = function (lessonId, blockIdx) {
+  window.revealSingleNoteQuizMask = function (lessonId, blockIdx, event) {
+    if (event && event.stopPropagation) event.stopPropagation();
     const bullets = document.getElementById(`bullets-${lessonId}-${blockIdx}`);
     const mask = document.getElementById(`mask-${lessonId}-${blockIdx}`);
     if (bullets) bullets.style.display = 'block';
     if (mask) mask.style.display = 'none';
   };
 
-  window.copyNoteScaffoldToClipboard = function (lessonId) {
+  window.copyNoteScaffoldToClipboard = function (lessonId, event) {
+    if (event && event.stopPropagation) event.stopPropagation();
     const lesson = window.currentActiveLesson;
     if (!lesson || !lesson.note_scaffold) return;
     const blocks = lesson.note_scaffold.blocks || [];
-    let text = `=== ${lesson.title || 'Lesson Notes'} ===\n\n`;
+    let text = `=== ${lesson.title || 'Lesson Task Notes'} ===\n\n`;
     blocks.forEach((b, idx) => {
       const userNote = localStorage.getItem(`med_note_${lessonId}_${idx}`) || '(No notes entered)';
-      text += `ENQUIRY ${b.num || idx + 1}: ${b.title} [${b.badge}]\n`;
+      const keyTerms =
+        Array.isArray(b.key_terms) && b.key_terms.length > 0
+          ? ` [Key Terms: ${b.key_terms.join(', ')}]`
+          : '';
+      text += `ENQUIRY ${b.num || idx + 1}: ${b.title} [${b.badge}]${keyTerms}\n`;
       text += `Prompt: ${b.prompt}\n`;
       text += `My Notes:\n${userNote}\n\n`;
       text += `Core Model Evidence:\n`;
@@ -1540,7 +1562,8 @@ if (typeof window !== 'undefined') {
     });
   };
 
-  window.printNoteScaffoldSheet = function (lessonId) {
+  window.printNoteScaffoldSheet = function (lessonId, event) {
+    if (event && event.stopPropagation) event.stopPropagation();
     const lesson = window.currentActiveLesson;
     if (!lesson || !lesson.note_scaffold) return;
     const scaffold = lesson.note_scaffold;
@@ -1553,7 +1576,7 @@ if (typeof window !== 'undefined') {
       <!DOCTYPE html>
       <html>
       <head>
-        <title>${lesson.title} - Active Note Scaffold</title>
+        <title>${lesson.title} - Lesson Task Sheet</title>
         <style>
           @page { size: A4 portrait; margin: 12mm 15mm; }
           body { font-family: 'Times New Roman', serif; color: #000; margin: 0; padding: 0; }
@@ -1562,6 +1585,7 @@ if (typeof window !== 'undefined') {
           .inst { font-size: 9pt; font-style: italic; margin-bottom: 10pt; border: 1px solid #000; padding: 6pt; }
           .block { border: 1.2px solid #000; margin-bottom: 10pt; padding: 8pt; page-break-inside: avoid; }
           .block-title { font-weight: bold; font-size: 10pt; margin-bottom: 3pt; display: flex; justify-content: space-between; }
+          .key-terms { font-size: 8pt; font-weight: bold; margin-bottom: 4pt; color: #1e293b; }
           .prompt { font-size: 8.8pt; font-weight: bold; margin-bottom: 6pt; }
           .lines { display: flex; flex-direction: column; gap: 16pt; margin-top: 14pt; }
           .line { border-bottom: 1px solid #000; height: 1px; }
@@ -1570,18 +1594,23 @@ if (typeof window !== 'undefined') {
       </head>
       <body>
         <h1>${lesson.title}</h1>
-        <div class="subhead">The History Department &bull; Active Reading & Note-Taking Sheet</div>
+        <div class="subhead">The History Department &bull; Lesson Task & Disciplinary Note-Taking Sheet</div>
         <div class="inst"><strong>Instructions:</strong> ${scaffold.instruction}</div>
     `;
 
     blocks.forEach((b, idx) => {
       const userNote = localStorage.getItem(`med_note_${lessonId}_${idx}`) || '';
+      const keyTermsText =
+        Array.isArray(b.key_terms) && b.key_terms.length > 0
+          ? `<div class="key-terms">Must-Use Terms: ${b.key_terms.join(' &bull; ')}</div>`
+          : '';
       printHtml += `
         <div class="block">
           <div class="block-title">
             <span>ENQUIRY ${b.num || idx + 1}: ${b.title}</span>
             <span>[${b.badge}]</span>
           </div>
+          ${keyTermsText}
           <div class="prompt">Prompt: ${b.prompt}</div>
           ${
             userNote

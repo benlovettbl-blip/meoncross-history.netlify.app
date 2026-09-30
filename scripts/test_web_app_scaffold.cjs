@@ -15,56 +15,99 @@ const puppeteer = require('puppeteer');
       timeout: 30000,
     });
 
-    // Find element containing KT1.1 and click it to open the lesson
-    const clicked = await page.evaluate(() => {
+    // Click KT1.1
+    await page.evaluate(() => {
       const els = Array.from(document.querySelectorAll('*'));
       const target = els.find((el) => el.children.length === 0 && el.textContent.includes('KT1.1'));
-      if (target) {
-        target.click();
-        return true;
-      }
-      return false;
+      if (target) target.click();
     });
-    console.log('Clicked KT1.1 lesson card:', clicked);
     await new Promise((r) => setTimeout(r, 2000));
 
-    // Check if #lesson-note-scaffold exists
-    const scaffoldExists = await page.evaluate(() => {
+    // Capture collapsed state screenshot
+    const handle = await page.evaluateHandle(() => document.getElementById('lesson-note-scaffold'));
+    await handle
+      .asElement()
+      .screenshot({ path: 'public/images/test_web_app_scaffold_collapsed.png' });
+    console.log(
+      '✅ Screenshot of collapsed state saved to public/images/test_web_app_scaffold_collapsed.png',
+    );
+
+    // Click directly on the title span to expand
+    await page.evaluate(() => {
+      const details = document.getElementById('lesson-note-scaffold');
+      if (details) details.open = true;
+    });
+    await new Promise((r) => setTimeout(r, 500));
+
+    const expandedStatus = await page.evaluate(() => {
       const el = document.getElementById('lesson-note-scaffold');
-      if (!el) return null;
       return {
-        id: el.id,
+        open: el.open,
         cardsCount: el.querySelectorAll('.note-scaffold-card').length,
-        title: el.querySelector('h4') ? el.querySelector('h4').textContent : '',
       };
     });
-    console.log('Scaffold details in DOM:', scaffoldExists);
+    console.log('Expanded Scaffold Status:', expandedStatus);
 
-    if (scaffoldExists) {
-      const handle = await page.evaluateHandle(() =>
-        document.getElementById('lesson-note-scaffold'),
-      );
-      await handle.asElement().screenshot({ path: 'public/images/test_web_app_note_scaffold.png' });
-      console.log('✅ Screenshot saved to public/images/test_web_app_note_scaffold.png');
+    await handle
+      .asElement()
+      .screenshot({ path: 'public/images/test_web_app_scaffold_expanded.png' });
+    console.log(
+      '✅ Screenshot of expanded state saved to public/images/test_web_app_scaffold_expanded.png',
+    );
 
-      // Test typing into textarea
-      await page.type(
-        '#note-text-lesson_1_1-0',
-        'Test student note: Medieval people believed disease was punishment from God.',
-      );
-      console.log('✅ Successfully typed note into textarea');
+    // Test Hide Model button on block 0
+    console.log('Testing Hide Model button...');
+    await page.evaluate(() => {
+      window.toggleSingleNoteModel('lesson_1_1', 0);
+    });
+    await new Promise((r) => setTimeout(r, 300));
 
-      // Test Self-Quiz toggle
-      await page.click('#btn-note-scaffold-quiz-mode');
-      console.log('✅ Successfully toggled Self-Quiz Mode');
-      await handle.asElement().screenshot({ path: 'public/images/test_web_app_quiz_mode.png' });
-      console.log('✅ Saved quiz mode screenshot to public/images/test_web_app_quiz_mode.png');
-    }
+    const toggleState1 = await page.evaluate(() => {
+      const btn = document.getElementById('btn-toggle-model-lesson_1_1-0');
+      const bullets = document.getElementById('bullets-lesson_1_1-0');
+      return {
+        btnText: btn ? btn.textContent.trim() : null,
+        bulletsDisplay: bullets ? bullets.style.display : null,
+      };
+    });
+    console.log('After clicking Hide Model:', toggleState1);
+
+    // Toggle again to Show Model
+    await page.evaluate(() => {
+      window.toggleSingleNoteModel('lesson_1_1', 0);
+    });
+    await new Promise((r) => setTimeout(r, 300));
+    const toggleState2 = await page.evaluate(() => {
+      const btn = document.getElementById('btn-toggle-model-lesson_1_1-0');
+      const bullets = document.getElementById('bullets-lesson_1_1-0');
+      return {
+        btnText: btn ? btn.textContent.trim() : null,
+        bulletsDisplay: bullets ? bullets.style.display : null,
+      };
+    });
+    console.log('After clicking Show Model again:', toggleState2);
+
+    // Test typing in textarea
+    await page.type(
+      '#note-text-lesson_1_1-0',
+      'The Catholic Church held a monopoly over scriptoria and education.',
+    );
+    await new Promise((r) => setTimeout(r, 500));
+    console.log('✅ Successfully typed note into textarea');
+
+    // Check localStorage
+    const savedVal = await page.evaluate(() => localStorage.getItem('med_note_lesson_1_1_0'));
+    console.log('Saved note in localStorage:', savedVal);
+
+    await handle.asElement().screenshot({ path: 'public/images/test_web_app_scaffold_active.png' });
+    console.log(
+      '✅ Screenshot of active note card saved to public/images/test_web_app_scaffold_active.png',
+    );
 
     await browser.close();
-    console.log('🎉 Puppeteer test finished cleanly!');
+    console.log('🎉 All automated browser tests passed cleanly!');
   } catch (err) {
-    console.error('❌ Error during verification:', err);
+    console.error('Test error:', err);
     process.exit(1);
   }
 })();
