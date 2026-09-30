@@ -716,6 +716,9 @@ function updateSidebarForUnit(unitId, unitData = {}) {
   }
 
   // Standard Curriculum Unit: Configure consolidated tabs
+  const topTree = document.getElementById('sidebar-lessons-tree');
+  const chevron = document.getElementById('nav-lessons-chevron');
+
   if (navLessons) {
     navLessons.style.display = 'flex';
     navLessons.dataset.action = 'switch-view';
@@ -723,7 +726,73 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navLessons.dataset.unit = unitId;
     if (navLessonsLabel)
       navLessonsLabel.textContent = isTrip ? 'Tour Itinerary' : 'Enquiry Lessons';
-    navLessons.onclick = () => switchView('lessons', unitId);
+
+    // Populate Unit Workspace direct lesson tree
+    const lessonsList = unitData.lessons || unitData.subtopics || [];
+    if (topTree && lessonsList.length > 0) {
+      topTree.innerHTML = '';
+      lessonsList.forEach((sub, idx) => {
+        const item = document.createElement('div');
+        item.className = 'sidebar-lesson-item';
+        item.setAttribute('data-lesson-index', idx);
+        const rawTitle = sub.title || `Lesson ${idx + 1}`;
+        item.innerHTML = `
+          <span class="sidebar-lesson-badge">${idx + 1}</span>
+          <span class="sidebar-lesson-title-text" title="${rawTitle.replace(/"/g, '&quot;')}">${rawTitle}</span>
+        `;
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (typeof window.viewLessonDetail === 'function') {
+            window.viewLessonDetail(idx);
+          }
+          if (typeof window.highlightActiveSidebarLesson === 'function') {
+            window.highlightActiveSidebarLesson(idx);
+          }
+          // Mobile drawer auto-close
+          const sidebar = document.getElementById('app-sidebar');
+          const overlay = document.querySelector('.sidebar-overlay');
+          if (window.innerWidth <= 768 && sidebar && overlay) {
+            sidebar.classList.remove('mobile-open');
+            overlay.classList.remove('active');
+          }
+        });
+        topTree.appendChild(item);
+      });
+
+      // Show top tree by default when inside unit lessons workspace
+      topTree.style.display = 'flex';
+      if (chevron) {
+        chevron.style.display = 'inline-block';
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    } else if (topTree) {
+      topTree.style.display = 'none';
+      topTree.innerHTML = '';
+      if (chevron) chevron.style.display = 'none';
+    }
+
+    // Toggle accordion interaction
+    const toggleTree = (e) => {
+      if (e) e.stopPropagation();
+      if (!topTree || topTree.children.length === 0) return;
+      const isHidden = topTree.style.display === 'none';
+      topTree.style.display = isHidden ? 'flex' : 'none';
+      if (chevron) chevron.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    };
+
+    if (chevron) {
+      chevron.onclick = toggleTree;
+    }
+
+    navLessons.onclick = (e) => {
+      const isCurrentlyLessons =
+        state && state.currentView === 'lessons' && state.selectedUnitId === unitId;
+      if (isCurrentlyLessons && topTree && topTree.children.length > 0) {
+        toggleTree(e);
+      } else {
+        switchView('lessons', unitId);
+      }
+    };
   }
 
   const hasMasteryRecall = !isTrip;

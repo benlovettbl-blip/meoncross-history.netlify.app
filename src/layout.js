@@ -479,10 +479,13 @@ window.highlightActiveSidebarUnit = function (unitId, activeLessonIndex = null) 
 };
 
 window.highlightActiveSidebarLesson = function (lessonIndex) {
-  document.querySelectorAll('#sidebar-unit-links .sidebar-lesson-item').forEach((el) => {
+  document.querySelectorAll('.sidebar-lesson-item').forEach((el) => {
     const idx = parseInt(el.getAttribute('data-lesson-index'), 10);
     if (idx === lessonIndex) {
       el.classList.add('active');
+      try {
+        el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      } catch (e) {}
     } else {
       el.classList.remove('active');
     }
