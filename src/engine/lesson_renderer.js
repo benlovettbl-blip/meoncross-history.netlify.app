@@ -1312,6 +1312,300 @@ if (typeof window !== 'undefined') {
   };
 }
 
+// ============================================================================
+// BESPOKE LESSON NOTE-TAKING SCAFFOLD (Digital Web App Active Reading Standard)
+// ============================================================================
+function renderLessonNoteScaffold(lesson, unitId) {
+  if (!lesson || !lesson.note_scaffold || !Array.isArray(lesson.note_scaffold.blocks)) {
+    return '';
+  }
+
+  const scaffold = lesson.note_scaffold;
+  const blocks = scaffold.blocks;
+  const lessonId = lesson.id || 'lesson';
+
+  let blocksHtml = blocks
+    .map((b, idx) => {
+      const blockNum = b.num || idx + 1;
+      const blockBadge = b.badge || 'ENQUIRY';
+      const blockTitle = b.title || `Enquiry ${blockNum}`;
+      const blockPrompt = b.prompt || '';
+      const modelNotes = Array.isArray(b.model_notes) ? b.model_notes : [];
+
+      return `
+      <div class="note-scaffold-card" data-block="${blockNum}" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-width: 0; box-sizing: border-box;">
+        <div>
+          <!-- Header -->
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 6px;">
+            <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">ENQUIRY ${blockNum}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 800; color: #0284c7; background: #e0f2fe; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.4px;">${blockBadge}</span>
+          </div>
+
+          <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0; line-height: 1.3; min-height: 2.6em;">
+            ${blockTitle}
+          </h4>
+
+          <!-- Prompt Box -->
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 0 4px 4px 0; margin-bottom: 10px;">
+            <div style="font-size: 0.65rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
+              <i class="fa-solid fa-pen" style="margin-right: 4px;"></i> Active Note Prompt
+            </div>
+            <div style="font-size: 0.82rem; color: #1e293b; line-height: 1.35; font-weight: 600;">
+              ${blockPrompt}
+            </div>
+          </div>
+
+          <!-- Pupil Interactive Textarea -->
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+              <label for="note-text-${lessonId}-${idx}" style="font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">
+                ✍️ My Lesson Notes (Auto-Saved)
+              </label>
+              <span id="note-card-saved-${lessonId}-${idx}" style="font-size: 0.68rem; font-weight: 700; color: #10b981; opacity: 0; transition: opacity 0.2s ease;">✓ Saved</span>
+            </div>
+            <textarea class="note-scaffold-textarea" id="note-text-${lessonId}-${idx}" rows="4" placeholder="Type your summary notes here as you read..." oninput="window.saveNoteScaffoldInput('${lessonId}', ${idx}, this.value);" style="width: 100%; box-sizing: border-box; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; font-family: 'Inter', sans-serif; font-size: 0.82rem; line-height: 1.4; color: #0f172a; resize: vertical; min-height: 85px; background: #ffffff; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='#0284c7';" onblur="this.style.borderColor='#cbd5e1';"></textarea>
+          </div>
+
+          <!-- Model Exemplar Notes Box -->
+          <div class="note-model-drawer" id="note-model-${lessonId}-${idx}" style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 6px; padding: 10px 12px; margin-top: 6px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 0.68rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">
+                <i class="fa-solid fa-award" style="color: #16a34a; margin-right: 4px;"></i> Core Historical Evidence
+              </span>
+              <button type="button" class="btn-reveal-model" id="btn-toggle-model-${lessonId}-${idx}" onclick="window.toggleSingleNoteModel('${lessonId}', ${idx});" style="font-size: 0.68rem; font-weight: 700; color: #15803d; background: #dcfce7; border: 1px solid #86efac; border-radius: 3px; padding: 1px 6px; cursor: pointer;">
+                Hide Model
+              </button>
+            </div>
+            <ul class="note-model-bullets" id="bullets-${lessonId}-${idx}" style="margin: 0; padding-left: 18px; font-size: 0.78rem; color: #14532d; line-height: 1.45;">
+              ${modelNotes.map((m) => `<li style="margin-bottom: 4px;">${m}</li>`).join('')}
+            </ul>
+            <div class="note-quiz-mask" id="mask-${lessonId}-${idx}" style="display: none; padding: 10px 6px; text-align: center;">
+              <button type="button" onclick="window.revealSingleNoteQuizMask('${lessonId}', ${idx});" style="padding: 5px 10px; font-size: 0.74rem; font-weight: 700; background: #16a34a; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid fa-eye"></i> Click to Reveal Model Evidence
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    })
+    .join('');
+
+  return `
+    <details id="lesson-note-scaffold" class="timeline-anchor-details lesson-note-scaffold-details" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;" open>
+      <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;">
+        <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a;">
+          <i class="fa-solid fa-pen-to-square" style="color: #0284c7;"></i> Active Lesson Note Scaffold &bull; 3 Core Enquiries
+        </span>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
+          <button type="button" id="btn-note-scaffold-quiz-mode" onclick="window.toggleNoteScaffoldQuizMode('${lessonId}');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
+            <i class="fa-solid fa-graduation-cap"></i> <span id="note-scaffold-quiz-label">Self-Quiz Mode</span>
+          </button>
+          <button type="button" onclick="window.copyNoteScaffoldToClipboard('${lessonId}');" id="btn-copy-notes-${lessonId}" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Copy your notes and model notes to clipboard">
+            <i class="fa-solid fa-copy"></i> <span id="copy-notes-label-${lessonId}">Copy Notes</span>
+          </button>
+          <button type="button" onclick="window.printNoteScaffoldSheet('${lessonId}');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Print clean 1-page A4 note-taking sheet">
+            <i class="fa-solid fa-print"></i> Print A4 Sheet
+          </button>
+          <span id="note-scaffold-save-indicator-${lessonId}" style="font-size: 0.72rem; font-weight: 700; color: #10b981; opacity: 0; transition: opacity 0.3s ease;">✓ Auto-Saved</span>
+        </div>
+      </summary>
+
+      <!-- Active Instructions Sub-Bar -->
+      <div style="padding: 10px 18px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155; line-height: 1.45;">
+        <strong style="color: #0f172a;"><i class="fa-solid fa-circle-info" style="color: #0284c7; margin-right: 5px;"></i> Active Reading Instructions:</strong> ${scaffold.instruction}
+      </div>
+
+      <!-- 3-Block Grid -->
+      <div class="note-scaffold-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; padding: 16px; background: #f8fafc;">
+        ${blocksHtml}
+      </div>
+    </details>
+  `;
+}
+
+if (typeof window !== 'undefined') {
+  window.saveNoteScaffoldInput = function (lessonId, blockIdx, val) {
+    try {
+      localStorage.setItem(`med_note_${lessonId}_${blockIdx}`, val);
+      const cardSaved = document.getElementById(`note-card-saved-${lessonId}-${blockIdx}`);
+      const overallSaved = document.getElementById(`note-scaffold-save-indicator-${lessonId}`);
+      if (cardSaved) {
+        cardSaved.style.opacity = '1';
+        clearTimeout(window[`cardSaveTimer_${lessonId}_${blockIdx}`]);
+        window[`cardSaveTimer_${lessonId}_${blockIdx}`] = setTimeout(() => {
+          cardSaved.style.opacity = '0';
+        }, 1200);
+      }
+      if (overallSaved) {
+        overallSaved.style.opacity = '1';
+        clearTimeout(window[`saveTimer_${lessonId}`]);
+        window[`saveTimer_${lessonId}`] = setTimeout(() => {
+          overallSaved.style.opacity = '0';
+        }, 1500);
+      }
+    } catch (e) {
+      console.error('Failed to save note to localStorage:', e);
+    }
+  };
+
+  window.toggleSingleNoteModel = function (lessonId, blockIdx) {
+    const bullets = document.getElementById(`bullets-${lessonId}-${blockIdx}`);
+    const btn = document.getElementById(`btn-toggle-model-${lessonId}-${blockIdx}`);
+    if (!bullets || !btn) return;
+    if (bullets.style.display === 'none') {
+      bullets.style.display = 'block';
+      btn.textContent = 'Hide Model';
+    } else {
+      bullets.style.display = 'none';
+      btn.textContent = 'Show Model';
+    }
+  };
+
+  window.toggleNoteScaffoldQuizMode = function (lessonId) {
+    window.noteScaffoldQuizActive = !window.noteScaffoldQuizActive;
+    const label = document.getElementById('note-scaffold-quiz-label');
+    const btn = document.getElementById('btn-note-scaffold-quiz-mode');
+    const cards = document.querySelectorAll('#lesson-note-scaffold .note-scaffold-card');
+
+    if (window.noteScaffoldQuizActive) {
+      if (label) label.textContent = 'Exit Quiz Mode';
+      if (btn) {
+        btn.style.background = '#fef08a';
+        btn.style.borderColor = '#ca8a04';
+        btn.style.color = '#713f12';
+      }
+      cards.forEach((card, idx) => {
+        const bullets = document.getElementById(`bullets-${lessonId}-${idx}`);
+        const mask = document.getElementById(`mask-${lessonId}-${idx}`);
+        const toggleBtn = document.getElementById(`btn-toggle-model-${lessonId}-${idx}`);
+        if (bullets) bullets.style.display = 'none';
+        if (mask) mask.style.display = 'block';
+        if (toggleBtn) toggleBtn.style.display = 'none';
+      });
+    } else {
+      if (label) label.textContent = 'Self-Quiz Mode';
+      if (btn) {
+        btn.style.background = '#fefce8';
+        btn.style.borderColor = '#fde047';
+        btn.style.color = '#854d0e';
+      }
+      cards.forEach((card, idx) => {
+        const bullets = document.getElementById(`bullets-${lessonId}-${idx}`);
+        const mask = document.getElementById(`mask-${lessonId}-${idx}`);
+        const toggleBtn = document.getElementById(`btn-toggle-model-${lessonId}-${idx}`);
+        if (bullets) bullets.style.display = 'block';
+        if (mask) mask.style.display = 'none';
+        if (toggleBtn) {
+          toggleBtn.style.display = 'inline-block';
+          toggleBtn.textContent = 'Hide Model';
+        }
+      });
+    }
+  };
+
+  window.revealSingleNoteQuizMask = function (lessonId, blockIdx) {
+    const bullets = document.getElementById(`bullets-${lessonId}-${blockIdx}`);
+    const mask = document.getElementById(`mask-${lessonId}-${blockIdx}`);
+    if (bullets) bullets.style.display = 'block';
+    if (mask) mask.style.display = 'none';
+  };
+
+  window.copyNoteScaffoldToClipboard = function (lessonId) {
+    const lesson = window.currentActiveLesson;
+    if (!lesson || !lesson.note_scaffold) return;
+    const blocks = lesson.note_scaffold.blocks || [];
+    let text = `=== ${lesson.title || 'Lesson Notes'} ===\n\n`;
+    blocks.forEach((b, idx) => {
+      const userNote = localStorage.getItem(`med_note_${lessonId}_${idx}`) || '(No notes entered)';
+      text += `ENQUIRY ${b.num || idx + 1}: ${b.title} [${b.badge}]\n`;
+      text += `Prompt: ${b.prompt}\n`;
+      text += `My Notes:\n${userNote}\n\n`;
+      text += `Core Model Evidence:\n`;
+      (b.model_notes || []).forEach((m) => {
+        text += `• ${m}\n`;
+      });
+      text += `\n----------------------------------------\n\n`;
+    });
+
+    navigator.clipboard.writeText(text).then(() => {
+      const btnLabel = document.getElementById(`copy-notes-label-${lessonId}`);
+      if (btnLabel) {
+        const original = btnLabel.textContent;
+        btnLabel.textContent = '✓ Copied!';
+        setTimeout(() => {
+          btnLabel.textContent = original;
+        }, 2000);
+      }
+    });
+  };
+
+  window.printNoteScaffoldSheet = function (lessonId) {
+    const lesson = window.currentActiveLesson;
+    if (!lesson || !lesson.note_scaffold) return;
+    const scaffold = lesson.note_scaffold;
+    const blocks = scaffold.blocks || [];
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+
+    let printHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>${lesson.title} - Active Note Scaffold</title>
+        <style>
+          @page { size: A4 portrait; margin: 12mm 15mm; }
+          body { font-family: 'Times New Roman', serif; color: #000; margin: 0; padding: 0; }
+          h1 { font-size: 13.5pt; margin: 0 0 4pt 0; text-align: center; }
+          .subhead { font-size: 8.5pt; text-align: center; margin-bottom: 10pt; text-transform: uppercase; letter-spacing: 0.5px; }
+          .inst { font-size: 9pt; font-style: italic; margin-bottom: 10pt; border: 1px solid #000; padding: 6pt; }
+          .block { border: 1.2px solid #000; margin-bottom: 10pt; padding: 8pt; page-break-inside: avoid; }
+          .block-title { font-weight: bold; font-size: 10pt; margin-bottom: 3pt; display: flex; justify-content: space-between; }
+          .prompt { font-size: 8.8pt; font-weight: bold; margin-bottom: 6pt; }
+          .lines { display: flex; flex-direction: column; gap: 16pt; margin-top: 14pt; }
+          .line { border-bottom: 1px solid #000; height: 1px; }
+          .user-note { font-family: 'Courier New', monospace; font-size: 8.8pt; white-space: pre-wrap; margin-bottom: 4pt; }
+        </style>
+      </head>
+      <body>
+        <h1>${lesson.title}</h1>
+        <div class="subhead">The History Department &bull; Active Reading & Note-Taking Sheet</div>
+        <div class="inst"><strong>Instructions:</strong> ${scaffold.instruction}</div>
+    `;
+
+    blocks.forEach((b, idx) => {
+      const userNote = localStorage.getItem(`med_note_${lessonId}_${idx}`) || '';
+      printHtml += `
+        <div class="block">
+          <div class="block-title">
+            <span>ENQUIRY ${b.num || idx + 1}: ${b.title}</span>
+            <span>[${b.badge}]</span>
+          </div>
+          <div class="prompt">Prompt: ${b.prompt}</div>
+          ${
+            userNote
+              ? `<div class="user-note"><strong>Student Notes:</strong>\n${userNote}</div>`
+              : `<div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>`
+          }
+        </div>
+      `;
+    });
+
+    printHtml += `
+      </body>
+      </html>
+    `;
+
+    printWindow.document.write(printHtml);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => {
+      printWindow.print();
+    }, 250);
+  };
+}
+
 function renderLessonVideos(videos, lesson, unitId) {
   if (!videos || videos.length === 0) return '';
   const formatBold = window.formatBold || ((s) => s);
@@ -2346,6 +2640,11 @@ export function renderLesson(lesson) {
               ${
                 lesson.causal_domino_spine
                   ? `<button class="btn btn-causal-spine-jump" onclick="document.getElementById('${isCme ? 'lesson-chronology-spine' : 'causal-domino-scaffold'}')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Spine"><i class="fa-solid ${isCme ? 'fa-clock-rotate-left' : 'fa-diagram-project'}" style="color: #ca8a04;"></i> ${isCme ? 'Chronology Spine' : 'Causal Domino Scaffold'}</button>`
+                  : ''
+              }
+              ${
+                lesson.note_scaffold
+                  ? `<button class="btn btn-note-scaffold-jump" onclick="document.getElementById('lesson-note-scaffold')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 6px 12px; font-size: 0.88rem; background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Active Lesson Note Scaffold"><i class="fa-solid fa-pen-to-square" style="color: #16a34a;"></i> Note Scaffold</button>`
                   : ''
               }
             `
@@ -3593,6 +3892,21 @@ export function renderLesson(lesson) {
           </p>
         </div>
       `;
+    }
+
+    if (lesson.note_scaffold) {
+      htmlNarrative += renderLessonNoteScaffold(lesson, unitId);
+      window.postRenderHooks.push(() => {
+        if (lesson.note_scaffold && Array.isArray(lesson.note_scaffold.blocks)) {
+          lesson.note_scaffold.blocks.forEach((_, idx) => {
+            const textarea = document.getElementById(`note-text-${lesson.id}-${idx}`);
+            if (textarea) {
+              const saved = localStorage.getItem(`med_note_${lesson.id}_${idx}`);
+              if (saved) textarea.value = saved;
+            }
+          });
+        }
+      });
     }
 
     if (isCme && (lesson.timeline_anchor || lesson.causal_domino_spine)) {
