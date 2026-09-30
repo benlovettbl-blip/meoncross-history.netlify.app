@@ -902,46 +902,54 @@ function buildModernTwoPageWorkbook(unitData, period) {
   const timelineMilestonesLeft = [
     {
       year: '1901',
-      title: 'Landsteiner Discovers Blood Groups',
-      desc: 'Karl Landsteiner identifies A, B, and O blood groups, transforming blood transfusions from fatal gambles into predictable surgical lifelines.',
+      title: 'Karl Landsteiner: ABO Blood Groups Discovered',
+      kt: 'Key Topic 4.1',
+      desc: 'Landsteiner identifies A, B, and O blood groups, proving agglutination occurs when incompatible blood types mix. This discovery transforms blood transfusions from fatal gambles into safe, predictable surgical lifelines, foundational for modern trauma surgery.',
     },
     {
       year: '1909',
-      title: 'Ehrlich & Hata Discover Salvarsan 606',
-      desc: 'Paul Ehrlich and Sahachiro Hata discover arsphenamine (compound 606), humanity’s first synthetic chemical ‘magic bullet’ curing syphilis.',
+      title: 'Paul Ehrlich & Sahachiro Hata: Salvarsan 606',
+      kt: 'Key Topic 4.1',
+      desc: 'Building on dye research, Ehrlich and Hata systematically test hundreds of arsenic compounds, discovering arsphenamine (compound 606). Humanity’s first synthetic chemical ‘magic bullet’ targets syphilis bacteria without poisoning human tissue.',
     },
     {
       year: '1928',
-      title: 'Alexander Fleming Discovers Penicillin',
-      desc: 'Fleming observes a clear zone of destroyed staphylococci around Penicillium notatum mold at St Mary’s Hospital, Paddington, London.',
+      title: 'Alexander Fleming: Accidental Discovery of Penicillin',
+      kt: 'Key Topic 4.2',
+      desc: 'Returning from holiday, Fleming notices a contaminated staphylococcus culture dish with a halo of destroyed bacteria around Penicillium notatum mould. Fleming publishes in 1929, though unable to purify or extract enough active substance for clinical trials.',
     },
     {
       year: '1932',
-      title: 'Domagk Discovers Prontosil',
-      desc: 'Gerhard Domagk proves the red dye Prontosil cures streptococcal blood poisoning, establishing the sulfonamide class of antibacterial drugs.',
+      title: 'Gerhard Domagk: Prontosil & Sulfonamide Drugs',
+      kt: 'Key Topic 4.1',
+      desc: 'Domagk demonstrates that the red leather dye Prontosil cures streptococcal blood poisoning in mice (and saves his own daughter’s arm). Chemists isolate the active ingredient sulfonamide, launching the world’s first mass-prescribed class of antibacterial wonder drugs.',
     },
   ];
 
   const timelineMilestonesRight = [
     {
-      year: '1944',
-      title: 'Mass Production of Penicillin for D-Day',
-      desc: 'Following Florey and Heatley’s US mission to Peoria, deep-tank fermentation yields 2.3 million doses of penicillin for the Normandy landings.',
+      year: '1941–44',
+      title: 'Florey, Chain & Heatley: Penicillin Mass Production',
+      kt: 'Key Topic 4.2',
+      desc: 'Howard Florey and Ernst Chain purify penicillin at Oxford, successfully treating mice and Albert Alexander (1941). Heatley and Florey travel to Peoria, Illinois, using corn-steep liquor and deep-tank fermentation to produce 2.3 million doses for D-Day casualties.',
     },
     {
       year: '1948',
-      title: 'Aneurin Bevan Launches the NHS',
-      desc: 'On 5 July 1948, the National Health Service opens at Park Hospital, Manchester, providing comprehensive healthcare free at the point of delivery.',
+      title: 'Aneurin Bevan: Foundation of the NHS',
+      kt: 'Key Topic 4.3',
+      desc: 'On 5 July 1948, the National Health Service opens at Park Hospital, Manchester. Championed by Bevan and the 1942 Beveridge Report, it nationalises voluntary and municipal hospitals, providing universal healthcare free at the point of clinical delivery.',
     },
     {
       year: '1953',
-      title: 'Watson & Crick Discover DNA Double Helix',
-      desc: 'Using Rosalind Franklin’s Photograph 51, James Watson and Francis Crick deduce complementary base pairing, unlocking the molecular secret of life.',
+      title: 'Watson, Crick & Franklin: DNA Double Helix Structure',
+      kt: 'Key Topic 4.4',
+      desc: 'Using Rosalind Franklin and Maurice Wilkins’s X-ray crystallography (Photograph 51), Watson and Crick deduce the double-helix structure of DNA at Cambridge, unlocking hereditary genetic code and modern molecular gene therapy.',
     },
     {
-      year: '1971 / 2003',
-      title: 'CT Scanner (1971) & Human Genome (2003)',
-      desc: 'Hounsfield’s EMI CT scanner eliminates exploratory surgery; the Human Genome Project maps all 3 billion chemical base pairs in human DNA.',
+      year: '1971–2003',
+      title: 'CT Scanners (1971) & The Human Genome Project (2003)',
+      kt: 'Key Topic 4.4 &bull; 4.5',
+      desc: 'Godfrey Hounsfield invents the EMI CT scanner, combining computer algorithms with X-rays to image internal organs without surgery. In 2003, the international Human Genome Project maps all 3 billion chemical base pairs in human DNA, founding precision medicine.',
     },
   ];
 
@@ -949,52 +957,40 @@ function buildModernTwoPageWorkbook(unitData, period) {
   html += `
   <div class="page page-container" id="page-2" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <!-- Section Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Living Unit Timeline: Modern Medicine (Part I: 1900–1940)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Framework &bull; Magic Bullets &amp; Early Antibiotics
-        </span>
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+            Living Timeline &bull; Part 1: Magic Bullets, Blood Groups &amp; Early Antibiotics (1900–1940)
+          </h2>
+        </div>
+
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+        </div>
       </div>
 
-      <!-- 4 Chronological Milestones -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
         ${timelineMilestonesLeft
           .map(
             (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Playfair Display', serif; font-size: 10.5pt; font-weight: 900; color: #000000;">${m.year}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #000000;">${m.title}</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                ${m.year} &bull; ${m.title}
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.kt}</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              ${m.desc}
+            </p>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.25; color: #222222;">
-            ${m.desc}
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
         `,
           )
           .join('')}
-      </div>
-
-      <!-- Living Timeline Drawing & Synthesis Canvas -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-top: 1px dashed #000000; padding-top: 4px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Living Timeline Sketchpad &amp; Causal Synthesis (1900–1940)
-          </strong>
-          <span style="font-size: 7pt; font-style: italic; color: #444444;">
-            Sketch Ehrlich’s Salvarsan vial, Domagk’s Prontosil, or Fleming’s contaminated staphylococcus petri dish.
-          </span>
-        </div>
-        <div style="flex: 1; border: 1px solid #cccccc; border-radius: 3px; background: #ffffff; padding: 4px; display: flex; flex-direction: column; justify-content: space-around;">
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-        </div>
       </div>
 
       ${renderFooterStrip(2, 'The 20th century transformed pharmacology from toxic general poisons into targeted magic bullets.')}
@@ -1006,52 +1002,40 @@ function buildModernTwoPageWorkbook(unitData, period) {
   html += `
   <div class="page page-container" id="page-3" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <!-- Section Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Living Unit Timeline: Modern Medicine (Part II: 1940–present)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Framework &bull; Mass Antibiotics, The NHS, DNA &amp; Oncology
-        </span>
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+            Living Timeline &bull; Part 2: Mass Antibiotics, The NHS, DNA &amp; Oncology (1940–present)
+          </h2>
+        </div>
+
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong>Instructions:</strong> Complete the timeline sketches and notes as you master each enquiry lesson.
+        </div>
       </div>
 
-      <!-- 4 Chronological Milestones -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
         ${timelineMilestonesRight
           .map(
             (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Playfair Display', serif; font-size: 10.5pt; font-weight: 900; color: #000000;">${m.year}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #000000;">${m.title}</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                ${m.year} &bull; ${m.title}
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.kt}</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              ${m.desc}
+            </p>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.25; color: #222222;">
-            ${m.desc}
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
         `,
           )
           .join('')}
-      </div>
-
-      <!-- Living Timeline Drawing & Synthesis Canvas -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-top: 1px dashed #000000; padding-top: 4px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Living Timeline Sketchpad &amp; Causal Synthesis (1940–present)
-          </strong>
-          <span style="font-size: 7pt; font-style: italic; color: #444444;">
-            Sketch the 1948 NHS leaflet, Franklin’s Photograph 51, Watson &amp; Crick’s double helix, or Hounsfield’s CT scanner.
-          </span>
-        </div>
-        <div style="flex: 1; border: 1px solid #cccccc; border-radius: 3px; background: #ffffff; padding: 4px; display: flex; flex-direction: column; justify-content: space-around;">
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-        </div>
       </div>
 
       ${renderFooterStrip(3, 'From the birth of the NHS to the sequencing of the human genome, state action and high-tech science transformed health.')}

@@ -9,11 +9,12 @@ def render_page_1():
     <!-- PAGE 1: FRONT COVER & MASTER 32-ROW EXAM TRACKER TABLE        -->
     <!-- ============================================================= -->
     <div class="page">
-        <div>
-            <div class="edexcel-banner">Pearson Edexcel GCSE (9–1)</div>
+        <div style="flex: 1; display: flex; flex-direction: column; margin-bottom: 3px; justify-content: space-between;">
+            <div>
+                <div class="edexcel-banner">Pearson Edexcel GCSE (9–1)</div>
 
-            <!-- Clean Exam Header Box with Time & Marks -->
-            <div class="exam-header-box">
+                <!-- Clean Exam Header Box with Time & Marks -->
+                <div class="exam-header-box" style="margin-bottom: 4px;">
                 <div class="exam-header-left">
                     <div class="exam-date">History · Paper 1: Thematic Study &amp; Historic Environment</div>
                     <div class="exam-time">Time: 1 hour 15 minutes (Full Mock Simulation / Guided Practice) · Total Marks: 52</div>
@@ -25,6 +26,7 @@ def render_page_1():
                     <div class="ref-label">Paper<br>reference</div>
                     <div class="ref-code">1HI0/11</div>
                 </div>
+            </div>
             </div>
 
             <!-- Expanded 32-Row Master Assessment Tracker -->

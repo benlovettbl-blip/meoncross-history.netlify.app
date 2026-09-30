@@ -322,61 +322,63 @@ const COMMON_CSS = `
     border-radius: 2px;
     background: #ffffff;
     padding: 3.5px 5px;
-    flex: 1 1 auto;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 2.5px;
+    margin-bottom: 2px;
   }
   .tracker-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     border-bottom: 1.2px solid #000000;
-    padding-bottom: 1px;
+    padding-bottom: 1.5px;
     margin-bottom: 2px;
   }
   .tracker-title {
-    font-size: 8pt;
+    font-size: 8.5pt;
     font-weight: 800;
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
   }
   .tracker-sub {
-    font-size: 6.6pt;
+    font-size: 6.8pt;
     color: #000000;
     font-style: italic;
   }
   .tracker-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 6.1pt;
-    line-height: 1.1;
+    font-size: 6.8pt;
+    line-height: 1.15;
   }
   .tracker-table th {
     background: #000000;
     color: #ffffff;
     font-weight: 800;
     text-transform: uppercase;
-    padding: 1.6px 3px;
+    padding: 1.5px 3.5px;
     border: 1px solid #000000;
     text-align: left;
-    font-size: 6.1pt;
+    font-size: 6.8pt;
   }
   .tracker-table td {
-    padding: 1px 3px;
+    padding: 1.3px 3.5px;
     border: 1px solid #cbd5e1;
     color: #000000;
+    font-size: 6.8pt;
+    vertical-align: middle;
   }
   .tracker-section-hdr td {
     background: #f1f5f9;
     font-weight: 800;
     color: #000000;
-    font-size: 6.2pt;
+    font-size: 7pt;
     text-transform: uppercase;
     letter-spacing: 0.2px;
-    padding: 1.2px 3px;
+    padding: 1.8px 3.5px;
     border-top: 1.1px solid #000000;
     border-bottom: 1.1px solid #000000;
   }
@@ -389,9 +391,9 @@ const COMMON_CSS = `
     color: #000000;
   }
   .hw-cell {
-    font-size: 5.8pt;
-    font-weight: 600;
-    color: #334155;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: #0f172a;
     white-space: nowrap;
   }
   .q-format-tag {
@@ -770,11 +772,12 @@ function generateMasterHtml() {
     <!-- PAGE 1: FRONT COVER & MASTER 32-ROW EXAM TRACKER TABLE        -->
     <!-- ============================================================= -->
     <div class="page">
-        <div>
-            <div class="edexcel-banner">Pearson Edexcel GCSE (9–1)</div>
+        <div style="flex: 1; display: flex; flex-direction: column; margin-bottom: 3px; justify-content: space-between;">
+            <div>
+                <div class="edexcel-banner">Pearson Edexcel GCSE (9–1)</div>
 
-            <!-- Clean Exam Header Box with Time & Marks -->
-            <div class="exam-header-box">
+                <!-- Clean Exam Header Box with Time & Marks -->
+                <div class="exam-header-box" style="margin-bottom: 4px;">
                 <div class="exam-header-left">
                     <div class="exam-date">History · Paper 1: Thematic Study &amp; Historic Environment</div>
                     <div class="exam-time">Time: 1 hour 15 minutes (Full Mock Simulation / Guided Practice) · Total Marks: 52</div>
@@ -786,6 +789,7 @@ function generateMasterHtml() {
                     <div class="ref-label">Paper<br>reference</div>
                     <div class="ref-code">1HI0/11</div>
                 </div>
+            </div>
             </div>
 
             <!-- Expanded 32-Row Master Assessment Tracker -->

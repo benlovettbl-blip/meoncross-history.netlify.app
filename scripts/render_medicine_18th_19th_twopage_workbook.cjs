@@ -932,99 +932,95 @@ function build18th19thTwoPageWorkbook(unitData, period) {
   const timelineMilestonesLeft = [
     {
       year: '1796',
-      title: 'Jenner Develops Smallpox Vaccine',
-      desc: 'Edward Jenner inoculates James Phipps with cowpox pus from Sarah Nelmes, successfully protecting him from smallpox and founding immunology.',
+      title: 'Edward Jenner: Smallpox Vaccination & Immunology',
+      kt: 'Key Topic 3.1',
+      desc: 'Jenner inoculates James Phipps with cowpox pus from Sarah Nelmes, proving cowpox confers immunity against smallpox. Publishes findings in 1798. Despite initial Royal Society scepticism, vaccination eradicates inoculator infection risks and founds immunology.',
     },
     {
       year: '1847',
-      title: 'Simpson Discovers Chloroform',
-      desc: 'James Young Simpson discovers the potent anaesthetic properties of chloroform in Edinburgh, eliminating operative pain shock.',
+      title: 'James Young Simpson: Chloroform & Anesthesia',
+      kt: 'Key Topic 3.3',
+      desc: 'Simpson discovers the potent anaesthetic properties of chloroform in Edinburgh, ending agony during surgery. Queen Victoria’s use of chloroform during childbirth (1853) popularises it, enabling complex operations despite the initial ‘Black Period’ of surgery.',
     },
     {
       year: '1848',
-      title: 'First Public Health Act Passed',
-      desc: 'Prompted by Edwin Chadwick’s 1842 report on sanitary conditions, Parliament establishes a General Board of Health (permissive and optional).',
+      title: 'First Public Health Act & The General Board of Health',
+      kt: 'Key Topic 3.5',
+      desc: 'Spurred by Chadwick’s 1842 report and epidemic cholera, Parliament passes the permissive 1848 Act. Towns can create local boards of health to supply clean water and drainage, though lack of compulsion leaves most cities vulnerable to filth and contagion.',
     },
     {
       year: '1854',
-      title: 'John Snow & Broad Street Pump',
-      desc: 'Dr John Snow uses his Soho cholera spot map to identify contaminated water from the Broad Street pump, disproving the miasma theory.',
+      title: 'John Snow: Broad Street Pump & Waterborne Cholera',
+      kt: 'Key Topic 3.5',
+      desc: 'During the Soho epidemic, Snow compiles his famous spot map linking 500+ fatal cholera cases to the Broad Street pump. Removing the handle immediately halts the outbreak, mathematically disproving the miasma theory seven years before Pasteur’s Germ Theory.',
     },
   ];
 
   const timelineMilestonesRight = [
     {
       year: '1854–56',
-      title: 'Nightingale at Scutari (Crimea)',
-      desc: 'Florence Nightingale enforces hospital sanitation, clean water, and fresh bedding, reducing British soldier mortality from 40% to 2%.',
+      title: 'Florence Nightingale: Hospital Sanitation at Scutari',
+      kt: 'Key Topic 3.2',
+      desc: 'During the Crimean War, Nightingale enforces rigorous cleanliness, ventilation, and fresh nutrition at Scutari hospital, slashing soldier death rates from 40% to 2%. Returns to Britain to establish the Nightingale Training School and author Notes on Nursing (1859).',
     },
     {
       year: '1861',
-      title: 'Pasteur Publishes Germ Theory',
-      desc: 'Louis Pasteur disproves spontaneous generation using swan-neck flasks, demonstrating that airborne microorganisms cause decay and disease.',
+      title: 'Louis Pasteur: Germ Theory & Swan-Neck Flask Experiments',
+      kt: 'Key Topic 3.1',
+      desc: 'Commissioned by Lille brewers, Pasteur disproves spontaneous generation using swan-neck flasks, demonstrating that airborne microbes cause fermentation and decay. In 1861, he publishes Germ Theory, proving microscopic germs cause specific diseases in living organisms.',
     },
     {
-      year: '1865',
-      title: 'Lister Pioneers Antiseptic Surgery',
-      desc: 'Inspired by Pasteur’s Germ Theory, Joseph Lister uses carbolic acid spray during operations, reducing amputee mortality from 46% to 15%.',
+      year: '1865–67',
+      title: 'Joseph Lister: Carbolic Acid Spray & Antiseptic Surgery',
+      kt: 'Key Topic 3.3',
+      desc: 'Applying Pasteur’s Germ Theory to wound sepsis, Lister uses carbolic acid sprays, dressings, and hand-washing during surgery at Glasgow Infirmary. His antiseptic techniques reduce amputee mortality from 46% to 15%, paving the way for modern aseptic operating theatres.',
     },
     {
       year: '1875',
-      title: 'The Second Public Health Act',
-      desc: 'Disraeli’s government legally compels all municipal councils to provide clean water, sewers, and refuse collection, ending laissez-faire.',
+      title: 'The Second Public Health Act: End of Laissez-Faire',
+      kt: 'Key Topic 3.5',
+      desc: 'Disraeli’s government ends laissez-faire by making public health compulsory. Municipal councils are legally required to provide clean piped water, subterranean sewer drainage, street lighting, and medical officers of health, transforming urban life expectancy.',
     },
   ];
 
-  // PAGE 2 (Timeline Verso)
+  // PAGE 2 (Timeline Verso: 1700–1854)
   html += `
   <div class="page page-container" id="page-2" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <!-- Section Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Living Unit Timeline: 18th &amp; 19th Century Medicine (Part I: 1700–1854)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Framework &bull; Prevention &amp; Early Reform
-        </span>
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+            Living Timeline &bull; Part 1: Vaccines, Anaesthetics &amp; Early Sanitation (1700–1854)
+          </h2>
+        </div>
+
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+        </div>
       </div>
 
-      <!-- 4 Chronological Milestones -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
         ${timelineMilestonesLeft
           .map(
             (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Playfair Display', serif; font-size: 10.5pt; font-weight: 900; color: #000000;">${m.year}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #000000;">${m.title}</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                ${m.year} &bull; ${m.title}
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.kt}</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              ${m.desc}
+            </p>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.25; color: #222222;">
-            ${m.desc}
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
         `,
           )
           .join('')}
-      </div>
-
-      <!-- Living Timeline Drawing & Synthesis Canvas -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-top: 1px dashed #000000; padding-top: 4px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Living Timeline Sketchpad &amp; Causal Synthesis (1700–1854)
-          </strong>
-          <span style="font-size: 7pt; font-style: italic; color: #444444;">
-            Sketch Jenner’s cowpox experiment, Simpson’s chloroform trials, or Snow’s Broad Street pump map.
-          </span>
-        </div>
-        <div style="flex: 1; border: 1px solid #cccccc; border-radius: 3px; background: #ffffff; padding: 4px; display: flex; flex-direction: column; justify-content: space-around;">
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-        </div>
       </div>
 
       ${renderFooterStrip(2, 'The 18th century relied on empirical observation; the 19th century unlocked the laboratory.')}
@@ -1032,56 +1028,44 @@ function build18th19thTwoPageWorkbook(unitData, period) {
   </div>
 `;
 
-  // PAGE 3 (Timeline Recto)
+  // PAGE 3 (Timeline Recto: 1854–1900)
   html += `
   <div class="page page-container" id="page-3" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <!-- Section Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Living Unit Timeline: 18th &amp; 19th Century Medicine (Part II: 1854–1900)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Framework &bull; Germ Theory, Antiseptics &amp; Sanitation
-        </span>
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+            Living Timeline &bull; Part 2: Germ Theory, Antiseptics &amp; Compulsory Public Health (1854–1900)
+          </h2>
+        </div>
+
+        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong>Instructions:</strong> Complete the timeline sketches and notes as you master each enquiry lesson.
+        </div>
       </div>
 
-      <!-- 4 Chronological Milestones -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Calibrated for 0px overflow) -->
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
         ${timelineMilestonesRight
           .map(
             (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Playfair Display', serif; font-size: 10.5pt; font-weight: 900; color: #000000;">${m.year}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; text-transform: uppercase; color: #000000;">${m.title}</span>
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                ${m.year} &bull; ${m.title}
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.kt}</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              ${m.desc}
+            </p>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.25; color: #222222;">
-            ${m.desc}
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
         `,
           )
           .join('')}
-      </div>
-
-      <!-- Living Timeline Drawing & Synthesis Canvas -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-top: 1px dashed #000000; padding-top: 4px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Living Timeline Sketchpad &amp; Causal Synthesis (1854–1900)
-          </strong>
-          <span style="font-size: 7pt; font-style: italic; color: #444444;">
-            Connect Pasteur’s swan-neck flask &rarr; Lister’s carbolic spray &rarr; Bazalgette’s brick sewer tunnels.
-          </span>
-        </div>
-        <div style="flex: 1; border: 1px solid #cccccc; border-radius: 3px; background: #ffffff; padding: 4px; display: flex; flex-direction: column; justify-content: space-around;">
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-          <div class="task-line" style="border-bottom-color: #e5e7eb;"></div>
-        </div>
       </div>
 
       ${renderFooterStrip(3, 'Pasteur opened the door; Lister, Koch, and Bazalgette marched through it.')}
