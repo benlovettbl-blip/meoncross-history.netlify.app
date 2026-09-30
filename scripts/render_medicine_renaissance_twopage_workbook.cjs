@@ -149,6 +149,10 @@ const renaissanceConfigs = [
       'Printing meant medical books spread across Europe in weeks instead of centuries. Unfortunately, bad medical advice spread just as quickly.',
     rightPageQuip:
       'The Royal Society motto Nullius in Verba translates to ‘Take nobody’s word for it’—the exact opposite of your teacher during exam revision.',
+    linedLeftQuip:
+      'Nullius in Verba: Do not simply state an assertion — support your causal explanation with precise historical evidence.',
+    linedRightQuip:
+      'Structure each paragraph: Point, Evidence, Explanation, and an explicit analytical link back to the question stem.',
   },
   {
     lessonIndex: 6, // mapped to index 6 in units/edexcel_medicine/data.js (lesson_2_2)
@@ -245,6 +249,10 @@ const renaissanceConfigs = [
       'Sydenham told young doctors: ‘Go to the bedside, there alone can you learn disease.’ Put down the Greek textbook, look at the patient!',
     rightPageQuip:
       'Prescribing cool bedrooms for smallpox instead of boiling patients alive in sealed rooms made Sydenham a genius in 1676.',
+    linedLeftQuip:
+      'Take a lesson from Sydenham: carefully observe the precise wording of the question before prescribing your argument.',
+    linedRightQuip:
+      'Always evaluate significance — explain why Sydenham’s bedside observation changed clinical practice, despite lack of new cures.',
   },
   {
     lessonIndex: 7, // mapped to index 7 in units/edexcel_medicine/data.js (lesson_2_3)
@@ -341,6 +349,10 @@ const renaissanceConfigs = [
       'Vesalius proved Galen dissected apes instead of humans. Unsurprisingly, monkey ribs and human ribs do not match up.',
     rightPageQuip:
       'De Fabrica gave surgeons breathtaking anatomical maps, but without antiseptics, knowing where the artery is didn’t stop surgical shock.',
+    linedLeftQuip:
+      'Vesalius personally dissected human bodies to expose 300 Galenic errors. You just need to dissect the exam question.',
+    linedRightQuip:
+      'Factual precision counts: naming De Fabrica, 1543, and the human jawbone proves mastery to the examiner.',
   },
   {
     lessonIndex: 8, // mapped to index 8 in units/edexcel_medicine/data.js (lesson_2_4)
@@ -437,6 +449,10 @@ const renaissanceConfigs = [
       'Harvey calculated the heart pumped 540 pints of blood per hour. Unless patients drank a swimming pool of blood daily, Galen was undeniably wrong.',
     rightPageQuip:
       'Doctors called Harvey a ‘circulator’ (slang for a traveling fraud). It turns out accepting the heart is a mechanical pump took 50 years to catch on.',
+    linedLeftQuip:
+      'Harvey calculated 540 pints of blood pumped per hour to prove circulation. Use quantitative evidence where you can!',
+    linedRightQuip:
+      'A top-band conclusion does not sit on the fence — evaluate which causal factor carried the decisive historical weight.',
   },
   {
     lessonIndex: 9, // mapped to index 9 in units/edexcel_medicine/data.js (lesson_2_5)
@@ -533,6 +549,10 @@ const renaissanceConfigs = [
       'In 1665, Eton schoolboys were flogged if they refused to smoke tobacco every morning to ward off plague miasma. Good luck explaining that to your parents.',
     rightPageQuip:
       'Painting a red cross and writing ‘Lord have mercy upon us’ on a door kept healthy neighbours away, but did shockingly little to stop the infected fleas.',
+    linedLeftQuip:
+      'Continuity vs change: explain why 1665 treatments mirrored 1348 despite two centuries of scientific progress.',
+    linedRightQuip:
+      'Sustained analytical judgement across all three paragraphs is what distinguishes a Grade 7 from a Grade 9.',
   },
 ];
 
@@ -541,7 +561,7 @@ const renaissanceConfigs = [
 // Even pages (verso/left): Page number on left, quip on right.
 // Odd pages (recto/right): Quip on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 14) {
+function renderFooterStrip(pageNum, quipText, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -648,6 +668,37 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
       flex-direction: column;
       gap: 0;
       margin: 1px 0;
+    }
+    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 22mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
     }
     /* Clean Footer Strip */
     .page-footer-strip {
@@ -1053,12 +1104,13 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGES 4–13: 5 DEDICATED TWO-PAGE SPREADS (LESSONS 2.1 TO 2.5)
-  // Matching 100% the Master Medieval Template
+  // PAGES 4–23: 5 DEDICATED 4-PAGE MODULES (SPREAD 1: LESSON, SPREAD 2: LINED EXTENDED WRITING)
   // ====================================================================
   renaissanceConfigs.forEach((cfg) => {
-    const leftPageNum = cfg.lessonNum * 2 + 2;
-    const rightPageNum = cfg.lessonNum * 2 + 3;
+    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
+    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5;
+    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
+    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
 
     // ------------------------------------------------------------------
     // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
@@ -1237,7 +1289,7 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
 
       <!-- Ruled Task Lines for Extended Writing -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write 1–2 detailed analytical paragraphs below (continue in your exercise book for full timed paper):
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
       </div>
       <div class="ruled-lines-block" style="margin-bottom: 3px;">
         <div class="task-line" style="height: 8.55mm;"></div>
@@ -1279,14 +1331,96 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
     </div>
   </div>
 `;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED WRITING & DISCIPLINARY NOTES
+    // ------------------------------------------------------------------
+    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedLeftPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsLeft}
+      </div>
+
+      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
+    </div>
+  </div>
+`;
+
+    // ------------------------------------------------------------------
+    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
+    // ------------------------------------------------------------------
+    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      const linePrompt = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+    }).join('');
+
+    html += `
+  <div class="page page-container" id="page-${linedRightPageNum}">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Practice &bull; Extended Exam Response
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${linedRowsRight}
+      </div>
+
+      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
+    </div>
+  </div>
+`;
   });
 
   // ====================================================================
-  // PAGE 14: OUTSIDE BACK COVER (Target Grade, Wide Ledger, 5 QR Codes)
+  // PAGE 24: OUTSIDE BACK COVER (Target Grade, Wide Ledger, 5 QR Codes)
   // Matching 100% the Master Medieval Template
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-14" style="padding: 4mm 6mm;">
+  <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Back Cover Header Strip (No Redundant 'OUTSIDE BACK COVER' text) -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -1456,7 +1590,7 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(14, 'Knowledge is power, but retrieval practice is how you actually remember it in the exam hall.')}
+      ${renderFooterStrip(24, 'Knowledge is power, but retrieval practice is how you actually remember it in the exam hall.', 24)}
     </div>
   </div>
 `;
