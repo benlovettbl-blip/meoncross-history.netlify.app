@@ -2294,7 +2294,7 @@ img::after {
   hyphens: none !important; /* explicitly prevent aggressive hyphenation on long words */
   word-wrap: normal !important;
   overflow-wrap: normal !important;
-  flex: 0 1 auto; /* Prevents 200px vertical gap in column mode */ /* allow title to grow and shrink, with a minimum basis before wrapping */
+  flex: 0 1 auto; /* Prevents flex-basis from creating 200px vertical gap when wrapped or in column mode */
   min-width: 0; /* prevent flex blowout */
 }
 
@@ -5957,5 +5957,157 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
 
   .interactive-hub-subtitle {
     font-size: 0.92rem !important;
+  }
+}
+
+/* --- CME Integrated Chronology & Causal Spine --- */
+.cme-chronology-spine {
+  transition: all 0.2s ease;
+}
+.cme-chronology-spine-grid {
+  display: grid;
+  gap: 14px;
+  background: #ffffff;
+  position: relative;
+}
+.cme-spine-card {
+  position: relative;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+.cme-spine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  border-color: #94a3b8 !important;
+}
+.cme-causal-drawer summary {
+  list-style: none;
+}
+.cme-causal-drawer summary::-webkit-details-marker {
+  display: none;
+}
+.cme-causal-drawer[open] .drawer-arrow {
+  transform: rotate(180deg);
+}
+.drawer-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* Domino Bridges (Desktop Flow Connectors) */
+.cme-domino-bridge {
+  display: none;
+}
+@media (min-width: 993px) {
+  .cme-domino-bridge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -17px;
+    top: 32px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid #0284c7;
+    color: #0284c7;
+    font-size: 0.62rem;
+    font-weight: 800;
+    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.2);
+    z-index: 10;
+    cursor: default;
+    transition: all 0.2s ease;
+  }
+  .cme-spine-card:hover .cme-domino-bridge {
+    background: #0284c7;
+    color: #ffffff;
+    transform: scale(1.18);
+    box-shadow: 0 3px 8px rgba(2, 132, 199, 0.35);
+  }
+}
+
+/* Self-Quiz / Active Recall State */
+.cme-quiz-target {
+  transition: all 0.2s ease;
+}
+.cme-quiz-mask {
+  display: none !important;
+}
+.cme-quiz-content {
+  display: inline !important;
+}
+
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target {
+  background: #fefce8;
+  border: 1.5px dashed #ca8a04;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: block !important;
+  margin-top: 3px;
+  user-select: none;
+}
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target:not(.revealed):hover {
+  background: #fef08a !important;
+  border-color: #854d0e !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(202, 138, 4, 0.2);
+}
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target:not(.revealed) .cme-quiz-mask {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  color: #854d0e;
+  font-weight: 700;
+  font-size: 0.72rem;
+  pointer-events: none;
+}
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target:not(.revealed) .cme-quiz-content {
+  display: none !important;
+}
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target.revealed {
+  background: #f0fdf4 !important;
+  border: 1.5px solid #86efac !important;
+  cursor: pointer;
+  display: block !important;
+  padding: 6px 10px;
+}
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target.revealed .cme-quiz-mask {
+  display: none !important;
+}
+.cme-chronology-spine.cme-quiz-active .cme-quiz-target.revealed .cme-quiz-content {
+  display: block !important;
+  color: #14532d !important;
+  font-size: 0.73rem !important;
+  line-height: 1.4 !important;
+  animation: cmeFadeIn 0.25s ease;
+}
+
+@keyframes cmeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .cme-chronology-spine-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    padding-bottom: 12px !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cme-spine-card {
+    min-width: 220px !important;
+    flex: 0 0 220px !important;
+    scroll-snap-align: start;
   }
 }

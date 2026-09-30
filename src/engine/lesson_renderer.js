@@ -1191,16 +1191,11 @@ if (typeof window !== 'undefined') {
         c.querySelector('.cme-drawer-therefore span')?.textContent?.trim() ||
         c.querySelector('.domino-therefore-box .domino-content-model')?.textContent?.trim() ||
         '';
-      const exam =
-        c.querySelector('.cme-drawer-exam-link span')?.textContent?.trim() ||
-        c.querySelector('.causal-domino-card > div:last-child span')?.textContent?.trim() ||
-        '';
 
       out += `STAGE ${stage}: ${title}\n`;
       if (trigger) out += `• 1. Action / Trigger: ${trigger}\n`;
       if (because) out += `• 2. Because (Motive): ${because}\n`;
       if (therefore) out += `• 3. Therefore (Consequence): ${therefore}\n`;
-      if (exam) out += `• ${exam}\n`;
       out += '\n';
     });
 
@@ -1288,10 +1283,14 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  window.revealQuizTarget = function (el) {
-    const spine = document.getElementById('lesson-chronology-spine');
-    if (spine && spine.classList.contains('cme-quiz-active')) {
-      el.classList.toggle('revealed');
+  window.revealQuizTarget = function (el, event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const target = el && el.closest ? el.closest('.cme-quiz-target') || el : el;
+    if (target) {
+      target.classList.toggle('revealed');
     }
   };
 
@@ -3706,7 +3705,7 @@ export function renderLesson(lesson) {
                         ? `
                     <div class="cme-drawer-because" style="margin-bottom: 5px;">
                       <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 2px;">2. "Because" (Motive):</strong>
-                      <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this);" title="Click to test recall">
+                      <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
                         <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Motive</span>
                         <span class="cme-quiz-content" style="color: #713f12;">${item.because}</span>
                       </div>
@@ -3718,7 +3717,7 @@ export function renderLesson(lesson) {
                         ? `
                     <div class="cme-drawer-therefore" style="margin-bottom: 4px;">
                       <strong style="color: #166534; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 2px;">3. "Therefore" (Result):</strong>
-                      <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this);" title="Click to test recall">
+                      <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
                         <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Result</span>
                         <span class="cme-quiz-content" style="color: #14532d;">${item.therefore}</span>
                       </div>
@@ -3730,15 +3729,6 @@ export function renderLesson(lesson) {
                         ? `
                     <div style="font-size: 0.65rem; font-weight: 700; color: #1e40af; border-top: 1px dotted #cbd5e1; padding-top: 3px; margin-top: 4px;">
                       &darr; ${item.connective}
-                    </div>`
-                        : ''
-                    }
-                    ${
-                      item.exam_link
-                        ? `
-                    <div class="cme-drawer-exam-link" style="margin-top: 5px; padding-top: 4px; border-top: 1px dashed #cbd5e1; font-size: 0.65rem; color: #4338ca; display: flex; align-items: flex-start; gap: 4px; line-height: 1.3;">
-                      <strong style="color: #4338ca; white-space: nowrap;"><i class="fa-solid fa-crosshairs"></i> Exam Target:</strong>
-                      <span>${item.exam_link}</span>
                     </div>`
                         : ''
                     }

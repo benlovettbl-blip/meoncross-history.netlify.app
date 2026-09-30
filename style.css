@@ -6034,51 +6034,55 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   transition: all 0.2s ease;
 }
 .cme-quiz-mask {
-  display: none;
+  display: none !important;
 }
 .cme-quiz-content {
-  display: inline;
+  display: inline !important;
 }
 
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target {
   background: #fefce8;
-  border: 1px dashed #ca8a04;
-  border-radius: 4px;
-  padding: 4px 6px;
+  border: 1.5px dashed #ca8a04;
+  border-radius: 5px;
+  padding: 6px 10px;
   cursor: pointer;
-  display: block;
-  margin-top: 2px;
+  display: block !important;
+  margin-top: 3px;
+  user-select: none;
 }
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target:not(.revealed):hover {
   background: #fef08a !important;
-  border-color: #a16207 !important;
+  border-color: #854d0e !important;
   transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(202, 138, 4, 0.2);
 }
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target:not(.revealed) .cme-quiz-mask {
-  display: inline-flex;
+  display: flex !important;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   color: #854d0e;
   font-weight: 700;
-  font-size: 0.67rem;
-  user-select: none;
+  font-size: 0.72rem;
+  pointer-events: none;
 }
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target:not(.revealed) .cme-quiz-content {
-  display: none;
+  display: none !important;
 }
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target.revealed {
   background: #f0fdf4 !important;
-  border: 1px solid #86efac !important;
-  cursor: default;
+  border: 1.5px solid #86efac !important;
+  cursor: pointer;
+  display: block !important;
+  padding: 6px 10px;
 }
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target.revealed .cme-quiz-mask {
-  display: none;
+  display: none !important;
 }
 .cme-chronology-spine.cme-quiz-active .cme-quiz-target.revealed .cme-quiz-content {
-  display: inline;
-  color: #14532d;
-  font-size: 0.71rem;
-  line-height: 1.35;
+  display: block !important;
+  color: #14532d !important;
+  font-size: 0.73rem !important;
+  line-height: 1.4 !important;
   animation: cmeFadeIn 0.25s ease;
 }
 
