@@ -1182,15 +1182,19 @@ if (typeof window !== 'undefined') {
           ?.textContent?.trim() ||
         '';
       const because =
+        c.querySelector('.cme-drawer-because .cme-quiz-content')?.textContent?.trim() ||
         c.querySelector('.cme-drawer-because span')?.textContent?.trim() ||
         c.querySelector('.domino-because-box .domino-content-model')?.textContent?.trim() ||
         '';
       const therefore =
+        c.querySelector('.cme-drawer-therefore .cme-quiz-content')?.textContent?.trim() ||
         c.querySelector('.cme-drawer-therefore span')?.textContent?.trim() ||
         c.querySelector('.domino-therefore-box .domino-content-model')?.textContent?.trim() ||
         '';
       const exam =
-        c.querySelector('.causal-domino-card > div:last-child span')?.textContent?.trim() || '';
+        c.querySelector('.cme-drawer-exam-link span')?.textContent?.trim() ||
+        c.querySelector('.causal-domino-card > div:last-child span')?.textContent?.trim() ||
+        '';
 
       out += `STAGE ${stage}: ${title}\n`;
       if (trigger) out += `• 1. Action / Trigger: ${trigger}\n`;
@@ -1229,9 +1233,82 @@ if (typeof window !== 'undefined') {
       d.open = anyClosed;
     });
     if (labelEl) {
-      labelEl.textContent = anyClosed
-        ? 'Collapse Causal Analysis'
-        : 'Expand Causal Links (Because / Therefore)';
+      labelEl.textContent = anyClosed ? 'Collapse Causal Analysis' : 'Expand Causal Analysis';
+    }
+  };
+
+  window.toggleCmeSpineQuizMode = function () {
+    const spine = document.getElementById('lesson-chronology-spine');
+    if (!spine) return;
+    const isQuiz = spine.classList.toggle('cme-quiz-active');
+    const btn = document.getElementById('btn-cme-quiz-mode');
+    const label = document.getElementById('cme-quiz-label');
+    const subbar = document.getElementById('cme-quiz-subbar');
+    const drawers = spine.querySelectorAll('.cme-causal-drawer');
+
+    if (isQuiz) {
+      // Auto-open all drawers so masked targets are visible for active recall
+      drawers.forEach((d) => {
+        d.open = true;
+      });
+      const toggleLabel = document.getElementById('toggle-causal-label');
+      if (toggleLabel) toggleLabel.textContent = 'Collapse Causal Analysis';
+
+      if (btn) {
+        btn.style.background = '#fef08a';
+        btn.style.color = '#713f12';
+        btn.style.borderColor = '#eab308';
+      }
+      if (label) {
+        label.innerHTML = '<i class="fa-solid fa-circle-check"></i> Quiz Mode Active';
+      }
+      if (subbar) {
+        subbar.style.display = 'flex';
+      }
+    } else {
+      if (btn) {
+        btn.style.background = '#fefce8';
+        btn.style.color = '#854d0e';
+        btn.style.borderColor = '#fef08a';
+      }
+      if (label) {
+        label.textContent = 'Self-Quiz Mode';
+      }
+      if (subbar) {
+        subbar.style.display = 'none';
+      }
+      // Reset all revealed targets
+      spine.querySelectorAll('.cme-quiz-target.revealed').forEach((el) => {
+        el.classList.remove('revealed');
+      });
+      const revealBtn = document.getElementById('btn-reveal-all-quiz');
+      if (revealBtn) {
+        revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Reveal All';
+      }
+    }
+  };
+
+  window.revealQuizTarget = function (el) {
+    const spine = document.getElementById('lesson-chronology-spine');
+    if (spine && spine.classList.contains('cme-quiz-active')) {
+      el.classList.toggle('revealed');
+    }
+  };
+
+  window.revealAllCmeQuizBlanks = function () {
+    const spine = document.getElementById('lesson-chronology-spine');
+    if (!spine) return;
+    const targets = spine.querySelectorAll('.cme-quiz-target');
+    const anyUnrevealed = Array.from(targets).some((t) => !t.classList.contains('revealed'));
+    targets.forEach((t) => {
+      if (anyUnrevealed) t.classList.add('revealed');
+      else t.classList.remove('revealed');
+    });
+    const btn = document.getElementById('btn-reveal-all-quiz');
+    if (btn) {
+      btn.innerHTML = anyUnrevealed
+        ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
+        : '<i class="fa-solid fa-eye"></i> Reveal All';
     }
   };
 }
@@ -3556,19 +3633,41 @@ export function renderLesson(lesson) {
             <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a;">
               <i class="fa-solid fa-clock-rotate-left" style="color: #0284c7;"></i> Chronology & Causal Spine &bull; Key Turning Points
             </span>
-            <div style="display: flex; align-items: center; gap: 10px;" onclick="event.stopPropagation();">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
               <button type="button" id="btn-toggle-all-causal" onclick="window.toggleAllCausalSpineDrawers();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
                 <i class="fa-solid fa-code-branch"></i> <span id="toggle-causal-label">Expand Causal Analysis</span>
+              </button>
+              <button type="button" id="btn-cme-quiz-mode" onclick="window.toggleCmeSpineQuizMode();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
+                <i class="fa-solid fa-graduation-cap"></i> <span id="cme-quiz-label">Self-Quiz Mode</span>
               </button>
               <span style="font-size: 0.76rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
             </div>
           </summary>
-          <div class="cme-chronology-spine-grid" style="padding: 14px 14px 12px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 10px; background: #ffffff; box-sizing: border-box;">
+          <div id="cme-quiz-subbar" style="display: none; padding: 8px 18px; background: #fefce8; border-bottom: 1px solid #fef08a; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.76rem; color: #854d0e; font-weight: 700;">
+              <i class="fa-solid fa-lightbulb" style="color: #ca8a04;"></i>
+              <span><strong>Active Recall Starter / Exit Ticket:</strong> Motives and consequences are masked. Click any masked prompt to test recall before revealing!</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <button type="button" id="btn-reveal-all-quiz" onclick="window.revealAllCmeQuizBlanks();" style="padding: 3px 9px; font-size: 0.72rem; font-weight: 700; background: #ffffff; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                <i class="fa-solid fa-eye"></i> Reveal All
+              </button>
+            </div>
+          </div>
+          <div class="cme-chronology-spine-grid" style="padding: 14px 14px 12px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 14px; background: #ffffff; box-sizing: border-box;">
             ${spineItems
               .map((item, idx) => {
                 const isLast = idx === spineItems.length - 1;
                 return `
               <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 3.5px solid ${isLast ? '#10b981' : '#0284c7'}; border-radius: 6px; padding: 10px 9px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative;">
+                ${
+                  !isLast
+                    ? `
+                <div class="cme-domino-bridge" title="Stage ${item.step} triggers Stage ${item.step + 1}${item.connective ? ': ' + item.connective : ''}">
+                  <span class="cme-bridge-arrow">➔</span>
+                </div>`
+                    : ''
+                }
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
                     <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 1.5px 5px; border-radius: 3px; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${item.step}</span>
@@ -3606,8 +3705,11 @@ export function renderLesson(lesson) {
                       item.because
                         ? `
                     <div class="cme-drawer-because" style="margin-bottom: 5px;">
-                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 1px;">2. "Because" (Motive):</strong>
-                      <span style="color: #713f12;">${item.because}</span>
+                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 2px;">2. "Because" (Motive):</strong>
+                      <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this);" title="Click to test recall">
+                        <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Motive</span>
+                        <span class="cme-quiz-content" style="color: #713f12;">${item.because}</span>
+                      </div>
                     </div>`
                         : ''
                     }
@@ -3615,8 +3717,11 @@ export function renderLesson(lesson) {
                       item.therefore
                         ? `
                     <div class="cme-drawer-therefore" style="margin-bottom: 4px;">
-                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 1px;">3. "Therefore" (Result):</strong>
-                      <span style="color: #14532d;">${item.therefore}</span>
+                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 2px;">3. "Therefore" (Result):</strong>
+                      <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this);" title="Click to test recall">
+                        <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Result</span>
+                        <span class="cme-quiz-content" style="color: #14532d;">${item.therefore}</span>
+                      </div>
                     </div>`
                         : ''
                     }
@@ -3625,6 +3730,15 @@ export function renderLesson(lesson) {
                         ? `
                     <div style="font-size: 0.65rem; font-weight: 700; color: #1e40af; border-top: 1px dotted #cbd5e1; padding-top: 3px; margin-top: 4px;">
                       &darr; ${item.connective}
+                    </div>`
+                        : ''
+                    }
+                    ${
+                      item.exam_link
+                        ? `
+                    <div class="cme-drawer-exam-link" style="margin-top: 5px; padding-top: 4px; border-top: 1px dashed #cbd5e1; font-size: 0.65rem; color: #4338ca; display: flex; align-items: flex-start; gap: 4px; line-height: 1.3;">
+                      <strong style="color: #4338ca; white-space: nowrap;"><i class="fa-solid fa-crosshairs"></i> Exam Target:</strong>
+                      <span>${item.exam_link}</span>
                     </div>`
                         : ''
                     }
