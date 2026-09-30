@@ -840,11 +840,6 @@ export function initGlossaryPopover() {
     const term = target.getAttribute('data-term') || target.textContent.trim();
     const syllables = target.getAttribute('data-syllables');
     const phonetic = target.getAttribute('data-phonetic');
-    const tier = target.getAttribute('data-tier') || '3';
-    const tierBadge =
-      tier === '2'
-        ? '<span style="background: rgba(14, 165, 233, 0.2); color: #38bdf8; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(14, 165, 233, 0.4);">Tier 2 &bull; Academic</span>'
-        : '<span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(245, 158, 11, 0.4);">Tier 3 &bull; Concept</span>';
 
     const safeWordForAudio = term.replace(/'/g, "\\'");
 
@@ -852,7 +847,6 @@ export function initGlossaryPopover() {
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px;">
         <span style="font-size: 1.05rem; font-weight: 700; color: #ffffff; font-family: 'Newsreader', Georgia, serif;">${term}</span>
         <div style="display: flex; align-items: center; gap: 6px;">
-          ${tierBadge}
           <button type="button" class="btn-vocab-speak" onclick="event.stopPropagation(); window.speakVocabWord && window.speakVocabWord('${safeWordForAudio}');" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #38bdf8; border-radius: 4px; padding: 2px 7px; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Listen to pronunciation">
             <i class="fa-solid fa-volume-high"></i>
           </button>
