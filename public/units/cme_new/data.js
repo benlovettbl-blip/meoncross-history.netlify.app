@@ -1,5 +1,4 @@
-// Conflict in the Middle East, 1945–95 Unit Data
-const unitData = {
+export const unitData = {
   lesson_reflection: {
     prompt:
       'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
@@ -478,16 +477,24 @@ const unitData = {
         source_context:
           'Primary map of the secret Sykes-Picot Agreement signed on 8 May 1916 by Sir Mark Sykes and François Georges-Picot, dividing the Ottoman Middle East into British and French zones, alongside the 1917 Balfour Declaration letter. **Hinge Question:** How did the imperial borders drawn by Britain and France in 1916 set the stage for the collapse of British authority in Palestine by 1945?',
       },
-      video: {
-        title: 'Vox: The Israel-Palestine conflict: a brief, simple history',
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=iRYZjOuUnlU',
-        duration: '10 mins 19 secs',
-        viewing_task:
-          'Identify how the collapse of the Ottoman Empire during World War I and British imperial administration shaped modern borders in Palestine, and why contradictory promises caused escalating tension.',
-        model_answer:
-          'The video demonstrates that following the collapse of the Ottoman Empire in WWI, Britain took control of Palestine under a League of Nations mandate. Britain issued the 1917 Balfour Declaration backing a Jewish national home while having previously offered vague promises of independence to Arab leaders (McMahon-Hussein Correspondence). As Jewish immigration increased, competing nationalisms collided, leading to mutual suspicion and violent clashes, culminating in the 1947 UN Partition Plan.',
-      },
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=iRYZjOuUnlU',
+          title: 'The Sykes-Picot Agreement & The Partition of the Ottoman Empire',
+          duration: '5 mins 30 secs',
+          teacher_guidance:
+            'Essential background on conflicting British promises: the McMahon-Hussein Correspondence (1915), the Sykes-Picot Agreement (1916), and the Balfour Declaration (1917).',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=kbdvn8QHyX8',
+          title: "The Balfour Declaration's Impact, 100 Years On",
+          duration: '8 mins 3 secs',
+          teacher_guidance:
+            'Analysis of Lord Balfour’s letter promising a "national home for the Jewish people" while claiming not to prejudice non-Jewish rights.',
+        },
+      ],
       extra_videos: [
         {
           title: "The Economist: The Balfour Declaration's impact, 100 years on",
@@ -1306,7 +1313,7 @@ const unitData = {
     {
       id: 'lesson_2',
       key_individual: {
-        anchor_act: 11,
+        anchor_act: 12,
         anchor_title: 'The Declaration of the State of Israel (14 May 1948)',
         anchor_rationale:
           'Anchored directly adjacent to the 14 May 1948 Declaration of Independence in Tel Aviv and the subsequent consolidation of the IDF.',
@@ -1323,16 +1330,31 @@ const unitData = {
           "As Israel's paramount founding father, Ben-Gurion declared independence in defiance of international hesitation and coordinated invasions by five Arab armies, securing the state's survival through the 1948–49 War.",
       },
       title: 'KT 1.1: The End of the British Mandate and the Creation of Israel, 1945–1949',
-      video: {
-        type: 'era',
-        url: 'https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/',
-        title: 'Twentieth Century History: Israel and the Arab States',
-        duration: '20 mins 7 secs',
-        viewing_task:
-          'As you watch the programme, note down three ways in which the creation of the State of Israel in 1948 changed the political geography of the Middle East.',
-        model_answer:
-          'The creation of Israel fundamentally changed the Middle East by establishing a sovereign Jewish state in Palestine, triggering the First Arab-Israeli War, redrawing borders as Israel expanded its territory, and causing the permanent displacement of over 700,000 Palestinian Arabs (the Nakba).',
-      },
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=PgnQeDoypO8',
+          title: 'GCSE Revision: Creation of the State of Israel (1945–1949)',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Concise specification summary: King David Hotel bombing, UN Partition Plan (Resolution 181), and the British withdrawal.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=2yBolHdMejM',
+          title: '1947: Palestine Population & Jewish Immigration',
+          duration: '7 mins 57 secs',
+          teacher_guidance:
+            'Demographic breakdown of post-Holocaust immigration, the Exodus ship crisis, and the escalating civil war.',
+        },
+        {
+          url: 'https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/',
+          title: '20th Century History: Israel and the Arab States (1948 War)',
+          duration: '20 mins 0 secs',
+          teacher_guidance:
+            'BBC archival documentary on Ben-Gurion’s Declaration of Independence and the 1948–49 Arab-Israeli War.',
+        },
+      ],
       extra_videos: [
         {
           type: 'youtube',
@@ -1523,6 +1545,23 @@ const unitData = {
           model_answer:
             'Source C severely damaged British standing because forcing Holocaust survivors back into European detention camps appeared callous and cruel, alienating US public opinion and creating irresistible sympathy for a sovereign Jewish state.',
         },
+        {
+          id: 'cme_bengurion_declaration_1948',
+          title: 'Source D: David Ben-Gurion Declaring the State of Israel (14 May 1948)',
+          date: '14 May 1948',
+          src: '/images/cme_bengurion_declaration_1948.jpg',
+          image: '/images/cme_bengurion_declaration_1948.jpg',
+          caption:
+            'David Ben-Gurion reads the Declaration of Independence at the Tel Aviv Museum beneath Theodor Herzl’s portrait.',
+          source_context:
+            'David Ben-Gurion proclaimed Israeli statehood on 14 May 1948, hours before the British Mandate formally expired and adjacent to coordinated invasions by five neighboring Arab armies. **Hinge Question:** Why did Ben-Gurion insist on declaring independence immediately rather than waiting for international UN negotiations?',
+          provenance_clue:
+            'The setting in Tel Aviv beneath Theodor Herzl was designed to establish an unbroken line between political Zionism and sovereign reality.',
+          question:
+            'Study Source D. Why did David Ben-Gurion choose to declare independence beneath the portrait of Theodor Herzl on the exact afternoon British forces withdrew?',
+          model_answer:
+            "Ben-Gurion positioned himself beneath the portrait of Theodor Herzl, the father of political Zionism, to establish direct historical legitimacy between Herzl's 1897 vision of a sovereign Jewish homeland and its reality in 1948. Declaring independence on the exact afternoon the British Mandate expired preempted any UN hesitation or British extension, establishing sovereign Israeli statehood hours before the anticipated invasion by five Arab armies.",
+        },
       ],
       vocab: [
         {
@@ -1613,16 +1652,6 @@ const unitData = {
           },
         ],
       },
-      primary_source: {
-        title: 'Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)',
-        src: '/units/cme_new/assets/king_david_ruins.png',
-        caption:
-          'Primary Photograph: The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation on 22 July 1946, killing 91 British, Arab, and Jewish staff.',
-        question:
-          'Study Source A. Why did the Irgun target the British administrative and military headquarters at the King David Hotel, and how did this attack convince the British government that maintaining the Mandate was untenable?',
-        model_answer:
-          'The Irgun targeted the King David Hotel because its south-western wing housed the central Secretariat of the British Mandate government and the headquarters of British armed forces in Palestine. By destroying the nerve centre of colonial administration and killing 91 officials in broad daylight, the Irgun demonstrated that 100,000 British troops could not guarantee security. The massive loss of life shocked the British public and convinced Prime Minister Attlee that policing Palestine was exacting an intolerable financial and human price.',
-      },
       flashcards: [
         {
           term: 'Mandate',
@@ -1709,7 +1738,6 @@ const unitData = {
           text: '**The British Dilemma & The Legacy of the 1939 White Paper:** Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. Under the terms of the Mandate, Britain was bound by a "dual obligation": to establish a "national home" for the Jewish people (in line with the 1917 Balfour Declaration), while safeguarding the civil and religious rights of the existing Arab majority. Having already rejected the 1937 Peel Commission recommendation for partition, British policy was rigidly anchored to the 1939 MacDonald White Paper, which had capped Jewish immigration at 75,000 over five years and prohibited further entry without Arab consent. As the full horrors of the Nazi Holocaust were revealed, over 250,000 destitute Jewish survivors languished in European Displaced Persons (DP) camps with nowhere to go. In 1945, Zionist leaders gathered in London demanding the immediate admission of 100,000 refugees. British Foreign Secretary Ernest Bevin adamantly refused, strictly enforcing the monthly immigration quota of 1,500 to appease Arab oil-producing nations, sparking fierce international condemnation from US President Harry S. Truman.',
           level_4:
             'Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. In 1945, Zionist leaders gathered at a conference in London to demand the immediate creation of a Jewish state in Palestine, hoping that Britain would facilitate the resettlement of hundreds of thousands of Holocaust survivors currently languishing in European Displaced Persons (DP) camps.',
-          image: '/units/cme_new/assets/king_david_ruins.png',
         },
         {
           text: '**Arab Opposition & The Shadow of the 1936–39 Revolt:** The Palestinian Arab population—who formed the clear two-thirds majority of Palestine—vehemently opposed any further Jewish immigration or partition. Having suffered catastrophic losses during the 1936–1939 Arab Revolt, in which British forces had hanged or exiled leading Arab commanders, dismantled militias, and confiscated civilian weapons, the Palestinian community remained politically fractured and militarily weakened. Arab leaders argued that European nations were attempting to solve the moral catastrophe of the Holocaust at the expense of an indigenous Arab population that bore zero responsibility for Nazi crimes. Through the Arab League (founded in Cairo in 1945), neighboring Arab states (Egypt, Syria, Transjordan, Iraq, and Lebanon) warned Britain that any attempt to establish a Jewish state on Arab land would be met with armed resistance across the entire Middle East.',
@@ -1749,9 +1777,28 @@ const unitData = {
           ],
         },
         {
-          text: "**The King David Hotel Bombing (July 1946), UN Referral (Feb 1947) & The Sergeants Affair (July 1947):** The Jewish underground insurgency struck with devastating lethality. On 22 July 1946, the Irgun, commanded by future Prime Minister Menachem Begin, smuggled 225 kilograms of explosives inside milk cans into the basement of the King David Hotel in Jerusalem—the headquarters of the British civil administration and military command. The resulting detonation collapsed the entire south-western wing of the six-storey building, killing 91 British, Arab, and Jewish staff. **The Evacuation Warnings Controversy:** Menachem Begin and the Irgun insisted that three advance telephone warnings were placed 25 minutes prior (to the hotel switchboard, the French Consulate, and the Palestine Post) urging evacuation, but British authorities denied receiving a timely warning and Chief Secretary Sir John Shaw allegedly refused to evacuate the building. Horrified by the 91 deaths, David Ben-Gurion and the Haganah publicly condemned the Irgun, dissolving the unified Hebrew Resistance Movement. By early 1947, deploying **100,000 British soldiers** was costing **£40 million annually** during harsh post-WWII rationing. Facing immense American diplomatic and financial pressure, British Foreign Secretary Ernest Bevin announced to Parliament on 18 February 1947 that the Mandate was unworkable and that Britain was surrendering the problem to the United Nations without recommending any solution. The insurgency culminated in July 1947 in the **Sergeants Affair**: after three Irgun members were sentenced to death at Acre Prison, the Irgun kidnapped two 20-year-old British Army intelligence field sergeants, Clifford Martin and Mervyn Paice, in Netanya. When the British carried out the executions, the Irgun hanged both British sergeants in an orange grove and booby-trapped Martin's body with a landmine. The gruesome incident sparked anti-Jewish riots across major British cities (including London, Liverpool, and Manchester) and destroyed the British public's willingness to sacrifice British soldiers to maintain the Mandate.",
+          text: '**The King David Hotel Bombing & UN Referral (July 1946 – February 1947):** The Jewish underground insurgency struck with devastating lethality. On 22 July 1946, the Irgun, commanded by future Prime Minister Menachem Begin, smuggled 225 kilograms of explosives inside milk cans into the basement of the King David Hotel in Jerusalem—the headquarters of the British civil administration and military command. The resulting detonation collapsed the entire south-western wing of the six-storey building, killing 91 British, Arab, and Jewish staff. **The Evacuation Warnings Controversy:** Menachem Begin and the Irgun insisted that three advance telephone warnings were placed 25 minutes prior (to the hotel switchboard, the French Consulate, and the Palestine Post) urging evacuation, but British authorities denied receiving a timely warning and Chief Secretary Sir John Shaw allegedly refused to evacuate the building. Horrified by the 91 deaths, David Ben-Gurion and the Haganah publicly condemned the Irgun, dissolving the unified Hebrew Resistance Movement. By early 1947, deploying **100,000 British soldiers** was costing **£40 million annually** during harsh post-WWII rationing. Facing immense American diplomatic and financial pressure, British Foreign Secretary Ernest Bevin announced to Parliament on 18 February 1947 that the Mandate was unworkable and that Britain was surrendering the problem to the United Nations without recommending any solution.',
           level_4:
-            'In July 1946, the Irgun bombed the King David Hotel in Jerusalem—killing 91 people despite controversial disputed evacuation warnings. Bankrupt from WWII, Britain referred the Mandate to the UN in Feb 1947. In July 1947, during the Sergeants Affair, the Irgun hanged two kidnapped British sergeants, destroying domestic British support for policing the Mandate.',
+            'In July 1946, the Irgun bombed the King David Hotel in Jerusalem—killing 91 people despite controversial disputed evacuation warnings. Bankrupt from WWII, Britain referred the Mandate to the UN in Feb 1947.',
+          source: {
+            title: 'Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)',
+            src: '/units/cme_new/assets/king_david_ruins.png',
+            caption:
+              'Primary Photograph: The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation on 22 July 1946, killing 91 British, Arab, and Jewish staff.',
+            source_context:
+              'The King David Hotel housed the central Secretariat of the Government of Palestine and the Headquarters of the British Forces in Palestine. The Irgun disguised explosives inside milk churns in the basement. **Hinge Question:** Why did the bombing of the King David Hotel convince the British government that the Mandate was becoming militarily untenable?',
+            provenance_clue:
+              'Consider the target: this was not a remote outpost, but the fortified administrative and military nerve-centre of the entire British Mandate administration.',
+            question:
+              'Study Source A. Why did the Irgun target the British administrative and military headquarters at the King David Hotel, and how did this attack convince the British government that maintaining the Mandate was untenable?',
+            model_answer:
+              'The Irgun targeted the King David Hotel because its south-western wing housed the central Secretariat of the British Mandate government and the headquarters of British armed forces in Palestine. By destroying the nerve centre of colonial administration and killing 91 officials in broad daylight, the Irgun demonstrated that 100,000 British troops could not guarantee security. The massive loss of life shocked the British public and convinced Prime Minister Attlee that policing Palestine was exacting an intolerable financial and human price.',
+          },
+        },
+        {
+          text: "**The Sergeants Affair & Public Backlash in Britain (July 1947):** The insurgency culminated in July 1947 in the **Sergeants Affair**: after three Irgun members were sentenced to death at Acre Prison, the Irgun kidnapped two 20-year-old British Army intelligence field sergeants, Clifford Martin and Mervyn Paice, in Netanya. When the British carried out the executions, the Irgun hanged both British sergeants in an orange grove and booby-trapped Martin's body with a landmine. The gruesome incident sparked anti-Jewish riots across major British cities (including London, Liverpool, and Manchester) and destroyed the British public's willingness to sacrifice British soldiers to maintain the Mandate.",
+          level_4:
+            'In July 1947, during the Sergeants Affair, the Irgun hanged two kidnapped British sergeants, destroying domestic British support for policing the Mandate.',
           source: {
             title: 'Source B: The Sergeants Affair (July 1947)',
             src: '/images/cme_sergeants_affair_1947.jpg',
@@ -3881,6 +3928,32 @@ const unitData = {
           desc: 'In retaliation for cross-border Fedayeen guerrilla attacks, Ariel Sharon’s commando Unit 101 dynamites 45 houses in the West Bank village of Qibya, killing 69 civilians.',
         },
       ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=fXk_n_ww6GU',
+          title: 'GCSE Revision: The Reshaping of the Middle East (1948–1949)',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Summarises territorial consequences of the 1949 Armistice: Jordan takes West Bank, Egypt takes Gaza Strip, and Jerusalem is partitioned.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=eTMRMX7Pw5U',
+          title: 'The 1948 Arab-Israeli War and Al-Nakba Explained',
+          duration: '5 mins 29 secs',
+          teacher_guidance:
+            'Examines the Palestinian exodus ("Al-Nakba" - The Catastrophe), 700,000 refugees, and the enduring Right of Return dispute.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=wjysy7ONisA',
+          title: "1948: Israel's Battle for Independence",
+          duration: '6 mins 58 secs',
+          teacher_guidance:
+            'Israeli perspective on defensive mobilisation, Czech arms shipments, and the founding of the IDF.',
+        },
+      ],
     },
     {
       id: 'lesson_4',
@@ -4349,6 +4422,89 @@ const unitData = {
             "A narrow maritime passage into the Gulf of Aqaba blockaded by Egypt, threatening Israel's southern port of Eilat.",
         },
       ],
+      causal_domino_spine: {
+        title: 'The 1956 Suez Crisis: 5-Stage Causal Domino Chain',
+        subtitle:
+          'Edexcel Paper 2 Disciplinary Framework for Q2 Narrative Account [8m] & Q1 Consequence [4m]',
+        exam_strategy:
+          'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
+        stages: [
+          {
+            step: 1,
+            date: 'February 1955',
+            title: 'The Gaza Raid',
+            actor: 'Israel & Egypt',
+            tag: 'The Spark',
+            trigger:
+              'Israeli paratroopers launch a surprise raid into Gaza, killing 37 Egyptian soldiers.',
+            because:
+              'Prime Minister Ben-Gurion implemented a disproportionate reprisal doctrine to retaliate for cross-border Fedayeen raids.',
+            therefore:
+              'Nasser was publicly humiliated and became determined to urgently rearm Egypt with modern fighter jets and tanks.',
+            exam_link:
+              'Q1 Consequence: Exposed Egyptian military vulnerability; drove Nasser to seek Soviet arms.',
+          },
+          {
+            step: 2,
+            date: 'September 1955',
+            title: 'The Czech Arms Deal',
+            actor: 'Egypt & Soviet Bloc',
+            tag: 'Cold War Shift',
+            trigger: 'Nasser purchases 200 Soviet MiG-15 jets and 300 tanks via Czechoslovakia.',
+            because:
+              'Western powers refused to sell arms to Egypt unless Nasser signed anti-Soviet military pacts.',
+            therefore:
+              'Shattered the Western monopoly on Middle Eastern weapons and drew the Cold War directly into the Arab-Israeli conflict.',
+            exam_link:
+              'Q2 Narrative (Link 1 → 2): Israeli raid directly motivated the Soviet arms purchase.',
+          },
+          {
+            step: 3,
+            date: 'July 1956',
+            title: 'Dam Loans Pulled & Canal Seized',
+            actor: 'USA, Britain & Egypt',
+            tag: 'The Economic Trigger',
+            trigger:
+              'US Secretary Dulles abruptly cancels $70m Aswan Dam loan (19 July); Nasser nationalises the Suez Canal (26 July).',
+            because:
+              "The US was alarmed by Nasser's Soviet arms deal and recognition of Communist China; Nasser needed the canal's £35m annual tolls to fund the dam.",
+            therefore:
+              'Infuriated British PM Eden, who viewed the canal as an imperial oil lifeline and resolved to remove Nasser by force.',
+            exam_link:
+              'Q2 Narrative (Link 2 → 3) & Q3 Importance: Canal nationalisation as symbol of Arab sovereignty.',
+          },
+          {
+            step: 4,
+            date: 'October–November 1956',
+            title: 'The Protocol of Sèvres & Invasion',
+            actor: 'Britain, France & Israel',
+            tag: 'The Tripartite Conspiracy',
+            trigger:
+              'Secret meeting outside Paris; Israel invades Sinai (29 Oct); Anglo-French forces bomb airfields and invade Port Said (5 Nov).',
+            because:
+              "Britain and France wanted to reclaim the canal under the false pretext of 'separating the combatants' and overthrow Nasser.",
+            therefore:
+              'Egypt was defeated militarily in Sinai, but Nasser ordered blockships sunk, completely choking the canal.',
+            exam_link:
+              'Q2 Narrative (Link 3 → 4): Collusion between the three allies to fabricate a justification for invasion.',
+          },
+          {
+            step: 5,
+            date: 'November 1956',
+            title: 'US Ultimatum & UNEF Deployment',
+            actor: 'USA, UN & The World',
+            tag: 'The Climax & Aftermath',
+            trigger:
+              'US President Eisenhower threatens to collapse the British pound unless forces withdraw; UN establishes UNEF.',
+            because:
+              'Eisenhower was furious at allies acting without US approval while Soviet tanks crushed the Hungarian uprising.',
+            therefore:
+              'Humiliating British and French imperial retreat (end of Britain as a superpower); Nasser hailed as Arab hero; UNEF secured peace for 10 years.',
+            exam_link:
+              "Q1 Consequence (Collapse of British/French imperial status) & Q3 Importance (Eisenhower's intervention & UNEF buffer).",
+          },
+        ],
+      },
       narrative_blocks: [
         {
           text: '**The Rise of Gamal Abdel Nasser & Pan-Arabism (1954):** In July 1952, nationalist army officers overthrew King Farouk, bringing Colonel **Gamal Abdel Nasser** to power as President of Egypt by 1954. Nasser championed **Pan-Arabism**—uniting Arab nations to end Western colonial influence and avenge the 1948 defeat by Israel. He pressured Britain to withdraw all 80,000 British troops stationed in the Suez Canal Zone by June 1956. Domestically, Nasser planned the colossal **Aswan High Dam** on the River Nile to generate electricity, control floods, and irrigate desert land, requiring massive foreign loans.',
@@ -4369,6 +4525,17 @@ const unitData = {
           text: '**The Gaza Raid (February 1955) & The Czech Arms Deal:** Tensions escalated on 28 February 1955 when Israeli paratroopers launched a devastating reprisal raid into the **Gaza Strip**, killing **37 Egyptian soldiers** and exposing Egyptian military weakness. Humiliated, Nasser sought modern weapons to defend Egypt. When Western nations refused arms sales without anti-Soviet political conditions, Nasser bypassed them. In September 1955, Nasser stunned the world by signing the **Czech Arms Deal**, purchasing 200 Soviet MiG-15 jet fighters and 300 tanks via Czechoslovakia. This shattered the Western arms monopoly and brought the Cold War directly into the Middle East.',
           level_4:
             'In February 1955, an Israeli raid on Gaza killed 37 Egyptian soldiers, exposing Egypt’s military weakness. Nasser responded with the September 1955 Czech Arms Deal, buying 200 Soviet MiG jets and 300 tanks via Czechoslovakia, shattering the Western arms monopoly.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Why did President Nasser turn to the Soviet Bloc for the 1955 Czech Arms Deal, and how did this decision upset Western influence in the Middle East? (P2)',
+              starter: 'President Nasser turned to the Soviet Bloc because...',
+              model:
+                'President Nasser turned to the Soviet Bloc because the February 1955 Israeli raid on Gaza exposed Egypt’s severe military vulnerability, and Western powers refused to sell arms unless Egypt joined anti-Soviet military pacts. The Czech Arms Deal shattered the Western monopoly on Middle Eastern weapons, alarming Israel with advanced MiG-15 jets and T-34 tanks while drawing the Cold War directly into the region.',
+              model_answer:
+                'President Nasser turned to the Soviet Bloc because the February 1955 Israeli raid on Gaza exposed Egypt’s severe military vulnerability, and Western powers refused to sell arms unless Egypt joined anti-Soviet military pacts. The Czech Arms Deal shattered the Western monopoly on Middle Eastern weapons, alarming Israel with advanced MiG-15 jets and T-34 tanks while drawing the Cold War directly into the region.',
+            },
+          ],
         },
         {
           text: '**Aswan Dam Cancellation & Canal Nationalisation (26 July 1956):** To finance the Aswan High Dam, the US and Britain initially offered loans. However, alarmed by Nasser\'s Soviet arms deal and recognition of Communist China, US Secretary of State Dulles and British PM Anthony Eden abruptly cancelled all funding on 19 July 1956. Nasser struck back defiantly. On **26 July 1956**, addressing a crowd in Alexandria, Nasser announced the complete **nationalisation** of the Suez Canal Company. He declared that Egypt would seize the canal from foreign shareholders and use its £35 million annual transit tolls to directly fund the Aswan Dam: *"Today we take back what is rightfully ours!"*',
@@ -4384,11 +4551,33 @@ const unitData = {
             model_answer:
               "Nasser framed the Suez Canal as Egypt's national property that had been exploited by foreign colonial powers for nearly a century while 120,000 Egyptian workers died digging it. By nationalising the canal, he declared that its annual revenues would be used directly to build the Aswan High Dam after the US and Britain cancelled their promised loans, turning a financial setback into a triumph of Egyptian economic sovereignty.",
           },
+          tasks: [
+            {
+              type: 'written',
+              text: 'Explain why President Nasser nationalised the Suez Canal on 26 July 1956, and why Britain viewed this as an unacceptable threat. (P3)',
+              starter: 'Nasser nationalised the Suez Canal primarily because...',
+              model:
+                'Nasser nationalised the Suez Canal to secure its £35 million annual transit revenues to directly fund the construction of the Aswan High Dam after the US and Britain abruptly cancelled their promised loans. British Prime Minister Anthony Eden viewed this as an unacceptable threat because Britain relied on the canal as its imperial lifeline for Middle Eastern oil, and feared Nasser was an aggressive dictator who would dominate the region.',
+              model_answer:
+                'Nasser nationalised the Suez Canal to secure its £35 million annual transit revenues to directly fund the construction of the Aswan High Dam after the US and Britain abruptly cancelled their promised loans. British Prime Minister Anthony Eden viewed this as an unacceptable threat because Britain relied on the canal as its imperial lifeline for Middle Eastern oil, and feared Nasser was an aggressive dictator who would dominate the region.',
+            },
+          ],
         },
         {
           text: '**Imperial Outrage & The Secret Sèvres Agreement (October 1956):** Canal nationalisation outraged Britain and France. British Prime Minister Anthony Eden viewed Nasser as a dangerous dictator threatening Europe’s oil supplies. France wanted to halt Egyptian support for Algerian rebels, while Israel wanted to crush fedayeen bases and break the blockade of the **Straits of Tiran**. In October 1956, senior leaders secretly met in France and signed the **secret Sèvres agreement** (secret tripartite agreement)—a tripartite conspiracy of deception. Under the plan, Israel would launch a surprise invasion of Sinai on 29 October. Britain and France would then issue an ultimatum commanding both sides to withdraw ten miles from the canal under the guise of "peacekeepers". When Egypt predictably refused to abandon sovereign territory, Anglo-French forces would bomb Egyptian airfields and invade Port Said to seize the canal and overthrow Nasser.',
           level_4:
             'Outraged by the canal nationalisation, Britain, France, and Israel secretly signed the Sèvres agreement in October 1956. Israel would invade Sinai, giving Britain and France the false pretext to intervene as "peacekeepers" to seize the canal and depose Nasser.',
+          tasks: [
+            {
+              type: 'written',
+              text: 'Explain the secret Sèvres Protocol agreed between Britain, France, and Israel in October 1956, and why each nation participated in the deception. (P4)',
+              starter: 'The secret Sèvres Protocol was a coordinated conspiracy where...',
+              model:
+                'The Sèvres Protocol was a secret tripartite conspiracy where Israel agreed to invade Sinai first, giving Britain and France the false pretext to intervene as neutral peacekeepers to "protect" the canal and overthrow Nasser. Each nation had distinct motives: Israel wanted to eliminate fedayeen bases and reopen the Straits of Tiran; France wanted to punish Nasser for aiding Algerian rebels; and Britain sought to regain control of the Suez Canal and depose Nasser.',
+              model_answer:
+                'The Sèvres Protocol was a secret tripartite conspiracy where Israel agreed to invade Sinai first, giving Britain and France the false pretext to intervene as neutral peacekeepers to "protect" the canal and overthrow Nasser. Each nation had distinct motives: Israel wanted to eliminate fedayeen bases and reopen the Straits of Tiran; France wanted to punish Nasser for aiding Algerian rebels; and Britain sought to regain control of the Suez Canal and depose Nasser.',
+            },
+          ],
         },
         {
           text: '**The Tripartite Invasion & Canal Blockade (October–November 1956):** On 29 October 1956, Israel invaded Sinai, sweeping across the desert to Sharm el-Sheikh and lifting the blockade of the Straits of Tiran. Britain and France immediately issued their pre-planned ultimatum. When Egypt refused to withdraw, Anglo-French planes bombed Egyptian airfields on 31 October, and paratroopers landed at Port Said on 5 November to seize the canal. Nasser responded with defiance: Egyptian forces scuttled over 40 merchant ships and cement barges in the waterway, completely blocking the Suez Canal to international shipping.',
@@ -4419,6 +4608,17 @@ const unitData = {
             model_answer:
               'Britain and France claimed they were acting as neutral peacekeepers to protect the canal from the outbreak of fighting between Egypt and Israel. In reality, the Sèvres Protocol proved they had colluded in secret with Israel: Israel agreed to attack Egypt first so Britain and France could intervene under the guise of protecting the canal, with the real objective of overthrowing Nasser and restoring European colonial control over the waterway.',
           },
+          tasks: [
+            {
+              type: 'written',
+              text: "Why did the Anglo-French invasion of Suez collapse in humiliation, and what was its impact on Britain's global standing? (P6)",
+              starter: 'The Anglo-French invasion collapsed primarily because...',
+              model:
+                'The Anglo-French invasion collapsed because US President Dwight D. Eisenhower furiously opposed the deception and used overwhelming economic leverage, threatening to dump British currency reserves and collapse the pound sterling unless an immediate ceasefire was declared. The crisis marked the definitive end of Britain and France as global imperial superpowers, proving they could no longer act independently without United States approval.',
+              model_answer:
+                'The Anglo-French invasion collapsed because US President Dwight D. Eisenhower furiously opposed the deception and used overwhelming economic leverage, threatening to dump British currency reserves and collapse the pound sterling unless an immediate ceasefire was declared. The crisis marked the definitive end of Britain and France as global imperial superpowers, proving they could no longer act independently without United States approval.',
+            },
+          ],
         },
         {
           text: '**The Humiliation of Empires & Geopolitical Consequences:** <table style="width:100%; border-collapse: collapse; margin: 15px 0;"> <thead> <tr> <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For Egypt and Nasser</th> <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For Israel’s Security</th> <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For the Cold War</th> </tr> </thead> <tbody> <tr> <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">Nasser emerged from the crisis as an <strong>undisputed Arab folk hero</strong>. Although his army had been defeated on the battlefield, he had successfully stood up to British, French, and Israeli "imperialism" and kept control of the Suez Canal, cementing Egypt’s leadership of the Arab world.</td> <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">Israel scored massive military and strategic benefits. The IDF had proven its <strong>unquestioned military superiority</strong>, routing the Egyptian army in just a few days, which acted as a powerful deterrent against future Arab invasions.</td> <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">The Middle East became a central theater of the Cold War. British and French colonial influence in the region was permanently broken, replaced by direct <strong>US support for Israel</strong> and <strong>Soviet backing for Egypt and Syria</strong>.</td> </tr> </tbody> </table>',
@@ -5028,6 +5228,24 @@ const unitData = {
           date: '22–24 Oct 1956',
           title: 'Secret Sevres Protocol Collusion',
           desc: 'Britain, France, and Israel secretly meet outside Paris to orchestrate a tripartite military invasion of Egypt, sparking the 1956 Suez Crisis.',
+        },
+      ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=PnZ2tG_PYpc',
+          title: 'GCSE Revision: President Nasser & The 1956 Suez Crisis',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Key facts: Aswan Dam funding withdrawn, nationalisation of the Suez Canal, and the secret Protocol of Sèvres.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=fwRFhmcfHgg',
+          title: 'The 1956 Suez Crisis Explained',
+          duration: '4 mins 12 secs',
+          teacher_guidance:
+            'Explains Anglo-French-Israeli collusion, US President Eisenhower threatening economic sanctions, and the emergence of the UN Emergency Force.',
         },
       ],
     },
@@ -5877,6 +6095,23 @@ const unitData = {
             'Freshwater from the Sea of Galilee and River Jordan was essential to sustain Israeli agriculture and immigration.',
         },
       ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=W7KFi6ZmZdU',
+          title: 'GCSE Revision: Road to the Six-Day War (1964–1967)',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Summarises water disputes on the River Jordan, Syrian artillery on the Golan Heights, and fedayeen border raids.',
+        },
+        {
+          url: 'https://era.org.uk/streaming-service-resource/s3e6-battle-for-the-holy-city-the-six-day-war-days-that-shook-the-world/',
+          title: 'Days That Shook the World: The Six-Day War (BBC)',
+          duration: '50 mins 0 secs',
+          teacher_guidance:
+            'High-production BBC documentary examining the crisis: UNEF expulsion, closing the Straits of Tiran, and Israeli cabinet debates.',
+        },
+      ],
     },
     {
       id: 'lesson_7',
@@ -6660,6 +6895,24 @@ const unitData = {
           answer: '10 June 1967',
           a: '10 June 1967',
           explanation: 'The war concluded on Saturday, 10 June 1967, with a UN ceasefire.',
+        },
+      ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=B60O6Kcijso',
+          title: 'Operation Focus: The Pre-emptive Airstrike (June 1967)',
+          duration: '6 mins 45 secs',
+          teacher_guidance:
+            'Military breakdown of the morning of 5 June 1967: Israeli Mirage jets destroying the Egyptian air force on runways within 3 hours.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=F4GGpOxJW7I',
+          title: 'GCSE Revision: The Six-Day War Combat Timeline',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Overview of the three fronts: Sinai captured from Egypt, West Bank & East Jerusalem captured from Jordan, Golan Heights captured from Syria.',
         },
       ],
     },
@@ -7522,6 +7775,24 @@ const unitData = {
             'Trapped ships and blockages kept the Suez Canal closed for eight years from 1967 to 1975.',
         },
       ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=hMOIIdnkrDY',
+          title: 'GCSE Revision: Conquered Territories & UN Resolution 242',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Details UN Resolution 242: "land for peace", Israeli security borders, and the Khartoum Resolution "Three No’s".',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=s7zFGaUPGUA',
+          title: 'UN Resolution 242 and the Occupied Territories',
+          duration: '5 mins 10 secs',
+          teacher_guidance:
+            'Explains Jewish religious settlements in the West Bank and Gaza and the transformation of the Palestinian dispute.',
+        },
+      ],
     },
     {
       id: 'lesson_9',
@@ -8329,6 +8600,23 @@ const unitData = {
             'Arafat gave his famous "gun and olive branch" speech to the UN General Assembly in November 1974.',
         },
       ],
+      video: [
+        {
+          url: 'https://era.org.uk/streaming-service-resource/s1e8-black-september-hijackings-days-that-shook-the-world/',
+          title: 'Days That Shook the World: Black September & Dawson’s Field Hijackings',
+          duration: '50 mins 0 secs',
+          teacher_guidance:
+            'BBC documentary on the 1970 Dawson’s Field plane hijackings, King Hussein expelling the PLO to Lebanon, and the emergence of Black September.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=SOLg_p4ScAU',
+          title: 'The Munich 1972 Olympics Attack',
+          duration: '8 mins 20 secs',
+          teacher_guidance:
+            'Analysis of the massacre of 11 Israeli athletes at the Munich Olympics and global international terrorism.',
+        },
+      ],
     },
     {
       id: 'lesson_10',
@@ -9102,6 +9390,24 @@ const unitData = {
           a: 'It restored Egyptian pride while proving to Israel that occupying land alone did not guarantee security',
           explanation:
             'Restored Arab dignity and shattered Israeli complacency opened the political space for Sadat to negotiate.',
+        },
+      ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=iK729p_-ZRg',
+          title: 'GCSE Revision: The Yom Kippur War (October 1973)',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Core specification recap: Sadat’s goals, the Bar-Lev line crossing, Soviet SAM missiles, and US/Soviet superpower tensions.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=1sBdLja2aVs',
+          title: 'The Yom Kippur War (1973): Surprise Attack & Counter-Offensive',
+          duration: '7 mins 15 secs',
+          teacher_guidance:
+            'Detailed battle analysis of Syrian tank assaults on the Golan and Sharon’s Suez canal crossing, leading to the OPEC oil embargo.',
         },
       ],
     },
@@ -10351,6 +10657,32 @@ const unitData = {
           ],
         },
       },
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=-XkX1UUe7HQ',
+          title: 'GCSE Revision: Shuttle Diplomacy to Camp David (1974–1979)',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Covers Henry Kissinger’s diplomacy, Anwar Sadat’s historic 1977 speech to the Knesset in Jerusalem, and the 1978 Camp David summit.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=LYhJOjv0Yc8',
+          title: "Kissinger's Shuttle Diplomacy & Sadat in Jerusalem",
+          duration: '6 mins 30 secs',
+          teacher_guidance:
+            'Archival footage of Sadat breaking Arab taboos and meeting Prime Minister Menachem Begin.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=mbc9ElB5vfQ',
+          title: 'The Camp David Accords (1978): Begin, Sadat & Carter',
+          duration: '8 mins 45 secs',
+          teacher_guidance:
+            'Examines the 1979 Washington Peace Treaty: Sinai returned to Egypt in exchange for formal recognition of Israel, and Sadat’s 1981 assassination.',
+        },
+      ],
     },
     {
       id: 'lesson_12',
@@ -11708,6 +12040,32 @@ const unitData = {
           date: 'Dec 1988',
           title: 'Arafat 1988 Speech at Geneva UN Session',
           desc: 'In the historic Arafat 1988 speech, the PLO recognizes Israel’s right to exist, accepts UN Resolutions 242 and 338, and renounces all terrorism.',
+        },
+      ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=nXddsCeaCDw',
+          title: 'GCSE Revision: The First Intifada & The 1982 Lebanon War',
+          duration: '2 mins 0 secs',
+          teacher_guidance:
+            'Covers Operation Peace for Galilee (1982), the siege of Beirut, Sabra and Shatila massacres, and the 1987 grassroots Intifada.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=try3LAQxSAE',
+          title: 'The 1982 Lebanon War & Sabra-Shatila Massacres',
+          duration: '9 mins 15 secs',
+          teacher_guidance:
+            'Examines Ariel Sharon, the Christian Phalangist militias, and the Kahan Commission report in Israel.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=Azud40CQ3IE',
+          title: 'The First Intifada (1987–1993): The Stone-Throwing Uprising',
+          duration: '7 mins 40 secs',
+          teacher_guidance:
+            'Explains civil disobedience, boycotted Israeli goods, stone-throwing youths against IDF soldiers, and the shift of moral sympathy.',
         },
       ],
     },
@@ -13079,6 +13437,24 @@ const unitData = {
           ],
         },
       },
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=TgFWEVQTeHM',
+          title: 'The 1993 Oslo Accords: Secret Talks & The White House Lawn Handshake',
+          duration: '6 mins 50 secs',
+          teacher_guidance:
+            'Examines secret negotiations in Norway, mutual recognition between Yitzhak Rabin and Yasser Arafat, and the establishment of the Palestinian Authority.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=5SIAW4cX62I',
+          title: 'The Assassination of Yitzhak Rabin (1995) & The Fragility of Peace',
+          duration: '5 mins 40 secs',
+          teacher_guidance:
+            'Details the November 1995 assassination of Israeli Prime Minister Rabin by Jewish right-wing extremist Yigal Amir at a Tel Aviv peace rally.',
+        },
+      ],
     },
   ],
   exam_blocks: [
@@ -15311,9 +15687,3 @@ const unitData = {
     },
   ],
 };
-
-export { unitData };
-export default unitData;
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = unitData;
-}

@@ -6128,6 +6128,68 @@
               "definition": "A narrow maritime passage into the Gulf of Aqaba blockaded by Egypt, threatening Israel's southern port of Eilat."
             }
           ],
+          "causal_domino_spine": {
+            "title": "The 1956 Suez Crisis: 5-Stage Causal Domino Chain",
+            "subtitle": "Edexcel Paper 2 Disciplinary Framework for Q2 Narrative Account [8m] & Q1 Consequence [4m]",
+            "exam_strategy": "Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.",
+            "stages": [
+              {
+                "step": 1,
+                "date": "February 1955",
+                "title": "The Gaza Raid",
+                "actor": "Israel & Egypt",
+                "tag": "The Spark",
+                "trigger": "Israeli paratroopers launch a surprise raid into Gaza, killing 37 Egyptian soldiers.",
+                "because": "Prime Minister Ben-Gurion implemented a disproportionate reprisal doctrine to retaliate for cross-border Fedayeen raids.",
+                "therefore": "Nasser was publicly humiliated and became determined to urgently rearm Egypt with modern fighter jets and tanks.",
+                "exam_link": "Q1 Consequence: Exposed Egyptian military vulnerability; drove Nasser to seek Soviet arms."
+              },
+              {
+                "step": 2,
+                "date": "September 1955",
+                "title": "The Czech Arms Deal",
+                "actor": "Egypt & Soviet Bloc",
+                "tag": "Cold War Shift",
+                "trigger": "Nasser purchases 200 Soviet MiG-15 jets and 300 tanks via Czechoslovakia.",
+                "because": "Western powers refused to sell arms to Egypt unless Nasser signed anti-Soviet military pacts.",
+                "therefore": "Shattered the Western monopoly on Middle Eastern weapons and drew the Cold War directly into the Arab-Israeli conflict.",
+                "exam_link": "Q2 Narrative (Link 1 → 2): Israeli raid directly motivated the Soviet arms purchase."
+              },
+              {
+                "step": 3,
+                "date": "July 1956",
+                "title": "Dam Loans Pulled & Canal Seized",
+                "actor": "USA, Britain & Egypt",
+                "tag": "The Economic Trigger",
+                "trigger": "US Secretary Dulles abruptly cancels $70m Aswan Dam loan (19 July); Nasser nationalises the Suez Canal (26 July).",
+                "because": "The US was alarmed by Nasser's Soviet arms deal and recognition of Communist China; Nasser needed the canal's £35m annual tolls to fund the dam.",
+                "therefore": "Infuriated British PM Eden, who viewed the canal as an imperial oil lifeline and resolved to remove Nasser by force.",
+                "exam_link": "Q2 Narrative (Link 2 → 3) & Q3 Importance: Canal nationalisation as symbol of Arab sovereignty."
+              },
+              {
+                "step": 4,
+                "date": "October–November 1956",
+                "title": "The Protocol of Sèvres & Invasion",
+                "actor": "Britain, France & Israel",
+                "tag": "The Tripartite Conspiracy",
+                "trigger": "Secret meeting outside Paris; Israel invades Sinai (29 Oct); Anglo-French forces bomb airfields and invade Port Said (5 Nov).",
+                "because": "Britain and France wanted to reclaim the canal under the false pretext of 'separating the combatants' and overthrow Nasser.",
+                "therefore": "Egypt was defeated militarily in Sinai, but Nasser ordered blockships sunk, completely choking the canal.",
+                "exam_link": "Q2 Narrative (Link 3 → 4): Collusion between the three allies to fabricate a justification for invasion."
+              },
+              {
+                "step": 5,
+                "date": "November 1956",
+                "title": "US Ultimatum & UNEF Deployment",
+                "actor": "USA, UN & The World",
+                "tag": "The Climax & Aftermath",
+                "trigger": "US President Eisenhower threatens to collapse the British pound unless forces withdraw; UN establishes UNEF.",
+                "because": "Eisenhower was furious at allies acting without US approval while Soviet tanks crushed the Hungarian uprising.",
+                "therefore": "Humiliating British and French imperial retreat (end of Britain as a superpower); Nasser hailed as Arab hero; UNEF secured peace for 10 years.",
+                "exam_link": "Q1 Consequence (Collapse of British/French imperial status) & Q3 Importance (Eisenhower's intervention & UNEF buffer)."
+              }
+            ]
+          },
           "narrative_blocks": [
             {
               "text": "**The Rise of Gamal Abdel Nasser & Pan-Arabism (1954):** In July 1952, nationalist army officers overthrew King Farouk, bringing Colonel **Gamal Abdel Nasser** to power as President of Egypt by 1954. Nasser championed **Pan-Arabism**—uniting Arab nations to end Western colonial influence and avenge the 1948 defeat by Israel. He pressured Britain to withdraw all 80,000 British troops stationed in the Suez Canal Zone by June 1956. Domestically, Nasser planned the colossal **Aswan High Dam** on the River Nile to generate electricity, control floods, and irrigate desert land, requiring massive foreign loans.",
