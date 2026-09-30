@@ -265,16 +265,46 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     }
 
     periods.forEach((p) => {
+      // Determine workbook links for this topic
+      let pdfWorkbookUrl = '';
+      let digitalWorkbookUrl = '';
+      if (currentUnitId === 'edexcel_medicine') {
+        pdfWorkbookUrl = `/pdfs/edexcel_medicine_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        digitalWorkbookUrl = `/units/edexcel_medicine/pupil_workbook_${p.id}.html`;
+      }
+
       lessonsHTML += `
-        <div class="premium-banner">
+        <div class="premium-banner" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div class="premium-banner-bg" style="background-image: url('${p.image}'); background-position: ${p.bgPos || 'center'};"></div>
           <div class="premium-banner-overlay-1"></div>
           <div class="premium-banner-overlay-2" style="background: ${p.gradient};"></div>
           <div class="premium-banner-glow" style="background: radial-gradient(circle, ${p.border} 0%, transparent 70%);"></div>
-          <div class="premium-banner-content" style="border-left: 6px solid ${p.border};">
+          <div class="premium-banner-content" style="border-left: 6px solid ${p.border}; flex: 1; min-width: 260px;">
             <h3 class="premium-banner-title">${p.title}</h3>
             <p class="premium-banner-enquiry">${p.enquiry}</p>
           </div>
+          ${
+            pdfWorkbookUrl
+              ? `
+          <div class="premium-banner-actions" style="position: relative; z-index: 5; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto;">
+            <a href="${pdfWorkbookUrl}" target="_blank" download class="btn-banner-pdf" style="text-decoration: none; background: rgba(0, 0, 0, 0.7); color: #ffffff; border: 1.5px solid rgba(255, 255, 255, 0.4); padding: 9px 15px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 7px; backdrop-filter: blur(6px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.95)'; this.style.color='#0f172a'; this.style.borderColor='#ffffff';" onmouseout="this.style.background='rgba(0,0,0,0.7)'; this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)';">
+              <i class="fa-solid fa-file-pdf" style="color: #ef4444; font-size: 1rem;"></i>
+              <span>Pupil Workbook (PDF)</span>
+            </a>
+            ${
+              digitalWorkbookUrl
+                ? `
+            <a href="${digitalWorkbookUrl}" target="_blank" class="btn-banner-web" style="text-decoration: none; background: rgba(255, 255, 255, 0.18); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 9px 13px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.83rem; display: inline-flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.18)';">
+              <i class="fa-solid fa-book-open" style="color: #93c5fd;"></i>
+              <span>Digital</span>
+            </a>
+            `
+                : ''
+            }
+          </div>
+          `
+              : ''
+          }
         </div>
       `;
 

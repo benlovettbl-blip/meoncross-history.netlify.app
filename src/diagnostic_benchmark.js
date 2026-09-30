@@ -49,7 +49,7 @@ function shuffleArray(arr) {
 /**
  * Partitions lessons and extracts 20 questions evenly distributed across eras/key topics.
  */
-export function sampleDiagnosticQuestions(unitId, unitData) {
+export function sampleDiagnosticQuestions(unitId, unitData, topicFilter = null) {
   const lessons = unitData.lessons || unitData.subtopics || [];
   if (!lessons || lessons.length === 0) return [];
 
@@ -102,34 +102,57 @@ export function sampleDiagnosticQuestions(unitId, unitData) {
 
   if (eras.length === 0) return [];
 
+  // Filter eras if a specific topic was selected
+  const cleanFilter = topicFilter ? String(topicFilter).split(':')[0].trim().toLowerCase() : null;
+  let activeEras = eras;
+  if (cleanFilter && cleanFilter !== 'all' && cleanFilter !== 'full') {
+    const matched = eras.filter((e) => {
+      const eId = String(e.id || '').toLowerCase();
+      const eWb = String(e.workbookId || '').toLowerCase();
+      const eTitle = String(e.title || '').toLowerCase();
+      return (
+        eId === cleanFilter ||
+        eWb === cleanFilter ||
+        eId.includes(cleanFilter) ||
+        cleanFilter.includes(eId) ||
+        eTitle.includes(cleanFilter)
+      );
+    });
+    if (matched.length > 0) activeEras = matched;
+  }
+
   // Determine questions per era to reach exactly 20
-  const questionsPerEra = Math.floor(20 / eras.length);
-  const remainder = 20 % eras.length;
+  const questionsPerEra = Math.floor(20 / activeEras.length);
+  const remainder = 20 % activeEras.length;
 
   const sampledQuestions = [];
   let questionCounter = 1;
 
-  eras.forEach((era, eraIdx) => {
+  activeEras.forEach((era, eraIdx) => {
     const targetCount = questionsPerEra + (eraIdx < remainder ? 1 : 0);
     const pool = [];
 
     // Collect all multiple choice questions from lessons in this era
     era.lessons.forEach((l) => {
-      if (l.quiz && Array.isArray(l.quiz)) {
-        l.quiz.forEach((q) => {
-          const ans = resolveAnswerString(q);
-          const prompt = q.question || q.q;
-          if (prompt && ans && q.options && Array.isArray(q.options) && q.options.length >= 2) {
-            pool.push({
-              prompt: prompt.trim(),
-              answer: ans,
-              options: [...q.options],
-              explanation: q.explanation || `Core historical knowledge from ${l.title}.`,
-              lessonTitle: l.title,
-            });
-          }
-        });
-      }
+      const qList =
+        (l.quick_quiz && Array.isArray(l.quick_quiz) && l.quick_quiz) ||
+        (l.quiz && Array.isArray(l.quiz) && l.quiz) ||
+        (l.quiz_questions && Array.isArray(l.quiz_questions) && l.quiz_questions) ||
+        [];
+
+      qList.forEach((q) => {
+        const ans = resolveAnswerString(q);
+        const prompt = q.question || q.q;
+        if (prompt && ans && q.options && Array.isArray(q.options) && q.options.length >= 2) {
+          pool.push({
+            prompt: prompt.trim(),
+            answer: ans,
+            options: [...q.options],
+            explanation: q.explanation || `Core historical knowledge from ${l.title}.`,
+            lessonTitle: l.title,
+          });
+        }
+      });
 
       if (l.do_now && Array.isArray(l.do_now.items)) {
         l.do_now.items.forEach((item) => {
@@ -188,25 +211,29 @@ export function sampleDiagnosticQuestions(unitId, unitData) {
             Math.floor(lIdx / Math.max(1, Math.ceil(lessons.length / eras.length))),
           )
         ] || eras[0];
-      if (l.quiz && Array.isArray(l.quiz)) {
-        l.quiz.forEach((q) => {
-          const ans = resolveAnswerString(q);
-          const prompt = (q.question || q.q || '').trim();
-          if (prompt && ans && q.options && q.options.length >= 2 && !usedPrompts.has(prompt)) {
-            backfillPool.push({
-              eraId: era.id,
-              eraTitle: era.title,
-              workbookId: era.workbookId,
-              lessonTitle: l.title,
-              prompt: prompt,
-              options: shuffleArray(q.options),
-              answer: ans,
-              explanation: q.explanation || `Core historical knowledge from ${l.title}.`,
-            });
-            usedPrompts.add(prompt);
-          }
-        });
-      }
+      const qList =
+        (l.quick_quiz && Array.isArray(l.quick_quiz) && l.quick_quiz) ||
+        (l.quiz && Array.isArray(l.quiz) && l.quiz) ||
+        (l.quiz_questions && Array.isArray(l.quiz_questions) && l.quiz_questions) ||
+        [];
+
+      qList.forEach((q) => {
+        const ans = resolveAnswerString(q);
+        const prompt = (q.question || q.q || '').trim();
+        if (prompt && ans && q.options && q.options.length >= 2 && !usedPrompts.has(prompt)) {
+          backfillPool.push({
+            eraId: era.id,
+            eraTitle: era.title,
+            workbookId: era.workbookId,
+            lessonTitle: l.title,
+            prompt: prompt,
+            options: shuffleArray(q.options),
+            answer: ans,
+            explanation: q.explanation || `Core historical knowledge from ${l.title}.`,
+          });
+          usedPrompts.add(prompt);
+        }
+      });
     });
 
     const needed = 20 - sampledQuestions.length;
@@ -349,21 +376,60 @@ function handleDiagnosticKeydown(e) {
 /**
  * Launches the interactive Diagnostic Benchmark Modal.
  */
-export function startDiagnosticBenchmark(unitId) {
+export function startDiagnosticBenchmark(unitId, topicFilter = null) {
   if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
     window.cancelSpeech();
   }
-  const unitData = state.activeUnitData || window.currentUnitData || {};
-  const questions = sampleDiagnosticQuestions(unitId, unitData);
+
+  // Resolve topic filter if not explicitly passed
+  if (!topicFilter && typeof document !== 'undefined') {
+    const mSel = document.getElementById('select-recall-deck-mobile');
+    const dSel = document.getElementById('select-recall-deck');
+    topicFilter = (mSel && mSel.value) || (dSel && dSel.value) || null;
+  }
+
+  // Robust unit data resolution (never fallback to empty object if window.currentUnitData or db is populated)
+  let unitData = null;
+  if (
+    state.activeUnitData &&
+    state.activeUnitData.lessons &&
+    state.activeUnitData.lessons.length > 0
+  ) {
+    unitData = state.activeUnitData;
+  } else if (
+    window.currentUnitData &&
+    window.currentUnitData.lessons &&
+    window.currentUnitData.lessons.length > 0
+  ) {
+    unitData = window.currentUnitData;
+  } else if (state.db && state.db[unitId] && state.db[unitId].data) {
+    unitData = state.db[unitId].data;
+  } else if (window.database && window.database[unitId] && window.database[unitId].data) {
+    unitData = window.database[unitId].data;
+  } else if (
+    window.appStore &&
+    window.appStore.state &&
+    window.appStore.state.activeUnitData &&
+    window.appStore.state.activeUnitData.lessons
+  ) {
+    unitData = window.appStore.state.activeUnitData;
+  } else {
+    unitData = state.activeUnitData || window.currentUnitData || {};
+  }
+
+  const questions = sampleDiagnosticQuestions(unitId, unitData, topicFilter);
 
   if (!questions || questions.length === 0) {
-    alert('No multiple-choice questions found to generate a diagnostic benchmark for this unit.');
+    alert(
+      'No multiple-choice questions found to generate a diagnostic benchmark for this selection.',
+    );
     return;
   }
 
   activeSession = {
     unitId,
     unitData,
+    topicFilter,
     questions,
     answers: {}, // { [qIndex]: chosenOption }
     currentIndex: 0,

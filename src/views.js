@@ -695,6 +695,22 @@ export function renderInteractiveQuiz() {
   const initialWhiteboardUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html#practice-mode&teacher=true`;
   const initialVaultUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html`;
 
+  const availableCoursesList = [
+    { id: 'edexcel_medicine', label: 'Paper 1: Medicine Through Time' },
+    { id: 'eee', label: 'Paper 2: Early Elizabethan England' },
+    { id: 'cme_new', label: 'Paper 2: Middle East Conflict' },
+    { id: 'weimar_nazi_germany', label: 'Paper 3: Weimar & Nazi Germany' },
+    { id: 'usa', label: 'Paper 3: USA, 1954–75 (Vietnam & Civil Rights)' },
+    { id: 'medieval_england', label: 'Year 7: Medieval England, 1066–1509' },
+    { id: 'water_and_sanitation', label: 'Year 7: Water & Sanitation' },
+    { id: 'early_modern_world', label: 'Year 8: The Early Modern World' },
+    { id: 'industrialisation_and_empire', label: 'Year 8: Industrialisation & Empire' },
+    { id: 'great_war', label: 'Year 9: Causes of the Great War' },
+    { id: 'great_war_part2', label: 'Year 9: Western Front & Somme' },
+    { id: 'the_shoah', label: 'Year 9: The Holocaust / The Shoah' },
+    { id: 'post_war_britain', label: 'Year 9: Post-War Britain & Windrush' },
+  ];
+
   let html = `
     <div style="max-width: 980px; margin: 0 auto; padding-bottom: 50px; animation: fadeInUp 0.3s ease-out;">
       
@@ -722,6 +738,21 @@ export function renderInteractiveQuiz() {
           Test your recall with a 10-minute exam benchmark or flip through targeted retrieval flashcards.
         </p>
 
+        <!-- Course Switcher -->
+        <div style="margin-bottom: 10px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 10px;">
+          <label for="select-quiz-course-mobile" style="display: block; font-size: 0.72rem; font-weight: 700; color: #fef08a; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fa-solid fa-graduation-cap"></i> Select History Course:
+          </label>
+          <select id="select-quiz-course-mobile" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.86rem; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; background: #0f172a; color: #ffffff; font-weight: 600;" onchange="window.switchView('interactive', this.value)">
+            ${availableCoursesList
+              .map(
+                (c) =>
+                  `<option value="${c.id}" ${c.id === unitId ? 'selected' : ''}>${c.label}</option>`,
+              )
+              .join('')}
+          </select>
+        </div>
+
         ${
           workbooks.length > 1
             ? `
@@ -744,7 +775,7 @@ export function renderInteractiveQuiz() {
         }
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <button onclick="window.startDiagnosticBenchmark('${unitId}')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 18px; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
+          <button onclick="const sel = document.getElementById('select-recall-deck-mobile'); window.startDiagnosticBenchmark('${unitId}', sel ? sel.value : null)" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 18px; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
             <i class="fa-solid fa-bullseye"></i>
             <span>Start 10-Minute Quiz</span>
           </button>
@@ -908,7 +939,7 @@ export function renderInteractiveQuiz() {
           </div>
 
           <div>
-            <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 20px; border-radius: 10px; border: none; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="window.startDiagnosticBenchmark('${unitId}')" onmouseover="this.style.filter='brightness(1.08)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.filter='brightness(1)'; this.style.transform='translateY(0)';">
+            <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 20px; border-radius: 10px; border: none; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="const sel = document.getElementById('select-recall-deck'); window.startDiagnosticBenchmark('${unitId}', sel ? sel.value : null)" onmouseover="this.style.filter='brightness(1.08)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.filter='brightness(1)'; this.style.transform='translateY(0)';">
               <i class="fa-solid fa-bullseye"></i>
               <span>Start 10-Min Benchmark</span>
             </button>
